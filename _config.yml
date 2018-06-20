@@ -13,16 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Bitcoin OpTech
-email: contact@bitcoinops.org  ## FIXME: insert real address
+title: Bitcoin Optech
+email: info@bitcoinops.org
 
 description: >-
   Helping Bitcoin-based businesses integrate scaling technology.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb  ## FIXME: insert if available
-#github_username:  jekyll    ## FIXME: insert if available
+twitter_username: bitcoinoptech
+github_username:  bitcoinops
 
 # Build settings
 markdown: kramdown
