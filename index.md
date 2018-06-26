@@ -18,3 +18,7 @@ increases.
 Long-term goals include providing documentation and training materials, a
 weekly newsletter, original research, and facilitating improved relations
 between businesses and the open source community.
+
+Optech does not exist to make a profit, and all materials and documentation
+produced are placed in the public domain. We are supported by our generous
+founding sponsors and contributions from member companies.
