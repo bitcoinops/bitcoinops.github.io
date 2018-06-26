@@ -22,7 +22,12 @@ Principles and associates of Optech:
   <br>Contributing Technical Writer, Optech
   <br>[GitHub][harding github]
 
+- **Marcin Jachymiak**
+  <br>Engineer, Optech
+  <br>[GitHub][marcinja github]
+
 [jnewbery github]: https://github.com/jnewbery
 [jamesob github]: https://github.com/jamesob
 [moneyball github]: https://github.com/moneyball
 [harding github]: https://github.com/harding
+[marcinja github]: https://github.com/marcinja
