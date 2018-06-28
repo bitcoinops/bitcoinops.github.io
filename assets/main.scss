@@ -3,3 +3,45 @@
 ---
 
 @import "minima";
+
+br.clear {
+    clear: left;
+}
+
+.two-column-list ul {
+        margin-left: 4em;
+}
+
+.two-column-list li {
+        list-style: none;
+        float: left;
+        width: 16em;
+        text-align: left;
+        margin-bottom: 20px;
+}
+
+.two-column-list li:nth-child(2n+1) {
+        margin-right: 100px;
+        clear: both;
+}
+
+// Enable this if you want to use a two-column list with FontAwesome
+// icons replacing the bullets
+//.two-column-list .fa-li {
+//        top: 0.75em;
+//}
+
+p.sponsor-quote {
+        font-style: italic;
+}
+
+.sponsors h3 {
+        font-weight: 700;
+        font-size: 120%;
+}
+
+// The long text quotes make this application of a two-column list
+// desire more vertical spacing between the quotes
+.sponsors li {
+        margin-bottom: 60px;
+}
