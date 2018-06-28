@@ -1,9 +1,13 @@
+## When putting either quotes or exposition into the same types of
+## slots, ensure quotations are displayed surrounded by quotes marks to
+## differentiate the two types of information
 sponsors:
   -
     name: John Pfeffer
     twitter: jlppfeffer
     avatar: https://pbs.twimg.com/profile_images/943480113001369600/CD-0Q6jG_400x400.jpg
-    quote: I’m an investor and believer that everyone who has a stake in Bitcoin has a duty to contribute and give back to Bitcoin development, including hodlers!  Wences and I hope that everyone will pitch in, contribute and do their bit to help make this grand challenge to scale Bitcoin a success.
+    quote: >-
+      "I’m an investor and believer that everyone who has a stake in Bitcoin has a duty to contribute and give back to Bitcoin development, including hodlers!  Wences and I hope that everyone will pitch in, contribute and do their bit to help make this grand challenge to scale Bitcoin a success."
   -
     name: Wences Casares
     twitter: wences
