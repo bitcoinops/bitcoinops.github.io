@@ -1,0 +1,28 @@
+## When putting either quotes or exposition into the same types of
+## slots, ensure quotations are displayed surrounded by quotes marks to
+## differentiate the two types of information
+sponsors:
+  -
+    name: Wences Casares
+    twitter: wences
+    avatar: https://pbs.twimg.com/profile_images/488493213691310080/2xgj78jZ_400x400.jpeg
+    quote: >-
+      "It will take a very large ecosystem of trustworthy companies to ensure that Bitcoin succeeds and can be used by the entire world. By helping Bitcoin companies adopt the best technology and spreading knowledge and best practice among Bitcoin engineers, Bitcoin Optech is contributing to success of the most important leap forward in the democratization of money we've ever seen."
+  -
+    name: John Pfeffer
+    twitter: jlppfeffer
+    avatar: https://pbs.twimg.com/profile_images/943480113001369600/CD-0Q6jG_400x400.jpg
+    quote: >-
+      "I’m an investor and believer that everyone who has a stake in Bitcoin has a duty to contribute and give back to Bitcoin development, including hodlers!  Wences and I hope that everyone will pitch in, contribute and do their bit to help make this grand challenge to scale Bitcoin a success."
+  -
+    name: Alex Morcos
+    twitter: morcosa
+    avatar: https://pbs.twimg.com/profile_images/512390947900903424/fpcDW2ZX_400x400.jpeg
+    quote: >-
+      "John and the Optech team have really taken the initiative to help build a higher level of communication and collaboration between industry and the open source development community.  We're just at the beginning of realizing the potential of Bitcoin and related technology, and I'm excited to see how much we can all accomplish working together."
+
+members:
+  -
+    name: Ledger
+    twitter: LedgerHQ
+    avatar: https://pbs.twimg.com/profile_images/915545754084741120/N44_mYZ7_400x400.jpg
