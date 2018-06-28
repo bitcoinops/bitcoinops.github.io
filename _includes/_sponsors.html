@@ -1,0 +1,20 @@
+{% assign sponsors = site.data.sponsors.sponsors %}
+
+<div id="sponsors">
+
+	<h2>Founding Sponsors</h2>
+
+	<p>Our founding sponsors have generously provided funds and resources to cover our start-up and ongoing costs.</p>
+
+	<ul class="sponsors">
+	{% for sponsor in sponsors %}
+	{% assign avatar=sponsor.avatar %}
+	{% unless sponsor.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{sponsor.avatar}}{% endcapture %}{% endunless %}
+	<li>
+		<a href="https://twitter.com/{{ sponsor.twitter }}"><img src="{{ avatar }}" class="bio-photo" width="150" height="150" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"></a>
+	    <h3 itemprop="name">{{ sponsor.name }}</h3>
+	    {% if sponsor.quote %}<p class="sponsor-quote">{{ sponsor.quote }} </p>{% endif %}
+	</li>
+	{% endfor %}
+	</ul>
+</div>
