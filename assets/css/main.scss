@@ -3,6 +3,7 @@
 ---
 
 @import "minima";
+@import "vendor/font-awesome/font-awesome";
 
 br.clear {
     clear: left;
@@ -46,4 +47,10 @@ p.sponsor-quote {
 // desire more vertical spacing between the quotes
 .sponsors li {
         margin-bottom: 60px;
+}
+
+.bio-photo {
+        border: solid 4px #fff;
+        max-width: 100%;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
 }
