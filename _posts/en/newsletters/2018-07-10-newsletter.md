@@ -169,9 +169,9 @@ to pursue later." ([source][pwuille comment])
   identified as creating transactions with feerates below the current
   minimum due to a misunderstanding about the maximum size of a Bitcoin
   signature, which is 72 bytes.  Bitcoin signatures vary in size, with
-  slightly less than half of all randomly-generated signatures being 72
-  bytes, slightly less than half being 71 bytes, and the small remainder
-  being 70 bytes or smaller.
+  half of all randomly-generated signatures being 72 bytes, slightly
+  less than half being 71 bytes, and the small remainder being 70 bytes
+  or smaller.
 
     At a guess, the developers of some software looked at a
     randomly-selected signature, saw that it was 71 bytes, and assumed
