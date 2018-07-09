@@ -7,31 +7,7 @@ layout: page
 lang: en
 version: 1
 ---
-## Welcome
-
-Welcome to the third weekly Bitcoin Optech Group newsletter! As a member of our new organization, you can expect to see regular newsletters from us covering Bitcoin open source development and protocol news, Optech announcements, and member company’s case studies.  These newsletters are also available on [our website.][newsletter page]
-
-[newsletter page]: https://bitcoinops.org/en/newsletters/
-
-We hope you find this newsletter of value. We’re creating this for you, so please feel comfortable reaching out to us if you have feedback, be it additional things you’d like to see us cover or improvements to what we’re already including.
-
-A reminder to companies that haven’t yet become an official member yet. We ask that you pay a nominal contribution of $5,000 to help fund our expenses.
-
-## First Optech workshop!
-
-Bitcoin Optech Group is organizing the first of a series of workshops to be held on **July 17 in San Francisco**. Square has graciously offered to host the afternoon workshop, and we will have a group dinner afterwards. Participants will be 1-2 engineers from SF Bay area Bitcoin companies. We will have roundtable discussions covering 3 topics:
-
-- Coin selection best practices;
-- Fee estimation, RBF, CPFP best practices;
-- Optech community and communication - optimizing Optech for business' needs.
-
-We plan to organize similar workshops in other regions based on Optech member company demand. If this sounds appealing to you, please feel free to reach out to us and let us know what you’d like to see.
-
-## Open Source News
-
-A consistent theme we have heard from our initial outreach to Bitcoin companies is the desire to improve communication with the open source community. To that end, in each newsletter we plan to provide a summary of relevant action items, dashboard items, and news from the broader Bitcoin open source community.
-
-### Action items
+## Action items
 
 - Bitcoin Core minimum relay fee may be reduced in the next major
   release.  Ensure your software doesn't make unsafe assumptions about 1
@@ -53,7 +29,7 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 [alert released]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
 [newsletter #1]: https://bitcoinops.org/en/newsletters/2018/06/26/
 
-### Dashboard items
+## Dashboard items
 
 - **Transaction fees remain very low:** as of this writing, fee
   estimates for confirmation 2 or more blocks in the future remain at
@@ -77,7 +53,8 @@ Bitcoin before work begins on an actual soft fork, so the BIP does not
 propose specific new opcodes, segwit witness flags, soft fork activation
 method, or anything else necessary to make this change part of the
 Bitcoin consensus rules.  However, it is possible to say what this signature
-format provides if it becomes the form of Schnorr adopted by Bitcoin.
+format will provide if it becomes the form of Schnorr signature adopted by
+Bitcoin.
 
 [schnorr post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html
 [schnorr draft]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
@@ -127,7 +104,7 @@ to pursue later." ([source][pwuille comment])
 
 [pwuille comment]: https://www.reddit.com/r/Bitcoin/comments/8wmj5b/pieter_wuille_submits_schnorr_signatures_bip/e1wwriq/
 
-### News
+## News
 
 - **[Discussion][min fee discussion] about minimum relay fee:** several
   years ago when the Bitcoin price was a fraction of its current value
@@ -160,7 +137,7 @@ to pursue later." ([source][pwuille comment])
 
     If your organization produces end-user software, you may wish to
     ensure that it works with transactions and fee estimations set below
-    the value of 1 satoshi per byte.  Please contact OpTech if you need
+    the value of 1 satoshi per byte.  Please contact Optech if you need
     more information about minimum relay fees.
 
 [min fee discussion]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2018/bitcoin-core-dev.2018-07-05-19.22.log.html#l-24
@@ -183,7 +160,7 @@ to pursue later." ([source][pwuille comment])
     This didn't cause significant problems when fee estimates were high,
     but now that fee estimates are near the default minimum relay fee of
     1 satoshi per byte, any transactions created with a fee slightly
-    below that aren't being relayed to miners and so remain unconfirmed
+    below that may not be relayed to miners and so remain unconfirmed
     indefinitely.
 
     It is recommended that organizations check their software to ensure
@@ -191,7 +168,7 @@ to pursue later." ([source][pwuille comment])
     72 bytes.
 
 - **Upcoming Bitcoin Core 0.17 feature freeze:** next week developers
-  [plan][#12624] to stop accepting new features for the next major
+  [plan][#12624] to stop merging new features for the next major
   version of Bitcoin Core.  The features already present will be further
   tested and documented, translations will be updated, and other parts
   of the release process followed.  If your organization will be
@@ -210,20 +187,19 @@ to pursue later." ([source][pwuille comment])
       multisig wallets, hot/cold wallets, coinjoins, and other
       cooperating wallets.
 
-    - Delayed transaction sending by network group, a proposal that is
+    - [Delayed transaction sending by network group][#13298], a proposal that is
       hoped will make it harder for spy nodes to determine which client
       first broadcast a transaction (indicating it may have been the
-      spender).  This may cause transactions to take a bit longer to
-      reach a miner and be confirmed, although current simulations
-      suggest that the additional delay, if any, is minimal.
+      spender).
 
 [#12624]: https://github.com/bitcoin/bitcoin/issues/12624
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
+[#13298]: https://github.com/bitcoin/bitcoin/issues/13298
 
 - **Efficient reimplementation of Electrum Server:** in an announcement
   to the bitcoin-dev mailing list this week was a claim that a
   Rust-based reimplementation of Electrum server is much more efficient
-  than the Python version.  OpTech has not performed any testing on this
+  than the Python version.  Optech has not performed any testing on this
   and can't confirm, but Electrum server is known to be used by several
   Bitcoin businesses both internally and hosted on behalf of their
   customers, so some readers of this newsletter may wish to investigate.
