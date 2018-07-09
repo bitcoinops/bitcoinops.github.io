@@ -204,10 +204,65 @@ to pursue later." ([source][pwuille comment])
   Bitcoin businesses both internally and hosted on behalf of their
   customers, so some readers of this newsletter may wish to investigate.
 
-- **Building on Bitcoin:** last week was a Bitcoin technology conference
-  well attended by Bitcoin protocol developers.  A [video][bob video]
-  is available, as are several [transcripts][bob transcripts] by Bitcoin
-  developer Bryan Bishop (kanzure).
+## Building on Bitcoin
 
+[**Building on Bitcoin**][bob website] was a Bitcoin technology conference that took
+place in Lisbon last week. It was well attended by both Bitcoin protocol
+developers and applications engineers.  A [video][bob video]
+is available, as are several [transcripts][bob transcripts] by Bitcoin
+developer Bryan Bishop (kanzure).
+
+[bob website]: https://building-on-bitcoin.com/
 [bob video]: https://www.youtube.com/watch?v=XORDEX-RrAI
 [bob transcripts]: http://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/
+
+The following talks may be of particular interest to Bitcoin Optech
+companies:
+
+- [**Merchant adoption**][bitrefill video] - [Sergej Kotliar][sergej], CEO of
+  Bitrefill gave a personal account of the fee market spike at the end of last
+  year, important UX considerations for Bitcoin and and lightning payments, and
+  Bitrefill's experiences in integrating lightning.  This talk was
+  fascinating due to the real-world empirical data that Sergej shared and his
+  first-hand experience of fees, scaling and lightning.
+
+[bitrefill video]: https://www.youtube.com/watch?v=Cpid31c6HZc&feature=youtu.be&t=8m49s
+[sergej]: https://twitter.com/ziggamon
+
+- [**Designing Lighning Wallets for the Bitcoin Users**][lightning ux video] -
+  [Patrícia Estevão][patricia] gave a talk about UX considerations when
+  extending Bitcoin wallets to support lightning payments.  An interesting
+  talk for any business that is beginning to integrate lightning payments into
+  an existing Bitcoin product.
+
+[lightning ux video]: https://www.youtube.com/watch?v=XORDEX-RrAI&feature=youtu.be&t=6042
+[patricia]: https://twitter.com/patestevao
+
+- [**Blind Signatures in Sciptless Scripts**][blind signatures video] -
+  [Jonas Nick][jonas] spoke about using Schnorr signatures as the basis
+  of doing blind coinswaps (where a server cannot link coins) or exchanging
+  'ecash tokens' on Bitcoin or lightning, amongst other things.  This talk
+  presents leading edge thinking about what's possible with scriptless
+  scripts and the ideas presented are quite a long way from being implementable
+  on Bitcoin.  However, it is interesting to see some of the new applications
+  that will be unlocked by adopting Schnorr signatures into Bitcoin.
+
+[blind signatures video]: https://www.youtube.com/watch?v=XORDEX-RrAI&feature=youtu.be&t=25479
+[jonas]: https://twitter.com/n1ckler
+
+- [**LN story**][ln video] - [Fabrice Drouin][fabrice] presented a history
+  of the development of the lightning network.  A lot of interesting background
+  for anyone planning to integrate and use lightning payments.
+
+[ln video]: https://www.youtube.com/watch?time_continue=2881&v=Cpid31c6HZc
+[fabrice]: https://twitter.com/acinq_co
+
+- [**CoinJoinXT ... and other techniques for deniable transfers**][coinjoin video] -
+  [Adam Gibson][adam] talked about CoinJoinXT, a method for improving privacy in
+  Bitcoin by mixing payments and breaking transaction graph analysis.  Many wallets
+  are planning to implement some form of CoinJoin, so Bitcoin engineers should be at
+  least familiar with the high-level concepts.
+
+[coinjoin video]: https://www.youtube.com/watch?v=XORDEX-RrAI&feature=youtu.be&t=23359
+[adam]: https://twitter.com/waxwing__
+
