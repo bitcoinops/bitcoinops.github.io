@@ -7,6 +7,11 @@ layout: page
 lang: en
 version: 1
 ---
+This week's newsletter includes news and action items about minimum fees and
+the upcoming Bitcoin Core release, a special feature on a Schnorr signature
+proposal, and a write-up of the recent Building on Bitcoin conference in
+Lisbon.
+
 ## Action items
 
 - Bitcoin Core minimum relay fee may be reduced in the next major
