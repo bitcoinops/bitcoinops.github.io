@@ -11,6 +11,8 @@
             <h3 itemprop="name">{{ associate.name }}</h3>
             <p class="author-role">{{ associate.role }} {% if associate.other_affiliation %}<br/>{{ associate.other_affiliation }}{% endif %}</p>
             <i class="fa fa-lg fa-github-square" rel="nofollow"></i>&nbsp;<a href="https://github.com/{{ associate.github }}" class="author-github" target="_blank">GitHub</a>
+            {% if associate.quote %}<p class="sponsor-quote">{{ associate.quote }} </p>{% endif %}
+
         </li>
         {% endfor %}
     </ul>
