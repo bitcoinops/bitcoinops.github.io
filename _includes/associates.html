@@ -1,0 +1,18 @@
+{% assign associates = site.data.associates.associates %}
+
+<div id="associates">
+
+    <ul class="associates two-column-list">
+        {% for associate in associates %}
+        {% assign avatar=associate.avatar %}
+        {% unless associate.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{associate.avatar}}{% endcapture %}{% endunless %}
+        <li>
+            <img src="{{ avatar }}" class="bio-photo" width="150" height="150" alt="{{ associate.name }}" title="{{ associate.name }}">
+            <h3 itemprop="name">{{ associate.name }}</h3>
+            <p class="author-role">{{ associate.role }} {% if associate.other_affiliation %}<br/>{{ associate.other_affiliation }}{% endif %}</p>
+            <i class="fa fa-lg fa-github-square" rel="nofollow"></i>&nbsp;<a href="https://github.com/{{ associate.github }}" class="author-github" target="_blank">GitHub</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>

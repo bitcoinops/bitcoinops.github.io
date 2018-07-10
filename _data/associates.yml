@@ -1,0 +1,31 @@
+## When putting either quotes or exposition into the same types of
+## slots, ensure quotations are displayed surrounded by quotes marks to
+## differentiate the two types of information
+associates:
+  -
+    name: John Newbery
+    role: Director & Engineer, Optech
+    other_affiliation: Developer, Chaincode Labs
+    github: jnewbery
+    avatar: https://avatars1.githubusercontent.com/u/1063656?s=400&v=4
+  -
+    name: James O'Beirne
+    role: Engineer, Optech
+    other_affiliation: Developer, Chaincode Labs
+    github: jamesob
+    avatar: https://avatars1.githubusercontent.com/u/73197?s=400&v=4
+  -
+    name: Steve Lee
+    role: Project Manager, Optech
+    github: moneyball
+    avatar: https://avatars0.githubusercontent.com/u/326147?s=400&v=4
+  -
+    name: David A. Harding
+    role: Contributing Technical Writer, Optech
+    github: harding
+    avatar: https://avatars1.githubusercontent.com/u/61096?s=400&v=4
+  -
+    name: Marcin Jachymiak
+    role: Engineer, Optech
+    github: marcinja
+    avatar: https://avatars1.githubusercontent.com/u/12243734?s=400&v=4
