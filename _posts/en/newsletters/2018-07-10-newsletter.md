@@ -89,12 +89,14 @@ Bitcoin.
 5. Additional privacy-focused usecases.  Examples include increased
    privacy for Lightning Network (LN), more private atomic swaps (either
    cross chain when both chains support Schnorr, or on the same chain as
-   part of a coin mixing protocol), and fully private signing oracles
+   part of a coin mixing protocol), and fully [private signing oracles][dlc]
    (services that wait for something to happen in real life, like which
    team wins the world cup, and then provide a signature committing to
    that outcome, e.g. allowing Alice and Bob to settle a bet onchain or
    in a LN channel).  Many of these cases also improve efficiency
    compared to alternatives that use current Bitcoin script.
+
+[dlc]: https://adiabat.github.io/dlc.pdf
 
 One thing of note not in the BIP proposal is a method for signature
 aggregation between multiple inputs in the same transaction.  This was a
@@ -226,18 +228,18 @@ companies:
 
 - [**Merchant adoption**][bitrefill video] - [Sergej Kotliar][sergej], CEO of
   Bitrefill gave a personal account of the fee market spike at the end of last
-  year, important UX considerations for Bitcoin and and lightning payments, and
-  Bitrefill's experiences in integrating lightning.  This talk was
+  year, important UX considerations for Bitcoin and Lightning payments, and
+  Bitrefill's experiences in integrating Lightning.  This talk was
   fascinating due to the real-world empirical data that Sergej shared and his
-  first-hand experience of fees, scaling and lightning.
+  first-hand experience of fees, scaling, and Lightning.
 
 [bitrefill video]: https://www.youtube.com/watch?v=Cpid31c6HZc&feature=youtu.be&t=8m49s
 [sergej]: https://twitter.com/ziggamon
 
 - [**Designing Lighning Wallets for the Bitcoin Users**][lightning ux video] -
   [Patrícia Estevão][patricia] gave a talk about UX considerations when
-  extending Bitcoin wallets to support lightning payments.  An interesting
-  talk for any business that is beginning to integrate lightning payments into
+  extending Bitcoin wallets to support Lightning payments.  An interesting
+  talk for any business that is beginning to integrate Lightning payments into
   an existing Bitcoin product.
 
 [lightning ux video]: https://www.youtube.com/watch?v=XORDEX-RrAI&feature=youtu.be&t=6042
@@ -246,7 +248,7 @@ companies:
 - [**Blind Signatures in Sciptless Scripts**][blind signatures video] -
   [Jonas Nick][jonas] spoke about using Schnorr signatures as the basis
   of doing blind coinswaps (where a server cannot link coins) or exchanging
-  'ecash tokens' on Bitcoin or lightning, amongst other things.  This talk
+  'ecash tokens' on Bitcoin or Lightning, among other things.  This talk
   presents leading edge thinking about what's possible with scriptless
   scripts and the ideas presented are quite a long way from being implementable
   on Bitcoin.  However, it is interesting to see some of the new applications
@@ -256,8 +258,8 @@ companies:
 [jonas]: https://twitter.com/n1ckler
 
 - [**LN story**][ln video] - [Fabrice Drouin][fabrice] presented a history
-  of the development of the lightning network.  A lot of interesting background
-  for anyone planning to integrate and use lightning payments.
+  of the development of the Lightning Network.  A lot of interesting background
+  for anyone planning to integrate and use Lightning payments.
 
 [ln video]: https://www.youtube.com/watch?time_continue=2881&v=Cpid31c6HZc
 [fabrice]: https://twitter.com/acinq_co
