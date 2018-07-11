@@ -9,7 +9,9 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {{ content }}
+  <div class="content"> 
+    {{ content }}
+  </div>
 
   {% assign posts=site.posts | where:"lang", 'en' | where:"type", 'posts' | sort:'post.date' %}
   {%- if posts.size > 0 -%}

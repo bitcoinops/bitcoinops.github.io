@@ -5,6 +5,10 @@
 @import "minima";
 @import "vendor/font-awesome/font-awesome";
 
+h2 {
+    margin-top: 2em;
+}
+
 br.clear {
     clear: left;
 }
@@ -57,4 +61,22 @@ p.sponsor-quote {
 
 .author-role {
         margin-bottom: 0;
+}
+
+a.site-title {
+    width: 8em;
+}
+
+.home .content {
+    margin-top: 2em;
+
+    > .logo {
+        width: 20%;
+        min-width: 8em;
+        float: right;
+        display: inline-block;
+        margin-left: 1.3em;
+        margin-bottom: 1.3em;
+        margin-right: 1.3em;
+    }
 }
