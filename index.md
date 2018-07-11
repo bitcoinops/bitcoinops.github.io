@@ -4,8 +4,9 @@
 
 layout: home
 ---
-{:style="text-align: center"}
-![OpTech Logo](/img/logos/optech.png)
+
+{:.logo}
+![Optech Logo](/img/logos/optech-notext.png)
 
 The Bitcoin Operations Technology Group (Optech) works to bring the best
 open source technologies and techniques to Bitcoin-using businesses in
