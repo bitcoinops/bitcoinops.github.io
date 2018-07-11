@@ -9,6 +9,8 @@ share: false
 version: 1
 ---
 
+{% include newsletter-signup.html %}
+
 <ul class="post-list">
   {%- for post in site.posts -%}
   {%- if post.type == 'newsletter' -%}
