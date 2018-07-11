@@ -24,4 +24,7 @@ Optech does not exist to make a profit, and all materials and documentation
 produced are placed in the public domain. We are supported by our generous
 founding sponsors and contributions from member companies.
 
+
+{% include newsletter-signup.html %}
+
 {% include sponsors.html %}
