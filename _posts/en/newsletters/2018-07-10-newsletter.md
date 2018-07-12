@@ -3,7 +3,7 @@ title: 'Bitcoin Optech Newsletter #3'
 permalink: /en/newsletters/2018/07/10/
 name: 2018-07-10-newsletter
 type: newsletter
-layout: page
+layout: newsletter
 lang: en
 version: 1
 ---
@@ -272,4 +272,3 @@ companies:
 
 [coinjoin video]: https://www.youtube.com/watch?v=XORDEX-RrAI&feature=youtu.be&t=23359
 [adam]: https://twitter.com/waxwing__
-
