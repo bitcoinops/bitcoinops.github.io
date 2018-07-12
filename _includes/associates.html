@@ -2,7 +2,7 @@
 
 <div id="associates">
 
-    <ul class="associates two-column-list">
+    <ul class="associates n-column-list">
         {% for associate in associates %}
         {% assign avatar=associate.avatar %}
         {% unless associate.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{associate.avatar}}{% endcapture %}{% endunless %}
