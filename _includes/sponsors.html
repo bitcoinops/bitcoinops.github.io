@@ -6,7 +6,7 @@
 
 	<p>Our founding sponsors have generously provided funds and resources to cover our start-up and ongoing costs.</p>
 
-	<ul class="sponsors two-column-list">
+	<ul class="sponsors n-column-list">
 	{% for sponsor in sponsors %}
 	{% assign avatar=sponsor.avatar %}
 	{% unless sponsor.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{sponsor.avatar}}{% endcapture %}{% endunless %}

@@ -13,11 +13,11 @@ br.clear {
     clear: left;
 }
 
-ul.two-column-list {
+ul.n-column-list {
         margin-top: 2em;
 }
 
-.two-column-list li {
+.n-column-list li {
         list-style: none;
         float: left;
         width: 12em;
@@ -26,9 +26,19 @@ ul.two-column-list {
         margin-left: 2em;
 }
 
-// Enable this if you want to use a two-column list with FontAwesome
+ul.associates {
+    margin-left: 0;
+
+    li {
+        min-height: 34em;
+        margin-left: 1em;
+        width: 14em;
+    }
+}
+
+// Enable this if you want to use a n-column list with FontAwesome
 // icons replacing the bullets
-//.two-column-list .fa-li {
+//.n-column-list .fa-li {
 //        top: 0.75em;
 //}
 
@@ -44,7 +54,7 @@ p.sponsor-quote {
 	margin-bottom: 0;
 }
 
-// The long text quotes make this application of a two-column list
+// The long text quotes make this application of a n-column list
 // desire more vertical spacing between the quotes
 .sponsors li {
         margin-bottom: 60px;
