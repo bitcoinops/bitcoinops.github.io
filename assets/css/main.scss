@@ -13,21 +13,17 @@ br.clear {
     clear: left;
 }
 
-.two-column-list ul {
-        margin-left: 4em;
+ul.two-column-list {
+        margin-top: 2em;
 }
 
 .two-column-list li {
         list-style: none;
         float: left;
-        width: 16em;
+        width: 12em;
         text-align: left;
         margin-bottom: 20px;
-}
-
-.two-column-list li:nth-child(2n+1) {
-        margin-right: 100px;
-        clear: both;
+        margin-left: 2em;
 }
 
 // Enable this if you want to use a two-column list with FontAwesome
@@ -39,6 +35,7 @@ br.clear {
 p.sponsor-quote {
         font-style: italic;
 	margin-top: 20px;
+        font-size: 12px;
 }
 
 .sponsors h3 {
