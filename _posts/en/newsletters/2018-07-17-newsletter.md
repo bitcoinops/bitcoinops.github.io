@@ -23,7 +23,7 @@ flag, and several notable recent Bitcoin Core merges.
 
 - **Transaction fees increasing:** for transactions targeting
   confirmation within 12 blocks or sooner, [recommended fees][] have risen
-  up to 3x compared to this time next week.  Nodes with default settings
+  up to 3x compared to this time last week.  Nodes with default settings
   still have plenty of room in their mempools, so the trend could quickly
   reverse itself.  It's recommended to be careful making cheap
   consolidation transactions until feerates drop again or unless you can
@@ -127,5 +127,5 @@ flag, and several notable recent Bitcoin Core merges.
 [#13452]: https://github.com/bitcoin/bitcoin/pull/13452
 [#13451]: https://github.com/bitcoin/bitcoin/pull/13451
 [#13580]: https://github.com/bitcoin/bitcoin/pull/13580
-[#13096]: https://github.com/bitcoin/bitcoin/pull/13072
+[#13096]: https://github.com/bitcoin/bitcoin/pull/13096
 [tx-as-internal-node]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
