@@ -24,6 +24,8 @@ Optech does not exist to make a profit, and all materials and documentation
 produced are placed in the public domain. We are supported by our generous
 founding sponsors and contributions from member companies.
 
+If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
+contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 {% include newsletter-signup.html %}
 
