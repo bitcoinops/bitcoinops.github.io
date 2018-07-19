@@ -104,7 +104,7 @@ flag, and several notable recent Bitcoin Core merges.
   `getblock` RPC.  None of this mitigates the attack for actual SPV
   clients.
 
-- **[#13580][]:** New `getzmqnotifications` RPC that "returns
+- **[#13570][]:** New `getzmqnotifications` RPC that "returns
   information about all active ZMQ notification endpoints.  This is
   useful for software that layers on top of bitcoind."
 
@@ -126,6 +126,6 @@ flag, and several notable recent Bitcoin Core merges.
 [#13386]: https://github.com/bitcoin/bitcoin/pull/13386
 [#13452]: https://github.com/bitcoin/bitcoin/pull/13452
 [#13451]: https://github.com/bitcoin/bitcoin/pull/13451
-[#13580]: https://github.com/bitcoin/bitcoin/pull/13580
+[#13570]: https://github.com/bitcoin/bitcoin/pull/13570
 [#13096]: https://github.com/bitcoin/bitcoin/pull/13096
 [tx-as-internal-node]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
