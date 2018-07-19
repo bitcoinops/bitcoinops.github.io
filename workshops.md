@@ -16,7 +16,7 @@ Tuesday, July 17
 <br>3:15-3:30 Break
 <br>3:45-4:45 Topic #3: Optech community and communication
 <br>4:45-5:00 Wrap up
-<br><br>5:30-7:30 Dinner at TBD nearby restaurant
+<br><br>5:30-7:30 Dinner
 
 # Format:
 - Each topic will be a roundtable discussion in which every participant has an equal opportunity to engage.
