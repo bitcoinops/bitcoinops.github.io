@@ -23,6 +23,26 @@ sponsors:
 
 members:
   -
+    name: BitGo
+    twitter: BitGo
+    logo: bitgo.png
+  -
+    name: Coinbase
+    twitter: Coinbase
+    logo: coinbase.png
+  -
     name: Ledger
     twitter: LedgerHQ
-    avatar: https://pbs.twimg.com/profile_images/915545754084741120/N44_mYZ7_400x400.jpg
+    logo: ledger.png
+  -
+    name: Purse
+    twitter: PurseIO
+    logo: purse.png
+  -
+    name: Square
+    twitter: Square
+    logo: square2.jpeg
+  -
+    name: Xapo
+    twitter: xapo
+    logo: xapo.png
