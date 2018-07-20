@@ -29,4 +29,6 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 {% include newsletter-signup.html %}
 
+{% include members.html %}
+
 {% include sponsors.html %}
