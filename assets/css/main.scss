@@ -7,6 +7,12 @@
 
 h2 {
     margin-top: 2em;
+    // A subhead always starts a new row of content, so clear any
+    // floating elements
+    clear: both;
+    // And tell any flexboxes that we don't want to share space with
+    // other content
+    width: 100%;
 }
 
 br.clear {
