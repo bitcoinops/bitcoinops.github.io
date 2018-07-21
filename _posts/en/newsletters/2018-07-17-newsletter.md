@@ -119,7 +119,7 @@ flag, and several notable recent Bitcoin Core merges.
 [eltoo]: https://blockstream.com/eltoo.pdf
 [unsafe sighash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016187.html
 [popular twitter thread]: https://twitter.com/orionwl/status/1014829318986436608
-[schnorr feature]: en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
+[schnorr feature]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
 [#12257]: https://github.com/bitcoin/bitcoin/pull/12257
 [#13072]: https://github.com/bitcoin/bitcoin/pull/13072
 [#13543]: https://github.com/bitcoin/bitcoin/pull/13543
