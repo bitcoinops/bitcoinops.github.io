@@ -9,7 +9,7 @@
 	<ul class="sponsors n-column-list">
 	{% for sponsor in sponsors %}
 	{% assign avatar=sponsor.avatar %}
-	{% unless sponsor.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{sponsor.avatar}}{% endcapture %}{% endunless %}
+	{% unless sponsor.avatar contains 'https://' %}{% capture avatar %}/img/sponsors/{{sponsor.avatar}}{% endcapture %}{% endunless %}
 	<li>
 		<img src="{{ avatar }}" class="bio-photo" width="150" height="150" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
 	    <h3 itemprop="name">{{ sponsor.name }}</h3>
