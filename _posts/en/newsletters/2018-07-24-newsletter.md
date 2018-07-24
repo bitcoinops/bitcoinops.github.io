@@ -49,8 +49,8 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
   or anything else), please contact us. We're here to help our member
   companies!
 
-- **Coin selection RPC unlikely:** In Bitcoin Core's weekly
-  meeting, Andrew Chow raised the possibility of
+- **Coin selection RPC unlikely:** In Bitcoin Core's [weekly
+  meeting][bcc meeting 7/19], Andrew Chow raised the possibility of
   creating an RPC that would allow users to pass in information about a
   transaction they wanted to create, including a list of available
   inputs, and receive back a list of which inputs would be selected by
@@ -160,6 +160,7 @@ prepare for potential future fee increases.
 We love getting contributions to the newsletter from member companies. If you'd like
 to share your experiences in implementing better Bitcoin technology, please contact us!
 
+[bcc meeting 7/19]: https://bitcoincore.org/en/meetings/2018/07/19/
 [rand delay]: https://github.com/bitcoin/bitcoin/commit/22f721dbf23cf5ce9e3ded9bcfb65a3894cc0f8c#diff-118fcbaaba162ba17933c7893247df3aR718
 [p2shinfo bech32]: https://p2sh.info/dashboard/db/bech32-statistics?orgId=1
 [consolidate utxos]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
