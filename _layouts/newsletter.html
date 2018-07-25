@@ -1,5 +1,21 @@
 ---
-layout: page
+layout: default
 --- 
-{{ content }}
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+<article class="newsletter">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
 {% include newsletter-signup.html %}
+
+</article>
