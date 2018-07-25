@@ -5,6 +5,14 @@
 @import "minima";
 @import "vendor/font-awesome/font-awesome";
 
+.post-meta {
+    text-align: center;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
 h2 {
     margin-top: 2em;
     // A subhead always starts a new row of content, so clear any

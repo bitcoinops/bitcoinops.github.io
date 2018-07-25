@@ -8,9 +8,6 @@ lang: en
 version: 1
 ---
 
-
----
-
 Today we’re announcing our new project, Bitcoin Operations Technology Group
 (Optech). We want to help Bitcoin companies adopt the best scaling techniques
 and technologies available to make efficient use of the blockchain, and
