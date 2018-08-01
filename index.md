@@ -21,7 +21,7 @@ weekly newsletter, original research, and facilitating improved relations
 between businesses and the open source community.
 
 Optech does not exist to make a profit, and all materials and documentation
-produced are placed in the public domain. We are supported by our generous
+produced are released under the MIT license. We are supported by our generous
 founding sponsors and contributions from member companies.
 
 If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
