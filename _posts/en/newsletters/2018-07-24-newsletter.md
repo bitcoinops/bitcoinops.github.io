@@ -167,7 +167,6 @@ to share your experiences in implementing better Bitcoin technology, please cont
 [0.16.2rc2]: https://bitcoincore.org/bin/bitcoin-core-0.16.2/test.rc2/
 [announce bmag]: https://bitcoinmagazine.com/articles/chaincode-devs-google-alumni-create-industry-group-help-bitcoin-scale/
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
-[output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 [inv]: https://bitcoin.org/en/developer-reference#inv
 [workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
 
