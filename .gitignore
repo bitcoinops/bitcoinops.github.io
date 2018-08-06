@@ -1,4 +1,23 @@
-_site/
-.sass-cache/
+*.swp
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+._*
+.bundle
 .jekyll-cache/
 .jekyll-metadata
+.sass-cache/
+Icon?
+Thumbs.db
+_cache
+_site/
+ehthumbs.db
+vendor
+
+# To prevent accidental push of translations from
+# Transifex.
+.tx/translations/
+
+# Avoid pushing .gz files created during rsync
+*.gz
