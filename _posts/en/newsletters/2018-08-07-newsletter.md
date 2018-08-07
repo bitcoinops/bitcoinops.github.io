@@ -22,6 +22,8 @@ Bitcoin Core, LND, and C-Lightning projects.
 
 ## Dashboard items
 
+{% assign img1_label = "Transactions signaling opt-in RBF, August 2017 - August 2018" %}
+
 - Transaction [fees remain very low][fee metrics]: Anyone who can wait 10 or
   more blocks for confirmation can reasonably pay the default minimum fee rate.
   It’s a good time to [consolidate UTXOs][consolidate info].
@@ -32,6 +34,8 @@ Bitcoin Core, LND, and C-Lightning projects.
   provide us feedback!
 
     ![{{img1_label}}](/img/posts/rbf.png)
+    *{{img1_label}},
+    source: [Optech dashboard][rbf data]*
 
 ## News
 
