@@ -31,7 +31,7 @@ Bitcoin Core, LND, and C-Lightning projects.
   sourced from Optech's beta dashboard, which we encourage people to try out and
   provide us feedback!
 
-    ![{{img1_label}}](/img/posts/rbf.png)
+    ![Plot of opt-in RBF adoption over time](/img/posts/rbf.png)
 
 ## News
 
