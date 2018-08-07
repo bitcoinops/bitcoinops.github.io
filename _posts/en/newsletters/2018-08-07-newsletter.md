@@ -22,7 +22,16 @@ Bitcoin Core, LND, and C-Lightning projects.
 
 ## Dashboard items
 
-<!-- TODO: @moneyball -->
+- Transaction [fees remain very low][fee metrics]: Anyone who can wait 10 or
+  more blocks for confirmation can reasonably pay the default minimum fee rate.
+  It’s a good time to [consolidate UTXOs][consolidate info].
+
+- Adoption of opt-in RBF remains fairly low, but has materially grown the past
+  year, increasing from [1.5% to 5.7% of transactions][rbf data]. This data was
+  sourced from Optech's beta dashboard, which we encourage people to try out and
+  provide us feedback!
+
+    ![{{img1_label}}](/img/posts/rbf.png)
 
 ## News
 
@@ -153,3 +162,6 @@ commits], and [C-lightning][cl commits].*
 [c-lightning 55d450ff]: https://github.com/ElementsProject/lightning/commit/55d450ff00ce80b01c5c64c072a47fea42657673
 [satoshis.place]: https://satoshis.place/
 [contract thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
+[fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
+[consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
+[rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
