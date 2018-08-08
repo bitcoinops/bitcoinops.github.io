@@ -68,10 +68,10 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
     it'll break [the coin selection] interface'."
 
 - **First use of output script descriptors:** Pieter Wuille has opened
-  PR [#13697][] to Bitcoin Core that implements his [output script
+  PR [#13697][Bitcoin Core #13697] to Bitcoin Core that implements his [output script
   descriptors][] language for describing which output scripts
   (scriptPubKeys) a wallet should monitor for.  This particular PR only
-  applies to the recently-added [`scantxoutset`][#12196] RPC but Wuille's
+  applies to the recently-added [`scantxoutset`][Bitcoin Core #12196] RPC but Wuille's
   ultimate goal is to use this new language elsewhere in the API and "to
   remove the need for importing scripts and keys entirely, and instead
   make the wallet just be a list of these descriptors plus associated
@@ -86,7 +86,7 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
   as CoinJoins.  Several RPCs are added with this merge:
   `walletprocesspsbt`, `walletcreatefundedpsbt`, `decodepsbt`,
   `combinepsbt`, `finalizepsbt`, `createpsbt`, and `convertpsbt`.  For a
-  full description, see PR [#13557][].
+  full description, see PR [#13557][Bitcoin Core #13557].
 
 ## Notable Bitcoin Core merges
 
@@ -96,7 +96,7 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
 git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab95fb9b97a3f6b1b84faf
 {% endcomment %}
 
-- [#9662][]: New wallets can now be created with private keys disabled.
+- [#9662][Bitcoin Core #9662]: New wallets can now be created with private keys disabled.
   This is primarily meant for users who want to exclusively use their
   wallet in conjunction with another program or hardware wallet that
   stores private keys.  This could also be useful to companies that want
@@ -105,7 +105,7 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
   performing whatever actions they desire, such as using the
   [`fundrawtransaction`][rpc fundrawtransaction] RPC.
 
-- [#12196][]: New `scantxoutset` RPC method that allows searching the
+- [#12196][Bitcoin Core #12196]: New `scantxoutset` RPC method that allows searching the
   set of spendable bitcoins (UTXOs) for those matching an address,
   public key, private key, or HD keypath.  The main expected use for
   this is "funds sweeping" where transactions matching an old wallet are
@@ -116,12 +116,12 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
   updated to support output script descriptors, which is planned to
   happen before 0.17.
 
-- [#13604][]: Bitcoin-Qt is now built by default in addition to bitcoind
+- [#13604][Bitcoin Core #13604]: Bitcoin-Qt is now built by default in addition to bitcoind
   on 32-bit ARM systems, and should be distributed by default with the
   other binaries for that system from BitcoinCore.org for future
   releases.  Bitcoin-Qt with 64-bit ARM is not yet supported by default.
 
-- [#13298][]: The node now sends all announcements ([invs][inv]) for
+- [#13298][Bitcoin Core #13298]: The node now sends all announcements ([invs][inv]) for
   new transactions to all of its incoming peers at the same time, after
   a random delay.  Previously, Satoshi Nakamoto [added a feature][rand
   delay] to Bitcoin (the software) that waited for a different random
@@ -148,7 +148,7 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
     nodes no longer find making multiple connections to be useful,
     reducing overall wasted bandwidth.
 
-- [#13652][]: The [`abandontransaction`][rpc abandontransaction] RPC has
+- [#13652][Bitcoin Core #13652]: The [`abandontransaction`][rpc abandontransaction] RPC has
   been fixed to abandon all descendant transactions, not just children.
 
 ## Coming attractions
@@ -171,4 +171,4 @@ to share your experiences in implementing better Bitcoin technology, please cont
 [workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
 
 {% include references.md %}
-{% include link-to-issues.md issues="13697,13557,12196,9662,12196,13604,13298,13652" %}
+{% include linkers/issues.md issues="13697,13557,12196,9662,12196,13604,13298,13652" %}

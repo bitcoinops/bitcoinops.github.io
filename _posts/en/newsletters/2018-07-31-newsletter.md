@@ -129,7 +129,7 @@ lnd: git log --topo-order -p 271db7d06da3edf696e22109ce0277eaff11cc5e..92b0b10dc
 c-lightning: git log --topo-order -p d84d358562a3bcdf48856fdea24511907ff53fd9..0b597f671aa31c1c56d32a554fcdf089646fc7c1
 {% endcomment %}
 
-- [Bitcoin Core #12257][#12257]: if you start Bitcoin Core with the
+- [Bitcoin Core #12257][]: if you start Bitcoin Core with the
   optional flag `-avoidpartialspends`, the wallet will by default spend
   all outputs received to the same address whenever any one of them
   would be spent.  This prevents two outputs to the same address from being spent
@@ -163,7 +163,7 @@ c-lightning: git log --topo-order -p d84d358562a3bcdf48856fdea24511907ff53fd9..0
   parts of the system directly connected to the network.
 
 {% include references.md %}
-{% include link-to-issues.md issues="12257" %}
+{% include linkers/issues.md issues="1617,1531,12257" %}
 
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 [bse 77235]: {{bse}}77235
@@ -171,7 +171,4 @@ c-lightning: git log --topo-order -p d84d358562a3bcdf48856fdea24511907ff53fd9..0
 [bse 77191]: {{bse}}77191
 [bse 76541]: {{bse}}76541
 
-{% assign lnd = "https://github.com/lightningnetwork/lnd/pull/" %}
-[lnd #1617]: {{lnd}}1617
-[lnd #1531]: {{lnd}}1531
 [lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c]: https://github.com/lightningnetwork/lnd/commit/ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c
