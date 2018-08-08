@@ -111,3 +111,10 @@ a.site-title {
    position: absolute;
    left: -5000px;
 }
+
+.member {
+    max-height:75px;
+    min-height:75px;
+    display:flex;
+    align-items:center;
+}
