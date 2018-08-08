@@ -29,7 +29,7 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 {% include newsletter-signup.html %}
 
-<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+<h2>{{ page.list_title | default: "Posts" }}</h2>
 <ul class="post-list">
   {%- for post in site.posts -%}
   {%- if post.type == 'posts' -%}
