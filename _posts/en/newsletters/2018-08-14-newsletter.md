@@ -41,12 +41,11 @@ projects.
 more blocks for confirmation can reasonably pay the default minimum fee rate.
 It’s a good time to [consolidate UTXOs][consolidate info].
 
-- [BTC hash rate][btc hash rate] briefly touched 60 EH/s on August 10, and has a 7 day average of 48 EH/s.
+- Estimated [BTC hash rate][btc hash rate] briefly touched 60 EH/s on August 10, and has a 7 day average of 48 EH/s.
 
-- One way to measure activity in Bitcoin is to look at the the number of transaction in each 
-block. This metric is vaguely periodic in that it has peaks at around 13:00 to 17:00 UTC each
+- The number of transactions in each block. This metric is vaguely periodic in that it has peaks at around 13:00 to 17:00 UTC each
 day. The graph below shows a 25-block moving average of the number of transactions. It was sourced from the
-[Optech beta dashboard][periodic txn data] which we encourage people to try out and provide us feedback about.
+[Optech beta dashboard][periodic txn data] that we encourage people to try out and provide us feedback about.
 
 ![{{img1_label}}](/img/posts/transactions-spikes.png)
 *{{img1_label}},
