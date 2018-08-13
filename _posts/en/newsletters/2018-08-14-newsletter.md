@@ -84,14 +84,14 @@ projects.
     Server](https://github.com/btcpayserver/btcpayserver) is considering
     adding support for P2EP receiving.
   
-- **Bitcoin Core wallet likely to begin only creating low-R
+- **Bitcoin Core wallet to begin only creating low-R
   signatures:** the DER format used to encode Bitcoin signatures
   requires adding an entire extra byte to a signature just to indicate
-  whether the signature's R value is on the top-half or bottom-half of
+  when the signature's R value is on the top-half of
   the elliptical curve used for Bitcoin.  The R value is randomly
   derived, so half of all signatures have this extra byte.
 
-    [Bitcoin Core #13666][] proposes to generate multiple signatures for
+    Merged this this week, Bitcoin Core PR [#13666][Bitcoin Core #13666] generates multiple signatures for
     each transaction (if necessary) using an incremental nonce until a
     signature is found that has a low-R value that doesn't require this
     extra byte.  By doing so, Bitcoin Core transactions will save one
@@ -101,7 +101,9 @@ projects.
     capacity by up to a few thousand transactions a day.  The cost is
     that it will take Bitcoin Core twice as long to generate an average
     signature and that it reduces the entropy (randomness) of the
-    generated signatures by 1 bit, neither of which is significant.
+    generated signatures by 1 bit, neither of which is significant.  It
+    may also make transactions created by Bitcoin Core somewhat easier
+    to identify if no other wallets adopt this change.
 
     Note that this change does not affect other software in any way
     (except for other wallets being able to use the extra block chain
@@ -158,7 +160,7 @@ projects.
 
 *Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
 commits], and [C-lightning][cl commits].  Does not include Bitcoin Core
-#13907 described above.  Note: the bulk of the changes to all three
+#13907 or #13666 described above.  Note: the bulk of the changes to all three
 projects this week seemed to be improvements to their automated testing
 code; we aren't describing those in this newsletter, but we're sure
 users and developers highly appreciate that work.*
