@@ -10,7 +10,7 @@ This week's newsletter includes the usual dashboard and action items,
 news about the importance of allowing secure and anonymous responsible
 disclosure of bugs, a potential new payment protocol that can improve
 privacy on Bitcoin without any consensus rule changes, shaving one byte
-of the size of every transaction signature, a new restriction on the P2P
+off the size of every transaction signature, a new restriction on the P2P
 network protocol, and lowering the minimum transaction relay fee---plus
 a few notable commits from the Bitcoin Core, LND, and C-Lightning
 projects.
