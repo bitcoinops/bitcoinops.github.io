@@ -53,7 +53,7 @@ source: [Optech dashboard][periodic txn data]*
 
 ## News
 
-- Bitcoin Core developer and Digital Currency Initiative (DCI) member Cory
+- **How to help security researchers:** Bitcoin Core developer and Digital Currency Initiative (DCI) member Cory
   Fields [revealed][fields post] that he was the anonymous source behind
   the disclosure of a potentially consensus-breaking bug in the Bitcoin
   Cash cryptocurrency.  After a frustrating experience trying to report
