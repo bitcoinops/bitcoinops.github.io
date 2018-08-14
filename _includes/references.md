@@ -9,6 +9,7 @@
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
+[BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
 
