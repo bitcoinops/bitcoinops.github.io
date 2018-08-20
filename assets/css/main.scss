@@ -101,3 +101,20 @@ a.site-title {
         margin-right: 1.3em;
     }
 }
+
+#mc_embed_signup {
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+}
+
+.mc-input {
+   position: absolute;
+   left: -5000px;
+}
+
+.member {
+    max-height:75px;
+    min-height:75px;
+    display:flex;
+    align-items:center;
+}

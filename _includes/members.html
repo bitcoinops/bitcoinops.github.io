@@ -6,12 +6,12 @@
 
 	<p>Bitcoin Optech is supported by our member companies.</p>
 
-	<ul class="members n-column-list">
+	<ul class="n-column-list">
 	{% for member in members %}
 	{% assign logo=member.logo %}
 	{% unless member.logo contains 'https://' %}{% capture logo %}/img/members/{{member.logo}}{% endcapture %}{% endunless %}
 	<li>
-		<div style="max-height:75px;min-height:75px;display:flex;align-items:center">
+		<div class="member">
 		<a href="https://twitter.com/{{ member.twitter }}"><img src="{{ logo }}" width="150" alt="{{ member.name }}" title="{{ member.name }}"></a>
 		</div>
 	</li>
