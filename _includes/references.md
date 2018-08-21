@@ -10,8 +10,11 @@
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
+[BIP150]: https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki
+[BIP151]: https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
+[BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 
 {% comment %}<!-- old newsletters (variables & links) in date order earliest to latest -->{% endcomment %}
 {% assign news0 = "/en/newsletters/2018/06/08/" %}
@@ -30,6 +33,10 @@
 [newsletter #6]: {{news6}}
 {% assign news7 = "/en/newsletters/2018/08/07/" %}
 [newsletter #7]: {{news7}}
+{% assign news8 = "/en/newsletters/2018/08/14/" %}
+[newsletter #8]: {{news8}}
+{% assign news9 = "/en/newsletters/2018/08/21/" %}
+[newsletter #9]: {{news9}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
