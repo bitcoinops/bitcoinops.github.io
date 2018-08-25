@@ -31,6 +31,10 @@ members:
     twitter: BitMEXdotcom
     logo: bitmex.png
   -
+    name: Bitrefill
+    twitter: bitrefill
+    logo: bitrefill.svg
+  -
     name: Coinbase
     twitter: Coinbase
     logo: coinbase.png
