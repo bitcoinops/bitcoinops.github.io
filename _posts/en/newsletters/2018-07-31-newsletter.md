@@ -85,7 +85,7 @@ C-lightning projects.
 https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer
 -->{% endcomment %}
 
-*[Bitcoin StackExachange][bitcoin.se] is one of the first places Optech
+*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this new monthly feature, we highlight some of the top voted questions
