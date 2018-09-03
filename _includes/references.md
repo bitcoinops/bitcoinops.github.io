@@ -11,6 +11,8 @@
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
 [BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
+[BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
+[BIP143]: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki
 [BIP150]: https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki
 [BIP151]: https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
@@ -46,6 +48,7 @@ version of BitcoinCore.org's RPC docs-->
 {% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.16.2/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
+[rpc getpeerinfo]: {{rpc_prefix}}/network/getpeerinfo/
 [rpc importaddress]:   {{rpc_prefix}}/wallet/importaddress/
 [rpc importmulti]:   {{rpc_prefix}}/wallet/importmulti/
 [rpc importprivkey]:   {{rpc_prefix}}/wallet/importprivkey/
