@@ -1,7 +1,7 @@
 ---
 title: 'Bitcoin Optech Dashboard'
 permalink: /en/dashboard-announcement/
-name: 2018-08-30-dashboard-announcement
+name: 2018-09-04-dashboard-announcement
 type: posts
 layout: post
 lang: en
