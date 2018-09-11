@@ -14,13 +14,22 @@ Bitcoin infrastructure projects.
 
 ## Action items
 
-{% comment %}<!-- FIXME: this hasn't actually happened yet, but I'm
-expecting it before Tuesday morning -harding -->{% endcomment %}
-
 - **Allocate time to test Bitcoin Core 0.17RC3:** Bitcoin Core has
   uploaded [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 3.
   Testing is greatly appreciated and can help ensure the quality of the
   final release.
+
+- Plans for the second Optech [workshop][workshop] are progressing,
+  with date and location confirmed for Paris on November 12th/13th. The
+  tentative list of topics is:
+    - Replace-by-fee vs. child-pays-for-parent as fee replacement techniques
+    - Partially Signed Bitcoin Transactions (BIP 174)
+    - Output script descriptors for wallet interoperability (gist)
+    - Lightning wallet integration and applications for exchanges
+    - Approaches to coin selection & consolidation
+
+  **Member companies who would like to send engineers to the workshop should
+  [email Optech][optech email]**.
 
 ## News
 
@@ -101,6 +110,7 @@ wait until version 0.18 in about six months from now.*
 {% include linkers/issues.md issues="12775,12490,14096" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
+[workshop]: /workshops
 [documentation for output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [news10 news]: {{news10}}#news
 [decker w3c]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html
