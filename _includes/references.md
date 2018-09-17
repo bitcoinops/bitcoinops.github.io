@@ -8,7 +8,9 @@
 [output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
+[BIP21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
+[BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
 [BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
 [BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
