@@ -6,14 +6,38 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter includes action items related to the
-newly-proposed BIP322, Bitcoin Core 0.17, and Optech's upcoming Paris
-workshop; a link to the C-Lightning 0.6.1 release, more information
-about BIP322, and some details about the Bustapay proposal; plus brief
-descriptions of notable merges in popular Bitcoin infrastructure
-projects.
+This week's newsletter includes action items related to the security
+release of Bitcoin Core 0.16.3 and Bitcoin Core 0.17RC4, the
+newly-proposed BIP322, and Optech's upcoming Paris workshop; a link to
+the C-Lightning 0.6.1 release, more information about BIP322, and some
+details about the Bustapay proposal; plus brief descriptions of notable
+merges in popular Bitcoin infrastructure projects.
 
 ## Action items
+
+- **Upgrade to Bitcoin Core 0.16.3 to fix denial-of-service
+  vulnerability:** a bug introduced in Bitcoin Core 0.14.0 and affecting
+  all subsequent versions through to 0.16.2 will cause Bitcoin Core to
+  crash when attempting to validate a block containing a transaction
+  that attempts to spend the same input twice.  Such blocks would be
+  invalid and so can only be created by miners willing to lose the
+  allowed income from having created a block (at least 12.5 XBT or
+  $80,000 USD).
+
+    Patches for [master][dup txin master] and [0.16][dup txin 0.16]
+    branches were submitted for public review yesterday, the 0.16.3
+    release has been tagged containing the patch, and binaries will
+    be available for [download][core download] as soon as a sufficient
+    number of well-known contributors have reproduced the deterministic
+    build---probably later today (Tuesday).  Immediate upgrade is
+    highly recommended.
+
+- **Allocate time to test Bitcoin Core 0.17RC4:** Bitcoin Core will soon
+  be uploading [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 4
+  containing the same patch for the DoS vulnerability described above.
+  All testers of previous release candidates should upgrade.  Testing is
+  greatly appreciated and can help ensure the quality of the final
+  release.
 
 - **Review proposed BIP322 for generic message signing:** this
   [recently-proposed][BIP322 proposal] BIP will allow users to create
@@ -25,11 +49,6 @@ projects.
   encourages allocating some engineering time to ensure the proposal is
   compatible with your organization's needs.  See the News section below
   for additional details.
-
-- **Allocate time to test Bitcoin Core 0.17RC3:** Bitcoin Core has
-  uploaded [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 3.
-  Testing is greatly appreciated and can help ensure the quality of the
-  final release.
 
 - **[Optech Paris workshop][workshop] November 12-13:** member
   companies should [send us an email][optech email] to reserve spots for
@@ -142,7 +161,7 @@ wait until version 0.18 in about six months from now.*
   [Bitcoin Core #14168][]. This issue, along with a number of other issues such
   as [Bitcoin Core #10973][] (Refactor: separate wallet from node) and [Bitcoin
   Core #14180][] (Run all tests even if wallet is not compiled) are part of a
-  long-term effort to disentagle the wallet code from the server code. Doing so
+  long-term effort to disentangle the wallet code from the server code. Doing so
   provides a number of benefits including easier code maintenance, better
   opportunities for testing individual components, and potentially more secure
   software if the wallet component is moved to its own process.
@@ -177,3 +196,6 @@ wait until version 0.18 in about six months from now.*
 [bustapay proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
 [bustapay sjors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016383.html
 [p2p reject]: https://btcinformation.org/en/developer-reference#reject
+[dup txin master]: https://github.com/bitcoin/bitcoin/pull/14247
+[dup txin 0.16]: https://github.com/bitcoin/bitcoin/pull/14249
+[core download]: https://bitcoincore.org/en/download
