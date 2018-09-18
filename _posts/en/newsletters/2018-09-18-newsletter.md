@@ -121,13 +121,6 @@ wait until version 0.18 in about six months from now.*
   end="36eab5de26e203311ceeb65c94ec5beb9c94ff5d"
 %}
 
-{% comment %}<!-- maybe TODO: perhaps mention Bitcoin Core #7965 given
-this week's merge of #14168?  Seems notable for being the conclusion of
-significant work over a long period of time, but I'm not sure what the
-benefits are and if any of those benefits will be user-visible.  Maybe
-better abstraction/separation just makes it easier to implement things
-like #10973?  -->{% endcomment %}
-
 - [Bitcoin Core #14054][]: this PR prevents the node from sending
   [BIP61][] peer-to-peer protocol [reject messages][p2p reject] by
   default.  These messages were implemented to make it easier for
@@ -140,8 +133,19 @@ like #10973?  -->{% endcomment %}
     own nodes and inspect their nodes' logs for error messages in case
     of problems (perhaps after enabling debug logging).  Users who still
     need to send `reject` messages can use the `-enablebip61`
-    configuration option, although it seems likely that `reject`
+    configuration option, although it's possible that `reject`
     messages will be removed altogether in a release after 0.18.
+
+- [Bitcoin Core #7965][]: this long-standing issue tracked the removal
+  of code in the libbitcoin_server component to handle whether the wallet is
+  compiled or not.  The issue was finally closed this week by the merge of
+  [Bitcoin Core #14168][]. This issue, along with a number of other issues such
+  as [Bitcoin Core #10973][] (Refactor: separate wallet from node) and [Bitcoin
+  Core #14180][] (Run all tests even if wallet is not compiled) are part of a
+  long-term effort to disentagle the wallet code from the server code. Doing so
+  provides a number of benefits including easier code maintenance, better
+  opportunities for testing individual components, and potentially more secure
+  software if the wallet component is moved to its own process.
 
 - [LND #1843][]: a configuration option intended only for testing
   (`--noencryptwallet`) has been renamed to `--noseedbackup`, been
@@ -161,7 +165,7 @@ like #10973?  -->{% endcomment %}
   handling of things such as fee estimates and crashes of bitcoind.
 
 {% include references.md %}
-{% include linkers/issues.md issues="14054,1843,1516" %}
+{% include linkers/issues.md issues="14054,1843,1516,7965,14168,10973,14180" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [workshop]: /workshops
