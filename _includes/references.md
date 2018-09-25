@@ -21,6 +21,11 @@
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 
+{% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
+[BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
+[BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
+[BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
+
 {% comment %}<!-- old newsletters (variables & links) in date order earliest to latest -->{% endcomment %}
 {% assign news0 = "/en/newsletters/2018/06/08/" %}
 [newsletter #0]: {{news0}}
