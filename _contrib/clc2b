@@ -1,0 +1,11 @@
+#!/bin/bash -eu
+
+## C-Lightning Commit to Browser: opens a browser on a commit so that
+## you can find out its PR number
+
+if [ $# -lt 1 ]
+then
+  echo "Usage: $0 <commitid>"
+fi
+
+x-www-browser https://github.com/ElementsProject/lightning/commit/"$1"

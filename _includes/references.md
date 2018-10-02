@@ -4,6 +4,7 @@
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
 [bitcoin.se]: https://bitcoin.stackexchange.com/
+[BitcoinCore.org]: https://bitcoincore.org/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 
@@ -58,7 +59,7 @@
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->
 {% endcomment %}
-{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.16.2/rpc" %}
+{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.16.3/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
 [rpc getpeerinfo]: {{rpc_prefix}}/network/getpeerinfo/
