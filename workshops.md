@@ -22,11 +22,29 @@ and the specific scaling challenges that they are facing.
   but should refrain from attributing any particular statement to a given
   individual (Chatham House Rules).
 
-## Workshop #2 - Paris, Fall 2018
+If you have any requests or suggestions for future workshop events, please
+[contact us][optech email].
 
-We are in the early stages of planning the second Bitcoin Optech workshop in
-Paris for Fall 2018. Member companies who would like to attend should
-[contact us][optech email]!
+## Workshop #2 - Paris, November 12-13 2018
+
+Bitcoin Optech will hold our second workshop in Paris on November 12-13 2018.
+
+Member companies who would like to attend should [contact us][optech email]!
+
+#### Location
+
+The workshop will take place in Paris's [2nd
+arrondissement](https://goo.gl/maps/PJuA3KveWpE2).
+
+#### Topics
+
+We plan to cover the following topics:
+
+- Replace-by-fee vs. child-pays-for-parent as fee replacement techniques
+- Partially Signed Bitcoin Transactions ([BIP 174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki))
+- [Output script descriptors](https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82) for wallet interoperability
+- Lightning wallet integration and applications for exchanges
+- Approaches to coin selection & consolidation
 
 ## Workshop #1 - San Francisco, July 17 2018
 
