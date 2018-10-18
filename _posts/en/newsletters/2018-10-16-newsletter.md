@@ -50,7 +50,8 @@ None this week.
     3. *Handling reorgs and forks* by Bryan Bishop.  Describes how to
        secure your transactions against changes in the Bitcoin block
        chain or consensus rules, including suggestions for how to test
-       your systems.  ([Video][kanzure reorg vid], no transcript)
+       your systems.  ([Video][kanzure reorg vid], [transcript][kanzure
+       reorg transcript])
 
 ## CoreDev.tech
 
@@ -147,5 +148,6 @@ on some of the transcripts for the event in Tokyo last week:
 [warren vid]: https://youtu.be/iPt2ekHoEy8
 [kanzure wallet transcript]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/wallet-security/
 [kanzure wallet vid]: https://youtu.be/WcOIXsOLJ3w?t=3552
+[kanzure reorg transcript]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/reorgs/
 [kanzure reorg vid]: https://youtu.be/EUUQbveGF5E?t=4
 [UHO]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html
