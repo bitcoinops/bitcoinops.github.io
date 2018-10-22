@@ -73,9 +73,9 @@ popular Bitcoin infrastructure projects.
   creating the pubkey, they may also make it possible for fewer than all
   of them to sign, e.g. 2-of-3 of them must cooperate to sign.  This can
   be much more efficient than Bitcoin's current multisig, which requires
-  placing *m* signatures and *n* pubkeys into transactions for m-of-n
+  placing *k* signatures and *n* pubkeys into transactions for k-of-n
   security, whereas multiparty ECDSA would always require only one
-  signature and one pubkey for any *m* or *n*.  The techniques
+  signature and one pubkey for any *k* or *n*.  The techniques
   underlying multiparty ECDSA may also be used with scriptless scripts
   as described in [Newsletter #16][news16 mpecdsa].
 
@@ -84,7 +84,7 @@ popular Bitcoin infrastructure projects.
     for ECDSA means it also supports pure ECDSA multiparty schemes as
     well.  No changes are required to the consensus rules, the P2P
     protocol, address formats, or any other shared resource.  All you
-    need are two wallets that both implement multiparty ECDSA key
+    need are two or more wallets that implement multiparty ECDSA key
     generation and signing.  This can make the scheme appealing to
     existing services that gain from the additional security of Bitcoin
     multisig but lose from having to pay additional transaction fees for
@@ -93,9 +93,9 @@ popular Bitcoin infrastructure projects.
     It will likely take time for experts to review these papers,
     evaluate their security properties, and consider implementing
     them---and some experts are already busy working on implementing a
-    consensus change proposal that would enable a Schnorr signature
-    scheme that would also provide for multiparty pubkeys and signatures
-    (and which also provides multiple other benefits).
+    consensus change proposal to enable a Schnorr signature
+    scheme that can simplify generation of multiparty pubkeys and signatures
+    and also provide multiple other benefits.
 
     - [Fast Multiparty Threshold ECDSA with Fast Trustless Setup][mpecdsa goldfeder] by Rosario Gennaro and Steven Goldfeder
 
