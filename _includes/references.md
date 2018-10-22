@@ -12,8 +12,10 @@
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
 [BIP21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
+[BIP47]: https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
+[BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
 [BIP118]: https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki
 [BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
 [BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
@@ -26,7 +28,9 @@
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
+[BOLT4]: https://github.com/lightningnetwork/lightning-rfc/blob/master/04-onion-routing.md
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
+[BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 
 {% comment %}<!-- old newsletters (variables & links) in date order earliest to latest -->{% endcomment %}
@@ -56,12 +60,14 @@
 [newsletter #11]: {{news11}}
 {% assign news12 = "/en/newsletters/2018/09/11/" %}
 [newsletter #12]: {{news12}}
+{% assign news16 = "/en/newsletters/2018/10/09/" %}
+[newsletter #16]: {{news16}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->
 {% endcomment %}
-{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.16.3/rpc" %}
+{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.17.0/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
 [rpc getpeerinfo]: {{rpc_prefix}}/network/getpeerinfo/
