@@ -1,7 +1,7 @@
 {% capture /dev/null %}
 <!-- 
 issues.md: creates Markdown referency-style links to issues and pull
-requests in the Bitcoin Core, LND, and C-Lightning repositories.
+requests in the Bitcoin Core, LND, C-Lightning, and libsecp256k1 repositories.
 
 When changing this file, a good test to run to ensure that all links are
 working is the htmlproofer line from the Makefile with the
@@ -31,4 +31,5 @@ scraping.
 [bitcoin core #{{_issue}}]: https://github.com/bitcoin/bitcoin/issues/{{_issue}}
 [lnd #{{_issue}}]: https://github.com/lightningnetwork/lnd/issues/{{_issue}}
 [c-lightning #{{_issue}}]: https://github.com/ElementsProject/lightning/issues/{{_issue}}
+[libsecp256k1 #{{_issue}}]: https://github.com/bitcoin-core/secp256k1/issues/{{_issue}}
 {% endfor %}
