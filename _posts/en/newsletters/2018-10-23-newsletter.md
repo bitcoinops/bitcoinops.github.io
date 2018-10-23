@@ -187,7 +187,7 @@ commits].*
   default and which permits passing arbitrary data to that function.
 
 {% include references.md %}
-{% include linkers/issues.md issues="14291,14424,1978,2062,2063,2051,2033,354,14415,14531" %}
+{% include linkers/issues.md issues="14291,14424,1978,2062,2063,2051,2033,354,14415,14532" %}
 
 [bitmessage]: https://bitmessage.org/wiki/Encryption
 [elementsproject]: https://elementsproject.org/
