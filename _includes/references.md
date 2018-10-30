@@ -11,9 +11,11 @@
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
 [BIP21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
+[BIP32]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
 [BIP47]: https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
+[BIP69]: https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
 [BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
 [BIP118]: https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki
@@ -25,6 +27,7 @@
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
+[BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
@@ -62,6 +65,8 @@
 [newsletter #12]: {{news12}}
 {% assign news16 = "/en/newsletters/2018/10/09/" %}
 [newsletter #16]: {{news16}}
+{% assign news17 = "/en/newsletters/2018/10/16/" %}
+[newsletter #17]: {{news17}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
@@ -70,10 +75,13 @@ version of BitcoinCore.org's RPC docs-->
 {% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.17.0/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
+[rpc generatetoaddress]: {{rpc_prefix}}/generating/generatetoaddress/
+[rpc getnewaddress]: {{rpc_prefix}}/wallet/getnewaddress/
 [rpc getpeerinfo]: {{rpc_prefix}}/network/getpeerinfo/
 [rpc importaddress]:   {{rpc_prefix}}/wallet/importaddress/
 [rpc importmulti]:   {{rpc_prefix}}/wallet/importmulti/
 [rpc importprivkey]:   {{rpc_prefix}}/wallet/importprivkey/
 [rpc importpubkey]:   {{rpc_prefix}}/wallet/importpubkey/
 [rpc importwallet]:   {{rpc_prefix}}/wallet/importwallet/
+[rpc scantxoutset]:   {{rpc_prefix}}/blockchain/scantxoutset/
 [rpc verifytxoutproof]:   {{rpc_prefix}}/blockchain/verifytxoutproof/
