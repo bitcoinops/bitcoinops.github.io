@@ -76,6 +76,8 @@ version of BitcoinCore.org's RPC docs-->
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
 [rpc generatetoaddress]: {{rpc_prefix}}/generating/generatetoaddress/
+[rpc getaddressinfo]: {{rpc_prefix}}/wallet/getaddressinfo/
+[rpc getblocktemplate]: {{rpc_prefix}}/mining/getblocktemplate/
 [rpc getnewaddress]: {{rpc_prefix}}/wallet/getnewaddress/
 [rpc getpeerinfo]: {{rpc_prefix}}/network/getpeerinfo/
 [rpc importaddress]:   {{rpc_prefix}}/wallet/importaddress/
