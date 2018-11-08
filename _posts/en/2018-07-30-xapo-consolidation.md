@@ -6,6 +6,10 @@ type: posts
 layout: post
 lang: en
 version: 1
+excerpt: >
+  A field report from Anthony Towns, a developer at Xapo, about how they
+  consolidated around 4 million UTXOs to prepare for potential future
+  fee increases.
 ---
 
 {:.post-meta}
