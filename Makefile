@@ -9,4 +9,7 @@ build:
 	bundle exec jekyll build --future --drafts --unpublished
 
 test:
+	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
+	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
+	## Check for broken links
 	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
