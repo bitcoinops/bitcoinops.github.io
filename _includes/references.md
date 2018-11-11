@@ -67,6 +67,8 @@
 [newsletter #16]: {{news16}}
 {% assign news17 = "/en/newsletters/2018/10/16/" %}
 [newsletter #17]: {{news17}}
+{% assign news19 = "/en/newsletters/2018/10/30/" %}
+[newsletter #19]: {{news19}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest

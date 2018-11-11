@@ -7,9 +7,10 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter summarizes a few discussions on the Lightning-Dev
-mailing list and suggests an opportunity to develop a new tool some
-users would find helpful.  Several notable code changes in popular
-Bitcoin infrastructure projects are also described.
+mailing list, suggests an opportunity to develop a new tool some users would
+find helpful, and provides summaries and links to some of the talks at the
+recent Chaincode Lightning Applications residency.  Several notable code
+changes in popular Bitcoin infrastructure projects are also described.
 
 ## Action items
 
@@ -62,6 +63,47 @@ None this week.
     Bitcoin Core already supports for users not running a node.  Some
     ideas for how to implement such a tool were discussed both during
     and [after][core dev log] the meeting.
+
+## Lightning Application Residency Videos
+
+As reported previously in [newsletter #19][], Chaincode Labs recently hosted a
+five-day [residency program][] for developing applications on the Lightning
+Network, including presentations from experts in the space. Videos of the
+[presentations][] and [resident demos][] have now been posted online, along
+with the slide decks for the expert presentations. The following
+talks may be of particular interest to members:
+
+- [**The Lightning Protocol - an Application Developers Perspective**][bosworth
+  video] - [Alex Bosworth][bosworth], infrastructure lead at Lightning Labs,
+  gives a comprehensive overview of the Lightning protocol, explaining all of the
+  [BOLTs][], and how they are relevant for developers building on top of the
+  protocol. This talk should be useful for any developers wanting to integrate
+  Lightning into products or services.
+
+- [**Lightning ≈ Bitcoin**][decker video] - [Christian Decker][decker], Core Tech
+  Engineer at Blockstream, describes the similarities and differences between
+  Bitcoin and Lightning payments, highlighting where on-chain transactions are
+  more appropriate then off-chain (and vice versa). He finishes with a summary
+  of enhancements that may be proposed at the November 2018 Lightning protocol
+  meeting.
+
+- [**Integrating Lightning into Bitrefill**][camarena video] - [Justin
+  Camarena][camarena], infrastructure engineer at bitrefill, explains how
+  bitrefill integrated lightning payments into their store. Bitrefill was
+  one of the first Bitcoin merchants to start accepting mainnet Lightning
+  payments, and Justin shows us how they integrated Lightning into their
+  infrastructure, and the challenges they met and overcame along the way.
+  For those interested in a high level overview of bitrefill's experience
+  with Lightning, the [talk by Sergej Kotliar at Building on Bitcoin][kotliar
+  BoB], covered in [newsletter #3][] will also be of interest.
+
+- [**Zap - UX, Design and Product approach**][mallers video] -
+  [Jack Mallers][mallers], founder of Zap, explains his approach to product
+  design and user experience. Lightning can potentially solve a lot of user
+  experience issues associated with using Bitcoin, but also brings up some user
+  experience challenges of its own. Jack explains how he thinks about user
+  experience in Zap, the UX challenges he's faced building the product and how
+  he's solved them.
 
 ## Notable code changes
 
@@ -129,3 +171,16 @@ commits].*
 [core dev meeting]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2018/bitcoin-core-dev.2018-11-08-19.00.log.html#l-49
 [core dev log]: http://www.erisian.com.au/bitcoin-core-dev/log-2018-11-08.html#l-668
 [zeromq]: http://zeromq.org/
+[residency program]: https://lightningresidency.com
+[presentations]: https://lightningresidency.com/#videos
+[resident demos]: https://www.youtube.com/playlist?list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_
+[bosworth video]: https://www.youtube.com/watch?v=1R5DNUcCYRg&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=6&t=0s
+[bosworth]: https://twitter.com/alexbosworth
+[BOLTs]: https://github.com/lightningnetwork/lightning-rfc
+[decker video]: https://www.youtube.com/watch?v=8lMLo-7yF5k&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=5&t=0s
+[decker]: https://twitter.com/Snyke
+[camarena video]: https://www.youtube.com/watch?v=RZtx6ZMLDrQ&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=12&t=0s
+[camarena]: https://twitter.com/juscamarena
+[kotliar BoB]: https://www.youtube.com/watch?v=Cpid31c6HZc&feature=youtu.be&t=8m49s
+[mallers video]: https://www.youtube.com/watch?v=R0C83h-ZM-4&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=17&t=0s
+[mallers]: https://twitter.com/JackMallers
