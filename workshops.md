@@ -27,18 +27,10 @@ If you have any requests or suggestions for future workshop events, please
 
 ## Workshop #2 - Paris, November 12-13 2018
 
-Bitcoin Optech will hold our second workshop in Paris on November 12-13 2018.
-
-Member companies who would like to attend should [contact us][optech email]!
-
-#### Location
-
-The workshop will take place in Paris's [2nd
-arrondissement](https://goo.gl/maps/PJuA3KveWpE2).
+Bitcoin Optech held our second workshop in Paris on November 12-13 2018. In
+attendence were 24 engineers from Bitcoin companies and open source projects.
 
 #### Topics
-
-We plan to cover the following topics:
 
 - Replace-by-fee vs. child-pays-for-parent as fee replacement techniques
 - Partially Signed Bitcoin Transactions ([BIP 174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki))
@@ -46,31 +38,25 @@ We plan to cover the following topics:
 - Lightning wallet integration and applications for exchanges
 - Approaches to coin selection & consolidation
 
+### Thanks
+
+Thanks to Ledger for hosting the workshop and helping with organization.
+
 ## Workshop #1 - San Francisco, July 17 2018
 
-Bitcoin Optech held our first workshop at Square in San Francisco on July
-17 2018. In attendence were 14 engineers from SF Bay Area Bitcoin companies.
+Bitcoin Optech held our first workshop in San Francisco on July 17 2018. In
+attendence were 14 engineers from SF Bay Area Bitcoin companies and open
+source projects.
 
 #### Topics
 
 - Coin selection
-  - What do you do today?
-  - What constraints do you face?
-  - How do you prioritize potentially competing factors: blockchain efficiency,
-    transaction throughput, privacy, minimizing fees?
-  - What are best practices?
-
 - Fee estimation, RBF, CPFP best practices
-  - What do you do today?
-  - What constraints do you face?
-  - What are the UX implications for your customers?
-  - What are best practices?
-
 - Optech community and communication
-  - What level of involvement would you like to have creating best practices
-    open source cookbooks?
-  - What do you want to see in an Optech community newsletter?
-  - How do you want to engage with each other moving forward? Online forum?
-    Slack? Dinners?
+
+### Thanks
+
+Thanks to Square for hosting the workshop and Coinbase for helping with
+organization.
 
 {% include references.md %}
