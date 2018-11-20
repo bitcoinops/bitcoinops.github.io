@@ -69,6 +69,8 @@
 [newsletter #17]: {{news17}}
 {% assign news19 = "/en/newsletters/2018/10/30/" %}
 [newsletter #19]: {{news19}}
+{% assign news21 = "/en/newsletters/2018/11/13/" %}
+[newsletter #21]: {{news21}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
@@ -87,5 +89,6 @@ version of BitcoinCore.org's RPC docs-->
 [rpc importprivkey]:   {{rpc_prefix}}/wallet/importprivkey/
 [rpc importpubkey]:   {{rpc_prefix}}/wallet/importpubkey/
 [rpc importwallet]:   {{rpc_prefix}}/wallet/importwallet/
+[rpc listtransactions]: {{rpc_prefix}}/wallet/listtransactions/
 [rpc scantxoutset]:   {{rpc_prefix}}/blockchain/scantxoutset/
 [rpc verifytxoutproof]:   {{rpc_prefix}}/blockchain/verifytxoutproof/
