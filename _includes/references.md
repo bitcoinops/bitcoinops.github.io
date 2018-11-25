@@ -26,6 +26,7 @@
 [BIP151]: https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
+[BIP173]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 [BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
 
@@ -67,6 +68,8 @@
 [newsletter #16]: {{news16}}
 {% assign news17 = "/en/newsletters/2018/10/16/" %}
 [newsletter #17]: {{news17}}
+{% assign news18 = "/en/newsletters/2018/10/23/" %}
+[newsletter #18]: {{news18}}
 {% assign news19 = "/en/newsletters/2018/10/30/" %}
 [newsletter #19]: {{news19}}
 {% assign news21 = "/en/newsletters/2018/11/13/" %}
