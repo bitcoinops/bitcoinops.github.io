@@ -122,3 +122,13 @@ a.site-title {
     display:flex;
     align-items:center;
 }
+
+.callout {
+  border: thin solid black;
+  padding: 0.5em;
+  
+  h2, h3, h4 {
+    text-align: center;
+    font-size: 110%;
+  }
+}
