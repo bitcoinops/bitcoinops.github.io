@@ -7,6 +7,7 @@
 [BitcoinCore.org]: https://bitcoincore.org/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
+[libminisketch]: https://github.com/sipa/minisketch
 [output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
