@@ -35,6 +35,10 @@ members:
     twitter: bitrefill
     logo: bitrefill.svg
   -
+    name: Bitstamp
+    twitter: Bitstamp
+    logo: bitstamp.png
+  -
     name: BRD
     twitter: brdhq
     logo: BRD.png
