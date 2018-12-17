@@ -59,6 +59,10 @@ members:
     twitter: LedgerHQ
     logo: ledger.png
   -
+    name: Paxos
+    twitter: PaxosGlobal
+    logo: paxos.png
+  -
     name: Purse
     twitter: PurseIO
     logo: purse.png
