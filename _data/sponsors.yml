@@ -35,6 +35,10 @@ members:
     twitter: bitrefill
     logo: bitrefill.svg
   -
+    name: BRD
+    twitter: brdhq
+    logo: BRD.png
+  -
     name: Casa
     twitter: CasaHODL
     logo: casa.png
