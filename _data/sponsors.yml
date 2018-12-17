@@ -43,6 +43,10 @@ members:
     twitter: Coinbase
     logo: coinbase.png
   -
+    name: Electrum
+    twitter: ElectrumWallet
+    logo: electrum.png
+  -
     name: Ledger
     twitter: LedgerHQ
     logo: ledger.png
