@@ -1,5 +1,5 @@
 ---
-title: '2018 Optech Annual Report'
+title: '2018 Annual Report'
 permalink: /en/2018-optech-annual-report/
 name: 2018-12-28-2018-optech-annual-report
 type: posts
@@ -7,6 +7,10 @@ layout: post
 lang: en
 version: 1
 ---
+
+{:.center}
+![logo](/img/logos/optech-horiz.png)<br>
+
 This month, the [Optech team][optech team] met to review the progress that we
 made in 2018 and make plans for 2019. We started Optech earlier this year
 because we wanted to [help companies adopt scaling technologies and raise the
