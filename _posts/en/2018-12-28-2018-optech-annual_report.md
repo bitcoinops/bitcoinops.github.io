@@ -1,7 +1,7 @@
 ---
-title: 'Optech review of 2018 and plans for 2019'
-permalink: /en/optech-review-2018-plan-2019/
-name: 2018-12-28-optech-review-2018-plan-2019
+title: '2018 Optech Annual Report'
+permalink: /en/2018-optech-annual-report/
+name: 2018-12-28-2018-optech-annual-report
 type: posts
 layout: post
 lang: en
