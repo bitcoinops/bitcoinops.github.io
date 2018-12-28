@@ -5,6 +5,10 @@
 @import "minima";
 @import "vendor/font-awesome/font-awesome";
 
+.center {
+    text-align: center;
+}
+
 .post-meta {
     text-align: center;
 }
@@ -117,4 +121,14 @@ a.site-title {
     min-height:75px;
     display:flex;
     align-items:center;
+}
+
+.callout {
+  border: thin solid black;
+  padding: 0.5em;
+  
+  h2, h3, h4 {
+    text-align: center;
+    font-size: 110%;
+  }
 }
