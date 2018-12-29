@@ -132,3 +132,12 @@ a.site-title {
     font-size: 110%;
   }
 }
+
+div.xoverflow {
+  overflow-x: auto;
+}
+
+.shrink80 {
+  font-size: 80%;
+  code { font-size: 80%; }
+}

@@ -33,11 +33,15 @@ and signature.  This not only reduces overhead and costs, it also
 increases privacy by making basic multisig transactions look identical
 to single-sig transactions.
 
+<div markdown="1" class="xoverflow shrink80">
+
 | | Receive script | Spend data |
 |-|-|-|
 | **Single-sig, current Script (P2PK)** | `<pubkey> OP_CHECKSIG` | `<signature>` |
 | **Bare multisig, current Script** | `2 <pubkey> <pubkey> <pubkey> 3 OP_CHECKMULTISIG` | `OP_0 <signature> <signature>` |
 | **Multisig, muSig[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+
+</div>
 
 Building on the idea that muSig, or something like it, could become
 possible in Bitcoin, Maxwell further described [Taproot][]---a powerful
@@ -49,11 +53,15 @@ receive the full security of their chosen script).  This provides an
 even larger set of users with reduced overhead, reduced costs, and
 increased privacy.
 
+<div markdown="1" class="xoverflow shrink80">
+
 | | Receive script | Spend data |
 |-|-|-|
 | **Single user, current Script (P2PK)** | `<pubkey> OP_CHECKSIG` | `<signature>` |
 | **Cooperating users, earlier MAST proposals[^fn-harding-mast]** | `<hash> OP_MAST` | `<signature> <<pubkey> OP_CHECKSIG> <hash> <flags>` |
 | **Cooperating users, Taproot[^fn-opcodes]** | `<pubkey> OP_CHECKSIG` | `<signature>` |
+
+</div>
 
 ## February
 
@@ -76,9 +84,13 @@ multipath].  Multipath payments are payments with parts split across
 multiple channels---for example, Alice can send part of a payment to Zed
 through her channel with Bob and part through her channel with Charlie.
 
+<div markdown="1" class="xoverflow shrink80">
+
 | Single path | Multipath |
 |-|-|
 | Alice → Bob → Zed | Alice → {Bob, Charlie} → Zed |
+
+</div>
 
 The authors noted that LN provides native support for multipath payments
 by using the same commitment preimage (hashlock) for each part of the
@@ -293,10 +305,14 @@ Bitcoin users, not just the people who use P2EP.
 {% capture p2ep-private %}Inputs:<br>&nbsp;&nbsp;Alice (2 BTC)<br>&nbsp;&nbsp;Alice (2 BTC)<br>&nbsp;&nbsp;Bob (3 BTC)<br><br>Outputs:<br>&nbsp;&nbsp;Alice's change (1 BTC)<br>&nbsp;&nbsp;Bob's revenue & change (6 BTC){% endcapture %}
 {% capture p2ep-public %}Inputs:<br>&nbsp;&nbsp;Spender or Receiver (2 BTC)<br>&nbsp;&nbsp;Spender or Receiver (2 BTC)<br>&nbsp;&nbsp;Spender or Receiver (3 BTC)<br><br>Outputs:<br>&nbsp;&nbsp;Spender or Receiver (1 BTC)<br>&nbsp;&nbsp;Spender or Receiver (6 BTC){% endcapture %}
 
+<div markdown="1" class="xoverflow shrink80">
+
 | | What Alice and Bob know | What the network sees |
 |-|-|-|
 | **Current norm** | {{today-private}} | {{today-public}} |
 | **With P2EP** | {{p2ep-private}} | {{p2ep-public}} |
+
+</div>
 
 ## August
 
