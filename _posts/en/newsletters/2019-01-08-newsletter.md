@@ -48,7 +48,7 @@ Bitcoin infrastructure projects are also provided.
   currencies to create almost free [short-term options contracts][] by
   delaying payment settlement.  A [previous thread][cjp risk] by Corné
   Plooy in May 2018 described the same thing.
-  
+
     For example, Mallory learns that Bob is willing to route payments
     from Bitcoin to Litecoin, so she sends a payment from one of her
     Bitcoin nodes through Bob to one of her Litecoin nodes.  If this
@@ -105,7 +105,8 @@ commits].*
 
 - [C-Lightning #2172][] allows `lightningd` to be shutdown normally even
   if it's operating as the primary process (PID 1), which can be useful
-  in Docker containers.
+  in Docker containers.  This is, for example, how the open source
+  [BTCPay][] server runs C-Lightning.
 
 - [C-Lightning #2188][] adds notification subscription handlers that can
   be used by plugins, with initial support for notifications that the
@@ -114,7 +115,7 @@ commits].*
   plugin][cl helloworld.py] have been updated for these handlers.
 
 - [LND #2374][] increases the maximum size of the gRPC messages the
-  `lncli` tool will accept from 4 MB to 50 MB.  This fixes a problem
+  `lncli` tool will accept, raising it from 4 MB to 50 MB.  This fixes a problem
   some nodes were encountering where the `describegraph` RPC was failing
   due to the network having grown so large that messages exceeded this
   limit.  Developers using gRPC directly will need to increase their
@@ -166,3 +167,4 @@ commits].*
 [cjp risk]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001292.html
 [cl plugin event]: https://github.com/ElementsProject/lightning/blob/master/doc/plugins.md#event-notifications
 [cl helloworld.py]: https://github.com/ElementsProject/lightning/blob/master/contrib/plugins/helloworld.py
+[btcpay]: https://github.com/btcpayserver/btcpayserver
