@@ -87,22 +87,6 @@ commits].*
   their fee income.  See [Newsletter #20][] for a recent instance where
   this may have happened to a large mining pool.
 
-- [Bitcoin Core #14336][] changes the system call (syscall) Bitcoin Core
-  uses to handle network connections and other resources on platforms
-  that support an alternative syscall (only Linux for now).  On a
-  Debian GNU/Linux x86_64 system tested by Optech, this increased the
-  maximum allowed number of connections from 865 to 9,999.  Please note,
-  developers strongly advise against increasing the maximum number of
-  connections unless you have a special need for more connections.  For
-  each peer you have after your first peer, you increase the amount of
-  bandwidth overhead used by your node and by all of your peers.  The
-  default minimum of 8 and maximum of 125 peers were chosen to provide
-  enough connections to ensure robust relaying but also to not create so
-  much bandwidth overhead that the network would be excessively
-  wasteful.  As relay improvements are implemented (see the News section
-  of [Newsletter #26][]), Bitcoin Core developers may adjust these
-  defaults.
-
 - [C-Lightning #2172][] allows `lightningd` to be shutdown normally even
   if it's operating as the primary process (PID 1), which can be useful
   in Docker containers.  This is, for example, how the open source
@@ -132,7 +116,7 @@ commits].*
   future states are planned.
 
 {% include references.md %}
-{% include linkers/issues.md issues="14565,14811,14336,2172,2188,2374,2354" %}
+{% include linkers/issues.md issues="14565,14811,2172,2188,2374,2354" %}
 {% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
