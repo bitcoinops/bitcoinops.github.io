@@ -92,7 +92,7 @@ maintenance release.
     recent Linux distributions as well as fix other [minor issues][0.17.1 milestone].
 
 [LND 0.5.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5.1-beta
-    
+
 ## Notable code changes
 
 *Notable code changes this week in [Bitcoin Core][core commits],

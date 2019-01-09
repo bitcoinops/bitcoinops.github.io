@@ -56,7 +56,7 @@ Above all, it's very important to highlight what we're *not*:
 - We're not a Bitcoin foundation. We're just engineers and contributors who
   care about Bitcoin and want to see it succeed.
 - We don't represent Bitcoin Core. We've all contributed to that project, but
-  our work with Bitcoin Optech is project-agnostic. 
+  our work with Bitcoin Optech is project-agnostic.
 - We don't represent and are not beholden to any Bitcoin companies.
 - We're not profit-driven. We're fortunate enough to have sponsorship to
   carry out our work, and are asking for modest contributions from member

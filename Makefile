@@ -9,6 +9,9 @@ build:
 	bundle exec jekyll build --future --drafts --unpublished
 
 test:
+	## Check for Markdown formatting problems
+	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
+	bundle exec mdl -g -r MD009 .
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	## Check for broken links

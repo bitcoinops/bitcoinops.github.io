@@ -87,19 +87,19 @@ Bitcoin Core, LND, and C-Lightning projects.
 *Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
 commits], and [C-lightning][cl commits].*
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="ef4fac0ea5b4891f4529e4b59dfd1f7aeb3009b5"
   end="2b67354aa584c4aabae049a67767ac7b70e2d01a"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="92b0b10dc75de87be3a9f895c8dfc5a84a2aec7a"
   end="f0f5e11b826e020c11c37343bcbaf9725627378b"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="0b597f671aa31c1c56d32a554fcdf089646fc7c1"

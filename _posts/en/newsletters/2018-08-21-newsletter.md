@@ -67,7 +67,7 @@ Core.  Here's a summary of the projects discussed:
   RISC-V bitcoin node in the world" which has already synced part of
   the chain.
 
-- **Bandwidth-efficient set reconciliation protocol for transactions** 
+- **Bandwidth-efficient set reconciliation protocol for transactions**
   being worked on by Gregory Maxwell, Gleb Naumenko, and Pieter Wuille.
   This may allow a node that has new transactions in its mempool to tell
   a peer about those transactions by communicating an amount of data
@@ -105,19 +105,19 @@ commits], and [C-lightning][cl commits].*
 minor doc updates, so no news for them.  I'm still leaving them
 mentioned above for easy copy/paste next week. -harding -->{% endcomment %}
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
   end="df660aa7717a6f4784e90535a13a95d82244565a"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="6989316b11c51922b4c6ae3507ac06680ec530b9"
   end="3f5ec993300e38369110706ac83301b8875500d6"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="a97955845ff43d4780b33a7301695db33823c57c"
