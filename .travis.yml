@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - "2.2.2"
+  - "2.5.1"
 
 ## Allows use of docker-based containers, which are more available than
 ## the xen-based (or whatever) VMs, so builds tend to happen sooner
@@ -8,10 +8,6 @@ sudo: false
 
 ## Save bundler deps.  Requires sudo: false
 cache: bundler
-
-## Required if our Ruby version is 2.2 or below
-before_install:
-   - gem install bundler -v '< 2'
 
 ## Build all possible jekyll pages for use with link checking.
 script:
