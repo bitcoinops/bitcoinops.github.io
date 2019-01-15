@@ -32,4 +32,5 @@ scraping.
 [lnd #{{_issue}}]: https://github.com/lightningnetwork/lnd/issues/{{_issue}}
 [c-lightning #{{_issue}}]: https://github.com/ElementsProject/lightning/issues/{{_issue}}
 [libsecp256k1 #{{_issue}}]: https://github.com/bitcoin-core/secp256k1/issues/{{_issue}}
+[eclair #{{_issue}}]: https://github.com/ACINQ/eclair/issues/{{_issue}}
 {% endfor %}

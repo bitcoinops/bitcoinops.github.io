@@ -4,13 +4,19 @@
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
-[bitcoin.se]: https://bitcoin.stackexchange.com/
-[bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf
 [BitcoinCore.org]: https://bitcoincore.org/
+[bitcoin core repo]: https://github.com/bitcoin/bitcoin
+[bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf
+[bitcoin.se]: https://bitcoin.stackexchange.com/
 [c-lightning]: https://github.com/ElementsProject/lightning
+[c-lightning repo]: https://github.com/ElementsProject/lightning
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
+[eclair repo]: https://github.com/ACINQ/eclair
 [libminisketch]: https://github.com/sipa/minisketch
+[libsecp256k1]: https://github.com/bitcoin-core/secp256k1
+[libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
+[lnd repo]: https://github.com/lightningnetwork/lnd/
 [output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
