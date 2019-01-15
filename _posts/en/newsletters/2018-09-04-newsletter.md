@@ -90,19 +90,19 @@ wait until version 0.18 in about six months from now.*
 
 {% comment %}<!-- LND only had three merges this week, none of them exciting IMO -harding -->{% endcomment %}
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="427253cf7e19ed9ef86b45457de41e345676c88e"
   end="68f3c7eb080e461cfeac37f8db7034fe507241d0"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="26f68da5b2883885fcf6a8e79b3fc9bb12cc9eef"
   end="2b448be048daf85cef4cbb37ceed4413fdb051e6"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"

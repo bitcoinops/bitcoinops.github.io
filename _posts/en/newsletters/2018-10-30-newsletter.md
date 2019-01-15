@@ -32,7 +32,7 @@ projects.
   "worst of both worlds" situation where wallets using BIP69 can be
   fairly easily identified and so wallets not using BIP69 may also be
   easier to identify by negation.
-  
+
     In this [thread][bip69 thread] to the Bitcoin-Dev mailing list, Ryan
     Havar suggests that one reason wallet authors like BIP69 is that its
     deterministic ordering makes it easy and fast for their tests to
@@ -118,7 +118,7 @@ answers made since our last update.*
   current block subsidy of about $80,000---but using [AJ Towns's recent
   estimate][towns mining estimate] of $0.16/kWh that includes costs
   beyond electricity and attempts to factor in risk premiums, the
-  estimated block cost is about $135,000. 
+  estimated block cost is about $135,000.
 
 ## Notable merges
 

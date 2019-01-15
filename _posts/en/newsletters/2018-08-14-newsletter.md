@@ -6,7 +6,7 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter includes the usual dashboard and action items, 
+This week's newsletter includes the usual dashboard and action items,
 news about the importance of allowing secure and anonymous responsible
 disclosure of bugs, a potential new payment protocol that can improve
 privacy on Bitcoin without any consensus rule changes, shaving one byte
@@ -64,7 +64,7 @@ source: [Optech dashboard][periodic txn data]*
   cryptocurrency maintainers but possibly also useful for organizations
   using cryptocurrencies.
 
-  
+
     Optech encourages our member companies (and any others reading this
     newsletter) to consider how easy it would be for an anonymous
     researcher to report a critical bug to your staff.  An easy way to
@@ -97,7 +97,7 @@ source: [Optech dashboard][periodic txn data]*
     for P2EP spending and [BTCPay
     Server](https://github.com/btcpayserver/btcpayserver) is considering
     adding support for P2EP receiving.
-  
+
 - **Bitcoin Core wallet to begin only creating low-R
   signatures:** the DER format used to encode Bitcoin signatures
   requires adding an entire extra byte to a signature just to indicate
@@ -179,19 +179,19 @@ projects this week seemed to be improvements to their automated testing
 code; we aren't describing those in this newsletter, but we're sure
 users and developers highly appreciate that work.*
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="2b67354aa584c4aabae049a67767ac7b70e2d01a"
   end="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="f0f5e11b826e020c11c37343bcbaf9725627378b"
   end="6989316b11c51922b4c6ae3507ac06680ec530b9"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="80a8e57ede82292818032eeb3510da067fddfd5e"

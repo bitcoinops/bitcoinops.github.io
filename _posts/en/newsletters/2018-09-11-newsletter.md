@@ -59,19 +59,19 @@ Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="68f3c7eb080e461cfeac37f8db7034fe507241d0"
   end="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="2b448be048daf85cef4cbb37ceed4413fdb051e6"
   end="1941353fb28755a170793e43595601d75c8f3dda"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"

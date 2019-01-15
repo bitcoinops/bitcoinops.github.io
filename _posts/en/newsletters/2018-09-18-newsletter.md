@@ -57,7 +57,7 @@ merges in popular Bitcoin infrastructure projects.
   transactions ([BIP174][]), an introduction to output script
   descriptors, suggestions for Lightning Network wallet integration, and
   approaches to efficient coin selection (including output
-  consolidation). 
+  consolidation).
 
 ## News
 
@@ -93,7 +93,7 @@ merges in popular Bitcoin infrastructure projects.
 
     Currently, discussion appears to be most active on the BIP
     proposal's [pull request][BIP322 PR].
-    
+
 - **Bustapay discussion:** a simplified alternative to the proposed
   Pay-to-Endpoint (P2EP) protocol [described in newsletter #8][news8
   news], Bustapay provides improved privacy for both spenders and
@@ -121,19 +121,19 @@ Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
   end="c53e083a49291b611d278a8db24ff235c1202e43"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="1941353fb28755a170793e43595601d75c8f3dda"
   end="3b2c807288b1b7f40d609533c1e96a510ac5fa6d"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="634f19a7b230edc686be56ab950b80784e56252c"
@@ -147,7 +147,7 @@ wait until version 0.18 in about six months from now.*
   transaction relay problems.  However, there's no requirement (or way
   to require) that nodes send a reject message or an accurate reject
   message, so the messages arguably only end up wasting bandwidth.
-  
+
     It's recommended that developers connect their test clients to their
     own nodes and inspect their nodes' logs for error messages in case
     of problems (perhaps after enabling debug logging).  Users who still

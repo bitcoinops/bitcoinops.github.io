@@ -1,5 +1,5 @@
 {% capture /dev/null %}
-<!-- 
+<!--
 issues.md: creates Markdown referency-style links to issues and pull
 requests in the Bitcoin Core, LND, C-Lightning, and libsecp256k1 repositories.
 

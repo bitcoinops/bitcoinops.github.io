@@ -278,7 +278,7 @@ newsletter's author.
 [tx script]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/bitcoin-script/
 [musig paper]: https://eprint.iacr.org/2018/068
 [schnorr pre-bip]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
-[pairing-based cryptography]: https://en.wikipedia.org/wiki/Pairing-based_cryptography 
+[pairing-based cryptography]: https://en.wikipedia.org/wiki/Pairing-based_cryptography
 [bls sigs]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [scriptless scripts transcript]: https://scalingbitcoin.org/transcript/stanford2017/using-the-chain-for-what-chains-are-good-for
 [eltoo protocol]: https://blockstream.com/2018/04/30/eltoo-next-lightning.html

@@ -97,7 +97,7 @@ and answers made there in the past month.*
   scheme.
 
 - [Why does HD key derivation stop working after a certain index in
-  BIP44 wallets?][bse 76998]: a developer testing his wallet finds that 
+  BIP44 wallets?][bse 76998]: a developer testing his wallet finds that
   a payment sent to low-numbered key indexes works as expected, but
   payments sent to high-numbered indexes never appear in his wallets.
   An answer from Viktor T. reveals why.

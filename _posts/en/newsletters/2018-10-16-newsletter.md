@@ -102,19 +102,19 @@ on some of the transcripts for the event in Tokyo last week:
 *Notable code changes this week in [Bitcoin Core][core commits],
 [LND][lnd commits], and [C-lightning][cl commits].*
 
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="core commits"
   repo="bitcoin/bitcoin"
   start="c9327306b580bb161d1732c0a0260b46c0df015c"
   end="be992701b018f256db6d64786624be4cb60d8975"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="lnd commits"
   repo="lightningnetwork/lnd"
   start="79ed4e8b600e4834f058cbf3cb8b93f5aa5ab3d4"
   end="e5b84cfadab56037ae3957e704b3e570c9368297"
 %}
-{% include linkers/github-log.md 
+{% include linkers/github-log.md
   refname="cl commits"
   repo="ElementsProject/lightning"
   start="d6fcfe00c722f7e6f4b691cd47743ed593aeea0e"
