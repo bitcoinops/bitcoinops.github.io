@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-## If you update the version here, also update it in .travis.yml and
-## README.md. Then push your branch and make sure Travis supports that
+## If you update the version here, also update it in .travis.yml, .ruby-version,
+## and README.md. Then push your branch and make sure Travis supports that
 ## version.
 ruby '2.5.1'
 
