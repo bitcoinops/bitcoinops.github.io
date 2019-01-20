@@ -346,7 +346,7 @@ newsletter's author.
 [cjp rz]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html
 [zmn rz]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001547.html
 [zmn rz packetswitch]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001553.html
-[cl plugin]: https://github.com/ElementsProject/lightning/blob/master/doc/plugins.md
+[cl plugin]: https://github.com/ElementsProject/lightning/blob/master/doc/PLUGINS.md
 [rusty wrapup]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001569.html
 [ln1.1 outline]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [input consolidations]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation

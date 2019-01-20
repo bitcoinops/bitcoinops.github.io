@@ -149,6 +149,6 @@ commits].*
 [rm codesep]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016581.html
 [short-term options contracts]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001752.html
 [cjp risk]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001292.html
-[cl plugin event]: https://github.com/ElementsProject/lightning/blob/master/doc/plugins.md#event-notifications
+[cl plugin event]: https://github.com/ElementsProject/lightning/blob/master/doc/PLUGINS.md#event-notifications
 [cl helloworld.py]: https://github.com/ElementsProject/lightning/blob/master/contrib/plugins/helloworld.py
 [btcpay]: https://github.com/btcpayserver/btcpayserver
