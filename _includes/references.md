@@ -28,6 +28,7 @@
 [BIP69]: https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
 [BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
+[BIP79]: https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki
 [BIP114]: https://github.com/bitcoin/bips/blob/master/bip-0114.mediawiki
 [BIP116]: https://github.com/bitcoin/bips/blob/master/bip-0116.mediawiki
 [BIP117]: https://github.com/bitcoin/bips/blob/master/bip-0117.mediawiki
@@ -99,6 +100,8 @@
 [newsletter #25]: {{news25}}
 {% assign news26 = "/en/newsletters/2018/12/18/" %}
 [newsletter #26]: {{news26}}
+{% assign news27 = "/en/newsletters/2018/12/28/" %}
+[newsletter #27]: {{news27}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
