@@ -17,7 +17,7 @@ None this week.
 
 ## News
 
-- **Post about P2EP/Payjoin/BIP79:** Joinmarket developer Adam (waxwing)
+- **Post about BIP79 (P2EP/payjoin):** Joinmarket developer Adam (waxwing)
   Gibson sent a [post][payjoin post] to the Bitcoin-Dev mailing list
   about the simplified version of the Pay-to-EndPoint (P2EP) proposal
   described in [BIP79][].  The proposal allows an onchain spender to
@@ -35,17 +35,19 @@ None this week.
   the protocol still in developer testing.  The goal is to try to get
   both wallets (and many others) to use the same protocol, and also have
   it supported by payment processors such as BTCPay.
+  The suggestions are pretty simple:
 
-    The suggestions are pretty simple: version the protocol so spending
-    clients and receiving servers can negotiate what protocol features
-    they support.  Rename the protocol to *payjoin,* as many people
-    aren't quite sure what to call it right now.  Use [BIP174][]
-    Partially-Signed Bitcoin Transactions (PSBTs) for communicating
-    transaction and signature data between clients and servers.
-    Specify that transactions should use a short list of best-practice
-    transaction features and avoid odd-looking coin selection so that
-    payjoin transactions blend in with normal transactions and create
-    maximum confusion for block chain analysts.
+    - Version the protocol so spending clients and receiving servers can
+      negotiate what protocol features they support
+    - Rename the protocol to *payjoin,* as many people aren't quite sure
+      what to call it right now
+    - Use [BIP174][] Partially-Signed Bitcoin Transactions (PSBTs) for
+      communicating transaction and signature data between clients and
+      servers
+    - Specify that transactions should use a short list of best-practice
+      transaction features and avoid odd-looking coin selection so that
+      payjoin transactions blend in with normal transactions and create
+      maximum confusion for block chain analysts
 
 ## Selected Q&A from Bitcoin StackExchange
 
@@ -70,20 +72,23 @@ from both December and January.*
   find a collision?]({{bse}}83818) A user generating an incredible
   number of addresses using a computer with 32 cores and 128 GB of
   memory wonders how long until he creates two identical addresses with
-  different private keys.  Pieter Wuille explains the mathematical
-  principles involved, calculates how long it would take---an answer
-  given in multiples of the age of the universe---and finally dashes any
+  different private keys.  Pieter Wuille's answer and its follow-up comments describe the mathematical
+  principles involved, calculate how long it would take---an answer
+  given in multiples of the age of the universe---and finally dash any
   hopes the poster had of breaking bitcoin by pointing out that poster's
   method would almost certainly find a collision only between the
-  poster's own addresses---meaning the only money he could steal would
-  be his own.
+  poster's own addresses---leaving other users unaffected.
 
 - [What's the hold-up implementing BIP156 Dandelion in Bitcoin
   Core?]({{bse}}81503) Dandelion is a [proposed method][BIP156] for
   initially relaying newly-created transactions that can make it harder
   to determine the network address of the wallet that created the
   transaction.  This answer from Bitcoin Core developer Suhas Daftuar
-  describes some of the challenges to building a robust implementation.
+  describes some of the challenges faced by developers of
+  mission-critical relay protocols and why even conceptually-simple
+  ideas like Dandelion might require more work to implement safely than
+  other ideas that could also improve the system (e.g. [BIP151][]
+  encryption or [libminisketch][] efficient relay).
 
 - [How to use BIP174 PSBTs with a cold wallet and watching-only
   wallet?]({{bse}}83070) It's easy to setup two copies of Bitcoin Core,
@@ -132,7 +137,7 @@ and [libsecp256k1][libsecp256k1 repo].*
   Block it is).
 
 - [Bitcoin Core #15193][] sets the `whitelistforcerelay` configuration
-  option to off by default.  When enabled, this option cause a node to
+  option to off by default.  When enabled, this option causes a node to
   relay transactions from its manually whitelisted peers and clients
   even if those transactions violate node policy or consensus rules.
   This could cause the relaying node, rather than the origin node or
@@ -187,8 +192,8 @@ and [libsecp256k1][libsecp256k1 repo].*
   available balance that can support sending the payment.  This reserves
   the value in higher-value channels for larger payments that may come
   later.  (Ultimately, if the network adopts multipath payments, the
-  need to keep channel balances larger than the largest payment one
-  wants to send should go away.)
+  need to keep at least one channel with a balance larger than the largest payment you
+  want to send should go away.)
 
 ## Footnotes
 
