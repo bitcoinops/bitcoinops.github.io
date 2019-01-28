@@ -162,12 +162,12 @@ and [libsecp256k1][libsecp256k1 repo].*
   good a candidate they are for opening a channel to them.
 
 - [LND #2460][] adds support for the `max_htlc` field in channel
-  updates.  This feature allows lite clients and pruned nodes to learn
+  updates.  This feature allows light clients and pruned nodes to learn
   the maximum routing capacity of a channel belonging to a distant node
   without having to look up that channel's opening transaction on the
   block chain---something which archival full nodes can do, but which
-  lite clients and pruned nodes can't (not easily, at least).  Now LND
-  nodes advertise this information directly, which not only helps lite
+  light clients and pruned nodes can't (not easily, at least).  Now LND
+  nodes advertise this information directly, which not only helps light
   clients and pruned nodes, but it also allows LN nodes to specify a
   value below their maximum if they only want to route smaller payments.
   In the future, it could also help support multipath

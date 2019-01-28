@@ -544,10 +544,10 @@ newsletters] or follow our [RSS feed][].*
 [^fn-dandelion-lite]:
     Lightweight clients using the Bitcoin P2P network don't relay
     transactions for other users---they only send their own
-    transactions.  This means that any transactions sent from a P2P lite
+    transactions.  This means that any transactions sent from a P2P light
     client can be associated with the client's network identity (e.g. IP
     address).  Dandelion is just a routing protocol and so cannot
-    eliminate this privacy leak.  Instead, P2P lite clients should
+    eliminate this privacy leak.  Instead, P2P light clients should
     always send transactions using an anonymity network such as Tor (and
     should use a different throw-away network identity for each spending
     transaction).
