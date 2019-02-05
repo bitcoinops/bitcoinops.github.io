@@ -20,6 +20,8 @@
 [output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
+[BIP8]: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
+[BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
 [BIP21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
 [BIP32]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 [BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
@@ -102,6 +104,8 @@
 [newsletter #26]: {{news26}}
 {% assign news27 = "/en/newsletters/2018/12/28/" %}
 [newsletter #27]: {{news27}}
+{% assign news31 = "/en/newsletters/2019/01/29/" %}
+[newsletter #31]: {{news31}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
