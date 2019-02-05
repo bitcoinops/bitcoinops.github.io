@@ -49,7 +49,7 @@ although we encourage anyone who wants to learn more to look at the
 [transcripts][] provided by Bryan Bishop or the videos provided by
 the organizers ([day 1][], [day 2][], [day 3][]).
 
-- **Accumulators for blockchains** presented by Benedickt Bünz
+- **Accumulators for blockchains** presented by Benedikt Bünz
   ([transcript][accumulators txt], [video][accumulators vid]).  Bitcoin
   full nodes maintain a ledger (called the UTXO set) that stores the
   ownership information for every currently-spendable grouping of
