@@ -17,7 +17,7 @@
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
-[output script descriptors]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 {% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
 [BIP8]: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
