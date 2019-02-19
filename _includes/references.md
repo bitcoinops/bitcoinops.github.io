@@ -3,6 +3,7 @@
 [rss feed]: /feed.xml
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
+[bips repo]: https://github.com/bitcoin/bips/
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
 [BitcoinCore.org]: https://bitcoincore.org/
 [bitcoin core repo]: https://github.com/bitcoin/bitcoin
@@ -12,10 +13,14 @@
 [c-lightning repo]: https://github.com/ElementsProject/lightning
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
+[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [eclair repo]: https://github.com/ACINQ/eclair
+[hwi]: https://github.com/bitcoin-core/HWI
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
+{% comment %}<!-- TODO: switch miniscript link to some sort of overview page when available -->{% endcomment %}
+[miniscript]: http://bitcoin.sipa.be/miniscript/miniscript.html
 [lnd repo]: https://github.com/lightningnetwork/lnd/
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
@@ -29,6 +34,7 @@
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP69]: https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki
 [BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
+[BIP72]: https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki
 [BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
 [BIP79]: https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki
 [BIP114]: https://github.com/bitcoin/bips/blob/master/bip-0114.mediawiki
