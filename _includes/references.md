@@ -3,6 +3,7 @@
 [rss feed]: /feed.xml
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
+[bip-schnorr]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
 [bips repo]: https://github.com/bitcoin/bips/
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
 [BitcoinCore.org]: https://bitcoincore.org/
@@ -19,42 +20,30 @@
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
+[lnd repo]: https://github.com/lightningnetwork/lnd/
 {% comment %}<!-- TODO: switch miniscript link to some sort of overview page when available -->{% endcomment %}
 [miniscript]: http://bitcoin.sipa.be/miniscript/miniscript.html
-[lnd repo]: https://github.com/lightningnetwork/lnd/
+[musig]: https://eprint.iacr.org/2018/068
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
-{% comment %}<!-- BIPs in order lowest to highest -->{% endcomment %}
-[BIP8]: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
-[BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
-[BIP21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
-[BIP32]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
-[BIP37]: https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki
-[BIP47]: https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki
-[BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
-[BIP69]: https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki
-[BIP70]: https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki
-[BIP72]: https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki
-[BIP75]: https://github.com/bitcoin/bips/blob/master/bip-0075.mediawiki
-[BIP79]: https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki
-[BIP114]: https://github.com/bitcoin/bips/blob/master/bip-0114.mediawiki
-[BIP116]: https://github.com/bitcoin/bips/blob/master/bip-0116.mediawiki
-[BIP117]: https://github.com/bitcoin/bips/blob/master/bip-0117.mediawiki
-[BIP118]: https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki
-[BIP125]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
-[BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
-[BIP143]: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki
-[BIP150]: https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki
-{% comment %}<!-- FIXME: update if BIP151 ever updated -->{% endcomment %}
+{% comment %}<!-- BIPs in order lowest to highest
+Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
+the loop is run each time this file is included (but it still only adds
+about 1 second of compile time to the whole site).  However, Jekyll 4.0
+is expected to cache rendered includes so that, if none of the variables
+in the included file is redefined, the cached file will be used, so the
+loop will only be run once no matter how many times this file is
+included in documents.  See https://github.com/jekyll/jekyll/pull/7108
+for details --> {% endcomment %}
+{% for i in (1..400) %}
+{% assign i_padded = "0000" | append: i | slice: -4, 4 %}
+[BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
+{% endfor %}
+
+{% comment %}<!-- Later link definitions supercede earlier definitions.
+When more recent information about a BIP is available not in the regular
+place, put links here. -->{% endcomment %}
 [BIP151]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
-[BIP156]: https://github.com/bitcoin/bips/blob/master/bip-0156.mediawiki
-[BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
-[BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
-[BIP159]: https://github.com/bitcoin/bips/blob/master/bip-0159.mediawiki
-[BIP173]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
-[BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
-[BIP320]: https://github.com/bitcoin/bips/blob/master/bip-0320.mediawiki
-[BIP322]: https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
