@@ -40,7 +40,7 @@ for details --> {% endcomment %}
 [BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
 {% endfor %}
 
-{% comment %}<!-- Later link definitions supercede earlier definitions.
+{% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
 [BIP151]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52

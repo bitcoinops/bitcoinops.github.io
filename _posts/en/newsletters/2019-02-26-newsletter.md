@@ -38,8 +38,12 @@ None this week.
       block chain space, improving verification efficiency, increasing
       privacy, and allowing much larger sets of signers than supported
       by Bitcoin Script's current byte-size and signature-operation
-      limits.  However, the multi-step protocol requires especially
-      careful management of secret nonces; Poelstra's post details
+      limits.  But it does have two downsides: the increase in privacy
+      also destroys provable accountability---there's no way to know
+      which particular authorized signers were part of the subset that
+      created a signature---and the multi-step protocol requires
+      especially careful management of secret nonces to avoid accidentally
+      revealing private keys.  Addressing the second issue, Poelstra's post details
       how libsecp256k1-zkp attempts to minimize the risk of
       nonce-related failures and teases the possibility of even better
       solutions in the future.
