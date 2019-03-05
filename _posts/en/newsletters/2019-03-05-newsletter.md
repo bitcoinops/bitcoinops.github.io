@@ -115,13 +115,14 @@ commits in popular Bitcoin infrastructure projects.
      indicate exactly what parts of the transaction (and related data)
      get included in the hash.  Only 6 of the possible 256 values for
      the byte have a defined meaning so far---if you use any other
-     value, your signature is valid with any hash (meaning your coins
-     have no security), which could be used with a soft fork to add a
-     new sighash type.  However, since the adoption of [BIP141][] segwit,
-     any new sighash types are expected to be
-     introduced using new witness versions.  Removing the ability to
-     specify undefined sighash types allows improved caching for reduced
-     node overhead.
+     value, your signature commits to almost exactly the same data as
+     used for `SIGHASH_ALL`.  The one difference is that the signature
+     hash must commit to its own sighash flag, which will be different
+     for the otherwise-equivalent data and which complicates caching.
+     Since the adoption of [BIP141][] segwit, any new sighash types are
+     expected to be introduced using new witness versions, so removing the
+     ability to specify undefined sighash types allows improved caching
+     for reduced node overhead.
 
    - **Forbid transactions 64 bytes or smaller:** derived elements
      (nodes) in Bitcoin's merkle trees are formed by combining two
@@ -357,7 +358,7 @@ More information:
 
 - [Mailing list discussion][bitcoin-dev merkle tree] by various authors
 
-## Legacy transaction verification
+### Legacy transaction verification
 
 In 2015 a block was mined containing a transaction almost 1 MB in size,
 taking about 25 seconds to verify on a contemporary desktop.  Besides
@@ -452,6 +453,14 @@ More information:
   evaluation of scriptSig from each spend's corresponding scriptPubKey,
   practically eliminating any use for `OP_CODESEPARATOR` and
   `FindAndDelete()`
+
+## Corrections
+
+An earlier version of this newsletter incorrectly reported that an
+undefined sighash flag allowed a signature to commit to any hash.
+Instead it must commit to the same data as the default `SIGHASH_ALL`
+flag's algorithm.  We thank Russell O'Connor and Pieter Wuille for
+independently reporting this error.
 
 {% include references.md %}
 {% include linkers/issues.md issues="15482,2382,15471" %}
