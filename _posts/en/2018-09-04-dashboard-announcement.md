@@ -6,6 +6,10 @@ type: posts
 layout: post
 lang: en
 version: 1
+excerpt: >
+  Introducing the Bitcoin Optech Dashboard, which contains live-updated
+  statistics about consolidations, payment batching, RBF, segwit
+  adoption, and more.
 ---
 
 {:.post-meta}

@@ -14,11 +14,16 @@ order to lower costs and improve customer experiences.
 
 An initial focus for the group is working with its member organizations to
 reduce transaction sizes and minimize the effect of subsequent transaction fee
-increases.
+increases.  We provide [workshops][], [documentation][scaling book],
+[weekly newsletters][], [original research][dashboard], [case studies
+and announcements][blog], and help facilitate improved relations between
+businesses and the open source community.
 
-Long-term goals include providing documentation and training materials, a
-weekly newsletter, original research, and facilitating improved relations
-between businesses and the open source community.
+[scaling book]: https://github.com/bitcoinops/scaling-book
+[workshops]: /workshops
+[weekly newsletters]: /en/newsletters/
+[dashboard]: https://dashboard.bitcoinops.org/
+[blog]: /en/blog/
 
 Optech does not exist to make a profit, and all materials and documentation
 produced are released under the MIT license. We are supported by our generous
@@ -29,10 +34,9 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 {% include newsletter-signup.html %}
 
-<h2>{{ page.list_title | default: "Posts" }}</h2>
+<h2>Recent newsletters and blog posts</h2>
 <ul class="post-list">
-  {%- for post in site.posts -%}
-  {%- if post.type == 'posts' -%}
+  {%- for post in site.posts limit:3 -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -45,11 +49,10 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
       {{ post.excerpt }}
     {%- endif -%}
   </li>
-  {%- endif -%}
   {%- endfor -%}
 </ul>
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+<p class="rss-subscribe">View more <a href="/en/newsletters/">newsletters</a> or <a href="/en/blog">blog posts</a>. Learn about new content by subscribing via email or <a href="{{ "/feed.xml" | relative_url }}">RSS</a>.</p>
 
 {% include members.html %}
 

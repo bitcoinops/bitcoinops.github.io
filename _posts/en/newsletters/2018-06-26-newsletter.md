@@ -6,6 +6,12 @@ type: newsletter
 layout: newsletter
 lang: en
 version: 1
+
+excerpt: >
+  Announces a pending vulnerability disclosure for older Bitcoin Core
+  releases, links to a PR about improved coin selection, and discusses
+  dynamic wallet loading and unloading in Bitcoin Core multiwallet
+  mode.
 ---
 
 ## Welcome
