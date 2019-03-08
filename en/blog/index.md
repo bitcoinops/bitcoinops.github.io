@@ -3,9 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+title: Posts
 ---
 
-<h2>{{ page.list_title | default: "Posts" }}</h2>
 <ul class="post-list">
   {%- for post in site.posts -%}
   {%- if post.type == 'posts' -%}
