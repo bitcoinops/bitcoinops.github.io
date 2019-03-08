@@ -6,6 +6,11 @@ type: newsletter
 layout: newsletter
 lang: en
 version: 1
+excerpt: >
+  Continued discussion over graftroot safety, BIP174 Partially-Signed
+  Bitcoin Transactions (PSBT) officially marked as proposed, and
+  discussion of Dandelion transaction relay.
+
 ---
 ### Unsubscribing
 

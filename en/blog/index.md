@@ -1,19 +1,14 @@
 ---
-type: pages
-layout: page
-lang: en
-title: Newsletters
-name: newsletters
-permalink: /en/newsletters/
-share: false
-version: 1
----
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-{% include newsletter-signup.html %}
+layout: page
+title: Posts
+---
 
 <ul class="post-list">
   {%- for post in site.posts -%}
-  {%- if post.type == 'newsletter' -%}
+  {%- if post.type == 'posts' -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>

@@ -6,6 +6,9 @@ type: posts
 layout: post
 lang: en
 version: 1
+excerpt: >
+  Bitcoin Optech reviews our 2018 accomplishments and summarizes our
+  plans for 2019.
 ---
 
 {:.center}

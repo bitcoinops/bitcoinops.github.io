@@ -38,3 +38,5 @@ exclude:
    - vendor/
    - Makefile
    - README.md
+
+show_excerpts: true

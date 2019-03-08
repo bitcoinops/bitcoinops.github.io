@@ -6,6 +6,10 @@ type: newsletter
 layout: newsletter
 lang: en
 version: 1
+excerpt: >
+  A trial run of the Optech newsletter including news about the
+  `OP_CODESEPARATOR` opcode, BetterHash mining protocol, and BIP157/158
+  compact block filters.
 ---
 
 **This newsletter from June 8th 2018 was a preview run of the Optech newsletter.**
