@@ -12,6 +12,7 @@
 [bitcoin.se]: https://bitcoin.stackexchange.com/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [c-lightning repo]: https://github.com/ElementsProject/lightning
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
 [descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
@@ -79,6 +80,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #11]: {{news11}}
 {% assign news12 = "/en/newsletters/2018/09/11/" %}
 [newsletter #12]: {{news12}}
+{% assign news13 = "/en/newsletters/2018/09/18/" %}
+[newsletter #13]: {{news13}}
 {% assign news16 = "/en/newsletters/2018/10/09/" %}
 [newsletter #16]: {{news16}}
 {% assign news17 = "/en/newsletters/2018/10/16/" %}
@@ -101,6 +104,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #27]: {{news27}}
 {% assign news31 = "/en/newsletters/2019/01/29/" %}
 [newsletter #31]: {{news31}}
+{% assign news36 = "/en/newsletters/2019/03/05/" %}
+[newsletter #36]: {{news36}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
