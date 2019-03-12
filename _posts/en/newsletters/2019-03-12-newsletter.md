@@ -247,8 +247,8 @@ merge affected.*
   be handled quickly.  Gossip traffic is used for communicating which
   peers are on the network and what channels they have available.
 
-- [C-Lightning #2391][] removes the `address` field from the `newaddr`
-  RPC and replaces it with either a `bech32` field or a `p2sh-segwit` field
+- [C-Lightning #2391][] deprecates the `address` field in the `newaddr`
+  RPC, replacing it with either a `bech32` field or a `p2sh-segwit` field
   depending on the address type requested (or both fields if an optional
   `all` parameter is passed to the RPC).  The address type in each field
   is consistent with its name.
