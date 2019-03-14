@@ -21,12 +21,19 @@ businesses and the open source community.
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
 
-Optech does not exist to make a profit, and all materials and documentation
-produced are released under the MIT license. We are supported by our generous
-founding sponsors and contributions from member companies.
-
 If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
 contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
+
+## Funding
+
+Optech does not exist to make a profit, and all materials and documentation
+produced are released under the MIT license.
+
+Seed funding was provided by Wences Casares and John Pfeffer to cover outside
+contractors and incidental expenses. Resources are provided by Chaincode Labs
+to support Optech.
+
+Our generous member companies pay an annual contribution to cover expenses.
 
 ## Principles and associates of Optech:
 
