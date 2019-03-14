@@ -7,21 +7,21 @@ associates:
     role: Director & Engineer, Optech
     other_affiliation: Developer, Chaincode Labs
     github: jnewbery
-    avatar: https://avatars1.githubusercontent.com/u/1063656?s=400&v=4
+    avatar: newbery.jpg
     quote: >-
       "I started Optech because if Bitcoin is to be successful, then one of the fundamental challenges facing Bitcoin services and businesses will be how to maximize customer utility by making efficient use of the blockchain. Helping Bitcoin ecosystem players adopt scaling techniques and technologies is one of the most effective ways we can help Bitcoin scale today."
   -
     name: Steve Lee
     role: Product Manager, Optech
     github: moneyball
-    avatar: https://avatars0.githubusercontent.com/u/326147?s=400&v=4
+    avatar: lee.png
     quote: >-
       "I am excited to help Bitcoin Optech Group make a meaningful contribution to Bitcoin. I’m looking forward to working with businesses to develop implementation best practices and to build a bridge between businesses and the open source community."
   -
     name: David A. Harding
     role: Technical Writer, Optech
     github: harding
-    avatar: https://avatars1.githubusercontent.com/u/61096?s=400&v=4
+    avatar: harding.png
     quote: >-
       "The terrible thing about a consensus system like Bitcoin is that every on-chain action we perform affects every other user of the system. That makes all of us neighbors, so we're faced with the choice of either being the bad neighbors who complain endlessly about each other or the good neighbors who work together to solve problems and find ways to coexist in harmony."
   -
@@ -29,6 +29,6 @@ associates:
     role: Product Manager, Optech
     other_affiliation: Product Manager, Blockstream
     github: bitschmidty
-    avatar: https://avatars0.githubusercontent.com/u/1615772?s=400&v=4
+    avatar: schmidt.png
     quote: >-
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."

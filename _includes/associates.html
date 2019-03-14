@@ -5,7 +5,7 @@
     <ul class="associates n-column-list">
         {% for associate in associates %}
         {% assign avatar=associate.avatar %}
-        {% unless associate.avatar contains 'https://' %}{% capture avatar %}/assets/images/team/{{associate.avatar}}{% endcapture %}{% endunless %}
+        {% unless associate.avatar contains 'https://' %}{% capture avatar %}/img/team/{{associate.avatar}}{% endcapture %}{% endunless %}
         <li>
             <img src="{{ avatar }}" class="bio-photo" width="150" height="150" alt="{{ associate.name }}" title="{{ associate.name }}">
             <h3 itemprop="name">{{ associate.name }}</h3>
