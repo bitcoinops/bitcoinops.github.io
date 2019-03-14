@@ -32,3 +32,19 @@ associates:
     avatar: schmidt.png
     quote: >-
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."
+  -
+    name: Adam Jonas
+    role: TODO - role
+    other_affiliation: TODO - Chaincode role
+    github: adamjonas
+    avatar: jonas.png
+    quote: >-
+      "TODO - quote"
+  -
+    name: Carl Dong
+    role: Engineer, Optech
+    other_affiliation: Developer, Chaincode Labs
+    github: dongcarl
+    avatar: dong.jpg
+    quote: >-
+      "TODO - quote"
