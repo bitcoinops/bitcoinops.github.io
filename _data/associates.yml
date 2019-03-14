@@ -11,14 +11,6 @@ associates:
     quote: >-
       "I started Optech because if Bitcoin is to be successful, then one of the fundamental challenges facing Bitcoin services and businesses will be how to maximize customer utility by making efficient use of the blockchain. Helping Bitcoin ecosystem players adopt scaling techniques and technologies is one of the most effective ways we can help Bitcoin scale today."
   -
-    name: James O'Beirne
-    role: Engineer, Optech
-    other_affiliation: Developer, Chaincode Labs
-    github: jamesob
-    avatar: https://avatars1.githubusercontent.com/u/73197?s=400&v=4
-    quote: >-
-      "If Optech succeeds, the Bitcoin ecosystem will have higher rates of technical coordination and understanding; businesses will gain insight from the opensource community, and opensource engineers will understand the challenges that industrial users of Bitcoin face."
-  -
     name: Steve Lee
     role: Product Manager, Optech
     github: moneyball
@@ -32,13 +24,6 @@ associates:
     avatar: https://avatars1.githubusercontent.com/u/61096?s=400&v=4
     quote: >-
       "The terrible thing about a consensus system like Bitcoin is that every on-chain action we perform affects every other user of the system. That makes all of us neighbors, so we're faced with the choice of either being the bad neighbors who complain endlessly about each other or the good neighbors who work together to solve problems and find ways to coexist in harmony."
-  -
-    name: Marcin Jachymiak
-    role: Engineer, Optech
-    github: marcinja
-    avatar: https://avatars1.githubusercontent.com/u/12243734?s=400&v=4
-    quote: >-
-      "I'm interested in helping make Bitcoin better, and an important step forward is getting the community to use Bitcoin more efficiently. I hope that Optech can help coordinate this effort, and others, to make it as great as possible."
   -
     name: Mike Schmidt
     role: Product Manager, Optech
