@@ -7,43 +7,44 @@ associates:
     role: Director & Engineer, Optech
     other_affiliation: Developer, Chaincode Labs
     github: jnewbery
-    avatar: https://avatars1.githubusercontent.com/u/1063656?s=400&v=4
+    avatar: newbery.jpg
     quote: >-
       "I started Optech because if Bitcoin is to be successful, then one of the fundamental challenges facing Bitcoin services and businesses will be how to maximize customer utility by making efficient use of the blockchain. Helping Bitcoin ecosystem players adopt scaling techniques and technologies is one of the most effective ways we can help Bitcoin scale today."
-  -
-    name: James O'Beirne
-    role: Engineer, Optech
-    other_affiliation: Developer, Chaincode Labs
-    github: jamesob
-    avatar: https://avatars1.githubusercontent.com/u/73197?s=400&v=4
-    quote: >-
-      "If Optech succeeds, the Bitcoin ecosystem will have higher rates of technical coordination and understanding; businesses will gain insight from the opensource community, and opensource engineers will understand the challenges that industrial users of Bitcoin face."
   -
     name: Steve Lee
     role: Product Manager, Optech
     github: moneyball
-    avatar: https://avatars0.githubusercontent.com/u/326147?s=400&v=4
+    avatar: lee.png
     quote: >-
       "I am excited to help Bitcoin Optech Group make a meaningful contribution to Bitcoin. I’m looking forward to working with businesses to develop implementation best practices and to build a bridge between businesses and the open source community."
   -
     name: David A. Harding
     role: Technical Writer, Optech
     github: harding
-    avatar: https://avatars1.githubusercontent.com/u/61096?s=400&v=4
+    avatar: harding.png
     quote: >-
       "The terrible thing about a consensus system like Bitcoin is that every on-chain action we perform affects every other user of the system. That makes all of us neighbors, so we're faced with the choice of either being the bad neighbors who complain endlessly about each other or the good neighbors who work together to solve problems and find ways to coexist in harmony."
-  -
-    name: Marcin Jachymiak
-    role: Engineer, Optech
-    github: marcinja
-    avatar: https://avatars1.githubusercontent.com/u/12243734?s=400&v=4
-    quote: >-
-      "I'm interested in helping make Bitcoin better, and an important step forward is getting the community to use Bitcoin more efficiently. I hope that Optech can help coordinate this effort, and others, to make it as great as possible."
   -
     name: Mike Schmidt
     role: Product Manager, Optech
     other_affiliation: Product Manager, Blockstream
     github: bitschmidty
-    avatar: https://avatars0.githubusercontent.com/u/1615772?s=400&v=4
+    avatar: schmidt.png
     quote: >-
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."
+  -
+    name: Adam Jonas
+    role: Associate, Optech
+    other_affiliation: Special Projects, Chaincode Labs
+    github: adamjonas
+    avatar: jonas.png
+    quote: >-
+      "I am excited about the opportunity Bitcoin has before it as it grows.  I hope to contribute my small part as a liaison to help businesses take advantage of all that Bitcoin has to offer as well as gather feedback for the open source community so that we can together bring this wonderfully evolving technology to the masses."
+  -
+    name: Carl Dong
+    role: Engineer, Optech
+    other_affiliation: Developer, Chaincode Labs
+    github: dongcarl
+    avatar: dong.jpg
+    quote: >-
+      "New Bitcoin technologies, and more importantly, their rationales will always take some time to propagate from the engineers working on the bleeding-edge to the services and businesses focused on serving their customers. I'm honored to be able to help Optech accelerate this process."
