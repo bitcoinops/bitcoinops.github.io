@@ -94,6 +94,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #20]: {{news20}}
 {% assign news21 = "/en/newsletters/2018/11/13/" %}
 [newsletter #21]: {{news21}}
+{% assign news22 = "/en/newsletters/2018/11/20/" %}
+[newsletter #22]: {{news22}}
 {% assign news23 = "/en/newsletters/2018/11/27/" %}
 [newsletter #23]: {{news23}}
 {% assign news25 = "/en/newsletters/2018/12/11/" %}
@@ -102,10 +104,16 @@ place, put links here. -->{% endcomment %}
 [newsletter #26]: {{news26}}
 {% assign news27 = "/en/newsletters/2018/12/28/" %}
 [newsletter #27]: {{news27}}
+{% assign news30 = "/en/newsletters/2019/01/22/" %}
+[newsletter #30]: {{news30}}
 {% assign news31 = "/en/newsletters/2019/01/29/" %}
 [newsletter #31]: {{news31}}
+{% assign news34 = "/en/newsletters/2019/02/19/" %}
+[newsletter #34]: {{news34}}
 {% assign news36 = "/en/newsletters/2019/03/05/" %}
 [newsletter #36]: {{news36}}
+{% assign news37 = "/en/newsletters/2019/03/12/" %}
+[newsletter #37]: {{news37}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
