@@ -241,7 +241,11 @@ For bech32 P2WSH (the segwit equivalent of P2SH) or for future segwit
 witness versions, you don't need to do anything special.  The witness
 script version may be a different number, requiring you to use the
 corresponding `OP_0` to `OP_16` opcode, and the commitment may be a
-different length (up to 40 bytes), but nothing else changes.
+different length (from 2 to 40 bytes), but nothing else about the output
+changes.  Because length variations are allowed, ensure your fee
+estimation software considers the actual size of the scriptPubKey rather
+than using a constant someone previously calculated based on P2PKH or
+P2SH sizes.
 
 What you see above is the entire change you need to make on
 the backend of your software in order to enable sending to bech32
