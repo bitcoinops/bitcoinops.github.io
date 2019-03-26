@@ -44,7 +44,6 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
-[BIP151]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
@@ -114,6 +113,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #36]: {{news36}}
 {% assign news37 = "/en/newsletters/2019/03/12/" %}
 [newsletter #37]: {{news37}}
+{% assign news38 = "/en/newsletters/2019/03/19/" %}
+[newsletter #37]: {{news38}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
