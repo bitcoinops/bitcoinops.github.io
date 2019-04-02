@@ -92,7 +92,7 @@ Python reference library so you can see how little work this is.  We
 start by importing the library:
 
 ```python3
-import segwit_addr
+>>> import segwit_addr
 ```
 
 Bech32 addresses have a Human-Readable Part (HRP) that indicates what
@@ -104,7 +104,7 @@ testnet address is tb1q3w[...]g7a.  We'll set the Bitcoin mainnet HRP of
 are for the network we expect.
 
 ```python3
-HRP='bc'
+>>> HRP='bc'
 ```
 
 Finally, we have a few addresses we want to check---one that should work
@@ -112,9 +112,9 @@ and two that should fail.  (See [BIP173][] for a complete set of
 [reference test vectors][bip173 test vectors].)
 
 ```python3
-good_address='bc1qd6h6vp99qwstk3z668md42q0zc44vpwkk824zh'
-typo_address='bc1qd6h6vp99qwstk3z669md42q0zc44vpwkk824zh'
-wrong_network_address='tb1q3wrc5yq9c300jxlfeg7ae76tk9gsx044ucyg7a'
+>>> good_address='bc1qd6h6vp99qwstk3z668md42q0zc44vpwkk824zh'
+>>> typo_address='bc1qd6h6vp99qwstk3z669md42q0zc44vpwkk824zh'
+>>> wrong_network_address='tb1q3wrc5yq9c300jxlfeg7ae76tk9gsx044ucyg7a'
 ```
 
 Now we can simply attempt to decode each of these addresses
@@ -124,11 +124,11 @@ Now we can simply attempt to decode each of these addresses
 (0, [110, 175, 166, 4, 165, 3, 160, 187, 68, 90, 209,
      246, 218, 168, 15, 22, 43, 86, 5, 214])
 
-In [16]: segwit_addr.decode(HRP, typo_address)
-Out[16]: (None, None)
+>>> segwit_addr.decode(HRP, typo_address)
+(None, None)
 
-In [17]: segwit_addr.decode(HRP, wrong_network_address)
-Out[17]: (None, None)
+>>> segwit_addr.decode(HRP, wrong_network_address)
+(None, None)
 ```
 
 If we get back a None for the first value (the witness version), the
