@@ -71,6 +71,10 @@ members:
     twitter: ElectrumWallet
     logo: electrum.png
   -
+    name: Kraken
+    twitter: krakenfx
+    logo: kraken.png
+  -
     name: Ledger
     twitter: LedgerHQ
     logo: ledger.png
