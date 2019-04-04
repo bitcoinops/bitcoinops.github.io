@@ -55,6 +55,10 @@ members:
     twitter: Coinbase
     logo: coinbase.png
   -
+    name: Conio
+    twitter: conio
+    logo: conio.png
+  -
     name: Electrum
     twitter: ElectrumWallet
     logo: electrum.png
