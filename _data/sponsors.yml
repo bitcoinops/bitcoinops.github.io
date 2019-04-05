@@ -39,6 +39,10 @@ members:
     twitter: bitrefill
     logo: bitrefill.svg
   -
+    name: Bitso
+    twitter: Bitso
+    logo: bitso.svg
+  -
     name: Bitstamp
     twitter: Bitstamp
     logo: bitstamp.png
