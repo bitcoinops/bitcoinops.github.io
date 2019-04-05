@@ -63,6 +63,10 @@ members:
     twitter: conio
     logo: conio.png
   -
+    name: CryptoGarage
+    twitter: cryptogarageinc
+    logo: CryptoGarage.png
+  -
     name: Electrum
     twitter: ElectrumWallet
     logo: electrum.png
