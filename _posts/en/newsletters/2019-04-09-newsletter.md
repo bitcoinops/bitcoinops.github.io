@@ -36,13 +36,13 @@ projects.
   chain.  Other well-known contributors check their personal nodes and
   ensure that hash is indeed part of the best block chain, and then add
   that hash to the software as the "assumed valid" block.  When new
-  users start Bitcoin Core for the first time, the program then defaults
-  to skipping verification of signatures on all transactions included
+  users start Bitcoin Core for the first time, the program then defaults[^full-chain-verification]
+  to skipping script evaluation in all transactions included
   in blocks before the assumed valid block.  The program still keeps
   track of the bitcoin ownership changes produced by each transaction in
   a index called the Unspent Transaction Output (UTXO) set.  Although
   reviewing each historic ownership change still takes time, simply
-  skipping signature checking reduces initial sync time by about 80%
+  skipping script checking reduces initial sync time by about 80%
   according to [tests][0.14 tests].  Gregory Maxwell, who [implemented
   the assumed valid feature][Bitcoin Core #9484], has argued that,
   "Because the validity of a chain history is a simple objective fact,
@@ -54,20 +54,22 @@ projects.
     they get the same hash, and then having freshly installed Bitcoin
     Core nodes default to using that hash to download the exact same
     UTXO set.  This would allow a newly-started node to skip not only
-    signatures but all block chain data before the assumed valid block,
-    perhaps reducing the bandwidth and time requirements to start a node
+    scripts but all block chain data before the assumed valid block,
+    perhaps reducing the time requirements to start a node
     today by 95% or more (and certainly more as the block chain
-    continues to grow).  This is an old idea, is currently implemented
-    in some software that uses Bitcoin Core, and is part of the
-    motivation for research into other techniques such as [fast
+    continues to grow).  The verification of older blocks and
+    transactions could then be done in the background after the user is
+    already using their node, eventually giving them the same security
+    as a user who disabled this feature.  This is an old idea and is part of
+    the motivation for research into other techniques such as [fast
     updatable UTXO commitments][] and [automatic levelDB backups][].
 
     Discussion mainly revolved around whether or not this is a good
     idea.  Arguments in favor of it include it making starting a new
     node much easier and that it doesn't seem to change the trust model
     for anyone who already trusts the peer review of their development
-    team or who is willing to disable the default option to have their
-    node review the chainstate for validity itself.  Arguments against
+    team.
+    Arguments against
     it include a fear that fast initial syncs with an assumed valid UTXO
     set would disguise the fact that block size increases make complete
     initial syncing from scratch much more expensive; if block sizes
@@ -84,15 +86,6 @@ organizations implement bech32 sending support---the ability to pay
 native segwit addresses.  This [doesn't require implementing
 segwit][bech32 easy] yourself, but it does allow the people you pay to
 access all of segwit's multiple benefits.*
-
-<div class="hide-on-web" markdown="1">
-
-**Note:** we're unable to correctly format multi-line code examples in
-the email edition of the newsletter.  Please visit the [web
-edition][Newsletter #41] for better formatting.  We apologize for the
-inconvenience.
-
-</div>
 
 In [last week's newsletter][Newsletter #40], we used the Python
 reference library for bech32 to decode an address into a scriptPubKey
@@ -145,7 +138,7 @@ Now we replace one character in the above address with a typo and try
 checking that:
 
 ```text
-segwit_addr_ecc.check('bc1qw508d6qejxtdg4y5r4zarvary0c5xw7kv8f3t4', 'bc')
+>> segwit_addr_ecc.check('bc1qw508d6qejxtdg4y5r4zarvary0c5xw7kv8f3t4', 'bc')
 error: "Invalid"
 pos: Array [ 21 ]
 ```
@@ -232,9 +225,9 @@ are to their master development branches; some may also be backported to
 their pending releases.*
 
 - [Bitcoin Core #15596][] updates the `sendmany` RPC to remove the
-  `minconf` parameter.  For outputs received to your wallet, this
-  parameter allowed you to specify how many confirmations they must have
-  before you attempted to spend them.  Now the wallet defaults are
+  `minconf` parameter, which [didn't function the way people
+  expected][sendmany wackiness].
+  Now the wallet defaults are
   always used.  Those defaults are not to spend outputs received from
   other people until they are confirmed and to optionally allow spending
   unconfirmed change outputs from yourself depending on the
@@ -245,8 +238,8 @@ their pending releases.*
   peers when coming back online.  Previously it attempted to open
   connections to all its persistent peers at once.  Now it spreads the
   connections over a 30 second window to reduce peak memory usage by
-  about 20% and to also reduce the number of concurrent events later due
-  to the events occurring on a regular interval, such as pings.
+  about 20%.  This also means that messages that are sent on a regular
+  interval, such as pings, do not happen at the same time for all peers.
 
 - [LND #2740][] implements a new gossiper subsystem which puts its peers
   into two buckets, active gossiper or passive gossiper.  Active
@@ -289,6 +282,21 @@ their pending releases.*
   reserves tool described in [Newsletter #33][].  Draft text for the BIP
   is merged.
 
+## Footnotes
+
+[^full-chain-verification]:
+    The assumed valid mechanism is enabled by default but can be
+    disabled by starting Bitcoin Core with the configuration parameter
+    `assumevalid=0` (or `noassumevalid`).  This is will allow your node
+    to completely verify every transaction in the block chain to ensure
+    it follows all consensus rules.  Note that this will have no effect
+    on blocks your node has already processed, so if you want to verify
+    scripts in old blocks, you will need to have this option enabled
+    from the first time you ever use your node or you will need to need
+    to restart Bitcoin Core one time with the `reindex-chainstate`
+    configuration option.  For pruned nodes, reindexing requires
+    redownloading all pruned blocks.
+
 <script src="/misc/bech32-demo.js"></script>
 
 {% include references.md %}
@@ -307,3 +315,5 @@ their pending releases.*
 [interactive demo]: http://bitcoin.sipa.be/bech32/demo/demo.html
 [bech32 errors]: https://github.com/sipa/bech32/blob/master/ecc/javascript/segwit_addr_ecc.js#L54
 [round-robin]: https://en.wikipedia.org/wiki/Round-robin_scheduling
+[bitcoin core 0.5.0]: https://bitcoin.org/en/release/v0.5.0
+[sendmany wackiness]: https://github.com/bitcoin/bitcoin/pull/15595#issue-260932169
