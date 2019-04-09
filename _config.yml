@@ -40,3 +40,9 @@ exclude:
    - README.md
 
 show_excerpts: true
+
+defaults:
+  - scope:
+      path: ""  ## all pages
+    values:
+      image: https://bitcoinops.org/img/logos/optech-notext.png
