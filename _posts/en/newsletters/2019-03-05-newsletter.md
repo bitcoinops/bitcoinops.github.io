@@ -170,7 +170,7 @@ commits in popular Bitcoin infrastructure projects.
   sent, but the previous name confused people who expected it to also
   list received payments.  A new RPC `listpays` is also provided.  At
   present, it provides basically the same information as `listsendpays`,
-  but when multi-part payments are implemented, it'll collect all
+  but when multipath payments are implemented, it'll collect all
   payment parts into a single JSON object.
 
 - [C-Lightning #2382][] also allows the `sendpay` RPC to take a `bolt11`
