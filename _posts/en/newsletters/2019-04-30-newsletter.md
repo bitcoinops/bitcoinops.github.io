@@ -97,7 +97,51 @@ answers made since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:moneyball's writeups
+- ["Do HTLCs work for micropayments?"]({{bse}}85650) David Harding
+  and Gregory Maxwell both point out that there is risk in having an output
+  with too small of an amount to be spent on-chain, while that payment
+  is being routed. A micropayment of less than 546 satoshis would not
+  be relayed by the Bitcoin network. The current mitigation is for LN to
+  temporarily move such small payments to be a miner fee instead of an
+  output, depending on the game theory that if an attacker cannot steal
+  money, they won’t spend money to attack.
+
+- [How was the dust limit of 546 satoshis was chosen? Why not 550
+  satoshis?]({{bse}}86068) The Bitcoin Core transaction relay policy
+  sets a dust limit of 546 satoshis as the minimum amount for an output,
+  which seems a peculiar amount. Raghav Sood describes how 546 is three
+  times the minimum cost to create and spend a P2PKH output. A reference
+  is made to a [2013 discussion][dust convo].
+
+- [History of transactions in Lighting Network.]({{bse}}85901) A LN
+  beginner asks how the history of transactions conducted on LN for a
+  user can be saved and how a payer receives a proof of payment. Mark H
+  responds saying the LN wallet would need to save transaction history
+  for a user and provides a nice explanation of how a payment hash
+  provided to a payer results in a payment preimage reveal that serves
+  as proof of payment.
+
+- [How can my private key be revealed if I use the same nonce while
+  generating the signature?]({{bse}}85638) Pieter Wuille provides a
+  thorough answer that, if you’re familiar with the math used in
+  public key cryptography, demonstrates how a private
+  key is revealed in such circumstances.
+
+- [Why do lightning invoices expire?]({{bse}}85981) Rene Pickhardt
+  guesses that the primary reason would be a high
+  volume recipient with relatively low storage capability could run out
+  of storage or memory. An additional reason given is to provide some closure to
+  proceed if a payment is not initiated or completed rather than leave
+  it dangling. David Harding points out that traditional businesses put
+  expiration dates on invoices to avoid an obligation to deliver goods in the
+  future at a previously offered price.
+
+- [Are there still miners or mining pools which refuse to implement
+  SegWit?]({{bse}}86208) Mark Erhardt provides extensive analysis demonstrating
+  that essentially the answer is "no." Only 0.03% non-empty blocks from
+  the past year had no SegWit transactions, and the two primary miners of
+  those few blocks have demonstrated in 2019 that they’re mining blocks
+  with SegWit transactions.
 
 ## Notable code and documentation changes
 
@@ -157,4 +201,5 @@ backported to its pending release.*
 [blockstream liquid]: https://blockstream.com/liquid/
 [confidential assets]: https://elementsproject.org/features/confidential-transactions
 [blech32 py]: https://github.com/ElementsProject/elements/commit/9cb2fa051fcbe0fe66f15e6b88d224d1935376f4#diff-265badc7e18059096c32a61b0eada470
+[dust convo]: https://github.com/bitcoin/bitcoin/pull/2577#issuecomment-17738577
 [bitcoincore.org]: https://bitcoincore.org/
