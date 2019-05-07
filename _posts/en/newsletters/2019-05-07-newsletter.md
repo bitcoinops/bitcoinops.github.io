@@ -23,7 +23,7 @@ summarizes notable changes in popular Bitcoin infrastructure projects.
 - **Bitcoin Core 0.18.0 released:** this new major version contains
   several significant new features plus many minor features and
   bugfixes.  The project's [release notes][0.18 notes] describe
-  all notable changes and a lists of each of the 119 people whose merged
+  all notable changes and a list of each of the 119 people whose merged
   PRs helped contribute to this release.  Some features we think readers
   of this newsletter might find especially interesting include,
 
