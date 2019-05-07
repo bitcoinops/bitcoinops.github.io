@@ -128,7 +128,7 @@ place, put links here. -->{% endcomment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->
 {% endcomment %}
-{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.17.0/rpc" %}
+{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.18.0/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
 [rpc generatetoaddress]: {{rpc_prefix}}/generating/generatetoaddress/
