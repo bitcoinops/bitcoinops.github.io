@@ -29,7 +29,12 @@ def p2wsh_vbytes(sigs, pks):
 # Wrapped
 def p2sh_p2wsh_vbytes(sigs, pks):
   return 4 + 2/4.0 + 1 + p2sh_p2wsh_input + 1 + p2wpkh_output*2 + 1/4.0 + p2wsh_input_witness(sigs, pks) + 4
+## Taproot
+               #out  ss  seq    sig
+taproot_input = 36 + 1 + 4   + (1+64)/4
+taproot_vbytes = 4 + 1 + taproot_input + 1 + p2wpkh_output*2 + 4
+
 
 for sigs in range(1,16):
   for pks in range(sigs,16):
-      print("{}-of-{}".format(sigs, pks), p2sh_vbytes(sigs, pks), p2sh_p2wsh_vbytes(sigs, pks), p2wsh_vbytes(sigs, pks))
+      print("{}-of-{}".format(sigs, pks), p2sh_vbytes(sigs, pks), p2sh_p2wsh_vbytes(sigs, pks), p2wsh_vbytes(sigs, pks), taproot_vbytes)

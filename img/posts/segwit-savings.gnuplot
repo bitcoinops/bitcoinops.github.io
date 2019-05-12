@@ -3,6 +3,7 @@
 set style line 1 lc rgb '#8b1a0e' pt 4 ps 0.25 lt 1 lw 2
 set style line 2 lc rgb '#5e9c36' pt 4 ps 0.25 lt 1 lw 2
 set style line 3 lc rgb '#0025ad' pt 4 ps 0.25 lt 1 lw 2
+set style line 4 lc rgb '#d95319' pt 4 ps 0.25 lt 1 lw 2
 
 set terminal pngcairo size 800,200 font "Sans,12"
 
@@ -15,10 +16,21 @@ set samples 1000
 
 set output './2019-04-segwit-multisig-size-p2sh-to-p2sh-p2wsh.png'
 #set xtics (1,2,3,4,5,10,15,20,25)
-set xtics ("1" 0, "2" 15, "3" 29, "4" 42, "5" 54, "6" 65, "7" 75, "8" 84, "9" 92, "10" 99, "11" 105, "12" 110, "13" 114, "15" 119)
+set x2tics ("k1" 0, "2" 15, "3" 29, "4" 42, "5" 54, "6" 65, "7" 75, "8" 84, "9" 92, "10" 99, "11" 105, "12" 110, "13" 114, "15" 119) font "default,10" offset 0,graph -0.05
+set xtics ("n1" 0, "2" 1, "3" 2, "4" 3, "5" 4, "6" 5, "7" 6, "8" 7, "9" 8, \
+  "2" 15, "3" 16, "4" 17, "5" 18, "6" 19, "7" 20, "8" 21, "9" 22, \
+  "3" 29, "4" 30, "5" 31, "6" 32, "7" 33, "8" 34, "9" 35, \
+  "4" 42, "5" 43, "6" 44, "7" 45, "8" 46, "9" 47, \
+  "5" 54, "6" 55, "7" 56, "8" 57, "9" 58, \
+  "6" 65, "7" 66, "8" 67, "9" 68, \
+  "7" 75, "8" 76, "9" 77, \
+  "8" 84, "9" 85, \
+  "9" 92 \
+  ) font "default,6" offset 0,graph 0.15
+
 set ytics 600
 set ylabel "Vbytes"
-set xlabel "Transactions with x signatures for x to 15 pubkeys"
+set xlabel "Transactions with k signatures for n to 15 pubkeys (n>=k)"
 #plot for [sigs=1:3] for [pks=sigs:3] p2sh_vbytes(sigs, pks) with points
 plot "<python3 2019-04-segwit-savings.py" u 0:2 title "P2SH" ls 1 \
    , "<python3 2019-04-segwit-savings.py" u 0:3 title "P2SH-P2WSH" ls 2 \
@@ -26,3 +38,7 @@ plot "<python3 2019-04-segwit-savings.py" u 0:2 title "P2SH" ls 1 \
 set output './2019-04-segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png'
 plot "<python3 2019-04-segwit-savings.py" u 0:3 title "P2SH-P2WSH" ls 2 \
    , "<python3 2019-04-segwit-savings.py" u 0:4 title "P2WSH" ls 3
+
+set output './2019-05-taproot-multisig-size.png'
+plot "<python3 2019-04-segwit-savings.py" u 0:4 title "P2WSH" ls 3 \
+   , "<python3 2019-04-segwit-savings.py" u 0:5 title "Taproot" ls 4
