@@ -4,6 +4,8 @@
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-schnorr]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
+[bip-taproot]: https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki
+[bip-tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
 [bips repo]: https://github.com/bitcoin/bips/
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
 [BitcoinCore.org]: https://bitcoincore.org/
@@ -123,6 +125,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #40]: {{news40}}
 {% assign news41 = "/en/newsletters/2019/04/09/" %}
 [newsletter #41]: {{news41}}
+{% assign news44 = "/en/newsletters/2019/04/30/" %}
+[newsletter #44]: {{news44}}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
