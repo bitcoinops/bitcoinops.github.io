@@ -40,7 +40,7 @@ notable changes in popular infrastructure projects.
 
 - **Addition of derivation paths to BIP174 PSBTs:** Stepan Snigirev
   [posted][psbt path] a suggestion to the Bitcoin-Dev mailing list to
-  allow PSBTs to include the BIP32 derivation path for the public keys
+  allow PSBTs to include the BIP32 extended public key (xpub) and derivation path for the public keys
   used to generate the change output's address.  This can help multisig
   wallets determine whether or not the transaction's change output pays
   back to the correct set of signers.  The author of [BIP174][], Andrew
