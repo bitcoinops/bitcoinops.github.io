@@ -168,7 +168,7 @@ spend a Taproot single-sig output about 5% more expensive than P2WPKH.
 This is probably not significant: the cost to create a Taproot output is
 almost the same as to create a P2WSH output---which people pay all the
 time without issue---and the cost to spend a single-key Taproot is 40%
-cheaper than P2WPKH.
+cheaper than P2PKH.
 
 <table style="text-align: center;">
 <tr>
