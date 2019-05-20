@@ -3,6 +3,7 @@
 [rss feed]: /feed.xml
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
+[bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
 [bip-schnorr]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
 [bip-taproot]: https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki
 [bip-tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
@@ -19,6 +20,7 @@
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
 [descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [eclair repo]: https://github.com/ACINQ/eclair
+[eltoo]: https://blockstream.com/eltoo.pdf
 [hwi]: https://github.com/bitcoin-core/HWI
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
@@ -125,6 +127,8 @@ place, put links here. -->{% endcomment %}
 [newsletter #40]: {{news40}}
 {% assign news41 = "/en/newsletters/2019/04/09/" %}
 [newsletter #41]: {{news41}}
+{% assign news42 = "/en/newsletters/2019/04/16/" %}
+[newsletter #42]: {{news42}}
 {% assign news44 = "/en/newsletters/2019/04/30/" %}
 [newsletter #44]: {{news44}}
 
