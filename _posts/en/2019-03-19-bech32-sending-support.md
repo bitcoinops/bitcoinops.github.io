@@ -1,0 +1,87 @@
+---
+title: Bech32 Sending Support
+permalink: /en/bech32-sending-support/
+name: 2019-03-19-bech32-sending-support
+type: posts
+layout: post
+lang: en
+
+excerpt: >
+  Copies of all published parts of our 24-part weekly series on bech32 sending
+  support from March 19th to August 28th, 2019.
+
+---
+<style>
+/* put a little extra space between the H2s to maybe help
+ * readers understand each of these was originally published independently
+ * of the others */
+h2:not(:first-of-type) { margin-top: 3em; }
+</style>
+
+{% include references.md %}
+
+On this page are copies of all published parts of our 24-part weekly series
+on bech32 sending support, from March 19th to August 28th, 2019.
+
+1. toc
+{:toc}
+
+## Introduction to Bech32 Sending Support
+
+*Originally published in [Newsletter #38][].*
+
+{% include specials/bech32/01-intro.md %}
+
+## Bech32 usage statistics
+
+*Originally published in [Newsletter #39][].*
+
+{% include specials/bech32/02-stats.md %}
+
+## Using the bech32 reference libraries
+
+*Originally published in [Newsletter #40][].*
+
+{% include specials/bech32/03-python-ref.md %}
+
+## Locating typos in bech32 addresses
+
+*Originally published in [Newsletter #41][].*
+
+{% include specials/bech32/04-ecc.md %}
+
+## Fee savings with native segwit
+
+*Originally published in [Newsletter #42][].*
+
+{% include specials/bech32/05-fee-savings.md %}
+
+## Top bech32 questions from the Bitcoin StackExchange
+
+*Originally published in [Newsletter #43][].*
+
+{% include specials/bech32/06-stackexchange.md %}
+
+## Other addresses formats based on bech32
+
+*Originally published in [Newsletter #44][].*
+
+{% include specials/bech32/07-altbech32.md %}
+
+## Automatic bech32 support for future soft forks
+
+*Originally published in [Newsletter #45][].*
+
+{% include specials/bech32/08-upgradability.md %}
+
+## Creating more efficient QR codes with bech32 addresses
+
+*Originally published in [Newsletter #46][].*
+
+{% include specials/bech32/09-qrcode.md %}
+
+## Bech32 support as a proxy for competence
+
+*Originally publised in [Newsletter #47][].*
+
+{% include specials/bech32/10-snooze-lose.md %}
