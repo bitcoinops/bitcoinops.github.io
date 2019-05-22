@@ -56,81 +56,8 @@ place, put links here. -->{% endcomment %}
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 
-{% comment %}<!-- old newsletters (variables & links) in date order earliest to latest -->{% endcomment %}
-{% assign news0 = "/en/newsletters/2018/06/08/" %}
-[newsletter #0]: {{news0}}
-{% assign news1 = "/en/newsletters/2018/06/26/" %}
-[newsletter #1]: {{news1}}
-{% assign news2 = "/en/newsletters/2018/07/03/" %}
-[newsletter #2]: {{news2}}
-{% assign news3 = "/en/newsletters/2018/07/10/" %}
-[newsletter #3]: {{news3}}
-{% assign news4 = "/en/newsletters/2018/07/17/" %}
-[newsletter #4]: {{news4}}
-{% assign news5 = "/en/newsletters/2018/07/24/" %}
-[newsletter #5]: {{news5}}
-{% assign news6 = "/en/newsletters/2018/07/31/" %}
-[newsletter #6]: {{news6}}
-{% assign news7 = "/en/newsletters/2018/08/07/" %}
-[newsletter #7]: {{news7}}
-{% assign news8 = "/en/newsletters/2018/08/14/" %}
-[newsletter #8]: {{news8}}
-{% assign news9 = "/en/newsletters/2018/08/21/" %}
-[newsletter #9]: {{news9}}
-{% assign news10 = "/en/newsletters/2018/08/28/" %}
-[newsletter #10]: {{news10}}
-{% assign news11 = "/en/newsletters/2018/09/04/" %}
-[newsletter #11]: {{news11}}
-{% assign news12 = "/en/newsletters/2018/09/11/" %}
-[newsletter #12]: {{news12}}
-{% assign news13 = "/en/newsletters/2018/09/18/" %}
-[newsletter #13]: {{news13}}
-{% assign news16 = "/en/newsletters/2018/10/09/" %}
-[newsletter #16]: {{news16}}
-{% assign news17 = "/en/newsletters/2018/10/16/" %}
-[newsletter #17]: {{news17}}
-{% assign news18 = "/en/newsletters/2018/10/23/" %}
-[newsletter #18]: {{news18}}
-{% assign news19 = "/en/newsletters/2018/10/30/" %}
-[newsletter #19]: {{news19}}
-{% assign news20 = "/en/newsletters/2018/11/06/" %}
-[newsletter #20]: {{news20}}
-{% assign news21 = "/en/newsletters/2018/11/13/" %}
-[newsletter #21]: {{news21}}
-{% assign news22 = "/en/newsletters/2018/11/20/" %}
-[newsletter #22]: {{news22}}
-{% assign news23 = "/en/newsletters/2018/11/27/" %}
-[newsletter #23]: {{news23}}
-{% assign news25 = "/en/newsletters/2018/12/11/" %}
-[newsletter #25]: {{news25}}
-{% assign news26 = "/en/newsletters/2018/12/18/" %}
-[newsletter #26]: {{news26}}
-{% assign news27 = "/en/newsletters/2018/12/28/" %}
-[newsletter #27]: {{news27}}
-{% assign news30 = "/en/newsletters/2019/01/22/" %}
-[newsletter #30]: {{news30}}
-{% assign news31 = "/en/newsletters/2019/01/29/" %}
-[newsletter #31]: {{news31}}
-{% assign news33 = "/en/newsletters/2019/02/12/" %}
-[newsletter #33]: {{news33}}
-{% assign news34 = "/en/newsletters/2019/02/19/" %}
-[newsletter #34]: {{news34}}
-{% assign news36 = "/en/newsletters/2019/03/05/" %}
-[newsletter #36]: {{news36}}
-{% assign news37 = "/en/newsletters/2019/03/12/" %}
-[newsletter #37]: {{news37}}
-{% assign news38 = "/en/newsletters/2019/03/19/" %}
-[newsletter #38]: {{news38}}
-{% assign news39 = "/en/newsletters/2019/03/26/" %}
-[newsletter #39]: {{news39}}
-{% assign news40 = "/en/newsletters/2019/04/02/" %}
-[newsletter #40]: {{news40}}
-{% assign news41 = "/en/newsletters/2019/04/09/" %}
-[newsletter #41]: {{news41}}
-{% assign news42 = "/en/newsletters/2019/04/16/" %}
-[newsletter #42]: {{news42}}
-{% assign news44 = "/en/newsletters/2019/04/30/" %}
-[newsletter #44]: {{news44}}
+{% comment %}<!-- links old newsletters -->{% endcomment %}
+{% include linkers/newsletters.md %}
 
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
