@@ -11,6 +11,8 @@ a few technical talks from the Magical Crypto Friends conference, and
 includes our regular sections on bech32 sending support and notable
 changes to popular Bitcoin infrastructure projects.
 
+{% include references.md %}
+
 ## Action items
 
 *None this week.*
@@ -124,40 +126,7 @@ you pay to access all of segwit's benefits.*
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-Up until this point in our series encouraging wallets and services to
-support sending to bech32 native segwit addresses, we've focused
-almost exclusively on technical information.  Today, this section
-expresses an opinion: the longer you delay implementing bech32 sending
-support, the worse some of your users and potential users will think of
-your software or service.
-
-> "They can only pay legacy addresses."<br>
-> "Oh.  Let's look for another service that supports current technology."
-
-Services that only support legacy addresses are likely to become a cue
-to users that minimal development effort is being put into maintaining
-their Bitcoin integration.  We expect that it'll send the same signal to
-users as a website in 2019 that's covered in Shockwave/Adobe Flash
-elements and that claims it's best viewed in Internet Explorer 7 (or
-see an even more [imaginative comparison][nullc bank analogy] written by Gregory
-Maxwell.)
-
-Bech32 sending is not some experimental new technology that still needs
-testing---native segwit unspent outputs currently hold [over 200,000
-bitcoins][].  Bech32 sending is also something that's easy to implement
-(see Newsletters [#38][news38 bech32] and [#40][news40 bech32]).  Most
-importantly, as more and more wallets and services upgrade to bech32
-*receiving* by default, it's going to become obvious which other
-services haven fallen behind by not providing sending support.
-
-If you haven't implemented bech32 sending support yet, we suggest you
-try to get it implemented by 24 August 2019 (the two-year anniversary of
-segwit activation).  Not long after that, Bitcoin Core's next release is
-expected to begin defaulting to bech32 receiving addresses in its GUI
-and perhaps also its API methods (see Newsletters [#40][Newsletter #40]
-and [#42][Newsletter #42]).  We expect other wallets to do the
-same---except for the ones that have already made bech32 their default
-(or even their only supported address format).
+{% include specials/bech32/10-snooze-lose.md %}
 
 ## Notable code and documentation changes
 
@@ -208,14 +177,8 @@ same---except for the ones that have already made bech32 their default
   method that deletes all invoices that expired before the specified
   time.
 
-{% include references.md %}
 {% include linkers/issues.md issues="15006,15870,14802,14047,2631,2627,15512,14032" %}
-[bech32 easy]: {{news38}}#bech32-sending-support
 [mcf transcripts]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/
-[nullc bank analogy]: https://old.reddit.com/r/Bitcoin/comments/9iw1p2/hey_guys_its_time_to_make_bech32_standard_on/e6onq8t/
-[over 200,000 bitcoins]: https://p2sh.info/dashboard/db/p2wpkh-statistics?orgId=1
-[news38 bech32]: {{news38}}#bech32-sending-support
-[news40 bech32]: {{news40}}#bech32-sending-support
 [v2 transport protocol]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
 [anyprevout list]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001992.html
 [mcf vids]: https://www.youtube.com/playlist?list=PLWqtMh0tDnEGBHDS8CalOpkVZhlIgRlAC
