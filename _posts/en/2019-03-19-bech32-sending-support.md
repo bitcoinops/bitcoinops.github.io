@@ -85,3 +85,6 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 *Originally publised in [Newsletter #47][].*
 
 {% include specials/bech32/10-snooze-lose.md %}
+
+## Footnotes
+{:.no_toc}
