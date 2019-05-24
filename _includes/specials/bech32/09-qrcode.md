@@ -41,3 +41,21 @@ addresses][News 44 bech32].
 [bech32 easy]: {{news38}}#bech32-sending-support
 [rfc3986]: https://tools.ietf.org/html/rfc3986#section-3.1
 [news 44 bech32]: {{news44}}#bech32-sending-support
+
+[^only-bc]:
+    Bech32 addresses have three parts, a Human Readable Prefix (HRP)
+    such as `bc`, a separator (always a `1`), and a data part.  The
+    separator and the data part are guaranteed to be part of QR code's
+    *uppercase alphanumeric* set, but the range of characters allowed in
+    the HRP according to BIP173 includes punctuation that isn't part of
+    that uppercase alphanumeric set.  Specifically, the following
+    characters are allowed in bech32 HRPs but are not part of the QR
+    code uppercase alphanumeric set:
+
+        !"#&'()';<=>?@[\]^_`{|}~
+
+    None of the bech32 HRPs used in Bitcoin (bc, tb, bcrt) use any of
+    these characters, and neither does any other application as far as
+    we know.  However, you may not want to make any assumptions in your
+    code about uppercase always providing smaller QR codes for
+    non-Bitcoin bech32 addresses.
