@@ -86,5 +86,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/10-snooze-lose.md %}
 
+## Wallets that only support bech32 receiving
+
+*Originally published in [Newsletter #48][].*
+
+{% include specials/bech32/11-only-bech32.md %}
+
 ## Footnotes
 {:.no_toc}
