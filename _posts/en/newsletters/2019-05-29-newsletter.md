@@ -316,7 +316,30 @@ answers made since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME: insert moneyball writeup
+- [What are the limitations for amortizing the interactive session setup
+  of MuSig?]({{bse}}87605) Richard Myers is attempting to optimize
+  interactive setup for a low bandwidth system, but user nickler
+  emphasizes that nonces must not be reused or private keys could
+  be leaked. Nickler goes on to provide suggestions to achieve
+  Myers's goal.
+
+- [On chain cost of Segwit version 1 versus version 0?]({{bse}}87697)
+  User Wapac asks for a comparison of transaction weight between segwit
+  v0 and v1, specifically for relatively simple single key transactions.
+  Andrew Chow provides byte-level details and concludes that v1
+  is always cheaper to spend, while v0 can be cheaper to create an
+  output. However, Andrew points out that the sender generally doesn’t
+  have much choice in choosing which output type they send to, so users
+  are likely to prefer v1 even for single key transactions. Wapac also
+  provides an answer that shows a summary table.
+
+- [Does v1 Segwit include v0?]({{bse}}87612) Pieter Wuille states that
+  no, you cannot use [v0 scripts][BIP141] inside a [v1 spend][bip-tapscript]. He elaborates that the
+  reason behind this is in order to meet some of the goals behind v1
+  leads to incompatibility with aspects of v0 script.
+
+- [Fee negotiations in Lightning.]({{bse}}87586) Mark H describes how, in
+  an example four-hop LN payment, fees are negotiated.
 
 ## Notable code and documentation changes
 
