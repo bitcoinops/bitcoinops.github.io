@@ -22,6 +22,7 @@
 [descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [eclair repo]: https://github.com/ACINQ/eclair
 [eltoo]: https://blockstream.com/eltoo.pdf
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
 [hwi]: https://github.com/bitcoin-core/HWI
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
