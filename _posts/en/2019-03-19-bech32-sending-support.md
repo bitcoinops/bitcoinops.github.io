@@ -92,5 +92,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/11-only-bech32.md %}
 
+## Bech32 trivia
+
+*Originally published in [Newsletter #49][].*
+
+{% include specials/bech32/12-midway.md %}
+
 ## Footnotes
 {:.no_toc}
