@@ -55,7 +55,6 @@ delays implementing bech32 sending support, the more chance you'll have
 of losing customers because they can't request payments from you using
 their preferred wallet.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
 [wasabi bech32 only]: https://github.com/zkSNACKs/WalletWasabi/blob/master/WalletWasabi.Documentation/FAQ.md#my-wallet-cant-send-to-bech32-addresses---what-wallets-can-i-use-instead
 ["only generate filters regarding bech32 addresses"]: https://github.com/zkSNACKs/Meta/blob/master/README.md#wasabi-wallet-under-the-hood
 [wasabi wallet]: https://wasabiwallet.io/

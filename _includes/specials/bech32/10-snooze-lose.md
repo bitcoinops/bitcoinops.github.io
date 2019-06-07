@@ -33,7 +33,6 @@ and [#42][Newsletter #42]).  We expect other wallets to do the
 same---except for the ones that have already made bech32 their default
 (or even their only supported address format).
 
-[bech32 easy]: {{news38}}#bech32-sending-support
 [nullc bank analogy]: https://old.reddit.com/r/Bitcoin/comments/9iw1p2/hey_guys_its_time_to_make_bech32_standard_on/e6onq8t/
 [over 200,000 bitcoins]: https://p2sh.info/dashboard/db/p2wpkh-statistics?orgId=1
 [news38 bech32]: {{news38}}#bech32-sending-support

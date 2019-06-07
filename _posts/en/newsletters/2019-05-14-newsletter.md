@@ -518,7 +518,7 @@ fork lock-in on 24 August 2019, the Optech Newsletter will contain this
 weekly section that provides information to help developers and
 organizations implement bech32 sending support---the ability to pay
 native segwit addresses.  This [doesn't require implementing
-segwit][bech32 easy] yourself, but it does allow the people you pay to
+segwit][bech32 series] yourself, but it does allow the people you pay to
 access all of segwit's multiple benefits.*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
@@ -587,3 +587,4 @@ the fault of the newsletter author.
 [scriptless scripts]: http://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/
 [discrete log contracts]: https://adiabat.github.io/dlc.pdf
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
+[bech32 series]: /en/bech32-sending-support/

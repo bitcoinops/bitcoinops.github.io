@@ -190,7 +190,7 @@ UTC on Wednesdays.
 
 ## Bech32 sending support
 
-*Week 12 of 24 in a [series][bech32 easy] about allowing the people
+*Week 12 of 24 in a [series][bech32 series] about allowing the people
 you pay to access all of segwit's benefits.*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
@@ -224,7 +224,7 @@ wiki page for changes -->{% endcomment %}
   daemon was restarted.
 
 {% include linkers/issues.md issues="15741,2985,2761" %}
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 series]: /en/bech32-sending-support/
 [news48 coshv]: {{news48}}#proposed-transaction-output-commitments
 [alt-coshv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016997.html
 [kotliar ln]: https://www.youtube.com/watch?v=1UDD9PMFTds

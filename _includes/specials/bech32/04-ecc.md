@@ -127,7 +127,6 @@ idea of what your users might see if you make use of this bech32 address
 feature.
 
 <script src="/misc/bech32-demo.js"></script>
-[bech32 easy]: {{news38}}#bech32-sending-support
 [browserify]: http://browserify.org/
 [javascript sample code]: https://github.com/sipa/bech32/tree/master/ecc/javascript
 [interactive demo]: http://bitcoin.sipa.be/bech32/demo/demo.html

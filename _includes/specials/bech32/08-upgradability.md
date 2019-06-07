@@ -52,5 +52,4 @@ into providing bech32 sending support now is something you won't need to
 repeat when future expected changes to the Bitcoin protocol are
 deployed.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
 [news40 bech32]: {{news40}}#bech32-sending-support

@@ -82,7 +82,7 @@ fork lock-in on 24 August 2019, the Optech Newsletter will contain this
 weekly section that provides information to help developers and
 organizations implement bech32 sending support---the ability to pay
 native segwit addresses.  This [doesn't require implementing
-segwit][bech32 easy] yourself, but it does allow the people you pay to
+segwit][bech32 series] yourself, but it does allow the people you pay to
 access all of segwit's multiple benefits.*
 
 {% include specials/bech32/03-python-ref.md %}
@@ -176,3 +176,4 @@ its master development branch; some may also be backported to the
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [bolt2 delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection
 [p2p protocol encryption]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
+[bech32 series]: /en/bech32-sending-support/

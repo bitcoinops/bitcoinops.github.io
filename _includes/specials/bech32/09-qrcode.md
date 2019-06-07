@@ -61,7 +61,6 @@ kindly [informed us][ivgi tweet] that it was possible to mix character
 modes, and we've updated the final two paragraphs of this section
 accordingly.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
 [rfc3986]: https://tools.ietf.org/html/rfc3986#section-3.1
 [ivgi tweet]: https://twitter.com/shesek/status/1131733590235131905
 [node-qrcode]: https://github.com/soldair/node-qrcode#mixed-modes
