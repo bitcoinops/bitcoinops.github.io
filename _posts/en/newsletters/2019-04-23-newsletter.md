@@ -84,7 +84,7 @@ fork lock-in on 24 August 2019, the Optech Newsletter will contain this
 weekly section that provides information to help developers and
 organizations implement bech32 sending support---the ability to pay
 native segwit addresses.  This [doesn't require implementing
-segwit][bech32 easy] yourself, but it does allow the people you pay to
+segwit][bech32 series] yourself, but it does allow the people you pay to
 access all of segwit's multiple benefits.*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
@@ -226,7 +226,7 @@ backported to its pending release.*
 
 {% include linkers/issues.md issues="15555,14121,15839,14897,15776,15834,15557,885,2541,2545,2546,951,927,2382" %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 series]: /en/bech32-sending-support/
 [rbf core fail]: /en/rbf-in-the-wild/#bitcoin-core-increase-transaction-fee-almost
 [million channels project]: https://github.com/rustyrussell/million-channels-project
 [bfg post]: https://medium.com/@rusty_lightning/routing-dijkstra-bellman-ford-and-bfg-7715840f004

@@ -98,5 +98,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/12-midway.md %}
 
+## Adoption speed
+
+*Originally published in [Newsletter #50][].*
+
+{% include specials/bech32/13-adoption-speed.md %}
+
 ## Footnotes
 {:.no_toc}

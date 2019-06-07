@@ -120,7 +120,7 @@ changes to popular Bitcoin infrastructure projects.
 
 ## Bech32 sending support
 
-*Week 10 of 24 in a [series][bech32 easy] about allowing the people
+*Week 10 of 24 in a [series][bech32 series] about allowing the people
 you pay to access all of segwit's benefits.*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
@@ -186,3 +186,4 @@ wiki page for changes -->{% endcomment %}
 [mcf nonet]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/bitcoin-without-internet/
 [mcf future ln]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/ln-present-and-future-panel/
 [email bip-anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
+[bech32 series]: /en/bech32-sending-support/

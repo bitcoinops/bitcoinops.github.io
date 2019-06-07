@@ -41,7 +41,6 @@ probably worth your time to implement it for Bitcoin too.
   Example:
   `wpkh([f6bb4c63/0'/0'/28']02bf9d38386db60191f2f785cbf7ba90d01bed5958efb7b449a552b89da7550177)#efkksxw6`
 
-[bech32 easy]: {{news38}}#bech32-sending-support
 [descriptors checksum]: https://github.com/bitcoin/bitcoin/blob/fd637be8d21a606e98c037b40b268c4a1fae2244/src/script/descriptor.cpp#L24
 [spec-cashaddr]: https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md
 [bech32x]: https://gist.github.com/jonasschnelli/68a2a5a5a5b796dc9992f432e794d719
