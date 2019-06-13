@@ -2,6 +2,7 @@
 title: 'Announcing Bitcoin Optech'
 permalink: /en/announcing-bitcoin-optech/
 name: 2018-07-20-announcing-bitcoin-optech
+slug: 2018-07-20-announcing-bitcoin-optech
 type: posts
 layout: post
 lang: en
