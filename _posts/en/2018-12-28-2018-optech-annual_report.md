@@ -2,6 +2,7 @@
 title: '2018 Annual Report'
 permalink: /en/2018-optech-annual-report/
 name: 2018-12-28-2018-optech-annual-report
+slug: 2018-12-28-2018-optech-annual-report
 type: posts
 layout: post
 lang: en

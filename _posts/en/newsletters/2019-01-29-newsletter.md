@@ -2,6 +2,7 @@
 title: 'Bitcoin Optech Newsletter #31'
 permalink: /en/newsletters/2019/01/29/
 name: 2019-01-29-newsletter
+slug: 2019-01-29-newsletter
 type: newsletter
 layout: newsletter
 lang: en

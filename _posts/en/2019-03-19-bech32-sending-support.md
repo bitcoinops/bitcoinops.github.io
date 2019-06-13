@@ -2,6 +2,7 @@
 title: Bech32 Sending Support
 permalink: /en/bech32-sending-support/
 name: 2019-03-19-bech32-sending-support
+slug: 2019-03-19-bech32-sending-support
 type: posts
 layout: post
 lang: en

@@ -2,6 +2,7 @@
 title: 'Bitcoin Optech Newsletter #5'
 permalink: /en/newsletters/2018/07/24/
 name: 2018-07-24-newsletter
+slug: 2018-07-24-newsletter
 type: newsletter
 layout: newsletter
 lang: en

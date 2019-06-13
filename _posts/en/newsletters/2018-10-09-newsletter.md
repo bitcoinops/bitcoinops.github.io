@@ -2,6 +2,7 @@
 title: 'Bitcoin Optech Newsletter #16: Scaling Bitcoin Special'
 permalink: /en/newsletters/2018/10/09/
 name: 2018-10-09-newsletter
+slug: 2018-10-09-newsletter
 type: newsletter
 layout: newsletter
 lang: en

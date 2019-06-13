@@ -2,6 +2,7 @@
 title: 'Field Report: Consolidation of 4 Million UTXOs at Xapo'
 permalink: /en/xapo-utxo-consolidation/
 name: 2018-07-30-xapo-utxo-consolidation
+slug: 2018-07-30-xapo-utxo-consolidation
 type: posts
 layout: post
 lang: en

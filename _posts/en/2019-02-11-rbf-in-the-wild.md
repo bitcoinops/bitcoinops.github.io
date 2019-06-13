@@ -2,6 +2,7 @@
 title: 'RBF in the Wild'
 permalink: /en/rbf-in-the-wild/
 name: 2019-02-11-rbf-in-the-wild
+slug: 2019-02-11-rbf-in-the-wild
 type: posts
 layout: post
 lang: en
