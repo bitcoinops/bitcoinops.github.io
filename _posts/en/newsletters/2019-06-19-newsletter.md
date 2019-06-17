@@ -7,11 +7,12 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter requests testing on RCs for both LND and
-C-Lightning, describes using ECDH for uncoordinated LN payments, and
-summarizes a proposal to add information about delays to LN
-routing replies.  Also included are our regular sections on bech32
-sending support and notable changes in popular Bitcoin infrastructure
-projects.
+C-Lightning, describes using ECDH for uncoordinated LN payments,
+summarizes a proposal to add information about delays to LN routing replies,
+and includes summaries of some interesting talks from the recent 'Breaking
+Bitcoin' conference in Amsterdam.  Also included are our regular sections on
+bech32 sending support and notable changes in popular
+Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -89,6 +90,76 @@ projects.
     address concerns related to routing privacy.  The proposal
     has received a moderate amount of positive discussion on the mailing
     list so far.
+
+## Breaking Bitcoin
+
+[Breaking Bitcoin][bb website] was a Bitcoin technology conference that took
+place in Amsterdam last weekend. It was well attended by both Bitcoin protocol
+developers and applications engineers.  Videos of the [Saturday][bb sat video]
+and [Sunday][bb sun video] are available, as are several [transcripts][bb transcripts] by Bitcoin
+developer Bryan Bishop (kanzure).
+
+The following talks may be of particular interest to readers of the Bitcoin Optech newsletter:
+
+- [**Breaking Bitcoin Privacy**][bb belcher video] - [Chris Belcher][],
+  creator of coinjoin implementation Joinmarket, gave an overview of privacy in
+  Bitcoin. Belcher has previously written a [literature review on
+  privacy][belcher privacy review], and this very accesible talk touched on many
+  of the topics in that review. He started by explaining why privacy is
+  important in Bitcoin, described some commonly-used
+  heuristics used by chain analysis companies to link Bitcoin addresses and
+  transactions, and demonstrated how coinjoins and payjoins can be used to break
+  those heuristics and thwart chain analysis. He finished by talking
+  about how layer 2 technologies such as LN have the potential to improve
+  privacy since they remove privacy-leaking data from the blockchain.
+  ([transcript][bb belcher transcript]).
+
+- [**Bitcoin Build System Security**][bb dong video] - Chaincode Labs engineer
+  [Carl Dong][] gave a pre-recorded presentation on build security in Bitcoin
+  Core and then answered audience questions over video link. Dong's talk
+  addressed the question: "If I download a Bitcoin Core executable from
+  bitcoincore.org, how can I know what code I'm running?" The Bitcoin Core
+  project currently uses reproducible [gitian][] builds to ensure that the built binary
+  corresponds to the source code, but Dong explains that _reproducibility is not
+  enough_---if the reproducible build toolchain uses precompiled binaries, then
+  those toolchain binaries could be compromised and used to undetectably
+  insert malicious code into the compiled binary. Dong went on to describe
+  _reproducible_ and _bootstrappable_ builds, where the number of precompiled
+  binaries used in the toolchain is reduced to a minimum, and he gave an update on
+  his project to integrate [guix][] (pronounced 'geeks') builds into Bitcoin
+  Core to minimize trust in the build toolchain. ([transcript][bb dong transcript]).
+
+- [**Secure Protocols on bip-taproot**][bb nick video] - Blockstream engineer
+  [Jonas Nick][] gave an update on some of the work he and his colleagues have
+  been doing to build secure protocols using schnorr signatures and the taproot
+  construction. He started by explaining how the proposed [bip-taproot][] works
+  ([more background][bg taproot]) and then explained some practical considerations
+  when building protocols using schnorr/taproot: external signers that can't leak private
+  keys through nonce bias, key aggregation and threshold signatures using Musig,
+  and blind schnorr signatures. As the schnorr/taproot proposal develops and (maybe)
+  approaches activation, companies that wish to take advantage of the new functionality
+  offered by the proposal need to consider these practical aspects of building
+  secure products and protocols. ([transcript][bb nick transcript]).
+
+- [**Extracting Seeds from Hardware Wallets**][bb guillemet video] - Ledger CSO
+  [Charles Guillemet][] gave an eye-opening talk about security issues with
+  several hardware wallets on the market. He spoke about previously-revealed
+  exploits that he and his team have discovered, as well as new exploits for
+  which he didn't give the method in order to protect users. The attacks
+  described used a mixture of physical access, side-channels, and exploiting
+  insecure cryptography implementations. This was a fascinating talk for anyone
+  working with or using hardware wallets to protect their Bitcoin.
+  ([transcript][bb guillemet transcript]).
+
+- [**Cryptographic Vulnerabilities in Threshold Wallets**][bb shlomovits video] -
+  One of the most hotly-anticipated aspects of schnorr signatures is the
+  ability to implement key aggregation and threshold signature schemes.
+  Similar schemes are possible (although much more complex to implement) using
+  the ECDSA signing algorithm which is currently used in Bitcoin. ZenGo
+  co-founder [Omer Shlomovits][] described some of those ECDSA key-aggregation
+  and threshold signature schemes and showed how many of the implementations for
+  those schemes contained bugs due to faulty assumptions when optimizing the
+  algorithms. (no transcript available).
 
 ## Bech32 sending support
 
@@ -194,6 +265,28 @@ wiki page for changes -->{% endcomment %}
 [ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
 [decker spontaneous]: https://github.com/cdecker/lightning/tree/stepan-pay
 [jager delays]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002015.html
+[bb website]: https://breaking-bitcoin.com/
+[bb sat video]: https://www.youtube.com/watch?v=DKOG0BQMmmg
+[bb sun video]: https://www.youtube.com/watch?v=DqhxPWsJFZE
+[bb transcripts]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/
+[bb belcher video]: https://youtu.be/DKOG0BQMmmg?t=8266
+[Chris Belcher]: https://twitter.com/chris_belcher_
+[belcher privacy review]: https://en.bitcoin.it/wiki/Privacy
+[bb belcher transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/breaking-bitcoin-privacy/
+[bb dong video]: https://youtu.be/DKOG0BQMmmg?t=19828
+[Carl Dong]: https://twitter.com/carl_dong
+[gitian]: https://gitian.org/
+[guix]: https://www.gnu.org/software/guix/
+[bb dong transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
+[bb nick video]: https://youtu.be/DKOG0BQMmmg?t=21860
+[Jonas Nick]: https://twitter.com/n1ckler
+[bg taproot]: {{news46}}/
+[bb nick transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/secure-protocols-bip-taproot/
+[bb guillemet video]: https://youtu.be/DqhxPWsJFZE?t=9534
+[Charles Guillemet]: https://twitter.com/p3b7_
+[bb guillemet transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/
+[bb shlomovits video]: https://youtu.be/DqhxPWsJFZE?t=15879
+[Omer Shlomovits]: https://twitter.com/OmerShlomovits
 [watchtower tutorial]: https://github.com/wbobeirne/watchtower-example
 [prometheus]: https://prometheus.io/
 [pos ref anchor]: https://github.com/bitcoin/bips/pull/555#issuecomment-315517707
