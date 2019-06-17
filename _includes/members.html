@@ -12,7 +12,7 @@
 	{% unless member.logo contains 'https://' %}{% capture logo %}/img/members/{{member.logo}}{% endcapture %}{% endunless %}
 	<li>
 		<div class="member">
-		<a href="https://twitter.com/{{ member.twitter }}"><img src="{{ logo }}" width="150" alt="{{ member.name }}" title="{{ member.name }}"></a>
+		<a href="{{ member.website }}"><img src="{{ logo }}" width="150" alt="{{ member.name }}" title="{{ member.name }}"></a>
 		</div>
 	</li>
 	{% endfor %}
