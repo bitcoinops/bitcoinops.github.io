@@ -33,7 +33,7 @@ However, when multisig addresses are being used, the attacker may be one
 of the parties involved in generation of the address and so may be able
 to manipulate what address is finally chosen.  For example, Bob sends
 his pubkey to Mallory expecting that Mallory will send her pubkey back.
-The he expects they'll each put the pubkeys into a multisig script
+Then he expects they'll each put the pubkeys into a multisig script
 template, hash it into an address, and someone will deposit money into
 that address.
 
