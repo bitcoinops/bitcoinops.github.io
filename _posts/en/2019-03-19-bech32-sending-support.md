@@ -105,5 +105,17 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/13-adoption-speed.md %}
 
+## Address security
+
+*Originally published in [Newsletter #51][].*
+
+{% include specials/bech32/14-security.md %}
+
+## Reading and transcribing bech32 addresses
+
+*Originally published in [Newsletter #52][].*
+
+{% include specials/bech32/15-data-entry.md %}
+
 ## Footnotes
 {:.no_toc}
