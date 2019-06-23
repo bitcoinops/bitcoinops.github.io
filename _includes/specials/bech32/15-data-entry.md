@@ -4,7 +4,7 @@
 Before segwit was activated, developers discussed what format to use for
 native segwit addresses, with some developers suggesting that a new
 format was an opportunity to make addresses that were easier to read and
-transcribe.  Developer Gregory Maxwell made this point rather poignantly
+transcribe.  Developer Gregory Maxwell made this point rather effectively
 by [asking][maxwell phone] other developers to call him up and try to
 successfully communicate a mixed-case legacy base58check address to him
 over the phone.  If there was a communication error in just a single
@@ -21,7 +21,7 @@ typos will be caught an overwhelming percentage of the time.
 
 However, as wallets and services consider upgrading to support both
 bech32 sending and receiving, we think it's worth reminding any
-reluctant implementers about this this key user-benefiting feature of
+reluctant implementers about this key user-benefiting feature of
 bech32 addresses---so we've automated part of Maxwell's old phone test
 to allow you to privately evaluate the relative difficulty of
 transcribing legacy and native segwit addresses.
