@@ -117,5 +117,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/15-data-entry.md %}
 
+## Quick testing checklist
+
+*Originally published in [Newsletter #53][].*
+
+{% include specials/bech32/16-checklist.md %}
+
 ## Footnotes
 {:.no_toc}
