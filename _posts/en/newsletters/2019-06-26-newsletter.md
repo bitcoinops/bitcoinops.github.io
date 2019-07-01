@@ -5,6 +5,7 @@ name: 2019-06-26-newsletter
 type: newsletter
 layout: newsletter
 lang: en
+slug: 2019-06-26-newsletter
 ---
 This week's newsletter announces a pending disclosure of minor
 vulnerabilities for older Bitcoin Core releases, suggests continued

@@ -5,6 +5,7 @@ name: 2019-06-19-newsletter
 type: newsletter
 layout: newsletter
 lang: en
+slug: 2019-06-19-newsletter
 ---
 This week's newsletter requests testing on RCs for both LND and
 C-Lightning, describes using ECDH for uncoordinated LN payments,
