@@ -5,6 +5,7 @@ name: 2019-06-14-exec-briefing
 type: posts
 layout: post
 lang: en
+slug: 2019-06-14-exec-briefing
 
 excerpt: >
   Videos and slides from the Bitcoin Optech Executive Briefing
