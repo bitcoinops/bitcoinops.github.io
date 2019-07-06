@@ -123,5 +123,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/16-checklist.md %}
 
+## Message signing support
+
+*Originally published in [Newsletter #54][].*
+
+{% include specials/bech32/17-signmessage.md %}
+
 ## Footnotes
 {:.no_toc}
