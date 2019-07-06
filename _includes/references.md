@@ -31,7 +31,9 @@
 {% comment %}<!-- TODO: switch miniscript link to some sort of overview page when available -->{% endcomment %}
 [miniscript]: http://bitcoin.sipa.be/miniscript/miniscript.html
 [musig]: https://eprint.iacr.org/2018/068
-[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+{% assign _link_descriptors = 'https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md' %}
+[output script descriptor]: {{_link_descriptors}}
+[output script descriptors]: {{_link_descriptors}}
 
 {% comment %}<!-- BIPs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
