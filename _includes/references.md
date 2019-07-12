@@ -14,6 +14,7 @@
 [bitcoin core repo]: https://github.com/bitcoin/bitcoin
 [bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf
 [bitcoin.se]: https://bitcoin.stackexchange.com/
+[bolts repo]: https://github.com/lightningnetwork/lightning-rfc/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [c-lightning repo]: https://github.com/ElementsProject/lightning
 [cve-2012-2459]: https://bitcointalk.org/?topic=102395
