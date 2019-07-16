@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% comment %}Original taken from Jekyll theme Minima{% endcomment %}
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      {% unless page.nowrap %}<div class="wrapper">{% endunless %}
+        {{ content }}
+      {% unless page.nowrap %}</div>{% endunless %}
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
