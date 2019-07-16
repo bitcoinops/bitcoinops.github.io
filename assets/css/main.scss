@@ -5,6 +5,9 @@
 @import "minima";
 @import "vendor/font-awesome/font-awesome";
 
+$compatibility-feature-yes: #c0ceff;
+$compatibility-feature-no: #f8ffc0;
+
 .center {
     text-align: center;
 }
@@ -147,3 +150,69 @@ div.xoverflow {
 }
 
 ol li ol { list-style-type: lower-latin; }
+.feature-yes strong {
+  border-bottom: 2px solid $compatibility-feature-yes;
+}
+.feature-no strong {
+  border-bottom: 2px solid $compatibility-feature-no;
+}
+.feature-neutral strong {
+  border-bottom: 2px solid lightgray;
+  color: gray;
+}
+
+.third-party-logo
+{
+  max-height:150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:20px
+}
+
+:target {
+  background-color: #daf8fa;
+}
+
+td.compat_yes {
+  background-color: $compatibility-feature-yes;
+}
+
+td.compat_no {
+  background-color: $compatibility-feature-no;
+}
+
+td.compat {
+  margin: 0;
+  padding: 0;
+  font-size: 125%;
+}
+
+span.compat-caption {
+  display: block;
+  font-size: 75%;
+  font-style: italic;
+  line-height: 1.5;
+  padding-top: 1ex;
+}
+
+table.compatibility
+{
+  margin: 0 auto;
+  width: unset;
+}
+
+div.compat-usability
+{
+  max-width: 300px; float: left; padding: 20px; text-align: center;
+}
+
+div.compat-usability img
+{
+  width:100%;
+}
+
+.site-nav .page-link:not(:last-child) 
+{
+  margin-right: 10px;
+}

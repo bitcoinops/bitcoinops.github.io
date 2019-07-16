@@ -1,0 +1,123 @@
+---
+id: https://bitcoinops.org/schema/compatibility
+description: The tool object
+type: object
+required:
+  - name
+  - internal_url
+  - logo
+additionalProperties: false
+properties:
+  name:
+    description: The name of the tool
+    type: string
+
+  internal_url:
+    description: The path to the wallet's detailed page on our site
+    type: string
+    pattern: "^/en/compatibility/"
+
+  logo:
+    description: The path to the wallet's logo on our site
+    type: string
+    pattern: &img "^/img/logos/third-party/.*(png|svg)$"
+
+  rbf:
+    description: Container for information about Replace-by-Fee (especially BIP125)
+    type: object
+    additionalProperties: false
+    properties:
+      tested: &tested
+        description: Data about when this part of the wallet was tested
+        additionalProperties: false
+        type: object
+        properties:
+          date:
+            description: "Date tested, YYYY-MM-DD"
+            type: string
+            pattern: "^20[0-9][0-9]-[01][0-9]-[0-3][0-9]$"
+          platforms:
+            description: supported platforms
+            type: array
+            additionalItems: false
+            items:
+              type: string
+              enum:
+                - Android
+                - Linux
+                - Windows
+                - iOS
+                - macOS
+                - web
+          version:
+            description: the version tested
+            type: string
+      features:
+        description: RBF features
+        type: object
+        properties:
+          receive:
+            description: Features related to receiving RBF payments
+            type: object
+            properties:
+              notification:
+                description: If there is a notification for incoming transactions, does that notification flag whether the transaction signals RBF?
+                type: string
+                enum: &feat
+                  - "true"
+                  - "false"
+                  - na
+                  - untested
+              list: &rbf_list
+                description: Is an incoming transaction flagged as signaling RBF in the list of wallet transactions?
+                type: string
+                enum: *feat
+              details: &rbf_details
+                description: Is an incoming transaction flagged as signaling RBF in the transaction details?
+                type: string
+                enum: *feat
+              shows_replaced_version: &rbf_shows_replaced
+                description: When an RBF replacement (second, higher fee) transaction arrives, does the replacement transaction show?
+                type: string
+                enum: *feat
+              shows_original_version: &rbf_shows_orig
+                description: When an RBF replacement (second, higher fee) transaction arrives, does the original transaction still show?
+                type: string
+                enum: *feat
+            additionalProperties: false
+
+          send:
+            description: Features related to sending RBF payments
+            type: object
+            properties:
+              signals_bip125:
+                description: Does the wallet allow the sending RBF signaled transactions in the interface?
+                type: string
+                enum: *feat
+              list: *rbf_list
+              details: *rbf_details
+              shows_replaced_version: *rbf_shows_replaced
+              shows_original_version: *rbf_shows_orig
+            additionalProperties: false
+
+      examples: &examples
+        description: Examples of this category's behavior
+        type: array
+        items:
+          type: object
+          required:
+            - image
+            - caption
+          additionalProperties: false
+          properties:
+            image:
+              description: Screenshot of behavior or video thumbnail
+              type: string
+              pattern: "^/img/compatibility/.*(png|svg)$"
+            link:
+              description: Link to a video or additional information
+              type: string
+              format: uri
+            caption:
+              description: Caption to give the image
+              type: string
