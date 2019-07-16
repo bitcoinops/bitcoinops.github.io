@@ -129,11 +129,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/17-signmessage.md %}
 
-## Fee savings in dollar terms
+## Survey of support issues
 
 *Originally published in [Newsletter #55][].*
 
-{% include specials/bech32/18-real-fees.md %}
+{% include specials/bech32/18-support-issues.md %}
 
 ## Footnotes
 {:.no_toc}

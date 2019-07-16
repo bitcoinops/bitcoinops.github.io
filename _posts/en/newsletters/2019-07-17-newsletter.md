@@ -45,7 +45,7 @@ you pay to access all of segwit's benefits.*
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/18-real-fees.md %}
+{% include specials/bech32/18-support-issues.md %}
 
 ## Notable code and documentation changes
 
