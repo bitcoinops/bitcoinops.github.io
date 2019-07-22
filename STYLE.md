@@ -13,12 +13,12 @@ The first letter of a proper noun is always capitalized.
 The first letter of a common noun is only capitalized at the start of a
 sentence or heading.
 
-- bitcoin (the currency)
-- schnorr
-- taproot
-- merkle (tree|root|branch|node)
-- segwit
 - bech32
+- bitcoin (the currency)
+- merkle (tree|root|branch|node)
+- schnorr
+- segwit
+- taproot
 
 ### Forbidden abbreviations
 
@@ -33,6 +33,7 @@ following abbreviations we assume readers will already know.
 - BIP (Bitcoin Improvement Proposal)
   - BIPXXX referencing a specific BIP number
 - BTC (Bitcoin)
+- DoS (Denial-of-service)
 - ECDSA (Elliptic Curve Digital Signature Algorithm)
 - kB, MB, GB, TB, etc... (SI-prefixed byte sizes)
 - kiB, MiB, GiB, TiB, etc... (SI-prefixed binary byte sizes)
