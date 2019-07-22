@@ -204,7 +204,7 @@ the node's bandwidth and memory---problems which developers are still
 ### 2018 summary<br>Notable technical conferences and other events
 
 - [BPASE][bpase], January, Stanford University
-- [Bitcoin Core developers meetup][coredevtech nyc], March, New York
+- [Bitcoin Core developers meetup NYC][coredevtech nyc], March, New York
   City ([transcripts][coredevtech ts])
 - [L2 Summit][], May, Boston
 - [Building on Bitcoin][], July, Lisbon ([transcripts][bob ts])
@@ -212,7 +212,7 @@ the node's bandwidth and memory---problems which developers are still
   [transcripts][edge dev ts])
 - [Scaling Bitcoin Conference][], October, Tokyo. ([videos][scaling
   bitcoin vids], [transcripts][scaling bitcoin ts])
-- [Bitcoin Core developers meetup][coredevtech tokyo], October, Tokyo
+- [Bitcoin Core developers meetup Tokyo][coredevtech tokyo], October, Tokyo
   ([transcripts][coredevtech ts])
 - [Chaincode Lightning Residency][], October, New York City ([videos][ln
   residency vids])
