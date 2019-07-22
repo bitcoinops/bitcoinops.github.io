@@ -58,7 +58,7 @@ infrastructure projects.
 
     - [Additional technical information][bse 79484] by Andrew Chow (also described below)
 
-    - [CVE-2018-17144][], National Vulnerability Database (NVE) entry
+    - [CVE-2018-17144 entry][cve-2018-17144], National Vulnerability Database (NVE) entry
       being updated by Luke Dashjr
 
     We're aware of several very insightful people currently reflecting

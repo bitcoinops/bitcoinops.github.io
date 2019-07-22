@@ -11,6 +11,7 @@ excerpt: >
   Videos and slides from the Bitcoin Optech Executive Briefing
   on May 14th, 2019.
 
+auto_id: false
 ---
 {% include references.md %}
 
