@@ -111,7 +111,7 @@ changes to popular Bitcoin infrastructure projects.
       accept data from random peers, so non-net relay doesn't
       necessarily change the trust model.
 
-   - A [panel][mcf future ln] by Will O'Beirne, Lisa Neigut, Alex Bosworth with
+   - A [conversation][mcf future ln] between Will O'Beirne, Lisa Neigut, Alex Bosworth with
      moderation by Leigh Cuen discussing the future of LN, mostly the
      short-term and medium-term conclusion of current development
      efforts surrounding the LN 1.1 specification.  There are no hyped

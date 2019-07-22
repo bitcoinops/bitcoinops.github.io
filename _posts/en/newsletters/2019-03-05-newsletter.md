@@ -174,7 +174,7 @@ commits in popular Bitcoin infrastructure projects.
   but when multipath payments are implemented, it'll collect all
   payment parts into a single JSON object.
 
-- [C-Lightning #2382][] also allows the `sendpay` RPC to take a `bolt11`
+  The same PR also allows the `sendpay` RPC to take a `bolt11`
   field that will be saved and returned back to the user if they later
   run the `listpay`, `listsendpays`, or `waitsendpay` RPCs.
 
