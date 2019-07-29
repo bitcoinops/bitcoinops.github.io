@@ -7,6 +7,7 @@ preview:
 build:
 	bundle exec jekyll clean
 	bundle exec jekyll build --future --drafts --unpublished
+	bundle --version | tee -a _site/build.txt
 
 test:
 	## Check compatibility schema against data files
