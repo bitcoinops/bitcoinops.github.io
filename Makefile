@@ -10,7 +10,7 @@ build:
 
 test:
 	## Check compatibility schema against data files
-	$S ! find _data/compatibility -type f -exec bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml {} \; | grep .
+	# $S ! find _data/compatibility -type f -exec bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml {} \; | grep .
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .

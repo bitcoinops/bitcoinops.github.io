@@ -52,8 +52,6 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
-    json-schema (2.8.1)
-      addressable (>= 2.4)
     kramdown (1.17.0)
     liquid (4.0.0)
     listen (3.1.1)
@@ -76,7 +74,6 @@ GEM
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
-    parslet (1.8.2)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.2)
@@ -91,8 +88,6 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     thread_safe (0.3.6)
-    toml (0.2.0)
-      parslet (~> 1.8.0)
     tomlrb (1.2.8)
     typhoeus (1.3.0)
       ethon (>= 0.9.0)
@@ -106,10 +101,8 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll
-  json-schema
   mdl
   minima (~> 2.0)
-  toml
 
 RUBY VERSION
    ruby 2.5.1p57
