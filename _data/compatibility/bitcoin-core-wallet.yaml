@@ -1,7 +1,7 @@
 ---
 name: Bitcoin Core Wallet
 internal_url: /en/compatibility/bitcoin-core
-logo: /img/logos/third-party/bitcoin-core.png
+logo: /img/compatibility/bitcoin-core/bitcoin-core.png
 rbf:
   tested:
     date: "2018-08-28"
