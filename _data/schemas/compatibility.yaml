@@ -20,7 +20,7 @@ properties:
   logo:
     description: The path to the wallet's logo on our site
     type: string
-    pattern: &img "^/img/logos/third-party/.*(png|svg)$"
+    pattern: &img "^/img/compatibility/.*/.*(png|svg)$"
 
   rbf:
     description: Container for information about Replace-by-Fee (especially BIP125)
