@@ -13,7 +13,7 @@ technologies.
 
 We provide [workshops][], [documentation][scaling book], [weekly
 newsletters][], [original research][dashboard], [case studies and
-announcements][blog], [analysis of Bitcoin software and services][compatibility], and help facilitate improved relations between businesses
+announcements][blog], and help facilitate improved relations between businesses
 and the open source community.
 
 [Learn more about us][about].
@@ -24,7 +24,6 @@ and the open source community.
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
 [about]: /about
-[compatibility]: /en/compatibility/
 
 <h2>Recent newsletters and blog posts</h2>
 <ul class="post-list">
