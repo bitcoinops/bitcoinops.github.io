@@ -148,7 +148,31 @@ answers made since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME
+- [Why does the `importmulti` RPC not support zpub and ypub?]({{bse}}89261) Fontaine
+  asks why Bitcoin Core's `importmulti` RPC supports the xpub public key
+  derivation format but not ypub or zpub formats. Pieter Wuille explains that
+  the xpub format was specified in BIP32 and was used to generate
+  P2PKH addresses types which were the most common at the time. Pieter goes on to
+  describe Bitcoin Core's [output script descriptors][descriptor] as a more sustainable
+  approach to address generation.
+
+- [Is Bitcoin PoW actually SHA256 + Merkle tree generation?]({{bse}}89296) User ascendzor
+  wonders about the consequences of miners needing to recompute the merkle root
+  as part of proof of work mining and why the nonce cannot be increased to 64
+  bits. Pieter Wuille explains that not only is the overhead in computing the
+  merkle root negligible, but an increase in the nonce size would require a hard
+  fork.
+
+- [What is the difference between bytes and virtual bytes
+  (vbytes)?]({{bse}}89385) Ugam Kamat and Murch note the differences between
+  virtual size (vsize, denominated in vbytes) and size (denominated in bytes)
+  and go on to explain the block weight limit and segwit discount.
+
+- [To what extent does asymmetric cryptography secure bitcoin
+  transactions?]({{bse}}89262) RedGrittyBrick and Pieter Wuille explain that
+  while asymmetric cryptography was not used in Bitcoin to prevent a bug or
+  attack, it is the mechanism by which an individual's coins are secured from
+  others.
 
 ## Notable code and documentation changes
 
