@@ -147,5 +147,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/20-percentage-loss.md %}
 
+## BRD field report
+
+*Originally published in [Newsletter #58][].*
+
+{% include specials/bech32/21-brd.md %}
+
 ## Footnotes
 {:.no_toc}
