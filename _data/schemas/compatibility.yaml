@@ -121,3 +121,58 @@ properties:
             caption:
               description: Caption to give the image
               type: string
+
+  segwit:
+    description: Container for information about segwit support
+    type: object
+    additionalProperties: false
+    properties:
+      tested: *tested
+      examples: *examples
+      features:
+        description: Segwit receiving features
+        type: object
+        properties:
+          receive:
+            description: Features related to generating segwit receive addresses
+            type: object
+            properties:
+              p2sh_wrapped: 
+                description: Does the wallet allow receiving to P2SH-wrapped segwit?
+                type: string
+                enum: *feat
+              bech32: 
+                description: Does the wallet allow receiving to Bech32 native segwit addresses?
+                type: string
+                enum: *feat
+              default: 
+                description: What is the default address receive type?
+                type: string
+                enum:
+                  - "p2pkh"
+                  - "p2sh"
+                  - "p2sh_wrapped"
+                  - "p2sh_wrapped_p2wsh"
+                  - "bech32"
+                  - "bech32_p2wsh"
+            additionalProperties: false
+          send:
+            description: Features related to sending to segwit addresses
+            type: object
+            properties:
+              bech32:
+                description: Does the wallet allow sending to Bech32 native segwit addresses?
+                type: string
+                enum: *feat
+              change_bech32:
+                description: Does the wallet return change to itself in a Bech32 native segwit address?
+                type: string
+                enum: *feat
+              segwit_v1:
+                description: Does the wallet allow sending to segwit v1 witnesses?
+                type: string
+              bech32_p2wsh:
+                description: Does the wallet allow sending to Bech32 native segwit p2wsh addresses?
+                type: string
+                enum: *feat
+            additionalProperties: false
