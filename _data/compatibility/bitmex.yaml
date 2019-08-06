@@ -1,0 +1,50 @@
+---
+name: BitMEX
+internal_url: /en/compatibility/bitmex
+logo: /img/compatibility/bitmex/bitmex.png
+rbf:
+  tested:
+    date: "2018-11-05"
+    platforms:
+      - web
+    version: "n/a"
+  features:
+    receive:
+      notification: "na"
+      list: "false"
+      details: "false"
+      shows_replaced_version: "false"
+      shows_original_version: "false"
+    send:
+      signals_bip125: "false"
+      list: "untested"
+      details: "untested"
+      shows_replaced_version: "untested"
+      shows_original_version: "untested"
+  examples:
+    - image: /img/compatibility/bitmex/rbf/send-screen.png
+      caption: >
+        Sending Transaction - Send Transaction screen. Transactions sent out of BitMEX are not RBF signaled. BitMEX only accepts confirmed transactions.
+segwit:
+  tested:
+    date: "2019-04-12"
+    platforms:
+      - web
+    version: "n/a"
+  features:
+    receive:
+      p2sh_wrapped: "false"
+      bech32: "false"
+      default: "p2sh"
+    send:
+      bech32: "false" 
+      change_bech32: "false"
+      segwit_v1: "Bech32 not supported."
+      bech32_p2wsh: "false"
+  examples:
+    - image: /img/compatibility/bitmex/segwit/receive-screen.png
+      caption: >
+        BitMEX uses a static P2SH address per user account.
+    - image: /img/compatibility/bitmex/segwit/send-screen.png
+      caption: >
+        BitMEX does not support sending to native bech32 addresses.
