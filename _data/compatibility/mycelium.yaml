@@ -1,0 +1,66 @@
+---
+name: Mycelium
+internal_url: /en/compatibility/mycelium
+logo: /img/compatibility/mycelium/mycelium.png
+rbf:
+  tested:
+    date: "2018-10-30"
+    platforms:
+      - iOS
+    version: "1.11"
+  features:
+    receive:
+      notification: "na"
+      list: "false"
+      details: "false"
+      shows_replaced_version: "false"
+      shows_original_version: "false"
+    send:
+      signals_bip125: "false"
+      list: "untested"
+      details: "untested"
+      shows_replaced_version: "untested"
+      shows_original_version: "untested"
+  examples:
+    - image: /img/compatibility/mycelium/rbf/send-screen-default.png
+      caption: >
+        Sending Transaction - Default send transaction screen. No options for RBF while sending or in app settings.
+    - image: /img/compatibility/mycelium/rbf/send-miner-fee-options.png
+      caption: >
+        Sending Transaction - Send transaction miner fee details. No RBF options.
+    - image: /img/compatibility/mycelium/rbf/transaction-list-sent.png
+      caption: >
+        Attempting Transaction Replacement - Transaction list. No option to bump since transaction sent without RBF.
+    - image: /img/compatibility/mycelium/rbf/transaction-details-sent.png
+      caption: >
+        Attempting Transaction Replacement - Sent transaction details. No sign RBF/not or bumping.
+    - image: /img/compatibility/mycelium/rbf/transaction-list-incoming-rbf.png
+      caption: >
+        Receiving Transaction Signaling RBF - When receiving RBF, or any transaction, no unconfirmed transactions show.
+segwit:
+  tested:
+    date: "2019-07-24"
+    platforms:
+      - iOS
+    version: "14"
+  features:
+    receive:
+      p2sh_wrapped: "false"
+      bech32: "false"
+      default: "p2pkh"
+    send:
+      bech32: "false"
+      change_bech32: "false"
+      segwit_v1: "Fails during address validation."
+      bech32_p2wsh: "false"
+  examples:
+    - image: /img/compatibility/mycelium/segwit/receive-screen.png
+      caption: >
+        Mycelium only generates P2PKH receive addresses.
+    - image: /img/compatibility/mycelium/segwit/send-screen.png
+      caption: >
+        Mycelium cannot send to any bech32 addresses.
+    #- image: /img/compatibility/mycelium/segwit/send-screen-segwit-v1-error.png
+    #  caption: >
+    #    Mycelium displays a validation error when trying to send to a segwit v1
+    #    address (or any other bech32 address).
