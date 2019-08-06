@@ -1,0 +1,64 @@
+---
+name: Wasabi
+internal_url: /en/compatibility/wasabi
+logo: /img/compatibility/wasabi/wasabi.png
+rbf:
+  tested:
+    date: "2018-11-08"
+    platforms:
+      - macOS
+    version: "1.0"
+  features:
+    receive:
+      notification: "na"
+      list: "false"
+      details: "false"
+      shows_replaced_version: "true"
+      shows_original_version: "false"
+    send:
+      signals_bip125: "false"
+      list: "untested"
+      details: "untested"
+      shows_replaced_version: "untested"
+      shows_original_version: "untested"
+  examples:
+    - image: /img/compatibility/wasabi/rbf/send-screen.png
+      caption: >
+        Sending Transaction - Send transaction screen. No RBF options.
+    - image: /img/compatibility/wasabi/rbf/transaction-list-sent.png
+      caption: >
+        Attempting Transaction Replacement - Transaction list screen showing sent transaction. No RBF bump options. Transaction not sent signaling RBF.
+    - image: /img/compatibility/wasabi/rbf/transaction-list-incoming-rbf.png
+      caption: >
+        Receiving Transaction Signaling RBF - Incoming RBF signaling transaction. No RBF flag.
+    - image: /img/compatibility/wasabi/rbf/transaction-list-incoming-replacement.png
+      caption: >
+        Receiving Replacement Transaction - Replacement transaction replaces
+        original transaction after transaction fee bump. No RBF indicator.
+segwit:
+  tested:
+    date: "2019-07-26"
+    platforms:
+      - macOS
+    version: "1.1.6"
+  features:
+    receive:
+      p2sh_wrapped: "false"
+      bech32: "true"
+      default: "bech32"
+    send:
+      bech32: "true"
+      change_bech32: "true"
+      segwit_v1: "Fails on validation of the address."
+      bech32_p2wsh: "true"
+  examples:
+    - image: /img/compatibility/wasabi/segwit/receive-screen.png
+      caption: >
+        Wasabi only generates bech32 receive addresses.
+    - image: /img/compatibility/wasabi/segwit/send-screen.png
+      caption: >
+        Wasabi allows sending to any segwit v0 address.
+    - image: /img/compatibility/wasabi/segwit/send-screen-segwit-v1-error.png
+      caption: >
+        Wasabi displays a validation error when attempting to send to a segwit
+        v1 address.
