@@ -191,24 +191,7 @@ block chain space used, this is the most efficient form of fee bumping.
 
 ### Usability
 
-*Click on a thumbnail for a larger image or to play its video.*
-
-{% for example in tool.rbf.examples %}
-  {% capture /dev/null %}
-  {% if example.link %}
-    {% assign link = example.link %}
-  {% else %}
-    {% assign link = example.image %}
-  {% endif %}
-  {% endcapture %}
-<div markdown="1" class="compat-usability">
-[![{{example.caption|escape_once}}]({{example.image}})]({{link}})
-<br /><span class="compat-caption">{{example.caption}}</span>
-</div>
-  {% assign break = forloop.index | modulo:2 %}
-  {% if break == 0 %}<br clear="both" />{% endif %}
-{% endfor %}
-
+{% include functions/compat-gallery.md examples=tool.rbf.examples %}
 
 ## Segwit Addresses
 
@@ -351,22 +334,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 
 ### Usability
 
-*Click on a thumbnail for a larger image or to play its video.*
-
-{% for example in tool.segwit.examples %}{% capture /dev/null %}
-  {% if example.link %}
-    {% assign link = example.link %}
-  {% else %}
-    {% assign link = example.image %}
-  {% endif %}
-{% endcapture %}
-<div markdown="1" class="compat-usability">
-[![{{example.caption|escape_once}}]({{example.image}}){:width="250px"}]({{link}})
-<br /><span class="compat-caption">{{example.caption}}</span>
-</div>
-{% assign break = forloop.index | modulo:2 %}
-{% if break == 0 %}<br clear="both" />{% endif %}
-{% endfor %}
+{% include functions/compat-gallery.md examples=tool.segwit.examples %}
 
 {% else %}
 *We have not yet tested {{tool.name}} for segwit capabilities.*
