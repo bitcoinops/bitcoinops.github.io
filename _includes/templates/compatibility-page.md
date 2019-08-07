@@ -351,7 +351,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 
 ### Usability
 
-*Click on a thumbnail for a larger image or to the play its video.*
+*Click on a thumbnail for a larger image or to play its video.*
 
 {% for example in tool.segwit.examples %}{% capture /dev/null %}
   {% if example.link %}
