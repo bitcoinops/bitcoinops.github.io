@@ -1,4 +1,5 @@
 all: build test
+production: all production-test
 
 preview:
 	bundle exec jekyll clean
@@ -26,3 +27,9 @@ test:
 
 	## Check for broken links
 	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
+
+## Tests to run last because they identify problems that may not be fixable during initial commit review.
+## However, these should not be still failing when the site goes to production
+production-test:
+	## Fail if there are any FIXMEs in site source code; add "skip-test" to the same line of source code to skip
+	! git --no-pager grep FIXME | grep -v skip-test | grep .

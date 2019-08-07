@@ -12,7 +12,7 @@ cache: bundler
 
 ## Build all possible jekyll pages for use with link checking.
 script:
-    - make all
+    - make production
 
 env:
   global:
