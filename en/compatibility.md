@@ -64,12 +64,12 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
   <tr>
     <th></th>
     <th>P2SH-wrapped</th>
-    <th>bech32</th>
-    <th>default address</th>
+    <th>Bech32</th>
+    <th>Default address</th>
     <th>P2WPKH</th>
     <th>P2WSH</th>
-    <th>bech32 change</th>
-    <th>segwit v1</th>
+    <th>Bech32 change</th>
+    <th>Segwit v1</th>
   </tr>
 
 {% assign tools = site.data.compatibility | sort %}
