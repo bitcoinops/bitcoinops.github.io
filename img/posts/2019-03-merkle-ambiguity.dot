@@ -1,4 +1,4 @@
-//[version|prev_hash|merkle_root|nBits|nTime|nonce]  FIXME: confirm
+//[version|prev_hash|merkle_root|nBits|nTime|nonce]
 //                         |
 //            0xABCD...ABCD                    0xABCD...ABCD
 //                  |                                 |
