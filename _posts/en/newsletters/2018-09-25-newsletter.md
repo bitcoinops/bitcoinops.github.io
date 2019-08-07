@@ -170,12 +170,12 @@ wait until version 0.18 in about six months from now.*
   document other code comments:
 
     ```c
-    /*~ You'll find FIXMEs like this scattered through the code.
+    /*~ You'll find FIXMEs like this scattered through the code.{% comment %}skip-test{% endcomment %}
      * Sometimes they suggest simple improvements which someone like
      * yourself should go ahead an implement.  Sometimes they're deceptive
      * quagmires which will cause you nothing but grief.  You decide! */
 
-     /* FIXME: We should cache these. */
+     /* FIXME: We should cache these. */{% comment %}skip-test{% endcomment %}
      get_channel_seed(&c->id, c->dbid, &channel_seed);
      derive_funding_key(&channel_seed, &funding_pubkey, &funding_privkey);
     ```
