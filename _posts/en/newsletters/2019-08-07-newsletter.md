@@ -19,8 +19,11 @@ developments.
 
 ## Action items
 
-- **Upgrade to Bitcoin Core 0.18.1:** this maintenance [release][bitcoin
-  core 0.18.1] makes available several bug fixes and other improvements.  Upgrading is recommended.
+- **Upgrade to Bitcoin Core 0.18.1 when binaries are released:** this
+  maintenance release has [been tagged][bitcoin core 0.18.1 tag], and binaries
+  are expected to be uploaded to [bitcoincore.org][bitcoin core 0.18.1 binaries]
+  in the next few days. The release makes available several bug fixes and other
+  improvements.  Upgrading is recommended when the binaries are available.
 
 ## News
 
@@ -138,7 +141,8 @@ you pay to access all of segwit's benefits.*
 
 {% include linkers/issues.md issues="15911,16394,3184,3164,3359,2892,2799,2885,2771,619" %}
 [bech32 series]: /en/bech32-sending-support/
-[bitcoin core 0.18.1]: https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1
+[bitcoin core 0.18.1 tag]: https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1
+[bitcoin core 0.18.1 binaries]: https://bitcoincore.org/bin/bitcoin-core-0.18.1/
 [news40 trampoline payments]: {{news40}}#trampoline-payments-for-ln
 [news57 sync error]: {{news57}}#c-lightning-2842
 [psbt extensions]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017188.html
