@@ -32,7 +32,7 @@ public key, the data element in the scriptPubKey is identical for both
 legacy P2PKH and native segwit (bech32) P2WPKH.  Here's an example
 [previously used][identical spk data] by Optech:
 
-- Legacy P2WPKH scriptPubKey for address 1B6FkNg199ZbPJWG5zjEiDekrCc2P7MVyC:
+- Legacy P2PKH scriptPubKey for address 1B6FkNg199ZbPJWG5zjEiDekrCc2P7MVyC:
 
   <pre>OP_DUP OP_HASH160 OP_PUSH20 <b>6eafa604a503a0bb445ad1f6daa80f162b5605d6</b> OP_EQUALVERIFY OP_CHECKSIG</pre>
 
