@@ -97,7 +97,7 @@ block chain space used, this is the most efficient form of fee bumping.
   {:.feature-no}
   - **No unconfirmed transactions**<br>
     Neither the original nor replacement transactions are shown in the
-    transaction list. Most likely unconfirmed transactions are not supported.
+    transaction list. Unconfirmed transactions are probably not supported.
 {% else %} {% include ERROR_42_UNEXPECTED_VALUE %}
 {% endif %}
 
@@ -185,7 +185,7 @@ block chain space used, this is the most efficient form of fee bumping.
   {:.feature-no}
   - **No unconfirmed transactions**<br>
     Neither the original nor replacement transactions are shown in the
-    transaction list. Most likely unconfirmed transactions are not supported.
+    transaction list. Unconfirmed transactions are probably not supported.
 {% else %} {% include ERROR_42_UNEXPECTED_VALUE %}
 {% endif %}
 
