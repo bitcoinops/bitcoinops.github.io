@@ -299,7 +299,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **Does not allow sending to bech32 P2WPKH addresses**<br>
     Does not allow sending to bech32 P2WPKH native segwit addresses.
   {% when "na" %}{:.feature-neutral}
-  - **No receiving capabilities**<br>
+  - **no sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
   - **Not tested**<br>
@@ -316,7 +316,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **Does not allow sending to bech32 P2WSH addresses**<br>
     Does not allow sending to bech32 P2WSH native segwit addresses.
   {% when "na" %}{:.feature-neutral}
-  - **No receiving capabilities**<br>
+  - **no sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
   - **Not tested**<br>
@@ -333,7 +333,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **Does not create bech32 change addresses**<br>
     When sending, does not generate bech32 (either P2WPKH or P2WSH) segwit change addresses.
   {% when "na" %}{:.feature-neutral}
-  - **No receiving capabilities**<br>
+  - **no sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
   - **Not tested**<br>
