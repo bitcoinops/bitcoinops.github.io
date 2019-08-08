@@ -15,6 +15,8 @@ block chain space used, this is the most efficient form of fee bumping.
 
 ### Receiving support
 
+<div markdown="1" class="compat-list">
+
 {:id="receive-notification"}
 {% assign rbf = tool.rbf.features. %}
 {% case rbf.receive.notification %}
@@ -101,7 +103,11 @@ block chain space used, this is the most efficient form of fee bumping.
 {% else %} {% include ERROR_42_UNEXPECTED_VALUE %}
 {% endif %}
 
+</div>{% comment %}<!-- end: compat-list -->{% endcomment %}
+
 ### Sending support
+
+<div markdown="1" class="compat-list">
 
 {:id="send-signals_bip125"}
 {% case rbf.send.signals_bip125 %}
@@ -189,6 +195,8 @@ block chain space used, this is the most efficient form of fee bumping.
 {% else %} {% include ERROR_42_UNEXPECTED_VALUE %}
 {% endif %}
 
+</div>{% comment %}<!-- end: compat-list -->{% endcomment %}
+
 ### Usability
 
 {% include functions/compat-gallery.md examples=tool.rbf.examples %}
@@ -207,6 +215,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 **Tested on**: *{{tested.date}}*
 
 ### Receive support
+
+<div markdown="1" class="compat-list">
 
 {% assign segwit = tool.segwit.features. %}
 {:id="segwit-receive-p2sh_wrapped"}
@@ -274,7 +284,11 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
+</div>{% comment %}<!-- end: compat-list -->{% endcomment %}
+
 ### Send support
+
+<div markdown="1" class="compat-list">
 
 {:id="segwit-send-bech32"}
 {% case segwit.send.bech32 %}
@@ -331,6 +345,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 {:.feature-neutral}
 - **How is sending to segwit v1 addresses handled?**<br>
 {{ segwit.send.segwit_v1 }}
+
+</div>{% comment %}<!-- end: compat-list -->{% endcomment %}
 
 ### Usability
 

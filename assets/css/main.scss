@@ -149,15 +149,25 @@ div.xoverflow {
     overflow-wrap: break-word;
 }
 
-ol li ol { list-style-type: lower-latin; }
-.feature-yes strong {
-  border-bottom: 2px solid $compatibility-feature-yes;
+.compat-list ul { list-style: none; }
+.compat-list li::before {
+  display: inline-block;
+  width: 1.25em;
+  margin-left: -1.25em;
+  font-size: 125%;
 }
-.feature-no strong {
-  border-bottom: 2px solid $compatibility-feature-no;
+
+.feature-yes li::before {
+  content: "✓";
+  color: darken($compatibility-feature-yes, 50%);
 }
-.feature-neutral strong {
-  border-bottom: 2px solid lightgray;
+.feature-no li::before {
+  content: "✕";
+  color: darken($compatibility-feature-no, 50%);
+}
+.feature-neutral li::before {
+  content: "≈";
+  color: grey;
 }
 
 .third-party-logo
