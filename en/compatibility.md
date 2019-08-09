@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
   <tr>
     <th></th>
     <th colspan="3">Receiving support</th>
-    <th colspan="4">Sending support</th>
+    <th colspan="3">Sending support</th>
   </tr>
   <tr>
     <th></th>
@@ -69,7 +69,6 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
     <th>P2WPKH</th>
     <th>P2WSH</th>
     <th>Bech32 change</th>
-    <th>Segwit v1</th>
   </tr>
 
 {% assign tools = site.data.compatibility | sort %}
@@ -105,7 +104,6 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32 anchor="#segwit-send-bech32" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32_p2wsh anchor="#segwit-send-bech32_p2wsh" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.change_bech32 anchor="#segwit-send-change_bech32" %}
-      <td class="compat default"><a href="{{tool.internal_url}}#segwit-send-segwit_v1">...</a></td>
     {% else %}
       <td colspan="7" class="default"></td>
     {% endif %}

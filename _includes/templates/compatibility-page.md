@@ -341,11 +341,6 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
-{:id="segwit-send-segwit_v1"}
-{:.feature-neutral}
-- **How is sending to segwit v1 addresses handled?**<br>
-{{ segwit.send.segwit_v1 }}
-
 </div>{% comment %}<!-- end: compat-list -->{% endcomment %}
 
 ### Usability
