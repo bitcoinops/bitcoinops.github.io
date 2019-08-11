@@ -113,3 +113,10 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 {% endfor %}
 
 </table>
+
+<br/>
+<br/>
+_Contributions and corrections are welcome. Please see the [contibuting
+guidelines](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md)
+for details._
+{: style="text-align: center;"}
