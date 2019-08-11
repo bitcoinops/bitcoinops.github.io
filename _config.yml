@@ -38,6 +38,7 @@ exclude:
    - vendor/
    - Makefile
    - README.md
+   - CONTRIBUTING.md
 
 show_excerpts: true
 

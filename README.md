@@ -18,7 +18,7 @@ founding sponsors and contributions from member companies.
 If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
 contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
-#### Building The Site Locally
+## Building The Site Locally
 
 To build the site, you need to go through a one-time installation
 procedure that takes 15 to 30 minutes.  After that you can build the
@@ -110,3 +110,8 @@ directory.  The following alternative options are available:
 
     ## After you build the site, you can run all of the tests (may take awhile)
     make test
+
+## Contributing
+
+If you would like to contribute to the Bitcoin Optech project, please review the
+[contributing guidelines](CONTRIBUTING.md).
