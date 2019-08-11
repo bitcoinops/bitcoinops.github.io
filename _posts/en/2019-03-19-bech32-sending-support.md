@@ -153,5 +153,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/21-brd.md %}
 
+## Same fee, faster confirmation
+
+*Originally published in [Newsletter #59][].*
+
+{% include specials/bech32/22-priority.md %}
+
 ## Footnotes
 {:.no_toc}
