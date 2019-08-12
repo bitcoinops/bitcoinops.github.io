@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 {% for wrapped_tool in tools %}
   {% assign tool = wrapped_tool[1] %}
   <tr>
-    <td><a href="{{tool.internal_url}}">{{tool.name}}</a></td>
+    <td><a href="{{tool.internal_url}}#rbf">{{tool.name}}</a></td>
     {% include functions/compat-cell.md state=tool.rbf.features.receive.notification anchor="#receive-notification" %}
     {% include functions/compat-cell.md state=tool.rbf.features.receive.list anchor="#receive-list" %}
     {% include functions/compat-cell.md state=tool.rbf.features.receive.details anchor="#receive-details" %}
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 {% for wrapped_tool in tools %}
   {% assign tool = wrapped_tool[1] %}
   <tr>
-    <td><a href="{{tool.internal_url}}#segwit-addresses">{{tool.name}}</a></td>
+    <td><a href="{{tool.internal_url}}#segwit">{{tool.name}}</a></td>
     {% if tool.segwit %}
 
       {% assign segwit_receive_default = "" %}
