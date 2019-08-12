@@ -1,6 +1,9 @@
 ![{{tool.name|escape_once}}]({{tool.logo}}){:.third-party-logo}{:title="{{tool.name}}"}
 
-## Replace-by-Fee (RBF)
+{:.center}
+[Replace-by-Fee](#rbf) \| [Segwit](#segwit)
+
+## Replace-by-Fee (RBF) {#rbf}
 
 {% assign tested = tool.rbf.tested. %}
 **Tested**: {% if tested.version != "n/a" %} *version {{tested.version}}* {% endif %} on *{{tested.platforms}}*
@@ -204,7 +207,7 @@ block chain space used, this is the most efficient form of fee bumping.
 
 {% include functions/compat-gallery.md examples=tool.rbf.examples %}
 
-## Segwit Addresses
+## Segwit Addresses {#segwit}
 
 Transactions that spend bitcoins secured by segregated witness (segwit) use less
 block weight than equivalent non-segwit (legacy) transactions, allowing
