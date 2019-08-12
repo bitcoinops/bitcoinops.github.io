@@ -30,7 +30,7 @@ block chain space used, this is the most efficient form of fee bumping.
   - **No notification**<br>
     There are no incoming transaction notifications for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
+  - **Not tested: Notification notes RBF**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
@@ -47,7 +47,7 @@ block chain space used, this is the most efficient form of fee bumping.
   - **This services does not handle incoming transactions**<br>
     Does not support incoming transactions.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
+  - **Not tested: Received transaction labeled replaceable in list**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
@@ -64,7 +64,7 @@ block chain space used, this is the most efficient form of fee bumping.
   - **Does not show transaction details**<br>
     Does not show transaction details natively. Usually this means the service links to a block explorer for transaction details.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
+  - **Not tested: Received transaction labeled replaceable in transaction details**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
@@ -83,7 +83,7 @@ block chain space used, this is the most efficient form of fee bumping.
 {% elsif rbf.receive.shows_replaced_version == "untested" or
     rbf.receive.shows_original_version == "untested" %}
   {:.feature-neutral}
-  - **Not tested**<br>
+  - **Not tested: Shows replacement and original transactions**<br>
     We either didn’t test this or could not appropriately determine the results.
 {% elsif rbf.receive.shows_replaced_version == "true" %}
   {:.feature-yes}
@@ -121,7 +121,7 @@ block chain space used, this is the most efficient form of fee bumping.
   - **Does not send transactions**<br>
     Does not support sending of any transactions.
   {% when "untested" %}{:.feature-neutral}
-  - **Not Tested**<br>
+  - **Not tested: Ability to send BIP125 signaling transactions**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
@@ -138,8 +138,9 @@ block chain space used, this is the most efficient form of fee bumping.
   - **No transaction list**<br>
     Does not show a transaction list natively.
   {% when "untested" %}{:.feature-neutral}
-  - **Not Tested**<br>
-    We either didn’t test this or could not appropriately determine the results.
+  - **Not tested: Sent transaction labeled replaceable in list**<br>
+    We were not able to test this because sending a BIP125 signaling transaction
+    is not supported.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -155,8 +156,9 @@ block chain space used, this is the most efficient form of fee bumping.
   - **Does not show transaction details**<br>
     Does not show transaction details natively. Usually this means the service links to a block explorer for transaction details.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results.
+  - **Not tested: Sent transaction labeled replaceable in transaction details**<br>
+    We were not able to test this because sending a BIP125 signaling transaction
+    is not supported.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -175,8 +177,9 @@ block chain space used, this is the most efficient form of fee bumping.
 {% elsif rbf.send.shows_replaced_version == "untested" or
     rbf.send.shows_original_version == "untested" %}
   {:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results.
+  - **Not tested: Shows replacement and original transactions**<br>
+    We were not able to test this because sending a BIP125 signaling transaction
+    is not supported.
 {% elsif rbf.send.shows_replaced_version == "true" %}
   {:.feature-yes}
   - **Shows replacement transaction only**<br>
@@ -231,8 +234,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No receiving capabilities**<br>
     There are no receiving capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Allows receiving to P2SH-wrapped segwit**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -248,8 +251,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No receiving capabilities**<br>
     There are no receiving capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Allows receiving to bech32 segwit addresses**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -279,8 +282,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No receiving capabilities**<br>
     There are no receiving capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Default receiving address type**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -302,8 +305,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Allows sending to bech32 P2WPKH addresses**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -319,8 +322,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Allows sending to bech32 P2WSH addresses**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
@@ -337,8 +340,8 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
     There are no sending capabilities for this service or sending does not
     generate change.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested**<br>
-    We either didn’t test this or could not appropriately determine the results
+  - **Not tested: Creates bech32 change addresses**<br>
+    We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
