@@ -339,7 +339,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **Does not create bech32 change addresses**<br>
     When sending, does not generate bech32 (either P2WPKH or P2WSH) segwit change addresses.
   {% when "na" %}{:.feature-neutral}
-  - **No sending capabilities**<br>
+  - **No sending or change capabilities**<br>
     There are no sending capabilities for this service or sending does not
     generate change.
   {% when "untested" %}{:.feature-neutral}
