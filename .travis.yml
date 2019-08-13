@@ -1,3 +1,4 @@
+dist: xenial
 language: ruby
 rvm:
   - "2.5.1"
@@ -22,3 +23,8 @@ branches:
   only:
   - master
   - /.*/
+
+# xenial builds fail if you don't update bundler
+before_install:
+  - gem update --system
+  - gem install bundler
