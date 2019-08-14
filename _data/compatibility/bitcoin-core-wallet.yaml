@@ -36,22 +36,22 @@ rbf:
         Sending Transaction - Warning prompt for low fee. Includes RBF note at the bottom when RBF enabled.
     - image: /img/compatibility/bitcoin-core/transaction-list-outgoing-rbf-transaction.png
       caption: >
-        Sending Transaction Signaling RBF - Transaction list screen for outgoing transaction signaling RBF. No note of RBF signaling.
+        Sending Transaction - Transaction list screen for outgoing transaction signaling RBF. No note of RBF signaling.
     - image: /img/compatibility/bitcoin-core/transaction-details-outgoing-rbf.png
       caption: >
-        Sending Transaction Signaling RBF - Transaction details screen for outgoing transaction signaling RBF. No note of RBF signaling.
+        Sending Transaction - Transaction details screen for outgoing transaction signaling RBF. No note of RBF signaling.
     - image: /img/compatibility/bitcoin-core/transaction-details-context-menu-increase-fee.png
       caption: >
-        Bumping Transaction Signaling RBF - Transaction details context menu showing “Increase transaction fee”.
+        Attempting Transaction Replacement - Transaction details context menu showing “Increase transaction fee”.
     - image: /img/compatibility/bitcoin-core/increase-fee-confirmation-prompt.png
       caption: >
-        Bumping Transaction Signaling RBF - Confirmation prompt for “Increase transaction fee”.
+        Attempting Transaction Replacement - Confirmation prompt for “Increase transaction fee”.
     - image: /img/compatibility/bitcoin-core/transaction-list-post-bump.png
       caption: >
-        Bumping Transaction Signaling RBF - Transaction list showing an additional transaction representing the replacement transaction. The original shows up greyed out with brackets around the amount.
+        Attempting Transaction Replacement - Transaction list showing an additional transaction representing the replacement transaction. The original shows up greyed out with brackets around the amount.
     - image: /img/compatibility/bitcoin-core/transaction-details-bumped-transaction.png
       caption: >
-        Bumping Transaction Signaling RBF - Transaction details of the outgoing bumped RBF transaction. No flag for RBF.
+        Attempting Transaction Replacement - Transaction details of the outgoing bumped RBF transaction. No flag for RBF.
     - image: /img/compatibility/bitcoin-core/notification-incoming-transaction.png
       caption: >
         Receiving Transaction Signaling RBF - Notification of incoming transaction. No specific note that the transaction signals RBF.
