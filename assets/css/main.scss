@@ -179,8 +179,14 @@ div.xoverflow {
   padding:20px
 }
 
+@keyframes highlightfade {
+    from { background: aqua; }
+    to { background: transparent; }
+}
+
 :target {
-  background-color: #daf8fa;
+    animation-name: highlightfade;
+    animation-duration: 7s;
 }
 
 td.compat_yes {
