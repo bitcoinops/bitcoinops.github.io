@@ -22,6 +22,9 @@ test-before-build:
 	## Check that all slugs are unique
 	! git --no-pager grep -h "^slug: " _posts | sort | uniq -d | grep .
 
+	## Check that newly added or modifyed PNGs are optimized
+	_contrib/travis-check-png-optimized.sh
+
 test-after-build:
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .

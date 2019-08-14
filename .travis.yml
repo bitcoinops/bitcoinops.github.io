@@ -28,3 +28,4 @@ branches:
 before_install:
   - gem update --system
   - gem install bundler
+  - sudo apt install optipng
