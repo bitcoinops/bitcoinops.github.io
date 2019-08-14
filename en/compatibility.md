@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Compatibility Comparison
+title: Compatibility Matrix
 permalink: /en/compatibility/
 nowrap: true
 ---
