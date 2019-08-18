@@ -159,5 +159,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/22-priority.md %}
 
+## Insights from segwit compatibility matrix
+
+*Originally published in [Newsletter #60][].*
+
+{% include specials/bech32/23-compat.md %}
+
 ## Footnotes
 {:.no_toc}
