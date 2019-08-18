@@ -37,19 +37,26 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
     {% if tool.segwit %}
 
       {% assign segwit_receive_default = "" %}
+      {% assign segwit_receive_default_class = "default" %}
       {% case tool.segwit.features.receive.default %}
         {% when "p2pkh" %}
           {% assign segwit_receive_default = "P2PKH" %}
+          {% assign segwit_receive_default_class = "compat_no" %}
         {% when "p2sh" %}
           {% assign segwit_receive_default = "P2SH" %}
+          {% assign segwit_receive_default_class = "compat_no" %}
         {% when "p2sh_wrapped" %}
           {% assign segwit_receive_default = "P2SH-P2WPKH" %}
+          {% assign segwit_receive_default_class = "compat_yes" %}
         {% when "p2sh_wrapped_p2wsh" %}
           {% assign segwit_receive_default = "P2SH-P2WSH" %}
+          {% assign segwit_receive_default_class = "compat_yes" %}
         {% when "bech32" %}
           {% assign segwit_receive_default = "P2WPKH" %}
+          {% assign segwit_receive_default_class = "compat_yes" %}
         {% when "bech32_p2wsh" %}
           {% assign segwit_receive_default = "P2WSH" %}
+          {% assign segwit_receive_default_class = "compat_yes" %}
         {% when "na" %}
         {% when "untested" %}
           {% assign cell_label = "?" %}
@@ -58,7 +65,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 
       {% include functions/compat-cell.md state=tool.segwit.features.receive.p2sh_wrapped anchor="#segwit-receive-p2sh_wrapped" %}
       {% include functions/compat-cell.md state=tool.segwit.features.receive.bech32 anchor="#segwit-receive-bech32" %}
-      <td class="compat default"><a href="{{tool.internal_url}}#segwit-receive-default">{{segwit_receive_default}}</a></td>
+      <td class="compat {{segwit_receive_default_class}}"><a href="{{tool.internal_url}}#segwit-receive-default">{{segwit_receive_default}}</a></td>
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32 anchor="#segwit-send-bech32" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32_p2wsh anchor="#segwit-send-bech32_p2wsh" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.change_bech32 anchor="#segwit-send-change_bech32" %}
