@@ -1,4 +1,5 @@
 {% comment %}<!-- internal site links, alphabetical order -->{% endcomment %}
+[compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 
