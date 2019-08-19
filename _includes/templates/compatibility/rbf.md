@@ -170,7 +170,7 @@ block chain space used, this is the most efficient form of fee bumping.
     rbf.send.shows_original_version == "na" %}
   {:.feature-neutral}
   - **No replacements in transaction list**<br>
-    Because no transaction replacement is possible, we could not test whether
+    Because no transaction replacement is possible in the user interface, we could not test whether
     original or replacement sent transactions are shown after replacement.
 {% elsif rbf.send.shows_replaced_version == "untested" or
     rbf.send.shows_original_version == "untested" %}
