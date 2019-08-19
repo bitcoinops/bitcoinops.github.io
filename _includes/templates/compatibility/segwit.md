@@ -1,6 +1,6 @@
 ## Segwit Addresses {#segwit}
 
-Transactions that spend bitcoins secured by segregated witness (segwit) use less
+**What are segwit addresses?** Transactions that spend bitcoins secured by segregated witness (segwit) use less
 block weight than equivalent non-segwit (legacy) transactions, allowing
 segwit transactions to pay less total fee to achieve the same feerate as legacy transactions.
 
