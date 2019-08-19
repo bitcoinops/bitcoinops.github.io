@@ -1,15 +1,15 @@
 ## Replace-by-Fee (RBF) {#rbf}
 
-{% assign tested = tool.rbf.tested. %}
-**Tested**: {% if tested.version != "n/a" %} *version {{tested.version}}* {% endif %} on *{{tested.platforms}}*
-
-**Tested on**: *{{tested.date}}*
-
 **What is Replace-by-Fee (RBF)?** An unconfirmed transaction can be replaced by another version of the
 same transaction that spends the same inputs.  Most full nodes support
 this if the earlier transaction enables [BIP125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki) signaling and the
 replacement transaction increases the amount of fee paid.  In terms of
 block chain space used, this is the most efficient form of fee bumping.
+
+{% assign tested = tool.rbf.tested. %}
+**Tested**: {% if tested.version != "n/a" %} *version {{tested.version}}* {% endif %} on *{{tested.platforms}}*
+
+**Tested on**: *{{tested.date}}*
 
 ### Receiving support
 
