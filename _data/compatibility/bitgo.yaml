@@ -69,6 +69,6 @@ segwit:
       caption: >
         BitGo's web wallet allows sending to bech32 addresses. Change addresses
         are not bech32 native, but P2SH-wrapped segwit addresses.
-    - image: /img/compatibility/bitgo/segwit/send-v1.png
-      caption: >
-        BitGo's web wallet displays an error when attempting send to segwit v1 addresses.
+    #- image: /img/compatibility/bitgo/segwit/send-v1.png
+    #  caption: >
+    #    BitGo's web wallet displays an error when attempting send to segwit v1 addresses.

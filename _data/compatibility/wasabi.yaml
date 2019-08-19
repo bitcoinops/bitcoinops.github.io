@@ -58,7 +58,7 @@ segwit:
     - image: /img/compatibility/wasabi/segwit/send-screen.png
       caption: >
         Wasabi allows sending to any segwit v0 address.
-    - image: /img/compatibility/wasabi/segwit/send-screen-segwit-v1-error.png
-      caption: >
-        Wasabi displays a validation error when attempting to send to a segwit
-        v1 address.
+    #- image: /img/compatibility/wasabi/segwit/send-screen-segwit-v1-error.png
+    #  caption: >
+    #    Wasabi displays a validation error when attempting to send to a segwit
+    #    v1 address.

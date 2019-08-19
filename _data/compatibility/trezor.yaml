@@ -63,7 +63,7 @@ segwit:
     - image: /img/compatibility/trezor/segwit/send-screen.png
       caption: >
         Trezor Wallet allows for sending to any bech32 segwit v0 address.
-    - image: /img/compatibility/trezor/segwit/send-screen-segwit-v1-error.png
-      caption: >
-        Trezor Wallet displays a validation error when attempting to send to a segwit
-        v1 address.
+    #- image: /img/compatibility/trezor/segwit/send-screen-segwit-v1-error.png
+    #  caption: >
+    #    Trezor Wallet displays a validation error when attempting to send to a segwit
+    #    v1 address.

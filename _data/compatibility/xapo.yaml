@@ -76,7 +76,7 @@ segwit:
     - image: /img/compatibility/xapo/segwit/send-screen.png
       caption: >
         Xappo allows sending to any segwit v0 address.
-    - image: /img/compatibility/xapo/segwit/send-screen-segwit-v1-pending.png
-      caption: >
-        Xapo allows users to create segwit v1 transactions in the UI. However,
-        the transaction gets stuck as pending.
+    #- image: /img/compatibility/xapo/segwit/send-screen-segwit-v1-pending.png
+    #  caption: >
+    #    Xapo allows users to create segwit v1 transactions in the UI. However,
+    #    the transaction gets stuck as pending.
