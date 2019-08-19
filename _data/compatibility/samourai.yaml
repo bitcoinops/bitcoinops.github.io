@@ -86,10 +86,10 @@ segwit:
     - image: /img/compatibility/samourai/segwit/receive-screen-advanced.png
       caption: >
         Samourai allows the user to choose the type of their receive address.
-    - image: /img/compatibility/samourai/segwit/send-screen-segwit-v1-error.png
-      caption: >
-        Samourai wallet shows an error during broadcasting when trying to send
-        to a segwit v1 address.
+    #- image: /img/compatibility/samourai/segwit/send-screen-segwit-v1-error.png
+    #  caption: >
+    #    Samourai wallet shows an error during broadcasting when trying to send
+    #    to a segwit v1 address.
     - image: /img/compatibility/samourai/segwit/settings-transactions.png
       caption: >
         Samourai has setting options for 1. receive to segwit address and 2.
