@@ -1,11 +1,11 @@
 ---
 title: Announcing the Compatibility Matrix
 permalink: /en/2019-compatibility-matrix/
-name: 2019-08-21-compatibility-matrix
+name: 2019-08-20-compatibility-matrix
 type: posts
 layout: post
 lang: en
-slug: 2019-08-21-compatibility-matrix
+slug: 2019-08-20-compatibility-matrix
 
 excerpt: >
   Announcing a new compatibility matrix on the Bitcoin Optech website,
