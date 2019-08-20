@@ -35,10 +35,9 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 {% assign tools = site.data.compatibility | sort %}
 {% for wrapped_tool in tools %}
   {% assign tool = wrapped_tool[1] %}
-  <tr>
-    <td><a href="{{tool.internal_url}}#segwit">{{tool.name}}</a></td>
     {% if tool.segwit %}
-
+      <tr>
+        <td><a href="{{tool.internal_url}}#segwit">{{tool.name}}</a></td>
       {% assign segwit_receive_default = "" %}
       {% assign segwit_receive_default_class = "default" %}
       {% case tool.segwit.features.receive.default %}
@@ -72,10 +71,8 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32 anchor="#segwit-send-bech32" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32_p2wsh anchor="#segwit-send-bech32_p2wsh" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.change_bech32 anchor="#segwit-send-change_bech32" %}
-    {% else %}
-      <td colspan="7" class="default"></td>
+      </tr>
     {% endif %}
-  </tr>
 {% endfor %}
 
 </table>
