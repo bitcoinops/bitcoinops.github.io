@@ -7,6 +7,12 @@
 The first letter of a proper noun is always capitalized.
 
 - Bitcoin (the network)
+- Script (when referring to the Bitcoin scripting language)
+  - use script (no capitalization) when referring to an indvidual script
+- True/False when refering to boolean arguments in plain text (eg
+  "set foo to True").
+  - use whatever capitalization is appropriate when used in code (eg
+    "set `foo=true`")
 
 ### Common nouns
 
@@ -18,20 +24,23 @@ sentence or heading.
 - merkle (tree|root|branch|node)
 - schnorr
 - segwit
+- sybil (as in 'sybil attack')
 - taproot
 
-### Forbidden abbreviations
+### Abbreviations
 
-- Core (use Bitcoin Core)
+- Introduce sighash with "signature hash (sighash)", but don't introduce sighash
+  types (`SIGHASH_SINGLE`, `SIGHASH_ALL`, etc) since they're technical terms
+  and not abbreviations.
 
-### Unintroduced abbreviations
+#### Unintroduced abreviations
 
 The first occurrence of an abbreviation in a document should be preceded
 by its full name (e.g. Foo Bar Baz (FBB)) with the exception of the
 following abbreviations we assume readers will already know.
 
 - BIP (Bitcoin Improvement Proposal)
-  - BIPXXX referencing a specific BIP number
+  - BIPXXX referencing a specific BIP number (no zero padding eg. BIP70 not BIP070)
 - BTC (Bitcoin)
 - DoS (Denial-of-service)
 - ECDSA (Elliptic Curve Digital Signature Algorithm)
@@ -52,17 +61,27 @@ following abbreviations we assume readers will already know.
 - UTXO (Unspent Transaction Output)
 - vbyte (virtual byte)
 
+#### Forbidden abbreviations
+
+- Core (use Bitcoin Core)
+
 ### Compound words
 
-| Use | Don't use |
-|-|-|
-| block chain | blockchain |
-| mainnet | main net |
-| multisig | multi-sig |
-| offchain | off-chain |
-| onchain | on-chain |
-| redeemScript | redeem script |
-| 2-of-3 | 2 of 3 |
+| Use | Don't use | Notes |
+|-|-|-|
+| block chain | blockchain | |
+| coinjoin | Coinjoin or coinJoin or coin-join | |
+| mainnet | main net | |
+| multisig | multi-sig | |
+| multiparty | multi-party | |
+| MuSig | Musig or muSig or musig | |
+| offchain | off-chain | |
+| onchain | on-chain | |
+| preimage | pre-image | |
+| redeemScript | redeem script | |
+| single-sig | singlesig | |
+| soft fork/hard fork | softfork/hardfork or soft-fork/hard-fork | soft-fork/hard-fork may be used as compound adjectives (eg "Foo proposed a soft-fork change") |
+| 2-of-3 | 2 of 3 | |
 
 ### Spelling
 
