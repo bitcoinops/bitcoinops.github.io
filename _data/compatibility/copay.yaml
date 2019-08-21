@@ -51,25 +51,24 @@ rbf:
         Receiving RBF Transaction - Transaction details do not show that the transaction was RBF enabled.
 segwit:
   tested:
-    date: "2019-07-23"
+    date: "2019-08-21"
     platforms:
       - iOS
-    version: "5.9.5"
+    version: "6.1.0"
   features:
     receive:
       p2sh_wrapped: "false"
       bech32: "false"
       default: "p2pkh"
     send:
-      bech32: "false"
+      bech32: "true"
       change_bech32: "false"
-      segwit_v1: "Address does not pass validation."
-      bech32_p2wsh: "false"
+      segwit_v1: "Allows v1 address to be entered in the UI. Fails during broadcast."
+      bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/copay/segwit/receive-screen.png
       caption: >
         Copay generates only P2PKH addresses for receiving.
-    - image: /img/compatibility/coinbase/segwit/send-screen.png
+    - image: /img/compatibility/copay/segwit/send-screen.png
       caption: >
-        Copay displays a validation error for all variants of bech32 native
-        addresses.
+        Copay can send to both P2WPKH and P2WSH bech32 addresses.
