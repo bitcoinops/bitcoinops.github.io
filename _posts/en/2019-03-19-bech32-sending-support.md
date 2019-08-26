@@ -165,5 +165,11 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/23-compat.md %}
 
+## Conclusion
+
+*Originally published in [Newsletter #61][].*
+
+{% include specials/bech32/24-conclusion.md %}
+
 ## Footnotes
 {:.no_toc}

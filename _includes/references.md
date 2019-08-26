@@ -31,7 +31,7 @@
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
 {% comment %}<!-- TODO: switch miniscript link to some sort of overview page when available -->{% endcomment %}
-[miniscript]: http://bitcoin.sipa.be/miniscript/miniscript.html
+[miniscript]: http://bitcoin.sipa.be/miniscript/
 [musig]: https://eprint.iacr.org/2018/068
 {% assign _link_descriptors = 'https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md' %}
 [output script descriptor]: {{_link_descriptors}}
