@@ -97,6 +97,48 @@ you pay to access all of segwit's benefits.*
 
 {% include specials/bech32/24-conclusion.md %}
 
+## Selected Q&A from Bitcoin StackExchange
+
+*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+contributors look for answers to their questions---or when we have a
+few spare moments of time to help curious or confused users.  In
+this monthly feature, we highlight some of the top-voted questions and
+answers made since our last update.*
+
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
+endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
+- [What are the key differences between regtest and the proposed
+  signet?]({{bse}}89640) Pieter Wuille and Andrew Chow explain that while
+  regtest is good for local automated integration tests, signet is more akin to
+  testnet in that it allows testing of things like peer finding, propagation,
+  and transaction selection. Signet allows for more control over block
+  production timing than testnet and more than one signet can exist for testing
+  different scenarios.
+
+- [Can hardware wallets actually display the amount of funds leaving your
+  control?]({{bse}}89508) Andrew Chow explains that since a hardware wallet is
+  not a full node, it needs to get its transaction amount information elsewhere.
+  In the case of non-segwit inputs, often the amount is provided to the hardware
+  signing device via the host computer or other wallet by sending the previous
+  transaction to the device. In the case of segwit inputs, the amount for the
+  input being signed must always be provided because it is a required part of
+  the data that is signed and verified.
+
+- [How does one prove that they sent bitcoins to an unspendable
+  wallet?]({{bse}}89554) JBaczuk explains that you can prove coins
+  unspendable by sending the coins to an OP_RETURN output
+  or another script that always returns false, or by sending coins to an
+  address derived from a contrived, non-random script hash.
+
+- [Why is proof-of-work required in Bitcoin?]({{bse}}89972) Pieter Wuille
+  explains that PoW does not create trust, but instead creates incentive for
+  miners to cooperate with other miners by building on their blocks. PoW is also
+  used to regulate block times (and thus protect against denial of service)
+  since the difficulty adjustment makes it expensive to reliably produce blocks
+  more often than every 10 minutes on average.
+
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],
