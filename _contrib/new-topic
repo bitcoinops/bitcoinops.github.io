@@ -1,0 +1,70 @@
+#!/bin/bash -eu
+
+TOPICS_DIR=_topics
+
+if ! [ -d "$TOPICS_DIR" ]
+then
+  echo "Couldn't find $TOPICS_DIR.  Are you sure you're in the repository root directory?"
+  exit 1
+fi
+
+echo -n "Name of new topic (use title case): "
+read
+topic="$REPLY"
+topic_lowercase=$( echo $topic | tr '[A-Z]' '[a-z]' )
+
+file="$TOPICS_DIR/$( echo $topic_lowercase | sed 's/ /-/g' ).md"
+if [ -f "$file" ]
+then
+  echo "$file already exists, no overwriting"
+  exit 1
+fi
+
+cat <<EOF > $file
+---
+title: ${topic}
+
+## Optional.  An entry will be added to the topics index for each alias
+#aliases:
+#  - Foo
+
+## Required.  At least one category to which this topic belongs.  See
+## schema for options
+categories:
+  - TODO
+
+## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
+## Should be less than 500 characters
+excerpt: >
+  **${topic}** is ...
+
+## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
+extended_summary: |
+  This is the summary that never ends.  It goes on and on, my friend.
+  Some people started writing it not knowing what it was but...
+
+  ...they'll be writing it forever, because this is the summary that
+  never ends.  It goes on and on, my friend...
+
+## Optional.  Produces a Markdown link with either "[title][]" or
+## "[title](link)"
+primary_sources:
+    - title: Test
+    - title: Example
+      link: https://example.com
+
+## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
+## true" to bold entry
+optech_mentions:
+  - title: An example page
+    url: /en/newsletters/2019/05/29/#news
+    date: 2019-05-29
+
+## Optional.  Same format as "primary_sources" above
+# see_also:
+#   - title:
+#     link:
+---
+EOF
+
+echo $file

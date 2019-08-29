@@ -38,3 +38,6 @@ test-after-build:
 production-test:
 	## Fail if there are any FIXMEs in site source code; add "skip-test" to the same line of source code to skip
 	! git --no-pager grep FIXME | grep -v skip-test | grep .
+
+new-topic:
+	_contrib/new-topic
