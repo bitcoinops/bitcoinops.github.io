@@ -23,6 +23,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bitcoinoptech
 github_username:  bitcoinops
+repository_name: bitcoinops.github.io
+bold: '**'
 
 # Build settings
 markdown: kramdown
@@ -47,3 +49,12 @@ defaults:
       path: ""  ## all pages
     values:
       image: https://bitcoinops.org/img/logos/optech-notext.png
+  - scope:
+      path: "_topics"
+    values:
+      layout: topic
+      permalink: /en/topics/:title/
+
+collections:
+  topics:
+    output: true

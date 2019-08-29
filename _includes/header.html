@@ -21,8 +21,13 @@
 
         <div class="trigger">
             <a class="page-link" href="/about/">About</a>
+            {%- if jekyll.environment == 'future' -%}
+            <a class="page-link" href="/en/publications/">Publications</a>
+            <a class="page-link" href="/en/topics/">Topics</a>
+            {% else %}
             <a class="page-link" href="/en/blog/">Blog</a>
             <a class="page-link" href="/en/newsletters/">Newsletters</a>
+            {%- endif %}
             <a class="page-link" href="/workshops/">Workshops</a>
             <a class="page-link" href="/en/compatibility/">Compatibility</a>
             <a class="page-link" href="https://dashboard.bitcoinops.org/">Dashboard</a>

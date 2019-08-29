@@ -1,0 +1,113 @@
+---
+layout: post
+---
+{% capture newline %}
+{% endcapture %}
+{% capture /dev/null %}
+  <!-- Get links for previous and next pages -->
+  {% assign topics_list = site.topics | natural_sort: "title" %}
+  {% capture first_link %}[{{topics_list[0].title}}]({{topics_list[0].url}}){% endcapture %}
+  {% capture last_link %}[{{topics_list[-1].title}}]({{topics_list[-1].url}}){% endcapture %}
+  {% for entry in topics_list %}
+    {% capture entry_link %}[{{entry.title}}]({{entry.url}}){% endcapture %}
+    {% if prev_link %}
+      {% assign next_link = entry_link %}
+      {% break %}
+    {% endif %}
+    {% if entry.url == page.url %}
+      {% assign prev_link = prev_entry | default: last_link %}
+    {% endif %}
+    {% assign prev_entry = entry_link %}
+  {% endfor %}
+
+  <!-- Build natural sentence-style list of aliases for this page's topic -->
+  {% if page.aliases != nil %}
+    {% assign num_aliases = page.aliases | size %}
+    {% capture aliases %}{:.center}{{newline}}*Also covering&nbsp;{% endcapture %}
+    {% if num_aliases > 2 %}
+      {% for alias in page.aliases %}
+        {% if forloop.last %}
+          {% capture aliases %}{{aliases}}, and {{alias}}{% endcapture %}
+        {% elsif forloop.first %}
+          {% capture aliases %}{{aliases}}{{alias}}{% endcapture %}
+        {% else %}
+          {% capture aliases %}{{aliases}}, {{alias}}{% endcapture %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% capture aliases %}{{aliases}}{{page.aliases | join: ' and '}}{% endcapture %}
+    {% endif %}
+    {% assign aliases = aliases | append: '*' %}
+  {% endif %}
+
+  <!-- Build list of primary sources -->
+  {% for source in page.primary_sources %}
+    {%- if source.link contains 'http://' or source.link contains 'https://' -%}
+      {% capture reference %}[{{source.title}}]({{source.link}}){% endcapture %}
+    {%- else -%}
+      {% capture reference %}[{{source.title}}][{{source.link}}]{% endcapture %}
+    {%- endif -%}
+    {% capture primary_sources %}{{primary_sources}}{{newline}}- {{reference}}{% endcapture %}
+  {% endfor %}
+
+  <!-- Build list of internal optech mentions -->
+  {% assign references = '' %}
+  {% assign mentions = page.optech_mentions | sort: "date" | reverse %}
+  {% for mention in mentions %}
+    {% if mention.feature == true %}
+      {% assign bold = site.bold %}
+    {% else %}
+      {% assign bold='' %}
+    {% endif %}
+    {% capture references %}{{references}}{{newline}}- {{bold}}{{mention.date}} [{{mention.title}}]({{mention.url}}){{bold}}{% endcapture %}
+  {% endfor %}
+
+  <!-- Build list of see also entries -->
+  {% for source in page.see_also %}
+    {%- if source.link contains 'http://' or source.link contains 'https://' -%}
+      {% capture reference %}[{{source.title}}]({{source.link}}){% endcapture %}
+    {%- else -%}
+      {% capture reference %}[{{source.title}}][{{source.link}}]{% endcapture %}
+    {%- endif -%}
+    {% capture see_also %}{{see_also}}{{newline}}- {{reference}}{% endcapture %}
+  {% endfor %}
+
+  <!-- Variable for use in links -->
+  {% capture gh_base %}https://github.com/{{site.github_username}}/{{site.repository_name}}{% endcapture %}
+{% endcapture %}
+
+<!-- Actual page content -->
+{% capture content %}
+  {% include references.md %}
+  {{aliases}}
+
+  {{page.excerpt}}
+
+  {{page.extended_summary}}{{newline}}{{newline}}
+
+  {%- if page.primary_sources and page.primary_sources != '' -%}
+    ## Primary code and documentation
+
+    {{primary_sources}}
+  {% endif %}{{newline}}{{newline}}
+
+  {%- if page.optech_mentions and page.optech_mentions != '' -%}
+    ## Optech newsletter and website mentions
+
+    {{references}}
+  {% endif %}{{newline}}{{newline}}
+
+  {%- if page.see_also and page.see_also != '' -%}
+    ## See also
+
+    {{see_also}}
+  {% endif %}
+
+  <br>{{newline}}{{newline}}
+<span class="float-left" markdown="1">**Previous Topic:**<br>{{prev_link}}</span>
+<span class="float-right" markdown="1">**Next Topic:**<br>{{next_link | default: first_link }}</span>
+
+  {:.center}
+  [Edit page]({{gh_base}}/edit/master/{{page.path}})<br>
+  [Report Issue]({{gh_base}}/issues/new?body={{'Source file: ' | append: page.path | url_escape }})
+{% endcapture %}{{ content | markdownify }}
