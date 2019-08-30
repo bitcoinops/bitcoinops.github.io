@@ -44,6 +44,7 @@ easily adapted to P2SH and P2WSH scripts used for multisig and other
 advanced encumbrances.  That means message signing today is universally
 limited to users of single-sig addresses.
 
+{:#bip322}
 There is a proposed standard that should allow any address type or
 script to be used to create a signed message, [BIP322][].  The protocol
 should even be forward compatible with future segwit versions, such as

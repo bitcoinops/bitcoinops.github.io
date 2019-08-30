@@ -44,6 +44,7 @@ to single-sig transactions.
 
 </div>
 
+{:#taproot}
 Building on the idea that muSig, or something like it, could become
 possible in Bitcoin, Maxwell further described [Taproot][]---a powerful
 optimization for Merklized Alternative Script Trees[^fn-mast] ([MAST][]).  Just as
@@ -184,6 +185,7 @@ soft fork proposal.
 
 ## May
 
+<div id="dandelion" markdown="1">
 A [draft BIP][BIP156] for the Dandelion protocol was published to
 the Bitcoin-Dev mailing list in May.  Dandelion can privately relay
 transactions so that the IP address of the spender can't be reliably
@@ -199,6 +201,7 @@ they've never seen a transaction they previously helped relay.  This
 makes the nodes vulnerable to denial of service attacks that can waste
 the node's bandwidth and memory---problems which developers are still
 [working on addressing][daftuar dandelion] before adopting this protocol.
+</div>
 
 <div markdown="1" class="callout">
 ### 2018 summary<br>Notable technical conferences and other events
@@ -289,6 +292,7 @@ payment channels for LN, more private atomic swaps across chains, more
 private atomic swaps on the same chain (providing for improved
 coinjoin), and other advances that improve efficiency, privacy, or both.
 
+<div id="p2ep" markdown="1">
 Meanwhile, participants in a privacy roundtable described a method
 called Pay-to-EndPoint ([P2EP][]) that can significantly improve wallet
 resistance to block chain analysis by applying a limited form of
@@ -305,6 +309,8 @@ Bitcoin users, not just the people who use P2EP.
 {% capture today-public %}Inputs:<br>&nbsp;&nbsp;Spender (2 BTC)<br>&nbsp;&nbsp;Spender (2 BTC)<br><br>Outputs:<br>&nbsp;&nbsp;Spender or Receiver (1 BTC)<br>&nbsp;&nbsp;Spender or Receiver (3 BTC){% endcapture %}
 {% capture p2ep-private %}Inputs:<br>&nbsp;&nbsp;Alice (2 BTC)<br>&nbsp;&nbsp;Alice (2 BTC)<br>&nbsp;&nbsp;Bob (3 BTC)<br><br>Outputs:<br>&nbsp;&nbsp;Alice's change (1 BTC)<br>&nbsp;&nbsp;Bob's revenue & change (6 BTC){% endcapture %}
 {% capture p2ep-public %}Inputs:<br>&nbsp;&nbsp;Spender or Receiver (2 BTC)<br>&nbsp;&nbsp;Spender or Receiver (2 BTC)<br>&nbsp;&nbsp;Spender or Receiver (3 BTC)<br><br>Outputs:<br>&nbsp;&nbsp;Spender or Receiver (1 BTC)<br>&nbsp;&nbsp;Spender or Receiver (6 BTC){% endcapture %}
+
+</div>
 
 <div markdown="1" class="xoverflow shrink80">
 
@@ -325,6 +331,7 @@ recommended) using Tor---which can provide other benefits---but enabling
 encryption by default could help protect a larger number of users from
 eavesdropping by their ISPs.
 
+{:#untrackable-auth}
 Separately, Pieter Wuille has been working on a [draft document][untrackable auth]
 since February based on a protocol he, Gregory Maxwell, and others have been developing
 to allow optional authentication on top of encryption.  Similar to
@@ -377,6 +384,7 @@ block chain reorganizations and forks.  Bitcoin Core developers also
 [held meetings][coredevtech tokyo] to give each developer a chance to
 discuss their current initiatives with other developers.
 
+{:#splicing}
 Separately, LN protocol developer Rusty Russell proposed a method for
 [splicing][], which allows users to add or subtract funds from a channel
 without pausing payments in that channel.  This especially helps wallets
@@ -438,6 +446,7 @@ payments.
 
 ## December
 
+{:#libminisketch}
 Pieter Wuille, Gregory Maxwell, and Gleb Naumenko researched how to
 reduce the amount of data used to relay Bitcoin transactions.  Their
 initial result is [libminisketch][], a library that allows one user with
