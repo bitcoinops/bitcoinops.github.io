@@ -12,11 +12,11 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
   if post.data["auto_id"] != false
     post.content.gsub!(/^ *- .*/) do |string|
       ## List items surrounded in bold
-      title = string.match(/\*\*.*\*\*/).to_s
+      title = string.match(/\*\*.*?\*\*/).to_s
       ## List items surrounded in italics
-      title.empty? && title = string.match(/\*.*\*/).to_s
+      title.empty? && title = string.match(/\*.*?\*/).to_s
       ## List items that are hyperlinks
-      title.empty? && title = string.match(/\[.*\][(\[]/).to_s
+      title.empty? && title = string.match(/\[.*?\][(\[]/).to_s
 
       if title.empty?
         ## No match, pass item through unchanged
