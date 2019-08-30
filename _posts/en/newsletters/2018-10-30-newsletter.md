@@ -216,6 +216,7 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
   specification for watchtowers has not been agreed upon by the multiple
   implementations of LN, so LND is only putting this feature out for
   initial testing and is restricting its use to testnet.
+  {:#lnd-1535-1512}
 
 {% include references.md %}
 {% include linkers/issues.md issues="14451,14296,14468,14150,1981,1535,1512" %}

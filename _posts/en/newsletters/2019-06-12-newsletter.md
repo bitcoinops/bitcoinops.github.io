@@ -38,10 +38,10 @@ changes to popular Bitcoin infrastructure projects.
       addresses, tracking when they've been paid, and finding or
       deriving the particular private keys necessary for spending.
 
-    - June 6th: discussion of the [consensus cleanup soft fork][xs
+    - <span id="cleanup-discussion" markdown="1">June 6th: discussion of the [consensus cleanup soft fork][xs
       cleanup sf] included its interaction with [bip-taproot][], whether
       parts of it should be dropped, and whether anything should be
-      added.  ([More background][bg consensus cleanup])
+      added.  ([More background][bg consensus cleanup])</span>
 
       The group asked what they could do to make the [maintainers'][xs
       maint] work easier.  Among other considerations, the maintainers
@@ -50,6 +50,7 @@ changes to popular Bitcoin infrastructure projects.
       responded to this by granting maintainer status to Ford so that he
       can be even more effective.
 
+      {:#potential-script-changes}
       [Potential script changes][xs script change] were discussed.
       Discussion of the [BIP118][] and [bip-anyprevout][] sighashes
       revolved around output tagging (see [Newsletter #34][]) and
@@ -61,25 +62,29 @@ changes to popular Bitcoin infrastructure projects.
       merkle tree instead of an accumulator and risks related to fast
       quantum computers.  ([More background][bg taproot])
 
+      {:#utreexo}
       A [Q&A session][xs utreexo] about the [Utreexo][] accumulator for the
       UTXO set highlighted some interesting details of this developing
       proposal for minimizing full node storage requirements.
 
-    - June 7th: code for the [assumeutxo][xs assumeutxo] proposal was
+    - <span id="assume-utxo-demo" markdown="1">June 7th: code for the [assumeutxo][xs assumeutxo] proposal was
       demoed and discussed, including how to make the proposal
-      compatible with other ideas. ([More background][bg assumeutxo])
+      compatible with other ideas. ([More background][bg assumeutxo])</span>
 
+      {:#hwi}
       Contributors discussed getting [hardware wallet][xs hwi] support
       via [HWI][] directly integrated into Bitcoin Core.  A particular
       concern was code separation---ensuring that code for specific
       hardware devices is maintained by the manufacturer and not Bitcoin
       Core.  ([More background][bg hwi])
 
+      {:#v2-p2p}
       The [version 2 P2P transport protocol][xs v2 p2p] and the related
       countersign protocol (see [#27][countersign blurb]) were
       discussed.  Several possible enhancements were mentioned during
       the discussion.  ([More background][bg v2 p2p])
 
+      {:#signet}
       A review of the [signet][xs signet] idea for a testnet-like chain
       where all blocks are signed by a trusted party focused on the
       various ways to distribute the signatures.  ([More background][bg
