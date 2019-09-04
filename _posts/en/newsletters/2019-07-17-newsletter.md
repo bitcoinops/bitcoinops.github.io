@@ -84,7 +84,7 @@ wiki page for changes -->{% endcomment %}
   this format.  All LN implementations monitored by Optech currently
   support TLV on at least their development branch.
 
-- [BIPs #784][] updates [BIP174][] Partially-Signed Bitcoin Transactions
+- [BIPs #784][] updates [BIP174][] Partially Signed Bitcoin Transactions
   (PSBTs) to include a [BIP32][] extended pubkey (xpub) field in the
   global section.  This is described in a new part of the BIP entitled
   "Change Detection" that describes how signing wallets can use this new

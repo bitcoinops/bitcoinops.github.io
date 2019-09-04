@@ -144,7 +144,7 @@ Bitcoin script.
 
 - [Bitcoin Core 0.17][] released in October included optional partial
   spend avoidance, the ability to dynamically create and load wallets,
-  and [BIP174][] partially-signed Bitcoin transaction support for
+  and [BIP174][] partially signed Bitcoin transaction support for
   communication between Bitcoin programs.
 
 </div>

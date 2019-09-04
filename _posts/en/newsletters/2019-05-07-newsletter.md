@@ -31,7 +31,7 @@ summarizes notable changes in popular Bitcoin infrastructure projects.
   of this newsletter might find especially interesting include,
 
     - *More PSBT tools and refinements:* the previous major release,
-      0.17, introduced support for [BIP174][] Partially-Signed Bitcoin
+      0.17, introduced support for [BIP174][] Partially Signed Bitcoin
       Transactions (PSBTs) designed to help multiple programs or devices
       collaboratively create and sign transactions, such as multisig
       wallets, hardware wallets, and cold wallets.  The 0.18 release

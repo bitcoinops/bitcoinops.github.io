@@ -42,7 +42,7 @@ None this week.
       negotiate what protocol features they support
     - Rename the protocol to *payjoin,* as many people aren't quite sure
       what to call it right now
-    - Use [BIP174][] Partially-Signed Bitcoin Transactions (PSBTs) for
+    - Use [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) for
       communicating transaction and signature data between clients and
       servers
     - Specify that transactions should use a short list of best-practice
@@ -96,7 +96,7 @@ from both December and January.*
   one on an offline computer as a cold wallet for storing private keys
   and one on a networked computer for monitoring the wallet balance and
   broadcasting transactions.  But how would you actually use [BIP174][]
-  Partially-Signed Bitcoin Transactions (PSBTs) to spend money using
+  Partially Signed Bitcoin Transactions (PSBTs) to spend money using
   these two wallets?  BIP174 author Andrew Chow explains.
 
 - [Why relay transactions from node to node---why not send them to

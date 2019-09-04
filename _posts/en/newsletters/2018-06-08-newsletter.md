@@ -44,7 +44,7 @@ A new maintenance release of Bitcoin Core is coming soon with a change to relay 
 
 ## News
 
-- **[BIP174][BIP174] discussion and review ongoing:** this BIP creates a standardized format for wallets to reliably share information related to unsigned and partially-signed transactions. This is expected to be implemented in Bitcoin Core and may also be implemented in other wallets, allowing software wallets, hardware wallets, and offline (cold) wallets to easily interact with each other for both single-signature and multi-signature transactions. This BIP has the potential to become an industry standard and so all major wallet providers are encouraged to investigate the specification.
+- **[BIP174][BIP174] discussion and review ongoing:** this BIP creates a standardized format for wallets to reliably share information related to unsigned and partially signed transactions. This is expected to be implemented in Bitcoin Core and may also be implemented in other wallets, allowing software wallets, hardware wallets, and offline (cold) wallets to easily interact with each other for both single-signature and multi-signature transactions. This BIP has the potential to become an industry standard and so all major wallet providers are encouraged to investigate the specification.
 
   The [proposed implementation of BIP174][PR12136] was previously added to Bitcoin Core’s [high priority review queue][high priority] and received significant discussion this week, with at least one bug being found and one protocol developer suggesting that parts of the proposal can be split up.
 

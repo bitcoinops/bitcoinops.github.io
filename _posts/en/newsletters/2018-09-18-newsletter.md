@@ -54,7 +54,7 @@ merges in popular Bitcoin infrastructure projects.
 - **[Optech Paris workshop][workshop] November 12-13:** member
   companies should [send us an email][optech email] to reserve spots for
   your engineers.  Planned topics include a comparison of two methods
-  for bumping transaction fees, discussion of partially-signed Bitcoin
+  for bumping transaction fees, discussion of partially signed Bitcoin
   transactions ([BIP174][]), an introduction to output script
   descriptors, suggestions for Lightning Network wallet integration, and
   approaches to efficient coin selection (including output

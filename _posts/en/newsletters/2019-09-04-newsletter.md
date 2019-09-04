@@ -62,7 +62,7 @@ notes a few changes in popular Bitcoin infrastructure projects.
   the coinjoin.
 
   With information about the inputs and the outputs, Alice creates a
-  [BIP174][] Partially-Signed Bitcoin Transaction (PSBT) containing the
+  [BIP174][] Partially Signed Bitcoin Transaction (PSBT) containing the
   signatures for her UTXO or UTXOs.  She can then upload this PSBT to a
   public server (and she can encrypt it so that only Bob can decrypt it).
   This completes the proposer step in SNICKER.

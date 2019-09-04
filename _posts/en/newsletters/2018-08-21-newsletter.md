@@ -135,7 +135,7 @@ mentioned above for easy copy/paste next week. -harding -->{% endcomment %}
   version.
 
 - [Bitcoin Core #13917][] and [Bitcoin Core #13960][] improve the
-  [BIP174][] Partially-Signed Bitcoin Transaction (PBST) handling in
+  [BIP174][] Partially Signed Bitcoin Transaction (PBST) handling in
   ambiguous situations.
 
 - [Bitcoin Core #11526][] makes it much easier to build Bitcoin Core
