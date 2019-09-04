@@ -177,7 +177,7 @@ infrastructure projects.
     with the ability to provide maximally-useful debugging information
     to random untrusted peers.
 
-- **Extension fields to Partially-Signed Bitcoin Transactions (PSBTs):**
+- **Extension fields to Partially Signed Bitcoin Transactions (PSBTs):**
   Andrew Poelstra [proposed][psbt extension] the addition of several
   fields to PSBTs to help support several new features.  He also
   proposed making one currently-required field optional.  These new

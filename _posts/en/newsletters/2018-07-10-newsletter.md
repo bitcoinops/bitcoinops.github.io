@@ -189,7 +189,7 @@ to pursue later." ([source][pwuille comment])
       address sweeping, e.g. finding funds that you own and bringing
       them into one of your current wallets.
 
-    - [BIP174][] Partially-Signed Bitcoin Transactions (PSBTs) support,
+    - [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) support,
       a protocol for exchanging information about Bitcoin transactions
       between wallets to facilitate better interoperability between
       multisig wallets, hot/cold wallets, coinjoins, and other

@@ -9,7 +9,7 @@ lang: en
 version: 1
 ---
 This week's newsletter includes information about a new language to describe
-output scripts, an update on Bitcoin Core's support for partially-signed
+output scripts, an update on Bitcoin Core's support for partially signed
 Bitcoin transactions, and news on several other notable Bitcoin Core merges.
 
 ## Action items
@@ -78,7 +78,7 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
   make the wallet just be a list of these descriptors plus associated
   metadata."
 
-- **BIP174 Partially-Signed Bitcoin Transaction (PSBT) support merged:** this
+- **BIP174 Partially Signed Bitcoin Transaction (PSBT) support merged:** this
   provides a standardized format that multiple wallets can use to
   communicate information about transactions that need to be signed,
   so that hot wallets can get signatures from cold wallets or hardware

@@ -44,7 +44,7 @@ popular Bitcoin infrastructure projects.
 
   For scripts that need signatures or other data from multiple wallets,
   miniscript can guide the wallet into creating all the witness data it
-  can so that the data can be bundled into a Partially-Signed Bitcoin
+  can so that the data can be bundled into a Partially Signed Bitcoin
   Transaction (PSBT).  Other wallets can create their own PSBTs, all of
   which are given to a PSBT finalizer.  If the finalizer is miniscript
   aware, it can sort the witness data from all the provided PSBTs into a

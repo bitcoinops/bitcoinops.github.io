@@ -84,7 +84,7 @@ wiki page for changes -->{% endcomment %}
 
 - [Bitcoin Core #15427][] extends the `utxoupdatepsbt` RPC with a `descriptors` parameter
   that takes an [output script descriptor] and uses it to update a
-  [BIP174][] Partially-Signed Bitcoin Transaction (PSBT) with
+  [BIP174][] Partially Signed Bitcoin Transaction (PSBT) with
   information about the scripts (addresses) involved in the transaction.
   This is in addition to the RPC's previous behavior of adding
   information to the PSBT from the node's mempool and UTXO set.  This

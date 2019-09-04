@@ -182,7 +182,7 @@ answers made since our last update.*
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [BIPs #800][] updates [BIP174][] to note that wallets must only sign
-  with the signature hash (sighash) type requested in a Partially-Signed
+  with the signature hash (sighash) type requested in a Partially Signed
   Bitcoin Transaction (PSBT) if the wallet considers that sighash type to
   provide acceptable security.  Most wallets dealing with common
   transaction types should reject anything besides `SIGHASH_ALL`.

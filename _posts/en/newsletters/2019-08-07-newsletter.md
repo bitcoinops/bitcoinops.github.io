@@ -27,7 +27,7 @@ developments.
 
 ## News
 
-- **BIP174 extensibility:** the author of the Partially-Signed Bitcoin
+- **BIP174 extensibility:** the author of the Partially Signed Bitcoin
   Transactions (PSBTs) specification, Andrew Chow, [proposed][psbt
   extensions] a few minor changes for general adoption:
 
