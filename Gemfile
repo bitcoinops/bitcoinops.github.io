@@ -14,4 +14,6 @@ end
 group :testing do
   gem 'html-proofer'
   gem 'mdl'
+  gem 'json-schema'
+  gem 'toml'
 end
