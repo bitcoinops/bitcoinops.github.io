@@ -8,7 +8,10 @@ require 'json-schema'
 
 if ARGV[1].nil?
   puts "Usage: schema-validator.rb <schema-file> <file-to-validate>"
-  puts "Schema file must be YAML; the file to validate may be YAML or TOML"
+  puts "Schema file must be YAML; the file to validate may end with:"
+  puts "  - .yaml (YAML)"
+  puts "  - .md (YAML)"
+  puts "  - .toml (TOML)"
   exit(255)
 end
 
@@ -20,7 +23,7 @@ schema = YAML.load(file)
 file.close()
 
 file = File.open(to_validate, 'r')
-if to_validate.end_with?(".yaml")
+if to_validate.end_with?(".yaml") or to_validate.end_with?(".md")
   document = YAML.load(file)
 elsif to_validate.end_with?(".toml")
   document = TOML.load_file(file)

@@ -1,0 +1,102 @@
+---
+id: https://bitcoinops.org/schema/topics
+description: The topic object
+type: object
+required:
+  - title
+  - categories
+  - excerpt
+  - optech_mentions
+additionalProperties: false
+properties:
+  title:
+    description: Title of the topic
+    type: string
+
+  categories:
+    description: Which categories should list this topic?
+    type: array
+    additionalItems: false
+    items:
+      type: string
+      enum:  ## Please keep in alphabetical order.
+        - Bandwidth Reduction
+        - Consensus Enforcement
+        - Contract Protocols
+        - Developer Tools
+        - Fee Management
+        - Lightning Network
+        - Lightweight Client Support
+        - Mining
+        - P2P Network Protocol
+        - Privacy Enhancements
+        - Privacy Problems
+        - Scripts and Addresses
+        - Security Enhancements
+        - Security Problems
+        - Soft Forks
+        - Transaction Relay Policy
+        - Wallet Collaboration Tools
+
+  aliases:
+    description: Other names for the topic?
+    type: array
+    items:
+      type: string
+
+  excerpt:
+    description: A short description of the topic
+    type: string
+    minLength: 1   ## Anything not empty
+    maxLength: 500 ## Arbitrary but suggest keeping it short in case we add the excerpts to an index at some point
+    pattern: "^\\*\\*"  ## Start excerpt with topic name in bold
+
+  extended_summary:
+    description: More details about the topic, may include links and multiple paragraphs
+    type: string
+    minLength: 1
+
+  primary_sources: &sources
+    description: Links about the topic the reader may find interesting
+    type: list
+    items:
+      type: object
+      required:
+        - title
+      additionalProperties: false
+      properties:
+        title:
+          description: Title to use for the link
+          type: string
+        link:
+          description: The link URL or reference name
+          type: string
+
+  optech_mentions:
+    description: Mentions of the topic on the Optech website
+    type: list
+    items:
+      type: object
+      required:
+        - title
+        - url
+        - date
+      additionalProperties: false
+      properties:
+        title:
+          description: Title to use for the mention
+          type: string
+          minLength: 1
+          maxLength: 75  ## Arbitrary but important to keep short for topic index
+        url:
+          description: Internal URL for the mention
+          type: string
+          pattern: "^/"
+        date:
+          description: Date of the mention
+          type: any  ## YAML auto converts things that look like dates so we can't validate here
+        feature:
+          description: Whether or not to bold the mention as especially noteworthy
+          type: boolean
+
+  see_also: *sources
