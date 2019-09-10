@@ -37,19 +37,19 @@ following command:
 
     source ~/.rvm/scripts/rvm
 
-**Install Ruby 2.5.1**
+**Install Ruby**
 
-To install Ruby 2.5.1, simply run this command:
+To install Ruby 2.6.4, simply run this command:
 
-    rvm install 2.5.1
+    rvm install 2.6.4
 
 Sometimes this will find a pre-compiled Ruby package for your Linux
 distribution, but sometimes it will need to compile Ruby from scratch
 (which takes about 15 minutes).
 
-After Ruby 2.5.1 is installed, make it your default Ruby:
+After Ruby 2.6.4 is installed, make it your default Ruby:
 
-    rvm alias create default ruby-2.5.1
+    rvm alias create default ruby-2.6.4
 
 And tell your system to use it:
 
@@ -106,10 +106,7 @@ sure you're in the `bitcoinops.github.io` directory and run:
     make
 
 The resulting HTML for the entire site will be placed in the `_site`
-directory.  The following alternative options are available:
-
-    ## After you build the site, you can run all of the tests (may take awhile)
-    make test
+directory and various tests will be run.
 
 ## Contributing
 

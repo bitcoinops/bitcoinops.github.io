@@ -1,7 +1,7 @@
 dist: xenial
 language: ruby
 rvm:
-  - "2.5.1"
+  - "2.6.4"
 
 ## Allows use of docker-based containers, which are more available than
 ## the xen-based (or whatever) VMs, so builds tend to happen sooner

@@ -105,7 +105,7 @@ DEPENDENCIES
   minima (~> 2.0)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.4p104
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
