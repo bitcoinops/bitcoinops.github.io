@@ -7,8 +7,7 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter describes an idea for providing SPV fraud proofs
-without changing Bitcoin's consensus rules and summarizes several talks
+This week's newsletter summarizes several talks
 from the Bitcoin Edge Dev++ training sessions and Scaling Bitcoin
 conference held last week in Tel Aviv.  Also included is our regular
 section on notable changes to popular Bitcoin infrastructure projects.
@@ -21,44 +20,6 @@ section on notable changes to popular Bitcoin infrastructure projects.
 *None this week.*
 
 ## News
-
-- **SPV fraud proofs without a soft fork:** Ruben Somsen started a
-  [discussion][fraud proofs] on the Bitcoin-Dev mailing list about fraud
-  proofs based on the [utreexo][] UTXO accumulator.  This would allow SPV
-  clients with at least one honest connection to determine whether or
-  not any blocks on different sides of a block chain fork contained
-  invalid transactions.
-
-    The technique works by first detecting whether different nodes are
-    reporting different blocks at the same block height, indicating a
-    fork.  Then the client requests each of its peers commit to the UTXO
-    state from the block before the fork via a utreexo merkle root.
-    After that commitment, the client downloads the fork block, copies
-    of the UTXOs it spends, and the partial merkle branches connecting
-    the utreexo merkle root to the spent UTXOs.  This allows the SPV
-    client to verify that each fork block only spends UTXOs that existed
-    at the time the block was created.  The client can then perform the
-    other consensus checks on block validity which don't depend on state
-    (e.g., all the fields in its block header are correct, none of its
-    outputs spends more than 21 million BTC, etc...).  With all that
-    information, the SPV client can determine whether any fork blocks
-    are invalid (and, if so, it can reject them and any of their
-    descendants).
-
-    In case any peers disagree about the value of the utreexo state at
-    the pre-fork block, the SPV client can work with them to find a
-    transition from a state they both agreed upon to a state they find
-    disagreeable and can perform the same procedure.  In the worst case,
-    this increases the cost of the fraud proof by a few megabytes per
-    lying peer.
-
-    If implemented, SPV clients could be secure against miner attacks if
-    they had at least one honest peer and waited for a significant
-    number of confirmations before accepting received payments.
-    However, it should be noted that many SPV clients in the past
-    haven't even fully verified block headers---something that is
-    easy to implement compared to the full verification of pre-fork
-    blocks required by this proposal.
 
 - **Conference talk summaries:** last week's Scaling Bitcoin conference
   and Edge Dev++ training sessions yielded several interesting talks
@@ -299,7 +260,6 @@ Bishop, we found the following topic particularly interesting:
 [pr15759]: /en/newsletters/2019/09/11/#bitcoin-core-15759
 [signet progress]: /en/newsletters/2019/07/24/#progress-on-signet
 [pr14451]: /en/newsletters/2018/10/30/#bitcoin-core-14451
-[fraud proofs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017287.html
 [edge dev ts]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/
 [utreexo]: https://eprint.iacr.org/2019/611.pdf
 [coshv]: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
