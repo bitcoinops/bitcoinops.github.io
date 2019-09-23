@@ -203,7 +203,7 @@ Bishop, we found the following topic particularly interesting:
   indicates what services the peer or local node offer.  This is in
   addition to a previous field that provided the bitfield itself.  For example,
   the bitfield `000000000000040d` decodes to
-  `["NODE_NETWORK", "NODE_BLOOM", "NODE_WITNESS", "NODE_NETWORK_LIMITED"]`.
+  `["NETWORK", "BLOOM", "WITNESS", "NETWORK_LIMITED"]`.
 
 - [Bitcoin Core #16725][] now omits the inferred `addresses` field from
   decoded transactions for P2PK outputs.  P2PK outputs---payments
