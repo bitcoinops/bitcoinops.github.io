@@ -53,8 +53,8 @@ infrastructure projects.
     regular Bitcoin transactions (state changes) to be easily reused
     within payment channels.
 
-- **Request for comments on limiting LN gossip updates to once per
-  day:** Rusty Russell [posted][less gossip] to the Lightning-Dev
+- **Request for comments on limiting LN gossip updates to once per day:**
+  Rusty Russell [posted][less gossip] to the Lightning-Dev
   mailing list his plan to limit the number of gossip updates
   C-Lightning will accept to one per day normally.  By his calculations
   based on the current network characteristics, this should limit the
