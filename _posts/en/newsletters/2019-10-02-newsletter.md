@@ -116,10 +116,19 @@ projects.
   tested by the patch author produced about 38.0 MB in allocations.
 
 - [Eclair #1097][] begins deriving channel keys from the funding pubkey,
-  preparing Eclair for using the data loss protection scheme described
-  in [Newsletter #31][dlp footnote].  This only applies to new channels
+  allowing Eclair to use the Data Loss Protection (DLP) scheme described
+  in [Newsletter #31][dlp footnote] even if all data has been lost.
+  This does require the user recall the node they opened their channel
+  with and find the channel id (which is public information for public
+  channels).
+  This only applies to new channels
   opened after updating to a version of the software implementing this
-  change; old channels are unaffected.
+  change; old channels are unaffected.  *(Note: an earlier version of
+  this bullet mistakenly claimed this merged PR would make it possible
+  for Eclair to add DLP support.  Instead, Eclair already had DLP
+  support and this PR changed how the channel keys are derived in order
+  to make that support useful even if all data is lost.  Optech thanks
+  Fabrice Drouin for reporting our error.)*
 
 - [C-Lightning #3057][] makes it possible to use postgres as
   C-Lightning's database manager.
