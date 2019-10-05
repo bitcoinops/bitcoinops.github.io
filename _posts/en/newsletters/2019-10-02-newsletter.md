@@ -47,8 +47,8 @@ projects.
   implementation of Erlay.  We encourage anyone with feedback to contact
   the BIP authors either privately or on the mailing list.
 
-- **Full disclosure of fixed vulnerabilities affecting multiple LN
-  implementations:** several weeks ago, the developers of C-Lightning,
+- **Full disclosure of fixed vulnerabilities affecting multiple LN implementations:**
+  several weeks ago, the developers of C-Lightning,
   Eclair, and LND announced the previous discovery of an undisclosed
   issue in each of their implementations, which they had each fixed in a
   recent release.  At that time, they strongly encouraged their users to
