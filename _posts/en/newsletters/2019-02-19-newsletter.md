@@ -21,8 +21,8 @@ None this week.
 
 ## News
 
-- **Discussion about tagging outputs to enable restricted features on
-  spending:** The [BIP118][] SIGHASH_NOINPUT_UNSAFE (noinput) proposal
+- **Discussion about tagging outputs to enable restricted features on spending:**
+  The [BIP118][] SIGHASH_NOINPUT_UNSAFE (noinput) proposal
   allows the person generating a signature that authorizes the spend of
   one UTXO to optionally allow that signature to be reused ("replayed")
   for spending other UTXOs sent to the same public key.  This enables
