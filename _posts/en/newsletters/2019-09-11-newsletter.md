@@ -87,8 +87,8 @@ infrastructure projects.
   connections can attack that node, either by identifying which transactions
   originate from that node (a privacy leak) or by isolating the node from
   the rest of the network (potentially making theft of funds from the node
-  possible). For details on how an adversary could potentially attack a node
-  in this way, see the [TxProbe paper][].
+  possible). For details on how an adversary could map the network topology
+  using transaction relay, see the [TxProbe paper][].
 
 - [Bitcoin Core #15450][] allows users to create new wallets for
   multiwallet mode from the GUI, completing a set of GUI actions that
