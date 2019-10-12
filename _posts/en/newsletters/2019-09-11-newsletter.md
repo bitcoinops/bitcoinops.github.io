@@ -33,7 +33,7 @@ infrastructure projects.
  LN-penalty enforcement layer with a new layer named LN-eltoo.
  LN-penalty prevents counterparty theft by giving nodes the ability to
  financially penalize a counterparty that attempts to publish an old
- channel state onchain.  LN-eltoo accomplish the same goal by giving the
+ channel state onchain.  LN-eltoo accomplishes the same goal by giving the
  later states the ability to spend funds from earlier states within a
  certain period of time---eliminating the need for a penalty, simplifying
  many aspects of the protocol, and reducing
