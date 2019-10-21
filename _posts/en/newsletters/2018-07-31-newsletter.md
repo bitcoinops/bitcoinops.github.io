@@ -47,8 +47,8 @@ C-lightning projects.
 
 ## News
 
-- **"Improvements in the Bitcoin Scripting Language" by Pieter
-  Wuille:** a talk last week giving a high-level overview of several
+- **"Improvements in the Bitcoin Scripting Language" by Pieter Wuille:**
+  a talk last week giving a high-level overview of several
   possible near-term improvements to Bitcoin.  We highly recommend
   watching the [video][sfdev video], viewing the [slides][sipa slides],
   or reading the [transcript][kanzure transcript] (with references) by
@@ -97,8 +97,8 @@ and answers made there in the past month.*
   Schnorr signature scheme over Bitcoin's current ECDSA signature
   scheme.
 
-- [Why does HD key derivation stop working after a certain index in
-  BIP44 wallets?][bse 76998]: a developer testing his wallet finds that
+- [Why does HD key derivation stop working after a certain index in BIP44 wallets?][bse 76998]:
+  a developer testing his wallet finds that
   a payment sent to low-numbered key indexes works as expected, but
   payments sent to high-numbered indexes never appear in his wallets.
   An answer from Viktor T. reveals why.
@@ -111,8 +111,8 @@ and answers made there in the past month.*
   signature and why you might think you saw a signature that was 74 or
   even 75 bytes.
 
-- [If you can use almost any opcode in P2SH, why can't you use them in
-  scriptPubKeys?][bse 76541]: in this answer, Bitcoin technical writer
+- [If you can use almost any opcode in P2SH, why can't you use them in scriptPubKeys?][bse 76541]:
+  in this answer, Bitcoin technical writer
   David A. Harding explains why early versions of Bitcoin restricted the
   types of transactions that could be sent to "standard transactions"
   and why most of those restrictions are still in place even though

@@ -68,8 +68,8 @@ endcomment %}
   output, depending on the game theory that if an attacker cannot steal
   money, they won’t spend money to attack.
 
-- [How was the dust limit of 546 satoshis was chosen? Why not 550
-  satoshis?]({{bse}}86068) The Bitcoin Core transaction relay policy
+- [How was the dust limit of 546 satoshis was chosen? Why not 550 satoshis?]({{bse}}86068)
+  The Bitcoin Core transaction relay policy
   sets a dust limit of 546 satoshis as the minimum amount for an output,
   which seems a peculiar amount. Raghav Sood describes how 546 is three
   times the minimum cost to create and spend a P2PKH output. A reference
@@ -83,8 +83,8 @@ endcomment %}
   provided to a payer results in a payment preimage reveal that serves
   as proof of payment.
 
-- [How can my private key be revealed if I use the same nonce while
-  generating the signature?]({{bse}}85638) Pieter Wuille provides a
+- [How can my private key be revealed if I use the same nonce while generating the signature?]({{bse}}85638)
+  Pieter Wuille provides a
   thorough answer that, if you’re familiar with the math used in
   public key cryptography, demonstrates how a private
   key is revealed in such circumstances.
@@ -98,8 +98,8 @@ endcomment %}
   expiration dates on invoices to avoid an obligation to deliver goods in the
   future at a previously offered price.
 
-- [Are there still miners or mining pools which refuse to implement
-  SegWit?]({{bse}}86208) Mark Erhardt provides extensive analysis demonstrating
+- [Are there still miners or mining pools which refuse to implement SegWit?]({{bse}}86208)
+  Mark Erhardt provides extensive analysis demonstrating
   that essentially the answer is "no." Only 0.03% non-empty blocks from
   the past year had no SegWit transactions, and the two primary miners of
   those few blocks have demonstrated in 2019 that they’re mining blocks

@@ -99,8 +99,8 @@ answers made since our last update.*
   some potential benefits that might be available if UDP support was
   implemented.
 
-- [How likely are you to get blacklisted by an exchange if you use
-  Wasabi wallet's CoinJoin mixing?][bse 78654] Wasabi Wallet author
+- [How likely are you to get blacklisted by an exchange if you use Wasabi wallet's CoinJoin mixing?][bse 78654]
+  Wasabi Wallet author
   Adam Ficsor explains that nothing stops exchanges from refusing funds
   mixed through Wasabi, but that several features of Wasabi (such as a
   required anonymity set of 100) can help make blocking users bad for

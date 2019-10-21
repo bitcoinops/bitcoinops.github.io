@@ -103,8 +103,8 @@ answers made since our last update.*
   by over 97% at present, but do they also speed up sync?  Bitcoin Core
   developer Gregory Maxwell answers.
 
-- [Can someone steal from you by closing their Lightning Network payment
-  channel in a certain way?][bse 80399] Several different ways to close
+- [Can someone steal from you by closing their Lightning Network payment channel in a certain way?][bse 80399]
+  Several different ways to close
   a Lightning Network payment channel are described, and C-Lightning
   developer Christian Decker explains how a program following the LN
   protocol will protect your money in each case.

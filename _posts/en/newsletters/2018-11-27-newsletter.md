@@ -76,8 +76,8 @@ few spare moments of time to help answer other people's questions.  In
 this monthly feature, we highlight some of the top voted questions and
 answers made since our last update.*
 
-- [How could you create a fake signature to pretend to be
-  Satoshi?][bse 81115] Gregory Maxwell asks and answers a question about
+- [How could you create a fake signature to pretend to be Satoshi?][bse 81115]
+  Gregory Maxwell asks and answers a question about
   you could create a value that looked like an ECDSA signature corresponding
   to an arbitrary public key---such as one known to belong to Satoshi
   Nakamoto---but without having access to the private key.  Maxwell

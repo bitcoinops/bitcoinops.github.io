@@ -69,8 +69,8 @@ from both December and January.*
   interesting discussions about automating channel selection using the
   autopilot feature of LND and his own plugin for C-Lightning.
 
-- [If I generate 20 million Bitcoin addresses an hour, how long until I
-  find a collision?]({{bse}}83818) A user generating an incredible
+- [If I generate 20 million Bitcoin addresses an hour, how long until I find a collision?]({{bse}}83818)
+  A user generating an incredible
   number of addresses using a computer with 32 cores and 128 GB of
   memory wonders how long until he creates two identical addresses with
   different private keys.  Pieter Wuille's answer and its follow-up comments describe the mathematical
@@ -80,8 +80,8 @@ from both December and January.*
   method would almost certainly find a collision only between the
   poster's own addresses---leaving other users unaffected.
 
-- [What's the hold-up implementing BIP156 Dandelion in Bitcoin
-  Core?]({{bse}}81503) Dandelion is a [proposed method][BIP156] for
+- [What's the hold-up implementing BIP156 Dandelion in Bitcoin Core?]({{bse}}81503)
+  Dandelion is a [proposed method][BIP156] for
   initially relaying newly-created transactions that can make it harder
   to determine the network address of the wallet that created the
   transaction.  This answer from Bitcoin Core developer Suhas Daftuar
@@ -91,23 +91,23 @@ from both December and January.*
   other ideas that could also improve the system (e.g. [BIP151][]
   encryption or [libminisketch][] efficient relay).
 
-- [How to use BIP174 PSBTs with a cold wallet and watching-only
-  wallet?]({{bse}}83070) It's easy to setup two copies of Bitcoin Core,
+- [How to use BIP174 PSBTs with a cold wallet and watching-only wallet?]({{bse}}83070)
+  It's easy to setup two copies of Bitcoin Core,
   one on an offline computer as a cold wallet for storing private keys
   and one on a networked computer for monitoring the wallet balance and
   broadcasting transactions.  But how would you actually use [BIP174][]
   Partially Signed Bitcoin Transactions (PSBTs) to spend money using
   these two wallets?  BIP174 author Andrew Chow explains.
 
-- [Why relay transactions from node to node---why not send them to
-  miners directly?]({{bse}}83054) It seems like the Bitcoin network could
+- [Why relay transactions from node to node---why not send them to miners directly?]({{bse}}83054)
+  It seems like the Bitcoin network could
   use a lot less bandwidth if everyone just sent their transactions to
   miners directly and then nodes only distributed blocks.  Pieter Wuille
   explains why that would be bad for privacy and the health of the
   network, plus why it wouldn't even save that much bandwidth.
 
-- [Why should miners hashing arbitrary nonces inspire trust in
-  transaction security?]({{bse}}83951)  When described as a simple
+- [Why should miners hashing arbitrary nonces inspire trust in transaction security?]({{bse}}83951)
+  When described as a simple
   guessing game, Bitcoin's proof of work doesn't sound compelling, but
   this answer from one of Bitcoin StackExchange's top 30 experts,
   Chytrik, provides a simple analogy that captures the essence of proof

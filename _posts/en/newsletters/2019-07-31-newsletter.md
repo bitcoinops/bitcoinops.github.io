@@ -163,13 +163,13 @@ answers made since our last update.*
   merkle root negligible, but an increase in the nonce size would require a hard
   fork.
 
-- [What is the difference between bytes and virtual bytes
-  (vbytes)?]({{bse}}89385) Ugam Kamat and Murch note the differences between
+- [What is the difference between bytes and virtual bytes (vbytes)?]({{bse}}89385)
+  Ugam Kamat and Murch note the differences between
   virtual size (vsize, denominated in vbytes) and size (denominated in bytes)
   and go on to explain the block weight limit and segwit discount.
 
-- [To what extent does asymmetric cryptography secure bitcoin
-  transactions?]({{bse}}89262) RedGrittyBrick and Pieter Wuille explain that
+- [To what extent does asymmetric cryptography secure bitcoin transactions?]({{bse}}89262)
+  RedGrittyBrick and Pieter Wuille explain that
   while asymmetric cryptography was not used in Bitcoin to prevent a bug or
   attack, it is the mechanism by which an individual's coins are secured from
   others.

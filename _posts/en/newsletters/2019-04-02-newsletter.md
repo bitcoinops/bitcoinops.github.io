@@ -56,8 +56,8 @@ infrastructure projects.
   she wouldn't know the actual path, so she'd probably end up paying
   more in fees than if she chose the route herself.
 
-- **Bitcoin Core schedules switch to default bech32 receiving
-  addresses:** since [version 0.16.0][0.16.0 segwit], Bitcoin Core's
+- **Bitcoin Core schedules switch to default bech32 receiving addresses:**
+  since [version 0.16.0][0.16.0 segwit], Bitcoin Core's
   built-in wallet has defaulted to generating P2SH-wrapped segwit
   addresses when users want to receive payments.  These addresses are
   backwards compatible with all widely-used software.  As

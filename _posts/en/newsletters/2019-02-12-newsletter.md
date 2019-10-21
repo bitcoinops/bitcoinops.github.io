@@ -21,8 +21,8 @@ projects.
 
 ## News
 
-- **Tool released for generating and verifying bitcoin ownership
-  proofs:** Blockstream has [released][reserve audit tool] a tool that
+- **Tool released for generating and verifying bitcoin ownership proofs:**
+  Blockstream has [released][reserve audit tool] a tool that
   helps bitcoin custodians, such as exchanges, prove that they control a
   certain number of bitcoins without creating an onchain transaction.
   The tool works by creating an almost-valid transaction that contains

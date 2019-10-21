@@ -51,8 +51,8 @@ commits in popular Bitcoin infrastructure projects.
     appendix to this newsletter that provides additional background on
     these subjects.
 
-    - **Prevent use of `OP_CODESEPARATOR` and `FindAndDelete()` in
-      legacy transactions:** nobody is known to be using these two
+    - **Prevent use of `OP_CODESEPARATOR` and `FindAndDelete()` in legacy transactions:**
+      nobody is known to be using these two
       features of Bitcoin in legacy (non-segwit) Bitcoin transactions,
       but an attacker can abuse them to significantly increase the
       amount of computational work necessary to verify a non-standard
@@ -281,8 +281,8 @@ More information:
 - [Article about Bitcoin timestamp reliability][lopp timestamp] by
   Jameson Lopp
 
-- [Proposal to use timewarp to eliminate the need for hard
-  forks][Friedenbach proposal] by Mark Friedenbach; see also our summary
+- [Proposal to use timewarp to eliminate the need for hard forks][Friedenbach proposal]
+  by Mark Friedenbach; see also our summary
   in [Newsletter #16][] - the proposed cleanup soft fork eliminates the
   ability to use this controversial idea
 

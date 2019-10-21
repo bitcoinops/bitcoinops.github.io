@@ -45,8 +45,8 @@ None this week.
       its available payment paths to determine which are the fastest and
       most reliable for sending payments.
 
-- **Opportunity available for providing utility functions outside of
-  Bitcoin Core:** Bitcoin Core's RPC interface currently provides over
+- **Opportunity available for providing utility functions outside of Bitcoin Core:**
+  Bitcoin Core's RPC interface currently provides over
   100 methods and there are often proposals to add even more for utility
   functions that don't require access to the internal state of the node
   or wallet.  During last week's developer IRC [meeting][core dev

@@ -109,16 +109,16 @@ answers made since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [What are the key differences between regtest and the proposed
-  signet?]({{bse}}89640) Pieter Wuille and Andrew Chow explain that while
+- [What are the key differences between regtest and the proposed signet?]({{bse}}89640)
+  Pieter Wuille and Andrew Chow explain that while
   regtest is good for local automated integration tests, signet is more akin to
   testnet in that it allows testing of things like peer finding, propagation,
   and transaction selection. Signet allows for more control over block
   production timing than testnet and more than one signet can exist for testing
   different scenarios.
 
-- [Can hardware wallets actually display the amount of funds leaving your
-  control?]({{bse}}89508) Andrew Chow explains that since a hardware wallet is
+- [Can hardware wallets actually display the amount of funds leaving your control?]({{bse}}89508)
+  Andrew Chow explains that since a hardware wallet is
   not a full node, it needs to get its transaction amount information elsewhere.
   In the case of non-segwit inputs, often the amount is provided to the hardware
   signing device via the host computer or other wallet by sending the previous
@@ -126,8 +126,8 @@ endcomment %}
   input being signed must always be provided because it is a required part of
   the data that is signed and verified.
 
-- [How does one prove that they sent bitcoins to an unspendable
-  wallet?]({{bse}}89554) JBaczuk explains that you can prove coins
+- [How does one prove that they sent bitcoins to an unspendable wallet?]({{bse}}89554)
+  JBaczuk explains that you can prove coins
   unspendable by sending the coins to an OP_RETURN output
   or another script that always returns false, or by sending coins to an
   address derived from a contrived, non-random script hash.
