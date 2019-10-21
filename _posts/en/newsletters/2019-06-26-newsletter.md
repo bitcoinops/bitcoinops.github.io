@@ -102,8 +102,8 @@ endcomment %}
   considered when restoring from backup or generating addresses outside of the
   wallet.
 
-- [How do bitcoin nodes update the UTXO set when their latest blocks are
-  replaced?]({{bse}}87991) Pieter Wuille describes how "[undo files][]" are
+- [How do bitcoin nodes update the UTXO set when their latest blocks are replaced?]({{bse}}87991)
+  Pieter Wuille describes how "[undo files][]" are
   used to update the UTXO set after a block reorganization.
 
 - [Is there a reason why Bitcoin Core does not implement BIP39?]({{bse}}88237)

@@ -27,8 +27,8 @@ projects.
   confirmations for deposit transactions---as well suggested best
   practices for making disclosures easy.
 
-- **Check software using the P2P protocol `getblocks` or `getheaders`
-  messages:** if you use custom software that requests blocks using
+- **Check software using the P2P protocol `getblocks` or `getheaders` messages:**
+  if you use custom software that requests blocks using
   either of these messages, ensure they don't make their requests with
   more than 101 locators.  All popular open source software has already
   been tested, but if you have internal software that speaks the P2P
@@ -99,8 +99,8 @@ source: [Optech dashboard][periodic txn data]*
     Server](https://github.com/btcpayserver/btcpayserver) is considering
     adding support for P2EP receiving.
 
-- **Bitcoin Core wallet to begin only creating low-R
-  signatures:** the DER format used to encode Bitcoin signatures
+- **Bitcoin Core wallet to begin only creating low-R signatures:**
+  the DER format used to encode Bitcoin signatures
   requires adding an entire extra byte to a signature just to indicate
   when the signature's R value is on the top-half of
   the elliptical curve used for Bitcoin.  The R value is randomly

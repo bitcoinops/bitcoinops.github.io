@@ -95,8 +95,8 @@ answers made since our last update.*
   payments but still not receive any direct information about your
   spending or current balance via the change addresses.
 
-- [Taproot and scriptless scripts both use Schnorr, but how are they
-  different?]({{bse}}84086) In separate answers, Gregory Maxwell and
+- [Taproot and scriptless scripts both use Schnorr, but how are they different?]({{bse}}84086)
+  In separate answers, Gregory Maxwell and
   Andrew Chow each describe the differences between these two proposed
   uses of Schnorr-based signatures.  Also includes a description of
   adapter signatures, which can be used to enhance the efficiency and

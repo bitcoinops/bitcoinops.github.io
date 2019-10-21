@@ -58,8 +58,8 @@ in the past week from popular Bitcoin infrastructure projects.
     minisketch] on the Lightning-Dev mailing list about using them for
     sending LN routing table updates.
 
-- **Description about what might be included in a Schnorr/Taproot soft
-  fork:** Bitcoin protocol developer Anthony Towns has [posted][towns
+- **Description about what might be included in a Schnorr/Taproot soft fork:**
+  Bitcoin protocol developer Anthony Towns has [posted][towns
   schnorr taproot] a well-written email describing what he thinks
   ought to be included in a soft fork that adds the Schnorr signature
   scheme plus Taproot-style MAST to Bitcoin.  This is not a formal

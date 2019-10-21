@@ -139,8 +139,8 @@ summarizes notable changes in popular Bitcoin infrastructure projects.
       version after that (expected about a year from now).  The earlier
       date is the current target.
 
-- **Proposal for support of Schnorr signatures and Taproot script
-  commitments:** Pieter Wuille [posted][tap post] to the Bitcoin-Dev
+- **Proposal for support of Schnorr signatures and Taproot script commitments:**
+  Pieter Wuille [posted][tap post] to the Bitcoin-Dev
   mailing list a proposed [BIP for Taproot][taproot] (using Schnorr
   signatures) and a proposed [BIP for Tapscript][tapscript], a small
   variation on Bitcoin's current Script language to be used with Taproot

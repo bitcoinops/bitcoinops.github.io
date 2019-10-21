@@ -291,8 +291,8 @@ answers made since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [What are the limitations for amortizing the interactive session setup
-  of MuSig?]({{bse}}87605) Richard Myers is attempting to optimize
+- [What are the limitations for amortizing the interactive session setup of MuSig?]({{bse}}87605)
+  Richard Myers is attempting to optimize
   interactive setup for a low bandwidth system, but user nickler
   emphasizes that nonces must not be reused or private keys could
   be leaked. Nickler goes on to provide suggestions to achieve

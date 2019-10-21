@@ -112,8 +112,8 @@ answers made since our last update.*
   MuSig have the same security as current Bitcoin
   multisig?]({{bse}}85101).
 
-- [How were the parameters for the secp256k1 curve
-  chosen?]({{bse}}85387)  This is the elliptical curve used in Bitcoin.
+- [How were the parameters for the secp256k1 curve chosen?]({{bse}}85387)
+  This is the elliptical curve used in Bitcoin.
   Some curve parameters play an important role in security, so it's
   useful to know whether those parameters were chosen wisely.  Other
   parameters don't matter much for security, but their history might be
@@ -122,8 +122,8 @@ answers made since our last update.*
   questions don't affect security, and why we might never learn any more
   about the origin of certain curve parameters.
 
-- [What addresses should I support when developing a
-  wallet?]({{bse}}84978) A developer asks whether he should support both
+- [What addresses should I support when developing a wallet?]({{bse}}84978)
+  A developer asks whether he should support both
   P2PKH (`1foo...`) addresses and P2SH-wrapped segwit (`3bar...`)
   addresses, or whether it's safe to just provide the P2SH address.
   Andrew Chow answers that just the P2SH address is enough.  Gregory

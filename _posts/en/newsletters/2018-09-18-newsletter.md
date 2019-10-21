@@ -16,8 +16,8 @@ merges in popular Bitcoin infrastructure projects.
 
 ## Action items
 
-- **Upgrade to Bitcoin Core 0.16.3 to fix denial-of-service
-  vulnerability:** a bug introduced in Bitcoin Core 0.14.0 and affecting
+- **Upgrade to Bitcoin Core 0.16.3 to fix denial-of-service vulnerability:**
+  a bug introduced in Bitcoin Core 0.14.0 and affecting
   all subsequent versions through to 0.16.2 will cause Bitcoin Core to
   crash when attempting to validate a block containing a transaction
   that attempts to spend the same input twice.  Such blocks would be

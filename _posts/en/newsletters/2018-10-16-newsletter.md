@@ -68,8 +68,8 @@ on some of the transcripts for the event in Tokyo last week:
   Bitcoin-using businesses encounter when using Bitcoin Core and other
   open source infrastructure projects.
 
-- **[Using UTXO accumulators to reduce data storage
-  requirements][utreexo]:** Tadge Dryja describes work he's been doing
+- **[Using UTXO accumulators to reduce data storage requirements][utreexo]:**
+  Tadge Dryja describes work he's been doing
   on UTXO accumulators that are similar in function to those described
   in last week's newsletter but which have a different construction
   based on hashes.  He further describes how they could be combined with
