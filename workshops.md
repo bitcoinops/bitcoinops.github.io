@@ -19,22 +19,17 @@ If you have any requests or suggestions for future workshop events, please
 
 *Schnorr signatures* and *Taproot* are proposed changes to the Bitcoin
 protocol that promise greatly improved privacy, fungibility, scalability and
-functionality. These seminar format workshops will include a mixture of
-presentations, coding exercises and discussions, and will give engineers at
+functionality.
+
+Bitcoin Optech hosted two seminar format workshops which included a mixture of
+presentations, coding exercises and discussions, and gave engineers at
 member companies an understanding of how these new technologies work and how
-they can be applied to their products and services. They will also give
+they can be applied to their products and services. The workshops also provided
 engineers an opportunity to take part in the feedback process while these
 technologies are still in the proposal stage.
 
-#### Topics
-
-Optech will present each of the following topics, and then engineers will
-get experience writing code that implements:
-
-- [Schnorr signatures](https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki)
-- [MuSig](https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/)
-- [Taproot](https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki)
-- [Tapscript](https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki)
+[All material from the workshops][taproot workshop blog post] is available on this website, so engineers can
+learn about the schnorr/taproot proposals at home.
 
 ## Workshop #2 - Paris, November 12-13 2018
 
@@ -87,3 +82,5 @@ Thanks to Square for hosting the workshop and Coinbase for helping with
 organization.
 
 {% include references.md %}
+
+[taproot workshop blog post]: /en/schorr-taproot-workshop/
