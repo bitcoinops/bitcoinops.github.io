@@ -3,6 +3,10 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
+[topic cpfp carve out]: /en/topics/cpfp-carve-out/
+[topic minisketch]: /en/topics/minisketch/
+[topic transaction pinning]: /en/topics/transaction-pinning/
+[topic v2 p2p transport]: /en/topics/v2-p2p-transport/
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
