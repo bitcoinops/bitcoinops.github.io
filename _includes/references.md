@@ -3,12 +3,18 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
+[topic channel factories]: /en/topics/channel-factories/
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
 [topic descriptors]: /en/topics/output-script-descriptors/
+[topic eltoo]: /en/topics/eltoo/
 [topic erlay]: /en/topics/erlay/
+[topic mast]: /en/topics/mast/
 [topic miniscript]: /en/topics/miniscript/
 [topic minisketch]: /en/topics/minisketch/
+[topic payjoin]: /en/topics/payjoin/
 [topic psbt]: /en/topics/psbt/
+[topic sighash_noinput]: /en/topics/sighash_noinput/
+[topic taproot]: /en/topics/taproot/
 [topic transaction pinning]: /en/topics/transaction-pinning/
 [topic v2 p2p transport]: /en/topics/v2-p2p-transport/
 

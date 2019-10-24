@@ -172,6 +172,7 @@ transaction.  This lays the groundwork for other proposals such as
 [Channel Factories][] that could make LN channels 10x or more efficient
 in their onchain operations.
 
+{:#sighash_noinput}
 Eltoo requires a soft fork to add a new optional signature hash,
 [BIP118][] SIGHASH_NOINPUT_UNSAFE.[^fn-unsafe]  This would allow a signature
 authorizing the spend of a UTXO to indicate that the signature doesn't
