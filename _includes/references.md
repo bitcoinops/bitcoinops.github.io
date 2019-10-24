@@ -3,6 +3,10 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
+[topic descriptors]: /en/topics/output-script-descriptors/
+[topic erlay]: / {% comment %}FIXME: /en/topics/erlay/{% endcomment %}
+[topic miniscript]: /en/topics/miniscript/
+[topic psbt]: /en/topics/psbt/
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
