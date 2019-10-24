@@ -4,7 +4,11 @@
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
+[topic descriptors]: /en/topics/output-script-descriptors/
+[topic erlay]: /en/topics/erlay/
+[topic miniscript]: /en/topics/miniscript/
 [topic minisketch]: /en/topics/minisketch/
+[topic psbt]: /en/topics/psbt/
 [topic transaction pinning]: /en/topics/transaction-pinning/
 [topic v2 p2p transport]: /en/topics/v2-p2p-transport/
 
