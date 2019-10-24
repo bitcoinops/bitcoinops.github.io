@@ -38,10 +38,11 @@ changes to popular Bitcoin infrastructure projects.
       addresses, tracking when they've been paid, and finding or
       deriving the particular private keys necessary for spending.
 
-    - <span id="cleanup-discussion" markdown="1">June 6th: discussion of the [consensus cleanup soft fork][xs
+    - June 6th: discussion of the [consensus cleanup soft fork][xs
       cleanup sf] included its interaction with [bip-taproot][], whether
       parts of it should be dropped, and whether anything should be
-      added.  ([More background][bg consensus cleanup])</span>
+      added.  ([More background][bg consensus cleanup])
+      {:#cleanup-discussion}
 
       The group asked what they could do to make the [maintainers'][xs
       maint] work easier.  Among other considerations, the maintainers
@@ -67,9 +68,10 @@ changes to popular Bitcoin infrastructure projects.
       UTXO set highlighted some interesting details of this developing
       proposal for minimizing full node storage requirements.
 
-    - <span id="assume-utxo-demo" markdown="1">June 7th: code for the [assumeutxo][xs assumeutxo] proposal was
+    - June 7th: code for the [assumeutxo][xs assumeutxo] proposal was
       demoed and discussed, including how to make the proposal
-      compatible with other ideas. ([More background][bg assumeutxo])</span>
+      compatible with other ideas. ([More background][bg assumeutxo])
+      {:#assume-utxo-demo}
 
       {:#hwi}
       Contributors discussed getting [hardware wallet][xs hwi] support

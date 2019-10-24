@@ -205,7 +205,8 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 - [LND #1981][] ensures that LND doesn't leak information about any of
   its peers that aren't advertising themselves as public nodes.
 
-- LND [#1535][LND #1535] and [#1512][LND #1512] adds the server-side
+- {:#lnd-1535-1512}
+  LND [#1535][LND #1535] and [#1512][LND #1512] adds the server-side
   communication protocol for watchtowers along with many tests verifying
   its proper operation.  Correct use of the LN protocol requires regular
   monitoring of which transactions get added to the block chain, so
@@ -216,7 +217,6 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
   specification for watchtowers has not been agreed upon by the multiple
   implementations of LN, so LND is only putting this feature out for
   initial testing and is restricting its use to testnet.
-  {:#lnd-1535-1512}
 
 {% include references.md %}
 {% include linkers/issues.md issues="14451,14296,14468,14150,1981,1535,1512" %}

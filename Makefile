@@ -23,7 +23,7 @@ test-before-build:
 	! git --no-pager grep -h "^slug: " _posts | sort | uniq -d | grep .
 	## Check for things that should probably all be on one line
 	@ ## Note: double $$ in a makefile produces a single literal $
-	! git --no-pager grep -- '^ *- \*\*[^\*]*$$'
+	! git --no-pager grep -- '^ *- \*\*[^*]*$$'
 	! git --no-pager grep -- '^ *- \[[^]]*$$'
 
 	## Check that newly added or modifyed PNGs are optimized

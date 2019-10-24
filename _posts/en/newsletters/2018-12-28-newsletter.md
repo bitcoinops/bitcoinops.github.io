@@ -331,7 +331,7 @@ recommended) using Tor---which can provide other benefits---but enabling
 encryption by default could help protect a larger number of users from
 eavesdropping by their ISPs.
 
-{:#untrackable-auth}
+{:#countersign}
 Separately, Pieter Wuille has been working on a [draft document][untrackable auth]
 since February based on a protocol he, Gregory Maxwell, and others have been developing
 to allow optional authentication on top of encryption.  Similar to
