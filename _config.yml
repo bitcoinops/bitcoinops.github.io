@@ -58,3 +58,6 @@ defaults:
 collections:
   topics:
     output: true
+
+languages:
+  - ja
