@@ -26,9 +26,11 @@ and the open source community.
 [about]: /about
 [compatibility]: /en/compatibility/
 
+{% assign posts_en = site.posts | where:"lang","en" %}
+
 <h2>Recent newsletters and blog posts</h2>
 <ul class="post-list">
-  {%- for post in site.posts limit:3 -%}
+  {%- for post in posts_en limit:3 -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>

@@ -11,9 +11,10 @@ version: 1
 
 {% include newsletter-signup.html %}
 
+{% assign posts_newsletters_en = site.posts | where:"lang","en" | where:"type","newsletter" %}
+
 <ul class="post-list">
-  {%- for post in site.posts -%}
-  {%- if post.type == 'newsletter' -%}
+  {%- for post in posts_newsletters_en -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -26,7 +27,6 @@ version: 1
       {{ post.excerpt }}
     {%- endif -%}
   </li>
-  {%- endif -%}
   {%- endfor -%}
 </ul>
 
