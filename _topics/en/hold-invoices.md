@@ -24,7 +24,7 @@ extended_summary: |
   inventory for the requested item.  This would give her a chance to
   cancel the payment if she couldn't deliver.
 
-  Hold invoices are sometimes spelled "hodl invoices".
+  Hold invoices are sometimes spelled "hodl invoices."
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"

@@ -28,11 +28,11 @@ extended_summary: |
     safely spend the old funds within the channel while waiting for the
     close and open transactions to confirm.
 
-   - **Splice out** means removing funds from a channel to an
-     independent onchain output.  Similar to splice-in, the channel is
-     closed and a new channel is opened, with the remaining funds being
-     secured by the old channel's security until the new channel has
-     fully confirmed.
+  - **Splice out** means removing funds from a channel to an
+    independent onchain output.  Similar to splice-in, the channel is
+    closed and a new channel is opened, with the remaining funds being
+    secured by the old channel's security until the new channel has
+    fully confirmed.
 
    Splicing is different from *submarine swaps* (such as those
    implemented by [Lightning Loop][]) where funds are transferred
