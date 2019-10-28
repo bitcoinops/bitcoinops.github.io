@@ -92,7 +92,23 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME
+- [Why does hashing public keys not actually provide any quantum resistance?]({{bse}}91049)
+  Andrew Chow lists several considerations regarding public keys and quantum
+  resistance, including: the need to reveal the public key during spending, the
+  large number of bitcoins in outputs with known public keys, and numerous ways
+  which public keys are exposed outside of just transacting due to not currently
+  being treated as secrets.
+
+- [Will schnorr multi-signatures completely replace ECDSA?]({{bse}}90855)
+  Ugam Kamat explains how the proposed addition of schnorr signatures in
+  segwit v1 does not remove the need for ECDSA. ECDSA is required to spend
+  non-segwit as well as segwit v0 outputs.
+
+- [Why doesn't RBF include restrictions on the outputs?]({{bse}}90858)
+  Andrew Chow gets into some of the design choices in [BIP125][] Opt-in Replace
+  by Fee (RBF) and compares it to the First Seen Safe Replace by Fee (FSS-RBF)
+  approach. Chow notes the drawbacks of FSS-RBF but also warns against the
+  acceptance of any unconfirmed transaction.
 
 ## Notable code and documentation changes
 
