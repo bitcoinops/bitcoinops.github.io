@@ -25,7 +25,7 @@ extended_summary: |
   - *Atomic Multipath Payments (AMP)*, sometimes called *Original AMP*
     or *OG AMP*, which allows a spender to pay multiple hashes all
     derived from the same preimage---a preimage the receiver can only
-    reconstruct if they receive an sufficient number of shares.  This
+    reconstruct if they receive a sufficient number of shares.  This
     only allows the receiver to accept a payment if they receive all of the
     individual parts.  Each share using a different hash adds privacy by
     preventing the separate payments from being automatically correlated
@@ -35,10 +35,10 @@ extended_summary: |
     receiver.
 
   - *Base-AMP* which simply sends multiple payments all using to the
-    same hash and assumes the receiver will only claim the payment
-    (releasing the hash preimage and allowing generation of a provable
-    receipt) if the full amount is received.  It's also possible for
-    third-parties who see multiple payments using the same hash to
+    same hash and assumes the receiver will wait until the full amount
+    is received before claiming the payment (releasing the hash preimage
+    and allowing generation of a provable receipt).  It's also possible
+    for third-parties who see multiple payments using the same hash to
     assume they're part of the same true payment.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or

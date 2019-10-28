@@ -17,7 +17,7 @@ excerpt: >
 extended_summary: |
   The service provided by watchtowers allows their clients to go offline
   for significant amounts of time without having to worry about their
-  funds being stolen by a lying counterparty.  Watchtowers are not
+  funds being stolen by a counterparty.  Watchtowers are not
   entrusted with any funds, just the responsibility of monitoring the
   block chain and broadcasting transactions, although breach remedy
   transactions can be designed so that the watchtower receives a portion
