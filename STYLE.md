@@ -21,6 +21,7 @@ sentence or heading.
 
 - bech32
 - bitcoin (the currency)
+- eltoo
 - merkle (tree|root|branch|node)
 - schnorr
 - segwit
@@ -71,14 +72,20 @@ following abbreviations we assume readers will already know.
 |-|-|-|
 | block chain | blockchain | |
 | coinjoin | Coinjoin or coinJoin or coin-join | |
+| feerate | fee-rate or fee rate | |
 | mainnet | main net | |
 | multisig | multi-sig | |
 | multiparty | multi-party | |
 | MuSig | Musig or muSig or musig | |
 | offchain | off-chain | |
 | onchain | on-chain | |
+| opcode | OPCODE or OpCode or Opcode or op code | |
+| OP_RETURN (and all other opcodes) | op_return | |
 | preimage | pre-image | |
+| proof of work | proof-of-work | proof-of-work may be used as an adjective phrase (e.g. "Bitcoin's proof-of-work security is economic in nature"). | |
 | redeemScript | redeem script | |
+| secp256k1 | Secp256k1 or SECP256k1 or SECP256K1 | |
+| sigop | Sigop or SigOp or sig op | |
 | single-sig | singlesig | |
 | soft fork/hard fork | softfork/hardfork or soft-fork/hard-fork | soft-fork/hard-fork may be used as compound adjectives (eg "Foo proposed a soft-fork change") |
 | 2-of-3 | 2 of 3 | |
@@ -89,15 +96,19 @@ The author of the document gets to choose its flavor of English (e.g.
 American or British).  However, the following terms should always be
 spelled the same.
 
-| Use | Don't use |
-|-|-|
-| k-of-n multisig | m-of-n multisig |
-| light client | lite client |
+| Use | Don't use | Notes |
+|-|-|-|
+| adaptor signatures | adapter signatures | |
+| k-of-n multisig and n-of-n multisignature | m-of-n multisig or any_other_letter-of-any_other_letter multisig | When spoken, 'm-of-n' can easily be confused with 'n-of-n' |
+| light client | lite client | |
+| merklized | merkelized or merkleized | |
 
 ### Preferred terms
 
 | Use | Don't use | Notes |
 |-|-|-|
+| coinbase transaction | generation transaction | |
+| Merklized Alternative Script Trees | Merklized Abstract Syntax Trees | https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast |
 | spender | sender | "sender" may ambiguously refer to the sender of data |
 | receiver | recipient | |
 
