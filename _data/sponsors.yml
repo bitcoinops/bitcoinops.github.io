@@ -83,6 +83,10 @@ members:
     website: https://twitter.com/LedgerHQ
     logo: ledger.png
   -
+    name: OKcoin
+    website: https://twitter.com/OKcoin
+    logo: okcoin.png
+  -
     name: Paxos
     website: https://twitter.com/PaxosGlobal
     logo: paxos.png
