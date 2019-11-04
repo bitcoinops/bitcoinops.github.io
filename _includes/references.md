@@ -57,6 +57,7 @@ When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
+[BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
 [BOLT3]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md
 [BOLT4]: https://github.com/lightningnetwork/lightning-rfc/blob/master/04-onion-routing.md
