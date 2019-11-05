@@ -1,5 +1,5 @@
 ---
-title: Hardware Wallet Interaction (HWI)
+title: Hardware Wallet Interface (HWI)
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -8,8 +8,8 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Hardware Wallet Interaction (HWI)** is a set of Python scripts used
-  to interact with hardware wallets using Partially-Signed Bitcoin
+  **Hardware Wallet Interface (HWI)** is a Python library and command-line tool used
+  to interface with hardware wallets using Partially-Signed Bitcoin
   Transactions (PSBTs) and output script descriptors.
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.

@@ -17,18 +17,18 @@ excerpt: >
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
-  A PSBT can be created with just information about what outputs are to
-  be paid.  Then information about the inputs necessary to fund it can
-  be added in multiple stages, such as a first stage that simply
-  identifies the inputs and a second stage that adds necessary
-  information about the UTXOs each input spends.
+  A PSBT can be created that identifies a set of UTXOs to spend and a
+  set of outputs to receive that spent value.  Then information about
+  each UTXO that's necessary to generate a signature for it can added,
+  possibly by a separate tool, such as the UTXO's script or its precise
+  bitcoin value.
 
   The PSBT can then be copied by any means to a program that can sign it.  For
   multisig wallets or cases where different wallets control different
   inputs, this last step can be repeated multiple times by different
   programs on different copies of the PSBT.  Multiple PSBTs each with
   one or more necessary signatures can be integrated into a single
-  PSBT later.  That fully-signed PSBT can be converted into a
+  PSBT later.  Finally, that fully-signed PSBT can be converted into a
   complete ready-to-broadcast transaction.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
