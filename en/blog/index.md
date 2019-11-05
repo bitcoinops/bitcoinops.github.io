@@ -6,9 +6,10 @@ layout: page
 title: Posts
 ---
 
+{% assign posts_blog_en = site.posts | where:"lang","en" | where:"type","posts" %}
+
 <ul class="post-list">
-  {%- for post in site.posts -%}
-  {%- if post.type == 'posts' -%}
+  {%- for post in posts_blog_en -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -21,7 +22,6 @@ title: Posts
       {{ post.excerpt }}
     {%- endif -%}
   </li>
-  {%- endif -%}
   {%- endfor -%}
 </ul>
 
