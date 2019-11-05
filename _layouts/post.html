@@ -3,9 +3,25 @@ layout: default
 ---
 <link rel="stylesheet" href="/assets/css/main.css">
 
+{% assign baseurl = page.permalink | remove_first: "/" | remove_first: page.lang %}
+
+{% for lang in site.languages %}
+  {% assign localization = "/" | append: lang | append:baseurl %}
+  {% assign locale = site.posts | where:"permalink", localization %}
+  {% assign localizations = localizations | concat: locale %}
+{% endfor %}
+
 <article class="post">
 
   <header class="post-header">
+    {% if localizations.size > 0 %}
+      <div class="localization">
+        <a href="{{ '/en' | append:baseurl }}">en</a>
+        {% for locale in localizations %}
+          | <a href="{{ locale.url }}">{{locale.lang}}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
     <h1 class="post-title">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
