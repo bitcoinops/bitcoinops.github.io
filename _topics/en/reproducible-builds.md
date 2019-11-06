@@ -28,9 +28,9 @@ extended_summary: |
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+    - title: "Bitcoin Core PR #15277: Enable building in Guix containers"
+      link: https://github.com/bitcoin/bitcoin/pull/15277
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -52,7 +52,7 @@ optech_mentions:
     date: 2019-05-07
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: "Presentation: Bitcoin Build System Security"
+    link: https://youtu.be/I2iShmUTEl8
 ---

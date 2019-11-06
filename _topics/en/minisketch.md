@@ -18,8 +18,8 @@ excerpt: >
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
   The type of set reconcilliation provided by minisketch underlies the
-  proposed [Erlay][topic erlay] enhancement to the Bitcoin gossip
-  protocol.
+  proposed [Erlay][topic erlay] improvement to Bitcoin transaction relay
+  efficiency.
 
   Minisketch should not be confused with [miniscript][topic miniscript],
   a system for helping wallets create and implement bitcoin security

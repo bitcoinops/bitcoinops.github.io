@@ -19,12 +19,18 @@ excerpt: >
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
-  The [BIP322][] *generic signed message format* proposal is backwards
-  compatible with the `signmessage` format implemented in early versions
-  of the Bitcoin software, which is specific to the P2PKH address
-  format.   For other addresses types, it implements a generic system
-  based on producing a signature in much the same way a wallet would
-  need to produce a signature in order to create a valid transaction.
+  The [BIP322][] *generic signed message format* allows a wallet to sign
+  a text string in almost the same way the wallet would produce a
+  signature for a Bitcoin transaction.  This means a signed message can
+  be produced for any script or address that a wallet would be able to
+  spend.  Additionally, two or more wallets can cooperate to create a
+  BIP322 signed message for multisig scripts.
+
+  When signing for legacy P2PKH addresses, BIP322 instead uses the
+  traditional `signmessage` format that was first implemented in an
+  early version of the Bitcoin software, making the proposal backwards
+  compatible with existing software that verifies signed messages for
+  P2PKH addresses.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
