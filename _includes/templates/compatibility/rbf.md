@@ -6,6 +6,8 @@ this if the earlier transaction enables [BIP125](https://github.com/bitcoin/bips
 replacement transaction increases the amount of fee paid.  In terms of
 block chain space used, this is the most efficient form of fee bumping.
 
+{% if tool.rbf %}
+
 {% assign tested = tool.rbf.tested. %}
 **Tested**: {% if tested.version != "n/a" %} *version {{tested.version}}* {% endif %} on *{{tested.platforms}}*
 
@@ -201,3 +203,7 @@ block chain space used, this is the most efficient form of fee bumping.
 ### Usability
 
 {% include functions/compat-gallery.md examples=tool.rbf.examples %}
+
+{% else %}
+*We have not yet tested {{tool.name}} for RBF capabilities.*
+{% endif %}
