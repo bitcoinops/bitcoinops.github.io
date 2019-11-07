@@ -14,7 +14,7 @@ The compatibility matrix section of the website is built from
 Each wallet also requires a markdown file in
 [en/compatibility/](en/compatibility/). The compatibility images (usability
 screenshots, logos) are located in [img/compatibility/](img/compatibility/) with
-sub-folders for each wallet or service. Make sure to optimize any images using
+sub-folders for each wallet or service. Make sure to optimize any png files using
 `optipng -o7 <filename>`. These files are free for anyone to repurpose/republish
 elsewhere.
 
