@@ -11,9 +11,11 @@ Tuesday UTC may not be incorporated due to time constraints.
 
 The compatibility matrix section of the website is built from
 [YAML](https://yaml.org/) files located in [_data/compatibility/](_data/compatibility/).
-The compatibility images (usability screenshots, logos) are located in
-[img/compatibility/](img/compatibility/) with sub-folders for each
-wallet or service. These files are free for anyone to repurpose/republish
+Each wallet also requires a markdown file in
+[en/compatibility/](en/compatibility/). The compatibility images (usability
+screenshots, logos) are located in [img/compatibility/](img/compatibility/) with
+sub-folders for each wallet or service. Make sure to optimize any images using
+`optipng -o7 <filename>`. These files are free for anyone to repurpose/republish
 elsewhere.
 
 We welcome pull requests to the compatibility matrix, including
