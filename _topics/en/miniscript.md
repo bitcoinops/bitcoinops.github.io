@@ -11,17 +11,16 @@ categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
   **Miniscript** allows software to automatically analyze a script,
-  including determining what data is necessary to create a witness that
-  fulfills the script and allows any bitcoins protected by the script to
-  be spent.  With miniscript telling the wallet what it needs to do,
+  including determining what witness data must be generated in order to spend bitcoins
+  protected by that script.  With miniscript telling the wallet what it needs to do,
   wallet developers don't need to write new code when they switch from
   one script template to another.
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
-  This automation for the large range of scripts supported by miniscript
-  allows wallets to be much more dynamic about the scripts they use,
-  possibly even allowing users to specify their own scripts.  In support
+  The structured representation of Bitcoin scripts provided by
+  miniscript allows wallets to be much more dynamic about the scripts they use.
+  In support
   of that dynamism, miniscripts can be created using an easily-written
   policy language.  Policies are composable, allowing any valid
   sub-expression to be replaced by another valid sub-expression (within
