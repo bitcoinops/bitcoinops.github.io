@@ -59,6 +59,15 @@ optech_mentions:
     url: /en/newsletters/2019/10/16/#the-quest-for-practical-threshold-schnorr-signatures
     date: 2019-10-16
 
+  - title: Announcement of structured taproot review (including schnorr)
+    url: /en/newsletters/2019/10/23/#taproot-review
+    date: 2019-10-23
+
+  - title: Bitcoin Optech schnorr/taproot workshop
+    url: /en/schorr-taproot-workshop/
+    date: 2019-10-29
+    feature: true
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

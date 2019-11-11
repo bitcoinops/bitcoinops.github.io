@@ -56,6 +56,14 @@ optech_mentions:
     url: /en/newsletters/2019/09/11/#bitcoin-core-16421
     date: 2019-09-11
 
+  - title: "LN simplified commitments using CPFP carve-out"
+    url: /en/newsletters/2019/10/30/#ln-simplified-commitments
+    date: 2019-10-30
+
+  - title: "Continued discussion of LN anchor outputs using CPFP carve-out"
+    url: /en/newsletters/2019/11/06/#continued-discussion-of-ln-anchor-outputs
+    date: 2019-11-06
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
