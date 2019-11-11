@@ -80,6 +80,7 @@ make this choice years after first receiving the coin without creating a
 new transaction.  This could further increase efficiency and privacy,
 especially for certain offchain contract protocols.
 
+{:#multipath-payments}
 Meanwhile, LN protocol developers Olaoluwa Osuntokun and Conner
 Fromknecht described a [new way to make multipath payments over LN][ln
 multipath].  Multipath payments are payments with parts split across
