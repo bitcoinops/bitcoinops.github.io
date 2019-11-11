@@ -68,6 +68,16 @@ optech_mentions:
     url: /en/newsletters/2019/10/16/#taproot-update
     date: 2019-10-16
 
+  - title: Announcement of structured taproot review
+    url: /en/newsletters/2019/10/23/#taproot-review
+    date: 2019-10-23
+
+  - title: Bitcoin Optech schnorr/taproot workshop
+    url: /en/schorr-taproot-workshop/
+    date: 2019-10-29
+    feature: true
+
+
 ## Optional
 see_also:
   - title: MAST
