@@ -1,5 +1,5 @@
 ---
-title: Replace-by-Fee
+title: Replace-by-fee (RBF)
 
 aliases:
   - BIP125
@@ -14,7 +14,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Replace by Fee (RBF)** is a node policy that allows an unconfirmed
+  **Replace-By-Fee (RBF)** is a node policy that allows an unconfirmed
   transaction in a mempool to be replaced with a different transaction
   that spends at least one of the same inputs and which pays a higher
   transaction fee.

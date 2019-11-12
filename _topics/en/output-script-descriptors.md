@@ -1,5 +1,5 @@
 ---
-title: Output Script Descriptors
+title: Output script descriptors
 
 aliases:
   - Descriptors

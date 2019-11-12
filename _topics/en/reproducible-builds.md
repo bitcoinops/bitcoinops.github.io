@@ -1,5 +1,5 @@
 ---
-title: Reproducible Builds
+title: Reproducible builds
 
 ## Optional.  An entry will be added to the topics index for each alias
 aliases:
@@ -13,7 +13,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Reproducible Builds** are software that was compiled
+  **Reproducible builds** are software that was compiled
   deterministically, making it possible for multiple people to compile
   the same source code into identical binaries.
 

@@ -8,7 +8,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Sidechains** (also called **Two-Way Pegged Sidechains**) are block
+  **Sidechains** (also called **two-way pegged sidechains**) are block
   chains whose native unit of currency is the same as another block
   chain.
 
