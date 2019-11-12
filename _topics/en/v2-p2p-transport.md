@@ -1,5 +1,5 @@
 ---
-title: Version 2 P2P Transport
+title: Version 2 P2P transport
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -12,7 +12,7 @@ aliases:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Version 2 (v2) P2P Transport** is a proposal to allow Bitcoin nodes
+  **Version 2 (v2) P2P transport** is a proposal to allow Bitcoin nodes
   to communicate with each other over encrypted connections.
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.

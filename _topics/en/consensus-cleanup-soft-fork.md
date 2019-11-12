@@ -1,5 +1,5 @@
 ---
-title: Consensus Cleanup soft fork
+title: Consensus cleanup soft fork
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -10,7 +10,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Consensus Cleanup soft fork** is a proposal to address several
+  **Consensus cleanup soft fork** is a proposal to address several
   issues in Bitcoin's consensus rules that date back to the original
   version of Bitcoin released in 2009.
 

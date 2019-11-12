@@ -1,5 +1,5 @@
 ---
-title: Partially-Signed Bitcoin Transactions (PSBTs)
+title: Partially-signed bitcoin transactions (PSBTs)
 
 aliases:
   - BIP174

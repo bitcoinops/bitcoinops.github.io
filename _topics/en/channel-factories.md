@@ -1,5 +1,5 @@
 ---
-title: Channel Factories
+title: Channel factories
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options

@@ -1,5 +1,5 @@
 ---
-title: Just-in-Time (JIT) Routing
+title: Just-in-time (JIT) routing
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -8,7 +8,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Just-in-Time (JIT) Routing** occurs when an LN routing node
+  **Just-In-Time (JIT) routing** occurs when an LN routing node
   rebalances two or more of its channels so that it has enough funds to
   route a payment it would otherwise have to fail.  It is currently only
   a proposal.
