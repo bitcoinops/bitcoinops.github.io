@@ -53,7 +53,7 @@ popular Bitcoin infrastructure projects.
     today).
 
     This started a discussion among experts about how this flexibility
-    interacts with a an issue in the bech32 address encoding algorithm
+    interacts with an issue in the bech32 address encoding algorithm
     that was [reported in May][bech32 length change] and recently
     [described in detail][bse bech32 extension].  Bech32 addresses as
     specified in [BIP173][] are supposed to
