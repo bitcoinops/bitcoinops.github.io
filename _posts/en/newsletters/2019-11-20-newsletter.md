@@ -30,7 +30,17 @@ summarizes recent changes to popular Bitcoin infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME
+- **Bitfinex bech32 send support:** In a [recent blog post][bitfinex
+bech32 blog], Bitfinex has announced support on their exchange for
+sending to native bech32 addresses. While Bitfinex users could previously use
+P2SH-wrapped segwit addresses, they can now withdraw from the exchange to
+native segwit addresses.
+
+- **Wasabi includes Bitcoin Core node:** As part of an ongoing effort to
+integrate Bitcoin Core, Wasabi has merged one click
+[support for running a Bitcoin Core node][wasabi bitcoin core bundle] within
+the Wasabi interface. The Bitcoin Core binaries are bundled with the Wasabi
+download and PGP verified by the Wasabi maintainers.
 
 ## Notable code and documentation changes
 
@@ -69,3 +79,5 @@ FIXME
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 [lnd 0.8.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.8.1-beta
 [bishop migration]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002335.html
+[bitfinex bech32 blog]: https://www.bitfinex.com/posts/427
+[wasabi bitcoin core bundle]: https://github.com/zkSNACKs/WalletWasabi/pull/2495
