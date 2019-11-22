@@ -10,6 +10,7 @@
 [topic descriptors]: /en/topics/output-script-descriptors/
 [topic eltoo]: /en/topics/eltoo/
 [topic erlay]: /en/topics/erlay/
+[topic hwi]: /en/topics/hwi/
 [topic mast]: /en/topics/mast/
 [topic miniscript]: /en/topics/miniscript/
 [topic minisketch]: /en/topics/minisketch/
