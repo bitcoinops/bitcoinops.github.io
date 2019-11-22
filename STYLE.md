@@ -7,6 +7,7 @@
 The first letter of a proper noun is always capitalized.
 
 - Bitcoin (the network)
+- MuSig (the pubkey and signature aggregation scheme. Don't refer to Musig, muSig or musig)
 - Script (when referring to the Bitcoin scripting language)
   - use script (no capitalization) when referring to an indvidual script
 - True/False when refering to boolean arguments in plain text (eg
@@ -48,6 +49,7 @@ following abbreviations we assume readers will already know.
 - kB, MB, GB, TB, etc... (SI-prefixed byte sizes)
 - kiB, MiB, GiB, TiB, etc... (SI-prefixed binary byte sizes)
 - LN (Lightning Network)
+- LND (Lightning Network Daemon - the Lightning Labs LN implementation)
 - mempool (memory pool)
 - P2P (Peer-to-Peer)
 - P2PKH (Pay to Public Key Hash)
@@ -56,6 +58,7 @@ following abbreviations we assume readers will already know.
 - P2WPKH (Pay to Witness Public Key Hash)
 - P2WSH (Pay to Witness Script Hash)
 - pubkey (public key)
+- RPC (Remote Procedure Call)
 - RFC (Request For Comments, the IETF documents)
 - segwit (segregated witness)
 - txid (transaction identifier)
@@ -71,21 +74,20 @@ following abbreviations we assume readers will already know.
 | Use | Don't use | Notes |
 |-|-|-|
 | block chain | blockchain | |
-| coinjoin | Coinjoin or coinJoin or coin-join | |
+| coinjoin | Coinjoin, coinJoin or coin-join | |
 | feerate | fee-rate or fee rate | |
 | mainnet | main net | |
 | multisig | multi-sig | |
 | multiparty | multi-party | |
-| MuSig | Musig or muSig or musig | |
 | offchain | off-chain | |
 | onchain | on-chain | |
-| opcode | OPCODE or OpCode or Opcode or op code | |
+| opcode | OPCODE, OpCode, Opcode or op code | |
 | OP_RETURN (and all other opcodes) | op_return | |
 | preimage | pre-image | |
 | proof of work | proof-of-work | proof-of-work may be used as an adjective phrase (e.g. "Bitcoin's proof-of-work security is economic in nature"). | |
 | redeemScript | redeem script | |
-| secp256k1 | Secp256k1 or SECP256k1 or SECP256K1 | |
-| sigop | Sigop or SigOp or sig op | |
+| secp256k1 | Secp256k1, SECP256k1 or SECP256K1 | |
+| sigop | Sigop, SigOp or sig op | |
 | single-sig | singlesig | |
 | soft fork/hard fork | softfork/hardfork or soft-fork/hard-fork | soft-fork/hard-fork may be used as compound adjectives (eg "Foo proposed a soft-fork change") |
 | 2-of-3 | 2 of 3 | |
@@ -109,8 +111,9 @@ spelled the same.
 |-|-|-|
 | coinbase transaction | generation transaction | |
 | Merklized Alternative Script Trees | Merklized Abstract Syntax Trees | https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast |
-| spender | sender | "sender" may ambiguously refer to the sender of data |
 | receiver | recipient | |
+| spender | sender | "sender" may ambiguously refer to the sender of data |
+| uneconomical output | dust | The dust limit is the minimum value an output must contain in order for Bitcoin Core to relay a transaction containing that output. What's economical or not changes as minimum feerates change, but the dust limit doesn't change often. |
 
 ## Units
 
