@@ -168,7 +168,31 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:schmidty
+- [Would a schnorr pubkey be a different length than a taproot pubkey like P2WPKH and P2WSH?]({{bse}}91531)
+  Murch explains that, unlike segwit v0 which has different P2WPKH and P2WSH
+  output types and lengths, all segwit v1 Pay-to-Taproot (P2TR) outputs are
+  always the same length.
+
+- [MuSig Signature Interactivity]({{bse}}91534)
+  Justinmoon asks why [MuSig][] signing is always interactive and about secure,
+  offline interactive signing. Nickler explains each of the rounds involved
+  with MuSig signing as well as some pitfalls to avoid during signing.
+
+- [How does the bech32 length-extension mutation weakness work?]({{bse}}91602)
+  Jnewbery asks for details about why adding or removing q characters
+  immediately before the final p character of an address can sometimes
+  produce a new bech32 address that's valid.
+  Pieter Wuille provides some algebraic details about why the problem is
+  more likely to occur than the roughly 1-in-a-billion chance expected
+  for any random length-change error to go undetected.  MCCCS provides a
+  second explanation using some of the applicable code from Bitcoin
+  Core.
+
+- [What is the difference between Bitcoin policy language and Miniscript?]({{bse}}91565)
+  Pieter Wuille, James C., and sanket1729 explain the relationship
+  between Bitcoin Script, the policy language (a tool for humans to
+  design spending conditions), and miniscript (a more structured
+  representation of Bitcoin Script for communication and analysis).
 
 ## Notable code and documentation changes
 
