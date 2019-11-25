@@ -7,6 +7,45 @@ pull request for the newsletter is opened the Saturday before publishing. Any
 review of the newsletter PRs is appreciated. However, feedback received after
 Tuesday UTC may not be incorporated due to time constraints.
 
+### Translations
+
+The Bitcoin Optech website supports multiple languages for both newsletters and
+blog posts. If you are interested in contributing translations for the
+newsletter (thank you!), we have some best practices to help keep things
+standardized:
+
+- View the list of existing open pull requests to see which newletters/blogs
+  are already being translated
+- Ensure your language is listed under the `languages` field in the
+  `_config.yml` file
+  - We are using the [2 character ISO 639-1 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- Create a file with the same name as the `en` language variant:
+  - For newsletters, place the file in `_posts/<language code>/newsletters/`
+  - For blog posts, place the file in `_posts/<language code>/`
+- Set the `lang` field to `<language code>`
+- Append `-<language code>` to both the `slug` and `name` fields
+- To help with reviewing, squash commits where it makes sense
+- Using a commit message similar to `news70: add Japanese translation` helps
+  keep translations easily visible in the commit log
+- Testing your translation
+  - Follow the instuctions in the [README.md](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/README.md)
+    - `make preview` to view the local website and review
+    - `make production` to run additional checks (link checking, linting, etc)
+  - For the page you have translated, ensure that the language code link shows
+    up on the `en` language variant
+  - Check that the page renders properly
+- Create a pull request to the
+  [https://github.com/bitcoinops/bitcoinops.github.io]() repository
+  - One newsletter per PR allows for easier review
+  - Allowing edits from maintainers permits maintainers to make additional
+    commits to your PR branch
+- Pat yourself on the back for your contribution!
+
+Due to the timeliness of the newsletters, we ask that, where possible,
+translation PRs are opened within a week of the original newsletter being
+published for new newsletters. That said, we also encourage translation of
+older newsletters and blog posts as well.
+
 ## Compatibility Matrix Data
 
 The compatibility matrix section of the website is built from
