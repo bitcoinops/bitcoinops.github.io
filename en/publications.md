@@ -1,30 +1,14 @@
 ---
+layout: publications
+lang: en
 title: Publications
-layout: page
+name: publications
 permalink: /en/publications/
+share: false
+version: 1
 ---
 {:.center}
 Recent publications from our [blog posts][] and [newsletters][].
 
 [blog posts]: /en/blog/
 [newsletters]: /en/newsletters/
-
-{% assign posts_en = site.posts | where:"lang","en" %}
-
-<ul class="post-list">
-  {%- for post in posts_en limit:20 -%}
-  <li>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    <span class="post-meta">{{ post.date | date: date_format }}</span>
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-      </a>
-    </h3>
-    {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-    {%- endif -%}
-  </li>
-  {%- endfor -%}
-</ul>
-
