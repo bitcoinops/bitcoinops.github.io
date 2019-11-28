@@ -66,6 +66,8 @@ Before starting the workshops, users should follow the instructions in the
 repository [README][readme], clone the [workshop repository][] and run through
 the test notebook to ensure that their environment is set up correctly.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.1-test-notebook.ipynb)
+
 #### 0.2 Elliptic Curve Math
 
 [![Introduction](/img/posts/taproot-workshop/elliptic-curve-math.png)](https://www.youtube.com/watch?v=oix8ov9iGgk&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=2)
@@ -74,10 +76,14 @@ the test notebook to ensure that their environment is set up correctly.
 Elichai Turkel provides a refresher on the basic elliptic curve math that will be
 required for this workshop.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.2-elliptic-curve-math.ipynb)
+
 #### 0.3 Tagged Hashes
 
 _(No video)_ This chapter introduces _Tagged hashes_, which are used in both
 the bip-schnorr and bip-taproot proposals.
+
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.3-tagged-hashes.ipynb)
 
 ## Schnorr signatures and MuSig
 
@@ -93,6 +99,8 @@ pubkey and signature.
 Elichai explains the mathematics behind schnorr signatures and explains the
 bip-schnorr proposal.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/1.1-schnorr-signatures.ipynb)
+
 #### 1.2 MuSig
 
 [![MuSig](/img/posts/taproot-workshop/musig.png)](https://www.youtube.com/watch?v=5MbTptrXEC4&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=4)
@@ -102,6 +110,8 @@ Elichai describes the [MuSig algorithm][musig] (authored by Gregory Maxwell,
 Andrew Poelstra, Yannick Seurin and Pieter Wuille), and shows how it can be
 used to aggregate multiple public keys and partial signatures into a single
 pubkey/signature.
+
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/1.2-musig.ipynb)
 
 ## Taproot
 
@@ -120,6 +130,8 @@ James Chiang gives an overview of the bip-taproot and bip-tapscript proposals. T
 notebook demonstrates how we'll create transaction outputs, then spend them and
 verify that the spend is valid.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.0-taproot-introduction.ipynb)
+
 #### 2.1 Segwit V1
 
 [![Segwit Version 1](/img/posts/taproot-workshop/segwit-version-1.png)](https://www.youtube.com/watch?v=n-jAUaSkcAA&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=6)
@@ -128,6 +140,8 @@ verify that the spend is valid.
 James shows how to create segwit v1 transaction outputs and spend them
 using the key path spend.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.1-segwit-version-1.ipynb)
+
 #### 2.2 Taptweak
 
 [![Taptweak](/img/posts/taproot-workshop/taptweak.png)](https://www.youtube.com/watch?v=EkGbPxAExdQ&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=7)
@@ -135,6 +149,8 @@ using the key path spend.
 
 James explains what a key tweak is, and how a tweak can be
 used to commit to arbitrary data.
+
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.2-taptweak.ipynb)
 
 #### 2.3 Tapscript
 
@@ -146,6 +162,8 @@ taptweak, and how we can spend that output using the segwit v1 key path spend
 rules. He also explains the differences between tapscript and legacy bitcoin
 script.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.3-tapscript.ipynb)
+
 #### 2.4 Taptree
 
 [![Taptree](/img/posts/taproot-workshop/taptree.png)](https://www.youtube.com/watch?v=n6R15Eo6J44&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=9)
@@ -156,11 +174,15 @@ commit to that tree using a taptweak. He then explains how to spend the output b
 satisfying one of those scripts and providing a proof that the script was part
 of the committed tree.
 
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.4-taptree.ipynb)
+
 #### 2.5 Huffman Construction
 
 _(No video)_ This bonus chapter shows how to most efficiently construct a tree
 of scripts by placing scripts that are more likely to be spent closer to the
 root of the tree.
+
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.5-huffman.ipynb)
 
 ## Case studies
 
@@ -174,6 +196,8 @@ cases, the output can be spent with a subset of the 'live' keys, but after some
 timeout, the output can be spent with a mixture of 'live' and 'backup' keys.
 Taproot allows multiple spending paths to be committed to, and only the one
 that is exercised is revealed on chain.
+
+[→ Run this notebook in Google Colab](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/3.1-degrading-multisig-case-study.ipynb)
 
 ## Summary
 
