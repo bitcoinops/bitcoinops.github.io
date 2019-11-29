@@ -47,6 +47,8 @@ John Newberyは、schnorrとtaprootがなぜ有用な技術であるかを要約
 
 ワークショップを開始する前に、ユーザーはリポジトリ[README] [readme]の指示に従い、[workshop repository] []のクローンを作成し、テストノートブックを実行して、環境が正しく設定されていることを確認してください。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.1-test-notebook.ipynb)
+
 #### 0.2 Elliptic Curve Math
 
 [![Introduction](/img/posts/taproot-workshop/elliptic-curve-math.png)](https://www.youtube.com/watch?v=oix8ov9iGgk&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=2)
@@ -54,9 +56,13 @@ John Newberyは、schnorrとtaprootがなぜ有用な技術であるかを要約
 
 Elichai Turkelによる、このワークショップに必要となる基本的な楕円曲線の数学の説明です。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.2-elliptic-curve-math.ipynb)
+
 #### 0.3 Tagged Hashes
 
 _（動画なし）_bip-schnorrおよびbip-taprootの両方の提案で使用される_Tagged hashhes_を紹介しています。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.3-tagged-hashes.ipynb)
 
 ## Schnorr signatures and MuSig
 
@@ -69,12 +75,16 @@ _（動画なし）_bip-schnorrおよびbip-taprootの両方の提案で使用�
 
 Elichaiは、シュノア署名の背後にある数学を説明し、Bip-Schnorrの提案を説明します。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/1.1-schnorr-signatures.ipynb)
+
 #### 1.2 MuSig
 
 [![MuSig](/img/posts/taproot-workshop/musig.png)](https://www.youtube.com/watch?v=5MbTptrXEC4&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=4)
 {:.center}
 
 Elichaiは[MuSigアルゴリズム] [musig]（Gregory Maxwell、Andrew Poelstra、Yannick Seurin、Pieter Wuille執筆）について説明し、複数の公開鍵/部分署名を単一の公開鍵/署名に集約する方法を示します。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/1.2-musig.ipynb)
 
 ## Taproot
 
@@ -87,12 +97,16 @@ Elichaiは[MuSigアルゴリズム] [musig]（Gregory Maxwell、Andrew Poelstra�
 
 James Chiangは、bip-taprootおよびbip-tapscriptの提案の概要を説明します。 このノートブックは、トランザクションoutputを作成、使用、使用が有効であることを確認する方法を示します。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.0-taproot-introduction.ipynb)
+
 #### 2.1 Segwit V1
 
 [![Segwit Version 1](/img/posts/taproot-workshop/segwit-version-1.png)](https://www.youtube.com/watch?v=n-jAUaSkcAA&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=6)
 {:.center}
 
 Jamesは、segwit v1トランザクションoutputを作成し、キーパス支出を使用してそれらを使用する方法を示します。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.1-segwit-version-1.ipynb)
 
 #### 2.2 Taptweak
 
@@ -101,12 +115,16 @@ Jamesは、segwit v1トランザクションoutputを作成し、キーパス支
 
 Jamesは、鍵の調整(key tweak)とは何か、および調整(tweak)を使用して任意のデータにコミットする方法を説明します。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.2-taptweak.ipynb)
+
 #### 2.3 Tapscript
 
 [![Tapscript](/img/posts/taproot-workshop/tapscript.png)](https://www.youtube.com/watch?v=nXGe9_M5pjk&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=8)
 {:.center}
 
 Jamesは、tapweakを使用してsegwit v1outputでtapscriptをコミットする方法と、segwit v1キーパス支出ルールを使用してそのoutputを使用する方法について説明します。 また、tapscriptとレガシービットコインスクリプトの違いについても説明しています。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.3-tapscript.ipynb)
 
 #### 2.4 Taptree
 
@@ -115,9 +133,13 @@ Jamesは、tapweakを使用してsegwit v1outputでtapscriptをコミットす�
 
 Jamesは、スクリプトのマークルツリーを構築する方法と、taptweakを使用してそのツリーにコミットする方法を示します。 次に、これらのスクリプトの1つを満たし、そのスクリプトがコミットされたツリーの一部であったことを証明することにより、outputを使用する方法を説明します。
 
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.4-taptree.ipynb)
+
 #### 2.5 Huffman Construction
 
 _（ビデオなし）_このボーナスの章では、使用される可能性が高いスクリプトをツリーのルートの近くに配置することにより、スクリプトのツリーを最も効率的に構築する方法を示します。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/2.5-huffman.ipynb)
 
 ## Case studies
 
@@ -127,6 +149,8 @@ _（ビデオなし）_このボーナスの章では、使用される可能性
 
 _（動画なし）_この章では、劣化するマルチシグウォレットについて説明します。 すべての場合において、outputは「ライブ」キーのサブセットで使用できますが、タイムアウト後の使用には「ライブ」キーと「バックアップ」キーの混合が必要です。
 Taprootは、複数の支出パスをコミットすることを許可し、行使されたパスのみがチェーン上で公開されます。
+
+[→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/3.1-degrading-multisig-case-study.ipynb)
 
 ## Summary
 
