@@ -6,6 +6,7 @@
 [topic bech32]: /en/topics/bech32/
 [topic channel factories]: /en/topics/channel-factories/
 [topic compact block filters]: /en/topics/compact-block-filters/
+[topic covenants]: /en/topics/covenants/
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
 [topic descriptors]: /en/topics/output-script-descriptors/
 [topic eltoo]: /en/topics/eltoo/
@@ -19,9 +20,11 @@
 [topic psbt]: /en/topics/psbt/
 [topic sighash_noinput]: /en/topics/sighash_noinput/
 [topic taproot]: /en/topics/taproot/
+[topic tapscript]: /en/topics/tapscript/
 [topic trampoline payments]: /en/topics/trampoline-payments/
 [topic transaction pinning]: /en/topics/transaction-pinning/
 [topic v2 p2p transport]: /en/topics/v2-p2p-transport/
+[topic watchtowers]: /en/topics/watchtowers/
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
