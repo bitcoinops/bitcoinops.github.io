@@ -73,6 +73,6 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: BIP37 bloom filters
-    link: BIP37
+  - title: BIP37 transaction bloom filtering
+    link: topic transaction bloom filtering
 ---
