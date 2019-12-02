@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-TOPICS_DIR=_topics
+TOPICS_DIR=_topics/en
 
 if ! [ -d "$TOPICS_DIR" ]
 then
