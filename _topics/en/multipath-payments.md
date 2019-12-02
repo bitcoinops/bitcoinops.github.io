@@ -66,6 +66,18 @@ optech_mentions:
     url: /en/newsletters/2019/09/11/#lnd-3390
     date: 2019-09-15
 
+  - title: "LND #3499 extends several RPCs to support tracking multipath payments"
+    url: /en/newsletters/2019/11/27/#lnd-3499
+    date: 2019-11-27
+
+  - title: "Eclair #1153 adds experimental support for multipath payments"
+    url: /en/newsletters/2019/11/20/#eclair-1153
+    date: 2019-11-20
+
+  - title: "LND #3442 preparatory PR adding features necessary for multipath payments"
+    url: /en/newsletters/2019/11/13/#lnd-3442
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -77,6 +77,13 @@ optech_mentions:
     date: 2019-10-29
     feature: true
 
+  - title: Impact of bech32 length-change mutablity on v1 segwit script length
+    url: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
+    date: 2019-11-13
+
+  - title: Blog post about x-only schnorr pubkeys
+    url: /en/newsletters/2019/11/13/#x-only-pubkeys
+    date: 2019-11-13
 
 ## Optional
 see_also:
