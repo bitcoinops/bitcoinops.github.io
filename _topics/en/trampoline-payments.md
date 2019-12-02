@@ -49,6 +49,10 @@ optech_mentions:
     url: /en/newsletters/2019/08/07/#trampoline-payments
     date: 2019-08-07
 
+  - title: "Eclair #1209 adds experimental support for trampoline onion format"
+    url: /en/newsletters/2019/11/20/#eclair-1209
+    date: 2019-11-20
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

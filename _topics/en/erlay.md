@@ -49,6 +49,10 @@ optech_mentions:
     url: /en/newsletters/2019/10/02/#draft-bip-for-enabling-erlay-compatibility
     date: 2019-10-02
 
+  - title: Erlay-compatible transaction reconciliation protocol published as BIP330
+    url: /en/newsletters/2019/11/13/#bips-851
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

@@ -59,6 +59,10 @@ optech_mentions:
     url: /en/newsletters/2019/09/11/#eltoo-sample-implementation-and-discussion
     date: 2019-09-11
 
+  - title: Signet protocol published as BIP325
+    url: /en/newsletters/2019/11/13/#bips-803
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bicoin Core #16411: signet support"

@@ -71,6 +71,10 @@ optech_mentions:
     url: /en/newsletters/2019/08/07/#bip174-extensibility
     date: 2019-08-07
 
+  - title: Range of identifiers allocated to proprietary PSBT extensions
+    url: /en/newsletters/2019/11/13/#bips-849
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
