@@ -38,3 +38,6 @@ layout: default
   {%- endfor -%}
 </ul>
 
+{%- if page.lang == "en" -%}
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}
