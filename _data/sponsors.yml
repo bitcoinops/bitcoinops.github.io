@@ -23,10 +23,6 @@ sponsors:
 
 members:
   -
-    name: Alto Financial
-    website: https://alto.financial
-    logo: alto.svg
-  -
     name: Anchorage
     website: https://twitter.com/Anchorage
     logo: anchorage.png
@@ -94,6 +90,10 @@ members:
     name: Purse
     website: https://twitter.com/PurseIO
     logo: purse.png
+  -
+    name: River Financial
+    website: https://river.com
+    logo: river.png
   -
     name: Square
     website: https://twitter.com/Square
