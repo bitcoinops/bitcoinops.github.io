@@ -3,9 +3,12 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
+[topic assumeutxo]: /en/topics/assumeutxo/
 [topic bech32]: /en/topics/bech32/
 [topic channel factories]: /en/topics/channel-factories/
+[topic coinjoin]: /en/topics/coinjoin/
 [topic compact block filters]: /en/topics/compact-block-filters/
+[topic consensus cleanup]: /en/topics/consensus-cleanup-soft-fork/
 [topic covenants]: /en/topics/covenants/
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
 [topic descriptors]: /en/topics/output-script-descriptors/
@@ -16,10 +19,13 @@
 [topic miniscript]: /en/topics/miniscript/
 [topic minisketch]: /en/topics/minisketch/
 [topic multipath payments]: /en/topics/multipath-payments/
+[topic output script descriptors]: /en/topics/output-script-descriptors/
 [topic payjoin]: /en/topics/payjoin/
 [topic psbt]: /en/topics/psbt/
-[topic sighash_noinput]: /en/topics/sighash_noinput/
+[topic reproducible builds]: /en/topics/reproducible-builds/
 [topic schnorr signatures]: /en/topics/schnorr-signatures/
+[topic sighash_noinput]: /en/topics/sighash_noinput/
+[topic signet]: /en/topics/signet/
 [topic taproot]: /en/topics/taproot/
 [topic tapscript]: /en/topics/tapscript/
 [topic trampoline payments]: /en/topics/trampoline-payments/
