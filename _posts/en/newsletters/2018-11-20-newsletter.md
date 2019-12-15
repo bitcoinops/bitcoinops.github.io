@@ -108,12 +108,12 @@ new features is available.  Some highlights from the meeting include:
     from a normal transaction.  This allows the wallet UI to make
     in-channel funds part of the total available balance for spending in
     onchain transactions so that users don't need to manually manage
-    offchain and onchain balances separately.  Combined with multipath
+    offchain and onchain balances separately.  <span id="multipath-splicing-ux">Combined with multipath
     payments that allow funds from multiple channels to be intermixed in
     payments, this greatly simplifies spending: users will just click a
     link, review the invoice, and click *Pay*---letting the wallet
     automatically use any of its available balance for either an onchain
-    payment or an offchain payment using any number of paths.
+    payment or an offchain payment using any number of paths.</span>
 
     For more information, see the following threads: [1][zmn splicing
     cut-through], [2][pickhardt bolt splicing], [3][russell splicing].
