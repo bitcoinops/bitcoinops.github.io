@@ -12,9 +12,10 @@ help testing the latest C-Lightning release candidate, discusses
 widespread support for basic multipath payments in LN, provides an update on
 bech32 error detection reliability, summarizes updates to the proposed
 `OP_CHECKTEMPLATEVERIFY` opcode, and links to a discussion about the impact
-of eclipse attacks on LN channels.  Also included is our regular section
-about notable changes to popular Bitcoin infrastructure projects. <!--
-FIXME: also mention other sections if schmidty decides to write them -->
+of eclipse attacks on LN channels.  Also included are our regular
+sections about notable changes to popular Bitcoin infrastructure
+projects, changes to services and client software, and popular Bitcoin
+StackExchange questions and answers.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -131,6 +132,62 @@ FIXME: also mention other sections if schmidty decides to write them -->
     Core review club's [meeting notes and log][review club notes] for
     the past week, as they covered this topic in depth.
 
+## Changes to services and client software
+
+*In this monthly feature, we highlight interesting updates to Bitcoin
+wallets and services.*
+
+- **Bitfinex supports LN deposits and withdrawals:** In a [recent blog post][bitfinex ln blog],
+  Bitfinex has announced support on their exchange for Lightning Network. Users
+  of Bitfinex can now both deposit and withdraw funds using LN.
+
+- **BitMEX Research launches an LN penalty transaction tracker:**
+  In an [article posted by BitMEX Research][bitmex ln penalty blog],
+  the open source ForkMonitor tool now [lists Lightning penalty transactions][fork monitor lightning].
+  The tool also monitors chaintips across a variety of Bitcoin implementations
+  and versions in order to detect forks.
+
+- **BitMEX bech32 send support:** In a [recent blog post][bitmex bech32 blog],
+  BitMEX has announced support on their exchange for sending to native bech32
+  addresses. The post also outlines plans to migrate from P2SH to P2SH-wrapped
+  segwit addresses for their own wallet.
+
+- **Unchained Capital open sources Caravan, a multisig coordinator:**
+  With a [blog post and demo video][unchained caravan blog], Unchained Capital
+  has open sourced their [multisig coordinator named Caravan][unchained caravan
+  github]. Caravan is a stateless web application for creating and spending from
+  a multisig address using a variety of external keystores.
+
+## Selected Q&A from Bitcoin StackExchange
+
+*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+contributors look for answers to their questions---or when we have a
+few spare moments to help curious or confused users.  In
+this monthly feature, we highlight some of the top-voted questions and
+answers posted since our last update.*
+
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
+endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
+- [What is the rationale for the Lightning network's path length limit (20 hops)?]({{bse}}92073)
+  Sergei Tikhomirov asks about BOLT4's 20 hop limit and the comparison of Tor's
+  onion routing with LN's Sphinx. Rene Pickhardt outlines the differences in
+  protocols and motivations for the current limit: keeping TCP/IP packages small
+  and assumptions that LN be a small-diameter network.
+
+- [Is there a way to allow use of unconfirmed RBF outputs in transaction building?]({{bse}}92164)
+  G. Maxwell points out that Bitcoin Core treats outputs from
+  transactions signaling opt-in Replace-by-Fee (RBF) the same way it
+  treats outputs from transactions that don't signal RBF support.
+  Differences in the way an output is handled by Bitcoin Core depend on
+  whether the transaction containing the output is confirmed or not, and
+  whether the transaction was created by the user's Bitcoin Core wallet or not.
+
+- [What is the max allowed depth for BIP32 derivation paths?]({{bse}}92056)
+  Andrew Chow explains that, since BIP32 allocates one byte for the depth field,
+  there are a maximum of 256 possible elements in the derivation path.
+
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],
@@ -182,9 +239,8 @@ FIXME: also mention other sections if schmidty decides to write them -->
 
 We will not be publishing newsletters on December 25th or January 1st.
 Instead, we'll publish our second annual year-in-review special report
-on Saturday, December 28th.  <!-- FIXME: 27th?  28th?  Some other day?
--->  Regular newsletter publication will resume on Wednesday, January
-8th.
+on Saturday, December 28th. Regular newsletter publication will resume
+on Wednesday, January 8th.
 
 Happy holidays!
 
