@@ -71,8 +71,16 @@ optech_mentions:
     url: /en/newsletters/2019/07/31/#bip157-would-use-more-bandwidth-than-bip37
     date: 2019-07-31
 
+  - title: Bitcoin Core 0.19 released with RPC support for BIP158 block filters
+    url: /en/newsletters/2019/11/27/#bip158-block-filters-rpc-only
+    date: 2019-11-27
+
+  - title: Maximum number of block filters per request increased from 100 to 1,000
+    url: /en/newsletters/2019/11/13/#bips-857
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: BIP37 bloom filters
-    link: BIP37
+  - title: BIP37 transaction bloom filtering
+    link: topic transaction bloom filtering
 ---

@@ -19,9 +19,11 @@
 [topic payjoin]: /en/topics/payjoin/
 [topic psbt]: /en/topics/psbt/
 [topic sighash_noinput]: /en/topics/sighash_noinput/
+[topic schnorr signatures]: /en/topics/schnorr-signatures/
 [topic taproot]: /en/topics/taproot/
 [topic tapscript]: /en/topics/tapscript/
 [topic trampoline payments]: /en/topics/trampoline-payments/
+[topic transaction bloom filtering]: /en/topics/transaction-bloom-filtering/
 [topic transaction pinning]: /en/topics/transaction-pinning/
 [topic v2 p2p transport]: /en/topics/v2-p2p-transport/
 [topic watchtowers]: /en/topics/watchtowers/

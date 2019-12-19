@@ -64,6 +64,10 @@ optech_mentions:
     url: /en/newsletters/2019/11/06/#continued-discussion-of-ln-anchor-outputs
     date: 2019-11-06
 
+  - title: Bitcoin Core 0.19 released with CPFP carve-out
+    url: /en/newsletters/2019/11/27/#cpfp-carve-out
+    date: 2019-11-27
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

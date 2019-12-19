@@ -68,6 +68,10 @@ optech_mentions:
     date: 2019-10-29
     feature: true
 
+  - title: Blog post about x-only pubkeys for use in schnorr signature schemes
+    url: /en/newsletters/2019/11/13/#x-only-pubkeys
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

@@ -22,7 +22,7 @@ produce code blocks -->{% endcomment %}
 {% assign categories = raw_categories | split: "|" | sort_natural | uniq %}
 
 {% for category in categories %}
-  <h3>{{category}}</h3>
+  <h3 id="{{category | slugify}}">{{category}}</h3>
   <ul>
   {% for topic in site.topics %}
     {% if topic.categories contains category %}

@@ -40,6 +40,14 @@ optech_mentions:
     url: /en/newsletters/2018/11/06#bech32-security-update-for-c-implementation
     date: 2018-11-06
 
+  - title: How does the bech32 length-extension mutation weakness work?
+    url: /en/newsletters/2019/11/27/#how-does-the-bech32-length-extension-mutation-weakness-work
+    date: 2019-11-27
+
+  - title: Impact of bech32 length-change mutability on v1 segwit script length
+    url: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
+    date: 2019-11-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
