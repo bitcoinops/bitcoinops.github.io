@@ -1,5 +1,5 @@
 ---
-title: Partially-signed bitcoin transactions (PSBTs)
+title: Partially signed bitcoin transactions (PSBTs)
 
 aliases:
   - BIP174
@@ -11,7 +11,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Partially-Signed Bitcoin Transactions (PSBTs)** are a data format
+  **Partially Signed Bitcoin Transactions (PSBTs)** are a data format
   that allows wallets and other tools to exchange information about a
   Bitcoin transaction and the signatures necessary to complete it.
 
@@ -28,7 +28,7 @@ extended_summary: |
   inputs, this last step can be repeated multiple times by different
   programs on different copies of the PSBT.  Multiple PSBTs each with
   one or more necessary signatures can be integrated into a single
-  PSBT later.  Finally, that fully-signed PSBT can be converted into a
+  PSBT later.  Finally, that fully signed PSBT can be converted into a
   complete ready-to-broadcast transaction.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
