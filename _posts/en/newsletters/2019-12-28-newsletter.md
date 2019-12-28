@@ -251,9 +251,9 @@ onchain transaction fees.  This makes Loop almost completely trustless.
 - [Bitcoin Core 0.19][] released in November implemented the new [CPFP
   carve-out][topic cpfp carve out] mempool policy, added initial support
   for [BIP158][]-style [compact block filters][topic compact block
-  filters] (currently RPC only), improved security by deprecating or
-  removing support for protocols such as [BIP37][] bloom filters and
-  [BIP70][] payment requests.  It also switches GUI users to bech32
+  filters] (currently RPC only), improved security by
+  disabling protocols such as [BIP37][] bloom filters and
+  [BIP70][] payment requests by default.  It also switches GUI users to bech32
   addresses by default.
 
 - [C-Lightning 0.8][] released in December added support for [multipath
@@ -630,8 +630,8 @@ will reduce the frequency of future vulnerabilities.
 
 {:#bip70}
 As part of the OpenSSL removal, Bitcoin Core deprecated its support for
-the [BIP70][] payment protocol in version 0.18, and later completely
-removed its support in version 0.19.  This decision was [supported][ceo
+the [BIP70][] payment protocol in version 0.18, and later disabled
+support by default in version 0.19.  This decision was [supported][ceo
 bitpay] by the CEO of one of the few companies that continued to use
 BIP70 in 2019.
 
