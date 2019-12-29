@@ -4,10 +4,6 @@ permalink: /en/topic-dates/
 layout: page
 ---
 {% include linkers/topic-pages.md %}
-<div>{% comment %}<!-- enclosing in a div forces this to be interpreted
-as HTML rather than Markdown so indentation over 4 characters doesn't
-produce code blocks -->{% endcomment %}
-
 {% capture raw_mentions %}
 {%- for topic in site.topics -%}
   {%- for mention in topic.optech_mentions -%}
@@ -17,6 +13,9 @@ produce code blocks -->{% endcomment %}
 {% endcapture %}
 {% assign mentions = raw_mentions | split: 'ENDMENTION' | sort | reverse %}
 
+{% capture list %}
+{% assign months = 0 %}
+{% assign number_of_unique_mentions = 0 %}
 {%- for mention in mentions -%}
   {%- assign mention_part = mention | split: "DIVIDER" -%}
   {%- assign mention_date = mention_part[0] -%}
@@ -29,6 +28,7 @@ produce code blocks -->{% endcomment %}
     {%- capture item -%}<li><p>{{mention_title}}&nbsp;{{mention_link}}<br>{{combined_topics}}</p></li>{%- endcapture -%}
   {%- else -%}
     {%- comment -%}<!-- New URL, new item - so output old item and reset topic collector -->{%- endcomment -%}
+    {% assign number_of_unique_mentions = number_of_unique_mentions | plus: 1 %}
     {{item}}
     {%- assign combined_topics = mention_topic -%}
     {%- capture item -%}<li><p>{{mention_title}}&nbsp;{{mention_link}}<br>{{mention_topic}}</p></li>{%- endcapture -%}
@@ -36,8 +36,10 @@ produce code blocks -->{% endcomment %}
 
   {%- assign year_month = mention_date | truncate: 7, '' -%}
   {%- if year_month != lastym -%}
+    {% assign months = months | plus: 1 %}
     {% if lastym != nil %}</ul>{% endif %}
-    <h3>{{mention_date | date: '%B %Y'}}</h3>
+    {% capture monthyear %}{{mention_date | date: '%B %Y'}}{% endcapture %}
+    <h3 id="{{monthyear | slugify}}">{{monthyear}}</h3>
     <ul>
   {%- endif -%}
 
@@ -47,9 +49,21 @@ produce code blocks -->{% endcomment %}
 {% comment %}<!-- The loop doesn't display a mention until the next
 mention is seen, so we will always have an undisplayed mention at the
 end of the loop.  Display it now.  Also close our final list -->{% endcomment %}
+{% assign number_of_unique_mentions = number_of_unique_mentions | plus: 1 %}
 {{item}}
 </ul>
+{% endcapture %}
 
+<div class="center" markdown="1">
+{{number_of_unique_mentions}} indexed events in {{months}} months <!-- {{mentions | size}} events including duplicates -->
+
+<!-- TODO: uncomment after January 2020 entries added: [2018](#december-2018), [2019](#december-2019) -->
+</div>
+
+<div>{% comment %}<!-- enclosing in a div forces this to be interpreted
+as HTML rather than Markdown so indentation over 4 characters doesn't
+produce code blocks -->{% endcomment %}
+{{list}}
 </div>
 
 {% include linkers/request-a-topic.md %}
