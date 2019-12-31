@@ -11,8 +11,8 @@ build:
 
 test-before-build:
 	## Check schemas against data files
-	! find _data/compatibility -type f -exec bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml {} \; | grep .
-	! find _topics/ -type f -exec bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml {} \; | grep .
+	! find _data/compatibility -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $$file || echo Error: $$file ; done | grep .
+	! find _topics/ -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml $$file || echo Error: $$file ; done | grep .
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
