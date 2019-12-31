@@ -48,6 +48,10 @@ optech_mentions:
     url: /en/newsletters/2019/06/12/#assume-utxo-demo
     date: 2019-06-12
 
+  - title: "2019 year-in-review: AssumeUTXO"
+    url: /en/newsletters/2019/12/28/#assumeutxo
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"

@@ -78,6 +78,26 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#lnd-3442
     date: 2019-11-13
 
+  - title: "C-Lightning #3259 adds payment secrets to prevent multipath probing"
+    url: /en/newsletters/2019/12/04/#c-lightning-3259
+    date: 2019-12-04
+
+  - title: 'LND #3788 adds support for "payment addresses" (payment secrets)'
+    url: /en/newsletters/2019/12/11/#lnd-3788
+    date: 2019-12-11
+
+  - title: Multiple LN implementations add multipath payment support
+    url: /en/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
+    date: 2019-12-18
+
+  - title: Basic multipath payment support added to LN specification
+    url: /en/newsletters/2019/12/18/#bolts-643
+    date: 2019-12-18
+
+  - title: "2019 year-in-review: multipath payments"
+    url: /en/newsletters/2019/12/28/#multipath
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

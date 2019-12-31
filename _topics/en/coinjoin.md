@@ -56,6 +56,10 @@ optech_mentions:
     url: /en/newsletters/2019/09/04/#snicker-proposed
     date: 2019-09-04
 
+  - title: "2019 year-in-review: SNICKER"
+    url: /en/newsletters/2019/12/28/#snicker
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

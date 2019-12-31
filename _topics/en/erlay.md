@@ -53,6 +53,10 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#bips-851
     date: 2019-11-13
 
+  - title: "2019 year-in-review: erlay"
+    url: /en/newsletters/2019/12/28/#erlay-and-other-p2p-improvements
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

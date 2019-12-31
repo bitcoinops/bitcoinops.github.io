@@ -63,8 +63,12 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#bips-803
     date: 2019-11-13
 
+  - title: "2019 year-in-review: signet"
+    url: /en/newsletters/2019/12/28/#signet
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: "Bicoin Core #16411: signet support"
+  - title: "Bitcoin Core #16411: signet support"
     link: https://github.com/bitcoin/bitcoin/pull/16411
 ---
