@@ -94,7 +94,8 @@ properties:
           pattern: "^/"
         date:
           description: Date of the mention
-          type: any  ## YAML auto converts things that look like dates so we can't validate here
+          type: any  ## YAML auto converts things that look like dates so we can't validate type here
+          format: date-time  ## But we can validate the format here.  Weird
         feature:
           description: Whether or not to bold the mention as especially noteworthy
           type: boolean
