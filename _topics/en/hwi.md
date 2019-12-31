@@ -39,6 +39,10 @@ optech_mentions:
     url: /en/newsletters/2019/06/12/#hwi
     date: 2019-06-12
 
+  - title: "2019 year-in-review: HWI"
+    url: /en/newsletters/2019/12/28/#core-hwi
+    date: 2019-12-18
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

@@ -52,6 +52,7 @@ infrastructure projects.
     particularly useful compared to just keeping `OP_CODESEPARATOR` in
     tapscript.
 
+    {:#composable-musig}
     In a separate schnorr-related topic, ZmnSCPxj wrote a [post][zmn
     composable musig] about the challenges of safely using the [MuSig][]
     signature aggregation protocol with sub-groups.  For example,

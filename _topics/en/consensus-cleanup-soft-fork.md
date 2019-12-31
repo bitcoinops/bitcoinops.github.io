@@ -41,6 +41,10 @@ optech_mentions:
     url: /en/newsletters/2019/06/12/#cleanup-discussion
     date: 2019-06-12
 
+  - title: "2019 year-in-review: consensus cleanup soft fork proposal"
+    url: /en/newsletters/2019/12/28/#cleanup
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:

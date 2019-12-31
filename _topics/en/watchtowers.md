@@ -68,6 +68,18 @@ optech_mentions:
     url: /en/newsletters/2019/09/25/#watchtower-storage-costs
     date: 2019-09-25
 
+  - title: Watchtower BOLT specification proposed
+    url: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
+    date: 2019-12-04
+
+  - title: Discussion about watchtowers for eltoo payment channels
+    url: /en/newsletters/2019/12/11/#watchtowers-for-eltoo-payment-channels
+    date: 2019-12-11
+
+  - title: "2019 year-in-review: watchtowers"
+    url: /en/newsletters/2019/12/28/#watchtowers
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

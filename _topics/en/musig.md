@@ -75,6 +75,10 @@ optech_mentions:
     url: /en/newsletters/2019/11/27/#schnorr-taproot-updates
     date: 2019-11-27
 
+  - title: Composable MuSig---concerns about safely using signer sub-groups
+    url: /en/newsletters/2019/12/04/#composable-musig
+    date: 2019-12-30
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

@@ -69,6 +69,15 @@ optech_mentions:
     date: 2019-10-29
     feature: true
 
+  - title: Discussion about position commitments using signature-checking opcodes
+    url: /en/newsletters/2019/12/04/#continued-schnorr-taproot-discussion
+    date: 2019-12-04
+
+  - title: "2019 year-in-review: taproot and tapscript"
+    url: /en/newsletters/2019/12/28/#taproot
+    date: 2019-12-28
+
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

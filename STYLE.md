@@ -23,6 +23,7 @@ sentence or heading.
 - bech32
 - bitcoin (the currency)
 - eltoo
+- erlay
 - merkle (tree|root|branch|node)
 - schnorr
 - segwit
