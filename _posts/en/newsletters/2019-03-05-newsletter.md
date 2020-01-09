@@ -387,14 +387,14 @@ no more than 10,000 bytes (0.01 MB).
 
 Even more work can be required if signatures (or things that pretend
 to be signatures) are included directly in a scriptPubKey as this will
-cause an internal `FindAndReplace()` operation to modify the
+cause an internal `FindAndDelete()` operation to modify the
 executed script and again cause sigops to commit to a separate copy of
 almost the entire transaction.  Because a secure signature in Bitcoin
 commits to the scriptPubKey it spends, and because a signature in a
 scriptPubKey can't commit to itself, there's no legitimate reason to
 check a signature included in a scriptPubKey.  [BIP143][] segwit
 addresses this problem for its spends by simply specifying that
-`FindAndReplace()` shall not be used.
+`FindAndDelete()` shall not be used.
 
 Finally, the original Bitcoin Protocol also allows an attacker to add
 non-push opcodes to scriptSig to use up to an additional 20,000 sigops
@@ -423,7 +423,7 @@ hashing of a slightly different set of transaction data without
 forbidding the use of legacy transaction signatures altogether, but the consensus
 cleanup soft fork proposes to prevent the magnifications of the problem
 by forbidding use of `OP_CODESEPARATOR` in legacy inputs, the behavior
-that triggers `FindAndReplace()`, and the ability to use non-data
+that triggers `FindAndDelete()`, and the ability to use non-data
 pushing opcodes in scriptSig.  Many developers believe this is
 acceptable because there are no known productive uses of the behavior,
 there's no onchain activity visible of anyone using them, and because
