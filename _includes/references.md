@@ -10,6 +10,7 @@
 [topic compact block filters]: /en/topics/compact-block-filters/
 [topic consensus cleanup]: /en/topics/consensus-cleanup-soft-fork/
 [topic covenants]: /en/topics/covenants/
+[topic cpfp]: /en/topics/cpfp/
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
 [topic descriptors]: /en/topics/output-script-descriptors/
 [topic eltoo]: /en/topics/eltoo/
@@ -24,6 +25,7 @@
 [topic psbt]: /en/topics/psbt/
 [topic rbf]: /en/topics/replace-by-fee/
 [topic reproducible builds]: /en/topics/reproducible-builds/
+[topic rbf]: /en/topics/replace-by-fee/
 [topic schnorr signatures]: /en/topics/schnorr-signatures/
 [topic sighash_noinput]: /en/topics/sighash_noinput/
 [topic signet]: /en/topics/signet/
