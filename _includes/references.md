@@ -22,6 +22,7 @@
 [topic output script descriptors]: /en/topics/output-script-descriptors/
 [topic payjoin]: /en/topics/payjoin/
 [topic psbt]: /en/topics/psbt/
+[topic rbf]: /en/topics/replace-by-fee/
 [topic reproducible builds]: /en/topics/reproducible-builds/
 [topic schnorr signatures]: /en/topics/schnorr-signatures/
 [topic sighash_noinput]: /en/topics/sighash_noinput/
