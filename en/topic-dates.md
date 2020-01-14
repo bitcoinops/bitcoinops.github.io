@@ -4,60 +4,76 @@ permalink: /en/topic-dates/
 layout: page
 ---
 {% include linkers/topic-pages.md %}
-{% capture raw_mentions %}
-{%- for topic in site.topics -%}
-  {%- for mention in topic.optech_mentions -%}
-    {{mention.date}}DIVIDER<a class="pc125" href="{{mention.url}}">🔗</a>DIVIDER{{mention.title}}DIVIDER<a href="{{topic.url}}">{{topic.title}}</a>ENDMENTION
+<!-- Build a list of months in reverse chronological order -->
+{% capture months %}
+{%- for year in (2018..2020) -%}
+  {%- for month in (1..9) -%}
+    {{year}}-0{{month}}|
+  {%- endfor -%}
+  {%- for month in (10..12) -%}
+    {{year}}-{{month}}|
   {%- endfor -%}
 {%- endfor -%}
 {% endcapture %}
-{% assign mentions = raw_mentions | split: 'ENDMENTION' | sort | reverse %}
+{% assign months = months | split: "|" | reverse %}
 
+<!-- initialize some globals -->
+{% assign number_of_events = 0 %}
+{% assign number_of_months = 0 %}
+
+<!-- capture the main content instead of rendering it immediately so
+we can compute some metadata in the loops and then display that metadata
+before the main content -->
 {% capture list %}
-{% assign months = 0 %}
-{% assign number_of_unique_mentions = 0 %}
-{%- for mention in mentions -%}
-  {%- assign mention_part = mention | split: "DIVIDER" -%}
-  {%- assign mention_date = mention_part[0] -%}
-  {%- assign mention_link = mention_part[1] -%}
-  {%- assign mention_title = mention_part[2] -%}
-  {%- assign mention_topic = mention_part[3] -%}
+  {%- for month in months -%}
+    {%- assign month_topics = "" -%}
+    {%- for topic in site.topics -%}
+    {%- assign mymentions = '' -%}
+      {%- for mention in topic.optech_mentions -%}
+        {%- assign mydate = mention.date | date: "%Y-%m-%d" -%}
+        {%- if mydate contains month -%}
+          {% capture mymentions %}{{mymentions}}{{mention.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}&nbsp;<a href="{{mention.url}}">🔗</a>ENDMENTION{% endcapture %}
+          {% assign number_of_events = number_of_events | plus: 1 %}
+        {%- endif -%}
+      {%- endfor -%}
 
-  {%- if mention_link == old_mention_link -%}
-    {%- assign combined_topics = combined_topics | append: ', ' | append: mention_topic -%}
-    {%- capture item -%}<li><p>{{mention_title}}&nbsp;{{mention_link}}<br>{{combined_topics}}</p></li>{%- endcapture -%}
-  {%- else -%}
-    {%- comment -%}<!-- New URL, new item - so output old item and reset topic collector -->{%- endcomment -%}
-    {% assign number_of_unique_mentions = number_of_unique_mentions | plus: 1 %}
-    {{item}}
-    {%- assign combined_topics = mention_topic -%}
-    {%- capture item -%}<li><p>{{mention_title}}&nbsp;{{mention_link}}<br>{{mention_topic}}</p></li>{%- endcapture -%}
-  {%- endif -%}
+      {%- assign mymentions = mymentions | split: "ENDMENTION" -%}
+      {%- assign mymentions_size = mymentions | size -%}
+      {%- assign mentions_countdown = 999 | minus: mymentions_size -%}
+      {%- if mymentions_size > 0 -%}
+        {% capture month_topics %}{{month_topics}}{{mentions_countdown}}SIZE_DELIMITER<b><a href="{{topic.url}}">{{topic.title}}</a></b>TITLE_DELIMITER{{mymentions | join: "ENDMENTION"}}TOPIC_DELIMITER{% endcapture %}
+      {%- endif -%}
+    {%- endfor -%}
 
-  {%- assign year_month = mention_date | truncate: 7, '' -%}
-  {%- if year_month != lastym -%}
-    {% assign months = months | plus: 1 %}
-    {% if lastym != nil %}</ul>{% endif %}
-    {% capture monthyear %}{{mention_date | date: '%B %Y'}}{% endcapture %}
-    <h3 id="{{monthyear | slugify}}">{{monthyear}}</h3>
-    <ul>
-  {%- endif -%}
+    {%- assign month_topics = month_topics | split: "TOPIC_DELIMITER" | sort -%}
+    {% assign month_topics_size = month_topics | size %}
+    {%- if month_topics_size > 0 -%}<h3 id="d{{month}}">{{month | append: "-01" | date: "%B %Y" }}</h3>
+      {% assign number_of_months = number_of_months | plus: 1 %}
+      <ul>
+      {% for month_topic in month_topics -%}
+        {%- assign topic_data = month_topic | split: "SIZE_DELIMITER" -%}
+        {%- assign topic_data = topic_data[1] | split: "TITLE_DELIMITER" -%}
+        {%- assign topic_title = topic_data[0] -%}
+        {%- assign topic_mentions = topic_data[1] | split: "ENDMENTION" -%}
+        {%- assign topic_size = topic_mentions | size -%}
 
-  {% assign old_mention_link = mention_link %}
-  {% assign lastym = year_month %}
-{% endfor %}
-{% comment %}<!-- The loop doesn't display a mention until the next
-mention is seen, so we will always have an undisplayed mention at the
-end of the loop.  Display it now.  Also close our final list -->{% endcomment %}
-{% assign number_of_unique_mentions = number_of_unique_mentions | plus: 1 %}
-{{item}}
-</ul>
+        <li>{{topic_title}}
+          <ul>
+          {%- for topic_mention in topic_mentions -%}
+            <li>{{topic_mention}}</li>
+          {%- endfor -%}
+          </ul>
+        </li>
+      {%- endfor -%}
+      </ul>
+    {% endif %}
+  {%- endfor -%}
 {% endcapture %}
 
 <div class="center" markdown="1">
-{{number_of_unique_mentions}} indexed events in {{months}} months <!-- {{mentions | size}} events including duplicates -->
+{{number_of_events}} indexed events in {{number_of_months}} months <!-- {{mentions | size}} events including duplicates -->
 
-<!-- TODO: uncomment after January 2020 entries added: [2018](#december-2018), [2019](#december-2019) -->
+<!-- TODO: uncomment after January 2020 entries added: [2018](#d2018-12), [2019](#d2019-12) -->
 </div>
 
 <div>{% comment %}<!-- enclosing in a div forces this to be interpreted
