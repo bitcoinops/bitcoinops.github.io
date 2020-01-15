@@ -64,32 +64,32 @@ words can express for all that you've done to help Bitcoin.
     - [BIP127 proof of reserves](#bip127)
 - February
     - [Bitcoin Core compatible with HWI](#core-hwi)
-    - [Miniscript](#miniscript)
+    - <a href="#miniscript">Miniscript</a>
 - March
     - [Consensus cleanup soft fork proposal](#cleanup)
-    - [Signet](#signet)
+    - <a href="#signet">Signet</a>
     - [Lightning Loop](#loop)
 - April
-    - [AssumeUTXO](#assumeutxo)
+    - <a href="#assumeutxo">AssumeUTXO</a>
     - [Trampoline payments](#trampoline)
 - May
-    - [Taproot](#taproot)
+    - <a href="#taproot">Taproot</a>
     - [SIGHASH_ANYPREVOUT](#anyprevout)
     - [OP_CHECKTEMPLATEVERIFY](#ctv)
 - June
     - [Erlay and other P2P relay improvements](#erlay-and-other-p2p-improvements)
-    - [Watchtowers](#watchtowers)
+    - <a href="#watchtowers">Watchtowers</a>
 - July
     - [Reproducible builds](#reproducibility)
 - August
     - [Vaults without covenants](#vaults)
 - September
-    - [SNICKER](#snicker)
+    - <a href="#snicker">SNICKER</a>
     - [LN vulnerability](#ln-cve)
 - October
     - [LN anchor outputs](#anchor-outputs)
 - November
-    - [Bech32 mutability](#bech32-mutability)
+    - <a href="#bech32-mutability">Bech32 mutability</a>
     - [Bitcoin Core OpenSSL removal](#openssl)
     - [Bitcoin Core BIP70 removal](#bip70)
 - December
@@ -583,7 +583,7 @@ before seeing deployment on the network.
   to use several different models of hardware wallets for secure key
   storage and signing.
 
-- [Lightning Loop][] released in March (with loop-in support added in
+- <a href="/en/newsletters/2019/03/26/#loop-announced">Lightning Loop</a> released in March (with loop-in support added in
   June) provides a non-custodial service that allows users to add or
   remove funds from their LN channels without closing existing channels
   or opening new channels.

@@ -12,7 +12,7 @@ and the specific scaling challenges that they are facing.
 If you have any requests or suggestions for future workshop events, please
 [contact us][optech email].
 
-## Workshop #5 - Schnorr and Taproot Seminars {#taproot-workshop}
+## Workshop #5 - Schnorr and Taproot Seminars {#uk-taproot-workshop}
 
 Bitcoin Optech will host a third seminar workshop on the Schnorr and Taproot
 soft fork proposals in London on 5th February 2020.
