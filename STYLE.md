@@ -22,6 +22,7 @@ sentence or heading.
 
 - bech32
 - bitcoin (the currency)
+- chaumian (blind signatures|coinjoin|ecash)
 - eltoo
 - merkle (tree|root|branch|node)
 - schnorr
