@@ -80,7 +80,11 @@ wallets and services.*
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- FIXME:bitschmidty Bitcoin Core Merge #17843: wallet: Reset reused transactions cache
+- [Bitcoin Core #17843][] helps resolve a discrepancy between how reused
+  addresses are determined in the `listunspent` and `getbalances` RPCs in
+  wallets using [reuse avoidance][news52 #13756].  Before it was
+  resolved, the problem could have resulted in the `getbalances` RPC
+  overreporting the amount of funds available for spending.
 
 - [Eclair #1247][] fixes the Sphinx privacy leak described in
   [Newsletter #72][news72 sphinx] where a routing node might be able to
@@ -113,3 +117,4 @@ wallets and services.*
 [river twitter thread]: https://twitter.com/philipglazman/status/1216849483184476165
 [wasabi rbf notification]: https://bitcoinops.org/en/compatibility/wasabi/#receive-notification
 [wasabi rbf signaling]: https://github.com/zkSNACKs/WalletWasabi/pull/2405
+[news52 #13756]: /en/newsletters/2019/06/26/#bitcoin-core-13756
