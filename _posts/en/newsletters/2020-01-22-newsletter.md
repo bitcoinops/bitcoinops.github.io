@@ -63,7 +63,15 @@ infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **River Financial utilizing variety of Bitcoin tech:** In a
+  [Twitter thread][river twitter thread], River Financial outlined their use of
+  [PSBT][topic psbt], [script descriptors][topic descriptors], LN, and
+  [native  segwit addresses][topic bech32] by default.
+
+- **Wasabi notes RBF on incoming transactions:** Wasabi's incoming transaction
+  notification now [notes RBF signaling][wasabi rbf notification] and
+  whether the transaction is a replacement transaction. To enhance privacy,
+  Wasabi also randomly [signals RBF on 2% of transactions][wasabi rbf signaling].
 
 ## Notable code and documentation changes
 
@@ -102,3 +110,6 @@ FIXME:bitschmidty
 [scriptless scripts examples]: https://github.com/ElementsProject/scriptless-scripts
 [whatsat]: https://github.com/joostjager/whatsat
 [news72 sphinx]: /en/newsletters/2019/11/13/#possible-privacy-leak-in-the-ln-onion-format
+[river twitter thread]: https://twitter.com/philipglazman/status/1216849483184476165
+[wasabi rbf notification]: https://bitcoinops.org/en/compatibility/wasabi/#receive-notification
+[wasabi rbf signaling]: https://github.com/zkSNACKs/WalletWasabi/pull/2405
