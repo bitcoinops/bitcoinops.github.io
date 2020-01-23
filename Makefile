@@ -34,6 +34,15 @@ test-after-build:
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	! find _site/ -name '*.html' | xargs grep '\[^' | grep .
 
+	## Check for duplicate anchors
+	! find _site/ -name '*.html' | while read file ; do \
+	  cat $$file \
+	  | egrep -o "(id|name)=[\"'][^\"']*[\"']" \
+	  | sed -E "s/^(id|name)=//; s/[\"']//g" \
+	  | sort | uniq -d \
+	  | sed "s|.*|Duplicate anchor in $$file: #&|" ; \
+	done | grep .
+
 	## Check for broken links
 	bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
 

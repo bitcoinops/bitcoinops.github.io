@@ -123,7 +123,7 @@ endcomment %}
 [libsecp256k1][libsecp256k1 repo], and [Bitcoin Improvement Proposals
 (BIPs)][bips repo].*
 
-- [Bitcoin Core #13756][] adds a `setwalletflags` RPC that can be used
+- [Bitcoin Core #13756][] adds a `setwalletflag` RPC that can be used
   to toggle flags for the wallet, including a new `avoid_reuse` flag
   that (when enabled) will prevent the wallet from spending bitcoins
   received to an address that the wallet has already used for spending.
