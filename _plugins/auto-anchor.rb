@@ -11,12 +11,8 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
   ## Don't process documents if YAML headers say: "auto_id: false"
   if post.data["auto_id"] != false
     post.content.gsub!(/^ *- .*/) do |string|
-      ## List items surrounded in bold
-      title = string.match(/\*\*.*?\*\*/).to_s
-      ## List items surrounded in italics
-      title.empty? && title = string.match(/\*.*?\*/).to_s
-      ## List items that are hyperlinks
-      title.empty? && title = string.match(/\[.*?\][(\[]/).to_s
+      ## Find shortest match for **bold**, *italics*, or [markdown][links]
+      title = string.match(/\*\*.*?\*\*|\*.*?\*|\[.*?\][(\[]/).to_s
 
       if title.empty?
         ## No match, pass item through unchanged
