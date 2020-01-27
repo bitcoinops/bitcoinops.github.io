@@ -3,6 +3,7 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
+[topic anchor outputs]: /en/topics/anchor-outputs/
 [topic assumeutxo]: /en/topics/assumeutxo/
 [topic bech32]: /en/topics/bech32/
 [topic channel factories]: /en/topics/channel-factories/
@@ -20,6 +21,7 @@
 [topic miniscript]: /en/topics/miniscript/
 [topic minisketch]: /en/topics/minisketch/
 [topic multipath payments]: /en/topics/multipath-payments/
+[topic musig]: /en/topics/musig/
 [topic output script descriptors]: /en/topics/output-script-descriptors/
 [topic payjoin]: /en/topics/payjoin/
 [topic psbt]: /en/topics/psbt/
