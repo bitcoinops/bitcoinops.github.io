@@ -84,7 +84,21 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How is OP_CHECKTEMPLATEVERIFY a scaling solution?]({{bse}}92755)
+  Confused_Coder explains ways in which the proposed new opcode,
+  `OP_CHECKTEMPLATEVERIFY`, could help
+  [delay the use of block space until fees are cheaper][news48 output commitments]
+  by encapsulating multiple payments into a single output which can later be
+  expanded to multiple outputs.
+
+- [Why was the BIP32 fingerprint used for BIP174 psbt?]({{bse}}92848)
+  Andrew Chow describes why the BIP32 fingerprint was chosen for use throughout
+  the BIP174 [PSBT][topic psbt] specification instead of the full hash, namely
+  the impracticality of getting the full pubkey hash160 from hardware wallets.
+
+- [How is the size of a bitcoin transaction calculated?]({{bse}}92689)
+  User Septem151 provides a detailed outline, broken out by each field, of how
+  the weight units (vbytes) are calculated for both segwit and non-segwit transactions.
 
 ## Notable code and documentation changes
 
@@ -199,3 +213,4 @@ FIXME:bitschmidty
 [teinturier post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002435.html
 [towns layered commitments]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002448.html
 [elliptic curve]: https://en.bitcoin.it/wiki/Secp256k1
+[news48 output commitments]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
