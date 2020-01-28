@@ -1,10 +1,14 @@
-# Introduction to fee bumping
-
+---
+title: Introduction to fee bumping
+layout: page
+---
 The fee market in Bitcoin can be very dynamic, with the fee-rate required for a
 transaction to be included in a block increasing or decreasing rapidly.
 
-![](./img/mempool.png)
-*(Six months of mempool size, grouped by fee-rate, from https://jochen-hoenicke.de/queue/#1,24h)*
+{% assign label="Six months of mempool size, grouped by fee-rate, from https://jochen-hoenicke.de/queue/#1,24h" %}
+{:.center}
+![{{label}}](./img/mempool.png)<br>
+*({{label}})*
 
 One of the reasons for the volatility in the fee-rate is that the mechanism
 used to select what to include in a block is a market. In this market, the
@@ -52,12 +56,12 @@ transaction for a couple of reasons:
 1. To give users the leeway to bid low on transaction fee-rate, with the
    option to later bump the fee up.
 
-### The solutions
+## The solutions
 
 There are two common solutions for unsticking a payment that is stranded in the
 mempool: Replace-by-fee (RBF) and Child Pays for Parent (CPFP):
 
-##### Replace By Fee (RBF)
+### Replace By Fee (RBF)
 
 The user constructs and signs a replacement transaction which spends one or
 more of the same inputs as the stuck transaction but pays additional fee
@@ -65,7 +69,7 @@ more of the same inputs as the stuck transaction but pays additional fee
 the extra value as additional fee). If the replacement transaction attaches
 enough fee, then miners will be incentivized to include it in a block.
 
-##### Child Pays For Parent (CPFP) 
+### Child Pays For Parent (CPFP) 
 
 The user creates a new transaction which spends one or more of the outputs of
 the stuck transaction. This child transaction attaches a large fee - enough to
@@ -153,27 +157,27 @@ Bitcoin blockchain, such as exchanges or custodians:
 
 These issues will be discussed in more detail in later sections of this document.
 
-# Introduction to RBF
+## Introduction to RBF
 
 TODO
 
-## Overview of what RBF is
+### Overview of what RBF is
 
 TODO
 
-## History of RBF
+### History of RBF
 
 TODO
 
-## BIP 125
+### BIP 125
 
 TODO
 
-### 5 conditions for RBF
+#### 5 conditions for RBF
 
 TODO
 
-## User Experience Recommendations
+### User Experience Recommendations
 
 Even wallets and services that do not themselves support creating opt-in RBF or
 replacement transactions should present a clear and accurate experience to
@@ -194,22 +198,22 @@ their users when dealing with RBF transactions:
 - Links to transactions that have been replaced should remain live on block
   explorers. They may redirect to the transaction which replaced them.
 
-## Interoperability & compatibility matrix
+### Interoperability & compatibility matrix
 
 TODO
 
-## Example of a company using RBF
+### Example of a company using RBF
 
 TODO
 
-# Child-Pays-For-Parent
+## Child-Pays-For-Parent
 
 Child Pays for Parent (CPFP) is a wallet feature where a user spends the output
 of an unconfirmed (_parent_) transaction as an input to a new (_child_)
 transaction. The wallet attaches enough fee to the child transaction to
 increase the combined feerate across the parent and child transactions.
 
-## How does CPFP work?
+### How does CPFP work?
 
 When constructing a new block, miners are incentivized to fill the 1vMB with
 the set of transactions that maximize the transaction fees. If all unconfirmed
@@ -240,7 +244,7 @@ Wallets can take advantage of this rational behavior by miners to incentivize
 them to include a stuck, low-fee transaction, by spending one of its outputs
 and increasing the total feerate across the transaction package.
 
-## History of CPFP
+### History of CPFP
 
 For users to be able to bump a transaction using CPFP, two elements are required:
 
@@ -284,7 +288,7 @@ miners are running Bitcoin Core V0.13 or later, or a derivative thereof.
 Wallets can therefore safely assume that descendant transaction fees will be taken
 into account when miners construct blocks.
 
-## CPFP case study
+### CPFP case study
 
 The Hodlers Bitcoin Exchange (HBE) has several hundred thousand customers and
 services thousands of withdrawals per day. Since they need to send many withdrawal
@@ -329,7 +333,7 @@ are down, and customers are usually unaware that their withdrawals are
 being fee bumped using CPFP, since the transaction id and output index of their
 withdrawal does not change.
 
-## User Experience Recommendations
+### User Experience Recommendations
 
 Wallets and explorers should present relevant information about transaction
 packages to users:
@@ -344,28 +348,28 @@ packages to users:
   chains of unconfirmed transactions, since malleating the signature invalidates
   any descendant transactions.
 
-# RBF or CPFP (or both)
+## RBF or CPFP (or both)
 
 TODO
 
 
-## Advantages of RBF
+### Advantages of RBF
 
 TODO
 
-## Advantages of CPFP
+### Advantages of CPFP
 
 TODO
 
-## Using both together
+### Using both together
 
 TODO
 
-## Implementation gotchas
+### Implementation gotchas
 
 TODO
 
-# Conclusion
+## Conclusion
 
 Both Replace-By-Fee and Child-Pays-For-Parent are useful techniques for bumping
 the fee on a stuck unconfirmed transaction. Each comes with its own benefits
@@ -377,9 +381,9 @@ and services should present a clear and accurate experience to users when those
 techniques are being used, even if they do not support creating RBF or CPFP
 transactions.
 
-# Footnotes
+## Footnotes
 
-## Consensus, policy and incentive compatibility
+### Consensus, policy and incentive compatibility
 
 Both solutions discussed in this article are related to network node and miner
 behavior before a transaction is included in a block. That behavior is

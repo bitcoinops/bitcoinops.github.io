@@ -1,5 +1,7 @@
-# The Bitcoin Optech Scaling Cookbook
-
+---
+title: The Bitcoin Optech Scaling Cookbook
+layout: page
+---
 The Bitcoin Optech scaling cookbook is a guide to effective practices and
 techniques that engineers interacting with the Bitcoin blockchain can adopt
 today. These practices are good for your business (they make your operations
