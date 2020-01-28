@@ -113,7 +113,11 @@ endcomment %}
   watch-only wallet.  The user can then paste the PSBT into another
   program (such as [HWI][topic hwi]) for signing.
 
-- [C-Lightning #3376][] FIXME:moneyball
+- [C-Lightning #3376][] adds retry logic to handle a temporary situation in which
+the spender and receiver disagree on the block height. There is discussion in the
+PR over whether [the specification][BOLT4] should be modified to simplify
+implementations, but it is pointed out that the specification change that led to
+this situation [closes a privacy leak][bolt4 privacy leak].
 
 - [LND #3809][] adds a `force` parameter to the `BumpFee` RPC so that
   it can include uneconomical UTXOs in the transactions it creates,
@@ -214,3 +218,4 @@ endcomment %}
 [towns layered commitments]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002448.html
 [elliptic curve]: https://en.bitcoin.it/wiki/Secp256k1
 [news48 output commitments]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
+[bolt4 privacy leak]: /en/newsletters/2019/08/28/#bolts-608
