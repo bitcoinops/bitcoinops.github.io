@@ -1,4 +1,7 @@
-# Payment Batching
+---
+title: Payment Batching
+layout: page
+---
 
 This chapter describes how
 high-frequency spenders can use the scaling technique of *payment
@@ -45,7 +48,7 @@ Savings in this typical case peak at about 30%.
 Services that find themselves frequently using more than one input per
 transaction may be able to increase their savings using a two-step
 procedure.  In the first step, multiple small inputs are
-[consolidated][chapter consolidation] into a single larger input using
+consolidated into a single larger input using
 slow (but low-feerate) transactions that spend the service's money back
 to itself.  In the second step, the service spends from one of its
 consolidated inputs using payment batching and achieves the best-case
@@ -167,7 +170,7 @@ only that user is affected.  But if a single receiver of a batched
 payment spends their output to the point where fee bumping becomes
 impossible, all the other receivers of that transaction are also affected.
 
-As of Bitcoin Core 0.18 (April 2019), the limits are¹ that a
+As of Bitcoin Core 0.18 (April 2019), the limits are[^package-limits] that a
 group of related unconfirmed transactions may not exceed 101,000 vbytes
 in size, have more than 25 unconfirmed ancestors, or have more than 25
 descendants.  This size limit restricts batches to a maximum size of
@@ -223,35 +226,34 @@ batched payments larger than this.
 
 ## Footnotes
 
-¹Optech believes that almost all nodes are using the default Bitcoin
-Core policy for transaction group limits.  However, those defaults
-may change over time, so the example below provides a command that
-can be used to find the current limits along with the current
-values.
+[^package-limits]:
+    Optech believes that almost all nodes are using the default Bitcoin
+    Core policy for transaction group limits.  However, those defaults
+    may change over time, so the example below provides a command that
+    can be used to find the current limits along with the current
+    values.
 
-```bash
-$ bitcoind -help-debug | grep -A3 -- -limit
-  -limitancestorcount=<n>
-       Do not accept transactions if number of in-mempool ancestors is <n> or
-       more (default: 25)
+    ```text
+    $ bitcoind -help-debug | grep -A3 -- -limit
+      -limitancestorcount=<n>
+           Do not accept transactions if number of in-mempool ancestors is <n> or
+           more (default: 25)
 
-  -limitancestorsize=<n>
-       Do not accept transactions whose size with all in-mempool ancestors
-       exceeds <n> kilobytes (default: 101)
+      -limitancestorsize=<n>
+           Do not accept transactions whose size with all in-mempool ancestors
+           exceeds <n> kilobytes (default: 101)
 
-  -limitdescendantcount=<n>
-       Do not accept transactions if any ancestor would have <n> or more
-       in-mempool descendants (default: 25)
+      -limitdescendantcount=<n>
+           Do not accept transactions if any ancestor would have <n> or more
+           in-mempool descendants (default: 25)
 
-  -limitdescendantsize=<n>
-       Do not accept transactions if any ancestor would have more than <n>
-       kilobytes of in-mempool descendants (default: 101).
-```
+      -limitdescendantsize=<n>
+           Do not accept transactions if any ancestor would have more than <n>
+           kilobytes of in-mempool descendants (default: 101).
+    ```
 
 
-[chapter consolidation]: #FIXME_not_written_yet
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
-[coin selection strategies]: #FIXME_not_written_yet
 [fee bumping]: ../1.fee_bumping/fee_bumping.md
 [cronjob]: https://en.wikipedia.org/wiki/Cronjob
 [sendmany]: https://bitcoincore.org/en/doc/0.17.0/rpc/wallet/sendmany/
