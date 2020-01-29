@@ -49,6 +49,7 @@ defaults:
       path: ""  ## all pages
     values:
       image: https://bitcoinops.org/img/logos/optech-notext.png
+      breadcrumbs: true
   - scope:
       path: "_topics"
     values:

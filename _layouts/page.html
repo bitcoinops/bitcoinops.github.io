@@ -7,6 +7,7 @@ layout: default
 
 <article class="post">
 
+  {% include linkers/breadcrumbs.md path=page.url %}
   {% if page.title %}
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
