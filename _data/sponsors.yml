@@ -23,6 +23,10 @@ sponsors:
 
 members:
   -
+    name: bitbank
+    website: https://bitbank.cc/en/
+    logo: bitbank.png
+  -
     name: BitGo
     website: https://twitter.com/BitGo
     logo: bitgo.png
