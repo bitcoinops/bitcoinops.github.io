@@ -72,6 +72,10 @@ optech_mentions:
     url: /en/newsletters/2018/12/28#sighash_noinput
     date: 2018-12-28
 
+  - title: "2019 year-in-review: `SIGHASH_ANYPREVOUT`"
+    url: /en/newsletters/2019/12/28/#anyprevout
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

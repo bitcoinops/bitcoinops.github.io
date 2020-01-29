@@ -26,6 +26,9 @@ primary_sources:
   - title: Enhancing Bitcoin transactions with covenants
     link: https://fc17.ifca.ai/bitcoin/papers/bitcoin17-final28.pdf
 
+  - title: OP_CHECKTEMPLATEVERIFY proposal
+    link: https://github.com/JeremyRubin/bips/blob/ctv/bip-ctv.mediawiki
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -33,7 +36,7 @@ optech_mentions:
     url: /en/newsletters/2018/10/09/#discussion-the-evolution-of-bitcoin-script
     date: 2018-10-09
 
-  - title: "New proposed opcode: OP_CHECKOUTPUTHASHVERIFY"
+  - title: "New proposed opcode: OP_CHECKOUTPUTSHASHVERIFY"
     url: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
     date: 2019-05-29
 
@@ -44,6 +47,18 @@ optech_mentions:
   - title: Bitcoin vaults without covenants
     url: /en/newsletters/2019/08/14#bitcoin-vaults-without-covenants
     date: 2019-08-14
+
+  - title: OP_CHECKOUTPUTSHASHVERIFY renamed OP_CHECKTEMPLATEVERIFY and updated
+    url: /en/newsletters/2019/12/04/#op-checktemplateverify-ctv
+    date: 2019-12-04
+
+  - title: Suggested changes to OP_CHECKTEMPLATEVERIFY proposal
+    url: /en/newsletters/2019/12/18/#proposed-changes-to-bip-ctv
+    date: 2019-12-18
+
+  - title: "2019 year-in-review: OP_CHECKTEMPLATEVERIFY"
+    url: /en/newsletters/2019/12/28/#ctv
+    date: 2019-12-28
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

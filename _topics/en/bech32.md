@@ -48,6 +48,22 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
     date: 2019-11-13
 
+  - title: "LND #3767 rejects malformed BOLT11 invoices with a valid bech32 checksum"
+    url: /en/newsletters/2019/12/11/#lnd-3767
+    date: 2019-12-11
+
+  - title: Proposed plan to deal with bech32 malleability in variable-length addresses
+    url: /en/newsletters/2019/12/18/#review-bech32-action-plan
+    date: 2019-12-18
+
+  - title: Analysis of bech32 error detection capability
+    url: /en/newsletters/2019/12/18/#analysis-of-bech32-error-detection
+    date: 2019-12-18
+
+  - title: "2019 year-in-review: bech32 mutability"
+    url: /en/newsletters/2019/12/28/#bech32-mutability
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

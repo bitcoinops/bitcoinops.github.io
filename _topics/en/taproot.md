@@ -85,6 +85,10 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#x-only-pubkeys
     date: 2019-11-13
 
+  - title: "2019 year-in-review: taproot"
+    url: /en/newsletters/2019/12/28/#taproot
+    date: 2019-12-28
+
 ## Optional
 see_also:
   - title: MAST

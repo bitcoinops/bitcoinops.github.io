@@ -51,6 +51,10 @@ optech_mentions:
     url: /en/newsletters/2019/05/07/#new-architecture-and-new-ubuntu-snap-package
     date: 2019-05-07
 
+  - title: "2019 year-in-review: reproducible builds"
+    url: /en/newsletters/2019/12/28/#reproducibility
+    date: 2019-12-28
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"

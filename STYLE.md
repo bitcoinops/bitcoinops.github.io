@@ -24,6 +24,7 @@ sentence or heading.
 - bitcoin (the currency)
 - chaumian (blind signatures|coinjoin|ecash)
 - eltoo
+- erlay
 - merkle (tree|root|branch|node)
 - schnorr
 - segwit
