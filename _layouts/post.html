@@ -16,6 +16,7 @@ layout: default
         {% endfor %}
       </div>
     {% endif %}
+    {% include linkers/breadcrumbs.md path=page.url %}
     <h1 class="post-title">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">

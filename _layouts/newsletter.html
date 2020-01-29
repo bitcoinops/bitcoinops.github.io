@@ -15,6 +15,9 @@ layout: default
         {% endfor %}
       </div>
     {% endif %}
+    {% assign year = page.date | date: "%Y" %}
+    {% assign path = "/" | append: page.lang | append: "/newsletters/" | append: year | append: "/" %}
+    {% include linkers/breadcrumbs.md path=path %}
     <h1 class="post-title">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
