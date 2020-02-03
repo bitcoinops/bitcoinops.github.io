@@ -202,7 +202,15 @@ public key may leak the secret key through an (invalid) signature."
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #16702][] FIXME:jnewbery
+- [Bitcoin Core #16702][] allows Bitcoin Core to choose peers based
+  on their _Autonomous System Number_ (ASN) instead of IP address prefix.
+  Differentiating peers based on ASN may make it more difficult for an adversary to successfully
+  execute certain [eclipse attacks][topic eclipse attacks] (such as the [Erebus
+  attack][erebus]). This new feature is disabled by default---to use ASN-based
+  peering, the user must provide an ASN table file, which can be generated using
+  [asmap][]. Future releases may include an ASN table file generated and
+  reviewed by the Bitcoin Core developers. See [our summary of an IRC discussion
+  in #bitcoin-core-dev][asn peer selection] for more details of this approach.
 
 - [Bitcoin Core #17951][] keeps a rolling bloom filter of the
   transactions confirmed in recent blocks.  When one of a node's peers
@@ -265,3 +273,6 @@ Any errors in the published text are the fault of the newsletter author.
 [ed25519]: https://en.wikipedia.org/wiki/EdDSA
 [neigut thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002466.html
 [podle]: https://joinmarket.me/blog/blog/poodle/
+[asmap]: https://github.com/sipa/asmap
+[asn peer selection]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
+[erebus]: https://erebus-attack.comp.nus.edu.sg/
