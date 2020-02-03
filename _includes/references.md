@@ -14,6 +14,7 @@
 [topic cpfp]: /en/topics/cpfp/
 [topic cpfp carve out]: /en/topics/cpfp-carve-out/
 [topic descriptors]: /en/topics/output-script-descriptors/
+[topic eclipse attacks]: /en/topics/eclipse-attacks/
 [topic eltoo]: /en/topics/eltoo/
 [topic erlay]: /en/topics/erlay/
 [topic hwi]: /en/topics/hwi/
