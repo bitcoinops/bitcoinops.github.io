@@ -1,0 +1,29 @@
+---
+layout: page
+---
+{{ content }}
+
+{% capture /dev/null %}
+  {% capture _previous_chapter %}[Table of contents](../){% endcapture %}
+  {% for chapter in site.data.scaling.toc %}
+    {% if chapter.permalink == page.url %}
+      {% assign _chapter_match = true %}
+      {% unless forloop.first %}
+        {% assign _prev_index = forloop.index0 | minus: 1 %}
+        {% capture _previous_chapter %}[{{site.data.scaling.toc[_prev_index].name}}]({{site.data.scaling.toc[_prev_index].permalink}}){% endcapture %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign _next_index = forloop.index0 | plus: 1 %}
+        {% capture _next_chapter %}[{{site.data.scaling.toc[_next_index].name}}]({{site.data.scaling.toc[_next_index].permalink}}){% endcapture %}
+      {% endunless %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% unless _chapter_match %}{% include ERROR72_no_matching_chapter %}{% endunless %}
+  {% unless _next_chapter %}{% capture _next_chapter %}[Return to table of contents](../){% endcapture %}{% endunless %}
+  {%- capture _links -%}
+    <span class="float-left" markdown="1">**Previous:**<br>{{_previous_chapter}}</span>
+    <span class="float-right" markdown="1">**Next:**<br>{{_next_chapter}}</span>
+  {%- endcapture %}
+{% endcapture %}<br><br>{{_links | markdownify}}
+

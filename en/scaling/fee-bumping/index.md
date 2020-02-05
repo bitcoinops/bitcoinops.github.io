@@ -1,6 +1,6 @@
 ---
 title: Introduction to fee bumping
-layout: page
+layout: chapter
 ---
 The fee market in Bitcoin can be very dynamic, with the fee-rate required for a
 transaction to be included in a block increasing or decreasing rapidly.

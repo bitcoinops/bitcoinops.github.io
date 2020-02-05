@@ -1,6 +1,6 @@
 ---
 title: Payment Batching
-layout: page
+layout: chapter
 ---
 
 This chapter describes how

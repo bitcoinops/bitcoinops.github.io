@@ -1,0 +1,9 @@
+## Put items in the order we want people to read them
+- name: Introduction
+  permalink: /en/scaling/introduction/
+
+- name: Fee Bumping
+  permalink: /en/scaling/fee-bumping/
+
+- name: Payment Batching
+  permalink: /en/scaling/payment-batching/
