@@ -89,7 +89,9 @@ public key may leak the secret key through an (invalid) signature."
     invalid public key had been provided, and some wallets such as
     Bitcoin Core certainly do perform this check for any signatures they
     generate even for the currently-used ECDSA signature algorithm.
-    However, there remains a risk that inexperienced developers will not
+    However, the computational overhead of this approach may not be
+    acceptable to many applications and there remains a risk that
+    inexperienced developers will not know to
     perform this step, and so it seems preferable to use Jonas Nick's
     suggestion (relayed by Maxwell) of including the public key in the
     data used to produce a deterministic nonce.
@@ -247,10 +249,12 @@ public key may leak the secret key through an (invalid) signature."
   block chain data server if the server is running as a Tor hidden
   service, since Tor provides its own authentication and encryption.
 
-## Acknowledgments
+## Acknowledgments and edits
 
 We thank Adam Gibson for reviewing a draft of the section about PoDLE.
 Any errors in the published text are the fault of the newsletter author.
+Some text was added after publication by the suggestion of Pieter Wuille
+to clarify the tradeoffs of verifying generated signatures before publishing them.
 
 {% include references.md %}
 {% include linkers/issues.md issues="558,524,16702,17951,3315,1295,1287,1278" %}
