@@ -67,6 +67,10 @@ members:
     website: https://twitter.com/cryptogarageinc
     logo: CryptoGarage.png
   -
+    name: Edge
+    website: https://twitter.com/EdgeWallet
+    logo: edge.png
+  -
     name: Electrum
     website: https://twitter.com/ElectrumWallet
     logo: electrum.png
