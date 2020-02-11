@@ -50,7 +50,13 @@ about notable code and documentation changes.
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #17578][] FIXME:dongcarl rpc: deprecate getaddressinfo label
+- [Bitcoin Core #17585][] deprecates the `label` field returned by the
+  `getaddressinfo` RPC as the `labels` (plural) field already exists and provides
+  the same functionality. The `label` field is expected to be removed in 0.21; for
+  compatibility, the old behavior can be re-enabled in the interim by launching
+  `bitcoind` with `-deprecatedrpc=label`. This change is the final one in a series
+  of changes to clean up the `getaddressinfo` RPC interface (including a
+  PR covered in [Newsletter #80][news80 label]).
 
 - [Bitcoin Core #18032][] extends the results of the `createmultisig`
   and `addmultisigaddress` RPCs to include a `descriptor` field that
@@ -103,7 +109,7 @@ about notable code and documentation changes.
   otherwise changing how filtering works.
 
 {% include references.md %}
-{% include linkers/issues.md issues="17578,18032,3475,3372,3465,3957,684" %}
+{% include linkers/issues.md issues="18032,3475,3372,3465,3957,684,17585" %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [ctv morning vid]: https://twitter.com/JeremyRubin/status/1223672458516938752
 [ctv afternoon vid]: https://twitter.com/JeremyRubin/status/1223729378946715648
@@ -111,3 +117,4 @@ about notable code and documentation changes.
 [ctv transcript]: https://diyhpl.us/wiki/transcripts/ctv-bip-review-workshop/
 [ctv mailing list]: https://mailman.mit.edu/mailman/listinfo/bip-0119-review
 [news48 cc]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
+[news80 label]: /en/newsletters/2020/01/15/#bitcoin-core-17578
