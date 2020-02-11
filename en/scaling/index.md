@@ -1,8 +1,8 @@
 ---
-title: The Bitcoin Optech Scaling Workbook
+title: The Bitcoin Optech Scaling Book
 layout: page
 ---
-The Bitcoin Optech scaling cookbook is a guide to effective practices
+The Bitcoin Optech Scaling Book is a guide to effective practices
 and techniques that engineers interacting with the Bitcoin block chain
 can adopt today.  The following chapters are currently available:
 

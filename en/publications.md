@@ -8,7 +8,7 @@ share: false
 version: 1
 ---
 {%- if jekyll.environment == 'future' -%}
-- [Scaling Workbook][]: a guide to effective practices and techniques
+- [Scaling book][]: a guide to effective practices and techniques
   that engineers interacting with the Bitcoin block chain can adopt
   today.
 
@@ -27,4 +27,4 @@ Recent publications from our [blog posts][] and [newsletters][].
 
 [blog posts]: /en/blog/
 [newsletters]: /en/newsletters/
-[scaling workbook]: /en/scaling/
+[scaling book]: /en/scaling/
