@@ -75,6 +75,7 @@ following abbreviations we assume readers will already know.
 
 | Use | Don't use | Notes |
 |-|-|-|
+| anti fee sniping | anti-fee sniping, anti-fee-sniping | |
 | block chain | blockchain | |
 | coinjoin | Coinjoin, coinJoin or coin-join | |
 | feerate | fee-rate or fee rate | |
