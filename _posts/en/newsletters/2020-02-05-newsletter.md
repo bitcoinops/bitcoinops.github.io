@@ -158,7 +158,7 @@ public key may leak the secret key through an (invalid) signature."
       psbt]).  Though Neigut replied that she thinks PSBT is "a bit
       overweight for transaction collaboration between two peers."
 
-    - A sub-discussion about how to avoid probing where Mallory starts
+    - {:#podle} A sub-discussion about how to avoid probing where Mallory starts
       the process of opening a dual-funded channel with Bob but then
       aborts after she receives the identity of one of Bob's UTXOs.
       By aborting before the funding transaction is complete, Mallory
