@@ -202,7 +202,18 @@ FIXME:bitschmidty
   binaries are no longer being distributed by the project due to a
   lack of use and hands-on developer testing.
 
-- [C-Lightning #3488][] Bitcoin backend generalization FIXME:adamjonas
+- [C-Lightning #3488][] standardizes C-Lightning’s requests for Bitcoin data
+  making it possible to run C-Lightning on something other than Bitcoin Core
+  as the backend. This pull request is part of a larger project to allow more
+  freedom for how C-Lightning interacts with the Bitcoin backend as proposed
+  in [C-Lightning #3354][]. Keeping the backend interactions generic
+  allows for plugins to either make standard RPC calls, combine
+  RPCs into more abstract methods, or even create notifications. While
+  `bitcoind` interaction through `bitcoin-cli` remains the default, this project
+  works towards opening up possibilities for mobile integration (see
+  [C-Lightning #3484][]) or allowing users to share a [block explorer][topic block explorers] such as an
+  [esplora][esplora] instance for those that might only go
+  [online infrequently for channel management and monitoring][remyers twitter].
 
 - [C-Lightning #3500][] implements a simple solution to a problem that
   could cause channels to become stuck with neither party able to send
@@ -242,7 +253,7 @@ FIXME:bitschmidty
   maintains their own [fork][acinq libsecp] of the library.
 
 {% include references.md %}
-{% include linkers/issues.md issues="18104,3488,3500,3489,3477,682,728,3501" %}
+{% include linkers/issues.md issues="18104,3488,3354,3484,3500,3489,3477,682,728,3501" %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [cl 0.8.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.1
 [news83 interactive]: /en/newsletters/2020/02/05/#interactive-construction-of-ln-funding-transactions
@@ -271,3 +282,5 @@ FIXME:bitschmidty
 [nums]: https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
 [spec meet]: http://www.erisian.com.au/meetbot/lightning-dev/2020/lightning-dev.2020-02-17-19.06.log.html#l-239
 [cl changelog]: https://github.com/ElementsProject/lightning/blob/v0.8.1/CHANGELOG.md#081---2020-02-12-channel-to-the-moon
+[esplora]: https://github.com/blockstream/esplora
+[remyers twitter]: https://twitter.com/remyers_/status/1226838752267468800

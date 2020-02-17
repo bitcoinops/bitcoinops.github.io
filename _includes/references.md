@@ -6,6 +6,7 @@
 [topic anchor outputs]: /en/topics/anchor-outputs/
 [topic assumeutxo]: /en/topics/assumeutxo/
 [topic bech32]: /en/topics/bech32/
+[topic block explorers]: /en/topics/block-explorers/
 [topic channel factories]: /en/topics/channel-factories/
 [topic coinjoin]: /en/topics/coinjoin/
 [topic compact block filters]: /en/topics/compact-block-filters/
