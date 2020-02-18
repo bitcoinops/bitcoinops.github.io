@@ -184,7 +184,15 @@ popular services, client software, and infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BTCPay Vault using HWI for signing:** [BTCPay Vault][btcpay vault blog] is
+a desktop application that uses [HWI][topic hwi] to coordinate signing
+transactions with a variety of hardware wallets. While BTCPay Server created
+BTCPay Vault, the software can be repurposed for use in other applications.
+
+- **CKBunker using PSBTs for an HSM:** [CKBunker][coinkite bunker] allows users
+to configure rule-based spending conditions for an online, Tor-enabled Coldcard
+hardware wallet. The Coldcard then functions like an HSM (Hardware Security
+Module), signing [PSBTs][topic psbt] delivered via a Tor hidden service.
 
 ## Notable code and documentation changes
 
@@ -284,3 +292,5 @@ FIXME:bitschmidty
 [cl changelog]: https://github.com/ElementsProject/lightning/blob/v0.8.1/CHANGELOG.md#081---2020-02-12-channel-to-the-moon
 [esplora]: https://github.com/blockstream/esplora
 [remyers twitter]: https://twitter.com/remyers_/status/1226838752267468800
+[btcpay vault blog]: https://blog.btcpayserver.org/btcpay-vault/
+[coinkite bunker]: http://ckbunker.com/
