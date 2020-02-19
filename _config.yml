@@ -20,11 +20,12 @@ description: >-
   Helping Bitcoin-based businesses integrate scaling technology.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bitcoinops.org/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bitcoinoptech
 github_username:  bitcoinops
 repository_name: bitcoinops.github.io
 bold: '**'
+author: "Bitcoin Optech"  ## Default author name for blog posts
 
 # Build settings
 markdown: kramdown
