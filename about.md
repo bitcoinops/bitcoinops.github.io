@@ -35,7 +35,7 @@ to support Optech.
 
 Our generous member companies pay an annual contribution to cover expenses.
 
-## Principles and Associates of Optech
+## Principals and Associates of Optech
 
 {% include associates.html %}
 
