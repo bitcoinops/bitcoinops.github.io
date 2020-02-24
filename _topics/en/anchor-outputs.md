@@ -45,7 +45,13 @@ extended_summary: |
   scripts encumbered by a `1 OP_CHECKSEQUENCEVERIFY` (CSV) condition
   that prevents them from being spent for at least one block.
 
-  <!-- TODO: mention package relay here if we add a topic for that -->
+  To be fully effective, the protocol also depends of Bitcoin full nodes
+  implementing [package relay][topic package relay] so that there's a
+  way to CPFP fee bump commitment transactions even if their feerates
+  are below a node's minimum relay fee.  But until package relay is
+  available, it's possible for LN nodes to just pay a somewhat higher
+  feerate on their commitment transactions to ensure that they'll be
+  accepted by nodes.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
@@ -88,4 +94,7 @@ optech_mentions:
 see_also:
   - title: CPFP carve-out
     link: topic cpfp carve out
+
+  - title: Package relay
+    link: topic package relay
 ---
