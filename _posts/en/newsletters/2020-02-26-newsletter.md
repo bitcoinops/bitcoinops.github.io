@@ -93,7 +93,12 @@ candidates.*
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #13339][] wallet: Replace %w by wallet name in -walletnotify script FIXME:bitschmidty
+- [Bitcoin Core #13339][] allows the wallet name to be passed as an argument to a user-provided
+  `walletnotify` transaction notification script. Previously only the txid was
+  passed to the `walletnotify` script, which made it difficult for users running
+  in multi-wallet mode to determine which wallet received the incoming
+  transaction. This change is part of an ongoing effort to enhance [multi-wallet
+  support][].  The change is not currently supported on Windows.
 
 - [Eclair #1325][] allows the `SendToRoute` endpoint to accept routing
   hints that can help the spending node find a path to the receiving
