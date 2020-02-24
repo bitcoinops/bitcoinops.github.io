@@ -70,7 +70,137 @@ been moved to its own [section][release rc section].*
     on enhancing privacy and preventing the mechanism from being abused
     for spam.
 
-FIXME:jnwebery-sbc-report
+## Notable talks from the 2020 Stanford Blockchain Conference
+
+The Stanford Center for Blockchain Research hosted its annual
+[Stanford Blockchain Conference][sbc] last week. The conference included
+over 30 presentations across three days. We've summarized three talks
+that we think will be of particular interest to Optech newsletter readers.
+
+We thank the conference organizers for putting together the program and
+making videos of the talks available online ([day 1][], [day 2][], [day 3][]),
+and Bryan Bishop for providing [transcripts][].
+
+- **An Axiomatic Approach to Block Rewards:** Tim Roughgarden
+  presented his work with Xi Chen and Christos Papadimitriou analyzing
+  Bitcoin's block reward allocation rule from a [mechanism design][] theory
+  perspective. ([transcript][axiomatic txt], [video][axiomatic vid],
+  [paper][axiomatic paper]).
+
+    Roughgarden began his talk by introducing _mechanism design_ as the inverse
+    of the better-known _game theory_. Game theory describes
+    the rules of a game and then reasons about what equilibria and behavior are
+    the result of those rules. By contrast, mechanism design starts with an intended
+    outcome and tries to design game rules that will result in that desired outcome.
+    Roughgarden asks "Wouldn't it be nice if we had a mathematical
+    description of the space of block chain protocols [...] and we could [...
+    pick our] favorite objective function and [...] find a protocol that is optimal?"
+    Roughgarden then gives three 'axioms' for desired behavior when
+    designing the reward mechanism for a block chain:
+
+    1. _sybil resistance_:
+       no miner should be able to increase their reward by splitting their
+       public identity into multiple parts.
+
+    2. _collusion resistance_:
+       no group of miners should be able to increase their reward by joining their
+       independent identities into a single joined identity.
+
+    3. _anonymity_: the reward distribution should not depend
+       on the miners' public identities, and if the miners' hashrates are
+       permuted, then the reward should be permuted in the same ways.
+
+    The paper then gives a formal proof that the unique reward mechanism that
+    satisfies these axioms is a proportional mechanism (i.e. that each miner
+    receives rewards proportional to their hashrate).
+    The paper only deals with the theory around the creation of a single block,
+    and so does not consider longer-term strategies like [selfish mining][].
+
+    The result may appear to be self-evident to people familiar with
+    Bitcoin, but the formal treatment seems novel and may be a good
+    basis for
+    exploring more complex behavior for miners (eg long-term strategies and
+    pooling behavior).
+
+- **Boomerang: Redundancy Improves Latency and Throughput in Payment-Channel Networks:**
+  Joachim Neu presented his work with Vivek Bagaria and David Tse on reducing latency
+  and preventing liquidity lock-up when using [atomic multipath payments][topic multipath
+  payments] in payment channel networks such as Bitcoin's Lightning Network.
+  ([transcript][boomerang txt], [video][boomerang vid], [paper][boomerang
+  paper]).
+
+    Multipath payments suffer from the "everyone-waits-for-the-last"
+    _straggler problem_. This concept from distributed computing describes how, if a
+    goal depends on n tasks, then the goal must wait for the slowest of all n of
+    those tasks to complete. In the context of a multipath payment, this means that
+    if a payer wants to pay 0.05 BTC split into five parts of 0.01 BTC, the
+    payment will only complete when all of those constituent parts complete. This
+    leads to high latency for payments and reduced routing liquidity, particularly if one or more
+    of the parts fails and needs to be retried.
+
+    A common approach to fixing the straggler problem is to introduce
+    redundancy. In our example above, this would involve the payer making
+    seven partial payments of 0.01 BTC, and the receiver claiming the first five
+    of those payments that successfully route. The problem then becomes how to
+    prevent the receiver from claiming all seven parts resulting in an
+    overpayment of 0.02 BTC.
+
+    Neu et al. present a novel scheme called a _boomerang_ contract. The receiver
+    selects the pre-images for the payment parts as shares in a [publicly
+    verifiable secret sharing][pvss] scheme. In our example above, the secret can
+    be reconstructed from six of the seven payment pre-images. The payer then
+    constructs the seven payment parts, but each payment part is associated
+    with a reverse (boomerang) condition that pays the payer back the full amount
+    if the payer knows the full secret. If the receiver claims five or fewer
+    of the payment parts, the payer never learns the full secret, and the
+    boomerang clause cannot be invoked, but if the receiver cheats and
+    claims six or more of the parts, then the payer is able to invoke the
+    boomerang clause of the contract and none of the payment parts can be
+    redeemed by the receiver.
+
+    The paper goes on to describe an implementation of boomerang contracts in
+    Bitcoin using [adaptor signatures][] based on a schnorr signature scheme.
+    Neu also noted that it is possible to create adaptor signatures
+    over ECDSA, so boomerang contracts could theoretically be implemented in Bitcoin today.
+
+- **Remote Side-Channel Attacks on Anonymous Transactions:** Florian Tramer
+  presented his work with Dan Boneh and Kenneth G. Paterson on timing
+  side-channel and traffic-analysis attacks on user privacy in Monero and Zcash.
+  ([transcript][side-channel txt], [video][side-channel vid],
+  [paper][side-channel paper]).
+
+    Monero and Zcash are privacy-focused cryptocurrencies which use
+    cryptographic techniques ([ring signatures][] and [bulletproofs][]
+    for Monero and [zk-SNARKs][] for Zcash) to hide the sender's identity,
+    receiver's identity, and amounts in a transaction from the public ledger.
+    Tramer et al. show that even if these cryptographic constructions are
+    correct, implementation details can allow information about the
+    identities and amounts to be leaked to adversaries on the network.
+
+    When a Monero or Zcash node receives a transaction from the peer-to-peer
+    network, that transaction is passed to the node's wallet to determine
+    if the transaction belongs to the wallet.
+    If the
+    transaction does belong to the wallet, then the wallet must do additional computation
+    to decrypt the data and amounts from the transaction, and if the wallet pauses
+    its node's peer-to-peer activity while it is doing this additional computational work,
+    then an adversary can use a [timing attack][] to discover which transactions
+    are associated with which node. The authors demonstrate that these timing attacks
+    can be carried out remotely (across a WAN connection from London to Zurich)
+    and that it may also be possible to use similar timing attacks to reveal
+    the amounts in Zcash transactions.
+
+    The attacks in the paper do not apply to Bitcoin Core, since the difference
+    in computation that the Bitcoin Core wallet does for its own transactions
+    and other transactions is minimal (no advanced cryptography is involved),
+    and since v0.16, wallet operations have been processed asynchronously from peer-to-peer
+    behavior (see [Bitcoin Core #10286][]). However, the observations
+    in the paper are sufficiently general to be interesting to anyone implementing
+    systems on Bitcoin, namely that allowing wallet or application processing to
+    affect peer-to-peer behavior can leak information.
+
+Related: the Optech newsletter summarized a selection of talks from last year's Stanford
+Blockchain Conference in [Newsletter #32][news46 sbc].
 
 ## Selected Q&A from Bitcoin StackExchange
 
@@ -125,11 +255,32 @@ candidates.*
   the other feature being the ability to send larger payments in a
   channel.  See [Newsletter #22][news22 wumbo] for details.
 
+## Acknowledgements
+
+We thank Joachim Neu and Tim Roughgarden for their review of a draft of this
+newsletter's Stanford Blockchain Conference talk summaries. Any remaining
+errors are the fault of the newsletter author.
+
 {% include references.md %}
-{% include linkers/issues.md issues="1325,886,682,596,13339" %}
+{% include linkers/issues.md issues="1325,886,682,596,13339,10286" %}
 [residency]: https://residency.chaincode.com
 [residency announcement]: https://medium.com/@ChaincodeLabs/chaincode-summer-residency-2020-e80811834fa8
 [residency apply]: https://residency.chaincode.com/#apply
+[side-channel txt]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/linking-anonymous-transactions/
+[side-channel vid]: https://youtu.be/JhZUItnyQ0k?t=7706
+[side-channel paper]: https://crypto.stanford.edu/timings/paper.pdf
+[news46 sbc]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
+[axiomatic txt]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/block-rewards/
+[axiomatic vid]: https://youtu.be/BXLcKQ6fLsU?t=8545
+[axiomatic paper]: https://arxiv.org/pdf/1909.10645.pdf
+[boomerang txt]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/boomerang/
+[boomerang vid]: https://youtu.be/cNyB-MJdI20?t=6530
+[boomerang paper]: https://arxiv.org/pdf/1910.01834.pdf
+[sbc]: https://cbr.stanford.edu/sbc20/
+[transcripts]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/
+[day 1]: https://www.youtube.com/watch?v=JhZUItnyQ0k
+[day 2]: https://www.youtube.com/watch?v=BXLcKQ6fLsU
+[day 3]: https://www.youtube.com/watch?v=cNyB-MJdI20
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [sipa nonce updates]: https://github.com/sipa/bips/pull/198
 [lnd 0.9.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.1-beta.rc1
