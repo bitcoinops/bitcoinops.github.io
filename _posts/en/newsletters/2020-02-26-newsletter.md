@@ -7,7 +7,8 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter describes two proposed routing improvements for
+This week's newsletter announces the 2020 Chaincode
+Residency program, describes two proposed routing improvements for
 LN, summarizes three interesting talks from the Stanford Blockchain
 Conference, links to popular questions and answers from the Bitcoin
 StackExchange, and lists several notable changes to popular Bitcoin
@@ -15,7 +16,16 @@ infrastructure software.
 
 ## Action items
 
-*None this week.  Note: the list of releases and release candidates has
+- **Apply to the Chaincode Residency:** Chaincode Labs [announced][residency announcement] its
+  [fifth residency program][residency] to be held in New York this June.
+  The program consists of two seminar and discussion series
+  covering Bitcoin and Lightning protocol development.  Developers
+  interested in contributing to open source projects may
+  [apply][residency apply] for either the Bitcoin series, the LN series,
+  or both.  Applicants from all backgrounds are welcomed, and Chaincode
+  will cover travel and accommodation costs as needed.
+
+*Note: the list of releases and release candidates has
 been moved to its own [section][release rc section].*
 
 ## News
@@ -117,6 +127,9 @@ candidates.*
 
 {% include references.md %}
 {% include linkers/issues.md issues="1325,886,682,596,13339" %}
+[residency]: https://residency.chaincode.com
+[residency announcement]: https://medium.com/@ChaincodeLabs/chaincode-summer-residency-2020-e80811834fa8
+[residency apply]: https://residency.chaincode.com/#apply
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [sipa nonce updates]: https://github.com/sipa/bips/pull/198
 [lnd 0.9.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.1-beta.rc1
