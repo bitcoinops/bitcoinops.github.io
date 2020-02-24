@@ -214,7 +214,22 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What's the relationship between SLIP39 and BIP39?]({{bse}}93413) User Thalis
+  K. differentiates between BIP39 (Bitcoin Improvement Proposal), a
+  specification for the generating of a mnemonic and its conversion into a
+  deterministic wallet seed, and SLIP39 (Satoshi Labs Improvement Proposal),
+  a scheme for splitting a secret into parts using Shamir's Secret Sharing Scheme (SSSS).
+
+- [How is the Bitcoin difficulty granularity encoded?]({{bse}}92990) zndtoshi
+  wonders how the mining difficulty can adjust so granularly when adding more
+  zeros to the header hash would increase difficulty exponentially. Murch
+  explains `nBits`, the relationship between *difficulty* and *target* threshold,
+  and links to [a detailed example and diagram][stack exchange harding target answer].
+
+- [Could Taproot create larger security risks or hinder future protocol adjustments re Quantum threats?]({{bse}}93047)
+  Pieter Wuille addresses some questions about schnorr, taproot, and their
+  relation to Post Quantum Cryptography (PQC). He goes on to explain that some
+  zero-knowledge proof systems might be able to be made quantum-resistant.
 
 ## Releases and release candidates
 
