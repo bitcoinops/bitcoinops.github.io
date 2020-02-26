@@ -24,6 +24,14 @@ standardized:
   - For blog posts, place the file in `_posts/<language code>/`
 - Set the `lang` field to `<language code>`
 - Append `-<language code>` to both the `slug` and `name` fields
+- When linking to material on the Optech site, link to the appropriate
+  translation, if one is available.
+  - When linking to a specific header/bullet within a page, #anchor links are [automatically generated](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/_plugins/auto-anchor.rb).
+      - Due to [limitations](https://github.com/bitcoinops/bitcoinops.github.io/pull/349)
+        in the automatic anchoring process, some languages need HTML comments
+        inserted into the header/bullet to ensure a unique anchor is generated.
+        For example, see the `<!--1-->` [comment](https://github.com/bitcoinops/bitcoinops.github.io/commit/4e450d1a1f72219ec50ad91edae605647164d25d#diff-435f99f277721eff9e2f244149575f41R41)
+        in this Japanese newsletter.
 - To help with reviewing, squash commits where it makes sense
 - Using a commit message similar to `news70: add Japanese translation` helps
   keep translations easily visible in the commit log
