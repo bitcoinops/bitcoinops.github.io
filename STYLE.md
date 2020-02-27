@@ -59,6 +59,7 @@ following abbreviations we assume readers will already know.
 - P2SH-wrapped segwit (Pay to Script Hash wrapped segwit)
 - P2WPKH (Pay to Witness Public Key Hash)
 - P2WSH (Pay to Witness Script Hash)
+- PR (Pull Request)
 - pubkey (public key)
 - RPC (Remote Procedure Call)
 - RFC (Request For Comments, the IETF documents)
