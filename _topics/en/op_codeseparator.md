@@ -107,8 +107,8 @@ primary_sources:
     - title: BIP143 (No FindAndDelete)
       link: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki#No_FindAndDelete
 
-    - title: bip-tapscript (transaction digest)
-      link: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki#Transaction_digest
+    - title: BIP341 (transaction digest)
+      link: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#common-signature-message
 
     - title: Consensus cleanup (specification)
       link: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki#Specification
