@@ -47,9 +47,9 @@
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
 [bip-coshv]: https://github.com/JeremyRubin/bips/blob/op-checkoutputshashverify/bip-coshv.mediawiki
-[bip-schnorr]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
-[bip-taproot]: https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki
-[bip-tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
+[bip-schnorr]: https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
+[bip-taproot]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
+[bip-tapscript]: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki
 [bips repo]: https://github.com/bitcoin/bips/
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
 [BitcoinCore.org]: https://bitcoincore.org/
