@@ -97,7 +97,11 @@ candidates.*
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #17985][] net: Remove forcerelay of rejected txs FIXME:moneyball
+- [Bitcoin Core #17985][] removes dead code that should've relayed
+  transactions from a whitelisted peer even if the transactions would've
+  been rejected from the mempool.  The feature stopped working in
+  Bitcoin Core 0.13.0, with it being unclear whether that was
+  intentional or by accident.
 
 - [Bitcoin Core #17264][] changes the default in RPCs that create or
   process Partially Signed Bitcoin Transactions ([PSBTs][topic psbt])
