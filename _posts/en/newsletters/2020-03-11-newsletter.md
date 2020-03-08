@@ -58,7 +58,13 @@ release candidates.*
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Eclair #1323][] Wumbo support FIXME:jnewbery
+- [Eclair #1323][] allows nodes to advertise that they'll accept channel
+  opens with a value higher than the previous limit of about 0.168 BTC.
+  They do this by using the new `option_support_large_channel` feature
+  in the `init` message, which was recently [added to BOLT 9][merged
+  large_channel].  Supporting channel capacities larger than 0.168 BTC
+  is part of the feature set known informally as "wumbo".  See
+  [Newsletter #22][news22 wumbo] for details.
 
 {% include references.md %}
 {% include linkers/issues.md issues="1323" %}
@@ -67,3 +73,5 @@ release candidates.*
 [wuille overview]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
 [alm feedback]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017668.html
 [segwit signmessage]: /en/bech32-sending-support/#message-signing-support
+[merged large_channel]: /en/newsletters/2020/02/26/#bolts-596
+[news22 wumbo]: /en/newsletters/2018/11/20/#wumbo
