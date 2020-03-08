@@ -18,6 +18,7 @@
 [topic eclipse attacks]: /en/topics/eclipse-attacks/
 [topic eltoo]: /en/topics/eltoo/
 [topic erlay]: /en/topics/erlay/
+[topic generic signmessage]: /en/topics/generic-signmessage/
 [topic hold invoices]: /en/topics/hold-invoices/
 [topic hwi]: /en/topics/hwi/
 [topic mast]: /en/topics/mast/
