@@ -63,28 +63,51 @@ In this section, we summarise a recent Review Club meeting.
   reconnect to between restarts. These persistent connections could mitigate some
   classes of [eclipse attacks][topic eclipse attacks].
 
-    Discussion began by establishing some fundamental concepts of eclipse attacks ("Can
-    someone give a quick explanation of what an eclipse attack is?" _answer: when a
-    node is isolated from all honest peers_; "can someone describe how an adversary
-    would eclipse a node?" _answer: fill up their address list with addresses the
-    attacker owns, then force them to restart or wait for them to restart_; and "if
-    a node is eclipsed, what sort of attacks can an adversary execute on the
-    victim?" _answer: withholding blocks, censoring transactions, and
-    de-anonymizing transaction sources_) before moving on to analyzing the changes
-    in the PR ("how does this PR mitigate an eclipse attack?" _answer: by keeping a
-    list of some of the nodes you were connected to (anchor connections) and then
-    reconnecting to them on restart_; and "what are the conditions for a peer to
-    become and anchor?" _answer: the peer must be a blocks-only peer_.)
+    Discussion began by establishing some fundamental concepts of eclipse attacks:
+
+    - Q: give a quick explanation of what an eclipse attack is?
+
+        _A: when a node is isolated from all honest peers_
+
+    - Q: describe how an adversary would eclipse a node?
+
+        _A: fill up their address list with addresses the attacker owns, then
+        force them to restart or wait for them to restart_
+
+    - Q: if a node is eclipsed, what sort of attacks can an adversary execute on the
+      victim?
+
+        _A: withholding blocks, censoring transactions, and
+        de-anonymizing transaction sources_.
+
+    Then changes in the PR were analyzed:
+
+    - Q: how does this PR mitigate an eclipse attack?
+
+        _A: by keeping a
+        list of some of the nodes you were connected to (anchor connections) and then
+        reconnecting to them on restart_
+
+    - Q: what are the conditions for a peer to become an anchor?
+
+        _A: the peer must be a blocks-only peer_.
 
     Later in the meeting, there was discussion about the trade-offs and design
-    decisions in the PR ("why are only blocks-only peers used as anchors?" _answer:
-    to make network topology inference harder and preserve network privacy_; and
-    "what happens if you choose an anchor who is able to remote-crash your node?"
-    _answer: the malicious peer would be able to repeatedly crash your node on
-    restart_.)
+    decisions in the PR:
 
-    Several attendees at the Review Club meeting left comments on the original PR,
-    where discussion on design decisions continues.
+    - Q: why are only blocks-relay-only peers used as anchors?
+
+        _A: to make network topology inference harder and preserve network
+        privacy_
+
+    - Q: what happens if you choose an anchor who is able to remote-crash your
+      node?
+
+        _A: the malicious peer would be able to repeatedly crash your
+        node on restart_.
+
+    Several Review Club attendees left comments on the PR, where discussion on
+    design decisions continues.
 
 ## Releases and release candidates
 
