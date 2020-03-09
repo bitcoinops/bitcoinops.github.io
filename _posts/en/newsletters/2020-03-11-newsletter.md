@@ -42,6 +42,50 @@ notable merges of popular Bitcoin infrastructure projects.
   they are recommended to review Alm's email and provide feedback on
   their preferred path forward.
 
+## Bitcoin Core PR Review Club
+
+The [Bitcoin Core PR Review Club][] is a weekly IRC meeting for newer
+contributors to the Bitcoin Core project to learn about the review process. An
+experienced Bitcoin Core contributor provides background information about a
+selected PR and then leads a discussion on IRC.
+
+The Review Club is an excellent way to learn about the Bitcoin protocol, the
+Bitcoin Core reference implementation, and the process of making changes to
+Bitcoin. Notes, questions and meeting logs are posted on the website for those
+who are unable to attend in real time, and as a permanent resource for those
+wishing to learn about the Bitcoin Core development process.
+
+In this section, we summarise a recent Review Club meeting.
+
+- **[Try to preserve outbound block-relay-only connections during restart][review club 17428]:**
+  This PR ([#17428][Bitcoin Core #17954]) by Hennadii Stepanov adds the concept
+  of _anchor connections_ to Bitcoin Core, which the node will preferably try to
+  reconnect to between restarts. These persistent connections could mitigate some
+  classes of [eclipse attacks][topic eclipse attacks].
+
+    Discussion began by establishing some fundamental concepts of eclipse attacks ("Can
+    someone give a quick explanation of what an eclipse attack is?" _answer: when a
+    node is isolated from all honest peers_; "can someone describe how an adversary
+    would eclipse a node?" _answer: fill up their address list with addresses the
+    attacker owns, then force them to restart or wait for them to restart_; and "if
+    a node is eclipsed, what sort of attacks can an adversary execute on the
+    victim?" _answer: withholding blocks, censoring transactions, and
+    de-anonymizing transaction sources_) before moving on to analyzing the changes
+    in the PR ("how does this PR mitigate an eclipse attack?" _answer: by keeping a
+    list of some of the nodes you were connected to (anchor connections) and then
+    reconnecting to them on restart_; and "what are the conditions for a peer to
+    become and anchor?" _answer: the peer must be a blocks-only peer_.)
+
+    Later in the meeting, there was discussion about the trade-offs and design
+    decisions in the PR ("why are only blocks-only peers used as anchors?" _answer:
+    to make network topology inference harder and preserve network privacy_; and
+    "what happens if you choose an anchor who is able to remote-crash your node?"
+    _answer: the malicious peer would be able to repeatedly crash your node on
+    restart_.)
+
+    Several attendees at the Review Club meeting left comments on the original PR,
+    where discussion on design decisions continues.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -67,7 +111,7 @@ release candidates.*
   [Newsletter #22][news22 wumbo] for details.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1323" %}
+{% include linkers/issues.md issues="1323,17954" %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [bitcoin core 0.19.1 notes]: https://bitcoincore.org/en/releases/0.19.1/
 [wuille overview]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
@@ -75,3 +119,5 @@ release candidates.*
 [segwit signmessage]: /en/bech32-sending-support/#message-signing-support
 [merged large_channel]: /en/newsletters/2020/02/26/#bolts-596
 [news22 wumbo]: /en/newsletters/2018/11/20/#wumbo
+[Bitcoin Core PR Review Club]: https://bitcoincore.reviews
+[review club 17428]: https://bitcoincore.reviews/17428
