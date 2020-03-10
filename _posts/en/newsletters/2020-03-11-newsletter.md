@@ -65,48 +65,47 @@ In this section, we summarise a recent Review Club meeting.
 
     Discussion began by establishing some fundamental concepts of eclipse attacks:
 
-    - Q: give a quick explanation of what an eclipse attack is?
+    - Q: What is an eclipse attack?
 
-        _A: when a node is isolated from all honest peers_
+        _A: An eclipse attack is when a node has been isolated from all honest peers._
 
-    - Q: describe how an adversary would eclipse a node?
+    - Q: How would an adversary would eclipse a node?
 
-        _A: fill up their address list with addresses the attacker owns, then
-        force them to restart or wait for them to restart_
+        _A: Fill up their address list with addresses the attacker owns, then
+        force them to restart or wait for them to restart._
 
-    - Q: if a node is eclipsed, what sort of attacks can an adversary execute on the
+    - Q: If a node is eclipsed, what sort of attacks can an adversary execute on the
       victim?
 
-        _A: withholding blocks, censoring transactions, and
-        de-anonymizing transaction sources_.
+        _A: Withholding blocks, censoring transactions, and
+        de-anonymizing transaction sources._
 
     Then changes in the PR were analyzed:
 
-    - Q: how does this PR mitigate an eclipse attack?
+    - Q: How does this PR mitigate an eclipse attack?
 
-        _A: by keeping a
-        list of some of the nodes you were connected to (anchor connections) and then
-        reconnecting to them on restart_
+        _A: By keeping a list of some of the nodes you were connected to
+        (anchor connections) and then reconnecting to them on restart._
 
-    - Q: what are the conditions for a peer to become an anchor?
+    - Q: What are the conditions for a peer to become an anchor?
 
-        _A: the peer must be a blocks-only peer_.
+        _A: The peer must be a blocks-relay-only peer_.
 
     Later in the meeting, there was discussion about the trade-offs and design
     decisions in the PR:
 
-    - Q: why are only blocks-relay-only peers used as anchors?
+    - Q: Why are only blocks-relay-only peers used as anchors?
 
-        _A: to make network topology inference harder and preserve network
-        privacy_
+        _A: To make network topology inference harder and preserve network
+        privacy._
 
-    - Q: what happens if you choose an anchor who is able to remote-crash your
+    - Q: What happens if you choose an anchor that is able to remote-crash your
       node?
 
-        _A: the malicious peer would be able to repeatedly crash your
-        node on restart_.
+        _A: The malicious peer would be able to repeatedly crash your
+        node on restart._
 
-    Several Review Club attendees left comments on the PR, where discussion on
+    Several Review Club participants commented on the PR, where discussion on
     design decisions continues.
 
 ## Releases and release candidates
