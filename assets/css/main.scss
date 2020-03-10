@@ -251,3 +251,11 @@ div.localization
 .pc125 {
   font-size: 125%;
 }
+
+.review-club-questions+ul {
+  list-style-type: none;
+}
+
+.review-club-questions+ul details summary {
+  font-style: italic;
+}

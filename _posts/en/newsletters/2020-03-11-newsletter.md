@@ -44,69 +44,60 @@ notable merges of popular Bitcoin infrastructure projects.
 
 ## Bitcoin Core PR Review Club
 
-The [Bitcoin Core PR Review Club][] is a weekly IRC meeting for newer
+_The [Bitcoin Core PR Review Club][] is a weekly IRC meeting for newer
 contributors to the Bitcoin Core project to learn about the review process. An
 experienced Bitcoin Core contributor provides background information about a
-selected PR and then leads a discussion on IRC.
+selected PR and then leads a discussion on IRC._
 
-The Review Club is an excellent way to learn about the Bitcoin protocol, the
+_The Review Club is an excellent way to learn about the Bitcoin protocol, the
 Bitcoin Core reference implementation, and the process of making changes to
 Bitcoin. Notes, questions and meeting logs are posted on the website for those
 who are unable to attend in real time, and as a permanent resource for those
-wishing to learn about the Bitcoin Core development process.
+wishing to learn about the Bitcoin Core development process._
 
-In this section, we summarise a recent Review Club meeting.
+_In this section, we summarise a recent Bitcoin Core PR Review Club meeting,
+highlighting some of the important questions and answers._
 
-- **[Try to preserve outbound block-relay-only connections during restart][review club 17428]:**
-  This PR ([#17428][Bitcoin Core #17954]) by Hennadii Stepanov adds the concept
-  of _anchor connections_ to Bitcoin Core, which the node will preferably try to
-  reconnect to between restarts. These persistent connections could mitigate some
-  classes of [eclipse attacks][topic eclipse attacks].
+**[Try to preserve outbound block-relay-only connections during restart][review
+club 17428]** is a PR ([#17428][Bitcoin Core #17954]) by Hennadii Stepanov
+which adds the concept of _anchor connections_ to Bitcoin Core, which the node
+will preferably try to reconnect to between restarts. These persistent
+connections could mitigate some classes of [eclipse attacks][topic eclipse
+attacks].
 
-    Discussion began by establishing some fundamental concepts of eclipse attacks:
+Discussion began by establishing some fundamental concepts of eclipse attacks:
 
-    - Q: What is an eclipse attack?
+<div class="review-club-questions"></div>
+- <details><summary>What is an eclipse attack?</summary>
+  An eclipse attack is when a node has been isolated from all honest peers.</details>
+- <details><summary>How would an adversary eclipse a node?</summary>
+  Fill up their address list with addresses the attacker owns, then force them to
+  restart or wait for them to restart.</details>
+- <details><summary>If a node is eclipsed, what sort of attacks can an adversary execute on the victim?</summary>
+  Withholding blocks, censoring transactions, and de-anonymizing transaction
+  sources.</details>
 
-        _A: An eclipse attack is when a node has been isolated from all honest peers._
+Then changes in the PR were analyzed:
 
-    - Q: How would an adversary would eclipse a node?
+<div class="review-club-questions"></div>
+- <details><summary>How does this PR mitigate an eclipse attack?</summary>
+  By keeping a list of some of the nodes you were connected to (anchor
+  connections) and then reconnecting to them on restart.</details>
+- <details><summary>What are the conditions for a peer to become an anchor?</summary>
+  The peer must be a blocks-relay-only peer.</details>
 
-        _A: Fill up their address list with addresses the attacker owns, then
-        force them to restart or wait for them to restart._
+Later in the meeting, there was discussion about the trade-offs and design
+decisions in the PR:
 
-    - Q: If a node is eclipsed, what sort of attacks can an adversary execute on the
-      victim?
+<div class="review-club-questions"></div>
+- <details><summary>Why are only blocks-relay-only peers used as anchors?</summary>
+  To make network topology inference harder and preserve network privacy.</details>
+- <details><summary>What happens if you choose an anchor that is able to remote-crash your node?</summary>
+  The malicious peer would be able to repeatedly crash your node on
+  restart.</details>
 
-        _A: Withholding blocks, censoring transactions, and
-        de-anonymizing transaction sources._
-
-    Then changes in the PR were analyzed:
-
-    - Q: How does this PR mitigate an eclipse attack?
-
-        _A: By keeping a list of some of the nodes you were connected to
-        (anchor connections) and then reconnecting to them on restart._
-
-    - Q: What are the conditions for a peer to become an anchor?
-
-        _A: The peer must be a blocks-relay-only peer_.
-
-    Later in the meeting, there was discussion about the trade-offs and design
-    decisions in the PR:
-
-    - Q: Why are only blocks-relay-only peers used as anchors?
-
-        _A: To make network topology inference harder and preserve network
-        privacy._
-
-    - Q: What happens if you choose an anchor that is able to remote-crash your
-      node?
-
-        _A: The malicious peer would be able to repeatedly crash your
-        node on restart._
-
-    Several Review Club participants commented on the PR, where discussion on
-    design decisions continues.
+Several Review Club participants commented on the PR, where discussion on
+design decisions continues.
 
 ## Releases and release candidates
 
