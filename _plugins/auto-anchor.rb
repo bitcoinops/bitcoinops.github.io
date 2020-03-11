@@ -21,7 +21,8 @@ Jekyll::Hooks.register :documents, :pre_render do |post|
         ## Remove double-quotes from titles before attempting to slugify
         title.gsub!('"', '')
         ## Use Liquid/Jekyll slugify filter to choose our id
-        id_prefix = '- {:#{{ "' + title + '" | slugify: "latin" }}} '
+        slug = "\#{{ \"#{title}\" | slugify: 'latin' }}"
+        id_prefix = "- {:#{slug} .anchor-list} <a href=\"#{slug}\" class=\"anchor-list-link\">●</a>"
         string.sub!(/-/, id_prefix)
       end
     end
