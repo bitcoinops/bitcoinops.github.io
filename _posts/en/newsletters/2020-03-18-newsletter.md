@@ -32,7 +32,19 @@ client software, and popular Bitcoin infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Coinbase withdrawal transactions now using batching:** Coinbase has rolled
+out [batch withdrawals][coinbase batching blog] that they estimate will reduce
+their load on the Bitcoin network by 50%. Instead of each withdrawal payment
+generating a single onchain transaction, multiple payments will be
+[combined into a single transaction][scaling payment batching] once every 10 minutes.
+
+- **Bitstamp supports bech32:** Bitstamp users can now benefit from using native
+[bech32][topic bech32] addresses after the exchange announced support for both
+[bech32 deposits and withdrawals][bitstamp bech32 blog].
+
+- **Deribit supports bech32 withdrawals:** [Deribit announced][deribit bech32
+withdrawal tweet] that its exchange users can now withdraw bitcoins to bech32
+native addresses.
 
 ## Notable code and documentation changes
 
@@ -71,3 +83,6 @@ FIXME:bitschmidty
 [club #16902]: https://bitcoincore.reviews/16902/
 [news75 watchtower]: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
 [news85 ln stuck]: /en/newsletters/2020/02/19/#c-lightning-3500
+[coinbase batching blog]: https://blog.coinbase.com/coinbase-rolls-out-bitcoin-transaction-batching-5f6d09b8b045
+[bitstamp bech32 blog]: https://www.bitstamp.net/article/weve-added-support-bech32-bitcoin-addresses-bitsta/
+[deribit bech32 withdrawal tweet]: https://twitter.com/DeribitExchange/status/1234904442169851909
