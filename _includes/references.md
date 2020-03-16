@@ -43,6 +43,7 @@
 [topic transaction pinning]: /en/topics/transaction-pinning/
 [topic v2 p2p transport]: /en/topics/v2-p2p-transport/
 [topic watchtowers]: /en/topics/watchtowers/
+[scaling payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
