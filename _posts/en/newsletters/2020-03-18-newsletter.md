@@ -64,7 +64,12 @@ native addresses.
   information, see the Bitcoin Core PR Review Club [meeting notes][club
   #16902] about this PR.
 
-- [LND #3821][] [anchor] pluggable anchor commitments FIXME:dongcarl
+- [LND #3821][] adds [anchor commitments][topic anchor outputs] for
+  LN channels and enables them by default if both participating nodes of a
+  channel signal support. Anchor commitment transactions can be fee
+  bumped unilaterally by either party, which is useful because
+  commitment transactions might be broadcast a long time after they
+  commit to their on-chain feerate.
 
 - [LND #3963][] adds detailed [documentation][lnd op safety] about how
   to use LND safely.
