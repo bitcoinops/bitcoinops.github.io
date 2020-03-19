@@ -1,8 +1,10 @@
 all: test-before-build build test-after-build
 production: all production-test
 
-preview:
+clean:
 	bundle exec jekyll clean
+
+preview:
 	bundle exec jekyll serve --future --drafts --unpublished --incremental
 
 build:
