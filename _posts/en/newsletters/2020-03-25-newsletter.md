@@ -31,7 +31,25 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why does the banscore default to 100?]({{bse}}93795) User Anonymous
+describes some history behind `banscore`, which protects nodes
+from misbehaving peers. Although some offenses result in a 100
+point increase---and thus the immediate banning of the offending peer under the default
+`banscore` setting---other offenses detailed in
+[`net_processing.cpp`][bitcoin net processing] have different scores.
+
+- [Why is block 620826's timestamp 1 second before block 620825?]({{bse}}93696)
+Andrew Chow and Raghav Sood clarify that a block header's timestamp field is not
+required to have a greater value than previous blocks. The requirements are
+instead that a new block's timestamp must be greater than the median
+timestamp of the past 11 blocks but no later than two hours after the
+present time according to the clock on the computer running the node.
+
+- [Where can I find the miniscript policy language specification?]({{bse}}93764)
+Andrew Chow and Pieter Wuille explain that there is not a specification for how
+the [miniscript][topic miniscript] policy language is compiled to miniscript and
+that both the current C++ and Rust implementations effectively try every
+possibility and choose the miniscript resulting in the smallest `scriptWitness` size.
 
 ## Notable code and documentation changes
 
@@ -54,3 +72,4 @@ FIXME:bitschmidty
 
 {% include references.md %}
 {% include linkers/issues.md issues="1339,3697,4051,751" %}
+[bitcoin net processing]: https://github.com/bitcoin/bitcoin/blob/master/src/net_processing.cpp
