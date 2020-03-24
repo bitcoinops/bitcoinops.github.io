@@ -207,11 +207,12 @@ endcomment %}
 - [C-Lightning #3309][] adds support for multipath payments as
   [described][mpp deployed] in the *news* section above.
 
-- [LND #3697][] sets the default minimum HTLC value to 0 millisatoshis
+- [LND #3697][] sets the default minimum HTLC value to 1 millisatoshis
   (msat) for new channels, down from a previous default of 1,000 msat.
   The minimum HTLC value can't be changed once a channel is opened, so
   this change allows channels using this setting to accept sub-satoshi
-  payments.
+  payments.  [Edit: a previous version of this paragraph incorrectly
+  claimed the new minimum was 0 msat; the correct value is 1 msat.]
 
 - [LND #3785][] mostly fixes the issue mentioned in [Newsletter
   #74][news74 c-lightning-3264] where C-Lightning and LND used different
