@@ -68,7 +68,13 @@ possibility and choose the miniscript resulting in the smallest `scriptWitness` 
   part of the `ListPeers` results, making it easier to diagnose
   problems.
 
-- [BOLTs #751][] Allow More than one Address of a given type FIXME:dongcarl
+- [BOLTs #751][] updates [BOLT7][] to allow nodes to announce multiple
+  IP addresses of a given type (e.g. IPv4, IPv6, or Tor). This ensures
+  that multi-homed nodes can better inform the network of their network
+  connectivity.  Several LN implementations were already announcing or
+  allowing multiple addresses of a given type, so this change brings the
+  BOLT specification in line with what the implementations were already
+  doing.
 
 {% include references.md %}
 {% include linkers/issues.md issues="1339,3697,4051,751" %}
