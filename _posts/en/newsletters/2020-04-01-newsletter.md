@@ -114,7 +114,9 @@ notable changes to popular Bitcoin infrastructure projects.
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #4078][] Merge pull request #4078 from yyforyongyu/bitcoind-estimatemode FIXME:bitschmidty
+- [LND #4078][] adds an `estimatemode` configuration setting (`CONSERVATIVE`
+  or `ECONOMICAL`) which is used to tailor the fee estimation approach when
+  retrieving fee estimates from an underlying `bitcoind` backend.
 
 {% include references.md %}
 {% include linkers/issues.md issues="903,4078,3865" %}
