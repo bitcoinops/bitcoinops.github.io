@@ -33,6 +33,7 @@
 [topic reproducible builds]: /en/topics/reproducible-builds/
 [topic rbf]: /en/topics/replace-by-fee/
 [topic schnorr signatures]: /en/topics/schnorr-signatures/
+[topic sidechains]: /en/topics/sidechains/
 [topic sighash_noinput]: /en/topics/sighash_noinput/
 [topic signet]: /en/topics/signet/
 [topic splicing]: /en/topics/splicing/
