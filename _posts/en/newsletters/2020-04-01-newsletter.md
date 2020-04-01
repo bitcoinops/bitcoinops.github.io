@@ -29,7 +29,7 @@ notable changes to popular Bitcoin infrastructure projects.
   collude with a delegated signer (such as previous delegates Alice or
   Bob).  A delegated signer can always spend the UTXO onchain without
   needing permission from the trusted third party, arguably making
-  statechains less trusted than federated [sidechains][topic sidechains]
+  statechains less trusted than federated [sidechains][topic sidechains].
   Because anyone who was ever a delegate can
   trigger an onchain spend, statechains are designed to use the
   [eltoo][topic eltoo] mechanism to ensure an onchain spend by the most
