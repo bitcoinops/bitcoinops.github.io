@@ -115,6 +115,18 @@ issues, and future improvements and their interactions with the
 [wtxid transaction relay][] proposal. For more details, see the the
 [study notes and meeting log][review club 18238].
 
+## Releases and release candidates
+
+*New releases and release candidates for popular Bitcoin infrastructure
+projects.  Please consider upgrading to new releases or helping to test
+release candidates.*
+
+- [Eclair 0.3.4][] was released with support for opening channels over
+  0.168 BTC in value (see [Newsletter #88][news88 eclair1323]) and
+  [reproducible builds][topic reproducible builds] (see [Newsletter
+  #87][eclair determ]).  Also included are bug fixes and many other
+  improvements.  See their [release notes][eclair 0.3.4] for details.
+
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],
@@ -241,3 +253,5 @@ hidden service if enabled at [the command line][watchtower tor].
 [review club 18238]: https://bitcoincore.reviews/18238.html
 [wtxid transaction relay]: https://bitcoincore.reviews/18044
 [watchtower tor]: https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md#tor-hidden-services
+[eclair 0.3.4]: https://github.com/ACINQ/eclair/releases/tag/v0.3.4
+[eclair determ]: /en/newsletters/2020/03/04/#eclair-1307
