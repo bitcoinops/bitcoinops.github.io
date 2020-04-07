@@ -159,8 +159,14 @@ FIXME:jnewbery (write or delete section)
 - [LND #4087][] Merge pull request #4087 from Crypt-iQ/wt_hs_0310 FIXME:moneyball
   FIXME: suggested link to https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md#tor-hidden-services
 
-- [LND #4079][] Merge pull request #4079 from guggero/psbt-chanfunding FIXME:dongcarl
-  FIXME: link to https://github.com/lightningnetwork/lnd/blob/master/docs/psbt.md
+- [LND #4079][] adds support for funding channels with [Partially Signed
+  Bitcoin Transactions][topic psbt] (PSBTs), allowing any
+  PSBT-compatible wallet to fund a channel open. Previously, channel
+  funding was only possible with LND's internal wallet. Once a channel
+  has been funded, LND manages all other operations like normal.  Users
+  can supply the `--psbt` flag to `lncli openchannel` to start an
+  interactive dialog for completing the funding flow; see the
+  [documentation][lnd psbt] for details.
 
 - [LND #3970][] adds support for [multipath payments][topic multipath
   payments] to the LND's payment lifecycle system, which is the part of
@@ -189,3 +195,4 @@ FIXME:jnewbery (write or delete section)
 [uSEkaCIO email]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
 [jonasnick otves]: https://github.com/jonasnick/secp256k1/pull/14/
 [nkohen otves]: https://github.com/bitcoin-s/bitcoin-s/pull/1302
+[lnd psbt]: //github.com/lightningnetwork/lnd/blob/master/docs/psbt.md
