@@ -198,8 +198,8 @@ issues, and future improvements and their interactions with the
     nodes to request and send invoices through the LN; see [Newsletter
     #72][news72 offers] for details.
 
-- [LND #4087][] Merge pull request #4087 from Crypt-iQ/wt_hs_0310 FIXME:moneyball
-  FIXME: suggested link to https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md#tor-hidden-services
+- [LND #4087][] adds support for automatically creating a watchtower tor
+hidden service if enabled at [the command line][watchtower tor].
 
 - [LND #4079][] adds support for funding channels with [Partially Signed
   Bitcoin Transactions][topic psbt] (PSBTs), allowing any
@@ -240,3 +240,4 @@ issues, and future improvements and their interactions with the
 [lnd psbt]: //github.com/lightningnetwork/lnd/blob/master/docs/psbt.md
 [review club 18238]: https://bitcoincore.reviews/18238.html
 [wtxid transaction relay]: https://bitcoincore.reviews/18044
+[watchtower tor]: https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md#tor-hidden-services
