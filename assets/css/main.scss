@@ -252,20 +252,6 @@ div.localization
   font-size: 125%;
 }
 
-.review-club-questions+ul {
-  list-style-type: none;
-}
-
-.review-club-questions+ul details {
-  border: thin solid silver;
-  margin: 2pt;
-  padding: 2pt;
-}
-
-.review-club-questions+ul details summary {
-  font-style: italic;
-}
-
 .anchor-list {
   list-style: none;
 }
@@ -276,4 +262,19 @@ div.localization
 
 ul.li {
   list-style: disc;
+}
+
+:not(.email).qa_details ul {
+  list-style-type: none;
+}
+
+.qa_details details {
+  border: thin solid silver;
+  margin: 2pt;
+  padding: 2pt;
+}
+
+.qa_details details summary {
+  font-style: italic;
+  cursor: pointer;
 }
