@@ -79,36 +79,42 @@ to obtain the transaction as fast as possible from another peer.
 
 Discussion began with fundamental reasons for the PR:
 
-<div class="review-club-questions"></div>
-- <details><summary>Why could retrying <code>notfound</code> more quickly be helpful?</summary>
-  DoS prevention, transaction propagation speed, privacy, and future <code>mapRelay</code>
-  removal.</details>
-- <details><summary>What is a potential DoS attack concern?</summary>
-  Nodes with small mempools could inadvertently slow transaction relay to
-  peers by announcing a transaction and then not being able to deliver it.</details>
-- <details markdown="1"><summary>Why is transaction propagation speed important?</summary>
-  Short delays in seconds aren't an issue (and can even be desirable for
-  privacy), but larger delays in minutes can hurt propagation of transactions and
-  relay of [BIP152][] compact blocks.
-  </details>
-- <details><summary>When and why was <code>mapRelay</code> originally added?</summary>
-  <code>mapRelay</code> was present in the first version of Bitcoin. It ensures that if
-  a node announced a transaction, it can be downloaded even if it is confirmed in
-  a block between being announced and the peer requesting it.</details>
-- <details><summary>Describe one issue with removing <code>mapRelay</code>?</summary>
-  It could cause requested transactions in honest situations to more often be
-  <code>notfound</code> with delays of up to 2 minutes, hurting propagation.</details>
+{% include functions/details-list.md
+  q0="Why could retrying `notfound` more quickly be helpful?"
+  a0="DoS prevention, transaction propagation speed, privacy, and future
+      `mapRelay` removal."
+
+  q1="What is a potential DoS attack concern?"
+  a1="Nodes with small mempools could inadvertently slow transaction relay to
+      peers by announcing a transaction and then not being able to deliver it."
+
+  q2="Why is transaction propagation speed important?"
+  a2="Short delays in seconds aren't an issue (and can even be desirable for
+      privacy), but larger delays in minutes can hurt propagation of transactions and
+      relay of [BIP152][] compact blocks."
+
+  q3="When and why was `mapRelay` originally added?"
+  a3="`mapRelay` was present in the first version of Bitcoin. It ensures that if
+     a node announced a transaction, it can be downloaded even if it is confirmed in
+     a block between being announced and the peer requesting it."
+
+  q4="Describe one issue with removing `mapRelay`?"
+  a4="It could cause requested transactions in honest situations to more often be
+      `notfound` with delays of up to 2 minutes, hurting propagation."
+%}
 
 Later in the meeting, the `TxDownloadState` data structure was discussed:
 
-<div class="review-club-questions"></div>
-- <details><summary>Describe the role of the <code>TxDownloadState</code> struct?</summary>
-    A per-peer state machine, with timers, to coordinate requesting transactions
-    from peers.</details>
-- <details><summary>How could we improve <code>TxDownloadState</code> to
-  make it less likely to introduce transaction relay bugs in future?</summary>
-  Add internal consistency checks to the structure, or replace it with a
-  class with a well-defined interface.</details>
+{% include functions/details-list.md
+  q0="Describe the role of the `TxDownloadState` struct?"
+  a0="A per-peer state machine, with timers, to coordinate requesting transactions
+      from peers."
+
+  q1="How could we improve `TxDownloadState` to make it less likely to
+      introduce transaction relay bugs in future?"
+  a1="Add internal consistency checks to the structure, or replace it with a
+      class with a well-defined interface."
+%}
 
 Discussion then delved deeply into the PR implementation, potential
 issues, and future improvements and their interactions with the

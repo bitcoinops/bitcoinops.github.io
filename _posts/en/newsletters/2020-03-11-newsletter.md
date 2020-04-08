@@ -69,34 +69,43 @@ attacks].
 
 Discussion began by establishing some fundamental concepts of eclipse attacks:
 
-<div class="review-club-questions"></div>
-- <details><summary>What is an eclipse attack?</summary>
-  An eclipse attack is when a node has been isolated from all honest peers.</details>
-- <details><summary>How would an adversary eclipse a node?</summary>
-  Fill up their IP address list with addresses the attacker owns, then force them to
-  restart or wait for them to restart.</details>
-- <details><summary>If a node is eclipsed, what sort of attacks can an adversary execute on the victim?</summary>
-  Withholding blocks, censoring transactions, and de-anonymizing transaction
-  sources.</details>
+{% include functions/details-list.md
+  q0="What is an eclipse attack?"
+  a0="An eclipse attack is when a node has been isolated from all honest
+      peers."
+
+  q1="How would an adversary eclipse a node?"
+  a1="Fill up their IP address list with addresses the attacker owns, then force them to
+      restart or wait for them to restart."
+
+  q2="If a node is eclipsed, what sort of attacks can an adversary
+      execute on the victim?"
+  a2="Withholding blocks, censoring transactions, and de-anonymizing transaction
+      sources."
+%}
 
 Then changes in the PR were analyzed:
 
-<div class="review-club-questions"></div>
-- <details><summary>How does this PR mitigate an eclipse attack?</summary>
-  By keeping a list of some of the nodes you were connected to (anchor
-  connections) and then reconnecting to them on restart.</details>
-- <details><summary>What are the conditions for a peer to become an anchor?</summary>
-  The peer must be a blocks-relay-only peer.</details>
+{% include functions/details-list.md
+  q0="How does this PR mitigate an eclipse attack?"
+  a0="By keeping a list of some of the nodes you were connected to (anchor
+      connections) and then reconnecting to them on restart."
+
+  q1="What are the conditions for a peer to become an anchor?"
+  a1="The peer must be a blocks-relay-only peer."
+%}
 
 Later in the meeting, there was discussion about the trade-offs and design
 decisions in the PR:
 
-<div class="review-club-questions"></div>
-- <details><summary>Why are only blocks-relay-only peers used as anchors?</summary>
-  To make network topology inference harder and preserve network privacy.</details>
-- <details><summary>What happens if you choose an anchor that is able to remote-crash your node?</summary>
-  The malicious peer would be able to repeatedly crash your node on
-  restart.</details>
+{% include functions/details-list.md
+  q0="Why are only blocks-relay-only peers used as anchors?"
+  a0="To make network topology inference harder and preserve network privacy."
+
+  q1="What happens if you choose an anchor that is able to remote-crash your node?"
+  a1="The malicious peer would be able to repeatedly crash your node on
+      restart."
+%}
 
 Several Review Club participants commented on the PR, where discussion on
 design decisions continues.
