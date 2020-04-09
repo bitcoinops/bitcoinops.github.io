@@ -137,14 +137,14 @@ public key may leak the secret key through an (invalid) signature."
     channel without affecting the spendability of other funds already in
     the channel).  Replies to Neigut's proposal included:
 
-    - A suggestion to set the nLockTime field's value to a recent or
+    * A suggestion to set the nLockTime field's value to a recent or
       upcoming block height in order to implement anti-fee sniping which
       helps disincentivize block chain reorganizations and which will
       help funding transactions blend in with other wallets that have
       already implement anti-fee sniping (including LND's sweeping mode,
       see [Newsletter #18][news18 lnd afs]).
 
-    - More broadly, a suggestion to implement a common set of values for
+    * More broadly, a suggestion to implement a common set of values for
       free parameters in a transaction (such as nVersion, nSequence,
       nLockTime, input ordering, and output ordering) with other
       collaborative transaction creation systems (such as
@@ -153,12 +153,12 @@ public key may leak the secret key through an (invalid) signature."
       created (especially if [taproot][topic taproot] is adopted, as
       mutual LN close transactions can look like single-sig spends).
 
-    - A suggestion to communicate proposed transaction details using
+    * A suggestion to communicate proposed transaction details using
       [BIP174][] Partially-Signed Bitcoin Transactions ([PSBTs][topic
       psbt]).  Though Neigut replied that she thinks PSBT is "a bit
       overweight for transaction collaboration between two peers."
 
-    - {:#podle} A sub-discussion about how to avoid probing where Mallory starts
+    * {:#podle} A sub-discussion about how to avoid probing where Mallory starts
       the process of opening a dual-funded channel with Bob but then
       aborts after she receives the identity of one of Bob's UTXOs.
       By aborting before the funding transaction is complete, Mallory

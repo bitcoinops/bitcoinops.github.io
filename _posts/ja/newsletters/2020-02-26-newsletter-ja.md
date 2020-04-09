@@ -33,7 +33,7 @@ The Stanford Center for Blockchain Researchは先週、毎年恒例の[Stanford 
 
 プログラムをまとめて、講演のビデオをオンライン([day 1][]、[day 2][]、[day 3][])で提供してくれた会議主催者、および[transcripts][]を提供してくれたBryan Bishopに感謝します。
 
-- **報酬をブロックする公理的アプローチ:** Tim Roughgardenは、Xi ChenとChristos Papadimitriouに、[メカニズム設計][mechanism design]理論の観点からBitcoinのブロック報酬配分ルールを分析した研究を発表しました（[transcript][axiomatic txt]、[video][axiomatic vid]、[paper][axiomatic paper]）。
+- **<!--an-axiomatic-approach-to-block-rewards-->報酬をブロックする公理的アプローチ:** Tim Roughgardenは、Xi ChenとChristos Papadimitriouに、[メカニズム設計][mechanism design]理論の観点からBitcoinのブロック報酬配分ルールを分析した研究を発表しました（[transcript][axiomatic txt]、[video][axiomatic vid]、[paper][axiomatic paper]）。
 
     Roughgardenは、よく知られている「ゲーム理論」の逆として「メカニズム設計」を導入することから彼の講演を始めました。ゲーム理論では、ゲームのルールと、それらのルールがもたらす均衡と行動に関する理由を説明します。対照的に、メカニズムの設計は意図した結果から始まり、その望ましい結果をもたらすゲームルールの設計を試みます。Roughgardenは「好きな目的関数を選択して最適なプロトコルが選定できるような、ブロックチェーンプロトコルの空間の数学的記述があればいいのではないでしょうか。」と述べています。またRoughgardenは、ブロックチェーンの報酬メカニズムを設計するときに、望ましい動作に対して3つの「軸」を提供します。
 
@@ -57,7 +57,7 @@ The Stanford Center for Blockchain Researchは先週、毎年恒例の[Stanford 
 
     この論文では、シュノア署名スキームに基づいて、[アダプター署名][adaptor signatures]を使用したビットコインでのブーメラン契約の実装について説明します。Neuはまた、ECDSAを介してアダプター署名を作成することが可能であるため、現在のブーメラン契約は理論的にはBitcoinで実装できると述べています。
 
-- **匿名トランザクションに対するリモートサイドチャネル攻撃:** Florian Tramerは、Dan BonehおよびKenneth G. Patersonと、MoneroおよびZcashでのユーザープライバシーに対するサイドチャネルおよびトラフィック分析攻撃のタイミングに関する研究を発表しました（[transcript][side-channel txt]、[video][side-channel vid]、[paper][side-channel paper]）。
+- **<!--remote-side-channel-attacks-on-anonymous-transactions2-->匿名トランザクションに対するリモートサイドチャネル攻撃:** Florian Tramerは、Dan BonehおよびKenneth G. Patersonと、MoneroおよびZcashでのユーザープライバシーに対するサイドチャネルおよびトラフィック分析攻撃のタイミングに関する研究を発表しました（[transcript][side-channel txt]、[video][side-channel vid]、[paper][side-channel paper]）。
 
     MoneroおよびZcashは、暗号技術（Moneroの[リング署名][ring signatures]および[bulletproofs][]およびZcashの[zk-SNARKs][]）を使用して送信者のID、受信者のID、および金額を隠すプライバシー重視の暗号通貨です。Tramerなどは、 これらの暗号構造が正しい場合でも、実装の詳細により、アイデンティティと量に関する情報がネットワーク上の悪意のある者に漏洩する可能性があることを示します。
 
@@ -77,7 +77,7 @@ endcomment %}
 
 - [SLIP39とBIP39の関係は？]({{bse}}93413) ユーザーThalis K.は、ニーモニックの生成と決定論的ウォレットシードへの変換の仕様であるBIP39（ビットコイン改善提案）とSLIP39 （Satoshi Labs Improvement Proposal）、ShamirのSecret Sharing Scheme（SSSS）を使用して秘密を部分に分割するスキームを区別して説明しています。
 
-- [ビットコインの難易度の粒度はどのようにエンコードされますか？]({{bse}}92990) zndtoshiは、ヘッダーハッシュにゼロを追加すると難易度が指数関数的に増加する場合、マイニングの難易度をどのように細かく調整できるかを疑問に挙げています。Murchは`nBits`、*難易度*と*ターゲット*しきい値の関係、および[詳細な例と図][stack exchange harding target answer]へのリンクについて説明しています。
+- [<!--how-is-the-bitcoin-difficulty-granularity-encoded-->ビットコインの難易度の粒度はどのようにエンコードされますか？]({{bse}}92990) zndtoshiは、ヘッダーハッシュにゼロを追加すると難易度が指数関数的に増加する場合、マイニングの難易度をどのように細かく調整できるかを疑問に挙げています。Murchは`nBits`、*難易度*と*ターゲット*しきい値の関係、および[詳細な例と図][stack exchange harding target answer]へのリンクについて説明しています。
 
 - [Taprootは、より大きなセキュリティリスクを生み出したり、Quantum脅威に対する将来のプロトコル調整を妨げたりする可能性がありますか？]({{bse}}93047) Pieter Wuilleは、schnorr、taproot、およびそれらのPost Quantum Cryptography（PQC）との関係に関するいくつかの質問に回答しています。彼はさらに、いくつかのゼロ知識証明システムを量子耐性にできる可能性があることを説明しています。
 

@@ -128,7 +128,7 @@ backported to its pending release.*
   Optech's [RBF usability study][] and so allows fee bumps made by
   Bitcoin Core users to succeed more often.
 
-- C-Lightning PRs [#2541][c-lightning #2541], [#2545][c-lightning
+- C-Lightning PRs [<!--c-lightning-->#2541][c-lightning #2541], [#2545][c-lightning
   #2545], and [#2546][c-lightning #2546] implement multiple changes to
   the gossip subsystem used for tracking which channels are available
   and calculating routes across them.  This work was motivated by the

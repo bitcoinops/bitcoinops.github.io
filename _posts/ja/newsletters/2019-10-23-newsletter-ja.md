@@ -15,7 +15,7 @@ lang: ja
 
 ## Action items
 
-- **リリース候補のテスト支援:** 経験豊富なユーザーは一般公開前に [Bitcoin Core][Bitcoin Core 0.19.0] と [C-Lightning][c-lightning 0.7.3].のリリース候補(RC)のテストの支援をお願いします。
+- **<!--help-test-release-candidates-->リリース候補のテスト支援:** 経験豊富なユーザーは一般公開前に [Bitcoin Core][Bitcoin Core 0.19.0] と [C-Lightning][c-lightning 0.7.3].のリリース候補(RC)のテストの支援をお願いします。
 
 ## News
 

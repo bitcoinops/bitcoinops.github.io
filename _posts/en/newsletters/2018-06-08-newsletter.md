@@ -80,31 +80,31 @@ A new maintenance release of Bitcoin Core is coming soon with a change to relay 
 
 ## On this day in Bitcoin commit history…
 
-- **2017:** Andrew Chow authored commit [ec6902d][commitec6902d] paving the way to remove the last parts of the confusing “safe mode” functionality added to Bitcoin 0.3.x after the [value overflow incident][value overflow].
+- **<!--n-->2017:** Andrew Chow authored commit [ec6902d][commitec6902d] paving the way to remove the last parts of the confusing “safe mode” functionality added to Bitcoin 0.3.x after the [value overflow incident][value overflow].
 
 [commitec6902d]: https://github.com/bitcoin/bitcoin/commit/ec6902d0ea2bbe75179684fc71849d5e34647a14
 [value overflow]: https://en.bitcoin.it/wiki/Value_overflow_incident
 
-- **2016:** Luke Dashjr’s PR [#7935][PR7953] was merged adding support for [BIP9] versionbits to the GetBlockTemplate RPC call, allowing miners to signal support for future soft forks—such as the soft fork that activated [BIP141] segregated witness.
+- **<!--n-->2016:** Luke Dashjr’s PR [#7935][PR7953] was merged adding support for [BIP9] versionbits to the GetBlockTemplate RPC call, allowing miners to signal support for future soft forks—such as the soft fork that activated [BIP141] segregated witness.
 
 [PR7953]: https://github.com/bitcoin/bitcoin/pull/7935
 [BIP9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
 [BIP141]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
 
-- **2015:** Gavin Andresen authored commit [65b94545][commit65b94545] to refine the criteria a node uses to detect that it may no longer be receiving blocks from the best block chain.
+- **<!--n-->2015:** Gavin Andresen authored commit [65b94545][commit65b94545] to refine the criteria a node uses to detect that it may no longer be receiving blocks from the best block chain.
 
 [commit65b94545]: https://github.com/bitcoin/bitcoin/commit/65b94545036ae6e38e79e9c7166a3ba1ddb83f66
 
-- **2014:** Cozz Lovan authored commit [95a93836][commit95a93836] removing a legacy part of the GUI that assumed any transaction fee below 0.01 BTC was a low transaction fee.
+- **<!--n-->2014:** Cozz Lovan authored commit [95a93836][commit95a93836] removing a legacy part of the GUI that assumed any transaction fee below 0.01 BTC was a low transaction fee.
 
 [commit95a93836]: https://github.com/bitcoin/bitcoin/commit/95a93836d8ab3e5f2412503dfafdf54db4f8c1ee
 
-- **2013:** Wladimir van der Laan authored commit [3e9c8ba][commit3e9c8ba] fixing a bug related to the data directory.
+- **<!--n-->2013:** Wladimir van der Laan authored commit [3e9c8ba][commit3e9c8ba] fixing a bug related to the data directory.
 
 [commit3e9c8ba]: https://github.com/bitcoin/bitcoin/commit/3e9c8bab54371364f8e70c3b44e732c593b43a76
 
-- **2012:** Luke Dashjr authored several commits (e.g. [9655d73][commit9655d73]) related to enabling IPv6 support.
+- **<!--n-->2012:** Luke Dashjr authored several commits (e.g. [9655d73][commit9655d73]) related to enabling IPv6 support.
 
 [commit9655d73]: https://github.com/bitcoin/bitcoin/commit/9655d73f49cd4da189ddb2ed708c26dc4cb3babe
 
-- **2011, 2010, 2009:** no commits dated June 8th.
+- **<!--n-->2011, 2010, 2009:** no commits dated June 8th.

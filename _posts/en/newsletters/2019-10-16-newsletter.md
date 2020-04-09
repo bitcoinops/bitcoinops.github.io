@@ -44,23 +44,23 @@ notable changes to popular Bitcoin infrastructure projects.
   the Bitcoin-Dev mailing list with a summary of recent changes to the
   proposal.  Changes include:
 
-    - 32-byte public keys instead of 33-byte keys (mentioned in
+    * 32-byte public keys instead of 33-byte keys (mentioned in
       [Newsletter #59][32 byte pubkey]).
 
-    - No support for P2SH-wrapped taproot addresses (mentioned in
+    * No support for P2SH-wrapped taproot addresses (mentioned in
       [#65][p2sh-wrapped taproot]).
 
-    - 32-bit txin positions in the signature hash data rather than
+    * 32-bit txin positions in the signature hash data rather than
       16-bit indexes.
 
-    - Tagged hashes are now used in [bip-schnorr][].  They were
+    * Tagged hashes are now used in [bip-schnorr][].  They were
       previously only used in [bip-taproot][] and [bip-tapscript][].
 
-    - The 10,000-byte and 201 non-push opcode limits have been dropped
+    * The 10,000-byte and 201 non-push opcode limits have been dropped
       from [bip-tapscript][] (mentioned in [#65][tapscript resource
       limits]).
 
-    - The maximum depth of the merkle tree has been increased from 32
+    * The maximum depth of the merkle tree has been increased from 32
       levels to 128 levels.
 
     Wuille's email and the updated BIPs provide rationales for each of

@@ -447,7 +447,7 @@ More information:
   signers of an output to give someone else permission to spend it
   without creating an onchain transaction)
 
-- [`1 OP_RETURN` bug description][1return] - a fixed bug that allowed
+- [<!--op-->`1 OP_RETURN` bug description][1return] - a fixed bug that allowed
   anyone to spend anyone else's bitcoins.  Called "by far the worst
   security problem Bitcoin ever had".  Satoshi Nakamoto's
   [fix][1opreturn fix] for this bug involved separating the

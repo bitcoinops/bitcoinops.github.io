@@ -19,7 +19,7 @@ lang: ja
 
 ## News
 
-- **メーリングリストのダウンタイム：** Bitcoin-DevおよびLightning-Devのメーリングリストにおいて、先週、予告なしのサーバー移行の影響で[ダウンタイム][bishop migration]が発生しました。この記事の執筆時点では、両方のメーリングリストは復帰しています。
+- **<!--mailing-list-downtime-->メーリングリストのダウンタイム：** Bitcoin-DevおよびLightning-Devのメーリングリストにおいて、先週、予告なしのサーバー移行の影響で[ダウンタイム][bishop migration]が発生しました。この記事の執筆時点では、両方のメーリングリストは復帰しています。
 
 ## Changes to services and client software
 

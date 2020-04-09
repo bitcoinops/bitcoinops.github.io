@@ -82,12 +82,12 @@ flag, and several notable recent Bitcoin Core merges.
 
 ## Notable Bitcoin Core merges
 
-- **[#13072][]:** The `createmultisig` RPC can now create P2SH-wrapped
+- **<!--n-->[#13072][]:** The `createmultisig` RPC can now create P2SH-wrapped
   segwit and native segwit addresses.
 
-- **[#13543][]:** Support for the RISC-V CPU architecture added.
+- **<!--n-->[#13543][]:** Support for the RISC-V CPU architecture added.
 
-- **[#13386][]:** New specialized SHA256 functions that take advantage
+- **<!--n-->[#13386][]:** New specialized SHA256 functions that take advantage
   of CPU extensions and knowledge of specific data inputs used by Bitcoin
   Core (such as the very common case where the input data is exactly 64
   bytes, as used for every calculation in a Bitcoin merkle tree).  This
@@ -96,7 +96,7 @@ flag, and several notable recent Bitcoin Core merges.
   code mainly helps speed up validation of blocks, both historic blocks
   during initial sync and new blocks during normal operation.
 
-- **[#13452][]:** The `verifytxoutproof` RPC is no longer vulnerable to
+- **<!--n-->[#13452][]:** The `verifytxoutproof` RPC is no longer vulnerable to
   a particular [expensive attack][tx-as-internal-node] against SPV
   proofs publicly disclosed in early June.  The attack was considered
   unlikely given that much cheaper attacks of roughly equal
@@ -105,11 +105,11 @@ flag, and several notable recent Bitcoin Core merges.
   `getblock` RPC.  None of this mitigates the attack for actual SPV
   clients.
 
-- **[#13570][]:** New `getzmqnotifications` RPC that "returns
+- **<!--n-->[#13570][]:** New `getzmqnotifications` RPC that "returns
   information about all active ZMQ notification endpoints.  This is
   useful for software that layers on top of bitcoind."
 
-- **[#13096][]:** Increase the maximum size of transactions that will be
+- **<!--n-->[#13096][]:** Increase the maximum size of transactions that will be
   relayed by default from 99,999 vbytes to 100,000 vbytes.
 
 [newsletter #3]: /en/newsletters/2018/07/10/
