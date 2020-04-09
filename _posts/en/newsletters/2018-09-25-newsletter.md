@@ -33,13 +33,13 @@ infrastructure projects.
     following versions remains highly recommended for any system,
     especially those systems handling money:
 
-    - [0.16.3][] (current stable)
+    * [0.16.3][] (current stable)
 
-    - [0.17.0RC4][bcc 0.17] (release candidate for next major version)
+    * [0.17.0RC4][bcc 0.17] (release candidate for next major version)
 
-    - [0.15.2][] (backport to old version, may have other issues)
+    * [0.15.2][] (backport to old version, may have other issues)
 
-    - [0.14.3][] (backport to old version, may have other issues)
+    * [0.14.3][] (backport to old version, may have other issues)
 
 - **Allocate time to test Bitcoin Core 0.17RC4:** Bitcoin Core has
   uploaded [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 4.

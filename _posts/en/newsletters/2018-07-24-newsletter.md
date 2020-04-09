@@ -14,7 +14,7 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
 
 ## Action items
 
-- Bitcoin Core [0.16.2RC2][] released for testing in preparation for a
+- [Bitcoin Core 0.16.2RC2][] released for testing in preparation for a
   maintenance release that will provide bugfixes and backports.
   Community testing is highly appreciated.  Note, there was no RC1 due
   to a metadata problem being detected during the release process.
@@ -97,7 +97,7 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
 git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab95fb9b97a3f6b1b84faf
 {% endcomment %}
 
-- [#9662][Bitcoin Core #9662]: New wallets can now be created with private keys disabled.
+- [Bitcoin Core #9662][]: New wallets can now be created with private keys disabled.
   This is primarily meant for users who want to exclusively use their
   wallet in conjunction with another program or hardware wallet that
   stores private keys.  This could also be useful to companies that want
@@ -106,7 +106,7 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
   performing whatever actions they desire, such as using the
   [`fundrawtransaction`][rpc fundrawtransaction] RPC.
 
-- [#12196][Bitcoin Core #12196]: New `scantxoutset` RPC method that allows searching the
+- [Bitcoin Core #12196][]: New `scantxoutset` RPC method that allows searching the
   set of spendable bitcoins (UTXOs) for those matching an address,
   public key, private key, or HD keypath.  The main expected use for
   this is "funds sweeping" where transactions matching an old wallet are
@@ -117,12 +117,12 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
   updated to support output script descriptors, which is planned to
   happen before 0.17.
 
-- [#13604][Bitcoin Core #13604]: Bitcoin-Qt is now built by default in addition to bitcoind
+- [Bitcoin Core #13604][]: Bitcoin-Qt is now built by default in addition to bitcoind
   on 32-bit ARM systems, and should be distributed by default with the
   other binaries for that system from BitcoinCore.org for future
   releases.  Bitcoin-Qt with 64-bit ARM is not yet supported by default.
 
-- [#13298][Bitcoin Core #13298]: The node now sends all announcements ([invs][inv]) for
+- [Bitcoin Core #13298][]: The node now sends all announcements ([invs][inv]) for
   new transactions to all of its incoming peers at the same time, after
   a random delay.  Previously, Satoshi Nakamoto [added a feature][rand
   delay] to Bitcoin (the software) that waited for a different random
@@ -149,7 +149,7 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
     nodes no longer find making multiple connections to be useful,
     reducing overall wasted bandwidth.
 
-- [#13652][Bitcoin Core #13652]: The [`abandontransaction`][rpc abandontransaction] RPC has
+- [Bitcoin Core #13652][]: The [`abandontransaction`][rpc abandontransaction] RPC has
   been fixed to abandon all descendant transactions, not just children.
 
 ## Coming attractions
@@ -165,7 +165,7 @@ to share your experiences in implementing better Bitcoin technology, please cont
 [rand delay]: https://github.com/bitcoin/bitcoin/commit/22f721dbf23cf5ce9e3ded9bcfb65a3894cc0f8c#diff-118fcbaaba162ba17933c7893247df3aR718
 [p2shinfo bech32]: https://p2sh.info/dashboard/db/bech32-statistics?orgId=1
 [consolidate utxos]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
-[0.16.2rc2]: https://bitcoincore.org/bin/bitcoin-core-0.16.2/test.rc2/
+[Bitcoin Core 0.16.2rc2]: https://bitcoincore.org/bin/bitcoin-core-0.16.2/test.rc2/
 [announce bmag]: https://bitcoinmagazine.com/articles/chaincode-devs-google-alumni-create-industry-group-help-bitcoin-scale/
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
 [inv]: https://bitcoin.org/en/developer-reference#inv

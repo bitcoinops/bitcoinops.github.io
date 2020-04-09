@@ -21,7 +21,7 @@ popular Bitcoin infrastructure projects.
 
 ## News
 
-- **2019 Chaincode Residency:** Chaincode Labs opened applications for its
+- **Chaincode Residency 2019:** Chaincode Labs opened applications for its
   [fourth residency program][residency] to be held in New York over
   summer 2019. The program combines a 3 week seminar and discussion series
   covering Bitcoin and Lightning protocol development with a two month period for
