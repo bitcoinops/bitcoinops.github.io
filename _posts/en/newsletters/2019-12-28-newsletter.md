@@ -60,45 +60,45 @@ words can express for all that you've done to help Bitcoin.
 
 ## Contents
 
-- January
-    - [BIP127 proof of reserves](#bip127)
-- February
-    - [Bitcoin Core compatible with HWI](#core-hwi)
-    - <a href="#miniscript">Miniscript</a>
-- March
-    - [Consensus cleanup soft fork proposal](#cleanup)
-    - <a href="#signet">Signet</a>
-    - [Lightning Loop](#loop)
-- April
-    - <a href="#assumeutxo">AssumeUTXO</a>
-    - [Trampoline payments](#trampoline)
-- May
-    - <a href="#taproot">Taproot</a>
-    - [SIGHASH_ANYPREVOUT](#anyprevout)
-    - [OP_CHECKTEMPLATEVERIFY](#ctv)
-- June
-    - [Erlay and other P2P relay improvements](#erlay-and-other-p2p-improvements)
-    - <a href="#watchtowers">Watchtowers</a>
-- July
-    - [Reproducible builds](#reproducibility)
-- August
-    - [Vaults without covenants](#vaults)
-- September
-    - <a href="#snicker">SNICKER</a>
-    - [LN vulnerability](#ln-cve)
-- October
-    - [LN anchor outputs](#anchor-outputs)
-- November
-    - <a href="#bech32-mutability">Bech32 mutability</a>
-    - [Bitcoin Core OpenSSL removal](#openssl)
-    - [Bitcoin Core BIP70 removal](#bip70)
-- December
-    - [Multipath payments](#multipath)
-- Featured summaries
-    - [Major releases of popular infrastructure projects](#releases)
-    - [Notable technical conferences and other events](#conferences)
-    - [Bitcoin Optech](#optech)
-    - [New open source infrastructure solutions](#new-infrastructure)
+* January
+    * [BIP127 proof of reserves](#bip127)
+* February
+    * [Bitcoin Core compatible with HWI](#core-hwi)
+    * <a href="#miniscript">Miniscript</a>
+* March
+    * [Consensus cleanup soft fork proposal](#cleanup)
+    * <a href="#signet">Signet</a>
+    * [Lightning Loop](#loop)
+* April
+    * <a href="#assumeutxo">AssumeUTXO</a>
+    * [Trampoline payments](#trampoline)
+* May
+    * <a href="#taproot">Taproot</a>
+    * [SIGHASH_ANYPREVOUT](#anyprevout)
+    * [OP_CHECKTEMPLATEVERIFY](#ctv)
+* June
+    * [Erlay and other P2P relay improvements](#erlay-and-other-p2p-improvements)
+    * <a href="#watchtowers">Watchtowers</a>
+* July
+    * [Reproducible builds](#reproducibility)
+* August
+    * [Vaults without covenants](#vaults)
+* September
+    * <a href="#snicker">SNICKER</a>
+    * [LN vulnerability](#ln-cve)
+* October
+    * [LN anchor outputs](#anchor-outputs)
+* November
+    * <a href="#bech32-mutability">Bech32 mutability</a>
+    * [Bitcoin Core OpenSSL removal](#openssl)
+    * [Bitcoin Core BIP70 removal](#bip70)
+* December
+    * [Multipath payments](#multipath)
+* Featured summaries
+    * [Major releases of popular infrastructure projects](#releases)
+    * [Notable technical conferences and other events](#conferences)
+    * [Bitcoin Optech](#optech)
+    * [New open source infrastructure solutions](#new-infrastructure)
 
 ## January
 
