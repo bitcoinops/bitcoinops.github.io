@@ -3,6 +3,7 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
+  {% if jekyll.environment == 'email' -%}<base href="https://bitcoinops.org/">{% endif %}
 
   <body>
 
