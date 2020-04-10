@@ -58,3 +58,9 @@ production-test:
 
 new-topic:
 	_contrib/new-topic
+
+email: clean
+	@ echo
+	@ echo "[NOTICE] Latest Newsletter: http://localhost:4000/en/newsletters/$$(ls _posts/en/newsletters/ | tail -1 | tr "-" "/" | sed 's/newsletter.md//')"
+	@ echo
+	$(MAKE) preview JEKYLL_ENV=email
