@@ -33,9 +33,13 @@ FIXME:bitschmidty
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #4075][] Merge pull request #4075 from Roasbeef/wumbo-invoices FIXME:jnewbery
-
-- [LND #3967][] Merge pull request #3967 from joostjager/mpp-send FIXME:dongcarl
+- [LND #4075][] allows invoices to be created for payments greater than the
+  previous limit of around 0.043 BTC. The network-wide HTLC limit of 0.043 BTC
+  prevents payments greater than that amount over a single channel. With the
+  implementation of sending multipath payments also
+  merged in [LND this week](#lnd-3967), invoices can be issued for an aggregate
+  payment amount greater than 0.043 BTC, which the sender then splits into
+  partial payments.
 
 {% include references.md %}
-{% include linkers/issues.md issues="" %}
+{% include linkers/issues.md issues="3967,4075" %}
