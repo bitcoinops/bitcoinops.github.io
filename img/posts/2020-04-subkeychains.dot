@@ -1,0 +1,58 @@
+digraph seed_generator {
+
+rankdir="LR"
+ranksep=0.1
+splines="ortho"
+
+node [ shape = "box" ];
+
+subgraph cluster_super {
+  super_seed_words [ label = "Super seed\nwords" ];
+  super_seed [ label = "Super\nseed" ];
+  super_mxprv [ label = "Master\nxprv" ];
+  // example path from draft BIP
+  super_key1 [ label = "Child\nkey" ];
+  // example path rfom draft BIP
+  super_key2 [ label = "Child\nkey" ];
+  // example path by harding
+  super_key3 [ label = "Child\nkey" ];
+  super_seed_words -> super_seed -> super_mxprv -> {super_key1, super_key2, super_key3};
+
+  label = "Super keychain"
+}
+
+super_key1 -> cw_seed_words [ label = "bytes2bip39_words()" ];
+super_key2 -> hw_seed_phrase [ label = "bytes2wif_string()" ];
+super_key3 -> ln_seed_words [ label = "bytes2aezeed_words()" ];
+
+subgraph cluster_cw {
+  cw_seed_words [ label = "BIP39 seed\nwords" ];
+  cw_seed [ label = "Cold wallet\nseed" ];
+  cw_mxprv [ label = "Master\nxprv" ];
+  cw_children [ label = "Child\nkeys", shape = "none" ];
+  cw_seed_words -> cw_seed -> cw_mxprv -> cw_children
+
+  label = "Cold wallet keychain (using BIP39-style seed words)"
+}
+
+subgraph cluster_hw {
+  hw_seed_phrase [ label = "WIF\nseed" ];
+  hw_seed [ label = "Hot wallet\nseed" ];
+  hw_mxprv [ label = "Master\nxprv" ];
+  hw_children [ label = "Child\nkeys", shape = "none" ];
+  hw_seed_phrase -> hw_seed -> hw_mxprv -> hw_children
+
+  label = "Hot wallet keychain (using Bitcoin Core-style sethdseed)"
+}
+
+subgraph cluster_ln {
+  ln_seed_words [ label = "Aezeed\nseed words" ];
+  ln_seed [ label = "LN wallet\nseed" ];
+  ln_mxprv [ label = "Master\nxprv" ];
+  ln_children [ label = "Child\nkeys", shape = "none" ];
+  ln_seed_words -> ln_seed -> ln_mxprv -> ln_children
+
+  label = "LN node keychain (using LND-style Aezeed)"
+} 
+
+}
