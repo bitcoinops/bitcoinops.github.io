@@ -64,6 +64,15 @@ release candidates.*
 [libsecp256k1][libsecp256k1 repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
+- [LND #3967][] adds support for sending [multipath payments][topic
+  multipath payments], complementing the already-existing receiving logic.
+  Previously, LND would fail to pay invoices whose full amount couldn't be
+  carried by a single route. With multipath payments, LND can now split
+  invoices into smaller HTLCs which can each take a different route, making
+  better use of the liquidity in LN. Users can control the maximum
+  number of partial payments using an RPC parameter or
+  command line option.
+
 - [LND #4075][] allows invoices to be created for payments greater than the
   previous limit of around 0.043 BTC. The network-wide HTLC limit of 0.043 BTC
   prevents payments greater than that amount over a single channel. With the
