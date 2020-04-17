@@ -114,6 +114,7 @@ spelled the same.
 |-|-|-|
 | coinbase transaction | generation transaction | |
 | Merklized Alternative Script Trees | Merklized Abstract Syntax Trees | https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast |
+| payjoin | P2EP, bustapay, PayJoin | |
 | receiver | recipient | |
 | spender | sender | "sender" may ambiguously refer to the sender of data |
 | uneconomical output | dust | The dust limit is the minimum value an output must contain in order for Bitcoin Core to relay a transaction containing that output. What's economical or not changes as minimum feerates change, but the dust limit doesn't change often. |

@@ -37,6 +37,7 @@
 [topic sighash_noinput]: /en/topics/sighash_noinput/
 [topic signet]: /en/topics/signet/
 [topic splicing]: /en/topics/splicing/
+[topic spontaneous payments]: /en/topics/spontaneous-payments/
 [topic taproot]: /en/topics/taproot/
 [topic tapscript]: /en/topics/tapscript/
 [topic trampoline payments]: /en/topics/trampoline-payments/
@@ -80,6 +81,7 @@
 {% assign _link_descriptors = 'https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md' %}
 [output script descriptor]: {{_link_descriptors}}
 [output script descriptors]: {{_link_descriptors}}
+[rust-lightning repo]: https://github.com/rust-bitcoin/rust-lightning
 
 {% comment %}<!-- BIPs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
