@@ -1,7 +1,8 @@
 {% capture /dev/null %}
 <!--
 issues.md: creates Markdown referency-style links to issues and pull
-requests in the Bitcoin Core, LND, C-Lightning, and libsecp256k1 repositories.
+requests in the Bitcoin Core, LND, C-Lightning, libsecp256k1, BIPs, BOLTs,
+and Rust-Lightning repositories.
 
 When changing this file, a good test to run to ensure that all links are
 working is the htmlproofer line from the Makefile with the
@@ -35,4 +36,5 @@ scraping.
 [eclair #{{_issue}}]: https://github.com/ACINQ/eclair/issues/{{_issue}}
 [bips #{{_issue}}]: https://github.com/bitcoin/bips/issues/{{_issue}}
 [bolts #{{_issue}}]: https://github.com/lightningnetwork/lightning-rfc/issues/{{_issue}}
+[rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
 {% endfor %}
