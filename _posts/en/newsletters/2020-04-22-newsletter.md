@@ -82,7 +82,10 @@ release candidates.*
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #17595][] Merge #17595: guix: Enable building for `x86_64-w64-mingw32` target FIXME:dongcarl
+- [Bitcoin Core #17595][] adds support for [reproducibly building][topic
+  reproducible builds] the Windows versions of Bitcoin Core using [GNU Guix][].
+  The last remaining target platform for Guix reproducible
+  builds, macOS, has an open [draft PR][Bitcoin Core #17920].
 
 - [C-Lightning #3611][] adds a `keysend` plugin that allows a node to
   securely receive [spontaneous payments][topic spontaneous
@@ -144,7 +147,7 @@ BOLTs][bolts repo].*
     </div>
 
 {% include references.md %}
-{% include linkers/issues.md issues="17595,3611,3623,4163,441,587" %}
+{% include linkers/issues.md issues="17595,3611,3623,4163,441,587,17920" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.0-beta.rc4
 [c-lightning 0.8.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.2rc1
@@ -163,3 +166,4 @@ BOLTs][bolts repo].*
 [news92 blinded paths]: /en/newsletters/2020/04/08/#blinded-paths
 [whatsat]: https://github.com/joostjager/whatsat
 [common input heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
+[GNU Guix]: https://www.gnu.org/software/guix/
