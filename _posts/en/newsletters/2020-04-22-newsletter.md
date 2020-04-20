@@ -34,8 +34,6 @@ projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
-
 - **BTCPay adds support for sending and receiving payjoined payments:**
   [payjoin][topic payjoin] is a protocol that increases the privacy of Bitcoin
   payments by including inputs from both the spender and the receiver in
@@ -56,6 +54,18 @@ FIXME:bitschmidty
     being actively discussed.  For this change to have the maximum
     impact, other popular wallets need to implement support for creating
     compatible payjoin payments.
+
+- **Lightning Labs drafts Lightning Service Authentication Tokens (LSAT) specification:**
+  Lightning Labs has [announced][ll lsat announcement] LSAT, a
+  [specification][lsat spec], which outlines a protocol for purchasing tokens
+  (macaroons) over LN and using them in an application as both authentication
+  and API payment mechanisms.
+
+- **Lightning Labs announces Faraday for channel management:**
+  [Faraday][ll faraday announcement] is a tool for LND node operators that
+  analyzes existing channels and makes recommendations to close problematic or
+  under-performing channels. Such channels display attributes such as low volume,
+  low uptime, or high fees.
 
 ## Releases and release candidates
 
@@ -167,3 +177,6 @@ BOLTs][bolts repo].*
 [whatsat]: https://github.com/joostjager/whatsat
 [common input heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
 [GNU Guix]: https://www.gnu.org/software/guix/
+[ll lsat announcement]: https://lightning.engineering/posts/2020-03-30-lsat/
+[lsat spec]: https://lsat.tech/
+[ll faraday announcement]: https://lightning.engineering/posts/2020-04-02-faraday/
