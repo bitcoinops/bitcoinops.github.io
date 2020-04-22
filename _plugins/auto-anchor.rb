@@ -8,8 +8,9 @@
 # - [Summary](URL): Details
 
 Jekyll::Hooks.register :documents, :pre_render do |post|
-  ## Don't process documents if YAML headers say: "auto_id: false"
-  if post.data["auto_id"] != false
+  ## Don't process documents if YAML headers say: "auto_id: false" or
+  ## we're formatting for email
+  unless post.data["auto_id"] == false || ENV['JEKYLL_ENV'] == 'email'
     post.content.gsub!(/^ *- .*/) do |string|
       ## Find shortest match for **bold**, *italics*, or [markdown][links]
       title = string.match(/\*\*.*?\*\*|\*.*?\*|\[.*?\][(\[]/).to_s
