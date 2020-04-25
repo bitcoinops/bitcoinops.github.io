@@ -64,7 +64,13 @@ BOLTs][bolts repo].*
 
 FIXME:harding mention core commits apply only to 0.21
 
-- [Bitcoin Core #15761][] Replace -upgradewallet startup option with upgradewallet RPC FIXME:adamjonas
+- [Bitcoin Core #15761][] adds an `upgradewallet` RPC, doing away
+  with the old method of upgrading upon startup, thereby
+  allowing users to unlock and upgrade their wallets to
+  [Hierarchical Deterministic (HD)][Hierarchical Deterministic ref]
+  while it is loaded.  This addition is also compatible with
+  [multi-wallet][multi-wallet] as it works on the individual wallet that
+  is specified by the RPC.
 
 - [Bitcoin Core #17509][] gui: save and load PSBT FIXME:dongcarl
 
@@ -73,3 +79,5 @@ FIXME:harding mention core commits apply only to 0.21
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.0-beta.rc4
 [c-lightning 0.8.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.2rc1
+[Hierarchical Deterministic ref]: https://bitcoin.org/en/glossary/hd-protocol
+[multi-wallet]: https://bitcoin.org/en/release/v0.15.0.1#multi-wallet-support
