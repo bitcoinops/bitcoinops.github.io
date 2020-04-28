@@ -259,7 +259,17 @@ version 0.20.*
   [multi-wallet][multi-wallet] as it works on the individual wallet that
   is specified by the RPC.
 
-- [Bitcoin Core #17509][] gui: save and load PSBT FIXME:dongcarl
+- [Bitcoin Core #17509][] allows the wallet GUI to save a [Partially
+  Signed Bitcoin Transactions][topic psbt] (PSBT) to a file, as well as
+  load a PSBT from a file.  Saving is available in private-key-disabled
+  wallets where Bitcoin Core previously automatically copied a PSBT to
+  the clipboard (see the PRs described in Newsletters [#74][news74 core
+  psbt] and [#82][news82 core psbt]).  Loading a PSBT will offer to
+  finalize and broadcast the transaction if all signatures are
+  available; otherwise, the PSBT will be copied to the clipboard for
+  signing by a separate user action (for example using an RPC from the
+  GUI console or using a separate tool such as [HWI][topic hwi]).  A
+  follow-up PRs is expected to add the ability to sign PSBTs in the GUI.
 
 ## Special thanks
 
@@ -316,3 +326,5 @@ issue.  Any remaining errors are the fault of the newsletter author.
 [corallo send twice]: https://github.com/bitcoinops/bitcoinops.github.io/pull/394#discussion_r416099907
 [simplicity]: https://blockstream.com/simplicity.pdf
 [bitcoin core default ancestor limit]: https://github.com/bitcoin/bitcoin/blob/9fac600ababd8edefbe053a7edcd0e178f069f84/src/validation.h#L56
+[news74 core psbt]: /en/newsletters/2019/11/27/#bitcoin-core-16944
+[news82 core psbt]: /en/newsletters/2020/01/29/#bitcoin-core-17492
