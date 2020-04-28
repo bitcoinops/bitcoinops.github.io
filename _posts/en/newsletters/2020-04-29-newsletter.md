@@ -206,7 +206,22 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the potential attacks against ECDSA that would be possible if we used raw public keys as addresses?]({{bse}}95123)
+  Pieter Wuille answers by summarizing the argument for using public key hashes
+  over public keys in addresses, namely, that it slows an attacker with quantum
+  computing capabilities. He goes on to list reasons why that purported argument
+  could be overstated and give a false sense of security.
+
+- [What is meant by DEFAULT_ANCESTOR_LIMIT in child pays for parent?]({{bse}}95473)
+  User anu asks about Bitcoin Core's [DEFAULT_ANCESTOR_LIMIT][bitcoin core default ancestor limit]
+  regarding the [Child-Pays-For-Parent (CPFP)][topic cpfp] fee bumping
+  technique. Murch notes that this default policy helps prevent spam
+  attacks and gives a couple examples of determining ancestor transaction counts.
+
+- [How is Simplicity better suited for static analysis compared to script?]({{bse}}95332)
+  Russell O'Connor, author of the [Simplicity whitepaper][simplicity], describes
+  the challenges of statically analyzing a Bitcoin Script program in
+  contrast with the Simplicity language.
 
 ## Releases and release candidates
 
@@ -299,3 +314,5 @@ issue.  Any remaining errors are the fault of the newsletter author.
 [rl ced]: https://github.com/rust-bitcoin/rust-lightning/blob/12e2a81e1daf635578e1cfdd7de55324ed04bd48/lightning/src/ln/channelmanager.rs#L430
 [corallo slightly higher]: https://github.com/bitcoinops/bitcoinops.github.io/pull/394#discussion_r416014263
 [corallo send twice]: https://github.com/bitcoinops/bitcoinops.github.io/pull/394#discussion_r416099907
+[simplicity]: https://blockstream.com/simplicity.pdf
+[bitcoin core default ancestor limit]: https://github.com/bitcoin/bitcoin/blob/9fac600ababd8edefbe053a7edcd0e178f069f84/src/validation.h#L56
