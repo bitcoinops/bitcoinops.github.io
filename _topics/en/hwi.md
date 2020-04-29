@@ -43,6 +43,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#core-hwi
     date: 2019-12-18
 
+  - title: BTCPay Vault using HWI for signing
+    url: /en/newsletters/2020/02/19/#btcpay-vault-using-hwi-for-signing
+    date: 2020-02-19
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

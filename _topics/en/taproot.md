@@ -89,6 +89,26 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#taproot
     date: 2019-12-28
 
+  - title: Final organized review, presentation slides, and LN integration ideas
+    url: /en/newsletters/2020/01/08/#final-week-of-organized-taproot-review
+    date: 2020-01-08
+
+  - title: btcdeb adds `tap` command for experimenting with taproot and tapscript
+    url: /en/newsletters/2020/02/05/#taproot-and-tapscript-experimentation-tool
+    date: 2020-02-05
+
+  - title: Discussion about taproot versus alternatives
+    url: /en/newsletters/2020/02/19/#discussion-about-taproot-versus-alternatives
+    date: 2020-02-19
+
+  - title: Taproot security from quantum computing threats
+    url: /en/newsletters/2020/02/26/#could-taproot-create-larger-security-risks-or-hinder-future-protocol-adjustments-re-quantum-threats
+    date: 2020-02-26
+
+  - title: "Security analysis: taproot in the generic group model"
+    url: /en/newsletters/2020/03/04/#taproot-in-the-generic-group-model
+    date: 2020-03-04
+
 ## Optional
 see_also:
   - title: MAST

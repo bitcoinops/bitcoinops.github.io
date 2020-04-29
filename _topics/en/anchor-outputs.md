@@ -72,6 +72,18 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#anchor-outputs
     date: 2019-12-28
 
+  - title: "LND #3829 updates code & documentation to simplify adding anchor outputs"
+    url: /en/newsletters/2020/01/15/#lnd-3829
+    date: 2020-01-15
+
+  - title: "LND #3821 adds draft anchor commitments support"
+    url: /en/newsletters/2020/03/18/#lnd-3821
+    date: 2020-03-18
+
+  - title: "Using anchor outputs to ensure HTLC sends can be fee bumped"
+    url: /en/newsletters/2020/04/29/#settlement-transaction-anchor-outputs
+    date: 2020-04-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

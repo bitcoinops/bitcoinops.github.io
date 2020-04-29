@@ -60,6 +60,18 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#ctv
     date: 2019-12-28
 
+  - title: OP_CHECKTEMPLATEVERIFY workshop report
+    url: /en/newsletters/2020/02/12/#op-checktemplateverify-ctv-workshop
+    date: 2020-02-12
+
+  - title: Vault prototype using pre-signed transactions
+    url: /en/newsletters/2020/04/22/#vaults-prototype
+    date: 2020-04-22
+
+  - title: Demo implementation of a multisig vaults covenant prototype
+    url: /en/newsletters/2020/04/29/#multiparty-vault-architecture
+    date: 2020-04-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

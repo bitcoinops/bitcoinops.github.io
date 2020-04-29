@@ -56,6 +56,14 @@ optech_mentions:
     url: /en/newsletters/2019/09/11/#eltoo-sample-implementation-and-discussion
     date: 2019-09-11
 
+  - title: "Modification to `SIGHASH_ANYPREVOUTANYSCRIPT` to improve eltoo flexibility"
+    url: /en/newsletters/2020/01/29/#layered-commitments-with-eltoo
+    date: 2020-01-29
+
+  - title: Implementing statechains without eltoo
+    url: /en/newsletters/2020/04/01/#implementing-statechains-without-schnorr-or-eltoo
+    date: 2020-04-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_NOINPUT

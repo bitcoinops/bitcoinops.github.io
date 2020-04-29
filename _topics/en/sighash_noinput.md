@@ -76,6 +76,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#anyprevout
     date: 2019-12-28
 
+  - title: "Modification to `SIGHASH_ANYPREVOUTANYSCRIPT` to improve eltoo flexibility"
+    url: /en/newsletters/2020/01/29/#layered-commitments-with-eltoo
+    date: 2020-01-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

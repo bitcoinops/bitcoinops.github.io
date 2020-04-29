@@ -60,6 +60,14 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#snicker
     date: 2019-12-28
 
+  - title: Evaluation of coinjoins without equal value inputs or outputs
+    url: /en/newsletters/2020/01/08/#coinjoins-without-equal-value-inputs-or-outputs
+    date: 2020-01-08
+
+  - title: "Wormhole: a protocol for sending payments as part of a chaumian coinjoin"
+    url: /en/newsletters/2020/01/22/#new-coinjoin-mixing-technique-proposed
+    date: 2020-01-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

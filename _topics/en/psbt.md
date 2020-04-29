@@ -75,6 +75,30 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#bips-849
     date: 2019-11-13
 
+  - title: "Bitcoin Core #16373 allows the bumpfee RPC used for RBF to return a PSBT"
+    url: /en/newsletters/2020/01/15/#bitcoin-core-16373
+    date: 2020-01-15
+
+  - title: "Bitcoin Core #17492 allows the wallet GUI to place a PSBT in the clipboard"
+    url: /en/newsletters/2020/01/29/#bitcoin-core-17492
+    date: 2020-01-29
+
+  - title: CKBunker using PSBTs for an HSM
+    url: /en/newsletters/2020/02/19/#ckbunker-using-psbts-for-an-hsm
+    date: 2020-02-19
+
+  - title: "Bitcoin Core #17264 includes HD derivation path in PSBTs by default"
+    url: /en/newsletters/2020/03/04/#bitcoin-core-17264
+    date: 2020-03-04
+
+  - title: "LND #4079 adds support for funding channels with PSBTs"
+    url: /en/newsletters/2020/04/08/#lnd-4079
+    date: 2020-04-08
+
+  - title: "Bitcoin Core #17509 allows saving and loading PSBTs from files"
+    url: /en/newsletters/2020/04/29/#bitcoin-core-17509
+    date: 2020-04-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

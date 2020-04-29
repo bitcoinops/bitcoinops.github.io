@@ -73,12 +73,13 @@ before the main content -->
 <div class="center" markdown="1">
 {{number_of_events}} indexed events in {{number_of_months}} months <!-- {{mentions | size}} events including duplicates -->
 
-<!-- TODO: uncomment after January 2020 entries added: [2018](#d2018-12), [2019](#d2019-12) -->
+[2018](#d2018-12) | [2019](#d2019-12) | [2020](#d2020-12)
 </div>
 
 <div>{% comment %}<!-- enclosing in a div forces this to be interpreted
 as HTML rather than Markdown so indentation over 4 characters doesn't
 produce code blocks -->{% endcomment %}
+<span id="d2020-12"></span>
 {{list}}
 </div>
 

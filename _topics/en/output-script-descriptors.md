@@ -50,6 +50,14 @@ optech_mentions:
     url: /en/newsletters/2019/10/16/#bitcoin-core-17056
     date: 2019-10-16
 
+  - title: "Encoded descriptors (e.g., with base64)"
+    url: /en/newsletters/2020/01/08/#encoded-descriptors
+    date: 2020-01-08
+
+  - title: "Bitcoin Core #18032 add `descriptor` field to multisig address RPCs"
+    url: /en/newsletters/2020/02/12/#bitcoin-core-18032
+    date: 2020-02-12
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
