@@ -75,6 +75,10 @@ optech_mentions:
     url: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
     date: 2019-05-14
 
+  - title: Discussion about taproot versus alternative MAST-enabling proposals
+    url: /en/newsletters/2020/02/19/#discussion-about-taproot-versus-alternatives
+    date: 2020-02-19
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

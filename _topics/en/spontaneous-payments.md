@@ -54,6 +54,14 @@ optech_mentions:
     url: /en/newsletters/2019/06/19/#using-ecdh-for-uncoordinated-ln-payments
     date: 2019-06-19
 
+  - title: Eclair 0.3.3 adds experimental support for trampoline payments
+    url: /en/newsletters/2020/02/05/#upgrade-to-eclair-0-3-3
+    date: 2020-02-05
+
+  - title: "C-Lightning #3611 adds a keysend plugin to support spontaneous payments"
+    url: /en/newsletters/2020/04/22/#c-lightning-3611
+    date: 2020-04-22
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

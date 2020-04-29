@@ -50,6 +50,10 @@ optech_mentions:
     url: /en/newsletters/2019/01/29/#post-about-bip79-p2ep-payjoin
     date: 2019-01-29
 
+  - title: BTCPay adds support for sending and receiving payjoined payments
+    url: /en/newsletters/2020/04/22/#btcpay-adds-support-for-sending-and-receiving-payjoined-payments
+    date: 2020-04-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

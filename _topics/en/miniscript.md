@@ -51,6 +51,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#miniscript
     date: 2019-12-28
 
+  - title: Question about a specification for miniscript
+    url: /en/newsletters/2020/03/25/#where-can-i-find-the-miniscript-policy-language-specification
+    date: 2020-03-25
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

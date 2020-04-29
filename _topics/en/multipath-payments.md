@@ -98,6 +98,38 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#multipath
     date: 2019-12-28
 
+  - title: "Eclair #1283 allows multipath payments to traverse unannounced channels"
+    url: /en/newsletters/2020/01/22/#eclair-1283
+    date: 2020-01-22
+
+  - title: "LND 0.9.0-beta adds support for receiving multipath payments"
+    url: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
+    date: 2020-01-29
+
+  - title: "Eclair 0.3.3 adds support for multipath payments"
+    url: /en/newsletters/2020/02/05/#upgrade-to-eclair-0-3-3
+    date: 2020-02-05
+
+  - title: "LND #3957 adds code useful for Atomic Multipath Payments (AMP) support"
+    url: /en/newsletters/2020/02/12/#lnd-3957
+    date: 2020-02-12
+
+  - title: "Boomerang: improving latency and throughput with multipath payments"
+    url: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
+    date: 2020-02-26
+
+  - title: "LND #3970 adds support for multipath payments to its payment lifecycle"
+    url: /en/newsletters/2020/04/08/#lnd-3970
+    date: 2020-04-08
+
+  - title: "LND #3967 adds support for sending multipath payments"
+    url: /en/newsletters/2020/04/15/#lnd-3967
+    date: 2020-04-15
+
+  - title: "Rust-Lightning #441 adds support for basic multipath payments"
+    url: /en/newsletters/2020/04/22/#rust-lightning-441
+    date: 2020-04-22
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

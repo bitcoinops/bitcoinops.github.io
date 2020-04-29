@@ -47,6 +47,10 @@ optech_mentions:
     url: /en/newsletters/2019/09/11/#lnd-3390
     date: 2019-09-11
 
+  - title: "Reverse up-front payments could improve hold invoice cost spreading"
+    url: /en/newsletters/2020/02/26/#reverse-up-front-payments
+    date: 2020-02-26
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

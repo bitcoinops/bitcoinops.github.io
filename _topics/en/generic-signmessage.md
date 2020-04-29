@@ -58,6 +58,14 @@ optech_mentions:
     url: /en/bech32-sending-support/#bip322
     date: 2019-07-10
 
+  - title: Additional request for feedback on BIP322 generic signmessage
+    url: /en/newsletters/2020/03/11/#bip322-generic-signmessage-progress-or-perish
+    date: 2020-03-11
+
+  - title: Proposed update to BIP322 generic signmessage
+    url: /en/newsletters/2020/04/01/#proposed-update-to-bip322-generic-signmessage
+    date: 2020-04-01
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

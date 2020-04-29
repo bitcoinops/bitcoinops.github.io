@@ -55,6 +55,18 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#reproducibility
     date: 2019-12-28
 
+  - title: "Eclair #1295 allows the eclair-core module to be reproducibly built"
+    url: /en/newsletters/2020/02/05/#eclair-1295
+    date: 2020-02-05
+
+  - title: "Eclair #1307 updates packaging to also reproducibly build Eclair GUI"
+    url: /en/newsletters/2020/03/04/#eclair-1307
+    date: 2020-03-04
+
+  - title: "Bitcoin Core #17595 adds Guix support for Windows builds"
+    url: /en/newsletters/2020/04/22/#bitcoin-core-17595
+    date: 2020-04-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"

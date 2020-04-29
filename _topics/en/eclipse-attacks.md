@@ -70,6 +70,14 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#erlay-and-other-p2p-improvements
     date: 2019-12-28
 
+  - title: "Bitcoin Core #16702 chooses peers based on ASN instead of IP address"
+    url: /en/newsletters/2020/02/05/#bitcoin-core-16702
+    date: 2020-02-05
+
+  - title: "Review club discussion of Bitcoin Core #17428 anchor connections"
+    url: /en/newsletters/2020/03/11/#bitcoin-core-pr-review-club
+    date: 2020-03-11
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

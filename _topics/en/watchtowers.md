@@ -80,6 +80,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#watchtowers
     date: 2019-12-28
 
+  - title: Updated watchtower BOLT specification proposal
+    url: /en/newsletters/2020/03/18/#proposed-watchtower-bolt-has-been-updated
+    date: 2020-03-18
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

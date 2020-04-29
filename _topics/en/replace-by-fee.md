@@ -73,6 +73,10 @@ optech_mentions:
     url: /en/newsletters/2019/06/26/#bitcoin-core-16171
     date: 2019-06-26
 
+  - title: "Bitcoin Core #16373 allows the bumpfee RPC used for RBF to return a PSBT"
+    url: /en/newsletters/2020/01/15/#bitcoin-core-16373
+    date: 2020-01-15
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

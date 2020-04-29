@@ -77,6 +77,13 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#taproot
     date: 2019-12-28
 
+  - title: btcdeb adds `tap` command for experimenting with taproot and tapscript
+    url: /en/newsletters/2020/02/05/#taproot-and-tapscript-experimentation-tool
+    date: 2020-02-05
+
+  - title: "Bitcoin Core #16902 fixes an inefficiency in OP_IF related opcodes"
+    url: /en/newsletters/2020/03/18/#bitcoin-core-16902
+    date: 2020-03-18
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
