@@ -149,8 +149,22 @@ version 0.20.*
     option will give the new features six months to mature before
     their expected release.
 
-- [Bitcoin Core #18038][] P2P: Mempool tracks locally submitted
-  transactions to improve wallet privacy FIXME:bitschmidty
+- [Bitcoin Core #18038][] improves privacy when initially broadcasting a
+  transaction by reducing the frequency that a wallet will attempt to resend
+  from about 30 minutes to about once a day. Previously, an entity surveilling
+  the network could see multiple broadcasts of the same transaction during these
+  resend periods from the same node and conclude that wallet was the originator.
+  By reducing the frequency of resending attempts from the wallet, the
+  originator of the transaction has less chance of being identified.
+
+  To ensure new transactions reach the network even without frequent
+  indiscriminate rebroadcast by the wallet, this PR also adds a type of
+  _unbroadcast_ transaction within the mempool. An unbroadcast transaction is
+  one that has been submitted locally via the wallet or RPC but which has not
+  yet been successfully relayed to peers on the network. Such unbroadcast
+  transactions remain in the mempool and will be rebroadcast every 10-15 minutes
+  until a peer has fetched the transaction by sending the node a `getdata` P2P
+  message for that transaction.
 
 - [BIPs #893][] makes several changes to the [BIP340][] specification of
   [schnorr][topic schnorr signatures] pubkeys and signatures, with
