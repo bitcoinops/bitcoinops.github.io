@@ -39,6 +39,53 @@ notable code changes from popular Bitcoin infrastructure software.
 
 {% include articles/suredbits-enterprise-ln.md %}
 
+## Recently transcribed talks and conversations
+
+*[Bitcoin Transcripts][] is the home for transcripts of technical
+Bitcoin presentations and discussions. In this new <!-- TODO: remove "new" next month --> monthly feature, we
+highlight a selection of the transcripts from the previous month.*
+
+- **Simplicity---Next-Generation Smart Contracting** Adam Back presented at a
+  Blockstream webinar on Simplicity, a next-generation, low-level
+  alternative to Bitcoin Script focused on provable security and
+  expressiveness. Back discussed how Simplicity, if enabled in Bitcoin
+  today, would allow developers to implement new functionality like
+  [SIGHASH_NOINPUT][topic sighash_noinput] without necessarily needing a soft fork. He also
+  displayed a [demo][simplicity demo] showing what you can do with
+  Simplicity today.  ([transcript][simplicity xs], [video][simplicity
+  vid], [slides][simplicity slides])
+
+- **Attacking Bitcoin Core** Amiti Uttarwar presented at LA BitDevs.
+  Uttarwar discussed how changes to Bitcoin’s peer-to-peer layer should
+  be assessed according to five goals: reliability, timeliness,
+  accessibility, privacy, and upgradability. She discussed the dangers of
+  network partitions and [eclipse attacks][topic eclipse attacks]---and then explained why
+  block-relay-only connections and anchor nodes are effective
+  mitigations.  ([transcript][attacking xs], [video][attacking vid])
+
+- **LND v0.10** Laolu Osuntokun, Joost Jager, and Oliver Gugger
+  presented in virtual reality at Reckless VR. Osuntokun presented Tor
+  and RPC enhancements in the latest release of LND plus a new channel
+  feature called [anchor outputs][topic anchor outputs] that addresses
+  the challenge of estimating onchain fees months in advance.
+  Jager discussed the challenges of [multipart payments][topic multipath
+  payments] including the splitting algorithm, what happens when the
+  shards of the payment arrive at different times, and strategies for
+  handling multipart payment failures. Gugger ended by discussing Partially
+  Signed Bitcoin Transaction ([PSBT][topic psbt]) channel funding and
+  the channel abstraction work that made this possible.
+  ([transcript][lnd10 xs], [video][lnd10 vid])
+
+- **Grokking Bitcoin** Kalle Rosenbaum participated in a Bitcoin developer meetup
+  and gave a presentation at London Bitcoin Devs.  The
+  meetup discussion focused on the role of Bitcoin technical
+  education, [BIP32][] HD wallets, and soft fork upgrades.  For the
+  presentation, Rosenbaum used the content in his book to discuss how
+  the segwit upgrade of 2017 addressed transaction malleability and
+  quadratic hashing.  ([Meetup transcript][grok xs2], [presentation
+  transcript][grok xs1], [presentation video][grok vid], [presentation
+  slides][grok slides])
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -164,3 +211,16 @@ version 0.20.*
 [news83 precomputed]: /en/newsletters/2020/02/05/#safety-concerns-related-to-precomputed-public-keys-used-with-schnorr-signatures
 [news91 power analysis]: /en/newsletters/2020/04/01/#mitigating-differential-power-analysis-in-schnorr-signatures
 [network magic]: https://btcinformation.org/en/glossary/start-string
+[bitcoin transcripts]: https://twitter.com/btctranscripts
+[simplicity demo]: https://asciinema.org/a/rhIsJBixoB3k8yuFQQr2UGAQN
+[simplicity xs]: https://diyhpl.us/wiki/transcripts/blockstream-webinars/2020-04-08-adam-back-simplicity/
+[simplicity vid]: https://www.youtube.com/watch?v=RZNCk-nyx_A
+[simplicity slides]: https://docsend.com/view/svs27jr
+[attacking xs]: https://diyhpl.us/wiki/transcripts/la-bitdevs/2020-04-16-amiti-uttarwar-attacking-bitcoin-core/
+[attacking vid]: https://www.youtube.com/watch?v=8TaY730YlMg
+[lnd10 xs]: https://diyhpl.us/wiki/transcripts/vr-bitcoin/2020-04-18-laolu-joost-oliver-lnd0.10/
+[lnd10 vid]: https://www.youtube.com/watch?v=h34fUGuDjMg
+[grok xs1]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-04-29-kalle-rosenbaum-grokking-bitcoin/
+[grok vid]: https://www.youtube.com/watch?v=6tHnYyaw0qw
+[grok slides]: http://rosenbaum.se/ldnbitcoindev/drawing.sozi.html
+[grok xs2]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-04-22-socratic-seminar/
