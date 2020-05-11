@@ -160,7 +160,12 @@ version 0.20.*
   is written to the debug log, again to make it easier for developers
   to comprehend the problem and provide assistance.
 
-- [C-Lightning #3659][] Watchtowers attempt 3: the full channelding FIXME:moneyball
+- [C-Lightning #3659][] has `channeld` create the penalty transaction, as
+  it has enough information about previous commitment transactions. With
+  this change, C-Lightning now supports watchtowers, such as
+  [Talaia’s The Eye of Satoshi watchtower][talaia]. Possible [future
+  extensions][CL future] are to include the HTLC transactions for watchtower
+  settlement and to generate penalty transactions for commitments created before the watchtower plugin was activated.
 
 - [Rust-Lightning #539][] Require static_remotekey FIXME:dongcarl
 
@@ -199,3 +204,5 @@ version 0.20.*
 [sanders safe automation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014843.html
 [kozlik spk commit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017801.html
 [snigirev ref]: https://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2019-06-29-hardware-wallets/
+[talaia]: https://twitter.com/sr_gi/status/1258830271148961795
+[CL future]: https://github.com/ElementsProject/lightning/issues/3724
