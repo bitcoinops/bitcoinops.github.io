@@ -12,13 +12,15 @@
 {% for i in (0..9) %}
   {% capture q %}q{{i}}{% endcapture %}
   {% capture a %}a{{i}}{% endcapture %}
+  {% capture al %}a{{i}}link{% endcapture %}
+  {% capture alink %}{% if include.[al] != nil %}<a href="{{ include.[al] }}" class="external">➚</a>{% endif %}{% endcapture %}
   {% if include.[q] == nil %}{% break %}{% endif %}
   {% assign qslug = include.[q] | slugify: 'latin' %}
   {% if jekyll.environment == "email" %}
-   - <i markdown="1">{{include.[q]}}</i><br>{{include.[a]}}
+   - <i markdown="1">{{include.[q]}}</i><br>{{include.[a]}}&nbsp;{{alink}}
   {% else %}
    - <details id="{{qslug}}" markdown="1"><summary><span markdown="1">{{include.[q]}}</span></summary>
-     {{include.[a]}}
+     {{include.[a]}}&nbsp;{{alink}}
      </details>
   {% endif %}
 {% endfor %}
