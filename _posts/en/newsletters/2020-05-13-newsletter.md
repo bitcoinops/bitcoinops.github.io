@@ -67,19 +67,59 @@ changes to popular Bitcoin infrastructure software.
 
 ## Bitcoin Core PR Review Club
 
-_In this monthly section, we summarize a recent Bitcoin Core PR Review
-Club meeting, highlighting some of the important questions and answers.
-Click on a question below to see a summary of the answer from the
-meeting._
+_In this monthly section, we summarize a recent [Bitcoin Core PR Review Club][]
+meeting, highlighting some of the important questions and answers.  Click on a
+question below to see a summary of the answer from the meeting._
 
-FIXME:jnewbery or jonatack
+[Flush undo files after last block write][review club #17994] is a PR
+([#17994][Bitcoin Core #17994]) by Karl-Johan Alm that changes the way
+that _undo files_ are flushed to disk. Undo files are created when the
+UTXO set is updated to reflect the transactions in a new block; if the
+block is later removed during a reorg, the undo file contains the
+changes that will restore the UTXO set to its previous state, undoing
+the effects of originally processing the block.
+
+Most of the discussion was around the basic concepts and the details of
+the bug fix:
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
+  q0="Can the existing bug result in data loss (and potentially consensus
+      failure)?"
+  a0="No. The [bug][Bitcoin Core #17890] can result in using disk space unnecessarily, but cannot
+      result in data loss."
+  a0link="https://bitcoincore.reviews/17994.html#l-33"
 
-  q1="FIXME1"
-  a1="FIXME"
+  q1="Is it possible to create the undo data for a block without having all the
+      preceding blocks?"
+  a1="No. Creating the undo data for a block requires having the UTXO set at
+      the point that the block was connected. For that, we need to have
+      validated and connected all preceding blocks."
+  a1link="https://bitcoincore.reviews/17994.html#l-43"
+
+  q2="Do we ever modify block or undo data after it has been written to disk?"
+  a2="In general, no. Block and undo data are write-only. Once they've been
+      written to disk, they are not modified. A pruning node may delete block
+      and undo data after it's been buried by enough new blocks."
+  a2link="https://bitcoincore.reviews/17994.html#l-79"
+
+  q3="Is undo data written to disk in the same order as the block data?"
+  a3="No. Block data is written in the order that the blocks were received
+      (which may not be in height order, since we fetch blocks in parallel
+      during initial sync), and undo data is written in the order that the blocks
+      were connected. However, undo data always appears in the corresponding
+      `rev*` file to the `blk*` file that the block appears in."
+  a3link="https://bitcoincore.reviews/17994.html#l-103"
+
+  q4="How is space allocated in the block and undo files? Why?"
+  a4="Space is pre-allocated in the files in chunks of 16MB for block files
+      and 1MB for undo files. This is to reduce filesystem fragmentation."
+  a4link="https://bitcoincore.reviews/17994.html#l-122"
+
+  q5="What does this PR change?"
+  a5="In this PR, the undo file is finalized and flushed to disk when
+      the highest block in the file has been connected, instead of when
+      the corresponding block file is flushed."
+  a5link="https://bitcoincore.reviews/17994.html#l-204"
 %}
 
 ## Releases and release candidates
@@ -150,7 +190,7 @@ version 0.20.*
     scriptPubKey).
 
 {% include references.md %}
-{% include linkers/issues.md issues="16224,3659,539,4139" %}
+{% include linkers/issues.md issues="16224,3659,539,4139,17994,17890" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [c-lightning 0.8.2.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.2.1
 [eclair 0.4]: https://github.com/ACINQ/eclair/releases/tag/v0.4
