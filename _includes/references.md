@@ -56,6 +56,7 @@
 [bip-tapscript]: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki
 [bips repo]: https://github.com/bitcoin/bips/
 [Bitcoin Core 0.16.2]: https://bitcoincore.org/en/releases/0.16.2/
+[Bitcoin Core PR Review Club]: https://bitcoincore.reviews/
 [BitcoinCore.org]: https://bitcoincore.org/
 [bitcoin core repo]: https://github.com/bitcoin/bitcoin
 [bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf

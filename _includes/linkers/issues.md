@@ -1,14 +1,7 @@
 {% capture /dev/null %}
 <!--
-issues.md: creates Markdown referency-style links to issues and pull
-requests in the Bitcoin Core, LND, C-Lightning, libsecp256k1, BIPs, BOLTs,
-and Rust-Lightning repositories.
-
-When changing this file, a good test to run to ensure that all links are
-working is the htmlproofer line from the Makefile with the
-"disable-external" parameter removed.  Beware that this can be bandwidth
-intensive and that you might get throttled/banned for suspected website
-scraping.
+issues.md: creates Markdown reference-style links to issues, pull
+requests, and other templated URLs.
 
   Input:
     - issues: (CSV) the issue numbers to create links for separated by
@@ -37,4 +30,5 @@ scraping.
 [bips #{{_issue}}]: https://github.com/bitcoin/bips/issues/{{_issue}}
 [bolts #{{_issue}}]: https://github.com/lightningnetwork/lightning-rfc/issues/{{_issue}}
 [rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
+[review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
 {% endfor %}
