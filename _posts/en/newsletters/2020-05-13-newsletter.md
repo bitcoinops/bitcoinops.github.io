@@ -167,7 +167,12 @@ version 0.20.*
   extensions][CL future] are to include the HTLC transactions for watchtower
   settlement and to generate penalty transactions for commitments created before the watchtower plugin was activated.
 
-- [Rust-Lightning #539][] Require static_remotekey FIXME:dongcarl
+- [Rust-Lightning #539][] adds support for `option_static_remotekey` channels
+  and requires connecting peers to support this feature. In the case of data
+  loss on your end, this feature allows your channel counterparty to pay an
+  untweaked key agreed upon during the initial channel open, which will close
+  the channel and allow your wallet to spend your funds. See Newsletter
+  [#67][news67 static_remotekey] for more details on this feature.
 
 - [LND #4139][] extends the `gettransactions` and `listsweeps` RPCs to
   allow passing start and end block heights to only retrieve
@@ -206,3 +211,4 @@ version 0.20.*
 [snigirev ref]: https://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2019-06-29-hardware-wallets/
 [talaia]: https://twitter.com/sr_gi/status/1258830271148961795
 [CL future]: https://github.com/ElementsProject/lightning/issues/3724
+[news67 static_remotekey]: /en/newsletters/2019/10/09/#bolts-642
