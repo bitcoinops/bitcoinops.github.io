@@ -24,6 +24,10 @@ cat <<EOF > $file
 ---
 title: ${topic}
 
+## Optional.  Shorter name to use for reference style links e.g., "foo"
+## will allow using the link [topic foo][].  Not case sensitive
+# shortname: foo
+
 ## Optional.  An entry will be added to the topics index for each alias
 #aliases:
 #  - Foo

@@ -3,49 +3,12 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
-[topic anchor outputs]: /en/topics/anchor-outputs/
-[topic assumeutxo]: /en/topics/assumeutxo/
-[topic bech32]: /en/topics/bech32/
-[topic block explorers]: /en/topics/block-explorers/
-[topic channel factories]: /en/topics/channel-factories/
-[topic coinjoin]: /en/topics/coinjoin/
-[topic compact block filters]: /en/topics/compact-block-filters/
-[topic consensus cleanup]: /en/topics/consensus-cleanup-soft-fork/
-[topic covenants]: /en/topics/covenants/
-[topic cpfp]: /en/topics/cpfp/
-[topic cpfp carve out]: /en/topics/cpfp-carve-out/
-[topic descriptors]: /en/topics/output-script-descriptors/
-[topic eclipse attacks]: /en/topics/eclipse-attacks/
-[topic eltoo]: /en/topics/eltoo/
-[topic erlay]: /en/topics/erlay/
-[topic generic signmessage]: /en/topics/generic-signmessage/
-[topic hold invoices]: /en/topics/hold-invoices/
-[topic hwi]: /en/topics/hwi/
-[topic mast]: /en/topics/mast/
-[topic miniscript]: /en/topics/miniscript/
-[topic minisketch]: /en/topics/minisketch/
-[topic multipath payments]: /en/topics/multipath-payments/
-[topic musig]: /en/topics/musig/
-[topic output script descriptors]: /en/topics/output-script-descriptors/
-[topic payjoin]: /en/topics/payjoin/
-[topic psbt]: /en/topics/psbt/
-[topic rbf]: /en/topics/replace-by-fee/
-[topic reproducible builds]: /en/topics/reproducible-builds/
-[topic rbf]: /en/topics/replace-by-fee/
-[topic schnorr signatures]: /en/topics/schnorr-signatures/
-[topic sidechains]: /en/topics/sidechains/
-[topic sighash_noinput]: /en/topics/sighash_noinput/
-[topic signet]: /en/topics/signet/
-[topic splicing]: /en/topics/splicing/
-[topic spontaneous payments]: /en/topics/spontaneous-payments/
-[topic taproot]: /en/topics/taproot/
-[topic tapscript]: /en/topics/tapscript/
-[topic trampoline payments]: /en/topics/trampoline-payments/
-[topic transaction bloom filtering]: /en/topics/transaction-bloom-filtering/
-[topic transaction pinning]: /en/topics/transaction-pinning/
-[topic v2 p2p transport]: /en/topics/v2-p2p-transport/
-[topic watchtowers]: /en/topics/watchtowers/
 [scaling payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
+
+{% comment %}<!-- links for topics -->{% endcomment %}
+{% for topic in site.topics %}
+  [topic {{topic.shortname | default: topic.title}}]: {{topic.url}}
+{%- endfor %}
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki

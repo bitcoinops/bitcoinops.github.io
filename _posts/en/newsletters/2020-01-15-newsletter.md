@@ -118,7 +118,7 @@ software.
   the block chain even though the `avoid_reuse` behavior is supposed to
   prevent this type of linkability.  This merged PR fixes the problem for the
   `avoid_reuse` flag, and the ongoing adoption of [output script
-  descriptors][topic output script descriptors] is expected to
+  descriptors][topic descriptors] is expected to
   eliminate the problem of Bitcoin Core monitoring for alternative
   addresses.  This change is expected to be backported into the next
   Bitcoin Core maintenance release (see [PR #17792][Bitcoin Core

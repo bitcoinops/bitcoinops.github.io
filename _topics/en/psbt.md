@@ -1,5 +1,6 @@
 ---
 title: Partially signed bitcoin transactions (PSBTs)
+shortname: psbt
 
 aliases:
   - BIP174

@@ -1,5 +1,6 @@
 ---
 title: Replace-by-fee (RBF)
+shortname: rbf
 
 aliases:
   - BIP125

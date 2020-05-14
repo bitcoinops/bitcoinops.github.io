@@ -1,5 +1,6 @@
 ---
 title: Version 2 P2P transport
+shortname: v2 p2p transport
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options

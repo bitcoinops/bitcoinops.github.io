@@ -60,7 +60,7 @@ about notable code and documentation changes.
 
 - [Bitcoin Core #18032][] extends the results of the `createmultisig`
   and `addmultisigaddress` RPCs to include a `descriptor` field that
-  contains an [output script descriptor][topic output script descriptors]
+  contains an [output script descriptor][topic descriptors]
   for the created multisig address.  Providing a descriptor here makes it
   easier for the user (or a program that is calling this RPC) to get all
   the information they need to not only monitor for payments received to

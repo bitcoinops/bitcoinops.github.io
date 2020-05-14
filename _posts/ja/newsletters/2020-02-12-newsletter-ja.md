@@ -26,7 +26,7 @@ lang: ja
 
 - [Bitcoin Core #17585][]は、`labels`（複数）フィールドがすでに存在するため、`getaddressinfo` RPCによって返される`label`フィールドを廃止し、同じ機能を提供します。`label`フィールドは0.21で削除される予定です。互換性のために、`-deprecatedrpc=label`を指定して`bitcoind`を起動することにより、暫定的に古い動作を再度有効にできます。この変更は、`getaddressinfo` RPCインターフェイスをクリーンアップするための一連の変更の最後の変更です（[Newsletter #80][news80 label]で説明されているPRを含む）。
 
-- [Bitcoin Core #18032][]は、`createmultisig`および`addmultisigaddress` RPCの結果を拡張して、生成されたmultisigアドレスの[アウトプット・スクリプト・ディスクリプター][topic output script descriptors]を含む`descriptor`フィールドを組み込みます。この変更により、ユーザー（またはこのRPCを呼び出しているプログラム）が必要なすべての情報を取得しやすくなり、作成されたアドレスへの支払いをモニターするだけでなく、支払いプロセスを開始する署名のないトランザクションを後で作成することもできます。
+- [Bitcoin Core #18032][]は、`createmultisig`および`addmultisigaddress` RPCの結果を拡張して、生成されたmultisigアドレスの[アウトプット・スクリプト・ディスクリプター][topic descriptors]を含む`descriptor`フィールドを組み込みます。この変更により、ユーザー（またはこのRPCを呼び出しているプログラム）が必要なすべての情報を取得しやすくなり、作成されたアドレスへの支払いをモニターするだけでなく、支払いプロセスを開始する署名のないトランザクションを後で作成することもできます。
 
 - [C-Lightning #3475][]では、プラグインフックが`{ "result" : "continue" }`を返すことで、`lightningd`にフックを実行せずにアクションを処理するように指示できます。これにより、フックは特別な場合にのみ簡単に実行できます。
 

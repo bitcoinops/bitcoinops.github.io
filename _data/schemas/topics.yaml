@@ -13,6 +13,10 @@ properties:
     description: Title of the topic
     type: string
 
+  shortname:
+    description: Short alternative name to use for creating Markdown reference links
+    type: string
+
   categories:
     description: Which categories should list this topic?
     type: array
