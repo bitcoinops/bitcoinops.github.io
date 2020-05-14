@@ -233,7 +233,7 @@ onchain transaction fees.  This makes Loop almost completely trustless.
 
 - [Bitcoin Core 0.18][] released in May improved Partially Signed
   Bitcoin Transaction ([PSBT][topic psbt]) support and added support for
-  [output script descriptors][topic output script descriptors].  The
+  [output script descriptors][topic descriptors].  The
   combination of those two features allowed it to be used with the first
   released version of the Hardware Wallet Interface ([HWI][]).
 
@@ -579,7 +579,7 @@ before seeing deployment on the network.
 - [Hardware Wallet Interface][topic hwi] released in March makes it easy
   for a wallet already compatible with Partially Signed Bitcoin
   Transactions ([PSBTs][topic psbt]) and [output script descriptors][topic
-  output script descriptors]
+  descriptors]
   to use several different models of hardware wallets for secure key
   storage and signing.
 

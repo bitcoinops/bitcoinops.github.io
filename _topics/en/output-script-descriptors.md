@@ -1,5 +1,6 @@
 ---
 title: Output script descriptors
+shortname: descriptors
 
 aliases:
   - Descriptors

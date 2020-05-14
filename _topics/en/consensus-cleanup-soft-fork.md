@@ -1,5 +1,6 @@
 ---
 title: Consensus cleanup soft fork
+shortname: consensus cleanup
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options

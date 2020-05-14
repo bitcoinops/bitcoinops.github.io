@@ -1,5 +1,6 @@
 ---
 title: "Child-pays-for-parent (CPFP)"
+shortname: cpfp
 
 ## Optional.  An entry will be added to the topics index for each alias
 aliases:

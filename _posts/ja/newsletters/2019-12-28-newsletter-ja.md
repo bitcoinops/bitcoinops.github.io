@@ -131,7 +131,7 @@ Signetは一年を通じて成熟していき、ゆくゆくはC-Lightningとい
 
 - [LND 0.6-beta][] は、4月にリリースされ[Static Channel Backups (SCBs)][lnd scb] のサポートを追加しました。これにより、最新のチャネル・ステートを失ったとしても、LNチャネルでセトルしたファンドをリカバリーすることができます。このリリースには、新しいチャネルを開くのを支援する改善されたautopilotの機能や、チャネルを閉じる、またはカストディアンを利用することなくオンチェーンでファンドを動かすための [Lightning Loop][]とのBuit-in 互換性が含まれます。
 
-- [Bitcoin Core 0.18][]は5月にリリースされ、部分的署名ビットコイン・トランザクション([PSBT][topic psbt])のサポートの改善、[output script descriptors][topic output script descriptors]のサポートが追加されました。これら2つの機能の追加により、Hardware Wallet Interface ([HWI][])の初期リリース・バージョンを利用することができます。
+- [Bitcoin Core 0.18][]は5月にリリースされ、部分的署名ビットコイン・トランザクション([PSBT][topic psbt])のサポートの改善、[output script descriptors][topic descriptors]のサポートが追加されました。これら2つの機能の追加により、Hardware Wallet Interface ([HWI][])の初期リリース・バージョンを利用することができます。
 
 - [Eclair 0.3][]は5月にリリースされ、バックアップ・安全性の改善、プラグインのサポートの追加、Tor hidden serviceとしての稼働を可能にしました。
 
@@ -272,7 +272,7 @@ LNディベロッパーにより、過度の遅延なくユーザがいつでも
 
 - [Proof of reserves tool][] は、2月にリリースされました。これにより取引所やその他のビットコイン・カストディアン業者が [BIP127][] reserve proofs を利用して特定のUTXOのセットに対してコントロールしていることを証明することができます。
 
-- [Hardware Wallet Interface][topic hwi] は、3月にリリースされ、[PSBTs][topic psbt]と [output script descriptors][topic output script descriptors]に既に互換性のあるウォレットが、セキュア・キー・ストレージ及び署名にハードウェア・ウォレットの複数の異なるモデルを利用することを容易にします。
+- [Hardware Wallet Interface][topic hwi] は、3月にリリースされ、[PSBTs][topic psbt]と [output script descriptors][topic descriptors]に既に互換性のあるウォレットが、セキュア・キー・ストレージ及び署名にハードウェア・ウォレットの複数の異なるモデルを利用することを容易にします。
 
 - <a href="/en/newsletters/2019/03/26/#loop-announced">Lightning Loop</a>は、3月にリリース（loop-inサポートは6月に追加）され、既存チャネルをクローズまたは、新しいチャネルをオープンすることなく、LNチャネルからファンドを追加・削除することを可能にします。
 
