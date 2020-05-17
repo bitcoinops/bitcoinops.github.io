@@ -7,15 +7,55 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter FIXME:harding
+This week's newsletter relays a request for comments on a proposed
+change to the BIP341 taproot transaction digest and briefly summarizes
+discussion about a new and more concise protocol for atomic swaps.  Also
+included are our regular sections describing changes to services and
+client software, new releases and release candidates, and notable
+changes to popular Bitcoin infrastructure software.
 
 ## Action items
 
-FIXME:harding
+- **Evaluate proposed changes to BIP341 taproot transaction digest:** as
+  described in [last week's newsletter][news97 spk commit], there has
+  been a request for [taproot][topic taproot] signatures to make an
+  additional commitment to the scriptPubKeys of all the UTXOs being
+  spent in a transaction.  Anthony Towns has [suggested][towns
+  suggestion] how [BIP341][] might be updated for this change and Pieter
+  Wuille has [asked][wuille rfc] whether anyone has any objections.  If
+  you have any questions or concerns about the proposed transaction
+  digest revision, we suggest either replying to the mailing list or
+  contacting the BIP341 authors directly.
 
 ## News
 
-FIXME:harding
+- **Two-transaction cross chain atomic swap or same-chain coinswap:**
+  Ruben Somsen [posted][somsen post] to the Bitcoin-Dev mailing list and
+  [created a video][somsen video] describing a procedure for a trustless
+  exchange of coins using only two transactions, named Succinct Atomic
+  Swaps (SAS).  The [previous standard protocol][nolan swap] uses four
+  transactions.  Somsen's SAS protocol leaves each party holding coins
+  that they can spend at any time---but which they may need to spend on
+  short notice if their counterparty attempts theft (similar to how LN
+  channels need to be monitored).  Additionally the keys necessary to
+  spend the coins won't be contained in the user's [BIP32][] HD wallet,
+  so additional backups may be required.
+
+    Advantages of the protocol are that it requires less block space
+    than existing protocols, it saves on transaction fees (both by using
+    less block space and potentially by requiring less urgency for its
+    settlement transactions), it only requires consensus-enforced
+    timelocks on one of the chains in a cross-chain swap, and it
+    doesn't depend on any new security assumptions or Bitcoin consensus
+    changes.  If taproot is adopted, swaps can be made even more privately
+    and efficiently.
+
+    Commenting on the protocol, Lloyd Fournier [noted][fournier
+    elegance] the "elegance" of a simplified version of the protocol
+    that uses three transactions.  Dmitry Petukhov [posted][petukhov
+    tla+] about a [specification][sas tla+ spec] he'd written for the
+    protocol in the [TLA<sup>+</sup> formal specification language][tla+
+    lang], helping to test the correctness of the protocol.
 
 ## Changes to services and client software
 
@@ -26,14 +66,17 @@ FIXME:bitschmidty
 
 ## Releases and release candidates
 
-FIXME:harding to update Tuesday afternoon with latest releases and RCs
-
 *New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [Bitcoin Core 0.20.0rc1][bitcoin core 0.20.0] is a release candidate
-  for the next major version of Bitcoin Core.
+- [Bitcoin Core 0.20.0rc2][bitcoin core 0.20.0] is the newest release
+  candidate for the next major version of Bitcoin Core.  It
+  [contains][Bitcoin Core #18973] several bug fixes and improvements
+  since the first release candidate.
+
+- [LND 0.10.1-beta.rc1][] is the first release candidate for the next
+  maintenance release of LND.
 
 ## Notable code and documentation changes
 
@@ -50,32 +93,44 @@ version 0.20.*
 
 - [Bitcoin Core #18877][] Serve cfcheckpt requests FIXME:jnewbery
 
-- [Bitcoin Core #18894][] fixes a UI bug that affected users of both
-  multi-wallet mode in the GUI and manual coin control.  The bug was
-  described as a [known issue][coin control bug] in the Bitcoin Core
-  0.18 release notes.  This is tagged to be included in the second
-  release candidate for Bitcoin Core 0.20.
+- [Bitcoin Core #18894][] fixes a UI bug that affected people who
+  simultaneously used multi-wallet mode in the GUI and manual coin
+  control.  The bug was described as a [known issue][coin control bug]
+  in the Bitcoin Core 0.18 release notes.  This is included in the
+  second release candidate for Bitcoin Core 0.20 linked in the
+  preceding section.
 
-- [C-Lightning #3614][] coinmoves: FIXME:dongcarl
-
-- [Bitcoin #18808][] causes Bitcoin Core to ignore any P2P protocol
+- [Bitcoin Core #18808][] causes Bitcoin Core to ignore any P2P protocol
   `getdata` requests that specify an unknown type of data.  The new
   logic will also ignore requests for types of data that aren't expected
   to be sent over the current connection, such as requests for
-  transactions (type: `tx`) on block-relay-only connections.
-  Previously, Bitcoin Core wouldn't process any further requests from
-  a peer after it received an unknown type, effectively stalling that
-  connection.
+  transactions on block-relay-only connections.
+
+- [C-Lightning #3614][] coinmoves: FIXME:dongcarl
 
 - [Eclair #1395][] updates the route pathfinding used by Eclair to
-  factor in channel balances and to use [Yen's algorithm][].  Testing
-  quoted in the PR description says, "The new algorithm consistently
-  finds more routes and cheaper ones. The route prefix are more diverse,
+  factor in channel balances and to use [Yen's algorithm][].
+  The PR description says that "the new algorithm consistently
+  finds more routes and cheaper ones. The route prefixes are more diverse,
   which is good as well (especially for MPP).  [...] and the new [code]
   is consistently 25% faster on my machine (when looking for 3 routes)."
 
 {% include references.md %}
-{% include linkers/issues.md issues="18877,18894,3614,18808,1395" %}
+{% include linkers/issues.md issues="18877,18894,3614,18808,1395,18973,18962" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
+[lnd 0.10.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc1
 [coin control bug]: https://bitcoincore.org/en/releases/0.18.0/#wallet-gui
 [yen's algorithm]: https://en.wikipedia.org/wiki/Yen's_algorithm
+[getheaders]: https://btcinformation.org/en/developer-reference#getheaders
+[headers]: https://btcinformation.org/en/developer-reference#headers
+[headers first sync]: https://btcinformation.org/en/developer-guide#headers-first
+[news97 spk commit]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
+[towns suggestion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017813.html
+[wuille rfc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017849.html
+[somsen post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
+[somsen video]: https://www.youtube.com/watch?v=TlCxpdNScCA
+[petukhov tla+]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017866.html
+[tla+ lang]: https://en.wikipedia.org/wiki/TLA%2B
+[sas tla+ spec]: https://github.com/dgpv/SASwap_TLAplus_spec
+[fournier elegance]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017851.html
+[nolan swap]: https://bitcointalk.org/index.php?topic=193281.msg2224949#msg2224949
