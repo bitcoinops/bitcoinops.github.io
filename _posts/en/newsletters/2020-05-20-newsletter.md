@@ -140,7 +140,12 @@ version 0.20.*
   to be sent over the current connection, such as requests for
   transactions on block-relay-only connections.
 
-- [C-Lightning #3614][] coinmoves: FIXME:dongcarl
+- [C-Lightning #3614][] adds a new notification type named `coin_movements` that
+  is triggered by finalized ledger updates. Clients subscribed to these
+  notifications will receive updates on both definitively resolved HTLCs and
+  confirmed bitcoin transactions, allowing them to construct a canonical ledger
+  for coin movements through their C-Lightning node.  See its
+  [documentation][coin_movement] for details.
 
 - [Eclair #1395][] updates the route pathfinding used by Eclair to
   factor in channel balances and to use [Yen's algorithm][].
@@ -173,3 +178,4 @@ version 0.20.*
 [blockstream satellite v2 blog]: https://blockstream.com/2020/05/04/en-announcing-blockstream-satellite-2/
 [breez 0.9]: https://github.com/breez/breezmobile/releases/tag/0.9.keysend
 [copay cpfp]: https://github.com/bitpay/copay/pull/10746
+[coin_movement]: https://github.com/niftynei/lightning/blob/bc803006351a079596b086465246626d3d5e4828/doc/PLUGINS.md#coin_movement
