@@ -62,7 +62,31 @@ changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Lightning-based messenger application Juggernaut launches:**
+  In a [blog post][juggernaut blog] announcing the first release of Juggernaut,
+  John Cantrell describes how the messaging and wallet features are built using
+  [keysend payments][topic spontaneous payments].
+
+- **Lightning Loop using multipath payments:**
+  The latest [upgrade][lightning loop mpp blog] from Lightning Labs
+  now uses [multipath payments][topic multipath payments] to convert onchain
+  funds into funds within LN channels.
+
+- **Blockstream Satellite 2.0 supports initial block download:**
+  Blockstream [outlines version 2.0 upgrades][blockstream satellite v2 blog] to
+  their satellite service which include expanded Asia-Pacific coverage,
+  additional bandwidth, and an updated protocol that enables a full node to complete an initial sync
+  using only the satellite feed.
+
+- **Breez wallet enables spontaneous payments:**
+  [Version 0.9][breez 0.9] of Breez wallet adds the ability to send spontaneous
+  payments to Lightning nodes that support keysend.
+
+- **Copay enables CPFP for incoming transactions:**
+  Version 9.3.0 adds the ability for the user to
+  [speed up an incoming transaction][copay cpfp] using [child-pays-for-parent][topic cpfp].
+  The feature is only enabled after the wallet observes the transaction
+  remaining unconfirmed for four hours.
 
 ## Releases and release candidates
 
@@ -144,3 +168,8 @@ version 0.20.*
 [sas tla+ spec]: https://github.com/dgpv/SASwap_TLAplus_spec
 [fournier elegance]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017851.html
 [nolan swap]: https://bitcointalk.org/index.php?topic=193281.msg2224949#msg2224949
+[juggernaut blog]: https://medium.com/@johncantrell97/announcing-juggernaut-5bda48d34a18
+[lightning loop mpp blog]: https://lightning.engineering/posts/2020-05-13-loop-mpp/
+[blockstream satellite v2 blog]: https://blockstream.com/2020/05/04/en-announcing-blockstream-satellite-2/
+[breez 0.9]: https://github.com/breez/breezmobile/releases/tag/0.9.keysend
+[copay cpfp]: https://github.com/bitpay/copay/pull/10746
