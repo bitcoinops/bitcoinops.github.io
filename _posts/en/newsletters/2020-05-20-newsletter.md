@@ -91,7 +91,17 @@ development branch and so those changes will likely not be released
 until version 0.21, about six months after the release of the upcoming
 version 0.20.*
 
-- [Bitcoin Core #18877][] Serve cfcheckpt requests FIXME:jnewbery
+- [Bitcoin Core #18877][] is the first step towards support for serving
+  [compact block filters][topic compact block filters] on the P2P
+  network, as specified in [BIP157][].  Nodes that enable the compact block filter index
+  with the `-blockfilterindex` configuration parameter can now respond to
+  `getcfcheckpt` requests with a `cfcheckpt` compact block filters checkpoint
+  response.   The `getcfheaders` and `getcfilters` messages are not yet supported, and the
+  node won't advertise support for BIP157 with `NODE_COMPACT_FILTERS` in its
+  version message.
+
+    The feature is disabled by
+    default and can be enabled with the `-peerblockfilters` configuration parameter.
 
 - [Bitcoin Core #18894][] fixes a UI bug that affected people who
   simultaneously used multi-wallet mode in the GUI and manual coin
