@@ -76,4 +76,7 @@ optech_mentions:
 see_also:
   - title: An early description of covenants in Bitcoin
     link: https://bitcointalk.org/index.php?topic=278122.0
+
+  - title: OP_CHECKSIGFROMSTACK
+    link: topic op_checksigfromstack
 ---
