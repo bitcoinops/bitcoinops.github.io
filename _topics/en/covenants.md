@@ -79,4 +79,7 @@ see_also:
 
   - title: OP_CHECKSIGFROMSTACK
     link: topic op_checksigfromstack
+
+  - title: OP_CHECKTEMPLATEVERIFY
+    link: topic op_checktemplateverify
 ---
