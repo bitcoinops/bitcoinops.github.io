@@ -82,4 +82,7 @@ see_also:
 
   - title: OP_CHECKTEMPLATEVERIFY
     link: topic op_checktemplateverify
+
+  - title: Vaults
+    link: topic vaults
 ---

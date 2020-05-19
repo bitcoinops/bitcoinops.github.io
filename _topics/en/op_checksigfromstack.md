@@ -20,7 +20,6 @@ excerpt: >
   signature signs an arbitrary message.  The opcode takes three
   parameters: a signature, a message, and a public key.
 
-# TODO: add links to [topic vaults] when that articles is merged
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
   Bitcoin's existing signature-checking opcodes, such as `OP_CHECKSIG`,
@@ -111,7 +110,7 @@ extended_summary: |
       [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
       Additionally, `OP_CSFS` would allow the creation of
       [covenants][topic covenants] that restrict the way in which a set
-      of bitcoins may be spent---for example, a vault may
+      of bitcoins may be spent---for example, a [vault][topic vaults] may
       restrict its spending transaction to a small set of acceptable
       scriptPubKeys to limit the risk of theft.
 
