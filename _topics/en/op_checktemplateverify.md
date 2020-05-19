@@ -22,7 +22,6 @@ excerpt: >
   received to that address may be spent---a design known in Bitcoin as a
   *covenant*.
 
-## TODO: link to [topic vaults] when available
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
   Originally introduced under the name **OP_CHECKOUTPUTSHASHVERIFY**
@@ -36,7 +35,7 @@ extended_summary: |
   Later versions of the proposal placed greater emphasis on other
   contracts and [covenants][topic covenants] that could be created using
   the new opcode, such as the ability to create [channel
-  factories][topic channel factories], vaults, and
+  factories][topic channel factories], [vaults][topic vaults], and
   [coinjoin transactions][topic coinjoin] in new ways that might
   simplify construction or reduce fees.  Other authors have mentioned
   that the new opcode could possibly be used to allow users to
