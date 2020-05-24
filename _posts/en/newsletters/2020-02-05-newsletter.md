@@ -153,7 +153,7 @@ public key may leak the secret key through an (invalid) signature."
       created (especially if [taproot][topic taproot] is adopted, as
       mutual LN close transactions can look like single-sig spends).
 
-    * A suggestion to communicate proposed transaction details using
+    * {:#psbt-interaction} A suggestion to communicate proposed transaction details using
       [BIP174][] Partially-Signed Bitcoin Transactions ([PSBTs][topic
       psbt]).  Though Neigut replied that she thinks PSBT is "a bit
       overweight for transaction collaboration between two peers."

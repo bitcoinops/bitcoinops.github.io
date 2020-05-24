@@ -239,6 +239,7 @@ BIP][betterhash] and a [working implementation][betterhash
 implementation] that includes backwards compatibility with the
 predominant Stratum mining communication protocol.
 
+{:#cve-2017-12842}
 At the same time, a [vulnerability][sdl fake spv proof] long known to
 some Bitcoin protocol developers was unwittingly disclosed publicly.
 [CVE-2017-12842][] makes it possible to create an SPV proof for a
