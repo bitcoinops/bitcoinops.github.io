@@ -58,7 +58,19 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the sizes of single-sig and 2-of-3 multisig taproot inputs?]({{bse}}96017)
+  Murch lists a variety of ways of spending from a [taproot][topic taproot] output and their
+  associated costs.
+
+- [What if the mempool exceeds 300 MB?]({{bse}}96068)
+  Andrew Chow and Murch outline how a node behaves after its mempool's
+  maximum size is reached. The node will begin to drop transactions with the
+  lowest feerate and increase its `minMempoolFeeRate` communicated to peers in
+  order to keep the mempool size under that node's `maxmempool` configuration.
+
+- [Why isn't RFC6979 used for schnorr signature nonce generation?]({{bse}}95762)
+  Pieter Wuille describes some of the downsides of using [RFC6979][] and why
+  [BIP340][] uses a simpler nonce-generation algorithm inspired by [Ed25519][].
 
 ## Releases and release candidates
 
@@ -161,3 +173,5 @@ version 0.20.*
 [libwally psbt]: https://github.com/ElementsProject/libwally-core/pull/126
 [news83 interactive]: /en/newsletters/2020/02/05/#psbt-interaction
 [zmn padding]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017886.html
+[RFC6979]:https://tools.ietf.org/html/rfc6979
+[Ed25519]:https://ed25519.cr.yp.to/
