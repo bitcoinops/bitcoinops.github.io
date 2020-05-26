@@ -155,10 +155,12 @@ version 0.20.*
   dual funding of new channels (see [Newsletter #83][news83 interactive]
   for discussion of using PSBT for interactive construction of funding transactions).
 
-- [LND #4227][] tighten up signing; ultimate goal supporting HW devices for signing. FIXME:dongcarl
+- [LND #4227][] removes raw private key handling from various packages, paving
+  the way for hardware wallet signing support. The larger effort to remove all
+  private key handling can be tracked [here][LND #3929].
 
 {% include references.md %}
-{% include linkers/issues.md issues="18956,18861,3738,4227,17681,18895,18677,10102,18594" %}
+{% include linkers/issues.md issues="18956,18861,3738,4227,17681,18895,18677,10102,18594,3929" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc2
 [0.17 compat]: https://bitcoincore.org/en/releases/0.17.0/#compatibility
