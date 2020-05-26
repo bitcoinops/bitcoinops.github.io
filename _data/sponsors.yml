@@ -87,10 +87,6 @@ members:
     website: https://twitter.com/FCATalyst
     logo: fcat.png
   -
-    name: Kraken
-    website: https://twitter.com/krakenfx
-    logo: kraken.png
-  -
     name: Ledger
     website: https://twitter.com/LedgerHQ
     logo: ledger.png
