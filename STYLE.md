@@ -78,6 +78,7 @@ following abbreviations we assume readers will already know.
 | anti fee sniping | anti-fee sniping, anti-fee-sniping | |
 | block chain | blockchain | |
 | coinjoin | Coinjoin, coinJoin or coin-join | |
+| coinswap | Coinswap, CoinSwap, coinSwap, or coin-swap | |
 | feerate | fee-rate or fee rate | |
 | mainnet | main net | |
 | multisig | multi-sig | |
