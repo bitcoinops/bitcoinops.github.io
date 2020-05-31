@@ -89,7 +89,68 @@ publication of Newsletter #100.
 Bitcoin presentations and discussions. In this monthly feature, we
 highlight a selection of the transcripts from the previous month.*
 
-FIXME:michaelfolkson
+- **LN backups:** Christian Decker presented at Potzblitz on the latest
+  state of LN backups. He discussed the approaches of other
+  implementations such as Eclair and LND before explaining why
+  C-Lightning is using a synchronous database log plugin. Later, he
+  described why LN backups are more complex than onchain backups, the
+  prospects of adding [SIGHASH_NOINPUT][topic sighash_noinput] or
+  `SIGHASH_ANYPREVOUT` to Bitcoin to enable [eltoo-based][topic eltoo]
+  payment channels, and the current modularity of the LN protocol.
+  ([transcript][decker xs], [video][decker vid])
+
+- **Payjoin/P2EP:** Adam Gibson led a discussion at London BitDevs about
+  [payjoin][topic payjoin], a protocol that allows both the sender and
+  receiver of a payment to contribute inputs to the transaction.  This
+  breaks the [common wallet ownership assumption][] and subset sum
+  analysis, improving the privacy of both the sender and the receiver.
+  Gibson went through the history
+  of the concept and described the existing implementations of payjoin
+  in JoinMarket and Samourai before examining details of the recent
+  BTCPay Server implementation. He ended by outlining several different
+  ways a wallet can be fingerprinted, such as the number of signatures
+  required, what timelocks are used, and whether the opt-in
+  Replace-By-Fee ([RBF][topic rbf]) flag is set.  ([transcript][gibson
+  xs], [video][gibson vid])
+
+- **LSAT---your ticket aboard the lightning native web:** Oliver Gugger
+  presented the Lightning Service Authentication Token (LSAT) at
+  Reckless VR in virtual reality. LSAT is a proposed protocol
+  specification combining HTTP, macaroons, and Lightning. It's designed
+  to fulfill the purpose of the HTTP 402 Payment Required response code.
+  Gugger described the authentication flow and the role of macaroons as
+  pseudonymous user authentication. The question and answer session
+  focused on use cases and the benefits of using LSAT, such as enhanced
+  user privacy and improved sign-up experience.
+  ([transcript](https://diyhpl.us/wiki/transcripts/vr-bitcoin/2020-05-16-oliver-gugger-lsat/),
+  [video](https://www.youtube.com/watch?v=IW08RJUpzw0))
+
+- **Sydney meetup discussion:** A number of Bitcoin and LN developers
+  joined this Sydney meetup to discuss topics including: the scalability
+  issues of onboarding millions of LN clients, Rust code integration
+  into Bitcoin Core, dual funding in C-Lightning, and future soft fork
+  activation mechanisms. The history of Linux kernel development and segwit
+  activation were each explored for insights into when or whether the Rust
+  language should be introduced to Bitcoin Core and the exact mechanism
+  that should be used to activate proposed soft forks such as
+  [taproot][topic taproot] in the future. The transcript was anonymized to
+  encourage open discussion.  ([transcript][sydney xs])
+
+- **The Revault multiparty vault architecture:** Kevin Loaec and Antoine
+  Poinsot presented their vault design *Revault* at London Bitcoin
+  Devs. They outlined specific details such as its reliance on
+  co-signing servers and how it compares to other vault designs
+  that require key deletion, anticipating spending amounts, or both.
+  Their presentation was preceded the week before by a broader discussion
+  on vaults, [covenants][topic covenants], and `OP_CHECKTEMPLATEVERIFY`
+  (`OP_CTV`). This included the merits of the different use cases of
+  `OP_CTV` and a possible path to it being soft forked into Bitcoin.
+  Additional discussion focused on the current state of the mempool
+  policy in Bitcoin Core and how it creates challenges such as
+  [transaction pinning][topic transaction pinning] that affect the
+  security of both vault designs and the LN protocol.  ([Meetup
+  transcript][london xs], [Presentation transcript][revault xs], [Meetup
+  video][london vid], [Presentation video][revault vid])
 
 ## Releases and release candidates
 
@@ -208,3 +269,15 @@ their work hours to contribute to Optech.
 [Chaincode Labs]: https://chaincode.com/
 [bwt pruning]: https://github.com/shesek/bwt#pruning
 [Square Crypto]: https://twitter.com/sqcrypto
+[decker xs]: https://diyhpl.us/wiki/transcripts/lightning-hack-day/2020-05-03-christian-decker-lightning-backups/
+[decker vid]: https://www.youtube.com/watch?v=kGQF3wtzr04
+[gibson xs]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-05-05-socratic-seminar-payjoins/
+[gibson vid]: https://www.youtube.com/watch?v=hX86rKyNB8I
+[gugger xs]: https://diyhpl.us/wiki/transcripts/vr-bitcoin/2020-05-16-oliver-gugger-lsat/
+[gugger vid]: https://www.youtube.com/watch?v=IW08RJUpzw0
+[sydney xs]: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-05-19-socratic-seminar/
+[london xs]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-05-19-socratic-seminar-vaults/
+[revault xs]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-05-26-kevin-loaec-antoine-poinsot-revault/
+[london vid]: https://www.youtube.com/watch?v=34jMGiCAmQM
+[revault vid]: https://www.youtube.com/watch?v=7CE4aiFxh10
+[common wallet ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
