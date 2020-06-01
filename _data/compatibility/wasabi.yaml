@@ -41,7 +41,7 @@ rbf:
     - image: /img/compatibility/wasabi/rbf/notification-incoming-rbf.png
       caption: >
         Receiving Transaction Signaling RBF - Incoming RBF signaling
-        transaction notification notes that a transaction is replacable. Wasabi
+        transaction notification notes that a transaction is replaceable. Wasabi
         also displays whether the transaction was a replacement transaction.
     - image: /img/compatibility/wasabi/rbf/transaction-list-incoming-replacement.png
       caption: >

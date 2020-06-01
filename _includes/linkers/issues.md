@@ -6,7 +6,7 @@ requests, and other templated URLs.
   Input:
     - issues: (CSV) the issue numbers to create links for separated by
       commas with no spaces.  For a given number, a separate link will
-      be created for *all* suppored repositories
+      be created for *all* supported repositories
 
   Output:
     List of Markdown reference-style links
