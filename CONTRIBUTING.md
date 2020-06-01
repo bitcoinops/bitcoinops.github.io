@@ -14,7 +14,7 @@ blog posts. If you are interested in contributing translations for the
 newsletter (thank you!), we have some best practices to help keep things
 standardized:
 
-- View the list of existing open pull requests to see which newletters/blogs
+- View the list of existing open pull requests to see which newsletters/blogs
   are already being translated
 - Ensure your language is listed under the `languages` field in the
   `_config.yml` file

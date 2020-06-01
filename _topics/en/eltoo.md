@@ -12,7 +12,7 @@ excerpt: >
   **Eltoo** is a proposed enforcement layer for LN that allows any later
   channel state to replace any earlier channel state.  Although eltoo
   can be used with a penalty mechanism similar to the one used with
-  existing LN channels, eltoo doesn't need the penality mechanism in
+  existing LN channels, eltoo doesn't need the penalty mechanism in
   order to be secure.
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.

@@ -43,7 +43,7 @@ learn about the schnorr/taproot proposals at home.
 Bitcoin Optech held our second roundtable workshop in Paris on November 12-13 2018.
 The format was the same as the first workshop in San Francisco.
 
-In attendence were 24 engineers from Bitcoin companies and open source
+In attendance were 24 engineers from Bitcoin companies and open source
 projects.
 
 #### Topics
@@ -74,7 +74,7 @@ Bitcoin Optech held our first roundtable workshop in San Francisco on July 17 20
   publicly, but did not attribute any particular statement to a given individual
   (Chatham House Rules).
 
-In attendence were 14 engineers from SF Bay Area Bitcoin companies and open
+In attendance were 14 engineers from SF Bay Area Bitcoin companies and open
 source projects.
 
 #### Topics
