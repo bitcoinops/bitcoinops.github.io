@@ -178,7 +178,21 @@ development branch and so those changes will likely not be released
 until version 0.21, about six months after the release of the upcoming
 version 0.20.*
 
-- [Bitcoin Core #19010][] net processing: Add support for getcfheaders FIXME:jonatack
+- [Bitcoin Core #19010][] and [Bitcoin Core #19044][] are the third and fourth
+  steps, respectively, of a [series of five pull requests][Bitcoin Core #18876]
+  towards support for serving [compact block filters][topic compact block
+  filters] on the P2P network, as specified in [BIP157][]. The first step was
+  covered in [Newsletter #98][news98 bitcoin core 18877].
+
+    With these changes, nodes that enable the compact block filter index with the
+    `-blockfilterindex` configuration parameter can now respond to `getcfcheckpt`,
+    `getcfheaders`, and `getcfilters` requests with the corresponding `cfcheckpt`,
+    `cfheaders`, and `cfilters` responses. The node does not yet advertise support
+    for BIP157 with `NODE_COMPACT_FILTERS` in its version message. The final step,
+    [Bitcoin Core #19070][], is under review at the time of this writing and
+    would enable nodes to signal the ability to serve compact block filters.
+    The feature is disabled by default and can be enabled with the
+    `-peerblockfilters` configuration parameter.
 
 - [Bitcoin Core #16939][] changes how long Bitcoin Core waits until
   it queries DNS seeds for the IP addresses of potential peers.
@@ -236,7 +250,7 @@ and [Square Crypto][] who allow and encourage their staff to use
 their work hours to contribute to Optech.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19010,16939,4228" %}
+{% include linkers/issues.md issues="19010,16939,4228,19044,18876,19070" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc3
 [bishop summaries]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010488.html
@@ -281,3 +295,4 @@ their work hours to contribute to Optech.
 [london vid]: https://www.youtube.com/watch?v=34jMGiCAmQM
 [revault vid]: https://www.youtube.com/watch?v=7CE4aiFxh10
 [common wallet ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
+[news98 bitcoin core 18877]: https://bitcoinops.org/en/newsletters/2020/05/20/#bitcoin-core-18877
