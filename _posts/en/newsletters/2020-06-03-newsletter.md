@@ -205,7 +205,12 @@ version 0.20.*
   node will entirely use P2P address discovery without relying on the
   centralized DNS seeds.
 
-- [LND #4228][] walletrpc: add LabelTransaction endpoint to retrospectively label txns FIXME:dongcarl
+- [LND #4228][] adds a new wallet command, `labeltx`, for labeling past onchain
+  transactions. This is a continuation of the work done in [LND #4213][], which
+  allowed setting a label when sending a payment.  Labels are personal
+  wallet metadata that help the user remember who they paid and what
+  they bought; the labels aren't part of the onchain transactions and
+  aren't shared with any other user.
 
 ## On the occasion of Optech Newsletter #100
 
@@ -250,7 +255,7 @@ and [Square Crypto][] who allow and encourage their staff to use
 their work hours to contribute to Optech.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19010,16939,4228,19044,18876,19070" %}
+{% include linkers/issues.md issues="19010,16939,4228,19044,18876,19070,4213" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc3
 [bishop summaries]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010488.html
