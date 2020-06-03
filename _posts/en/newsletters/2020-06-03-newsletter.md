@@ -47,7 +47,9 @@ publication of Newsletter #100.
     [Electrum Personal Server][eps], which gives particular weight to
     the conclusion of his email: "I intend to create this CoinSwap
     software.  It will be almost completely decentralized and available
-    for all to use for free."
+    for all to use for free."  Anyone who wants to support development
+    but is unable to contribute directly can [donate][belcher donation]
+    to the project.
 
 - **New node-to-wallet middleware:** Nadav Ivgi [announced][ivgi bwt]
   the alpha release of Bitcoin Wallet Tracker (BWT), a program that
@@ -301,3 +303,4 @@ their work hours to contribute to Optech.
 [revault vid]: https://www.youtube.com/watch?v=7CE4aiFxh10
 [common wallet ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
 [news98 bitcoin core 18877]: https://bitcoinops.org/en/newsletters/2020/05/20/#bitcoin-core-18877
+[belcher donation]: https://bitcoinprivacy.me/coinswap-donations
