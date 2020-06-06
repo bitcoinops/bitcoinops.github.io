@@ -102,7 +102,7 @@ highlight a selection of the transcripts from the previous month.*
 - **Payjoin/P2EP:** Adam Gibson led a discussion at London BitDevs about
   [payjoin][topic payjoin], a protocol that allows both the sender and
   receiver of a payment to contribute inputs to the transaction.  This
-  breaks the [common wallet ownership assumption][] and subset sum
+  breaks the [common input ownership assumption][] and subset sum
   analysis, improving the privacy of both the sender and the receiver.
   Gibson went through the history
   of the concept and described the existing implementations of payjoin
@@ -299,5 +299,5 @@ their work hours to contribute to Optech.
 [revault xs]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-05-26-kevin-loaec-antoine-poinsot-revault/
 [london vid]: https://www.youtube.com/watch?v=34jMGiCAmQM
 [revault vid]: https://www.youtube.com/watch?v=7CE4aiFxh10
-[common wallet ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
+[common input ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
 [news98 bitcoin core 18877]: https://bitcoinops.org/en/newsletters/2020/05/20/#bitcoin-core-18877
