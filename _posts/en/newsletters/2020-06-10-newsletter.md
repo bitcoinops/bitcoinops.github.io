@@ -298,7 +298,12 @@ BOLTs][bolts repo].*
   spend its funds normally. See [Newsletter #67][news67 static_remotekey] for
   more details on this feature.
 
-- [LND #4251][] REST saga 2/3: Add REST endpoints to all RPCs FIXME:dongcarl
+- [LND #4251][] brings its REST interface's list of supported non-streaming
+  messages to parity with that of its gRPC interface. Previously, only a subset
+  of these messages (specifically those of the `Lightning` subserver) were
+  available via the REST interface. This PR will be followed by [LND
+  #4141][], which brings the REST interface to full parity with the gRPC
+  interface by adding support for streaming responses with WebSockets.
 
 - [BIPs #920][] updates the [BIP341][] specification of [taproot][topic
   taproot] to require signatures to directly commit to the scriptPubKeys
@@ -315,7 +320,7 @@ about the time dilation attack paper.  Any errors or omissions are the fault of 
 newsletter author.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1440,4251,920,1141,18988,19215" %}
+{% include linkers/issues.md issues="1440,4251,920,1141,18988,19215,4141" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta
 [news97 spk commit]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
