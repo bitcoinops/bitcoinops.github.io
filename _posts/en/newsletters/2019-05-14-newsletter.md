@@ -231,6 +231,7 @@ signature verification.  Implementations that don't require maximal
 performance (such as ordinary wallets) can just implement the algorithm
 as described using their default SHA256 library function.
 
+{:#digest-changes}
 There are also some changes to what data is included in the hash and how
 it is serialized.  This includes improvements that can help make wallets
 without access to verified UTXO entries (e.g. hardware wallets and

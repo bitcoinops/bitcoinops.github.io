@@ -1,0 +1,56 @@
+digraph fake_coinjoin {
+
+rankdir=LR
+
+node [ shape = "box" ];
+edge [ style = "invis" ];
+
+subgraph cluster_fake1 {
+  fake1_in_label [ label = "Inputs", shape = "none", height=0.1 ];
+  fake1_out_label [ label = "Outputs", shape = "none", height=0.1 ];
+  fake1_in_mine [ label = "1 BTC", style = "filled", fillcolor = "grey" ]
+  fake1_in_other [ label = "0.0001 BTC" ];
+  fake1_out_mine [ label = "1 BTC", style = "filled", fillcolor = "grey" ];
+  fake1_out_other [ shape = "none", label = "" ];
+  fake1_in_mine -> fake1_out_other;
+  fake1_in_other -> fake1_out_mine;
+
+  label = "Perceived transaction 1\nCalculated fee: 0.0001 BTC";
+}
+
+fake1_out_mine -> fake2_in_mine;
+fake1_out_other -> fake2_in_other;
+
+subgraph cluster_fake2 {
+  fake2_in_label [ label = "Inputs", shape = "none", height=0.1 ];
+  fake2_out_label [ label = "Outputs", shape = "none", height=0.1 ];
+  fake2_in_mine [ label = "1 BTC", style = "filled", fillcolor = "grey" ]
+  fake2_out_other [ shape = "none", label = "" ];
+  fake2_in_other [ label = "0.0001 BTC" ];
+  fake2_out_mine [ label = "1 BTC", style = "filled", fillcolor = "grey" ];
+  fake2_in_other -> fake2_out_other;
+  fake2_in_mine -> fake2_out_mine;
+
+  label = "Perceived transaction 2\nCalculated fee: 0.0001 BTC";
+}
+
+fake2_out_mine -> actual_in_mine1;
+fake2_out_other -> actual_in_mine2;
+
+subgraph cluster_actual {
+  actual_in_label [ label = "Inputs", shape = "none", height=0.1 ];
+  actual_out_label [ label = "Outputs", shape = "none", height=0.1 ];
+  actual_in_mine1 [ label = "1 BTC", style = "filled", fillcolor = "grey" ]
+  actual_out_other [ shape = "none", label = "" ];
+  actual_in_mine2 [ label = "1 BTC", style = "filled", fillcolor = "grey"];
+  actual_out_mine [ label = "1 BTC", style = "filled", fillcolor = "grey" ];
+  actual_in_mine1 -> actual_out_mine;
+  actual_in_mine2 -> actual_out_other;
+
+  label = "Actual transaction\nFee: 1 BTC";
+}
+
+fake1_in_label -> fake1_out_label -> fake2_in_label -> fake2_out_label -> actual_in_label -> actual_out_label;
+
+label = "Fee overpayment attack"
+}
