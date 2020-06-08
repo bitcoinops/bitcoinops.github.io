@@ -16,7 +16,7 @@ subgraph cluster_fake1 {
   fake1_in_mine -> fake1_out_other;
   fake1_in_other -> fake1_out_mine;
 
-  label = "Perceieved transaction 1";
+  label = "Perceived transaction 1";
 }
 
 fake1_out_mine -> fake2_in_mine;
@@ -32,7 +32,7 @@ subgraph cluster_fake2 {
   fake2_in_other -> fake2_out_other;
   fake2_in_mine -> fake2_out_mine;
 
-  label = "Perceieved transaction 2";
+  label = "Perceived transaction 2";
 }
 
 fake2_out_mine -> actual_in_mine1;
