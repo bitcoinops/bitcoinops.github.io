@@ -12,12 +12,12 @@
 <g id="clust1" class="cluster">
 <title>cluster_fake1</title>
 <polygon fill="none" stroke="#000000" points="8,-8 8,-183 188,-183 188,-8 8,-8"/>
-<text text-anchor="middle" x="98" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">Perceieved transaction 1</text>
+<text text-anchor="middle" x="98" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">Perceived transaction 1</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_fake2</title>
 <polygon fill="none" stroke="#000000" points="208,-8 208,-183 388,-183 388,-8 208,-8"/>
-<text text-anchor="middle" x="298" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">Perceieved transaction 2</text>
+<text text-anchor="middle" x="298" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">Perceived transaction 2</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_actual</title>
