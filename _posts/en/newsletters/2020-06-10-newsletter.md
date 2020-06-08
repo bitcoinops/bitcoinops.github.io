@@ -286,7 +286,10 @@ release candidates.*
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Eclair #1440][] Accept multiple channels for some API FIXME:adamjonas
+- [Eclair #1440][] makes it possible to use the API to update multiple channels at once. Proposed
+  initially to help node operators adjust to the dynamic on-chain fee market
+  by batch updating their channels' relay fees, this addition enables batch
+  closing and force-closing as well.
 
 - [Eclair #1141][] adds support for `option_static_remotekey` channels.
   In the case of data loss by an LN node, this feature allows the channel
