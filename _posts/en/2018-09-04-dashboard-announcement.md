@@ -16,7 +16,7 @@ excerpt: >
 {:.post-meta}
 *by [Marcin Jachymiak](https://github.com/marcinja)<br>Intern at Bitcoin Optech*
 
-This summer I was an intern for [Bitcoin Optech](https://bitcoinops.org), working on a Bitcoin metrics dashboard. In this post I'll be describing the purpose of the dashboard and how it was implemented.
+This summer I was an intern for [Bitcoin Optech](/), working on a Bitcoin metrics dashboard. In this post I'll be describing the purpose of the dashboard and how it was implemented.
 
 The goal of the Optech dashboard is to show a variety of metrics of how effectively blockspace is being used. Important metrics are those that show activity like:
  - [batching](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Payment_batching): combining the outputs of what would otherwise be many different transactions into a single transaction

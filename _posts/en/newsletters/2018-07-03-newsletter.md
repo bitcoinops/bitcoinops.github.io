@@ -27,7 +27,7 @@ As always, please feel free to contact us if you have feedback or comments on th
 
 A reminder to companies that haven’t yet become an official member yet. We ask that you pay a nominal contribution of $5,000 to help fund our expenses.
 
-[newsletter page]: https://bitcoinops.org/en/newsletters/
+[newsletter page]: /en/newsletters/
 
 ## First Optech workshop!
 
@@ -52,7 +52,7 @@ No new action items, but follow-up related to the following previously-published
 - Upgrade to [Bitcoin Core 0.16.1][], released 15 June 2018.  Upgrade especially recommended for miners.  See [newsletter #1][]
 
 [Bitcoin Core 0.16.1]: https://bitcoincore.org/en/download/
-[newsletter #1]: https://bitcoinops.org/en/newsletters/2018/06/26/
+[newsletter #1]: /en/newsletters/2018/06/26/
 
 ### Dashboard items
 

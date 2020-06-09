@@ -391,5 +391,5 @@ implementation]を達成しました。ペイメントを複数パートに分�
 [weekly newsletters]: /en/newsletters/
 [worst case cpu usage]: /en/newsletters/2019/03/05/#legacy-transaction-verification
 [wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
-[xlation es]: https://bitcoinops.org/es/publications/
-[xlation ja]: https://bitcoinops.org/ja/publications/
+[xlation es]: /es/publications/
+[xlation ja]: /ja/publications/

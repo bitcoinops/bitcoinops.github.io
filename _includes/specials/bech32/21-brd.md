@@ -78,6 +78,6 @@ fees are still relatively low.
 [brd pr1]: https://github.com/breadwallet/breadwallet-core/commit/2b17fe44619442c31f8a47c175f84b8992933346
 [brd pr2]: https://github.com/breadwallet/breadwallet-core/commit/fd0abb92b07e41429e1170fb56716965cc7b64ab
 [breadwallet-core]: https://github.com/breadwallet/breadwallet-core/
-[identical spk data]: https://bitcoinops.org/en/bech32-sending-support/#sending-to-a-legacy-address
-[bech32 future]: https://bitcoinops.org/en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
+[identical spk data]: /en/bech32-sending-support/#sending-to-a-legacy-address
+[bech32 future]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
 [whensegwit]: https://whensegwit.com/

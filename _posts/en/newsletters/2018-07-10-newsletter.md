@@ -33,7 +33,7 @@ Lisbon.
   for more details
 
 [alert released]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
-[newsletter #1]: https://bitcoinops.org/en/newsletters/2018/06/26/
+[newsletter #1]: /en/newsletters/2018/06/26/
 
 ## Dashboard items
 

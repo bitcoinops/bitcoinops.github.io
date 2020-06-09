@@ -77,12 +77,12 @@ scale.
 
 {% include references.md %}
 
-[optech team]: https://bitcoinops.org/about/
-[announcement]: https://bitcoinops.org/en/announcing-bitcoin-optech/
-[workshops]: https://bitcoinops.org/workshops/
-[newsletters]: https://bitcoinops.org/en/newsletters/
+[optech team]: /about/
+[announcement]: /en/announcing-bitcoin-optech/
+[workshops]: /workshops/
+[newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
-[dashboard blog post]: https://bitcoinops.org/en/dashboard-announcement/
+[dashboard blog post]: /en/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md
-[softfork]: https://bitcoinops.org/en/newsletters/2018/12/18/#news
+[softfork]: /en/newsletters/2018/12/18/#news
