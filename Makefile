@@ -29,6 +29,9 @@ test-before-build:
 	@ ## Note: double $$ in a makefile produces a single literal $
 	! git --no-pager grep -- '^ *- \*\*[^*]*$$'
 	! git --no-pager grep -- '^ *- \[[^]]*$$'
+	## Check for unnecessarily fully qualified URLs (breaks local previews and internal link checking)
+	! git --no-pager grep -- '^\[.*]: https://bitcoinops.org' | grep -v skip-test | grep .
+	! git --no-pager grep -- '](https://bitcoinops.org' | grep -v skip-test | grep .
 
 	## Check that newly added or modifyed PNGs are optimized
 	_contrib/travis-check-png-optimized.sh
