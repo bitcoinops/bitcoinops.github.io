@@ -192,12 +192,48 @@ _In this monthly section, we summarize a recent [Bitcoin Core PR Review Club][]
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting._
 
-FIXME:jnewbery or jonatack
+[Connection eviction logic tests][review club #16756] is a PR ([#16756][Bitcoin
+Core #16756]) by Martin Zumsande that adds missing test coverage for part of the
+Bitcoin network peer eviction logic. The test verifies that the inbound peers
+which relay transactions and blocks and that respond quickly are protected from
+eviction.
+
+The discussion centered on the eviction and protection of inbound peer
+connections in Bitcoin Core:
 
 {% include functions/details-list.md
-  q0="QUESTION"
-  a0="ANSWER"
-  a0link="/"
+  q0="What does a Bitcoin Core node do when the number of inbound connections
+      reaches the limit?"
+  a0="When the node connections are full, the node reacts to the connection of a
+      new inbound peer by terminating the connection with an existing inbound
+      peer. This is referred to as “eviction.”"
+
+  q1="Why does Bitcoin Core evict peers instead of no longer
+      accepting new inbound connections?"
+  a1="The goal is to continuously select for well-behaved peers, from a variety
+      of networks, that relay blocks quickly -- and to prevent a malicious party
+      from monopolizing the connections. The first connections to arrive aren't
+      necessarily the best ones. This implies the need for eviction."
+  a1link="https://bitcoincore.reviews/16756#l-41"
+
+  q2="Why does Bitcoin Core protect selected peers from eviction?"
+  a2="We want to keep connections that have proven to be reputable and increase
+      the difficulty for a malicious party to evict and occupy all the inbound
+      connections. Therefore, a small number of peers are protected for each of
+      several distinct characteristics which are difficult to forge. In order to
+      partition a node, the attacker must simultaneously be better at all of
+      them than honest peers."
+  a2link="https://github.com/bitcoin-core-review-club/bitcoin/blob/pr16756/src/net.cpp#L846"
+
+  q3="Describe the algorithm for inbound peer eviction in Bitcoin Core."
+  a3="Select all inbound peers not on the `NO BAN` list and not already
+      scheduled for disconnection. Of these, remove (protect) the best peers
+      according to costly, difficult-to-forge attributes, which each apply
+      separately: netgroup, lowest minimum ping time, recently sent transactions
+      and blocks, desirable service flags, and long-lasting connections. Of the
+      remaining peers, choose one to evict from the netgroup with the most
+      connections."
+  a3link="https://github.com/bitcoin-core-review-club/bitcoin/blob/pr16756/src/net.cpp#L851"
 %}
 
 ## Releases and release candidates
@@ -276,7 +312,7 @@ overpayment attack.  Any errors or omissions are the fault of the
 newsletter author.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1440,4251,920,1141" %}
+{% include linkers/issues.md issues="1440,4251,920,1141,16756" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta
 [news97 spk commit]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
