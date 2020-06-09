@@ -1,4 +1,5 @@
 ---
+permalink: /en/tools/calc-size/
 title: "Transaction size calculator"
 layout: page
 breadcrumbs: false
