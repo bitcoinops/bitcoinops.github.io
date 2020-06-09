@@ -15,7 +15,7 @@ last few months of 2017.
 *{{img1_label}},
 source: [Statoshi](https://statoshi.info/dashboard/db/unspent-transaction-output-set?panelId=6&fullscreen&from=1514759562608&to=1532039707168)*
 
-[newsletter 3]: https://bitcoinops.org/en/newsletters/2018/07/10/#dashboard-items
+[newsletter 3]: /en/newsletters/2018/07/10/#dashboard-items
 [Xapo]: https://www.xapo.com/
 
 The idea behind UTXO consolidation is essentially this: when your average

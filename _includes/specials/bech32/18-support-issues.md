@@ -36,4 +36,4 @@ sending to bech32 addresses.
 [core bech32 plan]: /en/newsletters/2019/04/02/#news
 ["strange addresses"]: https://github.com/spesmilo/electrum/issues/5382
 ["localbitcoins does not support sending to bech32"]: https://github.com/spesmilo/electrum/issues/5371
-[save money with bech32]: https://bitcoinops.org/en/bech32-sending-support/#fee-savings-with-native-segwit
+[save money with bech32]: /en/bech32-sending-support/#fee-savings-with-native-segwit

@@ -266,7 +266,7 @@ their work hours to contribute to Optech.
 [eps]: https://github.com/chris-belcher/electrum-personal-server
 [lopp size]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017905.html
 [lopp calc]: https://jlopp.github.io/bitcoin-transaction-size-calculator/
-[optech calc]: https://bitcoinops.org/en/tools/calc-size
+[optech calc]: /en/tools/calc-size/
 [about page]: /about/
 [ivgi bwt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017906.html
 [bwt api]: https://github.com/shesek/bwt#http-api
@@ -300,4 +300,4 @@ their work hours to contribute to Optech.
 [london vid]: https://www.youtube.com/watch?v=34jMGiCAmQM
 [revault vid]: https://www.youtube.com/watch?v=7CE4aiFxh10
 [common input ownership assumption]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
-[news98 bitcoin core 18877]: https://bitcoinops.org/en/newsletters/2020/05/20/#bitcoin-core-18877
+[news98 bitcoin core 18877]: /en/newsletters/2020/05/20/#bitcoin-core-18877

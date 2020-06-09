@@ -74,4 +74,4 @@ contributor and you'd like to be a part of this, please contact us at
 [info@bitcoinops.org](mailto:info@bitcoinops.org) or sign up for our newsletter
 on our [web site][website].
 
-[website]: https://bitcoinops.org
+[website]: /

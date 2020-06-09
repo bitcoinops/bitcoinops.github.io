@@ -401,15 +401,15 @@ reach out to [mike@bitcoinops.org](mailto:mike@bitcoinops.org).
     by users of second layer protocols.
 
 {% include references.md %}
-[optech team]: https://bitcoinops.org/about/
-[announcement]: https://bitcoinops.org/en/announcing-bitcoin-optech/
-[workshops]: https://bitcoinops.org/workshops/
-[newsletters]: https://bitcoinops.org/en/newsletters/
+[optech team]: /about/
+[announcement]: /en/announcing-bitcoin-optech/
+[workshops]: /workshops/
+[newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
-[dashboard blog post]: https://bitcoinops.org/en/dashboard-announcement/
+[dashboard blog post]: /en/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md
-[softfork]: https://bitcoinops.org/en/newsletters/2018/12/18/#news
+[softfork]: /en/newsletters/2018/12/18/#news
 [lightning cpfp carve-out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [finney attack]: https://bitcoin.stackexchange.com/questions/4942/what-is-a-finney-attack
 [todd reddit gold]: https://www.coingecko.com/buzz/peter-todd-explains-how-he-double-spent-coinbase
