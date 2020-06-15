@@ -142,7 +142,25 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Caravan adds HD wallet support, coin control, and hardware wallet test suite:**
+  In addition to single address multisig coordination, Caravan now supports HD
+  wallet multisig coordination and coin control features. Unchained Capital, the creators of Caravan,
+  also [announced][unchained caravan blog] a test suite for testing hardware
+  wallet interactions within a web browser and Trezor multisig address confirmation.
+
+- **Bitpay's Copay and Bitcore projects support native segwit:**
+  Bitpay's [Copay wallet][copay segwit] and backend [Bitcore service][bitcore
+  segwit] both now support receiving to, and spending from, native segwit outputs.
+
+- **Desktop version of Blockstream Green wallet:**
+  Blockstream has released their [Green wallet for desktop][blockstream green desktop blog]
+  on macOS, Windows, and Linux. The desktop version supports 2-of-3 and 2-of-2
+  multisig wallets as well as Tor and testnet.
+
+- **React native library photon-lib announced:** [Tankred Hase
+  shared][photon-lib tweet] a new library, [photon-lib][] for building Bitcoin
+  wallet features using React Native. The library supports HD wallets and light client
+  functionality but is still under development and not yet production ready.
 
 ## Notable code and documentation changes
 
@@ -168,3 +186,9 @@ BOLTs][bolts repo].*
 [chaumian blinded signature]: https://en.wikipedia.org/wiki/Blind_signature
 [confidential transactions]: https://en.bitcoin.it/wiki/Confidential_transactions
 [news93 bip32 keychains]: /en/newsletters/2020/04/15/#proposal-for-using-one-bip32-keychain-to-seed-multiple-child-keychains
+[unchained caravan blog]: https://unchained-capital.com/blog/gearing-up-the-caravan/
+[blockstream green desktop blog]: https://blockstream.com/2020/05/21/en-blockstream-green-now-on-desktop/
+[photon-lib tweet]: https://twitter.com/tankredhase/status/1265640624973246465
+[photon-lib]: https://github.com/photon-sdk/photon-lib
+[copay segwit]: https://github.com/bitpay/copay/pull/10766
+[bitcore segwit]: https://github.com/bitpay/bitcore/pull/2418
