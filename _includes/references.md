@@ -40,8 +40,7 @@
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
-{% comment %}<!-- TODO: switch miniscript link to some sort of overview page when available -->{% endcomment %}
-[miniscript]: http://bitcoin.sipa.be/miniscript/
+[miniscript]: /en/topics/miniscript/
 [musig]: https://eprint.iacr.org/2018/068
 {% assign _link_descriptors = 'https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md' %}
 [output script descriptor]: {{_link_descriptors}}
@@ -82,7 +81,7 @@ place, put links here. -->{% endcomment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->
 {% endcomment %}
-{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.18.0/rpc" %}
+{% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.20.0/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/
 [rpc generatetoaddress]: {{rpc_prefix}}/generating/generatetoaddress/

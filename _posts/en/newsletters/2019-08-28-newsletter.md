@@ -83,7 +83,7 @@ popular Bitcoin infrastructure projects.
   created that  supports the protocol additions, making the upgrade easy
   for both wallets and users even if they use complex scripts.
 
-  For more information, see the [miniscript website][miniscript], [C++
+  For more information, see our [miniscript topic page][miniscript], [C++
   miniscript implementation][miniscript code], [Rust
   implementation][miniscript rust], code for a [Bitcoin Core
   integration][core miniscript], and Pieter Wuille's talk about an
