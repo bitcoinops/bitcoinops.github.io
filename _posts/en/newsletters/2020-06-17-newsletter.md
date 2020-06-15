@@ -152,7 +152,10 @@ FIXME:bitschmidty
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [BIPs #910][] Initial commit of entropy BIP (BIP85)
+- [BIPs #910][] Assigns [BIP85][] to Ethan Kosakovsky's Deterministic Entropy From
+  BIP32 Keychains proposal. BIP85 describes a super-keychain whose child keys
+  can be used to create traditional HD keychain seeds. See [Newsletter #93][news93 bip32 keychains]
+  for more details on this proposal.
 
 {% include references.md %}
 {% include linkers/issues.md issues="910" %}
@@ -164,3 +167,4 @@ BOLTs][bolts repo].*
 [news79 unequal coinjoin]: /en/newsletters/2020/01/08/#coinjoins-without-equal-value-inputs-or-outputs
 [chaumian blinded signature]: https://en.wikipedia.org/wiki/Blind_signature
 [confidential transactions]: https://en.bitcoin.it/wiki/Confidential_transactions
+[news93 bip32 keychains]: /en/newsletters/2020/04/15/#proposal-for-using-one-bip32-keychain-to-seed-multiple-child-keychains
