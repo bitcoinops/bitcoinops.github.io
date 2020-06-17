@@ -119,8 +119,8 @@ infrastructure software.
     uses this specified value to verify that the sum of the outputs the
     client wants to create is equal to the sum of the inputs provided by
     the client (minus fees).  The coordinator can then provide an
-    anonymous credential for each output commitment that allows the
-    client to later anonymously submit the revealed output to the
+    anonymous credential for each output that allows the
+    client to later anonymously submit the output to the
     coordinator for inclusion in the transaction template.
 
     Software that implements the protocol will be able to create
