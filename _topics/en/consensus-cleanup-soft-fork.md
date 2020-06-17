@@ -46,6 +46,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#cleanup
     date: 2019-12-28
 
+  - title: Discussion of minimum safe transaction sizes
+    url: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
+    date: 2020-05-27
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:

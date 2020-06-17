@@ -100,6 +100,18 @@ optech_mentions:
     url: /en/newsletters/2020/04/29/#bitcoin-core-17509
     date: 2020-04-29
 
+  - title: "LND 0.10 presentation: funding channels using PSBTs"
+    url: /en/newsletters/2020/05/06/#lnd-v0-10
+    date: 2020-05-06
+
+  - title: LND 0.10.0-beta released with support for funding channels using PSBTs
+    url: /en/newsletters/2020/05/06/#lnd-0-10-0-beta
+    date: 2020-05-06
+
+  - title: "C-Lightning #3738 adds initial support for creating PSBTs"
+    url: /en/newsletters/2020/05/27/#c-lightning-3738
+    date: 2020-05-27
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

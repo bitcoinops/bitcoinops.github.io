@@ -84,6 +84,10 @@ optech_mentions:
     url: /en/newsletters/2020/03/18/#proposed-watchtower-bolt-has-been-updated
     date: 2020-03-18
 
+  - title: "C-Lightning #3659 adds support for watchtowers"
+    url: /en/newsletters/2020/05/13/#c-lightning-3659
+    date: 2020-05-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

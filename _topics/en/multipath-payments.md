@@ -130,6 +130,18 @@ optech_mentions:
     url: /en/newsletters/2020/04/22/#rust-lightning-441
     date: 2020-04-22
 
+  - title: "LND 0.10 presentation: multipath payments"
+    url: /en/newsletters/2020/05/06/#lnd-v0-10
+    date: 2020-05-06
+
+  - title: "LND 0.10.0-beta released with support for multipath payments"
+    url: /en/newsletters/2020/05/06/#lnd-0-10-0-beta
+    date: 2020-05-06
+
+  - title: Lightning Loop adds support for multipath payments
+    url: /en/newsletters/2020/05/20/#lightning-loop-using-multipath-payments
+    date: 2020-05-20
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

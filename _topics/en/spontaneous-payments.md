@@ -62,6 +62,18 @@ optech_mentions:
     url: /en/newsletters/2020/04/22/#c-lightning-3611
     date: 2020-04-22
 
+  - title: "C-Lightning 0.8.2 released with a plugin for sending spontaneous payments"
+    url: /en/newsletters/2020/05/06/#c-lightning-0-8-2
+    date: 2020-05-06
+
+  - title: Juggernaut uses spontaneous payments for messaging and instant payments"
+    url: /en/newsletters/2020/05/20/#lightning-based-messenger-application-juggernaut-launches
+    date: 2020-05-20
+
+  - title: Breez wallet adds support for spontaneous payments
+    url: /en/newsletters/2020/05/20/#breez-wallet-enables-spontaneous-payments
+    date: 2020-05-20
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

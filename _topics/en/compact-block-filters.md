@@ -79,6 +79,10 @@ optech_mentions:
     url: /en/newsletters/2019/11/13/#bips-857
     date: 2019-11-13
 
+  - title: "Bitcoin Core #18877 adds `getcfcheckpt` and `cfcheckpt` messages"
+    url: /en/newsletters/2020/05/20/#bitcoin-core-18877
+    date: 2020-05-20
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

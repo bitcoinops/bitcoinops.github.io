@@ -59,6 +59,10 @@ optech_mentions:
     url: /en/newsletters/2020/02/12/#bitcoin-core-18032
     date: 2020-02-12
 
+  - title: "Bitcoin Core #16528 adds support for native output descriptor wallets"
+    url: /en/newsletters/2020/05/06/#bitcoin-core-16528
+    date: 2020-05-06
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

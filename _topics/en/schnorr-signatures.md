@@ -100,6 +100,14 @@ optech_mentions:
     url: /en/newsletters/2020/04/01/#mitigating-differential-power-analysis-in-schnorr-signatures
     date: 2020-04-01
 
+  - title: "BIP340 schnorr updated with alternative tiebreaker & nonce recommendation"
+    url: /en/newsletters/2020/05/06/#bips-893
+    date: 2020-05-06
+
+  - title: RFC6979 nonce generation versus BIP340's recommended procedure
+    url: /en/newsletters/2020/05/27/#why-isn-t-rfc6979-used-for-schnorr-signature-nonce-generation
+    date: 2020-05-27
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

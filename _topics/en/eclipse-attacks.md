@@ -78,6 +78,10 @@ optech_mentions:
     url: /en/newsletters/2020/03/11/#bitcoin-core-pr-review-club
     date: 2020-03-11
 
+  - title: "Presentation about attacking Bitcoin Core, including using eclipse attacks"
+    url: /en/newsletters/2020/05/06/#attacking-bitcoin-core
+    date: 2020-05-06
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
