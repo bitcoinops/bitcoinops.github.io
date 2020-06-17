@@ -90,6 +90,10 @@ optech_mentions:
     url: /en/newsletters/2020/04/29/#settlement-transaction-anchor-outputs
     date: 2020-04-29
 
+  - title: "LND 0.10 presentation: anchor outputs"
+    url: /en/newsletters/2020/05/06/#lnd-v0-10
+    date: 2020-05-06
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

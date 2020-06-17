@@ -68,6 +68,10 @@ optech_mentions:
     url: /en/newsletters/2020/01/22/#new-coinjoin-mixing-technique-proposed
     date: 2020-01-22
 
+  - title: "Allowing hardware wallets to safely sign automated coinjoin transactions"
+    url: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
+    date: 2020-05-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

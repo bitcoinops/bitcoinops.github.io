@@ -88,6 +88,18 @@ optech_mentions:
     url: /en/newsletters/2020/04/15/#lnd-4075
     date: 2020-04-15
 
+  - title: "C-Lightning 0.8.2 released with support for large channels"
+    url: /en/newsletters/2020/05/06/#c-lightning-0-8-2
+    date: 2020-05-06
+
+  - title: LND 0.10.0-beta released with the ability to create invoices over 0.043 BTC
+    url: /en/newsletters/2020/05/06/#lnd-0-10-0-beta
+    date: 2020-05-06
+
+  - title: "C-Lightning fixes incompatibility when opening large channels with Eclair"
+    url: /en/newsletters/2020/05/13/#c-lightning-0-8-2-1
+    date: 2020-05-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

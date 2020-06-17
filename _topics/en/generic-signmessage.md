@@ -66,6 +66,10 @@ optech_mentions:
     url: /en/newsletters/2020/04/01/#proposed-update-to-bip322-generic-signmessage
     date: 2020-04-01
 
+  - title: "Simplified BIP322, only allowing signatures from one script per proof"
+    url: /en/newsletters/2020/05/06/#bips-903
+    date: 2020-05-06
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

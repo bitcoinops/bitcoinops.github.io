@@ -109,6 +109,18 @@ optech_mentions:
     url: /en/newsletters/2020/03/04/#taproot-in-the-generic-group-model
     date: 2020-03-04
 
+  - title: Request for additional signature commitment to previous scriptPubKeys
+    url: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
+    date: 2020-05-13
+
+  - title: "Request for comments on ammending BIP341 taproot transaction digest"
+    url: /en/newsletters/2020/05/20/#evaluate-proposed-changes-to-bip341-taproot-transaction-digest
+    date: 2020-05-28
+
+  - title: Example sizes of multisig taproot transactions
+    url: /en/newsletters/2020/05/27/#what-are-the-sizes-of-single-sig-and-2-of-3-multisig-taproot-inputs
+    date: 2020-05-27
+
 ## Optional
 see_also:
   - title: MAST

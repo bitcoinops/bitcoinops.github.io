@@ -67,6 +67,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#signet
     date: 2019-12-28
 
+  - title: "BIP325 updated: all signets to use same genesis block but different magic"
+    url: /en/newsletters/2020/05/06/#bips-900
+    date: 2020-05-06
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

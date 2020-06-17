@@ -64,6 +64,10 @@ optech_mentions:
     url: /en/newsletters/2019/09/25/#bitcoin-core-16400
     date: 2019-09-25
 
+  - title: Copay adds support for CPFP fee bumping incoming transactions
+    url: /en/newsletters/2020/05/20/#copay-enables-cpfp-for-incoming-transactions
+    date: 2020-05-20
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
