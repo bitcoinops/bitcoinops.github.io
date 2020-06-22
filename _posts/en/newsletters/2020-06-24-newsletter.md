@@ -111,7 +111,24 @@ answers posted since our last update.*
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why was the current formula that calculates 'target' from 'nBits' chosen?]({{bse}}96298)
+  Ravi Patel asks why a simpler formula for calculating the difficulty target
+  from `nBits` wasn’t chosen. Andrew Chow dives into some of the details around
+  the formula, its history, and even sample code from Bitcoin’s 0.1.5 release.
+
+- [Does Bitcoin really need timestamps?]({{bse}}96185)
+  Pieter Wuille explains why limiting the block rate without reference to a
+  clock time outside of the blockchain could make running full nodes more
+  expensive while also struggling to keep the stale block rate low and
+  preventing collusion attacks.
+
+- [In a fee overpayment attack, why can't compromised software provide fake previous transactions corresponding to fake inputs?]({{bse}}96309)
+  Regarding a [fee overpayment attack][news101 fee overpayment attack] on segwit
+  transactions with multiple inputs, justinmoon asks why the remedy of the
+  attack, requiring copies of previous transactions for the inputs, is not
+  vulnerable to malicious software providing fake previous transactions. Since
+  any provided previous transaction must have a hash that matches the spending input’s
+  previous transaction hash, such an attack is not feasible.
 
 ## Releases and release candidates
 
@@ -215,3 +232,4 @@ BOLTs][bolts repo].*
 [hwi gui]: https://github.com/bitcoin-core/HWI/pull/291
 [bitcoin core gui repository]: https://github.com/bitcoin-core/gui
 [bitcoin/bitcoin]: https://github.com/bitcoin/bitcoin
+[news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
