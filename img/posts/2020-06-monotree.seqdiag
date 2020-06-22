@@ -1,0 +1,8 @@
+seqdiag {
+  default_fontsize = 16;
+
+  "Developer A" -> "bitcoin/bitcoin" [label = "Pull Request", diagonal]
+  "bitcoin/bitcoin" --> "bitcoin-core/gui" [label = "Sync by maintainer"]
+  "Developer B" -> "bitcoin-core/gui" [label = "Pull Request", diagonal]
+  "bitcoin-core/gui" --> "bitcoin/bitcoin" [label = "Sync by maintainer"]
+}

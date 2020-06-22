@@ -1,0 +1,6 @@
+seqdiag {
+  default_fontsize = 16;
+
+  "Developer A" -> "bitcoin/bitcoin" [label = "Pull Request", diagonal]
+  "Developer B" -> "bitcoin/bitcoin" [label = "Pull Request", diagonal]
+}
