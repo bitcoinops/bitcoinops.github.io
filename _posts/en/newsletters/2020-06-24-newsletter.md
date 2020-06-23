@@ -149,7 +149,12 @@ BOLTs][bolts repo].*
 
 - [Bitcoin Core #19260][] p2p: disconnect peers that send filterclear + update existing filter msg disconnect logic FIXME:dongcarl
 
-- [Bitcoin Core #19133][] rpc, cli, test: add bitcoin-cli -generate command FIXME:moneyball
+- [Bitcoin Core #19133][] adds a bitcoin-cli `-generate` parameter (note leading dash) to replace
+  the functionality of the `generate` RPC, which was removed
+  from Bitcoin Core in [version 0.19.0.1][core version]. The new
+  implementation avoids unnecessary dependencies between the
+  wallet and other components. Providing a client-side alias for the former RPC is useful for
+  manual testing and makes it easier to update [broken documentation][broken docs].
 
 - [Bitcoin Core #18027][] adds two options to the GUI's *File* menu for
   working with Partially Signed Bitcoin Transactions ([PSBTs][topic
@@ -233,3 +238,5 @@ BOLTs][bolts repo].*
 [bitcoin core gui repository]: https://github.com/bitcoin-core/gui
 [bitcoin/bitcoin]: https://github.com/bitcoin/bitcoin
 [news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+[core version]: https://bitcoin.org/en/release/v0.19.0.1
+[broken docs]: https://btcinformation.org/en/developer-examples#regtest-mode
