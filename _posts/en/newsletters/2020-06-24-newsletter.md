@@ -147,7 +147,19 @@ release candidates.*
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #19260][] p2p: disconnect peers that send filterclear + update existing filter msg disconnect logic FIXME:dongcarl
+- [Bitcoin Core #19260][] disconnects peers that send the [BIP37][]
+  `filterclear` message if the local node isn't accepting bloom filters
+  (as advertised using the [BIP111][] `NODE_BLOOM` service flag).  It
+  was [previously proposed][Bitcoin Core #8709] that nodes starting in
+  Initial Blockchain Download (IBD) could register as non-relaying peers
+  to avoid receiving recent transactions while they were still
+  downloading large numbers of blocks.  When they finished syncing, they
+  could then transition to receiving relayed transactions by sending a
+  `filterclear` message.  However, it was more recently
+  [proposed][Bitcoin Core #19204] that this could be done instead using
+  the [BIP133][] `feefilter` message.  That eliminates any need for a
+  non-bloom node to support the `filterclear` message and so this PR
+  removes that feature.
 
 - [Bitcoin Core #19133][] adds a bitcoin-cli `-generate` parameter (note leading dash) to replace
   the functionality of the `generate` RPC, which was removed
@@ -218,7 +230,7 @@ BOLTs][bolts repo].*
     (*monorepo*).
 
 {% include references.md %}
-{% include linkers/issues.md issues="19260,19133,18027,16377,1461,19071" %}
+{% include linkers/issues.md issues="19260,19133,18027,16377,1461,19071,19204,8709" %}
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta.rc2
 [ride the lightning]: https://github.com/Ride-The-Lightning/RTL
 [pickhardt post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002735.html
