@@ -94,7 +94,76 @@ infrastructure projects.
 Bitcoin presentations and discussions. In this monthly feature, we
 highlight a selection of the transcripts from the previous month.*
 
-FIXME:michaelfolkson
+- **Magical Bitcoin:** Alekos Filini presented at LA BitDevs on [Magical
+  Bitcoin][], a set of tools and libraries under development for onchain
+  wallet developers. He explained that coin selection logic and
+  transaction signing logic currently have to be rewritten multiple times
+  across multiple projects---a problem Magical Bitcoin aims to address
+  with modular, extensible, and peer-reviewed components.  A longer
+  term ambition is to provide a platform for building native
+  wallets and integrating them with existing projects.  Filini demoed
+  the current functionality, which includes a playground with a Policy
+  to [Miniscript][topic miniscript] compiler and some rudimentary
+  visualizations. It is written in Rust and leverages the
+  rust-miniscript library and the open source Esplora block explorer.
+  ([transcript][mb ts], [video][mb vid])
+
+- **Watchtowers and BOLT13:** Sergi Delgado appeared on [Potzblitz][] to
+  discuss the latest state of [watchtower][topic watchtowers]
+  development and a proposed watchtower protocol specification. He
+  explored the various tradeoffs when designing a watchtower and the
+  interplay between privacy requirements, accessibility, storage, and
+  fees charged.  Delgado is working on the watchtower implementation
+  [The Eye of Satoshi][teos] at Talaia Labs, which is aiming to be
+  compliant with the proposed BOLT13 (see [Newsletter #75][news75
+  watchtower bolt]).  Delgado also highlighted how watchtowers are
+  becoming increasingly critical in multiple settings such as Bitcoin
+  [vault][topic vaults] designs, statechains, and atomic swaps in addition to LN.
+  ([transcript][watchtowers ts], [video][watchtowers vid],
+  [slides][watchtowers slides])
+
+- **Coinswap:** Aviv Milner presented on coinswap at the Wasabi Research
+  Club. He explained the property of covertness and how Chris Belcher’s
+  coinswap proposal (see [Newsletter #100][news100 coinswap]) provides
+  covertness in a manner that other privacy schemes such as
+  [coinjoin][topic coinjoin] fail to do. Milner also went through the
+  motivation for routing coinswaps, namely to address the concern of
+  unwittingly entering into a coinswap with an adversary such a chain
+  surveillance company.  ([transcript][coinswap ts], [video][coinswap
+  vid])
+
+- **Schnorr signatures and multisignatures:** [BIP340][] co-authors Tim
+  Ruffing, Pieter Wuille, and Jonas Nick held a discussion at London
+  Bitcoin Devs on the specification of [schnorr signatures][topic
+  schnorr signatures].  This covered earlier ideas for implementing
+  schnorr signatures in Bitcoin and what the co-authors thought the
+  community should be concerned about when considering a possible future
+  soft fork deployment. Wuille noted that he is most concerned about how
+  schnorr is adopted and what is built using it.  The following day, Tim
+  Ruffing presented on the challenges of multisignature and threshold
+  signature schemes using schnorr signatures (see also [Newsletter
+  #68][news68 ruffing]).  He's been working with
+  collaborators on a speculative [MuSig][topic musig] signature scheme
+  that only requires two rounds of interaction rather than three,
+  without relying on zero knowledge proofs, which would greatly simplify
+  some threshold and multisignature signing workflows.  ([Meeting transcript][socratic ts],
+  [meeting video][socratic vid], [presentation transcript][ruffing ts],
+  [presentation video][ruffing vid], [presentation slides][ruffing
+  slides])
+
+- **Sydney meetup discussion:** A number of Bitcoin and LN developers
+  joined this Sydney meetup to discuss various topics. Ruben Somsen gave
+  a short presentation on Succinct Atomic Swaps (SAS) (see [Newsletter
+  #98][news98 sas]) and how it compares to Chris Belcher’s coinswap
+  proposal.  Another topic was Bitcoin Core's reliance on DNS seeds to
+  find initial peers, whether it's a potential attack vector against newly
+  started nodes, and how work by Matt Corallo and Antoine Riard on
+  allowing [alternative transports][Bitcoin Core #18988] could help
+  mitigate some risks.  Finally, Lloyd Fournier discussed how
+  experimenting with his toy Rust implementation of secp256k1
+  (secp256kfun) led to a small [fix][libsecp256k1 #732] in the ECDSA
+  signature code in the actual secp256k1 library. The transcript was
+  anonymized to encourage open discussion.  ([transcript][sydney ts])
 
 ## Releases and release candidates
 
@@ -243,7 +312,7 @@ release candidates.*
     synchronously begin enforcing the new rules.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1466,19305,11413,4018,4106,933,923,550,8312,18044" %}
+{% include linkers/issues.md issues="1466,19305,11413,4018,4106,933,923,550,8312,18044,18988,732" %}
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta.rc4
 [lnd 0.10.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.3-beta.rc1
 [hwi 1.1.2]: https://github.com/bitcoin-core/HWI/releases/tag/1.1.2
@@ -263,3 +332,24 @@ release candidates.*
 [knw paper]: https://eprint.iacr.org/2020/774
 [nadahalli post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018015.html
 [osuntokun rcs]: https://groups.google.com/a/lightning.engineering/forum/#!topic/lnd/jgd1ZC9T5n4
+[mb ts]: https://diyhpl.us/wiki/transcripts/la-bitdevs/2020-05-21-alekos-filini-magical-bitcoin/
+[mb vid]: https://www.youtube.com/watch?v=QVhC2DOIl7I)
+[watchtowers ts]: https://diyhpl.us/wiki/transcripts/lightning-hack-day/2020-05-24-sergi-delgado-watchtowers/
+[watchtowers vid]: https://www.youtube.com/watch?v=Vkq9CVxMclE
+[watchtowers slides]: https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
+[coinswap ts]: https://diyhpl.us/wiki/transcripts/wasabi-research-club/2020-06-15-coinswap/
+[coinswap vid]: https://www.youtube.com/watch?v=Pqz7_Eqw9jM
+[socratic ts]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/
+[ruffing ts]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-17-tim-ruffing-schnorr-multisig/
+[socratic vid]: https://www.youtube.com/watch?v=uE3lLsf38O4
+[ruffing vid]: https://www.youtube.com/watch?v=8Op0Glp9Eoo
+[ruffing slides]: https://slides.com/real-or-random/taproot-and-schnorr-multisig
+[sydney ts]: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-06-23-socratic-seminar/
+[magical bitcoin]: https://magicalbitcoin.org/
+[news75 watchtower bolt]: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
+[news98 sas]: /en/newsletters/2020/05/20/#two-transaction-cross-chain-atomic-swap-or-same-chain-coinswap
+[teos]: https://github.com/talaia-labs/python-teos
+[news74 wagner]: /en/newsletters/2019/11/27/#schnorr-taproot-updates
+[news100 coinswap]: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
+[potzblitz]: https://www.youtube.com/playlist?list=PLwgam6YBS0-jk1TlXD7QXDjTYJh-eJn_X
+[news68 ruffing]: /en/newsletters/2019/10/16/#the-quest-for-practical-threshold-schnorr-signatures
