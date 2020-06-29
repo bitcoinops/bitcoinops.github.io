@@ -196,7 +196,13 @@ release candidates.*
 [Hardware Wallet Interface][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19305][] doc: add C++17 release note for 0.21.0 FIXME:dongcarl
+- [Bitcoin Core #19305][] adds release notes for the upcoming codebase
+  transition from the C++11 standard to C++17. The plan is to add C++17
+  compatibility in the 0.21 release ([expected][Bitcoin Core #18947] end
+  of 2020) and break C++11 compatibility later in 0.22 (expected mid-2021).
+  Although this change won't affect most users, those planning to build
+  the 0.22 release on older systems may want to check their toolchain's standard
+  support against the [C++ compiler support matrix][cpp compiler support].
 
 - [Bitcoin Core #11413][] updates the `bumpfee`, `fundrawtransaction`,
   `sendmany`, `sendtoaddress`, and `walletcreatefundedpsbt` RPCs to
@@ -321,7 +327,7 @@ release candidates.*
     synchronously begin enforcing the new rules.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1466,19305,11413,4018,4106,933,923,550,8312,18044,18988,732" %}
+{% include linkers/issues.md issues="1466,19305,11413,4018,4106,933,923,550,8312,18044,18988,732,18947" %}
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta.rc4
 [lnd 0.10.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.3-beta.rc1
 [hwi 1.1.2]: https://github.com/bitcoin-core/HWI/releases/tag/1.1.2
@@ -362,3 +368,4 @@ release candidates.*
 [news100 coinswap]: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
 [potzblitz]: https://www.youtube.com/playlist?list=PLwgam6YBS0-jk1TlXD7QXDjTYJh-eJn_X
 [news68 ruffing]: /en/newsletters/2019/10/16/#the-quest-for-practical-threshold-schnorr-signatures
+[cpp compiler support]: https://en.cppreference.com/w/cpp/compiler_support#C.2B.2B17_features
