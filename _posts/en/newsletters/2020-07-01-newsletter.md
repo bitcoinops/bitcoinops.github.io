@@ -210,7 +210,16 @@ release candidates.*
   of any PR that has been merged into Bitcoin Core so far.  We thank the
   author, Kalle Alm, and everyone else involved for their persistence.
 
-- [Eclair #1466][] Increase fulfill safety window (#1466) FIXME:jnewbery
+- [Eclair #1466][] decreases the length of time that an Eclair node will wait
+  before closing a channel when a peer becomes unresponsive while an HTLC is
+  pending. To prevent payments from becoming stuck forever, each HTLC includes
+  a timelock. If the timelock expires, then the sending party can reclaim
+  the funds in the HTLC. To prevent the sending party from pulling back
+  funds that an intermediate party has already paid to the next hop, the
+  intermediate party must settle the pending HTLC onchain if the sending
+  party becomes unresponsive. This PR increases Eclair's safety window---it
+  will now broadcast the onchain transaction 24 blocks before the HTLC
+  timeout, instead of 6 blocks before the timeout.
 
 - [LND #4018][] adds the ability to delay forwarding a payment (HTLC),
   giving an external process the ability to review it and decide whether
