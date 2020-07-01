@@ -64,6 +64,10 @@ optech_mentions:
     url: /en/newsletters/2020/04/01/#implementing-statechains-without-schnorr-or-eltoo
     date: 2020-04-01
 
+  - title: "Impact of SIGHASH_NOINPUT and eltoo on LN backups"
+    url: /en/newsletters/2020/06/03/#ln-backups
+    date: 2020-06-03
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_NOINPUT

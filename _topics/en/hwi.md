@@ -48,6 +48,10 @@ optech_mentions:
     url: /en/newsletters/2020/02/19/#btcpay-vault-using-hwi-for-signing
     date: 2020-02-19
 
+  - title: Fix for segwit fee overpayment attack affects HWI compatibility
+    url: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+    date: 2020-06-10
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

@@ -94,6 +94,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/06/#lnd-v0-10
     date: 2020-05-06
 
+  - title: "Anchor outputs may help mitigate LN fee ransom attack"
+    url: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
+    date: 2020-06-24
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

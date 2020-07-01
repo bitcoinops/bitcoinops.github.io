@@ -80,6 +80,14 @@ optech_mentions:
     url: /en/newsletters/2020/01/29/#layered-commitments-with-eltoo
     date: 2020-01-29
 
+  - title: "Impact of SIGHASH_NOINPUT and eltoo on LN backups"
+    url: /en/newsletters/2020/06/03/#ln-backups
+    date: 2020-06-03
+
+  - title: "Coinpool: using SIGHASH_NOINPUT to help create payment pools"
+    url: /en/newsletters/2020/06/17/#coinpool-generalized-privacy-for-identifiable-onchain-protocols
+    date: 2020-06-17
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

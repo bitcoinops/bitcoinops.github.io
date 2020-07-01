@@ -72,6 +72,14 @@ optech_mentions:
     url: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
     date: 2020-05-13
 
+  - title: "Comparison of coinjoin privacy to coinswap privacy"
+    url: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
+    date: 2020-06-03
+
+  - title: "WabiSabi: a protocol for coordinated coinjoins with arbitrary output values"
+    url: /en/newsletters/2020/06/17/#wabisabi-coordinated-coinjoins-with-arbitrary-output-values
+    date: 2020-06-17
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

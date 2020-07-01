@@ -83,6 +83,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/20/#bitcoin-core-18877
     date: 2020-05-20
 
+  - title: "Bitcoin Core #19010 & #19044 add additional messages from BIP157"
+    url: /en/newsletters/2020/06/03/#bitcoin-core-19010
+    date: 2020-06-03
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
