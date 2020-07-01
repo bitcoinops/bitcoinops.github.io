@@ -121,6 +121,18 @@ optech_mentions:
     url: /en/newsletters/2020/05/27/#what-are-the-sizes-of-single-sig-and-2-of-3-multisig-taproot-inputs
     date: 2020-05-27
 
+  - title: Taproot eliminates vulnerability related to segwit fee overpayment attack
+    url: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+    date: 2020-06-10
+
+  - title: BIP341 transaction digest amended with extra commitment to scriptPubKeys
+    url: /en/newsletters/2020/06/10/#bips-920
+    date: 2020-06-10
+
+  - title: "Coinpool: using taproot to help create payment pools"
+    url: /en/newsletters/2020/06/17/#coinpool-generalized-privacy-for-identifiable-onchain-protocols
+    date: 2020-06-17
+
 ## Optional
 see_also:
   - title: MAST

@@ -95,6 +95,10 @@ optech_mentions:
     url: /en/bech32-sending-support/#brd-field-report
     date: 2019-08-07
 
+  - title: "Bitcoin Core #19260 disconnects peers who inappropriately send filterclear"
+    url: /en/newsletters/2020/06/24/#bitcoin-core-19260
+    date: 2020-06-24
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Privacy in BitcoinJ [bloom filters]"

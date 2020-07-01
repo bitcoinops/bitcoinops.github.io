@@ -82,6 +82,14 @@ optech_mentions:
     url: /en/newsletters/2020/05/06/#attacking-bitcoin-core
     date: 2020-05-06
 
+  - title: "Time dilation attack: using eclipse attacks to steal money from LN nodes"
+    url: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
+    date: 2020-06-10
+
+  - title: "Bitcoin Core 0.20 released with asmap feature to improve eclipse resistance"
+    url: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
+    date: 2020-06-10
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

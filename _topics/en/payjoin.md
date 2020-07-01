@@ -54,6 +54,14 @@ optech_mentions:
     url: /en/newsletters/2020/04/22/#btcpay-adds-support-for-sending-and-receiving-payjoined-payments
     date: 2020-04-22
 
+  - title: Comparison of payjoin privacy to coinswap privacy
+    url: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
+    date: 2020-06-03
+
+  - title: Discussion about payjoin and its history
+    url: /en/newsletters/2020/06/03/#payjoin-p2ep
+    date: 2020-06-03
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

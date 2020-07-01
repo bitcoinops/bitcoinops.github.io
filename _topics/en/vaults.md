@@ -76,6 +76,10 @@ optech_mentions:
     url: /en/newsletters/2020/04/29/#multiparty-vault-architecture
     date: 2020-04-29
 
+  - title: Presentation of the Revault multiparty vault architecture
+    url: /en/newsletters/2020/06/03/#the-revault-multiparty-vault-architecture
+    date: 2020-06-03
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

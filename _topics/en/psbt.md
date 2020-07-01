@@ -112,6 +112,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/27/#c-lightning-3738
     date: 2020-05-27
 
+  - title: "Bitcoin Core #18027 adds GUI support for signing & broadcasting PSBTs"
+    url: /en/newsletters/2020/06/24/#bitcoin-core-18027
+    date: 2020-06-24
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
