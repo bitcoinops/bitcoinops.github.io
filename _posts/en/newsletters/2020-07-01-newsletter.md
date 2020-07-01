@@ -128,7 +128,7 @@ highlight a selection of the transcripts from the previous month.*
   covertness in a manner that other privacy schemes such as
   [coinjoin][topic coinjoin] fail to do. Milner also went through the
   motivation for routing coinswaps, namely to address the concern of
-  unwittingly entering into a coinswap with an adversary such a chain
+  unwittingly entering into a coinswap with an adversary such as a chain
   surveillance company.  ([transcript][coinswap ts], [video][coinswap
   vid])
 
