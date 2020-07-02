@@ -246,7 +246,7 @@ release candidates.*
   using the transaction's txid, which is a hash over the legacy fields
   of the transaction.  The new fields used in segwit transactions are
   not included in the txid, which was necessary to eliminate third-party
-  and counterparty transaction malleability.  However, during his June 2018 review
+  and counterparty transaction malleability.  However, during his June 2016 review
   of segwit, Peter Todd [noticed][todd relay malleability] that
   announcing transactions by their txid could allow nodes to modify the
   segwit fields before relaying a transaction.  This couldn't be used to
