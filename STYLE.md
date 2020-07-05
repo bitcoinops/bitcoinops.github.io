@@ -59,6 +59,7 @@ following abbreviations we assume readers will already know.
 - P2SH-wrapped segwit (Pay to Script Hash wrapped segwit)
 - P2WPKH (Pay to Witness Public Key Hash)
 - P2WSH (Pay to Witness Script Hash)
+- PSBT (Partially Signed Bitcoin Transaction)
 - pubkey (public key)
 - RPC (Remote Procedure Call)
 - RFC (Request For Comments, the IETF documents)

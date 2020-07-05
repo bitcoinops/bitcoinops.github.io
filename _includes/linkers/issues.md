@@ -31,4 +31,5 @@ requests, and other templated URLs.
 [bolts #{{_issue}}]: https://github.com/lightningnetwork/lightning-rfc/issues/{{_issue}}
 [rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
 [review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
+[hwi #{{_issue}}]: https://github.com/bitcoin-core/HWI/issues/{{_issue}}
 {% endfor %}
