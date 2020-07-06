@@ -139,7 +139,17 @@ release candidates.*
   v1 ([taproot][topic taproot]) is adopted, transactions spending all
   taproot inputs should not need this extra data by default.
 
-- [C-Lightning #3775][] new RPCs: reserveinputs unreserveinputs signpsbt sendpsbt FIXME:dongcarl
+- [C-Lightning #3775][] adds four RPC methods for [PSBT][topic psbt] lifecycle
+  management backed by C-Lightning's internal wallet. The `reserveinputs` RPC
+  method creates a PSBT by choosing UTXOs from the internal wallet as inputs to
+  satisfy the user-specified list of outputs, marking chosen UTXOs as reserved.
+  The resulting PSBT may either be supplied to the `unreserveinputs` RPC method
+  to manually release the reserved UTXOs, or to the `signpsbt` RPC method to add
+  signatures from the internal wallet. Finally, the `sendpsbt` RPC method will
+  convert a fully signed PSBT into a ready-to-broadcast transaction and then
+  broadcast it to the network. Users should note that restarting C-Lightning
+  effectively un-reserves all previously reserved UTXOs, requiring a new PSBT be
+  created with `reserveinputs` before `signpsbt` will accept it.
 
 - [Eclair #1427][] and [#1439][Eclair #1439] add support to Eclair for
   effective sending of [multipath payments][topic multipath
