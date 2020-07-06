@@ -47,12 +47,37 @@ notable changes to popular Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jnewbery or jonatack
+[Cache responses to `getaddr` to prevent topology leaks][review club #18991] is a
+[PR][Bitcoin Core #18991] by Gleb Naumenko that aims to make it more difficult
+for spy nodes to infer the P2P network topology using `addr` message gossiping.
+
+The discussion began by covering the basic concepts of address gossiping, and
+later focused on what privacy leaks are currently possible and what the PR
+intends to change.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="FIXME:optional"
+  q0="What is the importance of `addr` relay and specifically the `getaddr`/`addr` protocol?"
+  a0="`addr` relay is used for nodes to find new potential peers on the P2P network."
+  a0link="https://bitcoincore.reviews/18991.html#l-34"
+
+  q1="Which properties of `addr` relay are important?"
+  a1="Nodes need to learn about a diverse set of peers with good uptime that were online recently."
+  a1link="https://bitcoincore.reviews/18991.html#l-57"
+
+  q2="How can a spy use `addr` messages to infer network topology?"
+  a2="There are potentially multiple ways to infer topology from `addr` messages, but the most-discussed method was scraping nodes' address managers (addrman) to determine how an address record is spread across the network and whether any nodes have a unique timestamp for that address record (indicating that they're probably directly connected to that address). This is the method that was used in the [Coinscope paper][]."
+  a2link="https://bitcoincore.reviews/18991.html#l-129"
+
+  q3="What could a malicious actor do if they were able to map the entire P2P topology?"
+  a3="Knowing the entire P2P network topology makes it easier to carry out attacks such as network partitions or [eclipse attacks][topic eclipse attacks]."
+  a3link="https://bitcoincore.reviews/18991.html#l-176"
+
+  q4="Is it a problem if nodes cache responses to `getaddr` messages and serve records that are old?"
+  a4="Opinions differ. Some people [think][naumenko churn] there isn't much churn on the P2P network, so old records are usually still valid; others [aren't sure][wuille churn]."
+
+  q5="Does this PR prevent the unique-timestamp topology inference?"
+  a5="No. This PR makes it more difficult to scrape a node's address manager (addrman) but does not change the timestamps on relayed address records. A future PR could make additional changes to address the unique-timestamp inference."
+  a5link="https://bitcoincore.reviews/18991.html#l-263"
 %}
 
 ## Releases and release candidates
@@ -173,7 +198,7 @@ release candidates.*
   attack][].
 
 {% include references.md %}
-{% include linkers/issues.md issues="19204,19215,3775,1427,1249,1473,4167,351,1439" %}
+{% include linkers/issues.md issues="19204,19215,3775,1427,1249,1473,4167,351,1439,18991" %}
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta
 [lnd 0.10.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.3-beta
 [eclair 0.4.1]: https://github.com/ACINQ/eclair/releases/tag/v0.4.1
@@ -191,3 +216,4 @@ release candidates.*
 [naumenko churn]: https://bitcoincore.reviews/18991.html#l-91
 [wuille churn]: https://bitcoincore.reviews/18991.html#l-365
 [btchip-python]: https://github.com/LedgerHQ/btchip-python
+[coinscope paper]: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf
