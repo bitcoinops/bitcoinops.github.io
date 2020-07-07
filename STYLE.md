@@ -36,8 +36,11 @@ sentence or heading.
 - Introduce sighash with "signature hash (sighash)", but don't introduce sighash
   types (`SIGHASH_SINGLE`, `SIGHASH_ALL`, etc) since they're technical terms
   and not abbreviations.
+- IBD (Initial Block Download)
+- HTLC (Hash Time Locked Contract)
+- PTLC (Point Time Locked Contract)
 
-#### Unintroduced abreviations
+#### Unintroduced abbreviations
 
 The first occurrence of an abbreviation in a document should be preceded
 by its full name (e.g. Foo Bar Baz (FBB)) with the exception of the
