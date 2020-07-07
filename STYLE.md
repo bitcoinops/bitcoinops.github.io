@@ -36,8 +36,11 @@ sentence or heading.
 - Introduce sighash with "signature hash (sighash)", but don't introduce sighash
   types (`SIGHASH_SINGLE`, `SIGHASH_ALL`, etc) since they're technical terms
   and not abbreviations.
+- IBD (Initial Block Download)
+- HTLC (Hash Time Locked Contract)
+- PTLC (Point Time Locked Contract)
 
-#### Unintroduced abreviations
+#### Unintroduced abbreviations
 
 The first occurrence of an abbreviation in a document should be preceded
 by its full name (e.g. Foo Bar Baz (FBB)) with the exception of the
@@ -59,6 +62,7 @@ following abbreviations we assume readers will already know.
 - P2SH-wrapped segwit (Pay to Script Hash wrapped segwit)
 - P2WPKH (Pay to Witness Public Key Hash)
 - P2WSH (Pay to Witness Script Hash)
+- PSBT (Partially Signed Bitcoin Transaction)
 - pubkey (public key)
 - RPC (Remote Procedure Call)
 - RFC (Request For Comments, the IETF documents)
