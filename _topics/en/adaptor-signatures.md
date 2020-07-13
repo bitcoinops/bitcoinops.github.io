@@ -18,7 +18,7 @@ categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Adaptor signatures** are auxiliary signature data that commit to a a
+  **Adaptor signatures** are auxiliary signature data that commit to a
   hidden value.  When an adaptor signature is combined with a final
   signature, it reveals the hidden value.  Alternatively, when combined
   with the hidden value, it reveals the final signature.  The commitment
@@ -42,7 +42,7 @@ extended_summary: |
   Alice hasn't paid Bob yet.
 
   What the adaptor signature does provide Bob is a commitment to Alice's
-  hidden value.  This commitment is made in the form of a value Bob can
+  hidden value.  This commitment is made in the form of a value Bob
   can use to create a second adaptor signature that commits to the same
   hidden value as Alice's adaptor signature.  Bob can make that
   commitment even without knowing Alice's hidden value or his own final
@@ -54,7 +54,7 @@ extended_summary: |
   transaction that pays her.  She broadcasts the transaction and
   receives Bob's payment.  When Bob sees that transaction onchain, he
   can combine its final signature with the adaptor signature he gave
-  Alice, allowing him to to derive the hidden value.  Then he can
+  Alice, allowing him to derive the hidden value.  Then he can
   combine that hidden value with the adaptor signature Alice gave him to
   get her final signature for the first transaction.  Bob broadcasts
   that transaction to receive Alice's payment, completing the coinswap.
@@ -106,7 +106,7 @@ extended_summary: |
     rather than the needed `R`.
 
   Therefore Bob can't use the adaptor signature as a final signature.
-  However, he can create his own signature using it.  This is similar to
+  However, he can create his own signature using it.  This is similar to the
   signature Alice created but Bob doesn't commit to `t` here, since Bob
   doesn't know that value.  All variables here except `T` are different
   for Bob than they were for Alice:
@@ -152,7 +152,7 @@ extended_summary: |
   Alice could double spend her payment to Bob after she learned Bob's
   final signature, or Bob could've tried the same in reverse (with more
   difficulty since we assumed Alice's transaction had one confirmation).
-  This is usually addressed by combining adaptor signatures with
+  This is typically addressed by combining adaptor signatures with
   multiparty signatures.  For example, Alice deposits her money into an
   address that requires signatures from both her and Bob to spend.  Now
   Alice can provide Bob with an adaptor signature for her half of the
