@@ -32,6 +32,21 @@ test-before-build:
 	## Check for unnecessarily fully qualified URLs (breaks local previews and internal link checking)
 	! git --no-pager grep -- '^\[.*]: https://bitcoinops.org' | grep -v skip-test | grep .
 	! git --no-pager grep -- '](https://bitcoinops.org' | grep -v skip-test | grep .
+	## Check for duplicate words
+	@ ## Only applies to *.md files
+	@ ## Add <!-- skip-duplicate-words-test --> to same line to skip this test
+	@ ## Ignores any strings with non alphabetical characters
+	export LC_ALL=C ; ! git ls-files '*.md' | while read file ; do \
+	    cat $$file \
+	      | sed '/skip-duplicate-words-test/d' \
+	      | sed '/^#/d' \
+	      | tr ' ' '\n' \
+	      | sed 's/ *//g;' \
+	      | sed 's/^.*[^a-zA-Z].*/ /; /^$$/d;' \
+	      | uniq -d \
+	      | sed '/^ $$/d' \
+	      | sed "s|.*|Duplicate word in $$file: &|" ; \
+	done | grep .
 
 	## Check that newly added or modifyed PNGs are optimized
 	_contrib/travis-check-png-optimized.sh
