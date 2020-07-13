@@ -187,7 +187,7 @@ wiki page for changes -->{% endcomment %}
 - [LND #2802][] allows LND to calculate the probability that a
   particular route will succeed.  It then uses that probability to
   choose the best route in combination with existing calculations of the
-  the total fee cost and maximum HTLC timeout for the path.  Several new
+  total fee cost and maximum HTLC timeout for the path.  Several new
   configuration options are added that allow the user to tweak constant
   values used in the probability calculation, such as the "assumed
   success probability of a hop in a route when no other information is

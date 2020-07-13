@@ -82,7 +82,7 @@ projects.
   days) also in New York City with a few speeches, many demos, and lots
   of hacking.
 
-    Pierre Rochard has written summaries of all the the presentations
+    Pierre Rochard has written summaries of all the presentations
     given at the residency program ([day 1][lr1], [day 2][lr2],
     [day 3][lr3], [day 4][lr4]) and videos of the
     presentations are expected to be posted soon.  Videos of the

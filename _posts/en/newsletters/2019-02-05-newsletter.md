@@ -63,7 +63,7 @@ the organizers ([day 1][], [day 2][], [day 3][]).
 
     But what if we also asked the spender to provide a copy of the
     ownership information in their transaction along with a
-    cryptographic proof that the the information is actually in the UTXO
+    cryptographic proof that the information is actually in the UTXO
     set?  In that case, we wouldn't need to store the whole set, we'd
     only need to store a commitment to a set we knew was accurate and
     that could be referenced by accurate proofs.  RSA accumulators are

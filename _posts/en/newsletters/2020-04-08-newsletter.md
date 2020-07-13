@@ -118,7 +118,7 @@ Later in the meeting, the `TxDownloadState` data structure was discussed:
 
 Discussion then delved deeply into the PR implementation, potential
 issues, and future improvements and their interactions with the
-[wtxid transaction relay][] proposal. For more details, see the the
+[wtxid transaction relay][] proposal. For more details, see the
 [study notes and meeting log][review club 18238].
 
 ## Releases and release candidates

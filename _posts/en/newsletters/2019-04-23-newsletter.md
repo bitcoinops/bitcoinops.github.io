@@ -172,7 +172,7 @@ backported to its pending release.*
 ## Footnotes
 
 [^fn-bip157-bip158]:
-    [BIP158][] introduces _Compact block filters_, which are are based on an efficient method for encoding
+    [BIP158][] introduces _Compact block filters_, which are based on an efficient method for encoding
     a list of equally-sized items. In the case of the "basic" block
     filters described in the BIP, this is a list of all the
     spendable output scriptPubKeys in the current block plus all

@@ -106,7 +106,7 @@ source: [Optech dashboard][periodic txn data]*
   the elliptical curve used for Bitcoin.  The R value is randomly
   derived, so half of all signatures have this extra byte.
 
-    Merged this this week, Bitcoin Core PR [#13666][Bitcoin Core #13666] generates multiple signatures for
+    Merged this week, Bitcoin Core PR [#13666][Bitcoin Core #13666] generates multiple signatures for
     each transaction (if necessary) using an incremental nonce until a
     signature is found that has a low-R value that doesn't require this
     extra byte.  By doing so, Bitcoin Core transactions will save one

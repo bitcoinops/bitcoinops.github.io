@@ -19,7 +19,7 @@ excerpt: >
 
      Assume 350 words per page, that's 350.92 pages -->{% endcomment %}
 
-Over the past 18 months, <!-- June 2018 to November 2019 --> Optech has
+Over the past 18 months, <!-- June 2018 to November 2019 --> Optech
 has published the equivalent of about 350 printed pages worth of
 Bitcoin news and documentation.  In an effort to make that material more
 accessible, we're pleased to announce a new [topics index][] with an
