@@ -75,7 +75,10 @@ infrastructure projects.
   with that permission an unlimited download capability, but that may be
   changed in a future release.
 
-- [LND #971][] FIXME:dongcarl
+- [LND #971][] adds support for controlling the maximum pending value in
+  outstanding HTLCs (which are at risk of being locked up) with `openchannel`'s
+  new `remote_max_value_in_flight_msat` flag. This new flag will be available to
+  LND users via both the RPC interface and the command line.
 
 - [LND #4281][] adds an `--external-hosts` command line flag that accepts
   a list of one or more domain names.  LND will periodically poll DNS
