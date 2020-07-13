@@ -353,7 +353,7 @@ option is not available.
 
 ### Label Transactions Signaling opt-in RBF
 
-RBF signaled transactions could be visually labeled both in transaction list
+Transactions signaling RBF could be visually labeled both in transaction list
 and transaction detail screens. Alternatively, RBF-signaling transactions could
 be the default and NON RBF transactions get an “unbumpable” type label. Such a
 label is most useful for letting a user know which of their transactions are

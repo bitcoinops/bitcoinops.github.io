@@ -159,23 +159,23 @@ These issues will be discussed in more detail in later sections of this document
 
 ## Introduction to RBF
 
-TODO
+TODO1
 
 ### Overview of what RBF is
 
-TODO
+TODO2
 
 ### History of RBF
 
-TODO
+TODO3
 
 ### BIP 125
 
-TODO
+TODO4
 
 #### 5 conditions for RBF
 
-TODO
+TODO5
 
 ### User Experience Recommendations
 
@@ -200,11 +200,11 @@ their users when dealing with RBF transactions:
 
 ### Interoperability & compatibility matrix
 
-TODO
+TODO6
 
 ### Example of a company using RBF
 
-TODO
+TODO7
 
 ## Child-Pays-For-Parent
 
@@ -350,24 +350,24 @@ packages to users:
 
 ## RBF or CPFP (or both)
 
-TODO
+TODO8
 
 
 ### Advantages of RBF
 
-TODO
+TODO9
 
 ### Advantages of CPFP
 
-TODO
+TODO10
 
 ### Using both together
 
-TODO
+TODO11
 
 ### Implementation gotchas
 
-TODO
+TODO12
 
 ## Conclusion
 

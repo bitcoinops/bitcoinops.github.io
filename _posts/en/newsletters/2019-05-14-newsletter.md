@@ -543,7 +543,7 @@ wiki page for changes -->{% endcomment %}
 
 - [Bitcoin Core #15930][] deprecates the `getunconfirmedbalance` RPC and
   the three different *balance* fields in the `getwalletinfo` RPC.  In
-  their place, a `getbalances` RPC is added that provides provides two
+  their place, a `getbalances` RPC is added that provides two
   sets of fields.  For balances the wallet can spend ("IsMine"), a
   `trusted` field for outputs either created by the wallet itself or
   which have at least one confirmation; an `untrusted_pending` field for

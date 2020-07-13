@@ -50,7 +50,7 @@ Bitcoin infrastructure projects.
   reorganizations.
 
 - **Proposed sighash updates:** before signing a transaction, a Bitcoin
-  wallet creates a cryptographic hash of the the unsigned transaction
+  wallet creates a cryptographic hash of the unsigned transaction
   and some other data.  Then, instead of signing the transaction
   directly, the wallet signs that hash.  Since the original 0.1 implementation
   of Bitcoin, wallets have been allowed to remove certain parts of the

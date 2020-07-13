@@ -26,7 +26,7 @@ extended_summary: |
   don't allow specifying an arbitrary message.  The message they use is
   derived from the transaction executing the signature-checking opcode.
   This allows them to verify that the signature matches a certain public
-  key and that the the private key used to generate both of those objects
+  key and that the private key used to generate both of those objects
   was used to authorize the spend.  That mechanism is powerful enough to
   secure Bitcoin UTXOs, but it precludes using digital signatures to
   authenticate other types of data in the Bitcoin system.  The ability

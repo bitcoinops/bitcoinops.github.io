@@ -71,7 +71,7 @@ Bitcoin infrastructure projects.
   payment failure.  This allows the paying node to mark the channel
   between those two nodes as unreliable and choose other channels for
   future payments.  But LND developer Joost Jager [notes][jager delays]
-  on the the LN development mailing list that "non-ideal payment
+  on the LN development mailing list that "non-ideal payment
   attempts [can also be] successful payments for which it took a long
   time to receive the [success] message."  He proposes that each node
   relaying a message back to the paying node add two timestamps to the
