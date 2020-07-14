@@ -47,7 +47,25 @@ infrastructure projects.
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19219][] FIXME:jonatack, also [Bitcoin Core #19469][]
+- [Bitcoin Core #19219][] clarifies the [distinction][ban vs discourage] between manual peer banning
+  and automated peer discouragement, and it reduces worst-case resource usage
+  by placing the IP addresses of misbehaving peers into a non-persisted rolling bloom filter to
+  prevent them from abusing Bitcoin Core's limited connection slots. Such peers are now
+  logged as *discouraged* rather than *banned* to reflect the changes made in
+  [#14929][Bitcoin Core #14929] (see [Newsletter #32][news32 bcc14929]).
+  By contrast, incoming connections are never accepted
+  from manually banned peers, and their addresses and subnets are persisted to
+  banlist.dat on shutdown and reloaded on startup. Banning can be used to
+  prevent connections with spy nodes or other griefers---although neither banning nor discouragement protects
+  against DoS attacks, as it is trivial for an attacker to reconnect using
+  different IP addresses.
+
+  This PR marks the beginning of a series of current and future changes to peer
+  management. In related merges this week, [#19464][Bitcoin Core #19464] removes the
+  `-banscore` configuration option, and [#19469][Bitcoin Core #19469] updates the
+  `getpeerinfo` RPC to deprecate the `banscore` field.  Further improvements to
+  [resource usage][cuckoo filter], [inbound connection optimization][eviction-logic]
+  and user interfaces related to peer management are currently in development.
 
 - [Bitcoin Core #19328][] updates the `gettxoutsetinfo` RPC with a new
   `hash_type` parameter that allows specifying how to generate a
@@ -88,7 +106,7 @@ infrastructure projects.
   address.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19219,19469,19328,19191,971,4281,18000" %}
+{% include linkers/issues.md issues="19219,14929,19464,19469,19328,19191,971,4281,18000" %}
 [dynamic dns]: https://en.wikipedia.org/wiki/Dynamic_DNS
 [towns post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018038.html
 [anyprevout spec]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
@@ -96,3 +114,7 @@ infrastructure projects.
 [wuille rolling]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [muhash]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
 [bitcoin core 0.15]: https://bitcoincore.org/en/releases/0.15.0/#low-level-rpc-changes
+[cuckoo filter]: https://github.com/bitcoin/bitcoin/pull/19219#issuecomment-652685715
+[eviction-logic]: https://github.com/bitcoin/bitcoin/issues/19500#issuecomment-657257874
+[news32 bcc14929]: /en/newsletters/2019/02/05/#bitcoin-core-14929
+[ban vs discourage]: https://github.com/bitcoin/bitcoin/blob/f4de89edfa8be4501534fec0c662c650a4ce7ef2/src/banman.h#L29-L55
