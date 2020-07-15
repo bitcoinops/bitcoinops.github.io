@@ -37,7 +37,7 @@ optech_mentions:
     url: /en/newsletters/2019/02/19/#bitcoin-core-freeze-week
     date: 2019-02-19
 
-  - title: Erlay comaptible with BIP156
+  - title: Erlay compatible with BIP156
     url: /en/newsletters/2019/06/05/#erlay-proposed
     date: 2019-06-05
 
