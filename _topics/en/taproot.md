@@ -113,7 +113,7 @@ optech_mentions:
     url: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
     date: 2020-05-13
 
-  - title: "Request for comments on ammending BIP341 taproot transaction digest"
+  - title: "Request for comments on amending BIP341 taproot transaction digest"
     url: /en/newsletters/2020/05/20/#evaluate-proposed-changes-to-bip341-taproot-transaction-digest
     date: 2020-05-28
 
