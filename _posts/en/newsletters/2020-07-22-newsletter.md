@@ -82,7 +82,14 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19109][] Only allow getdata of recently announced invs FIXME:adamjonas
+- [Bitcoin Core #19109][] introduces further improvements to
+  [transaction-origin privacy][transaction origin wiki]. Building on
+  [Bitcoin Core #18861][bitcoin 18861 newsletter], this patch adds a
+  per-peer rolling bloom filter to track which transactions were recently
+  announced to the peer. When a peer requests a transaction, this upgrade
+  checks the filter before fulfilling the request and relaying the
+  transaction to prevent spy nodes from learning about the exact contents
+  of our mempool or the precise timing of when a transaction was received.
 
 - [Bitcoin Core #16525][] updates several RPCs to return transaction
   version numbers as unsigned integers rather than signed integers.
@@ -142,6 +149,8 @@ release candidates.*
 [Bitcoin Core 0.20.1]: / {% comment %}<!--FIXME-->{% endcomment %}
 [C-Lightning 0.9.0]: / {% comment %}<!--FIXME-->{% endcomment %}
 [LND 0.10.4]: / {% comment %}<!--FIXME-->{% endcomment %}
+[bitcoin 18861 newsletter]: /en/newsletters/2020/05/27/#bitcoin-core-18861
+[transaction origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis
 [news105 cl3775]: /en/newsletters/2020/07/08/#c-lightning-3775
 [35e79ee733fad376e76d16d1f10088273c2f4c2eaba1374a837378a88e530005]: https://blockstream.info/tx/35e79ee733fad376e76d16d1f10088273c2f4c2eaba1374a837378a88e530005
 [lee irc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018042.html
