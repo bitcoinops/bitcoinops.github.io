@@ -59,7 +59,24 @@ changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Electrum adds Lightning Network and PSBT support:**
+  [Electrum's 4.0.1][electrum release notes] LN support includes local and
+  remote [watchtower][topic watchtowers] capabilities
+  as well as submarine swaps using Electrum Technologies' central server.
+  Electrum has also replaced their partial transaction format with PSBT.
+
+- **Lily Wallet initial release:**
+  [Lily Wallet][lily wallet site] has announced the initial v0.0.1-beta release
+  of their multi-account desktop multisig vault application. Lily Wallet creates
+  2-of-3 bech32 addresses and uses [HWI][topic hwi], HD wallets, and PSBT to transact.
+
+- **Zap 0.7.0 Beta released:** [Zap 0.7.0 Beta][zap 0.7.0] adds [spontaneous payments][topic
+  spontaneous payments], [payment probes][news30 probing], [multipath
+  payments][topic multipath payments], and [hold invoices][topic hold invoices]
+
+- **BTCPay Server 1.0.5.0 implements various standards:**
+  [BTCPay Server 1.0.5.0][btcpay 1.0.5.0] adds [BIP78][], BIP21, and additional [PSBT][topic psbt]
+  support.
 
 ## Releases and release candidates
 
@@ -164,3 +181,8 @@ release candidates.*
 [news94 keysend]: /en/newsletters/2020/04/22/#c-lightning-3611
 [freenode]: https://freenode.net/
 [towns post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018043.html
+[electrum release notes]: https://github.com/spesmilo/electrum/blob/4.0.1/RELEASE-NOTES
+[lily wallet site]: http://lily.kevinmulcrone.com/
+[news30 probing]: /en/newsletters/2019/01/22/#eclair-762
+[zap 0.7.0]: https://github.com/LN-Zap/zap-desktop/releases/tag/v0.7.0-beta
+[btcpay 1.0.5.0]: https://blog.btcpayserver.org/btcpay-server-1-0-5-0/
