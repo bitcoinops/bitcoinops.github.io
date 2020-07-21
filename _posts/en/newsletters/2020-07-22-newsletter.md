@@ -84,12 +84,14 @@ wallets and services.*
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [LND 0.10.4][] FIXME:harding (windows users only)
+- [LND 0.10.4][] is a minor release that fixes a bug affecting backups
+  on Windows.
 
-- [Bitcoin Core 0.20.1rc1][Bitcoin Core 0.20.1] FIXME:harding
-
-- [C-Lightning 0.9.0rc2][C-Lightning 0.9.0] FIXME:harding
-
+- [C-Lightning 0.9.0rc2][C-Lightning 0.9.0] is a release candidate for
+  an upcoming major release.  It adds support for the updated `pay`
+  command and new `keysend` RPC described in this newsletter's *notable
+  code changes* section, among several other notable changes and
+  multiple bug fixes.
 
 ## Notable code and documentation changes
 
@@ -163,9 +165,8 @@ release candidates.*
 
 {% include references.md %}
 {% include linkers/issues.md issues="19109,16525,3809,3825,3826,3792,4429,945" %}
-[Bitcoin Core 0.20.1]: / {% comment %}<!--FIXME-->{% endcomment %}
-[C-Lightning 0.9.0]: / {% comment %}<!--FIXME-->{% endcomment %}
-[LND 0.10.4]: / {% comment %}<!--FIXME-->{% endcomment %}
+[C-Lightning 0.9.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.0rc2
+[LND 0.10.4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.4-beta
 [bitcoin 18861 newsletter]: /en/newsletters/2020/05/27/#bitcoin-core-18861
 [transaction origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis
 [news105 cl3775]: /en/newsletters/2020/07/08/#c-lightning-3775
