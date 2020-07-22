@@ -72,10 +72,10 @@ wallets and services.*
 
 - **Zap 0.7.0 Beta released:** [Zap 0.7.0 Beta][zap 0.7.0] adds [spontaneous payments][topic
   spontaneous payments], [payment probes][news30 probing], [multipath
-  payments][topic multipath payments], and [hold invoices][topic hold invoices]
+  payments][topic multipath payments], and [hold invoices][topic hold invoices].
 
 - **BTCPay Server 1.0.5.0 implements various standards:**
-  [BTCPay Server 1.0.5.0][btcpay 1.0.5.0] adds [BIP78][], BIP21, and additional [PSBT][topic psbt]
+  [BTCPay Server 1.0.5.0][btcpay 1.0.5.0] adds [BIP78][], [BIP21][], and additional [PSBT][topic psbt]
   support.
 
 ## Releases and release candidates
@@ -127,10 +127,10 @@ release candidates.*
   sending of [multipath payments][topic multipath payments]---payments
   which are split into several parts, with each part routed using a
   different path.  In brief, the algorithm C-Lightning uses splits
-  a payment into parts approximately 0.0001 BTC in value (each part having its
+  a payment into parts of approximately 0.0001 BTC in value (each part having its
   amount randomly fuzzed by plus or minus 10%).  If any sent part fails,
   that part is split into two parts (roughly in half, plus or minus 10%)
-  and the two parts are resent.  The PR additionally adds a
+  and the two parts are re-sent.  The PR additionally adds a
   `disable-mpp` configuration option that will prevent sending any
   multipath payments; a parameter of the same name is also added to the
   `pay` command to disable sending a multipath payment for that
