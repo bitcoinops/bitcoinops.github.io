@@ -69,7 +69,29 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are "leaf versions" in Taproot?]({{bse}}97104)
+  Michael Folkson and Pieter Wuille explain that each leaf node of a
+  [taproot][topic taproot] tree commits to both a leaf version and a script.
+  This leaf version can be used for upgradability and designates the script
+  semantics that apply just to that leaf.
+
+- [What are the different upgradability features in the BIP-Taproot (BIP341) proposal?]({{bse}}96951)
+  Michael Folkson answers a question from Twitter regarding the different ways
+  in which taproot can enable upgradability including leaf versions for script
+  semantics, repurposing opcodes for future functionality, pubkey types, and the
+  annex for new fields.
+
+- [Is there an active list of BIPs currently open?]({{bse}}97043)
+  Pieter Wuille describes various methods that have previously been used to
+  activate soft forks and notes that, while there are currently no unactivated
+  soft forks in Bitcoin Core, there is a discussion about the activation method
+  for taproot. Pieter also answers a [similar question][stack exchange miner
+  signaling] about mining signaling support.
+
+- [Could we skip the Taproot soft fork and instead use Simplicity to write the equivalent of Taproot scripts?]({{bse}}97049)
+  Michael Folkson, quoting Pieter Wuille, outlines the current state of
+  [Simplicity][news96 simplicity] and also notes that integrating Simplicity in
+  taproot as a leaf version would be preferable.
 
 ## Releases and release candidates
 
@@ -210,3 +232,5 @@ release candidates.*
 [bolts #688 eclair tests]: https://github.com/lightningnetwork/lightning-rfc/pull/688#issuecomment-656737250
 [public fibre network]: http://bitcoinfibre.org/public-network.html
 [wtxid relay backport]: https://github.com/bitcoin/bitcoin/pull/19606
+[stack exchange miner signaling]: https://bitcoin.stackexchange.com/questions/97041/how-does-a-miner-put-his-vote-for-certain-bip/97047#97047
+[news96 simplicity]: /en/newsletters/2020/05/06/#simplicity-next-generation-smart-contracting
