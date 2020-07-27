@@ -93,9 +93,6 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19473][] net: Add -networkactive option
-  FIXME:bitschmidty
-
 - [Bitcoin Core #18044][] adds support for witness txid (wtxid)
   transaction inventory announcements (`inv`) and requests (`getdata`)
   as described in BIP339 (see [Newsletter #104][news104 bip339]).  Prior
@@ -161,6 +158,12 @@ release candidates.*
 
     No clear conclusion on which of these options to follow has been
     reached.
+
+- [Bitcoin Core #19473][] adds support for `networkactive` as both a command line
+  start-up and configuration file option. Setting this option enables or
+  disables all P2P network activity. After the node has been started, network
+  activity can be toggled using the existing `setnetworkactive` RPC or the network
+  activity button in the GUI.
 
 - [Eclair #1485][] adds support for [spontaneous payments][topic
   spontaneous payments] using the same keysend protocol previously
