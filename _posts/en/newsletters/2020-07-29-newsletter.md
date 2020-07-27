@@ -179,7 +179,14 @@ release candidates.*
   the use of anchor outputs with peers, but this early step does pass
   all [proposed test vectors][BOLTs #688 eclair tests].
 
-- [LND #4455][] PSBT: add no_publish flag for safe batch channel opens v2 FIXME:dongcarl
+- [LND #4455][] enables safe PSBT-based batched channel opens. Previously, each
+  successful channel negotiation in the batch would prematurely broadcast the
+  whole transaction with all channel funding outputs. This meant
+  subsequent channel negotiation failures could result in stuck funds.
+  This merged PR introduces a `--no_publish` flag to the `openchannel` command,
+  which can be used to delay transaction broadcast until the very last channel
+  in the batch.
+
 
 {% include references.md %}
 {% include linkers/issues.md issues="19473,18044,17977,18947,1485,1484,4455" %}
