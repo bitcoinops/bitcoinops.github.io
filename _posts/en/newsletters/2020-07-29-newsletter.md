@@ -8,8 +8,9 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter describes a proposal to allow upgrading LN
-channel commitment transaction formats without opening new channels.
-Also included are our regular sections with selected questions and
+channel commitment transaction formats without opening new channels and includes
+a field report from River Financial about building wallet software using PSBTs
+and descriptors. Also included are our regular sections with selected questions and
 answers from the Bitcoin StackExchange, recent releases and release
 candidates, and notable changes to popular Bitcoin infrastructure
 projects.
@@ -52,6 +53,10 @@ projects.
     the offchain secondary funding transaction can be published onchain
     and the channel can be resolved using the appropriate unilateral
     close protocol.
+
+## Field report: Using Descriptors and PSBT at River
+
+{% include articles/river-descriptors-psbt.md %}
 
 ## Selected Q&A from Bitcoin StackExchange
 
