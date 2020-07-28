@@ -58,6 +58,10 @@ primary_sources:
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
+  - title: "C-Lightning #3809 adds support for sending of multipath payments"
+    url: /en/newsletters/2020/07/22/#c-lightning-3809
+    date: 2020-07-22
+
   - title: "LN protocol 1.1 goals: multipath payments"
     url: /en/newsletters/2018/11/20/#multi-path-payments
     date: 2018-11-20
