@@ -126,7 +126,32 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19569][] Enable fetching of orphan parents from wtxid peers FIXME:moneyball
+- [Bitcoin Core #19569][] allows Bitcoin Core to fetch the parents of _orphan_
+  transactions from peers that relay transactions using wtxid. An orphan
+  transaction is an unconfirmed transaction that we receive from a peer where we
+  don't yet have the parent transactions, either as part of our best block
+  chain, or in the mempool. More precisely, an orphan transaction has at least
+  one transaction input whose associated output is not in the UTXO set or our
+  mempool's outpoint map.
+
+    When we receive an orphan transaction, we place it in a temporary data
+    structure called the orphan set. We then ask the peer that sent us the
+    orphan to also send us the parent transactions that we don't yet have. We can
+    do that because the orphan transaction contains the txids of its parent
+    transactions. We simply send a `getdata` message containing those txids to
+    the peer to request the parent transactions.
+
+    For [wtxid relay peers][news108 wtxid relay], transactions are announced
+    and requested using the _wtxid_ of the transaction, not the _txid_. However,
+    orphan transactions contain their parents' txids, not wtxids, so it's
+    not possible to request the parent transaction using wtxid. [PR
+    #18044][Bitcoin Core #18044], which introduced wtxid relay peers and was
+    merged last week, did not permit fetching parent transactions from wtxid
+    peers. This follow-up PR allows us to fetch those parents using the txid.
+
+    Fetching parent transactions using txid may eventually be replaced
+    by a [package relay][topic package relay] mechanism, where we can
+    ask a peer for all the unconfirmed ancestors of a transaction directly.
 
 - [Eclair #1491][] adds partial support for creating, using, and closing
   channels that use [anchor outputs][topic anchor outputs] to both reduce
@@ -183,7 +208,7 @@ release candidates.*
     to operate as a trusted signer for a signet.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19569,1491,4488,948,947,785" %}
+{% include linkers/issues.md issues="19569,1491,4488,948,947,785,18044" %}
 [C-Lightning 0.9.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.0
 [Bitcoin Core 0.20.1]: https://bitcoincore.org/bin/bitcoin-core-0.20.1/
 [LND 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc1
@@ -194,3 +219,4 @@ release candidates.*
 [min.sc]: https://min.sc
 [htlc script]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md#received-htlc-outputs
 [htlc minsc]: https://min.sc/#c=fn%20htlc_received%28%24revocationpubkey%2C%20%24local_htlcpubkey%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24remote_htlcpubkey%2C%20%24payment_hash%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24cltv_expiry%29%0A%7B%0A%20%20%2F%2F%20To%20local%20node%20via%20HTLC-success%20transaction%0A%20%20%24success%20%3D%20pk%28%24local_htlcpubkey%29%20%26%26%20hash160%28%24payment_hash%29%3B%0A%0A%20%20%2F%2F%20To%20remote%20node%20after%20timeout%0A%20%20%24timeout%20%3D%20older%28%24cltv_expiry%29%3B%0A%0A%20%20%2F%2F%20To%20remote%20node%20with%20revocation%20key%2C%20or%20use%20success%2Ftimeout%20with%20remote%20consent%0A%20%20pk%28%24revocationpubkey%29%20%7C%7C%20%28pk%28%24remote_htlcpubkey%29%20%26%26%20%28%24success%20%7C%7C%20%24timeout%29%29%0A%7D%0A%0Ahtlc_received%28A%2C%20B%2C%20C%2C%20H%2C%203%20hours%29
+[news108 wtxid relay]: /en/newsletters/2020/07/29/#bitcoin-core-18044
