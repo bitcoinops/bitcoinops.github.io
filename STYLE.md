@@ -118,6 +118,7 @@ spelled the same.
 | Use | Don't use | Notes |
 |-|-|-|
 | coinbase transaction | generation transaction | |
+| lowercase words for P2P message types e.g. inv, getdata, tx | Uppercase words e.g. INV, GETDATA, TX | The command type contained in the P2P message is lowercase ascii |
 | Merklized Alternative Script Trees | Merklized Abstract Syntax Trees | https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast |
 | payjoin | P2EP, bustapay, PayJoin | |
 | receiver | recipient | |
