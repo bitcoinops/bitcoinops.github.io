@@ -231,7 +231,13 @@ release candidates.*
   unsafe.  This new minimum should help prevent inexperienced users from
   naively setting an unsafe value.
 
-- [BIPs #948][] BIP174: Clarify that both UTXO types are allowed FIXME:dongcarl
+- [BIPs #948][] updates the [BIP174][] specification of [PSBT][topic psbt] input
+  records to explicitly allow for providing both a non-witness UTXO (the full
+  transaction) and a witness UTXO for a single input. This is in line with the
+  [current behavior][news105 fee overpayment] in Bitcoin Core and was motivated
+  by the possibility of a fee overpayment attack on multi-input segwit PSBTs
+  which did not include the non-witness UTXOs as detailed in [a previous
+  newsletter][fee overpayment attack].
 
 - [BIPs #947][] updates the [BIP325][] specification of [signet][topic
   signet] to change the block signature verification method.  Signets
@@ -269,6 +275,7 @@ release candidates.*
 [Bitcoin Core 0.20.1]: https://bitcoincore.org/bin/bitcoin-core-0.20.1/
 [LND 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc1
 [fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+[news105 fee overpayment]: /en/newsletters/2020/07/08/#bitcoin-core-19215
 [news107 notable]: /en/newsletters/2020/07/22/#notable-code-and-documentation-changes
 [anchor spec discuss]: https://github.com/lightningnetwork/lightning-rfc/pull/688#issuecomment-661669232
 [ivgi minsc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018062.html
