@@ -61,7 +61,9 @@ and notable changes to popular Bitcoin infrastructure projects.
     that protocol to tell miners which transaction would truly be most
     profitable to mine.
 
-## Field report FIXME
+## Field report: How segwit and batching could have saved half a billion dollars in fees
+
+{% include articles/veriphi-segwit-batching.md %}
 
 ## Bitcoin Core PR Review Club
 
