@@ -58,10 +58,6 @@ primary_sources:
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
-  - title: "C-Lightning #3809 adds support for sending of multipath payments"
-    url: /en/newsletters/2020/07/22/#c-lightning-3809
-    date: 2020-07-22
-
   - title: "LN protocol 1.1 goals: multipath payments"
     url: /en/newsletters/2018/11/20/#multi-path-payments
     date: 2018-11-20
@@ -145,6 +141,22 @@ optech_mentions:
   - title: Lightning Loop adds support for multipath payments
     url: /en/newsletters/2020/05/20/#lightning-loop-using-multipath-payments
     date: 2020-05-20
+
+  - title: "Eclair #1427 and #1439 add support to Eclair for sending multipath payments"
+    url: /en/newsletters/2020/07/08/#eclair-1427
+    date: 2020-07-08
+
+  - title: Eclair 0.4.1 adds support for sending multipath payments
+    url: /en/newsletters/2020/07/08/#eclair-0-4-1
+    date: 2020-07-08
+
+  - title: Zap 0.7.0 Beta adds support for multipath payments
+    url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
+    date: 2020-07-22
+
+  - title: "C-Lightning #3809 adds support for sending of multipath payments"
+    url: /en/newsletters/2020/07/22/#c-lightning-3809
+    date: 2020-07-22
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

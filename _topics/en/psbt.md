@@ -1,9 +1,10 @@
 ---
-title: Partially signed bitcoin transactions (PSBTs)
+title: Partially signed bitcoin transactions
 shortname: psbt
 
 aliases:
   - BIP174
+  - PSBT
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -115,6 +116,30 @@ optech_mentions:
   - title: "Bitcoin Core #18027 adds GUI support for signing & broadcasting PSBTs"
     url: /en/newsletters/2020/06/24/#bitcoin-core-18027
     date: 2020-06-24
+
+  - title: "Bitcoin Core #19215 adds additional data to PSBTs for segwit inputs"
+    url: /en/newsletters/2020/07/08/#bitcoin-core-19215
+    date: 2020-07-08
+
+  - title: "C-Lightning #3775 adds RPCs for creating and using PSBTs"
+    url: /en/newsletters/2020/07/08/#c-lightning-3775
+    date: 2020-07-08
+
+  - title: "Electrum 4.0.1 replaces their partial transactions format with PSBTs"
+    url: /en/newsletters/2020/07/22/#electrum-adds-lightning-network-and-psbt-support
+    date: 2020-07-22
+
+  - title: Initial release of Lily Wallet supports PSBTs
+    url: /en/newsletters/2020/07/22/#lily-wallet-initial-release
+    date: 2020-07-22
+
+  - title: "Field Report: Using PSBT at River Financial"
+    url: /en/river-descriptors-psbt/
+    date: 2020-07-29
+
+  - title: "LND #4455 makes it safe to batch open channels using PSBTs"
+    url: /en/newsletters/2020/07/29/#lnd-4455
+    date: 2020-07-29
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

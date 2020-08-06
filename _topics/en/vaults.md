@@ -80,6 +80,10 @@ optech_mentions:
     url: /en/newsletters/2020/06/03/#the-revault-multiparty-vault-architecture
     date: 2020-06-03
 
+  - title: Service proposed for storing presigned vault transactions
+    url: /en/newsletters/2020/07/01/#proposed-service-for-storing-relaying-and-broadcasting-presigned-transactions
+    date: 2020-07-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

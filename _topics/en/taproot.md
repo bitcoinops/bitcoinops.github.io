@@ -133,6 +133,26 @@ optech_mentions:
     url: /en/newsletters/2020/06/17/#coinpool-generalized-privacy-for-identifiable-onchain-protocols
     date: 2020-06-17
 
+  - title: New chatroom for discussing taproot activation
+    url: /en/newsletters/2020/07/22/#new-irc-room
+    date: 2020-07-22
+
+  - title: Upgrading LN commitment formats, including for taproot
+    url: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
+    date: 2020-07-29
+
+  - title: Question about leaf versions in taproot
+    url: /en/newsletters/2020/07/29/#what-are-leaf-versions-in-taproot
+    date: 2020-07-29
+
+  - title: Question about the different features in taproot for upgrading
+    url: /en/newsletters/2020/07/29/#what-are-the-different-upgradability-features-in-the-bip-taproot-bip341-proposal
+    date: 2020-07-29
+
+  - title: Discussion about backporting wtxid relay for taproot activation
+    url: /en/newsletters/2020/07/29/#bitcoin-core-18044
+    date: 2020-07-29
+
 ## Optional
 see_also:
   - title: MAST

@@ -52,6 +52,10 @@ optech_mentions:
     url: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
     date: 2020-06-10
 
+  - title: Initial release of Lily Wallet supports HWI
+    url: /en/newsletters/2020/07/22/#lily-wallet-initial-release
+    date: 2020-07-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

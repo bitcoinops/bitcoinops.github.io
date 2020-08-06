@@ -100,6 +100,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/13/#c-lightning-0-8-2-1
     date: 2020-05-13
 
+  - title: "LND #4429 enables support for large channels by default"
+    url: /en/newsletters/2020/07/22/#lnd-4429
+    date: 2020-07-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

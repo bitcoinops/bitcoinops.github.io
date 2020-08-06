@@ -51,6 +51,10 @@ optech_mentions:
     url: /en/newsletters/2020/02/26/#reverse-up-front-payments
     date: 2020-02-26
 
+  - title: Zap 0.7.0 Beta adds support for hold invoices
+    url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
+    date: 2020-07-22
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -108,6 +108,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/27/#why-isn-t-rfc6979-used-for-schnorr-signature-nonce-generation
     date: 2020-05-27
 
+  - title: Presentations and discussions about schnorr signatures
+    url: /en/newsletters/2020/07/01/#schnorr-signatures-and-multisignatures
+    date: 2020-07-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

@@ -79,6 +79,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/04/#composable-musig
     date: 2019-12-30
 
+  - title: Presentations and discussions about musig-style multiparty signatures
+    url: /en/newsletters/2020/07/01/#schnorr-signatures-and-multisignatures
+    date: 2020-07-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

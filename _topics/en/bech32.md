@@ -64,6 +64,10 @@ optech_mentions:
     url: /en/newsletters/2019/12/28/#bech32-mutability
     date: 2019-12-28
 
+  - title: Proposed updates to BIP173 bech32 to address mutability concerns
+    url: /en/newsletters/2020/07/22/#bech32-address-updates
+    date: 2020-07-22
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

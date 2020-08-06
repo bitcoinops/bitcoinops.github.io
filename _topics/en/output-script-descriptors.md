@@ -63,6 +63,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/06/#bitcoin-core-16528
     date: 2020-05-06
 
+  - title: "Field Report: Using descriptors at River Financial"
+    url: /en/river-descriptors-psbt/
+    date: 2020-07-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
