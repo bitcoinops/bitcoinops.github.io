@@ -62,6 +62,10 @@ optech_mentions:
     url: /en/newsletters/2020/04/29/#fn:package-relay
     date: 2020-04-29
 
+  - title: New BIP339 wtxid transaction announcements simplifies package relay
+    url: /en/newsletters/2020/07/01/#bips-933
+    date: 2020-07-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

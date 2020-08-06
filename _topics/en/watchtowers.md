@@ -88,6 +88,14 @@ optech_mentions:
     url: /en/newsletters/2020/05/13/#c-lightning-3659
     date: 2020-05-13
 
+  - title: Service proposed for storing presigned watchtower transactions
+    url: /en/newsletters/2020/07/01/#proposed-service-for-storing-relaying-and-broadcasting-presigned-transactions
+    date: 2020-07-01
+
+  - title: Presentation about watchtower protocol development
+    url: /en/newsletters/2020/07/01/#watchtowers-and-bolt13
+    date: 2020-07-01
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

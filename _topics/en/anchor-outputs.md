@@ -98,6 +98,10 @@ optech_mentions:
     url: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
     date: 2020-06-24
 
+  - title: "Eclair #1484 adds basic support for anchor outputs"
+    url: /en/newsletters/2020/07/29/#eclair-1484
+    date: 2020-07-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

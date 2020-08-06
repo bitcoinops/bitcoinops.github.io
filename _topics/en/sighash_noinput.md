@@ -88,6 +88,10 @@ optech_mentions:
     url: /en/newsletters/2020/06/17/#coinpool-generalized-privacy-for-identifiable-onchain-protocols
     date: 2020-06-17
 
+  - title: "Request to replace BIP118 with the `SIGHASH_ANYPREVOUT` proposal"
+    url: /en/newsletters/2020/07/15/#bip118-update
+    date: 2020-07-15
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

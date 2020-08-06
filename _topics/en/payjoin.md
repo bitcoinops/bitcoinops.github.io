@@ -26,10 +26,8 @@ extended_summary: |
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Test
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+    - title: BIP78
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -61,6 +59,10 @@ optech_mentions:
   - title: Discussion about payjoin and its history
     url: /en/newsletters/2020/06/03/#payjoin-p2ep
     date: 2020-06-03
+
+  - title: New BIP78 specification of payjoin
+    url: /en/newsletters/2020/07/01/#bips-923
+    date: 2020-07-01
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

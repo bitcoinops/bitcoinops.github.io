@@ -74,6 +74,22 @@ optech_mentions:
     url: /en/newsletters/2020/05/20/#breez-wallet-enables-spontaneous-payments
     date: 2020-05-20
 
+  - title: "LND #4167 allows spontaneous payments made using keysend to be held"
+    url: /en/newsletters/2020/07/08/#lnd-4167
+    date: 2020-07-08
+
+  - title: Zap 0.7.0 Beta adds support for spontaneous payments
+    url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
+    date: 2020-07-22
+
+  - title: "C-Lightning #3792 adds support for sending keysend spontaneous payments"
+    url: /en/newsletters/2020/07/22/#c-lightning-3792
+    date: 2020-07-22
+
+  - title: "Eclair #1485 adds support for keysend spontaneous payments"
+    url: /en/newsletters/2020/07/29/#eclair-1485
+    date: 2020-07-29
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

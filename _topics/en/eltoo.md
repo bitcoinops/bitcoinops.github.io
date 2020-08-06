@@ -68,6 +68,10 @@ optech_mentions:
     url: /en/newsletters/2020/06/03/#ln-backups
     date: 2020-06-03
 
+  - title: Upgrading LN commitment formats, including for eltoo
+    url: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
+    date: 2020-07-29
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_NOINPUT
