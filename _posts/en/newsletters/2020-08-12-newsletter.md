@@ -188,11 +188,17 @@ release candidates.*
   `created_at` field with a time stamp indicating when the first part of
   the payment was created.
 
-- [Eclair #1499][] Add API commands to sign & verify arbitrary messages FIXME:dongcarl
+- [Eclair #1499][] adds new `signmessage` and `verifymessage` commands to sign
+  messages using your LN node's public key and verify messages using known node
+  pubkeys respectively. These new commands are tested to be compatible with
+  existing message signing and verification commands found in [LND][LND #192]
+  and [C-Lightning][news69 signcheck rpc], differing only in that Eclair's
+  signatures are encoded in hex rather than zbase32.
 
 {% include references.md %}
-{% include linkers/issues.md issues="18991,19620,3909,1499,19031,19606" %}
+{% include linkers/issues.md issues="18991,19620,3909,1499,19031,19606,192" %}
 [lnd 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc2
+[news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150
 [news95 ln atomicity]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [myers anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018069.html
 [zmnscpxj reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018071.html
