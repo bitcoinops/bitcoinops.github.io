@@ -71,12 +71,65 @@ and notable changes to popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jnewbery or jonatack
+[Implement ADDRv2 support (part of BIP155)][review club #19031] is a PR
+([#19031][Bitcoin Core #19031]) by Vasil Dimov that proposes an
+implementation of the [BIP155][] `addrv2` P2P message.
+
+The discussion covered the current `addr` message in Bitcoin Core, the BIP155
+`addrv2` message, how to signal support for `addrv2` on the P2P network, and the
+necessity of `addrv2` for the Bitcoin network to upgrade to Tor v3. Tor v2
+deprecation begins mid-September!
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME.html#FIXME"
+  q0="How does Bitcoin Core handle network addresses?"
+  a0="Bitcoin Core currently sees all peer addresses as being more or less in a
+      [single][19031 single] IPv6-like space. IPv4 and Tor v2 addresses are
+      serialized into [16 bytes][19031 fake] encoded as “fake” IPv6 addresses
+      from specific IPv6 networks reserved for them. For instance, Tor v2
+      addresses are persisted using the [“onioncat” IPv6 range][19031 onioncat].
+      The 16-byte maximum length of IPv6 increasingly limits which endpoints
+      Bitcoin nodes can connect to."
+  a0link="https://bitcoincore.reviews/19031#l-35"
+
+  q1="How are peer addresses stored?"
+  a1="Addresses are saved in the `peers.dat` file in a 16-byte format, which
+      corresponds to the length of IPv6 addresses; the smaller-sized
+      IPv4 and Tor v2 addresses are therefore [padded][19031 padded] to
+      fit. This file can
+      be updated to handle larger addresses with backward compatibility
+      maintained for older versions."
+  a1link="https://bitcoincore.reviews/19031#l-82"
+
+  q2="What is BIP155 and the `addrv2` message?"
+  a2="[BIP155 `addrv2`][BIP155] is a new P2P message format proposed in early
+      2019 by Wladimir J. van der Laan to gossip variable-length node addresses
+      larger than 16 bytes, and up to 512 bytes for future extensibility, with
+      separate address spaces for separate networks. `addrv2` would enable
+      Bitcoin core to use [next-generation Onion Services][19031 nextgen]
+      (Tor v3) and the [I2P (Invisible Internet Project)][19031 i2p], as well as
+      other networks with longer endpoint addresses that don't fit in
+      the 16 bytes/128 bits of Bitcoin's current `addr` message."
+
+  q3="How is `addrv2` support expected to be signaled?"
+  a3="Most likely with a `sendaddrv2` message between peers
+      [at handshake or afterwards][19031 handshake], rather than with the
+      originally proposed protocol version bump or with a new network service
+      bit."
+  a3link="https://bitcoincore.reviews/19031#l-99"
+
+  q4="Why is Tor v3 important for Bitcoin?"
+  a4="Tor v2 is planned to be [deprecated on Sept 15, 2020][19031 v2 deprecate]
+      and obsolete on July 15, 2021 ([schedule][19031 v2 schedule]).  Tor v3
+      provides much better security and privacy, since it uses longer,
+      56-character addresses. Using Tor v3 on the Bitcoin network
+      therefore requires implementation of BIP155 `addrv2`."
+  a4link="https://bitcoincore.reviews/19031#l-203"
+
+  q5="Will we need another upgrade, aka `addrv3`, in the near future?"
+  a5="Not for some time. The only `addrv2` constraint is that addresses be
+      stored in not more than 512 bytes. Any future format within that size,
+      including variable-length route descriptions, should be supported."
+  a5link="https://bitcoincore.reviews/19031#l-253"
 %}
 
 ## Releases and release candidates
@@ -122,7 +175,7 @@ release candidates.*
 - [Eclair #1499][] Add API commands to sign & verify arbitrary messages FIXME:dongcarl
 
 {% include references.md %}
-{% include linkers/issues.md issues="18991,19620,3909,1499,19606" %}
+{% include linkers/issues.md issues="18991,19620,3909,1499,19031,19606" %}
 [lnd 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc2
 [news95 ln atomicity]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [myers anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018069.html
@@ -130,3 +183,13 @@ release candidates.*
 [corallo relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018072.html
 [news108 wtxid]: /en/newsletters/2020/07/29/#bitcoin-core-18044
 [signature hash]: https://btcinformation.org/en/developer-guide#signature-hash-types
+[19031 single]: https://bitcoincore.reviews/19031#l-49
+[19031 fake]: https://bitcoincore.reviews/19031#l-88
+[19031 onioncat]: https://bitcoincore.reviews/19031#l-89
+[19031 padded]: https://bitcoincore.reviews/19031#l-68
+[BIP155]: https://github.com/bitcoin/bips/blob/master/bip-0155.mediawiki
+[19031 nextgen]: https://trac.torproject.org/projects/tor/wiki/doc/NextGenOnions
+[19031 i2p]: https://geti2p.net
+[19031 handshake]: https://bitcoincore.reviews/19031#l-121
+[19031 v2 deprecate]: https://lists.torproject.org/pipermail/tor-dev/2020-June/014365.html
+[19031 v2 schedule]: https://blog.torproject.org/v2-deprecation-timeline
