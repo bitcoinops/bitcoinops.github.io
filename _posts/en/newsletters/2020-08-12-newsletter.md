@@ -152,7 +152,23 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #18991][] Cache responses to GETADDR to prevent topology leaks FIXME:jnewbery
+- [Bitcoin Core #18991][] changes the way that Bitcoin Core responds to
+  `getaddr` requests from its peers. Bitcoin nodes learn about potential new
+  peers they can connect to in two different ways. Firstly, each node periodically
+  announces its own network address to its peers. Those peers re-announce the
+  address to some of their own peers, who re-announce to their peers, and so on,
+  propagating the address around the network. Secondly, a node can explicitly
+  request addresses from a peer using a `getaddr` message. To prevent a peer
+  from learning about all of the addresses in its address manager, Bitcoin Core
+  only provides a subset of those addresses when a peer sends it a `getaddr`
+  message, and only responds to a single `getaddr` message from each peer.
+  However, an adversary may still be able to learn all the addresses a peer knows
+  by making multiple connections to that peer and sending `getaddr` messages on
+  each connection. The adversary could potentially use that information to
+  fingerprint the peer or infer network topology. To prevent that, this PR
+  changes Bitcoin Core's behavior to cache responses to `getaddr` requests and
+  provide the same response to all peers who request addresses in a 24-hour
+  rolling window.
 
 - [Bitcoin Core #19620][] prevents Bitcoin Core from re-downloading
   unconfirmed segwit transactions that attempt to spend non-standard
