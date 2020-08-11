@@ -241,8 +241,8 @@ release candidates.*
 
 - [BIPs #947][] updates the [BIP325][] specification of [signet][topic
   signet] to change the block signature verification method.  Signets
-  are test networks where valid blocks are signed by trusted signers
-  rather than using proof of work, a change which eliminates some issues
+  are test networks where valid blocks are signed by trusted signers,
+  a change which eliminates some issues
   and makes certain types of testing easier.
 
     Previously, signet assumed the use of signatures compatible with
