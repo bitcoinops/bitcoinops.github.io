@@ -254,4 +254,7 @@ see_also:
 
   - title: Using schnorr subtraction to create more private coinswaps
     link: https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/
+
+  - title: Adaptor signatures for discreet log contracts
+    link: https://lists.launchpad.net/mimblewimble/msg00485.html
 ---
