@@ -84,7 +84,6 @@ properties:
       required:
         - title
         - url
-        - date
       additionalProperties: false
       properties:
         title:

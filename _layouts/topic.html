@@ -52,19 +52,14 @@ layout: post
 
   <!-- Build list of internal optech mentions -->
   {% assign references = '' %}
-  {% assign mentions = page.optech_mentions | sort: "date" | reverse %}
-  {% for mention in mentions %}
+  {% for mention in page.optech_mentions %}
     {% if mention.feature == true %}
-      {% assign bold = site.bold %}
+      {% assign bold = '{:.bold}' %}
     {% else %}
       {% assign bold='' %}
     {% endif %}
-    {% if mention.url contains "/en/newsletters" %}
-      {% assign date = mention.url | remove_first: "/en/newsletters/" | slice: 0, 10 | replace: "/", "-" %}
-    {% else %}
-      {% assign date = mention.date %}
-    {% endif %}
-    {% capture references %}{{references}}{{newline}}- {{bold}}{{date}} [{{mention.title}}]({{mention.url}}){{bold}}{% endcapture %}
+    {% include functions/get-mention-date.md %}
+    {% capture references %}{{references}}{{newline}}- {{date}} [{{mention.title}}]({{mention.url}}){{bold}}ENDENTRY{% endcapture %}
   {% endfor %}
 
   <!-- Build list of see also entries -->
@@ -99,7 +94,7 @@ layout: post
   {%- if page.optech_mentions and page.optech_mentions != '' -%}
     ## Optech newsletter and website mentions
 
-    {{references}}
+    {{ references | split: 'ENDENTRY' | sort | reverse}}
   {% endif %}{{newline}}{{newline}}
 
   {%- if page.see_also and page.see_also != '' -%}

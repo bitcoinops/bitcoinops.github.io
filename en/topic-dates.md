@@ -30,7 +30,8 @@ before the main content -->
     {%- for topic in site.topics -%}
     {%- assign mymentions = '' -%}
       {%- for mention in topic.optech_mentions -%}
-        {%- assign mydate = mention.date | date: "%Y-%m-%d" -%}
+        {%- include functions/get-mention-date.md -%}
+        {%- assign mydate = date | date: "%Y-%m-%d" -%}
         {%- if mydate contains month -%}
           {% capture mymentions %}{{mymentions}}{{mention.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}&nbsp;<a href="{{mention.url}}">🔗</a>ENDMENTION{% endcapture %}
           {% assign number_of_events = number_of_events | plus: 1 %}
