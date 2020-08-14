@@ -59,7 +59,12 @@ layout: post
     {% else %}
       {% assign bold='' %}
     {% endif %}
-    {% capture references %}{{references}}{{newline}}- {{bold}}{{mention.date}} [{{mention.title}}]({{mention.url}}){{bold}}{% endcapture %}
+    {% if mention.url contains "/en/newsletters" %}
+      {% assign date = mention.url | remove_first: "/en/newsletters/" | slice: 0, 10 | replace: "/", "-" %}
+    {% else %}
+      {% assign date = mention.date %}
+    {% endif %}
+    {% capture references %}{{references}}{{newline}}- {{bold}}{{date}} [{{mention.title}}]({{mention.url}}){{bold}}{% endcapture %}
   {% endfor %}
 
   <!-- Build list of see also entries -->
