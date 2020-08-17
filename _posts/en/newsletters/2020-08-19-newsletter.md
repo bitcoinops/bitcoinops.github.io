@@ -84,7 +84,37 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Crypto Garage announces P2P Derivatives beta application on Bitcoin:**
+  In a [blog post][cg p2p derivatives blog], Crypto Garage outlines a beta
+  application for conducting P2P [DLC-based][dlcs] derivatives on Bitcoin regtest
+  and testnet. The application allows the specification of a financial
+  agreement and creation of a corresponding locking transaction of funds between
+  the two parties of that agreement. Upon contract maturity, a price oracle
+  provides a signature for the closing transaction spending the amounts
+  corresponding to agreement.
+
+- **Specter Desktop adds batching:**
+  [Specter Desktop][specter github], a hardware wallet multisig-focused GUI
+  for Bitcoin Core, added the ability to send transactions to multiple receivers.
+
+- **Lightning Labs releases Lightning Terminal:**
+  [Lightning Terminal][lightning terminal blog] is a visual, browser-based tool
+  for LN channel management, initially focusing on [Lightning Loop][news39 lightning loop announced].
+
+- **Wasabi adds support for PayJoin:**
+  [Wasabi 1.1.12][] adds support for the [BIP78][] PayJoin specification that
+  also works over Tor.
+
+- **BlueWallet for Desktop alpha announced:**
+  BlueWallet announced an [alpha desktop version][bluewallet desktop] for macOS
+  of their Lightning and Bitcoin wallet supporting bech32, hardware wallets, PSBTs,
+  watch-only addresses, and more.
+
+- **BitcoinIsSafe.com lists Bitcoin software marked as malicious by antivirus products:**
+  The [bitcoinissafe.com][] website tracks the detection rate of Bitcoin software
+  including Bitcoin Core, Electrum, and Wasabi within popular antivirus
+  products. The website also provides contact information for notifying
+  antivirus vendors about potential false positives.
 
 ## Releases and release candidates
 
@@ -165,3 +195,11 @@ release candidates.*
 [news87 negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [news80 bumpfee]: /en/newsletters/2020/01/15/#bitcoin-core-16373
 [dns seeders]: https://btcinformation.org/en/glossary/dns-seed
+[specter github]: https://github.com/cryptoadvance/specter-desktop
+[cg p2p derivatives blog]:https://medium.com/@cryptogarage/announcing-the-global-launch-of-p2p-derivatives-beta-application-7ecc02fa02a1
+[dlcs]: https://adiabat.github.io/dlc.pdf
+[Wasabi 1.1.12]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v1.1.12
+[bluewallet desktop]: https://bluewallet.io/desktop-bitcoin-wallet/
+[bitcoinissafe.com]: https://bitcoinissafe.com/
+[lightning terminal blog]: https://lightning.engineering/posts/2020-08-04-lightning-terminal/
+[news39 lightning loop announced]: /en/newsletters/2019/03/26/#loop-announced
