@@ -118,27 +118,21 @@ primary_sources:
 optech_mentions:
   - title: "Bitcoin Core 0.16.1 to cease relaying transactions using `OP_CODESEPARATOR`"
     url: /en/newsletters/2018/06/08/#check-for-use-of-the-codeseparator-opcode
-    date: 2018-06-08
 
   - title: "Should `OP_CODESEPARATOR` be included in future Script language upgrades?"
     url: /en/newsletters/2019/01/08/#continued-sighash-discussion
-    date: 2019-01-08
 
   - title: "Proposed consensus cleanup soft fork: prevent use of `OP_CODESEPARATOR`"
     url: /en/newsletters/2019/03/05/#prevent-use-of-op-codeseparator-and-findanddelete-in-legacy-transactions
-    date: 2019-03-05
 
   - title: "Consensus cleanup background: legacy transaction verification"
     url: /en/newsletters/2019/03/05/#legacy-transaction-verification
-    date: 2019-03-05
 
   - title: "Discussion about cleanup soft fork: concerns about `OP_CODESEPARATOR`"
     url: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-    date: 2019-03-12
 
   - title: "Discussion of `OP_CODESEPARATOR` design for proposed tapscript soft fork"
     url: /en/newsletters/2019/12/04/#continued-schnorr-taproot-discussion
-    date: 2019-12-04
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

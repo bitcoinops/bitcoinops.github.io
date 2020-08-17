@@ -60,103 +60,78 @@ primary_sources:
 optech_mentions:
   - title: "LN protocol 1.1 goals: multipath payments"
     url: /en/newsletters/2018/11/20/#multi-path-payments
-    date: 2018-11-20
 
   - title: "LND #3390 separates tracking of HTLCs from invoices as necessary for AMP"
     url: /en/newsletters/2019/09/11/#lnd-3390
-    date: 2019-09-15
 
   - title: "LND #3499 extends several RPCs to support tracking multipath payments"
     url: /en/newsletters/2019/11/27/#lnd-3499
-    date: 2019-11-27
 
   - title: "Eclair #1153 adds experimental support for multipath payments"
     url: /en/newsletters/2019/11/20/#eclair-1153
-    date: 2019-11-20
 
   - title: "LND #3442 preparatory PR adding features necessary for multipath payments"
     url: /en/newsletters/2019/11/13/#lnd-3442
-    date: 2019-11-13
 
   - title: "C-Lightning #3259 adds payment secrets to prevent multipath probing"
     url: /en/newsletters/2019/12/04/#c-lightning-3259
-    date: 2019-12-04
 
   - title: 'LND #3788 adds support for "payment addresses" (payment secrets)'
     url: /en/newsletters/2019/12/11/#lnd-3788
-    date: 2019-12-11
 
   - title: Multiple LN implementations add multipath payment support
     url: /en/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
-    date: 2019-12-18
 
   - title: Basic multipath payment support added to LN specification
     url: /en/newsletters/2019/12/18/#bolts-643
-    date: 2019-12-18
 
   - title: "2019 year-in-review: multipath payments"
     url: /en/newsletters/2019/12/28/#multipath
-    date: 2019-12-28
 
   - title: "Eclair #1283 allows multipath payments to traverse unannounced channels"
     url: /en/newsletters/2020/01/22/#eclair-1283
-    date: 2020-01-22
 
   - title: "LND 0.9.0-beta adds support for receiving multipath payments"
     url: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
-    date: 2020-01-29
 
   - title: "Eclair 0.3.3 adds support for multipath payments"
     url: /en/newsletters/2020/02/05/#upgrade-to-eclair-0-3-3
-    date: 2020-02-05
 
   - title: "LND #3957 adds code useful for Atomic Multipath Payments (AMP) support"
     url: /en/newsletters/2020/02/12/#lnd-3957
-    date: 2020-02-12
 
   - title: "Boomerang: improving latency and throughput with multipath payments"
     url: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
-    date: 2020-02-26
 
   - title: "LND #3970 adds support for multipath payments to its payment lifecycle"
     url: /en/newsletters/2020/04/08/#lnd-3970
-    date: 2020-04-08
 
   - title: "LND #3967 adds support for sending multipath payments"
     url: /en/newsletters/2020/04/15/#lnd-3967
-    date: 2020-04-15
 
   - title: "Rust-Lightning #441 adds support for basic multipath payments"
     url: /en/newsletters/2020/04/22/#rust-lightning-441
-    date: 2020-04-22
 
   - title: "LND 0.10 presentation: multipath payments"
     url: /en/newsletters/2020/05/06/#lnd-v0-10
-    date: 2020-05-06
 
   - title: "LND 0.10.0-beta released with support for multipath payments"
     url: /en/newsletters/2020/05/06/#lnd-0-10-0-beta
-    date: 2020-05-06
 
   - title: Lightning Loop adds support for multipath payments
     url: /en/newsletters/2020/05/20/#lightning-loop-using-multipath-payments
-    date: 2020-05-20
 
   - title: "Eclair #1427 and #1439 add support to Eclair for sending multipath payments"
     url: /en/newsletters/2020/07/08/#eclair-1427
-    date: 2020-07-08
 
   - title: Eclair 0.4.1 adds support for sending multipath payments
     url: /en/newsletters/2020/07/08/#eclair-0-4-1
-    date: 2020-07-08
 
   - title: Zap 0.7.0 Beta adds support for multipath payments
     url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
-    date: 2020-07-22
 
   - title: "C-Lightning #3809 adds support for sending of multipath payments"
     url: /en/newsletters/2020/07/22/#c-lightning-3809
-    date: 2020-07-22
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

@@ -60,35 +60,27 @@ primary_sources:
 optech_mentions:
   - title: Differentiating peers based on ASN instead of address prefix
     url: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
-    date: 2019-06-26
 
   - title: Discussion of eclipse attacks on LN nodes
     url: /en/newsletters/2019/12/18/#discussion-of-eclipse-attacks-on-ln-nodes
-    date: 2019-12-18
 
   - title: "2019 year-in-review: erlay and other P2P improvements"
     url: /en/newsletters/2019/12/28/#erlay-and-other-p2p-improvements
-    date: 2019-12-28
 
   - title: "Bitcoin Core #16702 chooses peers based on ASN instead of IP address"
     url: /en/newsletters/2020/02/05/#bitcoin-core-16702
-    date: 2020-02-05
 
   - title: "Review club discussion of Bitcoin Core #17428 anchor connections"
     url: /en/newsletters/2020/03/11/#bitcoin-core-pr-review-club
-    date: 2020-03-11
 
   - title: "Presentation about attacking Bitcoin Core, including using eclipse attacks"
     url: /en/newsletters/2020/05/06/#attacking-bitcoin-core
-    date: 2020-05-06
 
   - title: "Time dilation attack: using eclipse attacks to steal money from LN nodes"
     url: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
-    date: 2020-06-10
 
   - title: "Bitcoin Core 0.20 released with asmap feature to improve eclipse resistance"
     url: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
-    date: 2020-06-10
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

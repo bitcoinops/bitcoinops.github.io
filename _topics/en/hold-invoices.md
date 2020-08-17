@@ -37,23 +37,18 @@ primary_sources:
 optech_mentions:
   - title: "LND #2022 merged adding support for hold invoices"
     url: /en/newsletters/2019/03/19/#lnd-2022
-    date: 2019-03-19
 
   - title: "C-Lightning #2540 adds hook allowing plugins to implement hold invoices"
     url: /en/newsletters/2019/04/16/#c-lightning-2540
-    date: 2019-04-16
 
   - title: "LND #3390 simplifies hold invoice logic by separate HTLC tracking"
     url: /en/newsletters/2019/09/11/#lnd-3390
-    date: 2019-09-11
 
   - title: "Reverse up-front payments could improve hold invoice cost spreading"
     url: /en/newsletters/2020/02/26/#reverse-up-front-payments
-    date: 2020-02-26
 
   - title: Zap 0.7.0 Beta adds support for hold invoices
     url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
-    date: 2020-07-22
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

@@ -158,15 +158,12 @@ primary_sources:
 optech_mentions:
   - title: Discussion of potential script changes, including `OP_CSFS`
     url: /en/newsletters/2019/06/12/#potential-script-changes
-    date: 2019-06-12
 
   - title: "Criticism of `OP_COSHV` and `SIGHASH_ANYPREVOUT`; `OP_CSFS` as alternative"
     url: /en/newsletters/2019/05/29/#not-generic-enough
-    date: 2019-05-29
 
   - title: "Discussion: the evolution of Bitcoin Script, `OP_CSFS` discussion"
     url: /en/newsletters/2018/10/09/#op-checksigfromstack
-    date: 2018-10-09
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

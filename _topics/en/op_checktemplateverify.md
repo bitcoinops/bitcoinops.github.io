@@ -61,40 +61,31 @@ primary_sources:
 optech_mentions:
   - title: Proposed new opcode for transaction output commitments
     url: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
-    date: 2019-05-29
 
   - title: "Detailed summary: proposed transaction output commitments"
     url: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
-    date: 2019-05-29
     feature: true
 
   - title: COSHV proposal replaced
     url: /en/newsletters/2019/06/05/#coshv-proposal-replaced
-    date: 2019-06-05
 
   - title: Potential script changes, including new COSHV opcode
     url: /en/newsletters/2019/06/12/#potential-script-changes
-    date: 2019-06-12
 
   - title: "OP_CHECKTEMPLATEVERIFY (CTV) replaces COSHV proposal; concerns restated"
     url: /en/newsletters/2019/12/04/#op-checktemplateverify-ctv
-    date: 2019-12-04
 
   - title: "2019 year-in-review: OP_CHECKTEMPLATEVERIFY"
     url: /en/newsletters/2019/12/28/#ctv
-    date: 2019-12-28
 
   - title: "BIPs #875 assigns BIP119 to the OP_CHECKTEMPLATEVERIFY proposal"
     url: /en/newsletters/2020/01/29/#bips-875
-    date: 2020-01-29
 
   - title: OP_CHECKTEMPLATEVERIFY workshop summary
     url: /en/newsletters/2020/02/12/#op-checktemplateverify-ctv-workshop
-    date: 2020-02-12
 
   - title: Vault prototype with sample implementation using OP_CHECKTEMPLATEVERIFY
     url: /en/newsletters/2020/04/22/#vaults-prototype
-    date: 2020-02-19
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

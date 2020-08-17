@@ -49,39 +49,30 @@ optech_mentions:
 
   - title: BLS signatures based on the MuSig construction
     url: /en/newsletters/2018/08/07/#library-announced-for-bls-signatures
-    date: 2018-08-07
 
   - title: "2018 year-in-review: publication of MuSig protocol"
     url: /en/newsletters/2018/12/28/#january
-    date: 2018-12-28
 
   - title: Libsecp256k1-zkp supports MuSig key and signature aggregation
     url: /en/newsletters/2019/02/26/#schnorr-ready-fork-of-libsecp256k1-available
-    date: 2019-02-26
 
   - title: Extensions to PSBTs to help make them compatible with advanced protocols
     url: /en/newsletters/2019/03/12/#extension-fields-to-partially-signed-bitcoin-transactions-psbts
-    date: 2019-03-12
 
   - title: "Breaking Bitcoin presentation: secure protocols on bip-taproot"
     url: /en/newsletters/2019/06/19/#secure-protocols-on-bip-taproot
-    date: 2019-06-19
 
   - title: LN gossip update proposal to use MuSig
     url: /en/newsletters/2019/07/17/#gossip-update-proposal
-    date: 2019-07-17
 
   - title: MuSig and attacks based on Wagner's algorithm
     url: /en/newsletters/2019/11/27/#schnorr-taproot-updates
-    date: 2019-11-27
 
   - title: Composable MuSig---concerns about safely using signer sub-groups
     url: /en/newsletters/2019/12/04/#composable-musig
-    date: 2019-12-30
 
   - title: Presentations and discussions about musig-style multiparty signatures
     url: /en/newsletters/2020/07/01/#schnorr-signatures-and-multisignatures
-    date: 2020-07-01
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -60,23 +60,18 @@ optech_mentions:
 
   - title: "2018 year-in-review: transaction statistics"
     url: /en/newsletters/2018/12/28/#opt-in-rbf
-    date: 2018-12-28
 
   - title: Proposal to override some BIP125 RBF conditions
     url: /en/newsletters/2019/06/12/#proposal-to-override-some-bip125-rbf-conditions
-    date: 2019-06-12
 
   - title: LND adds support for RBF fee bumping
     url: /en/newsletters/2019/06/19/#lnd-3140
-    date: 2019-06-19
 
   - title: Bitcoin Core removes `mempoolreplacement` configuration option
     url: /en/newsletters/2019/06/26/#bitcoin-core-16171
-    date: 2019-06-26
 
   - title: "Bitcoin Core #16373 allows the bumpfee RPC used for RBF to return a PSBT"
     url: /en/newsletters/2020/01/15/#bitcoin-core-16373
-    date: 2020-01-15
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

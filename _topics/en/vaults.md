@@ -58,31 +58,24 @@ primary_sources:
 optech_mentions:
   - title: "Bitcoin vaults without covenants & weaknesses in previous vault proposals"
     url: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
-    date: 2019-08-14
 
   - title: "2019 year-in-review: vaults without covenants"
     url: /en/newsletters/2019/12/28/#vaults
-    date: 2019-12-28
 
   - title: "OP_CHECKTEMPLATEVERIFY (CTV) workshop discussion: using CTV with vaults"
     url: /en/newsletters/2020/02/12/#op-checktemplateverify-ctv-workshop
-    date: 2020-02-12
 
   - title: Vault prototype written in Python
     url: /en/newsletters/2020/04/22/#vaults-prototype
-    date: 2020-04-22
 
   - title: "Revault: an implementation of multiparty vaults"
     url: /en/newsletters/2020/04/29/#multiparty-vault-architecture
-    date: 2020-04-29
 
   - title: Presentation of the Revault multiparty vault architecture
     url: /en/newsletters/2020/06/03/#the-revault-multiparty-vault-architecture
-    date: 2020-06-03
 
   - title: Service proposed for storing presigned vault transactions
     url: /en/newsletters/2020/07/01/#proposed-service-for-storing-relaying-and-broadcasting-presigned-transactions
-    date: 2020-07-01
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -42,15 +42,12 @@ primary_sources:
 optech_mentions:
   - title: Assume valid discussion
     url: /en/newsletters/2019/04/09/#discussion-about-an-assumed-valid-mechanism-for-utxo-snapshots
-    date: 2019-04-09
 
   - title: CoreDev.tech demo and discussion of assumeutxo
     url: /en/newsletters/2019/06/12/#assume-utxo-demo
-    date: 2019-06-12
 
   - title: "2019 year-in-review: AssumeUTXO"
     url: /en/newsletters/2019/12/28/#assumeutxo
-    date: 2019-12-28
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

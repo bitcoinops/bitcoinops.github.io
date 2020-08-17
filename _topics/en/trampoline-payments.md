@@ -43,19 +43,15 @@ primary_sources:
 optech_mentions:
   - title: Trampoline payments for LN
     url: /en/newsletters/2019/04/02/#trampoline-payments-for-ln
-    date: 2019-04-02
 
   - title: BOLT PR and discussion about trampoline payments
     url: /en/newsletters/2019/08/07/#trampoline-payments
-    date: 2019-08-07
 
   - title: "Eclair #1209 adds experimental support for trampoline onion format"
     url: /en/newsletters/2019/11/20/#eclair-1209
-    date: 2019-11-20
 
   - title: "2019 year-in-review: trampoline payments"
     url: /en/newsletters/2019/12/28/#trampoline
-    date: 2019-12-28
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

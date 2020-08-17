@@ -30,31 +30,24 @@ primary_sources:
 optech_mentions:
   - title: Bitcoin Core preliminary hardware wallet support
     url: /en/newsletters/2019/02/19/#bitcoin-core-preliminary-hardware-wallet-support
-    date: 2019-02-19
 
   - title: Bitcoin Core 0.18 with basic hardware signer support
     url: /en/newsletters/2019/05/07/#basic-hardware-signer-support-through-independent-tool
-    date: 2019-05-07
 
   - title: "CoreDev.tech discussions: HWI integration into Bitcoin Core"
     url: /en/newsletters/2019/06/12/#hwi
-    date: 2019-06-12
 
   - title: "2019 year-in-review: HWI"
     url: /en/newsletters/2019/12/28/#core-hwi
-    date: 2019-12-18
 
   - title: BTCPay Vault using HWI for signing
     url: /en/newsletters/2020/02/19/#btcpay-vault-using-hwi-for-signing
-    date: 2020-02-19
 
   - title: Fix for segwit fee overpayment attack affects HWI compatibility
     url: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
-    date: 2020-06-10
 
   - title: Initial release of Lily Wallet supports HWI
     url: /en/newsletters/2020/07/22/#lily-wallet-initial-release
-    date: 2020-07-22
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

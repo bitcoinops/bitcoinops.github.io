@@ -52,19 +52,15 @@ primary_sources:
 optech_mentions:
   - title: CPFP carve out suggested but package relay needed for completeness
     url: /en/newsletters/2018/12/04/#cpfp-carve-out
-    date: 2018-12-04
 
   - title: "Bitcoin Core #16400 refactors code in anticipation of package relay"
     url: /en/newsletters/2019/09/25/#bitcoin-core-16400
-    date: 2019-09-25
 
   - title: New LN attack; full solution requires package relay
     url: /en/newsletters/2020/04/29/#fn:package-relay
-    date: 2020-04-29
 
   - title: New BIP339 wtxid transaction announcements simplifies package relay
     url: /en/newsletters/2020/07/01/#bips-933
-    date: 2020-07-01
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

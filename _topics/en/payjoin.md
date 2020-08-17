@@ -34,35 +34,27 @@ primary_sources:
 optech_mentions:
   - title: Pay-to-EndPoint (P2EP) proposed
     url: /en/newsletters/2018/08/14/#pay-to-end-point-p2ep-idea-proposed
-    date: 2018-08-14
 
   - title: Bustapay discussion (simplified alternative to P2EP)
     url: /en/newsletters/2018/09/18/#bustapay-discussion
-    date: 2018-09-18
 
   - title: "2018 year-in-review: Pay-to-EndPoint (P2EP)"
     url: /en/newsletters/2018/12/28/#p2ep
-    date: 2018-12-28
 
   - title: Mailing list discussion about BIP79 Bustapay
     url: /en/newsletters/2019/01/29/#post-about-bip79-p2ep-payjoin
-    date: 2019-01-29
 
   - title: BTCPay adds support for sending and receiving payjoined payments
     url: /en/newsletters/2020/04/22/#btcpay-adds-support-for-sending-and-receiving-payjoined-payments
-    date: 2020-04-22
 
   - title: Comparison of payjoin privacy to coinswap privacy
     url: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
-    date: 2020-06-03
 
   - title: Discussion about payjoin and its history
     url: /en/newsletters/2020/06/03/#payjoin-p2ep
-    date: 2020-06-03
 
   - title: New BIP78 specification of payjoin
     url: /en/newsletters/2020/07/01/#bips-923
-    date: 2020-07-01
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

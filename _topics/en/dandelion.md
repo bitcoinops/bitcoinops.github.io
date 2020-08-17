@@ -31,27 +31,21 @@ primary_sources:
 optech_mentions:
   - title: What's the BIP156 hold-up in Bitcoin Core?
     url: /en/newsletters/2019/01/29/#what-s-the-hold-up-implementing-bip156-dandelion-in-bitcoin-core
-    date: 2019-01-29
 
   - title: PRs that need more review or development
     url: /en/newsletters/2019/02/19/#bitcoin-core-freeze-week
-    date: 2019-02-19
 
   - title: Erlay compatible with BIP156
     url: /en/newsletters/2019/06/05/#erlay-proposed
-    date: 2019-06-05
 
   - title: Discussion of Dandelion route selection
     url: /en/newsletters/2018/07/03/#dandelion-transaction-relay
-    date: 2018-07-03
 
   - title: Dandelion DoS-resistant stem routing being researched
     url: /en/newsletters/2018/08/21/#dandelion-protocol-dos-resistant-stem-routing
-    date: 2018-08-21
 
   - title: "2018 year-in-review notable developments: BIP156 Dandelion"
     url: /en/newsletters/2018/12/28/#dandelion
-    date: 2018-12-28
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

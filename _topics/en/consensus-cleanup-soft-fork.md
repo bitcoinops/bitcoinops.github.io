@@ -28,27 +28,21 @@ primary_sources:
 optech_mentions:
   - title: Cleanup soft fork proposal
     url: /en/newsletters/2019/03/05#cleanup-soft-fork-proposal
-    date: 2019-03-05
 
   - title: Consensus cleanup background
     url: /en/newsletters/2019/03/05#appendix-consensus-cleanup-background
-    date: 2019-03-05
 
   - title: "Consensus cleanup discussion: codeseparator & sighash types"
     url: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-    date: 2019-03-12
 
   - title: "CoreDev.tech discussion: cleanup soft fork"
     url: /en/newsletters/2019/06/12/#cleanup-discussion
-    date: 2019-06-12
 
   - title: "2019 year-in-review: consensus cleanup soft fork proposal"
     url: /en/newsletters/2019/12/28/#cleanup
-    date: 2019-12-28
 
   - title: Discussion of minimum safe transaction sizes
     url: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
-    date: 2020-05-27
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

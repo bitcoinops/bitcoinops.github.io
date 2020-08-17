@@ -37,23 +37,18 @@ primary_sources:
 optech_mentions:
   - title: Miniscript presentation
     url: /en/newsletters/2019/02/05/#miniscript
-    date: 2019-02-05
 
   - title: Final stack empty, insights from miniscript development
     url: /en/newsletters/2019/05/29/#final-stack-empty
-    date: 2019-05-29
 
   - title: Miniscript request for comments
     url: /en/newsletters/2019/08/28/#miniscript-request-for-comments
-    date: 2019-08-28
 
   - title: "2019 year-in-review: miniscript"
     url: /en/newsletters/2019/12/28/#miniscript
-    date: 2019-12-28
 
   - title: Question about a specification for miniscript
     url: /en/newsletters/2020/03/25/#where-can-i-find-the-miniscript-policy-language-specification
-    date: 2020-03-25
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

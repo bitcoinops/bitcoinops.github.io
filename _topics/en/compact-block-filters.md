@@ -57,35 +57,27 @@ primary_sources:
 optech_mentions:
   - title: Discussion of what data should be included in BIP158 filters
     url: /en/newsletters/2018/06/08#bip157-bip157-bip158-bip158-lightweight-client-filters
-    date: 2018-06-08
 
   - title: Functions for generating BIP158 filters added to Bitcoin Core
     url: /en/newsletters/2018/08/28/#bitcoin-core-12254
-    date: 2018-08-28
 
   - title: Basic BIP158 support merged into Bitcoin Core
     url: /en/newsletters/2019/04/23/#basic-bip158-support-merged-in-bitcoin-core
-    date: 2019-04-23
 
   - title: BIP157 bandwidth higher than BIP37 bloom filters
     url: /en/newsletters/2019/07/31/#bip157-would-use-more-bandwidth-than-bip37
-    date: 2019-07-31
 
   - title: Bitcoin Core 0.19 released with RPC support for BIP158 block filters
     url: /en/newsletters/2019/11/27/#bip158-block-filters-rpc-only
-    date: 2019-11-27
 
   - title: Maximum number of block filters per request increased from 100 to 1,000
     url: /en/newsletters/2019/11/13/#bips-857
-    date: 2019-11-13
 
   - title: "Bitcoin Core #18877 adds `getcfcheckpt` and `cfcheckpt` messages"
     url: /en/newsletters/2020/05/20/#bitcoin-core-18877
-    date: 2020-05-20
 
   - title: "Bitcoin Core #19010 & #19044 add additional messages from BIP157"
     url: /en/newsletters/2020/06/03/#bitcoin-core-19010
-    date: 2020-06-03
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

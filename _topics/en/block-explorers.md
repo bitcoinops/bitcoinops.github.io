@@ -37,11 +37,9 @@ primary_sources:
 optech_mentions:
   - title: Modern open source block explorer
     url: /en/newsletters/2018/12/11/#modern-block-explorer-open-sourced
-    date: 2018-12-11
 
   - title: Esplora updated
     url: /en/newsletters/2019/03/19/#esplora-updated
-    date: 2019-03-19
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

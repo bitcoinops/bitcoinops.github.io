@@ -61,31 +61,24 @@ primary_sources:
 optech_mentions:
   - title: "Bitcoin Core #12257: new `-avoidpartialspends` configuration option"
     url: /en/newsletters/2018/07/31/#bitcoin-core-12257
-    date: 2018-07-31
 
   - title: "Weak signature nonces discovered in reused addresses"
     url: /en/newsletters/2019/01/15/#weak-signature-nonces-discovered
-    date: 2019-01-15
 
   - title: "Esplora block explorer updated with privacy warning against address reuse"
     url: /en/newsletters/2019/03/19/#esplora-updated
-    date: 2019-03-19
 
   - title: "Bitcoin Core #13756 adds `avoid_reuse` wallet flag"
     url: /en/newsletters/2019/06/26/#bitcoin-core-13756
-    date: 2019-06-26
 
   - title: "Bitcoin Core 0.19 new feature: `avoid_reuse` wallet flag"
     url: /en/newsletters/2019/11/27/#optional-privacy-preserving-address-management
-    date: 2019-11-27
 
   - title: "Bitcoin Core #17621 fixes potential privacy leak in the `avoid_reuse` flag"
     url: /en/newsletters/2020/01/15/#bitcoin-core-17621
-    date: 2020-01-15
 
   - title: "Bitcoin Core #17843 fixes balance discrepancy related to `avoid_reuse` flag"
     url: /en/newsletters/2020/01/22/#bitcoin-core-17843
-    date: 2020-01-22
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

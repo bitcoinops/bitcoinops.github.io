@@ -44,15 +44,12 @@ primary_sources:
 optech_mentions:
   - title: BIP322 proposed
     url: /en/newsletters/2018/09/18/#bip322-generic-signed-message-format
-    date: 2018-09-18
 
   - title: "2018 year-in-review: initial discussion that became BIP322"
     url: /en/newsletters/2018/12/28/#march
-    date: 2018-12-28
 
   - title: Bitcoin Core PR opened for BIP322 signmessage support
     url: /en/newsletters/2019/07/31/#pr-opened-for-bip322-generic-signed-message-format
-    date: 2019-07-31
 
   - title: Searching for a bech32 signmessage format
     url: /en/bech32-sending-support/#bip322
@@ -60,15 +57,12 @@ optech_mentions:
 
   - title: Additional request for feedback on BIP322 generic signmessage
     url: /en/newsletters/2020/03/11/#bip322-generic-signmessage-progress-or-perish
-    date: 2020-03-11
 
   - title: Proposed update to BIP322 generic signmessage
     url: /en/newsletters/2020/04/01/#proposed-update-to-bip322-generic-signmessage
-    date: 2020-04-01
 
   - title: "Simplified BIP322, only allowing signatures from one script per proof"
     url: /en/newsletters/2020/05/06/#bips-903
-    date: 2020-05-06
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

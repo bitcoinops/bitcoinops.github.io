@@ -37,11 +37,9 @@ primary_sources:
 optech_mentions:
   - title: "2018 year-in-review: untrackable authentication"
     url: /en/newsletters/2018/12/28/#countersign
-    date: 2018-12-28
 
   - title: "CoreDev.tech meetings: v2 P2P transport and countersign"
     url: /en/newsletters/2019/06/12/#v2-p2p
-    date: 2019-06-12
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

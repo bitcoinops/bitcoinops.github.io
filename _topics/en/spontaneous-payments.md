@@ -48,47 +48,36 @@ extended_summary: |
 optech_mentions:
   - title: LND PR for spontaneous LN payments
     url: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
-    date: 2019-01-22
 
   - title: Using ECDH for uncoordinated LN payments
     url: /en/newsletters/2019/06/19/#using-ecdh-for-uncoordinated-ln-payments
-    date: 2019-06-19
 
   - title: Eclair 0.3.3 adds experimental support for trampoline payments
     url: /en/newsletters/2020/02/05/#upgrade-to-eclair-0-3-3
-    date: 2020-02-05
 
   - title: "C-Lightning #3611 adds a keysend plugin to support spontaneous payments"
     url: /en/newsletters/2020/04/22/#c-lightning-3611
-    date: 2020-04-22
 
   - title: "C-Lightning 0.8.2 released with a plugin for sending spontaneous payments"
     url: /en/newsletters/2020/05/06/#c-lightning-0-8-2
-    date: 2020-05-06
 
   - title: Juggernaut uses spontaneous payments for messaging and instant payments"
     url: /en/newsletters/2020/05/20/#lightning-based-messenger-application-juggernaut-launches
-    date: 2020-05-20
 
   - title: Breez wallet adds support for spontaneous payments
     url: /en/newsletters/2020/05/20/#breez-wallet-enables-spontaneous-payments
-    date: 2020-05-20
 
   - title: "LND #4167 allows spontaneous payments made using keysend to be held"
     url: /en/newsletters/2020/07/08/#lnd-4167
-    date: 2020-07-08
 
   - title: Zap 0.7.0 Beta adds support for spontaneous payments
     url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
-    date: 2020-07-22
 
   - title: "C-Lightning #3792 adds support for sending keysend spontaneous payments"
     url: /en/newsletters/2020/07/22/#c-lightning-3792
-    date: 2020-07-22
 
   - title: "Eclair #1485 adds support for keysend spontaneous payments"
     url: /en/newsletters/2020/07/29/#eclair-1485
-    date: 2020-07-29
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
