@@ -50,23 +50,18 @@ primary_sources:
 optech_mentions:
   - title: Simplified fee bumping for LN
     url: /en/newsletters/2018/11/27/#simplified-fee-bumping-for-ln
-    date: 2018-11-27
 
   - title: CPFP carve-out proposed
     url: /en/newsletters/2018/12/04/#cpfp-carve-out
-    date: 2018-12-04
 
   - title: "LND #3140 adds support for RBF and CPFP fee bumping sweep transactions"
     url: /en/newsletters/2019/06/19/#lnd-3140
-    date: 2019-06-19
 
   - title: "Refactor preparing for ancestor relay"
     url: /en/newsletters/2019/09/25/#bitcoin-core-16400
-    date: 2019-09-25
 
   - title: Copay adds support for CPFP fee bumping incoming transactions
     url: /en/newsletters/2020/05/20/#copay-enables-cpfp-for-incoming-transactions
-    date: 2020-05-20
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

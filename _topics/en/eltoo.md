@@ -42,35 +42,27 @@ primary_sources:
 optech_mentions:
   - title: "2018 year-in-review: Eltoo"
     url: /en/newsletters/2018/12/28#april
-    date: 2018-12-28
 
   - title: Optimization for Eltoo-based payment channels
     url: /en/newsletters/2019/01/08/#continued-sighash-discussion
-    date: 2019-01-08
 
   - title: SIGHASH_ANYPREVOUT proposal compatible with Eltoo
     url: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
-    date: 2019-05-21
 
   - title: Eltoo demo implementation
     url: /en/newsletters/2019/09/11/#eltoo-sample-implementation-and-discussion
-    date: 2019-09-11
 
   - title: "Modification to `SIGHASH_ANYPREVOUTANYSCRIPT` to improve eltoo flexibility"
     url: /en/newsletters/2020/01/29/#layered-commitments-with-eltoo
-    date: 2020-01-29
 
   - title: Implementing statechains without eltoo
     url: /en/newsletters/2020/04/01/#implementing-statechains-without-schnorr-or-eltoo
-    date: 2020-04-01
 
   - title: "Impact of SIGHASH_NOINPUT and eltoo on LN backups"
     url: /en/newsletters/2020/06/03/#ln-backups
-    date: 2020-06-03
 
   - title: Upgrading LN commitment formats, including for eltoo
     url: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
-    date: 2020-07-29
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

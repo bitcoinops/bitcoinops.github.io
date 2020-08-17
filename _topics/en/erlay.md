@@ -43,19 +43,15 @@ primary_sources:
 optech_mentions:
   - title: Erlay proposed
     url: /en/newsletters/2019/06/05/#erlay-proposed
-    date: 2019-06-05
 
   - title: Draft BIP for enabling Erlay compatibility
     url: /en/newsletters/2019/10/02/#draft-bip-for-enabling-erlay-compatibility
-    date: 2019-10-02
 
   - title: Erlay-compatible transaction reconciliation protocol published as BIP330
     url: /en/newsletters/2019/11/13/#bips-851
-    date: 2019-11-13
 
   - title: "2019 year-in-review: erlay"
     url: /en/newsletters/2019/12/28/#erlay-and-other-p2p-improvements
-    date: 2019-12-28
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

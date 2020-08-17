@@ -65,15 +65,12 @@ extended_summary: |
 optech_mentions:
   - title: What is transaction pinning?
     url: /en/newsletters/2018/11/27/#what-is-transaction-pinning
-    date: 2018-11-27
 
   - title: Eltoo may not be entirely reliable because of transaction pinning
     url: /en/newsletters/2018/12/28/#april
-    date: 2018-12-28
 
   - title: Proposal to override some BIP125 RBF conditions to avoid pinning
     url: /en/newsletters/2019/06/12/#proposal-to-override-some-bip125-rbf-conditions
-    date: 2019-06-12
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

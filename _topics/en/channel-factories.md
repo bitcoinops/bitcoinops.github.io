@@ -42,11 +42,9 @@ primary_sources:
 optech_mentions:
   - title: "2018 year-in-review: eltoo lays groundwork for channel factories"
     url: /en/newsletters/2018/12/28/#april
-    date: 2018-12-28
 
   - title: Discussion of output tagging and its effect on eltoo and channel factories
     url: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
-    date: 2019-02-19
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

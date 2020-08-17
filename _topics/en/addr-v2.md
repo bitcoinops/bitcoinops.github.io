@@ -41,15 +41,12 @@ primary_sources:
 optech_mentions:
   - title: Version 2 `addr` message proposed
     url: /en/newsletters/2019/03/12/#version-2-addr-message-proposed
-    date: 2019-03-12
 
   - title: Version 2 `addr` message assigned BIP155
     url: /en/newsletters/2019/07/31/#bips-766
-    date: 2019-07-31
 
   - title: Proposed per-node signaling for address relay with v2 `addr` messages
     url: /en/newsletters/2019/11/06/#signaling-support-for-address-relay
-    date: 2019-11-06
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

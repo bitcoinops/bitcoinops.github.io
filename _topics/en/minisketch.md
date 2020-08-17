@@ -35,15 +35,12 @@ primary_sources:
 optech_mentions:
   - title: "2018 year-in-review: research into reducing transaction relay data"
     url: /en/newsletters/2018/12/28/#libminisketch
-    date: 2018-12-28
 
   - title: Minisketch library released with implications for Bitcoin and LN
     url: /en/newsletters/2018/12/18/#minisketch-library-released
-    date: 2018-12-18
 
   - title: Researching bandwidth-efficient set reconciliation protocol
     url: /en/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions
-    date: 2018-08-21
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -34,15 +34,12 @@ primary_sources:
 optech_mentions:
   - title: "CoreDev.Tech summaries: Utreexo"
     url: /en/newsletters/2018/10/16/#using-utxo-accumulators-to-reduce-data-storage-requirements-utreexo
-    date: 2018-10-16
 
   - title: Exploring accumulators
     url: /en/newsletters/2019/02/05/#accumulators-for-blockchains
-    date: 2019-02-05
 
   - title: Utreexo Q&A session at CoreDev.Tech
     url: /en/newsletters/2019/06/12/#utreexo
-    date: 2019-06-12
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

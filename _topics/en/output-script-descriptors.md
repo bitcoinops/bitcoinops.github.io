@@ -37,31 +37,24 @@ primary_sources:
 optech_mentions:
   - title: First use of descriptors in Bitcoin Core
     url: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
-    date: 2018-07-24
 
   - title: Key origin support
     url: /en/newsletters/2018/10/30/#bitcoin-core-14150
-    date: 2018-10-30
 
   - title: Descriptor checksum support added
     url: /en/newsletters/2019/02/19/#bitcoin-core-15368
-    date: 2019-02-19
 
   - title: Descriptors extended with sortedmulti
     url: /en/newsletters/2019/10/16/#bitcoin-core-17056
-    date: 2019-10-16
 
   - title: "Encoded descriptors (e.g., with base64)"
     url: /en/newsletters/2020/01/08/#encoded-descriptors
-    date: 2020-01-08
 
   - title: "Bitcoin Core #18032 add `descriptor` field to multisig address RPCs"
     url: /en/newsletters/2020/02/12/#bitcoin-core-18032
-    date: 2020-02-12
 
   - title: "Bitcoin Core #16528 adds support for native output descriptor wallets"
     url: /en/newsletters/2020/05/06/#bitcoin-core-16528
-    date: 2020-05-06
 
   - title: "Field Report: Using descriptors at River Financial"
     url: /en/river-descriptors-psbt/

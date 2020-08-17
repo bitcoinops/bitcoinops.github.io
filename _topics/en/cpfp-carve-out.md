@@ -42,31 +42,24 @@ primary_sources:
 optech_mentions:
   - title: CPFP carve out proposal
     url: /en/newsletters/2018/12/04/#cpfp-carve-out
-    date: 2018-12-04
 
   - title: Proposal to override some BIP125 conditions, alternative to carve out
     url: /en/newsletters/2019/06/12/#proposal-to-override-some-bip125-rbf-conditions
-    date: 2019-06-12
 
   - title: "Bitcoin Core #15681 merged with CPFP carve out"
     url: /en/newsletters/2019/07/24/#bitcoin-core-15681
-    date: 2019-07-24
 
   - title: "Bitcoin Core #16421 merged allowing carve outs to be RBF replaced"
     url: /en/newsletters/2019/09/11/#bitcoin-core-16421
-    date: 2019-09-11
 
   - title: "LN simplified commitments using CPFP carve-out"
     url: /en/newsletters/2019/10/30/#ln-simplified-commitments
-    date: 2019-10-30
 
   - title: "Continued discussion of LN anchor outputs using CPFP carve-out"
     url: /en/newsletters/2019/11/06/#continued-discussion-of-ln-anchor-outputs
-    date: 2019-11-06
 
   - title: Bitcoin Core 0.19 released with CPFP carve-out
     url: /en/newsletters/2019/11/27/#cpfp-carve-out
-    date: 2019-11-27
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

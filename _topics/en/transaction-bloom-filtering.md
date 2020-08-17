@@ -77,19 +77,15 @@ primary_sources:
 optech_mentions:
   - title: Bitcoin Core PR#16152 disables bloom filter support by default
     url: /en/newsletters/2019/07/24/#bitcoin-core-16152
-    date: 2019-07-24
 
   - title: Mailing list discussion about disabling bloom filters in Bitcoin Core
     url: /en/newsletters/2019/07/31/#bloom-filter-discussion
-    date: 2019-07-31
 
   - title: Bitcoin Core 0.19 released with bloom filters disabled
     url: /en/newsletters/2019/11/27/#deprecated-or-removed-features
-    date: 2019-11-27
 
   - title: "Bitcoin Core PR#16248 adds bloom filter whitelist option"
     url: /en/newsletters/2019/08/21/#bitcoin-core-16248
-    date: 2019-08-21
 
   - title: "BRD field report: using native segwit addresses with bloom filters"
     url: /en/bech32-sending-support/#brd-field-report
@@ -97,7 +93,6 @@ optech_mentions:
 
   - title: "Bitcoin Core #19260 disconnects peers who inappropriately send filterclear"
     url: /en/newsletters/2020/06/24/#bitcoin-core-19260
-    date: 2020-06-24
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

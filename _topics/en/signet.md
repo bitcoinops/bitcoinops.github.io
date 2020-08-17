@@ -37,39 +37,30 @@ primary_sources:
 optech_mentions:
   - title: Feedback requested on signet
     url: /en/newsletters/2019/03/12/#feedback-requested-on-signet
-    date: 2019-03-12
 
   - title: "CoreDev.tech discussion: signet"
     url: /en/newsletters/2019/06/12#signet
-    date: 2019-06-12
 
   - title: Progress on signet
     url: /en/newsletters/2019/07/24/#progress-on-signet
-    date: 2019-07-24
 
   - title: C-Lightning adds support for signet
     url: /en/newsletters/2019/07/24/#c-lightning-2816
-    date: 2019-07-24
 
   - title: C-Lightning 0.7.2.1 released with support for signet
     url: /en/newsletters/2019/08/21/#upgrade-to-c-lightning-0-7-2-1
-    date: 2019-08-21
 
   - title: Eltoo demo implementation using custom signet
     url: /en/newsletters/2019/09/11/#eltoo-sample-implementation-and-discussion
-    date: 2019-09-11
 
   - title: Signet protocol published as BIP325
     url: /en/newsletters/2019/11/13/#bips-803
-    date: 2019-11-13
 
   - title: "2019 year-in-review: signet"
     url: /en/newsletters/2019/12/28/#signet
-    date: 2019-12-28
 
   - title: "BIP325 updated: all signets to use same genesis block but different magic"
     url: /en/newsletters/2020/05/06/#bips-900
-    date: 2020-05-06
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

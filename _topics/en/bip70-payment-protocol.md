@@ -87,31 +87,24 @@ primary_sources:
 optech_mentions:
   - title: Pay-to-EndPoint (P2EP) has elements similar to BIP70
     url: /en/newsletters/2018/08/14/#pay-to-end-point-p2ep-idea-proposed
-    date: 2018-08-14
 
   - title: "Bitcoin Core PR#14451 allows building Bitcoin-Qt without BIP70 support"
     url: /en/newsletters/2018/10/30/#bitcoin-core-14451
-    date: 2018-10-30
 
   - title: "Bitcoin Core PR#15063 allows falling back to BIP21 parsing of BIP72 URIs"
     url: /en/newsletters/2019/02/19/#bitcoin-core-15063
-    date: 2019-02-19
 
   - title: "Bitcoin Core PR#15584 disables support for BIP70 by default"
     url: /en/newsletters/2019/09/18/#bitcoin-core-15584
-    date: 2019-09-18
 
   - title: "Bitcoin Core PR#17165 removes support for BIP70 payment protocol"
     url: /en/newsletters/2019/10/30/#bitcoin-core-17165
-    date: 2019-10-30
 
   - title: "Bitcoin Core 0.19 released with BIP70 support disabled by default"
     url: /en/newsletters/2019/11/27/#deprecated-or-removed-features
-    date: 2019-11-27
 
   - title: "2019 year-in-review: Bitcoin Core BIP70 deprecation and disablement"
     url: /en/newsletters/2019/12/28/#bip70
-    date: 2019-12-28
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

@@ -61,23 +61,18 @@ primary_sources:
 optech_mentions:
   - title: "Taproot: an optimization for MAST"
     url: /en/newsletters/2018/12/28/#taproot
-    date: 2018-12-28
 
   - title: "Should `OP_CODESEPARATOR` be disabled in MAST scripts?"
     url: /en/newsletters/2019/01/08/#continued-sighash-discussion
-    date: 2019-01-08
 
   - title: It should be possible to upgrade miniscript for things like MAST
     url: /en/newsletters/2019/02/05/#miniscript
-    date: 2019-02-05
 
   - title: Overview of Taproot and it's MAST-based encumbrances
     url: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
-    date: 2019-05-14
 
   - title: Discussion about taproot versus alternative MAST-enabling proposals
     url: /en/newsletters/2020/02/19/#discussion-about-taproot-versus-alternatives
-    date: 2020-02-19
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

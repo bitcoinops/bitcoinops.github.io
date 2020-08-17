@@ -46,7 +46,6 @@ optech_mentions:
 
   - title: "Notable changes: BIP301"
     url: /en/newsletters/2019/07/31/#bips-643
-    date: 2019-07-31
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

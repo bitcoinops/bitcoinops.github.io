@@ -35,23 +35,18 @@ primary_sources:
 optech_mentions:
   - title: Continuing work on P2P protocol encryption
     url: /en/newsletters/2018/08/21/#p2p-protocol-encryption
-    date: 2018-08-21
 
   - title: PR opened for initial BIP151 support
     url: /en/newsletters/2018/08/28/#pr-opened-for-initial-bip151-support
-    date: 2018-08-28
 
   - title: Criticism and defense of BIP151 choices
     url: /en/newsletters/2018/09/11/#bip151-discussion
-    date: 2018-09-11
 
   - title: Announcement of v2 P2P transport proposal
     url: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal
-    date: 2019-03-26
 
   - title: "CoreDev.tech discussion of v2 P2P transport proposal"
     url: /en/newsletters/2019/06/12/#v2-p2p
-    date: 2019-06-12
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

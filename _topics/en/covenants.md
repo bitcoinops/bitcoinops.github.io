@@ -34,43 +34,33 @@ primary_sources:
 optech_mentions:
   - title: "Scaling Bitcoin Tokyo 2018, Script Roundtable: OP_CHECKSIGFROMSTACK"
     url: /en/newsletters/2018/10/09/#discussion-the-evolution-of-bitcoin-script
-    date: 2018-10-09
 
   - title: "New proposed opcode: OP_CHECKOUTPUTSHASHVERIFY"
     url: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
-    date: 2019-05-29
 
   - title: "CoreDev.tech discussion: potential script changes"
     url: /en/newsletters/2019/06/12/#potential-script-changes
-    date: 2019-06-12
 
   - title: Bitcoin vaults without covenants
     url: /en/newsletters/2019/08/14#bitcoin-vaults-without-covenants
-    date: 2019-08-14
 
   - title: OP_CHECKOUTPUTSHASHVERIFY renamed OP_CHECKTEMPLATEVERIFY and updated
     url: /en/newsletters/2019/12/04/#op-checktemplateverify-ctv
-    date: 2019-12-04
 
   - title: Suggested changes to OP_CHECKTEMPLATEVERIFY proposal
     url: /en/newsletters/2019/12/18/#proposed-changes-to-bip-ctv
-    date: 2019-12-18
 
   - title: "2019 year-in-review: OP_CHECKTEMPLATEVERIFY"
     url: /en/newsletters/2019/12/28/#ctv
-    date: 2019-12-28
 
   - title: OP_CHECKTEMPLATEVERIFY workshop report
     url: /en/newsletters/2020/02/12/#op-checktemplateverify-ctv-workshop
-    date: 2020-02-12
 
   - title: Vault prototype using pre-signed transactions
     url: /en/newsletters/2020/04/22/#vaults-prototype
-    date: 2020-04-22
 
   - title: Demo implementation of a multisig vaults covenant prototype
     url: /en/newsletters/2020/04/29/#multiparty-vault-architecture
-    date: 2020-04-29
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -56,15 +56,12 @@ primary_sources:
 optech_mentions:
   - title: Proposals for LN splicing
     url: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
-    date: 2018-10-16
 
   - title: LN 1.1 protocol goals
     url: /en/newsletters/2018/11/20/#splicing
-    date: 2018-11-20
 
   - title: "2018 year-in-review: splicing"
     url: /en/newsletters/2018/12/28/#splicing
-    date: 2018-12-28
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

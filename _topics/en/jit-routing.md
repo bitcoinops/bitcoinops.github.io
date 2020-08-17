@@ -27,11 +27,9 @@ primary_sources:
 optech_mentions:
   - title: Free rebalancing for JIT routing
     url: /en/newsletters/2019/07/10#brainstorming-just-in-time-routing-and-free-channel-rebalancing
-    date: 2019-07-10
 
   - title: Additional JIT routing discussion
     url: /en/newsletters/2019/07/24/#additional-just-in-time-jit-ln-routing-discussion
-    date: 2019-07-24
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

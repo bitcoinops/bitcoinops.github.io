@@ -45,24 +45,19 @@ optech_mentions:
 
   - title: Extended summary of bip-taproot and bip-tapscript
     url: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
-    date: 2019-05-14
     feature: true
 
   - title: Overview of Taproot and Tapscript
     url: /en/newsletters/2019/05/14/#soft-fork-discussion
-    date: 2019-05-14
 
   - title: Tapscript resource limits
     url: /en/newsletters/2019/09/25/#tapscript-resource-limits
-    date: 2019-09-25
 
   - title: Update on changes to schnorr, taproot, and tapscript
     url: /en/newsletters/2019/10/16/#taproot-update
-    date: 2019-10-16
 
   - title: Announcement of structured taproot review (including tapscript)
     url: /en/newsletters/2019/10/23/#taproot-review
-    date: 2019-10-23
 
   - title: Bitcoin Optech schnorr/taproot workshop
     url: /en/schorr-taproot-workshop/
@@ -71,19 +66,15 @@ optech_mentions:
 
   - title: Discussion about position commitments using signature-checking opcodes
     url: /en/newsletters/2019/12/04/#continued-schnorr-taproot-discussion
-    date: 2019-12-04
 
   - title: "2019 year-in-review: taproot and tapscript"
     url: /en/newsletters/2019/12/28/#taproot
-    date: 2019-12-28
 
   - title: btcdeb adds `tap` command for experimenting with taproot and tapscript
     url: /en/newsletters/2020/02/05/#taproot-and-tapscript-experimentation-tool
-    date: 2020-02-05
 
   - title: "Bitcoin Core #16902 fixes an inefficiency in OP_IF related opcodes"
     url: /en/newsletters/2020/03/18/#bitcoin-core-16902
-    date: 2020-03-18
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
