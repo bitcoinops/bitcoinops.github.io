@@ -136,7 +136,10 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19658][] Allow RPC to fetch all addrman records and add records to addrman FIXME:dongcarl
+- [Bitcoin Core #19658][] modifies the `getnodeaddresses` RPC to allow returning
+  all known addresses when `0` is specified as the number of addresses to retrieve.
+  Previously, there was a limit on the maximum number of addresses returned,
+  mostly due to an internal implementation quirk.
 
 - [Bitcoin Core #18654][] adds a new `psbtbumpfee` RPC that takes the
   txid of a transaction currently in the local node's mempool and
