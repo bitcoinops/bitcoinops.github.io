@@ -62,7 +62,27 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #14582][] and [#19743][Bitcoin Core #19743] wallet: always do partial spends FIXME:jonatack
+- [Bitcoin Core #14582][] and [#19743][] add a new `-maxapsfee` ("max avoid
+  partial spends fee") configuration option to allow specifying a maximum fee
+  differential for avoiding partial spends when `-avoidpartialspends` is
+  disabled.
+
+      `-avoidpartialspends` improves privacy by using addresses only once, but
+      it may result in slightly higher fees due to the added constraint of
+      grouping outputs by address. For this reason, `-avoidpartialspends` is
+      disabled by default unless `avoid_reuse` is enabled for the wallet. It is
+      for this default case that `-maxapsfee` was conceived.
+
+  The new `-maxapsfee` feature allows a fine-grained choice between three
+  settings. With `-maxapsfee=-1`, partial spend avoidance is completely disabled
+  to optimize for faster fee calculations, which may be useful for very large
+  wallets with many UTXOs. With `-maxapsfee=0` (the default value), fee
+  calculations are made using both coin selection algorithms, and partial spends
+  are avoided if the fees are not higher than regular coin selection. Finally,
+  by setting a `maxapsfee` value greater than `0`, partial spends can be avoided
+  when the absolute fee increase is not greater than the value passed. For
+  example, `-maxapsfee=0.00001000` means the wallet would avoid partial spends
+  if the absolute fee difference is not more than 1000 sats.
 
 - [Bitcoin Core #19550][] adds a new `getindexinfo` RPC that indicates
   which optional indexes have been enabled and how many blocks they've
