@@ -119,7 +119,11 @@ release candidates.*
   "required for [dual funding][bolts #524], where the opener sets [the
   locktime]".
 
-- [BIPs #955][] BIP174: add hash preimage fields to inputs FIXME:dongcarl
+- [BIPs #955][] updates [BIP174][] to standardize supplying hash preimages in
+  [PSBT][topic psbt] input records. The standardization of these preimage fields
+  was [found to be necessary for miniscript-aware finalizers][psbt ext], though
+  they can be used by any PSBT finalizer needing to satisfy hash preimage
+  challenges (e.g. for onchain LN commitment transactions).
 
 - [BOLTs #688][] adds support for [anchor outputs][topic anchor outputs]
   to the LN specification.  This extends commitment transactions with
@@ -157,3 +161,4 @@ release candidates.*
 [bitcoin core process separation]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Process-Separation
 [stack exchange signet setup]: https://bitcoin.stackexchange.com/questions/98553/how-do-i-get-set-up-on-signet/98554#98554
 [bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
+[psbt ext]: /en/newsletters/2019/03/12/#extension-fields-to-partially-signed-bitcoin-transactions-psbts
