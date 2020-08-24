@@ -61,7 +61,36 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #14582][] and [#19743][Bitcoin Core #19743] wallet: always do partial spends FIXME:jonatack
+- [Bitcoin Core #14582][] and [#19743][Bitcoin Core #19743] add a new
+  `maxapsfee` ("max avoid partial spends fee") configuration option to
+  specify the maximum amount of extra fee you're willing to pay to avoid
+  partial spends when the existing `avoidpartialspends` configuration
+  option is disabled.
+
+  Enabling `avoidpartialspends` improves privacy by spending from
+  addresses only once (see [Newsletter #6][news6 avoidpartial]), but it
+  may result in slightly higher fees due to spending all inputs received
+  to the same address when only a subset of those inputs might be needed.
+  For this reason, `avoidpartialspends` is disabled by default unless
+  the `avoid_reuse` flag is enabled for the wallet (see [Newsletter
+  #52][news52 avoid_reuse]).  It is for this default case that `maxapsfee`
+  was conceived---its addition gives users a choice between three
+  configurations:
+
+    1. `-maxapsfee=-1`: partial spend avoidance is completely
+       disabled to optimize for faster fee calculations, which may be
+       useful for very large wallets with many UTXOs.
+
+    2. `-maxapsfee=0` (the default value): fee calculations are
+       made using both coin selection algorithms.  Whichever result is
+       cheaper is used; if they both result in the same cost, partial
+       spend avoidance is used.
+
+    3. `maxapsfee` set to greater than `0`: partial spend avoidance is
+       used whenever the maximum additional cost it adds to the
+       transaction is the passed amount.  For example,
+       `-maxapsfee=0.00001000` means the wallet will avoid partial
+       spends if the absolute fee difference is up to 1,000 sats.
 
 - [Bitcoin Core #19550][] adds a new `getindexinfo` RPC that lists each
   optional index that has been enabled, how many blocks have been
@@ -107,3 +136,5 @@ release candidates.*
 [lnd 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta
 [belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news100 coinswap]: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
+[news52 avoid_reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
+[news6 avoidpartial]: /en/newsletters/2018/07/31/#bitcoin-core-12257
