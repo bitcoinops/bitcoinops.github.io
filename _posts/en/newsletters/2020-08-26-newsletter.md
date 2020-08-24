@@ -39,7 +39,23 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is the motivation for separating Bitcoin Core into independent node, wallet, and GUI processes?]({{bse}}98398)
+  Michael Folkson outlines the benefits of Russell Yanofsky's [efforts][bitcoin
+  core process separation] to separate Bitcoin Core into different `bitcoin-node`,
+  `bitcoin-wallet`, and `bitcoin-gui` processes. Modularity would allow users more
+  flexibility in their setups and developers maintainability and security benefits.
+
+- [What's the most efficient way to create a raw transaction with a specific fee rate?]({{bse}}98392)
+  StackExchange user Darius asks about the interplay between UTXO selection and feerate when
+  constructing a transaction. Murch provides an overview of the effective value
+  approach to coin selection, consideration of [change avoidance][bitcoin wiki change avoidance],
+  and attention to signature length.
+
+- [Will there be a testnet4? Or do we not need a testnet reset once we have Signet?]({{bse}}98579)
+  Michael Folkson explains the considerations involving a potential testnet
+  reset or introduction of a new [signet][topic signet] network. A [related Stack
+  Exchange question][stack exchange signet setup] this month also summarizes two
+  options for working with signet.
 
 ## Releases and release candidates
 
@@ -138,3 +154,6 @@ release candidates.*
 [news100 coinswap]: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
 [news52 avoid_reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
 [news6 avoidpartial]: /en/newsletters/2018/07/31/#bitcoin-core-12257
+[bitcoin core process separation]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Process-Separation
+[stack exchange signet setup]: https://bitcoin.stackexchange.com/questions/98553/how-do-i-get-set-up-on-signet/98554#98554
+[bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
