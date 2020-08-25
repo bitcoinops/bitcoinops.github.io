@@ -179,8 +179,8 @@ extended_summary: |
   schemes such as [MuSig][topic musig] to allow the published
   signature to look like a single-party signature, enhancing
   privacy and efficiency.  This is also possible in ECDSA but it
-  requires additional security assumptions and relatively novel
-  algorithms.  Instead, an [alternative scheme][otves] for adaptor
+  requires novel algorithms that are either comparatively slow or
+  require additional security assumptions.  Instead, an [alternative scheme][otves] for adaptor
   signatures exists for Bitcoin that uses 2-of-2 `OP_CHECKSIG` multisig;
   this is less efficient and possibly less private---but arguably
   simpler and safer than multiparty ECDSA.
