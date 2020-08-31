@@ -128,7 +128,55 @@ conversations and notable changes to popular Bitcoin infrastructure projects.
 Bitcoin presentations and discussions. In this monthly feature, we
 highlight a selection of the transcripts from the previous month.*
 
-FIXME:michaelfolkson
+- **nix-bitcoin**: nixbitcoindev appeared on the Stephan Livera Podcast to
+  discuss nix-bitcoin.  nix-bitcoin is an experimental project
+  that aims to improve the security of installing Bitcoin and Lightning nodes. It
+  uses the NixOS functional Linux distribution, where upgrading is equivalent to
+  installing from scratch due to atomicity. Through minimalism, reproducibility,
+  and compartmentalization, nix-bitcoin aims to reduce the attack
+  surface of a Bitcoin and Lightning software stack---ensuring programs are unaware of
+  other running processes unless they need to be. ([transcript][nixbitcoin
+  transcript], [audio][nixbitcoin audio])
+
+- **Taproot activation**: Eric Lombrozo, Luke Dashjr, and Aaron van Wirdum
+  discussed the various [taproot][topic taproot] activation proposals (see
+  [Newsletter #107][news107 taproot activation]) and gave their opinions
+  on what lessons, if any, could be derived from activating the
+  segwit soft fork.  Lombrozo and Dashjr both believe that the taproot activation
+  process should not be drawn out and that all opposition, criticism, or review of
+  the proposed code changes should be completed prior to starting an
+  activation process. As a result, they support a single-phase [BIP8][] activation
+  method with parameters still to be determined. Community feedback on activation
+  proposals continues to be collected. ([transcript][activation transcript],
+  [video][activation video])
+
+- **Signet**: Kalle Alm and AJ Towns participated in a discussion on
+  [signet][topic signet].  The design decisions of signet were explored as well
+  as the mechanics of how testnet and regtest work. For more details, see the
+  [_Default signet discussion_ news item](#default-signet-discussion).
+  ([transcript][signet transcript], [video][signet video])
+
+- **Bitcoin Core GUI meeting**: Anonymized participants, including designers and
+  developers, met to discuss the Bitcoin Core graphical user interface, its
+  current state, how it could be improved, and the constraints that
+  a revamp would be subject to. For example, one change that has been
+  discussed in the past is moving from Qt Widgets to the Qt QML framework, which
+  is more flexible and easily customized. ([transcript][bitcoin core gui
+  transcript]).
+
+- **Sydney meetup discussion**: Ruben Somsen and Rusty Russell participated in a
+  discussion on statechains, upgrading LN channels, and [lnprototest][]. Somsen
+  outlined how statechains (see [Newsletter #91][news91 statechains]) could
+  potentially be used to swap out your Lightning channel counterparty or, in the
+  case of DLCs (see [Newsletter #81][news81 dlc]), swap out a portion of your
+  position without closing the channel. With various proposed Lightning channel
+  upgrades on the horizon, participants speculated about which upgrades could use dynamic commitments
+  (see [Newsletter #108][news108 dynamic commitments]) and which would require
+  [splicing][topic splicing]. Finally, Russell explained how the Lightning
+  protocol test suite lnprototest could be used to find bugs in existing
+  implementations and assist with ensuring interoperability across
+  implementations when building out new features.  ([transcript][sydney
+  transcript]).
 
 ## Notable code and documentation changes
 
@@ -162,3 +210,16 @@ FIXME:michaelfolkson
 [bitcoin core default signet]: https://github.com/bitcoin/bitcoin/issues/19787#issuecomment-679836225
 [news103 fee ransom]: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
 [news92 ptlcs]: /en/newsletters/2020/04/08/#work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures
+[nixbitcoin transcript]: https://diyhpl.us/wiki/transcripts/stephan-livera-podcast/2020-07-26-nix-bitcoin/
+[nixbitcoin audio]: https://stephanlivera.com/episode/195/
+[news107 taproot activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
+[activation transcript]: https://diyhpl.us/wiki/transcripts/bitcoin-magazine/2020-08-03-eric-lombrozo-luke-dashjr-taproot-activation/
+[activation video]: https://www.youtube.com/watch?v=yQZb0RDyFCQ
+[signet transcript]: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-08-19-socratic-seminar-signet/
+[signet video]: https://www.youtube.com/watch?v=b0AiucAuX3E
+[bitcoin core gui transcript]: https://diyhpl.us/wiki/transcripts/bitcoin-design/2020-08-20-bitcoin-core-gui/
+[news91 statechains]: /en/newsletters/2020/04/01/#implementing-statechains-without-schnorr-or-eltoo
+[news81 dlc]: /en/newsletters/2020/01/22/#protocol-specification-for-discreet-log-contracts-dlcs
+[news108 dynamic commitments]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
+[sydney transcript]: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-08-25-socratic-seminar/
+[lnprototest]: https://github.com/rustyrussell/lnprototest
