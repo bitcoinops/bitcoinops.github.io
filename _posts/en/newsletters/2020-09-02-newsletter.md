@@ -188,8 +188,14 @@ highlight a selection of the transcripts from the previous month.*
 
 - [Bitcoin Core #19797][] Remove old check for 3-byte shifted IP addresses from pre-0.2.9 nodes FIXME:dongcarl
 
-- [Bitcoin Core #19731][] extends the `getpeerinfo` RPC results with two new
-  fields: `last_block` FIXME:asked question of jonatack
+- [Bitcoin Core #19731][] extends the `getpeerinfo` RPC output with two new
+  fields: `last_block` and `last_transaction`. `last_block` is the time that
+  the peer sent the local node a block which the node had not seen
+  before and which passed preliminary validity checks. `last_transaction` is the
+  last time that the peer sent the local node a transaction that the node
+  accepted to its mempool. Both of these metrics are used when choosing peers
+  to disconnect, so it's useful for node operators to be able to access
+  the values.
 
 - [LND #4527][] adds a new `default-remote-max-htlcs` configuration
   option that allows the user to specify the default maximum number of
