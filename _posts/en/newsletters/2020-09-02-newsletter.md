@@ -186,7 +186,14 @@ highlight a selection of the transcripts from the previous month.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19797][] Remove old check for 3-byte shifted IP addresses from pre-0.2.9 nodes FIXME:dongcarl
+- [Bitcoin Core #19797][] strays from Satoshi's original vision™ by
+  removing an obsolete validity check for IPv6 addresses constructed by
+  Bitcoin (Core) 0.2.8 and earlier.  Those early nodes had a bug that
+  would produce malformed addresses.
+  This change should have no impact on the current P2P network, as
+  affected versions are unable to communicate with current software due
+  to the introduction of checksums for P2P messages in Bitcoin
+  (Core) 0.2.9, which were later made mandatory.
 
 - [Bitcoin Core #19731][] extends the `getpeerinfo` RPC output with two new
   fields: `last_block` and `last_transaction`. `last_block` is the time that
