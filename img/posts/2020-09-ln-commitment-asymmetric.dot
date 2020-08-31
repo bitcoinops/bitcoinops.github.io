@@ -1,0 +1,20 @@
+digraph ln_commitment_asymmetric {
+
+rankdir=LR
+
+graph [ bgcolor = transparent ];
+node [ shape = "box" ];
+
+deposit [ label = "Deposit\ntransaction" ];
+c0 [ label = "Commitment transaction\n(option A)" ];
+c1 [ label = "Commitment transaction\n(option B)" ];
+a_encumbered [ label = "Output spendable by Alice (after delay), or\nspendable by Bob (with revocation key)" ];
+b_unencumbered [ label = "Output spendable by Bob" ];
+b_encumbered [ label = "Output spendable by Bob (after delay), or\nspendable by Alice (with revocation key)" ];
+a_unencumbered [ label = "Output spendable by Alice" ];
+
+deposit -> { c0, c1 };
+
+c0 -> { a_encumbered, b_unencumbered };
+c1 -> { a_unencumbered, b_encumbered };
+}
