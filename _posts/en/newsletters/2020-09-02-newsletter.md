@@ -11,7 +11,8 @@ This week's newsletter describes a proposed change to the way LN commitment
 transactions are constructed, summarizes discussion of a default signet, and
 links to a proposal for standardizing temporarily trusted LN channels. Also
 included are our regular sections with recently transcribed talks and
-conversations and notable changes to popular Bitcoin infrastructure projects.
+conversations, releases and release candidates, and notable changes to popular
+Bitcoin infrastructure projects.
 
 ## Action items
 
@@ -121,6 +122,16 @@ conversations and notable changes to popular Bitcoin infrastructure projects.
 
     Participants in the mailing list discussion seemed supportive of the
     proposal.
+
+## Releases and release candidates
+
+*New releases and release candidates for popular Bitcoin infrastructure
+projects.  Please consider upgrading to new releases or helping to test
+release candidates.*
+
+- [btcd 0.21.0-beta][] is now released. This is the first major release for
+  btcd since 0.20.0-beta in October 2019, and contains numerous improvements
+  and bug fixes.
 
 ## Recently transcribed talks and conversations
 
@@ -255,3 +266,4 @@ highlight a selection of the transcripts from the previous month.*
 [pk evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
 [r point evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
 [news111 proposed tiebreaker]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
+[btcd 0.21.0-beta]: https://github.com/btcsuite/btcd/releases/tag/v0.21.0-beta
