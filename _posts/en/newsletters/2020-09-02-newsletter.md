@@ -204,7 +204,22 @@ highlight a selection of the transcripts from the previous month.*
   unilaterally close their channel, such as because of a fee ransom attack
   (see [Newsletter #103][news103 fee ransom]).
 
-- [BIPs #982][] BIP340 updates: even R, new tags, small fixups, clarifications FIXME:adamjonas
+- [BIPs #982][] adds changes to [BIP340][] schnorr signatures (which
+  also affect [BIP341][] taproot).  BIP340 was previously
+  [changed][pk evenness update] to use two different tiebreakers for
+  conveying the Y coordinate of points: squaredness for the R point
+  inside signatures and evenness for the public keys.  As [described on
+  the mailing list][r point evenness update] (see [Newsletter
+  #111][news111 proposed tiebreaker]), this update
+  changes the R point to use evenness, since the performance gains of using
+  squaredness were not observed in practice, and having consistent
+  tiebreakers reduces complexity.  Other changes included small fixups,
+  clarifications, and typo corrections.
+
+  Similar to [previous revisions][news87 bip 340 updates], the tag for the
+  tagged hashes in BIP340 was changed, ensuring that any code written for
+  the earlier drafts will generate signatures that fail validation under
+  the proposed revisions.
 
 {% include references.md %}
 {% include linkers/issues.md issues="19797,19731,4527,982" %}
@@ -227,5 +242,9 @@ highlight a selection of the transcripts from the previous month.*
 [news91 statechains]: /en/newsletters/2020/04/01/#implementing-statechains-without-schnorr-or-eltoo
 [news81 dlc]: /en/newsletters/2020/01/22/#protocol-specification-for-discreet-log-contracts-dlcs
 [news108 dynamic commitments]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
+[news87 bip 340 updates]: /en/newsletters/2020/03/04/#updates-to-bip340-schnorr-keys-and-signatures
 [sydney transcript]: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-08-25-socratic-seminar/
 [lnprototest]: https://github.com/rustyrussell/lnprototest
+[pk evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
+[r point evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
+[news111 proposed tiebreaker]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
