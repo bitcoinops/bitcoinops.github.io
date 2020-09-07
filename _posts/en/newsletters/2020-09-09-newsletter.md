@@ -88,7 +88,15 @@ question below to see a summary of the answer from the meeting.*
 - [Bitcoin Core #19405][] adds inbound and outbound connection counts to
   `bitcoin-cli -getinfo` and the `getnetworkinfo` RPC.
 
-- [Bitcoin Core #19670][] Protect localhost and block-relay-only peers from eviction FIXME:dongcarl
+- [Bitcoin Core #19670][] reserves inbound connection slots for block-relay-only
+  and localhost peers. This change was motivated by a user who saw a
+  decrease in the number of active inbound Tor connections over time. This
+  behavior was due to unintentional bias that increased the chance
+  localhost peers would get evicted when Bitcoin Core's connection slots
+  filled up.  Since inbound Tor connections are seen as
+  localhost peers, the connectivity of Tor peers can be improved by reserving slots
+  for localhost peers. A similar reservation is made for block-relay-only peers
+  which are disadvantaged but serve as a protection against [eclipse attacks][topic eclipse attacks].
 
 - [Bitcoin Core #14687][] updates the ZMQ event notification service to
   allow creating connections (sockets) that enable [TCP keepalive][] to
