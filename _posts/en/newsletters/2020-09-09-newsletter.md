@@ -85,7 +85,8 @@ question below to see a summary of the answer from the meeting.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19405][] rpc, cli: add network in/out connections to `getnetworkinfo` and `-getinfo` FIXME: bitschmidty
+- [Bitcoin Core #19405][] adds inbound and outbound connection counts to
+  `bitcoin-cli -getinfo` and the `getnetworkinfo` RPC.
 
 - [Bitcoin Core #19670][] Protect localhost and block-relay-only peers from eviction FIXME:dongcarl
 
