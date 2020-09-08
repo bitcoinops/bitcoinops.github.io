@@ -71,10 +71,47 @@ and notable changes to popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
+[Re-delegate absurd fee checking from mempool to clients][review club #19339] is
+a PR ([#19339][Bitcoin Core #19339]) by Gloria Zhao that proposes an updated
+version of [Bitcoin Core #15810][]. It adds separate fee-checking logic for
+clients that need to enforce max feerates and then removes the `nAbsurdFee`
+logic from `AcceptToMemoryPool`.
+
+The review club discussion covered general concepts before diving into the
+deeper technical aspects.
+
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME"
+  q0="What does the `AcceptToMemoryPool` (ATMP) function in `validation.cpp` do?"
+  a0="ATMP is the function that Bitcoin Core calls to determine whether a transaction
+      is acceptable for inclusion in the mempool. In addition to
+      enforcing consensus rules, ATMP also applies the node's policy."
+  a0link="https://bitcoincore.reviews/19339#l-55"
+
+  q1="What is \"policy\"?"
+  a1="Policy is generally defined as each node's network transaction rules.  It excludes
+      consensus rules and the preferences of end-user clients (e.g. wallets)."
+  a1link="https://bitcoincore.reviews/19339#l-281"
+
+  q2="What is the absurd fee parameter, `nAbsurdFee`, used for?"
+  a2="`nAbsurdFee` is only used for locally submitted transactions, e.g. those
+      originating from the node's RPC interface and wallet. When a node receives
+      a transaction from the network (which is the majority of calls to ATMP),
+      it sets an empty value for `nAbsurdFee`."
+  a2link="https://bitcoincore.reviews/19339#l-85"
+
+  q3="Is `nAbsurdFee` part of policy, or is it a client preference?"
+  a3="The participants concluded that `nAbsurdfFee` is a wallet preference and
+      not policy, as it is not enforced on the P2P network by Bitcoin Core and
+      [ATMP should give consistent results][review club client] regardless of
+      which client the transaction originates from."
+  a3link="https://bitcoincore.reviews/19339#l-91"
+
+  q4="Why does the `testmempoolaccept` RPC accept a JSON array containing a
+      maximum of only one raw transaction?"
+  a4="It's hoped that Bitcoin Core will one day be able to test *multiple*
+      transactions in a single RPC without changing the interface, if [package
+      relay][topic package relay] and package mempool acceptance are implemented."
+  a4link="https://bitcoincore.reviews/19339#l-115"
 %}
 
 ## Notable code and documentation changes
@@ -149,10 +186,11 @@ link to for BitBox seems unfair. -harding -->{% endcomment %}
   behalf of the manufacturer themselves.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19405,19670,14687,19671,18244,4463,983,363,18267" %}
+{% include linkers/issues.md issues="19405,19670,14687,19671,18244,4463,983,363,18267,19339,15810" %}
 [tcp keepalive]: https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html
 [news112 coinswap]: /en/newsletters/2020/08/26/#discussion-about-routed-coinswaps
 [belcher collateral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018151.html
 [zmnscpxj ln]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018160.html
 [belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news82 lnd acl]: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
+[review club client]: https://bitcoincore.reviews/19339#l-104
