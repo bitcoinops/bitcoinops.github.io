@@ -1,0 +1,36 @@
+digraph htlc_fee_bumping {
+
+rankdir=LR
+
+//graph [ bgcolor = transparent ];
+node [ shape = "box" ];
+
+{
+  edge [ minlen = 2 ];
+  in2 [label = "Alice, 0.10 BTC"]
+  in0 [label = "HTLC, 0.10 BTC"]
+  in1 [label = "HTLC, 0.10 BTC"]
+
+  out2 [label = "Change to Alice, 0.05 BTC"]
+  out0 [label = "Payment to Alice, 0.09 BTC"]
+  out1 [label = "Payment to Alice, 0.09 BTC"]
+
+  in0 -> out0 [ label = "0.01 BTC" ];
+  in1 -> out1 [ label = "0.01 BTC" ];
+  in2 -> out2 [ label = "0.05 BTC" ];
+}
+
+{
+  node [ shape = "none" ];
+  edge [ style = "invis" ];
+
+  l_ins [ label = "Inputs\n(implicit values)" ];
+  l_fees [ label = "Fees\n(implicit)" ];
+  l_outs [ label = "Outputs" ];
+
+  l_ins -> l_fees -> l_outs;
+}
+
+label = " \nSpending HTLCs with additional input & output for fees"
+
+}
