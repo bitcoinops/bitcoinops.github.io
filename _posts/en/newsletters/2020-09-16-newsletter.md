@@ -181,10 +181,20 @@ release candidates.*
 
 - [Rust-Lightning #618][] C/C++ Bindings FIXME:moneyball
 
-- [Libsecp256k1 #558][] Add schnorrsig module which implements BIP-340 compliant signatures FIXME:dongcarl
+- [Libsecp256k1 #558][] implements [schnorr signature][topic schnorr signatures]
+  verification and single-party signing over the secp256k1 elliptic curve as
+  standardized in [BIP340][]. Compared to the existing ECDSA signatures used in
+  Bitcoin, schnorr signatures rely on fewer security assumptions, are
+  non-malleable, and allow for much simpler key aggregation schemes such as
+  [MuSig][topic musig]. Schnorr signatures are also a key component of
+  [taproot][topic taproot], which uses aggregated schnorr signatures for "everyone
+  agrees" key-path spends. Spending a taproot output using the key-path offers
+  better spending condition privacy and reduces signature sizes. Bitcoin Core
+  has correspondingly [updated][Bitcoin Core #19944] their internal libsecp256k1 tree to
+  incorporate this change.
 
 {% include references.md %}
-{% include linkers/issues.md issues="4020,3812,3763,3973,3870,3832,4310,4558,618,558" %}
+{% include linkers/issues.md issues="4020,3812,3763,3973,3870,3832,4310,4558,618,558,19944" %}
 [C-Lightning 0.9.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.1rc2
 [cl 0.9.1 rn]: https://github.com/ElementsProject/lightning/blob/817a7533d16263a63f50df7557a60479622d15d6/CHANGELOG.md#091---2020-09-15-the-antiguan-btc-maximalist-society
 [russell tweet]: https://twitter.com/rusty_twit/status/1304581535849275393
