@@ -179,7 +179,12 @@ release candidates.*
   with the plan to make it enabled by default in the next major release
   of LND.
 
-- [Rust-Lightning #618][] C/C++ Bindings FIXME:moneyball
+- [Rust-Lightning #618][] adds C/C++ bindings support for rust-lightning. This
+  provides a framework that can be used to create APIs in other languages
+  such as Swift, Java, Kotlin, and JavaScript.
+  The approach chosen results in a more performant and memory-efficient method than
+  alternatives such as JSON or RPC, which is particularly important on mobile and
+  limited-resource environments. See the [bindings documentation][bindings readme] for more details.
 
 - [Libsecp256k1 #558][] implements [schnorr signature][topic schnorr signatures]
   verification and single-party signing over the secp256k1 elliptic curve as
@@ -216,3 +221,4 @@ release candidates.*
 [neigut interactive funding]: https://github.com/niftynei/lightning-rfc/pull/1
 [news104 scorched earth]: /en/newsletters/2020/07/01/#discussion-of-htlc-mining-incentives
 [sighash]: https://btcinformation.org/en/developer-guide#signature-hash-types
+[bindings readme]: https://github.com/rust-bitcoin/rust-lightning/tree/main/lightning-c-bindings
