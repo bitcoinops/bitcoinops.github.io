@@ -171,7 +171,13 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #16378][] The ultimate send RPC FIXME:jnewbery
+- [Bitcoin Core #16378][] adds a new `send` RPC to the wallet. This new
+  RPC is designed for maximum flexibility and includes options such as
+  multiple outputs (allowing [payment batching][]), [coin selection][topic coin
+  selection], manual or automatic feerates, and [PSBT format][topic psbt]. It is
+  intended to unify the functionality of the `sendtoaddress` and `sendmany` RPCs,
+  which may be deprecated in a future release. For the full list of
+  options, see the [RPC help text][send rpc help].
 
 - [Bitcoin Core #19643][] add -netinfo peer connections dashboard FIXME:dongcarl
 
@@ -254,3 +260,5 @@ release candidates.*
 [harding sponsor outpoints]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018186.html
 [daftuar principle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018195.html
 [nakamoto later block]: https://bitcointalk.org/index.php?topic=1786.msg22119#msg22119
+[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
+[send rpc help]: https://github.com/bitcoin/bitcoin/blob/831b0ecea9156447a2b6a67d28858bc26d302c1c/src/wallet/rpcwallet.cpp#L3876-L3933
