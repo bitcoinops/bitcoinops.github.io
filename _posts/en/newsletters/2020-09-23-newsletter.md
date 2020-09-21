@@ -179,7 +179,12 @@ release candidates.*
   which may be deprecated in a future release. For the full list of
   options, see the [RPC help text][send rpc help].
 
-- [Bitcoin Core #19643][] add -netinfo peer connections dashboard FIXME:dongcarl
+- [Bitcoin Core #19643][] adds a new `-netinfo` option to the `bitcoin-cli`
+  command to display a peer connection dashboard. This dashboard offers
+  human node operators a bird's-eye view of peer connection details such as
+  directionality, relay type, network family, and uptime.  An optional
+  argument from `0` to `4` may be passed to display various levels of
+  detail.
 
 - [Bitcoin Core #15454][] no longer creates a new wallet when the
   program is started for the first time.  Instead, the user is prompted
