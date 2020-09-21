@@ -1,13 +1,10 @@
----
-title: Payment Batching
-layout: chapter
----
+{:.post-meta}
 
-This chapter describes how
+This post describes how
 high-frequency spenders can use the scaling technique of *payment
-batching* to reduce transaction sizes and fees by about 75% in
+batching* to reduce transaction fees and block space use by about 75% in
 practical situations.
-As of February 2019, payment batching is used by multiple popular
+As of January 2021, payment batching is used by multiple popular
 Bitcoin services (mainly exchanges), is available as a built-in feature
 of many wallets (including Bitcoin Core), and should be easy to
 implement in custom wallets and payment-sending solutions.  On the
@@ -22,7 +19,7 @@ one input from the spender of about 67 vbytes and two outputs of about
 spender.  An additional 11 vbytes are used for transaction overhead
 (version, locktime, and other fields).
 
-![Best-case P2WPKH vbytes per payment](img/p2wpkh-batching-best-case.png)
+![Best-case P2WPKH vbytes per payment](/img/posts/payment-batching/p2wpkh-batching-best-case.png)
 
 If we add just 4 more receivers, including an additional 31 vbyte output
 for each one of them, but otherwise keep the transaction the same, the
@@ -35,12 +32,12 @@ Extrapolating this simple best-case situation, we see that the number of
 vbytes used per receiver asymptotically approaches the size of a single
 output.  This makes the maximum savings possible a bit over 75%.
 
-![Saving rates for best and typical cases of payment batching](img/p2wpkh-batching-cases-combined.png)
+![Saving rates for best and typical cases of payment batching](/img/posts/payment-batching/p2wpkh-batching-cases-combined.png)
 
 Realistically, the more a transaction spends, the more likely it is to
 need additional inputs.  This doesn't prevent payment batching from
 being useful, although it does reduce its effectiveness.  For example,
-we expect a typical service to
+some services may
 receive payments of about the same value as the payments they make, so
 for every output they add, they need to add one input on average.
 Savings in this typical case peak at about 30%.
@@ -60,17 +57,17 @@ time, we can calculate the savings of using the two-step procedure for
 our one input per output scenario above (while showing, for comparison,
 the simple best-case scenario of already having a large input available).
 
-![Saving rates for best and typical cases of payment batching after consolidation](img/p2wpkh-batching-after-consolidation.png)
+![Saving rates for best and typical cases of payment batching after consolidation](/img/posts/payment-batching/p2wpkh-batching-after-consolidation.png)
 
 For the typical case,
 consolidation loses efficiency when only making a single payment,
-but when actually batching, it performs almost as well as the best case
+but when batching multiple payments, it performs almost as well as the best case
 scenario.
 
 In addition to payment batching directly providing a fee savings,
-batching also uses limited block space more efficiently by reducing the
-number of vbytes per payment.  This increases the available supply of
-block space and so, given constant demand, can make it more affordable.
+batching also uses the limited block space more efficiently by reducing the
+number of vbytes per payment.  This increases the number of payments
+users can make and so, given constant demand, can make it more affordable to send Bitcoin payments.
 In that way, increased use of payment batching may lower the feerate for
 all Bitcoin users.
 
@@ -79,11 +76,11 @@ that typically have inputs available that are 5 to 20 times larger than
 their typical output.  For services not in that position, the savings
 from batching alone are smaller but perhaps still worth the effort;
 if the services are willing to also pre-consolidate their inputs, the
-savings can be quite dramatic.
+[savings can be quite dramatic][veriphi field report].
 
 Note: the figures and plots above all assume use of P2WPKH inputs and
 outputs.  We expect that to become the dominant script type on the
-network in the future (until something better comes along).  However, if
+network in the future (until [something better][topic taproot] comes along).  However, if
 you use a different script type (P2PKH, or multisig using P2SH or
 P2WSH), the number of vbytes used to spend them are even larger, so the
 savings rate will be higher.
@@ -91,17 +88,16 @@ savings rate will be higher.
 ## Concerns
 
 The fee-reduction benefits of payment batching do create tradeoffs and
-concerns that will need to be addressed by any service using the
+concerns that you will need to address when using the
 technique.
 
 ### Delays
 
 This is the primary concern with payment batching.  Although some
 situations naturally lend themselves to payment batching (e.g. a mining
-pool paying hashrate providers in a block the pool mined), many
-services primarily send money to users when those users make a
-withdrawal request.  In order to batch payments, the service must get
-the user to accept that their payment will not be sent immediately---it
+pool paying hashrate providers in a block the pool mined),
+you will probably need to get
+the user to accept that their payment will not be broadcast immediately---it
 will be held for some period of time and then combined with other
 withdrawal requests.
 
@@ -112,7 +108,7 @@ sending of their payment, you also delay when it's confirmed (all other
 things being equal, such as feerates).
 
 To mitigate the problem of delays, you may allow the
-user to choose between an immediate payment and a delayed payment with
+user to choose between an immediate broadcast and a delayed broadcast with
 a different fee provided for each option.  For example:
 
     [X] Free withdrawal (payment sent within 6 hours)
@@ -127,7 +123,7 @@ transaction is being paid by you.  If you had sent separate
 transactions, any onchain relationship between the payments might be
 less apparent or even non-existent.
 
-![Screenshot of a possible transaction batch in a block explorer](img/batch-screenshot.png)
+![Screenshot of a possible transaction batch in a block explorer](/img/posts/payment-batching/batch-screenshot.png)
 
 Note that transactions belonging to particular Bitcoin services are
 often identifiable by experts even if they don't use payment
@@ -135,12 +131,12 @@ batching, so batching doesn't necessarily cause a reduction in privacy
 for those cases.
 
 It may be possible to partially mitigate this problem by sending batched
-payments in a coinjoin transaction created with other users.  Depending
+payments in a [coinjoin][topic coinjoin] transaction created with other users.  Depending
 on the technique used, this would not necessarily reduce the efficiency
 of batching and could provide significantly enhanced privacy.  However,
 naive implementations of coinjoin previously provided by Bitcoin
 services have had [flaws][coinjoin sudoku] that prevented them from
-providing significant privacy advantages.  As of February 2019, no
+providing significant privacy advantages.  As of January 2021, no
 currently-available coinjoin implementation is fully compatible with the
 needs of payment batching.
 
@@ -154,31 +150,33 @@ reaching these limits, but the receivers of the payments you send can
 respend their outputs in child transactions that become part of the
 transaction group containing your transaction.
 
+As of Bitcoin Core 0.20 (June 2020), the limits are[^package-limits] that a
+group of related unconfirmed transactions may not exceed 101,000 vbytes
+in size, have more than 25 unconfirmed ancestors, or have more than 25
+descendants.  In particular, the descendant limit can be easily reached if
+those receiving payments from a large batch respend their unconfirmed
+outputs.
+
 The closer to a limit a transaction group becomes, the less likely
 you'll be able to fee bump your transaction using either
-Child-Pays-for-Parent (CPFP) fee bumping or Replace-by-Fee (RBF) fee
+[Child-Pays-for-Parent (CPFP)][topic cpfp] fee bumping or [Replace-by-Fee
+(RBF)][topic rbf] fee
 bumping.  In addition, the more unconfirmed children a transaction has,
-the more RBF fee bumping will cost as you'll have to pay for both the
+the more RBF fee bumping costs because you'll have to pay for both the
 increased feerate of your transaction as well as for all the potential
 fees lost to miners when they remove any child transactions in order
 to accept your replacement.
 
-Note that these problems are not unique to batched payments---independent
+These problems are not unique to batched payments---independent
 payments can have the same problem.  However, if an independent payment
 can't be fee bumped because the independent receiver spent their output,
 only that user is affected.  But if a single receiver of a batched
 payment spends their output to the point where fee bumping becomes
 impossible, all the other receivers of that transaction are also affected.
-
-As of Bitcoin Core 0.18 (April 2019), the limits are[^package-limits] that a
-group of related unconfirmed transactions may not exceed 101,000 vbytes
-in size, have more than 25 unconfirmed ancestors, or have more than 25
-descendants.  This size limit restricts batches to a maximum size of
-about 3,000 outputs and the descendant limit is easily reached if just a
-tiny percentage of those receiving a large batch respend their confirmed
-outputs.  It's also easy for any of the receivers to deliberately create
-transactions that reach one of these limits and prevent fee bumping if
-they know that you're relying on that capability.
+It's also easy for any of the receivers to deliberately create
+transactions that reach one of the limits and prevent fee bumping if
+they know that you're relying on that capability, an attack known as
+[transaction pinning][topic transaction pinning].
 
 ## Implementation
 
@@ -207,7 +205,7 @@ batched payments larger than this.
 ## Recommendations summary
 
 1. Try to create systems where your users and customers don't expect
-   their payments immediately but are willing to wait for some time
+   their payments to be broadcast immediately but are willing to wait for some time
    (the longer the better).
 
 2. Use low-feerate consolidations to keep some large inputs available
@@ -252,8 +250,9 @@ batched payments larger than this.
            kilobytes of in-mempool descendants (default: 101).
     ```
 
-
+{% include references.md %}
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
 [fee bumping]: ../1.fee_bumping/fee_bumping.md
 [cronjob]: https://en.wikipedia.org/wiki/Cronjob
 [sendmany]: https://bitcoincore.org/en/doc/0.17.0/rpc/wallet/sendmany/
+[veriphi field report]: /en/veriphi-segwit-batching/
