@@ -50,6 +50,12 @@ optech_mentions:
   - title: Question about a specification for miniscript
     url: /en/newsletters/2020/03/25/#where-can-i-find-the-miniscript-policy-language-specification
 
+  - title: "Minsc: a new spending policy language based on miniscript"
+    url: /en/newsletters/2020/08/05/#new-spending-policy-language
+
+  - title: "PSBT specification updated to improve miniscript compatibility"
+    url: /en/newsletters/2020/08/26/#bips-955
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

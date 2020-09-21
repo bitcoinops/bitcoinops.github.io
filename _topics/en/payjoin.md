@@ -56,6 +56,9 @@ optech_mentions:
   - title: New BIP78 specification of payjoin
     url: /en/newsletters/2020/07/01/#bips-923
 
+  - title: Wasabi adds support for BIP78 payjoin
+    url: /en/newsletters/2020/08/19/#wasabi-adds-support-for-payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

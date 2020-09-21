@@ -92,6 +92,18 @@ optech_mentions:
   - title: "Eclair #1484 adds basic support for anchor outputs"
     url: /en/newsletters/2020/07/29/#eclair-1484
 
+  - title: Discussion of solutions for attacks against LN, including anchor outputs
+    url: /en/newsletters/2020/08/05/#chicago-meetup-discussion
+
+  - title: "Eclair #1491 adds support for anchor outputs"
+    url: /en/newsletters/2020/08/05/#eclair-1491
+
+  - title: "C-Lightning #3830 adds experimental support for anchor outputs"
+    url: /en/newsletters/2020/08/19/#c-lightning-3830
+
+  - title: "BOLTs #688 adds support for anchor outputs to the LN protocol"
+    url: /en/newsletters/2020/08/26/#bolts-688
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

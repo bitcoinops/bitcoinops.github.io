@@ -133,6 +133,9 @@ optech_mentions:
   - title: "C-Lightning #3809 adds support for sending of multipath payments"
     url: /en/newsletters/2020/07/22/#c-lightning-3809
 
+  - title: "LND #4521 improves invoice routing hints for multipath payments"
+    url: /en/newsletters/2020/08/19/#lnd-4521
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

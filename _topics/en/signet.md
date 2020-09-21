@@ -62,6 +62,12 @@ optech_mentions:
   - title: "BIP325 updated: all signets to use same genesis block but different magic"
     url: /en/newsletters/2020/05/06/#bips-900
 
+  - title: BIP325 updated for new signet block signing method
+    url: /en/newsletters/2020/08/05/#bips-947
+
+  - title: Will the availability of signet eliminate the need for a new testnet?
+    url: /en/newsletters/2020/08/26/#will-there-be-a-testnet4-or-do-we-not-need-a-testnet-reset-once-we-have-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

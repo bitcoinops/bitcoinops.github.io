@@ -64,6 +64,9 @@ optech_mentions:
   - title: Upgrading LN commitment formats, including for eltoo
     url: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
 
+  - title: Using attacks like transaction pinning and selective relay against eltoo
+    url: /en/newsletters/2020/08/12/#discussion-about-eltoo-and-sighash-anyprevout
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_NOINPUT

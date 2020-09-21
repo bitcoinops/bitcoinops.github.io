@@ -72,6 +72,12 @@ optech_mentions:
   - title: Proposal to override some BIP125 RBF conditions to avoid pinning
     url: /en/newsletters/2019/06/12/#proposal-to-override-some-bip125-rbf-conditions
 
+  - title: Discussion of attacks against LN, including transaction pinning
+    url: /en/newsletters/2020/08/05/#chicago-meetup-discussion
+
+  - title: Using attacks such as transaction pinning against eltoo
+    url: /en/newsletters/2020/08/12/#discussion-about-eltoo-and-sighash-anyprevout
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

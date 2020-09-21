@@ -87,6 +87,9 @@ optech_mentions:
   - title: Vault prototype with sample implementation using OP_CHECKTEMPLATEVERIFY
     url: /en/newsletters/2020/04/22/#vaults-prototype
 
+  - title: "Sapio: a new language for building contracts with OP_CHECKTEMPLATEVERIFY"
+    url: /en/newsletters/2020/08/05/#sapio
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
