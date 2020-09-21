@@ -149,7 +149,23 @@ candidates, and changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Swan supports sending to bech32 addresses:**
+  Swan, through their custodian Prime Trust, now [supports withdrawals][swan bech32 send]
+  to [bech32][topic bech32] addresses.
+
+- **Ledger Live adds manual coin selection support:**
+  Moving from a first-in, first-out UTXO selection model, Ledger Live now also
+  supports [manual coin selection][ledger coin control article] for either privacy
+  or fee-minimization benefits.
+
+- **Sparrow wallet announced:**
+  [Sparrow wallet][sparrow twitter thread] is a new desktop wallet supporting
+  single or multisignature addresses, PSBT, hardware wallets, and [coin
+  selection][topic coin selection].
+
+- **JoinMarket 0.7.0 adds BIP78, PSBT:**
+  [JoinMarket 0.7.0][joinmarket 0.7.0] includes support for [BIP78 payjoin][topic payjoin]
+  for payments. [PSBT][topic psbt] support was also added in order to facilitate the implementation.
 
 ## Releases and release candidates
 
@@ -292,3 +308,7 @@ release candidates.*
 [nakamoto later block]: https://bitcointalk.org/index.php?topic=1786.msg22119#msg22119
 [payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [send rpc help]: https://github.com/bitcoin/bitcoin/blob/831b0ecea9156447a2b6a67d28858bc26d302c1c/src/wallet/rpcwallet.cpp#L3876-L3933
+[swan bech32 send]: https://twitter.com/SwanBitcoin/status/1301182772015497216
+[ledger coin control article]: https://www.ledger.com/coin-control-now-available-in-ledger-live
+[sparrow twitter thread]: https://twitter.com/craigraw/status/1301045693814132736
+[joinmarket 0.7.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.7.0.md
