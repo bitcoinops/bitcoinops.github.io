@@ -48,6 +48,9 @@ optech_mentions:
   - title: Proposed per-node signaling for address relay with v2 `addr` messages
     url: /en/newsletters/2019/11/06/#signaling-support-for-address-relay
 
+  - title: Summary of Bitcoin Core PR Review Club discussion about an `addr` v2 PR
+    url: /en/newsletters/2020/08/12/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

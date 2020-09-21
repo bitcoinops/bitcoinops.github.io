@@ -126,6 +126,9 @@ optech_mentions:
   - title: Discussion about backporting wtxid relay for taproot activation
     url: /en/newsletters/2020/07/29/#bitcoin-core-18044
 
+  - title: "Discussion of various topics, including taproot activation"
+    url: /en/newsletters/2020/08/05/#sydney-meetup-discussion
+
 ## Optional
 see_also:
   - title: MAST

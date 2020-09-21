@@ -95,6 +95,9 @@ optech_mentions:
   - title: "LND #4429 enables support for large channels by default"
     url: /en/newsletters/2020/07/22/#lnd-4429
 
+  - title: "LND 0.11.0-beta released with support for large channels by default"
+    url: /en/newsletters/2020/08/26/#lnd-0-11-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

@@ -62,6 +62,12 @@ optech_mentions:
   - title: New BIP339 wtxid transaction announcements simplifies package relay
     url: /en/newsletters/2020/07/01/#bips-933
 
+  - title: Discussion of solutions for attacks against LN, including package relay
+    url: /en/newsletters/2020/08/05/#chicago-meetup-discussion
+
+  - title: Change to orphan parent fetching, may be replaced by package relay
+    url: /en/newsletters/2020/08/05/#bitcoin-core-19569
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

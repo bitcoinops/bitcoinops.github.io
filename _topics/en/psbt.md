@@ -117,6 +117,15 @@ optech_mentions:
   - title: "LND #4455 makes it safe to batch open channels using PSBTs"
     url: /en/newsletters/2020/07/29/#lnd-4455
 
+  - title: BIP174 specification of PSBT updated in response to fee overpayment attack
+    url: /en/newsletters/2020/08/05/#bips-948
+
+  - title: "Bitcoin Core #18654 adds new RPC specifically for RBF fee bumping PSBTs"
+    url: /en/newsletters/2020/08/19/#bitcoin-core-18654
+
+  - title: "BIPs #955 updates BIP174 PSBT to standardize supplying hash preimages"
+    url: /en/newsletters/2020/08/26/#bips-955
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

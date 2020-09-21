@@ -62,6 +62,9 @@ optech_mentions:
   - title: Demo implementation of a multisig vaults covenant prototype
     url: /en/newsletters/2020/04/29/#multiparty-vault-architecture
 
+  - title: Discussion about how Simplicity could be used for covenants
+    url: /en/newsletters/2020/08/05/#bip-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Request to replace BIP118 with the `SIGHASH_ANYPREVOUT` proposal"
     url: /en/newsletters/2020/07/15/#bip118-update
 
+  - title: "Discussion of various topics, including `SIGHASH_ANYPREVOUT`"
+    url: /en/newsletters/2020/08/05/#sydney-meetup-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

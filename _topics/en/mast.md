@@ -74,6 +74,9 @@ optech_mentions:
   - title: Discussion about taproot versus alternative MAST-enabling proposals
     url: /en/newsletters/2020/02/19/#discussion-about-taproot-versus-alternatives
 
+  - title: "Discussion about the evolution of MAST (and other things) into taproot"
+    url: /en/newsletters/2020/08/05/#bip-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

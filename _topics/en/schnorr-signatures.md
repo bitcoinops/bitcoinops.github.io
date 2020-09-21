@@ -95,6 +95,9 @@ optech_mentions:
   - title: Presentations and discussions about schnorr signatures
     url: /en/newsletters/2020/07/01/#schnorr-signatures-and-multisignatures
 
+  - title: Proposal to update BIP340 schnorr signatures to use evenness tiebreaker
+    url: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
