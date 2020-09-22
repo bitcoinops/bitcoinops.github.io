@@ -181,10 +181,35 @@ release candidates.*
 
 - [Bitcoin Core #19643][] adds a new `-netinfo` option to the `bitcoin-cli`
   command to display a peer connection dashboard. This dashboard offers
-  human node operators a bird's-eye view of peer connection details such as
+  node operators a bird's-eye view of peer connection details such as
   directionality, relay type, network family, and uptime.  An optional
   argument from `0` to `4` may be passed to display various levels of
   detail.
+
+    ```text
+    $ watch -n 0.1 ./src/bitcoin-cli -netinfo 3
+    Bitcoin Core v0.20.99.0-bf1f913c44 - 70016/Satoshi:0.20.99/
+
+    Peer connections sorted by direction and min ping
+    <-> relay   net mping   ping send recv  txn  blk uptime  asmap    id version
+     in  full onion                 1    1                0        10206 70015/Satoshi:0.20.1/
+     in  full  ipv6   246    246    1    9    0           1  16509 10202 70015/Satoshi:0.19.1/
+     in block onion 37686 425955   42   42               25        10143 70015/Satoshi:0.20.1/
+    [...]
+    out  full  ipv4    94    198    3    1    0  229    956  12998  7809 70015/Satoshi:0.19.0.1/
+    out block  ipv6   107    269   64   64              949   5577  7835 70015/Satoshi:0.16.0/
+    out  full onion   440   1180    4    4    0         257         9574 70015/Satoshi:0.18.1/
+                       ms     ms  sec  sec  min  min    min{% comment %}skip-duplicate-words-test{% endcomment %}
+
+            ipv4    ipv6   onion   total  block-relay
+    in         0      17       8      25       2
+    out        8       2       8      18       2
+    total      8      19      16      43       4
+
+    Local addresses
+    [redacted]                                port  8333     score   6401
+    [redacted].onion                          port  8333     score   1085
+    ```
 
 - [Bitcoin Core #15454][] no longer creates a new wallet when the
   program is started for the first time.  Instead, the user is prompted
