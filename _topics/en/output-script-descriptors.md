@@ -31,6 +31,7 @@ extended_summary: |
 ## "[title](link)"
 primary_sources:
     - title: Output script descriptors
+      link: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
