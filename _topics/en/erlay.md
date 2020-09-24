@@ -37,6 +37,7 @@ extended_summary: |
 ## "[title](link)"
 primary_sources:
     - title: Erlay
+      link: https://arxiv.org/pdf/1905.10518.pdf
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

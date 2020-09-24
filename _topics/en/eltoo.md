@@ -36,6 +36,7 @@ extended_summary: |
 ## "[title](link)"
 primary_sources:
     - title: Eltoo
+      link: https://blockstream.com/eltoo.pdf
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

@@ -20,7 +20,7 @@ extended_summary: |
   the committed scripts or by simply providing a signature that verifies
   against the public key (allowing the script to be kept private).
   Taproot is intended for use with schnorr signatures that simplify
-  multiparty construction (e.g. using [MuSig][]) and with MAST to
+  multiparty construction (e.g. using [MuSig][topic musig]) and with MAST to
   allow committing to more than one script, any one of which may be
   used at spend time.
 

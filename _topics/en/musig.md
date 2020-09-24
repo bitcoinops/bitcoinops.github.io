@@ -34,7 +34,7 @@ extended_summary: |
 ## "[title](link)"
 primary_sources:
     - title: MuSig paper
-      link: musig
+      link: https://eprint.iacr.org/2018/068
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

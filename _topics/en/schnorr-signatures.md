@@ -18,7 +18,7 @@ excerpt: >
 extended_summary: |
   Schnorr is secure under the same cryptographic assumptions as
   [ECDSA][] and it is easier and faster to create secure multiparty
-  signatures using schnorr with protocols such as [MuSig][].  A new
+  signatures using schnorr with protocols such as [MuSig][topic musig].  A new
   signature type also provides an opportunity to change the signature
   serialization format from [BER/DER][] to something that's more compact
   and simpler to implement.
