@@ -28,24 +28,31 @@
 [bolts repo]: https://github.com/lightningnetwork/lightning-rfc/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [c-lightning repo]: https://github.com/ElementsProject/lightning
-[cve-2012-2459]: https://bitcointalk.org/?topic=102395
-[cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
-[cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
-[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [eclair repo]: https://github.com/ACINQ/eclair
-[eltoo]: https://blockstream.com/eltoo.pdf
-[erlay]: https://arxiv.org/pdf/1905.10518.pdf
-[hwi]: https://github.com/bitcoin-core/HWI
+[hwi repo]: https://github.com/bitcoin-core/HWI
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
+[rust-lightning repo]: https://github.com/rust-bitcoin/rust-lightning
+
+{% comment %}<!-- deprecated links; don't use these any more -->{% endcomment %}
+{% assign pagedate_epoch = page.date | date: '%s' %}
+{% assign deprecated_links_v0_epoch = '2020-09-24' | date: '%s' %}
+{% if pagedate_epoch < deprecated_links_v0_epoch %}
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395
+[cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
+[cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
+[eltoo]: https://blockstream.com/eltoo.pdf
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
+[hwi]: https://github.com/bitcoin-core/HWI
 [miniscript]: /en/topics/miniscript/
 [musig]: https://eprint.iacr.org/2018/068
 {% assign _link_descriptors = 'https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md' %}
+[descriptor]: {{_link_descriptors}}
 [output script descriptor]: {{_link_descriptors}}
 [output script descriptors]: {{_link_descriptors}}
-[rust-lightning repo]: https://github.com/rust-bitcoin/rust-lightning
+{% endif %}
 
 {% comment %}<!-- BIPs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
