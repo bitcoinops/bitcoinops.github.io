@@ -59,7 +59,7 @@ layout: post
       {% assign bold='' %}
     {% endif %}
     {% include functions/get-mention-date.md %}
-    {% capture references %}{{references}}{{newline}}- {{date}} [{{mention.title}}]({{mention.url}}){{bold}}ENDENTRY{% endcapture %}
+    {% capture references %}{{references}}{{date}}- [{{mention.title}}]({{mention.url}}){{bold}}ENDENTRY{% endcapture %}
   {% endfor %}
 
   <!-- Build list of see also entries -->
@@ -94,7 +94,15 @@ layout: post
   {%- if page.optech_mentions and page.optech_mentions != '' -%}
     ## Optech newsletter and website mentions
 
-    {{ references | split: 'ENDENTRY' | sort | reverse}}
+    {% assign sorted_references = references | split: 'ENDENTRY' | sort | reverse %}
+    {%- for reference in sorted_references -%}
+      {%- assign current_ref_year = reference | slice: 0, 4 -%}
+      {%- if current_ref_year != last_ref_year -%}
+        {{newline}}{{newline}}**{{current_ref_year}}**
+      {%- endif -%}
+      {{newline}}{{reference | slice: 10, 9999999999 }}
+      {%- assign last_ref_year = current_ref_year -%}
+    {%- endfor -%}
   {% endif %}{{newline}}{{newline}}
 
   {%- if page.see_also and page.see_also != '' -%}
