@@ -54,6 +54,21 @@ translation PRs are opened within a week of the original newsletter being
 published for new newsletters. That said, we also encourage translation of
 older newsletters and blog posts as well.
 
+### Reviewing changes to the website generation code
+
+When reviewing changes to the Jekyll code that generates the website, it's useful to compare
+the generated website before and after the change. To do so, you can run the following commands:
+
+```bash
+git checkout $reviewbranch  # Checkout the branch that you want to review
+rm -rf _site.bak  # Remove the backup site directory if it exists
+JEKYLL_ENV=local make build  # Do a clean build of the site to the _site directory. The local env is to remove the 'updated' field which causes irrelevant diffs
+mv _site _site.bak  # Rename the generated site directory
+git checkout master  # Checkout the base branch
+JEKYLL_ENV=local make build  # Do a clean build of the site to the _site directory
+diff -ruN _site _site.bak  # Compare the generated sites (-r for recursive, -u for unified, -N for new file)
+```
+
 ## Compatibility Matrix Data
 
 The compatibility matrix section of the website is built from
