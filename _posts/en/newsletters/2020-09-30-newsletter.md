@@ -8,7 +8,9 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter describes a compiler bug that casts doubt on the
-safety of secure systems and includes our regular sections with popular
+safety of secure systems and explains a technique that can be used to more
+efficiently verify ECDSA signatures in Bitcoin. Also included are our regular
+sections with popular
 questions and answers from the Bitcoin StackExchange, announcements of
 releases and release candidates, and summaries of notable changes to
 popular Bitcoin infrastructure software.
@@ -56,6 +58,36 @@ popular Bitcoin infrastructure software.
     As of this writing, developers have tested Bitcoin Core 0.20.1 and
     not found any direct problems.  If any noteworthy problems are found
     in other software, we'll provide an update in a future newsletter.
+
+- **US Patent 7,110,538 has expired:** Bitcoin transactions are secured using
+  [ECDSA][] (the _Elliptic Curve Digital Signature Algorithm_). Verifying
+  signatures involves multiplying points on the elliptic curve by scalars.
+  Typically, each transaction input requires one or more signature verifications,
+  meaning that syncing the Bitcoin block chain can require many millions of these
+  elliptic curve point multiplications. Any technique to make point
+  multiplications more efficient therefore has the potential to significantly
+  speed up Bitcoin Core's initial sync.
+
+    In a [2011 bitcointalk post][finney endomorphism], Hal Finney described a
+    method by Gallant, Lambert and Vanstone (GLV) to
+    efficiently compute elliptic curve point multiplications using an
+    [endomorphism][] on the curve (a mapping from the curve to itself which
+    preserves all relationships between points). By using this GLV endomorphism,
+    the multiplication can be broken into two parts, which are calculated
+    simultaneously to arrive at the solution. Doing this can reduce the
+    number of expensive computations by up to 33%. Finney wrote a proof-of-concept
+    implementation of the GLV endomorphism, which he claimed sped up signature
+    verification by around 25%.
+
+    Pieter Wuille separately implemented the GLV endomorphism algorithm
+    in the [libsecp256k1][libsecp] library, which is used to verify signatures in Bitcoin Core.
+    However, the algorithm was encumbered by [U.S. Patent 7,110,538][endomorphism
+    patent] and so to avoid any legal uncertainty, the implementation has not previously been
+    distributed to users. On September 25, the patent expired, removing that legal
+    uncertainty.
+    [A PR has been opened in the libsecp256k1 repo][endomorphism PR] to
+    always use the GLV endomorphism algorithm, which is expected to decrease
+    Bitcoin Core's initial sync time significantly.
 
 ## Selected Q&A from Bitcoin StackExchange
 
@@ -129,3 +161,9 @@ release candidates.*
 [gcc bug]: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=95189
 [irc memcmp]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2020/bitcoin-core-dev.2020-09-24-19.02.log.html#l-18
 [oconnor blog]: http://r6.ca/blog/20200929T023701Z.html
+[ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
+[finney endomorphism]: https://bitcointalk.org/index.php?topic=3238.msg45565#msg45565
+[endomorphism]: https://en.wikipedia.org/wiki/Endomorphism
+[endomorphism patent]: https://patents.google.com/patent/US7110538B2/en
+[libsecp]: https://github.com/bitcoin-core/secp256k1
+[endomorphism pr]: https://github.com/bitcoin-core/secp256k1/pull/826
