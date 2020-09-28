@@ -144,7 +144,13 @@ release candidates.*
   the signet defined by the `-signetchallenge` and `-signetseednode`
   parameters.
 
-- [Bitcoin Core #19572][] ZMQ: Create "sequence" notifier, enabling client-side mempool tracking FIXME:dongcarl
+- [Bitcoin Core #19572][] adds a new "sequence" [ZMQ][bitcoin ZMQ] topic that
+  notifies subscribers when blocks are connected/disconnected and when
+  transactions are added/removed from the mempool. Transaction addition/removal
+  notification messages include a "mempool sequence number" that subscribers can
+  use to determine the order in which these additions/removals occurred and to
+  cross-reference with `getrawmempool` RPC results, which now also include this
+  new field.
 
 - [C-Lightning #4068][] and [#4078][C-Lightning #4078] update
   C-Lightning's signet implementation to be compatible with the final
@@ -184,3 +190,4 @@ release candidates.*
 [libsecp]: https://github.com/bitcoin-core/secp256k1
 [endomorphism pr]: https://github.com/bitcoin-core/secp256k1/pull/826
 [bitcoin p2p messages]: https://developer.bitcoin.org/reference/p2p_networking.html
+[bitcoin ZMQ]: https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md
