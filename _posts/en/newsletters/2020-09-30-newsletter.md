@@ -100,7 +100,23 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is the history of nLockTime in Bitcoin Core?]({{bse}}90229)
+  Reviewing older versions of Bitcoin Core's source code, Martin Harrigan asks
+  for clarification on whether height-based or time-based nLockTime features
+  were added first and what fork implications that had. Pieter Wuille and David A. Harding
+  confirm height-based logic came first and give some interesting historical insights.
+
+- [Is there any other P2P protocol in use besides a "Gossip protocol"?]({{bse}}99131)
+  Murch outlines the different communication protocols used in the Bitcoin
+  ecosystem including [Bitcoin's P2P protocol][bitcoin p2p messages], mining
+  protocols like FIBRE and stratum, LN-related protocols, as well as multiparty
+  coordination protocols like [payjoin][topic payjoin].
+
+- [Why do Anchor Outputs need to enforce an nSequence of 1?]({{bse}}98848)
+  Dalit Sairio asks about [anchor outputs][topic anchor outputs] and the
+  necessity of the `OP_CHECKSEQUENCEVERIFY` (CSV) addition to LN scripts. User
+  darosior describes the concerns around [CPFP carve-out][topic cpfp carve out]
+  and why the delay of 1 block is needed.
 
 ## Releases and release candidates
 
@@ -167,3 +183,4 @@ release candidates.*
 [endomorphism patent]: https://patents.google.com/patent/US7110538B2/en
 [libsecp]: https://github.com/bitcoin-core/secp256k1
 [endomorphism pr]: https://github.com/bitcoin-core/secp256k1/pull/826
+[bitcoin p2p messages]: https://developer.bitcoin.org/reference/p2p_networking.html
