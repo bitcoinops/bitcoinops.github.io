@@ -24,9 +24,9 @@ To build the site, you need to go through a one-time installation
 procedure that takes 15 to 30 minutes.  After that you can build the
 site an unlimited number of times with no extra work.
 
-##### Install The Dependencies
+##### Installing The Dependencies
 
-**Install RVM**
+**Installing RVM**
 
 Install RVM using either the [easy instructions](https://rvm.io/) or the
 [more secure instructions](https://rvm.io/rvm/security).
@@ -37,7 +37,7 @@ following command:
 
     source ~/.rvm/scripts/rvm
 
-**Install Ruby**
+**Installing Ruby**
 
 To install Ruby 2.6.4, simply run this command:
 
@@ -61,14 +61,14 @@ described below before you can build the site. If you ever receive a
 "eval: bundle: not found" error, you failed to re-run `gem install
 bundle`.)
 
-**Install Bundle**
+**Installing Bundle**
 
 When you used RVM to install Ruby, it also installed the `gem` program.
 Use that program to install bundle:
 
     gem install bundle
 
-**Install the Ruby dependencies**
+**Installing Ruby dependencies**
 
 Change directory to the top-level of your local repository (replace
 `bitcoinops.github.io` with the full path to your local repository clone):
