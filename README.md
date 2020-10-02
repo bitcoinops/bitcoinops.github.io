@@ -18,15 +18,15 @@ founding sponsors and contributions from member companies.
 If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
 contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
-## Building The Site Locally
+## BUILDING THE SITE LOCALLY
 
 To build the site, you need to go through a one-time installation
 procedure that takes 15 to 30 minutes.  After that you can build the
 site an unlimited number of times with no extra work.
 
-##### Install The Dependencies
+##### INSTALL THE DEPENDANCIES
 
-**Install RVM**
+**INSTALL RVM**
 
 Install RVM using either the [easy instructions](https://rvm.io/) or the
 [more secure instructions](https://rvm.io/rvm/security).
@@ -37,7 +37,7 @@ following command:
 
     source ~/.rvm/scripts/rvm
 
-**Install Ruby**
+**INSTALL Ruby**
 
 To install Ruby 2.6.4, simply run this command:
 
@@ -61,14 +61,14 @@ described below before you can build the site. If you ever receive a
 "eval: bundle: not found" error, you failed to re-run `gem install
 bundle`.)
 
-**Install Bundle**
+**INSTALL BUNDALL**
 
 When you used RVM to install Ruby, it also installed the `gem` program.
 Use that program to install bundle:
 
     gem install bundle
 
-**Install the Ruby dependencies**
+**INSTALL THE RUBY DEPENDENCIES**
 
 Change directory to the top-level of your local repository (replace
 `bitcoinops.github.io` with the full path to your local repository clone):
@@ -84,7 +84,7 @@ patient.
 
 Once Bundle completes successfully, you can preview or build the site.
 
-##### Preview The Site
+##### PREVIEW THE SITE
 
 To preview the website in your local browser, make sure you're in the
 `bitcoinops.github.io` directory and run the following command:
@@ -98,7 +98,7 @@ This will build the site and then print a message like this:
 
 Visit the indicated URL in your browser to view the site.
 
-##### Build The Site
+##### BUILD THE SITE
 
 To build the site exactly like we do for the deployment server, make
 sure you're in the `bitcoinops.github.io` directory and run:
@@ -108,7 +108,7 @@ sure you're in the `bitcoinops.github.io` directory and run:
 The resulting HTML for the entire site will be placed in the `_site`
 directory and various tests will be run.
 
-## Contributing
+## CONTRIBUTING
 
 If you would like to contribute to the Bitcoin Optech project, please review the
 [contributing guidelines](CONTRIBUTING.md).
