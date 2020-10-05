@@ -126,6 +126,9 @@ optech_mentions:
   - title: "BIPs #955 updates BIP174 PSBT to standardize supplying hash preimages"
     url: /en/newsletters/2020/08/26/#bips-955
 
+  - title: Joinmarket 0.7.0 adds support for PSBTs
+    url: /en/newsletters/2020/09/23/#joinmarket-0-7-0-adds-bip78-psbt
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

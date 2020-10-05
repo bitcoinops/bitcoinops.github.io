@@ -49,6 +49,9 @@ optech_mentions:
   - title: Initial release of Lily Wallet supports HWI
     url: /en/newsletters/2020/07/22/#lily-wallet-initial-release
 
+  - title: "HWI #363 adds support for Bitbox02 hardware wallet"
+    url: /en/newsletters/2020/09/09/#hwi-363
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

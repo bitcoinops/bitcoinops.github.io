@@ -82,6 +82,12 @@ optech_mentions:
   - title: "Bitcoin Core 0.20 released with asmap feature to improve eclipse resistance"
     url: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
 
+  - title: "Bitcoin Core #19670 reserves inbound slots for block-relay-only peers"
+    url: /en/newsletters/2020/09/09/#bitcoin-core-19670
+
+  - title: "CVE-2018-17145 InvDoS attack could've been used to eclipse nodes"
+    url: /en/newsletters/2020/09/16/#inventory-out-of-memory-denial-of-service-attack-invdos
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

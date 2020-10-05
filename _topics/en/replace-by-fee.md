@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Bitcoin Core #16373 allows the bumpfee RPC used for RBF to return a PSBT"
     url: /en/newsletters/2020/01/15/#bitcoin-core-16373
 
+  - title: "C-Lightning #3870 implements RBF scorched earth for penalty transactions"
+    url: /en/newsletters/2020/09/16/#c-lightning-3870
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

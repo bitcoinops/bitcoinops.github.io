@@ -129,6 +129,9 @@ optech_mentions:
   - title: "Discussion of various topics, including taproot activation"
     url: /en/newsletters/2020/08/05/#sydney-meetup-discussion
 
+  - title: Discussion about taproot activation parameters
+    url: /en/newsletters/2020/09/02/#taproot-activation
+
 ## Optional
 see_also:
   - title: MAST

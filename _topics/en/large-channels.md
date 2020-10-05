@@ -98,6 +98,9 @@ optech_mentions:
   - title: "LND 0.11.0-beta released with support for large channels by default"
     url: /en/newsletters/2020/08/26/#lnd-0-11-0-beta
 
+  - title: "LND #4567 adds a new `--maxchansize` parameter for large channels"
+    url: /en/newsletters/2020/09/23/#lnd-4567
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

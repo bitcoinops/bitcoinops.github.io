@@ -244,6 +244,9 @@ optech_mentions:
     url: /en/newsletters/2019/02/26/#taproot-and-scriptless-scripts-both-use-schnorr-but-how-are-they-different
     date: 2019-02-26
 
+  - title: "Using signature adaptors for witness asymmetric payment channels"
+    url: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

@@ -29,6 +29,8 @@ extended_summary: |
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: BIP325
+
     - title: Signet
       link: https://en.bitcoin.it/wiki/Signet
 
@@ -67,6 +69,21 @@ optech_mentions:
 
   - title: Will the availability of signet eliminate the need for a new testnet?
     url: /en/newsletters/2020/08/26/#will-there-be-a-testnet4-or-do-we-not-need-a-testnet-reset-once-we-have-signet
+
+  - title: Discussion about the parameters for a default signet
+    url: /en/newsletters/2020/09/02/#default-signet-discussion
+
+  - title: Discussion about the design decisions for signet
+    url: /en/newsletters/2020/09/02/#signet
+
+  - title: "BIPs #983 updates BIP325 to omit signet commitments when unnecessary"
+    url: /en/newsletters/2020/09/09/#bips-983
+
+  - title: "Bitcoin Core #18267 and #19993 add support for signet"
+    url: /en/newsletters/2020/09/30/#bitcoin-core-18267
+
+  - title: "C-Lightning #4068 and #4078 update C-Lightning’s signet implementation"
+    url: /en/newsletters/2020/09/30/#c-lightning-4068
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

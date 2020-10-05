@@ -78,6 +78,12 @@ optech_mentions:
   - title: Using attacks such as transaction pinning against eltoo
     url: /en/newsletters/2020/08/12/#discussion-about-eltoo-and-sighash-anyprevout
 
+  - title: Pinning attacks against a coinswap protocol
+    url: /en/newsletters/2020/09/09/#continued-coinswap-discussion
+
+  - title: "Transaction fee sponsorship proposal to attempt to eliminate pinning"
+    url: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
