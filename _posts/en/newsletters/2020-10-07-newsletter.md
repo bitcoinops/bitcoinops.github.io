@@ -79,7 +79,12 @@ release candidates.*
 
 - [Bitcoin Core #19898][] log: print unexpected version warning in validation log category FIXME:jonatack
 
-- [Bitcoin Core #15367][] feature: Added ability for users to add a startup command FIXME:dongcarl
+- [Bitcoin Core #15367][] adds a `-startupnotify` configuration parameter that accepts
+  a shell command to be executed after Bitcoin Core has finished its
+  initialization and is ready to handle enabled interfaces (ZMQ,
+  REST, JSON-RPC, etc). This can be used to directly start programs/daemons
+  dependent on Bitcoin Core's interfaces, or to notify init systems (e.g.
+  systemd) that dependent programs/daemons can be safely started.
 
 - [Bitcoin Core #19723][] changes the way unknown P2P protocol messages
   are handled.  Previously the node penalized peers who sent unknown
