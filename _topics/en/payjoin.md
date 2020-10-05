@@ -59,6 +59,9 @@ optech_mentions:
   - title: Wasabi adds support for BIP78 payjoin
     url: /en/newsletters/2020/08/19/#wasabi-adds-support-for-payjoin
 
+  - title: Joinmarket 0.7.0 adds support for BIP78 payjoin
+    url: /en/newsletters/2020/09/23/#joinmarket-0-7-0-adds-bip78-psbt
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

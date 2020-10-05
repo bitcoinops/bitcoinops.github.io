@@ -104,6 +104,21 @@ optech_mentions:
   - title: "BOLTs #688 adds support for anchor outputs to the LN protocol"
     url: /en/newsletters/2020/08/26/#bolts-688
 
+  - title: "LND #4558 updates LND to the latest anchor outputs specification"
+    url: /en/newsletters/2020/09/16/#lnd-4558
+
+  - title: "LND #4606 & #4592 improve LND's effectiveness at fee bumping anchor outputs"
+    url: /en/newsletters/2020/09/23/#lnd-4606
+
+  - title: Why do anchor outputs need to enforce an nSequence of 1?
+    url: /en/newsletters/2020/09/30/#why-do-anchor-outputs-need-to-enforce-an-nsequence-of-1
+
+  - title: "Eclair #1501 adds support for unilateral closes of channels using anchors"
+    url: /en/newsletters/2020/09/30/#eclair-1501
+
+  - title: "LND #4576 starts adding support for anchor outputs to LND’s watchtower"
+    url: /en/newsletters/2020/09/30/#lnd-4576
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

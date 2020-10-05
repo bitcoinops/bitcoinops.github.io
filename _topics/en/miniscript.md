@@ -56,6 +56,9 @@ optech_mentions:
   - title: "PSBT specification updated to improve miniscript compatibility"
     url: /en/newsletters/2020/08/26/#bips-955
 
+  - title: "Miniscript to warn or fail for safety when mixed time/height locks used"
+    url: /en/newsletters/2020/09/23/#research-into-conflicts-between-timelocks-and-heightlocks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

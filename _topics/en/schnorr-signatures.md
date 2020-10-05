@@ -98,6 +98,12 @@ optech_mentions:
   - title: Proposal to update BIP340 schnorr signatures to use evenness tiebreaker
     url: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
 
+  - title: "BIPs #982 updates BIP340 to consistently use evenness tiebreaker"
+    url: /en/newsletters/2020/09/02/#bips-982
+
+  - title: "Libsecp256k1 #558 implements schnorr signature verification and signing"
+    url: /en/newsletters/2020/09/16/#libsecp256k1-558
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
