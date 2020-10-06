@@ -77,7 +77,13 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19898][] log: print unexpected version warning in validation log category FIXME:jonatack
+- [Bitcoin Core #19898][] changes the "unexpected version" warnings in the debug
+  log to be printed only when the validation log category is set, rather than
+  unconditionally. Originally designed to alarm users that miners and users
+  might be coordinating a soft fork activation using BIP9 versionbits, these
+  frequent warnings had become spurious and were both unactionable and a
+  source of unnecessary confusion for users. See [Newsletter #36][news36
+  pr15471] for more information.
 
 - [Bitcoin Core #15367][] adds a `-startupnotify` configuration parameter that accepts
   a shell command to be executed after Bitcoin Core has finished its
@@ -181,6 +187,7 @@ release candidates.*
 [lnd psbt.md]: https://github.com/guggero/lnd/blob/84dfed3fe2d28ceda343944874ab47fb57b73515/docs/psbt.md
 [news54 bech32 signing]: /en/bech32-sending-support/#message-signing-support
 [news109 signet bip]: /en/newsletters/2020/08/05/#bips-947
+[news36 pr15471]: /en/newsletters/2019/03/05/#bitcoin-core-15471
 [news111 pre-verack]: /en/newsletters/2020/08/19/#proposed-bip-for-p2p-protocol-feature-negotiation
 [alm signmessage]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018218.html
 [news92 lnd psbt]: /en/newsletters/2020/04/08/#lnd-4079
