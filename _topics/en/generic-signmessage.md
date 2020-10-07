@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Simplified BIP322, only allowing signatures from one script per proof"
     url: /en/newsletters/2020/05/06/#bips-903
 
+  - title: Alternative proposal for generic signmessage using virtual transactions
+    url: /en/newsletters/2020/10/07/#alternative-to-bip322-generic-signmessage
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

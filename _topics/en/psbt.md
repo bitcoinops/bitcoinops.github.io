@@ -129,6 +129,9 @@ optech_mentions:
   - title: Joinmarket 0.7.0 adds support for PSBTs
     url: /en/newsletters/2020/09/23/#joinmarket-0-7-0-adds-bip78-psbt
 
+  - title: "LND #4389 adds a new `psbt` wallet subcommand for creating & signing PSBTs"
+    url: /en/newsletters/2020/10/07/#lnd-4389
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
