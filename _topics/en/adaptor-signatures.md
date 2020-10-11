@@ -247,6 +247,9 @@ optech_mentions:
   - title: "Using signature adaptors for witness asymmetric payment channels"
     url: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 
+  - title: Revised witness asymmetric channels proposal with signature adaptors
+    url: /en/newsletters/2020/10/14/#updated-witness-asymmetric-payment-channel-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
