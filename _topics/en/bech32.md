@@ -60,6 +60,9 @@ optech_mentions:
   - title: Proposed updates to BIP173 bech32 to address mutability concerns
     url: /en/newsletters/2020/07/22/#bech32-address-updates
 
+  - title: Discussion about updates to BIP173 bech32 to address mutability concerns
+    url: /en/newsletters/2020/10/14/#bech32-addresses-for-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

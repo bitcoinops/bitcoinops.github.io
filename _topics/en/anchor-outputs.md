@@ -119,6 +119,9 @@ optech_mentions:
   - title: "LND #4576 starts adding support for anchor outputs to LND’s watchtower"
     url: /en/newsletters/2020/09/30/#lnd-4576
 
+  - title: Eclair 0.4.2 adds experimental support for anchor outputs
+    url: /en/newsletters/2020/10/14/#eclair-0-4-2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

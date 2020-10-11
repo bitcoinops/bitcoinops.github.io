@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Eclair #1485 adds support for keysend spontaneous payments"
     url: /en/newsletters/2020/07/29/#eclair-1485
 
+  - title: Eclair 0.4.2 adds support for keysend-style spontaneous payments
+    url: /en/newsletters/2020/10/14/#eclair-0-4-2
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
