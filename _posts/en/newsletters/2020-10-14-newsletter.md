@@ -204,7 +204,13 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19954][] Complete the BIP155 implementation and upgrade to TORv3  FIXME:adamjonas
+- [Bitcoin Core #19954][] completes the [BIP155][] implementation, also referred
+  to as [addr v2][topic addr v2]. As previously covered in
+  [Newsletter #110][news110 addrv2], this upgrade supports Tor v3 and makes it
+  possible to add support for I2P and other networks with longer endpoint
+  addresses that do not fit in the 16 bytes/128 bits of Bitcoin’s current addr
+  message. Tor v2 was [deprecated][tor v3 retirement schedule] in September
+  2020 and will be obsolete in July 2021.
 
 - [Eclair #1537][] extends the `sendtoroute` API call to allow specifying a
   list of channel IDs for the payment with the `--shortChannelIds` flag. This
@@ -237,3 +243,5 @@ release candidates.*
 [signet difficulty]: https://bitcoincore.reviews/18267#l-485
 [news117 signet]: /en/newsletters/2020/09/30/#bitcoin-core-18267
 [nbits]: https://btcinformation.org/en/developer-reference#target-nbits
+[tor v3 retirement schedule]: https://blog.torproject.org/v2-deprecation-timeline#:~:text=retirement
+[news110 addrv2]: /en/newsletters/2020/08/12/#bitcoin-core-pr-review-club
