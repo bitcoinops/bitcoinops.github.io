@@ -85,6 +85,9 @@ optech_mentions:
   - title: "C-Lightning #4068 and #4078 update C-Lightning’s signet implementation"
     url: /en/newsletters/2020/09/30/#c-lightning-4068
 
+  - title: Summary of Bitcoin Core PR Review Meeting on adding signet support
+    url: /en/newsletters/2020/10/14/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

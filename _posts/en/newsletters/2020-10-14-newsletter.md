@@ -123,12 +123,62 @@ changes to popular Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jnewbery or jonatack
+[BIP-325: Signet][review club #18267] is a PR ([#18267][Bitcoin Core #18267]) by
+Kalle Alm that implements a new kind of Bitcoin test network. The PR has since
+been merged (see [Newsletter #117][news117 signet]), and the upcoming v0.21
+release will support [signet][topic signet].
+
+The review club discussion covered general concepts before diving into the
+deeper technical aspects. Participants with good answers were rewarded with
+signet coins. Here is a mini-quiz on general signet concepts:
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/19339#l-FIXME"
+  q0="What is signet?"
+  a0="Signet is defined by [BIP325][bip325] and is a mechanism to build
+      stable, centralized, and custom proof-of-work networks.  It's also
+      the name of a specific global testnet."
+  a0link="https://bitcoincore.reviews/18267#l-94"
+
+  q1="Is signet intended to replace existing Bitcoin testing networks like
+      testnet or regtest?"
+  a1="They are complementary. Signet was conceived as a centralized, stable
+      improvement for cases where the current testnet isn't ideal."
+
+  q2="What problems do we have with the current testnet?"
+  a2="Testnet is unreliable due to disruptive reorgs, highly variable
+      block production, and a skewed incentive model: testnet coins don't have
+      value, but testnet mining is not free and the difficulty fluctuates."
+  a2link="https://bitcoincore.reviews/18267#l-149"
+
+  q3="What is the difference between signet and regtest (Bitcoin Core's
+      regression test framework)?"
+  a3="Regtest is a sandboxed environment with entirely manual network topology
+      and block generation that is suitable for local testing, but its
+      permissionless nature that allows anyone to mine means that regtest
+      cannot be used publicly with third-party peers in a stable fashion. Signet
+      is an actual network with public nodes, suitable for testing network
+      effects like finding peers, transaction selection, and transaction and
+      block propagation."
+
+  q4="What is the default signet challenge script in the PR?"
+  a4="Multisig 1-of-2 addresses. This may be modified with the `-signetchallenge`
+      configuration option."
+  a4link="https://bitcoincore.reviews/18267#l-252"
+
+  q5="In the `CreateGenesisBlock()` method, which parameter determines the
+      difficulty?"
+  a5="Difficulty is set by the [nBits][] parameter, a custom compressed
+      representation of the proof of work target whose human-readable representation is
+      difficulty."
+  a5link="https://bitcoincore.reviews/18267#l-474"
+
+  q6="Is the difficulty for the signet genesis block lower than the difficulty
+      for the mainnet genesis block?"
+  a6="Yes, signet has a higher default `nBits` and therefore a lower difficulty target:
+      [mainnet 1d00ffff, signet 1e0377ae][compare difficulty].
+      However, it's just a minimum target; the signer
+      [may set it to be higher][signet difficulty]."
+  a6link="https://bitcoincore.reviews/18267#l-481"
 %}
 
 ## Releases and release candidates
@@ -164,7 +214,7 @@ release candidates.*
   enough (e.g. when consolidating and rebalancing channels).
 
 {% include references.md %}
-{% include linkers/issues.md issues="19954,1537" %}
+{% include linkers/issues.md issues="19954,1537,18267" %}
 [hwi 1.2.0]: https://github.com/bitcoin-core/HWI/releases/tag/1.2.0
 [eclair 0.4.2]: https://github.com/ACINQ/eclair/releases/tag/v0.4.2
 [lnd warning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002819.html
@@ -182,3 +232,8 @@ release candidates.*
 [news113 witasym]: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 [fournier v2]: https://github.com/LLFourn/witness-asymmetric-channel
 [wuille new bech32]: https://gist.github.com/sipa/a9845b37c1b298a7301c33a04090b2eb#improving-detection-of-insertion-errors
+[bip325]: https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki
+[compare difficulty]: https://bitcoincore.reviews/18267#l-478
+[signet difficulty]: https://bitcoincore.reviews/18267#l-485
+[news117 signet]: /en/newsletters/2020/09/30/#bitcoin-core-18267
+[nbits]: https://btcinformation.org/en/developer-reference#target-nbits
