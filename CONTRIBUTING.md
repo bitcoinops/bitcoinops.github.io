@@ -7,7 +7,26 @@ pull request for the newsletter is opened the Saturday before publishing. Any
 review of the newsletter PRs is appreciated. However, feedback received after
 Tuesday UTC may not be incorporated due to time constraints.
 
-### Translations
+## Topics pages
+
+New [topics pages](https://bitcoinops.org/en/topics) are added periodically. Additionally,
+new links are added to the existing topics pages every week in the same pull request
+as for that week's newsletter. These new topics links can be reviewed on the netlify preview, or
+you may find it more efficient to simply look at the diff and review the links locally. To do
+that:
+
+- Checkout the branch locally.
+- Run `make preview` in one terminal, to serve the site locally on port 4000.
+- In another terminal, run:
+
+  `git diff master _topics/ | sed "s'url: /'url: http://localhost:4000/'" | colordiff | less -r`
+
+  This converts the relative links in the topics page to absolute links to the
+  locally hosted preview. `colordiff` makes it easier to see the changed lines
+  and can be dropped from the command if you don't have it installed.
+- Click on each link to verify that they're correctly formed.
+
+## Translations
 
 The Bitcoin Optech website supports multiple languages for both newsletters and
 blog posts. If you are interested in contributing translations for the
@@ -54,7 +73,7 @@ translation PRs are opened within a week of the original newsletter being
 published for new newsletters. That said, we also encourage translation of
 older newsletters and blog posts as well.
 
-### Reviewing changes to the website generation code
+## Reviewing changes to the website generation code
 
 When reviewing changes to the Jekyll code that generates the website, it's useful to compare
 the generated website before and after the change. To do so, you can run the following commands:
