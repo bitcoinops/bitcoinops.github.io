@@ -9,21 +9,25 @@ Tuesday UTC may not be incorporated due to time constraints.
 
 ## Topics pages
 
-New [topics pages](https://bitcoinops.org/en/topics) are added periodically. Additionally,
+New topics pages are added to https://bitcoinops.org/en/topics periodically. Additionally,
 new links are added to the existing topics pages every week in the same pull request
-as for that week's newsletter. These new topics links can be reviewed on the netlify preview, or
-you may find it more efficient to simply look at the diff and review the links locally. To do
-that:
+as for that week's newsletter. The most efficient way to review the changes is to look
+at the diff and verify that the links work. You can check the links locally or on the
+netlify preview:
 
 - Checkout the branch locally.
-- Run `make preview` in one terminal, to serve the site locally on port 4000.
+- (If testing locally) run `make preview` in one terminal, to serve the site locally on port 4000.
 - In another terminal, run:
 
-  `git diff master _topics/ | sed "s'url: /'url: http://localhost:4000/'" | colordiff | less -r`
+  `PR_NUMBER=474; BASEURL="https://deploy-preview-$PR_NUMBER--bitcoinops.netlify.app/" ; git diff master _topics/ | sed "s'url: /'url: ${BASEURL:-http://localhost:4000/}'" | colordiff | less -r`
+  (for a remote preview, changing `PR_NUMBER` to the number of the PR).
 
-  This converts the relative links in the topics page to absolute links to the
-  locally hosted preview. `colordiff` makes it easier to see the changed lines
-  and can be dropped from the command if you don't have it installed.
+  `BASEURL="" ; git diff master _topics/ | sed "s'url: /'url: ${BASEURL:-http://localhost:4000/}'" | colordiff | less -r`
+  (for a local preview)
+
+  This converts the relative links in the topics page to absolute links.
+  `colordiff` makes it easier to see the changed lines and can be dropped from
+  the command if you don't have it installed.
 - Click on each link to verify that they're correctly formed.
 
 ## Translations
