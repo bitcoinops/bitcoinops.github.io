@@ -9,11 +9,14 @@ Tuesday UTC may not be incorporated due to time constraints.
 
 ## Topics pages
 
-New topics pages are added to https://bitcoinops.org/en/topics periodically. Additionally,
-new links are added to the existing topics pages every week in the same pull request
-as for that week's newsletter. The most efficient way to review the changes is to look
-at the diff and verify that the links work. You can check the links locally or on the
-netlify preview:
+New topics pages are added to https://bitcoinops.org/en/topics periodically.
+If you are interested in writing a new topic page, please contact the Optech
+maintainers.
+
+Additionally, new links are added to the existing topics pages every week in
+the same pull request as for that week's newsletter. The most efficient way
+to review the changes is to look at the diff and verify that the links work.
+You can check the links locally or on the netlify preview:
 
 - Checkout the branch locally.
 - (If testing locally) run `make preview` in one terminal, to serve the site locally on port 4000.
