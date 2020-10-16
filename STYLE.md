@@ -9,7 +9,7 @@ The first letter of a proper noun is always capitalized.
 - Bitcoin (the network)
 - MuSig (the pubkey and signature aggregation scheme. Don't refer to Musig, muSig or musig)
 - Script (when referring to the Bitcoin scripting language)
-  - use script (no capitalization) when referring to an indvidual script
+  - use script (no capitalization) when referring to an individual script
 - True/False when referring to boolean arguments in plain text (eg
   "set foo to True").
   - use whatever capitalization is appropriate when used in code (eg
