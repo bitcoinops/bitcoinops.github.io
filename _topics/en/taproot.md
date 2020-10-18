@@ -132,6 +132,9 @@ optech_mentions:
   - title: Discussion about taproot activation parameters
     url: /en/newsletters/2020/09/02/#taproot-activation
 
+  - title: "Bitcoin Core #19953 merged with consensus implementation of BIP341"
+    url: /en/newsletters/2020/10/21/#bitcoin-core-19953
+
 ## Optional
 see_also:
   - title: MAST

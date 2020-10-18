@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Bitcoin Core #16902 fixes an inefficiency in OP_IF related opcodes"
     url: /en/newsletters/2020/03/18/#bitcoin-core-16902
 
+  - title: "Bitcoin Core #19953 merged with consensus implementation of BIP342"
+    url: /en/newsletters/2020/10/21/#bitcoin-core-19953
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
