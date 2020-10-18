@@ -74,6 +74,9 @@ optech_mentions:
   - title: Presentations and discussions about musig-style multiparty signatures
     url: /en/newsletters/2020/07/01/#schnorr-signatures-and-multisignatures
 
+  - title: MuSig2 paper published
+    url: /en/newsletters/2020/10/21/#musig2-paper-published
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

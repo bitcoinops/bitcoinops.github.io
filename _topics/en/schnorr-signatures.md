@@ -104,6 +104,9 @@ optech_mentions:
   - title: "Libsecp256k1 #558 implements schnorr signature verification and signing"
     url: /en/newsletters/2020/09/16/#libsecp256k1-558
 
+  - title: "Bitcoin Core #19953 merged with consensus implementation of BIP340"
+    url: /en/newsletters/2020/10/21/#bitcoin-core-19953
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
