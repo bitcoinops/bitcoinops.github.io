@@ -119,7 +119,31 @@ to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BlueWallet adds Payjoin:**
+  [Payjoin][topic payjoin] support (BIP78) has been added in BlueWallet's latest
+  [v5.6.1 release][bluewallet payjoin] for both desktop and mobile.
+
+- **Bitfinex supports wumbo channels:**
+  As an [early supporter of Lightning][news77 bitfinex lightning], Bitfinex has
+  now [added the ability][bitfinex wumbo blog] to deposit and withdraw large amounts of bitcoin via
+  [wumbo (large) LN channels][topic large channels].
+
+- **Esplora C-Lightning plugin released:**
+  Luca Vaccaro has released an [initial version][github esplora clnd plugin] of
+  an Esplora C-Lightning plugin that fetches Bitcoin data from the [block
+  explorer][topic block explorers] instead of a local `bitcoind` node.
+
+- **Coinfloor supports bech32:**
+  After recently announcing support for bech32 withdrawal (send) support,
+  Coinfloor has now also announced [bech32 deposit (receive) support][coinfloor bech32 blog].
+
+- **Bisq supports bech32:**
+  Peer-to-peer Bitcoin exchange software Bisq has implemented bech32 send and
+  receive support in the latest [1.4.1 version][bisq bech32].
+
+- **Unchained Capital supports PSBT:**
+  In a [blog post][unchained capital psbt blog], Unchained outlines their
+  support for [PSBT][topic psbt] and the Coldcard hardware wallet.
 
 ## Notable code and documentation changes
 
@@ -225,3 +249,10 @@ FIXME:bitschmidty
 [musig-dn]: https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6
 [composable musig in ln]: /en/newsletters/2019/12/04/#composable-musig
 [news60 permissions]: /en/newsletters/2019/08/21/#bitcoin-core-16248
+[bluewallet payjoin]: https://github.com/BlueWallet/BlueWallet/releases/tag/v5.6.1
+[news77 bitfinex lightning]: /en/newsletters/2019/12/18/#bitfinex-supports-ln-deposits-and-withdrawals
+[bitfinex wumbo blog]: https://blog.bitfinex.com/trading/bitfinex-supports-the-lightning-networks-wumbo-channels/
+[github esplora clnd plugin]: https://github.com/lvaccaro/esplora_clnd_plugin/releases/tag/v0.1
+[coinfloor bech32 blog]: https://coinfloor.co.uk/hodl/2020/10/09/upgrades-to-btc-deposits/
+[bisq bech32]: https://github.com/bisq-network/bisq/releases/tag/v1.4.1
+[unchained capital psbt blog]: https://unchained-capital.com/blog/now-coldcard/
