@@ -20,7 +20,51 @@ to popular Bitcoin infrastructure software.
 
 ## News
 
-- MuSig2 FIXME:jnewbery
+- **MuSig2 paper published:** Jonas Nick, Tim Ruffing and Yannick Seurin
+  published [the MuSig2 paper][musig 2 paper] describing a new variant of the
+  [MuSig][topic musig] signature scheme with a two round signing protocol.
+
+    MuSig is a signature scheme that allows multiple signers to create an
+    aggregate public key derived from their individual private keys, and then
+    collaborate to create a single valid signature for that public key. The
+    aggregate public key and signature are indistinguishable from any other
+    [schnorr][topic schnorr signatures] public key and signature.
+
+    The original version of MuSig required a three round signing protocol:
+    first, the co-signers exchange commitments to nonce values, then they
+    exchange the nonce values themselves, and finally, they exchange the
+    partial signatures. Without this three round protocol, an attacker could
+    interact with an honest signer in multiple concurrent signing sessions to
+    obtain a signature on a message that the honest signer did not want to sign.
+
+    Using deterministic nonces, which is very common practice in single-signer
+    schemes, is unsafe for multi-signer schemes, as described in the [original
+    MuSig blog post][musig blog post unsafe deterministic nonce]. Precomputing the
+    nonces in advance and exchanging them at key setup time is also unsafe, as
+    described in a [blog post by Jonas Nick][unsafe nonce sharing]. It _is_,
+    however, safe to precompute the nonces and exchange the nonce commitments
+    early, moving one of the three rounds to the key setup stage.
+
+    Removing the requirement to exchange nonce commitments has been an active
+    area of research, and last month the [MuSig-DN paper][musig-dn] was published, demonstrating
+    how nonce commitment exchange could be removed by generating the nonce
+    deterministically from the signers' public keys and the message, and providing a
+    non-interactive zero-knowledge proof that the nonce was generated
+    deterministically along with the nonce. This removed the requirement of
+    exchanging nonce commitments at the cost of a more expensive signing operation.
+
+    The new MuSig2 scheme achieves a simple two round signing protocol without the
+    need for a zero-knowledge proof. What's more, the first round (nonce exchange)
+    can be done at key setup time, allowing two different variants:
+
+    - interactive setup (key setup and nonce exchange) and non-interactive signing
+
+    - non-interactive setup (address computed from public keys) and interactive
+      signing (nonce exchange followed partial signature exchange)
+
+    The non-interactive signing variant could be particularly useful for cold storage
+    schemes and offline signers, and also for offchain contract protocols such as LN,
+    where the nonces could be exchanged at channel setup time.
 
 - **More LN upfront fees discussion:** after [last week's
   discussion][news119 upfront], Joost Jager asked developers on the
@@ -172,4 +216,9 @@ FIXME:bitschmidty
 [russell simplified]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002831.html
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [##taproot-activation logs]: http://gnusha.org/taproot-activation/
+[musig 2 paper]: https://eprint.iacr.org/2020/1261
+[musig blog post unsafe deterministic nonce]: https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/#uniform-randomness
+[unsafe nonce sharing]: /en/newsletters/2019/11/27/#schnorr-taproot-updates
+[musig-dn]: https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6
+[composable musig in ln]: /en/newsletters/2019/12/04/#composable-musig
 
