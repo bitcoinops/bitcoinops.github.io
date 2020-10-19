@@ -198,7 +198,15 @@ wallets and services.*
   users of time-sensitive transactions (such as in LN and many other
   contract protocols).
 
-- [Bitcoin Core #19077][] wallet: Add sqlite as an alternative wallet database and use it for new descriptor wallets FIXME:dongcarl
+- [Bitcoin Core #19077][] adds a new SQLite database backend for wallet records.
+  Unlike the existing Berkeley DB database backend, SQLite is designed and
+  tested to be resilient against corruption from crashes and power losses.
+  In the upcoming v0.21 release, legacy wallets
+  will keep using the Berkeley DB backend, whereas the [newly introduced
+  descriptor wallets][news96 descriptor wallets] will default to using this new
+  SQLite backend. Work on developing a migration path and tentative
+  timelines to deprecate and remove legacy wallets and
+  the Berkeley DB wallet backend are being discussed in [Bitcoin Core #20160][].
 
 - [Bitcoin Core #19770][] deprecates the `whitelisted` field returned from the
   `getpeerinfo` RPC, which previously had its scope expanded by more granular permissioning
@@ -230,7 +238,7 @@ wallets and services.*
   were subsequently [pulled][Bitcoin Core #20147] into Bitcoin Core.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19953,17977,19988,19077,19770,17428,4688,830,20147" %}
+{% include linkers/issues.md issues="19953,17977,19988,19077,19770,17428,4688,830,20147,20160" %}
 [sipa summary]: https://github.com/bitcoin/bitcoin/pull/19953#issuecomment-691815830
 [sipa consensus]: https://github.com/bitcoin/bitcoin/compare/450d2b2371...865d2c37e2
 [sipa tests]: https://github.com/bitcoin/bitcoin/compare/206fb180ec...0e2a5e448f426219a6464b9aaadcc715534114e6
@@ -256,3 +264,4 @@ wallets and services.*
 [coinfloor bech32 blog]: https://coinfloor.co.uk/hodl/2020/10/09/upgrades-to-btc-deposits/
 [bisq bech32]: https://github.com/bisq-network/bisq/releases/tag/v1.4.1
 [unchained capital psbt blog]: https://unchained-capital.com/blog/now-coldcard/
+[news96 descriptor wallets]: /en/newsletters/2020/05/06/#bitcoin-core-16528
