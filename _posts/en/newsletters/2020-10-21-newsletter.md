@@ -20,7 +20,7 @@ to popular Bitcoin infrastructure software.
 
 ## News
 
-- **MuSig2 paper published:** Jonas Nick, Tim Ruffing and Yannick Seurin
+- **MuSig2 paper published:** Jonas Nick, Tim Ruffing, and Yannick Seurin
   published [the MuSig2 paper][musig 2 paper] describing a new variant of the
   [MuSig][topic musig] signature scheme with a two round signing protocol.
 
@@ -176,7 +176,10 @@ FIXME:bitschmidty
 
 - [Bitcoin Core #19077][] wallet: Add sqlite as an alternative wallet database and use it for new descriptor wallets FIXME:dongcarl
 
-- [Bitcoin Core #19770][] RPC: getpeerinfo: Deprecate "whitelisted" field (replaced by "permissions") FIXME:bitschmidty
+- [Bitcoin Core #19770][] deprecates the `whitelisted` field returned from the
+  `getpeerinfo` RPC, which previously had its scope expanded by more granular permissioning
+  (see [Newsletter #60][news60 permissions]). `whitelisted` is set to be
+  deprecated in v0.21 and is planned to be removed in v0.22.
 
 - [Bitcoin Core #17428][] writes a file at shutdown with the network
   addresses of the node's two outbound block-relay-only peers.  The next
@@ -221,4 +224,4 @@ FIXME:bitschmidty
 [unsafe nonce sharing]: /en/newsletters/2019/11/27/#schnorr-taproot-updates
 [musig-dn]: https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6
 [composable musig in ln]: /en/newsletters/2019/12/04/#composable-musig
-
+[news60 permissions]: /en/newsletters/2019/08/21/#bitcoin-core-16248
