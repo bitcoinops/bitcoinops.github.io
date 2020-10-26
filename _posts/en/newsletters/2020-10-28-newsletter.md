@@ -141,7 +141,17 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why is the Bitcoin Core wallet database moving from Berkeley DB to SQLite?]({{bse}}99620)
+  Michael Folkson references Andrew Chow's [blog post][achow wallet blog post],
+  including pros of SQLite, cons of Berkeley DB, and a bigger picture [proposed
+  timeline][wallet proposed timeline] to migrate from legacy to
+  [descriptor][topic descriptors] wallets.
+
+- [What are Merklized Alternative Script Trees?]({{bse}}99539)
+  Murch and Michael Folkson describe the history of [MAST][topic mast]
+  discussions in Bitcoin, the differences between Merklized Abstract Syntax
+  Trees and Merklized Alternative Script Trees, and the relation to taproot's
+  [BIP341][] proposal.
 
 ## Notable code and documentation changes
 
@@ -204,3 +214,5 @@ FIXME:bitschmidty
 [fromknecht6]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002857.html
 [payment secrets feature]: https://github.com/lightningnetwork/lightning-rfc/commit/5776d2a7
 [news118 signmessage]: /en/newsletters/2020/10/07/#alternative-to-bip322-generic-signmessage
+[achow wallet blog post]: https://achow101.com/2020/10/0.21-wallets
+[wallet proposed timeline]: https://github.com/bitcoin/bitcoin/issues/20160
