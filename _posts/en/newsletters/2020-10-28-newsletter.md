@@ -161,7 +161,11 @@ answers posted since our last update.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #20198][] Show name, format and if uses descriptors in bitcoin-wallet tool FIXME:dongcarl
+- [Bitcoin Core #20198][] adds three new fields to the `bitcoin-wallet` tool's
+  `info` command output. The newly added fields "Name", "Format", and
+  "Descriptors" represent, respectively, the name of the wallet, the wallet
+  database format (bdb or [sqlite][news120 sqlite]), and whether or not the
+  wallet is a [descriptor][topic descriptors] wallet.
 
 - [C-Lightning #4046][] libplugin: support for sending notifications.  FIXME:moneyball
 
@@ -216,3 +220,4 @@ answers posted since our last update.*
 [news118 signmessage]: /en/newsletters/2020/10/07/#alternative-to-bip322-generic-signmessage
 [achow wallet blog post]: https://achow101.com/2020/10/0.21-wallets
 [wallet proposed timeline]: https://github.com/bitcoin/bitcoin/issues/20160
+[news120 sqlite]: /en/newsletters/2020/10/21/#bitcoin-core-19077
