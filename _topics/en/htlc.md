@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Stealing fees included in HTLCs created using `SIGHASH_SINGLE`"
     url: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
 
+  - title: "CVE-2020-26896: premature preimage revelation in LND"
+    url: /en/newsletters/2020/10/28/#cve-2020-26896-improper-preimage-revelation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki
