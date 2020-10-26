@@ -20,8 +20,8 @@ excerpt: >
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
   The [BIP322][] *generic signed message format* allows a wallet to sign
-  a text string in almost the same way the wallet would produce a
-  signature for a Bitcoin transaction.  This means a signed message can
+  a text string by producing a
+  signature for a virtual Bitcoin transaction.  This means a signed message can
   be produced for any script or address that a wallet would be able to
   spend.  Additionally, two or more wallets can cooperate to create a
   BIP322 signed message for multisig scripts.
@@ -66,6 +66,9 @@ optech_mentions:
 
   - title: Alternative proposal for generic signmessage using virtual transactions
     url: /en/newsletters/2020/10/07/#alternative-to-bip322-generic-signmessage
+
+  - title: BIP322 updated to use virtual transactions
+    url: /en/newsletters/2020/10/28/#bips-1003
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

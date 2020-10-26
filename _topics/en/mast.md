@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Discussion about the evolution of MAST (and other things) into taproot"
     url: /en/newsletters/2020/08/05/#bip-taproot
 
+  - title: What are Merklized Alternative Script Trees?
+    url: /en/newsletters/2020/10/28/#what-are-merklized-alternative-script-trees
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
