@@ -167,7 +167,10 @@ answers posted since our last update.*
   database format (bdb or [sqlite][news120 sqlite]), and whether or not the
   wallet is a [descriptor][topic descriptors] wallet.
 
-- [C-Lightning #4046][] libplugin: support for sending notifications.  FIXME:moneyball
+- [C-Lightning #4046][] adds the ability for commands to send notifications
+  indicating command progress. It is an opt-in feature in order to be
+  backwards compatible. An example use case is [the original issue][orig_issue]
+  that prompted the change.
 
 - [C-Lightning #4139][] updates the `multifundchannel` RPC with a new
   `commitment_feerate` parameter that sets the initial feerate for
@@ -221,3 +224,4 @@ answers posted since our last update.*
 [achow wallet blog post]: https://achow101.com/2020/10/0.21-wallets
 [wallet proposed timeline]: https://github.com/bitcoin/bitcoin/issues/20160
 [news120 sqlite]: /en/newsletters/2020/10/21/#bitcoin-core-19077
+[orig_issue]: https://github.com/ElementsProject/lightning/issues/3925
