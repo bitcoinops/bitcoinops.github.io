@@ -50,6 +50,9 @@ optech_mentions:
   - title: Zap 0.7.0 Beta adds support for hold invoices
     url: /en/newsletters/2020/07/22/#zap-0-7-0-beta-released
 
+  - title: Discussion about bi-directional fees to allow charging for hold invoices
+    url: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

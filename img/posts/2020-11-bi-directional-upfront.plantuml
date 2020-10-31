@@ -1,0 +1,20 @@
+@startuml
+skinparam sequence {
+  ArrowColor black
+  ActorBorderColor black
+  LifeLineBorderColor black
+  LifeLineBackgroundColor black
+
+  ParticipantBorderColor black
+  ParticipantBackgroundColor transparent
+  ParticipantFontColor black
+}
+
+hide footbox
+
+Alice -> Bob: Non-refundable fee: 10 pBTC
+Bob --> Alice: Refundable fee: 50 pBTC\nRefund deadline: 100 seconds
+
+Bob --> Carol: Non-refundable fee: 10 pBTC
+Carol --> Bob: Refundable fee: 50 pBTC\nRefund deadline: 90 seconds
+@enduml
