@@ -95,12 +95,19 @@ are our regular sections with updates about various projects.
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [C-Lightning #4162][] lightningd: note whether payment secret is used or not. FIXME:jnewbery
+- [C-Lightning #4162][] updates logging to include whether a payment used
+  a [payment secret][]. Payment secrets were added to BOLT 11 in [BOLTs #643][]
+  as part of the [multipath payments][topic multipath payments] feature to prevent probing attacks by nodes
+  along the payment path. Payment secrets are supported by all LN
+  implementations and will eventually be made compulsory by C-Lightning; logging
+  which payments are using payment secrets makes it easier for the developers to
+  know when it's reasonable to make that change.
 
 {% include references.md %}
-{% include linkers/issues.md issues="4162" %}
+{% include linkers/issues.md issues="643,4162" %}
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [##taproot-activation logs]: http://gnusha.org/taproot-activation/
 [news120 upfront]: /en/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
 [teinturier bidir]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002862.html
 [towns survey]: http://www.erisian.com.au/wordpress/2020/10/26/activating-soft-forks-in-bitcoin
+[payment secret]: https://github.com/lightningnetwork/lightning-rfc/commit/5776d2a7
