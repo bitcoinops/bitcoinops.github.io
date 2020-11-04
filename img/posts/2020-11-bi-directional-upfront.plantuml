@@ -12,9 +12,9 @@ skinparam sequence {
 
 hide footbox
 
-Alice -> Bob: Non-refundable fee: 10 pBTC
+Alice -> Bob: Non-refundable fee: 20 pBTC
 Bob --> Alice: Refundable fee: 50 pBTC\nRefund deadline: 100 seconds
 
 Bob --> Carol: Non-refundable fee: 10 pBTC
-Carol --> Bob: Refundable fee: 50 pBTC\nRefund deadline: 90 seconds
+Carol --> Bob: Refundable fee: 60 pBTC\nRefund deadline: 90 seconds
 @enduml
