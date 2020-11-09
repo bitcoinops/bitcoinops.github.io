@@ -100,7 +100,11 @@ specification and implementation of the algorithm.
 
 - [BOLTs #807][] Fail channel in case of high-S remote signature reception FIXME:dongcarl
 
-- [Eclair #1545][] Add blockchain watchdog FIXME:Xeyko
+- [Eclair #1545][] adds a blockchain watchdog to detect [eclipse attacks][eclipse attacks]. Eclair
+  fetches block headers from multiple third-party sources to countercheck the
+  best chain provided by its peers. As described in [Newsletter #101][news101 time-dilation],
+  an attacker could use an eclipse attack to hide a malicious channel closing
+  attempt until the dispute period expires.
 
 - [LND #4735][] adds a `max_local_csv` configuration parameter that
   will reject channels from peers who require the local node to wait for more
@@ -126,3 +130,5 @@ specification and implementation of the algorithm.
 [pool announce]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002874.html
 [muhash mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [muhash performance]: https://github.com/bitcoin/bitcoin/pull/19055#discussion_r508093977
+[news101 time-dilation]: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
+[eclipse attacks]: /en/topics/eclipse-attacks/
