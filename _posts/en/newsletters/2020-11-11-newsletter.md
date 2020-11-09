@@ -98,7 +98,11 @@ specification and implementation of the algorithm.
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [BOLTs #807][] Fail channel in case of high-S remote signature reception FIXME:dongcarl
+- [BOLTs #807][] amends [BOLT2][] to specify that a node should treat the
+  receipt of non-standard high-*S* signatures the same as invalid signatures and
+  immediately fail the channel or connection. This mitigates against
+  [CVE-2020-26895][] covered previously in [Newsletter #121][news121
+  lows-sig-cve].
 
 - [Eclair #1545][] adds a blockchain watchdog to detect [eclipse attacks][eclipse attacks]. Eclair
   fetches block headers from multiple third-party sources to countercheck the
@@ -132,3 +136,5 @@ specification and implementation of the algorithm.
 [muhash performance]: https://github.com/bitcoin/bitcoin/pull/19055#discussion_r508093977
 [news101 time-dilation]: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
 [eclipse attacks]: /en/topics/eclipse-attacks/
+[news121 lows-sig-cve]: /en/newsletters/2020/10/28/#cve-2020-26895-acceptance-of-non-standard-signatures
+[CVE-2020-26895]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26895
