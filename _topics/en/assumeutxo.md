@@ -49,6 +49,9 @@ optech_mentions:
   - title: "2019 year-in-review: AssumeUTXO"
     url: /en/newsletters/2019/12/28/#assumeutxo
 
+  - title: Review Club summary of MuHash implementation for quickly hashing UTXO set
+    url: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
