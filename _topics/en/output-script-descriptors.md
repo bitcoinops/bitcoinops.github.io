@@ -61,6 +61,9 @@ optech_mentions:
     url: /en/river-descriptors-psbt/
     date: 2020-07-29
 
+  - title: "C-Lightning #4171 allows retrieving the wallet's onchain descriptors"
+    url: /en/newsletters/2020/11/18/#c-lightning-4171
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -136,6 +136,9 @@ optech_mentions:
   - title: "LND #4521 improves invoice routing hints for multipath payments"
     url: /en/newsletters/2020/08/19/#lnd-4521
 
+  - title: "Eclair #1599 improves multipath spending to direct channel counterparties"
+    url: /en/newsletters/2020/11/18/#eclair-1599
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
