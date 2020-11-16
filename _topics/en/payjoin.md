@@ -65,6 +65,9 @@ optech_mentions:
   - title: BlueWallet 5.6.1 adds support for BIP78 payjoin
     url: /en/newsletters/2020/10/21/#bluewallet-adds-payjoin
 
+  - title: Sparrow Wallet 0.9.7 adds support for BIP78 payjoin
+    url: /en/newsletters/2020/11/18/#sparrow-wallet-adds-payment-batching-and-payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

@@ -39,7 +39,14 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Sparrow Wallet adds payment batching and payjoin:**
+  Sparrow's recent [0.9.6][sparrow 0.9.6] and [0.9.7][sparrow 0.9.7] releases
+  added payment batching and [payjoin][topic payjoin] capabilities respectively.
+
+- **Nunchuk open sources Bitcoin Core backed multisig library:**
+  The team that developed the [Nunchuk desktop application][nunchuk website] has
+  [announced `libnunchuk`][libnunchuk blog], a C++ multisig library that leverages
+  Bitcoin Core's existing codebase.
 
 ## Releases and release candidates
 
@@ -94,3 +101,7 @@ release candidates.*
 [reddit vm post]: https://www.reddit.com/r/Bitcoin/comments/jrxgj8/bitcoin_core_node_hacked/
 [btcpay server's]: https://github.com/btcpayserver/btcpayserver
 [news121 cve-2020-26895]: /en/newsletters/2020/10/28/#cve-2020-26896-improper-preimage-revelation
+[sparrow 0.9.7]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.7
+[sparrow 0.9.6]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.6
+[nunchuk website]: https://nunchuk.io/
+[libnunchuk blog]: https://nunchuk.medium.com/announcing-libnunchuk-a-lean-cross-platform-multisig-library-powered-by-bitcoin-core-a2f6e26c54df
