@@ -66,7 +66,10 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [C-Lightning #4168][] hooks FIXME:dongcarl
+- [C-Lightning #4168][] adds the ability for a plugin to specify that a hook be
+  run before or after that of another plugin. Plugin authors wishing to ensure
+  their plugin's relative load ordering in this way should amend their
+  `getmanifest` method's response as shown [here][C-Lightning getmanifest].
 
 - [C-Lightning #4171][] updates the `hsmtool` command with a new
   `dumponchaindescriptors` parameter that prints the [output script
@@ -105,3 +108,4 @@ release candidates.*
 [sparrow 0.9.6]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.6
 [nunchuk website]: https://nunchuk.io/
 [libnunchuk blog]: https://nunchuk.medium.com/announcing-libnunchuk-a-lean-cross-platform-multisig-library-powered-by-bitcoin-core-a2f6e26c54df
+[C-Lightning getmanifest]: https://github.com/ElementsProject/lightning/blob/cd7d5cdff9e5efc0dcfb5fdc91e8c80a11daebed/doc/PLUGINS.md#the-getmanifest-method
