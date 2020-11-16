@@ -11,7 +11,7 @@
 {%- endfor %}
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
-[bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-anyprevout.mediawiki
+[bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
 [bip-coshv]: https://github.com/JeremyRubin/bips/blob/op-checkoutputshashverify/bip-coshv.mediawiki
 [bip-schnorr]: https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
