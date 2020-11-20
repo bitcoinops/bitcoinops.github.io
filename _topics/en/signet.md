@@ -88,6 +88,9 @@ optech_mentions:
   - title: Summary of Bitcoin Core PR Review Meeting on adding signet support
     url: /en/newsletters/2020/10/14/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #20145 adds script for requesting signet coins"
+    url: /en/newsletters/2020/11/25/#bitcoin-core-20145
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
