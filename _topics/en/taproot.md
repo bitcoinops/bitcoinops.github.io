@@ -138,6 +138,9 @@ optech_mentions:
   - title: Summary of results from surveying developers about taproot activation
     url: /en/newsletters/2020/11/04/#taproot-activation-survey-results
 
+  - title: Website tracking miner support for taproot before signaling begins
+    url: /en/newsletters/2020/11/25/#website-listing-miner-support-for-taproot-activation
+
 ## Optional
 see_also:
   - title: MAST
