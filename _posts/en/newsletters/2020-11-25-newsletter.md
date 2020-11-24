@@ -33,6 +33,16 @@ infrastructure software.
   number of users.  For additional information about the creation of the
   website, see Bitcoin Magazine's [article][btcmag ta.com].
 
+- **New research and development organization announced:** [Brink][], a
+  new organization for "funding, education, and mentoring" of Bitcoin
+  contributors was [announced][brink tweet] on Twitter this week.  The
+  organization is seeking applicants for both its [fellowship
+  program][brink fellowship] for helping newer contributors break into
+  full-time Bitcoin development and its [grant program][brink grant] for
+  funding established contributors.  (Note: Brink was founded by Optech
+  contributors and received initial funding from John Pfeffer and Wences
+  Casares, who also provided initial funding for Optech.)
+
 ## Selected Q&A from Bitcoin StackExchange
 
 *[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
@@ -118,3 +128,7 @@ version 0.21.*
 [news116 send]: /en/newsletters/2020/09/23/#bitcoin-core-16378
 [feerate change benign]: https://github.com/bitcoin/bitcoin/pull/20305#discussion_r520231413
 [news104 PR11413]: /en/newsletters/2020/07/01/#bitcoin-core-11413
+[brink]: https://brink.dev/
+[brink tweet]: https://twitter.com/bitcoinbrink/status/1331205950032764928
+[brink fellowship]: https://brink.dev/programs#fellowships
+[brink grant]: https://brink.dev/programs#grants
