@@ -76,7 +76,25 @@ development branch and so those changes will likely not be released
 until version 0.22, about six months after the release of the upcoming
 version 0.21.*
 
-- [Bitcoin Core #20305][] and [Bitcoin Core #20426][] wallet: introduce fee_rate sat/vB param/option FIXME:jonatack
+- [Bitcoin Core #20305][] starts shifting RPC feerate units to satoshis
+  per vbyte (sat/vB) rather than BTC per 1,000 vbytes (BTC/kvB) by introducing a
+  `fee_rate` parameter to the `sendtoaddress`,
+  `sendmany`, `fundrawtransaction`, and `walletcreatefundedpsbt` RPCs as well as
+  to the experimental [new][news116 send] `send` RPC. In addition, the `bumpfee` RPC `fee_rate`
+  option is changed from BTC/kB to sat/vB. Users are warned that the latter is a
+  breaking API change, but it should be relatively [benign][feerate change
+  benign]. The legacy `feeRate` option in RPCs `fundrawtransaction` and
+  `walletcreatefundedpsbt` still exists for setting a feerate in BTC/kvB; it is
+  expected to be deprecated soon to avoid confusion.
+
+  The PR also removes the
+  unreleased ability to pass an explicit feerate by overloading the
+  `conf_target` and `estimate_mode` parameters (see [Newsletter #104][news104
+  PR11413]),
+  updates the feerate error message units for these RPCs from
+  BTC/kB to sat/vB (and from BTC/kB to BTC/kvB elsewhere), and updates the `send`
+  and `sendtoaddress` RPC examples to aid users in creating transactions with
+  explicit feerates.
 
 - [Bitcoin Core #20145][] adds a `getcoins.py` script that can be used
   to request testing coins from a faucet for [signet][topic signet].
@@ -97,3 +115,6 @@ version 0.21.*
 [fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [news105 core19215]: /en/newsletters/2020/07/08/#bitcoin-core-19215
 [news109 bips948]: /en/newsletters/2020/08/05/#bips-948
+[news116 send]: /en/newsletters/2020/09/23/#bitcoin-core-16378
+[feerate change benign]: https://github.com/bitcoin/bitcoin/pull/20305#discussion_r520231413
+[news104 PR11413]: /en/newsletters/2020/07/01/#bitcoin-core-11413
