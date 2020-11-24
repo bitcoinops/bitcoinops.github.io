@@ -54,7 +54,18 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is fuzz testing?]({{bse}}99955)
+  Michael Folkson summarizes [fuzz testing][fuzzing wikipedia], a technique of feeding a program like
+  Bitcoin Core varying malformed inputs for purposes of finding bugs.
+
+- [Adding instead of concatenating hashes in Merkle trees]({{bse}}100098)
+  Pieter Wuille breaks down a variety of issues to consider regarding the idea
+  of combining hashes in a merkle tree using an operation such as
+  addition instead of the concatenation that Bitcoin currently uses.
+
+- [How will the migration tool from a Bitcoin Core legacy wallet to a descriptor wallet work?]({{bse}}99624)
+  Michael Folkson outlines how a tool that migrates existing legacy wallets to
+  [descriptor][topic descriptors] wallets might work.
 
 ## Releases and release candidates
 
@@ -132,3 +143,4 @@ version 0.21.*
 [brink tweet]: https://twitter.com/bitcoinbrink/status/1331205950032764928
 [brink fellowship]: https://brink.dev/programs#fellowships
 [brink grant]: https://brink.dev/programs#grants
+[fuzzing wikipedia]: https://en.wikipedia.org/wiki/Fuzzing

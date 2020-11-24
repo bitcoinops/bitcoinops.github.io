@@ -64,6 +64,9 @@ optech_mentions:
   - title: "C-Lightning #4171 allows retrieving the wallet's onchain descriptors"
     url: /en/newsletters/2020/11/18/#c-lightning-4171
 
+  - title: "Q&A about migration from legacy wallets to descriptor wallets"
+    url: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
