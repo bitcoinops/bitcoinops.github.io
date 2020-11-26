@@ -99,7 +99,7 @@ version 0.21.*
 
 - [Bitcoin Core #20305][] starts shifting RPC feerate units to satoshis
   per vbyte (sat/vB) rather than BTC per 1,000 vbytes (BTC/kvB) by introducing a
-  `fee_rate` parameter to the `sendtoaddress`,
+  `fee_rate` parameter/option denominated in sat/vB to the `sendtoaddress`,
   `sendmany`, `fundrawtransaction`, and `walletcreatefundedpsbt` RPCs as well as
   to the experimental [new][news116 send] `send` RPC. In addition, the `bumpfee` RPC `fee_rate`
   option is changed from BTC/kB to sat/vB. Users are warned that the latter is a
