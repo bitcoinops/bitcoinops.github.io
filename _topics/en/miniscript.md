@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Miniscript to warn or fail for safety when mixed time/height locks used"
     url: /en/newsletters/2020/09/23/#research-into-conflicts-between-timelocks-and-heightlocks
 
+  - title: "Formal specification of miniscript"
+    url: /en/newsletters/2020/12/02/#formal-specification-of-miniscript
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
