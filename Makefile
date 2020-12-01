@@ -51,6 +51,9 @@ test-before-build:
 	## Check that newly added or modifyed PNGs are optimized
 	_contrib/travis-check-png-optimized.sh
 
+	## Check for duplicate links in any particular topic file
+	! git grep url:  _topics/ | sed 's/ \+/ /g' | sort | uniq -d | grep .
+
 test-after-build:
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
