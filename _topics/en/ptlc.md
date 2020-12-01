@@ -83,8 +83,8 @@ optech_mentions:
   - title: Using witness asymmetric payment channels for move from HTLCs to PTLCs
     url: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 
-  - title: "Using witness asymmetric payment channels as part of a PTLC implementation"
-    url: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
+  - title: Updated witness asymmetric channels proposal for move from HTLCs to PTLCs
+    url: /en/newsletters/2020/10/14/#updated-witness-asymmetric-payment-channel-proposal
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
