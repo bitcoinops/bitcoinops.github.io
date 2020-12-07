@@ -151,7 +151,10 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #4782][] anchor-wtserver FIXME:bitschmidty
+- [LND #4782][] adds [watchtower][topic watchtowers] client support for LN
+  channels that use [anchor outputs][topic anchor outputs], allowing these
+  anchor channels to back up their states, similar to how legacy channels can
+  currently be backed up.
 
 {% include references.md %}
 {% include linkers/issues.md issues="20564,4782" %}
