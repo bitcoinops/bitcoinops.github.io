@@ -122,6 +122,9 @@ optech_mentions:
   - title: Eclair 0.4.2 adds experimental support for anchor outputs
     url: /en/newsletters/2020/10/14/#eclair-0-4-2
 
+  - title: "LND #4782 adds watchtower client support for channels using anchor outputs"
+    url: /en/newsletters/2020/12/09/#lnd-4782
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

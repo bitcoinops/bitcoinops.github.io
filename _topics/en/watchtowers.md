@@ -80,6 +80,9 @@ optech_mentions:
   - title: Presentation about watchtower protocol development
     url: /en/newsletters/2020/07/01/#watchtowers-and-bolt13
 
+  - title: "LND #4782 adds watchtower client support for channels using anchor outputs"
+    url: /en/newsletters/2020/12/09/#lnd-4782
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial
