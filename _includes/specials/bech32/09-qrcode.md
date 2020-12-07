@@ -28,6 +28,7 @@ same dimensions).
 ![bech32 uppercase](/img/posts/2019-05-bip21-bech32-qr-uc.png)
 {:.center}
 
+<div markdown="1" id="bip21-complications">
 Unfortunately, the `?` and `&` needed for passing additional parameters
 in a BIP21 URI are not part of the QR code uppercase character set, so
 only binary mode can be used for those characters.  Additionally, BIP21 specifies that query
@@ -48,6 +49,7 @@ code possible:
 
 ![BIP21/bech32 mixed character mode](/img/posts/2019-05-bip21-bech32-qr-mixed.png)
 {:.center}
+</div>
 
 In summary, when using bech32 addresses in QR codes, consider
 uppercasing them and any other adjacent characters that can be

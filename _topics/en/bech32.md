@@ -63,6 +63,12 @@ optech_mentions:
   - title: Discussion about updates to BIP173 bech32 to address mutability concerns
     url: /en/newsletters/2020/10/14/#bech32-addresses-for-taproot
 
+  - title: Bech32 algorithm revision research and proposal
+    url: /en/newsletters/2020/12/09/#bech32-addresses-for-taproot-and-beyond
+
+  - title: Problems with QR-encoded bech32 BIP21 invoices with uppercase schema
+    url: /en/newsletters/2020/12/09/#thwarted-upgrade-to-uppercase-bech32-qr-codes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
