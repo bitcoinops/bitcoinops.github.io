@@ -125,12 +125,57 @@ just be more laid back.-->{% endcomment %}
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jonatack
+[Periodically make block-relay connections and sync headers][review club
+#19858] is a PR ([#19858][Bitcoin Core #19858]) by Suhas Daftuar to make [eclipse
+attacks][topic eclipse attacks] more difficult by adding a new method
+for finding high quality peers.  The proposal opens an outbound
+connection every five minutes on average to a new peer and syncs headers
+with it. If the peer tells the node about new blocks, the node
+disconnects an existing block-relay-only peer and gives that connection
+slot to the new peer.  This
+would raise the cost to an attacker to sustain a partitioning attack against a
+node because, as long as the node has at least one honest peer in its peer address manager ([addrman][]),
+it should always eventually find the valid chain with the most work.
+
+Most of the discussion focused on understanding the proposed change.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/19055-2#FIXME"
+  q0="What are block-relay-only connections?"
+  a0="Block-relay-only connections are a type of connection introduced in
+      [Bitcoin Core #15759][Bitcoin Core #15759] that relays blocks but
+      not transactions or the IP addresses of potential peers."
+
+  q1="Are block-relay-only connections less observable than full-relay
+      connections?"
+  a1="Yes, full-relay connections gossip transactions and addresses, which can
+      reveal information about the network topology and be used by a spy to map
+      connections."
+  a1link="https://bitcoincore.reviews/19858#l-59"
+
+  q2="Describe a scenario in which periodic block-relay-only connections could
+      help prevent an attack?"
+  a2="When a node has been eclipsed but its addrman still has honest addresses
+      in it."
+  a2link="https://bitcoincore.reviews/19858#l-89"
+
+  q3="What happens if we learn about new blocks when opening one of these new
+      block-relay-only connections?"
+  a3="If we learn of a new block, we would rotate out an existing next-youngest
+      block-relay-only peer in favor of the new peer."
+  a3link="https://bitcoincore.reviews/19858#l-194"
+
+  q4="What are potential trade-offs of this change?"
+  a4="It could [reduce the number of open listening sockets][few sockets] on
+      the network and [increase the network load sustained][network load].
+      Finally, there is the [cost/complexity/maintenance][complexity] associated
+      with any change."
+
+  q5="Beyond individual node resistance to eclipse attacks, how could this
+      behavior potentially benefit the whole network?"
+  a5="Periodically connecting to new peers to sync tips should help bridge the
+      entire network via more frequent connections and therefore more edges to
+      the network graph, providing more security against partitioning attacks."
+  a5link="https://github.com/bitcoin/bitcoin/pull/19858#discussion_r483713328"
 %}
 
 ## Releases and release candidates
@@ -157,7 +202,7 @@ release candidates.*
   currently be backed up.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20564,4782" %}
+{% include linkers/issues.md issues="20564,4782,19858,15759" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [mutability problem]: /en/newsletters/2019/12/28/#bech32-mutability
 [forward address compatibility]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
@@ -175,3 +220,7 @@ release candidates.*
 [wuille post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018292.html
 [bip21 lowercase]: /en/bech32-sending-support/#bip21-complications
 [btcpay #2110]: https://github.com/btcpayserver/btcpayserver/issues/2110
+[few sockets]: https://bitcoincore.reviews/19858#l-180
+[network load]: https://github.com/bitcoin/bitcoin/pull/19858#issuecomment-734874989
+[complexity]: https://bitcoincore.reviews/19858#l-188
+[addrman]: https://github.com/bitcoin/bitcoin/blob/884bde510e2db59ee44604e2cccabb0bf1ef6ada/src/addrman.h#L99
