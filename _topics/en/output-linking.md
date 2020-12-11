@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Bitcoin Core #17843 fixes balance discrepancy related to `avoid_reuse` flag"
     url: /en/newsletters/2020/01/22/#bitcoin-core-17843
 
+  - title: "2020 year in review: transaction origin privacy"
+    url: /en/newsletters/2020/12/23/#transaction-origin-privacy
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

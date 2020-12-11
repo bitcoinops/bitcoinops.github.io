@@ -101,6 +101,9 @@ optech_mentions:
   - title: "LND #4567 adds a new `--maxchansize` parameter for large channels"
     url: /en/newsletters/2020/09/23/#lnd-4567
 
+  - title: "2020 year in review: large channels"
+    url: /en/newsletters/2020/12/23/#large-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

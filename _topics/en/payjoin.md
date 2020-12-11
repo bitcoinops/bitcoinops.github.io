@@ -68,6 +68,9 @@ optech_mentions:
   - title: Sparrow Wallet 0.9.7 adds support for BIP78 payjoin
     url: /en/newsletters/2020/11/18/#sparrow-wallet-adds-payment-batching-and-payjoin
 
+  - title: "2020 year in review: payjoin"
+    url: /en/newsletters/2020/12/23/#payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Q&A: What is the difference between 'native segwit' and 'bech32'?"
     url: /en/newsletters/2020/12/16/#what-is-the-difference-between-native-segwit-and-bech32
 
+  - title: "2020 year in review: taproot's need for a modified bech32 address format"
+    url: /en/newsletters/2020/12/23/#taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

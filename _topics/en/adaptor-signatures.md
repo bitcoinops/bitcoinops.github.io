@@ -250,6 +250,9 @@ optech_mentions:
   - title: Revised witness asymmetric channels proposal with signature adaptors
     url: /en/newsletters/2020/10/14/#updated-witness-asymmetric-payment-channel-proposal
 
+  - title: "2020 year in review: signature adaptors for LN channel commitments"
+    url: /en/newsletters/2020/12/23/#ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

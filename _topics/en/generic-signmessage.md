@@ -70,6 +70,9 @@ optech_mentions:
   - title: BIP322 updated to use virtual transactions
     url: /en/newsletters/2020/10/28/#bips-1003
 
+  - title: "2020 year in review: generic signmessage"
+    url: /en/newsletters/2020/12/23/#generic-signmessage
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

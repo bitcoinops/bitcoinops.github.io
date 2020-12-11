@@ -63,6 +63,9 @@ optech_mentions:
   - title: BIP155 updated to require `sendaddrv2` message be sent before `verack`
     url: /en/newsletters/2020/12/16/#bips-1043
 
+  - title: "2020 year in review: version 2 `addr` message"
+    url: /en/newsletters/2020/12/23/#addrv2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

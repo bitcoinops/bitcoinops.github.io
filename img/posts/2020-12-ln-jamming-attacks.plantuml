@@ -1,0 +1,16 @@
+@startditaa
+                                Liquidity Jamming Attack
+
+             1               1               1             1                 26
++---------+  BTC  +-------+  BTC  +-------+  BTC  +-----+  BTC  +----------+ BTC
+| Mallory +------>+ Alice +------>+ [...] +------>+ Zed +------>+ Mallory  | Total
++---------+       +-------+       +-------+       +-----+       +----------+
+
+
+                                    HTLC Jamming Attack
+
+            483             483             483           483                ~10,000
++---------+ HTLCs +-------+ HTLCs +-------+ HTLCs +-----+ HTLCs +----------+ HTLCs
+| Mallory +------>+ Alice +------>+ [...] +------>+ Zed +------>+ Mallory' | Total
++---------+       +-------+       +-------+       +-----+       +----------+
+@endditaa

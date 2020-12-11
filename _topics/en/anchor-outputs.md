@@ -131,6 +131,9 @@ optech_mentions:
   - title: "BOLT5 updated to prevent a pinning attack against anchor outputs"
     url: /en/newsletters/2020/12/16/#bolts-803
 
+  - title: "2020 year in review: anchor outputs"
+    url: /en/newsletters/2020/12/23/#anchor-outputs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

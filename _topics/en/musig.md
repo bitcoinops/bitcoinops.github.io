@@ -77,6 +77,9 @@ optech_mentions:
   - title: MuSig2 paper published
     url: /en/newsletters/2020/10/21/#musig2-paper-published
 
+  - title: "2020 year in review: MuSig2"
+    url: /en/newsletters/2020/12/23/#musig2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

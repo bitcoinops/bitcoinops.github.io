@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Bitcoin Core #19070 allows advertising support for serving BIP157 filters"
     url: /en/newsletters/2020/08/19/#bitcoin-core-19070
 
+  - title: "2020 year in review: compact block filters"
+    url: /en/newsletters/2020/12/23/#compact-block-filters
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
