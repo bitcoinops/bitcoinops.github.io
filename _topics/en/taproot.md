@@ -141,6 +141,9 @@ optech_mentions:
   - title: Website tracking miner support for taproot before signaling begins
     url: /en/newsletters/2020/11/25/#website-listing-miner-support-for-taproot-activation
 
+  - title: "2020 year in review: Taproot, tapscript, and schnorr signatures"
+    url: /en/newsletters/2020/12/23/#taproot
+
 ## Optional
 see_also:
   - title: MAST

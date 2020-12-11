@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Bitcoin Core PR #19858 improves partition resistance to eclipse attacks"
     url: /en/newsletters/2020/12/16/#bitcoin-core-19858
 
+  - title: "2020 year in review: fast eclipse attacks against LN nodes"
+    url: /en/newsletters/2020/12/23/#fast-ln-eclipse-attacks
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

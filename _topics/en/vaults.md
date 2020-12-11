@@ -77,6 +77,9 @@ optech_mentions:
   - title: Service proposed for storing presigned vault transactions
     url: /en/newsletters/2020/07/01/#proposed-service-for-storing-relaying-and-broadcasting-presigned-transactions
 
+  - title: "2020 year in review: vaults"
+    url: /en/newsletters/2020/12/23/#vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

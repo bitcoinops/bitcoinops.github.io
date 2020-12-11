@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Bitcoin Core #19953 merged with consensus implementation of BIP342"
     url: /en/newsletters/2020/10/21/#bitcoin-core-19953
 
+  - title: "2020 year in review: Taproot, tapscript, and schnorr signatures"
+    url: /en/newsletters/2020/12/23/#taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

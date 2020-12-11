@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Bitcoin Core #20145 adds script for requesting signet coins"
     url: /en/newsletters/2020/11/25/#bitcoin-core-20145
 
+  - title: "2020 year in review: signet"
+    url: /en/newsletters/2020/12/23/#signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

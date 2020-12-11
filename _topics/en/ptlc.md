@@ -86,6 +86,9 @@ optech_mentions:
   - title: Updated witness asymmetric channels proposal for move from HTLCs to PTLCs
     url: /en/newsletters/2020/10/14/#updated-witness-asymmetric-payment-channel-proposal
 
+  - title: "2020 year in review: switching LN from HTLCs to PTLCs"
+    url: /en/newsletters/2020/12/23/#ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

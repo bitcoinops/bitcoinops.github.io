@@ -125,6 +125,12 @@ optech_mentions:
   - title: "CVE-2020-26896: premature preimage revelation in LND"
     url: /en/newsletters/2020/10/28/#cve-2020-26896-improper-preimage-revelation
 
+  - title: "2020 year in review: switching LN from HTLCs to PTLCs"
+    url: /en/newsletters/2020/12/23/#ptlcs
+
+  - title: "2020 year in review: HTLC mining incentives"
+    url: /en/newsletters/2020/12/23/#concern-about-htlc-mining-incentives
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki
