@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Review Club chat about PR #19858 to make eclipse attacks more difficult"
     url: /en/newsletters/2020/12/09/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core PR #19858 improves partition resistance to eclipse attacks"
+    url: /en/newsletters/2020/12/16/#bitcoin-core-19858
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

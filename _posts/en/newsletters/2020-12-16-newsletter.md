@@ -146,7 +146,19 @@ release candidates.*
 
 - [Bitcoin Core #19776][] net, rpc: expose high bandwidth mode state via getpeerinfo FIXME:moneyball
 
-- [Bitcoin Core #19858][] Periodically make block-relay connections and sync headers FIXME:jonatack
+- [Bitcoin Core #19858][] adds a new method for finding high-quality peers with
+  the goal of making [eclipse attacks][topic eclipse attacks] more difficult.
+  It opens an outbound connection every five minutes on average to a new peer
+  and syncs headers with it. If the peer tells the node about new blocks, the
+  node disconnects an existing block-relay-only peer and gives that connection
+  slot to the new peer; otherwise, the new peer is dropped.  Provided the node
+  knows the IP address of at least one other honest node, this peer rotation should raise the cost of
+  sustaining a partitioning attack against it, as the node should always
+  eventually find the valid chain with the most work. The increased rotation and
+  security will slightly reduce the number of open
+  listening sockets on the network, but it is expected to help bridge the network
+  as a whole via more frequent connections, add edges to the network
+  graph, and provide more security against partitioning attacks in general.
 
 - [Bitcoin Core #18766][] disables the ability to get fee estimates when
   using the `blocksonly` configuration option.  This bandwidth-saving
