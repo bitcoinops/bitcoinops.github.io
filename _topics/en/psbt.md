@@ -135,6 +135,9 @@ optech_mentions:
   - title: A new backwards-incompatible version of PSBT is proposed
     url: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 
+  - title: New PSBT Toolkit software provides GUI for working with PSBTs
+    url: /en/newsletters/2020/12/16/#psbt-toolkit-v0-1-2-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

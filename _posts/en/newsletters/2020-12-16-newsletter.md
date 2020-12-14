@@ -99,7 +99,36 @@ to popular Bitcoin infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Bitcoin Wallet Tracker adds descriptor support:**
+  Bitcoin Wallet Tracker's [0.2.0 release][bwt 0.2.0] adds support for tracking
+  [output script descriptors][topic descriptors] and introduces [libbwt][libbwt github],
+  a library for allowing Electrum-backed wallets to easily support a Bitcoin
+  Core full node.
+
+- **JoinMarket now defaults to native segwit addresses:**
+  While JoinMarket supported segwit since 0.5.1, [version 0.8.0][joinmarket 0.8.0]
+  now uses bech32 native segwit addresses by default for [coinjoins][topic coinjoin].
+
+- **Bisq adds segwit for trade transactions:**
+  Building on [previous bech32 support][news120 bisq segwit] for deposits and
+  withdrawals, [Bisq v1.5.0][bisq bech32 blog] adds segwit support within trade
+  transactions as well as implementing fee optimizations.
+
+- **PSBT Toolkit v0.1.2 released:**
+  [PSBT Toolkit][psbt toolkit github], software that "aims to give you a nice
+  gui that gives you functionality for PSBT interactions", released various
+  improvements in its 0.1.2 version.
+
+- **Sparrow adds Replace-By-Fee:**
+  [Sparrow 0.9.8][sparrow 0.9.8] adds [Replace-By-Fee (RBF)][topic rbf]
+  functionality and support for [HWI][topic hwi] 1.2.1.
+
+- **Ledger Live adds Bitcoin Core full node support:**
+  Ledger Live, using the open source [Ledger SatStack][satstack github]
+  application, can now [connect to a Bitcoin full node][ledger full node] for
+  sending transactions and providing balances in a more private way, without
+  using Ledger’s [explorers][topic block explorers].
+
 
 ## Releases and release candidates
 
@@ -270,3 +299,12 @@ We'll return to regular publication on Wednesday, January 6th.
 [wtxid relay]: /en/newsletters/2020/07/29/#bitcoin-core-18044
 [feature negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [jnewbery bip155]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018301.html
+[bwt 0.2.0]: https://github.com/shesek/bwt/releases/tag/v0.2.0
+[libbwt github]: https://github.com/shesek/bwt/blob/master/doc/libbwt.md
+[joinmarket 0.8.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.8.0.md
+[news120 bisq segwit]: /en/newsletters/2020/10/21/#bisq-supports-bech32
+[bisq bech32 blog]: https://bisq.network/blog/bisq-v1.5.0-highlights/
+[psbt toolkit github]: https://github.com/benthecarman/PSBT-Toolkit
+[ledger full node]: https://support.ledger.com/hc/en-us/articles/360017551659-Setting-up-your-Bitcoin-full-node
+[sparrow 0.9.8]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.8
+[satstack github]: https://github.com/LedgerHQ/satstack
