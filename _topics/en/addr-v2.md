@@ -57,6 +57,12 @@ optech_mentions:
   - title: "Bitcoin Core #19954 implements BIP155 and Tor v3 support"
     url: /en/newsletters/2020/10/14/#bitcoin-core-19954
 
+  - title: "Bitcoin Core #20564 only sends addrv2 to protocol version 70016 peers"
+    url: /en/newsletters/2020/12/16/#protocol-version
+
+  - title: BIP155 updated to require `sendaddrv2` message be sent before `verack`
+    url: /en/newsletters/2020/12/16/#bips-1043
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

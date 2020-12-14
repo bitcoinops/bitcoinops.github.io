@@ -140,9 +140,22 @@ release candidates.*
 [Hardware Wallet Interface (HWI)][hwi repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #20564][] and [#20612][Bitcoin Core #20612] Don't send
-  'sendaddrv2' to pre-70016 software, and send before 'verack'
-  FIXME:jnewbery, maybe also mention mailing list post and #20599
+- [Bitcoin Core #20564][] makes two changes to the way that Bitcoin Core
+  signals support for `addrv2` messages ([BIP155][]):
+
+  - *Protocol version:* Bitcoin Core will only negotiate support for `addrv2` messages with peers that signal
+    they are using P2P version 70016 or higher. This restriction isn't required by BIP155,
+    but release testing has revealed that some other implementations will disconnect
+    from Bitcoin Core if they receive any unknown message, including
+    `sendaddrv2`. This change may be reverted in future versions of Bitcoin Core,
+    so other implementations are advised to tolerate unknown P2P messages at any time in the connection.
+
+  - *Updated BIP:* The `sendaddrv2` message will now be sent between the `version` and
+    `verack` message, as required by the latest version of BIP155. See [BIPs
+    #1043](#bips-1043) below for more information about that change to the BIP.
+
+    This PR was backported to [the latest V0.21 release candidate][Bitcoin
+    Core 0.21.0] in [Bitcoin Core #20612][].
 
 - [Bitcoin Core #19776][] net, rpc: expose high bandwidth mode state via getpeerinfo FIXME:moneyball
 
@@ -196,7 +209,17 @@ release candidates.*
   yet settled at the time a channel using [anchor outputs][topic anchor
   outputs] was closed.
 
-- [BIPs #1043][] BIP155: change when sendaddrv2 is to be sent FIXME:jnewbery
+- [BIPs #1043][] changes the way that support for [BIP155][] is negotiated between
+  peers. Previously, the BIP specified that a node should send a `sendaddrv2` message
+  to signal support for BIP155 after receiving a `verack` message from its peer.
+  The BIP now specifies that the node must send the `sendaddrv2` message
+  earlier in connection establishment, between sending its `version` and `verack`
+  messages. This is consistent with how [BIP339][] negotiates [wtxid relay][] support
+  and also with [a generic method for negotiating features][feature negotiation]
+  proposed to the mailing list earlier this year.
+
+    John Newbery posted [a summary of all the changes to BIP155][jnewbery
+    bip155] since it was proposed in February 2019 to the Bitcoin-dev mailing list.
 
 - [BOLTs #803][] updates [BOLT5][] with recommendations for preventing
   a [transaction pinning][topic transaction pinning] attack.  The recent
@@ -244,3 +267,6 @@ We'll return to regular publication on Wednesday, January 6th.
 [pgp verification]: https://bitcoincore.org/en/download/#verify-your-download
 [bitcoincore.org/bin]: https://bitcoincore.org/bin/
 [news110 bcc19620]: /en/newsletters/2020/08/12/#bitcoin-core-19620
+[wtxid relay]: /en/newsletters/2020/07/29/#bitcoin-core-18044
+[feature negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
+[jnewbery bip155]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018301.html
