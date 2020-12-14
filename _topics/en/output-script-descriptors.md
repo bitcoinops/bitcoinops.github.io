@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Q&A about migration from legacy wallets to descriptor wallets"
     url: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
 
+  - title: "Bitcoin Wallet Tracker (BWT) adds descriptor support"
+    url: /en/newsletters/2020/12/16/#bitcoin-wallet-tracker-adds-descriptor-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -76,6 +76,9 @@ optech_mentions:
   - title: "C-Lightning #3870 implements RBF scorched earth for penalty transactions"
     url: /en/newsletters/2020/09/16/#c-lightning-3870
 
+  - title: Sparrow wallet adds support for RBF fee bumping
+    url: /en/newsletters/2020/12/16/#sparrow-adds-replace-by-fee
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
