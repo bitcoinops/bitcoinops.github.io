@@ -129,6 +129,35 @@ wallets and services.*
   sending transactions and providing balances in a more private way, without
   using Ledger’s [explorers][topic block explorers].
 
+## Selected Q&A from Bitcoin StackExchange
+
+*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+contributors look for answers to their questions---or when we have a
+few spare moments to help curious or confused users.  In
+this monthly feature, we highlight some of the top-voted questions and
+answers posted since our last update.*
+
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
+- [What is the difference between "native segwit" and "bech32"?]({{bse}}100434)
+  Murch describes that bech32 is the method used for encoding native
+  segwit v0 witness programs; it's equivalent to the base58check encoding
+  used for legacy Bitcoin addresses.  The same bech32 encoding is also
+  used for other purposes, such as LN invoices.  Bech32 was planned
+  to be used for later versions of segwit witness programs but
+  a [length extension mutation][news78 bech32 mutability] was discovered
+  that necessitates using a modified bech32 address format, possibly
+  called "bech32m", for Pay-to-Taproot (P2TR) segwit v1 witness programs.
+
+- [What makes cross input signature aggregation complicated to implement?]({{bse}}100216)
+  Michael Folkson references a Bitcoin dev mailing list [post by AJ Towns][aj signature aggregation]
+  in explaining challenges to implementing cross input signature aggregation in Bitcoin.
+
+- [How do BIP8 and BIP9 differ, how are they alike?]({{bse}}100490)
+  Murch provides an overview of some different activation methods: early soft
+  fork activations using the block version, BIP9's multiple-proposal-supporting
+  activation method, and BIP8's block height and lock-in adjustments to BIP9.
 
 ## Releases and release candidates
 
@@ -308,3 +337,5 @@ We'll return to regular publication on Wednesday, January 6th.
 [ledger full node]: https://support.ledger.com/hc/en-us/articles/360017551659-Setting-up-your-Bitcoin-full-node
 [sparrow 0.9.8]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.8
 [satstack github]: https://github.com/LedgerHQ/satstack
+[news78 bech32 mutability]: /en/newsletters/2019/12/28/#bech32-mutability
+[aj signature aggregation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html

@@ -69,6 +69,9 @@ optech_mentions:
   - title: Problems with QR-encoded bech32 BIP21 invoices with uppercase schema
     url: /en/newsletters/2020/12/09/#thwarted-upgrade-to-uppercase-bech32-qr-codes
 
+  - title: "Q&A: What is the difference between 'native segwit' and 'bech32'?"
+    url: /en/newsletters/2020/12/16/#what-is-the-difference-between-native-segwit-and-bech32
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
