@@ -201,9 +201,9 @@ release candidates.*
 
 - [Eclair #1566][] Distribute connection-handling on multiple machines using akka-cluster FIXME:dongcarl
 
-- [Eclair #1610][] Set initial relay fees during channel open FIXME:bitschmidty
-
-- [Eclair #1608][] Retrieve bitcoin's mempool-min-fee FIXME:bitschmidty
+- [Eclair #1610][] allows overriding the default relay fees when
+  opening a new channel using the new `feeBaseMsat` and
+  `feeProportionalMillionths` options.
 
 - [LND #4779][] allows the node to claim payments (HTLCs) that weren't
   yet settled at the time a channel using [anchor outputs][topic anchor
