@@ -215,7 +215,16 @@ release candidates.*
     This PR was backported to [the latest V0.21 release candidate][Bitcoin
     Core 0.21.0] in [Bitcoin Core #20612][].
 
-- [Bitcoin Core #19776][] net, rpc: expose high bandwidth mode state via getpeerinfo FIXME:moneyball
+- [Bitcoin Core #19776][] updates the `getpeerinfo` RPC with two new
+  fields. `bip152_hb_to` indicates that we asked the peer to relay new
+  blocks to us by sending a [BIP152][] compact block without waiting to
+  ask if we need that specific block, called High-Bandwidth (HB) mode.
+  `bip152_hb_from` indicates that the peer asked us to be one of their
+  high-bandwidth peers.  By default, each node selects [up to 3][hb
+  peers] high-bandwidth compact block peers.  (Despite the name,
+  high-bandwidth mode doesn't use much bandwidth compared to legacy block
+  relay; its optimizations for fast relay of new blocks just uses more
+  bandwidth than BIP152's low-bandwidth mode.)
 
 - [Bitcoin Core #19858][] adds a new method for finding high-quality peers with
   the goal of making [eclipse attacks][topic eclipse attacks] more difficult.
@@ -339,3 +348,5 @@ We'll return to regular publication on Wednesday, January 6th.
 [satstack github]: https://github.com/LedgerHQ/satstack
 [news78 bech32 mutability]: /en/newsletters/2019/12/28/#bech32-mutability
 [aj signature aggregation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
+[bip152]: https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki
+[hb peers]: https://github.com/bitcoin/bitcoin/blob/b316dcb758e3dbd302fbb5941a1b5b0ef5f1f207/src/net_processing.cpp#L552
