@@ -266,7 +266,15 @@ release candidates.*
   hashlocks, such as recurring payments for subscriptions and donations.
   See the [BOLT12 draft][] for more information.
 
-- [Eclair #1566][] Distribute connection-handling on multiple machines using akka-cluster FIXME:dongcarl
+- [Eclair #1566][] abstracts out all connection-handling logic into a front
+  node, which can be distributed across multiple hosts to achieve
+  high availability for production deployments. These front nodes also handle
+  CPU/bandwidth-intensive [BOLT7][] messages, such as routing table related
+  gossip and syncing requests, in a distributed manner, improving scalability
+  for larger node deployments like ACINQ's. For readers looking to deploy this
+  change, an AWS Beanstalk bundle is available, and the author recommends using
+  the AWS Secrets Manager to store the node's private key, a topic previously
+  covered in the [SuredBits field report][suredbits].
 
 - [Eclair #1610][] allows overriding the default relay fees when
   opening a new channel using the new `feeBaseMsat` and
@@ -350,3 +358,4 @@ We'll return to regular publication on Wednesday, January 6th.
 [aj signature aggregation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
 [bip152]: https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki
 [hb peers]: https://github.com/bitcoin/bitcoin/blob/b316dcb758e3dbd302fbb5941a1b5b0ef5f1f207/src/net_processing.cpp#L552
+[suredbits]: /en/suredbits-enterprise-ln/
