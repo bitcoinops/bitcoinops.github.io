@@ -44,15 +44,20 @@ popular Bitcoin infrastructure projects.
   Daftuar [requested feedback][daftuar wtxid] on a proposal to insert a
   message into the sequence used by nodes to open a connection with a
   new peer.  The new message would make it easier for a node to
-  negotiate what features it wants to receive from its peer.  A
+  negotiate what features it wants to receive from its peer.  <!-- A
   challenge here is that previous versions of Bitcoin Core would
   terminate a new connection if certain messages didn't appear in a
-  particular order---and it's into this strict sequence that Daftuar
-  wants to insert a new message.  The proposal does increment the P2P
+  particular order, and it's into this strict sequence that Daftuar
+  wants to insert a new message.-->  The proposal does increment the P2P
   protocol version to provide backwards compatibility, but Daftuar is
   seeking feedback from maintainers of full nodes about whether the
   insertion of negotiation messages would cause any problems.  If you're
   aware of any problems, please reply to the thread.
+
+    *Correction (2020-12-16): the paragraph above was edited to remove
+    an erroneous claim that inserting a message during version
+    negotiation had backwards compatibility issues.  The original text
+    is preserved in place as an HTML comment.*
 
 - **Proposal to standardize an exfiltration resistant nonce protocol:** Stepan
   Snigirev [started][snigirev nonce] a discussion on the Bitcoin-Dev

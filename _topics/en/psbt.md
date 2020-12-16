@@ -132,6 +132,9 @@ optech_mentions:
   - title: "LND #4389 adds a new `psbt` wallet subcommand for creating & signing PSBTs"
     url: /en/newsletters/2020/10/07/#lnd-4389
 
+  - title: A new backwards-incompatible version of PSBT is proposed
+    url: /en/newsletters/2020/12/16/#new-psbt-version-proposed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

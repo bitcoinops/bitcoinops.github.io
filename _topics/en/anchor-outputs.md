@@ -125,6 +125,12 @@ optech_mentions:
   - title: "LND #4782 adds watchtower client support for channels using anchor outputs"
     url: /en/newsletters/2020/12/09/#lnd-4782
 
+  - title: "LND #4779 allows sweeping HTLCs from anchor outputs"
+    url: /en/newsletters/2020/12/16/#lnd-4779
+
+  - title: "BOLT5 updated to prevent a pinning attack against anchor outputs"
+    url: /en/newsletters/2020/12/16/#bolts-803
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
