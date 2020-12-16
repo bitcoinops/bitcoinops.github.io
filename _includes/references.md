@@ -77,6 +77,7 @@ place, put links here. -->{% endcomment %}
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
 [BOLT3]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md
 [BOLT4]: https://github.com/lightningnetwork/lightning-rfc/blob/master/04-onion-routing.md
+[BOLT5]: https://github.com/lightningnetwork/lightning-rfc/blob/master/05-onchain.md
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md

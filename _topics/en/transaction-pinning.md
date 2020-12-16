@@ -84,6 +84,9 @@ optech_mentions:
   - title: "Transaction fee sponsorship proposal to attempt to eliminate pinning"
     url: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 
+  - title: "BOLT5 updated to prevent a transaction pinning attack"
+    url: /en/newsletters/2020/12/16/#bolts-803
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
