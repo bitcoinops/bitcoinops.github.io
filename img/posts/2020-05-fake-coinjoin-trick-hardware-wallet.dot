@@ -52,4 +52,6 @@ subgraph cluster_actual {
 }
 
 fake1_in_label -> fake1_out_label -> fake2_in_label -> fake2_out_label -> actual_in_label -> actual_out_label;
+
+label = "Blinded ownership attack"
 }
