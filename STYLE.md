@@ -109,6 +109,7 @@ spelled the same.
 | Use | Don't use | Notes |
 |-|-|-|
 | adaptor signatures | adapter signatures | |
+| discreet log contracts | discrete<!-- --> log contracts | Remembering to spell this correctly more often than one time in ten is known as the discrete log problem |
 | k-of-n multisig and n-of-n multisignature | m-of-n multisig or any_other_letter-of-any_other_letter multisig | When spoken, 'm-of-n' can easily be confused with 'n-of-n' |
 | light client | lite client | |
 | merklized | merkelized or merkleized | |
