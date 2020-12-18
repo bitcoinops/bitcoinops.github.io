@@ -481,7 +481,7 @@ have been wanting for years.  The first of these features, Schnorr
 signatures, will make available increased privacy and reduced fees for
 the growing number of Bitcoin users taking advantage of multisig
 security (including LN users), and research into advanced uses of
-Schnorr such as [scriptless scripts][] and [discrete log contracts][]
+Schnorr such as [scriptless scripts][] and [discreet log contracts][]
 may enable many significant improvements in efficiency, privacy, and
 financial contracting without further necessary consensus changes.
 
@@ -587,6 +587,6 @@ the fault of the newsletter author.
 [hsms]: https://en.wikipedia.org/wiki/Hardware_security_module
 [musig]: https://blockstream.com/2018/01/23/en-musig-key-aggregation-schnorr-signatures/
 [scriptless scripts]: http://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/
-[discrete log contracts]: https://adiabat.github.io/dlc.pdf
+[discreet log contracts]: https://adiabat.github.io/dlc.pdf
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/

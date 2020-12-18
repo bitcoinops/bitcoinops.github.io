@@ -54,6 +54,9 @@ test-before-build:
 	## Check for duplicate links in any particular topic file
 	! git grep url:  _topics/ | sed 's/ \+/ /g' | sort | uniq -d | grep .
 
+	## Check for mistakes typical spell checkers can't catch
+	! git --no-pager grep -i '[d]iscrete log contract'
+
 test-after-build:
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
