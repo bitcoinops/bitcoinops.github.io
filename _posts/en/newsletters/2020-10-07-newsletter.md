@@ -94,11 +94,11 @@ release candidates.*
 
 - [Bitcoin Core #19723][] changes the way unknown P2P protocol messages
   are handled.  Previously the node penalized peers who sent unknown
-  messages at any time; now the node ignores unknown messages during the
+  messages between their `version` and `verack` message; now the node ignores unknown messages during the
   brief window between when the remote peer establishes a new connection
   by sending a `version` message and when the remote node acknowledges
-  receipt of the local peer's version with a `verack` message.  Peers
-  who send unknown messages at any other time will still be penalized.
+  receipt of the local peer's version with a `verack` message.  Unknown
+  messages received from a node after their `verack` are ignored, like before.
 
     By ignoring messages before `verack`, the local node makes it safe
     for a peer to send special messages identifying any features it
