@@ -108,6 +108,14 @@ release candidates.*
     for previous discussion about this proposed method for protocol
     feature negotiation.
 
+    *Correction:* this item originally incorrectly stated that Bitcoin
+    Core penalized peers who sent unknown messages after their `verack`
+    messages.  We've corrected it to indicate that unknown messages were
+    never specifically penalized, although messages received out of the
+    expected order were penalized.  Before this change, that included
+    receiving any message besides `version` or `wtxidrelay` before `verack`.  We thank
+    Marco Falke for reporting the error in our description.
+
 - [Bitcoin Core #19725][] updates the `getpeerinfo` RPC.  Its results
   now return a new `connection_type` field that indicates the
   reason the node either opened that connection to an outbound peer or
