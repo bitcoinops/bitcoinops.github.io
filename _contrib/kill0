@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "ERROR: within tests, use: git --no-pager"
+kill 0

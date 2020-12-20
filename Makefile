@@ -1,6 +1,13 @@
 all: test-before-build build test-after-build
 production: all production-test
 
+## If we call git in our tests without using the --no-pager option
+## or redirecting stdout to another command, fail unconditionally.
+## This addresses an issue where `make` can't be run within an IDE because
+## it tries to paginate the output, see:
+## https://github.com/bitcoinops/bitcoinops.github.io/pull/494#discussion_r546376335
+export GIT_PAGER='_contrib/kill0'
+
 clean:
 	bundle exec jekyll clean
 
