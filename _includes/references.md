@@ -34,6 +34,7 @@
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
+[rust bitcoin repo]: https://github.com/rust-bitcoin/rust-bitcoin
 [rust-lightning repo]: https://github.com/rust-bitcoin/rust-lightning
 
 {% comment %}<!-- deprecated links; don't use these any more -->{% endcomment %}
