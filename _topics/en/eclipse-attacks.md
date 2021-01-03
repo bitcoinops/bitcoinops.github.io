@@ -88,7 +88,7 @@ optech_mentions:
   - title: "CVE-2018-17145 InvDoS attack could've been used to eclipse nodes"
     url: /en/newsletters/2020/09/16/#inventory-out-of-memory-denial-of-service-attack-invdos
 
-  - title: Eclair #1545 adds multiple header sources to make eclipse attacks harder
+  - title: "Eclair #1545 adds multiple header sources to make eclipse attacks harder"
     url: /en/newsletters/2020/11/11/#eclair-1545
 
   - title: "Review Club chat about PR #19858 to make eclipse attacks more difficult"
