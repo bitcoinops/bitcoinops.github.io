@@ -99,7 +99,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Rust Bitcoin][rust bitcoin repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19137][] and [Bitcoin Core #20365][] wallettool new features FIXME:bitschmidty
+- [Bitcoin Core #19137][] adds `dump` and `createfromdump` commands to [`wallet-tool`][news45
+  wallet-tool], allowing users to write wallet records to a dump file and subsequently
+  restore a wallet from that dump file. These commands are useful not only
+  for testing but as part of the [migration away from legacy wallets][achow101 legacy timeline].
+
 
 - [Bitcoin Core #20599][] updates the message handling code to process
   `sendheaders` and `sendcmpct` messages received before the peer has sent its
@@ -165,3 +169,5 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news123 watchdog]: /en/newsletters/2020/11/11/#eclair-1545
 [news55 psbt xpub]: /en/newsletters/2019/07/17/#bips-784
 [news72 psbt version]: /en/newsletters/2019/11/13/#bips-849
+[news45 wallet-tool]: /en/newsletters/2019/05/07/#new-wallet-tool
+[achow101 legacy timeline]: https://github.com/bitcoin/bitcoin/issues/20160
