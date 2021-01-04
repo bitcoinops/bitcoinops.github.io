@@ -112,7 +112,12 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   data before deleting other data, so it's possible for pruned nodes to
   sometimes return results without a `fee` field.
 
-- [Bitcoin Core GUI #162][] Add network to peers window and peer details FIXME:jon
+- [Bitcoin Core GUI #162][] adds a new sortable Network column to the GUI Peers
+  window and a new Network row to the peer details area. In both, the GUI
+  displays to the user the type of network the peer is connected through: IPv4,
+  IPv6, or Onion, with the ability to display two potential future additions,
+  I2P and CJDNS. The PR also renames the NodeId and Node/Service column headers
+  to Peer Id and Address.
 
 - [C-Lightning #4207][] adds extensive [new documentation][cl
   doc/backup.md] about backing up your node data.
