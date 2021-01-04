@@ -104,6 +104,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   restore a wallet from that dump file. These commands are useful not only
   for testing but as part of the [migration away from legacy wallets][achow101 legacy timeline].
 
+- [Bitcoin Core #20365][] updates the `bitcoin-wallet` tool's `create`
+  command with a `-descriptors` flag for creating [sqlite-backed
+  descriptor wallets][news120 sqlite], similar to the daemon's
+  [createwallet RPC][news96 createwallet].
 
 - [Bitcoin Core #20599][] updates the message handling code to process
   `sendheaders` and `sendcmpct` messages received before the peer has sent its
@@ -171,3 +175,5 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news72 psbt version]: /en/newsletters/2019/11/13/#bips-849
 [news45 wallet-tool]: /en/newsletters/2019/05/07/#new-wallet-tool
 [achow101 legacy timeline]: https://github.com/bitcoin/bitcoin/issues/20160
+[news96 createwallet]: /en/newsletters/2020/05/06/#bitcoin-core-16528
+[news120 sqlite]: /en/newsletters/2020/10/21/#bitcoin-core-19077
