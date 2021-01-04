@@ -138,10 +138,21 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   enabling this option now because the 0.12.0-beta release of LND will
   make it mandatory.
 
-- [Rust Bitcoin #499][] New PSBT global keys, maybe describe the overall effect of all the work mentioned in #473 FIXME:dongcarl
+- [Rust Bitcoin #499][] adds support for two global [PSBT][topic psbt] fields
+  specified after [BIP174][]'s original publication:
+
+    1. The extended public key field which enables change detection for signing
+      wallets (see [Newsletter #55][news55 psbt xpub])
+
+    2. The version number field which helps identify backwards-incompatible
+      changes to the PSBT spec (see [Newsletter #72][news72 psbt version])
+
+  This is one of the last changes in a larger effort detailed in [#473][Rust Bitcoin
+  #473] to bring Rust Bitcoin's PSBT implementation up-to-date with current
+  specifications.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19137,20365,20651,20660,20616,20599,20624,18772,162,4207,4256,4257,1639,1630,499,7129,8068,9720" %}
+{% include linkers/issues.md issues="19137,20365,20651,20660,20616,20599,20624,18772,162,4207,4256,4257,1639,1630,499,7129,8068,9720,473" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc3
 [eclair 0.5.0]: https://github.com/ACINQ/eclair/releases/tag/v0.5.0
@@ -152,3 +163,5 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [acinq post]: https://medium.com/@ACINQ/phoenix-wallet-part-4-trampoline-payments-fb1befd027c8
 [news128 akka]: /en/newsletters/2020/12/16/#eclair-1566
 [news123 watchdog]: /en/newsletters/2020/11/11/#eclair-1545
+[news55 psbt xpub]: /en/newsletters/2019/07/17/#bips-784
+[news72 psbt version]: /en/newsletters/2019/11/13/#bips-849
