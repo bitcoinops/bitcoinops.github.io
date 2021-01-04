@@ -101,7 +101,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [Bitcoin Core #19137][] and [Bitcoin Core #20365][] wallettool new features FIXME:bitschmidty
 
-- [Bitcoin Core #20599][] net processing: Tolerate sendheaders and sendcmpct messages before verack FIXME:jnewbery
+- [Bitcoin Core #20599][] updates the message handling code to process
+  `sendheaders` and `sendcmpct` messages received before the peer has sent its
+  `verack` message. The BIPs for `sendheaders` ([BIP130][]) and `sendcmpct`
+  ([BIP152][]) do not specify that those messages must be sent after the `verack`
+  message, and the original implementations ([Bitcoin Core #7129][] and
+  [Bitcoin Core #8068][]) allowed the messages to be received and processed
+  before the `verack` message. A later PR ([Bitcoin Core #9720][]) prevented
+  Bitcoin Core from processing those messages if they were received before the
+  `verack`. This PR restores the original behavior.
 
 - [Bitcoin Core #18772][] updates the `getblock` RPC when used with the
   `verbosity=2` parameter to return a new `fee` field containing the
@@ -133,7 +141,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [Rust Bitcoin #499][] New PSBT global keys, maybe describe the overall effect of all the work mentioned in #473 FIXME:dongcarl
 
 {% include references.md %}
-{% include linkers/issues.md issues="19137,20365,20651,20660,20616,20599,20624,18772,162,4207,4256,4257,1639,1630,499" %}
+{% include linkers/issues.md issues="19137,20365,20651,20660,20616,20599,20624,18772,162,4207,4256,4257,1639,1630,499,7129,8068,9720" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc3
 [eclair 0.5.0]: https://github.com/ACINQ/eclair/releases/tag/v0.5.0
