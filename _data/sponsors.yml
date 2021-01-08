@@ -98,6 +98,10 @@ members:
     website: https://twitter.com/LedgerHQ
     logo: ledger.png
   -
+    name: Nunchuk
+    website: https://twitter.com/nunchuk_io
+    logo: nunchuk.png
+  -
     name: OKcoin
     website: https://twitter.com/OKcoin
     logo: okcoin.png
