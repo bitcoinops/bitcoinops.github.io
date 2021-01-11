@@ -154,7 +154,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [Bitcoin Core #19055][] muhash FIXME:adamjonas
 
-- [C-Lightning #4320][] invoice: add ctlv option.  FIXME:dongcarl
+- [C-Lightning #4320][] adds a `cltv` parameter to the `invoice` RPC so that
+  users and plugins can set the resulting invoice's `min_final_cltv_expiry`
+  field.
 
 - [C-Lightning #4303][] updates `hsmtool` to take its passphrase on
   standard input (stdin) and begins ignoring any passphrase provided on
