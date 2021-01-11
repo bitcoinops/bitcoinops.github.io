@@ -61,7 +61,7 @@ highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting._
 
 [Try to preserve outbound block-relay-only connections during restart][review
-club 17428] is a PR ([#17428][Bitcoin Core #17954]) by Hennadii Stepanov
+club 17428] is a PR ([#17428][Bitcoin Core #17428]) by Hennadii Stepanov
 which adds the concept of _anchor connections_ to Bitcoin Core, which are peers the node
 will preferably try to reconnect to between restarts. These persistent
 connections could mitigate some classes of [eclipse attacks][topic eclipse
@@ -135,7 +135,7 @@ release candidates.*
   [Newsletter #22][news22 wumbo] for details.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1323,17954" %}
+{% include linkers/issues.md issues="1323,17428" %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [bitcoin core 0.19.1 notes]: https://bitcoincore.org/en/releases/0.19.1/
 [wuille overview]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
