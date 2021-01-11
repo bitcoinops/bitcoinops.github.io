@@ -141,7 +141,16 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Rust Bitcoin][rust bitcoin repo], [Bitcoin Improvement Proposals
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #18077][] net: Add NAT-PMP port forwarding support FIXME:Xeyko
+- [Bitcoin Core #18077][] introduces support for a common automatic port
+  forwarding protocol, [NAT-PMP][rfc 6886] (Network Address Translation Port
+  Mapping Protocol).  A listening Bitcoin client started with the `-natpmp`
+  configuration parameter will automatically open the listening port on NAT-PMP-enabled routers.
+  NAT-PMP support is added in parallel to the existing UPnP (Universal Plug and Play) support
+  which had been disabled by default in Bitcoin Core 0.11.1 after multiple
+  security issues. In contrast to UPnP, NAT-PMP uses fixed-size UDP packets
+  instead of XML parsing and is therefore considered [less risky][laanwj
+  natpmp]. This change also transitively adds support for [PCP][rfc 6887] (Port
+  Control Protocol), the backward-compatible successor to NAT-PMP.
 
 - [Bitcoin Core #19055][] muhash FIXME:adamjonas
 
@@ -157,6 +166,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc5
 [news63 bcc15759]: /en/newsletters/2019/09/11/#bitcoin-core-15759
 [daftuar disabletx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018340.html
+[rfc 6886]: https://tools.ietf.org/html/rfc6886
+[rfc 6887]: https://tools.ietf.org/html/rfc6887
+[laanwj natpmp]: https://github.com/bitcoin/bitcoin/issues/11902#issue-282227529
 [wuille bech32m post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018338.html
 [bech32m bip]: https://github.com/sipa/bips/blob/bip-bech32m/bip-bech32m.mediawiki
 [news83 podle]: /en/newsletters/2020/02/05/#podle
