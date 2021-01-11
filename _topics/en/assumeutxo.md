@@ -52,6 +52,9 @@ optech_mentions:
   - title: Review Club summary of MuHash implementation for quickly hashing UTXO set
     url: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
 
+  - title: MuHash function added in preparation for tracking UTXO state hashes
+    url: /en/newsletters/2021/01/13/#bitcoin-core-19055
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
