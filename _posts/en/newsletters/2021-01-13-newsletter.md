@@ -182,7 +182,17 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   natpmp]. This change also transitively adds support for [PCP][rfc 6887] (Port
   Control Protocol), the backward-compatible successor to NAT-PMP.
 
-- [Bitcoin Core #19055][] muhash FIXME:adamjonas
+- [Bitcoin Core #19055][] adds the [MuHash algorithm][] so that future PRs
+  can use it for planned features.  As covered in
+  [newsletter 123][muhash review club], MuHash is a rolling hash algorithm
+  that can be used to calculate the hash digest of a set of objects and
+  efficiently update it when items are added to or removed.  This is a revival
+  of the idea of using MuHash to calculate a digest of the complete UTXO set
+  first suggested by [Pieter Wuille in 2017][muhash mailing list]
+  and implemented in [Bitcoin Core #10434][].  For those interested in
+  tracking the progress of creating an index for UTXO set statistics, making
+  it easier to verify [assumeUTXO][topic assumeutxo] archives, meta PR
+  [Bitcoin Core #18000][] documents the project's progress and future steps.
 
 - [C-Lightning #4320][] adds a `cltv` parameter to the `invoice` RPC so that
   users and plugins can set the resulting invoice's `min_final_cltv_expiry`
@@ -193,7 +203,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the command line.
 
 {% include references.md %}
-{% include linkers/issues.md issues="18077,19055,4320,4303,6993,20477" %}
+{% include linkers/issues.md issues="18077,19055,4320,4303,6993,20477,18000,10434" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc5
 [news63 bcc15759]: /en/newsletters/2019/09/11/#bitcoin-core-15759
@@ -209,3 +219,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [fournier podle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002929.html
 [news45 bech32 upgrade]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
 [rc testing guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/0.21-Release-Candidate-Testing-Guide
+[muhash review club]: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
+[muhash mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
+[muhash algorithm]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
