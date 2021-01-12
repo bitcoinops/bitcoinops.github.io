@@ -95,12 +95,42 @@ software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jonatack
+[Add unit testing of node eviction logic][review club
+#20477] is a PR ([#20477][Bitcoin Core #20477]) by
+pseudonymous contributor practicalswift to improve test coverage of Bitcoin Core's peer
+eviction logic when a node's inbound connection slots are full. Care
+must be taken to avoid exposing the node to attacker-triggered network
+partitioning with this logic.
+
+Most of the discussion focused on understanding Bitcoin Core's peer eviction
+logic.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="http://FIXME"
+  q0="Inbound or outbound peer selection: which one is our primary defense
+      against eclipse attacks?"
+  a0="Outbound peer selection, as attackers have less influence over what outbound peers
+      we select than the inbound connections we accept. Inbound peer eviction is a second-order
+      protection---and not all nodes permit incoming connections."
+  a0link="https://bitcoincore.reviews/20477#l-77"
+
+  q1="Why does Bitcoin Core evict inbound connections?"
+  a1="To make inbound slots available for honest peers in the network so that
+      new nodes can establish good outbound connections to them. Otherwise,
+      dishonest nodes could more easily attack new nodes by being available for
+      their outbound connections and by occupying as many inbound slots as possible."
+  a1link="https://bitcoincore.reviews/20477#l-66"
+
+  q2="When it needs to free up a slot, how does Bitcoin Core decide which
+      inbound peer to evict?"
+  a2="Up to 28 peers are protected from eviction based on criteria that are
+      difficult to forge, such as low latency, network group, providing novel
+      valid transactions and blocks, and a few others. The longest-connected
+      remaining half are protected, including some onion peers. Of those that
+      remain, the youngest member of the network group with the most
+      connections is selected for disconnection. An attacker would have to be
+      simultaneously better than honest peers at all of these characteristics
+      to partition a node."
+  a2link="https://bitcoincore.reviews/20477#l-83"
 %}
 
 ## Releases and release candidates
@@ -163,7 +193,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the command line.
 
 {% include references.md %}
-{% include linkers/issues.md issues="18077,19055,4320,4303,6993" %}
+{% include linkers/issues.md issues="18077,19055,4320,4303,6993,20477" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc5
 [news63 bcc15759]: /en/newsletters/2019/09/11/#bitcoin-core-15759
