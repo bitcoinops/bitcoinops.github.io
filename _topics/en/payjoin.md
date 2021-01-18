@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Discussion about how to increase payjoin adoption"
     url: /en/newsletters/2021/01/20/#payjoin-adoption
 
+  - title: "Coldcard hardware wallet adds support for paying payjoin"
+    url: /en/newsletters/2021/01/20/#coldcard-adds-payjoin-signing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
