@@ -80,6 +80,9 @@ optech_mentions:
   - title: "2020 year in review: vaults"
     url: /en/newsletters/2020/12/23/#vaults
 
+  - title: "Making hardware wallets compatible with advanced features, like vaults"
+    url: /en/newsletters/2021/01/20/#making-hardware-wallets-compatible-with-more-advanced-bitcoin-features
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

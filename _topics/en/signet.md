@@ -94,6 +94,9 @@ optech_mentions:
   - title: "2020 year in review: signet"
     url: /en/newsletters/2020/12/23/#signet
 
+  - title: "Bitcoin Core 0.21.0 released with support for signets"
+    url: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
