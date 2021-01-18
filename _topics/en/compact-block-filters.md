@@ -85,6 +85,9 @@ optech_mentions:
   - title: "2020 year in review: compact block filters"
     url: /en/newsletters/2020/12/23/#compact-block-filters
 
+  - title: "Bitcoin Core 0.21.0 released with support for serving compact block filters"
+    url: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

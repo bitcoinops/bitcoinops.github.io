@@ -71,6 +71,9 @@ optech_mentions:
   - title: "2020 year in review: payjoin"
     url: /en/newsletters/2020/12/23/#payjoin
 
+  - title: "Discussion about how to increase payjoin adoption"
+    url: /en/newsletters/2021/01/20/#payjoin-adoption
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

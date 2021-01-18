@@ -66,6 +66,12 @@ optech_mentions:
   - title: "2020 year in review: version 2 `addr` message"
     url: /en/newsletters/2020/12/23/#addrv2
 
+  - title: "Bitcoin Core 0.21.0 released with version 2 `addr` support"
+    url: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+
+  - title: "Rust Bitcoin 0.26.0 released with version 2 `addr` support"
+    url: /en/newsletters/2021/01/20/#rust-bitcoin-0-26-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

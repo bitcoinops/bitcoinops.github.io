@@ -70,6 +70,15 @@ optech_mentions:
   - title: "Bitcoin Wallet Tracker (BWT) adds descriptor support"
     url: /en/newsletters/2020/12/16/#bitcoin-wallet-tracker-adds-descriptor-support
 
+  - title: "Bitcoin Core 0.21.0 released with experimental native descriptor wallets"
+    url: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+
+  - title: "BTCPay Server #2169 adds functions for importing some descriptors"
+    url: /en/newsletters/2021/01/20/#btcpay-server-2169
+
+  - title: "BTCPay Server 1.0.6.7 released with support for descriptors in wallet setup"
+    url: /en/newsletters/2021/01/20/#btcpay-server-1-0-6-7
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
