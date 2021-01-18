@@ -300,7 +300,7 @@ properties from their use of multiparty signatures, describing an easy
 way to use plain Bitcoin Script-based multisig instead.  During an April
 hackathon, several developers [produced][news92 ecdsa adaptor] a rough
 implementation of this protocol for a fork of the popular libsecp256k1
-library.  Later, in September, Fourier would further advance the
+library.  Later, in September, Fournier would further advance the
 practicality of PTLCs without needing to wait for changes to Bitcoin by
 proposing a [different way][news113 witasym] to [construct][news119
 witasym update] LN commitment transactions.  In December, he would
