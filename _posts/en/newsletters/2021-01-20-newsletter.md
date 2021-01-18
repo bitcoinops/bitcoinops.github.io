@@ -38,7 +38,29 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschidty
+- **Blockstream announces Jade hardware wallet:**
+  Blockstream's [new Jade hardware wallet][blockstream jade blog] is open source,
+  supports Bitcoin and Liquid networks, and is compatible with Blockstream Green
+  for Android.
+
+- **Coldcard adds payjoin signing:**
+  Coldcard's [3.2.1 release][coldcard 3.2.1] adds [BIP78][] payjoin signing
+  support and various multisig improvements.
+
+- **Mempool v2.0.0 released:**
+  Open source [block explorer][topic block explorers] mempool, which backs the
+  [mempool.space][mempool.space website] website, has released [version
+  2.0.0][mempool v2]. Mempool supports Bitcoin Core, Electrum, and Esplora
+  backends and also exposes block, transaction, and address information via APIs.
+
+- **BlueWallet adds multisig:**
+  Version [6.0.0 of BlueWallet][bluewallet 6.0.0. tweet] adds the ability to
+  create and manage air-gapped, native segwit multisig vaults.
+
+- **Sparrow supports connecting to Bitcoin Core:**
+  [Sparrow 0.9.10][sparrow 0.9.10], using [Bitcoin Wallet Tracker v0.2.1][bwt
+  0.2.1]'s Java Native Interface bindings feature, now supports connecting
+  directly to a backing Bitcoin Core node.
 
 ## Releases and release candidates
 
@@ -120,3 +142,10 @@ BOLTs][bolts repo].*
 [raw payjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018358.html
 [payjoin wiki]: https://en.bitcoin.it/wiki/PayJoin_adoption
 [loaec hww]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018352.html
+[blockstream jade blog]: https://blockstream.com/2021/01/03/en-secure-your-bitcoin-and-liquid-assets-with-blockstream-jade/
+[coldcard 3.2.1]: https://blog.coinkite.com/version-3.2.1-released/
+[mempool.space website]: https://mempool.space/
+[mempool v2]: https://github.com/mempool/mempool/releases/tag/v2.0.0
+[bluewallet 6.0.0. tweet]: https://twitter.com/bluewalletio/status/1338943580245790722
+[sparrow 0.9.10]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.10
+[bwt 0.2.1]: https://github.com/bwt-dev/bwt/releases/tag/v0.2.1
