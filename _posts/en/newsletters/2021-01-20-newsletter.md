@@ -92,7 +92,10 @@ BOLTs][bolts repo].*
   anchors.  The commit messages notes that, "the plan is to enable
   anchors by default [in a later release]."
 
-- [Rust-Lightning #742][] new signer API FIXME:dongcarl
+- [Rust-Lightning #742][] improves the signer API by providing per-transaction
+  information necessary for the signer to perform additional checks and provide
+  a signature. This PR is part of a larger effort to support external signers in
+  Rust-Lightning tracked [here][Rust-Lightning #408].
 
 - [BTCPay Server #2169][] adds functions that provide support for
   decoding [output script descriptors][topic descriptors] referring to
@@ -104,7 +107,7 @@ BOLTs][bolts repo].*
   P2WSH).
 
 {% include references.md %}
-{% include linkers/issues.md issues="19937,4917,742,2169,253" %}
+{% include linkers/issues.md issues="19937,4917,742,2169,253,408" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [bcc 0.21.0 notes]: https://bitcoincore.org/en/releases/0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc5
