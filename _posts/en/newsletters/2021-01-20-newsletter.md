@@ -106,7 +106,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #19937][] signet mining utility FIXME:jnewbery
+- [Bitcoin Core #19937][] adds a new standalone `bitcoin-util` executable and
+  `miner` script for mining [signet][topic signet] blocks, making it easier to
+  create and maintain new signet networks. Also included is extensive
+  [documentation][signet miner tool docs] for the new tools.
 
 - [LND #4917][] disables the use of [anchor outputs][topic anchor
   outputs] by default, a feature that was planned to be released in the
@@ -149,3 +152,4 @@ BOLTs][bolts repo].*
 [bluewallet 6.0.0. tweet]: https://twitter.com/bluewalletio/status/1338943580245790722
 [sparrow 0.9.10]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.10
 [bwt 0.2.1]: https://github.com/bwt-dev/bwt/releases/tag/v0.2.1
+[signet miner tool docs]: https://github.com/bitcoin/bitcoin/blob/43f3ada27b835e6b198f9a669e4955d06f5c4d08/contrib/signet/README.md#miner
