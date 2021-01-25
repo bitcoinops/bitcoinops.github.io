@@ -105,7 +105,10 @@ BOLTs][bolts repo].*
   deterministic build system now supports all the same platforms as the
   existing Gitian system.
 
-- [LND #4908][] Reserve wallet balance for anchor fee bumping FIXME:dongcarl
+- [LND #4908][] ensures that channels using [anchor outputs][topic anchor outputs] can fee-bump their
+  commitment transactions on closure by enforcing a reserve balance in some
+  instances. Notably, the general `SendCoins` RPC call does not yet enforce this
+  balance reserve, other than in the case of when `send_all` is set.
 
 {% include references.md %}
 {% include linkers/issues.md issues="19866,17920,4908" %}
