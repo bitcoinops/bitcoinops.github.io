@@ -79,6 +79,9 @@ optech_mentions:
   - title: Sparrow wallet adds support for RBF fee bumping
     url: /en/newsletters/2020/12/16/#sparrow-adds-replace-by-fee
 
+  - title: "Question: would first-seen-safe prevent confirmed RBF double spends?"
+    url: /en/newsletters/2021/01/27/#would-first-seen-prevent-a-double-spend-attack
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

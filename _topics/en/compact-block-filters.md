@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Bitcoin Core 0.21.0 released with support for serving compact block filters"
     url: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
 
+  - title: "Question: how do clients using BIP157 receive unconfirmed transactions?"
+    url: /en/newsletters/2021/01/27/#how-do-light-clients-using-compact-block-filters-get-relevant-unconfirmed-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
