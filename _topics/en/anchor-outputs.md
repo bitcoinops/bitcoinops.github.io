@@ -134,6 +134,12 @@ optech_mentions:
   - title: "2020 year in review: anchor outputs"
     url: /en/newsletters/2020/12/23/#anchor-outputs
 
+  - title: "LND 0.12.0-beta adds watchtower support for channels using anchor outputs"
+    url: /en/newsletters/2021/01/27/#lnd-0-12-0-beta
+
+  - title: "LND #4908 reserves a balance for fee bumping when using anchor outputs"
+    url: /en/newsletters/2021/01/27/#lnd-4908
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

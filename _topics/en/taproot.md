@@ -144,6 +144,9 @@ optech_mentions:
   - title: "2020 year in review: Taproot, tapscript, and schnorr signatures"
     url: /en/newsletters/2020/12/23/#taproot
 
+  - title: "Meeting to discuss taproot activation mechanisms"
+    url: /en/newsletters/2021/01/27/#scheduled-meeting-to-discuss-taproot-activation
+
 ## Optional
 see_also:
   - title: MAST
