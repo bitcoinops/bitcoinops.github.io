@@ -138,6 +138,9 @@ optech_mentions:
   - title: New PSBT Toolkit software provides GUI for working with PSBTs
     url: /en/newsletters/2020/12/16/#psbt-toolkit-v0-1-2-released
 
+  - title: "LND 0.12.0-beta adds a new `psbt` wallet subcommand for PSBTs"
+    url: /en/newsletters/2021/01/27/#lnd-0-12-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

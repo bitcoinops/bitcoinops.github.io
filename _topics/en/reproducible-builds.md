@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Bitcoin Core #17595 adds Guix support for Windows builds"
     url: /en/newsletters/2020/04/22/#bitcoin-core-17595
 
+  - title: "Bitcoin Core #17920 adds Guix support for macOS builds"
+    url: /en/newsletters/2021/01/27/#bitcoin-core-17920
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"
