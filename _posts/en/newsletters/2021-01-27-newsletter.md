@@ -97,7 +97,14 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #19866][] eBPF Linux tracepoints FIXME:Xekyo
+- [Bitcoin Core #19866][] adds a framework for User-Level Statically Defined Trace (USDT) probes.
+  The Linux kernel can hook into these tracepoints at runtime
+  which allows a node operator to use eBPF (extended Berkely Packet Filter)
+  tools such as bpftrace to add custom introspection from userspace.
+  This could for example be used to flexibly add logging or profiling
+  with almost no overhead. Issue [#20981][Bitcoin Core #20981] has been
+  opened to explore potential use cases for USDT probes in Bitcoin Core now
+  that the framework has been merged.
 
 - [Bitcoin Core #17920][] adds support for using GNU Guix to
   [reproducibly build][topic reproducible builds] Bitcoin Core binaries for macOS.  Windows and
@@ -111,7 +118,7 @@ BOLTs][bolts repo].*
   balance reserve, other than in the case of when `send_all` is set.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19866,17920,4908" %}
+{% include linkers/issues.md issues="20981,19866,17920,4908" %}
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta
 [c-lightning 0.9.3]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.3
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
