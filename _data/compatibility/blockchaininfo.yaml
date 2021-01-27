@@ -37,18 +37,18 @@ rbf:
         Receiving Transaction Signaling RBF - Receiving RBF signaling transaction. RBF flag is shown.
 segwit:
   tested:
-    date: "2019-06-27"
+    date: "2021-06-01"
     platforms:
       - web
     version: "n/a"
   features:
     receive:
       p2sh_wrapped: "false"
-      bech32: "false"
-      default: "p2pkh"
+      bech32: "true"
+      default: "bech32"  # https://github.com/bitcoinops/bitcoinops.github.io/pull/510#issuecomment-859732513
     send:
       bech32: "true" 
-      change_bech32: "false"
+      change_bech32: "true"  # https://github.com/bitcoinops/bitcoinops.github.io/pull/510#issuecomment-859732513
       segwit_v1: "Error occurs during sending process, after validation."
       bech32_p2wsh: "true"
   examples:
