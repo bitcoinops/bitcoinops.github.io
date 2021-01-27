@@ -38,26 +38,22 @@ rbf:
         replacement transaction confirmed. Didn’t see original.
 segwit:
   tested:
-    date: "2019-06-27"
+    date: "2021-01-27"
     platforms:
       - web
     version: "n/a"
   features:
     receive:
       p2sh_wrapped: "true"
-      bech32: "false"
+      bech32: "true"  # https://www.bitstamp.net/article/weve-added-support-bech32-bitcoin-addresses-bitsta/
       default: "p2sh_wrapped_p2wsh"
     send:
-      bech32: "false" 
+      bech32: "true"   # https://www.bitstamp.net/article/weve-added-support-bech32-bitcoin-addresses-bitsta/
       change_bech32: "untested"
       segwit_v1: "Address text input doesn’t allow bech32 addresses due to
       character limits."
-      bech32_p2wsh: "false"
+      bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/bitstamp/segwit/receive-screen.png
       caption: >
         Bitstamp receives deposits to P2SH-P2WSH addresses.
-    - image: /img/compatibility/bitstamp/segwit/send-screen.png
-      caption: >
-        Bitstamp limits the characters available for an address so that bech32
-        addresses are impossible to enter in the textbox.

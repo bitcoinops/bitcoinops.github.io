@@ -39,17 +39,17 @@ rbf:
         Receiving Transaction Signaling RBF - When receiving RBF, or any transaction, no unconfirmed transactions show.
 segwit:
   tested:
-    date: "2019-07-24"
+    date: "2021-01-27"
     platforms:
       - iOS
     version: "14"
   features:
     receive:
       p2sh_wrapped: "false"
-      bech32: "false"
+      bech32: "true"  # https://github.com/mycelium-com/wallet-android/issues/425#issuecomment-440792004
       default: "p2pkh"
     send:
-      bech32: "false"
+      bech32: "true" # https://github.com/mycelium-com/wallet-android/issues/425#issuecomment-440792004
       change_bech32: "false"
       segwit_v1: "Fails during address validation."
       bech32_p2wsh: "false"
