@@ -30,6 +30,7 @@
 [c-lightning]: https://github.com/ElementsProject/lightning
 [c-lightning repo]: https://github.com/ElementsProject/lightning
 [eclair repo]: https://github.com/ACINQ/eclair
+[elementsproject.org]: https://elementsproject.org/
 [hwi repo]: https://github.com/bitcoin-core/HWI
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1

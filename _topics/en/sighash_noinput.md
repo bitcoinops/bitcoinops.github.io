@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Discussion of various topics, including `SIGHASH_ANYPREVOUT`"
     url: /en/newsletters/2020/08/05/#sydney-meetup-discussion
 
+  - title: "Using schnorr signatures plus `OP_CAT` to simulate `SIGHASH_ANYPREVOUT`"
+    url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo
