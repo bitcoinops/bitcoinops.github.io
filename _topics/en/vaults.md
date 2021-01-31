@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Making hardware wallets compatible with advanced features, like vaults"
     url: /en/newsletters/2021/01/20/#making-hardware-wallets-compatible-with-more-advanced-bitcoin-features
 
+  - title: "Using schnorr signatures plus `OP_CAT` to create vaults"
+    url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

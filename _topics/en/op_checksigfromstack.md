@@ -165,6 +165,9 @@ optech_mentions:
   - title: "Discussion: the evolution of Bitcoin Script, `OP_CSFS` discussion"
     url: /en/newsletters/2018/10/09/#op-checksigfromstack
 
+  - title: "Replicating `OP_CHECKSIGFROMSTACK` with schnorr signatures and `OP_CAT`"
+    url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
