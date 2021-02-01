@@ -53,7 +53,13 @@ BOLTs][bolts repo].*
   [descriptor][topic descriptors] wallets. This new RPC method lists
   all descriptors imported into a descriptor wallet.
 
-- [Bitcoin Core GUI #180][] gui: return inbound {full, block} relay type in peer details FIXME:jonatack
+- [Bitcoin Core GUI #163][] replaces the *Direction* field in the GUI peer details
+  area with a *Connection Type* that displays both the direction and the type of
+  peer connection. For more information, place the cursor over the Connection
+  Type field name to see the tooltip shown below.
+
+    {:.center}
+    ![Illustration of GUI peer detail connection type](/img/posts/2021-02-gui-peer-connection-type.png)
 
 - [HWI #430][] allows the `displayaddress` command to show [BIP32][] extended
   public keys (xpubs) for multisig addresses on the Trezor One.
@@ -64,7 +70,7 @@ BOLTs][bolts repo].*
   sh_wpkh`.
 
 {% include references.md %}
-{% include linkers/issues.md issues="16528,20226,180,430,415" %}
+{% include linkers/issues.md issues="16528,20226,163,430,415" %}
 [btcpay server 1.0.6.8]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.8
 [poelstra 340cat]: https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298
 [csfs cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
