@@ -79,6 +79,9 @@ optech_mentions:
   - title: "BTCPay Server 1.0.6.7 released with support for descriptors in wallet setup"
     url: /en/newsletters/2021/01/20/#btcpay-server-1-0-6-7
 
+  - title: "Bitcoin Core #20226 adds new `listdescriptors` RPC for its wallet"
+    url: /en/newsletters/2021/02/03/#bitcoin-core-20226
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

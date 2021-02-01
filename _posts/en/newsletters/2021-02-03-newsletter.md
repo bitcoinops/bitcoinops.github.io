@@ -47,7 +47,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20226][] wallet, rpc: add listdescriptors command FIXME:jnewbery
+- [Bitcoin Core #20226][] adds a new `listdescriptors` RPC method for the
+  wallet. [PR #16528][news96 descriptor wallets], included in the recent [0.21.0
+  software release][news132 bitcoin core v0.21], added support for
+  [descriptor][topic descriptors] wallets. This new RPC method lists
+  all descriptors imported into a descriptor wallet.
 
 - [Bitcoin Core GUI #180][] gui: return inbound {full, block} relay type in peer details FIXME:jonatack
 
@@ -60,7 +64,9 @@ BOLTs][bolts repo].*
   sh_wpkh`.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20226,180,430,415" %}
+{% include linkers/issues.md issues="16528,20226,180,430,415" %}
 [btcpay server 1.0.6.8]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.8
 [poelstra 340cat]: https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298
 [csfs cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
+[news96 descriptor wallets]: /en/newsletters/2020/05/06/#bitcoin-core-16528
+[news132 bitcoin core v0.21]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
