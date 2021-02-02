@@ -5,8 +5,10 @@ layout: page
 ---
 {% include linkers/topic-pages.md %}
 <!-- Build a list of months in reverse chronological order -->
+{% assign this_year = site.time | date: "%Y" | plus: 0 %}<!-- "plus: 0" casts string to int -->
 {% capture months %}
-{%- for year in (2018..2020) -%}
+{%- for year in (2018..2099) -%}
+  {%- if year > this_year -%}{% break %}{%- endif -%}
   {%- for month in (1..9) -%}
     {{year}}-0{{month}}|
   {%- endfor -%}
@@ -74,7 +76,8 @@ before the main content -->
 <div class="center" markdown="1">
 {{number_of_events}} indexed events in {{number_of_months}} months <!-- {{mentions | size}} events including duplicates -->
 
-[2018](#d2018-12) | [2019](#d2019-12) | [2020](#d2020-12)
+[2018](#d2018-12) | [2019](#d2019-12) | [2020](#d2020-12) |
+[2021](#d2021-12)
 </div>
 
 <div>{% comment %}<!-- enclosing in a div forces this to be interpreted
