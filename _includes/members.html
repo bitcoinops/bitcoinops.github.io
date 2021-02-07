@@ -1,8 +1,9 @@
 {% assign members = site.data.sponsors.members %}
 
+<div id="supporters">
 <div id="members">
-  <h2>Member Companies</h2>
-  <p>Bitcoin Optech is supported by our member companies.</p>
+  <h2>Supporters</h2>
+  <p>Bitcoin Optech is generously supported by:</p>
   <ul class="n-column-list">
   {% for member in members %}
     {% assign logo=member.logo %}
@@ -14,4 +15,5 @@
     </li>
   {% endfor %}
   </ul>
+</div>
 </div>
