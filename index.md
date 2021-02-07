@@ -50,4 +50,4 @@ and the open source community.
 
 {% include newsletter-signup.html %}
 
-{% include members.html %}
+{% include supporters.html %}
