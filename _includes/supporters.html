@@ -1,0 +1,19 @@
+{% assign supporters = site.data.sponsors.supporters %}
+
+<div id="supporters">
+<div id="members">
+  <h2>Supporters</h2>
+  <p>Bitcoin Optech is generously supported by:</p>
+  <ul class="n-column-list">
+  {% for supporter in supporters %}
+    {% assign logo=supporter.logo %}
+    {% unless supporter.logo contains 'https://' %}{% capture logo %}/img/supporters/{{supporter.logo}}{% endcapture %}{% endunless %}
+    <li>
+      <div class="supporter">
+        <a href="{{ supporter.website }}"><img src="{{ logo }}" width="150" alt="{{ supporter.name }}" title="{{ supporter.name }}"></a>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+</div>
