@@ -141,6 +141,12 @@ optech_mentions:
   - title: "LND 0.12.0-beta adds a new `psbt` wallet subcommand for PSBTs"
     url: /en/newsletters/2021/01/27/#lnd-0-12-0-beta
 
+  - title: "BIPs #988 updates BIP174 to require output fields be initialized"
+    url: /en/newsletters/2021/02/10/#bips-988
+
+  - title: "BIPs #1055 updatse BIP174 with new versioning information"
+    url: /en/newsletters/2021/02/10/#bips-1055
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

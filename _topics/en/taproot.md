@@ -147,6 +147,9 @@ optech_mentions:
   - title: "Meeting to discuss taproot activation mechanisms"
     url: /en/newsletters/2021/01/27/#scheduled-meeting-to-discuss-taproot-activation
 
+  - title: "Summary of taproot activation discussion & additional meeting scheduled"
+    url: /en/newsletters/2021/02/10/#taproot-activation-meeting-summary-and-follow-up
+
 ## Optional
 see_also:
   - title: MAST
