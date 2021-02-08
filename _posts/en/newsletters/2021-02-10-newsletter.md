@@ -53,12 +53,78 @@ changes to popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jo(h)n
+[Only support compact blocks with witnesses][review club
+#20799] is a PR ([#20799][Bitcoin Core #20799]) by John Newbery that proposes to
+[remove support for the non-segwit version][nonsegwit] of [BIP152][] compact
+blocks.
+
+The review club discussion focused on understanding compact blocks, high versus
+low bandwidth modes, and versioning use and compatibility before diving into the
+changes in the code.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/12345#l-77"
+  q0="What are compact blocks?"
+  a0="Compact blocks, specified in [BIP152][], are a way to relay blocks
+     across the Bitcoin peer-to-peer network with less bandwidth use. They take
+     advantage of the fact that during transaction propagation, peers have
+     already seen most of the transactions contained in the received
+     block. Compact blocks can be relayed either in high bandwidth mode or low
+     bandwidth mode. When relayed in high bandwidth mode, compact blocks can
+     also speed up block propagation."
+
+  q1="What is required for compact blocks to work?"
+  a1="The receiver must have a mempool containing transactions that are likely
+     to be included in the block. Compact blocks are therefore only useful for
+     relaying blocks at or near the tip of the block chain. For older blocks,
+     the receiver won't have the transactions in its mempool and would need to
+     request them using a `getblocktxn` message. In such cases, just requesting
+     the full block is more efficient."
+
+  q2="How do compact blocks save bandwidth?"
+
+  a2="Rather than using full transaction ids, compact blocks contain short ids
+     that are smaller in size but sufficient to uniquely identify
+     transactions. A node receiving a compact block matches each short id with a
+     transaction in its mempool to reconstruct the full block. This greatly
+     reduces block relay bandwidth."
+
+  a2link="https://bitcoincore.reviews/20799#l-90"
+
+  q3="What is the difference between \"high bandwidth\" and \"low bandwidth\"
+     modes?"
+
+  a3="In high bandwidth mode, compact blocks are sent unsolicited, trading
+     higher bandwidth use for improved latency, whereas in low bandwidth mode
+     they are sent only on request after an `inv` or `headers` message was
+     received. In high bandwidth mode, compact block messages can be relayed
+     prior to full validation, requiring only that the block header be valid
+     before relay."
+
+  a3link="https://bitcoincore.reviews/20799#l-156"
+
+  q4="How do we choose which peers are in high bandwidth mode?"
+  a4="We select [up to three peers][three] that recently sent us a novel valid
+     block. This logic is in the net processing function,
+     `MaybeSetPeerAsAnnouncingHeaderAndIDs`."
+  a4link="https://bitcoincore.reviews/20799#l-219"
+
+  q5="Why can we stop supporting version 1 compact blocks?"
+
+  a5="BIP152 supports two versions: version 1 (without witnesses) and version 2
+     (with witnesses). Version 2 is required to reconstruct segwit
+     blocks. Segwit was activated in August 2017, so providing version 1
+     pre-segwit compact blocks to peers is no longer useful; without the
+     witnesses, peers are unable to verify that the blocks follow the
+     consensus rules."
+
+  a5link="https://bitcoincore.reviews/20799#l-104"
+
+  q6="Practically speaking, how can version 1 support be dropped?"
+  a6="By ignoring incoming `sendcmpct` messages with version equal to 1, no
+     longer sending `sendcmpct` messages that signal version 1 support, only
+     sending `sendcmpct` messages to `NODE_WITNESS` peers, and responding to
+     `sendcmpct` and `blocktxn` messages with witness-serialized blocks and
+     transactions."
 %}
 
 ## Releases and release candidates
@@ -162,7 +228,7 @@ BOLTs][bolts repo].*
   and so is not recommended for implementation.
 
 {% include references.md %}
-{% include linkers/issues.md issues="433,19509,1021,1020,20764,1048,1056,988,1040,1054,1047,774,950,20685,1055" %}
+{% include linkers/issues.md issues="433,19509,1021,1020,20764,1048,1056,988,1040,1054,1047,774,950,20685,1055,20799" %}
 [LND 0.12.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.1-beta.rc1
 [folkson1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018379.html
 [folkson2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
@@ -173,3 +239,6 @@ BOLTs][bolts repo].*
 [news131 bech32m]: /en/newsletters/2021/01/13/#bech32m
 [news130 bip322]: /en/newsletters/2021/01/06/#proposed-updates-to-generic-signmessage
 [bitcoin dissector]: https://en.bitcoinwiki.org/wiki/Bitcoin_Dissector
+[nonsegwit]: https://bitcoincore.reviews/20799#l-197
+[unsolicited]: https://bitcoincore.reviews/20799#l-156
+[three]: https://bitcoincore.reviews/20799#l-159
