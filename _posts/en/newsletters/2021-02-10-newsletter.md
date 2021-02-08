@@ -98,6 +98,11 @@ BOLTs][bolts repo].*
   of manually added peers, peers using [BIP152][] "high bandwidth"
   (faster) block relay mode, and any peers using the [I2P][] anonymity
   network (being worked on in a [separate PR][bitcoin core #20685]).
+
+- [Rust-Lightning #774][] adds support for fetching blocks and headers from
+  Bitcoin Core's REST and RPC interfaces. Additionally, a `BlockSource`
+  interface is provided and can be extended to work with custom sources.
+
 - [BIPs #1021][] updates the [BIP8][] soft fork activation mechanism,
   changing its behavior for nodes that choose to enforce the *lockin on
   timeout* feature.  Previously, those nodes would reject any block that
@@ -156,10 +161,8 @@ BOLTs][bolts repo].*
   warning that the use of non-English word lists is not widely supported
   and so is not recommended for implementation.
 
-- [Rust-Lightning #744][] Add lightning-block-sync package and library FIXME:dongcarl
-
 {% include references.md %}
-{% include linkers/issues.md issues="433,19509,1021,1020,20764,1048,1056,988,1040,1054,1047,744,950,20685,1055" %}
+{% include linkers/issues.md issues="433,19509,1021,1020,20764,1048,1056,988,1040,1054,1047,774,950,20685,1055" %}
 [LND 0.12.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.1-beta.rc1
 [folkson1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018379.html
 [folkson2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
