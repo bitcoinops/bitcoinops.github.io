@@ -82,8 +82,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [HWI #433][] trezor: Enable processing of OP_RETURN outputs FIXME:Xekyo
-
 - [Bitcoin Core #19509][] adds per-peer message capture between nodes as well
   as the ability to produce JSON outputs from those logs.  Using the newly
   introduced command line argument `-capturemessages`, any message
@@ -102,6 +100,8 @@ BOLTs][bolts repo].*
 - [Rust-Lightning #774][] adds support for fetching blocks and headers from
   Bitcoin Core's REST and RPC interfaces. Additionally, a `BlockSource`
   interface is provided and can be extended to work with custom sources.
+
+- [HWI #433][] adds support for signing PSBTs with OP_RETURN outputs.
 
 - [BIPs #1021][] updates the [BIP8][] soft fork activation mechanism,
   changing its behavior for nodes that choose to enforce the *lockin on
