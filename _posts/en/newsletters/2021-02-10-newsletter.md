@@ -84,7 +84,13 @@ BOLTs][bolts repo].*
 
 - [HWI #433][] trezor: Enable processing of OP_RETURN outputs FIXME:Xekyo
 
-- [Bitcoin Core #19509][] Per-Peer Message Capture FIXME:adamjonas
+- [Bitcoin Core #19509][] adds per-peer message capture between nodes as well
+  as the ability to produce JSON outputs from those logs.  Using the newly
+  introduced command line argument `-capturemessages`, any message
+  that the node sends or receives is logged.  There is a
+  [long history][bitcoin dissector] of tools with similar functionality,
+  but this addition provides a native alternative to less actively
+  maintained options.
 
 - [Bitcoin Core #20764][] adds additional information to the output
   produced using `bitcoin-cli -netinfo`.  New details include the type
@@ -163,3 +169,4 @@ BOLTs][bolts repo].*
 [i2p]: https://en.wikipedia.org/wiki/I2P
 [news131 bech32m]: /en/newsletters/2021/01/13/#bech32m
 [news130 bip322]: /en/newsletters/2021/01/06/#proposed-updates-to-generic-signmessage
+[bitcoin dissector]: https://en.bitcoinwiki.org/wiki/Bitcoin_Dissector
