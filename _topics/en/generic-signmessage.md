@@ -73,6 +73,12 @@ optech_mentions:
   - title: "2020 year in review: generic signmessage"
     url: /en/newsletters/2020/12/23/#generic-signmessage
 
+  - title: "Proposed rewrite of BIP322 to simplify implementation"
+    url: /en/newsletters/2021/01/06/#proposed-updates-to-generic-signmessage
+
+  - title: "BIPs #1048 rewrites BIP322 to simplify implementation"
+    url: /en/newsletters/2021/02/10/#bips-1048
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
