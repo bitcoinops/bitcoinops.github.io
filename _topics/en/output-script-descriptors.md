@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Bitcoin Core #20226 adds new `listdescriptors` RPC for its wallet"
     url: /en/newsletters/2021/02/03/#bitcoin-core-20226
 
+  - title: "Bitcoin Dev Kit v0.2.0 released with descriptor support"
+    url: /en/newsletters/2021/02/17/#bitcoin-dev-kit-v0-3-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
