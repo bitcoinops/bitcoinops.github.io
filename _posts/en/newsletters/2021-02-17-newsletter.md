@@ -144,7 +144,56 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Blockstream announces LNsync:**
+  [LNsync][blockstream blog lnsync] allows Lightning wallets that were
+  offline for a while to quickly download recent updates to LN topology in
+  order to optimally route a payment to its destination. An open
+  source plugin, [historian][github historian], provides this functionality for
+  C-Lightning users.
+
+- **Rust light client Nakamoto released:**
+  Alexis Sellier released [Nakamoto][nakamoto blog], a "high-assurance Bitcoin
+  light-client implementation in Rust, with a focus on low resource utilization,
+  modularity and security" based on [compact block filters][topic compact block filters].
+
+- **Blockstream Satellite broadcasting LN data and Bitcoin Core source:**
+  Blockstream's Satellite, in addition to broadcasting Bitcoin block chain data,
+  now includes the [Bitcoin Core source code][blockstream satellite bitcoin
+  code], code for a satellite-optimized Bitcoin fork ([Bitcoin
+  Satellite][github bitcoin satellite]), and [LN gossip data][blockstream
+  satellite ln data].
+
+- **Blockstream Green implements CSV:**
+  Green Wallet previously used nLockTime as a wallet recovery mechanism,
+  requiring users to receive backup emails with pre-signed transactions from
+  Blockstream after each transaction in order to recover funds. By [implementing
+  an `OP_CHECKSEQUENCEVERIFY` (CSV) recovery mechanism][blockstream green csv],
+  wallets can now be recovered without needing transaction-specific backup files or
+  associating an email address with the wallet.
+
+- **Muun 2.0 released:**
+  The [2.0 release][muun 2.0 blog] of mobile Bitcoin and Lightning wallet Muun
+  includes multisig, wallet recovery features, and also open sources the Android
+  and iOS mobile apps.
+
+- **Joinmarket 0.8.1 released:**
+  The [0.8.1 release][joinmarket 0.8.1] contains additional [PSBT][topic psbt]
+  support for PSBTs created externally, [signet][topic signet] support, and a fix
+  for uppercase address support with [BIP21][] URIs (see [Newsletter #127][news127 bech32 casing]). A terminal-based UI
+  for JoinMarket, [JoininBox][github joininbox], was also updated to support 0.8.1.
+
+- **VBTC allows withdrawals via LN and segwit batches:**
+  VBTC, a Vietnamese exchange, [added a batched segwit withdrawal option][vbtc blog
+  segwit] after recently also [enabling Lightning withdrawals][vbtc blog
+  lightning]. The incentivized segwit batch withdrawal occurs once a week,
+  targeting a time when mempools are less likely to have large transaction backlogs.
+
+- **Bitcoin Dev Kit v0.3.0 released:**
+  Rust wallet library Bitcoin Dev Kit announced its [v0.3.0 release][bdk
+  0.3.0 blog] including splitting out the CLI into its own repository. The
+  recent [BDK v0.2.0][bdk 0.2.0 blog] release added Branch and Bound (BnB) coin selection,
+  [descriptor][topic descriptors] templates (including with the recently added
+  `sortedmulti`), and more.
 
 ## Releases and release candidates
 
@@ -239,3 +288,18 @@ BOLTs][bolts repo].*
 [news88 exfil]: /en/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
 [muhash3072]: /en/newsletters/2021/01/13/#bitcoin-core-19055
 [kirk-cohen post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
+[blockstream blog lnsync]: https://blockstream.com/2021/01/22/en-lnsync-getting-your-lightning-node-up-to-speed-quickly/
+[github historian]: https://github.com/lightningd/plugins/tree/master/historian
+[nakamoto blog]: https://cloudhead.io/nakamoto/
+[blockstream satellite bitcoin code]: https://blockstream.com/2021/02/02/en-blockstream-provides-backup-satellite-broadcast-for-bitcoin-core-source-code/
+[github bitcoin satellite]: https://github.com/Blockstream/bitcoinsatellite
+[blockstream satellite ln data]: https://blockstream.com/2021/01/29/en-new-blockstream-satellite-updates/
+[blockstream green csv]: https://blockstream.com/2021/01/25/en-blockstream-green-bitcoin-wallets-now-using-checksequenceverify-timelocks/
+[muun 2.0 blog]: https://medium.com/muunwallet/announcing-muun-2-0-d61b0844dc0a
+[joinmarket 0.8.1]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.8.1.md
+[news127 bech32 casing]: /en/newsletters/2020/12/09/#thwarted-upgrade-to-uppercase-bech32-qr-codes
+[github joininbox]: https://github.com/openoms/joininbox
+[vbtc blog segwit]: https://blog.vbtc.exchange/2021/batched-segwit-withdrawals-tutorial-5
+[vbtc blog lightning]: https://blog.vbtc.exchange/2020/how-to-withdraw-bitcoin-lightning-network-tutorial-3
+[bdk 0.3.0 blog]: https://bitcoindevkit.org/blog/2021/01/release-v0.3.0/
+[bdk 0.2.0 blog]: https://bitcoindevkit.org/blog/2020/12/release-v0.2.0/
