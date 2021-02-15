@@ -89,6 +89,9 @@ optech_mentions:
   - title: "2020 year in review: switching LN from HTLCs to PTLCs"
     url: /en/newsletters/2020/12/23/#ptlcs
 
+  - title: "Technique for implementing logical OR on LN using PTLCs"
+    url: /en/newsletters/2021/02/17/#escrow-over-ln
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

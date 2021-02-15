@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Question: how do clients using BIP157 receive unconfirmed transactions?"
     url: /en/newsletters/2021/01/27/#how-do-light-clients-using-compact-block-filters-get-relevant-unconfirmed-transactions
 
+  - title: "New Rust-Language light client released using compact block filters"
+    url: /en/newsletters/2021/02/17/#rust-light-client-nakamoto-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
