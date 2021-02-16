@@ -224,7 +224,10 @@ BOLTs][bolts repo].*
   control uses information about past payment attempts to choose better
   routes for subsequent payment attempts.
 
-- [Rust-Lightning #787][] Check the PK of the source of an error before closing chans from it FIXME:dongcarl
+- [Rust-Lightning #787][] ensures that channel closures due to error messages
+  only happen when the peer who sent the message is the channel's counterparty.
+  Previously, it was possible for malicious peers to force-close any channel if
+  they knew the channel id.
 
 - [BTCPay Server #2164][] redesigns the wallet setup wizard, walking the user
   through setting up BTCPay's internal wallet and optionally integrating
