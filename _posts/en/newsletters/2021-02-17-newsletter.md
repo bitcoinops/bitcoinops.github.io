@@ -216,7 +216,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20944][] rpc: Return total fee in getmempoolinfo FIXME:jnewbery
+- [Bitcoin Core #20944][] adds a new `total_fee` field to the object returned
+  by the `getmempoolinfo` RPC and the `mempool/info` REST endpoint. `total_fee`
+  indicates the sum of the transaction fees for all transactions currently in the
+  mempool.
 
 - [LND #4909][] adds new `getmccfg` and `setmccfg` RPCs that can,
   respectively, retrieve and temporarily change settings in LND's
