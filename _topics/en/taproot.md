@@ -150,6 +150,9 @@ optech_mentions:
   - title: "Summary of taproot activation discussion & additional meeting scheduled"
     url: /en/newsletters/2021/02/10/#taproot-activation-meeting-summary-and-follow-up
 
+  - title: "Summary of taproot activation discussion regarding BIP8 `LOT` parameter"
+    url: /en/newsletters/2021/02/24/#taproot-activation-discussion
+
 ## Optional
 see_also:
   - title: MAST
