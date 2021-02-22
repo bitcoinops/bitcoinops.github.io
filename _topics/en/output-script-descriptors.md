@@ -85,6 +85,9 @@ optech_mentions:
   - title: "Bitcoin Dev Kit v0.2.0 released with descriptor support"
     url: /en/newsletters/2021/02/17/#bitcoin-dev-kit-v0-3-0-released
 
+  - title: "Bitcoin Core #19136 extends `getaddressinfo` to return parent descriptors"
+    url: /en/newsletters/2021/02/24/#bitcoin-core-19136
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
