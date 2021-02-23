@@ -110,6 +110,9 @@ optech_mentions:
   - title: "2020 year in review: Taproot, tapscript, and schnorr signatures"
     url: /en/newsletters/2020/12/23/#taproot
 
+  - title: "Comparison of SSS to `OP_CHECKMULTISIG` to schnorr multisignatures"
+    url: /en/newsletters/2021/02/24/#is-sharding-a-good-alternative-to-multisig
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
