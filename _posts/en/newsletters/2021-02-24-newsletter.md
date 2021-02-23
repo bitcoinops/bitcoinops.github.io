@@ -44,7 +44,45 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is sharding a good alternative to multisig?]({{bse}}102007)
+  User S.O.S asks about the viability of a sharding scheme like Shamir’s Secret
+  Sharing (SSS) to achieve multisig-like capabilities. Pieter Wuille
+  notes the advantages of `OP_CHECKMULTISIG` over SSS (accountability, no need to
+  reconstruct the secret key on one machine), advantages of SSS over
+  `OP_CHECKMULTISIG` (less fees, more privacy), and [schnorr][topic schnorr signatures] considerations
+  (lack of accountability, no need to reconstruct the secret key on one machine,
+  less fees, more privacy, additional complexity).
+
+- [Can a channel be closed while the funding tx is still stuck in the mempool?]({{bse}}102180)
+  After attempting to open an LN channel but setting the funding transaction's
+  feerate too low, PyrolitePancake asks about closing the channel while the
+  funding transaction remains in the mempool. While one option is to pursue
+  opening the channel by waiting for confirmation and potentially rebroadcasting the
+  transaction, Rene Pickhardt notes that double spending the funding
+  transaction's inputs would drop it from mempools. Some
+  sample commands are provided by cdecker for C-lightning to either rebroadcast the funding transaction
+  or create a double spend.
+
+- [With peerblockfilters=1 hundreds of “btcwire 0.5.0/neutrino” connections are downloading TB from my Bitcoin node]({{bse}}102263)
+  While running Bitcoin Core 0.21.0 with [compact block filters][topic compact
+  block filters] enabled, qertoip notices a large number of connections (75%) and
+  bandwidth usage (90%) from `btcwire 0.5.0/neutrino` user agents. Murch points
+  out that these peers are LND nodes and because compact block filters
+  are both [a new feature][news132 0.21.0] of Bitcoin Core as well as [disabled
+  by default][news98 18877], there may be a lack of compact block filter serving
+  peers on the network currently resulting in higher traffic to nodes supporting
+  the filters.
+
+- [Is there `dumpwallet` output documentation & explanation?]({{bse}}101767)
+  Andrew Chow uses the answer as an opportunity to provide additional
+  documentation and explanation of the `dumpwallet` RPC's output.
+
+- [Is there something about Bitcoin that prevents implementing the same privacy protocols of Monero and Zcash?]({{bse}}101868)
+  Pieter Wuille lists a few challenges of why developers might not choose to
+  work on, and the ecosystem might not choose to support, the approaches to
+  privacy that Monero or Zcash have taken. Considerations include downsides to
+  an "opt-in" approach, introduction of new cryptographic security assumptions,
+  scalability concerns, and the problem of supply auditability.
 
 ## Releases and release candidates
 
@@ -114,3 +152,5 @@ BOLTs][bolts repo].*
 [2021-01-12 p2p summary]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-IRC-meetings#topic-disabletx-p2p-message-sdaftuar
 [osuntokun request]: https://github.com/bitcoin/bitcoin/pull/15946#issuecomment-571854091
 [news131 disabletx]: /en/newsletters/2021/01/13/#proposed-disabletx-message
+[news132 0.21.0]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+[news98 18877]: /en/newsletters/2020/05/20/#bitcoin-core-18877

@@ -94,6 +94,12 @@ optech_mentions:
   - title: "New Rust-Language light client released using compact block filters"
     url: /en/newsletters/2021/02/17/#rust-light-client-nakamoto-released
 
+  - title: "Question about high bandwidth requirements for serving BIP157 filters"
+    url: /en/newsletters/2021/02/24/#with-peerblockfilters-1-hundreds-of-btcwire-0-5-0-neutrino-connections-are-downloading-tb-from-my-bitcoin-node
+
+  - title: "Bitcoin Core #15946 allows retaining filters on a pruned node"
+    url: /en/newsletters/2021/02/24/#bitcoin-core-15946
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
