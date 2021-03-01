@@ -52,6 +52,9 @@ optech_mentions:
   - title: "HWI #363 adds support for Bitbox02 hardware wallet"
     url: /en/newsletters/2020/09/09/#hwi-363
 
+  - title: "Significantly updated and extended HWI documentation"
+    url: /en/newsletters/2021/03/03/#hwi-413
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)

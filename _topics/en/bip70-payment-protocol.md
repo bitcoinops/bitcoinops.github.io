@@ -106,6 +106,9 @@ optech_mentions:
   - title: "2019 year-in-review: Bitcoin Core BIP70 deprecation and disablement"
     url: /en/newsletters/2019/12/28/#bip70
 
+  - title: "Mailing list discussion about a BIP70 replacement"
+    url: /en/newsletters/2021/03/03/#discussion-about-a-bip70-replacement
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
