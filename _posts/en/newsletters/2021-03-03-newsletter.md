@@ -115,7 +115,9 @@ BOLTs][bolts repo].*
   this new method from the `SigHashType::from_u32` method that accepts
   any consensus-valid sighash byte.
 
-- [BIPs #1069][] BIP 8: Reduce threshold recommendation to 90% FIXME:bitschmidty or harding
+- [BIPs #1069][] updates [BIP8][] to allow for a configurable activation threshold
+  and to include 90% as a recommendation, down from 95% previously, based on the
+  most recent [taproot activation discussion][news137 taproot activation].
 
 {% include references.md %}
 {% include linkers/issues.md issues="16546,573,791,794,413,469,463,464,471,468,466,1069" %}
@@ -134,3 +136,4 @@ BOLTs][bolts repo].*
 [hwi policy]: https://hwi.readthedocs.io/en/latest/devices/index.html#support-policy
 [X.509 certificates]: https://en.wikipedia.org/wiki/X.509
 [sighash types]: https://btcinformation.org/en/developer-guide#signature-hash-types
+[news137 taproot activation]: /en/newsletters/2021/02/24/#taproot-activation-discussion
