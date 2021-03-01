@@ -90,7 +90,12 @@ BOLTs][bolts repo].*
     allowing the use of hardware signers with Bitcoin Core without any use of
     the command line.
 
-- [Rust-Lightning #791][] SPV client utility for syncing a lightning node FIXME:dongcarl
+- [Rust-Lightning #791][] adds support for polling `BlockSource` interfaces on
+  startup to sync blocks and headers, with fork detection during sync.
+  As described in [Newsletter #135][news135 blocksource], BlockSource
+  allows software to obtain data from sources other than a standard Bitcoin
+  Core compatible node, allowing redundancy that can help prevent
+  [eclipse attacks][topic eclipse attacks] or other security problems.
 
 - [Rust-Lightning #794][] Add support for `opt_shutdown_anysegwit` feature #780 FIXME:jonatack
 
@@ -137,3 +142,4 @@ BOLTs][bolts repo].*
 [X.509 certificates]: https://en.wikipedia.org/wiki/X.509
 [sighash types]: https://btcinformation.org/en/developer-guide#signature-hash-types
 [news137 taproot activation]: /en/newsletters/2021/02/24/#taproot-activation-discussion
+[news135 blocksource]: /en/newsletters/2021/02/10/#rust-lightning-774
