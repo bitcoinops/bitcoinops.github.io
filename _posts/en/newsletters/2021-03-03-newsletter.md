@@ -73,7 +73,22 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #16546][] External signer support - Wallet Box edition FIXME:jnewbery
+- [Bitcoin Core #16546][] introduces a new signer interface, allowing Bitcoin
+  Core to interact with external hardware signing devices through the
+  [HWI][topic hwi] or any other application which implements the same interface.
+
+    Bitcoin Core has been able to interface with hardware signers using HWI
+    [since Bitcoin Core version 0.18][hwi release]. Until this PR, however, [the
+    process][hwi old process] required use of the command line to transfer
+    data between Bitcoin Core and HWI. This PR simplifies the user experience
+    by enabling Bitcoin Core to directly communicate with HWI. The PR includes
+    [full documentation][hwi new process] on how to use the new signer interface
+    along with HWI.
+
+    The new signer interface is currently only accessible through RPC methods. A
+    [draft PR][signer gui] adds support for the signer interface to the GUI,
+    allowing the use of hardware signers with Bitcoin Core without any use of
+    the command line.
 
 - [Rust-Lightning #791][] SPV client utility for syncing a lightning node FIXME:dongcarl
 
@@ -110,6 +125,10 @@ BOLTs][bolts repo].*
 [kozlik scheme]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018448.html
 [le guilly post]: https://mailmanlists.org/pipermail/dlc-dev/2021-February/000020.html
 [dlcv0 fraud proofs]: https://github.com/discreetlogcontracts/dlcspecs/blob/master/v0Milestone.md#simple-fraud-proofs-in-progress
+[hwi old process]: https://github.com/bitcoin-core/HWI/blob/7b34fc72c5b2c5af216d8b8d5cd2d2c92b6d2457/docs/examples/bitcoin-core-usage.rst
+[hwi release]: /en/newsletters/2019/05/07/#basic-hardware-signer-support-through-independent-tool
+[hwi new process]: https://github.com/bitcoin/bitcoin/blob/master/doc/external-signer.md
+[signer gui]: https://github.com/bitcoin-core/gui/pull/4
 [hwi rtd]: https://hwi.readthedocs.io/en/latest/?badge=latest
 [hwi examples]: https://hwi.readthedocs.io/en/latest/examples/index.html
 [hwi policy]: https://hwi.readthedocs.io/en/latest/devices/index.html#support-policy
