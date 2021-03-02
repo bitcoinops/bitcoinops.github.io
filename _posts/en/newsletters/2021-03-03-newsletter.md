@@ -97,7 +97,19 @@ BOLTs][bolts repo].*
   Core compatible node, allowing redundancy that can help prevent
   [eclipse attacks][topic eclipse attacks] or other security problems.
 
-- [Rust-Lightning #794][] Add support for `opt_shutdown_anysegwit` feature #780 FIXME:jonatack
+- [Rust-Lightning #794][] enables support for the [BOLT2][]
+  `option_shutdown_anysegwit` feature that permits future segwit versions when
+  initiating shutdown. If `option_shutdown_anysegwit` is negotiated, a channel
+  party sending a shutdown message to initiate closing may send a scriptpubkey
+  for payment, provided the script complies with the standard [BIP141][] witness
+  program form of a *version byte* (a 1-byte push opcode of `OP_1` through
+  `OP_16`) followed by a *witness program* (a byte vector push of 2 to 40
+  bytes). These shutdown scripts are limited to standard forms to avoid
+  expensive fee-heavy scripts or transactions with oversized scripts not
+  propagating due to non-standardness.  As it became [possible][0.19.0
+  segwit] to relay payments to any segwit script in Bitcoin Core
+  0.19.0.1 (released November 2019), it's now safe to [include
+  them][bolts #672] in LN's standard forms.
 
 - [HWI #413][], [#469][hwi #469], [#463][hwi #463], [#464][hwi #464],
   [#471][hwi #471], [#468][hwi #468], and [#466][hwi #466] significantly
@@ -125,7 +137,7 @@ BOLTs][bolts repo].*
   most recent [taproot activation discussion][news137 taproot activation].
 
 {% include references.md %}
-{% include linkers/issues.md issues="16546,573,791,794,413,469,463,464,471,468,466,1069" %}
+{% include linkers/issues.md issues="16546,573,791,794,413,469,463,464,471,468,466,1069,672" %}
 [voegtlin bip70 alt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018443.html
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
 [hill scheme]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018446.html
@@ -143,3 +155,4 @@ BOLTs][bolts repo].*
 [sighash types]: https://btcinformation.org/en/developer-guide#signature-hash-types
 [news137 taproot activation]: /en/newsletters/2021/02/24/#taproot-activation-discussion
 [news135 blocksource]: /en/newsletters/2021/02/10/#rust-lightning-774
+[0.19.0 segwit]: https://bitcoincore.org/en/releases/0.19.0.1/#mempool-and-transaction-relay
