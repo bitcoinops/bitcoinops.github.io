@@ -128,7 +128,7 @@ BOLTs][bolts repo].*
   equivalent to `SIGHASH_ALL`, but the fact that they aren't relayed or
   mined by default can theoretically be used to trick software using
   offchain commitments into accepting an unenforceable payment.
-  Developers of such software using Rust-Bitcoin may which to switch to
+  Developers of such software using Rust Bitcoin may which to switch to
   this new method from the `SigHashType::from_u32` method that accepts
   any consensus-valid sighash byte.
 
