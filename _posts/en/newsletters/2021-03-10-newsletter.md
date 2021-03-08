@@ -173,7 +173,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20685][] Add I2P support using I2P SAM FIXME:adamjonas
+- [Bitcoin Core #20685][] Adds I2P support by using the
+  [I2P SAM protocol][I2P SAM protocol].  This feature has
+  [long been requested][Bitcoin Core #2091] and was only recently made
+  possible by the addition of [addr v2][topic addr v2]
+  Though documentation for node operators hoping to run I2P is still
+  being created, a [Bitcoin StackExchange Q&A][i2p b.se] provides
+  hints on getting started.
 
 - [C-Lightning #4407][] updates the `listpeers` RPC with new fields
   that provide information about each channel's current unilateral close
@@ -193,7 +199,7 @@ BOLTs][bolts repo].*
   survey][btcpay uri survey] of wallets with the BIP21 URI scheme.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392" %}
+{% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392,2091" %}
 [uasf discussion]: http://gnusha.org/uasf/2021-03-02.log
 [flag day corallo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018495.html
 [flag day belcher]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018538.html
@@ -215,3 +221,6 @@ BOLTs][bolts repo].*
 [btcpay uri survey]: https://github.com/btcpayserver/btcpayserver/issues/2110
 [bech32 uppercase qr]: /en/bech32-sending-support/#creating-more-efficient-qr-codes-with-bech32-addresses
 [bip21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
+[I2P wiki]: https://en.wikipedia.org/wiki/I2P
+[I2P SAM protocol]: https://geti2p.net/en/docs/api/samv3
+[i2p b.se]: https://bitcoin.stackexchange.com/questions/103402/how-can-i-use-bitcoin-core-with-the-anonymous-network-protocol-i2p
