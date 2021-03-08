@@ -186,7 +186,11 @@ BOLTs][bolts repo].*
 
 - [BOLTs #839][] Add 2016 blocks channel funding timeout (#839) FIXME:dongcarl
 
-- [BTCPay Server #2181][] Reenabling uppercase BECH32 in QR codes FIXME:Xekyo
+- [BTCPay Server #2181][] uppercases bech32 addresses when presenting [BIP21][bip21]
+  URIs as QR codes. This results in [less dense QR codes][bech32 uppercase qr]
+  as uppercase substrings can be encoded more
+  efficiently. The change was preceded by an extensive [compatibility
+  survey][btcpay uri survey] of wallets with the BIP21 URI scheme.
 
 {% include references.md %}
 {% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392" %}
@@ -208,3 +212,6 @@ BOLTs][bolts repo].*
 [eclair 0.5.1]: https://github.com/ACINQ/eclair/releases/tag/v0.5.1
 [hwi 2.0.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.0.0-rc.2
 [russell concern]: https://twitter.com/rusty_twit/status/1368325392591822848
+[btcpay uri survey]: https://github.com/btcpayserver/btcpayserver/issues/2110
+[bech32 uppercase qr]: /en/bech32-sending-support/#creating-more-efficient-qr-codes-with-bech32-addresses
+[bip21]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
