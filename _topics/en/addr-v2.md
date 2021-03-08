@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Rust Bitcoin 0.26.0 released with version 2 `addr` support"
     url: /en/newsletters/2021/01/20/#rust-bitcoin-0-26-0
 
+  - title: "Bitcoin Core #20685 Adds I2P support, including addrv2 gossiping"
+    url: /en/newsletters/2021/03/10/#bitcoin-core-20685
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message
