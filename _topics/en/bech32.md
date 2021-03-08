@@ -97,6 +97,9 @@ optech_mentions:
   - title: "BIPs #1056 adds BIP350 for bech32m"
     url: /en/newsletters/2021/02/10/#bips-1056
 
+  - title: "BTCPay Server #2181 uppercases bech32 addresses in QR codes"
+    url: /en/newsletters/2021/03/10/#btcpay-server-2181
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

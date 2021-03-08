@@ -153,6 +153,12 @@ optech_mentions:
   - title: "Summary of taproot activation discussion regarding BIP8 `LOT` parameter"
     url: /en/newsletters/2021/02/24/#taproot-activation-discussion
 
+  - title: "Alternative methods of activating taproot discussed"
+    url: /en/newsletters/2021/03/10/#taproot-activation-discussion
+
+  - title: "Documenting the intention to use and build upon taproot"
+    url: /en/newsletters/2021/03/10/#documenting-the-intention-to-use-and-build-upon-taproot
+
 ## Optional
 see_also:
   - title: MAST

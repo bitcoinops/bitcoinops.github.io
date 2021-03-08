@@ -54,6 +54,9 @@ optech_mentions:
   - title: "2019 year-in-review: erlay"
     url: /en/newsletters/2019/12/28/#erlay-and-other-p2p-improvements
 
+  - title: "PR Review Club: #18261 implementing Erlay"
+    url: /en/newsletters/2021/03/10/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch
