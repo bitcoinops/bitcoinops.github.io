@@ -190,7 +190,12 @@ BOLTs][bolts repo].*
   payment so that it will be possible to add [multipath payment][topic
   multipath payments] support.
 
-- [BOLTs #839][] Add 2016 blocks channel funding timeout (#839) FIXME:dongcarl
+- [BOLTs #839][] adds funding transaction timeout recommendations to save
+  funding fees when there's a failure to confirm funding transactions, providing stronger
+  guarantees for the channel funder and fundee. The new recommendations suggest
+  that the funder commits to ensuring the funding transaction confirms in 2016
+  blocks and recommends that the fundee forget the pending channel if the funding
+  transaction not confirm within those 2016 blocks.
 
 - [BTCPay Server #2181][] uppercases bech32 addresses when presenting [BIP21][bip21]
   URIs as QR codes. This results in [less dense QR codes][bech32 uppercase qr]
