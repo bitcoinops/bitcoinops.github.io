@@ -139,14 +139,59 @@ projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jonatack or jnewbery
+[Erlay: bandwidth-efficient transaction relay protocol][review club
+#18261] is a PR ([#18261][Bitcoin Core #18261]) by Gleb Naumenko that proposes
+to implement [BIP330][] in Bitcoin Core.
+
+The review club discussion focused on the tradeoffs, implementation and
+potential new attack vectors involved with [Erlay][topic erlay]. In subsequent
+meetings, the review club discussed [Minisketch][topic minisketch], a
+[library][minisketch] implementing the PinSketch *set reconciliation* algorithm
+that is the basis for the efficient relay protocol in Erlay.
 
 {% include functions/details-list.md
-  q0="FIXME"
+  q0="What is Erlay?"
+  a0="A new method of transaction relay based on a combination of *flooding* and
+     *set reconciliation* (the current transaction relay is flooding-only) to
+     improve bandwidth efficiency, scalability and network
+     security. The idea was presented in a 2019 paper, *[Bandwidth-Efficient
+     Transaction Relay for Bitcoin][erlay paper]*, and is specified in
+     [BIP330][]."
 
-  a0="FIXME"
+  q1="What advantages does Erlay bring?"
+  a1="[Lower bandwidth use for transaction relay][erlay 1], which comprises
+     roughly half the bandwidth needed to operate a node, and [scalability of
+     peer connections][erlay 2], making the network more robust to partitioning
+     attacks and [single nodes more resistant to Eclipse attacks][erlay 3]."
 
-  a0link="http://example.com/FIXME"
+  q2="What are some tradeoffs of Erlay?"
+  a2="A marginal increase in transaction propagation latency. It is estimated
+     that Erlay would increase the time to relay an unconfirmed transaction
+     across all nodes from 3.15s to 5.75s, a small fraction of the overall
+     transaction processing time of about 10 minutes. Another tradeoff is
+     additional code and computational complexity."
+  a2link="https://bitcoincore.reviews/18261#l-94"
+
+  q3="Why can set reconciliation, introduced by Erlay, scale better than
+     flooding?"
+  a3="Transaction propagation via flooding, where each node announces every
+     transaction it receives to each of its peers, has poor bandwidth efficiency
+     and high redundancy. This becomes increasingly the case with improved
+     network connectivity, which should otherwise be desirable for the growth
+     and the security of the network. Erlay improves scalability by reducing the
+     transaction data sent via inefficient flooding and replacing it with more
+     efficient set reconciliation."
+
+  q4="What would be the change in frequency of the existing peer-to-peer message
+     types?"
+  a4="With Erlay, `inv` messages would be sent less often; `getdata` and `tx`
+     message frequency would be unchanged."
+  a4link="https://bitcoincore.reviews/18261#l-140"
+
+  q5="How would 2 peers reach agreement on using Erlay's set reconciliation?"
+  a5="Via a new `sendrecon` peer-to-peer message exchanged during the
+     version-verack handshake."
+  a5link="https://bitcoincore.reviews/18261#l-212"
 %}
 
 ## Releases and release candidates
@@ -204,7 +249,7 @@ BOLTs][bolts repo].*
   survey][btcpay uri survey] of wallets with the BIP21 URI scheme.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392,2091" %}
+{% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392,2091,18261" %}
 [uasf discussion]: http://gnusha.org/uasf/2021-03-02.log
 [flag day corallo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018495.html
 [flag day belcher]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018538.html
@@ -229,3 +274,8 @@ BOLTs][bolts repo].*
 [I2P wiki]: https://en.wikipedia.org/wiki/I2P
 [I2P SAM protocol]: https://geti2p.net/en/docs/api/samv3
 [i2p b.se]: https://bitcoin.stackexchange.com/questions/103402/how-can-i-use-bitcoin-core-with-the-anonymous-network-protocol-i2p
+[erlay paper]: https://arxiv.org/abs/1905.10518
+[erlay 1]: https://bitcoincore.reviews/18261#l-94
+[erlay 2]: https://bitcoincore.reviews/18261#l-97
+[erlay 3]: https://bitcoincore.reviews/18261#l-99
+[minisketch]: https://github.com/sipa/minisketch
