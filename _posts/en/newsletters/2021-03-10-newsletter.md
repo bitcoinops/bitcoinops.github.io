@@ -20,7 +20,7 @@ projects.
 - **Taproot activation discussion:** the previous weeks' discussions
   about activation saw different groups of people opposing either
   [BIP8][] `LockinOnTimeout=true` (`LOT=true`) or `LOT=false`, so most
-  discussion on the mailing list this week focused on alternative
+  of the discussion on the mailing list this week focused on alternative
   activation mechanisms.  Some proposals included:
 
     - *User Activated Soft Fork (UASF):* a plan being [discussed][uasf
@@ -40,10 +40,10 @@ projects.
       [2][decthresh luaces]) to gradually decrease over time the number
       of blocks that must signal readiness for miners to enforce
       taproot before the new consensus rules lock in.  See also Anthony
-      Town's proposal from last year described in [Newsletter
+      Towns's proposal from last year described in [Newsletter
       #107][news107 decthresh].
 
-    - *A configurable `LOT`:* in addition to previously-discussed
+    - *A configurable `LOT`:* in addition to previously discussed
       proposals to make BIP8's `LOT` value a configuration option (see
       [Newsletter #137][news137 bip8conf]), rough code was
       [posted][rubin invalidateblock] showing how `LOT=true` could be
@@ -59,12 +59,11 @@ projects.
       failed, the community would be encouraged to move on to a
       different activation method.  If the attempt succeeded, there
       would still be a several month delay before taproot activated to
-      allow most of the economy to upgrade their nodes.  A [draft
-      implementation][bitcoin core #21377] for this proposal based on
-      Bitcoin Core's existing [BIP9][] implementation was also written
-      by Anthony Towns.  Andrew Chow created an [alternative draft
-      implementation][bitcoin core #21392] based on the previously
-      proposed BIP8 implementation.
+      allow most of the economy to upgrade their nodes.  Draft implementations
+      for this proposal [based on Bitcoin Core's existing BIP9 code][bitcoin
+      core #21377] and [based on the previously proposed BIP8 implementation]
+      [bitcoin core #21392] were written by Anthony Towns and Andrew Chow,
+      respectively.
 
     It seemed unlikely any of the proposals would ever become almost
     everyone's first choice, but it appeared that a large number of
@@ -83,15 +82,16 @@ projects.
 
     - *Using time-based or height-based parameters:* the proposal
       describes the tradeoffs between setting its `start`, `timeout`,
-      and `minimum_activation` parameters using either times (based on
+      and `minimum_activation` parameters using either timestamps (based on
       the median of the previous 11 blocks) or block heights.  Using
-      times would result in the smallest and easiest to review patch to
+      timestamps would result in the smallest and easiest-to-review patch to
       Bitcoin Core.  Using heights would provide a bit more
       predictability, especially for miners, and would be compatible
       with other attempts using BIP8.
 
     - *Myopic:* there was [concern][russell concern] that the proposal
-      is too focused on the short term: "Speedy Trial fully prepares for
+      is too focused on the short term.  As [summarized on IRC][irc speedy]:
+      "Speedy Trial fully prepares for
       the (likely) case where miners activate taproot, but it does
       nothing to codify lessons learned from Segwit's failure to
       activate in a timely manner.  We have an opportunity with the
@@ -110,7 +110,7 @@ projects.
     - *Speed:* the proposal, based on initial discussion from the
       ##taproot-activation IRC channel, proposes giving miners about
       three months to lock in taproot and waiting a fixed six months
-      from the start of signal measuring before activation (if lock in
+      from the start of signal measuring before activation (if lock-in
       is achieved).  Some people have sought either slightly shorter or
       slightly longer timelines.
 
@@ -131,7 +131,7 @@ projects.
     developers can post links to projects they're building on top of
     taproot's new proposed features.  This can provide assurance that
     taproot provides solutions people actually want and is designed in
-    such a way that its features will get used.
+    such a way that its features will be used.
 
 ## Bitcoin Core PR Review Club
 
@@ -203,7 +203,7 @@ release candidates.*
 - [Eclair 0.5.1][] is the latest release of this LN node, containing
   improvements to startup speed, reduced bandwidth consumption when
   syncing the network graph, and a series of small improvements in
-  preparation for supporting [anchor oututs][topic anchor outputs].
+  preparation for supporting [anchor outputs][topic anchor outputs].
 
 - [HWI 2.0.0RC2][hwi 2.0.0] is a release candidate for the next major
   version of HWI.
@@ -218,10 +218,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20685][] Adds I2P support by using the
+- [Bitcoin Core #20685][] adds support for the I2P privacy network by using the
   [I2P SAM protocol][I2P SAM protocol].  This feature has
   [long been requested][Bitcoin Core #2091] and was only recently made
-  possible by the addition of [addr v2][topic addr v2]
+  possible by the addition of [addr v2][topic addr v2].
   Though documentation for node operators hoping to run I2P is still
   being created, a [Bitcoin StackExchange Q&A][i2p b.se] provides
   hints on getting started.
@@ -238,9 +238,9 @@ BOLTs][bolts repo].*
 - [BOLTs #839][] adds funding transaction timeout recommendations to save
   funding fees when there's a failure to confirm funding transactions, providing stronger
   guarantees for the channel funder and fundee. The new recommendations suggest
-  that the funder commits to ensuring the funding transaction confirms in 2016
-  blocks and recommends that the fundee forget the pending channel if the funding
-  transaction not confirm within those 2016 blocks.
+  that the funder commit to ensuring the funding transaction confirms in 2016
+  blocks and that the fundee forget the pending channel if the funding
+  transaction does not confirm within those 2016 blocks.
 
 - [BTCPay Server #2181][] uppercases bech32 addresses when presenting [BIP21][bip21]
   URIs as QR codes. This results in [less dense QR codes][bech32 uppercase qr]
@@ -258,6 +258,7 @@ BOLTs][bolts repo].*
 [rubin invalidateblock]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018514.html
 [towns anti-lot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018512.html
 [harding speedy]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+[irc speedy]: http://gnusha.org/taproot-activation/2021-03-08.log
 [folkson gist]: https://gist.github.com/michaelfolkson/92899f27f1ab30aa2ebee82314f8fe7f
 [corallo not speedy enough]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018596.html
 [##taproot-activation log 3/5]: http://gnusha.org/taproot-activation/2021-03-06.log
