@@ -82,6 +82,9 @@ optech_mentions:
   - title: Eclair 0.4.2 adds support for keysend-style spontaneous payments
     url: /en/newsletters/2020/10/14/#eclair-0-4-2
 
+  - title: "C-Lightning #4404 allows keysending to nodes that don't advertise support"
+    url: /en/newsletters/2021/03/17/#c-lightning-4404
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
