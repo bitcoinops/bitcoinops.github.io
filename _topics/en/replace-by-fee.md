@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Question: would first-seen-safe prevent confirmed RBF double spends?"
     url: /en/newsletters/2021/01/27/#would-first-seen-prevent-a-double-spend-attack
 
+  - title: Recovering lost LN funding transactions after RBF fee bumping
+    url: /en/newsletters/2021/03/17/#rescuing-lost-ln-funding-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
