@@ -108,7 +108,12 @@ BOLTs][bolts repo].*
   channel has been disabled (similar to your node going offline) or that
   it's been re-enabled (similar to your node coming back online).
 
-- [Rust-Lightning #826][] Raise max to_self_delay.  FIXME:dongcarl
+- [Rust-Lightning #826][] increases the maximum allowed `OP_CHECKSEQUENCEVERIFY`
+  delay to 2,016 blocks for the output paying the node that is
+  unilaterally closing the channel.  This fixes an interoperability
+  issue when opening channels with LND, which may request a delay
+  up to 2016 blocks, larger than the previous Rust-Lightning maximum of
+  1008 blocks.
 
 - [HWI #488][] implements a breaking change in how the
   `displayaddress` command handles multisig addresses when used with the
