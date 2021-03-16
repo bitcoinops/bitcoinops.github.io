@@ -71,7 +71,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #21007][] bitcoind: Add -daemonwait option to wait for initialization FIXME: jnewbery
+- [Bitcoin Core #21007][] adds a new `-daemonwait` configuration option. It has
+  been possible to run Bitcoin Core as a background daemon process since early
+  versions by starting the program with the `-daemon` configuration option.
+  The `-daemon` option causes the program to immediately start the daemon process
+  in the background. The new `-daemonwait` option
+  is similar, but only puts the daemon process in the background after initialization
+  is complete. This allows the user or parent process to more easily know
+  whether the daemon started successfully by observing the program's output or
+  exit code.
 
 - [C-Lightning #4404][] allows the `keysend` RPC (see [Newsletter
   #107][news107 keysend]) to send messages even to nodes that don't
