@@ -165,6 +165,7 @@ This special section concentrates the summaries about those developments
 into a single narrative that we hope will be easier to follow than
 describing each event separately in the month it occurred.
 
+{:#activation-mechanisms}
 January started with a discussion of soft fork activation mechanisms,
 with Matt Corallo [proposing][news80 msfa] a careful and patient
 approach to addressing disagreements between different sets of
