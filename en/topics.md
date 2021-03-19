@@ -12,9 +12,9 @@ links, e.g. <a href=URL>Name</a>, so that it's easy to sort by name
 rather than URL. -->{% endcomment %}
 {% capture raw_topics_list %}
 {%- for topic in site.topics -%}
-  <!--{{topic.title}}-->[{{topic.title}}]({{topic.url}})ENDTOPIC
+  <!--{% include functions/sort-rename.md name=topic.title %}-->[{{topic.title}}]({{topic.url}})ENDTOPIC
   {%- for alias in topic.aliases -%}
-    <!--{{alias}}-->*[{{alias}}]({{topic.url}})*ENDTOPIC
+    <!--{% include functions/sort-rename.md name=alias %}-->*[{{alias}}]({{topic.url}})*ENDTOPIC
   {%- endfor -%}
 {%- endfor -%}
 {% endcapture %}
