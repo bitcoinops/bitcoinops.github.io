@@ -49,6 +49,7 @@ following abbreviations we assume readers will already know.
 - BIP (Bitcoin Improvement Proposal)
   - BIPXXX referencing a specific BIP number (no zero padding eg. BIP70 not BIP070)
 - BTC (Bitcoin)
+- CPFP (Child Pays For Parent)
 - DoS (Denial-of-service)
 - ECDSA (Elliptic Curve Digital Signature Algorithm)
 - kB, MB, GB, TB, etc... (SI-prefixed byte sizes)
@@ -64,6 +65,7 @@ following abbreviations we assume readers will already know.
 - P2WSH (Pay to Witness Script Hash)
 - PSBT (Partially Signed Bitcoin Transaction)
 - pubkey (public key)
+- RBF (Replace By Fee)
 - RPC (Remote Procedure Call)
 - RFC (Request For Comments, the IETF documents)
 - segwit (segregated witness)
@@ -81,8 +83,10 @@ following abbreviations we assume readers will already know.
 |-|-|-|
 | anti fee sniping | anti-fee sniping, anti-fee-sniping | |
 | block chain | blockchain | |
+| CPFP or Child Pays For Parent | Child-Pays-For-Parent | |
 | coinjoin | Coinjoin, coinJoin or coin-join | |
 | coinswap | Coinswap, CoinSwap, coinSwap, or coin-swap | |
+| fee bumping | fee-bumping | |
 | feerate | fee-rate or fee rate | |
 | mainnet | main net | |
 | multisig | multi-sig | |
@@ -91,10 +95,12 @@ following abbreviations we assume readers will already know.
 | onchain | on-chain | |
 | opcode | OPCODE, OpCode, Opcode or op code | |
 | OP_RETURN (and all other opcodes) | op_return | |
+| RBF or Replace By Fee | Replace-By-Fee | |
 | preimage | pre-image | |
 | proof of work | proof-of-work | proof-of-work may be used as an adjective phrase (e.g. "Bitcoin's proof-of-work security is economic in nature"). | |
 | redeemScript | redeem script | |
 | secp256k1 | Secp256k1, SECP256k1 or SECP256K1 | |
+| side-channel | sidechannel | when used to describe a side-channel attack |
 | sigop | Sigop, SigOp or sig op | |
 | single-sig | singlesig | |
 | soft fork/hard fork | softfork/hardfork or soft-fork/hard-fork | soft-fork/hard-fork may be used as compound adjectives (eg "Foo proposed a soft-fork change") |
