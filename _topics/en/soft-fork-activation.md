@@ -19,9 +19,9 @@ categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Soft fork activation** describes the moment when some Bitcoin full
-  nodes begin to enforce one or more additional consensus rules.
-  There's risk during these transitions, so developers have devoted much
+  **Soft fork activation** describes the moment when a Bitcoin full
+  node begins to enforce one or more additional consensus rules.
+  These transitions introduce a coordination risk between nodes on the network, so developers have devoted much
   effort over the years to creating and improving soft fork activation
   mechanisms that can minimize the chance a problem will occur.
 
@@ -136,8 +136,7 @@ extended_summary: |
   different platforms.  This could be used, for example, to create a
   block that would successfully validate on Linux but fail on
   Windows---making it possible for an attacker to create a targeted
-  chain split.  Wuille worked with a few other developers in private to
-  develop the patch for a soft fork that would ensure all signatures
+  chain split.  Wuille and a few other developers privately developed the patch for a soft fork that would ensure all signatures
   used the same format.  BIP66 was created for the change and advertised
   publicly as a step towards removing Bitcoin's dependency on OpenSSL
   (which was an actual goal and was finally [achieved][news78 openssl] in 2019).
@@ -148,7 +147,7 @@ extended_summary: |
   earlier, would be rejected at the 95% threshold).
 
   The 75% threshold was reach at block height 359,753.  The 95%
-  threshold was reached at block 363,725 (date 4 July 2015) and all
+  threshold was reached at block 363,725 (4 July 2015) and all
   nodes running [Bitcoin Core version 0.10.0][] or later (or a
   compatible implementation) began enforcing the new rules.  However, at
   block height 363,731, one of the miners who had not been signaling
@@ -207,8 +206,8 @@ extended_summary: |
     example, in the block that triggered the 4 July 2015 chain split,
     all the transactions followed the BIP66 strict DER rules---the
     only reason that block and the subsequent five blocks were rejected,
-    causing over $50,000 in losses, were that the miner produced a
-    version 2 block instead of a version 3 block.
+    causing over $50,000 in losses, was that the miner assigned the 
+    version number to be 2 instead of 3. 
 
   - **Impractical parallelization:** with ISM, developers felt they
     needed to wait for one fork to activate before a second fork could
@@ -257,12 +256,12 @@ extended_summary: |
   peaked far below the needed 95% threshold.  Some Bitcoin users felt
   miners were illegitimately delaying a useful new feature and supported
   a mandatory activation mechanism specified in [BIP148][].  The final
-  form of BIP148 required any node following its rules to reject any
+  form of BIP148 specified rejecting any
   blocks that didn't signal support for BIPs 141/143 starting on a
   certain date.
 
   BIP148 created the risk of a consensus failure.  If miners failed to
-  follow the BIP148 rules and most users continued to consider those
+  signal BIP9 support for segwit, and most users continued to consider those
   miners' blocks as valid, users of BIP148 might accept bitcoins that
   most other Bitcoin users would consider invalid.  Alternatively, if
   most users of Bitcoin followed the BIP148 rules---but miners still
@@ -273,7 +272,7 @@ extended_summary: |
   assured.
 
   Around the time BIP148 began receiving significant public support,
-  everal miners, exchanges, and other businesses signed their support
+  several miners, exchanges, and other businesses signed their support
   for a two-step proposal that started with activation of segwit in a
   way that would follow the BIP148 rules.  This first stage was proposed
   in [BIP91][], which was a modification of the BIP9 rules.  Miners used
