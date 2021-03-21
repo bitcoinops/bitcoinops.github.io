@@ -33,10 +33,15 @@ extended_summary: |
   PSBT later.  Finally, that fully signed PSBT can be converted into a
   complete ready-to-broadcast transaction.
 
+  The basic details about PSBTs and a specification for the original
+  version 0 PSBTs are published in [BIP174][].  Version 2 PSBTs are
+  described in [BIP370][].  There are no version 1 PSBTs.
+
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
     - title: BIP174
+    - title: BIP370
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -146,6 +151,12 @@ optech_mentions:
 
   - title: "BIPs #1055 updatse BIP174 with new versioning information"
     url: /en/newsletters/2021/02/10/#bips-1055
+
+  - title: "C-Lightning #4428 switches an RPC to accepting PSBTs for enhance validation"
+    url: /en/newsletters/2021/03/24/#c-lightning-4428
+
+  - title: "BIPs #1059 publishes the draft specification for v2 PSBTs as BIP370"
+    url: /en/newsletters/2021/03/24/#bips-1059
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

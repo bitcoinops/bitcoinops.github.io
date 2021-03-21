@@ -83,6 +83,9 @@ optech_mentions:
   - title: "2020 year in review: transaction origin privacy"
     url: /en/newsletters/2020/12/23/#transaction-origin-privacy
 
+  - title: "Reused hash-based addresses provide no quantum resistance"
+    url: /en/newsletters/2021/03/24/#hashes-not-currently-doing-a-good-job-at-qc-resistance
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

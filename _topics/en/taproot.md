@@ -159,6 +159,12 @@ optech_mentions:
   - title: "Documenting the intention to use and build upon taproot"
     url: /en/newsletters/2021/03/10/#documenting-the-intention-to-use-and-build-upon-taproot
 
+  - title: "Discussion of quantum computer attacks on taproot"
+    url: /en/newsletters/2021/03/24/#discussion-of-quantum-computer-attacks-on-taproot
+
+  - title: Regular meetings scheduled to help activate taproot
+    url: /en/newsletters/2021/03/24/#weekly-taproot-activation-meetings
+
 ## Optional
 see_also:
   - title: MAST
