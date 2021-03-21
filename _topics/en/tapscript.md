@@ -82,6 +82,9 @@ optech_mentions:
   - title: "2020 year in review: Taproot, tapscript, and schnorr signatures"
     url: /en/newsletters/2020/12/23/#taproot
 
+  - title: Using backup tapscript spending paths to recover from crypto breaks
+    url: /en/newsletters/2021/03/24/#taproot-improvement-in-post-qc-recovery-at-no-onchain-cost
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
