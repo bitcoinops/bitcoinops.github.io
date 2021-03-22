@@ -226,7 +226,16 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20861][] BIP 350: Implement Bech32m and use it for v1+ segwit addresses FIXME:Xekyo
+- [Bitcoin Core #20861][] implements support for [BIP350][] (Bech32m format for v1+
+  witness addresses). Bech32m supersedes bech32 ([BIP173][]) as the address format for
+  native segwit outputs of version 1-16. Native segwit version 0 outputs
+  (P2WPKH and P2WSH) will continue to use bech32. This PR would enable
+  Bitcoin Core users to send payments to Pay to Taproot (P2TR) addresses once taproot outputs ([BIP341][]) were defined on the network.
+  The change should not affect any mainnet systems, but may cause address
+  incompatibility issues in testing environments such as signet where taproot
+  is already active using bech32-encoded addresses as previously proposed.
+  Bech32m support will also be backported to Bitcoin Core 0.19,
+  0.20, and 0.21.
 
 - [Bitcoin Core #21141][] updates the `-walletnotify` configuration
   setting that calls a user-specified command each time a transaction is
