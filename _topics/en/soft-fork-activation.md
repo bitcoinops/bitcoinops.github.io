@@ -129,6 +129,15 @@ extended_summary: |
   > - 95% rule: If 950 of the last 1,000 blocks are version 2 or
   >   greater, reject all version 1 blocks.
 
+  One known problem with the rule to reject old version blocks was that,
+  until all miners had upgraded, up to several invalid blocks would be
+  produced each day (a 5% chance per block assuming exactly 95% of
+  miners upgraded).  Upgraded nodes that enforced ISM's rules would
+  reject those blocks, but old nodes and lightweight clients that didn't
+  know about the rules would accept those blocks.  This made the
+  network was more reliant than usual on miners refusing to build on
+  invalid blocks.
+
   #### [2015] ISM and validationless mining: the BIP66 strict DER activation
 
   In September 2014, Pieter Wuille [discovered][strictder disclosure] a
@@ -143,41 +152,51 @@ extended_summary: |
   After BIP66 gained adequate support from users and
   developers---including from many people who didn't know about the
   security vulnerability---it was released using the same ISM activation
-  mechanism as BIP34 used, except using v3 blocks (meaning v2 blocks, or
-  earlier, would be rejected at the 95% threshold).
+  mechanism as BIP34 used, incrementing the block version to v3 and
+  requiring all v2 or lower blocks be rejected when the 95% threshold
+  was reached.
 
-  The 75% threshold was reach at block height 359,753.  The 95%
-  threshold was reached at block 363,725 (4 July 2015) and all
-  nodes running [Bitcoin Core version 0.10.0][] or later (or a
-  compatible implementation) began enforcing the new rules.  However, at
-  block height 363,731, one of the miners who had not been signaling
-  support for the soft fork produced a version 2 block that was not
-  valid under the new ISM activation rules.  It was known this could
-  happen up to several times a day until the last few percent of the
-  network hash rate upgraded to enforce the new rules, and the expected
-  outcome was that upgraded nodes and miners would simply ignore the
-  invalid block.  Unfortunately, many miners at the time performed
-  *validationless mining* where they would accept a claim that there was
-  a new block even before the new block had arrived and been trustlessly
-  validated.  When this happened, they would begin mining to extend the
-  chain with the invalid block, making any blocks they produced also
-  invalid.  This happened after the original block 363,731 was
-  produced---miners produced a chain of six invalid blocks before
-  developers were able to contact pool operators and get them to
-  manually reset their software to return to the valid chain.
+  The 75% threshold was reached at block height 359,753.  On 4 July
+  2015, the 95% threshold was reached at block 363,725 and all nodes
+  running [Bitcoin Core version 0.10.0][] or later (or a compatible
+  implementation) began enforcing the new rules.  However, at block
+  height 363,731, a non-upgraded miner produced a block that didn't
+  contain the correct block version and so was not valid under the new
+  ISM activation rules.  Other miners built on this invalid block,
+  ultimately producing a chain with six invalid blocks.  This meant
+  non-upgraded nodes and many lightweight clients treated the 96
+  transactions in the first invalid block as having six
+  confirmations---putting users at risk of accepting those payments as
+  final even though they hadn't, at that time, been cofirmed even once
+  in a valid block.  Eventually developers were able to contact pool
+  operators and get them to manually reset their software to return to
+  the valid chain.  A second event of this type occurred the next day,
+  giving transactions three false confirmations.  Happily, all regular
+  transactions from both the six-block and three-block invalid chains
+  were later confirmed in valid blocks, meaning that no regular users
+  lost money.
 
-  These invalid blocks did not affect users who had upgraded their full
-  nodes to enforce the BIP66 soft fork, but users of lightweight clients
-  and earlier nodes could've seen the 96 transactions in the original
-  block 363,731 receive up to six confirmations even though they weren't
-  confirmed in a valid block.  A second event of this type occurred the
-  next day, giving transactions three false confirmations.  Eventually,
+  That initial invalid block at height 363,731 was one of the roughly 5%
+  of blocks per day that was expected to be invalid for no reason other
+  than using an old version number.  The chance of the next block being
+  invalid was also 5%, or a culmative probability of `5% * 5% = 0.25%`.
+  Under the premise that 95% of miners had upgraded, the culmative
+  probability of six blocks in a row all being invalid was
+  0.000002%---but it wasn't extraordinarily bad luck that was the
+  culprit here.  What hadn't been considered was miners performing
+  *validationless mining,* an efficiency optimization where miners would
+  build upon the header of a new block before they had finished
+  receiving and verifying that block.  Although validationless mining
+  software could easily deal with invalid block versions in theory, that
+  feature had not been implemented in the software used by the miners
+  who created the five blocks descended from #363,731.  Eventually,
   enough miners improved their validationless mining software or
-  upgraded their nodes and the accidental chain splits stopped occurring.
+  upgraded their nodes and the accidental chain splits related to the
+  BIP66 activation stopped occurring.
 
   In response to the problems of these [July 2015 chain forks][],
   developers redoubled their efforts on reducing the need for
-  validationless mining and began working on a new activation mechanism.
+  validationless mining and began working on an improved activation mechanism.
 
   #### [2015] ISM one last time: the BIP65 `OP_CHECKLOCKTIMEVERIFY` activation
 
@@ -204,10 +223,10 @@ extended_summary: |
     increment their version would produce invalid blocks even if those
     blocks didn't violate any of the soft fork's other rules.  For
     example, in the block that triggered the 4 July 2015 chain split,
-    all the transactions followed the BIP66 strict DER rules---the
-    only reason that block and the subsequent five blocks were rejected,
-    causing over $50,000 in losses, was that the miner assigned the 
-    version number to be 2 instead of 3. 
+    all the transactions followed the new soft fork rules---the
+    only reason miners suffered over $50,000 in losses was that the
+    upgrade required a block header contain a `3` and a non-upgraded
+    miner used a `2`.
 
   - **Impractical parallelization:** with ISM, developers felt they
     needed to wait for one fork to activate before a second fork could
@@ -219,16 +238,11 @@ extended_summary: |
     that signal until activation occurred.  There was no way to decide
     the soft fork was no longer needed.
 
-  - **Loose measurements and unpredictable activation times:** ISM
-    activated whenever 950/1000 blocks signaled readiness.  However,
-    because Bitcoin block production is stochastic, a lucky set of
-    miners with much less than 95% of the total network hashrate could
-    sometimes produce 950 of the last 1,000 blocks, leading to premature
-    activation.  Additionally, not knowing the exact activation time in
-    advance meant it was difficult for protocol developers, merchant
-    system administrators, and mining pool operators to be available in
-    the hours shortly after activation occurred in case there were any
-    problems that needed a quick response.
+  - **Unpredictable activation times:** Not knowing the exact activation
+    time in advance meant it was difficult for protocol developers,
+    merchant system administrators, and mining pool operators to be
+    available in the hours shortly after activation occurred in case
+    there were any problems that needed a quick response.
 
   BIP9 versionbits attempted to solve these problems by using the block
   header version field as a bitfield.  Bits in the field were used for
@@ -243,7 +257,7 @@ extended_summary: |
   allowing the unused code to be removed from later node software
   releases.
 
-  This activation method was first tested with the soft fork that added
+  This activation method was first used with the soft fork that added
   [BIP68][] consensus-enforced sequence numbers, [BIP112][]
   `OP_CHECKSEQUENCEVERIFY`, and [BIP113][] nLockTime enforcement by
   median time past.  The fork quickly made it to the locked-in phase,
@@ -251,30 +265,39 @@ extended_summary: |
 
   #### [2016-7] BIP9, BIP148, and BIP91: the BIP141/143 segwit activation
 
-  The segwit soft fork was implemented to use the [BIP9][] activation
-  method.  A few miners quickly began signaling readiness but support
+  The segwit soft fork was released with [BIP9][] activation
+  parameters.  A few miners quickly began signaling readiness but support
   peaked far below the needed 95% threshold.  Some Bitcoin users felt
-  miners were illegitimately delaying a useful new feature and supported
-  a mandatory activation mechanism specified in [BIP148][].  The final
+  miners were illegitimately delaying a useful new feature and went on
+  to develop the mandatory activation that became [BIP148][].  The final
   form of BIP148 specified rejecting any
-  blocks that didn't signal support for BIPs 141/143 starting on a
+  blocks that didn't signal support for segwit starting on a
   certain date.
 
   BIP148 created the risk of a consensus failure.  If miners failed to
-  signal BIP9 support for segwit, and most users continued to consider those
+  signal support for segwit, and most users continued to consider those
   miners' blocks as valid, users of BIP148 might accept bitcoins that
   most other Bitcoin users would consider invalid.  Alternatively, if
   most users of Bitcoin followed the BIP148 rules---but miners still
   produced many BIP148-invalid blocks---those users who didn't enforce
-  the BIP148 could accept bitcoins that the BIP148 users would consider
-  invalid.  Only if miners were persuaded to follow the BIP148 rules (or
-  if no users tried to enforce the BIP148 rules) would safety be
-  assured.
+  BIP148 could accept bitcoins that the BIP148 users would consider
+  invalid.  Only if all users followed the same rules, or most mining
+  hashrate followed the BIP148 rules, would safety be assured.
+
+  One way to reduce this risk was to give more users time to upgrade to
+  a node that would mandate activation of segwit.  BIP148 couldn't do
+  this since its goal of triggering the existing BIP9 segwit deployment
+  meant it had to force miner signaling to start long before segwit's
+  BIP9 timeout date.  As an alternative in case BIP148 failed to gain
+  sufficient support, [BIP149][] was proposed to give users another year
+  to upgrade.  BIP149 never gained much public support, but it did
+  result in the creation of [BIP8][], which would see additional
+  discussion in subsequent years.
 
   Around the time BIP148 began receiving significant public support,
   several miners, exchanges, and other businesses signed their support
   for a two-step proposal that started with activation of segwit in a
-  way that would follow the BIP148 rules.  This first stage was proposed
+  way that would remain in consensus with nodes supporting BIP148.  This first stage was proposed
   in [BIP91][], which was a modification of the BIP9 rules.  Miners used
   a BIP9 versionbit to signal whether they would enforce a temporary
   rule to reject any blocks not signaling the BIP141/143 segwit
@@ -304,9 +327,9 @@ extended_summary: |
       BIP148, allowing miners to voluntarily signal for activation for
       most periods of the activation but requiring them to signal during
       the final period or risk creating invalid blocks.  Later, a
-      parameter `LockinOnTimeout` (LOT) was created to control this
+      parameter `LockinOnTimeout` (LOT) was created to toggle this
       behavior; nodes using LOT=true will require signaling in the final
-      period; nodes using LOT=false will not require signaling but will
+      period before the timeout; nodes using LOT=false will not require signaling but will
       still enforce the new rules if enough blocks are signaling.
 
     - **Heights instead of times:** BIP9 starts and stops monitoring for
@@ -324,8 +347,9 @@ extended_summary: |
   Other activation ideas have also been discussed, including
   probabilistic soft fork activation ([sporks][]), multi-stage
   ("modern") soft fork activation ([MSFA][]), decreasing threshold
-  activation ([decthresh][]), and a return to hardcoded height or time
-  activations ([flag days][]).
+  activation ([decthresh][]), a return to hardcoded height or time
+  activations ([flag days][]), and a short signaling period followed by
+  an activation delay ([speedy trial][]).
 
   [oconnor recursion]: https://github.com/bitcoin/bitcoin/issues/729
   [vanderlaan fix]: https://github.com/bitcoin/bitcoin/pull/730
@@ -349,6 +373,7 @@ extended_summary: |
   [decthresh]: /en/newsletters/2020/07/22/#mailing-list-thread
   [flag days]: /en/newsletters/2021/03/10/#flag-day
   [variety of activation proposals]: https://en.bitcoin.it/wiki/Taproot_activation_proposals
+  [speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
