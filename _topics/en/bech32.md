@@ -100,6 +100,9 @@ optech_mentions:
   - title: "BTCPay Server #2181 uppercases bech32 addresses in QR codes"
     url: /en/newsletters/2021/03/10/#btcpay-server-2181
 
+  - title: "Bitcoin Core #20861 implements support for bech32m addresses"
+    url: /en/newsletters/2021/03/24/#bitcoin-core-20861
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
