@@ -251,7 +251,12 @@ BOLTs][bolts repo].*
   output, eliminating a [problem][c-lightning #4416] where a user who
   passes incorrect data can lose the ability to recover their funds.
 
-- [C-Lightning #4421][] Experimental option option_shutdown_wrong_funding: help me, I screwed up! FIXME:dongcarl (suggestion: link to last week's newsletter about this topic)
+- [C-Lightning #4421][] implements the funding transaction recovery procedure
+  covered in [last week's newsletter][news140 recovery]. Users who mistakenly
+  funded channels with a first-party malleated transaction (e.g. using RBF) but
+  haven't used the channel yet can now supply their transaction output to the
+  `lightning-close` command to negotiate recovery with a peer supporting the
+  `shutdown_wrong_funding` feature.
 
 - [LND #5068][] makes available a number of new configuration options
   for limiting how much network gossip information LND processes.  This
@@ -303,3 +308,4 @@ BOLTs][bolts repo].*
 [rubin delegation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018615.html
 [sighash_none]: https://btcinformation.org/en/developer-guide#term-sighash-none
 [US7215773B1]: https://patents.google.com/patent/US7215773B1/en
+[news140 recovery]: /en/newsletters/2021/03/17/#rescuing-lost-ln-funding-transactions
