@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Bitcoin Core #19136 extends `getaddressinfo` to return parent descriptors"
     url: /en/newsletters/2021/02/24/#bitcoin-core-19136
 
+  - title: Specter v1.2.0 includes support for Bitcoin Core descriptor wallets
+    url: /en/newsletters/2021/03/24/#specter-v1-2-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
