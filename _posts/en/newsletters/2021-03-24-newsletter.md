@@ -205,7 +205,34 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **OKCoin launches Lightning deposits and withdrawals:**
+  A [blog post][okcoin lightning blog] outlines OKCoin's Lightning deposit and withdrawal
+  support. They also lowered their minimum deposit/withdrawal limit from 0.001 to
+  0.000001 BTC as a result. At this time, 0.05 BTC is OKCoin's limit when transacting
+  using LN.
+
+- **BitMEX announces bech32 support:**
+  In a [blog post][bitmex bech32 blog], BitMEX detailed the launch plans for
+  bech32 deposit support. BitMEX had [previously][news77 bitmex
+  bech32 send] rolled out [bech32][topic bech32] withdrawal (send) support.
+
+- **Specter v1.2.0 released:**
+  [Specter v1.2.0][specter v1.2.0] includes support for Bitcoin Core [descriptor
+  wallets][topic descriptors] and coin control features.
+
+- **Breez streams audio for Lightning payments:**
+  Breez wallet has integrated an audio player which, combined with
+  [keysend][topic spontaneous payments], allows users to listen to podcasts while
+  streaming payments to the publisher and sending one-off tip payments.
+
+- **Key manager Dux Reserve announced:**
+  Thibaud Maréchal [announced][dux reserve tweet] Dux Reserve, a beta open
+  source desktop key manager supported on MacOS, Windows, and Linux and
+  supporting Ledger, Coldcard, and Trezor hardware wallets.
+
+- **Coldcard now using libsecp256k1:**
+  Coldcard's version 4.0.0, among other features, switches to using Bitcoin
+  Core’s [libsecp256k1][] library for its cryptographic operations.
 
 ## Releases and release candidates
 
@@ -273,7 +300,6 @@ BOLTs][bolts repo].*
   previously discussed on the mailing list (see [Newsletter
   #128][news128 psbtv2]).
 
-<!-- FIXME:harding add topic links -->
 {% include references.md %}
 {% include linkers/issues.md issues="20861,21141,4428,4416,4421,1059,5064,5068,831" %}
 [c-lightning 0.10.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.0rc1
@@ -309,3 +335,8 @@ BOLTs][bolts repo].*
 [sighash_none]: https://btcinformation.org/en/developer-guide#term-sighash-none
 [US7215773B1]: https://patents.google.com/patent/US7215773B1/en
 [news140 recovery]: /en/newsletters/2021/03/17/#rescuing-lost-ln-funding-transactions
+[okcoin lightning blog]: https://blog.okcoin.com/2021/03/04/how-to-use-bitcoin-lightning-network/
+[dux reserve tweet]: https://twitter.com/thibm_/status/1369331407441510405
+[bitmex bech32 blog]: https://blog.bitmex.com/introducing-bech32-deposits-on-bitmex-to-deepen-bitcoin-integration-lower-fees/
+[news77 bitmex bech32 send]: /en/newsletters/2019/12/18/#bitmex-bech32-send-support
+[specter v1.2.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.2.0

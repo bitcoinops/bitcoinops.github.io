@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Bitcoin Core #20861 implements support for bech32m addresses"
     url: /en/newsletters/2021/03/24/#bitcoin-core-20861
 
+  - title: "BitMEX exchange announces support for bech32 deposit addresses"
+    url: /en/newsletters/2021/03/24/#bitmex-announces-bech32-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
