@@ -213,15 +213,15 @@ wallets and services.*
 
 - **BitMEX announces bech32 support:**
   In a [blog post][bitmex bech32 blog], BitMEX detailed the launch plans for
-  bech32 deposit support. BitMEX had [previously][news77 bitmex
-  bech32 send] rolled out [bech32][topic bech32] withdrawal (send) support.
+  [bech32][topic bech32] deposit support. BitMEX had [previously][news77 bitmex
+  bech32 send] rolled out bech32 withdrawal (send) support.
 
 - **Specter v1.2.0 released:**
   [Specter v1.2.0][specter v1.2.0] includes support for Bitcoin Core [descriptor
   wallets][topic descriptors] and coin control features.
 
 - **Breez streams audio for Lightning payments:**
-  Breez wallet has integrated an audio player which, combined with
+  Breez wallet has [integrated an audio player][breez podcast blog] which, combined with
   [keysend][topic spontaneous payments], allows users to listen to podcasts while
   streaming payments to the publisher and sending one-off tip payments.
 
@@ -231,7 +231,7 @@ wallets and services.*
   supporting Ledger, Coldcard, and Trezor hardware wallets.
 
 - **Coldcard now using libsecp256k1:**
-  Coldcard's version 4.0.0, among other features, switches to using Bitcoin
+  Coldcard's [version 4.0.0][coldcard blog 4.0.0], among other features, switches to using Bitcoin
   Core’s [libsecp256k1][] library for its cryptographic operations.
 
 ## Releases and release candidates
@@ -340,3 +340,5 @@ BOLTs][bolts repo].*
 [bitmex bech32 blog]: https://blog.bitmex.com/introducing-bech32-deposits-on-bitmex-to-deepen-bitcoin-integration-lower-fees/
 [news77 bitmex bech32 send]: /en/newsletters/2019/12/18/#bitmex-bech32-send-support
 [specter v1.2.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.2.0
+[breez podcast blog]: https://medium.com/breez-technology/podcasts-on-breez-streaming-sats-for-streaming-ideas-d9361ae8a627
+[coldcard blog 4.0.0]: https://blog.coinkite.com/version-4.0.0-released/
