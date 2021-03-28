@@ -1,5 +1,6 @@
 ---
 title: Just-in-time (JIT) routing
+shortname: jit routing
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -30,6 +31,9 @@ optech_mentions:
 
   - title: Additional JIT routing discussion
     url: /en/newsletters/2019/07/24/#additional-just-in-time-jit-ln-routing-discussion
+
+  - title: Paper analyzes effect of JIT rebalancing on payment success rate
+    url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

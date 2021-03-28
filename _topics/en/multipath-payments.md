@@ -139,6 +139,9 @@ optech_mentions:
   - title: "Eclair #1599 improves multipath spending to direct channel counterparties"
     url: /en/newsletters/2020/11/18/#eclair-1599
 
+  - title: New paper analyzes benefit of multipath payments on routing success
+    url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
