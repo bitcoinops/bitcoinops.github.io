@@ -131,6 +131,9 @@ optech_mentions:
   - title: "2020 year in review: HTLC mining incentives"
     url: /en/newsletters/2020/12/23/#concern-about-htlc-mining-incentives
 
+  - title: "Eclair #1738 combines multiple HTLC enforcements into a single transaction"
+    url: /en/newsletters/2021/03/31/#eclair-1738
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki
