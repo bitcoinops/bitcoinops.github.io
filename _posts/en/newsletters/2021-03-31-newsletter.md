@@ -109,7 +109,12 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #17227][] Qt: Add Android packaging support FIXME:jnewbery
+- [Bitcoin Core #17227][] adds a new `make apk` target to the build
+  system which packages bitcoin-qt for the Android operating system. This
+  continues [previous work][news 72 android ndk] which added support for
+  packaging the Android NDK.  Also included are [documentation][android build
+  doc] for building Bitcoin Core for Android and a [continuous integration
+  job][android ci] to test the Android build system.
 
 - [Rust-Lightning #849][] makes a channel's `cltv_expiry_delta`
   configurable and reduces the default value from 72 blocks to 36
@@ -150,3 +155,6 @@ BOLTs][bolts repo].*
 [btcpay server 1.0.7.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.7.1
 [batching post]: /en/payment-batching/
 [news37 batching]: /en/newsletters/2019/03/12/#optech-publishes-book-chapter-about-payment-batching
+[news 72 android ndk]: /en/newsletters/2019/11/13/#bitcoin-core-16110
+[android build doc]: https://github.com/bitcoin/bitcoin/blob/11840509/doc/build-android.md
+[android ci]: https://github.com/bitcoin/bitcoin/blob/11840509/.cirrus.yml#L184-L192
