@@ -165,7 +165,15 @@ BOLTs][bolts repo].*
   merchants and other users who want to begin receiving payments as
   soon as the channel finishes opening.
 
-- [Eclair #1738][] Handle aggregated anchor outputs htlc txs FIXME:dongcarl
+- [Eclair #1738][] updates the penalty enforcement mechanism for revoked
+  [HTLCs][topic HTLC] when [anchor outputs][topic anchor outputs] are
+  being used.  A change unrelated to anchor outputs, but introduced at
+  the same time they were added to the protocol, created the possibility
+  to combine multiple `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` HTLC outputs
+  into a single transaction (see [Newsletter #128][news128 bolts803].
+  This PR ensures that all outputs that are spendable with the
+  revocation key are claimed in the same transaction instead of claiming
+  only one per transaction.
 
 - [BIPs #1080][] updates [BIP8][] with a `minimum_activation_height`
   parameter that delays the time nodes begin enforcing a locked-in soft
@@ -194,3 +202,4 @@ BOLTs][bolts repo].*
 [jonatack twitter i2p]: https://twitter.com/jonatack/status/1366764964896075776?s=20
 [se 103261]: https://bitcoin.stackexchange.com/questions/103261/does-my-node-rebroadcast-its-mempool-transactions-on-startup/103262#103262
 [wiki privacy round numbers]: https://en.bitcoin.it/wiki/Privacy#Round_numbers
+[news128 bolts803]: /en/newsletters/2020/12/16/#bolts-803
