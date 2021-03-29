@@ -81,7 +81,38 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How hard is it for an exchange to adopt native segwit?]({{bse}}103674)
+  Bitcoin developer instagibbs lists a few considerations for exchanges implementing native segwit
+  including address generation, ensuring spendability, support and business
+  considerations, and compatibility of signing infrastructure like Hardware
+  Security Modules (HSMs).
+
+- [How do you calculate when 98% of Bitcoin will be mined?]({{bse}}103159)
+  While Murch provides an estimate of 2030-2031 for when 98% of
+  all bitcoins will be mined, he also links to a [reward schedule Google
+  Sheet][reward schedule google sheet] with additional metrics.
+
+- [How can I use Bitcoin Core with the anonymous network protocol I2P?]({{bse}}103402)
+  With the merge of [Bitcoin Core #20685][news139 i2p], Bitcoin supports the I2P
+  network. Michael Folkson summarizes [Jon Atack's original thread][jonatack
+  twitter i2p] on how to configure Bitcoin Core to use I2P.
+
+- [Will nodes with a larger-than-default mempool retransmit transactions that have been dropped from smaller mempools?]({{bse}}103104)
+  Pieter Wuille notes that transaction rebroadcasting is currently a [wallet
+  responsibility][se 103261], that perhaps nodes should also rebroadcast unconfirmed
+  transactions, and points to [Bitcoin Core #21061][] as working toward that goal.
+
+- [Should block height or MTP or a mixture of both be used in a soft fork activation mechanism?]({{bse}}103854)
+  David A. Harding outlines the advantages and disadvantages of both Median
+  Time Past (MTP) and block heights as timing mechanisms within Bitcoin. MTP
+  roughly corresponds to clock time but can be manipulated by miners to skip a
+  signaling period. Block heights are not consistent but are also not
+  miner-gameable in the same way as MTP.
+
+- [Why is it recommended to “not send round number amounts when making payments” for increased privacy?]({{bse}}103260)
+  User chytrik provides different examples to illustrate the [round number
+  heuristic][wiki privacy round numbers] and why avoiding round payment amounts
+  can be better for privacy.
 
 ## Releases and release candidates
 
@@ -145,7 +176,7 @@ BOLTs][bolts repo].*
   after the release of software implementing Speedy Trial.
 
 {% include references.md %}
-{% include linkers/issues.md issues="17227,849,4427,1738,1080,1080,780" %}
+{% include linkers/issues.md issues="17227,849,4427,1738,1080,1080,780,21061" %}
 [c-lightning 0.10.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.0rc2
 [hwi 2.0.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.0.1
 [news40 cltv_expiry_delta]: /en/newsletters/2019/04/02/#lnd-2759
@@ -158,3 +189,8 @@ BOLTs][bolts repo].*
 [news 72 android ndk]: /en/newsletters/2019/11/13/#bitcoin-core-16110
 [android build doc]: https://github.com/bitcoin/bitcoin/blob/11840509/doc/build-android.md
 [android ci]: https://github.com/bitcoin/bitcoin/blob/11840509/.cirrus.yml#L184-L192
+[reward schedule google sheet]: https://docs.google.com/spreadsheets/d/12tR_9WrY0Hj4AQLoJYj9EDBzfA38XIVLQSOOOVePNm0/edit#gid=0
+[news139 i2p]: /en/newsletters/2021/03/10/#bitcoin-core-20685
+[jonatack twitter i2p]: https://twitter.com/jonatack/status/1366764964896075776?s=20
+[se 103261]: https://bitcoin.stackexchange.com/questions/103261/does-my-node-rebroadcast-its-mempool-transactions-on-startup/103262#103262
+[wiki privacy round numbers]: https://en.bitcoin.it/wiki/Privacy#Round_numbers
