@@ -3,7 +3,7 @@
 [compatibility matrix]: /en/compatibility/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
-[scaling payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
+[scaling payment batching]: /en/payment-batching/
 
 {% comment %}<!-- links for topics -->{% endcomment %}
 {% for topic in site.topics %}
