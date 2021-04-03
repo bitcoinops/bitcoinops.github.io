@@ -110,6 +110,9 @@ optech_mentions:
   - title: "C-Lightning #4410 updates experimental implementation dual funding"
     url: /en/newsletters/2021/03/17/#c-lightning-4410
 
+  - title: "C-Lightning 0.10.0 includes experimental support for dual funding"
+    url: /en/newsletters/2021/04/07/#c-lightning-0-10-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)
