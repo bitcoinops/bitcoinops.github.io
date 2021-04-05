@@ -40,7 +40,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20286][] rpc: deprecate `addresses` and `reqSigs` from rpc outputs FIXME:Xekyo
+- [Bitcoin Core #20286][] removes the fields `addresses` and `reqSigs` from the
+  responses of the RPCs `gettxout`, `getrawtransaction`,
+  `decoderawtransaction`, `decodescript`, `gettransaction`, and the REST
+  endpoints `/rest/tx`, `/rest/getutxos`, `/rest/block`. When a well-defined
+  address exists, the responses now include the optional field `address`
+  instead. The deprecated fields had been used in the context of bare multisig
+  which has no substantial use on the network today. The deprecated fields can
+  be output via the configuration option `-deprecatedrpc=addresses` until the
+  option is removed in Bitcoin Core 23.0.
 
 - [Bitcoin Core #20197][] improves the diversity of peer connections by updating
   the inbound peer eviction logic to protect the longest-running
