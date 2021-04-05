@@ -42,13 +42,31 @@ BOLTs][bolts repo].*
 
 - [Bitcoin Core #20286][] rpc: deprecate `addresses` and `reqSigs` from rpc outputs FIXME:Xekyo
 
-- [Bitcoin Core #20197][] p2p: protect onions in AttemptToEvictConnection(), add eviction protection test coverage FIXME:jonatack
+- [Bitcoin Core #20197][] improves the diversity of peer connections by updating
+  the inbound peer eviction logic to protect the longest-running
+  onion peers.  It also adds unit test coverage for the current
+  eviction protection logic.  Onion peers have historically been disadvantaged
+  by the eviction criteria due to their higher latency relative to IPv4 and IPv6
+  peers, leading to users filing [multiple][Bitcoin Core #11537] [issues][Bitcoin Core #19500].
+  An [initial response][news114 core19670] to the issue
+  began reserving slots for localhost peers as a proxy for onion peers.
+  Later, [explicit detection of inbound onion connections][news118 core19991] was added.
+
+  With the updated logic, half of the protected slots are allocated to any onion
+  and localhost peers, with onion peers receiving precedence over localhost
+  peers.  Now that support for the I2P privacy network has been added to Bitcoin
+  Core (see [Newsletter #139][news139 i2p]), a next step will be to extend
+  eviction protection to I2P peers, as they generally have higher latency than
+  onion peers.
 
 - [Eclair #1750][] Remove Electrum support FIXME:bitschmidty
 
 - [Eclair #1751][] Add blocking option to payinvoice API FIXME:dongcarl
 
 {% include references.md %}
-{% include linkers/issues.md issues="20286,20197,1750,1751" %}
+{% include linkers/issues.md issues="20286,20197,1750,1751,19500,11537,19670,19991" %}
 [c-lightning 0.10.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.0
 [btcpay 1.0.7.2]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.7.2
+[news139 i2p]: /en/newsletters/2021/03/10/#bitcoin-core-20685
+[news114 core19670]: /en/newsletters/2020/09/09/#bitcoin-core-19670
+[news118 core19991]: /en/newsletters/2020/10/07/#bitcoin-core-19991
