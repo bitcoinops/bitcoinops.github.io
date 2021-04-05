@@ -72,7 +72,10 @@ BOLTs][bolts repo].*
   implementation, [Eclair-kmp][eclair-kmp github], is now recommended for use by
   mobile wallets, making Electrum support for Eclair unnecessary.
 
-- [Eclair #1751][] Add blocking option to payinvoice API FIXME:dongcarl
+- [Eclair #1751][] adds a `blocking` option to the `payinvoice` command which
+  causes calls to `payinvoice` to block until the payment is completed.
+  Previously, inefficiently polling the `getsentinfo` API was required for users
+  to know when payments completed.
 
 {% include references.md %}
 {% include linkers/issues.md issues="20286,20197,1750,1751,19500,11537,19670,19991" %}
