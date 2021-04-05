@@ -59,7 +59,10 @@ BOLTs][bolts repo].*
   eviction protection to I2P peers, as they generally have higher latency than
   onion peers.
 
-- [Eclair #1750][] Remove Electrum support FIXME:bitschmidty
+- [Eclair #1750][] removes support for Electrum and the corresponding 10,000 lines
+  of code. Electrum was previously used by Eclair for mobile wallets. However, a new
+  implementation, [Eclair-kmp][eclair-kmp github], is now recommended for use by
+  mobile wallets, making Electrum support for Eclair unnecessary.
 
 - [Eclair #1751][] Add blocking option to payinvoice API FIXME:dongcarl
 
@@ -70,3 +73,4 @@ BOLTs][bolts repo].*
 [news139 i2p]: /en/newsletters/2021/03/10/#bitcoin-core-20685
 [news114 core19670]: /en/newsletters/2020/09/09/#bitcoin-core-19670
 [news118 core19991]: /en/newsletters/2020/10/07/#bitcoin-core-19991
+[eclair-kmp github]: https://github.com/ACINQ/eclair-kmp
