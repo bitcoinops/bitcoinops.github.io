@@ -280,7 +280,10 @@ extended_summary: |
   blocks that didn't signal support for segwit starting on a
   certain date.
 
-  Software implementing BIP148 created the risk of a consensus failure.  If miners failed to
+  With the introduction of software implementing BIP148, there were
+  three sets of nodes on the network---non-upgraded, BIP9/141 nodes, and
+  BIP148/141 nodes---increasing the number of situations that could end
+  in consensus failure.  If miners failed to
   signal support for segwit, and most users continued to consider those
   miners' blocks as valid, users of BIP148 might accept bitcoins that
   would be invalid from the perspective of most other Bitcoin users.  Alternatively, if
@@ -296,11 +299,11 @@ extended_summary: |
   meant it had to force miner signaling to start long before segwit's
   BIP9 timeout date.  As an alternative in case BIP148 failed to gain
   sufficient support, [BIP149][] was proposed to give users another year
-  to upgrade.  BIP149 never gained much public support, but it did
-  result in the creation of [BIP8][], which would see additional
+  to upgrade.  BIP149 never gained much public support, but it was the
+  first proposal to use [BIP8][], which would see additional
   discussion in subsequent years.
 
-  Around the time BIP148 began receiving significant public support,
+  After BIP148 began receiving significant public support,
   several miners, exchanges, and other businesses signed their support
   for a two-step proposal that started with activation of segwit in a
   way that would remain in consensus with nodes supporting BIP148.  This first stage was proposed
@@ -311,7 +314,7 @@ extended_summary: |
   95% to 80% and its monitoring and lockin period lengths were reduced
   from 2,016 blocks to 336 blocks.
 
-  BIP91 locked in and activated almost as soon as was possible.
+  BIP91 locked in and activated.
   Subsequently, BIP141/143 locked in and activated.  BIP148 mandatory
   signaling expired when BIP141/143 locked in.  The second stage of
   the proposal from miners, exchanges, and other businesses required a
@@ -365,9 +368,9 @@ extended_summary: |
     92,233,720,368.54277039 BTC.  Bitcoin requires that the output
     amount be less than or equal to the input amount, but this was
     checked by adding the output values into a single 64-bit
-    floating-point value which can only hold a maximum value of
-    92,233,720,368.54776 before rolling over to negative numbers,
-    starting with -92,233,720,368.54776.  This meant it looked like the
+    integer which can only hold a maximum value of
+    9,223,372,036,854,776 sats (about 92 million BTC) before rolling over to negative numbers,
+    starting with -9,223,372,036,854,776 sats.  This meant it looked like the
     transaction spent a total of -0.1 BTC (negative 0.1 BTC).  This
     bypassed another rule that forbid individual negative outputs---but
     not negative aggregate amounts---since it assumed the sum of any set
@@ -404,8 +407,8 @@ extended_summary: |
     two different node versions.  After quickly analyzing the situation,
     developers encouraged users to temporarily downgrade to the old
     version of Bitcoin (the version that rejected the large block) and
-    then to upgrade to an [emergency release of Bitcoin Core][bitcoin
-    core 0.8.1] that implemented an soft fork with a temporary block
+    then to upgrade to an [emergency release][bitcoin
+    core 0.8.1] that implemented a soft fork with a temporary block
     size limit of 500,000 bytes, which was pre-programmed to expire
     several months later after everyone had a chance to upgrade to the
     new database engine.
@@ -433,7 +436,7 @@ extended_summary: |
 
   BIP8's flexibility allowed it to be used to compare a [variety of
   activation proposals][] for the proposed [taproot][topic taproot] soft
-  fork, although detractors (including BIP8's own champion) have leveled
+  fork, although detractors have leveled
   several criticisms against aspects of it, such as configurations that
   [allow miners to refuse activation][dashjr lot=false] of proposals
   that have wide community support, configurations that encourage one
