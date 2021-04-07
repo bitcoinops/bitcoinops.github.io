@@ -16,8 +16,8 @@ excerpt: >
 
 ## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
 extended_summary: |
-  Using only 32 letters and numbers, the bech32 address format is case
-  insensitive and includes an error-correction code that can catch
+  Using only 32 letters and numbers, the bech32 address format does not use
+  mixed case and includes an error-correction code that can catch
   almost all address typos (and even identify where the typos occur in
   some cases).  Addresses encode a segwit version, making them forward
   compatible with a large range of conceivable upgrades.
@@ -29,7 +29,7 @@ extended_summary: |
   [taproot][topic taproot] and future segwit-based script upgrades,
   requiring wallets and services that implemented support for paying the
   original bech32 address format to upgrade if they want to support
-  paying taproot address and future upgrades.  No upgrade is required to
+  paying taproot addresses and future upgrades.  No upgrade is required to
   continue paying the original (version 0) segwit addresses for P2WPKH
   and P2WSH scripts.
 
