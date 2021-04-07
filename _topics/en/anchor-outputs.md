@@ -140,7 +140,7 @@ optech_mentions:
   - title: "LND #4908 reserves a balance for fee bumping when using anchor outputs"
     url: /en/newsletters/2021/01/27/#lnd-4908
 
-  - title: "Eclair 0.5.1 adds and updates features preparing for nanchor outputs"
+  - title: "Eclair 0.5.1 adds and updates features preparing for anchor outputs"
     url: /en/newsletters/2021/03/10/#eclair-0-5-1
 
 ## Optional.  Same format as "primary_sources" above
