@@ -165,6 +165,9 @@ optech_mentions:
   - title: Regular meetings scheduled to help activate taproot
     url: /en/newsletters/2021/03/24/#weekly-taproot-activation-meetings
 
+  - title: "Compromise proposed to use MTP to activate taproot with speedy trial"
+    url: /en/newsletters/2021/04/14/#taproot-activation-discussion
+
 ## Optional
 see_also:
   - title: MAST
