@@ -597,6 +597,9 @@ optech_mentions:
   - title: "Taproot activation mailing list discussion; Speedy Trial attempt proposed"
     url: /en/newsletters/2021/03/10/#taproot-activation-discussion
 
+  - title: "Compromise proposed to use MTP to activate taproot with speedy trial"
+    url: /en/newsletters/2021/04/14/#taproot-activation-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
