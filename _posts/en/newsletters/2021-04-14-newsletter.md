@@ -145,7 +145,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #21594][] rpc: add network field to getnodeaddresses FIXME:adamjonas
+- [Bitcoin Core #21594][] adds a `network` field to the `getnodeaddresses` RPC
+  to help identify nodes on various networks (i.e. IPv4, IPv6, I2P, onion).
+  The author has also proposed that this lays the groundwork for a future
+  patch for `getnodeaddresses` that takes an argument of a specific network
+  and returns only addresses in that network.
 
 - [Bitcoin Core #21166][] Introduce DeferredSignatureChecker and have SignatureExtractorClass subclass it FIXME:jnewbery
 
