@@ -89,14 +89,50 @@ Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jonatack or jnewbery
+[Introduce deploymentstatus][review club
+#19438] is a PR ([#19438][Bitcoin Core #19438]) by Anthony Towns that proposes
+three helper functions to make it easier to [bury future deployments without
+changing all the code paths][easier burying] that check a soft fork's activation status:
+`DeploymentEnabled` to test if a deployment can be active, `DeploymentActiveAt`
+to check if a deployment should be enforced in the given block, and
+`DeploymentActiveAfter` to know if a deployment should be enforced in the
+following block. All three work with both buried deployments and version bits
+deployments.
+
+The review club discussion focused on understanding the change and its potential
+benefits.
 
 {% include functions/details-list.md
-  q0="FIMXE"
+  q0="What are the advantages of a [BIP90][] buried deployment over a [BIP9][]
+     version bits deployment?"
+  a0="A buried deployment simplifies the deployment logic by replacing the test
+     that governs enforcement with simple height checks, thereby reducing the
+     technical debt associated with deployment of those consensus changes."
+  a0link="https://bitcoincore.reviews/19438#l-132"
 
-  a0="FIXME"
+  q1="How many buried deployments are enumerated by this PR?"
+  a1="Five: height in coinbase, CLTV (`CHECKLOCKTIMEVERIFY`), strict
+     DER signatures, CSV (`OP_CHECKSEQUENCEVERIFY`), and segwit. They
+     are listed in the `BuriedDeployment` enumerator proposed by the PR in
+     [src/consensus/params.h#L14-22](https://github.com/bitcoin/bitcoin/blob/e72e062e/src/consensus/params.h#L14-L22).
+     One could argue that the [Satoshi-era
+     soft forks](/en/topics/soft-fork-activation/#2009-hardcoded-height-consensus-nlocktime-enforcement)
+     are also buried."
+  a1link="https://bitcoincore.reviews/19438#l-75"
 
-  a0link="https://example.com/FIXME"
+  q2="How many version bits deployments are currently defined?"
+  a2="Two: testdummy and schnorr/taproot (BIPs 340-342), enumerated in the codebase in
+     [src/consensus/params.h#L25-31](https://github.com/bitcoin/bitcoin/blob/e72e062e/src/consensus/params.h#L25-L31)."
+  a2link="https://bitcoincore.reviews/19438#l-96"
+
+  q3="If the taproot soft fork is activated and we later want to bury that
+     activation method, what changes would need to be made to Bitcoin Core, if
+     this PR is merged?"
+  a3="The main change would be greatly simplified compared to the current code:
+     move the `DEPLOYMENT_TAPROOT` line from the `DeploymentPos` enumerator to the
+     `BuriedDeployment` one. Most importantly, [no validation logic would need
+     to be changed][burying taproot]."
+  a3link="https://bitcoincore.reviews/19438#l-227"
 %}
 
 ## Notable code and documentation changes
@@ -165,7 +201,9 @@ BOLTs][bolts repo].*
       typical reorg.
 
 {% include references.md %}
-{% include linkers/issues.md issues="21594,21166,5108,5047,21377,21392" %}
+{% include linkers/issues.md issues="21594,21166,5108,5047,21377,21392,19438" %}
 [news118 lnd4389]: /en/newsletters/2020/10/07/#lnd-4389
 [news139 activation]: /en/newsletters/2021/03/10/#taproot-activation-discussion
 [mtp]: https://bitcoin.stackexchange.com/a/67622/21052
+[easier burying]: https://github.com/bitcoin/bitcoin/pull/11398#issuecomment-335599326
+[burying taproot]: https://bitcoincore.reviews/19438#l-230
