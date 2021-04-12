@@ -600,6 +600,9 @@ optech_mentions:
   - title: "Compromise proposed to use MTP to activate taproot with speedy trial"
     url: /en/newsletters/2021/04/14/#taproot-activation-discussion
 
+  - title: "PR Review Club discussion about burying past soft fork deployments"
+    url: /en/newsletters/2021/04/14/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
