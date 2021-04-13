@@ -151,7 +151,14 @@ BOLTs][bolts repo].*
   patch for `getnodeaddresses` that takes an argument of a specific network
   and returns only addresses in that network.
 
-- [Bitcoin Core #21166][] Introduce DeferredSignatureChecker and have SignatureExtractorClass subclass it FIXME:jnewbery
+- [Bitcoin Core #21166][] improves the `signrawtransactionwithwallet` RPC,
+  allowing it to sign inputs in transactions which have other signed inputs
+  that are not owned by the wallet. [Previously][Bitcoin Core #21151], if the RPC
+  was passed a transaction that had signed inputs not owned by the wallet, the
+  witnesses to those inputs would be broken in the returned transaction.  Signing
+  inputs in transactions with other signed inputs can be useful in a variety of
+  situations, including [adding inputs/outputs to bump the transaction
+  fee][Bitcoin Core #21151].
 
 - [LND #5108][] channeldb+invoices: add spontaneous AMP receiving + sending via SendToRoute FIXME:dongcarl
 
@@ -205,7 +212,7 @@ BOLTs][bolts repo].*
       typical reorg.
 
 {% include references.md %}
-{% include linkers/issues.md issues="21594,21166,5108,5047,21377,21392,19438" %}
+{% include linkers/issues.md issues="21594,21166,5108,5047,21377,21392,19438,21151" %}
 [news118 lnd4389]: /en/newsletters/2020/10/07/#lnd-4389
 [news139 activation]: /en/newsletters/2021/03/10/#taproot-activation-discussion
 [mtp]: https://bitcoin.stackexchange.com/a/67622/21052
