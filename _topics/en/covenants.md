@@ -13,13 +13,6 @@ excerpt: >
   consensus rules that would allow a script to prevent an authorized
   spender from spending to certain other scripts.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  For example, a covenant may normally only allow spending to a
-  whitelisted set of scripts, such as returning bitcoins to the user's own
-  balance or spending to a staging address that only allows spending to
-  any arbitrary address after a period of time.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -79,3 +72,9 @@ see_also:
   - title: Vaults
     link: topic vaults
 ---
+For example, a covenant may normally only allow spending to a
+whitelisted set of scripts, such as returning bitcoins to the user's own
+balance or spending to a staging address that only allows spending to
+any arbitrary address after a period of time.
+
+{% include references.md %}

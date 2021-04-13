@@ -13,14 +13,6 @@ excerpt: >
   to first propagate serially from one node to one other node before
   being broadcast from one node to all of its peers.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  This propagation behavior would help hide which node originated the
-  transaction, especially if some of the nodes involved in the initial
-  serial relay ("stem phase") encrypted their Bitcoin protocol traffic
-  using either Tor or something like [v2 P2P transport][topic v2 p2p
-  transport].
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -52,3 +44,10 @@ optech_mentions:
 #  - title:
 #    link:
 ---
+This propagation behavior would help hide which node originated the
+transaction, especially if some of the nodes involved in the initial
+serial relay ("stem phase") encrypted their Bitcoin protocol traffic
+using either Tor or something like [v2 P2P transport][topic v2 p2p
+transport].
+
+{% include references.md %}

@@ -17,20 +17,6 @@ excerpt: >
   Bitcoin P2P network protocol, which is used to advertise the addresses
   of nodes that accept incoming connections.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  The original `addr` message allows relaying 128-bit IPv6 addresses
-  with backwards compatibility for IPv4 and [onioncat-encoded][] version
-  2 (v2) Tor hidden service (.onion) addresses.  However, v3 Tor hidden
-  service addresses are 256 bits in size, as are addresses for several
-  other privacy-enhancing network protocols.  Since those newer address
-  types can't be used with the existing `addr` message, a new version of
-  the message has been proposed.  Additionally, the update may allow
-  tweaking other aspects of the message or the behavior of nodes and
-  clients that process it.
-
-  [onioncat-encoded]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -80,3 +66,15 @@ see_also:
   - title: P2P protocol `addr` message
     link: https://btcinformation.org/en/developer-reference#addr
 ---
+The original `addr` message allows relaying 128-bit IPv6 addresses
+with backwards compatibility for IPv4 and [onioncat-encoded][] version
+2 (v2) Tor hidden service (.onion) addresses.  However, v3 Tor hidden
+service addresses are 256 bits in size, as are addresses for several
+other privacy-enhancing network protocols.  Since those newer address
+types can't be used with the existing `addr` message, a new version of
+the message has been proposed.  Additionally, the update may allow
+tweaking other aspects of the message or the behavior of nodes and
+clients that process it.
+
+{% include references.md %}
+[onioncat-encoded]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat

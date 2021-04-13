@@ -17,32 +17,6 @@ excerpt: >
   not yet been made.  Currently there is Simplicity support for test
   branches of the ElementsProject.org and Bitcoin Core codebases.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  At its core, Simplicity consists of nine primitive operators called
-  combinators whose semantics are formally specified. However,
-  implementing Bitcoin functionality at such a low level results in
-  large, slow and expensive programs.  Pre-written Simplicity programs
-  that implement basic functions can be added to Bitcoin consensus so
-  that other Simplicity programs can inline those functions using a
-  short identifier, eliminating their size penalty.  The functionality
-  of the inlined Simplicity code can then be reimplemented in more
-  efficient languages, such as C, which can be proved to be equivalent
-  to the pure Simplicity program---eliminating speed or memory
-  penalties.  These substitutions (called *jets*) allow an entire
-  program to be specified in the Simplicity language, including
-  operations like hash functions and signature verification, and yet
-  be executed using code from other languages to achieve performance
-  similar to today's Bitcoin Script.
-
-  Assuming Simplicity is soft forked into Bitcoin with sufficient jets
-  at some stage, new features such as [SIGHASH_ANYPREVOUT][topic
-  sighash_noinput]---which currently requires a soft fork to
-  implement---could be used on Bitcoin without needing separate
-  consensus rule changes.  Although Simplicity provides certain proofs of
-  correctness, care will still need to be applied in the design of any
-  contract protocol that relies on more than just bitcoin encumbrances.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -73,4 +47,28 @@ see_also:
   - title: "Simplicity: A New Language for Blockchains"
     link: https://blockstream.com/simplicity.pdf
 ---
+At its core, Simplicity consists of nine primitive operators called
+combinators whose semantics are formally specified. However,
+implementing Bitcoin functionality at such a low level results in
+large, slow and expensive programs.  Pre-written Simplicity programs
+that implement basic functions can be added to Bitcoin consensus so
+that other Simplicity programs can inline those functions using a
+short identifier, eliminating their size penalty.  The functionality
+of the inlined Simplicity code can then be reimplemented in more
+efficient languages, such as C, which can be proved to be equivalent
+to the pure Simplicity program---eliminating speed or memory
+penalties.  These substitutions (called *jets*) allow an entire
+program to be specified in the Simplicity language, including
+operations like hash functions and signature verification, and yet
+be executed using code from other languages to achieve performance
+similar to today's Bitcoin Script.
 
+Assuming Simplicity is soft forked into Bitcoin with sufficient jets
+at some stage, new features such as [SIGHASH_ANYPREVOUT][topic
+sighash_noinput]---which currently requires a soft fork to
+implement---could be used on Bitcoin without needing separate
+consensus rule changes.  Although Simplicity provides certain proofs of
+correctness, care will still need to be applied in the design of any
+contract protocol that relies on more than just bitcoin encumbrances.
+
+{% include references.md %}

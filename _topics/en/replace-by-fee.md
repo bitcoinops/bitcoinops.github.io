@@ -20,26 +20,6 @@ excerpt: >
   that spends at least one of the same inputs and which pays a higher
   transaction fee.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Different node software can use different RBF rules, so there have
-  been several variations.  The most widely-used form of RBF today is
-  [BIP125][] opt-in RBF as
-  implemented in [Bitcoin Core 0.12.0][core12 rbf] and subsequent
-  versions; this allows the creator of a transaction to signal that
-  they're willing to allow it to be replaced by a higher-paying version.
-  An alternative form of RBF is full-RBF that allows any transaction to
-  be replaced whether or not it signals BIP125 replacability.
-
-  BIP125 requires a replacement transaction to pay both higher feerate
-  (BTC/vbyte) and a higher absolute fee (total BTC).  This can make
-  multiparty transactions that want to use RBF vulnerable to
-  [transaction pinning][] attacks, and so an occasional discussion
-  topic is proposals to allow RBF to operate solely on a feerate basis.
-
-  [core12 rbf]: https://bitcoincore.org/en/releases/0.12.0/#opt-in-replace-by-fee-transactions
-  [transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -93,3 +73,21 @@ see_also:
   - title: "Optech Dashboard: BIP125 usage"
     link: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1
 ---
+Different node software can use different RBF rules, so there have
+been several variations.  The most widely-used form of RBF today is
+[BIP125][] opt-in RBF as
+implemented in [Bitcoin Core 0.12.0][core12 rbf] and subsequent
+versions; this allows the creator of a transaction to signal that
+they're willing to allow it to be replaced by a higher-paying version.
+An alternative form of RBF is full-RBF that allows any transaction to
+be replaced whether or not it signals BIP125 replacability.
+
+BIP125 requires a replacement transaction to pay both higher feerate
+(BTC/vbyte) and a higher absolute fee (total BTC).  This can make
+multiparty transactions that want to use RBF vulnerable to
+[transaction pinning][] attacks, and so an occasional discussion
+topic is proposals to allow RBF to operate solely on a feerate basis.
+
+{% include references.md %}
+[core12 rbf]: https://bitcoincore.org/en/releases/0.12.0/#opt-in-replace-by-fee-transactions
+[transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning

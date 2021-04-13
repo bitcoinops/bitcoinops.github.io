@@ -22,16 +22,6 @@ excerpt: >
   transaction, spending inputs, and creating a change output across all
   the payments in the transaction, reducing the average cost per payment.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  It's realistically possible to save 75% on transaction fees by
-  batching just a small number of payments and with no degradation in
-  confirmation speed or other changes required.  Even using exactly the
-  same inputs you'd use without batching, it's possible to save more
-  than 20%.
-
-  ![Plot of savings from payment batching](/img/posts/payment-batching/p2wpkh-batching-cases-combined.png)
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -86,3 +76,12 @@ see_also:
   - title: OP_CHECKTEMPLATEVERIFY
     link: topic op_checktemplateverify
 ---
+It's realistically possible to save 75% on transaction fees by
+batching just a small number of payments and with no degradation in
+confirmation speed or other changes required.  Even using exactly the
+same inputs you'd use without batching, it's possible to save more
+than 20%.
+
+![Plot of savings from payment batching](/img/posts/payment-batching/p2wpkh-batching-cases-combined.png)
+
+{% include references.md %}

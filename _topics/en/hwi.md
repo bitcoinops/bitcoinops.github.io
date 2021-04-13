@@ -13,12 +13,6 @@ excerpt: >
   to interface with hardware wallets using Partially-Signed Bitcoin
   Transactions (PSBTs) and output script descriptors.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Designed primary by Bitcoin Core developers to allow that software to
-  use hardware wallets as external signers, HWI is now being used by
-  other wallets as well.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -63,3 +57,8 @@ see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
     link: topic psbt
 ---
+Designed primary by Bitcoin Core developers to allow that software to
+use hardware wallets as external signers, HWI is now being used by
+other wallets as well.
+
+{% include references.md %}

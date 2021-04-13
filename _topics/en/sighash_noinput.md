@@ -18,11 +18,6 @@ excerpt: >
   UTXO that's protected by a similar script (i.e. uses the same public
   keys).
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  A noinput-style sighash is necessary for the proposed [eltoo][topic eltoo]
-  layer for LN.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -88,3 +83,7 @@ see_also:
   - title: Eltoo
     link: topic eltoo
 ---
+A noinput-style sighash is necessary for the proposed [eltoo][topic eltoo]
+layer for LN.
+
+{% include references.md %}

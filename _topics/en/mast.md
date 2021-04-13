@@ -20,34 +20,6 @@ excerpt: >
   spender to select which one of the conditions they'll fulfill without
   having to reveal the details of other conditions to the block chain.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Users of MAST who are able to keep unused conditions off of the block
-  chain will enjoy lower fees, be able to create larger contracts than
-  currently possible, will have improved privacy, and will improve the
-  fungibility of their bitcoins.
-
-  MAST has been discussed generically in Bitcoin since 2013 and there
-  have been several concrete proposals to add it to Bitcoin:
-
-  - [BIP114][] `OP_MAST`
-  - [BIP116][] `OP_MERKLEBRANCHVERIFY` and [BIP117][] tail call execution semantics
-  - [bip-taproot][]'s merkle tree
-
-  {:#naming}
-  Note: the abbreviation MAST originally stood for *Merklized Abstract
-  Syntax Trees* as [proposed][mast original proposal] by Russell
-  O'Connor based on [merkle trees][] and [abstract syntax trees][].
-  Subsequent proposals no longer use anything like abstract syntax trees
-  but people continued to use the name "MAST" for them, leading Anthony
-  Towns to [propose][backronym mast] the backronym *Merklized
-  Alternative Script Trees*.
-
-  [mast original proposal]: https://bitcointalk.org/index.php?topic=255145.msg2757327#msg2757327
-  [backronym mast]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
-  [merkle trees]: https://en.wikipedia.org/wiki/Merkle_tree
-  [abstract syntax trees]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -85,3 +57,29 @@ see_also:
   - title: Taproot
     link: topic taproot
 ---
+Users of MAST who are able to keep unused conditions off of the block
+chain will enjoy lower fees, be able to create larger contracts than
+currently possible, will have improved privacy, and will improve the
+fungibility of their bitcoins.
+
+MAST has been discussed generically in Bitcoin since 2013 and there
+have been several concrete proposals to add it to Bitcoin:
+
+- [BIP114][] `OP_MAST`
+- [BIP116][] `OP_MERKLEBRANCHVERIFY` and [BIP117][] tail call execution semantics
+- [bip-taproot][]'s merkle tree
+
+{:#naming}
+Note: the abbreviation MAST originally stood for *Merklized Abstract
+Syntax Trees* as [proposed][mast original proposal] by Russell
+O'Connor based on [merkle trees][] and [abstract syntax trees][].
+Subsequent proposals no longer use anything like abstract syntax trees
+but people continued to use the name "MAST" for them, leading Anthony
+Towns to [propose][backronym mast] the backronym *Merklized
+Alternative Script Trees*.
+
+{% include references.md %}
+[mast original proposal]: https://bitcointalk.org/index.php?topic=255145.msg2757327#msg2757327
+[backronym mast]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
+[merkle trees]: https://en.wikipedia.org/wiki/Merkle_tree
+[abstract syntax trees]: https://en.wikipedia.org/wiki/Abstract_syntax_tree

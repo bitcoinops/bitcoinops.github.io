@@ -12,21 +12,6 @@ excerpt: >
   **Tapscript** is the scripting language used for taproot script-path
   spends.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  It shares most operations with legacy and segwit Bitcoin Script but
-  has a few differences:
-
-  - `OP_CHECKMULTISIG` and `OP_CHECKMULTISIGVERIFY` are replaced by a
-    `OP_CHECKSIGADD` opcode.
-
-  - Many opcodes are redefined to be `OP_SUCCESS` opcodes that
-    unconditionally render the entire script valid to simplify soft fork
-    upgrades.
-
-  - Signature hashes are calculated differently than in legacy script or
-    BIP143 v0 segwit.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -90,3 +75,17 @@ see_also:
   - title: Taproot
     link: topic taproot
 ---
+It shares most operations with legacy and segwit Bitcoin Script but
+has a few differences:
+
+- `OP_CHECKMULTISIG` and `OP_CHECKMULTISIGVERIFY` are replaced by a
+  `OP_CHECKSIGADD` opcode.
+
+- Many opcodes are redefined to be `OP_SUCCESS` opcodes that
+  unconditionally render the entire script valid to simplify soft fork
+  upgrades.
+
+- Signature hashes are calculated differently than in legacy script or
+  BIP143 v0 segwit.
+
+{% include references.md %}

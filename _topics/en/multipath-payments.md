@@ -20,32 +20,6 @@ excerpt: >
   **Multipath payments** are LN payments split into two or more parts
   and sent using a different path for each part.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Smaller payments are more likely to succeed in general, and allowing a
-  payment to be split allows the spender to use almost all of their funds at
-  once no matter how many channels those funds are split across.  There
-  are two basic multipath proposals:
-
-  - *Atomic Multipath Payments (AMP)*, sometimes called *Original AMP*
-    or *OG AMP*, which allows a spender to pay multiple hashes all
-    derived from the same preimage---a preimage the receiver can only
-    reconstruct if they receive a sufficient number of shares.  This
-    only allows the receiver to accept a payment if they receive all of the
-    individual parts.  Each share using a different hash adds privacy by
-    preventing the separate payments from being automatically correlated
-    with each other by a third party.  The proposal's downside is that
-    the spender selects all the preimages, so knowledge of the preimage
-    doesn't provide cryptographic proof that they actually paid the
-    receiver.
-
-  - *Base-AMP* which simply sends multiple payments all using to the
-    same hash and assumes the receiver will wait until the full amount
-    is received before claiming the payment (releasing the hash preimage
-    and allowing generation of a provable receipt).  It's also possible
-    for third-parties who see multiple payments using the same hash to
-    assume they're part of the same true payment.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -150,3 +124,28 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+Smaller payments are more likely to succeed in general, and allowing a
+payment to be split allows the spender to use almost all of their funds at
+once no matter how many channels those funds are split across.  There
+are two basic multipath proposals:
+
+- *Atomic Multipath Payments (AMP)*, sometimes called *Original AMP*
+  or *OG AMP*, which allows a spender to pay multiple hashes all
+  derived from the same preimage---a preimage the receiver can only
+  reconstruct if they receive a sufficient number of shares.  This
+  only allows the receiver to accept a payment if they receive all of the
+  individual parts.  Each share using a different hash adds privacy by
+  preventing the separate payments from being automatically correlated
+  with each other by a third party.  The proposal's downside is that
+  the spender selects all the preimages, so knowledge of the preimage
+  doesn't provide cryptographic proof that they actually paid the
+  receiver.
+
+- *Base-AMP* which simply sends multiple payments all using to the
+  same hash and assumes the receiver will wait until the full amount
+  is received before claiming the payment (releasing the hash preimage
+  and allowing generation of a provable receipt).  It's also possible
+  for third-parties who see multiple payments using the same hash to
+  assume they're part of the same true payment.
+
+{% include references.md %}

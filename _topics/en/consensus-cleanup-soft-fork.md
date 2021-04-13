@@ -15,9 +15,6 @@ excerpt: >
   issues in Bitcoin's consensus rules that date back to the original
   version of Bitcoin released in 2009.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-#extended_summary: |
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:

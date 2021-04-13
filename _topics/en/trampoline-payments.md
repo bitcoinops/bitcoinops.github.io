@@ -16,22 +16,6 @@ excerpt: >
   spender routes the payment to an intermediate node who can select the
   rest of the path to the final receiver.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Using a single trampoline node necessarily reveals the destination to
-  it.  To regain privacy, a spender may require a payment be routed
-  through multiple trampoline nodes so that none of them knows whether
-  they're routing the payment to the final receiver or just another
-  intermediate trampoline node.
-
-  Although allowing trampoline nodes to select part of the path likely
-  requires paying more routing fees, it means the spender doesn't
-  need to know how to route payments to any arbitrary node---it's
-  sufficient for the spender to know how to route a payment to any
-  trampoline-compatible node.  This is advantageous for lightweight
-  LN clients that aren't able to track the full network graph because
-  they're often offline or run on underpowered mobile hardware.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -58,3 +42,18 @@ see_also:
   - title: "BOLTs PR #654: Trampoline Routing"
     link: https://github.com/lightningnetwork/lightning-rfc/pull/654
 ---
+Using a single trampoline node necessarily reveals the destination to
+it.  To regain privacy, a spender may require a payment be routed
+through multiple trampoline nodes so that none of them knows whether
+they're routing the payment to the final receiver or just another
+intermediate trampoline node.
+
+Although allowing trampoline nodes to select part of the path likely
+requires paying more routing fees, it means the spender doesn't
+need to know how to route payments to any arbitrary node---it's
+sufficient for the spender to know how to route a payment to any
+trampoline-compatible node.  This is advantageous for lightweight
+LN clients that aren't able to track the full network graph because
+they're often offline or run on underpowered mobile hardware.
+
+{% include references.md %}

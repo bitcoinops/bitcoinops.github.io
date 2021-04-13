@@ -17,15 +17,6 @@ excerpt: >
   and their relationships to each other, allowing fast look up of
   information useful to wallets, users, and developers.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Although many users find block explorers to be a convenient way to
-  look up information about their own transactions, their searches may
-  be logged and used to associate their transactions with their IP
-  address, browser cookies, and other identifying information.  The
-  large indexes block explorers keep also aren't expected to scale well
-  as the size and complexity of the block chain grows.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -46,3 +37,11 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+Although many users find block explorers to be a convenient way to
+look up information about their own transactions, their searches may
+be logged and used to associate their transactions with their IP
+address, browser cookies, and other identifying information.  The
+large indexes block explorers keep also aren't expected to scale well
+as the size and complexity of the block chain grows.
+
+{% include references.md %}

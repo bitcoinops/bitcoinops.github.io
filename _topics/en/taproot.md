@@ -14,16 +14,6 @@ excerpt: >
   payments to schnorr public keys that may optionally commit to a script
   that can be revealed at spend time.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Coins protected by taproot may be spent either by satisfying one of
-  the committed scripts or by simply providing a signature that verifies
-  against the public key (allowing the script to be kept private).
-  Taproot is intended for use with schnorr signatures that simplify
-  multiparty construction (e.g. using [MuSig][topic musig]) and with MAST to
-  allow committing to more than one script, any one of which may be
-  used at spend time.
-
 ## Optional
 primary_sources:
     - title: Original description
@@ -173,3 +163,12 @@ see_also:
   - title: MAST
     link: topic mast
 ---
+Coins protected by taproot may be spent either by satisfying one of
+the committed scripts or by simply providing a signature that verifies
+against the public key (allowing the script to be kept private).
+Taproot is intended for use with schnorr signatures that simplify
+multiparty construction (e.g. using [MuSig][topic musig]) and with MAST to
+allow committing to more than one script, any one of which may be
+used at spend time.
+
+{% include references.md %}

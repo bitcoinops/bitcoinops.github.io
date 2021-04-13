@@ -13,16 +13,6 @@ excerpt: >
   full nodes to obtain and verify information about the UTXOs being
   spent in a transaction.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  A merkle tree updated after every block accumulates references to
-  every unspent transaction output, allowing nodes to skip storing the
-  outputs themselves.  New transactions can be distributed with the
-  UTXOs they spend and a merkle branch proving they're part of the
-  utreexo merkle tree.  Overall, this can decrease the amount of storage
-  full nodes need to a minimal amount at the cost of modest increases in
-  bandwidth.  Utreexo would not change Bitcoin's security model.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -46,3 +36,12 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+A merkle tree updated after every block accumulates references to
+every unspent transaction output, allowing nodes to skip storing the
+outputs themselves.  New transactions can be distributed with the
+UTXOs they spend and a merkle branch proving they're part of the
+utreexo merkle tree.  Overall, this can decrease the amount of storage
+full nodes need to a minimal amount at the cost of modest increases in
+bandwidth.  Utreexo would not change Bitcoin's security model.
+
+{% include references.md %}

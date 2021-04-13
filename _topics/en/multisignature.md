@@ -22,36 +22,6 @@ excerpt: >
   private keys which can be verified using only a single public key
   and a single signature.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Multisignatures can be compared with *multisig*, the use of public
-  keys and signatures with Bitcoin's `OP_CHECKMULTISIG` and
-  `OP_CHECKMULTISIGVERIFY` opcodes (and the `OP_CHECKSIGADD` opcode
-  proposed for [tapscript][topic tapscript]).  Multisignatures have the
-  advantage that only a single key and a single signature are published
-  onchain when they are used in a Bitcoin transaction, allowing an
-  unlimited number of signers to pay the same amount of transaction fee
-  that a single signer would pay for an otherwise identical transaction.
-  Multisignature payments being indistinguishable from single-signature
-  payments also gives the creators of both types of payments greater privacy.
-
-  It's possible to create multisignatures for the ECDSA algorithm
-  supported by all versions of Bitcoin, although
-  it's easier to create multisignatures
-  for [schnorr signatures][topic schnorr signatures] and several
-  algorithms for that are known, with [MuSig][topic musig] having been
-  specifically created for the needs of Bitcoin users.
-
-  **Terminology:** the following table summarizes the differences
-  between *multisignature* and related terms.
-
-  | Term | Keys | Messages<br>(e.g. tx inputs) | Signatures | Signers required | Notes |
-  |-|-|-|-|-|
-  | Multisig | `m` | `1` | `k` where `k<=m` | `k` | Uses Bitcoin Script multisig opcodes |
-  | Multisignature | `m` | `1` | `1` | `m` | Indistinguishable onchain from single-sig |
-  | Threshold signature | `m` | `1` | `1` | `k` where `k<=m` | Indistinguishable onchain from single-sig |
-
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 #primary_sources:
@@ -107,3 +77,31 @@ see_also:
   - title: Signature adaptors
     link: topic adaptor signatures
 ---
+Multisignatures can be compared with *multisig*, the use of public
+keys and signatures with Bitcoin's `OP_CHECKMULTISIG` and
+`OP_CHECKMULTISIGVERIFY` opcodes (and the `OP_CHECKSIGADD` opcode
+proposed for [tapscript][topic tapscript]).  Multisignatures have the
+advantage that only a single key and a single signature are published
+onchain when they are used in a Bitcoin transaction, allowing an
+unlimited number of signers to pay the same amount of transaction fee
+that a single signer would pay for an otherwise identical transaction.
+Multisignature payments being indistinguishable from single-signature
+payments also gives the creators of both types of payments greater privacy.
+
+It's possible to create multisignatures for the ECDSA algorithm
+supported by all versions of Bitcoin, although
+it's easier to create multisignatures
+for [schnorr signatures][topic schnorr signatures] and several
+algorithms for that are known, with [MuSig][topic musig] having been
+specifically created for the needs of Bitcoin users.
+
+**Terminology:** the following table summarizes the differences
+between *multisignature* and related terms.
+
+| Term | Keys | Messages<br>(e.g. tx inputs) | Signatures | Signers required | Notes |
+|-|-|-|-|-|
+| Multisig | `m` | `1` | `k` where `k<=m` | `k` | Uses Bitcoin Script multisig opcodes |
+| Multisignature | `m` | `1` | `1` | `m` | Indistinguishable onchain from single-sig |
+| Threshold signature | `m` | `1` | `1` | `k` where `k<=m` | Indistinguishable onchain from single-sig |
+
+{% include references.md %}

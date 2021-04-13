@@ -16,16 +16,6 @@ excerpt: >
   wallet developers don't need to write new code when they switch from
   one script template to another.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  The structured representation of Bitcoin scripts provided by
-  miniscript allows wallets to be much more dynamic about the scripts they use.
-  In support
-  of that dynamism, miniscripts can be created using an easily-written
-  policy language.  Policies are composable, allowing any valid
-  sub-expression to be replaced by another valid sub-expression (within
-  certain limits imposed by the Bitcoin system).
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -67,3 +57,12 @@ see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
     link: https://medium.com/blockstream/miniscript-bitcoin-scripting-3aeff3853620
 ---
+The structured representation of Bitcoin scripts provided by
+miniscript allows wallets to be much more dynamic about the scripts they use.
+In support
+of that dynamism, miniscripts can be created using an easily-written
+policy language.  Policies are composable, allowing any valid
+sub-expression to be replaced by another valid sub-expression (within
+certain limits imposed by the Bitcoin system).
+
+{% include references.md %}
