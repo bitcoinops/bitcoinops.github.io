@@ -19,15 +19,6 @@ excerpt: >
   the node's maximum package size and depth limits if that transaction
   only has one unconfirmed ancestor.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  This makes it possible for two-party contract protocols (such as the
-  current LN protocol) to ensure both parties get a chance to use
-  Child-Pays-For-Parent (CPFP) fee bumping.  The first party can use fee
-  bumping up to the package limits, but can't [pin][topic transaction
-  pinning] the transaction because the second party is able to use CPFP
-  carve out.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -69,3 +60,11 @@ see_also:
   - title: "Bitcoin Core #16421 allowing RBF replacement of carve outs"
     link: https://github.com/bitcoin/bitcoin/pull/16421
 ---
+This makes it possible for two-party contract protocols (such as the
+current LN protocol) to ensure both parties get a chance to use
+Child-Pays-For-Parent (CPFP) fee bumping.  The first party can use fee
+bumping up to the package limits, but can't [pin][topic transaction
+pinning] the transaction because the second party is able to use CPFP
+carve out.
+
+{% include references.md %}

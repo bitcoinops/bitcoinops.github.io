@@ -16,14 +16,6 @@ excerpt: >
   **Version 2 (v2) P2P transport** is a proposal to allow Bitcoin nodes
   to communicate with each other over encrypted connections.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Some other changes to the communication protocol are also suggested,
-  such as allowing frequently-used protocol commands to be aliased to
-  shorted byte sequences to reduce bandwidth.
-
-  This proposal replaces the earlier [BIP151][] proposal.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -54,3 +46,10 @@ see_also:
   - title: "Countersign: a secret authentication protocol"
     link: https://gist.github.com/sipa/d7dcaae0419f10e5be0270fada84c20b
 ---
+Some other changes to the communication protocol are also suggested,
+such as allowing frequently-used protocol commands to be aliased to
+shorted byte sequences to reduce bandwidth.
+
+This proposal replaces the earlier [BIP151][] proposal.
+
+{% include references.md %}

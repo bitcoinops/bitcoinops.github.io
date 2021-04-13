@@ -14,9 +14,6 @@ excerpt: >
   route a payment it would otherwise have to fail.  It is currently only
   a proposal.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-#extended_summary: |
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:

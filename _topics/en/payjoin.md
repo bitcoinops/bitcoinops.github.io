@@ -18,12 +18,6 @@ excerpt: >
   spender, the receiver, and Bitcoin users in general.  The general idea
   is also known under the names Pay-to-EndPoint (P2EP) and Bustapay.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  By including inputs from both the spender and the receiver, payjoin
-  makes it difficult for block chain analysis companies to determine
-  which inputs and outputs belong to each participant.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -89,3 +83,8 @@ see_also:
   - title: Payjoin (Bitcoin Wiki)
     link: https://en.bitcoin.it/wiki/PayJoin
 ---
+By including inputs from both the spender and the receiver, payjoin
+makes it difficult for block chain analysis companies to determine
+which inputs and outputs belong to each participant.
+
+{% include references.md %}

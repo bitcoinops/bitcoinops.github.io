@@ -20,22 +20,6 @@ excerpt: >
   child transaction with a high feerate in order to encourage miners to
   include both transactions in a block.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Bitcoin consensus rules require that the transaction which creates an
-  output must appear earlier in the block chain than the transaction
-  which spends that outputs---including having the parent transaction
-  appear earlier in the same block than the child transaction if both
-  are included in the same block.
-
-  This means that an unconfirmed transaction with a high feerate can
-  incentivize miners to mine any of its ancestor transactions that are
-  also unconfirmed.  Nodes such as Bitcoin Core that implement such
-  transaction selection policies for their block templates call this
-  *ancestor feerate mining*.  As long as a moderate percentage of miners
-  implement ancestor feerate mining, wallets can use CPFP as a fee
-  bumping technique.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -68,3 +52,18 @@ see_also:
   - title: CPFP carve-out
     link: topic cpfp carve out
 ---
+Bitcoin consensus rules require that the transaction which creates an
+output must appear earlier in the block chain than the transaction
+which spends that outputs---including having the parent transaction
+appear earlier in the same block than the child transaction if both
+are included in the same block.
+
+This means that an unconfirmed transaction with a high feerate can
+incentivize miners to mine any of its ancestor transactions that are
+also unconfirmed.  Nodes such as Bitcoin Core that implement such
+transaction selection policies for their block templates call this
+*ancestor feerate mining*.  As long as a moderate percentage of miners
+implement ancestor feerate mining, wallets can use CPFP as a fee
+bumping technique.
+
+{% include references.md %}

@@ -14,27 +14,6 @@ categories:
 excerpt: >
   **Bech32** is an address format used to pay native segwit outputs.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Using only 32 letters and numbers, the bech32 address format does not use
-  mixed case and includes an error-correction code that can catch
-  almost all address typos (and even identify where the typos occur in
-  some cases).  Addresses encode a segwit version, making them forward
-  compatible with a large range of conceivable upgrades.
-
-  After a [problem][bech32 weakness] was discovered with bech32 error
-  detection for future upgrades under some rare circumstances, a new
-  bech32 modified (**bech32m**) format was proposed.
-  It is expected that bech32m will be used for
-  [taproot][topic taproot] and future segwit-based script upgrades,
-  requiring wallets and services that implemented support for paying the
-  original bech32 address format to upgrade if they want to support
-  paying taproot addresses and future upgrades.  No upgrade is required to
-  continue paying the original (version 0) segwit addresses for P2WPKH
-  and P2WSH scripts.
-
-  [bech32 weakness]: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -111,3 +90,22 @@ see_also:
   - title: Javascript bech32 demo decoder
     link: http://bitcoin.sipa.be/bech32/demo/demo.html
 ---
+Using only 32 letters and numbers, the bech32 address format does not use
+mixed case and includes an error-correction code that can catch
+almost all address typos (and even identify where the typos occur in
+some cases).  Addresses encode a segwit version, making them forward
+compatible with a large range of conceivable upgrades.
+
+After a [problem][bech32 weakness] was discovered with bech32 error
+detection for future upgrades under some rare circumstances, a new
+bech32 modified (**bech32m**) format was proposed.
+It is expected that bech32m will be used for
+[taproot][topic taproot] and future segwit-based script upgrades,
+requiring wallets and services that implemented support for paying the
+original bech32 address format to upgrade if they want to support
+paying taproot addresses and future upgrades.  No upgrade is required to
+continue paying the original (version 0) segwit addresses for P2WPKH
+and P2WSH scripts.
+
+{% include references.md %}
+[bech32 weakness]: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information

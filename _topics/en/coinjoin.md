@@ -12,14 +12,6 @@ excerpt: >
   owners in order to make it difficult for outside parties to use the
   block chain's transaction history to determine who owns which coin.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Named after a 2013 [proposal][gmaxwell coinjoin] by Gregory Maxwell,
-  several independent implementations have provided support for various
-  forms of coinjoin.
-
-  [gmaxwell coinjoin]: https://bitcointalk.org/index.php?topic=279249.0
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -75,3 +67,9 @@ see_also:
   - title: "Coinjoin (Bitcoin Wiki: Privacy)"
     link: https://en.bitcoin.it/Privacy#CoinJoin
 ---
+Named after a 2013 [proposal][gmaxwell coinjoin] by Gregory Maxwell,
+several independent implementations have provided support for various
+forms of coinjoin.
+
+{% include references.md %}
+[gmaxwell coinjoin]: https://bitcointalk.org/index.php?topic=279249.0

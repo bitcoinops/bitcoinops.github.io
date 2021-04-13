@@ -14,18 +14,6 @@ excerpt: >
   implementation and which can use Bitcoin's same elliptic curve
   parameters, but which can provide other benefits.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Schnorr is secure under the same cryptographic assumptions as
-  [ECDSA][] and it is easier and faster to create secure multiparty
-  signatures using schnorr with protocols such as [MuSig][topic musig].  A new
-  signature type also provides an opportunity to change the signature
-  serialization format from [BER/DER][] to something that's more compact
-  and simpler to implement.
-
-  [ECDSA]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
-  [BER/DER]: https://en.wikipedia.org/wiki/Basic_Encoding_Rules
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -120,3 +108,13 @@ see_also:
   - title: Taproot
     link: topic taproot
 ---
+Schnorr is secure under the same cryptographic assumptions as
+[ECDSA][] and it is easier and faster to create secure multiparty
+signatures using schnorr with protocols such as [MuSig][topic musig].  A new
+signature type also provides an opportunity to change the signature
+serialization format from [BER/DER][] to something that's more compact
+and simpler to implement.
+
+{% include references.md %}
+[ECDSA]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
+[BER/DER]: https://en.wikipedia.org/wiki/Basic_Encoding_Rules

@@ -22,35 +22,6 @@ excerpt: >
   received to that address may be spent---a design known in Bitcoin as a
   *covenant*.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Originally introduced under the name **OP_CHECKOUTPUTSHASHVERIFY**
-  (COSHV), the proposal initially focused on the ability to create
-  *congestion control transactions* where a spender pays a single
-  address using CTV which, when confirmed to a suitable depth, then
-  assures several receivers that they can each be paid.  This two-step
-  process can probably be used anywhere payment batching is an option
-  but it can likely reduce fees even further than payment batching.
-
-  Later versions of the proposal placed greater emphasis on other
-  contracts and [covenants][topic covenants] that could be created using
-  the new opcode, such as the ability to create [channel
-  factories][topic channel factories], [vaults][topic vaults], and
-  [coinjoin transactions][topic coinjoin] in new ways that might
-  simplify construction or reduce fees.  Other authors have mentioned
-  that the new opcode could possibly be used to allow users to
-  trustlessly [pool their funds][joinpool] together into a single UTXO
-  in a way that would increase privacy.
-
-  Criticisms of the proposal have focused on it being [too
-  specific][maxwell-attributed specific] to the congestion control
-  use case rather than providing a
-  [generic][oconnor generic] covenant capability.
-
-  [maxwell-attributed specific]: https://bitcointalk.org/index.php?topic=5220520.msg53710072#msg53710072
-  [oconnor generic]:  https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html
-  [joinpool]: https://gist.github.com/harding/a30864d0315a0cebd7de3732f5bd88f0
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -95,3 +66,30 @@ see_also:
   - title: Covenants
     link: topic covenants
 ---
+Originally introduced under the name **OP_CHECKOUTPUTSHASHVERIFY**
+(COSHV), the proposal initially focused on the ability to create
+*congestion control transactions* where a spender pays a single
+address using CTV which, when confirmed to a suitable depth, then
+assures several receivers that they can each be paid.  This two-step
+process can probably be used anywhere payment batching is an option
+but it can likely reduce fees even further than payment batching.
+
+Later versions of the proposal placed greater emphasis on other
+contracts and [covenants][topic covenants] that could be created using
+the new opcode, such as the ability to create [channel
+factories][topic channel factories], [vaults][topic vaults], and
+[coinjoin transactions][topic coinjoin] in new ways that might
+simplify construction or reduce fees.  Other authors have mentioned
+that the new opcode could possibly be used to allow users to
+trustlessly [pool their funds][joinpool] together into a single UTXO
+in a way that would increase privacy.
+
+Criticisms of the proposal have focused on it being [too
+specific][maxwell-attributed specific] to the congestion control
+use case rather than providing a
+[generic][oconnor generic] covenant capability.
+
+{% include references.md %}
+[maxwell-attributed specific]: https://bitcointalk.org/index.php?topic=5220520.msg53710072#msg53710072
+[oconnor generic]:  https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html
+[joinpool]: https://gist.github.com/harding/a30864d0315a0cebd7de3732f5bd88f0

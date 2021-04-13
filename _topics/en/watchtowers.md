@@ -13,16 +13,6 @@ excerpt: >
   transactions) when they detect that one of their client's
   counterparty has broadcast an outdated channel close transaction.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  The service provided by watchtowers allows their clients to go offline
-  for significant amounts of time without having to worry about their
-  funds being stolen by a counterparty.  Watchtowers are not
-  entrusted with any funds, just the responsibility of monitoring the
-  block chain and broadcasting transactions, although breach remedy
-  transactions can be designed so that the watchtower receives a portion
-  of the safeguarded funds if their services are needed.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 #primary_sources:
@@ -88,3 +78,12 @@ see_also:
   - title: LND watchtower tutorial
     link: https://github.com/wbobeirne/watchtower-example
 ---
+The service provided by watchtowers allows their clients to go offline
+for significant amounts of time without having to worry about their
+funds being stolen by a counterparty.  Watchtowers are not
+entrusted with any funds, just the responsibility of monitoring the
+block chain and broadcasting transactions, although breach remedy
+transactions can be designed so that the watchtower receives a portion
+of the safeguarded funds if their services are needed.
+
+{% include references.md %}

@@ -16,21 +16,6 @@ excerpt: >
   **Unannounced channels** are LN channels that are not advertised to
   the network for use in routing.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Most unannounced channels are believed to belong to users that simply
-  don't intend to route payments, such as users of mobile clients that
-  aren't always online to route payments.
-
-  An alternative name is **private channels,** but there's contention
-  between experts about whether the channels [improve privacy][privacy
-  in pcns] or [not][unpublished channels delenda est], so it may be
-  preferable to use the universally accepted name "unannounced
-  channels."
-
-  [privacy in pcns]: https://arxiv.org/pdf/1909.02717.pdf "Section 4.1: endpoint uncertainty"
-  [unpublished channels delenda est]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002408.html
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 #primary_sources:
@@ -73,3 +58,16 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+Most unannounced channels are believed to belong to users that simply
+don't intend to route payments, such as users of mobile clients that
+aren't always online to route payments.
+
+An alternative name is **private channels,** but there's contention
+between experts about whether the channels [improve privacy][privacy
+in pcns] or [not][unpublished channels delenda est], so it may be
+preferable to use the universally accepted name "unannounced
+channels."
+
+{% include references.md %}
+[privacy in pcns]: https://arxiv.org/pdf/1909.02717.pdf "Section 4.1: endpoint uncertainty"
+[unpublished channels delenda est]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002408.html

@@ -19,14 +19,6 @@ excerpt: >
   scripts (i.e. an address or a set of related addresses such as in an
   HD wallet).
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Descriptors combine well with [miniscript][topic miniscript] in
-  allowing a wallet to handle tracking and signing for a larger variety
-  of scripts.  They also combine well with [PSBTs][topic psbt] in
-  allowing the wallet to determine which keys it controls in a multisig
-  script.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -98,3 +90,10 @@ see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
     link: topic psbt
 ---
+Descriptors combine well with [miniscript][topic miniscript] in
+allowing a wallet to handle tracking and signing for a larger variety
+of scripts.  They also combine well with [PSBTs][topic psbt] in
+allowing the wallet to determine which keys it controls in a multisig
+script.
+
+{% include references.md %}

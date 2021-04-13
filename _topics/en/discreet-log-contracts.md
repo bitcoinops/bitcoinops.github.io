@@ -26,29 +26,6 @@ excerpt: >
   oracle doesn’t need to know the terms of the contract (or even that
   a contract was made).
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  The transactions creating and settling the contract can be made
-  indistinguishable from many other Bitcoin transactions or they can be
-  executed within an LN channel. This makes DLCs more private and
-  efficient than other known oracle-based contract methods.
-  Additionally, DLCs are arguably more secure than earlier oracle-based
-  methods because an oracle that commits to a false result
-  generates clear evidence of fraud.
-
-  The original DLC construction was specific to [schnorr
-  signatures][topic schnorr signatures].  Later, a version was developed
-  to use [signature adaptors][topic adaptor signatures] that are
-  compatible with Bitcoin's existing ECDSA signature scheme.
-
-  **Note on spelling:** the name is a play on the *discrete* log
-  problem, which gives the protocol its [security][dlp], and DLC's
-  enhanced privacy making the contracts more *discreet*.  The spelling
-  used by the idea's original author and the DLC interoperability
-  specification is *discreet log contracts*.
-
-  [dlp]: https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -84,3 +61,24 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+The transactions creating and settling the contract can be made
+indistinguishable from many other Bitcoin transactions or they can be
+executed within an LN channel. This makes DLCs more private and
+efficient than other known oracle-based contract methods.
+Additionally, DLCs are arguably more secure than earlier oracle-based
+methods because an oracle that commits to a false result
+generates clear evidence of fraud.
+
+The original DLC construction was specific to [schnorr
+signatures][topic schnorr signatures].  Later, a version was developed
+to use [signature adaptors][topic adaptor signatures] that are
+compatible with Bitcoin's existing ECDSA signature scheme.
+
+**Note on spelling:** the name is a play on the *discrete* log
+problem, which gives the protocol its [security][dlp], and DLC's
+enhanced privacy making the contracts more *discreet*.  The spelling
+used by the idea's original author and the DLC interoperability
+specification is *discreet log contracts*.
+
+{% include references.md %}
+[dlp]: https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography

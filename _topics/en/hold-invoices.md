@@ -17,15 +17,6 @@ excerpt: >
   the receiver performs some action and then either accepts the payment,
   explicitly rejects it, or lets it time out.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  For example, Alice could automatically generate hold invoices on her
-  website but wait until a customer actually paid before searching her
-  inventory for the requested item.  This would give her a chance to
-  cancel the payment if she couldn't deliver.
-
-  Hold invoices are sometimes spelled "hodl invoices."
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -58,3 +49,11 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+For example, Alice could automatically generate hold invoices on her
+website but wait until a customer actually paid before searching her
+inventory for the requested item.  This would give her a chance to
+cancel the payment if she couldn't deliver.
+
+Hold invoices are sometimes spelled "hodl invoices."
+
+{% include references.md %}

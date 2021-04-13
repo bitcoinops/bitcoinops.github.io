@@ -16,16 +16,6 @@ excerpt: >
   for testing interactions between different Bitcoin software and the
   name of the most popular of these testing networks.
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  Blocks on signets are only valid if they're signed by a key used to
-  create that signet.  This gives the creator complete control over
-  block production, allowing them to choose the rate of block production
-  or when forks occur.  This can provide a much better controlled
-  network environment than proof-of-work testnets where adversarial
-  miners can use various tricks to make the network practically unusable
-  for long periods of time.
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -108,3 +98,12 @@ see_also:
   - title: "Bitcoin Core #16411: signet support"
     link: https://github.com/bitcoin/bitcoin/pull/16411
 ---
+Blocks on signets are only valid if they're signed by a key used to
+create that signet.  This gives the creator complete control over
+block production, allowing them to choose the rate of block production
+or when forks occur.  This can provide a much better controlled
+network environment than proof-of-work testnets where adversarial
+miners can use various tricks to make the network practically unusable
+for long periods of time.
+
+{% include references.md %}
