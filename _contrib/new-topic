@@ -42,14 +42,6 @@ categories:
 excerpt: >
   **${topic}** is ...
 
-## Optional.  Use Markdown formatting.  Multiple paragraphs.  Links allowed.
-extended_summary: |
-  This is the summary that never ends.  It goes on and on, my friend.
-  Some people started writing it not knowing what it was but...
-
-  ...they'll be writing it forever, because this is the summary that
-  never ends.  It goes on and on, my friend...
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -69,6 +61,14 @@ optech_mentions:
 #   - title:
 #     link:
 ---
+This is the summary that never ends.  It goes on and on, my friend.
+Some people started writing it not knowing what it was but...
+
+...they'll be writing it forever, because this is the summary that
+never ends.  It goes on and on, my friend...
+
+{% include references.md %}
+{% include linkers/issues.md issues="" %}
 EOF
 
 echo $file
