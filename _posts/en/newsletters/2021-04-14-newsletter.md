@@ -160,7 +160,14 @@ BOLTs][bolts repo].*
   situations, including [adding inputs/outputs to bump the transaction
   fee][Bitcoin Core #21151].
 
-- [LND #5108][] channeldb+invoices: add spontaneous AMP receiving + sending via SendToRoute FIXME:dongcarl
+- [LND #5108][] adds support for making spontaneous [Atomic Multipath Payments][topic
+  multipath payments] (also called *Original AMPs*) using the low-level
+  `sendtoroute` RPC. Original AMPs are non-interactive (or spontaneous) by nature
+  as the spender selects all preimages. Spender preimage selection is also a
+  part of keysend-style [spontaneous payments][topic spontaneous payments],
+  which have been used for singlepath spontaneous payments. Follow-up PRs are
+  expected to make spontaneous multipath payments available to the higher-level
+  `sendpayment` RPC.
 
 - [LND #5047][] allows the wallet to import [BIP32][] extended public
   keys (xpubs) and use them for receiving payments to LND's onchain

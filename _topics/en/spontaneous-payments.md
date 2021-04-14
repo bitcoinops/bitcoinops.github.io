@@ -85,6 +85,9 @@ optech_mentions:
   - title: "C-Lightning #4404 allows keysending to nodes that don't advertise support"
     url: /en/newsletters/2021/03/17/#c-lightning-4404
 
+  - title: "LND #5108 adds support for spontaneous multipath payments using AMP"
+    url: /en/newsletters/2021/04/14/#lnd-5108
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
