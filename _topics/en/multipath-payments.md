@@ -142,6 +142,9 @@ optech_mentions:
   - title: New paper analyzes benefit of multipath payments on routing success
     url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 
+  - title: "LND #5108 adds support for spontaneous multipath payments using AMP"
+    url: /en/newsletters/2021/04/14/#lnd-5108
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
