@@ -55,12 +55,6 @@ properties:
     maxLength: 500 ## Arbitrary but suggest keeping it short in case we add the excerpts to an index at some point
     pattern: "^\\*\\*"  ## Start excerpt with topic name in bold
 
-  ## TODO: **DEPRECATED** remove when no longer used
-  extended_summary:
-    description: More details about the topic, may include links and multiple paragraphs
-    type: string
-    minLength: 1
-
   primary_sources: &sources
     description: Links about the topic the reader may find interesting
     type: list
