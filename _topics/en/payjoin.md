@@ -71,6 +71,9 @@ optech_mentions:
   - title: "Coldcard hardware wallet adds support for paying payjoin"
     url: /en/newsletters/2021/01/20/#coldcard-adds-payjoin-signing
 
+  - title: "BTCPay Server #2425 allows receiving payjoin payments without an inovice"
+    url: /en/newsletters/2021/04/21/#btcpay-server-2425
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

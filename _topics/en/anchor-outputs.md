@@ -107,6 +107,9 @@ optech_mentions:
   - title: "Eclair 0.5.1 adds and updates features preparing for anchor outputs"
     url: /en/newsletters/2021/03/10/#eclair-0-5-1
 
+  - title: Request for feedback on using anchor outputs by default in LND
+    url: /en/newsletters/2021/04/21/#using-anchor-outputs-by-default-in-lnd
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

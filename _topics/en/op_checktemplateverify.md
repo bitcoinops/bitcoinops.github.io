@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Sapio: a new language for building contracts with OP_CHECKTEMPLATEVERIFY"
     url: /en/newsletters/2020/08/05/#sapio
 
+  - title: Public launch of Sapio with support for using `OP_CHECKTEMPLATEVERIFY`
+    url: /en/newsletters/2021/04/21/#sapio-public-launch
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
