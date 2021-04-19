@@ -188,7 +188,8 @@ BOLTs][bolts repo].*
   values are, the more efficient a busy LND node will be, although that
   efficiency comes at the cost of having a slightly higher latency.
 
-- [Rust-Lightning #858][] FIXME:dongcarl
+- [Rust-Lightning #858][] adds internal support for interoperating with
+  Electrum-style blockchain data sources.
 
 - [Rust-Lightning #856][] updates how it handles funding transactions.
   Previously the wallet was asked to create the funding transaction that
