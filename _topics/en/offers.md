@@ -44,6 +44,9 @@ optech_mentions:
   - title: "C-Lightning 0.9.3 released with experimental offers support"
     url: /en/newsletters/2021/01/27/#c-lightning-0-9-3
 
+  - title: Offers specification updated to partly address stuck payments
+    url: /en/newsletters/2021/04/21/#using-ln-offers-to-partly-address-stuck-payments
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

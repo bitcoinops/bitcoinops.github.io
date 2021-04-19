@@ -47,6 +47,9 @@ optech_mentions:
   - title: Copay adds support for CPFP fee bumping incoming transactions
     url: /en/newsletters/2020/05/20/#copay-enables-cpfp-for-incoming-transactions
 
+  - title: Challenges of using CPFP fee bumps for LN commitment transactions
+    url: /en/newsletters/2021/04/21/#using-anchor-outputs-by-default-in-lnd
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
