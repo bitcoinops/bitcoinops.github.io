@@ -109,6 +109,9 @@ optech_mentions:
   - title: "PR Review Club discussion about burying past soft fork deployments"
     url: /en/newsletters/2021/04/14/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #21377 and #21686 add taproot activation mechanism and params"
+    url: /en/newsletters/2021/04/21/#bitcoin-core-21377
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds

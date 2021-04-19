@@ -137,7 +137,16 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #21377][] and [#21686][Bitcoin Core #21686] FIXME:Xekyo
+- [Bitcoin Core #21377][] adds the activation mechanism and
+  [#21686][Bitcoin Core #21686] adds the activation parameters for the
+  taproot softfork. Starting with the first difficulty
+  adjustment after April 24th, miners will be able to signal readiness
+  for Taproot activation on bit 2. If 1815 (90%) of one difficulty
+  period's 2016 blocks in the signaling window signal readiness, the
+  softfork activation locks in. The signaling window ends with the first
+  difficulty adjustment after August 11th. If locked in, taproot will be
+  activated at block height 709632, which is expected to be reached
+  around November 12th.
 
 - [Bitcoin Core #21602][] updates the `listbanned` RPC with two
   additional fields: `ban_duration` and `time_remaining`.
