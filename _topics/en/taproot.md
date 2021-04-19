@@ -158,6 +158,9 @@ optech_mentions:
   - title: "Compromise proposed to use MTP to activate taproot with speedy trial"
     url: /en/newsletters/2021/04/14/#taproot-activation-discussion
 
+  - title: "Bitcoin Core #21377 and #21686 add taproot activation mechanism and params"
+    url: /en/newsletters/2021/04/21/#bitcoin-core-21377
+
 ## Optional
 see_also:
   - title: MAST
