@@ -37,11 +37,6 @@ title: ${topic}
 categories:
   - TODO
 
-## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
-## Should be less than 500 characters
-excerpt: >
-  **${topic}** is ...
-
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -60,6 +55,11 @@ optech_mentions:
 # see_also:
 #   - title:
 #     link:
+
+## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
+## Should be less than 500 characters
+excerpt: >
+  **${topic}** is ...
 ---
 This is the summary that never ends.  It goes on and on, my friend.
 Some people started writing it not knowing what it was but...
