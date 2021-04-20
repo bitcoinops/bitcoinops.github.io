@@ -83,6 +83,9 @@ optech_mentions:
   - title: Specter v1.2.0 includes support for Bitcoin Core descriptor wallets
     url: /en/newsletters/2021/03/24/#specter-v1-2-0-released
 
+  - title: Specter-DIY v1.5.0 adds full descriptor support
+    url: /en/newsletters/2021/04/21/#specter-diy-v1-5-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

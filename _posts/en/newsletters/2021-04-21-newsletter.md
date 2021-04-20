@@ -107,7 +107,22 @@ to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Specter v1.3.0 released:**
+  [Specter v1.3.0][] includes additional RBF support, Bitcoin Core setup
+  from within the application, HWI 2 support, and an option to use [mempool.space][news132
+  mempool.space] as a [block explorer][topic block explorers] and for fee estimation.
+
+- **Specter-DIY v1.5.0:**
+  Hardware wallet firmware Specter-DIY [released][specter-diy github] v1.5.0 which adds custom SIGHASH
+  flag support and full [descriptor][topic descriptors] support including [miniscript][topic miniscript].
+
+- **BlueWallet v6.0.7 adds message signing:**
+  [BlueWallet v6.0.7][bluewallet v6.0.7] allows users to sign and verify
+  messages using Bitcoin addresses, among other features and fixes.
+
+- **Azteco announces Lightning support:**
+  Bitcoin voucher company Azteco [announced][azteco lightning blog] support for
+  redeeming purchased bitcoins via Lightning Network.
 
 ## Releases and release candidates
 
@@ -218,3 +233,8 @@ BOLTs][bolts repo].*
 [ln protocol specification]: https://github.com/lightningnetwork/lightning-rfc/
 [news141 cl funding]: /en/newsletters/2021/03/24/#c-lightning-4428
 [news144 activation]: /en/newsletters/2021/04/14/#taproot-activation-discussion
+[specter v1.3.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.3.0
+[news132 mempool.space]: /en/newsletters/2021/01/20/#mempool-v2-0-0-released
+[specter-diy github]: https://github.com/cryptoadvance/specter-diy/releases
+[bluewallet v6.0.7]: https://github.com/BlueWallet/BlueWallet/releases/tag/v6.0.7
+[azteco lightning blog]: https://medium.com/@Azteco_/at-azteco-weve-been-experimenting-with-lightning-for-over-a-year-refining-our-thinking-and-user-b9d112cff13c
