@@ -14,6 +14,7 @@ aliases:
 ## schema for options
 categories:
   - Privacy Enhancements
+  - Fee Management
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
@@ -76,6 +77,9 @@ see_also:
 
   - title: Signature adaptors
     link: topic adaptor signatures
+
+  - title: Threshold signature
+    link: topic threshold signature
 ---
 Multisignatures can be compared with *multisig*, the use of public
 keys and signatures with Bitcoin's `OP_CHECKMULTISIG` and
@@ -98,10 +102,6 @@ specifically created for the needs of Bitcoin users.
 **Terminology:** the following table summarizes the differences
 between *multisignature* and related terms.
 
-| Term | Keys | Messages<br>(e.g. tx inputs) | Signatures | Signers required | Notes |
-|-|-|-|-|-|
-| Multisig | `m` | `1` | `k` where `k<=m` | `k` | Uses Bitcoin Script multisig opcodes |
-| Multisignature | `m` | `1` | `1` | `m` | Indistinguishable onchain from single-sig |
-| Threshold signature | `m` | `1` | `1` | `k` where `k<=m` | Indistinguishable onchain from single-sig |
+{% include snippets/msig-terms.md %}
 
 {% include references.md %}
