@@ -215,6 +215,7 @@ there are a few important (but easy to implement) changes to the
 transaction digest---the hash that a signature commits to in order to
 prove the transaction is an authorized spend of a UTXO.
 
+{:#tagged-hashes}
 Most notably, the hash used goes from the legacy protocol's
 double-SHA256 (SHA256d) to a single SHA256 operation.  The extra hashing
 previously used isn't believed to have provided any meaningful security.

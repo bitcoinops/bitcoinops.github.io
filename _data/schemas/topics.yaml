@@ -99,3 +99,6 @@ properties:
           type: boolean
 
   see_also: *sources
+
+  extra:
+    description: Extra fields (not validated)
