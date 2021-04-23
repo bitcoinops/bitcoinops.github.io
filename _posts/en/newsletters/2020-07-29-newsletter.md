@@ -169,7 +169,7 @@ release candidates.*
        transaction announcements will use more bandwidth than usual
        until everyone has upgraded to wtxid-using nodes.
 
-    3. **Don't relay taproot:** only backport taproot but don't enable
+    3. {:#dont-relay-taproot} **Don't relay taproot:** only backport taproot but don't enable
        relaying of taproot transactions on backported nodes.  This
        prevents the immediate bandwidth waste but it may make it harder to
        get taproot-spending transactions to miners and will reduce the
