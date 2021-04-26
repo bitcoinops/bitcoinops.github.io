@@ -144,7 +144,10 @@ BOLTs][bolts repo].*
 
 - [Bitcoin Core #21595][] cli: create -addrinfo FIXME:jnewbery
 
-- [Rust-Lightning #844][] Adds lightning message signing/verification/pk_recovery FIXME:dongcarl
+- [Rust-Lightning #844][] adds support for message signing, signature
+  verification, and public key recovery using a scheme compatible with those of
+  [LND][LND #192], [C-Lightning][news69 signcheck rpc], and [Eclair][news110
+  signmessage rpc].
 
 - [BTCPay Server #2356][] adds support for multifactor authentication
   using the [WebAuthN/FIDO2][] protocols.  Existing multifactor
@@ -160,7 +163,7 @@ BOLTs][bolts repo].*
   to this improvement.
 
 {% include references.md %}
-{% include linkers/issues.md issues="21595,844,2356,906,863" %}
+{% include linkers/issues.md issues="21595,844,2356,906,863,192" %}
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [webauthn/fido2]: https://en.wikipedia.org/wiki/FIDO2_Project
 [u2f]: https://en.wikipedia.org/wiki/Universal_2nd_Factor
@@ -179,3 +182,5 @@ BOLTs][bolts repo].*
 [corallo ignore repo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018859.html
 [news136 safegcd]: /en/newsletters/2021/02/17/#faster-signature-operations
 [coq]: https://coq.inria.fr/
+[news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150
+[news110 signmessage rpc]: /en/newsletters/2020/08/12/#eclair-1499
