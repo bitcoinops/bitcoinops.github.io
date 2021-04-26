@@ -65,6 +65,9 @@ optech_mentions:
   - title: "C-Lightning 0.10.0 includes experimental support for dual funding"
     url: /en/newsletters/2021/04/07/#c-lightning-0-10-0
 
+  - title: Dual funding's interactive construction used in splicing proposal
+    url: /en/newsletters/2021/04/28/#draft-specification-for-ln-splicing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)

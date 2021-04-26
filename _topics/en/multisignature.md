@@ -69,6 +69,9 @@ optech_mentions:
   - title: Talk about how taproot enables scaling when used with multisignatures
     url: /en/newsletters/2019/09/18/#blockchain-design-patterns-layers-and-scaling-approaches
 
+  - title: "Signature adaptors without requiring support for multisignatures"
+    url: /en/newsletters/2021/04/28/#support-for-ecdsa-signature-adaptors-added-to-libsecp256k1-zkp
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: MuSig

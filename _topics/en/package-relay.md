@@ -50,6 +50,9 @@ optech_mentions:
   - title: Change to orphan parent fetching, may be replaced by package relay
     url: /en/newsletters/2020/08/05/#bitcoin-core-19569
 
+  - title: Upcoming relay policy workshop to discuss package relay and other topics
+    url: /en/newsletters/2021/04/28/#call-for-topics-in-layer-crossing-workshop
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

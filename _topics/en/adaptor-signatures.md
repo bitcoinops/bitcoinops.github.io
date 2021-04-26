@@ -94,6 +94,9 @@ optech_mentions:
   - title: "2020 year in review: signature adaptors for LN channel commitments"
     url: /en/newsletters/2020/12/23/#ptlcs
 
+  - title: "Libsecp256k1-zkp #117 adds support for simplified ECDSA signature adaptors"
+    url: /en/newsletters/2021/04/28/#support-for-ecdsa-signature-adaptors-added-to-libsecp256k1-zkp
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
