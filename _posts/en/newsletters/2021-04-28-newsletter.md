@@ -142,7 +142,24 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #21595][] cli: create -addrinfo FIXME:jnewbery
+- [Bitcoin Core #21595][] adds a new `addrinfo` command to the `bitcoin-cli`
+  executable. Running `bitcoin-cli -addrinfo` returns a count of the network
+  addresses of potential peers known to the node, split by network type. Sample
+  output:
+
+    ```
+    $ bitcoin-cli -addrinfo
+    {
+      "addresses_known": {
+        "ipv4": 14406,
+        "ipv6": 2511,
+        "torv2": 5563,
+        "torv3": 2842,
+        "i2p": 8,
+        "total": 25330
+      }
+    }
+    ```
 
 - [Rust-Lightning #844][] adds support for message signing, signature
   verification, and public key recovery using a scheme compatible with those of
