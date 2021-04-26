@@ -65,6 +65,9 @@ optech_mentions:
   - title: Recovering lost LN funding transactions after RBF fee bumping
     url: /en/newsletters/2021/03/17/#rescuing-lost-ln-funding-transactions
 
+  - title: Upcoming relay policy workshop to discuss RBF and other topics
+    url: /en/newsletters/2021/04/28/#call-for-topics-in-layer-crossing-workshop
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
