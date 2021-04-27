@@ -112,7 +112,38 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the different contexts where MTP is used in Bitcoin?]({{bse}}105522)
+  David A. Harding defines Median Time Past (MTP) and outlines how MTP is used
+  to:
+
+    1. determine the validity of a block using its `nTime` field, controlling
+       difficulty adjustment period times
+
+    2. ensure that time only moves forward, simplifying [state transitions][bip9
+       state] in BIP9
+
+    3. eliminate the incentive for individual miners to confirm transactions
+       with locktimes up to two hours in the future by lying about the
+       current time, as fixed in [BIP113][bip113 spec]
+
+- [Can Taproot be used to commit arbitrary data to chain without any additional footprint?]({{bse}}105346)
+  Pieter Wuille answers by pointing out that while committing to data via
+  `OP_RETURN` in a [tapleaf][news46 complex spending] is possible, techniques
+  like [pay-to-contract][pay-to-contract se] and
+  [sign-to-contract][sign-to-contract blog] are in use currently by Liquid and
+  [OpenTimestamps][opentimestamps] and can be more efficient.
+
+- [Why does the mined block differ so much from the block template?]({{bse}}105694)
+  User Andy asks why block 680175 differs from what his `getblocktemplate` RPC
+  had output around the same time that block was mined. Andrew Chow and Murch
+  point out [Asicboost][asicboost se] as the reason the version field is
+  different, while node-independent mempools and node uptime are considerations
+  of the block's transaction discrepancies.
+
+- [Isn't Bitcoin's hash target supposed to be a power of 2?]({{bse}}105618)
+  Andrew Chow explains the 'leading zeros' explanation of difficulty
+  targeting is an oversimplification and chytrik gives an example of
+  a valid and invalid hash with the same number of leading zeros.
 
 ## Releases and release candidates
 
@@ -201,3 +232,10 @@ BOLTs][bolts repo].*
 [coq]: https://coq.inria.fr/
 [news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150
 [news110 signmessage rpc]: /en/newsletters/2020/08/12/#eclair-1499
+[bip9 state]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#state-transitions
+[bip113 spec]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki#specification
+[news46 complex spending]: /en/newsletters/2019/05/14/#complex-spending-with-taproot
+[opentimestamps]: https://opentimestamps.org/
+[sign-to-contract blog]: https://blog.eternitywall.com/2018/04/13/sign-to-contract/
+[pay-to-contract se]: https://bitcoin.stackexchange.com/a/37208/87121
+[asicboost se]: https://bitcoin.stackexchange.com/a/56518/5406
