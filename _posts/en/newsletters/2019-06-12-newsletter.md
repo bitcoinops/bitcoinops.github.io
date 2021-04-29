@@ -59,6 +59,7 @@ changes to popular Bitcoin infrastructure projects.
       [bip-coshv][] opcode was reviewed (see [#48][Newsletter #48]) and
       `OP_CHECKSIGFROMSTACK` was considered as a generic alternative.
 
+      {:#taproot-accumulator-quantum}
       A [Taproot][xs taproot] topic included discussion about using a
       merkle tree instead of an accumulator and risks related to fast
       quantum computers.  ([More background][bg taproot])
