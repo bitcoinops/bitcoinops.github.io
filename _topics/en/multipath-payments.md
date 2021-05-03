@@ -119,6 +119,9 @@ optech_mentions:
   - title: "LND #5108 adds support for spontaneous multipath payments using AMP"
     url: /en/newsletters/2021/04/14/#lnd-5108
 
+  - title: "Rust-Lightning #893 requires payment secrets to prevent multipath probing"
+    url: /en/newsletters/2021/05/05/#rust-lightning-893
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

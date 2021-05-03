@@ -112,6 +112,15 @@ optech_mentions:
   - title: "Bitcoin Core #21377 and #21686 add taproot activation mechanism and params"
     url: /en/newsletters/2021/04/21/#bitcoin-core-21377
 
+  - title: "Miners encouraged to start signaling readiness for taproot"
+    url: /en/newsletters/2021/05/05/#miners-encouraged-to-start-signaling-for-taproot
+
+  - title: "Bitcoin Core 0.21.1 released ready to activate taproot"
+    url: /en/newsletters/2021/05/05/#bitcoin-core-0-21-1
+
+  - title: "BIPs #1104 adds activation parameters to the BIP341 taproot specification"
+    url: /en/newsletters/2021/05/05/#bips-1104
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
