@@ -107,7 +107,14 @@ BOLTs][bolts repo].*
 
 - [Bitcoin Core #19160][] multiprocess: Add basic spawn and IPC support FIXME:jnewbery
 
-- [Bitcoin Core #21009][] Remove RewindBlockIndex logic FIXME:Xekyo
+- [Bitcoin Core #21009][] removes the RewindBlockIndex logic triggered when
+  updating a pre-segwit node (v0.13.0 or older) to a segwit-enforcing
+  version. Pre-segwit nodes only processed stripped blocks that lacked the (segregated) witness
+  data. The RewindBlockIndex logic discarded its copies of such blocks,
+  re-downloaded them in their complete form, and validated them using segwit's rules. As pre-segwit
+  nodes have been end-of-life since 2018, the scenario has become uncommon.
+  Future releases will instead prompt the user to reindex for an equivalent
+  outcome.
 
 - [LND #5159][] AMP support for SendPaymentV2 FIXME:dongcarl
 
