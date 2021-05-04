@@ -105,7 +105,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #19160][] multiprocess: Add basic spawn and IPC support FIXME:jnewbery
+- [Bitcoin Core #19160][] is the next PR in the [multiprocess project][bitcoin
+  core multiprocess] and adds the ability for the `bitcoin-node` process to spawn
+  other processes and communicate with them using [Cap'n Proto][capn proto].
+  These features are currently only used for testing, but the [next PR][Bitcoin
+  Core #10102] in the project will allow Bitcoin Core to be started in
+  multiprocess mode with the `bitcoin-core` process spawning separate
+  `bitcoin-wallet` and `bitcoin-gui` processes.
 
 - [Bitcoin Core #21009][] removes the RewindBlockIndex logic triggered when
   updating a pre-segwit node (v0.13.0 or older) to a segwit-enforcing
@@ -143,7 +149,7 @@ BOLTs][bolts repo].*
     your peer doesn't contest an old state.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19160,21009,5159,893,1104" %}
+{% include linkers/issues.md issues="19160,21009,5159,893,1104,10102" %}
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [btcpay 1.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.1.0
 [wincodesign]: https://github.com/bitcoin-core/gui/issues/252#issuecomment-802591628
@@ -156,3 +162,5 @@ BOLTs][bolts repo].*
 [news31 data_loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [news139 speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
 [lndev deterministic]: https://lightningd.github.io/meetings/ln_spec_meeting/2021/ln_spec_meeting.2021-04-26-20.17.log.html#l-115
+[bitcoin core multiprocess]: https://github.com/bitcoin/bitcoin/projects/10
+[capn proto]: https://capnproto.org/
