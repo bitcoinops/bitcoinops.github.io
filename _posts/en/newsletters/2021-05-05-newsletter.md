@@ -126,7 +126,10 @@ BOLTs][bolts repo].*
   Future releases will instead prompt the user to reindex for an equivalent
   outcome.
 
-- [LND #5159][] AMP support for SendPaymentV2 FIXME:dongcarl
+- [LND #5159][] builds on [previous work][news144 lnd ampsendpayment] to add
+  support for making spontaneous Atomic Multipath Payments (AMPs) by manually
+  specifying payment parameters to the `sendpayment` RPC. Invoking `sendpayment`
+  with an AMP invoice is expected to be implemented in follow-up PRs.
 
 - [Rust-Lightning #893][] only allows accepting a payment if it includes
   a payment secret.  Payment secrets are created by the receiver and
@@ -171,3 +174,4 @@ BOLTs][bolts repo].*
 [news53 lightning loop]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
 [semantic versioning website]: https://semver.org/
 [fido2 website]: https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/
+[news144 lnd ampsendpayment]: /en/newsletters/2021/04/14/#lnd-5108

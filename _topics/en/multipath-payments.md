@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Rust-Lightning #893 requires payment secrets to prevent multipath probing"
     url: /en/newsletters/2021/05/05/#rust-lightning-893
 
+  - title: "LND #5159 adds support for making spontaneous AMPs"
+    url: /en/newsletters/2021/05/05/#lnd-5159
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
