@@ -117,6 +117,19 @@ BOLTs][bolts repo].*
   multiprocess mode with the `bitcoin-core` process spawning separate
   `bitcoin-wallet` and `bitcoin-gui` processes.
 
+- [Bitcoin Core #19521][] nearly completes the [coin statistics index project][bitcoin
+  core coinstats] to dramatically speed up the `gettxoutsetinfo` RPC.  Until
+  now, the RPC defaulted to scanning the full UTXO set every time it was called, making it
+  difficult for users to continually and quickly verify the coin supply or
+  compare UTXO set hashes between different nodes.
+  Users can now start their nodes with the `-coinstatsindex`
+  configuration option to begin building the coin statistics index in the background.  Once
+  it is synced, `gettxoutsetinfo` runs nearly instantly and users can specify a
+  height or block hash for the statistics.  Being able to get the
+  statistics for a particular block will be especially useful for
+  allowing community verification of [assumeUTXO][topic assumeutxo]
+  chainstate archives.
+
 - [Bitcoin Core #21009][] removes the RewindBlockIndex logic triggered when
   updating a pre-segwit node (v0.13.0 or older) to a segwit-enforcing
   version. Pre-segwit nodes only processed stripped blocks that lacked the (segregated) witness
@@ -156,7 +169,7 @@ BOLTs][bolts repo].*
     your peer doesn't contest an old state.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19160,21009,5159,893,1104,10102" %}
+{% include linkers/issues.md issues="19160,19521,21009,5159,893,1104,10102" %}
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [btcpay 1.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.1.0
 [wincodesign]: https://github.com/bitcoin-core/gui/issues/252#issuecomment-802591628
@@ -171,6 +184,7 @@ BOLTs][bolts repo].*
 [lndev deterministic]: https://lightningd.github.io/meetings/ln_spec_meeting/2021/ln_spec_meeting.2021-04-26-20.17.log.html#l-115
 [bitcoin core multiprocess]: https://github.com/bitcoin/bitcoin/projects/10
 [capn proto]: https://capnproto.org/
+[bitcoin core coinstats]: https://github.com/bitcoin/bitcoin/pull/18000
 [news53 lightning loop]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
 [semantic versioning website]: https://semver.org/
 [fido2 website]: https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/
