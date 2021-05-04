@@ -12,8 +12,14 @@ clean:
 	bundle exec jekyll clean
 
 preview:
-	## Don't do a full rebuild (to save time), but always rebuild index.html
-	rm _site/index.html || true
+	## Don't do a full rebuild (to save time), but always rebuild index pages.
+	rm -f _site/index.html \
+	      _site/en/blog/index.html \
+	      _site/en/newsletters/index.html \
+	      _site/en/publications/index.html \
+	      _site/en/topics/categories/index.html \
+	      _site/en/topics/dates/index.html \
+	      _site/en/topics/index.html
 	bundle exec jekyll serve --future --drafts --unpublished --incremental
 
 build:
