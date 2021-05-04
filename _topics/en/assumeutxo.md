@@ -37,6 +37,9 @@ optech_mentions:
   - title: MuHash function added in preparation for tracking UTXO state hashes
     url: /en/newsletters/2021/01/13/#bitcoin-core-19055
 
+  - title: "Bitcoin Core #19521 simplifies generating UTXO set hashes for old blocks"
+    url: /en/newsletters/2021/05/05/#bitcoin-core-19521
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
