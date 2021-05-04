@@ -93,7 +93,11 @@ release candidates.*
     fixed.  If you are planning to upgrade anyway, there's no reason to
     delay using 0.21.1 because of this problem.
 
-- [BTCPay 1.1.0][] major release FIXME:bitschmidty https://github.com/btcpayserver/btcpayserver/pull/2480
+- [BTCPay 1.1.0][] is the latest major release for this self-hosted payment
+  processing software. It includes [Lightning Loop][news53 lightning loop]
+  support, adds [WebAuthN/FIDO2][fido2 website] as a two-factor authentication
+  option, makes various UI improvements, and marks a switch to using [semantic
+  versioning][semantic versioning website] for version numbers moving forward.
 
 ## Notable code and documentation changes
 
@@ -164,3 +168,6 @@ BOLTs][bolts repo].*
 [lndev deterministic]: https://lightningd.github.io/meetings/ln_spec_meeting/2021/ln_spec_meeting.2021-04-26-20.17.log.html#l-115
 [bitcoin core multiprocess]: https://github.com/bitcoin/bitcoin/projects/10
 [capn proto]: https://capnproto.org/
+[news53 lightning loop]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
+[semantic versioning website]: https://semver.org/
+[fido2 website]: https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/
