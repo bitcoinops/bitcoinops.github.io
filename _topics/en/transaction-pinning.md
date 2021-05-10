@@ -51,6 +51,9 @@ optech_mentions:
   - title: "BOLT5 updated to prevent a transaction pinning attack"
     url: /en/newsletters/2020/12/16/#bolts-803
 
+  - title: CVE-2021-31876 reduces expected cost of some pinning attacks
+    url: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
