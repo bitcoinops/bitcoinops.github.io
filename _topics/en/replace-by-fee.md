@@ -68,6 +68,9 @@ optech_mentions:
   - title: Upcoming relay policy workshop to discuss RBF and other topics
     url: /en/newsletters/2021/04/28/#call-for-topics-in-layer-crossing-workshop
 
+  - title: CVE-2021-31876 discrepancy between BIP125 and Bitcoin Core implementation
+    url: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
