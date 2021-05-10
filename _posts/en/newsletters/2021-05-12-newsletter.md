@@ -46,14 +46,81 @@ infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jnewbery or jonatack
+[Introduce node rebroadcast module][review club
+#21061] is a PR ([#21061][Bitcoin Core #21061]) by Amiti Uttarwar that continues
+work on the rebroadcast project (see Newsletters [#64][rebroadcast 1],
+[#96][rebroadcast 2], [#129][rebroadcast 3] and [#142][rebroadcast 4]),
+previously discussed in review clubs [#16698][review club
+#16698] and [#18038][review club #18038], whose goal is to make node
+rebroadcast behavior for wallet transactions indistinguishable from that of
+other peers' transactions.
+
+The review club discussion focused on current transaction behavior and the
+proposed changes:
 
 {% include functions/details-list.md
-  q0="FIXME"
+  q0="Why might we want to rebroadcast a transaction?"
+  a0="When our transaction didn't propagate (perhaps our node was offline) or
+      appears to have been dropped by other nodes' mempools in the network."
+  a0link="https://bitcoincore.reviews/21061#l-39"
 
-  a0="FIXME"
+  q1="Why does a node drop a transaction from its mempool?"
+  a1="Apart from being included in a block, a transaction can expire after 14
+      days, be squeezed out of a node's limited mempool size (default size 300
+      MiB) by higher-fee transactions, be replaced via [BIP125][] opt-in
+      Replace-By-Fee ([RBF][topic rbf]), be removed if a conflicting transaction
+      is included in a block, or be included in a block that is later reorged
+      out (in which case the node will try to re-add it while [updating the
+      mempool][UpdateMempoolForReorg] to be consistent again after the reorg)."
+  a1link="https://bitcoincore.reviews/21061#l-53"
 
-  a0link="https://bitcoincore.reviews/FIXME#FIXME"
+  q2="What could be an issue with the current behavior of each wallet being
+      responsible for rebroadcasting its own transactions?"
+  a2="This can be a privacy leak that allows linking the IP address to the
+      wallet address, as under the current rebroadcasting behavior, a node that
+      broadcasts a transaction more than once is essentially announcing that the
+      transaction is from its wallet."
+  a2link="https://bitcoincore.reviews/21061#l-58"
+
+  q3="When might a miner exclude a transaction that is in our mempool?"
+  a3="When the miner deprioritized it for having a low fee, didn't see it yet,
+      removed it from its mempool by RBF, censored it, or mined an empty block."
+
+  q4="When might a miner include a transaction that is not in our mempool?"
+  a4="When the miner manually prioritized the transaction (e.g. as a commercial
+      service), received it before our node, or the transaction conflicted with
+      another one in our mempool but not in theirs."
+
+  q5="How would the proposal under review decide which transactions to
+      rebroadcast?"
+  a5="Once per new block, it proposes to rebroadcast transactions above an
+      estimated feerate that are at least 30 minutes old, have been rebroadcast
+      no more than 6 times and not more recently than 4 hours ago, with up to
+      3/4 of the transactions that fit the block."
+  a5link="https://bitcoincore.reviews/21061#l-63"
+
+  q6="Why might we want to keep a transaction in our rebroadcast attempt tracker even after
+      it has been removed from our mempool?"
+  a6="After a consensus rule change, there can be non-updated nodes on the
+      network rebroadcasting transactions that don't meet the new consensus
+      rules.  Keeping transactions in the rebroadcast attempt tracker would avoid these
+      nodes rebroadcasting them too many times (a maximum of 6 times over 90
+      days) and allow the transactions to expire."
+  a6link="https://bitcoincore.reviews/21061#l-178"
+
+  q7="When would we remove a transaction from our rebroadcast attempt tracker?"
+  a7="When the transaction is confirmed, [RBFed][topic rbf], or conflicts with
+      another transaction included in a block."
+  a7link="https://bitcoincore.reviews/21061#l-199"
+
+  q8="How would the estimated minimum feerate for rebroadcast be calculated?
+      Why not use the lowest feerate in the last mined block?"
+  a8="The rebroadcast feerate floor would be estimated once a minute by
+      assembling a block from the mempool to simulate inclusion in the next
+      mined block.  This approach is better than using the lowest feerate of the
+      last mined block because it calculates fees based on the immediate future
+      in a changing environment instead of based on the past."
+  a8link="https://bitcoincore.reviews/21061#l-227"
 %}
 
 ## Releases and release candidates
@@ -103,7 +170,12 @@ BOLTs][bolts repo].*
   complete implementation of taproot compatibility.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20867,125,4489,4496,589,588" %}
+{% include linkers/issues.md issues="20867,125,4489,4496,589,588,21061,16698,18038" %}
 [riard cve-2021-31876]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html
 [news95 atomicity attack]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [rust-lightning 0.0.14]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.14
+[rebroadcast 1]: /en/newsletters/2019/09/18/#bitcoin-core-rebroadcasting-logic
+[rebroadcast 2]: /en/newsletters/2020/05/06/#bitcoin-core-18038
+[rebroadcast 3]: /en/newsletters/2020/12/23/#transaction-origin-privacy
+[rebroadcast 4]: /en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools
+[UpdateMempoolForReorg]: https://github.com/bitcoin/bitcoin/blob/e175a20769/src/validation.cpp#L357
