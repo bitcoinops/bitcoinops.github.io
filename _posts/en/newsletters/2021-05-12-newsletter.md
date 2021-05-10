@@ -79,7 +79,11 @@ BOLTs][bolts repo].*
 
 - [Bitcoin Core #20867][] Support up to 20 keys for multisig under Segwit context FIXME:jnewbery
 
-- [Bitcoin Core GUI #125][] Enable changing the autoprune block space size in intro dialog FIXME:adamjonas
+- [Bitcoin Core GUI #125][] enables users to adjust the autoprune block space
+  size from the default in the intro dialog.  It also adds an improved
+  description for how the pruned storage works, clarifying that the entire
+  blockchain must be downloaded and processed but will be discarded in
+  the future to keep disk usage low.
 
 - [C-Lightning #4489][] dual funding plugin FIXME:dongcarl
 
