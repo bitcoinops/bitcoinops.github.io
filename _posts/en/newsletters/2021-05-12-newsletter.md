@@ -159,7 +159,18 @@ BOLTs][bolts repo].*
   blockchain must be downloaded and processed but will be discarded in
   the future to keep disk usage low.
 
-- [C-Lightning #4489][] dual funding plugin FIXME:dongcarl
+- [C-Lightning #4489][] adds a `funder` plugin for configuring
+  [dual-funding][topic dual funding] contribution behavior in response to
+  incoming channel open requests. Users will be able to specify a general
+  contribution policy (percent match, percent available funds, or fixed
+  contribution), a wallet reserve amount under which no dual-funding
+  contributions will happen, a maximum contribution amount for any single
+  channel open request, and more.
+
+  This PR represents the last step in enabling experimental dual-funding support between
+  C-Lightning nodes. The interactive transaction construction and channel
+  establishment v2 protocols arising out of this work is still being
+  standardized in the open [BOLTs #851][] PR.
 
 - [C-Lightning #4496][] adds the ability for plugins to register topics
   about which they plan to publish notifications.  Other plugins can
@@ -177,7 +188,7 @@ BOLTs][bolts repo].*
   complete implementation of taproot compatibility.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20867,125,4489,4496,589,588,21061,16698,18038" %}
+{% include linkers/issues.md issues="20867,125,4489,4496,589,588,21061,16698,18038,851" %}
 [riard cve-2021-31876]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html
 [news95 atomicity attack]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [rust-lightning 0.0.14]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.14
