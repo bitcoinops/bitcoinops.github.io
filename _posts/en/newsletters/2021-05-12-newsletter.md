@@ -40,6 +40,13 @@ infrastructure software.
     As of this writing, there has not been any substantial discussion of
     the issue on the mailing list.
 
+- **Call for Brink grant applications:**
+  Bitcoin Optech encourages any engineer contributing to open source
+  Bitcoin or Lightning projects to [apply for a Brink grant][brink grant
+  application] before the application deadline on May 17th. Initial grants are
+  one year long and allow developers to work full time on open source projects
+  from anywhere in the world.
+
 ## Bitcoin Core PR Review Club
 
 *In this monthly section, we summarize a recent [Bitcoin Core PR Review Club][]
@@ -179,3 +186,4 @@ BOLTs][bolts repo].*
 [rebroadcast 3]: /en/newsletters/2020/12/23/#transaction-origin-privacy
 [rebroadcast 4]: /en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools
 [UpdateMempoolForReorg]: https://github.com/bitcoin/bitcoin/blob/e175a20769/src/validation.cpp#L357
+[brink grant application]: https://brink.homerun.co/grants
