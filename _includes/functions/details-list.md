@@ -1,12 +1,13 @@
 {% capture /dev/null %}
   <!-- Maximum number of params:
-     1 include.class (CSS class)
-    10 include.q0..q9 (questions)
-    10 include.a0..a9 (answers)
-    -- -------------------
-    21 Total -->
+     1 include.class          (CSS class)
+    10 include.q0..q9         (questions)
+    10 include.a0..a9         (answers)
+    10 include.a0link..a9link (links)
+    -- ----------------------------------
+    31 Total -->
   {% assign includes_size = include | size %}
-  {% if includes_size >= 21 %}{% include ERROR143_too_many_params_passed_to_details_list %}{% endif %}
+  {% if includes_size >= 31 %}{% include ERROR143_too_many_params_passed_to_details_list %}{% endif %}
 {% endcapture %}
 <div class="{{include.class | default: 'qa_details'}} {{jekyll.environment}}" markdown="1">
 {% for i in (0..9) %}
