@@ -151,7 +151,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20867][] Support up to 20 keys for multisig under Segwit context FIXME:jnewbery
+- [Bitcoin Core #20867][] increases the number of keys that can be included in
+  multisig [descriptors][topic descriptors] and used in the
+  `addmultisigaddress` and `createmultisig` RPCs from 16 to 20. The increased
+  limit can only be used in P2WSH outputs. P2SH outputs are limited to 520
+  byte scripts which are only large enough to hold 15 compressed public keys.
 
 - [Bitcoin Core GUI #125][] enables users to adjust the autoprune block space
   size from the default in the intro dialog.  It also adds an improved
