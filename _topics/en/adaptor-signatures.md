@@ -168,7 +168,7 @@ Alice creates a valid signature commitment (`s`) for the transaction paying Bob
 (`P = pG`).  She also uses a private random nonce (`r`), a hidden value
 (`t`), and the elliptic curve points for them (`R = rG, T = tG`):
 
-    s = r + t + H(P || R + T || m) * p
+    s = r + t + H(R + T || P || m) * p
 
 She subtracts `t` from the signature commitment to produce a signature adaptor:
 
@@ -181,20 +181,20 @@ data:
 
 Bob can verify the adaptor:
 
-    s' * G ?= R + H(P || R+T || m) * P
+    s' * G ?= R + H(R + T || P || m) * P
 
 But the adaptor is not a valid BIP340 signature.  For a valid signature, BIP340 expects
 `x` and `Y`, using them with the expression:
 
-    x * G ?= Y + H(P || Y || m) * P
+    x * G ?= Y + H(Y || P || m) * P
 
 However,
 
 - If Bob sets `Y = R` so that it matches the `s'` he received in the
-  adaptor, then BIP340 is going to fail on `H(P || R || m)`
-  since Alice computed her hash with `H(P || R + T || m)`.
+  adaptor, then BIP340 is going to fail on `H(R || P || m)`
+  since Alice computed her hash with `H(R + T || P || m)`.
 
-- If Bob sets `Y = R + T` so that it matches `H(P || R + T || m)`, BIP340
+- If Bob sets `Y = R + T` so that it matches `H(R + T || P || m)`, BIP340
   is going to fail on the initial `Y` since Bob is providing `R + T`
   rather than the needed `R`.
 
@@ -204,7 +204,7 @@ signature Alice created but Bob doesn't commit to `t` here, since Bob
 doesn't know that value.  All variables here except `T` are different
 for Bob than they were for Alice:
 
-    s = r + H(P || R + T || m) * p
+    s = r + H(R + T || P || m) * p
 
 Unlike Alice, Bob doesn't need to tweak his signature.  Bob's signature commitment `s` is
 not a part of a valid signature because it commits to `r` and `R + T`, which
@@ -221,7 +221,7 @@ adaptor so we use its full form.  Alice can produce a
 signature from that adaptor using the hidden `t` value that
 only she knows so far:
 
-    (s + t) * G ?= R + T + H(P || R + T || m) * P
+    (s + t) * G ?= R + T + H(R + T || P || m) * P
 
 Alice uses the signature to broadcast Bob's transaction that
 pays her.  When Bob sees `(s + t)` onchain, he can learn the value of `t`:
@@ -231,7 +231,7 @@ pays her.  When Bob sees `(s + t)` onchain, he can learn the value of `t`:
 He can then use `t` to solve the adaptor Alice gave him
 earlier:
 
-    (s' + t) * G ?= R + T + H(P || R + T || m) * P
+    (s' + t) * G ?= R + T + H(R + T || P || m) * P
 
 Bob uses that signature to broadcast the transaction Alice
 originally gave him.
