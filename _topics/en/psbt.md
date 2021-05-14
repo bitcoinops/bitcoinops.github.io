@@ -138,6 +138,9 @@ optech_mentions:
   - title: "BIPs #1059 publishes the draft specification for v2 PSBTs as BIP370"
     url: /en/newsletters/2021/03/24/#bips-1059
 
+  - title: "LND #5291 improves the way LND ensures PSBTs use segwit inputs"
+    url: /en/newsletters/2021/05/19/#lnd-5291
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

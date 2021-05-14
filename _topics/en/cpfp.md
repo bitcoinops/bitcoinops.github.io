@@ -50,6 +50,9 @@ optech_mentions:
   - title: Challenges of using CPFP fee bumps for LN commitment transactions
     url: /en/newsletters/2021/04/21/#using-anchor-outputs-by-default-in-lnd
 
+  - title: "Bitcoin Core #21359 allows CPFP fee bumping incoming payments"
+    url: /en/newsletters/2021/05/19/#bitcoin-core-21359
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
