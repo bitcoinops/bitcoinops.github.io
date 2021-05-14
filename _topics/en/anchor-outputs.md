@@ -110,6 +110,9 @@ optech_mentions:
   - title: Request for feedback on using anchor outputs by default in LND
     url: /en/newsletters/2021/04/21/#using-anchor-outputs-by-default-in-lnd
 
+  - title: "LND #5274 limits the maximum funds reserved for fee bumping anchor outputs"
+    url: /en/newsletters/2021/05/19/#lnd-5274
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

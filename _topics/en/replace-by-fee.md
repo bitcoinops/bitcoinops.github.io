@@ -71,6 +71,9 @@ optech_mentions:
   - title: CVE-2021-31876 discrepancy between BIP125 and Bitcoin Core implementation
     url: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
 
+  - title: Continued discussion about CVE-2021-31876
+    url: /en/newsletters/2021/05/19/#cve-2021-31876-bip125-implementation-discrepancy-follow-up
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
