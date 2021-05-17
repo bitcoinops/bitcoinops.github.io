@@ -128,6 +128,9 @@ optech_mentions:
   - title: Electrum 4.1.0 adds support for multipath payments
     url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
 
+  - title: "LND #5253 adds support for Atomic Multipath Payment (AMP) invoices"
+    url: /en/newsletters/2021/05/19/#lnd-5253
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
