@@ -132,7 +132,13 @@ BOLTs][bolts repo].*
   already stored in a file, so using that file directly doesn't create
   any additional security problems.
 
-- [LND #5253][] Support paying AMP invoices via SendPaymentV2 FIXME:dongcarl
+- [LND #5253][] adds support for [Atomic Multipath Payment (AMP)][topic
+  multipath payments] invoices across high-level LND RPC commands such as
+  `SendPayment`, `AddInvoice`, and `SubscribeInvoice`. AMP invoices are
+  currently an LND-only feature and only accept HTLCs that have the AMP
+  feature bits set as well as an AMP payload. This extends [prior
+  work][news147 lndamp] that enabled use of AMP by providing manually
+  specfied payment parameters to the `SendPayment` RPC.
 
 - [Libsecp256k1 #850][] adds a `secp256k1_ec_pubkey_cmp` method that
   compares two public keys and returns which one of them sorts earlier
@@ -144,6 +150,7 @@ BOLTs][bolts repo].*
 {% include linkers/issues.md issues="21462,280,21359,5291,5274,5256,5253,850" %}
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc2
 [news146 workshop]: /en/newsletters/2021/04/28/#call-for-topics-in-layer-crossing-workshop
+[news147 lndamp]: /en/newsletters/2021/05/05/#lnd-5159
 [news148 cve]: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
 [btcd #1719]: https://github.com/btcsuite/btcd/pull/1719
 [somsen note]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018921.html
