@@ -20,8 +20,7 @@ primary_sources:
     - title: BIP173
     - title: Bech32 reference code
       link: https://github.com/sipa/bech32
-    - title: Bech32m draft BIP
-      link: https://github.com/sipa/bips/blob/bip-bech32m/bip-bech32m.mediawiki
+    - title: BIP350
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
