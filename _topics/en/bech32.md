@@ -84,6 +84,12 @@ optech_mentions:
   - title: "BitMEX exchange announces support for bech32 deposit addresses"
     url: /en/newsletters/2021/03/24/#bitmex-announces-bech32-support
 
+  - title: Blockchain.com adds support for bech32 receiving and spending
+    url: /en/newsletters/2021/05/19/#blockchain-com-supports-segwit
+
+  - title: Electrum 4.1.0 adds support for bech32m
+    url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

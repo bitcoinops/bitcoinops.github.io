@@ -47,7 +47,25 @@ changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Blockchain.com supports segwit:**
+  [v4.49.1][blockchain v4.49.1] of Blockchain.com's wallet adds the ability to
+  create a wallet with native segwit send and receive support.
+
+- **Sparrow 1.4.0 released:**
+  [Sparrow 1.4.0][sparrow 1.4.0] adds the ability to create a [child pays for parent
+  (CPFP)][topic cpfp] transaction from the transaction list screen, user-defined
+  fee amounts during coin selection, and various other improvements.
+
+- **Electrum 4.1.0 enhances Lightning features:**
+  [Electrum 4.1.0][electrum 4.1.0] adds [trampoline payments][topic trampoline payments], [multipath
+  payments][topic multipath payments], channel
+  backups, and other Lightning features. Additionally, this version of Electrum
+  supports [bech32m][topic bech32].
+
+- **BlueWallet v6.1.0 released:**
+  BlueWallet's [v6.1.0 release][bluewallet v6.1.0] adds Tor support,
+  [SLIP39][news86 slip39] support, and functionality for using [PSBTs][topic psbt]
+  with HD watch-only wallets.
 
 ## Releases and release candidates
 
@@ -127,3 +145,8 @@ BOLTs][bolts repo].*
 [btcd #1719]: https://github.com/btcsuite/btcd/pull/1719
 [somsen note]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018921.html
 [poinsot mention]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018906.html
+[blockchain v4.49.1]: https://github.com/blockchain/blockchain-wallet-v4-frontend/releases/tag/v4.49.1
+[sparrow 1.4.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.4.0
+[bluewallet v6.1.0]: https://github.com/BlueWallet/BlueWallet/releases/tag/v6.1.0
+[news86 slip39]: /en/newsletters/2020/02/26/#what-s-the-relationship-between-slip39-and-bip39
+[electrum 4.1.0]: https://github.com/spesmilo/electrum/blob/4.1.0/RELEASE-NOTES
