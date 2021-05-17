@@ -90,7 +90,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 BOLTs][bolts repo].*
 
 
-- [Bitcoin Core #21462][] guix: Add guix-{attest,verify} scripts FIXME:Xekyo
+- [Bitcoin Core #21462][] adds tooling for attesting to outputs of Guix builds
+  and verifying these attestations against those of others. After this change,
+  Windows and macOS code signing remain the only missing piece before Guix
+  builds reach feature-parity with Gitian builds.
 
 - [Bitcoin Core GUI #280][] prevents displaying invalid Bitcoin
   addresses in an error dialog, eliminating the ability to display an
