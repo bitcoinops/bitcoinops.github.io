@@ -125,6 +125,9 @@ optech_mentions:
   - title: "LND #5159 adds support for making spontaneous AMPs"
     url: /en/newsletters/2021/05/05/#lnd-5159
 
+  - title: Electrum 4.1.0 adds support for multipath payments
+    url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

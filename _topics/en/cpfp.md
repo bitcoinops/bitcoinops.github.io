@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Bitcoin Core #21359 allows CPFP fee bumping incoming payments"
     url: /en/newsletters/2021/05/19/#bitcoin-core-21359
 
+  - title: Sparrow 1.4.0 adds support for CPFP fee bumping from transaction list
+    url: /en/newsletters/2021/05/19/#sparrow-1-4-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

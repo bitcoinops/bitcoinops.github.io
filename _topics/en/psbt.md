@@ -141,6 +141,9 @@ optech_mentions:
   - title: "LND #5291 improves the way LND ensures PSBTs use segwit inputs"
     url: /en/newsletters/2021/05/19/#lnd-5291
 
+  - title: BlueWallet v6.1.0 adds support for using PSBTs with watch-only wallets
+    url: /en/newsletters/2021/05/19/#bluewallet-v6-1-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
