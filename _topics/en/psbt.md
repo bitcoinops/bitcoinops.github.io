@@ -138,7 +138,7 @@ optech_mentions:
   - title: "BIPs #1059 publishes the draft specification for v2 PSBTs as BIP370"
     url: /en/newsletters/2021/03/24/#bips-1059
 
-  - title: "LND #5291 improves the way LND ensures PSBTs use segwit inputs"
+  - title: "LND #5291 improves the way it ensures PSBTs use segwit inputs"
     url: /en/newsletters/2021/05/19/#lnd-5291
 
   - title: BlueWallet v6.1.0 adds support for using PSBTs with watch-only wallets
