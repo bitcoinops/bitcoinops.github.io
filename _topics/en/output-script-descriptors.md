@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Bitcoin Core #20867 increases max multisig keys for descriptors to 20"
     url: /en/newsletters/2021/05/12/#bitcoin-core-20867
 
+  - title: "BIPs #1089 assigns BIP87 to a multisig wallet standard using descriptors"
+    url: /en/newsletters/2021/05/26/#bips-1089
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
