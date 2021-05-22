@@ -33,7 +33,70 @@ but I'd prefer not to have an empty News section if we can avoid it -harding -->
   to update that list yourself, please let the editors know in
   `#bitcoin-wiki` on Libera.
 
-## FIXME: anniversary
+## Celebrating Optech Newsletter #150
+*by [John Newbery][], Founder, Optech*
+
+This is the 150th regular Optech weekly newsletter that we've written for the
+Bitcoin technical community. Pausing only for short breaks around the Christmas
+holidays, we've published digests of the most important events in Bitcoin
+and Lightning development every week since June 2018.
+
+Optech was started with some very simple goals: to help Bitcoin businesses adopt
+technologies that allow Bitcoin to scale, and to highlight the amazing
+technical work happening in the open source Bitcoin community. Although we
+couldn't foresee exactly what form that would take three years ago, it's a
+mission that we continue to believe in, and that guides all the work we do.
+Since June 2018, we've:
+
+* Published 150 [newsletters][], numerous [blog posts][] and field reports,
+  a [special series on bech32][bech32], and an [interactive taproot workshop][]. In
+  total, we've published around 250,000 words -- enough to fill around 700
+  printed pages. <!-- wc _posts/en/newsletters/*md _posts/en/*md
+  _includes/articles/*md _includes/specials/2019-exec-briefing/*md
+  _includes/specials/bech32/*md-->
+
+* Reached 4,100 email subscribers and almost 11,000 twitter followers.
+
+* Started seeing some of our newsletters translated into [Japanese][] and
+  [Spanish][] by members of the community.
+
+* Produced and maintained a [topics index][] -- a single location where readers
+  can track the evolution of Bitcoin and Lightning proposals and improvements.
+
+The newsletters are the work of many contributors. Foremost amongst them is
+[Dave Harding][], who writes the majority of our content. To say that Dave is
+prolific is an understatement -- week after week, he produces concise,
+clear summaries of the enormously varied research and development happening
+across the Bitcoin ecosystem. We're lucky to have someone of his breadth of
+knowledge, dedication and humility documenting Bitcoin. The extensive body of
+work that he's produced for Optech and other projects is a huge asset for all
+present and future Bitcoiners.
+
+The supporting roles are filled by other Optechers. [Mike Schmidt][]
+writes our regular sections on Stack Exchange Q&As and Notable Changes to
+Bitcoin Software and Infrastructure, and makes sure that the newsletter arrives
+in everyone's inbox on time. [Jon Atack][] contributes our regular summary
+of Bitcoin Core PR Review Club. As well as Mike and Jon, [Carl Dong][], [Adam
+Jonas][], [Mark Erhardt][] and I contribute occasional PR summaries and review
+each week's newsletter to try to ensure the content we produce is accurate and
+clear.
+
+Special thanks to [Shigeyuki Azuchi][], who translates our newsletters into
+Japanese, and [Akio Nakamura][] who has also translated and reviewed our
+Japanese material.
+
+Thanks to all the members of the Bitcoin community -- too numerous to name
+individually -- who have reviewed our newsletters, helped us understand
+concepts, and opened issues and PRs when we've made mistakes.
+
+All of this work is made possible by our generous [supporters][], primarily
+our [founding sponsors][] - Wences Casares, John Pfeffer and Alex Morcos.
+
+Finally, thank you, our readers. We love being part of this community and
+contributing to this ecosystem. Knowing how valuable this resource is to so many
+people, and hearing feedback from our readers is hugely rewarding for us. If you
+want to contribute, or have suggestions for how we can improve, please don't
+hesitate to contact us at [info@bitcoinops.org][info].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -140,3 +203,22 @@ BOLTs][bolts repo].*
 [libera.chat]: https://libera.chat/
 [list of IRC channels]: https://en.bitcoin.it/wiki/IRC_channels
 [spigler independent]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018630.html
+[john newbery]: https://twitter.com/jfnewbery
+[newsletters]: /en/newsletters/
+[blog posts]: /en/blog/
+[bech32]: /en/bech32-sending-support/
+[interactive taproot workshop]: /en/schorr-taproot-workshop/
+[japanese]: /ja/publications/
+[spanish]: /es/publications/
+[topics index]: /en/topics/
+[dave harding]: https://dtrt.org/
+[mike schmidt]: https://twitter.com/bitschmidty
+[jon atack]: https://twitter.com/jonatack
+[carl dong]: https://twitter.com/carl_dong
+[adam jonas]: https://twitter.com/adamcjonas
+[mark erhardt]: https://twitter.com/murchandamus
+[shigeyuki azuchi]: https://github.com/azuchi
+[akio nakamura]: https://github.com/AkioNak
+[supporters]: /#supporters
+[founding sponsors]: /about/#founding-sponsors
+[info]: mailto:info@bitcoinops.org
