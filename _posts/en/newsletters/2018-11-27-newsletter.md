@@ -161,7 +161,7 @@ commits].*
   all uppercase (but not mixed case) per the [BIP173][] bech32
   specification.
 
-- C-Lightning [<!--c-lightning-->#2081][c-lightning #2081] and [#2092][c-lightning #2092]
+- [C-Lightning #2081][] and [#2092][c-lightning #2092]
   fix a problem with running multiple RPC commands in parallel.  As a
   user-visible change, `lightningd` now adds a double newline (`\n\n`)
   instead of just a single newline to the final output from an RPC.  As

@@ -97,18 +97,18 @@ wait until version 0.18 in about six months from now.*
   Core 0.17 and are expected to be used for other interactions with the
   wallet in the future.
 
-- LND made almost 30 merges in the past week, many of which made
+- **LND** made almost 30 merges in the past week, many of which made
   small enhancements or bugfixes to its autopilot facility---its ability
   to allow users to choose to automatically open new channels with
   automatically-selected peers.  Several merges also updated which
   versions of libraries LND depends upon.
 
-- C-Lightning added several hundred lines of documentation to its
+- [C-Lightning #1899][] added several hundred lines of documentation to its
   repository this week, most of it inline code documentation or updates
   to files in its [/doc directory][c-lightning docs].
 
 {% include references.md %}
-{% include linkers/issues.md issues="12775,12490,14096" %}
+{% include linkers/issues.md issues="12775,12490,14096,1899" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [workshop]: /workshops

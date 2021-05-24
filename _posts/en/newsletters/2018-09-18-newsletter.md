@@ -180,12 +180,12 @@ wait until version 0.18 in about six months from now.*
   automation to work, users must already have Tor installed and running
   as a service.
 
-- C-Lightning: for testing, an RPC proxy is now used to simplify mocking
+- [C-Lightning #1860][]: for testing, an RPC proxy is now used to simplify mocking
   responses to various RPC calls, making it easier to test lightningd's
   handling of things such as fee estimates and crashes of bitcoind.
 
 {% include references.md %}
-{% include linkers/issues.md issues="14054,1843,1516,7965,14168,10973,14180" %}
+{% include linkers/issues.md issues="14054,1843,1516,7965,14168,10973,14180,1860" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [workshop]: /workshops
