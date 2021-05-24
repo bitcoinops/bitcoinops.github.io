@@ -154,18 +154,18 @@ wait until version 0.18 in about six months from now.*
   spending any of the same inputs with a higher fee as described by
   [BIP125][].
 
-- C-Lightning tagged its first release candidate for version 0.16.1.
+- [C-Lightning #1874][] tagged its first release candidate for version 0.6.1.
 
-- C-Lightning reduced the number of places where it refers to 1,000
+- [C-Lightning #1870][] reduced the number of places where it refers to 1,000
   weight units as "sipa" and began calling them by the more widely
   accepted term "kiloweights" (kw).
 
-- C-Lightning made multiple improvements to how it handles fees,
+  The PR also made multiple improvements to how it handles fees,
   both for on-chain transactions to open and close channels where
   C-Lightning outsources fee estimation to Bitcoin Core, and also for
   fees in payment channels.
 
-- C-Lightning implemented additional parts of [BOLT2][], particularly
+- [C-Lightning #1854][] implemented additional parts of [BOLT2][], particularly
   related to the `option_data_loss_protect` field, to improve handling
   of cases where your node appears to have lost essential data---a
   commitment value---or the remote node is sending invalid commitment
@@ -173,7 +173,7 @@ wait until version 0.18 in about six months from now.*
 
 ---
 {% include references.md %}
-{% include linkers/issues.md issues="14032,12254,12676" %}
+{% include linkers/issues.md issues="14032,12254,12676,1874,1870,1854" %}
 
 [dandelion protocol]: https://arxiv.org/abs/1701.04439
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/

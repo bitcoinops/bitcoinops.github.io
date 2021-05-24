@@ -130,14 +130,14 @@ wait until version 0.18 in about six months from now.*
   allowing you to easily discover the minimum feerates being used by
   your peers.
 
-- C-Lightning now allows you to ask lightningd to calculate a feerate
+- [C-Lightning #1887][] now allows you to ask lightningd to calculate a feerate
   target for your on-chain transactions by passing the either "urgent",
   "normal", or "slow" to the `feerate` parameter.  Alternatively, you
   may use this parameter to manually specify a particular feerate you
   want to use.
 
 {% include references.md %}
-{% include linkers/issues.md issues="12952,13987" %}
+{% include linkers/issues.md issues="12952,13987,1887" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [dashboard post]: /en/dashboard-announcement/

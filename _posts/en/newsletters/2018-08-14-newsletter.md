@@ -211,19 +211,19 @@ users and developers highly appreciate that work.*
   automatically converted to the use of satoshis per kiloweight (1,000
   vbytes) as defined in the [protocol][BOLT2].
 
-- C-Lightning: a paying node will no longer send an HTLC commitment
+- [C-Lightning #1811][]: a paying node will no longer send an HTLC commitment
   (payment) to another node unless it's heard from that node within the
   past 30 seconds.  If necessary, it'll ping the recipient node before
   sending the commitment.  This helps the paying node abort a payment
   earlier in the process if that payment was destined to fail anyway
   because of a network interruption.
 
-- C-Lightning: various moderate improvements to the code for
+  Also included are various other moderate improvements to the code for
   reconnecting to disconnected peers, including exponential backoff and
   reconnection time fuzzing.
 
 {% include references.md %}
-{% include linkers/issues.md issues="13922,13907,13925,1644,13666" %}
+{% include linkers/issues.md issues="13922,13907,13925,1644,13666,1811" %}
 
 [news3 lower relay]: {{news3}}#news
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md

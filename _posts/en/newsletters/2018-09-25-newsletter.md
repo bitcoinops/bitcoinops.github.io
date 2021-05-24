@@ -154,17 +154,17 @@ wait until version 0.18 in about six months from now.*
   peers into believing a different peer had a routing failure, thus
   possibly redirecting traffic to the malicious node.
 
-- C-Lightning now provides a `gossipwith` tool that allows you to
+- [C-Lightning #1945][] now provides a `gossipwith` tool that allows you to
   receive gossip from a node independently of lightningd or even to send
   the remote node a message.  This tool is used for additional testing
   of lightningd's gossip component.
 
-- C-Lightning now complies with updates to [BOLT7][bolt7] by
+- [C-Lightning #1954][] now complies with updates to [BOLT7][bolt7] by
   splitting the previous `flags` field for the `listchannels` RPC into
   two new fields: `message_flags` and `channel_flags`.  Also code
   comments and references to [BOLT2][] and [BOLT11][] have been updated.
 
-- C-Lightning has significantly expanded the in-code documentation of
+- [C-Lightning #1905][] has significantly expanded the in-code documentation of
   its secrets module.  The documentation is remarkably good (and, at
   times, quite humorous).  See [hsmd.c][].  The code comments even
   document other code comments:
@@ -180,12 +180,12 @@ wait until version 0.18 in about six months from now.*
      derive_funding_key(&channel_seed, &funding_pubkey, &funding_privkey);
     ```
 
-- C-Lightning can now make multiple requests in parallel to bitcoind,
+- [C-Lightning #1947][] can now make multiple requests in parallel to bitcoind,
   speeding up operations on slow systems or on nodes performing long-running
   operations.
 
 {% include references.md %}
-{% include linkers/issues.md issues="13152,1738,1707" %}
+{% include linkers/issues.md issues="13152,1738,1707,1945,1954,1905,1947" %}
 
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 [bse 79484]: {{bse}}79484
