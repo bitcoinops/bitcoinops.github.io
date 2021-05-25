@@ -170,7 +170,12 @@ BOLTs][bolts repo].*
   specified network. When called without the `network` argument,
   `getnodeaddresses` will return known addresses from all networks.
 
-- [Eclair #1810][] Make payment_secret mandatory FIXME:dongcarl
+- [Eclair #1810][] makes it mandatory for peers to signal and comply with the
+  `payment_secret` feature bit. The payment secrets feature thwarts [a recipient
+  de-anonymization attack][payment secrets recipient deanon] and provides
+  additional protection against [improper image revelation][CVE-2020-26896]. The
+  feature is supported across all major implementations and is mandatory for
+  payments to [LND][LND paysec] and [Rust-Lightning][RL paysec].
 
 - [Eclair #1774][] extends Java's built-in `SecureRandom()` [CSPRNG][]
   function with a secondary source of weaker randomness.  The weaker
@@ -256,3 +261,7 @@ BOLTs][bolts repo].*
 [se 273 merge mining]: https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work
 [bitcoins academic pedigree paper]: https://queue.acm.org/detail.cfm?id=3136559
 [taproot watch website]: https://taproot.watch
+[CVE-2020-26896]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26896
+[payment secrets recipient deanon]: /en/newsletters/2019/12/04/#c-lightning-3259
+[LND paysec]: /en/newsletters/2020/12/02/#lnd-4752
+[RL paysec]: /en/newsletters/2021/05/05/#rust-lightning-893
