@@ -109,7 +109,34 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why are there more than two transaction outputs in a coinbase transaction?]({{bse}}105831)
+  Andrew Chow explains some common outputs in a coinbase transaction:
+
+    * a single miner block reward payment
+
+    * multiple payments, as with a mining pool paying miners
+
+    * [BIP141][bip141 commitment]'s `OP_RETURN` witness commitment
+
+    * additional `OP_RETURN` commitments, as in [merge mining][se 273 merge
+      mining] and other protocols
+
+- [fundrawtransaction - what is it?]({{bse}}105811)
+  Pieter Wuille illustrates what the `fundrawtransaction` RPC does by providing
+  4 examples of how to send coins using the RPC.
+
+- [What previously existing technologies made Bitcoin possible?]({{bse}}106000)
+  Murch provides a summary, based on the [Bitcoin's Academic Pedigree
+  paper][bitcoins academic pedigree paper], of the existing technological ingredients
+  that were combined to create Bitcoin. These technologies are linked
+  timestamping/verifiable logs, byzantine fault tolerance, proof of work,
+  digital cash, and public keys as identities.
+
+- [How can I follow the progress of miner signaling for Taproot activation?]({{bse}}105853)
+  In addition to Hampus Sjöberg's [https://taproot.watch][taproot watch website] website, Bitcoin
+  Core users can use `getblockchaininfo` to get a count of signaling blocks and
+  `getblock`'s versionhex field, where the signaling version bits reside, to
+  observe signaling.
 
 ## Releases and release candidates
 
@@ -222,3 +249,7 @@ BOLTs][bolts repo].*
 [supporters]: /#supporters
 [founding sponsors]: /about/#founding-sponsors
 [info]: mailto:info@bitcoinops.org
+[bip141 commitment]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure
+[se 273 merge mining]: https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work
+[bitcoins academic pedigree paper]: https://queue.acm.org/detail.cfm?id=3136559
+[taproot watch website]: https://taproot.watch
