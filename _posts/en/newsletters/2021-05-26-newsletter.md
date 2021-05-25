@@ -164,8 +164,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-
-- [Bitcoin Core #21843][] rpc: enable GetAddr, GetAddresses, and getnodeaddresses by network FIXME:jnewbery
+- [Bitcoin Core #21843][] adds a `network` argument to the `getnodeaddresses`
+  RPC. When `getnodeaddresses` is called with this argument set to a supported network type (`ipv4`,
+  `ipv6`, `onion` or `i2p`), it will only return known addresses on the
+  specified network. When called without the `network` argument,
+  `getnodeaddresses` will return known addresses from all networks.
 
 - [Eclair #1810][] Make payment_secret mandatory FIXME:dongcarl
 
