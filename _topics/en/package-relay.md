@@ -53,6 +53,9 @@ optech_mentions:
   - title: Upcoming relay policy workshop to discuss package relay and other topics
     url: /en/newsletters/2021/04/28/#call-for-topics-in-layer-crossing-workshop
 
+  - title: "Bitcoin Core #20833 allows `testmempoolaccept` to eval related transactions"
+    url: /en/newsletters/2021/06/02/#bitcoin-core-20833
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

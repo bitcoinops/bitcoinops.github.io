@@ -75,7 +75,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #20833][] rpc/validation: enable packages through testmempoolaccept FIXME:bitschmidty
+- [Bitcoin Core #20833][] is the first PR in an effort to implement
+  [mempool package acceptance][package mempool accept blog] in Bitcoin
+  Core. This change allows the `testmempoolaccept` RPC
+  to accept multiple transactions where later transactions may be
+  descended from earlier transactions. Future PRs may enable testing L2 transaction
+  chains, submitting transaction packages directly to the mempool through RPCs
+  and communicating packages over the P2P network.
 
 - [Bitcoin Core #22017][] updates the code signing certificate used for
   Windows releases after the previous certificate was revoked by its
@@ -135,3 +141,4 @@ BOLTs][bolts repo].*
 [news117 cl4068]: /en/newsletters/2020/09/30/#c-lightning-4068
 [news19 bip69]: /en/newsletters/2018/10/30/#bip69-discussion
 [json schemas]: http://json-schema.org/
+[package mempool accept blog]: https://brink.dev/blog/2021/01/21/fellowship-project-package-accept/
