@@ -1,16 +1,16 @@
 {:.post-meta}
 *by [Justin D][justin], FIXME:bitschmidty at [CardCoins][]*
 
-RBF (BIP-125) and batching are two important tools for any enterprise which
+[Replace By Fee][topic rbf] (RBF, BIP-125) and [batching][payment batching] are two important tools for any enterprise which
 directly interacts with Bitcoin's mempool. Fees go up, fees go down, but always
 must the business fight for fee efficiency.
 
 Each tool, while powerful, has its own complexities and nuances. For example,
 batching customer withdrawals may save the enterprise fees, but will likely make
-CPFP uneconomical for a customer who wishes to speed up the transaction.
+[child pays for parent][topic cpfp] (CPFP) uneconomical for a customer who wishes to speed up the transaction.
 Similarly, RBF is useful for an enterprise who takes a fee-underbidding strategy
 (their initial transaction broadcast starts at a low fee, and is slowly bid
-upwards), but it exposes their customers to potential confusion as their
+upwards), but it exposes their customers to [potential confusion][rbf blog] as their
 withdrawal transaction updates in their wallet. It also would be messy for the
 customer to spend from this transaction while it remains unconfirmed, as the
 enterprise will have to account for this child spend when attempting to replace
@@ -33,11 +33,16 @@ each customer requests a withdrawal, an output is added to the transaction in
 the mempool. This transaction continues to be updated until it confirms or
 reaches some other local optimum.
 
-There are many strategies to this type of additive RBF batching. At CardCoins we
-took a safety-first approach to our implementation (with the help of Matthew
-Zipkin), the nuances of which we detailed in a more detailed blog post, RBF
-Batching at CardCoins: Diving into the Mempool's Dark Reorg Forest.
+There are many strategies to this type of additive RBF batching. At [CardCoins][] we
+took a safety-first approach to our implementation (with the help of [Matthew
+Zipkin][]), the nuances of which we detailed in a more detailed blog post, [RBF
+Batching at CardCoins: Diving into the Mempool's Dark Reorg Forest][cardcoins
+rbf blog].
 
 {% include references.md %}
 [justin]: FIXME:bitschmidty
 [CardCoins]: https://www.cardcoins.co/
+[payment batching]: /en/payment-batching/
+[rbf blog]: /en/rbf-in-the-wild/#some-usability-examples
+[Matthew Zipkin]: https://twitter.com/MatthewZipkin
+[cardcoins rbf blog]: FIXME:bitschmidty
