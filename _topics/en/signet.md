@@ -93,6 +93,9 @@ optech_mentions:
   - title: "Discussion about multiple signet compatibilty with soft fork activation"
     url: /en/newsletters/2021/04/14/#taproot-activation-discussion
 
+  - title: "LND #5025 adds basic support for using signet"
+    url: /en/newsletters/2021/06/02/#lnd-5025
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

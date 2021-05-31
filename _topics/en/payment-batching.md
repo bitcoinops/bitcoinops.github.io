@@ -71,6 +71,9 @@ optech_mentions:
     url: /en/veriphi-segwit-batching/
     date: 2020-08-12
 
+  - title: Candidate set based block templates may help fee bumping batched payments
+    url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKTEMPLATEVERIFY

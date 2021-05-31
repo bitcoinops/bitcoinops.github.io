@@ -60,6 +60,9 @@ optech_mentions:
   - title: "WabiSabi: a protocol for coordinated coinjoins with arbitrary output values"
     url: /en/newsletters/2020/06/17/#wabisabi-coordinated-coinjoins-with-arbitrary-output-values
 
+  - title: Candidate set based block templates may help fee bumping large coinjoins
+    url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin
