@@ -67,9 +67,9 @@ software.
     multisignatures to join together with users of contract protocols to
     mutually improve each others' privacy and fungibility.
 
-## FIXME:article
+## Field Report: Using RBF and Additive Batching
 
-FIXME:harding to rebase on #582 on Tuesday
+{% include articles/cardcoins-rbf-batching.md %}
 
 ## Releases and release candidates
 
