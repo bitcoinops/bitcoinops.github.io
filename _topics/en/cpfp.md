@@ -56,6 +56,9 @@ optech_mentions:
   - title: Sparrow 1.4.0 adds support for CPFP fee bumping from transaction list
     url: /en/newsletters/2021/05/19/#sparrow-1-4-0-released
 
+  - title: Candidate set block templates may make some CPFP fee bumps more effective
+    url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
