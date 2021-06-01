@@ -1,20 +1,20 @@
 {:.post-meta}
-*by [Justin D][justin], FIXME:bitschmidty at [CardCoins][]*
+*by [CardCoins][]*
 
-[Replace By Fee][topic rbf] (RBF, BIP-125) and [batching][payment batching] are two important tools for any enterprise which
-directly interacts with Bitcoin's mempool. Fees go up, fees go down, but always
-must the business fight for fee efficiency.
+[Replace By Fee][topic rbf] (RBF, BIP-125) and [batching][payment batching] are two important tools for any enterprises
+directly interacting with Bitcoin's mempool. Fees go up, fees go down, but
+the business must always fight for fee efficiency.
 
 Each tool, while powerful, has its own complexities and nuances. For example,
-batching customer withdrawals may save the enterprise fees, but will likely make
+batching customer withdrawals may save on fees for the enterprise, but will likely make
 [child pays for parent][topic cpfp] (CPFP) uneconomical for a customer who wishes to speed up the transaction.
 Similarly, RBF is useful for an enterprise who takes a fee-underbidding strategy
 (their initial transaction broadcast starts at a low fee, and is slowly bid
 upwards), but it exposes their customers to [potential confusion][rbf blog] as their
-withdrawal transaction updates in their wallet. It also would be messy for the
+withdrawal transaction updates in their wallet. It would also be messy for the
 customer to spend from this transaction while it remains unconfirmed, as the
 enterprise will have to account for this child spend when attempting to replace
-the parent. Even worse, the enterprise may have a withdrawal pinned by another
+the parent. Even worse, the enterprise may have a withdrawal [pinned][pinning] by another
 service that the customer withdrew their funds directly to.
 
 When combining these two tools, a service provider unlocks new functionality but
@@ -40,9 +40,9 @@ Batching at CardCoins: Diving into the Mempool's Dark Reorg Forest][cardcoins
 rbf blog].
 
 {% include references.md %}
-[justin]: FIXME:bitschmidty
 [CardCoins]: https://www.cardcoins.co/
 [payment batching]: /en/payment-batching/
 [rbf blog]: /en/rbf-in-the-wild/#some-usability-examples
+[pinning]: /en/topics/transaction-pinning/
 [Matthew Zipkin]: https://twitter.com/MatthewZipkin
 [cardcoins rbf blog]: FIXME:bitschmidty
