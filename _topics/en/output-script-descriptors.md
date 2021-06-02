@@ -86,7 +86,7 @@ optech_mentions:
   - title: Specter-DIY v1.5.0 adds full descriptor support
     url: /en/newsletters/2021/04/21/#specter-diy-v1-5-0
 
-  - title: "Bitcoin Core #20867 increases max multisig keys for descriptors to 20"
+  - title: "Bitcoin Core #20867 increases the maximum multisig keys for descriptors to 20"
     url: /en/newsletters/2021/05/12/#bitcoin-core-20867
 
   - title: "BIPs #1089 assigns BIP87 to a multisig wallet standard using descriptors"

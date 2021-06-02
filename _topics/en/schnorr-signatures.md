@@ -101,7 +101,7 @@ optech_mentions:
   - title: "Comparison of SSS to `OP_CHECKMULTISIG` to schnorr multisignatures"
     url: /en/newsletters/2021/02/24/#is-sharding-a-good-alternative-to-multisig
 
-  - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr sigs"
+  - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr signatures"
     url: /en/newsletters/2021/05/12/#rust-bitcoin-589
 
 ## Optional.  Same format as "primary_sources" above

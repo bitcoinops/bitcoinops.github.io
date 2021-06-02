@@ -170,7 +170,7 @@ optech_mentions:
   - title: "BIPs #1104 adds activation parameters to the BIP341 taproot specification"
     url: /en/newsletters/2021/05/05/#bips-1104
 
-  - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr sigs"
+  - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr signatures"
     url: /en/newsletters/2021/05/12/#rust-bitcoin-589
 
 ## Optional

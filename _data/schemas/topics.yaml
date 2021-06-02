@@ -85,7 +85,7 @@ properties:
           description: Title to use for the mention
           type: string
           minLength: 1
-          maxLength: 75  ## Arbitrary but important to keep short for topic index
+          maxLength: 100  ## Arbitrary but important to keep short for topic index
         url:
           description: Internal URL for the mention
           type: string
