@@ -93,7 +93,7 @@ BOLTs][bolts repo].*
 - [Bitcoin Core #18418][] increases the maximum number of UTXOs received
   to the same address that will be spent simultaneously if the
   `avoid_reuse` wallet flag is set.  The more outputs that are spent
-  together, the higher the fee might be relative to a wallet with
+  together, the higher the fee might be for that particular transaction relative to a wallet with
   default flags but, also, the less likely it becomes that third parties
   will be able to identify the user's later transactions.
 
