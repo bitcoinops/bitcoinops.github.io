@@ -53,7 +53,6 @@ properties:
     type: string
     minLength: 1   ## Anything not empty
     maxLength: 500 ## Arbitrary but suggest keeping it short in case we add the excerpts to an index at some point
-    pattern: "^\\*\\*"  ## Start excerpt with topic name in bold
 
   primary_sources: &sources
     description: Links about the topic the reader may find interesting
