@@ -24,6 +24,10 @@ test-before-build:
 	## Check schemas against data files
 	! find _data/compatibility -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $$file || echo Error: $$file ; done | grep .
 	! find _topics/ -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml $$file || echo Error: $$file ; done | grep .
+
+	## Ensure topics have a bold term on their first line
+	! git --no-pager grep -A1 ^excerpt: -- _topics/ | sed '/:excerpt:/d; /^--$$/d' | grep -v '\*\*' | grep -q .
+
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
