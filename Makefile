@@ -39,9 +39,6 @@ build:
 
 
 test-before-build: $(compatibility_validation) $(topic_validation)
-	## Ensure topics have a bold term on their first line
-	! git --no-pager grep -A1 ^excerpt: -- _topics/ | sed '/:excerpt:/d; /^--$$/d' | grep -v '\*\*' | grep -q .
-
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
