@@ -1,5 +1,5 @@
 all: test-before-build build test-after-build
-production: all production-test
+production: clean all production-test
 
 ## If we call git in our tests without using the --no-pager option
 ## or redirecting stdout to another command, fail unconditionally.
@@ -7,6 +7,13 @@ production: all production-test
 ## it tries to paginate the output, see:
 ## https://github.com/bitcoinops/bitcoinops.github.io/pull/494#discussion_r546376335
 export GIT_PAGER='_contrib/kill0'
+JEKYLL_FLAGS = --future --drafts --unpublished --incremental
+
+## Expected filenames in output directory
+compatibility_validation = $(wildcard _data/compatibility/*.yaml)
+compatibility_validation := $(patsubst _data/compatibility/%.yaml,_site/en/compatibility/%/index.html,$(compatibility_validation))
+topic_validation = $(wildcard _topics/en/*.md)
+topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 
 clean:
 	bundle exec jekyll clean
@@ -20,17 +27,18 @@ preview:
 	      _site/en/topics/categories/index.html \
 	      _site/en/topics/dates/index.html \
 	      _site/en/topics/index.html
-	bundle exec jekyll serve --future --drafts --unpublished --incremental
+	bundle exec jekyll serve $(JEKYLL_FLAGS)
 
 build:
-	bundle exec jekyll clean
-	bundle exec jekyll build --future --drafts --unpublished
+	@# Tiny sleep for when running concurrently to ensure output
+	@# files aren't created before changed input files are marked
+	@# for schema validation.
+	@sleep 0.1
 
-test-before-build:
-	## Check schemas against data files
-	! find _data/compatibility -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $$file || echo Error: $$file ; done | grep .
-	! find _topics/ -type f | while read file ; do bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml $$file || echo Error: $$file ; done | grep .
+	bundle exec jekyll build $(JEKYLL_FLAGS)
 
+
+test-before-build: $(compatibility_validation) $(topic_validation)
 	## Ensure topics have a bold term on their first line
 	! git --no-pager grep -A1 ^excerpt: -- _topics/ | sed '/:excerpt:/d; /^--$$/d' | grep -v '\*\*' | grep -q .
 
@@ -74,7 +82,7 @@ test-before-build:
 	## Check for mistakes typical spell checkers can't catch
 	! git --no-pager grep -i '[d]iscrete log contract'
 
-test-after-build:
+test-after-build: build
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	! find _site/ -name '*.html' | xargs grep '\[^' | grep .
@@ -105,3 +113,10 @@ email: clean
 	@ echo "[NOTICE] Latest Newsletter: http://localhost:4000/en/newsletters/$$(ls _posts/en/newsletters/ | tail -1 | tr "-" "/" | sed 's/newsletter.md//')"
 	@ echo
 	$(MAKE) preview JEKYLL_ENV=email
+
+## Path-based rules
+_site/en/compatibility/%/index.html : _data/compatibility/%.yaml
+	bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $<
+
+_site/en/topics/%/index.html : _topics/en/%.md
+	bundle exec _contrib/schema-validator.rb _data/schemas/topics.yaml $<
