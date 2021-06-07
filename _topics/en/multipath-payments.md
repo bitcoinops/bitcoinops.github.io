@@ -131,6 +131,9 @@ optech_mentions:
   - title: "LND #5253 adds support for Atomic Multipath Payment (AMP) invoices"
     url: /en/newsletters/2021/05/19/#lnd-5253
 
+  - title: "LND #5336 adds the ability for users to reuse AMP invoices non-interactively"
+    url: /en/newsletters/2021/06/09/#lnd-5336
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
