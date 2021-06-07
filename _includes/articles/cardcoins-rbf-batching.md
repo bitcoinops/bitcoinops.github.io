@@ -1,7 +1,7 @@
 {:.post-meta}
 *by [CardCoins][]*
 
-[Replace By Fee][topic rbf] (RBF, BIP-125) and [batching][payment batching] are two important tools for any enterprises
+[Replace By Fee][topic rbf] (RBF, BIP125) and [batching][payment batching] are two important tools for any enterprises
 directly interacting with Bitcoin's mempool. Fees go up, fees go down, but
 the business must always fight for fee efficiency.
 
@@ -13,9 +13,9 @@ Similarly, RBF is useful for an enterprise who takes a fee-underbidding strategy
 upwards), but it exposes their customers to [potential confusion][rbf blog] as their
 withdrawal transaction updates in their wallet. It would also be messy for the
 customer to spend from this transaction while it remains unconfirmed, as the
-enterprise will have to account for this child spend when attempting to replace
+enterprise will have to pay for this child spend when attempting to replace
 the parent. Even worse, the enterprise may have a withdrawal [pinned][pinning] by another
-service that the customer withdrew their funds directly to.
+service which received the customer's withdrawal.
 
 When combining these two tools, a service provider unlocks new functionality but
 is similarly exposed to novel forms of complexity. In the base case, combining
@@ -25,7 +25,7 @@ that RBF and batching carry discretely. However, when you combine RBF and
 themselves.
 
 Additive RBF batching is a transaction construction protocol that leverages the
-rules of BIP-125 to allow a transactor to introduce new outputs (and confirmed
+rules of BIP125 to allow a transactor to introduce new outputs (and confirmed
 inputs) to a transaction in the mempool. This enables an enterprise to give
 users the experience of an instantaneous withdrawal while still retaining much
 of the fee savings from doing large batches of customer withdrawals at once. As
