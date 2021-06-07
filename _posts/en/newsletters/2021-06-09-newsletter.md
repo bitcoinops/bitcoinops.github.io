@@ -54,12 +54,71 @@ infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:jonatack
+[Prune g_chainman usage in auxiliary modules][review club #21767] is a
+refactoring PR ([#21767][Bitcoin Core #21767]) by Carl Dong that is part of a
+project to de-globalize `g_chainman` as a first step toward modularizing the
+consensus engine. This would decouple
+components and enable more focused testing.  A longer-term goal is to
+completely separate the consensus engine from non-consensus code.
+
+The review club discussion began with the following general questions before
+diving deeper into the code changes:
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/21061#FIXME"
+  q0="This PR is a refactoring and should not change any functional
+      behaviour.  What are some ways we can verify that?"
+  a0="Reviewing the code carefully, running the tests, adding test coverage,
+      inserting asserts or custom logging, building with `--enable-debug`,
+      running bitcoind with the changes, and stepping through the code
+      with debuggers like GDB or LLDB."
+  a0link="https://bitcoincore.reviews/21767#l-53"
+
+  q1="This PR is part of a larger project to modularize and separate the Bitcoin
+      Core consensus engine.  What are some benefits of doing that?"
+  a1="This could make it easier to reason about, maintain, configure and test
+      the code.  It could expose a minimal API for security and maintainability,
+      with configuration options to pass non-global data. We could construct
+      components with variable parameters, providing more control over testing those
+      objects with different configurations."
+  a1link="https://bitcoincore.reviews/21767#l-63"
+
+  q2="What is the `ChainstateManager` responsible for?"
+  a2="The [`ChainstateManager`][ChainstateManager] class provides an interface
+      for creating and interacting with one or two chainstates: initial block
+      download (IBD) and an optional snapshot."
+  a2link="https://bitcoincore.reviews/21767#l-117"
+
+  q3="What does `CChainState` do?"
+  a3="The [`CChainState`][CChainState] class stores the current best chain and
+      provides an API to update our local knowledge of its state."
+  a3link="https://bitcoincore.reviews/21767#l-174"
+
+  q4="What is the `CChain` class?"
+  a4="The [`CChain`][CChain] class is an in-memory indexed chain of blocks. It
+      contains a [vector of block index pointers][cchain vectors]."
+  a4link="https://bitcoincore.reviews/21767#l-120"
+
+  q5="What is the `BlockManager` responsible for?"
+  a5="The [`BlockManager`][BlockManager] class maintains a tree of blocks stored
+      in `m_block_index` that is consulted to locate the most-work chain tip."
+  a5link="https://bitcoincore.reviews/21767#l-121"
+
+  q6="What is `cs_main`?"
+
+  a6="`cs_main` is a mutex that protects validation-specific data (as well as,
+      for now, many other things). The name means [*critical section
+      main*][csmain1], as it protected data in `main.cpp`, and the code that is
+      now in `validation.cpp` and `net_processing.cpp` [used to be in one file
+      called `main.cpp`][csmain2])."
+
+  a6link="https://bitcoincore.reviews/21767#l-202"
+
+  q7="Conceptually, when we refer to the \"validation\" part of the codebase,
+      what does that include?"
+  a7="Validation stores and maintains our best view of the block chain and
+      associated UTXO set. It also includes an interface to submit unconfirmed
+      transactions to the mempool."
+  a7link="https://bitcoincore.reviews/21767#l-228"
 %}
 
 ## Releases and release candidates
@@ -130,7 +189,7 @@ BOLTs][bolts repo].*
   processors such as Stripe and Coinbase Commerce.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22051,22050,22095,4532,869,5336,2474,1030,868" %}
+{% include linkers/issues.md issues="22051,22050,22095,4532,869,5336,2474,1030,868,21767" %}
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc5
 [news64 static remotekey]: /en/newsletters/2019/09/18/#c-lightning-3010
 [news108 channel upgrades]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
@@ -141,3 +200,10 @@ BOLTs][bolts repo].*
 [fournier asym]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003045.html
 [btcd issue]: https://github.com/btcsuite/btcutil/issues/172
 [news132 v3onion]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+[cchain vectors]: https://bitcoincore.reviews/21767#l-196
+[csmain1]: https://bitcoincore.reviews/21767#l-216
+[csmain2]: https://bitcoincore.reviews/21767#l-213
+[ChainstateManager]: https://github.com/bitcoin/bitcoin/blob/7a799c9/src/validation.h#L759
+[CChainState]: https://github.com/bitcoin/bitcoin/blob/7a799c9/src/validation.h#L502
+[CChain]: https://github.com/bitcoin/bitcoin/blob/7a799c9/src/chain.h#L391
+[BlockManager]: https://github.com/bitcoin/bitcoin/blob/7a799c9/src/validation.h#L343
