@@ -91,6 +91,9 @@ optech_mentions:
   - title: "LND #1516 adds support for automatically setting up a v3 onion service"
     url: /en/newsletters/2018/09/18/#lnd-1516
 
+  - title: "Bitcoin Core #22050 drops support for deprecated version 2 Tor onion services"
+    url: /en/newsletters/2021/06/09/#bitcoin-core-22050
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
