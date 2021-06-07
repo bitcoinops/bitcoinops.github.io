@@ -181,7 +181,10 @@ BOLTs][bolts repo].*
   `option_static_remotekey`, which C-Lightning first added support for
   in 2019, see [Newsletter #64][news64 static remotekey].
 
-- [LND #5336][] lnrpc: allow AMP pay-addr override + bump invoice timeouts FIXME:dongcarl
+- [LND #5336][] adds the ability for users to reuse [AMP][topic multipath
+  payments] invoices non-interactively by specifying a new payment secret. The
+  default invoice expiry for AMP invoices created by LND is also bumped to 30
+  days in order to facilitate the aforementioned reuse mechanism.
 
 - [BTCPay Server #2474][] adds the ability to test webhooks by sending
   fake events that contain all their normal fields but dummy data.  This
