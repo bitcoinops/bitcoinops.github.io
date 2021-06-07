@@ -35,7 +35,7 @@ reaches some other local optimum.
 
 There are many strategies to this type of additive RBF batching. At [CardCoins][] we
 took a safety-first approach to our implementation (with the help of [Matthew
-Zipkin][]), the nuances of which we detailed in a more detailed blog post, [RBF
+Zipkin][]), the nuances of which we detailed in a blog post, [RBF
 Batching at CardCoins: Diving into the Mempool's Dark Reorg Forest][cardcoins
 rbf blog].
 
