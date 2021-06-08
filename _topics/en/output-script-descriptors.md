@@ -92,6 +92,9 @@ optech_mentions:
   - title: "BIPs #1089 assigns BIP87 to a multisig wallet standard using descriptors"
     url: /en/newsletters/2021/05/26/#bips-1089
 
+  - title: "Bitcoin Core #22051 adds support for importing descriptors for taproot outputs"
+    url: /en/newsletters/2021/06/09/#bitcoin-core-22051
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

@@ -143,7 +143,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22051][] Basic Taproot derivation support for descriptors FIXME:jnewbery
+- [Bitcoin Core #22051][] adds support for importing [descriptors][topic
+  descriptors] for [taproot][topic taproot] outputs into the Bitcoin Core
+  wallet. This PR allows wallet users to receive funds to taproot outputs and is
+  the prerequisite for an [open PR][Bitcoin Core #21365] that implements full
+  support for users to receive to and spend from taproot outputs.
 
 - [Bitcoin Core #22050][] drops support for version 2 Tor onion services
   (hidden services).  Version 2 services are already deprecated and the
@@ -192,7 +196,7 @@ BOLTs][bolts repo].*
   processors such as Stripe and Coinbase Commerce.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22051,22050,22095,4532,869,5336,2474,1030,868,21767" %}
+{% include linkers/issues.md issues="22051,22050,22095,4532,869,5336,2474,1030,868,21767,21365" %}
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc5
 [news64 static remotekey]: /en/newsletters/2019/09/18/#c-lightning-3010
 [news108 channel upgrades]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats

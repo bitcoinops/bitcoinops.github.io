@@ -173,6 +173,9 @@ optech_mentions:
   - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr signatures"
     url: /en/newsletters/2021/05/12/#rust-bitcoin-589
 
+  - title: "Bitcoin Core #22051 adds support for importing descriptors for taproot outputs"
+    url: /en/newsletters/2021/06/09/#bitcoin-core-22051
+
 ## Optional
 see_also:
   - title: MAST
