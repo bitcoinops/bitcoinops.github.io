@@ -1,9 +1,14 @@
 {:.post-meta}
 *by [CardCoins][]*
 
-[Replace By Fee][topic rbf] (RBF, BIP125) and [batching][payment batching] are two important tools for any enterprises
-directly interacting with Bitcoin's mempool. Fees go up, fees go down, but
-the business must always fight for fee efficiency.
+"Additive batching" is a scheme whereby additional outputs are
+included to unconfirmed transactions in the mempool. This field report outlines
+efforts CardCoins has taken in introducing a reorg and DoS safe implementation
+of such a scheme in its customer payout workflow.
+
+[Replace By Fee][topic rbf] (RBF, BIP125) and [batching][payment batching] are
+two important tools for any enterprises directly interacting with Bitcoin's
+mempool. Fees go up, fees go down, but the business must always fight for fee efficiency.
 
 Each tool, while powerful, has its own complexities and nuances. For example,
 batching customer withdrawals may save on fees for the enterprise, but will likely make
@@ -45,4 +50,4 @@ rbf blog].
 [rbf blog]: /en/rbf-in-the-wild/#some-usability-examples
 [pinning]: /en/topics/transaction-pinning/
 [Matthew Zipkin]: https://twitter.com/MatthewZipkin
-[cardcoins rbf blog]: FIXME:bitschmidty
+[cardcoins rbf blog]: https://blog.cardcoins.co/rbf-batching-at-cardcoins-diving-into-the-mempool-s-dark-reorg-forest

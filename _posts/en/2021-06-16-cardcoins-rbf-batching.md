@@ -8,9 +8,10 @@ layout: post
 lang: en
 version: 1
 excerpt: >
-   Replace By Fee (RBF, BIP-125) and batching are two important tools for any enterprise which directly
-   interacts with Bitcoin's mempool. Fees go up, fees go down, but always must the
-   business fight for fee efficiency.
+   "Additive batching" is a scheme whereby additional outputs are
+   included to unconfirmed transactions in the mempool. This field report outlines
+   efforts CardCoins has taken in introducing a reorg and DoS safe implementation
+   of such a scheme in its customer payout workflow.
 
 ---
 {% include articles/cardcoins-rbf-batching.md %}
