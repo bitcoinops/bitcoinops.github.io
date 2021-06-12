@@ -55,7 +55,7 @@ size:
    </select>
 
   <br>
-  Number of inputs: <input type="number" id="inputs" min="1" value="1" onchange="updateTotal()"/><br>
+  Number of inputs: <input type="number" id="inputs" min="1" value="2" onchange="updateTotal()"/><br>
   Number of outputs: <input type="number" id="outputs" min="1" value="2" onchange="updateTotal()"/>
 
   <br><br><hr>
