@@ -176,6 +176,9 @@ optech_mentions:
   - title: "Bitcoin Core #22051 adds support for importing descriptors for taproot outputs"
     url: /en/newsletters/2021/06/09/#bitcoin-core-22051
 
+  - title: "Taproot locked in; activation to occur at block 709,632"
+    url: /en/newsletters/2021/06/16/#taproot-locked-in
+
 ## Optional
 see_also:
   - title: MAST

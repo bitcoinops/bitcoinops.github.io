@@ -37,6 +37,9 @@ optech_mentions:
   - title: "C-Lightning #3465 implements anti fee sniping for withdrawal transactions"
     url: /en/newsletters/2020/02/12/#c-lightning-3465
 
+  - title: BIP proposed for wallets to set nSequence by default on taproot transactions
+    url: /en/newsletters/2021/06/16/#bip-proposed-for-wallets-to-set-nsequence-by-default-on-taproot-transactions
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
