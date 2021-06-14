@@ -1,10 +1,10 @@
 {:.post-meta}
 *by [CardCoins][]*
 
-"Additive batching" is a scheme whereby additional outputs are
-included to unconfirmed transactions in the mempool. This field report outlines
-efforts CardCoins has taken in introducing a reorg and DoS safe implementation
-of such a scheme in its customer payout workflow.
+_"Additive batching" is a scheme in which additional outputs are
+added to unconfirmed transactions in the mempool. This field report outlines
+efforts [CardCoins][] has taken in introducing a reorg- and DoS-safe implementation
+of such a scheme in its customer payout workflow._
 
 [Replace By Fee][topic rbf] (RBF, BIP125) and [batching][payment batching] are
 two important tools for any enterprises directly interacting with Bitcoin's
@@ -29,9 +29,10 @@ that RBF and batching carry discretely. However, when you combine RBF and
 "additive batching," emergent edge cases and dangerous failure scenarios present
 themselves.
 
-Additive RBF batching is a transaction construction protocol that leverages the
-rules of BIP125 to allow a transactor to introduce new outputs (and confirmed
-inputs) to a transaction in the mempool. This enables an enterprise to give
+In additive RBF batching, the service provider introduces new outputs (and
+confirmed inputs) to a transaction in the mempool to incorporate new customer
+withdrawals into an unconfirmed transaction. This enables the service provider
+to give
 users the experience of an instantaneous withdrawal while still retaining much
 of the fee savings from doing large batches of customer withdrawals at once. As
 each customer requests a withdrawal, an output is added to the transaction in
@@ -40,7 +41,7 @@ reaches some other local optimum.
 
 There are many strategies to this type of additive RBF batching. At [CardCoins][] we
 took a safety-first approach to our implementation (with the help of [Matthew
-Zipkin][]), the nuances of which we detailed in a blog post, [RBF
+Zipkin][]), the details of which we described in a blog post, [RBF
 Batching at CardCoins: Diving into the Mempool's Dark Reorg Forest][cardcoins
 rbf blog].
 
