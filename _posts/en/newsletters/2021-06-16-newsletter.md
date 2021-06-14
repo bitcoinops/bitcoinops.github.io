@@ -110,7 +110,10 @@ BOLTs][bolts repo].*
   safegcd] and [#146][news146 safegcd].  Performance evaluations posted
   to the PR found it accelerated old block verification by about 10%.
 
-- [C-Lightning #4591][] bech32m support FIXME: Xekyo
+- [C-Lightning #4591][] adds support for parsing [bech32m][topic bech32]
+  addresses. C-Lightning will now permit a peer that has negotiated the feature
+  `option_shutdown_anysegwit` to specify any v1+ native segwit address as
+  a closing or withdrawal destination.
 
 {% include references.md %}
 {% include linkers/issues.md issues="4,21573,4591" %}
