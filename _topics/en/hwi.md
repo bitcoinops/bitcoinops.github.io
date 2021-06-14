@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Bitcoin Core #16546 adds external signer interface compatible with HWI"
     url: /en/newsletters/2021/03/03/#bitcoin-core-16546
 
+  - title: "Bitcoin Core GUI #4 adds initial support for using HWI external signers via the GUI"
+    url: /en/newsletters/2021/06/16/#bitcoin-core-gui-4
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
