@@ -102,7 +102,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core GUI #4][] UI external signer support (e.g. hardware wallet) FIXME:dongcarl
+- [Bitcoin Core GUI #4][] adds initial support for using [Hardware Wallet
+  Interface (HWI)][topic hwi] external signers via the GUI. Once this feature is
+  finalized, users will be able to use their HWI-compatible hardware wallets
+  directly from the Bitcoin Core GUI.
+
+    {:.center}
+    ![Screenshot of HWI path configuration option](/img/posts/2021-06-gui-hwi.png)
 
 - [Bitcoin Core #21573][] updates the version of libsecp256k1 included
   in Bitcoin Core.  The most notable change is the use of the
