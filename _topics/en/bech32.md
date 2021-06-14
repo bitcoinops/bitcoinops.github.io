@@ -90,6 +90,9 @@ optech_mentions:
   - title: Electrum 4.1.0 adds support for bech32m
     url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
 
+  - title: C-Lightning #4591 adds support for sending to bech32m addresses
+    url: /en/newsletters/2021/06/16/#c-lightning-4591
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
