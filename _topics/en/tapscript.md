@@ -70,6 +70,9 @@ optech_mentions:
   - title: Using backup tapscript spending paths to recover from crypto breaks
     url: /en/newsletters/2021/03/24/#taproot-improvement-in-post-qc-recovery-at-no-onchain-cost
 
+  - title: "Bitcoin Core #21365 allows the wallet to create signatures for tapscript spends"
+    url: /en/newsletters/2021/06/23/#bitcoin-core-21365
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
@@ -81,7 +84,7 @@ has a few differences:
 - `OP_CHECKMULTISIG` and `OP_CHECKMULTISIGVERIFY` are replaced by a
   `OP_CHECKSIGADD` opcode.
 
-- Many opcodes are redefined to be `OP_SUCCESS` opcodes that
+- Many previously disabled opcodes are redefined to be `OP_SUCCESS` opcodes that
   unconditionally render the entire script valid to simplify soft fork
   upgrades.
 

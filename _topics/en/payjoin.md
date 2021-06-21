@@ -74,6 +74,9 @@ optech_mentions:
   - title: "BTCPay Server #2425 allows receiving payjoin payments without an inovice"
     url: /en/newsletters/2021/04/21/#btcpay-server-2425
 
+  - title: "BTCPay Server #2450 makes generating payjoin-compatible invoices the default for new hot wallets"
+    url: /en/newsletters/2021/06/23/#btcpay-server-2450
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

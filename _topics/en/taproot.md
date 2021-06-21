@@ -179,6 +179,9 @@ optech_mentions:
   - title: "Taproot locked in; activation to occur at block 709,632"
     url: /en/newsletters/2021/06/16/#taproot-locked-in
 
+  - title: "Bitcoin Core #21365 allows the wallet to create signatures for P2TR spends"
+    url: /en/newsletters/2021/06/23/#bitcoin-core-21365
+
 ## Optional
 see_also:
   - title: MAST

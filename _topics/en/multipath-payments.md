@@ -134,6 +134,9 @@ optech_mentions:
   - title: "LND #5336 adds the ability for users to reuse AMP invoices non-interactively"
     url: /en/newsletters/2021/06/09/#lnd-5336
 
+  - title: "LND 0.13.0-beta allows receiving and sending payments using AMP"
+    url: /en/newsletters/2021/06/23/#lnd-0-13-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
