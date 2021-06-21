@@ -96,6 +96,9 @@ optech_mentions:
   - title: "Preparing for taproot #1: bech32m sending support"
     url: /en/newsletters/2021/06/23/#preparing-for-taproot-1-bech32-sending-support
 
+  - title: "Rust Bitcoin #601 adds support for parsing bech32m addresses"
+    url: /en/newsletters/2021/06/23/#rust-bitcoin-601
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
