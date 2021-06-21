@@ -129,7 +129,9 @@ BOLTs][bolts repo].*
   those networks in addition to the regular Internet Protocol can
   prevent some types of [eclipse attacks][topic eclipse attacks].
 
-- [Rust Bitcoin #601][] LNP-BP/feat/bech32m-1 FIXME:dongcarl
+- [Rust Bitcoin #601][] adds support for parsing [bech32m][topic bech32]
+  addresses and requires that v1+ native segwit addresses be encoded with
+  bech32m and not bech32.
 
 - [BTCPay Server #2450][] makes generating [payjoin][topic
   payjoin]-compatible invoices the default when the user opts into using
