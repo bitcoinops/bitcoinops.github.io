@@ -115,7 +115,17 @@ BOLTs][bolts repo].*
   {{site.trb}} on mainnet, but on test networks where taproot is already
   enabled, importing may be used now).
 
-- [Bitcoin Core #22144][] Randomize message processing peer order FIXME:jnewbery
+- [Bitcoin Core #22144][] randomizes the order in which peers are serviced
+  in the message handling thread, which is
+  responsible for parsing and processing P2P messages from peers and for
+  sending messages to those peers. Previously, the message handling thread
+  would service each peer round-robin _in the order in which the
+  connections to those peers were first established_. This PR changes the
+  logic so that, on each iteration of the message handling loop, the order in
+  which peers are serviced is randomized. Peers are still serviced with the same
+  frequency (each peer is serviced once per iteration), but any weaknesses or
+  exploits that rely on a deterministic ordering of servicing peers are
+  avoided.
 
 - [Bitcoin Core #21261][] makes it easier to extend inbound connection
   protection to more networks and then uses that framework to
