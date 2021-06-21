@@ -93,6 +93,9 @@ optech_mentions:
   - title: C-Lightning #4591 adds support for sending to bech32m addresses
     url: /en/newsletters/2021/06/16/#c-lightning-4591
 
+  - title: "Preparing for taproot #1: bech32m sending support"
+    url: /en/newsletters/2021/06/23/#preparing-for-taproot-1-bech32-sending-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

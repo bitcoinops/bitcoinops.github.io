@@ -61,6 +61,7 @@ following abbreviations we assume readers will already know.
 - P2PKH (Pay to Public Key Hash)
 - P2SH (Pay to Script Hash)
 - P2SH-wrapped segwit (Pay to Script Hash wrapped segwit)
+- P2TR (Pay to TapRoot)
 - P2WPKH (Pay to Witness Public Key Hash)
 - P2WSH (Pay to Witness Script Hash)
 - PSBT (Partially Signed Bitcoin Transaction)

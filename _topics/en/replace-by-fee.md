@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Continued discussion about CVE-2021-31876's impact on protocols using RBF"
     url: /en/newsletters/2021/05/19/#cve-2021-31876-bip125-implementation-discrepancy-follow-up
 
+  - title: "Proposal to allow any mempool transaction to be replaced by default"
+    url: /en/newsletters/2021/06/23/#allowing-transaction-replacement-by-default
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

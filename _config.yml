@@ -64,3 +64,6 @@ collections:
 languages:
   - ja
   - es
+
+## In-text aliases
+trb: "709,632" # TapRoot Block (activation)

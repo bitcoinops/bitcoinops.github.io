@@ -113,6 +113,9 @@ optech_mentions:
   - title: "LND #5274 limits the maximum funds reserved for fee bumping anchor outputs"
     url: /en/newsletters/2021/05/19/#lnd-5274
 
+  - title: "LND 0.13.0-beta begins using anchor outputs by default for all new channels"
+    url: /en/newsletters/2021/06/23/#lnd-0-13-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
