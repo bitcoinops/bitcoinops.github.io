@@ -70,7 +70,30 @@ infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Trezor Suite adds RBF support:**
+  Trezor's wallet software, Trezor Suite, added [support for Replace-by-Fee
+  (RBF)][trezor rbf] in version 21.2.2. RBF is on by default and also supported
+  by some of Trezor's hardware devices.
+
+- **Lightning Labs announces Terminal Web:**
+  In a recent [blog post][lightning labs terminal web blog], Lightning Labs
+  describes their web-based Lightning node scoring dashboard, [Terminal
+  Web][terminal web].
+
+- **Specter v1.4.0 released:**
+  [Specter v.1.4.0][specter v1.4.0] adds a feature to ["cancel" a
+  transaction][specter 1197] using BIP125 opt-in [Replace-by-Fee (RBF)][topic
+  rbf].
+
+- **Phoenix adds LNURL-pay:**
+  ACINQ's mobile wallet [Phoenix][phoenix wallet] added support for the
+  [LNURL-pay][lnurl-pay github] protocol in its [v1.4.12 release][phoenix
+  1.4.12].
+
+- **JoinMarket v0.8.3 released:**
+  [JoinMarket v0.8.3][joinmarket v0.8.3] adds the ability to provide custom
+  change addresses and an Electrum-compatible segwit `signmessage`
+  implementation.
 
 ## Preparing for taproot #1: bech32 sending support
 
@@ -164,3 +187,12 @@ BOLTs][bolts repo].*
 [riard rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019074.html
 [bech32#56]: https://github.com/sipa/bech32/pull/56
 [i2p]: https://en.wikipedia.org/wiki/I2P
+[phoenix wallet]: https://phoenix.acinq.co/
+[phoenix 1.4.12]: https://github.com/ACINQ/phoenix/releases/tag/v1.4.12
+[lnurl-pay github]: https://github.com/fiatjaf/lnurl-rfc/blob/master/lnurl-pay.md
+[joinmarket v0.8.3]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.8.3
+[specter v1.4.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.4.0
+[specter 1197]: https://github.com/cryptoadvance/specter-desktop/pull/1197
+[terminal web]: https://terminal.lightning.engineering/
+[lightning labs terminal web blog]: https://lightning.engineering/posts/2021-05-11-terminal-web/
+[trezor rbf]: https://wiki.trezor.io/Replace-by-fee_(RBF)
