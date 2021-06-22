@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Proposal to allow any mempool transaction to be replaced by default"
     url: /en/newsletters/2021/06/23/#allowing-transaction-replacement-by-default
 
+  - title: "Trezor wallet software defaults to enabling BIP125 RBF"
+    url: /en/newsletters/2021/06/23/#trezor-suite-adds-rbf-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
