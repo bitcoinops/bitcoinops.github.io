@@ -95,7 +95,7 @@ wallets and services.*
   change addresses and an Electrum-compatible segwit `signmessage`
   implementation.
 
-## Preparing for taproot #1: bech32 sending support
+## Preparing for taproot #1: bech32m sending support
 
 *The first segment in a weekly series about how developers and service providers
 can prepare for the upcoming activation of taproot at block height
