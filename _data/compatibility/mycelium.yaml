@@ -39,27 +39,27 @@ rbf:
         Receiving Transaction Signaling RBF - When receiving RBF, or any transaction, no unconfirmed transactions show.
 segwit:
   tested:
-    date: "2021-01-27"
+    date: "2021-06-22"
     platforms:
-      - iOS
-    version: "14"
+      - Android
+    version: "3.10.0.1"
   features:
     receive:
-      p2sh_wrapped: "false"
+      p2sh_wrapped: "true"
       bech32: "true"  # https://github.com/mycelium-com/wallet-android/issues/425#issuecomment-440792004
-      default: "p2pkh"
+      default: "p2sh_wrapped"
     send:
       bech32: "true" # https://github.com/mycelium-com/wallet-android/issues/425#issuecomment-440792004
-      change_bech32: "false"
+      change_bech32: "true"
       segwit_v1: "Fails during address validation."
-      bech32_p2wsh: "false"
+      bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/mycelium/segwit/receive-screen.png
       caption: >
-        Mycelium only generates P2PKH receive addresses.
+        Mycelium generates P2PKH, P2SH-P2WPKH, and P2WPKH receive addresses.
     - image: /img/compatibility/mycelium/segwit/send-screen.png
       caption: >
-        Mycelium cannot send to any bech32 addresses.
+        Mycelium can send to any bech32 addresses.
     #- image: /img/compatibility/mycelium/segwit/send-screen-segwit-v1-error.png
     #  caption: >
     #    Mycelium displays a validation error when trying to send to a segwit v1
