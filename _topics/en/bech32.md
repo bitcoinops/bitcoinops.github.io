@@ -94,7 +94,7 @@ optech_mentions:
     url: /en/newsletters/2021/06/16/#c-lightning-4591
 
   - title: "Preparing for taproot #1: bech32m sending support"
-    url: /en/newsletters/2021/06/23/#preparing-for-taproot-1-bech32-sending-support
+    url: /en/newsletters/2021/06/23/#preparing-for-taproot-1-bech32m-sending-support
 
   - title: "Rust Bitcoin #601 adds support for parsing bech32m addresses"
     url: /en/newsletters/2021/06/23/#rust-bitcoin-601
