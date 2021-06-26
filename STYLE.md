@@ -89,6 +89,7 @@ following abbreviations we assume readers will already know.
 | coinswap | Coinswap, CoinSwap, coinSwap, or coin-swap | |
 | fee bumping | fee-bumping | |
 | feerate | fee-rate or fee rate | |
+| keypath | key-path or key path | |
 | mainnet | main net | |
 | multisig | multi-sig | |
 | multiparty | multi-party | |
@@ -101,6 +102,7 @@ following abbreviations we assume readers will already know.
 | proof of work | proof-of-work | proof-of-work may be used as an adjective phrase (e.g. "Bitcoin's proof-of-work security is economic in nature"). | |
 | redeemScript | redeem script | |
 | secp256k1 | Secp256k1, SECP256k1 or SECP256K1 | |
+| scriptpath | script-path or script path | |
 | side-channel | sidechannel | when used to describe a side-channel attack |
 | sigop | Sigop, SigOp or sig op | |
 | single-sig | singlesig | |
