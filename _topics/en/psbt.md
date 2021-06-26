@@ -144,6 +144,9 @@ optech_mentions:
   - title: BlueWallet v6.1.0 adds support for using PSBTs with watch-only wallets
     url: /en/newsletters/2021/05/19/#bluewallet-v6-1-0-released
 
+  - title: PSBT extensions for taproot
+    url: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

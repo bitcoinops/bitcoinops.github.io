@@ -182,6 +182,9 @@ optech_mentions:
   - title: "Bitcoin Core #21365 allows the wallet to create signatures for P2TR spends"
     url: /en/newsletters/2021/06/23/#bitcoin-core-21365
 
+  - title: Proposed BIP to standardize a wallet path for single-sig P2TR addresses
+    url: /en/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
+
 ## Optional
 see_also:
   - title: MAST
