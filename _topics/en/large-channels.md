@@ -62,6 +62,9 @@ optech_mentions:
   - title: "2020 year in review: large channels"
     url: /en/newsletters/2020/12/23/#large-channels
 
+  - title: "BOLTs #877 removes the protocol-level per-payment amount limit"
+    url: /en/newsletters/2021/06/30/#bolts-877
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

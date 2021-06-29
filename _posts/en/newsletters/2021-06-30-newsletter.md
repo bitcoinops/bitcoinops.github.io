@@ -92,7 +92,12 @@ BOLTs][bolts repo].*
   following a similar change in LND (see [Newsletter #93][news93
   lnd4075]) and the change to the specification described in the next item.
 
-- [BOLTs #877][] Remove HTLC amount restriction FIXME:dongcarl
+- [BOLTs #877][] removes the protocol-level per-payment amount limit originally
+  introduced to avoid significant losses arising out of implementation bugs.
+  This follows the widespread implementation of `option_support_large_channel`
+  in 2020, which (when enabled) removed the *per-channel* amount limit. See the
+  topic on [large channels][topic large channels] for more details on these two
+  limits.
 
 {% include references.md %}
 {% include linkers/issues.md issues="22154,22166,20966,21056,4606,877" %}
