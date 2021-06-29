@@ -46,7 +46,51 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the downsides to enabling potentially suboptimal or unused opcodes in a future soft fork?]({{bse}}106851)
+  G. Maxwell outlines many considerations for enabling any opcodes that affect
+  consensus including:
+
+    * upfront as well as ongoing maintenance costs
+
+    * potential risks to the user of the opcode but also the entire network
+
+    * additional complexity acting as a disincentive for customizing or reimplementing node software
+
+    * partial or inefficient features crowding out better future alternative ones
+
+    * accidentally creating perverse incentives
+
+- [Why does blockwide signature aggregation prevent adaptor signatures?]({{bse}}107196)
+  Pieter Wuille explains why cross-input signature aggregation interferes
+  with techniques like [adaptor signatures][topic adaptor signatures] or
+  scriptless scripts, noting: "In case of block-wide signature aggregation, there
+  is just a single signature for the entire block. There is simply no space for
+  that single signature to reveal multiple independent secrets to multiple
+  independent parties."
+
+- [Should the Bitcoin Core wallet (or any wallet) prevent users from sending funds to a Taproot address pre activation?]({{bse}}107186)
+  Murch makes the case for why wallet software should allow users to send to any future BIP173
+  segwit output types. By putting the onus on the receiver to provide a spendable
+  address, the ecosystem can take advantage of the forward-compatibility of
+  [bech32/bech32m][topic bech32] and instantly utilize new output types.
+
+- [Why are the witnesses segregated with schnorr signatures?]({{bse}}106930)
+  Dalit Sairio asks why, since [schnorr signatures][topic schnorr signatures] do
+  not suffer from the same malleability that ECDSA signatures do, schnorr
+  signatures will still be segregated? Darosior points out that malleability is
+  only one of the many benefits of segwit.  Pieter Wuille adds that signature malleability is
+  only part of broader script malleability.
+
+- [Possible amount of signatures with MuSig?]({{bse}}106929)
+  Nickler explains that for both [MuSig][topic musig] and MuSig2 the number of signers is
+  practically infinite, noting that [his benchmark][nickler musig] with 1 million
+  signers runs in about 130 seconds on his laptop.
+
+- [Support for P2WSH-wrapped P2TR addresses?]({{bse}}106706)
+  In addition to [BIP341][bip341 p2sh footnote]'s collision security concern,
+  jnewbery also points out the privacy issue with having an additional output
+  type, and the questionable need for wrapped taproot outputs given wide
+  ecosystem adoption of bech32 already.
 
 ## Preparing for taproot #2: is taproot even worth it for single-sig?
 
@@ -109,3 +153,5 @@ BOLTs][bolts repo].*
 [bip-taproot-bip44]: https://github.com/achow101/bips/blob/taproot-bip44/bip-taproot-bip44.mediawiki
 [news93 lnd4075]: /en/newsletters/2020/04/15/#lnd-4075
 [news152 p2tr descriptors]: /en/newsletters/2021/06/09/#bitcoin-core-22051
+[nickler musig]: https://github.com/jonasnick/musig-benchmark
+[bip341 p2sh footnote]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-3

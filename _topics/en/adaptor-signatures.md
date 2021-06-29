@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Libsecp256k1-zkp #117 adds support for simplified ECDSA signature adaptors"
     url: /en/newsletters/2021/04/28/#support-for-ecdsa-signature-adaptors-added-to-libsecp256k1-zkp
 
+  - title: "Question: Why does blockwide signature aggregation prevent adaptor signatures?"
+    url: /en/newsletters/2021/06/30/#why-does-blockwide-signature-aggregation-prevent-adaptor-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

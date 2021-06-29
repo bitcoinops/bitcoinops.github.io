@@ -66,6 +66,9 @@ optech_mentions:
   - title: "2020 year in review: MuSig2"
     url: /en/newsletters/2020/12/23/#musig2
 
+  - title: "Benchmark: 1 million signers with MuSig"
+    url: /en/newsletters/2021/06/30/#possible-amount-of-signatures-with-musig
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
