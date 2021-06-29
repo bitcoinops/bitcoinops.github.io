@@ -117,7 +117,10 @@ BOLTs][bolts repo].*
   The feature only applies to wallets with taproot descriptors (see
   [Newsletter #152][news152 p2tr descriptors]).
 
-- [Bitcoin Core #22166][] Add support for inferring tr() descriptors FIXME:Xekyo
+- [Bitcoin Core #22166][] adds support for inferring taproot `tr()` descriptors
+  from outputs, completing basic taproot descriptor support.
+  Descriptor inference is used to provide more
+  accurate information in responses to RPC calls such as `listunspent`.
 
 - [Bitcoin Core #20966][] changes the name and format of the saved
   banlist file from `banlist.dat` (based on serialized P2P protocol
