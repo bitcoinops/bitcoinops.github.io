@@ -10,7 +10,6 @@ size:
   nin: 1
   nout: 1
   marker_and_flag: 0.5
-  nelements: 0.25
   nlocktime: 4
 
   ## Input
@@ -20,9 +19,9 @@ size:
   p2pkh_ss: 107   # 1 + 72 + 1 + 33
   p2sh23_ss: 254  # 1 + 1 + 72 + 1 + 72 + 1 + 1 + (1 + 1 + 33 + 1 + 33 + 1 + 33 + 1 + 1)
   nsequence: 4
-  p2wpkh_witness: 26.75  # (73 + 34)/4
-  p2wsh23_witness: 63.25  # (1 + 73 + 73 + 106)/4
-  p2tr_witness: 16.25  # 65/4
+  p2wpkh_witness: 27  # (1 + 73 + 34)/4
+  p2wsh23_witness: 63.5  # (1 + 1 + 73 + 73 + 106)/4
+  p2tr_witness: 16.5  # (1 + 65)/4
 
   ## Output
   nvalue: 8
@@ -91,10 +90,6 @@ sections are [vbytes][].  Sizes in the *common elements* section are bytes.
       byte sequence used to clearly differentiate segwit transactions
       from legacy transactions
 
-    - **Witness element count** ([compactSize][]/4) The number of witness
-      elements included in the transaction. {{page.size.nelements}}
-      vbytes for up to 252 elements
-
 ### Input
 
 - **Outpoint** ({{page.size.outpoint}}) The txid and vout index number
@@ -119,9 +114,14 @@ sections are [vbytes][].  Sizes in the *common elements* section are bytes.
   input.  Used by [BIP68][] and [BIP125][], with other values having no
   defined meaning
 
-- **Witness data** (varies) The source of witness data for in segwit
+- **Witness item count** ([compactSize][]/4) The number of witness
+  elements.  This field is included for each input if the transaction
+  contains at least one segwit input. 0.25 vbytes for up to 252 elements
+
+- **Witness items** (varies) The source of witness data in segwit
   transactions.  This data is used to prove that the transaction is
-  authorized by someone controlling the appropriate private keys.  For
+  authorized by someone controlling the appropriate private keys.
+  Each item is prefixed by a [compactsize][] `size()` identifier.  For
   the templates used by this calculator, the witness data sizes are:
 
     - **P2WPKH** ({{page.size.p2wpkh_witness}})
@@ -274,7 +274,7 @@ function calculateTotal(type, inputs, outputs) {
 
   // Calculate the transaction's overhead (the size independent of inputs and outputs)
   if (types[type].segwit == true) {
-    witness_flag = {{page.size.marker_and_flag}} + {{page.size.nelements}};  // segwit marker, segwit flag, segwit # of witness elements
+    witness_flag = {{page.size.marker_and_flag}};  // segwit marker, segwit flag
   } else  {
     witness_flag = 0;
   }
@@ -348,6 +348,9 @@ function testSizes() {
 
   // txid: b169e4616d00bb27242093ec1749d5e8f69236bf704eadce3126e3b5f42107f9
   console.assert(562/4 == calculateTotal("p2wpkh", 1, 2).size, "1-in, 2-out P2WPKH unexpected size");
+  // txid: b6eba343d238b7581ad9f8a8c3826eb13f0e94cd5a701fe03baded82920ac6d8
+  console.assert(710/4 == calculateTotal("p2wpkh", 2, 1).size, "2-in, 1-out P2WPKH unexpected size");
+
 
   // txid: c48c1a33a6e8a05d8b69b84c6532ad2ac06f0c5d0fa931523090b97d9de86e80
   console.assert(371 == calculateTotal("p2sh2_3", 1, 2).size, "1-in, 2-out P2SH 2-of-3 unexpected size");
