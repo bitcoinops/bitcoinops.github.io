@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Bitcoin Core #20685 Adds I2P support, including addrv2 gossiping"
     url: /en/newsletters/2021/03/10/#bitcoin-core-20685
 
+  - title: "BIPs #1134 clarifies BIP155 usage of `sendaddr2' P2P feature negotiation message"
+    url: /en/newsletters/2021/07/07/#bips-1134
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

@@ -1,0 +1,10 @@
+@startuml
+participant Alice order 1
+participant Bob order 2
+participant Carol order 3
+
+Bob -> Alice: New channel (includes a 1.0 BTC payment)
+Alice --> Carol: 0.1 BTC payment
+
+
+@enduml
