@@ -95,6 +95,12 @@ optech_mentions:
   - title: "Bitcoin Core #22051 adds support for importing descriptors for taproot outputs"
     url: /en/newsletters/2021/06/09/#bitcoin-core-22051
 
+  - title: "Seven BIPs proposed for standardized output script descriptors"
+    url: /en/newsletters/2021/07/07/#bips-for-output-script-descriptors
+
+  - title: "Preparing for taproot: output script descriptors"
+    url: /en/newsletters/2021/07/07/#preparing-for-taproot-3-taproot-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

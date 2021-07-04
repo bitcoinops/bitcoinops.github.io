@@ -38,6 +38,12 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/01-single-sig.md %}
 
+## Taproot descriptors
+
+*Originally published in [Newsletter #156](/en/newsletters/2021/07/07/#preparing-for-taproot-3-taproot-descriptors)*
+
+{% include specials/taproot/en/02-descriptors.md %}
+
 {% comment %}<!-- uncomment if we add any footnotes -->
 ## Footnotes
 {:.no_toc}
