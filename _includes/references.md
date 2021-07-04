@@ -4,6 +4,7 @@
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 [scaling payment batching]: /en/payment-batching/
+[series preparing for taproot]: /en/preparing-for-taproot/
 
 {% comment %}<!-- links for topics -->{% endcomment %}
 {% for topic in site.topics %}
