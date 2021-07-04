@@ -119,7 +119,9 @@ BOLTs][bolts repo].*
 
 - [C-Lightning #4610][] opts: Add option to register extra TLV types to accept FIXME:dongcarl
 
-- [Eclair #1854][] Decode warning messages FIXME:bitschmidty
+- [Eclair #1854][] adds support for decoding and logging of [warning
+  messages][bolts #834] sent from peers like C-Lightning that have [recently
+  implemented][news136 c-lightning 4364] warning message types.
 
 - [BIPs #1137][] BIP 86: Key Derivation for Single Key P2TR Outputs FIXME:jnewbery
 
@@ -130,7 +132,7 @@ BOLTs][bolts repo].*
   messages.
 
 {% include references.md %}
-{% include linkers/issues.md issues="19651,4610,1854,1137,1134" %}
+{% include linkers/issues.md issues="19651,4610,1854,1137,1134,834" %}
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta.rc1
 [chow descriptors post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019151.html
 [news34 descriptor checksums]: /en/newsletters/2019/02/19/#bitcoin-core-15368
@@ -138,3 +140,4 @@ BOLTs][bolts repo].*
 [pickhardt lips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003088.html
 [teinturier blips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003093.html
 [russell zeroconf]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003074.html
+[news136 c-lightning 4364]: /en/newsletters/2021/02/17/#c-lightning-4364
