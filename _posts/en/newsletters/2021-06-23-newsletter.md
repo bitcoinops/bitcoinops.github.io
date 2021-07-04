@@ -97,7 +97,7 @@ wallets and services.*
 
 ## Preparing for taproot #1: bech32m sending support
 
-*The first segment in a weekly series about how developers and service providers
+*The first segment in a weekly [series][series preparing for taproot] about how developers and service providers
 can prepare for the upcoming activation of taproot at block height
 {{site.trb}}.*
 
@@ -185,7 +185,6 @@ BOLTs][bolts repo].*
 [trw meeting]: https://gist.githubusercontent.com/ariard/5f28dffe82ddad763b346a2344092ba4/raw/2a8e0d4ff431a225a970d0128aa78616df6b6382/meeting-logs
 [additive payment batching]: /en/cardcoins-rbf-batching/
 [riard rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019074.html
-[bech32#56]: https://github.com/sipa/bech32/pull/56
 [i2p]: https://en.wikipedia.org/wiki/I2P
 [phoenix wallet]: https://phoenix.acinq.co/
 [phoenix 1.4.12]: https://github.com/ACINQ/phoenix/releases/tag/v1.4.12

@@ -94,7 +94,7 @@ answers posted since our last update.*
 
 ## Preparing for taproot #2: is taproot even worth it for single-sig?
 
-*A weekly series about how developers and service providers can prepare
+*A weekly [series][series preparing for taproot] about how developers and service providers can prepare
 for the upcoming activation of taproot at block height {{site.trb}}.*
 
 {% include specials/taproot/en/01-single-sig.md %}

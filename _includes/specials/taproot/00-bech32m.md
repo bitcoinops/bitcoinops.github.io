@@ -32,3 +32,5 @@ with taproot-paying outputs since version 0.19 (released November 2019).
 Optech encourages developers of wallets and services to implement
 support for paying bech32m taproot addresses now rather than waiting
 until after taproot activates.
+
+[bech32#56]: https://github.com/sipa/bech32/pull/56
