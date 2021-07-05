@@ -185,6 +185,9 @@ optech_mentions:
   - title: Proposed BIP to standardize a wallet path for single-sig P2TR addresses
     url: /en/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
 
+  - title: "BIPs #1137 adds BIP86 with a key derivation scheme for single key P2TR outputs"
+    url: /en/newsletters/2021/07/07/#bips-1137
+
 ## Optional
 see_also:
   - title: MAST

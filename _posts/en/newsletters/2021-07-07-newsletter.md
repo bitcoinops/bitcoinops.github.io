@@ -123,7 +123,9 @@ BOLTs][bolts repo].*
   messages][bolts #834] sent from peers like C-Lightning that have [recently
   implemented][news136 c-lightning 4364] warning message types.
 
-- [BIPs #1137][] BIP 86: Key Derivation for Single Key P2TR Outputs FIXME:jnewbery
+- [BIPs #1137][] adds [BIP86][], which suggests a key derivation scheme for
+  single key P2TR outputs. The BIP was [summarized in last week's
+  newsletter][bip-taproot-bip44 desc].
 
 - [BIPs #1134][] updates BIP155 to indicate that the `sendaddr2` P2P
   feature negotiation message should be sent any time a software program
@@ -141,3 +143,5 @@ BOLTs][bolts repo].*
 [teinturier blips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003093.html
 [russell zeroconf]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003074.html
 [news136 c-lightning 4364]: /en/newsletters/2021/02/17/#c-lightning-4364
+[bip86]: https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki
+[bip-taproot-bip44 desc]: /en/newsletters/2021/06/30/#key-derivation-path-for-single-sig-p2tr
