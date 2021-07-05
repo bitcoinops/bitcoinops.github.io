@@ -115,7 +115,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #19651][] wallet: importdescriptors update existing FIXME:glozow
+- [Bitcoin Core #19651][] allows the wallet key manager to update existing
+  [descriptors][topic descriptors]. This allows wallet users to edit labels,
+  extend descriptor ranges, reactivate inactive descriptors, and make other
+  updates using the `importdescriptors` wallet RPC.
 
 - [C-Lightning #4610][] opts: Add option to register extra TLV types to accept FIXME:dongcarl
 

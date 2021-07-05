@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Preparing for taproot: output script descriptors"
     url: /en/newsletters/2021/07/07/#preparing-for-taproot-3-taproot-descriptors
 
+  - title: "Bitcoin Core #19651 adds support for updating descriptors via `importdescriptor`"
+    url: /en/newsletters/2021/07/07/#bitcoin-core-19651
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
