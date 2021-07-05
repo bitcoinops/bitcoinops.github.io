@@ -120,7 +120,12 @@ BOLTs][bolts repo].*
   extend descriptor ranges, reactivate inactive descriptors, and make other
   updates using the `importdescriptors` wallet RPC.
 
-- [C-Lightning #4610][] opts: Add option to register extra TLV types to accept FIXME:dongcarl
+- [C-Lightning #4610][] adds an `--experimental-accept-extra-tlv-types`
+  command-line option which allows users to specify a list of even-numbered TLV types
+  that `lightningd` should pass through for plugins to handle. Previously,
+  `lightningd` considered all unknown evenly-typed TLV messages to be invalid. This
+  change allows for plugins to define and handle their own custom TLV types
+  unknown to `lightningd`.
 
 - [Eclair #1854][] adds support for decoding and logging of [warning
   messages][bolts #834] sent from peers like C-Lightning that have [recently
