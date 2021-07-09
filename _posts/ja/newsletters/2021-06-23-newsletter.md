@@ -74,7 +74,7 @@ Taprootの準備に関する新しい週刊シリーズの最初の記事を掲�
 ## Taprootの準備 #1: bech32m送信のサポート
 
 *ブロック高{{site.trb}}のTaprootのアクティベーションに向けて、
-開発者やサービスプロバイダーがどのような準備をすればよいかについての週刊シリーズの第１回めをお届けします。*
+開発者やサービスプロバイダーがどのような準備をすればよいかについての週刊[シリーズ][series preparing for taproot]の第１回めをお届けします。*
 
 {% include specials/taproot/ja/00-bech32m.md %}
 
@@ -157,3 +157,4 @@ Taprootの準備に関する新しい週刊シリーズの最初の記事を掲�
 [terminal web]: https://terminal.lightning.engineering/
 [lightning labs terminal web blog]: https://lightning.engineering/posts/2021-05-11-terminal-web/
 [trezor rbf]: https://wiki.trezor.io/Replace-by-fee_(RBF)
+[series preparing for taproot]: /ja/preparing-for-taproot/

@@ -82,7 +82,7 @@ Bitcoin Stack Exchangeから厳選された質問とその回答や、Taprootの
 ## Taprootの準備 #2: Taprootはシングルシグでも価値があるか？
 
 *ブロック高{{site.trb}}のTaprootのアクティベーションに向けて、
-開発者やサービスプロバイダーがどのような準備をすればよいかについての週刊シリーズです。*
+開発者やサービスプロバイダーがどのような準備をすればよいかについての週刊[シリーズ][series preparing for taproot]です。*
 
 {% include specials/taproot/ja/01-single-sig.md %}
 
@@ -138,3 +138,4 @@ Bitcoin Stack Exchangeから厳選された質問とその回答や、Taprootの
 [news152 p2tr descriptors]: /ja/newsletters/2021/06/09/#bitcoin-core-22051
 [nickler musig]: https://github.com/jonasnick/musig-benchmark
 [bip341 p2sh footnote]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-3
+[series preparing for taproot]: /ja/preparing-for-taproot/
