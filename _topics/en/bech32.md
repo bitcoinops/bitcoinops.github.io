@@ -99,6 +99,9 @@ optech_mentions:
   - title: "Rust Bitcoin #601 adds support for parsing bech32m addresses"
     url: /en/newsletters/2021/06/23/#rust-bitcoin-601
 
+  - title: "Wiki page for tracking wallet & service support of bech32m"
+    url: /en/newsletters/2021/07/14/#tracking-bech32m-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
