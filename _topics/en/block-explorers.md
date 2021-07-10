@@ -32,6 +32,9 @@ optech_mentions:
   - title: Esplora updated
     url: /en/newsletters/2019/03/19/#esplora-updated
 
+  - title: "BTCPay Server #2655 improves privacy by not sending HTTP referer field to explorers"
+    url: /en/newsletters/2021/07/14/#btcpay-server-2655
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

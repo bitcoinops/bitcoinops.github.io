@@ -104,6 +104,9 @@ optech_mentions:
   - title: "Rust Bitcoin #589 starts implementing support for taproot and schnorr signatures"
     url: /en/newsletters/2021/05/12/#rust-bitcoin-589
 
+  - title: "Libsecp256k1 #844 updates schnorr API to allow signing arbitrary length messages"
+    url: /en/newsletters/2021/07/14/#libsecp256k1-844
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

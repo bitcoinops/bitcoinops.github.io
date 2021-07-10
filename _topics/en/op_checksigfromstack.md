@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Replicating `OP_CHECKSIGFROMSTACK` with schnorr signatures and `OP_CAT`"
     url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
 
+  - title: "Call for `OP_CHECKSIGFROMSTACK` design suggestions"
+    url: /en/newsletters/2021/07/14/#request-for-op-checksigfromstack-design-suggestions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha

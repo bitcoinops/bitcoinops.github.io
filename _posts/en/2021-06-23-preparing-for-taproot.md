@@ -44,7 +44,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/02-descriptors.md %}
 
-{% comment %}<!-- uncomment if we add any footnotes -->
+## From P2WPKH to single-sig P2TR
+
+*Originally published in [Newsletter #157](/en/newsletters/2021/07/14/#preparing-for-taproot-4-from-p2wpkh-to-single-sig-p2tr)*
+
+{% include specials/taproot/en/03-p2wpkh-to-p2tr.md %}
+
 ## Footnotes
 {:.no_toc}
-{% endcomment %}
