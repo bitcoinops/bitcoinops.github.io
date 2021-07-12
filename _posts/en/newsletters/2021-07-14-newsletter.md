@@ -123,7 +123,12 @@ BOLTs][bolts repo].*
   Bitcoin will be updated to describe safely signing variable length
   data.
 
-- [BIPs #943][] ajtowns/bip-anyprevout FIXME:adamjonas
+- [BIPs #943][] updates [BIP118][] to build on soon-to-be activated
+  taproot and tapscript rather than SegWit v0. Additionally, this revision
+  renames the title to [SIGHASH_ANYPREVOUT][topic sighash_noinput]
+  from SIGHASH_NOINPUT to reflect that the sighash flag is now referred to as
+  "ANYPREVOUT" given that while any prevout may potentially be used with
+  the signature, some aspects of the input are still committed to.
 
 - [BTCPay Server #2655][] signals to web browsers that they should not
   send the HTTP `referer` <!-- sic --> field when the user clicks on a
