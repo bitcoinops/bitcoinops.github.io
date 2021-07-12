@@ -56,12 +56,64 @@ projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Use script_util helpers for creating P2{PKH,SH,WPKH,WSH} scripts][review club #22363] is a PR by
+Sebastian Falbesoner which substitutes manual script creation with calls to `script_util` helper
+functions in functional tests and fixes an error in the `get_multisig()` function. The review club
+meeting broke down terminology and each of the script output types used in the PR.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME#l-123"
+
+  q0="What do `key_to_p2pkh_script`, `script_to_p2sh_script`, `key_to_p2wpkh_script` and
+`script_to_p2wsh_script` in script\_util.py do?" a0="These are helper functions to construct
+`CScript` objects for Pay to Public Key Hash, Pay to Script Hash, Pay to Witness Public Key Hash,
+and Pay to Witness Script Hash scripts from public keys and scripts."
+  a0link="https://bitcoincore.reviews/22363#l-17"
+
+  q1="Define scriptPubKey, scriptSig, and witness."
+  a1="The scriptPubKey and scriptSig are fields in the output and input of a transaction,
+respectively, for specifying and satisfying spending conditions. The witness is an additional field for the same
+purpose introduced with Segregated Witness. Spending requirements are committed to in an output's
+scriptPubKey and the input that spends it must be accompanied by data satisfying those conditions in the
+scriptSig and/or witness."
+  a1link="https://bitcoincore.reviews/22363#l-31"
+
+  q2="Define redeem script and witness script. What is the relationship between them?"
+  a2="P2SH and P2WSH output types commit to a script hash in the
+  scriptPubKey. When the output is spent, the spender must
+provide the script itself, along with any signatures or other data required to make it pass.
+The script is called a redeemScript when contained in the scriptSig and a
+witness script when in the witness. In that sense, they are analogous; a redeemScript is to a P2SH
+output what a witness script is to a P2WSH output. They are not mutually exclusive, however,
+since a transaction spending a P2SH-P2WSH output contains both."
+  a2link="https://bitcoincore.reviews/22363#l-55"
+
+  q3="To send coins to someone with spending conditions encoded in a script, what is included in the
+scriptPubKey of the output? What needs to be provided in the input when the coin is spent?"
+  a3="The scriptPubKey includes the script hash and opcodes to verify a match: `OP_HASH160
+OP_PUSHBYTES_20 <20B script hash> OP_EQUAL`. The scriptSig includes the script itself and initial
+stack."
+  a3link="https://bitcoincore.reviews/22363#l-102"
+
+  q4="Why do we use Pay-To-Script-Hash instead of Pay-To-Script?"
+  a4="The primary motivation as stated in [BIP16][] is to create a generic way of funding arbitrarily
+complex transactions while placing the burden of supplying spending conditions on the one who
+redeems the funds. Participants also mentioned that keeping the script out of scriptPubKeys means
+its associated fees are not paid until redemption and results in a smaller UTXO set."
+  a4link="https://bitcoincore.reviews/22363#l-112"
+
+  q5="When a non-segwit node validates a P2SH-P2WSH input, what does it do? What does a segwit-enabled
+node do in addition to the procedure performed by a non-segwit node?"
+  a5="The non-segwit node never sees the witness; it simply enforces P2SH rules by verifying that
+the redeemScript matches the hash committed to in the scriptPubKey. A segwit node recognizes this
+data as a witness program and uses the witness data and appropriate scriptCode to enforce segwit
+rules."
+  a5link="https://bitcoincore.reviews/22363#l-137"
+
+  q6="What is wrong with the P2SH-P2WSH script in the original
+[`get_multisig()`](https://github.com/bitcoin/bitcoin/blob/091d35c70e88a89959cb2872a81dfad23126eec4/test/functional/test_framework/wallet_util.py#L109)
+function?"
+  a6="It uses the witness script instead of its hash in the P2SH-P2WSH redeem script."
+  a6link="https://bitcoincore.reviews/22363#l-153"
 %}
 
 ## Preparing for taproot #4: from P2WPKH to single-sig P2TR
@@ -157,7 +209,7 @@ BOLTs][bolts repo].*
     that save space in non-optimal situations.
 
 {% include references.md %}
-{% include linkers/issues.md issues="4625,5447,844,1746,943,2655" %}
+{% include linkers/issues.md issues="4625,5447,844,1746,943,2655,22363" %}
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta.rc2
 [bip341 cite22]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_ref-22-0
 [News128 eclair akka]: /en/newsletters/2020/12/16/#eclair-1566
