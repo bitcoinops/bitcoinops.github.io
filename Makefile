@@ -47,6 +47,10 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	! git --no-pager grep -L "^slug: " _posts
 	## Check that all slugs are unique
 	! git --no-pager grep -h "^slug: " _posts | sort | uniq -d | grep .
+	## Check that all post titles are unique (per language)
+	! git --no-pager grep -h "^title: " _posts/en | sort | uniq -d | grep .
+	! git --no-pager grep -h "^title: " _posts/es | sort | uniq -d | grep .
+	! git --no-pager grep -h "^title: " _posts/ja | sort | uniq -d | grep .
 	## Check for things that should probably all be on one line
 	@ ## Note: double $$ in a makefile produces a single literal $
 	! git --no-pager grep -- '^ *- \*\*[^*]*$$'
