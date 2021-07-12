@@ -92,7 +92,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [C-Lightning #4625][] offers update FIXME:dongcarl
+- [C-Lightning #4625][] updates its [LN offers][topic offers] implementation to match the latest
+  [specification changes][offers spec changes]. Notably, offers are no longer
+  required to contain a signature. This significantly shortens the encoded
+  string for offers, improving QR code recognizability.
 
 - [Eclair #1746][] postgres support FIXME:Xekyo
 
@@ -160,3 +163,4 @@ BOLTs][bolts repo].*
 [news48 generic csfs]: /en/newsletters/2019/05/29/#not-generic-enough
 [op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [rubin cost/benefit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
+[offers spec changes]: https://github.com/lightningnetwork/lightning-rfc/pull/798#issuecomment-871124755

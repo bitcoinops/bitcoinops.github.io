@@ -47,6 +47,9 @@ optech_mentions:
   - title: Offers specification updated to partly address stuck payments
     url: /en/newsletters/2021/04/21/#using-ln-offers-to-partly-address-stuck-payments
 
+  - title: "Offers specification updated to no longer require a signature"
+    url: /en/newsletters/2021/07/14/#c-lightning-4625
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
