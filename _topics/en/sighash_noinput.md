@@ -78,6 +78,9 @@ optech_mentions:
   - title: "Using schnorr signatures plus `OP_CAT` to simulate `SIGHASH_ANYPREVOUT`"
     url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
 
+  - title: "BIPs #943 updates BIP118 to be named SIGHASH_ANYPREVOUT rather than SIGHASH_NOINPUT"
+    url: /en/newsletters/2021/07/14/#bips-943
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo
