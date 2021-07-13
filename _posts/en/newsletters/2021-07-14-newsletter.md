@@ -97,7 +97,12 @@ BOLTs][bolts repo].*
   required to contain a signature. This significantly shortens the encoded
   string for offers, improving QR code recognizability.
 
-- [Eclair #1746][] postgres support FIXME:Xekyo
+- [Eclair #1746][] adds support for replicating data to a PostsgreSQL
+  database in parallel to the primary SQLite database. The feature is
+  meant to facilitate testing for servers that want to make an eventual backend transition.  Last
+  year, Suredbits engineer Roman Taranchenko described customizing
+  Eclair for enterprise-use with a PostgreSQL backend in an Optech
+  [field report][suredbits enterprise ln].
 
 - [LND #5447][] adds a [document][lnd leader] describing how to set up
   multiple LND nodes in a cluster with an alternative database that is
@@ -164,3 +169,4 @@ BOLTs][bolts repo].*
 [op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [rubin cost/benefit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
 [offers spec changes]: https://github.com/lightningnetwork/lightning-rfc/pull/798#issuecomment-871124755
+[suredbits enterprise ln]: /en/suredbits-enterprise-ln/
