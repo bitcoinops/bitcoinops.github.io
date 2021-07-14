@@ -149,7 +149,7 @@ BOLTs][bolts repo].*
   required to contain a signature. This significantly shortens the encoded
   string for offers, improving QR code recognizability.
 
-- [Eclair #1746][] adds support for replicating data to a PostsgreSQL
+- [Eclair #1746][] adds support for replicating data to a PostgreSQL
   database in parallel to the primary SQLite database. The feature is
   meant to facilitate testing for servers that want to make an eventual backend transition.  Last
   year, Suredbits engineer Roman Taranchenko described customizing
