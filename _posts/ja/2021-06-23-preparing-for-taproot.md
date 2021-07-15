@@ -43,7 +43,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/02-descriptors.md %}
 
-{% comment %}<!-- uncomment if we add any footnotes -->
+## P2WPKHからシングルシグのP2TRへ
+
+*[ニュースレター #157](/ja/newsletters/2021/07/14/#taprootの準備-4-p2wpkhからシングルシグのp2trへ)に掲載*
+
+{% include specials/taproot/ja/03-p2wpkh-to-p2tr.md %}
+
 ## Footnotes
 {:.no_toc}
-{% endcomment %}
