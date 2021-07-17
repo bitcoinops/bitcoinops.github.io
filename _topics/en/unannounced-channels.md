@@ -53,6 +53,9 @@ optech_mentions:
   - title: "C-Lighting #3623 improves unannounced channel privacy when routing payments"
     url: /en/newsletters/2020/04/22/#c-lightning-3623
 
+  - title: "C-Lightning #4611 updates the `keysend` RPC to support unannounced channels"
+    url: /en/newsletters/2021/07/21/#c-lightning-4611
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

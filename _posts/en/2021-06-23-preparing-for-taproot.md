@@ -50,5 +50,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/03-p2wpkh-to-p2tr.md %}
 
+## Why are we waiting?
+
+*Originally published in [Newsletter #158](/en/newsletters/2021/07/21/#preparing-for-taproot-5-why-are-we-waiting)*
+
+{% include specials/taproot/en/04-why-wait.md %}
+
 ## Footnotes
 {:.no_toc}
