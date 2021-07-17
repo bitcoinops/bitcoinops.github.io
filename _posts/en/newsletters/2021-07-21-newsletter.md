@@ -101,7 +101,7 @@ BOLTs][bolts repo].*
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta.rc2
 [news76 upfront shutdown]: /en/newsletters/2019/12/11/#lnd-3655
 [rl 0.0.99 rn]: https://github.com/rust-bitcoin/rust-lightning/blob/main/CHANGELOG.md#0099---2021-07-09
-[news55 tlv]: _posts/en/newsletters/2019-07-17-newsletter.md
+[news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
 [news75 payment secrets]: /en/newsletters/2019/12/04/#c-lightning-3259
 [news126 lnd4752]: /en/newsletters/2020/12/02/#lnd-4752
 [jager ln perf]: https://bottlepay.com/blog/bitcoin-lightning-node-performance/
