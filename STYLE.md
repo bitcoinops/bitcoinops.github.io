@@ -74,9 +74,12 @@ following abbreviations we assume readers will already know.
 - UTXO (Unspent Transaction Output)
 - vbyte (virtual byte)
 
-#### Forbidden abbreviations
+#### Forbidden terms and abbreviations
 
 - Core (use Bitcoin Core)
+- {P2WPKH, P2WSH, P2TR} address (use *bech32 address* or *bech32m
+  address*, or write something like "address for P2TR";
+  [rationale](https://www.erisian.com.au/bitcoin-core-dev/log-2021-06-28.html#l-89))
 
 ### Compound words
 
