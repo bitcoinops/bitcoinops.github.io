@@ -20,7 +20,8 @@ also warned against generating any addresses for P2TR before block
 {{site.trb}} as this could cause your service or your users to lose
 money.
 
-The reason is that any payment to a P2TR output can be spent by *anyone*
+The reason not to generate addresses in advance is that any payment to a
+P2TR-style output can be spent by *anyone*
 prior to block {{site.trb}}.  The money would be completely unsecured.
 But starting with that block, thousands of full nodes will begin
 enforcing the rules of [BIP341][] and [BIP342][] (and, by association,
@@ -51,7 +52,7 @@ of the benefits of taproot.
 
 In short:
 
-- {{ante_trb}}: last block where anyone can spend money sent to a P2TR output
+- {{ante_trb}}: last block where anyone can spend money sent to a P2TR-style output
 - {{site.trb}}: first block where P2TR outputs can only be spent according to
   the [BIP341][] and [BIP342][] rules.
 - {{safe_trb}}: a reasonable block at which wallets can start giving their
@@ -64,7 +65,7 @@ In short:
 [^timelocked-trb]:
     Users who want to receive a P2TR payment in the first taproot block
     should generate an address they don't share with anyone and then
-    create a transaction to that address with a nLockTime set to
+    create a transaction to that address with nLockTime set to
     {{ante_trb}}.  That transaction can be broadcast at as soon as block
     {{ante_trb}} has been received.  The nLockTime will ensure the
     transaction can't be included into any block before {{site.trb}},

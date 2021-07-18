@@ -65,7 +65,9 @@ BOLTs][bolts repo].*
 - [C-Lightning #4646][] makes two changes in preparation for removing
   old behavior.  The first change assumes all nodes support the
   TLV-style encoding added in 2019 (see [Newsletter #55][news55 tlv]).
-  The second change makes payment secrets required ([Newsletter
+  Only nodes that explicitly indicate they don't support TLV encoding
+  will by treated differently.
+  The second change makes payment secrets required (see [Newsletter
   #75][news75 payment secrets] for previous discussion and [Newsletter
   #126][news126 lnd4752] for when LND began requiring it).
 
