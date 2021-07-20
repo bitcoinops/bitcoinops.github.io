@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Bitcoin Core #22050 drops support for deprecated version 2 Tor onion services"
     url: /en/newsletters/2021/06/09/#bitcoin-core-22050
 
+  - title: "Bitcoin Core #22112 changes the assumed port for I2P addresses to be 0 instead of 8333"
+    url: /en/newsletters/2021/07/21/#bitcoin-core-22112
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
