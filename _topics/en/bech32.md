@@ -102,6 +102,9 @@ optech_mentions:
   - title: "Wiki page for tracking wallet & service support of bech32m"
     url: /en/newsletters/2021/07/14/#tracking-bech32m-support
 
+  - title: Sparrow wallet adds support for bech32m addresses
+    url: /en/newsletters/2021/07/21/#sparrow-1-4-3-supports-p2tr
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
