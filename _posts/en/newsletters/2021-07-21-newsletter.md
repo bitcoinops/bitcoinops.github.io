@@ -60,7 +60,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22112][] Force port 0 in I2P FIXME:jnewbery
+- [Bitcoin Core #22112][] changes the assumed port for [I2P][] addresses to be
+  0 instead of 8333 (which is the default for IPv4 and IPv6 addresses), and
+  prevents connections to I2P addresses with ports other than 0. The [SAM v3.1
+  specification][sam specification] (which is supported by Bitcoin Core), does
+  not include the concept of ports. This restriction may be lifted if
+  Bitcoin Core is updated to support SAM v3.2, which does include the concept
+  of ports.
 
 - [C-Lightning #4611][] updates the plugin-provided `keysend` RPC to
   add a `routehints` parameter which allows providing information for
@@ -113,3 +119,5 @@ BOLTs][bolts repo].*
 [news126 lnd4752]: /en/newsletters/2020/12/02/#lnd-4752
 [jager ln perf]: https://bottlepay.com/blog/bitcoin-lightning-node-performance/
 [rust-lightning 0.0.99]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.99
+[I2P]: https://geti2p.net/en/
+[sam specification]: https://geti2p.net/en/docs/api/samv3
