@@ -188,6 +188,9 @@ optech_mentions:
   - title: "BIPs #1137 adds BIP86 with a key derivation scheme for single key P2TR outputs"
     url: /en/newsletters/2021/07/07/#bips-1137
 
+  - title: Sparrow wallet adds support for P2TR keypath spends on regtest and signet
+    url: /en/newsletters/2021/07/21/#sparrow-1-4-3-supports-p2tr
+
 ## Optional
 see_also:
   - title: MAST

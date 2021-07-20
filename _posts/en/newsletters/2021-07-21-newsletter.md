@@ -21,7 +21,32 @@ summarizes notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Lightning-powered news site Stacker News launches:**
+  [Open source][stacker news github] news site [Stacker News][stacker.news]
+  launched allowing LNURL authentication as well as voting and commenting using
+  LN micropayments.
+
+- **Suredbits announces DLC wallet alpha release:**
+  [Suredbits' bitcoin-s][suredbits blog] software includes a GUI and allows the
+  execution of Discreet Log Contracts (DLCs) on the Bitcoin blockchain using an
+  oracle. The announcement concludes by mentioning they also plan to use [schnorr
+  signatures][topic schnorr signatures] and [Point Time Locked Contracts
+  (PTLCs)][topic ptlc] to implement [DLCs compatible with LN][suredbits blog dlcs ln].
+
+- **Sparrow 1.4.3 supports P2TR:**
+  Sparrow's [1.4.3 release][sparrow 1.4.3] supports [single-sig P2TR
+  wallets][taproot series 4] on [signet][topic signet] and regtest. The release
+  also supports [sending to bech32m addresses for P2TR][taproot series 1].
+
+- **Coldcard Firmware adds Seed XOR feature:**
+  Coldcard's [4.1.0 Firmware][coldcard 4.1.0] supports [Seed XOR][seed xor], a
+  way to split/combine [BIP39][] seeds in which each part can function as its
+  own wallet. The combined, XOR'd, parts also function as a wallet. This allows
+  for features like honeypot funds and plausibly deniability.
+
+- **BlueWallet integrates Lightning Dev Kit:**
+  BlueWallet [announced][bluewallet ldk tweet] a shift to a new Lightning
+  implementation, now using [Lightning Dev Kit (LDK)][ldk github].
 
 ## Preparing for taproot #5: why are we waiting?
 
@@ -121,3 +146,14 @@ BOLTs][bolts repo].*
 [rust-lightning 0.0.99]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.99
 [I2P]: https://geti2p.net/en/
 [sam specification]: https://geti2p.net/en/docs/api/samv3
+[stacker news github]: https://github.com/stackernews/stacker.news
+[stacker.news]: https://stacker.news/
+[suredbits blog]: https://suredbits.com/dlc-wallet-alpha-release/
+[suredbits blog dlcs ln]: https://suredbits.com/discreet-log-contracts-on-lightning-network/
+[sparrow 1.4.3]: https://github.com/sparrowwallet/sparrow/releases/tag/1.4.3
+[taproot series 4]: /en/preparing-for-taproot/#from-p2wpkh-to-single-sig-p2tr
+[taproot series 1]: /en/preparing-for-taproot/#bech32m-sending-support
+[coldcard 4.1.0]: https://blog.coinkite.com/version-4.1.0-released/
+[seed xor]: https://seedxor.com/
+[bluewallet ldk tweet]: https://twitter.com/bluewalletio/status/1414908931902779394
+[ldk github]: https://github.com/lightningdevkit

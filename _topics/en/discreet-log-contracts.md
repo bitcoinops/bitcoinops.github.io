@@ -56,6 +56,9 @@ optech_mentions:
   - title: Discussion of fraud proofs in DLC v0 specification
     url: /en/newsletters/2021/03/03/#fraud-proofs-in-the-v0-discreet-log-contract-dlc-specification
 
+  - title: Alpha release of Suredbits's DLC wallet
+    url: /en/newsletters/2021/07/21/#suredbits-announces-dlc-wallet-alpha-release
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
