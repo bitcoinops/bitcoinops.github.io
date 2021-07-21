@@ -49,5 +49,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/03-p2wpkh-to-p2tr.md %}
 
+## なぜ待つ必要があるのか？
+
+*[ニュースレター #158](/ja/newsletters/2021/07/21/#taprootの準備-5-なぜ待つ必要があるのか)に掲載*
+
+{% include specials/taproot/ja/04-why-wait.md %}
+
 ## Footnotes
 {:.no_toc}
