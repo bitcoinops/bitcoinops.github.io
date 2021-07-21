@@ -124,7 +124,12 @@ BOLTs][bolts repo].*
   #76][news76 upfront shutdown] describing LND's implementation of this
   feature.
 
-- [Rust-Lightning #975][] Make the base fee configurable in ChannelConfig FIXME:dongcarl
+- [Rust-Lightning #975][] makes the base payment forwarding fee configurable
+  with a default value of 1 satoshi (the market rate as of July 2021).
+  LN routing nodes can charge two fees to route a payment, a fixed base
+  fee or a percentage of the amount routed; many nodes use both.
+  Previously, Rust-Lightning set the base fee to the estimated fee
+  required to settle the HTLC on-chain, which was much higher than 1 sat.
 
 - [BTCPay Server #2462][] makes it easier to use BTCPay to track
   payments made from a separate wallet, such as the case where the
