@@ -51,19 +51,23 @@ defaults:
     values:
       image: https://bitcoinops.org/img/logos/optech-notext.png
       breadcrumbs: true
+      localizable: true
   - scope:
       path: "_topics"
     values:
       layout: topic
       permalink: /en/topics/:title/
+      localizable: false
 
 collections:
   topics:
     output: true
 
 languages:
-  - ja
-  - es
+  - code: ja
+    name: Japanese
+  - code: es
+    name: Spanish
 
 ## In-text aliases
 trb: "709,632" # TapRoot Block (activation)

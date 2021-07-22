@@ -249,6 +249,12 @@ div.compat-usability img
 div.localization
 {
   text-align: right;
+
+  span {
+    font-style: italic;
+    color:gray;
+    cursor: not-allowed;
+  }
 }
 
 .pc125 {

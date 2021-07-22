@@ -3,18 +3,9 @@ layout: default
 --- 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-{% include functions/localization-finder.md %}
-
 <article class="newsletter">
   <header class="post-header">
-    {% if localizations.size > 0 %}
-      <div class="localization">
-        <a href="{{ '/en' | append:baseurl }}">en</a>
-        {% for locale in localizations %}
-          | <a href="{{ locale.url }}">{{locale.lang}}</a>
-        {% endfor %}
-      </div>
-    {% endif %}
+    {% include functions/localization-finder.md %}
     {% assign year = page.date | date: "%Y" %}
     {% assign path = "/" | append: page.lang | append: "/newsletters/" | append: year | append: "/" %}
     {% include linkers/breadcrumbs.md path=path %}
