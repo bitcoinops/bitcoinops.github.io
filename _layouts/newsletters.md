@@ -7,7 +7,7 @@ layout: default
 <div class="localization">
   <a href="/en/newsletters/">en</a>
   {% for lang in site.languages %}
-    | <a href="/{{ lang }}/newsletters/">{{lang}}</a>
+    | <a href="/{{ lang.code }}/newsletters/">{{lang.code}}</a>
   {% endfor %}
 </div>
 
