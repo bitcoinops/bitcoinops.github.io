@@ -72,7 +72,11 @@ BOLTs][bolts repo].*
   higher than the current rate at which a Bitcoin Core node announces
   addresses.
 
-- [C-Lightning #4669][] Updates to offers FIXME:dongcarl
+- [C-Lightning #4669][] fixes several bugs in its [LN offers][topic offers]
+  parsing and validation logic.  It also returns a previously created
+  offer that hasn't yet expired if the user attempts to create a new
+  offer with the same parameters; this may be especially useful since
+  offers aren't created by default with an expiration date.
 
 - [C-Lightning #4639][] adds experimental support for the liquidity
   advertisements proposed in [BOLTs #878][].  This allows a node to
