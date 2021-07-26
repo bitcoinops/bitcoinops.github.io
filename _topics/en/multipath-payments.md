@@ -1,14 +1,19 @@
 ---
 title: Multipath payments
 
+## Optional.  Shorter name to use for reference style links e.g., "foo"
+## will allow using the link [topic foo][].  Not case sensitive
+#shortname:
+
 ## Optional.  An entry will be added to the topics index for each alias
 #
 ## LND source code calls these multi-path payments, Eclair source code
 ## calls them multi-part payments, no C-Lightning sources yet but Rusty and
 ## Zmn call them multipath payments
 aliases:
-  - AMP
   - Multipart payments
+  - Simplified multipath payments
+  - Base AMP
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -17,16 +22,15 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Multipath payments** are LN payments split into two or more parts
-  and sent using a different path for each part.
+  **Simplified Multipath Payments (SMPs)**, also called **Base AMP**,
+  are LN payments that are split into two or more parts all sharing the
+  same hash and preimage, and which are sent using a different path for
+  each part.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: Atomic Multipath Payments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
-
-    - title: Base AMP
+    - title: Simplified Multipath Payments
       link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001577.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
@@ -35,7 +39,7 @@ optech_mentions:
   - title: "LN protocol 1.1 goals: multipath payments"
     url: /en/newsletters/2018/11/20/#multi-path-payments
 
-  - title: "LND #3390 separates tracking of HTLCs from invoices as necessary for AMP"
+  - title: "LND #3390 separates tracking of HTLCs from invoices as necessary for SMP"
     url: /en/newsletters/2019/09/11/#lnd-3390
 
   - title: "LND #3499 extends several RPCs to support tracking multipath payments"
@@ -71,9 +75,6 @@ optech_mentions:
   - title: "Eclair 0.3.3 adds support for multipath payments"
     url: /en/newsletters/2020/02/05/#upgrade-to-eclair-0-3-3
 
-  - title: "LND #3957 adds code useful for Atomic Multipath Payments (AMP) support"
-    url: /en/newsletters/2020/02/12/#lnd-3957
-
   - title: "Boomerang: improving latency and throughput with multipath payments"
     url: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
 
@@ -83,7 +84,7 @@ optech_mentions:
   - title: "LND #3967 adds support for sending multipath payments"
     url: /en/newsletters/2020/04/15/#lnd-3967
 
-  - title: "Rust-Lightning #441 adds support for basic multipath payments"
+  - title: "Rust-Lightning #441 adds support for simplified multipath payments"
     url: /en/newsletters/2020/04/22/#rust-lightning-441
 
   - title: "LND 0.10 presentation: multipath payments"
@@ -116,54 +117,31 @@ optech_mentions:
   - title: New paper analyzes benefit of multipath payments on routing success
     url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 
-  - title: "LND #5108 adds support for spontaneous multipath payments using AMP"
-    url: /en/newsletters/2021/04/14/#lnd-5108
-
   - title: "Rust-Lightning #893 requires payment secrets to prevent multipath probing"
     url: /en/newsletters/2021/05/05/#rust-lightning-893
-
-  - title: "LND #5159 adds support for making spontaneous AMPs"
-    url: /en/newsletters/2021/05/05/#lnd-5159
 
   - title: Electrum 4.1.0 adds support for multipath payments
     url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
 
-  - title: "LND #5253 adds support for Atomic Multipath Payment (AMP) invoices"
-    url: /en/newsletters/2021/05/19/#lnd-5253
-
-  - title: "LND #5336 adds the ability for users to reuse AMP invoices non-interactively"
-    url: /en/newsletters/2021/06/09/#lnd-5336
-
-  - title: "LND 0.13.0-beta allows receiving and sending payments using AMP"
-    url: /en/newsletters/2021/06/23/#lnd-0-13-0-beta
-
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Atomic Multipath Payments (AMPs)
+    link: topic amp
 ---
-Smaller payments are more likely to succeed in general, and allowing a
-payment to be split allows the spender to use almost all of their funds at
-once no matter how many channels those funds are split across.  There
-are two basic multipath proposals:
+Although proposed after atomic multipath payments ([AMP][topic amp]),
+simplified multipath payments required fewer changes to the LN protocol
+to implement and preserved the ability for spenders to receive a
+cryptographic proof of payment, so they were the first to be deployed on
+the production network.
 
-- *Atomic Multipath Payments (AMP)*, sometimes called *Original AMP*
-  or *OG AMP*, which allows a spender to pay multiple hashes all
-  derived from the same preimage---a preimage the receiver can only
-  reconstruct if they receive a sufficient number of shares.  This
-  only allows the receiver to accept a payment if they receive all of the
-  individual parts.  Each share using a different hash adds privacy by
-  preventing the separate payments from being automatically correlated
-  with each other by a third party.  The proposal's downside is that
-  the spender selects all the preimages, so knowledge of the preimage
-  doesn't provide cryptographic proof that they actually paid the
-  receiver.
+The main downside of simplified multipath payments when using
+[HTLCs][topic htlc] is that third-parties who see multiple payments all
+using the same hash can infer that they're part of a larger true payment.
 
-- *Base-AMP* which simply sends multiple payments all using to the
-  same hash and assumes the receiver will wait until the full amount
-  is received before claiming the payment (releasing the hash preimage
-  and allowing generation of a provable receipt).  It's also possible
-  for third-parties who see multiple payments using the same hash to
-  assume they're part of the same true payment.
+Both AMP and SMP allow splitting higher value HTLCs into multiple lower
+value HTLCs that are more likely to
+individually succeed, so a spender with sufficient liquidity can use
+almost all of their funds at once no matter how many channels those
+funds are split across.
 
 {% include references.md %}
