@@ -56,5 +56,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/04-why-wait.md %}
 
+## Learn taproot by using it
+
+*Originally published in [Newsletter #159](/en/newsletters/2021/07/28/#preparing-for-taproot-6-learn-taproot-by-using-it)*
+
+{% include specials/taproot/en/05-taproot-notebooks.md %}
+
 ## Footnotes
 {:.no_toc}
