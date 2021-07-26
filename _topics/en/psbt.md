@@ -147,6 +147,9 @@ optech_mentions:
   - title: PSBT extensions for taproot
     url: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
 
+  - title: "BIPs #1139 adds BIP371 specifying new fields for using PBSTs with P2TR spends"
+    url: /en/newsletters/2021/07/28/#bips-1139
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
