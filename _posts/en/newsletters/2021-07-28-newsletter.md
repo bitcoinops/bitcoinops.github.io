@@ -28,7 +28,36 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is this unusual transaction in the Bitcoin blockchain?]({{bse}}107603)
+  Murch describes an output labeled "UNKNOWN" in a [block explorer][topic
+  block explorers]. The output is a segwit version 1 output with a contrived
+  pubkey. As pointed out by 0xb10c, the 2019 transaction creating this output was for
+  the purpose of testing segwit v1 support for [Optech's Compatibility
+  Matrix][compat matrix]. As warned previously (see [Newsletter #158][news158
+  taproot]), P2TR outputs are anyone-can-spend before the activation of taproot, as 0xb10c demonstrated and [elaborates in a blog post][0xB10C blog].
+
+- [What are miners signalling for when the block header nversion field ends in 4 i.e. 0x3fffe004?]({{bse}}107443)
+  While researching the overt form of ASICBoost, user shikaridota wonders why
+  recently mined blocks have bit 2 being set in the `nVersion` field. Andrew
+  Chow points out that [taproot][topic taproot] used bit 2 to signal for activation as specified in [BIP341's
+  deployment][bip341 deployment] section.
+
+- [Where can I find Bitcoin's alpha version with 15 minute block time intervals?]({{bse}}107407)
+  Andrew Chow points to a [selection of source code][bitcointalk 15min],
+  allegedly from Satoshi, which contains 15 minute block times as well as 30 day
+  retargeting periods.
+
+- [What's the purpose of using Guix within Gitian? Doesn't that reintroduce dependencies and security concerns?]({{bse}}107638)
+  Andrew Chow and fanquake describe the benefits of reproducible builds,
+  including using [Gitian builds][github gitian builds] and [bootstrappable
+  builds using Guix][github contrib guix] and comment on using them together.
+
+- [Why are there several round number transactions with no change?]({{bse}}107418)
+  Shm asks about a series of related transactions that have many inputs with a
+  single round-number output with no change. Murch answers by describing [change
+  avoidance][bitcoin wiki change avoidance] in the context of a wallet with a
+  large number of UTXOs. Change avoidance allows for smaller transactions,
+  reduced future fees, UTXO consolidation, and privacy improvements.
 
 ## Preparing for taproot #6: learn taproot by using it
 
@@ -149,3 +178,11 @@ BOLTs][bolts repo].*
 [news155 tr psbts]: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
 [zmn liquidity providers]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
 [lightning pool]: https://lightning.engineering/posts/2020-11-02-pool-deep-dive/
+[compat matrix]: /en/compatibility/
+[news158 taproot]: /en/newsletters/2021/07/21/#preparing-for-taproot-5-why-are-we-waiting
+[0xB10C blog]: https://b10c.me/blog/007-spending-p2tr-pre-activation/
+[bip341 deployment]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment
+[bitcointalk 15min]: https://bitcointalk.org/index.php?topic=382374.msg4108739#msg4108739
+[bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
+[github gitian builds]: https://github.com/bitcoin-core/docs/blob/master/gitian-building.md
+[github contrib guix]: https://github.com/bitcoin/bitcoin/blob/master/contrib/guix/README.md

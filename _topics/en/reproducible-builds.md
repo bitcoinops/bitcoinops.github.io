@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Bitcoin Core #21462 adds tooling for attesting to Guix-based builds"
     url: /en/newsletters/2021/05/19/#bitcoin-core-21462
 
+  - title: "Question: what's the purpose of Guix within Gitian?"
+    url: /en/newsletters/2021/07/28/#what-s-the-purpose-of-using-guix-within-gitian-doesn-t-that-reintroduce-dependencies-and-security-concerns
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"
