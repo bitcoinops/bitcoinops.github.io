@@ -162,7 +162,11 @@ BOLTs][bolts repo].*
 
    </table>
 
-- [BIPs #1072][] BIP48: HD Multisig derivation standard FIXME:Xekyo
+- [BIPs #1072][] merges the informational [BIP48][] titled "Multi-Script Hierarchy
+  for Multi-Sig Wallets". The document describes a widely deployed derivation
+  standard for wallets participating in multisignature setups based on the
+  `m/48'` prefix, and elaborates on the six derivation levels
+  used by the scheme.
 
 - [BIPs #1139][] adds [BIP371][] with a specification of new fields for
   using [PBSTs][topic psbt] (both [version 0][BIP174] and [version
