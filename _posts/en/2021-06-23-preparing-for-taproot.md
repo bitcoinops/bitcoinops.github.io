@@ -80,5 +80,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/08-signature-adaptors.md %}
 
+## Using Taproot in Lightning
+
+FIXME:add_link_when_part_of_a_newsletter
+
+{% include specials/taproot/en/10-ln-with-taproot.md %}
+
 ## Footnotes
 {:.no_toc}
