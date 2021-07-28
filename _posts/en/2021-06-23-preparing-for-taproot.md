@@ -86,5 +86,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/09-ptlcs.md %}
 
+## LN with taproot
+
+*Originally published in [Newsletter #164](/en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot)*
+
+{% include specials/taproot/en/10-ln-with-taproot.md %}
+
 ## Footnotes
 {:.no_toc}
