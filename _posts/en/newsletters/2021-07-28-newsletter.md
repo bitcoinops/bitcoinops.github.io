@@ -97,7 +97,7 @@ BOLTs][bolts repo].*
   addresses in excess of the limit will be ignored.  It's possible to
   whitelist peers to allow them to exceed this limit, and any address
   announcements the node explicitly requests from its peers are also
-  excluded from the limit.  The limit is estimated to be about 40 times
+  excluded from the limit.  The limit is estimated to be about four times
   higher than the current rate at which a Bitcoin Core node announces
   addresses.
 
@@ -172,6 +172,12 @@ BOLTs][bolts repo].*
   using [PBSTs][topic psbt] (both [version 0][BIP174] and [version
   2][BIP370]) with [taproot][topic taproot] transactions.  See
   [Newsletter #155][news155 tr psbts] for previous discussion.
+
+## Acknowledgments and edits
+
+Our original description of Bitcoin Core PR #22387 claimed the new rate
+limit was about 40x higher than the measured rate.  The correct figure
+is about 4x.  We thank Amiti Uttarwar for reporting this error.
 
 {% include references.md %}
 {% include linkers/issues.md issues="22387,4669,4639,878,1072,1139" %}
