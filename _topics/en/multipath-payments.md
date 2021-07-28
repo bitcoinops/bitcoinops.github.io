@@ -51,12 +51,6 @@ optech_mentions:
   - title: "LND #3442 preparatory PR adding features necessary for multipath payments"
     url: /en/newsletters/2019/11/13/#lnd-3442
 
-  - title: "C-Lightning #3259 adds payment secrets to prevent multipath probing"
-    url: /en/newsletters/2019/12/04/#c-lightning-3259
-
-  - title: 'LND #3788 adds support for "payment addresses" (payment secrets)'
-    url: /en/newsletters/2019/12/11/#lnd-3788
-
   - title: Multiple LN implementations add multipath payment support
     url: /en/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
 
@@ -117,9 +111,6 @@ optech_mentions:
   - title: New paper analyzes benefit of multipath payments on routing success
     url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 
-  - title: "Rust-Lightning #893 requires payment secrets to prevent multipath probing"
-    url: /en/newsletters/2021/05/05/#rust-lightning-893
-
   - title: Electrum 4.1.0 adds support for multipath payments
     url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
 
@@ -127,6 +118,9 @@ optech_mentions:
 see_also:
   - title: Atomic Multipath Payments (AMPs)
     link: topic amp
+
+  - title: Payment secrets
+    link: topic payment secrets
 ---
 Although proposed after atomic multipath payments ([AMP][topic amp]),
 simplified multipath payments required fewer changes to the LN protocol
