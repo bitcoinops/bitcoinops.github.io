@@ -74,6 +74,16 @@ layout: post
 
   <!-- Variable for use in links -->
   {% capture gh_base %}https://github.com/{{site.github_username}}/{{site.repository_name}}{% endcapture %}
+
+  <!-- whether or not to display a stub notice -->
+  {% assign word_count = page.content | number_of_words %}
+  {% if page.stub != false %}
+    <!-- if any words, not a stub.  We may increase word count later -->
+    {% if word_count < 1 or page.stub == true %}
+      {% capture notices %}{{notices}}{% include snippets/stub-topic.md %}{% endcapture %}
+    {% endif %}
+  {% endif %}
+
 {% endcapture %}
 
 <!-- Actual page content -->
@@ -84,6 +94,8 @@ layout: post
   {{page.excerpt}}
 
   {{page.content}}
+
+  {{notices | default: newline}}
 
   {%- if page.primary_sources and page.primary_sources != '' -%}
     ## Primary code and documentation
