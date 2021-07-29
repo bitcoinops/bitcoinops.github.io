@@ -1,3 +1,4 @@
+{% auto_anchor %}
 It's said that "imitation is the most sincere form of flattery."  In
 this week's section, we take a quick look at a few other systems that
 are using variations on bech32.  If you're already going to need to
@@ -48,3 +49,4 @@ probably worth your time to implement it for Bitcoin too.
 [blockstream liquid]: https://blockstream.com/liquid/
 [confidential assets]: https://elementsproject.org/features/confidential-transactions
 [blech32 py]: https://github.com/ElementsProject/elements/commit/9cb2fa051fcbe0fe66f15e6b88d224d1935376f4#diff-265badc7e18059096c32a61b0eada470
+{% endauto_anchor %}

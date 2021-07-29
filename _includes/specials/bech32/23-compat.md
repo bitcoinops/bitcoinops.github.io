@@ -1,4 +1,4 @@
-As of this writing, here are what we think are some of the most
+{% auto_anchor %}As of this writing, here are what we think are some of the most
 significant bech32-related insights we've gleaned from creating and
 reviewing the [Compatibility Matrix][].
 
@@ -40,3 +40,4 @@ reviewing the [Compatibility Matrix][].
   of change output to the type of payment output) but, in most cases,
   this seems like a missed opportunity for wallets to send change to
   their own bech32 addresses for increased fee savings.
+{% endauto_anchor %}

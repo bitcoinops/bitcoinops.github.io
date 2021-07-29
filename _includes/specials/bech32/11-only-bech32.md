@@ -1,3 +1,4 @@
+{% auto_anchor %}
 [Last week][Newsletter #47], we described one of the costs of not
 upgrading to bech32 sending support---users might think your service is
 out-of-date and so look for alternative services.  This week, we'll look
@@ -61,3 +62,4 @@ their preferred wallet.
 [trust wallet]: https://trustwallet.com/
 [electrum]: https://electrum.org/
 [news45 bech32]: {{news45}}#bech32-sending-support
+{% endauto_anchor %}

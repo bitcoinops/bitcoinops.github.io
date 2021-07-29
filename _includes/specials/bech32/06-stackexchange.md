@@ -1,3 +1,4 @@
+{% auto_anchor %}
 This week we look at some of the [top-voted bech32 questions and
 answers][top bech32 qa] from the Bitcoin StackExchange.  This includes
 everything since bech32 was first announced about two years ago.
@@ -39,3 +40,4 @@ everything since bech32 was first announced about two years ago.
 [bech32 easy]: {{news38}}#bech32-sending-support
 [top bech32 qa]: https://bitcoin.stackexchange.com/search?tab=votes&q=bech32
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
+{% endauto_anchor %}

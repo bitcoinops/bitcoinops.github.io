@@ -1,3 +1,4 @@
+{% auto_anchor %}
 One reason your users and customers may want you to implement bech32
 sending support is because it'll allow the receivers of those payments
 to save on fees when they re-spend that money.  This week, we'll look at
@@ -60,3 +61,4 @@ relay fee).  This means more people spending native segwit inputs lowers
 the fee not just for those spenders but for everyone who creates
 transactions---including wallets and services that support sending to
 bech32 addresses.
+{% endauto_anchor %}

@@ -1,3 +1,4 @@
+{% auto_anchor %}
 [Output script descriptors][topic descriptors] provide a generic way for
 wallets to store the information needed to create addresses, efficiently
 scan for outputs paying those addresses, and later spend from those
@@ -97,3 +98,4 @@ using more advanced taproot features later.
 
 {% include linkers/issues.md issues="22051" %}
 [bip341 safety]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-22
+{% endauto_anchor %}

@@ -1,3 +1,4 @@
+{% auto_anchor %}
 *The following case study contributed by Optech member company [BRD][]
 describes what they learned implementing bech32 and other segwit
 technology for their wallet.*
@@ -81,3 +82,4 @@ fees are still relatively low.
 [identical spk data]: /en/bech32-sending-support/#sending-to-a-legacy-address
 [bech32 future]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
 [whensegwit]: https://whensegwit.com/
+{% endauto_anchor %}

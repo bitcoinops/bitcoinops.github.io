@@ -12,6 +12,7 @@ Not tested:
 <!-- Conservatively reorg safe block after activation (+144 blocks) -->
 {% assign safe_trb = "709,776" %}
 {% endcapture %}
+{% auto_anchor %}
 
 Earlier entries in this series saw us encouraging developers working on
 wallets and services to begin implementing [taproot][topic taproot]
@@ -76,3 +77,4 @@ None of the above changes the advice given in the [first part][taproot
 
 [news139 st]: /en/newsletters/2021/03/10/#taproot-activation-discussion
 [taproot series 1]: /en/preparing-for-taproot/#bech32m-sending-support
+{% endauto_anchor %}

@@ -1,3 +1,4 @@
+{% auto_anchor %}
 This segment marks half-way through our series about bech32, so we decided to
 have some fun this week by describing some bech32-related trivia that's
 interesting but not important enough for its own segment.
@@ -29,3 +30,4 @@ interesting but not important enough for its own segment.
 [cpu time]: https://youtu.be/NqiN9VFE4CU?t=1329
 [wikipedia bch]: https://en.wikipedia.org/wiki/BCH_code
 [first plans]:https://blog.bitmain.com/en/uahf-contingency-plan-uasf-bip148/
+{% endauto_anchor %}

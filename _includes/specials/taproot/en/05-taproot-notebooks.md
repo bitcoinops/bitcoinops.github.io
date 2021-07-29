@@ -1,3 +1,4 @@
+{% auto_anchor %}
 Almost two years ago, James Chiang and Elichai Turkel produced an [open source
 repository][taproot-workshop] of Jupyter notebooks for a series of
 Optech workshops to train developers on [taproot][topic taproot] technology.
@@ -53,3 +54,4 @@ taken the time to learn from them earlier.
 [workshops]: /en/schorr-taproot-workshop/
 [notebooks #168]: https://github.com/bitcoinops/taproot-workshop/pull/168
 [mouton tweet]: https://twitter.com/ElleMouton/status/1418108253096095745
+{% endauto_anchor %}
