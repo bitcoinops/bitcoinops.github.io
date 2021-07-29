@@ -55,5 +55,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/04-why-wait.md %}
 
+## Taprootを使って学ぶ
+
+*[ニュースレター #159](/ja/newsletters/2021/07/28/#taprootの準備-6-taprootを使って学ぶ)に掲載*
+
+{% include specials/taproot/ja/05-taproot-notebooks.md %}
+
 ## Footnotes
 {:.no_toc}
