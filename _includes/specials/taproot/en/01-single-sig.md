@@ -1,3 +1,4 @@
+{% auto_anchor %}
 Using Optech's [transaction size calculator][], we can compare the sizes
 of different types of single-sig transactions.  As expected,
 transactions using P2WPKH inputs and outputs are much smaller than those
@@ -73,3 +74,4 @@ for single-sigs, both for wallet users and for the network as a whole.
 [news3 sig size]: /en/newsletters/2018/07/10/#unrelayable-transactions
 [news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [batch graph]: https://github.com/jonasnick/secp256k1/blob/schnorrsig-batch-verify/doc/speedup-batch.md
+{% endauto_anchor %}

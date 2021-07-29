@@ -1,3 +1,4 @@
+{% auto_anchor %}
 For wallets that already support receiving and spending v0 segwit P2WPKH
 outputs, upgrading to v1 segwit P2TR for single-sig should be easy.
 Here are the main steps:
@@ -117,3 +118,4 @@ pages of the Bitcoin Wiki so other developers can learn from your code.
 [bip341 sigmsg]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#common-signature-message
 [wiki bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [wiki taproot uses]: https://en.bitcoin.it/wiki/Taproot_Uses
+{% endauto_anchor %}
