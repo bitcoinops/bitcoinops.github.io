@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Signature adaptors without requiring support for multisignatures"
     url: /en/newsletters/2021/04/28/#support-for-ecdsa-signature-adaptors-added-to-libsecp256k1-zkp
 
+  - title: "Preparing for taproot: multisignatures"
+    url: /en/newsletters/2021/08/04/#preparing-for-taproot-7-multisignatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: MuSig

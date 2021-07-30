@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Benchmark: 1 million signers with MuSig"
     url: /en/newsletters/2021/06/30/#possible-amount-of-signatures-with-musig
 
+  - title: Overview of MuSig1, MuSig2, and MuSig-DN
+    url: /en/newsletters/2021/08/04/#using-multisignatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
