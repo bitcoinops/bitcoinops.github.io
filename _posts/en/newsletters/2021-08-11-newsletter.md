@@ -62,7 +62,12 @@ release candidates.*
   and a few updates to developing protocols (including [dual
   funding][topic dual funding] and [offers][topic offers]).
 
-FIXME:bitcoincore
+- [Bitcoin Core 22.0rc2][bitcoin core 22.0] is a release candidate
+  for the next major version of this full node implementation and its
+  associated wallet and other software. Major changes in this new
+  version include support for [I2P][topic anonymity networks] connections,
+  removal of support for [version 2 Tor][topic anonymity networks] connections,
+  and enhanced support for hardware wallets.
 
 ## Notable code and documentation changes
 
@@ -121,3 +126,4 @@ BOLTs][bolts repo].*
 [addrRelay improvements]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018784.html
 [addr client research]: https://github.com/bitcoin/bitcoin/pull/21528#issuecomment-809906430
 [news157 lnd ha]: /en/newsletters/2021/07/14/#lnd-5447
+[bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
