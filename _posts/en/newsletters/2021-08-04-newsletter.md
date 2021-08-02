@@ -45,12 +45,20 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22006][] first tracepoints and documentation on User-Space, Statically Defined Tracing (USDT) FIXME:glozow
+- [Bitcoin Core #22006][] adds [documentation][tracing doc] for User-Space, Statically Defined
+  Tracing (USDT) and the first three tracepoints - build support and macros for which were added in
+  [Bitcoin Core #19866][]. Users that build Bitcoin Core with eBPF tracing enabled can hook into the
+  tracepoints with the provided [example scripts][contrib tracing doc] or write their own tracing
+  scripts for greater observability into the node when a new block is connected, inbound P2P messages
+  are received, and outbound P2P messages are sent. The documentation also includes usage examples and
+  guidelines for the addition of new tracepoints.
 
 - [Eclair #1893][] Different default relay fees for announced and unannounced channels FIXME:bitschmidty
 
 - [Rust-Lightning #967][] valentinewallace/2021-06-keysend FIXME:dongcarl
 
 {% include references.md %}
-{% include linkers/issues.md issues="22006,1893,967" %}
+{% include linkers/issues.md issues="22006,19866,1893,967" %}
 [C-Lightning 0.10.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.1rc2
+[tracing doc]: https://github.com/bitcoin/bitcoin/blob/8f37f5c2a562c38c83fc40234ade9c301fc4e685/doc/tracing.md
+[contrib tracing doc]: https://github.com/bitcoin/bitcoin/tree/8f37f5c2a562c38c83fc40234ade9c301fc4e685/contrib/tracing
