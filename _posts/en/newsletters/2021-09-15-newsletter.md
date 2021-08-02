@@ -133,6 +133,15 @@ at block height {{site.trb}}.*
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
+- [Bitcoin Core 22.0][bitcoin core 22.0] is the release
+  of the next major version of this full node implementation and its
+  associated wallet and other software. Major changes in this new
+  version include support for [I2P][topic anonymity networks] connections,
+  removal of support for [version 2 Tor][topic anonymity networks] connections,
+  and enhanced support for hardware wallets.  Note that the release
+  verification instructions have changed for this release, as mentioned in
+  [Newsletter #162][news162 core verification].
+
 - [BTCPay Server 1.2.3][] is a release that fixes three cross-site
   scripting (XSS) vulnerabilities that were responsibly reported.
 
@@ -194,3 +203,4 @@ BOLTs][bolts repo].*
 [b10c post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019413.html
 [news165 bolts847]: /en/newsletters/2021/09/08/#bolts-847
 [russell tweet]: https://twitter.com/rusty_twit/status/1435758634995105792
+[news162 core verification]: /en/newsletters/2021/08/18/#bitcoin-core-22642
