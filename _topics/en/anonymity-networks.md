@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Bitcoin Core #22112 changes the assumed port for I2P addresses to be 0 instead of 8333"
     url: /en/newsletters/2021/07/21/#bitcoin-core-22112
 
+  - title: "Bitcoin Core 22.0 adds support for I2P connections and removes v2 Tor connections"
+    url: /en/newsletters/2021/09/15/#bitcoin-core-22-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
