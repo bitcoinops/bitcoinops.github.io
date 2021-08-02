@@ -55,10 +55,20 @@ BOLTs][bolts repo].*
 
 - [Eclair #1893][] Different default relay fees for announced and unannounced channels FIXME:bitschmidty
 
-- [Rust-Lightning #967][] valentinewallace/2021-06-keysend FIXME:dongcarl
+- [Rust-Lightning #967][] adds support for making [keysend-style spontaneous
+  payments][keysend onion] via the
+  `send_spontaneous_payment` function call. With this change, all four LN
+  implementations we cover will have support for keysend.
+
+  The author has also submitted [corresponding documentation][BOLTs #892] (yet
+  unmerged) on keysend payments as a [BLIP][news156 blips] (Bitcoin Lightning
+  Improvement Proposals), a proposed way to document features and best practices
+  which do not belong as part of the LN BOLTs specification.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22006,19866,1893,967" %}
+{% include linkers/issues.md issues="22006,19866,1893,967,892" %}
 [C-Lightning 0.10.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.1rc2
 [tracing doc]: https://github.com/bitcoin/bitcoin/blob/8f37f5c2a562c38c83fc40234ade9c301fc4e685/doc/tracing.md
 [contrib tracing doc]: https://github.com/bitcoin/bitcoin/tree/8f37f5c2a562c38c83fc40234ade9c301fc4e685/contrib/tracing
+[keysend onion]: /en/topics/spontaneous-payments/#add-data-to-the-routing-packet
+[news156 blips]: /en/newsletters/2021/07/07/#blips

@@ -67,6 +67,9 @@ optech_mentions:
   - title: "LND #5108 adds support for spontaneous multipath payments using AMP"
     url: /en/newsletters/2021/04/14/#lnd-5108
 
+  - title: "Rust-Lightning #967 adds support for sending keysend-style spontaneous payments"
+    url: /en/newsletters/2021/08/04/#rust-lightning-967
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
