@@ -53,7 +53,11 @@ BOLTs][bolts repo].*
   are received, and outbound P2P messages are sent. The documentation also includes usage examples and
   guidelines for the addition of new tracepoints.
 
-- [Eclair #1893][] Different default relay fees for announced and unannounced channels FIXME:bitschmidty
+- [Eclair #1893][] allows separate configuration of feerates for [unannounced
+  channels][topic unannounced channels], announced channels, and
+  [trampoline][topic trampoline payments] relay minimums. This PR also sets
+  different default relay feerates for unannounced channels (0.01%) in contrast
+  to announced channels (0.02%).
 
 - [Rust-Lightning #967][] adds support for making [keysend-style spontaneous
   payments][keysend onion] via the
