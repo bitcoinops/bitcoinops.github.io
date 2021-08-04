@@ -73,7 +73,7 @@ at block height {{site.trb}}.*
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [Rust Bitcoin 0.27.0] (bech32m support) is a new release.  Most
+- [Rust Bitcoin 0.27.0][] (bech32m support) is a new release.  Most
   notably, it adds support for handling [bech32m][topic bech32]
   addresses.
 
