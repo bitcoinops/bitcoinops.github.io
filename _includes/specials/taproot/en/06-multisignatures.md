@@ -56,11 +56,12 @@ family:
 
 - **MuSig2**, also simple to implement.  It eliminates one round of
   communication and allows another round to be combined with key
-  exchange.  That allows using a somewhat similar signing
+  exchange.  That can allow using a somewhat similar signing
   process to what we use today with script-based multisig.  This does
-  require storing extra data and ensuring your signing software or
+  require storing extra data and being very careful about ensuring your signing software or
   hardware can't be tricked into unknowingly repeating part of the
-  signing session.
+  signing session.  We'll examine the tradeoffs in more detail in next
+  week's *preparing for taproot* column.
 
 - **MuSig-DN** (Deterministic Nonce), significantly more complex to
   implement.  Its communication between participants can't be combined
@@ -76,7 +77,7 @@ utility.  <!-- "[...] there is no reason to prefer MuSig1 over MuSig2
 [...]" -->
 
 There's an open and actively-developed [PR][-zkp 131] to the libsecp256k1-zkp
-project to add MuSig2 support.  We expect the basic multisignature workflow will look
+project to add MuSig2 support.  We expect the basic multisignature workflow for most software will look
 something like the following:
 
 1. The wallet for each participant generates a [BIP32][] xpub that is shared
@@ -85,28 +86,30 @@ something like the following:
    (the same as is commonly done now for
    multisigs).
 
-2. The wallet also generates a set of nonces that are also shared with
-   the other participants.  The wallet can generate these nonces using
-   BIP32 hardened derivation.  Nonces are 32 bytes and you need two of
-   them per signature.  For infrequently used wallets, all the nonces
-   needed for the entire wallet lifetime can be shared up front.  For
-   more frequently used wallets (e.g. LN routing nodes), each wallet can
-   send its signature for the current transaction along with its nonces
-   for the next transaction.
-
-3. Any of the wallets can then generate an aggregated public key by
+2. Any of the wallets can then generate an aggregated public key by
    combining its pubkey at a certain BIP32 depth with pubkeys at the
    same depth from all other wallets in the multisignature association.
    The aggregated public key can be used to receive P2TR payments.
 
 4. When one of the wallets wants to spend the funds, it uses a
    [PSBT][topic psbt]-based workflow similar to what it would use with
-   script-based multisig.  Unlike multisig, the wallet uses its next
-   nonces and the next nonces of all the other participants to create a
-   shared nonce according to the MuSig2 algorithm; it then creates a
-   partial signature over that nonce and the transaction.
+   script-based multisig, but now two rounds of communication between
+   signers are required.  In the first round, the proposer creates the
+   unsigned transaction and includes a pair of randomly-generated
+   nonces.  It's absolutely essential that the nonces not be derived in an entirely
+   deterministic way that could lead to the same nonce being used again
+   for a different signature.  The proposer sends the PSBT with the
+   nonces to the other wallets.
 
-5. When the other wallets receive the PSBT, they use the same procedure.
+5. The other wallets receive the PSBT and send a further updated PSBT
+   with their own pair of random nonces to the other wallets, or to a
+   coordinator who works trustlessly on behalf of the wallets.
+
+6. When all the wallets have all the nonce pairs, they combine them
+   into a single nonce.  The coordinator may also do this for them.
+   The wallets then all update their versions of the PSBT with their
+   partial signatures, sending the PSBTs to the other wallets or the
+   coordinator.
    The partial signatures are then combined to create the final
    signature and the transaction is broadcast.
 
@@ -144,6 +147,12 @@ switch to pure threshold signature schemes, the above [scheme][erhardt post] may
 continue to remain in use because it provides onchain proof to an
 auditor (if they know all of the participants' public keys) about which
 corresponding private keys were used to sign.
+
+**Edit:** some of the text above about MuSig2 was updated to clarify
+that extra care is required when pre-sharing nonces, so most
+normal wallets using MuSig2 are expected to generate new random nonces
+at the moment they're needed.  We thank members of the #secp256k1 IRC
+room for sharing their concerns.
 
 [nick ruffing blog]: https://medium.com/blockstream/musig2-simple-two-round-schnorr-multisignatures-bf9582e99295
 [-zkp 131]: https://github.com/ElementsProject/secp256k1-zkp/pull/131
