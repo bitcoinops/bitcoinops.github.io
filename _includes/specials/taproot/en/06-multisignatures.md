@@ -123,7 +123,7 @@ some uses of script-based multisig today, such as spending 2-of-2 LN
 funding outputs, but it's a departure from other popular policies such
 as the 2-of-3 multisig script used by many exchanges.
 
-Several developers are working [threshold signature][topic threshold
+Several developers are working on [threshold signature][topic threshold
 signature] schemes that will bring the same efficiency and privacy
 benefits of multisignatures to k-of-n scenarios, but there's a simple
 trick that can be used until those schemes are available.
