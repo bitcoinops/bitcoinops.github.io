@@ -74,7 +74,26 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #21528][] [p2p] Reduce addr blackholes FIXME:ajonas
+- [Bitcoin Core #21528][] aims to improve the p2p propagation of full
+  node listening addresses.  Exposure to a diverse set of addresses is important
+  for nodes to be protected against network partitions such as [eclipse attacks][topic eclipse attacks].
+  When Bitcoin Core nodes receive an address message containing 10 or fewer
+  addresses, they forward it to 1 or 2 peers. This is the primary technique
+  used to self-advertise addresses, so sending to peers that would not relay
+  these addresses would effectively stop or "black hole" the propagation through
+  the network. Although propagation failures cannot be prevented in the malicious case, this
+  patch improves address propagation for the honest cases, such as for block-relay-only
+  connections or light clients.
+
+  This update identifies whether or not an inbound connection is a
+  candidate for forwarding addresses based on whether it has sent an address
+  related message over the connection, such as `addr`, `addrv2`, or `getaddr`. This behavior
+  change could be problematic if there is software on the network that
+  relies on receiving address messages but never initiates an address-related
+  message. Therefore, the author took care to circulate this proposed change
+  before it was merged, including posting it to the
+  [mailing list][addrRelay improvements] and researching
+  [other open source clients][addr client research] to confirm compatibility.
 
 - [LND #5484][] etcd: enable full remote database support FIXME:dongcarl
 
@@ -93,3 +112,5 @@ BOLTs][bolts repo].*
 [fidelity bonds doc]: https://gist.github.com/chris-belcher/18ea0e6acdb885a2bfbdee43dcd6b5af/
 [waxwing toot]: https://x0f.org/@waxwing/106696673020308743
 [news57 fidelity bonds]: /en/newsletters/2019/07/31/#fidelity-bonds-for-improved-sybil-resistance
+[addrRelay improvements]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018784.html
+[addr client research]: https://github.com/bitcoin/bitcoin/pull/21528#issuecomment-809906430
