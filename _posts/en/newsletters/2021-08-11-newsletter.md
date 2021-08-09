@@ -102,7 +102,10 @@ BOLTs][bolts repo].*
   successful forwarding may earn fees for the node, this allows tracking
   that income for the user's accounting records.
 
-- [BTCPay Server #2730][] Implement topup invoices FIXME:Xekyo
+- [BTCPay Server #2730][] makes the amount optional when generating
+  invoices. This simplifies the payment flow in cases where the operator
+  delegates the choice of the amount to the user, e.g. when topping up
+  an account.
 
 {% include references.md %}
 {% include linkers/issues.md issues="21528,5484,1004,2730" %}
