@@ -63,6 +63,9 @@ optech_mentions:
   - title: Candidate set based block templates may help fee bumping large coinjoins
     url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
 
+  - title: "JoinMarket 0.9.0 released with implementation of fidelity bonds for coinjoin sybil resistance"
+    url: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

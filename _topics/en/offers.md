@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Offers specification updated to no longer require a signature"
     url: /en/newsletters/2021/07/14/#c-lightning-4625
 
+  - title: C-Lightning 0.10.1 updates the experimental implementation of offers
+    url: /en/newsletters/2021/08/11/#c-lightning-0-10-1
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

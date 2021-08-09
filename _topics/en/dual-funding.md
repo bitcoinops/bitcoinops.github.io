@@ -74,6 +74,9 @@ optech_mentions:
   - title: "C-Lightning #4639 adds experimental support for liquidity advertisments based on dual funding"
     url: /en/newsletters/2021/07/28/#c-lightning-4639
 
+  - title: C-Lightning 0.10.1 updates the experimental implementation of dual funding
+    url: /en/newsletters/2021/08/11/#c-lightning-0-10-1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)

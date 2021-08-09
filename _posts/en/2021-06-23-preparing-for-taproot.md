@@ -62,10 +62,17 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/05-taproot-notebooks.md %}
 
-## Multisignatures
+## Multisignature overview
 
 *Originally published in [Newsletter #160](/en/newsletters/2021/08/04/#preparing-for-taproot-7-multisignatures)*
 
 {% include specials/taproot/en/06-multisignatures.md %}
+
+## Multisignature nonces
+
+*Originally published in [Newsletter #161](/en/newsletters/2021/08/11/#preparing-for-taproot-8-multisignature-nonces)*
+
+{% include specials/taproot/en/07-nonces.md %}
+
 ## Footnotes
 {:.no_toc}
