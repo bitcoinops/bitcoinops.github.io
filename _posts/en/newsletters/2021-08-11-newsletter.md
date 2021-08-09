@@ -95,7 +95,10 @@ BOLTs][bolts repo].*
   [mailing list][addrRelay improvements] and researching
   [other open source clients][addr client research] to confirm compatibility.
 
-- [LND #5484][] etcd: enable full remote database support FIXME:dongcarl
+- [LND #5484][] allows storing all data in a single external Etcd
+  database. This improves high-availability deployments by making cluster
+  leadership changes instantaneous. The corresponding LND clustering
+  documentation was previously covered in [Newsletter #157][news157 lnd ha].
 
 - [Rust-Lightning #1004][] adds a new event for `PaymentForwarded` that
   allows tracking when a payment has been successfully forwarded.  Since
@@ -117,3 +120,4 @@ BOLTs][bolts repo].*
 [news57 fidelity bonds]: /en/newsletters/2019/07/31/#fidelity-bonds-for-improved-sybil-resistance
 [addrRelay improvements]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018784.html
 [addr client research]: https://github.com/bitcoin/bitcoin/pull/21528#issuecomment-809906430
+[news157 lnd ha]: /en/newsletters/2021/07/14/#lnd-5447
