@@ -34,13 +34,52 @@ and descriptions of notable changes to popular infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-[FIXME]<!-- -->[review club #12345] is a PR by FIXME which FIXME.
+[Prefer to use txindex if available for GetTransaction][review club #22383] is a PR by Jameson Lopp
+which improves the performance of `GetTransaction` (and, by extension, the `getrawtransaction` RPC
+for users) by utilizing the transaction index (txindex) when possible. This change fixes an unexpected
+performance loss in which a call to `getrawtransaction` on a txindex-enabled node is significantly
+slower when called with the hash of the block that includes the transaction. The review club
+evaluated the cause of this performance issue by comparing the steps to retrieve a transaction with
+and without txindex.
 
 {% include functions/details-list.md
 
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/22363#l-17FIXME"
+  q0="What are the different ways `GetTransaction` can retrieve a transaction from disk?"
+  a0="The transaction can be retrieved from the mempool (if unconfirmed), by retrieving the entire
+  block from disk and searching for the transaction, or by using txindex to fetch the transaction
+  from disk by itself."
+  a0link="https://bitcoincore.reviews/22383#l-33"
+
+  q1="Why do you think that performance is worse when the block hash is provided (when txindex is
+  enabled)?"
+  a1="Participants guessed that the bottleneck was in the deserialization of the block. Another
+  process unique to fetching the entire block - albeit less time-consuming - is a linear search
+  through the entire list of transactions."
+  a1link="https://bitcoincore.reviews/22383#l-42"
+
+  q2="If we are looking up the transaction by block hash, what are the steps? How much data
+  is deserialized?"
+  a2="We first use the block index to find the file and byte offset necessary for accessing the block.
+  We then fetch and deserialize the entire block and scan through the list of transactions until we
+  find a match. This involves deserializing about 1-2MB of data."
+  a2link="https://bitcoincore.reviews/22383#l-56"
+
+  q3="If we are looking up the transaction using the txindex, what are the steps? How much data is
+  deserialized?"
+  a3="The txindex maps from transaction id to the file, block position (similar to the block index),
+  and the offset within the blk\*.dat file where the transaction starts. We fetch and deserialize the
+  block header and transaction. The header is 80B and allows us to return the block hash to the user
+  (which is information not stored in the txindex). The transaction
+  can be any size but is typically thousands of times smaller than the block."
+  a3link="https://bitcoincore.reviews/22383#l-88"
+
+  q4="The first version of this PR included a behavior change: when an incorrect `block_index` is
+  provided to `GetTransaction`, find and return the tx anyway using the txindex. Do you think this change is an improvement,
+  and should it be included in this PR?"
+  a4="Participants agreed that it could be helpful but misleading, and that notifying the
+  user of the incorrect block hash input would be better. They also noted that a performance
+  improvement and behavior change would be best split into separate PRs."
+  a4link="https://bitcoincore.reviews/22383#l-128"
 %}
 
 ## Preparing for taproot #8: multisignature nonces
@@ -116,7 +155,7 @@ BOLTs][bolts repo].*
   an account.
 
 {% include references.md %}
-{% include linkers/issues.md issues="21528,5484,1004,2730" %}
+{% include linkers/issues.md issues="21528,5484,1004,2730,22383" %}
 [C-Lightning 0.10.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.1
 [joinmarket 0.9.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.0
 [jm notes]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.9.0.md#fidelity-bond-for-improving-sybil-attack-resistance
