@@ -20,7 +20,7 @@ lang: ja
 
 - **UTXOと未公開チャネル間のリンクの削除:** Bastien Teinturierは、未公開チャネル（LNネットワーク上、公開されていない、通常は他のユーザーの支払いをルーティングしていないチャネル）に送信される支払いの[BOLT11][]・インボイスに追加されるデータの変更について、Lightning-Devメーリングリストに[投稿しました][teinturier post]。提案された変更により、チャネルのデポジットUTXOを識別するために使用されるインボイスから情報が削除され、1回限りのインボイスごとのキーペアと、そのキーペアから派生したシークレットに置き換えられ、オニオン暗号化ペイメントの一部としてルーティングされます。これには、支払者と未公開チャネルにルーティングできるピアの両方からの特別なサポートが必要になりますが、ルーティングパスに沿った他のノードの実装を変更する必要はありません。Teinturierは、（本提案における欠点とも言える）暗号化されたシークレットを支払いに含める必要性を排除する方法に関する提案を含め、このアイデアに対するフィードバックを求めています。
 
-- **eltooによる階層化されたコミットメント:** Anthony Townsは、[eltooベース][topic eltoo]のLNチャネルをシンプルにできる、前回彼が出した[anyprevout提案][bip-anyprevout]（[SIGHASH_NOINPUT][topic sighash_noinput]の派生）の変更について[説明しました][towns
+- **eltooによる階層化されたコミットメント:** Anthony Townsは、[eltooベース][topic eltoo]のLNチャネルをシンプルにできる、前回彼が出した[anyprevout提案][bip-anyprevout]（[SIGHASH_NOINPUT][topic sighash_anyprevout]の派生）の変更について[説明しました][towns
   layered commitments]。現在提案されているように、eltooベースのLN実装は、支払いの一方的なクローズに含まれる遅延条件（to_self_delay）の前に、支払いのタイムアウトに伴う払い戻し(cltv_expiry_delta)を受け入れないようにする必要があります。そうでないと、受信ノードが正当に支払いを請求する十分な機会を得る前に、支払ノードが支払いを取り戻すことが出来てしまいます（アダプタ署名（「ポイントロック」）を使用してこれは行われます）。これは、タイムアウト(cltv_expiry_delta)と遅延条件（to_self_delay）を独立した形で選択できる現在のスタイルのLN払いとは異なります。
 
   eltooが同様のタイムアウトと遅延パラメーターの独立性を実現するために、Townsは`SIGHASH_ANYPREVOUTANYSCRIPT`署名ハッシュ（sighash）フラグを使用して作成された署名から入力値（`sha_amounts`）への[BIP341][]コミットメントを削除することを提案します。これには、[tapscript][topic tapscript]の`OP_CODESEPARATOR`オペコードのバリエーションの使用など、eltooで使用されるスクリプトの変更も必要です。

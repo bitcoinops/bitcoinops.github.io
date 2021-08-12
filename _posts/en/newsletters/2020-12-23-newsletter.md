@@ -159,7 +159,7 @@ same efficiency, low fees, and large anonymity set as single-sig users.
 Taproot and schnorr also lay the groundwork for future potential
 upgrades that may improve efficiency, privacy, and fungibility further,
 such as signature aggregation, [SIGHASH_ANYPREVOUT][topic
-sighash_noinput], and [scripting language changes][topic simplicity].
+sighash_anyprevout], and [scripting language changes][topic simplicity].
 
 This special section concentrates the summaries about those developments
 into a single narrative that we hope will be easier to follow than

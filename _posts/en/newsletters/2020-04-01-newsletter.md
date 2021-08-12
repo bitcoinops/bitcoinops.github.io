@@ -42,7 +42,7 @@ notable changes to popular Bitcoin infrastructure projects.
     statechain design that could allow it to be used with the current
     Bitcoin protocol rather than waiting for proposed soft fork changes
     such as [schnorr signatures][topic schnorr signatures]
-    and [SIGHASH_ANYPREVOUT][topic sighash_noinput]:
+    and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]:
 
     1. Replace the eltoo mechanism (which requires either [BIP116][]
        `SIGHASH_NOINPUT` or [bip-anyprevout][] `SIGHASH_ANYPREVOUT`)

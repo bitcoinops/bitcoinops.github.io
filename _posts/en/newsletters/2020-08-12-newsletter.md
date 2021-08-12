@@ -22,7 +22,7 @@ and notable changes to popular Bitcoin infrastructure projects.
 
 - **Discussion about eltoo and `SIGHASH_ANYPREVOUT`:** Richard Myers
   [resumed][myers anyprevout] a discussion about
-  [SIGHASH_ANYPREVOUT][topic sighash_noinput] and provided a nice
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and provided a nice
   diagram of how its two [signature hash][] (sighash) types would be used
   within [eltoo][topic eltoo].  He also asked several questions about
   minimizing the number of network round trips needed to create eltoo

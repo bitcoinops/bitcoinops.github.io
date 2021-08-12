@@ -44,7 +44,7 @@ projects.
     ZmnSCPxj [noted][zmnscpxj re-funding] that the same basic idea could
     be used to essentially update the funding transaction offchain, such
     as the case where [taproot][topic taproot]
-    and [SIGHASH_ANYPREVOUT][topic sighash_noinput] are implemented,
+    and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] are implemented,
     allowing [Eltoo][topic eltoo]-based channel commitments to be used.  In
     ZmnSCPxj's proposal, the output of the existing funding transaction
     would be paid to a new funding transaction that is kept offchain.  If

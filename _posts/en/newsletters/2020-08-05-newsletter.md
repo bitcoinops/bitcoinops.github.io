@@ -133,7 +133,7 @@ highlight a selection of the transcripts from the previous month.*
   and the future challenges of building and distributing Bitcoin Core
   binaries on MacOS in light of notarization requirements and Apple
   transitioning from Intel to ARM processors. Other topics included
-  updates to the [SIGHASH_ANYPREVOUT][topic sighash_noinput]
+  updates to the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
   proposal, generalized Bitcoin-compatible channels, and the latest thinking
   on taproot activation.  ([transcript][sydney transcript])
 

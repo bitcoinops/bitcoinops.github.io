@@ -50,7 +50,7 @@ highlight a selection of the transcripts from the previous month.*
   alternative to Bitcoin Script focused on provable security and
   expressiveness. Back discussed how Simplicity, if enabled in Bitcoin
   today, would allow developers to implement new functionality like
-  [SIGHASH_NOINPUT][topic sighash_noinput] without necessarily needing a soft fork. He also
+  [SIGHASH_NOINPUT][topic sighash_anyprevout] without necessarily needing a soft fork. He also
   displayed a [demo][simplicity demo] showing what you can do with
   Simplicity today.  ([transcript][simplicity xs], [video][simplicity
   vid], [slides][simplicity slides])

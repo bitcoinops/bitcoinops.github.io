@@ -20,7 +20,7 @@ infrastructure projects.
 - **BIP118 update:** Anthony Towns [posted][towns post] to the
   Bitcoin-Dev mailing list a link to a PR that proposes to replace the
   existing text of the [BIP118][] draft of [SIGHASH_NOINPUT][topic
-  sighash_noinput] with the [draft specification][anyprevout spec] for
+  sighash_anyprevout] with the [draft specification][anyprevout spec] for
   `SIGHASH_ANYPREVOUT` and `SIGHASH_ANYPREVOUTANYSCRIPT`.  Both
   proposals describe optional signature hash (sighash) flags that do not
   commit to the particular UTXOs (inputs/previous outputs) being spent

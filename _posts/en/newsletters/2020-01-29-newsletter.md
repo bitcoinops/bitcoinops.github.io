@@ -54,7 +54,7 @@ projects.
 - **Layered commitments with eltoo:** Anthony Towns [described][towns
   layered commitments] a potential modification to his previous
   [anyprevout proposal][bip-anyprevout] (a variation of
-  [SIGHASH_NOINPUT][topic sighash_noinput]) that could simplify
+  [SIGHASH_NOINPUT][topic sighash_anyprevout]) that could simplify
   [eltoo][topic eltoo]-based LN channels.  As currently proposed,
   eltoo-based LN implementations would need to ensure they don't accept
   a payment whose refund timeout occurs before the payment's

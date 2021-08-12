@@ -29,7 +29,7 @@ projects.
     could check almost any part of the transaction that later spends
     those bitcoins.  This can enable many advanced features (including
     versions[^expensive] of other proposed upgrades like
-    [SIGHASH_ANYPREVOUT][topic sighash_noinput] and
+    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
     [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]), but
     `OP_CAT` also makes it possible to create recursive
     [covenants][topic covenants] which could permanently restrict the
@@ -177,7 +177,7 @@ BOLTs][bolts repo].*
 
 - [BIPs #943][] updates [BIP118][] to build on soon-to-be activated
   taproot and tapscript rather than SegWit v0. Additionally, this revision
-  renames the title to [SIGHASH_ANYPREVOUT][topic sighash_noinput]
+  renames the title to [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
   from SIGHASH_NOINPUT to reflect that the sighash flag is now referred to as
   "ANYPREVOUT" given that while any prevout may potentially be used with
   the signature, some aspects of the input are still committed to.
@@ -196,7 +196,7 @@ BOLTs][bolts repo].*
 [^expensive]:
     Using `OP_CHECKSIGFROMSTACK` (`OP_CSFS`) to implement the principle
     feature of proposals like [BIP118][]'s [SIGHASH_ANYPREVOUT][topic
-    sighash_noinput] or [BIP119][]'s [OP_CHECKTEMPLATEVERIFY][topic
+    sighash_anyprevout] or [BIP119][]'s [OP_CHECKTEMPLATEVERIFY][topic
     op_checksigfromstack] would require more block space than those
     optimized proposals if scriptpath spending is used.  The
     [argument][news48 generic csfs] in favor of `OP_CSFS` is that it
