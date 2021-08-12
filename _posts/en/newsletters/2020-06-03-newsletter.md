@@ -94,7 +94,7 @@ highlight a selection of the transcripts from the previous month.*
   implementations such as Eclair and LND before explaining why
   C-Lightning is using a synchronous database log plugin. Later, he
   described why LN backups are more complex than onchain backups, the
-  prospects of adding [SIGHASH_NOINPUT][topic sighash_noinput] or
+  prospects of adding [SIGHASH_NOINPUT][topic sighash_anyprevout] or
   `SIGHASH_ANYPREVOUT` to Bitcoin to enable [eltoo-based][topic eltoo]
   payment channels, and the current modularity of the LN protocol.
   ([transcript][decker xs], [video][decker vid])

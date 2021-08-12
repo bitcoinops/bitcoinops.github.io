@@ -53,8 +53,8 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: SIGHASH_NOINPUT
-    link: topic sighash_noinput
+  - title: SIGHASH_ANYPREVOUT
+    link: topic sighash_anyprevout
 ---
 If eltoo is used without a penalty mechanism, there's no harm in
 publishing an old state, except that it costs transaction fees to

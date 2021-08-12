@@ -36,7 +36,7 @@ infrastructure software.
   fingerprints.
 
     The authors outline how CoinPool could work using existing features
-    of Bitcoin plus taproot, [SIGHASH_NOINPUT][topic sighash_noinput], and the ability to use
+    of Bitcoin plus taproot, [SIGHASH_NOINPUT][topic sighash_anyprevout], and the ability to use
     a delete-only accumulator via Bitcoin Script (e.g. a merkle tree;
     perhaps something like the proposed [BIP116][]
     `OP_MERKLEBRANCHVERIFY`).  They don't appear to be advocating a

@@ -336,7 +336,7 @@ of a transaction's fields and related data to which a signature commits.  Differ
 sighashes in Bitcoin commit to different parts of a transaction, allowing
 signers to optionally let other people make certain modifications to
 their transactions.  The two new proposed sighashes function similar to
-[BIP118][]'s [SIGHASH_NOINPUT][topic sighash_noinput] by deliberately not
+[BIP118][]'s [SIGHASH_NOINPUT][topic sighash_anyprevout] by deliberately not
 identifying which UTXO they spend, allowing the signature
 to spend any UTXO whose script it can fulfill (e.g. that uses the same
 pubkey).

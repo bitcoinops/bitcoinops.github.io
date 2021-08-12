@@ -17,7 +17,7 @@ lang: ja
 
 - **schnorrやeltooを使わないstatechainsの実装:**statechainsは、ユーザー（Aliceなど）がUTXOを使用する能力を別のユーザー（Bob）に委任することを可能にする[オフチェーンシステム][statechain overview]であり、そのユーザーはさらにその権利を第3のユーザー（Carol）などに委任することができます。オフチェーンの委任操作はすべて、信頼されたサードパーティーの協力を得て実行されます。サードパーティーは委任された署名者（前の委任者であるAliceやBobなど）と共謀した場合にのみ資金を盗むことができます。委任された署名者は、信頼された第三者の許可を必要とせずに常にUTXOオンチェーンを使用することができます。議論の余地なく、statechainsはフェデレーション化された[サイドチェーン][topic sidechains]よりも信頼されていません。代表者であったことのある人（Alice、Bob、Carol）なら誰でもオンチェーンでの支出をトリガーすることができるため、statechainsはeltooメカニズムを使用して、最新の代表者（Carol）によるオンチェーンでの支出が、以前の代表者（AliceおよびBob）による支出よりも優先されることを保証するように設計されています。
 
-    今週、Tom TrevethanがBitcoin-Devメーリングリストに、[schnorr signatures][topic schnorr signatures]や[SIGHASH_ANYPREVOUT][topic sighash_noinput]のような現状提案されているソフトフォークの変更を待つのではなく、現在のBitcoinプロトコルで使用できるようにするためのstatechainsの設計の2つの修正について投稿しました。
+    今週、Tom TrevethanがBitcoin-Devメーリングリストに、[schnorr signatures][topic schnorr signatures]や[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]のような現状提案されているソフトフォークの変更を待つのではなく、現在のBitcoinプロトコルで使用できるようにするためのstatechainsの設計の2つの修正について投稿しました。
 
     1. eltooメカニズム(これは、[BIP118][]`SIGHASH_NOINPUT`または[bip-anyprevout][]`SIGHASH_ANYPREVOUT`を必要とする)を、[duplex micropayment channels][]に提案されたものと同様の、徐々に減少するロックタイムで置き換える。例えば、AliceがstatechainsのUTXOの制御を受け取ると、タイムロックは30日間、彼女が一方的にそのUTXOをチェーン上で使うことができないようにする。アリスがUTXOをボブに転送するとき、タイムロックは彼を29日間だけ制限します。これは、ボブによる支出がアリスによる支出よりも優先されます。このアプローチの欠点は、信頼できる第三者の許可なしに資金を使うことができるようになるまで、代表者が長い間待つ必要があるかもしれないということです。
 

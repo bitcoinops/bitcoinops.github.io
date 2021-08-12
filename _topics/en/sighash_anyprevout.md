@@ -1,5 +1,5 @@
 ---
-title: SIGHASH_NOINPUT
+title: SIGHASH_ANYPREVOUT
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -8,11 +8,11 @@ categories:
   - Scripts and Addresses
 
 aliases:
-  - SIGHASH_ANYPREVOUT
+  - SIGHASH_NOINPUT
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **SIGHASH\_NOINPUT** and **SIGHASH\_ANYPREVOUT** are proposals for a
+  **SIGHASH\_ANYPREVOUT**, an updated version of SIGHASH\_NOINPUT, is a proposal for a
   signature hash (sighash) where the identifier for the UTXO being
   spent is not signed, allowing the signature to be used with any
   UTXO that's protected by a similar script (i.e. uses the same public
@@ -22,7 +22,6 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: BIP118
-    - title: bip-anyprevout
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -85,6 +84,10 @@ optech_mentions:
 see_also:
   - title: Eltoo
     link: topic eltoo
+
+redirect_from:
+  - /en/topics/sighash_noinput/
+
 ---
 A noinput-style sighash is necessary for the proposed [eltoo][topic eltoo]
 layer for LN.

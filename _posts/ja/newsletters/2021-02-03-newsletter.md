@@ -19,7 +19,7 @@ lang: ja
   BitcoinでCSFSのような動作を有効にすることで、トランザクションに事前に署名することなく[Covenants][topic covenants]やその他の高度なコントラクトを作成することが可能になり、
   複雑さや保存する必要のあるデータ量を削減することができる可能性があります。この記事の最後には、シリーズの後半の記事へのお誘いがあります(リンクは私達が追加):
 
-  > "次の記事では、補助インプットを使って[SIGHASH_NOINPUT][topic sighash_noinput]をシミュレートし、
+  > "次の記事では、補助インプットを使って[SIGHASH_NOINPUT][topic sighash_anyprevout]をシミュレートし、
   > Lightning Channelの一定サイズのバックアップを可能にする方法と、"value-switching"を使って
   > [Vault][topic vaults]を構築する方法についてお話します。最後の記事では、[Miniscript][topic miniscript]
   > のアドホックな拡張と、そのためのソフトウェアをメンテナンス可能な方法で開発する方法についてお話します。"

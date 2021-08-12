@@ -134,8 +134,8 @@ features for Bitcoin users:
     just by writing a verification script.
 
     Looking forward, `OP_CSFS` could also allow scripts to [implement
-    the features][oconnor generic] of the proposed [SIGHASH_NOINPUT][topic
-    sighash_noinput] and `SIGHASH_ANYPREVOUT` signature hashes, as
+    the features][oconnor generic] of the proposed [SIGHASH_ANYPREVOUT][topic
+    sighash_anyprevout] signature hash, as
     well as other opcode proposals such as
     [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
     Additionally, `OP_CSFS` would allow the creation of

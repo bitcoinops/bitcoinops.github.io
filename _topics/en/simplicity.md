@@ -65,7 +65,7 @@ similar to today's Bitcoin Script.
 
 Assuming Simplicity is soft forked into Bitcoin with sufficient jets
 at some stage, new features such as [SIGHASH_ANYPREVOUT][topic
-sighash_noinput]---which currently requires a soft fork to
+sighash_anyprevout]---which currently requires a soft fork to
 implement---could be used on Bitcoin without needing separate
 consensus rule changes.  Although Simplicity provides certain proofs of
 correctness, care will still need to be applied in the design of any

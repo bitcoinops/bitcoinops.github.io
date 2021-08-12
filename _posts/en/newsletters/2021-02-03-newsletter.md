@@ -29,7 +29,7 @@ popular Bitcoin infrastructure projects.
   the series (links added by us):
 
     > "In our next posts, we’ll talk about how to use auxiliary inputs
-    > to simulate [SIGHASH_NOINPUT][topic sighash_noinput] and enable
+    > to simulate [SIGHASH_NOINPUT][topic sighash_anyprevout] and enable
     > constant-sized backups for Lightning channels, and how to use
     > "value-switching" to construct [vaults][topic vaults].  In our
     > final post we’ll talk about ad-hoc extensions of

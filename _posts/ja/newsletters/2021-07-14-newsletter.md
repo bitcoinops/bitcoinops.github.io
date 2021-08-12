@@ -23,7 +23,7 @@ Taprootの準備についての提案、人気のあるBitcoinインフラスト
 
     `OP_CAT`と`OP_CSFS`は、任意のトランザクションのイントロスペクションを可能にします。
     つまり、ビットコインを受け取ったスクリプトが、そのビットコインを後で使用するトランザクションのほぼすべてのパーツをチェックできるようになります。
-    これにより多くの高度な機能（[SIGHASH_ANYPREVOUT][topic sighash_noinput]や、
+    これにより多くの高度な機能（[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]や、
     [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]などの、
     他の提案中のアップグレードバージョン[^expensive]を含む）を有効にできますが、
     `OP_CAT`を使用すると再帰的な[Covenants][topic covenants]を作成することが可能で、
@@ -154,7 +154,7 @@ witnessデータと適切なscriptCodeを使用してsegwitルールを適用し
 - [BIPs #943][]は、SegWit v0ではなく、
   まもなくアクティベートされるTaprootおよびTapscriptに基づいて構築されるように[BIP118][]を更新しています。
   さらに、このリビジョンでは、
-  タイトルの名前がSIGHASH_NOINPUTから[SIGHASH_ANYPREVOUT][topic sighash_noinput]に変更され、
+  タイトルの名前がSIGHASH_NOINPUTから[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]に変更され、
   sighash flagは"ANYPREVOUT"と呼ばれるようになりました。
   これは、prevoutが署名で使用される可能性がある一方で、インプットのいくつかの側面がまだコミットされているためです。
 
@@ -169,7 +169,7 @@ witnessデータと適切なscriptCodeを使用してsegwitルールを適用し
 ## 脚注
 
 [^expensive]:
-    [BIP118][]の[SIGHASH_ANYPREVOUT][topic sighash_noinput]や
+    [BIP118][]の[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]や
     [BIP119][]の[OP_CHECKTEMPLATEVERIFY][topic op_checksigfromstack]のような提案の機能を実装するのに、
     `OP_CHECKSIGFROMSTACK` (`OP_CSFS`)を使用すると、
     scriptpathで使用する場合に最適化された提案よりも多くのブロックスペースが必要になります。
