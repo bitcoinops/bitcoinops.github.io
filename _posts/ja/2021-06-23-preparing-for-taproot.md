@@ -61,11 +61,17 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/05-taproot-notebooks.md %}
 
-## Multisignatures
+## マルチシグの概要
 
 *[ニュースレター #160](/ja/newsletters/2021/08/04/#taprootの準備-7-マルチシグ)に掲載*
 
 {% include specials/taproot/ja/06-multisignatures.md %}
+
+## マルチシグのnonce
+
+*[ニュースレター #161](/ja/newsletters/2021/08/11/#taprootの準備-8-マルチシグのnonce)に掲載*
+
+{% include specials/taproot/ja/07-nonces.md %}
 
 ## Footnotes
 {:.no_toc}
