@@ -61,9 +61,9 @@ optech_mentions:
     url: /en/newsletters/2021/03/24/#hashes-not-currently-doing-a-good-job-at-qc-resistance
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Uneconomical outputs (dust)
+    link: topic uneconomical outputs
 ---
 When you receive several payments to the same Bitcoin address, other
 users can reasonably assume that the same person received all of those
