@@ -74,5 +74,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/07-nonces.md %}
 
+## Signature adaptors
+
+*Originally published in [Newsletter #162](/en/newsletters/2021/08/18/#preparing-for-taproot-9-signature-adaptors)*
+
+{% include specials/taproot/en/08-signature-adaptors.md %}
+
 ## Footnotes
 {:.no_toc}

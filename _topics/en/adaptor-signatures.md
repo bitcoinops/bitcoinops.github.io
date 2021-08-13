@@ -100,6 +100,9 @@ optech_mentions:
   - title: "Question: Why does blockwide signature aggregation prevent adaptor signatures?"
     url: /en/newsletters/2021/06/30/#why-does-blockwide-signature-aggregation-prevent-adaptor-signatures
 
+  - title: "Preparing for taproot: signature adaptors"
+    url: /en/newsletters/2021/08/18/#preparing-for-taproot-9-signature-adaptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

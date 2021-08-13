@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Question: what's the purpose of Guix within Gitian?"
     url: /en/newsletters/2021/07/28/#what-s-the-purpose-of-using-guix-within-gitian-doesn-t-that-reintroduce-dependencies-and-security-concerns
 
+  - title: "Bitcoin Core #22642 allows concatenation of Guix-based attestations for batch verification"
+    url: /en/newsletters/2021/08/18/#bitcoin-core-22642
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"
