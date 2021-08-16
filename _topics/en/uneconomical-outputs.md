@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Discussion about removing the dust limit"
     url: /en/newsletters/2021/08/18/#dust-limit-discussion
 
+  - title: "Rust-Lightning #1009 adds a `max_dust_htlc_exposure_msat` channel configuration option"
+    url: /en/newsletters/2021/08/18/#rust-lightning-1009
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
@@ -49,7 +52,7 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Uneconomical outputs** are transaction that are worth less
+  **Uneconomical outputs** are transaction outputs that are worth less
   than the fees it will cost to spend them.  To prevent users from
   creating uneconomical outputs that will increase the size of the UTXO
   set,  Bitcoin Core and other nodes refuse to relay or mine

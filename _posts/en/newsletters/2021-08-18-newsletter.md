@@ -96,10 +96,25 @@ BOLTs][bolts repo].*
   extended private keys (xprvs), allowing this updated command to be
   used to backup the wallet.
 
-- [Rust-Lightning #1009][] ariard/2021-07-add-forward-dust-limit FIXME:dongcarl
+- [Rust-Lightning #1009][] adds a `max_dust_htlc_exposure_msat` channel
+  configuration option which limits the total balance of pending "dusty HTLCs"
+  whose amounts are below the [dust limit][topic uneconomical outputs].
+
+  This change is in preparation for a [proposed][BOLTs #873]
+  `option_dusty_htlcs_uncounted` feature bit, which advertises that the node
+  does not wish to count "dusty HTLCs" against `max_accepted_htlcs`. Node
+  operators would likely want to adopt this feature bit since
+  `max_accepted_htlcs` is mainly used to limit the potential size of the onchain
+  transaction if a force-close were to happen and "dusty HTLCs" are unclaimable
+  onchain and would never affect the final transaction size.
+
+  The newly added `max_dust_htlc_exposure_msat` channel configuration option
+  ensures that even when `option_dusty_htlcs_uncounted` is turned on, users can
+  still limit the total balance of "dusty HTLCs" as this balance would be lost
+  as fees to miners in a force-close.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22642,21800,21500,1009" %}
+{% include linkers/issues.md issues="22642,21800,21500,1009,873" %}
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [gpg batch]: https://gist.github.com/harding/78631dbcd65ff4a499e164c4e9dc85d4
