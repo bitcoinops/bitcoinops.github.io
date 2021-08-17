@@ -43,7 +43,25 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Spark Lightning Wallet adds BOLT12 support:**
+  The [v0.3.0rc release][spark v0.3.0rc] of [Spark][spark github] adds partial
+  support for BOLT12's [offers][topic offers].
+
+- **Blockstream announces non-custodial LN cloud service, Greenlight:**
+  In a recent [blog post][blockstream blog greenlight], Blockstream details their
+  hosted C-Lightning-nodes-in-the-cloud service that separates node operation
+  (Blockstream) from the control of the funds held by the node (user).
+  [Sphinx][sphinx website] and [Lastbit][lastbit website] both currently use the
+  Greenlight service.
+
+- **BitGo announces native segwit change outputs:**
+  Noting segwit's adoption crossing the 75% milestone, [BitGo's blog
+  post][bitgo blog segwit change] announces an update in their default change
+  outputs shifting from P2SH-wrapped to [native segwit][topic bech32] outputs.
+
+- **Blockstream Green desktop 0.1.10 released:**
+  The [0.1.10 version][blockstream green desktop 0.1.10] adds segwit-by-default
+  single-sig wallets and manual [coin selection][topic coin selection] features.
 
 ## Preparing for taproot #9: signature adaptors
 
@@ -143,3 +161,10 @@ BOLTs][bolts repo].*
 [towns dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019333.html
 [bitcoin core mempool limits]: /en/newsletters/2018/12/04/#fn:fn-cpfp-limits
 [mempool package test accept]: /en/newsletters/2021/06/02/#bitcoin-core-20833
+[spark v0.3.0rc]: https://github.com/shesek/spark-wallet/releases/tag/v0.3.0rc
+[spark github]: https://github.com/shesek/spark-wallet
+[blockstream blog greenlight]: https://blockstream.com/2021/07/21/en-greenlight-by-blockstream-lightning-made-easy/
+[sphinx website]: https://sphinx.chat/
+[lastbit website]: https://gl.striga.com/
+[bitgo blog segwit change]: https://blog.bitgo.com/native-segwit-change-outputs-for-bitcoin-c021406aaae2
+[blockstream green desktop 0.1.10]: https://github.com/Blockstream/green_qt/releases/tag/release_0.1.10
