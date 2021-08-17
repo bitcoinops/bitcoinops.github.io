@@ -44,7 +44,7 @@ rbf:
         transactions confirms.
 segwit:
   tested:
-    date: "2019-04-12"
+    date: "2021-08-17"
     platforms:
       - web
     version: "n/a"
@@ -55,7 +55,7 @@ segwit:
       default: "p2sh_wrapped"
     send:
       bech32: "true" 
-      change_bech32: "false"
+      change_bech32: "true"
       segwit_v1: "Error occurs during sending process, after validation."
       bech32_p2wsh: "true"
   examples:
@@ -67,8 +67,7 @@ segwit:
         not possible in the UI currently, bech32 receive addresses can be generated using the API. 
     - image: /img/compatibility/bitgo/segwit/send-screen.png
       caption: >
-        BitGo's web wallet allows sending to bech32 addresses. Change addresses
-        are not bech32 native, but P2SH-wrapped segwit addresses.
+        BitGo's web wallet allows sending to bech32 addresses.
     #- image: /img/compatibility/bitgo/segwit/send-v1.png
     #  caption: >
     #    BitGo's web wallet displays an error when attempting send to segwit v1 addresses.
