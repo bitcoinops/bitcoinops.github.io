@@ -53,6 +53,9 @@ optech_mentions:
   - title: C-Lightning 0.10.1 updates the experimental implementation of offers
     url: /en/newsletters/2021/08/11/#c-lightning-0-10-1
 
+  - title: Spark Lightning Wallet adds partial support for offers
+    url: /en/newsletters/2021/08/18/#spark-lightning-wallet-adds-bolt12-support
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
