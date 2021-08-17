@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Bitcoin Core #20833 allows `testmempoolaccept` to evaluate descendant transaction chains"
     url: /en/newsletters/2021/06/02/#bitcoin-core-20833
 
+  - title: "Bitcoin Core #21800 implements ancestor and descendant limits for mempool package acceptance"
+    url: /en/newsletters/2021/08/18/#bitcoin-core-21800
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

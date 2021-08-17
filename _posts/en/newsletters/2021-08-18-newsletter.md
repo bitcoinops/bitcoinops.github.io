@@ -88,7 +88,25 @@ BOLTs][bolts repo].*
   make them more accessible and also reduce the existing dependency
   on the project's lead maintainer signing the release binaries.
 
-- [Bitcoin Core #21800][] mempool/validation: mempool ancestor/descendant limits for packages FIXME:jnewbery
+- [Bitcoin Core #21800][] implements ancestor and descendant limits for
+  mempool package acceptance. Bitcoin Core limits the number of
+  related transactions in its mempool as a protection against DoS
+  attacks and so that block construction is tractable for miners. By default,
+  those [limits][bitcoin core mempool limits] ensure that no transaction
+  in the mempool, combined with its mempool ancestors, can exceed 25
+  transactions or 101KvB in weight. The same rules apply to the transaction
+  combined with its mempool descendants.
+
+    Those ancestor and descendant limits are enforced when a transaction is
+    considered for addition to the mempool. If adding the transaction would
+    cause one of the limits to be exceeded, then the transaction is rejected.
+    Although package semantics have not been finalized, [#21800][bitcoin core #21800]
+    implements ancestor and descendant limit checks for validating
+    arbitrary packages (i.e. when multiple transactions are considered
+    for addition to the mempool at the same time). Mempool package acceptance
+    was implemented for testing only in [#20833][mempool package test accept],
+    and will eventually be exposed over the p2p network as part of [package
+    relay][topic package relay].
 
 - [Bitcoin Core #21500][] updates the `listdescriptors` RPC with a
   `private` parameter that, when set, will return the private form of
@@ -123,3 +141,5 @@ BOLTs][bolts repo].*
 [harding dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019310.html
 [riard dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019327.html
 [towns dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019333.html
+[bitcoin core mempool limits]: /en/newsletters/2018/12/04/#fn:fn-cpfp-limits
+[mempool package test accept]: /en/newsletters/2021/06/02/#bitcoin-core-20833
