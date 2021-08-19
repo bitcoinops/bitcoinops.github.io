@@ -44,7 +44,10 @@ sentence or heading.
 
 The first occurrence of an abbreviation in a document should be preceded
 by its full name (e.g. Foo Bar Baz (FBB)) with the exception of the
-following abbreviations we assume readers will already know.
+following abbreviations we assume readers will already know.  All
+unintroduced abbreviations should use the same case as appears
+below, unless otherwise indicated (e.g. capitalizing "segwit" at the
+beginning of a sentence).
 
 - BIP (Bitcoin Improvement Proposal)
   - BIPXXX referencing a specific BIP number (no zero padding eg. BIP70 not BIP070)
