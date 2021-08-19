@@ -73,5 +73,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/07-nonces.md %}
 
+## 署名アダプター
+
+*[ニュースレター #162](/ja/newsletters/2021/08/18/#taprootの準備-9-署名アダプター)に掲載*
+
+{% include specials/taproot/ja/08-signature-adaptors.md %}
+
 ## Footnotes
 {:.no_toc}
