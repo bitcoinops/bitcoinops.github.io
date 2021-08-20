@@ -29,7 +29,10 @@ sentence or heading.
 - schnorr
 - segwit
 - sybil (as in 'sybil attack')
+- tapbranch
+- tapleaf
 - taproot
+- tapscript
 
 ### Abbreviations
 
@@ -95,6 +98,7 @@ beginning of a sentence).
 | coinswap | Coinswap, CoinSwap, coinSwap, or coin-swap | |
 | fee bumping | fee-bumping | |
 | feerate | fee-rate or fee rate | |
+| hashlock | hash-lock or hash lock | |
 | keypath | key-path or key path | |
 | mainnet | main net | |
 | multisig | multi-sig | |
@@ -105,6 +109,7 @@ beginning of a sentence).
 | OP_RETURN (and all other opcodes) | op_return | |
 | RBF or Replace By Fee | Replace-By-Fee | |
 | preimage | pre-image | |
+| presigned | pre-signed | |
 | proof of work | proof-of-work | proof-of-work may be used as an adjective phrase (e.g. "Bitcoin's proof-of-work security is economic in nature"). | |
 | redeemScript | redeem script | |
 | secp256k1 | Secp256k1, SECP256k1 or SECP256K1 | |
@@ -142,7 +147,7 @@ spelled the same.
 | spender | sender | "sender" may ambiguously refer to the sender of data |
 | uneconomical output | dust | The dust limit is the minimum value an output must contain in order for Bitcoin Core to relay a transaction containing that output. What's economical or not changes as minimum feerates change, but the dust limit doesn't change often. |
 
-## Units
+### Units
 
 - **Currency:** acceptable units and abbreviations are:
 
