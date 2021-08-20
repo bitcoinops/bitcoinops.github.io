@@ -53,7 +53,7 @@ following abbreviations we assume readers will already know.
 - DoS (Denial-of-service)
 - ECDSA (Elliptic Curve Digital Signature Algorithm)
 - kB, MB, GB, TB, etc... (SI-prefixed byte sizes)
-- kiB, MiB, GiB, TiB, etc... (SI-prefixed binary byte sizes)
+- KiB, MiB, GiB, TiB, etc... (Prefixes denoting byte sizes in powers of 1024)
 - LN (Lightning Network)
 - LND (Lightning Network Daemon - the Lightning Labs LN implementation)
 - mempool (memory pool)
