@@ -80,5 +80,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/08-signature-adaptors.md %}
 
+## PTLCs
+
+*Originally published in [Newsletter #163](/en/newsletters/2021/08/25/#preparing-for-taproot-10-ptlcs)*
+
+{% include specials/taproot/en/09-ptlcs.md %}
+
 ## Footnotes
 {:.no_toc}

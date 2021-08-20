@@ -1,0 +1,45 @@
+digraph ln_linky {
+
+rankdir=LR;
+graph [ bgcolor = transparent ];
+labelloc = b;
+node [ shape = "box" ];
+
+Ma [ label = "Mallory\n(Spy node 1)" ];
+Mb [ label = "Mallory\n(Spy node 2)" ];
+
+subgraph shrouded {
+  node [ color = lightgrey ];
+  A [ label = "A\n(not visible\nto Mallory" ];
+  F [ label = "F\n(not visible\nto Mallory" ];
+}
+
+subgraph cluster_possible_spender {
+  B;
+
+  label = "Equally likely\nto be\nspender or router"
+}
+
+subgraph cluster_router1 {
+  C;
+
+  label = "Equally likely\nto be\nreceiver or router"
+}
+
+subgraph cluster_router2 {
+  D;
+
+  label = "Equally likely\nto be\nspender or router"
+}
+
+subgraph cluster_possible_receiver {
+  E;
+
+  label = "Equally likely\to be\nreceiver or router"
+}
+
+A -> B -> Ma -> C -> D -> Mb -> E -> F;
+
+
+label = "(Privacy gains assume payment amount decorrelation, e.g. through multipath routing not shown here)"
+}

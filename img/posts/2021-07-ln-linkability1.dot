@@ -1,0 +1,38 @@
+digraph ln_linky {
+
+rankdir=LR;
+graph [ bgcolor = transparent ];
+labelloc = b;
+node [ shape = "box" ];
+
+Ma [ label = "Mallory\n(Spy node 1)" ];
+Mb [ label = "Mallory\n(Spy node 2)" ];
+
+subgraph shrouded {
+  node [ color = lightgrey ];
+  A [ label = "A\n(not visible\nto Mallory" ];
+  F [ label = "F\n(not visible\nto Mallory" ];
+}
+
+subgraph cluster_possible_spender {
+  B;
+
+  label = "Either spender\nor router"
+}
+
+subgraph cluster_definite_routers {
+  C;
+  D;
+
+  label = "Definite routing nodes"
+}
+
+subgraph cluster_possible_receiver {
+  E;
+
+  label = "Either receiver\nor router"
+}
+
+A -> B -> Ma -> C -> D -> Mb -> E -> F;
+
+}

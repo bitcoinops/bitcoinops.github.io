@@ -82,11 +82,12 @@ this security mechanism but without the invoice mechanism for
 communication.  At least two different mechanisms have been proposed
 for accomplishing this:
 
-- *Add data to the routing packet:* the person sending the payment
+- *Add data to the routing packet (keysend):* the person sending the payment
   chooses a hash pre-image, encrypts it to the receiver's key, and
   appends it as extra data in the routing packet.  When the payment
   arrives at the receiver, they can decrypt the data and use the
   pre-image to claim the payment.
+{:#add-data-to-the-routing-packet}
 
 - *Using a shared secret:* the person sending the payment combines
   their key and the receiver's key to create a shared secret.  Then

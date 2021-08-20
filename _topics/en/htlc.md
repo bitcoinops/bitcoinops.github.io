@@ -78,6 +78,9 @@ optech_mentions:
   - title: "Eclair #1738 combines multiple HTLC enforcements into a single transaction"
     url: /en/newsletters/2021/03/31/#eclair-1738
 
+  - title: Privacy problems with HTLCs
+    url: /en/newsletters/2021/08/25/#privacy-problems-with-htlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki
