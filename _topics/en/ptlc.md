@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Technique for implementing logical OR on LN using PTLCs"
     url: /en/newsletters/2021/02/17/#escrow-over-ln
 
+  - title: "Preparing for taproot: PTLCs"
+    url: /en/newsletters/2021/08/25/#preparing-for-taproot-10-ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)
