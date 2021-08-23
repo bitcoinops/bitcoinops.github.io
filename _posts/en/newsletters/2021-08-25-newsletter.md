@@ -168,7 +168,12 @@ BOLTs][bolts repo].*
   a single fee is sent, and the other party must either accept or reject
   that precise fee.
 
-- [BOLTs #887][] Make payment secret mandatory and update Bolt 11 test vectors FIXME:dongcarl
+- [BOLTs #887][] updates [BOLT11][] to require that spenders specify the
+  [payment secret][topic payment secrets] when making a payment regardless of
+  the receiver's `payment_secret` feature bit. The receiver should verify the
+  payment secret to prevent probing attacks in simplified multipath
+  payments. This verification has previously been implemented in all four LN
+  implementations we cover.
 
 {% include references.md %}
 {% include linkers/issues.md issues="22541,5442,1011,847,887" %}

@@ -51,6 +51,9 @@ optech_mentions:
   - title: "C-Lightning #4646 makes payment secrets required"
     url: /en/newsletters/2021/07/21/#c-lightning-4646
 
+  - title: "BOLTs #887 updates BOLT11 to require that spenders specify the payment secret"
+    url: /en/newsletters/2021/08/25/#bolts-887
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified multipath payments
