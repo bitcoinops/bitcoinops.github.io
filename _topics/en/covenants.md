@@ -58,6 +58,9 @@ optech_mentions:
   - title: Discussion about how Simplicity could be used for covenants
     url: /en/newsletters/2020/08/05/#bip-taproot
 
+  - title: "OP_TAPLEAF_UPDATE_VERIFY opcode proposed with a taproot-native covenant design"
+    url: /en/newsletters/2021/09/15/#covenant-opcode-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
