@@ -156,7 +156,14 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22541][] Add a new RPC command: restorewallet FIXME:Xekyo
+- [Bitcoin Core #22541][] adds a new `restorewallet` RPC command which
+  can be used to load a wallet backup. `restorewallet` complements the
+  existing `backupwallet` command which exports a copy of the currently
+  loaded wallet.  Note that `backupwallet` and `restorewallet` are
+  alternatives to the older `dumpwallet` and `importwallet` RPCs which
+  use a separate file.  This work was accompanied by a comprehensive
+  update of the documentation for backing up and restoring wallets in
+  [Bitcoin Core #22523][].
 
 - [LND #5442][] allows adding inputs to a [PSBT][topic psbt] without
   adding any new outputs, which is useful when creating a [CPFP fee
@@ -176,7 +183,7 @@ BOLTs][bolts repo].*
   implementations we cover.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22541,5442,1011,847,887" %}
+{% include linkers/issues.md issues="22541,5442,1011,847,887,22523" %}
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [rust-lightning 0.0.100]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.100
