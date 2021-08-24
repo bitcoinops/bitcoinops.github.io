@@ -96,6 +96,9 @@ optech_mentions:
   - title: "LND #5025 adds basic support for using signet"
     url: /en/newsletters/2021/06/02/#lnd-5025
 
+  - title: "Discussion about adding regular reorgs to the default signet"
+    url: /en/newsletters/2021/09/15/#signet-reorg-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

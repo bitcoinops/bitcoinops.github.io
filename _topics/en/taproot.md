@@ -194,6 +194,9 @@ optech_mentions:
   - title: "Updating LN for taproot: P2TR channels"
     url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
 
+  - title: "BTCPay server #2830 adds support for P2TR receiving and spending"
+    url: /en/newsletters/2021/09/15/#btcpay-server-2830
+
 ## Optional
 see_also:
   - title: MAST

@@ -71,6 +71,9 @@ optech_mentions:
   - title: "Updating vaults for taproot"
     url: /en/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot
 
+  - title: "OP_TAPLEAF_UPDATE_VERIFY opcode proposed that would simplify some vault designs"
+    url: /en/newsletters/2021/09/15/#covenant-opcode-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

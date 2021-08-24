@@ -98,5 +98,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/11-vaults-with-taproot.md %}
 
+## Backup and security schemes
+
+*Originally published in [Newsletter #166](/en/newsletters/2021/09/15/#preparing-for-taproot-13-backup-and-security-schemes)*
+
+{% include specials/taproot/en/12-backups.md %}
+
 ## Footnotes
 {:.no_toc}

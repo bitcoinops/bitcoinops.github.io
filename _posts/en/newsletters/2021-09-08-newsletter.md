@@ -198,7 +198,8 @@ BOLTs][bolts repo].*
 - [BOLTs #847][] allows two channel peers to negotiate what fee should
   be paid in a mutual close transaction. Previously, only a single fee
   was sent, and the other party had to either accept or reject that
-  precise fee.
+  precise fee.  *[Edit: see next week's newsletter for a [more
+  accurate][news166 fee negotiation] description.]*
 
 - [BOLTs #880][] adds a `channel_type` field to the `openchannel` and
   `acceptchannel` messages, allowing the sending node to explicitly request
@@ -232,3 +233,4 @@ BOLTs][bolts repo].*
 [pool2win post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
 [aj calculations]: https://github.com/bitcoin/bitcoin/pull/22340#issuecomment-872723147
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
+[news166 fee negotiation]: /en/newsletters/2021/09/15/#c-lightning-4599
