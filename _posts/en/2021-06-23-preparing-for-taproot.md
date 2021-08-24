@@ -80,5 +80,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/08-signature-adaptors.md %}
 
+## Backup and security schemes
+
+*Originally published in FIXME*
+
+{% include specials/taproot/en/xx-backups.md %}
+
 ## Footnotes
 {:.no_toc}
