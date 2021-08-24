@@ -8,7 +8,8 @@ then
   exit 1
 fi
 
-echo -n "Name of new topic (capitalize first word): "
+echo "Name of new topic.  Capitalize first word and use a plural phrase if possible."
+echo -n "> "
 read
 topic="$REPLY"
 topic_lowercase=$( echo $topic | tr '[A-Z]' '[a-z]' )
