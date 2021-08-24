@@ -114,7 +114,40 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why does Bitcoin Core support a transaction index but not an address index?]({{bse}}107619)
+  Andrew Chow explains the historical significance of Bitcoin Core's transaction
+  index in validating transactions (since [replaced by the UTXO database]
+  [bitcoin core #1677]) and outlines objections to adding an address
+  index feature to Bitcoin Core including maintenance overhead, lack of compelling use
+  cases, and concerns that such an index is outside of Bitcoin Core's project scope.
+
+- [Is the `mempool` P2P message reliable?]({{bse}}108229)
+  Claris and Pieter Wuille explain the history of the [`mempool`][mempool
+  message] P2P message. After being introduced in [BIP35][] to expose a node's
+  mempool contents to SPV peers, the message was then moved to be
+  accessible with [BIP37][]'s [bloom filters][topic transaction bloom filtering]
+  which are now [disabled by default][news74 bip37 default]. Support for `mempool`
+  requests can be configured for individual peers using the `-whitelist=mempool`
+  and `-whitebind=mempool` configuration options.
+
+- [What is SIGHASH_ANYPREVOUTANYSCRIPT?]({{bse}}107797)
+  Michael Folkson summarizes Christian Decker's comparison of [BIP118][]'s
+  proposed [signature hashes (sighashes)][wiki sighash]. The
+  `SIGHASH_ANYPREVOUT` sighash commits to a `scriptPubKey` but drops the commitment to
+  a specific UTXO. The `SIGHASH_ANYPREVOUTANYSCRIPT` sighash drops the
+  commitment to the input's amount as well as a specific `scriptPubKey`, the later of which is
+  necessary to support [eltoo][topic eltoo].
+
+- [Will LN liquidity advertisements and dual funding allow for third-party purchased liquidity (“sidecar channels”)?]({{bse}}107786)
+  David A. Harding notes that while not currently supported, third-party
+  purchased liquidity using [liquidity advertisements][topic liquidity
+  advertisements] and [dual funded][topic Dual funding] channels is possible. He
+  summarizes Lisa Neigut's ideas for an onchain PSBT workflow and an
+  offchain workflow.
+
+- [Are there risks to using the same private key for both ECDSA and Schnorr signatures?]({{bse}}107924)
+  Pieter Wuille notes that while there are no known key reuse attacks across
+  [schnorr][topic schnorr signatures] and ECDSA, that "To stay within the realm of provably security it's advisable to make sure ECDSA key and Schnorr keys use distinct hardened derivation steps."
 
 ## Preparing for taproot #10: PTLCs
 
@@ -183,7 +216,7 @@ BOLTs][bolts repo].*
   implementations we cover.
 
 {% include references.md %}
-{% include linkers/issues.md issues="22541,5442,1011,847,887,22523" %}
+{% include linkers/issues.md issues="22541,5442,1011,847,887,22523,1677" %}
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [rust-lightning 0.0.100]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.100
@@ -193,3 +226,6 @@ BOLTs][bolts repo].*
 [osuntokun post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003187.html
 [honigdachs podcast]: https://coinspondent.de/2021/07/11/honigdachs-62-pickhardt-payments/
 [zbf tweet]: https://twitter.com/renepickhardt/status/1414895869078523910
+[mempool message]: https://developer.bitcoin.org/reference/p2p_networking.html#mempool
+[news74 bip37 default]: /en/newsletters/2019/11/27/#deprecated-or-removed-features
+[wiki sighash]: https://en.bitcoin.it/wiki/Contract#SIGHASH_flags

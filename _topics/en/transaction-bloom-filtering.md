@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Bitcoin Core #19260 disconnects peers who inappropriately send filterclear"
     url: /en/newsletters/2020/06/24/#bitcoin-core-19260
 
+  - title: "History of the `mempool` P2P message being deprecated along with BIP37 bloom filters"
+    url: /en/newsletters/2021/08/25/#is-the-mempool-p2p-message-reliable
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Privacy in BitcoinJ [bloom filters]"
