@@ -39,6 +39,8 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
+    jekyll-redirect-from (0.16.0)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.4.0)
@@ -98,6 +100,7 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll
+  jekyll-redirect-from
   json-schema
   mdl
   minima (~> 2.0)
