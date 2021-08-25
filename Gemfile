@@ -9,6 +9,7 @@ ruby '2.6.4'
 group :development do
   gem 'jekyll'
   gem "minima", "~> 2.0"  ## Default Jekyll theme
+  gem 'jekyll-redirect-from'
 end
 
 group :testing do

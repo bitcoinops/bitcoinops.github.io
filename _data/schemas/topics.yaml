@@ -100,5 +100,9 @@ properties:
 
   see_also: *sources
 
+  redirect_from:
+    description: Redirect urls per https://github.com/jekyll/jekyll-redirect-from
+    type: array
+
   extra:
     description: Extra fields (not validated)
