@@ -79,5 +79,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/08-signature-adaptors.md %}
 
+## PTLC
+
+*[ニュースレター #163](/ja/newsletters/2021/08/25/#taprootの準備-10-ptlc)に掲載*
+
+{% include specials/taproot/ja/09-ptlcs.md %}
+
 ## Footnotes
 {:.no_toc}
