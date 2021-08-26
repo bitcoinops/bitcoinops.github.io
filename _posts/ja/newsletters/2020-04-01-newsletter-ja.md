@@ -19,7 +19,7 @@ lang: ja
 
     今週、Tom TrevethanがBitcoin-Devメーリングリストに、[schnorr signatures][topic schnorr signatures]や[SIGHASH_ANYPREVOUT][topic sighash_noinput]のような現状提案されているソフトフォークの変更を待つのではなく、現在のBitcoinプロトコルで使用できるようにするためのstatechainsの設計の2つの修正について投稿しました。
 
-    1. eltooメカニズム(これは、[BIP116][]`SIGHASH_NOINPUT`または[bip-anyprevout][]`SIGHASH_ANYPREVOUT`を必要とする)を、[duplex micropayment channels][]に提案されたものと同様の、徐々に減少するロックタイムで置き換える。例えば、AliceがstatechainsのUTXOの制御を受け取ると、タイムロックは30日間、彼女が一方的にそのUTXOをチェーン上で使うことができないようにする。アリスがUTXOをボブに転送するとき、タイムロックは彼を29日間だけ制限します。これは、ボブによる支出がアリスによる支出よりも優先されます。このアプローチの欠点は、信頼できる第三者の許可なしに資金を使うことができるようになるまで、代表者が長い間待つ必要があるかもしれないということです。
+    1. eltooメカニズム(これは、[BIP118][]`SIGHASH_NOINPUT`または[bip-anyprevout][]`SIGHASH_ANYPREVOUT`を必要とする)を、[duplex micropayment channels][]に提案されたものと同様の、徐々に減少するロックタイムで置き換える。例えば、AliceがstatechainsのUTXOの制御を受け取ると、タイムロックは30日間、彼女が一方的にそのUTXOをチェーン上で使うことができないようにする。アリスがUTXOをボブに転送するとき、タイムロックは彼を29日間だけ制限します。これは、ボブによる支出がアリスによる支出よりも優先されます。このアプローチの欠点は、信頼できる第三者の許可なしに資金を使うことができるようになるまで、代表者が長い間待つ必要があるかもしれないということです。
 
     2. 信頼されたサードパーティと現在のデリゲートとの間の2-of-2 schnorr multisig([adapter signature][scriptless scripts]を使用)を、[secure multiparty computation][mpc]を使用したシングルシグニ ングに置き換える。このアプローチの主な欠点は、複雑さが増してセキュリティレビューが難しくなることです。
 
