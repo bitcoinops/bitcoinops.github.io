@@ -44,7 +44,7 @@ notable changes to popular Bitcoin infrastructure projects.
     such as [schnorr signatures][topic schnorr signatures]
     and [SIGHASH_ANYPREVOUT][topic sighash_noinput]:
 
-    1. Replace the eltoo mechanism (which requires either [BIP116][]
+    1. Replace the eltoo mechanism (which requires either [BIP118][]
        `SIGHASH_NOINPUT` or [bip-anyprevout][] `SIGHASH_ANYPREVOUT`)
        with a decrementing locktime similar to that proposed for
        [duplex micropayment channels][].  E.g., when Alice receives
