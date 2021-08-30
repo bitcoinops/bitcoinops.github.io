@@ -72,7 +72,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core GUI #384][] Add copy IP/Netmask action for banned peer FIXME:glozow
+- [Bitcoin Core GUI #384][] adds a context menu option to copy the IP/Netmask of a peer in the
+  Banned Peers Table. This helps GUI users share individual addresses from their ban list more
+  easily.
+
+    ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
 
 - [C-Lightning #4674][] datastore FIXME:dongcarl
 
