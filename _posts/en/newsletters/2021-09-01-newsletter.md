@@ -82,7 +82,12 @@ BOLTs][bolts repo].*
 
 - [LND #5410][] Tor hybrid mode FIXME:bitschmidty
 
-- [LND #5621][] peer: always send latest block header as part of ping messages FIXME:jnewbery_optional
+- [LND #5621][] includes the block header of the most-work block as part
+  of the `ignored` field in [ping messages][lightning ping]. The peer node
+  can use this information as an additional check that their view of the block
+  chain is up to date and that they haven't been [eclipsed][topic eclipse attacks] from the Bitcoin
+  network. Future work could use this data source to alert the user or
+  automatically take action to recover.
 
 ## Footnotes
 
@@ -98,3 +103,4 @@ BOLTs][bolts repo].*
 [allen qr174]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019356.html
 [myers list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019342.html
 [myers blog]: https://yakshaver.org/2021/07/26/first.html
+[lightning ping]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md#the-ping-and-pong-messages
