@@ -78,7 +78,9 @@ BOLTs][bolts repo].*
 
     ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
 
-- [C-Lightning #4674][] datastore FIXME:dongcarl
+- [C-Lightning #4674][] adds `datastore`, `deldatastore`, and `listdatastore`
+  commands for plugins to store and manage data in the C-Lightning database.
+  Also included were manual pages detailing the semantics of each command.
 
 - [LND #5410][] Tor hybrid mode FIXME:bitschmidty
 
