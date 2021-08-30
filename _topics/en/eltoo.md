@@ -51,6 +51,9 @@ optech_mentions:
   - title: Using attacks like transaction pinning and selective relay against eltoo
     url: /en/newsletters/2020/08/12/#discussion-about-eltoo-and-sighash-anyprevout
 
+  - title: Eltoo demo implementation with new blog post overview
+    url: /en/newsletters/2021/09/01/#eltoo-example-channel
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT

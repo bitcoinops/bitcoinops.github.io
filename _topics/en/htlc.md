@@ -81,6 +81,9 @@ optech_mentions:
   - title: Privacy problems with HTLCs
     url: /en/newsletters/2021/08/25/#privacy-problems-with-htlcs
 
+  - title: "Updating LN for taproot: from HTLCs to PTLCs"
+    url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki
