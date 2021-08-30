@@ -191,6 +191,9 @@ optech_mentions:
   - title: Sparrow wallet adds support for P2TR keypath spends on regtest and signet
     url: /en/newsletters/2021/07/21/#sparrow-1-4-3-supports-p2tr
 
+  - title: "Updating LN for taproot: P2TR channels"
+    url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
+
 ## Optional
 see_also:
   - title: MAST

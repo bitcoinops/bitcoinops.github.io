@@ -150,6 +150,9 @@ optech_mentions:
   - title: "BIPs #1139 adds BIP371 specifying new fields for using PBSTs with P2TR spends"
     url: /en/newsletters/2021/07/28/#bips-1139
 
+  - title: "BIP174.org simplifies decoding and modifying PSBTs"
+    url: /en/newsletters/2021/09/01/#bip174-org
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

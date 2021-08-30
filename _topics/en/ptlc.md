@@ -55,6 +55,10 @@ optech_mentions:
   - title: "Preparing for taproot: PTLCs"
     url: /en/newsletters/2021/08/25/#preparing-for-taproot-10-ptlcs
 
+  - title: "Updating LN for taproot: from HTLCs to PTLCs"
+    url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
+
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)
