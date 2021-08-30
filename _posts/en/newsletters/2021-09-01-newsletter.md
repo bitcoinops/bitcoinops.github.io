@@ -82,7 +82,9 @@ BOLTs][bolts repo].*
   commands for plugins to store and manage data in the C-Lightning database.
   Also included were manual pages detailing the semantics of each command.
 
-- [LND #5410][] Tor hybrid mode FIXME:bitschmidty
+- [LND #5410][] allows nodes to establish direct connections to services not
+  running behind [Tor][topic anonymity networks], bridging Tor-only and
+  clearnet-only segments of the network.
 
 - [LND #5621][] includes the block header of the most-work block as part
   of the `ignored` field in [ping messages][lightning ping]. The peer node
