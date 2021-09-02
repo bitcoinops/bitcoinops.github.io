@@ -85,5 +85,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/09-ptlcs.md %}
 
+## LNとTaproot
+
+*[ニュースレター #164](/ja/newsletters/2021/09/01/#taprootの準備-11-lnとtaproot)に掲載*
+
+{% include specials/taproot/ja/10-ln-with-taproot.md %}
+
 ## Footnotes
 {:.no_toc}
