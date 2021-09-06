@@ -153,6 +153,9 @@ optech_mentions:
   - title: "BIP174.org simplifies decoding and modifying PSBTs"
     url: /en/newsletters/2021/09/01/#bip174-org
 
+  - title: MIME type proposed for PSBTs
+    url: /en/newsletters/2021/09/08/#bitcoin-related-mime-types
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

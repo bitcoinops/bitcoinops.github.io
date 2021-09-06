@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Using schnorr signatures plus `OP_CAT` to create vaults"
     url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
 
+  - title: "Updating vaults for taproot"
+    url: /en/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
