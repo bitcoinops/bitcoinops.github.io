@@ -116,6 +116,9 @@ optech_mentions:
   - title: "LND 0.13.0-beta begins using anchor outputs by default for all new channels"
     url: /en/newsletters/2021/06/23/#lnd-0-13-0-beta
 
+  - title: "BOLTs #824 adds a variation on the anchor outputs protocol that prevents a fee-stealing attack"
+    url: /en/newsletters/2021/09/08/#bolts-824
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

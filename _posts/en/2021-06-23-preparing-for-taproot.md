@@ -92,5 +92,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/10-ln-with-taproot.md %}
 
+## Vaults with taproot
+
+*Originally published in [Newsletter #165](/en/newsletters/2021/09/08/#preparing-for-taproot-12-vaults-with-taproot)*
+
+{% include specials/taproot/en/11-vaults-with-taproot.md %}
+
 ## Footnotes
 {:.no_toc}
