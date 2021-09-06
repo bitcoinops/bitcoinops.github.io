@@ -36,6 +36,9 @@ optech_mentions:
   - title: Consequences of not backporting taproot relay on compact block efficiency
     url: /en/newsletters/2020/07/29/#dont-relay-taproot
 
+  - title: "Disabling compact block relay for `-blocksonly` nodes"
+    url: /en/newsletters/2021/09/08/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
