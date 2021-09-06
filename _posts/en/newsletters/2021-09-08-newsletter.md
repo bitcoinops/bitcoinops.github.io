@@ -43,14 +43,78 @@ infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:intro
+[Use legacy relaying to download blocks in blocks-only mode][review club #22340]
+is a PR by Niklas Gögge to make nodes setting the `-blocksonly` configuration option always use legacy block relay
+for downloading blocks. The review club compared legacy block download with
+[BIP152][]-style [compact block][topic compact block relay] download and discussed why blocksonly nodes don't benefit from
+the latter.
 
 {% include functions/details-list.md
 
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/12345#l-123FIXME"
+  q0="What sequence of messages is used in legacy block relaying?"
+  a0="Nodes running v0.10 and newer use [headers-first synchronization][headers
+first pr]: a node first receives a `headers` message from its peer containing
+the block header. After validating the header, it then requests the full
+block by sending a `getdata(MSG_BLOCK, blockhash)` message to the peer that
+announced it, and the peer responds with a `block` message containing the full
+block."
+  a0link="https://bitcoincore.reviews/22340#l-49"
 
+  q1="What sequence of messages is used in BIP152 low bandwidth compact block relaying?"
+  a1="Peers indicate that they want to use compact block relay by sending
+`sendcmpct` at the start of the connection. Low bandwidth compact block relay is
+very similar to legacy block relay: after processing a block header, the node
+requests a compact block from its peer using `getdata(MSG_CMPCT_BLOCK,
+blockhash)`, and receives a `cmpctblock` in response. The node can use the
+compact block shortids to look for the block transactions in its mempool and
+cache of extra transactions. If any transactions are still unknown, it can
+request them from a peer using `getblocktxn` and receive `blocktxn` messages in
+response."
+  a1link="https://bitcoincore.reviews/22340#l-56"
+
+  q2="What sequence of messages is used in BIP152 high bandwidth compact block relaying?"
+  a2="A node can request high bandwidth compact blocks from a peer when first
+establishing the connection by sending `sendcmpct` with `hb_mode` set to 1 at
+the start of the connection. This means the peer can send a `cmpctblock`
+immediately, without sending headers first or waiting for a `getdata` request
+for the block. If needed, the node can request and download any unknown block
+transactions using `getblocktxn` and `blocktxn`, identically to low bandwidth
+compact block relay."
+  a2link="https://bitcoincore.reviews/22340#l-59"
+
+  q3="Why does compact block relay waste bandwidth for blocksonly nodes during
+block download? How much bandwidth is wasted?"
+  a3="Compact block relay reduces bandwidth usage for nodes that have a mempool
+because they don't need to re-download the majority of block transactions.
+However, nodes in blocksonly mode don't participate in transaction relay and
+typically have empty mempools, which means they need to download all of the
+transactions anyway. The shortids, `getblocktxn` and `blocktxn` overhead [add up
+to approximately 38kB per block][aj calculations] of wasted bandwidth, and the
+extra round trip for `getblocktxn` and `blocktxn` messages also increases the
+time it takes to download the block."
+  a3link="https://bitcoincore.reviews/22340#l-82"
+
+  q4="Does a node in blocksonly mode keep a mempool?"
+  a4="While blocksonly nodes don't participate in transaction relay, they still
+have a mempool and it may contain transactions for a few different reasons. For
+example, if the node was in normal mode, then restarted in blocksonly mode, the
+mempool is persisted across the restart. Also, any transactions submitted
+through the wallet and client interfaces are validated and relayed using the
+mempool."
+  a4link="https://bitcoincore.reviews/22340#l-97"
+
+  q5="What is the difference between blocksonly and block-relay-only? Should
+these changes be applied for block-relay-only connections as well?"
+  a5="Blocksonly mode is a node setting, while block-relay-only is an attribute
+of a peer connection. When a node is started in blocksonly mode, the node sends
+`fRelay=false` in the version handshake with all peers and disconnects peers that
+send any transaction-related messages. Whether or not in blocksonly mode, a node
+may have block-relay-only connections on which they ignore incoming transaction
+and addr messages. As such, the existence of block-relay-only connections has no
+relation to a node's mempool contents and ability to reconstruct blocks from
+compact block messages, so these changes shouldn't be applied to
+block-relay-only connections."
+  a5link="https://bitcoincore.reviews/22340#l-111"
 %}
 
 ## Preparing for taproot #12: Vaults with taproot
@@ -123,7 +187,7 @@ BOLTs][bolts repo].*
 ## Footnotes
 
 {% include references.md %}
-{% include linkers/issues.md issues="22009,1907,1910,1143,847,880,824,1867,5669,4616" %}
+{% include linkers/issues.md issues="22009,1907,1910,1143,847,880,824,1867,5669,4616,22340" %}
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [news115 anchor fees]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
@@ -136,3 +200,5 @@ BOLTs][bolts repo].*
 [gray bip]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019390.html
 [braidpool paper]: https://github.com/pool2win/braidpool/raw/main/proposal/proposal.pdf
 [pool2win post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
+[aj calculations]: https://github.com/bitcoin/bitcoin/pull/22340#issuecomment-872723147
+[headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
