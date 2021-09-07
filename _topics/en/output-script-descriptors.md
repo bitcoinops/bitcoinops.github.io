@@ -107,6 +107,9 @@ optech_mentions:
   - title: "Output script descriptors versus versioned and unversioned BIP32 seeds"
     url: /en/newsletters/2021/07/14/#fn:electrum-segwit
 
+  - title: "BIPs #1143 introduces BIPs 380-386 specifying output script descriptors"
+    url: /en/newsletters/2021/09/08/#bips-1143
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
