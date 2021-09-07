@@ -152,7 +152,26 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22009][] wallet: Decide which coin selection solution to use based on waste metric FIXME:Xekyo
+- [Bitcoin Core #22009][] updates the wallet to always run both the Branch
+  and Bound (BnB) and knapsack algorithms for [coin selection][topic coin
+  selection], and then choose the best result using a new *waste score* heuristic
+  to compare the cost effectiveness of the results. Previously, the changeless
+  BnB result was always preferred if one was found.
+
+    The waste score heuristic assumes that every input must eventually be spent
+    at a feerate of 10 sat/vB, and that change outputs are avoidable. Inputs are
+    scored as the difference between their cost at the current feerate and the
+    baseline feerate, resulting in a waste score deduction for spending inputs at
+    lower feerates and a waste score increase at higher feerates. Change outputs
+    always increase the waste score by the cost of the change output creation as
+    well as the future cost of spending the change output.
+
+    In a wallet spending at various feerates, this approach will shift some
+    input consumption to lower feerates, reducing the overall wallet operation
+    cost. The baseline feerate separating consolidatory and thrifty coin selection
+    behavior can be configured with the new option `-consolidatefeerate`. The
+    subsequent PR [Bitcoin Core #17526][] proposes to add a third coin selection
+    algorithm based on a Single Random Draw.
 
 - [Eclair #1907][] updates how it uses block chain watchdogs to prevent
   [eclipse attacks][topic eclipse attacks] (see [Newsletter
@@ -187,7 +206,7 @@ BOLTs][bolts repo].*
 ## Footnotes
 
 {% include references.md %}
-{% include linkers/issues.md issues="22009,1907,1910,1143,847,880,824,1867,5669,4616,22340" %}
+{% include linkers/issues.md issues="22009,1907,1910,1143,847,880,824,1867,5669,4616,22340,17526" %}
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [news115 anchor fees]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs

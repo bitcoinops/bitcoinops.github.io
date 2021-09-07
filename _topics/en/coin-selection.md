@@ -45,6 +45,9 @@ optech_mentions:
   - title: Bitcoin Core 0.19 adds wallet flag to avoid address reuse privacy loss
     url: /en/newsletters/2019/11/27/#optional-privacy-preserving-address-management
 
+  - title: "Bitcoin Core #22009 introduces new heuristic to compare the effectiveness of coin selection results"
+    url: /en/newsletters/2021/09/08/#bitcoin-core-22009
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simulation-based Evaluation of Coin Selection Strategies
