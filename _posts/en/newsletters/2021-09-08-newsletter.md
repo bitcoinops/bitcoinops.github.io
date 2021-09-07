@@ -185,7 +185,15 @@ BOLTs][bolts repo].*
   Anyone else using ZMQ for block discovery may wish to investigate the
   changes.
 
-- [BIPs #1143][] achow101/descriptors FIXME:adamjonas
+- [BIPs #1143][] introduces BIPs 380-386 specifying
+  [output script descriptors][topic descriptors]. Output script descriptors are a simple
+  language that contains all the information necessary to allow a wallet or
+  other program to track payments made to or spent from a particular script
+  or set of related scripts. [BIP380][] describes the philosophy, general
+  structure, shared expressions, and checksum. The rest of the BIPs specify
+  each descriptor function itself, categorized by: non-segwit ([BIP381][]),
+  segwit ([BIP382][]), multisig ([BIP383][]), combination output ([BIP384][]),
+  raw script and address ([BIP385][]), and tree ([BIP386][]) descriptors.
 
 - [BOLTs #847][] allows two channel peers to negotiate what fee should
   be paid in a mutual close transaction. Previously, only a single fee
