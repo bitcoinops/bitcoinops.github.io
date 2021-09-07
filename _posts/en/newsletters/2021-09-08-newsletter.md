@@ -200,9 +200,12 @@ BOLTs][bolts repo].*
   was sent, and the other party had to either accept or reject that
   precise fee.
 
-- [BOLTs #880][] BOLT 2: define channel_type, make negotiation explicit.
-  FIXME:dongcarl Strongly recommend mentioning [Eclair #1867][], [LND
-  #5669][], and maybe [C-Lightning #4616][].
+- [BOLTs #880][] adds a `channel_type` field to the `openchannel` and
+  `acceptchannel` messages, allowing the sending node to explicitly request
+  channel features different from ones implied by the nodes' advertised feature
+  bits. This backwards compatible change has been implemented in [Eclair
+  #1867][], [LND #5669][], and is pending merge as part of [C-Lightning
+  #4616][].
 
 - [BOLTs #824][] adds a slight variation on the [anchor outputs][topic
   anchor outputs] channel state commitment protocol.  In the earlier
