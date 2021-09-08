@@ -169,7 +169,7 @@ BOLTs][bolts repo].*
   used by the scheme.
 
 - [BIPs #1139][] adds [BIP371][] with a specification of new fields for
-  using [PBSTs][topic psbt] (both [version 0][BIP174] and [version
+  using [PSBTs][topic psbt] (both [version 0][BIP174] and [version
   2][BIP370]) with [taproot][topic taproot] transactions.  See
   [Newsletter #155][news155 tr psbts] for previous discussion.
 

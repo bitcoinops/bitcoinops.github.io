@@ -18,7 +18,7 @@ infrastructure projects.
 
 - **Bitcoin-related MIME types:** Peter Gray [posted][gray mime] to the
   Bitcoin-Dev mailing list about registering MIME types with the
-  [IANA][] for [PBSTs][topic psbt], raw transactions in binary format,
+  [IANA][] for [PSBTs][topic psbt], raw transactions in binary format,
   and [BIP21][] URIs.  Andrew Chow [explained][chow mime] that he
   previously attempted to register a MIME type for PSBTs but his
   application was rejected.  He believed registering a MIME type would
