@@ -91,5 +91,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/10-ln-with-taproot.md %}
 
+## VaultとTaproot
+
+*[ニュースレター #165](/ja/newsletters/2021/09/08/#taprootの準備-12-vaultとtaproot)に掲載*
+
+{% include specials/taproot/ja/11-vaults-with-taproot.md %}
+
 ## Footnotes
 {:.no_toc}
