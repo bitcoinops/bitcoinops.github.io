@@ -15,7 +15,7 @@ Taprootの準備、新しいリリースとリリース候補、
 
 ## ニュース
 
-- **Bitcoin関連のMIMEタイプ:** Peter Grayは、[PBST][topic psbt]や、
+- **Bitcoin関連のMIMEタイプ:** Peter Grayは、[PSBT][topic psbt]や、
   バイナリフォーマットのトランザクション、[BIP21][] URI用のMIMEタイプの[IANA][]への登録について、
   Bitcoin-Devメーリングリストに[投稿しました][gray mime]。
   Andrew Chowは、以前PSBTのMIMEタイプを登録しようとしたものの、
