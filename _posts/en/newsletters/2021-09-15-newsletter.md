@@ -174,7 +174,11 @@ BOLTs][bolts repo].*
   fees and uses a more efficient range-based negotiation when possible.
   [Eclair #1768][], also merged this week, implements the protocol as well.
 
-- [Eclair #1930][] AB testing FIXME:dongcarl
+- [Eclair #1930][] allows its path finding algorithm to be run with non-default,
+  experimental parameter sets.  This can either be done automatically for a certain percentage of
+  traffic or manually via the API. Metrics are recorded separately for each
+  experimental parameter set and can be used to optimize for the best path
+  finding parameters.
 
 - [Eclair #1936][] allows disabling the publication of a node's Tor
   onion services address for cases where the user wants to keep that
