@@ -159,7 +159,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #22079][] zmq: Add support to listen on IPv6 addresses FIXME:jnewbery
+- [Bitcoin Core #22079][] adds IPv6 support to the [ZMQ interface][].
 
 - [C-Lightning #4599][] implements the quick-close fee negotiation
   protocol described in [BOLTs #843][].  We [described][news165
@@ -208,3 +208,4 @@ BOLTs][bolts repo].*
 [news165 bolts847]: /en/newsletters/2021/09/08/#bolts-847
 [russell tweet]: https://twitter.com/rusty_twit/status/1435758634995105792
 [news162 core verification]: /en/newsletters/2021/08/18/#bitcoin-core-22642
+[zmq interface]: https://github.com/bitcoin/bitcoin/blob/40a9037a1b5d990637d7f5009fc0c39628ed2c05/doc/zmq.md
