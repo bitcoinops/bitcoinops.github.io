@@ -97,5 +97,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/11-vaults-with-taproot.md %}
 
+## バックアップとセキュリティのスキーム
+
+*[ニュースレター #166](/ja/newsletters/2021/09/15/#taprootの準備-13-バックアップとセキュリティのスキーム)に掲載*
+
+{% include specials/taproot/ja/12-backups.md %}
+
 ## Footnotes
 {:.no_toc}
