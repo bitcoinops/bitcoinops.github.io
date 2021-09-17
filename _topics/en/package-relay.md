@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Bitcoin Core #21800 implements ancestor and descendant limits for mempool package acceptance"
     url: /en/newsletters/2021/08/18/#bitcoin-core-21800
 
+  - title: Proposal of initial rules for mempool package acceptance before implementing package relay
+    url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

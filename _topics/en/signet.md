@@ -99,6 +99,9 @@ optech_mentions:
   - title: "Discussion about adding regular reorgs to the default signet"
     url: /en/newsletters/2021/09/15/#signet-reorg-discussion
 
+  - title: "Preparing for taproot: testing on signet"
+    url: /en/newsletters/2021/09/22/#preparing-for-taproot-14-testing-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
