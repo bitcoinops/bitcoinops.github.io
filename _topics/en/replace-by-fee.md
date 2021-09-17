@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Trezor wallet software defaults to enabling BIP125 RBF"
     url: /en/newsletters/2021/06/23/#trezor-suite-adds-rbf-support
 
+  - title: Proposal of initial RBF rules for mempool package acceptance before implementing package relay
+    url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

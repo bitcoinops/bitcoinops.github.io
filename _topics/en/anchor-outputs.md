@@ -23,6 +23,9 @@ primary_sources:
     - title: Anchor outputs
       link: https://github.com/lightningnetwork/lightning-rfc/pull/688
 
+    - title: Zero HTLC fee anchor outputs
+      link: https://github.com/lightningnetwork/lightning-rfc/pull/824
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -118,6 +121,9 @@ optech_mentions:
 
   - title: "BOLTs #824 adds a variation on the anchor outputs protocol that prevents a fee-stealing attack"
     url: /en/newsletters/2021/09/08/#bolts-824
+
+  - title: "Eclair #1932 implements the zero HTLC fee anchor outputs protocol"
+    url: /en/newsletters/2021/09/22/#eclair-1932
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

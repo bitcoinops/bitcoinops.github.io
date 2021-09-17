@@ -59,6 +59,9 @@ optech_mentions:
   - title: Candidate set block templates may make some CPFP fee bumps more effective
     url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
 
+  - title: Proposal of initial CPFP rules for mempool package acceptance before implementing package relay
+    url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

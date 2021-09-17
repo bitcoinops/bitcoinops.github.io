@@ -104,5 +104,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/12-backups.md %}
 
+## Testing on signet
+
+*Originally published in [Newsletter #167](/en/newsletters/2021/09/22/#preparing-for-taproot-14-testing-on-signet)*
+
+{% include specials/taproot/en/13-signet.md %}
+
 ## Footnotes
 {:.no_toc}

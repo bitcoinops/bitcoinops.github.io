@@ -53,6 +53,9 @@ optech_mentions:
   - title: "History of the `mempool` P2P message being deprecated along with BIP37 bloom filters"
     url: /en/newsletters/2021/08/25/#is-the-mempool-p2p-message-reliable
 
+  - title: "Rust Bitcoin #580 adds support for the BIP37 P2P network messages"
+    url: /en/newsletters/2021/09/22/#rust-bitcoin-580
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Privacy in BitcoinJ [bloom filters]"
