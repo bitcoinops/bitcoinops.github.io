@@ -104,7 +104,10 @@ BOLTs][bolts repo].*
   because of other issues, such as the channel funding transaction still
   being unconfirmed).
 
-- [LND #5304][] rpc: Bake and validate macaroons with external permissions FIXME:dongcarl
+- [LND #5304][] enables LND to create and validate macaroons with external
+  permissions unknown to LND itself. This change enables tools such as [Lightning
+  Terminal][] to use a single macaroon to authenticate across multiple daemons that
+  all talk to the same LND.
 
 - [Rust Bitcoin #628][] Adds Taproot BIP341 signature message and create a unified sighash cache for legacy, segwit and taproot inputs FIXME:Xekyo
 
@@ -130,3 +133,4 @@ BOLTs][bolts repo].*
 [zhao post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [schroder post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003224.html
 [news165 bolts 842]: /en/newsletters/2021/09/08/#bolts-824
+[lightning terminal]: /en/newsletters/2020/08/19/#lightning-labs-releases-lightning-terminal
