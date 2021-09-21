@@ -128,7 +128,9 @@ BOLTs][bolts repo].*
   Terminal][] to use a single macaroon to authenticate across multiple daemons that
   all talk to the same LND.
 
-- [Rust Bitcoin #628][] Adds Taproot BIP341 signature message and create a unified sighash cache for legacy, segwit and taproot inputs FIXME:Xekyo
+- [Rust Bitcoin #628][] adds support for Pay to Taproot's sighash
+  construction and tidies up storage of the sighash cache for legacy,
+  segwit and taproot inputs.
 
 - [Rust Bitcoin #580][] adds support for the P2P network messages
   defined in the [BIP37][] specification for [transaction bloom
