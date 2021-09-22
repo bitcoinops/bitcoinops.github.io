@@ -64,7 +64,26 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Lightning Address identifiers announced:**
+  André Neves [announced][tla tweet] the [Lightning Address][lightningaddress
+  website] protocol which wraps [LNURL-pay][lnurl pay] flows into familiar
+  [email-like addresses][lightningaddress diagram].
+
+- **ZEBEDEE releases LN wallet browser extension:**
+  ZEBEDEE [announces][zbe blog] Chrome and Firefox extensions which integrate with its
+  [gaming-focused wallet][zebedee wallet].
+
+- **Specter v1.6.0 supports single-key taproot:**
+  Specter's [v1.6.0][specter v1.6.0] release includes support for both regtest
+  and [signet][topic signet] taproot addresses.
+
+- **Impervious releases LN P2P data API:**
+  the [Impervious][impervious website] framework, built on LND, allows developers
+  to [build][impervious api] P2P data streaming applications over the Lightning Network.
+
+- **Fully Noded v0.2.26 released:**
+  [Fully Noded][fully noded website], a Bitcoin and Lightning wallet for macOS/iOS, adds support for
+  [taproot][topic taproot], [BIP86][], and signet.
 
 ## Preparing for taproot #14: testing on signet
 
@@ -134,3 +153,13 @@ BOLTs][bolts repo].*
 [schroder post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003224.html
 [news165 bolts 842]: /en/newsletters/2021/09/08/#bolts-824
 [lightning terminal]: /en/newsletters/2020/08/19/#lightning-labs-releases-lightning-terminal
+[tla tweet]: https://twitter.com/andreneves/status/1425651740502892550
+[lnurl pay]: https://github.com/fiatjaf/lnurl-rfc/blob/master/lnurl-pay.md
+[lightningaddress website]: https://lightningaddress.com/
+[lightningaddress diagram]: https://github.com/andrerfneves/lightning-address/blob/master/README.md#tldr
+[zbe blog]: https://blog.zebedee.io/browser-extension-for-the-zebedee-wallet/
+[zebedee wallet]: https://zebedee.io/wallet
+[specter v1.6.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.6.0
+[impervious website]: https://www.impervious.ai/
+[impervious api]: https://docs.impervious.ai/
+[fully noded website]: https://fullynoded.app/
