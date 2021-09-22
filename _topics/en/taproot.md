@@ -197,6 +197,12 @@ optech_mentions:
   - title: "BTCPay server #2830 adds support for P2TR receiving and spending"
     url: /en/newsletters/2021/09/15/#btcpay-server-2830
 
+  - title: "Specter v1.6.0 adds support for single-key taproot"
+    url: /en/newsletters/2021/09/22/#specter-v1-6-0-supports-single-key-taproot
+
+  - title: "Fully Noded v0.2.26 adds support for P2TR receiving and spending"
+    url: /en/newsletters/2021/09/22/#fully-noded-v0-2-26-released
+
 ## Optional
 see_also:
   - title: MAST
