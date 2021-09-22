@@ -103,5 +103,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/12-backups.md %}
 
+## Signetでのテスト
+
+*[ニュースレター #167](/ja/newsletters/2021/09/22/#taprootの準備-14-signetでのテスト)に掲載*
+
+{% include specials/taproot/ja/13-signet.md %}
+
 ## Footnotes
 {:.no_toc}
