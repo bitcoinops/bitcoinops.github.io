@@ -110,5 +110,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/13-signet.md %}
 
+## Signmessage protocol still needed
+
+*Originally published in [Newsletter #168](/en/newsletters/2021/09/29/#preparing-for-taproot-15-signmessage-protocol-still-needed)*
+
+{% include specials/taproot/en/14-signmessage.md %}
+
 ## Footnotes
 {:.no_toc}

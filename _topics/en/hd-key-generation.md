@@ -72,6 +72,9 @@ optech_mentions:
   - title: No changes to BIP32 derivation needed to implement taproot receiving support
     url: /en/newsletters/2021/07/14/#preparing-for-taproot-4-from-p2wpkh-to-single-sig-p2tr
 
+  - title: Complications for HD wallet recovery in zero HTLC fee anchor outputs protocol
+    url: /en/newsletters/2021/09/29/#challenges-recovering-ln-close-transactions-using-only-a-seed
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

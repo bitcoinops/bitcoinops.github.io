@@ -59,6 +59,9 @@ optech_mentions:
   - title: Alpha release of Suredbits's DLC wallet
     url: /en/newsletters/2021/07/21/#suredbits-announces-dlc-wallet-alpha-release
 
+  - title: Discussion about DLC specification breaking changes
+    url: /en/newsletters/2021/09/29/#discussion-about-dlc-specification-breaking-changes
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
