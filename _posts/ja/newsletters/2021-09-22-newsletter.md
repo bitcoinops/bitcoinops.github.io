@@ -130,7 +130,7 @@ DNSにLNノードの情報を追加することについての議論のリンク
 [lnurl pay]: https://github.com/fiatjaf/lnurl-rfc/blob/master/lnurl-pay.md
 [lightningaddress website]: https://lightningaddress.com/
 [lightningaddress diagram]: https://github.com/andrerfneves/lightning-address/blob/master/README.md#tldr
-[zbe blog]: https://blog.zebedee.io/browser-extension-for-the-zebedee-wallet/
+[zbe blog]: https://blog.zebedee.io/browser-extension/
 [zebedee wallet]: https://zebedee.io/wallet
 [specter v1.6.0]: https://github.com/cryptoadvance/specter-desktop/releases/tag/v1.6.0
 [impervious website]: https://www.impervious.ai/
