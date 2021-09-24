@@ -125,6 +125,9 @@ optech_mentions:
   - title: "Eclair #1932 implements the zero HTLC fee anchor outputs protocol"
     url: /en/newsletters/2021/09/22/#eclair-1932
 
+  - title: Complications for HD wallet recovery in zero HTLC fee anchor outputs protocol
+    url: /en/newsletters/2021/09/29/#challenges-recovering-ln-close-transactions-using-only-a-seed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
