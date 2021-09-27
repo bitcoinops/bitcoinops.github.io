@@ -101,7 +101,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
 
-- [Bitcoin Core #12677][] RPC: Add ancestor{count,size,fees} to listunspent output FIXME:jnewbery
+- [Bitcoin Core #12677][] adds `ancestorcount`, `ancestorsize` and
+  `ancestorfees` fields to the transaction outputs returned by the wallet's
+  `listunspent` RPC method. If the transaction creating the transaction output is
+  unconfirmed, those fields will indicate the total count, size and fees
+  of the transaction and all its unconfirmed ancestors in the mempool.
+  Miners select transactions for inclusion in a block based on their ancestor
+  feerate, so knowing the ancestor size and fees are useful for users estimating
+  the confirmation time for the transaction or attempting to bump the transaction's
+  fee using [CPFP][topic cpfp] or [RBF][topic rbf].
 
 - [Eclair #1942][] Add success probabilities in path finding FIXME:dongcarl
 
