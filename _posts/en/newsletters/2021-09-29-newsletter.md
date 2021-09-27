@@ -71,7 +71,30 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why does the TXID have 256 bits when Bitcoin's address security is 160-bit?]({{bse}}109652)
+  Pieter Wuille outlines three security considerations when considering bit
+  sizes in Bitcoin: preimage resistance, collision resistance, and existential
+  forgery. He goes on to explain how Bitcoin's 128-bit security level target is
+  achieved (or not) across these considerations.
+
+- [Why are OP_RETURN transactions discouraged? Does using version or locktime make any difference?]({{bse}}108389)
+  In addition to outlining from a technical aspect how `OP_RETURN` [burns
+  coins][se 109747] in a separate question, Pieter Wuille provides his
+  perspective on using `OP_RETURN` for data storage.
+
+- [Using non-standard version numbers in transactions]({{bse}}108248)
+  Andrew Chow and G. Maxwell explain that because 1 and 2 are the only standard
+  version numbers for transactions, even though you could have a miner accept
+  another version number, it could cause those outputs to be unspendable or the
+  transaction itself to be invalidated if future consensus rules applied to that
+  version number.
+
+- [Is there historical data of UTXOs by address type?]({{bse}}109776)
+  Murch provides a few example charts from [transactionfee.info][].
+
+- [How are OP_CSV and OP_CLTV backwards compatible?]({{bse}}109834)
+  Andrew Chow describes the historical [soft fork activation][topic soft fork
+  activation] mechanisms of both the BIP65 and BIP112 [timelocks][topic timelocks].
 
 ## Preparing for taproot #15: signmessage protocol still needed
 
@@ -127,3 +150,5 @@ BOLTs][bolts repo].*
 [ghost43 post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003229.html
 [jager post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html
 [osuntokun reply]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003252.html
+[se 109747]: https://bitcoin.stackexchange.com/questions/109747/how-does-op-return-burn-coins/109748#109748
+[transactionfee.info]: https://transactionfee.info/
