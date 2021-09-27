@@ -22,7 +22,7 @@ lang: ja
 
 - **オーガナイズされたTaproot Reviewの最終週:** 12月17日は、taproot reviewグループの最後の[ミーティング][taproot meeting]でした。Pieter Wuilleは、「ほぼ準備ができている」と考えていることを示すテキストを含め、進行状況を要約したプレゼンテーションから[スライド][wuille slides]を投稿しました。また、Wuilleはtapleafのバージョン管理に[軽微な変更][wuille suggestion]を提案しました。また、taprootが改善されたプライバシーとスケーラビリティを提供するためにどのようにLNに統合されるか、Lightning-DevメーリングリストでZmnSCPxjによって開始された[ディスカッション][zmn post]についても簡単に言及しました。
 
-- **<!--coinjoins-without-equal-value-inputs-or-outputs-->各インプットまたはアウトプットの値が等しいわけではないコインジョイン:** Adam Ficsor（nopara73）は、Bitcoin-Devメーリングリストで、等しい値のインプット群またはアウトプット群を用いないコインジョインに関する以前に発行された2つの論文（[1][cashfusion]、[2][knapsack]）について[議論][ficsor non-equal]を開始しました。以前の等しくない値のミキシングの試みは[危殆化しやすい][coinjoin sudoku]ものでしたが、改善された方法が見つかった場合、トランザクションを[支払いバッチ処理][payment batching]のように見せることにより、コインジョインのプライバシーを大幅に改善できます。これは、ある大手取引所がWasabi Walletによって作成されたchaumianスタイルのコインジョインに参加しているユーザーを調査しているという報告があるため、特に関連しているように思われます。いくつかのアイディアが議論されましたが、Lucas Ontiveroによる[要約][ontivero summary]は、全体的な結論の本質を捉えていると思います：「要約すると、等しい値のインプット群またはアウトプット群を用いないコインジョインにおいては[knapsack][]は現時点でベストなものです(「しかし」それは等出力トランザクションほど効果的ではありません。)」
+- **<!--coinjoins-without-equal-value-inputs-or-outputs-->各インプットまたはアウトプットの値が等しいわけではないコインジョイン:** Adam Ficsor（nopara73）は、Bitcoin-Devメーリングリストで、等しい値のインプット群またはアウトプット群を用いないコインジョインに関する以前に発行された2つの論文（[1][cashfusion]、[2][knapsack]）について[議論][ficsor non-equal]を開始しました。以前の等しくない値のミキシングの試みは[危殆化しやすい][coinjoin sudoku]ものでしたが、改善された方法が見つかった場合、トランザクションを[支払いバッチ処理][topic payment batching]のように見せることにより、コインジョインのプライバシーを大幅に改善できます。これは、ある大手取引所がWasabi Walletによって作成されたchaumianスタイルのコインジョインに参加しているユーザーを調査しているという報告があるため、特に関連しているように思われます。いくつかのアイディアが議論されましたが、Lucas Ontiveroによる[要約][ontivero summary]は、全体的な結論の本質を捉えていると思います：「要約すると、等しい値のインプット群またはアウトプット群を用いないコインジョインにおいては[knapsack][]は現時点でベストなものです(「しかし」それは等出力トランザクションほど効果的ではありません。)」
 
 - **<!--encoded-descriptors-->エンコードされた記述子:** Chris Belcherは、Base64エンコーディング[出力スクリプト記述子][topic descriptors]を利用して、コピーとペーストが容易になるように（そして通常のユーザがコードのような構文に触れずにすむ）Bitcoin-Devメーリングリストからのフィードバックについて[依頼][belcher descriptors]しました。少なくとも1つの返信がアイデアに反対し、他の返信はそれぞれ異なるエンコード形式を提案したアイデアをサポートしていました。現時点で本議論は、明確な結論には至っておりません。
 
@@ -46,7 +46,6 @@ lang: ja
 [cashfusion]: https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md
 [knapsack]: https://www.comsys.rwth-aachen.de/fileadmin/papers/2017/2017-maurer-trustcom-coinjoin.pdf
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
-[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [belcher descriptors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017529.html
 [news70 anchor]: /en/newsletters/2019/10/30/#ln-simplified-commitments
 [taproot meeting]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.html

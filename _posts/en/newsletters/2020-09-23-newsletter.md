@@ -189,7 +189,7 @@ release candidates.*
 
 - [Bitcoin Core #16378][] adds a new `send` RPC to the wallet. This new
   RPC is designed for maximum flexibility and includes options such as
-  multiple outputs (allowing [payment batching][]), [coin selection][topic coin
+  multiple outputs (allowing [payment batching][topic payment batching]), [coin selection][topic coin
   selection], manual or automatic feerates, and [PSBT format][topic psbt]. It is
   intended to unify the functionality of the `sendtoaddress` and `sendmany` RPCs,
   which may be deprecated in a future release. For the full list of
@@ -306,7 +306,6 @@ release candidates.*
 [harding sponsor outpoints]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018186.html
 [daftuar principle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018195.html
 [nakamoto later block]: https://bitcointalk.org/index.php?topic=1786.msg22119#msg22119
-[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [send rpc help]: https://github.com/bitcoin/bitcoin/blob/831b0ecea9156447a2b6a67d28858bc26d302c1c/src/wallet/rpcwallet.cpp#L3876-L3933
 [swan bech32 send]: https://twitter.com/SwanBitcoin/status/1301182772015497216
 [ledger coin control article]: https://www.ledger.com/coin-control-now-available-in-ledger-live

@@ -90,7 +90,7 @@ small transaction to be confirmed now (when fees might be high) and have that tr
 trustlessly guarantee that a set of people will receive their actual
 payments later when fees might be lower.  This can make it much more
 economical for organizations that already implement techniques such as
-[payment batching][] to handle sudden fee spikes.
+[payment batching][topic payment batching] to handle sudden fee spikes.
 
 Before we look at the new opcode itself, let's take a moment to look at
 how you might accomplish something similar using current Bitcoin
@@ -406,7 +406,6 @@ the author.
 [elliptic curve]: https://en.wikipedia.org/wiki/Elliptic_curve
 [smaller v1 spk]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016943.html
 [vid return to fees]: https://www.youtube.com/watch?v=ihUQ4C42KUk
-[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [coshv flex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016936.html
 [elementsproject.org]: https://elementsproject.org/
 [blockstream liquid]: https://blockstream.com/liquid/

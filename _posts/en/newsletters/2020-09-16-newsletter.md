@@ -123,7 +123,7 @@ release candidates.*
   being closed.
 
 - [C-Lightning #3812][] adds a `multiwithdraw` RPC that allows sending
-  funds onchain to multiple addresses for [payment batching][].
+  funds onchain to multiple addresses for [payment batching][topic payment batching].
 
 - [C-Lightning #3763][] adds a `multifundchannel` RPC that allows
   funding several channels at the same time using a single deposit
@@ -217,7 +217,6 @@ release candidates.*
 [square tweet]: https://twitter.com/sqcrypto/status/1304087270736236544
 [copa]: https://open-patent.org/
 [blockstream tweet]: https://twitter.com/Blockstream/status/1304529416131940352
-[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [neigut interactive funding]: https://github.com/niftynei/lightning-rfc/pull/1
 [news104 scorched earth]: /en/newsletters/2020/07/01/#discussion-of-htlc-mining-incentives
 [sighash]: https://btcinformation.org/en/developer-guide#signature-hash-types
