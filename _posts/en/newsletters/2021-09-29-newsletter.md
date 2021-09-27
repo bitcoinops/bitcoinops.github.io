@@ -134,7 +134,10 @@ BOLTs][bolts repo].*
   the confirmation time for the transaction or attempting to bump the transaction's
   fee using [CPFP][topic cpfp] or [RBF][topic rbf].
 
-- [Eclair #1942][] Add success probabilities in path finding FIXME:dongcarl
+- [Eclair #1942][] enables the path finding algorithm to be configured such that
+  routes with past failures are penalized. This configuration can be applied as
+  an [experimental parameter set][news166 experiments] to potentially improve
+  routing success rates.
 
 - [LND #5101][] adds a *middleware interceptor* which receives each RPC
   request on its way to the server and can make modifications.  This
@@ -152,3 +155,4 @@ BOLTs][bolts repo].*
 [osuntokun reply]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003252.html
 [se 109747]: https://bitcoin.stackexchange.com/questions/109747/how-does-op-return-burn-coins/109748#109748
 [transactionfee.info]: https://transactionfee.info/
+[news166 experiments]: /en/newsletters/2021/09/15/#eclair-1930
