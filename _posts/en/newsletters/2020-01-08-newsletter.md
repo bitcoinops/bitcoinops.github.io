@@ -46,7 +46,7 @@ projects.
   inputs or outputs.  Previous attempts at non-equal mixes were [easy to
   compromise][coinjoin sudoku], but if an improved method was found, it
   could significantly improve the privacy of coinjoins by making their
-  transactions look like [payment batching][].  This seemed especially
+  transactions look like [payment batching][topic payment batching].  This seemed especially
   relevant after reports that a popular exchange was investigating users
   participating in the chaumian-style coinjoins created by Wasabi
   Wallet.  Although several ideas were discussed, we think the [summary][ontivero summary]
@@ -96,7 +96,6 @@ projects.
 [cashfusion]: https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md
 [knapsack]: https://www.comsys.rwth-aachen.de/fileadmin/papers/2017/2017-maurer-trustcom-coinjoin.pdf
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
-[payment batching]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
 [belcher descriptors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017529.html
 [news70 anchor]: /en/newsletters/2019/10/30/#ln-simplified-commitments
 [taproot meeting]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.html

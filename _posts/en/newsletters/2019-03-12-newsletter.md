@@ -274,5 +274,5 @@ merge affected.*
 [privacy category]: https://en.bitcoin.it/wiki/Category:Privacy
 [addrv2 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016687.html
 [onioncat]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat
-[batching chapter]: https://github.com/bitcoinops/scaling-book/blob/master/x.payment_batching/payment_batching.md
+[batching chapter]: /en/payment-batching/
 [gui 0.18]: https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3AGUI+milestone%3A0.18.0
