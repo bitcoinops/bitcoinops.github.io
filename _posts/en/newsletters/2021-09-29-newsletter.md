@@ -135,9 +135,10 @@ BOLTs][bolts repo].*
   fee using [CPFP][topic cpfp] or [RBF][topic rbf].
 
 - [Eclair #1942][] enables the path finding algorithm to be configured such that
-  routes with past failures are penalized. This configuration can be applied as
+  routes are evaluated partially based on their capacity. This configuration can be applied as
   an [experimental parameter set][news166 experiments] to potentially improve
-  routing success rates.
+  routing success rates.  *[Edit: this item was corrected after
+  publication; we thank Thomas Huet for reporting the inaccuracy.]*
 
 - [LND #5101][] adds a *middleware interceptor* which receives each RPC
   request on its way to the server and can make modifications.  This
