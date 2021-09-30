@@ -109,5 +109,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/13-signet.md %}
 
+## まだ必要なsignmessageプロトコル
+
+*[ニュースレター #168](/ja/newsletters/2021/09/29/#taprootの準備-15-まだ必要なsignmessageプロトコル)に掲載*
+
+{% include specials/taproot/ja/14-signmessage.md %}
+
 ## Footnotes
 {:.no_toc}
