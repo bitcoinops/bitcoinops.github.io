@@ -12,6 +12,7 @@
 {%- endfor %}
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
+[bdk repo]: https://github.com/bitcoindevkit/bdk
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
 [bip-coshv]: https://github.com/JeremyRubin/bips/blob/op-checkoutputshashverify/bip-coshv.mediawiki

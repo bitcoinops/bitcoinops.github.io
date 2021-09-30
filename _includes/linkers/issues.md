@@ -35,4 +35,5 @@ requests, and other templated URLs.
 [review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
 [hwi #{{_issue}}]: https://github.com/bitcoin-core/HWI/issues/{{_issue}}
 [btcpay server #{{_issue}}]: https://github.com/btcpayserver/btcpayserver/issues/{{_issue}}
+[bdk #{{_issue}}]: https://github.com/bitcoindevkit/bdk/issues/{{_issue}}
 {% endfor %}
