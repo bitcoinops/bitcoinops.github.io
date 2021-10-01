@@ -39,7 +39,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core GUI #416][] Add RPC setting FIXME:bitschmidty
+- [Bitcoin Core GUI #416][] adds an "Enable RPC server" checkbox which allows
+  the user to turn on and off Bitcoin Core's RPC server (requires restart).
+
+    {:.center}
+    ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
 
 - [Bitcoin Core #20591][] wallet, bugfix: fix ComputeTimeSmart function during rescanning process FIXME:glozow
 
