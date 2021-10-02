@@ -48,6 +48,9 @@ optech_mentions:
   - title: "Bitcoin Core #22009 introduces new heuristic to compare the effectiveness of coin selection results"
     url: /en/newsletters/2021/09/08/#bitcoin-core-22009
 
+  - title: "Bitcoin Core #17526 adds Single Random Draw coin selection algorithm"
+    url: /en/newsletters/2021/10/06/#bitcoin-core-17526
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simulation-based Evaluation of Coin Selection Strategies
