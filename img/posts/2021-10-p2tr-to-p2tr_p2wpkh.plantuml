@@ -1,0 +1,11 @@
+@startditaa
+
+
+             +------+
++------+---->+ P2TR +   Probable change
+|      |     +------+
+| P2TR |
+|      |     +--------+
++------+---->+ P2WPKH + Probable payment
+             +--------+
+@endditaa

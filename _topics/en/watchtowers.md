@@ -73,6 +73,9 @@ optech_mentions:
   - title: "LND #4782 adds watchtower client support for channels using anchor outputs"
     url: /en/newsletters/2020/12/09/#lnd-4782
 
+  - title: "Inherited identifiers proposal with alternative simplified watchtower design"
+    url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

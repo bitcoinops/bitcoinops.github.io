@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Rust-Lightning #1009 adds a `max_dust_htlc_exposure_msat` channel configuration option"
     url: /en/newsletters/2021/08/18/#rust-lightning-1009
 
+  - title: "Multiple implementations of BOLTs #894 which allow using a lower commitment tx dust limit"
+    url: /en/newsletters/2021/10/06/#eclair-1900
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

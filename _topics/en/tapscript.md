@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Bitcoin Core #21365 allows the wallet to create signatures for tapscript spends"
     url: /en/newsletters/2021/06/23/#bitcoin-core-21365
 
+  - title: "Rust Bitcoin #644 adds support for tapscript’s new opcodes"
+    url: /en/newsletters/2021/10/06/#rust-bitcoin-644
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

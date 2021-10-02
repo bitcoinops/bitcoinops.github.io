@@ -31,6 +31,9 @@ optech_mentions:
   - title: Discussion of output tagging and its effect on eltoo and channel factories
     url: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
 
+  - title: "Inherited identifiers proposal with an alternative channel factory design"
+    url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
