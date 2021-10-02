@@ -105,6 +105,9 @@ optech_mentions:
   - title: Sparrow wallet adds support for bech32m addresses
     url: /en/newsletters/2021/07/21/#sparrow-1-4-3-supports-p2tr
 
+  - title: "Rust Bitcoin #563 adds support for bech32m addresses for P2TR outputs"
+    url: /en/newsletters/2021/10/06/#rust-bitcoin-563
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder

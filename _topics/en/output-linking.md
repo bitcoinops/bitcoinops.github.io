@@ -60,6 +60,12 @@ optech_mentions:
   - title: "Reused hash-based addresses provide no quantum resistance"
     url: /en/newsletters/2021/03/24/#hashes-not-currently-doing-a-good-job-at-qc-resistance
 
+  - title: "Preparing for taproot: impact of a new output script on output linkability"
+    url: /en/newsletters/2021/10/06/#preparing-for-taproot-16-output-linking
+
+  - title: "Bitcoin Core #23065 allows the wallet to persistently prevent spending of spam UTXOs"
+    url: /en/newsletters/2021/10/06/#bitcoin-core-23065
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)

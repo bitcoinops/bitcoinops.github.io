@@ -7,11 +7,46 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter FIXME:harding
+This week's newsletter summarizes a proposal to add transaction heritage
+identifiers to Bitcoin and includes our regular sections with
+information about preparing for taproot,
+a list of new releases and release candidates,
+and summaries of notable changes to popular Bitcoin infrastructure
+software.
 
 ## News
 
-FIXME:harding
+- **Proposal for transaction heritage identifiers:** a [post][rubin-law
+  iids] by pseudonymous developer John Law was submitted to the
+  Bitcoin-Dev and Lightning-Dev mailing lists.  Law proposed a soft fork
+  to add *Inherited Identifiers* (IIDs) which would allow referencing
+  the txid of a transaction's ancestor and the position of the outputs
+  leading to the current input.  For example, `0123...cdef:0:1`
+  indicates the current transaction input is spending the second child
+  of the first output of txid `0123...cdef`.  This allows participants
+  in a multiparty protocol to create signatures spending a particular
+  output even in cases when they can't know in advance the txid of the
+  transaction that will create that output.
+
+    This compares to the *floating transactions* approach enabled by the
+    proposed [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
+    and described as part of the [eltoo][topic eltoo] protocol.
+    Floating transactions allow participants to create signatures for a
+    particular output without knowing its txid as long as they otherwise
+    satisfy the conditions in that output's script.
+
+    Law describes four different protocols enabled by IIDs in an
+    extended [paper][law iids], <!-- it's 66 pages, yikes --> including
+    alternatives to eltoo and [channel factories][topic channel
+    factories], plus ideas that could simplify [watchtower][topic
+    watchtowers] design.  Anthony Towns [suggested][towns iids] that the
+    features of IIDs could be simulated using anyprevout, which would
+    still represent a novel development, although Law [disagreed][law
+    nosim] about the possibility of simulation.
+
+    Discussion of the ideas was complicated due to not all participants
+    being willing to use the mailing lists.  If discussion on the lists
+    resumes, we'll summarize any notable updates in a future newsletter.
 
 ## Preparing for taproot #16: output linking
 
@@ -19,7 +54,7 @@ FIXME:harding
 and service providers can prepare for the upcoming activation of taproot
 at block height {{site.trb}}.*
 
-FIXME:harding <!-- include specials/taproot/en/14-signmessage.md -->
+{% include specials/taproot/en/15-output-linking.md %}
 
 ## Releases and release candidates
 
@@ -27,7 +62,10 @@ FIXME:harding <!-- include specials/taproot/en/14-signmessage.md -->
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-FIXME:harding (nothing at this time)
+- [LND 0.13.3-beta][] is a security release fixing [CVE-2021-41593][], a
+  vulnerability which can lead to loss of funds.  The release notes also
+  contain suggested mitigations for nodes that can't be immediately
+  upgraded.
 
 ## Notable code and documentation changes
 
@@ -73,15 +111,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   option, which previously did not persist the mempool to disk on
   shutdown when no parameter was passed (to actually persist, you had to
   pass `-persistmempool=1`).  Now using the bare option will persist the
-  mempool.
+  mempool (which remains the default, so it shouldn't need to be passed).
 
 - [Bitcoin Core #23065][] makes it possible for wallet UTXO locks to be
-  persisted to disk.  Bitcoin Core allows users to lock one or more of their
+  persisted to disk.  The Bitcoin Core wallet allows users to lock one or more of their
   UTXOs to prevent it from being used in automatically-created
   transactions.  The `lockunspent` RPC now includes a `persistent`
   parameter that saves the preference to disk, and the GUI automatically
   persists user-selected locks to disk.  One use for persistent locks is
-  preventing spending of [dust spam][topic output linking] outputs, or
+  preventing spending of [low-value spam][topic output linking] outputs, or
   the spending of other outputs that may reduce a user's privacy.
 
 - [C-Lightning #4806][] adds a default delay of 10 minutes between the
@@ -110,14 +148,15 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [Rust Bitcoin #644][] adds support for [tapscript's][topic tapscript] new
   `OP_CHECKMULTISIGADD` and `OP_SUCCESSx` opcodes.
 
-- [BDK #376][] adds support for using a sqlite as the database backend.
+- [BDK #376][] adds support for using sqlite as the database backend.
 
-<!--
-- FIXME:harding update topics/RCs
-- FIXME:harding check #bitcoin-core-dev weekly meeting logs
-- FIXME:harding check #lightning-dev weekly meeting log
--->
 {% include references.md %}
 {% include linkers/issues.md issues="416,20591,22722,17526,23061,23065,4806,1900,1065,894,5699,5366,563,644,376" %}
 [news165 waste]: /en/newsletters/2021/09/08/#bitcoin-core-22009
 [srd review club]: https://bitcoincore.reviews/17526
+[rubin-law iids]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019470.html
+[law iids]: https://github.com/JohnLaw2/btc-iids/raw/main/iids14.pdf
+[towns iids]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019471.html
+[law nosim]: https://github.com/JohnLaw2/btc-iids/blob/main/response_to_towns_20210918_113740.txt
+[CVE-2021-41593]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
+[lnd 0.13.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.3-beta

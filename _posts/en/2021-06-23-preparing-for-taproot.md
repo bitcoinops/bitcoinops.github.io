@@ -116,5 +116,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/14-signmessage.md %}
 
+## Output linking
+
+*Originally published in [Newsletter #169](/en/newsletters/2021/10/06/#preparing-for-taproot-16-output-linking)*
+
+{% include specials/taproot/en/15-output-linking.md %}
+
 ## Footnotes
 {:.no_toc}

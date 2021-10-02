@@ -80,6 +80,9 @@ optech_mentions:
   - title: "BIPs #943 updates BIP118 to be named SIGHASH_ANYPREVOUT rather than SIGHASH_NOINPUT"
     url: /en/newsletters/2021/07/14/#bips-943
 
+  - title: "Inherited identifiers proposal as an alternative to `SIGHASH_ANYPREVOUT`"
+    url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

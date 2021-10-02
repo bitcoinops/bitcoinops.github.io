@@ -54,6 +54,9 @@ optech_mentions:
   - title: Eltoo demo implementation with new blog post overview
     url: /en/newsletters/2021/09/01/#eltoo-example-channel
 
+  - title: "Inherited identifiers proposal with an alternative channel commiment mechanism to eltoo"
+    url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
