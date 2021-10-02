@@ -54,7 +54,20 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   and the dynamic minimum has risen to 3 sat/vbyte, then a value of 3
   sat/vbyte will be returned.
 
-- [Bitcoin Core #17526][] Add Single Random Draw as an additional coin selection algorithm FIXME:murch
+- [Bitcoin Core #17526][] adds the [Single Random Draw][srd review club] (SRD) algorithm as
+  a third [coin selection][topic coin selection] strategy. The wallet will now acquire coin
+  selection results from each of the Branch and Bound (BnB), the knapsack,
+  and the SRD algorithms and use the [waste heuristic][news165 waste] we
+  described previously to select the most cost effective coin selection
+  result out of the three to fund the transaction.
+
+  In simulations based on about 8,000 payments, the PR author
+  found that the addition of the SRD algorithm reduced overall
+  transaction fees by 6% and increased the occurrence of changeless
+  transactions from 5.4% to 9.0%. Not creating a change output decreases
+  the weight and fees of a transaction, reduces the wallet's UTXO pool
+  size, saves the cost of later spending the change output, and is
+  thought to improve the privacy of the wallet.
 
 - [Bitcoin Core #23061][] fixes the `-persistmempool` configuration
   option, which previously did not persist the mempool to disk on
@@ -106,3 +119,5 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 -->
 {% include references.md %}
 {% include linkers/issues.md issues="416,20591,22722,17526,23061,23065,4806,1900,1065,894,5699,5366,563,644,376" %}
+[news165 waste]: /en/newsletters/2021/09/08/#bitcoin-core-22009
+[srd review club]: https://bitcoincore.reviews/17526
