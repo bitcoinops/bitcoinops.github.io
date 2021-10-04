@@ -146,7 +146,11 @@ frustration.
   be deleted; for safety, an additional flag must be passed to delete
   successful payment attempts.
 
-- [LND #5366][] kvdb: add postgres FIXME:dongcarl
+- [LND #5366][] adds initial support for using PostgreSQL as a database backend.
+  Compared to the existing bbolt backend, PostgreSQL can replicate across
+  multiple servers, perform database compaction on-the-fly, handle larger
+  datasets, and provide a more granular locking model which may improve I/O lock
+  contention.
 
 - [Rust Bitcoin #563][] adds support for [bech32m][topic bech32]
   addresses for [P2TR][topic taproot] outputs.
