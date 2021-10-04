@@ -83,7 +83,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     {:.center}
     ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
 
-- [Bitcoin Core #20591][] wallet, bugfix: fix ComputeTimeSmart function during rescanning process FIXME:glozow
+- [Bitcoin Core #20591][] changes the wallet time calculation logic to
+  only use the block timestamp when rescanning historical blocks for
+transactions relevant to the wallet. Users and applications using the
+`rescanblockchain` RPC to manually invoke rescans should no longer see
+transactions inaccurately labeled with the time scanned instead of
+time confirmed, eliminating an occasional source of confusion and
+frustration.
 
 - [Bitcoin Core #22722][] updates the `estimatesmartfee` RPC so that it
   only returns feerates higher than both the configured and dynamic
