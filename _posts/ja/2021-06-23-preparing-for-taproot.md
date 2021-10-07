@@ -115,5 +115,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/14-signmessage.md %}
 
+## アウトプットのリンク
+
+*[ニュースレター #169](/ja/newsletters/2021/10/06/#taprootの準備-16-アウトプットのリンク)に掲載*
+
+{% include specials/taproot/ja/15-output-linking.md %}
+
 ## Footnotes
 {:.no_toc}
