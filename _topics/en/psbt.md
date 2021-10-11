@@ -156,6 +156,9 @@ optech_mentions:
   - title: MIME type proposed for PSBTs
     url: /en/newsletters/2021/09/08/#bitcoin-related-mime-types
 
+  - title: "LND #5363 allows PSBTs to be finalized by external software"
+    url: /en/newsletters/2021/10/13/#lnd-5363
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

@@ -122,5 +122,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/15-output-linking.md %}
 
+## Is cooperation always an option?
+
+*Originally published in [Newsletter #170](/en/newsletters/2021/10/13/#preparing-for-taproot-17-is-cooperation-always-an-option)*
+
+{% include specials/taproot/en/17-keypath-universality.md %}
+
 ## Footnotes
 {:.no_toc}

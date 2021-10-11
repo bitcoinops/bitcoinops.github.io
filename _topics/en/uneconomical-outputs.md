@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Multiple implementations of BOLTs #894 which allow using a lower commitment tx dust limit"
     url: /en/newsletters/2021/10/06/#eclair-1900
 
+  - title: "Multiple implementations of LN vulnerable to uneconomical spending CVEs"
+    url: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

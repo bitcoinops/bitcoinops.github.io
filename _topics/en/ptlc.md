@@ -58,6 +58,8 @@ optech_mentions:
   - title: "Updating LN for taproot: from HTLCs to PTLCs"
     url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
 
+  - title: "Proposal to upgrade LN to use PTLCs"
+    url: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
