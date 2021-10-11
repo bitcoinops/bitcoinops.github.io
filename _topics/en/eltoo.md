@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Inherited identifiers proposal with an alternative channel commiment mechanism to eltoo"
     url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 
+  - title: "LN PTLC proposal providing some of the same benefits of eltoo without a soft fork"
+    url: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT

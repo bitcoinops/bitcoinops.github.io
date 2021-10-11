@@ -203,6 +203,9 @@ optech_mentions:
   - title: "Fully Noded v0.2.26 adds support for P2TR receiving and spending"
     url: /en/newsletters/2021/09/22/#fully-noded-v0-2-26-released
 
+  - title: "Preparing for taproot: is cooperation always an option?"
+    url: /en/newsletters/2021/10/13/#preparing-for-taproot-17-is-cooperation-always-an-option
+
 ## Optional
 see_also:
   - title: MAST
