@@ -153,7 +153,19 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   mode is currently only available on x86_64 and is mainly meant for
   testing what syscalls are being used by particular threads.
 
-- [Bitcoin Core #17211][] Allow fundrawtransaction and walletcreatefundedpsbt to take external inputs FIXME:jnewbery
+- [Bitcoin Core #17211][] updates the wallet's `fundrawtransaction`,
+  `walletcreatefundedpsbt` and `send` RPC methods to allow transactions
+  where not all of the outputs being spent by the transaction are owned by the
+  wallet.
+
+    Previously, the wallet was not able to estimate the fee required
+    for spending outputs that it didn't own, since it didn't know
+    the size of the input required to spend that output. This PR
+    updates those RPC methods to accept a `solving_data` argument. By providing
+    the public keys, serialized scriptPubKeys, or [descriptors][topic
+    descriptors] for the outputs being spent in the transaction, the wallet can
+    estimate the size of the inputs required to spend those outputs (and therefore
+    the fee required to spend the outputs).
 
 - [Bitcoin Core #22340][] p2p: Use legacy relaying to download blocks in blocks-only mode FIXME:adamjonas
 
