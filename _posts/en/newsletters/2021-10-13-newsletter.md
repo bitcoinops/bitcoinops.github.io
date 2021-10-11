@@ -107,13 +107,56 @@ software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME is a PR by FIXME to FIXME.  The review club FIXME:glozow
+[Extract RBF logic into policy/rbf][review club #22675] is a PR by Gloria Zhao
+to extract Bitcoin Core's [Replace By Fee][topic rbf] logic into separate
+utility functions.
 
 {% include functions/details-list.md
 
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME#l-FIXME"
+  q0="What is the high-level design goal for the mempool?"
+  a0="The mempool aims to keep the most incentive-compatible transaction
+candidates for mining, even for non-mining nodes. However, there's a
+fundamental conflict between DoS protection (e.g. not allowing people to use
+the P2P network to broadcast transactions that will never confirm), and miner
+incentives (maximizing joint fee of the top 1 block worth of the mempool).  The
+design goal is to specify where that conflict occurs and attempt to minimize it"
+  a0link="https://bitcoincore.reviews/22675#l-86"
+
+  q1="What are the benefits of extracting the RBF logic into separate helper functions?"
+  a1="Separating the logic into smaller functions allows better unit testing
+and for the logic to be re-used in the implementation of package mempool
+accept and [package relay][topic
+package relay]."
+  a1link="https://bitcoincore.reviews/22675#l-24"
+
+  q2="In [BIP125][] Rule #2, why is it important for the replacement
+transaction to not introduce any new unconfirmed inputs?"
+  a2="If the replacement is allowed to add new _unconfirmed_ inputs, then even
+if the feerate increases, the ancestor feerate of the transaction can be
+decreased. Miners select transactions for inclusion in a block based on the
+ancestor feerate, so if we allowed new inputs to be added, a replacement
+transaction could be less attractive to mine than the transaction it is
+replacing."
+  a2link="https://bitcoincore.reviews/22675#l-52"
+
+  q3="In BIP125 Rule #4, what does it mean for a transaction to \"pay for its
+own bandwidth?\" Why don’t we just allow any replacement as long as it has a
+higher feerate?"
+  a3="\"Paying for its own bandwidth\" means paying a fee which includes an
+additional amount that would cover the minimum relay fee for the replacement
+transactions. Without this rule, malicious actors could repeatedly bump their
+transaction fee by 1 satoshi, and use a disproportionate amount of mempool
+compute resources and network bandwidth."
+  a3link="https://bitcoincore.reviews/22675#l-117"
+
+  q4="Replace-by-fee logic is concerned with mempool policy. Why does [this
+logic][transaction spends its outputs] return that the replacement transaction
+failed due to consensus rules, not policy rules?"
+  a4="This logic catches the case where the replacement transaction is spending
+a transaction that it is replacing. Since it's impossible for both the original
+transaction and the replacement transaction to be confirmed, this replacement
+transaction can never appear in the block chain, and so is consensus invalid."
+  a4link="https://bitcoincore.reviews/22675#l-40"
 
 %}
 
@@ -188,7 +231,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the LN CVE described in the *news* section above.
 
 {% include references.md %}
-{% include linkers/issues.md issues="20487,17211,22340,23123,1980,5363,5642,5770" %}
+{% include linkers/issues.md issues="20487,17211,22340,23123,1980,5363,5642,5770,22675" %}
 [riard cve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
 [zmnscpxj name drop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003265.html
 [news152 ff]: /en/newsletters/2021/06/09/#receiving-ln-payments-with-a-mostly-offline-private-key
@@ -196,3 +239,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [zmnscpxj taproot ln]: /en/preparing-for-taproot/#ln-with-taproot
 [eclair 0.6.2]: https://github.com/ACINQ/eclair/releases/tag/v0.6.2
 [eclair rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.6.2.md
+[transaction spends its outputs]: https://github.com/bitcoin/bitcoin/blob/0ed5ad102/src/validation.cpp#L774
