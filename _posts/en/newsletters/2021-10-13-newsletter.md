@@ -219,12 +219,18 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   feerate above the local full node's dynamic minimum relay fee when
   [anchor outputs][topic anchor outputs] are being used.
 
-- [LND #5363][] allows skipping the PSBT finalization step within LND,
+- [LND #5363][] allows skipping the [PSBT][topic psbt] finalization step within LND,
   allowing PSBTs to be finalized and broadcast using other software.
   This can lead to funds loss if the transaction's txid is accidentally
   changed, but it does allow alternative workflows.
 
-- [LND #5642][] in-memory graph cache for faster pathfinding FIXME:dongcarl
+- [LND #5642][] will now keep an in-memory cache of the channel graph to speed
+  up pathfinding operations. Previously, pathfinding required expensive database
+  queries which were over 10x slower according to the PR author's measurements.
+
+  Users running LND on low-memory systems can reduce the memory footprint of
+  this new cache by using the `routing.strictgraphpruning=true` flag to more
+  aggressively remove zombie channels.
 
 - [LND #5770][] provides more information to LND's subsystems about
   uneconomical outputs in order to allow implementing mitigations for
