@@ -210,7 +210,24 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     estimate the size of the inputs required to spend those outputs (and therefore
     the fee required to spend the outputs).
 
-- [Bitcoin Core #22340][] p2p: Use legacy relaying to download blocks in blocks-only mode FIXME:adamjonas
+- [Bitcoin Core #22340][] After a block is mined, it is broadcasted to the p2p network,
+  where it will eventually be relayed to all nodes on the network. Traditionally,
+  there have been two methods to relay blocks: legacy relay and [BIP152][]-style
+  [compact block relay][topic compact block relay].
+
+  A blocks-only node does not participate in transaction relay to reduce its
+  bandwidth usage, and therefore, does not have a mempool. Therefore, compact blocks are
+  not beneficial to such a node since it will always have to download full blocks.
+  However, in both high- and low-bandwidth mode, the `cmpctblock` message is
+  relayed, representing a bandwidth overhead for blocks-only nodes because the
+  `cmpctblock` message is several times larger than in average case than the
+  equivalent headers or `inv` announcement.
+
+  As described in [newsletter #165][PR review club 22340], this PR makes blocksonly
+  nodes use legacy relaying to download new blocks by preventing blocks-only nodes
+  from initiating a high-bandwidth block relay connection and disabling the sending
+  of `sendcmpct(1)`. Additionally, a blocks-only node no longer requests a compact
+  block using `getdata(CMPCT)`.
 
 - [Bitcoin Core #23123][] removes the `-rescan` startup option.  Users
   can instead use the `rescan` RPC.
@@ -246,3 +263,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [eclair 0.6.2]: https://github.com/ACINQ/eclair/releases/tag/v0.6.2
 [eclair rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.6.2.md
 [transaction spends its outputs]: https://github.com/bitcoin/bitcoin/blob/0ed5ad102/src/validation.cpp#L774
+[PR review club 22340]: /en/newsletters/2021/09/08/#bitcoin-core-pr-review-club
