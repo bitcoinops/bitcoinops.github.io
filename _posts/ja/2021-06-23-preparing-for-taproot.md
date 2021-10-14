@@ -121,5 +121,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/15-output-linking.md %}
 
+## 協力は常にオプション？
+
+*[ニュースレター #170](/ja/newsletters/2021/10/13/#taprootの準備-17-協力は常にオプション)に掲載*
+
+{% include specials/taproot/ja/17-keypath-universality.md %}
+
 ## Footnotes
 {:.no_toc}
