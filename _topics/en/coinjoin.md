@@ -66,6 +66,9 @@ optech_mentions:
   - title: "JoinMarket 0.9.0 released with implementation of fidelity bonds for coinjoin sybil resistance"
     url: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
 
+  - title: "Sparrow 1.5.0 adds coinjoin suport"
+    url: /en/newsletters/2021/10/20/#sparrow-adds-coinjoin-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

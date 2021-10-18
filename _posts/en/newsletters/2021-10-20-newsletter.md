@@ -90,7 +90,36 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Zeus wallet adds LN features:**
+  Zeus, a mobile Bitcoin and Lightning wallet application, in its
+  [v0.6.0-alpha3][zeus v0.6.0-alpha3] release, provides additional support for [atomic
+  multipath payments (AMPs)][topic amp], [Lightning Addresses][news167 lightning
+  addresses], and [coin control][topic coin selection] features.
+
+- **Sparrow adds coinjoin support:**
+  [Sparrow 1.5.0][] adds [coinjoin][topic coinjoin] features by integrating with
+  Samourai's [Whirlpool][whirlpool].
+
+- **JoinMarket 0.9.2 adds RBF support:**
+  In addition to defaulting to using [fidelity bonds][news161 fidelity bonds] in
+  the UI, [JoinMarket 0.9.2][joinmarket 0.9.2] also supports [replace by fee
+  (RBF)][topic rbf] for non-coinjoin transactions.
+
+- **Coldcard supports descriptor-based wallets:**
+  [Coldcard 4.1.3][coldcard 4.1.3] now supports `importdescriptors` in Bitcoin
+  Core, enabling [descriptor][topic descriptors] wallets and [PSBT][topic psbt]
+  workflows with Bitcoin Core.
+
+- **Simple Bitcoin Wallet adds CPFP, RBF, hold invoices:**
+  Simple Bitcoin Wallet, previously known as Bitcoin Lightning Wallet, added
+  [child pays for parent (CPFP)][topic cpfp] and RBF (fee bump and
+  cancellation) features in version 2.2.14 and [hold invoices][topic hold invoices] in
+  [2.2.15][slw 2.2.15].
+
+- **Electrs 0.9.0 released:**
+  [Electrs 0.9.0][] now uses Bitcoin's P2P protocol instead of reading blocks
+  from disk or JSON RPC. Users should consult the [upgrading guide][Electrs
+  0.9.0 upgrading guide] for details on upgrading.
 
 ## Preparing for taproot #18: trivia
 
@@ -175,3 +204,13 @@ seems worth publicizing the decision to use this value -->
 [BDK 0.12.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.12.0
 [0xb10c stats]: https://github.com/bitcoin/bitcoin/pull/22539#issuecomment-885763670
 [optech rbf]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1
+[zeus v0.6.0-alpha3]: https://github.com/ZeusLN/zeus/releases/tag/v0.6.0-alpha3
+[news167 lightning addresses]: /en/newsletters/2021/09/22/#lightning-address-identifiers-announced
+[sparrow 1.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.5.0
+[whirlpool]: https://bitcoiner.guide/whirlpool/
+[news161 fidelity bonds]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+[joinmarket 0.9.2]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.2
+[coldcard 4.1.3]: https://blog.coinkite.com/version-4.1.3-released/
+[slw 2.2.15]: https://github.com/btcontract/wallet/releases/tag/2.2.15
+[Electrs 0.9.0]: https://github.com/romanz/electrs/releases/tag/v0.9.0
+[Electrs 0.9.0 upgrading guide]: https://github.com/romanz/electrs/blob/master/doc/usage.md#important-changes-from-versions-older-than-090
