@@ -192,7 +192,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [Bitcoin Core #20487][] adds a `-sandbox` configuration option that
   can be used to enable an experimental system call (syscall) sandbox.
   When the sandbox is active, the kernel will terminate Bitcoin Core if
-  it makes any syscalls other than those on a per-process whitelist.  The
+  it makes any syscalls other than those on a per-process allowlist.  The
   mode is currently only available on x86_64 and is mainly meant for
   testing what syscalls are being used by particular threads.
 
@@ -210,20 +210,20 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     estimate the size of the inputs required to spend those outputs (and therefore
     the fee required to spend the outputs).
 
-- [Bitcoin Core #22340][] After a block is mined, it is broadcasted to the p2p network,
+- [Bitcoin Core #22340][] After a block is mined, it is broadcast to the p2p network,
   where it will eventually be relayed to all nodes on the network. Traditionally,
   there have been two methods to relay blocks: legacy relay and [BIP152][]-style
   [compact block relay][topic compact block relay].
 
-  A blocks-only node does not participate in transaction relay to reduce its
-  bandwidth usage, and therefore, does not have a mempool. Therefore, compact blocks are
+  A node started with the `-blocksonly` setting does not participate in incoming transaction relay to reduce its
+  bandwidth usage, and therefore, does have an empty mempool. Therefore, compact blocks are
   not beneficial to such a node since it will always have to download full blocks.
   However, in both high- and low-bandwidth mode, the `cmpctblock` message is
   relayed, representing a bandwidth overhead for blocks-only nodes because the
   `cmpctblock` message is several times larger than in average case than the
   equivalent headers or `inv` announcement.
 
-  As described in [newsletter #165][PR review club 22340], this PR makes blocksonly
+  As described in [newsletter #165][PR review club 22340], this PR makes blocks-only
   nodes use legacy relaying to download new blocks by preventing blocks-only nodes
   from initiating a high-bandwidth block relay connection and disabling the sending
   of `sendcmpct(1)`. Additionally, a blocks-only node no longer requests a compact
