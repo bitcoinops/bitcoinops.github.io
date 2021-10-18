@@ -64,6 +64,9 @@ optech_mentions:
   - title: Renewed discussion about bidirectional upfront LN fees
     url: /en/newsletters/2021/02/17/#renewed-discussion-about-bidirectional-upfront-ln-fees
 
+  - title: Making jamming attacks more expensive by lowering the cost of probing
+    url: /en/newsletters/2021/10/20/#lowering-the-cost-of-probing-to-make-attacks-more-expensive
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

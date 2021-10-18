@@ -128,5 +128,10 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/17-keypath-universality.md %}
 
+## Trivia
+
+*Originally published in [Newsletter #171](/en/newsletters/2021/10/20/#preparing-for-taproot-18-trivia)*
+
+{% include specials/taproot/en/18-trivia.md %}
 ## Footnotes
 {:.no_toc}
