@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Proposal to upgrade LN to use PTLCs"
     url: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 
+  - title: "Using PTLCs for non-custodial offline receiving"
+    url: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

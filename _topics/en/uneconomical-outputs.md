@@ -45,6 +45,12 @@ optech_mentions:
   - title: "Multiple implementations of LN vulnerable to uneconomical spending CVEs"
     url: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
 
+  - title: "Bitcoin Core #22863 documents P2TR dust amount"
+    url: /en/newsletters/2021/10/20/#bitcoin-core-22863
+
+  - title: "BOLTs #894 specifies various checks related to uneconomical payments in LN"
+    url: /en/newsletters/2021/10/20/#bolts-894
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
