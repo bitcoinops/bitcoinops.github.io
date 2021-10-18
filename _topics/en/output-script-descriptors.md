@@ -110,6 +110,9 @@ optech_mentions:
   - title: "BIPs #1143 introduces BIPs 380-386 specifying output script descriptors"
     url: /en/newsletters/2021/09/08/#bips-1143
 
+  - title: "Coldcard 4.1.3 adds support for descriptor-based wallets"
+    url: /en/newsletters/2021/10/20/#coldcard-supports-descriptor-based-wallets
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
