@@ -3,11 +3,6 @@ language: ruby
 rvm:
   - "2.6.4"
 
-## Allows use of docker-based containers, which are more available than
-## the xen-based (or whatever) VMs, so builds tend to happen sooner
-sudo: false
-
-## Save bundler deps.  Requires sudo: false
 cache: bundler
 
 ## Build all possible jekyll pages for use with link checking.
