@@ -215,8 +215,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   there have been two methods to relay blocks: legacy relay and [BIP152][]-style
   [compact block relay][topic compact block relay].
 
-  A node started with the `-blocksonly` setting does not participate in incoming transaction relay to reduce its
-  bandwidth usage, and therefore, does have an empty mempool. Therefore, compact blocks are
+  A node started with the `-blocksonly` setting does not accept relayed transactions from public nodes to reduce its
+  bandwidth usage, and so usually has an empty mempool. Therefore, compact blocks are
   not beneficial to such a node since it will always have to download full blocks.
   However, in both high- and low-bandwidth mode, the `cmpctblock` message is
   relayed, representing a bandwidth overhead for blocks-only nodes because the
