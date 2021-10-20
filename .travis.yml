@@ -12,12 +12,6 @@ script:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-    
-# Whitelist all branches
-branches:
-  only:
-  - master
-  - /.*/
 
 # xenial builds fail if you don't update bundler
 before_install:
