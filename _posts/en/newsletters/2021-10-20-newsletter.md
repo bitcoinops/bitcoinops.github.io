@@ -100,10 +100,10 @@ wallets and services.*
   [Sparrow 1.5.0][] adds [coinjoin][topic coinjoin] features by integrating with
   Samourai's [Whirlpool][whirlpool].
 
-- **JoinMarket 0.9.2 adds RBF support:**
-  In addition to defaulting to using [fidelity bonds][news161 fidelity bonds] in
-  the UI, [JoinMarket 0.9.2][joinmarket 0.9.2] also supports [replace by fee
-  (RBF)][topic rbf] for non-coinjoin transactions.
+- **JoinMarket fixes a critical bug for makers and adds RBF support:**
+  [JoinMarket 0.9.3][joinmarket 0.9.3] fixes a critical bug for makers. All makers
+  are encouraged to upgrade. Version 0.9.2 also defaults to using [fidelity bonds][news161 fidelity bonds] in
+  the UI and supports [replace by fee (RBF)][topic rbf] for non-coinjoin transactions.
 
 - **Coldcard supports descriptor-based wallets:**
   [Coldcard 4.1.3][coldcard 4.1.3] now supports `importdescriptors` in Bitcoin
@@ -209,7 +209,7 @@ seems worth publicizing the decision to use this value -->
 [sparrow 1.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.5.0
 [whirlpool]: https://bitcoiner.guide/whirlpool/
 [news161 fidelity bonds]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
-[joinmarket 0.9.2]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.2
+[joinmarket 0.9.3]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.3
 [coldcard 4.1.3]: https://blog.coinkite.com/version-4.1.3-released/
 [slw 2.2.15]: https://github.com/btcontract/wallet/releases/tag/2.2.15
 [Electrs 0.9.0]: https://github.com/romanz/electrs/releases/tag/v0.9.0
