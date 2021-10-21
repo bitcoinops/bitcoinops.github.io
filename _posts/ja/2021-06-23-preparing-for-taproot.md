@@ -127,5 +127,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/17-keypath-universality.md %}
 
+## トリビア
+
+*[ニュースレター #171](/ja/newsletters/2021/10/20/#taprootの準備-18-トリビア)に掲載*
+
+{% include specials/taproot/ja/18-trivia.md %}
+
 ## Footnotes
 {:.no_toc}
