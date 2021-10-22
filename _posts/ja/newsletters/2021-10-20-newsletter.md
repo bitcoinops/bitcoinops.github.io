@@ -80,8 +80,10 @@ signetやtestnetでTaprootトランザクションを作成する際に役立つ
 - **Sparrowがcoinjoinをサポート:**
   [Sparrow 1.5.0][]は、Samouraiの[Whirlpool][whirlpool]との統合により[coinjoin][topic coinjoin]機能を追加しました。
 
-- **JoinMarket 0.9.2がRBFをサポート:**
-  [JoinMarket 0.9.2][joinmarket 0.9.2]は、UIで[Fidelity bond][news161 fidelity bonds]をデフォルトで使用するのに加えて、
+- **JoinMarketがメイカーにとっての致命的なバグを修正し、RBFをサポート:**
+  [JoinMarket 0.9.3][joinmarket 0.9.3]では、メイカーにとっての致命的なバグが修正されました。
+  すべてのメイカーにアップグレードをお勧めします。またバージョン0.9.2では、
+  UIで[Fidelity bond][news161 fidelity bonds]をデフォルトで使用し、
   非coinjoinトランザクションでは[replace by fee (RBF)][topic rbf]をサポートしています。
 
 - **Coldcardがdescriptorベースのウォレットをサポート:**
@@ -176,7 +178,7 @@ seems worth publicizing the decision to use this value -->
 [sparrow 1.5.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.5.0
 [whirlpool]: https://bitcoiner.guide/whirlpool/
 [news161 fidelity bonds]: /ja/newsletters/2021/08/11/#implementation-of-fidelity-bonds-fidelity-bond
-[joinmarket 0.9.2]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.2
+[joinmarket 0.9.3]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.3
 [coldcard 4.1.3]: https://blog.coinkite.com/version-4.1.3-released/
 [slw 2.2.15]: https://github.com/btcontract/wallet/releases/tag/2.2.15
 [Electrs 0.9.0]: https://github.com/romanz/electrs/releases/tag/v0.9.0
