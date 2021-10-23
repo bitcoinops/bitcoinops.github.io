@@ -133,5 +133,12 @@ h2:not(:first-of-type) { margin-top: 3em; }
 *Originally published in [Newsletter #171](/en/newsletters/2021/10/20/#preparing-for-taproot-18-trivia)*
 
 {% include specials/taproot/en/18-trivia.md %}
+
+## Future consensus changes
+
+*Originally published in [Newsletter #172](/en/newsletters/2021/10/27/#preparing-for-taproot-19-future-consensus-changes)*
+
+{% include specials/taproot/en/19-future.md %}
+
 ## Footnotes
 {:.no_toc}
