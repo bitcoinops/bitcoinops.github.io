@@ -45,8 +45,8 @@ primary_sources:
     - title: Example
       link: https://example.com
 
-## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
-## true" to bold entry
+## Optional.  Each entry requires "title" and "url".  May also use "feature:
+## true" to bold entry and "date"
 optech_mentions:
   - title: An example page
     url: /en/newsletters/2019/05/29/#news
@@ -65,7 +65,7 @@ optech_mentions:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **${topic}** is ...
+  **${topic}** are ...
 ---
 This is the summary that never ends.  It goes on and on, my friend.
 Some people started writing it not knowing what it was but...
