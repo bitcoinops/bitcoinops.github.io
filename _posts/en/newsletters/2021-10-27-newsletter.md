@@ -28,6 +28,29 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
+- [Where to find the exact number of hashes required to mine most recent block?]({{bse}}110330)
+  Pieter Wuille notes what while a block's attempted number of hashes is not
+  published, a formula of 4,295,032,833 times the block's [difficulty][wiki
+  difficulty] provides a simple way of estimating the expected number of hashes
+  to solve a block.
+
+- [Using a 2-of-3 taproot keypath with schnorr signatures?]({{bse}}110249)
+  Pieter Wuille points out that, although [BIP340][] requires 1 key and 1 signature,
+  it is also possible to use [threshold signature][topic threshold signature] schemes like
+  [FROST][frost whitepaper], [multisignature][topic multisignature] schemes like
+  [MuSig][topic musig], and others.
+
+- [Why coinbase maturity is defined to be 100 and not 50?]({{bse}}110085)
+  User liorko asks why the constant 100, instead of 50, was chosen for Bitcoin's [coinbase
+  maturity][se coinbase maturity] duration. Answers point out the unexplained and
+  potentially arbitrary nature of the choice.
+
+- [Why does Bitcoin use double hashing so often?]({{bse}}110065)
+  Pieter Wuille lists where the double-SHA256 and SHA256+RIPEMD160 double hash schemes
+  were initially used in Bitcoin, notes where new features used the same
+  schemes, and hypothesizes that Satoshi used these double hash schemes, mistakenly, to
+  mitigate against certain attacks.
+
 ## Preparing for taproot #19: future consensus changes
 
 *A weekly [series][series preparing for taproot] about how developers
@@ -147,3 +170,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [prob path]: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 [news170 unec bug]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
 [decker tweet]: https://twitter.com/Snyke/status/1452260691939938312
+[wiki difficulty]: https://en.bitcoin.it/wiki/Difficulty
+[se coinbase maturity]: https://bitcoin.stackexchange.com/a/1992/87121
+[frost whitepaper]: https://eprint.iacr.org/2020/852.pdf
