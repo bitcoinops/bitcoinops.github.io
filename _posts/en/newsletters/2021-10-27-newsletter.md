@@ -149,7 +149,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   pull request.  The `lncli` command is updated to simplify sending and
   listening for custom peer messages.
 
-- [LND #5689][] Support remote signing over RPC FIXME:dongcarl
+- [LND #5689][] adds the ability for an LND node to delegate all private key
+  operations to a remote, mostly-offline "signer" node. Detailed documentation
+  is available [here][lnd remote signing].
 
 - [BTCPay Server #2517][] adds support for issuing payouts or refunds
   via LN.  The administrator can enter an amount to pay, the receiver
@@ -173,3 +175,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [wiki difficulty]: https://en.bitcoin.it/wiki/Difficulty
 [se coinbase maturity]: https://bitcoin.stackexchange.com/a/1992/87121
 [frost whitepaper]: https://eprint.iacr.org/2020/852.pdf
+[lnd remote signing]: https://github.com/guggero/lnd/blob/d43854aa34ca0c2d0dfa12b06f299def39b512fb/docs/remote-signing.md
