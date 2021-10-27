@@ -29,14 +29,14 @@
   [Schnorr署名][topic schnorr signatures]について、さまざまな暗号トリックの実装が簡単になるため、
   Bitcoinの元のECDSA署名のアップグレードとして説明していますが、
   Schnorr署名のアルゴリズムはECDSAのベースであるDSAアルゴリズムよりも前からあったものです。
-  実際、DSAはClause Schnorrの[Schnorr署名の特許][schnorr patent]を回避するために作られたものですが、
+  実際、DSAはClaus Peter Schnorrの[Schnorr署名の特許][schnorr patent]を回避するために作られたものですが、
   Schnorrはそれでも「[私の]特許は、その種の離散対数署名のさまざまな実装に適用されており、
   したがって、これらの事例であるNyberg-RueppelおよびDSA署名の使用をカバーしている。」と[主張しています][schnorr letter]。
   Schnorrの主張を支持した裁判所は知られておらず、彼の特許は2011年に失効しました。
 
 - **<!--unsure-what-name-to-use-->どんな名前を使用するか:**
   うまくいきまんせんでしたが、Schnorr署名をBitcoinに適用する開発の初期段階で、
-  Claus Schnorrの名前を署名に関連して使うべきではないという[提案][dryja bn sigs]がありました。
+  Claus Peter Schnorrの名前を署名に関連して使うべきではないという[提案][dryja bn sigs]がありました。
   これは、彼の特許が20年以上にわたって貴重な暗号技術の普及を妨げていたためです。
   Pieter Wuilleは、「[BIP340][]を'Discrete Logarithm Signatures'から'DLS'と呼ぶことを検討したが、
   Schnorrという名前がすでに話題になっていたため、最終的にそうならなかった」と[書いています][wuille dls]。
