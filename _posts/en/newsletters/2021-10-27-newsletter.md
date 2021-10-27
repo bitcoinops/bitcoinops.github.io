@@ -85,7 +85,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23002][] Make descriptor wallets by default FIXME:jnewbery
+- [Bitcoin Core #23002][] makes [descriptor][topic descriptors]-based
+  wallets the default when creating a new wallet. Descriptor-based wallets
+  were first introduced in [Bitcoin Core PR #16528][optech pr16528]. There
+  is a [long-term plan][Bitcoin Core #20160] to migrate all wallets to be
+  descriptor-based and eventually phase out support for legacy wallets.
 
 - [Bitcoin Core #22918][] extends the `getblock` RPC and `/rest/block/`
   endpoint with a new level of verbosity (`3`) that includes information
@@ -164,7 +168,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   correct.
 
 {% include references.md %}
-{% include linkers/issues.md issues="23002,22918,4771,4685,1969,5709,5549,5346,5689,2517,497,891" %}
+{% include linkers/issues.md issues="23002,22918,4771,4685,1969,5709,5549,5346,5689,2517,497,891,20160" %}
 [rust-lightning 0.0.102]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.102
 [c-lightning 0.10.2rc1]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.2rc1
 [news123 pool]: /en/newsletters/2020/11/11/#incoming-channel-marketplace
@@ -176,3 +180,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [se coinbase maturity]: https://bitcoin.stackexchange.com/a/1992/87121
 [frost whitepaper]: https://eprint.iacr.org/2020/852.pdf
 [lnd remote signing]: https://github.com/guggero/lnd/blob/d43854aa34ca0c2d0dfa12b06f299def39b512fb/docs/remote-signing.md
+[optech pr16528]: /en/newsletters/2020/05/06/#bitcoin-core-16528
