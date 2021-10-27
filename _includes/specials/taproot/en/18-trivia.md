@@ -40,7 +40,7 @@
   signatures because they make it easier to implement various
   cryptographic tricks, but the schnorr signature algorithm predates the
   DSA algorithm that ECDSA is based upon.  Indeed, DSA was created in
-  part to circumvent the Clause Schnorr's [patent on schnorr signatures][schnorr patent]
+  part to circumvent Claus Peter Schnorr's [patent on schnorr signatures][schnorr patent]
   but Schnorr still [claimed][schnorr letter] "[my] patents apply to various
   implementations of discrete log signatures of that sorts and hence
   covers the use of Nyberg-Rueppel and DSA signatures in these
@@ -49,7 +49,7 @@
 
 - **Unsure what name to use:** although it didn't work out, there
   was a [suggestion][dryja bn sigs] early in the development of adapting
-  schnorr signatures for Bitcoin that Claus Schnorr's name shouldn't be
+  schnorr signatures for Bitcoin that Claus Peter Schnorr's name shouldn't be
   used in association with them because his patent on them prevented the
   widespread use of a valuable cryptographic technique for over 20
   years.  Pieter Wuille [writes][wuille dls], "we did consider calling
