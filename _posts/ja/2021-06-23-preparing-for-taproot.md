@@ -133,5 +133,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/18-trivia.md %}
 
+## 将来のコンセンサスの変更
+
+*[ニュースレター #172](/ja/newsletters/2021/10/27/#taprootの準備-19-将来のコンセンサスの変更)に掲載*
+
+{% include specials/taproot/ja/19-future.md %}
+
 ## Footnotes
 {:.no_toc}
