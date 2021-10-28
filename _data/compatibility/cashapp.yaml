@@ -54,19 +54,19 @@ segwit:
     version: "3.5.1"
   features:
     receive:
-      p2sh_wrapped: "false"
+      p2sh_wrapped: "true"
       bech32: "false"
-      default: "p2pkh"
+      default: "p2sh_wrapped"
     send:
       bech32: "true" 
-      change_bech32: "false"
+      change_bech32: "true"
       segwit_v1: "untested"
       bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/cashapp/segwit/receive-screen.png
       caption: >
         Cash App does not have an option for receiving to bech32.
-        Cash App uses p2pkh addresses for receiving.
+        Cash App uses p2sh wrapped segwit addresses for receiving.
     - image: /img/compatibility/cashapp/segwit/send-screen.png
       caption: >
         Cash App allows sending to either wrapped or native segwit addresses.
