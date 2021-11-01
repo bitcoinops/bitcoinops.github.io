@@ -209,6 +209,9 @@ optech_mentions:
   - title: "Taproot triva: origins, naming, and related prior work"
     url: /en/newsletters/2021/10/20/#preparing-for-taproot-18-trivia
 
+  - title: "Expanded test vectors for taproot published"
+    url: /en/newsletters/2021/11/03/#taproot-test-vectors
+
 ## Optional
 see_also:
   - title: MAST

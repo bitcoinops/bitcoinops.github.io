@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Rust-Lightning #967 adds support for sending keysend-style spontaneous payments"
     url: /en/newsletters/2021/08/04/#rust-lightning-967
 
+  - title: "LND #5803 allows multiple spontaneous payments to the same invoice"
+    url: /en/newsletters/2021/11/03/#lnd-5803
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -94,6 +94,7 @@ beginning of a sentence).
 |-|-|-|
 | anti fee sniping | anti-fee sniping, anti-fee-sniping | |
 | block chain | blockchain | |
+| chain split | chainsplit | |
 | CPFP or Child Pays For Parent | Child-Pays-For-Parent | |
 | coinjoin | Coinjoin, coinJoin or coin-join | |
 | coinswap | Coinswap, CoinSwap, coinSwap, or coin-swap | |
