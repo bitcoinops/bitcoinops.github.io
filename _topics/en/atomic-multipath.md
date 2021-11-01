@@ -46,6 +46,9 @@ optech_mentions:
   - title: "LND 0.13.0-beta allows receiving and sending payments using AMP"
     url: /en/newsletters/2021/06/23/#lnd-0-13-0-beta
 
+  - title: "LND #5803 allows multiple spontaneous payments to the same AMP invoice"
+    url: /en/newsletters/2021/11/03/#lnd-5803
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified Multipath Payments (SMP)
