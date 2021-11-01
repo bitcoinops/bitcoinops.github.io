@@ -132,7 +132,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23306][] Make AddrMan support multiple ports per IP FIXME:glozow
+- [Bitcoin Core #23306][] enables the Address Manager to support multiple ports per IP address.
+  Historically, Bitcoin Core has used a fixed port, 8333, and strongly preferred addresses with this
+  port when making automatic outbound connections. While it has been suggested that this behavior
+  may help prevent utilization of the Bitcoin nodes to DoS non-Bitcoin services (by gossipping their
+  addresses on the Bitcoin network), it also makes it easy to detect Bitcoin nodes by observing
+  network traffic. Treating each (IP,port) combination as a distinct address allows for future work
+  moving towards a more uniform treatment of addresses.
 
 - [C-Lightning #4837][] lightningd: new option for htlc dust limit FIXME:dongcarl
 
