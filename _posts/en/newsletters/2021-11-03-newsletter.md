@@ -142,7 +142,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [C-Lightning #4837][] lightningd: new option for htlc dust limit FIXME:dongcarl
 
-- [Eclair #1982][] Add log file for important notifications FIXME:Xekyo
+- [Eclair #1982][] introduces a new log file collecting important notifications
+  that require the node operator to take action. The accompanying release notes
+  indicate that the `notifications.log` should be monitored by the node
+  operator.
 
 - [LND #5803][] allows multiple [spontaneous payments][topic spontaneous
   payments] to the same [Atomic Multipath Payment (AMP)][topic multipath
