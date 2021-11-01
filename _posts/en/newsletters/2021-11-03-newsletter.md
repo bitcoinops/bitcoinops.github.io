@@ -155,7 +155,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   existing [simplified multipath payment][topic multipath payments]
   implementations.
 
-- [BTCPay Server #2897][] LNURL Payment Method Support (#2897) FIXME:bitschmidty
+- [BTCPay Server #2897][] adds support for [LNURL-Pay][] as a payment
+  method, also enabling support for [Lightning Addresses][news167 lightning addresses].
 
 {% include references.md %}
 {% include linkers/issues.md issues="23306,4837,1982,5803,2897,1225" %}
@@ -171,3 +172,5 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [bcc0.20.2 rn]: https://bitcoincore.org/en/releases/0.20.2/
 [wuille test]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019587.html
 [p4tr waiting]: /en/preparing-for-taproot/#why-are-we-waiting
+[LNURL-Pay]: https://github.com/fiatjaf/lnurl-rfc/blob/luds/06.md
+[news167 lightning addresses]: /en/newsletters/2021/09/22/#lightning-address-identifiers-announced
