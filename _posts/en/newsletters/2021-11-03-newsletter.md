@@ -140,7 +140,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   network traffic. Treating each (IP,port) combination as a distinct address allows for future work
   moving towards a more uniform treatment of addresses.
 
-- [C-Lightning #4837][] lightningd: new option for htlc dust limit FIXME:dongcarl
+- [C-Lightning #4837][] adds a `--max-dust-htlc-exposure-msat` configuration
+  option limiting the total balance of pending HTLCs whose amounts are below the
+  dust limit. Please see our [previous coverage][news162 mdhemsat] of a similar
+  option in Rust-Lightning for more details.
 
 - [Eclair #1982][] introduces a new log file collecting important notifications
   that require the node operator to take action. The accompanying release notes
@@ -174,3 +177,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [p4tr waiting]: /en/preparing-for-taproot/#why-are-we-waiting
 [LNURL-Pay]: https://github.com/fiatjaf/lnurl-rfc/blob/luds/06.md
 [news167 lightning addresses]: /en/newsletters/2021/09/22/#lightning-address-identifiers-announced
+[news162 mdhemsat]: /en/newsletters/2021/08/18/#rust-lightning-1009
