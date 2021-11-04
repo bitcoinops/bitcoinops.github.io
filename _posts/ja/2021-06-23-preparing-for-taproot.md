@@ -139,5 +139,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/19-future.md %}
 
+## アクティベーション時に何が起こる？
+
+*[ニュースレター #173](/ja/newsletters/2021/11/03/#taprootの準備-20-アクティベーション時に何が起こる)に掲載*
+
+{% include specials/taproot/ja/20-activation.md %}
+
 ## Footnotes
 {:.no_toc}
