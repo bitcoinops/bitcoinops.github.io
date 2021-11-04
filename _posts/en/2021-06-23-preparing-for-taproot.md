@@ -140,5 +140,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/19-future.md %}
 
+## What happens at activation?
+
+*Originally published in [Newsletter #173](/en/newsletters/2021/11/03/#preparing-for-taproot-20-what-happens-at-activation)*
+
+{% include specials/taproot/en/20-activation.md %}
+
 ## Footnotes
 {:.no_toc}
