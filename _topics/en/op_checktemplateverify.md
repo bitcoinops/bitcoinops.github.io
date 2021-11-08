@@ -64,6 +64,9 @@ optech_mentions:
   - title: Public launch of Sapio with support for using `OP_CHECKTEMPLATEVERIFY`
     url: /en/newsletters/2021/04/21/#sapio-public-launch
 
+  - title: "BIPs #1215 makes several updates to the BIP119 OP_CHECKTEMPLATEVERIFY proposal"
+    url: /en/newsletters/2021/11/10/#bips-1215
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

@@ -141,7 +141,16 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [Rust-Lightning #1144][] Penalize failed channels FIXME:dongcarl
 
-- [BIPs #1215][] Merge pull request #1215 from JeremyRubin/ctv-updates FIXME:jnewbery
+- [BIPs #1215][] makes several updates to the
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposal in [BIP119][]:
+
+  * Specifying that the soft fork would be deployed using a [speedy trial][news139 speedy trial]
+    activation, similar to taproot activation.
+  * Documenting the rationale for using non-tagged SHA256 hashes.
+  * Adding more comparison between the OP_CHECKTEMPLATEVERIFY proposal and
+    the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] proposal.
+  * Explaining the interactions between OP_CHECKTEMPLATEVERIFY and other
+    potential future consensus changes.
 
 {% include references.md %}
 {% include linkers/issues.md issues="1078,1144,1215" %}
@@ -166,3 +175,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news173 amp]: /en/newsletters/2021/11/03/#lnd-5803
 [news156 zcc]: /en/newsletters/2021/07/07/#zero-conf-channel-opens
 [lnd 0.13.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.4-beta
+[news139 speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
