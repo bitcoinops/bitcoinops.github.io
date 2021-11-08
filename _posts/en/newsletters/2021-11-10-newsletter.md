@@ -192,7 +192,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   outputs] and may also be needed to support [zero-conf
   channels][news156 zcc].
 
-- [Rust-Lightning #1144][] Penalize failed channels FIXME:dongcarl
+- [Rust-Lightning #1144][] adds a penalization mechanism to the route scoring
+  logic. The penalty is applied to failed channels between payment retries to
+  inform the pathfinding algorithm of potentially faulty channels.
 
 - [BIPs #1215][] makes several updates to the
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposal in [BIP119][]:
