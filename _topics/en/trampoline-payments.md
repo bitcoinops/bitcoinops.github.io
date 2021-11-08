@@ -40,6 +40,9 @@ optech_mentions:
   - title: Electrum 4.1.0 adds support for trampoline payments
     url: /en/newsletters/2021/05/19/#electrum-4-1-0-enhances-lightning-features
 
+  - title: "Summary of LN developer conference, including discussion of trampoline payments"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

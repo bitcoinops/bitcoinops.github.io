@@ -56,6 +56,9 @@ optech_mentions:
   - title: Spark Lightning Wallet adds partial support for offers
     url: /en/newsletters/2021/08/18/#spark-lightning-wallet-adds-bolt12-support
 
+  - title: "Summary of LN developer conference, including discussion of offers"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

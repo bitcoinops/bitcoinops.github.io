@@ -78,6 +78,9 @@ optech_mentions:
   - title: Overview of MuSig1, MuSig2, and MuSig-DN
     url: /en/newsletters/2021/08/04/#using-multisignatures
 
+  - title: "Summary of LN developer conference, including discussion of MuSig2"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures

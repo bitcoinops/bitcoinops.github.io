@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Bitcoin Core #15946 allows retaining filters on a pruned node"
     url: /en/newsletters/2021/02/24/#bitcoin-core-15946
 
+  - title: Discussion of additional compact block filter verification
+    url: /en/newsletters/2021/11/10/#additional-compact-block-filter-verification
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

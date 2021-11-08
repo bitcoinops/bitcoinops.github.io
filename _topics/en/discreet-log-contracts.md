@@ -62,6 +62,9 @@ optech_mentions:
   - title: Discussion about DLC specification breaking changes
     url: /en/newsletters/2021/09/29/#discussion-about-dlc-specification-breaking-changes
 
+  - title: Mailing list post about DLCs over LN
+    url: /en/newsletters/2021/11/10/#dlcs-over-ln
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
