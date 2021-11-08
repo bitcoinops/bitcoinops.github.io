@@ -75,14 +75,62 @@ notable changes to popular infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Add `ChainstateManager::ProcessTransaction`][review club #23173] is a PR by
+John Newbery to add a new `ChainstateManager::ProcessTransaction()` interface
+function responsible for processing transactions as candidates to the mempool
+and performing mempool consistency checks. The review club discussed the
+current interface for adding transactions to the mempool.
 
 {% include functions/details-list.md
+  q0="What is `cs_main`? Why is it called `cs_main`?"
+  a0="`cs_main` is a mutex intended to synchronize multi-threaded access to
+  validation state. In reality, it also guards non-validation data, including
+  data used in P2P logic; multiple contributors wish to minimize the usage of `cs_main`.
+  The variable was named when validation functionality was housed in a main.cpp
+  file. The prefix, `cs`, stands for critical section."
+  a0link="https://bitcoincore.reviews/23173#l-45"
 
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/22675#l-86"
+  q1="Which components currently call `AcceptToMemoryPool`? Which of the ATMP
+  calls are from external client code and which are from inside validation?"
+  a1="Excluding calls from tests, there are four call sites:
+  1. When the node starts, it [loads][atmp disk] transactions from mempool.dat and
+     calls ATMP to re-validate the transactions and restore mempool contents.
+     This is an internal validation call.
+  2. Transactions received from peers on the P2P network are [validated and submitted
+   to the mempool][atmp p2p] through ATMP. This
+     call originates from a component 'external' to validation.
+  3. During a reorg, any transactions that were present in the disconnected
+     block(s) but not included in the new chain tip are [resubmitted][atmp reorg]
+     to the mempool using ATMP. This is an internal validation call.
+  4. Clients such as RPC (e.g. `sendrawtransaction`) and the wallet (e.g.
+     `sendtoaddress`) submit their transactions to the node using
+     [`BroadcastTransaction()`][atmp client], which calls ATMP. The
+     `testmempoolaccept` RPC also calls ATMP with `test_accept` set to `true`. These
+     are examples of calls from components 'external' to validation."
+  a1link="https://bitcoincore.reviews/23173#l-80"
 
+  q2="What does `CTxMemPool::check()` do? Whose responsibility is it to call
+    that function?"
+  a2="`CTxMemPool::check()` checks that all transactions' inputs correspond to
+    available UTXOs and performs internal consistency checks over the entire mempool.
+    For example, it counts the ancestors and descendants of each mempool entry
+    to ensure the cached `ancestorsize`, `ancestorcount`, `descendantsize`, and
+    `descendantcount` values are accurate. Currently, callers of ATMP are
+    responsible for calling `check()` afterwards. However, the participants
+    discussed that it should be the `ChainstateManager`'s responsibility to perform
+    its own internal consistency checks."
+  a2link="https://bitcoincore.reviews/23173#l-122"
+
+  q3="What does the `bypass_limits` argument do? In which circumstances is ATMP
+    called with it set to true?"
+  a3="When `bypass_limits` is true, the mempool maximum size and minimum feerate
+  are not enforced. For example, if the mempool is full and its dynamic mempool
+  minimum feerate is 3 sat/vB, an individual transaction with a 1 sat/vB feerate may
+  be accepted. ATMP is called with `bypass_limits` during a [reorg][atmp bypass
+  limits]; these transactions may have low individual feerates but high descendant
+  feerates. The total size of the transactions to re-add to the mempool is limited
+  to `MAX_DISCONNECTED_TX_POOL_SIZE`, or 20 MB."
+  a3link="https://bitcoincore.reviews/23173#l-132"
 %}
 
 ## Preparing for taproot #21: thank you!
@@ -158,7 +206,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     potential future consensus changes.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1078,1144,1215,880,906" %}
+{% include linkers/issues.md issues="1078,1144,1215,880,906,23173" %}
 [c-lightning 0.10.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.2
 [decker tweet]: https://twitter.com/Snyke/status/1452260691939938312
 [news170 unec bug]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
@@ -182,3 +230,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news156 zcc]: /en/newsletters/2021/07/07/#zero-conf-channel-opens
 [lnd 0.13.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.4-beta
 [news139 speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
+[atmp disk]: https://github.com/bitcoin/bitcoin/blob/23ae7931be50376fa6bda692c641a3d2538556ee/src/validation.cpp#L4489-L4490
+[atmp p2p]: https://github.com/bitcoin/bitcoin/blob/23ae7931be50376fa6bda692c641a3d2538556ee/src/net_processing.cpp#L3262
+[atmp reorg]: https://github.com/bitcoin/bitcoin/blob/23ae7931be50376fa6bda692c641a3d2538556ee/src/validation.cpp#L352-L354
+[atmp client]: https://github.com/bitcoin/bitcoin/blob/23ae7931be50376fa6bda692c641a3d2538556ee/src/node/transaction.cpp#L73-L83
+[atmp bypass limits]: https://github.com/bitcoin/bitcoin/blob/f87e07c6fe321f0fb97703c82c0e4122f800589f/src/validation.cpp#L353
