@@ -146,5 +146,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/en/20-activation.md %}
 
+## Thank you!
+
+*Originally published in [Newsletter #174](/en/newsletters/2021/11/10/#preparing-for-taproot-21-thank-you)*
+
+{% include specials/taproot/en/21-thanks.md %}
+
 ## Footnotes
 {:.no_toc}

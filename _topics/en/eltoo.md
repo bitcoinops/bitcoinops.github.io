@@ -60,6 +60,9 @@ optech_mentions:
   - title: "LN PTLC proposal providing some of the same benefits of eltoo without a soft fork"
     url: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 
+  - title: "Summary of LN developer conference, including discussion of eltoo"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT

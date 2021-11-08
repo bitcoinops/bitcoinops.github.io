@@ -109,6 +109,7 @@ beginning of a sentence).
 | onchain | on-chain | |
 | opcode | OPCODE, OpCode, Opcode or op code | |
 | OP_RETURN (and all other opcodes) | op_return | |
+| pathfinding | path finding | |
 | RBF or Replace By Fee | Replace-By-Fee | |
 | preimage | pre-image | |
 | presigned | pre-signed | |
@@ -184,3 +185,8 @@ spelled the same.
   production uses of vbytes require they be rounded up.  When using SI
   prefixes with vbytes, introduce the unit the first time it is used,
   e.g. "...BTC per 1,000 vbytes (BTC/kvB)...".
+
+- **Formatting:** follow [SI rules](https://en.wikipedia.org/wiki/Space_(punctuation)#Unit_symbols_and_numbers)
+  for placing a space between a number and its unit of measurement, e.g.
+  "1 sat/vb" or "20 MB" are acceptable.  Exception: percentages, e.g.
+  "50%" is acceptable.

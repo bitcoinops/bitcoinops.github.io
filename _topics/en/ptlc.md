@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Using PTLCs for non-custodial offline receiving"
     url: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
 
+  - title: "Summary of LN developer conference, including discussion of PTLCs"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

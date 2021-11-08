@@ -67,6 +67,9 @@ optech_mentions:
   - title: Making jamming attacks more expensive by lowering the cost of probing
     url: /en/newsletters/2021/10/20/#lowering-the-cost-of-probing-to-make-attacks-more-expensive
 
+  - title: "Summary of LN developer conference, including discussion of channel jamming attacks"
+    url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
