@@ -137,7 +137,12 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Rust-Lightning #1078][] Implement channel_type negotiation FIXME:adamjonas
+- [Rust-Lightning #1078][] adds `channel_type` negotiation as defined in [BOLTs
+  #880][] and covered in [Newsletter #165][news165 bolts-880]. This
+  implementation does not currently send the proposed feature bit from [BOLTs
+  #906][].  BOLTs #880 is required for [anchor channels][topic anchor
+  outputs] and may also be needed to support [zero-conf
+  channels][news156 zcc].
 
 - [Rust-Lightning #1144][] Penalize failed channels FIXME:dongcarl
 
@@ -153,7 +158,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     potential future consensus changes.
 
 {% include references.md %}
-{% include linkers/issues.md issues="1078,1144,1215" %}
+{% include linkers/issues.md issues="1078,1144,1215,880,906" %}
 [c-lightning 0.10.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.2
 [decker tweet]: https://twitter.com/Snyke/status/1452260691939938312
 [news170 unec bug]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
@@ -169,6 +174,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [ld cbf thread]: https://groups.google.com/a/lightning.engineering/g/lnd/c/CE2EslTiqW4/m/CSV3mL5JBQAJ
 [harding undo verification]: https://groups.google.com/a/lightning.engineering/g/lnd/c/CE2EslTiqW4/m/O0_kQF7mBQAJ
 [news164 ping]: /en/newsletters/2021/09/01/#lnd-5621
+[news165 bolts-880]: /en/newsletters/2021/09/08/#bolts-880
 [news157 db]: /en/newsletters/2021/07/14/#lnd-5447
 [news170 path]: /en/newsletters/2021/10/13/#lnd-5642
 [news172 pool]: /en/newsletters/2021/10/27/#lnd-5709
