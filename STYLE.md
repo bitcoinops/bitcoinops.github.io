@@ -188,5 +188,5 @@ spelled the same.
 
 - **Formatting:** follow [SI rules](https://en.wikipedia.org/wiki/Space_(punctuation)#Unit_symbols_and_numbers)
   for placing a space between a number and its unit of measurement, e.g.
-  "1 sat/vb" or "20 MB" are acceptable.  Exception: percentages, e.g.
+  "1 sat/vB" or "20 MB" are acceptable.  Exception: percentages, e.g.
   "50%" is acceptable.
