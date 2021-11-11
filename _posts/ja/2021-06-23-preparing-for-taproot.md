@@ -145,5 +145,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/ja/20-activation.md %}
 
+## ありがとう！
+
+*[ニュースレター #174](/ja/newsletters/2021/11/10/#taprootの準備-21-ありがとう)に掲載*
+
+{% include specials/taproot/ja/21-thanks.md %}
+
 ## Footnotes
 {:.no_toc}
