@@ -1,0 +1,491 @@
+Taprootは、このコラムが公開されてから数日後になると思われるブロック{{site.trb}}でアクティベートされます。
+このシリーズの最終回として、Taprootの開発とアクティベートに協力してくださった多くの方々に、
+そして間もなく適用を開始する方々に感謝します。
+以下に記載されていない多くの方々にも感謝の意を表したいと思いますが、
+記載漏れがあったらお詫びします。
+
+{:#mailing_list_discussion}
+**Bitcoin-devメーリングリストでの議論**
+
+Taprootの背後にある重要なアイディアは、2019年1月22日の朝<!-- UTC-6 -->、数人の暗号学者による会議で[誕生しました][good morning]。
+それは同じ日のうちにBitcoin-Devメーリングリストに[投稿されました][maxwell taproot post]。
+以下の人々は、"taproot"という名前を含むスレッドに貢献しました。
+
+<!-- in my maildir: grep -lir '^Subject:.*taproot' | xargs cat | grep
+^From: | sed 's/^From: //; s/ via.*//; s/ <.*//; s/"//g'
+
+Deleted LORD HIS EXCELLENCY JAMES HRMH,
+Added "Rubin" to "Jeremy"
+-->
+
+<i>
+Adam Back,
+Andrea Barontini,
+Andreas Schildbach,
+Andrew Chow,
+Andrew Poelstra,
+Anthony Towns,
+Antoine Riard,
+Ariel Lorenzo-Luaces,
+Aymeric Vitte,
+Ben Carman,
+Ben Woosley,
+Billy Tetrud,
+BitcoinMechanic,
+Bryan Bishop,
+Carlo Spiller,
+Chris Belcher,
+Christopher Allen,
+Clark Moody,
+Claus Ehrenberg,
+Craig Raw,
+Damian Mee,
+Daniel Edgecumbe,
+David A. Harding,
+DA Williamson,
+Elichai Turkel,
+Emil Pfeffer,
+Eoin McQuinn,
+Eric Voskuil,
+Erik Aronesty,
+Felipe Micaroni Lalli,
+Giacomo Caironi,
+Gregory Maxwell,
+Greg Sanders,
+Jay Berg,
+Jeremy Rubin,
+John Newbery,
+Johnson Lau,
+Jonas Nick,
+Karl-Johan Alm,
+Keagan McClelland,
+Lloyd Fournier,
+Luke Dashjr,
+Luke Kenneth Casson Leighton,
+Mark Friedenbach,
+Martin Schwarz,
+Matt Corallo,
+Matt Hill,
+Michael Folkson,
+Natanael,
+Oleg Andreev,
+Pavol Rusnak,
+Pieter Wuille,
+Prayank,
+R E Broadley,
+Riccardo Casatta,
+Robert Spigler,
+Ruben Somsen,
+Russell O'Connor,
+Rusty Russell,
+Ryan Grant,
+Salvatore Ingala,
+Samson Mow,
+Sjors Provoost,
+Steve Lee,
+Tamas Blummer,
+Thomas Hartman,
+Tim Ruffing,
+Vincent Truong,
+vjudeu,
+yancy,
+yanmaani---,
+and
+ZmnSCPxj.
+</i>
+
+しかし、[Schnorr署名][topic schnorr signatures]や[MAST][topic mast]などTaprootに含まれているアイディアの多くは、
+Taprootより何年も何十年も前から存在しています。これらのアイディアに貢献した多くの人々を列挙することはできませんが、
+それでも私たちは彼らに感謝しています。
+
+{:#taproot-bip-review}
+**Taproot BIPのレビュー**
+
+2019年11月から、多くのユーザーと開発者がTaprootと関連する開発の[組織的なレビュー][news69 review]に参加しました。
+
+<!--
+wget -mirror https://gnusha.org/taproot-bip-review/
+cat *.log | sed 's/>//g; s/<//' | awk '{print $2}' | sed 's/_$//' | sort -u
+
+Removed some obvious duplicates and bots -harding
+-->
+
+<i>
+achow101,
+afk11,
+aj,
+alec,
+amiti,
+_andrewtoth,
+andytoshi,
+ariard,
+arik,
+b10c,
+belcher,
+bjarnem,
+BlueMatt,
+bsm1175321,
+cdecker,
+chm-diederichs,
+Chris_Stewart_5,
+cle1408,
+CubicEarth,
+Day,
+ddustin,
+devrandom,
+digi_james,
+dr-orlovsky,
+dustinwinski,
+elichai2,
+evoskuil,
+fanquake,
+felixweis,
+fjahr,
+ghost43,
+ghosthell,
+gmaxwell,
+harding,
+hebasto,
+instagibbs,
+jeremyrubin,
+jnewbery,
+jonatack,
+justinmoon,
+kabaum,
+kanzure,
+luke-jr,
+maaku,
+mattleon,
+michaelfolkson,
+midnight,
+mol,
+Moller40,
+moneyball,
+murch,
+nickler,
+nothingmuch,
+orfeas,
+pinheadmz,
+pizzafrank13,
+potatoe_face,
+pyskell,
+pyskl,
+queip,
+r251d,
+raj_149,
+real_or_random,
+robert_spigler,
+roconnor,
+sanket1729,
+schmidty,
+sipa,
+soju,
+sosthene,
+stortz,
+taky,
+t-bast,
+theStack,
+Tibo,
+waxwing,
+xoyi-,
+and
+ZmnSCPxj.
+</i>
+
+{:#github-prs}
+**GitHubのプルリクエスト**
+
+Bitcoin CoreにおけるTaprootの主な実装は、レビューのため2020年1月に[2つの][bitcoin core #17977]
+プル[リクエスト][bitcoin core #19953]が提出されました。
+それらのPRにGithubでレビューを残したのは以下の方々です。<!-- in addition to sipa, who opened the PRs -->
+
+<i>
+Andrew Chow (achow101),
+Anthony Towns (ajtowns),
+Antoine Riard (ariard),
+Ben Carman (benthecarman),
+Ben Woosley (Empact),
+Bram (brmdbr),
+Cory Fields (theuni),
+Dmitry Petukhov (dgpv),
+Elichai Turkel (elichai),
+Fabian Jahr (fjahr),
+Andreas Flack (flack),
+Gregory Maxwell (gmaxwell),
+Gregory Sanders (instagibbs),
+James O'Beirne (jamesob),
+Janus Troelsen (ysangkok),
+Jeremy Rubin (JeremyRubin),
+João Barbosa (promag),
+John Newbery (jnewbery),
+Jon Atack (jonatack),
+Jonathan Underwood (junderw),
+Kalle Alm (kallewoof),
+Kanon (decryp2kanon),
+kiminuo,
+Luke Dashjr (luke-jr),
+Marco Falke (MarcoFalke),
+Martin Habovštiak (Kixunil),
+Matthew Zipkin (pinheadmz),
+Max Hillebrand (MaxHillebrand),
+Michael Folkson (michaelfolkson),
+Michael Ford (fanquake),
+Adam Ficsor (nopara73),
+Pieter Wuille (sipa)
+Sjors Provoost (Sjors),
+Steve Huguenin-Elie (StEvUgnIn),
+Tim Ruffing (real-or-random),
+and
+Yan Pritzker (skwp).
+</i>
+
+これには、Bitcoin Coreに関連するいくつかのPRや、（Bitcoin Coreで使用される）
+libsecp256k1のSchnorrサポートや代替ノードソフトウェアなど、他のソフトウェアのTaprootの実装作業は含まれていません。
+
+{:#taproot-activation-discussion}
+**Taprootアクティベーションの議論**
+
+Taprootの実装がBitcoin Coreにマージされてから、それをどのようにアクティベートするかを決めるのはコミュニティの役目でした。
+数ヶ月に及ぶ議論が行われましたが、その中で最も活発だったのは、
+taproot activation IRCチャンネルでの以下のユーザー、開発者およびマイナー間の会話でした:
+
+<i>
+_6102bitcoin,
+AaronvanW,
+achow101,
+aj,
+alec,
+Alexandre_Chery,
+Alistair_Mann,
+amiti,
+andrewtoth,
+andytoshi,
+AnthonyRonning,
+ariel25,
+arturogoosnargh,
+AsILayHodling,
+averagepleb,
+bcman,
+belcher,
+benthecarman,
+Billy,
+bitcoinaire,
+bitentrepreneur,
+bitsharp,
+bjarnem,
+blk014,
+BlueMatt,
+bobazY,
+brg444,
+btcactivator,
+btcbb,
+cato,
+catwith1hat,
+cguida,
+CodeShark___,
+conman,
+copumpkin,
+Crash78,
+criley,
+CriptoLuis,
+CubicEarth,
+darbsllim,
+darosior,
+Day,
+DeanGuss,
+DeanWeen,
+debit,
+Decentralizedb,
+devrandom,
+DigDug,
+dome,
+dr_orlovsky,
+duringo,
+dustinwinski,
+eeb77f71f26eee,
+eidnrf,
+elector,
+elichai2,
+Emcy,
+emzy,
+entropy5000,
+eoin,
+epson121,
+erijon,
+eris,
+evankaloudis,
+faketoshi,
+fanquake,
+fedorafan,
+felixweis,
+fiach_dubh,
+fjahr,
+friendly_arthrop,
+GeraldineG,
+gevs,
+gg34,
+ghost43,
+ghosthell,
+giaki3003,
+gloved,
+gmaxwell,
+graeme1,
+GreenmanPGI,
+gr-g,
+GVac,
+gwillen,
+gwj,
+gz12,
+gz77,
+h4shcash,
+harding,
+hebasto,
+hiro8,
+Hotmetal,
+hsjoberg,
+huesal,
+instagibbs,
+Ironhelix,
+IT4Crypto,
+ja,
+jaenu,
+JanB,
+jeremyrubin,
+jimmy53,
+jnewbery,
+jonatack,
+jonny100051,
+jtimon,
+kallewoof,
+kanon,
+kanzure,
+Kappa,
+keblek,
+ksedgwic,
+landeau,
+lucasmoten,
+luke-jr,
+maaku,
+Majes,
+maybehuman,
+mblackmblack,
+mcm-mike,
+Memesan,
+michaelfolkson,
+midnight,
+MikeMarzig,
+mips,
+mol,
+molz,
+moneyball,
+mrb07r0,
+MrHodl,
+murch,
+naribia,
+newNickName,
+nickler,
+nikitis,
+NoDeal,
+norisgOG,
+nothingmuch,
+occupier,
+OP_NOP,
+OtahMachi,
+p0x,
+pinheadmz,
+PinkElephant,
+pox,
+prayank,
+prepaid,
+proofofkeags,
+provoostenator,
+prusnak,
+qubenix,
+queip,
+r251d,
+rabidus,
+Raincloud,
+raj,
+RamiDz94,
+real_or_random,
+rgrant,
+riclas,
+roasbeef,
+robert_spigler,
+rocket_fuel,
+roconnor,
+rovdi,
+rubikputer,
+RusAlex,
+rusty,
+sanket1729,
+satosaurian,
+schmidty,
+sdaftuar,
+setpill,
+shesek,
+shinobiusmonk,
+snash779,
+solairis,
+somethinsomethin,
+stortz,
+sturles,
+sugarpuff,
+taPrOOteD,
+TechMiX,
+TheDiktator,
+thomasb06,
+tiagocs,
+tomados,
+tonysanak,
+TristanLamonica,
+UltrA1,
+V1Technology,
+vanity,
+viaj3ro,
+Victorsueca,
+virtu,
+walletscrutiny,
+wangchun,
+warren,
+waxwing,
+Whatisthis,
+whuha,
+willcl_ark,
+WilliamSantiago,
+windsok,
+wumpus,
+xxxxbtcking,
+yanmaani,
+yevaud,
+ygrtiugf,
+Yoghurt11411,
+zmnscpxj,
+and
+zndtoshi.
+</i>
+
+**マイナーのシグナリング**
+
+また、ブロック681,408以降、Taprootのルールを適用する用意があることを表明してくれたすべてのマイナーに感謝します。
+
+**サイドプロジェクト**
+
+Taprootのアクティベーションは始まりに過ぎません。
+今後は、開発者やユーザーが利用可能になった新しい機能を使い始めることになります。
+[MuSig][topic musig]や他のプロジェクトなど、何年も前から準備してきた人もいます。
+そのような開発者のリストを入手する便利な方法はありませんが、いずれにしてもすべての開発者に感謝しています。
+
+**ノードオペレーター**
+
+最も重要なことは、Bitcoin Core 0.21.1以降（または互換性のあるソフトウェア）にアップグレードした
+数千のBitcoinの完全な検証ノードのオペレーターに感謝することです。
+彼らは、支払いを受け取るためにそのノードを使用し、
+ブロック{{site.trb}}から始まるTaprootのルールに従うブロックのトランザクションのみを受け入れることを保証します。
+これにより、他のすべてのBitcoinユーザーにもTaprootに準拠したブロックのみを受け入れるという経済的なインセンティブが働き、
+誰もがTaprootの機能を安全に利用できるようになります。
+
+{% include linkers/issues.md issues="17977,19953" %}
+[maxwell taproot post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[good morning]: /ja/preparing-for-taproot/#a-good-morning
+[news69 review]: /ja/newsletters/2019/10/23/#taproot
