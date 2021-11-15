@@ -68,7 +68,12 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   to [BIP340][] (see [Newsletter #87][news87 bips886]) previously discussed in
   [Newsletter #83][news83 safety].
 
-- [Bitcoin Core #23077][] Full CJDNS support FIXME:Xekyo
+- [Bitcoin Core #23077][] enables address relay via [CJDNS][], making CJDNS
+  a fully supported network like IPv4, IPv6, Tor, and I2P. Once CJDNS is
+  set up outside of Bitcoin Core, node operators can toggle the new
+  configuration option `-cjdnsreachable` to have Bitcoin Core interpret
+  `fc00::/8` addresses as belonging to CJDNS rather than being
+  interpreted as private IPv6 addresses.
 
 <!-- FIXME: harding to add topic for onion messages -->
 - [Eclair #1957][] Add basic support for onion messages (lightning/bolts#759) FIXME:dongcarl
@@ -95,3 +100,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news83 safety]: /en/newsletters/2020/02/05/#safety-concerns-related-to-precomputed-public-keys-used-with-schnorr-signatures
 [news173 taproot tests]: /en/newsletters/2021/11/03/#taproot-test-vectors
 [p4tr what happens]: /en/preparing-for-taproot/#what-happens-at-activation
+[cjdns]: https://github.com/cjdelisle/cjdns
