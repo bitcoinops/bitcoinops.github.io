@@ -111,6 +111,9 @@ optech_mentions:
   - title: Instructions for creating bech32m addresses in Bitcoin Core
     url: /en/newsletters/2021/10/20/#testing-taproot
 
+  - title: "Rust Bitcoin #691 adds an API to create bech32m addresses for a P2TR scriptPubKey"
+    url: /en/newsletters/2021/11/17/#rust-bitcoin-691
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
