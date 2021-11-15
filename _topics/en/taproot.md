@@ -212,6 +212,12 @@ optech_mentions:
   - title: "Expanded test vectors for taproot published"
     url: /en/newsletters/2021/11/03/#taproot-test-vectors
 
+  - title: "Taproot activated at block height 709,632"
+    url: /en/newsletters/2021/11/17/#taproot-activated
+
+  - title: "BIPs #1225 updates BIP341 with extended taproot test vectors"
+    url: /en/newsletters/2021/11/17/#bips-1225
+
 ## Optional
 see_also:
   - title: MAST

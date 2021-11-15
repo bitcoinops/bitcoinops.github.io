@@ -1,0 +1,97 @@
+---
+title: 'Bitcoin Optech Newsletter #175'
+permalink: /en/newsletters/2021/11/17/
+name: 2021-11-17-newsletter
+slug: 2021-11-17-newsletter
+type: newsletter
+layout: newsletter
+lang: en
+---
+This week's newsletter provides information about the activation of
+taproot and includes our regular sections with summaries of changes to
+services and client software, new releases and release candidates, and
+notable changes to popular Bitcoin infrastructure software.
+
+## News
+
+- **Taproot activated:** as expected, the [taproot][topic taproot] soft
+  fork activated at block height {{site.trb}}.  As of this writing,
+  several large mining pools are not mining blocks containing taproot
+  spends.  This may indicate that they were falsely signaling readiness
+  to enforce taproot's rules, a risk we [previously warned about][p4tr
+  what happens].  Alternatively, they may be risklessly using a
+  taproot-enforcing node to choose which block chain to use while also
+  using an older node or custom software to choose which transactions to
+  include in their blocks.
+
+    The safest course of action for users and businesses is to run their
+    own taproot-enforcing node (such as Bitcoin Core 22.0) and only
+    accept transactions confirmed by it.
+
+## Changes to services and client software
+
+*In this monthly feature, we highlight interesting updates to Bitcoin
+wallets and services.*
+
+FIXME:bitschmidty <!-- suggestion: bitcoinj release with bech32m and P2TR support -->
+
+## Releases and release candidates
+
+*New releases and release candidates for popular Bitcoin infrastructure
+projects.  Please consider upgrading to new releases or helping to test
+release candidates.*
+
+- [LND 0.14.0-beta.rc4][] is a release candidate that includes
+  additional [eclipse attack][topic eclipse attacks] protection (see
+  [Newsletter #164][news164 ping]), remote database support ([Newsletter
+  #157][news157 db]), faster pathfinding ([Newsletter #170][news170
+  path]), improvements for users of Lightning Pool ([Newsletter
+  #172][news172 pool]), and reusable [AMP][topic amp] invoices
+  ([Newsletter #173][news173 amp]) in addition to many other features
+  and bug fixes.
+
+## Notable code and documentation changes
+
+*Notable changes this week in [Bitcoin Core][bitcoin core repo],
+[C-Lightning][c-lightning repo], [Eclair][eclair repo], [LND][lnd repo],
+[Rust-Lightning][rust-lightning repo], [libsecp256k1][libsecp256k1
+repo], [Hardware Wallet Interface (HWI)][hwi repo],
+[Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo],
+[BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
+[Lightning BOLTs][bolts repo].*
+
+- [Bitcoin Core #22934][] adds a verification step after both ECDSA signatures and
+  [schnorr signatures][topic schnorr signatures] are created.  This may
+  prevent the software from disclosing an incorrectly-generated
+  signature that may leak information about the private key or nonce
+  used to generate it.  This follows advice given in a previous update
+  to [BIP340][] (see [Newsletter #87][news87 bips886]) previously discussed in
+  [Newsletter #83][news83 safety].
+
+- [Bitcoin Core #23077][] Full CJDNS support FIXME:Xekyo
+
+<!-- FIXME: harding to add topic for onion messages -->
+- [Eclair #1957][] Add basic support for onion messages (lightning/bolts#759) FIXME:dongcarl
+
+- [Rust Bitcoin #691][] adds an API to create [bech32m][topic bech32]
+  addresses for a [P2TR][topic taproot] scriptPubKey from a pubkey and
+  optional [tapscript][topic tapscript] merkle root.
+
+- [BDK #460][] adds a new function for adding an `OP_RETURN` output to a
+  transaction.
+
+- [BIPs #1225][] updates BIP341 with the taproot test vectors described
+  in [Newsletter #173][news173 taproot tests].
+
+{% include references.md %}
+{% include linkers/issues.md issues="22934,23077,1957,691,460,1225" %}
+[lnd 0.14.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.0-beta.rc4
+[news164 ping]: /en/newsletters/2021/09/01/#lnd-5621
+[news157 db]: /en/newsletters/2021/07/14/#lnd-5447
+[news170 path]: /en/newsletters/2021/10/13/#lnd-5642
+[news172 pool]: /en/newsletters/2021/10/27/#lnd-5709
+[news173 amp]: /en/newsletters/2021/11/03/#lnd-5803
+[news87 bips886]: /en/newsletters/2020/03/04/#bips-886
+[news83 safety]: /en/newsletters/2020/02/05/#safety-concerns-related-to-precomputed-public-keys-used-with-schnorr-signatures
+[news173 taproot tests]: /en/newsletters/2021/11/03/#taproot-test-vectors
+[p4tr what happens]: /en/preparing-for-taproot/#what-happens-at-activation
