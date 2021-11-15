@@ -100,6 +100,9 @@ optech_mentions:
   - title: "Bitcoin Core 22.0 adds support for I2P connections and removes v2 Tor connections"
     url: /en/newsletters/2021/09/15/#bitcoin-core-22-0
 
+  - title: "Bitcoin Core #23077 enables address relay via CJDNS"
+    url: /en/newsletters/2021/11/17/#bitcoin-core-23077
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
