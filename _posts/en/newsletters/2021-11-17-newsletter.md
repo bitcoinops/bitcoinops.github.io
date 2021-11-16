@@ -33,7 +33,40 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty <!-- suggestion: bitcoinj release with bech32m and P2TR support -->
+- **bitcoinj adds bech32m, P2TR support:**
+  Andreas Schildbach added [a commit][bitcoinj bech32m] for [bech32m][topic
+  bech32] and another for [P2TR support][bitcoinj p2tr] to the bitcoinj repository.
+
+- **libwally-core adds bech32m support:**
+  The [0.8.4 release][libwally 0.8.4] of this wallet primative library includes [bech32m
+  support][libwally 297].
+
+- **Spark Lightning Wallet adds BOLT12 offers:**
+  Spark [v0.3.0][spark v0.3.0] adds [offer][topic offers] features including
+  offer creation, sending offer payments, and pull payments. Recurring offer
+  features are planned for a future release.
+
+- **BitGo wallets support taproot:**
+  BitGo [announced][bitgo taproot blog] support for both sending from and
+  receiving to [taproot][topic taproot] outputs using their API. Taproot support
+  in the UI is planned for a future update.
+
+- **NthKey adds bech32m send capabilities:**
+  iOS signing service [NthKey][nthkey website] added support for taproot sends
+  in the [v1.0.4 release][nthkey v1.0.4].
+
+- **Ledger Live supports taproot:**
+  Ledger's client software, Ledger Live, announced taproot support in their
+  [v2.35.0 release][ledger v2.35.0] as an experimental feature.
+
+- **Muun wallet supports taproot:**
+  Muun wallet enabled taproot address support after activation occurred,
+  including the ability for users to default to taproot receive addresses.
+
+- **Kollider launches alpha LN-based trading platform:**
+  Kollider's latest [announcement][kollider blog] details the derivative
+  platform's features including LN deposits and withdrawals plus LNAUTH and LNURL
+  support.
 
 ## Releases and release candidates
 
@@ -101,3 +134,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news173 taproot tests]: /en/newsletters/2021/11/03/#taproot-test-vectors
 [p4tr what happens]: /en/preparing-for-taproot/#what-happens-at-activation
 [cjdns]: https://github.com/cjdelisle/cjdns
+[bitcoinj bech32m]: https://github.com/bitcoinj/bitcoinj/pull/2099
+[bitcoinj p2tr]: https://github.com/bitcoinj/bitcoinj/pull/2225
+[libwally 0.8.4]: https://github.com/ElementsProject/libwally-core/releases/tag/release_0.8.4
+[libwally 297]: https://github.com/ElementsProject/libwally-core/pull/297
+[spark v0.3.0]: https://github.com/shesek/spark-wallet/releases/tag/v0.3.0
+[bitgo taproot blog]: https://blog.bitgo.com/taproot-support-for-bitgo-wallets-9ed97f412460
+[nthkey website]: https://nthkey.com/
+[nthkey v1.0.4]: https://github.com/Sjors/nthkey-ios/releases/tag/v1.0.4
+[ledger v2.35.0]: https://github.com/LedgerHQ/ledger-live-desktop/releases/tag/v2.35.0
+[kollider blog]: https://kollider.medium.com/kollider-alpha-version-h1-3bec739df1d4
