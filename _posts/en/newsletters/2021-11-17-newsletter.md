@@ -108,8 +108,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   `fc00::/8` addresses as belonging to CJDNS rather than being
   interpreted as private IPv6 addresses.
 
-<!-- FIXME: harding to add topic for onion messages -->
-- [Eclair #1957][] Add basic support for onion messages (lightning/bolts#759) FIXME:dongcarl
+- [Eclair #1957][] adds basic support for [onion messages][topic onion
+  messages] per [BOLTs #759][], allowing relaying of onion messages, but
+  not supporting initiating or receiving onion messages.
 
 - [Rust Bitcoin #691][] adds an API to create [bech32m][topic bech32]
   addresses for a [P2TR][topic taproot] scriptPubKey from a pubkey and
@@ -122,7 +123,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   in [Newsletter #173][news173 taproot tests].
 
 {% include references.md %}
-{% include linkers/issues.md issues="22934,23077,1957,691,460,1225" %}
+{% include linkers/issues.md issues="22934,23077,1957,691,460,1225,759" %}
 [lnd 0.14.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.0-beta.rc4
 [news164 ping]: /en/newsletters/2021/09/01/#lnd-5621
 [news157 db]: /en/newsletters/2021/07/14/#lnd-5447
