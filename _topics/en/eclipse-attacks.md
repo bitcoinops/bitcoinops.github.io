@@ -74,6 +74,9 @@ optech_mentions:
   - title: Proposed `disabletx` message to help allow more block-relay-only peers
     url: /en/newsletters/2021/01/13/#proposed-disabletx-message
 
+  - title: LND 0.14.0-beta includes additional eclipse attack protection by sharing block headers
+    url: /en/newsletters/2021/11/24/#lnd-0-14-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
