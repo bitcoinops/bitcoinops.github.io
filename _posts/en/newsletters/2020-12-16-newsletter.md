@@ -11,7 +11,7 @@ This week's newsletter describes two suggested improvements to LN static
 backups and links to a proposal for a new version of PSBTs.  Also
 included are our regular sections with summaries of changes to services
 and client software, popular questions and answers from the Bitcoin
-StackExchange, new releases and release candidates, and notable changes
+Stack Exchange, new releases and release candidates, and notable changes
 to popular Bitcoin infrastructure projects.
 
 ## Action items
@@ -129,9 +129,9 @@ wallets and services.*
   sending transactions and providing balances in a more private way, without
   using Ledger’s [explorers][topic block explorers].
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

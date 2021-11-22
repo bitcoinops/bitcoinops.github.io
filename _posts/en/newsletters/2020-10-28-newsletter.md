@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter describes the disclosure of two vulnerabilities
 in LND and includes our regular sections with summaries of popular
-questions and answers from the Bitcoin StackExchange, announcements of
+questions and answers from the Bitcoin Stack Exchange, announcements of
 releases and release candidates, and descriptions of changes to popular
 Bitcoin infrastructure software.
 
@@ -130,9 +130,9 @@ Bitcoin infrastructure software.
         A second set of emails from [Riard][riard6] and
         [Fromknecht][fromknecht6] describe this issue in detail.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

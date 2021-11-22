@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: ja
 ---
-今週のニュースレターでは、LND 0.9.0-betaのリリースの発表、Bitcoin Coreのリリース候補(RC)に対するテスターの公募、UTXOと未公開LNチャネル間のリンクを削除する提案の説明、eltooベースのペイメント・チャネルでの支払い管理をシンプルにすると期待されている`SIGHASH_ANYPREVOUTANYSCRIPT`署名ハッシュの変更に対する要約をお送りします。また、注目すべきBitcoin StackExchangeのQ＆A、主なBitcoinインフラストラクチャおよびドキュメント・プロジェクトなどの主要な変更についてもお送りします。
+今週のニュースレターでは、LND 0.9.0-betaのリリースの発表、Bitcoin Coreのリリース候補(RC)に対するテスターの公募、UTXOと未公開LNチャネル間のリンクを削除する提案の説明、eltooベースのペイメント・チャネルでの支払い管理をシンプルにすると期待されている`SIGHASH_ANYPREVOUTANYSCRIPT`署名ハッシュの変更に対する要約をお送りします。また、注目すべきBitcoin Stack ExchangeのQ＆A、主なBitcoinインフラストラクチャおよびドキュメント・プロジェクトなどの主要な変更についてもお送りします。
 
 ## Action items
 
@@ -25,9 +25,9 @@ lang: ja
 
   eltooが同様のタイムアウトと遅延パラメーターの独立性を実現するために、Townsは`SIGHASH_ANYPREVOUTANYSCRIPT`署名ハッシュ（sighash）フラグを使用して作成された署名から入力値（`sha_amounts`）への[BIP341][]コミットメントを削除することを提案します。これには、[tapscript][topic tapscript]の`OP_CODESEPARATOR`オペコードのバリエーションの使用など、eltooで使用されるスクリプトの変更も必要です。
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

@@ -11,7 +11,7 @@ lang: ja
 トランザクションリレーのセキュリティに関するワークショップのお知らせ、
 libsecp256k1-zkpへのECDSA署名アダプターサポート追加の発表、
 BIPプロセスの変更提案のリンクを掲載しています。
-また、Bitcoin StackExchangeで人気のあった質問と回答の要約、
+また、Bitcoin Stack Exchangeで人気のあった質問と回答の要約、
 ソフトウェアのリリースとリリース候補のお知らせ、
 人気のあるBitcoinインフラストラクチャソフトウェアの注目すべき変更点の説明など、
 通常のセクションも含まれています。
@@ -84,9 +84,9 @@ BIPプロセスの変更提案のリンクを掲載しています。
   また[中央化されたBIPリポジトリ][corallo ignore repo]の完全放棄について、
   メーリングリストでいくつかの議論が始まりました。
 
-## Bitcoin StackExchangeから選ばれたQ&A
+## Bitcoin Stack Exchangeから選ばれたQ&A
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
 数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}

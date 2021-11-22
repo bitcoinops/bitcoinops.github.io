@@ -11,7 +11,7 @@ This week's newsletter announces the latest C-Lightning release,
 requests help testing a Bitcoin Core release candidate,
 describes discussions about simplified LN commitments using CPFP
 carve-out, and summarizes several top-voted questions and answers from
-the Bitcoin StackExchange.
+the Bitcoin Stack Exchange.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -80,9 +80,9 @@ the Bitcoin StackExchange.
     especially developers participating in the [taproot review][]
     described in [last week's newsletter][tr].
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

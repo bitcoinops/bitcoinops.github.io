@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: ja
 ---
-今週のニュースレターは、LND 0.8.2-betaのリリースの発表、最新のC-Lightningリリース候補のテスト支援要請、LNの基本的なマルチパス・ペイメントの広範なサポートについてのディスカッション、bech32エラー検出の信頼性に関するアップデートの提供、`OP_CHECKTEMPLATEVERIFY`オペコードの提案に関するアップデートのサマリー、LNチャネルにおけるエクリプス攻撃の影響に関するディスカッションのリンクなどをお送りします。また、主要なBitcoinインフラストラクチャ・プロジェクトに関する注目すべき変更、サービスとクライアント・ソフトウェアの変更、および主要なBitcoin StackExchangeのQ&Aもお届けします。
+今週のニュースレターは、LND 0.8.2-betaのリリースの発表、最新のC-Lightningリリース候補のテスト支援要請、LNの基本的なマルチパス・ペイメントの広範なサポートについてのディスカッション、bech32エラー検出の信頼性に関するアップデートの提供、`OP_CHECKTEMPLATEVERIFY`オペコードの提案に関するアップデートのサマリー、LNチャネルにおけるエクリプス攻撃の影響に関するディスカッションのリンクなどをお送りします。また、主要なBitcoinインフラストラクチャ・プロジェクトに関する注目すべき変更、サービスとクライアント・ソフトウェアの変更、および主要なBitcoin Stack ExchangeのQ&Aもお届けします。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -63,9 +63,9 @@ lang: ja
 - **Unchained CapitalがマルチシグコーディネーターであるCaravanをオープンソース化:**
  [ブログ投稿とデモビデオ][unchained caravan blog]を使用して、Unchained Capitalは、[Caravanというマルチシグコーディネーター][unchained caravan github]をオープンソース化しました。 Caravanは、さまざまな外部キーストアを使用してマルチシグアドレスの作成および支払いをするためのステートレスWebアプリケーションです。
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange] [bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
+*[Bitcoin Stack Exchange] [bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

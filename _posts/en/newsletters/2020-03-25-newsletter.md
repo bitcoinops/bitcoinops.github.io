@@ -8,7 +8,7 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter summarizes several questions and answers from the
-Bitcoin StackExchange and describes notable changes to popular Bitcoin
+Bitcoin Stack Exchange and describes notable changes to popular Bitcoin
 infrastructure projects.
 
 ## Action items
@@ -19,9 +19,9 @@ infrastructure projects.
 
 *No significant news about Bitcoin infrastructure development this week.*
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

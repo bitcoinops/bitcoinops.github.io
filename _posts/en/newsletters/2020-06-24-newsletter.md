@@ -12,7 +12,7 @@ LN users, links to continued discussion about the attack against LN
 atomicity, and shares a reminder about collision attacks on
 RIPEMD160-based addresses in multiparty protocols.  Also included are
 our regular sections with popular questions and answers from the Bitcoin
-StackExchange, a list of releases and release candidates published this
+Stack Exchange, a list of releases and release candidates published this
 week, and notable changes to popular Bitcoin infrastructure projects.
 
 ## Action items
@@ -99,9 +99,9 @@ week, and notable changes to popular Bitcoin infrastructure projects.
   procedure, which Nick notes some two-party ECDSA protocols and
   implementations already do.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

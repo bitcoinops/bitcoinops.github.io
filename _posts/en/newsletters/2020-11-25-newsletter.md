@@ -10,7 +10,7 @@ lang: en
 This week's newsletter links to a website that tracks miner support for
 taproot activation, announces a new organization funding Bitcoin
 research and development, and includes our regular sections with popular
-questions and answers from the Bitcoin StackExchange, announcements of
+questions and answers from the Bitcoin Stack Exchange, announcements of
 releases and release candidates, and notable changes to popular Bitcoin
 infrastructure software.
 
@@ -43,9 +43,9 @@ infrastructure software.
   contributors and received initial funding from John Pfeffer and Wences
   Casares, who also provided initial funding for Optech.)
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

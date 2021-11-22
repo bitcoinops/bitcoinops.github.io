@@ -11,7 +11,7 @@ This week's newsletter describes a proposal to allow upgrading LN
 channel commitment transaction formats without opening new channels and includes
 a field report from River Financial about building wallet software using PSBTs
 and descriptors. Also included are our regular sections with selected questions and
-answers from the Bitcoin StackExchange, recent releases and release
+answers from the Bitcoin Stack Exchange, recent releases and release
 candidates, and notable changes to popular Bitcoin infrastructure
 projects.
 
@@ -58,9 +58,9 @@ projects.
 
 {% include articles/river-descriptors-psbt.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

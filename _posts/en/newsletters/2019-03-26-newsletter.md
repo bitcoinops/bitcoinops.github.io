@@ -11,7 +11,7 @@ This week's newsletter links to a proposal to encrypt P2P communication
 and describes Lightning Loop, a tool and service for withdrawing
 bitcoins from an LN channel to an onchain transaction.  Also included
 are links to resources about bech32 adoption, summaries of popular
-questions and answers from Bitcoin StackExchange, and a list of notable
+questions and answers from Bitcoin Stack Exchange, and a list of notable
 code changes in popular Bitcoin infrastructure projects.
 
 {% include references.md %}
@@ -86,9 +86,9 @@ access all of segwit's multiple benefits.*
 
 {% include specials/bech32/02-stats.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

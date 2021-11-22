@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter links to a discussion about routed coinswaps and
 includes our regular sections with summaries of questions and answers
-from the Bitcoin StackExchange, releases and release candidates, and
+from the Bitcoin Stack Exchange, releases and release candidates, and
 notable changes to popular Bitcoin infrastructure software.
 
 ## Action items
@@ -28,9 +28,9 @@ notable changes to popular Bitcoin infrastructure software.
   transactions attempting theft).  Discussion was still ongoing at the
   time of this writing.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and
@@ -46,7 +46,7 @@ answers posted since our last update.*
   flexibility in their setups and developers maintainability and security benefits.
 
 - [What's the most efficient way to create a raw transaction with a specific fee rate?]({{bse}}98392)
-  StackExchange user Darius asks about the interplay between UTXO selection and feerate when
+  Stack Exchange user Darius asks about the interplay between UTXO selection and feerate when
   constructing a transaction. Murch provides an overview of the effective value
   approach to coin selection, consideration of [change avoidance][bitcoin wiki change avoidance],
   and attention to signature length.

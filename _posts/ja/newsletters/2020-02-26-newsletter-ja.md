@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: ja
 ---
-今週のニュースレターでは、2020 Chaincode residency programの発表、LNの2つの提案されたルーティングの改善についての説明、Stanford Blockchain Conferenceからの3つの興味深い講演、Bitcoin StackExchangeからの主な質問と回答へのリンク、Bitcoinインフラストラクチャソフトウェアに対するいくつかの注目すべき変更をお送りします。
+今週のニュースレターでは、2020 Chaincode residency programの発表、LNの2つの提案されたルーティングの改善についての説明、Stanford Blockchain Conferenceからの3つの興味深い講演、Bitcoin Stack Exchangeからの主な質問と回答へのリンク、Bitcoinインフラストラクチャソフトウェアに対するいくつかの注目すべき変更をお送りします。
 
 ## Action items
 
@@ -67,9 +67,9 @@ The Stanford Center for Blockchain Researchは先週、毎年恒例の[Stanford 
 
 関連：Optechニュースレターは、昨年のStanford Blockchain Conferenceの講演の抜粋を[Newsletter#32][news46 sbc]にまとめています。
 
-## Bitcoin StackExchangeから選ばれたQ＆A
+## Bitcoin Stack Exchangeから選ばれたQ＆A
 
-*[Bitcoin StackExchange] [bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
+*[Bitcoin Stack Exchange] [bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

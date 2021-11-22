@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter describes the availability of a libsecp256k1 fork
 implementing BIP-Schnorr compatible signatures, lists popular questions
-and answers for February from the Bitcoin StackExchange, and describes
+and answers for February from the Bitcoin Stack Exchange, and describes
 notable merges in popular Bitcoin infrastructure projects.
 
 ## Action items
@@ -72,9 +72,9 @@ None this week.
     learn more, read the [blog post][schnorr libsecp256k1-zkp] or
     [developer documentation][schnorr docs].
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

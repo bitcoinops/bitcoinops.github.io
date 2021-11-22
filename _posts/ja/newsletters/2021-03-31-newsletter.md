@@ -8,7 +8,7 @@ layout: newsletter
 lang: ja
 ---
 今週のニュースレターは、LNの確率的な経路選択に関する論文と簡単な議論に、
-Bitcoin StackExchangeで人気のあった質問と回答および、リリースとリリース候補、
+Bitcoin Stack Exchangeで人気のあった質問と回答および、リリースとリリース候補、
 Bitcoinインフラストラクチャソフトウェアの注目すべき変更点などの通常のセクションを掲載しています。
 
 ## 要処置事項
@@ -58,9 +58,9 @@ Bitcoinインフラストラクチャソフトウェアの注目すべき変更�
   Optechは、[ニュースレター #37][news37 batching]で発表した[支払いバッチに関する記事][batching post]を更新して掲載しました。
   支払いバッチは、使用者の取引手数料を約80%節約することができる手法です。
 
-## Bitcoin StackExchangeから選ばれたQ&A
+## Bitcoin Stack Exchangeから選ばれたQ&A
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
 数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}

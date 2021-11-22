@@ -8,7 +8,7 @@ layout: newsletter
 lang: ja
 ---
 今週のニュースレターでは、Taprootのアクティベーションの仕組みについて話し合うためのミーティングの発表と、
-Bitcoin Coreの使用状況調査のためのリンク、Bitcoin StackExchangeの上位の質問と回答、
+Bitcoin Coreの使用状況調査のためのリンク、Bitcoin Stack Exchangeの上位の質問と回答、
 リリースとリリース候補のリストおよび人気のBitcoinインフラストラクチャソフトウェアの注目すべき変更点の説明などの
 通常のセクションを掲載しています。
 
@@ -26,9 +26,9 @@ Bitcoin Coreの使用状況調査のためのリンク、Bitcoin StackExchange�
   [アンケート][chow survey]を作成しました。アンケートについての[ブログ記事][chow blog]で説明されているように、
   回答はユーザーの使用状況や求めていることを開発者に知らせるために使用されます。このアンケートは3月2日まで実施されます。
 
-## Bitcoin StackExchangeから選ばれたQ&A
+## Bitcoin Stack Exchangeから選ばれたQ&A
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}

@@ -10,7 +10,7 @@ lang: en
 This week's newsletter describes the results of discussion about
 choosing activation parameters for a taproot soft fork and includes our
 regular sections with selected questions and answers from the Bitcoin
-StackExchange, releases and release candidates, and notable changes to
+Stack Exchange, releases and release candidates, and notable changes to
 popular Bitcoin infrastructure software.
 
 ## News
@@ -33,9 +33,9 @@ popular Bitcoin infrastructure software.
     supported path forward to activating taproot---even though taproot
     itself appears to be almost entirely desired.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

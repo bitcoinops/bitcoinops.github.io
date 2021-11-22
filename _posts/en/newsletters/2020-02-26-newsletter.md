@@ -11,7 +11,7 @@ This week's newsletter announces the 2020 Chaincode
 Residency program, describes two proposed routing improvements for
 LN, summarizes three interesting talks from the Stanford Blockchain
 Conference, links to popular questions and answers from the Bitcoin
-StackExchange, and lists several notable changes to popular Bitcoin
+Stack Exchange, and lists several notable changes to popular Bitcoin
 infrastructure software.
 
 ## Action items
@@ -202,9 +202,9 @@ and Bryan Bishop for providing [transcripts][].
 Related: the Optech newsletter summarized a selection of talks from last year's Stanford
 Blockchain Conference in [Newsletter #32][news46 sbc].
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

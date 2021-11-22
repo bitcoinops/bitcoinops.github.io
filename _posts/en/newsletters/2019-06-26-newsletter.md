@@ -11,7 +11,7 @@ This week's newsletter announces a pending disclosure of minor
 vulnerabilities for older Bitcoin Core releases, suggests continued
 testing of RCs for LN software, and describes a proposed technique to
 make Bitcoin Core nodes a bit more resistant to eclipse attacks.  Also
-included are our regular sections on bech32 sending support, popular StackExchange topics, and notable
+included are our regular sections on bech32 sending support, popular Stack Exchange topics, and notable
 changes to popular Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -83,9 +83,9 @@ wiki page for changes -->{% endcomment %}
 
 {% include specials/bech32/15-data-entry.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

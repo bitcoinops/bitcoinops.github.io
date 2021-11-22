@@ -223,7 +223,7 @@ BOLTs][bolts repo].*
   [long been requested][Bitcoin Core #2091] and was only recently made
   possible by the addition of [addr v2][topic addr v2].
   Though documentation for node operators hoping to run I2P is still
-  being created, a [Bitcoin StackExchange Q&A][i2p b.se] provides
+  being created, a [Bitcoin Stack Exchange Q&A][i2p b.se] provides
   hints on getting started.
 
 - [C-Lightning #4407][] updates the `listpeers` RPC with new fields

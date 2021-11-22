@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter summarizes a discussion about the minimum allowed
 transaction size and includes our regular sections with popular
-questions and answers from the Bitcoin StackExchange, releases and
+questions and answers from the Bitcoin Stack Exchange, releases and
 release candidates, and notable merges from Bitcoin infrastructure
 projects.
 
@@ -46,9 +46,9 @@ Voegtlin agrees) -->
     [replies][zmn padding] that anything under 64 bytes could still be
     vulnerable, but that the 65-bytes-or-greater rule seems fine.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

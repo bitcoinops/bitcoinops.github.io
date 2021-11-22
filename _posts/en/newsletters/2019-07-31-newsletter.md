@@ -12,7 +12,7 @@ decentralized coinjoin, mentions a PR for BIP322 signmessage support
 (including the ability to sign for bech32 addresses), and summarizes a
 discussion about bloom filters.  Also included are our regular sections
 about bech32 sending support, popular Q&A from the Bitcoin
-StackExchange, and notable changes to popular Bitcoin infrastructure
+Stack Exchange, and notable changes to popular Bitcoin infrastructure
 projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -137,9 +137,9 @@ you pay to access all of segwit's benefits.*
 
 {% include specials/bech32/20-percentage-loss.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

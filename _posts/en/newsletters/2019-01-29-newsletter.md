@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter summarizes a post about the privacy-improving
 payjoin proposal, links to top-voted questions and answers from Bitcoin
-StackExchange, and describes another busy week worth of notable commits
+Stack Exchange, and describes another busy week worth of notable commits
 in popular Bitcoin infrastructure projects.
 
 ## Action items
@@ -50,12 +50,12 @@ None this week.
       payjoin transactions blend in with normal transactions and create
       maximum confusion for block chain analysts
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and
@@ -109,13 +109,13 @@ from both December and January.*
 - [Why should miners hashing arbitrary nonces inspire trust in transaction security?]({{bse}}83951)
   When described as a simple
   guessing game, Bitcoin's proof of work doesn't sound compelling, but
-  this answer from one of Bitcoin StackExchange's top 30 experts,
+  this answer from one of Bitcoin Stack Exchange's top 30 experts,
   Chytrik, provides a simple analogy that captures the essence of proof
   of work and how it helps keep Bitcoin transactions secure.
 
 Optech also congratulates and thanks Pieter Wuille, who this month
 became the [all-time top-voted contributor][top bse] to Bitcoin
-StackExchange.
+Stack Exchange.
 
 ## Notable code changes
 

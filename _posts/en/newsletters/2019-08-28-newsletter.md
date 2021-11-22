@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter asks for comments on the miniscript
 language, publishes our final bech32 sending support section, includes popular
-Q&A from the Bitcoin StackExchange, and describes several notable changes to
+Q&A from the Bitcoin Stack Exchange, and describes several notable changes to
 popular Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -97,9 +97,9 @@ you pay to access all of segwit's benefits.*
 
 {% include specials/bech32/24-conclusion.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: ja
 ---
-今週のニュースレターでは、最新のC-Lightningリリースを発表、Bitcoin Coreリリース候補のテスト支援リクエスト、CPFP(Child-Pays-For-Parent) carve-outを使用したLNコミットメントの簡素化に関する議論、ビットコインStackExchangeからのトップ投票の質問と回答の要約をお届けします。
+今週のニュースレターでは、最新のC-Lightningリリースを発表、Bitcoin Coreリリース候補のテスト支援リクエスト、CPFP(Child-Pays-For-Parent) carve-outを使用したLNコミットメントの簡素化に関する議論、ビットコインStack Exchangeからのトップ投票の質問と回答の要約をお届けします。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -30,9 +30,9 @@ lang: ja
 
    将来Bitcoinに追加される可能性のあるこれらの機能に関心のあるすべての開発者、特に[先週のNewsletter] [tr]で説明されている[taproot review] []に参加している開発者にお勧めします。
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange] [bitcoin.se]は、オプテックの貢献者が質問への回答を探す、または、時間がある時に疑問のあるユーザーを支援するサイトのうちの1つです。 月次で、投稿された上位投票の質問と回答の一部をピックアップします。*
+*[Bitcoin Stack Exchange] [bitcoin.se]は、オプテックの貢献者が質問への回答を探す、または、時間がある時に疑問のあるユーザーを支援するサイトのうちの1つです。 月次で、投稿された上位投票の質問と回答の一部をピックアップします。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

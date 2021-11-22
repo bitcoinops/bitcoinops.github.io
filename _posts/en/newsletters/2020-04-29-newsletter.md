@@ -10,7 +10,7 @@ lang: en
 This week's newsletter summarizes the disclosure of an issue affecting
 the safety of routed LN payments and announces a new presigned vault
 proposal.  Also included are our regular sections with
-popular questions and answers from the Bitcoin StackExchange,
+popular questions and answers from the Bitcoin Stack Exchange,
 announcements of releases and release candidates, and descriptions of
 notable code changes in popular Bitcoin infrastructure projects.
 
@@ -194,9 +194,9 @@ notable code changes in popular Bitcoin infrastructure projects.
   complete the withdrawal of the funds.  Poinsot is seeking feedback on
   the proposal.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and
