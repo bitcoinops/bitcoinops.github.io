@@ -68,7 +68,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   configuration that can be used to prevent the node from accepting new
   incoming channels.  It defaults to true.
 
-- [Rust-Lightning #1166][] Penalize large HTLCs relative to channels in default `Scorer` FIXME:dongcarl
+- [Rust-Lightning #1166][] improves the default route scoring logic by
+  penalizing channels where the payment HTLC amount would constitute more than
+  1/8th of the channel's capacity. The penalty increases linearly as the payment
+  amount reaches the channel capacity.
 
 {% include references.md %}
 {% include linkers/issues.md issues="4890,1173,1166" %}
