@@ -8,7 +8,7 @@ layout: newsletter
 lang: ja
 ---
 今週のニュースレーターでは、Taprootのソフトフォークのアクティベーションパラメーターの選択に関する議論の結果の説明と、
-Bitcoin StackExchangeから選ばれた質問と回答、リリースとリリース候補および、
+Bitcoin Stack Exchangeから選ばれた質問と回答、リリースとリリース候補および、
 人気のあるBitcoinインフラストラクチャソフトウェアの注目すべき変更点を掲載した通常のセクションを掲載しています。
 
 ## ニュース
@@ -25,9 +25,9 @@ Bitcoin StackExchangeから選ばれた質問と回答、リリースとリリ�
     この記事を書いている時点では明確な合意には達しておらず、Taproot自体はほぼ望まれているように見えるものの、
     Taprootをアクティベートするための方法については広く受け入れられていないようです。
 
-## Bitcoin StackExchangeから選ばれたQ&A
+## Bitcoin Stack Exchangeから選ばれたQ&A
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、
 数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}

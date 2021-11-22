@@ -12,7 +12,7 @@ Core, proporciona algunas actualizaciones en las listas de correo de
 desarrolladores de Bitcoin y LN y describe los desarrollos recientes en la
 revisión continua de schnorr/taproot. También están incluidas nuestras
 secciones habituales con las preguntas y respuestas más votadas de Bitcoin
-StackExchange y cambios notables en proyectos populares de infraestructura de
+Stack Exchange y cambios notables en proyectos populares de infraestructura de
 Bitcoin.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -159,9 +159,9 @@ Bitcoin.
     desarrollar sus propios protocolos criptográficos que lea ambas publicaciones,
     ya que cada una complementa a la otra sin ser repetitiva sobre el tema.
 
-## Preguntas y respuestas seleccionadas de Bitcoin StackExchange
+## Preguntas y respuestas seleccionadas de Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] es uno de los primeros lugares donde los
+*[Bitcoin Stack Exchange][bitcoin.se] es uno de los primeros lugares donde los
 contribuyentes de Optech buscan respuestas a sus preguntas, o, cuando tenemos
 algunos momentos libres, para ayudar a usuarios curiosos o confundidos. Aquí
 destacamos algunas de las preguntas y respuestas más votadas, publicadas desde

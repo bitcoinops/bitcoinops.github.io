@@ -11,7 +11,7 @@ This week's newsletter includes the usual dashboard and action items, a
 feature article by developer Anthony Towns about the consolidation of
 four million UTXOs at Xapo, news about possible upgrades to Bitcoin's
 script system, links to a few highly-voted questions and answers on
-the Bitcoin StackExchange, and some notable commits in the development
+the Bitcoin Stack Exchange, and some notable commits in the development
 branches of the Bitcoin Core, Lightning Network Daemon (LND), and
 C-lightning projects.
 
@@ -80,13 +80,13 @@ C-lightning projects.
 [sipa slides]: https://prezi.com/view/YkJwE7LYJzAzJw9g1bWV/
 [kanzure transcript]: http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!--
 https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer
 -->{% endcomment %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this new monthly feature, we highlight some of the top voted questions

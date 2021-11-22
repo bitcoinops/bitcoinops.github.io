@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter announces a meeting to discuss taproot activation
 mechanisms, includes a link to a Bitcoin Core usage survey, and includes our
-regular sections with top questions and answers from the Bitcoin StackExchange,
+regular sections with top questions and answers from the Bitcoin Stack Exchange,
 a list of releases and release candidates, and descriptions of notable changes
 to popular Bitcoin infrastructure software.
 
@@ -32,9 +32,9 @@ to popular Bitcoin infrastructure software.
   will be used to help inform developers about what people use and want
   from the software.  The survey will run until March 2nd.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

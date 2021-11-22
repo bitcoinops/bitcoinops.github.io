@@ -11,7 +11,7 @@ This week's newsletter provides a reminder about potential feerate
 increases, summarizes suggested improvements to sighash flags to
 accompany BIP118 `SIGHASH_NOINPUT_UNSAFE`, and briefly describes a
 proposal to simplify fee bumping for LN commitment transactions.  Also
-included are selected recent Q&A from Bitcoin StackExchange and
+included are selected recent Q&A from Bitcoin Stack Exchange and
 descriptions of notable code changes in popular Bitcoin infrastructure
 projects.
 
@@ -66,11 +66,11 @@ projects.
     changes being made to the methods and policies nodes use for
     relaying unconfirmed transactions.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this monthly feature, we highlight some of the top voted questions and

@@ -13,7 +13,7 @@ describes a proposal to break the linkability between UTXOs and
 unannounced LN channels, and summarizes a modification to the proposed
 `SIGHASH_ANYPREVOUTANYSCRIPT` signature hash that may simplify
 management of payments in eltoo-based payment channels.  Also included
-are our regular sections for popular Bitcoin StackExchange Q&A and
+are our regular sections for popular Bitcoin Stack Exchange Q&A and
 notable changes to popular Bitcoin infrastructure and documentation
 projects.
 
@@ -72,9 +72,9 @@ projects.
     including making use of [tapscript's][topic tapscript] variation of
     the `OP_CODESEPARATOR` opcode.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

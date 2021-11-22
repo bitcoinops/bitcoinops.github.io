@@ -12,7 +12,7 @@ announces a workshop about transaction relay security, announces the
 addition of ECDSA signature adaptor support to libsecp256k1-zkp, and
 links to proposals to change the BIPs process.  Also included are our
 regular sections with summaries of popular questions and answers from
-the Bitcoin StackExchange, announcements of software releases and
+the Bitcoin Stack Exchange, announcements of software releases and
 release candidates, and descriptions of notable changes to popular
 Bitcoin infrastructure software.
 
@@ -101,9 +101,9 @@ Bitcoin infrastructure software.
   abandoning the [centralized BIPs repository][corallo ignore repo]
   altogether.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

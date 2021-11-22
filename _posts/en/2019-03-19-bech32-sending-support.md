@@ -57,7 +57,7 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 {% include specials/bech32/05-fee-savings.md %}
 
-## Top bech32 questions from the Bitcoin StackExchange
+## Top bech32 questions from the Bitcoin Stack Exchange
 
 *Originally published in [Newsletter #43][].*
 

@@ -8,7 +8,7 @@ layout: newsletter
 lang: ja
 ---
 
-今週のニュースレターでは、Bitcoin Coreの新しいメジャーバージョンの発表、BitcoinとLNの開発メーリングリストについてのアップデート、開発が進むSchnorr / Taprootのレビューにおける進展内容、Bitcoin StackExchangeで最も投票が多かった質疑応答、Bitcoinインフラストラクチャプロジェクトの主な変更点をお送りします。
+今週のニュースレターでは、Bitcoin Coreの新しいメジャーバージョンの発表、BitcoinとLNの開発メーリングリストについてのアップデート、開発が進むSchnorr / Taprootのレビューにおける進展内容、Bitcoin Stack Exchangeで最も投票が多かった質疑応答、Bitcoinインフラストラクチャプロジェクトの主な変更点をお送りします。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -44,9 +44,9 @@ lang: ja
 
     ベルリンライトニングカンファレンスでのこのトピックに関するJonas Nickのプレゼンテーションの影響を受けて、Adam Gibsonは、Wagnerのアルゴリズムを数学、直感的な分析、そしてBitcoinerが興味をそそるトピック情報を交えて[ブログ記事][gibson wagners]を投稿しました。（例えばSatoshi NakamotoがAdam BackとWeiDaiを[引用する][bitcoin.pdf]数年前に同内容を引用していた[Wagner's paper][]についてのトリビアなど）独自の暗号化プロトコルの開発に関心のある方は、両投稿を読むことをお勧めします。それぞれの投稿は内容を繰り返すものではなく、各自の投稿を補完しています。
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えについて共有しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

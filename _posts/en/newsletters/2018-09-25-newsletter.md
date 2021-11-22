@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter includes action items and news related to last week's
 security release of Bitcoin Core 0.16.3 and Bitcoin Core 0.17RC4, popular
-questions and answers from the Bitcoin StackExchange over the past
+questions and answers from the Bitcoin Stack Exchange over the past
 month, and short descriptions of notable merges made to popular Bitcoin
 infrastructure projects.
 
@@ -77,11 +77,11 @@ infrastructure projects.
     Wladimir van der Laan, Cory Fields, Suhas Daftuar, Alex Morcos, and
     Matt Corallo.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this monthly feature, we highlight some of the top voted questions and

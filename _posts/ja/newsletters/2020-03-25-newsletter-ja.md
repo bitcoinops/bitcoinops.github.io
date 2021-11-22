@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: ja
 ---
-今週のニュースレターでは、Bitcoin StackExchangeからのいくつかの質問と回答のまとめ、Bitcoinインフラプロジェクトの注目すべき変更点をお届けします。
+今週のニュースレターでは、Bitcoin Stack Exchangeからのいくつかの質問と回答のまとめ、Bitcoinインフラプロジェクトの注目すべき変更点をお届けします。
 
 ## Action items
 
@@ -17,9 +17,9 @@ lang: ja
 
 *今週はビットコインのインフラ整備に関する大きなニュースは特になし。*
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
+*[Bitcoin Stack Exchange][bitcoin.se]はOptech Contributor達が疑問に対して答えを探しに（もしくは他のユーザーの質問に答える時間がある場合に）アクセスする、数少ない情報ソースです。この月刊セクションでは、前回アップデート以降にされた、最も票を集めた質問・答えを紹介しています。*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{%
 endcomment %}

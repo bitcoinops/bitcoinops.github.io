@@ -11,7 +11,7 @@ This week's newsletter describes a compiler bug that casts doubt on the
 safety of secure systems and explains a technique that can be used to more
 efficiently verify ECDSA signatures in Bitcoin. Also included are our regular
 sections with popular
-questions and answers from the Bitcoin StackExchange, announcements of
+questions and answers from the Bitcoin Stack Exchange, announcements of
 releases and release candidates, and summaries of notable changes to
 popular Bitcoin infrastructure software.
 
@@ -89,9 +89,9 @@ popular Bitcoin infrastructure software.
     always use the GLV endomorphism algorithm, which is expected to decrease
     Bitcoin Core's initial sync time significantly.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

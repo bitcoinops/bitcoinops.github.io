@@ -10,7 +10,7 @@ lang: en
 This week's newsletter describes a paper and a short discussion about
 probabilistic path selection for LN and includes our regular sections with
 summaries of popular questions and answers from the Bitcoin
-StackExchange, release and release candidates, and notable changes to
+Stack Exchange, release and release candidates, and notable changes to
 Bitcoin infrastructure software.
 
 ## Action items
@@ -70,9 +70,9 @@ Bitcoin infrastructure software.
   Payment batching is a technique that can help spenders save up to 80%
   on transaction fees.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

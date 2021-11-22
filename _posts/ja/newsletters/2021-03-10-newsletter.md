@@ -171,7 +171,7 @@ Erlayの効率的なリレープロトコルの基礎となるPinSketch *set rec
 - [Bitcoin Core #20685][]では、[I2P SAMプロトコル][I2P SAM protocol]を使用したI2Pプライバシーネットワークのサポートが追加されています。
   この機能は[長い間要望されていました][Bitcoin Core #2091]が、[addr v2][topic addr v2]の追加によって最近可能になりました。
   I2Pの実行を希望するノード運用者のためのドキュメントはまだ作成中ですが、
-  [Bitcoin StackExchange Q&A][i2p b.se]に開始するためのヒントが記載されています。
+  [Bitcoin Stack Exchange Q&A][i2p b.se]に開始するためのヒントが記載されています。
 
 - [C-Lightning #4407][]は、`listpeers`RPCを更新し、各チャネルの現在の一方的なクローズ・トランザクションに関する手数料
   （手数料の総額と手数料率の両方）を含む情報を提供するフィールドを追加しました。

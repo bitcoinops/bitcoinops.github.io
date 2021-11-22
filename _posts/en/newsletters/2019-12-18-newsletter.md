@@ -15,7 +15,7 @@ bech32 error detection reliability, summarizes updates to the proposed
 of eclipse attacks on LN channels.  Also included are our regular
 sections about notable changes to popular Bitcoin infrastructure
 projects, changes to services and client software, and popular Bitcoin
-StackExchange questions and answers.
+Stack Exchange questions and answers.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -158,9 +158,9 @@ wallets and services.*
   github]. Caravan is a stateless web application for creating and spending from
   a multisig address using a variety of external keystores.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

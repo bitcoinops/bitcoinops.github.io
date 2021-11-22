@@ -11,7 +11,7 @@ This week's newsletter requests feedback on not allowing P2SH-wrapped
 addresses for taproot, describes proposed changes to script resource
 limits in tapscript, and mentions a discussion about watchtower storage
 costs.  Also included are a selection of popular questions and answers
-from the Bitcoin StackExchange and a short list of notable changes to
+from the Bitcoin Stack Exchange and a short list of notable changes to
 popular Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -66,9 +66,9 @@ popular Bitcoin infrastructure projects.
   costs) per user by having each person use a session key to update
   their latest state information on the watchtower.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and

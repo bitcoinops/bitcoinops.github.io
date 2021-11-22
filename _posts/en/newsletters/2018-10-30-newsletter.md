@@ -13,7 +13,7 @@ on the mailing list, notes public overt ASICBoost support is available
 for miners using Antminer S9, and provides links to resources about both
 Square's open sourced Subzero HSM-based multisig cold storage solution
 and the recent Lightning Network Residency and Hackday in New York City.
-Also included are selected recent Q&A from Bitcoin StackExchange and
+Also included are selected recent Q&A from Bitcoin Stack Exchange and
 descriptions of notable code changes in popular Bitcoin infrastructure
 projects.
 
@@ -88,11 +88,11 @@ projects.
     presentations are expected to be posted soon.  Videos of the
     hackday are available now: [day 1][hd1], [day 2][hd2].
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this monthly feature, we highlight some of the top voted questions and

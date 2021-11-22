@@ -11,7 +11,7 @@ This week's newsletter describes the new proposed
 `OP_CHECKOUTPUTSHASHVERIFY` opcode, covers continued discussion of
 Taproot, and links to a video presentation about handling increasing
 Bitcoin transaction fees.  Also included are our regular sections on bech32 sending
-support, top-voted Bitcoin StackExchange questions and answers, and
+support, top-voted Bitcoin Stack Exchange questions and answers, and
 notable changes in popular Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -279,9 +279,9 @@ documentation, please send us an [email][optech email], a [tweet][optech
 twitter], or otherwise contact one of our [contributors][optech
 contributors].*
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

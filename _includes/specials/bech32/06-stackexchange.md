@@ -1,6 +1,6 @@
 {% auto_anchor %}
 This week we look at some of the [top-voted bech32 questions and
-answers][top bech32 qa] from the Bitcoin StackExchange.  This includes
+answers][top bech32 qa] from the Bitcoin Stack Exchange.  This includes
 everything since bech32 was first announced about two years ago.
 
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}

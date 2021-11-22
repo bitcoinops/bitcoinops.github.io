@@ -9,7 +9,7 @@ lang: en
 ---
 This week's newsletter sees another slow news week but does contain our
 regular sections on bech32 sending support, selected questions and
-answers from the Bitcoin StackExchange, and notable changes in popular
+answers from the Bitcoin Stack Exchange, and notable changes in popular
 Bitcoin infrastructure projects.
 
 {% include references.md %}
@@ -47,9 +47,9 @@ wiki page for changes -->{% endcomment %}
 
 {% include specials/bech32/07-altbech32.md %}
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help curious or confused users.  In
 this monthly feature, we highlight some of the top voted questions and

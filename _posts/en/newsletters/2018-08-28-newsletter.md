@@ -10,7 +10,7 @@ lang: en
 This week's newsletter includes information about the first published
 release candidate for Bitcoin Core, news about BIP151 P2P protocol
 encryption and a potential future soft fork, top questions and answers
-from Bitcoin StackExchange, and some notable merges in popular Bitcoin
+from Bitcoin Stack Exchange, and some notable merges in popular Bitcoin
 infrastructure projects.
 
 ## Action items
@@ -64,11 +64,11 @@ infrastructure projects.
     the attack risk can be mitigated fully or partly by a
     non-controversial soft fork, that would certainly be nice.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments of time to help answer other people's questions.  In
 this monthly feature, we highlight some of the top voted questions and

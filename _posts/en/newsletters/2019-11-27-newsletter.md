@@ -11,7 +11,7 @@ This week's newsletter announces a new major version of Bitcoin Core,
 provides some updates on Bitcoin and LN developer mailing lists,
 and describes recent developments in the ongoing schnorr/taproot review.
 Also included are our regular sections with top-voted questions and
-answers from the Bitcoin StackExchange and notable changes to popular
+answers from the Bitcoin Stack Exchange and notable changes to popular
 Bitcoin infrastructure projects.
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
@@ -156,9 +156,9 @@ Bitcoin infrastructure projects.
     cryptographic protocols is recommended to read both posts, as each
     complements the other without being repetitive about the subject.
 
-## Selected Q&A from Bitcoin StackExchange
+## Selected Q&A from Bitcoin Stack Exchange
 
-*[Bitcoin StackExchange][bitcoin.se] is one of the first places Optech
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
 contributors look for answers to their questions---or when we have a
 few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and
