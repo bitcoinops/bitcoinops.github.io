@@ -35,7 +35,25 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why is it important that nonces when signing not be related?]({{bse}}110811)
+  Pieter Wuille provides mathematical breakdowns for how private key information
+  can be leaked when signing twice with the same public key using: the same nonces,
+  nonces with known offsets, and nonces with known factors. Wuille also lists
+  three techniques for infeasible-to-exploit nonce generation, two techniques that
+  are broken, and points out there is a huge gap of techniques in between that
+  are neither known to be secure nor broken.
+
+- [How could a 2 byte witness program make sense?]({{bse}}110660)
+  Discussing [BIP141][]'s requirement that a witness program be 2-40 bytes,
+  Kalle Rosenbaum brainstorms examples of potential use cases for a 2 byte
+  witness program size.
+
+- [What is the xpriv/xpub type for P2TR?]({{bse}}110733)
+  Andrew Chow notes that as more diverse and complicated scripts become more
+  widely used and for separation of concern reasons, there is no taproot
+  equivalent for xpub/ypub/zpub. He recommends to "use xpriv/xpub along with
+  some extra information indicating that the script to create is Taproot, (e.g.
+  with a `tr()` descriptor)".
 
 ## Releases and release candidates
 
