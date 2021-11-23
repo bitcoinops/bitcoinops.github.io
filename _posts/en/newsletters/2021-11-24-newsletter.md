@@ -80,7 +80,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [C-Lightning #4890][] wallet/db_sqlite3.c: Support direct replication of SQLITE3 backends. FIXME:jnewbery
+- [C-Lightning #4890][] allows the user to configure a backup sqlite database
+  file for the wallet. During operation, all data is replicated between
+  the main sqlite file and the backup file. [Extensive
+  documentation][c-lightning backups] on the new feature is also included.
 
 - [Rust-Lightning #1173][] adds a new `accept_inbound_channels`
   configuration that can be used to prevent the node from accepting new
@@ -100,3 +103,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news172 pool]: /en/newsletters/2021/10/27/#lnd-5709
 [news173 amp]: /en/newsletters/2021/11/03/#lnd-5803
 [jager params]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003342.html
+[c-lightning backups]: https://github.com/ElementsProject/lightning/blob/163d3a9203922a0493cf6038493bd4b5e078d987/doc/BACKUP.md#sqlite3---walletmainbackup-and-remote-nfs-mount
