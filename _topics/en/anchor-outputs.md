@@ -128,6 +128,9 @@ optech_mentions:
   - title: Complications for HD wallet recovery in zero HTLC fee anchor outputs protocol
     url: /en/newsletters/2021/09/29/#challenges-recovering-ln-close-transactions-using-only-a-seed
 
+  - title: "Rust-Lightning #1176 adds initial support for anchor outputs-style fee bumping"
+    url: /en/newsletters/2021/12/01/#rust-lightning-1176
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

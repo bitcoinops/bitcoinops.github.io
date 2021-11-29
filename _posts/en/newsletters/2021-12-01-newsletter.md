@@ -73,7 +73,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   specification would allow LND to eventually implement strict explicit
   negotiation.
 
-- [Rust-Lightning #1176][] lightning-signer/2021-11-htlc-anchors FIXME:dongcarl
+- [Rust-Lightning #1176][] adds initial support for [anchor outputs][topic
+  anchor outputs]-style fee bumping. As of this merge, support for anchor
+  outputs is implemented in all four LN implementations we cover.
 
 - [HWI #475][] Add support for the Blockstream Jade hww FIXME:bitschmidty
 
