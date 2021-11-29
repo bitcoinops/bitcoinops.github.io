@@ -77,7 +77,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   anchor outputs]-style fee bumping. As of this merge, support for anchor
   outputs is implemented in all four LN implementations we cover.
 
-- [HWI #475][] Add support for the Blockstream Jade hww FIXME:bitschmidty
+- [HWI #475][] adds [support][hwi support matrix] for the [Blockstream Jade][news132 jade]
+  hardware signer and tests using the [QEMU emulator][qemu website].
 
 {% include references.md %}
 {% include linkers/issues.md issues="16807,22364,6026,5669,880,906,1176,475,6026" %}
@@ -89,3 +90,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [ln integration]: https://cdecker.github.io/lightning-integration/
 [news174 lnd]: /en/newsletters/2021/11/10/#lnd-0-14-0-beta-rc3
 [news175 lnd]: /en/newsletters/2021/11/17/#lnd-0-14-0-beta-rc4
+[hwi support matrix]: https://hwi.readthedocs.io/en/latest/devices/index.html#support-matrix
+[news132 jade]: /en/newsletters/2021/01/20/#blockstream-announces-jade-hardware-wallet
+[qemu website]: https://www.qemu.org/
