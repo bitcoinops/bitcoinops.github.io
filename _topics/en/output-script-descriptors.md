@@ -116,6 +116,9 @@ optech_mentions:
   - title: Bitcoin Core #23002 makes descriptor-based wallets the default for new wallets"
     url: /en/newsletters/2021/10/27/#bitcoin-core-23002
 
+  - title: Bitcoin Core #22364 adds support for creating taproot descriptors in the wallet"
+    url: /en/newsletters/2021/12/01/#bitcoin-core-22364
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

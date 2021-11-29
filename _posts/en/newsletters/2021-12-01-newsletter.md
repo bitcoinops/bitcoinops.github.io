@@ -62,7 +62,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [Bitcoin Core #16807][] Let validateaddress locate error in Bech32 address FIXME:Xekyo
 
-- [Bitcoin Core #22364][] wallet: Make a tr() descriptor by default FIXME:glozow
+- [Bitcoin Core #22364][] adds support for creating [descriptors][topic
+  descriptors] for [taproot][bip386]. This
+  allows wallet users to generate and use P2TR addresses by creating a default
+  bech32m descriptor with their wallet instead of importing one.
 
 - [LND #6026][] fixes an issue with the [implementation][lnd #5669] of
   [BOLTs #880][] explicit channel type negotiation (see [Newsletter
