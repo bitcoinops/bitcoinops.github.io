@@ -114,6 +114,9 @@ optech_mentions:
   - title: "Rust Bitcoin #691 adds an API to create bech32m addresses for a P2TR scriptPubKey"
     url: /en/newsletters/2021/11/17/#rust-bitcoin-691
 
+  - title: "Bitcoin Core #16807 returns the location of typos in bech32/bech32m addresses"
+    url: /en/newsletters/2021/12/01/#bitcoin-core-16807
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
