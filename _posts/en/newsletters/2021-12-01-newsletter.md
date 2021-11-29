@@ -60,7 +60,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #16807][] Let validateaddress locate error in Bech32 address FIXME:Xekyo
+- [Bitcoin Core #16807][] updates address validation to return the indices of
+  likely typos characters in [bech32 and bech32m][topic bech32] addresses
+  using the mechanism described in [Newsletter #41][news41 bech32 error detection].
+  The typos will be correctly identified if no more than two substitution
+  errors were made. The pull request also improves test coverage, adds more
+  documentation to the address validation code, and improves error messages
+  when decoding fails, especially to distinguish use of bech32 and bech32m.
 
 - [Bitcoin Core #22364][] adds support for creating [descriptors][topic
   descriptors] for [taproot][bip386]. This
@@ -93,3 +99,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [hwi support matrix]: https://hwi.readthedocs.io/en/latest/devices/index.html#support-matrix
 [news132 jade]: /en/newsletters/2021/01/20/#blockstream-announces-jade-hardware-wallet
 [qemu website]: https://www.qemu.org/
+[news41 bech32 error detection]: /en/bech32-sending-support/#locating-typos-in-bech32-addresses
