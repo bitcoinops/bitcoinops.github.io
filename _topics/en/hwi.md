@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Bitcoin Core GUI #4 adds initial support for using HWI external signers via the GUI"
     url: /en/newsletters/2021/06/16/#bitcoin-core-gui-4
 
+  - title: "HWI #475 adds support for the Blockstream Jade hardware signer"
+    url: /en/newsletters/2021/12/01/#hwi-475
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
