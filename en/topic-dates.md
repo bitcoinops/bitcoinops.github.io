@@ -83,7 +83,6 @@ before the main content -->
 <div>{% comment %}<!-- enclosing in a div forces this to be interpreted
 as HTML rather than Markdown so indentation over 4 characters doesn't
 produce code blocks -->{% endcomment %}
-<span id="d2021-12"></span>
 {{list}}
 </div>
 
