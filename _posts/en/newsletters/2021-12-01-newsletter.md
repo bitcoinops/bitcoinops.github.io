@@ -61,7 +61,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #16807][] updates address validation to return the indices of
-  likely typos characters in [bech32 and bech32m][topic bech32] addresses
+  likely typos in [bech32 and bech32m][topic bech32] addresses
   using the mechanism described in [Newsletter #41][news41 bech32 error detection].
   The typos will be correctly identified if no more than two substitution
   errors were made. The pull request also improves test coverage, adds more
