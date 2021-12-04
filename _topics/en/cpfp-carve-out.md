@@ -52,6 +52,9 @@ optech_mentions:
   - title: Bitcoin Core 0.19 released with CPFP carve-out
     url: /en/newsletters/2019/11/27/#cpfp-carve-out
 
+  - title: Research into alternatives to CPFP carve-out for fee bumping in multiparty contract protocols
+    url: /en/newsletters/2021/12/08/#fee-bumping-research
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
