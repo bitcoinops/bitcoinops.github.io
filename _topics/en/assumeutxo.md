@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Bitcoin Core #19521 simplifies generating UTXO set hashes for old blocks"
     url: /en/newsletters/2021/05/05/#bitcoin-core-19521
 
+  - title: "Bitcoin Core #23155 extends the `dumptxoutset` RPC with new information"
+    url: /en/newsletters/2021/12/08/#bitcoin-core-23155
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
