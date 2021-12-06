@@ -121,6 +121,9 @@ optech_mentions:
   - title: "BIPs #1104 adds activation parameters to the BIP341 taproot specification"
     url: /en/newsletters/2021/05/05/#bips-1104
 
+  - title: Analysis of treating taproot outputs as always usable post-activation
+    url: /en/newsletters/2021/12/08/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
