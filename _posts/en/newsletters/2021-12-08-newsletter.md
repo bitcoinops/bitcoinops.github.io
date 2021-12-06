@@ -110,7 +110,16 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   can verify it using the `gettxoutsetinfo` RPC, allowing it to be used
   with the proposed [assumeUTXO][topic assumeutxo] node bootstrapping.
 
-- [Bitcoin Core #22513][] rpc: Allow walletprocesspsbt to sign without finalizing FIXME:adamjonas
+- [Bitcoin Core #22513][] allows `walletprocesspsbt` to sign without
+  finalizing the [PSBT][topic psbt] workflow. This is useful for
+  complex scripts, for example, in a [tapscript][topic tapscript] with
+  two paths: a fallback script path that requires only signer Alice,
+  plus a normal path with multiple signers including Alice. When Alice
+  signs, it is best to delay finalizing the PSBT with the fallback
+  script path and instead construct a PSBT containing both of Alice’s
+  signatures, pass the PSBT to the other signers, and wait for
+  them to sign. In this scenario, the ultimate path is determined after
+  all signatures are produced.
 
 - [C-Lightning #4921][] updates the implementation of [onion
   messages][topic onion messages] to match the latest updates to the
