@@ -37,12 +37,49 @@ and notable changes to popular infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Treat taproot as always active][review club #23512] is a PR by Marco Falke to
+make transactions spending [taproot][topic taproot] outputs standard, regardless of taproot
+deployment status.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/23173#l-FIXME"
+  q0="Which areas in the codebase use the status of taproot deployment? Which of
+  them are policy related?"
+  a0="Prior to this PR, there are 4 areas:
+  [GetBlockScriptFlags()][GetBlockScriptFlags tap] (consensus),
+  [AreInputsStandard()][AreInputsStandard tap] (policy),
+  [getblockchaininfo()][getblockchaininfo tap] (rpc), and
+  [isTaprootActive()][isTaprootActive tap] (wallet)."
+  a0link="https://bitcoincore.reviews/23512#l-21"
+
+  q1="What mempool validation function checks if a transaction spends a taproot
+  input? How does this PR change the function?"
+  a1="The function is [`AreInputsStandard()`][AreInputsStandard def]. The PR
+  removes the last argument, `bool taproot_active`, from the signature and returns
+  `true` for v1 segwit (taproot) spends regardless of taproot activation status.
+  Previously, the function would return false if it found a taproot output but
+  `taproot_active` was false, e.g. if the node were still in Initial Block
+  Download and syncing blocks before taproot activation."
+  a1link="https://bitcoincore.reviews/23512#l-40"
+
+  q2="Are there any theoretical issues with the change? For wallet users, is
+  it possible to lose money?"
+  a2="With this change, the wallet allows importing taproot [descriptors][topic descriptors] at any
+  time, i.e., even when taproot is not active and v1 segwit outputs can be spent
+  by anyone. This means it's possible to receive bitcoin to a taproot output
+  without taproot being active yet; if the chain also reorgs to a block prior to
+  709,632, miners (or someone who can get a nonstandard transaction confirmed) can
+  steal those UTXOs."
+  a2link="https://bitcoincore.reviews/23512#l-82"
+
+  q3="Theoretically, is it possible for a mainnet chain that has taproot
+  never-active or active at a different block height to exist?"
+  a3="Both are possible. If a very large reorg happened (forking off prior to
+  taproot lock-in), the deployment process would be repeated. In this new chain,
+  if the number of taproot-signaling blocks never met the threshold, the (still
+  valid) chain would never activate taproot. If the threshold were reached after
+  the min activation height but before the timeout, taproot could also activate
+  at a later height."
+  a3link="https://bitcoincore.reviews/23512#l-130"
 %}
 
 ## Releases and release candidates
@@ -105,8 +142,13 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   problem allowing the local node to accept such channels.
 
 {% include references.md %}
-{% include linkers/issues.md issues="23155,22513,4921,4829,2061,2073,906,1163,765,759,911" %}
+{% include linkers/issues.md issues="23155,22513,4921,4829,2061,2073,906,1163,765,759,911,23512" %}
 [bdk 0.14.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.14.0
 [news177 lnd6026]: /en/newsletters/2021/12/01/#lnd-6026
 [darosior bump]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019614.html
 [revault research]: https://github.com/revault/research
+[GetBlockScriptFlags tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/validation.cpp#L1616
+[AreInputsStandard tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/validation.cpp#L726-L729
+[getblockchaininfo tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/rpc/blockchain.cpp#L1537)
+[isTaprootActive tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/interfaces/chain.h#L292
+[AreInputsStandard def]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/policy/policy.h#L110
