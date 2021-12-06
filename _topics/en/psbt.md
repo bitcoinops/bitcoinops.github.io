@@ -159,6 +159,9 @@ optech_mentions:
   - title: "LND #5363 allows PSBTs to be finalized by external software"
     url: /en/newsletters/2021/10/13/#lnd-5363
 
+  - title: "Bitcoin Core #22513 allows walletprocesspsbt to sign without finalizing"
+    url: /en/newsletters/2021/12/08/#bitcoin-core-22513
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
