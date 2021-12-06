@@ -131,7 +131,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   their DNS address rather than their IP address or Tor onion service
   address.
 
-- [Eclair #2061][] Relay onion messages FIXME:dongcarl
+- [Eclair #2061][] adds initial support for [onion messages][bolts #759]. Users
+  can enable the `option_onion_messages` feature to relay onion messages and
+  send onion messages with the `sendonionmessage` RPC. Handling incoming onion
+  messages and [route blinding][bolts #765] are not yet implemented.
 
 - [Eclair #2073][] adds support for the optional channel type negotiation
   feature bit as specified in draft [BOLTs #906][].  This corresponds
