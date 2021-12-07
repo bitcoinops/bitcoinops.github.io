@@ -86,7 +86,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the P2SH or P2WSH addresses for a script if that script can be used,
   respectively, with P2SH or P2WSH.
 
-- [BOLTs #940][] FIXME cherry pick 80b475e77f7ab8ebfabea69e99dfa3252b43d3fd
+- [BOLTs #940][] deprecates the announcement and parsing of Tor
+  v2 onions in `node_announcements`. [Rust-Lightning #1204][], also
+  merged this week, updates that implementation to follow this updated
+  specification.
 
 - [BOLTs #906][] adds a new feature bit for the `channel_type` feature
   described in [Newsletter #165][news165 channel_type].  By adding a
@@ -100,7 +103,7 @@ Next week we’ll publish our annual special year-in-review issue. We’ll
 return to regular publication on Wednesday, January 5th.
 
 {% include references.md %}
-{% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906" %}
+{% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906,1204" %}
 [news162 unec]: /en/newsletters/2021/08/18/#dust-limit-discussion
 [rubin unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019635.html
 [somsen unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019637.html
