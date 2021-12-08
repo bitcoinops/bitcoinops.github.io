@@ -117,6 +117,9 @@ optech_mentions:
   - title: "Bitcoin Core #16807 returns the location of typos in bech32/bech32m addresses"
     url: /en/newsletters/2021/12/01/#bitcoin-core-16807
 
+  - title: "2021 year-in-review: bech32m addresses"
+    url: /en/newsletters/2021/12/22/#bech32m
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
