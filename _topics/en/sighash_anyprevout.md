@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Inherited identifiers proposal as an alternative to `SIGHASH_ANYPREVOUT`"
     url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 
+  - title: "2021 year-in-review: SIGHASH_ANYPREVOUT"
+    url: /en/newsletters/2021/12/22/#anyprevout
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

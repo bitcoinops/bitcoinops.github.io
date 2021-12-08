@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Summary of LN developer conference, including discussion of offers"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
+  - title: "2021 year-in-review: offers"
+    url: /en/newsletters/2021/12/22/#offers
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

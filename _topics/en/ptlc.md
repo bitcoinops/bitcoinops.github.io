@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Discussion about LN protocol changes necessary to support PTLCs"
     url: /en/newsletters/2021/12/15/#preparing-ln-for-ptlcs
 
+  - title: "2021 year-in-review: PTLCs for LN"
+    url: /en/newsletters/2021/12/22/#ptlcsx
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

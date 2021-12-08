@@ -62,6 +62,9 @@ optech_mentions:
   - title: Proposal of initial rules for mempool package acceptance before implementing package relay
     url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
 
+  - title: "2021 year-in-review: mempool package acceptance and package relay"
+    url: /en/newsletters/2021/12/22/#mpa
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

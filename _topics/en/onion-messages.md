@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Eclair #2061 adds initial support for onion messages"
     url: /en/newsletters/2021/12/08/#eclair-2061
 
+  - title: "2021 year-in-review: onion messages"
+    url: /en/newsletters/2021/12/22/#offers
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

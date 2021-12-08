@@ -102,6 +102,9 @@ optech_mentions:
   - title: "Preparing for taproot: testing on signet"
     url: /en/newsletters/2021/09/22/#preparing-for-taproot-14-testing-on-signet
 
+  - title: "2021 year-in-review: signet"
+    url: /en/newsletters/2021/12/22/#signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

@@ -218,6 +218,9 @@ optech_mentions:
   - title: "BIPs #1225 updates BIP341 with extended taproot test vectors"
     url: /en/newsletters/2021/11/17/#bips-1225
 
+  - title: "2021 year-in-review: taproot"
+    url: /en/newsletters/2021/12/22/#taproot
+
 ## Optional
 see_also:
   - title: MAST

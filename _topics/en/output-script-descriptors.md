@@ -119,6 +119,9 @@ optech_mentions:
   - title: Bitcoin Core #22364 adds support for creating taproot descriptors in the wallet"
     url: /en/newsletters/2021/12/01/#bitcoin-core-22364
 
+  - title: "2021 year-in-review: output script descriptors"
+    url: /en/newsletters/2021/12/22/#descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

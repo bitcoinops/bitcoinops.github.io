@@ -77,6 +77,12 @@ optech_mentions:
   - title: C-Lightning 0.10.1 updates the experimental implementation of dual funding
     url: /en/newsletters/2021/08/11/#c-lightning-0-10-1
 
+  - title: "2021 year-in-review: dual-funded channels"
+    url: /en/newsletters/2021/12/22/#dual-funding
+
+  - title: "2021 year-in-review: liquidity advertisements"
+    url: /en/newsletters/2021/12/22/#liq-ads
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)
