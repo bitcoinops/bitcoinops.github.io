@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Summary of LN developer conference, including discussion of PTLCs"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
+  - title: "Discussion about LN protocol changes necessary to support PTLCs"
+    url: /en/newsletters/2021/12/15/#preparing-ln-for-ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

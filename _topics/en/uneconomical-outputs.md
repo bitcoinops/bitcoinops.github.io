@@ -51,6 +51,9 @@ optech_mentions:
   - title: "BOLTs #894 specifies various checks related to uneconomical payments in LN"
     url: /en/newsletters/2021/10/20/#bolts-894
 
+  - title: "Discussion about removing the dust limit for one particular case"
+    url: /en/newsletters/2021/12/15/#adding-a-special-exception-for-certain-uneconomical-outputs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
