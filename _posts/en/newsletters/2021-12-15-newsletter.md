@@ -91,6 +91,14 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   merged this week, updates that implementation to follow this updated
   specification.
 
+- [BOLTs #918][] removes the rate limiting of ping messages. `ping` messages
+  are mainly used to check if the peer connection is still alive. Prior to
+  this merge `ping` messages were supposed to be sent at most once every 30
+  seconds. For many nodes it is useful to send heart beat messages via `ping`
+  more frequently to assure a high quality of service. As other Lightning
+  messages are not rate limited the 30 seconds rate limit for `ping` messages
+  was also dropped.
+
 - [BOLTs #906][] adds a new feature bit for the `channel_type` feature
   described in [Newsletter #165][news165 channel_type].  By adding a
   bit, it will become easier for future nodes to only choose peers that
@@ -103,7 +111,7 @@ Next week we’ll publish our annual special year-in-review issue. We’ll
 return to regular publication on Wednesday, January 5th.
 
 {% include references.md %}
-{% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906,1204" %}
+{% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906,1204,918" %}
 [news162 unec]: /en/newsletters/2021/08/18/#dust-limit-discussion
 [rubin unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019635.html
 [somsen unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019637.html
