@@ -73,7 +73,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   of OpenSSL no longer provide RIPEMD-160 support by default, requiring
   it to be enabled separately.
 
-- [Bitcoin Core #20295][] rpc: getblockfrompeer FIXME:Xekyo
+- [Bitcoin Core #20295][] adds a new RPC `getblockfrompeer` which permits
+  requesting a specific block from a specific peer manually. The intended use
+  is acquisition of stale chaintips for fork monitoring and research purposes.
 
 - [Bitcoin Core #14707][] updates several RPCs to also include bitcoins
   received via miner coinbase transaction outputs.  A new
