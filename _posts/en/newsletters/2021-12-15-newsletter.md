@@ -54,7 +54,32 @@ notable changes to popular Bitcoin infrastructure software.
     nodes to upgrade in stages, first to `option_simplified_update` with
     HTLCs, then to PTLCs, then to fast forwards.
 
-## FIXME:bitschmidty special sections
+## Changes to services and client software
+
+*In this monthly feature, we highlight interesting updates to Bitcoin
+wallets and services.*
+
+- **Simple Bitcoin Wallet adds taproot sends:**
+  SBW version [2.4.22][sbw 2.4.22] allows users to send to taproot addresses.
+
+- **Trezor Suite supports taproot:**
+  [Trezor announced][trezor taproot blog] that the 21.12.2 version of Trezor
+  Suite supports [taproot][topic taproot]. After downloading the latest client
+  and firmware, users can create a new taproot account.
+
+- **BlueWallet adds taproot sends:**
+  BlueWallet [v6.2.14][bluewallet 6.2.14] adds send support for taproot addresses.
+
+- **Cash App adds taproot sends:**
+  As of [December 1, 2021][cash app bech32m], Cash App users can send to
+  [bech32m][topic bech32] addresses.
+
+- **Swan adds taproot sends:**
+  Swan [announced][swan taproot tweet] taproot withdrawal (send) support.
+
+- **Wallet of Satoshi adds taproot sends:**
+  [Wallet of Satoshi][wallet of satoshi website], a mobile Bitcoin and Lightning
+  wallet, [announced][wallet of satoshi tweet] taproot send support.
 
 ## Notable code and documentation changes
 
@@ -122,3 +147,10 @@ return to regular publication on Wednesday, January 5th.
 [news120 opt_simp_update]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
 [news152 ff]: /en/newsletters/2021/06/09/#receiving-ln-payments-with-a-mostly-offline-private-key
 [news165 channel_type]: /en/newsletters/2021/09/08/#bolts-880
+[sbw 2.4.22]: https://github.com/btcontract/wallet/releases/tag/2.4.22
+[bluewallet 6.2.14]: https://github.com/BlueWallet/BlueWallet/releases/tag/v6.2.14
+[cash app bech32m]: https://cash.app/help/us/en-us/20211114-bitcoin-taproot-upgrade
+[trezor taproot blog]: https://blog.trezor.io/trezor-suite-and-firmware-updates-december-2021-d1e74c3ea283
+[swan taproot tweet]: https://twitter.com/SwanBitcoin/status/1468318386916663298
+[wallet of satoshi website]: https://www.walletofsatoshi.com/
+[wallet of satoshi tweet]: https://twitter.com/walletofsatoshi/status/1459782761472872451
