@@ -81,6 +81,41 @@ wallets and services.*
   [Wallet of Satoshi][wallet of satoshi website], a mobile Bitcoin and Lightning
   wallet, [announced][wallet of satoshi tweet] taproot send support.
 
+## Selected Q&A from Bitcoin Stack Exchange
+
+*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
+contributors look for answers to their questions---or when we have a
+few spare moments to help curious or confused users.  In
+this monthly feature, we highlight some of the top-voted questions and
+answers posted since our last update.*
+
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
+- [What is the script assembly and execution in P2TR spend (spend from Taproot)?]({{bse}}111098)
+  Pieter Wuille provides a detailed walk-through of a simplified [BIP341][]
+  example of constructing a taproot output, spending using the keypath, spending
+  using the scriptpath, and validating spends.
+
+- [How can I find samples for P2TR transactions on mainnet?]({{bse}}110995)
+  Murch provides [block explorer][topic block explorers] links for: the first P2TR
+  transaction, the first transaction with a scriptpath and keypath input, the first
+  transaction with multiple keypath inputs, the first scriptpath 2-of-2 multisig
+  spend, and the first use of the new [tapscript][topic tapscript] opcode `OP_CHECKSIGADD`.
+
+- [Does a miner adding transactions to a block while mining reset the block's PoW?]({{bse}}110903)
+  Pieter Wuille explains that mining is [progress free][oconnor blog]. Each hash
+  attempt to solve a block is independent from what work has been done so far,
+  including if new transactions are added to a block currently being mined.
+
+- [Can schnorr aggregate signatures be nested inside other schnorr aggregate signatures?]({{bse}}110862)
+  Pieter Wuille describes the feasibility of a key-aggregation scheme using
+  [schnorr signatures][topic schnorr signatures], where "keys can be aggregated
+  hierarchically without signers having knowledge about their 'niece/nephew'
+  keys". He notes that [MuSig2][topic musig] was designed to be compatible with
+  nesting and that it could be modified for this use case, although no security
+  proof exists.
+
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],
@@ -154,3 +189,4 @@ return to regular publication on Wednesday, January 5th.
 [swan taproot tweet]: https://twitter.com/SwanBitcoin/status/1468318386916663298
 [wallet of satoshi website]: https://www.walletofsatoshi.com/
 [wallet of satoshi tweet]: https://twitter.com/walletofsatoshi/status/1459782761472872451
+[oconnor blog]: http://r6.ca/blog/20180225T160548Z.html
