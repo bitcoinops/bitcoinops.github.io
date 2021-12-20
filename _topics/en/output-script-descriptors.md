@@ -113,10 +113,10 @@ optech_mentions:
   - title: "Coldcard 4.1.3 adds support for descriptor-based wallets"
     url: /en/newsletters/2021/10/20/#coldcard-supports-descriptor-based-wallets
 
-  - title: Bitcoin Core #23002 makes descriptor-based wallets the default for new wallets"
+  - title: "Bitcoin Core #23002 makes descriptor-based wallets the default for new wallets"
     url: /en/newsletters/2021/10/27/#bitcoin-core-23002
 
-  - title: Bitcoin Core #22364 adds support for creating taproot descriptors in the wallet"
+  - title: "Bitcoin Core #22364 adds support for creating taproot descriptors in the wallet"
     url: /en/newsletters/2021/12/01/#bitcoin-core-22364
 
 ## Optional.  Same format as "primary_sources" above
