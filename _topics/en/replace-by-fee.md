@@ -89,6 +89,9 @@ optech_mentions:
   - title: "2021 year-in-review: default transaction replacement by fee"
     url: /en/newsletters/2021/12/22/#default-rbf
 
+  - title: Proposal to briefly allow full RBF before using default opt-in RBF
+    url: /en/newsletters/2022/01/05/#brief-full-rbf-then-opt-in-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

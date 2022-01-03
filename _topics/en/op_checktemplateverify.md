@@ -67,6 +67,9 @@ optech_mentions:
   - title: "BIPs #1215 makes several updates to the BIP119 OP_CHECKTEMPLATEVERIFY proposal"
     url: /en/newsletters/2021/11/10/#bips-1215
 
+  - title: "Bi-weekly IRC meetings scheduled for reviewing and discussing `OP_CHECKTEMPLATEVERIFY`"
+    url: /en/newsletters/2022/01/05/#bip119-ctv-review-workshops
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

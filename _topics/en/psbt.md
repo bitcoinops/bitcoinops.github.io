@@ -162,6 +162,15 @@ optech_mentions:
   - title: "Bitcoin Core #22513 allows walletprocesspsbt to sign without finalizing"
     url: /en/newsletters/2021/12/08/#bitcoin-core-22513
 
+  - title: "Bitcoin Core #23718 adds support for displaying hashes and preimages contained in PSBTs"
+    url: /en/newsletters/2022/01/05/#bitcoin-core-23718
+
+  - title: "Bitcoin Core #17034 adds support for version 2 PSBTs and for preserving proprietary fields"
+    url: /en/newsletters/2022/01/05/#bitcoin-core-17034
+
+  - title: "Rust Bitcoin #681 adds support for BIP371's additional PSBT fields for taproot"
+    url: /en/newsletters/2022/01/05/#rust-bitcoin-681
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

@@ -77,6 +77,9 @@ optech_mentions:
   - title: Discussion of additional compact block filter verification
     url: /en/newsletters/2021/11/10/#additional-compact-block-filter-verification
 
+  - title: "Bitcoin Core #17631 adds new REST endpoint for compact block filters"
+    url: /en/newsletters/2022/01/05/#bitcoin-core-17631
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

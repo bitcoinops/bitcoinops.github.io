@@ -54,6 +54,9 @@ optech_mentions:
   - title: "BOLTs #887 updates BOLT11 to require that spenders specify the payment secret"
     url: /en/newsletters/2021/08/25/#bolts-887
 
+  - title: "Rust-Lightning #1177 uses the payment secret field to store encrypted invoice information"
+    url: /en/newsletters/2022/01/05/#rust-lightning-1177
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified multipath payments

@@ -120,6 +120,9 @@ optech_mentions:
   - title: "2021 year-in-review: bech32m addresses"
     url: /en/newsletters/2021/12/22/#bech32m
 
+  - title: "Bitcoin Core GUI #459 allows users to choose to create bech32m addresses"
+    url: /en/newsletters/2022/01/05/#bitcoin-core-gui-459
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Javascript bech32 demo decoder
