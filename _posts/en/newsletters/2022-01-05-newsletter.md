@@ -138,7 +138,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
     {:.center}
     ![Screenshot address picker](/img/posts/2022-01-core-gui-address-picker.png)
 
-- [Eclair #2090][] Rate limit onion messages FIXME:dongcarl
+- [Eclair #2090][] adds support for rate limiting [onion messages][topic onion messages] via the
+  `max-per-peer-per-second` configuration option.
 
 - [Eclair #2104][] adds a log message that warns the local node operator
   when their immediately onchain spendable balance has dropped below the
