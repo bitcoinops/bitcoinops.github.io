@@ -68,7 +68,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23789][] wallet: Strictly match tx change type to improve privacy FIXME:glozow maybe mention https://bitcoinops.org/en/preparing-for-taproot/#output-script-matching or https://bitcoinops.org/en/newsletters/2021/06/30/#bitcoin-core-22154
+- [Bitcoin Core #23789][] causes newly created change outputs to always match
+  a destination's output type, while still preferring to create [P2TR][topic taproot] change
+  outputs when possible. This PR addresses a [privacy concern][tr
+  output linking] that early taproot adopters' change outputs can be easily
+  identified when they pay legacy addresses.
 
 - [Bitcoin Core #23711][] documents several aspects of Bitcoin Core's
   *policy* for accepting and relaying unconfirmed transactions.  The
@@ -199,6 +203,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [news154 rbf]: /en/newsletters/2021/06/23/#allowing-transaction-replacement-by-default
 [news128 psbt]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [news72 psbt]: /en/newsletters/2019/11/13/#bips-849
+[tr output linking]: /en/preparing-for-taproot/#output-script-matching
 [uncompressed public key]: https://btcinformation.org/en/developer-guide#public-key-formats
 [payment preimage]: https://github.com/lightning/bolts/blob/master/00-introduction.md#payment-preimage
 [payment hash]: https://github.com/lightning/bolts/blob/master/00-introduction.md#Payment-hash
