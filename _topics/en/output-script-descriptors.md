@@ -122,6 +122,9 @@ optech_mentions:
   - title: "2021 year-in-review: output script descriptors"
     url: /en/newsletters/2021/12/22/#descriptors
 
+  - title: "HWI #545 adds support for taproot `tr()` descriptors"
+    url: /en/newsletters/2022/01/05/#hwi-545
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
