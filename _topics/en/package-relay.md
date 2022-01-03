@@ -65,6 +65,9 @@ optech_mentions:
   - title: "2021 year-in-review: mempool package acceptance and package relay"
     url: /en/newsletters/2021/12/22/#mpa
 
+  - title: "Bitcoin Core #22674 adds logic for validating packages of transactions against relay policy"
+    url: /en/newsletters/2022/01/05/#bitcoin-core-22674
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
