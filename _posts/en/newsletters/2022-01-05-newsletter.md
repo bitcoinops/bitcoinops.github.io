@@ -155,7 +155,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   (even those that require opening a connection to a new peer), or only
   relay messages over existing connections.
 
-- [Libsecp256k1 #964][] Add release-process.md FIXME:bitschmidty
+- [Libsecp256k1 #964][] outlines a release process and a versioning scheme for
+  the libsecp256k1 library.
 
 - [Rust Bitcoin #681][] adds support for [BIP371][]'s additional
   [PSBT][topic psbt] fields for [taproot][topic taproot].
