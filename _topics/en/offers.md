@@ -62,6 +62,9 @@ optech_mentions:
   - title: "2021 year-in-review: offers"
     url: /en/newsletters/2021/12/22/#offers
 
+  - title: "Eclair #2117 adds onion message replies in preparation for supporting offers"
+    url: /en/newsletters/2022/01/12/#eclair-2117
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -111,7 +111,9 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 - [Bitcoin Core #23882][] doc: testnet3 was not reset and is doing BIP30 checks again FIXME:Xekyo (we wouldn't usually cover a small documentation change like this, but I'm personally curious *why* BIP30 checks are needed again at this height, what implications that has for testnet (e.g., don't BIP30 checks require a full tx index, i.e. no pruning?), and what further implications that may have for mainnet when it reaches the same height.  Of course, if the answers to all of these questions are boring, we should just drop this summary of a tiny change to a code comment)
 
-- [Eclair #2117][] Process replies to onion messages FIXME:dongcarl
+- [Eclair #2117][] adds support for processing [onion message][topic onion
+  messages] replies in preparation for supporting the [offers protocol][topic
+  offers].
 
 - [LND #5964][] adds a `leaseoutput` RPC that tells the wallet not to
   spend the indicated UTXO for a specified period of time.  This is
