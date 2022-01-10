@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Eclair #2099 adds onion message configuration option for controling when to relay messages"
     url: /en/newsletters/2022/01/05/#eclair-2099
 
+  - title: "Eclair #2117 adds onion message replies in preparation for supporting offers"
+    url: /en/newsletters/2022/01/12/#eclair-2117
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
