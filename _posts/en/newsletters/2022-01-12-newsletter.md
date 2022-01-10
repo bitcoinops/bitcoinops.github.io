@@ -129,11 +129,19 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   information for enabling [stateless invoices][topic stateless
   invoices].
 
-- [BOLTs #950][] Really: BOLT 1: introduce warning messages, reduce requirements to send (hard) errors FIXME:adamjonas
+- [BOLTs #950][] introduces backward compatible warning messages to
+  [BOLT1][] and reduces requirements to send fatal errors, avoiding
+  unnecessary channel closure. This is the first step toward more
+  standardized and enriched errors. More discussion can be found at
+  [BOLTs #834][] and in
+  [Carla Kirk-Cohen's post][Error Codes for LN] to the Lightning-dev
+  mailing list (see [Newsletter #136][news136 warning post]).
 
 {% include references.md %}
-{% include linkers/issues.md issues="23882,2117,5964,912,950,23443" %}
+{% include linkers/issues.md issues="23882,2117,5964,912,950,834,23443" %}
 [rubin feea]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019724.html
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 [news168 stateless]: /en/newsletters/2021/09/29/#stateless-ln-invoice-generation
 [reviews 23443]: https://bitcoincore.reviews/23443
+[Error Codes for LN]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
+[news136 warning post]: /en/newsletters/2021/02/17/#c-lightning-4364
