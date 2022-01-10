@@ -36,6 +36,9 @@ optech_mentions:
   - title: "PR Review Club: #18261 implementing Erlay"
     url: /en/newsletters/2021/03/10/#bitcoin-core-pr-review-club
 
+  - title: "PR Review Club: #23443 implementing Erlay support signaling"
+    url: /en/newsletters/2022/01/12/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

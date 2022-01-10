@@ -42,12 +42,61 @@ popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Erlay support signaling][reviews 23443] is a PR by Gleb Naumenko to add
+transaction reconciliation negotiation to p2p code. It is part of a series of
+PRs to add support for [Erlay][topic erlay] to Bitcoin Core. The review club
+meeting discussed the reconciliation handshake protocol and weighed the
+advantages and disadvantages of splitting large projects into smaller chunks.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME#l-21"
+  q0="What are the benefits of splitting PRs into smaller parts? Are there any
+drawbacks to this approach?"
+  a0="Splitting a large PR into smaller chunks helps encourage more focused and
+thorough review on a PR before merge without forcing reviewers to consider huge
+change sets at a time, and it reduces the chance of running into review
+obstacles due to Github scalability issues. Non-controversial and mechanical
+code changes can be merged more quickly, and contentious bits can be discussed
+over more time. However, unless reviewers conceptually agree with the full
+change set, they are trusting that the author is taking them in the right
+direction. Also, since the merge is not atomic, the author needs to ensure that
+the intermediate states aren't unsafe or doing something nonsensical, such as
+announcing support for Erlay before nodes are actually able to do reconciliation."
+  a0link="https://bitcoincore.reviews/23443#l-29"
+
+  q1="When are nodes supposed to announce reconciliation support?"
+  a1="Nodes should only send `sendrecon` to a peer if transaction relay on this
+connection is on: the node is not in blocksonly mode, this isn't a
+block-relay-only connection, and the peer didn't send `fRelay=false`. The peer
+must also support witness transaction identifier (wtxid) relay, because sketches
+for transaction reconciliation are based on the transaction wtxids."
+  a1link="https://bitcoincore.reviews/23443#l-51"
+
+  q2="What is the overall handshake and 'registration for reconciliation'
+protocol flow?"
+  a2="After `version` messages are sent, but before `verack` messages are sent,
+peers each send a `sendrecon` message containing information such as their
+locally-generated salt. There is no enforced order; either peer may send it
+first. If a node sends and receives a valid `sendrecon` message, it should
+initialize the reconciliation state for that peer."
+  a2link="https://bitcoincore.reviews/23443#l-63"
+
+  q3="Why doesn't Erlay include a p2p protocol version bump?"
+  a3="A new protocol version is not necessary for things to work; nodes using
+Erlay would not be incompatible with the existing protocol. Older nodes that
+don't understand Erlay messages such as `sendrecon` would simply ignore them
+and still be able to function normally."
+  a3link="https://bitcoincore.reviews/23443#l-78"
+
+  q4="What is the reason for generating local per-connection salts? How is it
+generated?"
+  a4="A connection's reconciliation salt is the combination of both peers'
+locally-generated salts and is used to create shortids for each transaction. The
+salted hash function used for shortids is designed to efficiently create compact
+ids, but is not guaranteed to be secure against collisions if an attacker can
+control what the salt is. When both sides contribute to the salt, no third-party
+can control what the salt is. Locally, a new salt is generated for each
+connection so that the node cannot be fingerprinted this way."
+  a4link="https://bitcoincore.reviews/23443#l-93"
 %}
 
 ## Notable code and documentation changes
@@ -81,7 +130,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [BOLTs #950][] Really: BOLT 1: introduce warning messages, reduce requirements to send (hard) errors FIXME:adamjonas
 
 {% include references.md %}
-{% include linkers/issues.md issues="23882,2117,5964,912,950" %}
+{% include linkers/issues.md issues="23882,2117,5964,912,950,23443" %}
 [rubin feea]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019724.html
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 [news168 stateless]: /en/newsletters/2021/09/29/#stateless-ln-invoice-generation
+[reviews 23443]: https://bitcoincore.reviews/23443
