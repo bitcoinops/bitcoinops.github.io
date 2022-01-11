@@ -109,7 +109,38 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo], and
 [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23882][] doc: testnet3 was not reset and is doing BIP30 checks again FIXME:Xekyo (we wouldn't usually cover a small documentation change like this, but I'm personally curious *why* BIP30 checks are needed again at this height, what implications that has for testnet (e.g., don't BIP30 checks require a full tx index, i.e. no pruning?), and what further implications that may have for mainnet when it reaches the same height.  Of course, if the answers to all of these questions are boring, we should just drop this summary of a tiny change to a code comment)
+- [Bitcoin Core #23882][] contains an update of the documentation
+  in `validation.cpp` regarding the operation of testnet3.
+
+  In the original version of Bitcoin, it was possible for transactions to have identical content
+  and thus colliding txids. The duplication issue could especially occur
+  with coinbase transactions for which the composition of input and
+  outputs was partially the same for every coinbase transaction <!--
+  e.g. the outpoint being all 00s --> and otherwise determined entirely
+  by the creator of a block template. The
+  mainnet blockchain contains two duplicate coinbase transactions, at height
+  91,842 and 91,880. They are identical to previous coinbase
+  transactions and overwrote existing coinbase outputs before they were
+  spent, reducing total available supply by 100 BTC.  These incidents
+  prompted the introduction of [BIP30][] which forbade duplicate
+  transactions. Enforcement of BIP30 was [implemented][bip30-impl]
+  by checking for each transaction whether any UTXOs existed for the
+  respective txid already. The duplication issue
+  was effectively prevented by the subsequent introduction of [BIP34][] which
+  required the block's height as the first item in a
+  coinbase transaction's scriptSig. Since the height is unique, the
+  content of coinbases could no longer be identical at different heights,
+  which also prevents the issue in descendant transactions inductively.
+  Thus it removed the need to perform extra checks for duplicates.
+
+  It was later shown that [BIP34][] was flawed in that there already
+  existed some coinbase transactions before [BIP34][]'s introduction
+  that matched the height pattern for future block heights. The
+  first block height at which a miner would be able to produce
+  a BIP30-violating collision is at 1,983,702, which we expect after the
+  year 2040 on mainnet. However, testnet3 has meanwhile exceeded the height
+  of 1,983,702. Bitcoin Core thus reverted to performing
+  the checks for duplicate unspent transactions on every testnet transaction.
 
 - [Eclair #2117][] adds support for processing [onion message][topic onion
   messages] replies in preparation for supporting the [offers protocol][topic
@@ -145,3 +176,4 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [reviews 23443]: https://bitcoincore.reviews/23443
 [Error Codes for LN]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
 [news136 warning post]: /en/newsletters/2021/02/17/#c-lightning-4364
+[bip30-impl]: https://github.com/bitcoin/bitcoin/pull/915/files
