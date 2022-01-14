@@ -34,6 +34,7 @@
 [eclair repo]: https://github.com/ACINQ/eclair
 [elementsproject.org]: https://elementsproject.org/
 [hwi repo]: https://github.com/bitcoin-core/HWI
+[ldk repo]: https://github.com/lightningdevkit/rust-lightning
 [libminisketch]: https://github.com/sipa/minisketch
 [libsecp256k1]: https://github.com/bitcoin-core/secp256k1
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
