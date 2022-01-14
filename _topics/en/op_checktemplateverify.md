@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Bi-weekly IRC meetings scheduled for reviewing and discussing `OP_CHECKTEMPLATEVERIFY`"
     url: /en/newsletters/2022/01/05/#bip119-ctv-review-workshops
 
+  - title: Mailing list and IRC discussion of CTV, including criticism and rebuttals
+    url: /en/newsletters/2022/01/19/#op-checktemplateverify-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
