@@ -171,6 +171,9 @@ optech_mentions:
   - title: "Rust Bitcoin #681 adds support for BIP371's additional PSBT fields for taproot"
     url: /en/newsletters/2022/01/05/#rust-bitcoin-681
 
+  - title: "Rust Bitcoin #669 improves partial signature support with discussion about nulldummy vectors"
+    url: /en/newsletters/2022/01/19/#rust-bitcoin-669
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

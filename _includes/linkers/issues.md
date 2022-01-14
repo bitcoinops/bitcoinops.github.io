@@ -32,6 +32,7 @@ requests, and other templated URLs.
 [bolts #{{_issue}}]: https://github.com/lightning/bolts/issues/{{_issue}}
 [rust bitcoin #{{_issue}}]: https://github.com/rust-bitcoin/rust-bitcoin/issues/{{_issue}}
 [rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
+[ldk #{{_issue}}]: https://github.com/lightningdevkit/rust-lightning/issues/{{_issue}}
 [review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
 [hwi #{{_issue}}]: https://github.com/bitcoin-core/HWI/issues/{{_issue}}
 [btcpay server #{{_issue}}]: https://github.com/btcpayserver/btcpayserver/issues/{{_issue}}

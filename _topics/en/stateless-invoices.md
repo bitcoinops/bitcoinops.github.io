@@ -32,6 +32,9 @@ optech_mentions:
   - title: "BOLTs #912 adds a new optional field to BOLT11 invoices to enable stateless payments"
     url: /en/newsletters/2022/01/12/#bolts-912
 
+  - title: "Eclair #2063 adds support for the new option_payment_metadata invoice field"
+    url: /en/newsletters/2022/01/19/#eclair-2063
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
