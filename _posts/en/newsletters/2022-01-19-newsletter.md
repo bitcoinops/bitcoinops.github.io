@@ -61,9 +61,23 @@ Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Cash App adds Lightning support:**
+  Cash App has added support for sending payments using the Lightning Network.
 
-FIXME:harding releases/RCs if any
+- **LNP Node opens first mainnet channel:**
+  New Lightning Network node software [LNP Node][lnp node github] opened its [first LN channel][lnp tweet].
+  LNP Node is written in Rust and supports LN as well as extensions to LN
+  collectively named "Bifrost" that enable future LN upgrades and additional
+  protocols on top of LN.
+
+- **Samourai adds taproot support:**
+  Samourai [v0.99.98][samourai v0.99.98] and Samourai [Dojo v1.13.0][samourai dojo v1.13.0]
+  (via the [bitcoinjs-lib][bitcoinjs-lib github] library) support [bech32m][topic bech32] addresses for P2TR.
+
+- **Block explorer Mempool v2.3.0 released:**
+  Mempool [v2.3.0][mempool v2.3.0], and the [mempool.space][mempool.space]
+  website added version and locktime data, a hex transaction broadcast feature,
+  and a "tag for transactions that spend Taproot outputs" among other improvements.
 
 ## Notable code and documentation changes
 
@@ -121,3 +135,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news182 bolts912]: /en/newsletters/2022/01/12/#bolts-912
 [news157 p4tr bip32]: /en/newsletters/2021/07/14/#use-a-new-bip32-key-derivation-path
 [log ##ctv-bip-review]: https://gnusha.org/ctv-bip-review/2022-01-11.log
+[lnp node github]: https://github.com/LNP-BP/lnp-node
+[lnp tweet]: https://twitter.com/dr_orlovsky/status/1473768786750750733
+[samourai v0.99.98]: https://docs.samourai.io/en/wallet/releases#v09998
+[samourai dojo v1.13.0]: https://code.samourai.io/dojo/samourai-dojo/-/blob/develop/RELEASES.md#samourai-dojo-v1130
+[bitcoinjs-lib github]: https://github.com/bitcoinjs/bitcoinjs-lib
+[mempool v2.3.0]: https://github.com/mempool/mempool/releases/tag/v2.3.0
+[mempool.space]: https://mempool.space/
