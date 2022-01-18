@@ -101,7 +101,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   until a payment is received, eliminating wasted storage and preventing
   invoice-creation denial-of-service attacks.
 
-- [LDK #1013][] TheBlueMatt/2021-07-warning-msgs FIXME:dongcarl maybe reference https://bitcoinops.org/en/newsletters/2022/01/12/#bolts-950
+- [LDK #1013][] adds support for creating and handling warning messages
+  introduced in [BOLTs #950][] (see [Newsletter #182][news182 warning msgs]).
 
 - [LND #6006][] drops the need for LND to be connected to a full node or
   a Neutrino lightweight client when all the user wants to do is sign
@@ -125,7 +126,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   (["nulldummy"][bip147]) in the PSBT.
 
 {% include references.md %}
-{% include linkers/issues.md issues="2063,912,1013,6006,590,591,669" %}
+{% include linkers/issues.md issues="2063,912,1013,6006,590,591,669,950" %}
 [poelstra nulldummy]: https://github.com/rust-bitcoin/rust-bitcoin/pull/669#issuecomment-1008021007
 [dmw legal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019741.html
 [todd ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019738.html
@@ -142,3 +143,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [bitcoinjs-lib github]: https://github.com/bitcoinjs/bitcoinjs-lib
 [mempool v2.3.0]: https://github.com/mempool/mempool/releases/tag/v2.3.0
 [mempool.space]: https://mempool.space/
+[news182 warning msgs]: /en/newsletters/2022/01/12/#bolts-950
