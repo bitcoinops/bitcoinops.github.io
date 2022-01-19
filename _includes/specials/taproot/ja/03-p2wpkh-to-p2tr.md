@@ -1,35 +1,38 @@
+{% auto_anchor %}
+
 既にv0 segwit P2WPKHアウトプットの受け取りと使用をサポートしているウォレットにとって、
 シングルシグ用のv1 segwit P2TRへのアップグレードは簡単です。
 主な手順は次のとおりです:
 
-- **新しいBIP32鍵導出パスの使用:** [BIP32][] 階層的決定性 (HD)コードを変更する必要はなく、
+- **<!--use-a-new-bip32-key-derivation-path-->新しいBIP32鍵導出パスの使用:**
+  [BIP32][] 階層的決定性 (HD)コードを変更する必要はなく、
   ユーザーはシードを変更する必要もありません。[^electrum-segwit]
   ただし、P2TR公開鍵用の新しい導出パス（[BIP86][]で定義されているような）を使用することを強く推奨します。
   そうしないと、ECDSAと[Schnorr署名][topic schnorr signatures]
   の両方で同じ鍵を使用した場合に発生する[攻撃を受ける可能性][bip340 alt signing]があります。
 
-- **ハッシュによる公開鍵の調整:** シングルシグでは技術的には必須ではありませんが、
+- **<!--tweak-your-public-key-by-its-hash-->ハッシュによる公開鍵の調整:** シングルシグでは技術的には必須ではありませんが、
   特にすべての鍵がランダムに選択されたBIP32シードから導出されている場合、
   BIP341では鍵を使用不可能なscripthashツリーにコミットすることを[推奨しています][bip341 cite22]。
   これは公開鍵とその鍵のハッシュの曲線の点を加算する楕円曲線の加算操作を使用するという簡単なものです。
   この推奨事項に従うことのメリットは、後でスクリプトレスな[マルチシグ][topic multisignature]のサポートや、
   [`tr()` descriptor][`tr()` descriptors]のサポートを追加する場合に、同じコードを使用できることです。
 
-- **アドレスの作成と監視:** [bech32m][topic bech32]を使ってアドレスを作成します。
+- **<!--create-your-addresses-and-monitor-for-them-->アドレスの作成と監視:** [bech32m][topic bech32]を使ってアドレスを作成します。
   支払いは、scriptPubKey `OP_1 <tweaked_pubkey>`に送られます。
   P2WPKHなどのv0 segwitアドレスのスキャンに使用する方法を使って、
   スクリプトに支払いをするトランザクションをスキャンできます。
 
-- **使用トランザクションの作成:** Taprootのすべての非witnessフィールドは、
+- **<!--creating-a-spending-transaction-->使用トランザクションの作成:** Taprootのすべての非witnessフィールドは、
   P2WPKHと同じため、トランザクションのシリアライゼーションの変更について心配する必要はありません。
 
-- **署名メッセージの作成:** これは使用トランザクションのデータに対するコミットメントです。
+- **<!--create-a-signature-message-->署名メッセージの作成:** これは使用トランザクションのデータに対するコミットメントです。
   データのほとんどは、P2WPKHトランザクションに署名するのと同じものですが、
   フィールドの順番が[変更され][BIP341 sigmsg]、いくつかの追加項目が署名されています。
   これを実装するのは、さまざまなデータをハッシュしシリアライズするだけなので、
   コードを書くのは簡単です。
 
-- **署名メッセージのハッシュに署名:** Schnorr署名を作成するには、さまざまなな方法があります。
+- **<!--sign-a-hash-of-the-signature-message-->署名メッセージのハッシュに署名:** Schnorr署名を作成するには、さまざまなな方法があります。
   最善の方法は、「独自の暗号を使う」のではなく、信頼できる十分レビューされたライブラリの関数を使用することです。
   ただ、何らかの理由によりそれができない場合は、
   [BIP340][]は、ECDSA署名を作成するためのプリミティブが利用可能であれば、
@@ -96,6 +99,7 @@ Bitcoin Wikiの[taproot uses][wiki taproot uses]ページや
     </table>
 
 {% include linkers/issues.md issues="" %}
+{% endauto_anchor %}
 [electrum seeds]: https://electrum.readthedocs.io/en/latest/seedphrase.html#motivation
 [bip340 alt signing]: https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki#alternative-signing
 [bip341 cite22]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-22
