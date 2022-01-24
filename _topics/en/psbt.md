@@ -174,6 +174,9 @@ optech_mentions:
   - title: "Rust Bitcoin #669 improves partial signature support with discussion about nulldummy vectors"
     url: /en/newsletters/2022/01/19/#rust-bitcoin-669
 
+  - title: "BIPs #1270 updates the PSBT specification to discourage signature placeholders"
+    url: /en/newsletters/2022/01/26/#bips-1270
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
