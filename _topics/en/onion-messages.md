@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Eclair #2117 adds onion message replies in preparation for supporting offers"
     url: /en/newsletters/2022/01/12/#eclair-2117
 
+  - title: "Eclair #2133 begins relaying onion messages by default"
+    url: /en/newsletters/2022/01/26/#eclair-2133
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
