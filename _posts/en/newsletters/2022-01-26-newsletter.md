@@ -86,7 +86,11 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Eclair #2134][] Activate anchor outputs FIXME:dongcarl
+- [Eclair #2134][] enables [anchor outputs][topic anchor outputs] by default,
+  allowing a commitment transaction to be fee bumped should its feerate be too
+  low at broadcast time. Since anchor outputs-style fee bumping works via
+  [CPFP][topic cpfp], users will need to keep UTXOs available in their
+  `bitcoind` wallet.
 
 - [Eclair #2113][] adds automatic management of fee bumping.  This
   includes classifying transactions by the importance of confirming them
