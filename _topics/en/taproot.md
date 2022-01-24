@@ -221,6 +221,9 @@ optech_mentions:
   - title: "2021 year-in-review: taproot"
     url: /en/newsletters/2021/12/22/#taproot
 
+  - title: "Question: is it possible to convert a taproot address into a v0 native segwit address?"
+    url: /en/newsletters/2022/01/26/#is-it-possible-to-convert-a-taproot-address-into-a-v0-native-segwit-address
+
 ## Optional
 see_also:
   - title: MAST
