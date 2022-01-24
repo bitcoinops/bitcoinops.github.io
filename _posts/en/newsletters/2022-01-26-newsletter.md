@@ -45,7 +45,37 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is it possible to convert a taproot address into a v0 native segwit address?]({{bse}}111440)
+  After an exchange changed a user's P2TR (native segwit v1) taproot withdrawal address
+  into a P2WSH (native segwit v0) address due to lack of taproot support,
+  the user asks if there is a way to claim the bitcoins in the resulting v0
+  output. Pieter Wuille notes that those bitcoins are not retrievable since the
+  user would need to find a script that hashes to the public key in the P2TR
+  address, a computationally infeasible operation.
+
+- [Was Bitcoin 0.3.7 actually a hard fork?]({{bse}}111673)
+  User BA20D731B5806B1D wonders what about Bitcoin's 0.3.7 release caused it to
+  be classified as a hard fork. Antoine Poinsot gives example `scriptPubKey`
+  and `scriptSig` values to illustrate that a previously invalid signature could
+  be valid after [0.3.7][bitcoin 0.3.7 github]'s bugfix to separate `scriptSig` +
+  `scriptPubKey` evaluations.
+
+- [What is signature grinding?]({{bse}}111660)
+  Murch explains that ECDSA signature grinding is the process of repeatedly
+  signing until you get a signature whose r-value is in the lower half of the
+  range, resulting in a signature that is 1 byte smaller (32 bytes vs 33 bytes)
+  based on the serialization format Bitcoin uses for ECSDA. This smaller signature results in lower
+  fees and the fact that the signature is a known 32 byte size helps with more
+  accurate fee estimation.
+
+- [How is network conflict avoided between chains?]({{bse}}111967)
+  Murch explains how nodes use magic numbers, as specified in the P2P [message
+  structure][wiki message structure], in order to identify if they are
+  connected to a peer that is on the same network (mainnet, testnet, signet).
+
+- [How many BIPs were adopted in the standard client in 2021?]({{bse}}111901)
+  Pieter Wuille links to Bitcoin Core's [BIPs documentation][bitcoin bips doc]
+  that keeps track of BIPs that are implemented in Bitcoin Core.
 
 ## Notable code and documentation changes
 
@@ -93,3 +123,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [lnurl authentication]: https://github.com/fiatjaf/lnurl-rfc/blob/legacy/lnurl-auth.md
 [nat]: https://en.wikipedia.org/wiki/Network_address_translation
 [news37 psbt p2c]: /en/newsletters/2019/03/12/#extension-fields-to-partially-signed-bitcoin-transactions-psbts
+[bitcoin 0.3.7 github]: https://github.com/bitcoin/bitcoin/commit/6ff5f718b6a67797b2b3bab8905d607ad216ee21#diff-8458adcedc17d046942185cb709ff5c3L1135
+[wiki message structure]: https://en.bitcoin.it/wiki/Protocol_documentation#Message_structure
+[bitcoin bips doc]: https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md
