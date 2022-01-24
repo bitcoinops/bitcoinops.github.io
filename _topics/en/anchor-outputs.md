@@ -131,6 +131,9 @@ optech_mentions:
   - title: "Rust-Lightning #1176 adds initial support for anchor outputs-style fee bumping"
     url: /en/newsletters/2021/12/01/#rust-lightning-1176
 
+  - title: "Eclair #2134 enables anchor outputs by default"
+    url: /en/newsletters/2022/01/26/#eclair-2134
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
