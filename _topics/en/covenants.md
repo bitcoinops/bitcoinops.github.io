@@ -75,9 +75,15 @@ see_also:
   - title: Vaults
     link: topic vaults
 ---
+> "In the context of Bitcoin, the most useful definition of
+> covenant is that it's when the scriptPubKey of a UTXO restricts the
+> scriptPubKey in the output(s) of a tx spending that UTXO."  ---Anthony
+> Towns ([source][towns covenant definition])
+
 For example, a covenant may normally only allow spending to a
 whitelisted set of scripts, such as returning bitcoins to the user's own
 balance or spending to a staging address that only allows spending to
 any arbitrary address after a period of time.
 
 {% include references.md %}
+[towns covenant definition]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019795.html
