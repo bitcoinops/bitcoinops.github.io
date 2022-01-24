@@ -112,7 +112,13 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   instance using [LNURL authentication][] (which can also be
   implemented in non-LN software).
 
-- [BIPs #1270][] BIP-174 Clarify that partial_sig should be a valid.  FIXME:Xekyo  Maybe reference: https://bitcoinops.org/en/newsletters/2022/01/19/#rust-bitcoin-669
+- [BIPs #1270][] clarifies the [PSBT][topic psbt] specification in regard to
+  acceptable values for signature fields. After a recent update to Rust
+  Bitcoin [introduced stricter parsing][news183 rust-btc psbt] of
+  signature fields, a discussion ensued whether a signature field in a
+  PSBT may hold a placeholder, or only valid signatures were
+  permissible. It was determined that PSBTs should only ever contain
+  valid signatures.
 
 - [BOLTs #917][] extends the `init` message defined by [BOLT1][] with
   the ability for a node to tell a connecting peer what IPv4 or IPv6
@@ -130,3 +136,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [bitcoin 0.3.7 github]: https://github.com/bitcoin/bitcoin/commit/6ff5f718b6a67797b2b3bab8905d607ad216ee21#diff-8458adcedc17d046942185cb709ff5c3L1135
 [wiki message structure]: https://en.bitcoin.it/wiki/Protocol_documentation#Message_structure
 [bitcoin bips doc]: https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md
+[news183 rust-btc psbt]:/en/newsletters/2022/01/19/#rust-bitcoin-669
