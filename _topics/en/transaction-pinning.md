@@ -71,10 +71,10 @@ Some of the limits that can be abused to enable transaction pinning
 include:
 
 - **[BIP125][] RBF rule #3** requires a replacement transaction
-  pay a higher absolute fee (not just feerate) than the transaction
-  being replaced and any of its children.  This can allow an attacker
-  to attach a large and low-feerate transaction to the transaction
-  they want to pin, forcing any fee bump to pay for the
+  pay a higher absolute fee (not just feerate) than the sum of fees paid
+  by the transaction being replaced and all of its children.  This can
+  allow an attacker to attach a large and low-feerate transaction to
+  the transaction they want to pin, forcing any fee bump to pay for the
   replacement of the large child transaction.  E.g., with the 2019
   Bitcoin Core defaults, an attacker can require an honest participant
   pay a minimum of 0.001 BTC to fee bump a transaction (or even
