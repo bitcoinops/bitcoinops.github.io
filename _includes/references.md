@@ -1,6 +1,7 @@
 {% comment %}<!-- internal site links, alphabetical order -->{% endcomment %}
 [bech32 series]: /en/bech32-sending-support/
 [compatibility matrix]: /en/compatibility/
+[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 [scaling payment batching]: /en/payment-batching/

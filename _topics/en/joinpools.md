@@ -6,8 +6,8 @@ title: Joinpools
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+aliases:
+  - Payment pools
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
