@@ -111,7 +111,13 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #23201][] wallet: Allow users to specify input weights when funding a transaction FIXME:glozow (maybe also mention https://bitcoinops.org/en/newsletters/2022/01/26/#eclair-2113 )
 
-- [Eclair #2141][] More aggressive confirmation target when low on utxos FIXME:dongcarl (maybe also mention https://bitcoinops.org/en/newsletters/2022/01/26/#eclair-2113 )
+- [Eclair #2141][] improves the automatic fee bumping mechanism (previously
+  covered in [Newsletter #184][news184 eclair auto bump]) by choosing a more
+  aggressive confirmation target when the wallet is low on UTXOs. In such
+  situations, it is important to have the fee bump transaction confirm quickly
+  to preserve the wallet's UTXO count in case of further force-closes. More
+  details on the anchor outputs-style fee bumping used by Eclair can be found
+  [here][topic anchor outputs].
 
 - [BTCPay Server #3341][] Add configurable BOLT11Expiration for refunds (Fix #3281) FIXME:bitschmidty
 
@@ -126,3 +132,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [nick apo dlc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019812.html
 [oconnor txhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019813.html
 [towns pop_sigdata]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019819.html
+[news184 eclair auto bump]: /en/newsletters/2022/01/26/#eclair-2113
