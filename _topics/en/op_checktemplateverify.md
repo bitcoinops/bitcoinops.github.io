@@ -73,6 +73,12 @@ optech_mentions:
   - title: Mailing list and IRC discussion of CTV, including criticism and rebuttals
     url: /en/newsletters/2022/01/19/#op-checktemplateverify-discussion
 
+  - title: Discussion about how CTV or other covenant features could make DLCs much more efficient
+    url: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
+
+  - title: OP_TXHASH as a proposed alternative to CTV and APO
+    url: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
