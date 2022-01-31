@@ -86,6 +86,12 @@ optech_mentions:
   - title: "2021 year-in-review: SIGHASH_ANYPREVOUT"
     url: /en/newsletters/2021/12/22/#anyprevout
 
+  - title: Discussion about how APO or other covenant features could make DLCs much more efficient
+    url: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
+
+  - title: OP_TXHASH as a proposed alternative to CTV and APO
+    url: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

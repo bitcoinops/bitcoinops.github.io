@@ -65,6 +65,9 @@ optech_mentions:
   - title: Mailing list post about DLCs over LN
     url: /en/newsletters/2021/11/10/#dlcs-over-ln
 
+  - title: Discussion about how CTV or other covenant features could make DLCs much more efficient
+    url: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
