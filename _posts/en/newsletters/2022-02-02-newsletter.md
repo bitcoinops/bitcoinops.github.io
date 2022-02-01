@@ -125,7 +125,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   details on the anchor outputs-style fee bumping used by Eclair can be found
   [here][topic anchor outputs].
 
-- [BTCPay Server #3341][] Add configurable BOLT11Expiration for refunds (Fix #3281) FIXME:bitschmidty
+- [BTCPay Server #3341][] allows users to configure a [BOLT11][] expiry,
+  different from the previous 30 day default, when requesting a refund via LN.
 
 {% include references.md %}
 {% include linkers/issues.md issues="23201,2141,3341" %}
