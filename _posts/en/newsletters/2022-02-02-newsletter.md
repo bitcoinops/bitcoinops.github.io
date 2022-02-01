@@ -109,7 +109,13 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23201][] wallet: Allow users to specify input weights when funding a transaction FIXME:glozow (maybe also mention https://bitcoinops.org/en/newsletters/2022/01/26/#eclair-2113 )
+- [Bitcoin Core #23201][] improves the ability of wallet users to fund
+  transactions with external inputs (previously mentioned in [Newsletter
+  #170][news170 external inputs]) by allowing them to specify maximum
+  weights instead of solving data.  This enables applications to use
+  `fundrawtransaction`, `send`, and `walletfundpsbt` RPCs to fee bump
+  transactions with nonstandard outputs such as [HTLCs][topic htlc] (a requirement for
+  LN clients described in [Newsletter #184][news184 eclair auto bump]).
 
 - [Eclair #2141][] improves the automatic fee bumping mechanism (previously
   covered in [Newsletter #184][news184 eclair auto bump]) by choosing a more
@@ -133,3 +139,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [oconnor txhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019813.html
 [towns pop_sigdata]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019819.html
 [news184 eclair auto bump]: /en/newsletters/2022/01/26/#eclair-2113
+[news170 external inputs]: /en/newsletters/2021/10/13/#bitcoin-core-17211
