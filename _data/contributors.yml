@@ -63,3 +63,10 @@ contributors:
     avatar: zhao.jpg
     quote: >-
       "As a developer, it feels like Bitcoin development innovates far too quickly for anyone to keep up! But engineering isn't enough to translate technological advancement into tangible improvements in a real person's life. Optech has been an incredible resource throughout my journey; I hope to help it be the same for the thousands of builders, designers, educators and trailblazers we'll need to bring Bitcoin to a billion people."
+  -
+    name: Shigeyuki Azuchi
+    other_affiliation: CTO, <a href="https://www.chaintope.com/">Chaintope</a>
+    github: azuchi
+    avatar: azuchi.png
+    quote: >-
+      "Bitcoin is a very exciting innovation, and many protocols and cryptographic improvements are still being proposed. Understanding these is important for Bitcoin services and businesses, and Optech is one of the most useful resources for that. I hope to contribute to making Bitcoin technical information available to a wide range of people."
