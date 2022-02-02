@@ -1,7 +1,7 @@
 ## When putting either quotes or exposition into the same types of
 ## slots, ensure quotations are displayed surrounded by quotes marks to
 ## differentiate the two types of information
-associates:
+contributors:
   -
     name: John Newbery
     role: Director & Engineer, Optech
