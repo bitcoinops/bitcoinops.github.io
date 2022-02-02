@@ -1,0 +1,20 @@
+{% assign contributors = site.data.contributors.contributors | sort: "name" %}
+
+<div id="contributors">
+
+    <ul class="contributors n-column-list">
+        {% for contributor in contributors %}
+        {% assign avatar=contributor.avatar %}
+        {% unless contributor.avatar contains 'https://' %}{% capture avatar %}/img/team/{{contributor.avatar}}{% endcapture %}{% endunless %}
+        <li>
+            <img src="{{ avatar }}" class="bio-photo" width="150" height="150" alt="{{ contributor.name }}" title="{{ contributor.name }}">
+            <h3 itemprop="name">{{ contributor.name }}</h3>
+            <p class="author-role">{{ contributor.role }} {% if contributor.other_affiliation %}<br/>{{ contributor.other_affiliation }}{% endif %}</p>
+            <i class="fa fa-lg fa-github-square" rel="nofollow"></i>&nbsp;<a href="https://github.com/{{ contributor.github }}" class="author-github" target="_blank">GitHub</a>
+            {% if contributor.quote %}<p class="sponsor-quote">{{ contributor.quote }} </p>{% endif %}
+
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>

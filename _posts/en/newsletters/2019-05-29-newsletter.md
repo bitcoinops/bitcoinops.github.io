@@ -414,6 +414,6 @@ the author.
 [ivgi tweet]: https://twitter.com/shesek/status/1131733590235131905
 [updated qr paragraph]: /en/bech32-sending-support/#qrcode-edit
 [optech twitter]: https://twitter.com/bitcoinoptech
-[optech contributors]: /about/#principals-and-associates-of-optech
+[optech contributors]: /about/#contributors
 [special section about the proposal]: #proposed-transaction-output-commitments
 [bech32 series]: /en/bech32-sending-support/

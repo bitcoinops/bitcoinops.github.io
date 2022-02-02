@@ -35,8 +35,13 @@ to support Optech.
 
 Our generous member companies pay an annual contribution to cover expenses.
 
-## Principals and Associates of Optech
+## Optech Contributors
 
-{% include associates.html %}
+All material produced by Bitcoin Optech is open source and released under the
+MIT license. Anyone is welcome to contribute by opening issues and pull
+requests, reviewing newsletters and other material, and contributing
+translations. Our most regular contributors are:
+
+{% include contributors.html %}
 
 {% include sponsors.html %}
