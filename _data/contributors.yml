@@ -56,3 +56,10 @@ contributors:
     avatar: erhardt.png
     quote: >-
       "The Optech newsletter has been one of the most informative and reliable resources for any Bitcoin engineer since its inception. With its workshops, the Bitcoin Optech Group is bringing together the engineers in the space and paving the road for adoption of best practices and new protocol features."
+  -
+    name: Gloria Zhao
+    other_affiliation: Fellow, <a href="https://brink.dev">Brink</a>
+    github: glozow
+    avatar: zhao.jpg
+    quote: >-
+      "As a developer, it feels like Bitcoin development innovates far too quickly for anyone to keep up! But engineering isn't enough to translate technological advancement into tangible improvements in a real person's life. Optech has been an incredible resource throughout my journey; I hope to help it be the same for the thousands of builders, designers, educators and trailblazers we'll need to bring Bitcoin to a billion people."
