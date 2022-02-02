@@ -4,7 +4,6 @@
 contributors:
   -
     name: John Newbery
-    role: Director & Engineer, Optech
     other_affiliation: Developer, Chaincode Labs
     github: jnewbery
     avatar: newbery.jpg
@@ -12,28 +11,24 @@ contributors:
       "I started Optech because if Bitcoin is to be successful, then one of the fundamental challenges facing Bitcoin services and businesses will be how to maximize customer utility by making efficient use of the blockchain. Helping Bitcoin ecosystem players adopt scaling techniques and technologies is one of the most effective ways we can help Bitcoin scale today."
   -
     name: Steve Lee
-    role: Product Manager, Optech
     github: moneyball
     avatar: lee.png
     quote: >-
       "I am excited to help Bitcoin Optech Group make a meaningful contribution to Bitcoin. I’m looking forward to working with businesses to develop implementation best practices and to build a bridge between businesses and the open source community."
   -
     name: David A. Harding
-    role: Technical Writer, Optech
     github: harding
     avatar: harding.png
     quote: >-
       "The terrible thing about a consensus system like Bitcoin is that every on-chain action we perform affects every other user of the system. That makes all of us neighbors, so we're faced with the choice of either being the bad neighbors who complain endlessly about each other or the good neighbors who work together to solve problems and find ways to coexist in harmony."
   -
     name: Mike Schmidt
-    role: Associate, Optech
     github: bitschmidty
     avatar: schmidt.png
     quote: >-
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."
   -
     name: Adam Jonas
-    role: Associate, Optech
     other_affiliation: Special Projects, Chaincode Labs
     github: adamjonas
     avatar: jonas.png
@@ -41,7 +36,6 @@ contributors:
       "I am excited about the opportunity Bitcoin has before it as it grows.  I hope to contribute my small part as a liaison to help businesses take advantage of all that Bitcoin has to offer as well as gather feedback for the open source community so that we can together bring this wonderfully evolving technology to the masses."
   -
     name: Carl Dong
-    role: Engineer, Optech
     other_affiliation: Developer, Chaincode Labs
     github: dongcarl
     avatar: dong.jpg
@@ -49,7 +43,6 @@ contributors:
       "New Bitcoin technologies, and more importantly, their rationales will always take some time to propagate from the engineers working on the bleeding-edge to the services and businesses focused on serving their customers. I'm honored to be able to help Optech accelerate this process."
   -
     name: Jon Atack
-    role: Engineer, Optech
     other_affiliation: Sponsored Developer, Square Crypto
     github: jonatack
     avatar: atack.jpg
@@ -57,7 +50,6 @@ contributors:
       "I see Bitcoin Optech as an outstanding resource for Bitcoin services and businesses to not only stay up to date on operational changes in Bitcoin open source engineering and R&D but also to gain vital contextual understanding to anticipate and deploy them effectively. I am thrilled for the opportunity to help Optech in this mission."
   -
     name: Mark Erhardt
-    role: Engineer, Optech
     other_affiliation: Developer, Chaincode Labs
     github: Xekyo
     avatar: erhardt.png
