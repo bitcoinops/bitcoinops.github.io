@@ -88,7 +88,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   to specify the reason an HTLC was failed, making the interceptor more
   useful for testing how failures affect software using LND.
 
-- [Rust-Lightning #1227][] Merge pull request #1227 from jkczyz/2021-12-probabilistic-scorer FIXME:dongcarl
+- [LDK #1227][] improves the route-finding logic to account for known
+  historical payment failures/successes. These failures/successes are used to
+  determine the upper and lower bounds of channel balances, which gives the
+  route-finding logic a more accurate success probability when evaluating
+  routes. This is an implementation of some ideas previously described
+  by René Pickhardt and others as mentioned in previous newsletters
+  (including [#142][news142 pps], [#163][news163 pickhardt richter
+  paper], and [#172][news172 cl4771]).
 
 - [HWI #549][] adds support for [PSBT][topic psbt] version two as
   specified in [BIP370][].  When using a device that natively supports
@@ -102,3 +109,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=1 issues="23508,21851,16795,6226,6234,6177,1227,549,544" %}
 [lnd 0.14.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.2-beta
 [zhao rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[news163 pickhardt richter paper]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
+[news142 pps]: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
+[news172 cl4771]: /en/newsletters/2021/10/27/#c-lightning-4771
