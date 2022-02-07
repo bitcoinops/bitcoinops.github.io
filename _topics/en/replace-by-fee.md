@@ -92,6 +92,9 @@ optech_mentions:
   - title: Proposal to briefly allow full RBF before using default opt-in RBF
     url: /en/newsletters/2022/01/05/#brief-full-rbf-then-opt-in-rbf
 
+  - title: "Discussion about RBF policy, including suggested changes"
+    url: /en/newsletters/2022/02/09/#discussion-about-rbf-policy
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
