@@ -110,7 +110,10 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23508][] Add getdeploymentinfo RPC FIXME:Xekyo
+- [Bitcoin Core #23508][] moves the statuses of soft fork deployments
+  from `getblockchaininfo` to a new `getdeploymentinfo` RPC. The new RPC
+  additionally enables querying the deployment statuses at a specific
+  block height rather than just at the chaintip.
 
 - [Bitcoin Core #21851][] adds support for building for arm64-apple-darwin
   (Apple M1).  With the changes now merged, the community can expect working
