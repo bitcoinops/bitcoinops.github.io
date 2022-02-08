@@ -41,12 +41,54 @@ changes to popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Add usage examples][reviews 748] is a PR by Elichai Turkel to add usage
+examples for ECDSA signatures, [schnorr signatures][topic schnorr signatures], and ECDH key exchanges. This
+was the first review club meeting for a libsecp256k1 PR. Participants discussed
+the importance of good randomness sources, walked through the examples, and
+asked general questions about libsecp256k1.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/23443#l-29"
+  q0="Why do the examples show how to obtain randomness?"
+  a0="The security of many cryptographic schemes in this library rely on secret
+keys, nonces, and salts being secret/random. If an attacker is able to guess or
+influence the values returned by our randomness source, they may be able to
+forge signatures, learn information we are trying to keep confidential, guess
+keys, etc. As such, the challenge of implementing a cryptographic scheme often
+lies in obtaining randomness. The usage examples highlight this fact."
+  a0link="https://bitcoincore.reviews/libsecp256k1-748#l-99"
+
+  q1="Is it a good idea to make recommendations for how to obtain randomness?"
+  a1="The main user of libsecp256k1, Bitcoin Core, has its own algorithm for
+randomness which incorporates the OS, messages received on the p2p network, and
+other sources of entropy. For other users who have to 'bring your own entropy',
+recommendations may be helpful to users since a good source of randomness is so
+crucial and OS documentation is not always clear. A maintenance burden for these
+recommendations exists, since they may become outdated depending on OS support
+and vulnerabilities, but it is expected to be minimal since these APIs change
+very infrequently."
+  a1link="https://bitcoincore.reviews/libsecp256k1-748#l-120"
+
+  q2="Can you follow the examples added in the PR? Is anything missing from them?"
+  a2="Participants discussed their experience compiling and running the
+examples, using debuggers, comparing the example code with Bitcoin Core usage,
+and considering the UX for non-Bitcoin users.
+One participant pointed out that not verifying the schnorr signature
+after producing it was a deviation from the Bitcoin Core code and [BIP340][]
+recommendation. Another participant suggested demonstrating the usage of
+`secp256k1_sha256` before `secp256k1_ecdsa_sign`, as forgetting to
+hash the message could be a potential user footgun."
+  a2link="https://bitcoincore.reviews/libsecp256k1-748#l-193"
+
+  q3="What can happen if a user forgets to do something like verify the
+signature after signing, call `seckey_verify`, or randomize the context?"
+  a3="In the worst case scenario, if there is a flaw in the implementation,
+forgetting to verify the signature after signing could mean accidentally giving
+out an invalid signature. Forgetting to call `seckey_verify` after randomly
+generating a key means there is a (negligible) probability of having an invalid
+key. Randomizing the context is intended to protect against side channel
+attacks---it blinds the intermediary values which have no impact on the end
+result but may be exploited to gain information about the operations performed."
+  a3link="https://bitcoincore.reviews/libsecp256k1-748#l-226"
 %}
 
 ## Releases and release candidates
@@ -112,3 +154,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news163 pickhardt richter paper]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 [news142 pps]: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 [news172 cl4771]: /en/newsletters/2021/10/27/#c-lightning-4771
+[reviews 748]: https://bitcoincore.reviews/libsecp256k1-748
