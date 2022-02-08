@@ -112,7 +112,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #23508][] Add getdeploymentinfo RPC FIXME:Xekyo
 
-- [Bitcoin Core #21851][] release: support cross-compiling for arm64-apple-darwin FIXME:adamjonas
+- [Bitcoin Core #21851][] adds support for building for arm64-apple-darwin
+  (Apple M1).  With the changes now merged, the community can expect working
+  M1 binaries in the next release.
 
 - [Bitcoin Core #16795][] updates the `getrawtransaction`, `gettxout`,
   `decoderawtransaction`, and `decodescript` RPCs to return the inferred
