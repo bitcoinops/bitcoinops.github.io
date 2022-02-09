@@ -4,6 +4,7 @@ issues.md: creates Markdown reference-style links to issues, pull
 requests, and other templated URLs.
 
   Input:
+    - v: (integer) version number for backwards-incompatible changes
     - issues: (CSV) the issue numbers to create links for separated by
       commas with no spaces.  For a given number, a separate link will
       be created for *all* supported repositories
@@ -31,10 +32,14 @@ requests, and other templated URLs.
 [bips #{{_issue}}]: https://github.com/bitcoin/bips/issues/{{_issue}}
 [bolts #{{_issue}}]: https://github.com/lightning/bolts/issues/{{_issue}}
 [rust bitcoin #{{_issue}}]: https://github.com/rust-bitcoin/rust-bitcoin/issues/{{_issue}}
-[rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
-[ldk #{{_issue}}]: https://github.com/lightningdevkit/rust-lightning/issues/{{_issue}}
 [review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
 [hwi #{{_issue}}]: https://github.com/bitcoin-core/HWI/issues/{{_issue}}
 [btcpay server #{{_issue}}]: https://github.com/btcpayserver/btcpayserver/issues/{{_issue}}
 [bdk #{{_issue}}]: https://github.com/bitcoindevkit/bdk/issues/{{_issue}}
+
+{% if include.v > 0 %}
+[ldk #{{_issue}}]: https://github.com/lightningdevkit/rust-lightning/issues/{{_issue}}
+{% else %}
+[rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
+{% endif %}
 {% endfor %}

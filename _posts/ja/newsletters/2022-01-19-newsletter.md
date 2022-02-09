@@ -101,7 +101,7 @@ lang: ja
   署名をしたくない署名者が空のバイト列（["nulldummy"][bip147]）をPSBTに入れるべきかどうかという[興味深いコメント][poelstra nulldummy]もありました。
 
 {% include references.md %}
-{% include linkers/issues.md issues="2063,912,1013,6006,590,591,669,950" %}
+{% include linkers/issues.md v=1 issues="2063,912,1013,6006,590,591,669,950" %}
 [poelstra nulldummy]: https://github.com/rust-bitcoin/rust-bitcoin/pull/669#issuecomment-1008021007
 [dmw legal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019741.html
 [todd ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019738.html
