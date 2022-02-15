@@ -47,7 +47,7 @@ wallets and services.*
 
 - **BitBox02 adds taproot sends:**
   Both the [v9.9.0 - Multi][bitbox02 v9.9.0 multi] and [v9.9.0 -
-  Bitcoin-only][bitbox02 v9.9.0 bitcoin] releases add support for bech32m sends.
+  Bitcoin-only][bitbox02 v9.9.0 bitcoin] releases add support for sending to bech32m addresses.
 
 - **Fulcrum 1.6.0 adds performance improvements:**
   Address indexing software Fulcrum adds [performance improvements][sparrow docs
