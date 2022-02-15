@@ -53,6 +53,14 @@ wallets and services.*
   Address indexing software Fulcrum adds [performance improvements][sparrow docs
   performance] in the [1.6.0 release][fulcrum 1.6.0].
 
+- **Kraken announces proof of reserves scheme:**
+  [Kraken details][kraken por] their proof of reserves scheme involving a
+  trusted auditor, also noting shortcomings and future improvements. Kraken
+  proves onchain address ownership by digitally signing,
+  a merkle tree of Kraken user account balances is created, the auditor verifies
+  onchain balances are greater than account balances, and tooling is provided
+  for users to verify their balance inclusion in the tree.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
