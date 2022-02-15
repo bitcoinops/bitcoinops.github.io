@@ -32,7 +32,7 @@ wallets and services.*
   [v202201.2.0(18481)][blockchain.com v202201.2.0(18481)] of the Blockchain.com
   Wallet for Android added support for sending to [bech32m][topic bech32]
   addresses. At the time of writing, the iOS version of the wallet does not
-  currently support bech32m sending.
+  yet support sending to bech32m addresses.
 
 - **Sensei Lightning node implementation launches:**
   [Sensei][sensei website], currently in beta, is built using the [Bitcoin Dev
