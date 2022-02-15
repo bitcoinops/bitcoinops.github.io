@@ -79,7 +79,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   not affect an invoice’s ability to be fulfilled.
 
 - [BTCPay Server #3395][] adds support for [CPFP][topic cpfp]
-  fee-bumping payments recevied to invoices and transactions sent by the
+  fee-bumping payments received to invoices and transactions sent by the
   wallet.
 
 - [BIPs #1279][] updates the [BIP322][] specification of the [generic
