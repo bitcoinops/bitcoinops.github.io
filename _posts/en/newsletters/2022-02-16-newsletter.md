@@ -28,7 +28,30 @@ This week's newsletter FIXME
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Blockchain.com Wallet adds taproot sends:**
+  [v202201.2.0(18481)][blockchain.com v202201.2.0(18481)] of the Blockchain.com
+  Wallet for Android added support for sending to [bech32m][topic bech32]
+  addresses. At the time of writing, the iOS version of the wallet does not
+  currently support bech32m sending.
+
+- **Sensei Lightning node implementation launches:**
+  [Sensei][sensei website], currently in beta, is built using the [Bitcoin Dev
+  Kit (BDK)][bdk website] and [Lightning Dev Kit (LDK)][ldk website]. The node
+  currently requires bitcoind and Electrum server with additional backend
+  options planned.
+
+- **BitMEX adds taproot sends:**
+  In a recent [blog post][bitmex blog], BitMEX announced support for bech32m
+  withdrawals. The post also notes that 73% of [BitMEX user deposits][news141
+  bitmex bech32 receive] are to bech32 addresses and result in around 65% fee savings.
+
+- **BitBox02 adds taproot sends:**
+  Both the [v9.9.0 - Multi][bitbox02 v9.9.0 multi] and [v9.9.0 -
+  Bitcoin-only][bitbox02 v9.9.0 bitcoin] releases add support for bech32m sends.
+
+- **Fulcrum 1.6.0 adds performance improvements:**
+  Address indexing software Fulcrum adds [performance improvements][sparrow docs
+  performance] in the [1.6.0 release][fulcrum 1.6.0].
 
 ## Releases and release candidates
 
@@ -62,3 +85,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=1 issues="2164,3395,1279" %}
 [russell op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019871.html
 [news185 composable]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[blockchain.com v202201.2.0(18481)]: https://github.com/blockchain/My-Wallet-V3-Android/releases/tag/v202201.2.0(18481)
+[sensei website]: https://l2.technology/sensei
+[bdk website]: https://bitcoindevkit.org/
+[ldk website]: https://lightningdevkit.org/
+[bitmex blog]: https://blog.bitmex.com/bitmex-supports-sending-to-taproot-addresses/
+[news141 bitmex bech32 receive]: /en/newsletters/2021/03/24/#bitmex-announces-bech32-support
+[bitbox02 v9.9.0 multi]: https://github.com/digitalbitbox/bitbox02-firmware/releases/tag/firmware%2Fv9.9.0
+[bitbox02 v9.9.0 bitcoin]: https://github.com/digitalbitbox/bitbox02-firmware/releases/tag/firmware-btc-only%2Fv9.9.0
+[fulcrum 1.6.0]: https://github.com/cculianu/Fulcrum/releases/tag/v1.6.0
+[sparrow docs performance]: https://www.sparrowwallet.com/docs/server-performance.html
+[kraken por]: https://www.kraken.com/proof-of-reserves
