@@ -59,10 +59,10 @@ wallets and services.*
 - **Kraken announces proof of reserves scheme:**
   Kraken [details][kraken por] their proof of reserves scheme involving a
   trusted auditor, also noting shortcomings and future improvements. Kraken
-  proves onchain address ownership by digitally signing
-  a merkle tree of Kraken user account balances, the auditor verifies
-  onchain balances are greater than account balances, and tooling is provided
-  for users to verify their balance inclusion in the tree.
+  creates digital signatures to prove onchain address ownership, produces
+  a merkle tree of Kraken user account balances, asks an auditor to
+  certify onchain balances are greater than account balances, and provides tooling
+  for users to verify their balance was included in the tree.
 
 ## Notable code and documentation changes
 
