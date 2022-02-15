@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Preparing for taproot: generic signmessage still needed"
     url: /en/newsletters/2021/09/29/#preparing-for-taproot-15-signmessage-protocol-still-needed
 
+  - title: "BIPs #1279 updates BIP322 with clarifications and test vectors"
+    url: /en/newsletters/2022/02/16/#bips-1279
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
