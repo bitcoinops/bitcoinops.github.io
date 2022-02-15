@@ -7,12 +7,15 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter FIXME
+This week's newsletter describes continued discussion about covenants in
+Bitcoin and includes our regular sections with summaries of changes to
+services and client software and notable changes to popular Bitcoin
+infrastructure software.
 
 ## News
 
 - **Simplified alternative to `OP_TXHASH`:** in continuing discussion
-  about covenant-enabling opcodes (see [Newsletter #185][news185
+  about [covenant][topic covenants]-enabling opcodes (see [Newsletter #185][news185
   composable]), Rusty Russell [proposed][russell op_tx] that the
   function provided by `OP_TXHASH` could be provided by the existing
   `OP_SHA256` opcode plus a new `OP_TX` opcode which accepted the same
@@ -61,14 +64,6 @@ wallets and services.*
   onchain balances are greater than account balances, and tooling is provided
   for users to verify their balance inclusion in the tree.
 
-## Releases and release candidates
-
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
-
-FIXME:harding to update/remove on Tuesday
-
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],
@@ -91,7 +86,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   signmessage protocol][topic generic signmessage] with a few
   clarifications and test vectors.
 
-<!-- FIXME:harding to add topic links Tuesday -->
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="2164,3395,1279" %}
 [russell op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019871.html

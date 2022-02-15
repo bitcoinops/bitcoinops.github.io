@@ -61,6 +61,9 @@ optech_mentions:
   - title: "OP_TAPLEAF_UPDATE_VERIFY opcode proposed with a taproot-native covenant design"
     url: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 
+  - title: "Proposal for composable `OP_TX` opcode useful for constructing covenants"
+    url: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
