@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Call for `OP_CHECKSIGFROMSTACK` design suggestions"
     url: /en/newsletters/2021/07/14/#request-for-op-checksigfromstack-design-suggestions
 
+  - title: "Proposal for `OP_TX` opcode composable with `OP_CHECKSIGFROMSTACK`"
+    url: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
