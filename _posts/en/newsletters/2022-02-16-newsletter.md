@@ -43,7 +43,7 @@ wallets and services.*
 - **BitMEX adds taproot sends:**
   In a recent [blog post][bitmex blog], BitMEX announced support for bech32m
   withdrawals. The post also notes that 73% of [BitMEX user deposits][news141
-  bitmex bech32 receive] are to bech32 addresses and result in around 65% fee savings.
+  bitmex bech32 receive] are received to P2WSH outputs and result in around 65% fee savings.
 
 - **BitBox02 adds taproot sends:**
   Both the [v9.9.0 - Multi][bitbox02 v9.9.0 multi] and [v9.9.0 -
