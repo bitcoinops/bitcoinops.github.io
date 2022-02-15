@@ -40,7 +40,7 @@ wallets and services.*
 - **Sensei Lightning node implementation launches:**
   [Sensei][sensei website], currently in beta, is built using the [Bitcoin Dev
   Kit (BDK)][bdk website] and [Lightning Dev Kit (LDK)][ldk website]. The node
-  currently requires bitcoind and Electrum server with additional backend
+  currently requires Bitcoin Core and Electrum server with additional backend
   options planned.
 
 - **BitMEX adds taproot sends:**
@@ -57,10 +57,10 @@ wallets and services.*
   performance] in the [1.6.0 release][fulcrum 1.6.0].
 
 - **Kraken announces proof of reserves scheme:**
-  [Kraken details][kraken por] their proof of reserves scheme involving a
+  Kraken [details][kraken por] their proof of reserves scheme involving a
   trusted auditor, also noting shortcomings and future improvements. Kraken
-  proves onchain address ownership by digitally signing,
-  a merkle tree of Kraken user account balances is created, the auditor verifies
+  proves onchain address ownership by digitally signing
+  a merkle tree of Kraken user account balances, the auditor verifies
   onchain balances are greater than account balances, and tooling is provided
   for users to verify their balance inclusion in the tree.
 
