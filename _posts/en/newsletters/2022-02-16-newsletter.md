@@ -74,7 +74,7 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Eclair #2164][] improves its handling of feature bits in various contexts.
-  Notably, invoices that requires a mandatory but non-invoice feature would no
+  Notably, invoices that require a mandatory but non-invoice feature would no
   longer be rejected, since the lack of support for a non-invoice feature does
   not affect an invoice’s ability to be fulfilled.
 
