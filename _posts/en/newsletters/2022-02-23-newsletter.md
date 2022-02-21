@@ -102,7 +102,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #24307][] RPC: Return external_signer in getwalletinfo FIXME:Xekyo
 
-- [C-Lightning #5010][] preliminary rust lang support FIXME:dongcarl
+- [C-Lightning #5010][] adds a language binding generation tool `MsgGen` and a
+  Rust RPC client `cln-rpc`. `MsgGen` parses C-Lightning's JSON-RPC schemas and
+  generates the Rust bindings used by `cln-rpc` to correctly call the
+  C-Lightning JSON-RPC interface.
 
 - [LDK #1199][] adds support for "phantom node payments", payments that
   can be accepted by any one of several nodes, which can be used for
