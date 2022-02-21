@@ -1,0 +1,27 @@
+digraph ln_linky {
+
+//rankdir=LR;
+graph [ bgcolor = transparent ];
+//labelloc = b;
+node [ shape = "box" ];
+
+A1 [ label = "Alice Node 3" ];
+A2 [ label = "Alice Node 1" ];
+A3 [ label = "Alice Node 2" ];
+
+Phantom [ label = "Phantom Node\n(Ostensible Destination)" ];
+
+A1 -> Phantom;
+A2 -> Phantom;
+A3 -> Phantom;
+
+{
+  node [ shape = none, color = transparent, label = "" ];
+  x1a, x1b, x1c -> A1;
+  x2a, x2b, x2c -> A2;
+  x3a, x3b, x3c -> A3;
+
+}
+
+label = "\nRoute hints to Alice's Phantom Node provide paths through\none of Alice's real nodes, any one of which can claim the payment";
+}

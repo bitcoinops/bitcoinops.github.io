@@ -105,6 +105,9 @@ optech_mentions:
   - title: "2021 year-in-review: signet"
     url: /en/newsletters/2021/12/22/#signet
 
+  - title: "Parameters published for `OP_CHECKTEMPLATEVERIFY` signet"
+    url: /en/newsletters/2022/02/23/#ctv-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

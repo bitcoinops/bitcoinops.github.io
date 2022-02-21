@@ -35,6 +35,9 @@ optech_mentions:
   - title: "Eclair #2063 adds support for the new option_payment_metadata invoice field"
     url: /en/newsletters/2022/01/19/#eclair-2063
 
+  - title: "LDK #1199 uses stateless invoices to allow phantom node payments"
+    url: /en/newsletters/2022/02/23/#ldk-1199
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
