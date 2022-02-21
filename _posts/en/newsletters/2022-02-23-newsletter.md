@@ -61,7 +61,35 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Will a post-subsidy block with no transactions include a coinbase transaction?]({{bse}}112193)
+  Pieter Wuille explains that every block must have a coinbase transaction
+  and since every transaction must include at least one
+  input and one output, a post-subsidy block with no block reward (no fees and
+  no subsidy) will still require at least one zero-value output.
+
+- [How can the genesis block contain arbitrary data on it if the script is invalid?]({{bse}}112439)
+  Pieter Wuille lists the reasons why the genesis block's coinbase
+  "Chancellor..." text push is valid. First, the [genesis block][bitcoin se 13122] is valid by
+  definition. Second is that coinbase input scripts are never executed.
+  Third is that, for non-taproot inputs, the requirement of a single element on the stack
+  after execution is only a policy rule, not a consensus rule. Finally, that policy
+  rule applies only to the final stack after an input script is executed together with the corresponding output script. Since there
+  are no corresponding output scripts for the inputs of coinbase transactions, the policy does not
+  apply. Wuille also notes the reason for the genesis block's unspendability is
+  unrelated to this discussion and involves the original Bitcoin software [not
+  adding the genesis block][bitcoin github genesis] to its internal database.
+
+- [What is a Feeler Connection? When is it used?]({{bse}}112247)
+  User vnprc explains the purpose of Bitcoin Core's [feeler
+  connection][chaincode p2p] which is a temporary outbound connection separate from the
+  default 8 outbound connections and 2 blocks-only outbound connections. The
+  feeler connection is used to test potential new peers suggested from the
+  gossip network as well as test previously unreachable peers which are candidates for eviction.
+
+- [Are OP_RETURN transactions not stored in chainstate database?]({{bse}}112312)
+  Antoine Poinsot points out that since `OP_RETURN` outputs are
+  [unspendable][bitcoin github unspendable], they are not stored in the
+  [chainstate directory][bitcoin docs data].
 
 ## Notable code and documentation changes
 
@@ -99,3 +127,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news55 gossip]: /en/newsletters/2019/07/17/#gossip-update-proposal
 [rubin ctv signet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019925.html
 [news181 rl1177]: /en/newsletters/2022/01/05/#rust-lightning-1177
+[bitcoin se 13122]: https://bitcoin.stackexchange.com/a/13123/87121
+[bitcoin github genesis]: https://github.com/bitcoin/bitcoin/blob/9546a977d354b2ec6cd8455538e68fe4ba343a44/src/main.cpp#L1668
+[chaincode p2p]: https://residency.chaincode.com/presentations/bitcoin/ethan_heilman_p2p.pdf#page=18
+[bitcoin github unspendable]: https://github.com/bitcoin/bitcoin/blob/280a7777d3a368101d667a80ebc536e95abb2f8c/src/script/script.h#L539-L547
+[bitcoin docs data]: https://github.com/bitcoin/bitcoin/blob/master/doc/files.md#data-directory-layout
