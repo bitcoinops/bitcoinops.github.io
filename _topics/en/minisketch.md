@@ -32,6 +32,9 @@ optech_mentions:
   - title: Researching bandwidth-efficient set reconciliation protocol
     url: /en/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions
 
+  - title: New LN gossip wire protocol proposal designed for use with minisketch
+    url: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Erlay
