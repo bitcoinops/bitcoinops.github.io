@@ -100,7 +100,10 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24307][] RPC: Return external_signer in getwalletinfo FIXME:Xekyo
+- [Bitcoin Core #24307][] extends the result object of the `getwalletinfo` RPC
+  with the `external_signer` field. This new field indicates whether the wallet
+  is configured to use an external signer such as a hardware signing
+  device.
 
 - [C-Lightning #5010][] adds a language binding generation tool `MsgGen` and a
   Rust RPC client `cln-rpc`. `MsgGen` parses C-Lightning's JSON-RPC schemas and
