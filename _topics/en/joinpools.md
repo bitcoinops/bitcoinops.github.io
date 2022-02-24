@@ -8,6 +8,7 @@ title: Joinpools
 ## Optional.  An entry will be added to the topics index for each alias
 aliases:
   - Payment pools
+  - Coinpools
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -34,6 +35,9 @@ optech_mentions:
 
   - title: "Post-taproot soft fork ideas: OP_TAPLEAF_UPDATE_VERIFY"
     url: /en/newsletters/2021/10/27/#op-tapleaf-update-verify
+
+  - title: "Proposed `OP_EVICT` opcode to make joinpools more efficient"
+    url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
