@@ -34,6 +34,9 @@ optech_mentions:
   - title: "Inherited identifiers proposal with an alternative channel factory design"
     url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 
+  - title: "Proposed `OP_EVICT` opcode to make channel factories more efficient"
+    url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -62,6 +62,9 @@ optech_mentions:
   - title: Proposal of initial CPFP rules for mempool package acceptance before implementing package relay
     url: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
 
+  - title: "BTCPay Server 1.4.5 adds support for CPFP fee bumping"
+    url: /en/newsletters/2022/03/02/#btcpay-server-1-4-6
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
