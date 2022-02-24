@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Proposal for composable `OP_TX` opcode useful for constructing covenants"
     url: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 
+  - title: "Proposed `OP_EVICT` opcode to make covenants more efficient"
+    url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

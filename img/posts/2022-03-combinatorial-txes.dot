@@ -1,0 +1,62 @@
+digraph txes {
+
+splines = ortho;
+//rankdir=LR;
+graph [ bgcolor = transparent ];
+//labelloc = b;
+node [ shape = "box" ];
+
+//A1 [ label = "Alice Node 3" ];
+//x1a, x1b, x1c -> A1;
+
+{
+  node [ label = "A" ];
+  A4; A5; A7; A8; A10; A11;
+} {
+  node [ label = "B" ];
+  B1; B2; B6; B8; B9; B11;
+} {
+  node [ label = "C" ];
+  C0; C2; C3; C5; C9; C10;
+} {
+  node [ label = "D" ];
+  D0; D1; D3; D4; D6; D7;
+}
+
+BCD_A [ label = "BCD" ];
+ACD_B [ label = "ACD" ];
+ABD_C [ label = "ABD" ];
+ABC_D [ label = "ABC" ];
+CD_B [ label = "CD" ];
+BD_C [ label = "BD" ];
+BC_D [ label = "BC" ];
+CD_A [ label = "CD" ];
+AD_C [ label = "AD" ];
+AC_D [ label = "AC" ];
+BD_A [ label = "BD" ];
+AD_B [ label = "AD" ];
+AB_D [ label = "AB" ];
+BC_A [ label = "BC" ];
+AC_B [ label = "AC" ];
+AB_C [ label = "AB" ];
+
+ABCD -> BCD_A, ACD_B, ABD_C, ABC_D
+  BCD_A -> CD_B, BD_C, BC_D
+    CD_B -> C0, D0
+    BD_C -> B1, D1
+    BC_D -> B2, C2
+  ACD_B -> CD_A, AD_C, AC_D
+    CD_A -> C3, D3
+    AD_C -> A4, D4
+    AC_D -> A5, C5
+  ABD_C -> BD_A, AD_B, AB_D
+    BD_A -> B6, D6
+    AD_B -> A7, D7
+    AB_D -> A8, B8
+  ABC_D -> BC_A, AC_B, AB_C
+    BC_A -> B9, C9
+    AC_B -> A10, C10
+    AB_C -> A11, B11
+
+label = "\nCombinatorial explosion in the number of presigned transactions that need to be created to ensure each member of the group can trustlessly withdraw their funds"
+}
