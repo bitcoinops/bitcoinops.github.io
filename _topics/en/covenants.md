@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Proposed `OP_EVICT` opcode to make covenants more efficient"
     url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
 
+  - title: "Discussion about the risks of allowing recursive covenants"
+    url: /en/newsletters/2022/03/09/#limiting-script-language-expressiveness
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
