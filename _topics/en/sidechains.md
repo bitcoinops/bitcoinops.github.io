@@ -28,6 +28,9 @@ optech_mentions:
   - title: "Notable changes: BIP301"
     url: /en/newsletters/2019/07/31/#bips-643
 
+  - title: "Opcodes enabling recursive covenants may also permit drivechains"
+    url: /en/newsletters/2022/03/09/#enablement-of-drivechains
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:

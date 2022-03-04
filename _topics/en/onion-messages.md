@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Eclair #2133 begins relaying onion messages by default"
     url: /en/newsletters/2022/01/26/#eclair-2133
 
+  - title: "Proposal to charge for onion message bandwidth"
+    url: /en/newsletters/2022/03/09/#paying-for-onion-messages
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
