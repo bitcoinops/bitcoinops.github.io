@@ -170,7 +170,7 @@ extra:
 
 ### Other CVEs
 {% for alias in page.aliases %}
-  * **[{{alias}}]({{page.extra.cves[alias].link | default: "#CVE-LINK-NOT-PROVIDED"}}):** {{page.extra.cves[alias].summary}}
+  * {:#{{alias}}} **[{{alias}}]({{page.extra.cves[alias].link | default: "#CVE-LINK-NOT-PROVIDED"}}):** {{page.extra.cves[alias].summary}}
 
   {%- for mention in page.optech_mentions -%}
     {%- if mention.title contains alias %}
@@ -182,3 +182,4 @@ extra:
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
+
