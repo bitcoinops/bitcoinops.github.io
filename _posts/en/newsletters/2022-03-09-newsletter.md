@@ -155,12 +155,61 @@ of notable changes to popular Bitcoin infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Open p2p connections to nodes that listen on non-default ports][reviews 23542] is a PR by Vasil Dimov to remove
+the preferential treatment of port 8333 in the selection of outbound peers. Participants discussed
+Bitcoin Core's automatic connection behavior, the benefits of a network with no default port,
+and rationale for avoiding certain ports.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/#FIXME"
+  q0="What are the historical reasons for the preferential treatment of the default port 8333?"
+  a0="This behavior has always existed, but Satoshi's motivation is not certain. Common folklore
+  suggests that it prevents leverage of the Bitcoin network to DoS a service by gossipping its address,
+  but this is not the actual historical reason. Another rumored
+  explanation is that a default port may help prevent an attacker from
+  dominating a node's IP address table and, thus, P2P connections using
+  a single IP address and many ports (what we would now call an [eclipse
+  attack][topic eclipse attacks])."
+  a0link="https://bitcoincore.reviews/23542#l-43"
+
+  q1="What are the benefits of removing the preferential treatment of port 8333 with this PR?"
+  a1="The initial method for filtering and storing IP addresses of potential peers was not as
+  sophisticated as it is today; we now limit the number of IP addresses we store by the addresses'
+  netgroups, AS, source peers, and more. We also rate-limit the amount of addresses we process and
+  relay in general. Given these changes to the address manager ('addrman') and address relay, the
+  preferential treatment has little impact on the prevention of eclipse and DoS attacks. Additionally,
+  preference for the default port means very few connections are made to nodes listening on
+  non-default ports. It's also a privacy leak that lets local network administrators detect Bitcoin
+  network traffic trivially - just look for port 8333. In the event that a government wishes to ban
+  Bitcoin, instructing ISPs to log and/or block traffic to a single port is much easier than trying to
+  identify Bitcoin traffic by monitoring data sent and received on all connections."
+  a1link="https://bitcoincore.reviews/23542#l-72"
+
+  q2="Before this change, automatic connections to peers listening on non-default ports were
+  discouraged, but not impossible. Under what circumstances would a node still connect to such
+  a peer?"
+  a2="In the automatic connection logic, the node attempts to connect to addresses randomly selected
+  from its address manager. If no connection has been successful after 50 attempts, it will start
+  considering non-default addresses. One participant noted that nodes in the functional tests don't
+  use default ports either, but it was pointed out that these nodes are connected using manual
+  connections, not automatic outbound connections."
+  a2link="https://bitcoincore.reviews/23542#l-123"
+
+  q3="After this PR, the default port still plays a role in Bitcoin Core. Where is it still used?"
+  a3="When a port is not provided, the default is used. This is particularly relevant for DNS seeds,
+  which new nodes use to bootstrap their address manager. Removing the concept of a default port
+  entirely would require finding an alternative, since DNS is designed to resolve domain names to IP
+  addresses, not to provide the addresses and ports of services."
+  a3link="https://bitcoincore.reviews/23542#l-137"
+
+  q4="What is the reason for allowing callers to pass salts to CServiceHash and then initializing it
+  with CServiceHash(0, 0) in commit [d0abce9][salt commit]?"
+  a4="Nodes announce their own address approximately every 24 hours, and each node gossips rumored
+  addresses to help nodes around the network discover new peers. This code uses the hash of the IP
+  address and current time to randomly pick one or two peers to forward a recently-received address
+  to. However, we don't want to make it possible to boost the propagation of an address simply by
+  sending it multiple times. Thus, we use the same salt (0, 0) and timestamp granularity of a day."
+  a4link="https://bitcoincore.reviews/23542#l-197"
+
 %}
 
 ## Releases and release candidates
@@ -246,3 +295,5 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [rl dos]: https://github.com/lightningdevkit/rust-lightning/blob/main/CHANGELOG.md#security
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [news186 pp]: /en/newsletters/2022/02/09/#ldk-1227
+[salt commit]: https://github.com/bitcoin-core-review-club/bitcoin/commit/d0abce9a50dd4f507e3a30348eabffb7552471d5
+[reviews 23542]: https://bitcoincore.reviews/23542
