@@ -194,7 +194,15 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   change may be found in the *Bitcoin Core PR Review Club* summary
   earlier in this newsletter.
 
-- [BDK #522][] and [#537][bdk #537] refactor wallet address caching into its own public method and Add API for internal addresses FIXME:adamjonas
+- [BDK #537][] refactors wallet address caching into a public method.
+  Previously, the only way to ensure that a wallet’s internal database
+  had addresses loaded and cached was through an internal function---meaning
+  that an offline wallet had no mechanism to ensure that the database had
+  addresses loaded. This patch enables use cases like offline wallets being
+  used as a multisig signer and validating change addresses. Relatedly,
+  [BDK #522][] adds an API for internal addresses, which is useful for
+  applications to create a transaction that splits an output into several
+  smaller ones.
 
 ## Footnotes
 
