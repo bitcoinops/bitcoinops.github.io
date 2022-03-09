@@ -124,7 +124,7 @@ of notable changes to popular Bitcoin infrastructure projects.
     sufficient for the bandwidth her messages use, Bob and Carol
     participate in relaying the messages to Zed.
 
-    Rusty Russel [replied][russell reply] with several criticisms, most
+    Rusty Russell [replied][russell reply] with several criticisms, most
     notably:
 
     - *HTLCs are already currently free:* the main counterargument

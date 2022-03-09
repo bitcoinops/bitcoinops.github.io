@@ -54,7 +54,7 @@ in the past week from popular Bitcoin infrastructure projects.
     transaction identifiers (for relay only) could reduce total
     transaction propagation bandwidth by a factor of 44x.  Sketches also
     have the potential to provide other desirable features---for
-    example, LN protocol developer Rusty Russel started a [thread][ln
+    example, LN protocol developer Rusty Russell started a [thread][ln
     minisketch] on the Lightning-Dev mailing list about using them for
     sending LN routing table updates.
 
