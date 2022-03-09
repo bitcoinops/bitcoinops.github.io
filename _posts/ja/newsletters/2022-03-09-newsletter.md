@@ -88,7 +88,7 @@ Onionメッセージの中継に使用される帯域幅に課金する提案を
     Aliceが支払った金額が、彼女のメッセージが使用する帯域幅に対して十分であれば、
     BobとCarolはZedへのメッセージの中継に参加します。
 
-    Rusty Russelは、いくつかの批判を[返信しました][russell reply]。特に:
+    Rusty Russellは、いくつかの批判を[返信しました][russell reply]。特に:
 
     - *HTLCは現在既に無料になっている:* Onionメッセージの中継が無料という懸念に対する主な反論は、
       LN上のトラフィックはHTLCを使用して基本的に無料で[^htlcs-essentially-free]中継することが既に可能であるということです。
