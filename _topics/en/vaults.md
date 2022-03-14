@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Should vaults always have a cooperative taproot keypath spend?"
     url: /en/newsletters/2021/10/13/#vaults
 
+  - title: Design and code for a CTV-based vault
+    url: /en/newsletters/2022/03/16/#continued-ctv-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
