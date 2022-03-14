@@ -42,6 +42,9 @@ optech_mentions:
     url: /en/newsletters/2020/08/05/#bip-taproot
     date: 2020-08-05
 
+  - title: "BTC-Lisp (based on Chia Lisp) as an alternative to Simplicity"
+    url: /en/newsletters/2022/03/16/#using-chia-lisp
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Simplicity: A New Language for Blockchains"

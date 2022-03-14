@@ -125,6 +125,9 @@ optech_mentions:
   - title: "HWI #545 adds support for taproot `tr()` descriptors"
     url: /en/newsletters/2022/01/05/#hwi-545
 
+  - title: "Bitcoin Core #24043 adds new `multi_a` and `sortedmulti_a` descriptors for taproot multisig"
+    url: /en/newsletters/2022/03/16/#bitcoin-core-24043
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

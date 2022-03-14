@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Discussion about RBF policy, including suggested changes"
     url: /en/newsletters/2022/02/09/#discussion-about-rbf-policy
 
+  - title: "Summary of recent proposed changes to RBF policy"
+    url: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
