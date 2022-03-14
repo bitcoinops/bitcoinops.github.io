@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Parameters published for `OP_CHECKTEMPLATEVERIFY` signet"
     url: /en/newsletters/2022/02/23/#ctv-signet
 
+  - title: Continued CTV discussion and the design for a CTV-based vault
+    url: /en/newsletters/2022/03/16/#continued-ctv-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

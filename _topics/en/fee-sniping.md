@@ -40,6 +40,9 @@ optech_mentions:
   - title: BIP proposed for wallets to set nSequence by default on taproot transactions
     url: /en/newsletters/2021/06/16/#bip-proposed-for-wallets-to-set-nsequence-by-default-on-taproot-transactions
 
+  - title: "BIPs #1269 assigns BIP326 to a recommendation for default taproot anti fee sniping"
+    url: /en/newsletters/2022/03/16/#bips-1269
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

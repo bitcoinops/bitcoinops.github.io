@@ -54,6 +54,9 @@ optech_mentions:
   - title: CVE-2021-31876 reduces expected cost of some pinning attacks
     url: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
 
+  - title: Idea to prevent pinning by allowing transaction to signal that descendant limits
+    url: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
