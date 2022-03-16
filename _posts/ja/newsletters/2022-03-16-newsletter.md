@@ -29,7 +29,7 @@ RBFポリシーの改善に関する最近の議論のまとめ、
       Bitcoinに追加することについて[投稿しました][towns btc-lisp]。
       これは従来のBitcoin ScriptやTapscriptとは全く異なる代替手段で、
       以前提案された[Simplicity][topic simplicity]言語と同じように新たなメリットを提供します。
-      Townsは、代替案の「Binary Tree Coded Lisp」または「btc-lisp」は、
+      Townsは、代替案の「Binary Tree Coded Script」または「btc-script」は、
       Simplicityよりも理解しやすく、使いやすいとしていますが、
       おそらく正式に検証するのは難しいでしょう。
 
