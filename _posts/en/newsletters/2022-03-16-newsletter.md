@@ -36,7 +36,7 @@ to popular Bitcoin infrastructure projects.
       Script and tapscript, providing some of the same benefits of a
       fresh start as the previously proposed [Simplicity][topic
       simplicity] language.  Towns suggests that his
-      alternative---"Binary Tree Coded Lisp" or "btc-lisp"---would be
+      alternative---"Binary Tree Coded Script" or "btc-script"---would be
       easier to understand and use than Simplicity, although perhaps it
       would be harder to formally validate.
 
