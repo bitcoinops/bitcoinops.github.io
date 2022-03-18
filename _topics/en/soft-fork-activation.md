@@ -124,6 +124,9 @@ optech_mentions:
   - title: Analysis of treating taproot outputs as always usable post-activation
     url: /en/newsletters/2021/12/08/#bitcoin-core-pr-review-club
 
+  - title: "Concern about Speedy Trial activation for controversial soft forks"
+    url: /en/newsletters/2022/03/23/#speedy-trial-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
