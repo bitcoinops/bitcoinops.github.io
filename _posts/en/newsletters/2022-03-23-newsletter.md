@@ -46,7 +46,28 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Coinswap implementation Teleport Transactions announced:**
+  In a recent Bitcoin-Dev mailing list [post][belcher teleport], Chris Belcher
+  announced an alpha [version 0.1][teleport transactions 0.1] of Teleport
+  Transactions that implements the [coinswap][topic coinswap] protocol.
+
+- **JoinMarket adds taproot sends:**
+  [JoinMarket v0.9.5][joinmarket v0.9.5] adds the ability to send to
+  [bech32m][topic bech32] addresses.
+
+- **Mercury Wallet adds RBF support:**
+  Mercury wallet, a wallet for the Mercury [statechain][topic statechains],
+  released [v0.6.5][mercury v0.6.5] including support for [Replace-by-Fee
+  (RBF)][topic rbf] transaction replacements for withdrawals.
+
+- **Hexa Wallet adds Lightning support:**
+  Hexa Wallet, a Bitcoin mobile wallet, added Lightning Network features for LND
+  users running their own node in the [v2.0.71 release][hexa v2.0.71].
+
+- **Sparrow adds BIP47 support:**
+  [Sparrow 1.6.0][sparrow 1.6.0] (and subsequent 1.6.1 and 1.6.2 releases) added
+  support and features for [BIP47][] reusable payment codes and [described the
+  features][sparrow wallet tweet].
 
 ## Releases and release candidates
 
@@ -117,3 +138,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news156 zcc]: /en/newsletters/2021/07/07/#zero-conf-channel-opens
 [boomerang]: https://arxiv.org/pdf/1910.01834.pdf
 [news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
+[belcher teleport]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/020026.html
+[teleport transactions 0.1]: https://github.com/bitcoin-teleport/teleport-transactions/releases/tag/0.1
+[joinmarket v0.9.5]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.5
+[mercury v0.6.5]: https://github.com/layer2tech/mercury-wallet/releases/tag/v0.6.5
+[hexa v2.0.71]: https://github.com/bithyve/hexa/releases/tag/v2.0.71
+[sparrow 1.6.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.6.0
+[sparrow wallet tweet]: https://twitter.com/SparrowWallet/status/1504458210366922759

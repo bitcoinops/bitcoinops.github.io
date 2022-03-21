@@ -64,6 +64,9 @@ optech_mentions:
   - title: "2020 year-in-review: routed coinswap discussion and implementation"
     url: /en/newsletters/2020/12/23/#coinswap-implementation
 
+  - title: "Teleport Transactions 0.1 implements routable coinswaps"
+    url: /en/newsletters/2022/03/23/#coinswap-implementation-teleport-transactions-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
