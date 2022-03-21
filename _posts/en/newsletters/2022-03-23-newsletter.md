@@ -92,7 +92,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   when using recent firmware versions with the BitBox02 hardware signing
   device.
 
-- [HWI #581][] trezor: Remove support for external inputs FIXME:Xekyo
+- [HWI #581][] disables support for signing transactions with external inputs (e.g. in a [coinjoin][topic coinjoin])
+  when using a Trezor with future firmware versions. This PR follows a firmware
+  change that broke the workaround HWI was using to achieve support. A
+  follow-up PR ([HWI #590][]) seems to indicate that Trezor is looking into
+  giving users a way to sign such transactions in the future.
 
 - [BDK #515][] begins retaining spent transaction outputs in the
   internal database.  This can be useful for creating [replacement
@@ -100,6 +104,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   implementation][bdk #549] of [BIP47][] reusable payment codes.
 
 {% include references.md %}
+{% include linkers/issues.md v=1 issues="2203,1311,910,1286,584,581,515,549,590" %}
 [hwi 2.1.0-rc.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.1.0-rc.1
 [bolt7 route rec]: https://github.com/lightning/bolts/blob/master/07-routing-gossip.md#recommendations-for-routing
 [oconnor st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020106.html
