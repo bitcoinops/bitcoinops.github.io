@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Summary of recent proposed changes to RBF policy"
     url: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
 
+  - title: "Discussion about allowing transaction witness replacement without a fee bump"
+    url: /en/newsletters/2022/03/30/#transaction-witness-replacement
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
