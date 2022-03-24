@@ -81,6 +81,9 @@ optech_mentions:
   - title: "Summary of LN developer conference, including discussion of MuSig2"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
+  - title: "Proposal to use MuSig2 in the LN gossip protocol"
+    url: /en/newsletters/2022/03/30/#minor-update
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures
