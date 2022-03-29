@@ -79,7 +79,30 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the advantages or disadvantages to address reuse?]({{bse}}112955)
+  RedGrittyBrick and Pieter Wuille list the downsides of address reuse including
+  privacy and debatable concerns around pubkey exposure. Wuille goes on to note
+  that while generating new addresses has no incremental financial costs, it
+  does add complexity to wallet software, backups, and usability.
+
+- [What is a block-relay-only connection and what is it used for?]({{bse}}112828)
+  User vnprc describes block-relay-only connections as peers that relay block information
+  but not transactions or network addresses of potential peers. These connections
+  help protect against partition (also known as [eclipse][topic eclipse attacks])
+  attacks by making it more difficult to determine Bitcoin's network topology
+  graph. vnprc goes on to describe anchor connections, a block-relay-only connection
+  that persists after a node restarts, further resisting eclipse attacks.
+
+- [Is timestamping needed for anything except difficulty adjustment?]({{bse}}112929)
+  Pieter Wuille explains the restrictions involving a block header's `nTime`
+  timestamp field (must be greater than the [Median Time Past (MTP)][news146
+  mtp] and no more than two hours in the future) and notes that the block's
+  timestamp is used for [difficulty][wiki difficulty] calculation and
+  transaction [timelocks][topic timelocks].
+
+- [How are attempts to spend from a timelocked UTXO rejected?]({{bse}}112989)
+  Pieter Wuille differentiates between locktimes for a transaction using the transaction's
+  `nLockTime` field and timelocks enforced using Script's [`OP_CHECKLOCKTIMEVERIFY`][BIP65] opcode.
 
 ## Releases and release candidates
 
@@ -151,3 +174,5 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news188 gossip]: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
 [russell gossip2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
+[wiki difficulty]: https://en.bitcoin.it/wiki/Difficulty
+[news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
