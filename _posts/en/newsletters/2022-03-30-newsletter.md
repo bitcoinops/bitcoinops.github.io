@@ -42,7 +42,7 @@ projects.
   information about available payment channels.  In particular, this
   week saw two active threads:
 
-    - *Major update:* in [response][osuntokun gossip2] to Rusty
+    - *Major update:* in [response][osuntokun gossip1.1] to Rusty
       Russell's [major update][russell gossip2] proposal from last month,
       Olaoluwa Osuntokun repeatedly expressed concern with an aspect of
       the proposal that would introduce plausible deniability in the
@@ -52,7 +52,7 @@ projects.
       could degrade the ability of a spender to find a working path
       across the network to the node receiving the funds.
 
-    - *Minor update:* Osuntokun [posted][osuntokun gossip1.1] a separate
+    - *Minor update:* Osuntokun [posted][osuntokun gossip2] a separate
       proposal for a much smaller update to the gossip protocol aimed
       mainly at allowing taproot-based channels.  The proposal uses
       [MuSig2][topic musig] to allow a single signature to prove
