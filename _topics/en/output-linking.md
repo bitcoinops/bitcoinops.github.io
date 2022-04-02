@@ -66,6 +66,9 @@ optech_mentions:
   - title: "Bitcoin Core #23065 allows the wallet to persistently prevent spending of spam UTXOs"
     url: /en/newsletters/2021/10/06/#bitcoin-core-23065
 
+  - title: "Silent addresses for delinked reusable addresses"
+    url: /en/newsletters/2022/04/06/#delinked-reusable-addresses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)
