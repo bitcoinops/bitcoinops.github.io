@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Sparrow 1.5.0 adds coinjoin suport"
     url: /en/newsletters/2021/10/20/#sparrow-adds-coinjoin-support
 
+  - title: "WabiSabi implemented in Wasabi 2.0"
+    url: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin

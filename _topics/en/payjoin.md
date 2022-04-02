@@ -77,6 +77,9 @@ optech_mentions:
   - title: "BTCPay Server #2450 makes generating payjoin-compatible invoices the default for new hot wallets"
     url: /en/newsletters/2021/06/23/#btcpay-server-2450
 
+  - title: "Tradeoffs of WabiSabi as an alternative to payjoin"
+    url: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
