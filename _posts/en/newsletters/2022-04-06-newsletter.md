@@ -164,7 +164,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   recipient who is liable for
   transaction fees.
 
-- [Bitcoin Core #23536][] Enforce Taproot script flags whenever WITNESS is set FIXME:glozow
+- [Bitcoin Core #23536][] sets validation rules to always enforce [taproot][topic taproot]
+  whenever segwit is enforced, including validation of historical blocks
+(except for block 692261 which included a transaction spending a v1 witness
+output before taproot activated). This *buried deployment* has also been done for P2SH and
+segwit soft forks (see [Newsletter #60][news60 buried]); it simplifies testing and code review, mitigates some
+risk of potential bugs in deployment code, and offers belt-and-suspenders
+protection for extreme scenarios in which a node downloads an alternative
+most-work block chain where taproot has not activated.
 
 - [Bitcoin Core #24555][] doc: create initial doc/cjdns.md for CJDNS how-to documentation FIXME:bitschmidty
 

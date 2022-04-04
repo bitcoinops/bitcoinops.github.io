@@ -224,6 +224,9 @@ optech_mentions:
   - title: "Question: is it possible to convert a taproot address into a v0 native segwit address?"
     url: /en/newsletters/2022/01/26/#is-it-possible-to-convert-a-taproot-address-into-a-v0-native-segwit-address
 
+  - title: "Bitcoin Core #23536 begins enforcing taproot on all blocks (except one) with segwit active"
+    url: /en/newsletters/2022/04/06/#bitcoin-core-23536
+
 ## Optional
 see_also:
   - title: MAST
