@@ -153,7 +153,16 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24118][] Add 'sendall' RPC née sweep FIXME:Xekyo
+- [Bitcoin Core #24118][] adds a new RPC, `sendall`, which empties a
+  wallet to the benefit of a single recipient address. The call's
+  options can be used specify additional recipients, specify a subset of
+  the wallet's UTXO pool to be used as inputs, or to maximize the
+  recipient amount by skipping dust rather than leaving no UTXOs behind.
+  `sendall` therefore offers a convenient alternative to achieve some
+  applications of the `fSubtractFeeAmount` argument to other `send*`
+  RPCs, but `fSubtractFeeAmount` is still the best option for paying a
+  recipient who is liable for
+  transaction fees.
 
 - [Bitcoin Core #23536][] Enforce Taproot script flags whenever WITNESS is set FIXME:glozow
 
