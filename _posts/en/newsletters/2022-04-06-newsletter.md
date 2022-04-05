@@ -173,7 +173,8 @@ risk of potential bugs in deployment code, and offers belt-and-suspenders
 protection for extreme scenarios in which a node downloads an alternative
 most-work block chain where taproot has not activated.
 
-- [Bitcoin Core #24555][] doc: create initial doc/cjdns.md for CJDNS how-to documentation FIXME:bitschmidty
+- [Bitcoin Core #24555][] adds [documentation][cjdns.md] for running Bitcoin Core over the
+  CJDNS [network][topic anonymity networks] (see [Newsletter #175][news175 cjdns]).
 
 - [C-Lightning #5013][] adds the ability to administer a node using gRPC
   with mTLS authentication.
@@ -234,3 +235,5 @@ most-work block chain where taproot has not activated.
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
 [huffman coding]: https://en.wikipedia.org/wiki/Huffman_coding
 [news60 buried]: /en/newsletters/2019/08/21/#hardcoded-previous-soft-fork-activation-blocks
+[news175 cjdns]: /en/newsletters/2021/11/17/#bitcoin-core-23077
+[cjdns.md]: https://github.com/jonatack/bitcoin/blob/f44efc3e2c5664825d7bd071f9dc38b5b9111ae1/doc/cjdns.md
