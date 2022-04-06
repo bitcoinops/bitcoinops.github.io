@@ -173,8 +173,9 @@ risk of potential bugs in deployment code, and offers belt-and-suspenders
 protection for extreme scenarios in which a node downloads an alternative
 most-work block chain where taproot has not activated.
 
-- [Bitcoin Core #24555][] adds [documentation][cjdns.md] for running Bitcoin Core over the
-  CJDNS [network][topic anonymity networks] (see [Newsletter #175][news175 cjdns]).
+- [Bitcoin Core #24555][] and [Bitcoin Core #24710][] add
+  [documentation][cjdns.md] for running Bitcoin Core over the CJDNS network
+  (see [Newsletter #175][news175 cjdns]).
 
 - [C-Lightning #5013][] adds the ability to administer a node using gRPC
   with mTLS authentication.
@@ -213,7 +214,7 @@ most-work block chain where taproot has not activated.
   save roughly 0.125 vbytes per LDK peer in onchain transactions.
 
 {% include references.md %}
-{% include linkers/issues.md v=1 issues="868,24118,23536,24555,5013,5121,2196,6263,1089,909,1388" %}
+{% include linkers/issues.md v=1 issues="868,24118,23536,24555,5013,5121,2196,6263,1089,909,1388,24710" %}
 [bitcoin core 23.0 rc2]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Notes-draft
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
@@ -236,4 +237,4 @@ most-work block chain where taproot has not activated.
 [huffman coding]: https://en.wikipedia.org/wiki/Huffman_coding
 [news60 buried]: /en/newsletters/2019/08/21/#hardcoded-previous-soft-fork-activation-blocks
 [news175 cjdns]: /en/newsletters/2021/11/17/#bitcoin-core-23077
-[cjdns.md]: https://github.com/jonatack/bitcoin/blob/f44efc3e2c5664825d7bd071f9dc38b5b9111ae1/doc/cjdns.md
+[cjdns.md]: https://github.com/bitcoin/bitcoin/blob/6a02355ae9/doc/cjdns.md
