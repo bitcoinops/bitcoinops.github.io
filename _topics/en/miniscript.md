@@ -55,6 +55,9 @@ optech_mentions:
   - title: Specter-DIY v1.5.0 adds support for miniscript
     url: /en/newsletters/2021/04/21/#specter-diy-v1-5-0
 
+  - title: "Bitcoin Core #24147 adds backend support for miniscript"
+    url: /en/newsletters/2022/04/13/#bitcoin-core-24147
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

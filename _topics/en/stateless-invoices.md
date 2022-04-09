@@ -38,6 +38,9 @@ optech_mentions:
   - title: "LDK #1199 uses stateless invoices to allow phantom node payments"
     url: /en/newsletters/2022/02/23/#ldk-1199
 
+  - title: "Core Lightning #5068 adds payer-side support for stateless invoices"
+    url: /en/newsletters/2022/04/13/#core-lightning-5068
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
