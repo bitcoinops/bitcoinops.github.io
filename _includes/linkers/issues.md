@@ -26,7 +26,6 @@ requests, and other templated URLs.
 [bitcoin core #{{_issue}}]: https://github.com/bitcoin/bitcoin/issues/{{_issue}}
 [bitcoin core gui #{{_issue}}]: https://github.com/bitcoin-core/gui/issues/{{_issue}}
 [lnd #{{_issue}}]: https://github.com/lightningnetwork/lnd/issues/{{_issue}}
-[c-lightning #{{_issue}}]: https://github.com/ElementsProject/lightning/issues/{{_issue}}
 [libsecp256k1 #{{_issue}}]: https://github.com/bitcoin-core/secp256k1/issues/{{_issue}}
 [eclair #{{_issue}}]: https://github.com/ACINQ/eclair/issues/{{_issue}}
 [bips #{{_issue}}]: https://github.com/bitcoin/bips/issues/{{_issue}}
@@ -42,4 +41,11 @@ requests, and other templated URLs.
 {% else %}
 [rust-lightning #{{_issue}}]: https://github.com/rust-bitcoin/rust-lightning/issues/{{_issue}}
 {% endif %}
+
+{% if include.v > 1 %}
+[core lightning #{{_issue}}]: https://github.com/ElementsProject/lightning/issues/{{_issue}}
+{% else %}
+[c-lightning #{{_issue}}]: https://github.com/ElementsProject/lightning/issues/{{_issue}}
+{% endif %}
+
 {% endfor %}
