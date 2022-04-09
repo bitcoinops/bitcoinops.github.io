@@ -84,6 +84,9 @@ optech_mentions:
   - title: "Proposal to use MuSig2 in the LN gossip protocol"
     url: /en/newsletters/2022/03/30/#minor-update
 
+  - title: "Proposed BIP for MuSig2"
+    url: /en/newsletters/2022/04/13/#musig2-proposed-bip
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures
