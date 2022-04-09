@@ -32,6 +32,7 @@
 [btcpay server repo]: https://github.com/btcpayserver/btcpayserver/
 [c-lightning]: https://github.com/ElementsProject/lightning
 [c-lightning repo]: https://github.com/ElementsProject/lightning
+[core lightning repo]: https://github.com/ElementsProject/lightning
 [eclair repo]: https://github.com/ACINQ/eclair
 [elementsproject.org]: https://elementsproject.org/
 [hwi repo]: https://github.com/bitcoin-core/HWI
