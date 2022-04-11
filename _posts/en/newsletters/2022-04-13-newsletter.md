@@ -68,12 +68,46 @@ software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Prevent block index fingerprinting by sending additional getheaders messages][reviews 24571]
+is a PR by Niklas Gögge to prevent a node from being fingerprinted based on its
+block index.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/23542#l-FIXME"
+
+  q0="What is the block index and what is it used for?"
+  a0="The block index is an in-memory index for looking up block headers and the
+locations of block data on disk. It may keep multiple branches (i.e. including
+stale block headers) of the block 'tree' to accommodate reorgs."
+  a0link="https://bitcoincore.reviews/24571#l-17"
+
+  q1="Should we keep stale blocks in the block index? Why or why not?"
+  a1="When multiple branches exist, keeping them indexed allows the node to
+quickly switch branches if the most-work chain changes.  Some participants noted
+that it may not be very useful to keep very old stale blocks, since the
+likelihood of a reorg is extremely low. However, these headers use very little
+storage space and, since nodes check the Proof of Work before storing them,
+sending valid-PoW stale headers in the hopes of exhausting nodes' resources
+would be disproportionately expensive."
+  a1link="https://bitcoincore.reviews/24571#l-68"
+
+  q2="Describe the attack using a node's block index for fingerprinting."
+  a2="During IBD, a node only requests and downloads blocks belonging to the
+most-work chain it learned about during the initial headers sync. As such, the
+stale blocks in its block index were usually mined after IBD, but this may vary
+naturally or be manipulated by an attacker with a large collection of past stale
+headers. An attacker with a stale branch of headers H and H+1 can send H+1 to a
+node. If the node doesn't have H+1's predecessor, H, in its block index, it will
+request H using a `getdata` message. If it already has H, it won't request it."
+  a2link="https://bitcoincore.reviews/24571#l-75"
+
+  q3="Why is it important to prevent node fingerprinting?"
+  a3="Node operators may employ various techniques to obfuscate their node's IP
+address, e.g. by using Tor.  However, the privacy benefits may be limited or
+negated if attackers can link the IPv4 and Tor addresses of a node running on
+both networks. If a node is running on Tor only, fingerprinting could be used to
+link multiple Tor addresses belonging to the same node, or identify the node
+if/when it switches to IPv4."
+  a3link="https://bitcoincore.reviews/24571#l-84"
 %}
 
 ## Releases and release candidates
@@ -145,3 +179,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [musig2 bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki
 [ldk 0.0.106]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.106
 [btcpay server 1.4.9]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.4.9
+[reviews 24571]: https://bitcoincore.reviews/24571
