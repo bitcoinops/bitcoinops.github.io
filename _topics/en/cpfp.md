@@ -65,6 +65,9 @@ optech_mentions:
   - title: "BTCPay Server 1.4.5 adds support for CPFP fee bumping"
     url: /en/newsletters/2022/03/02/#btcpay-server-1-4-6
 
+  - title: "Bitcoin Core #24152 begins accepting low-feerate transactions that are paid for by their children"
+    url: /en/newsletters/2022/04/13/#bitcoin-core-24152
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
