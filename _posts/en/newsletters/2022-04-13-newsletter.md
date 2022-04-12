@@ -144,7 +144,15 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24152][] policy / validation: CPFP fee bumping within packages FIXME:adamjonas
+- [Bitcoin Core #24152][] enables [CPFP][topic cpfp] fee bumping in
+  child-with-unconfirmed-parents packages by introducing [package
+  feerate][]
+  and using it in place of individual feerate. As mentioned in
+  [newsletter #186][news186 package], this is part of a series of changes
+  to enhance the flexibility and reliability of both CPFP and [RBF][topic rbf] fee bumping.
+  This patch also [validates individual transactions first][]
+  to avoid incentive-incompatible policies like "parents pay for children"
+  or "siblings pay for siblings" behavior.
 
 - [Bitcoin Core #24098][] updates the `/rest/headers/` and
   `/rest/blockfilterheaders/` RPCs to use query parameters for
@@ -167,7 +175,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   Receiver-side support is not added to CLN in this PR.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5068" %}
+{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5068,910" %}
 [bitcoin core 23.0 rc4]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Notes-draft
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
@@ -180,3 +188,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [ldk 0.0.106]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.106
 [btcpay server 1.4.9]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.4.9
 [reviews 24571]: https://bitcoincore.reviews/24571
+[news186 package]: /en/newsletters/2021/09/22/#package-mempool-acceptance-and-package-rbf
+[package feerate]: https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#fee-related-checks-use-package-feerate
+[validates individual transactions first]: https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#always-try-individual-submission-first
