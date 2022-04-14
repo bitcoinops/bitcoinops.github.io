@@ -46,6 +46,9 @@ optech_mentions:
   - title: PR opened for initial BIP151 support, NewHope quantum resistance to follow
     url: /en/newsletters/2018/08/28/#pr-opened-for-initial-bip151-support
 
+  - title: "Discussion about quantum-safe key exchange"
+    url: /en/newsletters/2022/04/20/#quantum-safe-key-exchange
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
