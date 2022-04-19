@@ -53,7 +53,22 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Bitcoin.com adds segwit sends:**
+  In a [recent update][bitcoin.com segwit] to the Bitcoin.com wallet, sending to
+  native segwit ([bech32][topic bech32]) addresses is now supported.
+
+- **Kraken adds Lightning support:**
+  Kraken, using LND, added [support for Lightning][kraken lightning] deposits
+  and withdrawals of up to 0.1 BTC.
+
+- **Cash App adds Lightning receive support:**
+  After previously adding [LN send features][news183 cash app ln send], Cash App
+  launched the ability for users to now receive payments via the Lightning
+  Network. Cash App uses [Lightning Development Kit (LDK)][ldk website] for LN features.
+
+- **BitPay adds Lightning receive support:**
+  Payment processor BitPay [announced support][bitpay lightning] for their
+  merchants to accept LN payments.
 
 ## Releases and release candidates
 
@@ -116,3 +131,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [bitcoinproblems.org]: https://bitcoinproblems.org/
 [news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
 [news158 cl4646]: /en/newsletters/2021/07/21/#c-lightning-4646
+[bitcoin.com segwit]: https://support.bitcoin.com/en/articles/3919131-can-i-send-to-a-bc1-address
+[kraken lightning]: https://blog.kraken.com/post/13502/kraken-now-supports-instant-lightning-network-btc-transactions/
+[news183 cash app ln send]: /en/newsletters/2022/01/19/#cash-app-adds-lightning-support
+[ldk website]: https://lightningdevkit.org/
+[bitpay lightning]: https://bitpay.com/blog/bitpay-supports-lightning-network-payments/
