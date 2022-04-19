@@ -96,7 +96,12 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #5810][] routing: send payment metadata FIXME:Xekyo maybe related to https://bitcoinops.org/en/topics/stateless-invoices/
+- [LND #5810][] implements sending support for payment metadata. If an
+  invoice includes payment metadata, a sender will encode that data as a
+  TLV record for the receiver. This is another step towards unlocking
+  [stateless invoices][topic stateless invoices] which allow a receiver
+  to forgo storing invoices shown to potential senders by
+  regenerating them when a payment attempt reaches the receiver.
 
 - [LND #6212][] prevents HTLCs from being sent through the HTLC
   interceptor to an external process if accepting the HTLC might require
