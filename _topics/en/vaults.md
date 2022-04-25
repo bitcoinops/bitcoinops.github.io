@@ -80,6 +80,9 @@ optech_mentions:
   - title: Design and code for a CTV-based vault
     url: /en/newsletters/2022/03/16/#continued-ctv-discussion
 
+  - title: Proposal to use simple vaults as one benchmark for comparing different covenant designs
+    url: /en/newsletters/2022/04/27/#suggested
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
