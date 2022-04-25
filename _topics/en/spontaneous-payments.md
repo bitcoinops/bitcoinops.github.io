@@ -73,6 +73,9 @@ optech_mentions:
   - title: "LND #5803 allows multiple spontaneous payments to the same invoice"
     url: /en/newsletters/2021/11/03/#lnd-5803
 
+  - title: "LND #5414 begins advertising support for previously-implemented keysend payments"
+    url: /en/newsletters/2022/04/27/#lnd-6414
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -92,6 +92,9 @@ optech_mentions:
   - title: OP_TXHASH as a proposed alternative to CTV and APO
     url: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 
+  - title: "Request to activate a slightly modified APO instead of (or before) CTV"
+    url: /en/newsletters/2022/04/27/#requested
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

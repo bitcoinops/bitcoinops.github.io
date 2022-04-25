@@ -127,6 +127,12 @@ optech_mentions:
   - title: "Concern about Speedy Trial activation for controversial soft forks"
     url: /en/newsletters/2022/03/23/#speedy-trial-discussion
 
+  - title: Discussion about when activating a soft fork is justified
+    url: /en/newsletters/2022/04/27/#argued
+
+  - title: Proposal for automatically reverting soft forks
+    url: /en/newsletters/2022/04/27/#relayed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds

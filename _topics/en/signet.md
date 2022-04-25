@@ -108,6 +108,9 @@ optech_mentions:
   - title: "Parameters published for `OP_CHECKTEMPLATEVERIFY` signet"
     url: /en/newsletters/2022/02/23/#ctv-signet
 
+  - title: Analysis of transactions on the CTV signet
+    url: /en/newsletters/2022/04/27/#analyzed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
