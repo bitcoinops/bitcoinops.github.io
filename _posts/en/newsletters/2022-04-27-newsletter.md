@@ -143,12 +143,35 @@ few spare moments to help curious or confused users.  In
 this monthly feature, we highlight some of the top-voted questions and
 answers posted since our last update.*
 
-{% comment %}<!--
-https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer
--->{% endcomment %}
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How was the generator point G chosen in the secp256k1 curve?]({{bse}}113116)
+  Pieter Wuille notes that while the exact rationale behind choosing constant [generator
+  point G][se 29904] is not publicly known, an unusual property may hint of its construction.
+
+- [What is the maximum, realistic P2P message payload size?]({{bse}}113059)
+  0xb10c asks if there is a valid [P2P message][p2p messages] of `MAX_SIZE` (32MB). Pieter
+  Wuille explains that `MAX_PROTOCOL_MESSAGE_LENGTH` ([4MB][bitcoin protocol
+  4mb], increased from [2MB][Bitcoin Core #5843] as
+  [part of segwit][Bitcoin Core #8149]) is what actually restricts the size of incoming messages to
+  prevent denial-of-service attacks.
+
+- [Is there evidence for lack of stale blocks?]({{bse}}113413)
+  Lightlike references a historical chart of block propagation times from the
+  [KIT statistics][] website and points out [compact block relay][topic compact
+  block relay] ([BIP152][]), implemented initially in [#8068][Bitcoin Core
+  #8068], as a contributor to decreased [stale block][se 5866] frequency over time.
+
+  {:.center}
+  ![Block Propagation Delay History chart](/img/posts/2022-04-block-propagation-delay.png)
+
+- [Does a coinbase transaction's input field have a VOUT field?]({{bse}}113392)
+  Pieter Wuille outlines the requirements for a coinbase transaction's input: the
+  prevout hash must be
+  `0000000000000000000000000000000000000000000000000000000000000000`, the prevout
+  index must be `ffffffff`, it must have a 2-100 byte `scriptSig` length,
+  and since [BIP34][] the `scriptSig` must also start with the block height.
 
 ## Releases and release candidates
 
@@ -194,7 +217,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   this merged PR for LND replicates that.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="5157,6414" %}
+{% include linkers/issues.md v=2 issues="5157,6414,5843,8149,8068" %}
 [bitcoin core 23.0]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-23.0.md
 [core lightning 0.11.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0.1
@@ -217,3 +240,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [fiatjaf vault]: https://twitter.com/fiatjaf/status/1517836181240782850
 [rubin path forward]: https://twitter.com/JeremyRubin/status/1518477022439247872
 [darosior vault]: https://twitter.com/darosior/status/1518961471702642689
+[se 29904]: https://bitcoin.stackexchange.com/questions/29904/
+[p2p messages]: https://developer.bitcoin.org/reference/p2p_networking.html#data-messages
+[bitcoin protocol 4mb]: https://github.com/bitcoin/bitcoin/commit/2b1f6f9ccf36f1e0a2c9d99154e1642f796d7c2b
+[KIT statistics]: https://www.dsn.kastel.kit.edu/bitcoin/index.html
+[se 5866]: https://bitcoin.stackexchange.com/a/5866/87121
