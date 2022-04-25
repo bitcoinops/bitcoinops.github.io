@@ -85,6 +85,12 @@ optech_mentions:
   - title: Continued CTV discussion and the design for a CTV-based vault
     url: /en/newsletters/2022/03/16/#continued-ctv-discussion
 
+  - title: Discussion about activating CTV
+    url: /en/newsletters/2022/04/27/#discussion-about-activating-ctv
+
+  - title: Implications of bare CTV not having an address format
+    url: /en/newsletters/2022/04/27/#noted
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
