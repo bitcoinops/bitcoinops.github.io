@@ -102,7 +102,7 @@ infrastructure software.
     code, so the CTV code might need to be maintained in perpetuity even
     if the opcode was disabled after five years.
 
-  - Antoine "Darosior" Poinsot [requested][darosior apo] activating a
+  - Antoine "Darosior" Poinsot [requested][darosior apo] feedback about activating a
     slightly modified version of [BIP118][] `SIGHASH_ANYPREVOUT`
     ([APO][topic sighash_anyprevout]) instead of CTV, or at least prior
     to CTV activation.  The modification to APO would allow it to
