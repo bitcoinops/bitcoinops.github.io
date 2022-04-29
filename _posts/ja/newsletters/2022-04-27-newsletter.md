@@ -77,7 +77,7 @@ Bitcoin Stack Exchangeのトップの質問とその回答、
 
   - Antoine "Darosior" Poinsotは、CTVの代わりに、
     [BIP118][] `SIGHASH_ANYPREVOUT` ([APO][topic sighash_anyprevout])の少し修正されたバージョンを、
-    あるいは少なくともCTVのアクティベートの前にこれをアクティベートすることを[要求しました][darosior apo]。
+    あるいは少なくともCTVのアクティベートの前にこれをアクティベートすることについてフィードバックを[求めました][darosior apo]。
     APOを修正することで、アプリケーションによってはより高いコストになるものの、
     CTVの機能をエミュレートすることができます。APOをアクティベートすることで、
     LNで提案されている[Eltoo][topic eltoo]レイヤーを有効にするという本来の用途も可能になり、
