@@ -65,6 +65,9 @@ optech_mentions:
   - title: "BOLTs #877 removes the protocol-level per-payment amount limit"
     url: /en/newsletters/2021/06/30/#bolts-877
 
+  - title: "LDK #1425 adds support for large channels"
+    url: /en/newsletters/2022/05/04/#ldk-1425
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)

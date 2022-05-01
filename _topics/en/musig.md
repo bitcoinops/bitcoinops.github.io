@@ -87,6 +87,12 @@ optech_mentions:
   - title: "Proposed BIP for MuSig2"
     url: /en/newsletters/2022/04/13/#musig2-proposed-bip
 
+  - title: MuSig2 implementation notes
+    url: /en/newsletters/2022/05/04/#musig2-implementation-notes
+
+  - title: "LND #6361 adds support for MuSig2 signing"
+    url: /en/newsletters/2022/05/04/#lnd-6361
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures
