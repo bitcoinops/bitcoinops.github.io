@@ -35,6 +35,9 @@ optech_mentions:
   - title: New LN gossip wire protocol proposal designed for use with minisketch
     url: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
 
+  - title: Research into interaction between LN rate limiting and minisketch gossiping
+    url: /en/newsletters/2022/05/04/#ln-gossip-rate-limiting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Erlay
