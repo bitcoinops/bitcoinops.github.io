@@ -133,6 +133,9 @@ optech_mentions:
   - title: Proposal for automatically reverting soft forks
     url: /en/newsletters/2022/04/27/#relayed
 
+  - title: Proposal to use transaction signaling to measure support for consensus changes
+    url: /en/newsletters/2022/05/04/#measuring-user-support-for-consensus-changes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
