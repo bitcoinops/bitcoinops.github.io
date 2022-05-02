@@ -173,7 +173,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   Bitcoin Core's internal wallet; other Bitcoin wallet software is
   unaffected.
 
-- [Bitcoin Core #24322][] [kernel 1/n] Introduce initial `libbitcoinkernel` FIXME:glozow
+- [Bitcoin Core #24322][] is part of a larger effort to extract out a consensus engine by creating a
+  library to use Bitcoin Core's consensus code as-is, then incrementally pruning modules to make the
+  library more minimal.  Namely, this PR introduces a `libbitcoinkernel` library delineating all of
+  the source files the `bitcoin-chainstate` executable (introduced in [Bitcoin Core #24304][]) needs
+  to link against. The list includes files that may not seem logically related to consensus,
+  illustrating the current dependencies of Bitcoin Core's consensus engine. Future work will
+  modularize consensus from the rest of the codebase, removing these files from `libbitcoinkernel`'s
+  source list.
 
 - [Bitcoin Core #21726][] adds the ability to maintain a coinstats
   index even on pruned nodes.  Coinstats includes the MuHash digest of
@@ -208,7 +215,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   implementations.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="18554,24322,21726,6064,557,981,6361,1425,3476" %}
+{% include linkers/issues.md v=2 issues="18554,24322,21726,6064,557,981,6361,1425,3476,24304" %}
 [tetrud signal favor]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020350.html
 [ivgi signal hodl voting]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020364.html
 [aronesty signal parse scripts]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020354.html
