@@ -190,6 +190,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [LDK #1425][] adds support for [large channels][topic large channels]
   ("wumbo channels"), which are channels which support high value payments.
 
+- [LND #6064][] adds new `bitcoind.config` and `bitcoind.rpccookie`
+  configuration options to specify non-default paths for the configuration and
+  RPC cookie files.
+
 - [LND #6361][] updates the `signrpc` method <!-- yes, "signrpc" is the
   RPC's name --> to be able to create signatures using the
   [MuSig2][topic musig] algorithm.  See the [documentation][lnd6361 doc]
