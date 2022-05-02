@@ -192,7 +192,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   some time after validating them) when the `-coinstatsindex`
   configuration option is enabled.
 
-- [BDK #557][] add OldestFirstCoinSelection FIXME:Xekyo
+- [BDK #557][] adds the Oldest First coin selection algorithm. There are now four
+  coin selection algorithms: Branch and Bound (BnB), Single Random Draw (SRD),
+  Oldest First, and Largest First. By default BDK will use BnB with SRD as a
+  fallback if no solution was found by BnB.
 
 - [LDK #1425][] adds support for [large channels][topic large channels]
   ("wumbo channels"), which are channels which support high value payments.
