@@ -1,8 +1,8 @@
 ---
 title: 'Zpravodaj „Bitcoin Optech” č. 198'
 permalink: /cs/newsletters/2022/05/04/
-name: 2022-05-04-newsletter
-slug: 2022-05-04-newsletter
+name: 2022-05-04-newsletter-cs
+slug: 2022-05-04-newsletter-cs
 type: newsletter
 layout: newsletter
 lang: cs
@@ -19,7 +19,7 @@ verzí a významné změny v populárních bitcoinových infrastrukturních proj
 - **Poznámky k implementaci MuSig2[^musig2]:** Olaoluwa Osuntokun poslal
   [odpověď][osuntokun musig2] k návrhu BIPu pro [MuSig2][topic musig],
   jež byl zmíněn ve [zpravodaji č. 195][news195 musig2] *(angl.)*. Připojil
-  několik postřehů z implementace, na které on a další pracovali pro BTCD a LND:
+  několik postřehů z implementace, na které on a další pracovali pro btcd a LND:
 
     - *Interakce s BIP86:* klíče vytvořené podle [BIP32][topic bip32][^bip32]
 	  peněženkou, která též implementuje [BIP86][][^bip86], se řídí doporučením
