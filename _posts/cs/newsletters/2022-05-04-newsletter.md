@@ -183,16 +183,16 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 
 ## Poznámky a vysvětlivky
 
-[^anchor]: Anchor výstupy jsou výstupy v commitment transakcích, které umožňují v případě potřeby zvýšit transakční poplatek. To může být potřeba, protože tyto transakce mohou být odeslány v daleké budoucnosti
-[^bip32]: BIP32 popisuje deterministickou derivaci hierarchie klíčů
-[^bip86]: BIP86 popisuje derivaci klíčů pro Taproot
-[^bip341]: BIP341 popisuje dva způsoby Taproot platby: buď klíčem („keypath spend”) nebo skriptem („scriptpath spend”)
+[^anchor]: [Anchor výstupy][topic anchor outputs] jsou výstupy v commitment transakcích, které umožňují v případě potřeby zvýšit transakční poplatek. To může být potřeba, protože tyto transakce mohou být odeslány v daleké budoucnosti
+[^bip32]: [BIP32][topic bip32] popisuje deterministickou derivaci hierarchie klíčů
+[^bip86]: [BIP86][] popisuje derivaci klíčů pro Taproot
+[^bip341]: [BIP341][] popisuje dva způsoby Taproot platby: buď klíčem („keypath spend”) nebo skriptem („scriptpath spend”)
 [^gossip]: Gossip (v překladu „drby”) protokol je metoda, kterou si uzly v decentralizované síti navzájem posílají zprávy o stavu sítě
-[^musig2]: MuSig2 je protokol pro agregaci veřejných klíčů a podpisů za použití Schnorrova algoritmu
+[^musig2]: [MuSig2][topic musig] je protokol pro agregaci veřejných klíčů a podpisů za použití Schnorrova algoritmu
 [^nonce]: nonce je náhodné či pseudonáhodné číslo, které smí být použito pouze jednou („number once”) v kryptografické komunikaci
 [^tweak]: tweakování je úprava kryptografických klíčů matematickou operací
 [^coinstats]: coinstats (coin statistics) je optimalizace, která umožňuje rychlejší výpočet statistik UTXO, včetně např. celkového počtu existujících bitcoinů
-[^assumeUTXO]: assumeUTXO je návrh, který umožní novým uzlům odložit validaci blockchainu na později a začít tak přijímat nové transakce rychleji
+[^assumeUTXO]: [assumeUTXO][topic assumeutxo] je návrh, který umožní novým uzlům odložit validaci blockchainu na později a začít tak přijímat nové transakce rychleji
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="18554,24322,24304,21726,6064,557,981,6361,1425,3476" %}
