@@ -69,6 +69,8 @@ languages:
     name: Japanese
   - code: es
     name: Spanish
+  - code: cs
+    name: Czech
 
 ## In-text aliases
 trb: "709,632" # TapRoot Block (activation)
