@@ -34,12 +34,12 @@ segwit:
   features:
     receive:
       p2sh_wrapped: "false"
-      bech32: "false"
-      default: "p2sh"
+      bech32: "true"
+      default: "bech32"
     send:
       bech32: "true"   # https://blog.bitmex.com/bitmex-enables-bech32-sending-support/
-      change_bech32: "false"
-      segwit_v1: "Bech32 not supported."
+      change_bech32: "true"
+      segwit_v1: "Bech32m supported." # https://twitter.com/BitMEXResearch/status/1492152557044654082
       bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/bitmex/segwit/receive-screen.png
