@@ -169,13 +169,13 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [Core Lightning #5165][] updates the name of the C-Lightning Project
   to [Core Lightning][core lightning repo], or CLN for short.
 
-- [Core Lightning #5068][] adds support for attaching
+- [Core Lightning #5086][] adds support for attaching
   `option_payment_metadata` invoice data to a payment, adding payer-side
   support for [stateless invoices][topic stateless invoices].
   Receiver-side support is not added to CLN in this PR.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5068,910" %}
+{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5086,910" %}
 [bitcoin core 23.0 rc4]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Notes-draft
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
