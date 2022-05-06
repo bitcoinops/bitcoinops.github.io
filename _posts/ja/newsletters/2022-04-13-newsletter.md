@@ -137,12 +137,12 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 
 - [Core Lightning #5165][]は、C-Lightningプロジェクトの名称を[Core Lightning][core lightning repo]またはCLNに更新しました。
 
-- [Core Lightning #5068][]は、`option_payment_metadata`インボイスデータを支払いに添付するためのサポートを追加し、
+- [Core Lightning #5086][]は、`option_payment_metadata`インボイスデータを支払いに添付するためのサポートを追加し、
   [ステートレスインボイス][topic stateless invoices]の支払い者側のサポートを追加しました。
   このPRでは、受信者側のサポートはCLNに追加されていません。
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5068,910" %}
+{% include linkers/issues.md v=2 issues="24152,24098,24147,24148,24149,5165,5086,910" %}
 [bitcoin core 23.0 rc4]: https://bitcoincore.org/bin/bitcoin-core-23.0/
 [bcc23 rn]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Notes-draft
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide

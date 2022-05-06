@@ -39,7 +39,7 @@ optech_mentions:
     url: /en/newsletters/2022/02/23/#ldk-1199
 
   - title: "Core Lightning #5068 adds payer-side support for stateless invoices"
-    url: /en/newsletters/2022/04/13/#core-lightning-5068
+    url: /en/newsletters/2022/04/13/#core-lightning-5086
 
   - title: "LND #5810 implements sending support for payment metadata"
     url: /en/newsletters/2022/04/20/#lnd-5810
