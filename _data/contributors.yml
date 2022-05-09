@@ -3,19 +3,6 @@
 ## differentiate the two types of information
 contributors:
   -
-    name: John Newbery
-    github: jnewbery
-    avatar: newbery.jpg
-    quote: >-
-      "I started Optech because if Bitcoin is to be successful, then one of the fundamental challenges facing Bitcoin services and businesses will be how to maximize customer utility by making efficient use of the blockchain. Helping Bitcoin ecosystem players adopt scaling techniques and technologies is one of the most effective ways we can help Bitcoin scale today."
-  -
-    name: Steve Lee
-    other_affiliation: Director, <a href="https://spiral.xyz">Spiral</a>
-    github: moneyball
-    avatar: lee.png
-    quote: >-
-      "I am excited to help Bitcoin Optech Group make a meaningful contribution to Bitcoin. I’m looking forward to working with businesses to develop implementation best practices and to build a bridge between businesses and the open source community."
-  -
     name: David A. Harding
     github: harding
     avatar: harding.png
@@ -43,13 +30,6 @@ contributors:
     quote: >-
       "New Bitcoin technologies, and more importantly, their rationales will always take some time to propagate from the engineers working on the bleeding-edge to the services and businesses focused on serving their customers. I'm honored to be able to help Optech accelerate this process."
   -
-    name: Jon Atack
-    other_affiliation: Sponsored Developer, <a href="https://spiral.xyz">Spiral</a>
-    github: jonatack
-    avatar: atack.jpg
-    quote: >-
-      "I see Bitcoin Optech as an outstanding resource for Bitcoin services and businesses to not only stay up to date on operational changes in Bitcoin open source engineering and R&D but also to gain vital contextual understanding to anticipate and deploy them effectively. I am thrilled for the opportunity to help Optech in this mission."
-  -
     name: Mark Erhardt
     other_affiliation: Developer, <a href="https://chaincode.com">Chaincode Labs</a>
     github: Xekyo
@@ -58,7 +38,7 @@ contributors:
       "The Optech newsletter has been one of the most informative and reliable resources for any Bitcoin engineer since its inception. With its workshops, the Bitcoin Optech Group is bringing together the engineers in the space and paving the road for adoption of best practices and new protocol features."
   -
     name: Gloria Zhao
-    other_affiliation: Fellow, <a href="https://brink.dev">Brink</a>
+    other_affiliation: Grantee, <a href="https://brink.dev">Brink</a>
     github: glozow
     avatar: zhao.jpg
     quote: >-
@@ -70,3 +50,29 @@ contributors:
     avatar: azuchi.png
     quote: >-
       "Bitcoin is a very exciting innovation, and many protocols and cryptographic improvements are still being proposed. Understanding these is important for Bitcoin services and businesses, and Optech is one of the most useful resources for that. I hope to contribute to making Bitcoin technical information available to a wide range of people."
+
+contributors_alum:
+ -
+    name: John Newbery
+    github: jnewbery
+    avatar: newbery.jpg
+ -
+    name: Jon Atack
+    other_affiliation: Sponsored Developer, <a href="https://spiral.xyz">Spiral</a>
+    github: jonatack
+    avatar: atack.jpg
+ -
+    name: Steve Lee
+    other_affiliation: Director, <a href="https://spiral.xyz">Spiral</a>
+    github: moneyball
+    avatar: lee.png
+ -
+    name: James O'Beirne
+    other_affiliation: Open Source Engineer, <a href="https://nydig.com/">NYDIG</a>
+    github: jamesob
+    avatar: https://avatars1.githubusercontent.com/u/73197?s=400&v=4
+ -
+    name: Marcin Jachymiak
+    other_affiliation: Software Engineer, <a href="https://gauntlet.network/">Gauntlet</a>
+    github: marcinja
+    avatar: https://avatars1.githubusercontent.com/u/12243734?s=400&v=4
