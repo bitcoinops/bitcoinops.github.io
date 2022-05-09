@@ -46,7 +46,12 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Rust Bitcoin #716][] Added `amount::Display` - configurable formatting FIXME:adamjonas
+- [Rust Bitcoin #716][] Added `amount::Display`, a configurable Display
+  type for denominations or other user-facing amounts. This patch reduces
+  all representations of numbers to the minimum width by default, thereby
+  reducing the use of superfluous zeros that caused [BIP21][] URIs to be
+  needlessly longer, which often made QR codes larger or harder to scan
+  than necessary.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="716" %}
