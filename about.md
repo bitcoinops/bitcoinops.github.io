@@ -42,6 +42,14 @@ MIT license. Anyone is welcome to contribute by opening issues and pull
 requests, reviewing newsletters and other material, and contributing
 translations. Our most regular contributors are:
 
-{% include contributors.html %}
+{% assign contributors = site.data.contributors.contributors | sort: "name" %}
+{% include contributors.html id="contributors" %}
 
 {% include sponsors.html %}
+
+## Former Optech Contributors
+
+We thank all of our previous contributors for their efforts.
+
+{% assign contributors = site.data.contributors.contributors_alum | sort: "name" %}
+{% include contributors.html id="contributors_alum" %}

@@ -1,6 +1,4 @@
-{% assign contributors = site.data.contributors.contributors | sort: "name" %}
-
-<div id="contributors">
+<div id="{{include.id}}">
 
     <ul class="contributors n-column-list">
         {% for contributor in contributors %}

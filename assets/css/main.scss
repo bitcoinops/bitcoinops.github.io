@@ -70,6 +70,10 @@ ul.contributors {
     }
 }
 
+div#contributors_alum li {
+  min-height: 19em;
+}
+
 // Enable this if you want to use a n-column list with FontAwesome
 // icons replacing the bullets
 //.n-column-list .fa-li {
