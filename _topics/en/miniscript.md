@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Bitcoin Core #24147 adds backend support for miniscript"
     url: /en/newsletters/2022/04/13/#bitcoin-core-24147
 
+  - title: "Adapting descriptors and miniscript for hardware signing devices"
+    url: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

@@ -73,6 +73,12 @@ optech_mentions:
   - title: "Discussion about the risks of allowing recursive covenants"
     url: /en/newsletters/2022/03/09/#limiting-script-language-expressiveness
 
+  - title: "When would enabling `OP_CAT` allow recursive covenants?"
+    url: /en/newsletters/2022/05/18/#when-would-enabling-op-cat-allow-recursive-covenants
+
+  - title: "Updated `OP_TX` opcode useful for constructing covenants"
+    url: /en/newsletters/2022/05/18/#updated-op-tx-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

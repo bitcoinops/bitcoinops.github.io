@@ -63,6 +63,9 @@ optech_mentions:
   - title: "Summary of LN developer conference, including discussion of eltoo"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
+  - title: "Using transaction introspection to prevent pinning in eltoo channels"
+    url: /en/newsletters/2022/05/18/#using-transaction-introspection-to-prevent-rbf-pinning
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
