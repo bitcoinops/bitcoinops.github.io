@@ -58,6 +58,9 @@ optech_mentions:
   - title: Discussion about how Simplicity could be used for covenants
     url: /en/newsletters/2020/08/05/#bip-taproot
 
+  - title: "Replicating the `OP_CSFS` covenant-enabling opcode with `OP_CAT` and schnorr signatures"
+    url: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
+
   - title: "OP_TAPLEAF_UPDATE_VERIFY opcode proposed with a taproot-native covenant design"
     url: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 
