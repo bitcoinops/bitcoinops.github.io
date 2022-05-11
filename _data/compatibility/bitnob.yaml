@@ -1,0 +1,70 @@
+---
+name: Bitnob
+internal_url: /en/compatibility/bitnob
+logo: /img/compatibility/bitnob/bitnob.svg
+rbf:
+  tested:
+    date: "2022-05-11"
+    platforms:
+      - android
+    version: "10.0.0"
+  features:
+    receive:
+      notification: "na"
+      list: "na"
+      details: "na"
+      shows_replaced_version: "false"
+      shows_original_version: "false"
+    send:
+      signals_bip125: "false"
+      list: "untested"
+      details: "untested"
+      shows_replaced_version: "untested"
+      shows_original_version: "untested"
+  examples:
+    - image: /img/compatibility/bitnob/rbf/send-screen-default.png
+      caption: >
+        Sending Transaction - Default send transaction screen.
+    - image: /img/compatibility/bitnob/rbf/send-confirm.png
+      caption: >
+        Sending Transaction - Send transaction confirmation screen.
+    - image: /img/compatibility/bitnob/rbf/send-fee-notice.png
+      caption: >
+        Sending Transaction - Network fee notice details.
+    - image: /img/compatibility/bitnob/rbf/transaction-details-sent.png
+      caption: >
+        Sending Transaction - Sent transaction details. No RBF notice. Note transaction sent without RBF flag. Transaction was not sent with RBF so no bumping available.
+    - image: /img/compatibility/bitnob/rbf/transaction-list-incoming-rbf.png
+      caption: >
+        Receiving Transaction Signaling RBF - bitnob does not show unconfirmed transactions, only shows if a transaction is pending
+    - image: /img/compatibility/bitnob/rbf/notification-incoming-replacement.png
+      caption: >
+        Receiving Replacement Transaction - When the replacement transaction receives 1 confirmation it appears in wallet. No RBF notice.
+    - image: /img/compatibility/bitnob/rbf/transaction-list-incoming-replacement.png
+      caption: >
+        Receiving Replacement Transaction - Transaction list screen. No RBF flag.
+   
+segwit:
+  tested:
+    date: "2022-05-11"
+    platforms:
+      - android
+    version: "10.0.0"
+  features:
+    receive:
+      p2sh_wrapped: "true"
+      bech32: "true"
+      default: "bech32_p2wsh"
+    send:
+      bech32: "true" 
+      change_bech32: "untested"
+      segwit_v1: "true"
+      bech32_p2wsh: "true"
+  examples:
+    - image: /img/compatibility/bitnob/segwit/receive-screen.png
+      caption: >
+        bitnob default receive address is a bech32 p2wh( native segwit) by default.
+        You can receive with QR code or address
+   
+    
+        
