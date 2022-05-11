@@ -6,7 +6,7 @@ rbf:
   tested:
     date: "2022-05-11"
     platforms:
-      - android
+      - Android
     version: "10.0.0"
   features:
     receive:
@@ -48,7 +48,7 @@ segwit:
   tested:
     date: "2022-05-11"
     platforms:
-      - android
+      - Android
     version: "10.0.0"
   features:
     receive:
