@@ -128,6 +128,9 @@ optech_mentions:
   - title: "Bitcoin Core #24043 adds new `multi_a` and `sortedmulti_a` descriptors for taproot multisig"
     url: /en/newsletters/2022/03/16/#bitcoin-core-24043
 
+  - title: "Adapting descriptors and miniscript for hardware signing devices"
+    url: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

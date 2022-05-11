@@ -57,6 +57,9 @@ optech_mentions:
   - title: Idea to prevent pinning by allowing transaction to signal that descendant limits
     url: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
 
+  - title: Idea to use transaction introspection to prevent RBF pinning
+    url: /en/newsletters/2022/05/18/#using-transaction-introspection-to-prevent-rbf-pinning
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

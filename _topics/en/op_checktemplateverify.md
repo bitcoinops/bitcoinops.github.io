@@ -91,6 +91,12 @@ optech_mentions:
   - title: Implications of bare CTV not having an address format
     url: /en/newsletters/2022/04/27/#noted
 
+  - title: "Proposal to initially restrict `OP_TX` to the features provided by `OP_CTV`"
+    url: /en/newsletters/2022/05/18/#updated-op-tx-proposal
+
+  - title: "BIPs #1309 updates BIP119’s example implementation to use pythonic pseudocode"
+    url: /en/newsletters/2022/05/18/#bips-1309
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

@@ -227,6 +227,9 @@ optech_mentions:
   - title: "Bitcoin Core #23536 begins enforcing taproot on all blocks (except one) with segwit active"
     url: /en/newsletters/2022/04/06/#bitcoin-core-23536
 
+  - title: "LND #6450 adds support for signing PSBTs that spend taproot outputs"
+    url: /en/newsletters/2022/05/18/#lnd-6450
+
 ## Optional
 see_also:
   - title: MAST
