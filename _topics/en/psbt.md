@@ -180,6 +180,9 @@ optech_mentions:
   - title: "HWI #549 adds support for PSBT version 2"
     url: /en/newsletters/2022/02/09/#hwi-549
 
+  - title: "LND #6450 adds support for signing PSBTs that spend taproot outputs"
+    url: /en/newsletters/2022/05/18/#lnd-6450
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
