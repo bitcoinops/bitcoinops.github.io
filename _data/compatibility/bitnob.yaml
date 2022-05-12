@@ -30,7 +30,7 @@ rbf:
         Sending Transaction - Network fee notice details.
     - image: /img/compatibility/bitnob/rbf/transaction-list-incoming-rbf.png
       caption: >
-        Receiving Transaction Signaling RBF - bitnob does not show unconfirmed transactions, only shows if a transaction is pending(that is, has not been confirmed on the blockchain)
+        Receiving Transaction Signaling RBF - Bitnob doesn't show unconfirmed transactions signaling RBF.
    
    
 segwit:
