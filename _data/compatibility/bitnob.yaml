@@ -10,29 +10,25 @@ rbf:
     version: "10.0.0"
   features:
     receive:
-      notification: "na"
-      list: "na"
-      details: "na"
+      notification: "false"
+      list: "false"
+      details: "false"
       shows_replaced_version: "false"
       shows_original_version: "false"
     send:
       signals_bip125: "false"
-      list: "untested"
-      details: "untested"
-      shows_replaced_version: "untested"
-      shows_original_version: "untested"
+      list: "na"
+      details: "na"
+      shows_replaced_version: "na"
+      shows_original_version: "na"
   examples:
-    - image: /img/compatibility/bitnob/rbf/send-screen-default.png
-      caption: >
-        Sending Transaction - Default send transaction screen. Bitnob does not have option to enable or disable RBF when sending transactions.
     - image: /img/compatibility/bitnob/rbf/send-fee-notice.png
       caption: >
-        Sending Transaction - Network fee notice details.
+        Transaction sending confirmation screen - Bitnob does not have an option to enable RBF when sending transactions.
     - image: /img/compatibility/bitnob/rbf/transaction-list-incoming-rbf.png
       caption: >
         Receiving Transaction Signaling RBF - Bitnob doesn't show unconfirmed transactions signaling RBF.
-   
-   
+
 segwit:
   tested:
     date: "2022-05-11"
@@ -45,12 +41,15 @@ segwit:
       bech32: "true"
       default: "bech32_p2wsh"
     send:
-      bech32: "true" 
+      bech32: "true"
       change_bech32: "untested"
       segwit_v1: "true"
       bech32_p2wsh: "true"
   examples:
+    - image: /img/compatibility/bitnob/rbf/send-screen-default.png
+      caption: >
+        Bitnob supports sending to bech32 addresses
     - image: /img/compatibility/bitnob/segwit/receive-screen.png
       caption: >
-         Bitnob's default receive address is bech32 p2wsh (native segwit). You can receive with QR code or address
-        
+         Bitnob's default receive address type is p2wsh (native segwit)
+
