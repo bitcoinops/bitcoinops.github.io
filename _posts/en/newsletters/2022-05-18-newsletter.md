@@ -501,7 +501,11 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #22235][] script: add script to generate example bitcoin.conf FIXME:Xekyo
+- [Bitcoin Core #22235][] adds a script that will generate an example
+  `bitcoin.conf` file directly from the source code defining the configuration
+  options. This change allows future Bitcoin Core releases to have a
+  pre-installed bitcoin.conf file without creating a second source of truth on
+  the state of configuration options.
 
 - [LND #6450][] adds support for signing [PSBTs][topic psbt] that spend
   [taproot][topic taproot] outputs.
