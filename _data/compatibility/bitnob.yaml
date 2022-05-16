@@ -46,7 +46,7 @@ segwit:
       segwit_v1: "true"
       bech32_p2wsh: "true"
   examples:
-    - image: /img/compatibility/bitnob/rbf/send-screen-default.png
+    - image: /img/compatibility/bitnob/segwit/send-screen-default.png
       caption: >
         Bitnob supports sending to bech32 addresses
     - image: /img/compatibility/bitnob/segwit/receive-screen.png
