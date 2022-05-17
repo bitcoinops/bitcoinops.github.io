@@ -17,8 +17,8 @@ rbf:
       shows_original_version: "false"
     send:
       signals_bip125: "false"
-      list: "na"
-      details: "na"
+      list: "false"
+      details: "false"
       shows_replaced_version: "na"
       shows_original_version: "na"
   examples:
