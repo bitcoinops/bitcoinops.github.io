@@ -481,7 +481,24 @@ regular newsletter.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **MyCitadel Wallet released:**
+  [MyCitadel Wallet][] is a desktop Bitcoin, Lightning, and [RGB][] wallet
+  application supporting multisig, [PSBTs][topic psbt], segwit, taproot,
+  [timelocks][topic timelocks],
+  hardware signing devices, [descriptors][topic descriptors], and other features.
+
+- **Tauros exchange supports Lightning:**
+  Mexican exchange [Tauros][] announces Lightning deposit and
+  withdraw support.
+
+- **Lightning Multiplexer announced:**
+  The Lightning Multiplexer ([lnmux][]) software, supporting LND, improves Lightning payment
+  reliability by allowing for fail-over scenarios for incoming payments. More
+  details are available on the [Bottlepay blog post][lnmux blog].
+
+- **Coldcard adds taproot sends:**
+  The [latest Coldcard firmware][coldcard upgrade] (Mk4 5.0.3, Mk3 4.1.5) support sending to
+  [bech32m][topic bech32] addresses.
 
 ## Releases and release candidates
 
@@ -592,3 +609,9 @@ Alex Morcos.
 [supporters]: /#supporters
 [founding sponsors]: /about/#founding-sponsors
 [news191 pinning]: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
+[MyCitadel Wallet]: https://github.com/mycitadel/mycitadel-desktop
+[RGB]: https://www.rgbfaq.com/what-is-rgb
+[Tauros]: https://tauros.io/
+[lnmux]: https://github.com/bottlepay/lnmux
+[lnmux blog]: https://bottlepay.com/blog/multiplexer/
+[coldcard upgrade]: https://coldcard.com/docs/upgrade
