@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Disabling compact block relay for `-blocksonly` nodes"
     url: /en/newsletters/2021/09/08/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #20799 disables v1 compact block relay; v2 still enabled"
+    url: /en/newsletters/2022/05/25/#bitcoin-core-20799
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
