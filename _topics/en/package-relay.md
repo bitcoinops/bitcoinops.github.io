@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Bitcoin Core #22674 adds logic for validating packages of transactions against relay policy"
     url: /en/newsletters/2022/01/05/#bitcoin-core-22674
 
+  - title: "BIP proposed for package relay"
+    url: /en/newsletters/2022/05/25/#package-relay-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

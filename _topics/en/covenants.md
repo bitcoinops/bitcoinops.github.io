@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Updated `OP_TX` opcode useful for constructing covenants"
     url: /en/newsletters/2022/05/18/#updated-op-tx-proposal
 
+  - title: "Discussion about Miner Extractable Value (MEV) risk from recursive covenants"
+    url: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
