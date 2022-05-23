@@ -146,6 +146,38 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
+- [How much entropy is lost alphabetising your mnemonics?]({{bse}}113432)
+  HansBKK wonders how much entropy is lost if 12 or 24 word seed phrases were sorted
+  alphabetically. Pieter Wuille breaks down a series of metrics including number
+  of possibilities, entropy, and mean number of guesses to brute force across 12 and 24
+  words and also notes considerations for word repetition.
+
+- [Taproot signing with PSBT: How to determine signing method?]({{bse}}113489)
+  Guggero lists three ways of providing a valid [Schnorr signature][topic
+  schnorr signatures] in taproot: a keypath spend with [BIP86][] commitment, a
+  keypath spend with a commitment to the root of the script tree, and a
+  scriptpath spend. Andrew Chow confirms Guggero's outline of how each signing
+  method is indicated within a [PSBT][topic psbt].
+
+- [How would faster blocks cause mining centralization?]({{bse}}113505)
+  Murch focuses on why shorter block times would cause more frequent
+  reorganizations and how those would benefit larger miners in the context
+  of block propagation latency.
+
+- [What does "waste metric" mean in the context of coin selection?]({{bse}}113622)
+  Murch explains that, when spending, Bitcoin Core uses
+  a [waste metric][news165 waste] heuristic as a "measure of the fees for the
+  input set at the current feerate compared to spending the same inputs at the
+  hypothetical long-term feerate". This heuristic is used to evaluate [coin
+  selection][topic coin selection] candidates that result from the Branch and
+  Bound (BnB), Single Random Draw (SRD), and knapsack algorithms.
+
+- [Why isn't `OP_CHECKMULTISIG` compatible with batch verification of schnorr signatures?]({{bse}}113816)
+  Pieter Wuille points out that since [`OP_CHECKMULTISIG`][wiki
+  op_checkmultisig] doesn't indicate which signatures go with what pubkeys, it is
+  incompatible with batch verification and [motivated][bip342 fn4] BIP342's new
+  `OP_CHECKSIGADD` opcode.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -201,3 +233,6 @@ We remain solely responsible for any errors or omissions.
 [fd0 ctv9]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
 [ctv9]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
 [bitmex flashbots]: https://blog.bitmex.com/flashbots/
+[news165 waste]: /en/newsletters/2021/09/08/#bitcoin-core-22009
+[wiki op_checkmultisig]: https://en.bitcoin.it/wiki/OP_CHECKMULTISIG
+[bip342 fn4]: https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki#cite_note-4

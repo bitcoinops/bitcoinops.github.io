@@ -107,6 +107,9 @@ optech_mentions:
   - title: "Libsecp256k1 #844 updates schnorr API to allow signing arbitrary length messages"
     url: /en/newsletters/2021/07/14/#libsecp256k1-844
 
+  - title: "Why isn’t `OP_CHECKMULTISIG` compatible with batch verification of schnorr signatures?"
+    url: /en/newsletters/2022/05/25/#why-isn-t-op-checkmultisig-compatible-with-batch-verification-of-schnorr-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
