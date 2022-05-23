@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Bitcoin Core #17526 adds Single Random Draw coin selection algorithm"
     url: /en/newsletters/2021/10/06/#bitcoin-core-17526
 
+  - title: "What is the coin selection 'waste metric'?"
+    url: /en/newsletters/2022/05/25/#what-does-waste-metric-mean-in-the-context-of-coin-selection
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simulation-based Evaluation of Coin Selection Strategies
