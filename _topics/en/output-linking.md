@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Silent addresses for delinked reusable addresses"
     url: /en/newsletters/2022/04/06/#delinked-reusable-addresses
 
+  - title: "Experimentation with silent addresses"
+    url: /en/newsletters/2022/06/01/#experimentation-with-silent-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)
