@@ -48,7 +48,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [BTCPay Server #3772][] add experimental mode FIXME:bitschmidty
 
-- [BTCPay Server #3744][] Wallet transactions export FIXME:Xekyo
+- [BTCPay Server #3744][] adds a feature to export the wallet's transactions
+  either in CSV or JSON format.
 
 - [BOLTs #968][] BOLT 1: introduce port convention for different networks FIXME:glozow
 
