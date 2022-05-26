@@ -46,7 +46,8 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [BTCPay Server #3772][] add experimental mode FIXME:bitschmidty
+- [BTCPay Server #3772][] allows users to turn on experimental features
+  for live-testing before release.
 
 - [BTCPay Server #3744][] adds a feature to export the wallet's transactions
   either in CSV or JSON format.
