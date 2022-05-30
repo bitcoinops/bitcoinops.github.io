@@ -52,7 +52,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [BTCPay Server #3744][] adds a feature to export the wallet's transactions
   either in CSV or JSON format.
 
-- [BOLTs #968][] BOLT 1: introduce port convention for different networks FIXME:glozow
+- [BOLTs #968][] adds default TCP ports for nodes using Bitcoin testnet and
+  signet.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="3772,3744,968,24897" %}
