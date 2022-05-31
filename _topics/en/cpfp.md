@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Bitcoin Core #24152 begins accepting low-feerate transactions that are paid for by their children"
     url: /en/newsletters/2022/04/13/#bitcoin-core-24152
 
+  - title: "BIP proposed for package relay that can make CPFP bumping more reliable"
+    url: /en/newsletters/2022/05/25/#package-relay-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
