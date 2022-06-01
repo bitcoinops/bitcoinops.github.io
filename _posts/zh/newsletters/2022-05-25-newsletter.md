@@ -39,7 +39,7 @@ lang: zh
 
   第二个问题是，即使 Mallory 可以生产一个区块来捕获这价值 1 ETH 的 MEV，其他矿工也可以生产相竞争的区块来尝试捕捉它。这种重新挖掘区块的压力会加剧 “[交易费钉死（fee sniping）][topic fee sniping]” 的威力，在最坏的情况下，可以让确认的次数对评估交易的终局性失去意义，最终毁灭使用工作量证明来保护网络的能力。
 
-  比特币使用 UTXO 而不是以太坊那样的账户，所以在比特币上更难实现那些会产生 MEV 问题的协议。但是，在 CTV 会议上，Jeremy Rubin 指出，递归型限制条款涨和在比特币 UXTO 实现基于账户的系统变得更容易，所以会提高 MEV 在未来成为比特币协议设计上的重大考量的风险。
+  比特币使用 UTXO 而不是以太坊那样的账户，所以在比特币上更难实现那些会产生 MEV 问题的协议。但是，在 CTV 会议上，Jeremy Rubin 指出，递归型限制条款让和在比特币 UXTO 实现基于账户的系统变得更容易，所以会提高 MEV 在未来成为比特币协议设计上的重大考量的风险。
 
   在回复 /dev/fd0 的帖子时，开发者 ZmnSCPxj 建议，我们只应该采用鼓励协议为最大化链上隐私性而设计的机制。隐私性将阻止矿工获得为执行 MEV 而必需的信息。截至本周报撰写之时，邮件组中尚未有进一步的评论，但在，从推特的引用和其他地方的反响来看，我们发现开发者们开始进一步考虑 MEV 对比特币协议设计的影响。
 
@@ -51,7 +51,7 @@ lang: zh
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [如果按照字母顺序来记录助记词，会损失多少熵？]({{bse}}113432)HansBKK 好奇如果按照字母顺序来排列 12 词或者 24 词的种子词（seed phrase），会损失多少熵？Pieter Wuille 提出了一系列的指标，包括可能性的数量、熵、用暴力来猜测 12 词和 24 词的平均猜测次数，还提出了词语重复的因素。
-- [使用 PSBT 来签名 Taproot 交易：如何确定签名方法？]({{bse}}113489)Guggero 列出了在 taproot 种提供有效的  [Schnorr 签名][topic schnorr signatures]的三种方法：使用带有 [BIP86][] 承诺的密钥路径；使用带有脚本树根值承诺的密钥路径；脚本花费路径。Andrew Chow 确认了 Guggero 列举的每一种签名方法在 [PSBT][topic psbt] 中是如何指定的。
+- [使用 PSBT 来签名 Taproot 交易：如何确定签名方法？]({{bse}}113489)Guggero 列出了在 taproot 中提供有效的  [Schnorr 签名][topic schnorr signatures]的三种方法：使用带有 [BIP86][] 承诺的密钥路径；使用带有脚本树根值承诺的密钥路径；脚本花费路径。Andrew Chow 确认了 Guggero 列举的每一种签名方法在 [PSBT][topic psbt] 中是如何指定的。
 - [更快的出块速度会导致挖矿的集中化吗？]({{bse}}113505)Murch 集中解释了为什么更短的出块时间会导致更频繁的区块重组，以及这种情形在区块传播有时延的背景会如何有益于更大的矿工。
 - [在选择要花哪个币时，“浪费指标（waste metric）” 是什么意思？]({{bse}}113622)Murch 解释道，在花费资金时，Bitcoin Core 软件会使用一个 “[浪费指标][news165 waste]” 启发法，来 “衡量输入集按当前费率来花费，与（同样的输入）按假设的长期费率来花费相比的划算程度”。这个启发法会用来[选币算法][topic coin selection]的候选结果，后者是 Branch and Bound（BnB）、Single Random Draw（SRD）和 knapsack 算法的结果。
 - [为什么 ` OP_CHECKMULTISIG ` 不能跟 Schnorr 签名的批量验证相兼容？]({{bse}}113816)Pieter Wuille 指出，因为 [`OP_CHECKMULTISIG`][wiki op_checkmultisig] 不能指定哪个签名与哪个公钥成对，所以它跟批量验证不能兼容，这也[促使][bip342 fn4]人们提出了 BIP342 的新的  ` OP_CHECKSIGADD ` 操作码。
