@@ -49,7 +49,14 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24408][] rpc: add rpc to get mempool txs spending specific prevouts FIXME:adamjonas
+- [Bitcoin Core #24408][] adds an RPC to fetch mempool transactions
+  spending from a given outpoint, streamlining the search for
+  outpoints by selecting transactions individually rather than from
+  a list of txids retrieved from `getrawmempool`. This is useful in
+  Lightning when locating a spending transaction after a channel
+  funding transaction has been spent or examining why an [RBF][topic rbf]
+  transaction failed to broadcast by fetching the conflicting
+  transaction.
 
 - [LDK #1401][] adds support for zero-conf channel opens.  For related
   information, please see the summary of BOLTs #910 below.
