@@ -131,6 +131,9 @@ optech_mentions:
   - title: "Adapting descriptors and miniscript for hardware signing devices"
     url: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
 
+  - title: "PR Review Club about miniscript support for descriptors"
+    url: /en/newsletters/2022/06/08/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
