@@ -261,7 +261,12 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24171][] p2p: Sync chain more readily from inbound peers during IBD FIXME:Xekyo
+- [Bitcoin Core #24171][] amends the Initial Block Download (IBD) behavior to request block data from
+  inbound peers if no outbound peer is serving block data. Previously, a node
+  would only request data from inbound peers if it did not have any outbound
+  peers at all. This behavior could cause a stall if a node had only outbound
+  peers that did not serve blocks. Nodes still request data only from outbound
+  peers as soon as any outbound peer serves blocks.
 
 - [BDK #593][] begins using [rust bitcoin][rust bitcoin repo] 0.28,
   which includes support for [taproot][topic taproot] and taproot
