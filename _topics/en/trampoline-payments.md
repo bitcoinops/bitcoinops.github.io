@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Summary of LN developer conference, including discussion of trampoline payments"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
+  - title: "Discussion about combining trampoline routing with first-hop payment holds"
+    url: /en/newsletters/2022/06/15/#trampoline-routing-and-mobile-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"
