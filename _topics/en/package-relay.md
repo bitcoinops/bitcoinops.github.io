@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BIP proposed for package relay"
     url: /en/newsletters/2022/05/25/#package-relay-proposal
 
+  - title: "Continued discussion of proposed package relay BIP"
+    url: /en/newsletters/2022/06/15/#continued-package-relay-bip-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

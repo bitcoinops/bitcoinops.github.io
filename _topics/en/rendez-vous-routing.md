@@ -37,6 +37,9 @@ optech_mentions:
   - title: "C-Lightning #3623 adds a minimal implementation for spending payments using blinded paths"
     url: /en/newsletters/2020/04/22/#c-lightning-3623
 
+  - title: "Discussion about the need for LNURL or offers for effective blinded paths"
+    url: /en/newsletters/2022/06/15/#blinded-paths
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

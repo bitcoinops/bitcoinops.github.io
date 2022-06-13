@@ -93,6 +93,9 @@ optech_mentions:
   - title: "LND #6361 adds support for MuSig2 signing"
     url: /en/newsletters/2022/05/04/#lnd-6361
 
+  - title: Discussion about designing LN upgrades to support recursive MuSig2
+    url: /en/newsletters/2022/06/15/#recursive-musig2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures
