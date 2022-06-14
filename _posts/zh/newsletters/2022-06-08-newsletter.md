@@ -20,7 +20,7 @@ lang: zh
 
 {% include functions/details-list.md
 
-  q0="Miniscript 实现的哪些类型的分析对哪些用例或应用有帮助？"
+  q0="<!--which-types-of-analysis-enabled-by-miniscript-would-be-helpful-for-which-use-cases-or-applications-->Miniscript 实现的哪些类型的分析对哪些用例或应用有帮助？"
   a0="我们讨论了几种使用情况和分析类型。Miniscript 能够分析最大见证规模，从而分析在给定费率前提下花费输出的"最坏情况"的成本。可预测的交易权重有助于 L2 协议的开发者编写更可靠的费用碰撞机制。此外，给定一些策略，编译器会生成一个最小的 Miniscript 脚本（不一定是最小的，因为 Miniscript 只对所有脚本的一个子集进行编码），它可能比手写的脚本要小。与会者指出，Miniscript 在过去曾帮助优化 LN 模板。最后，组合允许多方结合复杂的支出条件，并在不完全了解所有条件的情况下保证所产生的脚本的正确性。"
   a0link="https://bitcoincore.reviews/24148#l-41"
 
