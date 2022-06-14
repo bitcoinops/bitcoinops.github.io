@@ -49,7 +49,7 @@ lang: zh
 ## 重大代码及文档变更
 *本周内，[Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo] 出现的重大变更。*
 
-- [Bitcoin Core #24408][] 增加了一个 RPC 来获取从一个给定的 outpoint 支出的内存池交易，通过单独选择交易而不是从 `getrawmempool` 检索的 txid 列表来简化 outpoint 的搜索。这在闪电网络中是很有用的，当在一个通道资金交易被花费后定位一个花费交易，或者通过获取冲突的交易来检查为什么一个 [RBF][topic rbf] 交易未能广播。
+- [Bitcoin Core #24408][] 增加了一个 RPC 来获取从一个给定的 outpoint 支出的交易池交易，通过单独选择交易而不是从 `getrawmempool` 检索的 txid 列表来简化 outpoint 的搜索。这在闪电网络中是很有用的，当在一个通道资金交易被花费后定位一个花费交易，或者通过获取冲突的交易来检查为什么一个 [RBF][topic rbf] 交易未能广播。
 
 - [LDK #1401][] 增加了对 zero-conf 通道打开的支持。相关信息，请参见下面的 BOLTs #910 的摘要。
 
