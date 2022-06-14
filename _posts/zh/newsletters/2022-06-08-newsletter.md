@@ -29,7 +29,7 @@ lang: zh
   a1link="https://bitcoincore.reviews/24148#l-107"
 
   q2="<!--what-does-it-mean-for-an-expression-to-be-non-malleably-satisfiable-after-segwit-why-do-we-still-need-to-worry-about-malleability-->一个表达式是不可延展的意味着什么？在 segwit 之后，我们为什么还需要担心可延展性呢？"
-  a2="如果一个脚本被第三方（也就是那些无法获得相应私钥的人）修改后仍然满足支出条件，那么这个脚本就是可延展的。Segwit 并没有消除交易延展的可能性；它确保了交易延展不会破坏未确认的后续交易的有效性，但延展性仍然会因为其他原因而产生问题。例如，如果攻击者可以把额外的数据塞进见证中，并且仍然满足支出条件，他们就可以降低交易的费率，对其传播产生负面影响。一个"满足不可延展性的表达式"不会给第三方这样的选择，以修改现有的满足为另一个有效的满足。更完整的答案可以在[这里][sipa miniscript]找到。"
+  a2="如果一个脚本被第三方（也就是那些无法获得相应私钥的人）修改后仍然满足支出条件，那么这个脚本就是可延展的。Segwit 并没有消除交易延展的可能性；它确保了交易延展不会破坏未确认的后续交易的有效性，但延展性仍然会因为其他原因而产生问题。例如，如果攻击者可以把额外的数据塞进见证中，并且仍然满足支出条件，他们就可以降低交易的费率，对其传播产生负面影响。一个“满足不可延展性的表达式”不会给第三方这样的选择，以修改现有的满足为另一个有效的满足。更完整的答案可以在[这里][sipa miniscript]找到。"
   a2link="https://bitcoincore.reviews/24148#l-170"
 
   q3="<!--which-function-is-responsible-for-parsing-the-output-descriptor-strings-how-does-it-determine-whether-the-string-represents-a-miniscriptdescriptor-how-does-it-resolve-a-descriptor-that-can-be-parsed-in-multiple-ways-->哪个函数负责解析输出描述符的字符串？它如何确定字符串是否代表一个 `MiniscriptDescriptor`？它是如何解析一个可以用多种方式解析的描述符的？"
