@@ -23,6 +23,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bitcoinops.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bitcoinoptech
 github_username:  bitcoinops
+mastodon:
+     - username: bitcoinoptech
+       instance: x0f.org
 repository_name: bitcoinops.github.io
 bold: '**'
 author: "Bitcoin Optech"  ## Default author name for blog posts
