@@ -24,7 +24,7 @@ lang: zh
   a0="我们讨论了几种使用情况和分析类型。Miniscript 能够分析最大见证规模，从而分析在给定费率前提下花费输出的“最坏情况”的成本。可预测的交易权重有助于 L2 协议的开发者编写更可靠的费用碰撞机制。此外，给定一些策略，编译器会生成一个最小的 Miniscript 脚本（不一定是最小的，因为 Miniscript 只对所有脚本的一个子集进行编码），它可能比手写的脚本要小。与会者指出，Miniscript 在过去曾帮助优化 LN 模板。最后，组合允许多方结合复杂的支出条件，并在不完全了解所有条件的情况下保证所产生的脚本的正确性。"
   a0link="https://bitcoincore.reviews/24148#l-41"
 
-  q1="Miniscript 表达式可以表示为节点树，其中每个节点代表一个片段。当一个节点是"理智的"或"有效的"是什么意思？它们的意思相同吗？"
+  q1="<!--miniscript-expressions-can-be-represented-as-trees-of-nodes-where-each-node-represents-a-fragment-what-does-it-mean-when-a-node-is-sane-or-valid-do-they-mean-the-same-thing-->Miniscript 表达式可以表示为节点树，其中每个节点代表一个片段。当一个节点是“理智的”或“有效的”是什么意思？它们的意思相同吗？"
   a1="每个节点都有一个片段类型（如 `and_v`、`thresh`、`multi`等）和参数。一个有效的节点的参数与片段类型所期望的一致。一个理智的节点必须是有效的，它的脚本语义必须与它的策略相匹配，是共识有效的和符合标准的，只具有不可延展的解决方案，不混合时间锁单位（即同时使用块高度和时间），并且没有重复的键。按照定义，这两个属性并不完全相同；每个理智的节点都是有效的，但不是每个有效的节点都是理智的。"
   a1link="https://bitcoincore.reviews/24148#l-107"
 
