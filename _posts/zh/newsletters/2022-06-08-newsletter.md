@@ -36,7 +36,7 @@ lang: zh
   a3="script/descriptor.cpp 中的函数 `ParseScript` 负责解析输出描述符字符串。它首先尝试所有其他描述符类型，然后调用 `miniscript::FromString` 来查看字符串是否是有效的 Miniscript 表达式。由于这种操作顺序，可以被解释为 miniscript 和非 miniscript 的描述符（例如 `wsh(pk(...))`）会被解析为非 miniscript。"
   a3link="https://bitcoincore.reviews/24148-2#l-30"
 
-  q4="当在两个可用的选项之间进行选择时，为什么要优先选择涉及较少签名的，而不是产生较小脚本的？"
+  q4="<!--when-choosing-between-two-available-satisfactions-why-should-the-one-that-involves-fewer-signatures-rather-than-the-one-which-results-in-a-smaller-script-be-preferred-->当在两个可用的选项之间进行选择时，为什么要优先选择涉及较少签名的，而不是产生较小脚本的？"
   a4="试图篡改交易的第三方（即无法接触到私钥）可以删除签名，但不能创建新的签名。选择有额外签名的满足方式为第三方留下了篡改脚本但仍然满足支出条件的选择。例如，策略 `or(and(older(21), pk(B)), thresh(2, pk(A), pk(B))` 有两条支出路径：当 A 和 B 都签名时，它可以被支出，或者在 21 个区块之后，只有 B 签名也可被支出。在 21 个区块之后，两种满足方式都可以使用，但如果带有 A 和 B 的签名的交易被广播，第三方可以删除 A 的签名，仍然可以满足另一种支出路径。另一方面，如果被广播的交易只包含 B 的签名，攻击者就不能满足其他花费条件，除非它伪造 A 的签名。"
   a4link="https://bitcoincore.reviews/24148-2#l-106"
 %}
