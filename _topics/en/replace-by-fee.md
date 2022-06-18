@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Discussion about allowing transaction witness replacement without a fee bump"
     url: /en/newsletters/2022/03/30/#transaction-witness-replacement
 
+  - title: "Discussion about enabling full replace by fee in Bitcoin Core (off by default)"
+    url: /en/newsletters/2022/06/22/#full-replace-by-fee
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
