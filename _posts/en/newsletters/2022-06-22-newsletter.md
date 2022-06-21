@@ -176,7 +176,16 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Zeus adds taproot support:**
+  [Zeus v0.6.5-rc1][] adds [taproot][topic taproot] send and receive support for LND v0.15+ backends.
+
+- **Wasabi Wallet 2.0 released:**
+  This [coinjoin][topic coinjoin] software [release][wasabi 2.0] implements the
+  [WabiSabi protocol][news194 wabisabi] among other improvements.
+
+- **Sparrow adds taproot hardware signing:**
+  By upgrading to [HWI 2.1.0][], Sparrow [1.6.4][sparrow 1.6.4] adds taproot
+  signing support for certain hardware signing devices.
 
 ## Releases and release candidates
 
@@ -237,3 +246,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [open timestamps]: https://opentimestamps.org/
 [sybil]: https://en.wikipedia.org/wiki/Sybil_attack
 [zmnscpxj riddle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003607.html
+[Zeus v0.6.5-rc1]: https://github.com/ZeusLN/zeus/releases/tag/v0.6.5-rc1
+[wasabi 2.0]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.0.0
+[news194 wabisabi]: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
+[HWI 2.1.0]: /en/newsletters/2022/03/23/#hwi-2-1-0-rc-1
+[sparrow 1.6.4]: https://github.com/sparrowwallet/sparrow/releases/tag/1.6.4
