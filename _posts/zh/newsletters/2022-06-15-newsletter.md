@@ -24,7 +24,7 @@ lang: zh
   
   - *<!---tapscript-and-musig2-->Tapscript 和 MuSig2*：作为迁移到基于 taproot 的通道的一部分，我们需要将现有的脚本转化为能够最高效利用区块空间的 tapscript 脚本。此外，还需要在一切可预期双方会则作行动的地方使用 [MuSig2][topic musig] 协议来创建签名。所有这些都需要实现和测试来保证它们的工作情况。
   
-  - *<!--recursive-musig2-->递归的 MuSig2*：简单的 MuSig2 将允许 Alice 和 Bob 一起创建一个签名。递归的 MuSig2 将允许（举个例子）Alice 使用她的热钱包和硬件签名设备生成她的那部分签名，而无需 Bob 执行任何特殊的操作，Bob 也不会知道 Alice 在使用多于一个私钥来签名。现在大家讨论的是如何设计闪电网络对 MuSig2 的用法，来保证可以使用递归的 MuSig2。还讨论了递归 MuSig2 的安全性。
+  - *<!--recursive-musig2-->递归的 MuSig2*：简单的 MuSig2 将允许 Alice 和 Bob 一起创建一个单签名。递归的 MuSig2 将允许（举个例子）Alice 使用她的热钱包和硬件签名设备生成她的那部分签名，而无需 Bob 执行任何特殊的操作，Bob 也不会知道 Alice 在使用多于一个私钥来签名。现在大家讨论的是如何设计闪电网络对 MuSig2 的用法，来保证可以使用递归的 MuSig2。还讨论了递归 MuSig2 的安全性。
   
   - *<!--extension-bolts-->闪电网络技术基础的插件*：另一种说明闪电网络协议规范变化的方法。当前，闪电网络规范的变化是作为一个补丁加入到现有的规范中的。但是，一些开发者倾向于使用 BIP 所用的方法：对协议的重大变更是用一套乃至多套专门说明这些变更的文档作为规范的。这些开发者相信，专门的文档更易于撰写和阅读，因此可以简化和加速开发进度。
   
@@ -60,13 +60,13 @@ lang: zh
 
 *热门比特币基础设施项目的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
-- [LND 0.15.0-beta.rc6][] 是这个热面的闪电网络节点实现的下一个大版本的候选版本。
+- [LND 0.15.0-beta.rc6][] 是这个热门的闪电网络节点实现的下一个大版本的候选版本。
 
 ## 重大的代码和文献变更
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 以及 [Lightning BOLTs][bolts repo]。*
 
-- [Bitcoin Core #24171][] 该变了初始化区块下载（IBD）的行为，如果没有连向的对等节点（outbound peer）提供区块数据，就向连入的对等节点（inbound peer）请求区块数据。以前，只有在完全没有连向的对等节点时，节点才会向连入的对等节点请求数据。这种行为可能导致节点暂停，因为其连向的对等节点不提供区块数据。此外，一旦连向的对等节点恢复服务，节点依然会变成仅向他们请求区块。
+- [Bitcoin Core #24171][] 改变了初始化区块下载（IBD）的行为，如果没有连向的对等节点（outbound peer）提供区块数据，就向连入的对等节点（inbound peer）请求区块数据。以前，只有在完全没有连向的对等节点时，节点才会向连入的对等节点请求数据。这种行为可能导致节点暂停，因为其连向的对等节点不提供区块数据。此外，一旦连向的对等节点恢复服务，节点依然会变成仅向他们请求区块。
 - [BDK #593][] 开始使用 [rust bitcoin][rust bitcoin repo] 0.28，它包含了对 [taproot][topic taproot] 和 taproot [输出脚本描述符][topic descriptors]的支持。
 
 {% include references.md %}
