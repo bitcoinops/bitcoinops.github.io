@@ -43,6 +43,9 @@ optech_mentions:
   - title: "BIPs #1269 assigns BIP326 to a recommendation for default taproot anti fee sniping"
     url: /en/newsletters/2022/03/16/#bips-1269
 
+  - title: "LDK #1531 begins using anti fee sniping for LN funding transactions"
+    url: /en/newsletters/2022/06/29/#ldk-1531
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
