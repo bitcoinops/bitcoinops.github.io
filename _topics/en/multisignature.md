@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Preparing for taproot: challenges with multisignature nonces"
     url: /en/newsletters/2021/08/11/#preparing-for-taproot-8-multisignature-nonces
 
+  - title: "Question about the largest multisig quorum possible with different script types"
+    url: /en/newsletters/2022/06/29/#what-is-the-largest-multisig-quorum-currently-possible
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: MuSig

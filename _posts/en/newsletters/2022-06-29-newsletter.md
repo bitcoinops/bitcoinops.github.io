@@ -28,7 +28,34 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What is the purpose of indexing the mempool by these five criteria?]({{bse}}114216)
+  Murch and glozow explain the different mempool transaction indexes (txid,
+  wtxid, time in mempool, ancestor feerate, and descendant feerate) in Bitcoin
+  Core as well as their usages.
+
+- [BIP-341: Should key-path-only P2TR be eschewed altogether?]({{bse}}113989)
+  Pieter Wuille defines 4 [taproot][topic taproot] keypath spend options,
+  outlines why [BIP341 recommends][bip41 constructing] the "noscript" option, and notes scenarios
+  where other options might be preferred.
+
+- [Was the addition of OP_NOP codes in Bitcoin 0.3.6 a hard or soft fork?]({{bse}}113994)
+  Pieter Wuille explains that the addition of [`OP_NOP` codes][wiki reserved words] in Bitcoin Core
+  0.3.6 was a backward incompatible consensus change since older software versions would
+  see transactions with the newly valid `OP_NOP` codes as invalid. However, since no
+  transactions using these `OP_NOP` codes were previously mined, there was no actual fork.
+
+- [What is the largest multisig quorum currently possible?]({{bse}}114048)
+  Andrew Chow lists the different possible multisig types (bare script, P2SH, P2WSH,
+  P2TR, P2TR + [MuSig][topic musig]) and the multisig quorum restrictions for each.
+
+- [What is the difference between blocksonly and block-relay-only in Bitcoin Core?]({{bse}}114081)
+  Lightlike lists the differences between block-relay-only connections and a
+  node running in `-blocksonly` mode.
+
+- [Where are BIPs 40 and 41?]({{bse}}114168)
+  User andrewz asks why [assigned BIP numbers][] BIP40 for Stratum wire protocol and
+  BIP41 for Stratum mining protocol have no content. In a [separate answer][se 114179],
+  Michael Folkson links to some work-in-progress Stratum documentation links.
 
 ## Releases and release candidates
 
@@ -69,3 +96,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="5306,1531" %}
 [lnd 0.15.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta
 [core lightning 0.11.2]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.2
+[bip41 constructing]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#user-content-constructing_and_spending_taproot_outputs
+[wiki reserved words]: https://en.bitcoin.it/wiki/Script#Reserved_words
+[se 114179]: https://bitcoin.stackexchange.com/a/114179/87121
+[assigned bip numbers]: https://github.com/bitcoin/bips#readme
