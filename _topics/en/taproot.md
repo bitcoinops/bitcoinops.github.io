@@ -230,6 +230,9 @@ optech_mentions:
   - title: "LND #6450 adds support for signing PSBTs that spend taproot outputs"
     url: /en/newsletters/2022/05/18/#lnd-6450
 
+  - title: "Why P2TR outputs should use the noscript commitments when only keypath spending is desired"
+    url: /en/newsletters/2022/06/29/#bip-341-should-key-path-only-p2tr-be-eschewed-altogether
+
 ## Optional
 see_also:
   - title: MAST
