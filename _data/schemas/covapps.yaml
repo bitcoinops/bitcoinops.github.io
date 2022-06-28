@@ -1,0 +1,60 @@
+---
+id: https://bitcoinops.org/schema/covenants/proposals
+description: The covenant-based application object
+type: object
+required:
+  - title
+  - uid
+  - topic_page_or_best_reference
+  - excerpt
+additionalProperties: false
+properties:
+  title:
+    description: Title of the application
+    type: string
+
+  uid:
+    description: Unique identifier for this application
+    type: string
+    maxLength: 20  # arbitrary but short
+    pattern: "^[a-z][a-z0-9_]*$"  # starts lowercase, then all lowercase or numbers or underscore
+
+  shorttitle:
+    description: Short alternative name to use for links and quick mentions
+    type: string
+
+  excerpt:
+    description: A short description of the application
+    type: string
+    minLength: 1   ## Anything not empty
+    maxLength: 1000 ## Arbitrary but suggest keeping it short for cases where the excerpt is included in summaries
+
+  topic_page_or_best_reference:
+    description: A link to the best reference for the proposal, preferably an Optech topic page but possibly an external reference
+    type: string
+
+  implementations:
+    description: A list of known implementations of the proposal, either for testnets or other production networks such as sidechains or altcoins
+    type: list
+    items:
+      type: object
+      required:
+        - name
+        - can_lose_significant_money
+        - reference
+      additionalProperties: false
+      properties:
+        name:
+          description: Name of the implementation network, such as "CTV signet" or "Liquid"
+          type: string
+
+        can_lose_significant_money:
+          description: Whether it's easily possible to lose significant amounts of money playing with the network.  This is a proxy for "production network"
+          type: boolean
+
+        reference:
+          description: URL to information about the implementation of this proposal on the indicated network
+          type: string
+
+  extra:
+    description: Extra fields (not validated)

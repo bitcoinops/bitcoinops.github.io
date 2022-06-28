@@ -62,10 +62,26 @@ defaults:
       layout: topic
       permalink: /en/topics/:title/
       localizable: false
+  - scope:
+      path: "_covprops"
+    values:
+      layout: covprop
+      localizable: false
+  - scope:
+      path: "_covapps"
+    values:
+      layout: covapp
+      localizable: false
 
 collections:
   topics:
     output: true
+  covprops:
+    output: true
+    permalink: /en/covenants/proposals/:title/
+  covapps:
+    output: true
+    permalink: /en/covenants/apps/:title/
 
 languages:
   - code: ja
