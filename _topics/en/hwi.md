@@ -63,7 +63,7 @@ see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
     link: topic psbt
 ---
-Designed primary by Bitcoin Core developers to allow that software to
+Designed primarily by Bitcoin Core developers to allow that software to
 use hardware wallets as external signers, HWI is now being used by
 other wallets as well.
 
