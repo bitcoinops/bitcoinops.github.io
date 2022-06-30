@@ -78,10 +78,10 @@ collections:
     output: true
   covprops:
     output: true
-    permalink: /en/covenants/proposals/:title/
+    permalink: /en/lore/covenants/proposals/:title/
   covapps:
     output: true
-    permalink: /en/covenants/apps/:title/
+    permalink: /en/lore/covenants/apps/:title/
 
 languages:
   - code: ja

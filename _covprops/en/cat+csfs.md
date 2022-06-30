@@ -9,10 +9,13 @@ implementations:
   - name: Liquid
     can_lose_significant_money: true
     reference: https://example.com/FIXME
+    since: 2018
 
   - name: Bcash
     can_lose_significant_money: true
-    reference: https://example.com/FIXME
+    reference: https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/op_checkdatasig.md
+    # also https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/may-2018-reenabled-opcodes.md
+    since: 2018
 
 covenant_based_apps:
   channel_factories:
@@ -82,7 +85,8 @@ excerpt: >
 
 - **Non-covenant applications:** string concatenation and arbitrary
   signature checking can also be used for several applications unrelated
-  to covenants; see their [Optech topic page][] for details.
+  to covenants; see their [Optech topic page][] for details.  FIXME: add
+  QC resistance.
 
 ## Disadvantages
 

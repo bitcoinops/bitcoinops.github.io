@@ -130,13 +130,14 @@ layout: post
 
   {% endfor %}
 
-  {%- if page.implementations.size > 0 -%}
-  ## Implementations
 
-    {% for implementation in page.implementations %}
-      * [{{implementation.name}}]({{implementation.reference}}){% if implementation.can_lose_significant_money == true %}(production){% endif %}
-    {% endfor %}
-  {% endif %}
+  {%- if page.implementations.size > 0 -%}
+  <h2>Implementations</h2>
+
+    {%- for implementation in page.implementations -%}
+      * [{{implementation.name}}]({{implementation.reference}}){% if implementation.can_lose_significant_money == true %} (production){% endif %}{{newline}}
+    {%- endfor -%}
+  {%- endif -%}
 
 
   {%- if page.primary_sources and page.primary_sources != '' -%}
