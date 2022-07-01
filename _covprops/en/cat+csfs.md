@@ -9,13 +9,13 @@ implementations:
   - name: Liquid
     can_lose_significant_money: true
     reference: https://example.com/FIXME
-    since: 2018
+    since: "2018"
 
   - name: Bcash
     can_lose_significant_money: true
     reference: https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/op_checkdatasig.md
     # also https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/may-2018-reenabled-opcodes.md
-    since: 2018
+    since: "2018"
 
 covenant_based_apps:
   channel_factories:
@@ -85,8 +85,8 @@ excerpt: >
 
 - **Non-covenant applications:** string concatenation and arbitrary
   signature checking can also be used for several applications unrelated
-  to covenants; see their [Optech topic page][] for details.  FIXME: add
-  QC resistance.
+  to covenants; see the CAT+CSFS [topic page][topic
+  op_checksigfromstack] for details.  FIXME: add QC resistance.
 
 ## Disadvantages
 
@@ -97,7 +97,7 @@ excerpt: >
 - **Expensive:** using CAT+CSFS for coveneants requires putting a copy
   of the spending transaction on the execution stack.  That can roughly
   double the size of a spending transaction over the other data needed
-  to make it valid.  Other proposals such as [OP_TX][] could reduce this
+  to make it valid.  Other proposals such as OP_TX could reduce this
   overhead.
 
 - **Difficult:** using CAT+CSFS to create a covenant requires
@@ -110,10 +110,11 @@ excerpt: >
   improssible, burning funds.  Although both of these are challenges for
   any generalized covenant system, managing trusted and untrusted data
   as strings is more difficult than other ways of addressing
-  information, e.g. it would be simpler to use [OP_TX][] to introspect
-  on parts of the spending transaction directly.
+  information, e.g. it would be simpler to use OP_TX to introspect on
+  parts of the spending transaction directly.
 
 ## Alternative approaches
 
 FIXME:OP_TX
 
+{% include references.md %}

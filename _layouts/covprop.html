@@ -5,20 +5,7 @@ layout: post
 {% endcapture %}
 {% capture /dev/null %}
   <!-- Get links for previous and next pages -->
-  {% assign topics_list = site.topics | natural_sort: "title" %}
-  {% capture first_link %}[{{topics_list[0].title}}]({{topics_list[0].url}}){% endcapture %}
-  {% capture last_link %}[{{topics_list[-1].title}}]({{topics_list[-1].url}}){% endcapture %}
-  {% for entry in topics_list %}
-    {% capture entry_link %}[{{entry.title}}]({{entry.url}}){% endcapture %}
-    {% if prev_link %}
-      {% assign next_link = entry_link %}
-      {% break %}
-    {% endif %}
-    {% if entry.url == page.url %}
-      {% assign prev_link = prev_entry | default: last_link %}
-    {% endif %}
-    {% assign prev_entry = entry_link %}
-  {% endfor %}
+  {% include linkers/prevnext.md entries=site.covprops %}
 
   <!-- Build natural sentence-style list of aliases for this page's topic -->
   {% if page.aliases != nil %}

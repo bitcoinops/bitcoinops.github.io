@@ -7,9 +7,15 @@
 [scaling payment batching]: /en/payment-batching/
 [series preparing for taproot]: /en/preparing-for-taproot/
 
-{% comment %}<!-- links for topics -->{% endcomment %}
-{% for topic in site.topics %}
-  [topic {{topic.shortname | default: topic.title}}]: {{topic.url}}
+{% comment %}<!-- links for collections -->{% endcomment %}
+{% for entry in site.topics %}
+  [topic {{entry.shortname | default: entry.title}}]: {{entry.url}}
+{%- endfor %}
+{% for entry in site.covprops %}
+  [covprop {{entry.shortname | default: entry.title}}]: {{entry.url}}
+{%- endfor %}
+{% for entry in site.covapps %}
+  [covapp {{entry.shortname | default: entry.title}}]: {{entry.url}}
 {%- endfor %}
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}

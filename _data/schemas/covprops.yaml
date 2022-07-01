@@ -56,6 +56,11 @@ properties:
           description: URL to information about the implementation of this proposal on the indicated network
           type: string
 
+        since:
+          description: Approximate date when the implementation became available for use
+          type: string
+          pattern: "^[0-9]{4}[-0-9]*$"  # e.g. 2018 or 2018-04-01
+
   covenant_based_apps:
     description: A list of covenant-based applications
     type: object
