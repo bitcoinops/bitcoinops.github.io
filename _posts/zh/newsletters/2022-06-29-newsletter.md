@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 包括了我们的常规部分，总结了 Bitcoin Stack Exchange 的热门问答案，宣布了新的软件版本和候选版本，并介绍了比特币基础设施软件的最新变更。
+本周的 Newsletter 包括了我们的常规部分，总结了 Bitcoin Stack Exchange 的热门问答，宣布了新的软件版本和候选版本，并介绍了比特币基础设施软件的最新变更。
 
 ## 新闻
 
@@ -49,11 +49,11 @@ lang: zh
 
 ## 代码和文档的重大变更
 
-*本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core
+*本周内，[Bitcoin Core][bitcoin core repo]、[Core
 Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet
 Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay
 Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement
-Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
+Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo] 出现的重大变更。*
 
 - [Core Lightning #5306][] 更新了多个 API，以统一使用 “msat” 来表示毫秒数，并在这些字段中以数字形式返回 JSON 值。一些字段被重新命名以保持与其他字段的一致性。旧的方式已被废弃，但暂时还可以使用。
 
