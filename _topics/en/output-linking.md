@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Experimentation with silent addresses"
     url: /en/newsletters/2022/06/01/#experimentation-with-silent-payments
 
+  - title: "Updated alternative to BIP47 reusable payment codes"
+    url: /en/newsletters/2022/07/06/#updated-alternative-to-bip47-reusable-payment-codes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)
