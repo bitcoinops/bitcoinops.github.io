@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Proposal to charge for onion message bandwidth"
     url: /en/newsletters/2022/03/09/#paying-for-onion-messages
 
+  - title: "Proposals to either rate limit or charge for onion messages"
+    url: /en/newsletters/2022/07/06/#onion-message-rate-limiting
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

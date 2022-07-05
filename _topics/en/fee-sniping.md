@@ -46,6 +46,9 @@ optech_mentions:
   - title: "LDK #1531 begins using anti fee sniping for LN funding transactions"
     url: /en/newsletters/2022/06/29/#ldk-1531
 
+  - title: "BDK #611 begins using anti fee sniping by default"
+    url: /en/newsletters/2022/07/06/#bdk-611
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -40,6 +40,9 @@ optech_mentions:
   - title: Draft specification for LN splicing based on interactive funding protocol
     url: /en/newsletters/2021/04/28/#draft-specification-for-ln-splicing
 
+  - title: "Discussion about the best way to gossip channel splices"
+    url: /en/newsletters/2022/07/06/#announcing-splices
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
