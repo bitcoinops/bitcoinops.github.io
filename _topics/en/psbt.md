@@ -183,6 +183,9 @@ optech_mentions:
   - title: "LND #6450 adds support for signing PSBTs that spend taproot outputs"
     url: /en/newsletters/2022/05/18/#lnd-6450
 
+  - title: "Bitcoin Core #22558 adds support for BIP371's additional PSBT fields"
+    url: /en/newsletters/2022/07/06/#bitcoin-core-22558
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
