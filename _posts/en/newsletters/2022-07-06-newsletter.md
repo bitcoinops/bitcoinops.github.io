@@ -136,7 +136,12 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24836][] add RPC (-regtest only) for testing package policy FIXME:glozow
+- [Bitcoin Core #24836][] adds a regtest-only RPC, `submitpackage`, to
+  help L2 protocol and application developers who intend to use
+  [package relay][topic package relay] in the future test their transactions against the
+  Bitcoin Core default package policy.  The current policy is outlined
+  [here][packages doc]. This RPC can also be used to test future
+  additions and changes, such as the proposed package RBF rules.
 
 - [Bitcoin Core #22558][] psbt: Taproot fields for PSBT FIXME:bitschmidty
 
@@ -204,3 +209,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [2022 stealth addresses]: https://gist.github.com/RobinLinus/4e7467abaf0a0f8a521d5b512dca4833
 [demurrage]: https://en.wikipedia.org/wiki/Demurrage_%28currency%29
 [shs1]: https://www.coinspect.com/capture-coins-challenge-1-sighashsingle/
+[packages doc]: https://github.com/bitcoin/bitcoin/blob/09f32cffa6c3e8b2d77281a5983ffe8f482a5945/doc/policy/packages.md

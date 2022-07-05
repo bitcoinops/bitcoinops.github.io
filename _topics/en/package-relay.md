@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Continued discussion of proposed package relay BIP"
     url: /en/newsletters/2022/06/15/#continued-package-relay-bip-discussion
 
+  - title: "Bitcoin Core #24836 adds a regtest-only RPC, `submitpackage`, to help test package relay"
+    url: /en/newsletters/2022/07/06/#bitcoin-core-24836
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
