@@ -143,7 +143,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   [here][packages doc]. This RPC can also be used to test future
   additions and changes, such as the proposed package RBF rules.
 
-- [Bitcoin Core #22558][] psbt: Taproot fields for PSBT FIXME:bitschmidty
+- [Bitcoin Core #22558][] adds support for [BIP371][]’s additional [PSBT][topic
+  psbt] fields (see [Newsletter #155][news155 psbt extensions]) for [taproot][topic taproot].
 
 - [Core Lightning #5281][] adds support for specifying the `log-file`
   configuration option multiple times to write to multiple log files.
@@ -210,3 +211,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [demurrage]: https://en.wikipedia.org/wiki/Demurrage_%28currency%29
 [shs1]: https://www.coinspect.com/capture-coins-challenge-1-sighashsingle/
 [packages doc]: https://github.com/bitcoin/bitcoin/blob/09f32cffa6c3e8b2d77281a5983ffe8f482a5945/doc/policy/packages.md
+[news155 psbt extensions]: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
