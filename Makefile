@@ -88,6 +88,9 @@ test-before-build: $(covprop_validation) $(covapps_validation) $(compatibility_v
 	! git --no-pager grep -i '[d]iscrete log contract'
 
 test-after-build: build
+	## Check for rendering errors in the built site
+	! grep -r ERROR_ _site/
+
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	! find _site/ -name '*.html' | xargs grep '\[^' | grep .

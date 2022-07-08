@@ -105,13 +105,14 @@ layout: post
     {% assign evidence = "✓✓" %}
   {% endif %}
 
-  {% if app_status.enabled == true %}
+  {% if app_status.enabled == "true" %}
   <details markdown="block"><summary markdown="span">**{{app.title}}&nbsp;{{evidence}}**</summary>
   {{app.excerpt}}
 
   [Learn more about {{app.title}}]({{app.url}})<br>
   </details>
-  {%- elsif app_status.enabled != false -%}
+  {%- elsif app_status.enabled == "unknown" -%}
+  {%- elsif app_status.enabled != "false" -%}
   ERROR_APP_STATUS_NOT_DEFINED={{app.title}}
   {% endif %}
 

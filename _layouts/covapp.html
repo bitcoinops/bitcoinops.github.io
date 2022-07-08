@@ -104,13 +104,14 @@ layout: post
     {% assign evidence = "✓✓" %}
   {% endif %}
 
-  {% if prop_status.enabled == true %}
+  {% if prop_status.enabled == "true" %}
   <details markdown="block"><summary markdown="span">**{{prop.shorttitle}}&nbsp;{{evidence}}**</summary>
   {{prop.excerpt}}
 
   [Learn more about {{prop.shorttitle}}]({{prop.url}})
   </details>
-  {%- elsif prop_status.enabled != false -%}
+  {%- elsif prop_status.enabled == "unknown" -%}
+  {%- elsif prop_status.enabled != "false" -%}
   ERROR_PROP_STATUS_NOT_DEFINED={{prop.id}}
   {% endif %}
   {% endfor %}
