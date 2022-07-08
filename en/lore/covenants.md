@@ -19,10 +19,9 @@ bitcoins to either her cold wallet or her favorite exchange.
   covenant-based applications (or to make existing applications more
   powerful)
 
-Not every proposal enables every application, so we've cross-referenced
-each proposal by the applications it would enabled (and each application
-by the proposals that would enable it), making it easier to compare
-different ideas.
+- [Analysis][] draws insights from the data available on individual
+  applications and proposals.
 
 [applications]: /en/lore/covenants/apps/
 [proposals]: /en/lore/covenants/proposals/
+[analysis]: /en/lore/covenants/analysis/

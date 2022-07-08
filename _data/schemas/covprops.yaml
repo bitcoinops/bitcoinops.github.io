@@ -72,7 +72,8 @@ properties:
             - enabled
           enabled:
             description: Whether the proposal in this document enables the applictaion in this item
-            type: boolean
+            type: string
+            pattern: "^(true|false|unknown)$"
 
           example_code:
             description: Link to example code demonstrating the use of this proposal for this application

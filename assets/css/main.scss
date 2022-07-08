@@ -206,11 +206,11 @@ div.xoverflow {
     animation-duration: 7s;
 }
 
-td.compat_yes {
+td.compat_yes, td.status_true {
   background-color: $compatibility-feature-yes;
 }
 
-td.compat_no {
+td.compat_no, td.status_false {
   background-color: $compatibility-feature-no;
 }
 

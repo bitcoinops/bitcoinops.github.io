@@ -1,6 +1,6 @@
 ---
 title: "OP_CAT + OP_CHECKSIGFROMSTACK"
-shorttitle: "OP_CAT + OP_CSFS"
+shorttitle: "CAT+CSFS"
 uid: cat_csfs
 #layout: covprop
 topic_page_or_best_reference: /en/topics/op_checksigfromstack/
@@ -19,42 +19,42 @@ implementations:
 
 covenant_based_apps:
   channel_factories:
-    enabled: true
+    enabled: "true"
 
   congestion_control:
-    enabled: true
+    enabled: "true"
 
   dlc_efficiency:
-    enabled: true
+    enabled: "unknown"
 
   drivechains:
-    enabled: true
+    enabled: "true"
 
   eltoo:
-    enabled: true
+    enabled: "true"
 
   statechains:
-    enabled: true
+    enabled: "true"
 
   joinpools:
-    enabled: true
+    enabled: "true"
 
   non_interactive_channels:
-    enabled: true
+    enabled: "true"
 
   bishop_vaults:
-    enabled: true
+    enabled: "true"
 
   mes_vaults:
-    enabled: true
+    enabled: "true"
     example_code: https://blog.blockstream.com/en-covenants-in-elements-alpha/
     #example_txes: NONE
 
   obeirne_vaults:
-    enabled: true
+    enabled: "true"
 
   zk_rollups:
-    enabled: true
+    enabled: "true"
 
 excerpt: >
   `OP_CAT` concatenates two strings and `OP_CHECKSIGFROMSTACK`
