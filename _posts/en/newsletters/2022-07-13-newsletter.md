@@ -106,7 +106,13 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25353][] Add a `-mempoolfullrbf` node setting FIXME:Xekyo
+- [Bitcoin Core #25353][] introduces the `mempoolfullrbf` configuration
+  option previously described in [Newsletter #205][news205 fullrbf].
+  This option enables node operators to switch their node's [transaction
+  replacement behavior][topic rbf] from the default [opt-in RBF
+  (BIP125)][BIP125] to full RBF—permitting transaction replacement in
+  the node's mempool without enforcing the signaling requirement, but
+  following the same economic rules as opt-in RBF.
 
 - [Bitcoin Core #25454][] p2p: Avoid multiple getheaders messages in flight to the same peer FIXME:adamjonas
 
@@ -169,3 +175,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [corallo delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003641.html
 [news203 scid]: /en/newsletters/2022/06/08/#bolts-910
 [cia doc]: https://github.com/ElementsProject/cross-input-aggregation
+[news205 fullrbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
