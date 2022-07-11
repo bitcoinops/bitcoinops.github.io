@@ -144,8 +144,10 @@ spelled the same.
 |-|-|-|
 | coinbase transaction | generation transaction | |
 | hardware signers _or_ hardware signing devices| hardware wallets | The wallet is the software/logical component that tracks UTXOs, constructs transactions, etc. Devices sold as "hardware wallets" are dedicated key storage and signing devices. |
+| forwarding | routing | For relaying LN payments from one node to the next |
 | lowercase words for P2P message types e.g. inv, getdata, tx | Uppercase words e.g. INV, GETDATA, TX | The command type contained in the P2P message is lowercase ascii |
 | Merklized Alternative Script Trees | Merklized Abstract Syntax Trees | https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast |
+| pathfinding | routing | For finding LN routes; *routing* is ok in specialized contexts (e.g. "source-routed" or trampoline routing)
 | payjoin | P2EP, bustapay, PayJoin | |
 | receiver | recipient | |
 | spender | sender | "sender" may ambiguously refer to the sender of data |
