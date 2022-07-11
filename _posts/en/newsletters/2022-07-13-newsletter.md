@@ -77,13 +77,55 @@ projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:glozow
+[Manual block-relay-only connections with addnode][review club 24170]
+is a PR by Martin Zumsande to allow users to manually create
+connections with nodes on which only blocks (not transactions or
+peer addresses) are relayed. This option is intended to help prevent
+[eclipse attacks][topic eclipse attacks], particularly for nodes running on [privacy networks][topic anonymity networks]
+such as Tor.
 
 {% include functions/details-list.md
 
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/24148#l-41FIXME"
+  q0="Why could peers that are only active on privacy networks such as
+Tor be more susceptible to eclipse attacks compared to clearnet-only
+peers?"
+  a0="Nodes on clearnet can use information such as network groups of
+IP addresses to try to select 'diverse' peers. On the other hand, it's
+difficult to tell whether a set of onion addresses all belong to a
+single attacker, so it's harder to do so on Tor. Also, while the set
+of Bitcoin nodes running on Tor is quite large, a node using -onlynet
+on a privacy network with few Bitcoin nodes could be easily eclipsed,
+since there aren't many options for peers."
+  a0link="https://bitcoincore.reviews/24170#l-42"
+
+  q1="What is the difference between the `onetry` and `add` modes in the
+`addnode` RPC?"
+  a1="As the name suggests, `onetry` only tries to call
+`CConnman::OpenNetworkConnection()` once. If it fails, the peer is not
+added. On the other hand, `addnode` mode causes the node to repeatedly
+try to connect to the node until it succeeds."
+  a1link="https://bitcoincore.reviews/24170#l-72"
+
+  q2="The PR introduces a new connection type `MANUAL_BLOCK_RELAY`
+that combines the properties of `MANUAL` and `BLOCK_RELAY` peers. What
+are the advantages and disadvantages of having an extra connection
+type, as opposed to combining the logic of the existing ones?"
+  a2="As there are many attributes of p2p connections but few types,
+participants agreed that using flat, enumerated connection types is
+simpler. They also noted that describing connections using
+combinations of capabilities and permissions could lead to a
+combinatorial blowup of connection types and convoluted logic,
+including some which might not make sense."
+  a2link="https://bitcoincore.reviews/24170#l-97"
+
+  q3="What types of attacks that this PR tries to mitigate are fixed
+by BIP324? Which ones aren’t?"
+  a3="[BIP324][] enhances privacy by adding opportunistic encryption to
+prevent eavesdropping and network-wide surveillance, but isn't
+intended to prevent eclipse attacks. Even with some mechanism of
+authentication, it does not help identify whether the peer is honest
+or a distinct entity from other peers."
+  a3link="https://bitcoincore.reviews/24170#l-110"
 
 %}
 
@@ -176,3 +218,5 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news203 scid]: /en/newsletters/2022/06/08/#bolts-910
 [cia doc]: https://github.com/ElementsProject/cross-input-aggregation
 [news205 fullrbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
+[review club 24170]: https://bitcoincore.reviews/24170
+[BIP324]: https://gist.github.com/dhruv/5b1275751bc98f3b64bcafce7876b489
