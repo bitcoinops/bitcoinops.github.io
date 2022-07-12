@@ -156,7 +156,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   the node's mempool without enforcing the signaling requirement, but
   following the same economic rules as opt-in RBF.
 
-- [Bitcoin Core #25454][] p2p: Avoid multiple getheaders messages in flight to the same peer FIXME:adamjonas
+- [Bitcoin Core #25454][] avoids multiple getheaders messages in flight
+  to the same peer, which reduces bandwidth useage by waiting up to two
+  minutes for a response to a prior getheaders message before issuing
+  a new one.
 
 - [Core Lightning #5239][] improves the gossip handling code by updating
   CLN's internal map of the payment relay network using all received
