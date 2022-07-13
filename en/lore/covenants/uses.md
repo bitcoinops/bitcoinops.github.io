@@ -1,13 +1,10 @@
 ---
 layout: page
 lang: en
-title: Covenants
+title: Uses
 name: publications
 permalink: /en/lore/covenants/uses/
 share: false
 version: 1
 ---
-{% for use in site.covuses %}
-- [{{use.title}}]({{use.url}})
-{% endfor %}
-
+{% include linkers/item-list.md collection=site.covuses %}

@@ -1,13 +1,10 @@
 ---
 layout: page
 lang: en
-title: Covenants
+title: Proposals
 name: publications
 permalink: /en/lore/covenants/proposals/
 share: false
 version: 1
 ---
-{% for prop in site.covprops %}
-- [{{prop.title}}]({{prop.url}})
-{% endfor %}
-
+{% include linkers/item-list.md collection=site.covprops %}

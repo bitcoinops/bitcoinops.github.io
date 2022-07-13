@@ -13,6 +13,7 @@ properties:
     description: Title of the use
     type: string
 
+
   uid:
     description: Unique identifier for this use
     type: string
@@ -22,6 +23,12 @@ properties:
   shorttitle:
     description: Short alternative name to use for links and quick mentions
     type: string
+
+  aliases:
+    description: Other names for the subject
+    type: array
+    items:
+      type: string
 
   excerpt:
     description: A short description of the use
