@@ -16,8 +16,8 @@ topic_validation = $(wildcard _topics/en/*.md)
 topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 covprop_validation = $(wildcard _covprops/en/*.md)
 covprop_validation := $(patsubst _covprops/en/%.md,_site/en/covenants/proposals/%/index.html,$(covprop_validation))
-covapps_validation = $(wildcard _covapps/en/*.md)
-covapps_validation := $(patsubst _covapps/en/%.md,_site/en/covenants/applications/%/index.html,$(covapps_validation))
+covuses = $(wildcard _covuses/en/*.md)
+covuses := $(patsubst _covuses/en/%.md,_site/en/covenants/uses/%/index.html,$(covuses_validation))
 
 clean:
 	bundle exec jekyll clean
@@ -42,7 +42,7 @@ build:
 	bundle exec jekyll build $(JEKYLL_FLAGS)
 
 
-test-before-build: $(covprop_validation) $(covapps_validation) $(compatibility_validation) $(topic_validation)
+test-before-build: $(covprop_validation) $(covuses_validation) $(compatibility_validation) $(topic_validation)
 	## Check for Markdown formatting problems
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
@@ -132,5 +132,5 @@ _site/en/topics/%/index.html : _topics/en/%.md
 _site/en/covenants/proposals/%/index.html : _covprops/en/%.md
 	bundle exec _contrib/schema-validator.rb _data/schemas/covprops.yaml $<
 
-_site/en/covenants/applications/%/index.html : _covapps/en/%.md
-	bundle exec _contrib/schema-validator.rb _data/schemas/covapps.yaml $<
+_site/en/covenants/uses/%/index.html : _covuses/en/%.md
+	bundle exec _contrib/schema-validator.rb _data/schemas/covuses.yaml $<

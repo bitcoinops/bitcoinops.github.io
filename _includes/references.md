@@ -14,8 +14,8 @@
 {% for entry in site.covprops %}
   [covprop {{entry.shortname | default: entry.title}}]: {{entry.url}}
 {%- endfor %}
-{% for entry in site.covapps %}
-  [covapp {{entry.shortname | default: entry.title}}]: {{entry.url}}
+{% for entry in site.covuses %}
+  [covuse {{entry.shortname | default: entry.title}}]: {{entry.url}}
 {%- endfor %}
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}

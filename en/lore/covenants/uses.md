@@ -3,11 +3,11 @@ layout: page
 lang: en
 title: Covenants
 name: publications
-permalink: /en/lore/covenants/apps/
+permalink: /en/lore/covenants/uses/
 share: false
 version: 1
 ---
-{% for app in site.covapps %}
-- [{{app.title}}]({{app.url}})
+{% for use in site.covuses %}
+- [{{use.title}}]({{use.url}})
 {% endfor %}
 

@@ -14,7 +14,7 @@ properties:
     type: string
 
   uid:
-    description: Unique identifier for this application
+    description: Unique identifier for this proposal
     type: string
     maxLength: 20  # arbitrary but short
     pattern: "^[a-z][a-z0-9_]*$"  # starts lowercase, then all lowercase or numbers or underscore
@@ -61,8 +61,8 @@ properties:
           type: string
           pattern: "^[0-9]{4}[-0-9]*$"  # e.g. 2018 or 2018-04-01
 
-  covenant_based_apps:
-    description: A list of covenant-based applications
+  uses:
+    description: A list of covenant-based uses
     type: object
     patternProperties:
       "^":  # Match everything
@@ -71,16 +71,16 @@ properties:
           required:
             - enabled
           enabled:
-            description: Whether the proposal in this document enables the applictaion in this item
+            description: Whether the proposal in this document enables the use in this item
             type: string
             pattern: "^(true|false|unknown)$"
 
           example_code:
-            description: Link to example code demonstrating the use of this proposal for this application
+            description: Link to example code demonstrating the implementation of this proposal for this use
             type: string
 
           example_txes:
-            description: Link to example transactions demonstrating the use of this proposal for this application
+            description: Link to example transactions demonstrating the implementation of this proposal for this use
             type: string
             
       

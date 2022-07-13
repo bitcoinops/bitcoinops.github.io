@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Applications Enabled by Proposals
+title: Uses Enabled by Proposals
 permalink: /en/lore/covenants/analysis/enable-table/
 nowrap: true
 
@@ -16,10 +16,10 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 </style>
 
 {% assign proposals_sorted = site.covprops | sort: 'shorttitle' %}
-{% assign apps_sorted = site.covapps | sort: 'title' %}
+{% assign apps_sorted = site.covuses | sort: 'title' %}
 <table class="compatibility">
   <tr>
-    <th>Applications</th>
+    <th>Uses</th>
     {% for prop in proposals_sorted %}
     <th><a href="{{prop.url}}">{{prop.shorttitle}}</a></th>
     {% endfor %}
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
   <tr>
     <th><a href="{{app.url}}">{{app.title}}</a></th>
     {% for prop in proposals_sorted %}
-      {% assign app_status = prop.covenant_based_apps[app.uid].enabled %}
+      {% assign app_status = prop.uses[app.uid].enabled %}
       <td class="status_{{app_status}}">{{page.indicators[app_status]}}</td>
     {% endfor %}
   </tr>

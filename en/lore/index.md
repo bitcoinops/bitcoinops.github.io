@@ -32,8 +32,8 @@ Various information collected and curated by Optech.
 
 - **[Covenants][]**<br>
   {{site.covprops | size}} different covenant proposals summarized and
-  associated with the up to {{site.covapps | size}} different
-  applications they would enable.
+  associated with the up to {{site.covuses | size}} different
+  uses they would enable.
 
 [topics]: /en/topics/
 [compat]: /en/compatibility/

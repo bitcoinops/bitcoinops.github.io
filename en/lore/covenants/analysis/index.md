@@ -4,11 +4,11 @@ layout: page
 ---
 Analysis of the various applications and proposals for Bitcoin
 covenants.  All information automatically extracted from the individual
-[application][] and [proposal][] pages.
+[proposal][] and [uses][] pages.
 
-- [Applications enabled by proposal][enable table]: a table summarizing
-  which applications are enabled by the various covenant proposals.
+- [Uses enabled by proposal][enable table]: a table summarizing
+  which uses are enabled by the various covenant proposals.
 
 [enable table]: /en/lore/covenants/analysis/enable-table/
-[application]: /en/lore/covenants/apps/
+[uses]: /en/lore/covenants/uses/
 [proposal]: /en/lore/covenants/proposals/

@@ -68,9 +68,9 @@ defaults:
       layout: covprop
       localizable: false
   - scope:
-      path: "_covapps"
+      path: "_covuses"
     values:
-      layout: covapp
+      layout: covuses
       localizable: false
 
 collections:
@@ -79,9 +79,9 @@ collections:
   covprops:
     output: true
     permalink: /en/lore/covenants/proposals/:title/
-  covapps:
+  covuses:
     output: true
-    permalink: /en/lore/covenants/apps/:title/
+    permalink: /en/lore/covenants/uses/:title/
 
 languages:
   - code: ja

@@ -1,6 +1,6 @@
 ---
-id: https://bitcoinops.org/schema/covenants/proposals
-description: The covenant-based application object
+id: https://bitcoinops.org/schema/covenants/uses
+description: The covenant-based uses object
 type: object
 required:
   - title
@@ -10,11 +10,11 @@ required:
 additionalProperties: false
 properties:
   title:
-    description: Title of the application
+    description: Title of the use
     type: string
 
   uid:
-    description: Unique identifier for this application
+    description: Unique identifier for this use
     type: string
     maxLength: 20  # arbitrary but short
     pattern: "^[a-z][a-z0-9_]*$"  # starts lowercase, then all lowercase or numbers or underscore
@@ -24,17 +24,17 @@ properties:
     type: string
 
   excerpt:
-    description: A short description of the application
+    description: A short description of the use
     type: string
     minLength: 1   ## Anything not empty
     maxLength: 1000 ## Arbitrary but suggest keeping it short for cases where the excerpt is included in summaries
 
   topic_page_or_best_reference:
-    description: A link to the best reference for the proposal, preferably an Optech topic page but possibly an external reference
+    description: A link to the best reference for the use, preferably an Optech topic page but possibly an external reference
     type: string
 
   implementations:
-    description: A list of known implementations of the proposal, either for testnets or other production networks such as sidechains or altcoins
+    description: A list of known implementations of the use, either for testnets or other production networks such as sidechains or altcoins
     type: list
     items:
       type: object
@@ -53,7 +53,7 @@ properties:
           type: boolean
 
         reference:
-          description: URL to information about the implementation of this proposal on the indicated network
+          description: URL to information about the implementation of this use on the indicated network
           type: string
 
   extra:

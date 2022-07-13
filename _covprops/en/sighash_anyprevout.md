@@ -6,7 +6,7 @@ topic_page_or_best_reference: /en/topics/sighash_anyprevout/
 
 implementations:
 
-covenant_based_apps:
+uses:
   channel_factories:
     enabled: "true"
 
@@ -25,7 +25,7 @@ excerpt: >
   script, eliminating the need to store a different signature for every
   possible transaction in an offchain contract protocol.
 ---
-## Advantages 
+## Advantages
 
 - **Simple:** the direct behavior of APO is simple to understand---it
   just commits to less data than normal signatures.

@@ -5,7 +5,7 @@ layout: post
 {% endcapture %}
 {% capture /dev/null %}
   <!-- Get links for previous and next pages -->
-    {% include linkers/prevnext.md entries=site.covapps %}
+    {% include linkers/prevnext.md entries=site.covuses %}
 
   <!-- Build natural sentence-style list of aliases for this page's topic -->
   {% if page.aliases != nil %}
@@ -87,12 +87,12 @@ layout: post
   {{- '## Enabling proposals' }}
 
   *Proposals to change Bitcoin that would enable {{page.title}} or
-  provide significant benefits to using them.  Click any application
-  name to see more information. ✓ = code available; ✓✓ = example
+  provide significant benefits to using them.  Click the name of any
+  proposal to see more information. ✓ = code available; ✓✓ = example
   transactions available.*
 
   {% for prop in site.covprops %}
-  {% assign prop_status = prop.covenant_based_apps[page.uid] %}
+  {% assign prop_status = prop.uses[page.uid] %}
 
   {% assign evidence = "" %}
   {% assign evidence_details = "" %}

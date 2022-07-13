@@ -17,7 +17,7 @@ implementations:
     # also https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/may-2018-reenabled-opcodes.md
     since: "2018"
 
-covenant_based_apps:
+uses:
   channel_factories:
     enabled: "true"
 
