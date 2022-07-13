@@ -4,6 +4,8 @@ shorttitle: "CAT+CSFS"
 uid: cat_csfs
 #layout: covprop
 topic_page_or_best_reference: /en/topics/op_checksigfromstack/
+aliases:
+  - OP_SHASTREAM   # FIXME: move to separate OP_CAT covenants page
 
 implementations:
   - name: Liquid
@@ -115,6 +117,45 @@ excerpt: >
 
 ## Alternative approaches
 
-FIXME:OP_TX
+<!-- TODO: probably should be moved to a separate page about just CAT with a reference note left here -->
+
+- **SHA256 streaming instead of `OP_CAT`:** the way CAT would usually be
+  combined with CSFS is something like `signature data3 data2 data1
+  data0 OP_CAT OP_CAT OP_CAT OP_SHA256 pubkey OP_CSFS`, which would
+  combine the four pieces of data, create a 32-byte hash digest of them,
+  and then verify that a signature for a particular pubkey signed that
+  hash digest.
+
+    This is simple to think about but it runs into some practical
+    problems, most especially Bitcoin Script's requirement that any
+    piece of data on the stack be 520 bytes or less.  If you CAT
+    together two pieces of data that are over 520 bytes, the script
+    fails.  This is a significant constraint when using CAT+CSFS
+    requires replicating significant parts of a transaction (and the
+    UTXOs it's spending) on the stack.  It can limit a transaction to 10
+    or fewer inputs or outputs.
+
+    However, it's possible to incrementally feed data to a separate
+    buffer that will return a SHA256 hash digest of that data on return.
+    For example, `signature data3 data2 data1 data0 OP_SHA256INITIALIZE
+    OP_SHA256UPDATE OP_SHA256UPDATE OP_SHA256FINALIZE pubkey OP_CSFS`.
+    This produces the same result as CAT but each data element may be up
+    to 520 bytes in size and there's no limitation on their combined
+    size.  An optimization here is that the buffer never needs to be
+    larger than 96 bytes---64 bytes for the SHA256 working state and up
+    to 32 bytes for the next chunk of data that the SHA256 algorithm
+    will work producing the ultimate digest.  In short, SHA streaming
+    circumvents a burdensome constraint and reduces the worst-case
+    amount of memory a node would use to process a CAT-style script.
+
+    The only known downsides of SHA streaming are slight: they're more
+    conceptually complex than CAT, and the optimized way of implementing
+    them requires lower-level access to the SHA256 hash function than
+    may be available to some full node implementations without writing
+    their own SHA256 code.
+
+    SHA streaming is [implemented][elements shastream] in
+    ElementsProject.org (the basis for Blockstream Liquid).
 
 {% include references.md %}
+[elements shastream]: https://github.com/ElementsProject/elements/blob/master/doc/tapscript_opcodes.md
