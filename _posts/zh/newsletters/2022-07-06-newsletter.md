@@ -12,7 +12,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--longterm-block-reward-funding-->长期的区块奖励融资**：在 Bitcoin-Dev 邮件组的一篇表面上讨论限制条款（[covenants][topic covenants]）的帖子中，作者提到，在当前的模式下，比特币的长期安全性依赖于对区块空间的需求。这种需求必须能产生足够高的手续费，超过攻击者愿意为摧毁比特币用户而向矿工支付的价格。开发者 Peter Todd [指出][todd subsidy]，如果比特币协议能被修改成包含一项永续的补贴，这种依赖就可以移除。许多回复表示，他们认为这个系统没有永续补贴会更好，不过也有人在寻找替代方案或明显等价的方案（比如 “[保管费用][]”）。
+- **<!--longterm-block-reward-funding-->长期的区块奖励融资**：在 Bitcoin-Dev 邮件组的一篇表面上讨论限制条款（[covenants][topic covenants]）的帖子中，作者提到，在当前的模式下，比特币的长期安全性依赖于对区块空间的需求。这种需求必须能产生足够高的手续费，超过攻击者愿意为摧毁比特币用户而向矿工支付的价格。开发者 Peter Todd [指出][todd subsidy]，如果比特币协议能被修改成包含一项永续的补贴，这种依赖就可以移除。许多回复表示，他们认为这个系统没有永续补贴会更好，不过也有人在寻找替代方案或明显等价的方案（比如 “[保管费用][demurrage]”）。
 
   截至本文撰写之时，这个帖子里似乎只有随意的对话，而算不上是为在可见的未来改变比特币而提出的实际提议。
 
@@ -20,7 +20,7 @@ lang: zh
 
   但是，BIP47 的问题之一是，支付者 Bob 第一次发给接收者 Alice 的交易是一笔 *通知交易*，使用了跟支付码相关的一个特殊地址。这就毫无疑问会向知道 Alice 的支付码的第三方泄露信息，使其知道有人准备给 Alice 支付。如果 Bob 的钱包没有安排好隔离的资金来发起通知交易，交易也会泄露 Bob 正准备给 Alice 支付 —— 这就减少甚至完全抵消了 BIP47 的好处。
 
-  Holder 的方案似乎更少泄露信息的个能，但会提高实现其协议的客户端需要从区块链上获得的数据量，因此更不适合搭配轻客户端。Ruben Somsen 指出了几种同样值得探究的替代方案，包括 Somsen 的 “静默支付”（见[周报 #194][news194 silent payments]）、Rubin Linus 的 “[2022 隐身地址][]”，以及此前发表在关于优化 BIP47 的邮件组中[讨论][prauge bip47]。
+  Holder 的方案似乎更少泄露信息的个能，但会提高实现其协议的客户端需要从区块链上获得的数据量，因此更不适合搭配轻客户端。Ruben Somsen 指出了几种同样值得探究的替代方案，包括 Somsen 的 “静默支付”（见[周报 #194][news194 silent payments]）、Rubin Linus 的 “[2022 隐身地址][2022 stealth addresses]”，以及此前发表在关于优化 BIP47 的邮件组中[讨论][prauge bip47]。
 
 - **<!--announcing-splices-->宣布拼接（splices）**：在一个 [PR][bolts #1004] 和 Lihtning-Dev 邮件组的一场[讨论][osuntokun splice]中，开发者们讨论了宣布某个正在关闭的通道实际上是在[拼接][topic splicing]的最好办法。通道拼接的意思是，这条通道实际上并没有消失，只是会增加或减少容量。
 
@@ -51,7 +51,7 @@ lang: zh
 - [LDK #1550][] 增加了一个功能，用户可以维护一个节点黑名单，路由支付时将不再通过这些节点。
 - [LND #6592][] 增加了一种新的钱包 RPC 方法 ` requiredreserve ` ，可以打印出钱包正在接收的 UTXO 如果有必要使用为[锚点输出][topic anchor outputs]追加手续费的话，最终能得到多少聪。一个额外的  ` --additionalChannels ` RPC 参数，可以接收一个整数，返回如果额外开启这么多的通道的话，钱包将剩余多少聪。
 - [Rust Bitcoin #1024][] 加入额外的代码来帮助开发者解决 [ ` SIGHASH_SINGLE ` “bug”][shs1]。这个 “bug” 是说，当包含了  ` SIGHASH_SINGLE ` 签名的输入的索引号高于交易的所有输出的索引号时，比特币协议会预期需要签名一个  ` 1 ` 。
-- [BTCPay Server #3709][] 加入了对通过 [LNURL 取款功能][]拉取支付的接收支持。
+- [BTCPay Server #3709][] 加入了对通过 [LNURL 取款功能][LNURL withdraw]拉取支付的接收支持。
 - [BDK #611][] 开始默认为新交易设置 nLockTime 字段到最新的区块高度，以[抵抗交易费狙击][topic fee sniping]。
 
 {% include references.md %}
