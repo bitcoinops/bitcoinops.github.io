@@ -16,7 +16,7 @@ lang: zh
 
   截至本文撰写之时，这个帖子里似乎只有随意的对话，而算不上是为在可见的未来改变比特币而提出的实际提议。
 
-- **<!--updated-alternative-to-bip47-reusable-payment-codes-->BIP47 可复用支付码的升级替代方案**：开发者 Alfred Hodler 在 Bitcoin-Dev 邮件组中[发帖][hodler new codes]，提出了 [BIP47][] 的一种替代方案，旨在解决 BIP47 在生产环境中发现的一些问题。BIP47 使得 Alice 可以公开一个支付码，任何人都可以用这个支付码和自己的私钥来创建无限数量的私密地址，只有 Alice 和创建者知道这些地址属于 Alice，从而避免了[地址复用][topic output linking]最糟糕 的问题。
+- **<!--updated-alternative-to-bip47-reusable-payment-codes-->BIP47 可复用支付码的升级替代方案**：开发者 Alfred Hodler 在 Bitcoin-Dev 邮件组中[发帖][hodler new codes]，提出了 [BIP47][] 的一种替代方案，旨在解决 BIP47 在生产环境中发现的一些问题。BIP47 使得 Alice 可以公开一个支付码，任何人都可以用这个支付码和自己的私钥来创建无限数量的私密地址，只有 Alice 和创建者知道这些地址属于 Alice，从而避免了[地址复用][topic output linking]最糟糕的问题。
 
   但是，BIP47 的问题之一是，支付者 Bob 第一次发给接收者 Alice 的交易是一笔 *通知交易*，使用了跟支付码相关的一个特殊地址。这就毫无疑问会向知道 Alice 的支付码的第三方泄露信息，使其知道有人准备给 Alice 支付。如果 Bob 的钱包没有安排好隔离的资金来发起通知交易，交易也会泄露 Bob 正准备给 Alice 支付 —— 这就减少甚至完全抵消了 BIP47 的好处。
 
@@ -28,11 +28,11 @@ lang: zh
 
   另一个提议是在链上的通道关闭交易中包含一个信号，表明正在拼接，从而告诉节点依然可以通过该通道来路由支付。
 
-- **<!--fundamental-feecollection-strategies-for-ln-forwarding-nodes-->闪电网络路由节点的手续费收集基本策略**：开发者 ZmnSCPxj [总结了][zmnscpxj forwarding]三种闪电网络路由节点可以初春三的手续费收集策略（也包括完全不收手续费）。然哈ZmnSCPxj 分析了不同策略的可能后果。这似乎跟他的 “节点可以用路由费率来提高支付成功率” 的提议有关，见[周报 #204][news204 fee signal]；那个提议在上周也收到了来自 Anthony Towns 的重要[附加性评论][towns fee signal]。
+- **<!--fundamental-feecollection-strategies-for-ln-forwarding-nodes-->闪电网络路由节点的手续费收集基本策略**：开发者 ZmnSCPxj [总结了][zmnscpxj forwarding]三种闪电网络路由节点可以使用的手续费收集策略（也包括完全不收手续费）。然后 ZmnSCPxj 分析了不同策略的可能后果。这似乎跟他的 “节点可以用路由费率来提高支付成功率” 的提议有关，见[周报 #204][news204 fee signal]；那个提议在上周也收到了来自 Anthony Towns 的重要[附加性评论][towns fee signal]。
 
 - **<!--onion-message-rate-limiting-->洋葱消息速率限制**：Bastien Teinturier [发帖][teinturier rate limit] 总结了一个他归功于 Rusty Russell 的关于限制[洋葱消息][topic onion messages]速率限制的想法。这个想法是让每个节点都为自己的每一个对等节点存储额外的 32 字节信息，让他们可以概率性地惩罚发送了太多流量的对等节点。提议建议的惩罚是让发送了太多流量的节点在接下来约 30 秒内速率限制减半。这是可以接受的，因为这种轻微的惩罚是偶尔对出错的节点实施的。这个提议也让一条消息的发起者知道哪个下游节点限制住了这条消息的传播速率（同样只是概率性的），给了他们使用另一条路径重发消息的机会。
 
-  Olaoluwa Osuntokyn [建议][osuntokun onion pay] 重新考虑他之前提出的、按照流量收费来防止洋葱消息滥用的想法（见[周报 #190][news190 onion pay]）。截至本周报撰写之时，来自其他开发者的恢复表明，他们会先尝试这种清凉的速率限制方案，看看它能不能工作，然后再考虑为洋葱消息加入支付。
+  Olaoluwa Osuntokyn [建议][osuntokun onion pay] 重新考虑他之前提出的、按照流量收费来防止洋葱消息滥用的想法（见[周报 #190][news190 onion pay]）。截至本周报撰写之时，来自其他开发者的恢复表明，他们会先尝试这种轻量的速率限制方案，看看它能不能工作，然后再考虑为洋葱消息加入支付。
 
 ## 新版本和候选版本
 
@@ -44,10 +44,10 @@ lang: zh
 
 本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[比特币升级提议（BIP）][bips repo] 和 [闪电网络技术基础（BOLT）][bolts repo]。
 
-- [Bitcoin Core #24836][] 加入了一个只能在 regtest 模式下使用的 RPC 方法  ` submitpackage ` ，以帮助希望在未来使用[交易包转发][topic package relay]功能的 L2 协议和应用开发者测试他们的交易能否使用 Bitcoin Core 默认的设置。当前的设置可在[此处][packages doc]知晓。这个 PRC 方法也可以用来测试未来的增加和变更，比如交易包 RBF 规则提议。
+- [Bitcoin Core #24836][] 加入了一个只能在 regtest 模式下使用的 RPC 方法  ` submitpackage ` ，以帮助希望在未来使用[交易包转发][topic package relay]功能的 L2 协议和应用开发者测试他们的交易能否使用 Bitcoin Core 默认的设置。当前的设置可在[此处][packages doc]知晓。这个 RPC 方法也可以用来测试未来的增加和变更，比如交易包 RBF 规则提议。
 - [Bitcoin Core #22558][] 添加了 [BIP371][] 对额外 [PSBT][topic psbt] 字段的支持，该字段用于 [taproot][topic taproot]（见[周报 #155][news155 psbt extensions]）。
 - [Core Lightning #5281][] 增加支持，可以多次指定  ` log-file ` 的配置选项，从而写入多个日志文件。
-- [LDK #1555][] 升级了其寻路代码，使其稍微偏向于使用那些宣布自己不会接受数额超过通道容量一半的交易的通道来路由支付。有人认为这可以通过限制第三方通过侦测（发送自己并不准备完成的 [HTLC][topic htlc]）所能获得得信息，来提供轻微得隐私性提升。如果一组数额高达通道容量的交易也可以通过一个通道，则侦测者就可以知道准确的通道余额（通过不断尝试不同组合的支付，直到一个组合完全被接受）。但是，如果可以发送的支付的数额限制在通道容量的一半，那么侦测者就更难确定交易是因为缺乏资金还是因为节点自己实施的限制（ ` max_htlc_in_flight_msat ` ）而被拒绝了。[BOLT2][] 的  ` max_htlc_in_flight_msat ` 限制不会被广播，所以 LDD 会使用每个通道被广播的 [BOLT7][]  ` htlc_maximum_msat ` 数值作为一个代理数值。
+- [LDK #1555][] 升级了其寻路代码，使其稍微偏向于使用那些宣布自己不会接受数额超过通道容量一半的交易的通道来路由支付。有人认为这可以通过限制第三方通过侦测（发送自己并不准备完成的 [HTLC][topic htlc]）所能获得的信息，来提供轻微的隐私性提升。如果一组数额高达通道容量的交易也可以通过一个通道，则侦测者就可以知道准确的通道余额（通过不断尝试不同组合的支付，直到一个组合完全被接受）。但是，如果可以发送的支付的数额限制在通道容量的一半，那么侦测者就更难确定交易是因为缺乏资金还是因为节点自己实施的限制（ ` max_htlc_in_flight_msat ` ）而被拒绝了。[BOLT2][] 的  ` max_htlc_in_flight_msat ` 限制不会被广播，所以 LDD 会使用每个通道被广播的 [BOLT7][]  ` htlc_maximum_msat ` 数值作为一个代理数值。
 - [LDK #1550][] 增加了一个功能，用户可以维护一个节点黑名单，路由支付时将不再通过这些节点。
 - [LND #6592][] 增加了一种新的钱包 RPC 方法 ` requiredreserve ` ，可以打印出钱包正在接收的 UTXO 如果有必要使用为[锚点输出][topic anchor outputs]追加手续费的话，最终能得到多少聪。一个额外的  ` --additionalChannels ` RPC 参数，可以接收一个整数，返回如果额外开启这么多的通道的话，钱包将剩余多少聪。
 - [Rust Bitcoin #1024][] 加入额外的代码来帮助开发者解决 [ ` SIGHASH_SINGLE ` “bug”][shs1]。这个 “bug” 是说，当包含了  ` SIGHASH_SINGLE ` 签名的输入的索引号高于交易的所有输出的索引号时，比特币协议会预期需要签名一个  ` 1 ` 。
