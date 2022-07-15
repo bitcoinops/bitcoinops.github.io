@@ -49,12 +49,19 @@ lang: zh
 - [Bitcoin Core #22558][] 添加了 [BIP371][] 对额外 [PSBT][topic psbt] 字段的支持，该字段用于 [taproot][topic taproot]（见[周报 #155][news155 psbt extensions]）。
 
 - [Core Lightning #5281][] 增加支持，可以多次指定 `log-file` 的配置选项，从而写入多个日志文件。
+
 - [LDK #1555][] 升级了其寻路代码，使其稍微偏向于使用那些宣布自己不会接受数额超过通道容量一半的交易的通道来路由支付。有人认为这可以通过限制第三方通过侦测（发送自己并不准备完成的 [HTLC][topic htlc]）所能获得的信息，来提供轻微的隐私性提升。如果一组数额高达通道容量的交易也可以通过一个通道，则侦测者就可以知道准确的通道余额（通过不断尝试不同组合的支付，直到一个组合完全被接受）。但是，如果可以发送的支付的数额限制在通道容量的一半，那么侦测者就更难确定交易是因为缺乏资金还是因为节点自己实施的限制（`max_htlc_in_flight_msat`）而被拒绝了。[BOLT2][] 的 `max_htlc_in_flight_msat` 限制不会被广播，所以 LDD 会使用每个通道被广播的 [BOLT7][] `htlc_maximum_msat` 数值作为一个代理数值。
+
 - [LDK #1550][] 增加了一个功能，用户可以维护一个节点黑名单，路由支付时将不再通过这些节点。
+
 - [LND #6592][] 增加了一种新的钱包 RPC 方法 `requiredreserve`，可以打印出钱包正在接收的 UTXO 如果有必要使用为[锚点输出][topic anchor outputs]追加手续费的话，最终能得到多少聪。一个额外的 `--additionalChannels` RPC 参数，可以接收一个整数，返回如果额外开启这么多的通道的话，钱包将剩余多少聪。
+
 - [Rust Bitcoin #1024][] 加入额外的代码来帮助开发者解决 [`SIGHASH_SINGLE` “bug”][shs1]。这个 “bug” 是说，当包含了 `SIGHASH_SINGLE` 签名的输入的索引号高于交易的所有输出的索引号时，比特币协议会预期需要签名一个 `1`。
+
 - [BTCPay Server #3709][] 加入了对通过 [LNURL 取款功能][LNURL withdraw]拉取支付的接收支持。
+
 - [BDK #611][] 开始默认为新交易设置 nLockTime 字段到最新的区块高度，以[抵抗交易费狙击][topic fee sniping]。
+
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24836,22558,5281,1555,1550,1024,3709,611,1004,6592" %}
