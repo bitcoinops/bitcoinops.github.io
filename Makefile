@@ -16,8 +16,8 @@ topic_validation = $(wildcard _topics/en/*.md)
 topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 covprop_validation = $(wildcard _covprops/en/*.md)
 covprop_validation := $(patsubst _covprops/en/%.md,_site/en/covenants/proposals/%/index.html,$(covprop_validation))
-covuses = $(wildcard _covuses/en/*.md)
-covuses := $(patsubst _covuses/en/%.md,_site/en/covenants/uses/%/index.html,$(covuses_validation))
+covuses_validation = $(wildcard _covuses/en/*.md)
+covuses_validation := $(patsubst _covuses/en/%.md,_site/en/covenants/uses/%/index.html,$(covuses_validation))
 
 clean:
 	bundle exec jekyll clean
