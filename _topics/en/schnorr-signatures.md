@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Why isn’t `OP_CHECKMULTISIG` compatible with batch verification of schnorr signatures?"
     url: /en/newsletters/2022/05/25/#why-isn-t-op-checkmultisig-compatible-with-batch-verification-of-schnorr-signatures
 
+  - title: "LND #6722 adds support for signing arbitrary messages with schnorr signatures"
+    url: /en/newsletters/2022/07/20/#lnd-6722
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?
