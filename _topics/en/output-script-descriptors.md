@@ -134,6 +134,9 @@ optech_mentions:
   - title: "PR Review Club about miniscript support for descriptors"
     url: /en/newsletters/2022/06/08/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #24148 adds watch-only support for descriptors containing miniscript"
+    url: /en/newsletters/2022/07/20/#bitcoin-core-24148
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

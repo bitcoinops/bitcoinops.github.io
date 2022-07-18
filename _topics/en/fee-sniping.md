@@ -49,6 +49,9 @@ optech_mentions:
   - title: "BDK #611 begins using anti fee sniping by default"
     url: /en/newsletters/2022/07/06/#bdk-611
 
+  - title: Discussion about fee sniping in relationship to block subsidy
+    url: /en/newsletters/2022/07/20/#fee-sniping
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
