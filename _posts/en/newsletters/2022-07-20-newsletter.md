@@ -123,7 +123,17 @@ summaries of notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **LNP/BP release Storm beta software:**
+  The LNP/BP Standards Association [released][lnpbp tweet] beta software for [Storm][storm
+  github], a messaging and storage protocol using LN.
+
+- **Robinhood supports bech32:**
+  Exchange Robinhood enables [withdrawal (send) support][robinhood withdrawals]
+  for [bech32][topic bech32] addresses.
+
+- **Sphinx announces VLS signing device:**
+  The Sphinx team [announced][sphinx vls blog] a hardware signing device
+  interfacing with [Validating Lightning Signer (VLS)][vls gitlab].
 
 ## Releases and release candidates
 
@@ -182,3 +192,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [towns ff]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020735.html
 [todd centralizing]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020705.html
 [towns market design]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020716.html
+[lnpbp tweet]: https://twitter.com/lnp_bp/status/1545366480593846275
+[storm github]: https://github.com/Storm-WG
+[robinhood withdrawals]: https://robinhood.com/us/en/support/articles/cryptocurrency-wallets/#Supportedaddressformatsforcryptowithdrawals
+[sphinx vls blog]: https://sphinx.chat/2022/06/27/a-lightning-nodes-problem-with-hats/
+[vls gitlab]: https://gitlab.com/lightning-signer/docs
