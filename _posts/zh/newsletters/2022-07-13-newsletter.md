@@ -33,7 +33,7 @@ lang: zh
 {% include functions/details-list.md
 
   q0="<!--why-could-peers-that-are-only-active-on-privacy-networks-such-as-tor-be-more-susceptible-to-eclipse-attacks-compared-to-clearnet-only-peers-->为什么只在隐私网络（如 Tor）上活跃的节点比只在 clearnet 的节点更容易受到日蚀攻击？"
-  a0="clearnet 上的节点可以使用 IP 地址的网络组等信息来尝试选择“不同”的节点。而反过来，很难判断一组洋葱地址是否都属于单个攻击者，因此更难在 Tor 上这样做。此外，虽然在 Tor 上运行的比特币节点集相当大，但一个在隐私网络上使用 -onlynet、有很少比特币节点连接的节点很容易被日蚀攻击，因为这些节点的选择并不多。" 
+  a0="clearnet 上的节点可以使用 IP 地址的网络组等信息来尝试选择“不同”的节点。而反过来，很难判断一组洋葱地址是否都属于单个攻击者，因此更难在 Tor 上这样做。此外，虽然在 Tor 上运行的比特币节点集相当大，但一个在隐私网络上使用 -onlynet、有很少比特币节点连接的节点很容易被日蚀攻击，因为这些节点的选择并不多。"
   a0link="https://bitcoincore.reviews/24170#l-42"
 
   q1="<!--what-is-the-difference-between-the-onetry-and-add-modes-in-the-addnode-rpc-->`addnode` RPC 中的 `onetry` 和 `add` 模式有什么区别？"
