@@ -89,11 +89,11 @@ lang: zh
 [blog agg]: https://blog.blockstream.com/half-aggregation-of-bip-340-signatures/
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [ruffing xonly]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020663.html
-[news204 rmusig]: /en/newsletters/2022/06/15/#recursive-musig2
+[news204 rmusig]: /zh/newsletters/2022/06/15/#recursive-musig2-musig2
 [todd delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003621.html
 [corallo delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003641.html
-[news203 scid]: /en/newsletters/2022/06/08/#bolts-910
+[news203 scid]: /zh/newsletters/2022/06/08/#bolts-910
 [cia doc]: https://github.com/ElementsProject/cross-input-aggregation
-[news205 fullrbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
+[news205 fullrbf]: /zh/newsletters/2022/06/22/#policy-limits
 [review club 24170]: https://bitcoincore.reviews/24170
 [BIP324]: https://gist.github.com/dhruv/5b1275751bc98f3b64bcafce7876b489
