@@ -70,6 +70,9 @@ optech_mentions:
   - title: "BIPs #1279 updates BIP322 with clarifications and test vectors"
     url: /en/newsletters/2022/02/16/#bips-1279
 
+  - title: "Proposed BIP for multiformat single-sig message signing"
+    url: /en/newsletters/2022/07/27/#multiformat-single-sig-message-signing
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
