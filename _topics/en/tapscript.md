@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Rust Bitcoin #644 adds support for tapscript’s new opcodes"
     url: /en/newsletters/2021/10/06/#rust-bitcoin-644
 
+  - title: "Question: why do invalid `OP_CHECKSIGADD` signatures fail their script?"
+    url: /en/newsletters/2022/07/27/#why-do-invalid-signatures-in-op-checksigadd-not-push-to-the-stack
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Discussion about removing the dust limit for one particular case"
     url: /en/newsletters/2021/12/15/#adding-a-special-exception-for-certain-uneconomical-outputs
 
+  - title: "Question about problems removing uneconomical outputs from UTXO set"
+    url: /en/newsletters/2022/07/27/#does-an-uneconomical-output-need-to-be-kept-in-the-utxo-set
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
