@@ -69,7 +69,39 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why do invalid signatures in `OP_CHECKSIGADD` not push to the stack?]({{bse}}114446)
+  Chris Stewart asks why "if an invalid signature is found, the interpreter fails
+  execution rather than continuing". Pieter Wuille explains that this behavior,
+  defined in BIP340-342, is designed to support batch validation of
+  [schnorr signatures][topic schnorr signatures] in the future.
+  Andrew Chow gives an additional reason for the behavior, noting that
+  certain malleability concerns are also mitigated by this approach.
+
+- [What are packages in Bitcoin Core and what is their use case?]({{bse}}114305)
+  Antoine Poinsot explains [packages][bitcoin docs packages] (a grouping of
+  related transactions), their relation to [package relay][topic package relay],
+  and a recent [package relay BIP proposal][news201 package relay].
+
+- [How much blockspace would it take to spend the complete UTXO set?]({{bse}}114043)
+  Murch explores a hypothetical scenario of consolidating all existing UTXOs. He
+  provides blockspace calculations for each output type and concludes the process would
+  take about 11,500 blocks.
+
+- [Does an uneconomical output need to be kept in the UTXO set?]({{bse}}114493)
+  Stickies-v notes that while provably unspendable UTXOs including `OP_RETURN`
+  or scripts larger than the max script size are removed from the UTXO
+  set, removing [uneconomical outputs][topic uneconomical outputs] could cause
+  issues, including a hard fork as Pieter Wuille points out, if those outputs are spent.
+
+- [Is there code in libsecp256k1 that should be moved to the Bitcoin Core codebase?]({{bse}}114467)
+  Similar to other efforts to modularize areas of the Bitcoin Core codebase like
+  [libbitcoinkernel][libbitcoinkernel project] or [process separation][devwiki
+  process separation], Pieter Wuille notes a clear area of responsibility of the
+  [libsecp256k1][] project: everything that involves operations on private or public keys.
+
+- [Mining stale low-difficulty blocks as a DoS attack]({{bse}}114241)
+  Andrew Chow explains that [assumevalid][assumevalid notes] and more recently
+  [`nMinimumChainWork`][Bitcoin Core #9053] help filter out low-difficulty chain attacks.
 
 ## Releases and release candidates
 
@@ -111,7 +143,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   of an implementation adopting a rule like this.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="25351,5370,1001,24058" %}
+{% include linkers/issues.md v=2 issues="25351,5370,1001,24058,9053" %}
 [BTCPay Server 1.6.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.6.3
 [LDK 0.0.110]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.110
 [commando]: https://github.com/rustyrussell/lightning/blob/2e13b72f55080be07ea68de77976eb990a043f5d/doc/lightning-commando.7.md
@@ -124,3 +156,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [hashcash]: https://en.wikipedia.org/wiki/Hashcash
 [somsen hashcash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020746.html
 [macaroons]: https://en.wikipedia.org/wiki/Macaroons_(computer_science)
+[bitcoin docs packages]: https://github.com/bitcoin/bitcoin/blob/53b1a2426c58f709b5cc0281ef67c0d29fc78a93/doc/policy/packages.md#definitions
+[news201 package relay]: /en/newsletters/2022/05/25/#package-relay-proposal
+[libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
+[devwiki process separation]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Process-Separation
+[assumevalid notes]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
