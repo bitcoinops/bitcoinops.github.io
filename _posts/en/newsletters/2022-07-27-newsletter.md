@@ -125,7 +125,10 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25351][] rpc, wallet: Scan mempool after import - Second attempt FIXME:Xekyo
+- [Bitcoin Core #25351][] ensures that after an import of addresses,
+  keys, or descriptors to a wallet, the subsequent rescan will not only
+  scan the blockchain but also evaluate whether transactions in the
+  mempool are relevant to the wallet.
 
 - [Core Lightning #5370][] reimplements the `commando` plugin and makes
   it a built-in part of CLN.  Commando allows a node to receive commands
