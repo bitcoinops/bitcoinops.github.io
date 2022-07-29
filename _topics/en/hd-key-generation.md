@@ -75,6 +75,10 @@ optech_mentions:
   - title: Complications for HD wallet recovery in zero HTLC fee anchor outputs protocol
     url: /en/newsletters/2021/09/29/#challenges-recovering-ln-close-transactions-using-only-a-seed
 
+  - title: BIP proposed to allow multiple BIP32 derivation paths in a descriptor
+    url: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
+
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
