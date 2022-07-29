@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Bitcoin Core #20799 disables v1 compact block relay; v2 still enabled"
     url: /en/newsletters/2022/05/25/#bitcoin-core-20799
 
+  - title: "Rust Bitcoin #1088 adds structures and methods for compact blocks"
+    url: /en/newsletters/2022/08/03/#rust-bitcoin-1088
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

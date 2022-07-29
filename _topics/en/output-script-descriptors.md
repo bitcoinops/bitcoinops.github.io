@@ -137,6 +137,9 @@ optech_mentions:
   - title: "Bitcoin Core #24148 adds watch-only support for descriptors containing miniscript"
     url: /en/newsletters/2022/07/20/#bitcoin-core-24148
 
+  - title: BIP proposed to allow multiple derivation paths in a descriptor
+    url: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
