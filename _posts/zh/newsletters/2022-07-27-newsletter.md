@@ -38,7 +38,7 @@ lang: zh
 
 - [<!--how-much-blockspace-would-it-take-to-spend-the-complete-utxo-set-->使用掉完整的 UTXO 集需要多少区块空间？]({{bse}}114043)Murch 探讨了整合所有现有 UTXO 的假设场景。他计算了每种输出类型的区块空间，并得出结论该过程需要大约 11,500 个块。
 
-- [<!--does-an-uneconomical-output-need-to-be-kept-in-the-utxo-set-->不经济的输出是否需要保留在 UTXO 集中？]({{bse}}114493)Stickies-v 指出，虽然从 UTXO 集中删除了确信不可用的 UTXO，包括 `OP_RETURN` 或大于脚本最大体积的脚本，但如果这些输出被花费，删除 [不经济的输出][topic uneconomical outputs]可能会导致问题，包括 Pieter Wuille 指出的硬分叉。
+- [<!--does-an-uneconomical-output-need-to-be-kept-in-the-utxo-set-->不经济的输出是否需要保留在 UTXO 集中？]({{bse}}114493)Stickies-v 指出，虽然从 UTXO 集中删除了确信不可用的 UTXO，包括大于脚本最大体积的脚本或 `OP_RETURN`，但如果这些输出被花费，删除 [不经济的输出][topic uneconomical outputs]可能会导致问题，包括 Pieter Wuille 指出的硬分叉。
 
 - [<!--is-there-code-in-libsecp256k1-that-should-be-moved-to-the-bitcoin-core-codebase-->libsecp256k1 中是否有代码应该移动到 Bitcoin Core 代码库？]({{bse}}114467)与其他将 Bitcoin Core 代码库各部分模块化的努力类似，例如 [libbitcoinkernel][libbitcoinkernel project] 或[进程分离][devwiki process separation]，Pieter Wuille 指出了 [libsecp256k1][] 项目的明确责任区域：任何涉及对私钥或公钥的操作。
 
@@ -56,11 +56,11 @@ lang: zh
 
 *本周内，[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo] 出现的重大变更。*
 
-- [Bitcoin Core #25351][] 确保在将地址、密钥或描述符导入钱包后，后续的重新扫描不仅会扫描区块链，还会评估内存池中的交易是否与该钱包相关。
+- [Bitcoin Core #25351][] 确保在将地址、密钥或描述符导入钱包后，后续的重新扫描不仅会扫描区块链，还会评估交易池中的交易是否与该钱包相关。
 
 - [Core Lightning #5370][] 重新实现了 `commando` 插件，并使其成为 CLN 内置的一部分。Commando 允许节点使用闪电网络消息接收来自授权节点的命令。节点使用 *runes*。进行授权。这是一种基于 [macaroons][] 简化版本的自定义 CLN 协议。尽管 Commando 现在已内置到 CLN 中，但它只有在用户创建 rune 身份验证令牌时才可操作。更多信息，请参阅 CLN 的 [commando][] 和 [commando-rune][] 手册。
 
-- [BOLTs #1001][] 建议，广播了更改其支付转发策略的节点继续接受使用旧策略收到的付款约 10 分钟。这可以防止由于发送方不知道最近的策略更新而导致的付款失败。有关采用此类规则的实现示例，请参见 [周报 #169][news169 cln4806]。
+- [BOLTs #1001][] 建议，节点在广播了更改其支付转发策略后，应继续接受使用旧策略接收付款约 10 分钟。这可以防止由于发送方不知道最近的策略更新而导致的付款失败。有关采用此类规则的实现示例，请参见 [周报 #169][news169 cln4806]。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25351,5370,1001,24058,9053" %}
