@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Discussion about the need for LNURL or offers for effective blinded paths"
     url: /en/newsletters/2022/06/15/#blinded-paths
 
+  - title: "Eclair #2253 adds support for relaying blinded payments"
+    url: /en/newsletters/2022/08/03/#eclair-2253
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
