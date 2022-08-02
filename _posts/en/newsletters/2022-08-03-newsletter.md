@@ -60,7 +60,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   a [BIP39][] passphrase against the [HD seed][topic bip32] used by
   CLN's internal wallet.
 
-- [Eclair #2253][] Allow relaying blinded payments (lightning/bolts#765) FIXME:bitschmidty
+- [Eclair #2253][] adds support for relaying [blinded payments][topic rv
+  routing] as specified in [BOLTs #765][] (see [Newsletter #187][news178
+  eclair 2061]).
 
 - [LDK #1519][] always includes the `htlc_maximum_msat` field in
   `channel_update` messages as will be required if [BOLTs #996][] is
@@ -82,7 +84,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   saving bandwidth and speeding up the relay of new blocks.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="5441,2253,1519,994,1088,996" %}
+{% include linkers/issues.md v=2 issues="5441,2253,1519,994,1088,996,765" %}
 [bip32 wallet layout]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#specification-wallet-structure
 [chow desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020791.html
 [bip-multipath-descs]: https://github.com/achow101/bips/blob/bip-multipath-descs/bip-multipath-descs.mediawiki
@@ -90,3 +92,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [raw desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020799.html
 [petukhov desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020804.html
 [unix epoch time]: https://en.wikipedia.org/wiki/Unix_time
+[news178 eclair 2061]: /en/newsletters/2021/12/08/#eclair-2061
