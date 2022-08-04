@@ -132,7 +132,7 @@ zu wechseln oder beim Testen von Release candidates auszuhelfen.*
 ## Nennenswerte Code- und Dokumentationsänderungen
 
 *Erwähnenswerte Änderungen diese Woche in [Bitcoin Core][bitcoin core repo],
-[CoreLightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement

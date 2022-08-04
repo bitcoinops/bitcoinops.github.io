@@ -53,7 +53,7 @@ erwähnenswerter Änderungen an beliebten Bitcoin Infrastrukturprojekten.
 ## Nennenswerte Code- und Dokumentationsänderungen
 
 *Erwähnenswerte Änderungen diese Woche in [Bitcoin Core][bitcoin core repo],
-[CoreLightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
@@ -65,7 +65,7 @@ Proposals (BIPs)][bips repo], und [Lightning BOLTs][bolts repo].*
 
 - [Eclair #2253][] fügt Support für das Weiterleiten von
   [verdeckten Zahlungen (blinded payments)][topic rv routing] wie in [BOLTs #765][] spezifiziert
-  hinzu. (siehe [Newsletter #187][news178 eclair 2061])
+  hinzu (siehe [Newsletter #187][news178 eclair 2061]).
 
 - [LDK #1519][] fügt immer das `htlc_maximum_msat`-Feld in
   `channel_update`-Nachrichten ein, was erforderlich wird wenn [BOLTs #996][] in die
