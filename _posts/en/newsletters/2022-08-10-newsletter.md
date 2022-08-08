@@ -82,7 +82,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #25610][] wallet, rpc: Opt in to RBF by default FIXME:adamjonas
 
-- [Bitcoin Core #24584][] wallet: avoid mixing different `OutputTypes` during coin selection FIXME:Xekyo
+- [Bitcoin Core #24584][] amends [coin selection][topic coin selection] to prefer input sets
+  composed of a single output type. This addresses scenarios in which
+  mixed-type input sets reveal the change output of preceding
+  transactions. This follows a related privacy improvement to [always
+  match the change type][#23789] to a recipient output (see
+  [Newsletter #181][news181 change matching]).
 
 - [Core Lightning #5071][] adds a bookkeeper plugin that provides an
   accounting record of movements of bitcoins by the node running the
@@ -101,9 +106,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922" %}
 [core lightning 0.12.0rc1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0rc1
 [news167 ln dns]: /en/newsletters/2021/09/22/#dns-records-for-ln-nodes
+[news181 change matching]: /en/newsletters/2022/01/05/#bitcoin-core-23789
 [chauhan min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020784.html
 [todd min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020800.html
 [vjudeu min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020821.html
 [harding min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020808.html
 [todd min2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020815.html
 [news3 min]: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
+[#23789]: https://github.com/bitcoin/bitcoin/issues/23789
