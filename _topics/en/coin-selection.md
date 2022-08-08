@@ -54,6 +54,9 @@ optech_mentions:
   - title: "What is the coin selection 'waste metric'?"
     url: /en/newsletters/2022/05/25/#what-does-waste-metric-mean-in-the-context-of-coin-selection
 
+  - title: "Bitcoin Core #24584 prefers input sets composed of a single output type for privacy"
+    url: /en/newsletters/2022/08/10/#bitcoin-core-24584
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simulation-based Evaluation of Coin Selection Strategies
