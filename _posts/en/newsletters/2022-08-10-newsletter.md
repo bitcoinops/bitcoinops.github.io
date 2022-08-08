@@ -54,12 +54,67 @@ infrastructure projects.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Decouple validation cache initialization from ArgsManager][review club 25527]
+is a PR by Carl Dong that separates node configuration logic from the
+initialization of signature and script caches.
+It is part of the [libbitcoinkernel project][libbitcoinkernel project].
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/12345#l-123"
+  q0="What does the `ArgsManager` do?  Why or why not should it belong
+in `src/kernel` versus `src/node`?"
+  a0="ArgsManager is a global data structure for handling
+configuration options (`bitcoin.conf` and command line arguments).
+While the consensus engine may contain parameterizable values (namely,
+the sizes of caches), a node does not need this data structure to stay
+in consensus. Rather, as Bitcoin Core-specific functionality, code
+handling these configuration options belongs in `src/node`."
+  a0link="https://bitcoincore.reviews/25527#l-35"
+
+  q1="What are the validation caches? Why would they belong in
+`src/kernel` versus `src/node`?"
+  a1="When a new block arrives, the most computationally expensive part of
+validation is script (i.e. signature) validation for its transactions.
+Since nodes keeping a mempool will have usually seen and validated
+these transactions already, block validation performance is
+significantly increased by caching (successful) script and signature
+verifications. These caches are logically
+part of the consensus engine because consensus-critical block
+validation code needs them. As such, these caches belong in
+`src/kernel`."
+  a1link="https://bitcoincore.reviews/25527#l-45"
+
+  q2="What does it mean for something to be consensus-critical if it
+isn't a consensus rule? Does `src/consensus` contain all the
+consensus-critical code?"
+  a2="Participants agreed that signature verification enforces
+consensus rules, while caching doesn't. However, if the caching code
+contains a bug that results in storing invalid signatures, the node
+would no longer be enforcing consensus rules. As such, signature
+caching is considered consensus-critical. Consensus code doesn't
+actually live in `src/kernel` or `src/consensus` yet; much of
+the consensus rules and consensus-critical code lives in
+`validation.cpp`."
+  a2link="https://bitcoincore.reviews/25527#l-61"
+
+  q3="What tools do you use for “code archeology” to understand the
+background of why a value exists?"
+  a3="Participants listed several commands and tools including `git
+blame`, `git log`, entering the commit hash into the pull requests
+page, using the Github `Blame` button when viewing a file, and using
+the Github search bar."
+  a3link="https://bitcoincore.reviews/25527#l-132"
+
+  q4="This PR changes the type of `signature_cache_bytes` and
+`script_execution_cache_bytes` from `int64_t` to `size_t`.
+What is the difference between `int64_t`, `uint64_t`, and `size_t`,
+and why should a `size_t` hold these values?"
+  a4="The `int64_t` and `uint64_t` types are 64-bits (signed and
+unsigned, respectively) across all platforms and compilers. The
+`size_t` type is an unsigned integer guaranteed to be able to
+hold the length (in bytes) of any object in memory; its size depends
+on the system. As such, `size_t` is exactly suited for these variables
+holding the cache sizes as a number of bytes."
+  a4link="https://bitcoincore.reviews/25527#l-163"
 %}
 
 ## Releases and release candidates
@@ -123,3 +178,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [todd min2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020815.html
 [news3 min]: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
 [#23789]: https://github.com/bitcoin/bitcoin/issues/23789
+[review club 25527]: https://bitcoincore.reviews/25527
+[libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
+[`ArgsManager`]: https://github.com/bitcoin/bitcoin/blob/5871b5b5ab57a0caf9b7514eb162c491c83281d5/src/util/system.h#L172
