@@ -80,7 +80,15 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25610][] wallet, rpc: Opt in to RBF by default FIXME:adamjonas
+- [Bitcoin Core #25610][] opts-in the RPCs and `-walletrbf` to [RBF][topic rbf]
+  by default. This follows the update mentioned in
+  [Newsletter #208][news208 core RBF], enabling node operators to
+  switch their node's transaction replacement behavior from the
+  default opt-in RBF (BIP125) to full RBF. RPC opt-in by default was
+  proposed in 2017 in [Bitcoin Core #9527][] when the primary
+  objections were the novelty at the time, the inability to bump
+  transactions and the GUI not having functionality to disable RBF---all
+  of which have since been addressed.
 
 - [Bitcoin Core #24584][] amends [coin selection][topic coin selection] to prefer input sets
   composed of a single output type. This addresses scenarios in which
@@ -103,8 +111,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   this idea was mentioned in [Newsletter #167][news167 ln dns].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922" %}
+{% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922,9527" %}
 [core lightning 0.12.0rc1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0rc1
+[news208 core RBF]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [news167 ln dns]: /en/newsletters/2021/09/22/#dns-records-for-ln-nodes
 [news181 change matching]: /en/newsletters/2022/01/05/#bitcoin-core-23789
 [chauhan min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020784.html
