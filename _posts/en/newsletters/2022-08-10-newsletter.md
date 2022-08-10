@@ -135,7 +135,9 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25610][] opts-in the RPCs and `-walletrbf` to [RBF][topic rbf]
+- [Bitcoin Core #25610][] sets by default the startup option `-walletrbf` and uses
+  by default the `replaceable` option for the RPCs `createrawtransaction` and `createpsbt`.
+  Transactions created via the GUI were already opt-in [RBF][topic rbf]
   by default. This follows the update mentioned in
   [Newsletter #208][news208 core RBF], enabling node operators to
   switch their node's transaction replacement behavior from the
