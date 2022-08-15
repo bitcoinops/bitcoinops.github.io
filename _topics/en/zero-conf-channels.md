@@ -41,6 +41,9 @@ optech_mentions:
   - title: "LDK #1401 adds support for zero-conf channel opens"
     url: /en/newsletters/2022/06/08/#ldk-1401
 
+  - title: "LND #6816 adds documentation about how to use zero-conf channels"
+    url: /en/newsletters/2022/08/17/#lnd-6816
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
