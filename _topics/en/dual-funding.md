@@ -6,8 +6,8 @@ title: Dual funding
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+aliases:
+  - Interactive funding protocol
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -82,6 +82,9 @@ optech_mentions:
 
   - title: "2021 year-in-review: liquidity advertisements"
     url: /en/newsletters/2021/12/22/#liq-ads
+
+  - title: "Eclair #2273 implements the proposed interactive funding protocol"
+    url: /en/newsletters/2022/08/17/#eclair-2273
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
