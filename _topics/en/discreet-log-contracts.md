@@ -68,6 +68,9 @@ optech_mentions:
   - title: Discussion about how CTV or other covenant features could make DLCs much more efficient
     url: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
 
+  - title: Using Bitcoin-compatible BLS signatures for DLCs
+    url: /en/newsletters/2022/08/17/#using-bitcoin-compatible-bls-signatures-for-dlcs
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

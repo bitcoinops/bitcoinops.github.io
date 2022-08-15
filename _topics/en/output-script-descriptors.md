@@ -140,6 +140,9 @@ optech_mentions:
   - title: BIP proposed to allow multiple derivation paths in a descriptor
     url: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
 
+  - title: "Bitcoin Core #23480 adds a `rawtr()` descriptor"
+    url: /en/newsletters/2022/08/17/#bitcoin-core-23480
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
