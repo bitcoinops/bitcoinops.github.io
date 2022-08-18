@@ -38,8 +38,8 @@ lang: zh
   a1="当一个新块到达时，验证中计算成本最高的部分是对其交易的脚本（即签名）验证。由于拥有内存池的节点通常已经看到并验证了这些交易，因此通过缓存（成功）脚本和签名验证，可显着提高区块验证性能。这些缓存在逻辑上是共识引擎的一部分，因为对共识很关键的区块验证代码需要它们。因此，这些缓存属于 `src/kernel`。"
   a1link="https://bitcoincore.reviews/25527#l-45"
 
-  q2="<!--what-does-it-mean-for-something-to-be-consensus-critical-if-it-isn-t-a-consensus-rule-does-src-consensus-contain-all-the-consensus-critical-code-->一个事物是共识关键的但它本身并不是一个共识规则，会是什么意思？`src/consensus` 包含了所有对共识关键的代码么？"
-  a2="参与者一致认为签名验证执行共识规则，而缓存不会。但是，如果缓存代码中有 bug 导致存储了无效的签名，则节点将不再执行共识规则。因此，签名缓存是被认为对共识关键的。共识代码实际上目前并不存在于 `src/kernel` 或 `src/consensus`；许多共识规则和共识关键代码存在于 `validation.cpp`。"
+  q2="<!--what-does-it-mean-for-something-to-be-consensus-critical-if-it-isn-t-a-consensus-rule-does-src-consensus-contain-all-the-consensus-critical-code-->一个事物是共识关键的但它本身并不是一个共识规则，这是什么意思？`src/consensus` 包含了所有对共识关键的代码么？"
+  a2="参与者一致认为签名验证必须执行共识规则，而缓存不需要。但是，如果缓存代码中有 bug 导致存储了无效的签名，则节点将无法遵守共识规则。因此，签名缓存是被认为对共识关键的。共识代码实际上目前并不存在于 `src/kernel` 或 `src/consensus`；许多共识规则和共识关键代码存在于 `validation.cpp`。"
   a2link="https://bitcoincore.reviews/25527#l-61"
 
   q3="<!--what-tools-do-you-use-for-code-archeology-to-understand-the-background-of-why-a-value-exists-->你会用什么工具来进行“代码考古”以理解一个值为什么会存在的背景？"
@@ -61,7 +61,7 @@ lang: zh
 
 *本周内，[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo] 出现的重大变更。*
 
-- [Bitcoin Core #25610][] 默认设置启动选项 `-walletrbf` 并为 `createrawtransaction` 和 `createpsbt` RPC 默认使用 `replaceable` 选项。默认情况下，通过 GUI 创建的事务已经选用 [RBF][topic rbf]。这是在 [Newsletter #208][news208 core RBF] 中提到的更新之后，使节点运营商能够将其节点的交易替换行为从默认的选用 RBF (BIP125) 切换到完整的 RBF。在 2017 年，在 [Bitcoin Core #9527][] 中有提出过默认选用 RPC。那时候主要的反对意见是当时的新颖性、无法碰撞交易以及 GUI 没有禁用 RBF 的功能——这些在此之后都已得到解决。
+- [Bitcoin Core #25610][] 默认设置启动选项 `-walletrbf` 并为 `createrawtransaction` 和 `createpsbt` RPC 默认使用 `replaceable` 选项。默认情况下，通过 GUI 创建的事务已经选用 [RBF][topic rbf]。这是在 [Newsletter #208][news208 core RBF] 中提到的更新之后，使节点运营商能够将其节点的交易替换行为从默认的选用 RBF (BIP125) 切换到完整的 RBF。在 2017 年，在 [Bitcoin Core #9527][] 中有提出过默认选用 RPC。那时候主要的反对意见是当时太新、无法碰撞交易以及 GUI 没有禁用 RBF 的功能——这些在此之后都已得到解决。
 
 - [Bitcoin Core #24584][] 修复[选币算法][topic coin selection]以更倾向于由单一输出类型组成的输入集。这解决了混合类型输入集会揭示先前交易的输出变化的场景问题。它遵循了一个相关的隐私改进，以[始终将零钱类型匹配][#23789]到一个收款人的输出（请参阅 [Newsletter #181][news181 change matching])。
 
