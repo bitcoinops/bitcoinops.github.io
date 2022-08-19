@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Discussion about the best way to gossip channel splices"
     url: /en/newsletters/2022/07/06/#announcing-splices
 
+  - title: "BOLTs #1004 makes recommendations to support future detection of splices"
+    url: /en/newsletters/2022/08/24/#bolts-1004
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -44,6 +44,9 @@ optech_mentions:
   - title: "LND #6816 adds documentation about how to use zero-conf channels"
     url: /en/newsletters/2022/08/17/#lnd-6816
 
+  - title: "Core Lightning 0.12 adds support for zero-conf channels"
+    url: /en/newsletters/2022/08/24/#core-lightning-0-12-0
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
