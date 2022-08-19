@@ -31,6 +31,9 @@ optech_mentions:
   - title: Closing lost channels with only a BIP32 seed and option_data_loss_protect
     url: /en/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
 
+  - title: "Core Lightning 0.12 adds support for static channel backups"
+    url: /en/newsletters/2022/08/24/#core-lightning-0-12-0
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
