@@ -73,6 +73,9 @@ optech_mentions:
   - title: "2021 year-in-review: channel jamming"
     url: /en/newsletters/2021/12/22/#jamming
 
+  - title: "Guide to channel jamming attacks and proposed solutions"
+    url: /en/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

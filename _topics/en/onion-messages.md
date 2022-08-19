@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Proposals to either rate limit or charge for onion messages"
     url: /en/newsletters/2022/07/06/#onion-message-rate-limiting
 
+  - title: "LDK #1503 adds support for onion messages"
+    url: /en/newsletters/2022/08/24/#ldk-1503
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
