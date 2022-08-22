@@ -47,7 +47,24 @@ Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Purse.io adds Lightning support:**
+  In a [recent tweet][purse ln tweet], Purse.io announced support for
+  depositing (receiving) and withdrawing (sending) using the Lightning Network.
+
+- **Proof of concept coinjoin implementation joinstr:**
+  1440000bytes developed [joinstr][joinstr github], a proof of concept
+  [coinjoin][topic coinjoin]
+  implementation using the [nostr protocol][nostr github], a public key based
+  relay network with no central server.
+
+- **Coldcard firmware 5.0.6 released:**
+  Coldcard’s version 5.0.6 adds more support for [BIP85][], `OP_RETURN` scripts,
+  and multisig [descriptors][topic descriptors].
+
+- **Nunchuk adds taproot support:**
+  In the latest versions of [Nunchuk's mobile wallet][nunchuk appstore],
+  [taproot][topic taproot] (single-sig), [signet][topic signet], and enhanced
+  [PSBT][topic psbt] support were added.
 
 ## Releases and release candidates
 
@@ -119,3 +136,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [rn jam]: https://jamming-dev.github.io/book/
 [news210 commando]: /en/newsletters/2022/07/27/#core-lightning-5370
 [news212 bookkeeper]: /en/newsletters/2022/08/10/#core-lightning-5071
+[joinstr github]: https://github.com/1440000bytes/joinstr
+[nostr github]: https://github.com/nostr-protocol/nostr
+[nunchuk appstore]: https://apps.apple.com/us/app/nunchuk-bitcoin-wallet/id1563190073
+[purse ln tweet]: https://twitter.com/PurseIO/status/1557495102641246210
