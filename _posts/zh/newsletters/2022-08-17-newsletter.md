@@ -31,17 +31,22 @@ lang: zh
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [Bitcoin Core #23480][] 更新了[输出脚本描述符语言][topic descriptors]，加入了一个 ` rawtr() ` 描绘符；当一个公钥不经调整、直接用在 taproot 输出中时（我们并不推荐这样做，理由见[BIP341][bip341 internal]），或者在内部公钥和脚本路径未知时，可以使用该描述符来指明在 taproot 输出中暴露出来的公钥（这种用法在后面这种情形中可能是不安全的，详见该 PR 的 PR 评论或者文档）。虽然在这些情形中，已经可以使用现有的 ` raw() ` 描述符来指明这样的公钥，但 ` raw() ` 的主要用法是搭配 Bitcoin Core 的 ` scantxoutset ` RPC 方法、扫描本地的 UTXO 数据库；而新的 ` rawtr() ` 可以更方便使用其它已有的描述符字段来关联 taproot 输出的额外信息，例如密钥的来源信息。密钥的来源信息可以暗示使用了另类的密钥生成方案，例如使用递进调整方法来创建[Vanity 地址][]或者[可加强隐私性的合作性调整][reusable taproot addresses]。
-- [Bitcoin Core #22751][] 加入了一个  ` simulaterawtransaction ` RPC，可以接受一个未确认交易的数组，返回这些交易将为该钱包增加或减少多少余额。
+- [Bitcoin Core #23480][] 更新了[输出脚本描述符语言][topic descriptors]，加入了一个 `rawtr()` 描绘符；当一个公钥不经调整、直接用在 taproot 输出中时（我们并不推荐这样做，理由见 [BIP341][bip341 internal]），或者在内部公钥和脚本路径未知时，可以使用该描述符来指明在 taproot 输出中暴露出来的公钥（这种用法在后面这种情形中可能是不安全的，详见该 PR 的 PR 评论或者文档）。虽然在这些情形中，已经可以使用现有的 `raw()` 描述符来指明这样的公钥，但 `raw()` 的主要用法是搭配 Bitcoin Core 的 `scantxoutset` RPC 方法、扫描本地的 UTXO 数据库；而新的 `rawtr()` 可以更方便使用其它已有的描述符字段来关联 taproot 输出的额外信息，例如密钥的来源信息。密钥的来源信息可以暗示使用了另类的密钥生成方案，例如使用递进调整方法来创建[Vanity 地址][vanity addresses]或者[可加强隐私性的合作性调整][reusable taproot addresses]。
+
+- [Bitcoin Core #22751][] 加入了一个 `simulaterawtransaction` RPC，可以接受一个未确认交易的数组，返回这些交易将为该钱包增加或减少多少余额。
+
 - [Eclair #2273][] 实现了[他们提议的][bolts #851]交互式注资协议，由此两个闪电节点在开启新的支付通道时可以更密切地合作。实现交互式注资让 Eclair 向支持 “[双向注资][topic dual funding]” 又迈出了一步。双向注资让参与通道的两方都可以向一个新的通道贡献资金。为实现双向注资而作的其它准备工作也将在本周的 [Eclair #2247][] 中合并。
-- [Eclair #2361][]  开始要求通道更新信息包含 ` htlc_maximun_msat ` 字段，如 [BOLTs #996][] 所提议的（详见[周报 #211][news211 bolts996]）。
-- [LND #6810][] 开始在钱包几乎所有自动生成输出脚本的场合使用 [taproot][topic taproot] 输出来接收支付。此外，[LND #6633][] 实现了对 ` option_any_segwit ` 的支持（详见[周报 #151][news151 any_segwit]），该功能允许使用 taproot 输出从共同关闭的通道中接受资金。
+
+- [Eclair #2361][] 开始要求通道更新信息包含 `htlc_maximun_msat` 字段，如 [BOLTs #996][] 所提议的（详见[周报 #211][news211 bolts996]）。
+
+- [LND #6810][] 开始在钱包几乎所有自动生成输出脚本的场合使用 [taproot][topic taproot] 输出来接收支付。此外，[LND #6633][] 实现了对 ` option_any_segwit` 的支持（详见[周报 #151][news151 any_segwit]），该功能允许使用 taproot 输出从共同关闭的通道中接受资金。
+
 - [LND #6816][] 加入了介绍如何使用 “[零确认通道][topic zero-conf channels]” 的[文档][lnd 0conf]。
-- [BDK #640][] 更新了 ` get_balance` 函数，在返回时可以将现有的余额分成四类： ` available ` 表示已确认的可用余额， ` trusted_pending ` 表示未确认但来自本钱包（比如找零）的余额， ` untrusted_pending ` 表示来自其它钱包的未确认余额， ` immature ` 余额表示来自 coinbase（挖矿）交易但还未得到 100 个确认（因此根据比特币的共识规则还无法花费）的余额。
+
+- [BDK #640][] 更新了 `get_balance` 函数，在返回时可以将现有的余额分成四类：`available` 表示已确认的可用余额，`trusted_pending` 表示未确认但来自本钱包（比如找零）的余额，`untrusted_pending` 表示来自其它钱包的未确认余额，`immature` 余额表示来自 coinbase（挖矿）交易但还未得到 100 个确认（因此根据比特币的共识规则还无法花费）的余额。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23480,22751,2273,2361,2247,996,6810,6633,6816,640,851" %}
-
 [rust bitcoin 0.29]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.29.1
 [core lightning 0.12.0rc2]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0rc2
 [bls]: https://en.wikipedia.org/wiki/BLS_digital_signature
