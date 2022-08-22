@@ -80,7 +80,14 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25504][] RPC: allow to track coins by parent descriptors FIXME:Xekyo
+- [Bitcoin Core #25504][] amends the responses to `listsinceblock`,
+  `listtransactions`, and `gettransactions` to state the associated
+  descriptors in a new field, `parent_descs`.  Additionally,
+  `listsinceblock` can now be instructed to explicitly list change
+  outputs per the optional parameter `include_change`. Usually, change
+  outputs are omitted as implicit by-products of outbound payments, but
+  listing them may be interesting in the context of watch-only
+  descriptors.
 
 - [Eclair #2234][] adds support for associating a DNS name with a node
   in its announcements as now allowed by [BOLTs #911][] (see [Newsletter
