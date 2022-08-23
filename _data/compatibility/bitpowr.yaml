@@ -49,7 +49,6 @@ segwit:
       p2sh_wrapped: "true"
       bech32: "true"
       default: "p2pkh"
-      bech32_p2wsh: "true"
     send:
       bech32: "true" 
       change_bech32: "true"
