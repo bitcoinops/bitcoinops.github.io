@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Core Lightning 0.12 adds support for zero-conf channels"
     url: /en/newsletters/2022/08/24/#core-lightning-0-12-0
 
+  - title: "LND 0.15.1-beta adds support for zero-conf channels"
+    url: /en/newsletters/2022/08/31/#lnd-0-15-1-beta
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

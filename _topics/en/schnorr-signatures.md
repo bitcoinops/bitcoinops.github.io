@@ -113,6 +113,9 @@ optech_mentions:
   - title: "LND #6722 adds support for signing arbitrary messages with schnorr signatures"
     url: /en/newsletters/2022/07/20/#lnd-6722
 
+  - title: "BDK #718 begins verifying schnorr signatures immediately after the wallet creates them"
+    url: /en/newsletters/2022/08/31/#bdk-718
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

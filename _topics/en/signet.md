@@ -111,6 +111,9 @@ optech_mentions:
   - title: Analysis of transactions on the CTV signet
     url: /en/newsletters/2022/04/27/#analyzed
 
+  - title: "Eclair #2387 adds support for signet"
+    url: /en/newsletters/2022/08/31/#eclair-2387
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
