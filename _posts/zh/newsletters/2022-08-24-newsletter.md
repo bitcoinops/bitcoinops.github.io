@@ -13,7 +13,7 @@ lang: zh
 
 - **<!--overview-of-channel-jamming-attacks-and-mitigations-->通道堵塞攻击和缓解措施概述：**Antoine Riard 和 Gleb Naumenko 在 Lightning-Dev 邮件列表[宣布][riard jam]，他们已经[发布][rn jam]了一份关于[通道堵塞攻击][topic channel jamming attacks]及若干提出的解决方案的指南。该指南还研究了一些解决方案如何使构建在 LN 之上的协议受益，例如互换协议和短期 [DLC][topic dlc]。
 
-- **更新静默支付 PR：**woltx [发表][woltx sp]在 Bitcoin-Dev 邮件列表称，Bitcoin Core 的[静默支付][topic silent payments]的 PR 已更新。静默支付提供了一个可以被不同的支付者重复使用的地址，而不会在这些支出之间建立可在链上观察到的链接（尽管接收者需要小心不要通过他们的后续行动削弱这种隐私性）。该 PR 最显着的变化是为静默支付添加了一种新类型的[输出脚本描述符][topic descriptors]。
+- **更新静默支付 PR：**woltx [发表][woltx sp]在 Bitcoin-Dev 邮件列表称，Bitcoin Core 的[静默支付][topic silent payments]的 PR 已更新。静默支付提供了一个可以被不同的支付者重复使用的地址，而不会在这些支出之间建立可在链上观察到的链接（尽管接收者需要小心不要通过他们的后续行动削弱这种隐私性）。该 PR 最显著的变化是为静默支付添加了一种新类型的[输出脚本描述符][topic descriptors]。
 
     该 PR 的新描述符的设计引起了相当多的讨论。值得注意的是，对于监控新交易，每个钱包只允许一个静默支付描述符是最有效的，但在许多情况下它也会给用户带来不好的体验。有人提议对静默支付设计进行轻微调整以解决该问题，尽管它也需要权衡。
 
@@ -47,7 +47,7 @@ lang: zh
 
 *本周内，[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo] 出现的重大变更。*
 
-- [Bitcoin Core #25504][] 修复了对 `listsinceblock`、`listtransactions` 和 `gettransactions` 的响应，以实现在新字段 `parent_descs` 中声明相关描述符。此外，现在可以指定 `listsinceblock` 根据可选参数 `include_change` 显式的列出找零输出。通常，作为对外支付的隐性副产品，找零输出被省略，但在仅监视描述符的上下文中列出它们可能会很有趣。
+- [Bitcoin Core #25504][] 修复了对 `listsinceblock`、`listtransactions` 和 `gettransactions` 的响应，以实现在新字段 `parent_descs` 中声明相关描述符。此外，现在可以指定 `listsinceblock` 根据可选参数 `include_change` 显式地列出找零输出。通常，作为对外支付的隐性副产品，找零输出被省略，但在仅监视描述符的上下文中列出它们可能会很有趣。
 
 - [Eclair #2234][] 添加了对在其公告中将 DNS 名称与节点相关联的支持，正如 [BOLTs #911][] 当前也已支持（参见 [Newsletter #212][news212 bolts911]）。
 
