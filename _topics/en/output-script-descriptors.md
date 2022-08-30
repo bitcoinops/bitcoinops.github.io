@@ -146,6 +146,9 @@ optech_mentions:
   - title: "New descriptor proposed for silent payments"
     url: /en/newsletters/2022/08/24/#updated-silent-payments-pr
 
+  - title: "How partial descriptors could help create tapleaf trees"
+    url: /en/newsletters/2022/08/31/#why-isn-t-it-possible-to-add-an-op-return-commitment-or-some-arbitrary-script-inside-a-taproot-script-path-with-a-descriptor
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
