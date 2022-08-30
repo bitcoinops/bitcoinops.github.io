@@ -49,7 +49,40 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why isn't it possible to add an OP_RETURN commitment (or some arbitrary script) inside a taproot script path with a descriptor?]({{bse}}114948)
+  Antoine Poinsot explains that [script descriptors][topic descriptors] are
+  currently being extended to use [miniscript][topic miniscript] in Bitcoin
+  Core and are expected in the Bitcoin Core 24.0 release. While initial miniscript
+  features will only include segwit v0 support,
+  eventually support for [tapscript][topic tapscript] and
+  [partial descriptors][Bitcoin Core #24114] could make it possible to
+  add commitments inside tapscript without solely using the `raw()` descriptor.
+
+- [Why does Bitcoin Core rebroadcast transactions?]({{bse}}114973)
+  Amir reza Riahi wonders why the Bitcoin Core wallet rebroadcasts transactions
+  and why there is a delay. Pieter Wuille points out the P2P network's lack of
+  transaction propagation guarantee as the reason for rebroadcasting being
+  necessary and notes work done to remove rebroadcasting responsibilities from
+  the wallet to the mempool. Readers interested in rebroadcasting can also review the [24 Aug
+  2022][prreview 25768], [07 Apr 2021][prreview 21061], and [27 Nov
+  2019][prreview 16698] PR Review Club meetings.
+
+- [When did Bitcoin Core deprecate the mining function?]({{bse}}114687)
+  Pieter Wuille provides a historical overview of mining-related features within Bitcoin
+  Core over the years.
+
+- [UTXO spendable by me or deposit to exchange after 5 years?]({{bse}}114901)
+  Stickies-v provides an overview of Bitcoin Script operators, how [taproot][topic
+  taproot] enabled with [MAST][topic mast] improves upon spending conditions
+  from a privacy and feerate perspective, and points out that Script's lack of
+  [covenants][topic covenants] makes the proposed conditions impossible solely in
+  Script. Vojtěch Strnad points out that pre-signed transactions can help
+  accomplish the proposed spending conditions.
+
+- [What was the bug for the Bitcoin value overflow in 2010?]({{bse}}114694)
+  Andrew Chow summarizes the [value overflow bug][] and its multiple
+  inflationary effects: the large outputs created as well as the miscalculated
+  transaction fee.
 
 ## Releases and release candidates
 
@@ -109,7 +142,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   Electrum and Esplora services.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="23202,2275,2387,1652,627,718,705,722" %}
+{% include linkers/issues.md v=2 issues="23202,2275,2387,1652,627,718,705,722,24114" %}
 [lnd 0.15.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.1-beta
 [news175 verify]: /en/newsletters/2021/11/17/#bitcoin-core-22934
 [news87 verify]: /en/newsletters/2020/03/04/#bips-886
@@ -121,3 +154,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [aliases]: /en/newsletters/2022/07/13/#lnd-5955
 [slip15]: https://github.com/satoshilabs/slips/blob/master/slip-0015.md
 [news143 cln df]: /en/newsletters/2021/04/07/#c-lightning-0-10-0
+[prreview 25768]: https://bitcoincore.reviews/25768
+[prreview 21061]: https://bitcoincore.reviews/21061
+[prreview 16698]: https://bitcoincore.reviews/16698
+[value overflow bug]: /en/topics/soft-fork-activation/#fix-value-overflow-bug-august-2010
