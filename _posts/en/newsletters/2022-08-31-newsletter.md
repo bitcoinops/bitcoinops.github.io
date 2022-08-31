@@ -90,7 +90,7 @@ answers posted since our last update.*
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [LND 0.15.1-beta][] is a release candidate that "includes support
+- [LND 0.15.1-beta][] is a release that "includes support
   for [zero conf channels][topic zero-conf channels], scid [aliases][],
   [and] switches to using [taproot][topic taproot] addresses everywhere".
 
