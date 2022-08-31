@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Question about problems removing uneconomical outputs from UTXO set"
     url: /en/newsletters/2022/07/27/#does-an-uneconomical-output-need-to-be-kept-in-the-utxo-set
 
+  - title: "BDK #689 allows a wallet to create a transaction that violates the dust limit"
+    url: /en/newsletters/2022/09/07/#bdk-689
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
