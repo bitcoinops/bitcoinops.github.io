@@ -485,7 +485,7 @@ occasions included:
   amount be less than or equal to the input amount, but this was
   checked by adding the output values into a single 64-bit
   integer which can only hold a maximum value of
-  9,223,372,036,854,776 sats (about 92 million BTC) before rolling over to negative numbers,
+  9,223,372,036,854,776 sats (about 92 billion BTC) before rolling over to negative numbers,
   starting with -9,223,372,036,854,776 sats.  This meant it looked like the
   transaction spent a total of -0.1 BTC (negative 0.1 BTC).  This
   bypassed another rule that forbid individual negative outputs---but
