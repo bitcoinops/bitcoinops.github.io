@@ -173,9 +173,9 @@ Proposals (BIPs)][bips repo], und [Lightning BOLTs][bolts repo].*
   Spend, wenn es dazu in der Lage war, sowie zusätzlich für alle
   Skriptpfade, für die Schlüssel zur Verfügung standen.
 
- [BOLTs #911][] erweitert LN-Knoten mit der Fähigkeit einen DNS Hostnamen
- bekanntzugeben, der in seine IP-Adresse aufgelöst wird. Eine frühere Diskussion
- dieser Idee wurde in [Newsletter #167][news167 ln dns] erwähnt.
+- [BOLTs #911][] erweitert LN-Knoten mit der Fähigkeit einen DNS Hostnamen
+  bekanntzugeben, der in seine IP-Adresse aufgelöst wird. Eine frühere
+  Diskussion dieser Idee wurde in [Newsletter #167][news167 ln dns] erwähnt.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922,9527" %}
