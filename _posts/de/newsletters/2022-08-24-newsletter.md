@@ -131,12 +131,12 @@ Proposals (BIPs)][bips repo], und [Lightning BOLTs][bolts repo].*
 [core lightning 0.12.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.0
 [bdk 0.21.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.21.0
 [lnd 0.15.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.1-beta.rc1
-[news212 bolts911]: /en/newsletters/2022/08/10/#bolts-911
+[news212 bolts911]: /de/newsletters/2022/08/10/#bolts-911
 [aliases]: /en/newsletters/2022/07/13/#lnd-5955
 [woltx sp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020883.html
 [riard jam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-August/003673.html
 [rn jam]: https://jamming-dev.github.io/book/
-[news210 commando]: /en/newsletters/2022/07/27/#core-lightning-5370
+[news210 commando]: /de/newsletters/2022/07/27/#core-lightning-5370
 [news212 bookkeeper]: /en/newsletters/2022/08/10/#core-lightning-5071
 [joinstr github]: https://github.com/1440000bytes/joinstr
 [nostr github]: https://github.com/nostr-protocol/nostr
