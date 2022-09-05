@@ -37,7 +37,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   option allows ignoring that policy.  The author of the PR mentions
   that they're using it for testing their wallet.
 
-- [BDK #682][] Add a custom signer for hardware wallets FIXME:bitschmidty
+- [BDK #682][] adds signing capabilities for hardware signing devices using
+  [HWI][topic hwi] and the [rust-hwi][rust-hwi github] library. The PR also introduces a Ledger
+  device emulator for testing.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25717,25355,689,682" %}
+[rust-hwi github]: https://github.com/bitcoindevkit/rust-hwi
