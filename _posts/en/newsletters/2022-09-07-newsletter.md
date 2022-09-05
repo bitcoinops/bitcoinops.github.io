@@ -23,7 +23,30 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25717][] p2p: Implement anti-DoS headers sync FIXME:glozow
+- [Bitcoin Core #25717][] adds a "Headers Presync" step during Initial
+  Block Download (IBD) to help prevent Denial of Service (DoS) attacks and
+  step towards removing checkpoints. Nodes use the pre-sync phase to
+  verify that a peer's headers chain has sufficient work before storing
+  them permanently.
+
+  During IBD, adversarial peers may attempt to stall the syncing process, serve
+  blocks that don't lead to the most-work chain, or simply exhaust the
+  node's resources. As such, while sync speed and bandwidth usage are
+  important concerns during IBD, a primary design goal is avoiding
+  Denial of Service attacks. Since v10.0, Bitcoin Core nodes sync block
+  headers first before downloading block data and reject headers that
+  don't connect to a set of checkpoints. Instead of using hard-coded
+  values, this new design utilizes the inherent DoS-resistant property of
+  Proof of Work (PoW) puzzles to minimize the amount of memory allocated
+  before finding the main chain.
+
+  With these changes, nodes download headers twice during initial
+  headers sync: a first pass to verify the headers' PoW
+  (without storing them) until the accumulated work meets a
+  predetermined threshold, and then a second pass to store them. To
+  prevent an attacker sending the main chain during presync and then a
+  different, malicious chain during redownload, the node stores
+  commitments to the headers chain during presync.
 
 - [Bitcoin Core #25355][] I2P: add support for transient addresses for outbound connections FIXME:Xekyo
 
