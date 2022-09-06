@@ -14,7 +14,7 @@ lang: zh
 
 - **<!--wallet-label-export-format-->钱包标签导出格式**：Craig Raw 在 Bitcoin-Dev 邮件组中[发帖][raw interchange]提出了一份 BIP，用于标准化钱包地址和交易的标签在导出后的格式。理论上，一种标准化的导出格式将允许使用相同的 [BIP32][topic bip32] 账户层级的两个钱包软件打开彼此的备份，并且不仅能复原资金控制权，还能复原用户为这些交易手动键入的所有信息。
 
-    考虑到之前让使用 BIP32 的钱包彼此兼容的挑战，也许更容易实现的用途使让交易的历史更容易从钱包软件中导出并用在其它程序中，比如用于会计。
+    考虑到之前让使用 BIP32 的钱包彼此兼容的挑战，也许更容易实现的用途是让交易的历史更容易从钱包软件中导出并用在其它程序中，比如用于会计。
 
     开发者 Clark Moody 和 Pavol Rusnak [各自][moody slip15]回复了一份对 [SLIP15][SLIP15] 的[引用][rusnak slip15]，该引用介绍了由 Trezor 钱包品牌开发的开放导出标准。Craig Raw [指出][raw slip15]了自己的提议在目标上与 SLIP 15 似乎能够提供的东西的多个重大区别。人们也讨论了设计上的其它许多方面。截至本周报撰写之时，这样的讨论仍在发生。
 
@@ -45,7 +45,7 @@ lang: zh
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口（HWI）][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [Bitcoin Core #23202][Bitcoin Core #23202] 拓展了 `psbtbumpfee` RPC 方法，使之可以创建一个 [PSBT][topic psbt] 来为某一笔交易追加手续费，即使这笔交易的某一些输出并不属于这个钱包。这个 PSBT 可以分享给能够签名的钱包。
+- [Bitcoin Core #23202][Bitcoin Core #23202] 拓展了 `psbtbumpfee` RPC 方法，使之可以创建一个 [PSBT][topic psbt] 来为某一笔交易追加手续费，即使这笔交易的某些输出并不属于这个钱包。这个 PSBT 可以分享给能够签名的钱包。
 
 - [Eclair #2275][Eclair #2275] 为[双向注资][topic dual funding]的闪电通道启动交易添加了追加手续费的功能。这个 PR 指出，有了这个 PR，“Eclair 就算是完全支持双向注资通道了！”虽然该 PR 还提到，双向注资是默认禁用的，而且[跟 Core Lightning 的交叉兼容性测试][news143 cln df]要在未来才加入。
 
