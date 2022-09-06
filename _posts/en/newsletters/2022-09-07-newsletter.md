@@ -48,7 +48,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   different, malicious chain during redownload, the node stores
   commitments to the headers chain during presync.
 
-- [Bitcoin Core #25355][] I2P: add support for transient addresses for outbound connections FIXME:Xekyo
+- [Bitcoin Core #25355][] adds support for transient, one-time I2P
+  addresses when only outbound [I2P connections][topic anonymity networks] are allowed. In I2P, the
+  recipient learns the I2P address of the connection initiator.
+  Non-listening I2P nodes will now by default make use of transient I2P
+  addresses when making outbound connections.
 
 - [BDK #689][] adds an `allow_dust` method which allows a wallet to
   create a transaction that violates the [dust limit][topic uneconomical

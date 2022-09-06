@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Bitcoin Core #23077 enables address relay via CJDNS"
     url: /en/newsletters/2021/11/17/#bitcoin-core-23077
 
+  - title: "Bitcoin Core #25355 adds support for transient I2P addresses"
+    url: /en/newsletters/2022/09/07/#bitcoin-core-25355
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
