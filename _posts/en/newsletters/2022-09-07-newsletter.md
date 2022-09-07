@@ -33,7 +33,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   blocks that don't lead to the most-work chain, or simply exhaust the
   node's resources. As such, while sync speed and bandwidth usage are
   important concerns during IBD, a primary design goal is avoiding
-  Denial of Service attacks. Since v10.0, Bitcoin Core nodes sync block
+  Denial of Service attacks. Since v0.10.0, Bitcoin Core nodes sync block
   headers first before downloading block data and reject headers that
   don't connect to a set of checkpoints. Instead of using hard-coded
   values, this new design utilizes the inherent DoS-resistant property of
