@@ -31,7 +31,7 @@ lang: zh
 
 - [<!--when-did-bitcoin-core-deprecate-the-mining-function-->什么使用 Bitcoin Core 开始放弃挖矿功能？]({{bse}}114687) Pieter Wuille 为 Bitcoin Core 在过去几年的挖矿相关特性提供了一个历史性的回顾。
 
-- [<!--utxo-spendable-by-me-or-deposit-to-exchange-after-5-years-->有无办法让一个 UTXO 可以被我花费，同时在 5 年后可以被任何人存入我的交易所地址？]({{bse}}114901)  Stickies-v 提供了关于比特币脚本操作符、加入 [MAST][topic mast] 的 [taproot][topic taproot] 升级如何优化花费条件的隐私性和经济性的概述，并指出因为比特币脚本缺乏 “[限制条款（cvenants）][topic covenants]”，所以题主想要的特性光靠脚本是无法实现的。Vojtěch Strnad 指出，预先签名的交易可以帮助实现这样的花费条件。
+- [<!--utxo-spendable-by-me-or-deposit-to-exchange-after-5-years-->有无办法让一个 UTXO 可以被我花费，同时在 5 年后可以被任何人存入我的交易所地址？]({{bse}}114901)  Stickies-v 提供了关于比特币脚本操作符、加入 [MAST][topic mast] 的 [taproot][topic taproot] 升级如何优化花费条件的隐私性和经济性的概述，并指出因为比特币脚本缺乏 “[限制条款（covenants）][topic covenants]”，所以题主想要的特性光靠脚本是无法实现的。Vojtěch Strnad 指出，预先签名的交易可以帮助实现这样的花费条件。
 
 - [<!--what-was-the-bug-for-the-bitcoin-value-overflow-in-2010-->比特币在 2010 年的数值溢出漏洞是什么样的？]({{bse}}114694) Andrew Chow 总结了[数值溢出漏洞][value overflow bug]及其多种通货膨胀效果：产生数额更大的输出，还会导致交易费错误计算。
 
