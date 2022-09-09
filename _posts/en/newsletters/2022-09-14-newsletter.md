@@ -49,7 +49,10 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25614][] severity-based logging FIXME:adamjonas
+- [Bitcoin Core #25614][] builds on [Bitcoin Core #24464][], allowing
+  the ability to add and trace logs with specific severity levels in
+  addrdb, addrman, banman, i2p, mempool, netbase, net, net_processing,
+  timedata, and torcontrol.
 
 - [Bitcoin Core #25768][] fixes a bug where the wallet wouldn't always
   rebroadcast unconfirmed transactions' child transactions.  Bitcoin
@@ -96,7 +99,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   with [BIP68][] and [BIP112][].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="25614,25768,19602,2406,2190,962,619,1196" %}
+{% include linkers/issues.md v=2 issues="25614,24464,25768,19602,2406,2190,962,619,1196" %}
 [managing wallets]: https://github.com/bitcoin/bitcoin/blob/master/doc/managing-wallets.md
 [news193 cln5058]: /en/newsletters/2022/03/30/#c-lightning-5058
 [news211 rb994]: /en/newsletters/2022/08/03/#rust-bitcoin-994
