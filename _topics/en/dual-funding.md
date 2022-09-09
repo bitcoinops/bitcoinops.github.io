@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Eclair #2275 completes experimental support for the dual funding protocol"
     url: /en/newsletters/2022/08/31/#eclair-2275
 
+  - title: "Eclair #2406 allows requiring confirmed inputs in the interactive funding protocol"
+    url: /en/newsletters/2022/09/14/#eclair-2406
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)
