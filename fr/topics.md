@@ -1,5 +1,5 @@
 ---
-title: Topics
+title: Topics-fr
 permalink: /fr/topics/
 layout: page
 ---

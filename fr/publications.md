@@ -1,8 +1,8 @@
 ---
 layout: publications
 lang: fr
-title: Publications
-name: publications
+title: Publications-fr
+name: publications-fr
 permalink: /fr/publications/
 share: false
 version: 1
