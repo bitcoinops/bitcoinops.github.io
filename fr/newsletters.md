@@ -1,9 +1,9 @@
 ---
 layout: newsletters
-lang: en
+lang: fr
 title: Newsletters
 name: newsletters
-permalink: /en/newsletters/
+permalink: /fr/newsletters/
 share: false
 version: 1
 ---

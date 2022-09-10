@@ -1,6 +1,6 @@
 ---
 title: Topics
-permalink: /en/topics/
+permalink: /fr/topics/
 layout: page
 ---
 {% include linkers/topic-pages.md %}

@@ -1,9 +1,9 @@
 ---
 layout: publications
-lang: en
+lang: fr
 title: Publications
 name: publications
-permalink: /en/publications/
+permalink: /fr/publications/
 share: false
 version: 1
 ---
@@ -25,6 +25,6 @@ version: 1
 Recent publications from our [blog posts][] and [newsletters][].
 {% endif %}
 
-[blog posts]: /en/blog/
-[newsletters]: /en/newsletters/
-[scaling book]: /en/scaling/
+[blog posts]: /fr/blog/
+[newsletters]: /fr/newsletters/
+[scaling book]: /fr/scaling/

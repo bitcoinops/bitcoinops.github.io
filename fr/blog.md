@@ -1,9 +1,9 @@
 ---
 layout: blog
-lang: en
+lang: fr
 title: Blog
 name: blog
-permalink: /en/blog/
+permalink: /fr/blog/
 share: false
 version: 1
 ---
