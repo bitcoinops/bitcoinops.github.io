@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Cette semaine au sommaire de cette newsletter, plusieurs changements notable au
-populaire logiciel de l'infrastructure Bitcoin.
+Cette semaine au sommaire de cette newsletter, plusieurs changements notables au 
+logiciel de l'infrastructure Bitcoin.
 
 ## Nouvelles
 
@@ -54,16 +54,16 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   lors du re-téléchargement, le noeud stocke les engagements envers la chaîne
   d'en-têtes pendant la pré-synchronisation.
 
-- [Bitcoin Core #25355][] Ajout du support pour la transition, un adresse
-  temporaire I2P seulement quand la sortie [I2P connections][topic anonymity
-  networks] est autorisée. Dans I2P, celui qui reçoit apprend l'adresse I2P de
-  la connexion de l'initiateur. Les noeuds I2P non listés utiliseront maintenant
-  par défaut les adresses I2P temporaires lorsqu'ils établissent des connexions
-  sortantes.
+- [Bitcoin Core #25355][] Ajout du support pour remplacer l'adresse I2P fixe 
+  par une adresse I2P temporaire par connexion seulement quand la sortie 
+  [I2P connections][topic anonymity networks] est autorisée. Dans I2P, celui 
+  qui reçoit apprend l'adresse I2P de la connexion de l'initiateur. Les noeuds 
+  I2P qui n'acceptent pas de connexions entrantes utiliseront maintenant par défaut
+  les adresses I2P temporaires lorsqu'ils établissent des connexions sortantes.
 
 - [BDK #689][] ajout d'une méthode `allow_dust` autorisant un portefeuille à
-  créer une transaction qui viole la limite de poussière [dust limit][topic
-  uneconomical outputs]. Bitcoin Core et les autres noeuds utilisant le même
+  créer une transaction qui ne respecte pas la limite de poussière [dust limit]
+  [topic uneconomical outputs]. Bitcoin Core et les autres noeuds utilisant le même
   réglage ne relaieront plus les transactions non confirmées sans que toutes les
   sorties (excepté `OP_RETURN`) ne reçoivent plus de satoshis que la limite de
   poussières. BDK empêche généralement les utilisateurs de créer de telles
