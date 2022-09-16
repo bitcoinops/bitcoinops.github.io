@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Request to activate a slightly modified APO instead of (or before) CTV"
     url: /en/newsletters/2022/04/27/#requested
 
+  - title: "Creating drivechains with APO and a trusted setup"
+    url: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

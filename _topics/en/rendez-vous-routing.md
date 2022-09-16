@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Eclair #2253 adds support for relaying blinded payments"
     url: /en/newsletters/2022/08/03/#eclair-2253
 
+  - title: "Eclair #2418 and #2408 add support for receiving payments sent with blinded routes"
+    url: /en/newsletters/2022/09/21/#eclair-2418
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

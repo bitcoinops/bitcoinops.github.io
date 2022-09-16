@@ -6,8 +6,8 @@ title: Offers
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+aliases:
+  - BOLT12
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -64,6 +64,9 @@ optech_mentions:
 
   - title: "Eclair #2117 adds onion message replies in preparation for supporting offers"
     url: /en/newsletters/2022/01/12/#eclair-2117
+
+  - title: "Eclair #2416 adds support for receiving payments requested using the offers protocol"
+    url: /en/newsletters/2022/09/21/#eclair-2416
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

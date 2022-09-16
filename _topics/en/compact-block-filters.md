@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Bitcoin Core #17631 adds new REST endpoint for compact block filters"
     url: /en/newsletters/2022/01/05/#bitcoin-core-17631
 
+  - title: "LDK #1706 adds support for using compact block filters for downloading confirmed transactions"
+    url: /en/newsletters/2022/09/21/#ldk-1706
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
