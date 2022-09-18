@@ -10,8 +10,8 @@ lang: fr
 La newsletter de cette semaine comprend notre section habituelle avec le
 résumé d'une réunion du Club de révision des demandes de changements (PR)
 de Bitcoin Core, une liste de nouvelles mise à jour logiciels et des candidats
-à la publication, et des résumés des changements notables apportés aux principaux projets
-d'infrastructures.
+à la publication, et des résumés des changements notables apportés aux principaux
+projets d'infrastructures.
 
 ## Nouvelles
 
