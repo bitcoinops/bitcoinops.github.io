@@ -10,8 +10,9 @@ lang: fr
 La newsletter de cette semaine comprend notre section habituelle avec le
 résumé d'une réunion du Club de révision des demandes de changements (PR)
 de Bitcoin Core, une liste de nouvelles mise à jour logiciels et des candidats
-à la publication, et des résumés des changements notables apportés aux principaux
-projets d'infrastructures.
+à la publication, et des résumés des changements notables apportés aux principaux projets
+d'infrastructures.
+
 
 ## Nouvelles
 
@@ -22,7 +23,7 @@ projets d'infrastructures.
 *Dans cette section mensuelle, nous résumons une récente réunion du
 [Bitcoin Core PR Review Club][] en soulignant certaines des questions et réponses
 importantes.  Cliquez sur une question ci-dessous pour voir un résumé de la réponse
-de la réunion.* 
+de la réunion.*
 
 [Réduire la bande passante pendant la synchronisation initiale des en-têtes
 lorsqu'un bloc est trouvé][review club 25720] est une proposition d'amélioration (PR)
@@ -42,7 +43,7 @@ Cette demande d'amélioration (PR) n'affecte que la première phase (télécharg
 des en-têtes).
 
 {% include functions/details-list.md
-  q0="Pourquoi les nœuds reçoivent-ils (la plupart du temps) des annonces de bloc `inv` 
+  q0="Pourquoi les nœuds reçoivent-ils (la plupart du temps) des annonces de bloc `inv`
   pendant qu'ils effectuent la synchronisation initiale des en-têtes, même s'ils ont indiqués
   leur préférence pour les annonces d'en-têtes ([BIP 130][])?"
   a0="Un nœud n'annoncera pas un nouveau bloc à un pair en utilisant un message d'en-tête
@@ -51,7 +52,7 @@ des en-têtes).
   a0link="https://bitcoincore.reviews/25720#l-30"
 
   q1="Pourquoi gaspillons nous de la bande passante (pendant la synchronisation initiale
-  des en-têtes) en ajoutant tous les pairs qui nous annoncent un bloc via un `inv` 
+  des en-têtes) en ajoutant tous les pairs qui nous annoncent un bloc via un `inv`
   comme pairs de synchronisation des en-têtes ?"
   a1="Chacun de ces pairs commencera alors à nous envoyer le même flux d'en-têtes:
   le `inv` déclenche un `getheaders` vers le même pair, et sa réponse `headers` déclenche
@@ -91,7 +92,8 @@ des en-têtes).
   a4="Un avantage est que les pairs qui nous annoncent un `inv` ont une plus grande probabilité
   d'être réactifs. Un autre avantage est qu'un pair qui réussit à nous envoyer le bloc `inv`
   en premier est souvent aussi un pair très rapide. Nous ne choisirons donc pas un autre pair
-  lent si, pour une raison quelconque, notre pair initial est lent.""
+  lent si, pour une raison quelconque, notre pair initial est lent."
+
   q4link="https://bitcoincore.reviews/25720#l-135"
 %}
 
