@@ -45,7 +45,24 @@ software, and popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-<!-- FIXME:bitschmidty -->
+- **Mempool Project launches Lightning Network explorer:**
+  Mempool's open source [Lightning dashboard][mempool lightning] shows aggregate
+  network statistics as well as individual node liquidity and connectivity data.
+
+- **Federation software Fedimint adds Lightning:**
+  In a recent [blog post][blockstream blog fedimint], Blockstream outlines
+  updates to the [Fedimint][] federated Chaumian e-cash project, including
+  Lightning Network support. The project also [announced][fedimint signet tweet]
+  a public [signet][topic signet] and faucet are available.
+
+- **Bitpay wallet improves RBF support:**
+  Bitpay [improves][bitpay 12051] its [existing][bitpay 11935] support for
+  sending [RBF][topic rbf] transactions by better handling bumping of
+  transactions with multiple receivers.
+
+- **Mutiny Lightning wallet announced:**
+  Mutiny (previously pLN), a privacy-focused Lightning wallet that uses separate
+  nodes for each channel, was [announced][mutiny wallet].
 
 ## Notable code and documentation changes
 
@@ -90,3 +107,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [rubin apodc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020919.html
 [news190 dc]: /en/newsletters/2022/03/09/#enablement-of-drivechains
 [proposed bolt12]: https://github.com/rustyrussell/lightning-rfc/blob/guilt/offers/12-offer-encoding.md
+[mempool lightning]: https://mempool.space/lightning
+[blockstream blog fedimint]: https://blog.blockstream.com/fedimint-update/
+[bitpay 12051]: https://github.com/bitpay/wallet/pull/12051
+[bitpay 11935]: https://github.com/bitpay/wallet/pull/11935
+[mutiny wallet]: https://bc1984.com/make-lightning-payments-private-again/
+[Fedimint]: https://github.com/fedimint/fedimint
+[fedimint signet tweet]: https://twitter.com/EricSirion/status/1572329210727010307
