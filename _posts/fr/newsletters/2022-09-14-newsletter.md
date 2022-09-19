@@ -8,15 +8,14 @@ layout: newsletters-fr
 lang: fr
 ---
 La newsletter de cette semaine comprend notre section habituelle avec le
-résumé d'une réunion du Club de révision des demandes de changements (PR)
-de Bitcoin Core, une liste de nouvelles mise à jour logiciels et des candidats
-à la publication, et des résumés des changements notables apportés aux principaux projets
-d'infrastructures.
+résumé d'une réunion du Bitcoin Core PR Review Club une liste de nouvelles mises à jour des logiciels et des candidats
+à la publication, et des résumés de changements notables apportés aux principaux projets
+d'infrastructures Bitcoin.
 
 
 ## Nouvelles
 
-*Pas de nouvelles signifiantes cette semaine.*
+*Pas de nouvelles de grande importance cette semaine.*
 
 ## Club de révision des demandes de changements (Bitcoin Core PR Review Club)
 
@@ -74,12 +73,12 @@ des en-têtes).
   via un `inv`, pourquoi ne pas augmenter `nSyncStarted` et mettre `fSyncStarted = true`
   et mettre à jour `m_headers_sync_timeout` ?"
   a3="`nSyncStarted` compte le nombre de pairs dont `fSyncStarted` est vrai, et ce nombre
-  ne peut pas être supérieur à 1 jusqu'à ce que le noeud ait des en-têtes proches (dans un délai de jour)
+  ne peut pas être supérieur à 1 jusqu'à ce que le noeud ait des en-têtes proches (dans un délai d'un jour)
   de l'heure actuelle. Ce pair (arbitraire) sera notre pair initial de synchronisation d'en-têtes.
   Si ce pair est lent, le noeud l'arrête (`m_headers_sync_timeout`) et trouve un autre pair de
   synchronisation d'en-têtes 'initial'. Mais si, pendant la synchronisation des en-têtes, un noeud
   envoie un message `inv` qui annonce des blocs, alors sans ce PR, le noeud commencera à demander des
-  en-têtes à ce pair aussi, _sans_ mettre son drapeau `fSyncStarted`. Ceci est la source des messages
+  en-têtes à ce pair aussi, _sans_ mettre son flag `fSyncStarted`. Ceci est la source des messages
   d'en-têtes redondants, et n'était probablement pas prévu, mais a l'avantage de permettre à la
   synchronisation des en-têtes de continuer même si le pair initial de synchronisation des en-têtes est
   malveillant, cassé, ou très lent. Avec ce PR, le noeud demande des en-têtes à seulement _un_ pair
@@ -99,8 +98,8 @@ des en-têtes).
 
 ## Mise à jour et candidat à la publication
 
-*Nouvelles mises à jour et candidat à la publication pour le projet populaire d'infrasture
-de Bitcoin. S'il vous plait prévoyez de mettre à jour à la nouvelle mise à jour ou d'aider
+*Nouvelles mises à jour et candidat à la publication pour le projet principal d'infrastructure
+de Bitcoin. S'il vous plait prévoyez de mettre à jour à la nouvelle version ou d'aider
 à tester le candidat à publication.*
 
 - [LDK 0.0.111][] ajoute un support pour la création, la réception et la relayage
@@ -145,7 +144,7 @@ et ceux qui prennent en charge nativement les descripteurs.
 - [Eclair #2406][] ajoute une option pour configurer l'implémentation expérimentale
   [interactive funding protocol][topic dual funding] pour exiger que les transactions
   d'ouverture de canal incluent uniquement les *entrées confirmées* --- entrées qui
-  dépensent les sorties font partie d'une transaction confirmée. S'il est activé,
+  dépensent les sorties faisant partie d'une transaction confirmée. S'il est activé,
   cela peut empêcher un initiateur de retarder l'ouverture d'un canal en le basant
   sur une grande transaction non confirmée avec un faible taux de commission.
 
