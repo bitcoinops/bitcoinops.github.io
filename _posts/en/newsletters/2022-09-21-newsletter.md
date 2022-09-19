@@ -56,7 +56,9 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Core Lightning #5581][] Add plugin notification topic "block_processed". FIXME:Xekyo
+- [Core Lightning #5581][] adds a new event notification topic
+  "block_added". Subscribing plugins get notified each time a new block
+  is received from bitcoind.
 
 - [Eclair #2418][] and [#2408][eclair #2408] add support for receiving
   payments sent with [blinded routes][topic rv routing].  A spender
