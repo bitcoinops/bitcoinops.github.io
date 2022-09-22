@@ -8,16 +8,16 @@ layout: newsletters-fr
 lang: fr
 ---
 La newsletter de cette semaine comprend notre section habituelle avec le
-résumé d'une réunion du Bitcoin Core PR Review Club une liste de nouvelles mises à jour des logiciels et des candidats
-à la publication, et des résumés de changements notables apportés aux principaux projets
-d'infrastructures Bitcoin.
+résumé d'une réunion du Bitcoin Core PR Review Club, une liste de nouvelles
+mises à jour et de pré-versions des logiciels et des résumés de changements notables
+apportés aux principaux projets d'infrastructures Bitcoin.
 
 
 ## Nouvelles
 
 *Pas de nouvelles de grande importance cette semaine.*
 
-## Club de révision des demandes de changements (Bitcoin Core PR Review Club)
+## Bitcoin Core PR Review Club
 
 *Dans cette section mensuelle, nous résumons une récente réunion du
 [Bitcoin Core PR Review Club][] en soulignant certaines des questions et réponses
@@ -25,27 +25,27 @@ importantes.  Cliquez sur une question ci-dessous pour voir un résumé de la r�
 de la réunion.*
 
 [Réduire la bande passante pendant la synchronisation initiale des en-têtes
-lorsqu'un bloc est trouvé][review club 25720] est une proposition d'amélioration (PR)
+lorsqu'un bloc est trouvé][review club 25720] est une proposition d'amélioration (Pull Request)
 de Suhas Daftuar qui réduit la demande de bande passante d'un nœud lors de la synchronisation
-de la blockchain avec les pairs, y compris pendant le téléchargement du bloc initial (IBD).
-Une partie importante de l'éthique du Bitcoin est de minimiser les demandes de ressources
+de la blockchain avec les pairs, y compris pendant le téléchargement de blocs initial (IBD).
+Une partie importante de l'éthique de Bitcoin est de minimiser les demandes de ressources
 pour faire fonctionner un nœud complet de validation, y compris les ressources réseau,
-afin d'encourager plus d'utilisateurs à faire fonctionner des nœuds complets. Accélérer le temps de
-synchronisation favorise également cet objectif.
+afin d'encourager plus d'utilisateurs à faire fonctionner des nœuds complets.
+Accélérer le temps de synchronisation favorise également cet objectif.
 
-La synchronisation de la blockchain se fait en deux phases: Premièrement, le nœud
-reçoit des en-têtes de bloc de la part de ses pairs; ces en-têtes sont suffisantes
-pour déterminer la meilleure chaîne (probable) (celle qui a le plus de travail).
+La synchronisation de la blockchain se fait en deux phases: premièrement, le nœud
+reçoit des en-têtes de blocs de la part de ses pairs; ces en-têtes sont suffisants
+pour déterminer la meilleure chaîne probable, celle qui cumule le plus de travail (proof of work).
 Deuxièmement, le nœud utilise cette meilleure chaîne d'en-têtes pour demander et
 télécharger les blocs complets correspondants.
-Cette demande d'amélioration (PR) n'affecte que la première phase (téléchargement
+Cette proposition d'amélioration (PR) n'affecte que la première phase (le téléchargement
 des en-têtes).
 
 {% include functions/details-list.md
-  q0="Pourquoi les nœuds reçoivent-ils (la plupart du temps) des annonces de bloc `inv`
-  pendant qu'ils effectuent la synchronisation initiale des en-têtes, même s'ils ont indiqués
+  q0="Pourquoi les nœuds reçoivent-ils (la plupart du temps) des annonces de blocs `inv`
+  pendant qu'ils effectuent la synchronisation initiale des en-têtes, même s'ils ont indiqué
   leur préférence pour les annonces d'en-têtes ([BIP 130][])?"
-  a0="Un nœud n'annoncera pas un nouveau bloc à un pair en utilisant un message d'en-tête
+  a0="Un nœud n'annoncera pas de nouveau bloc à un pair en utilisant un message d'en-tête
   si le pair n'a pas précédemment envoyé un en-tête auquel le nouvel en-tête est connecté,
   et les nœuds de synchronisation n'envoient pas d'en-têtes."
   a0link="https://bitcoincore.reviews/25720#l-30"
@@ -54,26 +54,26 @@ des en-têtes).
   des en-têtes) en ajoutant tous les pairs qui nous annoncent un bloc via un `inv`
   comme pairs de synchronisation des en-têtes ?"
   a1="Chacun de ces pairs commencera alors à nous envoyer le même flux d'en-têtes:
-  le `inv` déclenche un `getheaders` vers le même pair, et sa réponse `headers` déclenche
+  les messages `inv` déclenchent un `getheaders` vers le même pair, et sa réponse `headers` déclenche
   un autre `getheaders` pour la plage d'en-têtes de bloc immédiatement suivante. Recevoir
   des en-têtes en double est inoffensif, sauf pour la bande passante supplémentaire."
   a1link="https://bitcoincore.reviews/25720#l-62"
 
-  q2="Quelle serait votre estimation (limite inférieure/supérieure) de la quantité de bande
-  passante est gaspillée ?"
-  a2="la limite supérieure (en bytes): `(number_peers - 1) * number_blocks * 81`;
+  q2="Quelle serait votre estimation (limite inférieure / supérieure) de la quantité de bande
+  passante gaspillée ?"
+  a2="la limite supérieure (en bytes): `(quantité de pairs - 1) * quantité de blocs * 81`;
   la limite inférieure: zero (si aucun nouveau bloc n'arrive pendant la synchronisation des
   en-têtes ; si le pair de synchronisation et le réseau sont rapides, le téléchargement des 700k+
-  en-têtes ne prend que quelques minutes)"
+  en-têtes ne prendra que quelques minutes)"
   a2link="https://bitcoincore.reviews/25720#l-79"
 
-  q3="Quel est la proposition des membres du CNodeState avec `fSyncStarted` et `m_headers_sync_timeout`,
+  q3="A quoi servent les membres de CNodeState `fSyncStarted` et `m_headers_sync_timeout`,
   et `PeerManagerImpl::nSyncStarted` ?
   Si nous commençons à synchroniser les en-têtes avec les pairs qui nous annoncent un bloc
-  via un `inv`, pourquoi ne pas augmenter `nSyncStarted` et mettre `fSyncStarted = true`
+  via un `inv`, pourquoi ne pas augmenter `nSyncStarted`, mettre `fSyncStarted = true`
   et mettre à jour `m_headers_sync_timeout` ?"
   a3="`nSyncStarted` compte le nombre de pairs dont `fSyncStarted` est vrai, et ce nombre
-  ne peut pas être supérieur à 1 jusqu'à ce que le noeud ait des en-têtes proches (dans un délai d'un jour)
+  ne peut pas être supérieur à 1 jusqu'à ce que le noeud ait des en-têtes proches (moins d'un jour)
   de l'heure actuelle. Ce pair (arbitraire) sera notre pair initial de synchronisation d'en-têtes.
   Si ce pair est lent, le noeud l'arrête (`m_headers_sync_timeout`) et trouve un autre pair de
   synchronisation d'en-têtes 'initial'. Mais si, pendant la synchronisation des en-têtes, un noeud
@@ -90,21 +90,20 @@ des en-têtes).
   de l'approche adoptée dans le PR par rapport à cette alternative ?"
   a4="Un avantage est que les pairs qui nous annoncent un `inv` ont une plus grande probabilité
   d'être réactifs. Un autre avantage est qu'un pair qui réussit à nous envoyer le bloc `inv`
-  en premier est souvent aussi un pair très rapide. Nous ne choisirons donc pas un autre pair
+  en premier est souvent aussi un pair très rapide. Nous ne choisirons donc pas d'autre pair
   lent si, pour une raison quelconque, notre pair initial est lent."
 
   q4link="https://bitcoincore.reviews/25720#l-135"
 %}
 
-## Mise à jour et candidat à la publication
+## Mise à jour et Pré-version
 
-*Nouvelles mises à jour et candidat à la publication pour le projet principal d'infrastructure
-de Bitcoin. S'il vous plait prévoyez de mettre à jour à la nouvelle version ou d'aider
-à tester le candidat à publication.*
+*Nouvelles mises à jour et pré-versions des projets principaux Bitcoin. Prévoyez s'il vous plait
+de vous mettre à jour à la nouvelle version ou d'aider à tester les pré-versions.*
 
-- [LDK 0.0.111][] ajoute un support pour la création, la réception et la relayage
+- [LDK 0.0.111][] ajoute la création, la réception et la relayage d'
   [onion messages][topic onion messages], parmi plusieurs autres nouvelles fonctionnalités
-  et de corrections de bogues.
+  et apporte des corrections de bogues.
 
 ## Changements notables dans le code et la documentation
 
@@ -121,21 +120,21 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   timedata, et torcontrol.
 
 - [Bitcoin Core #25768][] corrige un bogue où le portefeuille ne rediffusait
-pas toujours les transactions enfants des transactions non confirmées.
-Le portefeuille intégré de Bitcoin Core tente périodiquement de diffuser l'une
-de ses transactions qui n'a pas encore été confirmée. Certaines de ces
+pas toujours de transactions enfants des transactions non confirmées.
+Le portefeuille intégré de Bitcoin Core tente périodiquement de diffuser 
+ses transactions qui n'ont pas encore été confirmées. Certaines de ces
 transactions peuvent dépenser les sorties d'autres transactions non confirmées.
-Bitcoin Core mélangeait l'ordre des transactions avant de les envoyer à un autre
-sous-système Bitcoin Core qui s'attendait à recevoir des transactions parentes
+Bitcoin Core rendait aléatoire l'ordre des transactions avant de les envoyer à une autre
+partie du code qui s'attendait à recevoir des transactions parentes
 non confirmées avant les transactions enfants (ou, plus généralement, tous les
 ancêtres non confirmés avant tout descendant). Lorsqu'une transaction enfant
 était reçue avant son parent, elle était rejetée en interne au lieu d'être rediffusée.
 
-- [Bitcoin Core #19602][] ajoute un `migratewallet` RPC qui convertira un portefeuille
+- [Bitcoin Core #19602][] ajoute un RPC `migratewallet` qui convertira un portefeuille
 en utilisant nativement [descriptors][topic descriptors]. Cela fonctionne pour
 les portefeuilles pré-HD (ceux créés avant que [BIP32][] n'existe ou n'ait été adopté
 par Bitcoin Core), les portefeuilles HD et les portefeuilles de surveillance uniquement
-sans clés privées. Avant d'appeler cette fonction, lisez la [documentation][managing wallets]
+sans clés privées (watch-only). Avant d'appeler cette RPC, lisez la [documentation][managing wallets]
 et sachez qu'il existe certaines différences d'API entre les portefeuilles sans descripteurs
 et ceux qui prennent en charge nativement les descripteurs.
 
@@ -146,7 +145,7 @@ et ceux qui prennent en charge nativement les descripteurs.
   d'ouverture de canal incluent uniquement les *entrées confirmées* --- entrées qui
   dépensent les sorties faisant partie d'une transaction confirmée. S'il est activé,
   cela peut empêcher un initiateur de retarder l'ouverture d'un canal en le basant
-  sur une grande transaction non confirmée avec un faible taux de commission.
+  sur une grande transaction non confirmée avec un faible taux de commission (fee rate).
 
 - [Eclair #2190][] supprime la prise en charge du format original des données "onion"
 de longueur fixe, dont la suppression de la spécification LN est également proposée
