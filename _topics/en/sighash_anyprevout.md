@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Creating drivechains with APO and a trusted setup"
     url: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
 
+  - title: "New software fork of Bitcoin Core for testing to include support for APO"
+    url: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

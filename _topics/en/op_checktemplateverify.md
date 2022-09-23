@@ -97,6 +97,9 @@ optech_mentions:
   - title: "BIPs #1309 updates BIP119’s example implementation to use pythonic pseudocode"
     url: /en/newsletters/2022/05/18/#bips-1309
 
+  - title: "New software fork of Bitcoin Core for testing to include support for CTV"
+    url: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
