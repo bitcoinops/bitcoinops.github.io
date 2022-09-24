@@ -31,6 +31,9 @@ optech_mentions:
   - title: "Opcodes enabling recursive covenants may also permit drivechains"
     url: /en/newsletters/2022/03/09/#enablement-of-drivechains
 
+  - title: "Creating drivechains with APO and a trusted setup"
+    url: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:
