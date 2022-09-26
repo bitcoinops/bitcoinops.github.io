@@ -3,8 +3,8 @@ title: 'Bitcoin Optech Newsletter #217'
 permalink: /fr/newsletters/2022/09/14/
 name: 2022-09-14-newsletter-fr
 slug: 2022-09-14-newsletter-fr
-type: newsletters-fr
-layout: newsletters-fr
+type: newsletter
+layout: newsletter
 lang: fr
 ---
 La newsletter de cette semaine comprend notre section habituelle avec le
