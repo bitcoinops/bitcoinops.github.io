@@ -121,7 +121,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #25768][] corrige un bogue où le portefeuille ne rediffusait
 pas toujours de transactions enfants des transactions non confirmées.
-Le portefeuille intégré de Bitcoin Core tente périodiquement de diffuser 
+Le portefeuille intégré de Bitcoin Core tente périodiquement de diffuser
 ses transactions qui n'ont pas encore été confirmées. Certaines de ces
 transactions peuvent dépenser les sorties d'autres transactions non confirmées.
 Bitcoin Core rendait aléatoire l'ordre des transactions avant de les envoyer à une autre
