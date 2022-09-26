@@ -73,7 +73,30 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is it possible to determine whether an HD wallet was used to create a given transaction?]({{bse}}115311)
+  Pieter Wuille points out that while identifying UTXOs created using an [HD
+  wallet][topic bip32] is not possible, other onchain data can be used to
+  fingerprint wallet software including types of inputs used, types of outputs
+  created, order of inputs and outputs in the transaction, [coin
+  selection][topic coin selection] algorithm, and use of [timelocks][topic timelocks].
+
+- [Why is there a 5-day gap between the genesis block and block 1?]({{bse}}115344)
+  Murch notes that the gap in the timeline could be explained by the genesis
+  block having a higher difficulty target than required, Satoshi setting the
+  block's timestamp in the past, or the [original Bitcoin software waiting][github
+  jrubin annotated] for a peer before starting to mine.
+
+- [Is it possible to set RBF as always-on in bitcoind?]({{bse}}115360)
+  Michael Folkson and Murch explain the `walletrbf` configuration option and
+  list a series of related changes involving defaulting to [RBF][topic rbf] in the
+  GUI, defaulting to RBF in RPCs, and using [`mempoolfullrbf`][news208
+  mempoolfullrbf] to allow replacements without signaling.
+
+- [Why would I need to ban peer nodes on the Bitcoin network?]({{bse}}115183)
+  In contrast to [discouraging a peer][bitcoin 23.x banman], user RedGrittyBrick
+  explains that a node operator could choose to manually ban a peer using the
+  [`setban`][setban rpc] RPC if the peer is misbehaving, a suspected malicious or surveillance
+  node, or part of a cloud provider's network, among other reasons.
 
 ## Releases and release candidates
 
@@ -140,3 +163,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [neigut ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003685.html
 [zmnscpxj ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003688.html
 [towns bi]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020921.html
+[github jrubin annotated]: https://github.com/JeremyRubin/satoshis-version/blob/master/src/main.cpp#L2255
+[news208 mempoolfullrbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
+[bitcoin 23.x banman]: https://github.com/bitcoin/bitcoin/blob/23.x/src/banman.h#L28
+[setban rpc]: https://github.com/bitcoin/bitcoin/blob/97f865bb76a9c9e8e42e4ee1227615c9c30889a6/src/rpc/net.cpp#L675
