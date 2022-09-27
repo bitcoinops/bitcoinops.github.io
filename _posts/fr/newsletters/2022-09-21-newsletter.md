@@ -84,7 +84,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   utilisée avec [les canaux non annoncés][topic unannounced channels].
 
 - [Eclair #2416][] ajoute le support pour les requêtes de reception des paiements utilisant
-  le protocole [offers][topic offers] comme défini dans la [proposition BOLT12][].
+  le protocole [offers][topic offers] comme défini dans la [proposition BOLT12][proposed bolt12].
   Le récent ajout du support de réception des paiements cachés est ici utilisé
   (voir la précédente liste des items pour Eclair #2418).
 
