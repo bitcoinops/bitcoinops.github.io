@@ -40,7 +40,7 @@ lang: zh
 
 - [Eclair #2418][] 和 [#2408][eclair #2408] 添加了对通过[盲化路由][topic rv routing]发送来付款的接收支持。创建盲化支付的付款者不会被提供接收付款节点的身份。这可能会改善隐私，尤其是与[未公布的通道][topic unannounced channels]一起使用时。
 
-- [Eclair #2416][] 添加支持接收使用[提议 BOLT12][proposed bolt12] 中定义的[要约][topic offers]协议请求的付款。该功能使用了最近添加的接收盲化付款的支持（请参阅 Eclair #2418 的上一个列表项）。  
+- [Eclair #2416][] 添加支持接收使用[提议 BOLT12][proposed bolt12] 中定义的[要约][topic offers]协议请求的付款。该功能使用了最近添加的接收盲化付款的支持（请参阅 Eclair #2418 的上一个列表项）。
 
 - [LND #6335][] 添加了一个 `TrackPayments` API，允许订阅所有本地支付尝试。如 PR 描述中所述，这可用于收集有关付款的统计信息，以帮助将来更好地发送和路由付款，例如用于执行 [trampoline 路由][topic trampoline payments]的节点。
 
