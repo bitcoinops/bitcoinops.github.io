@@ -56,7 +56,7 @@ services de Bitcoin.*
   qu'un [signet public][topic signet] et un faucet sont disponibles.
 
 - **Le portefeuille Bitpay améliore le support de RBF:**
-  Bitpay [améliore][bitpay 12051] qui est le support [existant de][bitpay 11935] pour
+  Bitpay [améliore][bitpay 12051] le support [existant][bitpay 11935] pour
   envoyer des transactions [RBF][topic rbf] en gérant mieux les sauts de
   transactions avec des receveurs multiples.
 
