@@ -134,6 +134,9 @@ optech_mentions:
   - title: "Eclair #2134 enables anchor outputs by default"
     url: /en/newsletters/2022/01/26/#eclair-2134
 
+  - title: Proposed relay of v3 transactions attempts to improve on anchor outputs
+    url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
