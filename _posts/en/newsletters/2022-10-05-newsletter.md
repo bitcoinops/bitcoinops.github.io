@@ -141,8 +141,19 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   results mentioned in the commit message indicate almost no one is
   using the older format any more.
 
-- [BIPs #1370][] Changes/clarifications to bip-330. FIXME:glozow
+- [BIPs #1370][] revises [BIP330][] ([Erlay][topic erlay] for reconciliation-based
+  transaction announcements) to reflect the current proposed
+  implementation. Changes include:
 
+  - Removing truncated transaction IDs in favor of just using
+    transaction wtxids.  This also means nodes can use the existing
+    `inv` and `getdata` messages, so the `invtx` and `gettx` messages
+    have been removed.
+
+  - Renaming `sendrecon` to `sendtxrcncl`,
+  `reqreconcil` to `reqrecon`, and `reqbisec` to `reqsketchtext`.
+
+  - Adding details for negotiating support using `sendtxrcncl`.
 
 - [BIPs #1367][] simplifies [BIP118][]'s description of
   [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] by refering to BIPs [340][bip340] and

@@ -39,6 +39,9 @@ optech_mentions:
   - title: "PR Review Club: #23443 implementing Erlay support signaling"
     url: /en/newsletters/2022/01/12/#bitcoin-core-pr-review-club
 
+  - title: "BIPs #1370 updates the BIP330 specification of Erlay"
+    url: /en/newsletters/2022/10/05/#bips-1370
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch
