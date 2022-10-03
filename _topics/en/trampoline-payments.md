@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Discussion about combining trampoline routing with first-hop payment holds"
     url: /en/newsletters/2022/06/15/#trampoline-routing-and-mobile-payments
 
+  - title: "Eclair #2435 adds support for basic async payments for trampoline relay"
+    url: /en/newsletters/2022/10/05/#eclair-2435
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

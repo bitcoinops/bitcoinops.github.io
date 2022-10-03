@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Bitcoin Core #25610 opts-in the RPCs and `-walletrbf` to RBF by default"
     url: /en/newsletters/2022/08/10/#bitcoin-core-25610
 
+  - title: "Proposal for relay of v3 transactions allows replacement"
+    url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

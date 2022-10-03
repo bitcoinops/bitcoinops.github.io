@@ -60,6 +60,9 @@ optech_mentions:
   - title: "BDK #689 allows a wallet to create a transaction that violates the dust limit"
     url: /en/newsletters/2022/09/07/#bdk-689
 
+  - title: "Discussion about allowing uneconomical outputs that are part of a transaction package"
+    url: /en/newsletters/2022/10/05/#ephemeral-dust
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

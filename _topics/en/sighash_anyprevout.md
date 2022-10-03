@@ -101,6 +101,9 @@ optech_mentions:
   - title: "New software fork of Bitcoin Core for testing to include support for APO"
     url: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
 
+  - title: "BIPs #1367 simplifies BIP118’s description of SIGHASH_ANYPREVOUT"
+    url: /en/newsletters/2022/10/05/#bips-1367
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

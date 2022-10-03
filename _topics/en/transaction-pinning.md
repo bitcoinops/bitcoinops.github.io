@@ -60,6 +60,9 @@ optech_mentions:
   - title: Idea to use transaction introspection to prevent RBF pinning
     url: /en/newsletters/2022/05/18/#using-transaction-introspection-to-prevent-rbf-pinning
 
+  - title: Proposed relay of v3 transactions designed to avoid pinning attacks
+    url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
