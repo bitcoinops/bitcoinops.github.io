@@ -174,7 +174,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   notification code specific to the sender-receiver pair to get the receiver's attention and establish the
   shared secret for improved privacy.
 
-- [BIPs #1293][] BIP 372: Pay-to-contract tweak fields for PSBT FIXME:bitschmidty
+- [BIPs #1293][] adds [BIP372][] titled "Pay-to-contract tweak fields for PSBT". This BIP
+  proposes a standard for including additional [PSBT][topic psbt] fields
+  that provide signing devices with contract commitment data required to participate in
+  [Pay-to-Contract][topic p2c] protocols (see [Newsletter #184][news184 psbt]).
 
 - [BIPs #1364][] adds additional detail to the text for the
   [BIP300][] specification of [drivechains][topic sidechains].  The
@@ -196,3 +199,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [towns ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
 [zmnscpxj valve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
 [news171 async]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
+[news184 psbt]: /en/newsletters/2022/01/26/#psbt-extension-for-p2c-fields
