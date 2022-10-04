@@ -156,10 +156,23 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   - Adding details for negotiating support using `sendtxrcncl`.
 
 - [BIPs #1367][] simplifies [BIP118][]'s description of
-  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] by refering to BIPs [340][bip340] and
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] by referring to BIPs [340][bip340] and
   [341][bip341] as much as possible.
 
-- [BIPs #1349][] New BIP 351: Private Payments FIXME:Xekyo
+- [BIPs #1349][] adds [BIP351][] titled “Private Payments”,
+  describing a cryptographic protocol inspired by
+  [BIP47][bip47] and [Silent Payments][topic silent payments]. The BIP
+  introduces a new Payment Code format per which participants specify
+  supported output types next to their public key.  Similar to BIP47, a
+  sender uses a notification transaction to establish a shared secret
+  with the receiver based on the receiver's Payment Code. The sender can
+  then send multiple payments to unique addresses derived from the
+  shared secret which the receiver may spend using information from the
+  notification transaction. Where BIP47 had multiple senders reuse the
+  same notification address per receiver, this proposal uses OP_RETURN
+  outputs labeled with the search key `PP` and a
+  notification code specific to the sender-receiver pair to get the receiver's attention and establish the
+  shared secret for improved privacy.
 
 - [BIPs #1293][] BIP 372: Pay-to-contract tweak fields for PSBT FIXME:bitschmidty
 
