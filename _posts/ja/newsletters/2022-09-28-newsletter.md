@@ -81,7 +81,7 @@ signet上での主要なプロトコルの変更のテストにフォーカス�
 
 - [Core Lightning 0.12.1][]は、いくつかのバグ修正を含むメンテナンスリリースです。
 
-- [Bitcoin Core 0.24.0 RC1][]は、ネットワークで最も広く使われているフルノード実装の次期バージョンの最初のリリース候補です。
+- [Bitcoin Core 24.0 RC1][]は、ネットワークで最も広く使われているフルノード実装の次期バージョンの最初のリリース候補です。
 
 ## 注目すべきコードとドキュメントの変更
 
@@ -117,7 +117,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26116,5594,5315,1258" %}
-[bitcoin core 0.24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
+[bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [Core Lightning 0.12.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.1
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin/
 [bi prs]: https://github.com/bitcoin-inquisition/bitcoin/pulls
