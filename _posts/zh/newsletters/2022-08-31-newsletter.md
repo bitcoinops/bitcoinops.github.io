@@ -25,7 +25,7 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [<!--why-isnt-it-possible-to-add-an-opreturn-commitment-or-some-arbitrary-script-inside-a-taproot-script-path-with-a-descriptor-->为什么不可以使用描述符在一个 taproot 脚本路径中添加一个 OP_RETURN 承诺（或者其它任意脚本）？]({{bse}}114948) Antoine Poinsot 解释道，现在 Bitcoin Core 中的[脚本描述符][topic descriptors]已经拓展到使用[miniscript][topic miniscript]，预计在 Bitcoin Core 0.24 版本时就会发布。虽然最初的 miniscript 特性只支持 segwit v0，但最终对 [tapscript][topic tapscript] 和 “[部分描述符][Bitcoin Core #24114]” 的支持将使我们能够在 tapscript 中添加承诺，无需完全依靠 `raw()` 描述符。
+- [<!--why-isnt-it-possible-to-add-an-opreturn-commitment-or-some-arbitrary-script-inside-a-taproot-script-path-with-a-descriptor-->为什么不可以使用描述符在一个 taproot 脚本路径中添加一个 OP_RETURN 承诺（或者其它任意脚本）？]({{bse}}114948) Antoine Poinsot 解释道，现在 Bitcoin Core 中的[脚本描述符][topic descriptors]已经拓展到使用[miniscript][topic miniscript]，预计在 Bitcoin Core 24 版本时就会发布。虽然最初的 miniscript 特性只支持 segwit v0，但最终对 [tapscript][topic tapscript] 和 “[部分描述符][Bitcoin Core #24114]” 的支持将使我们能够在 tapscript 中添加承诺，无需完全依靠 `raw()` 描述符。
 
 - [<!--why-does-bitcoin-core-rebroadcast-transactions-->为什么 Bitcoin Core 会重新广播交易？]({{bse}}114973) Amir reza Riahi 好奇为什么 Bitcoin Core 钱包模块会重新广播交易，为什么期间存在延迟。Pieter Wuille 指出，点对点网络缺乏交易传播的保证，所以重广播功能是有必要的；而且，将重广播的责任从钱包模块移交到交易池模块的工作已经完成了。对重广播功能有兴趣的读者可以看 [2022 年 8 月 24 日][prreview 25768] 、[2021 年 4 月 7 日][prreview 21061] 和 [2019 年 11 月 27 日][prreview 16698] 各期周报的 PR 审核俱乐部栏目。
 

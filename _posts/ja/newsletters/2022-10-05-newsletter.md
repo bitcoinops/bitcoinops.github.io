@@ -85,7 +85,7 @@ LNチャネルのバランスを保つための研究の要約を掲載してい
 *人気のBitcoinインフラストラクチャプロジェクトの新しいリリースとリリース候補。
 新しいリリースにアップグレードしたり、リリース候補のテストを支援することを検討してください。*
 
-- [Bitcoin Core 0.24.0 RC1][]は、ネットワークで最も広く使われているフルノード実装の次期バージョンの最初のリリース候補です。
+- [Bitcoin Core 24.0 RC1][]は、ネットワークで最も広く使われているフルノード実装の次期バージョンの最初のリリース候補です。
   [テストのガイド][bcc testing]が利用できるようになっています。
 
 ## 注目すべきコードとドキュメントの変更
@@ -141,7 +141,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2435,962,1370,1367,1349,1293,1364" %}
-[bitcoin core 0.24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
+[bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bolt7 htlc_max]: https://github.com/lightning/bolts/blob/48fed66e26b80031d898c6492434fa9926237d64/07-routing-gossip.md#requirements-3
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [zhao tx3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html

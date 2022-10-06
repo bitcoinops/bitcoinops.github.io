@@ -112,7 +112,7 @@ projects.
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [Bitcoin Core 0.24.0 RC1][] is the first release candidate for the
+- [Bitcoin Core 24.0 RC1][] is the first release candidate for the
   next version of the network's most widely used full node
   implementation.  A [guide to testing][bcc testing] is available.
 
@@ -186,7 +186,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2435,962,1370,1367,1349,1293,1364" %}
-[bitcoin core 0.24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
+[bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bolt7 htlc_max]: https://github.com/lightning/bolts/blob/48fed66e26b80031d898c6492434fa9926237d64/07-routing-gossip.md#requirements-3
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [zhao tx3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html

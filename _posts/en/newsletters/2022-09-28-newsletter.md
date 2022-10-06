@@ -107,7 +107,7 @@ release candidates.*
 - [Core Lightning 0.12.1][] is a maintenance release containing several
   bug fixes.
 
-- [Bitcoin Core 0.24.0 RC1][] is the first release candidate for the
+- [Bitcoin Core 24.0 RC1][] is the first release candidate for the
   next version of the network's most widely used full node
   implementation.
 
@@ -156,7 +156,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26116,5594,5315,1258" %}
-[bitcoin core 0.24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
+[bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [Core Lightning 0.12.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.1
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin/
 [bi prs]: https://github.com/bitcoin-inquisition/bitcoin/pulls
