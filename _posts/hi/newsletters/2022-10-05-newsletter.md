@@ -130,7 +130,7 @@ lang: hi
 - [BIPs #1367][] जितना संभव हो सके BIP [340][bip340] और [341][bip341] का हवाला देकर [BIP118][] के
   [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] के विवरण को सरल बनाता है।
 
-- [BIP #1349][][bip351][] शीर्षक से "निजी भुगतान" जोड़ता है, जो [BIP47][bip47] और
+- [BIPs #1349][] [BIP351][] शीर्षक से "निजी भुगतान" जोड़ता है, जो [BIP47][bip47] और
   [Silent Payment][topic silent payments] से प्रेरित एक क्रिप्टोग्राफिक प्रोटोकॉल का वर्णन करता है।
   BIP एक नया भुगतान कोड प्रारूप पेश करता है जिसके अनुसार प्रतिभागी अपनी सार्वजनिक कुंजी के आगे समर्थित
   आउटपुट प्रकार निर्दिष्ट करते हैं। BIP47 के समान, प्रेषक प्राप्तकर्ता के भुगतान कोड के आधार पर रिसीवर के साथ
@@ -141,12 +141,12 @@ lang: hi
   करने के लिए खोज कुंजी `PP` के साथ लेबल किए गए OP_RETURN आउटपुट और प्रेषक-रिसीवर जोड़ी के लिए विशिष्ट
   अधिसूचना कोड का उपयोग करता है। .
 
-- [BIP #1293][] [bip372][] को जोड़ता है जिसका शीर्षक "PSBT के लिए भुगतान-से-अनुबंध ट्विक फ़ील्ड" है।
+- [BIPs #1293][] [BIP372][] को जोड़ता है जिसका शीर्षक "PSBT के लिए भुगतान-से-अनुबंध ट्विक फ़ील्ड" है।
   यह BIP अतिरिक्त [PSBT][topic psbt] क्षेत्रों को शामिल करने के लिए एक मानक का प्रस्ताव करता है जो
   [पे-टू-कॉन्ट्रैक्ट][topic p2c] प्रोटोकॉल में भाग लेने के लिए आवश्यक अनुबंध
   प्रतिबद्धता डेटा के साथ हस्ताक्षर करने वाले उपकरण प्रदान करता है (देखें [न्यूजलेटर # 184][news184 psbt]).
 
-- [BIP # 1364][] [BIP300][] [drivechains][topic sidechains] के विनिर्देश के लिए पाठ में अतिरिक्त विवरण जोड़ता है।
+- [BIPs #1364][] [BIP300][] [drivechains][topic sidechains] के विनिर्देश के लिए पाठ में अतिरिक्त विवरण जोड़ता है।
   Drivechain के ब्लाइंड मर्ज माइनिंग नियमों को लागू करने के लिए [BIP301][] के संबंधित विनिर्देश भी अपडेट किए गए हैं।
 
 {% include references.md %}
@@ -160,7 +160,7 @@ lang: hi
 [pickhardt ml valve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003686.html
 [pickhardt bitmex valve]: https://blog.bitmex.com/the-power-of-htlc_maximum_msat-as-a-control-valve-for-better-flow-control-improved-reliability-and-lower-expected-payment-failure-rates-on-the-lightning-network/
 [pickhardt ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003696.html
-[news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
+[news219 ratecards]: /hi/newsletters/2022/09/28/#ln
 [towns ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003695.html
 [zmnscpxj valve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003703.html
 [news171 async]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
