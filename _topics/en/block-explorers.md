@@ -35,6 +35,9 @@ optech_mentions:
   - title: "BTCPay Server #2655 improves privacy by not sending HTTP referer field to explorers"
     url: /en/newsletters/2021/07/14/#btcpay-server-2655
 
+  - title: "Idea to use transaction lookup servers to serve unused wallet addresses"
+    url: /en/newsletters/2022/10/12/#recommendations-for-unique-address-servers
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
