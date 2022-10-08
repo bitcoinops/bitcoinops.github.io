@@ -75,6 +75,9 @@ optech_mentions:
   - title: "Updated alternative to BIP47 reusable payment codes"
     url: /en/newsletters/2022/07/06/#updated-alternative-to-bip47-reusable-payment-codes
 
+  - title: "Recommendations for unique address servers"
+    url: /en/newsletters/2022/10/12/#recommendations-for-unique-address-servers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs (dust)
