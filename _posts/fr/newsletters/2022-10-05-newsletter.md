@@ -7,182 +7,188 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter describes a proposal for new opt-in transaction relay
-rules and summarizes research into helping LN channels stay balanced.
-Also included are our regular sections listing new software releases and
-release candidates plus notable changes to popular Bitcoin infrastructure
-projects.
+La lettre d'information de cette semaine décrit une proposition de nouvelles
+règles de relais de transaction opt-in et résume la recherche visant à aider
+les canaux LN à rester équilibrés. Vous trouverez également nos sections
+habituelles énumérant les nouvelles versions logicielles et les release
+candidate, ainsi que les principaux changements apportés aux projets
+d'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
-- **Proposed new transaction relay policies designed for LN-penalty:**
-  Gloria Zhao [posted][zhao tx3] to the Bitcoin-Dev mailing list a proposal to
-  allow transactions to opt-in to a modified set of transaction relay
-  policies.  Any transaction which sets its version parameter to `3`
-  will:
+- **Proposition de nouvelle politique de relai de transaction conçue pour les pénalités sur LN:**
+  Gloria Zhao [a postée][zhao tx3] à la liste de diffusion Bitcoin-Dev
+  une proposition visant à permettre aux transactions d'accepter un ensemble
+  modifié de politiques de relais de transaction. Toute transaction qui définit
+  son paramètre de version à `3` sera:
 
-    - Be replaceable while it is unconfirmed by a transaction paying a
-      higher feerate and a higher total fee (the current main
+    - Etre remplaçable tant qu'elle n'est pas confirmée par une transaction payant
+      un taux plus élevé et des frais totaux plus élevés (l'actuelle principale
       [RBF][topic rbf] rules)
 
-    - Require all of its descendents also be v3 transactions for as long
-      as it remains unconfirmed.  Descendents violating this rule will
-      not be relayed or mined by default
+    - Exiger que tous ses descendants soient également des transactions v3 tant
+    qu'il reste non confirmé. Les descendants qui ne respectent pas cette règle
+    ne seront pas relayés ou minés par défaut.
 
-    - Be rejected if any of its v3 unconfirmed ancestors already have
-      any other descendants in the mempool (or in a [package][topic
-      package relay] containing this transaction)
+    - Être rejeté si l'un de ses ancêtres v3 non confirmés a déjà d'autres
+      descendants dans le mempool (ou dans un [package][topic package relay]
+      contenant cette transaction)
 
-    - Be required to be 1,000 vbytes or smaller if any of its v3
-      ancestors are unconfirmed
+    - Doit être de 1 000 vbytes ou moins si l'un de ses ancêtres v3 ne sont pas
+      confirmés
 
-    Accompanying the proposed relay rules was a simplification of the
-    previously-proposed package relay rules (see [Newsletter
-    #167][news167 packages]).
+    Les règles de relais proposées s'accompagnent d'une simplification des règles
+      de relais des paquets précédemment proposées. (voir la [Newsletter #167]
+      [news167 packages]).
 
-    Together, the v3 relay and updated package relay rules are designed
-    to allow LN commitment transactions to include only minimal fees (or
-    potentially even zero fees) and have their actual fees paid by a
-    child transaction, all while preventing [pinning][topic transaction pinning].  Almost all LN
-    nodes already use a mechanism like this, [anchor outputs][topic anchor outputs], but the
-    proposed upgrade should make confirming commitment
-    transactions simpler and more robust.
+    Ensemble, les règles de relais v3 et de relais de paquets actualisés sont
+    conçues pour pour permettre aux transactions d'engagement LN de n'inclure
+    que des frais minimaux (ou potentiallement même des frais nuls) et que leurs
+    honoraires réels soient payés par une transaction enfant, tout en empêchant
+    le [pinning][topic transaction pinning]. Presque tous les nœuds LN utilisent
+    déjà un mécanisme de ce type, [anchor outputs][topic anchor outputs], mais
+    la mise à niveau proposée devrait rendre la confirmation des opérations
+    d'engagement plus simple et plus solide.
 
-    Greg Sanders [replied][sanders tx3] with two suggestions:
+    Greg Sanders [a répondu][sanders tx3] avec deux suggestions:
 
-    - *Ephemeral dust:* any transactions paying a zero-value (or
-      otherwise *uneconomical*) output should be exempt from the
-      [dust policy][topic uneconomical outputs] if that transaction is part of a package which
-      spends the dust output.
+    - *Ephemeral dust:* toutes les transactions avec paiement d'une valeur zéro
+    (ou autrement *non rentable*) devrait être exemptée de la [dust policy]
+    [topic uneconomical outputs] si cette transaction fait partie d'un paquet
+    qui dépense la poussière en sortie.
 
-    - *Standard OP_TRUE:* that outputs paying an output consisting
-      entirely of `OP_TRUE` should be relayed by default.  Such an
-      output can be spent by anyone---it has no security.  That makes it
-      easy for either party to an LN channel (or even third parties) to
-      fee-bump a transaction spending that `OP_TRUE` output.  No data
-      needs to be put on the stack to spend an `OP_TRUE` output, making
-      it cost-efficient to spend.
+    - *Standard OP_TRUE:* que les sorties payant une sortie constituée entièrement
+      de `OP_TRUE` doivent être relayées par défaut. Une telle sortie peut être
+      dépensée par n'importe qui--elle n'a aucune sécurité. Il est donc facile
+      pour l'une ou l'autre des parties d'un canal LN (ou même pour des tiers)
+      de faire payer une transaction qui dépense cette sortie `OP_TRUE`. Aucune
+      donnée n'a besoin d'être mise sur la pile pour dépenser une sortie `OP_TRUE`,
+      ce qui rend sa dépense rentable.
 
-    Neither of these needs to be done at the same time as implementing
-    relay of v3 transactions, but several respondents to the thread
-    seemed to be in favor of all the proposed changes.
+    Aucun de ces éléments ne doit être réalisé en même temps que la mise en œuvre
+    du relais des transactions v3, mais plusieurs personnes ayant répondu au fil
+    de discussion semblaient être en faveur de tous les changements proposés.
 
-- **LN flow control:** Rene Pickhardt [posted][pickhardt ml valve] to the Lightning-Dev
-  mailing list a summary of [recent research][pickhardt bitmex valve] he performed on using
-  the `htlc_maximum_msat` parameter as a flow control valve.  As
-  [previously defined][bolt7 htlc_max] in BOLT7, `htlc_maximum_msat` is
-  the maximum value that a node will forward to the next hop in a
-  particular channel for an individual payment part ([HTLC][topic htlc]).
-  Pickhardt addresses the problem of a channel with more value
-  flowing through it in one direction than the other direction---eventually
-  leaving the channel without enough funds to transfer in the overused
-  direction.  He suggests that channel can be kept in balance by
-  limiting the maximum value in the overused direction.  For example, if
-  a channel starts by allowing 1,000 sat forwards in either direction
-  but becomes unbalanced, then try lowering the overused direction's
-  maximum amount per forwarded payment to 800.  Pickhardt's
-  research provides several code snippets that can be used to calculate
-  actual appropriate `htlc_maximum_msat` values.
+- **LN flow control:** Rene Pickhardt [a posté][pickhardt ml valve] à la liste de
+  diffusion Lightning-Dev un résumé de sa [recherche récente][pickhardt bitmex valve]
+  il a réalisé une étude sur l'utilisation du paramètre `htlc_maximum_msat` comme
+  valve de contrôle du débit. Comme [défini précédemment][bolt7 htlc_max] dans BOLT7,
+  `htlc_maximum_msat` est la valeur maximale qu'un nœud transmettra au prochain saut
+  dans un canal particulier pour une partie de paiement individuelle
+  ([HTLC][topic htlc]). 
+  Pickhardt aborde le problème d'un canal dans lequel plus de valeur circule dans une
+  direction que dans l'autre--ce qui finit par laisser le canal sans assez de fonds
+  pour transférer dans la direction sur-utilisée. Il suggère que le canal peut être
+  maintenu en équilibre en limitant la valeur maximale dans la direction sur-utilisée.
+  Par exemple, si un canal commence par autoriser le transfert de 1,000 sat dans les
+  deux sens, mais qu'il devient déséquilibré, essayez de réduire à 800 le montant
+  maximum par paiement transféré dans le sens sur-utilisé. Les recherches de Pickhardt
+  fournissent plusieurs extraits de code qui peuvent être utilisés pour calculer les
+  valeurs `htlc_maximum_msat` appropriées. 
 
-    In a [separate email][pickhardt ratecards], Pickhardt also suggests that the previous
-    idea of *fee ratecards* (see [last week's newsletter][news219 ratecards]) could
-    instead become *maximum amount per-forward ratecards*, where a
-    spender would be charged a lower feerate to send small payments and
-    a higher feerate to send larger payments.  Unlike the original
-    ratecards proposal, they would be absolute amounts and not relative
-    to the channel's current balance.  Anthony Towns [described][towns ratecards]
-    several challenges with the original ratecards idea that wouldn't be
-    problems for flow control based on adjusting `htlc_maximum_msat`.
+    Dans un [autre courriel][pickhardt ratecards], Pickhardt suggère également
+    que l'idée précédente de *fee ratecards* (voir la [newsletter de la semaine dernière]
+    [news219 ratecards]) pourraient plutôt devenir des
+    *maximum amount per-forward ratecards*, où un dépensier se verrait facturer
+    un feerate plus bas pour envoyer de petits paiements et un feerate plus élevé
+    pour envoyer des paiements plus importants.  A la différence de la proposition
+    originale de ratecards, il s'agirait de montants absolus et non relatifs au
+    solde actuel du canal. Anthony Towns [a décrit][towns ratecards]
+    plusieurs défis avec l'idée originale des cartes de taux qui ne seraient pas
+    des problèmes pour le contrôle de flux basé sur l'ajustement de `htlc_maximum_msat`.
 
-    ZmnSCPxj [criticized][zmnscpxj valve] several aspects of the idea, including
-    noting that spenders could still send the same amount of value
-    through a lower-max rate channel, resulting in it again becoming
-    unbalanced, just by splitting an overall payment into additional
-    small parts.  Towns suggested this could potentially be addressed by
-    rate limiting.
+    ZmnSCPxj [a critiqué][zmnscpxj valve] plusieurs aspects de l'idée, y compris
+    le fait que les dépensiers pourraient toujours envoyer la même quantité de
+    valeur par le biais d'un canal à taux maximum inférieur, ce qui aurait pour
+    conséquence de le déséquilibrer à nouveau, simplement en divisant un paiement
+    global en petites parties supplémentaires. Towns a suggéré que ce problème
+    pourrait être résolu en limitant le taux.
 
-    The discussion appeared to be ongoing at the time this summary was
-    being written, but we expect that several new insights will come in
-    the following weeks and months as node operators begin experimenting
-    with their channels `htlc_maximum_msat` parameters.
+    La discussion semblait être en cours au moment où ce résumé a été écrit, mais
+    nous nous attendons à ce que plusieurs nouveaux aperçus viennent dans les
+    semaines et les mois suivants, alors que les opérateurs de nœuds commencent
+    à expérimenter avec leurs paramètres `htlc_maximum_msat`.
 
-## Releases and release candidates
+## Mises à jour et release candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et release candidate pour le principal projets d'infrastructure
+Bitcoin. Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider
+à tester les release candidate.*
 
-- [Bitcoin Core 24.0 RC1][] is the first release candidate for the
-  next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+- [Bitcoin Core 24.0 RC1][] est la première release candidate de la prochaine version
+de l'implémentation de nœuds complets la plus largement utilisée sur le réseau.
+Un [guide pour tester][bcc testing] est disponible.
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changement notable cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Eclair #2435][] adds optional support for a basic form of *async
-  payments* when [trampoline relay][topic trampoline payments] is used.  As described in
-  [Newsletter #171][news171 async], async payments would allow paying an
-  offline node (such as a mobile wallet) without trusting a third-party
-  with the funds.  The ideal mechanism for async payments depends on
-  [PTLCs][topic ptlc], but a partial implementation just requires a third party to
-  delay forwarding the funds until the offline node comes back online.
-  Trampoline nodes can provide that delay and so this PR makes use of
-  them to allow experimentation with async payments.
+- [Eclair #2435][] ajoute un support optionnel pour une forme de base de *async
+  payments* quand le [trampoline relay][topic trampoline payments] est utilisé.
+  Comme décrit dans la [Newsletter #171][news171 async], Les paiements asynchrones
+  permettrait de payer un nœud hors ligne (tel qu'un portefeuille mobile) sans
+  confier les fonds à un tiers. Le mécanisme idéal pour des paiements asynchrones
+  est dépendant de [PTLCs][topic ptlc], mais une mise en œuvre partielle nécessite
+  simplement qu'une tierce partie retarde l'envoi des fonds jusqu'à ce que le
+  nœud hors ligne revienne en ligne. Les nœuds Trampoline peuvent fournir ce délai
+  et ce PR les utilise donc pour permettre l'expérimentation des paiements
+  asynchrones.
 
-- [BOLTs #962][] removes support for the original fixed-length onion
-  data format from the specification.  The upgraded variable-length
-  format was added to the specification over three years ago and test
-  results mentioned in the commit message indicate almost no one is
-  using the older format any more.
+- [BOLTs #962][] supprime le support de la prise en charge du format original de
+données en oignon à longueur fixe.  Le format amélioré à longueur variable a été
+ajouté à la spécification il y a plus de trois ans et les résultats des tests
+mentionnés dans le message de validation indiquent que presque personne n'utilise
+plus l'ancien format.
 
-- [BIPs #1370][] revises [BIP330][] ([Erlay][topic erlay] for reconciliation-based
-  transaction announcements) to reflect the current proposed
-  implementation. Changes include:
+- [BIPs #1370][] revoit [BIP330][] ([Erlay][topic erlay] pour les annonces de
+transactions d'annonces de transactions basées sur le rapprochement) pour refléter
+la mise en œuvre actuelle proposée. Les changements incluent :
 
-  - Removing truncated transaction IDs in favor of just using
-    transaction wtxids.  This also means nodes can use the existing
-    `inv` and `getdata` messages, so the `invtx` and `gettx` messages
-    have been removed.
+  - Suppression des IDs de transaction tronqués en faveur de l'utilisation de
+  transaction wtxids. Cela signifie également que les noeuds peuvent utiliser
+  les messages `inv` et `getdata` existants, donc les messages `invtx` et `gettx`
+  ont été supprimés.
 
-  - Renaming `sendrecon` to `sendtxrcncl`,
-  `reqreconcil` to `reqrecon`, and `reqbisec` to `reqsketchtext`.
+  - Renommage `sendrecon` en `sendtxrcncl`,
+  `reqreconcil` pour `reqrecon`, et `reqbisec` en `reqsketchtext`.
 
-  - Adding details for negotiating support using `sendtxrcncl`.
+  - Ajout de détails pour la négociation du soutien en utilisant `sendtxrcncl`.
 
-- [BIPs #1367][] simplifies [BIP118][]'s description of
-  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] by referring to BIPs [340][bip340] and
-  [341][bip341] as much as possible.
+- [BIPs #1367][] simplifie [BIP118][] avec une description de
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] en se référant aux BIPs
+  [340][bip340] et [341][bip341] autant que possible.
 
-- [BIPs #1349][] adds [BIP351][] titled “Private Payments”,
-  describing a cryptographic protocol inspired by
-  [BIP47][bip47] and [Silent Payments][topic silent payments]. The BIP
-  introduces a new Payment Code format per which participants specify
-  supported output types next to their public key.  Similar to BIP47, a
-  sender uses a notification transaction to establish a shared secret
-  with the receiver based on the receiver's Payment Code. The sender can
-  then send multiple payments to unique addresses derived from the
-  shared secret which the receiver may spend using information from the
-  notification transaction. Where BIP47 had multiple senders reuse the
-  same notification address per receiver, this proposal uses OP_RETURN
-  outputs labeled with the search key `PP` and a
-  notification code specific to the sender-receiver pair to get the receiver's attention and establish the
-  shared secret for improved privacy.
+- [BIPs #1349][] ajoute [BIP351][] intitulé “Private Payments”,
+  décrivant un protocole cryptographique inspiré par
+  [BIP47][bip47] et [Silent Payments][topic silent payments]. Le BIP introduit
+  un nouveau format de code de paiement par lequel les participants spécifient
+  les types de sortie supportés à côté de leur clé publique.  Comme dans le BIP47,
+  un expéditeur utilise une transaction de notification pour établir un secret
+  partagé avec le destinataire sur la base du code de paiement de ce dernier.
+  L'expéditeur peut ensuite envoyer plusieurs paiements à des adresses uniques
+  dérivées du secret partagé que le destinataire peut dépenser en utilisant les
+  informations de la transaction de notification. Là où BIP47 avait plusieurs
+  expéditeurs réutilisant la même adresse de notification par récepteur, cette
+  proposition utilise des sorties OP_RETURN étiquetées avec la clé de recherche
+  `PP` et un code de notification spécifique à la paire expéditeur-récepteur pour
+  attirer l'attention du récepteur et établir le secret partagé pour une meilleure
+  confidentialité.
 
-- [BIPs #1293][] adds [BIP372][] titled "Pay-to-contract tweak fields for PSBT". This BIP
-  proposes a standard for including additional [PSBT][topic psbt] fields
-  that provide signing devices with contract commitment data required to participate in
-  [Pay-to-Contract][topic p2c] protocols (see [Newsletter #184][news184 psbt]).
+- [BIPs #1293][] ajoute [BIP372][] intitulé "Pay-to-contract tweak fields for PSBT".
+Ce BIP propose un standard pour inclure le champs additionel [PSBT][topic psbt] qui
+fournissent aux dispositifs de signature les données d'engagement contractuel
+nécessaires pour participer à l'initiative du protocole [Pay-to-Contract][topic p2c]
+(voir la [Newsletter #184][news184 psbt]).
 
-- [BIPs #1364][] adds additional detail to the text for the
-  [BIP300][] specification of [drivechains][topic sidechains].  The
-  related specification of [BIP301][] for enforcing drivechain's blind
-  merge mining rules is also updated.
+- [BIPs #1364][] ajoute des détails supplémentaires au texte pour le
+  [BIP300][] des spécifications de [drivechains][topic sidechains]. La
+  spécification connexe de [BIP301][] pour l'application des règles d'extraction
+  par fusion aveugle de drivechain est également mise à jour.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2435,962,1370,1367,1349,1293,1364" %}
