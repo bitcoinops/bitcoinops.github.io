@@ -20,21 +20,21 @@ d'infrastructure Bitcoin.
   Gloria Zhao [a postée][zhao tx3] à la liste de diffusion Bitcoin-Dev
   une proposition visant à permettre aux transactions d'accepter un ensemble
   modifié de politiques de relais de transaction. Toute transaction qui définit
-  son paramètre de version à `3` sera:
+  son paramètre de version à `3` pourra:
 
     - Etre remplaçable tant qu'elle n'est pas confirmée par une transaction payant
       un taux plus élevé et des frais totaux plus élevés (l'actuelle principale
       [RBF][topic rbf] rules)
 
     - Exiger que tous ses descendants soient également des transactions v3 tant
-    qu'il reste non confirmé. Les descendants qui ne respectent pas cette règle
+    qu'elle reste non confirmée. Les descendants qui ne respectent pas cette règle
     ne seront pas relayés ou minés par défaut.
 
-    - Être rejeté si l'un de ses ancêtres v3 non confirmés a déjà d'autres
+    - Être rejetée si l'un de ses ascendants v3 non confirmés a déjà d'autres
       descendants dans le mempool (ou dans un [package][topic package relay]
       contenant cette transaction)
 
-    - Doit être de 1 000 vbytes ou moins si l'un de ses ancêtres v3 ne sont pas
+    - Doit être de 1 000 vbytes ou moins si l'un de ses ascendants v3 ne sont pas
       confirmés
 
     Les règles de relais proposées s'accompagnent d'une simplification des règles
@@ -42,9 +42,9 @@ d'infrastructure Bitcoin.
       [news167 packages]).
 
     Ensemble, les règles de relais v3 et de relais de paquets actualisés sont
-    conçues pour pour permettre aux transactions d'engagement LN de n'inclure
-    que des frais minimaux (ou potentiallement même des frais nuls) et que leurs
-    honoraires réels soient payés par une transaction enfant, tout en empêchant
+    conçues pour permettre aux transactions d'engagement LN de n'inclure
+    que des frais minimaux (ou potentiellement même des frais nuls) et que leur
+    coût réel soit payé par une transaction enfant, tout en empêchant
     le [pinning][topic transaction pinning]. Presque tous les nœuds LN utilisent
     déjà un mécanisme de ce type, [anchor outputs][topic anchor outputs], mais
     la mise à niveau proposée devrait rendre la confirmation des opérations
@@ -52,13 +52,13 @@ d'infrastructure Bitcoin.
 
     Greg Sanders [a répondu][sanders tx3] avec deux suggestions:
 
-    - *Ephemeral dust:* toutes les transactions avec paiement d'une valeur zéro
-    (ou autrement *non rentable*) devrait être exemptée de la [dust policy]
+    - *Ephemeral dust:* que toutes les transactions avec paiement d'une valeur zéro
+    (ou autrement *non rentable*) soient exemptées de la [dust policy]
     [topic uneconomical outputs] si cette transaction fait partie d'un paquet
     qui dépense la poussière en sortie.
 
     - *Standard OP_TRUE:* que les sorties payant une sortie constituée entièrement
-      de `OP_TRUE` doivent être relayées par défaut. Une telle sortie peut être
+      de `OP_TRUE` soient relayées par défaut. Une telle sortie peut être
       dépensée par n'importe qui--elle n'a aucune sécurité. Il est donc facile
       pour l'une ou l'autre des parties d'un canal LN (ou même pour des tiers)
       de faire payer une transaction qui dépense cette sortie `OP_TRUE`. Aucune
@@ -78,18 +78,18 @@ d'infrastructure Bitcoin.
   ([HTLC][topic htlc]). 
   Pickhardt aborde le problème d'un canal dans lequel plus de valeur circule dans une
   direction que dans l'autre--ce qui finit par laisser le canal sans assez de fonds
-  pour transférer dans la direction sur-utilisée. Il suggère que le canal peut être
-  maintenu en équilibre en limitant la valeur maximale dans la direction sur-utilisée.
+  pour transférer dans la direction surexploitée. Il suggère que le canal peut être
+  maintenu en équilibre en limitant la valeur maximale dans la direction surexploitée.
   Par exemple, si un canal commence par autoriser le transfert de 1,000 sat dans les
   deux sens, mais qu'il devient déséquilibré, essayez de réduire à 800 le montant
-  maximum par paiement transféré dans le sens sur-utilisé. Les recherches de Pickhardt
+  maximum par paiement transféré dans le sens surexploité. Les recherches de Pickhardt
   fournissent plusieurs extraits de code qui peuvent être utilisés pour calculer les
   valeurs `htlc_maximum_msat` appropriées. 
 
     Dans un [autre courriel][pickhardt ratecards], Pickhardt suggère également
     que l'idée précédente de *fee ratecards* (voir la [newsletter de la semaine dernière]
     [news219 ratecards]) pourraient plutôt devenir des
-    *maximum amount per-forward ratecards*, où un dépensier se verrait facturer
+    *maximum amount per-forward ratecards*, où celui qui effectue la dépense se verrait facturer
     un feerate plus bas pour envoyer de petits paiements et un feerate plus élevé
     pour envoyer des paiements plus importants.  A la différence de la proposition
     originale de ratecards, il s'agirait de montants absolus et non relatifs au
@@ -98,7 +98,7 @@ d'infrastructure Bitcoin.
     des problèmes pour le contrôle de flux basé sur l'ajustement de `htlc_maximum_msat`.
 
     ZmnSCPxj [a critiqué][zmnscpxj valve] plusieurs aspects de l'idée, y compris
-    le fait que les dépensiers pourraient toujours envoyer la même quantité de
+    le fait que ceux qui effectuent la dépense pourraient toujours envoyer la même quantité de
     valeur par le biais d'un canal à taux maximum inférieur, ce qui aurait pour
     conséquence de le déséquilibrer à nouveau, simplement en divisant un paiement
     global en petites parties supplémentaires. Towns a suggéré que ce problème
@@ -111,7 +111,7 @@ d'infrastructure Bitcoin.
 
 ## Mises à jour et release candidate
 
-*Nouvelles versions et release candidate pour le principal projets d'infrastructure
+*Nouvelles versions et release candidate pour le principal projet d'infrastructure
 Bitcoin. Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider
 à tester les release candidate.*
 
@@ -130,8 +130,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Eclair #2435][] ajoute un support optionnel pour une forme de base de *async
   payments* quand le [trampoline relay][topic trampoline payments] est utilisé.
-  Comme décrit dans la [Newsletter #171][news171 async], Les paiements asynchrones
-  permettrait de payer un nœud hors ligne (tel qu'un portefeuille mobile) sans
+  Comme décrit dans la [Newsletter #171][news171 async], les paiements asynchrones
+  permettraient de payer un nœud hors ligne (tel qu'un portefeuille mobile) sans
   confier les fonds à un tiers. Le mécanisme idéal pour des paiements asynchrones
   est dépendant de [PTLCs][topic ptlc], mais une mise en œuvre partielle nécessite
   simplement qu'une tierce partie retarde l'envoi des fonds jusqu'à ce que le
@@ -146,8 +146,8 @@ mentionnés dans le message de validation indiquent que presque personne n'utili
 plus l'ancien format.
 
 - [BIPs #1370][] revoit [BIP330][] ([Erlay][topic erlay] pour les annonces de
-transactions d'annonces de transactions basées sur le rapprochement) pour refléter
-la mise en œuvre actuelle proposée. Les changements incluent :
+transactions basées sur le rapprochement) pour refléter
+la mise en œuvre actuelle proposée. Les changements comprennent :
 
   - Suppression des IDs de transaction tronqués en faveur de l'utilisation de
   transaction wtxids. Cela signifie également que les noeuds peuvent utiliser
@@ -180,8 +180,8 @@ la mise en œuvre actuelle proposée. Les changements incluent :
   confidentialité.
 
 - [BIPs #1293][] ajoute [BIP372][] intitulé "Pay-to-contract tweak fields for PSBT".
-Ce BIP propose un standard pour inclure le champs additionel [PSBT][topic psbt] qui
-fournissent aux dispositifs de signature les données d'engagement contractuel
+Ce BIP propose un standard pour inclure le champ additionel [PSBT][topic psbt] qui
+fournit aux dispositifs de signature les données d'engagement contractuel
 nécessaires pour participer à l'initiative du protocole [Pay-to-Contract][topic p2c]
 (voir la [Newsletter #184][news184 psbt]).
 
