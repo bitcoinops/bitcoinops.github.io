@@ -141,7 +141,12 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #6500][] Add ability to encrypt the Tor private key on disk FIXME:adamjonas
+- [LND #6500][] Adds the ability to encrypt the Tor private key on disk
+  using the wallet's private key instead of storing it in plaintext.
+  Using the flag, `--tor.encryptkey`, LND encrypts the private key and the
+  encrypted blob is written to the same file on disk, allowing users to
+  still keep the same functionality (like refreshing a hidden service),
+  but adds protection when running in untrusted environments.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6500" %}
