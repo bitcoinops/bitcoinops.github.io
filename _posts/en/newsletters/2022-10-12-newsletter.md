@@ -110,12 +110,54 @@ notable changes to popular Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Make AddrFetch connections to fixed seeds][review club 26114]
+is a PR by Martin Zumsande that makes `AddrFetch` connections to
+the [fixed seeds][] (hard-coded IP addresses) instead of just adding
+them to `AddrMan` (the database of our peers).
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/25720#l-30FIXME"
+  q0="When a new node starts up from scratch, it must first connect
+with some peers from whom it will perform Initial Block Download (IBD).
+Under what circumstances does it connect to the fixed seeds?"
+  a0="Only if it isn't able to connect to peers whose addresses are
+provided by the hard-coded Bitcoin DNS seed nodes. This most
+commonly occurs when the node is configured to not use IPv4 or IPv6
+(for example, `-onlynet=tor`)."
+  a0link="https://bitcoincore.reviews/26114#l-27"
+
+  q1="What observable behavior change does this PR introduce?
+What kinds of addresses do we add to `AddrMan`, and under what circumstances?"
+  a1="The node, rather than immediately adding the fixed seeds to its
+`AddrMan` and making full connections to some of them, instead
+makes `AddrFetch` connections to some of them,
+and adds the _returned addresses_ to `AddrMan`. (`AddrFetch` are
+short-term connections that are used only to fetch addresses.)
+The node then connects to some of the addresses
+now in its `AddrMan` to perform IBD.
+This results in fewer full connections
+to the fixed-seed nodes; instead, more connections are attempted
+from the much larger set of nodes that the fixed-seed nodes
+tell us about. `AddrFetch` connections can return _any_ type
+of addresses, for example, `tor`; the results are not limited to
+IPv4 and IPv6."
+  a1link="https://bitcoincore.reviews/26114#l-63"
+
+  q2="Why might we want to make an `AddrFetch` connection instead
+of a full outbound connection to fixed seeds?
+Why might the node operator behind a fixed seed prefer this as well?"
+  a2="An `AddrFetch` connection allows our node to choose
+IBD peers from a much larger set of peers, which increases
+overall network connectivity distribution. The fixed seed node
+operators would be less likely to have multiple simultaneous IBD peers,
+which reduces the resource requirements on their nodes."
+  a2link="https://bitcoincore.reviews/26114#l-77"
+
+  q3="The DNS seed nodes are expected to be responsive and serve
+up-to-date addresses of Bitcoin nodes. Why doesn’t this help
+a -onlynet=tor node?"
+  a3="The DNS seed nodes provide only IPv4 and IPv6 addresses;
+they're not able to supply any other type of address."
+  a3link="https://bitcoincore.reviews/26114#l-35"
 %}
 
 ## Releases and release candidates
@@ -150,6 +192,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6500" %}
+[review club 26114]: https://bitcoincore.reviews/26114
 [bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [law post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003707.html
@@ -158,3 +201,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [somsen gist]: https://gist.github.com/RubenSomsen/960ae7eb52b79cc826d5b6eaa61291f6
 [news113 witasym]: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 [lnd v0.15.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.2-beta
+[fixed seeds]: https://github.com/bitcoin/bitcoin/tree/master/contrib/seeds
