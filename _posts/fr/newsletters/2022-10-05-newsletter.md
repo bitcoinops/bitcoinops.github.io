@@ -75,7 +75,7 @@ d'infrastructure Bitcoin.
   valve de contrôle du débit. Comme [défini précédemment][bolt7 htlc_max] dans BOLT7,
   `htlc_maximum_msat` est la valeur maximale qu'un nœud transmettra au prochain saut
   dans un canal particulier pour une partie de paiement individuelle
-  ([HTLC][topic htlc]). 
+  ([HTLC][topic htlc]).
   Pickhardt aborde le problème d'un canal dans lequel plus de valeur circule dans une
   direction que dans l'autre--ce qui finit par laisser le canal sans assez de fonds
   pour transférer dans la direction surexploitée. Il suggère que le canal peut être
@@ -84,7 +84,7 @@ d'infrastructure Bitcoin.
   deux sens, mais qu'il devient déséquilibré, essayez de réduire à 800 le montant
   maximum par paiement transféré dans le sens surexploité. Les recherches de Pickhardt
   fournissent plusieurs extraits de code qui peuvent être utilisés pour calculer les
-  valeurs `htlc_maximum_msat` appropriées. 
+  valeurs `htlc_maximum_msat` appropriées.
 
     Dans un [autre courriel][pickhardt ratecards], Pickhardt suggère également
     que l'idée précédente de *fee ratecards* (voir la [newsletter de la semaine dernière]
