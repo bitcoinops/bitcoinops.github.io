@@ -4,16 +4,16 @@ internal_url: /en/compatibility/mycelium
 logo: /img/compatibility/mycelium/mycelium.png
 rbf:
   tested:
-    date: "2018-10-30"
+    date: "2022-10-12"
     platforms:
-      - iOS
-    version: "1.11"
+      - Android
+    version: "3.16.0.13"
   features:
     receive:
       notification: "na"
-      list: "false"
+      list: "true"
       details: "false"
-      shows_replaced_version: "false"
+      shows_replaced_version: "true"
       shows_original_version: "false"
     send:
       signals_bip125: "false"
@@ -22,27 +22,23 @@ rbf:
       shows_replaced_version: "untested"
       shows_original_version: "untested"
   examples:
-    - image: /img/compatibility/mycelium/rbf/send-screen-default.png
+    - image: /img/compatibility/mycelium/segwit/send-screen.png
       caption: >
         Sending Transaction - Default send transaction screen. No options for RBF while sending or in app settings.
-    - image: /img/compatibility/mycelium/rbf/send-miner-fee-options.png
+        Miner fee slider.
+    - image: /img/compatibility/mycelium/rbf/transaction-list-incoming-double-spend.png
       caption: >
-        Sending Transaction - Send transaction miner fee details. No RBF options.
-    - image: /img/compatibility/mycelium/rbf/transaction-list-sent.png
+        Receiving Transaction Signaling RBF - Fee Bump is displayed as double spend. Sometimes, when receiving any transaction, no unconfirmed transactions show.
+    - image: /img/compatibility/mycelium/rbf/transaction-list-in-out.png
       caption: >
         Attempting Transaction Replacement - Transaction list. No option to bump since transaction sent without RBF.
-    - image: /img/compatibility/mycelium/rbf/transaction-details-sent.png
-      caption: >
-        Attempting Transaction Replacement - Sent transaction details. No sign RBF/not or bumping.
-    - image: /img/compatibility/mycelium/rbf/transaction-list-incoming-rbf.png
-      caption: >
-        Receiving Transaction Signaling RBF - When receiving RBF, or any transaction, no unconfirmed transactions show.
+        Unconfirmed transaction without RBF signal is shown without warning.
 segwit:
   tested:
-    date: "2021-06-22"
+    date: "2022-10-12"
     platforms:
       - Android
-    version: "3.10.0.1"
+    version: "3.16.0.13"
   features:
     receive:
       p2sh_wrapped: "true"
@@ -51,7 +47,7 @@ segwit:
     send:
       bech32: "true" # https://github.com/mycelium-com/wallet-android/issues/425#issuecomment-440792004
       change_bech32: "true"
-      segwit_v1: "Fails during address validation."
+      segwit_v1: "Fails during bech32m address validation."
       bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/mycelium/segwit/receive-screen.png
@@ -63,4 +59,5 @@ segwit:
     #- image: /img/compatibility/mycelium/segwit/send-screen-segwit-v1-error.png
     #  caption: >
     #    Mycelium displays a validation error when trying to send to a segwit v1
-    #    address (or any other bech32 address).
+    #    address (or any other bech32m address).
+    #    https://github.com/mycelium-com/wallet-android/issues/645
