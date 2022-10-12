@@ -8,7 +8,7 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter summarizes a proposal to allow casual LN users
-stay offline for up to several months at a time and describes a document
+to stay offline for up to several months at a time and describes a document
 about allowing transaction information servers to host unused wallet
 addresses.  Also included are our regular sections with the summary of a
 Bitcoin Core PR Review Club, announcements of new software releases and
@@ -166,7 +166,7 @@ they're not able to supply any other type of address."
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [LND v0.15.2-beta][] is an security critical emergency release that
+- [LND v0.15.2-beta][] is a security critical emergency release that
   fixes a parsing error that prevented LND from being able to parse
   certain blocks.  All users should upgrade.
 
