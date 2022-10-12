@@ -105,7 +105,7 @@ d'infrastructure Bitcoin.
     pourrait être résolu en limitant le taux.
 
     La discussion semblait être en cours au moment où ce résumé a été écrit, mais
-    nous nous attendons à ce que plusieurs nouveaux aperçus viennent dans les
+    nous nous attendons à ce que plusieurs nouveaux aperçus viennent dans les <!-- skip-duplicate-words-test -->
     semaines et les mois suivants, alors que les opérateurs de nœuds commencent
     à expérimenter avec leurs paramètres `htlc_maximum_msat`.
 
