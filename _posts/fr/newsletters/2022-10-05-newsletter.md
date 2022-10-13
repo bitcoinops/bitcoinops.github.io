@@ -7,12 +7,12 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-La lettre d'information de cette semaine décrit une proposition de nouvelles
-règles de relais de transaction opt-in et résume la recherche visant à aider
-les canaux LN à rester équilibrés. Vous trouverez également nos sections
-habituelles énumérant les nouvelles versions logicielles et les release
-candidate, ainsi que les principaux changements apportés aux projets
-d'infrastructure Bitcoin.
+La lettre d'information de cette semaine décrit une proposition pour
+inclure de nouvelles règles de relais de transaction et résume la recherche
+visant à aider les canaux LN à rester équilibrés. Vous trouverez également
+nos sections habituelles énumérant les nouvelles versions logicielles et
+les release candidates, ainsi que les principaux changements apportés aux
+projets d'infrastructure Bitcoin.
 
 ## Nouvelles
 
@@ -80,7 +80,7 @@ d'infrastructure Bitcoin.
   direction que dans l'autre--ce qui finit par laisser le canal sans assez de fonds
   pour transférer dans la direction surexploitée. Il suggère que le canal peut être
   maintenu en équilibre en limitant la valeur maximale dans la direction surexploitée.
-  Par exemple, si un canal commence par autoriser le transfert de 1,000 sat dans les
+  Par exemple, si un canal commence par autoriser le transfert de 1000 sats dans les
   deux sens, mais qu'il devient déséquilibré, essayez de réduire à 800 le montant
   maximum par paiement transféré dans le sens surexploité. Les recherches de Pickhardt
   fournissent plusieurs extraits de code qui peuvent être utilisés pour calculer les
@@ -91,8 +91,8 @@ d'infrastructure Bitcoin.
     [news219 ratecards]) pourraient plutôt devenir des
     *maximum amount per-forward ratecards*, où celui qui effectue la dépense se verrait facturer
     un feerate plus bas pour envoyer de petits paiements et un feerate plus élevé
-    pour envoyer des paiements plus importants.  A la différence de la proposition
-    originale de ratecards, il s'agirait de montants absolus et non relatifs au
+    pour envoyer des paiements plus importants. A la différence de la proposition
+    originale de carte de taux, il s'agirait de montants absolus et non relatifs au
     solde actuel du canal. Anthony Towns [a décrit][towns ratecards]
     plusieurs défis avec l'idée originale des cartes de taux qui ne seraient pas
     des problèmes pour le contrôle de flux basé sur l'ajustement de `htlc_maximum_msat`.
@@ -111,7 +111,7 @@ d'infrastructure Bitcoin.
 
 ## Mises à jour et release candidate
 
-*Nouvelles versions et release candidate pour le principal projet d'infrastructure
+*Nouvelles versions et release candidate pour les principaux projets d'infrastructure
 Bitcoin. Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider
 à tester les release candidate.*
 
@@ -142,8 +142,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 - [BOLTs #962][] supprime le support de la prise en charge du format original de
 données en oignon à longueur fixe.  Le format amélioré à longueur variable a été
 ajouté à la spécification il y a plus de trois ans et les résultats des tests
-mentionnés dans le message de validation indiquent que presque personne n'utilise
-plus l'ancien format.
+mentionnés dans le message de validation indiquent que presque plus personne
+n'utilise l'ancien format.
 
 - [BIPs #1370][] revoit [BIP330][] ([Erlay][topic erlay] pour les annonces de
 transactions basées sur le rapprochement) pour refléter
