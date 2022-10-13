@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 La newsletter de cette semaine décrit une proposition visant à permettre
-aux nœuds LN d'annoncer des feerates dépendant de la capacité et annonce
+aux nœuds LN d'annoncer des taux de frais dépendant de la capacité et annonce
 un fork logiciel de Bitcoin Core axé sur le test de changements majeurs
 du protocole sur signet. Vous trouverez également nos sections habituelles
 avec des résumés des principales questions et réponses du Bitcoin Stack
@@ -45,7 +45,7 @@ d'infrastructure Bitcoin.
   Neigut note que certains nœuds ajustent déjà leurs tarifs en fonction de la
   capacité des canaux, et que les fee ratecards constitueraient un moyen plus
   efficace pour les opérateurs de nœuds de communiquer leurs intentions au réseau
-  que d'annoncer fréquemment de nouveaux feerates via le gossip de LN.
+  que d'annoncer fréquemment de nouveaux taux de frais via le gossip de LN.
 
 - **Implémentation de Bitcoin conçue pour tester les soft forks sur signet:**
   Anthony Towns [a posté][towns bi] sur la liste de diffusion Bitcoin-Dev une
@@ -104,7 +104,7 @@ plus postées depuis notre dernière édition.*
 
 ## Mises à jour et release candidates
 
-*Nouvelles mises à jour et release candidates du principal logiciel d'infrastructure Bitcoin.
+*Nouvelles mises à jour et release candidates des principaux logiciels d'infrastructure Bitcoin.
 Prévoyez s'il vous plait de vous mettre à jour à la nouvelle version ou d'aider à tester les pré-versions.*
 
 - [Core Lightning 0.12.1][] est une mise à jour de maintenance contenant plusieurs corrections de bugs.
@@ -122,7 +122,7 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #26116][] autorise le RPC `importmulti` pour importer
-  les éléments en lecture seule, même si le portefeuille utilise des clés privées encryptées.
+  les éléments en lecture seule, même si le portefeuille utilise des clés privées chiffrées.
   Cela correspond au comportement de l'ancien RPC `importaddress`.
 
 - [Core Lightning #5594][] apporte plusieurs modifications, notamment
