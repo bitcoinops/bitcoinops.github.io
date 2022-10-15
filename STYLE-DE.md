@@ -18,9 +18,9 @@ Eigennamen gross geschrieben.
 Anders als im Englischen, wird, mit Ausnahme der unten aufgelisteten Begriffe,
 der erste Buchstabe von gebräuchlichen Substantiven gross geschrieben.
 
-- bech32
-- bitcoin (die Währung)
-- ...
+- Bech32
+- Bitcoin (die Währung)
+- BIPxxx
 
 ### Abkürzungen
 
@@ -34,10 +34,9 @@ Siehe [Hautptleitfaden](STYLE.md).
 
 Siehe [Hautptleitfaden](STYLE.md).
 
-
 ### Zusammengesetzte Begriffe
-
-_FIXME: Add guidelines for compound words and dash usage_
+Zusammengesetzte Fremdwörter sollten, zwecks besserer Lesbarkeit, nach
+Möglichkeit mit Bindestrich geschrieben werden. Siehe dazu auch [Duden, D41](https://www.duden.de/sprachwissen/rechtschreibregeln/fremdwoerter#D41)
 
 ### Rechtschreibung
 
@@ -50,16 +49,20 @@ und Fremd- bzw. Lehnwörter nur dann verwendet werden, wenn sich diese in der
 deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 Übersetzungen bevorzugt:
 
-_FIXME: Review and extend list of terms_
-| Ursprünglich| Bevorzugt | Zu vermeiden | Anmerkung |
+| Englischer Ausdruck| Bevorzugt | Zu vermeiden | Anmerkungen |
 |-|-|-|-|
 | channel | Channel | Kanal | |
 | derivation path| Ableitungspfad | | |
 | descriptor | Deskriptor | | |
-|fee| Gebühr | | |
-|lightning network| Lightning Netzwerk | | |
+| fee | Gebühr | | |
+| funds | Kapital | | |
+| HTLC |-|-| Genus Maskulinum |
+| lightning network | Lightning Netzwerk | | |
+| node | Knoten | Node | |
 | relay | Weiterleitung | | |
 | output | Ausgabe | Output | Im Kontext von UTXO |
+| silent payment| Stille Zahlung |-|-|
+| UTXO|-|-| Genus Maskulinum |
 | wallet | Wallet | Geldbörse | Genus Neutrum |
 | work | Arbeitsnachweis | Arbeit| Im Kontext von PoW |
 
