@@ -28,168 +28,165 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
   les fonds de plus d'une douzaine de canaux d'être utilisés pour ces mêmes mois. 
   Law propose de mitiger ce problème à travers deux modifications du protocole:
 
-    - *Triggered HTLCs:* a standard [HTLC][topic htlc] used for payment
-      has Alice offering Bob some amount of BTC if he's able to publish
-      a previously-unknown *preimage* for a known hash digest.
-      Alternatively, if Bob doesn't publish the preimage by a certain
-      time, Alice is able to spend the money back to her own wallet.
+    - *Triggered HTLCs:* Dans une norme [HTLC][topic htlc] utilisée pour
+      le paiement, Alice offre à Bob une certaine quantité de BTC s'il est
+      capable de publier une *préimage* inconnue auparavant pour un condensé
+      de hachage connu. Alternativement, si Bob ne publie pas la pré-image
+      avant un certain temps, Alice peut retourner l'argent dans son propre
+      portefeuille.
+        Law suggère que Bob soit toujours autorisé à réclamer le paiement à
+        tout moment avec la publication de la préimage, mais Alice devrait
+        remplir une restriction supplémentaire. Elle devrait clairement avertir
+        Bob de son intention de récupérer l'argent dans son portefeuille en
+        faisant confirmer une transaction *trigger* sur la chaîne. Ce n'est
+        que lorsque la transaction de déclenchement aura été confirmée par un
+        certain nombre de blocs (ou pendant une certaine durée) qu'Alice
+        pourra dépenser l'argent.
 
-        Law suggests that Bob still be allowed to claim the payment at
-        any moment with the publication of the preimage, but Alice would
-        need to fulfill an additional restriction.  She would need to
-        clearly warn Bob of her intent to spend the money back to her
-        wallet by getting a *trigger* transaction confirmed onchain.
-        Only when the trigger transaction had been confirmed by a
-        certain number of blocks (or for a certain duration of time)
-        would Alice be able to spend the money.
+        Bob serait assurer de pouvoir réclamer ses fonds à tout moment jusqu'à
+        ce que la transaction de déclenchement ait reçu le nombre convenu de
+        confirmations, même si des mois se sont écoulés depuis qu'un HTLC
+        normal aurait expiré. Si Bob est correctement indemnisé pour son attente,
+        il n'y a pas de problème si Alice reste hors ligne pendant tout ce temps.
+        Pour un HTLC acheminé d'Alice vers un nœud distant en passant par Bob,
+        seul le canal entre Alice et Bob serait affecté----tous les autres canaux
+        régleraient le HTLC rapidement (comme dans le protocole LN actuel).
+        
+    - *Asymmetric delayed commitment transactions:* chacun des deux
+      partenaires d'un canal LN détient un engagement non publié qu'ils peuvent
+      publier et essayer de faire confirmer à tout moment. Les deux versions de
+      la transaction dépensent le même UTXO, de sorte qu'elles entrent en conflit
+      l'une avec l'autre. Ce qui signifie qu'une seule peut effectivement être
+      confirmée.
 
-        This would ensure Bob was able to claim his funds at any time up
-        until the trigger transaction had received the agreed-upon
-        number of confirmations, even if months had passed
-        since a normal HTLC would've timed out.  If Bob is adequately
-        compensated for his waiting, then it's ok if Alice remains
-        offline all that time.  For an HTLC routed from Alice through Bob
-        onto some distant node, only the channel between Alice and Bob
-        would be affected---every other channel would settle the HTLC
-        promptly (as in the current LN protocol).
+        Cela signifie que quand Alice veut fermer le canal, elle ne peut pas juste
+        simplement diffuser sa version de la transaction d'engagement avec
+        un délai raisonnable et supposer qu'elle sera confirmée.  
+        Elle doit aussi attendre et vérifier si Bob obtient au contraire
+        sa version de la transaction d'engagement, auquel cas elle devra
+        peut-être avoir besoin de prendre des mesures supplémentaires pour
+        vérifier que sa transaction inclut le dernier état du canal.
 
-    - *Asymmetric delayed commitment transactions:* each of the two
-      partners in an LN channel holds an unpublished commitment
-      transaction that they can publish and try to get confirmed at any
-      time.  Both versions of the transaction spend the same UTXO, so
-      they conflict with each other---meaning only one can actually get
-      confirmed.
+        Law propose que la version d'Alice de la transaction d'engagement reste
+        la même qu'aujourd'hui afin qu'elle puisse la publier à tout moment, mais
+        que la version de Bob comprenne un verrou temporel afin qu'il ne puisse
+        la publier que si Alice a été inactive pendant une longue période.
+        Idéalement, cela permet à Alice de publier le dernier état en sachant que
+        Bob ne peut pas publier une version contradictoire, ce qui lui permet de
+        se déconnecter en toute sécurité après sa publication.
 
-        This means when Alice wants to close the channel, she can't just
-        simply broadcast her version of the commitment transaction with
-        a reasonable feerate and assume it will get confirmed.  She also
-        has to wait and check whether Bob instead gets his version of
-        the commitment transaction confirmed, in which case she may need
-        to take additional actions to verify his transaction included the
-        latest channel state.
+    Les propositions de Law recevaient encore un premier retour d'information au
+    moment où cette description était rédigée.
+    
+- **Recommandations pour les serveurs d'adresses uniques:** Ruben Somsen
+  [a posté][somsen post] sur laliste de diffusion Bitcoin-Dev un
+  [document][somsen gist] avec une autre suggestion sur la façon dont les
+  utilisateurs peuvent éviter un [output linking][topic output linking]
+  sans faire confiance à un service tiers ou utiliser un protocole
+  cryptographique qui n'est pas largement pris en charge actuellement,
+  comme le [BIP47][] ou [silent payments][topic silent payments].
+  La méthode recommandée est particulièrement destinée aux portefeuilles
+  qui fournissent déjà leurs adresses à des tiers, comme ceux qui utilisent
+  des [serveurs publics de recherche d'adresses][topic block explorers] 
+  (ce qui est censé être la majorité des portefeuilles légers).
 
-        Law proposes that Alice's version of the commitment transaction
-        remain the same as today so that she can publish it at any time,
-        but that Bob's version include a time lock so that he can only
-        publish it if Alice has been inactive for a long time.  Ideally,
-        this allows Alice to publish the latest state secure in the
-        knowledge that Bob can't publish a contradictory version,
-        allowing her to safely go offline after her publication.
+    Pour illustrer le fonctionnement de cette méthode, le portefeuille d'Alice
+    enregistre 100 adresses sur le serveur Example.com de style electrum. 
+    Elle inclut ensuite "example.com/alice" dans sa signature de courriel.
+    Lorsque Bob veut donner de l'argent à Alice, il visite son URL, obtient
+    une adresse, vérifie qu'Alice l'a signée, puis effectue le paiement.
 
-    Law's proposals were still receiving initial feedback as this
-    description was being written.
+    Cette idée présente l'avantage d'être largement compatible avec de nombreux
+    portefeuilles grâce à un processus partiellement manuel et peut-être facile
+    à mettre en œuvre avec un processus automatisé. Son inconvénient est que les
+    utilisateurs qui compromettent déjà leur vie privée en partageant des adresses
+    avec un serveur s'engageront davantage dans la perte de confidentialité.
 
-- **Recommendations for unique address servers:** Ruben Somsen
-  [posted][somsen post] to the Bitcoin-Dev mailing list a
-  [document][somsen gist] with another suggestion for how users can avoid
-  [output linking][topic output linking] without trusting a third-party
-  service or using an cryptographic protocol that's not currently widely
-  supported, like [BIP47][] or [silent payments][topic silent payments].
-  The recommended method is especially intended for wallets that are
-  already providing their addresses to third parties, such as those that
-  use public [address lookup servers][topic block explorers] (which is
-  believed to be the majority of lightweight wallets).
-
-    For an example of how the method might work, Alice's wallet
-    registers 100 addresses on the Example.com electrum-style server.
-    She then includes "example.com/alice" in her email signature.  When
-    Bob wants to donate money to Alice, he visits her URL, gets an
-    address, verifies that Alice signed it, and then pays to it.
-
-    The idea has the advantage of being widely compatible with many
-    wallets through a partly-manual process and possibly easy to
-    implement with an automated process.  Its downside is that users who
-    are already compromising their privacy by sharing addresses with a
-    server will be further committing to the privacy loss.
-
-    Discussion of the suggestions was ongoing on both the mailing list
-    and the document at the time this summary was being written.
+    La discussion sur les suggestions était en cours à la fois sur la liste de
+    diffusion et sur le document au moment de la rédaction de ce résumé.
 
 ## Bitcoin Core PR Review Club
 
-*In this monthly section, we summarize a recent [Bitcoin Core PR Review Club][]
-meeting, highlighting some of the important questions and answers.  Click on a
-question below to see a summary of the answer from the meeting.*
+*Dans cette section mensuelle, nous résumons une récente réunion du 
+[Bitcoin Core PR Review Club][] en soulignant certaines des questions
+et réponses importantes. Cliquez sur une question ci-dessous pour voir
+un résumé de la réponse de la réunion.*
 
-[Make AddrFetch connections to fixed seeds][review club 26114]
-is a PR by Martin Zumsande that makes `AddrFetch` connections to
-the [fixed seeds][] (hard-coded IP addresses) instead of just adding
-them to `AddrMan` (the database of our peers).
+[Fabriquer des connexions AddrFetch pour fixer les seeds][review club 26114]
+est une PR de Martin Zumsande qui établit des connexions `AddrFetch` vers les
+[fixed seeds][] (adresses IP codées en dur) au lieu de simplement les ajouter à 
+`AddrMan` (la base de données de nos pairs).
 
 {% include functions/details-list.md
-  q0="When a new node starts up from scratch, it must first connect
-with some peers from whom it will perform Initial Block Download (IBD).
-Under what circumstances does it connect to the fixed seeds?"
-  a0="Only if it isn't able to connect to peers whose addresses are
-provided by the hard-coded Bitcoin DNS seed nodes. This most
-commonly occurs when the node is configured to not use IPv4 or IPv6
-(for example, `-onlynet=tor`)."
+  q0="Lorsqu'un nouveau nœud démarre à partir de zéro, il doit d'abord se connecter
+à certains pairs à partir desquels il effectuera le téléchargement du bloc initial
+(IBD). Dans quelles circonstances se connecte-t-il aux fixed seeds?"
+  a0="Seulement s'il n'est pas en mesure de se connecter aux pairs dont les adresses
+sont fournies par les nœuds d'amorçage Bitcoin DNS codés en dur. Cela se produit
+le plus souvent lorsque le nœud est configuré pour ne pas utiliser IPv4 ou IPv6.
+(par exemple, `-onlynet=tor`)."
   a0link="https://bitcoincore.reviews/26114#l-27"
 
-  q1="What observable behavior change does this PR introduce?
-What kinds of addresses do we add to `AddrMan`, and under what circumstances?"
-  a1="The node, rather than immediately adding the fixed seeds to its
-`AddrMan` and making full connections to some of them, instead
-makes `AddrFetch` connections to some of them,
-and adds the _returned addresses_ to `AddrMan`. (`AddrFetch` are
-short-term connections that are used only to fetch addresses.)
-The node then connects to some of the addresses
-now in its `AddrMan` to perform IBD.
-This results in fewer full connections
-to the fixed-seed nodes; instead, more connections are attempted
-from the much larger set of nodes that the fixed-seed nodes
-tell us about. `AddrFetch` connections can return _any_ type
-of addresses, for example, `tor`; the results are not limited to
-IPv4 and IPv6."
+  q1="Quel changement de comportement observable cette PR introduit-elle ? Quels types
+d'adresses ajoutons-nous à `AddrMan`, et dans quelles circonstances?"
+  a1="Le noeud, au lieu d'ajouter immédiatement les graines fixes à son `AddrMan` et
+d'établir des connexions complètes avec certaines d'entre elles, il établit des
+connexions `AddrFetch` avec certaines d'entre elles, et ajoute les _returned addresses_
+à `AddrMan`. (`AddrFetch` sont des connexions à court terme qui ne sont utilisées que
+pour récupérer des adresses.)
+Le noeud se connecte ensuite à certaines des adresses qui se trouvent maintenant dans
+son `AddrMan` pour effectuer l'IBD.
+Il en résulte moins de connexions complètes aux nœuds à graines fixes ; au lieu de cela,
+davantage de connexions sont tentées à partir de l'ensemble beaucoup plus vaste de nœuds
+dont les nœuds à graines fixes nous parlent. Les connexions `AddrFetch` peuvent retourner
+_tout_ type d'adresses, par exemple, `tor` ; les résultats ne sont pas limités à IPv4 et IPv6".
   a1link="https://bitcoincore.reviews/26114#l-63"
 
-  q2="Why might we want to make an `AddrFetch` connection instead
-of a full outbound connection to fixed seeds?
-Why might the node operator behind a fixed seed prefer this as well?"
-  a2="An `AddrFetch` connection allows our node to choose
-IBD peers from a much larger set of peers, which increases
-overall network connectivity distribution. The fixed seed node
-operators would be less likely to have multiple simultaneous IBD peers,
-which reduces the resource requirements on their nodes."
+  q2="Pourquoi voudrions-nous établir une connexion `AddrFetch` au lieu d'une connexion
+  sortante complète vers des graines fixes?"
+  a2="Une connexion `AddrFetch` permet à notre nœud de choisir des pairs d'IBD à partir
+d'un ensemble beaucoup plus grand de pairs, ce qui augmente la distribution globale de la
+connectivité du réseau. Les opérateurs de nœuds de seed fixes seraient moins susceptibles
+d'avoir plusieurs pairs d'IBD simultanés, ce qui réduit les besoins en ressources sur
+leurs nœuds."
   a2link="https://bitcoincore.reviews/26114#l-77"
 
-  q3="The DNS seed nodes are expected to be responsive and serve
-up-to-date addresses of Bitcoin nodes. Why doesn’t this help
-a -onlynet=tor node?"
-  a3="The DNS seed nodes provide only IPv4 and IPv6 addresses;
-they're not able to supply any other type of address."
+  q3="Les nœuds DNS d'amorçage sont censés être réactifs et servir les adresses actualisées
+des nœuds Bitcoin. Pourquoi cela n'aide-t-il pas un noeud -onlynet=tor?"
+  a3="Les nœuds DNS d'amorçage ne fournissent que des adresses IPv4 et IPv6;
+ils ne sont pas en mesure de fournir un autre type d'adresse."
   a3link="https://bitcoincore.reviews/26114#l-35"
 %}
 
-## Releases and release candidates
+## Mises à jour release candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles mises à jour et release candidates du principal logiciel d'infrastructure Bitcoin.
+Prévoyez s'il vous plait de vous mettre à jour à la nouvelle version ou d'aider à tester
+les pré-versions.*
 
-- [LND v0.15.2-beta][] is a security critical emergency release that
-  fixes a parsing error that prevented LND from being able to parse
-  certain blocks.  All users should upgrade.
+- [LND v0.15.2-beta][] est une version d'urgence à sécurité critique qui corrige une erreur
+  d'analyse qui empêchait LND d'analyser certains blocs.  Tous les utilisateurs doivent
+  effectuer la mise à jour.
 
-- [Bitcoin Core 24.0 RC1][] is the first release candidate for the
-  next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+- [Bitcoin Core 24.0 RC1][] est la première release candidate pour la prochaine version de
+  l'implémentation de nœuds complets la plus largement utilisée sur le réseau.
+  Un [guide pour tester][bcc testing] est disponible.
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [LND #6500][] Adds the ability to encrypt the Tor private key on disk
-  using the wallet's private key instead of storing it in plaintext.
-  Using the flag, `--tor.encryptkey`, LND encrypts the private key and the
-  encrypted blob is written to the same file on disk, allowing users to
-  still keep the same functionality (like refreshing a hidden service),
-  but adds protection when running in untrusted environments.
+- [LND #6500][] Ajoute la possibilité de chiffrer la clé privée Tor sur le disque en utilisant
+  la clé privée du portefeuille au lieu de la stocker en clair. En utilisant l'option
+  `--tor.encryptkey`, LND chiffre la clé privée et le blob chiffré est écrit dans le même fichier
+  sur le disque, permettant aux utilisateurs de conserver les mêmes fonctionnalités (comme le
+  rafraîchissement d'un service caché), mais ajoute une protection lors de l'exécution dans des
+  environnements non fiables.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6500" %}
