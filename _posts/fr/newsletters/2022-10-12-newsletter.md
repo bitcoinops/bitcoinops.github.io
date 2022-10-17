@@ -139,7 +139,7 @@ son `AddrMan` pour effectuer l'IBD.
 Il en résulte moins de connexions complètes aux nœuds à graines fixes ; au lieu de cela,
 davantage de connexions sont tentées à partir de l'ensemble beaucoup plus vaste de nœuds
 dont les nœuds à graines fixes nous parlent. Les connexions `AddrFetch` peuvent retourner
-_tout_ type d'adresses, par exemple, `tor` ; les résultats ne sont pas limités à IPv4 et IPv6".
+_tout_ type d'adresses, par exemple, `tor` ; les résultats ne sont pas limités à IPv4 et IPv6."
   a1link="https://bitcoincore.reviews/26114#l-63"
 
   q2="Pourquoi voudrions-nous établir une connexion `AddrFetch` au lieu d'une connexion
