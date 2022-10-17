@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Idea to use transaction lookup servers to serve unused wallet addresses"
     url: /en/newsletters/2022/10/12/#recommendations-for-unique-address-servers
 
+  - title: "Launch of block explorer with private information retrieval capability"
+    url: /en/newsletters/2022/10/19/#address-explorer-spiral-launches
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
