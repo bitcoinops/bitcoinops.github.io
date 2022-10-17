@@ -10,6 +10,7 @@ categories:
 
 aliases:
   - BIP151
+  - BIP324
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
@@ -19,8 +20,8 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: v2 Transport Protocol proposed BIP
-      link: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
+    - title: v2 Encrypted Transport Protocol proposed BIP
+      link: https://github.com/bitcoin/bips/issues/1378
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -39,6 +40,9 @@ optech_mentions:
 
   - title: "CoreDev.tech discussion of v2 P2P transport proposal"
     url: /en/newsletters/2019/06/12/#v2-p2p
+
+  - title: "Update on BIP324 v2 encrypted transport protocol"
+    url: /en/newsletters/2022/10/19/#bip324-update
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

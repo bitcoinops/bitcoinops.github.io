@@ -34,6 +34,9 @@ optech_mentions:
   - title: "Creating drivechains with APO and a trusted setup"
     url: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
 
+  - title: "Validity rollups research showing how trustless sidechains may be possible"
+    url: /en/newsletters/2022/10/19/#validity-rollups-research
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:
