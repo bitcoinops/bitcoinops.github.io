@@ -9,8 +9,8 @@ lang: fr
 ---
 La newsletter de cette semaine résume une proposition visant à permettre
 aux utilisateurs occasionnels de LN de rester hors ligne jusqu'à plusieurs
-mois d'affilée et décrit un document permetant aux serveurs d'information
-sur les transactions d'héberger des adresses de porte-monnaie inutilisées.
+mois d'affilée et décrit un document permettant aux serveurs d'information
+sur les transactions d'héberger des adresses de portefeuilles inutilisées.
 Vous trouverez également nos sections habituelles avec le résumé d'un
 Bitcoin Core PR Review Club, des annonces de nouvelles versions de
 logiciels et de release candidate (y compris un correctif critique pour le LN),
@@ -18,7 +18,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **LN avec une proposition de hors ligne long:** John Law [a posté][law post]
+- **LN avec une proposition de hors ligne long :** John Law [a posté][law post]
   sur la liste de diffusion Lightning-Dev une [proposition][law pdf] pour
   permettre aux utilisateurs occasionnels de Lightning de rester hors ligne
   jusqu'à plusieurs mois sans risquer de perdre des fonds avec leurs partenaires
@@ -31,7 +31,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
     - *Triggered HTLCs:* Dans une norme [HTLC][topic htlc] utilisée pour
       le paiement, Alice offre à Bob une certaine quantité de BTC s'il est
       capable de publier une *préimage* inconnue auparavant pour un condensé
-      de hachage connu. Alternativement, si Bob ne publie pas la pré-image
+      de hachage connu. Alternativement, si Bob ne publie pas la préimage
       avant un certain temps, Alice peut retourner l'argent dans son propre
       portefeuille.
         Law suggère que Bob soit toujours autorisé à réclamer le paiement à
@@ -43,7 +43,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
         certain nombre de blocs (ou pendant une certaine durée) qu'Alice
         pourra dépenser l'argent.
 
-        Bob serait assurer de pouvoir réclamer ses fonds à tout moment jusqu'à
+        Bob serait assuré de pouvoir réclamer ses fonds à tout moment jusqu'à
         ce que la transaction de déclenchement ait reçu le nombre convenu de
         confirmations, même si des mois se sont écoulés depuis qu'un HTLC
         normal aurait expiré. Si Bob est correctement indemnisé pour son attente,
@@ -79,7 +79,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
     moment où cette description était rédigée.
     
 - **Recommandations pour les serveurs d'adresses uniques:** Ruben Somsen
-  [a posté][somsen post] sur laliste de diffusion Bitcoin-Dev un
+  [a posté][somsen post] sur la liste de diffusion Bitcoin-Dev un
   [document][somsen gist] avec une autre suggestion sur la façon dont les
   utilisateurs peuvent éviter un [output linking][topic output linking]
   sans faire confiance à un service tiers ou utiliser un protocole
@@ -97,7 +97,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
     une adresse, vérifie qu'Alice l'a signée, puis effectue le paiement.
 
     Cette idée présente l'avantage d'être largement compatible avec de nombreux
-    portefeuilles grâce à un processus partiellement manuel et peut-être facile
+    portefeuilles grâce à un processus partiellement manuel et peut être facile
     à mettre en œuvre avec un processus automatisé. Son inconvénient est que les
     utilisateurs qui compromettent déjà leur vie privée en partageant des adresses
     avec un serveur s'engageront davantage dans la perte de confidentialité.
@@ -165,7 +165,7 @@ Prévoyez s'il vous plait de vous mettre à jour à la nouvelle version ou d'aid
 les pré-versions.*
 
 - [LND v0.15.2-beta][] est une version d'urgence à sécurité critique qui corrige une erreur
-  d'analyse qui empêchait LND d'analyser certains blocs.  Tous les utilisateurs doivent
+  d'analyse qui empêchait LND d'analyser certains blocs. Tous les utilisateurs doivent
   effectuer la mise à jour.
 
 - [Bitcoin Core 24.0 RC1][] est la première release candidate pour la prochaine version de
