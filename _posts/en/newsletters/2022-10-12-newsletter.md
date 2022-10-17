@@ -154,7 +154,7 @@ which reduces the resource requirements on their nodes."
 
   q3="The DNS seed nodes are expected to be responsive and serve
 up-to-date addresses of Bitcoin nodes. Why doesn’t this help
-a -onlynet=tor node?"
+a `-onlynet=tor` node?"
   a3="The DNS seed nodes provide only IPv4 and IPv6 addresses;
 they're not able to supply any other type of address."
   a3link="https://bitcoincore.reviews/26114#l-35"
