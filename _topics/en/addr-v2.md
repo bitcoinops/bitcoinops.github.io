@@ -64,6 +64,9 @@ optech_mentions:
   - title: "BIPs #1134 clarifies BIP155 usage of `sendaddr2' P2P feature negotiation message"
     url: /en/newsletters/2021/07/07/#bips-1134
 
+  - title: "BTCD v0.23.2 adds support for addr v2"
+    url: /en/newsletters/2022/10/19/#btcd-v0-23-2-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: P2P protocol `addr` message

@@ -173,6 +173,38 @@ of notable merges to popular Bitcoin infrastructure projects.
     connection censorship and [eclipse attacks][topic eclipse attacks]
     more difficult.
 
+## Changes to services and client software
+
+*In this monthly feature, we highlight interesting updates to Bitcoin
+wallets and services.*
+
+- **btcd v0.23.2 released:**
+  btcd v0.23.2 (and [v0.23.1][btcd 0.23.1]) adds [addr v2][topic addr v2] and additional
+  support for [PSBTs][topic psbt], [taproot][topic taproot], and [MuSig2][topic
+  musig] as well as other enhancements and fixes.
+
+- **ZEBEDEE announces hosted channel libraries:**
+  In a recent [blog post][zbd nbd], ZEBEDEE announced an open source wallet (Open
+  Bitcoin Wallet), Core Lightning plugin (Poncho), Lightning client (Cliché),
+  and Lightning library (Immortan) which focus on support for [hosted channels][].
+
+- **Cashu launches with Lightning support:**
+  E-cash software [Cashu][cashu github] launches as a proof-of-concept wallet with
+  Lightning receive support.
+
+- **Address explorer Spiral launches:**
+  [Spiral][spiral explorer] is an open source public address [explorer][topic block explorers] that uses
+  cryptography to provide privacy to users querying information about an address.
+
+- **BitGo announces Lightning support:**
+  In a [blog post][bitgo lightning], BitGo describes its custodial Lightning
+  service that runs nodes on behalf of its clients and maintains payment
+  channel liquidity.
+
+- **ZeroSync project launches:**
+  The [ZeroSync][zerosync github] project is using [Utreexo][topic utreexo] and
+  STARK proofs to sync a Bitcoin node, as occurs in Initial Block Download (IBD).
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -184,13 +216,6 @@ release candidates.*
   implementation.  A [guide to testing][bcc testing] is available.
 
 - [LND 0.15.3-beta][] is a minor release that fixes several bugs.
-
-## Changes to services and client software
-
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
-
-FIXME:bitschmidty
 
 ## Notable code and documentation changes
 
@@ -301,3 +326,10 @@ the "full RBF" term.  -->
 [bip324 changes]: https://bip324.com/sections/code-review/
 [news163 pr]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 [lnd 0.15.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.3-beta
+[btcd 0.23.1]: https://github.com/btcsuite/btcd/releases/tag/v0.23.1
+[zbd nbd]: https://blog.zebedee.io/announcing-nbd/
+[hosted channels]: https://fanismichalakis.fr/posts/what-are-hosted-channels/
+[cashu github]: https://github.com/callebtc/cashu
+[spiral explorer]: https://btc.usespiral.com/
+[bitgo lightning]: https://blog.bitgo.com/bitgo-unveils-custodial-lightning-898554d3b749
+[zerosync github]: https://github.com/zerosync/zerosync
