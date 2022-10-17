@@ -96,6 +96,9 @@ optech_mentions:
   - title: Discussion about designing LN upgrades to support recursive MuSig2
     url: /en/newsletters/2022/06/15/#recursive-musig2
 
+  - title: Disclosure of security vulnerability in MuSig2 as described in a draft BIP
+    url: /en/newsletters/2022/10/19/#musig2-security-vulnerability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures

@@ -74,6 +74,9 @@ optech_mentions:
   - title: "CVE-2021-31876: discrepancy between BIP125 and Bitcoin Core implementation"
     url: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
 
+  - title: "CVE-2017-12842: discussion of lowering minimum relayable transaction size"
+    url: /en/newsletters/2022/10/19/#minimum-relayable-transaction-size
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 
