@@ -14,7 +14,7 @@ sur les transactions d'héberger des adresses de portefeuilles inutilisées.
 Vous trouverez également nos sections habituelles avec le résumé d'un
 Bitcoin Core PR Review Club, des annonces de nouvelles versions de
 logiciels et de release candidate (y compris un correctif critique pour le LN),
-et les principaux changements apportés aux logiciels d'infrastructure Bitcoin. 
+et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
@@ -25,7 +25,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
   de canaux. Bien que cela soit techniquement possible dans le protocole LN actuel,
   cela dépendrait de la définition du paramètre 'settlement-delay' à des valeurs
   élevées qui permettraient à un utilisateur malheureux ou à un accident d'empêcher
-  les fonds de plus d'une douzaine de canaux d'être utilisés pour ces mêmes mois. 
+  les fonds de plus d'une douzaine de canaux d'être utilisés pour ces mêmes mois.
   Law propose de mitiger ce problème à travers deux modifications du protocole:
 
     - *Triggered HTLCs:* Dans une norme [HTLC][topic htlc] utilisée pour
@@ -51,7 +51,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
         Pour un HTLC acheminé d'Alice vers un nœud distant en passant par Bob,
         seul le canal entre Alice et Bob serait affecté----tous les autres canaux
         régleraient le HTLC rapidement (comme dans le protocole LN actuel).
-        
+
     - *Asymmetric delayed commitment transactions:* chacun des deux
       partenaires d'un canal LN détient un engagement non publié qu'ils peuvent
       publier et essayer de faire confirmer à tout moment. Les deux versions de
@@ -61,7 +61,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
 
         Cela signifie que quand Alice veut fermer le canal, elle ne peut pas juste
         simplement diffuser sa version de la transaction d'engagement avec
-        un délai raisonnable et supposer qu'elle sera confirmée.  
+        un délai raisonnable et supposer qu'elle sera confirmée.
         Elle doit aussi attendre et vérifier si Bob obtient au contraire
         sa version de la transaction d'engagement, auquel cas elle devra
         peut-être avoir besoin de prendre des mesures supplémentaires pour
@@ -77,7 +77,7 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
 
     Les propositions de Law recevaient encore un premier retour d'information au
     moment où cette description était rédigée.
-    
+
 - **Recommandations pour les serveurs d'adresses uniques:** Ruben Somsen
   [a posté][somsen post] sur la liste de diffusion Bitcoin-Dev un
   [document][somsen gist] avec une autre suggestion sur la façon dont les
@@ -87,11 +87,11 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
   comme le [BIP47][] ou [silent payments][topic silent payments].
   La méthode recommandée est particulièrement destinée aux portefeuilles
   qui fournissent déjà leurs adresses à des tiers, comme ceux qui utilisent
-  des [serveurs publics de recherche d'adresses][topic block explorers] 
+  des [serveurs publics de recherche d'adresses][topic block explorers]
   (ce qui est censé être la majorité des portefeuilles légers).
 
     Pour illustrer le fonctionnement de cette méthode, le portefeuille d'Alice
-    enregistre 100 adresses sur le serveur Example.com de style electrum. 
+    enregistre 100 adresses sur le serveur Example.com de style electrum.
     Elle inclut ensuite "example.com/alice" dans sa signature de courriel.
     Lorsque Bob veut donner de l'argent à Alice, il visite son URL, obtient
     une adresse, vérifie qu'Alice l'a signée, puis effectue le paiement.
@@ -107,15 +107,15 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
 
 ## Bitcoin Core PR Review Club
 
-*Dans cette section mensuelle, nous résumons une récente réunion du 
+*Dans cette section mensuelle, nous résumons une récente réunion du
 [Bitcoin Core PR Review Club][] en soulignant certaines des questions
 et réponses importantes. Cliquez sur une question ci-dessous pour voir
 un résumé de la réponse de la réunion.*
 
 [Fabriquer des connexions AddrFetch pour fixer les seeds][review club 26114]
 est une PR de Martin Zumsande qui établit des connexions `AddrFetch` vers les
-[fixed seeds][] (adresses IP codées en dur) au lieu de simplement les ajouter à 
-`AddrMan` (la base de données de nos pairs).
+[fixed seeds][] (adresses IP codées en dur) au lieu de simplement les ajouter
+à `AddrMan` (la base de données de nos pairs).
 
 {% include functions/details-list.md
   q0="Lorsqu'un nouveau nœud démarre à partir de zéro, il doit d'abord se connecter
