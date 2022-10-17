@@ -31,6 +31,9 @@ optech_mentions:
   - title: Utreexo Q&A session at CoreDev.Tech
     url: /en/newsletters/2019/06/12/#utreexo
 
+  - title: "Launch of ZeroSync project using Utreexo"
+    url: /en/newsletters/2022/10/19/#zerosync-project-launches
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
