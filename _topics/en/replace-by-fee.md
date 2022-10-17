@@ -113,6 +113,12 @@ optech_mentions:
   - title: "Proposal for relay of v3 transactions allows replacement"
     url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 
+  - title: "Concerns raised about configuration option allowing full replace by fee in Bitcoin Core"
+    url: /en/newsletters/2022/10/19/#transaction-replacement-option
+
+  - title: 'History of the term "full RBF"'
+    url: /en/newsletters/2022/10/19/#fn:full-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

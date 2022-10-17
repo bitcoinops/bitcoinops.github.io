@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Question: why do invalid `OP_CHECKSIGADD` signatures fail their script?"
     url: /en/newsletters/2022/07/27/#why-do-invalid-signatures-in-op-checksigadd-not-push-to-the-stack
 
+  - title: Discussion about lowering tapscript resource limits
+    url: /en/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
