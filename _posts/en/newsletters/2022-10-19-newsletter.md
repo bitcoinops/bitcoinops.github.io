@@ -226,7 +226,10 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23549][] Add scanblocks RPC call (attempt 2) FIXME:Xekyo
+- [Bitcoin Core #23549][] adds the `scanblocks` RPC that identifies
+  relevant blocks in a given range for a provided set of [descriptors][topic descriptors].
+  The RPC is only available on nodes that maintain a [compact block
+  filter][topic compact block filters] index (`-blockfilterindex=1`).
 
 - [Bitcoin Core #25412][] adds a new `/deploymentinfo` REST endpoint which
   contains information about soft fork deployments, similar to the
