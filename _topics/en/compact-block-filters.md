@@ -83,6 +83,9 @@ optech_mentions:
   - title: "LDK #1706 adds support for using compact block filters for downloading confirmed transactions"
     url: /en/newsletters/2022/09/21/#ldk-1706
 
+  - title: "Bitcoin Core #23549 adds `scanblocks` RPC to scan local compact block filters"
+    url: /en/newsletters/2022/10/19/#bitcoin-core-23549
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
