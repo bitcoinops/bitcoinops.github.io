@@ -152,7 +152,7 @@ leurs nœuds."
   a2link="https://bitcoincore.reviews/26114#l-77"
 
   q3="Les nœuds DNS d'amorçage sont censés être réactifs et servir les adresses actualisées
-des nœuds Bitcoin. Pourquoi cela n'aide-t-il pas un noeud `-onlynet=tor?`"
+des nœuds Bitcoin. Pourquoi cela n'aide-t-il pas un noeud `-onlynet=tor`?"
   a3="Les nœuds DNS d'amorçage ne fournissent que des adresses IPv4 et IPv6;
 ils ne sont pas en mesure de fournir un autre type d'adresse."
   a3link="https://bitcoincore.reviews/26114#l-35"
