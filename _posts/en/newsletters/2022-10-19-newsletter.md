@@ -103,8 +103,8 @@ of notable merges to popular Bitcoin infrastructure projects.
   Bitcoin-Dev mailing list a link to a [detailed research report][light
   ru] he prepared about validity rollups---a type of [sidechain][topic
   sidechains] where the current sidechain state is compactly stored on
-  the mainchain in a Zero Knowledge (ZK) proof.  A user of the
-  sidechain can use the ZK proof stored on the mainchain to prove how
+  the mainchain.  A user of the
+  sidechain can use the state stored on the mainchain to prove how
   many sidechain bitcoins they control.  By submitting a mainchain
   transaction with that proof, they can withdraw bitcoins from the
   sidechain even if the operators or miners of the
