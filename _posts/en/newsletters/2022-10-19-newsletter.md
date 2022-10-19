@@ -106,7 +106,7 @@ of notable merges to popular Bitcoin infrastructure projects.
   the mainchain.  A user of the
   sidechain can use the state stored on the mainchain to prove how
   many sidechain bitcoins they control.  By submitting a mainchain
-  transaction with that proof, they can withdraw bitcoins from the
+   transaction with a validity proof, they can withdraw bitcoins they own from the
   sidechain even if the operators or miners of the
   sidechain try to prevent the withdrawal.
 
