@@ -7,26 +7,27 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-La newsletter de cette semaine décrit the block parsing bug affecting BTCD
-and LND last week, summarizes discussion about a planned Bitcoin Core
-feature change related to replace by fee, outlines research about
-validity rollups on Bitcoin, shares an announcement about a
-vulnerability in the draft BIP for MuSig2, examines a proposal to reduce
-the minimum size of an unconfirmed transaction that Bitcoin Core will
-relay, and links to an update of the BIP324 proposal for a version 2
-encrypted transport protocol for Bitcoin.  Also included are our regular
-sections with summaries of changes to services and client software,
-announcements of new releases and release candidates, and descriptions
-of notable merges to popular Bitcoin infrastructure projects.
+La newsletter de cette semaine décrit le bug d'analyse de blocs affectant BTCD
+et LND la semaine dernière, résume la discussion sur un changement de fonctionnalité
+prévu sur Bitcoin Core lié au remplacement par des frais, décrit la recherche
+sur les cumuls de validité sur Bitcoin, partage une annonce sur une vulnérabilité
+dans le projet de BIP pour MuSig2 , examine une proposition visant à réduire
+la taille minimale d'une transaction non confirmée que Bitcoin Core relayera,
+et établit un lien vers une mise à jour de la proposition BIP324 pour une
+version 2 du protocole de transport chiffré pour Bitcoin. Sont également incluses
+nos sections régulières avec des résumés des modifications apportées aux services
+et aux logiciels clients, des annonces de nouvelles versions et de release candidate,
+et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
 
-## News
+## Nouvelles
 
-- **Block parsing bug affecting BTCD and LND:** on October 9th, a
-  [user][brqgoo] created a [transaction][big msig] using [taproot][topic
-  taproot] with a witness containing nearly a thousand signatures.  The
-  consensus rules for taproot don't place any direct limits on the size
-  of witness data.  This was a design element discussed during taproot's
-  development (see [Newsletter #65][news65 tapscript limits]).
+- **Bug d'analyse de bloc affectant BTCD et LND:** le 9 octobre,
+  un [utilisateur][brqgoo] a créé une [transaction][big msig] en
+  [taproot][topic taproot] avec un témoin contenant près d'un millier
+  de signatures. Les règles de consensus pour taproot n'imposent aucune
+  limite directe à la taille des données des témoins. Il s'agissait d'un
+  élément de conception discuté lors du développement de taproot
+  (voir la [Newsletter #65][news65 tapscript limits]).
 
     Shortly after the large-witness transaction was confirmed, users
     began to report that the BTCD full node implementation and LND
