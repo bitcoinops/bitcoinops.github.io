@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter describes the block parsing bug affecting BTCD
+La newsletter de cette semaine décrit the block parsing bug affecting BTCD
 and LND last week, summarizes discussion about a planned Bitcoin Core
 feature change related to replace by fee, outlines research about
 validity rollups on Bitcoin, shares an announcement about a
