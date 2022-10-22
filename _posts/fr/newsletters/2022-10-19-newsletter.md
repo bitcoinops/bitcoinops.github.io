@@ -29,14 +29,14 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   élément de conception discuté lors du développement de taproot
   (voir la [Newsletter #65][news65 tapscript limits]).
 
-    Shortly after the large-witness transaction was confirmed, users
-    began to report that the BTCD full node implementation and LND
-    Lightning Network implementation were failing to provide data from
-    the most recent blocks that were available to Bitcoin Core full
-    nodes.  For BTCD nodes, this meant that transactions which had been
-    recently confirmed were being reported as still unconfirmed.  For
-    LND, it meant that new channels that had recently become ready to
-    use weren't being reported as fully open.
+    Peu après la confirmation de transactions large-witness, les utilisateurs
+    ont commencé à signaler que l'implémentation du nœud complet BTCD et celle
+    du réseau Lightning LND ne fournissaient pas les données des blocs les plus
+    récents disponibles pour les nœuds complets Bitcoin Core. Pour les nœuds
+    BTCD, cela signifiait que les transactions qui avaient été récemment confirmées
+    étaient signalées comme étant toujours non confirmées. Pour LND, cela signifiait
+    que les nouveaux canaux qui étaient récemment prêts à être utilisés n'étaient
+    pas signalés comme étant totalement ouverts.
 
     A developer for both BTCD and LND fixed the problem in BTCD's code,
     which LND uses as a library, and quickly released new versions for
