@@ -9,7 +9,7 @@ lang: fr
 ---
 La newsletter de cette semaine décrit le bug d'analyse de blocs affectant BTCD
 et LND la semaine dernière, résume la discussion sur un changement de fonctionnalité
-prévu sur Bitcoin Core lié au replace by fee, décrit la recherche 
+prévu sur Bitcoin Core lié au replace by fee, décrit la recherche
 sur les validity rollups avec Bitcoin, partage une annonce sur une vulnérabilité
 dans le projet de BIP pour MuSig2 , examine une proposition visant à réduire
 la taille minimale d'une transaction non confirmée que Bitcoin Core relayera,
