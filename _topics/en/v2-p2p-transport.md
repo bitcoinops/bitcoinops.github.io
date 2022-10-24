@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Update on BIP324 v2 encrypted transport protocol"
     url: /en/newsletters/2022/10/19/#bip324-update
 
+  - title: "CoreDev.tech discussion of v2 P2P encrypted transport proposal"
+    url: /en/newsletters/2022/10/26/#transport-encryption
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
