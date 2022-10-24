@@ -22,15 +22,15 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
 ## Nouvelles
 
 - **Bug d'analyse de bloc affectant BTCD et LND:** le 9 octobre,
-  un [utilisateur][brqgoo] a créé une [transaction][big msig] en
+  un [utilisateur][brqgoo] a créé une [transaction][big msig] en utilisant
   [taproot][topic taproot] avec un témoin contenant près d'un millier
   de signatures. Les règles de consensus pour taproot n'imposent aucune
   limite directe à la taille des données des témoins. Il s'agissait d'un
   élément de conception discuté lors du développement de taproot
   (voir la [Newsletter #65][news65 tapscript limits]).
 
-    Peu après la confirmation de transactions large-witness, les utilisateurs
-    ont commencé à signaler que l'implémentation du nœud complet BTCD et celle
+    Peu après la confirmation de grandes transactions, les utilisateurs
+    ont commencés à signaler que l'implémentation du nœud complet BTCD et celle
     du réseau Lightning LND ne fournissaient pas les données des blocs les plus
     récents disponibles pour les nœuds complets Bitcoin Core. Pour les nœuds
     BTCD, cela signifiait que les transactions qui avaient été récemment confirmées
@@ -38,269 +38,260 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
     que les nouveaux canaux qui étaient récemment prêts à être utilisés n'étaient
     pas signalés comme étant totalement ouverts.
 
-    A developer for both BTCD and LND fixed the problem in BTCD's code,
-    which LND uses as a library, and quickly released new versions for
-    both [LND][lnd 0.15.2-beta] (as mentioned in [last week's
-    newsletter][news221 lnd]) and [BTCD][btcd 0.23.2].  All users of
-    BTCD and LND should upgrade.
+    Un développeur de BTCD et de LND a corrigé le problème dans le code de BTCD,
+    que LND utilise comme une bibliothèque, et a rapidement publié de nouvelles
+    versions pour [LND][lnd 0.15.2-beta] (comme mentionné dans [la newsletter]
+    [news221 lnd] de la semaine dernière) et [BTCD]. Tous les utilisateurs de
+    BTCD et LND doivent effectuer une mise à jour.
 
-    Until a user upgrades their software, they will suffer the
-    lack-of-confirmation problems described above and may also be
-    vulnerable to several attacks.  Some of those attacks require access
-    to significant hash rate (making them expensive and, hopefully,
-    impractical in this case).  Other attacks, particularly those
-    against LND users, require the attacker to risk losing some of their
-    funds in a channel, which is also hopefully a sufficient deterrent.
-    We again recommend upgrade and, further, we recommend that anyone
-    using any Bitcoin software sign up for security announcements from
-    that software's development team.
+    Tant qu'un utilisateur n'aura pas mis à jour son logiciel, il souffrira des
+    problèmes d'absence de confirmation décrits ci-dessus et peuvent également être
+    vulnérable à plusieurs attaques. Certaines de ces attaques nécessitent l'accès
+    à un taux de hachage important (ce qui les rend coûteuses et, espérons-le,
+    peu pratiques dans ce cas). D'autres attaques, en particulier celles
+    contre les utilisateurs de LND, exigent que l'attaquant risque de perdre une
+    partie de ses fonds dans un canal, ce qui est aussi, espérons-le, suffisant dissuasif.
+    À nouveau, nous recommandons de mettre à jour et, en outre, nous recommandons que toute
+    personne utilisant un logiciel Bitcoin de s'inscrire aux annonces de sécurité de
+    l'équipe de développement de ce logiciel.
 
-    After the above disclosures, Loki Verloren [posted][verloren limits]
-    to the Bitcoin-Dev mailing list to suggest that direct limits be
-    added to taproot's witness size.  Greg Sanders [replied][sanders
-    limits] to note that adding limits now would not only increase code
-    complexity but could also lead to people losing their money if they
-    already received bitcoins to a script which requires a large witness
-    to spend.
+    Après les divulgations ci-dessus, Loki Verloren a [posté][verloren limits]
+    sur la liste de diffusion Bitcoin-Dev pour suggérer que des limites directes soient
+    être ajoutées à la taille des témoins de taproot. Greg Sanders a [répondu][sanders limits]
+    pour faire remarquer que l'ajout de limites maintenant n'augmenterait pas seulement
+    la complexité du code, mais pourrait également conduire à ce que des personnes
+    perdent leur argent si elles ont déjà reçu des bitcoins d'un script qui nécessite
+    un grand témoin pour les dépenser.
 
-- **Transaction replacement option:** as reported in Newsletters
-  [#205][news205 rbf] and [#208][news208 rbf], Bitcoin Core merged
-  support for a `mempoolfullrbf` configuration option which defaults to
-  the existing Bitcoin Core behavior of only allowing [RBF
-  replacement][topic rbf] of transactions containing the [BIP125][]
-  signal.  However, if a user sets the new option to true, their node
-  will accept and relay replacements for transactions that don't contain the
-  BIP125 signal, provided the replacement transactions follow all of
-  Bitcoin Core's other rules for replacements.
+- **Option de remplacement de transaction:** comme indiqué dans les Newsletters
+  [#205][news205 rbf] et [#208][news208 rbf], Bitcoin Core a fusionné
+  le support d'une option de configuration `mempoolfullrbf` qui utilise par défaut
+  le comportement existant de Bitcoin Core qui n'autorise que les [remplacement RBF]
+  [topic rbf] des transactions contenant le signal [BIP125][]. Cependant, si un
+  utilisateur définit cette nouvelle option sur true, son nœud acceptera et relaiera
+  les remplacements pour les transactions qui ne contiennent pas le signal BIP125,
+  à condition que les transactions de remplacement respectent toutes les autres
+  règles de Bitcoin Core pour les remplacements.
 
-    Dario Sneidermanis [posted][sne rbf] to the Bitcoin-Dev mailing list that
-    this new option may create problems for services which currently accept
-    unconfirmed transactions as final.  Although it's been possible for
-    years for users to run non-Bitcoin Core software (or patched
-    versions of Bitcoin Core) that allow unsignaled *full*[^full-rbf]
-    transaction replacement, there's no evidence that software
-    is widely used.  Sneidermanis believes an easily accessible
-    option in Bitcoin Core might change that by allowing enough users
-    and miners to enable full RBF and make unsignaled replacement
-    reliable.  More reliable unsignaled replacement would also make it
-    more reliable to steal from services that accept unconfirmed transactions
-    as final, requiring those services to change their behavior.
+    Dario Sneidermanis a [posté][sne rbf] sur la liste de diffusion Bitcoin-Dev que
+    cette nouvelle option peut créer des problèmes pour les services qui acceptent actuellement
+    des transactions non confirmées comme définitives. Bien qu'il soit possible depuis des
+    années, les utilisateurs peuvent exécuter des logiciels non Bitcoin Core (ou des
+    versions éditées de Bitcoin Core) qui permettent le remplacement de transactions *full*[^full-rbf]
+    non signalées, rien ne prouve que ces logiciels sont largement utilisés. Sneidermanis pense
+    qu'une option facilement accessible dans Bitcoin Core pourrait changer cela en permettant à suffisamment
+    d'utilisateurs et de mineurs d'activer le RBF complet et de rendre le remplacement non signalé
+    fiable. Un remplacement non signalé plus fiable rendrait également
+    plus fiable de voler des services qui acceptent les transactions non confirmées comme définitives, ce qui
+    obligerait ces services à modifier leur comportement.
 
-    In addition to describing the problem and providing a detailed
-    description of how services choose when to accept unconfirmed
-    transactions,
-    Sneidermanis also proposed an alternative approach: remove the configuration
-    option from the upcoming Bitcoin Core release but also add code that
-    will enable full RBF by default at a future moment.  Anthony Towns
-    [posted][towns rbf] several options for consideration and opened a
-    [pull request][bitcoin core #26323] that implements a slightly
-    modified version of Sneidermanis's proposal.  If merged and released
-    in its current state, Towns's PR will enable full RBF by default
-    starting 1 May 2023.  Users objecting to full RBF will still be able
-    to prevent their nodes from participating by setting the
-    `mempoolfullrbf` option to false.
+    En plus de la description du problème et de la description détaillée de la manière
+    dont les services choisissent d'accepter des transactions non confirmées,
+    Sneidermanis a également proposé une approche alternative : supprimer l'option de configuration
+    de la prochaine version de Bitcoin Core, mais aussi ajouter du code qui
+    activera par défaut le RBF complet à un moment ultérieur. Anthony Towns
+    [a publié][towns rbf] plusieurs options à prendre en considération et a ouvert une
+    [pull request][bitcoin core #26323] qui implémente une version légèrement modifiée
+    de la proposition de Sneidermanis.  Si elle est fusionnée et publiée
+    dans son état actuel, le PR de Towns activera par défaut le RBF complet
+    à partir du 1er mai 2023.  Les utilisateurs qui s'opposent à la RBF complète pourront
+    toujours empêcher leurs nœuds de participer en définissant l'option
+    `mempoolfullrbf` à false.
 
-- **Validity rollups research:** John Light [posted][light ml ru] to the
-  Bitcoin-Dev mailing list a link to a [detailed research report][light
-  ru] he prepared about validity rollups---a type of [sidechain][topic
-  sidechains] where the current sidechain state is compactly stored on
-  the mainchain.  A user of the
-  sidechain can use the state stored on the mainchain to prove how
-  many sidechain bitcoins they control.  By submitting a mainchain
-   transaction with a validity proof, they can withdraw bitcoins they own from the
-  sidechain even if the operators or miners of the
-  sidechain try to prevent the withdrawal.
+- **Recherche sur les rollups de validité** : John Light a [posté][light ml ru]
+  sur la liste de diffusion Bitcoin-Dev un lien vers un [rapport de recherche détaillé][light ru].
+  qu'il a préparé sur les validity rollups--un type de [sidechain][topic sidechains] où
+  l'état actuel de la sidechain est stocké de manière compacte sur la chaîne principale.
+  Un utilisateur de la chaîne latérale peut utiliser l'état stocké sur la chaîne principale
+  pour prouver combien de bitcoins de la sidechain il contrôle. En soumettant une transaction
+  sur la chaîne principale avec une preuve de validité, ils peuvent retirer les bitcoins
+  qu'ils possèdent de la sidechain même si les opérateurs ou les mineurs de la
+  chaîne latérale tentent d'empêcher le retrait.
 
-    Light's research describes validity rollups in depth, looks at how
-    support for them could be added to Bitcoin, and examines various
-    concerns with their implementation.
+    Les recherches de Light décrivent en profondeur les validity rollups, examinent comment
+    leur prise en charge pourrait être ajoutée à Bitcoin, et examine les différentes
+    préoccupations liées à leur mise en œuvre.
 
-- **MuSig2 security vulnerability:** Jonas Nick [posted][nick musig2] to
-  the Bitcoin-Dev mailing list about a vulnerability he and several
-  others discovered in the [MuSig2][topic musig] algorithm as documented
-  in a [draft BIP][bips #1372].  In short, the protocol is vulnerable if
-  an attacker knows a user's public key, a tweak to that public key that
-  the user will sign for (such as with [BIP32][topic bip32] extended
-  pubkeys), and can manipulate which version of the key the user will
-  sign for.
+- **Validité de la sécurité de MuSig2:** Jonas Nick a [posté][nick musig2] sur la
+  liste de diffusion Bitcoin-Dev à propos d'une vulnérabilité que lui et plusieurs
+  autres personnes ont découvert dans l'algorithme [MuSig2][topic musig]
+  tel que documenté dans un [projet de BIP][bips #1372]. En bref, le protocole est vulnérable si
+  un attaquant connaît la clé publique d'un utilisateur, une modification de cette clé publique
+  pour laquelle l'utilisateur signera (comme avec [BIP32][topic bip32] extended pubkeys)
+  et peut manipuler la version de la clé pour laquelle l'utilisateur signera.
 
-    Jonas Nick believes the vulnerability "should only apply in
-    relatively rare cases" and encourages anyone using (or soon planning
-    to use) MuSig2 to reach out to him and his co-authors with
-    questions.  The draft BIP for MuSig2 is expected to be updated soon
-    to address the issue.
+    Jonas Nick pense que la vulnérabilité "ne devrait s'appliquer que dans des cas relativement rares".
+    et encourage toute personne utilisant (ou prévoyant d'utiliser bientôt MuSig2
+    à lui poser des questions, ainsi qu'à ses co-auteurs.
+    Le projet de BIP pour MuSig2 devrait être mis à jour prochainement afin d'aborder ce problème.
 
-- **Minimum relayable transaction size:** Greg Sanders [posted][sanders
-  min] to the Bitcoin-Dev mailing list a request for Bitcoin Core to
-  relax a policy added to make it harder to exploit the
-  [CVE-2017-12842][] vulnerability.  This vulnerability allows an
-  attacker who can get a specially-crafted 64 byte transaction confirmed
-  into a block to trick lightweight clients into believing one or more
-  different arbitrary transactions were confirmed.  E.g., innocent user
-  Bob's Simplified Payment Verification (SPV) wallet might display that
-  he'd received a million BTC payment with dozens of confirmations even
-  though no such payment was ever confirmed.
+- **Taille minimale des transactions relayables:** Greg Sanders a [posté][sanders
+  min] sur la liste de diffusion Bitcoin-Dev une demande pour que Bitcoin Core puisse
+  assouplir une politique ajoutée pour rendre plus difficile l'exploitation de la
+  vulnerabilité[CVE-2017-12842][]. Cette vulnérabilité permet à un
+  attaquant qui peut obtenir une transaction de 64 octets spécialement conçue pour être confirmée
+  dans un bloc, de faire croire à des clients légers qu'une ou plusieurs transactions
+  arbitraires différentes ont été confirmées. Par exemple, Bob un utilisateur innocent
+  du portefeuille SPV (Simplified Payment Verification), pourrait afficher
+  qu'il a reçu un paiement d'un million de BTC avec des dizaines de confirmations même si
+  aucun paiement de ce type n'a jamais été confirmé.
 
-    When the vulnerability was only privately known among a few
-    developers, a limit was added to Bitcoin Core preventing relay of
-    any transaction with fewer than 85 bytes (not counting witness
-    bytes), which is about the smallest size that can be created using
-    standard transaction templates.  This would require an attacker to
-    get their transaction mined by software not based on Bitcoin Core.
-    Later, the [consensus cleanup soft fork proposal][topic consensus
-    cleanup] suggested permanently fixing the problem by disallowing any
-    transactions less than 65 bytes in size from being included in new
-    blocks.
+    Lorsque la vulnérabilité n'était connue qu'en privé par quelques développeurs,
+    une limite a été ajoutée à Bitcoin Core pour empêcher le relais de toute transaction
+    de moins de 85 octets (sans compter les témoins), qui est à peu près la plus
+    petite taille pouvant être créée à l'aide de modèles de transaction standard.
+    Cela obligerait un attaquant à faire miner sa transaction par un logiciel
+    non basé sur Bitcoin Core.
+    Plus tard, le [consensus cleanup soft fork proposal][topic consensus
+    cleanup] a suggéré de résoudre définitivement le problème en interdisant toutes
+    transactions de moins de 65 octets d'être incluses dans les nouveaux blocs.
 
-    Sanders suggests lowering the transaction relay policy limit from 85
-    bytes to the 65 byte limit suggested in consensus cleanup, which may
-    allow additional experimentation and usage without changing the
-    current risk profile.  Sanders has a [pull request][bitcoin core
-    #26265] open to make this change.  See also [Newsletter #99][news99
-    min] for prior discussion related to this proposed change.
+    Sanders suggère d'abaisser la limite de la politique de relais des transactions
+    de 85 octets à la limite de 65 octets suggérée dans le nettoyage de consensus, ce qui peut
+    permettre une expérimentation et un usage supplémentaire sans changer le
+    profil de risque actuel. Sanders a ouvert une [pull request][bitcoin core
+    #26265] pour effectuer ce changement. Voir aussi la [Newsletter #99][news99
+    min] pour une discussion antérieure liée à cette proposition de changement.
 
-- **BIP324 update:** Dhruv M [posted][dhruv 324] to the Bitcoin-Dev
-  mailing list a summary of several updates to the BIP324 proposal for a
-  [version 2 encrypted P2P transport protocol][topic v2 p2p transport].
-  This includes a rewrite of the [draft BIP][bips #1378] and the
-  publication of a [variety of resources][bip324.com] to help reviewers
-  evaluate the proposal, including an excellent [guide to the proposed
-  code changes][bip324 changes] across multiple repositories.
+- **Mise à jour BIP324:** Dhruv M a [posté][dhruv 324] sur la liste de
+  diffusion Bitcoin-Dev un résumé de plusieurs mises à jour de la proposition
+  BIP324 pour un [protocole de transport P2P crypté version 2][topic v2 p2p transport].
+  Cela inclut une réécriture du [projet de BIP] [bips #1378] et la
+  publication d'une [variété de ressources][bip324.com] pour aider les examinateurs à
+  évaluer la proposition, y compris un excellent [guide sur les
+  modifications du code][bip324 changes] à travers plusieurs référentiels.
 
-    As described in the draft BIP's *motivation* section, a native
-    encrypted transport protocol for Bitcoin nodes can improve privacy
-    during transaction announcement, prevent tampering with connections
-    (or at least make it easier to detect tampering), and also make P2P
-    connection censorship and [eclipse attacks][topic eclipse attacks]
-    more difficult.
+    Comme décrit dans la section *motivation* de l'ébauche du BIP,
+    un protocole de transport crypté natif pour les noeuds Bitcoin peut améliorer la vie privée
+    lors de l'annonce des transactions, empêcher la falsification des connexions
+    (ou du moins rendre plus facile la détection de la falsification), et également rendre la censure des
+    connexions P2P et les [attaques d'éclipse][topic eclipse attacks] plus faciles à détecter.
 
-## Changes to services and client software
+## Changements dans les services et les logiciels clients
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*Dans cette rubrique mensuelle, nous mettons en avant les mises à jour intéressantes des portefeuilles et
+services Bitcoin.*
 
-- **btcd v0.23.2 released:**
-  btcd v0.23.2 (and [v0.23.1][btcd 0.23.1]) adds [addr v2][topic addr v2] and additional
-  support for [PSBTs][topic psbt], [taproot][topic taproot], and [MuSig2][topic
-  musig] as well as other enhancements and fixes.
+- **btcd v0.23.2 publié :**
+  btcd v0.23.2 (et [v0.23.1][btcd 0.23.1]) ajoute [addr v2][topic addr v2] et un
+  support supplémentaire pour les [PSBT][topic psbt], [taproot][topic taproot],
+  et [MuSig2][topic musig] ainsi que d'autres améliorations et corrections.
 
-- **ZEBEDEE announces hosted channel libraries:**
-  In a recent [blog post][zbd nbd], ZEBEDEE announced an open source wallet (Open
-  Bitcoin Wallet), Core Lightning plugin (Poncho), Lightning client (Cliché),
-  and Lightning library (Immortan) which focus on support for [hosted channels][].
+- **ZEBEDEE annonce des bibliothèques de canaux hébergés :**
+  Dans un récent [article de blog][zbd nbd], ZEBEDEE a annoncé un porte-monnaie open source (Open
+  Bitcoin Wallet), un plugin Core Lightning (Poncho), un client Lightning (Cliché), ainsi
+  qu'une bibliothèque Lightning (Immortan) qui se concentrent sur le support des [canaux hébergés].
 
-- **Cashu launches with Lightning support:**
-  E-cash software [Cashu][cashu github] launches as a proof-of-concept wallet with
-  Lightning receive support.
+- **Cashu est lancé avec le support de Lightning :**
+  Le logiciel de monnaie électronique [Cashu][cashu github] est lancé en tant que
+  porte-monnaie de démonstration avec un support de réception Lightning.
 
-- **Address explorer Spiral launches:**
-  [Spiral][spiral explorer] is an open source public address [explorer][topic block explorers] that uses
-  cryptography to provide privacy to users querying information about an address.
+- **Lancement de l'explorateur d'adresses Spiral :**
+  [Spiral][spiral explorer] est un [explorateur][topic block explorers] d'adresses
+  publiques open source qui utilise la cryptographie pour assurer la confidentialité
+  des utilisateurs qui recherchent des informations sur une adresse.
 
-- **BitGo announces Lightning support:**
-  In a [blog post][bitgo lightning], BitGo describes its custodial Lightning
-  service that runs nodes on behalf of its clients and maintains payment
-  channel liquidity.
+- **BitGo annonce le support de Lightning :**
+  Dans un [article de blog][bitgo lightning], BitGo décrit son service de garde Lightning
+  qui exécute des nœuds pour le compte de ses clients et maintient la liquidité des canaux de paiement.
+  
+- **Lancement du projet ZeroSync :**
+  Le projet [ZeroSync][zerosync github] utilise [Utreexo][topic utreexo] et des preuves STARK pour synchroniser
+  un nœud Bitcoin, comme cela se produit dans le téléchargement du bloc initial (IBD).
 
-- **ZeroSync project launches:**
-  The [ZeroSync][zerosync github] project is using [Utreexo][topic utreexo] and
-  STARK proofs to sync a Bitcoin node, as occurs in Initial Block Download (IBD).
+## Mises à jour et Release candidate
 
-## Releases and release candidates
+*Nouvelles versions et release candidate pour les principaux projets d'infrastructure Bitcoin.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidate.*
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+- [Bitcoin Core 24.0 RC2][] est une release candidate pour la prochaine version
+  de l'implémentation de nœud complet la plus utilisée du réseau.
+  Un [guide de test][bcc testing] est disponible.
 
-- [Bitcoin Core 24.0 RC2][] is a release candidate for the
-  next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+- [LND 0.15.3-beta][] est une version mineure qui corrige plusieurs bogues.
 
-- [LND 0.15.3-beta][] is a minor release that fixes several bugs.
+## Changements principaux dans le code et la documentation
 
-## Notable code and documentation changes
-
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23549][] adds the `scanblocks` RPC that identifies
-  relevant blocks in a given range for a provided set of [descriptors][topic descriptors].
-  The RPC is only available on nodes that maintain a [compact block
-  filter][topic compact block filters] index (`-blockfilterindex=1`).
+- [Bitcoin Core #23549][] ajoute le RPC `scanblocks` qui identifie les blocs
+  pertinents dans une plage donnée pour un ensemble fourni de
+  [descripteurs][topic descriptors]. Cet RPC n'est disponible que sur
+  les noeuds qui maintiennent un [filtre de blocs compact][topic compact
+  block filters] (`-blockfilterindex=1`).
 
-- [Bitcoin Core #25412][] adds a new `/deploymentinfo` REST endpoint which
-  contains information about soft fork deployments, similar to the
-  existing `getdeploymentinfo` RPC.
+- [Bitcoin Core #25412][] ajoute un nouveau point de terminaison REST
+  `/deploymentinfo` qui contient des informations sur les déploiements de soft fork,
+  similaire au RPC existant `getdeploymentinfo`.
 
-- [LND #6956][] allows configuring the minimum channel reserve enforced
-  on payments received from a channel's partner.  A node won't accept a
-  payment from its channel partner if that would lower the amount of the
-  partner's funds in the channel below the reserve, which is 1% by
-  default in LND.  This ensures the partner will need to pay at least
-  the reserve amount as a penalty if it attempts to close a channel in a
-  outdated state.  This merged PR allows lowering or raising the reserve
-  amount.
+- [LND #6956][] permet de configurer la réserve minimale des canaux appliquée
+  sur les paiements reçus du partenaire d'un canal. Un noeud n'acceptera pas un
+  paiement de son partenaire de canal si cela diminue la quantité de fonds
+  du partenaire dans le canal en dessous de la réserve, qui est de 1% par
+  défaut avec LND. Cela garantit que le partenaire devra payer au moins
+  le montant de la réserve en tant que pénalité s'il ne respecte pas ses engagements.
+  L'approbation de ce PR permet d'abaisser ou d'augmenter le montant de la réserve.
 
-- [LND #7004][] updates the version of the BTCD library used by LND,
-  fixing the security vulnerability previously described in this
-  newsletter.
+- [LND #7004][] met à jour la version de la bibliothèque BTCD utilisée par LND,
+  corrigeant la vulnérabilité de sécurité précédemment décrite dans ce
+  bulletin d'information.
 
-- [LDK #1625][] begins tracking information about the liquidity of
-  distant channels which the local node has attempted to route payments
-  through.  The local node stores information about the size of payments
-  which have either successfully been routed through the remote node or
-  which failed due to apparent insufficient funds.  This information,
-  adjusted for its age, is used as input for probabilistic pathfinding
-  (see [Newsletter #163][news163 pr]).
+- [LDK #1625][] commence à suivre les informations concernant la liquidité des
+  canaux distants par lesquels le noeud local a tenté d'acheminer des paiements.
+  Le nœud local stocke des informations sur la taille des paiements
+  qui ont été acheminés avec succès par le nœud distant ou
+  qui ont échoué en raison d'une insuffisance apparente de fonds. Cette information,
+  ajustée en fonction de leur âge, est utilisée comme données d'entrée
+  pour la recherche probabiliste d'un chemin, voir la [Newsletter #163][news163 pr]).
 
-## Footnotes
+## Notes de bas de page
 
 <!-- TODO:harding is 95% sure the below is correct and will delete this
 comment when he gets verification from the person he thinks first used
 the "full RBF" term.  -->
 
 [^full-rbf]:
-    Transaction replacement was included in the first version of Bitcoin
-    and has received much discussion over the years.  During that time,
-    several terms used for describing aspects of it have changed,
-    leading to potential confusion.  Perhaps the greatest source of
-    confusion would be the term "full RBF", which has been used for two
-    different concepts:
+    Le remplacement des transactions a été inclus dans la première version de Bitcoin
+    et a fait l'objet de nombreuses discussions au fil des ans. Au cours de cette période,
+    plusieurs termes utilisés pour décrire certains de ses aspects ont changés,
+    entraînant une confusion potentielle. La plus grande source de confusion
+    serait le terme "RBF complet", qui a été utilisé pour deux concepts
+    différents :
 
-    - *Full replacement of any **part** of a transaction* as distinct
-      from just adding additional inputs and outputs.  During a period
-      when enabling RBF was controversial and before the idea of opt-in
-      RBF was proposed, one [suggestion][superset rbf] was to allow a
-      transaction to be replaced only if the replacement included all of
-      the same outputs plus additional new inputs and outputs used to
-      pay fees and collect change.  The requirement to keep the original
-      outputs ensured the replacement would still pay the original
-      receiver the same amount of money.  This idea, later called First
-      Seen Safe (FSS) RBF, was a type of *partial* replacement.
+    - *Le remplacement complet de n'importe quelle **partie** d'une transaction*, par opposition
+      à la simple addition d'entrées et de sorties supplémentaires. Pendant une période
+      où l'activation de RBF était controversée et avant que l'idée de RBF opt-in,
+      une [suggestion][superset rbf] était d'autoriser le remplacement d'une
+      transaction à être remplacée uniquement si le remplacement incluait l'ensemble
+      des résultats plus des entrées et sorties supplémentaires utilisées pour
+      payer les frais et collecter la monnaie. L'obligation de conserver les sorties
+      originales garantissait que le remplacement paierait toujours
+      le même montant d'argent au destinataire initial. Cette idée, appelée plus tard First
+      Seen Safe (FSS) RBF, était un type de remplacement *partiel*.
 
-        By comparison, *full* replacement at this time meant the
-        replacement could fully change anything about the original
-        transaction (provided it still conflicted with the original
-        transaction by spending at least one of the same inputs).  It's
-        this usage of full that's used in the title of [BIP125][],
+        En comparaison, le remplacement complet à cette époque signifiait que le remplacement
+        pouvait changer complètement tout ce qui concernait la
+        transaction originale (à condition qu'elle soit toujours en conflit avec la transaction
+        originale en dépensant au moins une des mêmes entrées). C'est
+        cet usage de full qui est utilisé dans le titre de [BIP125][],
         "Opt-in Full Replace-by-Fee Signaling".
 
-    - *Full replacement of **any** transaction* as distinct from only
-      replacing transactions that opt-in to allowing replacement via a
-      BIP125 signal.  Opt-in RBF was proposed as a compromise between
-      people who didn't want to allow RBF and those who believed it was
-      either necessary or inevitable.  However, as of this writing,
-      only a minority of transactions opt-in to RBF, which can be seen as
-      partial adoption of RBF.
+    - Le remplacement complet de **n'importe quelle** transaction* est différent du remplacement seulement
+      des transactions qui acceptent de permettre le remplacement via un signal BIP125. Le RBF
+      Opt-in a été proposé comme un compromis entre les personnes qui ne voulaient pas autoriser
+      le RBF et celles qui pensaient qu'il était nécessaire ou inévitable. Cependant, à ce jour, seule une
+      minorité de transactions opte pour le RBF, ce qui peut être considéré comme une adoption partielle de la
+      méthode RBF.
 
-        By comparison, *full* adoption of RBF can be enabled by allowing
-        any unconfirmed transaction to be replaced.  It's this usage of
-        full that's used in the currently-discussed Bitcoin Core
-        configuration option, `mempoolfullrbf`.
+        En comparaison, l'adoption *complète* de RBF peut être permise en autorisant
+        toute transaction non confirmée à être remplacée. C'est cette utilisation de
+        complet qui est actuellement discutée dans l'option de configuration `mempoolfullrbf`
+        de Bitcoin Core.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23549,25412,25667,2448,6956,6972,7004,1625,26323,1372,1378,26265" %}
