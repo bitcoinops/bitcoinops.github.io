@@ -42,6 +42,9 @@ optech_mentions:
   - title: "BIPs #1370 updates the BIP330 specification of Erlay"
     url: /en/newsletters/2022/10/05/#bips-1370
 
+  - title: "Bitcoin Core #23443 adds the `sendtxrcncl` negotiation message for Erlay"
+    url: /en/newsletters/2022/10/26/#bitcoin-core-23443
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

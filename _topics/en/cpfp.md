@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BIP proposed for package relay that can make CPFP bumping more reliable"
     url: /en/newsletters/2022/05/25/#package-relay-proposal
 
+  - title: "Suggest to use CPFP to address RBF-related free option problem"
+    url: /en/newsletters/2022/10/26/#free-option-problem
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

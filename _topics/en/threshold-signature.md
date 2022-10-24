@@ -43,6 +43,9 @@ optech_mentions:
   - title: Cryptographic Vulnerabilities in Threshold Wallets
     url: /en/newsletters/2019/06/19/#cryptographic-vulnerabilities-in-threshold-wallets
 
+  - title: Transcripts of talks about the FROST and ROAST threshold signature schemes
+    url: /en/newsletters/2022/10/26/#frost
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignature

@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Eclair #2406 allows requiring confirmed inputs in the interactive funding protocol"
     url: /en/newsletters/2022/09/14/#eclair-2406
 
+  - title: "Eclair #2463 and #2461 increase robustness of RBF fee bumping interactive funding"
+    url: /en/newsletters/2022/10/26/#eclair-2463
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)

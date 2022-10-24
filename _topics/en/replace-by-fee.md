@@ -119,6 +119,9 @@ optech_mentions:
   - title: 'History of the term "full RBF"'
     url: /en/newsletters/2022/10/19/#fn:full-rbf
 
+  - title: "Continued discussion about `mempoolfullrbf` option for enabling full RBF"
+    url: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

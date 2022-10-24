@@ -63,6 +63,9 @@ optech_mentions:
   - title: Proposed relay of v3 transactions designed to avoid pinning attacks
     url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 
+  - title: Proposed ephemeral anchors to help mitigate pinning attacks
+    url: /en/newsletters/2022/10/26/#ephemeral-anchors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

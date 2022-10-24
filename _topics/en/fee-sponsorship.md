@@ -35,6 +35,9 @@ optech_mentions:
   - title: Fee bumping discussion with advocacy for fee sponsorship
     url: /en/newsletters/2022/02/23/#fee-bumping-and-transaction-fee-sponsorship
 
+  - title: Proposed ephemeral anchors relay policy to implement sponsorship-like behavior
+    url: /en/newsletters/2022/10/26/#ephemeral-anchors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Child Pays For Parent

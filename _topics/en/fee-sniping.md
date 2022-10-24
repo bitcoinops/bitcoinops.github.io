@@ -52,6 +52,9 @@ optech_mentions:
   - title: Discussion about fee sniping in relationship to block subsidy
     url: /en/newsletters/2022/07/20/#fee-sniping
 
+  - title: "CoreDev.tech transcript of discussion about fees and fee sniping"
+    url: /en/newsletters/2022/10/26/#fees
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
