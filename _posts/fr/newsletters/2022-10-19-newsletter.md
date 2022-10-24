@@ -194,7 +194,7 @@ services Bitcoin.*
 - **BitGo annonce le support de Lightning :**
   Dans un [article de blog][bitgo lightning], BitGo décrit son service de garde Lightning
   qui exécute des nœuds pour le compte de ses clients et maintient la liquidité des canaux de paiement.
-  
+
 - **Lancement du projet ZeroSync :**
   Le projet [ZeroSync][zerosync github] utilise [Utreexo][topic utreexo] et des preuves STARK pour synchroniser
   un nœud Bitcoin, comme cela se produit dans le téléchargement du bloc initial (IBD).
