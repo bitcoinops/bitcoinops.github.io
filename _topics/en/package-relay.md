@@ -80,6 +80,12 @@ optech_mentions:
   - title: "New proposed v3 transactions designed for use with package relay"
     url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 
+  - title: "Suggest to use CPFP with package relay to address RBF-related free option problem"
+    url: /en/newsletters/2022/10/26/#free-option-problem
+
+  - title: "CoreDev.tech transcript of discussion about package relay and v3 transactions"
+    url: /en/newsletters/2022/10/26/#package-and-v3-transaction-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

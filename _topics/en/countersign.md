@@ -29,6 +29,9 @@ optech_mentions:
   - title: "CoreDev.tech meetings: v2 P2P transport and countersign"
     url: /en/newsletters/2019/06/12/#v2-p2p
 
+  - title: "CoreDev.tech transcripts: v2 P2P encrypted transport and countersign"
+    url: /en/newsletters/2022/10/26/#transport-encryption
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Version 2 P2P Transport
