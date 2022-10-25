@@ -220,7 +220,43 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why would someone use a 1-of-1 multisig?]({{bse}}115443)
+  Vojtěch Strnad asks why someone would choose to use 1-of-1 multisig over
+  P2WPKH given P2WPKH is cheaper and has a larger anonymity set. Murch lists a
+  variety of resources showing at least one entity spending millions of 1-of-1
+  UTXOs over the years, although the motivations remain unclear.
+
+- [Why would a transaction have a locktime in the year 1987?]({{bse}}115549)
+  1440000bytes points to a comment from Christian Decker referencing [a section][bolt 3 commitment]
+  from the BOLT 3 Lightning spec that allocates the locktime field as "upper 8
+  bits are 0x20, lower 24 bits are the lower 24 bits of the obscured commitment
+  transaction number".
+
+- [What is the size limit on the UTXO set, if any?]({{bse}}115439)
+  Pieter Wuille answers that there is no consensus limit on the UTXO set size and that the
+  rate of growth of the UTXO set is bounded by the block size which limits the
+  number of UTXOs that can be created in a given block. In a [related answer][se
+  murch utxo calcs], Murch estimates that it would take about 11 years to create
+  a UTXO for every person on Earth.
+
+- [Why is `-blockmaxweight` set to 3996000 by default?]({{bse}}115499)
+  Vojtěch Strnad points out that the default setting for `-blockmaxweight` in
+  Bitcoin Core is 3,996,000 which is less than the segwit limit of 4,000,000
+  weight units (vbytes). Pieter Wuille explains that the difference allows
+  buffer space for a miner to add a larger coinbase transaction with additional
+  outputs beyond the default coinbase transaction created by the block template.
+
+- [Can a miner open a Lightning channel with a coinbase output?]({{bse}}115588)
+  Murch points out challenges with a miner creating a Lightning channel using an
+  output from their coinbase transaction including delays in closing the channel
+  given the coinbase maturation period as well as needing to continuously renegotiate the
+  channel open while hashing due to the coinbase transaction's hash constantly
+  changing during mining.
+
+- [What is the history on how previous soft forks were tested prior to being considered for activation?]({{bse}}115434)
+  Michael Folkson quotes a [recent mailing list post][aj soft fork testing] from Anthony Towns which
+  describes the testing around the P2SH, CLTV, CSV, segwit, [taproot][topic
+  taproot], CTV, and [Drivechain][topic sidechains] proposals.
 
 ## Releases and release candidates
 
@@ -299,3 +335,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [sanders ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
 [rubin ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021041.html
 [zhao overview]: https://github.com/glozow/bitcoin-notes/blob/full-rbf/full-rbf.md
+[bolt 3 commitment]: https://github.com/lightning/bolts/blob/316882fcc5c8b4cf9d798dfc73049075aa89d3e9/03-transactions.md#commitment-transaction
+[se murch utxo calcs]: https://bitcoin.stackexchange.com/questions/111234/how-many-useable-utxos-are-possible-with-btc-inside-them/115451#115451
+[aj soft fork testing]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020964.html
