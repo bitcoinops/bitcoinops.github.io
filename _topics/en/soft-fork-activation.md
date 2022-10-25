@@ -136,6 +136,9 @@ optech_mentions:
   - title: Proposal to use transaction signaling to measure support for consensus changes
     url: /en/newsletters/2022/05/04/#measuring-user-support-for-consensus-changes
 
+  - title: History of how various soft fork proposals were tested prior to activation
+    url: /en/newsletters/2022/10/26/#what-is-the-history-on-how-previous-soft-forks-were-tested-prior-to-being-considered-for-activation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
