@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter summaries continued discussion about enabling
+This week's newsletter summarizes continued discussion about enabling
 full RBF, provides overviews for several transcripts of discussions at a
 CoreDev.tech meeting, and describes a proposal for ephemeral anchor
 outputs designed for contract protocols like LN.  Also included are our
