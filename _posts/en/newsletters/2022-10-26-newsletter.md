@@ -21,7 +21,7 @@ infrastructure software.
 - **Continued discussion about full RBF:** in [last week's
   newsletter][news222 rbf], we summarized a discussion on the
   Bitcoin-Dev mailing list about the inclusion of a new `mempoolfullrbf`
-  option that could create problems for a several businesses which
+  option that could create problems for several businesses which
   accept transactions with zero confirmations ("zero conf") as final
   payments.  Discussion continued this week on both the mailing list and
   the #bitcoin-core-dev IRC room.  Some highlights of the discussion
