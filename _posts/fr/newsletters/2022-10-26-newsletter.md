@@ -1,11 +1,11 @@
 ---
 title: 'Bitcoin Optech Newsletter #223'
-permalink: /en/newsletters/2022/10/26/
-name: 2022-10-26-newsletter
-slug: 2022-10-26-newsletter
+permalink: /fr/newsletters/2022/10/26/
+name: 2022-10-26-newsletter-fr
+slug: 2022-10-26-newsletter-fr
 type: newsletter
 layout: newsletter
-lang: en
+lang: fr
 ---
 This week's newsletter summarizes continued discussion about enabling
 full RBF, provides overviews for several transcripts of discussions at a
