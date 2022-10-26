@@ -30,7 +30,7 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   (voir la [Newsletter #65][news65 tapscript limits]).
 
     Peu après la confirmation de grandes transactions, les utilisateurs
-    ont commencés à signaler que l'implémentation du nœud complet BTCD et celle
+    ont commencé à signaler que l'implémentation du nœud complet BTCD et celle
     du réseau Lightning LND ne fournissaient pas les données des blocs les plus
     récents disponibles pour les nœuds complets Bitcoin Core. Pour les nœuds
     BTCD, cela signifiait que les transactions qui avaient été récemment confirmées
@@ -45,25 +45,25 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
     BTCD et LND doivent effectuer une mise à jour.
 
     Tant qu'un utilisateur n'aura pas mis à jour son logiciel, il souffrira des
-    problèmes d'absence de confirmation décrits ci-dessus et peuvent également être
+    problèmes d'absence de confirmation décrits ci-dessus et pourra également être
     vulnérable à plusieurs attaques. Certaines de ces attaques nécessitent l'accès
-    à un taux de hachage important (ce qui les rend coûteuses et, espérons-le,
+    à une puissance de hachage importante (ce qui les rend coûteuses et, espérons-le,
     peu pratiques dans ce cas). D'autres attaques, en particulier celles
-    contre les utilisateurs de LND, exigent que l'attaquant risque de perdre une
-    partie de ses fonds dans un canal, ce qui est aussi, espérons-le, suffisant dissuasif.
-    À nouveau, nous recommandons de mettre à jour et, en outre, nous recommandons que toute
+    contre les utilisateurs de LND, exigent que l'attaquant prenne le risque de perdre une
+    partie de ses fonds dans un canal, ce qui est aussi, espérons-le, suffisamment dissuasif.
+    À nouveau, nous recommandons de mettre à jour et, en outre, nous recommandons à toute
     personne utilisant un logiciel Bitcoin de s'inscrire aux annonces de sécurité de
     l'équipe de développement de ce logiciel.
 
     Après les divulgations ci-dessus, Loki Verloren a [posté][verloren limits]
     sur la liste de diffusion Bitcoin-Dev pour suggérer que des limites directes soient
-    être ajoutées à la taille des témoins de taproot. Greg Sanders a [répondu][sanders limits]
+    ajoutées à la taille des témoins de taproot. Greg Sanders a [fait remarquer][sanders limits]
     pour faire remarquer que l'ajout de limites maintenant n'augmenterait pas seulement
     la complexité du code, mais pourrait également conduire à ce que des personnes
     perdent leur argent si elles ont déjà reçu des bitcoins d'un script qui nécessite
     un grand témoin pour les dépenser.
 
-- **Option de remplacement de transaction:** comme indiqué dans les Newsletters
+- **Option de remplacement de transaction :** comme indiqué dans les Newsletters
   [#205][news205 rbf] et [#208][news208 rbf], Bitcoin Core a fusionné
   le support d'une option de configuration `mempoolfullrbf` qui utilise par défaut
   le comportement existant de Bitcoin Core qui n'autorise que les [remplacement RBF]
@@ -75,14 +75,14 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
 
     Dario Sneidermanis a [posté][sne rbf] sur la liste de diffusion Bitcoin-Dev que
     cette nouvelle option peut créer des problèmes pour les services qui acceptent actuellement
-    des transactions non confirmées comme définitives. Bien qu'il soit possible depuis des
+    des transactions non confirmées comme définitives. Bien que ce soit possible depuis des
     années, les utilisateurs peuvent exécuter des logiciels non Bitcoin Core (ou des
     versions éditées de Bitcoin Core) qui permettent le remplacement de transactions *full*[^full-rbf]
     non signalées, rien ne prouve que ces logiciels sont largement utilisés. Sneidermanis pense
     qu'une option facilement accessible dans Bitcoin Core pourrait changer cela en permettant à suffisamment
     d'utilisateurs et de mineurs d'activer le RBF complet et de rendre le remplacement non signalé
     fiable. Un remplacement non signalé plus fiable rendrait également
-    plus fiable de voler des services qui acceptent les transactions non confirmées comme définitives, ce qui
+    efficaces les tentatives de vol des services qui acceptent les transactions non confirmées comme définitives, ce qui
     obligerait ces services à modifier leur comportement.
 
     En plus de la description du problème et de la description détaillée de la manière
@@ -99,7 +99,7 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
     `mempoolfullrbf` à false.
 
 - **Recherche sur les rollups de validité** : John Light a [posté][light ml ru]
-  sur la liste de diffusion Bitcoin-Dev un lien vers un [rapport de recherche détaillé][light ru].
+  sur la liste de diffusion Bitcoin-Dev un lien vers un [rapport de recherche détaillé][light ru]
   qu'il a préparé sur les validity rollups--un type de [sidechain][topic sidechains] où
   l'état actuel de la sidechain est stocké de manière compacte sur la chaîne principale.
   Un utilisateur de la chaîne latérale peut utiliser l'état stocké sur la chaîne principale
@@ -109,25 +109,25 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   chaîne latérale tentent d'empêcher le retrait.
 
     Les recherches de Light décrivent en profondeur les validity rollups, examinent comment
-    leur prise en charge pourrait être ajoutée à Bitcoin, et examine les différentes
-    préoccupations liées à leur mise en œuvre.
+    leur prise en charge pourrait être ajoutée à Bitcoin, et étudient les différents
+    problèmes liés à leur mise en œuvre.
 
-- **Validité de la sécurité de MuSig2:** Jonas Nick a [posté][nick musig2] sur la
-  liste de diffusion Bitcoin-Dev à propos d'une vulnérabilité que lui et plusieurs
+- **Validité de la sécurité de MuSig2 :** Jonas Nick a [signalé][nick musig2] sur la
+  liste de diffusion Bitcoin-Dev une vulnérabilité que lui et plusieurs
   autres personnes ont découvert dans l'algorithme [MuSig2][topic musig]
   tel que documenté dans un [projet de BIP][bips #1372]. En bref, le protocole est vulnérable si
   un attaquant connaît la clé publique d'un utilisateur, une modification de cette clé publique
   pour laquelle l'utilisateur signera (comme avec [BIP32][topic bip32] extended pubkeys)
   et peut manipuler la version de la clé pour laquelle l'utilisateur signera.
 
-    Jonas Nick pense que la vulnérabilité "ne devrait s'appliquer que dans des cas relativement rares".
+    Jonas Nick pense que la vulnérabilité "ne devrait s'appliquer que dans des cas relativement rares"
     et encourage toute personne utilisant (ou prévoyant d'utiliser bientôt MuSig2
     à lui poser des questions, ainsi qu'à ses co-auteurs.
     Le projet de BIP pour MuSig2 devrait être mis à jour prochainement afin d'aborder ce problème.
 
-- **Taille minimale des transactions relayables:** Greg Sanders a [posté][sanders
+- **Taille minimale des transactions relayables :** Greg Sanders a [posté][sanders
   min] sur la liste de diffusion Bitcoin-Dev une demande pour que Bitcoin Core puisse
-  assouplir une politique ajoutée pour rendre plus difficile l'exploitation de la
+  assouplir une mesure ajoutée pour rendre plus difficile l'exploitation de la
   vulnerabilité[CVE-2017-12842][]. Cette vulnérabilité permet à un
   attaquant qui peut obtenir une transaction de 64 octets spécialement conçue pour être confirmée
   dans un bloc, de faire croire à des clients légers qu'une ou plusieurs transactions
@@ -182,7 +182,7 @@ services Bitcoin.*
   Bitcoin Wallet), un plugin Core Lightning (Poncho), un client Lightning (Cliché), ainsi
   qu'une bibliothèque Lightning (Immortan) qui se concentrent sur le support des [canaux hébergés].
 
-- **Cashu est lancé avec le support de Lightning :**
+- **Lancement de Cashu avec le support de Lightning :**
   Le logiciel de monnaie électronique [Cashu][cashu github] est lancé en tant que
   porte-monnaie de démonstration avec un support de réception Lightning.
 
@@ -246,7 +246,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   Le nœud local stocke des informations sur la taille des paiements
   qui ont été acheminés avec succès par le nœud distant ou
   qui ont échoué en raison d'une insuffisance apparente de fonds. Cette information,
-  ajustée en fonction de leur âge, est utilisée comme données d'entrée
+  ajustée en fonction de leur âge, est utilisée comme donnée d'entrée
   pour la recherche probabiliste d'un chemin, voir la [Newsletter #163][news163 pr]).
 
 ## Notes de bas de page
