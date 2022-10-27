@@ -242,7 +242,7 @@ answers posted since our last update.*
 - [Why is `-blockmaxweight` set to 3996000 by default?]({{bse}}115499)
   Vojtěch Strnad points out that the default setting for `-blockmaxweight` in
   Bitcoin Core is 3,996,000 which is less than the segwit limit of 4,000,000
-  weight units (vbytes). Pieter Wuille explains that the difference allows
+  weight units (WU). Pieter Wuille explains that the difference allows
   buffer space for a miner to add a larger coinbase transaction with additional
   outputs beyond the default coinbase transaction created by the block template.
 
