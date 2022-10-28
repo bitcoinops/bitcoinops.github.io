@@ -7,16 +7,16 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter summarizes continued discussion about enabling
-full RBF, provides overviews for several transcripts of discussions at a
-CoreDev.tech meeting, and describes a proposal for ephemeral anchor
-outputs designed for contract protocols like LN.  Also included are our
-regular sections with summaries of popular questions and answers from
-the Bitcoin Stack Exchange, a list of new software releases and release
-candidates, and descriptions of notable changes to popular Bitcoin
-infrastructure software.
+La newsletter de cette semaine résume la suite de discussion sur l'activation
+de full RBF, fournit des aperçus de plusieurs transcriptions de discussions
+lors d'une réunion CoreDev.tech, et décrit une proposition de sorties d'ancrage
+éphémères conçues pour les protocoles de contrat comme LN. Vous trouverez
+également nos sections habituelles avec des résumés des principales questions
+et réponses du Bitcoin Stack Exchange, une liste des nouvelles versions logicielles
+et des release candidate, ainsi que les principaux changements apportés aux
+logiciels d'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
 - **Continued discussion about full RBF:** in [last week's
   newsletter][news222 rbf], we summarized a discussion on the
