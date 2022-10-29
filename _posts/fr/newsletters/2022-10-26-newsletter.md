@@ -65,14 +65,14 @@ logiciels d'infrastructure Bitcoin.
         a changé de manière significative, il peut demander à son nœud
         de ne pas accepter le paiement et rendre l'argent à Alice.
 
-    - *Bitcoin Core not in charge of network:* Gloria Zhao [wrote][zhao
-      no control] in the IRC discussion, "I think whatever option we
-      take, it should be made abundantly clear to users that Core does
-      not control whether full RBF happens or not. We could revert
-      [25353][bitcoin core #25353] and it could still happen. [...]"
+    - *Bitcoin Core n'est pas en charge du réseau :* Gloria Zhao [a écrit][zhao
+      no control] dans la discusion IRC, "Je pense que, quelle que soit l'option
+      choisie, il doit être clair pour les utilisateurs que le Core ne contrôle
+      pas si le full RBF se produit ou non. Nous pourrions revenir en arrière
+      [25353][bitcoin core #25353] et cela pourrait encore arriver. [...]"
 
-        After the meeting, Zhao also posted a detailed [overview][zhao
-        overview] of the situation.
+        Après la réunion, Zhao a aussi posté une [vue détaillée][zhao
+        overview] de la situation.
 
     - *No removal means the problem could happen:* in the IRC discussion,
       Anthony Towns [echoed][towns uncoordinated] his points from last
