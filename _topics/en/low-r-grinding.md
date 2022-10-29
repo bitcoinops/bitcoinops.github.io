@@ -34,6 +34,9 @@ optech_mentions:
   - title: "LDK #1388 adds default support for creating low-r signatures"
     url: /en/newsletters/2022/04/06/#ldk-1388
 
+  - title: "BDK #779 adds support for creating low-r signatures"
+    url: /en/newsletters/2022/11/02/#bdk-779
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: What is signature grinding?
