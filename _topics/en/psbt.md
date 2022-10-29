@@ -189,6 +189,9 @@ optech_mentions:
   - title: "BIPs #1293 adds BIP372 for including Pay-to-contract tweak fields in a PSBT"
     url: /en/newsletters/2022/10/05/#bips-1293
 
+  - title: "Rust Bitcoin #957 adds an API for signing PSBTs"
+    url: /en/newsletters/2022/11/02/#rust-bitcoin-957
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

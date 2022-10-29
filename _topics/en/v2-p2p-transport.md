@@ -47,6 +47,9 @@ optech_mentions:
   - title: "CoreDev.tech discussion of v2 P2P encrypted transport proposal"
     url: /en/newsletters/2022/10/26/#transport-encryption
 
+  - title: "Request for feedback on message identifiers for v2 P2P encrypted transport"
+    url: /en/newsletters/2022/11/02/#bip324-message-identifiers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Eclair #2416 adds support for receiving payments requested using the offers protocol"
     url: /en/newsletters/2022/09/21/#eclair-2416
 
+  - title: "Core Lightning #5646 updates the implementation of offers to remove x-only public keys"
+    url: /en/newsletters/2022/11/02/#core-lightning-5646
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
