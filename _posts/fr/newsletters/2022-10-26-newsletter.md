@@ -18,50 +18,52 @@ logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Continued discussion about full RBF:** in [last week's
-  newsletter][news222 rbf], we summarized a discussion on the
-  Bitcoin-Dev mailing list about the inclusion of a new `mempoolfullrbf`
-  option that could create problems for several businesses which
-  accept transactions with zero confirmations ("zero conf") as final
-  payments.  Discussion continued this week on both the mailing list and
-  the #bitcoin-core-dev IRC room.  Some highlights of the discussion
-  include:
+- **Poursuite de la discussion sur le full RBF :** durant [la newsletter
+  de la semaine dernière][news222 rbf], nous avons résumé une discussion
+  sur la liste de diffusion Bitcoin-Dev concernant l'inclusion d'une
+  nouvelle option `mempoolfullrbf` qui pourrait créer des problèmes pour
+  plusieurs entreprises qui acceptent des transactions avec zéro confirmation
+  ("zero conf") comme paiement final.  La discussion a continué cette semaine
+  à la fois sur la liste de diffusion et dans la salle IRC #bitcoin-core-dev.
+  Voici quelques points saillants de la discussion :
 
-    - *Free option problem:* Sergej Kotliar [warned][kotliar free
-      option] that he believes the greatest problem with any type of transaction
-      replacement is that it creates a free American call option.  For
-      example, customer Alice requests to buy widgets from merchant Bob.
-      Bob gives Alice an invoice for 1 BTC at the current price of
-      $20,000 USD/BTC.  Alice sends Bob the 1 BTC in a transaction with
-      a low feerate.  The transaction remains unconfirmed when the
-      exchange rate changes to $25,000 USD/BTC, meaning Alice is now
-      paying $5,000 more.  At this point, she quite rationally chooses
-      to replace her transaction with one paying the BTC back to
-      herself, effectively canceling the transaction.  However, if instead the
-      exchange rate had changed in Alice's favor (e.g. $15,000 USD/BTC), Bob
-      can't cancel Alice's payment and so he has no way in the normal
-      onchain Bitcoin transaction flow to exercise the same option,
-      creating an asymmetric exchange rate risk.  By comparison, when
-      transaction replacement isn't possible, Alice and Bob share the
-      same exchange rate risk.
+    - *Problème d'option gratuite :* Sergej Kotliar [averti[kotliar free
+      option] qu'il pense que le plus grand problème de tout type de
+      remplacement de transaction est qu'il crée une option d'achat
+      américaine gratuite. Par exemple, le client Alice demande à acheter
+      des gadgets au marchand Bob. Bob donne à Alice une facture pour
+      1 BTC au prix actuel de 20 000 USD/BTC. Alice envoie à Bob les 1 BTC
+      dans une transaction avec un faible taux de frais. La transaction
+      n'est pas confirmée lorsque le taux de change passe à 25 000 USD/BTC,
+      ce qui signifie qu'Alice paie maintenant 5 000 dollars de plus.
+      À ce stade, elle choisit très rationnellement de remplacer sa transaction
+      par une transaction dans laquelle elle se rembourse les BTC, annulant
+      ainsi la transaction. Cependant, si le taux de change avait évolué en
+      faveur d'Alice (par exemple 15 000 USD/BTC), Bob ne pourrait pas annuler
+      le paiement d'Alice et n'aurait donc aucun moyen, dans le flux normal
+      des transactions Bitcoin onchain, d'exercer la même option, créant ainsi
+      un risque de change asymétrique. En comparaison, lorsque le remplacement
+      de la transaction n'est pas possible, Alice et Bob partagent le même
+      risque de taux de change.
 
-        Kotliar notes that the problem exists today with [BIP125][]
-        opt-in [RBF][topic rbf] being available, but believes that
-        full-RBF would make the problem worse.
+        Kotliar note que le problème existe aujourd'hui avec le [BIP125][]
+        opte pour le [RBF][topic rbf] soit disponible, mais estime que
+        full-RBF pourrait accentuer le problème.
 
-        Greg Sanders and Jeremy Rubin [replied][sanders cpfp] in
-        [separate][rubin cpfp] emails to note that merchant Bob could
-        incentivize miners to confirm customer Alice's original
-        transaction using [CPFP][topic cpfp], particularly if [package
-        relay][topic package relay] was enabled.
+        Greg Sanders and Jeremy Rubin [ont répondu][sanders cpfp]
+        [separement][rubin cpfp] pour noter que le commerçant Bob
+        pourrait inciter les mineurs à confirmer la transaction
+        originale du client Alice en utilisant [CPFP][topic cpfp],
+        particuliérement si [package relay][topic package relay]
+        était activé.
 
-        Antoine Riard [noted][riard free option] that the same risk
-        exists with LN, as Alice could wait to pay merchant Bob's
-        invoice up until shortly before it expired, giving her time to
-        wait for the exchange rate to change.  Although in that case, if
-        Bob noticed that the exchange rate had changed significantly, he
-        could instruct his node not to accept the payment, returning the
-        money to Alice.
+        Antoine Riard [note][riard free option] que le même risque
+        existe avec LN, car Alice pourrait attendre de payer la facture
+        du commerçant Bob jusqu'à peu avant son expiration, ce qui lui
+        laisserait le temps d'attendre que le taux de change change.
+        Cependant, dans ce cas, si Bob remarque que le taux de change
+        a changé de manière significative, il peut demander à son nœud
+        de ne pas accepter le paiement et rendre l'argent à Alice.
 
     - *Bitcoin Core not in charge of network:* Gloria Zhao [wrote][zhao
       no control] in the IRC discussion, "I think whatever option we
