@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Eclair #2418 and #2408 add support for receiving payments sent with blinded routes"
     url: /en/newsletters/2022/09/21/#eclair-2418
 
+  - title: "Core Lightning #5646 adds support for forwarding blinded payments"
+    url: /en/newsletters/2022/11/02/#core-lightning-5646
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

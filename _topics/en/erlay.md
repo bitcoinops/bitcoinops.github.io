@@ -45,6 +45,9 @@ optech_mentions:
   - title: "Bitcoin Core #23443 adds the `sendtxrcncl` negotiation message for Erlay"
     url: /en/newsletters/2022/10/26/#bitcoin-core-23443
 
+  - title: Discussion about inconsistent mempools and how that could affect Erlay
+    url: /en/newsletters/2022/11/02/#better-peering-involves-tradeoffs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Minisketch

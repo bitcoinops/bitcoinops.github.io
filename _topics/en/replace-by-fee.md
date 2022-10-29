@@ -122,6 +122,9 @@ optech_mentions:
   - title: "Continued discussion about `mempoolfullrbf` option for enabling full RBF"
     url: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 
+  - title: "Discussion about `mempoolfullrbf` option's effect on mempool consistency"
+    url: /en/newsletters/2022/11/02/#mempool-consistency
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

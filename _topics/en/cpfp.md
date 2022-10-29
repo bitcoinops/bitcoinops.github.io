@@ -71,8 +71,11 @@ optech_mentions:
   - title: "BIP proposed for package relay that can make CPFP bumping more reliable"
     url: /en/newsletters/2022/05/25/#package-relay-proposal
 
-  - title: "Suggest to use CPFP to address RBF-related free option problem"
+  - title: "Suggestion to use CPFP to address RBF-related free option problem"
     url: /en/newsletters/2022/10/26/#free-option-problem
+
+  - title: "Suggestion for LN to choose an alternative to using CPFP for HTLC fee bumping"
+    url: /en/newsletters/2022/11/02/#anchor-outputs-workaround
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

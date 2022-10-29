@@ -45,6 +45,9 @@ optech_mentions:
   - title: "Rust Bitcoin #1088 adds structures and methods for compact blocks"
     url: /en/newsletters/2022/08/03/#rust-bitcoin-1088
 
+  - title: Discussion about inconsistent mempools and how that could affect compact block relay
+    url: /en/newsletters/2022/11/02/#better-peering-involves-tradeoffs
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
