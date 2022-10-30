@@ -74,159 +74,163 @@ logiciels d'infrastructure Bitcoin.
         Après la réunion, Zhao a aussi posté une [vue détaillée][zhao
         overview] de la situation.
 
-    - *No removal means the problem could happen:* in the IRC discussion,
-      Anthony Towns [echoed][towns uncoordinated] his points from last
-      week, "if we're not going to remove the `mempoolfullrbf` option from
-      24.0, we're going for an uncoordinated deployment."
+    - *L'absence de retrait signifie que le problème peut se produire :* 
+      dans la discussion sur IRC, Anthony Towns [a rappelé][towns uncoordinated]
+      ses points de la semaine dernière, "si nous ne supprimons pas l'option
+      `mempoolfullrbf` de la 24.0, nous allons vers un déploiement non coordonné."
 
-        Greg Sanders was [doubtful][sanders doubt], "the question is:
-        will 5%+ set a variable? I suspect not."  Towns [replied][towns
-        uasf], "[UASF][topic soft fork activation] `uacomment`
-        demonstrated it's easy to get ~11% to set a variable in just a
-        couple of weeks".
+        Greg Sanders était [incertain][sanders doubt], "la question est:
+        Est-ce que 5 %+s constitueront une variable ? Je ne pense pas."
+        Towns [a répondu][towns uasf], "[UASF][topic soft fork activation]
+        `uacomment` a démontré qu'il était facile d'obtenir ~11% d'une
+        variable en seulement  quelques semaines".
 
-    - *Should be an option:* Martin Zumsande [said][zumsande option] in
-      the IRC discussion, "I think that if a meaningful number of node
-      operators and miners want a specific policy, it shouldn't be on
-      the devs to tell them 'you can't have that now'. Devs can and
-      should give a recommendation (by picking the default), but
-      providing options to informed users should never be a problem."
+    - *Devrait être une option :* Martin Zumsande [a dit][zumsande option]
+      dans la discussion IRC, "Je pense que si un nombre significatif
+      d'opérateurs de nœuds et de mineurs veulent une politique spécifique,
+      cela ne devrait pas être aux devs de leur dire 'vous ne pouvez pas
+      avoir cela maintenant'. Les devs peuvent et doivent donner une
+      recommandation (en choisissant le défaut), mais fournir des options
+      aux utilisateurs informés ne devraient jamais être un problème."
 
-    As of this writing, no clear resolution had been reached.  The
-    `mempoolfullrbf` option is still included in the release candidates
-    for the upcoming version of Bitcoin Core 24.0 and it is Optech's
-    recommendation that any service depending on zero conf transactions
-    carefully evaluate the risks, perhaps starting by reading the emails
-    linked in [last week's newsletter][news222 rbf].
+    Au moment où nous écrivons ces lignes, aucune résolution claire n'a
+    été trouvée. L'option `mempoolfullrbf` est toujours incluse dans les
+    release candidate de la prochaine version de Bitcoin Core 24.0 et
+    Optech recommande que tout service dépendant des transactions zero conf
+    évalue soigneusement les risques, en commençant peut-être par lire
+    les courriels dont le lien figure à l'adresse suivante
+    [de la newsletter de la semaine dernière][news222 rbf].
 
-- **CoreDev.tech transcripts:** prior to The Atlanta Bitcoin Conference
-  (TabConf), about 40 developers participated in a CoreDev.tech event.
-  [Transcripts][coredev xs] for about half of the meetings from the event
-  have been provided by Bryan Bishop.  Notable discussions included:
+- **CoreDev.tech transcription :** Avant la conférence Atlanta Bitcoin
+  (TabConf), environ 40 développeurs ont participé à un événement
+  CoreDev.tech. Les transcriptions][coredev xs] d'environ la moitié
+  des réunions de l'événement ont été fournies par Bryan Bishop.
+  Les principales discussions incluaient :
 
-    - [Transport encryption][p2p encryption]: a conversation about the
-      recent update to the [version 2 encrypted transport
-      protocol][topic v2 p2p transport] proposal (see
-      [Newsletter #222][news222 bip324]).  This protocol would make it
-      harder for network eavesdroppers to learn which IP address
-      originated a transaction and improve the ability to detect and
-      resist man-in-the-middle attacks between honest nodes.
+    - [Chiffrement du transport][p2p encryption]: une conversation sur
+      la récente mise à jour de la proposition de [protocole de transport
+      chiffré version 2] [topic v2 p2p transport] (voir la [Newsletter #222]
+      [news222 bip324]). Ce protocole rendrait plus difficile pour les
+      espions du réseau de savoir quelle adresse IP est à l'origine d'une
+      transaction et améliorerait la capacité à détecter et à résister aux
+      attaques de type "man-in-the-middle" entre des nœuds honnêtes.
 
-        The discussion covers several of the protocol design
-        considerations and is a recommended read for anyone wondering
-        why the protocol authors made certain decisions.  It also
-        examines the relationship to the earlier [countersign][topic
-        countersign] authentication protocol.
+        La discussion couvre plusieurs des considérations relatives à la
+        conception du protocole et est une lecture recommandée pour tous ceux
+        qui se demandent pourquoi les auteurs du protocole ont pris certaines
+        décisions. Elle examine également la relation avec le protocole
+        d'authentification antérieur [countersign][topic countersign].
 
-    - [Fees][fee chat]: a wide-ranging discussion about transaction fees
-      historically, presently, and in the future.  Some topics included
-      queries about why blocks are seemingly almost always nearly full
-      but the mempool isn't, debate about how long we have for a significant
-      fee market to develop before we have to [worry][topic fee sniping]
-      about Bitcoin's long-term stability, and what solutions we could
-      deploy if we did believe a problem existed.
+    - [Frais][fee chat]: une large discussion sur les frais de transaction
+    dans le passé, le présent et l'avenir. Parmi les sujets abordés, citons
+    les questions sur la raison pour laquelle les blocs sont apparemment toujours
+    presque pleins alors que le mempool ne l'est pas, le débat sur le temps dont
+    nous disposons pour qu'un marché de frais significatif se développe avant que
+    nous devions [nous inquiéter][topic fee sniping] de la stabilité à long terme
+    de Bitcoin, et les solutions que nous pourrions déployer si nous pensions
+    qu'un problème existait.
 
-    - [FROST][]: a presentation about the FROST threshold signature
-      scheme.  The transcript documents several excellent technical
-      questions about the cryptographic choices in the design and may
-      be useful reading for anyone interested in learning more
-      about FROST specifically or cryptographic protocol design in
-      general.  See also the TabConf transcript about [ROAST][], another
-      threshold signature scheme for Bitcoin.
+    - [FROST][]: une présentation sur le schéma de signature à seuil FROST.
+    La transcription documente plusieurs excellentes questions techniques sur
+    les choix cryptographiques dans la conception et peut être une lecture
+    utile pour toute personne intéressée à en savoir plus sur FROST en
+    particulier ou sur la conception de protocoles cryptographiques en général.
+    Voir aussi la transcription de TabConf sur [ROAST][], un autre schéma
+    de signature à seuil pour Bitcoin.
 
-    - [GitHub][github chat]: a discussion about moving the Bitcoin Core
-      project's git hosting from GitHub to another issue and PR
-      management solution, as well as considering the benefits of
-      continuing to use GitHub.
+    - [GitHub][github chat]: une discussion sur le transfert de l'hébergement git
+    du projet Bitcoin Core de GitHub vers une autre solution de gestion des
+    problèmes et des relations publiques, ainsi que sur les avantages de continuer
+    à utiliser GitHub.
 
-    - [Provable specifications in BIPs][hacspec chat]: part of a discussion
-      about using the [hacspec][] specification language in BIPs to
-      provide specifications that are provably correct.  See also the
-      [transcript][hacspec preso] for a related talk during the TabConf.
+    - [Spécifications prévisibles dans les BIP][hacspec chat]: dans le cadre
+    d'une discussion sur l'utilisation du langage de spécification [hacspec][]
+    dans les BIPs pour fournir des spécifications qui sont prouvées correctes.
+    Voir aussi la [transcript][hacspec preso] pour un exposé connexe pendant
+    la TabConf.
 
-    - [Package and v3 transaction relay][package relay chat]: the
-      transcript of a presentation about proposals to enable [package
-      transaction relay][topic package relay] and use new transaction
-      relay rules to eliminate [pinning attacks][topic transaction
-      pinning] in certain cases.
+    - [Paquet et relais de transactions v3][package relay chat]: la
+    transcription d'une présentation sur les propositions visant à activer
+    le [relais de transactions en paquet][topic package relay] et à utiliser de
+    nouvelles règles de relais de transaction pour éliminer les
+    [attaques de pinning][topic transaction pinning] dans certains cas.
 
-    - [Stratum v2][stratum v2 chat]: a discussion that started with the
-      announcement of a new open-source project implementing the Stratum
-      version 2 pooled mining protocol.  Improvements made available by
-      Stratum v2 include authenticated connections and the ability for
-      individual miners (those with local mining equipment) to choose
-      which transactions to mine (rather than the pool choosing
-      transactions).  In addition to many other benefits, it was
-      mentioned in the discussion that allowing individual miners to
-      choose their own block template might become highly desirable to
-      pools that are worried about governments mandating which
-      transactions can be mined, as in the [Tornado Cash][] controversy.
-      Most of the discussion focused on the changes that would need to
-      be made to Bitcoin Core to enable native support for Stratum v2.
-      See also the TabConf transcript about [Braidpool][braidpool chat],
-      a decentralized pooled mining protocol.
+    - [Stratum v2][stratum v2 chat]: une discussion qui a commencée avec l'annonce
+    d'un nouveau projet open-source mettant en œuvre le protocole de minage groupé
+    Stratum version 2. Les améliorations apportées par Stratum v2 comprennent des
+    connexions authentifiées et la possibilité pour les mineurs individuels (ceux
+    qui disposent d'un équipement minier local) de choisir les transactions à
+    exploiter (plutôt que le pool qui choisit les transactions).  En plus de nombreux
+    autres avantages, il a été mentionné dans la discussion que le fait de permettre
+    aux mineurs individuels de choisir leur propre modèle de bloc pourrait devenir
+    très souhaitable pour les pools qui s'inquiètent de voir les gouvernements imposer
+    les transactions à extraire, comme dans la controverse de [Tornado Cash][]. La
+    plupart des discussions se sont concentrées sur les changements qui devraient être
+    apportés à Bitcoin Core pour permettre le support natif de Stratum v2. Voir
+    également la transcription de la TabConf sur [Braidpool][braidpool chat], un
+    protocole de minage en pool décentralisé.
 
-    - [Merging][merging chat] is a discussion about strategies to help
-      get code reviewed in the Bitcoin Core project, although many
-      suggestions also apply to other projects.  Ideas included:
+    - [Merging][merging chat] est une discussion sur les stratégies permettant d'obtenir
+    une révision du code dans le cadre du projet Bitcoin Core, bien que de nombreuses
+    suggestions s'appliquent également à d'autres projets.  Idées incluses :
 
-        - Break big changes into several small PRs
+        - Divisez les grands changements en plusieurs petites PR
 
-        - Make it easy for reviewers to understand the ultimate
-          objective.  For all PRs, this means writing a motivational PR
-          description.  For changes that are being made incrementally,
-          use tracking issues, project boards, and motivate
-          refactorings by also opening the PRs that will use that
-          refactored code to accomplish a desirable goal
+        - Faire en sorte que les évaluateurs comprennent facilement l'objectif final.
+        Pour chaque PR, cela signifie rédiger une description motivante de la PR.
+        Pour les changements qui sont effectués de manière incrémentielle, utilisez les
+        suivis de problèmes, les tableaux de projet et motivez les remaniements en ouvrant
+        également les PR qui utiliseront le code remanié pour atteindre un objectif
+        souhaitable.
 
-        - Produce high-level explainers for long-running projects
-          describing the state before the project, the current progress,
-          what it will take to accomplish the outcome, and the benefits
-          that will provide to users
+        - Produire des explications de haut niveau pour des projets de longue haleine
+        décrivant l'état antérieur du projet, l'état d'avancement actuel, ce qu'il faudra
+        faire pour atteindre le résultat et les avantages qu'en tireront les utilisateurs.
 
-        - Form working groups with those who are interested in the same
-          projects or code subsystems
+        - Former des groupes de travail avec ceux qui sont intéressés par les mêmes
+        projets ou sous-systèmes de codes
 
-- **Ephemeral anchors:** Greg Sanders followed up previous discussion
-  about v3 transaction relay (see [Newsletter #220][news220 ephemeral])
-  with a [post][sanders ephemeral] to the Bitcoin-Dev mailing containing
-  a proposal for a new type of [anchor output][topic anchor outputs].  A
-  v3 transaction could pay zero fees but contain an output paying the
-  script `OP_TRUE`, allowing anyone to spend it under the consensus
-  rules in a child transaction.  The unconfirmed zero-fee parent transaction would
-  only be relayed and mined by Bitcoin Core if it was part of a transaction package which also
-  contained the child transaction spending the OP_TRUE output.  This
-  would only affect Bitcoin Core's policy; no consensus rules would be
-  changed.
+- **Ephemeral anchors:** Greg Sanders a poursuivi la discussion précédente
+sur le relais des transactions v3 (voir [Newsletter #220][news220 ephemeral])
+avec un [article][sanders ephemeral] sur le serveur Bitcoin-Dev contenant une
+proposition pour un nouveau type de [anchor output][topic anchor outputs]. Une
+transaction v3 pourrait payer zéro frais mais contenir une sortie payant le
+script `OP_TRUE`, permettant à quiconque de la dépenser selon les règles du
+consensus dans une transaction enfant. La transaction parentale non confirmée
+à frais nuls ne serait relayée et exploitée par Bitcoin Core que si elle faisait
+partie d'un paquet de transactions contenant également la transaction enfant
+dépensant la sortie OP_TRUE.  Cela n'affecterait que la politique de Bitcoin Core;
+aucune règle de consensus ne serait modifiée.
 
-    Described advantages of this proposal include that it eliminates the need
-    to use one-block relative timelocks (called `1 OP_CSV` after the
-    code used to enable them) to prevent [transaction pinning][topic
-    transaction pinning] and allows anyone to fee bump the parent
-    transaction (similar to an earlier [fee sponsorship][topic fee
-    sponsorship] soft fork proposal).
+    Les avantages décrits dans cette proposition sont qu'elle élimine le besoin
+    d'utiliser des timelocks relatifs d'un seul bloc (appelés `1 OP_CSV` d'après
+    le code utilisé pour les activer) pour empêcher l'[épinglage de la transaction]
+    [topic transaction pinning] et permet à quiconque de faire payer la transaction
+    parente (similaire à une proposition antérieure de [parrainage de la transaction]
+    [topic fee sponsorship]).
 
-    Jeremy Rubin [replied][rubin ephemeral] in support of the proposal
-    but noted that it doesn't work for any contract that can't use v3
-    transactions.  Several other developers also discussed the concept,
-    all of them seeming to find it appealing as of this writing.
+    Jeremy Rubin [a répondu][rubin ephemeral] a soutenu la proposition mais a noté
+    qu'elle ne fonctionne pas pour les contrats qui ne peuvent pas utiliser les
+    transactions v3. Plusieurs autres développeurs ont également discuté du concept,
+    tous semblant le trouver attrayant au moment de la rédaction de cet article.
 
-## Selected Q&A from Bitcoin Stack Exchange
+## Selection de Q&R du Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+*[Bitcoin Stack Exchange][bitcoin.se] est une des principales places pour les
+contributeurs d'Optech pour trouver les réponses à leurs questions---ou lorsque nous
+avons quelques instants pour aider les utilisateurs curieux ou confus. Dans cette
+chronique mensuelle, nous mettons en avant certaines des questions et réponses les
+plus postées depuis notre dernière édition.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Why would someone use a 1-of-1 multisig?]({{bse}}115443)
-  Vojtěch Strnad asks why someone would choose to use 1-of-1 multisig over
-  P2WPKH given P2WPKH is cheaper and has a larger anonymity set. Murch lists a
-  variety of resources showing at least one entity spending millions of 1-of-1
-  UTXOs over the years, although the motivations remain unclear.
+- [Pourquoi quelqu'un utiliserait-il un1-of-1 multisig?]({{bse}}115443)
+  Vojtěch Strnad demande pourquoi quelqu'un choisirait d'utiliser 1-of-1 multisig
+  plutôt que P2WPKH étant donné que P2WPKH est moins cher et a un plus grand ensemble
+  d'anonymat. Murch énumère une variété de ressources montrant qu'au moins une entité
+  a dépensé des millions de 1-of-1 UTXOs au fil des ans, bien que les motivations
+  restent floues.
 
 - [Why would a transaction have a locktime in the year 1987?]({{bse}}115549)
   1440000bytes points to a comment from Christian Decker referencing [a section][bolt 3 commitment]
@@ -234,74 +238,73 @@ answers posted since our last update.*
   bits are 0x20, lower 24 bits are the lower 24 bits of the obscured commitment
   transaction number".
 
-- [What is the size limit on the UTXO set, if any?]({{bse}}115439)
-  Pieter Wuille answers that there is no consensus limit on the UTXO set size and that the
-  rate of growth of the UTXO set is bounded by the block size which limits the
-  number of UTXOs that can be created in a given block. In a [related answer][se
-  murch utxo calcs], Murch estimates that it would take about 11 years to create
-  a UTXO for every person on Earth.
+- [Quelle est la taille limite d'un ensemble d'UTXO, le cas échéant ?]({{bse}}115439)
+  Pieter Wuille répond qu'il n'y a pas de limite consensuelle à la taille de l'ensemble
+  des UTXO et que le taux de croissance des UTXO est limité par la taille du bloc qui
+  limite le nombre d'UTXO qui peuvent être créés dans un bloc donné. Dans une
+  [réponse connexe][se murch utxo calcs], Murch estime qu'il faudrait environ 11 ans
+  pour créer un UTXO pour chaque personne sur Terre.
 
-- [Why is `-blockmaxweight` set to 3996000 by default?]({{bse}}115499)
-  Vojtěch Strnad points out that the default setting for `-blockmaxweight` in
-  Bitcoin Core is 3,996,000 which is less than the segwit limit of 4,000,000
-  weight units (vbytes). Pieter Wuille explains that the difference allows
-  buffer space for a miner to add a larger coinbase transaction with additional
-  outputs beyond the default coinbase transaction created by the block template.
+- [Pourquoi est-ce que `-blockmaxweight` est réglé à 3996000 par defaut?]({{bse}}115499)
+  Vojtěch Strnad souligne que le paramètre par défaut de `-blockmaxweight` dans Bitcoin Core
+  est de 3 996 000, ce qui est inférieur à la limite segwit de 4 000 000 d'unités de poids (vbytes).
+  Pieter Wuille explique que cette différence permet à un mineur de disposer d'un espace tampon
+  pour ajouter une transaction coinbase plus importante avec des sorties supplémentaires au-delà
+  de la transaction coinbase par défaut créée par le modèle de bloc.
 
-- [Can a miner open a Lightning channel with a coinbase output?]({{bse}}115588)
-  Murch points out challenges with a miner creating a Lightning channel using an
-  output from their coinbase transaction including delays in closing the channel
-  given the coinbase maturation period as well as needing to continuously renegotiate the
-  channel open while hashing due to the coinbase transaction's hash constantly
-  changing during mining.
+- [Un mineur peut-il ouvrir un canal Lightning avec une sortie Coinbase ?]({{bse}}115588)
+  Murch souligne les difficultés rencontrées par un mineur qui crée un canal Lightning en utilisant
+  une sortie de sa transaction coinbase, notamment les retards dans la fermeture du canal compte tenu
+  de la période de maturation de coinbase, ainsi que la nécessité de renégocier en permanence
+  l'ouverture du canal pendant le hachage en raison du hachage de la transaction coinbase qui change
+  constamment pendant le minage.
 
-- [What is the history on how previous soft forks were tested prior to being considered for activation?]({{bse}}115434)
-  Michael Folkson quotes a [recent mailing list post][aj soft fork testing] from Anthony Towns which
-  describes the testing around the P2SH, CLTV, CSV, segwit, [taproot][topic
-  taproot], CTV, and [Drivechain][topic sidechains] proposals.
+- [Quel est l'historique de la manière dont les soft forks précédents ont été testées avant d'être considérées pour l'activation ?]({{bse}}115434)
+  Michael Folkson cite un [récent message de la liste de diffusion] [aj soft fork testing]
+  d'Anthony Towns qui décrit les tests autour des propositions P2SH, CLTV, CSV, segwit,
+  [taproot] [topic taproot], CTV, et [Drivechain] [topic sidechains].
 
-## Releases and release candidates
+## Mises à jour et release candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles mises à jour et release candidates des principaux logiciels d'infrastructure Bitcoin.
+Prévoyez s'il vous plait de vous mettre à jour à la nouvelle version ou d'aider à tester les pré-versions.*
 
-- [LDK 0.0.112][] is a release of this library for building LN-enabled
-  applications.
+- [LDK 0.0.112][] est une version de cette bibliothèque permettant de construire
+  des application basé sur LN
 
-- [Bitcoin Core 24.0 RC2][] is a release candidate for the
-  next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+- [Bitcoin Core 24.0 RC2][] est une release candidate pour la prochaine
+  version de l'implémentation de nœuds complets la plus largement utilisée
+  sur le réseau.  Un [guide de test] [bcc testing] est disponible.
 
-  **Warning:** this release candidate includes the `mempoolfullrbf`
-  configuration option which several protocol and application developers
-  believe could lead to problems for merchant services as described
-  in the newsletters for this week and last week.  Optech encourages any
-  services that might be affected to evaluate the RC and participate in
-  the public discussion.
+  **Attention :** cette release candidate inclut l'option de configuration
+  `mempoolfullrbf` qui, selon plusieurs développeurs de protocoles et d'applications,
+  pourrait entraîner des problèmes pour les services marchands, comme décrit
+  dans les bulletins de cette semaine et de la semaine dernière. Optech encourage
+  tous les services qui pourraient être affectés à évaluer la RC et à participer
+  à la discussion publique.
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23443][] adds a new P2P protocol message,
-  `sendtxrcncl` (send transaction reconciliation), that allows a node to
-  signal to a peer that it supports [erlay][topic erlay].  This PR adds
-  just the first part of the erlay protocol---other parts are needed
-  before it can be used.
+- [Bitcoin Core #23443][] ajoute un nouveau message de protocole P2P,
+  `sendtxrcncl` (envoyer la réconciliation des transactions), qui permet
+  à un nœud de signaler à un pair qu'il supporte [erlay][topic erlay].
+  Ce PR n'ajoute que la première partie du protocole erlay---d'autres parties
+  sont nécessaires pour pouvoir l'utiliser.
 
-- [Eclair #2463][] and [#2461][eclair #2461] update Eclair's
-  implementation of the [interactive and dual funding protocols][topic
-  dual funding] to require every funding input opt-in to [RBF][topic
-  rbf] and also be confirmed (i.e. spend an output that's already in the
-  block chain).  These changes ensure RBF can be used and that none of
-  the fees contributed by an Eclair user will be used to help confirm any
-  of their peer's previous transactions.
+- [Eclair #2463][] et [#2461][eclair #2461] Mise à jour de l'implémentation
+  d'Éclair des [protocoles de financement interactif et double] [topic dual funding]
+  pour exiger que chaque entrée de financement opte pour [RBF] [sujet rbf] et soit
+  également confirmée (c'est-à-dire qu'elle dépense une sortie qui est déjà dans la
+  chaîne de blocs). Ces changements garantissent que RBF peut être utilisé et
+  qu'aucun des frais apportés par un utilisateur d'Eclair ne sera utilisé pour
+  aider à confirmer les transactions précédentes de son pair.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23443,2463,2461,25353" %}
