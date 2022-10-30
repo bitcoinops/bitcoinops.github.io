@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-La newsletter de cette semaine résume la suite de discussion sur l'activation
+La newsletter de cette semaine résume la suite de discussions sur l'activation
 de full RBF, fournit des aperçus de plusieurs transcriptions de discussions
 lors d'une réunion CoreDev.tech, et décrit une proposition de sorties d'ancrage
 éphémères conçues pour les protocoles de contrat comme LN. Vous trouverez
@@ -29,8 +29,8 @@ logiciels d'infrastructure Bitcoin.
 
     - *Problème d'option gratuite :* Sergej Kotliar [averti[kotliar free
       option] qu'il pense que le plus grand problème de tout type de
-      remplacement de transaction est qu'il crée une option d'achat
-      américaine gratuite. Par exemple, le client Alice demande à acheter
+      remplacement de transaction est qu'il crée un option de style Option
+      Américaine gratuite. Par exemple, le client Alice demande à acheter
       des gadgets au marchand Bob. Bob donne à Alice une facture pour
       1 BTC au prix actuel de 20 000 USD/BTC. Alice envoie à Bob les 1 BTC
       dans une transaction avec un faible taux de frais. La transaction
@@ -41,17 +41,17 @@ logiciels d'infrastructure Bitcoin.
       ainsi la transaction. Cependant, si le taux de change avait évolué en
       faveur d'Alice (par exemple 15 000 USD/BTC), Bob ne pourrait pas annuler
       le paiement d'Alice et n'aurait donc aucun moyen, dans le flux normal
-      des transactions Bitcoin onchain, d'exercer la même option, créant ainsi
+      des transactions Bitcoin onchain, de profiter de la même option, créant ainsi
       un risque de change asymétrique. En comparaison, lorsque le remplacement
       de la transaction n'est pas possible, Alice et Bob partagent le même
       risque de taux de change.
 
-        Kotliar note que le problème existe aujourd'hui avec le [BIP125][]
-        opte pour le [RBF][topic rbf] soit disponible, mais estime que
-        full-RBF pourrait accentuer le problème.
+        Kotliar note que le problème existe aujourd'hui avec la
+        disponibilité de RBF][topic rbf] du [BIP125][], mais il
+        estime que le full-RBF pourrait accentuer le problème.
 
-        Greg Sanders and Jeremy Rubin [ont répondu][sanders cpfp]
-        [separement][rubin cpfp] pour noter que le commerçant Bob
+        Greg Sanders et Jeremy Rubin [notent][sanders cpfp]
+        [séparement][rubin cpfp] que le commerçant Bob
         pourrait inciter les mineurs à confirmer la transaction
         originale du client Alice en utilisant [CPFP][topic cpfp],
         particuliérement si [package relay][topic package relay]
@@ -79,9 +79,9 @@ logiciels d'infrastructure Bitcoin.
       ses points de la semaine dernière, "si nous ne supprimons pas l'option
       `mempoolfullrbf` de la 24.0, nous allons vers un déploiement non coordonné."
 
-        Greg Sanders était [incertain][sanders doubt], "la question est:
+        Greg Sanders était [circonspect][sanders doubt], "la question est:
         Est-ce que 5 %+s constitueront une variable ? Je ne pense pas."
-        Towns [a répondu][towns uasf], "[UASF][topic soft fork activation]
+        Ce à quoi Towns [a répondu][towns uasf]: "[UASF][topic soft fork activation]
         `uacomment` a démontré qu'il était facile d'obtenir ~11% d'une
         variable en seulement  quelques semaines".
 
@@ -90,7 +90,7 @@ logiciels d'infrastructure Bitcoin.
       d'opérateurs de nœuds et de mineurs veulent une politique spécifique,
       cela ne devrait pas être aux devs de leur dire 'vous ne pouvez pas
       avoir cela maintenant'. Les devs peuvent et doivent donner une
-      recommandation (en choisissant le défaut), mais fournir des options
+      recommandation (en choisissant  l'option par défaut), mais fournir des options
       aux utilisateurs informés ne devraient jamais être un problème."
 
     Au moment où nous écrivons ces lignes, aucune résolution claire n'a
@@ -102,12 +102,12 @@ logiciels d'infrastructure Bitcoin.
     [de la newsletter de la semaine dernière][news222 rbf].
 
 - **CoreDev.tech transcription :** Avant la conférence Atlanta Bitcoin
-  (TabConf), environ 40 développeurs ont participé à un événement
+  (TabConf), 40 développeurs environ ont participé à un événement
   CoreDev.tech. Les transcriptions][coredev xs] d'environ la moitié
   des réunions de l'événement ont été fournies par Bryan Bishop.
-  Les principales discussions incluaient :
+  Les principales discussions portaient sur :
 
-    - [Chiffrement du transport][p2p encryption]: une conversation sur
+    - [le chiffrement du transport][p2p encryption]: une conversation sur
       la récente mise à jour de la proposition de [protocole de transport
       chiffré version 2] [topic v2 p2p transport] (voir la [Newsletter #222]
       [news222 bip324]). Ce protocole rendrait plus difficile pour les
@@ -121,7 +121,7 @@ logiciels d'infrastructure Bitcoin.
         décisions. Elle examine également la relation avec le protocole
         d'authentification antérieur [countersign][topic countersign].
 
-    - [Frais][fee chat]: une large discussion sur les frais de transaction
+    - [les frais][fee chat]: une large discussion sur les frais de transaction
     dans le passé, le présent et l'avenir. Parmi les sujets abordés, citons
     les questions sur la raison pour laquelle les blocs sont apparemment toujours
     presque pleins alors que le mempool ne l'est pas, le débat sur le temps dont
@@ -143,13 +143,13 @@ logiciels d'infrastructure Bitcoin.
     problèmes et des relations publiques, ainsi que sur les avantages de continuer
     à utiliser GitHub.
 
-    - [Spécifications prévisibles dans les BIP][hacspec chat]: dans le cadre
+    - [les spécifications prévisibles dans les BIP][hacspec chat]: dans le cadre
     d'une discussion sur l'utilisation du langage de spécification [hacspec][]
     dans les BIPs pour fournir des spécifications qui sont prouvées correctes.
     Voir aussi la [transcript][hacspec preso] pour un exposé connexe pendant
     la TabConf.
 
-    - [Paquet et relais de transactions v3][package relay chat]: la
+    - [les relais de transactions en paquet v3][package relay chat]: la
     transcription d'une présentation sur les propositions visant à activer
     le [relais de transactions en paquet][topic package relay] et à utiliser de
     nouvelles règles de relais de transaction pour éliminer les
@@ -160,7 +160,7 @@ logiciels d'infrastructure Bitcoin.
     Stratum version 2. Les améliorations apportées par Stratum v2 comprennent des
     connexions authentifiées et la possibilité pour les mineurs individuels (ceux
     qui disposent d'un équipement minier local) de choisir les transactions à
-    exploiter (plutôt que le pool qui choisit les transactions).  En plus de nombreux
+    exploiter (plutôt que le pool qui choisit les transactions). En plus de nombreux
     autres avantages, il a été mentionné dans la discussion que le fait de permettre
     aux mineurs individuels de choisir leur propre modèle de bloc pourrait devenir
     très souhaitable pour les pools qui s'inquiètent de voir les gouvernements imposer
@@ -172,9 +172,9 @@ logiciels d'infrastructure Bitcoin.
 
     - [Merging][merging chat] est une discussion sur les stratégies permettant d'obtenir
     une révision du code dans le cadre du projet Bitcoin Core, bien que de nombreuses
-    suggestions s'appliquent également à d'autres projets.  Idées incluses :
+    suggestions s'appliquent également à d'autres projets. Idées incluses :
 
-        - Divisez les grands changements en plusieurs petites PR
+        - Diviser les grands changements en plusieurs petites PR
 
         - Faire en sorte que les évaluateurs comprennent facilement l'objectif final.
         Pour chaque PR, cela signifie rédiger une description motivante de la PR.
@@ -209,10 +209,10 @@ aucune règle de consensus ne serait modifiée.
     parente (similaire à une proposition antérieure de [parrainage de la transaction]
     [topic fee sponsorship]).
 
-    Jeremy Rubin [a répondu][rubin ephemeral] a soutenu la proposition mais a noté
+    Jeremy Rubin [a soutenu][rubin ephemeral] a soutenu la proposition mais a noté
     qu'elle ne fonctionne pas pour les contrats qui ne peuvent pas utiliser les
     transactions v3. Plusieurs autres développeurs ont également discuté du concept,
-    tous semblant le trouver attrayant au moment de la rédaction de cet article.
+    tous semblent le trouver attrayant au moment de la rédaction de cet article.
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 
@@ -232,11 +232,11 @@ plus postées depuis notre dernière édition.*
   a dépensé des millions de 1-of-1 UTXOs au fil des ans, bien que les motivations
   restent floues.
 
-- [Why would a transaction have a locktime in the year 1987?]({{bse}}115549)
-  1440000bytes points to a comment from Christian Decker referencing [a section][bolt 3 commitment]
-  from the BOLT 3 Lightning spec that allocates the locktime field as "upper 8
-  bits are 0x20, lower 24 bits are the lower 24 bits of the obscured commitment
-  transaction number".
+- [pourquoi une transaction aurait-elle un locktime en 1987?]({{bse}}115549)
+  1440000bytes pointe vers un commentaire de Christian Decker faisant référence à
+  [une section][bolt 3 commitment] de la spécification Lightning BOLT 3 qui attribue
+  le champ locktime comme "les 8 bits supérieurs sont 0x20, les 24 bits inférieurs sont
+  les 24 bits inférieurs du numéro de transaction d'engagement masqué".
 
 - [Quelle est la taille limite d'un ensemble d'UTXO, le cas échéant ?]({{bse}}115439)
   Pieter Wuille répond qu'il n'y a pas de limite consensuelle à la taille de l'ensemble
@@ -255,7 +255,7 @@ plus postées depuis notre dernière édition.*
 - [Un mineur peut-il ouvrir un canal Lightning avec une sortie Coinbase ?]({{bse}}115588)
   Murch souligne les difficultés rencontrées par un mineur qui crée un canal Lightning en utilisant
   une sortie de sa transaction coinbase, notamment les retards dans la fermeture du canal compte tenu
-  de la période de maturation de coinbase, ainsi que la nécessité de renégocier en permanence
+  de la période de maturation d'une coinbase, ainsi que la nécessité de renégocier en permanence
   l'ouverture du canal pendant le hachage en raison du hachage de la transaction coinbase qui change
   constamment pendant le minage.
 
@@ -274,7 +274,7 @@ Prévoyez s'il vous plait de vous mettre à jour à la nouvelle version ou d'aid
 
 - [Bitcoin Core 24.0 RC2][] est une release candidate pour la prochaine
   version de l'implémentation de nœuds complets la plus largement utilisée
-  sur le réseau.  Un [guide de test] [bcc testing] est disponible.
+  sur le réseau. Un [guide de test] [bcc testing] est disponible.
 
   **Attention :** cette release candidate inclut l'option de configuration
   `mempoolfullrbf` qui, selon plusieurs développeurs de protocoles et d'applications,
