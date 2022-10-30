@@ -74,7 +74,7 @@ logiciels d'infrastructure Bitcoin.
         Après la réunion, Zhao a aussi posté une [vue détaillée][zhao
         overview] de la situation.
 
-    - *L'absence de retrait signifie que le problème peut se produire :* 
+    - *L'absence de retrait signifie que le problème peut se produire :*
       dans la discussion sur IRC, Anthony Towns [a rappelé][towns uncoordinated]
       ses points de la semaine dernière, "si nous ne supprimons pas l'option
       `mempoolfullrbf` de la 24.0, nous allons vers un déploiement non coordonné."
