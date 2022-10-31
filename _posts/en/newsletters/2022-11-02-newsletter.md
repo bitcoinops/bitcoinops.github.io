@@ -178,7 +178,17 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #23927][] rpc: Pruning nodes can not fetch blocks before syncing past their height FIXME:Xekyo
+- [Bitcoin Core #23927][] restricts `getblockfrompeer` on pruned nodes
+  to heights below the node's current synchronization progress. This
+  prevents a footgun arising from retrieving future blocks making the
+  node's block-files ineligible for pruning.
+
+  Bitcoin Core stores blocks in files of about 130 MB in whatever order
+  it receives them. Pruning will discard entire block files, but will not
+  discard any file containing a block not processed by synchronization.
+  The combination of a small data allowance and repeated use of the
+  `getblockfrompeer` RPC could cause multiple block-files ineligible for
+  pruning, and cause a pruned node to exceed its data allowance.
 
 - [Bitcoin Core #25957][] wallet: fast rescan with BIP157 block filters for descriptor wallets FIXME:glozow
 
