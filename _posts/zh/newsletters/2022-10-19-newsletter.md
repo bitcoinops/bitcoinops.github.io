@@ -115,12 +115,12 @@ the "full RBF" term.  -->
 [big msig]: https://blockstream.info/tx/7393096d97bfee8660f4100ffd61874d62f9a65de9fb6acf740c4c386990ef73?expand
 [news65 tapscript limits]: /en/newsletters/2019/09/25/#tapscript-resource-limits
 [lnd 0.15.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.2-beta
-[news221 lnd]: /en/newsletters/2022/10/12/#lnd-v0-15-2-beta
+[news221 lnd]: /zh/newsletters/2022/10/12/#lnd-v0-15-2-beta
 [btcd 0.23.2]: https://github.com/btcsuite/btcd/releases/tag/v0.23.2
 [verloren limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020993.html
 [sanders limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020996.html
-[news205 rbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
-[news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
+[news205 rbf]: /zh/newsletters/2022/06/22/#policy-limits
+[news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
 [sne rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020980.html
 [towns rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021017.html
 [light ml ru]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020998.html
