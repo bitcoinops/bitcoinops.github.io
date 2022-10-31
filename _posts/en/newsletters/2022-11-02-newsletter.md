@@ -182,7 +182,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #25957][] wallet: fast rescan with BIP157 block filters for descriptor wallets FIXME:glozow
 
-- [Bitcoin Core #23578][] Add external signer taproot support FIXME:bitschmidty
+- [Bitcoin Core #23578][] uses [HWI][topic hwi] and recently merged support for
+  [BIP371][] (see [Newsletter #207][news207 bc22558]) to allow external signing
+  support for [taproot][topic taproot] keypath spends.
 
 - [Core Lightning #5646][] updates the experimental implementation of
   [offers][topic offers] to remove [x-only public keys][news72 xonly]
@@ -222,7 +224,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   all signatures by one byte.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="23927,25957,5646,6517,7001,6831,957,779,1036,845,1378" %}
+{% include linkers/issues.md v=2 issues="23927,25957,5646,6517,7001,6831,957,779,1036,845,1378,23578,22558" %}
 [bitcoin core 24.0 rc2]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [lnd 609cc8b]: https://github.com/LightningNetwork/lnd/commit/609cc8b883c7e6186e447e8d7e6349688d78d4fd
@@ -245,3 +247,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [lnd 0.15.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.4-beta
 [lnd 0.14.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.5-beta
+[news207 bc22558]: /en/newsletters/2022/07/06/#bitcoin-core-22558

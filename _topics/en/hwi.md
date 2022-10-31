@@ -61,6 +61,9 @@ optech_mentions:
   - title: "BDK #682 adds signing capabilities for hardware signing devices using HWI and rust-hwi"
     url: /en/newsletters/2022/09/07/#bdk-682
 
+  - title: "Bitcoin Core #23578 using HWI to add support for externally signing taproot keypath spends"
+    url: /en/newsletters/2022/11/02/#bitcoin-core-23578
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Partially-Signed Bitcoin Transactions (PSBTs)
