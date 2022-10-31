@@ -27,7 +27,7 @@ logiciels d'infrastructure Bitcoin.
   à la fois sur la liste de diffusion et dans la salle IRC #bitcoin-core-dev.
   Voici quelques points saillants de la discussion :
 
-    - *Problème d'option gratuite :* Sergej Kotliar [averti[kotliar free
+    - *Problème d'option gratuite :* Sergej Kotliar [averti][kotliar free
       option] qu'il pense que le plus grand problème de tout type de
       remplacement de transaction est qu'il crée un option de style Option
       Américaine gratuite. Par exemple, le client Alice demande à acheter
@@ -47,7 +47,7 @@ logiciels d'infrastructure Bitcoin.
       risque de taux de change.
 
         Kotliar note que le problème existe aujourd'hui avec la
-        disponibilité de RBF][topic rbf] du [BIP125][], mais il
+        disponibilité de [RBF][topic rbf] du [BIP125][], mais il
         estime que le full-RBF pourrait accentuer le problème.
 
         Greg Sanders et Jeremy Rubin [notent][sanders cpfp]
@@ -103,7 +103,7 @@ logiciels d'infrastructure Bitcoin.
 
 - **CoreDev.tech transcription :** Avant la conférence Atlanta Bitcoin
   (TabConf), 40 développeurs environ ont participé à un événement
-  CoreDev.tech. Les transcriptions][coredev xs] d'environ la moitié
+  CoreDev.tech. [Les transcriptions][coredev xs] d'environ la moitié
   des réunions de l'événement ont été fournies par Bryan Bishop.
   Les principales discussions portaient sur :
 
@@ -300,7 +300,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Eclair #2463][] et [#2461][eclair #2461] Mise à jour de l'implémentation
   d'Éclair des [protocoles de financement interactif et double] [topic dual funding]
-  pour exiger que chaque entrée de financement opte pour [RBF] [sujet rbf] et soit
+  pour exiger que chaque entrée de financement opte pour [RBF][sujet rbf] et soit
   également confirmée (c'est-à-dire qu'elle dépense une sortie qui est déjà dans la
   chaîne de blocs). Ces changements garantissent que RBF peut être utilisé et
   qu'aucun des frais apportés par un utilisateur d'Eclair ne sera utilisé pour
