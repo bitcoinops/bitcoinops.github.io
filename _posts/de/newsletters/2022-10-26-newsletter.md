@@ -121,7 +121,7 @@ beliebten Bitcoin Infrastrukturprojekten.
         ist eine empfehlenswerte Lektüre für alle, die sich fragen, warum die
         Protokollautoren bestimmte Entscheidungen getroffen haben. Außerdem wird
         der Zusammenhang mit dem früheren Protokoll zur Authentifizierung durch
-        [Gegenzeichnung][topic countersign] untersucht.
+        [Countersign][topic countersign] untersucht.
 
     - [Gebühren][fee chat]: eine weitreichende Diskussion über
       Transaktionsgebühren in der Vergangenheit, Gegenwart und in der Zukunft.
@@ -210,8 +210,8 @@ beliebten Bitcoin Infrastrukturprojekten.
     Notwendigkeit beseitigt, Ein-Block relative Timelocks (nach dem Code, der
     sie ermöglicht,`1 OP_CSV` genannt) zu verwenden, um
     [Transaktions-Pinning][topic transaction pinning] zu verhindern, und dass er
-    es jedem erlaubt, die Parent-Transaktion gegen eine Gebühr zu bumpen
-    (ähnlich wie ein früherer Soft-Fork Vorschlag zu
+    es jedem erlaubt, die Priorität der Parent-Transaktion gegen eine Gebühr zu
+    erhöhen (ähnlich wie ein früherer Soft-Fork Vorschlag zu
     [Gebührensponsoring][topic fee sponsorship]).
 
     Jeremy Rubin [befürwortete][rubin ephemeral] den Vorschlag, merkte aber an,
@@ -238,7 +238,7 @@ Fragen und Antworten des letzten Monats vor.*
   ein Unternehmen im Laufe der Jahre Millionen von 1-of-1 UTXOs ausgegeben hat,
   obwohl die Beweggründe unklar bleiben.
 
-- [Warum sollte eine Transaktion eine Sperrzeit aus dem Jahr 1987 haben?]({{bse}}115549)
+- [Warum sollte die Sperrzeit einer Transaktion auf 1987 gesetzt sein?]({{bse}}115549)
   1440000bytes verweist auf einen Kommentar von Christian Decker, der sich auf
   [einen Abschnitt][bolt 3 commitment] der BOLT 3 Lightning-Spezifikation
   bezieht, in dem das Sperrzeitfeld wie folgt zugeordnet wird: "Die oberen 8
@@ -310,13 +310,13 @@ Proposals (BIPs)][bips repo], und [Lightning BOLTs][bolts repo].*
   benötigt, bevor es verwendet werden kann.
 
 - [Eclair #2463][] und [#2461][eclair #2461] aktualisieren die Eclair-
-  Implementierung der [interaktiven und dualen Finanzierungsprotokolle][topic
-  dual funding], welche erfordert, dass sich jeder Finanzierungsinput für
-  [RBF][topic rbf] anmeldet und auch bestätigt wird (d.h. einen Output ausgibt,
-  der sich bereits in der Blockchain befindet). Diese Änderungen stellen sicher,
-  dass RBF verwendet werden kann und dass keine der Gebühren, die ein
-  Eclair-Benutzer beisteuert, dazu verwendet wird, frühere Transaktionen seiner
-  Peers zu bestätigen.
+  Implementierung der [interaktiven und beidseitigen Finanzierungsprotokolle]
+  [topic dual funding], welche erfordert, dass sich jeder Finanzierungsinput als
+  ersetzbar ([RBF][topic rbf])  gekennzeichnet wird und eine bereits bestätigte
+  Ausgabe umsetzt (d.h. die Parent-Transaktion sich bereits in der Blockchain
+  befindet). Diese Änderungen stellen sicher, dass RBF verwendet werden kann und
+  dass keine der Gebühren, die ein Eclair-Benutzer beisteuert, dazu verwendet
+  werden, frühere Transaktionen seiner Peers zu bestätigen.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23443,2463,2461,25353" %}
