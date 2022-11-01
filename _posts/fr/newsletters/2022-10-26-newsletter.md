@@ -300,7 +300,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Eclair #2463][] et [#2461][eclair #2461] Mise à jour de l'implémentation
   d'Éclair des [protocoles de financement interactif et double] [topic dual funding]
-  pour exiger que chaque entrée de financement opte pour [RBF][sujet rbf] et soit
+  pour exiger que chaque entrée de financement opte pour [RBF][topic rbf] et soit
   également confirmée (c'est-à-dire qu'elle dépense une sortie qui est déjà dans la
   chaîne de blocs). Ces changements garantissent que RBF peut être utilisé et
   qu'aucun des frais apportés par un utilisateur d'Eclair ne sera utilisé pour
