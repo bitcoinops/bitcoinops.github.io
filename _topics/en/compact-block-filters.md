@@ -86,6 +86,9 @@ optech_mentions:
   - title: "Bitcoin Core #23549 adds `scanblocks` RPC to scan local compact block filters"
     url: /en/newsletters/2022/10/19/#bitcoin-core-23549
 
+  - title: "Bitcoin Core #25957 improves the performance of wallet rescans using local block filters"
+    url: /en/newsletters/2022/11/02/#bitcoin-core-25957
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering
