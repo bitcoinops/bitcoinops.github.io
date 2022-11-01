@@ -190,7 +190,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   `getblockfrompeer` RPC could cause multiple block-files ineligible for
   pruning, and cause a pruned node to exceed its data allowance.
 
-- [Bitcoin Core #25957][] wallet: fast rescan with BIP157 block filters for descriptor wallets FIXME:glozow
+- [Bitcoin Core #25957][] improves the performance of rescans for
+  descriptor wallets by using the [block filter index][topic compact block filters] (if enabled)
+to skip blocks that don't spend or create UTXOs relevant to the wallet.
 
 - [Bitcoin Core #23578][] uses [HWI][topic hwi] and recently merged support for
   [BIP371][] (see [Newsletter #207][news207 bc22558]) to allow external signing
