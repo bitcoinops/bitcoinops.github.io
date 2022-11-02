@@ -74,7 +74,7 @@ optech_mentions:
   - title: "Suggestion to use CPFP to address RBF-related free option problem"
     url: /en/newsletters/2022/10/26/#free-option-problem
 
-  - title: "Suggestion for LN to choose an alternative to using CPFP for HTLC fee bumping"
+  - title: "Suggestion for LN to provide an alternative to using CPFP for most HTLC fee bumping"
     url: /en/newsletters/2022/11/02/#anchor-outputs-workaround
 
 ## Optional.  Same format as "primary_sources" above
