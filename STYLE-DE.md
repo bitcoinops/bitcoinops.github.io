@@ -51,9 +51,11 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 
 | Englischer Ausdruck| Bevorzugt | Zu vermeiden | Anmerkungen |
 |-|-|-|-|
+| Countersign | Countersign | - | Eigenname des Verfahrens |
 | channel | Channel | Kanal | |
 | derivation path| Ableitungspfad | | |
 | descriptor | Deskriptor | | |
+| dual funding | beidseitige Finanzierung | | |
 | fee | Gebühr | | |
 | funds | Kapital | | |
 | HTLC |-|-| Genus Maskulinum |
