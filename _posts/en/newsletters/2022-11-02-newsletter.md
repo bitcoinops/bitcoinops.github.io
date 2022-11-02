@@ -131,7 +131,7 @@ software.
     satoshis it sent to how many satoshis it received back.
 
 - **Anchor outputs workaround:** Bastien Teinturier [posted][teinturier
-  fees] to the Lightning-Dev mailing list a [proposal][bolts #1036] for replacing
+  fees] to the Lightning-Dev mailing list a [proposal][bolts #1036] for using
   [anchor outputs][topic anchor outputs] with multiple presigned
   versions of each [HTLC][topic htlc] at different feerates.  Anchor
   outputs were introduced with the development of the [CPFP
@@ -142,10 +142,11 @@ software.
   CPFP requires every LN node keep a pool of non-LN UTXOs ready to spend
   at any moment.  By comparison, presigning multiple versions of HTLCs
   each with different fees allows those fees to be paid directly from
-  the HTLC's value---no additional UTXO management is required.
+  the HTLC's value---no additional UTXO management is required, except in
+  cases where none of the presigned feerates was high enough.
 
-    He's seeking support from other LN developers for the idea of moving
-    to multiple feerate HTLCs.  All discussion as of this writing has
+    He's seeking support from other LN developers for the idea of providing
+    multiple feerate HTLCs.  All discussion as of this writing has
     occurred on Teinturier's [PR][bolts #1036].
 
 ## Releases and release candidates
