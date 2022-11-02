@@ -137,7 +137,7 @@ optech_mentions:
   - title: Proposed relay of v3 transactions attempts to improve on anchor outputs
     url: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 
-  - title: Proposal for LN to use multiple pre-committed fees rather than anchor outputs
+  - title: Proposal to use multiple pre-committed fees to avoid needing anchor outputs in many cases
     url: /en/newsletters/2022/11/02/#anchor-outputs-workaround
 
 ## Optional.  Same format as "primary_sources" above
