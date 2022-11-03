@@ -311,7 +311,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [bitcoin core 24.0 rc2]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [ldk 0.0.112]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.112
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
-[news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
+[news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
 [kotliar free option]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021056.html
 [sanders cpfp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021060.html
 [rubin cpfp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021059.html
