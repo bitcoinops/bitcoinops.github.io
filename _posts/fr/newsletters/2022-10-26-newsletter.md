@@ -336,7 +336,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [tornado cash]: https://www.coincenter.org/analysis-what-is-and-what-is-not-a-sanctionable-entity-in-the-tornado-cash-case/
 [braidpool chat]: https://diyhpl.us/wiki/transcripts/tabconf/2022/braidpool/
 [merging chat]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-12-merging/
-[news220 ephemeral]: /en/newsletters/2022/10/05/#ephemeral-dust
+[news220 ephemeral]: /fr/newsletters/2022/10/05/#ephemeral-dust
 [sanders ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
 [rubin ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021041.html
 [zhao overview]: https://github.com/glozow/bitcoin-notes/blob/full-rbf/full-rbf.md
