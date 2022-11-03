@@ -323,7 +323,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [zumsande option]: https://www.erisian.com.au/bitcoin-core-dev/log-2022-10-20.html#l-493
 [coredev xs]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/
 [p2p encryption]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-10-p2p-encryption/
-[news222 bip324]: /en/newsletters/2022/10/19/#bip324-update
+[news222 bip324]: /fr/newsletters/2022/10/19/#mise-a-jour-bip324
 [fee chat]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-11-fee-market/
 [frost]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2022-10-11-frost/
 [roast]: https://diyhpl.us/wiki/transcripts/tabconf/2022/roast/
