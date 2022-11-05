@@ -246,7 +246,7 @@ to skip blocks that don't spend or create UTXOs relevant to the wallet.
 [news205 rbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
 [news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
-[news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
+[news223 rbf]: /fr/newsletters/2022/10/26/#poursuite-de-la-discussion-sur-le-full-rbf
 [wuille bip324]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021115.html
 [news72 xonly]: /en/newsletters/2019/11/13/#x-only-pubkeys
 [compressed pubkeys]: https://developer.bitcoin.org/devguide/wallets.html#public-key-formats
