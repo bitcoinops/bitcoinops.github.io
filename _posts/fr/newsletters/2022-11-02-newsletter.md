@@ -205,8 +205,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   de chemin de clé [taproot][topic taproot].
 
 - [Core Lightning #5646][] met à jour la mise en œuvre expérimentale des
-  [offres][topic offers] pour supprimer [les clés publiaues x-only][news72 xonly]
-  (au lieu d'utiliser [des clés publiques compressées][], qui contiennent un octet
+  [offres][topic offers] pour supprimer [les clés publiques x-only][news72 xonly]
+  (au lieu d'utiliser des [clés publiques compressées][], qui contiennent un octet
   supplémentaire). Il implémente également la transmission des [blinded payments][],
   un autre protocole expérimental. La description du PR avertit qu'elle "n'inclut
   pas la génération et le paiement de factures avec des paiements en aveugle".
@@ -253,7 +253,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [news223 rbf]: /fr/newsletters/2022/10/26/#poursuite-de-la-discussion-sur-le-full-rbf
 [wuille bip324]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021115.html
 [news72 xonly]: /en/newsletters/2019/11/13/#x-only-pubkeys
-[compressed pubkeys]: https://developer.bitcoin.org/devguide/wallets.html#public-key-formats
+[clés publiques compressées]: https://developer.bitcoin.org/devguide/wallets.html#public-key-formats
 [blinded payments]: /en/topics/rendez-vous-routing/
 [news104 intercept]: /en/newsletters/2020/07/01/#lnd-4018
 [news51 attrib]: /en/newsletters/2019/06/19/#authenticating-messages-about-ln-delays
