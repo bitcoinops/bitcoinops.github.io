@@ -28,27 +28,27 @@ d'infrastructure Bitcoin.
   développement de Bitcoin Core (voir Newsletters [#205][news205 rbf],
   [#208][news208 rbf], [#222][news222 rbf], and [#223][news223 rbf]).
   Il affirme que "cela diffère de ce que  Core faisait dans le passé,
-  en ce sens qu'auparavant, nous avons essayé de nous assurer qu'une nouvelle
-  politique est bonne pour tout le monde (ou aussi près que possible), puis
-  l'avons activée dès qu'elle est mise en œuvre. Toutes les options qui ont été
-  ajoutées ont été soit pour contrôler l'utilisation des ressources de manière
-  à ne pas [affecter] de manière significative la propagation des tx, pour
-  permettre aux gens de revenir à l'ancien comportement lorsque le nouveau
-  comportement est controversé (par exemple, l'option -mempoolreplacement=0 de
-  0.12 à 0.18), et pour faciliter le test/débogage de l'implémentation. Donner
-  aux gens un nouveau comportement de relais auquel ils peuvent s'inscrire
-  lorsque nous ne sommes pas suffisamment confiants pour l'activer par défaut
-  ne correspond pas à l'approche que j'ai vue adopter par le passé.»
+  en ce sens qu'auparavant, nous essayions de nous assurer qu'une nouvelle
+  politique est bénéfique pour tout le monde (du moins aussi bénéfique que possible),
+  puis l'avons activée dès qu'elle est mise en œuvre. Toutes les options qui ont été
+  l'étaient soit pour contrôler l'utilisation des ressources de manière
+  à ne pas [affecter] de manière significative la propagation des tx, soit pour
+  permettre aux gens de revenir à l'ancienne configuration lorsque la nouvelle
+  était controversé (par exemple, l'option -mempoolreplacement=0 de 0.12 à 0.18),
+  soit enfin pour faciliter le test/débogage de l'implémentation.
+  Donner aux gens la possibilité d'adopter un nouveau comportement de relais alors
+  que nous ne sommes nous-même pas suffisamment confiants pour l'activer par défaut
+  ne correspond pas à l'approche adoptée par le passé.»
 
     Towns se demande alors s'il s'agit d'une nouvelle direction de développement :
     "full [RBF][topic RBF] est controversé depuis des lustres,
     mais largement apprécié par les développeurs [...] alors peut-être que c'est
-    juste un cas particulier et non un précédent, et quand les gens proposent
-    d'autres fausses options par défaut,il y aura beaucoup plus de résistance
-    à leur fusion, malgré toutes les discussions sur les utilisateurs ayant
-    des options qui se passent en ce moment. Mais, en supposant qu'il s'agit
-    d'une nouvelle direction, il évalue certaines conséquences potentielles
-    de cette décision:
+    juste un cas particulier et non un précédent. Des gens qui proposeraient
+    de mauvaises options par défaut, se heurteraient à beaucoup plus de résistance
+    quand il s'agirait de fusionner leur code, malgré toutes les discussions sur les
+    options laissées aux utilisateurs que nous avons en ce moment." Mais, en supposant
+    qu'il s'agisse d'une nouvelle direction, il évalue ainsi certaines conséquences
+    potentielles de cette décision:
 
     - *Il devrait être plus facile de fusionner les options de relais alternatives désactivées par défaut :*
       si le fait de donner plus d'options aux utilisateurs est considéré comme
@@ -60,7 +60,7 @@ d'infrastructure Bitcoin.
 
     - *Des politiques plus permissives nécessitent une acceptation généralisée ou un meilleur appairage :*
       un nœud Bitcoin Core par défaut relaie les transactions avec huit pairs
-      via des connexions sortantes, de sorte qu'au moins 30% du réseau doit
+      via des connexions sortantes, de sorte qu'au moins 30% du réseau doive
       prendre en charge une politique plus permissive avant qu'un nœud ait 95%
       de chances de trouver au moins un pair sélectionné au hasard qui prend en
       charge la même politique. Moins il y a de nœuds prenant en charge une
@@ -88,16 +88,16 @@ d'infrastructure Bitcoin.
         [erlay][topic erlay] pour minimiser la latence et la bande passante
         lorsque deux pairs disposent déjà de certaines des mêmes informations.
 
-    Le message de Towns a reçu de multiples réponses perspicaces, avec une
-    discussion en cours au moment de la rédaction de cet article. Nous fournirons
+    Le message de Towns a reçu de multiples réponses perspicaces, et la
+    discussion est toujours en cours au moment de la rédaction de cet article. Nous fournirons
     une mise à jour dans la newsletter de la semaine prochaine.
 
 - **Identifiants de message BIP324 :** Pieter Wuille [a posté][wuille bip324]
   sur la liste de diffusion Bitcoin-Dev une réponse à la mise à jour du projet
-  de spécification [BIP324][bips #1378] pour la  [version 2 du protocole de
+  de spécification [BIP324][bips #1378] pour la [version 2 du protocole de
   transport chiffré P2P][topic v2 p2p transport] (v2 transport). Pour économiser
   la bande passante, le transport v2 permet de remplacer les noms de message de
-  12 octets du protocole existant par des identifiants aussi courts que 1 octet.
+  12 octets du protocole existant par des identifiants d'1 octet seulement.
   Par exemple, le nom du message `version` , qui est rempli sur 12 octets, peut être
   remplacé par 0x00. Cependant, des noms de message plus courts augmentent le risque
   de conflit entre différentes propositions futures d'ajout de messages au réseau.
@@ -110,23 +110,23 @@ d'infrastructure Bitcoin.
   ligne. Les informations sur les nœuds qui ont provoqués l'échec d'un paiement
   seraient extrêmement utiles aux participants pour éviter ces nœuds pour des
   paiements à venir, mais le protocole LN ne fournit aujourd'hui aucune méthode
-  authentifiée pour acheminer les nœuds afin de communiquer ces informations à un
-  participant.
+  authentifiée pour permettre aux nœuds de routage de communiquer ces informations
+  à un participant.
 
-    Il y a plusieurs années, Joost Jager a proposé une solution (voir [Newsletter
-    #51][news51 attrib]), qu'il a maintenant  [mis à jour][jager attrib] avec
-    des améliorations et des détails supplémentaires. Le mécanisme assurerait
-    l'identification de la paire de nœuds entre lesquels un paiement a échoué
-    (ou entre lesquels un message d'échec antérieur a été censuré ou est devenu
-    tronqué). Le principal inconvénient de la proposition de Jager est qu'elle
-    augmenterait considérablement la taille des messages en oignon LN pour les
-    échecs si les autres propriétés LN restaient les mêmes, bien que la taille
-    des messages en oignon pour les échecs n'ait pas besoin d'être aussi grande
-    si le nombre maximal de saut LN a été diminué.
+    Il y a plusieurs années, Joost Jager a proposé une solution (voir la
+    [Newsletter #51][news51 attrib]), qu'il a récemment [mis à jour][jager attrib]
+    avec des améliorations et des détails supplémentaires. Le mécanisme proposé
+    assurerait l'identification de la paire de nœuds entre lesquels un paiement
+    a échoué (ou entre lesquels un message d'échec antérieur a été censuré ou s'est
+    altéré). Le principal inconvénient de la proposition de Jager est
+    qu'elle augmenterait considérablement la taille des messages en oignon LN en cas
+    d'échecs si les autres propriétés LN restaient les mêmes, bien que la taille
+    des messages en oignon en cas d'échec n'ait pas besoin d'être aussi grande
+    si le nombre maximal de sauts LN a été diminué.
 
     Alternativement, Rusty Russell [a suggéré][russell attrib] qu'un participant
     pourrait utiliser un mécanisme similaire aux [paiements spontanés]
-    [topic spontaneous payments] où chaque nœud de routage est payé un sat même
+    [topic spontaneous payments] où chaque nœud de routage reçoit un sat même
     si le paiement final échoue. Le participant pourrait alors identifier à quel
     saut le paiement a échoué en comparant le nombre de satoshis qu'il a envoyé
     au nombre de satoshis qu'il a reçus en retour.
@@ -139,14 +139,14 @@ d'infrastructure Bitcoin.
   d'[exclusion CPFP][topic cpfp carve out] permettant d'ajouter des frais à une
   transaction via le mécanisme du [CPFP][topic cpfp] d'une manière qui ne serait pas
   [épinglable][topic transaction pinning] pour le protocole de contrat bipartite de LN.
-  However, Teinturier [notes][bolts #845] que l'utilisation de CPFP nécessite que
+  Toutefois, Teinturier [note][bolts #845] que l'utilisation de CPFP nécessite que
   chaque nœud LN conserve un pool d'UTXO non-LN prêts à être dépensés à tout moment.
   En comparaison, présigner plusieurs versions de HTLC, chacune avec des frais
   différents, permet de payer ces frais directement à partir de la valeur du HTLC
   --aucune gestion UTXO supplémentaire n'est requise, sauf dans les cas où aucun
   des frais présignés n'était suffisamment élevé.
 
-    Il recherche le soutien d'autres développeurs LN pour l'idée de fournir
+    Il recherche le soutien d'autres développeurs LN sur l'idée de fournir
     plusieurs HTLC payants. Toutes les discussions à ce jour ont eu lieu sur sa
     propre [PR][bolts #1036].
 
