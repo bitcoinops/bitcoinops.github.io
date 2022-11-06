@@ -7,12 +7,12 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin d'information de cette semaine décrit la suite de la discussion
+Le bulletin d'information de cette semaine évoque la suite de la discussion
 sur l'autorisation facultative aux nœuds d'activer le Full RBF, relaie une
 demande de commentaires sur un élément de conception du protocole de transport
 chiffré BIP324 version 2, résume une proposition pour attribuer de manière
-fiable les défaillances et les retards LN à des nœuds particuliers, et des
-liens vers une discussion sur une alternative à l'utilisation des sorties
+fiable les défaillances et les retards LN à des nœuds particuliers, et renvoie
+à une discussion sur une alternative à l'utilisation des sorties
 d'ancrage pour les HTLC LN modernes. Sont également incluses nos sections
 régulières avec ne liste des nouvelles versions logicielles et des release
 candidate, ainsi que les principaux changements apportés aux logiciels
@@ -21,13 +21,13 @@ d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Cohérence Mempool :** Anthony Towns a lancé une [discussion][towns
-  consistency] ur la liste de diffusion Bitcoin-Dev sur les conséquences
+  consistency] sur la liste de diffusion Bitcoin-Dev à propos des conséquences
   de la simplification de la configuration des politiques de Bitcoin Core
   pour le relais de transaction et l'acceptation de mempool, comme cela a
   été fait par l'ajout de l'option `mempoolfullrbf` à la branche de
   développement de Bitcoin Core (voir Newsletters [#205][news205 rbf],
   [#208][news208 rbf], [#222][news222 rbf], and [#223][news223 rbf]).
-  Il affirme que "cela diffère de ce que le noyau a fait dans le passé,
+  Il affirme que "cela diffère de ce que  Core faisait dans le passé,
   en ce sens qu'auparavant, nous avons essayé de nous assurer qu'une nouvelle
   politique est bonne pour tout le monde (ou aussi près que possible), puis
   l'avons activée dès qu'elle est mise en œuvre. Toutes les options qui ont été
@@ -156,16 +156,16 @@ d'infrastructure Bitcoin.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidate.*
 
 - [LND 0.15.4-beta][] et [0.14.4-beta][lnd 0.14.4-beta] sont **des versions
-  critiques pour la sécurité** releases contenant un correctif de bogue pour un
-  problème de traitement des blocs récents.
+  de sécurité critiques** qui contiennent un correctif du récent bogue pour un
+  problème sur le traitement des blocs.
   Tous les utilisateurs doivent mettre à niveau.
 
 - [Bitcoin Core 24.0 RC2][] est une release candidate pour la
   prochaine version de l'implémentation de nœud complet la plus
   largement utilisée du réseau. Un [guide de test][bcc testing] est disponible.
 
-  **Avertissement :** cette release candidate inclut l'option `mempoolfullrbf`
-  de configuration qui, selon plusieurs développeurs de protocoles et
+  **Avertissement :** cette release candidate inclut l'option de configuration
+  `mempoolfullrbf`qui, selon plusieurs développeurs de protocoles et
   d'applications, pourrait entraîner des problèmes pour les services marchands,
   comme décrit dans les newsletters[#222][news222 rbf] et [#223][news223 rbf].
   Optech encourage tous les services qui pourraient être affectés à évaluer
@@ -182,9 +182,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #23927][] limite `getblockfrompeer` sur les noeuds partiels
   à des hauteurs inférieures à la progression de la synchronisation actuelle
-  du nœud. Cela empêche de se tirer une balle dans le pied résultant de la
-  récupération de futurs blocs rendant les fichiers de blocs du nœud inéligibles
-  à l'élagage.
+  du nœud. Cela empêche de se tirer une balle dans le pied en récupérant de
+  futurs blocs rendant les fichiers de blocs du nœud inéligibles à l'élagage.
 
   Bitcoin Core stocke les blocs dans des fichiers d'environ 130 Mo, quel que soit
   l'ordre dans lequel il les reçoit. L'élagage supprimera les fichiers de blocs
