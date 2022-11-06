@@ -39,7 +39,7 @@ d'infrastructure Bitcoin.
   aux gens un nouveau comportement de relais auquel ils peuvent s'inscrire
   lorsque nous ne sommes pas suffisamment confiants pour l'activer par défaut
   ne correspond pas à l'approche que j'ai vue adopter par le passé.»
-  
+
     Towns se demande alors s'il s'agit d'une nouvelle direction de développement :
     "full [RBF][topic RBF] est controversé depuis des lustres,
     mais largement apprécié par les développeurs [...] alors peut-être que c'est
