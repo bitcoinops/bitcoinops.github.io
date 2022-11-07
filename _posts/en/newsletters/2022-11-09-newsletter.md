@@ -140,12 +140,91 @@ Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Relax MIN_STANDARD_TX_NONWITNESS_SIZE to 65 non-witness bytes][review club 26265]
+is a PR by instagibbs that relaxes the mempool policy's non-witness transaction size
+constraints. It allows transactions to be as small as 65 bytes, replacing
+the current policy that requires transactions to be at least 85 bytes (see
+[Newsletter #222][news222 min relay size]).
+
+Since this Review Club meeting, this PR has been closed in favor of
+PR [#26398][bitcoin core #26398], which
+relaxes policy even further by disallowing _only_ 64-byte transactions.
+The relative merits of these two slightly-different policies were
+discussed during the meeting.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/26114#l-27FIXME"
+  q0="Why was the minimum transaction size 82 bytes?
+  Can you describe the attack?"
+
+  a0="The 82-byte minimum, which was introduced by PR [#11423][bitcoin core #11423] in 2018, is
+  the size of the smallest standard payment transaction. This was
+  presented as a cleanup of the standardness rules. But in reality,
+  the change was to prevent a 64-byte transaction from being considered standard,
+  because this size allowed a [spoof payment attack][]
+  against SPV clients (making them think they've received a payment when they hadn't).
+  The attack involves tricking an SPV client into thinking that a 64-byte
+  transaction is an inner node of the transaction merkle tree, which is also
+  64 bytes in length."
+
+  a0link="https://bitcoincore.reviews/26265#l-35"
+
+  q1="A participant asked, was it was necessary to fix this vulnerability
+  covertly, given that it would be very expensive (on the order of USD$1M) to
+  carry out this attack, combined with the fact that it seems unlikely
+  people would use SPV clients for payments that large?"
+
+  a1="There was some agreement, but one participant pointed out that our
+  intuition about this could be wrong."
+
+  a1link="https://bitcoincore.reviews/26265#l-66"
+
+  q2="What does _non-witness size_ mean,
+  and why do we care about the non-witness distinction?"
+
+  a2="We care about the non-witness distinction because, as part of the
+  segwit upgrade, witness data is excluded from the calculation of the merkle root.
+  Since the attack requires the malicious transaction to be 64 bytes in the
+  merkle root construction (so it looks like an inner node), we need to exclude
+  witness data from it."
+
+  a2link="https://bitcoincore.reviews/26265#l-62"
+
+  q3="Why does setting this policy help to prevent the attack?"
+
+  a3="Since inner merkle tree nodes can only be exactly 64 bytes, a transaction
+  of a different size cannot be misinterpreted as an inner merkle node."
+
+  a3link="https://bitcoincore.reviews/26265#l-84"
+
+  q4="Does it eliminate the attack vector entirely?"
+
+  a4="Changing the standardness rules only prevents 64-byte transactions
+  from being accepted into mempools and relayed, but such transactions
+  may still be consensus-valid and so can be mined into a block.
+  For this reason, the attack is still possible, but only with the help of miners."
+
+  a4link="https://bitcoincore.reviews/26265#l-84"
+
+  q5="Why might we want to change the minimum transaction size to 65 bytes,
+  apart from the fact that it's unnecessary to obfuscate the CVE?"
+
+  a5="There are legitimate use cases for transactions that are less than 82 bytes.
+  One example mentioned is a [Child Pays For Parent (CPFP)][topic cpfp] transaction that assigns
+  an entire parent output to fees (such a transaction would have a single input
+  and an empty `OP_RETURN` output)."
+
+  a5link="https://bitcoincore.reviews/26265#l-100"
+
+  q6="Between disallowing sizes less than 65 bytes and sizes equal to 64 bytes,
+  which approach do you think is better and why?
+  What are the implications of both approaches?"
+
+  a6="After some byte-counting discussion, it was agreed that a valid
+  but non-standard transaction can be as small as 60 bytes:
+  a stripped (non-witness) with a single native segwit input is
+  41 B + 10 B header + 8 B value + 1 B `OP_TRUE` or `OP_RETURN` = 60 B."
+
+  a6link="https://bitcoincore.reviews/26265#l-124"
 %}
 
 ## Releases and release candidates
@@ -257,5 +336,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news220 v3tx]: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
 [news222 bug]: /en/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
 [liquid and rust bitcoin vulns]: https://twitter.com/Liquid_BTC/status/1587499305664913413
+[spoof payment attack]: /en/topics/cve/#CVE-2017-12842
 [towns find]: https://twitter.com/roasbeef/status/1587481219981508608
 [26438 close]: https://github.com/bitcoin/bitcoin/pull/26438#issuecomment-1307715677
+[review club 26265]: https://bitcoincore.reviews/26265
+[news222 min relay size]: /en/newsletters/2022/10/19/#minimum-relayable-transaction-size
