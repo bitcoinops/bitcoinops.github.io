@@ -21,7 +21,7 @@ lang: zh
 
     在上述披露之后，Loki Verloren Bitcoin-Dev 邮件列表中[发帖][verloren limits]，建议将直接限制添加到 taproot 的见证人大小。 Greg Sanders [回复][sanders limits]指出，现在增加限制不仅会增加代码的复杂性，而且如果人们已经收到需要大量见证人才能花费的脚本的比特币，可能导致人们资金丢失。
 
-- **<!--transaction-replacement-option-->交易替换选项：**如周报 [#205][news205 rbf] 和 [#208][news208 rbf] 中所述，Bitcoin Core 合并了对{code1}mempoolfullrbf{/code1}配置选项的支持，该选项默认为仅允许 [RBF 替换]的现有 Bitcoin Core 行为包含 [BIP125][] 信号的交易的 [topic rbf]。但是，如果用户将新选项设置为 true，则他们的节点将接受并中继不包含 BIP125 信号的交易的替换，前提是替换交易遵循比特币核心的所有其他替换规则。
+- **<!--transaction-replacement-option-->交易替换选项：**如周报 [#205][news205 rbf] 和 [#208][news208 rbf] 中所述，Bitcoin Core 合并了对`mempoolfullrbf`配置选项的支持，该选项默认为仅允许 [RBF 替换]的现有 Bitcoin Core 行为包含 [BIP125][] 信号的交易的 [topic rbf]。但是，如果用户将新选项设置为 true，则他们的节点将接受并中继不包含 BIP125 信号的交易的替换，前提是替换交易遵循比特币核心的所有其他替换规则。
 
     Dario Sneidermanis Bitcoin-Dev 邮件列表[发帖][sne rbf]表示，这个新选项可能会给当前接受未确认交易作为最终交易的服务造成问题。尽管多年来用户可以运行允许无信号*完整*[^full-rbf] 交易替换的非 Bitcoin Core 软件（或 Bitcoin Core 的修订版本），但没有证据表明该软件被广泛使用。 Sneidermanis 认为，在 Bitcoin Core 中引入一个易于访问的选项可能会改变这种情况，这是通过允许足够的用户和矿工启用完整的 RBF 实现的，并使无信号替换变得可靠。更可靠的无信号替换也将更可靠的从接受未经确认的交易作为最终交易的服务中进行窃取，从而要求这些服务改变它们的行为。
 
