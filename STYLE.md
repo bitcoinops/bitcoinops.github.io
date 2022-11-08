@@ -122,6 +122,7 @@ beginning of a sentence).
 | single-sig | singlesig | |
 | soft fork/hard fork | softfork/hardfork or soft-fork/hard-fork | soft-fork/hard-fork may be used as compound adjectives (eg "Foo proposed a soft-fork change") |
 | Stack Exchange | StackExchange | as the website spells itself |
+| zero-conf | zeroconf, zero conf, 0-conf | unconfirmed transaction |
 | 2-of-3 | 2 of 3 | |
 
 ### Spelling
