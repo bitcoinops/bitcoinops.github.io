@@ -60,6 +60,9 @@ optech_mentions:
   - title: "Saleem Rashid disclosed to Trezor an issue previously identified by Greg Sanders"
     url: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 
+  - title: "René Pickhardt disclosed fee ransom attack affecting multiple LN implementations"
+    url: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
