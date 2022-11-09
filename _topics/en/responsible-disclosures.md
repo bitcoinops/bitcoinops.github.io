@@ -24,7 +24,7 @@ categories:
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
-  - title: "Core Fields disclosed a consensus failure vulnerability Bitcoin ABC (Bitcoin Cash)"
+  - title: "Cory Fields disclosed a consensus failure vulnerability Bitcoin ABC (Bitcoin Cash)"
     url: /en/newsletters/2018/08/14/#how-to-help-security-researchers
 
   - title: "Awemany disclosed CVE-2018-17144 as a DoS vulnerability in Bitcoin Core"
