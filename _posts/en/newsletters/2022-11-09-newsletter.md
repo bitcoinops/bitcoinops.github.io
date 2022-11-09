@@ -260,7 +260,8 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #26419][] log: mempool: log removal reason in validation interface FIXME:adamjonas
+- [Bitcoin Core #26419][] adds context to the validation interface logs
+  detailing why a transaction is removed from the mempool.
 
 - [Eclair #2404][] adds support for Short Channel IDentifier (SCID)
   aliases and [zero-conf channels][topic zero-conf channels]
