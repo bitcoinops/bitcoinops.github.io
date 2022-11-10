@@ -139,7 +139,7 @@ praise:
 
   - url: https://twitter.com/RobertSpigler/status/1058780917685239810
     author: Robert Spigler
-    text: OpSec consultant
+    title: OpSec consultant
     text: "@bitcoinoptech is an incredibly valuable community project and the greater the percentage of the wider ecosystem that is involved and learning best practices, the better"
 
   - url: https://twitter.com/carl_dong/status/1057721562449633280
