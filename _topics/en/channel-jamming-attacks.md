@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Guide to channel jamming attacks and proposed solutions"
     url: /en/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
 
+  - title: "Paper suggesting solutions to jamming attacks based on local reputation and upfront fees"
+    url: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

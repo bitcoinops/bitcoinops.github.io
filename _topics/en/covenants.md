@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Discussion about Miner Extractable Value (MEV) risk from recursive covenants"
     url: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
 
+  - title: "Proposal to use covenants and merkle trees to enable generalized smart contracts"
+    url: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
