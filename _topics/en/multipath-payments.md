@@ -117,6 +117,9 @@ optech_mentions:
   - title: "Discussion about the effect of base fees on multipath payment costs"
     url: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 
+  - title: "BOLTs #1031 allows paying slightly more than the requested amount when using multipath"
+    url: /en/newsletters/2022/11/16/#bolts-1031
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Atomic Multipath Payments (AMPs)
