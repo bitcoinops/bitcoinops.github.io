@@ -7,30 +7,31 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter summarizes continued discussion about a configuration option for enabling
-full-RBF in Bitcoin Core and describes a bug affecting BTCD, LND, and
-other software.  Also included are our regular sections with the summary
-of a Bitcoin Core PR Review Club meeting, descriptions of new releases
-and release candidates, and overviews of notable changes to popular
-Bitcoin infrastructure software.
+Le bulletin d'information cette semaine résume la discussion en cours sur une option
+de configuration permettant d'activer la fonction full-RBF dans Bitcoin Core
+et décrit un bogue affectant BTCD, LND et d'autres logiciels. Vous trouverez
+également nos sections habituelles avec le résumé d'une réunion du Club Bitcoin
+Core PR Review, des descriptions de mises à jour et de release candidate,
+ainsi qu'un aperçu des principaux changements apportés aux logiciels
+d'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
-- **Continued discussion about enabling full-RBF:** as mentioned in
-  newsletters for the past several weeks---users, service providers, and
-  Bitcoin Core developers have been evaluating the inclusion of the
-  `mempoolfullrbf` configuration option into Bitcoin Core's development
-  branch and current release candidates for version 24.0.  Those
-  previous newsletters have summarized many previous
-  arguments for and against this [full RBF][topic rbf] option
-  ([1][news222 rbf], [2][news223 rbf], [3][news224 rbf]).  This week,
-  Suhas Daftuar [posted][daftuar rbf] to the Bitcoin-Dev mailing list to
-  "argue that we should continue to maintain a relay policy where
-  replacements are rejected for transactions that don't opt-in to RBF
-  (as described in BIP 125), and moreover, that we should remove the
-  `-mempoolfullrbf` flag from Bitcoin Core's latest release candidate
-  and not plan to release software with that flag, unless (or until)
-  circumstances change on the network."  He notes:
+- **Poursuite de la discussion sur l'activation full-RBF:** comme mentionné dans
+  les précéedents bulletins---utilisateurs, fournisseurs de services,
+  et développeurs de Bitcoin Core ont évalué l'inclusion de l'option de
+  configuration `mempoolfullrbf` dans la branche de développement et la
+  version 24.0 de l'actuelle release candidate. Ces précédents bulletins
+  d'informations ont résumé de nombreux arguments pour et contre cette option
+  [full RBF][topic rbf] ([1][news222 rbf], [2][news223 rbf], [3][news224 rbf]).
+  Cette semaine, Suhas Daftuar [a posté][daftuar rbf] sur la liste de diffusion
+  Bitcoin-Dev pour faire valoir que nous devrions continuer à maintenir une
+  politique de relais où les remplacements sont rejetés pour les transactions
+  qui n'optent pas pour le RBF (comme décrit dans le BIP 125), et de plus,
+  que nous devrions supprimer le drapeau `mempoolfullrbf` de la dernière
+  release candidate de Bitcoin Core et ne pas prévoir de publier un logiciel
+  avec ce drapeau, à moins (ou jusqu'à ce) que les circonstances changent sur
+  le réseau". Il note :
 
     - *Opt-in RBF already available:* anyone who wants the benefits of
       RBF should be able to opt-in to it using the mechanism described in
