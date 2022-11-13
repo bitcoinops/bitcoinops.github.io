@@ -18,11 +18,11 @@ d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Poursuite de la discussion sur l'activation full-RBF:** comme mentionné dans
-  les précéedents bulletins---utilisateurs, fournisseurs de services,
+  les précédents bulletins---utilisateurs, fournisseurs de services,
   et développeurs de Bitcoin Core ont évalué l'inclusion de l'option de
   configuration `mempoolfullrbf` dans la branche de développement et la
-  version 24.0 de l'actuelle release candidate. Ces précédents bulletins
-  d'informations ont résumé de nombreux arguments pour et contre cette option
+  l'actuelle release candidate version 24.0. Ces précédents bulletins
+  d'informations ont résumés de nombreux arguments pour et contre cette option
   [full RBF][topic rbf] ([1][news222 rbf], [2][news223 rbf], [3][news224 rbf]).
   Cette semaine, Suhas Daftuar [a posté][daftuar rbf] sur la liste de diffusion
   Bitcoin-Dev pour faire valoir que nous devrions continuer à maintenir une
@@ -33,74 +33,75 @@ d'infrastructure Bitcoin.
   avec ce drapeau, à moins (ou jusqu'à ce) que les circonstances changent sur
   le réseau". Il note :
 
-    - *Opt-in RBF already available:* anyone who wants the benefits of
-      RBF should be able to opt-in to it using the mechanism described in
-      [BIP125][].  Users would only be served by full RBF if there was
-      some reason they couldn't use opt-in RBF.
+    - *Le RBF Opt-in est déjà disponible:* toute personne souhaitant
+      bénéficier des avantages de RBF Opt-in devrait pouvoir y adhérer en
+      utilisant le mécanisme décrit dans le [BIP125][]. Les utilisateurs ne
+      seraient servis par le full-RBF que s'il y avait une raison pour laquelle
+      ils ne pouvaient pas utiliser le RBF.
 
-    - *Full RBF doesn't fix anything that isn't broken in other ways:*
-      a possible case where some users of a multiparty protocol could
-      deny other users the ability to use opt-in RBF was previously
-      [identified][riard funny games], but Daftuar notes that protocol
-      is vulnerable to other cheap or free attacks which full RBF would
-      not solve.
+    - *Full-RBF ne répare pas ce qui n'est pas déjà cassé par d'autres moyens :*
+      Le cas possible où certains utilisateurs d'un protocole multipartite
+      pourraient refuser à d'autres utilisateurs la possibilité d'utiliser
+      le RBF opt-in a été précédemment [identifié][riard funny games], mais
+      Daftuar note que ce protocole est vulnérable à d'autres attaques bon
+      marché ou gratuites que le Full-RBF ne résoudrait pas.
 
-    - *Full RBF takes away options:* "absent any other examples [of
-      problems fixed by fullrbf], it does not seem to me that fullrbf
-      solves any problems for RBF users, who are already free to choose
-      to subject their transactions to BIP 125's RBF policy.  From this
-      perspective, "enabling fullrbf" is really just taking away user
-      choice to opt a transaction into a non-replacement policy regime."
+    - *Full-RBF supprime des options:* "En l'absence d'autres exemples
+      [de problèmes résolus par full-rbf], il ne me semble pas que full-rbf
+      résolve les problèmes des utilisateurs de RBF, qui sont déjà libres
+      de choisir de soumettre leurs transactions à la politique RBF du BIP 125.
+      De ce point de vue, "activer full-rbf" revient en fait à retirer à
+      l'utilisateur le choix de soumettre une transaction à un régime de
+      politique de non-remplacement."
+ 
+    - *Offrir le non-remplacement n'introduit aucun problème pour les nœuds complets :*
+      En effet, il simplifie le traitement de longues chaînes de transactions.
 
-    - *Offering non-replacement doesn't introduce any issues for full nodes:*
-      indeed, it simplifies the handling of long chains of transactions.
+    - *Il n'est pas toujours facile de déterminer la compatibilité des incitations :*
+       Daftuar utilise la proposition pour le relais de transaction v3 (voir la
+       [Newsletter #220][news220 v3tx]) comme exemple :
 
-    - *Determining incentive compatibility isn't always straightforward:*
-       Daftuar uses the proposal for v3 transaction relay (see
-       [Newsletter #220][news220 v3tx]) as an example:
-
-       > Suppose in a few years someone proposes that we add a
-       > "-disable_v3_transaction_enforcement" flag to our software, to
-       > let users decide to turn off those policy restrictions and
-       > treat v3 transactions the same as v2, for all the same reasons
-       > that could be argued today with fullrbf [...]
+       > Supposons que dans quelques années quelqu'un propose d'ajouter un
+       > flag "-disable_v3_transaction_enforcement" à notre logiciel, pour
+       > laisser les utilisatuers décider d'éteindre cette politique de restriction
+       > et traiter les transactions V3 comme des V2, pour toutes les mêmes raisons
+       > que l'on ppourrait soutenir aujourd'hui avec fullrbf [...]
        >
-       > [That] would be subversive to making the lightning use case for
-       > v3 transactions work [...] we should not enable users to
-       > disable this policy, because as long as that policy is just
-       > optional and working for those who want it, it shouldn't harm
-       > anyone that we offer a tighter set of rules for a particular
-       > use case.  Adding a way to bypass those rules is just trying to
-       > break someone else's use case, not trying to add a new one.  We
-       > should not wield "incentive compatibility" as a bludgeon for
-       > breaking things that appear to be working and not causing
-       > others harm.
+       > [Ceci] pourrait être subversif pour rendre les cas d'usage de Lightning
+       > sur le travail des transactions v3 [...] nous ne devons pas permettre aux utilisateurs de
+       > désactiver cette politique, car tant que cette politique est juste
+       > facultative et fonctionnant pour ceux qui le souhaitent, elle ne devrait pas nuire
+       > à toute personne que nous offrons un ensemble de règles plus strictes pour
+       > cas d'usage particulier.  Ajouter un moyen de contourner ces règles, c'est juste essayer de
+       > briser le cas d'utilisation de quelqu'un d'autre, sans essayer d'en ajouter un nouveau. Nous
+       > ne devrions pas brandir la "compatibilité des incitations" comme une matraque pour
+       > briser des choses qui semblent fonctionner et ne pas causer
+       > de préjudice causé à autrui.
        >
-       > I think this is exactly what is happening with fullrbf.
+       > Je pense que c'est exactement ce qui se passe avec fullrbf.
 
-    Daftuar ends his email with three questions for those who still want
-    the `mempoolfullrbf` option to be included in Bitcoin Core:
+    Daftuar termine son courriel par trois questions pour ceux qui souhaitent toujours que l'option
+    `mempoolfullrbf` soit incluse dans Bitcoin Core :
 
-    1. "Does fullrbf offer any benefits other than breaking zeroconf
-       business practices?  If so, what are they?"
+    1. "Est-ce que fullrbf offre des avantages autres que la rupture
+       des pratiques commerciales de zeroconf ?  Si oui, quels sont-ils ?"
 
-    2. "Is it reasonable to enforce BIP 125's rbf rules on all
-       transactions, if those rules themselves are not always incentive
-       compatible?"
+    2. "Est-il raisonnable d'appliquer les règles de rbf du BIP 125 à toutes
+       les transactions, si ces règles elles-mêmes ne sont pas toujours
+       compatibles avec les incitations ?"
 
-    3. "If someone were to propose a command line option that breaks v3
-       transaction relay in the future, is there a logical basis for
-       opposing that which is consistent with moving towards fullrbf
-       now?"
+    3. "Si quelqu'un devait proposer une option de ligne de commande qui casse
+       le relai de transaction v3 dans le futur, y a-t-il une base logique pour
+       s'y opposer qui soit cohérente avec l'évolution vers full-rbf maintenant ?"
 
-    As of this writing, no one has answered Daftuar's questions on the
-    mailing list, although two answers to the set of questions were
-    posted to a Bitcoin Core [PR][bitcoin core #26438] that Daftuar
-    opened to propose removing the `mempoolfullrbf` configuration
-    option.  Daftuar later [closed][26438 close] the PR.
+    À l'heure où nous écrivons ces lignes, personne n'a répondu aux questions de
+    Daftuar sur la liste de diffusion, bien que deux réponses à cet ensemble de
+    questions aient été publiées sur une [PR][bitcoin core #26438] du site Bitcoin Core
+    que Daftuar a ouvert pour proposer de retirer l'option de configuration `mempoolfullrbf`.
+    Daftuar plus tard a [clôturé][26438 close] cette PR.
 
-    It wasn't clear at the time of writing whether anyone would comment
-    further on the topic.
+    Au moment de la rédaction de cet article, il n'était pas clair si quelqu'un ferait
+    d'autres commentaires sur le sujet.
 
 - **Block parsing bug affecting multiple software:** as reported in
   [Newsletter #222][news222 bug], it appeared that a serious bug
