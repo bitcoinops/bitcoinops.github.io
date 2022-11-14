@@ -22,7 +22,7 @@ d'infrastructure Bitcoin.
   et développeurs de Bitcoin Core ont évalué l'inclusion de l'option de
   configuration `mempoolfullrbf` dans la branche de développement et la
   l'actuelle release candidate version 24.0. Ces précédents bulletins
-  d'informations ont résumés de nombreux arguments pour et contre cette option
+  d'informations ont résumé de nombreux arguments pour et contre cette option
   [full RBF][topic rbf] ([1][news222 rbf], [2][news223 rbf], [3][news224 rbf]).
   Cette semaine, Suhas Daftuar [a posté][daftuar rbf] sur la liste de diffusion
   Bitcoin-Dev pour faire valoir que nous devrions continuer à maintenir une
@@ -33,10 +33,10 @@ d'infrastructure Bitcoin.
   avec ce drapeau, à moins (ou jusqu'à ce) que les circonstances changent sur
   le réseau". Il note :
 
-    - *Le RBF Opt-in est déjà disponible:* toute personne souhaitant
+    - *Le RBF Opt-in est déjà disponible :* toute personne souhaitant
       bénéficier des avantages de RBF Opt-in devrait pouvoir y adhérer en
       utilisant le mécanisme décrit dans le [BIP125][]. Les utilisateurs ne
-      seraient servis par le full-RBF que s'il y avait une raison pour laquelle
+      seraient servis par full-RBF que s'il y avait une raison pour laquelle
       ils ne pouvaient pas utiliser le RBF.
 
     - *Full-RBF ne répare pas ce qui n'est pas déjà cassé par d'autres moyens :*
@@ -46,7 +46,7 @@ d'infrastructure Bitcoin.
       Daftuar note que ce protocole est vulnérable à d'autres attaques bon
       marché ou gratuites que le Full-RBF ne résoudrait pas.
 
-    - *Full-RBF supprime des options:* "En l'absence d'autres exemples
+    - *Full-RBF supprime des options :* "En l'absence d'autres exemples
       [de problèmes résolus par full-rbf], il ne me semble pas que full-rbf
       résolve les problèmes des utilisateurs de RBF, qui sont déjà libres
       de choisir de soumettre leurs transactions à la politique RBF du BIP 125.
@@ -72,7 +72,7 @@ d'infrastructure Bitcoin.
        > désactiver cette politique, car tant que cette politique est juste
        > facultative et fonctionnant pour ceux qui le souhaitent, elle ne devrait pas nuire
        > à toute personne à qui nous offrons un ensemble de règles plus strictes pour des
-       > cas d'usage particuliers.  Ajouter un moyen de contourner ces règles, c'est juste essayer de
+       > cas d'usage particuliers. Ajouter un moyen de contourner ces règles, c'est juste essayer de
        > briser le cas d'utilisation de quelqu'un d'autre, sans essayer d'en ajouter un nouveau. Nous
        > ne devrions pas brandir la "compatibilité des incitations" comme une matraque pour
        > briser des choses qui semblent fonctionner et ne pas causer
@@ -100,19 +100,19 @@ d'infrastructure Bitcoin.
     que Daftuar a ouvert pour proposer de retirer l'option de configuration `mempoolfullrbf`.
     Daftuar plus tard a [clôturé][26438 close] cette PR.
 
-    Au moment de la rédaction de cet article, il n'était pas clair si quelqu'un ferait
+    Au moment de la rédaction de cet article, nous ingnorons si quelqu'un ferait
     d'autres commentaires sur le sujet.
 
-- **Bogue d'analyse des blocs affectant plusieurs logiciels:** comme indiqué dans
-  la [Newsletter #222][news222 bug], il est apparu qu'un bogue grave
-  affectant le nœud complet BTCD et le nœud LND a été accidentellement
+- **Bogue d'analyse des blocs affectant plusieurs logiciels :** comme indiqué dans
+  la [Newsletter #222][news222 bug], il est apparu qu'un bogue majeur,
+  affectant le nœud complet BTCD et le nœud LND, a été accidentellement
   déclenché, mettant les utilisateurs du logiciel en danger. Une mise à jour
   du logiciel a été rapidement publiée. Peu de temps après le déclenchement
   de ce bogue, Anthony Towns a [découvert][towns find] un deuxième bogue
   connexe qui ne pouvait être déclenché que par les mineurs. Towns a signalé
   le bogue au responsable de la maintenance de BTCD et LND, Olaoluwa Osuntokun,
   qui a préparé un correctif à inclure dans la prochaine mise à jour générale
-  du logiciel.  Le fait d'inclure le correctif de sécurité à côté d'autres
+  du logiciel. Le fait d'inclure le correctif de sécurité à côté d'autres
   changements pouvait cacher qu'une vulnérabilité était en train d'être corrigée
   et réduire les chances qu'elle soit exploitée. De manière responsable, Towns et
   Osuntokun ont gardé la vulnérabilité secrète jusqu'à ce que le correctif puisse
@@ -145,7 +145,7 @@ un résumé de la réponse de la réunion.*
 [Assouplir MIN_STANDARD_TX_NONWITNESS_SIZE à 65 non-witness bytes][review club 26265]
 c'est une PR de instagibbs qui assouplit les contraintes de taille de
 transaction sans témoin de la politique de mempool. Elle permet aux transactions
-d'être aussi petites que 65 octets, remplaçant la politique actuelle qui exige
+d'être aussi réduite que 65 octets, remplaçant la politique actuelle qui exige
 que les transactions soient d'au moins 85 octets. (voir la [Newsletter #222][news222 min relay size]).
 
 Depuis cette rencontre du Review Club, cette PR a été fermée en faveur de la
@@ -158,7 +158,7 @@ discutés lors de la réunion.
   q0="Pourquoi la taille minimale des transactions était-elle de 82 octets ?
   Pouvez-vous décrire l'attaque ?"
 
-  a0="Le minimum de 82-byte, elquel a été introduit par la PR [#11423][bitcoin core #11423] en 2018,
+  a0="Le minimum de 82-byte, qui a été introduit par la PR [#11423][bitcoin core #11423] en 2018,
   est la taille de la plus petite transaction de paiement standard. Cette
   modification a été présentée comme un nettoyage des règles de standardisation.
   Mais en réalité, le changement visait à empêcher qu'une transaction de 64 octets
@@ -174,7 +174,7 @@ discutés lors de la réunion.
   q1="Un participant a demandé, s'il était nécessaire de corriger cette vulnérabilité
   secrètement, étant donné qu'il serait très coûteux (de l'ordre de 1 million de
   dollars US) de mener cette attaque, et qu'il semble peu probable que les gens
-  utilisent des clients SPV pour des paiements de cette importance ?"
+  utilisent des clients SPV pour des paiements de cette importance."
 
   a1="Il y a eu un certain accord, mais un participant a fait remarquer que
   notre intuition à ce sujet pourrait être fausse."
@@ -244,7 +244,7 @@ les pré-versions.*
   certaines transactions et/ou blocs spécifiques. Aucune transaction connue
   de ce type n'existe sur une blockchain publique."
 
-- [Bitcoin Core 24.0 RC3][]  est une release candidate pour la prochaine version de
+- [Bitcoin Core 24.0 RC3][] est une release candidate pour la prochaine version de
   l'implémentation de nœuds complets la plus largement utilisée sur le réseau.
   Un [guide pour tester][bcc testing] est disponible.
 
@@ -311,7 +311,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   que les appelants peuvent utiliser pour empêcher l'envoi de plusieurs paiements
   identiques. De plus, LDK peut maintenant continuer à essayer de renvoyer un
   paiement indéfiniment, au lieu du comportement précédent qui consistait à cesser
-  les tentatives après quelques blocs d'échecs répétés; la méthode `abandon_payment`
+  les tentatives après quelques blocs d'échecs répétés ; la méthode `abandon_payment`
   peut être utilisée pour empêcher de nouvelles tentatives.
 
 - [LDK #1743][] fournit un nouvel événement `ChannelReady` lorsqu'un canal devient
