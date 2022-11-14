@@ -86,7 +86,27 @@ to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Sparrow 1.7.0 released:**
+  [Sparrow 1.7.0][sparrow 1.7.0] adds support for a [Replace-By-Fee (RBF)][topic rbf]-enabled
+  transaction cancellation feature among other updates.
+
+- **Blixt Wallet adds taproot support:**
+  [Blixt Wallet v0.6.0][blixt v0.6.0] adds send and receive support for [taproot][topic taproot] addresses.
+
+- **Specter-DIY v1.8.0 released:**
+  [Specter-DIY v1.8.0][] now supports [reproducible builds][topic reproducible
+  builds] and [taproot][topic taproot] keypath spending support.
+
+- **Trezor Suite adds coin control features:**
+  In a [recent blog post][trezor coin control], Trezor announced that Trezor
+  Suite now supports [coin control][topic coin selection] features.
+
+- **Strike adds taproot send support:**
+  Strike's wallet now allows sending to [bech32m][topic bech32] addresses.
+
+- **Kollider exchange launches with Lightning support:**
+  Kollider [announced][kollider launch] an exchange with LN deposit and
+  withdrawal capabilities as well as a browser-based Lightning wallet.
 
 ## Releases and release candidates
 
@@ -167,3 +187,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news222 rollup]: /en/newsletters/2022/10/19/#validity-rollups-research
 [st unjam post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003740.html
 [st unjam paper]: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
+[sparrow 1.7.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.0
+[blixt v0.6.0]: https://github.com/hsjoberg/blixt-wallet/releases/tag/v0.6.0
+[Specter-DIY v1.8.0]: https://github.com/cryptoadvance/specter-diy/releases/tag/v1.8.0
+[trezor coin control]: https://blog.trezor.io/coin-control-in-trezor-suite-92f3455fd706
+[kollider launch]: https://blog.kollider.xyz/announcing-kolliders-launch/
