@@ -17,7 +17,7 @@ d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Poursuite de la discussion sur l'activation de full-RBF:** comme mentionné dans
+- **Poursuite de la discussion sur l'activation de full-RBF :** comme mentionné dans
   les précédents bulletins---utilisateurs, fournisseurs de services,
   et développeurs de Bitcoin Core ont évalué l'inclusion de l'option de
   configuration `mempoolfullrbf` dans la branche de développement et la
