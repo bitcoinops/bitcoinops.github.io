@@ -149,7 +149,7 @@ d'être aussi réduite que 65 octets, remplaçant la politique actuelle qui exig
 que les transactions soient d'au moins 85 octets. (voir la [Newsletter #222][news222 min relay size]).
 
 Depuis cette rencontre du Review Club, cette PR a été fermée en faveur de la
-PR [#26398][bitcoin core #26398], laquelle assouplit la politique 
+PR [#26398][bitcoin core #26398], laquelle assouplit la politique
 encore plus loin en interdisant _seulement_ les transactions de 64 octets.
 Les mérites relatifs de ces deux politiques légèrement différentes ont été
 discutés lors de la réunion.
