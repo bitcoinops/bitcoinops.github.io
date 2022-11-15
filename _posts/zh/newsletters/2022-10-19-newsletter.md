@@ -119,7 +119,7 @@ the "full RBF" term.  -->
 [btcd 0.23.2]: https://github.com/btcsuite/btcd/releases/tag/v0.23.2
 [verloren limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020993.html
 [sanders limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020996.html
-[news205 rbf]: /zh/newsletters/2022/06/22/#policy-limits
+[news205 rbf]: /zh/newsletters/2022/06/22/#full-replace-by-fee
 [news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
 [sne rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020980.html
 [towns rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021017.html

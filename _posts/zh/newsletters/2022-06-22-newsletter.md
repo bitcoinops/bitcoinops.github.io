@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--policy-limits-->完全交易费替换：** 已开启[两个][bitcoin core #25353] pull [requests][bitcoin core #25373] 以支持 Bitcoin Core 的完全交易费替换（[RBF][topic rbf]）这个默认关闭的选项。如果启用，该节点的内存池中的任何未确认交易都可以被该交易的替代版本所替换，该替代版本的交易会支付更高的费用（同时考虑其他规则）。
+- **<!--full-replace-by-fee-->完全交易费替换：** 已开启[两个][bitcoin core #25353] pull [requests][bitcoin core #25373] 以支持 Bitcoin Core 的完全交易费替换（[RBF][topic rbf]）这个默认关闭的选项。如果启用，该节点的内存池中的任何未确认交易都可以被该交易的替代版本所替换，该替代版本的交易会支付更高的费用（同时考虑其他规则）。
 
   目前，Bitcoin Core 仅在要替换的交易版本启用了信号位时才允许 RBF，如 [BIP125][] 中所定义。这给多方合约协议带来了挑战，例如 LN 和 [DLCs][topic dlc]，其中一方有时可能会从交易中删除 BIP125 信号，以防止其他参与方使用交易替换。这可能会导致延迟，在最坏的情况下，可能会导致依赖及时确认的协议（例如 [HTLCs][topic htlc]）中的资金损失。
 
