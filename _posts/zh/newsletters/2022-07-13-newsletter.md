@@ -94,6 +94,6 @@ lang: zh
 [corallo delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003641.html
 [news203 scid]: /zh/newsletters/2022/06/08/#bolts-910
 [cia doc]: https://github.com/ElementsProject/cross-input-aggregation
-[news205 fullrbf]: /zh/newsletters/2022/06/22/#policy-limits
+[news205 fullrbf]: /zh/newsletters/2022/06/22/#full-replace-by-fee
 [review club 24170]: https://bitcoincore.reviews/24170
 [BIP324]: https://gist.github.com/dhruv/5b1275751bc98f3b64bcafce7876b489
