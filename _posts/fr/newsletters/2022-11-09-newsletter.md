@@ -342,7 +342,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [news220 v3tx]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
 [news222 bug]: /fr/newsletters/2022/10/19/#bug-d-analyse-de-bloc-affectant-btcd-et-lnd
 [liquid and rust bitcoin vulns]: https://twitter.com/Liquid_BTC/status/1587499305664913413
-[spoof payment attack]: /en/topics/cve/#CVE-2017-12842
+[attaque par usurpation de paiement]: /en/topics/cve/#CVE-2017-12842
 [towns find]: https://twitter.com/roasbeef/status/1587481219981508608
 [26438 close]: https://github.com/bitcoin/bitcoin/pull/26438#issuecomment-1307715677
 [review club 26265]: https://bitcoincore.reviews/26265
