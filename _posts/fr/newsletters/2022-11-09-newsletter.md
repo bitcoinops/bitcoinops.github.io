@@ -162,8 +162,8 @@ discutés lors de la réunion.
   est la taille de la plus petite transaction de paiement standard. Cette
   modification a été présentée comme un nettoyage des règles de standardisation.
   Mais en réalité, le changement visait à empêcher qu'une transaction de 64 octets
-  soit considérée comme standard, car cette taille permettait une attaque par
-  [usurpation de paiement][] contre les clients SPV (en leur faisant croire qu'ils
+  soit considérée comme standard, car cette taille permettait une [attaque par
+  usurpation de paiement][] contre les clients SPV (en leur faisant croire qu'ils
   avaient reçu un paiement alors que ce n'était pas le cas). L'attaque consiste à
   tromper un client SPV en lui faisant croire qu'une transaction de 64 octets est
   un nœud interne de l'arbre merkle de la transaction, qui a également une longueur
