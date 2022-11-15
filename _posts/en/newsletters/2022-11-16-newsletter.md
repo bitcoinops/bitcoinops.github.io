@@ -155,7 +155,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   error messages encoded using LN’s modern Type-Length-Value (TLV)
   semantics.
 
-- [Core Lightning #5647][] reckless plugin manager FIXME:Xekyo
+- [Core Lightning #5647][] adds the reckless plugin manager. The plugin manager
+  may be used to install CLN plugins by name from the `lightningd/plugins`
+  repository. The plugin manager automatically installs dependencies and verifies the
+  installation. It can also be used to enable and disable plugins as well as
+  persist the plugin state in a configuration file.
 
 - [LDK #1796][] updates `Confirm::get_relevant_txids()` to return not
   just txids but also the hashes of the blocks containing those
