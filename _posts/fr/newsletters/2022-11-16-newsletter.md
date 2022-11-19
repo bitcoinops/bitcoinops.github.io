@@ -20,7 +20,7 @@ sur les projets d'infrastructure Bitcoin populaires.
 - **Contrats intelligents généraux en bitcoin via des clauses restrictives :** Salvatore Ingala
   [a posté][ingala matt] à la liste de diffusion Bitcoin-Dev une proposition
   pour un nouveau type de [clauses de dépense][topic covenants] (requiert
-  un soft fork) qui permettrait d'utiliser des [arbres de merkle][] pour créer
+  un soft fork) qui permettrait d'utiliser des [merkle trees][] pour créer
   des contrats intelligents capables de transporter un état d'une transaction
   onchain à une autre. Pour reprendre un exemple tiré du post d'Ingala, deux
   utilisateurs pourraient parier sur une partie d'échecs où le contrat pourrait
