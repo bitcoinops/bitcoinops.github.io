@@ -111,15 +111,25 @@ lang: zh
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo] 和 [Lightning BOLTs][bolts repo]。*
 
 - [Bitcoin Core #26419][] 为验证接口的日志加入了语境，可以详细说明为什么一笔交易会从交易池中移除。
+
 - [Eclair #2404][] 添加了对 “短通道识别符（Short Channel IDentifirer，SCID）” 昵称和 “[零确认通道][topic zero-conf channels]” 的支持（即使通道状态的承诺没有使用 “[锚点输出][topic anchor outputs]”）。
+
 - [Eclair #2468][] 实现了 [BOLTs #1032][]，允许一笔支付（[HTLC][topic HTLC]）的最终接收方接受比自己所请求的更大的数额，而且可以使用比自己所要求的更长的超期时间。以前，使用 Eclair 的接收方遵守 [BOLT4][] 的要求：数额和超期时间都严格等于他们所要求的，但这种精确性意味着一个转发节点可以通过改变稍微改变数值和时间来打探下一跳是否为最终收款方。
+
 - [Eclair #2469][] 延长了它要求最后一个转发节点给予下一跳来结算支付的时间。转发节点不应该知道自己就是最后一个转发节点 —— TA 不应该知道下一跳就是支付的最终收款人。额外的结算时间案例是下一跳可能是一个转发节点而不是最终收款人。这个特性的 PR 描述指出，Core Lightning 和 LDK 已经实现了这种行为。也可以参照上一条关于 Eclair #2468 的介绍。
+
 - [Eclair #2362][] 加入了对 `dont_forward` 标签的支持，用于通道更新（channel update）（来自  [BOLTs #999][]）。通道更新会改变一条通道的参数，而且通常会发送 gossip 消息以通知网络中的其它节点、告知如何使用本通道，但如果一次通道升级消息包含了这个标签，就不会转发给其它节点。
+
 - [Eclair #2441][] 允许 Eclair 开始接收任意体积的、洋葱封装的报错消息。[BOLT2][] 当前建议使用 256 字节的报错消息，但并不禁止使用更长的报错消息；而 [BOLTs #1021][] 现正鼓励使用 1024 字节的报错消息、并使用闪电网络当前的 “类型-长度-数值（TLV）” 语义学来编码。
+
 - [LND #7100][] 更新了 LND 以使用最新版本的 BTCD（作为一个库），修复了上文 *新闻* 部分介绍的区块解析 bug。
+
 - [LDK #1761][] 为发送支付的方法增加了一个 `PaymentID` 参数，调用者可用来防止发送多笔相同的支付。此外，当前的 LDK 可能会不断尝试重新发送一笔支付，而不是像以前那样在继续几个区块的重复失败后停止尝试； `abandon_payemnt` 方法可以用来防止进一步的重发。
+
 - [LDK #1743][] 提供了一种新的 `ChannelReady` 事件，当一个通道准备好投入使用时，就会触发。值得指出的是，这个事件可以在通道收到一定数量的区块确认后触发，也可以立即触发（在使用[零确认通道][topic zero-conf channels]的时候）。
+
 - [BTCPay Server #4157][] 为一个新版本的结账接口加入了可选的支持。详见这个 PR 的截图和视频预览。
+
 - [BOLTs #1032][] 允许一笔支付（[HTLC][topic HTLC]）的最终接收方接受比自己所请求的更大的数额，而且可以使用比自己所要求的更长的超期时间。这让转发节点更难通过稍微改变支付的参数来确定下一跳是不是支付的接收者。见 Eclair #2468 的描述以了解更多。
 
 {% include references.md %}
