@@ -23,21 +23,21 @@ lang: zh
   - *<!--offering-nonreplacement-doesn’t-introduce-any-issues-for-full-nodes-->提供不可替换的特性并没有为全节点带来任何问题*：实际上，这简化了对一长串的交易的处理。
 
   - *<!--determining-incentive-compatibility-isn’t-always-straightforward-->有时候并不容易确定激励兼容性*：Daftuar 使用了 v3 交易转发提议（详见[周报 #220][news220 v3tx]）作为一个例子：
-  
+
     > 设想几年后有人提议给软件加入一个 “disable_v3_transaction_enforcement” 的标签，让用户可以决定关闭这些限制性的策略，并对 v3 交易和 v2 交易一视同仁，而且使用的理由可以跟今天为全面 RBF 辩护的理由完全相同 【……】
     >
     > 【那】将颠覆 v3 交易的闪电网络应用场景【……】我们不应该让用户能够禁用这个策略，因为只要这个策略是可选的，而且对那些想要它的有用，为特定的应用制定一套更严密的规则就没有伤害任何人。加入一种可以绕过这些规则的方法只是尝试打破其他人的应用，而不是增加新的应用。我们不应该拿 “激励兼容性” 当作一个大棒，打破那些看起来可以工作而且不会伤害别的用户的东西。
     >
     > 我认为现在全面 RBF 正是这种情形。
-  
+
   在邮件的结尾，Daftuar 给那些依然想在 Bitcoin Core 中加入 `mempoolfullrbf` 选项的人提出了三个问题：
-  
+
   1. “全面 RBF 除了打破零确认交易的商业实践之外，还提供了什么好处吗？如果有，在哪里？”
   2. “给所有的交易强制实施 BIP125 的 RBF 规则合理吗？如果这些规则本身并不一定是激励兼容的呢？”
   3. “如果未来某人想提议一种命令行选项，打破 v3 交易转发规则，而且使用的是跟当前走向全面 RBF 相同的理由，有没有什么理论能反对 TA 呢？”
-  
+
   截至本文撰写之时，邮件组中还没有人回答 Daftuar 的问题，虽然在 Daftuar 对 Bitcoin Core 提交的移除  `mempoolfullrbf` 配置选项的 [PR][bitcoin core #26438] 中出现了两个回复。后来 Daftuar [关闭][26438 close]了这个 PR。
-  
+
 - **<!--block-parsing-bug-affecting-multiple-software-->区块解析的 bug 影响了多个软件**：[周报 #222][news222 bug] 报道过，似乎一个会影响 BTCD 全节点和 LND 闪电节点的严重 bug 被意外触发了，导致这些软件的用户处在风险之中。不过升级版软件很快就发布了。在 bug 触发之后，很快 Anthony Towns 就[发现][towns find]了第二个相关的 bug，是只能由矿工触发的 bug。Towns 把这个 bug 报告给了 BTCD 和 LND 的带头维护者  Olaoluwa Osuntokun，后者准备了一个补丁，准备在软件的下一次常规升级中加入。在安全修复中加入其它变更，可以隐藏漏洞被修复的事情，并减少用户被爆破的可能。Towns 和 Osuntokun 都负责任地保守了这个漏洞的秘密，等待这个修复可以部署的时机。
 
   不幸的是，第二个相关 bug 被人自己重新发现了，TA 找到了一个矿工来触发。这个新 bug 又一次影响了 BTCD 和 LND，但同时也影响了至少[两个其它][liquid and rust bitcoin vulns]项目和服务。所有受影响的系统的用户都应该立即升级。我们重复在周前提出的建议：任何使用比特币软件的人，都应该留心软件的开发团队发出的安全通知。
@@ -50,46 +50,46 @@ lang: zh
 
 “[Relax MIN_STANDARD_TX_NONWITNESS_SIZE to 65 non-witness bytes][review club 26265]” 是 instagibbs 提出的一项 PR，放松了交易池对排除了见证数据的交易（non-witness transaction）的体积限制。它允许交易的体积小到 65 字节，替代了当前的要求交易至少为 85 字节的策略（见[周报 #222][news222 min relay size]）。
 
-在审核俱乐部会议结束后，这个 PR 被关闭了，大家改为考虑 [#26398][bitcoin core #26398]，后者通过 *仅* 禁用只有 64 字节的交易，进一步地放松了交易池策略。会议也讨论了这两种稍有不同的策略的优点。
+在审核俱乐部会议结束后，这个 PR 被关闭了，大家改为考虑 [#26398][bitcoin core #26398]，后者通过*仅*禁用只有 64 字节的交易，进一步地放松了交易池策略。会议也讨论了这两种稍有不同的策略的优点。
 
 {% include functions/details-list.md
-  q0="为什么要限制（交易池接受的）交易最小体积为 82 字节？有什么样的攻击呢？"
+  q0="<!--why-was-the-minimum-transaction-size-82-bytes-can-you-describe-the-attack-->为什么要限制（交易池接受的）交易最小体积为 82 字节？有什么样的攻击呢？"
 
   a0="这个 82 字节的下限是由 PR [#11423][bitcoin core #11423] 在 2018 年引入的。82 字节本身是最小的标准支付交易的体积。这个 PR 被说成是对标准性规则的一次清理。但事实上，它是为了让 64 字节的交易变成非标准交易，因为 64 字节的交易可以对 SPV 客户端发起 “[欺骗支付攻击][spoof payment attack]”（让客户端以为他们收到了支付，但实际上并没有）。这种攻击的实质是让 SPV 客户端认为一笔 64 字节的交易是交易默克尔树上的一个内部节点，这样的节点恰好是 64 字节的。"
 
   a0link="https://bitcoincore.reviews/26265#l-35"
 
-  q1="一位参与者提问，有必要秘密地修复这样的漏洞吗？发动这样的攻击可能非常昂贵（大概在 100 万美元量级），同时人们不太可能在处理这样大额的支付时使用 SPV 客户端。"
+  q1="<!--a-participant-asked-was-it-was-necessary-to-fix-this-vulnerability-covertly-given-that-it-would-be-very-expensive-on-the-order-of-usd-1m-to-carry-out-this-attack-combined-with-the-fact-that-it-seems-unlikely-people-would-use-spv-clients-for-payments-that-large-->一位参与者提问，有必要秘密地修复这样的漏洞吗？发动这样的攻击可能非常昂贵（大概在 100 万美元量级），同时人们不太可能在处理这样大额的支付时使用 SPV 客户端。"
 
   a1="一些人同意这种看法，但一位参与者指出我们的直觉可能是错的。"
 
   a1link="https://bitcoincore.reviews/26265#l-66"
 
-  q2="什么是 “排除了见证数据的部分”？为什么我们要在意交易带不带有见证数据呢？"
+  q2="<!--what-does-non-witness-size-mean-and-why-do-we-care-about-the-non-witness-distinction-->什么是“排除了见证数据的部分”？为什么我们要在意交易带不带有见证数据呢？"
 
   a2="这是因为，作为隔离见证升级的一部分，交易在参与默克尔根的计算时，本身就是不包含见证数据的。攻击需要恶意交易在默克尔树根值的计算中是 64 字节（这样它看起来才会像一个内部节点），因此我们要看排除了见证数据的部分。"
 
   a2link="https://bitcoincore.reviews/26265#l-62"
 
-  q3="为什么这个策略可以帮助防止这种攻击？"
+  q3="<!--why-does-setting-this-policy-help-to-prevent-the-attack-->为什么这个策略可以帮助防止这种攻击？"
 
   a3="因为默克尔树的内部节点只能是 64 字节长，只要不是这个长度的交易，就不会跟默克尔树的内部节点搞混。"
 
   a3link="https://bitcoincore.reviews/26265#l-84"
 
-  q4="这种攻击界面是不是被完全消除了？"
+  q4="<!--does-it-eliminate-the-attack-vector-entirely-->这种攻击界面是不是被完全消除了？"
 
   a4="改变标准交易的规则只能防止 64 字节的交易被交易池接受和转发，但这样的交易在共识上依然是有效的，所以依然可以挖出。因此，这样的攻击依然是有可能发动的，只不过需要矿工的帮忙。"
 
   a4link="https://bitcoincore.reviews/26265#l-84"
 
-  q5="为什么我们要把交易的体积下限改为 65 字节？只是为了掩盖 CVE（通用漏洞披露）的话，这是不必的。"
+  q5="<!--why-might-we-want-to-change-the-minimum-transaction-size-to-65-bytes-apart-from-the-fact-that-it-s-unnecessary-to-obfuscate-the-cve-->为什么我们要把交易的体积下限改为 65 字节？只是为了掩盖 CVE（通用漏洞披露）的话，这是不必的。"
 
   a5="因为小于 82 字节的交易也有合理的用途。已经提过的一个例子是把全部的父输出都当成手续费的 “[子为父偿(CPFP)][topic cpfp]” 交易（这样的交易只有一个输入，和一个空的  `OP_RETURN` 输出。"
 
   a5link="https://bitcoincore.reviews/26265#l-100"
 
-  q6="不允许小于 65 字节的交易，和禁止刚好等于 64 字节的交易，这两种方法哪个好一点？这两种方法各有什么样的影响？"
+  q6="<!--between-disallowing-sizes-less-than-65-bytes-and-sizes-equal-to-64-bytes-which-approach-do-you-think-is-better-and-why-what-are-the-implications-of-both-approaches-->不允许小于 65 字节的交易，和禁止刚好等于 64 字节的交易，这两种方法哪个好一点？这两种方法各有什么样的影响？"
 
   a6="经过一番关于字节计算的讨论之后，人们同意一笔有效但不标准的交易可以小到 60 字节：除去见证数据，一个原生隔离见证输入是 41 字节 + 10 字节的交易头 + 8 字节的数值 + 1 字节的 `OP_TURE` 或者 `OP_RETURN` 输出 = 60 字节"
 
@@ -117,7 +117,7 @@ lang: zh
 - [Eclair #2362][] 加入了对 `dont_forward` 标签的支持，用于通道更新（channel update）（来自  [BOLTs #999][]）。通道更新会改变一条通道的参数，而且通常会发送 gossip 消息以通知网络中的其它节点、告知如何使用本通道，但如果一次通道升级消息包含了这个标签，就不会转发给其它节点。
 - [Eclair #2441][] 允许 Eclair 开始接收任意体积的、洋葱封装的报错消息。[BOLT2][] 当前建议使用 256 字节的报错消息，但并不禁止使用更长的报错消息；而 [BOLTs #1021][] 现正鼓励使用 1024 字节的报错消息、并使用闪电网络当前的 “类型-长度-数值（TLV）” 语义学来编码。
 - [LND #7100][] 更新了 LND 以使用最新版本的 BTCD（作为一个库），修复了上文 *新闻* 部分介绍的区块解析 bug。
-- [LDK #1761][] 为发送支付的方法增加了一个 `PaymentID` 参数，调用者可用来防止发送多笔相同的支付。此外，当前的 LDK 可能会不断尝试重新发送一笔支付，而不是像以前那样在继续几个区块的重复失败后停止尝试； `abandon_payemnt` 方法可以用来防止进一步的重发。 
+- [LDK #1761][] 为发送支付的方法增加了一个 `PaymentID` 参数，调用者可用来防止发送多笔相同的支付。此外，当前的 LDK 可能会不断尝试重新发送一笔支付，而不是像以前那样在继续几个区块的重复失败后停止尝试； `abandon_payemnt` 方法可以用来防止进一步的重发。
 - [LDK #1743][] 提供了一种新的 `ChannelReady` 事件，当一个通道准备好投入使用时，就会触发。值得指出的是，这个事件可以在通道收到一定数量的区块确认后触发，也可以立即触发（在使用[零确认通道][topic zero-conf channels]的时候）。
 - [BTCPay Server #4157][] 为一个新版本的结账接口加入了可选的支持。详见这个 PR 的截图和视频预览。
 - [BOLTs #1032][] 允许一笔支付（[HTLC][topic HTLC]）的最终接收方接受比自己所请求的更大的数额，而且可以使用比自己所要求的更长的超期时间。这让转发节点更难通过稍微改变支付的参数来确定下一跳是不是支付的接收者。见 Eclair #2468 的描述以了解更多。
