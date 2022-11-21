@@ -28,7 +28,38 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Did the P2SH BIP-0016 make some Bitcoin unspendable?]({{bse}}115803)
+  User bca-0353f40e lists 6 outputs that existed with the P2SH script format,
+  `OP_HASH160 OP_DATA_20 [hash_value] OP_EQUAL`, before [BIP16][]'s activation.
+  One of those outputs had been spent under the old rules before activation and
+  an [exception made][p2sh activation exception] for that single block in the
+  P2SH activation code. Other than this exception, activation applied back to
+  the genesis block so the remaining UTXOs would need to satisfy BIP16 rules in
+  order to be spent.
+
+- [What software was used to make P2PK transactions?]({{bse}}115962)
+  Pieter Wuille notes that P2PK outputs were created using the original Bitcoin
+  software in coinbase transactions as well as when sending using [pay-to-IP
+  address][wiki p2ip].
+
+- [Why are both txid and wtxid sent to peers?]({{bse}}115907)
+  Pieter Wuille references [BIP339][] and explains that while using wtxid is
+  better for relay (due to malleability among other reasons), some peers do not
+  support the newer wtxid identifiers and txids are supported for older
+  pre-BIP339 peers for backward compatibility.
+
+- [How do I create a taproot multisig address?]({{bse}}115700)
+  Pieter Wuille points out that Bitcoin Core's existing [multisig][topic multisignature] RPCs (like
+  `createmultisig` and `addmultisigaddress`) will only support legacy wallets
+  and outlines that with Bitcoin Core 24.0, users will be able to use
+  [descriptors][topic descriptors] and RPCs (like `deriveaddresses` and
+  `importdescriptors`) along with the new `multi_a` descriptor to create
+  [taproot][topic taproot]-compatible multisig scripts.
+
+- [Is it possible to skip Initial Block Download (IBD) on pruned node?]({{bse}}116030)
+  While not currently supported in Bitcoin Core, Pieter Wuille points to the
+  [assumeutxo][topic assumeutxo] project which would allow for a new node to
+  bootstrap by fetching a UTXO set that can be verified by a hard-coded hash.
 
 ## Releases and release candidates
 
@@ -92,3 +123,5 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news196 lnd6385]: /en/newsletters/2022/04/20/#lnd-6385
 [news200 policy]: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
+[wiki p2ip]: https://en.bitcoin.it/wiki/IP_transaction
+[p2sh activation exception]: https://github.com/bitcoin/bitcoin/commit/ce650182f4d9847423202789856e6e5f499151f8
