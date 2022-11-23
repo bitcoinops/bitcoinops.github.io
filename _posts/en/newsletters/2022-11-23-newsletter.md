@@ -115,8 +115,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
 [news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
 [news224 rbf]: /en/newsletters/2022/11/02/#mempool-consistency
-[lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc1
-[core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc1
+[lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
+[core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc2
 [news220 bolts962]: /en/newsletters/2022/10/05/#bolts-962
 [news217 eclair2190]: /en/newsletters/2022/09/14/#eclair-2190
 [news193 cln5058]: /en/newsletters/2022/03/30/#c-lightning-5058
