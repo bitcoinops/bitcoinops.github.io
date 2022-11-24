@@ -91,8 +91,8 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25730,7082,1413,637" %}
 [bitcoin core 24.0]: https://bitcoincore.org/bin/bitcoin-core-24.0/
-[lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc1
-[core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc1
+[lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
+[core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc2
 [news220 bolts962]: /ja/newsletters/2022/10/05/#bolts-962
 [news217 eclair2190]: /ja/newsletters/2022/09/14/#eclair-2190
 [news193 cln5058]: /ja/newsletters/2022/03/30/#c-lightning-5058
