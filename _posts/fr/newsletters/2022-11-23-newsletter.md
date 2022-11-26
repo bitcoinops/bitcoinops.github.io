@@ -20,94 +20,94 @@ Bitcoin-Dev ou Lightning-Dev.*
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les
+collaborateurs d'Optech cherchent des réponses à leurs questions---ou lorsque
+nous avons quelques moments libres pour aider les utilisateurs curieux ou perdus.
+Dans cette rubrique mensuelle, nous mettons en évidence certaines des questions
+et réponses les plus votées depuis notre dernière mise à jour..*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Did the P2SH BIP-0016 make some Bitcoin unspendable?]({{bse}}115803)
-  User bca-0353f40e lists 6 outputs that existed with the P2SH script format,
-  `OP_HASH160 OP_DATA_20 [hash_value] OP_EQUAL`, before [BIP16][]'s activation.
-  One of those outputs had been spent under the old rules before activation and
-  an [exception made][p2sh activation exception] for that single block in the
-  P2SH activation code. Other than this exception, activation applied back to
-  the genesis block so the remaining UTXOs would need to satisfy BIP16 rules in
-  order to be spent.
+- [Est-ce que le P2SH BIP-0016 rend certains bitcoins non utilisables ?]({{bse}}115803)
+  L'utilisateur bca-0353f40e liste 6 sorties qui existaient avec le format de script P2SH,
+  `OP_HASH160 OP_DATA_20 [hash_value] OP_EQUAL`, avant l'activation du [BIP16][].
+  Une de ces sorties avait été dépensée selon les anciennes règles avant l'activation
+  et une [exception faite][p2sh activation exception] pour ce seul bloc dans le code
+  d'activation P2SH. En dehors de cette exception, l'activation s'applique au bloc de
+  genèse, de sorte que les UTXOs restants doivent satisfaire aux règles du BIP16 pour
+  pouvoir être dépensés.
 
-- [What software was used to make P2PK transactions?]({{bse}}115962)
-  Pieter Wuille notes that P2PK outputs were created using the original Bitcoin
-  software in coinbase transactions as well as when sending using [pay-to-IP
-  address][wiki p2ip].
+- [Quel logiciel a été utilisé pour faire les transactions P2PK ?]({{bse}}115962)
+  Pieter Wuille note que les sorties P2PK ont été créées à l'aide du logiciel
+  Bitcoin original dans les transactions Coinbase ainsi que lors de l'envoi à
+  l'aide de [l'adresse IP de paiement][wiki p2ip].
 
-- [Why are both txid and wtxid sent to peers?]({{bse}}115907)
-  Pieter Wuille references [BIP339][] and explains that while using wtxid is
-  better for relay (due to malleability among other reasons), some peers do not
-  support the newer wtxid identifiers and txids are supported for older
-  pre-BIP339 peers for backward compatibility.
+- [Pourquoi le txid et le wtxid sont-ils tous deux envoyés aux pairs ?]({{bse}}115907)
+  Pieter Wuille fait référence au [BIP339][] et explique que si l'utilisation du wtxid
+  est préférable pour le relais (en raison de la malléabilité, entre autres), certains
+  pairs ne prennent pas en charge les nouveaux identifiants wtxid et les txids sont pris
+  en charge pour les anciens pairs pré-BIP339 pour des raisons de rétrocompatibilité.
 
-- [How do I create a taproot multisig address?]({{bse}}115700)
-  Pieter Wuille points out that Bitcoin Core's existing [multisig][topic multisignature] RPCs (like
-  `createmultisig` and `addmultisigaddress`) will only support legacy wallets
-  and outlines that with Bitcoin Core 24.0, users will be able to use
-  [descriptors][topic descriptors] and RPCs (like `deriveaddresses` and
-  `importdescriptors`) along with the new `multi_a` descriptor to create
-  [taproot][topic taproot]-compatible multisig scripts.
+- [Comment puis-je créer une adresse taproot multisig ?]({{bse}}115700)
+  Pieter Wuille souligne que les RPC [multisig][topic multisignature] existants de
+  Bitcoin Core (comme `createmultisig` et `addmultisigaddress`) ne supporteront que les
+  anciens portefeuilles et souligne qu'avec Bitcoin Core 24.0, les utilisateurs pourront
+  utiliser les [descripteurs][topic descriptors] et les RPC (comme `deriveaddresses` et
+  `importdescriptors`) avec le nouveau descripteur `multi_a` pour créer des scripts
+  multisig compatibles avec [taproot][topic taproot].
 
-- [Is it possible to skip Initial Block Download (IBD) on pruned node?]({{bse}}116030)
-  While not currently supported in Bitcoin Core, Pieter Wuille points to the
-  [assumeutxo][topic assumeutxo] project which would allow for a new node to
-  bootstrap by fetching a UTXO set that can be verified by a hard-coded hash.
+- [Est-il possible de sauter le téléchargement du bloc initial (IBD) sur un nœud élagué ?]({{bse}}116030)
+  Bien qu'il ne soit pas actuellement pris en charge par Bitcoin Core, Pieter Wuille signale
+  le projet [assumeutxo][topic assumeutxo] qui permettrait à un nouveau nœud de s'amorcer
+  en récupérant un ensemble UTXO qui peut être vérifié par un hachage codé en dur.
 
-## Releases and release candidates
+## Mises à jour et release candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et release candidate pour les principaux projets d'infrastructure Bitcoin.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidate.*
 
-- [LND 0.15.5-beta.rc2][] is a release candidate for a maintenance
-  release of LND.  It contains only minor bug fixes according to its
-  planned release notes.
+- [LND 0.15.5-beta.rc2][] est une release candidate pour une mise à jour de
+  maintenance de LND. Elle ne contient que des corrections de bogues mineurs
+  selon ses notes de version prévues.
 
-- [Core Lightning 22.11rc2][] is a release candidate for the next major
-  version of CLN.  It'll also be the first release to use a new version
-  numbering scheme, although CLN releases continue to use [semantic
-  versioning][].
+- [Core Lightning 22.11rc2][] est une release candidate pour la prochaine
+  version majeure de CLN. Ce sera également la première version à utiliser
+  un nouveau système de numérotation des versions, bien que les versions
+  CLN continuent à utiliser le [versionnement sémantique][].
 
-## Notable code and documentation changes
+## Changements principaux dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25730][] updates the `listunspent` RPC with a new
-  argument that will include in the results any immature coinbase
-  outputs---outputs which can't yet be spent because fewer than 100
-  blocks have passed since they were included in the miner coinbase
-  transaction of a block.
+- [Bitcoin Core #25730][] met à jour le RPC `listunspent` avec un nouvel
+  argument qui inclura dans les résultats toutes les sorties coinbase
+  immatures---les sorties qui ne peuvent pas encore être dépensées parce
+  que moins de 100 blocs se sont écoulés depuis qu'elles ont été incluses
+  dans la transaction coinbase du mineur d'un bloc.
 
-- [LND #7082][] updates the way invoices without requested amounts are
-  created to allow the inclusion of route hints, which can help the spender find
-  a path to the receiver.
+- [LND #7082][] met à jour la manière dont les factures sans montant demandé
+  sont créées afin de permettre l'inclusion d'indications d'itinéraire, qui
+  peuvent aider le dépensier à trouver un chemin vers le destinataire.
 
-- [LDK #1413][] removes support for the original fixed-length onion data
-  format.  The upgraded variable-length format was added to the
-  specification over three years ago and support for the old version has
-  already been removed from the specification (see [Newsletter
-  #220][news220 bolts962]), Core Lightning ([Newsletter #193][news193
-  cln5058]), LND ([Newsletter #196][news196 lnd6385]), and Eclair
+- [LDK #1413][] supprime la prise en charge du format original de données
+  en oignon à longueur fixe. Le format amélioré à longueur variable a été
+  ajouté à la spécification il y a plus de trois ans et la prise en charge
+  de l'ancienne version a déjà été supprimée de la spécification. (voir les
+  [Newsletter #220][news220 bolts962]), Core Lightning ([Newsletter #193][news193
+  cln5058]), LND ([Newsletter #196][news196 lnd6385]), et Eclair
   ([Newsletter #217][news217 eclair2190]).
 
-- [HWI #637][] adds support for a major planned upgrade of the
-  Bitcoin-related firmware for Ledger devices.  Not included in this PR
-  but mentioned in its description as future planned work is the policy
-  management work mentioned in [Newsletter #200][news200 policy].
+- [HWI #637][] ajoute la prise en charge d'une mise à jour majeure prévue du
+  micrologiciel lié à Bitcoin pour les dispositifs Ledger. Le travail de gestion
+  de la politique mentionné dans le document intitulé " Policy Management " n'est
+  pas inclus dans ce PR, mais est mentionné dans sa description en tant que
+  travail futur prévu dans la [Newsletter #200][news200 policy].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25730,7082,1413,637" %}
@@ -123,6 +123,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news193 cln5058]: /en/newsletters/2022/03/30/#c-lightning-5058
 [news196 lnd6385]: /en/newsletters/2022/04/20/#lnd-6385
 [news200 policy]: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
-[semantic versioning]: https://semver.org/spec/v2.0.0.html
+[versionnement sémantique]: https://semver.org/spec/v2.0.0.html
 [wiki p2ip]: https://en.bitcoin.it/wiki/IP_transaction
 [p2sh activation exception]: https://github.com/bitcoin/bitcoin/commit/ce650182f4d9847423202789856e6e5f499151f8
