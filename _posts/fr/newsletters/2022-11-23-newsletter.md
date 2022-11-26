@@ -10,7 +10,7 @@ lang: fr
 La lettre d'information de cette semaine contient une sélection de questions
 et réponses du Bitcoin Stack Exchange, sont également inclus les résumés des
 modifications apportées aux services et aux logiciels clients, des annonces
-de nouvelles versions et de release candidate, et des descriptions d'ajout
+de nouvelles versions et de versions candidates, et des descriptions d'ajout
 sur les projets d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
@@ -21,10 +21,10 @@ Bitcoin-Dev ou Lightning-Dev.*
 ## Selection de Q&R du Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les
-collaborateurs d'Optech cherchent des réponses à leurs questions---ou lorsque
-nous avons quelques moments libres pour aider les utilisateurs curieux ou perdus.
+collaborateurs d'Optech cherchent des réponses à leurs questions---ou lorsqu'ils
+ont quelques moments libres, aident les utilisateurs curieux ou perdus.
 Dans cette rubrique mensuelle, nous mettons en évidence certaines des questions
-et réponses les plus votées depuis notre dernière mise à jour..*
+et réponses les plus populaires depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
@@ -62,9 +62,9 @@ et réponses les plus votées depuis notre dernière mise à jour..*
   le projet [assumeutxo][topic assumeutxo] qui permettrait à un nouveau nœud de s'amorcer
   en récupérant un ensemble UTXO qui peut être vérifié par un hachage codé en dur.
 
-## Mises à jour et release candidate
+## Mises à jour et version candidate
 
-*Nouvelles versions et release candidate pour les principaux projets d'infrastructure Bitcoin.
+*Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidate.*
 
 - [LND 0.15.5-beta.rc2][] est une release candidate pour une mise à jour de
@@ -88,12 +88,13 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 - [Bitcoin Core #25730][] met à jour le RPC `listunspent` avec un nouvel
   argument qui inclura dans les résultats toutes les sorties coinbase
   immatures---les sorties qui ne peuvent pas encore être dépensées parce
-  que moins de 100 blocs se sont écoulés depuis qu'elles ont été incluses
+  que moins de 100 blocs se sont écoulés depuis leur inclusion
   dans la transaction coinbase du mineur d'un bloc.
 
 - [LND #7082][] met à jour la manière dont les factures sans montant demandé
   sont créées afin de permettre l'inclusion d'indications d'itinéraire, qui
-  peuvent aider le dépensier à trouver un chemin vers le destinataire.
+  peuvent aider l'émetteur qui effectue la dépense à trouver un chemin vers
+  le destinataire.
 
 - [LDK #1413][] supprime la prise en charge du format original de données
   en oignon à longueur fixe. Le format amélioré à longueur variable a été
@@ -104,8 +105,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   ([Newsletter #217][news217 eclair2190]).
 
 - [HWI #637][] ajoute la prise en charge d'une mise à jour majeure prévue du
-  micrologiciel lié à Bitcoin pour les dispositifs Ledger. Le travail de gestion
-  de la politique mentionné dans le document intitulé " Policy Management " n'est
+  micrologiciel lié à Bitcoin pour les dispositifs Ledger. Le travail de politique
+  de gestion mentionné dans le document intitulé " Policy Management " n'est
   pas inclus dans ce PR, mais est mentionné dans sa description en tant que
   travail futur prévu dans la [Newsletter #200][news200 policy].
 
