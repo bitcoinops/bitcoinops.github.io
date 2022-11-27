@@ -34,13 +34,13 @@ et réponses les plus populaires depuis notre dernière mise à jour.*
   `OP_HASH160 OP_DATA_20 [hash_value] OP_EQUAL`, avant l'activation du [BIP16][].
   Une de ces sorties avait été dépensée selon les anciennes règles avant l'activation
   et une [exception faite][p2sh activation exception] pour ce seul bloc dans le code
-  d'activation P2SH. En dehors de cette exception, l'activation s'applique au bloc de
-  genèse, de sorte que les UTXOs restants doivent satisfaire aux règles du BIP16 pour
+  d'activation P2SH. En dehors de cette exception, l'activation s'applique depuis le bloc de
+  genèse, de sorte que tous les autres UTXOs doivent satisfaire aux règles du BIP16 pour
   pouvoir être dépensés.
 
 - [Quel logiciel a été utilisé pour faire les transactions P2PK ?]({{bse}}115962)
   Pieter Wuille note que les sorties P2PK ont été créées à l'aide du logiciel
-  Bitcoin original dans les transactions Coinbase ainsi que lors de l'envoi à
+  Bitcoin original dans les transactions coinbase ainsi que lors de l'envoi à
   l'aide de [l'adresse IP de paiement][wiki p2ip].
 
 - [Pourquoi le txid et le wtxid sont-ils tous deux envoyés aux pairs ?]({{bse}}115907)
@@ -53,19 +53,19 @@ et réponses les plus populaires depuis notre dernière mise à jour.*
   Pieter Wuille souligne que les RPC [multisig][topic multisignature] existants de
   Bitcoin Core (comme `createmultisig` et `addmultisigaddress`) ne supporteront que les
   anciens portefeuilles et souligne qu'avec Bitcoin Core 24.0, les utilisateurs pourront
-  utiliser les [descripteurs][topic descriptors] et les RPC (comme `deriveaddresses` et
+  utiliser les [descripteurs][topic descriptors] et des RPC (comme `deriveaddresses` et
   `importdescriptors`) avec le nouveau descripteur `multi_a` pour créer des scripts
   multisig compatibles avec [taproot][topic taproot].
 
 - [Est-il possible de sauter le téléchargement du bloc initial (IBD) sur un nœud élagué ?]({{bse}}116030)
-  Bien qu'il ne soit pas actuellement pris en charge par Bitcoin Core, Pieter Wuille signale
+  Bien qu'il ne soit pas encore integré dans Bitcoin Core, Pieter Wuille signale
   le projet [assumeutxo][topic assumeutxo] qui permettrait à un nouveau nœud de s'amorcer
   en récupérant un ensemble UTXO qui peut être vérifié par un hachage codé en dur.
 
 ## Mises à jour et version candidate
 
 *Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
-Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidate.*
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidates.*
 
 - [LND 0.15.5-beta.rc2][] est une release candidate pour une mise à jour de
   maintenance de LND. Elle ne contient que des corrections de bogues mineurs
