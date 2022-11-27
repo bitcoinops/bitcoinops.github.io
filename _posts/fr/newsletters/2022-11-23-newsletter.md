@@ -65,13 +65,13 @@ et réponses les plus populaires depuis notre dernière mise à jour.*
 ## Mises à jour et version candidate
 
 *Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
-Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les release candidates.*
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les versions candidates.*
 
-- [LND 0.15.5-beta.rc2][] est une release candidate pour une mise à jour de
+- [LND 0.15.5-beta.rc2][] est une version candidate pour une mise à jour de
   maintenance de LND. Elle ne contient que des corrections de bogues mineurs
   selon ses notes de version prévues.
 
-- [Core Lightning 22.11rc2][] est une release candidate pour la prochaine
+- [Core Lightning 22.11rc2][] est une version candidate pour la prochaine
   version majeure de CLN. Ce sera également la première version à utiliser
   un nouveau système de numérotation des versions, bien que les versions
   CLN continuent à utiliser le [versionnement sémantique][].
