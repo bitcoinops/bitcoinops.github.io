@@ -192,6 +192,9 @@ optech_mentions:
   - title: "Rust Bitcoin #957 adds an API for signing PSBTs"
     url: /en/newsletters/2022/11/02/#rust-bitcoin-957
 
+  - title: "LND #7122 adds support for importing PSBTs from binary files"
+    url: /en/newsletters/2022/11/30/#lnd-7122
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

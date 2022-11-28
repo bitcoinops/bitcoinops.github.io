@@ -116,7 +116,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   will make it harder for the spender to determine how many hops the
   receiver is from the last non-blinded forwarding node in the route.
 
-- [LND #7122][] antonilol/read-binary-psbt FIXME:Xekyo
+- [LND #7122][] adds support to `lncli` for processing binary [PSBT][topic
+  psbt] files. [BIP174][] specifies that PSBTs may be encoded either as plain
+  text Base64 or binary in a file. Prior, LND already supported importing
+  Base64-encoded PSBTs either as plain text or from file.
 
 - [LDK #1852][] accepts a feerate increase proposed by a channel peer
   even if that feerate isn't high enough to safely keep the channel
