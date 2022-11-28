@@ -71,6 +71,9 @@ optech_mentions:
   - title: "Core Lightning #5646 updates the implementation of offers to remove x-only public keys"
     url: /en/newsletters/2022/11/02/#core-lightning-5646
 
+  - title: "Eclair #2499 allows specifying a blinded route to use when using a BOLT12 offer"
+    url: /en/newsletters/2022/11/30/#eclair-2499
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

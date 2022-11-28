@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Paper suggesting solutions to jamming attacks based on local reputation and upfront fees"
     url: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 
+  - title: "Reputation credentials proposal to mitigate LN jamming attacks"
+    url: /en/newsletters/2022/11/30/#reputation-credentials-proposal-to-mitigate-ln-jamming-attacks
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
