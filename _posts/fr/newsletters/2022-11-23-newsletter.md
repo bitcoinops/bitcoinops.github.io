@@ -119,7 +119,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [news224 rbf]: /fr/newsletters/2022/11/02/#coherence-mempool
 [lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
 [core lightning 22.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc2
-[news220 bolts962]: /en/newsletters/2022/10/05/#bolts-962
+[news220 bolts962]: /fr/newsletters/2022/10/05/#bolts-962
 [news217 eclair2190]: /en/newsletters/2022/09/14/#eclair-2190
 [news193 cln5058]: /en/newsletters/2022/03/30/#c-lightning-5058
 [news196 lnd6385]: /en/newsletters/2022/04/20/#lnd-6385
