@@ -7,47 +7,49 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter describes a proposal to mitigate LN jamming
-attacks using reputation credential tokens.  Also included are our
-regular sections with announcements of new software releases and release
-candidates and summaries of notable changes to popular Bitcoin
-infrastructure software.
+La lettre d'information de cette semaine décrit une proposition visant à
+permettre d'atténuer les attaques par brouillage de LN en utilisant des
+jetons de réputation. sont également inclus les résumés des modifications
+apportées aux services et aux logiciels clients, des annonces de nouvelles
+versions et de versions candidates, et des descriptions d'ajout sur les
+projets d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
 
-- **Reputation credentials proposal to mitigate LN jamming attacks:**
-  Antoine Riard [posted][riard credentials] to the Lightning-Dev mailing
-  list a [proposal][riard proposal] for a new credential-based
-  reputation system to help prevent attackers from temporarily blocking
-  payment ([HTLC][topic htlc]) slots or value, preventing honest users
-  from being able to send payments---a problem called [channel jamming
-  attacks][topic channel jamming attacks].
+- **Proposition de références de réputation pour atténuer les attaques de brouillage LN :**
+  Antoine Riard [a posté][riard credentials] sur la liste de diffusion de
+  Lightning-Dev une [proposition][riard proposal] pour un nouveau système
+  de réputation basé sur les références pour aider à empêcher les attaquants
+  de bloquer temporairement les créneaux de paiement ([HTLC][topic htlc]) ou
+  la valeur, empêchant ainsi les utilisateurs honnêtes de pouvoir envoyer des
+  paiements---un problème appelé [attaque par brouillage de canal][topic channel jamming attacks].
 
-    In LN today, spenders choose a path from their node to the receiving
-    node across multiple channels operated by independent forwarding
-    nodes.  They create a set of trustless instructions that describes
-    where each forwarding node should next relay the payment, encrypting
-    those instructions so that each node receives only the minimum
-    information it needs to do its job.
+    Dans le réseau LN actuel, les emprunteurs choisissent un chemin entre leur
+    nœud et le nœud récepteur sur plusieurs canaux exploités par des nœuds de
+    transfert indépendants. Ils créent un ensemble d'instructions sans confiance
+    qui décrivent où chaque nœud de transmission doit relayer le paiement, en
+    cryptant ces instructions afin que chaque nœud ne reçoive que les informations
+    minimales dont il a besoin pour faire son travail.
 
-    Riard proposes that each forwarding node should only accept the relay
-    instructions if they include one or more credential tokens that were
-    previously issued by that forwarding node.  The credentials include
-    a [blind signature][] that prevents the forwarding node from
-    directly determining which node was issued the credential
-    (preventing the forwarding node from learning the network identity
-    of the spender).  Each node may issue credentials according to its
-    own policy, although Riard suggests several distribution methods:
+    Riard propose que chaque nœud de transmission n'accepte les instructions de
+    relais que si elles comprennent un ou plusieurs jetons d'authentification qui
+    ont été précédemment émis par ce nœud de transmission. Les justificatifs
+    comprennent une [signature aveugle][] qui empêche le nœud de transmission de
+    déterminer directement quel nœud a émis le justificatif (empêchant le nœud de
+    transmission de connaître l'identité réseau de l'expéditeur).  Chaque nœud peut
+    émettre des lettres de créance selon sa propre politique, bien que Riard suggère
+    plusieurs méthodes de distribution :
 
-    - *Upfront payments:* if Alice's node wants to forward payments
-      through Bob's node, her node first uses LN to buy a credential
-      from Bob.
+    - *paiement initial :* si le nœud d'Alice veut faire transiter des
+      paiements par le nœud de Bob, son nœud utilise d'abord LN pour
+      acheter une créance à Bob.
 
-    - *Previous success:* if a payment that Alice sent through Bob's
-      node is successfully accepted by the ultimate receiver, Bob's node
-      can return a credential token to Alice's node---or even more
-      tokens than were previously used, allowing Alice's node to send
-      additional value through Bob's node in the future.
+    - *Réussite précédente :* si un paiement qu'Alice a envoyé par le
+      biais du nœud de Bob est accepté par le destinataire final, le
+      nœud de Bob peut renvoyer un jeton de créance au nœud d'Alice---ou
+      même plus de jetons que ceux utilisés précédemment, ce qui permet
+      au nœud d'Alice d'envoyer une valeur supplémentaire par le biais
+      du nœud de Bob à l'avenir.
 
     - *UTXO ownership proofs or other alternatives:* although not
       necessary for Riard's initial proposal, some forwarding nodes may
@@ -145,16 +147,16 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="5727,2499,7122,1852,993,1043" %}
 [bitcoin core 24.0]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc 24.0 rn]: https://github.com/bitcoin/bitcoin/blob/0ee1cfe94a1b735edc2581a05c4b12f8340ff609/doc/release-notes.md
-[news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
-[news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
-[news224 rbf]: /en/newsletters/2022/11/02/#mempool-consistency
+[news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
+[news223 rbf]: /fr/newsletters/2022/10/26/#poursuite-de-la-discussion-sur-le-full-rbf
+[news224 rbf]: /fr/newsletters/2022/11/02/#coherence-mempool
 [lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
 [core lightning 22.11rc3]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc3
 [cln json ids]: https://github.com/rustyrussell/lightning/blob/a25c5d14fe986b67178988e6ebb79610672cc829/doc/lightningd-rpc.7.md#json-ids
 [riard credentials]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003754.html
 [riard proposal]: https://github.com/lightning/bolts/blob/80214c83190836c4f7699af9e8920769607f1a00/www-reputation-credentials-protocol.md
 [blind signature]: https://en.wikipedia.org/wiki/Blind_signature
-[news226 jam]: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
+[news226 jam]: /fr/newsletters/2022/11/16/#document-sur-les-attaques-par-brouillage-de-canaux
 [shikelman credentials]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003755.html
 [riard double spend]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003765.html
 [harding paths]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003767.html
