@@ -140,6 +140,9 @@ optech_mentions:
   - title: Proposal to use multiple pre-committed fees to avoid needing anchor outputs in many cases
     url: /en/newsletters/2022/11/02/#anchor-outputs-workaround
 
+  - title: Implementation of ephemeral anchors built on v3 transactions
+    url: /en/newsletters/2022/12/07/#ephemeral-anchors-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

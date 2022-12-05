@@ -66,6 +66,9 @@ optech_mentions:
   - title: Proposed ephemeral anchors to help mitigate pinning attacks
     url: /en/newsletters/2022/10/26/#ephemeral-anchors
 
+  - title: Implementation of proposed ephemeral anchors to help prevent pinning attacks
+    url: /en/newsletters/2022/12/07/#ephemeral-anchors-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
