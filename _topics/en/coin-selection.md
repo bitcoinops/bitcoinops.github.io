@@ -59,8 +59,9 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: Simulation-based Evaluation of Coin Selection Strategies
-    link: http://murch.one/wp-content/uploads/2016/09/CoinSelection.pdf
+  - title: An Evaluation of Coin Selection Strategies
+    link: https://murch.one/erhardt2016coinselection.pdf
+
 ---
 Most early Bitcoin wallets implemented relatively simple coin
 selection strategies, such as spending UTXOs in the order they were
