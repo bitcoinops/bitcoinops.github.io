@@ -120,7 +120,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   prove some properties of Rust Bitcoin's code.  This complements other
   continuous integration tests performed on the code, such as fuzzing.
 
-- [BTCPay Server #4238][] Add Greenfield invoice refund endpoint FIXME:bitschmidty
+- [BTCPay Server #4238][] adds an invoice refund endpoint to BTCPay's
+  Greenfield API, a more recent API different from the original BitPay-inspired API.
 
 ## Footnotes
 
