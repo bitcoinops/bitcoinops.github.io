@@ -91,7 +91,13 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19762][] rpc: Allow named and positional arguments to be used together FIXME:glozow
+- [Bitcoin Core #19762][] updates the RPC (and, by extension,
+  `bitcoin-cli`) interface to allow named and positional arguments to be
+used together. This change makes it more convenient to use named
+parameter values without having to name every one.  The PR description
+provides examples demonstrating the increased convenience of this
+approach as well as a handy shell alias for frequent users of
+`bitcoin-cli`.
 
 - [Core Lightning #5722][] adds [documentation][grpc doc] about how to
   use the GRPC interface plugin.
