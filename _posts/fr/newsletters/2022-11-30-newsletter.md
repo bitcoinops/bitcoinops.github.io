@@ -51,97 +51,101 @@ projets d'infrastructure Bitcoin populaires.
       au nœud d'Alice d'envoyer une valeur supplémentaire par le biais
       du nœud de Bob à l'avenir.
 
-    - *UTXO ownership proofs or other alternatives:* although not
-      necessary for Riard's initial proposal, some forwarding nodes may
-      experiment with giving credentials to everyone who proves they own
-      a Bitcoin UTXO, perhaps with modifiers that give older or
-      higher-value UTXOs more credential tokens than newer or
-      lower-value UTXOs.  Any other criteria can be used as each
-      forwarding node chooses for itself how to distribute its
-      credential tokens.
+    - *Preuves de propriété UTXO ou autres alternatives :* bien que cela
+      ne soit pas nécessaire pour la proposition initiale de Riard, certains
+      nœuds de transmission peuvent expérimenter l'attribution de jetons de
+      créance à toute personne prouvant qu'elle possède un UTXO Bitcoin,
+      peut-être avec des modificateurs qui donnent aux UTXO plus anciens
+      ou de plus grande valeur plus de jetons de créance qu'aux UTXO plus
+      récents ou de plus faible valeur. Tout autre critère peut être utilisé,
+      chaque nœud de transmission choisissant lui-même comment distribuer
+      ses jetons de créance.
 
-    Clara Shikhelman, whose own co-authored proposal partly based on
-    local reputation was described in [Newsletter #226][news226 jam],
-    replied to [ask][shikelman credentials] whether credential tokens
-    were transferable between users and whether that could lead to the
-    creation of a market for tokens.  She also asked how they would work
-    with [blinded paths][topic rv routing] where a spending node
-    wouldn't know the full path to the receiving node.
+    Clara Shikhelman, dont la propre proposition co-écrite basée en partie sur
+    la réputation locale a été décrite dans la [Newsletter #226][news226 jam],
+    a répondu à [ask][shikelman credentials] que si les jetons de créance étaient
+    transférables entre utilisateurs cela pouvait conduire à la création d'un
+    marché pour les jetons. Elle a également demandé comment ils fonctionneraient
+    avec [les chemins aveugles][topic rv routing] où un nœud dépensier ne connaîtrait
+    pas le chemin complet vers le nœud récepteur.
 
-    Riard [replied][riard double spend] that it would be difficult to
-    redistribute credential tokens and create a market for them because
-    any transfer would require trust.  For example, if Bob's node
-    issues a new credential to Alice, who then tries to sell the
-    credential to Carol, there's no trustless way for Alice to prove she
-    won't try to use the token herself even after Carol has paid her.
+    Riard [a répondu][riard double spend] qu'il serait difficile de redistribuer
+    les jetons de créance et de créer un marché pour eux car tout transfert
+    nécessiterait de la confiance. Par exemple, si le nœud de Bob émet une nouvelle
+    créance à Alice, qui essaie ensuite de vendre la créance à Carol, il n'y a aucun
+    moyen sans confiance pour Alice de prouver qu'elle n'essaiera pas d'utiliser le
+    jeton elle-même, même après que Carol l'ait payée.
 
-    For blinded paths, [it appears][harding paths] the receiver can
-    provide any necessary credentials in an encrypted form without
-    introducing a secondary vulnerability.
+    Pour les chemins aveugles, [il semble][harding paths] que le destinataire puisse
+    fournir toutes les informations d'identification nécessaires sous forme cryptée
+    sans introduire de vulnérabilité secondaire.
 
-    Additional feedback for the proposals was received on its related
-    [pull request][bolts #1043].
+    Des commentaires complémentaires sur la proposition ont étés reçu sur la
+    [pull request][bolts #1043] relative.
 
-## Releases and release candidates
+## Mises à jour et version candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les versions candidates.*
 
-- [LND 0.15.5-beta.rc2][] is a release candidate for a maintenance
-  release of LND.  It contains only minor bug fixes according to its
-  planned release notes.
+- [LND 0.15.5-beta.rc2][] est une version candidate pour une mise à jour de
+  maintenance de LND. Elle ne contient que des corrections de bogues mineurs
+  selon ses notes de version prévues.
 
-- [Core Lightning 22.11rc3][] is a release candidate for the next major
-  version of CLN.  It'll also be the first release to use a new version
-  numbering scheme, although CLN releases continue to use [semantic
-  versioning][].
+- [Core Lightning 22.11rc3][] est une version candidate pour la prochaine
+  version majeure de CLN. Ce sera également la première version à utiliser
+  un nouveau système de numérotation des versions, bien que les versions
+  CLN continuent à utiliser le [versionnement sémantique][].
 
-## Notable code and documentation changes
+## Changements principaux dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Core Lightning #5727][] begins deprecating numeric JSON request IDs
-  in favor of IDs using the string type.  [Documentation][cln json ids]
-  is added describing the benefit of string IDs and how to get the most
-  out of creating and interpreting them.
+- [Core Lightning #5727][] commence à déprécier les identifiants numériques
+  des requêtes JSON en faveur d'identifiants utilisant le type chaîne. La
+  [documentation][cln json ids] a été ajoutée pour décrire les avantages
+  des identifiants de type chaîne et la façon de tirer le meilleur parti
+  de leur création et de leur interprétation.
 
-- [Eclair #2499][] allows specifying a blinded route to use when using a
-  [BOLT12 offer][topic offers] to request payment.  The route may
-  include a route leading up to the user's node plus additional hops
-  going past it.  The hops going past the node won't be used, but they
-  will make it harder for the spender to determine how many hops the
-  receiver is from the last non-blinded forwarding node in the route.
+- [Eclair #2499][] permet de spécifier un itinéraire aveugle à utiliser lors
+  de l'utilisation d'une [offre BOLT12][topic offers] pour demander un paiement.
+  L'itinéraire peut inclure un itinéraire menant au nœud de l'utilisateur et
+  des sauts supplémentaires le dépassant. Les sauts qui dépassent le nœud ne
+  seront pas utilisés, mais ils rendront plus difficile pour l'expéditeur de
+  déterminer combien de sauts le récepteur se trouve à partir du dernier nœud
+  de transmission non aveuglé de l'itinéraire.
 
-- [LND #7122][] adds support to `lncli` for processing binary [PSBT][topic
-  psbt] files. [BIP174][] specifies that PSBTs may be encoded either as plain
-  text Base64 or binary in a file. Prior, LND already supported importing
-  Base64-encoded PSBTs either as plain text or from file.
+- [LND #7122][] ajoute le support à `lncli` pour le traitement des fichiers
+  binaires [PSBT][topic psbt]. Le [BIP174][] spécifie que les PSBTs peuvent
+  être encodés soit en texte brut Base64 soit en binaire dans un fichier.
+  Auparavant, LND supportait déjà l'importation de PSBTs encodés en Base64
+  soit en texte brut soit à partir d'un fichier.
 
-- [LDK #1852][] accepts a feerate increase proposed by a channel peer
-  even if that feerate isn't high enough to safely keep the channel
-  open at present.  Even if the new feerate isn't entirely safe, its
-  higher value means it's safer than what the node had before, so it's
-  better to accept it than try to close the channel with its existing
-  lower feerate.  A future change to LDK may close channels with
-  feerates that are too low, and work on proposals like [package
-  relay][topic package relay] may make [anchor outputs][topic anchor
-  outputs] or similar techniques adaptable enough to eliminate concerns
-  about present feerates.
+- [LDK #1852][] accepte une augmentation de feerate proposée par un pair du
+  canal même si ce feerate n'est pas assez élevé pour garder le canal ouvert
+  en toute sécurité pour le moment. Même si le nouveau taux de feerate n'est
+  pas entièrement sûr, sa valeur plus élevée signifie qu'il est plus sûr que
+  ce que le noeud avait auparavant, il est donc préférable de l'accepter plutôt
+  que d'essayer de fermer le canal avec son taux de feerate inférieur existant.
+  Un futur changement de LDK pourrait fermer les canaux avec des taux de feerate
+  trop bas, et le travail sur des propositions comme le [relai de paquet][topic package relay]
+  pourrait rendre [les sorties ancrées][topic anchor outputs] ou des techniques
+  similaires suffisamment adaptables pour éliminer les préoccupations concernant
+  les taux de feerate actuels.
 
-- [Libsecp256k1 #993][] includes in the default build options the
-  modules for extrakeys (functions for working with x-only pubkeys),
-  [ECDH][], and [schnorr signatures][topic schnorr signatures].  The
-  module for reconstructing a public key from a signature is still not
-  built by default "because we don't recommend ECDSA recovery for new
-  protocols. In particular, the recovery API is prone to misuse: It
-  invites the caller to forget to check the public key (and the
-  verification function always returns 1)."
+- [Libsecp256k1 #993][] inclut dans les options de construction par défaut les
+  modules pour des clés supplémentaires (fonctions pour travailler avec des clés
+  publiques x-only), [ECDH][], et des [signatures de schnorr][topic schnorr signatures].
+  Le module de reconstruction d'une clé publique à partir d'une signature n'est
+  toujours pas construit par défaut "car nous ne recommandons pas la récupération
+  ECDSA pour les nouveaux protocoles. En particulier, l'API de récupération est
+  susceptible d'être mal utilisée : Elle invite l'appelant à oublier de vérifier
+  la clé publique (et la fonction de vérification renvoie toujours 1)."
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5727,2499,7122,1852,993,1043" %}
