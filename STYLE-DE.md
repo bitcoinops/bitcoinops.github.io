@@ -51,7 +51,8 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 
 | Englischer Ausdruck| Bevorzugt | Zu vermeiden | Anmerkungen |
 |-|-|-|-|
-| Countersign | Countersign | - | Eigenname des Verfahrens |
+| blinded transaction | verdeckte Zahlung | | |
+| Countersign | Countersign | | Eigenname des Verfahrens |
 | channel | Channel | Kanal | |
 | derivation path| Ableitungspfad | | |
 | descriptor | Deskriptor | | |
@@ -63,7 +64,7 @@ deutschen Bitcoin-Szene etabliert haben. Für einige Begriffe werden folgende
 | node | Knoten | Node | |
 | relay | Weiterleitung | | |
 | output | Ausgabe | Output | Im Kontext von UTXO |
-| silent payment| Stille Zahlung |-|-|
+| silent payment| Stille Zahlung | | |
 | UTXO|-|-| Genus Maskulinum |
 | wallet | Wallet | Geldbörse | Genus Neutrum |
 | work | Arbeitsnachweis | Arbeit| Im Kontext von PoW |
