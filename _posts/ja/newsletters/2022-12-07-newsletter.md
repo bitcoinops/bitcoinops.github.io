@@ -61,13 +61,13 @@ Xekyo (Murch)とglozowによるPRで、未承認のUTXOをインプットとし�
 {% include functions/details-list.md
   q0="<!--what-problem-does-this-pr-address-->このPRはどんな問題を解決しますか？"
   a0="ウォレットの手数料の試算では、ターゲットより低い手数料率を持つすべての未承認の先祖に対して必要な手数料を考慮していません。"
-  a0link="https://bitcoincore.reviews/26152#30"
+  a0link="https://bitcoincore.reviews/26152#l-30"
 
   q1="<!--what-does-a-transaction-s-cluster-consist-of-->トランザクションの「クラスター」とは何で構成されたものですか？"
   a1="そのトランザクション自体とそのトランザクションと接続されたすべてのトランザクションで構成されています。
       これには、そのトランザクションのすべての先祖と子孫や、
       兄弟や従兄弟、つまり指定されたトランザクションの先祖や子孫ではない親の子も含まれます。"
-  a1link="https://bitcoincore.reviews/26152#72"
+  a1link="https://bitcoincore.reviews/26152#l-72"
 
   q2="<!--this-pr-introduces-miniminer-which-duplicates-some-of-the-actual-miner-s-algorithms-would-it-have-been-better-to-unify-these-two-implementations-through-refactoring-->このPRは実際のマイナーのアルゴリズムといくつか重複する`MiniMiner`を導入しています。
       リファクタリングによって、この2つ実装を統合したほうが良いのでしょうか？"
@@ -76,43 +76,43 @@ Xekyo (Murch)とglozowによるPRで、未承認のUTXOをインプットとし�
       mempoolをロックせずにこの計算を行うことも提案されました。
       また、ブロックテンプレートを構築するのではなく、手数料の引き上げを追跡するようBlockAssemblerを変更する必要があり、
       リファクタリングに必要な量は、書き直しに等しいものでした。"
-  a2link="https://bitcoincore.reviews/26152#94"
+  a2link="https://bitcoincore.reviews/26152#l-94"
 
   q3="<!--why-does-the-miniminer-require-an-entire-cluster-why-can-t-it-just-use-the-union-of-each-transaction-s-ancestor-sets-->なぜ`MiniMiner`はすべてのクラスターを必要とするのですか？トランザクションの先祖のセットの和ではできないのでしょうか？"
   a3="先祖の一部の手数料は、すでに他の子孫によって支払われている可能性があり、さらに手数料を引き上げる必要はないかもしれなせん。
       そのため、これらの子孫も計算に含める必要があります。"
-  a3link="https://bitcoincore.reviews/26152#129"
+  a3link="https://bitcoincore.reviews/26152#l-129"
 
   q4="<!--if-transaction-x-has-a-higher-ancestor-feerate-than-independent-transaction-y-is-it-possible-for-a-miner-to-prioritize-y-over-x-that-is-mine-y-before-x-->トランザクションXが独立したトランザクションYよりも高い先祖の手数料率を持っている場合、
       マイナーがXよりYを優先する（つまりXよりYをマイニングする）可能性はありますか？"
   a4="はい。Yの低手数料率の先祖の一部に高手数料率の子孫がある場合、Yはその先祖のために手数料を支払う必要はありません。
       Yの先祖のセットは、そのトランザクションを除外するよう更新され、Yの先祖の手数料率を増加させる効果があります。"
-  a4link="https://bitcoincore.reviews/26152#169"
+  a4link="https://bitcoincore.reviews/26152#l-169"
 
   q5="<!--can-calculatebumpfees-overestimate-underestimate-both-or-neither-by-how-much-->`CalculateBumpFees()`は手数料を過大評価したり過小評価したり、またはその両方、どちらでもないことがありますか？
       またそれはどれくらいですか？"
   a5="先祖が重複するアウトプットが2つ選択された場合、それぞれが独立して先祖の手数料を引き上げるため（共通の先祖を考慮することなく）過大評価されます。
       参加者は、引き上げ手数料を過小評価することはできないと結論づけました。"
-  a5link="https://bitcoincore.reviews/26152#194"
+  a5link="https://bitcoincore.reviews/26152#l-194"
 
   q6="<!--the-miniminer-is-given-a-list-of-utxos-outpoints-that-the-wallet-might-be-interested-in-spending-given-an-outpoint-what-are-its-five-possible-states-->`MiniMiner`には、ウォレットが支払いに関心を持つ可能性のあるUTXO（OutPoint）のリストが与えられます。
       与えられたOutPointの取りうる5つの状態は何ですか？"
   a6="(1) 承認済みで未使用、(2) 承認済みだがmempool内の既存のトランザクションによって既に使用されている、
       (3) 未承認（mempool内）で未使用、(4) 未承認だがmempool内の既存のトランザクションによって既に使用されている、
       (5) 未知のOutPointである可能性があります。"
-  a6link="https://bitcoincore.reviews/26152-2#21"
+  a6link="https://bitcoincore.reviews/26152-2#l-21"
 
   q7="<!--what-approach-is-taken-in-the-bump-unconfirmed-parent-txs-to-target-feerate-commit-->「Bump unconfirmed parent txs to target feerate」のコミットではどんなアプローチが取られていますか？"
   a7="このコミットは、このPRの主な動作変更です。`MiniMiner`を使用して、各UTXOの引き上げ手数料を計算し
       （それぞれの先祖をターゲットの手数料率に引き上げるために必要な手数料）、
       その実効値を差し引きします。その後はこれまでと同様にコインを選択します。"
-  a7link="https://bitcoincore.reviews/26152-2#100"
+  a7link="https://bitcoincore.reviews/26152-2#l-100"
 
   q8="<!--how-does-the-pr-handle-spending-unconfirmed-utxos-with-overlapping-ancestry-->このPRでは、重複する先祖を持つ未承認UTXOの使用をどう処理しますか？"
   a8="コイン選択の後、各コイン選択の結果について`MiniMiner`アルゴリズムを実行し、
       正確な引き上げ手数料を得ます。先祖を共有しているため過剰な引き上げをしている場合、
       お釣り用のアウトプットがある場合はそのお釣りに追加し、ない場合はお釣り用のアウトプットを追加して手数料を削減します。"
-  a8link="https://bitcoincore.reviews/26152-2#111"
+  a8link="https://bitcoincore.reviews/26152-2#l-111"
 %}
 
 ## リリースとリリース候補
