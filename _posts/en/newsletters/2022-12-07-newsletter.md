@@ -79,7 +79,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
   q0="What problem does this PR address?"
   a0="The wallet fee estimation doesn't take into account that it may also
       need to pay for all unconfirmed ancestors with a lower feerate than the target."
-  a0link="https://bitcoincore.reviews/26152#30"
+  a0link="https://bitcoincore.reviews/26152#l-30"
 
   q1="What does a transaction’s \"cluster\" consist of?"
   a1="The set of transactions consisting of itself and all
@@ -87,7 +87,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       and descendants, but also siblings and cousins, i.e. children of
       parents who may not be ancestors nor descendants of the
       given transaction."
-  a1link="https://bitcoincore.reviews/26152#72"
+  a1link="https://bitcoincore.reviews/26152#l-72"
 
   q2="This PR introduces `MiniMiner` which duplicates some of the
       actual miner's algorithms; would it have been better to
@@ -99,14 +99,14 @@ This PR review [spanned][review club 26152] two [weeks][review club
       assembler to be tracking bump fees rather than building the
       block template; the amount of refactoring necessary was
       equivalent to rewriting."
-  a2link="https://bitcoincore.reviews/26152#94"
+  a2link="https://bitcoincore.reviews/26152#l-94"
 
   q3="Why does the `MiniMiner` require an entire cluster? Why can’t it
       just use the union of each transaction’s ancestor sets?"
   a3="Some of the ancestors may already have been paid for by some of
       their other descendants; they don't need to be bumped further.
       So we need to include these other descendants in our calculations."
-  a3link="https://bitcoincore.reviews/26152#129"
+  a3link="https://bitcoincore.reviews/26152#l-129"
 
   q4="If transaction X has a higher _ancestor feerate_ than independent
       transaction Y, is it possible for a miner to prioritize Y
@@ -115,7 +115,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       are high feerate, Y doesn't need to \"pay\" for those ancestors.
       Y's ancestor set is updated to exclude those transactions,
       which has the effect of increasing Y's ancestor feerate."
-  a4link="https://bitcoincore.reviews/26152#169"
+  a4link="https://bitcoincore.reviews/26152#l-169"
 
   q5="Can `CalculateBumpFees()` overestimate, underestimate, both, or
       neither? By how much?"
@@ -124,7 +124,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       ancestry into account). The
       participants concluded that it's not possible for bump fees to be
       underestimated."
-  a5link="https://bitcoincore.reviews/26152#194"
+  a5link="https://bitcoincore.reviews/26152#l-194"
 
   q6="The `MiniMiner` is given a list of UTXOs (outpoints) that the wallet
       might be interested in spending. Given an outpoint, what are its five
@@ -134,7 +134,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       mempool) and unspent, (4) unconfirmed
       but already spent by an existing transaction in the mempool,
       or (5) it could be an outpoint that we've never heard of."
-  a6link="https://bitcoincore.reviews/26152-2#21"
+  a6link="https://bitcoincore.reviews/26152-2#l-21"
 
   q7="What approach is taken in the \"Bump unconfirmed parent txs to target
       feerate\" commit?"
@@ -143,7 +143,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       their respective ancestries to the target feerate) of each UTXO and
       deduct those from their effective values.
       Then we run coin selection as before."
-  a7link="https://bitcoincore.reviews/26152-2#100"
+  a7link="https://bitcoincore.reviews/26152-2#l-100"
 
   q8="How does the PR handle spending unconfirmed UTXOs with overlapping ancestry?"
   a8="After coin selection, we run a variant of the `MiniMiner` algorithm
@@ -151,7 +151,7 @@ This PR review [spanned][review club 26152] two [weeks][review club
       If we have over-bumped due to shared ancestry, we can reduce
       the fees by increasing the change value if it exists, or adding a
       change output if it doesn't exist."
-  a8link="https://bitcoincore.reviews/26152-2#111"
+  a8link="https://bitcoincore.reviews/26152-2#l-111"
 %}
 
 ## Releases and release candidates
