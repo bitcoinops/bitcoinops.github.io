@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Reputation credentials proposal to mitigate LN jamming attacks"
     url: /en/newsletters/2022/11/30/#reputation-credentials-proposal-to-mitigate-ln-jamming-attacks
 
+  - title: "CircuitBreaker add-on software to partly mitigate jamming attacks without protocol changes"
+    url: /en/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
