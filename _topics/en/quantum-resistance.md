@@ -49,6 +49,9 @@ optech_mentions:
   - title: "Discussion about quantum-safe key exchange"
     url: /en/newsletters/2022/04/20/#quantum-safe-key-exchange
 
+  - title: "2022 year-in-review: quantum-safe key exchange"
+    url: /en/newsletters/2022/12/21/#quantum-safe-keys
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -86,6 +86,9 @@ optech_mentions:
   - title: "CoreDev.tech transcript of discussion about package relay and v3 transactions"
     url: /en/newsletters/2022/10/26/#package-and-v3-transaction-relay
 
+  - title: "2022 year-in-review: package relay"
+    url: /en/newsletters/2022/12/21/#package-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

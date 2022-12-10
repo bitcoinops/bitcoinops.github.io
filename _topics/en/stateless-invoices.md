@@ -44,6 +44,9 @@ optech_mentions:
   - title: "LND #5810 implements sending support for payment metadata"
     url: /en/newsletters/2022/04/20/#lnd-5810
 
+  - title: "2022 year-in-review: stateless invoices"
+    url: /en/newsletters/2022/12/21/#stateless-invoices
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
