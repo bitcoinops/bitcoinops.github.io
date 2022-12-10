@@ -37,6 +37,9 @@ optech_mentions:
   - title: "Proposed `OP_EVICT` opcode to make channel factories more efficient"
     url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
 
+  - title: "Proposed new channel construction to improve compatibility with channel factories"
+    url: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
