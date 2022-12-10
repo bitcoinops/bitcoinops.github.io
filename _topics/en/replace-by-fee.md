@@ -129,6 +129,9 @@ optech_mentions:
   - title: "Continued discussion about enabling full-RBF in Bitcoin Core"
     url: /en/newsletters/2022/11/09/#continued-discussion-about-enabling-full-rbf
 
+  - title: "Website to monitor unsignaled transaction replacements"
+    url: /en/newsletters/2022/12/14/#monitoring-of-full-rbf-replacements
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
