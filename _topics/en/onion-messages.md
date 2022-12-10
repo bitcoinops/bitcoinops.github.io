@@ -62,6 +62,9 @@ optech_mentions:
   - title: "LDK #1652 adds support for onion message reply paths"
     url: /en/newsletters/2022/08/31/#ldk-1652
 
+  - title: "2022 year-in-review: onion messages"
+    url: /en/newsletters/2022/12/21/#onion-message-limiting
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

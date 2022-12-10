@@ -35,6 +35,9 @@ optech_mentions:
   - title: "BIPs #1349 adds BIP351 for a payment protocol inspired by silent payments"
     url: /en/newsletters/2022/10/05/#bips-1349
 
+  - title: "2022 year-in-review: silent payments"
+    url: /en/newsletters/2022/12/21/#silent-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

@@ -132,6 +132,9 @@ optech_mentions:
   - title: "Website to monitor unsignaled transaction replacements"
     url: /en/newsletters/2022/12/14/#monitoring-of-full-rbf-replacements
 
+  - title: "2022 year-in-review: replace-by-fee"
+    url: /en/newsletters/2022/12/21/#rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
