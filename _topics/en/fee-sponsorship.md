@@ -38,6 +38,9 @@ optech_mentions:
   - title: Proposed ephemeral anchors relay policy to implement sponsorship-like behavior
     url: /en/newsletters/2022/10/26/#ephemeral-anchors
 
+  - title: "2022 year-in-review: fee sponsorship"
+    url: /en/newsletters/2022/12/21/#fee-sponsorship
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Child Pays For Parent

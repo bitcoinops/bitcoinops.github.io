@@ -99,6 +99,9 @@ optech_mentions:
   - title: Disclosure of security vulnerability in MuSig2 as described in a draft BIP
     url: /en/newsletters/2022/10/19/#musig2-security-vulnerability
 
+  - title: "2022 year-in-review: MuSig2"
+    url: /en/newsletters/2022/12/21/#musig2
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures

@@ -85,6 +85,9 @@ optech_mentions:
   - title: "CircuitBreaker add-on software to partly mitigate jamming attacks without protocol changes"
     url: /en/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
 
+  - title: "2022 year-in-review: channel jamming"
+    url: /en/newsletters/2022/12/21/#jamming
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Eclair #2463 and #2461 increase robustness of RBF fee bumping interactive funding"
     url: /en/newsletters/2022/10/26/#eclair-2463
 
+  - title: "2022 year-in-review: interactive and dual funding"
+    url: /en/newsletters/2022/12/21/#dual-funding
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)

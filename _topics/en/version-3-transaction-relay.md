@@ -36,6 +36,9 @@ optech_mentions:
   - title: Ephemeral anchors implementation as proposed extension to v3 transaction relay policy
     url: /en/newsletters/2022/12/07/#ephemeral-anchors-implementation
 
+  - title: "2022 year-in-review: v3 transaction relay"
+    url: /en/newsletters/2022/12/21/#v3-tx-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

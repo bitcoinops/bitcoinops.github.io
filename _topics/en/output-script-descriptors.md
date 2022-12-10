@@ -149,6 +149,9 @@ optech_mentions:
   - title: "How partial descriptors could help create tapleaf trees"
     url: /en/newsletters/2022/08/31/#why-isn-t-it-possible-to-add-an-op-return-commitment-or-some-arbitrary-script-inside-a-taproot-script-path-with-a-descriptor
 
+  - title: "2022 year-in-review: miniscript descriptors in Bitcoin Core"
+    url: /en/newsletters/2022/12/21/#miniscript-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
