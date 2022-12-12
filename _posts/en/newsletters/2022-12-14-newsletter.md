@@ -250,7 +250,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   `creation_date_end` fields that can be used to filter out invoices and
   payments before or after the indicated date and time.
 
-- [LDK #1835][] valentinewallace/2022-11-jit-chan-htlc-intercept (specifically looking at commit 3a1268e177feaaea01a38a5d3f2475f5f770ae9d ) FIXME:adamjonas
+- [LDK #1835][] adds a fake Short Channel IDentifier (SCID) namespace for intercepted HTLCs, enabling
+  Lightning Service Providers (LSPs) to create a [just-in-time][topic jit routing]
+  (JIT) channel for end users to receive a lightning payment. This is done
+  by including fake route hints in end-user invoices that signal to LDK
+  that this is an intercept forward, similar to
+  [phantom payments][LDK phantom payments] (see [Newsletter #188][news188 phantom]). LDK then generates an event,
+  allowing the LSP the opportunity to open the JIT channel. The LSP can
+  then forward the payment over the newly opened channel or fail it.
 
 - [BOLTs #1021][] allows onion-routing error messages to contain a
   [TLV][] stream, which may be used in the future to include additional
@@ -283,3 +290,5 @@ newsletter.  Regular publication will resume on Wednesday, January 4th.
 [news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [tlv]: https://github.com/lightning/bolts/blob/master/01-messaging.md#type-length-value-format
 [483 pending htlcs]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#rationale-7
+[news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
+[LDK phantom payments]: https://lightningdevkit.org/blog/introducing-phantom-node-payments/
