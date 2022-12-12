@@ -16,13 +16,13 @@ Reputation credentials proposal to mitigate LN jamming attacks
 
     在当今的闪电网络中，支付者要选择一条从他们的节点到达接收节点的路径，中间会跨越由独立转发节点运营的多个通道。他们要创建一组无需信任的指令，描述每个转发节点接下来应该在哪里中继支付，并加密这些指令以便每个节点只接收完成其工作所需的最少信息。
 
-    Riard 建议每个转发节点应当只接受那些包含一个或多个先前由该转发节点发布的凭证代币的中继指令。凭据会包括一个[盲签名][blind signature]，防止转发节点直接确定哪个节点获发了凭据（防止转发节点学习花费者的网络身份）。尽管 Riard 建议了以下几种分发方法，但每个节点都可以根据自己的策略发布凭证：
+    Riard 建议每个转发节点应当只接受那些包含一个或多个先前由该转发节点发布的凭证代币的中继指令。凭据会包括一个[盲签名][blind signature]，防止转发节点直接确定哪个节点获发了凭据（防止转发节点学习花费者的网络身份）。每个节点都可以根据自己的策略发布凭证，不过 Riard 建议了以下几种分发方法：
 
     - *<!--upfront-payments-->预付款：*如果 Alice 的节点想通过 Bob 的节点转发付款，她的节点要首先使用闪电网络从 Bob 那里购买凭证。
 
     - *<!--previous-success-->先前的成功：*如果 Alice 通过 Bob 的节点发送的付款被最终接收者成功接受，Bob 的节点可以将凭证代币返回给 Alice 的节点——甚至返回比之前使用的更多的代币，允许 Alice 的节点未来通过 Bob 的节点来发送更多的价值。
 
-    - *UTXO 所有权证明或其他替代方案：*虽然对于 Riard 的最初提议来说并不是必需的，但一些转发节点可能会试验性地向证明他们拥有比特币 UTXO 的每个人提供凭证。相较于较新或更低价值的 UTXO，这个过程可能会使用修饰符会将更多的凭证代币给予较旧或更高价值的 UTXO。每个转发节点自行选择如何分发其凭证代币时，任何其他标准均可使用。
+    - *UTXO 所有权证明或其他替代方案：*虽然在 Riard 的首份提议中并非必需，但一些转发节点可能会试验性地向证明他们拥有比特币 UTXO 的每个人提供凭证。使用修饰符，较旧或更高价值的 UTXO 相较于较新或更低价值的 UTXO 将获得更多的凭证代币。每个转发节点自行选择如何分发其凭证代币时，任何其他标准均可使用。
 
     [周报 #226][news226 jam]中描述的部分基于本地声誉的提案的联合作者 Clara Shikhelman，在回复中[询问][shikelman credentials]证书代币是否可以在用户之间转移以及这是否会导致创建代币市场。她还询问了他们将如何使用支出节点不知道接收节点的完整路径的[盲化路径][topic rv routing]。
 
@@ -44,15 +44,15 @@ Reputation credentials proposal to mitigate LN jamming attacks
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [Core Lightning #5727][] 开始弃用数值的 JSON 请求 ID，而使用字符串类型的 ID。已添加[文档][cln json ids]，描述字符串 ID 的好处以及如何充分利用它们的创建和解释。
+- [Core Lightning #5727][] 开始弃用数值的 JSON 请求 ID，而使用字符串类型的 ID。已添加[文档][cln json ids]，描述字符串 ID 的好处以及如何从创建和解释它们中最大获益。
 
 - [Eclair #2499][] 允许在使用 [BOLT12 要约][topic offers]请求付款时指定要使用的盲化路径。该路径可能包括指向用户节点的路径加上经过它的附加跳数。经过该节点的跳数不会被使用，但它们会使花费者更难确定接收者距路径中的最后一个非盲化转发节点有多少跳。
 
 - [LND #7122][] 增加了对 `lncli` 处理二进制 [PSBT][topic psbt] 文件的支持。[BIP174][] 指定 PSBT 可以在文件中编码为纯文本 Base64 或二进制文件。此前，LND 已经支持以纯文本或从文件中导入 Base64 编码的 PSBT。
 
-- [LDK #1852][] 接受通道对手方提议的费率增加，即便该费率目前不足以安全地保持该通道开放。即使新的费率并不完全安全，它的更高价值意味着它比节点以前所拥有的更安全，所以最好接受它而不是尝试用现有的较低费率来关闭通道。未来对 LDK 的更改可能会关闭费率过低的通道，并且研究像[包中继（package relay）][topic package relay]这样的提案可能会使[锚点输出（anchor outputs）][topic anchor outputs]或类似的技术具备足够的适应能力以消除对当前问题的担忧费率。
+- [LDK #1852][] 接受通道对手方提议的费率增加，即便该费率目前不足以安全地保持该通道开放。即使新的费率并不完全安全，但更高费率也比节点此前更安全了，所以最好接受它而不是尝试用现有的较低费率来关闭通道。未来对 LDK 的更改可能会关闭费率过低的通道，并且研究像[包中继（package relay）][topic package relay]这样的提案可能会使[锚点输出（anchor outputs）][topic anchor outputs]或类似的技术具备足够的适应能力以消除对当前问题的担忧费率。
 
-- [Libsecp256k1 #993][] 在默认构建选项中包括了 extrakeys（与 x-only 公钥一起使用的函数）、[ECDH][] 和 [schnorr 签名][topic schnorr signatures]的模块。用于从签名重建公钥的模块仍不会被默认构建，“因为我们不建议为新协议使用 ECDSA 恢复。特别是，该恢复 API 容易被滥用：它会导致调用者忘记检查公钥（验证函数总是返回 1）。”
+- [Libsecp256k1 #993][] 在默认构建选项中包括了 extrakeys（与 x-only 公钥一起使用的函数）、[ECDH][] 和 [schnorr 签名][topic schnorr signatures]的模块。用于从签名重建公钥的模块仍不会被默认构建，“因为我们不建议为新协议使用 ECDSA 恢复公钥机制。特别是，该恢复 API 容易被滥用：它会导致调用者忘记检查公钥（验证函数总是返回 1）。”
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5727,2499,7122,1852,993,1043" %}
