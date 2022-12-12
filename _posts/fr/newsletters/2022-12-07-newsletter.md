@@ -73,8 +73,7 @@ Ajuster les frais pour tenir compte de ces transactions ancestrales s'avère êt
 similaire au choix des transactions à inclure dans un bloc, donc ce PR ajoute une
 classe appelée `MiniMiner`.
 
-Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review club
-26152-2].
+Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review club 26152-2].
 
 {% include functions/details-list.md
   q0="Quel est le problème que cette PR règle ?"
