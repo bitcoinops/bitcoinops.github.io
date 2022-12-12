@@ -120,7 +120,7 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
   a4link="https://bitcoincore.reviews/26152#l-169"
 
   q5="Est-ce que `CalculateBumpFees()` peut surestimer, sous-estimer, les deux, ou aucun
-      des deux ? De combien ?
+      des deux ? De combien ?"
   a5="Elle sera surestimée si deux sorties dont l'ascendance se chevauche sont choisies,
       puisque chaque saut est indépendant de ses ancêtres (sans tenir compte de l'ascendance
       partagée). Les participants ont conclu qu'il n'est pas possible que les frais de saut
