@@ -32,6 +32,9 @@ optech_mentions:
   - title: Paper analyzes effect of JIT rebalancing on payment success rate
     url: /en/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 
+  - title: "LDK #1835 adds support for JIT channel opens by LN service providers"
+    url: /en/newsletters/2022/12/14/#ldk-1835
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
