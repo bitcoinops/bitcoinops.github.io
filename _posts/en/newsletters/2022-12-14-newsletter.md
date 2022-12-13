@@ -276,7 +276,9 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25934][] wallet, rpc: add `label` to `listsinceblock` FIXME:Xekyo
+- [Bitcoin Core #25934][] adds an optional `label` argument to the
+  `listsinceblock` RPC. Only transactions matching the label will be returned
+  when a label is specified.
 
 - [LND #7159][] updates the `ListInvoiceRequest` and
   `ListPaymentsRequest` RPCs with new `creation_date_start` and
