@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Bitcoin Core #22642 allows concatenation of Guix-based attestations for batch verification"
     url: /en/newsletters/2021/08/18/#bitcoin-core-22642
 
+  - title: "New website to monitor the current status of various Bitcoin project's reproducible builds"
+    url: /en/newsletters/2022/12/14/#coinkite-launches-binarywatch-org
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Presentation: Bitcoin Build System Security"

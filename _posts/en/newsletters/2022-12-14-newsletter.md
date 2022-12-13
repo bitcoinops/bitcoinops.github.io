@@ -175,7 +175,24 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Lily Wallet adds coin selection:**
+  Lily Wallet [v1.2.0][lily v1.2.0] adds [coin selection][topic coin selection] features.
+
+- **Vortex software creates LN channels from a coinjoin:**
+  Using [taproot][topic taproot] and collaborative [coinjoin][topic coinjoin]
+  transactions, users have [opened LN channels][vortex tweet] on Bitcoin mainnet using the
+  [Vortex][vortex github] software.
+
+- **Mutiny demonstrates LN node in a browser PoC:**
+  Using WASM and LDK, developers [demonstrated][mutiny tweet] a
+  [proof-of-concept][mutiny github] implementation of an LN node running in a
+  mobile phone browser.
+
+- **Coinkite launches BinaryWatch.org:**
+  The [BinaryWatch.org][] website checks binaries from Bitcoin-related projects
+  and monitors for any changes. The company also operates [bitcoinbinary.org][] a
+  service that archives [reproducible builds][topic reproducible builds] for
+  Bitcoin-related projects.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -329,3 +346,10 @@ newsletter.  Regular publication will resume on Wednesday, January 4th.
 [LDK phantom payments]: https://lightningdevkit.org/blog/introducing-phantom-node-payments/
 [news125 legacy descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
 [news74 policy miniscript]: /en/newsletters/2019/11/27/#what-is-the-difference-between-bitcoin-policy-language-and-miniscript
+[lily v1.2.0]: https://github.com/Lily-Technologies/lily-wallet/releases/tag/v1.2.0
+[vortex tweet]: https://twitter.com/benthecarman/status/1590886577940889600
+[vortex github]: https://github.com/ln-vortex/ln-vortex
+[mutiny tweet]: https://twitter.com/benthecarman/status/1595395624010190850
+[mutiny github]: https://github.com/BitcoinDevShop/mutiny-web-poc
+[BinaryWatch.org]: https://binarywatch.org/
+[bitcoinbinary.org]: https://bitcoinbinary.org/
