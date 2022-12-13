@@ -188,7 +188,40 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why is connecting to the Bitcoin network exclusively over Tor considered a bad practice?]({{bse}}116146)
+  Several answers explain that due to the lower cost of being able to generate many
+  Tor addresses as compared to IPv4 and IPv6 addresses, a Bitcoin node operator
+  exclusively using the Tor network could more easily be [eclipse attacked][topic eclipse
+  attacks] when compared to operating only on clearnet or with a
+  combination of [anonymity networks][topic anonymity networks].
+
+- [Why aren't 3 party (or more) channels realistically possible in Lightning today?]({{bse}}116257)
+  Murch explains that since LN channels currently use the LN penalty mechanism
+  that allocates *all* channel funds to a single counterparty in the event of a
+  breach, extending LN penalty to handle multiple recipients of a justice
+  transaction may be overly complicated and involve excessive overhead to
+  implement. He then explains [eltoo's][topic eltoo] mechanism and how it might
+  handle multiparty channels.
+
+- [With legacy wallets deprecated, will Bitcoin Core be able to sign messages for an address?]({{bse}}116187)
+  Pieter Wuille distinguishes between Bitcoin Core [deprecating legacy
+  wallets][news125 legacy descriptor wallets] and the continued support for
+  older address types like P2PKH addresses even in newer [descriptor][topic
+  descriptors] wallets. While message signing is currently only possible for
+  P2PKH addresses, efforts around [BIP322][topic generic signmessage] could
+  allow for message signing across other address types.
+
+- [How do I set up a time-decay multisig?]({{bse}}116035)
+  User Yoda asks how to set up a time-decaying multisig, a UTXO that is spendable
+  with a broadening set of pubkeys over time. Michael Folkson provides an
+  example using [policy][news74 policy miniscript] and [miniscript][topic
+  miniscript], links to related resources, and notes the lack of user-friendly
+  options currently.
+
+- [When is a miniscript solution malleable?]({{bse}}116275)
+  Antoine Poinsot defines what malleability means in the context of
+  miniscript, describes static analysis of malleability in miniscript, and walks
+  through the original question's malleability example.
 
 ## Releases and release candidates
 
@@ -292,3 +325,5 @@ newsletter.  Regular publication will resume on Wednesday, January 4th.
 [483 pending htlcs]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#rationale-7
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [LDK phantom payments]: https://lightningdevkit.org/blog/introducing-phantom-node-payments/
+[news125 legacy descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
+[news74 policy miniscript]: /en/newsletters/2019/11/27/#what-is-the-difference-between-bitcoin-policy-language-and-miniscript
