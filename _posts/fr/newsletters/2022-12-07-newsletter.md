@@ -56,7 +56,7 @@ les plus répandus.
 et réponses importantes. Cliquez sur une question ci-dessous pour voir
 un résumé de la réponse de la réunion.*
 
-[Faire passer les transactions d'ancêtres non confirmés au taux de frais cible][review club 26152]
+[Faire passer les transactions d'ascendants non confirmés au taux de frais cible][review club 26152]
 est une PR de Xekyo (Murch) et glozow qui améliore la précision du calcul des
 frais du portefeuille dans le cas où des UTXOs non confirmés sont sélectionnés
 comme entrées. Sans le PR, les frais sont fixés trop bas si les taux de frais
@@ -78,20 +78,20 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
 {% include functions/details-list.md
   q0="Quel est le problème que cette PR règle ?"
   a0="L'estimation des frais du portefeuille ne tient pas compte du fait
-      qu'il peut également avoir à payer pour tous les ancêtres non confirmés
+      qu'il peut également avoir à payer pour tous les ascendants non confirmés
       dont le taux de frais est inférieur à celui de l'objectif."
   a0link="https://bitcoincore.reviews/26152#l-30"
 
   q1="En quoi consiste le \"cluster\" d'une transaction ?"
   a1="L'ensemble de transactions constitué de lui-même et de toutes les
-      transactions \"connectées\". Cela inclut tous ses ancêtres et descendants,
+      transactions \"connectées\". Cela inclut tous ses ascendants et descendants,
       mais aussi les frères et sœurs et les cousins, c'est-à-dire les enfants
-      des parents qui peuvent ne pas être ancêtres ou descendants de la
+      des parents qui peuvent ne pas être ascendants ou descendants de la
       transaction donnée."
   a1link="https://bitcoincore.reviews/26152#l-72"
 
   q2="Ce PR introduit `MiniMiner` qui duplique certains des algorithmes
-      du mineur actuel; aurait-il été préférable d'unifier ces deux implémentations
+      du mineur actuel ; aurait-il été préférable d'unifier ces deux implémentations
       par une refactorisation ?"
   a2="Nous avons seulement besoin d'opérer sur un cluster et non sur le pool de
       mémoire entier, et n'avons pas besoin d'appliquer les vérifications que
@@ -103,8 +103,8 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
   a2link="https://bitcoincore.reviews/26152#l-94"
 
   q3="Pourquoi le `MiniMiner` nécessite-t-il un cluster entier ? Pourquoi ne peut-il pas
-      pas simplement utiliser l'union des ensembles d'ancêtres de chaque transaction ?"
-  a3="Il se peut que certains des ancêtres aient déjà été payés par certains de leurs
+      pas simplement utiliser l'union des ensembles d'ascendants de chaque transaction ?"
+  a3="Il se peut que certains des ascendants aient déjà été payés par certains de leurs
       autres descendants; il n'est pas nécessaire d'en rajouter. Nous devons donc
       inclure ces autres descendants dans nos calculs."
   a3link="https://bitcoincore.reviews/26152#l-129"
@@ -112,16 +112,16 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
   q4="Si la transaction X a un _taux de frais d'ancêtre_ plus élevé que la transaction
       indépendante Y, est-il possible pour un mineur de donner la priorité à Y sur X
       (c'est-à-dire de miner Y avant X) ?"
-  a4="Oui. Si certains des ancêtres à faible taux de frais de Y ont _d'autres_ descendants
+  a4="Oui. Si certains des ascendants à faible taux de frais de Y ont d'autres descendants
       qui ont un taux de frais élevé, Y n'a pas besoin de "payer" pour ces ancêtres.
-      L'ensemble des ancêtres de Y est mis à jour pour exclure ces transactions, ce qui a
-      pour effet d'augmenter le taux de frais des ancêtres de Y."
+      L'ensemble des ascendants de Y est mis à jour pour exclure ces transactions, ce qui a
+      pour effet d'augmenter le taux de frais des ascendants de Y."
   a4link="https://bitcoincore.reviews/26152#l-169"
 
   q5="Est-ce que `CalculateBumpFees()` peut surestimer, sous-estimer, les deux, ou aucun
       des deux ? De combien ?"
-  a5="Elle sera surestimée si deux sorties dont l'ascendance se chevauche sont choisies,
-      puisque chaque saut est indépendant de ses ancêtres (sans tenir compte de l'ascendance
+  a5="Ce sera surestimé si deux sorties dont l'ascendance se chevauche sont choisies
+      puisque chaque saut est indépendant de ses ascendants (sans tenir compte de l'ascendance
       partagée). Les participants ont conclu qu'il n'est pas possible que les frais de saut
       soient sous-estimés."
   a5link="https://bitcoincore.reviews/26152#l-194"
@@ -130,16 +130,16 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
       être intéressé à dépenser. Étant donné un point de sortie, quels sont ses cinq
       états possibles ?"
   a6="Il pourrait être (1) confirmé et non dépensé, (2) confirmé mais déjà dépensé par
-      une transaction existante dans le pool de mémoires, (3) non confirmé (dans le pool
-      de mémoires) et non dépensé, (4) non confirmé mais déjà dépensé par une transaction
-      existante dans le pool de mémoires, ou (5) il pourrait être un point de sortie dont
+      une transaction existante dans la mempool, (3) non confirmé
+      (dans la mempool) et non dépensé, (4) non confirmé mais déjà dépensé par une transaction
+      existante dans la mempool, ou (5) il pourrait être un point de sortie dont
       nous n'avons jamais entendu parler."
   a6link="https://bitcoincore.reviews/26152-2#l-21"
 
   q7="Quelle est l'approche adoptée dans la commande \"Transactions parentes de sauts non
       confirmées sur taux de frais cible\"?"
   a7="Ce commit est le principal changement de comportement du PR. Nous utilisons le `MiniMiner`
-      pour calculer les frais de saut (les frais nécessaires pour faire passer leurs ancêtres
+      pour calculer les frais de saut (les frais nécessaires pour faire passer leurs ascendants
       respectifs à la fréquence cible) de chaque UTXO et les déduire de leurs valeurs effectives.
       Ensuite, nous exécutons la sélection des pièces comme précédemment."
   a7link="https://bitcoincore.reviews/26152-2#l-100"
@@ -161,12 +161,12 @@ Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les ver
 - [BTCPay Server 1.7.1][] est la dernière version du logiciel de traitement des paiements
   auto hébergés le plus largement utilisé pour Bitcoin.
 
-- [Core Lightning 22.11][] est la prochaine version majeure de CLN.  C'est également la
+- [Core Lightning 22.11][] est la prochaine version majeure de CLN. C'est également la
   première version à utiliser un nouveau système de numérotation des versions [^semver].
   Plusieurs nouvelles fonctionnalités sont incluses, notamment un nouveau gestionnaire
   de plugins, et de multiples corrections de bogues.
 
-- [LND 0.15.5-beta][] st une version de maintenance de LND.  Elle ne contient que des
+- [LND 0.15.5-beta][] est une version de maintenance de LND. Elle ne contient que des
   corrections de bogues mineurs, selon ses notes de publication.
 
 - [BDK 0.25.0][] est une nouvelle version de cette bibliothèque pour la création de portefeuilles.
@@ -206,7 +206,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   vers une sortie segwit native entraînera également une sortie de changement
   segwit native.
 
-    Cependant, le protocole LN requiert certains types de sortie.  Par exemple
+    Cependant, le protocole LN requiert certains types de sortie. Par exemple
     une sortie P2PKH ne peut pas être utilisée pour ouvrir un canal LN. Pour
     cette raison, les utilisateurs d'Eclair avec Bitcoin Core doivent s'assurer
     qu'ils ne génèrent pas de sorties de monnaie d'un type incompatible avec LN.
@@ -224,7 +224,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [^semver]:
     Les éditions précédentes de ce bulletin d'information affirmaient que Core
     Lightning utilisait le schéma de [versionnement sémantique][] et que les
-    nouvelles versions continueraient à utiliser ce schéma à l'avenir.  Rusty
+    nouvelles versions continueraient à utiliser ce schéma à l'avenir. Rusty
     Russell a [décrit] [rusty semver] pourquoi CLN ne peut pas adhérer complètement
     à ce schéma. Nous remercions Matt Whitlock de nous avoir informés de notre
     précédente erreur.
