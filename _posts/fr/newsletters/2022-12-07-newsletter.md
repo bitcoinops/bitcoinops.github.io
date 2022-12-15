@@ -98,14 +98,14 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
       `BlockAssembler` fait. Il a également été suggéré de faire ce calcul sans
       tenir le verrou du pool de mémoire. Nous devrions aussi changer l'assembleur
       de blocs pour qu'il suive les chocs de frais plutôt que de construire le
-      modèle de bloc; la quantité de refactoring nécessaire était équivalente
+      modèle de bloc ; la quantité de refactoring nécessaire était équivalente
       à réécrire."
   a2link="https://bitcoincore.reviews/26152#l-94"
 
   q3="Pourquoi le `MiniMiner` nécessite-t-il un cluster entier ? Pourquoi ne peut-il pas
       pas simplement utiliser l'union des ensembles d'ascendants de chaque transaction ?"
   a3="Il se peut que certains des ascendants aient déjà été payés par certains de leurs
-      autres descendants; il n'est pas nécessaire d'en rajouter. Nous devons donc
+      autres descendants ; il n'est pas nécessaire d'en rajouter. Nous devons donc
       inclure ces autres descendants dans nos calculs."
   a3link="https://bitcoincore.reviews/26152#l-129"
 
@@ -113,7 +113,7 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
       indépendante Y, est-il possible pour un mineur de donner la priorité à Y sur X
       (c'est-à-dire de miner Y avant X) ?"
   a4="Oui. Si certains des ascendants à faible taux de frais de Y ont d'autres descendants
-      qui ont un taux de frais élevé, Y n'a pas besoin de "payer" pour ces ancêtres.
+      qui ont un taux de frais élevé, Y n'a pas besoin de "payer" pour ces ascendants.
       L'ensemble des ascendants de Y est mis à jour pour exclure ces transactions, ce qui a
       pour effet d'augmenter le taux de frais des ascendants de Y."
   a4link="https://bitcoincore.reviews/26152#l-169"
