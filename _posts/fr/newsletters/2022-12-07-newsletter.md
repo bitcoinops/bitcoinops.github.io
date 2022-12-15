@@ -180,52 +180,54 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #19762][] updates the RPC (and, by extension,
-  `bitcoin-cli`) interface to allow named and positional arguments to be
-used together. This change makes it more convenient to use named
-parameter values without having to name every one.  The PR description
-provides examples demonstrating the increased convenience of this
-approach as well as a handy shell alias for frequent users of
-`bitcoin-cli`.
+- [Bitcoin Core #19762][] met à jour l'interface RPC (et, par extension,
+  (`Bitcoin-cli`) pour permettre aux arguments nommés et positionnels d'être
+  utilisés ensemble. Ce changement rend plus pratique l'utilisation de
+  valeurs de paramètres nommés sans avoir à les nommer tous. La description
+  de la PR fournit des exemples démontrant la commodité accrue de cette
+  approche ainsi qu'un alias shell pratique pour les utilisateurs fréquents
+  de `bitcoin-cli`.
 
-- [Core Lightning #5722][] adds [documentation][grpc doc] about how to
-  use the GRPC interface plugin.
+- [Core Lightning #5722][] ajoute la [documentation][grpc doc] sur la manière 
+  d'utiliser le plugin d'interface GRPC.
 
-- [Eclair #2513][] updates how it uses the Bitcoin Core wallet to ensure
-  it always sends change to P2WPKH outputs.  This
-  is the result of [Bitcoin Core #23789][] (see [Newsletter
-  #181][news181 bcc23789]) where the project addressed a privacy
-  concern for adopters of new output types (e.g. [taproot][topic
-  taproot]).  Previously, a user who set their wallet default address
-  type to taproot would also create taproot change outputs when they
-  paid someone.  If they paid someone who didn't use taproot, it was
-  easy for third parties to determine which output was the payment (the
-  non-taproot output) and which was the change output (the taproot
-  output).  After the change to Bitcoin Core, it would default to trying
-  to use the same type of change output as the paid output, e.g. a
-  payment to a native segwit output would also result in a native segwit
-  change output.
+- [Eclair #2513][] met à jour la façon dont il utilise le portefeuille Bitcoin
+  Core pour s'assurer qu'il envoie toujours de la monnaie aux sorties P2WPKH.
+  Ceci est le résultat de [Bitcoin Core #23789][] (voir [Newsletter #181][news181 bcc23789])
+  où le projet a abordé un problème de confidentialité pour les utilisateurs
+  de nouveaux types de sortie (par exemple [taproot][topic taproot]). Auparavant,
+  un utilisateur qui définissait le type d'adresse par défaut de son portefeuille
+  sur taproot créait également des sorties de changement taproot lorsqu'il payait
+  quelqu'un. S'il payait quelqu'un qui n'utilisait pas taproot, il était facile
+  pour les tiers de déterminer quelle sortie était le paiement (la sortie
+  non-taproot) et quelle sortie était la modification (la sortie taproot). Après
+  le changement de Bitcoin Core, le système essayera par défaut d'utiliser le
+  même type de sortie de changement que la sortie payée, par exemple, un paiement
+  vers une sortie segwit native entraînera également une sortie de changement
+  segwit native.
 
-    However, the LN protocol requires certain output types.  For
-    example, a P2PKH output can't be used to open an LN channel.
-    For that reason, users of Eclair with Bitcoin Core need to ensure
-    they don't generate change outputs of an LN-incompatible type.
+    Cependant, le protocole LN requiert certains types de sortie.  Par exemple
+    une sortie P2PKH ne peut pas être utilisée pour ouvrir un canal LN. Pour
+    cette raison, les utilisateurs d'Eclair avec Bitcoin Core doivent s'assurer
+    qu'ils ne génèrent pas de sorties de monnaie d'un type incompatible avec LN.
 
-- [Rust Bitcoin #1415][] begins using the [Kani Rust Verifier][] to
-  prove some properties of Rust Bitcoin's code.  This complements other
-  continuous integration tests performed on the code, such as fuzzing.
+- [Rust Bitcoin #1415][] commence à utiliser le [Kani Rust Verifier][] pour prouver
+  certaines propriétés du code de Rust Bitcoin. Cela complète les autres tests
+  d'intégration continue effectués sur le code, comme le fuzzing.
 
-- [BTCPay Server #4238][] adds an invoice refund endpoint to BTCPay's
-  Greenfield API, a more recent API different from the original BitPay-inspired API.
+- [BTCPay Server #4238][] ajoute un endpoint de remboursement de facture à l'API
+  Greenfield de BTCPay, une API plus récente différente de l'API originale
+  inspirée de BitPay.
 
 ## Notes de pied de page
 
 [^semver]:
-    Previous editions of this newsletter claimed Core Lightning used the
-    [semantic versioning][] scheme and new versions would continue using
-    that scheme in the future.  Rusty Russell has [described][rusty
-    semver] why CLN can't completely adhere to that scheme.  We thank
-    Matt Whitlock for notifying us about our previous error.
+    Les éditions précédentes de ce bulletin d'information affirmaient que Core
+    Lightning utilisait le schéma de [versionnement sémantique][] et que les
+    nouvelles versions continueraient à utiliser ce schéma à l'avenir.  Rusty
+    Russell a [décrit] [rusty semver] pourquoi CLN ne peut pas adhérer complètement
+    à ce schéma. Nous remercions Matt Whitlock de nous avoir informés de notre
+    précédente erreur.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="19762,5722,2513,1415,4238,18725,26403,23789" %}
@@ -238,8 +240,8 @@ approach as well as a handy shell alias for frequent users of
 [news181 bcc23789]: /en/newsletters/2022/01/05/#bitcoin-core-23789
 [kani rust verifier]: https://github.com/model-checking/kani
 [news223 anchors]: /fr/newsletters/2022/10/26/#ephemeral-anchors
-[news224 anchors]: /fr/newsletters/2022/11/02/#solution-de-contournement-des-sorties-d'ancrage
-[news220 v3tx]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-conçue-pour-les-pénalités-sur-ln
+[news224 anchors]: /fr/newsletters/2022/11/02/#solution-de-contournement-des-sorties-d-ancrage
+[news220 v3tx]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
 [sanders ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021222.html
 [review club 26152]: https://bitcoincore.reviews/26152
 [review club 26152-2]: https://bitcoincore.reviews/26152-2
