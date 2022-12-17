@@ -188,7 +188,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   approche ainsi qu'un alias shell pratique pour les utilisateurs fréquents
   de `bitcoin-cli`.
 
-- [Core Lightning #5722][] ajoute la [documentation][grpc doc] sur la manière 
+- [Core Lightning #5722][] ajoute la [documentation][grpc doc] sur la manière
   d'utiliser le plugin d'interface GRPC.
 
 - [Eclair #2513][] met à jour la façon dont il utilise le portefeuille Bitcoin
