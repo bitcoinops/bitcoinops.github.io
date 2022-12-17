@@ -103,7 +103,7 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
   a2link="https://bitcoincore.reviews/26152#l-94"
 
   q3="Pourquoi le `MiniMiner` nécessite-t-il un cluster entier ? Pourquoi ne peut-il pas
-      pas simplement utiliser l'union des ensembles d'ascendants de chaque transaction ?"
+      simplement utiliser l'union des ensembles d'ascendants de chaque transaction ?"
   a3="Il se peut que certains des ascendants aient déjà été payés par certains de leurs
       autres descendants ; il n'est pas nécessaire d'en rajouter. Nous devons donc
       inclure ces autres descendants dans nos calculs."
