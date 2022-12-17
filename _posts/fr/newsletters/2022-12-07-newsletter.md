@@ -235,7 +235,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [core lightning 22.11]: https://github.com/ElementsProject/lightning/releases/tag/v22.11
 [btcpay server 1.7.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.7.1
 [bdk 0.25.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.25.0
-[semantic versioning]: https://semver.org/spec/v2.0.0.html
+[versionnement sémantique]: https://semver.org/spec/v2.0.0.html
 [grpc doc]: https://github.com/cdecker/lightning/blob/20bc743840bf5d948efbf62d32a21a00ed233e31/plugins/grpc-plugin/README.md
 [news181 bcc23789]: /en/newsletters/2022/01/05/#bitcoin-core-23789
 [kani rust verifier]: https://github.com/model-checking/kani
