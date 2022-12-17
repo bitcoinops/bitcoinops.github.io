@@ -137,7 +137,7 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
   a6link="https://bitcoincore.reviews/26152-2#l-21"
 
   q7="Quelle est l'approche adoptée dans la commande \"Transactions parentes de sauts non
-      confirmées sur taux de frais cible\"?"
+      confirmées sur taux de frais cible\ ?"
   a7="Ce commit est le principal changement de comportement du PR. Nous utilisons le `MiniMiner`
       pour calculer les frais de saut (les frais nécessaires pour faire passer leurs ascendants
       respectifs à la fréquence cible) de chaque UTXO et les déduire de leurs valeurs effectives.
