@@ -113,7 +113,7 @@ Cette revue des PR [s'étendait sur][review club 26152] deux [semaines][review c
       indépendante Y, est-il possible pour un mineur de donner la priorité à Y sur X
       (c'est-à-dire de miner Y avant X) ?"
   a4="Oui. Si certains des ascendants à faible taux de frais de Y ont d'autres descendants
-      qui ont un taux de frais élevé, Y n'a pas besoin de "payer" pour ces ascendants.
+      qui ont un taux de frais élevé, Y n'a pas besoin de \"payer\" pour ces ascendants.
       L'ensemble des ascendants de Y est mis à jour pour exclure ces transactions, ce qui a
       pour effet d'augmenter le taux de frais des ascendants de Y."
   a4link="https://bitcoincore.reviews/26152#l-169"
