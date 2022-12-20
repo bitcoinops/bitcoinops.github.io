@@ -82,8 +82,8 @@ lang: zh
 - [<!--how-do-i-set-up-a-time-decay-multisig-->如何设置一个随时间衰减的多重签名？]({{bse}}116035)
   用户 Yoda 询问如何设置随时间衰减的多重签名。这是一种随着时间的推移，其可花费的公钥集不断扩大的 UTXO。Michael Folkson 提供了一个使用[策略][news74 policy miniscript] 和 [miniscript][topic miniscript] 的示例、相关资源的链接，并指出目前用户友好选项的缺失。
 
-- [<!--when-is-a-miniscript-solution-malleable-->什么时候 miniscript 解决方案会具有可塑性？]({{bse}}116275)
-  Antoine Poinsot 定义了可塑性（malleable）在 miniscript 上下文中的含义，描述了 miniscript 中可塑性的静态分析，并解释了一遍原始问题中的延展性示例。
+- [<!--when-is-a-miniscript-solution-malleable-->什么时候 miniscript 解决方案是可变形的（malleable）？]({{bse}}116275)
+  Antoine Poinsot 定义了不定形（malleability）在 miniscript 上下文中的含义，描述了 miniscript 中不定形的静态分析，并解释了一遍原始问题中的不定形的示例。
 
 ## 新版本和候选版本
 
