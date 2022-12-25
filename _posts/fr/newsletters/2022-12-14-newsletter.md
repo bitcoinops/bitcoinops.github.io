@@ -1,6 +1,6 @@
 ---
 title: 'Bitcoin Optech Newsletter #230'
-permalink: /efr/newsletters/2022/12/14/
+permalink: /fr/newsletters/2022/12/14/
 name: 2022-12-14-newsletter-fr
 slug: 2022-12-14-newsletter-fr
 type: newsletter
@@ -21,113 +21,109 @@ Bitcoin les plus répandus.
 
 ## Nouvelles
 
-- **Factory-optimized LN protocol proposal:** John Law a [posté][law factory]
-  sur la liste de diffusion Lightning-Dev la description d'un protocole
-  optimisé pour la création d' [usines à canaux][topic channel factories].
-  Les fabriques de canaux permettent à plusieurs utilisateurs d'ouvrir
+- **Proposition d'optimisation du protocole d'usines à canaux LN :** 
+  John Law a [posté][law factory] sur la liste de diffusion Lightning-Dev
+  la description d'un protocole optimisé pour la création d' [usines à canaux][topic channel factories].
+  Les usines à canaux permettent à plusieurs utilisateurs d'ouvrir
   en toute confiance plusieurs canaux entre des paires d'utilisateurs
   avec une seule transaction onchain. Par exemple, 20 utilisateurs
   pourraient opérer pour créer une transaction onchain environ 10 fois
   plus grande qu'une ouverture normale à deux parties mais qui ouvrirait
   un total de 190 canaux<!-- n=20 ; n*(n - 1)/2 -->.
 
-    Law notes that the existing LN channel protocol (commonly called
-    LN-penalty) creates two problems for channels opened from within a
-    factory:
+    Law note que le protocole de canal LN existant (communément appelé
+    pénalité-LN) crée deux problèmes pour les canaux ouverts depuis
+    l'intérieur d'une usine :
 
-    - *Long required HTLC expiries:* trustlessness requires that any
-      participant in a factory be able to exit it and regain exclusive
-      control over their funds onchain.  This is accomplished by the
-      participant publishing the current state of balances in the
-      factory onchain.  However, a mechanism is needed to prevent the
-      participant from publishing an earlier state, e.g. one where they
-      controlled a greater amount of money.  The original factory
-      proposal accomplishes this by using one or more timelocked
-      transactions that ensure more recent states can be confirmed more
-      quickly than outdated states.
+    - *Les expirations HTLC requises sont longues :* L'absence de confiance
+      exige que tout participant à une usine puisse en sortir et reprendre
+      le contrôle exclusif de ses fonds sur la chaîne.  Ceci est accompli
+      par le participant qui publie l'état actuel des soldes dans l'usine
+      onchain.  Cependant, un mécanisme est nécessaire pour empêcher le
+      participant de publier un état antérieur, par exemple un état où il
+      contrôlait une plus grande quantité d'argent. La proposition originale
+      de l'usine accomplit cela en utilisant une ou plusieurs transactions
+      verrouillées dans le temps qui garantissent que les états plus récents
+      peuvent être confirmés plus rapidement que les états périmés.
 
-        A consequence of this, described by Law, is that any LN payment
-        ([HTLC][topic htlc]) that is routed through a channel in a
-        channel factory needs to provide enough time for the latest
-        state timelock to expire so the factory can be unilaterally
-        closed.  Worse, this applies each time a payment is forwarded
-        through a factory.  For example, if a payment is forwarded
-        through 10 factories each with a 1-day expiry, it's possible that
-        a payment could be [jammed][topic channel jamming attacks] by
-        accident or on purpose for 10 days (or longer, depending on
-        other HTLC settings).
+        La conséquence de ceci, décrite par Law, est que tout paiement LN ([HTLC][topic htlc])
+        qui est acheminé par un canal dans une usine à canaux doit prévoir
+        suffisamment de temps pour que le dernier timelock d'état expire afin
+        que l'usine puisse être unilatéralement fermée. Pire encore, cela s'applique
+        chaque fois qu'un paiement est acheminé par une usine. Par exemple,
+        si un paiement est transmis par 10 usines ayant chacune une expiration
+        d'un jour, il est possible qu'un paiement soit [brouillé][topic channel jamming attacks]
+        par accident ou volontairement pendant 10 jours (ou plus, selon d'autres
+        paramètres HTLC).
 
-    - *All or nothing:* for factories to truly achieve their best
-      efficiencies, all of their channels also need to be cooperatively
-      closed in a single onchain transaction.  Cooperative closes aren't
-      possible if any of the original participants becomes
-      unresponsive---and the chance of a participant becoming
-      unresponsive approaches 100% as the number of participants
-      increases, limiting the maximum benefit factories can provide.
+    - *Tout ou rien :* pour que les usines atteignent vraiment leur meilleure
+      efficacité, tous leurs canaux doivent également être fermés de manière
+      coopérative dans une seule transaction onchain.  Les fermetures coopératives
+      ne sont pas possibles si l'un des participants initiaux ne répond plus---et la
+      probabilité qu'un participant ne réponde plus s'approche de 100 % lorsque
+      le nombre de participants augmente, ce qui limite le bénéfice maximal que
+      les usines peuvent fournir.
 
-        Law cites previous work in allowing factories to remain
-        operational even if one participant wants to leave or,
-        conversely, one participant becomes unresponsive, such as the
-        proposals for `OP_TAPLEAF_UPDATE_VERIFY` and `OP_EVICT` (see
-        Newsletters [#166][news166 tluv] and [#189][news189 evict]).
+        Law cite des travaux antérieurs visant à permettre aux usines de rester
+        opérationnelles même si l'un des participants veut partir ou, à l'inverse,
+        si l'un des participants ne répond plus, comme les propositions pour
+        `OP_TAPLEAF_UPDATE_VERIFY` et `OP_EVICT` (voir la lettre d'information [#166][news166 tluv]
+        et [#189][news189 evict]).
 
-    Three proposed protocols are presented by Law to address the
-    concerns.  All derive from a previous proposal by Law [posted][law
-    tp] in October for *tunable penalties*---the ability to separate the
-    management of the enforcement mechanism (penalties) from the
-    management of other funds.  That previous proposal has not yet
-    received any discussion on the Lightning-Dev mailing list.  As of
-    this writing, Law's new proposal has also not received any
-    discussion.  If the proposals are sound, they would have the
-    advantage over other proposals of not requiring any changes to
-    Bitcoin's consensus rules.
+    Trois propositions de protocoles sont présentées par Law pour répondre à ces
+    préoccupations. Tous découlent d'une proposition précédente de Law [posted][law tp]
+    en octobre pour des *pénalités ajustables*---la capacité de séparer la gestion
+    du mécanisme d'exécution (des pénalités) de la gestion d'autres fonds. Cette
+    précédente proposition  n'a pas encore été discutée sur la liste de diffusion
+    Lightning-Dev. Au moment où nous écrivons ces lignes, la nouvelle proposition
+    de Law n'a pas non plus fait l'objet de discussions. Si ces propositions sont
+    valables, elles auraient l'avantage, par rapport à d'autres propositions, de
+    ne nécessiter aucune modification des règles de consensus de Bitcoin.
 
-- **Local jamming to prevent remote jamming:** Joost Jager
-  [posted][jager jam] to the Lightning-Dev mailing list a link and
-  explanation for his project, [CircuitBreaker][].  This program,
-  designed to be compatible with LND, enforces limits on the number of
-  pending payments ([HTLCs][topic htlc]) the local node will forward on
-  behalf of each of its peers.  For example, consider the worst case
-  HTLC jamming attack:
+- **Brouillage local pour éviter le brouillage à distance :** Joost Jager a
+  [posté][jager jam] sur la liste de diffusion Lightning-Dev un lien et une
+  explication pour son projet, [CircuitBreaker][]. Ce programme, conçu pour
+  être compatible avec LND, impose des limites au nombre de paiements en attente
+  ([HTLCs][topic htlc]) que le nœud local transmettra pour le compte de chacun
+  de ses pairs. Par exemple, considérons le pire cas d'attaque par brouillage HTLC :
 
-    ![Illustration of two different jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
+    ![Illustration de deux attaques par brouillage différentes](/img/posts/2020-12-ln-jamming-attacks.png)
 
-    With the current LN protocol, Alice is fundamentally limited to
-    concurrently forwarding a maximum of [483 pending HTLCs][].  If she
-    instead uses CircuitBreaker to limit her channel with Mallory to
-    10 concurrent pending HTLC forwards, her downstream channel with Bob
-    (not visualized) and all other channels in this circuit will be
-    protected from all but those first 10 HTLCs that Mallory keeps
-    pending.  This may significantly reduce the effectiveness of
-    Mallory's attack by requiring she open many more channels to block
-    the same number of HTLC slots, which may increase the cost of the
-    attack by requiring she pay more onchain fees.
+    Avec l'actuel protocole LN, Alice est fondamentalement limitée à la transmission
+    simultanée d'un maximum de [483 HTLC en attente][]. Si, au lieu de cela, elle
+    utilise CircuitBreaker pour limiter son canal avec Mallory à 10 transferts
+    simultanés de HTLC en attente, son canal en aval avec Bob (non visualisé) et
+    tous les autres canaux de ce circuit seront protégés de tous les HTLC sauf
+    les 10 premiers que Mallory garde en attente. Cela peut réduire considérablement
+    l'efficacité de l'attaque de Mallory en l'obligeant à ouvrir beaucoup plus
+    de canaux pour bloquer le même nombre d'emplacements HTLC, ce qui peut augmenter
+    le coût de l'attaque en l'obligeant à payer plus de frais onchain.
+    
+    Bien que CircuitBreaker ait été implémenté à l'origine pour refuser tout HTLC dans
+    un canal qui dépassait sa limite, Jager note qu'il a récemment implémenté un mode
+    supplémentaire optionnel qui place tous les HTLC dans une file d'attente au lieu de
+    les refuser ou de les transférer immédiatement.  Lorsque le nombre de HTLC en attente
+    dans un canal tombe en dessous de la limite du canal, CircuitBreaker transmet le HTLC
+    le plus ancien et non expiré de la file d'attente.  Jager décrit deux avantages de
+    cette approche :
 
-    Although CircuitBreaker was originally implemented to simply refuse
-    to accept any HTLCs in any channel which exceeded its limit, Jager
-    notes that he recently implemented an optional additional mode which
-    puts any HTLCs in a queue rather than immediately refusing or
-    forwarding them.  When the number of concurrent pending HTLCs in a
-    channel drops below the channel limit, CircuitBreaker forwards the
-    oldest non-expired HTLC from the queue.  Jager describes two
-    advantages of this approach:
+    - *Contre-pression :* si un nœud au milieu d'un circuit refuse un HTLC,
+      tous les nœuds du circuit (pas seulement ceux qui se trouvent plus bas
+      dans le circuit) peuvent utiliser l'emplacement et les fonds de ce HTLC
+      pour transmettre d'autres paiements.  Cela signifie qu'Alice a peu
+      d'intérêt à refuser plus de 10 HTLC de Mallory - elle peut simplement
+      espérer qu'un nœud ultérieur du circuit exécutera CircuitBreaker ou un
+      logiciel équivalent.
 
-    - *Backpressure:* if a node in the middle of a circuit refuses an
-      HTLC, all nodes in the circuit (not just those further down the
-      circuit) can use that HTLC's slot and funds to forward other
-      payments.  That means there's limited incentive for Alice to
-      refuse more than 10 HTLCs from Mallory---she can simply hope that
-      some later node in the circuit will run CircuitBreaker or
-      equivalent software.
-
-        However, if a later node (say Bob) uses CircuitBreaker to queue
-        excess HTLCs, then Alice could still have her HTLC slots or
-        funds exhausted by Mallory even though Bob and later nodes in
-        the circuit retain the same benefits as now (with the exception
-        of possibly increased channel closing costs for Bob in some
-        cases; see Jager's email or the CircuitBreaker documentation for
-        details).  This gently pressures Alice into running
-        CircuitBreaker or something similar.
+        Cependant, si un nœud ultérieur (disons Bob) utilise CircuitBreaker
+        pour mettre en file d'attente les HTLC excédentaires, alors Alice
+        pourrait toujours voir ses créneaux HTLC ou ses fonds drainés par
+        Mallory, même si Bob et les nœuds ultérieurs du circuit conservent
+        les mêmes avantages que maintenant (à l'exception d'une augmentation
+        possible des coûts de fermeture du canal pour Bob dans certains cas;
+        voir le courriel de Jager ou la documentation de CircuitBreaker pour
+        plus de détails). Cela pousse doucement Alice à utiliser CircuitBreaker
+        ou quelque chose de similaire.
 
     - *Failure attribution:* the current LN protocol allows (in many
       cases) a spender to identify which channel refused to forward an
