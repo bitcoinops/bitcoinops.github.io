@@ -79,6 +79,7 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
+[BIP324]: https://github.com/dhruv/bips/blob/bip324/bip-0324.mediawiki
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md

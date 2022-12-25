@@ -50,6 +50,9 @@ optech_mentions:
   - title: "LND 0.15.1-beta adds support for zero-conf channels"
     url: /en/newsletters/2022/08/31/#lnd-0-15-1-beta
 
+  - title: "2022 year-in-review: zero-conf channels"
+    url: /en/newsletters/2022/12/21/#zero-conf-channels
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

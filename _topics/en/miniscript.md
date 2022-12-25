@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Bitcoin Core #24148 adds watch-only support for descriptors containing miniscript"
     url: /en/newsletters/2022/07/20/#bitcoin-core-24148
 
+  - title: "2022 year-in-review: miniscript descriptors in Bitcoin Core"
+    url: /en/newsletters/2022/12/21/#miniscript-descriptors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
