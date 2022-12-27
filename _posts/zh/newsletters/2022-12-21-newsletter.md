@@ -54,7 +54,7 @@ excerpt: >
 * 十二月
   * [修改闪电网络协议](#ln-mod)
 * 特别总结
-  * [费用替换（Replace-By-Fee）](#rbf)
+  * [手续费替换（Replace-By-Fee）](#rbf)
   * [流行基础设施项目的主要发布](#releases)
   * [Bitcoin Optech](#optech)
   * [软分叉提议](#softforks)
@@ -188,7 +188,7 @@ Lightning Labs [推出][news195 taro]了 Taro，这个协议（基于以前的�
 8 月，Eclair [合并了][news213 dual funding]一项对交互式充值协议的支持。[双重充值协议][topic dual funding]依赖于该支持。双重充值协议允许两个节点中的任何一个（或共同）为新的闪电网络通道充值。当月晚些时候，另一项[合并][news215 dual funding]使 Eclair 开始对双重充值进行实验性支持。双重充值的开放协议有助于确保商家能够访问那些能立即收到客户付款的通道。
 
 {:#jamming}
-Antoine Riard 和 Gleb Naumenko [发布了][news214 jam]了一份关于[通道阻塞攻击][topic channel jamming attacks]及其若干建议解决方案的指南。对于攻击者控制的每个通道，他们可以通过发送永远不会完成的付款使十多个其他通道无法使用——这意味着攻击者不需要支付任何直接成本。该问题自 2015 年以来就已为人所知，但之前提出的解决方案均未获得广泛接受。 在之后的 11 月，Clara Shikhelman 和 Sergei Tikhomirov 将发表他们自己的[论文][news226 jam]。论文中有对此的分析和建议的解决方案，包括基于小额预付费用和基于信誉自动推荐。随后，Riard [发表了][news228 jam]一个使用特定于节点、不可交易令牌的替代解决方案。在之后的 12 月，Joost Jager 将[宣布][news230 jam]一个“简单但不完美”的实用程序，可以帮助节点减轻一些阻塞问题，而无需对闪电网络协议进行任何更改。
+Antoine Riard 和 Gleb Naumenko [发布了][news214 jam]一份关于[通道阻塞攻击][topic channel jamming attacks]及其若干建议解决方案的指南。对于攻击者控制的每个通道，他们可以通过发送永远不会完成的付款使十多个其他通道无法使用——这意味着攻击者不需要支付任何直接成本。该问题自 2015 年以来就已为人所知，但之前提出的解决方案均未获得广泛接受。 在之后的 11 月，Clara Shikhelman 和 Sergei Tikhomirov 将发表他们自己的[论文][news226 jam]。论文中有对此的分析和建议的解决方案，包括基于小额预付费用和基于信誉自动推荐。随后，Riard [发表了][news228 jam]一个使用特定于节点、不可交易令牌的替代解决方案。在之后的 12 月，Joost Jager 将[宣布][news230 jam]一个“简单但不完美”的实用程序，可以帮助节点减轻一些阻塞问题，而无需对闪电网络协议进行任何更改。
 
 {:.center}
 ![Illustration of the two types of channel jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
