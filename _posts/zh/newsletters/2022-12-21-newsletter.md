@@ -17,47 +17,47 @@ excerpt: >
 * 一月
   * [无状态发票](#stateless-invoices)
   * [法律辩护基金](#defense-fund)
-* February
+* 二月
   * [交易手续费赞助](#fee-sponsorship)
   * [幻影节点支付](#phantom-node-payments)
-* March
+* 三月
   * [闪电网络寻路](#ln-pathfinding)
   * [零确认通道](#zero-conf-channels)
-* April
+* 四月
   * [静默支付](#silent-payments)
   * [Taro](#taro)
   * [量子安全的密钥交换](#quantum-safe-keys)
-* May
+* 五月
   * [MuSig2](#musig2)
   * [包中继](#package-relay)
   * [比特币内核库项目](#libbitcoinkernel)
-* June
+* 六月
   * [闪电网络协议开发者会议](#ln-meet)
-* July
+* 七月
   * [洋葱消息速率限制](#onion-message-limiting)
   * [Miniscript 描述符](#miniscript-descriptors)
-* August
+* 八月
   * [闪电网络交互式充值和双重充值协议](#dual-funding)
   * [防范通道阻塞攻击](#jamming)
   * [在 DLC 中使用 BLS 签名](#dlc-bls)
-* September
+* 九月
   * [费率卡](#fee-ratecards)
-* October
-  * [Version 3 transaction relay](#v3-tx-relay)
-  * [Async payments](#async-payments)
-  * [Block parsing bugs](#parsing-bugs)
+* 十月
+  * [版本号 3 的交易中继](#v3-tx-relay)
+  * [异步付款](#async-payments)
+  * [区块解析错误](#parsing-bugs)
   * [ZK rollups](#zk-rollups)
-  * [Encrypted version 2 transport protocol](#v2-transport)
-  * [Meeting of Bitcoin protocol developers](#core-meet)
-* November
+  * [加密的 v2 P2P 传输协议](#v2-transport)
+  * [比特币协议开发者会议](#core-meet)
+* 十一月
   * [Fat error messages](#fat-errors)
-* December
-  * [Modifying the LN protocol](#ln-mod)
-* Featured summaries
-  * [Replace-By-Fee](#rbf)
-  * [Major releases of popular infrastructure projects](#releases)
+* 十二月
+  * [修改闪电网络协议](#ln-mod)
+* 特别总结
+  * [费用替换（Replace-By-Fee）](#rbf)
+  * [流行基础设施项目的主要发布](#releases)
   * [Bitcoin Optech](#optech)
-  * [Soft fork proposals](#softforks)
+  * [软分叉提议](#softforks)
 
 ## 一月
 
@@ -209,221 +209,67 @@ Lloyd Fournier [写了一篇][news213 bls]关于 [DLC][topic dlc] 预言机使�
 ## 九月
 
 {:#fee-ratecards}
-Lisa Neigut 在 Lightning-Dev 邮件列表中[发表了][news219 ratecards]一个费率卡的提案。该提案允许节点宣传其转发费用的四级费率。更好地宣传转发费用，包括在某些情况下设置负费用的能力，可以帮助确保转发节点有足够的容量将付款中继到最终目的地。开发人员 ZmnSCPxj 在今年早些时候曾[发布][news204 lnfees]了他自己基于费用来改进路由的解决方案。这是一种使用费率卡的简单方法，“你可以将价目表建模为相同两个节点间的四个独立通道，每个都有不同的成本。如果成本最低的路径失败了，你只需尝试另一条可能有更多跳数但有效成本较低的路由，或者以更高的成本尝试相同的通道。” René Pickhardt [建议了][news220 flow
-control]一个支付流量控制的替代方法。
+Lisa Neigut 在 Lightning-Dev 邮件列表中[发表了][news219 ratecards]一个费率卡的提案。该提案允许节点宣传其转发费用的四级费率。更好地宣传转发费用，包括在某些情况下设置负费用的能力，可以帮助确保转发节点有足够的容量将付款中继到最终目的地。开发人员 ZmnSCPxj 在今年早些时候曾[发布][news204 lnfees]了他自己基于费用来改进路由的解决方案。这是一种使用费率卡的简单方法，“你可以将价目表建模为相同两个节点间的四个独立通道，每个都有不同的成本。如果成本最低的路径失败了，你只需尝试另一条可能有更多跳数但有效成本较低的路由，或者以更高的成本尝试相同的通道。” René Pickhardt [建议了][news220 flow control]一个支付流量控制的替代方法。
 
-## October
+## 十月
 
 {:#v3-tx-relay}
-In October, Gloria Zhao [proposed][news220 v3] allowing transactions that
-used version number 3 to use a modified set of transaction relay
-policies.  These policies are based on experience using [CPFP][topic
-cpfp] and [RBF][topic rbf], plus ideas for [package relay][topic package
-relay], and are designed to help preventing [pinning attacks][topic
-transaction pinning] against two-party contract protocols like LN---ensuring
-that users can promptly get transactions confirmed for closing channels,
-settling payments ([HTLCs][topic htlc]), and enforcing misbehavior
-penalties.  Greg Sanders would [follow up][news223 ephemeral] later in
-the month with an additional proposal for *ephemeral anchors*, a
-simplified form of the [anchor outputs][topic anchor outputs] already
-usable with most LN implementations.
+在十月，Gloria Zhao [提出][news220 v3]允许使用版本号 3 的交易运用修改后的交易中继策略组。这些策略基于使用 [CPFP][topic cpfp] 和  [RBF][topic rbf] 的经验，并增添了打包中继的思想。设计这些策略是为了帮助防止 LN 等两方合约协议中的钉死攻击 —— 确保用户能够及时得到交易确认，以关闭通道，结算付款 ([HTLCs][topic htlc]) ，并对不当行为进行强制惩罚。Greg Sanders 在本月晚些时候[跟进][news223 ephemeral]，提出一个关于*临时锚点*的额外提议，一种已经在大多数 LN 实现中应用的[锚点输出][topic anchor outputs]的简单形式。
 
 {:#async-payments}
-Eclair added [support][news220 async] for a basic form of async payments
-when [trampoline relay][topic trampoline payments] is used. Async
-payments would allow paying an offline node (such as a mobile wallet)
-without trusting a third-party with the funds. The ideal mechanism for
-async payments depends on [PTLCs][topic ptlc], but a partial
-implementation just requires a third party to delay forwarding the funds
-until the offline node comes back online. Trampoline nodes can provide
-that delay and so this PR makes use of them to allow experimentation
-with async payments.
+Eclair 增加了在使用[蹦床中继][topic trampoline payments]时对基础形式的异步付款的[支持][news220 async]。异步付款允许在无需信任有资产的第三方的情况下向离线节点（例如手机钱包）支付。异步支付的理想机制依赖 [PTLCs][topic ptlc]，但为其部分实现，仅需要第三方延迟转发资金，直到离线节点恢复上线。蹦床节点可以提供这种延迟，因此这个 PR 利用它们来进行异步支付的实验。
 
 {:#parsing-bugs}
-October also saw the [first][news222 bug] of two block parsing bugs that
-affected multiple applications.  An accidentally triggered bug in BTCD
-prevented it and downstream program LND from processing the latest
-blocks.  This could have led to users losing funds, although no such
-problems were reported.  A [second][news225 bug] related bug, this time
-deliberately triggered, affected BTCD and LND again, along with users of some
-versions of Rust-Bitcoin.  Again, there was a potential for users to
-lose money, although we are unaware of any reported incidents.
+十月同样出现了两个影响多个应用程序的区块解析[错误][news222 bug]。BTCD 的一个意外触发的错误使它和下游程序 LND 无法处理最新的区块。这会让用户丢失资产，尽管尚未报告此类问题。[第二个][news225 bug]相关错误此次被故意触发，再次影响了 BTCD 和 LND 以及某些版本的 Rust-Bitcoin 的用户。同样，可能有用户失去资金，尽管我们尚未得到此类事件报告。
 
 {:#zk-rollups}
-John Light [posted][news222 rollups] a research report he prepared about
-validity rollups---a type of sidechain where the current sidechain state
-is compactly stored on the mainchain. An owner of sidechain bitcoins can
-use the state stored on the mainchain to prove how many sidechain
-bitcoins they control. By submitting a mainchain transaction with a
-validity proof, they can withdraw bitcoins they own from the sidechain
-even if the operators or miners of the sidechain try to prevent the
-withdrawal.  Light's research describes validity rollups in depth, looks
-at how support for them could be added to Bitcoin, and examines various
-concerns with their implementation.
+John Light [发布][news222 rollups]了一篇关于 validity rollups 的研究报告 —— 一种侧链，其当前状态被紧凑地存储在主链上。侧链比特币的所有者可以使用存储在主链上的状态来证明他们控制了多少个侧链比特币。通过提交带有有效性证明的主链交易，他们可以从侧链上提取其拥有的比特币，即使侧链的运营商或矿工试图阻止。Light 的研究深入描述了 validity rollups，研究了如何在比特币中支持它及实施中的各种担忧。
 
 {:#v2-transport}
-The [BIP324][] proposal for an [encrypted v2 P2P transport
-protocol][news222 v2trans] received an update and mailing list
-discussion for the first time in three years.  Encrypting the transport
-of unconfirmed transactions can help hide their origin from eavesdroppers
-who control many internet relays (e.g. large ISPs and governments).  It
-can also help detect tampering and possibly make [eclipse attacks][topic
-eclipse attacks] more difficult.
+[BIP324][] 提案更新了，并得到了三年内的首次邮件列表讨论。BIP324 是关于[加密的 v2 P2P 传输协议][news222 v2trans]。对未经确认的交易进行加密传输，有助于隐藏其来源，不被控制许多互联网中继的窃听者（如大型 ISP 和政府）发现。它还可以帮助检测篡改，并可能使[日蚀攻击][topic
+eclipse attacks]更加困难。
 
 {:#core-meet}
-A meeting of Bitcoin protocol developers had several sessions
-[transcribed][news223 xscribe] by Bryan Bishop, including discussions
-about [transport encryption][topic v2 p2p transport], transaction fees
-and [economic security][topic fee sniping], the FROST [threshold
-signature][topic threshold signature] scheme, the sustainability of
-using GitHub for source code and development discussion hosting,
-including provable specifications in BIPs, [package relay][topic package
-relay] and [v3 transaction relay][topic v3 transaction relay], the
-Stratum version 2 mining protocol, and getting code merged into Bitcoin
-Core and other free software projects.
+一次比特币协议开发者会议中，Bryan Bishop [主持][news223 xscribe] 了几项议题讨论，包括[传输加密][topic v2 p2p transport]、交易费和[经济安全性][topic fee sniping]、 FROST [门限签名][topic threshold signature]方案、使用GitHub进行源代码托管和开发讨论的可持续性、BIP 中的可证明规范、[包中继][topic package relay]和 [v3 交易中继][topic v3 transaction relay]、Stratum 第二版采矿协议、以及让代码合并到比特币核心和其他自由软件项目。
 
 <div markdown="1" class="callout" id="softforks">
-### 2022 summary<br>Soft fork proposals
+### 2022 年软分叉提议总结
 
-January began with Jeremy Rubin [holding][news183a ctv] the first of
-several IRC meetings to review and discuss the
-[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) soft fork
-proposal.  Meanwhile, Peter Todd [posted][news183b ctv] several concerns
-with the proposal to the Bitcoin-Dev mailing list, most notably
-expressing concern that it didn't seem to benefit nearly all Bitcoin
-users, as he believes previously soft forks have done.
+一月伴随着 Jeremy Rubin [举行][news183a ctv]第一次 IRC 会议，审核和讨论 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify](CTV) 软分叉提案。同时，Peter Todd 在 Bitcoin-Dev 邮件列表中[发布][news183b ctv]了对该提案的一些担忧，最值得注意的是，他认为此前的软分叉已经使几乎所有比特币用户受益。
 
-Lloyd Fournier [posted][news185 ctv] to the DLC-Dev and Bitcoin-Dev
-mailing lists about how the CTV opcode could radically reduce the number
-of signatures required to create certain [Discreet Log Contracts][topic
-dlc] (DLCs), as well as reduce the number of some other operations.
-Jonas Nick noted that a similar optimization is also possible using the
-proposed [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] (APO) signature
-hash mode.
+Lloyd Fournier 在 DLC-Dev 和 Bitcoin-Dev 邮件列表中[发布][news185 ctv]了CTV操作码如何从根本上减少创建某些 [谨慎日志合约][topic dlc]（DLC）所需的签名数量，以及减少一些其他操作的数量。Jonas Nick 指出，使用提议的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] (APO)签名哈希模式也可以进行类似的优化。
 
-Russell O'Connor [proposed][news185 txhash] an alternative to both CTV
-and APO---a soft fork adding an `OP_TXHASH` opcode and an
-[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) opcode.  The
-TXHASH opcode would specify which parts of a spending transaction should
-be serialized and hashed, with the hash digest being put on the
-evaluation stack for later opcodes to use. The CSFS opcode would specify
-a public key and require a corresponding signature over particular data
-on the stack---such as the computed digest of the transaction created by
-TXHASH.  This would allow emulation of CTV and APO in a way that might
-be simpler, more flexible, and easier to extend through other
-subsequent soft forks.
+Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——一个软分叉，增加了一个 "OP_TXHASH "操作码和一个 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]（CSFS）操作码。TXHASH 操作码将指定一个花费交易的哪些部分应该被序列化和散列化，其散列摘要将被放在评估堆栈中供以后的操作码使用。CSFS 操作码将指定一个公钥，并要求对堆栈上的特定数据进行相应的签名，例如由 TXHASH 创建的交易摘要。这将允许以一种可能更简单、更灵活、更容易通过其他后续软分叉扩展的方式来模拟 CTV 和 APO。
 
-In February, Rusty Russell would [propose][news187 optx] `OP_TX`, an
-even simpler version of `OP_TXHASH`.  Meanwhile, Jeremy Rubin
-[published][news188 ctv] parameters and code for a [signet][topic signet] with CTV
-activated. This simplifies public experimentation with the proposed
-opcode and makes it much easier to test compatibility between different
-software using the code.  Also in February, developer ZmnSCPxj proposed
-a new `OP_EVICT` opcode as an alternative to the
-`OP_TAPLEAF_UPDATE_VERIFY` (TLUV) opcode proposed in 2021. Like TLUV,
-EVICT is focused on use cases where more than two users share ownership
-of a single UTXO, such as [joinpools][topic joinpools], [channel
-factories][topic channel factories], and certain [covenants][topic
-covenants].  ZmnSCPxj would later [propose][news191 fold] a different new opcode,
-`OP_FOLD`, as a more general construct from which EVICT-like behavior
-could be built (though that would require some other Script language
-changes).
+二月，Rusty Russell [提出][news187 optx] `OP_TX`，这是 `OP_TXHASH` 的一个更简单的版本。同时，Jeremy Rubin [发表了][news188 ctv]激活 CTV 的 [Signet][topic signet]的参数和代码。这简化了提议的操作码的公开实验，并使使用该代码的不同软件之间的兼容性测试变得更加容易。同样在 2 月，开发者 ZmnSCPxj 提出了一个新的操作码 `OP_EVICT`，作为 2021 年提出的操作码 `OP_TAPLEAF_UPDATE_VERIFY`（TLUV）的替代。与 TLUV 一样，EVICT 专注于两个以上用户共享单个 UTXO 所有权的用例，如 [joinpools][topic joinpools]、[channel factories][topic channel factories] 和某些 [covenants][topic covenants]。ZmnSCPxj 后来[提出][news191 fold]一个不同的新操作码，`OP_FOLD`，作为一个可以建立类似 EVICT的行为的更通用的构造（尽管这需要一些其他脚本语言的改变）。
 
-By March, the discussion about CTV and newer opcode proposals led to a
-[discussion][news190 recov] about limiting the expressiveness of
-Bitcoin's Script language, mainly to prevent *recursive
-covenants*---conditions that would need to be fulfilled in every
-transaction re-spending those bitcoins or any bitcoins merged with it
-for perpetuity.   Concerns included a loss of censorship resistance,
-enabling [drivechains][topic sidechains], encouraging unnecessary
-computation, and making it possible for users to accidentally lose coins
-to recursive covenants.
+到了三月，关于 CTV 和较新的操作码提案的讨论导致了关于限制比特币脚本语言的表现力的[讨论][news190 recov]，主要是为了防止*递归契约*——在重新花费这些比特币及与其合并的比特币的每笔交易中都需要永远满足这些条件。担心的问题包括失去抗审查能力，启用[驱动链][topic sidechains]，鼓励不必要的计算，并使用户有可能因递归契约而意外地丢币。
 
-March also saw yet another idea for a soft fork change to Bitcoin's
-Script language, this time to allow future transactions to opt-in to a
-completely different language based on Lisp.  Anthony Towns
-[proposed][news191 btc-script] the idea and described how it might be
-better than both Script and a previously-proposed replacement:
-[Simplicity][topic simplicity].
+三月还见证了另一个对比特币的脚本语言进行软分叉的想法，这次是允许未来的交易选择使用一种完全不同的基于 Lisp 的语言。Anthony Towns [提议][news191 btc-script]了这个想法，并描述了它如何比 Script 以及之前提议的替代品 [Simplicity][topic simplicity]更好。
 
-In April, Jeremy Rubin [posted][news197 ctv] to the Bitcoin-Dev mailing
-list his plan to release software that will allow miners to begin
-signaling whether they intend to enforce the [BIP119][] rules for the
-proposed CTV opcode.  This spurred discussion about CTV and similar
-proposals, such as APO.  Rubin later announced he wouldn't be releasing
-compiled software for activating CTV at the present time as he and other
-CTV supporters evaluated the feedback they'd received.
+四月，Jeremy Rubin 在 Bitcoin-Dev 邮件列表[发布][news197 ctv]了发布软件的计划，该软件允许矿工开始示意他们是否打算强制执行针对拟议的 CTV 操作码的 [BIP119][] 规则。这引发了关于 CTV 和类似建议的讨论，如 APO。Rubin 后来宣布，由于他和其他 CTV 支持者评估了他们收到的反馈，他目前不会发布激活 CTV 的编译软件。
 
-In May, Rusty Russell [updated][news200 ctv] his `OP_TX` proposal.  The
-original proposal would allow recursive covenants, which elicited the
-concerns mentioned earlier in this section.  Instead, Russell proposed
-an initial version of TX that was limited to permitting the behavior of
-CTV, which had been specifically designed to prevent recursive
-covenants.  This new version of TX could be incrementally updated in the
-future to provide additional features, making it more powerful but also
-allowing those new features to be independently analyzed.  Additional
-discussion in May [examined][news200 cat] the `OP_CAT` opcode (removed
-from Bitcoin in 2010), which some developers occasionally suggest might
-be a candidate for adding back in the future.
+五月，Rusty Russell [更新][news200 ctv]了他的 `OP_TX` 提案。最初的提议将允许递归契约，这引起了本节前面提到的担忧。取而代之的是，Russell 提出了一个 TX 的初始版本，仅限于允许 CTV 的行为，CTV 是专门为防止递归契约而设计的。这个新版本的 TX 可以在未来逐步更新，以提供更多的功能，使其更加强大，但也允许对这些新功能进行独立分析。五月的附加讨论[考察][news200 cat]了 `OP_CAT` 操作码（2010年从比特币中删除），一些开发者偶发建议将来可将其作为添加的候选操作码。
 
-In September, Jeremy Rubin [described][news218 apo] how a trusted setup
-procedure could be combined with the proposed APO feature to implement
-behavior similar to that proposed by [drivechains][topic sidechains].
-Preventing the implementation of drivechains on Bitcoin was one of the
-reasons developer ZmnSCPxj suggested earlier in the year that full node
-operators might want to oppose soft forks that enable recursive
-covenants.
+九月，Jeremy Rubin [描述了][news218 apo]如何将可信设置程序与提议的 APO 特性相结合，实现类似于[驱动链][topic sidechains]所提议的行为。防止驱动链在比特币上的实施是开发者 ZmnSCPxj 在今年早些时候建议全节点运营商反对实现了递归契约的软分叉的原因之一。
 
-Also in September, Anthony Towns [announced][news219 inquisition] a
-Bitcoin implementation designed specifically for testing soft forks on
-[signet][topic signet].  Based on Bitcoin Core, Towns's code will
-enforce rules for soft fork proposals with high-quality specifications
-and implementations, making it simpler for users to experiment with the
-proposed changes---including comparing changes to each other or seeing
-how they interact.  Towns also plans to include proposed major changes
-to transaction relay policy (such as [package relay][topic package
-relay]).
+同样在九月，Anthony Towns [宣布][news219 inquisition]一个专门为测试软分叉而设计的比特币实现 [signet][topic signet]。基于比特币核心，Towns 的代码将以高质量的规范和实现来执行软分叉提案的规则，使用户更简单地尝试拟议的更改——包括相互比较更改或看到它们的互动方式。Towns 还计划加入对交易中继政策（如[包中继][topic package relay]）提议的重大改变。
 
-In November, Salvatore Ingala [posted][news226 matt] to the Bitcoin-Dev
-mailing list a proposal for a new type of covenant (requiring a soft
-fork) that would allow using merkle trees to create smart contracts that
-can carry state from one onchain transaction to another.  This would be
-similar in capability to smart contracts used on some other
-cryptocurrency systems but would be compatible with Bitcoin's existing
-UTXO-based system.
+十一月，Salvatore Ingala 在 Bitcoin-Dev 邮件列表中[发布][news226 matt]了一个提议，提出了一个新的契约类型（需要一个软分叉），允许使用默克尔树来创建智能合约，此合约可以在一笔链上交易到另一笔链上交易中携带状态。这将与其他一些密码货币系统智能合约的应用类似，但与比特币现有的基于 UTXO 的系统兼容。
 
 </div>
-## November
+
+## 十一月
 
 {:#fat-errors}
-November saw Joost Jager [update][news224 fat] a proposal from 2019 to
-improve error reporting in LN for failed payments.  The error would
-report the identity of a channel where a payment failed to be forwarded
-by a node so that the spender could avoid using channels involving that
-node for a limited time.  Several LN implementations would update their
-code to support the proposal, even if they didn't immediately begin
-using it themselves, including [Eclair][news225 fat] and [Core
-Lightning][news226 fat].
+十一月见证了  Joost Jager [更新][news224 fat]了 2019 年的一份提案，该提案用于改善 LN 中失败支付的错误报告。该错误将指明未能由节点转发付款的通道的身份，这样花费者可以在有限时间内避免使用包含该节点的通道。一些 LN 的实现将更新代码支持此提案，即使他们不会立即开始使用。这些实现包括 [Eclair][news225 fat] 和 [Core Lightning][news226 fat]。
 
-## December
+## 十二月
 
 {:#ln-mod}
-In December, protocol developer John Law posted to the Lightning-Dev
-mailing list his third major proposal for the year.  Like his previous
-two proposals, he suggested new ways LN offchain transactions could be
-designed to enable new features without requiring any changes to
-Bitcoin's consensus code.  Altogether, Law proposed ways casual LN users
-could [remain offline][news221 ln-mod] for potentially months at a time,
-[separating][law tunable] the enforcement for specific payments from the
-management of all settled funds to improve compatibility with
-[watchtowers][topic watchtowers], and [optimizing][news230 ln-mod] LN
-channels for use in [channel factories][topic channel factories] that
-could significantly decrease the onchain costs to use LN.
+在十二 月，协议开发者 John Law 在 Lightning-Dev 邮件列表中发表了他今年的第三份主要提案。如前两份提案，他提出了 LN 的链外交易的新设计方式，以在不对比特币的共识代码进行任何修改的情况下实现新的功能。总的来说，Law 提出了 LN 临时用户可以一次[保持离线][news221 ln-mod]状态数月的方式，将特定付款的执行与已结算资产的管理[分离][law tunable]，以提高与[瞭望塔][topic watchtowers]的兼容性，并[优化][news230 ln-mod][通道工厂][topic channel factories]中 LN 通道的使用，这可以大规模降低使用 LN 的链上开销。
 
-*We thank all of the Bitcoin contributors named above, plus the many
-others whose work was just as important, for another incredible year of
-Bitcoin development.  The Optech newsletter will return to its regular
-Wednesday publication schedule on January 4th.*
+*我们感谢所有前文中列出姓名的比特币的贡献者，并感谢做出同样重要工作的其他人，他们为比特币的发展创造了难以置信的另一年。Optech 周报将于 1 月 4 日恢复常规周三出版计划。*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
