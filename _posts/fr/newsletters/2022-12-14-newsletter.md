@@ -21,7 +21,7 @@ Bitcoin les plus répandus.
 
 ## Nouvelles
 
-- **Proposition d'optimisation du protocole d'usines à canaux LN :** 
+- **Proposition d'optimisation du protocole d'usines à canaux LN :**
   John Law a [posté][law factory] sur la liste de diffusion Lightning-Dev
   la description d'un protocole optimisé pour la création d' [usines à canaux][topic channel factories].
   Les usines à canaux permettent à plusieurs utilisateurs d'ouvrir
@@ -98,7 +98,7 @@ Bitcoin les plus répandus.
     l'efficacité de l'attaque de Mallory en l'obligeant à ouvrir beaucoup plus
     de canaux pour bloquer le même nombre d'emplacements HTLC, ce qui peut augmenter
     le coût de l'attaque en l'obligeant à payer plus de frais onchain.
-    
+
     Bien que CircuitBreaker ait été implémenté à l'origine pour refuser tout HTLC dans
     un canal qui dépassait sa limite, Jager note qu'il a récemment implémenté un mode
     supplémentaire optionnel qui place tous les HTLC dans une file d'attente au lieu de
