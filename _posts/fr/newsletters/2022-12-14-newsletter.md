@@ -340,7 +340,7 @@ newsletter.  Regular publication will resume on Wednesday, January 4th.
 [rbf mpo]: https://fullrbf.mempool.observer/
 [news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [tlv]: https://github.com/lightning/bolts/blob/master/01-messaging.md#type-length-value-format
-[483 pending htlcs]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#rationale-7
+[483 HTLC en attente]: https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#rationale-7
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [LDK phantom payments]: https://lightningdevkit.org/blog/introducing-phantom-node-payments/
 [news125 legacy descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
