@@ -125,81 +125,80 @@ Bitcoin les plus répandus.
         plus de détails). Cela pousse doucement Alice à utiliser CircuitBreaker
         ou quelque chose de similaire.
 
-    - *Failure attribution:* the current LN protocol allows (in many
-      cases) a spender to identify which channel refused to forward an
-      HTLC.  Some spender software tries to avoid using those channels
-      in future HTLCs for a certain amount of time.  In the case of
-      refusing HTLCs from malicious actors like Mallory, this obviously
-      doesn't matter, but if a node running CircuitBreaker refuses HTLCs
-      from honest spenders, this may not only reduce its income from
-      those refused HTLCs but also the income it would've received from
-      subsequent payment attempts.
+    - *Attribution des défaillances :* le protocole LN actuel permet (dans de nombreux cas)
+      à un opérateur d'identifier le canal qui a refusé de transmettre un HTLC.
+      Certains logiciels d'envoi essaient d'éviter d'utiliser ces canaux dans les
+      futurs HTLC pendant un certain temps. Dans le cas du refus des HTLC
+      d'acteurs malveillants comme Mallory, cela n'a évidemment pas d'importance,
+      mais si un nœud exécutant CircuitBreaker refuse les HTLC de payeurs
+      honnêtes, cela peut non seulement réduire ses revenus provenant de ces
+      HTLC refusés, mais aussi les revenus qu'il aurait reçus des tentatives
+      de paiement ultérieures.
 
-        However, the LN protocol doesn't currently have a widely
-        deployed way to determine which channel delayed an HTLC, so it's
-        less consequential in this regard to delay forwarding an HTLC
-        than it is to outright refuse to forward it.  Jager notes that
-        this is changing due to many LN implementations working on
-        supporting more detailed onion-routed error messages (see
-        [Newsletters #224][news224 fat]), so this advantage may
-        disappear some day.
+        Cependant, le protocole LN ne dispose pas actuellement d'un moyen
+        largement déployé pour déterminer quel canal a retardé un HTLC, il
+        est donc moins conséquent à cet égard de retarder l'envoi d'un HTLC
+        que de refuser purement et simplement de l'envoyer. Jager note que
+        cette situation est en train de changer en raison des nombreuses
+        implémentations LN qui travaillent à la prise en charge de messages
+        d'erreur plus détaillés sur le routage en oignon (voir le [bulletin
+        d'information #224][news224 fat]), cet avantage pourrait donc
+        disparaître un jour.
 
-    Jager calls CircuitBreaker, "a simple but imperfect way to deal with
-    channel jamming and spamming".  Work continues on finding and
-    deploying a protocol-level change that will more comprehensively
-    mitigate concerns about jamming attacks, but CircuitBreaker stands
-    out as a seemingly reasonable solution that's compatible with the
-    current LN protocol and which any LND user can deploy immediately on
-    their forwarding node.  CircuitBreaker is MIT licensed and
-    conceptually simple, so it should be possible to adapt or port for
-    other LN implementations.
+    Pour Jager, CircuitBreaker est "un moyen simple mais imparfait de lutter contre
+    le brouillage des canaux et le pollupostage". Les travaux se poursuivent pour
+    trouver et déployer un changement au niveau du protocole qui atténuera de
+    manière plus complète les préoccupations relatives aux attaques par brouillage,
+    mais CircuitBreaker se distingue comme une solution apparemment raisonnable,
+    compatible avec le protocole LN actuel et que tout utilisateur de LND peut
+    déployer immédiatement sur son nœud de transmission. CircuitBreaker est sous
+    licence MIT et conceptuellement simple, il devrait donc être possible de
+    l'adapter ou de le porter pour d'autres implémentations LN.
 
-- **Monitoring of full-RBF replacements:** developer 0xB10C
-  [posted][0xb10c rbf] to the Bitcoin-Dev mailing list that they've
-  begun providing [publicly accessible][rbf mpo] monitoring of
-  transaction replacements in the mempool of their Bitcoin Core node
-  that don't contain the BIP125 signal.  Their node allows full-RBF
-  replacement using the `mempoolfullrbf` configuration option (see
-  [Newsletter #208][news208 rbf]).
+- **Suivi des remplacements par full-RBF :** Le développeur 0xB10C a [posté][0xb10c rbf]
+  sur la liste de diffusion Bitcoin-Dev qu'il a commencé à fournir un suivi [accessible au public][rbf mpo]
+  des placements de transactions dans le mempool de son nœud Bitcoin Core qui ne contiennent
+  pas le signal BIP125. Leur nœud permet le remplacement complet des RBF en utilisant
+  l'option de configuration `mempoolfullrbf` (voir [le bulletin d'information #208][news208 rbf]).
 
-    Users and services can use the website as an indicator for which
-    large mining pools might be currently confirming unsignaled
-    replacement transactions (if any are doing so).  However, we remind
-    readers that payments received in unconfirmed transactions cannot be
-    guaranteed even if miners don't currently seem to be mining
-    unsignaled replacements.
+    Les utilisateurs et les services peuvent utiliser le site Web comme un indicateur
+    pour savoir quels grands pools miniers pourraient actuellement confirmer des
+    transactions de remplacement non signées (si certains le font).  Cependant, nous
+    rappelons aux lecteurs que les paiements reçus dans le cadre de transactions
+    non confirmées ne peuvent être garantis, même si les mineurs ne semblent pas
+    actuellement exploiter des remplacements non signalés.
 
-## Changes to services and client software
+## Changements principaux dans le code et la documentation
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*Dans cette rubrique mensuelle, nous mettons en évidence les mises à jour intéressantes
+des portefeuilles et services Bitcoin.*
 
-- **Lily Wallet adds coin selection:**
-  Lily Wallet [v1.2.0][lily v1.2.0] adds [coin selection][topic coin selection] features.
+- **Lily Wallet ajoute une sélection de pièces :**
+  Lily Wallet [v1.2.0][lily v1.2.0] ajoute une fonctionnalités [de sélection de pièces][topic coin selection].
 
-- **Vortex software creates LN channels from a coinjoin:**
-  Using [taproot][topic taproot] and collaborative [coinjoin][topic coinjoin]
-  transactions, users have [opened LN channels][vortex tweet] on Bitcoin mainnet using the
-  [Vortex][vortex github] software.
+- **Le logiciel Vortex crée des canaux LN à partir des transactions collaboratives :**
+  Grâce aux transactions [taproot][topic taproot] et aux transactions collaboratives [coinjoin][topic coinjoin],
+  les utilisateurs ont [ouvert des canaux LN][vortex tweet] sur le réseau principal Bitcoin
+  en utilisant le logiciel [Vortex][vortex github].
 
-- **Mutiny demonstrates LN node in a browser PoC:**
-  Using WASM and LDK, developers [demonstrated][mutiny tweet] a
-  [proof-of-concept][mutiny github] implementation of an LN node running in a
-  mobile phone browser.
+- **Mutiny intègre un nœud LN dans un navigateur de démonstration :**
+  À l'aide de WASM et de LDK, les développeurs ont fait la [démonstration][mutiny tweet]
+  d'une mise en œuvre d'une [preuve de concept][mutiny github] d'un nœud LN fonctionnant
+  dans le navigateur d'un téléphone mobile.
 
-- **Coinkite launches BinaryWatch.org:**
-  The [BinaryWatch.org][] website checks binaries from Bitcoin-related projects
-  and monitors for any changes. The company also operates [bitcoinbinary.org][] a
-  service that archives [reproducible builds][topic reproducible builds] for
-  Bitcoin-related projects.
+- **Coinkite lance BinaryWatch.org:**
+  Le site Web [BinaryWatch.org][] vérifie les binaires des projets liés à Bitcoin et
+  surveille tout changement. La société gère également [bitcoinbinary.org][] un
+  service qui archive les [builds reproductibles][topic reproducible builds] des
+  projets liés à Bitcoin.
 
-## Selected Q&A from Bitcoin Stack Exchange
+## Selection de Q&R du Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les
+collaborateurs d'Optech cherchent des réponses à leurs questions---ou lorsqu'ils
+ont quelques moments libres, aident les utilisateurs curieux ou perdus.
+Dans cette rubrique mensuelle, nous mettons en évidence certaines des questions
+et réponses les plus populaires depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
