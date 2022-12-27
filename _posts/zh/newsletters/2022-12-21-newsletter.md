@@ -50,7 +50,7 @@ excerpt: >
   * [加密的 v2 P2P 传输协议](#v2-transport)
   * [比特币协议开发者会议](#core-meet)
 * 十一月
-  * [Fat error messages](#fat-errors)
+  * [富错误消息](#fat-errors)
 * 十二月
   * [修改闪电网络协议](#ln-mod)
 * 特别总结
@@ -321,61 +321,61 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 [news200 ctv]: /en/newsletters/2022/05/18/#updated-op-tx-proposal
 [news201 package relay]: /en/newsletters/2022/05/25/#package-relay-proposal
 [news202 sp]: /en/newsletters/2022/06/01/#experimentation-with-silent-payments
-[news203 zero-conf]: /en/newsletters/2022/06/08/#bolts-910
-[news204 ln]: /en/newsletters/2022/06/15/#summary-of-ln-developer-meeting
-[news204 lnfees]: /en/newsletters/2022/06/15/#using-routing-fees-to-signal-liquidity
-[news204 package relay]: /en/newsletters/2022/06/15/#continued-package-relay-bip-discussion
-[news205 bdk]: /en/newsletters/2022/06/22/#bdk-0-19-0
-[news205 ldk]: /en/newsletters/2022/06/22/#ldk-0-0-108
-[news205 rbf]: /en/newsletters/2022/06/22/#full-replace-by-fee
-[news205 scid]: /en/newsletters/2022/06/22/#eclair-2224
-[news206 lnd]: /en/newsletters/2022/06/29/#lnd-0-15-0-beta
-[news207 onion]: /en/newsletters/2022/07/06/#onion-message-rate-limiting
-[news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
-[news208 scid cln]: /en/newsletters/2022/07/13/#core-lightning-5275
-[news208 scid lnd]: /en/newsletters/2022/07/13/#lnd-5955
-[news209 miniscript]: /en/newsletters/2022/07/20/#bitcoin-core-24148
-[news213 bls]: /en/newsletters/2022/08/17/#using-bitcoin-compatible-bls-signatures-for-dlcs
-[news213 dual funding]: /en/newsletters/2022/08/17/#eclair-2273
-[news213 rb]: /en/newsletters/2022/08/17/#rust-bitcoin-0-29
-[news214 cln]: /en/newsletters/2022/08/24/#core-lightning-0-12-0
-[news214 jam]: /en/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
-[news214 sp]: /en/newsletters/2022/08/24/#updated-silent-payments-pr
-[news215 dual funding]: /en/newsletters/2022/08/31/#eclair-2275
-[news215 lnd]: /en/newsletters/2022/08/31/#lnd-0-15-1-beta
-[news217 ldk]: /en/newsletters/2022/09/14/#ldk-0-0-111
-[news218 apo]: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
-[news219 inquisition]: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
-[news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
-[news220 async]: /en/newsletters/2022/10/05/#eclair-2435
-[news220 flow control]: /en/newsletters/2022/10/05/#ln-flow-control
-[news220 v3]: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
-[news221 ln-mod]: /en/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news222 bug]: /en/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
-[news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
-[news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
-[news222 rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
-[news222 v2trans]: /en/newsletters/2022/10/19/#bip324-update
-[news223 ephemeral]: /en/newsletters/2022/10/26/#ephemeral-anchors
-[news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
-[news223 xscribe]: /en/newsletters/2022/10/26/#coredev-tech-transcripts
-[news224 fat]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
-[news224 rbf]: /en/newsletters/2022/11/02/#mempool-consistency
-[news225 bug]: /en/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software
-[news225 fat]: /en/newsletters/2022/11/09/#eclair-2441
-[news225 rbf]: /en/newsletters/2022/11/09/#continued-discussion-about-enabling-full-rbf
-[news226 fat]: /en/newsletters/2022/11/16/#core-lightning-5698
-[news226 jam]: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
-[news226 matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
-[news228 jam]: /en/newsletters/2022/11/30/#reputation-credentials-proposal-to-mitigate-ln-jamming-attacks
-[news229 cln]: /en/newsletters/2022/12/07/#core-lightning-22-11
-[news230 bcc]: /en/newsletters/2022/12/14/#bitcoin-core-24-0-1
-[news230 jam]: /en/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
-[news230 libsecp]: /en/newsletters/2022/12/14/#libsecp256k1-0-2-0
-[news230 ln-mod]: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
-[news230 rbf]: /en/newsletters/2022/12/14/#monitoring-of-full-rbf-replacements
-[news231 v3relay]: /en/newsletters/2022/12/21/#v3-tx-relay
-[newsletters]: /en/newsletters/
+[news203 zero-conf]: /zh/newsletters/2022/06/08/#bolts-910
+[news204 ln]: /zh/newsletters/2022/06/15/#summary-of-ln-developer-meeting
+[news204 lnfees]: /zh/newsletters/2022/06/15/#using-routing-fees-to-signal-liquidity
+[news204 package relay]: /zh/newsletters/2022/06/15/#continued-package-relay-bip-discussion
+[news205 bdk]: /zh/newsletters/2022/06/22/#bdk-0-19-0
+[news205 ldk]: /zh/newsletters/2022/06/22/#ldk-0-0-108
+[news205 rbf]: /zh/newsletters/2022/06/22/#full-replace-by-fee
+[news205 scid]: /zh/newsletters/2022/06/22/#eclair-2224
+[news206 lnd]: /zh/newsletters/2022/06/29/#lnd-0-15-0-beta
+[news207 onion]: /zh/newsletters/2022/07/06/#onion-message-rate-limiting
+[news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
+[news208 scid cln]: /zh/newsletters/2022/07/13/#core-lightning-5275
+[news208 scid lnd]: /zh/newsletters/2022/07/13/#lnd-5955
+[news209 miniscript]: /zh/newsletters/2022/07/20/#bitcoin-core-24148
+[news213 bls]: /zh/newsletters/2022/08/17/#using-bitcoincompatible-bls-signatures-for-dlcs-bls-dlc
+[news213 dual funding]: /zh/newsletters/2022/08/17/#eclair-2273
+[news213 rb]: /zh/newsletters/2022/08/17/#rust-bitcoin-0-29
+[news214 cln]: /zh/newsletters/2022/08/24/#core-lightning-0-12-0
+[news214 jam]: /zh/newsletters/2022/08/24/#overview-of-channel-jamming-attacks-and-mitigations
+[news214 sp]: /zh/newsletters/2022/08/24/#pr
+[news215 dual funding]: /zh/newsletters/2022/08/31/#eclair-2275
+[news215 lnd]: /zh/newsletters/2022/08/31/#lnd-0-15-1-beta
+[news217 ldk]: /zh/newsletters/2022/09/14/#ldk-0-0-111
+[news218 apo]: /zh/newsletters/2022/09/21/#apo-drivechains
+[news219 inquisition]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet-signet
+[news219 ratecards]: /zh/newsletters/2022/09/28/#ln-fee-ratecards
+[news220 async]: /zh/newsletters/2022/10/05/#eclair-2435
+[news220 flow control]: /zh/newsletters/2022/10/05/#ln-flow-control
+[news220 v3]: /zh/newsletters/2022/10/05/#ln-penalty
+[news221 ln-mod]: /zh/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
+[news222 bug]: /zh/newsletters/2022/10/19/#btcd-lnd
+[news222 musig2]: /zh/newsletters/2022/10/19/#musig2
+[news222 rbf]: /zh/newsletters/2022/10/19/#transaction-replacement-option
+[news222 rollups]: /zh/newsletters/2022/10/19/#rollup
+[news222 v2trans]: /zh/newsletters/2022/10/19/#bip324
+[news223 ephemeral]: /zh/newsletters/2022/10/26/#ephemeral-anchors
+[news223 rbf]: /zh/newsletters/2022/10/26/#continued-discussion-about-full-rbf-rbf
+[news223 xscribe]: /zh/newsletters/2022/10/26/#coredevtech-transcripts-coredev-tech
+[news224 fat]: /zh/newsletters/2022/11/02/#ln-routing-failure-attribution
+[news224 rbf]: /zh/newsletters/2022/11/02/#mempool-consistency
+[news225 bug]: /zh/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software-bug
+[news225 fat]: /zh/newsletters/2022/11/09/#eclair-2441
+[news225 rbf]: /zh/newsletters/2022/11/09/#continued-discussion-about-enabling-fullrbf-rbf
+[news226 fat]: /zh/newsletters/2022/11/16/#core-lightning-5698
+[news226 jam]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
+[news226 matt]: /zh/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
+[news228 jam]: /zh/newsletters/2022/11/30/#reputation-credentials-proposal-to-mitigate-ln-jamming-attacks
+[news229 cln]: /zh/newsletters/2022/12/07/#core-lightning-22-11
+[news230 bcc]: /zh/newsletters/2022/12/14/#bitcoin-core-24-0-1
+[news230 jam]: /zh/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
+[news230 libsecp]: /zh/newsletters/2022/12/14/#libsecp256k1-0-2-0
+[news230 ln-mod]: /zh/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
+[news230 rbf]: /zh/newsletters/2022/12/14/#rbf
+[news231 v3relay]: /zh/newsletters/2022/12/21/#v3-tx-relay
+[newsletters]: /zh/newsletters/
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
