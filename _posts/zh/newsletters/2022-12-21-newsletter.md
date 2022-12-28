@@ -106,6 +106,8 @@ LKD 对[无状态发票][topic stateless invoices]的初步支持，使它可以
 
 在十一月末，Daftuar 关闭了这个 PR，而且 Bitcoin Core 项目也放出了带有 `mempoolfullrbf` 的 24.0。在十二月，开发者 0xB10C [推出][news230 rbf]了一个网站，用于监控并不包含 BIP125 信号的替换交易；这样的交易如果能得到确认，则表明它可能由一个使用 `mempoolfullrbf` 配置选项（或带有类似特性的其它软件）开启全面 RBF（full-RBF）的矿工经手。至今年年底，全面 RBF 依然在其它的 Bitcoin Core PR 和邮件组帖子中被讨论。
 
+</div>
+
 ## 四月
 
 {:#silent-payments}
