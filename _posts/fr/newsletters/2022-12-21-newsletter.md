@@ -8,9 +8,9 @@ layout: newsletter
 lang: fr
 
 excerpt: >
-  Cette édition spéciale de la lettre d'information Optech résume les faits     marquants l'évolution du bitcoin pendant toute l'année 2022.
+  Cette édition spéciale de la lettre d'information Optech résume les faits marquants l'évolution du bitcoin pendant toute l'année 2022.
 ---
-{{page.excerpt}}  C'est la suite de nos résumés des années précédentes [2018][yirs
+{{page.excerpt}} C'est la suite de nos résumés des années précédentes [2018][yirs
 2018], [2019][yirs 2019], [2020][yirs 2020], and [2021][yirs 2021].
 
 ## Contenus
@@ -63,7 +63,7 @@ excerpt: >
 ## Janvier
 
 {:#stateless-invoices}
-En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures sans état][topic factures sans état],
+En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures sans état][topic stateless-invoices],
 qui lui permet de générer un nombre infini de factures sans stocker aucune donnée à leur sujet,
 sauf si le paiement est réussi. Les factures apatrides ont déjà été proposées en septembre 2021
 et la mise en œuvre de LDK diffère de la méthode suggérée, bien qu'elle accomplisse le même objectif
