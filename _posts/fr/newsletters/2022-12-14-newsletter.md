@@ -302,16 +302,16 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   donnant au LSP la possibilité d'ouvrir le canal JIT. Le LSP peut alors transmettre
   le paiement sur le canal nouvellement ouvert ou l'échouer.
 
-- [BOLTs #1021][] allows onion-routing error messages to contain a
-  [TLV][] stream, which may be used in the future to include additional
-  information about the failure.  This is a first step towards
-  implementing [fat errors][news224 fat] as proposed in [BOLTs #1044][].
+- [BOLTs #1021][] permet aux messages d'erreur de routage en oignon de contenir un flux [TLV][],
+  qui pourra être utilisé à l'avenir pour inclure des informations supplémentaires sur l'échec.
+  Il s'agit d'une première étape vers la mise en œuvre de [fat errors][news224 fat] comme
+  proposé dans [BOLTs #1044][].
 
-## Happy holidays!
+## Bonnes vacances!
 
-This is Bitcoin Optech's final regular newsletter of the year.  On
-Wednesday, December 21st, we'll publish our fifth annual year-in-review
-newsletter.  Regular publication will resume on Wednesday, January 4th.
+Ceci est le dernier bulletin régulier de Bitcoin Optech de l'année. Le mercredi 21 décembre,
+nous publierons notre cinquième bulletin annuel de bilan de l'année. La publication régulière
+reprendra le mercredi 4 janvier.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25934,7159,1835,1021,1044" %}
@@ -321,7 +321,7 @@ newsletter.  Regular publication will resume on Wednesday, January 4th.
 [libsecp256k1 0.2.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.2.0
 [libsecp256k1 announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021271.html
 [core lightning 22.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v22.11.1
-[news224 fat]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
+[news224 fat]: /fr/newsletters/2022/11/02/#attribution-de-l-échec-du-routage-ln
 [law factory]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003782.html
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [news189 evict]: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
