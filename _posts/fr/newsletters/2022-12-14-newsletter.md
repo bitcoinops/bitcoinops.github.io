@@ -203,111 +203,104 @@ et réponses les plus populaires depuis notre dernière mise à jour.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Why is connecting to the Bitcoin network exclusively over Tor considered a bad practice?]({{bse}}116146)
-  Several answers explain that due to the lower cost of being able to generate many
-  Tor addresses as compared to IPv4 and IPv6 addresses, a Bitcoin node operator
-  exclusively using the Tor network could more easily be [eclipse attacked][topic eclipse
-  attacks] when compared to operating only on clearnet or with a
-  combination of [anonymity networks][topic anonymity networks].
+- [Pourquoi la connexion au réseau Bitcoin exclusivement par Tor est-elle considérée comme une mauvaise pratique ?]({{bse}}116146)
+  Plusieurs réponses expliquent qu'en raison du coût moins élevé de la génération d'un grand nombre
+  d'adresses Tor par rapport aux adresses IPv4 et IPv6, un opérateur de nœuds Bitcoin utilisant
+  exclusivement le réseau Tor pourrait plus facilement être [attaqué par éclipse][topic eclipse attacks] par rapport
+  à un opérateur utilisant uniquement le réseau clair ou une combinaison de [réseaux d'anonymat][topic anonymity networks].
 
-- [Why aren't 3 party (or more) channels realistically possible in Lightning today?]({{bse}}116257)
-  Murch explains that since LN channels currently use the LN penalty mechanism
-  that allocates *all* channel funds to a single counterparty in the event of a
-  breach, extending LN penalty to handle multiple recipients of a justice
-  transaction may be overly complicated and involve excessive overhead to
-  implement. He then explains [eltoo's][topic eltoo] mechanism and how it might
-  handle multiparty channels.
+- [Pourquoi n'est-il pas possible, de manière réaliste, d'avoir trois canaux (ou plus) dans Lightning aujourd'hui ?]({{bse}}116257)
+  Murch explique que puisque les canaux LN utilisent actuellement le mécanisme de pénalité LN qui
+  alloue *tous* les fonds du canal à une seule contrepartie en cas de violation, étendre la
+  pénalité LN pour gérer plusieurs destinataires d'une transaction de justice pourrait être trop
+  compliqué et impliquer des frais généraux excessifs à mettre en œuvre. Il explique ensuite le
+  mécanisme [eltoo] [topic eltoo] et comment il pourrait gérer les canaux multipartites.
 
-- [With legacy wallets deprecated, will Bitcoin Core be able to sign messages for an address?]({{bse}}116187)
-  Pieter Wuille distinguishes between Bitcoin Core [deprecating legacy
-  wallets][news125 legacy descriptor wallets] and the continued support for
-  older address types like P2PKH addresses even in newer [descriptor][topic
-  descriptors] wallets. While message signing is currently only possible for
-  P2PKH addresses, efforts around [BIP322][topic generic signmessage] could
-  allow for message signing across other address types.
+- [Avec la dépréciation des anciens portefeuilles, Bitcoin Core sera-t-il capable de signer des messages pour une adresse ?]({{bse}}116187)
+  Pieter Wuille fait la distinction entre la [dépréciation des anciens portefeuilles][news125 legacy descriptor wallets]
+  de Bitcoin Core et le maintien du support des anciens types d'adresses comme les adresses P2PKH,
+  même dans les nouveaux [descripteurs][topic descriptors] de portefeuilles. Bien que la signature
+  des messages ne soit actuellement possible que pour les adresses P2PKH, les efforts autour de
+  [BIP322][topic generic signmessage] pourraient permettre la signature des messages pour d'autres
+  types d'adresses.
 
-- [How do I set up a time-decay multisig?]({{bse}}116035)
-  User Yoda asks how to set up a time-decaying multisig, a UTXO that is spendable
-  with a broadening set of pubkeys over time. Michael Folkson provides an
-  example using [policy][news74 policy miniscript] and [miniscript][topic
-  miniscript], links to related resources, and notes the lack of user-friendly
-  options currently.
+- [Comment mettre en place un multisigging à décélération temporelle ?]({{bse}}116035)
+  L'utilisateur Yoda demande comment configurer un multisig qui se désintègre dans le temps,
+  un UTXO qui peut être dépensé avec un ensemble de pubkeys de plus en plus large au fil du temps.
+  Michael Folkson fournit un exemple utilisant [policy][news74 policy miniscript] et [miniscript][topic miniscript],
+  des liens vers des ressources connexes, et note le manque d'options conviviales actuellement.
 
-- [When is a miniscript solution malleable?]({{bse}}116275)
-  Antoine Poinsot defines what malleability means in the context of
-  miniscript, describes static analysis of malleability in miniscript, and walks
-  through the original question's malleability example.
+- [Quand une solution miniscript est-elle malléable ?]({{bse}}116275)
+  Antoine Poinsot définit ce que signifie la malléabilité dans le contexte de miniscript,
+  décrit l'analyse statique de la malléabilité dans miniscript, et parcourt l'exemple de
+  malléabilité de la question originale.
 
-## Releases and release candidates
+## Mises à jour et version candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les versions candidates.*
 
-- [Bitcoin Core 24.0.1][] is a major release of the mostly widely used
-  full node software.  Its new features include an option for
-  configuring the node's [Replace-By-Fee][topic rbf] (RBF) policy, a new
-  `sendall` RPC for easily spending all of a wallet's funds in a single
-  transaction (or for otherwise creating transactions with no change
-  output), a `simulaterawtransaction` RPC that can be used to verify how
-  a transaction will effect a wallet (e.g., for ensuring a coinjoin
-  transaction only decreases the value of a wallet by fees), the ability
-  to create watch-only [descriptors][topic descriptors] containing
-  [miniscript][topic miniscript] expressions for improved forward
-  compatibility with other software, and the automatic application of
-  certain setting changes made in the GUI to RPC-based actions.  See the
-  [release notes][bcc rn] for the full list of new features and bug
-  fixes.
+- [Bitcoin Core 24.0.1][] est une version majeure du logiciel de nœud complet le plus largement utilisé.
+  Ses nouvelles fonctionnalités comprennent une option pour configurer la politique [Replace-By-Fee][topic rbf]
+  (RBF) du noeud, un nouveau RPC `sendall` pour dépenser facilement tous les fonds d'un portefeuille en
+  une seule transaction (ou pour créer des transactions sans sortie de changement), un RPC `simulaterawtransaction`
+  qui peut être utilisé pour vérifier comment une transaction affectera un portefeuille (par ex, pour
+  s'assurer qu'une transaction coinjoin ne diminue la valeur d'un porte-monnaie que par des frais),
+  la possibilité de créer des [descripteurs][topic descriptors] de veille uniquement contenant des
+  expressions [miniscript][topic miniscript] pour améliorer la compatibilité avec d'autres logiciels,
+  et l'application automatique de certains changements de paramètres effectués dans l'interface graphique
+  aux actions basées sur les RPC. Voir les [notes de version][bcc rn] pour la liste complète des nouvelles
+  fonctionnalités et des corrections de bogues.
 
-    Note: a version 24.0 was tagged and had its binaries released, but
-    project maintainers never announced it and instead worked with other
-    contributors to resolve [some last-minute issues][bcc milestone
-    24.0.1], making this release of 24.0.1 the first announced release
-    of the 24.x branch.
+    Note : une version 24.0 a été marquée et ses binaires ont été publiés,
+    mais les mainteneurs du projet ne l'ont jamais annoncée et ont plutôt
+    travaillé avec d'autres contributeurs pour résoudre [quelques problèmes
+    de dernière minute][bcc milestone 24.0.1], faisant de cette version 24.0.1
+    la première version annoncée de la branche 24.x.
 
-- [libsecp256k1 0.2.0][] is the first tagged release of this widely-used
-  library for Bitcoin-related cryptographic operations.  An
-  [announcement][libsecp256k1 announce] of the release states, "for a
-  long time, libsecp256k1's development only had a master branch,
-  creating unclarity about API compatibility and stability. Going
-  forward, we will be creating tagged releases when relevant
-  improvements are merged, following a semantic versioning scheme. [...]
-  We're skipping version 0.1.0 because this version number was set in
-  our autotools build scripts for years, and does not uniquely identify
-  a set of source files. We will not be creating binary releases, but
-  will take expected ABI compatibility issues into account for release
-  notes and versioning."
+- [libsecp256k1 0.2.0][] est la première version balisée de cette bibliothèque
+  largement utilisée pour les opérations cryptographiques liées à Bitcoin. Une
+  [annonce][libsecp256k1 announce] de la version indique que "pendant longtemps,
+  le développement de libsecp256k1 n'avait qu'une branche principale, ce qui créait
+  un flou sur la compatibilité et la stabilité de l'API. À l'avenir, nous créerons
+  des versions marquées lorsque des améliorations pertinentes seront fusionnées,
+  en suivant un schéma de version sémantique. [...] Nous sautons la version 0.1.0
+  car ce numéro de version a été défini dans nos scripts de construction autotools
+  pendant des années, et n'identifie pas de manière unique un ensemble de fichiers
+  source. Nous ne créerons pas de versions binaires, mais nous tiendrons compte des
+  problèmes de compatibilité ABI attendus pour les notes de version et le versionnage."
 
-- [Core Lightning 22.11.1][] is a minor release that temporarily
-  reintroduces some features that were deprecated in 22.11, as requested
-  by some downstream developers.
+- [Core Lightning 22.11.1][] est une version mineure qui réintroduit temporairement
+  certaines fonctionnalités qui ont été dépréciées dans la version 22.11, à la demande
+  de certains développeurs en aval.
 
-## Notable code and documentation changes
+## Changements principaux dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25934][] adds an optional `label` argument to the
-  `listsinceblock` RPC. Only transactions matching the label will be returned
-  when a label is specified.
+- [Bitcoin Core #25934][] ajoute un argument facultatif `label` à la RPC
+  `listsinceblock`. Seules les transactions correspondant à l'étiquette
+  seront retournées lorsqu'une étiquette est spécifiée.
 
-- [LND #7159][] updates the `ListInvoiceRequest` and
-  `ListPaymentsRequest` RPCs with new `creation_date_start` and
-  `creation_date_end` fields that can be used to filter out invoices and
-  payments before or after the indicated date and time.
+- [LND #7159][] met à jour les RPCs `ListInvoiceRequest` et `ListPaymentsRequest`
+  avec les nouveaux champs `creation_date_start` et `creation_date_end` qui
+  peuvent être utilisés pour filtrer les factures et les paiements avant ou
+  après la date et l'heure indiquées.
 
-- [LDK #1835][] adds a fake Short Channel IDentifier (SCID) namespace for intercepted HTLCs, enabling
-  Lightning Service Providers (LSPs) to create a [just-in-time][topic jit routing]
-  (JIT) channel for end users to receive a lightning payment. This is done
-  by including fake route hints in end-user invoices that signal to LDK
-  that this is an intercept forward, similar to
-  [phantom payments][LDK phantom payments] (see [Newsletter #188][news188 phantom]). LDK then generates an event,
-  allowing the LSP the opportunity to open the JIT channel. The LSP can
-  then forward the payment over the newly opened channel or fail it.
+- [LDK #1835][] ajoute un faux espace de noms Short Channel IDentifier (SCID) pour
+  les HTLC interceptés, permettant aux fournisseurs de services Lightning (LSP) de
+  créer un canal [just-in-time][topic jit routing] (JIT) pour que les utilisateurs
+  finaux reçoivent un paiement éclair. Pour ce faire, de fausses indications d'itinéraire
+  sont incluses dans les factures des utilisateurs finaux, signalant à LDK qu'il
+  s'agit d'un transfert intercepté, similaire aux [paiements fantômes][LDK phantom payments]
+  (voir [Bulletin d'information n°188][news188 phantom]). LDK génère alors un événement,
+  donnant au LSP la possibilité d'ouvrir le canal JIT. Le LSP peut alors transmettre
+  le paiement sur le canal nouvellement ouvert ou l'échouer.
 
 - [BOLTs #1021][] allows onion-routing error messages to contain a
   [TLV][] stream, which may be used in the future to include additional
