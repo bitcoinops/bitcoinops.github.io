@@ -8,5 +8,4 @@ share: false
 version: 1
 ---
 
-Voulez-vous aider à traduire nos publications ? Regardez la documentation [CONTRIBUTING](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#translations)
-et les problèmes et demandes de modifications de [tradcuction française sur notre dépot github](https://github.com/bitcoinops/bitcoinops.github.io/pulls?&q=label%3Alocalization-french)
+Vous souhaitez participer à la traduction de nos publications ? Consultez la documentation [CONTRIBUTING](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#translations), les rapports d'erreurs ou les PRs pour proposer des [tradcuctions françaises sur notre dépot Github](https://github.com/bitcoinops/bitcoinops.github.io/pulls?&q=label%3Alocalization-french)
