@@ -63,7 +63,7 @@ excerpt: >
 ## Janvier
 
 {:#stateless-invoices}
-En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures sans état][topic stateless-invoices],
+En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures sans état][topic stateless invoices],
 qui lui permet de générer un nombre infini de factures sans stocker aucune donnée à leur sujet,
 sauf si le paiement est réussi. Les factures apatrides ont déjà été proposées en septembre 2021
 et la mise en œuvre de LDK diffère de la méthode suggérée, bien qu'elle accomplisse le même objectif
