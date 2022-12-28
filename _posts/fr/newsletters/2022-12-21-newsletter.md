@@ -8,102 +8,94 @@ layout: newsletter
 lang: fr
 
 excerpt: >
-  This special edition of the Optech Newsletter summarizes notable
-  developments in Bitcoin during all of 2022.
+  Cette édition spéciale de la lettre d'information Optech résume les faits     marquants l'évolution du bitcoin pendant toute l'année 2022.
 ---
-{{page.excerpt}}  It’s the sequel to our summaries from [2018][yirs
+{{page.excerpt}}  C'est la suite de nos résumés des années précédentes [2018][yirs
 2018], [2019][yirs 2019], [2020][yirs 2020], and [2021][yirs 2021].
 
-## Contents
+## Contenus
 
-* January
-  * [Stateless invoices](#stateless-invoices)
-  * [Legal defense fund](#defense-fund)
-* February
-  * [Fee sponsorship](#fee-sponsorship)
-  * [Phantom node payments](#phantom-node-payments)
-* March
+* Janvier
+  * [factures apatrides](#stateless-invoices)
+  * [fond de defense juridique](#defense-fund)
+* Fevrier
+  * [Parrainage de frais](#fee-sponsorship)
+  * [Paiements pour les noeuds fantômes](#phantom-node-payments)
+* Mars
   * [LN pathfinding](#ln-pathfinding)
-  * [Zero-conf channels](#zero-conf-channels)
-* April
-  * [Silent payments](#silent-payments)
+  * [Canaux Zero-conf](#zero-conf-channels)
+* Avril
+  * [Paiements silencieux](#silent-payments)
   * [Taro](#taro)
-  * [Quantum-safe key exchange](#quantum-safe-keys)
-* May
+  * [Échange de clés à sécurité quantique](#quantum-safe-keys)
+* Mai
   * [MuSig2](#musig2)
   * [Package relay](#package-relay)
-  * [Bitcoin kernel library](#libbitcoinkernel)
-* June
-  * [LN protocol developers meeting](#ln-meet)
-* July
-  * [Onion message rate limiting](#onion-message-limiting)
-  * [Miniscript descriptors](#miniscript-descriptors)
-* August
-  * [LN interactive and dual funding](#dual-funding)
-  * [Channel jamming attack mitigation](#jamming)
-  * [BLS signatures for DLCs](#dlc-bls)
-* September
+  * [librairie du noyau Bitcoin](#libbitcoinkernel)
+* Juin
+  * [Réunion des développeurs du protocole LN](#ln-meet)
+* Juillet
+  * [Limitation du débit des messages Onion](#onion-message-limiting)
+  * [Descripteurs Miniscript](#miniscript-descriptors)
+* Aout
+  * [LN interactive et double financement](#dual-funding)
+  * [Atténuation des attaques de brouillage des canaux](#jamming)
+  * [Signatures BLS pour les DLC](#dlc-bls)
+* Septembre
   * [Fee ratecards](#fee-ratecards)
-* October
-  * [Version 3 transaction relay](#v3-tx-relay)
-  * [Async payments](#async-payments)
-  * [Block parsing bugs](#parsing-bugs)
+* Octobre
+  * [Version 3 des relais de transaction](#v3-tx-relay)
+  * [Paiements asynchrones](#async-payments)
+  * [bogues dans l'analyse syntaxique des blocs](#parsing-bugs)
   * [ZK rollups](#zk-rollups)
-  * [Encrypted version 2 transport protocol](#v2-transport)
-  * [Meeting of Bitcoin protocol developers](#core-meet)
-* November
-  * [Fat error messages](#fat-errors)
-* December
-  * [Modifying the LN protocol](#ln-mod)
-* Featured summaries
+  * [Protocole de transport crypté version 2](#v2-transport)
+  * [Réunion des développeurs du protocole Bitcoin](#core-meet)
+* Novembre
+  * [Messages d'erreur Fat](#fat-errors)
+* Decembre
+  * [Modifier le protocole LN](#ln-mod)
+* Résumés en vedette
   * [Replace-By-Fee](#rbf)
   * [Major releases of popular infrastructure projects](#releases)
   * [Bitcoin Optech](#optech)
   * [Soft fork proposals](#softforks)
 
-## January
+## Janvier
 
 {:#stateless-invoices}
-In January, LDK [merged][news181 ldk1177] an implementation of
-[stateless invoices][topic stateless invoices], which allows it to
-generate an infinite number of invoices without storing any data about
-them unless payment is successful.  Stateless invoices were previously
-proposed in September 2021 and LDK's implementation differs from the
-suggested method, although it accomplishes the same goal and doesn't
-require any LN protocol changes.  Later that month, an [update][news182
-bolts912] to the LN specification was merged to allow other types of
-stateless invoices, with at least partial support for it being added to
-[Eclair][news183 stateless], [Core Lightning][news195 stateless], and
-[LND][news196 stateless].
+En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures sans état][topic factures sans état],
+qui lui permet de générer un nombre infini de factures sans stocker aucune donnée à leur sujet,
+sauf si le paiement est réussi. Les factures apatrides ont déjà été proposées en septembre 2021
+et la mise en œuvre de LDK diffère de la méthode suggérée, bien qu'elle accomplisse le même objectif
+et ne nécessite aucun changement de protocole LN. Plus tard dans le mois, une [mise à jour][news182 bolts912]
+de la spécification LN a été fusionnée pour permettre d'autres types de factures apatrides, avec
+un support au moins partiel ajouté à [Eclair][news183 stateless], [Core Lightning][news195 stateless] et [LND][news196 stateless].
 
 {:#defense-fund}
-Also in January, a Bitcoin Legal Defense Fund was [announced][news183
-defense fund] by Jack Dorsey, Alex Morcos, and Martin White.  It
-provides "a nonprofit entity that aims to minimize legal headaches that
-discourage software developers from actively developing Bitcoin and
-related projects."
+En janvier également, un fonds de défense juridique Bitcoin a été [annoncé][news183 defense fund]
+par Jack Dorsey, Alex Morcos et Martin White. Il fournit "une entité à but non lucratif
+qui vise à minimiser les maux de tête juridiques qui découragent les développeurs de
+logiciels de développer activement Bitcoin et les projets connexes."
 
-## February
+## Fevrier
 
 {:#fee-sponsorship}
-A [discussion][news182 accounts] in January about making it easier to
-add fees to presigned transactions led to [renewed discussion][news188
-sponsorship] in February about Jeremy
-Rubin's [transaction fee sponsorship][topic fee sponsorship] idea from 2020.
-Several challenges to its implementation were mentioned.  Although the
-immediate discussion didn't make much progress, a technique that
-accomplished similar goals---but which, unlike sponsorship, didn't
-require a soft fork---would be [proposed][news231 v3relay] in October.
+Une [discussion][news182 accounts] en janvier sur la possibilité d'ajouter plus facilement des frais
+aux transactions présignées a conduit à une [nouvelle discussion][news188 sponsorship] en février sur
+l'idée de Jeremy Rubin de [parrainage des frais de transaction][topic fee sponsorship] de 2020.
+Plusieurs défis à sa mise en œuvre ont été mentionnés. Bien que la discussion immédiate n'ait pas
+beaucoup progressée, une technique permettant d'atteindre des objectifs similaires---mais qui,
+contrairement au parrainage, ne nécessitait pas de soft fork---a été [proposée][news231 v3relay] en octobre.
 
 {:#phantom-node-payments}
-LDK's early support for [stateless invoices][topic stateless invoices]
-allowed it to add a new and [simple][news188 ldk1199] method for load
-balancing an LN node called *phantom node payments*.
+Prise en charge précoce par LDK des [factures apatrides][topic stateless invoices]
+lui a permis d'ajouter une méthode nouvelle et [simple][news188 ldk1199] pour le chargement
+équilibrant un nœud LN appelé *paiements de nœuds fantômes*.
 
 {:.center}
 ![Illustration of phantom node payment path](/img/posts/2022-02-phantom-node-payments.dot.png)
 
-## March
+## Mars
 
 {:#ln-pathfinding}
 The LN pathfinding algorithm first published in 2021 by René Pickhardt
