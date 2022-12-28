@@ -321,7 +321,7 @@ reprendra le mercredi 4 janvier.
 [libsecp256k1 0.2.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.2.0
 [libsecp256k1 announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021271.html
 [core lightning 22.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v22.11.1
-[news224 fat]: /fr/newsletters/2022/11/02/#attribution-de-l-échec-du-routage-ln
+[news224 fat]: /fr/newsletters/2022/11/02/#attribution-de-l'échec-du-routage-ln
 [law factory]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003782.html
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [news189 evict]: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
