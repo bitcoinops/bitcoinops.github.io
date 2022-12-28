@@ -8,23 +8,19 @@ share: false
 version: 1
 ---
 {%- if jekyll.environment == 'future' -%}
-- [Scaling book][]: a guide to effective practices and techniques
-  that engineers interacting with the Bitcoin block chain can adopt
-  today.
+- [Manuel de mise à l'échelle][]: Un guide des pratiques et techniques efficaces que les ingénieurs interagissant avec la Blockchain Bitcoin peuvent aujourd'hui adopter.
 
-- [Newsletters][]: a weekly summary of news about Bitcion and LN
-  development.
+- [Newsletters][]: Un résumé hebdomadaire des nouvelles sur le développement Bitcoin.
 
-- [Blog posts][]: Occasional updates and reference material
-  from the Optech team.
+- [Blog posts][]: Mises à jour occasionnelles et documents de référence de l'équipe Optech.
 
-## Latest publications
+## Dernières publications
 
 {% else %}
 {:.center}
-Recent publications from our [blog posts][] and [newsletters][].
+Publications récentes sur nos [blog posts][] et [newsletters][].
 {% endif %}
 
 [blog posts]: /fr/blog/
 [newsletters]: /fr/newsletters/
-[scaling book]: /fr/scaling/
+[manuel de mise à l'échelle]: /fr/scaling/
