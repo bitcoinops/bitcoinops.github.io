@@ -181,37 +181,17 @@ dans d'autres *pull requests* de Bitcoin Core et sur la liste de diffusion.
 
 </div>
 
-## April
+## Avril
 
 {:#silent-payments}
-In April, Ruben Somsen [proposed][news194 sp] the idea of [silent
-payments][topic silent payments], which would allow someone to pay a
-public identifier ("address") without using that identifier onchain. This
-would help prevent [address reuse][topic output linking].  For example,
-Alice would be able to post a public identifier on her website that Bob
-can transform into a new unique Bitcoin address from which only Alice
-will be able to spend.  If Carol later goes to Alice’s website and
-reuses Alice’s public identifier, she would derive a different address
-to pay Alice, an address which neither Bob nor any other third party
-could directly determine belonged to Alice.  Later, developer W0ltx
-would create a [proposed implementation][news202 sp] of silent payments for Bitcoin Core,
-making [significant updates][news214 sp] to it later in the year.
+En avril, Ruben Somsen a [proposé][news194 sp] l'idée des [silent
+payments][topic silent payments], qui permettraient à quelqu'un de payer un identifiant public (une "adresse") sans pour autant utiliser cet identifiant on-chain. Cela participerait à réduire la [réutilisation d'adresse][topic output linking]. Par exemple, Alice pourrait publier un identifiant public sur son site internet, que Bob serait ensuite en mesure de transformer en une adresse Bitcoin unique depuis laquelle seule Alice peut dépenser. Si Carole se rend par la suite sur le site d'Alice et réutilise le même identifiant public, elle dérivera une adresse différente pour payer Alice, que ni Bob ni aucune autre tierce partie ne pourra relier à Alice. Par la suite, le développeur W0ltx a proposé une [implémentation][news202 sp] des *silent payments* pour Bitcoin Core, y apportant d'importantes [mises à jour][news214 sp] plus tard dans l'année.
 
 {:#taro}
-Lightning Labs [announced][news195 taro] Taro, a proposed protocol
-(based on previous proposals) for allowing users to commit to the creation
-and transfer of non-bitcoin tokens on Bitcoin’s block chain.  Taro is
-intended to be used with LN for routable offchain transfers.  Similar to
-previous proposals for cross-asset transfers on LN, intermediate nodes
-that just forward payments won’t need to be aware of the Taro protocol or
-the details of the assets being transferred---they’ll just transfer bitcoins
-using the same protocol as any other LN payment.
+Lightning Labs a [annoncé][news195 taro] Taro, une proposition de protocole (basée sur diverses propositions) permettant de créer et transférer des tokens arbitraires sur la chaîne Bitcoin. L'ambition de Taro est d'être utilisé conjointement au Lightning Network pour router des transactions *off-chain* au travers du réseau. Similairement à des propositions antérieures pour des transferts entre différents actifs au sein du LN, les noeuds intermédiaires qui se contentent de transférer les paiements n'ont pas besoin d'être conscients du protocole Taro ou des détails des différents actifs transférés---ils se contentent de transférer des bitcoins en utilisant le même protocole que n'importe quel autre paiement Lightning.
 
 {:#quantum-safe-keys}
-April also saw [discussion][news196 qc] about quantum-safe key
-exchange, allowing users to receive bitcoins secured by keys that are
-[resistant][topic quantum resistance] to attacks by fast quantum
-computers that may exist in the future.
+Avril a aussi été l'occasion d'une [discussion][news196 qc] autour de l'échange de clés post-quantique, permettant aux utilisateurs de recevoir des bitcoins sécurisés par des clés [résistantes][topic quantum resistance] aux attaques menées par les ordinateurs quantiques rapides qui pourraient exister dans le futur.
 
 ## May
 
