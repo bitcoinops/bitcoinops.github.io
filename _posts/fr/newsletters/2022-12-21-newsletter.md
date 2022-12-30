@@ -56,9 +56,9 @@ excerpt: >
   * [Modifier le protocole LN](#ln-mod)
 * Résumés en vedette
   * [Replace-By-Fee](#rbf)
-  * [Major releases of popular infrastructure projects](#releases)
+  * [Principales mises à jour des projets d'insfrastructure les plus remarquable](#releases)
   * [Bitcoin Optech](#optech)
-  * [Soft fork proposals](#softforks)
+  * [Proposition de Soft fork](#softforks)
 
 ## Janvier
 
@@ -98,11 +98,16 @@ lui a permis d'ajouter une méthode nouvelle et [simple][news188 ldk1199] pour l
 ## Mars
 
 {:#ln-pathfinding}
-L'algorithme de recherche de route publié pour la première fois en 2021 par René Pickhardt et Stefan Richter a reçu une [mise à jour][news192 pp] en mars, Pickhardt soulignant une amélioration rendant l'algorithme bien plus efficace computationnellement parlant.
+L'algorithme de recherche de route publié pour la première fois en 2021 par René Pickhardt
+et Stefan Richter a reçu une [mise à jour][news192 pp] en mars, Pickhardt soulignant une
+amélioration rendant l'algorithme bien plus efficace computationnellement parlant.
 
 {:#zero-conf-channels}
 Une méthode cohérente pour permettre l'utilisation des [canaux zéro-conf][topic zero-conf
-channels] a été [spécifiée][news203 zero-conf] et a commencé à être implémentée, en commençant par l'[addition][news192 ldk1311] au LDK en mars du champs *alias* pour les identifiants de canaux (Short Channel Identifier, SCID), suivi par [Eclair][news205 scid], [Core Lightning][news208 scid cln] et [LND][news208 scid lnd].
+channels] a été [spécifiée][news203 zero-conf] et a commencé à être implémentée, en commençant
+par l'[addition][news192 ldk1311] au LDK en mars du champs *alias* pour les identifiants
+de canaux (Short Channel Identifier, SCID), suivi par [Eclair][news205 scid], [Core Lightning][news208 scid cln]
+et [LND][news208 scid lnd].
 
 {:.center}
 ![Illustration of zero-conf channels](/img/posts/2021-07-zeroconf-channels.png)
@@ -110,19 +115,69 @@ channels] a été [spécifiée][news203 zero-conf] et a commencé à être impl�
 <div markdown="1" class="callout" id="rbf">
 ### 2022 summary<br>Replace-By-Fee
 
-Cette année fut aussi le théâtre the nombreuses discussions et d'importantes actions autour de [Replace By Fee][topic rbf] (RBF). Notre newsletter de janvier [résumait][news181 rbf] une proposition par Jeremy Rubin d'autoriser n'importe quelle transaction à être remplacée par une transaction alternative payant plus de frais dans un court laps de temps après que la transaction originelle ait été vue par un noeud. Passée cette période, les règles existantes s'appliqueraient, n'autorisant le remplacement que pour des transactions signalant leur remplaçabilité avec [BIP125][]. Ce fonctionnement permettrait aux marchands d'accepter des transactions non confirmées comme ils le font actuellement, une fois écoulée la période de remplacement. Plus important encore, cela pourrait permettre aux protocoles qui dépendent de la remplaçabilité des transactions pour leur sécurité de ne pas avoir à se soucier des transactions n'ayant pas opté pour le remplacement (via BIP125) tant qu'un noeud de ce protocole ou une *watchtower* dispose d'un temps raisonnable pour réagir après avoir eu connaissance d'une transaction.
+Cette année fut aussi le théâtre de nombreuses discussions et d'importantes actions autour
+de [Replace By Fee][topic rbf] (RBF). Notre bulletin d'information de janvier [résumait][news181 rbf]
+une proposition de Jeremy Rubin d'autoriser n'importe quelle transaction à être remplacée par
+une transaction alternative payant plus de frais dans un court laps de temps après que
+la transaction originelle ait été vue par un noeud. Passée cette période, les règles existantes
+s'appliqueraient, n'autorisant le remplacement que pour des transactions signalant leur
+remplaçabilité avec [BIP125][]. Ce fonctionnement permettrait aux marchands d'accepter des
+transactions non confirmées comme ils le font actuellement, une fois écoulée la période de
+remplacement. Plus important encore, cela pourrait permettre aux protocoles qui dépendent
+de la remplaçabilité des transactions pour leur sécurité de ne pas avoir à se soucier des
+transactions n'ayant pas opté pour le remplacement (via BIP125) tant qu'un noeud de ce
+protocole ou une *watchtower* dispose d'un temps raisonnable pour réagir après avoir eu
+connaissance d'une transaction.
 
-A la fin du mois de janvier, Gloria Zhao a entamé une nouvelle discussion à propos de RBF en [publiant][news186 rbf] une note sur le contexte entourant la politique RBF actuelle, énumérant plusieurs problèmes découverts au cours des dernières années (comme les [pinning attacks][topic transaction pinning] (attaques par épinglage)), examinant comment la politique affecte les interfaces utilisateurs des portefeuilles, et décrivant des améliorations potentielles. Au début du mois de mars, Zhao a poursuivi avec le [résumé][news191 rbf] de deux discussions à propos de RBF entre de nombreux développeurs, l'une en personne et l'autre en ligne.
+A la fin du mois de janvier, Gloria Zhao a entamée une nouvelle discussion à propos de RBF en
+[publiant][news186 rbf] une note sur le contexte entourant la politique RBF actuelle, énumérant
+plusieurs problèmes découverts au cours des dernières années (comme les [pinning attacks][topic transaction pinning]
+(attaques par épinglage)), examinant comment la politique affecte les interfaces utilisateurs
+des portefeuilles, et décrivant des améliorations potentielles. Au début du mois de mars, Zhao
+a poursuivi avec le [résumé][news191 rbf] de deux discussions à propos de RBF entre de nombreux
+développeurs, l'une en personne et l'autre en ligne.
 
-Egalement en mars, Larry Ruane a soulevé plusieurs [questions][news193 witrep] liées à RBF, concernant le remplacement des signatures des transactions (les *witnesses*) sans pour autant changer les parties d'une transaction dont est dérivé l'identifiant de transaction.
+Egalement en mars, Larry Ruane a soulevé plusieurs [questions][news193 witrep] liées à RBF, concernant
+le remplacement des signatures des transactions (les *witnesses*) sans pour autant changer
+les parties d'une transaction dont est dérivé l'identifiant de transaction.
 
-En juin, Antoine Riard a [ouvert][news205 rbf] une *pull request* dans Bitcoin Core pour ajouter une option de configuration `mempoolfullrbf`. Par défaut, cette option répliquerait le comportenement actuel de Bitcoin Core, n'autorisant donc le remplacement que pour les transactions contenant le signal [BIP125][] approprié. Les noeuds configurés avec cette option définie sur sa valeur alternative accepteraient les transactions de remplacement, même si la transaction remplacée ne signalait pas sa remplaçabilité, et ce tant au niveau du relai des transactions que dans les blocs. Riard a également débuté un fil sur la liste de diffusion Bitcoin-Dev pour discuter de ce changement. Presque tous les commentaires sur la *pull request* étaient positifs et la plupart des discussions sur la liste de diffusion concernaient d'autres sujets : c'est donc sans surprise que la pull request fut [fusionnée][news208 rbf] environ un mois après son ouverture.
+En juin, Antoine Riard a [ouvert][news205 rbf] une *pull request* dans Bitcoin Core pour ajouter
+une option de configuration `mempoolfullrbf`. Par défaut, cette option répliquerait le comportenement
+actuel de Bitcoin Core, n'autorisant donc le remplacement que pour les transactions contenant le
+signal [BIP125][] approprié. Les noeuds configurés avec cette option définie sur sa valeur alternative
+accepteraient les transactions de remplacement, même si la transaction remplacée ne signalait pas
+sa remplaçabilité, et ce tant au niveau du relai des transactions que dans les blocs. Riard a
+également débuté un fil sur la liste de diffusion Bitcoin-Dev pour discuter de ce changement.
+Presque tous les commentaires sur la *pull request* étaient positifs et la plupart des discussions
+sur la liste de diffusion concernaient d'autres sujets : c'est donc sans surprise que la pull request
+fut [fusionnée][news208 rbf] environ un mois après son ouverture.
 
-En octobre, Bitcoin Core a commencé la distribution des versions admissibles (*release candidates*) pour la version 24.0, qui serait la première à inclure l'option de configuration `mempoolfullrbf`. Dario Sneidermanis, voyant les notes de version préliminaires à propos de la nouvelle option, [posta][news222 rbf] sur la liste de diffusion Bitcoin-Dev que l'activation de l'option par trop d'utilisateurs et de mineurs rendrait fiable le remplacement de transactions ne signalant pas la remplaçabilité. Une fiabilité accrue du remplacement des transactions ne signalant pas leur remplaçabilité rendrait également plus fiable le vol de services acceptant les transactions non confirmées comme finales, requiérant de ces services un changement de leur fonctionnement. La discussion s'est [poursuivie][news223 rbf] la semaine suivante, et celle encore [après][news224 rbf]. Un mois après que Sneidermanis eut soulevé ses premières inquiétudes sur la liste de diffusion, Suhas Daftuar [résumait][news225 rbf] certains des arguments contre la nouvelle option et ouvrait une *pull request* pour la retirer de Bitcoin Core. D'autres *pull requests* similaires ont été ouvertes précedemment ou par la suite, mais celle de Daftuar concentra l'essentiel de la discussion autour du potentiel retrait de l'option.
+En octobre, Bitcoin Core a commencé la distribution des versions admissibles (*release candidates*)
+pour la version 24.0, qui serait la première à inclure l'option de configuration `mempoolfullrbf`.
+Dario Sneidermanis, voyant les notes de version préliminaires à propos de la nouvelle option,
+[posta][news222 rbf] sur la liste de diffusion Bitcoin-Dev que l'activation de l'option par trop
+d'utilisateurs et de mineurs rendrait fiable le remplacement de transactions ne signalant pas la
+remplaçabilité. Une fiabilité accrue du remplacement des transactions ne signalant pas leur remplaçabilité
+rendrait également plus fiable le vol de services acceptant les transactions non confirmées comme
+finales, requiérant de ces services un changement de leur fonctionnement. La discussion s'est [poursuivie][news223 rbf]
+la semaine suivante, et celle encore [après][news224 rbf]. Un mois après que Sneidermanis eut soulevé
+ses premières inquiétudes sur la liste de diffusion, Suhas Daftuar [résumait][news225 rbf] certains des
+arguments contre la nouvelle option et ouvrait une *pull request* pour la retirer de Bitcoin Core.
+D'autres *pull requests* similaires ont été ouvertes précedemment ou par la suite, mais celle de
+Daftuar concentra l'essentiel de la discussion autour du potentiel retrait de l'option.
 
-De nombreux contre-arguments en faveur du maintien de l'otpion `mempoolfullrbf` furent formulés sous la *pull request* de Daftuar. Ces-derniers incluent les témoignages de plusieurs développeurs de portefeuilles indiquant le cas relativement régulier d'utilisateurs souhaitant remmplacer leur transaction bien qu'ils n'aient pas signalé la remplaçabilité via BIP125.
+De nombreux contre-arguments en faveur du maintien de l'otpion `mempoolfullrbf` furent formulés sous
+la *pull request* de Daftuar. Ces-derniers incluent les témoignages de plusieurs développeurs de
+portefeuilles indiquant le cas relativement régulier d'utilisateurs souhaitant remmplacer leur
+transaction bien qu'ils n'aient pas signalé la remplaçabilité via BIP125.
 
-A la fin du mois de novembre, Daftuar avait fermé sa *pull request* et le projet Bitcoin Core avait publié la version 24.0 du logiciel, avec l'option `mempoolfullrbf`. En décembre, le développeur 0xB10C [publia][news230 rbf] un site internet pour suivre l'occurence de transactions de remplacement ne contenant pas le signal de BIP125, indiquant que n'importe quelle transaction de ce type ayant été minée l'eut probablement été par un mineur ayant activé l'option `mempoolfullrbf` (ou une option similaire dans un autre logiciel que Bitcoin Core). A la fin de l'année, full-RBF était toujours activement discuté dans d'autres *pull requests* de Bitcoin Core et sur la liste de diffusion.
+A la fin du mois de novembre, Daftuar avait fermé sa *pull request* et le projet Bitcoin Core avait
+publié la version 24.0 du logiciel, avec l'option `mempoolfullrbf`. En décembre, le développeur 0xB10C
+[publia][news230 rbf] un site internet pour suivre l'occurence de transactions de remplacement ne
+contenant pas le signal de BIP125, indiquant que n'importe quelle transaction de ce type ayant été minée
+l'eut probablement été par un mineur ayant activé l'option `mempoolfullrbf` (ou une option similaire dans
+un autre logiciel que Bitcoin Core). A la fin de l'année, full-RBF était toujours activement discuté
+dans d'autres *pull requests* de Bitcoin Core et sur la liste de diffusion.
 
 </div>
 
@@ -688,9 +743,9 @@ Wednesday publication schedule on January 4th.*
 [news214 sp]: /en/newsletters/2022/08/24/#updated-silent-payments-pr
 [news215 dual funding]: /en/newsletters/2022/08/31/#eclair-2275
 [news215 lnd]: /en/newsletters/2022/08/31/#lnd-0-15-1-beta
-[news217 ldk]: /en/newsletters/2022/09/14/#ldk-0-0-111
-[news218 apo]: /en/newsletters/2022/09/21/#creating-drivechains-with-apo-and-a-trusted-setup
-[news219 inquisition]: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
+[news217 ldk]: /fr/newsletters/2022/09/14/#ldk-0-0-111
+[news218 apo]: /fr/newsletters/2022/09/21/#créer-des-drivechains-avec-apo-et-une-installation-en-confiance
+[news219 inquisition]: /fr/newsletters/2022/09/28/#implémentation-de-bitcoin-conçue-pour-tester-les-soft-forks-sur-signet
 [news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
 [news220 async]: /en/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /en/newsletters/2022/10/05/#ln-flow-control
