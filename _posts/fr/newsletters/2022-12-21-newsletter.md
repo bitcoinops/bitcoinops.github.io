@@ -744,8 +744,8 @@ Wednesday publication schedule on January 4th.*
 [news215 dual funding]: /en/newsletters/2022/08/31/#eclair-2275
 [news215 lnd]: /en/newsletters/2022/08/31/#lnd-0-15-1-beta
 [news217 ldk]: /fr/newsletters/2022/09/14/#ldk-0-0-111
-[news218 apo]: /fr/newsletters/2022/09/21/#créer-des-drivechains-avec-apo-et-une-installation-en-confiance
-[news219 inquisition]: /fr/newsletters/2022/09/28/#implémentation-de-bitcoin-conçue-pour-tester-les-soft-forks-sur-signet
+[news218 apo]: /fr/newsletters/2022/09/21/#creer-des-drivechains-avec-apo-et-une-installation-en-confiance
+[news219 inquisition]: /fr/newsletters/2022/09/28/#implementation-de-bitcoin-concue-pour-tester-les-soft-forks-sur-signet
 [news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
 [news220 async]: /en/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /en/newsletters/2022/10/05/#ln-flow-control
