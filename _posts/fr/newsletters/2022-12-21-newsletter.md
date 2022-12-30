@@ -755,7 +755,7 @@ pourrait réduire de manière significative les coûts de l'utilisation du LN su
 [news223 xscribe]: /fr/newsletters/2022/10/26/#coredev-tech-transcription
 [news224 fat]: /fr/newsletters/2022/11/02/#attribution-de-l-echec-du-routage-ln
 [news224 rbf]: /fr/newsletters/2022/11/02/#coherence-mempool
-[news225 bug]: /en/newsletters/2022/11/09/#bogue-d-analyse-des-blocs-affectant-plusieurs-logiciels
+[news225 bug]: /fr/newsletters/2022/11/09/#bogue-d-analyse-des-blocs-affectant-plusieurs-logiciels
 [news225 fat]: /fr/newsletters/2022/11/09/#eclair-2441
 [news225 rbf]: /fr/newsletters/2022/11/09/#poursuite-de-la-discussion-sur-l-activation-de-full-rbf
 [news226 fat]: /fr/newsletters/2022/11/16/#core-lightning-5698
