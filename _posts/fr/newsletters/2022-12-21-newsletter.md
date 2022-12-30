@@ -184,14 +184,31 @@ dans d'autres *pull requests* de Bitcoin Core et sur la liste de diffusion.
 ## Avril
 
 {:#silent-payments}
-En avril, Ruben Somsen a [proposé][news194 sp] l'idée des [silent
-payments][topic silent payments], qui permettraient à quelqu'un de payer un identifiant public (une "adresse") sans pour autant utiliser cet identifiant on-chain. Cela participerait à réduire la [réutilisation d'adresse][topic output linking]. Par exemple, Alice pourrait publier un identifiant public sur son site internet, que Bob serait ensuite en mesure de transformer en une adresse Bitcoin unique depuis laquelle seule Alice peut dépenser. Si Carole se rend par la suite sur le site d'Alice et réutilise le même identifiant public, elle dérivera une adresse différente pour payer Alice, que ni Bob ni aucune autre tierce partie ne pourra relier à Alice. Par la suite, le développeur W0ltx a proposé une [implémentation][news202 sp] des *silent payments* pour Bitcoin Core, y apportant d'importantes [mises à jour][news214 sp] plus tard dans l'année.
+En avril, Ruben Somsen a [proposé][news194 sp] l'idée des [silent payments][topic silent payments],
+qui permettraient à quelqu'un de payer un identifiant public (une "adresse") sans pour autant utiliser
+cet identifiant on-chain. Cela participerait à réduire la [réutilisation d'adresse][topic output linking].
+Par exemple, Alice pourrait publier un identifiant public sur son site internet, que Bob serait ensuite
+en mesure de transformer en une adresse Bitcoin unique depuis laquelle seule Alice peut dépenser.
+Si Carole se rend par la suite sur le site d'Alice et réutilise le même identifiant public, elle
+dérivera une adresse différente pour payer Alice, que ni Bob ni aucune autre tierce partie ne pourra
+relier à Alice. Par la suite, le développeur W0ltx a proposé une [implémentation][news202 sp] des
+*silent payments* pour Bitcoin Core, y apportant d'importantes [mises à jour][news214 sp]
+plus tard dans l'année.
 
 {:#taro}
-Lightning Labs a [annoncé][news195 taro] Taro, une proposition de protocole (basée sur diverses propositions) permettant de créer et transférer des tokens arbitraires sur la chaîne Bitcoin. L'ambition de Taro est d'être utilisé conjointement au Lightning Network pour router des transactions *off-chain* au travers du réseau. Similairement à des propositions antérieures pour des transferts entre différents actifs au sein du LN, les noeuds intermédiaires qui se contentent de transférer les paiements n'ont pas besoin d'être conscients du protocole Taro ou des détails des différents actifs transférés---ils se contentent de transférer des bitcoins en utilisant le même protocole que n'importe quel autre paiement Lightning.
+Lightning Labs a [annoncé][news195 taro] Taro, une proposition de protocole (basée sur diverses propositions)
+permettant de créer et transférer des tokens arbitraires sur la chaîne Bitcoin. L'ambition de Taro
+est d'être utilisé conjointement au Lightning Network pour router des transactions *off-chain*
+au travers du réseau. Similairement à des propositions antérieures pour des transferts entre différents
+actifs au sein du LN, les noeuds intermédiaires qui se contentent de transférer les paiements n'ont pas
+besoin d'être conscients du protocole Taro ou des détails des différents actifs transférés---ils se
+contentent de transférer des bitcoins en utilisant le même protocole que n'importe quel autre
+paiement Lightning.
 
 {:#quantum-safe-keys}
-Avril a aussi été l'occasion d'une [discussion][news196 qc] autour de l'échange de clés post-quantique, permettant aux utilisateurs de recevoir des bitcoins sécurisés par des clés [résistantes][topic quantum resistance] aux attaques menées par les ordinateurs quantiques rapides qui pourraient exister dans le futur.
+Avril a aussi été l'occasion d'une [discussion][news196 qc] autour de l'échange de clés post-quantique,
+permettant aux utilisateurs de recevoir des bitcoins sécurisés par des clés [résistantes][topic quantum resistance]
+aux attaques menées par les ordinateurs quantiques rapides qui pourraient exister dans le futur.
 
 ## May
 
@@ -726,19 +743,19 @@ Wednesday publication schedule on January 4th.*
 [news217 ldk]: /fr/newsletters/2022/09/14/#ldk-0-0-111
 [news218 apo]: /fr/newsletters/2022/09/21/#creer-des-drivechains-avec-apo-et-une-installation-en-confiance
 [news219 inquisition]: /fr/newsletters/2022/09/28/#implementation-de-bitcoin-concue-pour-tester-les-soft-forks-sur-signet
-[news219 ratecards]: /en/newsletters/2022/09/28/#ln-fee-ratecards
-[news220 async]: /en/newsletters/2022/10/05/#eclair-2435
-[news220 flow control]: /en/newsletters/2022/10/05/#ln-flow-control
-[news220 v3]: /en/newsletters/2022/10/05/#proposed-new-transaction-relay-policies-designed-for-ln-penalty
-[news221 ln-mod]: /en/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news222 bug]: /en/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
-[news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
-[news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
-[news222 rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
-[news222 v2trans]: /en/newsletters/2022/10/19/#bip324-update
-[news223 ephemeral]: /en/newsletters/2022/10/26/#ephemeral-anchors
-[news223 rbf]: /en/newsletters/2022/10/26/#continued-discussion-about-full-rbf
-[news223 xscribe]: /en/newsletters/2022/10/26/#coredev-tech-transcripts
+[news219 ratecards]: /fr/newsletters/2022/09/28/#ln-fee-ratecards
+[news220 async]: /fr/newsletters/2022/10/05/#eclair-2435
+[news220 flow control]: /fr/newsletters/2022/10/05/#ln-flow-control
+[news220 v3]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
+[news221 ln-mod]: /fr/newsletters/2022/10/12/#ln-avec-une-proposition-de-hors-ligne-long
+[news222 bug]: /fr/newsletters/2022/10/19/#bug-danalyse-de-bloc-affectant-btcd-et-lnd
+[news222 musig2]: /fr/newsletters/2022/10/19/#validite-de-la-securite-de-musig2
+[news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
+[news222 rollups]: /fr/newsletters/2022/10/19/#recherche-sur-les-rollups-de-validite
+[news222 v2trans]: /fr/newsletters/2022/10/19/#mise-a-jour-bip324
+[news223 ephemeral]: /fr/newsletters/2022/10/26/#ephemeral-anchors
+[news223 rbf]: /fr/newsletters/2022/10/26/#poursuite-de-la-discussion-sur-le-full-rbf
+[news223 xscribe]: /fr/newsletters/2022/10/26/#coredev-tech-transcription
 [news224 fat]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
 [news224 rbf]: /en/newsletters/2022/11/02/#mempool-consistency
 [news225 bug]: /en/newsletters/2022/11/09/#block-parsing-bug-affecting-multiple-software
