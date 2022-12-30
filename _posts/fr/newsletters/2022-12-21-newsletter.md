@@ -743,7 +743,7 @@ Wednesday publication schedule on January 4th.*
 [news217 ldk]: /fr/newsletters/2022/09/14/#ldk-0-0-111
 [news218 apo]: /fr/newsletters/2022/09/21/#creer-des-drivechains-avec-apo-et-une-installation-en-confiance
 [news219 inquisition]: /fr/newsletters/2022/09/28/#implementation-de-bitcoin-concue-pour-tester-les-soft-forks-sur-signet
-[news219 ratecards]: /fr/newsletters/2022/09/28/#fee-ratecards
+[news219 ratecards]: /fr/newsletters/2022/09/28/#fees-ratecards
 [news220 async]: /fr/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /fr/newsletters/2022/10/05/#ln-flow-control
 [news220 v3]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
