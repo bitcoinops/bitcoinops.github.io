@@ -1,5 +1,5 @@
 ---
-title: 'Lettre d'informaton Bitcoin Optech #231: Spéciale Revue annuelle 2022'
+title: 'Lettre informative Bitcoin Optech #231: Spéciale Revue annuelle 2022'
 permalink: /fr/newsletters/2022/12/21/
 name: 2022-12-21-newsletter-fr
 slug: 2022-12-21-newsletter-fr
@@ -743,12 +743,12 @@ Wednesday publication schedule on January 4th.*
 [news217 ldk]: /fr/newsletters/2022/09/14/#ldk-0-0-111
 [news218 apo]: /fr/newsletters/2022/09/21/#creer-des-drivechains-avec-apo-et-une-installation-en-confiance
 [news219 inquisition]: /fr/newsletters/2022/09/28/#implementation-de-bitcoin-concue-pour-tester-les-soft-forks-sur-signet
-[news219 ratecards]: /fr/newsletters/2022/09/28/#ln-fee-ratecards
+[news219 ratecards]: /fr/newsletters/2022/09/28/#fee-ratecards
 [news220 async]: /fr/newsletters/2022/10/05/#eclair-2435
 [news220 flow control]: /fr/newsletters/2022/10/05/#ln-flow-control
 [news220 v3]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
 [news221 ln-mod]: /fr/newsletters/2022/10/12/#ln-avec-une-proposition-de-hors-ligne-long
-[news222 bug]: /fr/newsletters/2022/10/19/#bug-danalyse-de-bloc-affectant-btcd-et-lnd
+[news222 bug]: /fr/newsletters/2022/10/19/#bug-d-analyse-de-bloc-affectant-btcd-et-lnd
 [news222 musig2]: /fr/newsletters/2022/10/19/#validite-de-la-securite-de-musig2
 [news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
 [news222 rollups]: /fr/newsletters/2022/10/19/#recherche-sur-les-rollups-de-validite
