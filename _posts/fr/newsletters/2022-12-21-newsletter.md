@@ -627,46 +627,43 @@ how they interact.  Towns also plans to include proposed major changes
 to transaction relay policy (such as [package relay][topic package
 relay]).
 
-In November, Salvatore Ingala [posted][news226 matt] to the Bitcoin-Dev
-mailing list a proposal for a new type of covenant (requiring a soft
-fork) that would allow using merkle trees to create smart contracts that
-can carry state from one onchain transaction to another.  This would be
-similar in capability to smart contracts used on some other
-cryptocurrency systems but would be compatible with Bitcoin's existing
-UTXO-based system.
+En novembre, Salvatore Ingala a [posté][news226 matt] sur la liste de
+diffusion Bitcoin-Dev une proposition pour un nouveau type de conditions
+de dépense (nécessitant une soft fork) qui permettrait d'utiliser des arbres
+de merkle pour créer des contrats intelligents qui peuvent transporter
+l'état d'une transaction onchain à une autre. Cela serait similaires aux
+contrats intelligents utilisés sur d'autres systèmes de crypto-monnaies,
+mais serait compatible avec le système existant de Bitcoin basé sur UTXO.
 
 </div>
-## November
+
+## Novembre
 
 {:#fat-errors}
-November saw Joost Jager [update][news224 fat] a proposal from 2019 to
-improve error reporting in LN for failed payments.  The error would
-report the identity of a channel where a payment failed to be forwarded
-by a node so that the spender could avoid using channels involving that
-node for a limited time.  Several LN implementations would update their
-code to support the proposal, even if they didn't immediately begin
-using it themselves, including [Eclair][news225 fat] and [Core
-Lightning][news226 fat].
+Le mois de novembre a vu Joost Jager [mettre à jour][news224 fat] une proposition de 2019
+visant à améliorer le signalement des erreurs dans LN en cas d'échec des paiements. L'erreur
+signalerait l'identité d'un canal où un paiement n'a pas pu être transmis par un nœud afin
+que le payeur puisse éviter d'utiliser les canaux impliquant ce nœud pendant un temps limité.
+Plusieurs implémentations de LN ont mis à jour leur code pour prendre en charge la proposition,
+même si elles n'ont pas immédiatement commencé à l'utiliser elles-mêmes, notamment [Eclair][news225 fat]
+et [Core Lightning][news226 fat].
 
-## December
+## Decembre
 
 {:#ln-mod}
-In December, protocol developer John Law posted to the Lightning-Dev
-mailing list his third major proposal for the year.  Like his previous
-two proposals, he suggested new ways LN offchain transactions could be
-designed to enable new features without requiring any changes to
-Bitcoin's consensus code.  Altogether, Law proposed ways casual LN users
-could [remain offline][news221 ln-mod] for potentially months at a time,
-[separating][law tunable] the enforcement for specific payments from the
-management of all settled funds to improve compatibility with
-[watchtowers][topic watchtowers], and [optimizing][news230 ln-mod] LN
-channels for use in [channel factories][topic channel factories] that
-could significantly decrease the onchain costs to use LN.
+En décembre, le développeur de protocole John Law a posté sur la liste d'envoi Lightning-Dev
+sa troisième proposition majeure de l'année. Comme ses deux précédentes propositions,
+il a suggéré de nouvelles façons dont les transactions hors chaîne de LN pourraient être
+conçues pour permettre l'ajout de nouvelles fonctionnalités sans nécessiter de modification
+au code de censensus de Bitcoin. Dans l'ensemble, Law a proposé des moyens pour les utilisateurs
+occasionnels de LN de [rester hors ligne][news221 ln-mod] pendant plusieurs mois,
+[séparer][law tunable] l'exécution de paiements spécifiques de la part du
+gestion de tous les fonds réglés afin d'améliorer la compatibilité avec les
+[watchtowers][topic watchtowers], et [optimisé][news230 ln-mod] les canaux LN
+pour une utilisation en [usines à canaux][topic channel factories] qui
+pourrait réduire de manière significative les coûts de l'utilisation du LN sur la chaîne.
 
-*We thank all of the Bitcoin contributors named above, plus the many
-others whose work was just as important, for another incredible year of
-Bitcoin development.  The Optech newsletter will return to its regular
-Wednesday publication schedule on January 4th.*
+*Nous remercions tous les contributeurs de Bitcoin cités ci-dessus, ainsi que les nombreuses personnes dont le travail était tout aussi important, pour une autre année incroyable de développement du bitcoin. La lettre d'information d'Optech reprendra son cours normal de publication dès le mercredi 4 janvier.*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
@@ -764,10 +761,10 @@ Wednesday publication schedule on January 4th.*
 [news226 fat]: /fr/newsletters/2022/11/16/#core-lightning-5698
 [news226 jam]: /fr/newsletters/2022/11/16/#document-sur-les-attaques-par-brouillage-de-canaux
 [news226 matt]: /fr/newsletters/2022/11/16/#contrats-intelligents-generaux-en-bitcoin-via-des-clauses-restrictives
-[news228 jam]: /fr/newsletters/2022/11/30/#proposition-de-references-de-reputation-pour-attenuer-les-attaques-de-brouillage-ln 
+[news228 jam]: /fr/newsletters/2022/11/30/#proposition-de-references-de-reputation-pour-attenuer-les-attaques-de-brouillage-ln
 [news229 cln]: /fr/newsletters/2022/12/07/#core-lightning-22-11
 [news230 bcc]: /fr/newsletters/2022/12/14/#bitcoin-core-24-0-1
-[news230 jam]: /fr/newsletters/2022/12/14/#brouillage-local-pour-eviter-le-brouillage-a-distance 
+[news230 jam]: /fr/newsletters/2022/12/14/#brouillage-local-pour-eviter-le-brouillage-a-distance
 [news230 libsecp]: /fr/newsletters/2022/12/14/#libsecp256k1-0-2-0
 [news230 ln-mod]: /fr/newsletters/2022/12/14/#proposition-d-optimisation-du-protocole-d-usines-a-canaux-ln
 [news230 rbf]: /fr/newsletters/2022/12/14/#suivi-des-remplacements-par-full-rbf
