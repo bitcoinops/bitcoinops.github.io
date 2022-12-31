@@ -514,118 +514,117 @@ can also help detect tampering and possibly make [eclipse attacks][topic
 eclipse attacks] more difficult.
 
 {:#core-meet}
-A meeting of Bitcoin protocol developers had several sessions
-[transcribed][news223 xscribe] by Bryan Bishop, including discussions
-about [transport encryption][topic v2 p2p transport], transaction fees
-and [economic security][topic fee sniping], the FROST [threshold
-signature][topic threshold signature] scheme, the sustainability of
-using GitHub for source code and development discussion hosting,
-including provable specifications in BIPs, [package relay][topic package
-relay] and [v3 transaction relay][topic v3 transaction relay], the
-Stratum version 2 mining protocol, and getting code merged into Bitcoin
-Core and other free software projects.
+Lors d'une réunion des développeurs du protocole Bitcoin, plusieurs sessions
+ont été [transcrites][news223 xscribe] par Bryan Bishop, notamment des discussions
+sur [le cryptage du transport][topic v2 p2p transport], les frais de transaction
+et [la sécurité économique][topic fee sniping], le schéma FROST [threshold signature][topic threshold signature],
+la durabilité de l'utilisation de GitHub pour l'hébergement de discussions sur le
+code source et le développement, y compris les spécifications prouvables dans les BIP,
+le [relais de paquet][topic package relay] et le [relais de transaction v3][topic v3 transaction relay],
+le protocole minier Stratum version 2, et la fusion du code dans Bitcoin Core et
+d'autres projets de logiciels libres.
 
 <div markdown="1" class="callout" id="softforks">
-### 2022 summary<br>Soft fork proposals
 
-January began with Jeremy Rubin [holding][news183a ctv] the first of
-several IRC meetings to review and discuss the
-[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) soft fork
-proposal.  Meanwhile, Peter Todd [posted][news183b ctv] several concerns
-with the proposal to the Bitcoin-Dev mailing list, most notably
-expressing concern that it didn't seem to benefit nearly all Bitcoin
-users, as he believes previously soft forks have done.
+### résumé 2022<br>propositions de Soft fork
 
-Lloyd Fournier [posted][news185 ctv] to the DLC-Dev and Bitcoin-Dev
-mailing lists about how the CTV opcode could radically reduce the number
-of signatures required to create certain [Discreet Log Contracts][topic
-dlc] (DLCs), as well as reduce the number of some other operations.
-Jonas Nick noted that a similar optimization is also possible using the
-proposed [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] (APO) signature
-hash mode.
+Le mois de janvier a commencé avec Jeremy Rubin [organisant][news183a ctv]
+la première de plusieurs réunions IRC pour examiner et discuter de la proposition
+de  soft fork [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV).
+Pendant ce temps, Peter Todd a [posté][news183b ctv] plusieurs préoccupations
+concernant la proposition sur la liste de diffusion Bitcoin-Dev, en particulier
+le fait qu'elle ne semble pas bénéficier à la quasi-totalité des utilisateurs
+de Bitcoin, comme il pense que les soft forks précédents l'ont fait.
 
-Russell O'Connor [proposed][news185 txhash] an alternative to both CTV
-and APO---a soft fork adding an `OP_TXHASH` opcode and an
-[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) opcode.  The
-TXHASH opcode would specify which parts of a spending transaction should
-be serialized and hashed, with the hash digest being put on the
-evaluation stack for later opcodes to use. The CSFS opcode would specify
-a public key and require a corresponding signature over particular data
-on the stack---such as the computed digest of the transaction created by
-TXHASH.  This would allow emulation of CTV and APO in a way that might
-be simpler, more flexible, and easier to extend through other
-subsequent soft forks.
+Lloyd Fournier a [posté][news185 ctv] aux listes de diffusion DLC-Dev et
+Bitcoin-Dev sur la façon dont l'opcode CTV pourrait réduire radicalement
+le nombre de signatures requises pour créer certains [Discreet Log Contracts][topic dlc]
+(DLC), ainsi que le nombre de certaines autres opérations. Jonas Nick a fait
+remarquer qu'une optimisation similaire est également possible en utilisant
+le mode de hachage de signature proposé [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] (APO).
 
-In February, Rusty Russell would [propose][news187 optx] `OP_TX`, an
-even simpler version of `OP_TXHASH`.  Meanwhile, Jeremy Rubin
-[published][news188 ctv] parameters and code for a [signet][topic signet] with CTV
-activated. This simplifies public experimentation with the proposed
-opcode and makes it much easier to test compatibility between different
-software using the code.  Also in February, developer ZmnSCPxj proposed
-a new `OP_EVICT` opcode as an alternative to the
-`OP_TAPLEAF_UPDATE_VERIFY` (TLUV) opcode proposed in 2021. Like TLUV,
-EVICT is focused on use cases where more than two users share ownership
-of a single UTXO, such as [joinpools][topic joinpools], [channel
-factories][topic channel factories], and certain [covenants][topic
-covenants].  ZmnSCPxj would later [propose][news191 fold] a different new opcode,
-`OP_FOLD`, as a more general construct from which EVICT-like behavior
-could be built (though that would require some other Script language
-changes).
+Russell O'Connor [a proposé][news185 txhash] une alternative au CTV et à
+l'APO---un soft fork ajoutant un opcode `OP_TXHASH` et un opcode
+[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS). L'opcode TXHASH
+spécifie quelles parties d'une transaction de dépense doivent être sérialisées
+et hachées, le condensé de hachage étant placé sur la pile d'évaluation pour
+que les opcodes suivants puissent l'utiliser. L'opcode CSFS spécifierait une
+clé publique et exigerait une signature correspondante sur des données
+particulières de la pile - comme le condensé calculé de la transaction créé
+par TXHASH.  Cela permettrait l'émulation de CTV et APO d'une manière qui
+pourrait être plus simple, plus flexible, et plus facile à étendre par
+d'autres soft forks ultérieures.
 
-By March, the discussion about CTV and newer opcode proposals led to a
-[discussion][news190 recov] about limiting the expressiveness of
-Bitcoin's Script language, mainly to prevent *recursive
-covenants*---conditions that would need to be fulfilled in every
-transaction re-spending those bitcoins or any bitcoins merged with it
-for perpetuity.   Concerns included a loss of censorship resistance,
-enabling [drivechains][topic sidechains], encouraging unnecessary
-computation, and making it possible for users to accidentally lose coins
-to recursive covenants.
+En février, Rusty Russell [proposait][news187 optx] `OP_TX`, une version encore
+plus simple de `OP_TXHASH`. Pendant ce temps, Jeremy Rubin [publiait][news188 ctv]
+les paramètres et le code d'un [signet][topic signet] avec CTV activé. Cela
+simplifie l'expérimentation publique de l'opcode proposé et permet de tester
+beaucoup plus facilement la compatibilité entre les différents logiciels qui
+utilisent ce code. Toujours en février, le développeur ZmnSCPxj a proposé un
+nouvel opcode `OP_EVICT` comme alternative à l'opcode `OP_TAPLEAF_UPDATE_VERIFY`
+(TLUV) proposé en 2021. Comme TLUV, EVICT est axé sur les cas d'utilisation où
+plus de deux utilisateurs partagent la propriété d'un seul UTXO, comme les
+[joinpools][topic joinpools], les [usines à canaux][topic channel factories],
+et certaines [coditions de dépenses][topic covenants]. ZmnSCPxj proposera plus
+tard un nouvel opcode différent, `OP_FOLD`, comme une construction plus générale
+à partir de laquelle un comportement de type EVICT pourrait être construit
+(bien que cela nécessiterait d'autres changements dans le langage Script).
 
-March also saw yet another idea for a soft fork change to Bitcoin's
-Script language, this time to allow future transactions to opt-in to a
-completely different language based on Lisp.  Anthony Towns
-[proposed][news191 btc-script] the idea and described how it might be
-better than both Script and a previously-proposed replacement:
-[Simplicity][topic simplicity].
+En mars, la discussion sur le CTV et les propositions d'opcode plus récentes
+ont conduit à une [discussion][news190 recov] sur la limitation de l'expressivité
+du langage Script de Bitcoin, principalement pour empêcher les *conditions de
+dépenses récursives*---conditions qui devraient être remplies dans chaque
+transaction dépensant à nouveau ces bitcoins ou tout autre bitcoin fusionné
+avec lui à perpétuité. Les préoccupations concernaient notamment la perte de
+résistance à la censure, l'activation de [drivechains][topic sidechains],
+l'encouragement de calculs inutiles et la possibilité pour les utilisateurs
+de perdre accidentellement des pièces en raison de conditions de dépenses récursives.
 
-In April, Jeremy Rubin [posted][news197 ctv] to the Bitcoin-Dev mailing
-list his plan to release software that will allow miners to begin
-signaling whether they intend to enforce the [BIP119][] rules for the
-proposed CTV opcode.  This spurred discussion about CTV and similar
-proposals, such as APO.  Rubin later announced he wouldn't be releasing
-compiled software for activating CTV at the present time as he and other
-CTV supporters evaluated the feedback they'd received.
+Le mois de mars a également été marqué par une autre idée de modification du langage
+Script de Bitcoin, cette fois pour permettre aux futures transactions d'opter pour un
+langage complètement différent basé sur Lisp. Anthony Towns a [proposé][news191 btc-script]
+l'idée et décrit comment elle pourrait être meilleure que Script et qu'un remplacement
+proposé précédemment : [Simplicity][topic simplicity].
 
-In May, Rusty Russell [updated][news200 ctv] his `OP_TX` proposal.  The
-original proposal would allow recursive covenants, which elicited the
-concerns mentioned earlier in this section.  Instead, Russell proposed
-an initial version of TX that was limited to permitting the behavior of
-CTV, which had been specifically designed to prevent recursive
-covenants.  This new version of TX could be incrementally updated in the
-future to provide additional features, making it more powerful but also
-allowing those new features to be independently analyzed.  Additional
-discussion in May [examined][news200 cat] the `OP_CAT` opcode (removed
-from Bitcoin in 2010), which some developers occasionally suggest might
-be a candidate for adding back in the future.
+En avril, Jeremy Rubin a [posté][news197 ctv] sur la liste de diffusion
+Bitcoin-Dev son projet de lancer un logiciel qui permettra aux mineurs
+de commencer à signaler s'ils ont l'intention d'appliquer les règles [BIP119][]
+pour l'opcode CTV proposé. Cela a suscité des discussions sur le CTV et
+des propositions similaires, telles que l'APO. Rubin a ensuite annoncé
+qu'il ne publierait pas de logiciel compilé pour activer CTV pour le moment,
+car lui et d'autres partisans de CTV évaluaient les réactions qu'ils avaient reçues.
 
-In September, Jeremy Rubin [described][news218 apo] how a trusted setup
-procedure could be combined with the proposed APO feature to implement
-behavior similar to that proposed by [drivechains][topic sidechains].
-Preventing the implementation of drivechains on Bitcoin was one of the
-reasons developer ZmnSCPxj suggested earlier in the year that full node
-operators might want to oppose soft forks that enable recursive
-covenants.
+En mai, Rusty Russell a [mis à jour][news200 ctv] sa proposition `OP_TX`.
+La proposition initiale autorisait les conditions de dépenses récursives,
+ce qui a suscité les préoccupations mentionnées plus haut dans cette section.
+Au lieu de cela, Russell a proposé une version initiale de TX qui était
+limitée à permettre le comportement de CTV, qui avait été spécifiquement
+conçu pour empêcher les conditions récursives.  Cette nouvelle version de TX
+pourrait être mise à jour progressivement à l'avenir pour fournir des
+fonctionnalités supplémentaires, ce qui la rendrait plus puissante mais
+permettrait également à ces nouvelles fonctionnalités d'être analysées
+indépendamment.  Une discussion supplémentaire en mai a examiné l'opcode
+`OP_CAT` (supprimé de Bitcoin en 2010), que certains développeurs suggèrent
+occasionnellement d'ajouter à l'avenir.
 
-Also in September, Anthony Towns [announced][news219 inquisition] a
-Bitcoin implementation designed specifically for testing soft forks on
-[signet][topic signet].  Based on Bitcoin Core, Towns's code will
-enforce rules for soft fork proposals with high-quality specifications
-and implementations, making it simpler for users to experiment with the
-proposed changes---including comparing changes to each other or seeing
-how they interact.  Towns also plans to include proposed major changes
-to transaction relay policy (such as [package relay][topic package
-relay]).
+En septembre, Jeremy Rubin a [décrit][news218 apo] comment une procédure
+de configuration en confiance pourrait être combinée avec la fonctionnalité
+APO proposée pour mettre en œuvre un comportement similaire à celui proposé
+par les [drivechains][topic sidechains]. Empêcher l'implémentation de drivechains
+sur Bitcoin était l'une des raisons pour lesquelles le développeur ZmnSCPxj
+a suggéré plus tôt dans l'année que les opérateurs de nœuds complets pourraient
+vouloir s'opposer aux soft forks qui permettent des conditions de dépense récursives.
+
+En septembre également, Anthony Towns a [annoncé][news219 inquisition]
+une implémentation de Bitcoin conçue spécifiquement pour tester les
+soft forks sur [signet][topic signet]. Basé sur Bitcoin Core, le code
+de Towns appliquera des règles pour les propositions de soft forks avec
+des spécifications et des implémentations de haute qualité, ce qui
+permettra aux utilisateurs d'expérimenter plus facilement les changements
+proposés - y compris en comparant les changements entre eux ou en voyant
+comment ils interagissent. Towns prévoit également d'inclure les changements
+majeurs proposés à la politique de relais des transactions (tels que le
+[relai de paquet][topic package relay]).
 
 En novembre, Salvatore Ingala a [posté][news226 matt] sur la liste de
 diffusion Bitcoin-Dev une proposition pour un nouveau type de conditions
