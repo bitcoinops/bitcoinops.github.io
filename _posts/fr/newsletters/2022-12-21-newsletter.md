@@ -213,140 +213,138 @@ aux attaques menées par les ordinateurs quantiques rapides qui pourraient exist
 ## May
 
 {:#musig2}
-The [MuSig2][topic musig] protocol for creating [schnorr
-multisignatures][topic multisignature] saw several developments in 2022.
-A [proposed BIP][news195 musig2] received significant [feedback][news198
-musig2] in May.  Later, in October, Yannick Seurin, Tim
-Ruffing, Elliott Jin, and Jonas Nick discovered a
-[vulnerability][news222 musig2] in some ways the protocol could be used,
-which the researchers announced that they planned to fix in an updated version.
+Le protocole [MuSig2][topic musig] pour la création de [multisignatures schnorr]
+[topic multisignature] a connu plusieurs développements en 2022.
+Une [proposisition de BIP][news195 musig2] a reçu d'importants [retour d'informations][news198
+musig2] en Mai.  Plus tard, en octobre, Yannick Seurin, Tim
+Ruffing, Elliott Jin, and Jonas Nick ont découvert une
+[vulnérabilité][news222 musig2] de certaines façons dont le protocole pourrait être utilisé,
+que les chercheurs ont annoncé qu'ils prévoyaient de corriger dans une version mise à jour.
 
 {:#package-relay}
-A draft BIP for [package relay][topic package relay] was
-[posted][news201 package relay] by Gloria Zhao in May.  Package relay
-fixes a significant problem with Bitcoin Core's [CPFP fee bumping][topic
-cpfp] where individual nodes will only accept a fee-bumping child
-transaction if its parent transaction pays a feerate above the node's
-dynamic minimum mempool fee.  This makes CPFP insufficiently reliable
-for protocols depending on presigned transactions, such as many contract
-protocols (including the current LN protocol).  Package relay allows a
-parent and child transaction to be evaluated as a single unit,
-eliminating the problem---although not eliminating other related
-problems such as [transaction pinning][topic transaction pinning].
-Additional discussion of package relay [occurred][news204 package relay]
-in June.
+Un projet de BIP pour [le relai de paquet][topic package relay] était
+[posté][news201 package relay] par Gloria Zhao en Mai. Le relai de paquet
+corrige un problème important avec les variations de frais ["fee bumping" CPFP][topic
+cpfp] sur Bitcoin Core où les nœuds individuels n'accepteront une transaction enfant de type "fee-bumping"
+que si sa transaction parent paie un taux supérieur au taux minimum dynamique du mempool du nœud.
+Cela rend le CPFP insuffisamment fiable pour les protocoles dépendant de transactions présignées,
+tels que de nombreux protocoles de contrats (y compris le protocole LN actuel). Le relais des paquets
+permet d'évaluer une transaction parent et enfant comme une seule unité,
+éliminant le problème---sans pour autant éliminer d'autres problèmes connexes
+tels que [l'épinglage des transactions][topic transaction pinning].
+Une discussion supplémentaire sur le relais des paquets [s'est produit][news204 package relay]
+en Juin.
 
 {:#libbitcoinkernel}
-May also saw the [first merge][news198 lbk] for the Bitcoin Kernel
-Library Project (libbitcoinkernel), an attempt to separate out as much
-of Bitcoin Core's consensus code as possible into a separate library,
-even if that code still has some non-consensus code attached.
-Long-term, the goal is to trim down libbitcoinkernel until it contains
-only consensus code, making it easy for other projects to use that code
-or for auditors to analyze changes to Bitcoin Core's consensus logic.
-Several additional libbitcoinkernel PRs would be merged through the
-year.
+Le mois de mai a également vu la [première fusion][news198 lbk] du projet de bibliothèque
+du noyau de Bitcoin (libbitcoinkernel), une tentative de séparer autant que possible le code
+de consensus de Bitcoin Core dans une bibliothèque séparée, même si ce code comporte encore
+du code non-consensuel. À long terme, l'objectif est de réduire libbitcoinkernel jusqu'à ce
+qu'elle ne contienne plus que du code de consensus, ce qui permettra à d'autres projets
+d'utiliser facilement ce code ou aux auditeurs d'analyser les modifications apportées à la
+logique de consensus de Bitcoin Core. Plusieurs autres PR de libbitcoinkernel seront fusionnés
+au cours de l'année.
 
 <div markdown="1" class="callout" id="releases">
-### 2022 summary<br>Major releases of popular infrastructure projects
 
-- [Eclair 0.7.0][news185 eclair] added support for [anchor
-  outputs][topic anchor outputs], relaying [onion messages][topic onion
-  messages], and using the PostgreSQL database in production.
+### Résumé 2022 <br> Mises à jour majeures des principaux projets d'infrastructure
 
-- [BTCPay Server 1.4][news189 btcpay] added support for [CPFP fee
-  bumping][topic cpfp], the ability to use additional features of LN
-  URLs, plus multiple UI improvements.
+- [Eclair 0.7.0][news185 eclair] ajout d'un support pour les [sorties
+  d'ancrage][topic anchor outputs], relayer [les messages en oignon][topic onion
+  messages], et l'utilisation de la base de données PostgreSQL en production.
 
-- [LDK 0.0.105][news190 ldk] added support for phantom node payments and
-  better probabalistic payment pathfinding.
+- [BTCPay Server 1.4][news189 btcpay] ajoute un support pour [la variation des frais
+  CPFP][topic cpfp], la possibilité d'utiliser des fonctionnalités supplémentaires des URL LN,
+  ainsi que de multiples améliorations de l'interface utilisateur.
 
-- [BDK 0.17.0][news193 bdk] made it easier to derive addresses even when
-  the wallet is offline.
+- [LDK 0.0.105][news190 ldk] ajoute la prise en charge des paiements de nœuds fantômes
+  et d'une meilleure recherche probabiliste des paiements.
 
-- [Bitcoin Core 23.0][news197 bcc] provided [descriptor][topic
-  descriptors] wallets by default for new wallets and also allowed
-  descriptor wallets to easily support receiving to [bech32m][topic
-  bech32] addresses using [taproot][topic taproot].  It also increased
-  its support for using non-default TCP/IP ports and began allowing use
-  of the [CJDNS][] network overlay.
+- [BDK 0.17.0][news193 bdk] a facilité la dérivation des adresses,
+  même lorsque le porte-monnaie est hors ligne.
 
-- [Core Lightning 0.11.0][news197 cln] added support for multiple active
-  channels to the same peer and paying [stateless invoices][topic
-  stateless invoices].
+- [Bitcoin Core 23.0][news197 bcc] fournit des portefeuilles [descripteurs]
+  [topic descriptors] par défaut pour les nouveaux portefeuilles et permet
+  également aux portefeuilles descripteurs de prendre facilement en charge
+  la réception vers des adresses [bech32m][topic bech32] en utilisant [taproot]
+  [topic taproot].  Il a également augmenté sa prise en charge de l'utilisation
+  de ports TCP/IP autres que ceux par défaut et a commencé à autoriser
+  l'utilisation de la superposition de réseau [CJDNS][].
 
-- [Rust Bitcoin 0.28][news197 rb] added support for [taproot][topic
-  taproot] and improved related APIs, such as those for [PSBTs][topic
-  psbt].
+- [Core Lightning 0.11.0][news197 cln] a ajouté la prise en charge de
+  plusieurs canaux actifs vers le même pair et le paiement de
+  [factures sans statut][topic stateless invoices].
 
-- [BTCPay Server 1.5.1][news198 btcpay] added a new main-page dashboard,
-  a new transfer processors feature, and the ability to allow pull
-  payments and refunds to be automatically approved.
+- [Rust Bitcoin 0.28][news197 rb] ajoute la prise en charge de [taproot][topic taproot]
+  et améliore les API connexes, telles que celles de [PSBTs][topic psbt].
 
-- [LDK 0.0.108 and 0.0.107][news205 ldk] added support for [large
-  channels][topic large channels] and [zero-conf channels][topic
-  zero-conf channels] in addition to providing code that allows mobile
-  clients to sync network routing information (gossip) from a server.
+- [BTCPay Server 1.5.1][news198 btcpay] a ajouté un nouveau tableau de bord sur
+  la page principale, une nouvelle fonction de processeurs de transfert, et la
+  possibilité de permettre l'approbation automatique des paiements à la demande
+  et des remboursements.
 
-- [BDK 0.19.0][news205 bdk] added experimental support for
-  [taproot][topic taproot] through [descriptors][topic descriptors],
-  [PSBTs][topic psbt], and other sub-systems. It also added a new [coin
-  selection][topic coin selection] algorithm.
+- [LDK 0.0.108 et 0.0.107][news205 ldk] a ajouté la prise en charge de [large canaux]
+  [topic large channels] et de [canaux zéro-conf][topic zero-conf channels] en plus
+  de fournir un code qui permet aux clients mobiles de synchroniser les informations
+  de routage du réseau (gossip) à partir d'un serveur.
 
-- [LND 0.15.0-beta][news206 lnd] added support for invoice metadata
-  which can be used by other programs (and potentially future versions
-  of LND) for [stateless invoices][topic stateless invoices] and adds
-  support to the internal wallet for receiving and spending bitcoins to
-  [P2TR][topic taproot] keyspend outputs, along with experimental
-  [MuSig2][topic musig] support.
+- [BDK 0.19.0][news205 bdk] a ajouté un support expérimental pour [taproot][topic taproot]
+  à travers les [descripteurs][topic descriptors], les [PSBTs][topic psbt], et d'autres
+  sous-systèmes. Il a également ajouté un nouvel algorithme de [sélection de pièces]
+  [topic coin selection].
 
-- [Rust Bitcoin 0.29][news213 rb] added [compact block relay][topic
-  compact block relay] data structures ([BIP152][]) and improvements to
-  [taproot][topic taproot] and [PSBT][topic psbt] support.
+- [LND 0.15.0-beta][news206 lnd] a ajouté la prise en charge des métadonnées de facture
+  qui peuvent être utilisées par d'autres programmes (et potentiellement par les futures
+  versions de LND) pour les [factures apatrides][topic stateless invoices] et ajoute la
+  prise en charge du portefeuille interne pour recevoir et dépenser des bitcoins vers des
+  sorties de dépense de clés [P2TR][topic taproot], ainsi que la prise en charge expérimentale
+  de [MuSig2][topic musig].
 
-- [Core Lightning 0.12.0][news214 cln] added a new `bookkeeper` plugin,
-  a `commando` plugin, and support for [static channel backups][topic
-  static channel backups], plus explicitly began allowing peers the
-  ability to open [zero-conf channels][topic zero-conf channels] to your
-  node.
+- [Rust Bitcoin 0.29][news213 rb] a ajouté les structures de données de [bloc de relais compact]
+  [topic compact block relay] ([BIP152][]) et des améliorations au support de [taproot]
+  [topic taproot] et [PSBT][topic psbt].
 
-- [LND 0.15.1-beta][news215 lnd] added support for [zero-conf
-  channels][topic zero-conf channels], channel aliases, and began using
-  [taproot][topic taproot] addresses everywhere.
+- [Core Lightning 0.12.0][news214 cln] a ajouté un nouveau plugin `bookkeeper`,
+  un plugin `commando`, et la prise en charge des [sauvegardes de canaux statiques]
+  [topic static channel backups], et a explicitement commencé à permettre aux pairs
+  d'ouvrir des [canaux zéro-conf][topic zero-conf channels] à votre noeud.
 
-- [LDK 0.0.111][news217 ldk] adds support for creating, receiving, and
-  relaying [onion messages][topic onion messages].
+- [LND 0.15.1-beta][news215 lnd] a ajouté la prise en charge des [canaux zéro-conf]
+  [topic zero-conf channels], des alias de canaux, et a commencé à utiliser les
+  adresses [taproot][topic taproot] partout.
 
-- [Core Lightning 22.11][news229 cln] began using a new version
-  numbering scheme and added a new plugin manager.
+- [LDK 0.0.111][news217 ldk] ajoute la prise en charge de la création, de la réception
+  et de la transmission de [messages en oignon] [topic onion messages].
 
-- [libsecp256k1 0.2.0][news230 libsecp] was the first tagged release of
-  this widely-used library for Bitcoin-related cryptographic operations.
+- [Core Lightning 22.11][news229 cln] a commencé à utiliser un nouveau schéma
+  de numérotation des versions et a ajouté un nouveau gestionnaire de plugins.
 
-- [Bitcoin Core 24.0.1][news230 bcc] added an option for configuring the
-  node's [Replace-By-Fee][topic rbf] (RBF) policy, a new `sendall` RPC
-  for easily spending all of a wallet's funds in a single transaction, a
-  `simulaterawtransaction` RPC that can be used to verify how a
-  transaction will affect a wallet, and the ability to create watch-only
-  [descriptors][topic descriptors] containing [miniscript][topic
-  miniscript] expressions for improved forward compatibility with other
-  software.
+- [libsecp256k1 0.2.0][news230 libsecp] était la première version balisée de
+  cette bibliothèque largement utilisée pour les opérations cryptographiques
+  liées à Bitcoin.
+
+- [Bitcoin Core 24.0. 1][news230 bcc] a ajouté une option pour configurer la
+  politique [Replace-By-Fee][topic rbf] (RBF) du noeud, un nouveau RPC `sendall`
+  pour dépenser facilement tous les fonds d'un portefeuille en une seule transaction,
+  un RPC `simulaterawtransaction` qui peut être utilisé pour vérifier comment
+  une transaction affectera un porte-monnaie, et la possibilité de créer des
+  [descripteurs][topic descriptors] à surveiller uniquement contenant des expressions
+  [miniscript][topic miniscript] pour améliorer la compatibilité avec d'autres logiciels.
 
 </div>
 
-## June
+## Juin
 
 {:#ln-meet}
-In June, LN developers [met][news204 ln] to discuss the future of
-protocol development.  Topics discussed included [taproot][topic
-taproot]-based LN channels, [tapscript][topic tapscript] and
-[MuSig2][topic musig] (including recursive MuSig2), updating the gossip
-protocol for announcing new and changed channels, [onion messages][topic
-onion messages], [blinded paths][topic rv routing], probing and balance
-sharing, [trampoline routing][topic trampoline payments], and the
-[offers][topic offers] and LNURL protocols.
+En juin, les développeurs LN se sont rencontrés [news204 ln] pour discuter de l'avenir
+du développement des protocoles. Parmi les sujets abordés, citons les canaux LN basé
+sur [taproot][topic taproot], [tapscript][topic tapscript] et [MuSig2][topic musig]
+(y compris MuSig2 récursif), la mise à jour du protocole de gossip pour annoncer les
+canaux nouveaux et modifiés, les [messages en oignons][topic onion messages], les [chemins aveugles]
+[topic rv routing], sondage et partage d'équilibre, [routage trampoline][topic trampoline payments],
+et les protocoles d'[offres][topic offers] et LNURL.
 
-## July
+## Juillet
 
 {:#onion-message-limiting}
 In July, Bastien Teinturier [posted][news207 onion] a summary of an idea
@@ -647,7 +645,7 @@ Plusieurs implémentations de LN ont mis à jour leur code pour prendre en charg
 même si elles n'ont pas immédiatement commencé à l'utiliser elles-mêmes, notamment [Eclair][news225 fat]
 et [Core Lightning][news226 fat].
 
-## Decembre
+## Décembre
 
 {:#ln-mod}
 En décembre, le développeur de protocole John Law a posté sur la liste d'envoi Lightning-Dev
