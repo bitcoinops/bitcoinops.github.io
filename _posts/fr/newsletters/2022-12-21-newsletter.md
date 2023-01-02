@@ -487,7 +487,7 @@ bogues d'analyse des blocs qui ont affecté plusieurs applications. Un bogue
 déclenché accidentellement dans BTCD l'a empêché, ainsi que le programme en aval
 LND, de traiter les derniers blocs. Cela aurait pu conduire les utilisateurs à
 perdre des fonds, bien qu'aucun problème de ce type n'ait été signalé. Un
-[deuxième][bug news225] bogue apparenté, cette fois-ci délibérément déclenché,
+[deuxième][news225 bug] bogue apparenté, cette fois-ci délibérément déclenché,
 a de nouveau affecté BTCD et LND, ainsi que les utilisateurs de certaines versions
 de Rust-Bitcoin. Là encore, les utilisateurs risquaient de perdre de l'argent,
 bien que nous n'ayons pas connaissance d'incidents signalés.
