@@ -481,35 +481,37 @@ ce délai et ce PR les utilise donc pour permettre l'expérimentation des paieme
 asynchrones.
 
 {:#parsing-bugs}
-October also saw the [first][news222 bug] of two block parsing bugs that
-affected multiple applications.  An accidentally triggered bug in BTCD
-prevented it and downstream program LND from processing the latest
-blocks.  This could have led to users losing funds, although no such
-problems were reported.  A [second][news225 bug] related bug, this time
-deliberately triggered, affected BTCD and LND again, along with users of some
-versions of Rust-Bitcoin.  Again, there was a potential for users to
-lose money, although we are unaware of any reported incidents.
+Le mois d'octobre a également été marqué par le [premier][news222 bug] de deux
+bogues d'analyse des blocs qui ont affecté plusieurs applications. Un bogue
+déclenché accidentellement dans BTCD l'a empêché, ainsi que le programme en aval
+LND, de traiter les derniers blocs. Cela aurait pu conduire les utilisateurs à
+perdre des fonds, bien qu'aucun problème de ce type n'ait été signalé. Un
+[deuxième][bug news225] bogue apparenté, cette fois-ci délibérément déclenché,
+a de nouveau affecté BTCD et LND, ainsi que les utilisateurs de certaines versions
+de Rust-Bitcoin.  Là encore, les utilisateurs risquaient de perdre de l'argent,
+bien que nous n'ayons pas connaissance d'incidents signalés.
 
 {:#zk-rollups}
-John Light [posted][news222 rollups] a research report he prepared about
-validity rollups---a type of sidechain where the current sidechain state
-is compactly stored on the mainchain. An owner of sidechain bitcoins can
-use the state stored on the mainchain to prove how many sidechain
-bitcoins they control. By submitting a mainchain transaction with a
-validity proof, they can withdraw bitcoins they own from the sidechain
-even if the operators or miners of the sidechain try to prevent the
-withdrawal.  Light's research describes validity rollups in depth, looks
-at how support for them could be added to Bitcoin, and examines various
-concerns with their implementation.
+John Light a [posté][news222 rollups] un rapport de recherche qu'il a préparé
+sur les validity rollups---un type de sidechain où l'état actuel de la sidechain
+est stocké de manière compacte sur la chaîne principale. Un propriétaire de bitcoins
+de sidechain peut utiliser l'état stocké sur la chaîne principale pour prouver
+combien de bitcoins de sidechain il contrôle. En soumettant une transaction sur
+la chaîne principale avec une preuve de validité, il peut retirer les bitcoins
+qu'il possède sur la chaîne latérale, même si les opérateurs ou les mineurs de
+la chaîne latérale tentent d'empêcher le retrait. Les recherches de Light décrivent
+en profondeur les validity rollups, examinent la manière dont leur prise en charge
+pourrait être ajoutée à Bitcoin et étudient les différents problèmes liés à
+leur mise en œuvre.
 
 {:#v2-transport}
-The [BIP324][] proposal for an [encrypted v2 P2P transport
-protocol][news222 v2trans] received an update and mailing list
-discussion for the first time in three years.  Encrypting the transport
-of unconfirmed transactions can help hide their origin from eavesdroppers
-who control many internet relays (e.g. large ISPs and governments).  It
-can also help detect tampering and possibly make [eclipse attacks][topic
-eclipse attacks] more difficult.
+La proposition de [BIP324][] pour un [protocole de transport P2P v2 crypté][news222 v2trans]
+a été mise à jour et discutée sur la liste de diffusion pour la première fois en
+trois ans. Le cryptage du transport des transactions non confirmées peut aider
+à cacher leur origine aux oreilles indiscrètes qui contrôlent de nombreux relais
+Internet (par exemple, les grands FAI et les gouvernements).  Il peut également
+aider à détecter les falsifications et éventuellement rendre les [attaques d'éclipse][topic eclipse attacks]
+plus difficiles.
 
 {:#core-meet}
 Lors d'une réunion des développeurs du protocole Bitcoin, plusieurs sessions
