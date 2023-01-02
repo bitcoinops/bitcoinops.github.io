@@ -118,7 +118,8 @@ https://bitcoinops.org/en/newsletters/2022/10/19/#minimum-relayable-transaction-
 and/or
 https://bitcoinops.org/en/newsletters/2022/11/09/#bitcoin-core-pr-review-club )
 
-- [Bitcoin Core #21576][] rpc, gui: bumpfee signer support FIXME:bitschmidty
+- [Bitcoin Core #21576][] allows wallets using an external signer (e.g. [HWI][topic hwi]) to fee bump
+  using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC.
 
 - [Bitcoin Core #24865][] allows a wallet backup to be restored on a
   node that has been pruned of older blocks as long as the node still
