@@ -347,138 +347,138 @@ et les protocoles d'[offres][topic offers] et LNURL.
 ## Juillet
 
 {:#onion-message-limiting}
-In July, Bastien Teinturier [posted][news207 onion] a summary of an idea
-he attributes to Rusty Russell for rate limiting [onion messages][topic
-onion messages] in order to prevent denial-of-service attacks.  However,
-Olaoluwa Osuntokun suggested reconsideration of his March
-[proposal][news190 onion] for preventing abuse of onion messages by
-charging for data relay.  It seemed that most developers in the
-discussion preferred to attempt rate limiting before adding additional
-fees to the protocol.
+En juillet, Bastien Teinturier a [publié][news207 onion] un résumé d'une idée
+qu'il attribue à Rusty Russell pour limiter le débit des [messages en oignon]
+[topic onion messages] afin d'empêcher les attaques par déni de service.
+Cependant, Olaoluwa Osuntokun a suggéré de reconsidérer sa [proposition][news190 onion]
+de mars pour empêcher l'abus des messages en oignon en faisant payer le relais
+des données.  Il semble que la plupart des développeurs participant à la discussion
+préfèrent tenter de limiter le débit avant d'ajouter des frais supplémentaires au protocole.
 
 {:#miniscript-descriptors}
-This month Bitcoin Core also [merged a pull request][news209 miniscript]
-adding watch-only support for [output script descriptors][topic
-descriptors] written in [miniscript][topic miniscript].  A future PR is
-expected to allow the wallet to create signatures for spending
-miniscript-based descriptors.  As other wallets and signing devices
-implement miniscript support, it should become easier for policies to be
-transferred between wallets or for multiple wallets to cooperate in
-spending bitcoins, such as multisig policies or policies involving
-different signers for different occasions (e.g. fallback signers).
+Ce mois-ci, Bitcoin Core a également [fusionné une demande de pull][news209 miniscript]
+en ajoutant la prise en charge de la surveillance uniquement pour les
+[descripteurs de script de sortie][topic descriptors] écrits en [miniscript][topic miniscript].
+Un futur PR devrait permettre au porte-monnaie de créer des signatures pour
+les descripteurs de dépenses basés sur le miniscript. À mesure que d'autres
+portefeuilles et dispositifs de signature mettent en œuvre la prise en charge
+des miniscripts, il devrait être plus facile de transférer des politiques
+entre portefeuilles ou de faire coopérer plusieurs portefeuilles pour dépenser
+des bitcoins, par exemple des politiques multi-sig ou des politiques impliquant
+différents signataires pour différentes occasions (par exemple, des signataires de secours)
 
-## August
+## Août
 
 {:#dual-funding}
-In August, Eclair [merged support][news213 dual funding] for the
-interactive funding protocol, a dependency for the [dual funding
-protocol][topic dual funding] that allows either (or both) of two nodes
-to contribute funds to a new LN channel.  Later that month, another
-[merge][news215 dual funding] brought Eclair experimental support for
-dual funding.  An open protocol for dual funding can help ensure
-merchants have access to channels that allow them to immediately receive
-payments from customers.
+En août, Eclair a [fusionné le support][news213 dual funding] pour
+le protocole de financement interactif, une dépendance pour le
+[protocole de financement double][topic dual funding] qui permet à
+l'un (ou aux deux) des deux noeuds de contribuer aux fonds d'un nouveau
+canal LN. Plus tard dans le mois, une autre [fusion][news215 dual funding]
+a apporté à Eclair un support expérimental pour le double financement.
+Un protocole ouvert pour le double financement peut contribuer à garantir
+que les commerçants ont accès à des canaux qui leur permettent de recevoir
+immédiatement les paiements des clients.
 
 {:#jamming}
-Antoine Riard and Gleb Naumenko [published][news214 jam] a guide
-to [channel jamming attacks][topic channel jamming attacks] and
-several proposed solutions.  For every channel an attacker controls,
-they can make more than a dozen other channels unusable by sending
-payments that never complete---meaning the attacker doesn't need to pay
-any direct costs.  The problem has been known since 2015 but no
-previously proposed solution has gained widespread acceptance.  In
-November, Clara Shikhelman and Sergei Tikhomirov would publish their own
-[paper][news226 jam] with analysis and a proposed solution based on
-small upfront fees and automated reputation-based referrals.
-Subsequently, Riard [published][news228 jam] an alternative solution
-involving non-tradable node-specific tokens.  In December, Joost Jager
-would [announce][news230 jam] a "simple but imperfect" utility that
-could help nodes mitigate some problems with jamming without requiring
-any changes to the LN protocol.
+Antoine Riard et Gleb Naumenko ont [publiés][news214 jam] un guide sur les
+[attaques de brouillage de canaux][topic channel jamming attacks] et plusieurs
+solutions proposées. Pour chaque canal qu'un attaquant contrôle, il peut rendre
+plus d'une douzaine d'autres canaux inutilisables en envoyant des paiements qui
+ne se terminent jamais---ce qui signifie que l'attaquant n'a pas besoin de payer
+de coûts directs. Le problème est connu depuis 2015, mais aucune solution proposée
+précédemment n'a été largement acceptée. En novembre, Clara Shikhelman et Sergei
+Tikhomirov publieraient leur propre [papier][news226 jam] avec une analyse et une
+proposition de solution basée sur de petits frais initiaux et des renvois automatisés
+basés sur la réputation. Par la suite, Riard a [publié][news228 jam] une solution
+alternative impliquant des jetons non négociables spécifiques aux nœuds. En décembre,
+Joost Jager [annonce][news230 jam] un utilitaire "simple mais imparfait" qui pourrait
+aider les nœuds à atténuer certains problèmes de brouillage sans nécessiter de
+modifications du protocole LN.
 
 {:.center}
 ![Illustration of the two types of channel jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
 
 {:#dlc-bls}
-Lloyd Fournier [wrote][news213 bls] about the benefits of having
-[DLC][topic dlc] oracles make their attestations using Boneh-Lynn-Shacham
-([BLS][]) signatures.  Bitcoin does not support BLS signatures and a
-soft fork would be required to add them, but Fournier links to a paper
-he co-authored that describes how information can be securely extracted
-from a BLS signature and used with Bitcoin-compatible [signature
-adaptors][topic adaptor signatures] without any changes to Bitcoin.
-This would allow "stateless" oracles where the parties to a contract
-(but not the oracle) could privately agree on what information they
-wanted the oracle to attest to, e.g. by specifying a program written in
-any programming language they knew the oracle would run. They could then
-allocate their deposit funds according to the contract without even
-telling the oracle that they were planning to use it. When it came time
-to settle the contract, each of the parties could run the program
-themselves and, if they all agreed on the outcome, settle the contract
-cooperatively without involving the oracle at all.  If they didn’t
-agree, any one of them could send the program to the oracle (perhaps
-with a small payment for its service) and receive back a BLS attestation
-to the program source code and the value returned by running it. The
-attestation could be transformed into signatures that would allow
-settling the DLC on chain. As with current DLC contracts, the oracle
-would not know which onchain transactions were based on its BLS
-signatures.
+Lloyd Fournier a [écrit][news213 bls] sur les avantages des oracles [DLC][topic dlc]
+qui font leurs attestations en utilisant des signatures Boneh-Lynn-Shacham ([BLS][]).
+Bitcoin ne prend pas en charge les signatures BLS et un soft fork serait nécessaire
+pour les ajouter, mais Fournier renvoie à un article qu'il a co-écrit et qui décrit
+comment les informations peuvent être extraites en toute sécurité d'une signature BLS
+et utilisées avec des [adaptateurs de signature] [topic adaptor signatures] compatibles
+avec Bitcoin sans aucune modification de Bitcoin. Cela permettrait d'avoir des oracles
+"sans état" où les parties à un contrat (mais pas l'oracle) pourraient se mettre d'accord
+en privé sur les informations qu'elles veulent que l'oracle atteste, par exemple en
+spécifiant un programme écrit dans n'importe quel langage de programmation qu'ils savent
+que l'oracle peut exécuter. Ils pourraient ensuite allouer leurs fonds de dépôt conformément
+au contrat sans même dire à l'oracle qu'ils prévoyaient de l'utiliser. Au moment de régler
+le contrat, chacune des parties pouvait exécuter le programme elle-même et, si elles étaient
+toutes d'accord sur le résultat, régler le contrat en coopération sans faire intervenir
+l'oracle. Si elles n'étaient pas d'accord, n'importe laquelle d'entre elles pouvait envoyer
+le programme à l'oracle (peut-être avec un petit paiement pour son service) et recevoir en
+retour une attestation BLS du code source du programme et de la valeur obtenue en l'exécutant.
+L'attestation pourrait être transformée en signatures qui permettraient de régler le DLC sur
+la chaîne. Comme avec les contrats DLC actuels, l'oracle ne saurait pas quelles transactions
+onchain sont basées sur ses signatures BLS.
 
 <div markdown="1" class="callout" id="optech">
-### 2022 summary<br>Bitcoin Optech
 
-In Optech's fifth year, we published 51 weekly [newsletters][] and added 11
-new pages to our [topics index][].  Altogether, Optech published over
-70,000 words about Bitcoin software research and development this year,
-the rough equivalent of a 200-page book. <!-- wc -w
+### Résumé 2022<br>Bitcoin Optech
+
+Au cours de la cinquième année d'Optech, nous avons publié 51 [bulletins][]
+hebdomadaires et ajouté 11 nouvelles pages à notre [index des sujets][].
+Au total, Optech a publié plus de 70 000 mots sur la recherche et le
+développement du logiciel Bitcoin cette année, soit l'équivalent approximatif
+d'un livre de 200 pages. <!-- wc -w
 _posts/en/newsletters/2022-* ; a typical book has about 350 words per page -->
 
 </div>
 
-## September
+## Septembre
 
 {:#fee-ratecards}
-Lisa Neigut [posted][news219 ratecards] to the Lightning-Dev mailing
-list a proposal for fee ratecards that would allow a node to advertise
-four tiered rates for forwarding fees.  Better advertisement of
-forwarding fees, including the ability to set negative fees in some
-cases, could help ensure forwarding nodes had enough capacity to relay
-payments towards their ultimate destination.  Developer ZmnSCPxj, who
-had [posted][news204 lnfees] his own fee-based solution for improving
-routing earlier in the year, described a simple way to use ratecards,
-"you can model a rate card as four separate channels between the same
-two nodes, with different costs each. If the path at the lowest cost
-fails, you just try another route that may have more hops but lower
-effective cost, or else try the same channel at a higher cost."  An
-alternative method for payment flow control was [suggested][news220 flow
-control] by René Pickhardt.
+Lisa Neigut a [posté][news219 ratecards] sur la liste de diffusion Lightning-Dev
+une proposition de tarification des frais qui permettrait à un nœud d'annoncer
+quatre tarifs échelonnés pour les frais de transfert. Une meilleure publicité
+des frais d'acheminement, y compris la possibilité de fixer des frais négatifs
+dans certains cas, pourrait contribuer à garantir que les nœuds d'acheminement
+ont suffisamment de capacité pour relayer les paiements vers leur destination
+finale. Le développeur ZmnSCPxj, qui avait [posté]news204 lnfees] sa propre solution
+payante pour améliorer le routage plus tôt dans l'année, a décrit une façon simple
+d'utiliser les cartes tarifaires : "vous pouvez modéliser une carte tarifaire comme
+quatre canaux séparés entre les deux mêmes nœuds, avec des coûts différents pour chacun.
+Si le chemin au coût le plus bas échoue, il suffit d'essayer une autre route qui peut
+avoir plus de sauts mais un coût effectif plus faible, ou bien essayer le même canal
+à un coût plus élevé." Une autre méthode de contrôle des flux de paiement a été
+[suggérée][news220 flow control] par René Pickhardt.
 
-## October
+## Octobre
 
 {:#v3-tx-relay}
-In October, Gloria Zhao [proposed][news220 v3] allowing transactions that
-used version number 3 to use a modified set of transaction relay
-policies.  These policies are based on experience using [CPFP][topic
-cpfp] and [RBF][topic rbf], plus ideas for [package relay][topic package
-relay], and are designed to help preventing [pinning attacks][topic
-transaction pinning] against two-party contract protocols like LN---ensuring
-that users can promptly get transactions confirmed for closing channels,
-settling payments ([HTLCs][topic htlc]), and enforcing misbehavior
-penalties.  Greg Sanders would [follow up][news223 ephemeral] later in
-the month with an additional proposal for *ephemeral anchors*, a
-simplified form of the [anchor outputs][topic anchor outputs] already
-usable with most LN implementations.
+En octobre, Gloria Zhao a [proposé][news220 v3] d'autoriser les transactions
+utilisant la version numéro 3 à utiliser un ensemble modifié de politiques
+de relais de transaction. Ces politiques sont basées sur l'expérience de
+l'utilisation de [CPFP][topic cpfp] et de [RBF][topic rbf], plus des idées
+pour les [relais de paquets][topic package relay], et sont conçues pour aider
+à prévenir les [attaques par épinglage][topic transaction pinning] contre les
+protocoles de contrat à deux parties comme LN---en s'assurant que les utilisateurs
+peuvent rapidement obtenir des transactions confirmées pour fermer les canaux,
+régler les paiements ([HTLCs][topic htlc]), et appliquer les pénalités pour
+mauvais comportement. Greg Sanders [suivra][news223 ephemeral] plus tard dans
+le mois avec une proposition supplémentaire pour les *ancres éphémères*, une
+forme simplifiée des [sorties ancrées][topic anchor outputs] déjà utilisables
+avec la plupart des implémentations de LN.
 
 {:#async-payments}
-Eclair added [support][news220 async] for a basic form of async payments
-when [trampoline relay][topic trampoline payments] is used. Async
-payments would allow paying an offline node (such as a mobile wallet)
-without trusting a third-party with the funds. The ideal mechanism for
-async payments depends on [PTLCs][topic ptlc], but a partial
-implementation just requires a third party to delay forwarding the funds
-until the offline node comes back online. Trampoline nodes can provide
-that delay and so this PR makes use of them to allow experimentation
-with async payments.
+Eclair a ajouté le [support][news220 async] pour une forme basique de paiements
+asynchrones lorsque [relai par tremplin]topic trampoline payments] est utilisé.
+Les paiements asynchrones permettent de payer un nœud hors ligne (comme un
+portefeuille mobile) sans confier les fonds à un tiers. Le mécanisme idéal pour
+les paiements asynchrones dépend de [PTLCs][topic ptlc], mais une implémentation
+partielle nécessite simplement qu'un tiers retarde l'envoi des fonds jusqu'à ce
+que le nœud hors ligne revienne en ligne. Les nœuds Trampoline peuvent fournir
+ce délai et ce PR les utilise donc pour permettre l'expérimentation des paiements
+asynchrones.
 
 {:#parsing-bugs}
 October also saw the [first][news222 bug] of two block parsing bugs that
