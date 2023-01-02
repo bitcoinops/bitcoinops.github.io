@@ -65,10 +65,10 @@ excerpt: >
 {:#stateless-invoices}
 En janvier, LDK a [fusionné][news181 ldk1177] une implémentation de [factures apatrides][topic stateless invoices],
 qui lui permet de générer un nombre infini de factures sans stocker aucune donnée à leur sujet,
-sauf si le paiement est réussi. Les factures apatrides ont déjà été proposées en septembre 2021
+sauf si le paiement est réussi. Les factures sans état ont déjà été proposées en septembre 2021
 et la mise en œuvre de LDK diffère de la méthode suggérée, bien qu'elle accomplisse le même objectif
 et ne nécessite aucun changement du protocole LN. Plus tard dans le mois, une [mise à jour][news182 bolts912]
-de la spécification LN a été fusionnée pour permettre d'autres types de factures apatrides, avec
+de la spécification LN a été fusionnée pour permettre d'autres types de factures sans état, avec
 un support au moins partiel ajouté à [Eclair][news183 stateless], [Core Lightning][news195 stateless] et [LND][news196 stateless].
 
 {:#defense-fund}
@@ -83,7 +83,7 @@ logiciels de développer activement Bitcoin et les projets connexes."
 Une [discussion][news182 accounts] en janvier sur la possibilité d'ajouter plus facilement des frais
 aux transactions présignées a conduit à une [nouvelle discussion][news188 sponsorship] en février sur
 l'idée de Jeremy Rubin de [parrainage des frais de transaction][topic fee sponsorship] de 2020.
-Plusieurs défis à sa mise en œuvre ont été mentionnés. Bien que la discussion immédiate n'ait pas
+Plusieurs obstacles à sa mise en œuvre ont été mentionnés. Bien que la discussion immédiate n'ait pas
 beaucoup progressée, une technique permettant d'atteindre des objectifs similaires---mais qui,
 contrairement au parrainage, ne nécessitait pas de soft fork---a été [proposée][news231 v3relay] en octobre.
 
@@ -118,25 +118,25 @@ et [LND][news208 scid lnd].
 
 Cette année fut aussi le théâtre de nombreuses discussions et d'importantes actions autour
 de [Replace By Fee][topic rbf] (RBF). Notre bulletin d'information de janvier [résumait][news181 rbf]
-une proposition de Jeremy Rubin d'autoriser n'importe quelle transaction à être remplacée par
+une proposition de Jeremy Rubin d'autoriser le remplacement de n'importe quelle transaction par
 une transaction alternative payant plus de frais dans un court laps de temps après que
-la transaction originelle ait été vue par un noeud. Passée cette période, les règles existantes
-s'appliqueraient, n'autorisant le remplacement que pour des transactions signalant leur
-remplaçabilité avec [BIP125][]. Ce fonctionnement permettrait aux marchands d'accepter des
+la transaction originelle ait été prise en compte par un noeud. Passée cette période, les règles existantes
+s'appliqueraient, n'autorisant le remplacement que pour des transactions qui signalent
+cette possibilité avec [BIP125][]. Ce fonctionnement permettrait aux marchands d'accepter des
 transactions non confirmées comme ils le font actuellement, une fois écoulée la période de
 remplacement. Plus important encore, cela pourrait permettre aux protocoles qui dépendent
-de la remplaçabilité des transactions pour leur sécurité de ne pas avoir à se soucier des
+de la substituabilité des transactions pour leur sécurité de ne pas avoir à se soucier des
 transactions n'ayant pas optées pour le remplacement (via BIP125) tant qu'un noeud de ce
 protocole ou une *watchtower* dispose d'un temps raisonnable pour réagir après avoir eu
 connaissance d'une transaction.
 
-A la fin du mois de janvier, Gloria Zhao a entamée une nouvelle discussion à propos de RBF en
-[publiant][news186 rbf] une note sur le contexte entourant la politique RBF actuelle, énumérant
+A la fin du mois de janvier, Gloria Zhao a entamé une nouvelle discussion à propos de RBF en
+[publiant][news186 rbf] une note sur le contexte entourant la politique RBF actuelle, relevant
 plusieurs problèmes découverts au cours des dernières années (comme les [attaques par épinglage]
-[topic transaction pinning]), examinant comment la politique affecte les interfaces utilisateurs
+[topic transaction pinning]), examinant comment cette politique affecte les interfaces utilisateurs
 des portefeuilles, et décrivant des améliorations potentielles. Au début du mois de mars, Zhao
 a poursuivi avec le [résumé][news191 rbf] de deux discussions à propos de RBF entre de nombreux
-développeurs, l'une en personne et l'autre en ligne.
+développeurs, l'une en présentiel et l'autre en ligne.
 
 Egalement en mars, Larry Ruane a soulevé plusieurs [questions][news193 witrep] liées à RBF, concernant
 le remplacement des signatures des transactions (les *witnesses*) sans pour autant changer
@@ -147,7 +147,7 @@ une option de configuration `mempoolfullrbf`. Par défaut, cette option répliqu
 actuel de Bitcoin Core, n'autorisant donc le remplacement que pour les transactions contenant le
 signal [BIP125][] approprié. Les noeuds configurés avec cette option définie sur sa valeur alternative
 accepteraient les transactions de remplacement, même si la transaction remplacée ne signalait pas
-sa remplaçabilité, et ce tant au niveau du relai des transactions que dans les blocs. Riard a
+sa substituabilité, et ce tant au niveau du relai des transactions que dans les blocs. Riard a
 également débuté un fil sur la liste de diffusion Bitcoin-Dev pour discuter de ce changement.
 Presque tous les commentaires sur la PR étaient positifs et la plupart des discussions
 sur la liste de diffusion concernaient d'autres sujets : c'est donc sans surprise que la pull request
@@ -158,25 +158,25 @@ pour la version 24.0, qui serait la première à inclure l'option de configurati
 Dario Sneidermanis, voyant les notes de version préliminaires à propos de la nouvelle option,
 [posta][news222 rbf] sur la liste de diffusion Bitcoin-Dev que l'activation de l'option par trop
 d'utilisateurs et de mineurs rendrait fiable le remplacement de transactions ne signalant pas la
-remplaçabilité. Une fiabilité accrue du remplacement des transactions ne signalant pas leur remplaçabilité
+substituabilité. Une fiabilité accrue du remplacement des transactions ne signalant pas leur substituabilité
 rendrait également plus fiable le vol de services acceptant les transactions non confirmées comme
-finales, requiérant de ces services un changement de leur fonctionnement. La discussion s'est [poursuivie][news223 rbf]
+finales, requérant de ces services un changement de leur fonctionnement. La discussion s'est [poursuivie][news223 rbf]
 la semaine suivante, et celle encore [après][news224 rbf]. Un mois après que Sneidermanis eut soulevé
 ses premières inquiétudes sur la liste de diffusion, Suhas Daftuar [résumait][news225 rbf] certains des
 arguments contre la nouvelle option et ouvrait une PR pour la retirer de Bitcoin Core.
 D'autres PR similaires ont été ouvertes précedemment ou par la suite, mais celle de
 Daftuar concentra l'essentiel de la discussion autour du potentiel retrait de l'option.
 
-De nombreux contre-arguments en faveur du maintien de l'otpion `mempoolfullrbf` furent formulés sous
-la PR de Daftuar. Ces-derniers incluent les témoignages de plusieurs développeurs de
+De nombreux contre-arguments en faveur du maintien de l'option `mempoolfullrbf` furent formulés sous
+la PR de Daftuar, comme les témoignages de plusieurs développeurs de
 portefeuilles indiquant le cas relativement régulier d'utilisateurs souhaitant remmplacer leur
-transaction bien qu'ils n'aient pas signalé la remplaçabilité via BIP125.
+transaction bien qu'ils n'aient pas signalé la substituabilité via BIP125.
 
 A la fin du mois de novembre, Daftuar avait fermé sa PR et le projet Bitcoin Core avait
 publié la version 24.0 du logiciel, avec l'option `mempoolfullrbf`. En décembre, le développeur 0xB10C
 [publia][news230 rbf] un site internet pour suivre l'occurence de transactions de remplacement ne
 contenant pas le signal de BIP125, indiquant que n'importe quelle transaction de ce type ayant été minée
-l'eut probablement été par un mineur ayant activé l'option `mempoolfullrbf` (ou une option similaire dans
+l'avait probablement été par un mineur ayant activé l'option `mempoolfullrbf` (ou une option similaire dans
 un autre logiciel que Bitcoin Core). A la fin de l'année, full-RBF était toujours activement discuté
 dans d'autres PR de Bitcoin Core et sur la liste de diffusion.
 
@@ -185,16 +185,15 @@ dans d'autres PR de Bitcoin Core et sur la liste de diffusion.
 ## Avril
 
 {:#silent-payments}
-En avril, Ruben Somsen a [proposé][news194 sp] l'idée des [paiement silencieux][topic silent payments],
+En avril, Ruben Somsen a [proposé][news194 sp] l'idée des [paiements silencieux][topic silent payments],
 qui permettraient à quelqu'un de payer un identifiant public (une "adresse") sans pour autant utiliser
 cet identifiant on-chain. Cela participerait à réduire la [réutilisation d'adresse][topic output linking].
 Par exemple, Alice pourrait publier un identifiant public sur son site internet, que Bob serait ensuite
-en mesure de transformer en une adresse Bitcoin unique depuis laquelle seule Alice peut dépenser.
+en mesure de transformer en une adresse Bitcoin unique que seule Alice peut dépenser.
 Si Carole se rend par la suite sur le site d'Alice et réutilise le même identifiant public, elle
 dérivera une adresse différente pour payer Alice, que ni Bob ni aucune autre tierce partie ne pourra
 relier à Alice. Par la suite, le développeur W0ltx a proposé une [implémentation][news202 sp] des
-*silent payments* pour Bitcoin Core, y apportant d'importantes [mises à jour][news214 sp]
-plus tard dans l'année.
+*silent payments*  pour Bitcoin Core, y apportant ultérieurement d'importantes [mises à jour][news214 sp].
 
 {:#taro}
 Lightning Labs a [annoncé][news195 taro] Taro, une proposition de protocole (basée sur diverses propositions)
@@ -216,14 +215,14 @@ aux attaques menées par les ordinateurs quantiques rapides qui pourraient exist
 {:#musig2}
 Le protocole [MuSig2][topic musig] pour la création de [multi-signatures schnorr]
 [topic multisignature] a connu plusieurs développements en 2022.
-Une [proposisition de BIP][news195 musig2] a reçu d'importants [retour d'informations][news198
+Une [proposition de BIP][news195 musig2] a reçu d'importants [retours d'informations][news198
 musig2] en Mai. Plus tard, en octobre, Yannick Seurin, Tim
 Ruffing, Elliott Jin, and Jonas Nick ont découvert une
-[vulnérabilité][news222 musig2] de certaines façons dont le protocole pourrait être utilisé,
-que les chercheurs ont annoncé qu'ils prévoyaient de corriger dans une version mise à jour.
+[vulnérabilité][news222 musig2] affectant certaines façons dont le protocole pourrait être utilisé.
+Les chercheurs ont annoncé qu'ils prévoyaient de corriger cela à l'occasion d'une mise à jour.
 
 {:#package-relay}
-Un projet de BIP pour [le relai de paquet][topic package relay] était
+Un projet de BIP pour [le relai de paquet][topic package relay] a été
 [posté][news201 package relay] par Gloria Zhao en Mai. Le relai de paquet
 corrige un problème important avec les variations de frais ["fee bumping" CPFP][topic
 cpfp] sur Bitcoin Core où les nœuds individuels n'accepteront une transaction enfant de type "fee-bumping"
@@ -262,13 +261,13 @@ au cours de l'année.
   et d'une meilleure recherche probabiliste des paiements.
 
 - [BDK 0.17.0][news193 bdk] a facilité la dérivation des adresses,
-  même lorsque le porte-monnaie est hors ligne.
+  même lorsque le portefeuille est hors ligne.
 
 - [Bitcoin Core 23.0][news197 bcc] fournit des portefeuilles [descripteurs]
   [topic descriptors] par défaut pour les nouveaux portefeuilles et permet
   également aux portefeuilles avec descripteurs de prendre facilement en charge
   la réception vers des adresses [bech32m][topic bech32] en utilisant [taproot]
-  [topic taproot].  Il a également augmenté sa prise en charge de l'utilisation
+  [topic taproot]. Il a également augmenté sa prise en charge de l'utilisation
   de ports TCP/IP autres que ceux par défaut et a commencé à autoriser
   l'utilisation de la superposition de réseau [CJDNS][].
 
@@ -284,12 +283,12 @@ au cours de l'année.
   possibilité de permettre l'approbation automatique des paiements à la demande
   et des remboursements.
 
-- [LDK 0.0.108 et 0.0.107][news205 ldk] a ajouté la prise en charge de [large canaux]
+- [LDK 0.0.108 et 0.0.107][news205 ldk] a ajouté la prise en charge de [larges canaux]
   [topic large channels] et de [canaux zéro-conf][topic zero-conf channels] en plus
   de fournir un code qui permet aux clients mobiles de synchroniser les informations
   de routage du réseau (gossip) à partir d'un serveur.
 
-- [BDK 0.19.0][news205 bdk] a ajouté un support expérimental pour [taproot][topic taproot]
+- [BDK 0.19.0][news205 bdk] a ajouté la prise en charge expérimentale de [taproot][topic taproot]
   à travers les [descripteurs][topic descriptors], les [PSBT][topic psbt], et d'autres
   sous-systèmes. Il a également ajouté un nouvel algorithme de [sélection de pièces]
   [topic coin selection].
@@ -328,8 +327,8 @@ au cours de l'année.
   politique [Replace-By-Fee][topic rbf] (RBF) du noeud, un nouveau RPC `sendall`
   pour dépenser facilement tous les fonds d'un portefeuille en une seule transaction,
   un RPC `simulaterawtransaction` qui peut être utilisé pour vérifier comment
-  une transaction affectera un porte-monnaie, et la possibilité de créer des
-  [descripteurs][topic descriptors] à surveiller uniquement contenant des expressions
+  une transaction affectera un portefeuille, et la possibilité de créer des
+  [descripteurs][topic descriptors] à surveiller uniquement, contenant des expressions
   [miniscript][topic miniscript] pour améliorer la compatibilité avec d'autres logiciels.
 
 </div>
@@ -338,7 +337,7 @@ au cours de l'année.
 
 {:#ln-meet}
 En juin, les développeurs LN se sont rencontrés [news204 ln] pour discuter de l'avenir
-du développement des protocoles. Parmi les sujets abordés, citons les canaux LN basé
+du développement des protocoles. Parmi les sujets abordés, citons les canaux LN basés
 sur [taproot][topic taproot], [tapscript][topic tapscript] et [MuSig2][topic musig]
 (y compris MuSig2 récursif), la mise à jour du protocole de gossip pour annoncer les
 canaux nouveaux et modifiés, les [messages en oignons][topic onion messages], les [chemins aveugles]
@@ -360,10 +359,10 @@ préfèrent tenter de limiter le débit avant d'ajouter des frais supplémentair
 Ce mois-ci, Bitcoin Core a également [fusionné un PR][news209 miniscript]
 en ajoutant la prise en charge de la surveillance uniquement pour les
 [descripteurs de script de sortie][topic descriptors] écrits en [miniscript][topic miniscript].
-Un futur PR devrait permettre au porte-monnaie de créer des signatures pour
-les descripteurs de dépenses basés sur le miniscript. À mesure que d'autres
+Un futur PR devrait permettre au portefeuille de créer des signatures pour
+les descripteurs de dépenses basés sur miniscript. À mesure que d'autres
 portefeuilles et dispositifs de signature mettent en œuvre la prise en charge
-des miniscripts, il devrait être plus facile de transférer des politiques
+de miniscript, il devrait être plus facile de transférer des politiques
 entre portefeuilles ou de faire coopérer plusieurs portefeuilles pour dépenser
 des bitcoins, par exemple des politiques multi-sig ou des politiques impliquant
 différents signataires pour différentes occasions (par exemple, des signataires de secours)
@@ -383,10 +382,10 @@ immédiatement les paiements des clients.
 
 {:#jamming}
 Antoine Riard et Gleb Naumenko ont [publiés][news214 jam] un guide sur les
-[attaques par brouillage de canaux][topic channel jamming attacks] et proposés
-plusieur ssolutions. Pour chaque canal qu'un attaquant contrôle, il peut rendre
+[attaques par brouillage de canaux][topic channel jamming attacks] et proposé
+plusieurs ssolutions. Pour chaque canal qu'un attaquant contrôle, il peut rendre
 plus d'une douzaine d'autres canaux inutilisables en envoyant des paiements qui
-ne se terminent jamais---ce qui signifie que l'attaquant n'a pas besoin de payer
+n'aboutissent jamais---ce qui signifie que l'attaquant n'a pas besoin de payer
 de coûts directs. Le problème est connu depuis 2015, mais aucune solution proposée
 précédemment n'a été largement acceptée. En novembre, Clara Shikhelman et Sergei
 Tikhomirov publiaient leur propre [papier][news226 jam] avec une analyse et une
@@ -456,7 +455,7 @@ avoir plus de sauts mais un coût effectif plus faible, ou bien essayer le même
 ## Octobre
 
 {:#v3-tx-relay}
-En octobre, Gloria Zhao a [proposée][news220 v3] d'autoriser les transactions
+En octobre, Gloria Zhao a [proposé][news220 v3] d'autoriser les transactions
 via la version numéro 3 à utiliser un ensemble modifié de politiques
 de relais de transaction. Ces politiques sont basées sur l'expérience de
 l'utilisation de [CPFP][topic cpfp] et de [RBF][topic rbf], plus des idées
@@ -497,7 +496,7 @@ John Light a [posté][news222 rollups] un rapport de recherche qu'il a préparé
 sur les validity rollups---un type de sidechain où l'état actuel de la sidechain
 est stocké de manière compacte sur la chaîne principale. Un propriétaire de bitcoins
 de sidechain peut utiliser l'état stocké sur la chaîne principale pour prouver
-combien de bitcoins de sidechain il contrôle. En soumettant une transaction sur
+combien de bitcoins il contrôle dans la sidechain. En soumettant une transaction sur
 la chaîne principale avec une preuve de validité, il peut retirer les bitcoins
 qu'il possède sur la chaîne latérale, même si les opérateurs ou les mineurs de
 la chaîne latérale tentent d'empêcher le retrait. Les recherches de Light décrivent
@@ -510,7 +509,7 @@ La proposition de [BIP324][] pour un [protocole de transport P2P v2 crypté][new
 a été mise à jour et discutée sur la liste de diffusion pour la première fois en
 trois ans. Le cryptage du transport des transactions non confirmées peut aider
 à cacher leur origine aux oreilles indiscrètes qui contrôlent de nombreux relais
-Internet (par exemple, les grands FAI et les gouvernements).  Il peut également
+Internet (par exemple, les grands FAI et les gouvernements). Il peut également
 aider à détecter les falsifications et éventuellement rendre les [attaques par éclipse][topic eclipse attacks]
 plus difficiles.
 
@@ -574,9 +573,9 @@ tard un nouvel opcode différent, `OP_FOLD`, comme une construction plus génér
 En mars, la discussion sur le CTV et les propositions d'opcode plus récentes
 ont conduit à une [discussion][news190 recov] sur la limitation de l'expressivité
 du langage Script de Bitcoin, principalement pour empêcher les *conditions de
-dépenses récursives*---conditions qui devraient être remplies dans chaque
+dépenses récursives*---conditions qui devraient être remplies à perpétuité dans chaque
 transaction dépensant à nouveau ces bitcoins ou tout autre bitcoin fusionné
-avec lui à perpétuité. Les préoccupations concernaient notamment la perte de
+avec lui. Les préoccupations concernaient notamment la perte de
 résistance à la censure, l'activation de [drivechains][topic sidechains],
 l'encouragement de calculs inutiles et la possibilité pour les utilisateurs
 de perdre accidentellement des pièces en raison de conditions de dépenses récursives.
@@ -598,13 +597,13 @@ car lui et d'autres partisans de CTV évaluaient les réactions qu'ils avaient r
 En mai, Rusty Russell a [mis à jour][news200 ctv] sa proposition `OP_TX`.
 La proposition initiale autorisait les conditions de dépenses récursives,
 ce qui a suscité les préoccupations mentionnées plus haut dans cette section.
-Au lieu de cela, Russell a proposé une version initiale de TX qui était
-limitée à permettre le comportement de CTV, qui avait été spécifiquement
+Au lieu de cela, Russell a proposé une version initiale de TX qui
+se limitait à permettre le comportement de CTV, qui avait été spécifiquement
 conçu pour empêcher les conditions récursives. Cette nouvelle version de TX
 pourrait être mise à jour progressivement à l'avenir pour fournir des
 fonctionnalités supplémentaires, ce qui la rendrait plus puissante mais
 permettrait également à ces nouvelles fonctionnalités d'être analysées
-indépendamment. Une discussion supplémentaire en mai a examiné l'opcode
+indépendamment. Une discussion complémentaire en mai a examiné l'opcode
 `OP_CAT` (supprimé de Bitcoin en 2010), que certains développeurs suggèrent
 occasionnellement d'ajouter à l'avenir.
 
@@ -628,11 +627,11 @@ majeurs proposés à la politique de relais des transactions (tels que le
 [relai de paquet][topic package relay]).
 
 En novembre, Salvatore Ingala a [posté][news226 matt] sur la liste de
-diffusion Bitcoin-Dev une proposition pour un nouveau type de conditions
+diffusion Bitcoin-Dev une proposition pour un nouveau type de condition
 de dépense (nécessitant un soft fork) qui permettrait d'utiliser des arbres
 de merkle pour créer des contrats intelligents qui peuvent transporter
 l'état d'une transaction onchain à une autre. Cela serait similaires aux
-contrats intelligents utilisés sur d'autres systèmes de crypto-monnaies,
+contrats intelligents utilisés sur d'autres systèmes de cryptomonnaies,
 mais serait compatible avec le système existant de Bitcoin basé sur UTXO.
 
 </div>
