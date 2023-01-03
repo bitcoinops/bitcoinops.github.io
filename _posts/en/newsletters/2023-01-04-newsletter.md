@@ -112,11 +112,13 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #26265][] POLICY: Relax MIN_STANDARD_TX_NONWITNESS_SIZE to 65 non-witness bytes FIXME:glozow
-(maybe link to
-https://bitcoinops.org/en/newsletters/2022/10/19/#minimum-relayable-transaction-size
-and/or
-https://bitcoinops.org/en/newsletters/2022/11/09/#bitcoin-core-pr-review-club )
+- [Bitcoin Core #26265][] relaxes the minimum permitted non-witness
+  serialized size of transactions in transaction relay policy from 82
+bytes to 65 bytes. For example, a transaction with a single input and
+single output with 4 bytes of OP\_RETURN padding, which previously
+would have been rejected for being too small, could now be accepted
+into the node's mempool and relayed. See [Newsletter #222][min relay
+size ml] for background information and motivation for this change.
 
 - [Bitcoin Core #21576][] allows wallets using an external signer (e.g. [HWI][topic hwi]) to fee bump
   using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC.
@@ -208,3 +210,4 @@ https://bitcoinops.org/en/newsletters/2022/11/09/#bitcoin-core-pr-review-club )
 [eclair 0.8 rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.8.0.md
 [ldk 0.0.113]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.113
 [bdk 0.26.0-rc.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0-rc.2
+[min relay size ml]: /en/newsletters/2022/10/19/#minimum-relayable-transaction-size
