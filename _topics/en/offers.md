@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Eclair #2499 allows specifying a blinded route to use when using a BOLT12 offer"
     url: /en/newsletters/2022/11/30/#eclair-2499
 
+  - title: "LDK #1738 and #1908 provide additional features for handling offers"
+    url: /en/newsletters/2023/01/04/#ldk-1738
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

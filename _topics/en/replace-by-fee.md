@@ -135,6 +135,9 @@ optech_mentions:
   - title: "2022 year-in-review: replace-by-fee"
     url: /en/newsletters/2022/12/21/#rbf
 
+  - title: "Continued RBF discussion, including number of full-RBF nodes, RBF-FSS, and RBF motivation"
+    url: /en/newsletters/2023/01/04/#continued-rbf-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

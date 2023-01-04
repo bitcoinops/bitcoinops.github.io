@@ -37,12 +37,12 @@ Bitcoin les plus répandus.
 
     - *Les expirations HTLC requises sont longues :* L'absence de confiance
       exige que tout participant à une usine puisse en sortir et reprendre
-      le contrôle exclusif de ses fonds sur la chaîne.  Ceci est accompli
+      le contrôle exclusif de ses fonds sur la chaîne. Ceci est accompli
       par le participant qui publie l'état actuel des soldes dans l'usine
-      onchain.  Cependant, un mécanisme est nécessaire pour empêcher le
+      onchain. Cependant, un mécanisme est nécessaire pour empêcher le
       participant de publier un état antérieur, par exemple un état où il
       contrôlait une plus grande quantité d'argent. La proposition originale
-      de l'usine accomplit cela en utilisant une ou plusieurs transactions
+      accomplit cela en utilisant une ou plusieurs transactions
       verrouillées dans le temps qui garantissent que les états plus récents
       peuvent être confirmés plus rapidement que les états périmés.
 
@@ -58,7 +58,7 @@ Bitcoin les plus répandus.
 
     - *Tout ou rien :* pour que les usines atteignent vraiment leur meilleure
       efficacité, tous leurs canaux doivent également être fermés de manière
-      coopérative dans une seule transaction onchain.  Les fermetures coopératives
+      coopérative dans une seule transaction onchain. Les fermetures coopératives
       ne sont pas possibles si l'un des participants initiaux ne répond plus---et la
       probabilité qu'un participant ne réponde plus s'approche de 100 % lorsque
       le nombre de participants augmente, ce qui limite le bénéfice maximal que
@@ -74,7 +74,7 @@ Bitcoin les plus répandus.
     préoccupations. Tous découlent d'une proposition précédente de Law [posted][law tp]
     en octobre pour des *pénalités ajustables*---la capacité de séparer la gestion
     du mécanisme d'exécution (des pénalités) de la gestion d'autres fonds. Cette
-    précédente proposition  n'a pas encore été discutée sur la liste de diffusion
+    précédente proposition n'a pas encore été discutée sur la liste de diffusion
     Lightning-Dev. Au moment où nous écrivons ces lignes, la nouvelle proposition
     de Law n'a pas non plus fait l'objet de discussions. Si ces propositions sont
     valables, elles auraient l'avantage, par rapport à d'autres propositions, de
@@ -110,8 +110,8 @@ Bitcoin les plus répandus.
     - *Contre-pression :* si un nœud au milieu d'un circuit refuse un HTLC,
       tous les nœuds du circuit (pas seulement ceux qui se trouvent plus bas
       dans le circuit) peuvent utiliser l'emplacement et les fonds de ce HTLC
-      pour transmettre d'autres paiements.  Cela signifie qu'Alice a peu
-      d'intérêt à refuser plus de 10 HTLC de Mallory - elle peut simplement
+      pour transmettre d'autres paiements. Cela signifie qu'Alice a peu
+      intérêt à refuser plus de 10 HTLC de Mallory---elle peut simplement
       espérer qu'un nœud ultérieur du circuit exécutera CircuitBreaker ou un
       logiciel équivalent.
 
@@ -207,7 +207,7 @@ et réponses les plus populaires depuis notre dernière mise à jour.*
   Plusieurs réponses expliquent qu'en raison du coût moins élevé de la génération d'un grand nombre
   d'adresses Tor par rapport aux adresses IPv4 et IPv6, un opérateur de nœuds Bitcoin utilisant
   exclusivement le réseau Tor pourrait plus facilement être [attaqué par éclipse][topic eclipse attacks] par rapport
-  à un opérateur utilisant uniquement le réseau clair ou une combinaison de [réseaux d'anonymat][topic anonymity networks].
+  à un opérateur utilisant uniquement le réseau en clair ou une combinaison de [réseaux d'anonymat][topic anonymity networks].
 
 - [Pourquoi n'est-il pas possible, de manière réaliste, d'avoir trois canaux (ou plus) dans Lightning aujourd'hui ?]({{bse}}116257)
   Murch explique que puisque les canaux LN utilisent actuellement le mécanisme de pénalité LN qui
@@ -300,7 +300,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   s'agit d'un transfert intercepté, similaire aux [paiements fantômes][LDK phantom payments]
   (voir [Bulletin d'information n°188][news188 phantom]). LDK génère alors un événement,
   donnant au LSP la possibilité d'ouvrir le canal JIT. Le LSP peut alors transmettre
-  le paiement sur le canal nouvellement ouvert ou l'échouer.
+  le paiement sur le canal nouvellement ouvert ou le mettre en échec.
 
 - [BOLTs #1021][] permet aux messages d'erreur de routage en oignon de contenir un flux [TLV][],
   qui pourra être utilisé à l'avenir pour inclure des informations supplémentaires sur l'échec.
