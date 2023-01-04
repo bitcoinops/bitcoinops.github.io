@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter warns users of Bitcoin Knots about a release
+Cette semqine le bulletin d'informqtion warns users of Bitcoin Knots about a release
 signing key compromise, announces the release of two software forks of
 Bitcoin Core, and summarizes continued discussion about replace-by-fee
 policies.  Also included are our regular sections with the announcements
