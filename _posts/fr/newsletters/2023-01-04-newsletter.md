@@ -60,7 +60,7 @@ Bitcoin les plus répandus.
 
     - *Noeuds Full-RBF :* Peter Todd a sondé les nœuds complets qui
       annonçaient qu'ils exécutaient Bitcoin Core 24.x et acceptaient
-      les connexions entrantes sur une adresse IPv4.  Il a constaté][todd probe]
+      les connexions entrantes sur une adresse IPv4.  Il a [constaté][todd probe]
       qu'environ 17 % d'entre eux relayaient un remplacement complet
       de RBF : une transaction qui remplaçait une transaction qui ne
       contenait pas le signal [BIP125][]. Cela suggère que ces noeuds
