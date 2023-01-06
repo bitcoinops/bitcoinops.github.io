@@ -8,10 +8,10 @@ layout: newsletter
 lang: fr
 ---
 Cette semaine le bulletin d'information met en garde les utilisateurs de
-Bitcoin Knots contre une compromission de la clé de signature de la version,
+Bitcoin Knots contre une compromission de la clé de signature de version,
 annonce la publication de deux forks logiciels de Bitcoin Core et résume la
-suite de la discussion sur les politiques de remplacement par des frais. Vous
-trouverez également nos sections habituelles avec les annonces de nouvelles
+discussion ininterrompue sur les politiques de remplacement par des frais (replace-by-fee).
+Vous trouverez également nos sections habituelles avec les annonces de nouvelles
 versions de logiciels et de versions candidates, ainsi que des descriptions
 de changements significatifs dans les logiciels d'infrastructure
 Bitcoin les plus répandus.
@@ -50,8 +50,8 @@ Bitcoin les plus répandus.
       full-RBF. Peter Todd note que Bitcoin Knots, une autre implémentation
       de nœuds complets, annonce également le bit de service, bien qu'il ne
       contienne pas de code pour se connecter spécifiquement à des nœuds
-      annonçant le support de full-RBF. Le correctif est basé sur le Bitcoin
-      Core PR [#25600] [bitcoin core #25600].
+      annonçant le support de full-RBF. Le correctif est basé sur le PR [#25600]
+      de Bitcoin Core [bitcoin core #25600].
 
 - **Suite de la discussion autour de RBF :** Dans la discussion en cours
   sur l'activation de [full-RBF][topic rbf] sur le réseau principal,
@@ -117,41 +117,42 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #26265][] relaxes the minimum permitted non-witness
-  serialized size of transactions in transaction relay policy from 82
-bytes to 65 bytes. For example, a transaction with a single input and
-single output with 4 bytes of OP\_RETURN padding, which previously
-would have been rejected for being too small, could now be accepted
-into the node's mempool and relayed. See [Newsletter #222][min relay
-size ml] for background information and motivation for this change.
+- [Bitcoin Core #26265][] diminue la taille minimale autorisée des transactions
+  sans témoin dans la politique de relais de transaction de 82 octets
+  à 65 octets. Par exemple, une transaction avec une seule entrée et
+  une seule sortie avec 4 octets de remplissage OP_RETURN, qui auparavant
+  aurait été rejetée car trop petite, pourrait désormais être acceptée
+  dans le mempool du nœud et relayée. Voir [le bulletin #222][min relay
+  size ml] pour des informations générales et la motivation pour ce changement.
 
-- [Bitcoin Core #21576][] allows wallets using an external signer (e.g. [HWI][topic hwi]) to fee bump
-  using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC.
+- [Bitcoin Core #21576][] permet aux portefeuilles utilisant un signataire
+  externe (par exemple [HWI]) de majorer les frais en utilisant l'[opt-in RBF][topic rbf]
+  dans l'interface graphique et lors de l'utilisation du RPC bumpfee.
 
 - [Bitcoin Core #24865][] permet de restaurer la sauvegarde d'un portefeuille
   sur un nœud qui a été vidé de ses anciens blocs, à condition que le nœud
   dispose encore de tous les blocs produits après la création du portefeuille.
   Les blocs sont nécessaires pour que Bitcoin Core puisse les analyser afin
   de détecter toute transaction affectant le solde du portefeuille.
-  Bitcoin Core est en mesure de déterminer l'âge du porte-monnaie car sa
-  sauvegarde contient la date de création du porte-monnaie.
+  Bitcoin Core est en mesure de déterminer l'âge du portefeuille car la
+  sauvegarde contient sa date de création.
 
 - [Bitcoin Core #23319][] met à jour le RPC `getrawtransaction` pour fournir
   des informations supplémentaires si le paramètre `verbose` a la valeur `2`.
-  Les informations supplémentaires comprennent les frais payés par la transaction
-  et des informations sur chacune des sorties des transactions précédentes
+  Les informations additionnelles précisent les frais payés par la transaction
+  et donnent des informations sur chacune des sorties des transactions précédentes
   ("prevouts") qui sont dépensées en étant utilisées comme entrées de cette
   transaction. Voir [Bulletin d'information n°172][news172 prevout] pour plus
   de détails sur la méthode utilisée pour récupérer ces informations.
 
 - [Bitcoin Core #26628][] commence à rejeter les requêtes RPC qui incluent
   plusieurs fois le même nom de paramètre. Auparavant, le démon traitait une
-  requête avec des paramètres répétés comme si elle n'avait que le dernier
-  des paramètres répétés, par exemple `{"foo"="bar", "foo"="baz"}` était
+  requête avec des paramètres répétés comme si seul le dernier
+  des paramètres était répétés, par exemple {"foo"="bar", "foo"="baz"} était
   traité comme `{"foo"="baz"}`. La requête échoue alors. Lors de l'utilisation
   de `bitcoin-cli` avec des paramètres nommés, le comportement est inchangé :
   les paramètres multiples utilisant le même nom ne seront pas rejetés mais
-  seul le dernier des répétés sera envoyé.
+  seul le dernier répété sera envoyé.
 
 - [Eclair #2464][] ajoute la possibilité de déclencher un événement lorsqu'un
   pair distant devient prêt à traiter des paiements. Ceci est particulièrement
