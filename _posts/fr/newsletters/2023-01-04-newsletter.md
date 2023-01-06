@@ -214,4 +214,4 @@ size ml] for background information and motivation for this change.
 [eclair 0.8 rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.8.0.md
 [ldk 0.0.113]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.113
 [bdk 0.26.0-rc.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0-rc.2
-[min relay size ml]: /en/newsletters/2022/10/19/#taille-minimale-des-transactions-relayables
+[min relay size ml]: /fr/newsletters/2022/10/19/#taille-minimale-des-transactions-relayables
