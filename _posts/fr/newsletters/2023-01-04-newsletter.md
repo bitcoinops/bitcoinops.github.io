@@ -7,110 +7,115 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Cette semqine le bulletin d'informqtion warns users of Bitcoin Knots about a release
-signing key compromise, announces the release of two software forks of
-Bitcoin Core, and summarizes continued discussion about replace-by-fee
-policies.  Also included are our regular sections with the announcements
-of new software releases and release candidates, plus descriptions of
-notable changes to popular Bitcoin infrastructure software.
+Cette semaine le bulletin d'information met en garde les utilisateurs de
+Bitcoin Knots contre une compromission de la clé de signature de la version,
+annonce la publication de deux forks logiciels de Bitcoin Core et résume la
+suite de la discussion sur les politiques de remplacement par des frais. Vous
+trouverez également nos sections habituelles avec les annonces de nouvelles
+versions de logiciels et de versions candidates, ainsi que des descriptions
+de changements significatifs dans les logiciels d'infrastructure
+Bitcoin les plus répandus.
 
 ## Nouvelles
 
-- **Bitcoin Knots signing key compromised:** the maintainer of Bitcoin
-  Knots full node implementation announced the compromise of the PGP key
-  they use to sign releases of Knots.  They say, "do not download
-  Bitcoin Knots and trust it until this is resolved.  If you already did
-  in the last few months, consider shutting that system down for now."
+- **La clé de signature de Bitcoin Knots est compromise:** le responsable de
+  l'implémentation de nœuds Bitcoin Knots a annoncé la compromission de la clé
+  PGP qu'il utilise pour signer les versions de Knots. Il dit : "ne téléchargez
+  pas Bitcoin Knots et ne lui faites pas confiance jusqu'à ce que ce problème
+  soit résolu. Si vous l'avez déjà fait au cours des derniers mois, envisagez
+  de fermer ce système pour le moment."
+
   <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
-  Other full node implementations are unaffected.
 
+  Les autres implémentations de nœuds complets ne sont pas affectées.
 
-- **Software forks of Bitcoin Core:** last month saw the release of two
-  patchsets on top of Bitcoin Core:
+- **Forks logiciels de Bitcoin Core:** Le mois dernier, deux ensembles
+  de correctifs ont été publiés pour compléter Bitcoin Core :
 
-    - *Bitcoin Inquisition:* Anthony Towns [announced][towns bci] to the
-      Bitcoin-Dev mailing list a version of [Bitcoin Inquisition][], a
-      software fork of Bitcoin Core designed to be used on the default
-      [signet][topic signet] for testing proposed soft forks and other
-      significant protocol changes.  This version contains support for
-      the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
-      [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposals.
-      Towns's email also includes additional information that will be
-      useful to anyone participating in the signet tests.
+    - *Bitcoin Inquisition :* Anthony Towns a [annoncé][towns bci] à
+      la liste de diffusion Bitcoin-Dev une version de [Bitcoin Inquisition][],
+      un fork logiciel de Bitcoin Core conçu pour être utilisé sur le [signet][topic signet]
+      par défaut pour tester les soft forks proposés et d'autres changements
+      de protocole importants. Cette version contient le support des propositions
+      [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] et [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
+      Le courriel de Towns comprend également des informations supplémentaires
+      qui seront utiles à toute personne participant aux tests de signet.
 
-    - *Full-RBF peering node:* Peter Todd [announced][todd rbf node] a
-      patch on top of Bitcoin Core 24.0.1 that sets a [full-RBF service
-      bit][] when it advertises its network address to other nodes,
-      although only if the node is configured with `mempoolfullrbf`
-      enabled.  Nodes running the patch also connect to up to four
-      additional peers which had advertised that they support full-RBF.
-      Peter Todd notes that Bitcoin Knots, another full node implementation, also
-      advertises the service bit, although it doesn't contain code to
-      specifically peer with nodes advertising full-RBF support.  The
-      patch is based on Bitcoin Core PR [#25600][bitcoin core #25600].
+    - *Noeud d'appairage Full-RBF :* Peter Todd [a annoncé][todd rbf node]
+      un patch sur Bitcoin Core 24.0.1 qui active un [bit de service full-RBF][]
+      lorsqu'il annonce son adresse réseau à d'autres nœuds, mais seulement
+      si le nœud est configuré avec `mempoolfullrbf` activé. Les nœuds qui
+      exécutent le correctif se connectent également à un maximum de quatre
+      pairs supplémentaires qui avaient annoncé qu'ils prenaient en charge
+      full-RBF. Peter Todd note que Bitcoin Knots, une autre implémentation
+      de nœuds complets, annonce également le bit de service, bien qu'il ne
+      contienne pas de code pour se connecter spécifiquement à des nœuds
+      annonçant le support de full-RBF. Le correctif est basé sur le Bitcoin
+      Core PR [#25600] [bitcoin core #25600].
 
-- **Continued RBF discussion:** in ongoing discussion about enabling
-  [full-RBF][topic rbf] on mainnet, several parallel discussions were
-  held last month on the mailing list:
+- **Suite de la discussion autour de RBF :** Dans la discussion en cours
+  sur l'activation de [full-RBF][topic rbf] sur le réseau principal,
+  plusieurs discussions parallèles ont eu lieu le mois dernier sur la
+  liste de diffusion :
 
-    - *Full-RBF nodes:* Peter Todd probed full nodes which advertised
-      that they were running Bitcoin Core 24.x and were accepting
-      incoming connections on an IPv4 address.  He [found][todd probe]
-      that about 17% relayed a full-RBF replacement: a transaction which
-      replaced a transaction that did not contain the [BIP125][]
-      signal.  This suggests those nodes were running with
-      the `mempoolfullrbf` configuration option set to `true`, even
-      though the option defaults to `false`.
+    - *Noeuds Full-RBF :* Peter Todd a sondé les nœuds complets qui
+      annonçaient qu'ils exécutaient Bitcoin Core 24.x et acceptaient
+      les connexions entrantes sur une adresse IPv4.  Il a constaté][todd probe]
+      qu'environ 17 % d'entre eux relayaient un remplacement complet
+      de RBF : une transaction qui remplaçait une transaction qui ne
+      contenait pas le signal [BIP125][]. Cela suggère que ces noeuds
+      fonctionnaient avec l'option de configuration `mempoolfullrbf`
+      définie sur `true`, même si l'option est définie par défaut
+      sur `false`.
 
-    - *Reconsideration of RBF-FSS:*  Daniel Lipshitz [posted][lipshitz
-      fss] to the Bitcoin-Dev mailing list an idea for a type of
-      transaction replacement called First Seen Safe (FSS) where the
-      replacement would pay the original outputs at least the same
-      amounts as the original transaction, ensuring the replacement
-      mechanism couldn't be used to steal from the receiver of the
-      original transaction.  Yuval Kogman [replied][kogman fss] with a
-      link to an [earlier version][rbf-fss] of the same idea posted in
-      2015 Peter Todd.  In a [subsequent][todd fss] reply, Todd
-      described several ways in which the idea is much less preferable
-      than opt-in or full RBF.
+    - *Réexamen du RBF-FSS:*  Daniel Lipshitz [a posté][lipshitz fss]
+      sur la liste de diffusion Bitcoin-Dev une idée pour un type de
+      remplacement de transaction appelé First Seen Safe (FSS) où le
+      remplacement paierait aux sorties originales au moins les mêmes
+      montants que la transaction originale, assurant que le mécanisme
+      de remplacement ne pourrait pas être utilisé pour voler le récepteur
+      de la transaction originale. Yuval Kogman a [répondu][kogman fss]
+      avec un lien vers une [version antérieure][rbf-fss] de la même idée
+      postée en 2015 par Peter Todd. Dans une réponse [ultérieure][todd fss],
+      Todd a décrit plusieurs façons dont l'idée est beaucoup moins
+      préférable que l'opt-in ou le RBF complet.
 
-    - *Full-RBF motivation:* Anthony Towns [replied][towns rbfm] to a
-      thread about the motivation for various groups to perform
-      full-RBF.  Towns analyzes what economic rationality means---and
-      does not mean---in the context of miner transaction selection.
-      Miners optimizing for very short term profits would naturally
-      prefer full-RBF.  However, Towns notes that miners who have made a
-      long-term capital investment in mining equipment might instead
-      prefer to optimize fee income over multiple blocks, and that might
-      not always favor full-RBF.  He suggests three possible scenarios
-      for consideration.
+    - *Motivation du Full-RBF :* Anthony Towns [a répondu][towns rbfm] à
+      un fil de discussion sur la motivation de divers groupes à effectuer
+      des full-RBF. Towns analyse ce que la rationalité économique
+      signifie---et ne signifie pas---dans le contexte de la sélection des
+      transactions des mineurs. Les mineurs optimisant leurs profits à très
+      court terme préféreraient naturellement le full-RBF. Cependant, Towns
+      note que les mineurs qui ont fait un investissement à long terme dans
+      l'équipement minier pourraient plutôt préférer optimiser les revenus
+      des frais sur plusieurs blocs, et cela pourrait ne pas toujours favoriser
+      le full-RBF. Il suggère trois scénarios possibles à considérer.
 
-## Releases and release candidates
+## Mises à jour et version candidate
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d'infrastructure Bitcoin.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les versions candidates.*
 
-- [Eclair 0.8.0][] is a major version release for this popular LN node
-  implementation.  It adds support for [zero-conf channels][topic
-  zero-conf channels] and Short Channel IDentifier (SCID) aliases.  See
-  its [release notes][eclair 0.8 rn] for more information about those
-  features and other changes.
+- [Eclair 0.8.0][] est une version majeure de cette implémentation
+  populaire de nœuds LN. Elle ajoute la prise en charge des [canaux zéro-conf][topic zero-conf channels]
+  et des alias SCID (Short Channel IDentifier). Consultez ses [notes de version][eclair 0.8 rn]
+  pour plus d'informations sur ces fonctionnalités et d'autres changements.
 
-- [LDK 0.0.113][] is a new version of this library for building
-  LN-enabled wallets and applications.
+- [LDK 0.0.113][] est une nouvelle version de cette bibliothèque
+  permettant de créer des portefeuilles et des applications compatibles
+  avec LN.
 
-- [BDK 0.26.0-rc.2][] is a release candidate of this library for
-  building wallets.
+- [BDK 0.26.0-rc.2][] est une version candidate de cette bibliothèque
+  pour la création de portefeuilles.
 
-## Notable code and documentation changes
+## Changements principaux dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #26265][] relaxes the minimum permitted non-witness
   serialized size of transactions in transaction relay policy from 82
@@ -123,78 +128,77 @@ size ml] for background information and motivation for this change.
 - [Bitcoin Core #21576][] allows wallets using an external signer (e.g. [HWI][topic hwi]) to fee bump
   using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC.
 
-- [Bitcoin Core #24865][] allows a wallet backup to be restored on a
-  node that has been pruned of older blocks as long as the node still
-  has all of the blocks produced after the wallet was created.  The
-  blocks are needed so that Bitcoin Core can scan them for any
-  transactions affecting the wallet's balance.  Bitcoin Core is able to
-  determine the age of the wallet because its backup contains the date
-  the wallet was created.
+- [Bitcoin Core #24865][] permet de restaurer la sauvegarde d'un portefeuille
+  sur un nœud qui a été vidé de ses anciens blocs, à condition que le nœud
+  dispose encore de tous les blocs produits après la création du portefeuille.
+  Les blocs sont nécessaires pour que Bitcoin Core puisse les analyser afin
+  de détecter toute transaction affectant le solde du portefeuille.
+  Bitcoin Core est en mesure de déterminer l'âge du porte-monnaie car sa
+  sauvegarde contient la date de création du porte-monnaie.
 
-- [Bitcoin Core #23319][] updates the `getrawtransaction` RPC to provide
-  additional information if the `verbose` parameter is set to `2`.  The
-  additional information includes the fee the transaction paid and
-  information about each of the outputs from previous transactions
-  ("prevouts") which are spent by being used as inputs to this
-  transaction.  See [Newsletter #172][news172 prevout] for details about
-  the method used to retrieve the information.
+- [Bitcoin Core #23319][] met à jour le RPC `getrawtransaction` pour fournir
+  des informations supplémentaires si le paramètre `verbose` a la valeur `2`.
+  Les informations supplémentaires comprennent les frais payés par la transaction
+  et des informations sur chacune des sorties des transactions précédentes
+  ("prevouts") qui sont dépensées en étant utilisées comme entrées de cette
+  transaction. Voir [Bulletin d'information n°172][news172 prevout] pour plus
+  de détails sur la méthode utilisée pour récupérer ces informations.
 
-- [Bitcoin Core #26628][] begins rejecting RPC requests that include the
-  same parameter name multiple times.  Previously, the daemon treated a
-  request with repeated parameters as if it only had the last of the repeated
-  parameters, e.g. `{"foo"="bar", "foo"="baz"}` was treated as
-  `{"foo"="baz"}`.  Now the request will fail.  When using `bitcoin-cli`
-  with named parameters, the behavior is unchanged: multiple parameters using the same name
-  will not be rejected but only the last of the repeats will be sent.
+- [Bitcoin Core #26628][] commence à rejeter les requêtes RPC qui incluent
+  plusieurs fois le même nom de paramètre. Auparavant, le démon traitait une
+  requête avec des paramètres répétés comme si elle n'avait que le dernier
+  des paramètres répétés, par exemple `{"foo"="bar", "foo"="baz"}` était
+  traité comme `{"foo"="baz"}`. La requête échoue alors. Lors de l'utilisation
+  de `bitcoin-cli` avec des paramètres nommés, le comportement est inchangé :
+  les paramètres multiples utilisant le même nom ne seront pas rejetés mais
+  seul le dernier des répétés sera envoyé.
 
-- [Eclair #2464][] adds the ability to trigger an event when a remote
-  peer becomes ready to process payments.  This is especially useful in
-  the context of [async payments][topic async payments] where the local
-  node temporarily holds a payment for a remote peer, waits for the peer
-  to connect (or reconnect), and delivers the payment.
+- [Eclair #2464][] ajoute la possibilité de déclencher un événement lorsqu'un
+  pair distant devient prêt à traiter des paiements. Ceci est particulièrement
+  utile dans le contexte des [paiements asynchrones][topic async payments] où
+  le nœud local détient temporairement un paiement pour un pair distant, attend
+  que le pair se connecte (ou se reconnecte), et délivre le paiement.
 
-- [Eclair #2482][] allows sending payments using [blinded routes][topic
-  rv routing], which are paths whose last several hops are chosen
-  by the receiver.  The receiver uses onion encryption to obfuscate the
-  hop details and then provides the encrypted data to the spender, along with
-  the identity of the first node along the blinded route.  The spender
-  then constructs a payment path to that first node and includes the
-  encrypted details for the operators of the last several nodes to
-  decrypt and use to forward the payment to the receiver.  This allows
-  the receiver to accept a payment without disclosing the identity of
-  their node or channels to the spender, improving privacy.
+- [Eclair #2482][] permet d'envoyer des paiements en utilisant des [routes aveugles][topic rv routing],
+  qui sont des chemins dont les derniers sauts sont choisis par le récepteur.
+  Le récepteur utilise le chiffrement en oignon pour masquer les détails du saut
+  et fournit ensuite les données chiffrées à l'expéditeur, ainsi que l'identité
+  du premier nœud de la route aveugle. L'expéditeur construit alors un chemin
+  de paiement vers ce premier nœud et inclut les détails chiffrés pour que les
+  opérateurs des derniers nœuds les déchiffrent et les utilisent pour transmettre
+  le paiement au récepteur. Cela permet au récepteur d'accepter un paiement sans
+  révéler l'identité de son nœud ou de ses canaux à l'expéditeur, ce qui améliore
+  la confidentialité.
 
-- [LND #2208][] begins preferring different payment paths depending on
-  the maximum capacity of a channel relative to the amount to be spent.
-  As the amount to be sent approaches the capacity of a channel, that
-  channel becomes less likely to be selected for a path.  This is
-  broadly similar to pathfinding code already used in Core Lightning and
-  LDK.
+- [LND #2208][] commence à préférer différents chemins de paiement en fonction
+  de la capacité maximale d'un canal par rapport au montant à dépenser. Lorsque
+  le montant à envoyer se rapproche de la capacité d'un canal, ce dernier a moins
+  de chances d'être sélectionné pour un chemin. Ceci est largement similaire
+  au code de recherche de chemin déjà utilisé dans Core Lightning et LDK.
 
-- [LDK #1738][] and [#1908][ldk #1908] provide additional features for handling
-  [offers][topic offers].
+- [LDK #1738][] and [#1908][ldk #1908] fournit des fonctionnalités supplémentaires
+  pour le traitement des [offres][topic offers].
 
-- [Rust Bitcoin #1467][] adds methods for calculating the size in
-  [weight units][] of transaction inputs and outputs.
+- [Rust Bitcoin #1467][] ajoute des méthodes pour calculer la taille en
+  [unités de poids][] des entrées et sorties de la transaction.
 
-- [Rust Bitcoin #1330][] removes the `PackedLockTime` type, requiring
-  downstream code instead use the almost-identical `absolute::LockTime` type.  A
-  difference between the two types which may need to be investigated by
-  anyone updating their code is that `PackedLockTime` provided an `Ord`
-  characteristic but `absolute::LockTime` does not (although the
-  locktime will be considered in the `Ord` of the transaction containing
-  it).
+- [Rust Bitcoin #1330][] supprime le type `PackedLockTime`, demandant au code en aval
+  d'utiliser le type presque identique `absolute::LockTime`. Une différence entre
+  les deux types qui doit être étudiée par toute personne mettant à jour son code
+  est que `PackedLockTime` fournit une caractéristique `Ord` mais `absolute::LockTime`
+  ne le fait pas (bien que le temps de verrouillage soit considéré dans le `Ord` de
+  la transaction qui le contient).
 
-- [BTCPay Server #4411][] updates to using Core Lightning 22.11 (see
-  [Newsletter #229][news229 cln]).  Anyone who wants to put a hash of an
-  order description inside a [BOLT11][] invoice no longer needs to use the
-  `invoiceWithDescriptionHash` plugin but can instead set the
-  `description` field and enable the `descriptionHashOnly` option.
+- [BTCPay Server #4411][] mises à jour pour utiliser Core Lightning 22.11 (voir le
+  [Bulletin d'information #229][news229 cln]). Toute personne souhaitant mettre un
+  hachage de la description d'une commande dans une facture [BOLT11][] n'a plus
+  besoin d'utiliser le plugin `invoiceWithDescriptionHash` mais peut définir le
+  champ `description` et activer l'option `descriptionHashOnly`.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26265,21576,24865,23319,26628,2464,2482,2208,1738,1908,1467,1330,4411,25600" %}
 [news172 prevout]: /en/newsletters/2021/10/27/#bitcoin-core-22918
-[weight units]: https://en.bitcoin.it/wiki/Weight_units
+[unités de poids]: https://en.bitcoin.it/wiki/Weight_units
 [towns bci]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021275.html
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
 [todd probe]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021296.html
@@ -204,10 +208,10 @@ size ml] for background information and motivation for this change.
 [rbf-fss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008248.html
 [towns rbfm]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021276.html
 [todd rbf node]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021270.html
-[news229 cln]: /en/newsletters/2022/12/07/#core-lightning-22-11
-[full-rbf service bit]: https://github.com/petertodd/bitcoin/commit/c15b8d70778238abfa751e4216a97140be6369af
+[news229 cln]: /fr/newsletters/2022/12/07/#core-lightning-22-11
+[bit de service full-RBF]: https://github.com/petertodd/bitcoin/commit/c15b8d70778238abfa751e4216a97140be6369af
 [eclair 0.8.0]: https://github.com/ACINQ/eclair/releases/tag/v0.8.0
 [eclair 0.8 rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.8.0.md
 [ldk 0.0.113]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.113
 [bdk 0.26.0-rc.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0-rc.2
-[min relay size ml]: /en/newsletters/2022/10/19/#minimum-relayable-transaction-size
+[min relay size ml]: /en/newsletters/2022/10/19/#taille-minimale-des-transactions-relayables
