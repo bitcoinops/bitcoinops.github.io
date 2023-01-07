@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Eclair #2464 adds a trigger useful for allowing one node to deliver an async payment to a peer"
     url: /en/newsletters/2023/01/04/#eclair-2464
 
+  - title: "Idea for non-interactive channel open commitments may allow fast rebalancing for async payments"
+    url: /en/newsletters/2023/01/11/#non-interactive-ln-channel-open-commitments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments
