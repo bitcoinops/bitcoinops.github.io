@@ -118,11 +118,17 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Eclair #2455][] Add tlv stream to onion failures (#2455) FIXME:Xekyo
+- [Eclair #2455][] implements support for the optional Type-Length-Value (TLV) stream in
+  onion failure messages [recently introduced][bolts #1021] to BOLT 04.
+  The TLV stream allows nodes to report additional details about routing
+  failures and may be used for the proposed [fat errors][news224 fat]
+  scheme to further close the gap in error attribution.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="2455" %}
-[bdk 0.26.0-rc.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0-rc.2
+{% include linkers/issues.md v=2 issues="2455,1021" %}
+[bdk 0.26.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0
+[hwi 2.2.0-rc1]: https://github.com/bitcoin-core/HWI/releases/tag/2.2.0-rc.1
 [zp potentiam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003810.html
 [potentiam minsc]: https://min.sc/#c=pk%28A%29%20%26%26%20%28pk%28B%29%20%7C%7C%20older%286000%29%29
 [fournier potentiam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003813.html
+[news224 fat]: /en/newsletters/2022/11/02/#ln-routing-failure-attribution
