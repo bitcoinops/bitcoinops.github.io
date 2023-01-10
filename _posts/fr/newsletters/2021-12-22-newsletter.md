@@ -300,7 +300,7 @@ relais de transaction.
 En mai également, le projet C-Lightning a [fusionné][cl#4489] un plugin
 pour la gestion des [canaux à financement bipartite][topic dual funding]---des
 canaux où les deux parties peuvent fournir un certain montant du financement
-initial. En plus du travail antérieur sur le double financement [fusionné][cl#4410]
+initial. En plus du travail antérieur sur le financement bipartite [fusionné][cl#4410]
 cette année, cela permet à la partie qui initie l'ouverture du canal
 non seulement de dépenser les fonds par le canal mais aussi de les recevoir
 dans l'état initial du canal. Cette capacité initiale à recevoir des fonds
