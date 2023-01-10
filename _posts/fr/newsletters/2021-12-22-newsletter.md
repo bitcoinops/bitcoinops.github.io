@@ -90,7 +90,7 @@ des adresses bech32m par les portefeuilles et les services.
 Une autre [première version][cl 0.9.3] d'un nouveau protocole était les
 [messages en oignon][topic onion messages] et le [protocole d'offres][topic offers].
 Les messages en oignon permettent à un nœud LN d'envoyer un message à
-un autre noeud d'une manière qui minimise la surcharge par rapport à l'envoi
+un autre nœud d'une manière qui minimise la surcharge par rapport à l'envoi
 de messages basés sur le [HTLC][topic htlc]. Les offres utilisent les
 messages oignons pour permettre à un nœud de *offrir* de payer un autre nœud,
 permettant au nœud récepteur de renvoyer une facture détaillée et d'autres
