@@ -344,7 +344,7 @@ au lieu de les envoyer.
   ajouté [WebAuthN/FIDO2][fido2 website] comme option d'authentification
   à deux facteurs, apporté diverses améliorations à l'interface
   utilisateur et marqué le passage à l'utilisation de la numérotation
-  de [versions sémantiques][semantic versioning website] pour les 
+  de [versions sémantiques][semantic versioning website] pour les
   prochaines mises à jour.
 
 - [Eclair 0.6.0][] contient plusieurs améliorations qui renforcent
