@@ -221,7 +221,7 @@ et les mineurs sur la façon d'activer taproot.
   comme LN et [coinswaps][topic coinswap]. Optech a également [commencé][p4tr begins]
   sa série [Preparing for Taproot][p4tr].
 
-- **Juillet<!--taproot-->** a rencontré une [page][page bech32m] du Bitcoin Wiki
+- **Juillet<!--taproot-->** a rencontré une [page][bech32m page] du Bitcoin Wiki
   consacrée au suivi du support du format d'adresse bech32m nécessaire aux
   portefeuilles pour pouvoir utiliser taproot après son activation.
   De nombreux développeurs de portefeuilles et de services se sont montrés
