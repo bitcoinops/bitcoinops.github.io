@@ -406,7 +406,7 @@ a suggéré que les portefeuilles créant des dépenses taproot définissent
 une valeur nSequence par défaut même s'ils n'ont pas besoin des fonctionnalités
 offertes par les valeurs de séquence appliquées par consensus du [BIP68][] ;
 cela permettrait aux transactions créées par des logiciels qui ont besoin
-d'utiliser BIP68 de se fondre dans les transactions plus courantes.
+d'utiliser BIP68 de se fondre dans la masse des transactions plus courantes.
 Aucune des deux propositions n'a semblé faire beaucoup de progrès
 malgré quelques objections significatives.
 
@@ -417,7 +417,7 @@ dans Bitcoin Core, la première étape vers le relais de paquets.
 Le [relais de paquets][topic package relay] permettra aux nœuds
 de relais et aux mineurs de traiter des paquets de transactions
 liées comme s'il s'agissait d'une seule transaction à des fins de
-taux de frais. Un paquet pourrait contenir une transaction parent
+gestion des frais. Un paquet pourrait contenir une transaction parent
 avec un faible taux de frais et une transaction enfant avec un taux
 de frais élevé ; la rentabilité de l'exploitation de la transaction
 enfant inciterait les mineurs à exploiter également la transaction parent.
@@ -427,7 +427,7 @@ pour les nœuds de relayer les transactions sous forme de paquets,
 ce qui signifie que les transactions parentales à faible taux de frais
 pourraient ne pas atteindre les mineurs pendant les périodes à haut
 taux de frais, même si elles ont des enfants à haut taux de frais.
-Cela rend [la suppression de frais CPFP][topic cpfp] peu fiable pour
+Cela rend l'utilisation de [CPFP][topic cpfp] peu fiable pour
 les protocoles de contrat utilisant des transactions présignées, comme LN.
 Le relais de paquet espère résoudre ce problème de sécurité clé.
 
@@ -439,7 +439,7 @@ réduisant ainsi la bande passante du réseau et la latence du paiement.
 L'idée a été [élargie][ff expanded] cette année pour décrire comment un
 porte-monnaie LN pourrait recevoir plusieurs paiements sans apporter sa clé
 de signature en ligne pour chaque paiement, ce qui facilite le maintien
-de cette clé de signature sécurisée.
+de cette clé de signature en sécurité.
 
 ## Juillet
 
@@ -448,13 +448,13 @@ Après des années de discussion et de développement, la première
 implémentation d'un système décentralisé d'annonces de liquidité
 a été [fusionnée][cl#4639] dans une implémentation LN. La proposition
 d'[annonce de liquidité][bolts #878] encore à l'état de projet
-permet à un noeud d'utiliser le protocole de commérage LN pour
+permet à un nœud d'utiliser le protocole de *gossip* LN pour
 annoncer sa volonté de louer ses fonds pour une période de temps,
 donnant aux autres noeuds la possibilité d'acheter une capacité
 entrante qui leur permet de recevoir des paiements instantanés.
 Un nœud qui voit l'annonce peut simultanément payer et recevoir
 la capacité entrante en utilisant l'ouverture d'un canal à
-[financement double][topic dual funding]. Bien qu'il n'y ait aucun
+[financement bipartite][topic dual funding]. Bien qu'il n'y ait aucun
 moyen d'imposer que le nœud annonceur achemine effectivement les paiements,
 la proposition intègre une proposition antérieure (également
 [utilisée ultérieurement][lnd#5709] dans Lightning Pool) qui empêche
@@ -464,7 +464,7 @@ les paiements n'apporterait aucun avantage mais priverait le nœud
 annonceur de la possibilité de gagner des frais d'acheminement.
 
 {:#descriptors}
-Trois ans après avoir été [proposé pour la première fois][descriptor gist]
+Trois ans après avoir été [proposés pour la première fois][descriptor gist]
 pour Bitcoin Core, des [projets de BIP][descriptor bips1] ont été
 [créés][descriptor bips2] pour les [descripteurs de script de sortie][topic descriptors].
 Les descripteurs sont des chaînes de caractères qui contiennent toutes
@@ -532,7 +532,7 @@ après le lancement, plus de 50 BTC avaient été verrouillés (d'une valeur
 de plus de 2 millions de dollars américains à l'époque).
 
 {:#pathfinding}
-Une nouvelle variante du chemin d'accès pour LN a été [discutée][0base]
+Une nouvelle variante d'algorithme de recherche de chemin pour LN a été [discutée][0base]
 en août. Les partisans de cette technique pensaient qu'elle serait plus
 efficace si les nœuds d'acheminement ne facturaient qu'un pourcentage
 du montant acheminé sans facturer un minimum de *frais de base* sur
@@ -591,7 +591,7 @@ précédente qui les a dépensés ainsi que de leur position dans la hiérarchie
 descendante et de leur emplacement ; par exemple, "transaction bar's
 second enfant, sorite zero". Il a été suggéré que cela offrirait des
 avantages pour des conceptions telles que [eltoo][topic eltoo], [usines à canaux][topic channel factories],
-et [watchtowers][topic watchtowers], qui bénéficient toutes de
+et [watchtowers][topic watchtowers], qui sont toutes utiles aux
 protocoles de contrat tels que LN.
 
 {:#ptlcsx}
@@ -605,7 +605,7 @@ voyager dans un sens entre tous les nœuds de routage sur un chemin particulier.
 Elle augmenterait également la résilience en permettant à un nœud de
 sauvegarder toutes les informations dont il a besoin au moment de la création
 d'un canal et d'obtenir toute autre information dans la plupart des cas
-lors d'une restauration des données. Il permettrait également de recevoir
+lors d'une restauration des données. Elle permettrait également de recevoir
 des paiements avec une clé hors ligne, ce qui permettrait aux nœuds marchands
 en particulier de limiter la durée d'utilisation de leurs clés par
 les ordinateurs en ligne.
@@ -618,11 +618,11 @@ Les développeurs de LN ont tenu le premier sommet général de LN
 de sujets tels que l'utilisation de [taproot][topic taproot] dans LN,
 notamment les [PTLCs][topic ptlc], [MuSig2][topic musig] pour les
 [multisignatures][topic multisignature], et [eltoo][topic eltoo] ;
-déplacement de la discussion sur les spécifications de l'IRC vers
-les chats vidéo ; modifications du modèle de spécification BOLTs
-actuel ; [messages en oignons][topic onion messages] et [offres][topic offers] ;
+le déplacement de la discussion sur les spécifications de l'IRC vers
+les chats vidéo ; de modifications du modèle de spécification BOLTs
+actuel ; des [messages en oignon][topic onion messages] et [offres][topic offers] ;
 [paiements sans blocage][] ; [attaques par brouillage de canal][topic channel jamming attacks]
-et diverses atténuations ; et [routage par trampoline][topic trampoline payments].
+et diverses atténuations ; et du [routage par trampoline][topic trampoline payments].
 
 ## Decembre
 
@@ -667,7 +667,7 @@ Nous les remercions, ainsi que tous les contributeurs à Bitcoin en 2021.
 Nous sommes impatients de de voir quels nouveaux développements passionnants
 ils apporteront en 2022.
 
-*Le bulletin Optech reprendra son rythme de publication habituel du
+*Le bulletin Optech reprendra son rythme de publication habituel dès
 mercredi le 5 janvier.*
 
 {% include references.md %}
