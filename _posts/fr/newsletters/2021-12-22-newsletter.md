@@ -304,7 +304,7 @@ initial. En plus du travail antérieur sur le financement bipartite [fusionné][
 cette année, cela permet à la partie qui initie l'ouverture du canal
 non seulement de dépenser les fonds par le canal mais aussi de les recevoir
 dans l'état initial du canal. Cette capacité initiale à recevoir des fonds
-rend le double financement particulièrement utile pour les commerçants
+rend le financement bipartite particulièrement utile pour les commerçants
 dont l'utilisation principale de LN est de recevoir des paiements
 au lieu de les envoyer.
 
