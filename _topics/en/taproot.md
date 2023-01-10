@@ -206,7 +206,7 @@ optech_mentions:
   - title: "Preparing for taproot: is cooperation always an option?"
     url: /en/newsletters/2021/10/13/#preparing-for-taproot-17-is-cooperation-always-an-option
 
-  - title: "Taproot triva: origins, naming, and related prior work"
+  - title: "Taproot trivia: origins, naming, and related prior work"
     url: /en/newsletters/2021/10/20/#preparing-for-taproot-18-trivia
 
   - title: "Expanded test vectors for taproot published"
