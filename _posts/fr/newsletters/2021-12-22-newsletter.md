@@ -92,7 +92,7 @@ Une autre [première version][cl 0.9.3] d'un nouveau protocole était les
 Les messages en oignon permettent à un nœud LN d'envoyer un message à
 un autre nœud d'une manière qui minimise la surcharge par rapport à l'envoi
 de messages basés sur le [HTLC][topic htlc]. Les offres utilisent les
-messages oignons pour permettre à un nœud de *offrir* de payer un autre nœud,
+messages en oignon pour permettre à un nœud d'*offrir* de payer un autre nœud,
 permettant au nœud récepteur de renvoyer une facture détaillée et d'autres
 informations nécessaires. Les messages en oignon et les offres resteront
 des projets de spécifications jusqu'à la fin de l'année, mais ils feront
