@@ -411,7 +411,7 @@ Aucune des deux propositions n'a semblé faire beaucoup de progrès
 malgré quelques objections significatives.
 
 {:#mpa}
-Le mois de juin a également vu la fusion du [premier PR][bcc#20833]
+Le mois de juin a également vu la fusion de la [première PR][bcc#20833]
 d'une série mettant en œuvre [l'acceptation des paquets mempool][mpa ml]
 dans Bitcoin Core, la première étape vers le relais de paquets.
 Le [relais de paquets][topic package relay] permettra aux nœuds
