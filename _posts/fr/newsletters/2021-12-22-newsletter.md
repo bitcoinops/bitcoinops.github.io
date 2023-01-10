@@ -664,7 +664,7 @@ les plus importants sont effectués par des personnes dont les noms n'ont
 jamais paru dans aucun numéro de ce bulletin.
 
 Nous les remercions, ainsi que tous les contributeurs à Bitcoin en 2021.
-Nous sommes impatients de de voir quels nouveaux développements passionnants
+Nous sommes impatients de voir quels nouveaux développements passionnants
 ils apporteront en 2022.
 
 *Le bulletin Optech reprendra son rythme de publication habituel dès
