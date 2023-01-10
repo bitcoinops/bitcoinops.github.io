@@ -328,7 +328,7 @@ au lieu de les envoyer.
   des messages d'annonce d'adresse de la version 2 et des améliorations
   de la gestion des [PSBT][topic psbt].
 
-- [LND 0.12.0-beta][] ajout d'un support pour l'utilisation de [tours de garde][topic watchtowers]
+- [LND 0.12.0-beta][] ajoutz le support pour l'utilisation de [tours de guet][topic watchtowers]
   avec des [sorties d'ancrage][topic anchor outputs] et ajout d'une
   nouvelle sous-commande de portefeuille `psbt` pour travailler
   avec [PSBT][topic psbt].
