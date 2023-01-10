@@ -48,7 +48,7 @@ summary], [2019][2019 summary], et [2020][2020 summary].
   * [OP_TAPLEAF_UPDATE_VERIFY](#tluv)
 * Octobre
   * [Identifiants de l'héritage des transactions](#txhids)
-  * [PTLC et trasnfert rapide LN](#ptlcsx)
+  * [PTLC et transfert rapide LN](#ptlcsx)
 * Novembre
   * [Sommet des développeurs LN](#lnsummit)
 * Décembre
