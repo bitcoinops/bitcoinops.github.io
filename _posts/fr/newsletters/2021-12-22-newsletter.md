@@ -388,8 +388,8 @@ pour les mineurs de sélectionner les transactions qu'ils souhaitent
 inclure dans les blocs qu'ils créent. La nouvelle méthode devrait
 augmenter légèrement les revenus des mineurs à court terme. À long terme,
 si cette technique est adoptée par les mineurs, les portefeuilles qui
-en ont connaissance pourront collaborer lors des transactions
-[répercussion des frais CPFP][topic cpfp], ce qui augmentera l'efficacité
+en ont connaissance pourront collaborer lors de l'utilisation de
+[CPFP][topic cpfp] pour augmenter les frais d'une transaction, ce qui augmentera l'efficacité
 de cette technique.
 
 {:#default-rbf}
