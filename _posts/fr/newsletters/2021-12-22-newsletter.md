@@ -30,7 +30,7 @@ summary], [2019][2019 summary], et [2020][2020 summary].
   * [Paiements atomiques par trajets multiples LN](#amp)
 * Mai
   * [Divergence sur l'option de remplacement de frais de BIP125](#bip125)
-  * [Double canaux financés](#dual-funding)
+  * [Canaux à financement bipartite](#dual-funding)
 * Juin
   * [Construction de blocs basée sur un ensemble de candidats](#csb)
   * [Transaction par défaut de remplacement des frais](#default-rbf)
@@ -43,7 +43,7 @@ summary], [2019][2019 summary], et [2020][2020 summary].
   * [SIGHASH_ANYPREVOUT](#anyprevout)
 * Août
   * [Bons de fidélité](#fibonds)
-  * [Détermination du chemin LN](#pathfinding)
+  * [Recherche de chemin LN](#pathfinding)
 * Septembre
   * [OP_TAPLEAF_UPDATE_VERIFY](#tluv)
 * Octobre
@@ -328,7 +328,7 @@ au lieu de les envoyer.
   des messages d'annonce d'adresse de la version 2 et des améliorations
   de la gestion des [PSBT][topic psbt].
 
-- [LND 0.12.0-beta][] ajoutz le support pour l'utilisation de [tours de guet][topic watchtowers]
+- [LND 0.12.0-beta][] ajoute le support pour l'utilisation de [tours de guet][topic watchtowers]
   avec des [sorties d'ancrage][topic anchor outputs] et ajout d'une
   nouvelle sous-commande de portefeuille `psbt` pour travailler
   avec [PSBT][topic psbt].
@@ -425,7 +425,7 @@ Bien que le minage de paquets ait été [implémenté][bitcoin core #7600]
 dans Bitcoin Core depuis 2016, il n'y avait jusqu'à présent aucun moyen
 pour les nœuds de relayer les transactions sous forme de paquets,
 ce qui signifie que les transactions parentales à faible taux de frais
-pourraient ne pas atteindre les mineurs pendant les périodes à haut
+pouvaient ne pas atteindre les mineurs pendant les périodes à haut
 taux de frais, même si elles ont des enfants à haut taux de frais.
 Cela rend l'utilisation de [CPFP][topic cpfp] peu fiable pour
 les protocoles de contrat utilisant des transactions présignées, comme LN.
