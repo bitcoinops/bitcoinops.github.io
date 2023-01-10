@@ -12,7 +12,7 @@ excerpt: >
   développements de Bitcoin au cours de l'année 2021.
 ---
 
-{{page.excerpt}} C'est la suite de nos résumés de [2018][2018
+{{page.excerpt}} Ceci est la suite de nos résumés de [2018][2018
 summary], [2019][2019 summary], et [2020][2020 summary].
 
 ## Sommaire
