@@ -338,7 +338,7 @@ au lieu de les envoyer.
   `OP_RETURN` avec un Trezor.
 
 - [C-Lightning 0.10.0][] contenait un certain nombre d'améliorations
-  de son API et un support expérimental pour le [double financement][topic dual funding].
+  de son API et un support expérimental pour le [financement bipartite][topic dual funding].
 
 - [BTCPay Server 1.1.0][] a inclus la prise en charge de [Lightning Loop][news53 lightning loop],
   ajouté [WebAuthN/FIDO2][fido2 website] comme option d'authentification
