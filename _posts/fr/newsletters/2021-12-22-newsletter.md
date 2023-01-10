@@ -345,7 +345,7 @@ au lieu de les envoyer.
   à deux facteurs, apporté diverses améliorations à l'interface
   utilisateur et marqué le passage à l'utilisation de la numérotation
   de [versions sémantiques][semantic versioning website] pour les 
-  rochaines mises à jour.
+  prochaines mises à jour.
 
 - [Eclair 0.6.0][] contient plusieurs améliorations qui renforcent
   la sécurité et la confidentialité des utilisateurs. Elle assure
