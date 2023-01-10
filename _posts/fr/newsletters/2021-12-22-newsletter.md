@@ -395,7 +395,7 @@ de cette technique.
 {:#default-rbf}
 Une autre tentative pour rendre le remplacement des frais plus efficace
 a été une [proposition][rbf default] pour permettre à toute transaction
-non confirmée d'être [remplacée par des frais][topic rbf] (RBF) dans
+non confirmée d'être [remplacée avec des frais plus élevés][topic rbf] (RBF) dans
 Bitcoin Core---et pas seulement celles qui ont choisi d'autoriser le
 remplacement en utilisant [BIP125][]. Cela pourrait aider à résoudre
 certains problèmes liés au remplacement des frais dans les protocoles
