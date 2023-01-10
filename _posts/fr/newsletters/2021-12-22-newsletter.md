@@ -278,8 +278,8 @@ originellement AMPs car ils sont décrits plus tôt que les
 [Paiements Simplifiés à Multiples Chemins][topic multipath payments] (SMP)
 que toutes les implémentations majeures de LN supportent actuellement.
 Les AMP ont un avantage en matière de confidentialité par rapport aux SMP
-et garantissent également que le récepteur a reçu toutes les pièces avant
-de réclamer le paiement.  Leur inconvénient est qu'ils ne produisent pas
+et garantissent également que le récepteur a reçu l'ensemble des fonds avant
+de finaliser le paiement.  Leur inconvénient est qu'ils ne produisent pas
 de preuve cryptographique du paiement. LND les a implémentés pour les utiliser
 avec les [paiements spontanés][topic spontaneous payments] qui, fondamentalement,
 ne peuvent pas fournir de preuve de paiement, éliminant ainsi le seul
