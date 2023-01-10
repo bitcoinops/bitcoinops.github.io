@@ -231,7 +231,7 @@ et les mineurs sur la façon d'activer taproot.
   pour utiliser taproot ou [tirer les leçons][bip119 update] de son activation.
 
 - **Août<!--taproot-->** a été tranquille pour le développement de taproot,
-  bien que quelques [documentations][reuse risks] liée à taproot ont été écrites.
+  bien que quelques [documentations][reuse risks] liées à taproot ont été écrites.
 
 - **Septembre<!--taproot-->** a vu le logiciel pour les commerçants open source
   le plus populaire de Bitcoin ajouter le [support][btcpay taproot] pour taproot
