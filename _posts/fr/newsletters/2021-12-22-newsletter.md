@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Bitcoin Optech #180: Special bilan 2021'
+title: 'Bulletin Bitcoin Optech #180: Spécial Bilan 2021'
 permalink: /fr/newsletters/2021/12/22/
 name: 2021-12-22-newsletter-fr
 slug: 2021-12-22-newsletter-fr
