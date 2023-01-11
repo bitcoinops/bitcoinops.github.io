@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter describes a idea for allowing offline LN nodes to
+This week's newsletter describes an idea for allowing offline LN nodes to
 receive funds onchain that they'll later be able to use offchain without
 extra delay.  Also included are our regular sections with summaries of
 new software releases and release candidates, plus descriptions of
