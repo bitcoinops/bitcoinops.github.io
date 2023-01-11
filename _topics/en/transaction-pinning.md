@@ -18,7 +18,7 @@ excerpt: >
   **Transaction pinning** is a method for making fee bumping
   prohibitively expensive by abusing node protections against
   attacks that can waste bandwidth, CPU, and memory.  This can make fee
-  management more difficult in multipart contract protocols (such as LN).
+  management more difficult in multiparty contract protocols (such as LN).
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
