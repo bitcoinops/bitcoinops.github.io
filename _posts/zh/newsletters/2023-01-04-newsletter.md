@@ -11,14 +11,14 @@ lang: zh
 
 ## 新闻
 
-- **Bitcoin Knots 签名密钥泄露：**Bitcoin Knots 全节点实现的维护者宣称他们用于签署 Knots 发布的 PGP 密钥遭到泄露。他们说，“在这个问题得到解决之前，不要下载和信任 Bitcoin Knots。如果你在过去的几个月里已经这样做了，请考虑现在就关闭该系统。”
+- **Bitcoin Knots 签名密钥泄露：**Bitcoin Knots 全节点实现的维护者宣称他们用于签署 Knots 发布的 PGP 密钥遭到泄露。他们说，“在这个问题得到解决之前，不要下载和信任 Bitcoin Knots。如果你在过去的几个月里已经这样做了，请考虑立即关闭该系统。”
   <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   其他全节点实现不受影响。
 
 
 - **Bitcoin Core 的软件 fork：**上个月在 Bitcoin Core 上有两个补丁集发布：
 
-    - *Bitcoin Inquisition：*Anthony Towns 在 Bitcoin-Dev 邮件列表[公布了][towns bci] [Bitcoin Inquisition][] 的一个版本，Bitcoin Core 的一个软件 fork，是在默认 [signet][topic signet] 上测试提议的软分叉和其他重要的协议更改。该版本包含对 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 和 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 提案的支持。 Towns 的电子邮件还有对参与 signet 测试者有用的其他信息。
+    - *Bitcoin Inquisition：*Anthony Towns 在 Bitcoin-Dev 邮件列表[公布了][towns bci] [Bitcoin Inquisition][] 的一个版本，Bitcoin Core 的一个衍生软件，是在默认 [signet][topic signet] 上测试提议的软分叉和其他重要的协议更改。该版本包含对 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 和 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 提案的支持。 Towns 的电子邮件还有对参与 signet 测试者有用的其他信息。
 
     - *全面 RBF 节点：* Peter Todd [公告了][todd rbf node] Bitcoin Core 24.0.1 上的一个补丁。该补丁在向其他节点公告其网络地址时会设置一个[全面 RBF 服务位（bit）][full-RBF service bit]，尽管当前的生效条件只是在节点配置启用 `mempoolfullrbf` 时。Peter Todd 指出，另一个全节点实现 Bitcoin Knots 也会公告其服务位，尽管它不包含专门连接到那些会公告其支持全面 RBF 的节点的代码。该补丁基于 Bitcoin Core PR [#25600][bitcoin core #25600]。
 
@@ -29,7 +29,7 @@ lang: zh
 
     - *重新考虑 RBF-FSS：* Daniel Lipshitz 在 Bitcoin-Dev 邮件列表中[发表了][lipshitz fss]一种名为 First Seen Safe (FSS) 的交易替换的想法，其中替换将支付给原输出不少于原始交易的金额，以确保不能用替换机制从接收者窃取到原始交易。Yuval Kogman [回复][kogman fss]了一个 2015 年 Peter Todd 发布的相同想法的[早期版本][rbf-fss]的链接。在[后续][todd fss]回复中，Todd 描述了该想法比选用或全面 RBF 更不受欢迎的几个方面。
 
-    - *<!--full-rbf-motivation-->全面 RBF 的动机：*Anthony Towns 在一个关于不同团体执行全面 RBF 动机的讨论主题帖下进行了[回复][towns rbfm]。Towns 分析了经济理性在矿工交易选择的背景下意味着什么、不意味着什么。优化短期利润的矿工自然会更喜欢全面 RBF。然而，Towns 指出，对挖矿设备进行长期投资的矿工可能更愿意优化多个区块的手续费收入，这种情况下就不一定会倾向于全面 RBF。他提出了三种可能的场景以供考虑。
+    - *<!--full-rbf-motivation-->全面 RBF 的动机：*Anthony Towns 在一个关于不同团体执行全面 RBF 动机的讨论主题帖下进行了[回复][towns rbfm]。Towns 分析了经济理性在矿工交易选择的语境下意味或不意味着什么。优化短期利润的矿工自然会更喜欢全面 RBF。然而，Towns 指出，对挖矿设备进行长期投资的矿工可能更愿意优化多个区块的手续费收入，这种情况下就不一定会倾向于全面 RBF。他提出了三种可能的场景以供考虑。
 
 ## 新版本和候选版本
 
@@ -49,7 +49,7 @@ lang: zh
 
 - [Bitcoin Core #21576][] 允许使用外部签名者（例如 [HWI][topic hwi]）的钱包在 GUI 中使用 [opt-in RBF][topic rbf]和在使用 `bumpfee` RPC 时增加费用。
 
-- [Bitcoin Core #24865][] 允许在已剪除旧区块的节点上恢复钱包备份，只要该节点仍然拥有创建钱包后生成的所有区块。这些区块仍然需要，这样 Bitcoin Core 便可以扫描它们以查找影响钱包余额的任何交易。而 Bitcoin Core 能够确定钱包的年龄，是因为它的备份包含了钱包的创建日期。
+- [Bitcoin Core #24865][] 允许在已剪除旧区块的节点上恢复钱包备份，只要该节点仍然拥有创建钱包后生成的所有区块。Bitcoin Core 仍然需要这些区块，这样便可以扫描它们以查找影响钱包余额的任何交易。而 Bitcoin Core 能够确定钱包的年龄，是因为它的备份包含了钱包的创建日期。
 
 - [Bitcoin Core #23319][] 更新 `getrawtransaction` RPC 以在 `verbose` 参数设置为 `2` 时提供额外信息。附加信息包括交易支付的费用以及有关先前交易的每个输出（“prevouts”）的信息，这些输出被用作此交易的输入。有关用于检索信息的方法的详细信息，请参阅 [Newsletter #172][news172 prevout]。
 
