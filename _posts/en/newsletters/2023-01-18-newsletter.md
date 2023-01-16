@@ -149,7 +149,27 @@ Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Kraken announces sending to taproot addresses:**
+  In a recent [blog post][kraken bech32m], Kraken announced they support
+  withdrawing (sending) to [bech32m][topic bech32] addresses.
+
+- **Whirlpool coinjoin rust client library announced:**
+  The [Samourai Whirlpool Client][whirlpool rust client] is a rust library for
+  interacting with the Whirlpool [coinjoin][topic coinjoin] platform.
+
+- **Ledger supports miniscript:**
+  Ledger's Bitcoin firmware v2.1.0 release for its hardware signing
+  devices supports [miniscript][topic miniscript], as announced [previously][ledger miniscript].
+
+- **Liana wallet released:**
+  The first version of the Liana wallet was [announced][liana blog]. The wallet
+  supports singlesig wallets with a [timelocked][topic timelocks] recovery key.
+  The project's future plans include implementing [taproot][topic taproot],
+  multisig wallets, and time-decaying multisig features.
+
+- **Electrum 4.3.3 released:**
+  [Electrum 4.3.3][electrum 4.3.3] contains improvements for Lightning,
+  [PSBTs][topic psbt], hardware signers, and the build system.
 
 ## Releases and release candidates
 
@@ -185,3 +205,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [obeirne scripthash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021329.html
 [news185 ctv-dlc]: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
 [towns op_vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021328.html
+[kraken bech32m]: https://blog.kraken.com/post/16740/bitcoin-taproot-address-now-supported-on-kraken/
+[whirlpool rust client]: https://github.com/straylight-orbit/whirlpool-client-rs
+[ledger miniscript]: https://blog.ledger.com/miniscript-is-coming/
+[liana blog]: https://wizardsardine.com/blog/liana-announcement/
+[electrum 4.3.3]: https://github.com/spesmilo/electrum/blob/4.3.3/RELEASE-NOTES
