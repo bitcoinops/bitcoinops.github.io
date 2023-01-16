@@ -71,6 +71,9 @@ optech_mentions:
   - title: Using Bitcoin-compatible BLS signatures for DLCs
     url: /en/newsletters/2022/08/17/#using-bitcoin-compatible-bls-signatures-for-dlcs
 
+  - title: "Proposal for vault-enabling opcodes could also make DLCs much more efficient"
+    url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

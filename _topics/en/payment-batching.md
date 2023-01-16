@@ -74,6 +74,9 @@ optech_mentions:
   - title: Candidate set based block templates may help fee bumping batched payments
     url: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
 
+  - title: "Proposal for `OP_VAULT` opcode supports batching vault withdrawals"
+    url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKTEMPLATEVERIFY

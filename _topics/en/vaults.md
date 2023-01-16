@@ -83,6 +83,9 @@ optech_mentions:
   - title: Proposal to use simple vaults as one benchmark for comparing different covenant designs
     url: /en/newsletters/2022/04/27/#suggested
 
+  - title: "Proposal for `OP_VAULT` and `OP_UNVAULT` opcodes"
+    url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
