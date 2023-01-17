@@ -221,7 +221,8 @@ et les mineurs sur la façon d'activer taproot.
   comme LN et [coinswaps][topic coinswap]. Optech a également [commencé][p4tr begins]
   sa série [Preparing for Taproot][p4tr].
 
-- **Juillet<!--taproot-->** a rencontré une [page][page bech32m] du Bitcoin Wiki
+
+- **Juillet<!--taproot-->** a rencontré une [page][bech32m page] du Bitcoin Wiki
   consacrée au suivi du support du format d'adresse bech32m nécessaire aux
   portefeuilles pour pouvoir utiliser taproot après son activation.
   De nombreux développeurs de portefeuilles et de services se sont montrés
@@ -344,7 +345,7 @@ au lieu de les envoyer.
   ajouté [WebAuthN/FIDO2][fido2 website] comme option d'authentification
   à deux facteurs, apporté diverses améliorations à l'interface
   utilisateur et marqué le passage à l'utilisation de la numérotation
-  de [versions sémantiques][semantic versioning website] pour les 
+  de [versions sémantiques][semantic versioning website] pour les
   prochaines mises à jour.
 
 - [Eclair 0.6.0][] contient plusieurs améliorations qui renforcent
@@ -662,9 +663,7 @@ Au lieu de cela, nous avons omis tous les noms de ce bulletin pour souligner
 que le développement de Bitcoin est un travail d'équipe où certains des travaux
 les plus importants sont effectués par des personnes dont les noms n'ont
 jamais paru dans aucun numéro de ce bulletin.
-
-Nous les remercions, ainsi que tous les contributeurs à Bitcoin en 2021.
-Nous sommes impatients de de voir quels nouveaux développements passionnants
+Nous sommes impatients de voir quels nouveaux développements passionnants
 ils apporteront en 2022.
 
 *Le bulletin Optech reprendra son rythme de publication habituel dès
