@@ -100,6 +100,9 @@ optech_mentions:
   - title: "New software fork of Bitcoin Core for testing to include support for CTV"
     url: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
 
+  - title: "Proposal for `OP_UNVAULT` opcode that can emulate CTV"
+    url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

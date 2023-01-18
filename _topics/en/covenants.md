@@ -85,6 +85,9 @@ optech_mentions:
   - title: "Proposal to use covenants and merkle trees to enable generalized smart contracts"
     url: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
 
+  - title: "Proposal for `OP_VAULT` and `OP_UNVAULT` opcodes to enable convenant-based valuts"
+    url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
