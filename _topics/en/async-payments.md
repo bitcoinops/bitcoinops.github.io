@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Idea for non-interactive channel open commitments may allow fast rebalancing for async payments"
     url: /en/newsletters/2023/01/11/#non-interactive-ln-channel-open-commitments
 
+  - title: Request for proof that an async payment was accepted
+    url: /en/newsletters/2023/01/25/#request-for-proof-that-an-async-payment-was-accepted
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments
