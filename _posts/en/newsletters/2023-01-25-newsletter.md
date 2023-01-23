@@ -91,7 +91,15 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #26325][] rpc: Return accurate results for scanblocks FIXME:Xekyo
+- [Bitcoin Core #26325][] improves the results of the `scanblocks` rpc
+  by removing false positives in a second pass. `scanblocks` may be used
+  to find blocks containing transactions relevant to a provided set of descriptors.
+  Since scanning against the filters may falsely indicate some blocks
+  that do not actually contain relevant transactions, this PR validates
+  each hit in another pass to see whether blocks actually correspond to
+  the passed descriptors before providing the results to the caller.
+  For performance reasons, the second pass needs to be enabled by
+  calling the RPC with the `filter_false_positives` option.
 
 - [BIPs #1383][] assigns [BIP329][] to the proposal for a standard
   wallet label export format.  Since the original proposal (see
