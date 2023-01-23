@@ -141,7 +141,7 @@ privées du portefeuille via les signatures de transaction qu'il crée. En mars,
 [Stepan Snigirev][news87 exfiltration], [Pieter Wuille][news88 exfiltration]
 et plusieurs autres personnes ont discutés des solutions possibles à ce
 problème pour le système de signature ECDSA actuel de Bitcoin et le système
-proposé de [signature schnorr][topic schnorr signatures]. 
+proposé de [signature schnorr][topic schnorr signatures].
 
 <div markdown="1" class="callout" id="taproot">
 ### Sommaire 2020<br>Taproot, tapscript, et signatures schnorr
