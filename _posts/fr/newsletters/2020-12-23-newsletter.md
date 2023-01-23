@@ -832,7 +832,7 @@ schedule on January 6th.*
 [copa membership]: /en/newsletters/2020/12/09/#cryptocurrency-open-patent-alliance-copa-gains-new-members
 [crypto garage p2p deriv]: /en/newsletters/2020/08/19/#crypto-garage-announces-p2p-derivatives-beta-application-on-bitcoin
 [default signet discussion]: /en/newsletters/2020/09/02/#default-signet-discussion
-[discreet log contracts]: https://adiabat.github.io/dlc.pdf
+[contrats logiques discrets]: https://adiabat.github.io/dlc.pdf
 [dlc election bet]: https://suredbits.com/settlement-of-election-dlc/
 [dlc spec]: https://github.com/discreetlogcontracts/dlcspecs/
 [dryja poon sf devs]: https://lightning.network/lightning-network.pdf
