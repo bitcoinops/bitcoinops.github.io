@@ -76,296 +76,300 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
 ## Janvier
 
 {:#dlc}
-Several developers began [working][news81 dlc] on a [specification][dlc
-spec] for using [Discreet Log Contracts][] (DLCs) between different
-software.  DLCs are a contract protocol where two or more parties agree
-to exchange money dependent on the outcome of a certain event as
-determined by an oracle (or several oracles). After the event happens,
-the oracle publishes a commitment to the outcome of the event
-that the winning party can use to claim
-their funds.  The oracle doesn't need to know the terms of the contract
-(or even that there is a contract). The contract can be made
-indistinguishable from many other Bitcoin transactions or it can be
-executed within an LN channel. This makes DLCs more private and
-efficient than other known oracle-based contract methods, and it's
-arguably more secure as an oracle that commits to a false
-result generates clear evidence of fraud.  By the end of the year,
-there would be four compatible implementations of DLCs, an
-[application][crypto garage p2p deriv] for offering and accepting
-DLC-based peer-to-peer derivatives, and several users [reporting][dlc
-election bet] that they'd used DLCs in transactions on mainnet.
+Plusieurs développeurs ont commencé à [travailler][news81 dlc] sur une
+[spécification][dlc spec] pour l'utilisation de [contrats logiques discrets][] (DLC)
+entre différents logiciels. Les DLC sont un protocole de contrat dans lequel
+deux parties ou plus acceptent d'échanger de l'argent en fonction du résultat
+d'un certain événement déterminé par un oracle (ou plusieurs oracles). Après
+l'événement, l'oracle publie un engagement sur l'issue de l'événement que la
+partie gagnante peut utiliser pour réclamer ses fonds. L'oracle n'a pas besoin
+de connaître les termes du contrat (ni même de savoir qu'il existe un contrat).
+Le contrat peut être rendu indiscernable de nombreuses autres transactions Bitcoin
+ou il peut être exécuté dans un canal LN. Cela rend les DLC plus privés et plus
+efficaces que les autres méthodes de contrat connues basées sur un oracle, et
+on peut dire qu'ils sont plus sûrs car un oracle qui s'engage sur un faux résultat
+génère des preuves évidentes de fraude. D'ici la fin de l'année, il y aura quatre
+implémentations compatibles des DLC, une [application][crypto garage p2p deriv] pour
+offrir et accepter des dérivés peer-to-peer basés sur les DLC, et plusieurs
+utilisateurs [rapportant][dlc election bet] qu'ils ont utilisé les DLC dans
+des transactions sur le réseau principal.
 
-## February
+## Février
 
 {:#large-channels}
-Five years after the [first public presentation about LN][dryja poon sf
-devs], several early protocol decisions meant to be temporary were
-revisited.   The most immediate change was the February [update][news86
-bolts596] to the LN specification that allowed users to opt out of the
-[maximum channel and payment value][topic large channels] limits enacted
-in 2016.
+Cinq ans après la [première présentation publique sur LN][dryja poon sf devs],
+plusieurs décisions précoces du protocole censées être temporaires ont
+été revues. Le changement le plus immédiat a été la [mise à jour][news86 bolts596]
+en février de la spécification LN qui a permis aux utilisateurs de se
+soustraire aux limites de [valeur maximale des canaux et des paiements][topic large channels]
+promulguées en 2016.
 
 {:#dual-interactive-funding}
-Another early decision that saw reconsideration was keeping the protocol
-simple by opening all channels with a single funder.  This minimizes
-protocol complexity but prevents channel funders from receiving any
-payments until they've spent some of their funds---a position that
-creates barriers to merchants joining LN.  One proposal to eliminate
-this problem is dual-funded channels where both the channel opener and
-their counterparty commit some amount of funds to the channel.
-Lisa Neigut has developed a [protocol][bolts #524] for dual funding, but
-(as expected) it's complex.  In February, she started a
-[discussion][news83 interactive funding] about an incremental
-improvement over the existing single-funder standard that would allow
-interactive construction of the funding transaction.  Instead of the
-current case where one party proposes a channel open and the other party
-either accepts it or rejects it, the nodes belonging to the two parties
-could exchange information about their preferences and negotiate opening
-a channel that they would both find desirable.
+Une autre décision prise au début et qui a été reconsidérée était de garder
+le protocole simple en ouvrant tous les canaux avec un seul financeur. Cela
+minimise la complexité du protocole mais empêche les bailleurs de fonds des
+canaux de recevoir des paiements avant d'avoir dépensé une partie de leurs
+fonds---une position qui crée des obstacles aux commerçants qui rejoignent LN.
+Une proposition visant à éliminer ce problème est celle des canaux à double
+financement, où l'ouvreur du canal et sa contrepartie s'engagent à verser une
+certaine somme d'argent au canal. Lisa Neigut a développé un [protocole][bolts #524]
+pour le double financement, mais (comme prévu) c'est complexe. En février,
+elle a lancé une [discussion] [news83 interactive funding] sur une amélioration
+progressive de la norme actuelle de financement unique qui permettrait la
+construction interactive de la transaction de financement. Au lieu du cas
+actuel où une partie propose l'ouverture d'un canal et l'autre partie l'accepte
+ou le rejette, les nœuds appartenant aux deux parties pourraient échanger des
+informations sur leurs préférences et négocier l'ouverture d'un canal
+qu'elles trouveraient toutes deux souhaitable.
 
 {:#blinded-paths}
-New progress was also made on the often-discussed plans to allow
-rendez-vous routing for LN, which was labeled a priority during the
-[2018 LN specification meeting][rv routing].  A new method for achieving
-equivalent privacy was [described][news85 blinded paths] by Bastien
-Teinturier in February based on a previous privacy enhancement he had
-proposed.  This new method, called *blinded paths*, was later
-implemented as an experimental feature in [C-Lightning][news92
-cl3600].
+De nouvelles avancées ont également été réalisées sur les plans souvent
+discutés visant à autoriser le routage par rendez-vous pour le LN, qui a
+été qualifié de priorité lors de la [réunion de spécification LN 2018][rv routing].
+Bastien Teinturier a [décrit][news85 blinded paths] en février une nouvelle
+méthode permettant d'obtenir une confidentialité équivalente, basée sur une
+amélioration de la confidentialité qu'il avait déjà proposée. Cette nouvelle
+méthode, appelée *chemins aveugles*, a ensuite été mise en œuvre en tant que
+fonctionnalité expérimentale dans [C-Lightning][news92 cl3600].
 
-## March
+## Mars
 
 {:#exfiltration-resistance}
-One method hardware wallets could use to steal bitcoins from their users is by
-leaking information about the wallet's private keys via the transaction
-signatures it creates.  In March, [Stepan Snigirev][news87 exfiltration],
-[Pieter Wuille][news88 exfiltration], and several others discussed
-possible solutions to this problem for both Bitcoin's current ECDSA
-signature system and the proposed [schnorr signature][topic schnorr signatures] system.
+Une méthode que les portefeuilles matériels pourraient utiliser pour voler
+des bitcoins à leurs utilisateurs est la fuite d'informations sur les clés
+privées du portefeuille via les signatures de transaction qu'il crée. En mars,
+[Stepan Snigirev][news87 exfiltration], [Pieter Wuille][news88 exfiltration]
+et plusieurs autres personnes ont discutés des solutions possibles à ce
+problème pour le système de signature ECDSA actuel de Bitcoin et le système
+proposé de [signature schnorr][topic schnorr signatures]. 
 
 <div markdown="1" class="callout" id="taproot">
-### 2020 summary<br>Taproot, tapscript, and schnorr signatures
+### Sommaire 2020<br>Taproot, tapscript, et signatures schnorr
 
-Nearly every month of 2020 saw some notable development related to the
-proposed [taproot][topic taproot] soft fork ([BIP341][]) which also adds
-support for [schnorr signatures][topic schnorr signatures] ([BIP340][])
-and [tapscript][topic tapscript] ([BIP342][]).  Together, these
-improvements will allow users of single-signature scripts,
-multisignature scripts, and complex contracts to all use
-identical-appearing commitments that enhance their privacy and the
-fungibility of all bitcoins.  Spenders will enjoy lower fees and the
-ability to resolve many multisig scripts and complex contracts with the
-same efficiency, low fees, and large anonymity set as single-sig users.
-Taproot and schnorr also lay the groundwork for future potential
-upgrades that may improve efficiency, privacy, and fungibility further,
-such as signature aggregation, [SIGHASH_ANYPREVOUT][topic
-sighash_anyprevout], and [scripting language changes][topic simplicity].
+Presque tous les mois de l'année 2020 ont été marqués par un développement
+principalement lié à l'embranchement convergent de la proposition [taproot][topic taproot]
+([BIP341][]) qui ajoute également la prise en charge des [sigantures schnorr][topic schnorr signatures]
+([BIP340][]) et [tapscript][topic tapscript] ([BIP342][]). Ensemble, ces
+améliorations permettront aux utilisateurs de scripts à une seule signature,
+de scripts à plusieurs signatures et de contrats complexes d'utiliser des
+engagements d'apparence identique qui renforcent leur confidentialité et
+la fongibilité de tous les bitcoins. Les opérateurs bénéficieront de frais
+moins élevés et de la possibilité de résoudre de nombreux scripts multisignature
+et contrats complexes avec la même efficacité, des frais peu élevés et un
+large éventail d'anonymat que les utilisateurs de scripts à signature unique.
+Taproot et schnorr jettent également les bases de futures mises à jour
+potentielles qui pourraient améliorer encore l'efficacité, la confidentialité
+et la fongibilité, telles que l'agrégation de signatures, [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
+et de [changements de langage de script][topic simplicity].
 
-This special section concentrates the summaries about those developments
-into a single narrative that we hope will be easier to follow than
-describing each event separately in the month it occurred.
+Cette section spéciale concentre les synthèses de ces développements
+en un seul récit qui, nous l'espérons, sera plus facile à suivre que
+la description de chaque événement séparément dans le mois où il s'est produit.
 
 {:#activation-mechanisms}
-January started with a discussion of soft fork activation mechanisms,
-with Matt Corallo [proposing][news80 msfa] a careful and patient
-approach to addressing disagreements between different sets of
-stakeholders.  Other developers focused on the [BIP8][] proposal to be
-able to quickly bypass the type of procedural problem that delayed
-segwit activation in 2016 and 2017.  The discussion about what precise
-activation mechanism to use would continue all year, in a [dedicated IRC
-channel][##taproot-activation] and elsewhere, with there being both a
-[developer survey][news122 devsurvey] about mechanism design and a
-[survey of miners][news125 miner survey] about their support for
-taproot.
+Le mois de janvier a commencé par une discussion sur les mécanismes
+d'activation de l'embranchement convergent, Matt Corallo [proposant][news80 msfa]
+une approche prudente et patiente pour régler les désaccords entre les
+différents ensembles de parties prenantes. D'autres développeurs se sont
+concentrés sur la proposition [BIP8][] afin de pouvoir contourner
+rapidement le type de problème procédural qui a retardé l'activation
+de segwit en 2016 et 2017. La discussion sur le mécanisme d'activation
+précis à utiliser se poursuivra toute l'année, dans un [canal IRC dédié][##taproot-activation]
+et ailleurs, avec à la fois un [sondage des développeurs][news122 devsurvey]
+sur la conception du mécanisme et un [sondage des mineurs][news125 miner survey]
+sur leur soutien à taproot.
 
-February saw the first of several updates during the year to the
-algorithms used to derive public keys and signatures in the BIP340
-specification of schnorr signatures.  [Most][news83 alt tiebreaker] of
-these [changes][news87 bip340 update] were [small][news111 uniform
-tiebreaker] optimizations [discovered][news96 bip340 update] from
-[experience][news113 bip340 update] implementing and testing the
-proposal in [libsecp256k1][] and its experimental fork
-[libsecp256k1-zkp][].  Also in February, Lloyd Fournier
-[extended][news87 taproot generic group] Andrew Poelstra's previous
-security proof for taproot.
+Le mois de février a vu la première des nombreuses mises à jour apportées
+au cours de l'année aux algorithmes utilisés pour dériver les clés publiques
+et les signatures dans la spécification BIP340 des signatures schnorr.
+La [plupart][news83 alt tiebreaker] de ces [modifications][news87 bip340 update]
+étaient de [petites][news111 uniform tiebreaker] optimisations [découvertes][news96 bip340 update]
+à partir de [l'expérience][news113 bip340 update] de la mise en œuvre et
+du test de la proposition dans [libsecp256k1][] et de sa branche expérimentale
+[libsecp256k1-zkp][]. En février également, Lloyd Fournier a [étendu][news87 taproot generic group]
+la preuve de sécurité précédente d'Andrew Poelstra pour taproot.
 
-In March, Bitcoin Core carefully [changed][news89 op_if] its consensus
-code---without introducing a fork---to remove an inefficiency in the
-parsing of `OP_IF` and related flow control opcodes.   Currently, the
-inefficiency can't be exploited to cause problems, but the extended
-capabilities proposed for tapscript would have made it possible for an
-attacker to use the inefficiency to create blocks that could take a
-large amount of computation to verify.
+En mars, Bitcoin Core a soigneusement [modifié][news89 op_if] son code de
+consensus---sans introduire de fork---pour supprimer une inefficacité dans
+l'analyse de `OP_IF` et des opcodes de contrôle de flux associés. Actuellement,
+cette inefficacité ne peut pas être exploitée pour causer des problèmes,
+mais les capacités étendues proposées pour tapscript auraient permis à
+un attaquant d'utiliser cette inefficacité pour créer des blocs dont la
+vérification pourrait nécessiter une grande quantité de calculs.
 
-Although much of the public attention on taproot focuses on its change
-to Bitcoin's consensus rules, taproot won't be a positive contribution unless
-wallet developers can use it safely.  In April, and throughout the year,
-[several][news87 bip340 update1] updates to BIP340 [changed][news87
-bip340 update] the [recommendations][news91 bip340 powerdiff] for
-[how][news96 bip340 nonce update] developers should generate public keys
-and the signature nonce.  The changes are probably only directly
-interesting to cryptographers, but the history of Bitcoin has many
-examples of people losing money because a wallet developer didn't fully
-understand the cryptographic protocol they implemented.  Hopefully, the
-recommendations from experienced cryptographers in BIP340 will help
-avoid some of those types of problems in the future.
+Bien qu'une grande partie de l'attention publique sur taproot se concentre
+sur son changement des règles de consensus de Bitcoin, taproot ne sera pas
+une contribution positive à moins que les développeurs de portefeuilles
+puissent l'utiliser en toute sécurité. En avril, et tout au long de l'année,
+[plusieurs][news87 bip340 update1] mises à jour de BIP340 [ont modifiées][news87 bip340 update]
+les [recommandations][news91 bip340 powerdiff] sur la [manière][news96 bip340 nonce update]
+dont les développeurs doivent générer les clés publiques et le nonce de
+signature. Ces changements n'intéressent probablement directement que les
+cryptographes, mais l'histoire du bitcoin comporte de nombreux exemples
+de personnes ayant perdu de l'argent parce qu'un développeur de portefeuille
+n'avait pas bien compris le protocole cryptographique qu'il avait mis en œuvre.
+Espérons que les recommandations de cryptographes expérimentés dans le BIP340
+permettront d'éviter certains de ces types de problèmes à l'avenir.
 
-In May, there was [renewed discussion][news97 additional commitment] about
-the blinded ownership attack that makes it
-dangerous to automatically sign transactions with a hardware wallet.
-Ideally, hardware wallets could provide a mode where they'd automatically
-sign transactions guaranteed to increase the wallet's balance, such as
-maker coinjoins and LN [splices][topic splicing].  Unfortunately, it's
-only safe to sign a transaction if you know for sure which inputs are
-yours---otherwise an attacker can get you to sign a transaction that
-looks like it only has one of your inputs, then get you to sign a
-different version of the same transaction that also looks like it only
-has one of your inputs (a different input than the first version), and
-finally combine the signatures for the two different inputs into the
-actual transaction that pays your money to the attacker.  This
-isn't normally a risk because most people today only use hardware
-wallets to sign transactions where they own 100% of the inputs, but for
-coinjoins, LN splices, and other protocols, it's expected that other users
-may partly or fully control some of the inputs.  It was proposed that
-taproot provide an additional way to commit to inputs that can be used
-in conjunction with data provided in a [PSBT][topic psbt] to ensure a
-hardware wallet will only generate a valid signature when it has enough
-data to identify all of its inputs.  This proposal was later
-[accepted][news101 additional commitment] into BIP341.
+En mai, il y a eu une [nouvelle discussion][news97 additional commitment] sur
+l'attaque de la propriété aveugle qui rend dangereux la signature automatique
+des transactions avec un porte-monnaie matériel. Idéalement, les porte-monnaies
+matériels pourraient fournir un mode dans lequel ils signeraient automatiquement
+des transactions garanties pour augmenter le solde du porte-monnaie, comme les
+créateurs de coinjoins et les [jointement LN][topic splicing]. Malheureusement,
+la signature d'une transaction n'est sûre que si vous êtes certain que les entrées
+sont les vôtres---autrement, un attaquant peut vous faire signer une transaction
+qui semble ne comporter qu'une seule de vos entrées, puis vous faire signer une
+autre version de la même transaction qui semble également ne comporter qu'une seule
+de vos entrées (une entrée différente de la première version), et enfin combiner
+les signatures des deux entrées différentes dans la transaction réelle qui verse
+votre argent à l'attaquant. Ce n'est normalement pas un risque parce que la plupart
+des gens n'utilisent aujourd'hui que des portefeuilles matériels pour signer des
+transactions où ils possèdent 100% des entrées, mais pour les coinjoins, les joints
+LN et d'autres protocoles, il est prévu que d'autres utilisateurs puissent contrôler
+partiellement ou totalement certaines des entrées. Il a été proposé que taproot
+fournisse un moyen supplémentaire de s'engager sur les entrées qui peut être utilisé
+conjointement avec les données fournies dans un [PSBT][topic psbt] pour garantir
+qu'un portefeuille matériel ne génère une signature valide que lorsqu'il dispose
+de suffisamment de données pour identifier toutes ses entrées. Cette proposition
+a ensuite été [acceptée][news101 additional commitment] dans le BIP341.
 
 ![Illustration of using a fake coinjoin to trick a hardware wallet into losing funds](/img/posts/2020-05-fake-coinjoin-trick-hardware-wallet.dot.png)
 
-In July, another discussion resumed about a previously known problem---the
-[bech32 address format][topic bech32] being less effective than
-expected at preventing users from sending money to unspendable
-addresses.  This doesn't practically affect current bech32 address
-users, but it could be an issue for planned taproot addresses where the
-addition or removal of a small number of characters could lead to the
-loss of funds.  Last year it was proposed to simply extend the
-protection current segwit v0 addresses have to segwit v1 (taproot)
-addresses, but that would reduce the flexibility of future upgrades.
-[This year][news107 bech32 fives], after more [research][news127 bech32m
-research] and [debate][news119 bech32 discussion], there seemed to be
-agreement among developers that taproot and future segwit-based script
-upgrades should use a new address format that's a slight tweak on the
-original [BIP173][] bech32 addresses.  The new format will resolve the
-deficiency and provide some other nice properties.
+En juillet, une autre discussion a repris à propos d'un problème précédemment
+connu---le [format d'adresse bech32][topic bech32] étant moins efficace que
+prévu pour empêcher les utilisateurs d'envoyer de l'argent à des adresses
+non utilisables. Cela n'affecte pas concrètement les utilisateurs actuels de
+l'adresse bech32, mais cela pourrait être un problème pour les adresses taproot
+prévues où l'ajout ou la suppression d'un petit nombre de caractères pourrait
+entraîner la perte de fonds. L'année dernière, il a été proposé de simplement
+étendre la protection dont bénéficient actuellement les adresses segwit v0 aux
+adresses segwit v1 (taproot), mais cela réduirait la flexibilité des mises à jour
+futures. [Cette année][news107 bech32 fives], après plus de [recherche][news127 bech32m research]
+et de [débat][news119 bech32 discussion], il semble y avoir un accord entre les
+développeurs sur le fait que taproot et les futures mises à jour de scripts basés
+sur segwit devraient utiliser un nouveau format d'adresse qui est une légère
+modification des adresses originales [BIP173][] bech32. Le nouveau format
+résoudra le problème et fournira d'autres propriétés intéressantes.
 
-In September, the code implementing schnorr signature verification and
-single-party signing functions from [BIP340][] was [merged][news115
-bip340 merge] into libsecp256k1 and soon became part of Bitcoin
-Core.  This allowed the subsequent October [merge][news120 taproot
-merge] of the verification code for taproot, schnorr, and tapscript.
-The code consists of about 700 lines of consensus-related changes (500
-excluding comments and whitespace) and 2,100 lines of tests. Over 30
-people directly reviewed this PR and related changes, and many others
-participated in developing and reviewing the underlying research, the
-BIPs, the related code in libsecp256k1, and other parts of the system.
-The new soft fork rules are currently only used in [signet][topic signet] and Bitcoin Core's
-private test mode ("regtest"); they need to be activated before they can
-be used on Bitcoin's mainnet.
+En septembre, le code implémentant la vérification de la signature schnorr et
+les fonctions de signature unique de [BIP340][] a été [fusionné][news115 bip340 merge]
+dans libsecp256k1 et a rapidement fait partie de Bitcoin Core. Cela a permis
+la [fusion][news120 taproot merge] ultérieure du code de vérification pour taproot,
+schnorr et tapscript. Le code consiste en environ 700 lignes de modifications liées
+au consensus (500 sans les commentaires et les espaces blancs) et 2 100 lignes de tests.
+Plus de 30 personnes ont directement révisé ce PR et les changements associés, et
+beaucoup d'autres ont participés au développement et à la révision de la recherche
+sous-jacente, des BIPs, du code associé dans libsecp256k1, et d'autres parties
+du système. Les nouvelles règles d'embranchement convergent ne sont actuellement
+utilisées que dans [signet][topic signet] et dans le mode de test privé de Bitcoin
+Core ("regtest") ; elles doivent être activées avant de pouvoir être utilisées
+sur le réseau principal de Bitcoin.
 
-Many of the contributors to taproot spent the remainder of the year
-focusing on the 0.21.0 release of Bitcoin Core with the intention that a
-subsequent minor release, possibly 0.21.1, will contain code that can
-begin enforcement of taproot's rules when an appropriate activation
-signal is received.
+De nombreux contributeurs de taproot ont passés le reste de l'année à se concentrer
+sur la version 0.21.0 de Bitcoin Core, avec l'intention qu'une version mineure
+ultérieure, peut-être 0.21.1, contienne un code permettant de commencer à appliquer
+les règles de taproot lorsqu'un signal d'activation approprié est reçu.
 
 </div>
 
-## April
+## Avril
 
 {:#payjoin}
-The [payjoin][topic payjoin] protocol based on the 2018 [Pay-to-EndPoint
-proposal][news8 p2ep] received a major boost in April when a version of
-it was [added][news94 btcpay payjoin] to the BTCPay self-hosted payment
-processing system.  Payjoin provides a convenient way for users to
-increase their privacy and the privacy of other users on the network by
-creating transactions that undermine the [assumption][common ownership heuristic] that the same person
-owns all of the inputs in a transaction.  The BTCPay version of payjoin
-would soon be [specified][news104 bips923] as [BIP78][] and support for
-it was added to [other programs][news116 payjoin joinmarket].
+Le protocole [payjoin][topic payjoin] basé sur la [proposition Pay-to-EndPoint][news8 p2ep]
+de 2018 a reçu une impulsion majeure en avril lorsqu'une version de celui-ci
+a été [ajoutée][news94 btcpay payjoin] au système de traitement des paiements
+auto-hébergés BTCPay. Payjoin offre aux utilisateurs un moyen pratique
+d'accroître leur confidentialité et celle des autres utilisateurs du réseau
+en créant des transactions qui remettent en cause l'[hypothèse][common ownership heuristic]
+selon laquelle la même personne possède tous les éléments d'une transaction.
+La version BTCPay de payjoin sera bientôt [spécifiée][news104 bips923] comme
+[BIP78][] et son support a été ajouté à [d'autres programmes][news116 payjoin joinmarket].
 
 {:#ptlcs}
-One widely desired improvement to LN is switching the payment security
-mechanism from Hash Time Locked Contracts ([HTLCs][topic htlc]) to Point
-Time Locked Contracts ([PTLCs][topic ptlc]) that improve the privacy of
-spenders and receivers against a variety of surveillance methods.  One
-complication is that the ideal multiparty PTLC construction is
-challenging to implement using Bitcoin's existing [ECDSA signature
-scheme][ecdsa] (although it'd be easier with [schnorr signatures][topic
-schnorr signatures]).  Early in the year, Lloyd Fournier circulated a
-[paper][fournier otves] analyzing [signature adaptors][topic adaptor
-signatures] by disentangling their core locking and information exchange
-properties from their use of multiparty signatures, describing an easy
-way to use plain Bitcoin Script-based multisig instead.  During an April
-hackathon, several developers [produced][news92 ecdsa adaptor] a rough
-implementation of this protocol for a fork of the popular libsecp256k1
-library.  Later, in September, Fournier would further advance the
-practicality of PTLCs without needing to wait for changes to Bitcoin by
-proposing a [different way][news113 witasym] to [construct][news119
-witasym update] LN commitment transactions.  In December, he would
-propose [two new ways][news128 fancy static] to improve the robustness
-of LN backups, again offering practical solutions to user problems
-through the clever use of cryptography.
+Une amélioration largement souhaitée de LN est le passage du mécanisme de
+sécurité des paiements des contrats à temps de hachage ([HTLCs] [topic htlc])
+aux contrats à temps de point ([PTLCs] [topic ptlc]) qui améliorent la
+confidentialité des dépensiers et des receveurs contre une variété de méthodes
+de surveillance. Une complication est que la construction idéale d'un PTLC
+multipartite est difficile à mettre en œuvre avec le [schéma de signature ECDSA][ecdsa]
+existant de Bitcoin (bien que cela soit plus facile avec les
+[signatures schnorr][topic schnorr signatures]). Au début de l'année, Lloyd
+Fournier a fait circuler un [article][fournier otves] analysant les
+[adaptateurs de signature][topic adaptor signatures] en dissociant leurs
+propriétés fondamentales de verrouillage et d'échange d'informations de leur
+utilisation de signatures multipartites, décrivant un moyen facile d'utiliser
+le multisig basé sur Bitcoin Script. Lors d'un hackathon en avril, plusieurs
+développeurs ont [produit][news92 ecdsa adaptor] une mise en œuvre approximative
+de ce protocole pour un dérivation de la célèbre bibliothèque libsecp256k1.
+Plus tard, en septembre, Fournier a fait progresser l'aspect pratique des PTLC
+sans avoir besoin d'attendre les changements apportés à Bitcoin en proposant une
+[manière différente][news113 witasym] de [construire][news119 witasym update] des
+transactions d'engagement LN. En décembre, il proposait [deux nouvelles façons][news128 fancy static]
+d'améliorer la robustesse des sauvegardes LN, offrant à nouveau des solutions
+pratiques aux problèmes des utilisateurs grâce à l'utilisation intelligente
+de la cryptographie.
 
 {:#bip85}
-April also saw Ethan Kosakovsky [post][news93 super keychain] a proposal
-to the Bitcoin-Dev mailing list for using one [BIP32][] Hierarchical
-Deterministic (HD) keychain to create seeds for child HD keychains that
-can be used in different contexts.  This may address the problem that
-many wallets don't implement the ability to import extended private keys
-(xprvs)---they only allow importing either an HD seed or some precursor
-data that is transformed into the seed (e.g. [BIP39][] or SLIP39 seed
-words).  The proposal allows a user with multiple wallets to backup all
-of them using just the super-keychain's seed.  This proposal would
-[later][news102 bip85] become [BIP85][] and would be implemented in
-recent versions of the ColdCard hardware wallet.
+En avril, Ethan Kosakovsky a [posté][news93 super keychain] une proposition
+à la liste de diffusion Bitcoin-Dev pour utiliser un  trousseau de clés
+déterministe hiérarchique (HD) [BIP32][] pour créer des graines pour des
+trousseaux de clés HD enfants qui peuvent être utilisés dans différents
+contextes. Cela pourrait résoudre le problème que de nombreux portefeuilles
+ne permettent pas d'importer des clés privées étendues (xprvs)---ils ne
+permettent d'importer qu'une graine HD ou des données précurseurs qui sont
+transformées en graine (par exemple des mots de graine [BIP39][] ou SLIP39).
+La proposition permet à un utilisateur possédant plusieurs portefeuilles
+de les sauvegarder tous en utilisant uniquement la graine du super-keychain.
+Cette proposition deviendrait [plus tard][news102 bip85] [BIP85][] et serait
+mise en œuvre dans les versions récentes du porte-monnaie matériel ColdCard.
 
 {:#vaults}
-Two announcements about [vaults][topic vaults] were made in April.  Vaults
-are a type of contract known as a [covenant][topic covenants] that produces a warning
-when someone is trying to spend the covenant's funds, giving
-the covenant's owner time to block a spend they didn't authorize.  Bryan Bishop announced a [prototype
-vault][news94 bishop vault] based on his [proposal][news59 bishop idea]
-from last year.  Kevin Loaec and Antoine Poinsot announced their own
-project, [Revault][news95 revault], that [focuses][news100 revault arch]
-on using the vault model to store funds shared between multiple users
-with multisig security.  Jeremy Rubin also announced a [new high level
-programming language][news109 sapio] designed for building stateful
-smart contracts with the proposed [OP_CHECKTEMPLATEVERIFY][topic
-op_checktemplateverify] opcode, which could make it easier to create and
-manage vaults.
+Deux annonces concernant les [coffres-forts][topic vaults] ont été faites
+en avril. Les coffres sont un type de contrat connu sous le nom de
+[condition de dépense][topic covenants] qui émet un avertissement lorsque
+quelqu'un tente de dépenser les fonds du contrat, donnant ainsi au propriétaire
+du contrat le temps de bloquer une dépense qu'il n'a pas autorisée. Bryan
+Bishop a annoncé un [prototype de chambre forte][news94 bishop vault] basé
+sur sa [proposition][news59 bishop idea] de l'année dernière. Kevin Loaec
+et Antoine Poinsot ont annoncé leur propre projet, [Revault][news95 revault],
+qui [se concentre][news100 revault arch] sur l'utilisation du modèle de
+coffre-fort pour stocker des fonds partagés entre plusieurs utilisateurs
+avec une sécurité multisig. Jeremy Rubin a également annoncé un
+[nouveau langage de programmation de haut niveau][news109 sapio] conçu pour la
+création de contrats intelligents avec l'opcode [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify],
+qui pourrait faciliter la création et la gestion des coffres-forts.
 
-## May
+## Mai
 
 {:#transaction-origin-privacy}
-The Bitcoin Core project merged several PRs in May and the following
-months that improved [transaction origin privacy][tx origin wiki], both
-for users of the Bitcoin Core wallet and for users of other systems.
-[Bitcoin Core #18038][] began [tracking][news96 bcc18038] whether at
-least one peer had accepted a locally-generated transaction, allowing
-the wallet to significantly reduce the frequency Bitcoin Core used to
-rebroadcast its own transactions and making it harder for surveillance
-nodes to identify which node originated the transaction.  PRs
-[#18861][Bitcoin Core #18861] and [#19109][Bitcoin Core #19109] were
-able to [block a type of active scanning][news99 bcc18861] by
-surveillance nodes by [only replying to requests][news107 bcc19109] for
-a transaction from peers the node told about the transaction, further
-reducing the ability of third parties to determine which node first
-broadcast a transaction.  PRs [#14582][Bitcoin Core #14582] and
-[#19743][Bitcoin Core #19743] allow the wallet to [automatically
-try][news112 bcc14582] to eliminate [address reuse][topic output
-linking] links when it wouldn't cost the user any extra fees (or, alternatively,
-allowing the user to specify the maximum extra they're willing to spend
-in order to eliminate such links).
+Le projet Bitcoin Core a fusionné plusieurs PR en mai et au cours des mois
+suivants qui ont amélioré la [confidentialité de l'origine de la transaction][tx origin wiki],
+à la fois pour les utilisateurs du porte-monnaie Bitcoin Core et pour les
+utilisateurs d'autres systèmes. [Bitcoin Core #18038][] a commencé à [suivre][news96 bcc18038]
+si au moins un pair avait accepté une transaction générée localement, ce qui
+a permis au portefeuille de réduire considérablement la fréquence à laquelle
+Bitcoin Core rediffusait ses propres transactions et a rendu plus difficile
+pour les nœuds de surveillance d'identifier le nœud à l'origine de la transaction.
+Les PR [#18861][Bitcoin Core #18861] et [#19109][Bitcoin Core #19109] ont pu
+[bloquer un type de balayage actif][news99 bcc18861] par les nœuds de surveillance
+en [ne répondant qu'aux demandes][news107 bcc19109] de transaction des pairs
+auxquels le nœud a parlé de la transaction, ce qui réduit encore la capacité
+des tiers à déterminer quel nœud a diffusé une transaction en premier. Les PR
+[#14582][Bitcoin Core #14582] et [#19743][Bitcoin Core #19743] permettent au
+porte-monnaie d'[essayer automatiquement][news112 bcc14582] d'éliminer les liens
+de [réutilisation d'adresse][topic output linking] lorsque cela ne coûte pas
+de frais supplémentaires à l'utilisateur (ou, alternativement, de permettre
+à l'utilisateur de spécifier le supplément maximum qu'il est prêt à dépenser
+pour éliminer de tels liens).
 
-Late May and early June saw two significant developments in coinswaps.
-Coinswap is a trustless protocol that allows two or more users to create
-transactions that look like regular payments but which actually swap
-their coins with each other. This improves the privacy of not just the
-coinswap users but all Bitcoin users, as anything that looks like a
-payment could have instead been a coinswap.
+La fin du mois de mai et le début du mois de juin ont vu deux développements
+importants dans le domaine des échanges de pièces. Coinswap est un protocole
+sans confiance qui permet à deux utilisateurs ou plus de créer des transactions
+qui ressemblent à des paiements ordinaires mais qui, en réalité, échangent
+leurs pièces l'une contre l'autre. Cela améliore la confidentialité non seulement
+des utilisateurs de coinswaps mais aussi de tous les utilisateurs de bitcoins,
+car tout ce qui ressemble à un paiement pourrait être un échange de pièces.
 
 - **Succinct Atomic Swaps (SAS):** Ruben Somsen wrote a post and created
   a video describing a [procedure][news98 sas] for a trustless exchange
