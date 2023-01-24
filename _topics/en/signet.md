@@ -114,6 +114,9 @@ optech_mentions:
   - title: "Eclair #2387 adds support for signet"
     url: /en/newsletters/2022/08/31/#eclair-2387
 
+  - title: "Question about why signet uses the same bech32 address prefix as testnet"
+    url: /en/newsletters/2023/01/25/#why-doesn-t-signet-use-a-unique-bech32-prefix
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
