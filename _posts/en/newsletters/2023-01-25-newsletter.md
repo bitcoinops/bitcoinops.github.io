@@ -80,7 +80,47 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Bitcoin Core signing keys were removed from repo. What is the new process?]({{bse}}116649)
+  Andrew Chow explains that while the signing keys were [removed][remove builder
+  keys] from the Bitcoin Core repository, there is now a list of keys on the
+  [guix.sigs repository][guix.sigs repo] which houses [guix][topic reproducible
+  builds] build attestations.
+
+- [Why doesn't signet use a unique bech32 prefix?]({{bse}}116630)
+  Casey Rodarmor wonders why both testnet and [signet][topic signet] use
+  the `tb1` [address prefix][wiki address prefixes]. Kalle, one of the [BIP325][] authors, explains that
+  while signet initially used a different address prefix, it was thought using the same
+  prefix would simplify usage of that alternate test network.
+
+- [Arbitrary data storage in witness?]({{bse}}116875)
+  RedGrittyBrick points to [one of several][large witness tx] recent P2TR
+  transactions containing a large amount of witness data. Other users point out
+  that the Ordinals project provides a service for including arbitrary data,
+  like [the image][ordinals example] in the transaction above, into a Bitcoin transaction using the witness.
+
+- [Why is the locktime set at transaction level while the sequence is set at input level?]({{bse}}116706)
+  RedGrittyBrick provides early historical context for `nSequence` and `nLockTime`
+  while Pieter Wuille goes on to explain the evolution in the meanings of these [timelock][topic
+  timelocks] fields over time.
+
+- [BLS signatures vs Schnorr]({{bse}}116551)
+  Pieter Wuille contrasts the cryptographic assumptions between BLS and
+  [schnorr][topic schnorr signatures] signatures, comments on the verification
+  times, and notes complications around BLS [multisignatures][topic
+  multisignature] and the lack of support for [adaptor signatures][topic adaptor signatures].
+
+- [Why exactly would adding further divisibility to bitcoin require a hard fork?]({{bse}}116584)
+  Pieter Wuille explains 4 soft fork methods that could enable sub-satoshi divisibility in transactions:
+
+  1. A [forced soft fork][] method with consensus rule changes
+     requiring all new transactions to comply with the new rules
+  2. A one-way extension block that separates transactions following the new
+     rules, similar to 1. above, but also allowing for legacy transactions
+  3. A two-way extension block, similar to 2. above, but allowing coins
+     following the new side to move back to legacy side
+  4. A method that uses current consensus rules but truncates sub-satoshi
+     amounts for old nodes by storing these sub-satoshi amounts elsewhere in
+     the transaction
 
 ## Notable code and documentation changes
 
@@ -112,3 +152,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [towns e-vs-shg]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021334.html
 [`sighash_group` proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019243.html
 [wallace pop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003820.html
+[forced soft fork]: https://petertodd.org/2016/forced-soft-forks
+[remove builder keys]: https://github.com/bitcoin/bitcoin/commit/296e88225096125b08665b97715c5b8ebb1d28ec
+[guix.sigs repo]: https://github.com/bitcoin-core/guix.sigs/tree/main/builder-keys
+[wiki address prefixes]: https://en.bitcoin.it/wiki/List_of_address_prefixes
+[large witness tx]: https://blockstream.info/tx/a6628f32a5b41b359cfe4ab038ff7c4279118ff601b9eca85eca8a64763db40c?expand
+[ordinals example]: https://ordinals.com/tx/a6628f32a5b41b359cfe4ab038ff7c4279118ff601b9eca85eca8a64763db40c
