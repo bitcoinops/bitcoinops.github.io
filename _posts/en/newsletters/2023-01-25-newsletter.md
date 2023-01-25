@@ -141,6 +141,18 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   For performance reasons, the second pass needs to be enabled by
   calling the RPC with the `filter_false_positives` option.
 
+- [Libsecp256k1 #1192][] updates the library's exhaustive tests.  By
+  changing the `B` parameter of the secp256k1 curve from `7` to another
+  number, it is possible to find different curve groups that are
+  compatible with libsecp256k1 but which are much smaller than
+  secp256k1's order of approximately 2<sup>256</sup>.  On these tiny
+  groups that are useless for secure cryptography, it's possible to test
+  the libsecp256k1 logic exhaustively on every possible signature.  This
+  PR added a group of size 7 in addition to the existing sizes 13 and
+  199, although cryptographers first had to figure out the peculiar
+  algebraic properties that caused the naive search algorithm for such
+  groups to not always succeed before.  Size 13 remains the default.
+
 - [BIPs #1383][] assigns [BIP329][] to the proposal for a standard
   wallet label export format.  Since the original proposal (see
   [Newsletter #215][news215 labels]), the main difference is a switch
