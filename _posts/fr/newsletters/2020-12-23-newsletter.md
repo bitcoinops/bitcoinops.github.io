@@ -40,7 +40,7 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
 * Mai
   * [Confidentialité de l'origine de la transaction](#transaction-origin-privacy)
   * [Échanges atomiques succincts](#echanges-atomiques-succincts-sas)
-  * [Implémentation de l'échange de pièces](#mise-en-oeuvre-de-lechange-de-monnaie)
+  * [Implémentation de l'échange de pièces](#mise-en-oeuvre-de-l-echange-de-monnaie)
   * [Filtres à bloc compacts](#compact-block-filters)
 * Juin
   * [Attaque de paiement excessif sur les transactions segwit à entrées multiples](#overpayment-attack-on-multi-input-segwit-transactions)
