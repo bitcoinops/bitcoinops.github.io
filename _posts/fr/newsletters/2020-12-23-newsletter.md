@@ -39,7 +39,7 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
   * [Coffre-forts](#vaults)
 * Mai
   * [Confidentialité de l'origine de la transaction](#transaction-origin-privacy)
-  * [Échanges atomiques succincts](#succinct-atomic-swaps-sas)
+  * [Échanges atomiques succincts](#echanges-atomiques-succincts-SAS)
   * [Implémentation de l'échange de pièces](#coinswap-implementation)
   * [Filtres à bloc compacts](#compact-block-filters)
 * Juin
