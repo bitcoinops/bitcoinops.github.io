@@ -371,75 +371,79 @@ leurs pièces l'une contre l'autre. Cela améliore la confidentialité non seule
 des utilisateurs de coinswaps mais aussi de tous les utilisateurs de bitcoins,
 car tout ce qui ressemble à un paiement pourrait être un échange de pièces.
 
-- **Succinct Atomic Swaps (SAS):** Ruben Somsen wrote a post and created
-  a video describing a [procedure][news98 sas] for a trustless exchange
-  of coins using only two transactions.  The protocol has several
-  advantages over earlier coinswap designs: it requires less block space, it
-  saves on transaction fees, it only requires consensus-enforced
-  timelocks on one of the chains in a cross-chain swap, and it doesn't
-  depend on any new security assumptions or Bitcoin consensus changes.
-  If taproot is adopted, swaps can be made even more privately and
-  efficiently.
+- **Échanges atomiques succincts (SAS):** Ruben Somsen a écrit un article et
+  créé une vidéo décrivant une [procédure][news98 sas] pour un échange de
+  monnaie sans confiance utilisant seulement deux transactions. Le protocole
+  présente plusieurs avantages par rapport aux conceptions précédentes
+  d'échange de monnaies : il nécessite moins d'espace de bloc, il économise
+  les frais de transaction, il ne requiert que des timelocks renforcés par
+  consensus sur l'une des chaînes dans un échange inter-chaîne, et il ne
+  dépend pas de nouvelles hypothèses de sécurité ou de modifications du
+  consensus Bitcoin. Si taproot est adopté, les échanges peuvent être
+  effectués de manière encore plus privée et efficace.
 
-- **Coinswap implementation:** Chris Belcher [posted][belcher coinswap1]
-  a design for a full-featured coinswap implementation.  His [initial
-  post][coinswap design] included the history of the coinswap idea,
-  suggested ways the multisig conditions needed for coinswap could be
-  disguised as more common transaction types, proposed using a market
-  for liquidity (like JoinMarket already does), described splitting and
-  routing techniques to reduce privacy losses from amount correlation or
-  spying participants, suggested combining coinswap with [payjoin][topic
-  payjoin], and discussed some of the backend requirements for the
-  system.  Additionally, he compared coinswap to other privacy
-  techniques such as using LN, [coinjoin][topic coinjoin], payjoin, and
-  payswap.  The proposal received a [significant amount][belcher
-  coinswap2] of [expert discussion][belcher coinswap3] and a number of
-  suggestions were integrated into the protocol.  By December, Belcher's
-  prototype software was [creating coinswaps][belcher dec8 tweet] on
-  testnet that demonstrated their strong lack of linkability.
+- **Mise en œuvre de l'échange de monnaie :** Chris Belcher a [posté][belcher coinswap1]
+  une conception pour une implémentation complète d'échange de monnaie. Son [post initial][coinswap design]
+  comprend l'historique de l'idée de coinswap, suggère des façons dont les
+  conditions multisig nécessaires pour coinswap pourraient être déguisées en
+  types de transaction plus communs, propose d'utiliser un marché pour la
+  liquidité (comme JoinMarket le fait déjà), décrit les techniques de
+  fractionnement et de routage pour réduire les pertes de confidentialité
+  dues à la corrélation des montants ou à l'espionnage des participants,
+  suggère de combiner coinswap avec [payjoin][topic payjoin], et discute
+  de certaines des exigences de backend pour le système. En outre, il a
+  comparé le coinwap à d'autres techniques de protection de la vie privée
+  telles que l'utilisation de LN, [coinjoin][topic coinjoin], payjoin et payswap.
+  La proposition a fait l'objet d'un [nombre important][belcher coinswap2]
+  de [discussions entre experts][belcher coinswap3] et un certain nombre de
+  suggestions ont été intégrées au protocole. En décembre, le logiciel
+  prototype de Belcher [créait des échanges de monnaies][belcher dec8 tweet] sur
+  testnet, ce qui a permis de démontrer l'absence totale de possibilité de liaison.
 
 {:#compact-block-filters}
-Since Bitcoin's early days, one of the challenges of developing
-lightweight clients with SPV security has been finding a way for the
-client to download transactions affecting its wallet without giving the
-third party server providing the transactions the ability to track the
-wallet's receiving and spending history.  An initial attempt at this was
-[BIP37][]-style [bloom filters][topic transaction bloom filtering], but
-the way wallets used them ended up providing only [minimal privacy][nick
-filter privacy] and created [denial of service risks][bitcoin core
-#16152] for the full nodes that served them.  An anonymous developer
-posted to the Bitcoin-Dev mailing list in May 2016 suggesting an
-alternative construction of a [single bloom filter per block][bfd post]
-that all wallets could use.  The idea was quickly [refined][maxwell
-gcs], [implemented][neutrino], and [specified][bip157 spec discussion],
-becoming the [BIP157][] and [BIP158][] specifications of [compact block
-filters][topic compact block filters].  This can significantly improve
-the privacy of lightweight clients, although it does increase their
-bandwidth, CPU, and memory requirements compared to current popular
-methods.  For full nodes, it reduces the DoS risk to that of a simple
-bandwidth exhaustion attack, which nodes can already address with
-bandwidth throttling options.  Although merged on the server side in
-[btcd][btcd #1180] in 2018 and proposed for Bitcoin Core around the same
-time, 2020 saw the P2P part of the protocol merged [piecewise][news98
-bcc18877] into Bitcoin Core in [May][news100 bcc19010] through
-[August][news111 bcc19070], culminating with the ability for a node
-operator to opt in to creating and serving compact block filters by
-enabling just two configuration options.
+Depuis les premiers jours de Bitcoin, l'un des défis du développement de
+clients légers avec une sécurité SPV a été de trouver un moyen pour le
+client de télécharger les transactions affectant son portefeuille sans
+donner au serveur tiers fournissant les transactions la possibilité de
+suivre l'historique de réception et de dépense du portefeuille. Une première
+tentative a consisté à utiliser des [filtres bloom][topic transaction bloom filtering]
+de type [BIP37][] mais la façon dont les portefeuilles les utilisaient
+n'offrait finalement qu'une [confidentialité minimale] [nick filter privacy]
+et créait des [risques de déni de service][bitcoin core #16152] pour les nœuds
+complets qui les servaient. Un développeur anonyme a posté sur la liste de
+diffusion Bitcoin-Dev en mai 2016, en suggérant une construction alternative
+d'un [filtre bloom unique par bloc][bfd post] que tous les portefeuilles
+pourraient utiliser. L'idée a rapidement été [affinée][maxwell gcs], [implémentée][neutrino],
+et [spécifiée][bip157 spec discussion], devenant les [BIP157][] et [BIP158][]
+de spécifications des [filtres de blocs compacts][topic compact block filters].
+Cette méthode peut améliorer considérablement la confidentialité des clients légers,
+bien qu'elle augmente leurs besoins en bande passante, en CPU et en mémoire par
+rapport aux méthodes courantes actuelles. Pour les nœuds complets, cela réduit
+le risque de DoS à celui d'une simple attaque par épuisement de la bande passante,
+que les nœuds peuvent déjà traiter avec des options de limitation de la bande
+passante. Bien que fusionné côté serveur dans [btcd][btcd #1180] en 2018 et
+proposé pour Bitcoin Core à peu près au même moment, 2020 a vu la partie P2P
+du protocole fusionnée [par morceaux][news98 bcc18877] dans Bitcoin Core en
+[mai][news100 bcc19010] jusqu'en [août][news111 bcc19070], culminant avec la
+possibilité pour un opérateur de nœud d'opter pour la création et le service
+de filtres de blocs compacts en activant seulement deux options de configuration.
 
 <div markdown="1" class="callout" id="releases">
-### 2020 summary<br>Major releases of popular infrastructure projects
+### Sommaire 2020<br>Mise à jour majeure des principaux projets d'infrastructure
 
-- [LND 0.9.0-beta][] released in January improved the access control list
-  mechanism (“macaroons”), added support for receiving [multipath
-  payments][topic multipath payments], added the ability to send
-  additional data in an encrypted onion message, and allowed requesting
-  channel close outputs pay a specified address (e.g. your hardware
-  wallet).
+- [LND 0.9.0-beta][] a publié en janvier une amélioration du mécanisme
+  de liste de contrôle d'accès ("macarons"), a ajouté la prise en charge
+  de la réception de [paiements par trajets multiples][topic multipath payments],
+  a ajouté la possibilité d'envoyer des données supplémentaires dans un
+  message crypté en oignon, et a permis de demander des sorties de
+  fermeture de canal pour payer une adresse spécifiée (par exemple,
+  votre portefeuille matériel).
 
-- [LND 0.10.0-beta][] released in May added support for sending
-  multipath payments, allowed funding channels using an external wallet
-  via [PSBTs][topic psbt], and began supporting the creation of invoices
-  [larger][topic large channels] than 0.043 BTC.
+- [LND 0.10.0-beta][] a publié en mai l'ajout de la prise en charge
+  de l'envoi de paiements par trajets multiples, a permis de financer
+  des canaux à l'aide d'un portefeuille externe via des [PSBT] [topic psbt],
+  et a commencé à prendre en charge la création de factures [plus grandes][topic large channels]
+  que 0,043 BTC.
 
 - [Eclair 0.4][] released in May added compatibility with the
   latest version of Bitcoin Core and deprecated the Eclair Node GUI
