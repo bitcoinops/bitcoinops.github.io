@@ -40,7 +40,7 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
 * Mai
   * [Confidentialité de l'origine de la transaction](#transaction-origin-privacy)
   * [Échanges atomiques succincts](#echanges-atomiques-succincts-sas)
-  * [Implémentation de l'échange de pièces](#mise-en-œuvre-de-lechange-de-monnaie)
+  * [Implémentation de l'échange de pièces](#mise-en-oeuvre-de-lechange-de-monnaie)
   * [Filtres à bloc compacts](#compact-block-filters)
 * Juin
   * [Attaque de paiement excessif sur les transactions segwit à entrées multiples](#overpayment-attack-on-multi-input-segwit-transactions)
@@ -382,7 +382,7 @@ car tout ce qui ressemble à un paiement pourrait être un échange de pièces.
   consensus Bitcoin. Si taproot est adopté, les échanges peuvent être
   effectués de manière encore plus privée et efficace.
 
-- **Mise en œuvre de l'échange de monnaie :** Chris Belcher a [posté][belcher coinswap1]
+- **Mise en oeuvre de l'échange de monnaie :** Chris Belcher a [posté][belcher coinswap1]
   une conception pour une implémentation complète d'échange de monnaie. Son [post initial][coinswap design]
   comprend l'historique de l'idée de coinswap, suggère des façons dont les
   conditions multisig nécessaires pour coinswap pourraient être déguisées en
