@@ -73,6 +73,9 @@ optech_mentions:
   - title: "2021 year-in-review: PTLCs for LN"
     url: /en/newsletters/2021/12/22/#ptlcsx
 
+  - title: Using signature adaptors with PTLCs to prove acceptance of an LN async payment
+    url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)

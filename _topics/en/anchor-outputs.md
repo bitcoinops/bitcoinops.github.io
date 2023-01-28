@@ -143,6 +143,9 @@ optech_mentions:
   - title: Implementation of ephemeral anchors built on v3 transactions
     url: /en/newsletters/2022/12/07/#ephemeral-anchors-implementation
 
+  - title: "LDK #1860 adds support for channels using anchor outputs"
+    url: /en/newsletters/2023/02/01/#ldk-1860
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

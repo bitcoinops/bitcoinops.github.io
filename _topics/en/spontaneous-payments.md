@@ -2,8 +2,8 @@
 title: Spontaneous payments
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+aliases:
+  - Keysend
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -13,14 +13,14 @@ categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
   **Spontaneous payments** is the ability of one LN node to pay another
-  node without receiving an invoice first.
+  node without receiving an invoice first.  As of 2022, this is commonly
+  accomplished using **keysend** payments.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Test
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+  - title: "BLIP3: Keysend payments"
+    link: BLIP3
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -76,6 +76,9 @@ optech_mentions:
   - title: "LND #5414 begins advertising support for previously-implemented keysend payments"
     url: /en/newsletters/2022/04/27/#lnd-6414
 
+  - title: "Eclair #2573 begins accepting keysend payments that don’t contain a payment secret"
+    url: /en/newsletters/2023/02/01/#eclair-2573
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
@@ -85,17 +88,19 @@ The invoice used for regular LN payments contains a hash that the
 payer and each routing node uses as part of the
 Hash-Time-Locked-Contract.  Spontaneous payments need to replicate
 this security mechanism but without the invoice mechanism for
-communication.  At least two different mechanisms have been proposed
-for accomplishing this:
+communication.
 
-- *Add data to the routing packet (keysend):* the person sending the payment
+As of 2022, the commonly used method for accomplishing this is
+[keysend][blip3]: the person sending the payment
   chooses a hash pre-image, encrypts it to the receiver's key, and
   appends it as extra data in the routing packet.  When the payment
   arrives at the receiver, they can decrypt the data and use the
-  pre-image to claim the payment.
-{:#add-data-to-the-routing-packet}
+  pre-image to claim the payment.  Keysend support was added to several
+  popular LN nodes in 2022.
+  {:#add-data-to-the-routing-packet}
 
-- *Using a shared secret:* the person sending the payment combines
+An alternative mechanism was proposed in 2019 but has not seen
+widespread implementation or use: the person sending the payment combines
   their key and the receiver's key to create a shared secret.  Then
   the spender uses a hash of this secret as the pre-image.  The
   receiver can also generate a shared secret and can use it to accept

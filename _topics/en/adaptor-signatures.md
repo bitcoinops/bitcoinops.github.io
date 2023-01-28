@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Preparing for taproot: signature adaptors"
     url: /en/newsletters/2021/08/18/#preparing-for-taproot-9-signature-adaptors
 
+  - title: Using signature adaptors to prove acceptance of an LN async payment
+    url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

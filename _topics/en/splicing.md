@@ -46,6 +46,9 @@ optech_mentions:
   - title: "BOLTs #1004 makes recommendations to support future detection of splices"
     url: /en/newsletters/2022/08/24/#bolts-1004
 
+  - title: "Eclair #2540 makes backend preparations for splicing"
+    url: /en/newsletters/2023/02/01/#eclair-2540
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
