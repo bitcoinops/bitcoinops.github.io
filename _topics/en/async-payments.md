@@ -45,6 +45,9 @@ optech_mentions:
   - title: Request for proof that an async payment was accepted
     url: /en/newsletters/2023/01/25/#request-for-proof-that-an-async-payment-was-accepted
 
+  - title: Using adaptor signatures to prove an async payment was accepted
+    url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments

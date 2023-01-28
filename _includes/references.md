@@ -62,7 +62,7 @@
 [output script descriptors]: {{_link_descriptors}}
 {% endif %}
 
-{% comment %}<!-- BIPs in order lowest to highest
+{% comment %}<!-- BIPs and BLIPs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
 the loop is run each time this file is included (but it still only adds
 about 1 second of compile time to the whole site).  However, Jekyll 4.0
@@ -74,6 +74,11 @@ for details --> {% endcomment %}
 {% for i in (1..400) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
+{% endfor %}
+
+{% for i in (1..25) %}
+{% assign i_padded = "0000" | append: i | slice: -4, 4 %}
+[BLIP{{i}}]: https://github.com/lightning/blips/blob/master/blip-{{i_padded}}.md
 {% endfor %}
 
 {% comment %}<!-- Later link definitions supersede earlier definitions.
