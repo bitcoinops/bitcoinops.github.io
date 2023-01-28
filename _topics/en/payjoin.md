@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Tradeoffs of WabiSabi as an alternative to payjoin"
     url: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
 
+  - title: "Serverless payjoin proposal"
+    url: /en/newsletters/2023/02/01/#serverless-payjoin-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
