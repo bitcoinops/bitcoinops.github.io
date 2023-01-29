@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 
 excerpt: >
-  Cette édition spéciale de la Newsletter Optech résume les
+  Cette édition spéciale du bulletin d'information d'Optech résume les
    développements de Bitcoin pendant toute l'année 2020.
 ---
 {{page.excerpt}} C'est la suite de nos résumés de [2018][2018
@@ -49,7 +49,7 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
   * [Rançon des frais LN](#ln-fee-ransom)
   * [Incitations minières HTLC](#concern-about-htlc-mining-incentives)
   * [Inventaire d'attaque par déni de service en mémoire insuffisante](#inventory-out-of-memory-denial-of-service-attack-invdos)
-  * WabiSabi coordonne l'échange de pièces avec des quantités de sortie arbitraires](#wabisabi)
+  * [WabiSabi coordonne l'échange de pièces avec des quantités de sortie arbitraires](#wabisabi)
 * Juillet
   * [Annonces de transaction WTXID](#wtxid-announcements)
 * Août
@@ -445,137 +445,146 @@ de filtres de blocs compacts en activant seulement deux options de configuration
   et a commencé à prendre en charge la création de factures [plus grandes][topic large channels]
   que 0,043 BTC.
 
-- [Eclair 0.4][] released in May added compatibility with the
-  latest version of Bitcoin Core and deprecated the Eclair Node GUI
-  (referring users to instead to Phoenix or Eclair Mobile).
+- [Eclair 0.4][] a publié en mai l'ajout de la compatibilité avec la
+  dernière version de Bitcoin Core et a déprécié l'interface graphique
+  Eclair Node (renvoyant les utilisateurs vers Phoenix ou Eclair Mobile).
 
-- [Bitcoin Core 0.20.0][] released in June began defaulting to bech32
-  addresses for RPC users, allowed configuring RPC permissions for
-  different users and applications, and added some basic support for
-  generating PSBTs in the GUI.
+- [Bitcoin Core 0.20.0][] publié en juin a commencé à utiliser par défaut
+  les adresses bech32 pour les utilisateurs RPC, a permis de configurer
+  les autorisations RPC pour différents utilisateurs et applications, et a
+  ajouté un support de base pour générer des PSBT dans l'interface graphique.
 
-- [C-Lightning 0.9.0][] released in August provided an updated `pay`
-  command and an RPC for sending messages over LN.
+- [C-Lightning 0.9.0][] publié en août a fourni une commande `pay` mise à jour
+  et un RPC pour envoyer des messages sur LN.
 
-- [LND 0.11.0-beta][] released in August allowed accepting [large
-  channels][topic large channels].
+- [LND 0.11.0-beta][] publié en août a permis d'accepter les [grandes chaînes][topic large channels].
 
 </div>
 
-## June
+## Juin
 
-June was an especially active month for the discovery and discussion of
-vulnerabilities, although many problems were discovered earlier or fully
-disclosed later.  The notable vulnerabilities included:
+Le mois de juin a été particulièrement actif pour la découverte et la discussion
+des vulnérabilités, bien que de nombreux problèmes aient été découverts plus tôt
+ou entièrement divulgués plus tard. Les principales vulnérabilités sont les suivantes :
 
-- [Overpayment attack on multi-input segwit transactions:][attack overpay segwit]
-  in June, Trezor announced Saleem Rashid had discovered a weakness in
-  segwit's ability to prevent fee overpayment attacks.  Fee overpayment
-  attacks are a well known weakness in Bitcoin's original transaction
-  format where signatures don't commit to the value of an input,
-  allowing an attacker to trick a dedicated signing device (such as a
-  hardware wallet) into spending more money than expected.  Segwit tried
-  to eliminate this issue by having each signature commit to the amount
-  of the input it spent.  However, Rashid re-discovered a problem
-  previously discovered and reported by Gregory Sanders in 2017 where a specially
-  constructed transaction with at least two inputs can get around this
-  limitation if the user can be tricked into signing two or more
-  seemingly identical variations of the same transaction.  Several
-  developers felt this was a minor issue---if you can get a user to sign
-  twice, you can get them to pay the receiver twice, which also loses
-  their money.  Despite that, several hardware wallet manufacturers
-  released new firmware that implemented the same protection for segwit
-  transactions that they've successfully used to prevent fee
-  overpayments in legacy transactions.  In some cases, such as in the
-  ColdCard wallet, this security improvement was implemented
-  non-disruptively.  In other hardware wallets, the implementation broke
-  support with existing workflows, forcing updates to the [BIP174][]
-  specification of PSBT and software such as Electrum, Bitcoin Core, and
-  HWI.
+- [Attaque de surpaiement sur les transactions segwit à entrées multiples:][attack overpay segwit]
+  En juin, Trezor a annoncé que Saleem Rashid avait découvert une faiblesse
+  dans la capacité de segwit à prévenir les attaques de surpaiement des frais.
+  Les attaques de surpaiement des frais sont une faiblesse bien connue du
+  format de transaction original de Bitcoin, où les signatures ne s'engagent
+  pas sur la valeur d'une entrée, ce qui permet à un attaquant de tromper
+  un dispositif de signature dédié (tel qu'un portefeuille matériel) en
+  dépensant plus d'argent que prévu. Segwit a essayé d'éliminer ce problème
+  en faisant en sorte que chaque signature s'engage sur le montant de
+  l'entrée dépensée. Cependant, Rashid a redécouvert un problème précédemment
+  découvert et signalé par Gregory Sanders en 2017, où une transaction
+  spécialement construite avec au moins deux entrées peut contourner cette
+  limitation si l'utilisateur peut être trompé en signant deux ou plusieurs
+  variations apparemment identiques de la même transaction. Plusieurs
+  développeurs ont estimé qu'il s'agissait d'un problème mineur---si vous
+  pouvez amener un utilisateur à signer deux fois, vous pouvez l'amener à
+  payer deux fois le destinataire, qui perd également son argent. Malgré
+  cela, plusieurs fabricants de porte-monnaie matériels ont publiés un
+  nouveau micrologiciel qui mettait en œuvre la même protection pour les
+  transactions segwit que celle qu'ils avaient utilisée avec succès pour
+  empêcher les paiements excessifs de frais dans les transactions
+  traditionnelles. Dans certains cas, comme pour le portefeuille ColdCard,
+  cette amélioration de la sécurité a été mise en œuvre de manière non
+  perturbatrice. Dans d'autres portefeuilles matériels, l'implémentation
+  a rompu le support avec les flux de travail existants, forçant des
+  mises à jour de la spécification [BIP174][] de PSBT et de logiciels
+  tels qu'Electrum, Bitcoin Core et HWI.
 
     ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
-- [LN payment atomicity attack:][attack ln atomicity] as LN developers
-  worked to implement the [anchor outputs][topic anchor outputs]
-  protocol to eliminate risks related to rapid rises in transaction
-  feerates, one of the key contributors to that protocol---Matt
-  Corallo---discovered it would enable a new vulnerability.  A malicious
-  counterparty could attempt to settle an LN payment ([HTLC][topic
-  htlc]) using a low feerate and a [transaction pinning][topic
-  transaction pinning] technique that prevents the transaction or a fee
-  bump of it from being confirmed quickly.  The delayed confirmation
-  causes the HTLC's timeout to expire, allowing the attacker to steal
-  back funds they paid to the honest counterparty.  Several solutions
-  were [proposed][atomicity attack discussion], from changes to the LN
-  protocol, to third-party markets, to [soft fork consensus
-  changes][rubin fee sponsorship], but no solution has yet gained any
-  significant traction.
+- [Attaque contre l'atomicité des paiements LN :] [attack ln atomicity]
+  Alors que les développeurs de LN s'efforçaient de mettre en œuvre le
+  protocole [anchor outputs] [topic anchor outputs] afin d'éliminer les
+  risques liés à l'augmentation rapide des taux d'intérêt des transactions,
+  l'un des principaux contributeurs à ce protocole - Matt Corallo - a
+  découvert qu'il permettait une nouvelle vulnérabilité. Une contrepartie
+  malveillante pourrait tenter de régler un paiement LN ([HTLC][topic htlc])
+  à l'aide d'un faible feerate et d'une technique [d'épinglage de transaction][topic transaction pinning]
+  qui empêche la confirmation rapide de la transaction ou d'une partie
+  de celle-ci. Le retard de confirmation entraîne l'expiration du délai
+  d'attente du HTLC, ce qui permet à l'attaquant de récupérer les fonds
+  qu'il a versés à la contrepartie honnête. Plusieurs solutions ont été
+  [proposées][atomicity attack discussion], depuis les modifications du
+  protocole LN jusqu'aux marchés tiers, en passant par [les modifications
+  du consensus de l'embranchement convergent][rubin fee sponsorship],
+  mais aucune solution n'a encore gagné en importance.
 
-- [Fast LN eclipse attacks:][attack time dilation] although Bitcoin
-  protocol experts from Satoshi Nakamoto to present have been aware that
-  a node isolated from any honest peer can be deceived into accepting
-  unspendable bitcoins, a category of problems sometimes called [eclipse
-  attacks][topic eclipse attacks], Gleb Naumenko and Antoine Riard
-  published a paper in June showing that eclipse attacks could steal
-  from LN nodes in as little as two hours---although it would take
-  longer to steal from LN nodes that were connected to their own full
-  verification nodes.
-  The authors suggest the implementation of more methods for avoiding
-  eclipse attacks, which did see several positive developments in the
-  Bitcoin Core project this year.
+- [attaques rapides par éclipse de LN : ][attack time dilation] bien
+  que les experts du protocole Bitcoin, depuis Satoshi Nakamoto jusqu'à
+  aujourd'hui, soient conscients qu'un nœud isolé de tout pair honnête
+  peut être trompé en acceptant des bitcoins non dépensés, une catégorie
+  de problèmes parfois appelée [attaques par éclipse][topic eclipse attacks],
+  Gleb Naumenko et Antoine Riard ont publiés en juin un article montrant
+  que les attaques par éclipse pouvaient voler des nœuds LN en deux heures
+  seulement---bien qu'il faille plus de temps pour voler des nœuds LN
+  connectés à leurs propres nœuds de vérification complète. Les auteurs
+  suggèrent la mise en œuvre de plus de méthodes pour éviter les attaques
+  par éclipse, qui ont connu plusieurs développements positifs dans le
+  projet Bitcoin Core cette année.
 
-- [LN fee ransom:][attack ln fee ransom] René Pickhardt publicly
-  disclosed a vulnerability to the Lightning-Dev mailing list that he
-  had previously privately reported to LN implementation maintainers
-  almost a year earlier.  A malicious channel counterparty can initiate
-  up to 483 payments (HTLCs) in an LN channel and then close the
-  channel, producing an onchain transaction whose size is about 2% of an
-  entire block and which needs to have its transaction fee paid by the
-  honest node.  Simple mitigations for this attack were implemented in
-  several LN nodes and the use of [anchor outputs][topic anchor outputs]
-  is also expected to help, but no comprehensive solution has yet been
-  proposed.
+- [Rançon des frais LN :][attack ln fee ransom] René Pickhardt a
+  publiquement divulgué une vulnérabilité à la liste de diffusion
+  Lightning-Dev qu'il avait auparavant signalée en privé aux
+  mainteneurs de l'implémentation LN près d'un an auparavant.
+  Une contrepartie de canal malveillante peut initier jusqu'à 483
+  paiements (HTLC) dans un canal LN, puis fermer le canal, produisant
+  une transaction onchain dont la taille est d'environ 2 % d'un bloc
+  entier et dont les frais de transaction doivent être payés par
+  le nœud honnête. Des mesures d'atténuation simples de cette attaque
+  ont été mises en œuvre dans plusieurs nœuds LN et l'utilisation de
+  [sorites d'ancrage][topic anchor outputs] devrait également être
+  utile, mais aucune solution complète n'a encore été proposée.
 
-- [Concern about HTLC mining incentives:][attack htlc incentives] two
-  papers about out-of-band HTLC bribes were discussed in late June and
-  early July.  [HTLCs][topic htlc] are contracts used to secure LN
-  payments, cross-chain atomic swaps, and several other trustless
-  exchange protocols.  They work by giving a receiving user a period of
-  time where they have the exclusive ability to claim a payment by
-  releasing a secret data string; after the time expires, the spending
-  user can take back the payment.  The papers examined the risk that
-  the spending user could bribe miners to release the secret data but
-  not confirm the transaction containing it, allowing the timelock to
-  expire so that the spender would get their money back but still learn
-  the secret.  Developer ZmnSCPxj reminded the researchers of a
-  well known mechanism that should prevent such problems, a mechanism he
-  helped [implement][cl3870] in C-Lightning.  Although the idea
-  works in theory, using it will cost users money, so research into
-  better solutions is still encouraged.
+- [Préoccupation concernant les incitations au minage des HTLC :][attack htlc incentives]
+  deux articles sur les pots-de-vin HTLC hors chaîne ont été discutés
+  fin juin et début juillet. [Les HTLC][topic htlc] sont des contrats
+  utilisés pour sécuriser les paiements LN, les échanges atomiques
+  inter-chaînes, et plusieurs autres protocoles d'échange sans confiance.
+  Ils fonctionnent en donnant à un utilisateur récepteur une période
+  de temps pendant laquelle il a la capacité exclusive de réclamer
+  un paiement en libérant une chaîne de données secrètes ; après
+  l'expiration du temps, l'utilisateur qui dépense peut reprendre
+  le paiement. Les articles ont examinés le risque que l'utilisateur
+  qui dépense puisse soudoyer les mineurs pour qu'ils libèrent les
+  données secrètes mais ne confirment pas la transaction qui les contient,
+  permettant ainsi à la période de blocage d'expirer de sorte que le
+  dépensier récupère son argent tout en apprenant le secret. Le développeur
+  ZmnSCPxj a rappelé aux chercheurs un mécanisme bien connu qui devrait
+  empêcher de tels problèmes, un mécanisme qu'il a aidé à [implémenter][cl3870]
+  dans C-Lightning. Bien que l'idée fonctionne en théorie, son utilisation
+  coûtera de l'argent aux utilisateurs. La recherche de meilleures
+  solutions est donc encouragée.
 
-- [Inventory out-of-memory Denial-of-Service attack (InvDoS):][attack invdos]
-  an attack originally discovered in 2018 that affected the Bcoin and
-  Bitcoin Core full nodes, which was responsibly disclosed
-  and fixed at that time, was reevaluated in June 2020 and found to also
-  apply to the Btcd full node.  An attacker could flood a victim's node
-  with an excessive number of new transaction announcements (`inv`
-  messages), each containing nearly the maximum allowed number of
-  transaction hashes. When too many of these announcements were queued,
-  the victim's node would run out of memory and crash.  After Btcd fixed
-  the problem and users were given time to upgrade, the vulnerability
-  was publicly disclosed.
+- [Attaque par déni de service hors mémoire (InvDoS) :][attack invdos]
+  une attaque initialement découverte en 2018 qui affectait les nœuds
+  complets Bcoin et Bitcoin Core, qui a été divulguée de manière responsable
+  et corrigée à l'époque, a été réévaluée en juin 2020 et s'est avérée
+  s'appliquer également au nœud complet Btcd. Un attaquant pouvait inonder
+  le nœud d'une victime d'un nombre excessif de nouvelles annonces de
+  transaction (messages `inv`), chacune contenant presque le nombre
+  maximum autorisé de hachages de transaction. Lorsque trop de ces
+  annonces étaient mises en file d'attente, le nœud de la victime
+  manquait de mémoire et se plantait. Après que Btcd ait corrigé le
+  problème et que les utilisateurs aient eu le temps de se mettre à jour,
+  la vulnérabilité a été divulguée publiquement.
 
 {:#wabisabi}
-June also had some good news, with a team of researchers working on the
-Wasabi coinjoin implementation [announcing][news102 wasabi] a protocol
-named WabiSabi that should allow
-trustless server-coordinated coinjoins with arbitrary output values.
-This makes it easier to use coordinated coinjoins to send payments,
-either between participants in the coinjoin or to non-participants.
-Wasabi developers worked on implementing the protocol during the
-remainder of the year.
+Le mois de juin a également été marqué par de bonnes nouvelles, avec
+une équipe de chercheurs travaillant sur l'implémentation du coinjoin
+Wasabi [annonçant][news102 wasabi] un protocole nommé WabiSabi qui
+devrait permettre des coinjoins coordonnés par un serveur sans confiance
+avec des valeurs de sortie arbitraires. Il est ainsi plus facile
+d'utiliser des coinjoins coordonnés pour envoyer des paiements,
+soit entre les participants au coinjoin, soit à des non-participants.
+Les développeurs de Wasabi ont travaillé à la mise en œuvre du
+protocole pendant le reste de l'année.
 
-## July
+## Juillet
 
 {:#wtxid-announcements}
 July saw the [merge][bips933] of the [BIP339][] specification for wtxid
