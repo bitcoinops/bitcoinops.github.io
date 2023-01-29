@@ -43,12 +43,12 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
   * [Implémentation de l'échange de pièces](#mise-en-oeuvre-de-l-echange-de-monnaie)
   * [Filtres à bloc compacts](#compact-block-filters)
 * Juin
-  * [Attaque de paiement excessif sur les transactions segwit à entrées multiples](#overpayment-attack-on-multi-input-segwit-transactions)
+  * [Attaque de paiement excessif sur les transactions segwit à entrées multiples](#attaque-de-surpaiement-sur-les-transactions-segwit-a-entrees-multiples)
   * [Attaque d'atomicité de paiement LN](#attaque-contre-l-atomicite-des-paiements-ln)
-  * [Attaques rapides d'éclipse LN](#fast-ln-eclipse-attacks)
-  * [Rançon des frais LN](#ln-fee-ransom)
+  * [Attaques rapides d'éclipse LN](#attaques-rapides-par-eclipse-de-ln)
+  * [Rançon des frais LN](#rancon-des-frais-ln)
   * [Incitations minières HTLC](#preoccupation-concernant-les-incitations-au-minage-des-htlc)
-  * [Inventaire d'attaque par déni de service en mémoire insuffisante](#inventory-out-of-memory-denial-of-service-attack-invdos)
+  * [Inventaire d'attaque par déni de service en mémoire insuffisante](#attaque-par-deni-de-service-hors-memoire-invdos)
   * [WabiSabi coordonne l'échange de pièces avec des quantités de sortie arbitraires](#wabisabi)
 * Juillet
   * [Annonces de transaction WTXID](#wtxid-announcements)
