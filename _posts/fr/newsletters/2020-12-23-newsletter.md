@@ -44,10 +44,10 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
   * [Filtres à bloc compacts](#compact-block-filters)
 * Juin
   * [Attaque de paiement excessif sur les transactions segwit à entrées multiples](#overpayment-attack-on-multi-input-segwit-transactions)
-  * [Attaque d'atomicité de paiement LN](#ln-payment-atomicity-attack)
+  * [Attaque d'atomicité de paiement LN](#attaque-contre-l-atomicite-des-paiements-ln)
   * [Attaques rapides d'éclipse LN](#fast-ln-eclipse-attacks)
   * [Rançon des frais LN](#ln-fee-ransom)
-  * [Incitations minières HTLC](#concern-about-htlc-mining-incentives)
+  * [Incitations minières HTLC](#preoccupation-concernant-les-incitations-au-minage-des-htlc)
   * [Inventaire d'attaque par déni de service en mémoire insuffisante](#inventory-out-of-memory-denial-of-service-attack-invdos)
   * [WabiSabi coordonne l'échange de pièces avec des quantités de sortie arbitraires](#wabisabi)
 * Juillet
@@ -497,7 +497,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
 
     ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
-- [Attaque contre l'atomicité des paiements LN :] [attack ln atomicity]
+- [Attaque contre l'atomicité des paiements LN :][attack ln atomicity]
   Alors que les développeurs de LN s'efforçaient de mettre en œuvre le
   protocole [anchor outputs] [topic anchor outputs] afin d'éliminer les
   risques liés à l'augmentation rapide des taux d'intérêt des transactions,
