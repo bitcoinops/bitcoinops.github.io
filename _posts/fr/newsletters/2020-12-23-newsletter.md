@@ -587,98 +587,101 @@ protocole pendant le reste de l'année.
 ## Juillet
 
 {:#wtxid-announcements}
-July saw the [merge][bips933] of the [BIP339][] specification for wtxid
-transaction announcements.  Nodes have historically announced the
-availability of new unconfirmed transactions for relay using the
-transaction's hash-based identifier (txid), but when the proposed segwit
-code was being reviewed in 2016, Peter Todd [discovered][todd segwit
-review] that a malicious node could get other nodes on the network to
-ignore an innocent user's transaction by invalidating witness data in the transaction
-that is not part of its txid.  A [quick
-fix][Bitcoin Core #8312] was implemented at the time, but it had some
-minor downsides and developers knew that the best solution---despite its
-[complexities][bcc19569]---was to announce new transactions using their
-witness txid (wtxid).  Within a month of BIP339 being added to the BIPs
-repository, wtxid announcements were [merged][bcc18044] into Bitcoin
-Core.  Although seemingly a minor concern without any obvious effect on
-users, wtxid announcements simplify the development of
-hoped-for upgrades, such as [package relay][topic package relay].
+Juillet a vu la [fusion][bips933] de la spécification [BIP339][] pour
+les annonces de transactions wtxid. Les nœuds ont historiquement annoncés
+la disponibilité de nouvelles transactions non confirmées pour le relais
+en utilisant l'identifiant basé sur le hachage (txid) de la transaction,
+mais lorsque le code segwit proposé a été examiné en 2016, Peter Todd a
+[découvert][todd segwit review] qu'un nœud malveillant pouvait amener les
+autres nœuds du réseau à ignorer la transaction d'un utilisateur innocent
+en invalidant les données du témoin dans la transaction qui ne font pas
+partie de son txid. Une [solution rapide][Bitcoin Core #8312] a été mise
+en œuvre à l'époque, mais elle présentait quelques inconvénients mineurs
+et les développeurs savaient que la meilleure solution---malgré ses
+[complexités][bcc19569]---était d'annoncer les nouvelles transactions en
+utilisant leur txid de témoin (wtxid). Moins d'un mois après l'ajout du
+BIP339 au dépôt des BIP, les annonces de wtxid ont été [fusionnées][bcc18044]
+dans Bitcoin Core. Bien qu'il s'agisse apparemment d'un problème mineur
+sans effet évident sur les utilisateurs, les annonces wtxid simplifient
+le développement des mises à jour espérées, telles que le [relai de paquet][topic package relay].
 
-## August
+## Août
 
 {:#signet}
-After [over][bips900] a [year][bips983] of [development][default signet
-discussion], including multiple feedback-driven changes, the [last
-major revision][bips947] to the [BIP325][] specification of
-[signet][topic signet] was merged in early August.  Signet is a protocol
-that allows developers to create public test networks and also the name
-of the primary public signet.  Unlike Bitcoin's existing public test
-network (testnet), signet blocks must be signed by a trusted party.
-This prevents vandalism and other problems that occur because testnet
-uses Bitcoin's economic-based consensus convergence mechanism (proof of
-work) even though testnet coins have no value.  The ability to
-optionally enable signet was finally [added][bcc18267] to Bitcoin Core
-in September.
+Après [plus][bips900] d'un [an][bips983] de [développement][default signet
+discussion], y compris de multiples changements basés sur le feedback, la
+[dernière révision majeure][bips947] du [BIP325][] de la spécification de
+[signet][topic signet] a été fusionnée début août. Signet est un protocole
+qui permet aux développeurs de créer des réseaux de test publics et également
+le nom du principal signet public. Contrairement au réseau de test public
+existant de Bitcoin (testnet), les blocs signet doivent être signés par une
+partie de confiance. Cela permet d'éviter le vandalisme et d'autres problèmes
+qui se produisent parce que testnet utilise le mécanisme de convergence du
+consensus basé sur l'économie de Bitcoin (preuve de travail), même si les
+pièces de testnet n'ont aucune valeur. La possibilité d'activer optionnellement
+le signet a finalement été [ajoutée][bcc18267] à Bitcoin Core en septembre.
 
 {:#anchor-outputs}
-Almost two years after Matt Corallo [first proposed][news24 cpfp carve
-out] the [CPFP carve-out mechanism][topic cpfp carve out], the LN
-specification was [updated][news112 bolts688] to allow the creation of
-[anchor outputs][topic anchor outputs] that use carve outs for security.
-Anchor outputs allow a multiparty transaction to be fee bumped even if
-one of the parties attempts to use a [transaction pinning][topic
-transaction pinning] attack to prevent fee bumps.  The ability to fee
-bump transactions even under adversarial conditions allows LN nodes to
-accept offchain transactions without worrying about feerates increasing in
-the future.  If it later becomes necessary to broadcast that offchain
-transaction, the node can choose an appropriate feerate for it at
-broadcast time.  This simplifies the LN protocol and improves several
-aspects of its security.
+Près de deux ans après que Matt Corallo ait [proposé pour la première fois]
+[news24 cpfp carve out] le [mécanisme d'exclusion du CPFP][topic cpfp carve out],
+la spécification LN a été [mise à jour][news112 bolts688] pour permettre la
+création de [sorties d'ancrage][topic anchor outputs] qui utilisent les exclusions
+pour la sécurité. Les sorties d'ancrage permettent à une transaction multipartite
+de faire l'objet d'un prélèvement de frais même si l'une des parties tente
+d'utiliser une attaque de type [épinglage de transaction][topic transaction pinning]
+pour empêcher le prélèvement de frais. La possibilité de faire monter les frais
+des transactions même dans des conditions adverses permet aux nœuds LN d'accepter
+des transactions hors chaîne sans s'inquiéter de l'augmentation des frais à l'avenir.
+Si, plus tard, il devient nécessaire de diffuser cette transaction hors chaîne,
+le nœud peut choisir un taux de frais approprié au moment de la diffusion. Cela
+simplifie le protocole LN et améliore plusieurs aspects de sa sécurité.
 
 <div markdown="1" class="callout" id="optech">
-### 2020 summary<br>Bitcoin Optech
+### Sommaire 2020<br>Bitcoin Optech
 
-In Optech's third year, 10 new member companies joined<!-- Veriphi,
-SwanBitcoin, YellowCardIO, Xbtogroup, Bitonic, Fidelity Center for
-Applied Technology, AndgoInc, BTSEcom, EdgeWallet, Bitbank_inc -->, we
-held a [taproot workshop][] in London,
-published 51 weekly newsletters<!-- 78 to 129 -->, added 20 new pages to
-our [topics index][], added several new wallets and services to our
-[compatibility index][], and published several contributed [blog
-posts][optech blog posts] about Bitcoin scaling technology.
+Au cours de la troisième année d'existence d'Optech, 10 nouvelles sociétés
+membres se sont jointes à nous<!-- Veriphi, SwanBitcoin, YellowCardIO,
+Xbtogroup, Bitonic, Fidelity Center for Applied Technology, AndgoInc, BTSEcom,
+EdgeWallet, Bitbank_inc -->, nous avons organisé un [atelier taproot][] à
+Londres, publié 51 bulletins d'information hebdomadaires< ! -- 78 à 129 -->,
+ajouté 20 nouvelles pages à notre [index des sujets][], ajouté plusieurs
+nouveaux portefeuilles et services à notre [index de compatibilité][],
+et publié plusieurs [articles de blog][optech blog postsh] sur la technologie
+de mise à l'échelle du bitcoin.
 </div>
 
-## September
+## Septembre
 
 {:#glv-endomorphism}
-In a [2011 forum post][finney glv], early Bitcoin contributor Hal Finney
-described a method by Gallant, Lambert, and Vanstone (GLV) to reduce the
-number of expensive computations needed to verify Bitcoin transaction
-signatures. Finney wrote a proof-of-concept implementation, which he
-claimed sped up signature verification by around 25%.  Unfortunately,
-the algorithm was encumbered by [U.S.  Patent 7,110,538][] and so
-neither Finney's implementation nor a later implementation by Pieter
-Wuille was distributed to users.  On September 25th, [that patent
-expired][news117 patent].  Within a month, the code was [merged][news120
-glv] into Bitcoin Core.  For users with the default settings, the speed
-improvement will be most apparent during the final part of syncing a new
-node or when verifying blocks after a node has been offline for a while.
-Finney died in 2014, but we remain grateful for his two decades of work
-on making cryptographic technology widely accessible.
+Dans un [message du forum de 2011][finney glv], Hal Finney, l'un des premiers
+contributeurs à Bitcoin, a décrit une méthode utilisée par Gallant, Lambert et
+Vanstone (GLV) pour réduire le nombre de calculs coûteux nécessaires à la
+vérification des signatures des transactions Bitcoin. Finney a écrit une
+implémentation de preuve de concept qui, selon lui, accélère la vérification
+des signatures d'environ 25 %. Malheureusement, l'algorithme était protégé
+par le [brevet américain 7,110,538][] et ni la mise en œuvre de Finney ni une
+mise en œuvre ultérieure de Pieter Wuille n'ont été distribuées aux utilisateurs.
+Le 25 septembre, [ce brevet a expiré][news117 patent]. Dans le mois qui a suivi,
+le code a été [fusionné][news120 glv] dans Bitcoin Core. Pour les utilisateurs
+avec les paramètres par défaut, l'amélioration de la vitesse sera plus apparente
+pendant la partie finale de la synchronisation d'un nouveau nœud ou lors de la
+vérification des blocs après qu'un nœud ait été hors ligne pendant un certain temps.
+Finney est décédé en 2014, mais nous lui sommes reconnaissants pour ses deux
+décennies de travail visant à rendre la technologie cryptographique largement accessible.
 
 {:#patent-alliance}
-Square [announced][copa announced] the formation of the Cryptocurrency Open Patent Alliance (COPA) to
-coordinate the pooling of patents related to cryptocurrency technology.
-Members allow anyone to use their patents freely and, in exchange,
-receive the ability to use patents in the pool in defense against patent
-aggressors.  As of this writing, the alliance had [18 members][copa
-membership]: ARK.io, Bithyve, Blockchain Commons, Blockstack,
-Blockstream, Carnes Validadas, Cloudeya Ltd., Coinbase, Foundation
-Devices, Horizontal Systems, Kraken, Mercury Cash, Protocol Labs,
-Request Network, SatoshiLabs, Square, Transparent Systems, and
-VerifyChain.
+Square [a annoncé][copa announced la formation de la Cryptocurrency Open
+Patent Alliance (COPA) pour coordonner la mise en commun des brevets liés
+à la technologie des crypto-monnaies. Les membres permettent à quiconque
+d'utiliser librement leurs brevets et, en échange, reçoivent la possibilité
+d'utiliser les brevets du pool pour se défendre contre les agresseurs de
+brevets. Au moment de la rédaction de cet article, l'alliance comptait
+[18 membres][copa membership]: ARK.io, Bithyve, Blockchain Commons, Blockstack,
+Blockstream, Carnes Validadas, Cloudeya Ltd, Coinbase, Foundation Devices,
+Horizontal Systems, Kraken, Mercury Cash, Protocol Labs, Request Network,
+SatoshiLabs, Square, Transparent Systems, et VerifyChain.
 
-## October
+## Octobre
 
 {:#jamming}
 October saw a significant increase in discussion among LN developers
