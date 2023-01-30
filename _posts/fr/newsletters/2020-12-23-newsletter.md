@@ -646,7 +646,7 @@ EdgeWallet, Bitbank_inc -->, nous avons organisé un [atelier taproot][] à
 Londres, publié 51 bulletins d'information hebdomadaires< ! -- 78 à 129 -->,
 ajouté 20 nouvelles pages à notre [index des sujets][], ajouté plusieurs
 nouveaux portefeuilles et services à notre [index de compatibilité][],
-et publié plusieurs [articles de blog][optech blog postsh] sur la technologie
+et publié plusieurs [articles de blog][optech blog posts] sur la technologie
 de mise à l'échelle du bitcoin.
 </div>
 
@@ -670,7 +670,7 @@ Finney est décédé en 2014, mais nous lui sommes reconnaissants pour ses deux
 décennies de travail visant à rendre la technologie cryptographique largement accessible.
 
 {:#patent-alliance}
-Square [a annoncé][copa announced la formation de la Cryptocurrency Open
+Square [a annoncé][copa announced] la formation de la Cryptocurrency Open
 Patent Alliance (COPA) pour coordonner la mise en commun des brevets liés
 à la technologie des crypto-monnaies. Les membres permettent à quiconque
 d'utiliser librement leurs brevets et, en échange, reçoivent la possibilité
@@ -843,7 +843,7 @@ schedule on January 6th.*
 [c-lightning 0.9.0]: /en/newsletters/2020/08/05/#c-lightning-0-9-0
 [coinswap design]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
 [common ownership heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
-[compatibility index]: /en/compatibility/
+[index de compatibilité]: /en/compatibility/
 [copa announced]: /en/newsletters/2020/09/16/#crypto-open-patent-alliance
 [copa membership]: /en/newsletters/2020/12/09/#cryptocurrency-open-patent-alliance-copa-gains-new-members
 [crypto garage p2p deriv]: /en/newsletters/2020/08/19/#crypto-garage-announces-p2p-derivatives-beta-application-on-bitcoin
@@ -944,8 +944,8 @@ schedule on January 6th.*
 [somsen sas post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
-[taproot workshop]: /workshops/#taproot-workshop
+[atelier taproot]: /workshops/#taproot-workshop
 [todd segwit review]: https://petertodd.org/2016/segwit-consensus-critical-code-review#peer-to-peer-networking
-[topics index]: /en/topics/
+[index des sujets]: /en/topics/
 [tx origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis
-[u.s. patent 7,110,538]: https://patents.google.com/patent/US7110538B2/en
+[brevet américain 7,110,538]: https://patents.google.com/patent/US7110538B2/en
