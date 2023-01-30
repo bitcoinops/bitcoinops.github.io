@@ -120,7 +120,11 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #26471][] Reduce default mempool size in -blocksonly mode FIXME:glozow
+- [Bitcoin Core #26471][] reduces the default mempool capacity to 5MB
+  (from 300MB) when a user turns on `-blocksonly` mode. Since unused
+  mempool memory is shared with dbcache, this change also reduces the
+  default dbcache size in `-blocksonly` mode. Users may still configure
+  a larger mempool capacity using the `-maxmempool` option.
 
 - [Bitcoin Core #23395][] util: Add -shutdownnotify option FIXME:bitschmidty
 
