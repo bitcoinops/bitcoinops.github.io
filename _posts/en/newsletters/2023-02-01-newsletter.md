@@ -126,7 +126,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   default dbcache size in `-blocksonly` mode. Users may still configure
   a larger mempool capacity using the `-maxmempool` option.
 
-- [Bitcoin Core #23395][] util: Add -shutdownnotify option FIXME:bitschmidty
+- [Bitcoin Core #23395][] adds a `-shutdownnotify` configuration option to `bitcoind` which
+  executes a custom user command when `bitcoind` shuts down normally
+  (the command will not be executed during a crash).
 
 - [Eclair #2573][] begins accepting [keysend][topic spontaneous
   payments] payments that don't contain a [payment secret][topic payment
