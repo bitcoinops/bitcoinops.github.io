@@ -77,6 +77,9 @@ optech_mentions:
   - title: "LDK #1738 and #1908 provide additional features for handling offers"
     url: /en/newsletters/2023/01/04/#ldk-1738
 
+  - title: "Core Lightning #5892 updates CLN’s implementation of the offers protocol"
+    url: /en/newsletters/2023/02/08/#core-lightning-5892
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
