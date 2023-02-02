@@ -88,6 +88,9 @@ optech_mentions:
   - title: "2022 year-in-review: channel jamming"
     url: /en/newsletters/2022/12/21/#jamming
 
+  - title: "Summary of call about mitigating LN jamming"
+    url: /en/newsletters/2023/02/08/#summary-of-call-about-mitigating-ln-jamming
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
