@@ -15,6 +15,13 @@ categories:
   - Contract Protocols
   - Transaction Relay Policy
 
+## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
+excerpt: >
+**Version 3 transaction relay** is a proposal to allow transactions to
+opt-in to a modified set of transaction relay policies designed to prevent
+pinning attacks. Combined with package relay, these policies help enable
+the use of dynamic feerates with LN onchain transactions.
+
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
@@ -47,11 +54,6 @@ see_also:
   - title: Anchor outputs
     link: topic anchor outputs
 ---
-**Version 3 transaction relay** is a proposal to allow transactions to
-opt-in to a modified set of transaction relay policies designed to prevent
-pinning attacks. Combined with package relay, these policies help enable
-the use of dynamic feerates with LN onchain transactions.
- 
 V3 transaction relay is a superset of standard transaction policy.
 That is, V3 transactions follow all rules for standard transactions
 (e.g. minimum and max transaction weight) while also adding some 
