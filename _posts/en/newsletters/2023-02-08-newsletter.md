@@ -54,12 +54,80 @@ Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME is a PR by FIXME that FIXME:LarryRuane
+[Track AddrMan totals by network and table, improve precision of adding fixed seeds][review club 26847]
+is a PR by Martin Zumsande, co-authored by Amiti Uttarwar, that
+allows the Bitcoin Core client to more reliably find outbound peers
+and distribute them more broadly across available network types (for
+example, IPV4, IPV6, tor, i2p). It does this by enhancing `AddrMan`
+(the peer address manager) to keep track of the number of address entries
+separately by network and "tried" versus "new" type, which in turn allows
+better use of fixed seeds. This is the first step in a larger effort to
+improve outbound peer selection.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME#l-FIXME"
+  q0="When is a network considered reachable?"
+  a0="A network is assumed to be reachable unless we're sure we
+      can't access it, or our configuration has specified one or
+      more _other_ networks using the `-onlynet=` configuration option
+      (only those are considered reachable, even if other network
+      types are actually available).
+  a0link="https://bitcoincore.reviews/26847#l-22"
+
+  q1="How is an address received over the p2p network treated depending
+      on whether the address's network is reachable vs. non-reachable --
+      do we store it (add it to `AddrMan`) and/or forward it to peers?"
+  a1="If its network is reachable, we relay the address to two
+      randomly-chosen peers, else we relay it to 1 or 2 peers (whether
+      1 or 2 is randomly-chosen).
+      We only store the address if its network is reachable."
+  a1link="https://bitcoincore.reviews/26847#l-51"
+
+  q2="How can a node currently get stuck with only unreachable addresses
+      in `AddrMan`, finding no outbound peers? How does this PR fix it?"
+  a2="If the `-onlynet` configuration changes. For example, suppose the
+      node has always been run with `-onlynet=ipv4` so its AddMan has
+      no ipv6 addresses. Then the node is restarted with `-onlynet=ipv6`.
+      The fixed seeds have some ipv6 addresses, but without the PR, the node
+      won't use them since the `AddrMan` isn't _completely_ empty (it has some
+      ipv4 addresses from before). With the PR, the startup code will add
+      some ipv6 fixed seeds, since `AddrMan` doesn't contain any addresses
+      _of that_ (now reachable) _network type_ .
+  a2link="https://bitcoincore.reviews/26847#l-98"
+
+  q3="When an address we'd like to add to `AddrMan` collides with an existing
+      address, what happens? Is the existing address always dropped in favor
+      of the new address?"
+  a3="No, generally the existing address is retained (not the new one),
+      unless the existing address is deemed "terrible"
+      (see `AddrInfo::IsTerrible()`).
+  a3link="https://bitcoincore.reviews/26847#l-100"
+
+  q4="Why would it be beneficial to have an outbound connection to each
+      reachable network at all times?"
+  a4="A selfish reason is that it's harder to eclipse-attack the node,
+      since the attacker would need to run nodes on multiple networks.
+      A non-selfish reason is that it helps keep the overall network
+      together, avoiding chain splits caused by network partitions.
+      If half the nodes, including miners, ran with `-onlynet=x` and
+      the other half, including miners, ran `-onlynet=y`, then two
+      chains could emerge."
+  a4link="https://bitcoincore.reviews/26847#l-114"
+
+  q5="Why is the current logic in `ThreadOpenConnections()`, even with
+      the PR, insufficient to guarantee that the node has an outbound
+      connection to each reachable network at all times?"
+  a5="Nothing in the PR _guarantees_ any particular distribution of
+      peers among the reachable networks. For example, if we had 10k
+      clearnet addresses and only 1k I2P addresses in `AddrMan`, it's
+      likely that all our peers will be clearnet (ipv4 or ipv6)."
+  a5link="https://bitcoincore.reviews/26847#l-123"
+
+  q6="What would be the next steps towards this goal (see the previous
+      question) after this PR?"
+  a6="The next planned steps are to add logic to the connection-making
+      process to attempt to have at least one connection to each
+      reachable network. This PR prepares for that."
+  a6link="https://bitcoincore.reviews/26847#l-144"
 %}
 
 <!-- FIXME:harding to add releases/rc if any on Tuesday -->
@@ -128,3 +196,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news230 jam]: /en/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
 [news228 jam]: /en/newsletters/2022/11/30/#reputation-credentials-proposal-to-mitigate-ln-jamming-attacks
 [jam xs]: https://github.com/ClaraShk/LNJamming/blob/main/meeting-transcripts/23-01-23-transcript.md
+[review club 26847]: https://bitcoincore.reviews/26847
