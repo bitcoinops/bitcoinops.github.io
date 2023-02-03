@@ -788,4 +788,4 @@ mercredi le 5 janvier.*
 [dec cs]: /en/newsletters/2021/12/15/#changes-to-services-and-client-software
 [mpa ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [ff orig]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
-[2020 conclusion]: /en/newsletters/2020/12/23/#conclusion
+[2020 conclusion]: /fr/newsletters/2020/12/23/#conclusion
