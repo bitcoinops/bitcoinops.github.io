@@ -46,20 +46,24 @@ see_also:
 
   - title: Anchor outputs
     link: topic anchor outputs
-
-## Optional.  Force the display (true) or non-display (false) of stub
-## topic notice.  Default is to display if the page.content is below a
-## threshold word count
-#stub: false
-
-## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
-## Should be less than 500 characters
-excerpt: >
-  **Version 3 transaction relay** is a proposal to allow transactions to
-  opt-in to a modified set of transaction relay policies designed to prevent
-  pinning attacks. Combined with package relay, these policies help enable
-  the use of dynamic feerates with LN onchain transactions.
-
 ---
+**Version 3 transaction relay** is a proposal to allow transactions to
+opt-in to a modified set of transaction relay policies designed to prevent
+pinning attacks. Combined with package relay, these policies help enable
+the use of dynamic feerates with LN onchain transactions.
+ 
+V3 transaction relay is a superset of standard transaction policy.
+That is, V3 transactions follow all rules for standard transactions
+(e.g. minimum and max transaction weight) while also adding some 
+non-standard rules designed to allow transaction replacement 
+while precluding transaction-pinning attacks. V3 transactions also 
+require minor changes to the Package RBF policy in order to maintain 
+incentive compatibility with miners.
+
+V3 transaction relay solves rule 3 [transaction pinning][topic version 3 transaction relay]
+and may allow the removal of the CPFP carve-out.
+
+Version 3 transactions are used by [ephemeral anchors][topic ephemeral anchors]. 
+
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
