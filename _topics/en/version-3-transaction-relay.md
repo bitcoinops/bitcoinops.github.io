@@ -17,10 +17,10 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-**Version 3 transaction relay** is a proposal to allow transactions to
-opt-in to a modified set of transaction relay policies designed to prevent
-pinning attacks. Combined with package relay, these policies help enable
-the use of dynamic feerates with LN onchain transactions.
+  **Version 3 transaction relay** is a proposal to allow transactions
+  to opt-in to a modified set of transaction relay policies designed to
+  prevent pinning attacks. Combined with package relay, these policies help enable 
+  the use of dynamic feerates with LN onchain transactions.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
