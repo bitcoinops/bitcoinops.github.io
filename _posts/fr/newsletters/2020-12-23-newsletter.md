@@ -25,7 +25,7 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
 ## Sommaire
 
 * Janvier
-  * [Spécification, implémentations et utilisation du DLC](#dlc)
+  * [Spécification, implémentation et utilisation du DLC](#dlc)
 * Février
   * [Grands canaux LN](#large-channels)
   * [Double financement LN et financement interactif](#dual-interactive-funding)
@@ -76,10 +76,10 @@ Si vous avez contribué à Bitcoin en 2020, veuillez accepter nos plus sincères
 ## Janvier
 
 {:#dlc}
-Plusieurs développeurs ont commencé à [travailler][news81 dlc] sur une
+Plusieurs développeurs ont commencés à [travailler][news81 dlc] sur une
 [spécification][dlc spec] pour l'utilisation de [contrats logiques discrets][] (DLC)
 entre différents logiciels. Les DLC sont un protocole de contrat dans lequel
-deux parties ou plus acceptent d'échanger de l'argent en fonction du résultat
+deux parties ou plus acceptent d'échanger de lq éonnqie en fonction du résultat
 d'un certain événement déterminé par un oracle (ou plusieurs oracles). Après
 l'événement, l'oracle publie un engagement sur l'issue de l'événement que la
 partie gagnante peut utiliser pour réclamer ses fonds. L'oracle n'a pas besoin
@@ -90,15 +90,15 @@ efficaces que les autres méthodes de contrat connues basées sur un oracle, et
 on peut dire qu'ils sont plus sûrs car un oracle qui s'engage sur un faux résultat
 génère des preuves évidentes de fraude. D'ici la fin de l'année, il y aura quatre
 implémentations compatibles des DLC, une [application][crypto garage p2p deriv] pour
-offrir et accepter des dérivés peer-to-peer basés sur les DLC, et plusieurs
-utilisateurs [rapportant][dlc election bet] qu'ils ont utilisé les DLC dans
+offrir et accepter des dérivés pairs à pairs basés sur les DLC, et plusieurs
+utilisateurs [rapportent][dlc election bet] qu'ils ont utilisés les DLC dans
 des transactions sur le réseau principal.
 
 ## Février
 
 {:#large-channels}
 Cinq ans après la [première présentation publique sur LN][dryja poon sf devs],
-plusieurs décisions précoces du protocole censées être temporaires ont
+plusieurs précédentes décisions du protocole censées être temporaires ont
 été revues. Le changement le plus immédiat a été la [mise à jour][news86 bolts596]
 en février de la spécification LN qui a permis aux utilisateurs de se
 soustraire aux limites de [valeur maximale des canaux et des paiements][topic large channels]
@@ -128,7 +128,7 @@ discutés visant à autoriser le routage par rendez-vous pour le LN, qui a
 été qualifié de priorité lors de la [réunion de spécification LN 2018][rv routing].
 Bastien Teinturier a [décrit][news85 blinded paths] en février une nouvelle
 méthode permettant d'obtenir une confidentialité équivalente, basée sur une
-amélioration de la confidentialité qu'il avait déjà proposée. Cette nouvelle
+amélioration qu'il avait déjà proposée. Cette nouvelle
 méthode, appelée *chemins aveugles*, a ensuite été mise en œuvre en tant que
 fonctionnalité expérimentale dans [C-Lightning][news92 cl3600].
 
@@ -137,7 +137,7 @@ fonctionnalité expérimentale dans [C-Lightning][news92 cl3600].
 {:#exfiltration-resistance}
 Une méthode que les portefeuilles matériels pourraient utiliser pour voler
 des bitcoins à leurs utilisateurs est la fuite d'informations sur les clés
-privées du portefeuille via les signatures de transaction qu'il crée. En mars,
+privées du portefeuille via les signatures de transactions qu'il crée. En mars,
 [Stepan Snigirev][news87 exfiltration], [Pieter Wuille][news88 exfiltration]
 et plusieurs autres personnes ont discutés des solutions possibles à ce
 problème pour le système de signature ECDSA actuel de Bitcoin et le système
@@ -148,7 +148,7 @@ proposé de [signature schnorr][topic schnorr signatures].
 
 Presque tous les mois de l'année 2020 ont été marqués par un développement
 principalement lié à l'embranchement convergent de la proposition [taproot][topic taproot]
-([BIP341][]) qui ajoute également la prise en charge des [sigantures schnorr][topic schnorr signatures]
+([BIP341][]) qui ajoute également la prise en charge des [signatures schnorr][topic schnorr signatures]
 ([BIP340][]) et [tapscript][topic tapscript] ([BIP342][]). Ensemble, ces
 améliorations permettront aux utilisateurs de scripts à une seule signature,
 de scripts à plusieurs signatures et de contrats complexes d'utiliser des
@@ -190,7 +190,7 @@ du test de la proposition dans [libsecp256k1][] et de sa branche expérimentale
 la preuve de sécurité précédente d'Andrew Poelstra pour taproot.
 
 En mars, Bitcoin Core a soigneusement [modifié][news89 op_if] son code de
-consensus---sans introduire de fork---pour supprimer une inefficacité dans
+consensus---sans introduire d'embranchement---pour supprimer une inefficacité dans
 l'analyse de `OP_IF` et des opcodes de contrôle de flux associés. Actuellement,
 cette inefficacité ne peut pas être exploitée pour causer des problèmes,
 mais les capacités étendues proposées pour tapscript auraient permis à
@@ -216,7 +216,7 @@ l'attaque de la propriété aveugle qui rend dangereux la signature automatique
 des transactions avec un porte-monnaie matériel. Idéalement, les porte-monnaies
 matériels pourraient fournir un mode dans lequel ils signeraient automatiquement
 des transactions garanties pour augmenter le solde du porte-monnaie, comme les
-créateurs de coinjoins et les [jointement LN][topic splicing]. Malheureusement,
+créateurs de coinjoins et les [jointements LN][topic splicing]. Malheureusement,
 la signature d'une transaction n'est sûre que si vous êtes certain que les entrées
 sont les vôtres---autrement, un attaquant peut vous faire signer une transaction
 qui semble ne comporter qu'une seule de vos entrées, puis vous faire signer une
@@ -225,7 +225,7 @@ de vos entrées (une entrée différente de la première version), et enfin comb
 les signatures des deux entrées différentes dans la transaction réelle qui verse
 votre argent à l'attaquant. Ce n'est normalement pas un risque parce que la plupart
 des gens n'utilisent aujourd'hui que des portefeuilles matériels pour signer des
-transactions où ils possèdent 100% des entrées, mais pour les coinjoins, les joints
+transactions où ils possèdent 100% des entrées, mais pour les coinjoins, les jointements
 LN et d'autres protocoles, il est prévu que d'autres utilisateurs puissent contrôler
 partiellement ou totalement certaines des entrées. Il a été proposé que taproot
 fournisse un moyen supplémentaire de s'engager sur les entrées qui peut être utilisé
@@ -259,14 +259,14 @@ la [fusion][news120 taproot merge] ultérieure du code de vérification pour tap
 schnorr et tapscript. Le code consiste en environ 700 lignes de modifications liées
 au consensus (500 sans les commentaires et les espaces blancs) et 2 100 lignes de tests.
 Plus de 30 personnes ont directement révisé ce PR et les changements associés, et
-beaucoup d'autres ont participés au développement et à la révision de la recherche
+beaucoup d'autres ont participé au développement et à la révision de la recherche
 sous-jacente, des BIPs, du code associé dans libsecp256k1, et d'autres parties
 du système. Les nouvelles règles d'embranchement convergent ne sont actuellement
 utilisées que dans [signet][topic signet] et dans le mode de test privé de Bitcoin
 Core ("regtest") ; elles doivent être activées avant de pouvoir être utilisées
 sur le réseau principal de Bitcoin.
 
-De nombreux contributeurs de taproot ont passés le reste de l'année à se concentrer
+De nombreux contributeurs de taproot ont passé le reste de l'année à se concentrer
 sur la version 0.21.0 de Bitcoin Core, avec l'intention qu'une version mineure
 ultérieure, peut-être 0.21.1, contienne un code permettant de commencer à appliquer
 les règles de taproot lorsqu'un signal d'activation approprié est reçu.
@@ -288,8 +288,8 @@ La version BTCPay de payjoin sera bientôt [spécifiée][news104 bips923] comme
 
 {:#ptlcs}
 Une amélioration largement souhaitée de LN est le passage du mécanisme de
-sécurité des paiements des contrats à temps de hachage ([HTLCs] [topic htlc])
-aux contrats à temps de point ([PTLCs] [topic ptlc]) qui améliorent la
+sécurité des paiements des contrats à temps de hachage ([HTLC][topic htlc])
+aux contrats à temps de point ([PTLC][topic ptlc]) qui améliorent la
 confidentialité des dépensiers et des receveurs contre une variété de méthodes
 de surveillance. Une complication est que la construction idéale d'un PTLC
 multipartite est difficile à mettre en œuvre avec le [schéma de signature ECDSA][ecdsa]
@@ -299,9 +299,9 @@ Fournier a fait circuler un [article][fournier otves] analysant les
 [adaptateurs de signature][topic adaptor signatures] en dissociant leurs
 propriétés fondamentales de verrouillage et d'échange d'informations de leur
 utilisation de signatures multipartites, décrivant un moyen facile d'utiliser
-le multisig basé sur Bitcoin Script. Lors d'un hackathon en avril, plusieurs
+la multiple signature basée sur Bitcoin Script. Lors d'un hackathon en avril, plusieurs
 développeurs ont [produit][news92 ecdsa adaptor] une mise en œuvre approximative
-de ce protocole pour un dérivation de la célèbre bibliothèque libsecp256k1.
+de ce protocole pour une dérivation de la célèbre bibliothèque libsecp256k1.
 Plus tard, en septembre, Fournier a fait progresser l'aspect pratique des PTLC
 sans avoir besoin d'attendre les changements apportés à Bitcoin en proposant une
 [manière différente][news113 witasym] de [construire][news119 witasym update] des
@@ -320,8 +320,8 @@ ne permettent pas d'importer des clés privées étendues (xprvs)---ils ne
 permettent d'importer qu'une graine HD ou des données précurseurs qui sont
 transformées en graine (par exemple des mots de graine [BIP39][] ou SLIP39).
 La proposition permet à un utilisateur possédant plusieurs portefeuilles
-de les sauvegarder tous en utilisant uniquement la graine du super-keychain.
-Cette proposition deviendrait [plus tard][news102 bip85] [BIP85][] et serait
+de les sauvegarder tout en utilisant uniquement la graine du super-keychain.
+Cette proposition deviendra [plus tard][news102 bip85] [BIP85][] et sera
 mise en œuvre dans les versions récentes du porte-monnaie matériel ColdCard.
 
 {:#vaults}
@@ -330,7 +330,7 @@ en avril. Les coffres sont un type de contrat connu sous le nom de
 [condition de dépense][topic covenants] qui émet un avertissement lorsque
 quelqu'un tente de dépenser les fonds du contrat, donnant ainsi au propriétaire
 du contrat le temps de bloquer une dépense qu'il n'a pas autorisée. Bryan
-Bishop a annoncé un [prototype de chambre forte][news94 bishop vault] basé
+Bishop a annoncé un [prototype de coffre-fort][news94 bishop vault] basé
 sur sa [proposition][news59 bishop idea] de l'année dernière. Kevin Loaec
 et Antoine Poinsot ont annoncé leur propre projet, [Revault][news95 revault],
 qui [se concentre][news100 revault arch] sur l'utilisation du modèle de
@@ -386,7 +386,7 @@ car tout ce qui ressemble à un paiement pourrait être un échange de pièces.
   une conception pour une implémentation complète d'échange de monnaie. Son [post initial][coinswap design]
   comprend l'historique de l'idée de coinswap, suggère des façons dont les
   conditions multisig nécessaires pour coinswap pourraient être déguisées en
-  types de transaction plus communs, propose d'utiliser un marché pour la
+  types de transaction plus communes, propose d'utiliser un marché pour la
   liquidité (comme JoinMarket le fait déjà), décrit les techniques de
   fractionnement et de routage pour réduire les pertes de confidentialité
   dues à la corrélation des montants ou à l'espionnage des participants,
@@ -408,14 +408,14 @@ donner au serveur tiers fournissant les transactions la possibilité de
 suivre l'historique de réception et de dépense du portefeuille. Une première
 tentative a consisté à utiliser des [filtres bloom][topic transaction bloom filtering]
 de type [BIP37][] mais la façon dont les portefeuilles les utilisaient
-n'offrait finalement qu'une [confidentialité minimale] [nick filter privacy]
+n'offrait finalement qu'une [confidentialité minimale][nick filter privacy]
 et créait des [risques de déni de service][bitcoin core #16152] pour les nœuds
 complets qui les servaient. Un développeur anonyme a posté sur la liste de
 diffusion Bitcoin-Dev en mai 2016, en suggérant une construction alternative
 d'un [filtre bloom unique par bloc][bfd post] que tous les portefeuilles
 pourraient utiliser. L'idée a rapidement été [affinée][maxwell gcs], [implémentée][neutrino],
 et [spécifiée][bip157 spec discussion], devenant les [BIP157][] et [BIP158][]
-de spécifications des [filtres de blocs compacts][topic compact block filters].
+de spécification des [filtres de blocs compacts][topic compact block filters].
 Cette méthode peut améliorer considérablement la confidentialité des clients légers,
 bien qu'elle augmente leurs besoins en bande passante, en CPU et en mémoire par
 rapport aux méthodes courantes actuelles. Pour les nœuds complets, cela réduit
@@ -441,7 +441,7 @@ de filtres de blocs compacts en activant seulement deux options de configuration
 
 - [LND 0.10.0-beta][] a publié en mai l'ajout de la prise en charge
   de l'envoi de paiements par trajets multiples, a permis de financer
-  des canaux à l'aide d'un portefeuille externe via des [PSBT] [topic psbt],
+  des canaux à l'aide d'un portefeuille externe via des [PSBT][topic psbt],
   et a commencé à prendre en charge la création de factures [plus grandes][topic large channels]
   que 0,043 BTC.
 
@@ -467,7 +467,7 @@ Le mois de juin a été particulièrement actif pour la découverte et la discus
 des vulnérabilités, bien que de nombreux problèmes aient été découverts plus tôt
 ou entièrement divulgués plus tard. Les principales vulnérabilités sont les suivantes :
 
-- [Attaque de surpaiement sur les transactions segwit à entrées multiples:][attack overpay segwit]
+- [Attaque de surpaiement sur les transactions segwit à entrées multiples :][attack overpay segwit]
   En juin, Trezor a annoncé que Saleem Rashid avait découvert une faiblesse
   dans la capacité de segwit à prévenir les attaques de surpaiement des frais.
   Les attaques de surpaiement des frais sont une faiblesse bien connue du
@@ -499,7 +499,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
 
 - [Attaque contre l'atomicité des paiements LN :][attack ln atomicity]
   Alors que les développeurs de LN s'efforçaient de mettre en œuvre le
-  protocole [anchor outputs] [topic anchor outputs] afin d'éliminer les
+  protocole [de sorties d'ancrage][topic anchor outputs] afin d'éliminer les
   risques liés à l'augmentation rapide des taux d'intérêt des transactions,
   l'un des principaux contributeurs à ce protocole - Matt Corallo - a
   découvert qu'il permettait une nouvelle vulnérabilité. Une contrepartie
@@ -508,7 +508,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
   qui empêche la confirmation rapide de la transaction ou d'une partie
   de celle-ci. Le retard de confirmation entraîne l'expiration du délai
   d'attente du HTLC, ce qui permet à l'attaquant de récupérer les fonds
-  qu'il a versés à la contrepartie honnête. Plusieurs solutions ont été
+  qu'il a versé à la contrepartie honnête. Plusieurs solutions ont été
   [proposées][atomicity attack discussion], depuis les modifications du
   protocole LN jusqu'aux marchés tiers, en passant par [les modifications
   du consensus de l'embranchement convergent][rubin fee sponsorship],
@@ -537,7 +537,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
   entier et dont les frais de transaction doivent être payés par
   le nœud honnête. Des mesures d'atténuation simples de cette attaque
   ont été mises en œuvre dans plusieurs nœuds LN et l'utilisation de
-  [sorites d'ancrage][topic anchor outputs] devrait également être
+  [sorties d'ancrage][topic anchor outputs] devrait également être
   utile, mais aucune solution complète n'a encore été proposée.
 
 - [Préoccupation concernant les incitations au minage des HTLC :][attack htlc incentives]
@@ -622,8 +622,8 @@ pièces de testnet n'ont aucune valeur. La possibilité d'activer optionnellemen
 le signet a finalement été [ajoutée][bcc18267] à Bitcoin Core en septembre.
 
 {:#anchor-outputs}
-Près de deux ans après que Matt Corallo ait [proposé pour la première fois]
-[news24 cpfp carve out] le [mécanisme d'exclusion du CPFP][topic cpfp carve out],
+Près de deux ans après que Matt Corallo ait [proposé pour la première fois][news24 cpfp carve out]
+le [mécanisme d'exclusion du CPFP][topic cpfp carve out],
 la spécification LN a été [mise à jour][news112 bolts688] pour permettre la
 création de [sorties d'ancrage][topic anchor outputs] qui utilisent les exclusions
 pour la sécurité. Les sorties d'ancrage permettent à une transaction multipartite
@@ -666,7 +666,7 @@ le code a été [fusionné][news120 glv] dans Bitcoin Core. Pour les utilisateur
 avec les paramètres par défaut, l'amélioration de la vitesse sera plus apparente
 pendant la partie finale de la synchronisation d'un nouveau nœud ou lors de la
 vérification des blocs après qu'un nœud ait été hors ligne pendant un certain temps.
-Finney est décédé en 2014, mais nous lui sommes reconnaissants pour ses deux
+Finney est décédé en 2014, mais nous lui sommes reconnaissant pour ses deux
 décennies de travail visant à rendre la technologie cryptographique largement accessible.
 
 {:#patent-alliance}
@@ -690,7 +690,7 @@ pour la première fois en 2015][russell loop], ainsi que des problèmes connexes
 Un nœud LN peut acheminer un paiement vers lui-même à travers un chemin de 20 sauts
 ou plus. Cela permet à un attaquant disposant de 1 BTC de verrouiller temporairement
 20 BTC ou plus appartenant à d'autres utilisateurs. Après plusieurs heures de
-blocage de l'argent d'autres utilisateurs, l'attaquant peut annuler le paiement
+blocage de la monnaiet d'autres utilisateurs, l'attaquant peut annuler le paiement
 et recevoir un remboursement complet de ses frais, rendant l'attaque essentiellement
 gratuite. Un problème connexe est celui d'un attaquant qui envoie 483 petits paiements
 par le biais d'une série de canaux, où 483 est le nombre maximum de paiements en
@@ -698,9 +698,9 @@ attente qu'un canal peut contenir. Dans ce cas, un attaquant disposant de deux c
 chacun avec 483 créneaux, peut brouiller plus de 10 000 créneaux de connexion
 honnêtes---encore une fois sans payer de frais. Une [variété][news120 upfront] de
 solutions possibles a été discutée, y compris les *forward upfront fees* payés par
-le commanditaire à chaque noeud le long du chemin, les [les frais initiaux en retour]
-[news86 backwards upfront] payés par chaque saut de paiement au saut précédent, une
-[combinaison][news122 bidir fees] de frais initiaux et en retour, le [le routage
+le commanditaire à chaque noeud le long du chemin, [les frais initiaux en retour][news86
+backwards upfront] payés par chaque saut de paiement au saut précédent, une
+[combinaison][news122 bidir fees] de frais initiaux et en retour, [le routage
 incrémental imbriqué][news119 nested routing], et les [bons de fidélité][news126
 routing fibonds]. Malheureusement, aucune des méthodes discutées n'a été largement
 acceptée et le problème n'est donc pas résolu.
@@ -709,7 +709,7 @@ acceptée et le problème n'est donc pas résolu.
 ![Illustration of LN liquidity and HTLC jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
 
 {:#lnd-disclosures}
-Deux attaques de vol d'argent contre LND, découvertes et signalées par
+Deux attaques de vol de monnaie contre LND, découvertes et signalées par
 Antoine Riard en avril, ont été [entièrement divulguées][news121 riard
 disclosures] en octobre. Dans un cas, LND a pu être amené à accepter des
 données non valides ; dans l'autre cas, il a pu être amené à divulguer des
@@ -729,10 +729,10 @@ supportée pour gérer les messages pour les adresses P2SH, P2WSH et P2SH-P2WSH,
 ni de méthode compatible avec les adresses taproot. La proposition de [BIP322][]
 pour une fonction de [signature de message générique][topic generic signmessage]
 est une tentative de résoudre tous ces problèmes, mais elle n'a pas réussi à
-gagner beaucoup de terrain. Cette année a vu une [demande de commentaires]
-[news88 signmessage rfh] supplémentaire de la part de son champion, une
+gagner beaucoup de terrain. Cette année a vu une [demande de commentaires][news88
+signmessage rfh] supplémentaire de la part de son champion, une
 [simplification][news91 signmessage simplification], et (en octobre) un
-[remplacement complet][news118 signmessage update proposal] presque complet
+[remplacement][news118 signmessage update proposal] presque complet
 de son mécanisme de base. Le [nouveau mécanisme][news121 signmessage update bip]
 rend la signature des messages potentiellement compatible avec un grand nombre
 de portefeuilles logiciels et matériels existants, ainsi qu'avec le format de
@@ -740,13 +740,13 @@ données [PSBT][topic psbt], en permettant la signature de *transactions virtuel
 qui ressemblent à des transactions réelles mais qui peuvent être signées en
 toute sécurité car elles ne sont pas valides selon les règles de consensus
 de Bitcoin.  Espérons que cette amélioration permettra aux signatures de
-messages générique de commencer à être adopté.
+messages générique de commencer à être adoptées.
 
 {:#musig2}
 Jonas Nick, Tim Ruffing et Yannick Seurin ont [publié][news120 musig2]
 l'article MuSig2 en octobre décrivant une nouvelle variante du schéma
 de signature [MuSig][topic musig] avec un protocole de signature à deux
-tours et sans besoin d'une preuve à connaissance zéro. De plus, le premier
+tours et sans besoin d'une preuve à connaissance nulle. De plus, le premier
 tour (échange de nonce) peut être effectué au moment de la configuration
 de la clé avec une variante de signature non interactive qui pourrait être
 particulièrement utile pour le stockage à froid et les protocoles de
@@ -785,7 +785,7 @@ pour rendre ce service plus standardisé et compétitif. Il est possible que
 ce service puisse également être mis à niveau pour fonctionner avec des
 canaux à double financement lorsqu'ils seront disponibles.
 
-## Decembre
+## Décembre
 
 {:#ln-offers}
 L'année dernière, Rusty Russell a publié une première ébauche d'une
