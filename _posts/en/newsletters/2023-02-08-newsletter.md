@@ -57,8 +57,8 @@ question below to see a summary of the answer from the meeting.*
 [Track AddrMan totals by network and table, improve precision of adding fixed seeds][review club 26847]
 is a PR by Martin Zumsande, co-authored by Amiti Uttarwar, that
 allows the Bitcoin Core client to more reliably find outbound peers
-and distribute them more broadly across available network types (for
-example, IPV4, IPV6, tor, i2p). It does this by enhancing `AddrMan`
+in certain situations.
+It does this by enhancing `AddrMan`
 (the peer address manager) to keep track of the number of address entries
 separately by network and "tried" versus "new" type, which in turn allows
 better use of fixed seeds. This is the first step in a larger effort to
@@ -86,12 +86,12 @@ improve outbound peer selection.
       in `AddrMan`, finding no outbound peers? How does this PR fix it?"
   a2="If the `-onlynet` configuration changes. For example, suppose the
       node has always been run with `-onlynet=ipv4` so its AddMan has
-      no ipv6 addresses. Then the node is restarted with `-onlynet=ipv6`.
-      The fixed seeds have some ipv6 addresses, but without the PR, the node
+      no ipv6 addresses. Then the node is restarted with `-onlynet=onion`.
+      The fixed seeds have some onion addresses, but without the PR, the node
       won't use them since the `AddrMan` isn't _completely_ empty (it has some
       ipv4 addresses from before). With the PR, the startup code will add
-      some ipv6 fixed seeds, since `AddrMan` doesn't contain any addresses
-      _of that_ (now reachable) _network type_ .
+      some onion fixed seeds, since `AddrMan` doesn't contain any addresses
+      of _that_ (now reachable) network type.
   a2link="https://bitcoincore.reviews/26847#l-98"
 
   q3="When an address we'd like to add to `AddrMan` collides with an existing
@@ -118,8 +118,8 @@ improve outbound peer selection.
       connection to each reachable network at all times?"
   a5="Nothing in the PR _guarantees_ any particular distribution of
       peers among the reachable networks. For example, if we had 10k
-      clearnet addresses and only 1k I2P addresses in `AddrMan`, it's
-      likely that all our peers will be clearnet (ipv4 or ipv6)."
+      clearnet addresses and only 50 I2P addresses in `AddrMan`, it's
+      very likely that all our peers will be clearnet (ipv4 or ipv6)."
   a5link="https://bitcoincore.reviews/26847#l-123"
 
   q6="What would be the next steps towards this goal (see the previous
