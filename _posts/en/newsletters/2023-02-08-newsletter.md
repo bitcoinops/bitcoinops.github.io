@@ -85,12 +85,12 @@ improve outbound peer selection.
   q2="How can a node currently get stuck with only unreachable addresses
       in `AddrMan`, finding no outbound peers? How does this PR fix it?"
   a2="If the `-onlynet` configuration changes. For example, suppose the
-      node has always been run with `-onlynet=ipv4` so its AddMan has
-      no ipv6 addresses. Then the node is restarted with `-onlynet=onion`.
-      The fixed seeds have some onion addresses, but without the PR, the node
+      node has always been run with `-onlynet=onion` so its `AddrMan` has
+      no I2P addresses. Then the node is restarted with `-onlynet=i2p`.
+      The fixed seeds have some i2p addresses, but without the PR, the node
       won't use them since the `AddrMan` isn't _completely_ empty (it has some
-      ipv4 addresses from before). With the PR, the startup code will add
-      some onion fixed seeds, since `AddrMan` doesn't contain any addresses
+      onion addresses from before). With the PR, the startup code will add
+      some i2p fixed seeds, since `AddrMan` contains zero addresses
       of _that_ (now reachable) network type.
   a2link="https://bitcoincore.reviews/26847#l-98"
 
