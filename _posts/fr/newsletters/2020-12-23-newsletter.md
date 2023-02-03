@@ -684,130 +684,135 @@ SatoshiLabs, Square, Transparent Systems, et VerifyChain.
 ## Octobre
 
 {:#jamming}
-October saw a significant increase in discussion among LN developers
-about solving the jamming problem [first described in 2015][russell loop], as well
-as related problems.  An LN node can route a payment to itself across a
-path of 20 or more hops.  This allows an attacker with 1 BTC to
-temporarily lock up 20 BTC or more belonging to other users.  After
-several hours of locking other users' money, the attacker can cancel the
-payment and receive a complete refund on their fees, making the attack
-essentially free.  A related problem is an attacker sending 483 small
-payments through a series of channels, where 483 is the maximum number
-of pending payments a channel may contain.  In this case, an attacker
-with two channels, each with 483 slots, can jam over 10,000 honest
-connection slots---again without paying any fees.  A [variety][news120
-upfront] of possible solutions were discussed, including *forward upfront
-fees* paid from the spender to each node along the path, [backwards
-upfront fees][news86 backwards upfront] paid from each payment hop to
-the previous hop, a [combination][news122 bidir fees] of both forward
-and backwards fees, [nested incremental routing][news119 nested
-routing], and [fidelity bonds][news126 routing fibonds].  Unfortunately,
-none of the methods discussed received widespread acceptance and so the
-problem remains unsolved.
+Le mois d'octobre a vu une augmentation significative des discussions entre
+les développeurs LN concernant la résolution du problème de brouillage [décrit
+pour la première fois en 2015][russell loop], ainsi que des problèmes connexes.
+Un nœud LN peut acheminer un paiement vers lui-même à travers un chemin de 20 sauts
+ou plus. Cela permet à un attaquant disposant de 1 BTC de verrouiller temporairement
+20 BTC ou plus appartenant à d'autres utilisateurs. Après plusieurs heures de
+blocage de l'argent d'autres utilisateurs, l'attaquant peut annuler le paiement
+et recevoir un remboursement complet de ses frais, rendant l'attaque essentiellement
+gratuite. Un problème connexe est celui d'un attaquant qui envoie 483 petits paiements
+par le biais d'une série de canaux, où 483 est le nombre maximum de paiements en
+attente qu'un canal peut contenir. Dans ce cas, un attaquant disposant de deux canaux,
+chacun avec 483 créneaux, peut brouiller plus de 10 000 créneaux de connexion
+honnêtes---encore une fois sans payer de frais. Une [variété][news120 upfront] de
+solutions possibles a été discutée, y compris les *forward upfront fees* payés par
+le commanditaire à chaque noeud le long du chemin, les [les frais initiaux en retour]
+[news86 backwards upfront] payés par chaque saut de paiement au saut précédent, une
+[combinaison][news122 bidir fees] de frais initiaux et en retour, le [le routage
+incrémental imbriqué][news119 nested routing], et les [bons de fidélité][news126
+routing fibonds]. Malheureusement, aucune des méthodes discutées n'a été largement
+acceptée et le problème n'est donc pas résolu.
 
 {:.center}
 ![Illustration of LN liquidity and HTLC jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
 
 {:#lnd-disclosures}
-Two money-stealing attacks against LND that were discovered and reported
-by Antoine Riard in April were [fully disclosed][news121 riard
-disclosures] in October.  In one case, LND could be tricked into
-accepting invalid data; in the other case, it could be tricked into
-disclosing secret data.  Thanks to Riard's responsible disclosure and
-the LND team's response, we are unaware of any users who lost funds.
-The LN specification was [updated][news123 high-s] for [both][news124
-htlc release] problems to help new implementations avoid them.
+Deux attaques de vol d'argent contre LND, découvertes et signalées par
+Antoine Riard en avril, ont été [entièrement divulguées][news121 riard
+disclosures] en octobre. Dans un cas, LND a pu être amené à accepter des
+données non valides ; dans l'autre cas, il a pu être amené à divulguer des
+données secrètes. Grâce à la divulgation responsable de Riard et à la
+réponse de l'équipe de LND, nous n'avons connaissance d'aucun utilisateur
+ayant perdu des fonds. La spécification du LN a été [mise à jour][news123
+high-s] pour les [deux][news124 htlc release] problèmes afin d'aider les
+nouvelles implémentations à les éviter.
 
 {:#generic-signmessage}
-Over five years after the introduction of the initial segwit proposal,
-and three years after its activation, there remains no universal way to
-create and verify plain text messages signed using the keys that
-correspond to a P2WPKH or P2SH-P2WPKH address.  The problem exists more
-generically as well: there's no widely supported way to handle messages
-for P2SH, P2WSH, and P2SH-P2WSH addresses either---nor a forward
-compatible way that will work for taproot addresses.  The [BIP322][]
-proposal for a [generic signmessage][topic generic signmessage] function
-is an attempt to fix all of these issues, but it's failed to gain much
-traction.  This year saw an additional [request for feedback][news88
-signmessage rfh] from its champion, a [simplification][news91
-signmessage simplification], and (in October) a nearly [complete
-replacement][news118 signmessage update proposal] of its core mechanism.
-The [new mechanism][news121 signmessage update bip] makes message
-signing potentially compatible with a large amount of existing software
-and hardware wallets, as well as the [PSBT][topic psbt] data format, by
-allowing the signing of *virtual transactions* that look like real
-transactions but which can be safely signed because they aren't valid
-according to Bitcoin's consensus rules.  Hopefully, this improvement will
-allow generic signmessage to start to receive adoption.
+Plus de cinq ans après l'introduction de la proposition initiale de segwit,
+et trois ans après son activation, il n'existe toujours pas de moyen universel
+de créer et de vérifier des messages en texte clair signés à l'aide des clés
+correspondant à une adresse P2WPKH ou P2SH-P2WPKH. Le problème existe également
+de manière plus générale : il n'existe pas non plus de méthode largement
+supportée pour gérer les messages pour les adresses P2SH, P2WSH et P2SH-P2WSH,
+ni de méthode compatible avec les adresses taproot. La proposition de [BIP322][]
+pour une fonction de [signature de message générique][topic generic signmessage]
+est une tentative de résoudre tous ces problèmes, mais elle n'a pas réussi à
+gagner beaucoup de terrain. Cette année a vu une [demande de commentaires]
+[news88 signmessage rfh] supplémentaire de la part de son champion, une
+[simplification][news91 signmessage simplification], et (en octobre) un
+[remplacement complet][news118 signmessage update proposal] presque complet
+de son mécanisme de base. Le [nouveau mécanisme][news121 signmessage update bip]
+rend la signature des messages potentiellement compatible avec un grand nombre
+de portefeuilles logiciels et matériels existants, ainsi qu'avec le format de
+données [PSBT][topic psbt], en permettant la signature de *transactions virtuelles*
+qui ressemblent à des transactions réelles mais qui peuvent être signées en
+toute sécurité car elles ne sont pas valides selon les règles de consensus
+de Bitcoin.  Espérons que cette amélioration permettra aux signatures de
+messages générique de commencer à être adopté.
 
 {:#musig2}
-Jonas Nick, Tim Ruffing, and Yannick Seurin [published][news120 musig2]
-the MuSig2 paper in October describing a new variant of the
-[MuSig][topic musig] signature scheme with a two round signing protocol
-and no need for a zero-knowledge proof. What's more, the first round
-(nonce exchange) can be done at key setup time with a non-interactive
-signing variant that could be particularly useful for cold storage and
-offchain contract protocols such as LN.
+Jonas Nick, Tim Ruffing et Yannick Seurin ont [publié][news120 musig2]
+l'article MuSig2 en octobre décrivant une nouvelle variante du schéma
+de signature [MuSig][topic musig] avec un protocole de signature à deux
+tours et sans besoin d'une preuve à connaissance zéro. De plus, le premier
+tour (échange de nonce) peut être effectué au moment de la configuration
+de la clé avec une variante de signature non interactive qui pourrait être
+particulièrement utile pour le stockage à froid et les protocoles de
+contrats hors chaîne tels que LN.
 
 {:#addrv2}
-Also in October, Bitcoin Core became the first project to
-[merge][bcc19954] an implementation of the [version 2 `addr`
-message][topic addr v2].  The `addr` message advertises the network
-addresses of potential peers, allowing full nodes to discover new peers
-without any centralized coordination.  The original Bitcoin `addr`
-message was designed to hold 128-bit IPv6 addresses, which also allowed
-it to contain encoded IPv4 addresses and version 2 Tor onion addresses.
-After almost 15 years in production, the Tor project deprecated version
-2 onion services and will stop supporting them in July 2021.  Newer
-version 3 onion addresses are 256 bits, so they're not usable with the
-original `addr` messages.  The [BIP155][] upgrade of the `addr` message
-provides more capacity for Tor addresses and also makes it possible to use
-other anonymity networks that require larger addresses.
+En octobre également, Bitcoin Core est devenu le premier projet à [fusionner]
+[bcc19954] une implémentation du [message `addr` version 2][topic addr v2].
+Le message `addr` annonce les adresses réseau de pairs potentiels, permettant
+aux nœuds complets de découvrir de nouveaux pairs sans aucune coordination
+centralisée. Le message `addr` original de Bitcoin était conçu pour contenir
+des adresses IPv6 de 128 bits, ce qui lui permettait également de contenir
+des adresses IPv4 codées et des adresses Tor onion version 2. Après presque
+15 ans de production, le projet Tor a déprécié les services oignon de la
+version 2 et cessera de les prendre en charge en juillet 2021. Les nouvelles
+adresses en oignon de la version 3 sont de 256 bits, elles ne sont donc pas
+utilisables avec les messages `addr` originaux. La mise à jour [BIP155][] du
+message `addr` fournit plus de capacité pour les adresses Tor et permet
+également d'utiliser d'autres réseaux d'anonymat qui nécessitent des
+adresses plus grandes.
 
-## November
+## Novembre
 
 {:#lightning-pool}
-As mentioned in the February section, one challenge faced in the current
-LN network is that users and merchants need channels with incoming
-capacity in order to receive funds over LN.  A fully
-decentralized solution to that problem could be the dual-funded channels
-described earlier.  However, in November, Lightning Labs took a
-different track and [announced][news123 lightning pool] a new Lightning
-Pool marketplace for buying incoming LN channels.  Some existing node
-operators already provide incoming channels, either for free or as a
-paid service, but Lightning Pool may be able to use its centrally
-coordinated marketplace to make this service more standardized and
-competitive.  It's possible this could also be upgraded to work with
-dual funded channels when they become available.
+Comme mentionné dans la section de février, l'un des défis rencontrés dans
+le réseau LN actuel est que les utilisateurs et les marchands ont besoin de
+canaux avec une capacité entrante afin de recevoir des fonds sur LN. Une
+solution entièrement décentralisée à ce problème pourrait être les canaux
+à double financement décrits précédemment. Cependant, en novembre, Lightning
+Labs a pris une autre voie et [annoncé][news123 lightning pool] une nouvelle
+place de marché Lightning Pool pour l'achat de canaux LN entrants. Certains
+opérateurs de nœuds existants fournissent déjà des canaux entrants, soit
+gratuitement, soit en tant que service payant, mais Lightning Pool pourrait
+être en mesure d'utiliser sa place de marché coordonnée de manière centralisée
+pour rendre ce service plus standardisé et compétitif. Il est possible que
+ce service puisse également être mis à niveau pour fonctionner avec des
+canaux à double financement lorsqu'ils seront disponibles.
 
-## December
+## Decembre
 
 {:#ln-offers}
-Last year, Rusty Russell published a first draft of a [proposed
-specification][bolt12 draft] for LN *offers*, the ability for a spending
-node to request an invoice from a receiving node over the onion-routed
-LN network.  Although the existing [BOLT11][] provides an invoice
-protocol, it doesn't allow for any protocol-level negotiation between
-the spender and receiver nodes.  Offers would make it possible for the
-nodes to communicate additional information and automate payment steps
-that currently require manual intervention or additional tools.  For
-example, offers could allow LN nodes to manage recurring payments or
-donations by having a spender node request a new invoice each month from
-a receiver node.  In December 2020, the first in a series of commits by
-Russell to C-Lightning for implementing offers was [merged][news128
-offers].
+L'année dernière, Rusty Russell a publié une première ébauche d'une
+[proposition de spécification][bolt12 draft] pour une *offre* LN, la
+possibilité pour un nœud de demander une facture à un nœud récepteur
+sur le réseau LN à routage en oignon. Bien que le [BOLT11][] existant
+fournisse un protocole de facturation, il ne permet aucune négociation
+au niveau du protocole entre les nœuds émetteurs et récepteurs. Les
+offres permettraient aux nœuds de communiquer des informations
+supplémentaires et d'automatiser les étapes de paiement qui nécessitent
+actuellement une intervention manuelle ou des outils supplémentaires.
+Par exemple, les offres pourraient permettre aux nœuds LN de gérer des
+paiements ou des dons récurrents en demandant à un nœud expéditeur de
+demander une nouvelle facture chaque mois à un nœud récepteur. En décembre
+2020, la première d'une série de commits par Russell à C-Lightning pour
+la mise en œuvre des offres a été [fusionnée][news128 offers].
 
 ## Conclusion
 
-One of the things we love about summarizing the past year's events is
-that every bit of progress is fully realized.  The summary above does
-not contain promises about what Bitcoin will do in the future---it lists
-only actual accomplishments achieved in the past 12 months.  Bitcoin
-contributors have a lot to be proud of in 2020.  We can't wait to see
-what they have in store for us in 2021.
+L'une des choses que nous aimons dans le résumé des événements de l'année
+écoulée est que chaque progrès est pleinement réalisé. Le résumé ci-dessus
+ne contient pas de promesses sur ce que Bitcoin fera à l'avenir---il énumère
+uniquement les réalisations effectives accomplies au cours des 12 derniers mois.
+Les contributeurs de Bitcoin ont de quoi être fiers en 2020. Nous sommes
+impatients de voir ce qu'ils nous réservent en 2021.
 
-*The Optech newsletter will return to its regular Wednesday publication
-schedule on January 6th.*
+*Le bulletin Optech reprendra son rythme de publication habituel du mercredi le 6 janvier.*
 
 {% include references.md %}
 {% include linkers/issues.md issues="8312,524,18038,18861,19109,14582,19743,16152" %}
