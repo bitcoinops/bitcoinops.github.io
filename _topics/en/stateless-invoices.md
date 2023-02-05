@@ -47,6 +47,9 @@ optech_mentions:
   - title: "2022 year-in-review: stateless invoices"
     url: /en/newsletters/2022/12/21/#stateless-invoices
 
+  - title: "LDK #1878 encodes CLTV delta in payment secret for its stateless invoices"
+    url: /en/newsletters/2023/02/01/#ldk-1878
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
