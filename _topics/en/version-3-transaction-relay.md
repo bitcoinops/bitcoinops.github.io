@@ -57,7 +57,7 @@ see_also:
 V3 transaction relay is a superset of standard transaction policy.
 That is, V3 transactions follow all rules for standard transactions
 (e.g. minimum and max transaction weight) while also adding some
-non-standard rules designed to allow transaction replacement
+additional rules designed to allow [transaction replacement][topic rbf]
 while precluding transaction-pinning attacks. V3 transactions also
 require minor changes to the Package RBF policy in order to maintain
 incentive compatibility with miners.
