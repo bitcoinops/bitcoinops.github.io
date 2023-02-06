@@ -14,13 +14,13 @@ lang: zh
 
 - **<!--ephemeral-anchors-compared-to-sighashgroup-->对比临时锚点和 `SIGHASH_GROUP`**：Anthony Towns 在 Bitcoin-Dev 邮件组中[发帖][towns e-vs-shg]，给出了一项对最近的[临时锚点][topic ephemeral anchors]提议和以往的 [`SIGHASH_GROUP` 提议][`sighash_group` proposal] 的比较性分析。`SIGHASH_GROUP` 允许一个输入指定自己花费到哪几个输出，不同的输入可以指明不同的输出，只要互不重叠即可。在两个乃至多个输入使用预签名交易的时候，这个特性将极大地便利于为交易添加手续费。这些交易的预先签名特性，使其有可能需要在需要上链时、手续费率变得更明确时添加手续费，而现有的 `SIGHASH_ANYONECANPAY` 和  `SIGHASH_SINGLE` 标签在多输入交易中都不够灵活，因为它们只能覆盖单个输入或者单个输出。
 
-    临时锚点提议近似于 “[手续费赞助][topic fee sponsorship]” 提议，让任何人都能利用 “[CPFP][topic cpfp]（子为父偿）” 方法为交易追加手续费。因此被追加手续费的交易本身可以不携带交易费。因为任何人都可以使用临时锚点为一笔交易追加手续费，所以这种机制也可以用来为多输入的预签名交易支付手续费（而这就是 `SIGHASH_GROUP` 的目标。
+    临时锚点提议近似于 “[手续费赞助][topic fee sponsorship]” 提议，让任何人都能利用 “[CPFP][topic cpfp]（子为父偿）” 方法为交易追加手续费。因此被追加手续费的交易本身可以不携带交易费。因为任何人都可以使用临时锚点为一笔交易追加手续费，所以这种机制也可以用来为多输入的预签名交易支付手续费，而这就是 `SIGHASH_GROUP` 的目标。
     
-    `SIGHASH_GROUP` 依然拥有两大优势：其一，它允许[组合][topic payment batching]多笔互无关联的预签名交易，这可以在整体上缩减交易的体积、降低用户的开销并提供网络的吞吐量。其次，它不需要子交易，所以可以进一步降低开销和提高容量。
+    `SIGHASH_GROUP` 依然拥有两大优势：其一，它允许[组合][topic payment batching]多笔互无关联的预签名交易，这可以在整体上缩减交易的体积、降低用户的开销并提高网络的吞吐量。其次，它不需要子交易，所以可以进一步降低开销和提高吞吐量。
     
     Towns 的结论是：临时锚点提议依赖于[v3 交易转发策略][topic v3 transaction relay]，捕捉到了`SIGHASH_GROUP` 的绝大部分好处，并且显然比 `SIGHASH_GROUP` 更易于进入生产环境，因为后者还需要软分叉共识变更。
 
-- **<!--request-for-proof-that-an-async-payment-was-accepted-->呼吁为送达的异步支付提供支付证明**：Valentine Wallact [发帖][wallace pop]到 Lightning-Dev 邮件组中，呼吁研究者们探索如何让发起[异步支付][topic async payments]的付款方能够收到支付证据。在传统的闪电支付中，收款方先创建一个秘密值，并用哈希函数取得该秘密指的摘要；该摘要会放在一个签好名的发票中，交给支付者；支付者使用 “哈希时间锁合约（[HTLC][topic htlc]）” 为任何能够揭晓那个秘密指的人支付。而揭开的秘密值就证明了支付者已经为签名发票中的摘要支付过了。
+- **<!--request-for-proof-that-an-async-payment-was-accepted-->呼吁为送达的异步支付提供支付证明**：Valentine Wallact [发帖][wallace pop]到 Lightning-Dev 邮件组中，呼吁研究者们探索如何让发起[异步支付][topic async payments]的付款方能够收到支付证据。在传统的闪电支付中，收款方先创建一个秘密值，并用哈希函数取得该秘密值的摘要；该摘要会放在一个签好名的发票中，交给支付者；支付者使用 “哈希时间锁合约（[HTLC][topic htlc]）” 为任何能够揭晓那个秘密指的人支付。而揭开的秘密值就证明了支付者已经为签名发票中的摘要支付过了。
 
     相反，异步支付会在接受者离线时送达，所以他们没法揭晓秘密值，因此也无法在当前的闪电网络模式中产生支付证据。Wallace 请呼吁研究者们探索如何让异步支付获得支付证据，不论是在当前的基于 HTLC 的系统中，还是在为了升级为 “点时间锁合约（[PTLCs][topic ptlc]）” 的系统中。
 
