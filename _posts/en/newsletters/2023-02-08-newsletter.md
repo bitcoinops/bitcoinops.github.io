@@ -143,7 +143,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #25880][] p2p: Make stalling timeout adaptive during IBD FIXME:Xekyo
 
-- [Core Lightning #5679][] sql plugin FIXME:adamjonas
+- [Core Lightning #5679][] provides a plugin to run SQL queries on CLN's list
+  commands. This patch also handles deprecations more gracefully as it can
+  ignore anything deprecated before it was released as introduced in
+  [Core Lightning #5867][].
 
 - [Core Lightning #5821][] adds `preapproveinvoice` (pre-approve
   invoice) and `preapprovekeysend` (pre-approve keysend) RPCs that allow
@@ -186,7 +189,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   accept payments.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="25880,5679,5821,5849,5892,2565,7252,6527" %}
+{% include linkers/issues.md v=2 issues="25880,5679,5867,5821,5849,5892,2565,7252,6527" %}
 [news158 upfront]: /en/newsletters/2021/07/21/#eclair-1846
 [dickinson ordinal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021370.html
 [poelstra ordinal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021372.html
