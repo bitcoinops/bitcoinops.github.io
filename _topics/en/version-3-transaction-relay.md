@@ -59,11 +59,11 @@ That is, V3 transactions follow all rules for standard transactions
 (e.g. minimum and max transaction weight) while also adding some
 additional rules designed to allow [transaction replacement][topic rbf]
 while precluding transaction-pinning attacks. V3 transactions also
-require minor changes to the Package RBF policy in order to maintain
+require minor changes to the [Package RBF][topic package relay] policy in order to maintain
 incentive compatibility with miners.
 
-V3 transaction relay solves rule 3 [transaction pinning][topic version 3 transaction relay]
-and may allow the removal of the CPFP carve-out.
+V3 transaction relay solves rule 3 [transaction pinning][topic transaction pinning]
+and may allow the removal of the [CPFP carve-out][topic cpfp carve out].
 
 Version 3 transactions are used by [ephemeral anchors][topic ephemeral anchors].
 
