@@ -14,6 +14,11 @@ The first letter of a proper noun is always capitalized.
   "set foo to True").
   - use whatever capitalization is appropriate when used in code (eg
     "set `foo=true`")
+- For brand names and other marketing terms, capitalize them as you
+  would a regular proper noun (e.g. Ios, Sqlite, Github).  All-caps
+  abbreviations are ok (e.g. LND), as is whatever is appropriate for
+  code.  C.f. [avoid
+  incaps](https://boingboing.net/2014/01/01/newyearsresolution-avoid-inca.html)
 
 ### Common nouns
 
