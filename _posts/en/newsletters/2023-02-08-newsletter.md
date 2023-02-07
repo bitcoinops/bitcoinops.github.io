@@ -144,21 +144,17 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25880][] fixes a problem where a node could be unable
-  to acquire additional blocks during Initial Block chain Download
-  (IBD).  Previously, if the node responsible for delivering the next
-  block took longer than two seconds to provide it, Bitcoin Core would
-  disconnect it and request that block from a different peer.  If that
-  peer didn't deliver the block within two seconds, it would also be
-  disconnected.  This two second delay was chosen almost 9 years ago
-  when blocks were smaller than they are today and, on some connections,
-  blocks can't be delivered within two seconds, leading to repeated
-  disconnections and a lack of IBD progress.
-
-    This change doubles the timeout after every disconnection (e.g. 4
-    seconds, 8 seconds, 16 seconds, etc, up to 64 seconds) and halves it
-    after each block is successfully downloaded (e.g. 64 seconds, 32
-    seconds, etc, down to 2 seconds).
+- [Bitcoin Core #25880][] makes the stalling timeout adaptive during the
+  initial synchronization. Bitcoin Core requests blocks from multiple
+  peers in parallel. If one peer is significantly slower than others to
+  the point that the node gets stuck waiting for the next block, we
+  disconnect the stalling peer after a timeout. In some situations this
+  could cause a node with a low-bandwidth connection to disconnect
+  multiple peers in a row when a heavy block could not be transferred
+  within the timeout. This code change amends the behavior of nodes to
+  dynamically adapt the timeout: the timeout is incremented for each
+  disconnected peer while no block is received, and after blocks start
+  arriving again, the timeout is scaled back block-by-block.
 
 - [Core Lightning #5679][] provides a plugin to run SQL queries on CLN's list
   commands. This patch also handles deprecations more gracefully as it can
