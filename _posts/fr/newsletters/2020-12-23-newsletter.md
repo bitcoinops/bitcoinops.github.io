@@ -643,7 +643,7 @@ Au cours de la troisième année d'existence d'Optech, 10 nouvelles sociétés
 membres se sont jointes à nous<!-- Veriphi, SwanBitcoin, YellowCardIO,
 Xbtogroup, Bitonic, Fidelity Center for Applied Technology, AndgoInc, BTSEcom,
 EdgeWallet, Bitbank_inc -->, nous avons organisé un [atelier taproot][] à
-Londres, publié 51 bulletins d'information hebdomadaires< ! -- 78 à 129 -->,
+Londres, publié 51 bulletins d'information hebdomadaires<!-- 78 à 129 -->,
 ajouté 20 nouvelles pages à notre [index des sujets][], ajouté plusieurs
 nouveaux portefeuilles et services à notre [index de compatibilité][],
 et publié plusieurs [articles de blog][optech blog posts] sur la technologie
