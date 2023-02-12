@@ -672,7 +672,7 @@ mercredi le 5 janvier.*
 {% include references.md %}
 {% include linkers/issues.md issues="878,7600" %}
 [2018 summary]: /en/newsletters/2018/12/28/
-[2019 summary]: /fr/newsletters/2019/12/28/
+[2019 summary]: /en/newsletters/2019/12/28/
 [2020 summary]: /fr/newsletters/2020/12/23/
 [cl 0.9.3]: /en/newsletters/2021/01/27/#c-lightning-0-9-3
 [safegcd blog]: /en/newsletters/2021/02/17/#faster-signature-operations
