@@ -102,6 +102,9 @@ optech_mentions:
   - title: "2022 year-in-review: MuSig2"
     url: /en/newsletters/2022/12/21/#musig2
 
+  - title: "LND #7171 upgrades the signrpc RPC to support the latest draft BIP for MuSig2"
+    url: /en/newsletters/2023/02/15/#lnd-7171
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures
