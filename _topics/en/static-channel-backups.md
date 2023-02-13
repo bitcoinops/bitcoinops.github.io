@@ -34,6 +34,9 @@ optech_mentions:
   - title: "Core Lightning 0.12 adds support for static channel backups"
     url: /en/newsletters/2022/08/24/#core-lightning-0-12-0
 
+  - title: "Core Lightning #5361 adds experimental support for peer storage backups"
+    url: /en/newsletters/2023/02/15/#core-lightning-5361
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

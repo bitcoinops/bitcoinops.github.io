@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Bitcoin Core #24584 prefers input sets composed of a single output type for privacy"
     url: /en/newsletters/2022/08/10/#bitcoin-core-24584
 
+  - title: "BTCPay Server #4600 updates its coin selection to avoid unnecessary inputs for payjoin"
+    url: /en/newsletters/2023/02/15/#btcpay-server-4600
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies
