@@ -140,7 +140,22 @@ technical documentation and discussion.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Liana wallet adds multisig:**
+  [Liana][news234 liana]'s [0.2 release][liana 0.2] adds multisig support using
+  [descriptors][topic descriptors].
+
+- **Sparrow wallet 1.7.2 released:**
+  Sparrow's [1.7.2 release][sparrow 1.7.2] adds [taproot][topic taproot]
+  support, [BIP329][] import and export features (see [Newsletter #235][news235
+  bip329]), and additional support for hardware signing devices.
+
+- **Bitcoinex library adds schnorr support:**
+  [Bitcoinex][bitcoinex github] is a Bitcoin utility library for the Elixir functional programming language.
+
+- **Libwally 0.8.8 released:**
+  [Libwally 0.8.8][] adds [BIP340][] tagged hash support, additional sighash
+  support including [BIP118][] ([SIGHASH_ANYPREVOUT][topic SIGHASH_ANYPREVOUT]), and
+  additional [miniscript][topic miniscript], descriptor, and [PSBT][topic psbt] functions.
 
 ## Optech Recommends
 
@@ -257,3 +272,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [core lightning 23.02rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc2
 [BTCPay Server 1.7.11]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.7.11
 [bdk 0.27.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.27.0
+[news234 liana]: /en/newsletters/2023/01/18/#liana-wallet-released
+[liana 0.2]: https://github.com/wizardsardine/liana/releases/tag/0.2
+[sparrow 1.7.2]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.2
+[news235 bip329]: /en/newsletters/2023/01/25/#bips-1383
+[bitcoinex github]: https://github.com/RiverFinancial/bitcoinex
+[libwally 0.8.8]: https://github.com/ElementsProject/libwally-core/releases/tag/release_0.8.8
