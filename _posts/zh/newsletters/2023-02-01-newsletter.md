@@ -7,27 +7,27 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的周报总结了 serverless payjoin 的提案，并描述了一个支持闪电网络异步支付的支付证明的想法。此外还包括我们的常规部分，其中描述了流行的比特币基础设施软件的显着变化。
+本周的周报总结了无服务器 payjoin 的提案，并描述了一个支持闪电网络异步支付的支付证明的想法。此外还包括我们的常规部分，其中描述了流行的比特币基础设施软件的显著变化。
 
 ## 新闻
 
-- **<!--serverless-payjoin-proposal-->Serverless payjoin 提案：** Dan Gould 在 Bitcoin-Dev 邮件列表中[提交了][gould payjoin]一个提案和 serverless 版本的 [BIP78][]，即 [payjoin][topic payjoin] 协议的[概念证明实现][payjoin impl]。
+- **<!--serverless-payjoin-proposal-->无服务器 payjoin 提案：** Dan Gould 在 Bitcoin-Dev 邮件列表中[提交了][gould payjoin]一个提案和 serverless 版本的 [BIP78][]，即 [payjoin][topic payjoin] 协议的[概念证明实现][payjoin impl]。
 
-    在没有 payjoin 的情况下，典型的比特币支付只包括来自消费者的输入，使得交易监控组织要采用[共同输入所有权启发式][common input ownership heuristic]方法，假设交易中的所有输入都属于同一个钱包。Payjoin 通过允许接收方为支付提供输入来打破这种启发式假设。这为 payjoin 的用户提供了即时的隐私改进，并通过降低启发式算法的可靠性来普遍提高所有比特币用户的隐私。
+    在没有 payjoin 的情况下，典型的比特币支付只包括来自花费者的输入，使得交易监控组织要采用[共同输入所有权启发式][common input ownership heuristic]方法，假设交易中的所有输入都属于同一个钱包。Payjoin 通过允许接收方为支付提供输入来打破这种启发式假设。这为 payjoin 的用户提供了即时的隐私改进，并通过降低启发式算法的可靠性来普遍提高所有比特币用户的隐私。
 
-    然而，payjoin 不像典型的比特币支付那样灵活。大多数典型的付款可以在接收者离线时发送，但 payjoin 要求接收者在线以提供和签署他们的输入。现有的 payjoin 协议还要求接收方在消费者可访问的网络地址上接受 HTTP 请求，这通常是通过接收方在包含 payjoin 兼容软件的公共 IP 地址上运行网络服务器来实现的。正如 [Newsletter #132][news132 payjoin] 中提到的，增加 payjoin 使用的一个建议是在常见的终端用户钱包之间允许 payjoin 更多在 P2P 基础层上进行。
+    然而，payjoin 不像典型的比特币支付那样灵活。大多数典型的付款可以在接收者离线时发送，但 payjoin 要求接收者在线以提供和签署他们的输入。现有的 payjoin 协议还要求接收方在花费者可访问的网络地址上接受 HTTP 请求，这通常是通过接收方在包含 payjoin 兼容软件的公共 IP 地址上运行网络服务器来实现的。正如 [Newsletter #132][news132 payjoin] 中提到的，增加 payjoin 使用的一个建议是在常见的终端用户钱包之间允许 payjoin 更多在 P2P 基础层上进行。
 
     Gould 建议在与 payjoin 兼容的钱包中构建一个轻量级 HTTP 服务器。该服务器具有[噪声协议][noise protocol]加密支持以及使用 [TURN 协议][TURN protocol]遍历 [NAT][] 的能力。这将允许两个钱包在创建 payjoin 支付所需的短暂时间内进行交互通信，而不需要一个长期的网络服务器。尽管 Gould 确实建议调研 [nostr 协议][nostr protocol]以在未来的提案中启用“异步 payjoin”，但目前不允许在接收方离线时创建 payjoin。
 
     截至撰写本文时，邮件列表中还没有对该提案的回复发布。
 
-- **<!--ln-async-proof-of-payment-->闪电网络异步支付证明：**如[上周周报][news235 async] 中所述，LN 开发人员正在寻找一种发送[异步支付][topic async payments]的方法，该方法可为消费者提供他们向接收者付款的证明。异步支付允许支付者（Alice）通过一系列正常的转发跃点向接收者（Bob）发送闪电网络支付——包括闪电服务提供商（LSP）。如果他临时离线，它将为鲍勃保持住支付。当 Bob 通知 LSP 他已恢复在线时，LSP 才会开始将剩余的付款转发给 Bob。
+- **<!--ln-async-proof-of-payment-->闪电网络异步支付证明：**如[上周周报][news235 async] 中所述，LN 开发人员正在寻找一种发送[异步支付][topic async payments]的方法，该方法可为花费者提供他们向接收者付款的证明。异步支付允许支付者（Alice）通过一系列正常的转发跃点向接收者（Bob）发送闪电网络支付——包括闪电服务提供商（LSP）。如果他临时离线，它将为 Bob 保持住支付。当 Bob 通知 LSP 他已恢复在线时，LSP 才会开始将剩余的付款转发给 Bob。
 
-    在当前基于 [HTLC][topic htlc] 的闪电网络中，这种方法的一个挑战是，如果 Bob 离线，他无法向 Alice 提供引用他选择的秘密的特定付款发票。Alice 可以选择她自己的秘密并将其包含在她发送给 Bob 的异步支付中——这称为 [keysend][topic spontaneous payments] 支付——但由于 Alice 一直都知道 keysend 秘密，她不能用她自己的知识作为给 Bob 付款的证明。或者，Bob 可以预先生成几张标准发票并将它们交给他的 LSP；LSP 可以将它们分发给像 Alice 这样的潜在消费者。当 Bob 最终接受付款时，支付这些发票将生成付款证明，但这将允许 LSP 将同一张发票分发给多个消费者，导致他们都支付相同的秘密。当 LSP 因 Bob 接受了第一笔付款而得知秘密时，LSP 将能够窃取剩余付款的付款给重复使用的发票——这使得 HTLC 的预生成发票解决方案仅在 Bob 信任他的 LSP的情况下才是安全的。
+    在当前基于 [HTLC][topic htlc] 的闪电网络中，这种方法的一个挑战是，如果 Bob 离线，他无法向 Alice 提供引用他选择的秘密的特定付款发票。Alice 可以选择她自己的秘密并将其包含在她发送给 Bob 的异步支付中——这称为 [keysend][topic spontaneous payments] 支付——但由于 Alice 一直都知道 keysend 秘密，她不能用她自己的知识作为给 Bob 付款的证明。或者，Bob 可以预先生成几张标准发票并将它们交给他的 LSP；LSP 可以将它们分发给像 Alice 这样的潜在花费者。当 Bob 最终接受付款时，支付这些发票将生成付款证明，但这将允许 LSP 将同一张发票分发给多个花费者，导致他们都支付相同的秘密。当 LSP 因 Bob 接受了第一笔付款而得知秘密时，LSP 将能从重复使用的发票的剩余中窃取资金——这使得 HTLC 的预生成发票解决方案仅在 Bob 信任他的 LSP的情况下才是安全的。
 
-    本周，Anthony Towns [提出][towns async]了一个基于[签名适配器][topic adaptor signatures]的解决方案。这将依赖于闪电网络的计划升级，以便使用 [PTLC][topic ptlc]。Bob 会预先生成一系列签名 nonce 并将它们交给他的 LSP。 LSP 会给 Alice 一个签名 nonce，Alice 会选择一条消息作为她的付款证明（例如“Alice paid Bob 1000 sats at 2023-02-01 12:34:56Z”），然后使用 Bob 的 nonce 和她的消息为她的 PTLC 生成签名适配器。当 Bob 重新上线时，LSP 将付款转发给他。Bob 验证 nonce 之前没有被使用过、付款在其他方面是有效的并且签名适配器数学计算也是有效的，那么他将同意该消息；然后他将接受付款。而当 Alice 最终收到结算的 PTLC 时，她将获得对她所选消息进行承诺的 Bob 的签名。
+    本周，Anthony Towns [提出][towns async]了一个基于[签名适配器][topic adaptor signatures]的解决方案。这将依赖于闪电网络的计划升级，以便使用 [PTLC][topic ptlc]。Bob 会预先生成一系列签名 nonce 并将它们交给他的 LSP。 LSP 会给 Alice 一个签名 nonce，Alice 选择一条消息作为她的付款证明（例如“Alice paid Bob 1000 sats at 2023-02-01 12:34:56Z”），然后使用 Bob 的 nonce 和她的消息为她的 PTLC 生成签名适配器。当 Bob 重新上线时，LSP 将付款转发给他。Bob 验证 nonce 之前没有被使用过、付款在其他方面是有效的并且适配器签名在数学上有效，那么他将同意该消息；然后他将接受付款。而当 Alice 最终收到结算的 PTLC 时，她将获得 Bob 关于她所选消息的承诺的签名。
 
-    Towns 的解决方案涉及 LSP 从 Bob 接收预生成的发票——这类似于 HTLC 的不安全/可信解决方案，但 PTLC 签名适配器解决方案是安全且无需信任的，因为来自不同消费者（如 Alice）的每次付款都使用不同的 PTLC 公钥点和 Bob 能够防止 nonce 重用。每个 PTLC 点都是不同的，因为它源自每个消费者选择的唯一消息。 Bob 能够通过在他接受每笔付款之前检查 nonce 重用来防止 nonce 被重复使用。
+    Towns 的解决方案涉及 LSP 从 Bob 接收预生成的发票——这类似于 HTLC 的不安全/可信解决方案，但 PTLC 签名适配器解决方案是安全且无需信任的，因为来自不同花费者（如 Alice）的每次付款都使用不同的 PTLC 公钥点和 Bob 能够防止 nonce 重用。每个 PTLC 点都是不同的，因为它源自每个花费者选择的唯一消息。 Bob 能够通过在他接受每笔付款之前检查 nonce 重用来防止 nonce 被重复使用。
 
     在他的帖子中，Towns [引用了][towns sa1]两个[之前][towns sa2]他写的关于使用签名适配器的 LN 付款证明邮件列表帖子。截至撰写本文时，邮件列表中还没有对该想法的回复发布。
 
@@ -51,7 +51,7 @@ lang: zh
 
 - [LDK #1878][] 添加了设置每次付款（而不是全局）`min_final_cltv_expiry` 值的功能。该值决定了接收方在到期前要求付款的最大区块数。标准默认值为 18 个块，但接收方可以通过在 [BOLT11][] 发票中设置参数来请求更多时间。
 
-    为了让 LDK 结合其独特的[无状态发票][topic stateless invoices]实现来支持该特性，LDK 将该值编码到消费者要强制发送的[支付秘密][topic payment secrets]中。它提供 12 位的到期值，允许最多 4,096 个区块（约 4 周）到期。
+    为了让 LDK 结合其独特的[无状态发票][topic stateless invoices]实现来支持该特性，LDK 将该值编码到花费者要强制发送的[支付秘密][topic payment secrets]中。它为逾期值提供了 12 比特的编码空间，允许最多逾期 4,096 个区块（约 4 周）。
 
 - [LDK #1860][] 添加了对使用[锚点输出][topic anchor outputs]的通道的支持。
 
