@@ -220,7 +220,7 @@ None this week.
       as P2WPKH.  Descriptors can succinctly describe all common uses of
       P2PKH, P2SH, P2WPKH, P2WSH, and nested segwit.
 
-    - The [key origin][key origin information] is described between the square brackets `[]`.
+    - The [key origin][key origin information] is described between the square brackets `[...]`.
 
         - `f6bb4c63` is a fingerprint that identifies the key at the
           root of the path provided.  The fingerprint is the first 32
