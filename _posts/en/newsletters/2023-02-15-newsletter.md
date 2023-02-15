@@ -124,10 +124,10 @@ technical documentation and discussion.
     ```
 
    That means that even if Mallory provides Bob with a valid witness for
-   his tapscript spend before Bob provides his own signature, it's
+   her tapscript spend before Bob provides his own signature, it's
    still possible for Mallory to broadcast an alternative version of the
    transaction with a larger witness.  Bob can only prevent this issue
-   by receiving from Alice a complete copy of her tree of tapscripts.
+   by receiving from Mallory a complete copy of her tree of tapscripts.
 
    In the context of future soft fork upgrades to Bitcoin, Anthony Towns
    opened a [pull request][bitcoin inquisition #19] to the Bitcoin
