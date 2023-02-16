@@ -237,7 +237,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   security issue with an older version of the MuSig2 protocol was
   mentioned in [Newsletter #222][news222 musig2].
 
-- [LDK #2022][] adds support for automatically resending [spontaneous
+- [LDK #2002][] adds support for automatically resending [spontaneous
   payments][topic spontaneous payments] that don't initially succeed.
 
 - [BTCPay Server #4600][] updates the [coin selection][topic coin selection] for its [payjoin][topic payjoin]
@@ -250,7 +250,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   This PR was partly inspired by a [paper analyzing payjoins][].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2022,4541,4600" %}
+{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
 [news147 backups]: /en/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
 [news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
