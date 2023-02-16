@@ -130,7 +130,7 @@ technical documentation and discussion.
    by receiving from Mallory a complete copy of her tree of tapscripts.
 
    In the context of future soft fork upgrades to Bitcoin, Anthony Towns
-   opened a [pull request][bitcoin inquisition #19] to the Bitcoin
+   opened an [issue][bitcoin inquisition #19] to the Bitcoin
    Inquisition repository being used to test [SIGHASH_ANYPREVOUT][topic
    sighash_anyprevout] (APO) to consider having APO commit to additional
    data to prevent this issue for users of that extension.
