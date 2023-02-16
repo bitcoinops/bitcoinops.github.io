@@ -79,8 +79,8 @@ optech_mentions:
   - title: "Eclair #2573 begins accepting keysend payments that don’t contain a payment secret"
     url: /en/newsletters/2023/02/01/#eclair-2573
 
-  - title: "LDK #2022 adds support for automatically resending spontaneous payments"
-    url: /en/newsletters/2023/02/15/#ldk-2022
+  - title: "LDK #2002 adds support for automatically resending spontaneous payments"
+    url: /en/newsletters/2023/02/15/#ldk-2002
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
