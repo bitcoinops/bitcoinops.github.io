@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Optech Newsletter #74'
+title: 'Boletín Bitcoin Optech #74'
 permalink: /es/newsletters/2019/11/27/
 name: 2019-11-27-newsletter-es
 slug: 2019-11-27-newsletter-es
