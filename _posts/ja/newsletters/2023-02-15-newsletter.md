@@ -193,7 +193,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
   MuSig2プロトコルのバージョン番号にリンクされたセッションを作成するようになりました。
   MuSig2プロトコルの旧バージョンのセキュリティ問題については、[ニュースレター #222][news222 musig2]で言及されています。
 
-- [LDK #2022][]は、最初に成功しなかった[Spontaneous Payment][topic spontaneous payments]を
+- [LDK #2002][]は、最初に成功しなかった[Spontaneous Payment][topic spontaneous payments]を
   自動的に再送信するサポートを追加しました。
 
 - [BTCPay Server #4600][]では、*不要な*インプット、
@@ -204,7 +204,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
   このPRをは、[Payjoinを分析した論文][paper analyzing payjoins]からヒントを得たものです。
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2022,4541,4600" %}
+{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
 [news147 backups]: /ja/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed-bip32
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
 [news222 musig2]: /ja/newsletters/2022/10/19/#musig2
