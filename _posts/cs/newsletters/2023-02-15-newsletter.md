@@ -220,7 +220,7 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
   problém starších verzí MuSig2 protokolu byl zmíněn ve [zpravodaji č. 222][news222
   musig2] (*angl.*).
 
-- [LDK #2022][] přidává podporu pro automatické opětovné poslání neúspěšných
+- [LDK #2002][] přidává podporu pro automatické opětovné poslání neúspěšných
   [spontánních plateb][topic spontaneous payments].
 
 - [BTCPay Server #4600][] aktualizuje [výběr mincí][topic coin selection] své
@@ -233,7 +233,7 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
   analyzing payjoins].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2022,4541,4600" %}
+{% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
 [news147 backups]: /en/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
 [news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
