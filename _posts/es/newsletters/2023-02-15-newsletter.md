@@ -1,11 +1,11 @@
 ---
 title: 'Boletín Bitcoin Optech #238'
-permalink: /en/newsletters/2023/02/15/
+permalink: /es/newsletters/2023/02/15/
 name: 2023-02-15-newsletter
 slug: 2023-02-15-newsletter
 type: newsletter
 layout: newsletter
-lang: en
+lang: es
 ---
 El boletín de esta semana resume la discusión continuada sobre el almacenamiento de datos en la cadena de bloques de Bitcoin, describe un hipotético ataque de dilución de tasas contra algunos tipos de protocolos multiparte, y describe cómo un compromiso de firma tapscript puede ser usado con diferentes partes del mismo árbol. También se incluyen nuestras secciones habituales con resúmenes de cambios en servicios y software cliente, anuncios de nuevas versiones y versiones candidatas, y descripciones de cambios notables en software popular de infraestructura Bitcoin. Adicionalmente proporcionamos una de nuestras raras recomendaciones para un nuevo motor de búsqueda centrado en documentación técnica y discusión sobre Bitcoin.
 
