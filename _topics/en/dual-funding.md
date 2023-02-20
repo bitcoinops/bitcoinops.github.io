@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Core Lightning #5670 and #5956 make various updates to its implementation of dual funding"
     url: /en/newsletters/2023/02/15/#core-lightning-5670
 
+  - title: "Eclair #2596 limits the number of RBF fee bumps in a dual funded channel open"
+    url: /en/newsletters/2023/02/22/#eclair-2596
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)
