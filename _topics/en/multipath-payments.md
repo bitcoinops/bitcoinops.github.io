@@ -120,6 +120,9 @@ optech_mentions:
   - title: "BOLTs #1031 allows paying slightly more than the requested amount when using multipath"
     url: /en/newsletters/2022/11/16/#bolts-1031
 
+  - title: Discussion about using multipath overpayment with recovery to decrease payment latency
+    url: /en/newsletters/2023/02/22/#ln-quality-of-service-flag
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Atomic Multipath Payments (AMPs)

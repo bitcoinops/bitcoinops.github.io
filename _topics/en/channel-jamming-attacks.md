@@ -91,6 +91,9 @@ optech_mentions:
   - title: "Summary of call about mitigating LN jamming"
     url: /en/newsletters/2023/02/08/#summary-of-call-about-mitigating-ln-jamming
 
+  - title: "Feedback requested on LN good neighbor scoring for local reputation to mitigate jamming"
+    url: /en/newsletters/2023/02/22/#feedback-requested-on-ln-good-neighbor-scoring
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
