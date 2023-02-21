@@ -97,10 +97,10 @@ des pairs sortants.
       Comment ce PR le résout-il ?"
   a2="Si la configuration `-onlynet` change. Par exemple, supposons que le
       noeud a toujours été exécuté avec `-onlynet=onion`, donc son `AddrMan`
-      n'a pas d'adresses I2P. Puis le noeud est redémarré avec `-onlynet=i2p`.
+      n'a pas d'adresses I2P. Le noeud redémarra alors avec `-onlynet=i2p`.
       Les graines fixes ont quelques adresses I2P, mais sans le PR, le noeud
       ne les utilisera pas puisque le `AddrMan` n'est pas _complètement_ vide
-      (il a quelques adresses onion d'avant). Avec le PR, le code de démarrage
+      (il conserve quelques adresses onion). Avec le PR, le code de démarrage
       ajoutera des graines fixes I2P, puisque `AddrMan` ne contient aucune
       adresse de _ce_ type de réseau (maintenant atteignable)."
   a2link="https://bitcoincore.reviews/26847#l-98"
@@ -189,7 +189,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   production dans un avenir proche---il faudrait plus d'une douzaine
   de blocs entiers pour ouvrir autant de canaux---le fait de tester le
   comportement a permis au développeur d'apporter plusieurs améliorations
-  aux performances.
+  de performances.
 
 - [Core Lightning #5892][] met à jour l'implémentation du protocole
   [offres][topic offers] de CLN sur la base de tests de compatibilité
@@ -212,7 +212,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
 - [LND #6527][] ajoute la possibilité de chiffrer la clé TLS du serveur sur
   le disque. LND utilise TLS pour authentifier les connexions distantes à son
-  canal de contrôle, c'est-à-dire pour exécuter les API.  La clé TLS sera
+  canal de contrôle, c'est-à-dire pour exécuter les API. La clé TLS sera
   chiffrée en utilisant les données du portefeuille du nœud, donc le
   déverrouillage du portefeuille déverrouillera la clé TLS. Le déverrouillage
   du porte-monnaie est déjà nécessaire pour envoyer et accepter des paiements.
