@@ -204,7 +204,16 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #24149][] Signing support for Miniscript Descriptors FIXME:Xekyo
+- [Bitcoin Core #24149][] adds signing support for P2WSH-based
+  [miniscript][topic miniscript]-based [output descriptors][topic
+  descriptors]. Bitcoin Core will be able to sign any miniscript
+  descriptor input if all the necessary preimages and keys are
+  available and timelocks are satisfied. Some features are still
+  missing for full Miniscript support in the Bitcoin Core wallet: the
+  wallet cannot yet estimate the input weight for some descriptors
+  before signing and cannot yet sign [PSBTs][topic PSBT] in some
+  edge-cases. Miniscript support for P2TR outputs is also still
+  pending.
 
 - [Bitcoin Core #25344][] updates the `bumpfee` and `psbtbumpfee` RPCs
   for creating [Replace By Fee][topic rbf] (RBF) fee bumps.  The update
