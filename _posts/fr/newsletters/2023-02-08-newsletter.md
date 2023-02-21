@@ -224,7 +224,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [poelstra ordinal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021372.html
 [news65 tapscript]: /en/newsletters/2019/09/25/#tapscript-resource-limits
 [ckccs jamming]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003834.html
-[news226 jam]: /fr/newsletters/2022/11/16/##document-sur-les-attaques-par-brouillage-de-canaux
+[news226 jam]: /fr/newsletters/2022/11/16/#document-sur-les-attaques-par-brouillage-de-canaux
 [news230 jam]: /fr/newsletters/2022/12/14/#brouillage-local-pour-eviter-le-brouillage-a-distance
 [news228 jam]: /fr/newsletters/2022/11/30/#proposition-de-references-de-reputation-pour-attenuer-les-attaques-de-brouillage-ln
 [jam xs]: https://github.com/ClaraShk/LNJamming/blob/main/meeting-transcripts/23-01-23-transcript.md
