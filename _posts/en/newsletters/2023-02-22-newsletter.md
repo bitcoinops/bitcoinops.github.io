@@ -174,6 +174,12 @@ answers posted since our last update.*
     OP_ENDIF
     ```
 
+- [Why doesn't the protocol allow unconfirmed transactions to expire at a given height?]({{bse}}116926)
+  Larry Ruane references Satoshi on why it wouldn't be prudent for
+  transactions to have the seemingly useful ability to specify an
+  expiration height, that is, a height after which the transaction,
+  if not yet mined, is no longer valid (and therefore can't be mined).
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
