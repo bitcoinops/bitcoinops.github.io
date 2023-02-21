@@ -221,6 +221,7 @@ et les mineurs sur la façon d'activer taproot.
   comme LN et [coinswaps][topic coinswap]. Optech a également [commencé][p4tr begins]
   sa série [Preparing for Taproot][p4tr].
 
+
 - **Juillet<!--taproot-->** a rencontré une [page][bech32m page] du Bitcoin Wiki
   consacrée au suivi du support du format d'adresse bech32m nécessaire aux
   portefeuilles pour pouvoir utiliser taproot après son activation.
@@ -662,8 +663,6 @@ Au lieu de cela, nous avons omis tous les noms de ce bulletin pour souligner
 que le développement de Bitcoin est un travail d'équipe où certains des travaux
 les plus importants sont effectués par des personnes dont les noms n'ont
 jamais paru dans aucun numéro de ce bulletin.
-
-Nous les remercions, ainsi que tous les contributeurs à Bitcoin en 2021.
 Nous sommes impatients de voir quels nouveaux développements passionnants
 ils apporteront en 2022.
 
@@ -674,7 +673,7 @@ mercredi le 5 janvier.*
 {% include linkers/issues.md issues="878,7600" %}
 [2018 summary]: /en/newsletters/2018/12/28/
 [2019 summary]: /en/newsletters/2019/12/28/
-[2020 summary]: /en/newsletters/2020/12/23/
+[2020 summary]: /fr/newsletters/2020/12/23/
 [cl 0.9.3]: /en/newsletters/2021/01/27/#c-lightning-0-9-3
 [safegcd blog]: /en/newsletters/2021/02/17/#faster-signature-operations
 [secp831]: /en/newsletters/2021/03/24/#libsecp256k1-831
@@ -789,4 +788,4 @@ mercredi le 5 janvier.*
 [dec cs]: /en/newsletters/2021/12/15/#changes-to-services-and-client-software
 [mpa ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
 [ff orig]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
-[2020 conclusion]: /en/newsletters/2020/12/23/#conclusion
+[2020 conclusion]: /fr/newsletters/2020/12/23/#conclusion
