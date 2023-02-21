@@ -136,7 +136,43 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why is witness data downloaded during IBD in prune mode?]({{bse}}117057)
+  Pieter Wuille notes that for nodes running in [prune mode], "the witness data
+  that is both (a) before the assumevalid point and (b) sufficiently buried to
+  be past the prune point, there is indeed little to gain from having it". There
+  is currently a [draft PR][Bitcoin Core #27050] open to address this and [a PR
+  Review Club][pr review 27050] covering the proposed change.
+
+- [Can Bitcoin's P2P network relay compressed data?]({{bse}}116999)
+  Pieter Wuille links to two mailing list discussions about compression (one about
+  [specialized compression for headers sync][] and one about [general LZO-based
+  compression][]) and points out that Blockstream Satellite uses a custom
+  transaction compression scheme.
+
+- [How does one become a DNS seed for Bitcoin Core?]({{bse}}116931)
+  User Paro explains the requirements for someone wanting to become a [DNS
+  seed][news66 dns seed] to provide new nodes with initial peers.
+
+- [Where can I learn about open research topics in Bitcoin?]({{bse}}116898)
+  Michael Folkson provides a variety of resources including [Chaincode Labs
+  Research][] and [Bitcoin Problems][], among others.
+
+- [What is the maximum size transaction that will be relayed by bitcoin nodes using the default configuration?]({{bse}}117277)
+  Pieter Wuille points out Bitcoin Core's 400,000 [weight unit][] standardness
+  policy rule, notes that it is not currently configurable, and explains the
+  intended benefits of that limit including DoS protections.
+
+- [Understanding how ordinals work with in Bitcoin. What is exactly stored on the blockchain?]({{bse}}117018)
+  Vojtěch Strnad clarifies that Ordinals Inscriptions do not use `OP_RETURN`,
+  but instead embed data into an unexecuted script branch using the
+  `OP_PUSHDATAx` opcodes similar to:
+
+    ```
+    OP_0
+    OP_IF
+    <data pushes>
+    OP_ENDIF
+    ```
 
 ## Releases and release candidates
 
@@ -210,7 +246,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   having to construct a candidate transaction.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="24149,25344,2596,2595,2479,5988,1636" %}
+{% include linkers/issues.md v=2 issues="24149,25344,2596,2595,2479,5988,1636,27050" %}
 [core lightning 23.02rc3]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc3
 [news226 jam]: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 [news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
@@ -230,3 +266,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [op codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021469.html
 [RUSTSEC-2022-0090]: https://rustsec.org/advisories/RUSTSEC-2022-0090
 [bdk 0.27.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.27.1
+[prune mode]: https://bitcoin.org/en/full-node#reduce-storage
+[pr review 27050]: https://bitcoincore.reviews/27050
+[specialized compression for headers sync]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015851.html
+[general LZO-based compression]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011837.html
+[news66 dns seed]: /en/newsletters/2019/10/02/#bitcoin-core-15558
+[Chaincode Labs Research]: https://research.chaincode.com/research-intro/
+[Bitcoin Problems]: https://bitcoinproblems.org/
+[weight unit]: https://en.bitcoin.it/wiki/Weight_units
