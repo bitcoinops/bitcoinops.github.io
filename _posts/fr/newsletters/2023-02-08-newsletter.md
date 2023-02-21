@@ -7,9 +7,9 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-TLe bulletin de cette semaine résume une discussion sur le stockage des
+Le bulletin de cette semaine résume une discussion sur le stockage des
 données dans les témoins de transaction et fait référence à une conversation
-sur l'atténuation du brouillage LN.  Vous trouverez également nos sections
+sur l'atténuation du brouillage LN. Vous trouverez également nos sections
 habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club et
 des descriptions de changements notables apportés aux principaux logiciels
 d'infrastructure Bitcoin.
@@ -19,7 +19,7 @@ d'infrastructure Bitcoin.
 - **Discussion sur le stockage des données dans la chaîne de blocs :** Les
   utilisateurs d'un nouveau projet ont récemment commencé à stocker de grandes
   quantités de données dans les données des témoins pour les transactions
-  contenant des entrées segwit v1 ([taproot][topic taproot]).  Robert Dickinson
+  contenant des entrées segwit v1 ([taproot][topic taproot]). Robert Dickinson
   a [posté][dickinson ordinal] sur la liste de diffusion Bitcoin-Dev pour
   demander si une limite de taille devrait être imposée pour décourager
   un tel stockage de données.
@@ -109,7 +109,7 @@ des pairs sortants.
       collision avec une adresse existante, que se passe-t-il ? L'adresse
       existante est-elle toujours abandonnée au profit de la nouvelle adresse ?"
   a3="Non, en général, l'adresse existante est conservée (et non la nouvelle),
-      à moins que l'adresse existante soit considérée comme "terrible"
+      à moins que l'adresse existante soit considérée comme 'terrible'
       (voir `AddrInfo::IsTerrible()`)."
   a3link="https://bitcoincore.reviews/26847#l-100"
 
