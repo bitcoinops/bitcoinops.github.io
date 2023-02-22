@@ -99,7 +99,7 @@ axé sur la documentation technique et les discussions sur Bitcoin.
       voulait (confirmation rapide) et Mallory obtient 9 000 sats de données
       ajoutées à la chaîne de blocs sans frais pour elle.
 
-    - *Mallory can slow confirmation:* a transaction with a lower
+    - *Mallory can slow confirmation:* a transaction with a lower 
       feerate may confirm more slowly.  In a time-sensitive protocol, this
       could cause a serious problem for Bob.  In other cases, Bob might
       need to fee bump the transaction, which will cost him additional
