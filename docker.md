@@ -27,9 +27,8 @@
     docker run -d --name bitcoinops -p 4000:4000 -v ${repath}/bitcoinops.github.io:/root/bitcoinops.github.io -w /root/bitcoinops.github.io ruby:2.6.4-stretch /bin/bash -c "bundle install && make preview"
     ```
 
-5. Check whether building the site success.
+5. Output the bitcoinops container log
     ```bash
-    # Output the bitcoinops container log
     docker logs -f bitcoinops
     ```
 
@@ -42,3 +41,24 @@
 6. Visit URL 127.0.0.1:4000 in your browser to view the site.
 
 7. Edit files and save files, then refresh the site in a browser, the site will show the newest content.
+
+## Basic Docker Command
+```bash
+# list all containers
+docker ps -a
+
+# list all running containers
+docker ps
+
+# start a container 
+containername=bitcoinops
+docker start ${containername}
+
+# stop a container 
+name=bitcoinops
+docker stop ${containername}
+
+# output a container log
+name=bitcoinops
+docker logs -f ${containername}
+```
