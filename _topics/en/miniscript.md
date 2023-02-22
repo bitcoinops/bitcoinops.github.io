@@ -70,6 +70,9 @@ optech_mentions:
   - title: "2022 year-in-review: miniscript descriptors in Bitcoin Core"
     url: /en/newsletters/2022/12/21/#miniscript-descriptors
 
+  - title: "Bitcoin Core #24149 adds signing support for P2WSH-based miniscript-based output descriptors"
+    url: /en/newsletters/2023/02/22/#bitcoin-core-24149
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

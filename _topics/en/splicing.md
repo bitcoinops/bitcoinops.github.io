@@ -49,6 +49,9 @@ optech_mentions:
   - title: "Eclair #2540 makes backend preparations for splicing"
     url: /en/newsletters/2023/02/01/#eclair-2540
 
+  - title: "Eclair #2595 continues the project's work on adding support for splicing"
+    url: /en/newsletters/2023/02/22/#eclair-2595
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
