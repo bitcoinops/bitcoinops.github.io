@@ -55,10 +55,10 @@ containername=bitcoinops
 docker start ${containername}
 
 # stop a container 
-name=bitcoinops
+containername=bitcoinops
 docker stop ${containername}
 
 # output a container log
-name=bitcoinops
+containername=bitcoinops
 docker logs -f ${containername}
 ```
