@@ -1,4 +1,3 @@
-
 [TOC]
 
 - Deploy docker document https://docs.docker.com/desktop/
@@ -44,21 +43,21 @@
 
 ## Basic Docker Command
 ```bash
-# list all containers
+# list all containers.
 docker ps -a
 
-# list all running containers
+# list all running containers.
 docker ps
 
-# start a container 
+# start a container.
 containername=bitcoinops
 docker start ${containername}
 
-# stop a container 
+# stop a container.
 containername=bitcoinops
 docker stop ${containername}
 
-# output a container log
+# output a container log.
 containername=bitcoinops
 docker logs -f ${containername}
 ```
