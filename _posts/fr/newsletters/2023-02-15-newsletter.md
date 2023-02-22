@@ -20,10 +20,9 @@ d'infrastructure Bitcoin les plus répandus. Nous fournissons en outre
 l'une de nos rares recommandations pour un nouveau moteur de recherche
 axé sur la documentation technique et les discussions sur Bitcoin.
 
-
 ## Nouvelles
 
-- **Poursuite de la discussion sur le stockage des données de la chaîne de blocs :** 
+- **Poursuite de la discussion sur le stockage des données de la chaîne de blocs :**
   Cette semaine, plusieurs fils de discussion sur la liste de diffusion Bitcoin-Dev
   ont vu se poursuivre les discussions sur le stockage des données dans la chaîne de blocs.
 
@@ -63,41 +62,42 @@ axé sur la documentation technique et les discussions sur Bitcoin.
       que de la valeur transférée, et conclut qu'il ne pense pas que cela
       conduise nécessairement à des incitations significativement désalignées.
 
-    - *Increasing allowed `OP_RETURN` space in standard transactions:*
-      Christopher Allen [asked][allen op_return] whether it was better
-      to put arbitrary data in a transaction output using `OP_RETURN` or
-      the witness data of a transaction.  After some discussion, several
-      participants ([1][todd or], [2][o'connor or], [3][poelstra or])
-      noted that they were in favor of relaxing default transaction
-      relay and mining policies to allow `OP_RETURN` outputs to store
-      more than 83 bytes of arbitrary data.  They reasoned that other
-      methods for storing large amounts of data are currently in use and
-      there would be no additional harm from `OP_RETURN` being used
-      instead.
+    - *Augmentation de l'espace `OP_RETURN` autorisé dans les transactions standard:*
+      Christopher Allen [a demandé][allen op_return] s'il était préférable
+      de mettre des données arbitraires dans une sortie de transaction en
+      utilisant `OP_RETURN` ou les données témoins d'une transaction. Après
+      quelques discussions, plusieurs participants ([1][todd ou], [2][o'connor ou],
+      [3][poelstra ou]) ont noté qu'ils étaient en faveur d'un assouplissement
+      des politiques de relais de transaction et d'extraction par défaut
+      pour permettre aux sorties `OP_RETURN` de stocker plus de 83 octets
+      de données arbitraires. Ils ont estimé que d'autres méthodes pour
+      stocker de grandes quantités de données sont actuellement utilisées
+      et qu'il n'y aurait pas de préjudice supplémentaire à utiliser
+      `OP_RETURN` à la place.
 
-- **Fee dilution in multiparty protocols:** Yuval Kogman
-  [posted][kogman dilution] to the Bitcoin-Dev mailing list the
-  description of an attack against certain multiparty protocols.
-  Although the attack was [previously described][riard dilution],
-  Kogman's post brought renewed attention to it.  Imagine that Mallory
-  and Bob each contribute one input to a joint transaction with an
-  expected size and fee, implying an expected feerate.  Bob provides a
-  witness of the expected size for his input but Mallory provides a much
-  larger witness than expected.  This effectively decreases the feerate
-  for the transaction.  Several implications of this were discussed on
-  the mailing list:
+- **Dilution des frais dans les protocoles multipartites :** Yuval Kogman
+  a [posté][kogman dilution] sur la liste de diffusion Bitcoin-Dev la
+  description d'une attaque contre certains protocoles multipartites.
+  Bien que l'attaque ait été [précédemment décrite][riard dilution],
+  le message de Kogman a attiré de nouveau l'attention sur elle. Imaginez
+  que Mallory et Bob contribuent chacun à une transaction commune avec
+  une taille et des frais attendus, ce qui implique un taux d'erreur
+  attendu. Bob fournit un témoin de la taille attendue pour son entrée
+  mais Mallory fournit un témoin beaucoup plus grand que prévu. Cela
+  diminue effectivement le taux d'erreur pour la transaction. Plusieurs
+  implications de cette situation ont été discutées sur la liste de diffusion :
 
-    - *Mallory gets Bob to pay her fees:* if Mallory has some ulterior
-      motive for including a large witness in the block chain---for
-      example, she wants to add arbitrary data---she can use part of Bob's fee to pay
-      the fees for that.  For example, Bob wants to create a 1,000 vbyte
-      transaction with a 10,000 satoshi fee, paying 10 sat/vbyte so it
-      confirms quickly.  Mallory stuffs the transaction with 9,000
-      vbytes of data Bob didn't expect, reducing its feerate to 1
-      sat/vbyte.  Although Bob pays the same absolute fee in both cases,
-      he doesn't get what he wanted (fast confirmation) and Mallory gets
-      9,000 sats worth of data added to the block chain at no cost to
-      her.
+    - *Mallory demande à Bob de payer ses frais :* si Mallory a une
+      motivation ultérieure pour inclure un grand témoin dans la chaîne
+      de blocs---par exemple, elle veut ajouter des données arbitraires---elle
+      peut utiliser une partie des frais de Bob pour payer les frais correspondants.
+      Par exemple, Bob veut créer une transaction de 1 000 vbyte avec des frais
+      de 10 000 satoshi, en payant 10 sat/vbyte pour qu'elle soit confirmée
+      rapidement. Mallory bourre la transaction de 9 000 vbytes de données que
+      Bob n'attendait pas, ce qui réduit son tarif à 1 sat/vbyte. Bien que Bob
+      paie les mêmes frais absolus dans les deux cas, il n'obtient pas ce qu'il
+      voulait (confirmation rapide) et Mallory obtient 9 000 sats de données
+      ajoutées à la chaîne de blocs sans frais pour elle.
 
     - *Mallory can slow confirmation:* a transaction with a lower
       feerate may confirm more slowly.  In a time-sensitive protocol, this
@@ -264,9 +264,9 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [towns color]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021396.html
 [nostr]: https://github.com/nostr-protocol/nostr
 [allen op_return]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021387.html
-[todd or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021435.html
-[o'connor or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021439.html
-[poelstra or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021438.html
+[todd ou]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021435.html
+[o'connor ou]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021439.html
+[poelstra ou]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021438.html
 [kogman dilution]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021444.html
 [riard dilution]: https://gist.github.com/ariard/7e509bf2c81ea8049fd0c67978c521af#witness-malleability
 [kogman dilution2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021459.html
