@@ -11,33 +11,32 @@ lang: zh
 
 ## 新闻
 
-- **有关区块链数据存储的持续讨论:** 本周 Bitcoin-Dev 邮件列表上的几个消息列持续讨论了有关在区块链中存储数据的问题。
+- **<!--continued-discussion-about-block-chain-data-storage-->有关区块链数据存储的持续讨论：** 本周 Bitcoin-Dev 邮件列表上的几个消息列持续讨论了有关在区块链中存储数据的问题。
 
-    - *币的链下染色:* Anthony Towns [发布了][towns color] 对当前用于为某些交易输出分配特殊含义的一种协议的总结，是一类通常被称为“币的染色”的技术。他还总结了一个相关协议，用于在比特币交易中存储编码的二进制数据并将其与特定被染色的币相关联。 在总结了当前的情况后，他描述了一种使用[nostr][] 消息传输协议存储数据，并将其与可以在比特币交易中传输的被染色的币的相关联的方法。这带来几个好处：
+    - *<!--offchain-coin-coloring-->币的链下染色：* Anthony Towns [发布了][towns color] 对当前用于为某些交易输出分配特殊含义的一种协议的总结，是一类通常被称为“币的染色”的技术。他还总结了一个相关协议，用于在比特币交易中存储编码的二进制数据并将其与特定被染色的币相关联。 在总结了当前的情况后，他描述了一种使用[nostr][] 消息传输协议存储数据，并将其与可以在比特币交易中传输的被染色的币的相关联的方法。这带来几个好处：
 
-      - *降低成本:* 链下存储的数据无需支付交易费用。
+      - *<!--reduced-costs-->降低成本：* 链下存储的数据无需支付交易费用。
 
-      - *隐私:* 两个人可以交换一枚被染色的币，而其他任何人都不知道这枚币所引用的数据。
+      - *<!--private-->隐私：* 两个人可以交换一枚被染色的币，而其他任何人都不知道这枚币所引用的数据。
 
-      - *创建不需要交易:* 数据可以与现有的UTXO相关联；无需创建新的 UTXO。
+      - *<!--no-transaction-required-for-creation-->创建不需要交易：* 数据可以与现有的UTXO相关联；无需创建新的 UTXO。
 
-      - *抗审查:* 如果数据和被染色的币之间的关联并不广为人知，那么被染色的币的转移与任何其他链上的比特币支付一样具有抗审查性。
+      - *<!--resistant-against-censorship-->抗审查：* 如果数据和被染色的币之间的关联并不广为人知，那么被染色的币的转移与任何其他链上的比特币支付一样具有抗审查性。
 
       对于抗审查方面，Towns 认为“被染色的比特币在很大程度上是不可避免的并只是必须处理的事情，而不是我们应该花时间试图预防/避免的事情。” 他将被染色的币可能比同质化的比特币更有价值的想法与比特币基于交易重量而非转移的价值收取交易费用的运作方式进行了比较，得出的结论是他认为这种想法不一定会导致严重的激励失调。
 
-    - *在标准交易中增加允许的 `OP_RETURN` 空间 :*
+    - *在标准交易中增加允许的 `OP_RETURN` 空间 ：*
       Christopher Allen [提问][allen op_return], 是否使用 `OP_RETURN` 或交易的见证数据将任意数据放入交易输出中更好？ 在经过一番讨论后，几位参与者 ([1][todd or], [2][o'connor or], [3][poelstra or]) 指出，他们赞成放宽默认交易中继和挖矿策略，从而允许 `OP_RETURN` 输出存储超过 83 字节的任意数据。 他们详细论述了目前正在使用其他存储大量数据的方法，并且使用 `OP_RETURN` 不会造成额外的损失。
-      
 
-- **多方协议中的费用稀释:** Yuval Kogman 在 Bitcoin-Dev 邮件列表上 [发布了][kogman dilution] 针对某些多方协议的攻击描述。尽管[曾经描述过][riard dilution]这种攻击，但 Kogman 的帖子引起了人们对攻击的重新关注。想象一下，Mallory 和 Bob 各自贡献一个输入给一项具有已知大小和费用的联合交易，这意味着费率可预期。Bob 为他的输入提供了预期大小的见证，但 Mallory 提供了比预期大得多的见证。这有效地降低了交易的费用。邮件列表中讨论了这一点的几个影响：
+- **<!--fee-dilution-in-multiparty-protocolst-->多方协议中的费用稀释：** Yuval Kogman 在 Bitcoin-Dev 邮件列表上 [发布了][kogman dilution] 针对某些多方协议的攻击描述。尽管[曾经描述过][riard dilution]这种攻击，但 Kogman 的帖子引起了人们对攻击的重新关注。想象一下，Mallory 和 Bob 各自贡献一个输入给一项具有已知大小和费用的联合交易，这意味着费率可预期。Bob 为他的输入提供了预期大小的见证，但 Mallory 提供了比预期大得多的见证。这有效地降低了交易的费用。邮件列表中讨论了这一点的几个影响：
 
-    - Mallory 让 Bob 支付她的费用：如果 Mallory 基于不可告人的动机在区块链中包含一个大的见证，例如，她想要添加任意的数据，她可以使用 Bob 的部分费用来完成。例如，Bob 想创建一个 1,000 vbyte 的交易，费用为 10,000 satoshi，话费 10 sat/vbyte 以便快速确认。Mallory 用 Bob 没有预料到的 9,000 vbytes 数据填充交易，将其费率降低到 1 sat/vbyte。虽然 Bob 在这两种情况下支付相同的绝对费用，但他没有得到他想要的（快速确认）而 Mallory 在没有支付任何费用的情况下将价值 9,000 sat 的数据添加到区块链。
+    - *<!--mallory-gets-bob-to-pay-her-fees-->Mallory 让 Bob 支付她的费用：*如果 Mallory 基于不可告人的动机在区块链中包含一个大的见证，例如，她想要添加任意的数据，她可以使用 Bob 的部分费用来完成。例如，Bob 想创建一个 1,000 vbyte 的交易，费用为 10,000 satoshi，话费 10 sat/vbyte 以便快速确认。Mallory 用 Bob 没有预料到的 9,000 vbytes 数据填充交易，将其费率降低到 1 sat/vbyte。虽然 Bob 在这两种情况下支付相同的绝对费用，但他没有得到他想要的（快速确认）而 Mallory 在没有支付任何费用的情况下将价值 9,000 sat 的数据添加到区块链。
 
-    - Mallory 能减慢确认速度：费率较低的交易可能会确认得更慢。在时间敏感的协议中，这可能会给 Bob 带来严重的问题。在其他情况下，Bob 可能需要增加交易费用，这将花费他额外的钱。
+    - *<!--mallory-can-slow-confirmation-->Mallory 能减慢确认速度：*费率较低的交易可能会确认得更慢。在时间敏感的协议中，这可能会给 Bob 带来严重的问题。在其他情况下，Bob 可能需要增加交易费用，这将花费他额外的钱。
 
   Kogman 在他的帖子中描述了几种缓解措施，尽管它们都涉及到权衡与取舍。在[第二篇文章中][kogman dilution2], 他指出，他还没有发现当前部署有任何易受攻击的协议。
 
-- **Tapscript 签名的可锻性:** 在上述关于费用稀释的讨论中，开发人员 Russell O'Connor [指出][o'connor tsm] 一个 [tapscript][topic tapscript] 的签名可以应用于放置在 taproot 树中任何其他地方的 tapscript 的副本中。例如，相同的 tapscript A 被放置在 taproot 树中的两个不同位置。 要使用更深的那个，需要在支出交易的见证数据中额外放置 32 字节哈希。
+- **Tapscript 签名的可锻性：** 在上述关于费用稀释的讨论中，开发人员 Russell O'Connor [指出][o'connor tsm] 一个 [tapscript][topic tapscript] 的签名可以应用于放置在 taproot 树中任何其他地方的 tapscript 的副本中。例如，相同的 tapscript A 被放置在 taproot 树中的两个不同位置。 要使用更深的那个，需要在支出交易的见证数据中额外放置 32 字节哈希。
 
     ```text
       *
@@ -55,16 +54,16 @@ lang: zh
 
 *在这个月度专题中，我们重点介绍比特币钱包和服务的有意思的更新。*
 
-- **Liana 钱包添加多重签名:**
+- **Liana 钱包添加多重签名：**
   [Liana][news234 liana] 的 [0.2 版本][liana 0.2] 添加了使用[描述符][topic descriptors]的多重签名支持。
 
-- **Sparrow 钱包 1.7.2 发布:**
+- **Sparrow 钱包 1.7.2 发布：**
   Sparrow的 [1.7.2 版本][sparrow 1.7.2] 添加了 [taproot][topic taproot] 支持, [BIP329][] 导入和导出功能 (请参阅[周报 #235][news235 bip329]), 以及对硬件签名设备的额外支持。
 
-- **Bitcoinex 库添加了对 schnorr 的支持:**
+- **Bitcoinex 库添加了对 schnorr 的支持：**
   [Bitcoinex][bitcoinex github] 是一个用于 Elixir 函数式编程语言的比特币实用程序库。
 
-- **Libwally 0.8.8 发布:**
+- **Libwally 0.8.8 发布：**
   [Libwally 0.8.8][] 添加了 [BIP340][] 标记哈希支持, 额外的 sighash 支持包括 [BIP118][] ([SIGHASH_ANYPREVOUT][topic SIGHASH_ANYPREVOUT]), 以及额外的 [miniscript][topic miniscript], 描述符和 [PSBT][topic psbt] 函数。
 
 ## Optech 推荐
@@ -89,8 +88,7 @@ lang: zh
 
 - [Core Lightning #5670][] 和 [#5956][core lightning #5956] 根据最近基于对 [规范][bolts #851] 的更改和互操作性测试人员的评论，对其 [双重出资][topic dual funding] 的实施方案进行了各种更新。此外，还添加了一个`upgradewallet` RPC ，用以将以 P2SH 包裹的输出中的所有资金转移到原生的隔离见证输出中，这是交互式通道打开所必需的。
 
-- [Core Lightning #5697][] 添加了一个将签署 [BOLT11][] 发票的`signinvoice` RPC。 以前，CLN 只有在拥有 [哈希时间锁合约][topic HTLC] 的哈希原像时才会签署发票，以确保 CLN 能够要求对发票的付款。此 RPC 可以覆盖这种行为，例如，它可以现在用于发送发票，稍后使用插件从另一个程序检索原像。使用此 RPC 的任何人都应该意识到，任何事先知道用于您的节点的付款原像的第三方都可以在付款到达之前领取付款。这不仅会偷走您的钱，而且因为您在发票上签名，还会生成非常有说服力的证据证明您已收到付款（这种证据非常有说服力，以至于许多 LN 开发人员将其称为付款证明)。
-
+- [Core Lightning #5697][] 添加了一个将签署 [BOLT11][] 发票的 `signinvoice` RPC。 以前，CLN 只有在拥有[哈希时间锁合约][topic HTLC] 的哈希原像时才会签署发票，以确保 CLN 能够要求对发票的付款。此 RPC 可以覆盖这种行为，例如，它可以现在用于发送发票，稍后使用插件从另一个程序检索原像。使用此 RPC 的任何人都应该意识到，任何事先知道用于您的节点的付款原像的第三方都可以在付款到达之前领取付款。这不仅会偷走您的钱，而且因为您在发票上签名，还会生成非常有说服力的证据证明您已收到付款（这种证据非常有说服力，以至于许多 LN 开发人员将其称为付款证明)。
 
 - [Core Lightning #5960][] 添加了一个包含联系地址和PGP 密钥的 [安全策略][cln security.md]。
 
@@ -126,6 +124,6 @@ lang: zh
 [news234 liana]: /en/newsletters/2023/01/18/#liana-wallet-released
 [liana 0.2]: https://github.com/wizardsardine/liana/releases/tag/0.2
 [sparrow 1.7.2]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.2
-[news235 bip329]: /en/newsletters/2023/01/25/#bips-1383
+[news235 bip329]: /zh/newsletters/2023/01/25/#bips-1383
 [bitcoinex github]: https://github.com/RiverFinancial/bitcoinex
 [libwally 0.8.8]: https://github.com/ElementsProject/libwally-core/releases/tag/release_0.8.8
