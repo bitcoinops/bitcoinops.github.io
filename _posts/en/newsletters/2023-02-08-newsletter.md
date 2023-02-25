@@ -190,7 +190,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   partner at funding time to only use the closing address specified at
   that time (see [Newsletter #158][news158 upfront] for details).
 
-- [LND #7252][] adds support for using Sqlite as LND's database backend.
+- [LND #7252][] adds support for using SQLite as LND's database backend.
   This is currently only supported for new installs of LND as there is
   no code for migrating an existing database.
 

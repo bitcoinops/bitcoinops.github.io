@@ -205,7 +205,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   pour utiliser uniquement l'adresse de fermeture spécifiée à ce moment
   (voir [Bulletin #158][news158 upfront] pour plus de détails).
 
-- [LND #7252][] ajoute le support pour l'utilisation de Sqlite comme base
+- [LND #7252][] ajoute le support pour l'utilisation de SQLite comme base
   de données de LND. Ceci n'est actuellement supporté que pour les nouvelles
   installations de LND car il n'y a pas de code pour migrer une base de
   données existante.

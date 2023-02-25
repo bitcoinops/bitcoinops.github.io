@@ -178,8 +178,8 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
   provedený během jeho otevírání, aby byla použita jen adresa stanovená
   v té době (podrobnosti viz [zpravodaj č. 158][news158 upfront], *angl.*).
 
-- [LND #7252][] přidává podporu pro používání Sqlite jako databáze
-  pro LND. V současnosti je Sqlite podporován pouze pro nové instalace
+- [LND #7252][] přidává podporu pro používání SQLite jako databáze
+  pro LND. V současnosti je SQLite podporován pouze pro nové instalace
   LND, jelikož neexistuje žádný migrační kód ze stávající databáze.
 
 - [LND #6527][] přidává možnost zašifrovat TLS klíč, který server
