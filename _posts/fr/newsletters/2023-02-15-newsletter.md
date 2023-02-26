@@ -99,25 +99,25 @@ axé sur la documentation technique et les discussions sur Bitcoin.
       voulait (confirmation rapide) et Mallory obtient 9 000 sats de données
       ajoutées à la chaîne de blocs sans frais pour elle.
 
-    - *Mallory can slow confirmation:* a transaction with a lower 
-      feerate may confirm more slowly.  In a time-sensitive protocol, this
-      could cause a serious problem for Bob.  In other cases, Bob might
-      need to fee bump the transaction, which will cost him additional
-      money.
+    - *Mallory peut ralentir la confirmation :* une transaction avec un taux
+      de frais inférieur peut être confirmée plus lentement. Dans un protocole
+      sensible au temps, cela pourrait causer un sérieux problème à Bob.
+      Dans d'autres cas, Bob peut avoir besoin de faire payer la transaction,
+      ce qui lui coûtera de l'argent supplémentaire.
 
-  Kogman describes several mitigations in his post, although all of them
-  involve tradeoffs.  In a [second post][kogman dilution2], he notes
-  that he's unaware of any currently deployed protocol that's
-  vulnerable.
+  Kogman décrit plusieurs mesures d'atténuation dans son article, bien qu'elles
+  impliquent toutes des compromis. Dans un [deuxième article][kogman dilution2],
+  il indique qu'il n'a connaissance d'aucun protocole actuellement déployé
+  qui soit vulnérable.
 
-- **Tapscript signature malleability:** in an aside to the above-mentioned
-  conversation about fee dilution, developer Russell O'Connor
-  [noted][o'connor tsm] that signatures for a [tapscript][topic
-  tapscript] can be applied to a copy of the tapscript placed elsewhere
-  in the taproot tree.  For example, the same tapscript *A* is placed in
-  two different places in a taproot tree.  To use the deeper alternative
-  will require placing an additional 32 byte hash in the witness data of
-  the spending transaction.
+- **Malléabilité de la signature Tapscript :** en marge de la conversation
+  susmentionnée sur la dilution des frais, le développeur Russell O'Connor
+  [remarque][o'connor tsm] que les signatures pour un [tapscript][topic tapscript]
+  peuvent être appliquées à une copie du tapscript placée ailleurs dans l'arbre
+  taproot. Par exemple, le même tapscript *A* est placé à deux endroits différents
+  dans un arbre taproot. Pour utiliser l'alternative plus profonde, il faudra
+  placer un hachage supplémentaire de 32 octets dans les données témoins de
+  la transaction de dépense.
 
     ```text
       *
@@ -127,131 +127,142 @@ axé sur la documentation technique et les discussions sur Bitcoin.
       A   B
     ```
 
-   That means that even if Mallory provides Bob with a valid witness for
-   her tapscript spend before Bob provides his own signature, it's
-   still possible for Mallory to broadcast an alternative version of the
-   transaction with a larger witness.  Bob can only prevent this issue
-   by receiving from Mallory a complete copy of her tree of tapscripts.
+   Cela signifie que même si Mallory fournit à Bob un témoin valide pour
+   sa dépense de tapscript avant que Bob ne fournisse sa propre signature,
+   il est toujours possible pour Mallory de diffuser une version alternative
+   de la transaction avec un témoin plus important. Bob ne peut éviter
+   ce problème qu'en recevant de Mallory une copie complète de son arbre
+   de tapscripts.
 
-   In the context of future soft fork upgrades to Bitcoin, Anthony Towns
-   opened an [issue][bitcoin inquisition #19] to the Bitcoin
-   Inquisition repository being used to test [SIGHASH_ANYPREVOUT][topic
-   sighash_anyprevout] (APO) to consider having APO commit to additional
-   data to prevent this issue for users of that extension.
+   Dans le contexte des futures mises à jour de l'embranchement convergent
+   de Bitcoin, Anthony Towns a ouvert une [issue][bitcoin inquisition #19]
+   au dépôt de Bitcoin Inquisition utilisé pour tester [SIGHASH_ANYPREVOUT][topic
+   sighash_anyprevout] (APO) pour envisager qu'APO s'engage à fournir des
+   données supplémentaires afin d'éviter ce problème pour les utilisateurs
+   de cette extension.
 
-## Changes to services and client software
+## Modifications apportées aux services et aux logiciels clients
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*Dans cette rubrique mensuelle, nous mettons en évidence les mises à jour
+intéressantes des portefeuilles et services Bitcoin.*
 
-- **Liana wallet adds multisig:**
-  [Liana][news234 liana]'s [0.2 release][liana 0.2] adds multisig support using
-  [descriptors][topic descriptors].
+- **Le porte-monnaie Liana ajoute le multisig :**
+  La [version 0.2][liana 0.2] de [Liana][news234 liana] ajoute le support du
+  multisig à l'aide de [descripteurs][topic descriptors].
 
-- **Sparrow wallet 1.7.2 released:**
-  Sparrow's [1.7.2 release][sparrow 1.7.2] adds [taproot][topic taproot]
-  support, [BIP329][] import and export features (see [Newsletter #235][news235
-  bip329]), and additional support for hardware signing devices.
+- **Sortie de la version 1.7.2 de Sparrow wallet :**
+  La [version 1.7.2][sparrow 1.7.2] de Sparrow ajoute la prise en charge de
+  [taproot][topic taproot], des fonctionnalités d'importation et d'exportation
+  [BIP329][] (voir le [bulletin #235][news235 bip329]), ainsi que l'ajout de
+  la prise en charge des dispositifs de signature matérielle.
 
-- **Bitcoinex library adds schnorr support:**
-  [Bitcoinex][bitcoinex github] is a Bitcoin utility library for the Elixir functional programming language.
+- **La bibliothèque Bitcoinex ajoute le support de schnorr :**
+  [Bitcoinex][bitcoinex github] est une bibliothèque utilitaire Bitcoin pour le
+  langage de programmation fonctionnel Elixir.
 
-- **Libwally 0.8.8 released:**
-  [Libwally 0.8.8][] adds [BIP340][] tagged hash support, additional sighash
-  support including [BIP118][] ([SIGHASH_ANYPREVOUT][topic SIGHASH_ANYPREVOUT]), and
-  additional [miniscript][topic miniscript], descriptor, and [PSBT][topic psbt] functions.
+- **Sortie de Libwally 0.8.8 :**
+  [Libwally 0.8.8][] ajoute le support des hachages balisés [BIP340][],
+  le support supplémentaire de sighash incluant [BIP118][] ([SIGHASH_ANYPREVOUT][topic
+  SIGHASH_ANYPREVOUT]), et des fonctions supplémentaires [miniscript][topic miniscript],
+  descripteur, et [PSBT][topic psbt].
 
-## Optech Recommends
+## Optech recommande
 
-[BitcoinSearch.xyz][] is a recently-launched search engine for Bitcoin
-technical documentation and discussions.  It was used to quickly find
-several of the sources linked in this newsletter, a vast improvement
-over other more laborious methods we've previously used.  Contributions
-to its [code][bitcoinsearch repos] are welcome.
+[BitcoinSearch.xyz][] est un moteur de recherche récemment lancé pour la
+documentation technique et les discussions sur le bitcoin. Il a été utilisé
+pour trouver rapidement plusieurs des sources liées dans ce bulletin, ce qui
+représente une grande amélioration par rapport aux méthodes plus laborieuses
+que nous utilisions auparavant. Les contributions à son [code][bitcoinsearch
+repos] sont les bienvenues.
 
-## Releases and release candidates
+## Mises à jour et versions candidates
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets
+d'infrastructure Bitcoin. Veuillez envisager de passer aux nouvelles
+versions ou d'aider à tester les versions candidates.*
 
-- [Core Lightning 23.02rc2][] is a release candidate for a new
-  maintenance version of this popular LN implementation.
+- [Core Lightning 23.02rc2][] est une version candidate pour une
+  nouvelle version de maintenance de cette implémentation populaire de LN.
 
-- [BTCPay Server 1.7.11][] is a new release.  Since the last release we
-  covered (1.7.1), several new features have been added and many bug
-  fixes and improvements have been made.  Especially notable, several
-  aspects related to plugins and third-party integrations have been
-  changed, a migration path away from legacy MySQL and SQLite has been
-  added, and a cross-site scripting vulnerability has been fixed.
+- [BTCPay Server 1.7.11][] est une nouvelle version. Depuis la dernière
+  version que nous avons couverte (1.7.1), plusieurs nouvelles fonctionnalités
+  ont été ajoutées et de nombreuses corrections de bogues et améliorations ont
+  été apportées. En particulier, plusieurs aspects liés aux plugins et aux
+  intégrations tierces ont été modifiés, un chemin de migration pour s'éloigner
+  des anciennes versions de MySQL et de SQLite a été ajouté, et une vulnérabilité
+  aux scripts intersites a été corrigée.
 
-- [BDK 0.27.0][] is an update to this library for building Bitcoin
-  wallets and applications.
+- [BDK 0.27.0][] est une mise à jour de cette bibliothèque permettant
+  de créer des portefeuilles et des applications Bitcoin.
 
-## Notable code and documentation changes
+## Principaux changements de code et de documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Core Lightning #5361][] adds experimental support for peer storage
-  backups.  As last mentioned in [Newsletter #147][news147 backups],
-  this allows a node to store a small encrypted backup file for its
-  peers.  If a peer later needs to reconnect, perhaps after losing data,
-  it can request the backup file.  The peer can use a key derived from
-  its wallet seed to decrypt the file and use the contents to recover
-  the latest state of all of its channels.  This can be seen as an
-  enhanced form of [static channel backups][topic static channel
-  backups].  The merged PR adds support for creating, storing, and retrieving
-  the encrypted backups.  As noted in the commit messages, the feature
-  hasn't yet been fully specified or adopted by other LN
-  implementations.
+- [Core Lightning #5361][] ajoute un support expérimental pour les
+  sauvegardes de stockage entre pairs. Comme mentionné dans le [bulletin
+  n°147][news147 backups], cela permet à un nœud de stocker un petit
+  fichier de sauvegarde crypté pour ses pairs. Si un pair a besoin de
+  se reconnecter plus tard, peut-être après avoir perdu des données,
+  il peut demander le fichier de sauvegarde. Le pair peut utiliser une
+  clé dérivée de sa graine de portefeuille pour déchiffrer le fichier
+  et utiliser le contenu pour récupérer le dernier état de tous ses canaux.
+  Ceci peut être vu comme une forme améliorée de [sauvegardes statiques
+  de canaux][topic static channel backups]. Le PR fusionné ajoute le
+  support pour créer, stocker et récupérer les sauvegardes cryptées.
+  Comme indiqué dans les messages de validation, cette fonctionnalité
+  n'a pas encore été entièrement spécifiée ou adoptée par d'autres
+  implémentations de LN.
 
-- [Core Lightning #5670][] and [#5956][core lightning #5956] make
-  various updates to its implementation of [dual funding][topic dual
-  funding] based on both recent changes to the [specification][bolts
-  #851] and comments from interoperability testers.  Additionally, an
-  `upgradewallet` RPC is added to move all funds in P2SH-wrapped outputs
-  to native segwit outputs, which is required for interactive channel
-  opens.
+- [Core Lightning #5670][] et [#5956][core lightning #5956] apporte
+  diverses mises à jour à son implémentation du [double financement][topic
+  dual funding] sur la base des récents changements apportés à la
+  [spécification][bolts #851] et des commentaires des testeurs
+  d'interopérabilité. En outre, un RPC `upgradewallet` est ajouté
+  pour déplacer tous les fonds dans les sorties P2SH enveloppées
+  vers les sorties segwit natives, ce qui est nécessaire pour les
+  ouvertures de canaux interactifs.
 
-- [Core Lightning #5697][] adds a `signinvoice` RPC that will sign a
-  [BOLT11][] invoice.  Previously, CLN would only sign an invoice when
-  it had the preimage for the [HTLC][topic HTLC] hash, ensuring it would
-  be able to claim a payment to the invoice.  This RPC can override
-  that behavior, which could (for example) be used to send an invoice
-  now and later use a plugin to retrieve the preimage from another
-  program.  Anyone using this RPC should be aware that any third party
-  that has prior knowledge of the preimage for a payment intended for
-  your node can claim that payment before it arrives.  That not only
-  steals your money but, because you signed the invoice, generates very
-  convincing evidence that you were paid (this evidence is so convincing
-  that many LN developers call it *proof of payment*).
+- [Core Lightning #5697][] ajoute un RPC `signinvoice` qui signera
+  une facture [BOLT11][]. Auparavant, CLN ne signait une facture que
+  lorsqu'il avait la préimage du hachage [HTLC][topic HTLC], s'assurant
+  ainsi de pouvoir réclamer un paiement pour la facture. Ce RPC permet
+  d'ignorer ce comportement, ce qui pourrait (par exemple) être utilisé
+  pour envoyer une facture maintenant et utiliser plus tard un plugin
+  pour récupérer la préimage à partir d'un autre programme. Toute personne
+  utilisant ce RPC doit savoir que toute tierce partie ayant connaissance
+  de la préimage d'un paiement destiné à votre noeud peut réclamer ce
+  paiement avant qu'il n'arrive. Cela ne fait pas que voler votre argent
+  mais, parce que vous avez signé la facture, cela génère une preuve très
+  convaincante que vous avez été payé (cette preuve est si convaincante
+  que de nombreux développeurs LN l'appellent *preuve de paiement*).
 
-- [Core Lightning #5960][] adds a [security policy][cln security.md]
-  that includes contact addresses and PGP keys.
+- [Core Lightning #5960][] ajoute une [politique de sécurité][cln security.md]
+  qui inclut les adresses de contact et les clés PGP.
 
-- [LND #7171][] upgrades the `signrpc` RPC <!--sic--> to support the
-  latest [draft BIP][musig draft bip] for [MuSig2][topic musig].  The RPC now creates
-  sessions linked to a MuSig2 protocol version number so that all
-  operations within a session will use the correct protocol.  A
-  security issue with an older version of the MuSig2 protocol was
-  mentioned in [Newsletter #222][news222 musig2].
+- [LND #7171][] met à jour le RPC `signrpc` <!--sic--> pour supporter
+  le dernier [projet de BIP][projet musig bip] pour [MuSig2][topic musig].
+  Le RPC crée maintenant des sessions liées à un numéro de version du
+  protocole MuSig2 afin que toutes les opérations au sein d'une session
+  utilisent le bon protocole. Un problème de sécurité avec une ancienne
+  version du protocole MuSig2 a été mentionné dans le [bulletin #222][news222 musig2].
 
-- [LDK #2002][] adds support for automatically resending [spontaneous
-  payments][topic spontaneous payments] that don't initially succeed.
+- [LDK #2002][] ajoute la possibilité de renvoyer automatiquement  au départ
+  les [paiements spontanés][topic spontaneous payments] qui n'ont pas abouti.
 
-- [BTCPay Server #4600][] updates the [coin selection][topic coin selection] for its [payjoin][topic payjoin]
-  implementation to try to avoid creating transactions with *unnecessary
-  inputs*, specifically an input that is larger than any output in a
-  transaction containing multiple inputs.  That would not happen with a
-  regular single-spender, single-receiver payment: the largest input
-  would have provided sufficient payment for the payment output and no
-  additional inputs would have been added.
-  This PR was partly inspired by a [paper analyzing payjoins][].
+- [BTCPay Server #4600][] met à jour la [sélection de pièces][topic coin selection]
+  pour son implémentation de [payjoin][topic payjoin] pour essayer d'éviter de créer
+  des transactions avec des *entrées inutiles*, spécifiquement une entrée qui est
+  plus grande que toute sortie dans une transaction contenant plusieurs entrées.
+  Cela ne se produirait pas avec un paiement ordinaire à un seul expéditeur et un
+  seul destinataire : l'entrée la plus importante aurait fourni un paiement suffisant
+  pour la sortie du paiement et aucune entrée supplémentaire n'aurait été ajoutée.
+  Ce PR a été en partie inspirée par un [article analysant les payjoins][].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
@@ -259,7 +270,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
 [news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
 [musig draft bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki
-[paper analyzing payjoins]: https://eprint.iacr.org/2022/589.pdf
+[article analysant les payjoins]: https://eprint.iacr.org/2022/589.pdf
 [bitcoinsearch repos]: https://github.com/bitcoinsearch
 [towns color]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021396.html
 [nostr]: https://github.com/nostr-protocol/nostr
