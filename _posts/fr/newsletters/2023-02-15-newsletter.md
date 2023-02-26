@@ -246,7 +246,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   qui inclut les adresses de contact et les clés PGP.
 
 - [LND #7171][] met à jour le RPC `signrpc` <!--sic--> pour supporter
-  le dernier [projet de BIP][projet musig bip] pour [MuSig2][topic musig].
+  le dernier [projet de BIP][musig draft bip] pour [MuSig2][topic musig].
   Le RPC crée maintenant des sessions liées à un numéro de version du
   protocole MuSig2 afin que toutes les opérations au sein d'une session
   utilisent le bon protocole. Un problème de sécurité avec une ancienne
