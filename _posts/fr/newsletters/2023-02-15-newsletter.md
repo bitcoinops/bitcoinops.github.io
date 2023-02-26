@@ -91,8 +91,8 @@ axé sur la documentation technique et les discussions sur Bitcoin.
       motivation ultérieure pour inclure un grand témoin dans la chaîne
       de blocs---par exemple, elle veut ajouter des données arbitraires---elle
       peut utiliser une partie des frais de Bob pour payer les frais correspondants.
-      Par exemple, Bob veut créer une transaction de 1 000 vbyte avec des frais
-      de 10 000 satoshi, en payant 10 sat/vbyte pour qu'elle soit confirmée
+      Par exemple, Bob veut créer une transaction de 1 000 vbytes avec des frais
+      de 10 000 satoshis, en payant 10 sat/vbyte pour qu'elle soit confirmée
       rapidement. Mallory bourre la transaction de 9 000 vbytes de données que
       Bob n'attendait pas, ce qui réduit son tarif à 1 sat/vbyte. Bien que Bob
       paie les mêmes frais absolus dans les deux cas, il n'obtient pas ce qu'il
@@ -262,7 +262,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   Cela ne se produirait pas avec un paiement ordinaire à un seul expéditeur et un
   seul destinataire : l'entrée la plus importante aurait fourni un paiement suffisant
   pour la sortie du paiement et aucune entrée supplémentaire n'aurait été ajoutée.
-  Ce PR a été en partie inspirée par un [article analysant les payjoins][].
+  Ce PR a été en partie inspiré par un [article analysant les payjoins][].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
