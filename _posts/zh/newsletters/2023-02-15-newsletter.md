@@ -102,7 +102,7 @@ lang: zh
 {% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
 [news147 backups]: /en/newsletters/2021/05/05/#closing-lost-channels-with-only-a-bip32-seed
 [cln security.md]: https://github.com/ElementsProject/lightning/blob/master/SECURITY.md
-[news222 musig2]: /en/newsletters/2022/10/19/#musig2-security-vulnerability
+[news222 musig2]: /zh/newsletters/2022/10/19/#musig2
 [musig draft bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki
 [paper analyzing payjoins]: https://eprint.iacr.org/2022/589.pdf
 [bitcoinsearch repos]: https://github.com/bitcoinsearch
@@ -121,7 +121,7 @@ lang: zh
 [core lightning 23.02rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc2
 [BTCPay Server 1.7.11]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.7.11
 [bdk 0.27.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.27.0
-[news234 liana]: /en/newsletters/2023/01/18/#liana-wallet-released
+[news234 liana]: /zh/newsletters/2023/01/18/#liana
 [liana 0.2]: https://github.com/wizardsardine/liana/releases/tag/0.2
 [sparrow 1.7.2]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.2
 [news235 bip329]: /zh/newsletters/2023/01/25/#bips-1383
