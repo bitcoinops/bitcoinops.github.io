@@ -76,7 +76,14 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25943][] rpc: Add a parameter to sendrawtransaction which sets a maximum value for unspendable outputs. FIXME:glozow
+- [Bitcoin Core #25943][] adds a parameter to the `sendrawtransaction`
+  RPC to limit the amount of funds burned per output. If the
+transaction contains an output whose script is heuristically deemed to
+be unspendable (one with an `OP_RETURN`, an invalid opcode, or
+exceeding the maximum script size) and whose value is greater than
+`maxburnamount`, it will not be submitted to the mempool.  By default,
+the amount is set to zero, protecting users from unintentionally burning
+funds.
 
 - [Bitcoin Core #26595][] wallet: be able to specify a wallet name and passphrase to migratewallet FIXME:bitschmidty
 
