@@ -294,3 +294,34 @@ ul.li {
 .bold {
   font-weight: 700;
 }
+
+/* Podcast */
+.seek {
+  cursor:pointer;
+}
+
+#player {
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+}
+
+div.podcast .anchor-list {
+  strong {
+    font-weight: normal;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+#podcast-links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#podcast-links img {
+  width: 32px;
+  margin: 2px;
+  display: inline;
+}
