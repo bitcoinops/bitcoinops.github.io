@@ -78,6 +78,8 @@ optech_mentions:
   - title: BIP proposed to allow multiple BIP32 derivation paths in a descriptor
     url: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
 
+  - title: Faster offline verification of BIP32 master seed backups
+    url: /en/newsletters/2023/03/01/#faster-seed-backup-checksums
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
