@@ -12,7 +12,7 @@ An initial focus for the group is working with its member organizations to
 reduce transaction sizes and minimize the effect of subsequent transaction fee
 increases.  We provide [workshops][], [documentation][scaling book],
 [weekly newsletters][], [original research][dashboard], [case studies
-and announcements][blog], and help facilitate improved relations between
+and announcements][blog], a [podcast][], and help facilitate improved relations between
 businesses and the open source community.
 
 [scaling book]: https://github.com/bitcoinops/scaling-book
@@ -20,6 +20,7 @@ businesses and the open source community.
 [weekly newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
+[podcast]: /en/podcast/
 
 If you're an engineer or manager at a Bitcoin company or an open source contributor and you'd like to be a part of this, please
 contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
