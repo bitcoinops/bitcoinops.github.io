@@ -13,7 +13,9 @@ technologies.
 
 We provide [workshops][], [documentation][scaling book], [weekly
 newsletters][], [original research][dashboard], [case studies and
-announcements][blog], [analysis of Bitcoin software and services][compatibility], and help facilitate improved relations between businesses
+announcements][blog], [analysis of Bitcoin software and
+services][compatibility], a [podcast][], and help facilitate improved relations between
+businesses
 and the open source community.
 
 [Learn more about us][about].
@@ -23,14 +25,15 @@ and the open source community.
 [weekly newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
+[podcast]: /en/podcast/
 [about]: /about
 [compatibility]: /en/compatibility/
 
 {% assign posts_en = site.posts | where:"lang","en" %}
 
-<h2>Recent newsletters and blog posts</h2>
+<h2>Recent newsletters, blog posts, and podcasts</h2>
 <ul class="post-list">
-  {%- for post in posts_en limit:3 -%}
+  {%- for post in posts_en limit:5 -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
