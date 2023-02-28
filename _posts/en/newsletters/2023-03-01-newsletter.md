@@ -85,7 +85,10 @@ exceeding the maximum script size) and whose value is greater than
 the amount is set to zero, protecting users from unintentionally burning
 funds.
 
-- [Bitcoin Core #26595][] wallet: be able to specify a wallet name and passphrase to migratewallet FIXME:bitschmidty
+- [Bitcoin Core #26595][] adds `wallet_name` and `passphrase` parameters to the
+  [`migratewallet`][news217 migratewallet] RPC in order to support migrating
+  encrypted legacy wallets and wallets not currently loaded into
+  [descriptor][topic descriptors] wallets.
 
 - [Bitcoin Core #27068][] updates how Bitcoin Core handles passphrase
   entry.  Previously, a passphrase containing an ASCII null character
@@ -126,3 +129,4 @@ funds.
 [news239 codex32]: /en/newsletters/2023/02/22/#proposed-bip-for-codex32-seed-encoding-scheme
 [todd codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021498.html
 [o'connor codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021504.html
+[news217 migratewallet]: /en/newsletters/2022/09/14/#bitcoin-core-19602
