@@ -6,7 +6,7 @@
 
 1. Define the absolute parent path of repository bitcoinops.github.io .
     ```bash
-    repath=~/git/project/
+    repath=~/Desktop/
     ```
 
 2. Create the parent folder and go into the parent folder.
