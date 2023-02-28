@@ -166,7 +166,7 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
   nœuds des pairs initiaux.
 
 - [Où puis-je me renseigner sur les sujets de recherche ouverts dans le domaine du bitcoin ?]({{bse}}116898)
-  Michael Folkson fournit une variété de ressources, notamment 
+  Michael Folkson fournit une variété de ressources, notamment
   [Chaincode Labs Research][] et [Bitcoin Problems][], entre autres.
 
 - [Quelle est la taille maximale d'une transaction qui sera relayée par les nœuds bitcoin
@@ -176,7 +176,7 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
   configurable et explique les avantages prévus de cette limite, notamment
   les protections contre les attaques de type DoS.
 
-- [Comprendre comment les ordinaux fonctionnent dans Bitcoin. 
+- [Comprendre comment les ordinaux fonctionnent dans Bitcoin.
   Qu'est-ce qui est exactement stocké sur la blockchain ?]({{bse}}117018)
   Vojtěch Strnad clarifie que les Inscriptions d'Ordinals n'utilisent pas `OP_RETURN`,
   mais incorporent des données dans une branche de script non exécutée en utilisant
