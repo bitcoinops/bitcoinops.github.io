@@ -55,7 +55,7 @@ Side channel attacks can be generally categorized as timing attacks, power-monit
 
 Some side channel attack surfaces in the Bitcoin ecosystem have been mitigated or precluded entirely. E.g. the libsecp256k1 library has merged the safegcd algorithm into its codebase. The safegcd algorithm is a way to calculate modular inverse operations in constant time. A modular inverse operation is a logical operation used when verifying ECDSA signatures.
 
-Tropic Square, a SatoshiLabs/Trezor startup, has built and tested the TROPIC01, an auditable RISCV secure chip, with intention to release as part of a hardware signer. The usage of secure chips may mitigate some side channel attacks that hardware signers are currently vulnerable towards.
+TROPIC01 is an auditable RISCV secure chip under development, with intention to release as part of a hardware signer. The usage of secure chips may mitigate some side channel attacks that hardware signers are currently vulnerable towards.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
