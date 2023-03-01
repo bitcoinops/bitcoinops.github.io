@@ -169,15 +169,13 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
   Michael Folkson fournit une variété de ressources, notamment
   [Chaincode Labs Research][] et [Bitcoin Problems][], entre autres.
 
-- [Quelle est la taille maximale d'une transaction qui sera relayée par les nœuds bitcoin
-  en utilisant la configuration par défaut ?]({{bse}}117277)
+- [Quelle est la taille maximale d'une transaction qui sera relayée par les nœuds bitcoin en utilisant la configuration par défaut ?]({{bse}}117277)
   Pieter Wuille souligne la règle de la politique de normalisation de 400 000
   [unités de poids][] de Bitcoin Core, note qu'elle n'est pas actuellement
   configurable et explique les avantages prévus de cette limite, notamment
   les protections contre les attaques de type DoS.
 
-- [Comprendre comment les ordinaux fonctionnent dans Bitcoin.
-  Qu'est-ce qui est exactement stocké sur la blockchain ?]({{bse}}117018)
+- [Comprendre comment les ordinaux fonctionnent dans Bitcoin. Qu'est-ce qui est exactement stocké sur la blockchain ?]({{bse}}117018)
   Vojtěch Strnad clarifie que les Inscriptions d'Ordinals n'utilisent pas `OP_RETURN`,
   mais incorporent des données dans une branche de script non exécutée en utilisant
   les opcodes `OP_PUSHDATAx` similaires à :
