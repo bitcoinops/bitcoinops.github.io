@@ -53,7 +53,7 @@ optech_mentions:
 ---
 Side channel attacks can be generally categorized as timing attacks, power-monitoring attacks, acoustic cryptanalysis, electromagnetic attacks, and cache attacks. Statistical methods and machine learning algorithms are often used in combination with physical access to a hardware signer in order to carry out attacks. E.g. an attacker can take a factory hardware signer, gather a dataset that measure changes in power consumption during critical calculations on this signer, then use this dataset on a new signer, measure this new signer's power consumption during it's critical calculations, and exfiltrate the passcode by comparing the power consumption of the new signer with the statistical analysis done on the factory signer.
 
-Some side channel attack surfaces in the Bitcoin ecosystem have been mitigated or precluded entirely. E.g. the libsecp256k1 library has merged the safegcd algorithm into its codebase. The safegcd algorithm is a way to calculate modular inverse operations in constant time. A modular inverse operation is a logical operation used when verifying ECDSA signatures.
+Some side channel attack surfaces in the Bitcoin ecosystem have been mitigated or precluded entirely. E.g. the libsecp256k1 library has merged the SafeGCD algorithm into its codebase. The SafeGCD algorithm is a way to calculate modular inverse operations in constant time. A modular inverse operation is a logical operation used when verifying ECDSA signatures.
 
 TROPIC01 is an auditable RISCV secure chip under development, with intention to release as part of a hardware signer. The usage of secure chips may mitigate some side channel attacks that hardware signers are currently vulnerable towards.
 
