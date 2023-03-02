@@ -81,7 +81,7 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [Bitcoin Core #25943][] ajoute un paramètre au RPC `sendrawtransaction`. 
+- [Bitcoin Core #25943][] ajoute un paramètre au RPC `sendrawtransaction`.
   pour limiter le montant des fonds brûlés par sortie. Si la transaction
   contient une sortie dont le script est heuristiquement considéré comme
   non dépensable (avec un `OP_RETURN`, un opcode invalide, ou dépassant
