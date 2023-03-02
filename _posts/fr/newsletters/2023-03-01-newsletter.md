@@ -132,7 +132,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [core lightning 23.02rc3]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc3
 [lnd v0.16.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc1
 [hwi 2.2.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.2.1
-[news239 codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-systeme-dencodage-des-semences-codex32
+[news239 codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-systeme-d-encodage-des-semences-codex32
 [todd codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021498.html
 [o'connor codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021504.html
 [news217 migratewallet]: /fr/newsletters/2022/09/14/#bitcoin-core-19602
