@@ -9,11 +9,11 @@ lang: fr
 ---
 Le bulletin de cette semaine contient des liens vers une ébauche de BIP
 pour une proposition d'opcode `OP_VAULT`, résume une discussion sur la
-possibilité d'autoriser les nœuds LN à définir un drapeau de qualité de
+possibilité d'autoriser les nœuds LN à définir un indicateur de qualité de
 service sur leurs canaux, relaie une demande de commentaires sur les
 critères d'évaluation des nœuds voisins LN, et décrit une ébauche de BIP
 pour un schéma de sauvegarde et de récupération des graines qui peut être
-exécuté de manière fiable sans électronique.  Vous trouverez également
+exécuté de manière fiable sans électronique. Vous trouverez également
 nos sections habituelles avec des résumés des questions et réponses les
 plus importantes du Bitcoin StackExchange, des annonces de nouvelles
 versions et de versions candidates, et descriptions de principaux
@@ -68,16 +68,16 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
 
 - **Feedback demandé sur la notation de bon voisinage des LN :** Carla Kirk-Cohen
   et Clara Shikhelman ont [posté][ckc-cs reputation] sur la liste de diffusion
-  Lightning-Dev pour demander des commentaires sur les paramètres recommandés
+  Lightning-Dev afin de solliciter des commentaires sur les paramètres recommandés
   pour déterminer comment un nœud devrait juger si ses contreparties de canal
   sont une bonne source de paiements transférés. Elles suggèrent plusieurs
   critères pour juger et recommandent des paramètres par défaut pour chaque
   critère, mais cherchent à obtenir des commentaires sur les choix effectués.
 
     Si un nœud détermine que l'un de ses pairs est un bon voisin et que
-    ce voisin marque un paiement transmis comme étant approuvé par lui,
+    ce voisin marque un paiement transmis comme étant endossé par lui,
     le nœud peut donner à ce paiement l'accès à davantage de ses ressources
-    qu'il ne le fait pour les paiements non qualifiés. Le nœud peut également
+    que ce qu'il donne aux paiements non qualifiés. Le nœud peut également
     approuver le paiement lorsqu'il le transmet au canal suivant. Comme
     décrit dans un article antérieur co-écrit par Shikhelman (voir [bulletin
     #226][news226 jam]), ceci fait partie d'une proposition visant à atténuer
@@ -137,11 +137,11 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
 
 ## Questions et réponses sélectionnées dans Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] iC'est l'un des premiers endroits où
- les collaborateurs d'Optech cherchent des réponses à leurs questions---ou
- lorsque nous avons quelques moments libres pour aider les utilisateurs curieux
- ou confus. Dans cette rubrique mensuelle, nous mettons en lumière certaines
- des questions et réponses les plus votées depuis notre dernière mise à jour.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où
+ les collaborateurs d'Optech cherchent des réponses à leurs questions---ou,
+ lorsque nous avons quelques moments libres, nous aidons les utilisateurs curieux
+ ou égarés. Dans cette rubrique mensuelle, nous mettons en lumière certaines
+ des questions et réponses les plus plébicités depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
@@ -162,7 +162,7 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
 
 - [Comment devient-on une graine DNS pour Bitcoin Core ?]({{bse}}116931)
   L'utilisateur Paro explique les exigences pour quelqu'un qui souhaite
-  devenir une [semence DNS][news66 dns seed] pour fournir aux nouveaux
+  devenir une [semence DNS][news66 dns seed] afin de fournir aux nouveaux
   nœuds des pairs initiaux.
 
 - [Où puis-je me renseigner sur les sujets de recherche ouverts dans le domaine du bitcoin ?]({{bse}}116898)
@@ -203,7 +203,7 @@ versions ou d'aider à tester les versions candidates.*
 - [BDK 0.27.1][] est une mise à jour de sécurité visant à corriger
   une vulnérabilité qui "permet parfois [...] un débordement des
   limites d'un tableau lors de la saisie de grandes chaînes dans
-  la fonction printf de SQLite".  Seuls les logiciels utilisant
+  la fonction printf de SQLite". Seuls les logiciels utilisant
   la fonction optionnelle de base de données SQLite de BDK doivent
   être mis à jour. Voir le [rapport de vulnérabilité][RUSTSEC-2022-0090]
   pour plus de détails.
