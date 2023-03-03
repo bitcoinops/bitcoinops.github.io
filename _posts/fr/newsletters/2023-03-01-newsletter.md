@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine résume une discussion sur le moyen le plus rapide
 de vérifier qu'une sauvegarde de graine maîtresse BIP32 n'a probablement pas été
-corrompue sans utiliser de dispositifs numériques.  Vous trouverez également nos
+corrompue sans utiliser de dispositifs numériques. Vous trouverez également nos
 sections habituelles avec les annonces des nouvelles versions et des versions
 candidates, ainsi que des descriptions des principaux changements apportés aux
 logiciels d'infrastructure Bitcoin les plus répandus.
