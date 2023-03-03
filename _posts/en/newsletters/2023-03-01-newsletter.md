@@ -50,7 +50,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
     full Codex32 verification.  No changes are required to Codex32 to
     obtain the reinforcing quick check property, although Codex32's
     documentation will need to be updated to provide the necessary
-    tables and worksheets in order to make it usable.
+    tables and worksheets in order to make it usable. {% include functions/podcast-callout.md url="pod240 checksums" %}
 
 ## Releases and release candidates
 
@@ -59,13 +59,13 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [HWI 2.2.1][] is a maintenance release of this application for
-  allowing software wallets to interface with hardware signing devices.
+  allowing software wallets to interface with hardware signing devices. {% include functions/podcast-callout.md url="pod240 hwi" %}
 
 - [Core Lightning 23.02rc3][] is a release candidate for a new
-  maintenance version of this popular LN implementation.
+  maintenance version of this popular LN implementation. {% include functions/podcast-callout.md url="pod240 cln" %}
 
 - [lnd v0.16.0-beta.rc1][] is a release candidate for a new major
-  version of this popular LN implementation.
+  version of this popular LN implementation. {% include functions/podcast-callout.md url="pod240 lnd" %}
 
 ## Notable code and documentation changes
 
@@ -83,12 +83,12 @@ be unspendable (one with an `OP_RETURN`, an invalid opcode, or
 exceeding the maximum script size) and whose value is greater than
 `maxburnamount`, it will not be submitted to the mempool.  By default,
 the amount is set to zero, protecting users from unintentionally burning
-funds.
+funds. {% include functions/podcast-callout.md url="pod240 bc25943" %}
 
 - [Bitcoin Core #26595][] adds `wallet_name` and `passphrase` parameters to the
   [`migratewallet`][news217 migratewallet] RPC in order to support migrating
   encrypted legacy wallets and wallets not currently loaded into
-  [descriptor][topic descriptors] wallets.
+  [descriptor][topic descriptors] wallets. {% include functions/podcast-callout.md url="pod240 bc26595" %}
 
 - [Bitcoin Core #27068][] updates how Bitcoin Core handles passphrase
   entry.  Previously, a passphrase containing an ASCII null character
@@ -100,7 +100,7 @@ funds.
   enters a passphrase containing null characters which fails to decrypt
   an existing wallet, indicating they may have set a passphrase under
   the old behavior, they'll be provided with instructions for a
-  workaround.
+  workaround. {% include functions/podcast-callout.md url="pod240 bc27068" %}
 
 - [LDK #1988][] adds limits for peer connections and unfunded channels
   to prevent denial of service resource exhaustion attacks.  The new
@@ -113,13 +113,13 @@ funds.
       channel with the local node.
 
     - A maximum of 4 channels that have not yet been funded from a
-      single peer.
+      single peer. {% include functions/podcast-callout.md url="pod240 ldk1988" %}
 
 - [LDK #1977][] makes public its structures for serializing and parsing
   [offers][topic offers] as defined in [draft BOLT12][bolts #798].  LDK
   doesn't yet have support for [blinded paths][topic rv routing], so it
   can't currently send or receive offers directly, but this PR allows
-  developers to begin experimenting with them.
+  developers to begin experimenting with them. {% include functions/podcast-callout.md url="pod240 ldk1977" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25943,26595,27068,1988,1977,798" %}
@@ -130,3 +130,12 @@ funds.
 [todd codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021498.html
 [o'connor codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021504.html
 [news217 migratewallet]: /en/newsletters/2022/09/14/#bitcoin-core-19602
+[pod240 checksums]: /en/podcast/2023/03/02/#faster-seed-backup-checksums
+[pod240 hwi]: /en/podcast/2023/03/02/#hwi-2-2-1
+[pod240 cln]: /en/podcast/2023/03/02/#core-lightning-23-02rc3
+[pod240 lnd]: /en/podcast/2023/03/02/#lnd-v0-16-0-beta-rc1
+[pod240 bc25943]: /en/podcast/2023/03/02/#bitcoin-core-25943
+[pod240 bc26595]: /en/podcast/2023/03/02/#bitcoin-core-26595
+[pod240 bc27068]: /en/podcast/2023/03/02/#bitcoin-core-27068
+[pod240 ldk1988]: /en/podcast/2023/03/02/#ldk-1988
+[pod240 ldk1977]: /en/podcast/2023/03/02/#ldk-1977
