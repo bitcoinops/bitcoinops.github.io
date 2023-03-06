@@ -111,12 +111,62 @@ popular Bitcoin infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane is a PR by FIXME that FIXME.
+[Bitcoin-inquisition: Activation logic for testing consensus changes][review club bi-16]
+is a PR by Anthony Towns that adds a new method for activating and deactivating
+soft forks in the [Bitcoin Inquisition][] project, designed to be run on [signet][topic signet]
+and used for testing.
+This project was covered in [Newsletter #219][newsletter #219 bi].
+
+Specifically, this PR replaces [BIP9][] block version bit semantics with what
+are called [Heretical Deployments][].
+In contrast to consensus and relay changes on mainnet -- which are difficult
+and time-consuming to activate, requiring the careful building of (human)
+consensus and an elaborate [soft fork activation][topic soft fork activation]
+mechanism -- on a test network activating these changes can be streamlined.
+The PR also implements a way to deactivate changes that turn out to be buggy
+or undesired, which is a major departure from mainnet.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/FIXME#l-22"
+  q0="Why do we want to deploy consensus changes that aren’t merged
+      into Bitcoin Core? What problems (if any) are there with merging the
+      code into Bitcoin Core, and then testing it on signet afterward?"
+  a0="Several reasons were discussed. We can't require mainnet users to upgrade
+      the version of Core they're
+      running, so even after a bug has been fixed, some users may continue
+      running the buggy version. Depending only on regtest makes
+      integration testing third-party software more difficult.
+      Merging consensus changes to a separate repository is much less risky than merging to Core;
+      adding soft fork logic, even if not activated, may introduce bugs that affect existing behavior."
+  a0link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-37"
+
+  q1="Heretical Deployments move through a sequence of finite-state
+      machine states similar to the BIP9 states
+      (`DEFINED`, `STARTED`, `LOCKED_IN`, `ACTIVE`, and `FAILED`),
+      but with one additional state after `ACTIVE` called `DEACTIVATING`
+      (following which is the final state, `ABANDONED`).
+      What is the purpose of the `DEACTIVATING` state?"
+  a1="It gives users a chance to withdraw funds they might have locked
+      into the soft fork. Once the fork is deactivated or replaced, they
+      might not be able to spend the funds at all -- even if they're
+      anyone-can-spend; that doesn't work if your tx is rejected for
+      being non-standard.
+      The concern isn't so much the permanent
+      loss of the limited signet funds, but rather that the UTXO set
+      may become bloated."
+  a1link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-92"
+
+  q2="Why does the PR remove `min_activation_height`?"
+  a2="We don't need a configurable interval between lock-in and activation
+      in the new state model -- with Heretical Deployments, it activates
+      automatically at the start of the next 432-block (3 days) state
+      machine period (this period is fixed for Heretical Deployments)."
+  a2link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-126"
+
+  q3="Why is Taproot buried in this PR?"
+  a3="If you didn't bury it, you'd have to make it a Heretical Deployment,
+      which requires some coding effort; also that would mean that it
+      would timeout eventually, but we want Taproot never to timeout."
+  a3link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-147"
 %}
 
 ## Releases and release candidates
@@ -169,3 +219,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news234 vault]: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [news238 peer storage]: /en/newsletters/2023/02/15/#core-lightning-5361
+[newsletter #219 bi]: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
+[review club bi-16]: https://bitcoincore.reviews/bitcoin-inquisition-16
+[bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
+[heretical deployments]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
+[bip9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
