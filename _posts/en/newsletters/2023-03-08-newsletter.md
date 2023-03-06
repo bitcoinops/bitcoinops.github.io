@@ -155,7 +155,8 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #7462][] remote signer: allow stateless init of watch-only node FIXME:adamjonas
+- [LND #7462][] allows the creation of watch-only wallets with remote
+  signing and the use of the stateless init feature.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7462" %}
