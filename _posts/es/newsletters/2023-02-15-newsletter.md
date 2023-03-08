@@ -1,8 +1,8 @@
 ---
 title: 'Boletín Bitcoin Optech #238'
 permalink: /es/newsletters/2023/02/15/
-name: 2023-02-15-newsletter
-slug: 2023-02-15-newsletter
+name: 2023-02-15-newsletter-es
+slug: 2023-02-15-newsletter-es
 type: newsletter
 layout: newsletter
 lang: es
@@ -13,52 +13,52 @@ El boletín de esta semana resume la discusión continuada sobre el almacenamien
 
 - **Continúa el debate sobre el almacenamiento de datos en la cadena de bloques:** en varios hilos de la lista de correo Bitcoin-Dev se ha seguido debatiendo esta semana sobre el almacenamiento de datos en la cadena de bloques.
 
-- *Offchain coin coloring:* Anthony Towns [posted][towns color] un
-  resumen de un protocolo que se utiliza actualmente para asignar
-  especial a ciertos resultados de transacciones, una clase de técnicas
-  generalmente llamadas *coloreado de monedas*.  También resumió un protocolo
-  para almacenar datos binarios codificados en transacciones Bitcoin
-  y asociarlos a monedas de colores concretos.
-  Tras resumir el estado actual de la cuestión, describió un
-  método para almacenar datos utilizando el protocolo de transferencia de mensajes [nostr][] y asociarlos a monedas de colores concretos.
-  de mensajes [nostr][] y asociarlo a monedas de colores que podrían
-  transferirse en transacciones Bitcoin.  Esto tendría varias
-  ventajas:
+  - *Offchain coin coloring:* Anthony Towns [posted][towns color] un
+    resumen de un protocolo que se utiliza actualmente para asignar
+    especial a ciertos resultados de transacciones, una clase de técnicas
+    generalmente llamadas *coloreado de monedas*.  También resumió un protocolo
+    para almacenar datos binarios codificados en transacciones Bitcoin
+    y asociarlos a monedas de colores concretos.
+    Tras resumir el estado actual de la cuestión, describió un
+    método para almacenar datos utilizando el protocolo de transferencia de mensajes [nostr][] y asociarlos a monedas de colores concretos.
+    de mensajes [nostr][] y asociarlo a monedas de colores que podrían
+    transferirse en transacciones Bitcoin.  Esto tendría varias
+    ventajas:
 
-  - *Costes reducidos:* no es necesario pagar tasas de transacción por los datos
-    almacenados offchain.
+    - *Costes reducidos:* no es necesario pagar tasas de transacción por los datos
+      almacenados offchain.
 
-  - *Privado:* dos personas pueden intercambiar una moneda de color sin que
-    sin que nadie más sepa nada sobre los datos a los que hace referencia.
+    - *Privado:* dos personas pueden intercambiar una moneda de color sin que
+      sin que nadie más sepa nada sobre los datos a los que hace referencia.
 
-  - No se requiere ninguna transacción para su creación: los datos pueden asociarse a un UTXO existente.
-    con un UTXO existente; no hay necesidad de crear un nuevo UTXO.
+    - *No se requiere ninguna transacción para su creación*: los datos pueden asociarse a un UTXO existente.
+      con un UTXO existente; no hay necesidad de crear un nuevo UTXO.
 
-  - *Resistente a la censura:* si la asociación entre los datos
-    y la moneda de color no es ampliamente conocida, entonces las transferencias de
-    la moneda de color son tan resistentes a la censura como cualquier otro
-    pago Bitcoin onchain.
+    - *Resistente a la censura:* si la asociación entre los datos
+      y la moneda de color no es ampliamente conocida, entonces las transferencias de
+      la moneda de color son tan resistentes a la censura como cualquier otro
+      pago Bitcoin onchain.
 
-  En cuanto al aspecto de la resistencia a la censura, Towns afirma que
-  "los bitcoins de color son en gran medida inevitables y simplemente algo que
-  con lo que hay que lidiar, en lugar de algo que deberíamos
-  tratando de prevenir/evitar".  Compara la idea de que las monedas de colores
-  puedan tener más valor que los bitcoins fungibles con el funcionamiento de
-  Bitcoin que cobra comisiones por transacción basadas en el peso de la transacción
-  en lugar del valor transferido, concluyendo que no cree que
-  que esto conduzca necesariamente a incentivos significativamente desalineados.
+    En cuanto al aspecto de la resistencia a la censura, Towns afirma que
+    "los bitcoins de color son en gran medida inevitables y simplemente algo que
+    con lo que hay que lidiar, en lugar de algo que deberíamos
+    tratando de prevenir/evitar".  Compara la idea de que las monedas de colores
+    puedan tener más valor que los bitcoins fungibles con el funcionamiento de
+    Bitcoin que cobra comisiones por transacción basadas en el peso de la transacción
+    en lugar del valor transferido, concluyendo que no cree
+    que esto conduzca necesariamente a incentivos significativamente desalineados.
 
-- *Aumentar el espacio permitido `OP_RETURN` en transacciones estándar:*
-  Christopher Allen [preguntó][allen op_return] si era mejor
-  poner datos arbitrarios en la salida de una transacción usando `OP_RETURN` o
-  los datos testigo de una transacción.  Tras un debate, varios
-  participantes ([1][todd o], [2][o'connor o], [3][poelstra o])
-  señalaron que estaban a favor de flexibilizar las políticas de
-  para permitir que las salidas `OP_RETURN` almacenen más de 83 bytes de información arbitraria.
-  más de 83 bytes de datos arbitrarios.  Razonaron que otros
-  métodos para almacenar grandes cantidades de datos se utilizan actualmente y
-  y no habría ningún daño adicional si se utilizara `OP_RETURN`
-  en su lugar.
+  - *Aumentar el espacio permitido `OP_RETURN` en transacciones estándar:*
+    Christopher Allen [preguntó][allen op_return] si era mejor
+    poner datos arbitrarios en la salida de una transacción usando `OP_RETURN` o
+    los datos testigo de una transacción.  Tras un debate, varios
+    participantes ([1][todd o], [2][o'connor o], [3][poelstra o])
+    señalaron que estaban a favor de flexibilizar las políticas de
+    para permitir que las salidas `OP_RETURN` almacenen más de 83 bytes de información arbitraria.
+    más de 83 bytes de datos arbitrarios.  Razonaron que otros
+    métodos para almacenar grandes cantidades de datos se utilizan actualmente
+    y no habría ningún daño adicional si se utilizara `OP_RETURN`
+    en su lugar.
 
 - **Dilución de tarifas en protocolos multipartitos:** Yuval Kogman
 [publicó][kogman dilution] en la lista de correo Bitcoin-Dev la
@@ -72,57 +72,57 @@ mayor de lo esperado.  Esto disminuye el feerate
 de la transacción.  Varias implicaciones de esto fueron discutidas en
 la lista de correo:
 
-- *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo ulterior
-  para incluir un testigo grande en la cadena de bloques, por ejemplo.
-  ejemplo, quiere añadir datos arbitrarios---puede usar parte de los honorarios de Bob para pagar
-  los honorarios por eso.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
-  vbyte con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
-  confirma rápidamente.  Mallory rellena la transacción con 9.000
-  vbytes de datos que Bob no esperaba, reduciendo su tarifa a 1
-  sat/vbyte.  Aunque Bob paga la misma tarifa absoluta en ambos casos,
-  no consigue lo que quería (confirmación rápida) y Mallory obtiene
-  9.000 sats de datos añadidos a la cadena de bloques sin coste alguno para ella.
-  para ella.
+  - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo ulterior
+    para incluir un testigo grande en la cadena de bloques, por ejemplo.
+    ejemplo, quiere añadir datos arbitrarios---puede usar parte de los honorarios de Bob para pagar
+    los honorarios por eso.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
+    vbyte con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
+    confirma rápidamente.  Mallory rellena la transacción con 9.000
+    vbytes de datos que Bob no esperaba, reduciendo su tarifa a 1
+    sat/vbyte.  Aunque Bob paga la misma tarifa absoluta en ambos casos,
+    no consigue lo que quería (confirmación rápida) y Mallory obtiene
+    9.000 sats de datos añadidos a la cadena de bloques sin coste alguno para ella.
+    para ella.
 
-- *Mallory puede ralentizar la confirmación:* una transacción con un
-  feerate puede confirmarse más lentamente.  En un protocolo sensible al tiempo, esto
-  podría causar un serio problema a Bob.  En otros casos, Bob podría
-  que Bob tenga que hacer un fee bump de la transacción, lo que le costará dinero adicional.
-  adicional.
+  - *Mallory puede ralentizar la confirmación:* una transacción con un
+    feerate puede confirmarse más lentamente.  En un protocolo sensible al tiempo, esto
+    podría causar un serio problema a Bob.  En otros casos, Bob podría
+    que Bob tenga que hacer un fee bump de la transacción, lo que le costará dinero adicional.
+    adicional.
 
-Kogman describe varias mitigaciones en su post, aunque todas ellas
-implican concesiones.  En un [segundo post][kogman dilution2], señala
-que no conoce ningún protocolo actualmente desplegado que sea
-vulnerable.
+  Kogman describe varias mitigaciones en su post, aunque todas ellas
+  implican concesiones.  En un [segundo post][kogman dilution2], señala
+  que no conoce ningún protocolo actualmente desplegado que sea
+  vulnerable.
 
 - **Maleabilidad de la firma Tapscript:** en un aparte de la mencionada
-conversación sobre la dilución de tasas, el desarrollador Russell O'Connor
-[señaló][o'connor tsm] que las firmas para un [tapscript][tema
-tapscript] pueden aplicarse a una copia del tapscript colocada en otro lugar
-en el árbol taproot.  Por ejemplo, el mismo tapscript *A* se coloca en
-dos lugares diferentes en un árbol taproot.  Para utilizar la alternativa más profunda
-requerirá colocar un hash adicional de 32 bytes en los datos testigo de
-la transacción de gasto.
+  conversación sobre la dilución de tasas, el desarrollador Russell O'Connor
+  [señaló][o'connor tsm] que las firmas para un [tapscript][tema
+  tapscript] pueden aplicarse a una copia del tapscript colocada en otro lugar
+  en el árbol taproot.  Por ejemplo, el mismo tapscript *A* se coloca en
+  dos lugares diferentes en un árbol taproot.  Para utilizar la alternativa más profunda
+  requerirá colocar un hash adicional de 32 bytes en los datos testigo de
+  la transacción de gasto.
 
-```text
-  *
- / \
-A   *
-   / \
-  A   B
-```
+  ```text
+    *
+  / \
+  A   *
+    / \
+    A   B
+  ```
 
-Eso significa que incluso si Mallory proporciona a Bob un testigo válido para
-su gasto tapscript antes de Bob proporciona su propia firma, es
-todavía es posible para Mallory emitir una versión alternativa de la
-transacción con un testigo mayor.  Bob sólo puede evitar este problema
-recibiendo de Mallory una copia completa de su árbol de tapscripts.
+  Eso significa que incluso si Mallory proporciona a Bob un testigo válido para
+  su gasto tapscript antes de Bob proporciona su propia firma, es
+  todavía es posible para Mallory emitir una versión alternativa de la
+  transacción con un testigo mayor.  Bob sólo puede evitar este problema
+  recibiendo de Mallory una copia completa de su árbol de tapscripts.
 
-En el contexto de futuras actualizaciones soft fork de Bitcoin, Anthony Towns
-abrió un [issue][bitcoin inquisition #19] en el repositorio Bitcoin
-Inquisition para probar [SIGHASH_ANYPREVOUT][tema
-sighash_anyprevout] (APO) para considerar la posibilidad de que APO se comprometa a datos adicionales para evitar este problema a los usuarios de Bitcoin.
-adicionales para evitar este problema a los usuarios de esa extensión.
+  En el contexto de futuras actualizaciones soft fork de Bitcoin, Anthony Towns
+  abrió un [issue][bitcoin inquisition #19] en el repositorio Bitcoin
+  Inquisition para probar [SIGHASH_ANYPREVOUT][tema
+  sighash_anyprevout] (APO) para considerar la posibilidad de que APO se comprometa a datos adicionales para evitar este problema a los usuarios de Bitcoin.
+  adicionales para evitar este problema a los usuarios de esa extensión.
 
 ## Cambios en servicios y software cliente
 
@@ -170,7 +170,7 @@ aspectos relacionados con plugins e integraciones de terceros.
 integración con terceros, se ha añadido una ruta de migración desde MySQL y SQLite
 y se ha corregido una vulnerabilidad de secuencias de comandos entre sitios.
 
-- BDK 0.27.0][] es una actualización de esta biblioteca para crear monederos y aplicaciones Bitcoin
+- [BDK 0.27.0][] es una actualización de esta biblioteca para crear monederos y aplicaciones Bitcoin
 y aplicaciones.
 
 ## Cambios notables en código y documentación
@@ -186,7 +186,7 @@ Proposals (BIPs)][repositorio bips], y [Lightning BOLTs][repositorio bolts].*
 copias de seguridad.  Como se mencionó por última vez en [Newsletter #147][news147 backups],
 esto permite a un nodo para almacenar un pequeño archivo de copia de seguridad cifrada para su
 pares.  Si más tarde un peer necesita reconectarse, quizás después de perder datos,
-puede solicitar el archivo de copia de seguridad.  El par puede utilizar una clave derivada de
+puede solicitar el archivo de copia de seguridad.  El par puede utilizar una clave derivada
 de su cartera para descifrar el archivo y utilizar su contenido para recuperar
 el último estado de todos sus canales.  Esto puede considerarse una
 forma mejorada de [copias de seguridad estáticas de canales][topic static channel
