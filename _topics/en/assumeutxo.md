@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Bitcoin Core #23155 extends the `dumptxoutset` RPC with new information"
     url: /en/newsletters/2021/12/08/#bitcoin-core-23155
 
+  - title: "Bitcoin Core #25740 allows background validation of bootstrapped UTXO state"
+    url: /en/newsletters/2023/03/15/#bitcoin-core-25740
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
