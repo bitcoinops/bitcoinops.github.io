@@ -4,12 +4,13 @@ layout: default
 ---
 <link rel="stylesheet" href="/assets/css/main.css">
 
+<!-- turn off podcast localization for now
 <div class="localization">
-  <a href="/en/blog/">en</a>
+  <a href="/en/podcast/">en</a>
   {% for lang in site.languages %}
-    | <a href="/{{ lang.code }}/blog/">{{lang.code}}</a>
+    | <a href="/{{ lang.code }}/podcast/">{{lang.code}}</a>
   {% endfor %}
-</div>
+</div>-->
 
 <h1 class="post-title">Podcast</h1>
 
