@@ -34,6 +34,9 @@ optech_mentions:
   - title: "Launch of ZeroSync project using Utreexo"
     url: /en/newsletters/2022/10/19/#zerosync-project-launches
 
+  - title: "Service bit for Utreexo"
+    url: /en/newsletters/2023/03/15/#service-bit-for-utreexo
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
