@@ -5,7 +5,7 @@ layout: default
 
 <article class="newsletter">
   <header class="post-header">
-    {% include functions/localization-finder.md %}
+    <!--{% include functions/localization-finder.md %}-->
     {% assign year = page.date | date: "%Y" %}
     {% assign path = "/" | append: page.lang | append: "/podcast/" | append: year | append: "/" %}
     {% include linkers/breadcrumbs.md path=path %}
