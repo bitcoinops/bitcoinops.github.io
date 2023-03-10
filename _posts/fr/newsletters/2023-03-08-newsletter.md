@@ -227,5 +227,5 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [newsletter #219 bi]: /fr/newsletters/2022/09/28/#implementation-de-bitcoin-concue-pour-tester-les-soft-forks-sur-signet
 [review club bi-16]: https://bitcoincore.reviews/bitcoin-inquisition-16
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
-[deploiements heretiques]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
+[Déploiements hérétiques]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
 [bip9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
