@@ -50,18 +50,18 @@ d'infrastructure Bitcoin.
       couche de script de déblocage (trigger). A ce moment, elle fournit deux
       paramètres supplémentaires à l'opcode `OP_TRIGGER_FORWARD`, l'index de
       la sortie qui recevra les fonds de cette entrée et un engagement basé
-      sur le hachage sur la façon dont elle veut être en mesure de dépenser
+      sur le hachage de la façon dont elle veut être en mesure de dépenser
       les fonds plus tard. L'opcode vérifie que la sortie indiquée de cette
       transaction paie une sortie P2TR avec une arborescence de scripts similaire
       à celle qui est dépensée, sauf que la couche de script de déclenchement
-      est remplacé par un script utilisant un délai relatif `OP_CHECKSEQUENCEVERIFY`
+      est remplacée par un script utilisant un délai relatif `OP_CHECKSEQUENCEVERIFY`
       (CSV) égal au délai spécifié précédemment (par exemple, 1000 blocs) et un
       opcode `OP_FORWARD_OUTPUTS` qui inclut le hachage de l'engagement d'Alice.
       La méthode de reconstruction de l'arbre des scripts est similaire à une
       proposition antérieure de [conditions de dépense][topic covenants],
       `OP_TAPLEAF_UPDATE_VERIFY` (voir [Bulletin #166][news166 tluv]).
 
-    - *Alice complète le déblocage* en attendant que le temps de blocage
+    - *Alice complète le déblocage* en attendant que le verrouillage temporel
       relatif ait expiré et en dépensant la sortie du déblocage, en
       choisissant le tapleaf avec l'opcode `OP_FORWARD_OUTPUTS`. L'opcode
       vérifie que les montants des sorties de la transaction de dépense
@@ -74,13 +74,13 @@ d'infrastructure Bitcoin.
 
     - En cas de problème, *Alice gèle les fonds*. Elle peut le faire à tout
       moment à partir du moment où elle dépose des fonds dans le coffre-fort
-      jusqu'à ce qu'une levée du blocage soit effectuée. Pour geler les fonds,
-      elle choisit simplement de dépenser la couche de script de gel à partir
+      jusqu'à ce qu'une levée du verrouillage soit effectuée. Pour geler les fonds,
+      elle choisit simplement de dépenser le script de gel à partir
       de la sortie des transactions de mise en coffre ou de déclenchement.
-      Rappelons qu'Alice a explicitement placé la couche de script de gel
+      Rappelons qu'Alice a explicitement placé le script de gel
       dans la transaction de mise en coffre, et notons qu'elle a été
       implicitement reportée par la transaction de déclenchement qui
-      a initié la levée du déblocage.
+      a initié le déblocage.
 
   L'un des avantages de cette approche par rapport à la conception
   originale de l'option `OP_VAULT` est que le script de gel peut contenir
@@ -95,15 +95,15 @@ d'infrastructure Bitcoin.
   rapidement ses fonds en cas d'urgence.
 
   Plusieurs autres avantages visent à rendre le [protocole de coffre-fort][topic
-  vaults] renforcé par consensus plus facile à comprendre et à vérifier comme
-  étant sûr. Après que nous ayons écrit ce qui précède, l'auteur de la proposition
+  vaults] renforcé par consensus plus facile à comprendre et que sa sûreté soit plus facile à vérifier.
+  Ayant lu ce qui précède, l'auteur de la proposition
   `OP_VAULT`, James O'Beirne, a répondu favorablement aux idées de Sanders.
   O'Beirne avait également des idées de changements supplémentaires que nous
   décrirons dans un prochain bulletin.
 
 - **Nouvelle baladodiffusion d'Optech :** le récapitulatif audio hebdomadaire
-  d'Optech hébergé sur Twitter Spaces est désormais disponible en ballado.
-  Chaque épisode sera disponible sur toutes les plateformes de balladodiffusion
+  d'Optech hébergé sur Twitter Spaces est désormais disponible en podcast.
+  Chaque épisode sera disponible sur toutes les plateformes de podcast
   populaires et sur le site web d'Optech en tant que transcription. Pour plus
   de détails, y compris les raisons pour lesquelles nous pensons qu'il s'agit
   d'une avancée majeure dans la mission d'Optech d'améliorer la communication
@@ -193,7 +193,7 @@ versions ou d'aider à tester les versions candidates.*
   d'analyser les [offres][topic offers].
 
 - [BTCPay 1.8.2][] est la dernière version de ce populaire logiciel auto-hébergé
-  de traitement des paiements en bitcoins.  Les notes de mise à jour de la version
+  de traitement des paiements en bitcoins. Les notes de mise à jour de la version
   1.8.0 indiquent que "cette version apporte des formulaires de paiement personnalisés,
   des options de marque de magasin, un clavier de point de vente redessiné, de
   nouvelles icônes de notification et un étiquetage des adresses".
