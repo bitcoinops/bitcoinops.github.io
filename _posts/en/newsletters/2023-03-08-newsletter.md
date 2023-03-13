@@ -96,14 +96,14 @@ popular Bitcoin infrastructure software.
   safe.  Subsequent to our writing the above, the author of the
   `OP_VAULT` proposal, James O'Beirne, replied favorably to Sanders's
   ideas.  O'Beirne also had ideas for additional changes which we'll
-  describe in a future newsletter.
+  describe in a future newsletter. {% include functions/podcast-callout.md url="pod241 op_vault" %}
 
 - **New Optech Podcast:** the weekly Optech Audio Recap hosted on
   Twitter Spaces is now available as a podcast.  Each episode will be
   available on all popular podcast platforms and on the Optech website
   as a transcript.  For more details, including why we think this is a
   major step forward in Optech's mission to improve Bitcoin technical
-  communication, please see our [blog post][podcast post].
+  communication, please see our [blog post][podcast post]. {% include functions/podcast-callout.md url="pod241 podcast" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -124,7 +124,8 @@ and time-consuming to activate, requiring the careful building of (human)
 consensus and an elaborate [soft fork activation][topic soft fork activation]
 mechanism -- on a test network activating these changes can be streamlined.
 The PR also implements a way to deactivate changes that turn out to be buggy
-or undesired, which is a major departure from mainnet.
+or undesired, which is a major departure from mainnet. {% include
+functions/podcast-callout.md url="pod241 pr review" %}
 
 {% include functions/details-list.md
   q0="Why do we want to deploy consensus changes that aren’t merged
@@ -180,21 +181,21 @@ release candidates.*
   support for peer storage of backup data (see [Newsletter
   #238][news238 peer storage]) and updates experimental support for [dual
   funding][topic dual funding] and [offers][topic offers].  Also
-  included are several other improvements and bug fixes.
+  included are several other improvements and bug fixes. {% include functions/podcast-callout.md url="pod241 cln" %}
 
 - [LDK v0.0.114][] is a release for a new version of this library for
   building LN-enabled wallets and applications.  It fixes several
   security-related bugs and includes the ability to parse [offers][topic
-  offers].
+  offers]. {% include functions/podcast-callout.md url="pod241 ldk" %}
 
 - [BTCPay 1.8.2][] is the latest release for this popular self-hosted
   payment processing software for Bitcoin.  The release notes for
   version 1.8.0 say, "this version brings custom checkout forms, store
   branding options, a redesigned Point of Sale keypad view, new
-  notification icons and address labeling."
+  notification icons and address labeling." {% include functions/podcast-callout.md url="pod241 btcpay" %}
 
 - [LND v0.16.0-beta.rc2][] is a release candidate for a new major
-  version of this popular LN implementation.
+  version of this popular LN implementation. {% include functions/podcast-callout.md url="pod241 lnd" %}
 
 ## Notable code and documentation changes
 
@@ -206,7 +207,7 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [LND #7462][] allows the creation of watch-only wallets with remote
-  signing and the use of the stateless init feature.
+  signing and the use of the stateless init feature. {% include functions/podcast-callout.md url="pod241 lnd7462" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7462" %}
@@ -224,3 +225,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
 [heretical deployments]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
 [bip9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
+[pod241 op_vault]: /en/podcast/2023/03/09/#alternative-design-for-op-vault
+[pod241 podcast]: /en/podcast/2023/03/09/#new-optech-podcast
+[pod241 pr review]: /en/podcast/2023/03/09/#bitcoin-inquisition-activation-logic-for-testing-consensus-changes
+[pod241 cln]: /en/podcast/2023/03/09/#core-lightning-23-02
+[pod241 ldk]: /en/podcast/2023/03/09/#ldk-v0-0-114
+[pod241 btcpay]: /en/podcast/2023/03/09/#btcpay-1-8-2
+[pod241 lnd]: /en/podcast/2023/03/09/#lnd-v0-16-0-beta-rc2
+[pod241 lnd7462]: /en/podcast/2023/03/09/#lnd-7462
