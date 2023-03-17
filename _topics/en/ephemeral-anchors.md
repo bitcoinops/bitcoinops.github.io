@@ -71,11 +71,11 @@ excerpt: >
 ---
 The proposal is built on top of the [v3 transaction relay][topic v3
 transaction relay] proposal.  A v3 transaction containing as little as
-zero fee that has a zero-value output paying `OP_2` as the entire script
+zero fee that has a zero-value output paying `OP_TRUE` as the entire script
 would be accepted when included in a [relay package][topic package
 relay] with a fee-paying child.
 
-The `OP_2` would function as `OP_TRUE`, allowing anyone on the network to use
+This allows anyone on the network to use
 that output as the input to a child transaction.  This allows anyone to
 create the fee-paying child, even if they don't receive any of the other
 outputs from the parent transaction.  This allows ephemeral anchors to
