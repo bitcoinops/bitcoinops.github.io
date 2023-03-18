@@ -67,4 +67,4 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [libsecp256k1 0.3.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.3.0
 [core lightning v23.02.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02.2
 [kim utreexo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021515.html
-[assumeutxo project]: https://github.com/bitcoin/bitcoin/projects/11
+[projet assumeutxo]: https://github.com/bitcoin/bitcoin/projects/11
