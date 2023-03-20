@@ -21,7 +21,43 @@ Lightning-Dev mailing lists.*
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Xapo Bank supports Lightning:**
+  Xapo Bank [announced][xapo lightning blog] its customers can now send outgoing
+  Lightning payments from the Xapo Bank mobile apps, using underlying infrastructure from Lightspark.
+
+- **TypeScript library for miniscript descriptors released:**
+  The TypeScript-based [Bitcoin Descriptors Library][github descriptors library]
+  has support for [PSBTs][topic psbt], [descriptors][topic descriptors],
+  and [miniscript][topic miniscript].  This includes support for signing
+  directly or when using certain hardware signing devices.
+
+- **Breez Lightning SDK announced:**
+  In a recent [blog post][breez blog], Breez announced the open source [Breez
+  SDK][github breez sdk] for mobile developers who want to integrate Bitcoin and
+  Lightning payments. The SDK includes support for [Greenlight][blockstream
+  greenlight], Lightning Service Provider (LSP) features, and other services.
+
+- **PSBT-based exchange OpenOrdex launches:**
+  The [open source][github openordex] exchange software allows sellers to create
+  an order book of Ordinal satoshis using [PSBTs][topic psbt] and buyers to sign
+  and broadcast to complete the trade.
+
+- **BTCPay Server coinjoin plugin released:**
+  The Wasabi Wallet [announcement][wasabi blog] notes that any BTCPay Server
+  merchant can activate the optional plugin which supports the
+  [WabiSabi][news102 wabisabi] protocol for [coinjoins][topic coinjoin].
+
+- **mempool.space explorer enhances CPFP support:**
+  The mempool.space [explorer][topic block explorers] announced [additional
+  support][mempool tweet] for [CPFP][topic cpfp]-related transactions.
+
+- **Sparrow v1.7.3 released:**
+  Sparrow's [v1.7.3 release][sparrow v1.7.3] includes [BIP129][] support for multisig wallets (see
+  [Newsletter #136][news136 bsms]) and custom block explorer support among other features.
+
+- **Stack Wallet adds coin control, BIP47:**
+  Recent releases of the [Stack Wallet][github stack wallet] add [coin
+  control][topic coin selection] features and [BIP47][] support.
 
 ## Releases and release candidates
 
@@ -66,3 +102,15 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [lnd v0.16.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc3
 [bdk_core sub-project]: https://bitcoindevkit.org/blog/bdk-core-pt1/
 [no rebroadcast]: /en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools
+[xapo lightning blog]: https://www.xapobank.com/blog/another-first-xapo-bank-now-supports-lightning-network-payments
+[github descriptors library]: https://github.com/bitcoinerlab/descriptors
+[breez blog]: https://medium.com/breez-technology/lightning-for-everyone-in-any-app-lightning-as-a-service-via-the-breez-sdk-41d899057a1d
+[github breez sdk]: https://github.com/breez/breez-sdk
+[blockstream greenlight]: https://blockstream.com/lightning/greenlight/
+[github openordex]: https://github.com/orenyomtov/openordex
+[wasabi blog]: https://blog.wasabiwallet.io/wasabiwalletxbtcpayserver/
+[news102 wabisabi]: /en/newsletters/2020/06/17/#wabisabi-coordinated-coinjoins-with-arbitrary-output-values
+[mempool tweet]: https://twitter.com/mempool/status/1630196989370712066
+[news136 bsms]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
+[sparrow v1.7.3]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.3
+[github stack wallet]: https://github.com/cypherstack/stack_wallet
