@@ -41,7 +41,19 @@ Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
-- [LND #7448][] new tx rebroadcast FIXME:Xekyo, may want to mention https://bitcoinops.org/en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools or other stuff we've covered about rebroadcasting in Bitcoin Core
+- [LND #7448][] adds a new rebroadcaster interface to resubmit
+  unconfirmed transactions especially to address transactions that were
+  evicted from mempools. When enabled, the rebroadcaster will submit
+  unconfirmed transactions to the attached full node once per block
+  until it is confirmed. LND was already rebroadcasting transactions in
+  a similar fashion when operating in Neutrino-mode. As noted in a
+  previously covered Stack Exchange Q&A, [Bitcoin Core currently
+  does not rebroadcast transactions][no rebroadcast], although it would
+  be desirable for privacy and reliability if full node behavior were
+  amended to rebroadcast any transactions that the node had expected to
+  have been included in the prior block. Until then, it is the responsibility
+  of every wallet to ensure the presence of transactions of interest in
+  mempools.
 
 - [BDK #793][] is a major restructuring of the library based on the work
   of the [bdk_core sub-project][].  According to the PR description, it
@@ -53,3 +65,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="7448,793" %}
 [lnd v0.16.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc3
 [bdk_core sub-project]: https://bitcoindevkit.org/blog/bdk-core-pt1/
+[no rebroadcast]: /en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools
