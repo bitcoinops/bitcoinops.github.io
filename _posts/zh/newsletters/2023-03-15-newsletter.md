@@ -28,7 +28,7 @@ lang: zh
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [Bitcoin Core #25740][] 允许使用 [assumeUTXO][topic assumeutxo] 的节点可以验证最优区块链上的所有区块和交易，直到到达 assumeUTXO 状态声明它已生成的区块，同时从该区块开始构建 UTXO 集合（链状态）。如果该链状态等于节点首次启动时下载的 assumeUTXO 状态，则该状态已完全验证。与任何其他完整节点一样，该节点已验证最优区块链上的每个区块，只是验证顺序与标准节点不同。下次节点启动时，用于执行旧块验证的特殊链状态将被删除，从而释放磁盘空间。 [assumeUTXO 项目][assumeUTXO project] 的其他部分仍然需要在合并后才能使用。
+- [Bitcoin Core #25740][] 允许使用 [assumeUTXO][topic assumeutxo] 模式的节点在达到已声明的 assumeUTXO 区块状态前，可以验证最优区块链上的所有区块和交易，同时从该区块开始构建 UTXO 集合（链状态）。如果该链状态等于节点首次启动时下载的 assumeUTXO 状态，则该状态已完全验证。与任何其他完整节点一样，该节点已验证最优区块链上的每个区块，只是验证顺序与标准节点不同。下次节点启动时，用于执行旧块验证的特殊链状态将被删除，从而释放磁盘空间。 [assumeUTXO 项目][assumeUTXO project] 的其他部分仍然需要在合并后才能使用。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25740" %}
