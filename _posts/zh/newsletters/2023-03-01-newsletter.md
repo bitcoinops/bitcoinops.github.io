@@ -15,7 +15,7 @@ lang: zh
 
     从设计上，Codex32 就为其检测备份错误的能力提供了非常强的保证。Peter Todd 提出，一种便利得多的办法是在制作恢复码时，让恢复码的各部分可以相加、形成一个校验和。如果这个校验和除以一个已知的常数不会产生余数，那就在校验和算法的参数内验证了备份的完整性。Peter Tode 建议使用能以 99.9% 的概率侦测出笔误的算法，他认为这就足够健壮了，而且这种办法应该是易于使用、易于记忆的，这样用户就不需要额外的 Codex32 记录。
     
-    Russell O'Connor [回应][o'connor codex32] 道，一份完整的 Codex32 恢复码检查起来可以比完全验证快得多，只要用户愿意容忍少许误差的话。一次只检查两个字母，保证可以检测出恢复码的任何单字母错误，并为其它的置换性错误（subsittution errors）提供 99.9% 的保护。这个过程在一定程度上类似于声成 Peter Todd 所说的那种校验和，不过这需要使用一张特殊的查找表，普通用户是不太可能记得住的。如果验证者愿意每次检查恢复码的时候都使用一张不同的查找表，每多一次验证都会提高他们发现错误的概率，最多可以累加 7 次，这时候他们将获得跟完整的 Codex32 验证相同的保证。不需要改变 Codex32 来获得这种不断强化的快速检查特性，只是 Codex32 的说明书需要更新，以提供必要的查找表和工作表。
+    Russell O'Connor [回应][o'connor codex32] 道，一份完整的 Codex32 恢复码检查起来可以比完全验证快得多，只要用户愿意容忍少许误差的话。一次只检查两个字母，保证可以检测出恢复码的任何单字母错误，并为其它的置换性错误（subsittution errors）提供 99.9% 的保护。这个过程在一定程度上类似于生成 Peter Todd 所说的那种校验和，不过这需要使用一张特殊的查找表，普通用户是不太可能记得住的。如果验证者愿意每次检查恢复码的时候都使用一张不同的查找表，每多一次验证都会提高他们发现错误的概率，最多可以累加 7 次，这时候他们将获得跟完整的 Codex32 验证相同的概率保证。不需要改变 Codex32 来获得这种不断强化的快速检查特性，只是 Codex32 的说明书需要更新，以提供必要的查找表和工作表。
 
 ## 新版本和候选版本。
 
@@ -29,7 +29,7 @@ lang: zh
 
 *本周出现重大变更的有：[Bitcoin Core][Bitcoin Core]、[Core Lightning][Core Lightning]、[Eclair][Eclair]、[LDK][LDK]、[LND][LND]、[libsecp256k1][libsecp256k1]、[Hardware Wallet Interface (HWI)][Hardware Wallet Interface (HWI)]、[Rust Bitcoin][Rust Bitcoin]、[BTCPay Server][BTCPay Server]、[BDK][BDK]、[Bitcoin Improvement Proposals (BIPs)][Bitcoin Improvement Proposals (BIPs)] 和 [Lightning BOLTs][Lightning BOLTs]。*
 
-- [Bitcoin Core #25943][] 给`sendrawtransaction` RPC 加入了一个参数，用于限制每个输出烧掉的资金数量。如果一笔交易包含了一个输出，其脚本是可猜测是出不可花费的（例如带有 `OP_RETURN`、无效的操作码或者超过了脚本长度的最大限制），而且其价值大于 `maxburnamount`，则这笔交易不会被发送到交易池中。这个数值默认是 0，防止用户以外烧掉资金。
+- [Bitcoin Core #25943][] 给`sendrawtransaction` RPC 加入了一个参数，用于限制每个输出烧掉的资金数量。如果一笔交易包含了一个输出，其脚本是可猜测出是不可花费的（例如带有 `OP_RETURN`、无效的操作码或者超过了脚本长度的最大限制），而且其价值大于 `maxburnamount`，则这笔交易不会被发送到交易池中。这个数值默认是 0，防止用户以外烧掉资金。
 
 - [Bitcoin Core #26595][] 给 [`migratewallet`][news217 migratewallet] RPC 加入了 `wallet_name` 和 `passphrase` 参数，以支持将加密的老式钱包迁移成[描述符][descriptor]钱包。
 
@@ -38,7 +38,7 @@ lang: zh
 - [LDK #1988][] 给对等连接和未注资的通道添加了限制，以防止拒绝服务式攻击耗尽本地的资源。新的限制有：
 
     - 同时最多只能跟 250 个与本地没有注资通道的对等节点分享数据。
-    - 同时最多只能跟 50 个对等节点超时开启通道。
+    - 同时最多只能跟 50 个对等节点尝试开启通道。
     - 跟同一个对等节点最多只能有 4 条通道等待注资。
 - [LDK #1977][] 创建了公开的 its 结构，以序列化和解析 [BOLT12 草案][draft BOLT12]所定义的[offers][offers]。LDK 还没有支持[盲化路由][blinded paths]，所以它当前还不能直接接收和发送 offer。但这个 PR 让开发者可以开始实验功能了。
 
