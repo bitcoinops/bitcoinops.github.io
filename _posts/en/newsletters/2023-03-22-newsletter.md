@@ -59,6 +59,9 @@ wallets and services.*
   Recent releases of the [Stack Wallet][github stack wallet] add [coin
   control][topic coin selection] features and [BIP47][] support.
 
+- **Wasabi Wallet v2.0.3 released:**
+  Wasabi's [v2.0.3 release][Wasabi v2.0.3] includes taproot coinjoin signing and taproot change outputs,opt-in manual coin control for sending, improved wallet loading speed and more.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -114,3 +117,4 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news136 bsms]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
 [sparrow v1.7.3]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.3
 [github stack wallet]: https://github.com/cypherstack/stack_wallet
+[Wasabi v2.0.3]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.3
