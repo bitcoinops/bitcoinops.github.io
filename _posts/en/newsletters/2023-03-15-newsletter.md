@@ -23,7 +23,7 @@ release candidates, and describes a merged Bitcoin Core pull request.
   node (without any reduction in security).  A Utreexo node needs to
   receive extra data when it receives an unconfirmed transaction (or a block full of
   confirmed transactions), so the service bit will help a node find peers capable
-  of providing the extra data.
+  of providing the extra data. {% include functions/podcast-callout.md url="pod242 utreexo" %}
 
 ## Releases and release candidates
 
@@ -33,13 +33,13 @@ release candidates.*
 
 - [Core Lightning v23.02.2][] is a maintenance release of this LN node
   software.  It reverts a change to the `pay` RPC that cause problems
-  for other software and includes several other changes.
+  for other software and includes several other changes. {% include functions/podcast-callout.md url="pod242 cln" %}
 
 - [Libsecp256k1 0.3.0][] of this cryptographic library.  It includes an
-  API change which breaks ABI compatibility.
+  API change which breaks ABI compatibility. {% include functions/podcast-callout.md url="pod242 lsp" %}
 
 - [LND v0.16.0-beta.rc3][] is a release candidate for a new major
-  version of this popular LN implementation.
+  version of this popular LN implementation. {% include functions/podcast-callout.md url="pod242 lnd" %}
 
 ## Notable code and documentation changes
 
@@ -61,7 +61,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   validated them in a different order than a standard node.  The special
   chainstate used to perform the verification of older blocks is deleted
   the next time the node starts, freeing disk space.  Other parts of the
-  [assumeUTXO project][] still need to be merged before it will be usable.
+  [assumeUTXO project][] still need to be merged before it will be usable. {% include functions/podcast-callout.md url="pod242 bc25740" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25740" %}
@@ -70,3 +70,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [core lightning v23.02.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02.2
 [kim utreexo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021515.html
 [assumeutxo project]: https://github.com/bitcoin/bitcoin/projects/11
+[pod242 utreexo]: /en/podcast/2023/03/16/#service-bit-for-utreexo
+[pod242 cln]: /en/podcast/2023/03/16/#core-lightning-v23-02-2
+[pod242 lsp]: /en/podcast/2023/03/16/#libsecp256k1-0-3-0
+[pod242 lnd]: /en/podcast/2023/03/16/#lnd-v0-16-0-beta-rc3
+[pod242 bc25740]: /en/podcast/2023/03/16/#bitcoin-core-25740
