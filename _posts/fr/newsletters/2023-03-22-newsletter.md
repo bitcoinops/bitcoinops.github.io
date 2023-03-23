@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine comprend nos sections habituelles avec des descriptions
+Le bulletin de cette semaine contient nos sections habituelles avec des descriptions
 des changements apportés aux services et aux logiciels clients, ainsi que des résumés
 des changements notables apportés aux principaux logiciels d'infrastructure Bitcoin.
 
@@ -95,7 +95,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   transactions non confirmées au nœud complet attaché une fois par bloc
   jusqu'à ce qu'elles soient confirmées. Le LND rediffusait déjà des
   transactions d'une manière similaire lorsqu'il fonctionnait en mode
-  Neutrino. Comme indiqué dans une question-réponse de Stack Exchange,
+  Neutrino. Comme indiqué dans une réponse de Stack Exchange,
   [Bitcoin Core ne rediffuse actuellement pas les transactions][no rebroadcast],
   bien qu'il serait souhaitable pour la confidentialité et la fiabilité
   que le comportement des nœuds complets soit modifié pour rediffuser
@@ -105,9 +105,9 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   pools de mémoire.
 
 - Le [BDK #793][] est une restructuration majeure de la bibliothèque basée
-  sur le travail du [sous-projet bdk_core][].  Selon la description du PR,
+  sur le travail du [sous-projet bdk_core][]. Selon la description du PR,
   il "maintient l'API du portefeuille existant autant que possible et ajoute
-  très peu de choses".  Trois points d'extrémité de l'API avec des changements
+  très peu de choses". Trois points d'extrémité de l'API avec des changements
   apparemment mineurs sont listés dans la description du PR.
 
 {% include references.md %}
