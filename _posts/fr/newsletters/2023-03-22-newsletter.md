@@ -7,103 +7,113 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter includes our regular sections with descriptions
-of changes to services and client software, plus summaries of notable
-changes to popular Bitcoin infrastructure software.
+Le bulletin de cette semaine comprend nos sections habituelles avec des descriptions
+des changements apportés aux services et aux logiciels clients, ainsi que des résumés
+des changements notables apportés aux principaux logiciels d'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
-*No significant news this week was found on the Bitcoin-Dev or
-Lightning-Dev mailing lists.*
+*Aucune nouvelle significative n'a été trouvée cette semaine sur les
+listes de diffusion Bitcoin-Dev ou Lightning-Dev.*
 
 ## Changes to services and client software
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*Dans cette rubrique mensuelle, nous mettons en évidence les mises à jour
+intéressantes des portefeuilles et des services Bitcoin.*
 
-- **Xapo Bank supports Lightning:**
-  Xapo Bank [announced][xapo lightning blog] its customers can now send outgoing
-  Lightning payments from the Xapo Bank mobile apps, using underlying infrastructure from Lightspark.
+- **Xapo Bank prend en charge Lightning :**
+  Xapo Bank [a annoncé][xapo lightning blog] que ses clients peuvent désormais envoyer
+  des paiements Lightning sortants à partir des applications mobiles de Xapo Bank, en
+  utilisant l'infrastructure sous-jacente de Lightspark.
 
-- **TypeScript library for miniscript descriptors released:**
-  The TypeScript-based [Bitcoin Descriptors Library][github descriptors library]
-  has support for [PSBTs][topic psbt], [descriptors][topic descriptors],
-  and [miniscript][topic miniscript].  This includes support for signing
-  directly or when using certain hardware signing devices.
+- **Publication d'une bibliothèque TypeScript pour les descripteurs miniscript :**
+  La [bibliothèque des descripteurs Bitcoin][github descriptors library] basée sur
+  TypeScript prend en charge les [PSBT][topic psbt], les [descripteurs][topic descriptors],
+  et les [miniscript][topic miniscript]. Cela inclut la prise en charge de la
+  signature directe ou lors de l'utilisation de certains dispositifs de
+  signature matérielle.
 
-- **Breez Lightning SDK announced:**
-  In a recent [blog post][breez blog], Breez announced the open source [Breez
-  SDK][github breez sdk] for mobile developers who want to integrate Bitcoin and
-  Lightning payments. The SDK includes support for [Greenlight][blockstream
-  greenlight], Lightning Service Provider (LSP) features, and other services.
+- **Annonce du SDK Lightning de Breez :**
+  Dans un récent [billet de blog][breez blog], Breez a annoncé le [Breez SDK][github
+  breez sdk] open source pour les développeurs mobiles qui souhaitent intégrer les
+  paiements Bitcoin et Lightning. Le SDK comprend la prise en charge de [Greenlight][blockstream
+  greenlight], des fonctionnalités du fournisseur de services Lightning (LSP) et d'autres services.
 
-- **PSBT-based exchange OpenOrdex launches:**
-  The [open source][github openordex] exchange software allows sellers to create
-  an order book of Ordinal satoshis using [PSBTs][topic psbt] and buyers to sign
-  and broadcast to complete the trade.
+- **Lancement de la bourse OpenOrdex basée sur PSBT :**
+  Le logiciel d'échange [open source][github openordex] permet aux vendeurs de créer un
+  carnet d'ordres de satoshis ordinaux en utilisant des [PSBT][topic psbt] et aux acheteurs
+  de signer et de diffuser pour réaliser la transaction.
 
-- **BTCPay Server coinjoin plugin released:**
-  The Wasabi Wallet [announcement][wasabi blog] notes that any BTCPay Server
-  merchant can activate the optional plugin which supports the
-  [WabiSabi][news102 wabisabi] protocol for [coinjoins][topic coinjoin].
+- **Lancement du plugin coinjoin du serveur BTCPay :**
+  Le portefeuille Wasabi [annonce][wasabi blog] indique que tout marchand
+  du serveur BTCPay peut activer le plugin optionnel qui prend en charge le
+  protocole [WabiSabi][news102 wabisabi] pour les [coinjoins][topic coinjoin].
 
-- **mempool.space explorer enhances CPFP support:**
-  The mempool.space [explorer][topic block explorers] announced [additional
-  support][mempool tweet] for [CPFP][topic cpfp]-related transactions.
+- **l'explorateur mempool.space améliore le support CPFP :**
+  L'[explorateur][topic block explorers] mempool.space a annoncé le [support
+  additionnel][mempool tweet] pour les transactions liées au [CPFP][topic cpfp]
 
-- **Sparrow v1.7.3 released:**
-  Sparrow's [v1.7.3 release][sparrow v1.7.3] includes [BIP129][] support for multisig wallets (see
-  [Newsletter #136][news136 bsms]) and custom block explorer support among other features.
+- **Mise à jour de Sparrow v1.7.3 :**
+  La [version v1.7.3][sparrow v1.7.3] de Sparrow inclut la prise en charge de
+  [BIP129][] pour les portefeuilles multisig (voir [Bulletin #136][news136 bsms])
+  et la prise en charge de l'explorateur de blocs personnalisé, entre
+  autres fonctionnalités.
 
-- **Stack Wallet adds coin control, BIP47:**
-  Recent releases of the [Stack Wallet][github stack wallet] add [coin
-  control][topic coin selection] features and [BIP47][] support.
+- **Stack Wallet ajoute le contrôle des pièces, BIP47:**
+  Les versions récentes du [Stack Wallet][github stack wallet] ajoutent
+  des fonctionnalités de [contrôle des pièces][topic coin selection] et
+  la prise en charge de [BIP47][].
 
-- **Wasabi Wallet v2.0.3 released:**
-  Wasabi's [v2.0.3 release][Wasabi v2.0.3] includes taproot coinjoin signing and taproot change outputs,opt-in manual coin control for sending, improved wallet loading speed and more.
+- **Sortie de Wasabi Wallet v2.0.3 :**
+  La version [v2.0.3][Wasabi v2.0.3] de Wasabi comprend la signature taproot
+  coinjoin et les changements de sorties taproot, le contrôle manuel des pièces
+  par opt-in pour l'envoi, l'amélioration de la vitesse de chargement du
+  portefeuille et plus encore.
 
-## Releases and release candidates
+## Mises à jour et versions candidates
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets
+d'infrastructure Bitcoin. Veuillez envisager de passer aux nouvelles
+versions ou d'aider à tester les versions candidates.*
 
-- [LND v0.16.0-beta.rc3][] is a release candidate for a new major
-  version of this popular LN implementation.
+- [LND v0.16.0-beta.rc3][] est une version candidate pour une nouvelle version
+majeure de cette implémentation populaire de LN.
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
+Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 
-- [LND #7448][] adds a new rebroadcaster interface to resubmit
-  unconfirmed transactions especially to address transactions that were
-  evicted from mempools. When enabled, the rebroadcaster will submit
-  unconfirmed transactions to the attached full node once per block
-  until it is confirmed. LND was already rebroadcasting transactions in
-  a similar fashion when operating in Neutrino-mode. As noted in a
-  previously covered Stack Exchange Q&A, [Bitcoin Core currently
-  does not rebroadcast transactions][no rebroadcast], although it would
-  be desirable for privacy and reliability if full node behavior were
-  amended to rebroadcast any transactions that the node had expected to
-  have been included in the prior block. Until then, it is the responsibility
-  of every wallet to ensure the presence of transactions of interest in
-  mempools.
+- [LND #7448][] ajoute une nouvelle interface de rediffusion pour
+  soumettre à nouveau les transactions non confirmées, en particulier
+  pour adresser les transactions qui ont été expulsées des mempools.
+  Lorsqu'elle est activée, l'interface de rediffusion soumettra les
+  transactions non confirmées au nœud complet attaché une fois par bloc
+  jusqu'à ce qu'elles soient confirmées. Le LND rediffusait déjà des
+  transactions d'une manière similaire lorsqu'il fonctionnait en mode
+  Neutrino. Comme indiqué dans une question-réponse de Stack Exchange,
+  [Bitcoin Core ne rediffuse actuellement pas les transactions][no rebroadcast],
+  bien qu'il serait souhaitable pour la confidentialité et la fiabilité
+  que le comportement des nœuds complets soit modifié pour rediffuser
+  toutes les transactions que le nœud s'attendait à voir incluses dans
+  le bloc précédent. En attendant, il incombe à chaque portefeuille de
+  s'assurer de la présence des transactions qui l'intéressent dans les
+  pools de mémoire.
 
-- [BDK #793][] is a major restructuring of the library based on the work
-  of the [bdk_core sub-project][].  According to the PR description, it
-  "maintains the existing wallet API as much as possible and adds very
-  little."  Three API endpoints with seemingly minor changes are listed in the PR
-  description.
+- Le [BDK #793][] est une restructuration majeure de la bibliothèque basée
+  sur le travail du [sous-projet bdk_core][].  Selon la description du PR,
+  il "maintient l'API du portefeuille existant autant que possible et ajoute
+  très peu de choses".  Trois points d'extrémité de l'API avec des changements
+  apparemment mineurs sont listés dans la description du PR.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7448,793" %}
 [lnd v0.16.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc3
-[bdk_core sub-project]: https://bitcoindevkit.org/blog/bdk-core-pt1/
+[sous-projet bdk_core]: https://bitcoindevkit.org/blog/bdk-core-pt1/
 [no rebroadcast]: /en/newsletters/2021/03/31/#will-nodes-with-a-larger-than-default-mempool-retransmit-transactions-that-have-been-dropped-from-smaller-mempools
 [xapo lightning blog]: https://www.xapobank.com/blog/another-first-xapo-bank-now-supports-lightning-network-payments
 [github descriptors library]: https://github.com/bitcoinerlab/descriptors
