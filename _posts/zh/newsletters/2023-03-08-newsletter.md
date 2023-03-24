@@ -1,8 +1,8 @@
 ---
 title: 'Bitcoin Optech Newsletter #241'
 permalink: /zh/newsletters/2023/03/08/
-name: 2023-03-08-newsletter
-slug: 2023-03-08-newsletter
+name: 2023-03-08-newsletter-zh
+slug: 2023-03-08-newsletter-zh
 type: newsletter
 layout: newsletter
 lang: zh
@@ -13,17 +13,17 @@ lang: zh
 
 - **OP_VAULT 的替代设计：** Greg Sanders 向 Bitcoin-Dev 邮件列表 [发布了][sanders vault] 一个替代设计，用于提供 `OP_VAULT`/`OP_UNVAULT` 提案的功能 (详见[周报 #234][news234 vault])。他的替代方案是添加三个操作码而不是两个，举个例子：
 
-    - Alice 通过花费 [P2TR 输出][topic taproot] 来将资金存入保险库，该输出包含至少两个 [leafscripts][topic tapscript]，一个可以触发延时解锁过程，另一个可以立即冻结她的资金，例如 `tr(key,{trigger,freeze})`。
+    - *<!--alice-deposits-funds-in-a-vault-->Alice 通过花费 [P2TR 输出][topic taproot] 来将资金存入保险库*，该输出包含至少两个 [leafscripts][topic tapscript]，一个可以触发延时解锁过程，另一个可以立即冻结她的资金，例如 `tr(key,{trigger,freeze})`。
 
-      - *trigger leafscript* 包含她不太信任的授权条件（例如需要来自她的热钱包的签名）和一个 `OP_TRIGGER_FORWARD` 操作码。在她创建此 leafscript 时，她为操作码提供了一个 *花费延迟* 函数，例如 1000 个区块的相对时间锁定（大约 1 周）。
+      - *<!--trigger-leafscript-->trigger leafscript* 包含她不太信任的授权条件（例如需要来自她的热钱包的签名）和一个 `OP_TRIGGER_FORWARD` 操作码。在她创建此 leafscript 时，她为操作码提供了一个 *花费延迟* 函数，例如 1000 个区块的相对时间锁定（大约 1 周）。
 
-      - *freeze leafscript* 包含 Alice 想要指定的任何授权条件（包括根本没有）和 `OP_FORWARD_DESTINATION` 操作码。在她创建这个 leafscript 时，她还选择了她更信任的授权条件（例如需要来自多个冷钱包和硬件签名设备的多个签名）。她以哈希摘要的形式向操作码提供对这些条件的承诺。
+      - *<!--freeze-leafscript-->freeze leafscript* 包含 Alice 想要指定的任何授权条件（包括根本没有）和 `OP_FORWARD_DESTINATION` 操作码。在她创建这个 leafscript 时，她还选择了她更信任的授权条件（例如需要来自多个冷钱包和硬件签名设备的多个签名）。她以哈希摘要的形式向操作码提供对这些条件的承诺。
 
-    - *Alice触发了一个解锁* 是通过将接收到的输出花费到上面的脚本树（将其用作输入）并选择 the trigger leafscript 达成。此时，她向 `OP_TRIGGER_FORWARD` 操作码提供了两个附加参数，即，将接收此输入资金的输出索引以及她希望以后如何使用资金的基于哈希的承诺。操作码验证此交易的指定输出花费 P2TR 输出，此输出脚本树类似于被花费的脚本树，除了 the trigger leafscript 被使用 `OP_CHECKSEQUENCEVERIFY` (CSV) 相对延迟等于先前指定的延迟的脚本替换（例如，1000 个区块）和一个 `OP_FORWARD_OUTPUTS` 操作码，其中包含 Alice 的哈希承诺。重建脚本树的方法类似于更早的 [covenant][topic covenants] 提案，`OP_TAPLEAF_UPDATE_VERIFY` (详见[周报 #166][news166 tluv])。
+    - *<!--alice-triggers-an-unvaulting-->Alice触发了一个解锁* 是通过将接收到的输出花费到上面的脚本树（将其用作输入）并选择 the trigger leafscript 达成。此时，她向 `OP_TRIGGER_FORWARD` 操作码提供了两个附加参数，即，将接收此输入资金的输出索引以及她希望以后如何使用资金的基于哈希的承诺。操作码验证此交易的指定输出花费 P2TR 输出，此输出脚本树类似于被花费的脚本树，除了 the trigger leafscript 被使用 `OP_CHECKSEQUENCEVERIFY` (CSV) 相对延迟等于先前指定的延迟的脚本替换（例如，1000 个区块）和一个 `OP_FORWARD_OUTPUTS` 操作码，其中包含 Alice 的哈希承诺。重建脚本树的方法类似于更早的 [covenant][topic covenants] 提案，`OP_TAPLEAF_UPDATE_VERIFY` (详见[周报 #166][news166 tluv])。
 
-    - *Alice 完成这个解锁* 是通过等到相对时间锁过期然后花费这个解锁的输出，该过程选择带有 `OP_FORWARD_OUTPUTS` 操作码的 tapleaf。操作码验证输出交易的输出金额和脚本的哈希值是否与 Alice 在之前交易中做出的承诺相同。在这种情况下，Alice 已经成功地将资金存入保险库，也就是开始了一个解锁过程，并被迫等待至少 1000 个区块以允许她的监控程序验证她确实想要将资金花费到指定的输出，并完成了花费。
+    - *<!--alice-completes-the-unvaulting-->Alice 完成这个解锁* 是通过等到相对时间锁过期然后花费这个解锁的输出，该过程选择带有 `OP_FORWARD_OUTPUTS` 操作码的 tapleaf。操作码验证输出交易的输出金额和脚本的哈希值是否与 Alice 在之前交易中做出的承诺相同。在这种情况下，Alice 已经成功地将资金存入保险库，也就是开始了一个解锁过程，并被迫等待至少 1000 个区块以允许她的监控程序验证她确实想要将资金花费到指定的输出，并完成了花费。
 
-    - 如果出现问题，*Alice 会冻结资金*。从她将资金存入保险库的那一刻起，直到完成解锁，她可以随时执行此操作。要冻结资金，她只需选择从入库交易或触发交易的输出中花费关于冻结的 leafscript。回想一下，Alice 明确地将 freeze leafscript 放在了入库交易中，并注意，它被启动解锁的触发交易隐式地保留了。
+    - *<!--alice-freezes-the-funds-->* 如果出现问题，*Alice 会冻结资金*。从她将资金存入保险库的那一刻起，直到完成解锁，她可以随时执行此操作。要冻结资金，她只需选择从入库交易或触发交易的输出中花费关于冻结的 leafscript。回想一下，Alice 明确地将 freeze leafscript 放在了入库交易中，并注意，它被启动解锁的触发交易隐式地保留了。
 
   与原始的 `OP_VAULT` 设计相比，这种方法的用户优势之一是 freeze leafscript 可以包含 Alice 想要指定的任何授权条件。在 `OP_VAULT` 提案中，任何知道 Alice 选择的参数的人都可以将她的资金用于冻结脚本。那不是安全问题，但可能很烦人。在 Sanders 的设计中，Alice 可能（例如）需要来自保护力非常轻微的钱包的签名才能启动冻结——这可能足以防止大多数破坏性攻击的负担，但不足以阻止 Alice 快速在紧急情况下冻结她的资金。
 
@@ -34,7 +34,7 @@ lang: zh
 
 ## Bitcoin Core PR 审核俱乐部
 
-*在这个月度部分，我们总结了最近的 [Bitcoin Core PR 审核俱乐部][]会议，强调了一些重要的问题和答案。单击下面的问题以查看会议答案的总结。*
+*在这个月度部分，我们总结了最近的 [Bitcoin Core PR 审核俱乐部][Bitcoin Core PR Review Club]会议，强调了一些重要的问题和答案。单击下面的问题以查看会议答案的总结。*
 
 [Bitcoin-inquisition: Activation logic for testing consensus changes][review club bi-16]
 是 Anthony Towns 的 PR，它在 [Bitcoin Inquisition][] 项目中添加了一种激活和停用软分叉的新方法，旨在在 [signet][topic signet]
@@ -44,7 +44,7 @@ lang: zh
 functions/podcast-callout.md url="pod241 pr review" %}
 
 {% include functions/details-list.md
-  q0="为什么我们要部署未合并到 Bitcoin Core 的共识更改？将代码合并到 Bitcoin Core 中，然后在 signet 上测试它有什么问题（如果有的话）？
+  q0="为什么我们要部署未合并到 Bitcoin Core 的共识更改？将代码合并到 Bitcoin Core 中，然后在 signet 上测试它有什么问题（如果有的话）？"
   a0="讨论了几个原因。我们不能要求主网用户升级他们正在运行的 Core 版本，因此即使在修复错误后，一些用户可能会继续运行有错误的版本。仅依赖于 regtest 使得集成测试第三方软件变得更加困难。将共识更改合并到单独的存储库比合并到 Core 的风险要小得多；添加软分叉逻辑，即使没有激活，也可能会引入影响现有行为的错误。"
   a0link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-37"
 
@@ -80,13 +80,12 @@ functions/podcast-callout.md url="pod241 pr review" %}
 
 ## 重大的文档和代码变更
 
-
-*本周出现的周大变更有：[Bitcoin Core][bitcoin core repo], [Core
-Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], 和 [Lightning BOLTs][bolts repo]。*
+*本周出现的周大变更有：[Bitcoin Core][bitcoin core repo]、[Core
+Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、
+[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet
+Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay
+Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement
+Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 
 - [LND #7462][] 允许创建具有远程签名和使用无状态初始化功能的只监视钱包。{% include functions/podcast-callout.md url="pod241 lnd7462" %}
 
@@ -98,10 +97,10 @@ Proposals (BIPs)][bips repo], 和 [Lightning BOLTs][bolts repo]。*
 [BTCPay 1.8.2]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.8.2
 [podcast post]: /en/podcast-announcement/
 [sanders vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021510.html
-[news234 vault]: /zh/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
+[news234 vault]: /zh/newsletters/2023/01/18/#vault
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [news238 peer storage]: /zh/newsletters/2023/02/15/#core-lightning-5361
-[newsletter #219 bi]: /en/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet
+[newsletter #219 bi]: /zh/newsletters/2022/09/28/#bitcoin-implementation-designed-for-testing-soft-forks-on-signet-signet
 [review club bi-16]: https://bitcoincore.reviews/bitcoin-inquisition-16
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
 [heretical deployments]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
