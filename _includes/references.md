@@ -25,6 +25,7 @@
 [Bitcoin Core PR Review Club]: https://bitcoincore.reviews/
 [BitcoinCore.org]: https://bitcoincore.org/
 [bitcoin core repo]: https://github.com/bitcoin/bitcoin
+[bitcoin inquisition repo]: https://github.com/bitcoin-inquisition/bitcoin
 [bitcoin transcripts]: https://twitter.com/btctranscripts
 [bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf
 [bitcoin.se]: https://bitcoin.stackexchange.com/

@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Proposed new channel construction to improve compatibility with channel factories"
     url: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
 
+  - title: "Improving capital efficiency with multiparty channels in tunable penality channel factories"
+    url: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -1,0 +1,19 @@
+digraph tunable {
+
+rankdir=LR;
+ranksep=0.3;
+splines=ortho;
+
+node [ shape = "box" ];
+
+Funding [ label = "Funding" ]
+
+{
+ node [ style = filled ];
+ A;
+ B;
+}
+
+{A, B} -> Funding;
+
+}
