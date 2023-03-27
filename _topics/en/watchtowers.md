@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Inherited identifiers proposal with alternative simplified watchtower design"
     url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
 
+  - title: "Description of efficient watchtower use in the tunable penalty protocol"
+    url: /en/newsletters/2023/03/29/#fn:keychain
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial
