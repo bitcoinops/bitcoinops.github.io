@@ -17,7 +17,7 @@ lang: zh
 
       - *<!--trigger-leafscript-->trigger leafscript* 包含她不太信任的授权条件（例如需要来自她的热钱包的签名）和一个 `OP_TRIGGER_FORWARD` 操作码。在她创建此 leafscript 时，她为操作码提供了一个 *花费延迟* 函数，例如 1000 个区块的相对时间锁定（大约 1 周）。
 
-      - *<!--freeze-leafscript-->freeze leafscript* 包含 Alice 想要指定的任何授权条件（包括根本没有）和 `OP_FORWARD_DESTINATION` 操作码。在她创建这个 leafscript 时，她还选择了她更信任的授权条件（例如需要来自多个冷钱包和硬件签名设备的多个签名）。她以哈希摘要的形式向操作码提供对这些条件的承诺。
+      - *<!--freeze-leafscript-->freeze leafscript* 包含 Alice 想要指定的任何授权条件（包括没有任何条件）和 `OP_FORWARD_DESTINATION` 操作码。在她创建这个 leafscript 时，她还选择了她更信任的授权条件（例如需要来自多个冷钱包和硬件签名设备的多个签名）。她以哈希摘要的形式向操作码提供对这些条件的承诺。
 
     - *<!--alice-triggers-an-unvaulting-->Alice触发了一个解锁* 是通过将接收到的输出花费到上面的脚本树（将其用作输入）并选择 the trigger leafscript 达成。此时，她向 `OP_TRIGGER_FORWARD` 操作码提供了两个附加参数，即，将接收此输入资金的输出索引以及她希望以后如何使用资金的基于哈希的承诺。操作码验证此交易的指定输出花费 P2TR 输出，此输出脚本树类似于被花费的脚本树，除了 the trigger leafscript 被使用 `OP_CHECKSEQUENCEVERIFY` (CSV) 相对延迟等于先前指定的延迟的脚本替换（例如，1000 个区块）和一个 `OP_FORWARD_OUTPUTS` 操作码，其中包含 Alice 的哈希承诺。重建脚本树的方法类似于更早的 [covenant][topic covenants] 提案，`OP_TAPLEAF_UPDATE_VERIFY` (详见[周报 #166][news166 tluv])。
 
@@ -25,10 +25,9 @@ lang: zh
 
     - *<!--alice-freezes-the-funds-->* 如果出现问题，*Alice 会冻结资金*。从她将资金存入保险库的那一刻起，直到完成解锁，她可以随时执行此操作。要冻结资金，她只需选择从入库交易或触发交易的输出中花费关于冻结的 leafscript。回想一下，Alice 明确地将 freeze leafscript 放在了入库交易中，并注意，它被启动解锁的触发交易隐式地保留了。
 
-  与原始的 `OP_VAULT` 设计相比，这种方法的用户优势之一是 freeze leafscript 可以包含 Alice 想要指定的任何授权条件。在 `OP_VAULT` 提案中，任何知道 Alice 选择的参数的人都可以将她的资金用于冻结脚本。那不是安全问题，但可能很烦人。在 Sanders 的设计中，Alice 可能（例如）需要来自保护力非常轻微的钱包的签名才能启动冻结——这可能足以防止大多数破坏性攻击的负担，但不足以阻止 Alice 快速在紧急情况下冻结她的资金。
+  与原始的 `OP_VAULT` 设计相比，这种方法的用户优势之一是 freeze leafscript 可以包含 Alice 想要指定的任何授权条件。在 `OP_VAULT` 提案中，任何知道 Alice 选择的参数的人都可以将她的资金用于冻结脚本。那不是安全问题，但可能很烦人。在 Sanders 的设计中，Alice 可能（例如）需要来自轻度保护的钱包的签名启动冻结——这可能足以防止大多数破坏性攻击的麻烦，但不足以阻止 Alice 快速在紧急情况下冻结她的资金。
 
-  其他几个优势旨在使共识强制的
-  [保管协议][topic vaults] 更容易理解和验证是否安全。在我们写完上面的内容之后，`OP_VAULT` 提案的作者 James O'Beirne 对 Sanders 的想法做出了积极的回应。O'Beirne 还对我们将在未来的周报中描述的其他更改有想法。{% include functions/podcast-callout.md url="pod241 op_vault" %}
+  其他几个优势旨在使共识强制的[保管协议][topic vaults] 更容易理解和验证是否安全。在我们写完上面的内容之后，`OP_VAULT` 提案的作者 James O'Beirne 对 Sanders 的想法做出了积极的回应。O'Beirne 还对我们将在未来的周报中描述的其他更改有想法。{% include functions/podcast-callout.md url="pod241 op_vault" %}
 
 - **New Optech 播客：** Twitter Spaces 上每周一次的 Optech Audio Recap 现已作为播客提供。每一集都将在所有流行的播客平台和 Optech 网站上作为文字记录提供。有关更多详细信息，包括为什么我们认为这是 Optech 改善比特币技术交流的使命的重要一步，请参阅我们的 [博客文章][podcast post]。{% include functions/podcast-callout.md url="pod241 podcast" %}
 
@@ -36,11 +35,9 @@ lang: zh
 
 *在这个月度部分，我们总结了最近的 [Bitcoin Core PR 审核俱乐部][Bitcoin Core PR Review Club]会议，强调了一些重要的问题和答案。单击下面的问题以查看会议答案的总结。*
 
-[Bitcoin-inquisition: Activation logic for testing consensus changes][review club bi-16]
-是 Anthony Towns 的 PR，它在 [Bitcoin Inquisition][] 项目中添加了一种激活和停用软分叉的新方法，旨在在 [signet][topic signet]
-上运行并用于测试。该项目在 [周报 #219][newsletter #219 bi]中有介绍。
+[Bitcoin-inquisition: Activation logic for testing consensus changes][review club bi-16]是 Anthony Towns 的 PR，它在 [Bitcoin Inquisition][] 项目中添加了一种激活和停用软分叉的新方法，旨在在 [signet][topic signet]上运行并用于测试。该项目在 [周报 #219][newsletter #219 bi]中有介绍。
 
-具体来说，这个 PR 替换了 [BIP9][] 的区块版本位语义，取而代之的称为 [Heretical Deployments][]。与主网上的共识和中继更改相比——激活起来既困难又耗时，需要仔细建立（人类）共识和精心设计的 [soft fork activation][topic soft fork activation] 机制 -- 在测试网络上激活这些更改可以简化。PR 还实现了一种方法来停用被证明是有问题或不需要的更改，这是与主网的主要背离。{% include
+具体来说，这个 PR 替换了 [BIP9][] 的区块版本位语义，取而代之的称为 [Heretical Deployments][]。与主网上的共识和中继更改相比——激活起来既困难又耗时，需要仔细建立（人类）共识和精心设计的 [soft fork activation][topic soft fork activation] 机制 -- 在测试网络上激活这些更改可以简化。PR 还实现了一种方法来停用被证明是有问题或不受欢迎的更改，这是与主网的主要不同。{% include
 functions/podcast-callout.md url="pod241 pr review" %}
 
 {% include functions/details-list.md
@@ -52,7 +49,7 @@ functions/podcast-callout.md url="pod241 pr review" %}
       (`DEFINED`, `STARTED`, `LOCKED_IN`, `ACTIVE`, and `FAILED`),
       的有限状态机状态移动，但在`ACTIVE` 之后有一个额外的状态称为 `DEACTIVATING`
       (接下来是最终状态，`ABANDONED`)。`DEACTIVATING` 状态的目的是什么？"
-  a1="它让用户有机会提取他们可能锁定在软分叉中的资金。一旦分叉被停用或更换，他们可能根本无法使用这些资金——即使他们是任何人都可以花的；如果您的交易因非标准而被拒绝，那将不起作用。与其说担心的是永久损失有限的 signet 资金，不如说是担心 UTXO 集可能会膨胀。"
+  a1="它让用户有机会提取他们可能锁定在软分叉中的资金。一旦分叉被停用或更换，他们可能根本无法使用这些资金——即使他们是任何人都可以花的；如果你的交易因非标准而被拒绝，那将不起作用。与其说担心的是永久损失有限的 signet 资金，不如说是担心 UTXO 集可能会膨胀。"
   a1link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-92"
 
   q2="为什么 PR 删除了 `min_activation_height`?"
@@ -74,7 +71,7 @@ functions/podcast-callout.md url="pod241 pr review" %}
 - [LDK v0.0.114][] 是该库的新版本，用于构建支持 LN 的钱包和应用程序。它修复了几个与安全相关的错误，并包括解析 [BOLT12 发票][topic
   offers]的能力。{% include functions/podcast-callout.md url="pod241 ldk" %}
 
-- [BTCPay 1.8.2][] 是这款流行的比特币自托管支付处理软件的最新版本。1.8.0 版的发行说明说，“这个版本带来了自定义结账表格、商店品牌选项、重新设计的销售点键盘视图、新的通知图标和地址标签。” {% include functions/podcast-callout.md url="pod241 btcpay" %}
+- [BTCPay 1.8.2][] 是这款流行的比特币自托管支付处理软件的最新版本。1.8.0 版的发行说明说，“这个版本带来了自定义结账表、商店品牌选项、重新设计的 PoS 键盘视图、新的通知图标和地址标签。” {% include functions/podcast-callout.md url="pod241 btcpay" %}
 
 - [LND v0.16.0-beta.rc2][] 是这个流行的 LN 实现的新主要版本的候选版本。{% include functions/podcast-callout.md url="pod241 lnd" %}
 
@@ -87,7 +84,7 @@ Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay
 Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement
 Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [LND #7462][] 允许创建具有远程签名和使用无状态初始化功能的只监视钱包。{% include functions/podcast-callout.md url="pod241 lnd7462" %}
+- [LND #7462][] 允许创建具有远程签名和使用无状态初始化功能的观察钱包。{% include functions/podcast-callout.md url="pod241 lnd7462" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7462" %}
