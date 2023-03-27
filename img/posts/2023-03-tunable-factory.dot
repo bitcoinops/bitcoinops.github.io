@@ -1,0 +1,84 @@
+digraph tunable {
+
+rankdir=LR;
+ranksep=0.9;
+//splines=ortho;
+
+node [ shape = "box" ];
+
+Funding [ label = "Funding", style = filled ];
+IndividualA [ label = "A", style = filled ];
+IndividualB [ label = "B", style = filled ];
+
+StateA [ label = <State<sub>0</sub>> ];
+StateAA0 [ label = <State<sub>0.0</sub>> ];
+StateAA1 [ label = <State<sub>0.0</sub>> ];
+StateB [ label = <State<sub>0</sub>> ];
+StateBB0 [ label = <State<sub>0.0</sub>> ];
+StateBB1 [ label = <State<sub>0.0</sub>> ];
+
+{ //hidden
+  node [ shape = "none", label = "", width=0.001, height=0.001 ];
+  hidden_funding_spend;
+  hidden_funding_spend2;
+  hidden_funding_spend3;
+  hidden_prestate_a;
+  hidden_prestate_b;
+}
+
+{
+  CommitmentA [ label = <Commitment<sub>A</sub>> ];
+  CommitmentAA0 [ label = <Commitment<sub>A.A</sub>> ];
+  CommitmentAA1 [ label = <Commitment<sub>A.A</sub>> ];
+  CommitmentB [ label = <Commitment<sub>B</sub>> ];
+  CommitmentBB0 [ label = <Commitment<sub>B.B</sub>> ];
+  CommitmentBB1 [ label = <Commitment<sub>B.B</sub>> ];
+}
+
+OutputAtoAB [ label = "AB" ];
+
+//Not confirmed
+{
+  node [ shape = none, width=0.001, height=0.001, label = "" ];
+  OutputAtoC [ label = "C" ]; OutputAtoD [ label = "D" ];
+  OutputBtoC [ label = "C" ]; OutputBtoD [ label = "D" ];
+  OutputAA0toA [ label = "A" ]; OutputAA0toB [ label = "B" ];
+  OutputAA1toA [ label = "A" ]; OutputAA1toB [ label = "B" ];
+  OutputBB0toA [ label = "A" ]; OutputBB0toB [ label = "B" ];
+  OutputBB1toA [ label = "A" ]; OutputBB1toB [ label = "B" ];
+}
+
+OutputBtoAB [ label = "AB" ];
+
+Funding -> hidden_funding_spend [ dir=none, style = "dotted" ];
+hidden_funding_spend -> {CommitmentA, CommitmentB} [ style = "dotted" ];
+
+
+IndividualA -> StateA -> CommitmentA;
+IndividualA -> hidden_prestate_a [ style = "dotted", dir=none ];
+hidden_prestate_a -> { StateAA0, StateAA1} [ style = "dotted" ];
+StateAA0 -> CommitmentAA0;
+StateAA1 -> CommitmentAA1;
+
+IndividualB -> StateB -> CommitmentB;
+IndividualB -> hidden_prestate_b [ style = "dotted", dir=none ];
+hidden_prestate_b -> { StateBB0, StateBB1} [ style = "dotted" ];
+StateBB0 -> CommitmentBB0;
+StateBB1 -> CommitmentBB1;
+
+{
+  CommitmentA -> {OutputAtoAB, OutputAtoC, OutputAtoD};
+  CommitmentB -> {OutputBtoAB, OutputBtoC, OutputBtoD};
+}
+
+OutputAtoAB -> hidden_funding_spend2 [ dir=none, style = "dotted" ];
+OutputBtoAB -> hidden_funding_spend3 [ dir=none, style = "dotted" ];
+
+hidden_funding_spend2 -> {CommitmentAA0, CommitmentBB0} [ style = dotted ];
+hidden_funding_spend3 -> {CommitmentAA1, CommitmentBB1} [ style = dotted ];
+
+CommitmentAA0 -> {OutputAA0toA, OutputAA0toB};
+CommitmentAA1 -> {OutputAA1toA, OutputAA1toB};
+CommitmentBB0 -> {OutputBB0toA, OutputBB0toB};
+CommitmentBB1 -> {OutputBB1toA, OutputBB1toB};
+}
