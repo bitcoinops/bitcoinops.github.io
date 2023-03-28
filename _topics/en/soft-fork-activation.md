@@ -142,6 +142,9 @@ optech_mentions:
   - title: "PR Review Club meeting about Heretical Deployments used in Bitcoin Inquisition"
     url: /en/newsletters/2023/03/08/#bitcoin-core-pr-review-club
 
+  - title: "Question about why Bitcoin Core hasn't buried the taproot deployment"
+    url: /en/newsletters/2023/03/29/#why-isn-t-the-taproot-deployment-buried-in-bitcoin-core
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds

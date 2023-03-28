@@ -199,7 +199,31 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why isn't the taproot deployment buried in Bitcoin Core?]({{bse}}117569)
+  Andrew Chow explains the rationale for the taproot soft fork
+  [deployment][topic soft fork activation] not being [buried][BIP90] as [others
+  have][bitcoin buried deployments].
+
+- [What restrictions does the version field in the block header have?]({{bse}}117530)
+  Murch notes an increase in [blocks][explorer block 779960] mined using [overt
+  ASICBoost][topic ASICBoost], lists restrictions on the version field, and
+  walks through examples of [block header version fields][FCAT block header blog].
+
+- [What is the relation between transaction data and ids?]({{bse}}117453)
+  Pieter Wuille explains the legacy transaction serialization format covered by
+  `txid` identifier, the witness extended serialization format covered by the `hash` and
+  `wtxid` identifiers, and points out in a [separate answer][se117577] that
+  hypothetical additional transaction data would be covered by the `hash` identifier.
+
+- [Can I request tx messages from other peers?]({{bse}}117546)
+  User RedGrittyBrick points to resources explaining the [performance][wiki getdata] and
+  [privacy][Bitcoin Core #18861] reasons that arbitrary requests for
+  transactions from peers is not supported by Bitcoin Core's P2P layer.
+
+- [Eltoo: Does the relative locktime on the first UTXO set the lifetime of the channel?]({{bse}}117468)
+  Murch confirms that the question's example [eltoo][topic eltoo]-constructed LN channel
+  has a limited lifetime but points to mitigations from the [eltoo
+  whitepaper][] that keep the timeouts from expiring.
 
 ## Releases and release candidates
 
@@ -336,7 +360,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     about spending from it).
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27278,26531,5898,5986,2616,2024,1737,4608,1425,22" %}
+{% include linkers/issues.md v=2 issues="27278,26531,5898,5986,2616,2024,1737,4608,1425,22,18861" %}
 [lnd v0.16.0-beta.rc5]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc5
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
 [rust bitcoin 0.30.0]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/bitcoin-0.30.0
@@ -358,3 +382,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [rust-bitcoin.org]: https://rust-bitcoin.org/
 [rb rn]: https://github.com/harding/rust-bitcoin/blob/bbda9599fa32936f31472620d014893fda17d8c3/bitcoin/CHANGELOG.md#030---2023-03-21-the-first-crate-smashing-release
 [news243 bdk]: /en/newsletters/2023/03/22/#bdk-793
+[bitcoin buried deployments]: https://github.com/bitcoin/bitcoin/blob/master/src/consensus/params.h#L19
+[explorer block 779960]: https://blockstream.info/block/00000000000000000003a337a676b0101f3f7ef7dcbc01debb69f85c6da04dcf?expand
+[FCAT block header blog]: https://medium.com/fcats-blockchain-incubator/understanding-the-bitcoin-blockchain-header-a2b0db06b515#b9ba
+[se117577]: https://bitcoin.stackexchange.com/a/117577/87121
+[wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
+[eltoo whitepaper]: https://blockstream.com/eltoo.pdf#page=15
