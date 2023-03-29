@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Description of efficient watchtower use in the tunable penalty protocol"
     url: /en/newsletters/2023/03/29/#fn:keychain
 
+  - title: "Watchtower accountability proofs"
+    url: /en/newsletters/2023/04/05/#watchtower-accountability-proofs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial
