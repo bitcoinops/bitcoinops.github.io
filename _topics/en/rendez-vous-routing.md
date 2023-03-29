@@ -9,6 +9,7 @@ shortname: rv routing
 aliases:
   - Hidden destinations
   - Blinded paths
+  - Route blinding
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -51,6 +52,9 @@ optech_mentions:
 
   - title: "Eclair #2482 allows sending payments using blinded routes"
     url: /en/newsletters/2023/01/04/#eclair-2482
+
+  - title: "BOLTs #765 adds route blinding to the LN specification"
+    url: /en/newsletters/2023/04/05/#bolts-765
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

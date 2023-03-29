@@ -25,6 +25,7 @@ properties:
       type: string
       enum:  ## Please keep in alphabetical order.
         - Bandwidth Reduction
+        - Backup and Recovery
         - Consensus Enforcement
         - Contract Protocols
         - Developer Tools
