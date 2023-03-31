@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine décrit une proposition visant à améliorer
-l'efficacité du capital sur LN en utilisant des pénalités accordables.
+l'efficacité du capital sur LN en utilisant des pénalités ajustables.
 Vous y trouverez également nos sections habituelles avec des résumés des
 principales questions et réponses du Bitcoin Stack Exchange, des annonces
 de nouvelles versions et de versions candidates, et des descriptions des
@@ -20,7 +20,7 @@ les plus répandus.
 
 ## Nouvelles
 
-- **Prévenir les pertes de capitaux grâce aux usines à canaux et aux canaux multipartites :**
+- **Prévenir les pertes de capitaux grâce aux usines à canaux (channel factories) et aux canaux multipartites :**
   John Law a [posté][law stranded post] sur la liste de diffusion Lightning-Dev
   le résumé d'un [article][law stranded paper] qu'il a écrit. Il décrit comment
   les nœuds toujours disponibles peuvent continuer à utiliser leurs fonds pour
@@ -41,7 +41,7 @@ les plus répandus.
     qui dépense 50 millions de sats pour chacun d'entre eux (100 millions au
     total) vers une _sortie de financement_ qui nécessitera la coopération de
     chacun d'entre eux pour être dépensée. Dans les schémas ci-dessous, les
-    transactions confirmées sont représentées en grisé.
+    transactions confirmées sont grisées.
 
     {:.center}
     ![Alice and Bob create the funding transaction](/img/posts/2023-03-tunable-funding.dot.png)
@@ -103,8 +103,8 @@ les plus répandus.
     sa transaction d'état, en payant une partie ou la totalité du montant de
     la pénalité en frais de transaction. Comme cette sortie est la même que
     celle dont Bob a besoin pour diffuser plus tard la transaction d'engagement
-    qui lui rapporte les 10 millions de sat supplémentaires, il sera empêché
-    de réclamer ces fonds si la transaction créée par Alice est confirmée.
+    qui lui rapporte les 10 millions de sat supplémentaires, il ne pourra pas
+    réclamer ces fonds si la transaction créée par Alice est confirmée.
     Lorsque Bob est bloqué, Alice est la seule à pouvoir publier unilatéralement
     le dernier état de la chaîne ; Alice et Bob peuvent également procéder à tout
     moment à une fermeture de canal coopérative.
@@ -235,7 +235,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 
 - [Eltoo : Le temps de verrouillage relatif du premier UTXO détermine-t-il la durée de vie du canal ?]({{bse}}117468)
   Murch confirme que le canal LN [eltoo][topic eltoo] construit dans
-  l'exemple  de la question a une durée de vie limitée, mais indique
+  l'exemple de la question a une durée de vie limitée, mais indique
   que des mesures d'atténuation du [livre blanc eltoo][] permettent
   d'éviter que les délais n'expirent.
 
@@ -270,7 +270,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 
 - [Bitcoin Core #27278][] commence à enregistrer par défaut lorsqu'un
   en-tête pour un nouveau bloc est reçu, sauf si le nœud est en
-  téléchargement de bloc initial (IBD).  Cette mesure a été [inspirée][obeirne
+  téléchargement de bloc initial (IBD). Cette mesure a été [inspirée][obeirne
   selfish] par plusieurs opérateurs de nœuds qui ont remarqué que trois
   blocs étaient arrivés très près l'un de l'autre, les deux derniers
   ayant réorganisé le premier bloc de la meilleure chaîne de blocs.
