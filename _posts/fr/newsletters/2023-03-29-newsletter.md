@@ -86,7 +86,7 @@ les plus répandus.
     augmentant le solde d'Alice de 10 millions de dollars et en diminuant
     le solde de Bob du même montant. L'état {{S1}} ressemble à l'état initial
     ({{S0}}), mais pour le mettre en œuvre, l'état précédent est révoqué par
-    chaque partie qui donne à l'autre un témoin[^chaîne de clés] pour dépenser
+    chaque partie qui donne à l'autre un témoin[^keychain] pour dépenser
     la première sortie de leurs transactions d'état respectives pour l'état
     précédent ({{S0}}). Aucune des parties ne peut utiliser le témoin de
     l'autre car les transactions d'état {{S0}} ne contiennent pas encore
