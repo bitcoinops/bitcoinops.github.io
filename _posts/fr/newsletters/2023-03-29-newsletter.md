@@ -213,7 +213,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
   n'est pas [enterré][BIP90] comme [d'autres l'ont fait][bitcoin buried deployments].
 
 - [Quelles sont les restrictions applicables au champ "version" de l'en-tête du bloc ?]({{bse}}117530)
-  Murch note une augmentation des [blocs][bloc explorateur 779960] extraits
+  Murch note une augmentation des [blocs][explorer block 779960] extraits
   à l'aide de [overt ASICBoost][topic ASICBoost], énumère les restrictions
   sur le champ de version et présente des exemples de [champs de version
   d'en-tête de bloc][FCAT block header blog].
