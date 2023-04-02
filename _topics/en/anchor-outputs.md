@@ -180,7 +180,7 @@ require all other outputs in the commitment transaction to have their
 scripts encumbered by a `1 OP_CHECKSEQUENCEVERIFY` (CSV) condition
 that prevents them from being spent for at least one block.
 
-To be fully effective, the protocol also depends of Bitcoin full nodes
+To be fully effective, the protocol also depends on Bitcoin full nodes
 implementing [package relay][topic package relay] so that there's a
 way to CPFP fee bump commitment transactions even if their feerates
 are below a node's minimum relay fee.  But until package relay is

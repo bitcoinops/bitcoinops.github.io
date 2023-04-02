@@ -86,6 +86,12 @@ optech_mentions:
   - title: "Proposal for `OP_VAULT` and `OP_UNVAULT` opcodes"
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
+  - title: "Draft BIP available for `OP_VAULT` and `OP_UNVAULT` opcodes"
+    url: /en/newsletters/2023/02/22/#draft-bip-for-op-vault
+
+  - title: "Proposal for alternative design for `OP_VAULT` inspired by `OP_TLUV`"
+    url: /en/newsletters/2023/03/08/#alternative-design-for-op-vault
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

@@ -1,0 +1,36 @@
+digraph tunable {
+
+rankdir=LR;
+ranksep=0.9;
+splines=ortho;
+
+node [ shape = "box" ];
+
+IndividualB [ label = "B", style = filled ];
+IndividualA [ label = "A", style = filled ];
+Funding [ label = "Funding", style = filled ];
+
+StateA [ label = <State<sub>0</sub>>, style = filled ];
+
+//hidden_funding_spend [ shape = "none", label = "", width=0.001, height=0.001 ];
+
+CommitmentA [ label = <Commitment<sub>A</sub>>, style = filled, height=0.9 ];
+
+//Not confirmed
+{
+  node [ shape = none, width=0.001, height=0.001, label = "" ];
+  OutputAtoA [ label = "A" ]; OutputAtoB [ label = "B" ];
+}
+
+
+//Funding -> hidden_funding_spend [ dir=none, style = "dotted" ];
+Funding -> CommitmentA [ minlen=2 ];
+
+
+IndividualA -> StateA -> CommitmentA;
+
+{
+  CommitmentA -> {OutputAtoA, OutputAtoB} [ len = 0.1 ];
+}
+
+}

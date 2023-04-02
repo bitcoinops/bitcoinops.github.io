@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Serverless payjoin proposal"
     url: /en/newsletters/2023/02/01/#serverless-payjoin-proposal
 
+  - title: "BTCPay Server #4600 updates its payjoin implementation to avoid creating unnecessary inputs"
+    url: /en/newsletters/2023/02/15/#btcpay-server-4600
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79

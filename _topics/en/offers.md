@@ -80,6 +80,12 @@ optech_mentions:
   - title: "Core Lightning #5892 updates CLN’s implementation of the offers protocol"
     url: /en/newsletters/2023/02/08/#core-lightning-5892
 
+  - title: "Eclair #2479 adds support for paying offers"
+    url: /en/newsletters/2023/02/22/#eclair-2479
+
+  - title: "LDK #1977 allows serializing and deserializing offers"
+    url: /en/newsletters/2023/03/01/#ldk-1977
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

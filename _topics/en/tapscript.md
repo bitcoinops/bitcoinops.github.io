@@ -82,6 +82,9 @@ optech_mentions:
   - title: Discussion about lowering tapscript resource limits
     url: /en/newsletters/2022/10/19/#block-parsing-bug-affecting-btcd-and-lnd
 
+  - title: "Description of tapscript signature malleability and proposed fix for SIGHASH_ANYPREVOUT"
+    url: /en/newsletters/2023/02/15/#tapscript-signature-malleability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

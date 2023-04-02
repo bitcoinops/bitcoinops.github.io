@@ -87,6 +87,7 @@ test-after-build: build
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	! find _site/ -name '*.html' | xargs grep '\[^' | grep .
+	! find _site/ -name '*.html' | xargs grep '\[\]' | grep -v skip-test | grep .
 
 	## Check for duplicate anchors
 	! find _site/ -name '*.html' | while read file ; do \

@@ -138,6 +138,9 @@ optech_mentions:
   - title: "Continued RBF discussion, including number of full-RBF nodes, RBF-FSS, and RBF motivation"
     url: /en/newsletters/2023/01/04/#continued-rbf-discussion
 
+  - title: "Bitcoin Core #25344 updates the fee-bumping RPCs to allow altering replacement outputs"
+    url: /en/newsletters/2023/02/22/#bitcoin-core-25344
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ

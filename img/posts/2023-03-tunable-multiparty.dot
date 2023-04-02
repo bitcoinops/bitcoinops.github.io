@@ -1,0 +1,56 @@
+digraph tunable {
+
+rankdir=LR;
+ranksep=0.9;
+nodesep=0.05;
+//splines=ortho;
+
+node [ shape = "box" ];
+
+Funding [ label = "Funding", style = filled ];
+IndividualA [ label = "A", style = filled ];
+IndividualB [ label = "B", style = filled ];
+IndividualC [ label = "C", style = filled ];
+IndividualD [ label = "D", style = filled ];
+
+StateA [ label = <State<sub>0</sub>> ];
+StateB [ label = <State<sub>0</sub>> ];
+StateC [ label = <State<sub>0</sub>> ];
+StateD [ label = <State<sub>0</sub>> ];
+
+hidden_funding_spend [ shape = "none", label = "", width=0.001, height=0.001 ];
+
+{
+  node [ height = 0.5 ];
+  CommitmentA [ label = <Commitment<sub>A</sub>> ];
+  CommitmentB [ label = <Commitment<sub>B</sub>> ];
+  CommitmentC [ label = <Commitment<sub>C</sub>> ];
+  CommitmentD [ label = <Commitment<sub>D</sub>> ];
+}
+
+//Not confirmed
+{
+  node [ shape = none, width=0.001, height=0.001, label = "" ];
+  OutputAtoA [ label = "A" ]; OutputAtoB [ label = "B" ]; OutputAtoC [ label = "C" ]; OutputAtoD [ label = "D" ];
+  OutputBtoA [ label = "A" ]; OutputBtoB [ label = "B" ]; OutputBtoC [ label = "C" ]; OutputBtoD [ label = "D" ];
+  OutputCtoA [ label = "A" ]; OutputCtoB [ label = "B" ]; OutputCtoC [ label = "C" ]; OutputCtoD [ label = "D" ];
+  OutputDtoA [ label = "A" ]; OutputDtoB [ label = "B" ]; OutputDtoC [ label = "C" ]; OutputDtoD [ label = "D" ];
+}
+
+Funding -> hidden_funding_spend [ dir=none, style = "dotted" ];
+hidden_funding_spend -> {CommitmentA, CommitmentB, CommitmentC, CommitmentD} [ style = "dotted" ];
+
+
+IndividualA -> StateA -> CommitmentA;
+IndividualB -> StateB -> CommitmentB;
+IndividualC -> StateC -> CommitmentC;
+IndividualD -> StateD -> CommitmentD;
+
+{
+  CommitmentA -> {OutputAtoA, OutputAtoB, OutputAtoC, OutputAtoD};
+  CommitmentB -> {OutputBtoA, OutputBtoB, OutputBtoC, OutputBtoD};
+  CommitmentC -> {OutputCtoA, OutputCtoB, OutputCtoC, OutputCtoD};
+  CommitmentD -> {OutputDtoA, OutputDtoB, OutputDtoC, OutputDtoD};
+}
+
+}

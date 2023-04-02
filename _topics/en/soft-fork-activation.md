@@ -139,6 +139,12 @@ optech_mentions:
   - title: History of how various soft fork proposals were tested prior to activation
     url: /en/newsletters/2022/10/26/#what-is-the-history-on-how-previous-soft-forks-were-tested-prior-to-being-considered-for-activation
 
+  - title: "PR Review Club meeting about Heretical Deployments used in Bitcoin Inquisition"
+    url: /en/newsletters/2023/03/08/#bitcoin-core-pr-review-club
+
+  - title: "Question about why Bitcoin Core hasn't buried the taproot deployment"
+    url: /en/newsletters/2023/03/29/#why-isn-t-the-taproot-deployment-buried-in-bitcoin-core
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds
