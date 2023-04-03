@@ -106,7 +106,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [LDK #2125][] adds helper functions to determine the amount of
   time until an invoice expires.
 
-- [BTCPay Server #4826][] Hooks for Zaps, see also https://github.com/btcpayserver/btcpayserver/discussions/4642 FIXME:Xekyo
+- [BTCPay Server #4826][] allows service hooks to create and retrieve [LNURL][]
+  invoices.  This was done to add support for NIP-57 zaps to BTCPay Server’s
+  lightning address features.
 
 - [BTCPay Server #4782][] adds [proof of payment][topic proof of
   payment] on the receipt page for each payment.  For onchain payments,
