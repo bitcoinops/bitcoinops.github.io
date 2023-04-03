@@ -103,7 +103,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   choosing to overpay by a total of 100 sats in order to use her
   preferred route.
 
-- [LDK #2125][] Add helper functions for invoice expiry FIXME:glozow
+- [LDK #2125][] adds helper functions to determine the amount of
+  time until an invoice expires.
 
 - [BTCPay Server #4826][] Hooks for Zaps, see also https://github.com/btcpayserver/btcpayserver/discussions/4642 FIXME:Xekyo
 
