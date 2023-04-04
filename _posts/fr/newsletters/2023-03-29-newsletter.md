@@ -403,7 +403,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [news238 libwally]: /en/newsletters/2023/02/15/#libwally-0-8-8-released
 [rust-bitcoin.org]: https://rust-bitcoin.org/
 [rb rn]: https://github.com/harding/rust-bitcoin/blob/bbda9599fa32936f31472620d014893fda17d8c3/bitcoin/CHANGELOG.md#030---2023-03-21-the-first-crate-smashing-release
-[news243 bdk]: /en/newsletters/2023/03/22/#bdk-793
+[news243 bdk]: /fr/newsletters/2023/03/22/#bdk-793
 [bitcoin buried deployments]: https://github.com/bitcoin/bitcoin/blob/master/src/consensus/params.h#L19
 [explorer block 779960]: https://blockstream.info/block/00000000000000000003a337a676b0101f3f7ef7dcbc01debb69f85c6da04dcf?expand
 [FCAT block header blog]: https://medium.com/fcats-blockchain-incubator/understanding-the-bitcoin-blockchain-header-a2b0db06b515#b9ba
