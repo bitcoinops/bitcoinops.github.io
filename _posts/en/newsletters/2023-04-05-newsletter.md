@@ -74,7 +74,9 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Core Lightning #5967][] add listclosedchannels FIXME:bitschmidty
+- [Core Lightning #5967][] adds a `listclosedchannels` RPC that provides data
+  about the node's closed channels, including the cause of channel being closed.
+  Information about old peers is also retained now.
 
 - [Eclair #2566][] adds support for accepting offers.  Offers must be
   registered by a plugin that provides a handler for responding to
