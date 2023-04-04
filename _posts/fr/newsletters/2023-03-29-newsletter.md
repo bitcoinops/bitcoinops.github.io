@@ -400,7 +400,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [libwally]: https://github.com/ElementsProject/libwally-core
 [news128 psbt2]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [tunable penalties]: https://github.com/JohnLaw2/ln-tunable-penalties
-[news238 libwally]: /en/newsletters/2023/02/15/#libwally-0-8-8-released
+[news238 libwally]: /fr/newsletters/2023/02/15/#sortie-de-libwally-0-8-8
 [rust-bitcoin.org]: https://rust-bitcoin.org/
 [rb rn]: https://github.com/harding/rust-bitcoin/blob/bbda9599fa32936f31472620d014893fda17d8c3/bitcoin/CHANGELOG.md#030---2023-03-21-the-first-crate-smashing-release
 [news243 bdk]: /fr/newsletters/2023/03/22/#bdk-793
