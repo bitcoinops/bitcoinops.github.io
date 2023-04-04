@@ -391,7 +391,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [law factories]: https://raw.githubusercontent.com/JohnLaw2/ln-efficient-factories/main/efficientfactories10.pdf
 [news206 msat]: /en/newsletters/2022/06/29/#core-lightning-5306
 [rb sec]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/SECURITY.md
-[news239 codex32]: /en/newsletters/2023/02/22/#proposed-bip-for-codex32-seed-encoding-scheme
+[news239 codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-systeme-d-encodage-des-semences-codex32
 [law stranded post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003886.html
 [law stranded paper]: https://github.com/JohnLaw2/ln-hierarchical-channels
 [obeirne selfish]: https://twitter.com/jamesob/status/1637198454899220485
