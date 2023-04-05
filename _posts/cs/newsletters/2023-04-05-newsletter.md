@@ -26,7 +26,7 @@ popisem významných změn v populárních bitcoinových páteřních projektech
   Nejjednodušším řešením by bylo, aby měla strážní věž všeobecně známý veřejný
   klíč, jehož soukromý klíč by generoval podpisy akceptovaných podkladů pro
   detekci narušení. V případě selhání strážní věže zabránit narušení protokolu
-  by mohla Alice tato data a podpis zveřejnit. Avšak, jak Delgato poznamenává,
+  by mohla Alice tato data a podpis zveřejnit. Avšak, jak Delgado poznamenává,
   má toto řešení svá úskalí:
 
     - *Požadavky na úložiště*: tento mechanismus by po Alici vyžadoval
@@ -38,11 +38,11 @@ popisem významných změn v populárních bitcoinových páteřních projektech
       být v rozporu s jejich potřebami, např. pokud jsou jejich služby
       účtovány za určité období.
 
-  Delgato navrhuje použití kryptografických akumulátorů, které by poskytly
+  Delgado navrhuje použití kryptografických akumulátorů, které by poskytly
   praktické řešení obou problémů. Akumulátory umožňují v kompaktní formě
   prokázat, že určitý prvek je součástí velké množiny prvků a nevyžadují
   po každém vložení nového prvku přepočítání celé datové struktury. Některé
-  akumulátory umožňují i smazání prvků bez přepočítání. Delgato v [gistu][segura
+  akumulátory umožňují i smazání prvků bez přepočítání. Delgado v [gistu][segura
   watchtowers gist] nastiňuje konstrukci několika možných akumulátorů.
 
 ## Vydání nových verzí
