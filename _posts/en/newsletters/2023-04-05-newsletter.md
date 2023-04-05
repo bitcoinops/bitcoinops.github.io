@@ -28,7 +28,7 @@ popular Bitcoin infrastructure software.
     public key and to use the corresponding private key to generate a
     signature for any breach-detection data it accepted.  Alice could
     then publish the data and the signature after an unresolved breach
-    to prove the watchtower failed its responsibility.  However, Delgato
+    to prove the watchtower failed its responsibility.  However, Delgado
     noted that practical accountability isn't that simple:
 
     - *Data storage requirements:* the above mechanism would require
@@ -41,13 +41,13 @@ popular Bitcoin infrastructure software.
       Watchtowers may only want to store data for a limited time, e.g.
       they may accept payment for a particular term.
 
-    Delgato suggests cryptographic accumulators provide a practical
+    Delgado suggests cryptographic accumulators provide a practical
     solution to both problems.  Accumulators allow compactly proving a
     particular element is a member of a large set of elements and also
     allow adding new elements to the set without rebuilding the entire
     data structure.  Some accumulators allow deleting elements from the
     set without rebuilding.  In a
-    [gist][segura watchtowers gist], Delgato outlines several different
+    [gist][segura watchtowers gist], Delgado outlines several different
     accumulator constructions worth considering.
 
 ## Releases and release candidates
