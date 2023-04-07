@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Eclair #2595 continues the project's work on adding support for splicing"
     url: /en/newsletters/2023/02/22/#eclair-2595
 
+  - title: "Splicing specification discussion about relative amounts and minimizing redundant data"
+    url: /en/newsletters/2023/04/12/#splicing-specification-discussions
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

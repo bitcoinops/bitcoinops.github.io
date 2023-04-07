@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Watchtower accountability proofs"
     url: /en/newsletters/2023/04/05/#watchtower-accountability-proofs
 
+  - title: "LND #7069 allows a client to ask its watchtower to delete a session"
+    url: /en/newsletters/2023/04/12/#lnd-7069
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

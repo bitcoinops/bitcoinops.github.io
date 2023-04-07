@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Question about the largest multisig quorum possible with different script types"
     url: /en/newsletters/2022/06/29/#what-is-the-largest-multisig-quorum-currently-possible
 
+  - title: "BIPs #1372 assigns BIP327 to the MuSig2 protocol for creating multisignatures"
+    url: /en/newsletters/2023/04/12/#bips-1372
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: MuSig
