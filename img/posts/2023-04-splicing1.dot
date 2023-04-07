@@ -1,0 +1,82 @@
+digraph lightning_network {
+    rankdir="LR";
+    node [shape=box, style="filled", color="black", fontcolor="black", fillcolor="white"];
+
+    subgraph cluster_splice_out {
+        label="Splice Out";
+
+        "Funding2" -> "Splice Out";
+        "Splice Out" -> "Alice1";
+        "Splice Out" -> "Commitment2";
+        "Commitment2" -> "HTLC2-1";
+        "Commitment2" -> "HTLC2-2";
+        "Commitment2" -> "HTLC2-3";
+
+        Funding2 -> oricom2;
+        oricom2 -> {HTLCxa, HTLCxb, HTLCxc};
+        HTLCxa [label="", style=invis, width=0, height=0];
+        HTLCxb [label="", style=invis, width=0, height=0];
+        HTLCxc [label="", style=invis, width=0, height=0];
+
+        oricom2 [ style = dashed, label = "Commitment\n(Original)" width = 0.5, height = 0.5 ]
+
+        "Funding2" [label="Funding", fillcolor="silver"];
+        "Splice Out" [label="New Funding"];
+        "Alice1" [label="Alice"];
+        "Commitment2" [label="Commitment\n(New)", style=dashed];
+        "HTLC2-1" [label="", style=invis, width=0, height=0];
+        "HTLC2-2" [label="", style=invis, width=0, height=0];
+        //"HTLC2-2" [label="HTLCs", style="filled", shape=plaintext];
+        "HTLC2-3" [label="", style=invis, width=0, height=0];
+    }
+
+    subgraph cluster_new_funding {
+        label="Splice In";
+
+        "Funding3" -> "Splice In";
+        "Alice2" -> "Splice In";
+        "Splice In" -> "Commitment3";
+        "Commitment3" -> "HTLC3-1";
+        "Commitment3" -> "HTLC3-2";
+        "Commitment3" -> "HTLC3-3";
+
+        Funding3 -> oricom3;
+        oricom3 -> {HTLCya, HTLCyb, HTLCyc};
+        HTLCya [label="", style=invis, width=0, height=0];
+        HTLCyb [label="", style=invis, width=0, height=0];
+        HTLCyc [label="", style=invis, width=0, height=0];
+
+        oricom3 [ style = dashed, label = "Commitment\n(Original)" width = 0.5, height = 0.5 ]
+
+        "Funding3" [label="Funding", fillcolor="silver"];
+        "Alice2" [label="Alice", fillcolor="silver"];
+        "Splice In" [label="New Funding"];
+        "Commitment3" [label="Commitment\n(New)", style=dashed];
+        "HTLC3-1" [label="", style=invis, width=0, height=0];
+        "HTLC3-2" [label="", style=invis, width=0, height=0];
+        //"HTLC3-2" [label="HTLCs", style="filled", shape=plaintext];
+        "HTLC3-3" [label="", style=invis, width=0, height=0];
+    }
+
+    subgraph cluster_before_splicing {
+        label="State before splicing";
+
+        "Funding1" -> "Commitment1";
+        "Commitment1" -> "HTLC1-1";
+        "Commitment1" -> "HTLC1-2";
+        "Commitment1" -> "HTLC1-3";
+
+        "Funding1" [label="Funding", fillcolor="silver"];
+        "Commitment1" [label="Commitment\n(Original)", style=dashed];
+        "HTLC1-1" [label="", style=invis, width=0, height=0];
+        "HTLC1-2" [label="HTLCs", style="filled", shape=plaintext];
+        "HTLC1-3" [label="", style=invis, width=0, height=0];
+
+        "HTLC1-2" -> foo [style=invis];
+        foo [ style=invis, label = "", width=0.001, height=0];
+    }
+
+    labelloc=b
+    label="Shaded: confirmed\ \ \ \ \ \ \  Dashed: kept offchain unless needed"
+}
+
