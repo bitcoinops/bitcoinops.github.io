@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume une idée pour les preuves de responsabilité
-des tours de contrôle et comprend nos sections habituelles avec des annonces de nouvelles
+des tours de contrôle (watchtowers) et comprend nos sections habituelles avec des annonces de nouvelles
 versions et de candidats à la publication, ainsi que des descriptions des principaux
 changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
 
@@ -18,9 +18,9 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
   [posté][segura watchtowers post] sur la liste de diffusion Lightning-Dev
   la semaine dernière pour demander des comptes aux [tours de contrôle][topic watchtowers]
   qui n'ont pas réagi à des violations de protocole qu'ils étaient capables
-  de détecter. Par exemple, Alice fournit à une tour de contrôle des données pour
-  détecter et répondre à la confirmation d'un ancien état du canal LN;
-  plus tard, cet état est confirmé mais la tour de contrôle ne répond pas. Alice
+  de détecter. Par exemple : Alice fournit à une tour de contrôle des données pour
+  détecter et répondre à la confirmation d'un ancien état du canal LN.
+  Cet état est confirmé ultérieurement mais la tour de contrôle ne répond pas. Alice
   aimerait pouvoir tenir l'opérateur de la tour de contrôle pour responsable en
   prouvant publiquement qu'il n'a pas réagi de manière appropriée.
 
@@ -38,18 +38,17 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
       être très fréquent pour un canal LN actif.
 
     - *Pas de possibilité de suppression :* le mécanisme ci-dessus nécessite
-      potentiellement à la tour de contrôle de stocker les données de détection
+      potentiellement que la tour de contrôle stocke les données de détection
       de violation à perpétuité. Les tours de contrôle peuvent ne vouloir stocker
       des données que pour une période limitée, par exemple, elles peuvent accepter
       un paiement pour une période particulière.
-
 
     Delgado suggère que les accumulateurs cryptographiques offrent une solution pratique
     à ces deux problèmes. Les accumulateurs permettent de prouver de manière compacte
     qu'un élément particulier fait partie d'un grand ensemble d'éléments et permettent
     également d'ajouter de nouveaux éléments à l'ensemble sans reconstruire toute la
     structure de données. Certains accumulateurs permettent de supprimer des éléments
-    de l'ensemble sans reconstruire.  Dans un [gist][segura watchtowers gist], Delgado
+    de l'ensemble sans reconstruire. Dans un [gist][segura watchtowers gist], Delgado
     décrit plusieurs constructions d'accumulateurs différentes à considérer.
 
 ## Mises à jour et versions candidates
@@ -85,16 +84,15 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   facturation liées à l'offre et accepter ou rejeter les paiements à cette facture. Eclair
   s'assure que les demandes et les paiements respectent les exigences du protocole---le
   gestionnaire n'a qu'à décider si l'article ou le service acheté peut être fourni. Cela
-  permet au code pour la maréchalerie (transformation de données structurées d'un format
-  à l'autre) des offres de devenir arbitrairement complexe sans affecter la logique
-  interne d'Eclair.
-
+  permet au code regroupant les offres de devenir arbitrairement complexe 
+  sans affecter la logique interne d’Eclair.
+ 
 - [LDK #2062][] implemente [BOLTs #1031][] (voir le [Bulletin
-  #226][news226 bolts1031]), [#1032][bolts #1032] (voir le  [Bulletin
+  #226][news226 bolts1031]), [#1032][bolts #1032] (voir le [Bulletin
   #225][news225 bolts1032]), et [#1040][bolts #1040], autorise
   l'identification du destinataire ultime d'un paiement ([HTLC][topic
   htlc]) d'accepter un montant plus élevé que celui qu'ils ont demandé
-  et avec un délai d'expiration plus long que celui qu'ils ont demandé.
+  et avec un délai d'expiration plus long que celui demandé.
   Il est donc plus difficile pour un nœud de transfert d'utiliser une
   légère modification des paramètres du paiement pour déterminer que le
   prochain saut est le destinataire. Le PR fusionné permet également à un
