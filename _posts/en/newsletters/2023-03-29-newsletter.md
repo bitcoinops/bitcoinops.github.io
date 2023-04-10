@@ -172,7 +172,7 @@ software.
     cooperate.  When Carol is unavailable, Alice and Bob can cooperatively
     change the balance distribution of their joint output offchain, allowing
     them to make or forward LN payments if they have other LN channels.  If
-    Alice remains unavailable too long, either one of them can unilaterally
+    Carol remains unavailable too long, either one of them can unilaterally
     put the channel onchain.  The same benefits apply if Alice and Bob share
     a channel with Dan.
 
