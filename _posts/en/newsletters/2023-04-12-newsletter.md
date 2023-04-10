@@ -88,12 +88,60 @@ software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Don't download witnesses for assumed-valid blocks when running in prune mode][review club 27050]
+is a PR by Niklas Gögge (dergoegge) that improves the performance of Initial Block Download
+(IBD) by not downloading witness data on nodes that are configured to both
+[prune block data][docs pruning] and use [assumevalid][docs assume valid]. This
+optimization was discussed in a recent [stack exchange question][se117057].
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/bitcoin-inquisition-16#l-37FIXME"
+  q0="If assume-valid is enabled but not pruning, why does the node need
+     to download (non-recent) witness data, given that the
+     node won't be checking this data? Should this PR also disable
+     witness download in this non-pruning case?"
+  a0="The witness data is needed because peers may request non-recent
+      blocks from us (we advertise ourselves as non-pruned)."
+  a0link="https://bitcoincore.reviews/27050#l-31"
+
+  q1="How much bandwidth might be saved by this enhancement during an IBD?
+      In other words, what is the cumulative size of all witness data up to
+      a recent block (say, height 781213)?"
+  a1="110.6 GB, which is about 25% of the total block data. One participant
+      pointed out that 110 GB is about 10% of his monthly ISP download
+      limit, so this is a significant reduction. Participants also expected
+      the percentage savings to increase with the recently expanded use of
+      witness data."
+  a1link="https://bitcoincore.reviews/27050#l-52"
+
+  q2="Would this improvement reduce the amount of download data from all
+      blocks back to the genesis block?"
+  a2="No, only since segwit activation (block height 481824); blocks before
+      segwit do not have witness data."
+  a2link="https://bitcoincore.reviews/27050#l-73"
+
+  q3="This PR implements two main changes, one to the block request logic
+      and one to block validation. What are these changes in more detail?"
+  a3="In validation, when script checks will be skipped, also skip witness merkle tree checks.
+      In the block request logic, remove `MSG_WITNESS_FLAG` from the fetch
+      flags so our peers don't send us the witness data."
+  a3link="https://bitcoincore.reviews/27050#l-83"
+
+  q4="Without this PR, script validation is skipped under assume-valid,
+      but other checks that involve witness data are not skipped.
+      What are these checks that this PR will cause to be skipped?"
+  a4="The coinbase merkle root, the witness sizes, the maximum
+      witness stack items, and the block weight."
+  a4link="https://bitcoincore.reviews/27050#l-91"
+
+  q5="The PR does not include an explicit code change for skipping
+      all the extra checks mentioned in the previous question.
+      Why does that work out?"
+  a5="It turns out that all the extra checks just pass when you don't
+      have any witnesses.
+      This makes sense considering that segwit was a soft fork.
+      With the PR, we are essentially just pretending like we are a
+      pre-segwit node (up to the assume-valid point)."
+  a5link="https://bitcoincore.reviews/27050#l-117"
 %}
 
 ## Releases and release candidates
@@ -168,3 +216,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news17 splice]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
 [news146 splice]: /en/newsletters/2021/04/28/#draft-specification-for-ln-splicing
 [libsecp256k1 0.3.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.3.1
+[review club 27050]: https://bitcoincore.reviews/27050
+[docs pruning]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.11.0.md#block-file-pruning
+[docs assume valid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
+[se117057]: https://bitcoin.stackexchange.com/questions/117057/why-is-witness-data-downloaded-during-ibd-in-prune-mode
