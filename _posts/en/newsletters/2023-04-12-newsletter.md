@@ -178,7 +178,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   for gossip and will make it easier to develop plugins that use gossip
   data.
 
-- [Core Lightning #6124][] commando-listrunes & commando-blacklist FIXME:adamjonas
+- [Core Lightning #6124][] adds the ability to blacklist runes with
+  [commando][commando plugin] and maintain a list of all runes, which is
+  useful for tracking and disabling compromised ones.
 
 - [Eclair #2607][] adds a new `listreceivedpayments` RPC that lists all
   payments received by the node.
@@ -220,3 +222,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [docs pruning]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.11.0.md#block-file-pruning
 [docs assume valid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
 [se117057]: https://bitcoin.stackexchange.com/questions/117057/why-is-witness-data-downloaded-during-ibd-in-prune-mode
+[commando plugin]: /en/newsletters/2022/07/27/#core-lightning-5370
