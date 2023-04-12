@@ -7,7 +7,7 @@ permalink: /en/publications/
 share: false
 version: 1
 ---
-- [Newsletters][]: a weekly summary of news about Bitcion and LN
+- [Newsletters][]: a weekly summary of news about Bitcoin and LN
   development.
 
 - [Blog posts][]: Occasional updates and reference material
