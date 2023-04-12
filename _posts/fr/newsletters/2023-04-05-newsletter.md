@@ -84,9 +84,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   facturation liées à l'offre et accepter ou rejeter les paiements à cette facture. Eclair
   s'assure que les demandes et les paiements respectent les exigences du protocole---le
   gestionnaire n'a qu'à décider si l'article ou le service acheté peut être fourni. Cela
-  permet au code regroupant les offres de devenir arbitrairement complexe 
+  permet au code regroupant les offres de devenir arbitrairement complexe
   sans affecter la logique interne d’Eclair.
- 
+
 - [LDK #2062][] implemente [BOLTs #1031][] (voir le [Bulletin
   #226][news226 bolts1031]), [#1032][bolts #1032] (voir le [Bulletin
   #225][news225 bolts1032]), et [#1040][bolts #1040], autorise
