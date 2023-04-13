@@ -71,7 +71,7 @@ Bob proporciona un testigo del tamaño esperado para su aporte, pero Mallory pro
 Esto disminuye el feerate
 de la transacción.  En la lista de correo fueron discutidas varias consecuencias de esto:
 
-  - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo ulterior
+  - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo oculto
     para incluir un testigo grande en la cadena de bloques, por ejemplo.
     quiere añadir datos arbitrarios---ella puede usar parte de los honorarios de Bob para pagar
     los honorarios por eso.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
