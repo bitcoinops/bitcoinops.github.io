@@ -19,7 +19,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     generalmente llamadas *coloreado de monedas*.  También resumió un protocolo
     para almacenar datos binarios codificados en transacciones de Bitcoin
     y asociarlos a monedas "_coloreadas_" concretas.
-    Tras resumir el estado actual de la cuestión, describió un
+    Tras resumir el estado actual de la situación, describió un
     método para almacenar datos utilizando el protocolo de transferencia de mensajes [nostr][] y asociarlos a monedas de colores concretos.
     de mensajes [nostr][] y asociarlo a monedas de colores que podrían
     transferirse en transacciones Bitcoin.  Esto tendría varias
