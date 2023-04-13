@@ -217,7 +217,7 @@ que incluye direcciones de contacto y claves PGP.
 - [LND #7171][] actualiza el RPC `signrpc` <!--sic--> para que sea compatible con el
 último [borrador BIP][borrador bip musig] para [MuSig2][tema musig].  El RPC ahora crea
 sesiones vinculadas a un número de versión del protocolo MuSig2 para que todas las
-operaciones dentro de una sesión utilizarán el protocolo correcto.  A
+operaciones dentro de una sesión utilicen el protocolo correcto. Un
 problema de seguridad con una versión antigua del protocolo MuSig2 fue
 mencionado en [Newsletter #222][news222 musig2].
 
