@@ -68,7 +68,7 @@ el post de Kogman atrajo de nuevo la atención sobre él.  Imaginemos que Mallor
 y Bob contribuyen cada uno con una entrada a una transacción conjunta con un
 tamaño y una comisión esperados, lo que implica un feerate esperado.  Bob proporciona un
 Bob proporciona un testigo del tamaño esperado para su aportación, pero Mallory proporciona un testigo mucho mayor de lo esperado.
-mayor de lo esperado.  Esto disminuye el feerate
+Esto disminuye el feerate
 de la transacción.  Varias implicaciones de esto fueron discutidas en
 la lista de correo:
 
