@@ -40,7 +40,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
       pago de Bitcoin onchain.
 
     En cuanto al aspecto de la resistencia a la censura, Towns afirma que
-    "los bitcoins de color son en gran medida inevitables y simplemente algo que
+    "los bitcoins '_coloreados_' son en gran medida inevitables y simplemente algo
     con lo que hay que lidiar, en lugar de algo que deberíamos
     tratando de prevenir/evitar".  Compara la idea de que las monedas de colores
     puedan tener más valor que los bitcoins fungibles con el funcionamiento de
