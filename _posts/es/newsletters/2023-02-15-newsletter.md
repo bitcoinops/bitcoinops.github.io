@@ -179,7 +179,7 @@ Server][repositorio del servidor btcpay], [BDK][repositorio bdk], [Propuestas de
 
 - [Core Lightning #5361][] añade soporte experimental para copias de seguridad.
 Como se mencionó por última vez en [Newsletter #147][news147 backups],
-esto permite a un nodo para almacenar un pequeño archivo de copia de seguridad cifrada para su
+esto permite a un nodo almacenar un pequeño archivo de copia de seguridad cifrado para su
 sus pares.  Si más tarde un peer necesita reconectarse, quizás después de perder datos,
 puede solicitar el archivo de copia de seguridad.  El par puede utilizar una clave derivada
 de su cartera para descifrar el archivo y utilizar su contenido para recuperar
