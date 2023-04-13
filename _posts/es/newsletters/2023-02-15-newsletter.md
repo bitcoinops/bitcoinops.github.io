@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: es
 ---
-El boletín de esta semana resume la discusión continuada sobre el almacenamiento de datos en la cadena de bloques de Bitcoin, describe un hipotético ataque de dilución de tasas contra algunos tipos de protocolos multiparte, y describe cómo un compromiso de firma tapscript puede ser usado con diferentes partes del mismo árbol. También se incluyen nuestras secciones habituales con resúmenes de cambios en servicios y software cliente, anuncios de nuevas versiones y versiones candidatas, y descripciones de cambios notables en software popular de infraestructura Bitcoin. Adicionalmente proporcionamos una de nuestras raras recomendaciones para un nuevo motor de búsqueda centrado en documentación técnica y discusión sobre Bitcoin.
+El boletín de esta semana resume la continuacion de la discusión sobre el almacenamiento de datos en la cadena de bloques de Bitcoin, describe un hipotético ataque de dilución de fees contra algunos tipos de protocolos multiparte, y describe cómo un compromiso de firma tapscript puede ser usado con diferentes partes del mismo árbol. También se incluyen nuestras secciones habituales con resúmenes de cambios en servicios y en el software del cliente, anuncios de nuevas versiones y de las versiones candidatas, y descripciones de cambios destacados en el popular software de infraestructura de Bitcoin. Adicionalmente proporcionamos una de nuestras inusuales recomendaciones para un nuevo motor de búsqueda enfocado en documentación técnica y discusión sobre Bitcoin.
 
 ## News
 
