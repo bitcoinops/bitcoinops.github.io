@@ -84,7 +84,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
 
   - *Mallory puede ralentizar la confirmación:* una transacción con un
     feerate mas bajo puede confirmarse más lentamente. En un protocolo sensible al tiempo, esto
-    podría causar un serio problema a Bob.  En otros casos, Bob podría
+    podría causar un serio problema a Bob.  En otros casos, Bob puede
     que necesite aumentar la fee de la transacción, lo que le costará más dinero.
     adicional.
 
