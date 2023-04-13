@@ -113,7 +113,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
   Eso significa que incluso si Mallory proporciona a Bob un testigo válido para
   su gasto tapscript antes de que Bob proporcione su propia firma, es
   todavía posible para Mallory emitir una versión alternativa de la
-  transacción con un testigo mayor.  Bob sólo puede evitar este problema
+  transacción con un testigo mayor. Bob sólo puede evitar este problema
   recibiendo de Mallory una copia completa de su árbol de tapscripts.
 
   En el contexto de futuras actualizaciones soft fork de Bitcoin, Anthony Towns
