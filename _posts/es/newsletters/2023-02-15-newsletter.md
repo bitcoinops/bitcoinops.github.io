@@ -116,7 +116,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
   transacción con un testigo mayor. Bob sólo puede evitar este problema
   recibiendo de Mallory una copia completa de su árbol de tapscripts.
 
-  En el contexto de futuras actualizaciones soft fork de Bitcoin, Anthony Towns
+  En el contexto de futuras actualizaciones mediante un soft fork de Bitcoin, Anthony Towns
   abrió un [issue][bitcoin inquisition #19] en el repositorio Bitcoin
   Inquisition para probar [SIGHASH_ANYPREVOUT][tema
   sighash_anyprevout] (APO) para considerar la posibilidad de que APO se comprometa a datos adicionales para evitar este problema a los usuarios de Bitcoin.
