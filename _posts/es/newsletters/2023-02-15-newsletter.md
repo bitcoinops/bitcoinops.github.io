@@ -204,7 +204,7 @@ que el comportamiento, que podría (por ejemplo) ser utilizado para enviar una f
 ahora y más tarde utilizar un plugin para recuperar la preimagen de otro
 programa.  Cualquiera que utilice esta RPC debe ser consciente de que cualquier tercero
 que tiene conocimiento anterior del preimage para un pago previsto para
-su nodo puede demandar ese pago antes de que llegue.  Eso no sólo
+su nodo puede reclamar ese pago antes de que llegue. Eso no sólo
 roba su dinero pero, porque usted firmó la factura, genera varias
 pruebas muy convincentes de que se le pagó (estas pruebas son tan convincentes
 que muchos desarrolladores de LN la llaman *prueba de pago*).
