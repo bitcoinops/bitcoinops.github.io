@@ -199,7 +199,7 @@ a salidas segwit nativas, lo que es necesario para abrir canales interactivos.
 - [Core Lightning #5697][] añade un RPC `signinvoice` que firmará una
 [BOLT11][] factura.  Anteriormente, CLN sólo firmaba una factura cuando
 tenía la imagen previa para el hash [HTLC][tema HTLC], asegurando que sería
-poder reclamar un pago a la factura.  Este RPC puede anular
+posible reclamar un pago a la factura.  Este RPC puede anular
 que el comportamiento, que podría (por ejemplo) ser utilizado para enviar una factura
 ahora y más tarde utilizar un plugin para recuperar la preimagen de otro
 programa.  Cualquiera que utilice esta RPC debe ser consciente de que cualquier tercero
