@@ -81,7 +81,6 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
     sat/vbyte.  Aunque Bob pague la misma tarifa absoluta en ambos casos,
     no consigue lo que quería (confirmación rápida) y Mallory obtiene
     9.000 sats de datos añadidos a la cadena de bloques sin coste alguno para ella.
-    para ella.
 
   - *Mallory puede ralentizar la confirmación:* una transacción con un
     feerate puede confirmarse más lentamente.  En un protocolo sensible al tiempo, esto
