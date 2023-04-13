@@ -120,7 +120,6 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
   abrió un [issue][bitcoin inquisition #19] en el repositorio Bitcoin
   Inquisition siendo utilizado para probar [SIGHASH_ANYPREVOUT][tema
   sighash_anyprevout] (APO) para considerar tener un commit de APO para agregar datos adicionales y así evitarles este problema a los usuarios de esa extensión.
-  adicionales para evitar este problema a los usuarios de esa extensión.
 
 ## Cambios en servicios y software cliente
 
