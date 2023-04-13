@@ -184,7 +184,7 @@ Proposals (BIPs)][repositorio bips], y [Lightning BOLTs][repositorio bolts].*
 - [Core Lightning #5361][] añade soporte experimental para copias de seguridad
 copias de seguridad.  Como se mencionó por última vez en [Newsletter #147][news147 backups],
 esto permite a un nodo para almacenar un pequeño archivo de copia de seguridad cifrada para su
-pares.  Si más tarde un peer necesita reconectarse, quizás después de perder datos,
+sus pares.  Si más tarde un peer necesita reconectarse, quizás después de perder datos,
 puede solicitar el archivo de copia de seguridad.  El par puede utilizar una clave derivada
 de su cartera para descifrar el archivo y utilizar su contenido para recuperar
 el último estado de todos sus canales.  Esto puede considerarse una
