@@ -124,7 +124,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
 
 ## Cambios en servicios y software cliente
 
-*En este artículo mensual, destacamos actualizaciones interesantes de monederos y servicios Bitcoin.
+*En este artículo mensual, destacamos actualizaciones interesantes de wallets (billeteras/ carteras/ monederos) y servicios de Bitcoin.*
 monederos y servicios.*
 
 - **El monedero Liana añade multisig:**
