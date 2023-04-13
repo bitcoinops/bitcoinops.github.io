@@ -78,7 +78,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
     con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
     Mallory rellena la transacción con 9.000
     vbytes de datos que Bob no esperaba, reduciendo su tarifa a 1
-    sat/vbyte.  Aunque Bob paga la misma tarifa absoluta en ambos casos,
+    sat/vbyte.  Aunque Bob pague la misma tarifa absoluta en ambos casos,
     no consigue lo que quería (confirmación rápida) y Mallory obtiene
     9.000 sats de datos añadidos a la cadena de bloques sin coste alguno para ella.
     para ella.
