@@ -54,7 +54,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     los datos testigo de una transacción.  Tras un debate, varios
     participantes ([1][todd o], [2][o'connor o], [3][poelstra o])
     señalaron que estaban a favor de flexibilizar las políticas de
-    para permitir que las salidas `OP_RETURN` almacenen más de 83 bytes de información arbitraria.
+    para permitir que las salidas `OP_RETURN` almacenen ```
     más de 83 bytes de datos arbitrarios.  Razonaron que otros
     métodos para almacenar grandes cantidades de datos se utilizan actualmente
     y no habría ningún daño adicional si se utilizara `OP_RETURN`
