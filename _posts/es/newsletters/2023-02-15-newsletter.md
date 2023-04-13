@@ -227,7 +227,7 @@ problema de seguridad con una versión antigua del protocolo MuSig2 fue
 mencionado en [Newsletter #222][news222 musig2].
 
 - [LDK #2002][] añade soporte para reenviar automáticamente [pagos espontáneos
-pagos][tema pagos espontáneos] que no tienen éxito inicialmente.
+pagos][tema pagos] que no tienen éxito inicialmente.
 
 - [BTCPay Server #4600][] actualiza la [selección de moneda][tema selección de moneda] para su [payjoin][tema payjoin]
 para tratar de evitar la creación de transacciones con *entradas 
