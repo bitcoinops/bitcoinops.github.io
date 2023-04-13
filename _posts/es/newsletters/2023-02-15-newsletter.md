@@ -76,7 +76,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
     quiere añadir datos arbitrarios---ella puede usar parte de los honorarios de Bob para pagar
     por ello.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
     con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
-    confirma rápidamente.  Mallory rellena la transacción con 9.000
+    Mallory rellena la transacción con 9.000
     vbytes de datos que Bob no esperaba, reduciendo su tarifa a 1
     sat/vbyte.  Aunque Bob paga la misma tarifa absoluta en ambos casos,
     no consigue lo que quería (confirmación rápida) y Mallory obtiene
