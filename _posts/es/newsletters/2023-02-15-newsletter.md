@@ -74,7 +74,7 @@ la lista de correo:
 
   - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo ulterior
     para incluir un testigo grande en la cadena de bloques, por ejemplo.
-    ejemplo, quiere añadir datos arbitrarios---puede usar parte de los honorarios de Bob para pagar
+    quiere añadir datos arbitrarios---ella puede usar parte de los honorarios de Bob para pagar
     los honorarios por eso.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
     vbyte con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
     confirma rápidamente.  Mallory rellena la transacción con 9.000
