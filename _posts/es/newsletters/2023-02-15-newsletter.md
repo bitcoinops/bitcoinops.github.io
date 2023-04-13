@@ -35,7 +35,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
       con un UTXO existente; no hay necesidad de crear un nuevo UTXO.
 
     - *Resistente a la censura:* si la asociación entre los datos
-      y la moneda de color no es ampliamente conocida, entonces las transferencias de
+      y la moneda "_coloreada_" no es ampliamente conocida, entonces las transferencias de
       la moneda de color son tan resistentes a la censura como cualquier otro
       pago Bitcoin onchain.
 
