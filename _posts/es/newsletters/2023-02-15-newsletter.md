@@ -28,7 +28,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     - *Costes reducidos:* no es necesario pagar tasas de transacción por los datos
       almacenados offchain.
 
-    - *Privado:* dos personas pueden intercambiar una moneda de color sin que
+    - *Privado:* dos personas pueden intercambiar una moneda _"coloreada"_ sin que
       sin que nadie más sepa nada sobre los datos a los que hace referencia.
 
     - *No se requiere ninguna transacción para su creación*: los datos pueden asociarse a un UTXO existente.
