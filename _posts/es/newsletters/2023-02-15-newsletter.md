@@ -15,7 +15,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
 
   - *Offchain coin coloring:* Anthony Towns [posted][towns color] un
     resumen de un protocolo que se utiliza actualmente para asignar
-    especial a ciertos resultados de transacciones, una clase de técnicas
+    un significado especial a ciertos resultados de transacciones, una clase de técnicas
     generalmente llamadas *coloreado de monedas*.  También resumió un protocolo
     para almacenar datos binarios codificados en transacciones Bitcoin
     y asociarlos a monedas de colores concretos.
