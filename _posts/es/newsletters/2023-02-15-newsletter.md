@@ -42,7 +42,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     En cuanto al aspecto de la resistencia a la censura, Towns afirma que
     "los bitcoins '_coloreados_' son en gran medida inevitables y simplemente algo
     con lo que hay que lidiar, en lugar de ser algo con lo que deberíamos
-    tratando de prevenir/evitar".  Compara la idea de que las monedas de colores
+    tratar de prevenir/ evitar".  Compara la idea de que las monedas "_coloreadas_"
     puedan tener más valor que los bitcoins fungibles con el funcionamiento de
     Bitcoin que cobra comisiones por transacción basadas en el peso de la transacción
     en lugar del valor transferido, concluyendo que no cree
