@@ -234,7 +234,7 @@ para tratar de evitar la creación de transacciones con *entradas
 innecesarias*, concretamente una entrada mayor que cualquier salida en una
 transacción que contenga múltiples entradas.  Esto no ocurriría con
 pago normal de un solo pagador y un solo receptor: la mayor entrada
-mayor habría proporcionado un pago suficiente para el resultado del pago y no se habrían
+habría proporcionado un pago suficiente para el resultado del pago y no
 se habría añadido ninguna otra entrada.
 Este RP se inspiró en parte en un [documento que analiza los payjoins][].
 
