@@ -44,7 +44,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     con lo que hay que lidiar, en lugar de ser algo con lo que deberíamos
     tratar de prevenir/ evitar".  Compara la idea de que las monedas "_coloreadas_"
     puedan tener más valor que los bitcoins fungibles con el funcionamiento de
-    Bitcoin que cobra comisiones por transacción basadas en el peso de la transacción
+    Bitcoin que cobra comisiones por transacciones basadas en el tamaño de la transacción
     en lugar del valor transferido, concluyendo que no cree
     que esto conduzca necesariamente a incentivos significativamente desalineados.
 
