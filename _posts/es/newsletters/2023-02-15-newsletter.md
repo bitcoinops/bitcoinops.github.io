@@ -223,7 +223,7 @@ mencionado en [Newsletter #222][news222 musig2].
 pagos][tema pagos] que no tienen éxito inicialmente.
 
 - [BTCPay Server #4600][] actualiza la [selección de moneda][tema selección de moneda] para su [payjoin][tema payjoin]
-para tratar de evitar la creación de transacciones con *entradas 
+para tratar de evitar la creación de transacciones con *entradas
 innecesarias*, concretamente una entrada mayor que cualquier salida en una
 transacción que contenga múltiples entradas.  Esto no ocurriría con
 un pago normal de un solo pagador y un solo receptor: la mayor entrada
