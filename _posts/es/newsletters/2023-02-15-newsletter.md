@@ -170,7 +170,6 @@ integración con terceros, se ha añadido una ruta de migración desde MySQL y S
 y se ha corregido una vulnerabilidad de secuencias de comandos entre sitios.
 
 - [BDK 0.27.0][] es una actualización de esta biblioteca para crear monederos y aplicaciones Bitcoin.
-y aplicaciones.
 
 ## Cambios notables en código y documentación
 
