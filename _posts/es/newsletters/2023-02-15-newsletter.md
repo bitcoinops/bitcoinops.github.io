@@ -69,7 +69,7 @@ y Bob contribuyen cada uno con una entrada a una transacción conjunta con un
 tamaño y una comisión esperados, lo que implica un feerate esperado.
 Bob proporciona un testigo del tamaño esperado para su aporte, pero Mallory proporciona un testigo mucho mayor de lo esperado.
 Esto disminuye el feerate
-de la transacción.  Varias implicaciones de esto fueron discutidas en
+de la transacción.  En la lista de correo fueron discutidas varias consecuencias de esto:
 la lista de correo:
 
   - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo ulterior
