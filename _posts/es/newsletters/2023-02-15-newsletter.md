@@ -178,7 +178,7 @@ y aplicaciones.
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][repositorio del servidor btcpay], [BDK][repositorio bdk], [Propuestas de mejora de Bitcoin
+Server][repositorio del servidor btcpay], [BDK][repositorio bdk], [Propuestas de mejoras de Bitcoin
 Proposals (BIPs)][repositorio bips], y [Lightning BOLTs][repositorio bolts].*
 
 - [Core Lightning #5361][] añade soporte experimental para copias de seguridad
