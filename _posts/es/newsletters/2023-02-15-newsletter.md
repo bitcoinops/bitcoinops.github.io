@@ -36,7 +36,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
 
     - *Resistente a la censura:* si la asociación entre los datos
       y la moneda "_coloreada_" no es ampliamente conocida, entonces las transferencias de
-      la moneda de color son tan resistentes a la censura como cualquier otro
+      la moneda "_coloreada_" son tan resistentes a la censura como cualquier otro
       pago Bitcoin onchain.
 
     En cuanto al aspecto de la resistencia a la censura, Towns afirma que
