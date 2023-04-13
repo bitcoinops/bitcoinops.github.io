@@ -195,7 +195,6 @@ financiación] basándose tanto en los cambios recientes de la [especificación]
 #851] y los comentarios de los evaluadores de interoperabilidad.  Además, un
 RPC `upgradewallet` para mover todos los fondos en salidas envueltas en P2SH
 a salidas segwit nativas, lo que es necesario para abrir canales interactivos.
-abre.
 
 - [Core Lightning #5697][] añade un RPC `signinvoice` que firmará una
 [BOLT11][] factura.  Anteriormente, CLN sólo firmaba una factura cuando
