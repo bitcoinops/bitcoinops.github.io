@@ -90,7 +90,7 @@ de la transacción.  En la lista de correo fueron discutidas varias consecuencia
 
   Kogman describe varias mitigaciones en su post, aunque todas ellas
   implican concesiones.  En un [segundo post][kogman dilution2], señala
-  que no conoce ningún protocolo actualmente desplegado que sea
+  que no conoce ningún protocolo implantado actualmente que sea
   vulnerable.
 
 - **Maleabilidad de la firma Tapscript:** en un aparte de la mencionada
