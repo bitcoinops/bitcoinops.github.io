@@ -188,7 +188,6 @@ forma mejorada de [copias de seguridad estáticas de canales][topic static chann
 copias de seguridad].  El PR fusionado añade soporte para crear, almacenar y recuperar
 las copias de seguridad encriptadas.  Como se indica en los mensajes de confirmación, la función
 aún no ha sido completamente especificada o adoptada por otras implementaciones de LN.
-implementaciones.
 
 - [Core Lightning #5670][] y [#5956][core lightning #5956] realizan
 varias actualizaciones de su implementación de [doble financiación][tema doble
