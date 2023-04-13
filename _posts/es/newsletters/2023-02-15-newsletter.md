@@ -72,7 +72,7 @@ Esto disminuye el feerate
 de la transacción.  En la lista de correo fueron discutidas varias consecuencias de esto:
 
   - *Mallory consigue que Bob pague sus honorarios:* si Mallory tiene algún motivo oculto
-    para incluir un testigo de gran tamaño en la cadena de bloques, por ejemplo, 
+    para incluir un testigo de gran tamaño en la cadena de bloques, por ejemplo,
     quiere añadir datos arbitrarios---ella puede usar parte de los honorarios de Bob para pagar
     por ello.  Por ejemplo, Bob quiere crear una transacción de 1.000 vbytes
     con una tarifa de 10.000 satoshi, pagando 10 satoshi/vbyte para que se confirme rápidamente.
