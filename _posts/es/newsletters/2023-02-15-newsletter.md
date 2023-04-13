@@ -61,7 +61,7 @@ El boletín de esta semana resume la continuacion de la discusión sobre el alma
     en su lugar.
 
 - **Dilución de tarifas en protocolos multipartitos:** Yuval Kogman
-[publicó][kogman dilution] en la lista de correo Bitcoin-Dev la
+[publicó][kogman dilution] a la lista de correo Bitcoin-Dev la
 descripción de un ataque contra ciertos protocolos multiparte.
 Aunque el ataque fue [descrito previamente][riard dilution],
 el post de Kogman atrajo de nuevo la atención sobre él.  Imaginemos que Mallory
