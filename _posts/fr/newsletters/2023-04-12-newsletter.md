@@ -7,9 +7,9 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine décrit une discussion sur les épissures
-LN et des liens vers une proposition de BIP pour une terminologie de
-transaction recommandée. Vous y trouverez également nos sections
+Le bulletin de cette semaine rapporte une discussion à propos du splicing
+sur LN et une proposition de BIP sur la terminologie des
+transactions. Vous y trouverez également nos sections
 habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
 des annonces de nouvelles versions et de versions candidates---y compris
 une mise à jour de sécurité pour libsecp256k1---et des descriptions de
@@ -185,9 +185,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 - [Core Lightning #6012][] met en œuvre plusieurs améliorations significatives
   dans la bibliothèque Python pour écrire des plugins CLN (voir [Bulletin
   #26][news26 pyln-client]) qui lui permettent de mieux fonctionner avec le
-  magasin de ragots de CLN. Les changements permettent de construire de
-  meilleurs outils d'analyse pour les commérages et faciliteront le
-  développement de plugins qui utilisent les données des commérages.
+  gossip store de CLN. Les changements permettent de construire de
+  meilleurs outils d'analyse pour les gossip et faciliteront le
+  développement de plugins qui utilisent les données des gossips.
 
 - [Core Lightning #6124][] ajoute la possibilité de blacklister les runes
   avec [commando][commando plugin] et de maintenir une liste de toutes les
