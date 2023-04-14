@@ -1,67 +1,20 @@
 ---
 title: 'Bitcoin Optech Newsletter #244 Recap Podcast'
 permalink: /en/podcast/2023/03/30/
+reference: /en/newsletters/2023/03/29/
 name: 2023-03-30-recap
 slug: 2023-03-30-recap
 type: podcast
 layout: podcast-episode
 lang: en
 ---
-Mark "Murch" Erhardt and Mike Schmidt are joined by Dave Harding to discuss [Newsletter #244][news244].
+Mark "Murch" Erhardt and Mike Schmidt are joined by Dave Harding to discuss [Newsletter #244]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/68149014/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-3-7%2F51c41810-d746-d516-29e7-b72c6ee34788.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Preventing stranded capital with multiparty channels and channel factories"
-  url="news244 factories" anchor="factories" timestamp="1:00" %}
-
-## Selected Q&A from Bitcoin Stack Exchange
-
-{% include functions/podcast-note.md title="Why isn’t the taproot deployment buried in Bitcoin Core?"
-  url="news244 se1" anchor="se1" timestamp="28:06" %}
-{% include functions/podcast-note.md title="What restrictions does the version field in the block header have?"
-  url="news244 se2" anchor="se2" timestamp="32:23" %}
-{% include functions/podcast-note.md title="What is the relation between transaction data and ids?"
-  url="news244 se3" anchor="se3" timestamp="39:04" %}
-{% include functions/podcast-note.md title="Can I request tx messages from other peers?"
-  url="news244 se4" anchor="se4" timestamp="43:33" %}
-{% include functions/podcast-note.md title="Eltoo: Does the relative locktime on the first UTXO set the lifetime of the channel?"
-  url="news244 se5" anchor="se5" timestamp="47:34" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="Rust Bitcoin 0.30.0"
-  url="news244 rb" anchor="rb" timestamp="52:23" %}
-{% include functions/podcast-note.md title="LND v0.16.0-beta.rc5"
-  url="news244 lnd" anchor="lnd" timestamp="53:43" %}
-{% include functions/podcast-note.md title="BDK 1.0.0-alpha.0"
-  url="news244 bdk" anchor="bdk" timestamp="54:16" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="Bitcoin Core #27278"
-  url="news244 bc27278" anchor="bc27278" timestamp="54:45" %}
-{% include functions/podcast-note.md title="Bitcoin Core #26531"
-  url="news244 bc26531" anchor="bc26531" timestamp="1:00:26" %}
-{% include functions/podcast-note.md title="Core Lightning #5898"
-  url="news244 cln5898" anchor="cln5898" timestamp="1:03:23" %}
-{% include functions/podcast-note.md title="Core Lightning #5986"
-  url="news244 cln5986" anchor="cln5986" timestamp="1:05:21" %}
-{% include functions/podcast-note.md title="Eclair #2616"
-  url="news244 ec2616" anchor="ec2616" timestamp="1:07:43" %}
-{% include functions/podcast-note.md title="LDK #2024"
-  url="news244 ldk2024" anchor="ldk2024" timestamp="1:10:36" %}
-{% include functions/podcast-note.md title="Rust Bitcoin #1737"
-  url="news244 rb1737" anchor="rb1737" timestamp="1:12:43" %}
-{% include functions/podcast-note.md title="BTCPay Server #4608"
-  url="news244 btcpay4608" anchor="btcpay4608" timestamp="1:13:03" %}
-{% include functions/podcast-note.md title="BIPs #1425"
-  url="news244 bips1425" anchor="bips1425" timestamp="1:15:43" %}
-{% include functions/podcast-note.md title="Bitcoin Inquisition #22"
-  url="news244 bi22" anchor="bi22" timestamp="1:16:51" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -86,7 +39,6 @@ topics every month.  So, thank you for that, Dave.
 
 **David Harding**: You're welcome.
 
-{:#factories}
 _Preventing stranded capital with multiparty channels and channel factories_
 
 **Mike Schmidt**: We have one news item this week, which is about channel
@@ -479,7 +431,6 @@ go through the Bitcoin Stack Exchange and look for interesting questions and
 answers to highlight for the Optech audience, and this week we have five of
 those.
 
-{:#se1}
 _Why isn't the taproot deployment buried in Bitcoin Core?_
 
 The first one is, "Why isn't the taproot deployment buried in Bitcoin Core?" and
@@ -545,7 +496,6 @@ this more myself.
 **Mark Erhardt**: Thanks, and please report back, because I think I'm a little
 confused now too.
 
-{:#se2}
 _What restrictions does the version field in the block header have?_
 
 **Mike Schmidt**: The next question from the Stack Exchange that we highlighted
@@ -643,7 +593,6 @@ ASICBoost requires you to sort of have a collusion I think in coinbases, or let
 me not try to explain ASICBoost right now, I'd have to brush up on it.  But
 yeah, thank you for correcting me, is all what I'm trying to say!
 
-{:#se3}
 _What is the relation between transaction data and ids?_
 
 **Mike Schmidt**: The next question from the Stack Exchange is about the
@@ -710,7 +659,6 @@ heard that term before; I like it.
 
 **Mike Schmidt**: Oh, okay, I wasn't sure is that was formal jargon.
 
-{:#se4}
 _Can I request tx messages from other peers?_
 
 The next question from the Stack Exchange is, "Can I request tx messages from
@@ -771,7 +719,6 @@ a protocol that essentially is doing exactly these sort of proofs, which UTXOs
 still exist, which that transaction can validly spend, and all that.  So, if
 you're interested in that topic, check out our Recap two weeks ago.
 
-{:#se5}
 _Eltoo: Does the relative locktime on the first UTXO set the lifetime of the channel?_
 
 **Mike Schmidt**: Last question from the Stack Exchange involves eltoo, and the
@@ -838,7 +785,6 @@ more distinct name.
 **Mike Schmidt**: Understood; same technology, different name, rebranding.  The
 next section in the newsletter this week is releases and release candidates.
 
-{:#rb}
 _Rust Bitcoin 0.30.0_
 
 The first one noted here is Rust Bitcoin 0.30.0, and this release actually is
@@ -859,7 +805,6 @@ calls, how to upgrade or amend your use of those API calls with sometimes new
 parameters or a superseding API call.  So, I think that blogpost is probably the
 most helpful thing to look at if you're using it.
 
-{:#lnd}
 _LND v0.16.0-beta.rc5_
 
 **Mike Schmidt**: The next release that we highlighted here is the LND
@@ -869,7 +814,6 @@ that do want to come on and give us the nitty-gritty of this release, but they
 are waiting for the release to actually be official in order to jump on and
 discuss with us.
 
-{:#bdk}
 _BDK 1.0.0-alpha.0_
 
 So, we'll punt for another week on that, which will lead us to the next release,
@@ -879,7 +823,6 @@ been done there recently, that we highlighted in the newsletter last week.  So,
 if folks are curious about the details there, I would encourage you to revisit
 the Recap from last week, for newsletter #243, to get the details.
 
-{:#bc27278}
 _Bitcoin Core #27278_
 
 **Mike Schmidt**: The first PR that we covered this week was Bitcoin Core
@@ -966,7 +909,6 @@ place to collect that data.
 
 **Mark Erhardt**: It will just cover another item.
 
-{:#bc26531}
 _Bitcoin Core #26531_
 
 **Mike Schmidt**: Yeah, Bitcoin Core #26531.  In the last item that we just
@@ -1013,7 +955,6 @@ with certain aspects of Bitcoin Core.
 
 **Mike Schmidt**: I think that's a good summary.  Thanks, Murch.
 
-{:#cln5898}
 _Core Lightning #5898_
 
 Next PR this week is Core Lightning #5898, and it's updating its dependency on
@@ -1042,7 +983,6 @@ I'm very excited about, like P2TR-based channels, which look like single sig to
 everyone else, and maybe also PTLCs.  Yeah, so anyway, I think this is just part
 of the schnorrification of Lightning.
 
-{:#cln5986}
 _Core Lightning #5986_
 
 **Mike Schmidt**: There's another Core Lightning PR, #5986, which updates RPCs
@@ -1078,7 +1018,6 @@ Sometimes it feels a little bit like you're talking to an empty room, because of
 course we're mostly talking to ourselves up here.  So, if you have reactions,
 let us know what you like and that would be appreciated.
 
-{:#ec2616}
 _Eclair #2616_
 
 **Mike Schmidt**: Next PR is Eclair #2616, adding support for opportunistic
@@ -1128,7 +1067,6 @@ there's really no risk to the Eclair user, it would be the remote peer?
 
 **David Harding**: Exactly.
 
-{:#ldk2024}
 _LDK #2024_
 
 **Mike Schmidt**: Next PR is LDK #2024, including route hints for channels which
@@ -1162,7 +1100,6 @@ confirmations.  So, this allows an LDK node to receive a payment through a
 channel which can't yet be announced, but which they're probably planning to
 announce in the future.
 
-{:#rb1737}
 _Rust Bitcoin #1737_
 
 **Mike Schmidt**: Thanks, Dave.  Next PR is Rust Bitcoin #1737, adding a
@@ -1171,7 +1108,6 @@ encouraged best practices with regards to disclosures and it seems like a few
 projects in the last month have put up their security reporting policy, which is
 good to see.
 
-{:#btcpay4608}
 _BTCPay Server #4608_
 
 Next PR is BTCPay Server #4608, allowing plugins to expose their features as an
@@ -1210,7 +1146,6 @@ Some merchants only have an online presence, so they don't need a PoS app; some
 people might be using it as a mechanism to receive donations, so maybe they want
 the Crowfunding app.  That's just for color, I don't know more than this either.
 
-{:#bips1425}
 _BIPs #1425_
 
 **Mike Schmidt**: Next PR is to the BIPs repository, BIPs #1425, assigning the
@@ -1231,7 +1166,6 @@ question or comment to the thread that's associated with this Spaces, or feel
 free to raise your hand and request speaker access if you have a question or
 comment on our discussion today.
 
-{:#bi22}
 _Bitcoin Inquisition #22_
 
 The last PR is to Bitcoin Inquisition, and that's Bitcoin Inquisition #22, which
@@ -1309,23 +1243,3 @@ nice.
 **David Harding**: Thanks for having me, guys.
 
 {% include references.md %}
-[news244]: /en/newsletters/2023/03/29/
-[news244 factories]: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
-[news244 se1]: /en/newsletters/2023/03/29/#why-isn-t-the-taproot-deployment-buried-in-bitcoin-core
-[news244 se2]: /en/newsletters/2023/03/29/#what-restrictions-does-the-version-field-in-the-block-header-have
-[news244 se3]: /en/newsletters/2023/03/29/#what-is-the-relation-between-transaction-data-and-ids
-[news244 se4]: /en/newsletters/2023/03/29/#can-i-request-tx-messages-from-other-peers
-[news244 se5]: /en/newsletters/2023/03/29/#eltoo-does-the-relative-locktime-on-the-first-utxo-set-the-lifetime-of-the-channel
-[news244 rb]: /en/newsletters/2023/03/29/#rust-bitcoin-0-30-0
-[news244 lnd]: /en/newsletters/2023/03/29/#lnd-v0-16-0-beta-rc5
-[news244 bdk]: /en/newsletters/2023/03/29/#bdk-1-0-0-alpha-0
-[news244 bc27278]: /en/newsletters/2023/03/29/#bitcoin-core-27278
-[news244 bc26531]: /en/newsletters/2023/03/29/#bitcoin-core-26531
-[news244 cln5898]: /en/newsletters/2023/03/29/#core-lightning-5898
-[news244 cln5986]: /en/newsletters/2023/03/29/#core-lightning-5986
-[news244 ec2616]: /en/newsletters/2023/03/29/#eclair-2616
-[news244 ldk2024]: /en/newsletters/2023/03/29/#ldk-2024
-[news244 rb1737]: /en/newsletters/2023/03/29/#rust-bitcoin-1737
-[news244 btcpay4608]: /en/newsletters/2023/03/29/#btcpay-server-4608
-[news244 bips1425]: /en/newsletters/2023/03/29/#bips-1425
-[news244 bi22]: /en/newsletters/2023/03/29/#bitcoin-inquisition-22

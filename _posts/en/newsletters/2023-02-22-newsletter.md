@@ -25,7 +25,7 @@ of notable changes to popular Bitcoin infrastructure software.
   #234][news234 vault]).  He also announced that he'll be attempting to
   get the code merged into Bitcoin Inquisition, a project for testing
   major proposed changes to Bitcoin's consensus and network protocol
-  rules. {% include functions/podcast-callout.md url="pod239 op_vault" %}
+  rules. {% assign timestamp="1:18" %}
 
 - **LN quality of service flag:** Joost Jager [posted][jager qos] to the
   Lightning-Dev mailing list a proposal to allow nodes to signal that a
@@ -61,8 +61,7 @@ of notable changes to popular Bitcoin infrastructure software.
     spender fail.  This reduces the need for spenders to be able to
     easily find highly available channels.  The challenge of this
     approach is building a mechanism that prevents receivers from
-    keeping any overpayment that arrives. {% include
-    functions/podcast-callout.md url="pod239 ln qos" %}
+    keeping any overpayment that arrives. {% assign timestamp="4:15" %}
 
 - **Feedback requested on LN good neighbor scoring:** Carla Kirk-Cohen
   and Clara Shikhelman [posted][ckc-cs reputation] to the Lightning-Dev
@@ -79,8 +78,7 @@ of notable changes to popular Bitcoin infrastructure software.
     forwarding it to the next channel.  As described in a prior paper
     co-authored by Shikhelman (see
     [Newsletter #226][news226 jam]), this is part of a proposal to
-    mitigate [channel jamming attacks][topic channel jamming attacks]. {%
-    include functions/podcast-callout.md url="pod239 good neighbor" %}
+    mitigate [channel jamming attacks][topic channel jamming attacks]. {% assign timestamp="13:58" %}
 
 - **Proposed BIP for Codex32 seed encoding scheme:** Russell O'Connor
   and Andrew Poelstra (using anagrams of their names) [proposed][op codex32] a BIP for
@@ -125,7 +123,7 @@ of notable changes to popular Bitcoin infrastructure software.
     investigate its [website][codex32 website] or watch a
     [video][codex32 video] by one of its authors.  With the draft BIP,
     the authors hope to see wallets begin to add support for using
-    Codex32-encoded seeds. {% include functions/podcast-callout.md url="pod239 codex32" %}
+    Codex32-encoded seeds. {% assign timestamp="20:27" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -143,26 +141,26 @@ answers posted since our last update.*
   that is both (a) before the assumevalid point and (b) sufficiently buried to
   be past the prune point, there is indeed little to gain from having it". There
   is currently a [draft PR][Bitcoin Core #27050] open to address this and [a PR
-  Review Club][pr review 27050] covering the proposed change. {% include functions/podcast-callout.md url="pod239 se1" %}
+  Review Club][pr review 27050] covering the proposed change. {% assign timestamp="36:40" %}
 
 - [Can Bitcoin's P2P network relay compressed data?]({{bse}}116999)
   Pieter Wuille links to two mailing list discussions about compression (one about
   [specialized compression for headers sync][] and one about [general LZO-based
   compression][]) and points out that Blockstream Satellite uses a custom
-  transaction compression scheme. {% include functions/podcast-callout.md url="pod239 se2" %}
+  transaction compression scheme. {% assign timestamp="40:39" %}
 
 - [How does one become a DNS seed for Bitcoin Core?]({{bse}}116931)
   User Paro explains the requirements for someone wanting to become a [DNS
-  seed][news66 dns seed] to provide new nodes with initial peers. {% include functions/podcast-callout.md url="pod239 se3" %}
+  seed][news66 dns seed] to provide new nodes with initial peers. {% assign timestamp="41:18" %}
 
 - [Where can I learn about open research topics in Bitcoin?]({{bse}}116898)
   Michael Folkson provides a variety of resources including [Chaincode Labs
-  Research][] and [Bitcoin Problems][], among others. {% include functions/podcast-callout.md url="pod239 se4" %}
+  Research][] and [Bitcoin Problems][], among others. {% assign timestamp="44:00" %}
 
 - [What is the maximum size transaction that will be relayed by bitcoin nodes using the default configuration?]({{bse}}117277)
   Pieter Wuille points out Bitcoin Core's 400,000 [weight unit][] standardness
   policy rule, notes that it is not currently configurable, and explains the
-  intended benefits of that limit including DoS protections. {% include functions/podcast-callout.md url="pod239 se5" %}
+  intended benefits of that limit including DoS protections. {% assign timestamp="47:55" %}
 
 - [Understanding how ordinals work with in Bitcoin. What is exactly stored on the blockchain?]({{bse}}117018)
   Vojtěch Strnad clarifies that Ordinals Inscriptions do not use `OP_RETURN`,
@@ -175,13 +173,13 @@ answers posted since our last update.*
     <data pushes>
     OP_ENDIF
     ```
-    {% include functions/podcast-callout.md url="pod239 se6" %}
+    {% assign timestamp="50:07" %}
 
 - [Why doesn't the protocol allow unconfirmed transactions to expire at a given height?]({{bse}}116926)
   Larry Ruane references Satoshi on why it wouldn't be prudent for
   transactions to have the seemingly useful ability to specify an
   expiration height, that is, a height after which the transaction,
-  if not yet mined, is no longer valid (and therefore can't be mined). {% include functions/podcast-callout.md url="pod239 se7" %}
+  if not yet mined, is no longer valid (and therefore can't be mined). {% assign timestamp="51:00" %}
 
 ## Releases and release candidates
 
@@ -193,10 +191,10 @@ release candidates.*
   "sometimes [...] allows an array-bounds overflow when large string
   were input into SQLite's printf function".  Only software using BDK's
   optional SQLite's database feature needs to be updated.  See the
-  [vulnerability report][RUSTSEC-2022-0090] for additional details. {% include functions/podcast-callout.md url="pod239 bdk" %}
+  [vulnerability report][RUSTSEC-2022-0090] for additional details. {% assign timestamp="52:44" %}
 
 - [Core Lightning 23.02rc3][] is a release candidate for a new
-  maintenance version of this popular LN implementation. {% include functions/podcast-callout.md url="pod239 cln" %}
+  maintenance version of this popular LN implementation. {% assign timestamp="53:16" %}
 
 ## Notable code and documentation changes
 
@@ -216,7 +214,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   wallet cannot yet estimate the input weight for some descriptors
   before signing and cannot yet sign [PSBTs][topic PSBT] in some
   edge-cases. Miniscript support for P2TR outputs is also still
-  pending. {% include functions/podcast-callout.md url="pod239 bc24149" %}
+  pending. assign timestamp="53:57"
 
 - [Bitcoin Core #25344][] updates the `bumpfee` and `psbtbumpfee` RPCs
   for creating [Replace By Fee][topic rbf] (RBF) fee bumps.  The update
@@ -225,7 +223,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   different set of outputs than the transaction being replaced.  This
   can be used to add new outputs (e.g. for iterative [payment
   batching][topic payment batching]) or to remove outputs (e.g. for
-  attempting to cancel an unconfirmed payment). {% include functions/podcast-callout.md url="pod239 bc25344" %}
+  attempting to cancel an unconfirmed payment). {% assign timestamp="56:10" %}
 
 - [Eclair #2596][] limits the number of times a peer attempting to open
   a [dual funded][topic dual funding] channel can [RBF][topic rbf] fee
@@ -238,21 +236,21 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   fees.  However, the dual funding protocol expects a node to store
   even those fee bumps it can't fully validate, meaning an attacker
   could create an unlimited number of invalid fee bump transactions that
-  will never confirm and never cost it any transaction fees. {% include functions/podcast-callout.md url="pod239 ec2596" %}
+  will never confirm and never cost it any transaction fees. {% assign timestamp="58:09" %}
 
 - [Eclair #2595][] continues the project's work on adding support for
   [splicing][topic splicing], in this case with updates to the functions
-  used for constructing transactions. {% include functions/podcast-callout.md url="pod239 ec2595" %}
+  used for constructing transactions. {% assign timestamp="59:31" %}
 
 - [Eclair #2479][] adds support for paying [offers][topic offers] in the following flow: a
   user receives an offer, tells Eclair to pay it, Eclair uses the offer
   to fetch an invoice from the receiver, verifies the invoice contains
-  the expected parameters, and pays the invoice. {% include functions/podcast-callout.md url="pod239 ec2479" %}
+  the expected parameters, and pays the invoice. {% assign timestamp="59:45" %}
 
 - [LND #5988][] adds a new optional probability estimator for finding
   payment paths.  It is partly based on previous pathfinding research
   (see [Newsletter #192][news192 pp]) with additional input from other
-  approaches. {% include functions/podcast-callout.md url="pod239 lnd5988" %}
+  approaches. {% assign timestamp="1:00:09" %}
 
 - [Rust Bitcoin #1636][] adds a `predict_weight()` function.  Input to
   the function is a template for the transaction to construct; output is the expected
@@ -261,7 +259,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   transaction, the fee amount needs to be known, but to determine
   the fee amount, the size of the transaction needs to be known.
   The function can provide a reasonable size estimate without actually
-  having to construct a candidate transaction. {% include functions/podcast-callout.md url="pod239 rb1636" %}
+  having to construct a candidate transaction. {% assign timestamp="1:00:42" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24149,25344,2596,2595,2479,5988,1636,27050" %}
@@ -292,23 +290,3 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [Chaincode Labs Research]: https://research.chaincode.com/research-intro/
 [Bitcoin Problems]: https://bitcoinproblems.org/
 [weight unit]: https://en.bitcoin.it/wiki/Weight_units
-[pod239 op_vault]: /en/podcast/2023/02/23/#draft-bip-for-op-vault
-[pod239 ln qos]: /en/podcast/2023/02/23/#ln-quality-of-service-flag
-[pod239 good neighbor]: /en/podcast/2023/02/23/#feedback-requested-on-ln-good-neighbor-scoring
-[pod239 codex32]: /en/podcast/2023/02/23/#proposed-bip-for-codex32-seed-encoding-scheme
-[pod239 se1]: /en/podcast/2023/02/23/#why-is-witness-data-downloaded-during-ibd-in-prune-mode
-[pod239 se2]: /en/podcast/2023/02/23/#can-bitcoin-s-p2p-network-relay-compressed-data
-[pod239 se3]: /en/podcast/2023/02/23/#how-does-one-become-a-dns-seed-for-bitcoin-core
-[pod239 se4]: /en/podcast/2023/02/23/#where-can-i-learn-about-open-research-topics-in-bitcoin
-[pod239 se5]: /en/podcast/2023/02/23/#what-is-the-maximum-size-transaction-that-will-be-relayed-by-bitcoin-nodes-using-the-default-configuration
-[pod239 se6]: /en/podcast/2023/02/23/#understanding-how-ordinals-work-with-in-bitcoin-what-is-exactly-stored-on-the-blockchain
-[pod239 se7]: /en/podcast/2023/02/23/#why-doesn-t-the-protocol-allow-unconfirmed-transactions-to-expire-at-a-given-height
-[pod239 bdk]: /en/podcast/2023/02/23/#bdk-0-27-1
-[pod239 cln]: /en/podcast/2023/02/23/#core-lightning-23-02rc3
-[pod239 bc24149]: /en/podcast/2023/02/23/#bitcoin-core-24149
-[pod239 bc25344]: /en/podcast/2023/02/23/#bitcoin-core-25344
-[pod239 ec2596]: /en/podcast/2023/02/23/#eclair-2596
-[pod239 ec2595]: /en/podcast/2023/02/23/#eclair-2595
-[pod239 ec2479]: /en/podcast/2023/02/23/#eclair-2479
-[pod239 lnd5988]: /en/podcast/2023/02/23/#lnd-5988
-[pod239 rb1636]: /en/podcast/2023/02/23/#rust-bitcoin-1636
