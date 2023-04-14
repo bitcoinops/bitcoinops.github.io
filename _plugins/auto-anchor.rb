@@ -16,10 +16,7 @@ def auto_anchor(content)
         ## No match, pass item through unchanged
         string
       else
-        ## Remove double-quotes from titles before attempting to slugify
-        title.gsub!('"', '')
-        ## Use Liquid/Jekyll slugify filter to choose our id
-        slug = "\#{{ \"#{title}\" | slugify: 'latin' }}"
+        slug = generate_slug(title)
         id_prefix = "- {:#{slug} .anchor-list} <a href=\"#{slug}\" class=\"anchor-list-link\">●</a>"
         string.sub!(/-/, id_prefix)
       end
