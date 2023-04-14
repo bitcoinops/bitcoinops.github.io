@@ -1,43 +1,20 @@
 ---
 title: 'Bitcoin Optech Newsletter #240 Recap Podcast'
 permalink: /en/podcast/2023/03/02/
+reference: /en/newsletters/2023/03/01/
 name: 2023-03-02-recap
 slug: 2023-03-02-recap
 type: podcast
 layout: podcast-episode
 lang: en
 ---
-Mark "Murch" Erhardt and Mike Schmidt discuss [Newsletter #240][news240].
+Mark "Murch" Erhardt and Mike Schmidt discuss [Newsletter #240]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/66072343/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-6%2Fc7ab548d-fc59-cef8-9cad-b99e5a15ca54.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Faster seed backup checksums" url="news240 checksums" anchor="checksums" timestamp="2:31" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="HWI 2.2.1"
-  url="news240 hwi" anchor="hwi" timestamp="10:17" %}
-{% include functions/podcast-note.md title="Core Lightning 23.02rc3"
-  url="news240 cln" anchor="cln" timestamp="11:38" %}
-{% include functions/podcast-note.md title="lnd v0.16.0-beta.rc1"
-  url="news240 lnd" anchor="lnd" timestamp="12:03" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="Bitcoin Core #25943"
-  url="news240 bc25943" anchor="bc25943" timestamp="12:59" %}
-{% include functions/podcast-note.md title="Bitcoin Core #26595"
-  url="news240 bc26595" anchor="bc26595" timestamp="15:11" %}
-{% include functions/podcast-note.md title="Bitcoin Core #27068"
-  url="news240 bc27068" anchor="bc27068" timestamp="16:51" %}
-{% include functions/podcast-note.md title="LDK #1988"
-  url="news240 ldk1988" anchor="ldk1988" timestamp="18:37" %}
-{% include functions/podcast-note.md title="LDK #1977"
-  url="news240 ldk1977" anchor="ldk1977" timestamp="20:15" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -85,7 +62,6 @@ week.  For those following along on Twitter Spaces, I've shared some tweets that
 are relevant to this week's newsletter and you can open up Newsletter #240 on
 the bitcoinops.org website as well to follow along.
 
-{:#checksums}
 _Faster seed backup checksums_
 
 We just have one news item this week, which is faster seed backup checksums, and
@@ -194,7 +170,6 @@ but it also scared some of the applied cryptographers that I was working with, h
 the MPC crypto was. And I may have made mistakes here, it was like three years
 ago that I talked to people about this.
 
-{:#hwi}
 _HWI 2.2.1_
 
 **Mike Schmidt**: So, we have three releases that we covered in the newsletter
@@ -216,7 +191,6 @@ of scriptpubkeys that have the same scheme, but different pubkeys plugged in.
 **Mike Schmidt**: Excellent, thank you for that overview.  So, those were the
 notable things in HWI.
 
-{:#cln}
 _Core Lightning 23.02rc3_
 
 The next notable release candidate is Core Lightning 23.02rc3, which we've had
@@ -225,7 +199,6 @@ Recap for #238, we had a couple of folks from Blockstream in the Core Lightning
 team that came on and gave us an overview of that release candidate, so I think
 you should reference that for more details.
 
-{:#lnd}
 _lnd v0.16.0-beta.rc1_
 
 And then the last release we had is LND v0.16.0 and this is a beta release
@@ -241,7 +214,6 @@ internal wallet for Taproot pubkeys in Tapscripts.  And then, there was a bunch
 of other RPC and wallet updates and bug fixes, so jump into the release notes
 there, it's really comprehensive there.
 
-{:#bc25943}
 _Bitcoin Core #25943_
 
 **Mark Erhardt**: Yeah, super.  So, #25943 basically protects users against
@@ -278,7 +250,6 @@ funds, but we would be able to assign funds to the script.
 
 **Mike Schmidt**: Got you!  Okay, that makes sense.  Thanks, Murch.
 
-{:#bc26595}
 _Bitcoin Core #26595_
 
 The next PR that we noted this week is Bitcoin Core #26595, and this pull
@@ -305,7 +276,6 @@ we do have an issue tracker on GitHub; let us know what you need.
 
 **Mike Schmidt**: Good plug.
 
-{:#bc27068}
 _Bitcoin Core #27068_
 
 Next PR here is Bitcoin Core #27068 and this is also related to passphrases.  It
@@ -336,8 +306,7 @@ your wallet".  Yeah, so I think you got it all.
 **Mike Schmidt**: The last two pull requests that we covered in this week's
 newsletter were related to the Lightning Development Kit, LDK.
 
-{:#ldk1988}
-LDK #1988
+_LDK #1988_
 
 The first PR is LDK #1988 which adds some limits for peer connections and
 unfunded channels to prevent denial of service attacks.  I believe that the
@@ -362,7 +331,6 @@ think that this sums up to over 300 connections already, plus all the
 connections that you have channels with.  That seems like a very generous amount
 of connections into the network.
 
-{:#ldk1977}
 _LDK #1977_
 
 **Mike Schmidt**: The last PR for this week is LDK #1977 and there's a couple of
@@ -394,13 +362,3 @@ a discussion of Newsletter #241.  Thanks, Murch.
 **Mark Erhardt**: Thanks, hear you soon.
 
 {% include references.md %}
-[news240]: /en/newsletters/2023/03/01/
-[news240 checksums]: /en/newsletters/2023/03/01/#faster-seed-backup-checksums
-[news240 hwi]: /en/newsletters/2023/03/01/#hwi-2-2-1
-[news240 cln]: /en/newsletters/2023/03/01/#core-lightning-23-02rc3
-[news240 lnd]: /en/newsletters/2023/03/01/#lnd-v0-16-0-beta-rc1
-[news240 bc25943]: /en/newsletters/2023/03/01/#bitcoin-core-25943
-[news240 bc26595]: /en/newsletters/2023/03/01/#bitcoin-core-26595
-[news240 bc27068]: /en/newsletters/2023/03/01/#bitcoin-core-27068
-[news240 ldk1988]: /en/newsletters/2023/03/01/#ldk-1988
-[news240 ldk1977]: /en/newsletters/2023/03/01/#ldk-1977

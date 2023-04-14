@@ -27,9 +27,9 @@ lang: zh
 
   与原始的 `OP_VAULT` 设计相比，这种方法的用户优势之一是 freeze leafscript 可以包含 Alice 想要指定的任何授权条件。在 `OP_VAULT` 提案中，任何知道 Alice 选择的参数的人都可以将她的资金用于冻结脚本。那不是安全问题，但可能很烦人。在 Sanders 的设计中，Alice 可能（例如）需要来自轻度保护的钱包的签名启动冻结——这可能足以防止大多数破坏性攻击的麻烦，但不足以阻止 Alice 快速在紧急情况下冻结她的资金。
 
-  其他几个优势旨在使共识强制的[保管协议][topic vaults] 更容易理解和验证是否安全。在我们写完上面的内容之后，`OP_VAULT` 提案的作者 James O'Beirne 对 Sanders 的想法做出了积极的回应。O'Beirne 还对我们将在未来的周报中描述的其他更改有想法。{% include functions/podcast-callout.md url="pod241 op_vault" %}
+  其他几个优势旨在使共识强制的[保管协议][topic vaults] 更容易理解和验证是否安全。在我们写完上面的内容之后，`OP_VAULT` 提案的作者 James O'Beirne 对 Sanders 的想法做出了积极的回应。O'Beirne 还对我们将在未来的周报中描述的其他更改有想法。
 
-- **New Optech 播客：** Twitter Spaces 上每周一次的 Optech Audio Recap 现已作为播客提供。每一集都将在所有流行的播客平台和 Optech 网站上作为文字记录提供。有关更多详细信息，包括为什么我们认为这是 Optech 改善比特币技术交流的使命的重要一步，请参阅我们的 [博客文章][podcast post]。{% include functions/podcast-callout.md url="pod241 podcast" %}
+- **New Optech 播客：** Twitter Spaces 上每周一次的 Optech Audio Recap 现已作为播客提供。每一集都将在所有流行的播客平台和 Optech 网站上作为文字记录提供。有关更多详细信息，包括为什么我们认为这是 Optech 改善比特币技术交流的使命的重要一步，请参阅我们的 [博客文章][podcast post]。
 
 ## Bitcoin Core PR 审核俱乐部
 
@@ -37,8 +37,7 @@ lang: zh
 
 [Bitcoin-inquisition: Activation logic for testing consensus changes][review club bi-16]是 Anthony Towns 的 PR，它在 [Bitcoin Inquisition][] 项目中添加了一种激活和停用软分叉的新方法，旨在在 [signet][topic signet]上运行并用于测试。该项目在 [周报 #219][newsletter #219 bi]中有介绍。
 
-具体来说，这个 PR 替换了 [BIP9][] 的区块版本位语义，取而代之的称为 [Heretical Deployments][]。与主网上的共识和中继更改相比——激活起来既困难又耗时，需要仔细建立（人类）共识和精心设计的 [soft fork activation][topic soft fork activation] 机制 -- 在测试网络上激活这些更改可以简化。PR 还实现了一种方法来停用被证明是有问题或不受欢迎的更改，这是与主网的主要不同。{% include
-functions/podcast-callout.md url="pod241 pr review" %}
+具体来说，这个 PR 替换了 [BIP9][] 的区块版本位语义，取而代之的称为 [Heretical Deployments][]。与主网上的共识和中继更改相比——激活起来既困难又耗时，需要仔细建立（人类）共识和精心设计的 [soft fork activation][topic soft fork activation] 机制 -- 在测试网络上激活这些更改可以简化。PR 还实现了一种方法来停用被证明是有问题或不受欢迎的更改，这是与主网的主要不同。
 
 {% include functions/details-list.md
   q0="为什么我们要部署未合并到 Bitcoin Core 的共识更改？将代码合并到 Bitcoin Core 中，然后在 signet 上测试它有什么问题（如果有的话）？"
@@ -66,14 +65,14 @@ functions/podcast-callout.md url="pod241 pr review" %}
 
 *热门的比特币基础设施项目的新版本与候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
-- [Core Lightning 23.02][] 是这个流行的 LN 实现的新版本。它包括对备份数据的对等存储的实验性支持 (详见 [周报 #238][news238 peer storage]) 并更新对 [双重出资][topic dual funding] 和 [BOLT12 发票][topic offers] 的实验性支持。还包括其他一些改进和错误修复。{% include functions/podcast-callout.md url="pod241 cln" %}
+- [Core Lightning 23.02][] 是这个流行的 LN 实现的新版本。它包括对备份数据的对等存储的实验性支持 (详见 [周报 #238][news238 peer storage]) 并更新对 [双重出资][topic dual funding] 和 [BOLT12 发票][topic offers] 的实验性支持。还包括其他一些改进和错误修复。
 
 - [LDK v0.0.114][] 是该库的新版本，用于构建支持 LN 的钱包和应用程序。它修复了几个与安全相关的错误，并包括解析 [BOLT12 发票][topic
-  offers]的能力。{% include functions/podcast-callout.md url="pod241 ldk" %}
+  offers]的能力。
 
-- [BTCPay 1.8.2][] 是这款流行的比特币自托管支付处理软件的最新版本。1.8.0 版的发行说明说，“这个版本带来了自定义结账表、商店品牌选项、重新设计的 PoS 键盘视图、新的通知图标和地址标签。” {% include functions/podcast-callout.md url="pod241 btcpay" %}
+- [BTCPay 1.8.2][] 是这款流行的比特币自托管支付处理软件的最新版本。1.8.0 版的发行说明说，“这个版本带来了自定义结账表、商店品牌选项、重新设计的 PoS 键盘视图、新的通知图标和地址标签。”
 
-- [LND v0.16.0-beta.rc2][] 是这个流行的 LN 实现的新主要版本的候选版本。{% include functions/podcast-callout.md url="pod241 lnd" %}
+- [LND v0.16.0-beta.rc2][] 是这个流行的 LN 实现的新主要版本的候选版本。
 
 ## 重大的文档和代码变更
 
@@ -84,7 +83,7 @@ Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay
 Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement
 Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 
-- [LND #7462][] 允许创建具有远程签名和使用无状态初始化功能的观察钱包。{% include functions/podcast-callout.md url="pod241 lnd7462" %}
+- [LND #7462][] 允许创建具有远程签名和使用无状态初始化功能的观察钱包。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7462" %}
@@ -102,11 +101,3 @@ Proposals (BIPs)][bips repo] 和 [Lightning BOLTs][bolts repo]。*
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
 [heretical deployments]: https://github.com/bitcoin-inquisition/bitcoin/wiki/Heretical-Deployments
 [bip9]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki
-[pod241 op_vault]: /en/podcast/2023/03/09/#alternative-design-for-op-vault
-[pod241 podcast]: /en/podcast/2023/03/09/#new-optech-podcast
-[pod241 pr review]: /en/podcast/2023/03/09/#bitcoin-inquisition-activation-logic-for-testing-consensus-changes
-[pod241 cln]: /en/podcast/2023/03/09/#core-lightning-23-02
-[pod241 ldk]: /en/podcast/2023/03/09/#ldk-v0-0-114
-[pod241 btcpay]: /en/podcast/2023/03/09/#btcpay-1-8-2
-[pod241 lnd]: /en/podcast/2023/03/09/#lnd-v0-16-0-beta-rc2
-[pod241 lnd7462]: /en/podcast/2023/03/09/#lnd-7462

@@ -69,7 +69,7 @@ technical documentation and discussion.
       more than 83 bytes of arbitrary data.  They reasoned that other
       methods for storing large amounts of data are currently in use and
       there would be no additional harm from `OP_RETURN` being used
-      instead.  {% include functions/podcast-callout.md url="pod238 storage" %}
+      instead. {% assign timestamp="1:02" %}
 
 - **Fee dilution in multiparty protocols:** Yuval Kogman
   [posted][kogman dilution] to the Bitcoin-Dev mailing list the
@@ -104,7 +104,7 @@ technical documentation and discussion.
   Kogman describes several mitigations in his post, although all of them
   involve tradeoffs.  In a [second post][kogman dilution2], he notes
   that he's unaware of any currently deployed protocol that's
-  vulnerable. {% include functions/podcast-callout.md url="pod238 dilution" %}
+  vulnerable. {% assign timestamp="27:29" %}
 
 - **Tapscript signature malleability:** in an aside to the above-mentioned
   conversation about fee dilution, developer Russell O'Connor
@@ -133,8 +133,7 @@ technical documentation and discussion.
    opened an [issue][bitcoin inquisition #19] to the Bitcoin
    Inquisition repository being used to test [SIGHASH_ANYPREVOUT][topic
    sighash_anyprevout] (APO) to consider having APO commit to additional
-   data to prevent this issue for users of that extension. {% include
-   functions/podcast-callout.md url="pod238 tapscript" %}
+   data to prevent this issue for users of that extension. {% assign timestamp="33:47" %}
 
 ## Changes to services and client software
 
@@ -143,34 +142,30 @@ wallets and services.*
 
 - **Liana wallet adds multisig:**
   [Liana][news234 liana]'s [0.2 release][liana 0.2] adds multisig support using
-  [descriptors][topic descriptors]. {% include functions/podcast-callout.md
-  url="pod238 sc1" %}
+  [descriptors][topic descriptors]. {% assign timestamp="37:35" %}
 
 - **Sparrow wallet 1.7.2 released:**
   Sparrow's [1.7.2 release][sparrow 1.7.2] adds [taproot][topic taproot]
   support, [BIP329][] import and export features (see [Newsletter #235][news235
-  bip329]), and additional support for hardware signing devices. {% include
-  functions/podcast-callout.md url="pod238 sc2" %}
+  bip329]), and additional support for hardware signing devices. {% assign timestamp="38:46" %}
 
 - **Bitcoinex library adds schnorr support:**
   [Bitcoinex][bitcoinex github] is a Bitcoin utility library for the Elixir
-  functional programming language. {% include functions/podcast-callout.md
-  url="pod238 sc3" %}
+  functional programming language. {% assign timestamp="39:20" %}
 
 - **Libwally 0.8.8 released:**
   [Libwally 0.8.8][] adds [BIP340][] tagged hash support, additional sighash
   support including [BIP118][] ([SIGHASH_ANYPREVOUT][topic SIGHASH_ANYPREVOUT]), and
   additional [miniscript][topic miniscript], descriptor, and [PSBT][topic psbt]
-  functions. {% include functions/podcast-callout.md url="pod238 sc4" %}
+  functions. {% assign timestamp="39:59" %}
 
 ## Optech Recommends
 
-[BitcoinSearch.xyz][] is a recently-launched search engine for Bitcoin
+- [BitcoinSearch.xyz][] is a recently-launched search engine for Bitcoin
 technical documentation and discussions.  It was used to quickly find
 several of the sources linked in this newsletter, a vast improvement
 over other more laborious methods we've previously used.  Contributions
-to its [code][bitcoinsearch repos] are welcome. {% include
-functions/podcast-callout.md url="pod238 bitcoinsearch" %}
+to its [code][bitcoinsearch repos] are welcome. {% assign timestamp="40:40" %}
 
 ## Releases and release candidates
 
@@ -179,20 +174,17 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 23.02rc2][] is a release candidate for a new
-  maintenance version of this popular LN implementation. {% include
-functions/podcast-callout.md url="pod238 cln" %}
+  maintenance version of this popular LN implementation. {% assign timestamp="42:21" %}
 
 - [BTCPay Server 1.7.11][] is a new release.  Since the last release we
   covered (1.7.1), several new features have been added and many bug
   fixes and improvements have been made.  Especially notable, several
   aspects related to plugins and third-party integrations have been
   changed, a migration path away from legacy MySQL and SQLite has been
-  added, and a cross-site scripting vulnerability has been fixed. {% include
-functions/podcast-callout.md url="pod238 btcpay" %}
+  added, and a cross-site scripting vulnerability has been fixed. {% assign timestamp="47:49" %}
 
 - [BDK 0.27.0][] is an update to this library for building Bitcoin
-  wallets and applications. {% include
-functions/podcast-callout.md url="pod238 bdk" %}
+  wallets and applications. {% assign timestamp="49:32" %}
 
 ## Notable code and documentation changes
 
@@ -214,7 +206,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   backups].  The merged PR adds support for creating, storing, and retrieving
   the encrypted backups.  As noted in the commit messages, the feature
   hasn't yet been fully specified or adopted by other LN
-  implementations. {% include functions/podcast-callout.md url="pod238 cln5361" %}
+  implementations. {% assign timestamp="49:51" %}
 
 - [Core Lightning #5670][] and [#5956][core lightning #5956] make
   various updates to its implementation of [dual funding][topic dual
@@ -222,7 +214,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   #851] and comments from interoperability testers.  Additionally, an
   `upgradewallet` RPC is added to move all funds in P2SH-wrapped outputs
   to native segwit outputs, which is required for interactive channel
-  opens. {% include functions/podcast-callout.md url="pod238 cln5670" %}
+  opens. {% assign timestamp="54:45" %}
 
 - [Core Lightning #5697][] adds a `signinvoice` RPC that will sign a
   [BOLT11][] invoice.  Previously, CLN would only sign an invoice when
@@ -235,20 +227,20 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   your node can claim that payment before it arrives.  That not only
   steals your money but, because you signed the invoice, generates very
   convincing evidence that you were paid (this evidence is so convincing
-  that many LN developers call it *proof of payment*). {% include functions/podcast-callout.md url="pod238 cln5697" %}
+  that many LN developers call it *proof of payment*). {% assign timestamp="56:23" %}
 
 - [Core Lightning #5960][] adds a [security policy][cln security.md]
-  that includes contact addresses and PGP keys. {% include functions/podcast-callout.md url="pod238 cln5960" %}
+  that includes contact addresses and PGP keys. {% assign timestamp="57:38" %}
 
 - [LND #7171][] upgrades the `signrpc` RPC <!--sic--> to support the
   latest [draft BIP][musig draft bip] for [MuSig2][topic musig].  The RPC now creates
   sessions linked to a MuSig2 protocol version number so that all
   operations within a session will use the correct protocol.  A
   security issue with an older version of the MuSig2 protocol was
-  mentioned in [Newsletter #222][news222 musig2]. {% include functions/podcast-callout.md url="pod238 lnd7171" %}
+  mentioned in [Newsletter #222][news222 musig2]. {% assign timestamp="58:54" %}
 
 - [LDK #2002][] adds support for automatically resending [spontaneous
-  payments][topic spontaneous payments] that don't initially succeed. {% include functions/podcast-callout.md url="pod238 ldk2002" %}
+  payments][topic spontaneous payments] that don't initially succeed. {% assign timestamp="1:00:01" %}
 
 - [BTCPay Server #4600][] updates the [coin selection][topic coin selection] for its [payjoin][topic payjoin]
   implementation to try to avoid creating transactions with *unnecessary
@@ -257,7 +249,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   regular single-spender, single-receiver payment: the largest input
   would have provided sufficient payment for the payment output and no
   additional inputs would have been added.
-  This PR was partly inspired by a [paper analyzing payjoins][]. {% include functions/podcast-callout.md url="pod238 btcpay4600" %}
+  This PR was partly inspired by a [paper analyzing payjoins][]. {% assign timestamp="1:00:59" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5361,5670,5956,851,5697,5960,7171,2002,4541,4600" %}
@@ -288,21 +280,3 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news235 bip329]: /en/newsletters/2023/01/25/#bips-1383
 [bitcoinex github]: https://github.com/RiverFinancial/bitcoinex
 [libwally 0.8.8]: https://github.com/ElementsProject/libwally-core/releases/tag/release_0.8.8
-[pod238 storage]: /en/podcast/2023/02/16/#continued-discussion-about-block-chain-data-storage
-[pod238 dilution]: /en/podcast/2023/02/16/#fee-dilution-in-multiparty-protocols
-[pod238 tapscript]: /en/podcast/2023/02/16/#tapscript-signature-malleability
-[pod238 sc1]: /en/podcast/2023/02/16/#liana-wallet-adds-multisig
-[pod238 sc2]: /en/podcast/2023/02/16/#sparrow-wallet-1-7-2-released
-[pod238 sc3]: /en/podcast/2023/02/16/#bitcoinex-library-adds-schnorr-support
-[pod238 sc4]: /en/podcast/2023/02/16/#libwally-0-8-8-released
-[pod238 bitcoinsearch]: /en/podcast/2023/02/16/#bitcoinsearch-xyz
-[pod238 cln]: /en/podcast/2023/02/16/#core-lightning-23-02rc2
-[pod238 btcpay]: /en/podcast/2023/02/16/#btcpay-server-1-7-11
-[pod238 bdk]: /en/podcast/2023/02/16/#bdk-0-27-0
-[pod238 cln5361]: /en/podcast/2023/02/16/#core-lightning-5361
-[pod238 cln5670]: /en/podcast/2023/02/16/#core-lightning-5670-and-5956
-[pod238 cln5697]: /en/podcast/2023/02/16/#core-lightning-5697
-[pod238 cln5960]: /en/podcast/2023/02/16/#core-lightning-5960
-[pod238 lnd7171]: /en/podcast/2023/02/16/#lnd-7171
-[pod238 ldk2002]: /en/podcast/2023/02/16/#ldk-2002
-[pod238 btcpay4600]: /en/podcast/2023/02/16/#btcpay-server-4600

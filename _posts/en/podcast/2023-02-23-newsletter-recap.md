@@ -1,6 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #239 Recap Podcast'
 permalink: /en/podcast/2023/02/23/
+reference: /en/newsletters/2023/02/22/
 name: 2023-02-23-recap
 slug: 2023-02-23-recap
 type: podcast
@@ -8,60 +9,13 @@ layout: podcast-episode
 lang: en
 ---
 Mark "Murch" Erhardt and Mike Schmidt are joined by James O'Beirne,
-Christian Decker, and Russell O'Connor to discuss [Newsletter #239][news239].
+Christian Decker, and Russell O'Connor to discuss [Newsletter #239]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/65694485/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-1-27%2F8312452a-43df-af11-29e5-f4553e76d78c.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Draft BIP for OP_VAULT" url="news239 op_vault" anchor="op_vault" timestamp="1:18" %}
-{% include functions/podcast-note.md title="LN quality of service flag"
-  url="news239 ln qos" anchor="ln-qos" timestamp="4:15" %}
-{% include functions/podcast-note.md title="Feedback requested on LN good neighbor scoring"
-  url="news239 good neighbor" anchor="good-neighbor" timestamp="13:58" %}
-{% include functions/podcast-note.md title="Proposed BIP for Codex32 seed encoding scheme"
-  url="news239 codex32" anchor="codex32" timestamp="20:27" %}
-
-## Selected Q&A from Bitcoin Stack Exchange
-
-{% include functions/podcast-note.md title="Why is witness data downloaded during IBD in prune mode?"
-  url="news239 se1" anchor="se1" timestamp="36:40" %}
-{% include functions/podcast-note.md title="Can Bitcoin’s P2P network relay compressed data?"
-  url="news239 se2" anchor="se2" timestamp="40:39" %}
-{% include functions/podcast-note.md title="How does one become a DNS seed for Bitcoin Core?"
-  url="news239 se3" anchor="se3" timestamp="41:18" %}
-{% include functions/podcast-note.md title="Where can I learn about open research topics in Bitcoin?"
-  url="news239 se4" anchor="se4" timestamp="44:00" %}
-{% include functions/podcast-note.md title="What is the maximum size transaction that will be relayed by bitcoin nodes using the default configuration?"
-  url="news239 se5" anchor="se5" timestamp="47:55" %}
-{% include functions/podcast-note.md title="Understanding how ordinals work with in Bitcoin. What is exactly stored on the blockchain?" url="news239 se6" anchor="se6" timestamp="50:07" %}
-{% include functions/podcast-note.md title="Why doesn’t the protocol allow unconfirmed transactions to expire at a given height?" url="news239 se7" anchor="se7" timestamp="51:00" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="BDK 0.27.1"
-  url="news239 bdk" anchor="bdk" timestamp="52:44" %}
-{% include functions/podcast-note.md title="Core Lightning 23.02rc3"
-  url="news239 cln" anchor="cln" timestamp="53:16" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="Bitcoin Core #24149"
-  url="news239 bc24149" anchor="bc24149" timestamp="53:57" %}
-{% include functions/podcast-note.md title="Bitcoin Core #25344"
-  url="news239 bc25344" anchor="bc25344" timestamp="56:10" %}
-{% include functions/podcast-note.md title="Eclair #2596"
-  url="news239 ec2596" anchor="ec2596" timestamp="58:09" %}
-{% include functions/podcast-note.md title="Eclair #2595"
-  url="news239 ec2595" anchor="ec2595" timestamp="59:31" %}
-{% include functions/podcast-note.md title="Eclair #2479"
-  url="news239 ec2479" anchor="ec2479" timestamp="59:45" %}
-{% include functions/podcast-note.md title="LND #5988"
-  url="news239 lnd5988" anchor="lnd5988" timestamp="1:00:09" %}
-{% include functions/podcast-note.md title="Rust Bitcoin #1636"
-  url="news239 rb1636" anchor="rb1636" timestamp="1:00:42" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -101,8 +55,7 @@ newsletter in this Spaces.  If folks want to follow along, you can read those
 tweets and also drill into the underlying newsletter to follow along with the
 content and associated links.
 
-{:#op_vault}
-_Draft BIP for `OP_VAULT`_
+_Draft BIP for OP_VAULT_
 
 Our first news item this week is Draft BIP for OP_VAULT, and I happened to see
 James was in the Space, so I added him as a speaker.  James, what's changed
@@ -159,7 +112,6 @@ approach, because Liquid already has covenants, so he said that he would have a
 simulation in Liquid and test it there.  I don't know, maybe if he gets that
 done, he could also put it in the Inquisition, just as another approach.
 
-{:#ln-qos}
 _LN quality of service flag_
 
 **Mike Schmidt**: Second item from the news section in this week's newsletter is
@@ -304,7 +256,6 @@ to our users, and as such should be prevented, in my mind at least.
 
 **Mark Erhardt**: Cool, thanks.
 
-{:#good-neighbor}
 _Feedback requested on LN good neighbor scoring_
 
 **Mike Schmidt**: There is a related item in the newsletter, which is the next
@@ -402,7 +353,6 @@ encoding scheme with James and Mike.
 anything else on either of these news items that you felt we should cover more
 deeply.
 
-{:#codex32}
 _Proposed BIP for Codex32 seed encoding scheme_
 
 **Mike Schmidt**: That's a nack!  Let's move on with the Codex32. Well, Russell,
@@ -674,7 +624,6 @@ joining us.  Murch, shall we move on to the Stack Exchange?
 **Mark Erhardt**: Yeah, I think we have a lot to go through still in this
 newsletter.  Let's go to the Stack Exchange questions.
 
-{:#se1}
 _Why is witness data downloaded during IBD in prune mode?_
 
 **Mike Schmidt**: Excellent.  Well, each month, the newsletter takes one week
@@ -744,8 +693,7 @@ invalid.
 checkpoints.  I think the last one was height 220,000, so what is that; seven
 years ago?  No, more.  Anyway…
 
-{:#se2}
-_Can Bitcoin’s P2P network relay compressed data?_
+_Can Bitcoin's P2P network relay compressed data?_
 
 **Mike Schmidt**: Next question from the Stack Exchange, "Can Bitcoin's P2P
 network relay compressed data?  And the question was specific about if there was
@@ -757,7 +705,6 @@ list, in which compression was discussed at the P2P level, and then also pointed
 out that Blockstream Satellite actually has its own custom transaction
 compression.
 
-{:#se3}
 _How does one become a DNS seed for Bitcoin Core?_
 
 Next question from the Stack Exchange, "How does one become a DNS seed for
@@ -806,7 +753,6 @@ didn't implement.  It comes up every couple of years; it's not a high churn
 project, so to speak, so I'd encourage everybody to run one because the more
 sources of nodes that we have, the less we are reliant on a single one.
 
-{:#se4}
 _Where can I learn about open research topics in Bitcoin?_
 
 **Mike Schmidt**: Next question from the Bitcoin Stack Exchange was, "Where can
@@ -874,7 +820,6 @@ smart people looking at Bitcoin and Lightning and realising that there are
 interesting problems here, that this is a real thing, and hopefully bring talent
 to the ecosystem.  So, take a look at those problems and pass it on.
 
-{:#se5}
 _What is the maximum size transaction that will be relayed by bitcoin nodes using the default configuration?_
 
 Next question from the Stack Exchange, "What is the maximum size transaction
@@ -911,7 +856,6 @@ when we overflow.
 It could be possible to make limits like the standardness weight limit on
 transactions configurable, but also that's probably just not a good idea.
 
-{:#se6}
 _Understanding how ordinals work with in Bitcoin. What is exactly stored on the blockchain?_
 
 **Mike Schmidt**: That makes sense and thank you for providing the rationale
@@ -929,8 +873,7 @@ IF_0 and then pushes in a bunch of data and then ends the IF statement.  There's
 a series of those types of pushes with the protocol, which is how that data gets
 put into the witness.
 
-{:#se7}
-_Why doesn’t the protocol allow unconfirmed transactions to expire at a given height?_
+_Why doesn't the protocol allow unconfirmed transactions to expire at a given height?_
 
 The last question here is, "Why doesn't the protocol allow unconfirmed
 transactions to expire at a given height?" and Larry both asked and answered
@@ -957,7 +900,6 @@ the best transactions will get picked into the new best chain.  But with the
 expiration, that just becomes more complicated, it opens up attack surfaces to
 steal from people.
 
-{:#bdk}
 _BDK 0.27.1_
 
 **Mike Schmidt**: Onto the releases and release candidates' section for the
@@ -970,7 +912,6 @@ this.  Any comments, Murch?
 
 **Mark Erhardt**: No, sounds good.  Upgrade if you're affected!
 
-{:#cln}
 _Core Lightning 23.02rc3_
 
 **Mike Schmidt**: And then, Core Lightning 23.02rc3, we had a couple of
@@ -985,7 +926,6 @@ find something breaking and I guess you already mentioned all of the headline
 features, so I will skip those since during the release process, no new features
 are added to the roster.  I probably can't tell you anything.
 
-{:#bc24149}
 _Bitcoin Core #24149_
 
 **Mark Erhardt**: Yeah.  Then I'm going to talk about Bitcoin Core #24149, which
@@ -1018,7 +958,6 @@ year since it was originally opened; so, nice to get that functionality merged.
 
 **Mark Erhardt**: Yeah, multiple years since work on miniscript started.
 
-{:#bc25344}
 _Bitcoin Core #25344_
 
 **Mike Schmidt**: Bitcoin Core #25344, which updates bumpfee and psbtbumpfee
@@ -1055,7 +994,6 @@ open up the floor for folks that have any questions.  Feel free to raise your
 hand or request speaker access, then once we wrap up going through the rest of
 these PRs, we can get to your question.
 
-{:#ec2596}
 _Eclair #2596_
 
 Eclair #2596, well I guess we're on the topic of RBF so, limiting the number of
@@ -1080,14 +1018,12 @@ attempts, because that would allow them to waste our bandwidth and DoS us.  So,
 this is just sort of a sanity limit that is placed into it to curb attack
 surface.
 
-{:#ec2595}
 _Eclair #2595_
 
 **Mike Schmidt**: Another Eclair PR is next #2595, and it seems to be some
 internal functions related to supporting splicing.  We've seen a flurry of these
 over the last few weeks, so it's good to see progress going on there.
 
-{:#ec2479}
 _Eclair #2479_
 
 Eclair #2479, adding support paying offers, and we outline in the newsletter a
@@ -1096,7 +1032,6 @@ Eclair uses the offer to fetch an invoice from the receiver and verifies the
 invoice meets the expected parameters, then pays the invoice.  So, a fairly
 standard paying offer flow there that is now supported in Eclair.
 
-{:#lnd5988}
 _LND #5988_
 
 LND #5988, adding a new optional probability estimator for finding payment
@@ -1107,7 +1042,6 @@ Pickhardt did, I believe.  And this is already in c-lightning and
 rust-lightning, and it's now taking into account channel capacity when doing
 path finding.
 
-{:#rb1636}
 _Rust Bitcoin #1636_
 
 Our last PR for this week is Rust Bitcoin #1636, which is adding a
@@ -1130,24 +1064,3 @@ Cheers.
 **Christian Decker**: Thank you very much.  Cheers.
 
 {% include references.md %}
-[news239]: /en/newsletters/2023/02/22/
-[news239 op_vault]: /en/newsletters/2023/02/22/#draft-bip-for-op-vault
-[news239 ln qos]: /en/newsletters/2023/02/22/#ln-quality-of-service-flag
-[news239 good neighbor]: /en/newsletters/2023/02/22/#feedback-requested-on-ln-good-neighbor-scoring
-[news239 codex32]: /en/newsletters/2023/02/22/#proposed-bip-for-codex32-seed-encoding-scheme
-[news239 se1]: /en/newsletters/2023/02/22/#why-is-witness-data-downloaded-during-ibd-in-prune-mode
-[news239 se2]: /en/newsletters/2023/02/22/#can-bitcoin-s-p2p-network-relay-compressed-data
-[news239 se3]: /en/newsletters/2023/02/22/#how-does-one-become-a-dns-seed-for-bitcoin-core
-[news239 se4]: /en/newsletters/2023/02/22/#where-can-i-learn-about-open-research-topics-in-bitcoin
-[news239 se5]: /en/newsletters/2023/02/22/#what-is-the-maximum-size-transaction-that-will-be-relayed-by-bitcoin-nodes-using-the-default-configuration
-[news239 se6]: /en/newsletters/2023/02/22/#understanding-how-ordinals-work-with-in-bitcoin-what-is-exactly-stored-on-the-blockchain
-[news239 se7]: /en/newsletters/2023/02/22/#why-doesn-t-the-protocol-allow-unconfirmed-transactions-to-expire-at-a-given-height
-[news239 bdk]: /en/newsletters/2023/02/22/#bdk-0-27-1
-[news239 cln]: /en/newsletters/2023/02/22/#core-lightning-23-02rc3
-[news239 bc24149]: /en/newsletters/2023/02/22/#bitcoin-core-24149
-[news239 bc25344]: /en/newsletters/2023/02/22/#bitcoin-core-25344
-[news239 ec2596]: /en/newsletters/2023/02/22/#eclair-2596
-[news239 ec2595]: /en/newsletters/2023/02/22/#eclair-2595
-[news239 ec2479]: /en/newsletters/2023/02/22/#eclair-2479
-[news239 lnd5988]:/en/newsletters/2023/02/22/#lnd-5988
-[news239 rb1636]: /en/newsletters/2023/02/22/#rust-bitcoin-1636

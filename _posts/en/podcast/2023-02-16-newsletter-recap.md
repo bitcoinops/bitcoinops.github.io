@@ -1,6 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #238 Recap Podcast'
 permalink: /en/podcast/2023/02/16/
+reference: /en/newsletters/2023/02/15/
 name: 2023-02-16-recap
 slug: 2023-02-16-recap
 type: podcast
@@ -8,59 +9,13 @@ layout: podcast-episode
 lang: en
 ---
 Mark "Murch" Erhardt and Mike Schmidt are joined by AJ Towns, Yuval Kogman, Alex
-Myers, and Vivek Kasarabada to discuss [Newsletter #238][news238].
+Myers, and Vivek Kasarabada to discuss [Newsletter #238]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/66951337/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-20%2F5ea97eb6-f7fd-fa9e-2906-a6095c271e8d.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Continued discussion about block chain data storage" url="news238 storage" anchor="storage" timestamp="1:02" %}
-{% include functions/podcast-note.md title="Fee dilution in multiparty protocols" url="news238 dilution" anchor="dilution" timestamp="27:29" %}
-{% include functions/podcast-note.md title="Tapscript signature malleability" url="news238 tapscript" anchor="tapscript" timestamp="33:47" %}
-
-## Changes to services and client software
-
-{% include functions/podcast-note.md title="Liana wallet adds multisig"
-  url="news238 sc1" anchor="sc1" timestamp="37:35" %}
-{% include functions/podcast-note.md title="Sparrow wallet 1.7.2 released"
-  url="news238 sc2" anchor="sc2" timestamp="38:46" %}
-{% include functions/podcast-note.md title="Bitcoinex library adds schnorr support"
-  url="news238 sc3" anchor="sc3" timestamp="39:20" %}
-{% include functions/podcast-note.md title="Libwally 0.8.8 released"
-  url="news238 sc4" anchor="sc4" timestamp="39:59" %}
-
-## Optech Recommends
-
-{% include functions/podcast-note.md title="BitcoinSearch.xyz"
-  url="news238 bitcoinsearch" anchor="bitcoinsearch" timestamp="40:40" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="Core Lightning 23.02rc2"
-  url="news238 cln" anchor="cln" timestamp="42:21" %}
-{% include functions/podcast-note.md title="BTCPay Server 1.7.11"
-  url="news238 btcpay" anchor="btcpay" timestamp="47:49" %}
-{% include functions/podcast-note.md title="BDK 0.27.0"
-  url="news238 bdk" anchor="bdk" timestamp="49:32" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="Core Lightning #5361"
-  url="news238 cln5361" anchor="cln5361" timestamp="49:51" %}
-{% include functions/podcast-note.md title="Core Lightning #5670 and #5956"
-  url="news238 cln5670" anchor="cln5670" timestamp="54:45" %}
-{% include functions/podcast-note.md title="Core Lightning #5697"
-  url="news238 cln5697" anchor="cln5697" timestamp="56:23" %}
-{% include functions/podcast-note.md title="Core Lightning #5960"
-  url="news238 cln5960" anchor="cln5960" timestamp="57:38" %}
-{% include functions/podcast-note.md title="LND #7171"
-  url="news238 lnd7171" anchor="lnd7171" timestamp="58:54" %}
-{% include functions/podcast-note.md title="LDK #2002"
-  url="news238 ldk2002" anchor="ldk2002" timestamp="1:00:01" %}
-{% include functions/podcast-note.md title="BTCPay Server #4600"
-  url="news238 btcpay4600" anchor="btcpay4600" timestamp="1:00:59" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -98,7 +53,6 @@ section.  Murch, any announcements before we jump in?
 
 **Mark Erhardt**: No.
 
-{:#storage}
 _Continued discussion about block chain data storage_
 
 **Mike Schmidt**: All right, let's do it.  Well, the first news item this week
@@ -565,7 +519,6 @@ place?
 **Mike Schmidt**: All right, we can move on.  Quite a discussion there on our
 first news item.
 
-{:#dilution}
 _Fee dilution in multiparty protocols_
 
 The next news item here is fee dilution in multiparty protocols, and you've all
@@ -666,7 +619,6 @@ think is really contrived, but if you are able to do that, then yeah, you can
 extract a positive payoff that only has to do with how much you end up directly
 paying for block space, I do think is still kind of interesting.
 
-{:#tapscript}
 _Tapscript signature malleability_
 
 **Mike Schmidt**: Murch, Yuval mentioned the spinoff discussion that we noted in
@@ -727,7 +679,6 @@ technology, and so we like to highlight that here for users that are familiar
 with those projects and to give a pat on the back to those projects for adopting
 those different pieces of tech.
 
-{:#sc1}
 _Liana wallet adds multisig_
 
 So, the first one we had this month is the Liana wallet adding multisig.  So we
@@ -749,7 +700,6 @@ exciting thing to me about the Liana wallet, is the miniscript use.
 **Mike Schmidt**: Yeah, they seem to be moving fast and on the cutting edge, so
 round of applause for those guys.
 
-{:#sc2}
 _Sparrow wallet 1.7.2 released_
 
 The next one we highlighted in the newsletter this week was Sparrow wallet, and
@@ -762,7 +712,6 @@ there's additional support for hardware signing devices.
 **Mark Erhardt**: In fact, the author of Sparrow wallet is also the author of
 BIP329.
 
-{:#sc3}
 _Bitcoinex library adds schnorr support_
 
 **Mike Schmidt**: It's a wonder they got it done so quickly.  The folks at River
@@ -777,7 +726,6 @@ Murch, are you doing any functional programming using Elixir?
 programming languages at university.  The simulation for coin selection for my
 master thesis was in Scala.
 
-{:#sc4}
 _Libwally 0.8.8 released_
 
 **Mike Schmidt**: Oh, cool.  And then the last highlight for this segment was
@@ -795,7 +743,6 @@ libwally these days, and that's what instagibbs is working on for L2.
 
 **Mark Erhardt**: LN symmetry!
 
-{:#bitcoinsearch}
 _BitcoinSearch.xyz_
 
 **Mike Schmidt**: We have an Optech Recommends segment this week, and this is
@@ -826,7 +773,6 @@ at the end, site:bitcoinops.org.  So, I think instead of doing that, I could add
 a little shortcut to use this search engine and just type my query in there, so
 looking forward to using this more.
 
-{:#cln}
 _Core Lightning 23.02rc2_
 
 Next segment of the newsletter is Releases and Release Candidates, and the first
@@ -927,7 +873,6 @@ this one.  But yeah, you've got to wear it in the meetings!
 **Mike Schmidt**: Nice!  We'll jump back to some of the Core Lightning PRs
 shortly.  Let's wrap up the Release Candidate and Releases section.
 
-{:#btcpay}
 _BTCPay Server 1.7.11_
 
 BTCPay Server 1.7.11.  The last release we covered in the newsletter was 1.7.1,
@@ -953,7 +898,6 @@ for example on 1.7.4, there's a note for the integrators, for the people that
 work on RaspiBlitz and Umbrel.  Anyway, those people that directly work with the
 project should be reading all of the release notes definitely.
 
-{:#bdk}
 _BDK 0.27.0_
 
 **Mike Schmidt**: The last release that we noted was a maintenance release for
@@ -966,7 +910,6 @@ saw anything else notable?
 
 **Mike Schmidt**: All right, Notable Code and Documentation Changes.
 
-{:#cln5361}
 _Core Lightning #5361_
 
 Alex, we'll bring you back in for this.  I think you had already talked about
@@ -1051,7 +994,6 @@ watchtower, one source where you could retrieve your static channel backup blob
 if everything else is lost.  That's really interesting, I'll have to look into
 that.
 
-{:#cln5670}
 _Core Lightning #5670 and #5956_
 
 **Mike Schmidt**: Alex, you talked a little bit about dual funding, which is the
@@ -1085,7 +1027,6 @@ re-evaluation of the protocol design questions.  I thought that was cool.
 works with, it doesn't get ratified until a second implementation goes through
 all the pain points and these issues arise.
 
-{:#cln5697}
 _Core Lightning #5697_
 
 **Mike Schmidt**: Alex, Core Lightning #5697 adds a signinvoice RPC that will
@@ -1110,7 +1051,6 @@ potentially collude to intercept a payment.  So, this might make more sense in
 maybe a PTLC world, but I think it will enable some neat things to be built on
 top of it, so I'm excited to see how it gets used.
 
-{:#cln5960}
 _Core Lightning #5960_
 
 **Mike Schmidt**: And then the last Core Lightning PR for this week's newsletter
@@ -1134,7 +1074,6 @@ newsletter, so if you want to comment on anything we've discussed or have a
 question to one of those things in a few minutes when we've done the last few
 items, we'll be able to take your comment.
 
-{:#lnd7171}
 _LND #7171_
 
 **Mike Schmidt**: LND #7171 upgrading the signrpc RPC to support the latest
@@ -1155,7 +1094,6 @@ close, it's coming soon, so we only have to wait 2 more weeks to 18 months.
 **Mike Schmidt**: At first I thought that you were real on the 2 weeks, but
 yeah, who knows what else might be found.
 
-{:#ldk2002}
 _LDK #2002_
 
 Our LDK PR which is next is actually incorrect.  Val actually okayed the change;
@@ -1175,7 +1113,6 @@ predict any timeline, but it's actually really close.
 
 **Mike Schmidt**: It's happening!
 
-{:#btcpay4600}
 _BTCPay Server #4600_
 
 The last PR for this week's newsletter if BTCPay Server #4600 and that updates
@@ -1221,22 +1158,3 @@ next week.
 **Alex Myers:** Thanks for having us.
 
 {% include references.md %}
-[news238]: /en/newsletters/2023/02/15/
-[news238 storage]: /en/newsletters/2023/02/15/#continued-discussion-about-block-chain-data-storage
-[news238 dilution]: /en/newsletters/2023/02/15/#fee-dilution-in-multiparty-protocols
-[news238 tapscript]: /en/newsletters/2023/02/15/#tapscript-signature-malleability
-[news238 sc1]: /en/newsletters/2023/02/15/#liana-wallet-adds-multisig
-[news238 sc2]: /en/newsletters/2023/02/15/#sparrow-wallet-1-7-2-released
-[news238 sc3]: /en/newsletters/2023/02/15/#bitcoinex-library-adds-schnorr-support
-[news238 sc4]: /en/newsletters/2023/02/15/#libwally-0-8-8-released
-[news238 bitcoinsearch]: /en/newsletters/2023/02/15/#optech-recommends
-[news238 cln]: /en/newsletters/2023/02/15/#core-lightning-23-02rc2
-[news238 btcpay]: /en/newsletters/2023/02/15/#btcpay-server-1-7-11
-[news238 bdk]: /en/newsletters/2023/02/15/#bdk-0-27-0
-[news238 cln5361]: /en/newsletters/2023/02/15/#core-lightning-5361
-[news238 cln5670]: /en/newsletters/2023/02/15/#core-lightning-5670
-[news238 cln5697]: /en/newsletters/2023/02/15/#core-lightning-5697
-[news238 cln5960]: /en/newsletters/2023/02/15/#core-lightning-5960
-[news238 lnd7171]: /en/newsletters/2023/02/15/#lnd-7171
-[news238 ldk2002]: /en/newsletters/2023/02/15/#ldk-2002
-[news238 btcpay4600]: /en/newsletters/2023/02/15/#btcpay-server-4600

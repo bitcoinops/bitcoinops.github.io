@@ -1,6 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #241 Recap Podcast'
 permalink: /en/podcast/2023/03/09/
+reference: /en/newsletters/2023/03/08/
 name: 2023-03-09-recap
 slug: 2023-03-09-recap
 type: podcast
@@ -8,37 +9,13 @@ layout: podcast-episode
 lang: en
 ---
 Mark "Murch" Erhardt and Mike Schmidt are joined by James O'Beirne and Greg
-Sanders to discuss [Newsletter #241][news241].
+Sanders to discuss [Newsletter #241]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/66481895/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-13%2F2e2d3d8d-25d8-c037-24da-5193bdb1c466.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Alternative design for OP_VAULT" url="news241 op_vault" anchor="op_vault" timestamp="0:41" %}
-{% include functions/podcast-note.md title="New Optech Podcast" url="news241 podcast" anchor="podcast" timestamp="23:29" %}
-
-## Bitcoin Core PR Review Club
-
-{% include functions/podcast-note.md title="Bitcoin-inquisition: Activation logic for testing consensus changes" url="news241 pr review" anchor="pr-review"
-timestamp="24:33" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="Core Lightning 23.02"
-  url="news241 cln" anchor="cln" timestamp="38:01" %}
-{% include functions/podcast-note.md title="LDK v0.0.114"
-  url="news241 ldk" anchor="ldk" timestamp="40:00" %}
-{% include functions/podcast-note.md title="BTCPay 1.8.2"
-  url="news241 btcpay" anchor="btcpay" timestamp="40:52" %}
-{% include functions/podcast-note.md title="LND v0.16.0-beta.rc2"
-  url="news241 lnd" anchor="lnd" timestamp="41:40" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="LND #7462"
-  url="news241 lnd7462" anchor="lnd7462" timestamp="42:48" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -58,7 +35,6 @@ open-source developers.  Murch?
 
 **Greg Sanders**: Hi, I'm Greg instagibbs, Core Lightning engineer.
 
-{:#op_vault}
 _Alternative design for OP_VAULT_
 
 **Mike Schmidt**: Well, thank you special guests for joining us.  First and
@@ -448,7 +424,6 @@ if you want to hang on and chime in, feel free to do that as well.
 somewhat related to soft fork proposals, so maybe you'll have some thoughts on
 that too.
 
-{:#podcast}
 New Optech Podcast
 
 **Mike Schmidt**: Yeah, I'm sure we could use some insights.  One quick other
@@ -470,7 +445,6 @@ this.
 great venue for, you know, somewhat casual but still kind of in the weeds
 topics, so I'm really glad you guys do this on a weekly basis.
 
-{:#pr-review}
 _PR Review: Bitcoin-inquisition: Activation logic for testing consensus changes_
 
 **Mike Schmidt**: Awesome.  We have a monthly segment that we do for the
@@ -684,7 +658,6 @@ to the new rules.
 **Mike Schmidt**: Murch, we can move on to releases and release candidates for
 this week.
 
-{:#cln}
 _Core Lightning 23.02_
 
 We've covered Core Lightning 23.02 release candidates for some time, including a
@@ -714,7 +687,6 @@ So, this is notably not the full backup of the states of the channel, but it's
 more if the channel gets closed and you get paid out, you'll get back your
 money.
 
-{:#ldk}
 _LDK v0.0.114_
 
 **Mike Schmidt**: The next release that we covered this week was LDK v0.0.114,
@@ -731,7 +703,6 @@ offers with LDK now, so it's getting closer.  Murch, any LDK commentary?
 
 **Mark Erhardt**: No, I think you got it.
 
-{:#btcpay}
 _BTCPay 1.8.2_
 
 **Mike Schmidt**: We highlighted the BTCPay 1.8.2 release.  I think we've
@@ -749,7 +720,6 @@ labeling BIP or not; did you happen to see that?
 **Mike Schmidt**: Okay, I couldn't see that but perhaps they are adopting that
 new BIP fairly soon after it was official.
 
-{:#lnd}
 _LND v0.16.0-beta.rc2_
 
 The last release we have for this week is LND v0.16.0-beta.rc2.  I didn't pull
@@ -770,7 +740,6 @@ so I'll use this as an opportunity to solicit any questions or commentary from
 the listeners.  Feel free to raise your hand or request speaker access and we
 can get to you after we wrap up this LND PR.
 
-{:#lnd7462}
 _LND #7462_
 
 LND #7462, allowing the creation of watch-only wallets with remote signing and
@@ -797,12 +766,3 @@ at 14:00 UTC to discuss Newsletter #242.
 **Mike Schmidt**: Cheers, bye.
 
 {% include references.md %}
-[news241]: /en/newsletters/2023/03/08/
-[news241 op_vault]: /en/newsletters/2023/03/08/#alternative-design-for-op-vault
-[news241 podcast]: /en/newsletters/2023/03/08/#new-optech-podcast
-[news241 pr review]: /en/newsletters/2023/03/08/#bitcoin-core-pr-review-club
-[news241 cln]: /en/newsletters/2023/03/08/#core-lightning-23-02
-[news241 ldk]: /en/newsletters/2023/03/08/#ldk-v0-0-114
-[news241 btcpay]: /en/newsletters/2023/03/08/#btcpay-1-8-2
-[news241 lnd]: /en/newsletters/2023/03/08/#lnd-v0-16-0-beta-rc2
-[news241 lnd7462]: /en/newsletters/2023/03/08/#lnd-7462

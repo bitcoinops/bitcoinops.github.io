@@ -1,54 +1,20 @@
 ---
 title: 'Bitcoin Optech Newsletter #243 Recap Podcast'
 permalink: /en/podcast/2023/03/23/
+reference: /en/newsletters/2023/03/22/
 name: 2023-03-23-recap
 slug: 2023-03-23-recap
 type: podcast
 layout: podcast-episode
 lang: en
 ---
-Mark "Murch" Erhardt and Mike Schmidt are joined by Alekos Filini to discuss [Newsletter #243][news243].
+Mark "Murch" Erhardt and Mike Schmidt are joined by Alekos Filini to discuss [Newsletter #243]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/67545048/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-29%2F2a4fe187-8895-deaf-5429-21ee45ce15f8.mp3" %}
 
-## News
-
-_No significant news this week was found on the Bitcoin-Dev or Lightning-Dev mailing lists._
-
-## Changes to services and client software
-
-{% include functions/podcast-note.md title="Xapo Bank supports Lightning"
-  url="news243 sc1" anchor="cs1" timestamp="1:41" %}
-{% include functions/podcast-note.md title="TypeScript library for miniscript descriptors released"
-  url="news243 sc2" anchor="cs2" timestamp="3:02" %}
-{% include functions/podcast-note.md title="Breez Lightning SDK announced"
-  url="news243 sc3" anchor="cs3" timestamp="6:48" %}
-{% include functions/podcast-note.md title="PSBT-based exchange OpenOrdex launches"
-  url="news243 sc4" anchor="cs4" timestamp="10:48" %}
-{% include functions/podcast-note.md title="BTCPay Server coinjoin plugin released"
-  url="news243 sc5" anchor="cs5" timestamp="14:01" %}
-{% include functions/podcast-note.md title="mempool.space explorer enhances CPFP support"
-  url="news243 sc6" anchor="cs6" timestamp="18:46" %}
-{% include functions/podcast-note.md title="Sparrow v1.7.3 released"
-  url="news243 sc7" anchor="cs7" timestamp="21:38" %}
-{% include functions/podcast-note.md title="Stack Wallet adds coin control, BIP47"
-  url="news243 sc8" anchor="cs8" timestamp="24:22" %}
-{% include functions/podcast-note.md title="Wasabi Wallet v2.0.3 released"
-  url="news243 sc9" anchor="cs9" timestamp="26:26" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="LND v0.16.0-beta.rc3"
-  url="news243 lnd" anchor="lnd" timestamp="28:32" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="LND #7448"
-  url="news243 lnd7448" anchor="lnd7448" timestamp="29:16" %}
-{% include functions/podcast-note.md title="BDK #793"
-  url="news243 bdk793" anchor="bdk793" timestamp="36:03" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -86,7 +52,6 @@ jump into that?
 
 **Mark Erhardt**: I don't have any.
 
-{:#cs1}
 _Xapo Bank supports Lightning_
 
 **Mike Schmidt**: All right.  Well, the first interesting client software update
@@ -113,7 +78,6 @@ to me like they first decided that they were going to do something with
 Lightning and then they tried to figure out what their product was going to be,
 so I think that might have added to the mystique.
 
-{:#cs2}
 _TypeScript library for miniscript descriptors released_
 
 **Mike Schmidt**: Perhaps.  The second thing that we noted in the newsletter was
@@ -177,7 +141,6 @@ you are fine with just that, you don't need a compiler in your project.
 fairly young project, so potentially some of that stuff could be added in the
 future.
 
-{:#cs3}
 _Breez Lightning SDK announced_
 
 The next item that we noted was Breez Lightning SDK being announced and we've
@@ -234,7 +197,6 @@ self-custodial Lightning to its users.  I think it's really nice to see how
 things are coming together slowly and products are getting more refined that
 way.
 
-{:#cs4}
 _PSBT-based exchange OpenOrdex launches_
 
 **Mike Schmidt**: The next piece of software that we spoke about in this segment
@@ -279,7 +241,6 @@ they're doing that.
 his tweet that I saw originally that was what brought this project to my
 attention.
 
-{:#cs5}
 _BTCPay Server coinjoin plugin released_
 
 The next item that we saw that was notable for the Bitcoin Optech community was
@@ -342,8 +303,7 @@ that I thought!
 **Mike Schmidt**: Yeah, that was great context.  Thanks for walking through
 that, Murch.
 
-{:#cs6}
-_Mempool.space explorer enhances CPFP support_
+_mempool.space explorer enhances CPFP support_
 
 The next item that we noted in the client and services updates section of the
 newsletter is mempool.space adding enhanced CPFP support.  So, mempool.space is
@@ -382,7 +342,6 @@ high-feerate child, it would look like the minimum feerate was lower in the
 block, but really it actually all fit because the child paid for it and it was
 sensible to include the transaction.
 
-{:#cs7}
 _Sparrow v1.7.3 released_
 
 **Mike Schmidt**: Next item from the newsletter that we noted was Sparrow v1.7.3
@@ -419,7 +378,6 @@ interested in having a standard on how to do this together.  I see names of
 people that work on Nunchuck, Coinkite, Shift Crypto, being a hardware wallet
 producer, I don't know who Aaron Chen is, but Rodolfo Novak also from COLDCARD.
 
-{:#cs8}
 _Stack Wallet adds coin control, BIP47_
 
 **Mike Schmidt**: The next piece of software we noted this week was Stack Wallet
@@ -454,7 +412,6 @@ angry, because we covered paynyms, which is like a Samourai thing, we've covered
 Wasabi and we've covered ordinals.  So, everybody can be angry about our
 coverage of software this week.
 
-{:#cs9}
 _Wasabi Wallet v2.0.3 released_
 
 The last one is Wasabi, so we noted Wasabi's WabiSabi plugin for BTCPay, and the
@@ -482,7 +439,6 @@ or allow you to label addresses when you receive, and then deduce context from
 that.  But yeah, it's a long road, we'll get there eventually and meanwhile,
 power users can do it manually.
 
-{:#lnd}
 _LND v0.16.0-beta.rc3_
 
 **Mike Schmidt**: We noted one release this week in the newsletter, which is LND
@@ -494,7 +450,6 @@ this is actually released, so we'll get them either next week or the week after,
 and I think they'll provide a better overview of this release than we could.
 So, I'm okay punting it again, Murch, if you are.  All right, great.
 
-{:#lnd7448}
 _LND #7448_
 
 Speaking of LND, the first notable code change, LND #7448, adds a new
@@ -589,7 +544,6 @@ LND rebroadcast PR?
 
 **Mark Erhardt**: No, I think that is all.
 
-{:#bdk793}
 _BDK #793_
 
 **Mike Schmidt**: Well, the last pull request that we highlighted in the
@@ -805,16 +759,3 @@ Bitcoin Optech Newsletter #243, and we'll talk to you guys next week.  Cheers.
 **Alekos Filini**: Bye, thank you.
 
 {% include references.md %}
-[news243]: /en/newsletters/2023/03/22/
-[news243 sc1]: /en/newsletters/2023/03/22/#xapo-bank-supports-lightning
-[news243 sc2]: /en/newsletters/2023/03/22/#typescript-library-for-miniscript-descriptors-released
-[news243 sc3]: /en/newsletters/2023/03/22/#breez-lightning-sdk-announced
-[news243 sc4]: /en/newsletters/2023/03/22/#psbt-based-exchange-openordex-launches
-[news243 sc5]: /en/newsletters/2023/03/22/#btcpay-server-coinjoin-plugin-released
-[news243 sc6]: /en/newsletters/2023/03/22/#mempool-space-explorer-enhances-cpfp-support
-[news243 sc7]: /en/newsletters/2023/03/22/#sparrow-v1-7-3-released
-[news243 sc8]: /en/newsletters/2023/03/22/#stack-wallet-adds-coin-control-bip47
-[news243 sc9]: /en/newsletters/2023/03/22/#wasabi-wallet-v2-0-3-released
-[news243 lnd]: /en/newsletters/2023/03/22/#lnd-v0-16-0-beta-rc3
-[news243 lnd7448]: /en/newsletters/2023/03/22/#lnd-7448
-[news243 bdk793]: /en/newsletters/2023/03/22/#bdk-793
