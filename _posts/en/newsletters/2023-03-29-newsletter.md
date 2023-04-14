@@ -186,7 +186,7 @@ software.
     lower the cost to forward payments over LN.
 
     As of this writing, tunable penalties and Law's various proposals for
-    using them have not received much public discussion. {% include functions/podcast-callout.md url="pod244 factories" %}
+    using them have not received much public discussion. {% assign timestamp="1:00" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -202,28 +202,28 @@ answers posted since our last update.*
 - [Why isn't the taproot deployment buried in Bitcoin Core?]({{bse}}117569)
   Andrew Chow explains the rationale for the taproot soft fork
   [deployment][topic soft fork activation] not being [buried][BIP90] as [others
-  have][bitcoin buried deployments]. {% include functions/podcast-callout.md url="pod244 se1" %}
+  have][bitcoin buried deployments]. {% assign timestamp="28:06" %}
 
 - [What restrictions does the version field in the block header have?]({{bse}}117530)
   Murch notes an increase in [blocks][explorer block 779960] mined using [overt
   ASICBoost][topic ASICBoost], lists restrictions on the version field, and
-  walks through examples of [block header version fields][FCAT block header blog]. {% include functions/podcast-callout.md url="pod244 se2" %}
+  walks through examples of [block header version fields][FCAT block header blog]. {% assign timestamp="32:23" %}
 
 - [What is the relation between transaction data and ids?]({{bse}}117453)
   Pieter Wuille explains the legacy transaction serialization format covered by
   `txid` identifier, the witness extended serialization format covered by the `hash` and
   `wtxid` identifiers, and points out in a [separate answer][se117577] that
-  hypothetical additional transaction data would be covered by the `hash` identifier. {% include functions/podcast-callout.md url="pod244 se3" %}
+  hypothetical additional transaction data would be covered by the `hash` identifier. {% assign timestamp="39:04" %}
 
 - [Can I request tx messages from other peers?]({{bse}}117546)
   User RedGrittyBrick points to resources explaining the [performance][wiki getdata] and
   [privacy][Bitcoin Core #18861] reasons that arbitrary requests for
-  transactions from peers is not supported by Bitcoin Core's P2P layer. {% include functions/podcast-callout.md url="pod244 se4" %}
+  transactions from peers is not supported by Bitcoin Core's P2P layer. {% assign timestamp="43:33" %}
 
 - [Eltoo: Does the relative locktime on the first UTXO set the lifetime of the channel?]({{bse}}117468)
   Murch confirms that the question's example [eltoo][topic eltoo]-constructed LN channel
   has a limited lifetime but points to mitigations from the [eltoo
-  whitepaper][] that keep the timeouts from expiring. {% include functions/podcast-callout.md url="pod244 se5" %}
+  whitepaper][] that keep the timeouts from expiring. {% assign timestamp="47:34" %}
 
 ## Releases and release candidates
 
@@ -234,14 +234,14 @@ release candidates.*
 - [Rust Bitcoin 0.30.0][] is the latest release of this library for
   using data structures related to Bitcoin.  The [release notes][rb rn]
   mention a [new website][rust-bitcoin.org] and a large number of API
-  changes. {% include functions/podcast-callout.md url="pod244 rb" %}
+  changes. {% assign timestamp="52:23" %}
 
 - [LND v0.16.0-beta.rc5][] is a release candidate for a new major
-  version of this popular LN implementation. {% include functions/podcast-callout.md url="pod244 lnd" %}
+  version of this popular LN implementation. {% assign timestamp="53:43" %}
 
 - [BDK 1.0.0-alpha.0][] is a test release of the major changes to BDK
   described in [last week's newsletter][news243 bdk].  Developers of
-  downstream projects are encouraged to begin integration testing. {% include functions/podcast-callout.md url="pod244 bdk" %}
+  downstream projects are encouraged to begin integration testing. {% assign timestamp="54:16" %}
 
 ## Notable code and documentation changes
 
@@ -279,51 +279,51 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   add up to two new lines per block (although future PRs may reduce it
   to just one line), which was considered to be a small enough
   additional overhead to help detect selfish mining attacks and other
-  problems associated with critical block relay. {% include functions/podcast-callout.md url="pod244 bc27278" %}
+  problems associated with critical block relay. {% assign timestamp="54:45" %}
 
 - [Bitcoin Core #26531][] adds tracepoints for monitoring events
   affecting the mempool using the Extended Berkeley Packet Filter (eBPF)
   as implemented in previous PRs (see [Newsletter #133][news133 usdt]).
   A script is also added for using the tracepoints for monitoring
-  mempool statistics and activity in real time. {% include functions/podcast-callout.md url="pod244 bc26531" %}
+  mempool statistics and activity in real time. {% assign timestamp="1:00:26" %}
 
 - [Core Lightning #5898][] updates its dependency on [libwally][] to a
   more recent version (see [Newsletter #238][news238 libwally]), which allows adding support for [taproot][topic
   taproot], version 2 [PSBT][topic psbt] (see [Newsletter #128][news128
-  psbt2]), and affects support for LN on Elements-style sidechains. {% include functions/podcast-callout.md url="pod244 cln5898" %}
+  psbt2]), and affects support for LN on Elements-style sidechains. {% assign timestamp="1:03:23" %}
 
 - [Core Lightning #5986][] updates RPCs which return values in msats to
   no longer include the string "msat" as part of the result.  Instead,
   all returned values are integers.  This completes a deprecation begun
-  several releases ago, see [Newsletter #206][news206 msat]. {% include functions/podcast-callout.md url="pod244 cln5986" %}
+  several releases ago, see [Newsletter #206][news206 msat]. {% assign timestamp="1:05:21" %}
 
 - [Eclair #2616][] adds support for opportunistic [zero-conf
   channels][topic zero-conf channels]---if the remote peer sends the
   `channel_ready` message before the expected number of confirmations,
   Eclair will verify that the funding transaction was entirely created
   by the local node (so the remote peer can't get a conflicting
-  transaction confirmed) and then will allow the channel to be used. {% include functions/podcast-callout.md url="pod244 ec2616" %}
+  transaction confirmed) and then will allow the channel to be used. {% assign timestamp="1:07:43" %}
 
 - [LDK #2024][] begins including route hints for channels which have
   been opened but which are too immature to have been publicly announced
-  yet, such as [zero-conf channels][topic zero-conf channels]. {% include functions/podcast-callout.md url="pod244 ldk2024" %}
+  yet, such as [zero-conf channels][topic zero-conf channels]. {% assign timestamp="1:10:36" %}
 
 - [Rust Bitcoin #1737][] adds a [security reporting policy][rb sec] for the
-  project. {% include functions/podcast-callout.md url="pod244 rb1737" %}
+  project. {% assign timestamp="1:12:43" %}
 
 - [BTCPay Server #4608][] allows plugins to expose their features as an
-  app in the BTCPay user interface. {% include functions/podcast-callout.md url="pod244 btcpay4608" %}
+  app in the BTCPay user interface. {% assign timestamp="1:13:03" %}
 
 - [BIPs #1425][] assigns [BIP93][] to the codex32 scheme for encoding
   [BIP32][] recovery seeds using Shamir's Secret Sharing Scheme (SSSS)
   algorithm, a checksum, and a 32-character alphabet as described in
-  [Newsletter #239][news239 codex32]. {% include functions/podcast-callout.md url="pod244 bips1425" %}
+  [Newsletter #239][news239 codex32]. {% assign timestamp="1:15:43" %}
 
 - [Bitcoin Inquisition #22][] adds an `-annexcarrier` runtime option which
   allows pushing from 0 to 126 bytes of data a taproot input's annex
   field.  The author of the PR is planning to use the feature to allow
   people to begin experimenting on signet with [eltoo][topic eltoo]
-  using a fork of Core Lightning. {% include functions/podcast-callout.md url="pod244 bi22" %}
+  using a fork of Core Lightning. {% assign timestamp="1:16:51" %}
 
 ## Footnotes
 
@@ -388,22 +388,3 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [se117577]: https://bitcoin.stackexchange.com/a/117577/87121
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
 [eltoo whitepaper]: https://blockstream.com/eltoo.pdf#page=15
-[pod244 factories]: /en/podcast/2023/03/30/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
-[pod244 se1]: /en/podcast/2023/03/30/#why-isn-t-the-taproot-deployment-buried-in-bitcoin-core
-[pod244 se2]: /en/podcast/2023/03/30/#what-restrictions-does-the-version-field-in-the-block-header-have
-[pod244 se3]: /en/podcast/2023/03/30/#what-is-the-relation-between-transaction-data-and-ids
-[pod244 se4]: /en/podcast/2023/03/30/#can-i-request-tx-messages-from-other-peers
-[pod244 se5]: /en/podcast/2023/03/30/#eltoo-does-the-relative-locktime-on-the-first-utxo-set-the-lifetime-of-the-channel
-[pod244 rb]: /en/podcast/2023/03/30/#rust-bitcoin-0-30-0
-[pod244 lnd]: /en/podcast/2023/03/30/#lnd-v0-16-0-beta-rc5
-[pod244 bdk]: /en/podcast/2023/03/30/#bdk-1-0-0-alpha-0
-[pod244 bc27278]: /en/podcast/2023/03/30/#bitcoin-core-27278
-[pod244 bc26531]: /en/podcast/2023/03/30/#bitcoin-core-26531
-[pod244 cln5898]: /en/podcast/2023/03/30/#core-lightning-5898
-[pod244 cln5986]: /en/podcast/2023/03/30/#core-lightning-5986
-[pod244 ec2616]: /en/podcast/2023/03/30/#eclair-2616
-[pod244 ldk2024]: /en/podcast/2023/03/30/#ldk-2024
-[pod244 rb1737]: /en/podcast/2023/03/30/#rust-bitcoin-1737
-[pod244 btcpay4608]: /en/podcast/2023/03/30/#btcpay-server-4608
-[pod244 bips1425]: /en/podcast/2023/03/30/#bips-1425
-[pod244 bi22]: /en/podcast/2023/03/30/#bitcoin-inquisition-22
