@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Hebdomadiare Bitcoin Optech #246'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #246'
 permalink: /fr/newsletters/2023/04/12/
 name: 2023-04-12-newsletter-fr
 slug: 2023-04-12-newsletter-fr
@@ -18,34 +18,34 @@ l'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Discussions sur les spécifications des épissures :** Plusieurs développeurs LN ont
+- **Discussions sur les spécifications du splicing :** Plusieurs développeurs LN ont
   posté sur la liste de diffusion Lightning-Dev cette semaine à propos du
-  travail en cours sur le [projet de spécification][bolts #863] pour les
-  [épissures][topic splicing], qui permet à certains fonds dans un canal
+  travail en cours sur le [projet de spécification][bolts #863] pour le
+  [splicing][topic splicing], qui permet à certains fonds dans un canal
   LN hors chaîne d'être dépensés sur la chaîne (splice-out) ou à des fonds
   sur la chaîne d'être ajoutés à un canal hors chaîne (splice-in). Le canal
-  peut continuer à fonctionner pendant qu'une transaction en épissure sur
+  peut continuer à fonctionner pendant qu'une transaction splicée sur
   la chaîne attend un nombre suffisant de confirmations.
 
   {:.center}
   ![Splicing transaction flow](/img/posts/2023-04-splicing1.dot.png)
 
-  Les discussions de cette semaine ont porté sur les sujets suivants :
+  Les discussions de cette semaine ont portées sur les sujets suivants :
 
-  - *Quelles signatures d'engagement envoyer :* lorsqu'une épissure est créée,
+  - *Quelles signatures d'engagement envoyer :* lorsqu'un splicing est créé,
     un nœud contient des transactions d'engagement parallèles, une qui dépense
     à partir de la sortie de financement originale et une qui dépense à partir
-    de chaque nouvelle sortie de financement pour toutes les épissures en attente.
+    de chaque nouvelle sortie de financement pour tous les splicing en attente.
     Chaque fois que l'état du canal est mis à jour, toutes les transactions
-    d'engagement parallèles doivent être mises à jour. La façon la plus simple
+    d'engagements parallèles doivent être mises à jour. La façon la plus simple
     de gérer cela est d'envoyer les mêmes messages que ceux qui seraient envoyés
     pour une transaction d'engagement individuelle, mais en les répétant, un
     pour chaque transaction d'engagement parallèle.
 
-    C'est ce qui a été fait dans le projet initial de spécifications pour les
-    épissures (voir les bulletins [#17][news17 splice] et [#146][news146 splice]).
+    C'est ce qui a été fait dans le projet initial de spécifications pour le
+    splicing (voir les bulletins [#17][news17 splice] et [#146][news146 splice]).
     Cependant, comme Lisa Neigut l'a [expliqué][neigut splice] cette semaine, la
-    création d'une nouvelle épissure nécessite la signature de la nouvelle
+    création d'un nouveau splicie nécessite la signature de la nouvelle
     transaction d'engagement dérivée. Dans le projet de spécification actuel,
     l'envoi d'une signature nécessite l'envoi des signatures pour toutes les
     autres transactions d'engagement en cours. C'est redondant : les signatures
@@ -69,14 +69,14 @@ l'infrastructure Bitcoin.
     comme sûre. Ensuite, ils peuvent revenir à une transaction
     d'engagement unique.
 
-  - *Quantités relatives et épissures zéro-conf :* Bastien Teinturier
+  - *Quantités relatives et splicing zéro-conf :* Bastien Teinturier
     [a posté][teinturier splice] à propos de plusieurs propositions de mise à jour
     de la spécification. En plus de la modification des signatures d'engagement
     mentionnée ci-dessus, il recommande également que les propositions des
-    épissures utilisent des quantités relatives, par exemple "200 000 sats"
+    splicing utilisent des quantités relatives, par exemple "200 000 sats"
     indique qu'Alice veut séparer cette quantité et "-50 000 sats" indique
-    qu'elle veut se joindre cette quantité. Il mentionne également un
-    problème concernant les épissures "zero-conf", mais n'entre pas dans
+    qu'elle veut joindre cette quantité. Il mentionne également un
+    problème concernant les splicing "zero-conf", mais n'entre pas dans
     les détails.
 
 - **Proposition de BIP pour la terminologie des transactions :** Mark "Murch"
@@ -93,11 +93,11 @@ l'infrastructure Bitcoin.
 et réponses importantes. Cliquez sur une question ci-dessous pour voir
 un résumé de la réponse de la réunion.*
 
-[Ne pas télécharger de témoins pour les blocs supposés valides lorsque l'on fonctionne en mode "prune".][review club 27050]
-est une PR de Niklas Gögge (dergoegge) qui améliore les performances du
+[Ne pas télécharger de témoins pour les blocs supposés valides lorsque l'on fonctionne en mode "prune"][review club 27050]
+est un PR de Niklas Gögge (dergoegge) qui améliore les performances du
 téléchargement de bloc initial (IBD) en ne téléchargeant pas les données
 témoins sur les nœuds qui sont configurés à la fois pour [élaguer les données
-des blocs][docs pruning] et pour utiliser [assumevalid] [docs assume valid].
+des blocs][docs pruning] et pour utiliser [assumevalid][docs assume valid].
 Cette optimisation a été discutée dans une récente [question sur stack exchange][se117057].
 
 {% include functions/details-list.md
@@ -117,7 +117,7 @@ Cette optimisation a été discutée dans une récente [question sur stack excha
   Un participant a souligné que 110 Go représentent environ 10 % de la limite
   mensuelle de téléchargement de son fournisseur d'accès, ce qui constitue donc
   une réduction significative. Les participants s'attendent également à ce que
-  le pourcentage d'économies augmente avec l'utilisation récemment élargie
+  le pourcentage d'économie augmente avec l'utilisation récemment élargie
   des données témoins."
   a1link="https://bitcoincore.reviews/27050#l-52"
 
@@ -131,7 +131,7 @@ Cette optimisation a été discutée dans une récente [question sur stack excha
   logique de demande de bloc et l'autre la validation des blocs. Quels sont
   ces changements en détail ?"
   a3="Dans la validation, lorsque les vérifications de scripts sont ignorées,
-  il faut également ignorer les vérifications de l'arbre de merkle des témoins.
+  il faut également ignorer les vérifications des témoins de l'arbre de merkle.
   Dans la logique de demande de bloc, supprimer `MSG_WITNESS_FLAG` des drapeaux
   de récupération afin que nos pairs ne nous envoient pas les données des témoins."
   a3link="https://bitcoincore.reviews/27050#l-83"
