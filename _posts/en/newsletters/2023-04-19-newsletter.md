@@ -112,7 +112,39 @@ and describe notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Descriptor wallet library adds block explorer:**
+  [Descriptor wallet library][] is a rust descriptor-based wallet library that
+  builds upon rust-bitcoin and supports [miniscript][topic
+  miniscript], [descriptors][topic descriptors], [PSBTs][topic psbt], and in
+  recent [releases][Descriptor Wallet v0.9.2], a text-based [block
+  explorer][topic block explorers] that parses and displays extended details of
+  taproot [control blocks][se107154] from transaction input witnesses, as well as
+  descriptors and miniscripts matching the transaction scripts.
+
+- **Stratum v2 reference implementation update announced:**
+  The project [posted details][stratum blog] about the updates including the
+  ability for miners in a pool to select transactions for a candidate block.
+  Miners, pools, and mining firmware developers are encouraged to test and
+  provide feedback.
+
+- **Liana 0.4 released:**
+  Liana's [0.4 release][liana 0.4] adds support for multiple recovery paths and additional
+  descriptors, enabling larger quorums.
+
+- **Coldcard firmware supports additional sighash flags:**
+  Coldcard's [version 5.1.2 firmware][coldcard firmware] now supports all
+  [signature-hash][wiki sighash] (sighash) types beyond `SIGHASH_ALL`, enabling
+  advanced transacting possibilities.
+
+- **Zeus adds fee bumping features:**
+  [Zeus v0.7.4][] adds fee bumping, utilizing [RBF][topic rbf] and [CPFP][topic
+  cpfp], for onchain transactions including LN channel opening and LN channel
+  closing transactions. Fee bumping is initially just supported with an LND backend.
+
+- **Utreexo-based Electrum Server announced:**
+   [Floresta][floresta blog] is an Electrum protocol-compatible server that uses [utreexo][topic
+   utreexo] to decrease the server's resource requirements. The software
+   currently supports the [signet][topic signet] test network.
 
 ## Releases and release candidates
 
@@ -180,3 +212,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [bdk 0.28.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.28.0
 [Core Lightning 23.02.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02.2
 [Core Lightning 23.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05rc1
+[Descriptor wallet library]: https://github.com/BP-WG/descriptor-wallet
+[Descriptor Wallet v0.9.2]: https://github.com/BP-WG/descriptor-wallet/releases/tag/v0.9.2
+[stratum blog]: https://stratumprotocol.org/blog/stratumv2-jn-announcement/
+[liana 0.4]: https://wizardsardine.com/blog/liana-0.4-release/
+[coldcard firmware]: https://coldcard.com/docs/upgrade
+[wiki sighash]: https://en.bitcoin.it/wiki/Contract#SIGHASH_flags
+[zeus v0.7.4]: https://github.com/ZeusLN/zeus/releases/tag/v0.7.4
+[floresta blog]: https://medium.com/vinteum-org/introducing-floresta-an-utreexo-powered-electrum-server-implementation-60feba8e179d
+[se107154]: https://bitcoin.stackexchange.com/questions/107154/what-is-the-control-block-in-taproot
