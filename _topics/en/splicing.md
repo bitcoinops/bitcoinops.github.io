@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Splicing specification discussion about relative amounts and minimizing redundant data"
     url: /en/newsletters/2023/04/12/#splicing-specification-discussions
 
+  - title: "Eclair #2584 adds support for both splice-in and splices-out"
+    url: /en/newsletters/2023/04/19/#eclair-2584
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
