@@ -73,14 +73,14 @@ software.
     amounts, e.g. "200,000 sats" indicates Alice will splice in that
     amount and "-50,000 sats" indicates she wants to splice out that
     amount.  He also mentions a concern involving zero-conf splicing but
-    does not go into detail about it.
+    does not go into detail about it. {% include functions/podcast-callout.md url="pod246 splicing" %}
 
 - **Proposed BIP for transaction terminology:** Mark "Murch" Erhardt
   [posted][erhardt terms] the draft of an [informational BIP][terms bip]
   to the Bitcoin-Dev mailing list that suggests a vocabulary to use for
   referring to parts of transactions and concepts relating to them.  As
   of this writing, all replies to the proposal were supportive of the
-  effort.
+  effort. {% include functions/podcast-callout.md url="pod246 terminology" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -92,7 +92,8 @@ question below to see a summary of the answer from the meeting.*
 is a PR by Niklas Gögge (dergoegge) that improves the performance of Initial Block Download
 (IBD) by not downloading witness data on nodes that are configured to both
 [prune block data][docs pruning] and use [assumevalid][docs assume valid]. This
-optimization was discussed in a recent [stack exchange question][se117057].
+optimization was discussed in a recent [stack exchange question][se117057]. {%
+include functions/podcast-callout.md url="pod246 pr review" %}
 
 {% include functions/details-list.md
   q0="If assume-valid is enabled but not pruning, why does the node need
@@ -155,11 +156,12 @@ release candidates.*
   compiled with Clang version 14 or higher.  The vulnerability may leave
   affected applications vulnerable to timing [side-channel
   attacks][topic side channels].  The authors strongly recommend
-  updating affected applications.
+  updating affected applications. {% include functions/podcast-callout.md url="pod246 lsp" %}
 
 - [BDK 1.0.0-alpha.0][] is a test release of the major changes to BDK
   described in [Newsletter #243][news243 bdk].  Developers of
-  downstream projects are encouraged to begin integration testing.
+  downstream projects are encouraged to begin integration testing. {% include
+  functions/podcast-callout.md url="pod246 bdk" %}
 
 ## Notable code and documentation changes
 
@@ -176,23 +178,23 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   #26][news26 pyln-client]) that allow it to better work
   with CLN's gossip store.  The changes allow building better analysis tools
   for gossip and will make it easier to develop plugins that use gossip
-  data.
+  data. {% include functions/podcast-callout.md url="pod246 cln6012" %}
 
 - [Core Lightning #6124][] adds the ability to blacklist runes with
   [commando][commando plugin] and maintain a list of all runes, which is
-  useful for tracking and disabling compromised ones.
+  useful for tracking and disabling compromised ones. {% include functions/podcast-callout.md url="pod246 cln6124" %}
 
 - [Eclair #2607][] adds a new `listreceivedpayments` RPC that lists all
-  payments received by the node.
+  payments received by the node. {% include functions/podcast-callout.md url="pod246 ec2607" %}
 
 - [LND #7437][] adds support for backing up just a single channel to a
-  file.
+  file. {% include functions/podcast-callout.md url="pod246 lnd7437" %}
 
 - [LND #7069][] allows a client to send a message to its
   [watchtower][topic watchtowers] asking for a session to be deleted.
   This allows the watchtower to stop monitoring for onchain transactions
   which close the channel in a revoked state.  This reduces the storage
-  and CPU requirements for both the watchtower and the client.
+  and CPU requirements for both the watchtower and the client. {% include functions/podcast-callout.md url="pod246 lnd7069" %}
 
 - [BIPs #1372][] assigns [BIP327][] to the [MuSig2][topic musig]
   protocol for creating [multisignatures][topic multisignature] which
@@ -204,7 +206,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   possible with additional setup between the participants.  The protocol
   is compatible with all of the advantages of any multisignature scheme,
   such as significantly reducing onchain data and enhancing privacy---both
-  for participants and for users of the network in general.
+  for participants and for users of the network in general. {% include functions/podcast-callout.md url="pod246 bips1372" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6012,6124,2607,7437,7069,1372,863" %}
@@ -223,3 +225,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [docs assume valid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
 [se117057]: https://bitcoin.stackexchange.com/questions/117057/why-is-witness-data-downloaded-during-ibd-in-prune-mode
 [commando plugin]: /en/newsletters/2022/07/27/#core-lightning-5370
+[pod246 splicing]: /en/podcast/2023/04/13/#splicing-specification-discussions
+[pod246 terminology]: /en/podcast/2023/04/13/#proposed-bip-for-transaction-terminology
+[pod246 pr review]: /en/podcast/2023/04/13/#don-t-download-witnesses-for-assumed-valid-blocks-when-running-in-prune-mode
+[pod246 lsp]: /en/podcast/2023/04/13/#libsecp256k1-0-3-1
+[pod246 bdk]: /en/podcast/2023/04/13/#bdk-1-0-0-alpha-0
+[pod246 cln6012]: /en/podcast/2023/04/13/#core-lightning-6012
+[pod246 cln6124]: /en/podcast/2023/04/13/#core-lightning-6124
+[pod246 ec2607]: /en/podcast/2023/04/13/#eclair-2607
+[pod246 lnd7437]: /en/podcast/2023/04/13/#lnd-7437
+[pod246 lnd7069]: /en/podcast/2023/04/13/#lnd-7069
+[pod246 bips1372]: /en/podcast/2023/04/13/#bips-1372
