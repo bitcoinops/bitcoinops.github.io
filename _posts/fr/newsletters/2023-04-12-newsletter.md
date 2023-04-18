@@ -221,7 +221,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6012,6124,2607,7437,7069,1372,863" %}
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
-[news243 bdk]: /en/newsletters/2023/03/22/#bdk-793
+[news243 bdk]: /fr/newsletters/2023/03/22/#bdk-793
 [neigut splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003894.html
 [teinturier splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
 [erhardt terms]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
