@@ -73,14 +73,14 @@ software.
     amounts, e.g. "200,000 sats" indicates Alice will splice in that
     amount and "-50,000 sats" indicates she wants to splice out that
     amount.  He also mentions a concern involving zero-conf splicing but
-    does not go into detail about it.
+    does not go into detail about it. {% assign timestamp="1:24" %}
 
 - **Proposed BIP for transaction terminology:** Mark "Murch" Erhardt
   [posted][erhardt terms] the draft of an [informational BIP][terms bip]
   to the Bitcoin-Dev mailing list that suggests a vocabulary to use for
   referring to parts of transactions and concepts relating to them.  As
   of this writing, all replies to the proposal were supportive of the
-  effort.
+  effort. {% assign timestamp="40:49" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -92,7 +92,7 @@ question below to see a summary of the answer from the meeting.*
 is a PR by Niklas Gögge (dergoegge) that improves the performance of Initial Block Download
 (IBD) by not downloading witness data on nodes that are configured to both
 [prune block data][docs pruning] and use [assumevalid][docs assume valid]. This
-optimization was discussed in a recent [stack exchange question][se117057].
+optimization was discussed in a recent [stack exchange question][se117057]. {% assign timestamp="43:42" %}
 
 {% include functions/details-list.md
   q0="If assume-valid is enabled but not pruning, why does the node need
@@ -155,11 +155,11 @@ release candidates.*
   compiled with Clang version 14 or higher.  The vulnerability may leave
   affected applications vulnerable to timing [side-channel
   attacks][topic side channels].  The authors strongly recommend
-  updating affected applications.
+  updating affected applications. {% assign timestamp="53:10" %}
 
 - [BDK 1.0.0-alpha.0][] is a test release of the major changes to BDK
   described in [Newsletter #243][news243 bdk].  Developers of
-  downstream projects are encouraged to begin integration testing.
+  downstream projects are encouraged to begin integration testing. {% assign timestamp="58:08" %}
 
 ## Notable code and documentation changes
 
@@ -176,23 +176,23 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   #26][news26 pyln-client]) that allow it to better work
   with CLN's gossip store.  The changes allow building better analysis tools
   for gossip and will make it easier to develop plugins that use gossip
-  data.
+  data. {% assign timestamp="58:33" %}
 
 - [Core Lightning #6124][] adds the ability to blacklist runes with
   [commando][commando plugin] and maintain a list of all runes, which is
-  useful for tracking and disabling compromised ones.
+  useful for tracking and disabling compromised ones. {% assign timestamp="1:02:01" %}
 
 - [Eclair #2607][] adds a new `listreceivedpayments` RPC that lists all
-  payments received by the node.
+  payments received by the node. {% assign timestamp="1:03:06" %}
 
 - [LND #7437][] adds support for backing up just a single channel to a
-  file.
+  file. {% assign timestamp="1:04:05" %}
 
 - [LND #7069][] allows a client to send a message to its
   [watchtower][topic watchtowers] asking for a session to be deleted.
   This allows the watchtower to stop monitoring for onchain transactions
   which close the channel in a revoked state.  This reduces the storage
-  and CPU requirements for both the watchtower and the client.
+  and CPU requirements for both the watchtower and the client. {% assign timestamp="1:04:43" %}
 
 - [BIPs #1372][] assigns [BIP327][] to the [MuSig2][topic musig]
   protocol for creating [multisignatures][topic multisignature] which
@@ -204,7 +204,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   possible with additional setup between the participants.  The protocol
   is compatible with all of the advantages of any multisignature scheme,
   such as significantly reducing onchain data and enhancing privacy---both
-  for participants and for users of the network in general.
+  for participants and for users of the network in general. {% assign timestamp="1:06:18" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6012,6124,2607,7437,7069,1372,863" %}
