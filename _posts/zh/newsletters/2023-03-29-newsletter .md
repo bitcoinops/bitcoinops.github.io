@@ -1,8 +1,8 @@
 ---
 title: 'Bitcoin Optech Newsletter #244'
 permalink: /zh/newsletters/2023/03/29/
-name: 2023-03-29-newsletter
-slug: 2023-03-29-newsletter
+name: 2023-03-29-newsletter-zh
+slug: 2023-03-29-newsletter-zh
 type: newsletter
 layout: newsletter
 lang: zh
@@ -14,7 +14,7 @@ lang: zh
 
 ## 新闻
 
-- **使用多方通道和通道工厂防止资金滞留：**
+- **<!--preventing-stranded-capital-with-multiparty-channels-and-channel-factories-->使用多方通道和通道工厂防止资金滞留：**
   John Law 向 Lightning-Dev 邮件列表 [发布了][law stranded post] 他撰写的 [论文][law stranded paper] 的总结。他描述了始终可用的节点如何继续使用他们的资金转发付款，即使它们与当前不可用的节点（例如移动端闪电钱包的用户）共享一个通道。这需要使用多方通道，这与他之前描述的通道工厂设计很好地结合在一起。他还重申了 [通道工厂][topic channel factories] 的一个已知好处，即允许通道在链下再平衡，这也能更好地利用通道资金。他在文中描述了如何使用他之前对闪电网络 _可调惩罚_ 层创新的两个好处。我们将总结可调惩罚，展示它们如何用于多方通道和通道工厂，然后在上下文中解释 Law 的新成果。
 
     Alice 和 Bob 创建（但不立即签署）一笔交易，他们每人花费 50M sats（总共 100M）到一个 _出资输出_，该输出需要他们双方的合作才能花费。在下图中，我们将已确认的交易显示为阴影。
@@ -70,13 +70,13 @@ lang: zh
 
 - [为什么 taproot 部署没有埋设在 Bitcoin Core 中?]({{bse}}117569) Andrew Chow 解释了 taproot 软分叉 [部署][topic soft fork activation] 没有像 [其他升级][bitcoin buried deployments] 那样被 [埋设][BIP90] 的逻辑依据。
 
-- [区块头中的版本字段有什么限制？]({{bse}}117530) Murch 注意到更多 [区块][explorer block 779960] 被 [overt ASICBoost][topic ASICBoost] 开采出来，他列出了对版本字段的限制，并介绍了 [区块头版本字段][FCAT block header blog] 的示例。
+- [<!--what-restrictions-does-the-version-field-in-the-block-header-have-->区块头中的版本字段有什么限制？]({{bse}}117530) Murch 注意到更多 [区块][explorer block 779960] 被 [overt ASICBoost][topic ASICBoost] 开采出来，他列出了对版本字段的限制，并介绍了 [区块头版本字段][FCAT block header blog] 的示例。
 
 - [交易数据和交易ID之间有什么关系？]({{bse}}117453) Pieter Wuille 解释了 `txid` 标识符所涵盖的遗留交易序列化格式，`hash` 和 `wtxid` 标识符所涵盖的见证扩展序列化格式，并在 [单独的回答中][se117577] 指出 `hash` 标识符将涵盖假设的额外交易数据。
 
-- [我可以向其他对等节点请求交易消息吗？]({{bse}}117546) 用户 RedGrittyBrick 指出一些资源，解释了Bitcoin Core 的 P2P 层不支持来自对等节点的任意交易请求的关于 [性能][wiki getdata] 和 [隐私][Bitcoin Core #18861] 的原因。
+- [<!--can-i-request-tx-messages-from-other-peers-->我可以向其他对等节点请求交易消息吗？]({{bse}}117546) 用户 RedGrittyBrick 指出一些资源，解释了Bitcoin Core 的 P2P 层不支持来自对等节点的任意交易请求的关于 [性能][wiki getdata] 和 [隐私][Bitcoin Core #18861] 的原因。
 
-- [Eltoo：第一个 UTXO 的相对锁定时间是否设置了通道的生命周期？]({{bse}}117468) Murch 确认了问题的示例，基于 [eltoo][topic eltoo] 构建的 LN 通道具有有限的生命周期，但指出 [eltoo 白皮书][] 中的缓解措施可以防止超时过期。
+- [Eltoo：第一个 UTXO 的相对锁定时间是否设置了通道的生命周期？]({{bse}}117468) Murch 确认了问题的示例，基于 [eltoo][topic eltoo] 构建的 LN 通道具有有限的生命周期，但指出 [eltoo 白皮书][eltoo whitepaper] 中的缓解措施可以防止超时过期。
 
 ## 版本和候选版本
 
@@ -90,13 +90,13 @@ lang: zh
 
 ## 重大的代码和文档变更
 
-*本周出现重大变更的有 [Bitcoin Core][bitcoin core repo], [Core
-Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], 和
-[Bitcoin Inquisition][bitcoin inquisition repo].*
+*本周出现重大变更的有 [Bitcoin Core][bitcoin core repo]、[Core
+Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、
+[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo], [Hardware Wallet
+Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay
+Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement
+Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
+[Bitcoin Inquisition][bitcoin inquisition repo]。*
 
 - [Bitcoin Core #27278][] 默认情况下在收到新块的标头时开始记录，除非该节点处于初始块下载（IBD）中。这是受到多个节点运营商的 [启发][obeirne selfish]，运营商注意到三个区块彼此非常接近，后两个区块将第一个区块从最佳区块链中重组出来。为清楚起见，我们将第一个块称为_A_，将替换它的块称为 _A'_，将最后一个块称为 _B_。
 
@@ -144,9 +144,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], 和
 [news230 tp]: /zh/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
 [channel factories paper]: https://tik-old.ee.ethz.ch/file//a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf
 [law factories]: https://raw.githubusercontent.com/JohnLaw2/ln-efficient-factories/main/efficientfactories10.pdf
-[news206 msat]: /en/newsletters/2022/06/29/#core-lightning-5306
+[news206 msat]: /zh/newsletters/2022/06/29/#core-lightning-5306
 [rb sec]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/SECURITY.md
-[news239 codex32]: /zh/newsletters/2023/02/22/#proposed-bip-for-codex32-seed-encoding-scheme
+[news239 codex32]: /zh/newsletters/2023/02/22/#codex32-bip
 [law stranded post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003886.html
 [law stranded paper]: https://github.com/JohnLaw2/ln-hierarchical-channels
 [obeirne selfish]: https://twitter.com/jamesob/status/1637198454899220485
@@ -155,7 +155,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], 和
 [libwally]: https://github.com/ElementsProject/libwally-core
 [news128 psbt2]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [tunable penalties]: https://github.com/JohnLaw2/ln-tunable-penalties
-[news238 libwally]: /zh/newsletters/2023/02/15/#libwally-0-8-8-released
+[news238 libwally]: /zh/newsletters/2023/02/15/#libwally-0-8-8
 [rust-bitcoin.org]: https://rust-bitcoin.org/
 [rb rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/bitcoin/CHANGELOG.md#030---2023-03-21-the-first-crate-smashing-release
 [news243 bdk]: /zh/newsletters/2023/03/22/#bdk-793
