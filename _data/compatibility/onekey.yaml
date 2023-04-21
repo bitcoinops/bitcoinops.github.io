@@ -52,10 +52,10 @@ segwit:
     send:
       bech32: "true"
       change_bech32: "true"
-      segwit_v1: "Fails on validation of the address."
+      segwit_v1: "true"
       bech32_p2wsh: "true"
   examples:
     - image: /img/compatibility/onekey/segwit/receive-screen.png
       caption: >
         By default, OneKey generates a BIP49 P2SH-P2WPKH Base58 receive addresses.
-        There is also an option to generate a BIP44 P2PKH、BIP84 P2WPKH and BIP86 P2TR addresses.
+        There is also an option to generate a BIP44 P2PKH, BIP84 P2WPKH and BIP86 P2TR addresses.
