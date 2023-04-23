@@ -105,7 +105,7 @@ and describe notable changes to popular Bitcoin infrastructure software.
   roadmap for adding additional features is presented.
 
   As of this writing, the announcement had received a modest amount of
-  discussion on the mailing list.
+  discussion on the mailing list. {% assign timestamp="1:12" %}
 
 ## Changes to services and client software
 
@@ -119,32 +119,32 @@ wallets and services.*
   recent [releases][Descriptor Wallet v0.9.2], a text-based [block
   explorer][topic block explorers] that parses and displays extended details of
   taproot [control blocks][se107154] from transaction input witnesses, as well as
-  descriptors and miniscripts matching the transaction scripts.
+  descriptors and miniscripts matching the transaction scripts. {% assign timestamp="36:02" %}
 
 - **Stratum v2 reference implementation update announced:**
   The project [posted details][stratum blog] about the updates including the
   ability for miners in a pool to select transactions for a candidate block.
   Miners, pools, and mining firmware developers are encouraged to test and
-  provide feedback.
+  provide feedback. {% assign timestamp="38:02" %}
 
 - **Liana 0.4 released:**
   Liana's [0.4 release][liana 0.4] adds support for multiple recovery paths and additional
-  descriptors, enabling larger quorums.
+  descriptors, enabling larger quorums. {% assign timestamp="42:35" %}
 
 - **Coldcard firmware supports additional sighash flags:**
   Coldcard's [version 5.1.2 firmware][coldcard firmware] now supports all
   [signature-hash][wiki sighash] (sighash) types beyond `SIGHASH_ALL`, enabling
-  advanced transacting possibilities.
+  advanced transacting possibilities. {% assign timestamp="46:12" %}
 
 - **Zeus adds fee bumping features:**
   [Zeus v0.7.4][] adds fee bumping, utilizing [RBF][topic rbf] and [CPFP][topic
   cpfp], for onchain transactions including LN channel opening and LN channel
-  closing transactions. Fee bumping is initially just supported with an LND backend.
+  closing transactions. Fee bumping is initially just supported with an LND backend. {% assign timestamp="45:09" %}
 
 - **Utreexo-based Electrum Server announced:**
    [Floresta][floresta blog] is an Electrum protocol-compatible server that uses [utreexo][topic
    utreexo] to decrease the server's resource requirements. The software
-   currently supports the [signet][topic signet] test network.
+   currently supports the [signet][topic signet] test network. {% assign timestamp="48:12" %}
 
 ## Releases and release candidates
 
@@ -153,13 +153,13 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [BDK 0.28.0][] is a maintenance release of this library for building
-  Bitcoin-enabled applications.
+  Bitcoin-enabled applications. {% assign timestamp="53:08" %}
 
 - [Core Lightning 23.02.2][] is a maintenance release of this popular LN
-  node software that contains several bug fixes.
+  node software that contains several bug fixes. {% assign timestamp="55:01" %}
 
 - [Core Lightning 23.05rc1][] is a release candidate for the next
-  version of this LN node.
+  version of this LN node. {% assign timestamp="55:40" %}
 
 ## Notable code and documentation changes
 
@@ -183,19 +183,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   additional details, see the [documentation][verify docs].  The script
   is not required to use Bitcoin Core and does nothing but automate a
   process that users are encouraged to perform themselves before using
-  security-sensitive files downloaded from the internet.
+  security-sensitive files downloaded from the internet. {% assign timestamp="56:57" %}
 
 - [Core Lightning #6120][] improves its [transaction replacement][topic
   rbf] logic, including implementing a set of rules for when to
   automatically RBF fee bump a transaction and periodically
   rebroadcasting unconfirmed transactions to ensure they're relayed (see
-  [Newsletter #243][news243 rebroadcast]).
+  [Newsletter #243][news243 rebroadcast]). {% assign timestamp="1:01:14" %}
 
 - [Eclair #2584][] adds support for [splicing][topic splicing], both
   splice-ins which add funds to an existing channel and splice-outs
   which sends funds from a channel to an onchain destination.  The PR
   notes that there are some differences in the implementation from the
-  current [draft specification][bolts #863].
+  current [draft specification][bolts #863]. {% assign timestamp="1:04:54" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27358,6120,2584,863" %}
