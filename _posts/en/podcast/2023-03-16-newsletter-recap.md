@@ -1,6 +1,7 @@
 ---
 title: 'Bitcoin Optech Newsletter #242 Recap Podcast'
 permalink: /en/podcast/2023/03/16/
+reference: /en/newsletters/2023/03/15/
 name: 2023-03-16-recap
 slug: 2023-03-16-recap
 type: podcast
@@ -8,29 +9,13 @@ layout: podcast-episode
 lang: en
 ---
 Mark "Murch" Erhardt and Mike Schmidt are joined by Calvin Kim, James O'Beirne,
-and Greg Sanders to discuss [Newsletter #242][news242].
+and Greg Sanders to discuss [Newsletter #242]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
 {% include functions/podcast-player.md url="https://anchor.fm/s/d9918154/podcast/play/67082119/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-22%2Fb61c45ac-e3fa-5bfb-1d03-9a6341f5be48.mp3" %}
 
-## News
-
-{% include functions/podcast-note.md title="Service bit for Utreexo" url="news242 utreexo" anchor="utreexo" timestamp="1:28" %}
-
-## Releases and release candidates
-
-{% include functions/podcast-note.md title="Core Lightning v23.02.2"
-  url="news242 cln" anchor="cln" timestamp="22:04" %}
-{% include functions/podcast-note.md title="Libsecp256k1 0.3.0"
-  url="news242 lsp" anchor="lsp" timestamp="25:47" %}
-{% include functions/podcast-note.md title="LND v0.16.0-beta.rc3"
-  url="news242 lnd" anchor="lnd" timestamp="29:01" %}
-
-## Notable code and documentation changes
-
-{% include functions/podcast-note.md title="Bitcoin Core #25740"
-  url="news242 bc25740" anchor="bc25740" timestamp="30:01" %}
+{% include newsletter-references.md %}
 
 ## Transcription
 
@@ -72,7 +57,6 @@ thank you for getting through some of those audio difficulties.  We just have
 one news item and one pull request, but they're both related to projects you
 guys are working on, so it's great to have you guys on.
 
-{:#utreexo}
 _Service bit for Utreexo_
 
 The first news item is Service Bit for Utreexo.  Calvin, I think we probably
@@ -458,7 +442,6 @@ he might pop in.
 **Mike Schmidt**: You got lucky, Calvin!  Great.  Moving onto the Releases and
 Release Candidates section of the newsletter this week, we have three.
 
-{:#cln}
 _Core Lightning v23.02.2_
 
 The first one is Core Lightning v23.02.2, which is a maintenance release for
@@ -529,7 +512,6 @@ this issue have a very small number of staff and/or volunteers and it's probably
 hard to do all of this.  But yeah, companies that run into this issue, they
 should be testing the release candidate before they install it in production.
 
-{:#lsp}
 _Libsecp256k1 0.3.0_
 
 **Mike Schmidt**: The next release that we covered in the newsletter was
@@ -590,7 +572,6 @@ say an ABI is an API in some sense.
 
 **Mike Schmidt**: Yeah, thanks for explaining, James and Calvin.
 
-{:#lnd}
 _LND v0.16.0-beta.rc3_
 
 The last release candidate that we had is LND v0.16.0-beta.rc3, and a few weeks
@@ -615,7 +596,6 @@ really I'm not much of a Lightning expert!
 **Mike Schmidt**: Okay, well look forward to finding some people to join us on
 our Not Spaces next week!
 
-{:#bc25740}
 _Bitcoin Core #25740_
 
 We had one notable code and documentation change, a notable PR to Bitcoin Core,
@@ -911,9 +891,3 @@ everybody for listening on the podcasts, and likely we'll be doing this again in
 Google Hangouts, because this is actually quite a bit smoother.
 
 {% include references.md %}
-[news242]: /en/newsletters/2023/03/15/
-[news242 utreexo]: /en/newsletters/2023/03/15/#service-bit-for-utreexo
-[news242 cln]: /en/newsletters/2023/03/15/#core-lightning-v23-02-2
-[news242 lsp]: /en/newsletters/2023/03/15/#libsecp256k1-0-3-0
-[news242 lnd]: /en/newsletters/2023/03/15/#lnd-v0-16-0-beta-rc3
-[news242 bc25740]: /en/newsletters/2023/03/15/#bitcoin-core-25740
