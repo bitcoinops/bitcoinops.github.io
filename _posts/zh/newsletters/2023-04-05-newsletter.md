@@ -15,7 +15,7 @@ lang: zh
 
     基本原则是瞭望塔拥有众所周知的公钥，并使用相应的私钥为其接受的任何违规检测数据生成签名。然后，Alice 可以在未解决的违规行为后发布数据和签名，以证明瞭望塔没有尽责。然而，Delgado 指出，实际的问责制并不是那么简单：
 
-    - *<!--data-storage-requirements-->数据存储要求：* 上述机制要求 Alice 每次向瞭望塔发送新的违规检测数据时都存储一个额外的签名。这对于活跃的闪电网络通道来说可能很常见。
+    - *<!--data-storage-requirements-->数据存储要求：* 上述机制要求 Alice 每次向瞭望塔发送新的违规检测数据时都存储一个额外的签名。这对于活跃的闪电网络通道来说可能过于频繁。
 
     - *<!--no-deletion-capability-->无删除能力：* 上述机制可能需要瞭望塔永久存储违规检测数据。瞭望塔可能只想在有限的时间内存储数据，例如，他们可能会接受特定期限的付款。
 
@@ -25,7 +25,7 @@ lang: zh
 
 *热门的比特币基础设施项目的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
-- [LND v0.16.0-beta][] 是这个流行的闪电网络实现的新主要版本的beta 版。它的[发行说明][lnd rn]提到了该版本的许多新功能、错误修复和性能改进。{% assign timestamp="21:37" %}
+- [LND v0.16.0-beta][] 是这个流行的闪电网络实现的新主要版本的 beta 版。它的[发行说明][lnd rn]提到了该版本的许多新功能、错误修复和性能改进。{% assign timestamp="21:37" %}
 
 - [BDK 1.0.0-alpha.0][] 是 [Newsletter #243][news243 bdk] 中描述的 BDK 主要变更的测试版本，并鼓励下游项目的开发人员开始集成测试。{% assign timestamp="22:06" %}
 
@@ -33,11 +33,11 @@ lang: zh
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquisition][bitcoin inquisition repo]。*
 
-- [Core Lightning #5967][] 添加了一个 `listclosedchannels` RPC，它提供有关节点关闭通道的数据，包括通道关闭的原因。目前也保留了老的对方节点的相关信息。{% assign timestamp="22:59" %}
+- [Core Lightning #5967][] 添加了一个 `listclosedchannels` RPC，它提供有关节点关闭通道的数据，包括通道关闭的原因。目前也保留了老的对等节点的相关信息。{% assign timestamp="22:59" %}
 
 - [Eclair #2566][] 添加了对接受要约（offer）的支持。要约必须由一个插件所注册。该插件提供一个处理器来响应与要约相关的发票请求，并接受或拒绝对该发票的付款。 Eclair 确保请求和支付满足协议要求——处理器只需要决定是否可以提供所购买的物品或服务。这允许编码要约的代码变得任意复杂，而不会影响 Eclair 的内部逻辑。 {% assign timestamp="23:43" %}
 
-- [LDK #2062][] 实现 [BOLTs #1031][]（参见 [Newsletter #226][news226 bolts1031]）、[#1032][bolts #1032]（参见 [Newsletter #225][news225 bolts1032]），和 [#1040][bolts #1040]，允许付款的最终接收者（[HTLC][topic htlc]）接受比他们所要求的更多的金额，和比他们要求的到期时间更长的时间。这使得转发节点更难微调支付参数来判断下一跳是否是接收方。合并后的 PR 还允许支付者在使用[简化版的多路径支付][topic multipath payments]时向接收者支付的金额略高于请求的金额。这种方式可带来上述益处，并且它在所选择的支付路径使用具有最小可路由量的通道的情况下也可能是必需的。例如，Alice 想将 900 聪的总金额分成两部分，但她选择的两条路径都需要 500 聪的最低数量。在此规范的变更下，她现在可以发送两笔 500 聪的付款，即多付总共 100 聪以使用她的首选路线。{% assign timestamp="24:57" %}
+- [LDK #2062][] 实现 [BOLTs #1031][]（参见 [Newsletter #226][news226 bolts1031]）、[#1032][bolts #1032]（参见 [Newsletter #225][news225 bolts1032]），和 [#1040][bolts #1040]，允许付款的最终接收者（[HTLC][topic htlc]）接受比他们所要求的更多的金额，和比他们要求的到期时间更长的时间的支付。这使得转发节点更难微调支付参数来判断下一跳是否是接收方。合并后的 PR 还允许支付者在使用[简化版的多路径支付][topic multipath payments]时向接收者支付的金额略高于请求的金额。这种方式可带来上述益处，并且它在所选择的支付路径使用具有最小可路由量的通道的情况下也可能是必需的。例如，Alice 想将 900 聪的总金额分成两部分，但她选择的两条路径都需要 500 聪的最低数量。在此规范的变更下，她现在可以发送两笔 500 聪的付款，即多付总共 100 聪以使用她的首选路线。{% assign timestamp="24:57" %}
 
 - [LDK #2125][] 添加辅助函数来确定发票到期前的时间。{% assign timestamp="27:18" %}
 
