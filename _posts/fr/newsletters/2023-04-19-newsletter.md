@@ -121,7 +121,7 @@ des portefeuilles et des services Bitcoin.*
   La [bibliothèque du portefeuille Descriptor][] est une bibliothèque de
   portefeuille basée sur les descripteurs qui s'appuie sur rust-bitcoin et
   prend en charge [miniscript][topic miniscript], [descripteurs][topic descriptors],
-  [PSBT][topic psbt], et dans les dernières [versions][Descriptor Wallet v0. 9.2],
+  [PSBT][topic psbt], et dans les dernières [versions][Descriptor Wallet v0.9.2],
   un [explorateur de blocs][topic block explorers] textuel qui analyse et
   affiche les détails étendus des [blocs de contrôle][se107154] de la racine
   de la transaction à partir des témoins d'entrée, ainsi que les descripteurs
