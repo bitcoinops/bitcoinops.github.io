@@ -48,7 +48,7 @@ popular Bitcoin infrastructure software.
     data structure.  Some accumulators allow deleting elements from the
     set without rebuilding.  In a
     [gist][segura watchtowers gist], Delgado outlines several different
-    accumulator constructions worth considering. {% include functions/podcast-callout.md url="pod245 watchtowers" %}
+    accumulator constructions worth considering. {% assign timestamp="0:36" %}
 
 ## Releases and release candidates
 
@@ -58,11 +58,11 @@ release candidates.*
 
 - [LND v0.16.0-beta][] is beta release of a new major version of this popular LN
   implementation.  Its [release notes][lnd rn] mention numerous new
-  features, bug fixes, and performance improvements. {% include functions/podcast-callout.md url="pod245 lnd" %}
+  features, bug fixes, and performance improvements. {% assign timestamp="21:37" %}
 
 - [BDK 1.0.0-alpha.0][] is a test release of the major changes to BDK
   described in [Newsletter #243][news243 bdk].  Developers of
-  downstream projects are encouraged to begin integration testing. {% include functions/podcast-callout.md url="pod245 bdk" %}
+  downstream projects are encouraged to begin integration testing. {% assign timestamp="22:06" %}
 
 ## Notable code and documentation changes
 
@@ -76,7 +76,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Core Lightning #5967][] adds a `listclosedchannels` RPC that provides data
   about the node's closed channels, including the cause of channel being closed.
-  Information about old peers is also retained now. {% include functions/podcast-callout.md url="pod245 cln5967" %}
+  Information about old peers is also retained now. {% assign timestamp="22:59" %}
 
 - [Eclair #2566][] adds support for accepting offers.  Offers must be
   registered by a plugin that provides a handler for responding to
@@ -85,7 +85,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   payments satisfy the protocol requirements---the handler only needs to
   decide whether the item or service being purchased can be provided.
   This allows code for marshaling offers to become arbitrarily complex
-  without affecting Eclair's internal logic. {% include functions/podcast-callout.md url="pod245 ec2566" %}
+  without affecting Eclair's internal logic. {% assign timestamp="23:43" %}
 
 - [LDK #2062][] implements [BOLTs #1031][] (see [Newsletter
   #226][news226 bolts1031]), [#1032][bolts #1032] (see [Newsletter
@@ -103,25 +103,24 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   both of the paths she chooses require 500 sat minimum amounts. With
   this specification change, she can now send two 500 sat payments,
   choosing to overpay by a total of 100 sats in order to use her
-  preferred route. {% include functions/podcast-callout.md url="pod245 ldk2062" %}
+  preferred route. {% assign timestamp="24:57" %}
 
 - [LDK #2125][] adds helper functions to determine the amount of
-  time until an invoice expires. {% include functions/podcast-callout.md url="pod245 ldk2125" %}
+  time until an invoice expires. {% assign timestamp="27:18" %}
 
 - [BTCPay Server #4826][] allows service hooks to create and retrieve [LNURL][]
   invoices.  This was done to add support for NIP-57 zaps to BTCPay Server’s
-  lightning address features. {% include functions/podcast-callout.md url="pod245 btcpay4826" %}
+  lightning address features. {% assign timestamp="27:56" %}
 
 - [BTCPay Server #4782][] adds [proof of payment][topic proof of
   payment] on the receipt page for each payment.  For onchain payments,
   the proof is the transaction ID.  For LN payments, the proof is the
-  preimage to the [HTLC][topic htlc]. {% include functions/podcast-callout.md url="pod245 btcpay4782" %}
+  preimage to the [HTLC][topic htlc]. {% assign timestamp="29:51" %}
 
 - [BTCPay Server #4799][] adds the ability to export [wallet
   labels][topic wallet labels] for transactions in the format specified
   by [BIP329][].  Future PRs may add support for exporting other wallet
-  data, such as labels for addresses. {% include functions/podcast-callout.md
-  url="pod245 btcpay4799" %}
+  data, such as labels for addresses. {% assign timestamp="30:15" %}
 
 - [BOLTs #765][] adds [route blinding][topic rv routing] to the LN
   specification.  Route blinding, which we first described in
@@ -136,7 +135,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   hop begins the process of decrypting the next hop, forwarding the
   payment to it, having that hop decrypt the subsequent hop, etc,
   until the receiver accepts the payment without their node being
-  disclosed to the spender or sender. {% include functions/podcast-callout.md url="pod245 bolt765" %}
+  disclosed to the spender or sender. {% assign timestamp="31:37" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5967,2566,2062,1031,1032,1040,2125,4826,4782,4799,765" %}
@@ -150,14 +149,3 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news243 bdk]: /en/newsletters/2023/03/22/#bdk-793
 [lnd rn]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.16.0.md
 [lnurl]: https://github.com/lnurl/luds
-[pod245 watchtowers]: /en/podcast/2023/04/06/#watchtower-accountability-proofs
-[pod245 lnd]: /en/podcast/2023/04/06/#lnd-v0-16-0-beta
-[pod245 bdk]: /en/podcast/2023/04/06/#bdk-1-0-0-alpha-0
-[pod245 cln5967]: /en/podcast/2023/04/06/#core-lightning-5967
-[pod245 ec2566]: /en/podcast/2023/04/06/#eclair-2566
-[pod245 ldk2062]: /en/podcast/2023/04/06/#ldk-2062
-[pod245 ldk2125]: /en/podcast/2023/04/06/#ldk-2125
-[pod245 btcpay4826]: /en/podcast/2023/04/06/#btcpay-server-4826
-[pod245 btcpay4782]: /en/podcast/2023/04/06/#btcpay-server-4782
-[pod245 btcpay4799]: /en/podcast/2023/04/06/#btcpay-server-4799
-[pod245 bolt765]: /en/podcast/2023/04/06/#bolts-765
