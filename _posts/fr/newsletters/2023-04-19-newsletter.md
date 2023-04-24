@@ -25,21 +25,21 @@ Bitcoin les plus répandus.
   - Hors chaîne, Alice crée un contrat dont l'état initial attribue
     1 000 tokens à une certaine UTXO qu'elle contrôle.
 
-  - Bob veut 400 des jetons.  Alice lui donne une copie du contrat original
+  - Bob veut 400 des jetons. Alice lui donne une copie du contrat original
     ainsi qu'une transaction qui dépense son UTXO en une nouvelle sortie.
     Cette sortie contient un engagement non public envers le nouvel état du
     contrat. Le nouvel état du contrat spécifie la distribution des montants
     (400 pour Bob ; 600 pour Alice) et les identifiants des deux sorties qui
-    contrôleront ces montants.  Alice diffuse la transaction. La sécurité de
+    contrôleront ces montants. Alice diffuse la transaction. La sécurité de
     ce transfert de jetons contre la double dépense est maintenant égale à
     celle de la transaction Bitcoin d'Alice, c'est-à-dire que lorsque sa
     transaction a six confirmations, le transfert de jetons sera sécurisé
-    contre une fourche jusqu'à six blocs.
+    contre un fork jusqu'à six blocs.
 
       Les sorties qui contrôlent les montants ne doivent pas nécessairement
       être des sorties de la transaction contenant l'engagement (bien que
       cela soit autorisé). Cela élimine la possibilité d'utiliser l'analyse
-      des transactions sur la chaîne pour suivre les transferts basés sur le
+      des transactions sur la chaîne pour suivre les transferts basés sur
       RGB. Les jetons auraient pu être transférés à n'importe quelle UTXO
       existante---ou à n'importe quelle UTXO dont le destinataire sait
       qu'elle existera à l'avenir (par exemple, une dépense présignée de
@@ -65,20 +65,20 @@ Bitcoin les plus répandus.
       l'évolutivité. Bob met à jour la PSBT avec une entrée signée pour
       l'UTXO contrôlant les jetons.
 
-      Carol vérifie le contrat original et l'historique des précédentes
-      mises à jour de l'État.  Elle s'assure également que tous les autres
+      Carole vérifie le contrat original et l'historique des précédentes
+      mises à jour de l'État. Elle s'assure également que tous les autres
       éléments de la PSBT sont corrects. Elle appose sa signature et
       diffuse la transaction.
 
   Bien que chacun des exemples de transfert ci-dessus ait été effectué sur
   la chaîne, il est facile de modifier le protocole pour qu'il fonctionne
-  hors chaîne. Carol donne à Dan une copie du contrat ainsi que l'historique
+  hors chaîne. Carole donne à Dan une copie du contrat ainsi que l'historique
   des mises à jour de l'état qui lui ont permis de recevoir 100 jetons.
   Elle et Dan se coordonnent ensuite pour créer une sortie qui reçoit les
   100 tokens et qui nécessite les signatures des deux pour être dépensée.
   Hors chaîne, ils transfèrent les jetons dans les deux sens en générant
   de nombreuses versions différentes d'une transaction qui dépense la sortie
-  multi-signature, chaque dépense hors chaîne engageant la distribution
+  multisignature, chaque dépense hors chaîne engageant la distribution
   des jetons et les identifiants des sorties qui recevront ces jetons.
   Enfin, l'un d'entre eux diffuse l'une des transactions de dépense,
   mettant l'état sur la chaîne.
@@ -107,7 +107,7 @@ Bitcoin les plus répandus.
   destinée à permettre à tous les nouveaux contrats d'être mis à jour au fil du
   temps pour tenir compte des changements futurs dans le protocole. Un certain
   nombre d'autres améliorations ont également été mises en œuvre, et une feuille
-  de route pour l'ajout de fonctionnalités supplémentaires est présentée.
+  de route pour l'ajout de fonctionnalités supplémentaires a été présentée.
 
   À l'heure où nous écrivons ces lignes, l'annonce a fait l'objet de quelques
   discussions sur la liste de diffusion.
