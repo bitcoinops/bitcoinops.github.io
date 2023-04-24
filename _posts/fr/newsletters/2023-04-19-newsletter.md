@@ -223,7 +223,7 @@ relayées (voir [Bulletin #243][news243 rebroadcast]).
 [bdk 0.28.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.28.0
 [Core Lightning 23.02.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02.2
 [Core Lightning 23.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05rc1
-[Descriptor wallet library]: https://github.com/BP-WG/descriptor-wallet
+[bibliothèque du portefeuille Descriptor]: https://github.com/BP-WG/descriptor-wallet
 [Descriptor Wallet v0.9.2]: https://github.com/BP-WG/descriptor-wallet/releases/tag/v0.9.2
 [stratum blog]: https://stratumprotocol.org/blog/stratumv2-jn-announcement/
 [liana 0.4]: https://wizardsardine.com/blog/liana-0.4-release/
