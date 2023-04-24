@@ -139,7 +139,7 @@ des portefeuilles et des services Bitcoin.*
   quorums plus importants.
 
 - **Le micrologiciel de Coldcard prend en charge des flags sighash supplémentaires :**
-  La [version 5.1.2 du firmware][firmware coldcard] de Coldcard prend désormais
+  La [version 5.1.2 du firmware][coldcard firmware] de Coldcard prend désormais
   en charge tous les types de [signature-hash][wiki sighash] (sighash) au-delà
   de `SIGHASH_ALL`, ce qui permet des possibilités de transactions avancées.
 
