@@ -22,7 +22,7 @@ Bitcoin les plus répandus.
   implique la création et le transfert de jetons, bien que RGB soit conçu
   pour des objectifs plus larges que le simple transfert de jetons.
 
-  - Hors chaîne, Alice crée un contrat dont l'état initial attribue 
+  - Hors chaîne, Alice crée un contrat dont l'état initial attribue
     1 000 tokens à une certaine UTXO qu'elle contrôle.
 
   - Bob veut 400 des jetons.  Alice lui donne une copie du contrat original
@@ -106,7 +106,7 @@ Bitcoin les plus répandus.
   commerciaux RGB connus sur le réseau principal). La nouvelle conception est
   destinée à permettre à tous les nouveaux contrats d'être mis à jour au fil du
   temps pour tenir compte des changements futurs dans le protocole. Un certain
-  nombre d'autres améliorations ont également été mises en œuvre, et une feuille 
+  nombre d'autres améliorations ont également été mises en œuvre, et une feuille
   de route pour l'ajout de fonctionnalités supplémentaires est présentée.
 
   À l'heure où nous écrivons ces lignes, l'annonce a fait l'objet de quelques
