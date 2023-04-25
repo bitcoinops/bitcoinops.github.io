@@ -70,6 +70,25 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
+- [How many sigops are in the invalid block 783426?]({{bse}}117837)
+  Vojtěch Strnad provided a script that iterates through all transactions in a
+  block and counts the [sigops]({{bse}}117359) and notes that there were 80,003 sigops in the
+  block, making it [invalid][max sigops].
+
+- [How would an adversary increase the required fee to replace a transaction by up to 500 times?]({{bse}}117734)
+  In referencing a draft BIP for [ephemeral anchors][topic ephemeral anchors],
+  Michael Folkson asks how the referenced 500 times increase in required fees
+  for a transaction replacement could occur. Antoine Poinsot gives an example
+  of how an attacker could use the [Replace-By-Fee (RBF)][topic rbf] fee bumping
+  rules to require additional replacement transactions to pay significantly
+  higher fees.
+
+- [Best Practices with Multiple CPFPs & CPFP + RBF?]({{bse}}117877)
+  Sdaftuar explains considerations around using RBF and [Child Pays For Parent
+  (CPFP)][topic cpfp] fee bumping techniques in the scenario that an initial
+  CPFP fee bumping attempt failed to offer a sufficient feerate to get the
+  initial transaction confirmed.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -140,3 +159,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [ldk 0.0.115]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.115
 [lnd v0.16.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.1-beta
 [news40 cltv]: /en/newsletters/2019/04/02/#lnd-2759
+[max sigops]: https://github.com/bitcoin/bitcoin/blob/e9262ea32a6e1d364fb7974844fadc36f931f8c6/src/consensus/consensus.h#L17

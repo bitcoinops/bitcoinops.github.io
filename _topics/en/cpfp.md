@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Suggestion for LN to provide an alternative to using CPFP for most HTLC fee bumping"
     url: /en/newsletters/2022/11/02/#anchor-outputs-workaround
 
+  - title: "Suggested best practices for CPFP or RBF fee-bumping a previous CPFP fee bump"
+    url: /en/newsletters/2023/04/26/#best-practices-with-multiple-cpfps-cpfp-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

@@ -141,6 +141,9 @@ optech_mentions:
   - title: "Bitcoin Core #25344 updates the fee-bumping RPCs to allow altering replacement outputs"
     url: /en/newsletters/2023/02/22/#bitcoin-core-25344
 
+  - title: "Suggested best practices for CPFP or RBF fee-bumping a previous CPFP fee bump"
+    url: /en/newsletters/2023/04/26/#best-practices-with-multiple-cpfps-cpfp-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
