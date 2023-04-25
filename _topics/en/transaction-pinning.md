@@ -69,6 +69,9 @@ optech_mentions:
   - title: Implementation of proposed ephemeral anchors to help prevent pinning attacks
     url: /en/newsletters/2022/12/07/#ephemeral-anchors-implementation
 
+  - title: "Question about how to pin a transaction by requiring a fee bump pay a 500x fee"
+    url: /en/newsletters/2023/04/26/#how-would-an-adversary-increase-the-required-fee-to-replace-a-transaction-by-up-to-500-times
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
