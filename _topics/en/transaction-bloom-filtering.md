@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Rust Bitcoin #580 adds support for the BIP37 P2P network messages"
     url: /en/newsletters/2021/09/22/#rust-bitcoin-580
 
+  - title: "Proposal to remove `mempool` message support from Bitcoin Core, possibly along with bloom filters"
+    url: /en/newsletters/2023/04/26/#proposed-removal-of-bip35-mempool-p2p-message
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Privacy in BitcoinJ [bloom filters]"

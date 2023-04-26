@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Ephemeral anchors compared to `SIGHASH_GROUP`"
     url: /en/newsletters/2023/01/25/#ephemeral-anchors-compared-to-sighash-group
 
+  - title: "Bitcoin Inquisition #23 adds part of the support for ephemeral anchors"
+    url: /en/newsletters/2023/04/26/#bitcoin-inquisition-23
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
