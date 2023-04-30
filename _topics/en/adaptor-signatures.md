@@ -106,6 +106,9 @@ optech_mentions:
   - title: Using signature adaptors to prove acceptance of an LN async payment
     url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
 
+  - title: "Analysis of signature adaptor security"
+    url: /en/newsletters/2023/05/03/#analysis-of-signature-adaptor-security
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures

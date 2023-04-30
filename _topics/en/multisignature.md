@@ -85,6 +85,9 @@ optech_mentions:
   - title: "BIPs #1372 assigns BIP327 to the MuSig2 protocol for creating multisignatures"
     url: /en/newsletters/2023/04/12/#bips-1372
 
+  - title: "Analysis of signature adaptor security when used with multisignatures"
+    url: /en/newsletters/2023/05/03/#analysis-of-signature-adaptor-security
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: MuSig

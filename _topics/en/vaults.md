@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Proposal for alternative design for `OP_VAULT` inspired by `OP_TLUV`"
     url: /en/newsletters/2023/03/08/#alternative-design-for-op-vault
 
+  - title: "Analysis of alternative design for `OP_VAULT` using MATT-style covenants"
+    url: /en/newsletters/2023/05/03/#matt-based-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
