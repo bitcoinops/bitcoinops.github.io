@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Proposal for `OP_UNVAULT` opcode that can emulate CTV"
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
+  - title: "Analysis of alternative design for `OP_VAULT` using MATT-style covenants and CTV"
+    url: /en/newsletters/2023/05/03/#matt-based-vaults
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
