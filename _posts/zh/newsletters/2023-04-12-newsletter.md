@@ -8,11 +8,11 @@ layout: newsletter
 lang: zh
 ---
 
-本周的周报介绍了围绕 “闪电通道拼接” 提议的讨论，并给出了一份提议相关交易术语的 BIP 的链接。此外还有我们的常规部分：最近一次 Bitcoin Core PR 审核俱乐部会议的总结、软件的新版本和候选版本的公告 —— 包括 libsecp256k1 库的一个安全更新 —— 以及热门的比特币基础设施软件上出点的重大变更的介绍。
+本周的周报介绍了围绕 “闪电通道拼接” 提议的讨论，并给出了一份提议相关交易术语的 BIP 的链接。此外还有我们的常规部分：最近一次 Bitcoin Core PR 审核俱乐部会议的总结、软件的新版本和候选版本的公告 —— 包括 libsecp256k1 库的一个安全更新 —— 以及热门的比特币基础设施软件上出的重大变更的介绍。
 
 ## 新闻
 
-- **<!--splicing-specification-discussions-->通道拼接技术规范讨论**：本周内，多位闪电网络的开发者在 Lightning-Dev 邮件组中讨论了开发中的 “[通道拼接][topic splicing]” [规范草案][bolts #863]，这种技术让一个链下的闪电通道中的一些资金可以在链上花费（称为 “splice-out”）、或者链上的资金可以添加在一条链下的通道中（称为 “splice-in”）。在链上的拼接交易等待足够多的	区块确认期间，被操作的通道可以不受中断、持续运行。
+- **<!--splicing-specification-discussions-->通道拼接技术规范讨论**：本周内，多位闪电网络的开发者在 Lightning-Dev 邮件组中讨论了开发中的 “[通道拼接][topic splicing]” [规范草案][bolts #863]，这种技术让一个链下的闪电通道中的一些资金可以在链上花费（称为 “splice-out”）、或者链上的资金可以添加在一条链下的通道中（称为 “splice-in”）。在链上的拼接交易等待足够多的区块确认期间，被操作的通道可以不受中断、持续运行。
 
   {:.center}
   ![Splicing transaction flow](/img/posts/2023-04-splicing1.dot.png)
@@ -38,7 +38,7 @@ lang: zh
 
 {% include functions/details-list.md
   q0="启用了 assume-valid 选项但不是剪枝模式的节点也需要下载（非近期的）见证数据吗？如果这些节点不会检查这些数据的话，为什么要下载呢？这个 PR 是否也应该禁止非剪枝模式下的见证数据下载？"
-  a0="需要见证数据，是因为对等节点可能会跟我们请求非近期的区块（我们对外宣称我们是非剪枝的节点。"
+  a0="需要见证数据，是因为对等节点可能会跟我们请求非近期的区块（我们对外宣称我们是非剪枝的节点。）"
   a0link="https://bitcoincore.reviews/27050#l-31"
 
   q1="这项措施能在 IBD 期间节约大概多少带宽呢？换句话说，截至最近的一个区块（比如高度为 781213 的区块），所有见证数据的总体积是多少？"
@@ -58,7 +58,7 @@ lang: zh
   a4link="https://bitcoincore.reviews/27050#l-91"
 
   q5="这项 PR 没有包含用于跳过上一个问题中的所有额外检查的显式代码。这是怎么做到的？"
-  a5="事实是，当我们没有任何见证数据的时候，所有这些额外的检查都会跳过。这样做的意义在于隔离见证是一次软分叉。有了这项 PR，我们本质上是在假装我们是一个前隔离见证节点（直至我们到达 assume-valid 的终点。"
+  a5="事实是，当我们没有任何见证数据的时候，所有这些额外的检查都会跳过。这样做的意义在于隔离见证是一次软分叉。有了这项 PR，我们本质上是在假装我们是一个前隔离见证节点（直至我们到达 assume-valid 的终点。）"
   a5link="https://bitcoincore.reviews/27050#l-117"
 %}
 
@@ -74,10 +74,10 @@ lang: zh
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquisition][bitcoin inquisition repo]。*
 
 - [Core Lightning #6012][] 在用于编写 CLN 插件（见[周报 #26][news26 pyln-client]）的 Python 库中实现了多项重大优化，使得它能跟 CLN 的 gossip 仓库更好地协作。这项变更允许为 gossip 开发更好的分析工具，而且让使用 gossip 数据的插件的开发变得更加容易。{% assign timestamp="58:33" %}
-- [Core Lightning #6124][] 添加了一项功能，可以禁止某些使用 [commando][commando plugin] 功能的用户（runes），并维护一个所有用户的清单，这可用于跟踪和禁用遭到爆破的用户。{% assign timestamp="1:02:01" %}
+- [Core Lightning #6124][] 添加了一项功能，可以禁止某些使用 [commando][commando plugin] 功能的用户（runes），并维护一个所有用户的清单，这可用于追踪和禁用遭到爆破的用户。{% assign timestamp="1:02:01" %}
 - [Eclair #2607][] 添加了一种新的 PRC `listreceivedpayments`，可以列出节点收到的所有支付。{% assign timestamp="1:03:06" %}
 - [LND #7437][] 已支持备份单个通道到一个文件中。{% assign timestamp="1:04:05" %}
-- [LND #7069][] 允许一个客户端向自己的[瞭望塔][topic watchtowers]发送一条消息，请求删除某个会话。这使得瞭望塔可以停止监控使用过期状态来关闭通道的脸上交易。这降低了瞭望塔和客户端双方的存储和 CPU 负担。{% assign timestamp="1:04:43" %}
+- [LND #7069][] 允许一个客户端向自己的[瞭望塔][topic watchtowers]发送一条消息，请求删除某个会话。这使得瞭望塔可以停止监控使用过期状态来关闭通道的链上交易。这降低了瞭望塔和客户端双方的存储和 CPU 负担。{% assign timestamp="1:04:43" %}
 - [BIPs #1372][] 为 [MuSig2][topic musig] 协议分配了编号 [BIP327][]，该协议用于创建可用于 [taproot][topic taproot] 及其它兼容 [BIP340][] 的[Schnorr 签名][topic schnorr signatures]系统的[多签名][topic multisignature]。如该 BIP 所述，使用该协议的好处包括非交互式的密钥聚合以及仅需两轮通信即可完成签名。使用额外的步骤，也可以在参与者之间实现非交互的签名。该协议兼容任何多签名方案的所有好处，例如大大减少链上数据并加强隐私性 —— 既包括参与者自己的，也包括网络所有用户的。{% assign timestamp="1:06:18" %}
 
 
