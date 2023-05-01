@@ -92,7 +92,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #25158][] rpc, wallet: add abandoned field for all categories of transaction in ListTransaction FIXME:bitschmidty
 
-- [Bitcoin Core #26933][] mempool: disallow txns under min relay fee, even in packages FIXME:glozow
+- [Bitcoin Core #26933][] reintroduces the requirement that each
+  transaction meet the node's minimum relay feerate (`-minrelaytxfee`)
+  in order to be accepted to the mempool, even when being evaluated as a
+  package. Package validation still allows bumping a transaction below
+  the dynamic mempool minimum feerate. This policy was reintroduced to
+  avoid the risk of zero-fee transactions losing their fee-bumping
+  descendant in the event of a replacement. It may reversed in the
+  future if a DoS-resistant method of preventing such transactions is
+  found, e.g. through a package topology restriction like v3 or a
+  modification to the mempool's eviction process.
 
 - [Bitcoin Core #25325][] introduces a pool based memory resource for
   the UTXO cache. The new data structure pre-allocates and manages a
