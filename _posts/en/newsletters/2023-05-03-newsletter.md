@@ -94,7 +94,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #26933][] mempool: disallow txns under min relay fee, even in packages FIXME:glozow
 
-- [Bitcoin Core #25325][] Add pool based memory resource FIXME:Xekyo
+- [Bitcoin Core #25325][] introduces a pool based memory resource for
+  the UTXO cache. The new data structure pre-allocates and manages a
+  larger pool of memory to track UTXOs instead of allocating and freeing
+  memory for each UTXO individually. UTXO lookups represent a major proportion of
+  memory accesses, especially during IBD. Benchmarks indicate that
+  reindexing is sped up by over 20% by the more efficient memory
+  management.
 
 - [Bitcoin Core #25939][] allows nodes with the optional transaction
   index enabled to search that index when using the `utxoupdatepsbt` RPC
