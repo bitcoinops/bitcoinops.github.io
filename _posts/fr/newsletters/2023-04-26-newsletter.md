@@ -73,7 +73,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 
 - [Combien de sigops y a-t-il dans le bloc invalide 783426 ?]({{bse}}117837)
   Vojtěch Strnad a fourni un script qui parcourt toutes les transactions d'un bloc
-  et compte les [sigops](bse}}117359) et note qu'il y avait 80 003 sigops dans le bloc,
+  et compte les [sigops]({{bse}}117359) et note qu'il y avait 80 003 sigops dans le bloc,
   ce qui le rend [invalide][max sigops].
 
 - [Comment un adversaire pourrait-il augmenter jusqu'à 500 fois les frais requis pour remplacer une transaction ?]({{bse}}117734)
