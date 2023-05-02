@@ -90,7 +90,9 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #25158][] rpc, wallet: add abandoned field for all categories of transaction in ListTransaction FIXME:bitschmidty
+- [Bitcoin Core #25158][] adds an `abandoned` field to the transaction detail
+  responses from the `gettransaction`, `listtransactions`, and `listsinceblock` RPCs
+  indicating which transactions have been marked [abandoned][abandontransaction rpc].
 
 - [Bitcoin Core #26933][] reintroduces the requirement that each
   transaction meet the node's minimum relay feerate (`-minrelaytxfee`)
@@ -184,3 +186,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [gibson adaptors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021594.html
 [lee hiring]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021589.html
 [news34 psbt]: /en/newsletters/2019/02/19/#bitcoin-core-13932
+[abandontransaction rpc]: https://developer.bitcoin.org/reference/rpc/abandontransaction.html
