@@ -8,7 +8,7 @@ layout: newsletter
 lang: en
 ---
 This week's newsletter summarizes an analysis of using a flexible
-covenent design to reimplement the `OP_VAULT` proposal, summarizes a
+covenant design to reimplement the `OP_VAULT` proposal, summarizes a
 post about signature adaptor security, and relays a job announcement
 that may be particularly interesting to some readers.  Also included are
 our regular sections describing new releases, release candidates, and
