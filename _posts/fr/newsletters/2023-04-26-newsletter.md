@@ -19,7 +19,7 @@ Bitcoin les plus répandus.
 ## Nouvelles
 
 - **Proposition de suppression du message P2P `mempool` du BIP35 :** Will Clark
-  a [posté][clark mempool] sur la liste de diffusion Bitcoin-Dev à propos d'un
+  s'est [exprimé][clark mempool] sur la liste de diffusion Bitcoin-Dev à propos d'un
   [PR][bitcoin core #27426] qu'il a ouvert pour supprimer le support du message
   P2P `mempool` spécifié à l'origine dans [BIP35][]. Dans son implémentation
   originale, un nœud recevant un message `mempool` répondait au pair demandeur
@@ -44,7 +44,7 @@ Bitcoin les plus répandus.
     Plus tard encore, Bitcoin Core a désactivé par défaut le support du filtre bloom
     (voir [Bulletin #56][news56 bloom]), ne l'autorisant qu'à être utilisé avec des
     pairs configurés avec l'option `-whitelist` (voir [Bulletin #60][news60 bloom]);
-    cela rend effectivement le `mempool` de BIP35 également désactivé par défaut.
+    cela désactive également par défaut le `mempool` de BIP35.
 
     Le PR de Clark sur Bitcoin Core a reçu le soutien du projet, bien que certains
     partisans pensent que les filtres Bloom de BIP37 devraient être supprimés en
@@ -63,10 +63,10 @@ Bitcoin les plus répandus.
 ## Selection de Q&R du Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits
-où les collaborateurs d'Optech cherchent des réponses à leurs questions---ou
-lorsque nous avons quelques moments libres pour aider les utilisateurs
+où les collaborateurs d'Optech cherchent des réponses à leurs questions---ou,
+lorsqu'ils ont quelques moments libres, aident les utilisateurs
 curieux ou confus. Dans cette rubrique mensuelle, nous mettons en avant
-certaines des questions et réponses les plus votées depuis notre dernière mise à jour.*
+certaines des questions et réponses les plus populaires depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
