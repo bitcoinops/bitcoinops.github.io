@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume une analyse de l'utilisation d'une
-conception de dépense flexible pour réimplémenter la proposition `OP_VAULT`,
+conception de dépense flexible (covenant) pour réimplémenter la proposition `OP_VAULT`,
 résume un post sur la sécurité des adaptateurs de signature, et relaie une
 annonce d'emploi qui pourrait être particulièrement intéressante pour
 certains lecteurs. Vous y trouverez également nos sections régulières
