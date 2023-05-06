@@ -160,7 +160,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   dans le PSBT si nécessaire. Si une transaction complète n'est pas trouvée,
   l'ensemble UTXO sera utilisé pour les dépenses des sorties segwit. Notez
   que Taproot (segwit v1) élimine le problème de surpaiement pour la plupart
-  des transactions qui dépensent au moins une sortie taproot, nous nous
+  ""des transactions qui dépensent au moins une sortie taproot, nous nous
   attendons donc à ce que les futures mises à jour des dispositifs de signature
   matérielle cessent d'exiger des transactions complètes dans ce cas.
 
