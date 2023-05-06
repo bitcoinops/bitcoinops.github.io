@@ -17,7 +17,7 @@ notables apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
 
 ## Nouvelles
 
-- **Coffres-forts basés sur MATT :** Salvatore Ingala a [posté][ingala vaults]
+- **Coffres-forts basés sur MATT :** Salvatore Ingala [a posté][ingala vaults]
   sur la liste de diffusion Bitcoin-Dev une implémentation approximative d'un
   [coffre-fort][topic vaults] avec un comportement similaire aux récentes
   propositions OP_VAULT (voir [Newsletter #234][news234 op_vault]) mais qui
