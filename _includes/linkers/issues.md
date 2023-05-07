@@ -30,6 +30,7 @@ requests, and other templated URLs.
 [eclair #{{_issue}}]: https://github.com/ACINQ/eclair/issues/{{_issue}}
 [bips #{{_issue}}]: https://github.com/bitcoin/bips/issues/{{_issue}}
 [bolts #{{_issue}}]: https://github.com/lightning/bolts/issues/{{_issue}}
+[blips #{{_issue}}]: https://github.com/lightning/blips/issues/{{_issue}}
 [rust bitcoin #{{_issue}}]: https://github.com/rust-bitcoin/rust-bitcoin/issues/{{_issue}}
 [review club #{{_issue}}]: https://bitcoincore.reviews/{{_issue}}
 [hwi #{{_issue}}]: https://github.com/bitcoin-core/HWI/issues/{{_issue}}
