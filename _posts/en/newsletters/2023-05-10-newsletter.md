@@ -122,7 +122,11 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #26094][] rpc: Return block hash & height in getbalances, gettransaction and getwalletinfo FIXME:adamjonas
+- [Bitcoin Core #26094][] adds the block hash and height fields to
+  `getbalances`, `gettransaction`, and `getwalletinfo`. These RPC calls
+  lock the chainstate to make sure they are up-to-date with the latest
+  block and so they benefit from including the valid block hash and
+  height in the response.
 
 - [Bitcoin Core #27195][] makes it possible to remove all external receivers from
   a transaction that is being [replaced][topic rbf] using the `bumpfee`
