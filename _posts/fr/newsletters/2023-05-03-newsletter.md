@@ -98,7 +98,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 - [Bitcoin Core #25158][] ajoute un champ `abandoned` aux réponses
   détaillées des transactions des RPCs `gettransaction`, `listtransactions`,
   et `listsinceblock` indiquant quelles transactions ont été marquées comme
-  [abandonnées][abandonransaction rpc].
+  [abandonnées][abandontransaction rpc].
 
 - [Bitcoin Core #26933][] réintroduit l'exigence que chaque transaction
   respecte le taux de frais minimum de relais du nœud (`-minrelaytxfee`)
