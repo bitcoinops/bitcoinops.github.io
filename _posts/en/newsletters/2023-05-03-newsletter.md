@@ -40,7 +40,7 @@ notable changes to popular Bitcoin infrastructure software.
     replies, but there was [continued discussion][halseth matt] about
     his original proposal for MATT and it's ability to allow
     verification that an (essentially) arbitrarily complex program was
-    run.
+    run. {% assign timestamp="12:29" %}
 
 - **Analysis of signature adaptor security:** Adam Gibson
   [posted][gibson adaptors] to the Bitcoin-Dev mailing list an analysis
@@ -57,7 +57,7 @@ notable changes to popular Bitcoin infrastructure software.
   properties is essential to ensure they are used correctly.  Gibson
   builds on the previous analysis of Lloyd Fournier and others (see
   [Newsletter #129][news129 adaptors]), but he also notes areas that
-  need further analysis and seeks review of his own contributions.
+  need further analysis and seeks review of his own contributions. {% assign timestamp="33:40" %}
 
 - **Job opportunity for project champions:** Steve Lee of the Spiral
   grant-giving organization [posted][lee hiring] to the Bitcoin-Dev
@@ -65,7 +65,7 @@ notable changes to popular Bitcoin infrastructure software.
   contributors to apply for a paid full-time position championing
   cross-team projects that will provide significant improvements to
   Bitcoin's long-term scalabality, security, privacy, and flexibility.
-  See his post for details.
+  See his post for details. {% assign timestamp="1:17" %}
 
 ## Releases and release candidates
 
@@ -75,10 +75,10 @@ release candidates.*
 
 - [LND v0.16.2-beta][] is a minor release of this LN implementation that
   includes several bug fixes for "performance regressions introduced in
-  the prior minor release".
+  the prior minor release". {% assign timestamp="56:25" %}
 
 - [Core Lightning 23.05rc2][] is a release candidate for the next
-  version of this LN implementation.
+  version of this LN implementation. {% assign timestamp="57:20" %}
 
 ## Notable code and documentation changes
 
@@ -92,7 +92,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #25158][] adds an `abandoned` field to the transaction detail
   responses from the `gettransaction`, `listtransactions`, and `listsinceblock` RPCs
-  indicating which transactions have been marked [abandoned][abandontransaction rpc].
+  indicating which transactions have been marked [abandoned][abandontransaction rpc]. {% assign timestamp="58:17" %}
 
 - [Bitcoin Core #26933][] reintroduces the requirement that each
   transaction meet the node's minimum relay feerate (`-minrelaytxfee`)
@@ -103,7 +103,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   descendant in the event of a replacement. It may reversed in the
   future if a DoS-resistant method of preventing such transactions is
   found, e.g. through a package topology restriction like v3 or a
-  modification to the mempool's eviction process.
+  modification to the mempool's eviction process. {% assign timestamp="1:00:23" %}
 
 - [Bitcoin Core #25325][] introduces a pool based memory resource for
   the UTXO cache. The new data structure pre-allocates and manages a
@@ -111,7 +111,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   memory for each UTXO individually. UTXO lookups represent a major proportion of
   memory accesses, especially during IBD. Benchmarks indicate that
   reindexing is sped up by over 20% by the more efficient memory
-  management.
+  management. {% assign timestamp="1:04:24" %}
 
 - [Bitcoin Core #25939][] allows nodes with the optional transaction
   index enabled to search that index when using the `utxoupdatepsbt` RPC
@@ -151,7 +151,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   (segwit v1) eliminates the overpayment concern for most transactions
   that spend at least one taproot output, so we expect to see future
   updates of hardware signing devices cease requiring full transactions
-  in that case.
+  in that case. {% assign timestamp="1:07:18" %}
 
 - [LDK #2222][] allows updating information about a channel using a
   message gossiped by the nodes involved in that channel without
@@ -161,7 +161,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   (DoS) attacks, but some LN nodes won't have the capability to look up
   UTXOs and may have other methods for preventing DoS attacks.  This
   merged PR makes it easier for them to use information without a source
-  for UTXO data.
+  for UTXO data. {% assign timestamp="1:12:31" %}
 
 - [LDK #2208][] adds transaction rebroadcasting and fee bumping of
   unresolved [HTLCs][topic htlc] in channels that have been forced
@@ -169,7 +169,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   pinning] and ensures reliability.  See also [Newsletter #243][news243
   rebroadcast] where LND added its own rebroadcasting interface and
   [last week's newsletter][news247 rebroadcast] where CLN improved its
-  own logic.
+  own logic. {% assign timestamp="1:15:39" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25158,26933,25325,2222,2208,25939" %}
