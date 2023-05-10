@@ -57,7 +57,7 @@ Bitcoin infrastructure software.
 
     Additional feedback is requested from anyone using the BIP35
     `mempool` message for any purpose.  You can reply to either the
-    mailing list post or the PR linked previously.
+    mailing list post or the PR linked previously. {% assign timestamp="0:41" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -73,7 +73,7 @@ answers posted since our last update.*
 - [How many sigops are in the invalid block 783426?]({{bse}}117837)
   Vojtěch Strnad provided a script that iterates through all transactions in a
   block and counts the [sigops]({{bse}}117359) and notes that there were 80,003 sigops in the
-  block, making it [invalid][max sigops].
+  block, making it [invalid][max sigops]. {% assign timestamp="15:27" %}
 
 - [How would an adversary increase the required fee to replace a transaction by up to 500 times?]({{bse}}117734)
   In referencing a draft BIP for [ephemeral anchors][topic ephemeral anchors],
@@ -81,13 +81,13 @@ answers posted since our last update.*
   for a transaction replacement could occur. Antoine Poinsot gives an example
   of how an attacker could use the [Replace-By-Fee (RBF)][topic rbf] fee bumping
   rules to require additional replacement transactions to pay significantly
-  higher fees.
+  higher fees. {% assign timestamp="19:10" %}
 
 - [Best Practices with Multiple CPFPs & CPFP + RBF?]({{bse}}117877)
   Sdaftuar explains considerations around using RBF and [Child Pays For Parent
   (CPFP)][topic cpfp] fee bumping techniques in the scenario that an initial
   CPFP fee bumping attempt failed to offer a sufficient feerate to get the
-  initial transaction confirmed.
+  initial transaction confirmed.  {% assign timestamp="22:51" %}
 
 ## Releases and release candidates
 
@@ -98,16 +98,16 @@ release candidates.*
 - [LDK 0.0.115][] is a release of this library for building LN-enabled
   wallets and applications.  It includes several new features and bug
   fixes, including more support for the experimental [offers][topic
-  offers] protocol and improved security and privacy.
+  offers] protocol and improved security and privacy. {% assign timestamp="25:01" %}
 
 - [LND v0.16.1-beta][] is a minor release of this LN implementation that
   includes several bug fixes and other improvements.  Its release notes
   note that its default CLTV delta has been increased from 40 blocks to
   80 blocks (see [Newsletter #40][news40 cltv] where we covered a
-  previous change in LND's default CLTV delta).
+  previous change in LND's default CLTV delta). {% assign timestamp="25:48" %}
 
 - [Core Lightning 23.05rc1][] is a release candidate for the next
-  version of this LN implementation.
+  version of this LN implementation. {% assign timestamp="27:01" %}
 
 ## Notable code and documentation changes
 
@@ -123,12 +123,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the mempool to monitor for unconfirmed transactions containing
   preimages for the HTLCs in the node's channels.  This allows the node
   to resolve the HTLCs faster than waiting for those transactions to
-  confirm.
+  confirm. {% assign timestamp="27:35" %}
 
 - [LND #6903][] updates the `openchannel` RPC with a new `fundmax`
   option that will allocate all channel funds towards a new channel,
   with the exception of any amount that needs to be kept onchain for
-  adding fees to channels using [anchor outputs][topic anchor outputs].
+  adding fees to channels using [anchor outputs][topic anchor outputs]. {% assign timestamp="28:10" %}
 
 - [LDK #2198][] increases the amount of time LDK waits before sending a
   gossip message announcing that a channel is down (e.g. because the
@@ -140,13 +140,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   block (approximately every 10 minutes on average).  Although the PR
   notes that sending slower updates involves tradeoffs, it updates LDK
   to wait about 10 minutes before broadcasting a channel disabled
-  message.
+  message. {% assign timestamp="29:40" %}
 
 - [Bitcoin Inquisition #23][] adds part of the support for [ephemeral
   anchors][topic ephemeral anchors].  It doesn't include support for [v3
   transaction relay][topic v3 transaction relay], which ephemeral anchors
   depends on to stop [transaction pinning attacks][topic transaction
-  pinning].
+  pinning]. {% assign timestamp="32:37" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7564,6903,2198,1059,23,27426" %}
