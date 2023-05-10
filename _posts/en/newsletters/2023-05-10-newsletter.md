@@ -98,18 +98,84 @@ release candidates.*
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Add getprioritisationmap, delete a mapDeltas entry when delta==0][review club 27501]
+is a PR by Gloria Zhao (glozow) that improves the Bitcoin Core
+feature that allows miners to modify the effective mempool fee, and
+thus the mining priority (higher or lower), of particular transactions
+(see the [prioritisetransaction RPC][]).
+The fee increment (if positive) or decrement (if negative) is called
+the _fee delta_.  Transaction prioritization values are persisted to
+disk within the `mempool.dat` file and are restored on node restart.
 
-[Don't download witnesses for assumed-valid blocks when running in prune mode][review club 27050]
-is a PR by Niklas Gögge (dergoegge) that improves the performance of Initial Block Download
-(IBD) by not downloading witness data on nodes that are configured to both
-[prune block data][docs pruning] and use [assumevalid][docs assume valid]. This
-optimization was discussed in a recent [stack exchange question][se117057]. {% assign timestamp="43:42" %}
+One reason a miner might prioritize a transaction is to account for an
+out-of-band transaction fee payment; the affected transaction will be
+treated as if it has a higher fee when choosing which transactions to
+include in the miner's block template.
+
+The PR adds a new RPC, `getprioritisationmap`, that returns the set of
+prioritized transactions.  The PR also removes unnecessary prioritization
+entries, which can arise if the user sets deltas back to zero.
 
 {% include functions/details-list.md
-  q0=""
-  a0=""
-  a0link="https://bitcoincore.reviews/27050#FIXMEl-31"
+  q0="What is the [mapDeltas][] data structure, and why is it needed?"
+  a0="It's where the per-transaction prioritization values are stored.
+      These values affect local mining and eviction decisions, as well
+      as the ancestor and descendant feerate calculations."
+  a0link="https://bitcoincore.reviews/27501#l-26"
+
+  q1="Do transaction prioritizations affect the fee estimation algorithm?"
+  a1="No. Fee estimation needs to accurately predict
+      the expected decisions of miners (in this case, _other_ miners),
+      and these miners don't have the same prioritizations that we do,
+      since those are local."
+  a1link="https://bitcoincore.reviews/27501#l-31"
+
+  q2="How is an entry added to `mapDeltas`? When is it removed?"
+  a2="It's added by the `prioritisetransaction` RPC, and also when the
+      node restarts, due to an entry in `mempool.dat`.
+      They are removed when a block containing the transaction is
+      added to the chain, or when the transaction is [replaced][topic rbf]."
+  a2link="https://bitcoincore.reviews/27501#l-34"
+
+  q3="Why shouldn’t we delete a transaction’s entry from `mapDeltas` when
+      it leaves the mempool (because, for example, it has expired or been
+      evicted due to feerate dropping below the minimum feerate)?"
+  a3="The transaction may come back into the mempool. If its `mapDeltas` entry
+      had been removed, the user would have to re-prioritize the transaction."
+  a3link="https://bitcoincore.reviews/27501#l-84"
+
+  q4="If a transaction is removed from `mapDeltas` because it's included in
+      a block, but then the block is re-orged out, won't the transaction's
+      priority have to be reestablished?"
+  a4="Yes, but reorgs are expected to be rare. Also, the out-of-band payment
+      may actually be in the form of a Bitcoin transaction, and so it may
+      need to be redone as well."
+  a4link="https://bitcoincore.reviews/27501#l-90"
+
+  q5="Why should we allow prioritizing a transaction that isn’t present in
+      the mempool?"
+  a5="Because the transaction may not be in the mempool _yet_. And it may
+      not even be able to enter the mempool in the first place on its own
+      fee (without the prioritization)."
+  a5link="https://bitcoincore.reviews/27501#l-89"
+
+  q6="What is the problem if we don't clean up `mapDeltas`?"
+  a6="The main problem is wasteful memory allocation."
+  a6link="https://bitcoincore.reviews/27501#l-107"
+
+  q7="When is `mempool.dat` (including `mapDeltas`) written from memory to
+      disk?"
+  a7="On clean shutdown, and by running the `savemempool` RPC."
+  a7link="https://bitcoincore.reviews/27501#l-114"
+
+  q8="Without the PR, how do miners clean up `mapDeltas` (that is,
+      remove entries with a zero prioritization value)?"
+  a8="The only way is to restart the node, since zero-value
+      prioritizations are not loaded into `mapDeltas` during restart.
+      With the PR, the `mapDeltas` entry is deleted as soon as its
+      value is set to zero. This has the additional beneficial effect
+      that zero-value prioritizations aren't written to disk."
+  a8link="https://bitcoincore.reviews/27501#l-127"
 %}
 
 ## Notable code and documentation changes
@@ -222,3 +288,6 @@ publish the next 250 newsletters.
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [founding sponsors]: /about/#founding-sponsors
 [financial supporters]: /#members
+[review club 27501]: https://bitcoincore.reviews/27501
+[prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html
+[mapDeltas]: https://github.com/bitcoin/bitcoin/blob/fc06881f13495154c888a64a38c7d538baf00435/src/txmempool.h#L450
