@@ -188,7 +188,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Core Lightning 23.05rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.05rc2
 [lnd v0.16.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.2-beta
 [news101 overpayment]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
-[news129 adaptors]: /en/newsletters/2020/12/23/#ptlcs
+[news129 adaptors]: /fr/newsletters/2020/12/23/#ptlcs
 [news243 rebroadcast]: /fr/newsletters/2023/03/22/#lnd-7448
 [news247 rebroadcast]: /fr/newsletters/2023/04/19/#core-lightning-6120
 [ingala vaults]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021588.html
