@@ -86,6 +86,9 @@ optech_mentions:
   - title: "BTCPay Server #4600 updates its payjoin implementation to avoid creating unnecessary inputs"
     url: /en/newsletters/2023/02/15/#btcpay-server-4600
 
+  - title: "Advanced payjoin applications, including transaction cut-through"
+    url: /en/newsletters/2023/05/17/#advanced-payjoin-applications
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
