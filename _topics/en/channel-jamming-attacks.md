@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Feedback requested on LN good neighbor scoring for local reputation to mitigate jamming"
     url: /en/newsletters/2023/02/22/#feedback-requested-on-ln-good-neighbor-scoring
 
+  - title: "Testing HTLC endorsement for preventing channel jamming attacks"
+    url: /en/newsletters/2023/05/17/#testing-htlc-endorsement
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
