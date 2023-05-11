@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Bitcoin Core #25740 allows background validation of bootstrapped UTXO state"
     url: /en/newsletters/2023/03/15/#bitcoin-core-25740
 
+  - title: Summaries of Bitcoin Core developers in-person meeting
+    url: /en/newsletters/2023/05/17/#summaries-of-bitcoin-core-developers-in-person-meeting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
