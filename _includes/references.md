@@ -1,6 +1,8 @@
 {% comment %}<!-- internal site links, alphabetical order -->{% endcomment %}
 [bech32 series]: /en/bech32-sending-support/
 [compatibility matrix]: /en/compatibility/
+[topics]: /en/topics/
+[podcast]: /en/podcast/
 [op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
