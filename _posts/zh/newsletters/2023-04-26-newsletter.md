@@ -13,13 +13,11 @@ lang: zh
 
 - **建议删除 BIP35 `mempool` P2P 消息：** Will Clark 在 Bitcoin-Dev 邮件列表中发布了一篇文章，介绍了他开放的 [PR][bitcoin core #27426]，旨在删除最初在 [BIP35][] 中指定的 P2P `mempool` 消息的支持。在其最初的实现中，接收到 `mempool` 消息的节点将用包含其交易池中所有交易的 txids 的 `inv` 消息响应请求的对等节点。然后，请求的对等节点可以发送一个常规的 `getdata` 消息，其中包含它想要接收的任何交易的 txids。该 BIP 描述了这个消息的三个动机：网络诊断、允许轻量级客户端轮询未确认的交易，以及允许最近重新启动的矿工了解未确认的交易（当时，Bitcoin Core 在关闭时没有将其交易池保存到持久存储中）。
 
-    然而，后来出现了各种降低隐私的技术，通过滥用“交易池”消息或使用“getdata”请求任何交易池交易的能力，使得更容易确定哪个节点首先广播了交易。为了提高[交易来源隐私][topic transaction origin privacy]，Bitcoin Core后来删除了从其他节点请求未公布交易的能力，并将“交易池”消息限制为仅与[交易布隆过滤器][topic transaction bloom filtering]（如[BIP37]中指定的那样）一起使用，以供轻量级客户端使用。更晚一些，Bitcoin Core默认禁用了布隆过滤器支持（请参见[Newsletter＃56][news56 bloom]），仅允许将其用于配置了“-whitelist”选项的对等节点（请参见[Newsletter＃60][news60 bloom]）；这有效地使BIP35“交易池”也默认禁用。
-
-    然而，后来出现了各种降低隐私的技术，通过滥用 `mempool` 消息或使用 `getdata` 请求任何交易池中交易的能力，使得更容易确定哪个节点首先广播了交易。为了提高[交易起源隐私性][topic transaction origin privacy]，Bitcoin Core 后来删除了从其他节点请求未公布交易的能力，并将 `mempool` 消息限制为仅与[交易布隆过滤器][topic transaction bloom filtering]（如 [BIP37][] 中指定的）一起使用，以供轻量级客户端使用。更晚一些，Bitcoin Core 默认禁用了布隆过滤器支持（请参见 [Newsletter＃56][news56 bloom]），仅允许将其用于配置了 `-whitelist` 选项的对等节点（请参见 [Newsletter＃60][news60 bloom]）；这有效地使 BIP35 `mempool` 也默认禁用。
+    然而，后来出现了各种导致隐私降低的技术，通过滥用“交易池”消息或使用“getdata”请求任何交易池交易的能力，使得更容易确定哪个节点首先广播了交易。为了提高[交易来源隐私][topic transaction origin privacy]，Bitcoin Core 后来删除了从其他节点请求未公布交易的能力，并将“交易池”消息限制为仅与[交易布隆过滤器][topic transaction bloom filtering]（如[BIP37]中指定的那样）一起使用，以供轻量级客户端使用。更晚一些，Bitcoin Core 默认禁用了布隆过滤器支持（请参见[Newsletter＃56][news56 bloom]），仅允许将其用于配置了“-whitelist”选项的对等节点（请参见[Newsletter＃60][news60 bloom]）；这有效地使 BIP35 “交易池”也默认禁用。
 
     Clark 的 Bitcoin Core PR 得到了项目内部的支持，尽管一些支持者认为应该先删除 BIP37 布隆过滤器。在邮件列表中，截至本文撰写时，唯一的[回复][harding mempool]指出，连接到自己的可信节点的轻量级客户端目前可以使用 BIP35 和 BIP37 以比目前通过 Bitcoin Core 可轻易获得的任何其他方法都更节省带宽地获知未确认的交易。回复者建议在删除当前接口之前，Bitcoin Core 提供一种替代机制。
 
-    请所有使用 BIP35 `mempool` 消息的人提供额外反馈。您可以回复邮件列表或之前链接的 PR。
+    请所有使用 BIP35 `mempool` 消息的人提供额外反馈。你可以回复邮件列表或之前链接的 PR。
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -55,7 +53,7 @@ lang: zh
 
 - [LND #6903][] 更新了 `openchannel` RPC，增加了一个新的 `fundmax` 选项。该选项将所有通道资金分配给新通道，除了需要保留在链上的任何金额以用于使用[锚点输出][topic anchor outputs] 向通道添加费用的情况。
 
-- [LDK #2198][] 增加了 LDK 发送通告的消息以宣布通道已关闭（例如，由于远程对等节点不可用）前的等待时间。以前，LDK 在大约一分钟后会广播通道已关闭。其他 LN 节点等待更长时间，而更新 LN gossip 协议的[提案][bolts #1059] 建议将时间戳字段替换为块高度，而不是 [Unix epoch 时间][Unix epoch time]，这将只允许每个区块更新一次 gossip 消息（平均每 10 分钟一次）。虽然 PR 注意到发送较慢的更新涉及权衡，但它将 LDK 更新为在广播通道禁用消息之前等待约 10 分钟。
+- [LDK #2198][] 提高了 LDK 发送通告的消息以宣布通道已关闭（例如，由于远程对等节点不可用）前的等待时间。以前，LDK 在大约一分钟后会广播通道已关闭。其他 LN 节点等待更长时间，而更新 LN gossip 协议的[提案][bolts #1059] 建议将时间戳字段替换为块高度，而不是 [Unix epoch 时间][Unix epoch time]，这将只允许每个区块更新一次 gossip 消息（平均每 10 分钟一次）。尽管 PR 注意到发送较慢的更新涉及权衡，即它在广播通道禁用消息之前，需要为更新 LDK 等待约 10 分钟。
 
 - [Bitcoin Inquisition #23][] 添加了对[临时锚点][topic ephemeral anchors]的部分支持。它不包括 [v3 交易中继][topic v3 transaction relay] 的支持，这是临时锚点所依赖的，以防止[交易钉死攻击][topic transaction pinning]。
 
