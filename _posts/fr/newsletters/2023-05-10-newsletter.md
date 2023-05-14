@@ -38,7 +38,7 @@ notre 250e bulletin.
   Imaginons que l'heure actuelle soit _t_ et que la hauteur de bloc actuelle
   soit _x_. Si les blocs sont produits en moyenne à 10 minutes d'intervalle,
   alors si nous fixons `<time>` à _t + 1000 minutes_ et `<height>` à _x + 50_,
-    nous nous attendons à ce que Bob puisse passer la sortie contrôlée par le
+    <!-- skip-duplicate-words-test -->nous nous attendons à ce que Bob puisse passer la sortie contrôlée par le
     script ci-dessus en moyenne 500 minutes avant qu'Alice puisse le dépenser.
     Cependant, si le taux de production de blocs devait soudainement plus que
     doubler, Alice pourrait être en mesure de dépenser la production avant Bob.
@@ -237,9 +237,9 @@ Bitcoin Optech a été fondé, en partie, pour "faciliter l'amélioration des
 relations entre les entreprises et la communauté open source". Cette lettre
 d'information hebdomadaire a été lancée pour donner aux cadres et aux
 développeurs des entreprises utilisant Bitcoin un meilleur aperçu de ce que
-la communauté open source est en train de construire.  En tant que tel, nous
-nous sommes d'abord concentrés sur la documentation des travaux susceptibles
-d'affecter les entreprises.
+la communauté open source est en train de construire. En tant que tel,
+<!-- skip-duplicate-words-test -->nous nous sommes d'abord concentrés sur la
+documentation des travaux susceptibles d'affecter les entreprises.
 
 Nous avons rapidement découvert que les lecteurs professionnels n'étaient
 pas les seuls à être intéressés par ces informations. De nombreux contributeurs
