@@ -295,8 +295,8 @@ lorsque nous publierons les 250 prochains bulletins d'information.
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /fr/newsletters/2022/02/23/#ldk-1199
-[founding sponsors]: /about/#founding-sponsors
-[financial supporters]: /#members
+[sponsors fondateurs]: /about/#founding-sponsors
+[soutiens financiers]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html
 [mapDeltas]: https://github.com/bitcoin/bitcoin/blob/fc06881f13495154c888a64a38c7d538baf00435/src/txmempool.h#L450
