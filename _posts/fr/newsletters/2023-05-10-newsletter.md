@@ -20,11 +20,11 @@ notre 250e bulletin.
 - **Article sur le protocole PoWswap :** Thomas Hartman a [posté][hartman
   powswap] sur la liste de diffusion Bitcoin-Dev un [article][hnr powswap]
   qu'il a écrit avec Gleb Naumenko et Antoine Riard sur le protocole [PoWSwap][]
-  proposé pour la première fois par Jeremy Rubin.  Powswap permet la création
-  de contrats exécutoires sur la chaîne liés au changement du taux de hachage.
+  proposé pour la première fois par Jeremy Rubin. Powswap permet la création
+  de contrats exécutoires "on-chain" liés au changement du taux de hachage.
   L'idée de base tire parti de la relation entre le temps et la production de
   blocs, renforcée par le protocole, ainsi que de la possibilité d'exprimer
-  les blocages temporels en temps ou en blocs.  Prenons l'exemple du script
+  les blocages temporels en temps ou en blocs. Prenons l'exemple du script
   suivant :
 
   ```
@@ -51,7 +51,7 @@ notre 250e bulletin.
     pour recevoir 1 % du total actuel des récompenses du réseau peut être surpris
     de constater que d'autres mineurs ont également acheté suffisamment
     d'équipement pour doubler le hashrate total du réseau, laissant le mineur
-    avec 0,5 % de la récompense au lieu de 1 %.  Avec PoWSwap, le mineur peut
+    avec 0,5 % de la récompense au lieu de 1 %. Avec PoWSwap, le mineur peut
     conclure un contrat sans confiance avec quelqu'un qui est prêt à le payer
     si le hashrate augmente avant une certaine date, compensant ainsi la baisse
     inattendue des revenus du mineur. En échange, le mineur verse à cette
@@ -124,7 +124,7 @@ remet les deltas à zéro.
   q0="Qu'est-ce que la structure de données [mapDeltas][] et pourquoi est-elle nécessaire ?"
   a0="C'est là que sont stockées les valeurs de priorité par transaction.
       Ces valeurs affectent les décisions locales d'extraction et d'éviction,
-      ainsi que les calculs des taux d'ancêtres et de descendants."
+      ainsi que les calculs des taux d'ascendants et de descendants."
   a0link="https://bitcoincore.reviews/27501#l-26"
 
   q1="La hiérarchisation des transactions affecte-t-elle l'algorithme d'estimation des frais ?"
@@ -149,7 +149,7 @@ remet les deltas à zéro.
   a3link="https://bitcoincore.reviews/27501#l-84"
 
   q4="Si une transaction est retirée de `mapDeltas` parce qu'elle est incluse
-      dans un bloc, mais que le bloc est ensuite réorgé, la priorité de la transaction
+      dans un bloc, mais que le bloc est ensuite ré-organisé, la priorité de la transaction
       ne devra-t-elle pas être rétablie ?"
   a4="Oui, mais les réorganisations devraient être rares. En outre, le paiement hors
       bande peut en fait prendre la forme d'une transaction en bitcoins, et il peut
@@ -280,7 +280,7 @@ Nous sommes également éternellement reconnaissants à nos [sponsors fondateurs
 Wences Casares, John Pfeffer et Alex Morcos, ainsi qu'à nos nombreux
 [soutiens financiers][].
 
-Nous vous remercions de votre lecture.  Nous espérons que vous continuerez à le faire
+Nous vous remercions de votre lecture. Nous espérons que vous continuerez à le faire
 lorsque nous publierons les 250 prochains bulletins d'information.
 
 {% include references.md %}
