@@ -294,7 +294,7 @@ lorsque nous publierons les 250 prochains bulletins d'information.
 [hartman powswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021605.html
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
-[news188 phantom]: /fr/newsletters/2022/02/23/#ldk-1199
+[news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
 [sponsors fondateurs]: /about/#founding-sponsors
 [soutiens financiers]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
