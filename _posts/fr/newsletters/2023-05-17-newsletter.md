@@ -8,15 +8,15 @@ layout: newsletter
 lang: fr
 ---
 La publication de cette semaine décrit une proposition pour commencer
-à testerla reconnaissance HTLC, transmet une demande de commentaires
+à tester la reconnaissance HTLC, transmet une demande de commentaires
 sur les spécifications proposées pour les fournisseurs de services
 Lightning (LSP), discute des défis liés à l'ouverture de canaux zéro-conf
 lors de l'utilisation d'un double financement, examine une suggestion
-pour des applications avancées de transactions payjoin, et des liens
+pour des applications avancées de transactions payjoin, et propose des liens
 vers des résumés d'une récente réunion en présentiel des développeurs
 de Bitcoin Core. La lettre d'information de cette semaine contient
 également la première partie d'une nouvelle série sur les politiques de
-relais de transaction et d'inclusion de mempool, ainsi que nos sections
+relais de transaction et d'inclusion dans le mempool, ainsi que nos sections
 habituelles annonçant les nouvelles versions et les versions candidates
 (y compris une version de sécurité de libsecp256k1) et décrivant les
 changements notables apportés aux logiciels d'infrastructure Bitcoin
@@ -29,15 +29,15 @@ les plus répandus.
   Lightning-Dev à propos des prochaines étapes qu'elles et d'autres ont prévu
   de prendre pour tester l'idée de la validation [HTLC][topic htlc] (voir
   [Newsletter #239][news239 endorsement]) dans le cadre d'une atténuation des
-  [attaques de brouillage de canal][topic channel jamming attacks]. Ils ont
+  [attaques de brouillage de canal][topic channel jamming attacks]. Elles ont
   notamment fourni une courte [proposition de spécification] [bolts #1071] qui
   pourrait être déployée en utilisant un flag expérimental, empêchant les
   déploiements d'avoir un effet sur les interactions avec les nœuds
   non-participants.
 
-    Une fois déployée par les expérimentateurs, il devrait être plus facile
-    de répondre à l'une des [critiques constructives][decker endorsement] de
-    cette idée, à savoir le nombre de paiements transférés qui bénéficieraient
+    Une fois cette spécification déployée par les expérimentateurs, il devrait être plus facile
+    de répondre à l'une des [critiques constructives][decker endorsement]
+    sur le nombre de paiements transférés qui bénéficieraient
     réellement de ce système. Si les principaux utilisateurs du réseau LN
     s'envoient fréquemment des paiements par les mêmes itinéraires et si le
     système de réputation fonctionne comme prévu, ce réseau central aura plus
@@ -57,7 +57,7 @@ les plus répandus.
   décrit une API permettant à un client d'acheter un canal à un LSP. La seconde
   décrit une API pour la mise en place et la gestion de canaux Just-In-Time (JIT),
   qui sont des canaux qui commencent leur vie en tant que canaux de paiement
-  virtuels; lorsque le premier paiement au canal virtuel est reçu, le LSP
+  virtuels ; lorsque le premier paiement au canal virtuel est reçu, le LSP
   diffuse une transaction qui ancrera le canal sur la chaîne lorsqu'il sera
   confirmé (le transformant en un canal normal).
 
@@ -67,7 +67,7 @@ les plus répandus.
     empêchera le verrouillage des fournisseurs et améliorera la protection de la vie privée.
 
 - **Difficultés liées aux canaux "zero-conf" en cas de double financement :** Bastien
-  Teinturier a [posté][teinturier 0conf] sur la liste de diffusion Lightning-Dev à
+  Teinturier s'est [exprimé][teinturier 0conf] sur la liste de diffusion Lightning-Dev à
   propos des défis que pose l'autorisation des [canaux zero-conf][topic zero-conf channels]
   lors de l'utilisation du [protocole dual-funding][topic dual funding]. Les canaux
   zéro-conf peuvent être utilisés avant même que la transaction d'ouverture du canal
@@ -76,7 +76,7 @@ les plus répandus.
   protocole de double financement, ce qui peut inclure des canaux où la transaction
   ouverte contient des contributions des deux parties du canal.
 
-    L'absence de confiance n'est possible que lorsqu'une partie contrôle
+    Se passer de confiance n'est possible que lorsqu'une partie contrôle
     toutes les entrées de la transaction ouverte. Par exemple, Alice crée
     la transaction ouverte, donne à Bob des fonds dans le canal, et Bob
     essaie de dépenser ces fonds par l'intermédiaire d'Alice auprès de
@@ -93,8 +93,8 @@ les plus répandus.
 
 - **Applications avancées de payjoin :** Dan Gould a [posté][gould payjoin]
   sur la liste de diffusion Bitcoin-Dev plusieurs suggestions pour utiliser
-  le protocole [payjoin][topic payjoin] pour faire plus qu'envoyer ou recevoir
-  un simple paiement. Deux des suggestions les plus intéressantes sont des
+  le protocole [payjoin][topic payjoin] pour aller au-delà de l'envoie ou de la réception
+  d'un simple paiement. Deux des suggestions les plus intéressantes sont des
   versions de [transaction cut-through][], une vieille idée pour améliorer
   la confidentialité, l'évolutivité et réduire les coûts :
 
@@ -109,8 +109,8 @@ les plus répandus.
       de dépôts et de retraits ; payjoin permet aux retraits d'être payés par
       de nouveaux dépôts lorsque c'est possible.
 
-    Ces deux techniques permettent de réduire ce qui serait au moins deux
-    transactions en une seule, ce qui permet d'économiser une quantité
+    Ces deux techniques permettent de passer de deux transactions au moins
+    à une seule, ce qui permet d'économiser une quantité
     considérable d'espace dans les blocs. Lorsque le [traitement par
     lots][topic payment batching] est utilisé, les économies d'espace
     peuvent être encore plus importantes. Mieux encore, du point de vue
@@ -180,12 +180,12 @@ versions ou d'aider à tester les versions candidates.*
   version de cette implémentation du LN.
 
 - [Bitcoin Core 23.2rc1][] est une version candidate pour une version
-  de maintenance. de maintenance de la version majeure précédente de Bitcoin Core.
+  de maintenance de la version majeure précédente de Bitcoin Core.
 
 - [Bitcoin Core 24.1rc3][] est une version candidate à la maintenance de la
-  version actuelle de Bitcoin Core. de maintenance de la version actuelle de Bitcoin Core.
+  version actuelle de Bitcoin Core.
 
-- [Bitcoin Core 25.0rc2][] est une version candidate de la prochaine version majeure de
+- [Bitcoin Core 25.0rc2][] est une version candidate de la prochaine
   version majeure de Bitcoin Core.
 
 ## Changements notables dans le code et la documentation
