@@ -53,8 +53,6 @@ optech_mentions:
   - title: "2022 year-in-review: zero-conf channels"
     url: /en/newsletters/2022/12/21/#zero-conf-channels
 
-  - title: "Challenges with zero-conf channels when dual funding"
-    url: /en/newsletters/2023/05/17/#challenges-with-zero-conf-channels-when-dual-funding
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
