@@ -1,3 +1,10 @@
+# Regex pattern to match list items and capture their title which
+# is either in **bold**, *italics*, or [markdown][links]
+$bold = /\*\*(?<bold>.*?):?\*\*/
+$italics = /\*(?<italics>.*?):?\*/
+$markdown_link = /\[(?<markdown_link>.*?):?\][(\[]/
+$title_pattern = /^ *- .*?(?:#{$bold}|#{$italics}|#{$markdown_link})/
+
 def generate_slug(title)
   ## Remove double-quotes from titles before attempting to slugify
   title.gsub!('"', '')
