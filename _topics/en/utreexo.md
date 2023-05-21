@@ -37,6 +37,9 @@ optech_mentions:
   - title: "Service bit for Utreexo"
     url: /en/newsletters/2023/03/15/#service-bit-for-utreexo
 
+  - title: ZeroSync protocol which uses a variation of utreexo
+    url: /en/newsletters/2023/05/24/#state-compression-with-zero-knowledge-validity-proofs
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

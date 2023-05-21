@@ -42,6 +42,9 @@ optech_mentions:
   - title: "BTCPay Server #4799 allows export wallet labels as specified in BIP329"
     url: /en/newsletters/2023/04/05/#btcpay-server-4799
 
+  - title: "BIPs #1412 updates BIP329 wallet label export with support for key origin information"
+    url: /en/newsletters/2023/05/24/#bips-1412
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
