@@ -75,7 +75,7 @@ celebrating five years of Bitcoin Optech and our 250th newsletter.
 
   Although the idea for PoWSwap has been circulated for several years,
   the paper provides more detail and analysis than we've previously
-  seen.
+  seen. {% assign timestamp="1:36" %}
 
 ## Releases and release candidates
 
@@ -84,13 +84,13 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 23.05rc2][] is a release candidate for the next
-  version of this LN implementation.
+  version of this LN implementation. {% assign timestamp="19:17" %}
 
 - [Bitcoin Core 24.1rc2][] is a release candidate for a maintenance
-  release of the current version of Bitcoin Core.
+  release of the current version of Bitcoin Core. {% assign timestamp="23:05" %}
 
 - [Bitcoin Core 25.0rc1][] is a release candidate for the next major
-  version of Bitcoin Core.
+  version of Bitcoin Core. {% assign timestamp="25:35" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -114,7 +114,7 @@ include in the miner's block template.
 
 The PR adds a new RPC, `getprioritisationmap`, that returns the set of
 prioritized transactions.  The PR also removes unnecessary prioritization
-entries, which can arise if the user sets deltas back to zero.
+entries, which can arise if the user sets deltas back to zero. {% assign timestamp="26:26" %}
 
 {% include functions/details-list.md
   q0="What is the [mapDeltas][] data structure, and why is it needed?"
@@ -192,7 +192,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   `getbalances`, `gettransaction`, and `getwalletinfo`. These RPC calls
   lock the chainstate to make sure they are up-to-date with the latest
   block and so they benefit from including the valid block hash and
-  height in the response.
+  height in the response. {% assign timestamp="45:42" %}
 
 - [Bitcoin Core #27195][] makes it possible to remove all external receivers from
   a transaction that is being [replaced][topic rbf] using the `bumpfee`
@@ -200,19 +200,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the only output of the replacement transaction pay the user's own
   address.  If the replacement transaction gets confirmed, this prevents
   any of the original receivers from being paid, which is sometimes
-  described as "canceling" a Bitcoin payment.
+  described as "canceling" a Bitcoin payment. {% assign timestamp="46:42" %}
 
 - [Eclair #1783][] adds a `cpfpbumpfees` API for [CPFP][topic cpfp] fee
   bumping one or more transactions.  The PR also updates the list of
   [recommended parameters][eclair bitcoin.conf] for running Bitcoin Core
-  to ensure that creating a fee-bump transaction is a viable option.
+  to ensure that creating a fee-bump transaction is a viable option. {% assign timestamp="48:34" %}
 
 - [LND #7568][] adds the ability to define additional LN feature bits
   when the node is started up.  It also removes the ability to disable any
   hardcoded or defined feature bits during runtime (but additional bits
   may be still be added and later disabled).  A related proposal update
   in [BLIPs #24][] notes that custom [BOLT11][] feature bits are limited
-  to a maximum expressed value of 5114.
+  to a maximum expressed value of 5114. {% assign timestamp="50:11" %}
 
 - [LDK #2044][] makes several changes to LDK's route hinting for
   [BOLT11][] invoices, the mechanism that a receiving LN node can use to
@@ -222,7 +222,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   channels chosen are selected for efficiency and privacy.  The PR
   discussion includes [several][carman hints] insightful
   [comments][corallo hints] about the implications for privacy of
-  providing route hints.
+  providing route hints. {% assign timestamp="52:45" %}
 
 ## Celebrating Optech Newsletter #250
 
@@ -272,7 +272,7 @@ Casares, John Pfeffer, and Alex Morcos, as well as our many [financial
 supporters][].
 
 Thank you for reading.  We hope that you'll continue to do so as we
-publish the next 250 newsletters.
+publish the next 250 newsletters. {% assign timestamp="54:17" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26094,27195,1783,7568,24,2044" %}
