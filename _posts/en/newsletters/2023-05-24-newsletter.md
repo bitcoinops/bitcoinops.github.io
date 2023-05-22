@@ -141,7 +141,26 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27021][] Implement Mini version of BlockAssembler to calculate mining scores FIXME:harding (hoping glozow or Xekyo will volunteer, though)
+- [Bitcoin Core #27021][] adds an interface for calculating how much it
+  would cost to bring an output's unconfirmed ancestor transactions up
+  to a given feerate, a value known as their _fee deficit_.  When [coin
+  selection][topic coin selection] is considering using a particular
+  output at a particular feerate, its ancestors' fee deficit for that
+  feerate is calculated and the result is deducted from its effective
+  value.  That discourages the wallet from choosing highly deficient
+  outputs for a new transaction when other spendable outputs are
+  available.  In a [follow-up PR][bitcoin core #26152], the interface
+  will also be used to allow the wallet to pay the extra fees (called
+  _bump fees_) if it has to select deficient outputs anyway, ensuring
+  the new transaction pays the effective feerate the user requested.
+
+  The algorithm is capable of assessing bump fees for any
+  ancestor constellation by evaluating the unconfirmed UTXO’s entire
+  related cluster of unconfirmed transactions and pruning the
+  transactions that will have been picked into a block at the target
+  feerate. A second method provides an aggregate bump fee across
+  multiple unconfirmed outputs to correct for potential overlapping
+  ancestries.
 
 - [LND #7668][] adds the ability to associate up to 500 characters of
   private text with a channel when opening it and allows the operator to
@@ -166,7 +185,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   255 characters.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27021,7668,2204,1841,1412" %}
+{% include linkers/issues.md v=2 issues="27021,7668,2204,1841,1412,26152" %}
 [Core Lightning 23.05]: https://github.com/ElementsProject/lightning/releases/tag/v23.05
 [bitcoin core 23.2]: https://bitcoincore.org/bin/bitcoin-core-23.2/
 [bitcoin core 24.1]: https://bitcoincore.org/bin/bitcoin-core-24.1/
