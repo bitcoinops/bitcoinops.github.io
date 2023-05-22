@@ -95,7 +95,7 @@ projects.
     [feature][coinwitness] that Bitcoin developers have desired for over
     a decade.
 
-## Waiting for confirmation #2: FIXME:glozow title
+## Waiting for confirmation #2: Incentives
 
 _A limited weekly series about transaction relay, mempool inclusion, and
 mining transaction selection---including why Bitcoin Core has a more
