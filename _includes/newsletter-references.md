@@ -14,17 +14,7 @@
     <p>
       <a href="{{ podcast_slug }}" class="anchor-list-link">●</a>
       {{ reference.title }}
-      (<a title="Play this segment of the podcast" onClick="seek('{{reference.timestamp}}')" class="seek">{{reference.timestamp}}</a><noscript>{{reference.timestamp}}</noscript>)
-      <a href="{{page.reference}}{{reference.slug}}">
-        <i class="fa fa-link" title="Link to related content"></i>
-      </a>
-      <!--<a onClick="seek('{{include.timestamp}}')" class="seek"><i class="fa
-  fa-headphones" title="Play this segment of the podcast"></i></a>-->
-      {% if reference.has_transcript_section %}
-      <a href="{{reference.slug}}-transcript">
-        <i class="fa fa-file-text-o" title="Read this segment of the transcription"></i>
-      </a>
-      {% endif %}
+      {% include functions/podcast-note.md %}
     </p>
   </li>
   {% endfor %}
