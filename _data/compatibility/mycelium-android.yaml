@@ -1,7 +1,7 @@
 ---
-name: Mycelium
-internal_url: /en/compatibility/mycelium
-logo: /img/compatibility/mycelium/mycelium.png
+name: Mycelium (Android)
+internal_url: /en/compatibility/mycelium-android
+logo: /img/compatibility/mycelium-android/mycelium-android.png
 rbf:
   tested:
     date: "2022-10-12"
@@ -22,14 +22,14 @@ rbf:
       shows_replaced_version: "untested"
       shows_original_version: "untested"
   examples:
-    - image: /img/compatibility/mycelium/segwit/send-screen.png
+    - image: /img/compatibility/mycelium-android/segwit/send-screen.png
       caption: >
         Sending Transaction - Default send transaction screen. No options for RBF while sending or in app settings.
         Miner fee slider.
-    - image: /img/compatibility/mycelium/rbf/transaction-list-incoming-double-spend.png
+    - image: /img/compatibility/mycelium-android/rbf/transaction-list-incoming-double-spend.png
       caption: >
         Receiving Transaction Signaling RBF - Fee Bump is displayed as double spend. Sometimes, when receiving any transaction, no unconfirmed transactions show.
-    - image: /img/compatibility/mycelium/rbf/transaction-list-in-out.png
+    - image: /img/compatibility/mycelium-android/rbf/transaction-list-in-out.png
       caption: >
         Attempting Transaction Replacement - Transaction list. No option to bump since transaction sent without RBF.
         Unconfirmed transaction without RBF signal is shown without warning.
@@ -50,13 +50,13 @@ segwit:
       segwit_v1: "Fails during bech32m address validation."
       bech32_p2wsh: "true"
   examples:
-    - image: /img/compatibility/mycelium/segwit/receive-screen.png
+    - image: /img/compatibility/mycelium-android/segwit/receive-screen.png
       caption: >
         Mycelium generates P2PKH, P2SH-P2WPKH, and P2WPKH receive addresses.
-    - image: /img/compatibility/mycelium/segwit/send-screen.png
+    - image: /img/compatibility/mycelium-android/segwit/send-screen.png
       caption: >
         Mycelium can send to any bech32 addresses.
-    #- image: /img/compatibility/mycelium/segwit/send-screen-segwit-v1-error.png
+    #- image: /img/compatibility/mycelium-android/segwit/send-screen-segwit-v1-error.png
     #  caption: >
     #    Mycelium displays a validation error when trying to send to a segwit v1
     #    address (or any other bech32m address).
