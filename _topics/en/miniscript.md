@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Bitcoin Core #24149 adds signing support for P2WSH-based miniscript-based output descriptors"
     url: /en/newsletters/2023/02/22/#bitcoin-core-24149
 
+  - title: "MyCitadel v1.3.0 adds more advanced support for miniscript"
+    url: /en/newsletters/2023/05/24/#mycitadel-wallet-adds-enhanced-miniscript-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
