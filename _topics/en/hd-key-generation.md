@@ -81,6 +81,9 @@ optech_mentions:
   - title: Faster offline verification of BIP32 master seed backups
     url: /en/newsletters/2023/03/01/#faster-seed-backup-checksums
 
+  - title: "ColdCard 6.0.0X adds support for BIP129 exchange of xpubs during multisig wallet set up"
+    url: /en/newsletters/2023/05/24/#edge-firmware-for-coldcard-announced
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

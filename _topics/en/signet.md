@@ -117,6 +117,9 @@ optech_mentions:
   - title: "Question about why signet uses the same bech32 address prefix as testnet"
     url: /en/newsletters/2023/01/25/#why-doesn-t-signet-use-a-unique-bech32-prefix
 
+  - title: "Mutinynet launches a signet with 30 second block times and hosted infrastructure tools"
+    url: /en/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"
