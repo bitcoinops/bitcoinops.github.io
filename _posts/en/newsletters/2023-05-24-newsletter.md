@@ -109,7 +109,52 @@ that policy most effectively._
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Passport firmware 2.1.1 released:**
+  The [latest firmware][passport 2.1.1] for the Passport hardware signing device supports sending
+  to [taproot][topic taproot] addresses, [BIP85][] features, and improvements to
+  handling [PSBTs][topic psbt] and multisig configurations.
+
+- **MuSig wallet Munstr released:**
+  The beta [Munstr software][munstr github] uses the [nostr protocol][] in order
+  to facilitate the rounds of communication required for signing [MuSig][topic musig]
+  multisignature transactions.
+
+- **CLN plugin manager Coffee released:**
+  [Coffee][coffee github] is a CLN plugin manager that improves aspects of
+  installation, configuration, dependency management, and upgrading of [CLN plugins][news22 plugins].
+
+- **Electrum 4.4.3 released:**
+  The [latest][electrum release notes] Electrum versions contain coin control
+  improvements, a UTXO privacy analysis tool, and support for Short Channel
+  Identifiers (SCIDs), among other fixes and improvements.
+
+- **Trezor Suite adds coinjoin support:**
+  The Trezor Suite software [announced][trezor blog] support for
+  [coinjoins][topic coinjoin] that use the zkSNACKs coinjoin coordinator.
+
+- **Lightning Loop defaults to MuSig2:**
+  [Lightning Loop][news53 loop] now uses [MuSig2][topic musig] as the default
+  swap protocol resulting in lower fees and better privacy.
+
+- **Mutinynet announces new signet for testing:**
+  [Mutinynet][mutinynet blog] is a custom signet with 30-second block times that
+  provides testing infrastructure including a [block explorer][topic block
+  explorers], faucet, as well as test LN nodes and LSPs running on the network.
+
+- **Nunchuk adds coin control, BIP329 support:**
+  The latest Android and iOS versions of Nunchuk add [coin control][nunchuk blog] and
+  [BIP329][] wallet label export features.
+
+- **MyCitadel Wallet adds enhanced miniscript support:**
+  The [v1.3.0][mycitadel v1.3.0] release adds more complicated
+  [miniscript][topic miniscript] capabilities including [timelocks][topic timelocks].
+
+- **Edge Firmware for Coldcard announced:**
+  Coinkite [announced][coinkite blog] experimental firmware for the Coldcard
+  hardware signer that is designed for wallet developers and power users to
+  experiment with newer features. The initial 6.0.0X release includes taproot
+  keysend payments, [tapscript][topic tapscript] multisig payments, and
+  [BIP129][] support.
 
 ## Releases and release candidates
 
@@ -197,3 +242,15 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
 [coinwitness]: https://bitcointalk.org/index.php?topic=277389.0
 [assumevalid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
+[passport 2.1.1]: https://foundationdevices.com/2023/05/passport-version-2-1-0-is-now-live/
+[munstr github]: https://github.com/0xBEEFCAF3/munstr
+[nostr protocol]: https://github.com/nostr-protocol/nostr
+[coffee github]: https://github.com/coffee-tools/coffee
+[news22 plugins]: /en/newsletters/2018/11/20/#c-lightning-2075
+[electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
+[trezor blog]: https://blog.trezor.io/coinjoin-privacy-for-bitcoin-11aaf291f23
+[mutinynet blog]: https://blog.mutinywallet.com/mutinynet/
+[news53 loop]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
+[nunchuk blog]: https://nunchuk.io/blog/coin-control
+[mycitadel v1.3.0]: https://github.com/mycitadel/mycitadel-desktop/releases/tag/v1.3.0
+[coinkite blog]: https://blog.coinkite.com/edge-firmware/
