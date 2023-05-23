@@ -20,17 +20,36 @@ class RecapReferencesGenerator < Jekyll::Generator
         # during the podcast page creation
         podcast.data["references"] = get_podcast_references(reference_page.content, podcast.url)
         
-        # Each podcast transcript splits into segements using the paragraph title
-        # as the title of the segment. These segment splits are added manually but
-        # we can avoid the need to also manually add their anchors by doing that here
+        # we use this in `newsletter-references.md` to be easier to identify
+        # special sections when iterating through the sections of the newsletter
+        podcast.data["special_sections"] = []
+        
         podcast.data["references"].each do |reference|
-          reference["has_transcript_section"] = podcast.content.sub!(/^(_.*?#{Regexp.escape(reference["title"])}.*?_)/, "{:#{reference["slug"]}-transcript}\n \\1")
+          if reference["title"].nil?
+            # the title of a reference derives from the nested list items
+            # under a header/section (News, Releases and release candidates, etc.)
+            # if there are no list items, we end up with a missing title
+            # we use this assumption to identify special sections
+            podcast.data["special_sections"] << reference["header"]
+            # use the header as the title of the section
+            reference["title"] = reference["header"]
+            reference["slug"] = generate_slug(reference["header"])
+          end
+          # Each podcast transcript splits into segements using the paragraph title
+          # as the title of the segment. These segment splits must be added manually but
+          # we can avoid the need to also manually add their anchors by doing that here,
+          # where we effectivily search for the segment splits and prefix them with the anchor
+          reference["has_transcript_section"] = 
+            podcast.content.sub!(
+              /^(_.*?#{Regexp.escape(reference["title"])}.*?_)/,
+              "{:#{reference["slug"]}-transcript}\n \\1"
+            )
         end
       end
     end
   end
 
-  def find_title(string, in_list=true, slugify=true)
+  def find_title(string, in_list=true)
     # this conditional prefix is for the special case of the review club section
     # which is not a list item (no dash (-) at the start of the line)
     prefix = in_list ? / *- / : // 
@@ -44,7 +63,7 @@ class RecapReferencesGenerator < Jekyll::Generator
       {}
     else
       result = {"title"=> title}
-      slug = slugify ? {"slug"=> generate_slug(title)} : {}
+      slug = {"slug"=> generate_slug(title)}
       result.merge!(slug)
     end
   end
@@ -100,6 +119,11 @@ class RecapReferencesGenerator < Jekyll::Generator
         podcast_reference.merge!(current_title)
         podcast_references << podcast_reference
 
+        if current_title.empty?
+          # this is needed for the podcast reference mark to link to the header
+          # of the special section
+          current_title["slug"] = generate_slug(headers[current_header])
+        end
         # Replace the whole match with the link
         headphones_link = "[<i class='fa fa-headphones' title='Listen to our discussion of this on the podcast'></i>]"
         replacement_link_to_podcast_item = "#{headphones_link}(#{target_page_url}#{current_title["podcast_slug"] || current_title["slug"]})"
@@ -109,6 +133,8 @@ class RecapReferencesGenerator < Jekyll::Generator
       if p.sub(/^#+\s*/, "") == headers[(current_header + 1) % headers.length()]
         current_header += 1
         in_review_club_section = headers[current_header] == "Bitcoin Core PR Review Club"
+        # reset header-specific variables
+        current_title = {}
       end
 
     end
