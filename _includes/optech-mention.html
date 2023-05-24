@@ -1,0 +1,6 @@
+<div class="backlink-box">
+    <div class="backlink-header">
+        #{{ reference.newsletter_number }} > {{ reference.header }}{% unless reference.title == nil %} > {{ reference.title }}{% endunless %}
+    </div>
+    {{ reference.paragraph | link_to_anchor: reference.url | markdownify }}
+</div>

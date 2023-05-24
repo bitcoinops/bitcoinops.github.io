@@ -30,17 +30,6 @@ layout: post
     {% capture primary_sources %}{{primary_sources}}{{newline}}- {{reference}}{% endcapture %}
   {% endfor %}
 
-  <!-- Build list of internal optech mentions -->
-  {% assign references = '' %}
-  {% for mention in page.optech_mentions %}
-    {% if mention.feature == true %}
-      {% assign bold = '{:.bold}' %}
-    {% else %}
-      {% assign bold='' %}
-    {% endif %}
-    {% include functions/get-mention-date.md %}
-    {% capture references %}{{references}}{{date}}- [{{mention.title}}]({{mention.url}}){{bold}}ENDENTRY{% endcapture %}
-  {% endfor %}
 
   <!-- Build list of see also entries -->
   {% for source in page.see_also %}
@@ -71,13 +60,13 @@ layout: post
   {%- if page.optech_mentions and page.optech_mentions != '' -%}
     ## Optech newsletter mentions
 
-    {% assign sorted_references = references | split: 'ENDENTRY' | sort | reverse %}
+    {% assign sorted_references = page.optech_mentions | sort_by_newsletter_number | reverse %}
     {%- for reference in sorted_references -%}
-      {%- assign current_ref_year = reference | slice: 0, 4 -%}
+      {%- assign current_ref_year = reference.year -%}
       {%- if current_ref_year != last_ref_year -%}
         {{newline}}{{newline}}**{{current_ref_year}}**
       {%- endif -%}
-      {{newline}}{{reference | slice: 10, 9999999999 }}
+      {{newline}}{% include optech-mention.html %}
       {%- assign last_ref_year = current_ref_year -%}
     {%- endfor -%}
   {% endif %}{{newline}}{{newline}}

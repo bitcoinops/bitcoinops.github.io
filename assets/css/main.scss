@@ -325,3 +325,26 @@ div.podcast .anchor-list {
   margin: 2px;
   display: inline;
 }
+
+/* Backlinks */
+
+.backlink-box {
+  position: relative;
+  font-size: 0.9em;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding-left: 3em;
+  padding-top: 1.7em;
+  padding-right: 0.6em;
+  p {
+    padding-bottom: 0.4em;
+  }
+}
+
+.backlink-header {
+  position: absolute;
+  top: 0.3em;
+  left: 0.7em;
+  font-size: 0.85em;
+  color: #828282;
+}

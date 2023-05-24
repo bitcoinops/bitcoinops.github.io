@@ -15,3 +15,14 @@ def generate_slug(title)
   # string and don't require any additional variables or data.
   slug.render(Liquid::Context.new) 
 end
+
+# this is a custom filter used in `person.html` to help with ordering
+module Jekyll
+  module OptechMentionsSortFilter
+    def sort_by_newsletter_number(array)
+      array.sort_by { |item| item['newsletter_number'] }
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::OptechMentionsSortFilter)

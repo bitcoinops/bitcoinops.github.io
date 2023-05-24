@@ -8,7 +8,6 @@
 # by allowing for automatic mentions using the double-bracket link syntax.
 class BidirectionalLinksGenerator < Jekyll::Generator
     def generate(site)
-     
       # This is only supported for english
       lang = "en"
       all_pages = site.documents.select { |doc| doc.url.start_with?("/#{lang}/") }
@@ -82,6 +81,12 @@ class BidirectionalLinksGenerator < Jekyll::Generator
           HTML
         )
       end
+
+      # we need the topic links for manual substitutions of links later on 
+      @topics_links = site.collections["topics"].map do |topic|
+        ["topic #{topic.data["shortname"] || topic.data["title"]}", topic.url]
+      end
+
       # Newsletter mentions
       # =====================
       newsletter_pages = pages_with_link_syntax.select { |doc| doc.url.start_with?("/#{lang}/newsletters/") }
@@ -95,19 +100,41 @@ class BidirectionalLinksGenerator < Jekyll::Generator
           if page_in_question.content.include?(target_page_href)
             # The page_in_question mentions the current page, we now need to 
             # find the specific mentions.
-            mentions = get_mentions_of(page_in_question, target_page_href)
+            mentions = get_mentions_of(page_in_question, target_page_href, current_page.collection.label)
             current_page.data["optech_mentions"] ||= []  # Initialize if not already present
             # Add the calculated mentions to `optech_mentions`
             # Note: a page might mentioning another page more than once
             mentions.each do |mention|
-              current_page.data["optech_mentions"] << {
-                "title" => mention["title"],
-                "url" => mention["url"]
-              }
+              current_page.data["optech_mentions"] << mention
             end
           end
         end
       end
+    end
+
+    def liquify(content, date)
+      context = Liquid::Context.new({}, {}, { site: Jekyll.sites.first })
+      context['page'] = { 'date' => date } # needed to identify deprecated_links
+      template = Liquid::Template.parse(content)
+      content_parsed = template.render(context)
+    end
+
+    def get_external_links(page)
+      # this assumes that a "{% include {references, linkers/issues}.md %}" line
+      # exists at the end of the documents and external links are declared after it
+
+      # get all the references after the {% include _ %} line
+      regex_for_first_include = /\{% include (?:references\.md|linkers\/issues\.md).*?%\}/
+      references = page.content.split(regex_for_first_include, 2).last.strip
+      references.prepend("{% include references.md %}\n")
+
+      # manually trigger the replacement of the {% include %} tags in order to
+      # have all the required links ([key]:url) needed for the matching snippets
+      references_parsed = liquify(references, page.date)
+
+      # Search for all occurrences of the pattern "[key]: url"
+      # and return them in an array
+      references_parsed.scan(/\[([^\]]+?)\]\s*:\s*(\S+)/i)
     end
 
     def find_title(string)
@@ -157,10 +184,10 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       # - remove liquid anchor syntax from the result
       # - extract slug to use it on the generated anchor list link
       # example of this pattern can be seen in `en/newsletter/2019-06-12-newsletter.md`
-      match = text.match(/\{:#(\w+)\}/)
+      match = text.match(/\{:#([\w-]+)\}/)
       if match
         slug = "##{match[1]}" # extract slug
-        text.sub!(/\{:#\w+\}\n?/, "") # Remove the {:#slug} syntax and optional trailing newline
+        text.sub!(/#{match[0]}/, "") # Remove the matched {:#slug} syntax
         slug
       else
         nil
@@ -169,21 +196,30 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
     # This method searches the content for paragraphs that link to the
     # the target page and returns these mentions
-    def get_mentions_of(page, target_page_url)
+    def get_mentions_of(page, target_page_url, collection)
       # This is called only when we know that a match exists
       # The logic here assumes that:
+      # - paragraphs have headers
       # - each block of text (paragraph) is seperated by an empty line 
       # - primary titles are enclosed in **bold**
       # - secondary (nested) titles are enclosed in *italics*
 
       content = page.content
+      external_links = collection == "people" ? 
+        get_external_links(page).reverse + @topics_links : [] # people-index specific
+
       # Split the content into paragraphs
       paragraphs = content.split(/\n\n+/)
+      # Find all the headers in the content
+      headers = content.scan(/^#+\s+(.*)$/).flatten
 
       # Create an array of hashes containing:
+      # - the paragraph text
+      # - the associated header
       # - the associated url
-      # - the associated title
+      # - the associated title (when is not part of the paragraph)
       matching_paragraphs = []
+      current_header = 0
       current_title = []
 
       # Iterate over all paragraphs to find those that match the given url
@@ -215,6 +251,19 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
         # If the current paragraph contains the URL, add it to the matching paragraphs
         if p.include?(target_page_url)
+          if collection == "people"
+            # Loop through the array of [key]:url_replace matches and replace
+            # - the occurrences of "[key][]" with "[key](url_replace)"
+            # - the occurrences of "[something][key]" with "[something](url_replace)"
+            external_links.each do |match|
+              key_pattern = match[0].gsub(/\s/, '\s+') # to work with multiline keys
+              p.gsub!(/\[(#{key_pattern})\]\[\]/im, "[\\1](#{match[1]})")
+              p.gsub!(/\[(.+?)\]\[(#{key_pattern})\]/im, "[\\1](#{match[1]})")
+            end
+            # manually replace common liquid variables in paragraph
+            p.gsub!(/#{Regexp.escape("{{bse}}")}/,"https://bitcoin.stackexchange.com/a/")
+          end
+
           # generate slug for matching paragraph
           slug = extract_slug_from_manual_anchor(p)
           if slug.nil?
@@ -230,9 +279,33 @@ class BidirectionalLinksGenerator < Jekyll::Generator
             "title"=> current_title.join(": "), 
             "url" => "#{page.url}#{slug}"
           }
+          if collection == "people"
+            # People index has verbosed mentions
+            matching_paragraph.merge!({
+              "paragraph"=> p.lstrip,
+              "header"=> headers[current_header],
+              "newsletter_number" => page.title.sub("Bitcoin Optech Newsletter #", "").to_i,
+              "year" => File.basename(page.path)[0, 4]
+            })
+
+            if !title.empty?
+              # paragraph has title
+              # for the verbosed mentions we display the paragraph that contains
+              # the mention (see `optech-mentions.html`), therefore we do not
+              # need to repeat the title 
+              current_title.pop # this way we keep the parent title
+              matching_paragraph["title"] = current_title[0]
+            end
+          end
           matching_paragraphs << matching_paragraph
         end
+
+        # update to the next header when parse through it
+        if p.sub(/^#+\s*/, "") == headers[(current_header + 1) % headers.length()]
+          current_header += 1
+        end
       end
+    
       # Return the matching paragraphs
       matching_paragraphs
     end
