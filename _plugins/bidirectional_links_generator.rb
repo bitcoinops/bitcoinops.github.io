@@ -16,7 +16,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       # of all the pages
       pages_with_link_syntax = all_pages.select { |page| page.content.match(/\[\[.*?\]\]/) }
       # indexed pages are the only pages that newsletters might mention
-      indexed_pages = site.collections["topics"].docs
+      indexed_pages = site.collections["topics"].docs + site.collections["people"].docs
 
       # Convert all Wiki/Roam-style double-bracket link syntax to plain HTML
       # anchor tag elements (<a>)

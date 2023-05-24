@@ -1,0 +1,98 @@
+---
+layout: post
+---
+{% capture newline %}
+{% endcapture %}
+{% capture /dev/null %}
+  <!-- Get links for previous and next pages -->
+  {% assign people_list = site.people | natural_sort: "title" %}
+  {% capture first_link %}[{{people_list[0].title}}]({{people_list[0].url}}){% endcapture %}
+  {% capture last_link %}[{{people_list[-1].title}}]({{people_list[-1].url}}){% endcapture %}
+  {% for entry in people_list %}
+    {% capture entry_link %}[{{entry.title}}]({{entry.url}}){% endcapture %}
+    {% if prev_link %}
+      {% assign next_link = entry_link %}
+      {% break %}
+    {% endif %}
+    {% if entry.url == page.url %}
+      {% assign prev_link = prev_entry | default: last_link %}
+    {% endif %}
+    {% assign prev_entry = entry_link %}
+  {% endfor %}
+
+  <!-- Build list of primary sources -->
+  {% for source in page.primary_sources %}
+    {%- if source.link contains 'http://' or source.link contains 'https://' -%}
+      {% capture reference %}[{{source.title}}]({{source.link}}){% endcapture %}
+    {%- else -%}
+      {% capture reference %}[{{source.title}}][{{source.link}}]{% endcapture %}
+    {%- endif -%}
+    {% capture primary_sources %}{{primary_sources}}{{newline}}- {{reference}}{% endcapture %}
+  {% endfor %}
+
+  <!-- Build list of internal optech mentions -->
+  {% assign references = '' %}
+  {% for mention in page.optech_mentions %}
+    {% if mention.feature == true %}
+      {% assign bold = '{:.bold}' %}
+    {% else %}
+      {% assign bold='' %}
+    {% endif %}
+    {% include functions/get-mention-date.md %}
+    {% capture references %}{{references}}{{date}}- [{{mention.title}}]({{mention.url}}){{bold}}ENDENTRY{% endcapture %}
+  {% endfor %}
+
+  <!-- Build list of see also entries -->
+  {% for source in page.see_also %}
+    {%- if source.link contains 'http://' or source.link contains 'https://' -%}
+      {% capture reference %}[{{source.title}}]({{source.link}}){% endcapture %}
+    {%- else -%}
+      {% capture reference %}[{{source.title}}][{{source.link}}]{% endcapture %}
+    {%- endif -%}
+    {% capture see_also %}{{see_also}}{{newline}}- {{reference}}{% endcapture %}
+  {% endfor %}
+
+  <!-- Variable for use in links -->
+  {% capture gh_base %}https://github.com/{{site.github_username}}/{{site.repository_name}}{% endcapture %}
+
+{% endcapture %}
+
+<!-- Actual page content -->
+{% capture content %}
+  {% include references.md %}
+  {{aliases}}
+
+  {{page.excerpt}}
+
+  {{page.content}}
+
+  {{notices | default: newline}}
+
+  {%- if page.optech_mentions and page.optech_mentions != '' -%}
+    ## Optech newsletter mentions
+
+    {% assign sorted_references = references | split: 'ENDENTRY' | sort | reverse %}
+    {%- for reference in sorted_references -%}
+      {%- assign current_ref_year = reference | slice: 0, 4 -%}
+      {%- if current_ref_year != last_ref_year -%}
+        {{newline}}{{newline}}**{{current_ref_year}}**
+      {%- endif -%}
+      {{newline}}{{reference | slice: 10, 9999999999 }}
+      {%- assign last_ref_year = current_ref_year -%}
+    {%- endfor -%}
+  {% endif %}{{newline}}{{newline}}
+
+  {%- if page.see_also and page.see_also != '' -%}
+    ## See also
+
+    {{see_also}}
+  {% endif %}
+
+  <br>{{newline}}{{newline}}
+<span class="float-left" markdown="1">**Previous Person:**<br>{{prev_link}}</span>
+<span class="float-right" markdown="1">**Next Person:**<br>{{next_link | default: first_link }}</span>
+
+  {:.center}
+  [Edit page]({{gh_base}}/edit/master/{{page.path}})<br>
+  [Report Issue]({{gh_base}}/issues/new?body={{'Source file: ' | append: page.path | url_escape }})
+{% endcapture %}{{ content | markdownify }}
