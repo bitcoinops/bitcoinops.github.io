@@ -56,7 +56,7 @@ been moved to its own [section][release rc section].*
   that might be easier to build upon (such as for the *offers* idea
   described in [Newsletter #72][news72 offers]).  Russell's proposal
   originally specified using the same there-and-back onion routing used
-  for LN payments (HTLCs), but developer ZmnSCPxj [proposed][zmn circular] having the
+  for LN payments (HTLCs), but developer [[ZmnSCPxj]] [proposed][zmn circular] having the
   message sender specify the full path from their node to the message
   recipient and back to the sender.  For example, if Alice wants to
   communicate with Carol, she might choose the following path:

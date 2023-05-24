@@ -28,7 +28,7 @@ infrastructure software.
   the wallet can return "inconclusive" and maybe direct the user to a
   more comprehensive verification tool.
 
-- **Trampoline routing:** Bastien Teinturier [posted][teinturier post]
+- **Trampoline routing:** [[Bastien Teinturier]] [posted][teinturier post]
   to the Lightning-Dev mailing list a new [specification][tramp spec]
   for [trampoline routing][topic trampoline payments] that allows a
   spender to pay a receiver without calculating a route between their

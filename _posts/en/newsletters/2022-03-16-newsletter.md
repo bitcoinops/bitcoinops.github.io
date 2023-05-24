@@ -21,7 +21,7 @@ to popular Bitcoin infrastructure projects.
   those receiving bitcoins use to specify how they'll later prove they
   authorized any spending of those bitcoins.
 
-    - *Looping (folding):* developer ZmnSCPxj [described][zmnscpxj fold]
+    - *Looping (folding):* developer [[ZmnSCPxj]] [described][zmnscpxj fold]
       a proposed `OP_FOLD` opcode as a way to allow loop-like behavior
       in Bitcoin Script.  He described a series of constraints that
       could be placed on the looping to ensure they didn't use any more

@@ -49,7 +49,7 @@ Bitcoin Core, LND, and C-Lightning projects.
   order for the in-channel payment transaction to be valid.  Everything
   else in the arbitrary contract as well as the LN payment can stay the
   same, with some specific exceptions discussed in this thread started
-  by knowledgeable pseudonymous researcher ZmnSCPxj.
+  by knowledgeable pseudonymous researcher [[ZmnSCPxj]].
 
 - **Library announced for BLS signatures:** well-known developer Bram
   Cohen [announced][bls announce] a "first draft (but fully functional)

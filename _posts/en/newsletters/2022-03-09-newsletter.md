@@ -66,7 +66,7 @@ of notable changes to popular Bitcoin infrastructure projects.
       DoS vectors as well as result in programmers creating unoptimized
       scripts that use more node resources than necessary.
 
-    - *Introduction of turing completeness:* developer ZmnSCPxj
+    - *Introduction of turing completeness:* developer [[ZmnSCPxj]]
       [criticized][zmn turing] the addition of opcodes that allow the
       creation of *deliberate* recursive covenants as also allowing the
       *accidental* creation of recursive covenants.  Money paid into

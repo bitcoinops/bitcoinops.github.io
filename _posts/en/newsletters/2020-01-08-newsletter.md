@@ -35,7 +35,7 @@ projects.
   presentation he gave summarizing progress, including text indicating
   he thought the proposal was "nearly ready".  Wuille also proposed a
   [minor change][wuille suggestion] to the tapleaf versioning.  Also
-  briefly mentioned was the [discussion][zmn post] started by ZmnSCPxj
+  briefly mentioned was the [discussion][zmn post] started by [[ZmnSCPxj]]
   on the Lightning-Dev mailing list about how precisely taproot could be
   integrated with LN to provide improved privacy and scalability.
 

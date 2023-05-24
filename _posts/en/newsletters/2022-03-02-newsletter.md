@@ -15,7 +15,7 @@ software.
 ## News
 
 - **Proposed opcode to simplify shared UTXO ownership:** developer
-  ZmnSCPxj [posted][zmnscpxj op_evict] to the Bitcoin-Dev mailing list a
+  [[ZmnSCPxj]] [posted][zmnscpxj op_evict] to the Bitcoin-Dev mailing list a
   proposal for an `OP_EVICT` opcode as an alternative to the
   [previously proposed][news166 tluv] `OP_TAPLEAF_UPDATE_VERIFY` (TLUV)
   opcode.  Like TLUV, `OP_EVICT` is focused on use cases where more than

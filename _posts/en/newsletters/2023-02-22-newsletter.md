@@ -63,8 +63,8 @@ of notable changes to popular Bitcoin infrastructure software.
     approach is building a mechanism that prevents receivers from
     keeping any overpayment that arrives. {% assign timestamp="4:15" %}
 
-- **Feedback requested on LN good neighbor scoring:** Carla Kirk-Cohen
-  and Clara Shikhelman [posted][ckc-cs reputation] to the Lightning-Dev
+- **Feedback requested on LN good neighbor scoring:** [[Carla Kirk-Cohen]]
+  and [[Clara Shikhelman]] [posted][ckc-cs reputation] to the Lightning-Dev
   mailing list to request feedback on the recommend parameters for how a
   node should judge whether its channel counterparties are a good source of
   forwarded payments.  They suggest several criteria to judge by and

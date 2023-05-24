@@ -59,7 +59,7 @@ infrastructure projects.
     MAD-HTLCs might have their own problems with theft when the
     bonded user's counterparty is a miner (e.g. Alice is a miner).
 
-    ZmnSCPxj [noted][zmnscpxj scorched earth] that a mechanism already
+    [[ZmnSCPxj]] [noted][zmnscpxj scorched earth] that a mechanism already
     exists to allow Alice to discourage Bob from attempting his
     theft: Alice can enact a [scorched earth][] policy where she spends
     all of her legitimate funds to fees in order to prevent Bob from

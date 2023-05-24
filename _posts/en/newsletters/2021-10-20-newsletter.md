@@ -29,7 +29,7 @@ infrastructure software.
   that could be deployed even before PTLC support is added.
 
 - **Lowering the cost of probing to make attacks more expensive:** a few weeks apart, developers
-  ZmnSCPxj and Joost Jager each made [substantially][zmn prop] similar
+  [[ZmnSCPxj]] and Joost Jager each made [substantially][zmn prop] similar
   [proposals][jager prop] for eliminating the requirement to lock up
   capital in order to probe a payment path.  Both proposals suggest this
   as a first step towards adding upfront routing fees to the

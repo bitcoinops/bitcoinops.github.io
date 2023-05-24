@@ -34,7 +34,7 @@ to popular Bitcoin infrastructure software.
     joinpools], optimistic rollups (see [Newsletter #222][news222
     rollup]), and other stateful constructions.
 
-- **Paper about channel jamming attacks:** Clara Shikhelman and Sergei
+- **Paper about channel jamming attacks:** [[Clara Shikhelman]] and Sergei
   Tikhomirov [posted][st unjam post] to the Lightning-Dev mailing list
   the summary of a [paper][st unjam paper] they've written about
   solutions to [channel jamming attacks][topic channel jamming attacks].

@@ -127,7 +127,7 @@ software.
     design.
 
     Replying to /dev/fd0's summary for the mailing list, developer
-    ZmnSCPxj suggested that we only adopt mechanisms that encourage
+    [[ZmnSCPxj]] suggested that we only adopt mechanisms that encourage
     protocols designed for maximum onchain privacy.  That privacy would
     deny miners the information necessary to perform MEV.  As of the
     writing of this newsletter, no further comments had been received on

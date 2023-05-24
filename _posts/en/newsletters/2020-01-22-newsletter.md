@@ -28,7 +28,7 @@ infrastructure projects.
   *Wormhole*, a method developed during a [Wasabi design discussion][]
   for sending payments as part of a chaumian coinjoin.  The protocol
   prevents even the spender from learning the receiver's Bitcoin address
-  (within the limits of the anonymity set).  Developer ZmnSCPxj
+  (within the limits of the anonymity set).  Developer [[ZmnSCPxj]]
   [notes][zmn note] that the technique is similar to [tumblebit][], which
   provides a trustless chaumian payment service.  Hillebrand is
   requesting feedback on the design in the hopes of seeing it

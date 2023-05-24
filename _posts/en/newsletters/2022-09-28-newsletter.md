@@ -25,7 +25,7 @@ popular Bitcoin infrastructure software.
   would need to pay proportionally more than a payment which leaves 75%
   of its outbound capacity available.
 
-    Developer ZmnSCPxj [described][zmnscpxj ratecards] a simple way to
+    Developer [[ZmnSCPxj]] [described][zmnscpxj ratecards] a simple way to
     use ratecards, "you can model a rate card as four separate channels
     between the same two nodes, with different costs each.  If the path
     at the lowest cost fails, you just try another route that may

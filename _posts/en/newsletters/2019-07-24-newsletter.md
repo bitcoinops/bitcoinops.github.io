@@ -48,7 +48,7 @@ projects.
 
 - **Additional Just-In-Time (JIT) LN routing discussion:** in the JIT
   discussion described in the [newsletter][Newsletter #54] two weeks ago,
-  contributor ZmnSCPxj explained why routing nodes needed zero-fee
+  contributor [[ZmnSCPxj]] explained why routing nodes needed zero-fee
   rebalance operations in many cases for JIT routing to be incentive
   compatible.  This week he [posted][jit with fee] a suggestion to the C-Lightning
   mailing list on how nodes could be less incentive compatible but still

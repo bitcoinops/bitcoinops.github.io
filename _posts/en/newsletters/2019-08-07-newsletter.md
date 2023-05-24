@@ -50,7 +50,7 @@ developments.
       proposed.  Mailing list discussion seems to favor using the same
       CompactSize unsigned integers used in the Bitcoin protocol.
 
-- **Trampoline payments:** Bastien Teinturier opened a [PR][trampoline
+- **Trampoline payments:** [[Bastien Teinturier]] opened a [PR][trampoline
   pr] in the BOLTs repository and started a [discussion][trampoline
   discussion] on the Lightning-Dev mailing list about adding support to
   the protocol for the trampoline payments described in [Newsletter

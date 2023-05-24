@@ -69,7 +69,7 @@ software.
       underlying links between LN nodes.  Refunding a payment in case of
       failure would be slower, but not slower than before this change.
       This feature is an extension of ideas previously proposed by
-      developer ZmnSCPxj (see [Newsletter #152][news152 ff]), who also
+      developer [[ZmnSCPxj]] (see [Newsletter #152][news152 ff]), who also
       [wrote][zmnscpxj name drop] a related post this week based on some
       of his out of band discussions with Towns.
 
@@ -89,7 +89,7 @@ software.
     - **Receiving payments with an offline key:** an online (hot) key is
       fundamentally required to send or route a payment in LN, but the
       current protocol also requires an online key in order to receive a
-      payment.  Based on an adaptation of ZmnSCPxj's previously
+      payment.  Based on an adaptation of [[ZmnSCPxj]]'s previously
       mentioned idea by Lloyd Fournier (also covered in [Newsletter
       #152][news152 ff]), it would be possible for a receiving node to
       only need to bring its keys online in order to open a channel,

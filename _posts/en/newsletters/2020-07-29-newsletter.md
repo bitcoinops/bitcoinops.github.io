@@ -35,13 +35,13 @@ projects.
   format going forward.
 
     All discussion participants seemed to support the basic idea.
-    Bastien Teinturier [suggested][teinturier simple] that
+    [[Bastien Teinturier]] [suggested][teinturier simple] that
     it would be simplest to only allow switching commitment formats when
     channels had no pending payments (HTLCs)---implying nodes would
     need to pause sending or relaying payments in a particular channel
     in order to upgrade it.
 
-    ZmnSCPxj [noted][zmnscpxj re-funding] that the same basic idea could
+    [[ZmnSCPxj]] [noted][zmnscpxj re-funding] that the same basic idea could
     be used to essentially update the funding transaction offchain, such
     as the case where [taproot][topic taproot]
     and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] are implemented,

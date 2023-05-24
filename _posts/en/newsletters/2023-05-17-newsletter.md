@@ -21,8 +21,8 @@ describing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Testing HTLC endorsement:** several weeks ago, Carla Kirk-Cohen and
-  Clara Shikhelman [posted][kcs endorsement] to the Lightning-Dev mailing list about
+- **Testing HTLC endorsement:** several weeks ago, [[Carla Kirk-Cohen]] and
+  [[Clara Shikhelman]] [posted][kcs endorsement] to the Lightning-Dev mailing list about
   the next steps they and others planned to take to test the idea of
   [[HTLC]] endorsement (see [Newsletter #239][news239
   endorsement]) as part of a mitigation for [channel jamming
@@ -57,13 +57,13 @@ describing notable changes to popular Bitcoin infrastructure software.
   transaction that will anchor the channel onchain when it is confirmed
   (making it into a regular channel).
 
-    In a [reply][zmnscpxj lsp], developer ZmnSCPxj wrote in favor of open specifications
+    In a [reply][zmnscpxj lsp], developer [[ZmnSCPxj]] wrote in favor of open specifications
     for LSPs.  He noted that they make it easy for a client to connect
     to multiple LSPs, which will prevent vendor lock-in and improve
     privacy.
 
-- **Challenges with zero-conf channels when dual funding:** Bastien
-  Teinturier [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
+- **Challenges with zero-conf channels when dual funding:**
+  [[Bastien Teinturier]] [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
   challenges of allowing [[zero-conf channels]] when using the
   [[dual-funding|dual-funding protocol]].   Zero-conf channels can be used even before the
   channel open transaction is confirmed; this is trustless in some
@@ -86,7 +86,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     were discussed, although none seemed satisfying to participants as
     of this writing.
 
-- **Advanced payjoin applications:** Dan Gould [posted][gould payjoin] to the
+- **Advanced payjoin applications:** [[Dan Gould]] [posted][gould payjoin] to the
   Bitcoin-Dev mailing list several suggestions for using the
   [payjoin][topic payjoin] protocol to do more than just send or receive
   a simple payment.  Two of the suggestions we found most interesting

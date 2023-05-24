@@ -53,7 +53,7 @@ infrastructure projects.
     tapscript.
 
     {:#composable-musig}
-    In a separate schnorr-related topic, ZmnSCPxj wrote a [post][zmn
+    In a separate schnorr-related topic, [[ZmnSCPxj]] wrote a [post][zmn
     composable musig] about the challenges of safely using the [MuSig][]
     signature aggregation protocol with sub-groups.  For example,
     ZmnSCPxj's [nodelets proposal][] suggests Alice and Bob

@@ -104,7 +104,7 @@ software.
   Lightning-Dev mailing over a year ago about creating non-custodial
   onchain escrows for LN saw [renewed discussion][aragoneses escrow]
   this past week.  A particular standout in the discussion was a
-  [post][zmn escrow2] by ZmnSCPxj that uses one of [De Morgan's laws][]
+  [post][zmn escrow2] by [[ZmnSCPxj]] that uses one of [De Morgan's laws][]
   for boolean statements to greatly simplify the construction of
   escrows---and [possibly][kohen escrow] many other LN-based
   contracts---with the tradeoff of requiring a seller to post a bond
@@ -265,7 +265,7 @@ BOLTs][bolts repo].*
   [proposed specification update][bolts #834] introduces the warning
   message type that can allow for a more flexible response.  Anyone
   interested may also wish to read a [post][kirk-cohen post] to the
-  Lightning-Dev mailing list this week by Carla Kirk-Cohen about
+  Lightning-Dev mailing list this week by [[Carla Kirk-Cohen]] about
   extended error message descriptions, a topic she described as
   "related, but not directly relevant to a soft warning error."
 

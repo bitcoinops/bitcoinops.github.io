@@ -86,7 +86,7 @@ notable changes to popular Bitcoin infrastructure projects.
     | $100   |  0.02c      |  5.05c      |
     | $1000  |  0.11c      |  50.05c     |
 
-    Fellow C-Lightning maintainer ZmnSCPxj and Eclair maintainer
+    Fellow C-Lightning maintainer [[ZmnSCPxj]] and Eclair maintainer
     Pierre-Marie Padiou indicated support for the proposal.  LND
     maintainer Olaoluwa Osuntokun believed the reasoning behind the
     proposal had several flaws and advocated instead to "educate

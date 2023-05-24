@@ -15,7 +15,7 @@ notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Non-interactive LN channel open commitments:** developers ZmnSCPxj
+- **Non-interactive LN channel open commitments:** developers [[ZmnSCPxj]]
   and Jesse Posner [posted][zp potentiam] to the Lightning-Dev mailing
   list a proposal for a new technique for opening LN channels, which
   they call *swap-in-potentiam*.  The existing methods for opening an LN

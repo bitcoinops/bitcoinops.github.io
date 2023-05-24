@@ -185,7 +185,7 @@ changes to popular Bitcoin infrastructure software.
       discussed how the two protocols could be made compatible with each other so
       that nodes could use either or both of them.
 
-- **Using routing fees to signal liquidity:** developer ZmnSCPxj
+- **Using routing fees to signal liquidity:** developer [[ZmnSCPxj]]
   [posted][zmnscpxj hilolohi] to the Lightning-Dev mailing list an
   argument for how optimally cheap and reliable payments could be
   obtained through game theoretic behavior between spenders and routing
