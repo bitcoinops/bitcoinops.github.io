@@ -12,9 +12,9 @@ est une ressource importante pour chaque nœud et permet au réseau de relais de
 
 Les nœuds qui participent au relais de transaction téléchargent et valident les blocs progressivement plutôt que par pics. Toutes
 les 10 minutes environ, lorsqu'un bloc est trouvé, les nœuds sans mempool connaissent un pic de bande passante, suivi d'une période
-de calcul intensif pour valider chaque transaction.  D'un autre côté, les nœuds disposant d'un mempool ont généralement déjà vu
+de calcul intensif pour valider chaque transaction. D'un autre côté, les nœuds disposant d'un mempool ont généralement déjà vu
 toutes les transactions du bloc et les stockent dans leurs mempools. Avec [compact block relay][topic compact block relay], ces
-nœuds téléchargent simplement un en-tête de bloc avec des shortids, puis reconstruisent le bloc à l'aide des transactions de leurs
+nœuds téléchargent simplement un en-tête de bloc avec des "shortids", puis reconstruisent le bloc à l'aide des transactions de leurs
 mempools.
 La quantité de données utilisées pour relayer les blocs compacts est minime par rapport à la taille du bloc. La validation des
 transactions est également beaucoup plus rapide : le nœud a déjà vérifié (et mis en cache) les signatures et les scripts, calculé
@@ -22,11 +22,11 @@ les exigences en matière de timelock, et chargé les UTXO pertinents à partir 
 transmettre rapidement le bloc à ses autres pairs, ce qui augmente considérablement la vitesse de propagation des blocs à l'échelle
 du réseau et réduit ainsi le risque de blocs périmés.
 
-Les Mempools peuvent également être utilisés pour construire un estimateur de frais indépendant. Le marché de l'espace de blocs est
-une vente aux enchères payante, et la tenue d'un mempool permet aux utilisateurs d'avoir une meilleure idée de ce que les autres
+Les mempools peuvent également être utilisés pour construire un estimateur de frais indépendant. Le marché de l'espace de blocs est
+une vente aux enchères, et la tenue d'un mempool permet aux utilisateurs d'avoir une meilleure idée de ce que les autres
 proposent et des offres qui ont été retenues dans le passé.
 
-Cependant, il n'existe pas "un mempool"---chaque nœud peut recevoir des transactions différentes. Le fait de soumettre une
+Cependant, il n'existe pas "un" mempool unique---chaque nœud peut recevoir des transactions différentes. Le fait de soumettre une
 transaction à un nœud ne signifie pas nécessairement qu'elle a été transmise aux mineurs. Certains utilisateurs sont frustrés par
 cette incertitude et se demandent pourquoi ils ne soumettent pas leurs transactions directement aux mineurs.
 
