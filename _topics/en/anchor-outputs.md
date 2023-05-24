@@ -146,6 +146,9 @@ optech_mentions:
   - title: "LDK #1860 adds support for channels using anchor outputs"
     url: /en/newsletters/2023/02/01/#ldk-1860
 
+  - title: "LDK #1841 implements a solution for the fee-stealing attack described in BOLTs #824"
+    url: /en/newsletters/2023/05/24/#ldk-1841
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
