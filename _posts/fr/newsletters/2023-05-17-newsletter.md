@@ -157,7 +157,7 @@ pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
 consensus et comment les portefeuilles peuvent utiliser cette politique de la
 manière la plus efficace._
 
-{% include specials/policy/fr/01-pourquoi-le-mempool %}
+{% include specials/policy/fr/01-pourquoi-le-mempool.md %}
 
 ## Mises à jour et versions candidates
 
