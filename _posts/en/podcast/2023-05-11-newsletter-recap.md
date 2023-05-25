@@ -8,7 +8,7 @@ type: podcast
 layout: podcast-episode
 lang: en
 ---
-Mark "Murch" Erhardt and Mike Schmidt are joined by Larry Ruane and Thomas Hartman to discuss [Newsletter #250]({{page.reference}}).
+Mark "Murch" Erhardt and Mike Schmidt are joined by [[Larry Ruane]] and Thomas Hartman to discuss [Newsletter #250]({{page.reference}}).
 
 {% include functions/podcast-links.md %}
 
