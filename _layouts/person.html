@@ -57,6 +57,14 @@ layout: post
 
   {{notices | default: newline}}
 
+  {%- if page.podcast_mentions.size > 0 -%}
+    ## Optech podcast appearances
+
+    {%- for mention in page.podcast_mentions -%}
+    {{newline}}- [{{mention.title}}]({{mention.url}})
+    {%- endfor -%}
+  {% endif %}{{newline}}{{newline}}
+
   {%- if page.optech_mentions and page.optech_mentions != '' -%}
     ## Optech newsletter mentions
 

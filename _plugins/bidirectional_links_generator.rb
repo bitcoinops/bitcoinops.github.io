@@ -110,6 +110,26 @@ class BidirectionalLinksGenerator < Jekyll::Generator
           end
         end
       end
+
+      # Podcast appearances
+      # =====================
+      podcast_pages = pages_with_link_syntax.select { |doc| doc.url.start_with?("/#{lang}/podcast/") }.reverse
+      people_pages = site.collections["people"].docs
+
+      people_pages.each do |person|
+        podcast_mentions = []
+        # Iterate over podcast pages to find mentions of people
+        podcast_pages.each do |podcast|
+          podcast_intro = podcast.content.each_line.first.chomp
+          if podcast_intro.include?("href='#{person.url}'")
+            podcast_mentions << {"title"=> podcast.title, "url"=> podcast.url}
+            # the excerpt of pages is calculated by Jekyll before generators run
+            # therefore we need to override the excerpt to remove [[]]
+            podcast.excerpt.content = podcast_intro
+          end
+        end
+        person.data["podcast_mentions"] = podcast_mentions
+      end
     end
 
     def liquify(content, date)
