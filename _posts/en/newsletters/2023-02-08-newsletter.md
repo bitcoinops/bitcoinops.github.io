@@ -34,7 +34,7 @@ Bitcoin infrastructure software.
     methods might create new problems for traditional Bitcoin users.
 
     As of this writing, there was vigorous ongoing discussion about the
-    topic.  We'll provide an update in next week's newsletter.
+    topic.  We'll provide an update in next week's newsletter. {% assign timestamp="1:19" %}
 
 - **Summary of call about mitigating LN jamming:** Carla Kirk-Cohen and
   Clara Shikhelman [posted][ckccs jamming] to the Lightning-Dev mailing
@@ -49,7 +49,7 @@ Bitcoin infrastructure software.
   list post for extended summaries and a [transcript][jam xs].
 
     Future video meetings are planned for every two weeks; watch the
-    Lightning-Dev mailing list for announcements of upcoming meetings.
+    Lightning-Dev mailing list for announcements of upcoming meetings. {% assign timestamp="11:05" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -65,7 +65,7 @@ It does this by enhancing `AddrMan`
 (the peer address manager) to keep track of the number of address entries
 separately by network and "tried" versus "new" type, which in turn allows
 better use of fixed seeds. This is the first step in a larger effort to
-improve outbound peer selection.
+improve outbound peer selection. {% assign timestamp="27:50" %}
 
 {% include functions/details-list.md
   q0="When is a network considered reachable?"
@@ -154,12 +154,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   within the timeout. This code change amends the behavior of nodes to
   dynamically adapt the timeout: the timeout is incremented for each
   disconnected peer while no block is received, and after blocks start
-  arriving again, the timeout is scaled back block-by-block.
+  arriving again, the timeout is scaled back block-by-block. {% assign timestamp="39:40" %}
 
 - [Core Lightning #5679][] provides a plugin to run SQL queries on CLN's list
   commands. This patch also handles deprecations more gracefully as it can
   ignore anything deprecated before it was released as introduced in
-  [Core Lightning #5867][].
+  [Core Lightning #5867][]. {% assign timestamp="45:34" %}
 
 - [Core Lightning #5821][] adds `preapproveinvoice` (pre-approve
   invoice) and `preapprovekeysend` (pre-approve keysend) RPCs that allow
@@ -168,18 +168,18 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   (`hsmd`) to verify the module is willing to sign the payment.  For
   some applications, such as those where the amount of money that can
   be spent is rate limited, asking for pre-approval might produce fewer
-  problems than simply attempting the payment and dealing with failure.
+  problems than simply attempting the payment and dealing with failure. {% assign timestamp="46:25" %}
 
 - [Core Lightning #5849][] makes backend changes that allow a node to
   handle over 100,000 peers each with one channel.  Although someone
   running such a node in production is not likely in the near
   future---it would take over a dozen entire blocks to just open that
   many channels---testing the behavior helped the developer make several
-  performance improvements.
+  performance improvements. {% assign timestamp="47:20" %}
 
 - [Core Lightning #5892][] updates CLN's implementation of the
   [offers][topic offers] protocol based on compatibility testing
-  performed by a developer working on Eclair's implementation.
+  performed by a developer working on Eclair's implementation. {% assign timestamp="47:51" %}
 
 - [Eclair #2565][] now requests that funds from a closed channel be sent
   to a new onchain address, rather than an address which was generated
@@ -188,18 +188,18 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   this policy is when the user enables the LN protocol option
   `upfront-shutdown-script`, which is a request sent to the channel
   partner at funding time to only use the closing address specified at
-  that time (see [Newsletter #158][news158 upfront] for details).
+  that time (see [Newsletter #158][news158 upfront] for details). {% assign timestamp="48:59" %}
 
 - [LND #7252][] adds support for using SQLite as LND's database backend.
   This is currently only supported for new installs of LND as there is
-  no code for migrating an existing database.
+  no code for migrating an existing database. {% assign timestamp="51:03" %}
 
 - [LND #6527][] adds the ability to encrypt the server's on-disk TLS
   key.  LND uses TLS for authenticating remote connections to its
   control channel, i.e. to run APIs.  The TLS key will be encrypted
   using data from the node's wallet, so unlocking the wallet will unlock
   the TLS key.  Unlocking the wallet is already required to send and
-  accept payments.
+  accept payments. {% assign timestamp="51:53" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25880,5679,5867,5821,5849,5892,2565,7252,6527" %}
