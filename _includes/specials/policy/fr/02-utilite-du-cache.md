@@ -54,4 +54,4 @@ plus efficaces dans la construction des transactions. Le billet de la semaine pr
 pratiques pour minimiser les frais dans les transactions sur la chaîne.
 
 [policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1-pourquoi-avons-nous-un-mempool
-[np-hard problem]: https://en.wikipedia.org/wiki/NP-hardness
+[NP-hard]: https://en.wikipedia.org/wiki/NP-hardness
