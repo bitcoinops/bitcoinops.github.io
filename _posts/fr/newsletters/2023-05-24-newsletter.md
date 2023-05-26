@@ -33,10 +33,9 @@ versions candidates, ainsi que les changements apportés aux principaux projets 
     et qu'un mineur peut réclamer toute différence entre les UTXO détruits dans un
     bloc et ceux qui ont été créés). Un client recevant cette preuve et une copie de
     l'ensemble d'UTXO actuel serait en mesure de vérifier que l'ensemble est exact et
-    complet. Ils appellent cela une preuve _assumevalid_, d'après la [fonctionnalité
-    de Bitcoin Core][assumevalid] qui permet de ne pas vérifier les scripts des anciens
-    blocs lorsque de nombreux contributeurs s'accordent à dire que leurs nœuds ont tous
-    validé ces blocs avec succès.
+    complet. Ils appellent cela une preuve _assumevalid_, d'après la [fonctionnalité de Bitcoin Core][assumevalid]
+    qui permet de ne pas vérifier les scripts des anciens blocs lorsque de nombreux contributeurs
+    s'accordent à dire que leurs nœuds ont tous validé ces blocs avec succès.
 
     Pour minimiser la complexité de leur preuve, ils utilisent une version de [utreexo][topic utreexo]
     avec une fonction de hachage optimisée pour leur système. Ils suggèrent séparément que
