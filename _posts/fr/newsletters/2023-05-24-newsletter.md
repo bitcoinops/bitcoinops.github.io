@@ -69,7 +69,7 @@ versions candidates, ainsi que les changements apportés aux principaux projets 
     par chaque utilisateur ; dans les protocoles de jetons utilisant la validation côté client,
     cela n'est pas strictement nécessaire mais finit par le devenir si les fusions sont fréquentes.
 
-    Cela signifie qu'un protocole capable de comprimer l'état du bitcoin peut également
+    Cela signifie qu'un protocole capable de comprimer l'état de Bitcoin peut également
     être adapté pour comprimer l'état de l'historique d'un jeton, même si les fusions sont
     fréquentes. Les auteurs décrivent comment ils y parviendraient. Leur objectif est de
     produire une preuve que chaque transfert précédent du jeton a suivi les règles du jeton,
