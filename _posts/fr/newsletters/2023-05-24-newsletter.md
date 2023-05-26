@@ -112,7 +112,7 @@ intéressantes des portefeuilles et services Bitcoin.*
 
 
 - **Sortie d'Electrum 4.4.3 :**
-  Les [dernières][[electrum release notes] versions d'Electrum contiennent des améliorations du contrôle des pièces,
+  Les [dernières][electrum release notes] versions d'Electrum contiennent des améliorations du contrôle des pièces,
   un outil d'analyse de la confidentialité UTXO et la prise en charge des identificateurs de canaux courts (SCID),
   parmi d'autres corrections et améliorations.
 
