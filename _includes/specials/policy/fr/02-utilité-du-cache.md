@@ -20,7 +20,7 @@ principes du marché libre, c'est-à-dire que la priorité est basée uniquement
 mineurs.
 
 La maximisation des frais lors de la sélection des transactions pour un bloc (dont le poids total et les opérations de signature
-sont limités) est un problème [NP-hard][]. Ce problème est encore compliqué par les relations entre les transactions: l'extraction
+sont limités) est un problème [NP-hard][]. Ce problème est encore compliqué par les relations entre les transactions : l'extraction
 d'une transaction à taux élevé peut nécessiter l'extraction de son parent à taux faible. En d'autres termes, l'extraction d'une
 transaction à faible taux de falsification peut ouvrir la possibilité d'extraire son enfant à taux de falsification élevé.
 
