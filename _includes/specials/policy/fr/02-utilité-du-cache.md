@@ -24,16 +24,15 @@ sont limités) est un problème [NP-hard][]. Ce problème est encore compliqué 
 d'une transaction à taux élevé peut nécessiter l'extraction de son parent à taux faible. En d'autres termes, l'extraction d'une
 transaction à faible taux de falsification peut ouvrir la possibilité d'extraire son enfant à taux de falsification élevé.
 
-Le mempool de Bitcoin Core calcule le taux de frais de chaque entrée et de ses ancêtres (appelé _ancestor feerate_), met en cache ce
+Le mempool de Bitcoin Core calcule le taux de frais de chaque entrée et de ses ascendants (appelé _ancestor feerate_), met en cache ce
 résultat et utilise un algorithme de construction de modèle de bloc avide. Il trie le mempool dans l'ordre du _score d'ancêtre_ (le
-minimum du feerate d'ancêtre et du feerate individuel) et sélectionne les paquets d'ancêtres dans cet ordre, en mettant à jour les
-informations sur les frais et le poids des ancêtres des transactions restantes au fur et à mesure. Cet algorithme offre un équilibre
+minimum du taux de frais de l'ascendant et du taux de frais individuel) et sélectionne les paquets d'ascendants dans cet ordre, en mettant à jour les informations sur les frais et le poids des ascendants des transactions restantes au fur et à mesure. Cet algorithme offre un équilibre
 entre performance et rentabilité et ne produit pas nécessairement des résultats optimaux. Son efficacité peut être améliorée en
-limitant la taille des transactions et des paquets ancêtres---Bitcoin Core fixe ces limites à 400 000 et 404 000 unités de poids,
+limitant la taille des transactions et des paquets ascendants---Bitcoin Core fixe ces limites à 400 000 et 404 000 unités de poids,
 respectivement.
 
 De même, un _descendant score_ est calculé et utilisé lors de la sélection des paquets à expulser du mempool, car il serait
-désavantageux d'expulser une transaction à faible taux de feerate qui a un enfant à fort taux de feerate.
+désavantageux d'expulser une transaction à faible taux de frais qui a un descendant à fort taux de frais.
 
 La validation du Mempool fait également appel à des frais et à des tarifs lorsqu'il s'agit de transactions qui dépensent les mêmes
 intrants, c'est-à-dire des transactions à double dépense ou des transactions conflictuelles. Au lieu de toujours conserver la
@@ -45,9 +44,9 @@ politiques ? Comme indiqué dans le billet de la semaine dernière, l'utilité d
 liée à sa similarité avec les pools de mémoire des mineurs. Ainsi, même si un opérateur de nœud n'a jamais l'intention de produire
 un bloc en utilisant le contenu de son mempool, il a intérêt à conserver les transactions les plus compatibles avec les incitations.
 
-Bien qu'il n'y ait pas de règles consensuelles exigeant que les transactions paient des frais, les frais et le feerate jouent un
+Bien qu'il n'y ait pas de règles consensuelles exigeant que les transactions paient des frais, les frais et le taux de frais jouent un
 rôle important dans le réseau Bitcoin en tant que moyen "équitable" de résoudre la concurrence pour l'espace des blocs. Les mineurs
-utilisent le taux de frais pour évaluer l'acceptation, l'expulsion et les conflits, tandis que les nœuds non mineurs reflètent ces
+utilisent le taux de frais pour évaluer l'acceptation, l'expulsion et les conflits, tandis que les nœuds non mineurs suivent ces
 comportements afin de maximiser l'utilité de leurs mempools.
 
 La rareté de l'espace des blocs exerce une pression à la baisse sur la taille des transactions et encourage les développeurs à être
