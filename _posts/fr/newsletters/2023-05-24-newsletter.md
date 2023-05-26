@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin d'information de cette semaine décrit la recherche sur les preuves de validité à connaissance nulle pour Bitcoin et les
+Le bulletin d'information de cette semaine s'intéresse aux recherches autour des preuves de validité à connaissance nulle pour Bitcoin et les
 protocoles connexes. Vous y trouverez également une nouvelle contribution à notre série hebdomadaire limitée sur la politique du
 mempool, ainsi que nos sections régulières décrivant les mises à jour des clients et des services, les nouvelles versions et les
 versions candidates, ainsi que les changements apportés aux principaux projets d'infrastructure de Bitcoin.
@@ -28,7 +28,7 @@ versions candidates, ainsi que les changements apportés aux principaux projets 
     Ils disposent également d'un prototype sous-optimal qui prouve que tous les
     changements d'état des transactions de la chaîne de blocs respectent les règles
     monétaires (par exemple, le nombre de bitcoins pouvant être créés par un nouveau
-    bloc, le fait que chaque transaction non basée sur les bitcoins ne doit pas créer
+    bloc, le fait que chaque transaction, en dehors des transactions coinbase, ne doit pas créer
     d'UTXO ayant une valeur supérieure à celle des bitcoins qu'elle détruit (dépense),
     et qu'un mineur peut réclamer toute différence entre les UTXO détruits dans un
     bloc et ceux qui ont été créés). Un client recevant cette preuve et une copie de
@@ -109,7 +109,6 @@ intéressantes des portefeuilles et services Bitcoin.*
   [Coffee][coffee github] est un gestionnaire de plugins CLN qui améliore certains aspects de l'installation,
   de la configuration, de la gestion des dépendances et de la mise à jour des [plugins CLN][news22 plugins].
 
-
 - **Sortie d'Electrum 4.4.3 :**
   Les [dernières][electrum release notes] versions d'Electrum contiennent des améliorations du contrôle des pièces,
   un outil d'analyse de la confidentialité UTXO et la prise en charge des identificateurs de canaux courts (SCID),
@@ -168,16 +167,16 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27021][] ajoute une interface pour calculer combien cela coûterait d'amener les transactions ancestrales non
-confirmées d'une sortie à un taux donné, une valeur connue sous le nom de _fee deficit_.  Lorsque [sélection de
+- [Bitcoin Core #27021][] ajoute une interface pour calculer combien cela coûterait d'amener les transactions ascendantes non
+confirmées d'une sortie à un taux donné, une valeur connue sous le nom de _fee deficit_. Lorsque [la sélection de
 pièces][topic coin selection] envisage d'utiliser une sortie particulière à une fréquence particulière, le déficit de frais de ses
-ancêtres pour cette fréquence est calculé et le résultat est déduit de sa valeur effective.  Cela décourage le portefeuille de
+ascendants pour cette fréquence est calculé et le résultat est déduit de sa valeur effective. Cela décourage le portefeuille de
 choisir des produits fortement déficitaires pour une nouvelle transaction lorsque d'autres produits pouvant être dépensés sont
-disponibles.  Dans un [PR de suivi][bitcoin core #26152], l'interface sera également utilisée pour permettre au portefeuille de
+disponibles. Dans un [PR de suivi][bitcoin core #26152], l'interface sera également utilisée pour permettre au portefeuille de
 payer les frais supplémentaires (appelés _bump fees_) s'il doit de toute façon choisir des sorties déficientes, garantissant ainsi
 que la nouvelle transaction paie le taux effectif demandé par l'utilisateur.
 
-  L'algorithme est capable d'évaluer les frais de majoration pour n'importe quelle constellation d'ancêtres en évaluant l'ensemble
+  L'algorithme est capable d'évaluer les frais de majoration pour n'importe quelle constellation d'ascendants en évaluant l'ensemble
   de la grappe de transactions non confirmées de l'UTXO non confirmée et en élaguant les transactions qui auront été sélectionnées
   dans un bloc au niveau de la date cible. Une deuxième méthode permet de calculer un montant global pour plusieurs sorties non
   confirmées afin de corriger les éventuels chevauchements d'ascendances.
