@@ -214,7 +214,7 @@ caractères pour les étiquettes.
 [assumevalid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
 [passport 2.1.1]: https://foundationdevices.com/2023/05/passport-version-2-1-0-is-now-live/
 [munstr github]: https://github.com/0xBEEFCAF3/munstr
-[nostr protocol]: https://github.com/nostr-protocol/nostr
+[protocole nostr]: https://github.com/nostr-protocol/nostr
 [coffee github]: https://github.com/coffee-tools/coffee
 [news22 plugins]: /en/newsletters/2018/11/20/#c-lightning-2075
 [electrum release notes]: https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES
