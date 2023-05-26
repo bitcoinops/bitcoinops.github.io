@@ -90,7 +90,7 @@ sélection des transactions minières---y compris pourquoi Bitcoin Core a une po
 restrictive que celle autorisée par le consensus et comment les portefeuilles peuvent utiliser
 cette politique de la manière la plus efficace.
 
-{% include specials/policy/en/02-cache-utility.md %}
+{% include specials/policy/fr/02-utilité-du-cache.md %}
 
 ## Modifications apportées aux services et aux logiciels clients
 
@@ -102,120 +102,102 @@ intéressantes des portefeuilles et services Bitcoin.*
   Passport prend en charge l'envoi aux adresses [taproot][topic taproot], les fonctionnalités
   [BIP85][] et les améliorations apportées à la gestion des configurations [PSBT][topic psbt] et multisig.
 
-- **MuSig wallet Munstr released:**
-  The beta [Munstr software][munstr github] uses the [nostr protocol][] in order
-  to facilitate the rounds of communication required for signing [MuSig][topic musig]
-  multisignature transactions.
+- **Lancement du portefeuille MuSig Munstr :**
+  Le [logiciel Munstr][munstr github] bêta utilise le [protocole nostr][] afin de faciliter les cycles de
+  communication nécessaires à la signature des transactions multi-signatures [MuSig][topic musig].
 
-- **CLN plugin manager Coffee released:**
-  [Coffee][coffee github] is a CLN plugin manager that improves aspects of
-  installation, configuration, dependency management, and upgrading of [CLN plugins][news22 plugins].
+- **Le gestionnaire de plugins CLN Coffee est disponible :**
+  [Coffee][coffee github] est un gestionnaire de plugins CLN qui améliore certains aspects de l'installation,
+  de la configuration, de la gestion des dépendances et de la mise à jour des [plugins CLN][news22 plugins].
 
-- **Electrum 4.4.3 released:**
-  The [latest][electrum release notes] Electrum versions contain coin control
-  improvements, a UTXO privacy analysis tool, and support for Short Channel
-  Identifiers (SCIDs), among other fixes and improvements.
 
-- **Trezor Suite adds coinjoin support:**
-  The Trezor Suite software [announced][trezor blog] support for
-  [coinjoins][topic coinjoin] that use the zkSNACKs coinjoin coordinator.
+- **Sortie d'Electrum 4.4.3 :**
+  Les [dernières][[electrum release notes] versions d'Electrum contiennent des améliorations du contrôle des pièces,
+  un outil d'analyse de la confidentialité UTXO et la prise en charge des identificateurs de canaux courts (SCID),
+  parmi d'autres corrections et améliorations.
 
-- **Lightning Loop defaults to MuSig2:**
-  [Lightning Loop][news53 loop] now uses [MuSig2][topic musig] as the default
-  swap protocol resulting in lower fees and better privacy.
+- **La suite Trezor prend en charge le coinjoin :**
+  Le logiciel Trezor Suite [a annoncé][trezor blog] la prise en charge des [coinjoins][topic coinjoin]
+  qui utilisent le coordinateur de coinjoin zkSNACKs.
 
-- **Mutinynet announces new signet for testing:**
-  [Mutinynet][mutinynet blog] is a custom signet with 30-second block times that
-  provides testing infrastructure including a [block explorer][topic block
-  explorers], faucet, as well as test LN nodes and LSPs running on the network.
+- **Lightning Loop est par défaut MuSig2 :**
+  [Lightning Loop][news53 loop] utilise désormais [MuSig2][topic musig] comme protocole d'échange par défaut,
+  ce qui permet de réduire les frais et d'améliorer la protection de la vie privée.
 
-- **Nunchuk adds coin control, BIP329 support:**
-  The latest Android and iOS versions of Nunchuk add [coin control][nunchuk blog] and
-  [BIP329][] wallet label export features.
+- **Mutinynet annonce un nouveau signet pour les tests :**
+  [Mutinynet][mutinynet blog] est une enseigne personnalisée avec des blocs de 30 secondes qui fournit une infrastructure
+  de test comprenant un [explorateur de blocs][topic block explorers], un faucet, ainsi que des nœuds LN de test et des LSP
+  fonctionnant sur le réseau.
 
-- **MyCitadel Wallet adds enhanced miniscript support:**
-  The [v1.3.0][mycitadel v1.3.0] release adds more complicated
-  [miniscript][topic miniscript] capabilities including [timelocks][topic timelocks].
+- **Le Nunchuk ajoute coin control et la prise en charge du BIP329:**
+  Les dernières versions Android et iOS de Nunchuk ajoutent les fonctionnalités [coin control][nunchuk blog] et l'export de
+  l'étiquette du portefeuille [BIP329][].
 
-- **Edge Firmware for Coldcard announced:**
-  Coinkite [announced][coinkite blog] experimental firmware for the Coldcard
-  hardware signer that is designed for wallet developers and power users to
-  experiment with newer features. The initial 6.0.0X release includes taproot
-  keysend payments, [tapscript][topic tapscript] multisig payments, and
-  [BIP129][] support.
+- **Le portefeuille MyCitadel ajoute une prise en charge améliorée des miniscripts :**
+  La version [v1.3.0][mycitadel v1.3.0] ajoute des fonctionnalités [miniscript][topic miniscript] plus complexes,
+  notamment les [timelocks][topic timelocks].
 
-## Releases and release candidates
+- **Annonce d'un micrologiciel Edge pour Coldcard :**
+  Coinkite [annonce][coinkite blog] un firmware expérimental pour le matériel de signature Coldcard,
+  conçu pour les développeurs de portefeuilles et les utilisateurs chevronnés afin d'expérimenter de nouvelles fonctionnalités.
+  La version initiale 6.0.0X inclut les paiements taproot keysend, les paiements multisig [tapscript][topic tapscript]
+  et la prise en charge de [BIP129][].
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+## Mises à jour et versions candidates
 
-- [Core Lightning 23.05][] is a release of the newest version of this LN
-  implementation.  It includes support for [blinded payments][topic rv
-  routing], version 2 [PSBTs][topic psbt], and more flexible feerate
-  management among many other improvements.
+*Nouvelles versions et versions candidates pour les principaux projets d’infrastructure
+Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
+les versions candidates.*
 
-- [Bitcoin Core 23.2][] is a maintenance release for the previous
-  major version of Bitcoin Core.
+- [Core Lightning 23.05][] est la version la plus récente de l'implémentation du LN.
+  Elle inclut la prise en charge des [paiements en aveugle][topic rv routing], la version 2 des [PSBT][topic psbt],
+  et une gestion plus souple des délais parmi de nombreuses autres améliorations.
 
-- [Bitcoin Core 24.1][] is a maintenance release for the current
-  version of Bitcoin Core.
+- [Bitcoin Core 23.2][] est une version de maintenance pour la version majeure précédente de Bitcoin Core.
 
-- [Bitcoin Core 25.0rc2][] is a release candidate for the next major
-  version of Bitcoin Core.
+- [Bitcoin Core 24.1][] est une version de maintenance pour la version actuelle de Bitcoin Core.
 
-## Notable code and documentation changes
+- [Bitcoin Core 25.0rc2][] est une version candidate de la prochaine version majeure de Bitcoin Core.
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+## Changements notables dans le code et la documentation
+
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27021][] adds an interface for calculating how much it
-  would cost to bring an output's unconfirmed ancestor transactions up
-  to a given feerate, a value known as their _fee deficit_.  When [coin
-  selection][topic coin selection] is considering using a particular
-  output at a particular feerate, its ancestors' fee deficit for that
-  feerate is calculated and the result is deducted from its effective
-  value.  That discourages the wallet from choosing highly deficient
-  outputs for a new transaction when other spendable outputs are
-  available.  In a [follow-up PR][bitcoin core #26152], the interface
-  will also be used to allow the wallet to pay the extra fees (called
-  _bump fees_) if it has to select deficient outputs anyway, ensuring
-  the new transaction pays the effective feerate the user requested.
+- [Bitcoin Core #27021][] ajoute une interface pour calculer combien cela coûterait d'amener les transactions ancestrales non
+confirmées d'une sortie à un taux donné, une valeur connue sous le nom de _fee deficit_.  Lorsque [sélection de
+pièces][topic coin selection] envisage d'utiliser une sortie particulière à une fréquence particulière, le déficit de frais de ses
+ancêtres pour cette fréquence est calculé et le résultat est déduit de sa valeur effective.  Cela décourage le portefeuille de
+choisir des produits fortement déficitaires pour une nouvelle transaction lorsque d'autres produits pouvant être dépensés sont
+disponibles.  Dans un [PR de suivi][bitcoin core #26152], l'interface sera également utilisée pour permettre au portefeuille de
+payer les frais supplémentaires (appelés _bump fees_) s'il doit de toute façon choisir des sorties déficientes, garantissant ainsi
+que la nouvelle transaction paie le taux effectif demandé par l'utilisateur.
 
-  The algorithm is capable of assessing bump fees for any
-  ancestor constellation by evaluating the unconfirmed UTXO’s entire
-  related cluster of unconfirmed transactions and pruning the
-  transactions that will have been picked into a block at the target
-  feerate. A second method provides an aggregate bump fee across
-  multiple unconfirmed outputs to correct for potential overlapping
-  ancestries.
+  L'algorithme est capable d'évaluer les frais de majoration pour n'importe quelle constellation d'ancêtres en évaluant l'ensemble
+  de la grappe de transactions non confirmées de l'UTXO non confirmée et en élaguant les transactions qui auront été sélectionnées
+  dans un bloc au niveau de la date cible. Une deuxième méthode permet de calculer un montant global pour plusieurs sorties non
+  confirmées afin de corriger les éventuels chevauchements d'ascendances.
 
-- [LND #7668][] adds the ability to associate up to 500 characters of
-  private text with a channel when opening it and allows the operator to
-  retrieve that information later, which may help them recall why they
-  opened that particular channel.
+- [LND #7668][] ajoute la possibilité d'associer jusqu'à 500 caractères de texte privé à un canal lors de son ouverture et permet à
+  l'opérateur de retrouver ces informations ultérieurement, ce qui peut l'aider à se souvenir de la raison pour laquelle il a ouvert
+  ce canal en particulier.
 
-- [LDK #2204][] adds the ability to set custom feature bits for
-  announcing to peers, or for use when attempting to parse a peer's
-  announcement.
+- [LDK #2204][] ajoute la possibilité de définir des bits de fonctionnalité personnalisés pour l'annonce aux pairs,
+  ou pour l'utilisation lors de la tentative d'analyse de l'annonce d'un pair.
 
-- [LDK #1841][] implements a version of a security recommendation
-  previously added to the LN specification (see [Newsletter
-  #128][news128 bolts803]) where a node using [anchor outputs][topic
-  anchor outputs] should not attempt to batch together inputs controlled
-  by multiple parties when the transaction needs to be confirmed
-  promptly.  This prevents other parties from being able to delay
-  confirmation.
+- [LDK #1841][] met en œuvre une version d'une recommandation de sécurité précédemment ajoutée à la spécification LN (voir
+  [Newsletter #128][news128 bolts803]) selon laquelle un nœud utilisant des [sorties d'ancrage][topic anchor outputs] ne devrait
+  pas tenter de regrouper des entrées contrôlées par plusieurs parties lorsque la transaction doit être confirmée rapidement.
+  Cela permet d'éviter que d'autres parties puissent retarder la confirmation.
 
-- [BIPs #1412][] updates [BIP329][] for [wallet label export][topic
-  wallet labels] with a field to store key origin information.
-  Additionally, the specification now suggests a label length limit of
-  255 characters.
+- [BIPs #1412][] met à jour [BIP329][] pour [l'exportation d'étiquettes de portefeuilles][topic wallet labels] avec un champ pour
+stocker les informations sur l'origine de la clé. En outre, la spécification suggère désormais une longueur maximale de 255
+caractères pour les étiquettes.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27021,7668,2204,1841,1412,26152" %}
@@ -226,7 +208,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [linus post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
 [lg paper]: https://zerosync.org/zerosync.pdf
 [news128 bolts803]: /en/newsletters/2020/12/16/#bolts-803
-[news247 rgb]: /en/newsletters/2023/04/19/#rgb-update
+[news247 rgb]: /fr/newsletters/2023/04/19/#mise-a-jour-rgb
 [news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
 [coinwitness]: https://bitcointalk.org/index.php?topic=277389.0
 [assumevalid]: https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks
