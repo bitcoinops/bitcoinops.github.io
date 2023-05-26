@@ -90,7 +90,7 @@ sélection des transactions minières---y compris pourquoi Bitcoin Core a une po
 restrictive que celle autorisée par le consensus et comment les portefeuilles peuvent utiliser
 cette politique de la manière la plus efficace.
 
-{% include specials/policy/fr/02-utilité-du-cache.md %}
+{% include specials/policy/fr/02-utilite-du-cache.md %}
 
 ## Modifications apportées aux services et aux logiciels clients
 
