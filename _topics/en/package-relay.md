@@ -92,6 +92,9 @@ optech_mentions:
   - title: Summaries of Bitcoin Core developers in-person meeting
     url: /en/newsletters/2023/05/17/#summaries-of-bitcoin-core-developers-in-person-meeting
 
+  - title: Suggestion to perform package relay using Nostr protocol
+    url: /en/newsletters/2023/05/31/#transaction-relay-over-nostr
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

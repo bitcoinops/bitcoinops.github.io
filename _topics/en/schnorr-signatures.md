@@ -116,6 +116,9 @@ optech_mentions:
   - title: "BDK #718 begins verifying schnorr signatures immediately after the wallet creates them"
     url: /en/newsletters/2022/08/31/#bdk-718
 
+  - title: "BIPs #1446 makes a small change and a number of additions to the BIP340 specification"
+    url: /en/newsletters/2023/05/31/#bips-1446
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

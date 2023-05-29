@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Proposed `OP_EVICT` opcode to make joinpools more efficient"
     url: /en/newsletters/2022/03/02/#proposed-opcode-to-simplify-shared-utxo-ownership
 
+  - title: "Proposal for Ark, a managed joinpool protocol"
+    url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
@@ -56,7 +59,7 @@ see_also:
 ## Should be less than 500 characters
 excerpt: >
   **Joinpools** are a construction that allows multiple users to
-  trustlessly share ownership of a single UTXO.  When funds are spent,
+  trustlessly share ownership of one or more UTXOs.  When funds are spent,
   it's not possible to tell from the block chain which pool member (or
   members) spent the funds.  Joinpools can use presigned transactions or
   proposed protocol features to ensure each member can unilaterally
