@@ -198,6 +198,9 @@ optech_mentions:
   - title: "Bitcoin Core #25939 allows nodes with txindex enabled to add txs with `utxoupdatepsbt` RPC"
     url: /en/newsletters/2023/05/03/#bitcoin-core-25939
 
+  - title: "Bitcoin Core #25796 adds a new `descriptorprocesspsbt` RPC for updating a PSBT"
+    url: /en/newsletters/2023/05/31/#bitcoin-core-25796
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

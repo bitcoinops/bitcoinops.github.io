@@ -48,6 +48,9 @@ optech_mentions:
   - title: Discussion about inconsistent mempools and how that could affect compact block relay
     url: /en/newsletters/2022/11/02/#better-peering-involves-tradeoffs
 
+  - title: "Bitcoin Core #27626 allows parallel download of compact blocks from multiple peers"
+    url: /en/newsletters/2023/05/31/#bitcoin-core-27626
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
