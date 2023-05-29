@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Analysis of alternative design for `OP_VAULT` using MATT-style covenants"
     url: /en/newsletters/2023/05/03/#matt-based-vaults
 
+  - title: "Proposed joinpool construction for Ark could be less interactive with covenants"
+    url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
