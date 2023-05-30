@@ -195,7 +195,32 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Testing pruning logic with bitcoind]({{bse}}118159)
+  Lightlike points out the debug-only `-fastprune` configuration option that uses smaller
+  block files and a smaller minimum prune height for testing purposes.
+
+- [What's the governing motivation for the descendent size limit?]({{bse}}118160)
+  Sdaftuar explains that since both the mining and eviction algorithms (see
+  [Newsletter #252][news252 incentives]) take quadratic, O(n²) time as a factor
+  of the number of ancestors or descendants, [conservative policy limits][morcos
+  limits] were put in place.
+
+- [How does it contribute to the Bitcoin network when I run a node with a bigger than default mempool?]({{bse}}118137)
+  Andrew Chow and Murch note potential downsides to a larger-than-default
+  mempool including harming transaction rebroadcasting propagation and
+  non-signaling transaction replacement propagation.
+
+- [What is the maximum number of inputs/outputs a transaction can have?]({{bse}}118452)
+  Murch provides post-taproot activation input and output numbers showing a
+  3223 (P2WPKH) output maximum or a 1738 (P2TR keypath) input maximum.
+
+- [Can 2-of-3 multisig funds be recovered without one of the xpubs?]({{bse}}118201)
+  Murch explains that for multisig setups that don't use bare multisig, unless
+  the same multisig output script has been used previously, all public keys are
+  required in order to spend. He indicates that "a backup strategy for a multisig
+  wallet must both preserve the private keys as well as the condition scripts of
+  the outputs" and recommends [descriptors][topic descriptors] as a method of
+  backing up condition scripts.
 
 ## Releases and release candidates
 
@@ -310,3 +335,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [btcpay server 97e7e]: https://github.com/btcpayserver/btcpayserver/commit/97e7e60ceae2b73d63054ee38ea54ed265cc5b8e
 [news157 libsecp]: /en/newsletters/2021/07/14/#libsecp256k1-844
 [bcc rn]: https://bitcoincore.org/en/releases/25.0/
+[news252 incentives]: /en/newsletters/2023/05/24/#waiting-for-confirmation-2-incentives
+[morcos limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html
