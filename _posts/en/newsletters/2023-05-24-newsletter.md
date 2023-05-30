@@ -153,7 +153,7 @@ wallets and services.*
   Coinkite [announced][coinkite blog] experimental firmware for the Coldcard
   hardware signer that is designed for wallet developers and power users to
   experiment with newer features. The initial 6.0.0X release includes taproot
-  keysend payments, [tapscript][topic tapscript] multisig payments, and
+  keyspend payments, [tapscript][topic tapscript] multisig payments, and
   [BIP129][] support.
 
 ## Releases and release candidates
