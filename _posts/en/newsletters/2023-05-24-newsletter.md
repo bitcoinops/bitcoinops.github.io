@@ -93,7 +93,7 @@ projects.
     development that can be performed,
     we find this to be encouraging progress towards a
     [feature][coinwitness] that Bitcoin developers have desired for over
-    a decade.
+    a decade. {% assign timestamp="1:05" %}
 
 ## Waiting for confirmation #2: Incentives
 
@@ -102,7 +102,7 @@ mining transaction selection---including why Bitcoin Core has a more
 restrictive policy than allowed by consensus and how wallets can use
 that policy most effectively._
 
-{% include specials/policy/en/02-cache-utility.md %}
+{% include specials/policy/en/02-cache-utility.md %} {% assign timestamp="19:00" %}
 
 ## Changes to services and client software
 
@@ -112,49 +112,49 @@ wallets and services.*
 - **Passport firmware 2.1.1 released:**
   The [latest firmware][passport 2.1.1] for the Passport hardware signing device supports sending
   to [taproot][topic taproot] addresses, [BIP85][] features, and improvements to
-  handling [PSBTs][topic psbt] and multisig configurations.
+  handling [PSBTs][topic psbt] and multisig configurations. {% assign timestamp="37:19" %}
 
 - **MuSig wallet Munstr released:**
   The beta [Munstr software][munstr github] uses the [nostr protocol][] in order
   to facilitate the rounds of communication required for signing [MuSig][topic musig]
-  multisignature transactions.
+  multisignature transactions. {% assign timestamp="37:40" %}
 
 - **CLN plugin manager Coffee released:**
   [Coffee][coffee github] is a CLN plugin manager that improves aspects of
-  installation, configuration, dependency management, and upgrading of [CLN plugins][news22 plugins].
+  installation, configuration, dependency management, and upgrading of [CLN plugins][news22 plugins]. {% assign timestamp="38:49" %}
 
 - **Electrum 4.4.3 released:**
   The [latest][electrum release notes] Electrum versions contain coin control
   improvements, a UTXO privacy analysis tool, and support for Short Channel
-  Identifiers (SCIDs), among other fixes and improvements.
+  Identifiers (SCIDs), among other fixes and improvements. {% assign timestamp="40:01" %}
 
 - **Trezor Suite adds coinjoin support:**
   The Trezor Suite software [announced][trezor blog] support for
-  [coinjoins][topic coinjoin] that use the zkSNACKs coinjoin coordinator.
+  [coinjoins][topic coinjoin] that use the zkSNACKs coinjoin coordinator. {% assign timestamp="40:32" %}
 
 - **Lightning Loop defaults to MuSig2:**
   [Lightning Loop][news53 loop] now uses [MuSig2][topic musig] as the default
-  swap protocol resulting in lower fees and better privacy.
+  swap protocol resulting in lower fees and better privacy. {% assign timestamp="41:18" %}
 
 - **Mutinynet announces new signet for testing:**
   [Mutinynet][mutinynet blog] is a custom signet with 30-second block times that
   provides testing infrastructure including a [block explorer][topic block
-  explorers], faucet, as well as test LN nodes and LSPs running on the network.
+  explorers], faucet, as well as test LN nodes and LSPs running on the network. {% assign timestamp="42:40" %}
 
 - **Nunchuk adds coin control, BIP329 support:**
   The latest Android and iOS versions of Nunchuk add [coin control][nunchuk blog] and
-  [BIP329][] wallet label export features.
+  [BIP329][] wallet label export features. {% assign timestamp="44:55" %}
 
 - **MyCitadel Wallet adds enhanced miniscript support:**
   The [v1.3.0][mycitadel v1.3.0] release adds more complicated
-  [miniscript][topic miniscript] capabilities including [timelocks][topic timelocks].
+  [miniscript][topic miniscript] capabilities including [timelocks][topic timelocks]. {% assign timestamp="45:22" %}
 
 - **Edge Firmware for Coldcard announced:**
   Coinkite [announced][coinkite blog] experimental firmware for the Coldcard
   hardware signer that is designed for wallet developers and power users to
   experiment with newer features. The initial 6.0.0X release includes taproot
   keypath spends, [tapscript][topic tapscript] multisig payments, and
-  [BIP129][] support.
+  [BIP129][] support. {% assign timestamp="47:08" %}
 
 ## Releases and release candidates
 
@@ -165,16 +165,16 @@ release candidates.*
 - [Core Lightning 23.05][] is a release of the newest version of this LN
   implementation.  It includes support for [blinded payments][topic rv
   routing], version 2 [PSBTs][topic psbt], and more flexible feerate
-  management among many other improvements.
+  management among many other improvements. {% assign timestamp="49:54" %}
 
 - [Bitcoin Core 23.2][] is a maintenance release for the previous
-  major version of Bitcoin Core.
+  major version of Bitcoin Core. {% assign timestamp="52:20" %}
 
 - [Bitcoin Core 24.1][] is a maintenance release for the current
-  version of Bitcoin Core.
+  version of Bitcoin Core. {% assign timestamp="52:20" %}
 
 - [Bitcoin Core 25.0rc2][] is a release candidate for the next major
-  version of Bitcoin Core.
+  version of Bitcoin Core. {% assign timestamp="54:06" %}
 
 ## Notable code and documentation changes
 
@@ -205,16 +205,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   transactions that will have been picked into a block at the target
   feerate. A second method provides an aggregate bump fee across
   multiple unconfirmed outputs to correct for potential overlapping
-  ancestries.
+  ancestries. {% assign timestamp="56:48" %}
 
 - [LND #7668][] adds the ability to associate up to 500 characters of
   private text with a channel when opening it and allows the operator to
   retrieve that information later, which may help them recall why they
-  opened that particular channel.
+  opened that particular channel. {% assign timestamp="59:37" %}
 
 - [LDK #2204][] adds the ability to set custom feature bits for
   announcing to peers, or for use when attempting to parse a peer's
-  announcement.
+  announcement. {% assign timestamp="1:00:50" %}
 
 - [LDK #1841][] implements a version of a security recommendation
   previously added to the LN specification (see [Newsletter
@@ -222,12 +222,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   anchor outputs] should not attempt to batch together inputs controlled
   by multiple parties when the transaction needs to be confirmed
   promptly.  This prevents other parties from being able to delay
-  confirmation.
+  confirmation. {% assign timestamp="1:02:12" %}
 
 - [BIPs #1412][] updates [BIP329][] for [wallet label export][topic
   wallet labels] with a field to store key origin information.
   Additionally, the specification now suggests a label length limit of
-  255 characters.
+  255 characters. {% assign timestamp="1:03:35" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27021,7668,2204,1841,1412,26152" %}
