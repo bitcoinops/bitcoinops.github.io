@@ -135,7 +135,7 @@ peněženek a služeb.*
 - **Oznámen Edge Firmware pro Coldcard:**
   Coinkite [oznámil][coinkite blog] experimentální firmware pro podpisové zařízení
   Coldcard, který umožňuje vývojářům peněženek a pokročilým uživatelům experimentovat
-  s novými funkcemi. Prvotní vydání 6.0.0X přináší taprootové keysend platby,
+  s novými funkcemi. Prvotní vydání 6.0.0X přináší taprootové keypath platby,
   [tapscriptové][topic tapscript] multisig platby a podporu [BIP129][].
 
 ## Vydání nových verzí

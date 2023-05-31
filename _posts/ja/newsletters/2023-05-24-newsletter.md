@@ -123,7 +123,7 @@ Bitcoin Coreがコンセンサスで認められているよりも制限的な�
 - **Coldcard用のEdge Firmwareの発表:**
   Coinkiteは、Coldcardハードウェアサイナー用の実験的なファームウェアを[発表しました][coinkite blog]。
   このファームウェアは、ウォレット開発者やパワーユーザーが新しい機能を試すために設計されています。
-  初期の6.0.0Xリリースには、Taprootのkeysend支払いと、[Tapscript][topic tapscript]のマルチシグ支払い、
+  初期の6.0.0Xリリースには、Taprootのkeypath支払いと、[Tapscript][topic tapscript]のマルチシグ支払い、
   [BIP129][]のサポートが含まれています。
 
 ## リリースとリリース候補
