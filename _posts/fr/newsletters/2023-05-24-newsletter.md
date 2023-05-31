@@ -138,7 +138,7 @@ intéressantes des portefeuilles et services Bitcoin.*
 - **Annonce d'un micrologiciel Edge pour Coldcard :**
   Coinkite [annonce][coinkite blog] un firmware expérimental pour le matériel de signature Coldcard,
   conçu pour les développeurs de portefeuilles et les utilisateurs chevronnés afin d'expérimenter de nouvelles fonctionnalités.
-  La version initiale 6.0.0X inclut les paiements taproot keysend, les paiements multisig [tapscript][topic tapscript]
+  La version initiale 6.0.0X inclut les paiements taproot keypath, les paiements multisig [tapscript][topic tapscript]
   et la prise en charge de [BIP129][].
 
 ## Mises à jour et versions candidates
