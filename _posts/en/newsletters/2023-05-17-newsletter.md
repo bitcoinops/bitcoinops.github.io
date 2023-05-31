@@ -43,7 +43,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     such as high-value payments), then they won't have enough
     interactions to build a reputation, or the reputation data will lag
     far behind the current state of the network (making it less useful
-    or even allowing reputation to be abused).
+    or even allowing reputation to be abused). {% assign timestamp="1:33" %}
 
 - **Request for feedback on proposed specifications for LSPs:** Severin
   Bühler [posted][buhler lsp] to the Lightning-Dev mailing list a request for
@@ -60,7 +60,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     In a [reply][zmnscpxj lsp], developer ZmnSCPxj wrote in favor of open specifications
     for LSPs.  He noted that they make it easy for a client to connect
     to multiple LSPs, which will prevent vendor lock-in and improve
-    privacy.
+    privacy. {% assign timestamp="14:52" %}
 
 - **Challenges with zero-conf channels when dual funding:** Bastien
   Teinturier [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
@@ -84,7 +84,7 @@ describing notable changes to popular Bitcoin infrastructure software.
 
     Several ideas for allowing zero-conf channel opens with dual funding
     were discussed, although none seemed satisfying to participants as
-    of this writing.
+    of this writing. {% assign timestamp="20:59" %}
 
 - **Advanced payjoin applications:** Dan Gould [posted][gould payjoin] to the
   Bitcoin-Dev mailing list several suggestions for using the
@@ -115,7 +115,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     organizations to reliably trace the flow of funds.
 
     As of this writing, the post had not received any discussion on the
-    mailing list.
+    mailing list. {% assign timestamp="24:51" %}
 
 - **Summaries of Bitcoin Core developers in-person meeting:** several
   developers working on Bitcoin Core recently met to discuss aspects of
@@ -123,7 +123,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   been published.  Topics discussed included [fuzz testing][],
   [assumeUTXO][], [ASMap][], [silent payments][], [libbitcoinkernel][],
   [refactoring (or not)][], and [package relay][].  Also discussed were
-  two other topics we think deserve special attention:
+  two other topics we think deserve special attention: {% assign timestamp="37:35" %}
 
     - [Mempool clustering][] summarizes a suggestion for a significant
       redesign of how transactions and their metadata are stored in
@@ -147,7 +147,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/01-why-mempool.md %}
+{% include specials/policy/en/01-why-mempool.md %} {% assign timestamp="51:07" %}
 
 ## Releases and release candidates
 
@@ -163,19 +163,19 @@ release candidates.*
   attack][topic side channels] under certain circumstances.  It's worth
   noting that Bitcoin Core does not use ECDH and is not affected.  There
   is ongoing work to try to detect when future changes to compilers
-  might cause similar problems, allowing changes to be made in advance.
+  might cause similar problems, allowing changes to be made in advance. {% assign timestamp="1:04:21" %}
 
 - [Core Lightning 23.05rc2][] is a release candidate for the next
-  version of this LN implementation.
+  version of this LN implementation. {% assign timestamp="1:05:07" %}
 
 - [Bitcoin Core 23.2rc1][] is a release candidate for a maintenance
-  release of the previous major version of Bitcoin Core.
+  release of the previous major version of Bitcoin Core. {% assign timestamp="1:05:20" %}
 
 - [Bitcoin Core 24.1rc3][] is a release candidate for a maintenance
-  release of the current version of Bitcoin Core.
+  release of the current version of Bitcoin Core. {% assign timestamp="1:05:20" %}
 
 - [Bitcoin Core 25.0rc2][] is a release candidate for the next major
-  version of Bitcoin Core.
+  version of Bitcoin Core. {% assign timestamp="1:05:20" %}
 
 ## Notable code and documentation changes
 
@@ -193,19 +193,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   checksum. When handling descriptors with private keys, the same symbol
   is used as when the descriptor was generated or imported. For legacy
   wallets the `hdkeypath` field in `getaddressinfo` and the
-  serialization format of wallet dumps remain unchanged.
+  serialization format of wallet dumps remain unchanged. {% assign timestamp="1:06:10" %}
 
 - [Bitcoin Core #27608][] will continue trying to download a block from
   a peer even if another peer provided the block.  Bitcoin Core will
   continue trying to download the block from peers that claim to have it
-  until one of the received blocks has been written to disk.
+  until one of the received blocks has been written to disk. {% assign timestamp="1:07:20" %}
 
 - [LDK #2286][] allows creating and signing [PSBTs][topic psbt] for
-  outputs controlled by the local wallet.
+  outputs controlled by the local wallet. {% assign timestamp="1:08:27" %}
 
 - [LDK #1794][] begins adding support for [dual funding][topic dual
   funding], starting with methods needed for the interactive funding
-  protocol that is used for dual funding.
+  protocol that is used for dual funding. {% assign timestamp="1:08:47" %}
 
 - [Rust Bitcoin #1844][] makes the schema in a [BIP21][] URI lowercase,
   i.e. `bitcoin:`.  Although the specification for URI schema (RFC3986)
@@ -213,14 +213,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   are not opening the application assigned to handle `bitcoin:` URIs
   when an uppercase `BITCOIN:` is passed.  It would be preferable if
   uppercase was handled correctly, as it allows the creation of more efficient
-  QR codes (see [Newsletter #46][news46 qr]).
+  QR codes (see [Newsletter #46][news46 qr]). {% assign timestamp="1:09:08" %}
 
 - [Rust Bitcoin #1837][] adds a function for generating a new private
-  key, simplifying what previously required more code to accomplish.
+  key, simplifying what previously required more code to accomplish. {% assign timestamp="1:11:33" %}
 
 - [BOLTs #1075][] updates the specification so that nodes should no
   longer disconnect from a peer after receiving a warning message from
-  it.
+  it. {% assign timestamp="1:12:04" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26076,27608,2286,1794,1844,1837,1075,1071,27677" %}
