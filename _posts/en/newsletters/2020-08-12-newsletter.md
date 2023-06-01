@@ -26,8 +26,8 @@ and notable changes to popular Bitcoin infrastructure projects.
   diagram of how its two [signature hash][] (sighash) types would be used
   within [eltoo][topic eltoo].  He also asked several questions about
   minimizing the number of network round trips needed to create eltoo
-  state updates.  These questions received [answers from
-  ZmnSCPxj][zmnscpxj reply] but also sparked a [second
+  state updates.  These questions [received answers][zmnscpxj reply] from
+  [[ZmnSCPxj]] but also sparked a [second
   discussion][corallo relay] about attacks against LN payment atomicity
   within the context of eltoo.
 

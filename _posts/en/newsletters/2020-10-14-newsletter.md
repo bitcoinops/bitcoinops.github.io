@@ -42,7 +42,7 @@ changes to popular Bitcoin infrastructure software.
     [discussion][teinturier dynamic] about a proposed minor protocol
     change transformed into a conversation about upfront fees:
 
-    - *Incremental routing:* ZmnSCPxj [described][zmnscpxj tunneling]
+    - *Incremental routing:* [[ZmnSCPxj]] [described][zmnscpxj tunneling]
       a nested encrypted tunneling protocol where routes would be
       built incrementally, with the spender being able to pay each
       successive routing hop independently.  This would ensure routing

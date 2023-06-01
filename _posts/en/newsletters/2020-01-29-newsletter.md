@@ -36,8 +36,8 @@ projects.
 
 ## News
 
-- **Breaking the link between UTXOs and unannounced channels:** Bastien
-  Teinturier [posted][teinturier post] to the Lightning-Dev mailing list about changing
+- **Breaking the link between UTXOs and unannounced channels:**
+  [[Bastien Teinturier]] [posted][teinturier post] to the Lightning-Dev mailing list about changing
   what data is added to a [BOLT11][] invoice for payments sent to
   unannounced channels---channels that aren't advertised to the LN
   network and which usually don't route payments for other users.  The

@@ -63,7 +63,7 @@ to popular Bitcoin infrastructure projects.
     - **Miner anonymity:** with 50,000 or more nodes currently all
       relaying transactions, it's easy for miners to receive all the
       information they need by quietly operating one of those nodes.
-      Pseudonymous developer ZmnSCPxj [suggested][zmnscpxj relay] that
+      Pseudonymous developer [[ZmnSCPxj]] [suggested][zmnscpxj relay] that
       forcing miners to maintain a persistent identity, even one on an
       anonymity network like Tor, would make it easier to
       identify miners and coerce them into censoring some transactions.

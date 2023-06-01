@@ -68,7 +68,7 @@ week, and notable changes to popular Bitcoin infrastructure projects.
     ideas are mentioned, but Pickhardt asks readers to contemplate the
     problem and suggest any other possible solutions.
 
-- **Continued discussion about LN atomicity attack:** Bastien Teinturier
+- **Continued discussion about LN atomicity attack:** [[Bastien Teinturier]]
   [posted][teinturier post] to the Lightning-Dev mailing list with a
   link to a [detailed description][teinturier gist] of the LN commitment
   protocol, its weaknesses, and proposals to address those weaknesses.

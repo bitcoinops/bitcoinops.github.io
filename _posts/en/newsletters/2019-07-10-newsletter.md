@@ -40,7 +40,7 @@ notable code changes in popular Bitcoin infrastructure projects.
   attackers could exploit.
 
     In a new [post][zmn jit] to the Lightning-Dev mailing list,
-    pseudonymous LN developer ZmnSCPxj describes two situations in which
+    pseudonymous LN developer [[ZmnSCPxj]] describes two situations in which
     other profit-maximizing nodes might allow free rebalances.  The
     first case is the observation that the next hop in the route
     will receive its own routing fee paid

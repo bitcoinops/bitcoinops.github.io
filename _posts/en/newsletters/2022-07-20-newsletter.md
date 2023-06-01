@@ -78,7 +78,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
             hadn't moved for, say, 120 years---well past the expected
             lifetime of the original owner and their heirs.
 
-        - *Censorship resistance:* developer ZmnSCPxj [expanded][zmnscpxj cr] an
+        - *Censorship resistance:* developer [[ZmnSCPxj]] [expanded][zmnscpxj cr] an
           [argument][voskuil cr] by Eric Voskuil that transaction fees enhance
           Bitcoin's censorship resistance.  For example, if 90% of the
           block reward comes from subsidy and 10% from transaction fees,

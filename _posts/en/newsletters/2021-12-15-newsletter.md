@@ -38,7 +38,7 @@ notable changes to popular Bitcoin infrastructure software.
     No clear conclusion was reached in the discussion as of this
     writing.
 
-- **Preparing LN for PTLCs:** Bastien Teinturier started a
+- **Preparing LN for PTLCs:** [[Bastien Teinturier]] started a
   [thread][teinturier post] on the Lightning-Dev mailing list about
   making the minimal [set of changes][ln docs 16] to the LN
   communication protocol necessary to allow nodes to begin upgrading to

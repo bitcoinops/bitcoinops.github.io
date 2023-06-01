@@ -164,7 +164,7 @@ infrastructure software.
   guarantees. If protecting the location of the real signing utxo is a
   matter of life and death, on no account use a system like this!"
 
-  On the Lightning-Dev mailing list, developer ZmnSCPxj
+  On the Lightning-Dev mailing list, developer [[ZmnSCPxj]]
   [suggested][zmnscpxj riddle] RIDDLE might be an option for separating
   LN's anti-sybil mechanism from UTXO-based channel identifiers which,
   in the era of [taproot][topic taproot] and [signature

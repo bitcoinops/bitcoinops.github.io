@@ -125,7 +125,7 @@ Stack Exchange questions and answers.
   it does expire.
 
     Both Riard's post and replies from [Matt Corallo][corallo eclipse]
-    and [ZmnSCPxj][zmn eclipse] discuss past and present work to make
+    and [[[ZmnSCPxj]]][zmn eclipse] discuss past and present work to make
     full nodes and lightweight clients more resistant to eclipse
     attacks.  Readers interested in learning more about eclipse attacks
     and their mitigations are also strongly encouraged to read the Bitcoin

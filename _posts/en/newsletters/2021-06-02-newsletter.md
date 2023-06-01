@@ -18,7 +18,7 @@ Bitcoin infrastructure software.
 
 - **Candidate Set Based (CSB) block template construction:** Mark
   Erhardt [posted][erhardt post] to the Bitcoin-Dev mailing list about
-  an [analysis][es analysis] he and Clara Shikhelman performed on an
+  an [analysis][es analysis] he and [[Clara Shikhelman]] performed on an
   alternative transaction selection algorithm for miners.  Bitcoin's
   consensus rules enforce that no transaction can be included in a block
   unless all of its unconfirmed ancestors are also included earlier in

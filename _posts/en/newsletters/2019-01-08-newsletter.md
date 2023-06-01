@@ -44,7 +44,7 @@ Bitcoin infrastructure projects are also provided.
     it in future Script versions, you should comment on the thread.
 
 - **Cross-chain LN as an options contract:** pseudonymous LN
-  contributor ZmnSCPxj started a thread on the Lightning-Dev mailing
+  contributor [[ZmnSCPxj]] started a thread on the Lightning-Dev mailing
   list pointing out that users could abuse payments that cross
   currencies to create almost free [short-term options contracts][] by
   delaying payment settlement.  A [previous thread][cjp risk] by Corné

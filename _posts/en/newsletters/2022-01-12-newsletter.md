@@ -165,7 +165,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   unnecessary channel closure. This is the first step toward more
   standardized and enriched errors. More discussion can be found at
   [BOLTs #834][] and in
-  [Carla Kirk-Cohen's post][Error Codes for LN] to the Lightning-dev
+  [[Carla Kirk-Cohen]]'s [post][Error Codes for LN] to the Lightning-dev
   mailing list (see [Newsletter #136][news136 warning post]).
 
 {% include references.md %}

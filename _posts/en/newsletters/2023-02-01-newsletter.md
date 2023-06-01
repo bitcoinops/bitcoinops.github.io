@@ -14,7 +14,7 @@ changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Serverless payjoin proposal:** Dan Gould [posted][gould payjoin] to
+- **Serverless payjoin proposal:** [[Dan Gould]] [posted][gould payjoin] to
   the Bitcoin-Dev mailing list a proposal and [proof of concept
   implementation][payjoin impl] for a serverless version of [BIP78][],
   the [payjoin][topic payjoin] protocol.

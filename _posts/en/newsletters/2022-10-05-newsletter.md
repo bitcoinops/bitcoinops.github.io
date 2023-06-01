@@ -94,7 +94,7 @@ projects.
     several challenges with the original ratecards idea that wouldn't be
     problems for flow control based on adjusting `htlc_maximum_msat`.
 
-    ZmnSCPxj [criticized][zmnscpxj valve] several aspects of the idea, including
+    [[ZmnSCPxj]] [criticized][zmnscpxj valve] several aspects of the idea, including
     noting that spenders could still send the same amount of value
     through a lower-max rate channel, resulting in it again becoming
     unbalanced, just by splitting an overall payment into additional

@@ -63,8 +63,8 @@ of notable changes to popular Bitcoin infrastructure software.
     approach is building a mechanism that prevents receivers from
     keeping any overpayment that arrives. {% assign timestamp="4:15" %}
 
-- **Feedback requested on LN good neighbor scoring:** Carla Kirk-Cohen
-  and Clara Shikhelman [posted][ckc-cs reputation] to the Lightning-Dev
+- **Feedback requested on LN good neighbor scoring:** [[Carla Kirk-Cohen]]
+  and [[Clara Shikhelman]] [posted][ckc-cs reputation] to the Lightning-Dev
   mailing list to request feedback on the recommend parameters for how a
   node should judge whether its channel counterparties are a good source of
   forwarded payments.  They suggest several criteria to judge by and
@@ -176,7 +176,7 @@ answers posted since our last update.*
     {% assign timestamp="50:07" %}
 
 - [Why doesn't the protocol allow unconfirmed transactions to expire at a given height?]({{bse}}116926)
-  Larry Ruane references Satoshi on why it wouldn't be prudent for
+  [[Larry Ruane]] references Satoshi on why it wouldn't be prudent for
   transactions to have the seemingly useful ability to specify an
   expiration height, that is, a height after which the transaction,
   if not yet mined, is no longer valid (and therefore can't be mined). {% assign timestamp="51:00" %}

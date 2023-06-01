@@ -130,7 +130,7 @@ software.
     identify which hop the payment failed at by comparing how many
     satoshis it sent to how many satoshis it received back.
 
-- **Anchor outputs workaround:** Bastien Teinturier [posted][teinturier
+- **Anchor outputs workaround:** [[Bastien Teinturier]] [posted][teinturier
   fees] to the Lightning-Dev mailing list a [proposal][bolts #1036] for using
   [anchor outputs][topic anchor outputs] with multiple presigned
   versions of each [HTLC][topic htlc] at different feerates.  Anchor

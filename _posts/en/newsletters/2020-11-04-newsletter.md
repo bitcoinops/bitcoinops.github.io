@@ -20,7 +20,7 @@ are our regular sections with updates about various projects.
 
 - **Bi-directional upfront fees for LN:** continuing a previous
   Lightning-Dev mailing list thread about upfront fees (see [Newsletter
-  #120][news120 upfront]), Bastien Teinturier [posted][teinturier bidir]
+  #120][news120 upfront]), [[Bastien Teinturier]] [posted][teinturier bidir]
   a proposal to have both the party offering an [HTLC][topic htlc] and
   the party receiving it each pay fees to the other---although the
   receiving party receives a refund on their fees if the payment is

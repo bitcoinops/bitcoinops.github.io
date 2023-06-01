@@ -74,7 +74,7 @@ infrastructure projects.
     discussion participants when it came to informing their decisions about
     changing Bitcoin's consensus rules.
 
-- **LN anchor outputs security issue:** Bastien Teinturier
+- **LN anchor outputs security issue:** [[Bastien Teinturier]]
   [posted][teinturier security] to the Lightning-Dev mailing list the
   announcement of a security issue he had previously responsibly
   disclosed to LN implementation maintainers.  The issue affected older

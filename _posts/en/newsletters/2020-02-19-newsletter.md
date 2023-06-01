@@ -165,8 +165,8 @@ popular services, client software, and infrastructure projects.
     JoinMarket's use of PoDLE and suggested how LN developers might want
     to use different tradeoffs for LN's own unique constraints.
 
-- **Decoy nodes and lightweight rendez-vous routing:** Bastien
-  Teinturier previously [posted][teinturier delink] about breaking the
+- **Decoy nodes and lightweight rendez-vous routing:**
+  [[Bastien Teinturier]] previously [posted][teinturier delink] about breaking the
   link between what data is included in a [BOLT11][] invoice and the
   funding transaction of the channel that will receive the payment (see
   [Newsletter #82][news82 unannounced]).  After further discussion and

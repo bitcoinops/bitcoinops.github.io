@@ -87,7 +87,7 @@ infrastructure software.
     summary was being written.
 
 - **Fundamental fee-collection strategies for LN forwarding nodes:**
-  developer ZmnSCPxj [summarized][zmnscpxj forwarding] three strategies
+  developer [[ZmnSCPxj]] [summarized][zmnscpxj forwarding] three strategies
   LN forwarding nodes can use in collecting fees for routing payments
   (including the strategy of not collecting fees).  ZmnSCPxj then
   analyzes possible outcomes of the different strategies.  This seems
@@ -96,7 +96,7 @@ infrastructure software.
   which also received significant [additional commentary][towns fee
   signal] in the past week from Anthony Towns.
 
-- **Onion message rate limiting:** Bastien Teinturier
+- **Onion message rate limiting:** [[Bastien Teinturier]]
   [posted][teinturier rate limit] a summary of an idea he attributes to
   Rusty Russell for rate limiting [onion messages][topic onion
   messages].  The proposal has each node store just an extra 32 bytes of

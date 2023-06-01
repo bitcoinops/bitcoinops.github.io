@@ -21,10 +21,10 @@ describing notable changes to popular Bitcoin infrastructure software.
 
 ## News
 
-- **Testing HTLC endorsement:** several weeks ago, Carla Kirk-Cohen and
-  Clara Shikhelman [posted][kcs endorsement] to the Lightning-Dev mailing list about
+- **Testing HTLC endorsement:** several weeks ago, [[Carla Kirk-Cohen]] and
+  [[Clara Shikhelman]] [posted][kcs endorsement] to the Lightning-Dev mailing list about
   the next steps they and others planned to take to test the idea of
-  [HTLC][topic htlc] endorsement (see [Newsletter #239][news239
+  [[HTLC]] endorsement (see [Newsletter #239][news239
   endorsement]) as part of a mitigation for [channel jamming
   attacks][topic channel jamming attacks].  Most notably, they provided a
   short [proposed specification][bolts #1071] that could be deployed
@@ -57,15 +57,15 @@ describing notable changes to popular Bitcoin infrastructure software.
   transaction that will anchor the channel onchain when it is confirmed
   (making it into a regular channel).
 
-    In a [reply][zmnscpxj lsp], developer ZmnSCPxj wrote in favor of open specifications
+    In a [reply][zmnscpxj lsp], developer [[ZmnSCPxj]] wrote in favor of open specifications
     for LSPs.  He noted that they make it easy for a client to connect
     to multiple LSPs, which will prevent vendor lock-in and improve
     privacy.
 
-- **Challenges with zero-conf channels when dual funding:** Bastien
-  Teinturier [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
-  challenges of allowing [zero-conf channels][topic zero-conf channels] when using the
-  [dual-funding protocol][topic dual funding].   Zero-conf channels can be used even before the
+- **Challenges with zero-conf channels when dual funding:**
+  [[Bastien Teinturier]] [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
+  challenges of allowing [[zero-conf channels]] when using the
+  [[dual-funding|dual-funding protocol]].   Zero-conf channels can be used even before the
   channel open transaction is confirmed; this is trustless in some
   cases.  Dual-funded channels are channels that were created using the
   dual-funding protocol, which may include channels where the open
@@ -86,7 +86,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     were discussed, although none seemed satisfying to participants as
     of this writing.
 
-- **Advanced payjoin applications:** Dan Gould [posted][gould payjoin] to the
+- **Advanced payjoin applications:** [[Dan Gould]] [posted][gould payjoin] to the
   Bitcoin-Dev mailing list several suggestions for using the
   [payjoin][topic payjoin] protocol to do more than just send or receive
   a simple payment.  Two of the suggestions we found most interesting
@@ -99,13 +99,13 @@ describing notable changes to popular Bitcoin infrastructure software.
 
     - *Batched payment forwarding:* rather than Alice paying Bob, Alice
       instead pays several people Bob owes money (or wants to establish
-      a credit with).  Gould's example considers an exchange that has a
+      a credit with).  Gould's example [[payment batching|batching]] considers an exchange that has a
       steady stream of deposits and withdrawals; payjoin allows withdrawals
       to be paid for by new deposits when possible.
 
     Both of these techniques allow reducing what would be at least two
     transactions into a single transaction, saving a considerable amount
-    of block space.  When [batching][topic payment batching] is used,
+    of block space.  When  is used,
     the space savings may be even larger.  Even better from the
     perspective of the original receiver (e.g. Bob),
     the original spender (e.g. Alice) may pay all or some of the
@@ -200,7 +200,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   continue trying to download the block from peers that claim to have it
   until one of the received blocks has been written to disk.
 
-- [LDK #2286][] allows creating and signing [PSBTs][topic psbt] for
+- [LDK #2286][] allows creating and signing [[psbt|PSBTs]] for
   outputs controlled by the local wallet.
 
 - [LDK #1794][] begins adding support for [dual funding][topic dual

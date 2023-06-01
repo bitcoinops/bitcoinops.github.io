@@ -105,7 +105,7 @@ both novel and interesting:
     payment amounts, and sharding in both the form of federated block
     chains (available now) and other models that are more speculative.
 
-- [Lightning network topology][kc topology] by Carla Kirk-Cohen
+- [Lightning network topology][kc topology] by [[Carla Kirk-Cohen]]
   describes the public topology of channels between LN nodes at present,
   what factors influenced that shape, and what we might be able to do to
   reshape it.  She starts by noting the existence of private channels

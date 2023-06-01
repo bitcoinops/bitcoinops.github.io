@@ -66,7 +66,7 @@ software.
     After that, they can return to operating on a single commitment
     transaction.
 
-  - *Relative amounts and zero-conf splices:* Bastien Teinturier
+  - *Relative amounts and zero-conf splices:* [[Bastien Teinturier]]
     [posted][teinturier splice] about several proposed specification
     updates.  In addition to the aforementioned commitment signatures
     change, he also recommends that splice proposals use relative

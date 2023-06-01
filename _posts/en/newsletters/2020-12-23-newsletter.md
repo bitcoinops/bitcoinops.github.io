@@ -539,7 +539,7 @@ disclosed later.  The notable vulnerabilities included:
   the spending user could bribe miners to release the secret data but
   not confirm the transaction containing it, allowing the timelock to
   expire so that the spender would get their money back but still learn
-  the secret.  Developer ZmnSCPxj reminded the researchers of a
+  the secret.  Developer [[ZmnSCPxj]] reminded the researchers of a
   well known mechanism that should prevent such problems, a mechanism he
   helped [implement][cl3870] in C-Lightning.  Although the idea
   works in theory, using it will cost users money, so research into

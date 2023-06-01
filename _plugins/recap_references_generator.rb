@@ -6,6 +6,7 @@ $podcast_reference_mark = /\{%\s*assign\s+timestamp\s*=\s*"([^"]+)"\s*%\}/
 # Create the podcast recap references by parsing the referenced newsletter for
 # podcast reference marks (timestamps)
 class RecapReferencesGenerator < Jekyll::Generator
+  priority :high
   def generate(site)
     podcast_pages = site.documents.select { |doc| doc.data["type"] == "podcast"}
     podcast_pages.each do |podcast|

@@ -58,7 +58,7 @@ infrastructure software.
       forwarding node chooses for itself how to distribute its
       credential tokens.
 
-    Clara Shikhelman, whose own co-authored proposal partly based on
+    [[Clara Shikhelman]], whose own co-authored proposal partly based on
     local reputation was described in [Newsletter #226][news226 jam],
     replied to [ask][shikelman credentials] whether credential tokens
     were transferable between users and whether that could lead to the

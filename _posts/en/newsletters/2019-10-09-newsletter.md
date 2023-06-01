@@ -44,7 +44,7 @@ changes to popular Bitcoin infrastructure projects.
   tagging?  (Respondents seemed opposed, some strongly.)
 
     In response to the question about output tagging, C-Lightning
-    contributor ZmnSCPxj [proposed][zmn internal tagging] an alternative
+    contributor [[ZmnSCPxj]] [proposed][zmn internal tagging] an alternative
     tagging mechanism that would put the tag inside the taproot
     commitment, making it invisible unless a script-path spend was used.
     This could allow a spender who was worried about noinput to ensure

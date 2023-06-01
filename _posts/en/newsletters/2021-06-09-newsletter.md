@@ -17,7 +17,7 @@ infrastructure software.
 ## News
 
 - **Receiving LN payments with a mostly offline private key:** in 2019,
-  developer ZmnSCPxj [proposed][zmn ff] an alternative way to
+  developer [[ZmnSCPxj]] [proposed][zmn ff] an alternative way to
   encapsulate pending LN payments ([HTLCs][topic htlc]) that would
   reduce the amount of network bandwidth and latency required to accept
   a payment.  More recently, Lloyd Fournier suggested the idea could

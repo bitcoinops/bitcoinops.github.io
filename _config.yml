@@ -62,9 +62,17 @@ defaults:
       layout: topic
       permalink: /en/topics/:title/
       localizable: false
+  - scope:
+      path: "_people"
+    values:
+      layout: person
+      permalink: /en/people/:title/
+      localizable: false
 
 collections:
   topics:
+    output: true
+  people:
     output: true
 
 languages:

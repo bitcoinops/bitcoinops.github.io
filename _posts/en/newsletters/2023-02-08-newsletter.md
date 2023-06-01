@@ -36,8 +36,8 @@ Bitcoin infrastructure software.
     As of this writing, there was vigorous ongoing discussion about the
     topic.  We'll provide an update in next week's newsletter. {% assign timestamp="1:19" %}
 
-- **Summary of call about mitigating LN jamming:** Carla Kirk-Cohen and
-  Clara Shikhelman [posted][ckccs jamming] to the Lightning-Dev mailing
+- **Summary of call about mitigating LN jamming:** [[Carla Kirk-Cohen]] and
+  [[Clara Shikhelman]] [posted][ckccs jamming] to the Lightning-Dev mailing
   list a summary of a recent video conversation about attempts to
   address [channel jamming attacks][topic channel jamming attacks].
   Topics discussed included upgrade mechanism tradeoffs, a simple

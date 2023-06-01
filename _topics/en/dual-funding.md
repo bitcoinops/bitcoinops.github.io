@@ -104,9 +104,6 @@ optech_mentions:
   - title: "Eclair #2596 limits the number of RBF fee bumps in a dual funded channel open"
     url: /en/newsletters/2023/02/22/#eclair-2596
 
-  - title: "Challenges with zero-conf channels when dual funding"
-    url: /en/newsletters/2023/05/17/#challenges-with-zero-conf-channels-when-dual-funding
-
   - title: "LDK #1794 begins adding support for dual funding"
     url: /en/newsletters/2023/05/17/#ldk-1794
 

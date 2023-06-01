@@ -7,6 +7,11 @@
 # - [Summary][]: Details
 # - [Summary](URL): Details
 
+def generate_anchor_list_link(anchor_link)
+  # custom clickable bullet linking to an anchor
+  "<a href=\"#{anchor_link}\" class=\"anchor-list-link\">●</a>"
+end
+
 def auto_anchor(content)
     content.gsub!(/^ *- .*/) do |string|
       ## Find shortest match for **bold**, *italics*, or [markdown][links]
@@ -17,7 +22,7 @@ def auto_anchor(content)
         string
       else
         slug = generate_slug(title)
-        id_prefix = "- {:#{slug} .anchor-list} <a href=\"#{slug}\" class=\"anchor-list-link\">●</a>"
+        id_prefix = "- {:#{slug} .anchor-list} #{generate_anchor_list_link(slug)}"
         string.sub!(/-/, id_prefix)
       end
     end
@@ -49,3 +54,19 @@ end
 
 Liquid::Template.register_tag('auto_anchor', Jekyll::RenderAutoAnchor)
 
+module TextFilter
+  # This is a custom filter used in `optech-mentions.html`
+  # to add anchor links to each backlink snippet
+  def link_to_anchor(text, url)
+    id_prefix = generate_anchor_list_link(url)
+    if text.start_with?("-")
+      # snippet is already a list item
+      text.sub!(/-/, id_prefix)
+    else
+      text.prepend("#{id_prefix} ")
+    end
+    text
+  end
+end
+
+Liquid::Template.register_filter(TextFilter)

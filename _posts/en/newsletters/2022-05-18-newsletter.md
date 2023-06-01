@@ -304,7 +304,7 @@ regular newsletter.
 - **When would enabling `OP_CAT` allow recursive covenants?** in a
   discussion on the Bitcoin-Dev mailing list about re-adding the
   [OP_CAT][op_cat] opcode removed from Bitcoin in 2010, developer
-  ZmnSCPxj [claimed][zmnscpxj cat1] `OP_CAT` needed to be combined with
+  [[ZmnSCPxj]] [claimed][zmnscpxj cat1] `OP_CAT` needed to be combined with
   proposed opcodes `OP_TX` (see [Newsletter #187][news187 op_tx]),
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS), or a
   similar feature in order for it to enable inescapable recursive

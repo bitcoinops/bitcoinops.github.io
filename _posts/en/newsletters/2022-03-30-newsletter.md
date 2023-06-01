@@ -17,7 +17,7 @@ projects.
 
 ## News
 
-- **Transaction witness replacement:** Larry Ruane [asked][ruane witrep]
+- **Transaction witness replacement:** [[Larry Ruane]] [asked][ruane witrep]
   the Bitcoin-Dev mailing list for information and opinions about
   allowing a transaction to be replaced by the same transaction with the
   same txid but a smaller witness (and, thus, a different wtxid).  Ruane
