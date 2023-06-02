@@ -47,6 +47,8 @@ exclude:
    - README.md
    - CONTRIBUTING.md
 
+include: [".well-known"]
+
 show_excerpts: true
 
 defaults:
