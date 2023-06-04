@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Proposal for Ark, a managed joinpool protocol"
     url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
 
+  - title: "Example of using the MATT proposal plus OP_CAT to manage joinpools"
+    url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin
