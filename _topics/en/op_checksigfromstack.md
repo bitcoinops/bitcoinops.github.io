@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Proposal for `OP_TX` opcode composable with `OP_CHECKSIGFROMSTACK`"
     url: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 
+  - title: "Example of using the MATT proposal plus OP_CAT to manage joinpools"
+    url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
