@@ -106,6 +106,9 @@ optech_mentions:
   - title: "Analysis of alternative design for `OP_VAULT` using MATT-style covenants and CTV"
     url: /en/newsletters/2023/05/03/#matt-based-vaults
 
+  - title: "Example of using MATT-style covenants to replicate CTV features"
+    url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
