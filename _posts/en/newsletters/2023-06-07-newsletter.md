@@ -75,7 +75,11 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #26485][] RPC: Accept options as named-only parameters FIXME:glozow
+- [Bitcoin Core #26485][] allows RPC methods that accept an `options`
+  object parameter to accept the same fields as named parameters.
+  For example, the `bumpfee` RPC can now be called with
+  `src/bitcoin-cli -named bumpfee txid fee_rate=10` instead of
+  `src/bitcoin-cli -named bumpfee txid options='{"fee_rate": 10}'`.
 
 - [Eclair #2642][] adds a `closedchannels` RPC  that provides data
   about the node’s closed channels.  See also a similar PR from Core
