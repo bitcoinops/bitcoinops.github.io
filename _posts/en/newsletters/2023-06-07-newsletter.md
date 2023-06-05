@@ -85,7 +85,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   about the node’s closed channels.  See also a similar PR from Core
   Lightning mentioned in [Newsletter #245][news245 listclosedchannels].
 
-- [LND #7645][] sweep+lnrpc: enforce provided fee rate is no less than relay fee FIXME:bitschmidty
+- [LND #7645][] makes sure that any user-provided fee rate in RPC calls to
+  `OpenChannel`, `CloseChannel`, `SendCoins`, and `SendMany`
+  is no less than a 'relay fee rate'. The change notes that "'Relay fee rate' may
+  mean slightly different things depending on the backend. For bitcoind, it is
+  effectively max(relay fee, min mempool fee)".
 
 - [LND #7726][] will always spend all HTLCs paying the local node if a
   channel needs to be settled onchain.  It will sweep those HTLCs even
