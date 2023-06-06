@@ -143,7 +143,7 @@ notable changes to popular Bitcoin infrastructure software.
 
     Several comments on the list were also excited for the proposal and
     were looking forward to seeing Keceli and others explore the design
-    space of managed joinpools.
+    space of managed joinpools. {% assign timestamp="1:46" %}
 
 - **Transaction relay over Nostr:** Joost Jager [posted][jager nostr] to
   the Bitcoin-Dev mailing list to request feedback on the idea by Ben
@@ -173,7 +173,7 @@ notable changes to popular Bitcoin infrastructure software.
 
     Included in Jager's post was a link to a [video][jager video] of him
     demonstrating the feature.  His post had only received a few replies
-    as of this writing, although they were all positive.
+    as of this writing, although they were all positive. {% assign timestamp="40:38" %}
 
 ## Waiting for confirmation #3: Bidding for block space
 
@@ -183,6 +183,7 @@ Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
 {% include specials/policy/en/03-bidding-for-block-space.md %}
+{% assign timestamp="1:00:02" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -197,22 +198,22 @@ answers posted since our last update.*
 
 - [Testing pruning logic with bitcoind]({{bse}}118159)
   Lightlike points out the debug-only `-fastprune` configuration option that uses smaller
-  block files and a smaller minimum prune height for testing purposes.
+  block files and a smaller minimum prune height for testing purposes. {% assign timestamp="1:12:38" %}
 
 - [What's the governing motivation for the descendent size limit?]({{bse}}118160)
   Sdaftuar explains that since both the mining and eviction algorithms (see
   [Newsletter #252][news252 incentives]) take quadratic, O(n²) time as a factor
   of the number of ancestors or descendants, [conservative policy limits][morcos
-  limits] were put in place.
+  limits] were put in place. {% assign timestamp="1:13:19" %}
 
 - [How does it contribute to the Bitcoin network when I run a node with a bigger than default mempool?]({{bse}}118137)
   Andrew Chow and Murch note potential downsides to a larger-than-default
   mempool including harming transaction rebroadcasting propagation and
-  non-signaling transaction replacement propagation.
+  non-signaling transaction replacement propagation. {% assign timestamp="1:16:48" %}
 
 - [What is the maximum number of inputs/outputs a transaction can have?]({{bse}}118452)
   Murch provides post-taproot activation input and output numbers showing a
-  3223 (P2WPKH) output maximum or a 1738 (P2TR keypath) input maximum.
+  3223 (P2WPKH) output maximum or a 1738 (P2TR keypath) input maximum. {% assign timestamp="1:21:18" %}
 
 - [Can 2-of-3 multisig funds be recovered without one of the xpubs?]({{bse}}118201)
   Murch explains that for multisig setups that don't use bare multisig, unless
@@ -220,7 +221,7 @@ answers posted since our last update.*
   required in order to spend. He indicates that "a backup strategy for a multisig
   wallet must both preserve the private keys as well as the condition scripts of
   the outputs" and recommends [descriptors][topic descriptors] as a method of
-  backing up condition scripts.
+  backing up condition scripts. {% assign timestamp="1:23:50" %}
 
 ## Releases and release candidates
 
@@ -235,7 +236,7 @@ release candidates.*
   use with the `blocksonly` configuration option, and speeds up wallet
   rescans when [compact block filters][topic compact block filters] are
   enabled---among many other new features, performance improvements, and
-  bug fixes.  See the [release notes][bcc rn] for details.
+  bug fixes.  See the [release notes][bcc rn] for details. {% assign timestamp="1:27:05" %}
 
 ## Notable code and documentation changes
 
@@ -251,7 +252,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   one or more wallets are being used.  With this change, a block will
   only be scanned for transactions matching a particular wallet if it
   was mined after the wallet's birthdate---the date recorded in the
-  wallet as when it was created.
+  wallet as when it was created. {% assign timestamp="1:30:27" %}
 
 - [Bitcoin Core #27626][] allows a peer who has requested our node
   provide [compact block relay][topic compact block relay] in
@@ -262,7 +263,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   peers to request any missing transactions from us, which can help if
   that other peer has become unresponsive.  This can help our peer
   validate the block faster, which may also help them use it sooner in
-  time-critical functions, such as mining.
+  time-critical functions, such as mining. {% assign timestamp="1:32:40" %}
 
 - [Bitcoin Core #25796][] adds a new `descriptorprocesspsbt` that can be
   used to update a [PSBT][topic psbt] with information that will help it
@@ -270,11 +271,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   provided to the RPC will be used to retrieve information from the mempool
   and UTXO set (and, if available, complete confirmed transactions when
   the node was started with the `txindex` configuration option).  The
-  retrieved information will then be used to fill in the PSBT.
+  retrieved information will then be used to fill in the PSBT. {% assign timestamp="1:35:24" %}
 
 - [Eclair #2668][] prevents Eclair from attempting to pay more in fees
   to claim an [HTLC][topic htlc] onchain than the value it will receive
-  from successfully resolving that HTLC.
+  from successfully resolving that HTLC. {% assign timestamp="1:37:17" %}
 
 - [Eclair #2666][] allows a remote peer receiving an [HTLC][topic htlc]
   to accept it even if the transaction fee that would need to be paid to
@@ -292,12 +293,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     need to pay more value than their current available balance, even
     when they might be the party receiving the payment.  For previous
     discussion of this problem, see [Newsletter #85][news85 stuck
-    funds].
+    funds]. {% assign timestamp="1:39:20" %}
 
 - [BTCPay Server 97e7e][] begins setting the [BIP78][] `minfeerate`
   (minimum feerate) parameter for [payjoin][topic payjoin] payments.
   See also the [bug report][btcpay server #4689] that lead to this
-  commit.
+  commit. {% assign timestamp="1:41:56" %}
 
 - [BIPs #1446][] makes a small change and a number of additions to the
   [BIP340][] specification of [schnorr signatures][topic schnorr
@@ -314,7 +315,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     messages, recommends how to use a hashed tag prefix, and provides
     recommendations for increasing safety when using the same key in
     different domains (such as signing transactions or signing
-    plain-text messages).
+    plain-text messages). {% assign timestamp="1:43:15" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27469,27626,25796,2668,2666,4689,1446" %}
