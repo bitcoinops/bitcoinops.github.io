@@ -41,7 +41,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     several suggested modifications to the opcodes in the MATT proposal
     based on the results of his experimental implementation.   Salvatore
     Ingala, the originator of the MATT proposal, [replied][ingala matt]
-    favorably.
+    favorably. {% assign timestamp="1:23" %}
 
 ## Waiting for confirmation #4: Feerate estimation
 
@@ -50,7 +50,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/04-feerate-estimation.md %}
+{% include specials/policy/en/04-feerate-estimation.md %} {% assign timestamp="24:19" %}
 
 ## Releases and release candidates
 
@@ -63,7 +63,7 @@ release candidates.*
   bug fixes and is intended to optimize the recently added mempool
   watching logic, and also fix several suspected inadvertent force close
   vectors".  For more information about the mempool-watching logic, see
-  [Newsletter #248][news248 lnd mempool].
+  [Newsletter #248][news248 lnd mempool]. {% assign timestamp="40:31" %}
 
 ## Notable code and documentation changes
 
@@ -79,17 +79,17 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   object parameter to accept the same fields as named parameters.
   For example, the `bumpfee` RPC can now be called with
   `src/bitcoin-cli -named bumpfee txid fee_rate=10` instead of
-  `src/bitcoin-cli -named bumpfee txid options='{"fee_rate": 10}'`.
+  `src/bitcoin-cli -named bumpfee txid options='{"fee_rate": 10}'`. {% assign timestamp="42:28" %}
 
 - [Eclair #2642][] adds a `closedchannels` RPC  that provides data
   about the node’s closed channels.  See also a similar PR from Core
-  Lightning mentioned in [Newsletter #245][news245 listclosedchannels].
+  Lightning mentioned in [Newsletter #245][news245 listclosedchannels]. {% assign timestamp="44:34" %}
 
 - [LND #7645][] makes sure that any user-provided fee rate in RPC calls to
   `OpenChannel`, `CloseChannel`, `SendCoins`, and `SendMany`
   is no less than a 'relay fee rate'. The change notes that "'Relay fee rate' may
   mean slightly different things depending on the backend. For bitcoind, it is
-  effectively max(relay fee, min mempool fee)".
+  effectively max(relay fee, min mempool fee)". {% assign timestamp="46:05" %}
 
 - [LND #7726][] will always spend all HTLCs paying the local node if a
   channel needs to be settled onchain.  It will sweep those HTLCs even
@@ -100,12 +100,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   Comments in the PR thread mention that LND is working toward other
   changes that will enhance its ability to calculate the costs and gains
   related to settling HTLCs (both offchain and onchain), allowing it to
-  make optimal decisions in the future.
+  make optimal decisions in the future. {% assign timestamp="48:20" %}
 
 - [LDK #2293][] disconnects and then reconnects to peers if they haven't
   responded within a reasonable amount of time.  This may mitigate a
   problem with other LN software that sometimes stops responding,
-  leading to channels being forced closed.
+  leading to channels being forced closed. {% assign timestamp="50:58" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2642,26485,7645,7726,2293" %}
