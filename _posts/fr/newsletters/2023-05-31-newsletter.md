@@ -265,5 +265,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [btcpay server 97e7e]: https://github.com/btcpayserver/btcpayserver/commit/97e7e60ceae2b73d63054ee38ea54ed265cc5b8e
 [news157 libsecp]: /en/newsletters/2021/07/14/#libsecp256k1-844
 [bcc rn]: https://bitcoincore.org/en/releases/25.0/
-[news252 incentives]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-d-incitation-
+[news252 incentives]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-dincitation
 [morcos limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html
