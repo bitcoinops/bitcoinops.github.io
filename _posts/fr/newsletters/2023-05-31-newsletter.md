@@ -9,8 +9,8 @@ lang: fr
 ---
 Le bulletin d'information de cette semaine décrit une proposition pour un nouveau protocole
 de gestion de joinpool et résume une idée pour relayer les transactions en utilisant le protocole Nostr.
-Vous y trouverez également une autre partie de notre série hebdomadaire limitée sur la politique mempool,
-ainsi que nos sections régulières résumant les principales questions et réponses postées sur le Bitcoin Stack Exchange,
+Vous y trouverez également une autre partie de notre série limitée hebdomadaire sur la politique du mempool,
+ainsi que nos sections régulières résumant les principales questions et réponses postées sur Bitcoin Stack Exchange,
 listant les nouvelles versions de logiciels et les versions candidates,
 et décrivant les changements notables apportés aux principaux logiciels de l'infrastructure Bitcoin.
 
@@ -21,8 +21,8 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
   un nouveau protocole de type [joinpool][topic joinpools] où les propriétaires de bitcoins
   choisissent d'utiliser une contrepartie comme cosignataire pour toutes les transactions
   pendant une certaine période de temps. Les propriétaires peuvent soit retirer unilatéralement
-  leurs bitcoins sur la chaîne après l'expiration du délai, soit les transférer instantanément
-  et en toute confiance hors de la chaîne à la contrepartie avant l'expiration du délai.
+  leurs bitcoins onchain après l'expiration du délai, soit les transférer offchain instantanément
+  et en toute confiance à la contrepartie avant l'expiration du délai.
 
     Comme tout utilisateur de Bitcoin, la contrepartie peut diffuser à tout moment une transaction
     onchain qui ne dépense que ses propres fonds. Si une sortie de cette transaction est utilisée
@@ -41,38 +41,36 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
       utilisés par certaines implémentations existantes de [coinjoin][topic coinjoin] peut empêcher
       tout utilisateur ou la contrepartie de déterminer quel utilisateur s'est retrouvé avec quels bitcoins.
 
-    - *Effectuer des transferts internes :* un utilisateur peut transférer ses fonds hors chaîne
+    - *Effectuer des transferts internes :* un utilisateur peut transférer ses fonds offchain
       à un autre utilisateur avec la même contrepartie. L'atomicité garantit que le destinataire
       recevra son argent ou que le prêteur sera remboursé. Un destinataire qui ne fait pas confiance
       à l'émetteur et à la contrepartie devra attendre autant de confirmations qu'il le ferait pour
       une transaction onchain normale.
 
-        Keceli et un commentateur [link][keceli reply0] à une recherche [précédente][harding reply0]
+        Keceli et un commentateur [renvoient][keceli reply0] à une recherche [précédente][harding reply0]
         décrivant comment un paiement zéro-conf peut être rendu non profitable à la double dépense en
-        l'associant à une liaison de fidélité qui peut être réclamée par tout mineur qui a observé
+        l'associant à un bon de fidélité qui peut être réclamé par tout mineur qui a observé
         les deux versions de la transaction doublement dépensée. Cela pourrait permettre aux destinataires
         d'accepter un paiement en quelques secondes même s'ils n'ont pas confiance dans les autres
         parties individuelles.
 
-    - *Paiement des factures LN :* un utilisateur peut rapidement s'engager à verser ses fonds hors
-      chaîne à la contrepartie si cette dernière connaît un secret, ce qui permet à l'utilisateur de
+    - *Paiement des factures LN :* un utilisateur peut rapidement s'engager à verser ses fonds offchain
+      à la contrepartie si cette dernière connaît un secret, ce qui permet à l'utilisateur de
       payer des factures de type LN [HTLC][topic HTLC] par l'intermédiaire de la contrepartie.
 
         Comme dans le cas des virements internes, un utilisateur ne peut pas recevoir des fonds en
-        toute confiance. Il ne doit donc pas révéler un secret avant qu'un paiement ait reçu un nombre
+        toute confiance. Il ne doit donc pas révéler le secret avant qu'un paiement ait reçu un nombre
         suffisant de confirmations ou qu'il soit garanti par une clause de fidélité qu'il juge convaincante.
 
     M. Keceli affirme que le protocole de base peut être mis en œuvre sur Bitcoin aujourd'hui en utilisant
     une interaction fréquente entre les membres du groupe. Si une proposition de [covenant][topic covenants]
     comme [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
     ou [OP_CAT + OP_CHEKSIGFROMSTACK][topic op_checksigfromstack] est mise en œuvre, les membres du joinpool
-    n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, qu'ils
-    effectueront un paiement, ou qu'ils se rendront à une réunion de l'équipe, les membres du joinpool
     n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, effectueront
     un paiement, ou rafraîchiront le timelock sur leurs fonds offchain.
 
     Chaque coinjoin, paiement ou rafraîchissement nécessite la publication d'un engagement dans une transaction
-    onchain, bien qu'un nombre pratiquement illimité d'opérations puisse être regroupé dans la même petite transaction.
+    onchain, bien qu'un nombre pratiquement illimité d'opérations puissent être regroupées dans la même petite transaction.
     Pour permettre aux opérations de se terminer rapidement, Keceli suggère qu'une transaction onchain soit effectuée
     toutes les cinq secondes environ, afin que les utilisateurs n'aient pas à attendre plus longtemps. Chaque transaction
     est séparée---il n'est pas possible de combiner les engagements de plusieurs transactions en utilisant
@@ -120,8 +118,8 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
   qui pourraient ne pas bien se propager sur le réseau P2P des nœuds complets Bitcoin qui fournissent des services de relais.
 
     En particulier, Jager examine la possibilité d'utiliser Nostr pour le relais des paquets de transactions, comme le relais
-    d'une transaction ancestrale avec un taux inférieur à la valeur minimale acceptée en l'associant à un descendant qui paie
-    des frais suffisamment élevés pour compenser la déficience de son ancêtre. Cela rend la substitution de frais
+    d'une transaction ascendante avec un taux inférieur à la valeur minimale acceptée en l'associant à un descendant qui paie
+    des frais suffisamment élevés pour compenser la déficience de son ascendant. Cela rend la substitution de frais
     [CPFP][topic cpfp] plus fiable et plus efficace, et c'est une fonctionnalité appelée [package relay][topic package relay]
     que les développeurs de Bitcoin Core ont travaillé à mettre en œuvre pour le réseau P2P de Bitcoin. L'un des défis de
     l'examen de la conception et de la mise en œuvre du relais de paquet est de s'assurer que les nouvelles méthodes de
@@ -161,7 +159,7 @@ certaines des questions et réponses les plus populaires depuis notre dernière 
 
 - [Quelle est la raison d'être de la limite de taille des descendants ?]({{bse}}118160)
   Sdaftuar explique qu'étant donné que les algorithmes d'extraction et d'éviction (voir [Newsletter #252][news252 incentives])
-  prennent un temps quadratique, O(n²) en fonction du nombre d'ancêtres ou de descendants, des [limites politiques
+  prennent un temps quadratique, O(n²) en fonction du nombre d'ascendant ou de descendants, des [limites politiques
   conservatrices][morcos limits] ont été mises en place.
 
 - [Quelle est la contribution au réseau Bitcoin lorsque je fais fonctionner un nœud avec un mempool plus grand que celui par défaut ?]({{bse}}118137)
