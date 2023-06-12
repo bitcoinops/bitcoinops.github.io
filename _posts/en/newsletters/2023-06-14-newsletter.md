@@ -82,12 +82,57 @@ how wallets can use that policy most effectively._
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Allow inbound whitebind connections to more aggressively evict peers when slots are full][review club 27600]
+is a PR by Matthew Zipkin (pinheadmz) that improves a node operator's
+ability in certain cases to configure desired peers for the node.
+Specifically, if the node operator has whitelisted a potential inbound
+peer (for example, a light client controlled by the node operator), then
+without this PR, and depending on the node's peer state, it's possible
+that the node will deny this light client's connection attempt.
+
+This PR makes it much more likely that the desired peer will be able to
+connect to our node. It does this by evicting an existing inbound peer
+that, without this PR, would have been ineligible for eviction.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/27501#l-FIXME"
+  q0="Why does this PR only apply to inbound peer requests?"
+  a0="Our node _initiates_ outbound connections; this PR modifies how
+      the node _reacts_ to an incoming connection request.
+      Outbound nodes can be evicted, but that's done with an entirely
+      separate algorithm."
+  a0link="https://bitcoincore.reviews/27600#l-33"
+
+  q1="What is the impact of the `force` parameter of `SelectNodeToEvict()`
+      on the return value?"
+  a1="Specifying `force` as `true` ensures that a non-`noban` inbound peer
+      is returned, if one exists, even if it would otherwise be protected
+      from eviction.
+      Without the PR, it would not return a peer if they all are excluded
+      (protected) from eviction."
+  a1link="https://bitcoincore.reviews/27600#l-70"
+
+  q2="How is the function signature of `EraseLastKElements()` changed in this PR?"
+  a2="It changed from being a `void` return function to returning the last
+      entry that was _removed_ from the eviction candidates list. (This
+      \"protected\" node might be evicted if necessary.)
+      However, as a result of discussion during the review club meeting,
+      the PR was later simplified such that this function is no longer modified."
+  a2link="https://bitcoincore.reviews/27600#l-126"
+
+  q3="`EraseLastKElements` used to be a templated function, but this PR removes
+      the two template arguments. Why? Are there any downsides to this change?"
+  a3="This function was and (with this PR) is being called with unique template
+      arguments, so there is no need for the function to be templated.
+      The PR's changes to this function were reverted, so it's still templated,
+      because changing this would be beyond the scope of the PR."
+  a3link="https://bitcoincore.reviews/27600#l-126"
+
+  q4="Suppose we pass a vector of 40 eviction candidates to `SelectNodeToEvict()`.
+      Before and after this PR, what’s the theoretical maximum of Tor nodes
+      that can be protected from eviction?"
+  a4="Both with and without the PR, the number would be 34 out of 40, assuming
+      they're not `noban` and inbound."
+  a4link="https://bitcoincore.reviews/27600#l-156"
 %}
 
 ## Releases and release candidates
@@ -140,3 +185,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [bs sp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021750.html
 [jager annex4]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021737.html
 [Core Lightning 23.05.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.1
+[review club 27600]: https://bitcoincore.reviews/27600
