@@ -156,7 +156,11 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27501][] mempool / rpc: add getprioritisedtransactions, delete a mapDeltas entry when delta==0 FIXME:AdamJonas
+- [Bitcoin Core #27501][] adds a `getprioritisedtransactions` RPC that
+  returns a map of all fee deltas created by the user with
+  `prioritisetransaction`, indexed by txid. The map also indicates whether
+  each transaction is present in the mempool.  See also [Newsletter
+  #250][news250 getprioritisedtransactions].
 
 - [Core Lightning #6243][] updates the `listconfigs` RPC to put all
   configuration information in a single dictionary and also passes the
@@ -186,3 +190,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [jager annex4]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021737.html
 [Core Lightning 23.05.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.1
 [review club 27600]: https://bitcoincore.reviews/27600
+[news250 getprioritisedtransactions]: /en/newsletters/2023/05/10/#bitcoin-core-pr-review-club
