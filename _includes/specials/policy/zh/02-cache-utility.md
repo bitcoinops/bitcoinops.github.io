@@ -20,5 +20,5 @@ Bitcoin Core 客户端的交易池会为每一笔交易及其祖先交易计算�
 
 区块空间的稀缺性，产生了降低交易体积的压力，并鼓励开发者构造更有效率的交易。下周的专栏中，我们会探索链上交易节约手续费的实用策略和技术。
 
-[policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
+[policy01]: /zh/newsletters/2023/05/17/#等待确认-1-我们为什么需要一个交易池
 [np-hard problem]: https://en.wikipedia.org/wiki/NP-hardness
