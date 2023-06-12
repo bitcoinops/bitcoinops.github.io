@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Analysis of alternative design for `OP_VAULT` using MATT-style covenants"
     url: /en/newsletters/2023/05/03/#matt-based-vaults
 
+  - title: "Discussion about storing vault-related data in taproot annexes"
+    url: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
