@@ -67,14 +67,14 @@ to popular Bitcoin infrastructure software.
   effectively use it.  Several insightful comments have already been
   posted on the [PR][bips #1458] for the BIP.
 
-## Waiting for confirmation #5: Feerates for DoS protection
+## Waiting for confirmation #5: Policy for Protection of Node Resources
 
 _A limited weekly [series][policy series] about transaction relay,
 mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/05-feerate-dos-protection.md %}
+{% include specials/policy/en/05-dos.md %}
 
 ## Bitcoin Core PR Review Club
 
