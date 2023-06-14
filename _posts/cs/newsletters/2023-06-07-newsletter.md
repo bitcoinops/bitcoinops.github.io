@@ -1,5 +1,5 @@
 ---
-title: Zpravodaj „Bitcoin Optech” č. 254'
+title: 'Zpravodaj „Bitcoin Optech” č. 254'
 permalink: /cs/newsletters/2023/06/07/
 name: 2023-06-07-newsletter-cs
 slug: 2023-06-07-newsletter-cs
