@@ -30,7 +30,7 @@ un seul opcode CTV pourrait valider toutes les sorties. COCV est donc moins effi
 
     Dans un autre fil de discussion, Halseth a [posté][halseth matt-joinpool] sur l'utilisation de MATT plus [OP_CAT][]
     pour créer un [joinpool][topic joinpools] (également appelé _coinpool_ ou _payment pool_). Là encore, il fournit une
-    [démo interactive][démo joinpool] utilisant Tapsim. Il a également suggéré plusieurs modifications aux opcodes de la
+    [démo interactive][demo joinpool] utilisant Tapsim. Il a également suggéré plusieurs modifications aux opcodes de la
     proposition MATT sur la base des résultats de sa mise en œuvre expérimentale.  Salvatore Ingala, l'auteur de la proposition
     MATT, [a répondu][ingala matt] favorablement.
 
