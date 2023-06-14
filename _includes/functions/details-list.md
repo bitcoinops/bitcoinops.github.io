@@ -8,6 +8,16 @@
     31 Total -->
   {% assign includes_size = include | size %}
   {% if includes_size >= 31 %}{% include ERROR143_too_many_params_passed_to_details_list %}{% endif %}
+
+  <!-- Ensure only allowed parameter names are used -->
+  {% for param in include %}
+    {% assign parameter_name = param[0] | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' %}
+    {% case parameter_name %}
+      {% when 'q' or 'a' or 'alink' %}<!-- expected parameter names; do nothing -->
+      {% else %}
+        {% include ERROR12_unexpected_parameter_name %}
+    {% endcase %}
+  {% endfor %}
 {% endcapture %}
 <div class="{{include.class | default: 'qa_details'}} {{jekyll.environment}}" markdown="1">
 {% for i in (0..9) %}
