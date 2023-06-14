@@ -42,7 +42,7 @@ lang: zh
 
   q4="<!--an-alternative-to-the-approach-taken-in-the-pr-would-be-to-add-an-additional-headers-sync-peer-after-a-timeout-fixed-or-random-what-is-the-benefit-of-the-approach-taken-in-the-pr-over-this-alternative-->相对于本 PR 所采取的办法，另一种办法是在超时（无论固定时间还是随机）后添加一个额外的区块头同步对等节点。那么，与这种替代方法相比，本 PR 有何优势呢？"
   a4="其中一个好处是，使用 `inv` 向你宣布新区块的节点有更高的概率会响应你的请求。另一种好处是，最先成功使用  `inv` 向你宣布新区块的节点通常也是一个非常快的对等节点。所以，在发现第一个对等节点网速较慢之后，我们不会再选另一个比较慢的对等节点。"
-  q4link="https://bitcoincore.reviews/25720#l-135"
+  a4link="https://bitcoincore.reviews/25720#l-135"
 %}
 
 ## 新版本和候选版本

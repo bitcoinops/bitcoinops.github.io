@@ -93,7 +93,7 @@ des en-têtes).
   en premier est souvent aussi un pair très rapide. Nous ne choisirons donc pas d'autre pair
   lent si, pour une raison quelconque, notre pair initial est lent."
 
-  q4link="https://bitcoincore.reviews/25720#l-135"
+  a4link="https://bitcoincore.reviews/25720#l-135"
 %}
 
 ## Mise à jour et Pré-version
