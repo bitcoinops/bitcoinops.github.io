@@ -72,6 +72,9 @@ optech_mentions:
   - title: "WabiSabi implemented in Wasabi 2.0"
     url: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin
 
+  - title: "Discussion about risks for coinjoin-style protocols of relaying taproot annexes"
+    url: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin
