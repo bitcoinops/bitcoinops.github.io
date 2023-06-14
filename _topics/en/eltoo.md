@@ -1,6 +1,9 @@
 ---
 title: Eltoo
 
+aliases:
+  - LN-Symmetry
+
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
 categories:
@@ -9,7 +12,7 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Eltoo** is a proposed enforcement layer for LN that allows any later
+  **Eltoo** (also called **LN-Symmetry**) is a proposed enforcement layer for LN that allows any later
   channel state to replace any earlier channel state.  Although eltoo
   can be used with a penalty mechanism similar to the one used with
   existing LN channels, eltoo doesn't need the penalty mechanism in
@@ -65,6 +68,9 @@ optech_mentions:
 
   - title: "Using transaction introspection to prevent pinning in eltoo channels"
     url: /en/newsletters/2022/05/18/#using-transaction-introspection-to-prevent-rbf-pinning
+
+  - title: "Discussion about the use of the annex field in LN-symmetry"
+    url: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
