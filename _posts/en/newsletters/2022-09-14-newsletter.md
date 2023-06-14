@@ -95,7 +95,7 @@ This PR affects only the first phase (headers download).
   manages to send us the block `inv` first is often also a very fast peer.
   So we'd not pick another slow peer if for some reason our initial
   peer is slow."
-  q4link="https://bitcoincore.reviews/25720#l-135"
+  a4link="https://bitcoincore.reviews/25720#l-135"
 %}
 
 ## Releases and release candidates
