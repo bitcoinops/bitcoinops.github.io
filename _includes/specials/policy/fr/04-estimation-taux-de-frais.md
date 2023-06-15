@@ -9,12 +9,12 @@ L'estimation des frais est compliquée par l'irrégularité de la production d'e
 payer un commerçant dans un délai d'une heure pour recevoir ses marchandises. L'utilisateur peut s'attendre à ce qu'un bloc soit
 extrait toutes les 10 minutes, et donc viser un emplacement dans les 6 blocs suivants. Cependant, il est tout à fait possible
 qu'il faille 45 minutes pour trouver un bloc. Les évaluateurs de frais doivent faire le lien entre l'urgence ou le délai souhaité
-par l'utilisateur (quelque chose comme "Je veux que cela soit confirmé avant la fin de la journée de travail") et l'offre d'espace
+par l'utilisateur (quelque chose comme "Je veux que cela soit confirmé avant la fin de la journée") et l'offre d'espace
 de blocs (un certain nombre de blocs). De nombreux estimateurs de frais relèvent ce défi en exprimant les objectifs de confirmation
 en nombre de blocs, en plus du temps.
 
 En l'absence d'informations sur les transactions avant leur confirmation, il est possible de construire un estimateur de frais naïf
-qui utilise des données historiques sur les taux de transactions qui ont tendance à atterrir dans les blocs. Comme cet estimateur ne
+qui utilise des données historiques sur les taux des transactions qui ont tendance à intégrer les blocs. Comme cet estimateur ne
 tient pas compte des transactions en attente de confirmation dans les pools de mémoire, il deviendrait très imprécis en cas de
 fluctuations inattendues de la demande d'espace de bloc et d'intervalles de bloc occasionnellement longs. Son autre faiblesse réside
 dans le fait qu'il s'appuie sur des informations contrôlées entièrement par les mineurs, qui seraient en mesure de faire grimper les
@@ -23,8 +23,8 @@ taux de frais en incluant de fausses transactions à taux de frais élevé dans 
 Heureusement, le marché de l'espace de blocs n'est pas une vente aux enchères à l'aveugle. Nous avons mentionné dans notre
 [premier article][policy01] que le fait de conserver un mempool et de participer au réseau de relais de transactions de pair à pair
 permet à un nœud de voir les offres des utilisateurs. L'estimateur de frais de Bitcoin Core utilise également des données
-historiques pour calculer la probabilité qu'une transaction à un taux `f` soit confirmée. L'estimateur de frais de Bitcoin Core
-utilise également des données historiques pour calculer la probabilité qu'une transaction à la fréquence `f` soit confirmée dans un
+historiques pour calculer la probabilité qu'une transaction à un taux `t` soit confirmée. L'estimateur de frais de Bitcoin Core
+utilise également des données historiques pour calculer la probabilité qu'une transaction à la fréquence `t` soit confirmée dans un
 délai de `n` blocs, mais il suit spécifiquement la hauteur à laquelle le nœud voit une transaction pour la première fois et le
 moment où elle est confirmée. Cette méthode permet de contourner les activités qui se déroulent en dehors du marché public en les
 ignorant. Si les mineurs incluent dans leurs propres blocs des transactions dont le taux de confirmation est artificiellement élevé,
