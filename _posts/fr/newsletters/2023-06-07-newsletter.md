@@ -9,7 +9,7 @@ lang: fr
 ---
 La bulletin de cette semaine résume les discussions de la liste de diffusion sur l'utilisation de la proposition MATT pour gérer
 les joinpools et répliquer les fonctions de la proposition `OP_CHECKTEMPLATEVERIFY`. Vous y trouverez également une autre
-contribution à notre série hebdomadaire limitée sur la politique mempool, ainsi que nos sections régulières pour annoncer les
+contribution à notre série hebdomadaire limitée sur la politique du mempool, ainsi que nos sections régulières pour annoncer les
 nouvelles versions de logiciels et les versions candidates, et pour décrire les changements notables apportés aux principaux
 logiciels de l'infrastructure Bitcoin.
 
@@ -31,7 +31,7 @@ un seul opcode CTV pourrait valider toutes les sorties. COCV est donc moins effi
     Dans un autre fil de discussion, Halseth a [posté][halseth matt-joinpool] sur l'utilisation de MATT plus [OP_CAT][]
     pour créer un [joinpool][topic joinpools] (également appelé _coinpool_ ou _payment pool_). Là encore, il fournit une
     [démo interactive][demo joinpool] utilisant Tapsim. Il a également suggéré plusieurs modifications aux opcodes de la
-    proposition MATT sur la base des résultats de sa mise en œuvre expérimentale.  Salvatore Ingala, l'auteur de la proposition
+    proposition MATT sur la base des résultats de sa mise en œuvre expérimentale. Salvatore Ingala, l'auteur de la proposition
     MATT, [a répondu][ingala matt] favorablement.
 
 ## En attente de confirmation #4 : Estimation du taux de frais
