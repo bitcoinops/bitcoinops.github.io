@@ -142,7 +142,7 @@ _Une [série][policy series] hebdomadaire limitée sur le relais de transaction,
 des transactions minières---y compris pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
 consensus et comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/en/03-bidding-for-block-space.md %}
+{% include specials/policy/fr/03-encheres-pour-l-achat-d-un-bloc-d-espace.md %}
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 
