@@ -47,7 +47,7 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
       à l'émetteur et à la contrepartie devra attendre autant de confirmations qu'il le ferait pour
       une transaction onchain normale.
 
-        Keceli et un commentateur [link][keceli reply0] à une recherche [précédente][harding reply0]
+        Keceli et un commentateur [lient][keceli reply0] à une recherche [précédente][harding reply0]
         décrivant comment un paiement zéro-conf peut être rendu non profitable à la double dépense en
         l'associant à une liaison de fidélité qui peut être réclamée par tout mineur qui a observé
         les deux versions de la transaction doublement dépensée. Cela pourrait permettre aux destinataires
@@ -66,8 +66,6 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
     une interaction fréquente entre les membres du groupe. Si une proposition de [covenant][topic covenants]
     comme [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
     ou [OP_CAT + OP_CHEKSIGFROMSTACK][topic op_checksigfromstack] est mise en œuvre, les membres du joinpool
-    n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, qu'ils
-    effectueront un paiement, ou qu'ils se rendront à une réunion de l'équipe, les membres du joinpool
     n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, effectueront
     un paiement, ou rafraîchiront le timelock sur leurs fonds offchain.
 
@@ -185,7 +183,7 @@ certaines des questions et réponses les plus populaires depuis notre dernière 
 Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
 les versions candidates.*
 
-- [Bitcoin Core 25.0][] est une version pour la prochaine version majeure de Bitcoin Core.  Cette version ajoute une nouvelle RPC
+- [Bitcoin Core 25.0][] est une version pour la prochaine version majeure de Bitcoin Core. Cette version ajoute une nouvelle RPC
 `scanblocks`, simplifie l'utilisation de `bitcoin-cli`, ajoute le support [miniscript][topic miniscript] à la RPC `finalizepsbt`,
 réduit l'utilisation de la mémoire par défaut avec l'option de configuration `blocksonly`, et accélère les rescans de portefeuilles
 lorsque les [filtres de blocs compacts][topic compact block filters] sont activés---parmi beaucoup d'autres nouvelles
