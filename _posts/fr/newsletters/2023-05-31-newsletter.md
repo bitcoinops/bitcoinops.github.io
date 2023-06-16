@@ -248,7 +248,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27469,27626,25796,2668,2666,4689,1446" %}
-[policy series]: /fr/blog/attente-de-la-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [bitcoin core 25.0]: https://bitcoincore.org/bin/bitcoin-core-25.0/
 [1ml stats]: https://1ml.com/statistics
 [arc specs]: https://github.com/ark-network/specs

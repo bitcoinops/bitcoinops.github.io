@@ -28,8 +28,7 @@ dépense de la sortie de changement plus tard. Malheureusement, de telles combin
 à moins que le portefeuille ne dispose d'un grand pool d'UTXO avec une grande variété de montants.
 
 Les types de sortie modernes sont plus efficaces en termes d'espace de blocs que les types de sortie plus anciens. Par exemple,
-dépenser une entrée P2TR coûte moins de 2/5e du poids d'une entrée P2PKH (essayez-le avec notre [calculateur de taille de transaction
-[]). (Pour les portefeuilles à plusieurs signatures, le schéma [MuSig2][topic musig] et le protocole FROST récemment finalisés
+dépenser une entrée P2TR coûte moins de 2/5e du poids d'une entrée P2PKH (essayez-le avec notre [calculateur de taille de transaction][]). Pour les portefeuilles à plusieurs signatures, le schéma [MuSig2][topic musig] et le protocole FROST récemment finalisés
 permettent de réaliser d'énormes économies en autorisant l'encodage d'une fonctionnalité à plusieurs signatures dans ce qui
 ressemble à une entrée à une seule signature. En particulier à une époque où la demande d'espace de blocs explose, un portefeuille
 utilisant des types de sortie modernes se traduit à lui seul par d'importantes économies.
