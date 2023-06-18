@@ -87,7 +87,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2642,26485,7645,7726,2293" %}
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [news226 matt]: /fr/newsletters/2022/11/16/#contrats-intelligents-generaux-en-bitcoin-via-des-clauses-restrictives
 [news249 matt]: /fr/newsletters/2023/05/03/#coffres-forts-bases-sur-matt
 [news253 sweep]: /fr/newsletters/2023/05/31/#eclair-2668
