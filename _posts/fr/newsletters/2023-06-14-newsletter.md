@@ -7,56 +7,42 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter summarizes a discussion about allowing relay of
-transactions containing data in the taproot annex field and links to a
-draft BIP for silent payments.  Also included is another entry in our
-limited weekly series about mempool policy, plus our regular sections
-summarizing a Bitcoin Core PR Review Club meeting, announcing new
-software releases and release candidates, and describing notable changes
-to popular Bitcoin infrastructure software.
+Le bulletin de cette semaine résume une discussion sur l'autorisation de relayer les transactions contenant des données dans le
+champ annexe taproot et des liens vers un projet de BIP pour les paiements silencieux. Vous trouverez également une nouvelle
+contribution à notre série hebdomadaire limitée sur la politique mempool, ainsi que nos sections habituelles résumant une réunion
+du Bitcoin Core PR Review Club, annonçant les nouvelles versions de logiciels et les versions candidates, et décrivant les
+principaux changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
 
-## News
+## Nouvelles
 
-- **Discussion about the taproot annex:** Joost Jager [posted][jager
-  annex] to the Bitcoin-Dev mailing list a request for a change in the Bitcoin Core
-  transaction relay and mining policy to allow storing arbitrary data in
-  the [taproot][topic taproot] annex field.  This field is an optional
-  part of the witness data for taproot transactions.  If present,
-  signatures in taproot and [tapscript][topic tapscript] must commit to
-  its data (making it impossible for a third party to add, remove, or
-  change) but it has no other defined purpose at present---it's reserved
-  for future protocol upgrades, especially soft forks.
+- **Discussion sur les annexes à taproot :** JJoost Jager a [posté][jager annex] sur la liste de diffusion Bitcoin-Dev
+  une demande de modification du relais de transaction et de la politique de minage de Bitcoin Core afin de permettre le
+  stockage de données arbitraires dans le champ annexe [taproot][topic taproot].  Ce champ est une partie optionnelle des
+  données du témoin pour les transactions taproot. S'il est présent, les signatures dans taproot et [tapscript][topic tapscript]
+  doivent s'engager sur ses données (ce qui rend impossible l'ajout, la suppression ou la modification par un tiers),
+  mais il n'a pas d'autre objectif défini pour l'instant---il est réservé aux futures mises à jour du protocole, en particulier
+  aux soft forks.
 
-    Although there have been [previous proposals][riard annex] to define
-    a format for the annex, these have not seen widespread acceptance
-    and implementation.  Jager proposed two formats ([1][jager annex],
-    [2][jager annex2]) that could be used to allow anyone to add
-    arbitrary data to the annex in a way that would not significantly
-    complicate later standardization efforts that might be bundled with
-    a soft fork.
+    Bien qu'il y ait eu des [propositions antérieures][riard annex] pour définir un format pour l'annexe, elles n'ont pas été
+    largement acceptées et mises en œuvre. Jager a proposé deux formats ([1][jager annex], [2][jager annex2]) qui pourraient
+    être utilisés pour permettre à quiconque d'ajouter des données arbitraires à l'annexe d'une manière qui ne compliquerait
+    pas de manière significative les efforts de normalisation ultérieurs qui pourraient être regroupés avec un soft fork.
 
-    Greg Sanders [replied][sanders annex] to ask what data Jager
-    specifically wanted to store in the annex and described his own use
-    for the annex in testing the [LN-Symmetry][topic eltoo] protocol
-    with the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
-    proposal using Bitcoin Inquisition (see [Newsletter #244][news244
-    annex]).  Sanders also described a problem with the annex: in a
-    multi-party protocol (such as a [coinjoin][topic coinjoin]), each
-    signature only commits to the annex for the input containing that
-    signature---not the annexes for other inputs in the same
-    transaction.  That means if Alice, Bob, and Mallory sign a coinjoin
-    together, there's no way Alice and Bob can prevent Mallory from
-    broadcasting a version of the transaction with a large annex that
-    delays its confirmation.  Because Bitcoin Core and other full nodes
-    don't currently relay transactions that contain annexes, this is not
-    a problem at present.  Jager [replied][jager annex4] that he wants
-    to store signatures from ephemeral keys for a type of [vault][topic
-    vaults] that doesn't require a soft fork, and he  [suggested][jager
-    annex3] that some
-    [previous work][bitcoin core #24007] in Bitcoin Core could possibly
-    address the problem with annex relay in some multiparty protocols.
+    Greg Sanders [a répondu][annexe sanders] pour demander quelles données Jager voulait spécifiquement stocker dans
+    l'annexe et a décrit sa propre utilisation de l'annexe en testant le protocole [LN-Symmetry][topic eltoo] avec la
+    proposition de soft fork [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] à l'aide de Bitcoin Inquisition (voir le
+    [Bulletin d'information #244][news244 annex]). Sanders a également décrit un problème avec l'annexe : dans un protocole
+    multipartite (comme un [coinjoin][topic coinjoin]), chaque signature n'engage que l'annexe pour l'entrée contenant
+    cette signature---et non les annexes pour d'autres entrées dans la même transaction. Cela signifie que si Alice, Bob
+    et Mallory signent ensemble une coinjoin, Alice et Bob n'ont aucun moyen d'empêcher Mallory de diffuser une version
+    de la transaction avec une annexe importante qui retarde sa confirmation. Étant donné que Bitcoin Core et d'autres nœuds
+    complets ne relaient pas actuellement les transactions contenant des annexes, ce problème ne se pose pas pour l'instant.
+    Jager [a répondu][jager annex4] qu'il souhaite stocker des signatures à partir de clés éphémères pour un type de
+    [coffre-fort][topic vaults] qui ne nécessite pas de soft fork, et il [a suggéré][jager annex3] que certains
+    [travaux antérieurs][bitcoin core #24007] dans Bitcoin Core pourraient éventuellement résoudre le problème du relais
+    des annexes dans certains protocoles multipartites.
 
-- **Draft BIP for silent payments:** Josie Baker and Ruben Somsen
+- **Projet de BIP pour les paiements silencieux :** Josie Baker and Ruben Somsen
   [posted][bs sp] to the Bitcoin-Dev mailing list a draft BIP for
   [silent payments][topic silent payments], a type of reusable payment
   code that will produce a unique onchain address each time it is used,
