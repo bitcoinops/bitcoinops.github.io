@@ -127,7 +127,37 @@ how wallets can use that policy most effectively._
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Greenlight libraries open sourced:**
+  Non-custodial CLN node service provider [Greenlight][news162 greenlight] has
+  [announced][decker twitter] a [repository][github greenlight] of client
+  libraries and language bindings as well a [testing framework guide][greenlight testing].
+
+- **Tapscript debugger Tapsim:**
+  [Tapsim][github tapsim] is a script execution debugging (see [Newsletter
+  #254][news254 tapsim]) and visualization tool for
+  [tapscript][topic tapscript] using btcd.
+
+- **Bitcoin Keeper 1.0.4 announced:**
+  [Bitcoin Keeper][] is a mobile wallet that supports multisig, hardware signers,
+  [BIP85][], and with the latest release, [coinjoin][topic coinjoin] support
+  using the [Whirlpool protocol][gitlab whirlpool].
+
+- **Lightning wallet EttaWallet announced:**
+  The mobile [EttaWallet][github ettawallet] was recently [announced][ettawallet
+  blog] with Lightning features enabled by LDK and a strong usability focus
+  inspired by the [daily spending wallet][bitcoin design guide] reference design
+  from the Bitcoin Design Community.
+
+- **zkSNARK-based block header sync PoC announced:**
+  [BTC Warp][github btc warp] is a light client sync proof-of-concept
+  using zkSNARKs to prove and verify a chain of Bitcoin block headers. A [blog post][btc warp
+  blog] provides details on the approaches taken.
+
+- **lnprototest v0.0.4 released:**
+  The [lnprototest][github lnprototest] project is a test suite for LN including "a set of test
+  helpers written in Python3, designed to make it easy to write new tests when
+  you propose changes to the lightning network protocol, as well as test
+  existing implementations".
 
 ## Releases and release candidates
 
@@ -176,3 +206,17 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [t 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003982.html
 [v 2p3]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003981.html
 [eclair v0.9.0]: https://github.com/ACINQ/eclair/releases/tag/v0.9.0
+[news162 greenlight]: /en/newsletters/2021/08/18/#blockstream-announces-non-custodial-ln-cloud-service-greenlight
+[decker twitter]: https://twitter.com/Snyke/status/1666096470884515840
+[github greenlight]: https://github.com/Blockstream/greenlight
+[greenlight testing]: https://blockstream.github.io/greenlight/tutorials/testing/
+[github tapsim]: https://github.com/halseth/tapsim
+[news254 tapsim]: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+[Bitcoin Keeper]: https://bitcoinkeeper.app/
+[gitlab whirlpool]: https://code.samourai.io/whirlpool/whirlpool-protocol
+[github ettawallet]: https://github.com/EttaWallet/EttaWallet
+[ettawallet blog]: https://rukundo.mataroa.blog/blog/introducing-ettawallet/
+[bitcoin design guide]: https://bitcoin.design/guide/daily-spending-wallet/
+[github btc warp]: https://github.com/succinctlabs/btc-warp
+[btc warp blog]: https://blog.succinct.xyz/blog/btc-warp
+[github lnprototest]: https://github.com/rustyrussell/lnprototest
