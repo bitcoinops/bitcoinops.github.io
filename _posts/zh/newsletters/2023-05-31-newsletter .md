@@ -1,6 +1,6 @@
 ---
 title: 'Bitcoin Optech Newsletter #253'
-permalink: /en/newsletters/2023/05/31/
+permalink: /zh/newsletters/2023/05/31/
 name: 2023-05-31-newsletter-zh
 slug: 2023-05-31-newsletter-zh
 type: newsletter
@@ -15,13 +15,13 @@ lang: zh
 
     与任何比特币用户一样，交易对手可以随时广播仅花费自己资金的链上交易。如果该交易的输出被用作将资金从所有者转移到交易对手的链下交易的输入，则除非链上交易在合理的时间内确认，否则链下转移将无效。在这种情况下，交易对手在收到已签名的链下交易之前不会签署他们的链上交易。这提供了从所有者到交易对手的无信任单跳、单向原子传输协议。Keceli 描述了这种原子传输协议的三种用途：
 
-    - *混币：* joinpool 中的多个用户都可以在交易对手的合作下，将他们当前的链下价值原子互换为等量的新链下价值。这可以快速执行，因为链上组件的故障只会取消互换，将所有资金返回到它们开始的地方。类似于一些现有的[coinjoin][topic coinjoin]实现所使用的盲化协议可以防止任何用户或交易对手确定哪个用户最终获得了哪些比特币。
+    - *<!--mixing-coins-->混币：* joinpool 中的多个用户都可以在交易对手的合作下，将他们当前的链下价值原子互换为等量的新链下价值。这可以快速执行，因为链上组件的故障只会取消互换，将所有资金返回到它们开始的地方。类似于一些现有的[coinjoin][topic coinjoin]实现所使用的盲化协议可以防止任何用户或交易对手确定哪个用户最终获得了哪些比特币。
 
-    - *进行内部转账：* 一个用户可以将他们的链下资金转移到具有相同交易对手的另一个用户。原子性确保收款人会得到他们的钱或付款方会收到退款。对于不信任支付方和交易对手方的接收方，他们需要等待与常规链上交易一样多的确认。
+    - *<!--making-internal-transfers-->进行内部转账：* 一个用户可以将他们的链下资金转移到具有相同交易对手的另一个用户。原子性确保收款人会得到他们的钱或付款方会收到退款。对于不信任支付方和交易对手方的接收方，他们需要等待与常规链上交易一样多的确认。
 
         Keceli 和一位评论员[链接到][keceli reply0] [之前的][harding reply0]研究，该研究描述了如何通过将零确认支付与诚实保证金配对来使得零确认支付与双花交易变得不经济，任何观察到双花交易的两个版本的矿工都可以申领诚实保证金。这可能允许收款人在几秒钟内接受付款，即使他们不信任任何其他人。
 
-    - *支付 LN 发票：* 如果交易对手知道秘密值，用户可以快速承诺将其链下资金支付给交易对手，从而允许用户通过交易对手支付 LN 类型的[HTLC][topic HTLC]发票。
+    - *<!--paying-ln-invoices-->支付 LN 发票：* 如果交易对手知道秘密值，用户可以快速承诺将其链下资金支付给交易对手，从而允许用户通过交易对手支付 LN 类型的[HTLC][topic HTLC]发票。
 
         与内部转账的问题类似，用户无法无需信任地接收资金，因此他们不应在付款收到足够数量的确认或由他们认为有说服力的诚实保证金担保之前透露秘密值。
 
@@ -31,13 +31,13 @@ lang: zh
 
     在邮件列表中发布的有关协议的评论包括：
 
-    - *更多文件的请求：* [至少][stone reply]有两位[受访者][dryja reply]要求提供有关系统如何工作的额外文件，因为邮件列表中提供的高级描述很难分析。此后，Keceli 开始发布[规范草案][arc specs]。
+    - *<!--a-request-for-more-documentation-->更多文件的请求：* [至少][stone reply]有两位[受访者][dryja reply]要求提供有关系统如何工作的额外文件，因为邮件列表中提供的高级描述很难分析。此后，Keceli 开始发布[规范草案][arc specs]。
 
     - *担心与 LN 相比接收速度较慢：* [有几个][dryja reply]人[指出][harding reply1]，在最初的设计中，无法在不等待足够数量的确认的情况下从 joinpool（链上或者链下）获得无需信任的支付。这可能需要数小时，而目前许多 LN 付款不到一秒即可完成。即使有诚实保证金，LN 的平均速度也会更快。
 
-    - *担心链上占用空间很大：* 一个[回复][jk_14]指出，每五秒进行一次交易，大约 200 个这样的交易对手将消耗每个区块的整个空间。另一个[回复][harding reply0]假设交易对手的每笔链上交易的大小大致相当于 LN 通道开放或合作关闭交易的大小，因此拥有 100 万用户的交易对手每年创建 630 万笔链上交易将使用相当于每个用户每年平均打开或关闭 6.3 个通道的空间；因此，LN 的链上成本可能低于使用这种交易对手，直到它达到大规模采用。
+    - *<!--concern-that-the-onchain-footprint-is-high-->担心链上占用空间很大：* 一个[回复][jk_14]指出，每五秒进行一次交易，大约 200 个这样的交易对手将消耗每个区块的整个空间。另一个[回复][harding reply0]假设交易对手的每笔链上交易的大小大致相当于 LN 通道开放或合作关闭交易的大小，因此拥有 100 万用户的交易对手每年创建 630 万笔链上交易将使用相当于每个用户每年平均打开或关闭 6.3 个通道的空间；因此，LN 的链上成本可能低于使用这种交易对手，直到它达到大规模采用。
 
-    - *对大型热钱包和资本成本的担忧：* 一个[回复][harding reply0]考虑到，交易对手需要保持一定数量的比特币（可能在热钱包中）以应对用户在不久的将来可能花费的金额。在当前的设计方案下，在花费一段时间后，交易对手可能需要等待长达 28 天才能收回他们的比特币。如果交易对手对其资本收取了每年 1.5% 的低利率，那么每次涉及交易对手的交易（包括coinjoin、内部转账和LN支付）的金额上将相当于 0.125% 的费用。相比之下，撰写时可获得的[公共统计数据][1ml stats](由1ML收集)显示，LN 转账每跳中位数费率为 0.0026％，几乎低了 50 倍。
+    - *<!--concern-about-a-large-hot-wallet-and-the-capital-costs-->对大型热钱包和资本成本的担忧：* 一个[回复][harding reply0]考虑到，交易对手需要保持一定数量的比特币（可能在热钱包中）以应对用户在不久的将来可能花费的金额。在当前的设计方案下，在花费一段时间后，交易对手可能需要等待长达 28 天才能收回他们的比特币。如果交易对手对其资本收取了每年 1.5% 的低利率，那么每次涉及交易对手的交易（包括coinjoin、内部转账和LN支付）的金额上将相当于 0.125% 的费用。相比之下，撰写时可获得的[公共统计数据][1ml stats](由1ML收集)显示，LN 转账每跳中位数费率为 0.0026％，几乎低了 50 倍。
 
     列表上的几条评论也对这个提议感到兴奋，并期待看到 Keceli 和其他人探索管理型 joinpools 的设计空间。{% assign timestamp="1:46" %}
 
@@ -63,19 +63,19 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [用bitcoind测试修剪逻辑]({{bse}}118159)
+- [<!--testing-pruning-logic-with-bitcoind-->用bitcoind测试修剪逻辑]({{bse}}118159)
   Lightlike 指出了仅调试 `-fastprune` 配置选项，该选项使用较小的块文件和较小的最小修剪高度进行测试。{% assign timestamp="1:12:38" %}
 
-- [后代大小限制的管理动机是什么？]({{bse}}118160)
+- [<!--whats-the-governing-motivation-for-the-descendent-size-limit-->后代大小限制的管理动机是什么？]({{bse}}118160)
   Sdaftuar解释说，由于挖矿和驱逐算法(见[周报 #252][news252 incentives])都采用二次方程的 O（n²）时间作为祖先或后代数量的因素，因此制定了[保守的规则限制][morcos limits]。{% assign timestamp="1:13:19" %}
 
-- [当我运行一个交易池大于默认交易池的节点时，它对比特币网络有何贡献？]({{bse}}118137)
+- [<!--how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-than-default-mempool-->当我运行一个交易池大于默认交易池的节点时，它对比特币网络有何贡献？]({{bse}}118137)
   Andrew Chow 和 Murch 指出了大于默认交易池的潜在缺点，包括损害交易再广播的传播和无信号的交易再广播的传播。{% assign timestamp="1:16:48" %}
 
-- [交易可以具有的最大输入/输出数值是多少？]({{bse}}118452)
+- [<!--what-is-the-maximum_number-of-inputs-outputs-a-transaction-can-have-->交易可以具有的最大输入/输出数值是多少？]({{bse}}118452)
   Murch 提供了 taproot 激活后的最大输入和输出数值，即，3223 重量单位（P2WPKH）作为输出最大值或 1738 重量单位（P2TR）作为输入最大值。{% assign timestamp="1:21:18" %}
 
-- [没有任一公钥的 xpub，可以恢复 2/3 多重签名资金吗？]({{bse}}118201)
+- [<!--can-2-of-3-multisig-funds-be-recovered-without-one-of-the-xpubs-->没有任一公钥的 xpub，可以恢复 2/3 多重签名资金吗？]({{bse}}118201)
   Murch 解释说，对于不使用裸多重签名的多重签名设置，除非以前使用相同的多重签名输出脚本，否则需要所有公钥才能使用。他指出，“多重签名钱包的备份策略必须既保留私钥，又保留输出的条件脚本”，并建议将[描述符][topic descriptors]作为备份条件脚本的方法。{% assign timestamp="1:23:50" %}
 
 ## 版本和候选版本
@@ -125,5 +125,5 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周
 [btcpay server 97e7e]: https://github.com/btcpayserver/btcpayserver/commit/97e7e60ceae2b73d63054ee38ea54ed265cc5b8e
 [news157 libsecp]: /en/newsletters/2021/07/14/#libsecp256k1-844
 [bcc rn]: https://bitcoincore.org/en/releases/25.0/
-[news252 incentives]: /en/newsletters/2023/05/24/#waiting-for-confirmation-2-incentives
+[news252 incentives]: /zh/newsletters/2023/05/24/#等待确认-2激励
 [morcos limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html
