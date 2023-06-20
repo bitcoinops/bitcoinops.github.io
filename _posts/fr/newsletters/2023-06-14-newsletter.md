@@ -93,7 +93,7 @@ il évince un pair entrant existant qui, sans ce PR, n'aurait pas été éligibl
       fonction n'est plus modifiée."
   a2link="https://bitcoincore.reviews/27600#l-126"
 
-  q3="`EraseLastKElements` était une fonction templateée, mais cette PR supprime les deux arguments template.
+  q3="`EraseLastKElements` était une fonction templatée, mais cette PR supprime les deux arguments template.
       Pourquoi ? Y a-t-il des inconvénients à ce changement ?"
   a3="Cette fonction était et (avec ce PR) est appelée avec des arguments de modèle uniques, il n'est donc pas nécessaire que
       la fonction soit modélisée.
@@ -103,8 +103,7 @@ il évince un pair entrant existant qui, sans ce PR, n'aurait pas été éligibl
 
   q4="Supposons que nous passions un vecteur de 40 candidats à l'éviction à `SelectNodeToEvict()`.
       Avant et après cette PR, quel est le maximum théorique de noeuds Tor qui peuvent être protégés de l'éviction ?"
-  a4="Avec et sans les relations publiques, le nombre serait de 34 sur 40, en supposant qu'il ne s'agisse pas de "noban"
-      et de "inbound"."
+  a4="Avec et sans les relations publiques, le nombre serait de 34 sur 40, en supposant qu'il ne s'agisse pas de `noban` entrant."
   a4link="https://bitcoincore.reviews/27600#l-156"
 %}
 
