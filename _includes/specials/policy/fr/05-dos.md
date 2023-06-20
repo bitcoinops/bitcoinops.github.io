@@ -1,107 +1,76 @@
-We [started off][policy01] our series by stating that much of Bitcoin's privacy and
-censorship resistance stems from the decentralized nature of the
-network. The practice of users running their own nodes reduces central points of
-failure, surveillance, and censorship. It follows that one
-primary design goal for Bitcoin node software is high accessibility of
-running a node. Requiring each Bitcoin user to purchase expensive
-hardware, use a specific operating system, or spend hundreds of
-dollars per month in operational costs would very likely reduce the
-number of nodes on the network.
+Nous avons [commencé][policy01] notre série en affirmant qu'une grande partie de la résistance de Bitcoin à la vie privée
+et à la censure découle de la nature décentralisée du réseau. La pratique selon laquelle les utilisateurs gèrent leurs propres
+nœuds réduit les points centraux de défaillance, de surveillance et de censure. Il s'ensuit que l'un des principaux objectifs
+de conception du logiciel de nœud Bitcoin est l'accessibilité élevée de l'exploitation d'un nœud. Exiger de chaque utilisateur
+de Bitcoin qu'il achète du matériel coûteux, qu'il utilise un système d'exploitation spécifique ou qu'il dépense des centaines
+de dollars par mois en frais d'exploitation réduirait très probablement le nombre de nœuds sur le réseau.
 
-Additionally, a node
-on the Bitcoin network is a computer with internet connections to
-unknown entities that may launch a Denial of Service (DoS) attack by
-crafting messages that cause the node to run out of memory and crash,
-or spend its computational resources and bandwidth on meaningless data
-instead of accepting new blocks. As these entities are anonymous by
-design, nodes cannot predetermine whether a peer will be honest or
-malicious before connecting, and cannot effectively ban them even after an
-attack is observed. Thus, it is not just an ideal to implement policies
-that protect against DoS and limit the cost of
-running a full node, but an imperative.
+Par ailleurs, un nœud du réseau Bitcoin est un ordinateur connecté à des entités inconnues qui peuvent lancer une attaque par
+déni de service (DoS) en créant des messages qui font que le nœud manque de mémoire et tombe en panne, ou qu'il dépense ses
+ressources informatiques et sa bande passante pour des données sans intérêt au lieu d'accepter de nouveaux blocs. Comme ces
+entités sont anonymes de par leur conception, les nœuds ne peuvent pas déterminer à l'avance si un pair sera honnête ou
+malveillant avant de se connecter, et ne peuvent pas l'interdire efficacement même après qu'une attaque a été observée. La mise
+en œuvre de politiques de protection contre les attaques par déni de service et de limitation du coût de fonctionnement d'un
+nœud complet n'est donc pas seulement un idéal, c'est un impératif.
 
-General DoS protections are built into node implementations to
-prevent resource exhaustion. For example, if a Bitcoin Core node
-receives many messages from a single peer, it only processes the first
-one and adds the rest to a work queue to be processed after other
-peers' messages. A node also typically first downloads a block header
-and verifies its Proof of Work (PoW) prior to downloading and validating the
-rest of the block. Thus, any attacker wishing to exhaust this node's resources
-through block relay must first spend a
-disproportionately high amount of their own resources computing a
-valid PoW. The asymmetry between the huge cost for PoW
-calculation and the trivial cost of verification provides a natural way to build DoS resistance into
-block relay.
-This property does
-not extend to _unconfirmed_ transaction relay.
+Des protections générales contre les attaques par déni de service sont intégrées dans les implémentations des nœuds afin d'éviter
+l'épuisement des ressources. Par exemple, si un nœud de Bitcoin Core reçoit de nombreux messages d'un seul pair, il ne traite que
+le premier et ajoute le reste à une file d'attente pour qu'il soit traité après les messages des autres pairs. En règle générale,
+un nœud télécharge d'abord l'en-tête d'un bloc et vérifie sa preuve de travail (PoW) avant de télécharger et de valider le reste
+du bloc. Ainsi, tout attaquant souhaitant épuiser les ressources de ce nœud par le biais d'un relais de bloc doit d'abord dépenser
+une quantité disproportionnée de ses propres ressources pour calculer une preuve de travail valide. L'asymétrie entre le coût énorme
+du calcul du PoW et le coût trivial de la vérification fournit un moyen naturel d'intégrer la résistance aux attaques par déni de
+service dans le relais de bloc.
+Cette propriété ne s'étend pas au relais de transactions _non confirmées_.
 
-General DoS protections don't provide enough attack resistance to allow a node’s consensus
-engine to be exposed to input from the peer-to-peer network. An attacker attempting
-to [craft a maximally computationally-intensive][max cpu tx], consensus-valid
-transaction may send one like the 1MB
-[“megatransaction”][megatx mempool space] in block #364292,
-which took an abnormally long time to validate due
-to [signature verification and quadratic sighashing][rusty megatx]. An
-attacker may also make all but the last signature valid, causing the
-node to spend minutes on their transaction, only to find that it is
-garbage. During that time, the node would delay processing a new
-block. One can imagine this type of attack being
-targeted at competing miners to gain a “head start” on the next block.
+Les protections générales contre les attaques par déni de service n'offrent pas une résistance suffisante pour permettre au
+moteur de consensus d'un nœud d'être exposé à des données provenant du réseau pair-à-pair. Un attaquant tentant de [fabriquer
+une transaction à forte intensité de calcul][max cpu tx], validée par consensus, peut envoyer une transaction comme la
+["mégatransaction"][megatx mempool space] de 1 Mo dans le bloc #364292, dont la validation a pris un temps anormalement long en
+raison de [la vérification de la signature et de l'ajustement quadratique][rusty megatx]. Un attaquant peut également rendre
+toutes les signatures valides, sauf la dernière, ce qui amène le nœud à passer plusieurs minutes sur sa transaction, pour
+finalement découvrir qu'elle est inutile. Pendant ce temps, le nœud retarderait le traitement d'un nouveau bloc. On peut
+imaginer que ce type d'attaque vise des mineurs concurrents afin de prendre de l'avance sur le bloc suivant.
 
-In an effort to avoid working on very computationally expensive transactions,
-Bitcoin Core nodes impose a maximum standard size and a
-maximum number of signature operations (or "sigops") on each
-transaction, more restrictive than the block consensus limit. Bitcoin Core nodes also
-enforce limits on both ancestor and descendant package sizes, making
-block template production and eviction algorithms more effective and
-[restricting the computational
-complexity][se descendant limits] of mempool insertion and deletion
-which require updating a transaction’s ancestor and descendant sets.
-While
-this means some legitimate transactions may not be accepted or
-relayed, those transactions are expected to be rare.
+Afin d'éviter de travailler sur des transactions très coûteuses en termes de calcul, les nœuds de Bitcoin Core imposent une
+taille standard maximale et un nombre maximal d'opérations de signature (ou "sigops") pour chaque transaction, ce qui est plus
+restrictif que la limite de consensus par bloc. Les nœuds de Bitcoin Core imposent également des limites sur la taille des
+paquets d'ancêtres et de descendants, ce qui rend les algorithmes de production et d'éviction de modèles de blocs plus efficaces
+et [limite la complexité de calcul][se descendant limits] de l'insertion et de la suppression du mempool, qui nécessitent la mise
+à jour des ensembles d'ancêtres et de descendants d'une transaction.
+Bien que cela signifie que certaines transactions légitimes peuvent ne pas être acceptées ou relayées, ces transactions devraient
+être rares.
 
-These rules are
-examples of _transaction relay policy_, a set of validation rules in
-addition to consensus which nodes apply to unconfirmed transactions.
+Ces règles sont des exemples de _politique de relais de transaction_, un ensemble de règles de validation en plus du consensus
+que les nœuds appliquent aux transactions non confirmées.
 
-By default, Bitcoin Core nodes do not accept transactions below the 1sat/vB minimum relay feerate
-("minrelaytxfee"), do not verify any signatures before checking this requirement, and do not forward
-transactions unless they are accepted to their mempools.
-In a sense, this feerate rule sets a minimum "price" for network validation and relay.
-A non-mining node doesn’t ever receive fees – they are
-only paid to the miner who confirms the transaction.
-However, fees represent a cost to the attacker. Somebody who "wastes" network resources by sending an
-extremely high amount of transactions
-eventually runs out of money to pay the fees.
+Par défaut, les nœuds de Bitcoin Core n'acceptent pas les transactions inférieures au taux de relais minimum de 1sat/vB
+("minrelaytxfee"), ne vérifient pas les signatures avant de contrôler cette exigence et ne transmettent pas les transactions à
+leurs mempools à moins qu'elles ne soient acceptées.
+D'une certaine manière, cette règle de taux de frais  fixe un "prix" minimum pour la validation et le relais du réseau. Un nœud
+non-mineur ne reçoit jamais de frais - ils sont uniquement payés au mineur qui confirme la transaction.
+Cependant, les frais représentent un coût pour l'attaquant. Quelqu'un qui "gaspille" les ressources du réseau en envoyant un
+nombre extrêmement élevé de transactions finit par manquer d'argent pour payer les frais.
 
-The [Replace by Fee][topic rbf] policy [implemented by Bitcoin Core][bitcoin core
-rbf docs] requires that the replacement transaction pay a higher
-feerate than each transaction it directly conflicts with, but also
-requires that it pay a higher total fee than all of the transactions it displaces. The additional fees
-divided by the replacement transaction's
-virtual size must be at least 1sat/vB.
-In other words, regardless of the feerates of the original
-and replacement transactions, the new transaction must pay "new" fees
-to cover the cost of its own bandwidth at 1sat/vB.
-This fee policy is not
-primarily concerned with incentive compatibility. Rather, this incurs
-a minimum cost for repeated transaction replacements to curb
-bandwidth-wasting attacks, e.g. one that adds just 1 additional
-satoshi to each replacement.
+La politique [Replace by Fee][topic rbf] [mise en œuvre par Bitcoin Core] [bitcoin core rbf docs] exige que la transaction de
+remplacement paie des frais plus élevés que chaque transaction avec laquelle elle entre directement en conflit, mais aussi
+qu'elle paie des frais totaux plus élevés que toutes les transactions qu'elle remplace. Les frais supplémentaires divisés par
+la taille virtuelle de la transaction de remplacement doivent être d'au moins 1sat/vB.
+En d'autres termes, quels que soient les taux des transactions d'origine et de remplacement, la nouvelle transaction doit payer
+de "nouveaux" frais pour couvrir le coût de sa propre bande passante à 1sat/vB.
+Cette politique tarifaire n'est pas principalement axée sur la compatibilité des incitations. Il s'agit plutôt d'un coût minimum
+pour les remplacements répétés de transactions afin de limiter les attaques qui gaspillent la bande passante, par exemple en
+ajoutant seulement 1 satoshi supplémentaire à chaque remplacement.
 
-A node that fully validates blocks and transactions requires resources
-including memory, computational resources, and network bandwidth. We
-must keep resource requirements low in order to
-make running a node accessible and to defend the node
-against exploitation. General DoS protections are not enough, so
-nodes apply transaction relay policies in addition to consensus rules
-when validating unconfirmed transactions. However, as policy is not
-consensus, two nodes may have different policies but still agree on
-the current chain state. Next week’s post will discuss policy
-as an individual choice.
+Un nœud qui valide entièrement les blocs et les transactions nécessite des ressources, notamment de la mémoire, des ressources
+informatiques et de la bande passante. Les exigences en matière de ressources doivent rester faibles afin de rendre l'exploitation
+d'un nœud accessible et de défendre le nœud contre l'exploitation. Les protections générales contre les attaques par déni de
+service n'étant pas suffisantes, les nœuds appliquent des politiques de relais de transaction en plus des règles de consensus
+lorsqu'ils valident des transactions non confirmées. Toutefois, la politique n'étant pas un consensus, deux nœuds peuvent avoir
+des politiques différentes mais être d'accord sur l'état actuel de la chaîne. Le billet de la semaine prochaine traitera de la
+politique en tant que choix individuel.
 
-[policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
+[policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
 [max cpu tx]: https://bitcointalk.org/?topic=140078
 [megatx mempool space]: https://mempool.space/tx/bb41a757f405890fb0f5856228e23b715702d714d59bf2b1feb70d8b2b4e3e08
 [rusty megatx]: https://rusty.ozlabs.org/?p=522
