@@ -113,14 +113,14 @@ candidates, and changes to popular Bitcoin infrastructure software.
 
     The discussion appeared to be ongoing at the time of writing.
 
-## Waiting for confirmation #6: Policy as individual choice
+## Waiting for confirmation #6: Policy Consistency
 
 _A limited weekly [series][policy series] about transaction relay,
 mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/06-choice.md %}
+{% include specials/policy/en/06-consistency.md %}
 
 ## Changes to services and client software
 
