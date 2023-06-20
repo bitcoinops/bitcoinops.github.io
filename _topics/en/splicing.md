@@ -22,7 +22,7 @@ primary_sources:
     - title: Splice proposal (Rusty Russell)
       link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 
-    - title: Splice proposal (Rene Prickhardt)
+    - title: Splice proposal (Rene Pickhardt)
       link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
@@ -55,7 +55,7 @@ optech_mentions:
   - title: "Splicing specification discussion about relative amounts and minimizing redundant data"
     url: /en/newsletters/2023/04/12/#splicing-specification-discussions
 
-  - title: "Eclair #2584 adds support for both splice-in and splices-out"
+  - title: "Eclair #2584 adds support for both splice-in and splice-out"
     url: /en/newsletters/2023/04/19/#eclair-2584
 
 ## Optional.  Same format as "primary_sources" above
