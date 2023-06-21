@@ -28,7 +28,7 @@ principaux changements apportés aux logiciels d'infrastructure Bitcoin les plus
     être utilisés pour permettre à quiconque d'ajouter des données arbitraires à l'annexe d'une manière qui ne compliquerait
     pas de manière significative les efforts de normalisation ultérieurs qui pourraient être regroupés avec un soft fork.
 
-    Greg Sanders [a répondu][annexe sanders] pour demander quelles données Jager voulait spécifiquement stocker dans
+    Greg Sanders [a répondu][sanders annex] pour demander quelles données Jager voulait spécifiquement stocker dans
     l'annexe et a décrit sa propre utilisation de l'annexe en testant le protocole [LN-Symmetry][topic eltoo] avec la
     proposition de soft fork [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] à l'aide de Bitcoin Inquisition (voir le
     [Bulletin d'information #244][news244 annex]). Sanders a également décrit un problème avec l'annexe : dans un protocole
@@ -44,8 +44,8 @@ principaux changements apportés aux logiciels d'infrastructure Bitcoin les plus
 
 - **Projet de BIP pour les paiements silencieux :** Josie Baker et Ruben Somsen ont [posté][bs sp] sur la liste de diffusion
   Bitcoin-Dev un projet de BIP pour les [paiements silencieux][topic silent payments], un type de code de paiement réutilisable
-  qui produira une adresse unique sur la chaîne à chaque fois qu'il sera utilisé, empêchant ainsi la [liaison des sorties][topic
-  output linking].  La liaison des sorties peut réduire de manière significative la vie privée des utilisateurs (y compris les
+  qui produira une adresse unique sur la chaîne à chaque fois qu'il sera utilisé, empêchant ainsi la [liaison des
+  sorties][topic output linking]. La liaison des sorties peut réduire de manière significative la vie privée des utilisateurs (y compris les
   utilisateurs qui ne sont pas directement impliqués dans une transaction). Le projet détaille les avantages de la proposition,
   ses inconvénients et la manière dont les logiciels peuvent l'utiliser efficacement.  Plusieurs commentaires intéressants ont
   déjà été postés sur le [PR][bips #1458] pour le BIP.
