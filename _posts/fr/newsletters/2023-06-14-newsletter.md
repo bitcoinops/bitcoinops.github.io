@@ -65,7 +65,8 @@ comment les portefeuilles peuvent utiliser cette politique le plus efficacement 
 et réponses importantes. Cliquez sur une question ci-dessous pour voir
 un résumé de la réponse de la réunion.*
 
-[Autoriser les connexions whitebind entrantes à évincer plus agressivement les pairs lorsque les slots sont pleins][review club 27600]
+[Autoriser les connexions whitebind entrantes à évincer plus agressivement les pairs lorsque les slots sont pleins][review club
+27600]
 est une PR de Matthew Zipkin (pinheadmz) qui améliore dans certains cas la capacité d'un opérateur de nœud à configurer
 les pairs souhaités pour le nœud. Plus précisément, si l'opérateur du nœud a mis sur liste blanche un pair entrant potentiel
 (par exemple, un client léger contrôlé par l'opérateur du nœud), sans cette PR, et en fonction de l'état des pairs du nœud,
