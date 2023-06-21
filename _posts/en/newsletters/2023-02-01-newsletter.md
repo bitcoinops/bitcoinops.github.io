@@ -50,7 +50,7 @@ changes to popular Bitcoin infrastructure software.
     "async payjoin".
 
     As of this writing, no replies to the proposal have been posted to
-    the mailing list.
+    the mailing list. {% assign timestamp="1:30" %}
 
 - **LN async proof of payment:** as mentioned in [last week's
   newsletter][news235 async], LN developers are seeking a method for
@@ -109,7 +109,7 @@ changes to popular Bitcoin infrastructure software.
     In his post, Towns [references][towns sa1] two [previous][towns sa2]
     mailing list posts he's written about LN proof of payment using
     signature adaptors.  As of this writing, no replies to the idea have
-    been posted to the mailing list.
+    been posted to the mailing list. {% assign timestamp="18:44" %}
 
 ## Notable code and documentation changes
 
@@ -124,11 +124,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   (from 300MB) when a user turns on `-blocksonly` mode. Since unused
   mempool memory is shared with dbcache, this change also reduces the
   default dbcache size in `-blocksonly` mode. Users may still configure
-  a larger mempool capacity using the `-maxmempool` option.
+  a larger mempool capacity using the `-maxmempool` option. {% assign timestamp="28:50" %}
 
 - [Bitcoin Core #23395][] adds a `-shutdownnotify` configuration option to `bitcoind` which
   executes a custom user command when `bitcoind` shuts down normally
-  (the command will not be executed during a crash).
+  (the command will not be executed during a crash). {% assign timestamp="32:11" %}
 
 - [Eclair #2573][] begins accepting [keysend][topic spontaneous
   payments] payments that don't contain a [payment secret][topic payment
@@ -137,19 +137,19 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   Lightning both send keysend payments without payment secrets.  Payment
   secrets were designed to support [multipath payments][topic multipath
   payments], so Eclair is leaving it up to those other node
-  implementations to ensure they only send single-path keysend payments.
+  implementations to ensure they only send single-path keysend payments. {% assign timestamp="33:20" %}
 
 - [Eclair #2574][], related to the above pull request, stops including
   payment secrets in the keysend payments it sends.  According to the
   pull request description, LND rejects keysend payments that contain a
   payment secret, even though such rejections are not described in
-  the [BLIP3][] specification of keysend.
+  the [BLIP3][] specification of keysend. {% assign timestamp="33:20" %}
 
 - [Eclair #2540][] makes several changes to how Eclair stores data about
   funding and commitment transactions in preparation for later adding
   support for [splicing][topic splicing].  See [#2584][eclair #2584]
   for the current draft pull request that would add experimental
-  splicing support.
+  splicing support. {% assign timestamp="38:23" %}
 
 - [LND #7231][] adds RPCs and options to `lncli` for signing and
   verifying messages.  For P2PKH, the format is compatible with the
@@ -166,7 +166,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
     Note: Optech generally [recommends against][p4tr new hd] using ECDSA
     signature functions with keys intended for use with schnorr
     signatures, but LND developers have taken [extra precautionary
-    steps][osuntokun sigs] to avoid problems.
+    steps][osuntokun sigs] to avoid problems. {% assign timestamp="44:33" %}
 
 - [LDK #1878][] adds the ability to set a per-payment (rather than
   global) `min_final_cltv_expiry` value.  This value determines the
@@ -179,10 +179,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
     LDK encodes the value into the [payment secret][topic payment
     secrets] that the spender is obliged to send.  It provides 12 bits
     for the expiry value, which allows expiries of up to 4,096 blocks
-    (about 4 weeks).
+    (about 4 weeks). {% assign timestamp="47:47" %}
 
 - [LDK #1860][] adds support for channels using [anchor outputs][topic
-  anchor outputs].
+  anchor outputs]. {% assign timestamp="50:35" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26471,23395,2573,2574,2584,2540,1878,1860,7231" %}
