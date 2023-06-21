@@ -54,7 +54,7 @@ to popular Bitcoin infrastructure software.
     vaults] that doesn't require a soft fork, and he  [suggested][jager
     annex3] that some
     [previous work][bitcoin core #24007] in Bitcoin Core could possibly
-    address the problem with annex relay in some multiparty protocols.
+    address the problem with annex relay in some multiparty protocols. {% assign timestamp="1:32" %}
 
 - **Draft BIP for silent payments:** Josie Baker and Ruben Somsen
   [posted][bs sp] to the Bitcoin-Dev mailing list a draft BIP for
@@ -65,7 +65,7 @@ to popular Bitcoin infrastructure software.
   directly involved in a transaction).  The draft goes into detail about
   the benefits of the proposal, its tradeoffs, and how software can
   effectively use it.  Several insightful comments have already been
-  posted on the [PR][bips #1458] for the BIP.
+  posted on the [PR][bips #1458] for the BIP. {% assign timestamp="22:17" %}
 
 ## Waiting for confirmation #5: Policy for Protection of Node Resources
 
@@ -74,7 +74,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/05-dos.md %}
+{% include specials/policy/en/05-dos.md %} {% assign timestamp="41:48" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -92,7 +92,7 @@ that the node will deny this light client's connection attempt.
 
 This PR makes it much more likely that the desired peer will be able to
 connect to our node. It does this by evicting an existing inbound peer
-that, without this PR, would have been ineligible for eviction.
+that, without this PR, would have been ineligible for eviction. {% assign timestamp="53:38" %}
 
 {% include functions/details-list.md
   q0="Why does this PR only apply to inbound peer requests?"
@@ -144,7 +144,7 @@ release candidates.*
 - [Core Lightning 23.05.1][] is a maintenance release for this LN
   implementation.  Its release notes say, "this is a bugfix-only release
   which repairs several crashes reported in the wild. It is a
-  recommended upgrade for anyone on v23.05."
+  recommended upgrade for anyone on v23.05." {% assign timestamp="1:07:01" %}
 
 ## Notable code and documentation changes
 
@@ -160,11 +160,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   returns a map of all fee deltas created by the user with
   `prioritisetransaction`, indexed by txid. The map also indicates whether
   each transaction is present in the mempool.  See also [Newsletter
-  #250][news250 getprioritisedtransactions].
+  #250][news250 getprioritisedtransactions]. {% assign timestamp="1:07:41" %}
 
 - [Core Lightning #6243][] updates the `listconfigs` RPC to put all
   configuration information in a single dictionary and also passes the
-  state of all configuration options to restarted plugins.
+  state of all configuration options to restarted plugins. {% assign timestamp="1:11:40" %}
 
 - [Eclair #2677][] increases the default `max_cltv` from 1,008 blocks
   (about one week) to 2,016 blocks (about two weeks). This extends the
@@ -172,7 +172,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   times out. The change is motivated by nodes on the network raising
   their reserved time window to address an expiring HTLC
   (`cltv_expiry_delta`) in response to high on-chain feerates. Similar
-  changes have been [merged to LND][lnd max_cltv] and CLN.
+  changes have been [merged to LND][lnd max_cltv] and CLN. {% assign timestamp="1:12:46" %}
 
 - [Rust bitcoin #1890][] adds a method for counting the number of
   signature operations (sigops) in non-tapscript scripts.  The number of
@@ -181,7 +181,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   size (weight) as if they were larger transactions, effectively
   lowering their feerate.  That means it can be important for
   transaction creators to use something like this new method to check
-  the number of sigops they are using.
+  the number of sigops they are using. {% assign timestamp="1:15:56" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27501,6243,2677,1890,1458,24007" %}
