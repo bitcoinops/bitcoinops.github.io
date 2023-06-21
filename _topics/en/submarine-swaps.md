@@ -33,6 +33,9 @@ optech_mentions:
   - title: "Electrum 4.0.1 adds support for submarine swaps"
     url: /en/newsletters/2020/07/22/#electrum-adds-lightning-network-and-psbt-support
 
+  - title: Proposal to extend BOLT11 invoices to allow requesting prepayment for submarine swaps
+    url: /en/newsletters/2023/06/21/#submarine-swaps
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Splicing
