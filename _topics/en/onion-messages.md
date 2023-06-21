@@ -65,6 +65,9 @@ optech_mentions:
   - title: "2022 year-in-review: onion messages"
     url: /en/newsletters/2022/12/21/#onion-message-limiting
 
+  - title: "LDK #2294 adds support for replying to onion messages"
+    url: /en/newsletters/2023/06/21/#ldk-2294
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

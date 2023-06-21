@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Rust-Lightning #1177 uses the payment secret field to store encrypted invoice information"
     url: /en/newsletters/2022/01/05/#rust-lightning-1177
 
+  - title: "LDK #2156 adds support for multipath keysend payments, which require payment secrets"
+    url: /en/newsletters/2023/06/21/#ldk-2156
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Simplified multipath payments

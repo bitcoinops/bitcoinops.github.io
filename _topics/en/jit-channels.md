@@ -29,6 +29,9 @@ optech_mentions:
   - title: "Request for feedback on proposed specifications for LSPs, including LSPS2: JIT channels"
     url: /en/newsletters/2023/05/17/#request-for-feedback-on-proposed-specifications-for-lsps
 
+  - title: Proposal to extend BOLT11 invoices to allow requesting prepayment for submarine swaps
+    url: /en/newsletters/2023/06/21/#just-in-time-jit-channels
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
