@@ -123,6 +123,9 @@ optech_mentions:
   - title: Discussion about using multipath overpayment with recovery to decrease payment latency
     url: /en/newsletters/2023/02/22/#ln-quality-of-service-flag
 
+  - title: "LDK #2156 adds support for keysend payments that use simplified multipath payments"
+    url: /en/newsletters/2023/06/21/#ldk-2156
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Atomic Multipath Payments (AMPs)
