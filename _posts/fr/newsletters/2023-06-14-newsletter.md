@@ -160,4 +160,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Core Lightning 23.05.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.1
 [review club 27600]: https://bitcoincore.reviews/27600
 [news250 getprioritisedtransactions]: /fr/newsletters/2023/05/10/#bitcoin-core-pr-review-club
-[lnd max_cltv]: /fr/newsletters/2019/10/23/#lnd-3595
+[lnd max_cltv]: /en/newsletters/2019/10/23/#lnd-3595
