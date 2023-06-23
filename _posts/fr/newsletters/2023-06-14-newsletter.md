@@ -130,7 +130,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 
 - [Bitcoin Core #27501][] ajoute une RPC `getprioritizedtransactions` qui renvoie une carte de tous les deltas de frais créés
   par l'utilisateur avec `prioritisetransaction`, indexés par txid. La carte indique également si chaque transaction est
-  présente dans le mempool.  Voir aussi [Newsletter #250][news250 getprioritizedtransactions].
+  présente dans le mempool.  Voir aussi [Newsletter #250][news250 getprioritisedtransactions].
 
 - [Core Lightning #6243][] met à jour la RPC `listconfigs` pour mettre toutes les informations de configuration dans un
   seul dictionnaire et transmet également l'état de toutes les options de configuration aux plugins redémarrés.
