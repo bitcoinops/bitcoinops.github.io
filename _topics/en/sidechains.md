@@ -37,6 +37,9 @@ optech_mentions:
   - title: "Validity rollups research showing how trustless sidechains may be possible"
     url: /en/newsletters/2022/10/19/#validity-rollups-research
 
+  - title: Speculatively using hoped-for consensus changes to create two-way pegs for sidechains
+    url: /en/newsletters/2023/06/28/#speculatively-using-hoped-for-consensus-changes
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:
