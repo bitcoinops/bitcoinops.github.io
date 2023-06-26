@@ -92,7 +92,41 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why do Bitcoin nodes accept blocks that have so many excluded transactions?]({{bse}}118707)
+  User commstark wonders why a node accepts a block from miners that exclude
+  transactions that were anticipated for that block according to that node's
+  [block template][reference getblocktemplate]. There are various [tools][miningpool observer] that
+  [show][mempool space] expected compared to actual blocks. Pieter Wuille points
+  out that due to inherent variance in different nodes' [mempools][waiting for
+  confirmation 1] related to transaction propagation, a consensus rule enforcing
+  block contents is not possible.
+
+- [Why does everyone say that soft forks restrict the existing ruleset?]({{bse}}118642)
+  Pieter Wuille uses the rules added during the [taproot][topic taproot] and
+  [segwit][topic segwit] soft fork [activations][topic soft fork activation] as
+  examples of tightening the consensus rules:
+
+  - taproot added the requirement that `OP_1 <32 bytes>` (taproot) output spends
+    adhere to the taproot consensus rules
+  - segwit added the requirement that `OP_{0..16} <2..40 bytes>` (segwit) output
+    spends adhere to the segwit consensus rules and also requires empty witness
+    data for pre-segwit outputs
+
+- [Why is the default LN channel limit set to 16777215 sats?]({{bse}}118709)
+  Vojtěch Strnad explains the 2^24 satoshi limit history and motivation for
+  large (wumbo) channels and also links to Optech's [large channel topic][topic
+  large channels] for more information.
+
+- [Why does Bitcoin Core use ancestor score instead of just ancestor fee rate to select transactions?]({{bse}}118611)
+  Sdaftuar explains that performance optimization is the reason that the mining
+  block template transaction selection algorithm uses both the ancestor feerate and ancestor
+  score. (See [Waiting for confirmation #2: Incentives][waiting for confirmation
+  2]).
+
+- [How does Lightning multipart payments (MPP) protocol define the amounts per part?]({{bse}}117405)
+  Rene Pickhardt points out that [multipath payments][topic multipath payments]
+  do not have a protocol-specified part size or algorithm for choosing part size and
+  points out some relevant payment-splitting research.
 
 ## Releases and release candidates
 
@@ -179,3 +213,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [linus spec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
 [BTCPay Server 1.10.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.10.3
 [btcpay 1.10]: https://blog.btcpayserver.org/btcpay-server-1-10-0/
+[miningpool observer]: https://miningpool.observer/template-and-block
+[mempool space]: https://mempool.space/graphs/mining/block-health
+[waiting for confirmation 1]: /en/blog/waiting-for-confirmation/#why-do-we-have-a-mempool
+[reference getblocktemplate]: https://developer.bitcoin.org/reference/rpc/getblocktemplate.html
+[waiting for confirmation 2]: /en/blog/waiting-for-confirmation/#incentives
