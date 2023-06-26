@@ -97,6 +97,12 @@ optech_mentions:
   - title: "Testing HTLC endorsement for preventing channel jamming attacks"
     url: /en/newsletters/2023/05/17/#testing-htlc-endorsement
 
+  - title: "Eclair #2701 now records HTLC receive and settlement times to help with channel jamming mitigation"
+    url: /en/newsletters/2023/06/28/#eclair-2701
+
+  - title: "LND #7710 allows retrieving extra data about an HTLC in support of jamming countermeasures"
+    url: /en/newsletters/2023/06/28/#lnd-7710
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

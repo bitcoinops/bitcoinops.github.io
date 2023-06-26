@@ -46,6 +46,9 @@ optech_mentions:
   - title: "2022 year-in-review: v3 transaction relay"
     url: /en/newsletters/2022/12/21/#v3-tx-relay
 
+  - title: Preventing coinjoin pinning with v3 transaction relay
+    url: /en/newsletters/2023/06/28/#preventing-coinjoin-pinning-with-v3-transaction-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

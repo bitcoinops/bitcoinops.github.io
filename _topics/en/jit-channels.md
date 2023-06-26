@@ -32,6 +32,9 @@ optech_mentions:
   - title: Proposal to extend BOLT11 invoices to allow requesting prepayment for submarine swaps
     url: /en/newsletters/2023/06/21/#just-in-time-jit-channels
 
+  - title: "LDK #2319 allows underfunding HTLCs in support of JIT channel creation"
+    url: /en/newsletters/2023/06/28/#ldk-2319
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

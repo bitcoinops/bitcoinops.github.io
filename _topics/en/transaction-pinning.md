@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Question about how to pin a transaction by requiring a fee bump pay a 500x fee"
     url: /en/newsletters/2023/04/26/#how-would-an-adversary-increase-the-required-fee-to-replace-a-transaction-by-up-to-500-times
 
+  - title: Preventing coinjoin pinning with v3 transaction relay
+    url: /en/newsletters/2023/06/28/#preventing-coinjoin-pinning-with-v3-transaction-relay
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
