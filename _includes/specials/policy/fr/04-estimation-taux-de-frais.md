@@ -69,5 +69,5 @@ de la semaine prochaine explorera cette politique des nœuds et une autre motiva
 relais de transaction : la protection contre l'épuisement des ressources.
 
 [policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
-[policy02]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--incitations
-[policy03]: /fr/newsletters/2023/05/31/#attente-de-la-confirmation-3--encheres-pour-l-achat-d-un-bloc-d-espace
+[policy02]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-dincitation
+[policy03]: /fr/newsletters/2023/05/31/#attente-de-la-confirmation-3--enchères-pour-lachat-dun-bloc-despace
