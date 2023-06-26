@@ -74,15 +74,12 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
       wallet can pay two separate secrets and amounts in the same
       invoice.
 
-    - *BOLT11 ossified:* Matt Corallo [replied][c 2p] that it hasn't yet
-      been possible to get all LN implementations to update their BOLT11
-      support to support invoices that don't contain an amount (for
-      allowing [spontaneous payments][topic spontaneous payments]), so
-      he doesn't think adding an additional field is a practical
-      approach at this time.  Bastien Teinturier makes a [similar
-      comment][t 2p], suggesting adding support to [offers][topic offers]
-      instead.  Voegtlin [disagrees][v 2p3] and thinks adding support
-      is practical.
+    - *BOLT11 ossified:* Matt Corallo [répond][c 2p] qu'il n'a pas encore été possible de faire en sorte que toutes les
+      implémentations LN mettent à jour leur support BOLT11 pour supporter les factures qui ne contiennent pas de montant
+      (pour permettre les [paiements spontanés][topic spontaneous payments]), donc il ne pense pas que l'ajout d'un champ
+      supplémentaire soit une approche pratique pour le moment.  Bastien Teinturier fait un [commentaire similaire][t 2p],
+      suggérant d'ajouter un support aux [offres][topic offers] à la place. Voegtlin [n'est pas d'accord][v 2p3] et pense
+      que l'ajout d'un soutien est pratique.
 
     - *Splice-out alternative:* Corallo also inquires about why the
       protocol should be modified to support submarine swaps if [splice
