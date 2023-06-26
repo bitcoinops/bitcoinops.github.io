@@ -204,7 +204,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [LDK #2077][] refactors a large amount of code to make it easier later
   to add support for [dual funded channels][topic dual funding].
 
-- [Libsecp256k1 #1129][] ElligatorSwift + integrated x-only DH FIXME:Xekyo
+- [Libsecp256k1 #1129][] implements the [ElligatorSwift][ElligatorSwift paper]
+  technique to introduce a 64-byte public key encoding that is computationally
+  indistinguishable from random data. The `ellswift` module provides functions
+  for encoding and decoding public keys in the new format as well as
+  convenience functions to generate new uniformly-random keys and perform
+  an Elliptic Curve Diffie-Hellman key exchange (ECDH) on ellswift-encoded
+  keys. The ellswift-based ECDH is to be used in establishing connections
+  for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]).
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
@@ -218,3 +225,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [waiting for confirmation 1]: /en/blog/waiting-for-confirmation/#why-do-we-have-a-mempool
 [reference getblocktemplate]: https://developer.bitcoin.org/reference/rpc/getblocktemplate.html
 [waiting for confirmation 2]: /en/blog/waiting-for-confirmation/#incentives
+[ElligatorSwift paper]: https://eprint.iacr.org/2022/759
