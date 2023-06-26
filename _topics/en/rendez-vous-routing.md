@@ -56,6 +56,12 @@ optech_mentions:
   - title: "BOLTs #765 adds route blinding to the LN specification"
     url: /en/newsletters/2023/04/05/#bolts-765
 
+  - title: "LND #7710 adds the ability to retrieve extra data about an HTLC in support of route blinding"
+    url: /en/newsletters/2023/06/28/#lnd-7710
+
+  - title: "LDK #2120 adds support for finding a route to a receiver who is using blinded paths"
+    url: /en/newsletters/2023/06/28/#ldk-2120
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
