@@ -72,14 +72,14 @@ infrastructure software.
     being coerced.  The idea had not received any discussion on the
     mailing list as of this writing.
 
-## Waiting for confirmation #7: Network Interest
+## Waiting for confirmation #7: Network Resources
 
 _A limited weekly [series][policy series] about transaction relay,
 mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/07-network-interest.md %}
+{% include specials/policy/en/07-network-resources.md %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
