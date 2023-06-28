@@ -53,6 +53,9 @@ optech_mentions:
   - title: "2022 year-in-review: encrypted v2 transport protocol"
     url: /en/newsletters/2022/12/21/#v2-transport
 
+  - title: "Libsecp256k1 #1129 implements the ElligatorSwift technique for establishing v2 P2P connections"
+    url: /en/newsletters/2023/06/28/#libsecp256k1-1129
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
