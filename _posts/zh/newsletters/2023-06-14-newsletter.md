@@ -12,13 +12,13 @@ lang: zh
 
 ## 新闻
 
-- **<!--discussion-about-the-taproot-annex-->关于 taproot annex 的讨论**：Joost Jager 在 Bitcoin-Dev 邮件组中[发帖][jager annex]，请求改变 Bitcoin Core 的交易转发和挖矿策略，以允许在 [taproot][topic taproot] 交易的 annex 字段存储任意数据。 这个字段是 taproot 交易的见证数据的一个可选部分。如果这个字段里面有数据，交易和 [tapscript][topic tapscript] 中的签名必须承诺这个数据（使之无法被第三方添加、移除和改变），但当前没有其它得到定义的作用 —— 它是为了未来的协议升级（尤其是软分叉）二保留的。
+- **<!--discussion-about-the-taproot-annex-->关于 taproot annex 的讨论**：Joost Jager 在 Bitcoin-Dev 邮件组中[发帖][jager annex]，请求改变 Bitcoin Core 的交易转发和挖矿策略，以允许在 [taproot][topic taproot] 交易的 annex 字段存储任意数据。 这个字段是 taproot 交易的见证数据的一个可选部分。如果这个字段里面有数据，交易和 [tapscript][topic tapscript] 中的签名必须承诺这个数据（使之无法被第三方添加、移除和改变），但当前没有其它得到定义的作用 —— 它是为了未来的协议升级（尤其是软分叉）而保留的。
 
     虽然之前已经有[提议][riard annex]为 annex 定义一种格式，这些提议并没有得到广泛的接受和实现。Jager 提出了两种格式（[1][jager annex]，以及 [2][jager annex2]），可用于在 annex 内添加任意数据，同时不会显著让后续的标准化工作变得更加复杂（未来的软分叉可能会捆绑这样的标准化工作）。
 
     Greg Sanders [询问][sanders annex] Jager 具体想在 annex 中存储什么样的数据，并介绍了他自己在使用 Bitcoin inquisition（见[周报 #244][news244 annex]）测试 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 提议以及 [LN-Symmetry][topic eltoo] 协议时对 annex 的用法。Sanders 也提出了一个关于 annex 的问题：在一个多方参与的协议（例如 [coinjoin][topic coinjoin]）中，每一个签名者都只承诺自己的签名所在的输入的 annex —— 不包括同一笔交易的其它输入的 annex。这意味着，如果 Alice、Bob 和 Mallory 一起签名了一笔 coinjoin 交易，Alice 和 Bob 无法阻止 Mallory 广播一个携带了更大体积的 annex 的交易版本，从而推迟交易得到确认。因为 Bitcoin Core 和其他全节点目前不会转发包含了 annex 的交易，所以现在这不是一个问题。Jager [回复][jager annex4] 称他希望实现一种不需要软分叉的 “[保险柜][topic vaults]” 合约，要在 annex 里面存储来自一次性密钥的签名；而且他[指出][jager annex3] Bitcoin Core [之前的一些工作][bitcoin core #24007]可能可以解决这个 annex 影响多方协议的问题。
 
-- **<!--draft-bip-for-silent-payments-->静默支付的 BIP 草案**：Josie Baker 和 Ruben Somsen 在 Bitcoin-Dev 邮件组中[发帖][bs sp]出示了一份关于[静默支付][topic silent payments]的 BIP 草案。静默支付是一种可复用的支付码，将为每一次使用生成一个唯一的链上地址，从而阻止[输出关联][topic output linking]。输出关联会显著影响用户的隐私性（包括并不参与这笔交易的用户的隐私性）。这份草案非常详尽，给出了这份提议的好处、牺牲以及软件如何有效使用它的指南。一些富有洞见的评论已经在该 BIP 的 [PR][bips #1458] 中出现。
+- **<!--draft-bip-for-silent-payments-->静默支付的 BIP 草案**：Josie Baker 和 Ruben Somsen 在 Bitcoin-Dev 邮件组中[发帖][bs sp]出示了一份关于[静默支付][topic silent payments]的 BIP 草案。静默支付是一种可复用的支付码，将为每一次使用生成一个唯一的链上地址，从而阻止[输出关联][topic output linking]。输出关联会显著降低用户的隐私性（包括并不参与这笔交易的用户的隐私性）。这份草案非常详尽，给出了这份提议的好处、牺牲以及软件如何有效使用它的指南。一些富有洞见的评论已经在该 BIP 的 [PR][bips #1458] 中出现。
 
 ## 等待确认 #5：用于保护节点资源的规则
 
@@ -40,7 +40,7 @@ lang: zh
   a0link="https://bitcoincore.reviews/27600#l-33"
 
   q1="在调用 `SelectNodeToEvict()` 时，使用 `force` 参数会对结果产生什么影响？"
-  a1="指定 `force` 参数为 `trre`，会保证返回一个非 `noban` 入账节点，如果有的话；即使如果不使用 `force`，该节点会被保护、不会被断开。没有这个 PR，函数不会返回一个被保护（不会被断开）的节点。"
+  a1="指定 `force` 参数为 `true`，会保证返回一个非 `noban` 入账节点，如果有的话；即使如果不使用 `force`，该节点会被保护、不会被断开。没有这个 PR，函数不会返回一个被保护（不会被断开）的节点。"
   a1link="https://bitcoincore.reviews/27600#l-70"
 
   q2="这个 PR 会如何改变 `EraseLastKElements()` 的功能签名？"
@@ -48,10 +48,10 @@ lang: zh
   a2link="https://bitcoincore.reviews/27600#l-126"
 
   q3="`EraseLastKElements` 曾经是一个模板化的函数，但这个 PR 移除了两个模板参数。为什么要这样做呢？这个变更有什么缺点吗？"
-  a3="这个函数曾经会，现在（有了这个 PR）也会使用独特的模板参数来调用，所以不需要这个函数是模板话的。这个 PR 对这个函数的变更已经被撤回了，所以它依然是模板化的，因为改变它超出了这个 PR 的范围。"
+  a3="这个函数曾经会，现在（有了这个 PR）也会使用独特的模板参数来调用，所以不需要这个函数是模板化的。这个 PR 对这个函数的变更已经被撤回了，所以它依然是模板化的，因为改变它超出了这个 PR 的范围。"
   a3link="https://bitcoincore.reviews/27600#l-126"
 
-  q4="假设我们向 `SelectNodeToEvict()` 传入了一个有 40 个断连候选的向量。在这个 RP 实施前后，可以保护起来不断连的 Tor 节点的理论上限有变化吗？"
+  q4="假设我们向 `SelectNodeToEvict()` 传入了一个有 40 个断连候选的向量。在这个 PR 实施前后，可以保护起来不断连的 Tor 节点的理论上限有变化吗？"
   a4="不论有无这个 PR，都是 40 个节点中的 34 个，假设它们都是入站节点，并且都不是 `noban` 节点的话。"
   a4link="https://bitcoincore.reviews/27600#l-156"
 %}
