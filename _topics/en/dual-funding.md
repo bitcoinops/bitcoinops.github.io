@@ -110,6 +110,9 @@ optech_mentions:
   - title: "LDK #1794 begins adding support for dual funding"
     url: /en/newsletters/2023/05/17/#ldk-1794
 
+  - title: "LDK #2077 refactors code to make it easier later to add support for dual funded channels"
+    url: /en/newsletters/2023/06/28/#ldk-2077
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: PSBT (dependency of dual funding)
