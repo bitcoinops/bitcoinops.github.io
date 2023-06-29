@@ -155,6 +155,9 @@ optech_mentions:
   - title: "Bitcoin Core #24149 adds signing support for P2WSH-based miniscript-based output descriptors"
     url: /en/newsletters/2023/02/22/#bitcoin-core-24149
 
+  - title: "BIPs #1354 adds BIP389 for multiple derivation path descriptors"
+    url: /en/newsletters/2023/07/05/#bips-1354
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
