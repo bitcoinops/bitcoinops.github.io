@@ -24,7 +24,7 @@ lang: zh
 
 *这是一份关于交易转发、交易池接纳和交易挖矿选择的限定[周刊][policy series]，目标是解释为什么 Bitcoin Core 具有比共识规则更严格的交易池规则，以及钱包如何更高效地使用这些规则。*
 
-{% include specials/policy/en/05-dos.md %}
+{% include specials/policy/zh/05-dos.md %}
 
 ## Bitcoin Core PR 审核俱乐部
 
@@ -67,14 +67,17 @@ lang: zh
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquisition][bitcoin inquisition repo]。*
 
 - [Bitcoin Core #27501][] 添加了一个 `getpriorisisedtransactions` RPC，可以返回由用户使用 `prioritisetransaction` 创建的所有手续费的偏移量（deltas）的表，由 txid 索引。这个表也会指出各交易是否在交易池中。亦见 [周报 #250][news250 getprioritisedtransactions]。
+
 - [Core Lightning #6243][] 升级了 `listconfigs` RPC，将所有的配置信息都放在单个目录中，同时，也会把所有配置选项的状态都传递到插件系统以重启插件。
+
 - [Eclair #2677][] 将默认的 `max_cltv` 参数从 1008 个区块（大概一周）提升到 2016 个区块（大约两周）。这延长了支付超时的时间上限（以区块数量计）。这项变更的动机是为了让网络中的节点可以有更长的尝试支付的时间窗口（`cltv_expiry_delta`），以应对高手续费率的环境。类似的变更已经被 LND 和 CLN [合并][lnd max_cltv]。
+
 - [Rust bitcoin #1890][] 加入了一种方法，可以统计在非 tapscript 脚本中的签名操作（sigop）的数量。单个区块内的签名操作的数量是受到限制的，而且 Bitcoin Core 的挖矿交易选择算法也会将 “签名操作体积比（ratio of sigops per size）” 更高的交易当成更大的交易，实际上就是让它们的手续费率降低。这意味着，交易的创建者使用这种新方法来检查自己所使用的签名操作的数量，会变成一件重要的事。
 
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27501,6243,2677,1890,1458,24007" %}
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /zh/blog/waiting-for-confirmation/
 [jager annex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021731.html
 [riard annex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020991.html
 [jager annex2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021756.html
