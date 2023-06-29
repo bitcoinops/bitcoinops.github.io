@@ -152,6 +152,9 @@ optech_mentions:
   - title: "LDK #2368 allows manually accepting new channels created by a peer that use anchor outputs"
     url: /en/newsletters/2023/06/28/#ldk-2368
 
+  - title: "Core Lightning #6334 updates and expands CLN's experimental support for anchor outputs"
+    url: /en/newsletters/2023/07/05/#core-lightning-6334
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
