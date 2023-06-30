@@ -111,7 +111,7 @@ candidates, and changes to popular Bitcoin infrastructure software.
       to increase their capacity for receiving new LN payments, which
       splicing does not.
 
-    The discussion appeared to be ongoing at the time of writing.
+    The discussion appeared to be ongoing at the time of writing. {% assign timestamp="1:00" %}
 
 ## Waiting for confirmation #6: Policy Consistency
 
@@ -120,7 +120,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/06-consistency.md %}
+{% include specials/policy/en/06-consistency.md %} {% assign timestamp="19:25" %}
 
 ## Changes to services and client software
 
@@ -130,34 +130,34 @@ wallets and services.*
 - **Greenlight libraries open sourced:**
   Non-custodial CLN node service provider [Greenlight][news162 greenlight] has
   [announced][decker twitter] a [repository][github greenlight] of client
-  libraries and language bindings as well a [testing framework guide][greenlight testing].
+  libraries and language bindings as well a [testing framework guide][greenlight testing]. {% assign timestamp="32:01" %}
 
 - **Tapscript debugger Tapsim:**
   [Tapsim][github tapsim] is a script execution debugging (see [Newsletter
   #254][news254 tapsim]) and visualization tool for
-  [tapscript][topic tapscript] using btcd.
+  [tapscript][topic tapscript] using btcd. {% assign timestamp="33:25" %}
 
 - **Bitcoin Keeper 1.0.4 announced:**
   [Bitcoin Keeper][] is a mobile wallet that supports multisig, hardware signers,
   [BIP85][], and with the latest release, [coinjoin][topic coinjoin] support
-  using the [Whirlpool protocol][gitlab whirlpool].
+  using the [Whirlpool protocol][gitlab whirlpool]. {% assign timestamp="35:09" %}
 
 - **Lightning wallet EttaWallet announced:**
   The mobile [EttaWallet][github ettawallet] was recently [announced][ettawallet
   blog] with Lightning features enabled by LDK and a strong usability focus
   inspired by the [daily spending wallet][bitcoin design guide] reference design
-  from the Bitcoin Design Community.
+  from the Bitcoin Design Community. {% assign timestamp="35:47" %}
 
 - **zkSNARK-based block header sync PoC announced:**
   [BTC Warp][github btc warp] is a light client sync proof-of-concept
   using zkSNARKs to prove and verify a chain of Bitcoin block headers. A [blog post][btc warp
-  blog] provides details on the approaches taken.
+  blog] provides details on the approaches taken. {% assign timestamp="37:09" %}
 
 - **lnprototest v0.0.4 released:**
   The [lnprototest][github lnprototest] project is a test suite for LN including "a set of test
   helpers written in Python3, designed to make it easy to write new tests when
   you propose changes to the lightning network protocol, as well as test
-  existing implementations".
+  existing implementations". {% assign timestamp="39:45" %}
 
 ## Releases and release candidates
 
@@ -171,7 +171,7 @@ release candidates.*
   [splicing][topic splicing] and [BOLT12 offers][topic offers]."  The
   features are experimental for now.  The release also "makes plugins
   more powerful, introduces mitigations against various types of DoS, and
-  improves performance in many areas of the codebase."
+  improves performance in many areas of the codebase." {% assign timestamp="41:24" %}
 
 ## Notable code and documentation changes
 
@@ -185,7 +185,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [LDK #2294][] adds support for replying to [onion messages][topic
   onion messages] and brings LDK closer to full support for
-  [offers][topic offers].
+  [offers][topic offers]. {% assign timestamp="44:33" %}
 
 - [LDK #2156][] adds support for [keysend payments][topic spontaneous
   payments] that use [simplified multipath payments][topic multipath
@@ -194,7 +194,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   [payment secrets][topic payment secrets] but LDK previously rejected
   keysend payments with payment secrets, so descriptive errors, a
   configuration option, and a warning about downgrading are added to
-  mitigate any potential problems.
+  mitigate any potential problems. {% assign timestamp="46:57" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2294,2156" %}
