@@ -15,7 +15,7 @@ lang: zh
   Halseth 在 Bitcoin-Dev 邮件列表中[发布了][halseth matt-ctv]如何使用 Merklize All The Things (MATT) 提案（参见周报[#226][news226 matt] 和[#249][news249 matt]）中的 `OP_CHECKOUTPUTCONTRACTVERIFY` 操作码（COCV）来复刻 [OP_CHECKTEMPLATEVERIFY][topic
   op_checktemplateverify] 提案中的功能。为了提交具有多个输出的交易，每个输出都需要使用不同的 COCV 操作码。相比之下，单个 CTV 操作码可以提交给所有输出。这使得 COCV 效率较低，但正如他指出的那样，“简单到有趣”。
 
-    除了描述功能，Halseth还提供了使用 [Tapsim][]（一种用于“调试比特币 Tapscript 交易 [...] 针对希望与比特币脚本原语进行交互、帮助脚本调试并可视化脚本执行时的虚拟机状态的工具”）的操作[演示][halseth demo]。
+    除了描述功能，Halseth 还提供了使用 [Tapsim][]（一种用于“调试比特币 Tapscript 交易 [...] 针对希望与比特币脚本原语进行交互、帮助脚本调试并可视化脚本执行时的虚拟机状态的工具”）的操作[演示][halseth demo]。
 
     在另一个帖子中，Halseth [发布][halseth matt-joinpool]了关于使用 MATT 加上 [OP_CAT][] 创建 [joinpool][topic joinpools]（也称为_coinpool_ 或 _payment pool_）的内容。同样，他提供了一个使用 Tapsim 的[交互式演示][demo joinpool]。基于实验性实现的结果，他也提供了几个对 MATT 提案中操作码的修改建议。MATT 提案的发起人 Salvatore Ingala 对此进行了积极地[回复][ingala matt]。{% assign timestamp="1:23" %}
 
@@ -39,9 +39,9 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的限定周�
 
 - [Eclair #2642][] 添加了一个`closedchannels` RPC，提供有关节点关闭的通道的数据。还可以参考 Core Lightning 中类似的 PR，详见[周报 #245][news245 listclosedchannels]。{% assign timestamp="44:34" %}
 
-- [LND #7645][] 确保 RPC 调用中的任何用户提供的费率在 `OpenChannel`、`CloseChannel`、`SendCoins` 和 `SendMany` 中不低于“中继费率”。更改说明“‘中继费率’的含义可能因后端而异。对于 bitcoind 来说，它实际上是 max(relay fee, min mempool fee)”。{% assign timestamp="46:05" %}
+- [LND #7645][] 确保 RPC 调用中的任何用户提供的费率在 `OpenChannel`、`CloseChannel`、`SendCoins` 和 `SendMany` 中不低于“中继费率”。更改注释中“‘中继费率’的含义可能因后端而异。对于 bitcoind 来说，它实际上是 max(relay fee, min mempool fee)”。{% assign timestamp="46:05" %}
 
-- [LND #7726][] 将始终花费所有 HTLC 来支付本地节点，如果需要在链上解决通道。即使清理这些 HTLC 可能会比它们的价值更多地产生交易费用，它也会清理这些HTLC。与 Eclair 的一个 PR 相比，Eclair 在上周的[周报][news253 sweep]中描述的程序现在不会尝试去索取一个[不经济的][topic uneconomical outputs] HTLC。PR 讨论帖中的评论提到 LND 正在努力实现其他改变，以增强其计算与解决 HTLC 相关的成本和收益的能力（无论是离线还是在线），从而使其能够在未来做出最佳决策。{% assign timestamp="48:20" %}
+- [LND #7726][] 将始终花费所有 HTLC 来向本地节点支付，如果需要在链上结算通道。即使结算这些 HTLC 可能会产生比它们的价值更多的交易费用，它也会结算这些 HTLC。与 Eclair 的一个 PR 相比，Eclair 在上周的[周报][news253 sweep]中描述的程序现在不会尝试去索取一个[不经济的][topic uneconomical outputs] HTLC。PR 讨论帖中的评论提到 LND 正在努力实现其他改变，以增强其计算与解决 HTLC 相关的成本和收益的能力（无论是离线还是在线），从而使其能够在未来做出最佳决策。{% assign timestamp="48:20" %}
 
 - [LDK #2293][] 如果对等节点没有在合理的时间内回应，则断开连接然后重新连接。这可能会缓解其他闪电网络软件有时会停止响应导致通道被强制关闭的问题。 {% assign timestamp="50:58" %}
 
