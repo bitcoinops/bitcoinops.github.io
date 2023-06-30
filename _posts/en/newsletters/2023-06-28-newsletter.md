@@ -39,7 +39,7 @@ infrastructure software.
     the other parties or the coordinator to co-sign any conflicting
     transactions, which they are unlikely to do unless signing would be
     in the best interests of all the participants (e.g. a [fee
-    bump][topic rbf]).
+    bump][topic rbf]). {% assign timestamp="16:08" %}
 
 - **Speculatively using hoped-for consensus changes:** Robin Linus
   [posted][linus spec] to the Bitcoin-Dev mailing list an idea for
@@ -70,7 +70,7 @@ infrastructure software.
     advocate for the change, but heavily incentivizing some users to
     change the system may result in other users feeling like they're
     being coerced.  The idea had not received any discussion on the
-    mailing list as of this writing.
+    mailing list as of this writing. {% assign timestamp="1:33" %}
 
 ## Waiting for confirmation #7: Network Resources
 
@@ -79,7 +79,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/07-network-resources.md %}
+{% include specials/policy/en/07-network-resources.md %} {% assign timestamp="24:46" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -99,7 +99,7 @@ answers posted since our last update.*
   [show][mempool space] expected compared to actual blocks. Pieter Wuille points
   out that due to inherent variance in different nodes' [mempools][waiting for
   confirmation 1] related to transaction propagation, a consensus rule enforcing
-  block contents is not possible.
+  block contents is not possible. {% assign timestamp="57:38" %}
 
 - [Why does everyone say that soft forks restrict the existing ruleset?]({{bse}}118642)
   Pieter Wuille uses the rules added during the [taproot][topic taproot] and
@@ -110,23 +110,23 @@ answers posted since our last update.*
     adhere to the taproot consensus rules
   - segwit added the requirement that `OP_{0..16} <2..40 bytes>` (segwit) output
     spends adhere to the segwit consensus rules and also requires empty witness
-    data for pre-segwit outputs
+    data for pre-segwit outputs {% assign timestamp="1:05:28" %}
 
 - [Why is the default LN channel limit set to 16777215 sats?]({{bse}}118709)
   Vojtěch Strnad explains the 2^24 satoshi limit history and motivation for
   large (wumbo) channels and also links to Optech's [large channel topic][topic
-  large channels] for more information.
+  large channels] for more information. {% assign timestamp="1:07:47" %}
 
 - [Why does Bitcoin Core use ancestor score instead of just ancestor fee rate to select transactions?]({{bse}}118611)
   Sdaftuar explains that performance optimization is the reason that the mining
   block template transaction selection algorithm uses both the ancestor feerate and ancestor
   score. (See [Waiting for confirmation #2: Incentives][waiting for confirmation
-  2]).
+  2]). {% assign timestamp="1:10:28" %}
 
 - [How does Lightning multipart payments (MPP) protocol define the amounts per part?]({{bse}}117405)
   Rene Pickhardt points out that [multipath payments][topic multipath payments]
   do not have a protocol-specified part size or algorithm for choosing part size and
-  points out some relevant payment-splitting research.
+  points out some relevant payment-splitting research. {% assign timestamp="1:14:15" %}
 
 ## Releases and release candidates
 
@@ -136,7 +136,7 @@ release candidates.*
 
 - [BTCPay Server 1.10.3][] is the latest release for this self-hosted
   payment processing software.  See their [blog post][btcpay 1.10] for a
-  tour of the headline features in the 1.10 branch.
+  tour of the headline features in the 1.10 branch. {% assign timestamp="1:16:08" %}
 
 ## Notable code and documentation changes
 
@@ -149,7 +149,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
 - [Core Lightning #6303][] adds a new `setconfig` RPC that allows
-  changing some configuration options without restarting the daemon.
+  changing some configuration options without restarting the daemon. {% assign timestamp="1:21:14" %}
 
 - [Eclair #2701][] begins recording both when an offered [HTLC][topic
   htlc] is received and when it is settled.  This allows tracking how
@@ -157,20 +157,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   or a few high-value HTLCs, are pending for long periods of time, this
   may indicate a [channel jamming attack][topic channel jamming attacks]
   is in progress.  Tracking HTLC duration helps detect such attacks and
-  may contribute to mitigating them.
+  may contribute to mitigating them. {% assign timestamp="1:22:21" %}
 
 - [Eclair #2696][] changes how Eclair allows users to configure what
   feerates to use.  Previously, users could specify what feerate to use
   with a _block target_, e.g. a setting of "6" meant Eclair would try to
   get a transaction confirmed within six blocks.  Now Eclair accepts
   "slow", "medium", and "fast", which it translates into specific
-  feerates using constants or block targets.
+  feerates using constants or block targets. {% assign timestamp="1:25:03" %}
 
 - [LND #7710][] adds the ability for plugins (or the daemon itself) to
   retrieve data received earlier in an HTLC.  This is necessary for
   [route blinding][topic rv routing] and may be used by various [channel
   jamming][topic channel jamming attacks] countermeasures, among other
-  ideas for future features.
+  ideas for future features. {% assign timestamp="1:26:51" %}
 
 - [LDK #2368][] allows accepting new channels created by a peer that use
   [anchor outputs][topic anchor outputs] but requires the controlling
@@ -179,10 +179,10 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   access to one or more UTXOs with sufficient value.  LDK, as a library
   that is unaware of what non-LN UTXOs the user's wallet controls, uses
   this prompt to give the controlling program a chance to verify that it
-  has the necessary UTXOs.
+  has the necessary UTXOs. {% assign timestamp="1:27:43" %}
 
 - [LDK #2367][] makes [anchor channels][topic anchor outputs] accessible
-  to regular consumers of the API.
+  to regular consumers of the API. {% assign timestamp="1:33:34" %}
 
 - [LDK #2319][] allows a peer to create an HTLC that commits to paying
   less than the amount the original spender said should be paid,
@@ -193,16 +193,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   and commits to the HTLC within that channel---but it incurs additional
   transaction fees in creating that onchain transaction.  By taking an
   extra fee, it is compensated for its costs if the receiver accepts the
-  new channel and settles the HTLC on time.
+  new channel and settles the HTLC on time. {% assign timestamp="1:34:40" %}
 
 - [LDK #2120][] adds support for finding a route to a receiver who is
-  using [blinded paths][topic rv routing].
+  using [blinded paths][topic rv routing]. {% assign timestamp="1:37:09" %}
 
 - [LDK #2089][] adds an event handler that makes it easy for wallets to
-  fee bump any [HTLCs][topic htlc] that need to be settled onchain.
+  fee bump any [HTLCs][topic htlc] that need to be settled onchain. {% assign timestamp="1:38:12" %}
 
 - [LDK #2077][] refactors a large amount of code to make it easier later
-  to add support for [dual funded channels][topic dual funding].
+  to add support for [dual funded channels][topic dual funding]. {% assign timestamp="1:39:08" %}
 
 - [Libsecp256k1 #1129][] implements the [ElligatorSwift][ElligatorSwift paper]
   technique to introduce a 64-byte public key encoding that is computationally
@@ -211,7 +211,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   convenience functions to generate new uniformly-random keys and perform
   an Elliptic Curve Diffie-Hellman key exchange (ECDH) on ellswift-encoded
   keys. The ellswift-based ECDH is to be used in establishing connections
-  for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]).
+  for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]). {% assign timestamp="1:40:37" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
