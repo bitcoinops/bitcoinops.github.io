@@ -54,7 +54,7 @@ mempool - les nœuds qui stockent davantage de transactions [agissent comme des 
 transactions leur sont rediffusées. À moins que l'ensemble du réseau n'augmente la capacité de ses mempools - ce qui serait
 un signe de changement de la valeur par défaut - les utilisateurs ne doivent pas s'attendre à ce que l'augmentation de la
 capacité de leurs propres mempools leur apporte beaucoup d'avantages. Le taux de frais minimum fixé par les mempools par
-défaut limite l'utilité de l'utilisation de CPFP pendant les périodes de fort trafic. Un utilisateur ayant réussi à soumettre
+défaut limite l'utilité de CPFP pendant les périodes de fort trafic. Un utilisateur ayant réussi à soumettre
 une transaction CPFP à son propre mempool, dont la taille a été augmentée, pourrait ne pas remarquer que la transaction ne
 s'est pas propagée à d'autres utilisateurs.
 
