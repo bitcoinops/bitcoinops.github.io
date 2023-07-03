@@ -52,133 +52,112 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
         financement ne soit sécurisée, ce qui, selon lui, peut créer des problèmes juridiques et empêcher les portefeuilles
         non hébergés d'offrir un service similaire.
 
-    Voegtlin suggests that allowing a BOLT11 invoice to contain two
-    separate commitments to secrets, each for a different amount, will
-    allow using one secret and amount for an upfront fee to pay the
-    onchain transaction costs and the other secret and amount for the
-    actual submarine swap or JIT channel funding.  The proposal received
-    several comments, a few of which we'll summarize:
+    Voegtlin suggère que le fait d'autoriser une facture BOLT11 à contenir deux engagements distincts en matière de secrets,
+    chacun pour un montant différent, permettra d'utiliser un secret et un montant pour une commission initiale destinée à
+    payer les coûts de transaction sur la chaîne et l'autre secret et montant pour le swap sous-marin ou le financement du
+    canal JIT proprement dit.  La proposition a reçu plusieurs commentaires, dont nous allons résumer quelques-uns :
 
-    - *Dedicated logic required for submarine swaps:* Olaoluwa Osuntokun
-      [notes][o 2p] that the receiver of a submarine swap needs to create a
-      secret, distribute it, and then settle a payment to it onchain.  The cheapest
-      way to settle it is by interacting with the swap service provider.
-      If the spender and receiver are going to interact with the service
-      provider anyway, as is often the case with some existing
-      implementations where the spender and receiver are the same entity,
-      they don't need to communicate extra information using an invoice.
-      Voegtlin [replied][v 2p2] that a dedicated piece of software can handle
-      the interaction, eliminating the need for additional logic in the
-      offchain wallet that pays out the funds and the onchain wallet
-      that receives the funds---but this is only possible if the LN
-      wallet can pay two separate secrets and amounts in the same
-      invoice.
+    - *Une logique dédiée est nécessaire pour les échanges sous-marins :* Olaoluwa Osuntokun [note][o 2p] que le destinataire
+      d'un swap sous-marin doit créer un secret, le distribuer, puis effectuer un paiement onchain. Le moyen le plus économique
+      de régler ce paiement est d'interagir avec le fournisseur de services d'échange. Si l'émetteur et le récepteur interagissent
+      de toute façon avec le fournisseur de services, comme c'est souvent le cas dans certaines implémentations existantes où
+      l'émetteur et le récepteur sont la même entité, ils n'ont pas besoin de communiquer des informations supplémentaires à
+      l'aide d'une facture. Voegtlin [a répondu][v 2p2] qu'un logiciel dédié peut gérer l'interaction, éliminant le besoin
+      d'une logique supplémentaire dans le portefeuille offchain qui paie les fonds et le portefeuille onchain qui reçoit les
+      fonds---mais cela n'est possible que si le portefeuille LN peut payer deux secrets et montants distincts dans la même facture.
 
-    - *BOLT11 ossified:* Matt Corallo [répond][c 2p] qu'il n'a pas encore été possible de faire en sorte que toutes les
+    - *ossification de BOLT11 :* Matt Corallo [répond][c 2p] qu'il n'a pas encore été possible de faire en sorte que toutes les
       implémentations LN mettent à jour leur support BOLT11 pour supporter les factures qui ne contiennent pas de montant
       (pour permettre les [paiements spontanés][topic spontaneous payments]), donc il ne pense pas que l'ajout d'un champ
-      supplémentaire soit une approche pratique pour le moment.  Bastien Teinturier fait un [commentaire similaire][t 2p],
+      supplémentaire soit une approche pratique pour le moment. Bastien Teinturier fait un [commentaire similaire][t 2p],
       suggérant d'ajouter un support aux [offres][topic offers] à la place. Voegtlin [n'est pas d'accord][v 2p3] et pense
       que l'ajout d'un soutien est pratique.
 
-    - *Splice-out alternative:* Corallo also inquires about why the
-      protocol should be modified to support submarine swaps if [splice
-      outs][topic splicing] become available.  It wasn't mentioned in
-      the thread, but both submarine swaps and splice outs allow moving
-      offchain funds into an onchain output---however splice outs can be
-      more efficient onchain and aren't vulnerable to uncompensated fee
-      problems.  Voegtlin answers that submarine swaps allow an LN user
-      to increase their capacity for receiving new LN payments, which
-      splicing does not.
+    - *Alternative au splice-out :* Corallo demande également pourquoi le protocole devrait être modifié pour supporter les
+      submarine swaps si [splice outs][topic splicing] devient disponible. Cela n'a pas été mentionné dans le fil de discussion,
+      mais les swaps sous-marins et les splice outs permettent tous deux de déplacer des fonds offchain vers une sortie
+      onchain---mais les splice outs peuvent être plus efficaces onchain et ne sont pas vulnérables aux problèmes de frais non
+      compensés. Voegtlin répond que les échanges sous-marins permettent à un utilisateur de LN d'augmenter sa capacité à
+      recevoir de nouveaux paiements LN, ce qui n'est pas le cas du splicing.
 
-    The discussion appeared to be ongoing at the time of writing.
+    La discussion semblait être en cours au moment de la rédaction du présent document.
 
-## Waiting for confirmation #6: Policy Consistency
+## En attente de confirmation #6 : Cohérence des politiques
 
-_A limited weekly [series][policy series] about transaction relay,
-mempool inclusion, and mining transaction selection---including why
-Bitcoin Core has a more restrictive policy than allowed by consensus and
-how wallets can use that policy most effectively._
+Une [série][policy series] hebdomadaire limitée sur les relais de transaction, l'inclusion dans le mempool et la sélection des
+transactions de minage, y compris pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le consensus et
+comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace possible.
 
 {% include specials/policy/en/06-consistency.md %}
 
-## Changes to services and client software
+## Modifications apportées aux services et aux logiciels clients
 
-*In this monthly feature, we highlight interesting updates to Bitcoin
-wallets and services.*
+*Dans cette rubrique mensuelle, nous mettons en évidence les mises à jour
+intéressantes des portefeuilles et services Bitcoin.*
 
-- **Greenlight libraries open sourced:**
-  Non-custodial CLN node service provider [Greenlight][news162 greenlight] has
-  [announced][decker twitter] a [repository][github greenlight] of client
-  libraries and language bindings as well a [testing framework guide][greenlight testing].
+- **Les bibliothèques Greenlight sont en source ouverte :**
+  Le fournisseur de services de nœuds CLN non privatifs [Greenlight][news162 greenlight] a [annoncé][decker twitter] un
+  [dépôt][github greenlight] de bibliothèques client et de liaisons linguistiques ainsi qu'un
+  [guide du cadre de test][greenlight testing].
 
-- **Tapscript debugger Tapsim:**
-  [Tapsim][github tapsim] is a script execution debugging (see [Newsletter
-  #254][news254 tapsim]) and visualization tool for
-  [tapscript][topic tapscript] using btcd.
+- **Débogueur pour Tapscript Tapsim :**
+  [Tapsim][github tapsim] est un outil de débogage de l'exécution des scripts (voir [Bulletin #254][news254 tapsim]) et de
+  visualisation pour [tapscript][topic tapscript] utilisant btcd.
 
-- **Bitcoin Keeper 1.0.4 announced:**
-  [Bitcoin Keeper][] is a mobile wallet that supports multisig, hardware signers,
-  [BIP85][], and with the latest release, [coinjoin][topic coinjoin] support
-  using the [Whirlpool protocol][gitlab whirlpool].
+- **Annonce de Bitcoin Keeper 1.0.4 :**
+  [Bitcoin Keeper][] est un portefeuille mobile qui supporte le multisig, les supports de signature matériels, [BIP85][],
+  et avec la dernière version, [coinjoin][topic coinjoin] qui utilise le [protocole Whirlpool][gitlab whirlpool].
 
-- **Lightning wallet EttaWallet announced:**
-  The mobile [EttaWallet][github ettawallet] was recently [announced][ettawallet
-  blog] with Lightning features enabled by LDK and a strong usability focus
-  inspired by the [daily spending wallet][bitcoin design guide] reference design
-  from the Bitcoin Design Community.
+- **Annonce du portefeuille lightning EttaWallet :**
+  Le portefeuille mobile [EttaWallet][github ettawallet] a été récemment [annoncé][ettawallet blog] avec des fonctionnalités
+  Lightning activées par LDK et une forte orientation vers la facilité d'utilisation inspirée par la conception de référence
+  du [portefeuille de dépenses quotidiennes][bitcoin design guide] de la Bitcoin Design Community.
 
-- **zkSNARK-based block header sync PoC announced:**
-  [BTC Warp][github btc warp] is a light client sync proof-of-concept
-  using zkSNARKs to prove and verify a chain of Bitcoin block headers. A [blog post][btc warp
-  blog] provides details on the approaches taken.
+- **Annonce d'un PoC de synchronisation d'en-tête de bloc basé sur zkSNARK :**
+  [BTC Warp][github btc warp] est une preuve de concept de synchronisation de client léger utilisant les zkSNARKs pour prouver
+  et vérifier une chaîne d'en-têtes de blocs Bitcoin. Un [billet de blog][btc warp blog] fournit des détails sur les approches
+  adoptées.
 
-- **lnprototest v0.0.4 released:**
-  The [lnprototest][github lnprototest] project is a test suite for LN including "a set of test
-  helpers written in Python3, designed to make it easy to write new tests when
-  you propose changes to the lightning network protocol, as well as test
-  existing implementations".
+- **Lancement de lnprototest v0.0.4 :**
+  Le projet [lnprototest][github lnprototest] est une suite de tests pour LN comprenant "un ensemble d'aides au test écrits
+  en Python3, conçus pour faciliter l'écriture de nouveaux tests lorsque vous proposez des changements au protocole du réseau
+  Lightning, ainsi que pour tester les implémentations existantes".
 
-## Releases and release candidates
+## Mises à jour et versions candidates
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d’infrastructure
+Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
+les versions candidates.*
 
-- [Eclair v0.9.0][] is a new release of this LN implementation that
-  "contains a lot of preparatory work for important (and complex)
-  lightning features: [dual-funding][topic dual funding],
-  [splicing][topic splicing] and [BOLT12 offers][topic offers]."  The
-  features are experimental for now.  The release also "makes plugins
-  more powerful, introduces mitigations against various types of DoS, and
-  improves performance in many areas of the codebase."
+- [Eclair v0.9.0][] est une nouvelle version de cette implémentation du LN qui "contient beaucoup de travail préparatoire pour
+  des fonctionnalités importantes (et complexes) : [dual-funding][topic dual funding], [splicing][topic splicing] et les
+  [offres BOLT12][topic offers]". Ces fonctionnalités sont pour l'instant expérimentales. La version "rend les plugins plus
+  puissants, introduit des mesures d'atténuation contre divers types de déni de service et améliore les performances dans de
+  nombreux domaines du code de base".
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [LDK #2294][] adds support for replying to [onion messages][topic
-  onion messages] and brings LDK closer to full support for
-  [offers][topic offers].
+- [LDK #2294][] ajoute la prise en charge de la réponse aux [messages en oignons][topic onion messages] et rapproche LDK de la
+  prise en charge complète des [offres][topic offers].
 
-- [LDK #2156][] adds support for [keysend payments][topic spontaneous
-  payments] that use [simplified multipath payments][topic multipath
-  payments].  LDK previously supported both of those technologies, but
-  only when they were used separately.  Multipath payments must use
-  [payment secrets][topic payment secrets] but LDK previously rejected
-  keysend payments with payment secrets, so descriptive errors, a
-  configuration option, and a warning about downgrading are added to
-  mitigate any potential problems.
+- [LDK #2156][] ajoute la prise en charge des [paiements keyend][topic spontaneous payments] qui utilisent les
+  [paiements simplifiés par trajets multiples][topic multipath payments]. LDK prenait auparavant en charge ces deux technologies,
+  mais uniquement lorsqu'elles étaient utilisées séparément. Les paiements par trajets multiples doivent utiliser des
+  [secrets de paiement][topic payment secrets] mais LDK rejetait auparavant les paiements par keyend avec des secrets de paiement.
+  Des erreurs descriptives, une option de configuration et un avertissement sur la rétrogradation ont donc été ajoutés pour
+  atténuer tout problème potentiel.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2294,2156" %}
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [v 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003977.html
 [o 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003978.html
 [v 2p2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003979.html
@@ -191,7 +170,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [github greenlight]: https://github.com/Blockstream/greenlight
 [greenlight testing]: https://blockstream.github.io/greenlight/tutorials/testing/
 [github tapsim]: https://github.com/halseth/tapsim
-[news254 tapsim]: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+[news254 tapsim]: /fr/newsletters/2023/06/07/#utilisation-de-matt-pour-repliquer-ctv-et-gerer-les-joinpools
 [Bitcoin Keeper]: https://bitcoinkeeper.app/
 [gitlab whirlpool]: https://code.samourai.io/whirlpool/whirlpool-protocol
 [github ettawallet]: https://github.com/EttaWallet/EttaWallet
