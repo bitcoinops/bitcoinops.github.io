@@ -48,7 +48,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #24914][] wallet: Load database records in a particular order FIXME:glozow
 
-- [Bitcoin Core #27896][] Remove the syscall sandbox FIXME:bitschmidty c.f. https://bitcoinops.org/en/newsletters/2021/10/13/#bitcoin-core-20487
+- [Bitcoin Core #27896][] removes the experimental system call (syscall) sandbox
+  feature (see [Newsletter #170][news170 syscall]). A [related issue][Bitcoin
+  Core #24771] and follow up comments note the drawbacks of the
+  feature including maintainability (both of the syscall whitelist and OS
+  support), better-supported alternatives, and considerations about whether syscall
+  sandboxing should be Bitcoin Core's responsibility.
 
 - [Core Lightning #6334][] updates and expands CLN's experimental
   support for [anchor outputs][topic anchor outputs] (see [Newsletter
@@ -73,8 +78,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   for internal wallet payments (such as change).
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="24914,27896,6334,1452,1354" %}
+{% include linkers/issues.md v=2 issues="24914,27896,6334,1452,1354,24771" %}
 [policy series]: /en/blog/waiting-for-confirmation/
 [news111 cln anchor]: /en/newsletters/2020/08/19/#c-lightning-3830
 [news211 desc]: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
 [core lightning 23.05.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.2
+[news170 syscall]: /en/newsletters/2021/10/13/#bitcoin-core-20487
