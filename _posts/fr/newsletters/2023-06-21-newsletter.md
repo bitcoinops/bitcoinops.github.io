@@ -88,7 +88,7 @@ Une [série][policy series] hebdomadaire limitée sur les relais de transaction,
 transactions de minage, y compris pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le consensus et
 comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace possible.
 
-{% include specials/policy/en/06-consistency.md %}
+{% include specials/policy/fr/06-consistence.md %}
 
 ## Modifications apportées aux services et aux logiciels clients
 
