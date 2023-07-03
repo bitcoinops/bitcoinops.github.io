@@ -25,15 +25,15 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
       sous-marins peuvent également fonctionner dans l'autre sens, de onchain à offchain, mais cela n'est pas discuté ici).
       Le bénéficiaire onchain choisit un secret et le payeur offchain paie un [HTLC][topic htlc] au hash de ce secret, qui
       est acheminé par LN à un fournisseur de services d'échange sous-marin. Le fournisseur de services reçoit un HTLC offchain
-      pour ce secret et crée une transaction onchain en payant ce HTLC.  Lorsque l'utilisateur est convaincu que la transaction
+      pour ce secret et crée une transaction onchain en payant ce HTLC. Lorsque l'utilisateur est convaincu que la transaction
       onchain est sécurisée, il divulgue le secret pour régler le HTLC onchain, ce qui permet au prestataire de services de
       régler le HTLC offchain (et tous les paiements transmis sur le LN qui dépendent également du même secret).
 
         Toutefois, si le destinataire ne divulgue pas son secret, le prestataire de services ne recevra aucune compensation
         et devra dépenser la sortie onchain qu'il vient de créer, ce qui implique des coûts pour aucun gain. Pour éviter cet
-        abus, les services d'échange sous-marin existants exigent que le dépensier paie une redevance en utilisant le LN avant
-        que le service ne crée une transaction sur la chaîne (le service peut éventuellement rembourser une partie ou la
-        totalité de cette redevance si la HTLC sur la chaîne est réglée). Les frais initiaux et l'échange sous-marin portent
+        abus, les services d'échange sous-marin existants exigent que le créditeur paie une redevance en utilisant le LN avant
+        que le service ne crée une transaction onchain (le service peut éventuellement rembourser une partie ou la
+        totalité de cette redevance si la HTLC onchain est réglée). Les frais initiaux et l'échange sous-marin portent
         sur des montants différents et doivent être réglés à des moments différents, de sorte qu'ils doivent utiliser des
         secrets différents. Une facture BOLT11 actuelle ne peut contenir qu'un seul engagement pour un secret et un seul
         montant, de sorte que tout portefeuille effectuant des échanges sous-marins doit être programmé pour gérer
@@ -42,20 +42,20 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
     - *Les canaux JIT (Just-in-Time)*, où un utilisateur sans canaux (ou sans liquidité) crée un canal virtuel avec un
       fournisseur de services ; lorsque le premier paiement de ce canal virtuel arrive, le fournisseur de services crée
-      une transaction onchain qui finance le canal et contient ce paiement. Comme pour toute LN HTLC, le paiement offchain
+      une transaction onchain qui finance le canal et contient ce paiement. Comme pour tout HTLC LN, le paiement offchain
       est effectué selon un secret que seul le destinataire (l'utilisateur) connaît. Si l'utilisateur est convaincu que
       la transaction de financement du canal JIT est sécurisée, il divulgue le secret pour réclamer le paiement.
 
         Cependant, si l'utilisateur ne divulgue pas son secret, le fournisseur de services ne recevra aucune compensation
-        et encourra des coûts sur la chaîne pour aucun gain. Voegtlin pense que les fournisseurs de services de canaux JIT
+        et pourrait avoir des coûts onchain sans le moindre gain. Thomas Voegtlin pense que les fournisseurs de services de canaux JIT
         existants évitent ce problème en demandant à l'utilisateur de divulguer son secret avant que la transaction de
         financement ne soit sécurisée, ce qui, selon lui, peut créer des problèmes juridiques et empêcher les portefeuilles
         non hébergés d'offrir un service similaire.
 
-    Voegtlin suggère que le fait d'autoriser une facture BOLT11 à contenir deux engagements distincts en matière de secrets,
+    Il suggère qu'autoriser une facture BOLT11 à contenir deux engagements distincts en matière de secrets,
     chacun pour un montant différent, permettra d'utiliser un secret et un montant pour une commission initiale destinée à
-    payer les coûts de transaction sur la chaîne et l'autre secret et montant pour le swap sous-marin ou le financement du
-    canal JIT proprement dit.  La proposition a reçu plusieurs commentaires, dont nous allons résumer quelques-uns :
+    payer les coûts de transaction onchain et l'autre secret et montant pour le swap sous-marin ou le financement du
+    canal JIT proprement dit. La proposition a reçu plusieurs commentaires, nous en résumons quelques-uns :
 
     - *Une logique dédiée est nécessaire pour les échanges sous-marins :* Olaoluwa Osuntokun [note][o 2p] que le destinataire
       d'un swap sous-marin doit créer un secret, le distribuer, puis effectuer un paiement onchain. Le moyen le plus économique
@@ -75,7 +75,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
     - *Alternative au splice-out :* Corallo demande également pourquoi le protocole devrait être modifié pour supporter les
       submarine swaps si [splice outs][topic splicing] devient disponible. Cela n'a pas été mentionné dans le fil de discussion,
-      mais les swaps sous-marins et les splice outs permettent tous deux de déplacer des fonds offchain vers une sortie
+     les swaps sous-marins et les splice outs permettent tous deux de déplacer des fonds offchain vers une sortie
       onchain---mais les splice outs peuvent être plus efficaces onchain et ne sont pas vulnérables aux problèmes de frais non
       compensés. Voegtlin répond que les échanges sous-marins permettent à un utilisateur de LN d'augmenter sa capacité à
       recevoir de nouveaux paiements LN, ce qui n'est pas le cas du splicing.
