@@ -46,7 +46,11 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #24914][] wallet: Load database records in a particular order FIXME:glozow
+- [Bitcoin Core #24914][] loads wallet database records in order by
+  type instead of iterating through the whole database twice to detect
+  dependencies. Some wallets with corrupted records may no longer load
+  after this change, but they can be loaded with a previous version of
+  Bitcoin Core and ported to a new wallet.
 
 - [Bitcoin Core #27896][] removes the experimental system call (syscall) sandbox
   feature (see [Newsletter #170][news170 syscall]). A [related issue][Bitcoin
