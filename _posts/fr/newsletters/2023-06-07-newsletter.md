@@ -40,7 +40,7 @@ _Une [série][policy series] hebdomadaire limitée sur le relais de transaction,
 des transactions minières---y compris pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
 consensus et comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/en/04-feerate-estimation.md %}
+{% include specials/policy/fr/04-estimation-taux-de-frais.md %}
 
 ## Mises à jour et versions candidates
 
