@@ -14,11 +14,10 @@ Bitcoin Core 的一些规则配置选项存在是为了适应节点操作环境�
 
 乍一看，具有更大的交易池容量的节点似乎使 CPFP 更有用，而 RBF 则不那么有用。然而，交易中继受紧急的网络行为的影响，可能不存在接受用户 CPFP 并将其转发到矿工的节点路径。节点通常只在接受交易并将其放入交易池后转发一次，并忽略已存在于其交易池中的交易的通知——存储更多交易的节点在这些交易被重新广播到它们时[充当黑洞][se maxmempool]。除非整个网络增加其交易池容量（这将是更改默认值的迹象），否则用户应该不指望从增加自己的交易池容量中获得太多好处。交易池默认设置的最低费率限制了在高流量时使用 CPFP 的效用。成功地将 CPFP 交易提交到自己增加大小后的交易池的用户可能无法注意到该交易未传播给其他人。
 
-
 交易中继网络由动态加入和离开网络的个体节点组成，每个节点必须保护自己免受利用。因此，交易中继只能尽力而为，我们不能保证每个节点都了解每个未确认的交易。同时，如果节点收敛在一组使得交易池尽可能同质化的中继规则上，那么比特币网络的表现就会最佳。下一篇文章将探讨采取了哪些规则来符合整个网络的利益。
 
-[policy01]: /zh/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
-[policy04]: /zh/newsletters/2023/06/07/#waiting-for-confirmation-4-feerate-estimation
+[policy01]: /zh/newsletters/2023/05/17/#等待确认-1-我们为什么需要一个交易池
+[policy04]: /zh/newsletters/2023/06/07/#等待确认-4费率估算
 [aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th
 
