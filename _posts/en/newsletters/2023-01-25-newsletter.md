@@ -50,7 +50,7 @@ of notable changes to popular Bitcoin infrastructure software.
     dependency on [v3 transaction relay][topic v3 transaction relay],
     captures most of the benefits of `SIGHASH_GROUP` and provides the
     significant advantage of being much easier to get into
-    production than the `SIGHASH_GROUP` soft fork consensus change.
+    production than the `SIGHASH_GROUP` soft fork consensus change. {% assign timestamp="0:58" %}
 
 - **Request for proof that an async payment was accepted:** Valentine
   Wallace [posted][wallace pop] to the Lightning-Dev mailing list a
@@ -67,7 +67,7 @@ of notable changes to popular Bitcoin infrastructure software.
     proof of payment in the current LN model.  Wallace asks researchers
     to consider investigating how proof of payment for async payments
     could be obtained, either in LN's current HTLC-based system or a
-    future upgrade to [PTLCs][topic ptlc].
+    future upgrade to [PTLCs][topic ptlc]. {% assign timestamp="12:04" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -84,30 +84,30 @@ answers posted since our last update.*
   Andrew Chow explains that while the signing keys were [removed][remove builder
   keys] from the Bitcoin Core repository, there is now a list of keys on the
   [guix.sigs repository][guix.sigs repo] which houses [guix][topic reproducible
-  builds] build attestations.
+  builds] build attestations. {% assign timestamp="27:53" %}
 
 - [Why doesn't signet use a unique bech32 prefix?]({{bse}}116630)
   Casey Rodarmor wonders why both testnet and [signet][topic signet] use
   the `tb1` [address prefix][wiki address prefixes]. Kalle, one of the [BIP325][] authors, explains that
   while signet initially used a different address prefix, it was thought using the same
-  prefix would simplify usage of that alternate test network.
+  prefix would simplify usage of that alternate test network. {% assign timestamp="31:36" %}
 
 - [Arbitrary data storage in witness?]({{bse}}116875)
   RedGrittyBrick points to [one of several][large witness tx] recent P2TR
   transactions containing a large amount of witness data. Other users point out
   that the Ordinals project provides a service for including arbitrary data,
-  like [the image][ordinals example] in the transaction above, into a Bitcoin transaction using the witness.
+  like [the image][ordinals example] in the transaction above, into a Bitcoin transaction using the witness. {% assign timestamp="34:07" %}
 
 - [Why is the locktime set at transaction level while the sequence is set at input level?]({{bse}}116706)
   RedGrittyBrick provides early historical context for `nSequence` and `nLockTime`
   while Pieter Wuille goes on to explain the evolution in the meanings of these [timelock][topic
-  timelocks] fields over time.
+  timelocks] fields over time. {% assign timestamp="38:35" %}
 
 - [BLS signatures vs Schnorr]({{bse}}116551)
   Pieter Wuille contrasts the cryptographic assumptions between BLS and
   [schnorr][topic schnorr signatures] signatures, comments on the verification
   times, and notes complications around BLS [multisignatures][topic
-  multisignature] and the lack of support for [adaptor signatures][topic adaptor signatures].
+  multisignature] and the lack of support for [adaptor signatures][topic adaptor signatures]. {% assign timestamp="42:30" %}
 
 - [Why exactly would adding further divisibility to bitcoin require a hard fork?]({{bse}}116584)
   Pieter Wuille explains 4 soft fork methods that could enable sub-satoshi divisibility in transactions:
@@ -120,7 +120,7 @@ answers posted since our last update.*
      following the new side to move back to legacy side
   4. A method that uses current consensus rules but truncates sub-satoshi
      amounts for old nodes by storing these sub-satoshi amounts elsewhere in
-     the transaction
+     the transaction {% assign timestamp="46:56" %}
 
 ## Notable code and documentation changes
 
@@ -139,7 +139,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   each hit in another pass to see whether blocks actually correspond to
   the passed descriptors before providing the results to the caller.
   For performance reasons, the second pass needs to be enabled by
-  calling the RPC with the `filter_false_positives` option.
+  calling the RPC with the `filter_false_positives` option. {% assign timestamp="55:20" %}
 
 - [Libsecp256k1 #1192][] updates the library's exhaustive tests.  By
   changing the `B` parameter of the secp256k1 curve from `7` to another
@@ -151,12 +151,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   PR added a group of size 7 in addition to the existing sizes 13 and
   199, although cryptographers first had to figure out the peculiar
   algebraic properties that caused the naive search algorithm for such
-  groups to not always succeed before.  Size 13 remains the default.
+  groups to not always succeed before.  Size 13 remains the default. {% assign timestamp="57:37" %}
 
 - [BIPs #1383][] assigns [BIP329][] to the proposal for a standard
   wallet label export format.  Since the original proposal (see
   [Newsletter #215][news215 labels]), the main difference is a switch
-  in data format from CSV to JSON.
+  in data format from CSV to JSON. {% assign timestamp="1:00:22" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26325,1383,1192" %}
