@@ -24,7 +24,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/08-interface.md %}
+{% include specials/policy/en/08-interface.md %} {% assign timestamp="0:30" %}
 
 ## Releases and release candidates
 
@@ -34,7 +34,7 @@ release candidates.*
 
 - [Core Lightning 23.05.2][] is a maintenance release of this LN node
   software that contains several bug fixes that may affect users in
-  production.
+  production. {% assign timestamp="10:27" %}
 
 ## Notable code and documentation changes
 
@@ -50,14 +50,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   type instead of iterating through the whole database twice to detect
   dependencies. Some wallets with corrupted records may no longer load
   after this change, but they can be loaded with a previous version of
-  Bitcoin Core and ported to a new wallet.
+  Bitcoin Core and ported to a new wallet. {% assign timestamp="22:03" %}
 
 - [Bitcoin Core #27896][] removes the experimental system call (syscall) sandbox
   feature (see [Newsletter #170][news170 syscall]). A [related issue][Bitcoin
   Core #24771] and follow up comments note the drawbacks of the
   feature including maintainability (both of the syscall whitelist and OS
   support), better-supported alternatives, and considerations about whether syscall
-  sandboxing should be Bitcoin Core's responsibility.
+  sandboxing should be Bitcoin Core's responsibility. {% assign timestamp="24:47" %}
 
 - [Core Lightning #6334][] updates and expands CLN's experimental
   support for [anchor outputs][topic anchor outputs] (see [Newsletter
@@ -65,7 +65,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the updates in this PR include enabling experimental support for
   zero-fee [HTLC][topic htlc] anchors and adding configurable checks to
   ensure the node has at least the minimum amount of emergency funds it
-  needs to operate an anchor channel.
+  needs to operate an anchor channel. {% assign timestamp="27:51" %}
 
 - [BIPs #1452][] updates the [BIP329][] specification for a [wallet
   label][topic wallet labels] export format with a new optional
@@ -73,13 +73,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   spendable by the wallet.  Many wallets implement _coin control_
   features that allow a user to tell the [coin selection][topic coin
   selection] algorithm to not spend certain outputs, such as outputs that
-  might reduce the user's privacy.
+  might reduce the user's privacy. {% assign timestamp="31:08" %}
 
 - [BIPs #1354][] adds [BIP389][] for the multiple derivation path
   [descriptors][topic descriptors] described in [Newsletter #211][news211 desc].  It allows a
   single descriptor to specify two related BIP32 paths for HD key
   generation---the first path for incoming payments and the second path
-  for internal wallet payments (such as change).
+  for internal wallet payments (such as change). {% assign timestamp="33:55" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24914,27896,6334,1452,1354,24771" %}
