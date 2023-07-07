@@ -27,7 +27,7 @@ lang: zh
 
     - *<!--bolt11-ossified-->BOLT11 已经定型：* Matt Corallo [回复说][c 2p]，目前还无法让所有闪电网络实现更新其 BOLT11 支持以支持不包含金额的发票(以允许[自发付款][topic spontaneous payments])，因此他认为在此时添加额外字段是一种不切实际的方法。Bastien Teinturier 发表了[类似的评论][t 2p]，建议改为在[要约 offers][topic offers]中添加这类支持。Voegtlin [不同意][v 2p3]，认为添加支持是可行的。
 
-    - *<!--splice-out-alternative-->Splice-out 的替代方案：* Corallo 还询问了：如果[通道拼接][topic splicing] 技术可用，为什么还要修改协议以支持潜水艇互换呢？在该线程中没有提到，但是潜水艇互换和通道拼接都允许将链下资金移动到链上输出，但通道拼接在链上更有效，而且不会有手续费得不到补偿的问题。Voegtlin 回答说：潜水艇互换允许 LN 用户提高接收新的 LN 支付的容量，而通道拼接不行。
+    - *<!--splice-out-alternative-->通道拼接的替代方案：* Corallo 还询问了：如果[通道拼接][topic splicing]技术可用，为什么还要修改协议以支持潜水艇互换呢？在该线程中没有提到，但是潜水艇互换和通道拼接都允许将链下资金移动到链上输出，但通道拼接在链上更有效，而且不会有手续费得不到补偿的问题。Voegtlin 回答说：潜水艇互换允许 LN 用户提高接收新的 LN 支付的容量，而通道拼接不行。
     - 
     在编写本报告时，讨论似乎仍在进行中。
 
