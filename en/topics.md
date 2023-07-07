@@ -4,6 +4,7 @@ permalink: /en/topics/
 layout: page
 ---
 {% include linkers/topic-pages.md %}
+{% assign year_ago_date = 'now' | date: "%s" | minus: '31536000' %}
 
 {% comment %}<!-- Build an "ENDTOPIC"-separated string with
 Markdown-style links for each topic or topic alias.  We use
@@ -12,10 +13,20 @@ links, e.g. <a href=URL>Name</a>, so that it's easy to sort by name
 rather than URL. -->{% endcomment %}
 {% capture raw_topics_list %}
 {%- for topic in site.topics -%}
-  <!--{% include functions/sort-rename.md name=topic.title %}-->[{{topic.title}}]({{topic.url}})ENDTOPIC
   {%- for alias in topic.aliases -%}
     <!--{% include functions/sort-rename.md name=alias %}-->*[{{alias}}]({{topic.url}})*ENDTOPIC
   {%- endfor -%}
+  {% assign hot_topic = false %}
+  {%- for mention in topic.optech_mentions -%}
+    {%- include functions/get-mention-date.md -%}
+    {%- assign mydate = date | date: "%s" | plus: 0 -%}
+    {%- if mydate > year_ago_date -%}
+      {% assign hot_topic = true %}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if hot_topic == true %}<!--{% include functions/sort-rename.md name=topic.title %}-->**[{{topic.title}}]({{topic.url}})**ENDTOPIC
+  {%- else -%}<!--{% include functions/sort-rename.md name=topic.title %}-->[{{topic.title}}]({{topic.url}})ENDTOPIC{%- endif -%}
 {%- endfor -%}
 {% endcapture %}
 
