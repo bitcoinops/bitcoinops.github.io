@@ -296,7 +296,7 @@ justice because it's sort of a separate effort.  But the LSP specification
 effort is a group of people who are working on the application level, so wallet
 developers and people who would desire to run LSPs, and they're trying to figure
 out a common specification for things like selling a channel, or rating a node,
-<!-- skip-duplicate-words-test -->or that kind of thing so that that second layer on top of Lightning itself has
+or that kind of thing so that that second layer on top of Lightning itself has
 some common interoperability so that, as an example, if you're a mobile wallet,
 if you have a common spec, you can switch between LSPs rather than being tied to
 one LSP, if everyone's interactions work in the same way.

@@ -337,11 +337,11 @@ But if I understand correctly, so basically there are two new opcodes here that
 give you two new abilities.  The first, OP_CHECKINPUTCOVENANTVERIFY, is
 basically a way to assert that some particular piece of data is attached to the
 input, which I think is ultimately supplied off the witness stack.  And the way
-<!-- skip-duplicate-words-test -->that that happens, as far as I can tell, is you're checking a tweak in the input
+that that happens, as far as I can tell, is you're checking a tweak in the input
 taproot.  And then the second mechanism is asserting that the structure of the
 output taproot has some particular form.  Does that sound right?
 
-<!-- skip-duplicate-words-test -->**Salvatore Ingala**: Yeah, that sounds right.  And I just want to add to that
+**Salvatore Ingala**: Yeah, that sounds right.  And I just want to add to that
 that on a typical contract, what I can imagine is that people will want to have
 the taproot of the next output have coded meaning.  You already know what the
 program is, while the data that you attach to it is something that is
@@ -424,7 +424,7 @@ OP_CHECKOUTPUTCONTRACTVERIFY and OP_CHECKONPUTCONTRACTVERIFY.
 **Salvatore Ingala**: Yeah, so this idea of the deferred checks could be
 actually written to OP_CHECKINPUTCONTRACTVERIFY and OP_CHECKOUTPUTCONTRACTVERIFY
 and then we would have something with exactly the same semantics, I think.  My
-<!-- skip-duplicate-words-test -->only worry is that that might not work for other contracts.  For example, there
+only worry is that that might not work for other contracts.  For example, there
 is Johan in the mailing list already thinking about some more advanced use
 cases, like CoinPools, and on GitHub on the Bitcoin Contracting Primitives
 Working Group, he was talking about applications to Hash Time Lock Contracts
@@ -541,7 +541,7 @@ Contracting Primitives Working Group repository that Antoine Riard is managing,
 together with the other 1,000 things that Antoine Riard does; I don't know how
 he finds the time.  But yeah, another thing, maybe people might be interested in
 checking how to play rock-paper-scissors with MATT.  Probably there is no time
-<!-- skip-duplicate-words-test -->to cover it now, but there are some other topics that spawn from that that are
+to cover it now, but there are some other topics that spawn from that that are
 also quite interesting for potential future ideas built on top of MATT.
 
 **James O'Beirne**: And one interesting note that I'd like to leave here for the
@@ -718,7 +718,7 @@ behind the atomic swap, and it's also a principle that can function like what we
 nowadays think of as HTLC.  So, you'll hear PTLC, Point Time Locked Contract,
 which is essentially just using adaptor signatures to swap a coin for a secret,
 or coins for a secret, so it could be embedded in LN and I'm sure that everyone
-<!-- skip-duplicate-words-test -->intends that that will be the case, because it adds a lot of extra better
+intends that that will be the case, because it adds a lot of extra better
 properties, which you can read elsewhere about how PTLCs are better than HTLCs.
 So, adaptor signatures, or signature adaptors, are important for that reason.
 
@@ -770,7 +770,7 @@ these signatures, how sure are we that if you do something like that, for
 example can't someone adversarially choose their adaptor secret in such a way
 that it cancels someone else's adaptor secret?  How sure are we that if we
 combine lots of people doing these swaps all at the same time, is there some way
-<!-- skip-duplicate-words-test -->that that could leak information?
+that that could leak information?
 
 I know that was all rather complicated, but maybe it helps some listeners to
 understand why I care.  Specifically, the MuSig situation is very, very
@@ -846,7 +846,7 @@ answer's yes, but I'd like to see it fleshed out more myself.
 process.  I'm just going to summarize again.  There are lessons learned from the
 development of the MuSig and MuSig2 involving large participants, and
 potentially many different sessions happening at the same time, and the fact
-<!-- skip-duplicate-words-test -->that that uncovered some potential security concerns gave rise to a similar
+that that uncovered some potential security concerns gave rise to a similar
 consideration with regards to signature adaptors, and that's the motivation for
 your post and your work, in addition to some of these other folks' work, of how
 can we address that potential concern regarding signature adaptors with the use
@@ -910,7 +910,7 @@ adaptors in this kind of more parallel way, for example multiple adaptors at the
 same time, or one adaptor in multiple different contexts.  I think we need to
 really concretize and bed down what is and is not secure in that context, rather
 than what's so far in the literature in my opinion, apart from maybe this Wei
-<!-- skip-duplicate-words-test -->Dai paper, but so far in the literature, what it is is, "Here's an adaptor and
+Dai paper, but so far in the literature, what it is is, "Here's an adaptor and
 this is secure", which I think is not quite enough, is what I'm trying to get
 at.
 
@@ -1049,7 +1049,7 @@ _Bitcoin Core #25325_
 for the UTXO cache.  So, if I'm understanding this correctly, it sounds like
 before this change, every time you needed to track a new UTXO, you would be
 allocating that memory and freeing that memory for that particular UTXO in a
-<!-- skip-duplicate-words-test -->one-off basis, and this change changes that so that that in-memory UTXO cache is
+one-off basis, and this change changes that so that that in-memory UTXO cache is
 now allocated in larger chunks, called a pool, and that can save up on
 performance.  Murch, I know you did the writeup for this, so perhaps you can add
 some color to that.
@@ -1149,7 +1149,7 @@ files, to find the transaction to get the whole transaction that way, because in
 the UTXO set, we also don't start the entire transaction anymore.
 
 So, I think it would be primarily a performance improvement, because looking up
-<!-- skip-duplicate-words-test -->transactions without knowing exactly where your data is is way slower.  And with
+transactions without knowing exactly where your data is is way slower.  And with
 the txindex, if it's present, you know exactly at what byte range the
 transaction sits in the block files.  So, it would be faster and cheaper to look
 it up, I think.
@@ -1160,7 +1160,7 @@ _LDK #2222_
 messages.  So, on the LN, there are a bunch of gossip messages that are parsed
 between the different nodes, about what's going on with the LN topology.  And
 originally, there was a concern about DoS of these gossip messages.  One way
-<!-- skip-duplicate-words-test -->that that was mitigated is that the gossip messages are tied to a particular
+that that was mitigated is that the gossip messages are tied to a particular
 UTXO, and that's one of the ways to stop a DoS attack.  But there are certain
 scenarios in which LN nodes might not have the ability to look up or validate
 the authenticity of those UTXOs and may default to using other DoS prevention

@@ -480,7 +480,7 @@ _LDK #2198_
 **Mike Schmidt**: We have two more PRs, LDK #2198, increasing the amount of time
 that LDK waits before sending a gossip message in the event that a channel is
 down.  And digging a bit into this pull request, it sounds like LDK waited about
-<!-- skip-duplicate-words-test -->a minute previously before determining that that channel was down and labelling
+a minute previously before determining that that channel was down and labelling
 that as down, and other implementations were maybe ten times longer than that.
 
 So, what was happening was, if the connectivity was slow over Tor, for some

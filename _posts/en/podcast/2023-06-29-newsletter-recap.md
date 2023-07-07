@@ -310,7 +310,7 @@ Contract (HTLC), we have the two paths where we get to reclaim our funds after
 it times out.
 
 **Mike Schmidt**: Okay, Murch, that makes sense to me.  I think the part that I
-<!-- skip-duplicate-words-test -->didn't understand in reading through this is, where does v3 come in in any of
+didn't understand in reading through this is, where does v3 come in in any of
 that?  I understand that there's this staging step that would help mitigate the
 pinning, I'm unsure where the v3 part comes in.
 
@@ -416,7 +416,7 @@ can bootstrap", and we keep the cost of running a node small and it's feasible
 to do it on a Raspberry Pi, etc.
 
 So, for example, with people putting jpegs or putting any kind of arbitrary data
-<!-- skip-duplicate-words-test -->into their transactions, people feel that that needs to be stopped.  They're
+into their transactions, people feel that that needs to be stopped.  They're
 like, "Oh, yeah, maybe add a rule to prevent 'arbitrary useless wasteful data'
 in transactions, because we have lots of standardness rules right now that are
 already censoring".  And my take on that is, as protocol developers, I don't
@@ -752,9 +752,9 @@ system.  It is hard for me to assess whether the introduction of broad sidechain
 capabilities is going to have a beneficial outcome for Bitcoin.  And on the
 other hand, I think that, for example, Liquid introduced a lot of ways of how
 you could have currencies or tokens/native  assets on Liquid, and I've seen very
-<!-- skip-duplicate-words-test -->little uptake of that.  Now, people might say that that is due to the
+little uptake of that.  Now, people might say that that is due to the
 performance of Liquid marketing or something.  But I just don't see, it's not
-<!-- skip-duplicate-words-test -->obvious to me that that is an outright benefit to Bitcoin, but please feel free
+obvious to me that that is an outright benefit to Bitcoin, but please feel free
 to push back one more time on me.
 
 **Robin Linus**: Well, the best argument why people are not doing much shitcoin
@@ -762,7 +762,7 @@ casino things on Liquid is that bitcoiners just are not that much into gambling.
 But yeah, it's a different discussion.  My entire point was that sidechains in
 general, they can kill all the old shitcoin narratives because there cannot be
 any new shitcoin narrative that could promise something that you could not do as
-<!-- skip-duplicate-words-test -->a Bitcoin sidechain, and I think that that is a good thing in general.
+a Bitcoin sidechain, and I think that that is a good thing in general.
 
 **Mike Schmidt**: All right, perhaps this is a good opportunity to move along
 the newsletter.  I think we had some good discussion there.  People like talking

@@ -207,7 +207,7 @@ that's the case, you can always call off the tower and say, "You're not doing
 your job so no one should be trusting you in doing so, because you're not".
 
 On the other hand, if the user has sent some data that doesn't make any sense to
-<!-- skip-duplicate-words-test --> the tower, the tower could also prove that that data was the one being sent and
+the tower, the tower could also prove that that data was the one being sent and
 that's the reason why they couldn't respond.  Maybe the transaction sent to a
 tower had a ridiculously low fee, or it was actually invalid, or whatever the
 reason was that they were not able to respond.  So, it's like an insurance for
@@ -304,9 +304,9 @@ If you want to prove that the tower has misbehaved and some data was supposed to
 be there, you say, "You were supposed to respond to this.  Prove that this piece
 of data was not in the set".  And if they cannot prove it, it's because it's in
 the set, and then it means that they are misbehaving.  Or, the other way around.
-<!-- skip-duplicate-words-test -->The tower can always say, "I can prove that that was not part of the set, so you
+The tower can always say, "I can prove that that was not part of the set, so you
 never sent that data to me.  And since we both signed the head of the
-<!-- skip-duplicate-words-test -->accumulator, it means that you agreed that that was not in there at the very
+accumulator, it means that you agreed that that was not in there at the very
 beginning, so you're actually lying".
 
 So, the main idea is that instead of having to change and keep that many
@@ -562,7 +562,7 @@ transaction, and then you're able to export that in that standardized wallet
 label format.
 
 Then they also noted that BTCPay may add support for other wallet data, and I
-<!-- skip-duplicate-words-test -->believe they mentioned that that would be address information.  So, good to see
+believe they mentioned that that would be address information.  So, good to see
 adoption there.
 
 **Mark Erhardt**: Yeah, I just like the adoption of this, it will make it much
