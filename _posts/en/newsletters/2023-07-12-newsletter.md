@@ -74,12 +74,76 @@ how wallets can use that policy most effectively._
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Stop relaying non-mempool txs][review club 27625]
+is a PR by Marco Falke (MarcoFalke) that simplifies the Bitcoin Core
+client by removing an in-memory data structure, `mapRelay`, that may
+cause high memory consumption and is no longer needed, or at least
+is of very marginal benefit.
+This map contains transactions that may or may not also be in the mempool,
+and is sometimes used to reply to [`getdata`][wiki getdata] requests from peers.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/27600#l-33FIXME"
+  q0="What are the reasons to remove `mapRelay`?"
+  a0="The memory consumption of this data structure is unbounded.
+      Though typically it doesn't use much memory, it's concerning when
+      the size of any data structure is determined by the behavior of
+      outside entities (peers) and has no maximum, as this can create
+      a DoS vulnerability."
+  a0link="https://bitcoincore.reviews/27625#l-19"
+
+  q1="Why is the memory usage of `mapRelay` hard to determine?"
+  a1="Each entry in `mapRelay` is a shared pointer to a transaction
+      (`CTransaction`), with the mempool possibly holding another pointer.
+      A second pointer to the same object uses very little additional
+      space relative to a single pointer.
+      If a shared transaction is removed from the mempool,
+      all of its space becomes attributable to the `mapRelay` entry.
+      So `mapRelay`'s memory usage doesn't depend only on the number
+      of transactions and their individual sizes, but also on how many
+      of its transactions are no longer in the mempool, which is hard
+      to predict."
+  a1link="https://bitcoincore.reviews/27625#l-33"
+
+  q2="What problem is solved by introducing `m_most_recent_block_txs`?
+      (This is a list of only the transactions in the most recently-received
+      block.)"
+  a2="Without it, since `mapRelay` is no longer available, we wouldn't
+      be able to serve just-mined transactions (in the most recent block)
+      to peers requesting them, since we will have dropped them from
+      our mempool."
+  a2link="https://bitcoincore.reviews/27625#l-45"
+
+  q3="Do you think it is necessary to introduce `m_most_recent_block_txs`,
+      as opposed to just removing `mapRelay` without any replacement?"
+  a3="There was some uncertainty among review club attendees on this question.
+      It was suggested that `m_most_recent_block_txs` might improve block
+      propagation speed, because if our peer doesn't yet have the block
+      that we just received, our node's ability to provide its transactions
+      may help complete our peer's [compact block][topic compact block relay].
+      Another suggestion was that it may help in the event of a chain split;
+      if our peer is on a different tip than us, it may not have that
+      transaction via a block."
+  a3link="https://bitcoincore.reviews/27625#l-54"
+
+  q4="What are the memory requirements for `m_most_recent_block_txs`
+      compared to `mapRelay`?"
+  a4="The number of entries in `m_most_recent_block_txs` is bounded by
+      the number of transactions in a block. But the memory requirement
+      is even less than that many transactions, because `m_most_recent_block_txs`
+      entries are shared pointers (to transactions), and they are
+      also (already) pointed to by `m_most_recent_block`."
+  a4link="https://bitcoincore.reviews/27625#l-65"
+
+  q5="Are there scenarios in which transactions would be made available
+      for a shorter or longer time than before as a result of this change?"
+  a5="Longer when the time since the last block is greater than 15 minutes
+      (which is the time that entries remained in `mapRelay`), shorter otherwise.
+      This seems acceptable since the 15-minute time choice was rather arbitrary.
+      But the change may decrease the availability of transactions in case of
+      chain splits greater than one block deep (which are extremely rare)
+      because we're not retaining transactions that are unique to non-best
+      chains."
+  a5link="https://bitcoincore.reviews/27625#l-70"
 %}
 
 ## Releases and release candidates
@@ -111,3 +175,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news67 bolts642]: /en/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
 [russell clean up]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html
+[review club 27625]: https://bitcoincore.reviews/27625
+[wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
