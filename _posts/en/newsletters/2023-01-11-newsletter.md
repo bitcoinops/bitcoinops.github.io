@@ -96,7 +96,7 @@ notable changes to popular Bitcoin infrastructure software.
     The idea received a moderate amount of discussion on the mailing
     list as of this writing, with several comments seeking clarification
     about aspects of the idea and at least one [comment][fournier
-    potentiam] strongly supportive of the general concept.
+    potentiam] strongly supportive of the general concept. {% assign timestamp="3:20" %}
 
 ## Releases and release candidates
 
@@ -104,10 +104,10 @@ notable changes to popular Bitcoin infrastructure software.
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [BDK 0.26.0][] is a new release of this library for building wallets.
+- [BDK 0.26.0][] is a new release of this library for building wallets. {% assign timestamp="54:27" %}
 
 - [HWI 2.2.0-rc1][] is a release candidate of this application for
-  allowing software wallets to interface with hardware signing devices.
+  allowing software wallets to interface with hardware signing devices. {% assign timestamp="55:55" %}
 
 ## Notable code and documentation changes
 
@@ -122,7 +122,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   onion failure messages [recently introduced][bolts #1021] to BOLT 04.
   The TLV stream allows nodes to report additional details about routing
   failures and may be used for the proposed [fat errors][news224 fat]
-  scheme to further close the gap in error attribution.
+  scheme to further close the gap in error attribution. {% assign timestamp="56:56" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2455,1021" %}
