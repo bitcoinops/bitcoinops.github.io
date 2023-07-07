@@ -28,14 +28,14 @@ lang: zh
     - *<!--bolt11-ossified-->BOLT11 已经定型：* Matt Corallo [回复说][c 2p]，目前还无法让所有闪电网络实现更新其 BOLT11 支持以支持不包含金额的发票(以允许[自发付款][topic spontaneous payments])，因此他认为在此时添加额外字段是一种不切实际的方法。Bastien Teinturier 发表了[类似的评论][t 2p]，建议改为在[要约 offers][topic offers]中添加这类支持。Voegtlin [不同意][v 2p3]，认为添加支持是可行的。
 
     - *<!--splice-out-alternative-->通道拼接的替代方案：* Corallo 还询问了：如果[通道拼接][topic splicing]技术可用，为什么还要修改协议以支持潜水艇互换呢？在该线程中没有提到，但是潜水艇互换和通道拼接都允许将链下资金移动到链上输出，但通道拼接在链上更有效，而且不会有手续费得不到补偿的问题。Voegtlin 回答说：潜水艇互换允许 LN 用户提高接收新的 LN 支付的容量，而通道拼接不行。
-    - 
-    在编写本报告时，讨论似乎仍在进行中。
+
+    在编写本报告时，讨论似乎仍在进行中。 {% assign timestamp="1:00" %}
 
 ## 等待确认 #6：规则一致性
 
 _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周刊][policy series]———解释了为什么 Bitcoin Core 设置了比共识规则更严格的交易池规则，以及钱包可以如何更高效地使用这些交易池规则。_
 
-{% include specials/policy/zh/06-consistency.md %}
+{% include specials/policy/zh/06-consistency.md %} {% assign timestamp="19:25" %}
 
 ## 服务和客户端软件变更
 
@@ -45,34 +45,34 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的[限定周
   非托管 CLN 节点服务提供商 [Greenlight][news162 greenlight] [宣布][decker twitter]推出包含客户端库和语言绑定库的[repository][github greenlight]，以及[测试框架指南][greenlight testing].
 
 - **Tapscript 调试器 Tapsim：**
-  [Tapsim][github tapsim] 是一个脚本执行调试(见 [周报 #254][news254 tapsim])和使用 btcd 的 [tapscript][topic tapscript] 可视化工具。
+  [Tapsim][github tapsim] 是一个脚本执行调试(见 [周报 #254][news254 tapsim])和使用 btcd 的 [tapscript][topic tapscript] 可视化工具。 {% assign timestamp="33:25" %}
 
 - **Bitcoin Keeper 1.0.4 发布:**
   [Bitcoin Keeper][] 是一款支持多重签名、硬件签名、[BIP85][]的移动钱包，最新版本还支持使用 [Whirlpool 协议][gitlab whirlpool]的[coinjoin][topic coinjoin]。
 
 - **闪电钱包 EttaWallet 宣布：**
-  移动端钱包 [EttaWallet][github ettawallet] 最近[发布][ettawallet blog]。其闪电钱包特性来自于 LDK，而其对可用性的强烈偏重则受到了 Bitcoin Design Community 的[日常消费钱包][bitcoin design guide]参考设计的启发。
+  移动端钱包 [EttaWallet][github ettawallet] 最近[发布][ettawallet blog]。其闪电钱包特性来自于 LDK，而其对可用性的强烈偏重则受到了 Bitcoin Design Community 的[日常消费钱包][bitcoin design guide]参考设计的启发。 {% assign timestamp="35:47" %}
 
 - **基于 zkSNARK 的区块头同步 PoC 宣布：**
-  [BTC Warp][github btc warp] 是一个轻客户端同步 proof-of-concept，使用 zkSNARK 来证明和验证比特币区块头。一篇[博客][btc warp blog]文章提供了详细的方法。
+  [BTC Warp][github btc warp] 是一个轻客户端同步 proof-of-concept，使用 zkSNARK 来证明和验证比特币区块头。一篇[博客][btc warp blog]文章提供了详细的方法。 {% assign timestamp="37:09" %}
 
 - **lnprototest v0.0.4 释放：**
-  [lnprototest][github lnprototest] 项目是一个测试套件，用于测试LN，包括“一组用 Python3 编写的测试助手，旨在使您在提出闪电网络协议更改建议（以及测试现有实现）时编写新测试变得容易。
+  [lnprototest][github lnprototest] 项目是一个测试套件，用于测试LN，包括“一组用 Python3 编写的测试助手，旨在使您在提出闪电网络协议更改建议（以及测试现有实现）时编写新测试变得容易。 {% assign timestamp="39:45" %}
 
 ## 版本和候选版本
 
 *热门的比特币基础设施项目的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
 - [Eclair v0.9.0][] 是这个 LN 实现的新版本，其中包含了许多为重要（且复杂）闪电网络特性做准备的工作：[双向注资][topic dual funding]，
-  [通道拼接][topic splicing]和[BOLT12 要约][topic offers]。这些特性目前还处于实验阶段。此版本还“使插件更加强大，引入了各种类型 DoS 的缓解措施，并在代码库的许多领域提高了性能”。
+  [通道拼接][topic splicing]和[BOLT12 要约][topic offers]。这些特性目前还处于实验阶段。此版本还“使插件更加强大，引入了各种类型 DoS 的缓解措施，并在代码库的许多领域提高了性能”。 {% assign timestamp="41:24" %}
 
 ## 重大的代码和文档变更
 
 *本周的重大变更有 [Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquisition][bitcoin inquisition repo]。*
 
-- [LDK #2294][] 增加了对[洋葱消息][topic onion messages]的回复支持，使 LDK 更接近完全支持[要约（offers）][topic offers]。
+- [LDK #2294][] 增加了对[洋葱消息][topic onion messages]的回复支持，使 LDK 更接近完全支持[要约（offers）][topic offers]。 {% assign timestamp="44:33" %}
 
-- [LDK #2156][] 增加了使用[简化的多路径支付][topic multipath payments]的 [keysend 支付][topic spontaneous payments]的支持。LDK之前支持这两种技术，但只能分别使用。多路径支付必须使用[支付秘密值][topic payment secrets]，但 LDK 以前拒绝带有支付秘密值的 keysend 支付，因此添加了描述性错误、配置选项和有关降级的警告以缓解任何潜在问题。
+- [LDK #2156][] 增加了使用[简化的多路径支付][topic multipath payments]的 [keysend 支付][topic spontaneous payments]的支持。LDK之前支持这两种技术，但只能分别使用。多路径支付必须使用[支付秘密值][topic payment secrets]，但 LDK 以前拒绝带有支付秘密值的 keysend 支付，因此添加了描述性错误、配置选项和有关降级的警告以缓解任何潜在问题。 {% assign timestamp="46:57" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2294,2156" %}
