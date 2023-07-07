@@ -270,7 +270,7 @@ theoretically, let's say there's only a small number of mining pools and you
 know all of them and you just pay them and you just say, if there's three mining
 pools that have 95%, just pay them not to mine this transaction, and then 5%
 chance that it gets mined, but you've got 95% covered.  But you don't actually
-<!-- skip-duplicate-words-test -->see that that much in the wild.  Transaction censorship is hard and just
+see that that much in the wild.  Transaction censorship is hard and just
 diversifying the mining pools, yeah, that would be a way to do it.  There might
 be other ways to do it too, I don't know.
 
