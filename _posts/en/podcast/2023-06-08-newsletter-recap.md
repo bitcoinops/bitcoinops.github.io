@@ -450,7 +450,7 @@ right, to get into the nth block, I can literally just build n blocks and then
 tell you what the feerates of those transactions are".
 
 Of course, I imagine that to do this kind of accounting for other transactions
-<!-- skip-duplicate-words-test -->that might come in in the next timeframe is to build with a decreased block size
+that might come in in the next timeframe is to build with a decreased block size
 to account for like, okay, there's other people that might send transactions at
 these feerates and they'll fit into these empty spaces in the blocks that we're
 projecting.  And so that's one.  It very much relies on all of your information
@@ -686,7 +686,7 @@ PR for the reason of opening this.
 But the real reason the person gave was, the only way to figure out which peer
 closed the channel and what the cause and what the balance of the channel was,
 in addition to other information, was this person was using a Lightning
-<!-- skip-duplicate-words-test -->explorer, and mentioned Amboss and some other ones, and noted that that is a
+explorer, and mentioned Amboss and some other ones, and noted that that is a
 privacy leak by using these explorers to find out some of the information that
 was already in his node, he just didn't have an easy way to access it.  And then
 t-bast added the Optech Make Me Famous label to the PR, and now this person is

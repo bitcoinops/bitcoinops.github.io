@@ -641,8 +641,8 @@ The next piece of software that we highlighted in this month's coverage is Liana
 0.4 being released.  We covered the 0.1 and 0.2 releases previously, and to just
 give a quick recap of what Liana is, it's wallet software that features a
 recovery key.  And so, the typical case for this might be if you lose access to
-<!-- skip-duplicate-words-test -->your keys, for whatever reason, you can have some sort of a fallback for that
-<!-- skip-duplicate-words-test -->that includes a timelock, so that if that's a different set of keys, that that
+your keys, for whatever reason, you can have some sort of a fallback for that
+that includes a timelock, so that if that's a different set of keys, that that
 group of people cannot move your bitcoins until some sort of a timeout has been
 reached.
 
@@ -652,7 +652,7 @@ paths.  So, an example from the blog post that we linked to would be, "Let my
 funds only be spendable by myself for one year and if they don't move for a
 year, let them be spendable by my spouse and children, along with an attorney.
 Then, after a year and three months without the funds moving, let them be
-<!-- skip-duplicate-words-test -->spendable by my family alone".  And the Liana team notes in the writeup that
+spendable by my family alone".  And the Liana team notes in the writeup that
 that would obviate any potential attorney that is non-compliant or inaccessible
 or malicious, by having a second fallback to just have the family be able to
 move the coins after an additional timelock.  So, that's interesting.  Dave, did
@@ -761,7 +761,7 @@ you over the Electrum protocol.
 So, if you want to run a full Electrum Server, as we were talking with Maxim
 earlier, or something like Electrs, or whatever, you have to build this really
 beefy index.  I think your Bitcoin Core client plus your Electrum Server, you're
-<!-- skip-duplicate-words-test -->probably looking at at least 1 TB of data, maybe it's 2 TB now, I don't know
+probably looking at at least 1 TB of data, maybe it's 2 TB now, I don't know
 what it is.  With an Electrum Personal Server, you just store the data related
 to your transactions, so it's basically the size of your wallet on your full
 node, so it's very efficient.
@@ -958,7 +958,7 @@ So, this pull request helps take care of both sides of that problem.  First, it
 rebroadcasts the transaction; the current rule they have is to just rebroadcast
 it every hour.  And there are trade-offs there, I think we've discussed this in
 previous letters.  The trade-off there is the more you rebroadcast a
-<!-- skip-duplicate-words-test -->transaction, the easier it is for somebody monitoring that work to intuit that
+transaction, the easier it is for somebody monitoring that work to intuit that
 that transaction belongs to your wallet.  The real solution for this is for us
 to build rebroadcasting into Bitcoin Core directly so that all nodes
 occasionally rebroadcast transactions, so you can't tell that somebody

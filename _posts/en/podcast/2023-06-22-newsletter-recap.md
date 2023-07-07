@@ -727,7 +727,7 @@ Lightning!
 **Mike Schmidt**: I've spoken with a few experts, but they are also, as you can
 imagine, due to our Lightning coverage each week, very busy doing the creating
 of this and not so much the covering of the creating of it.  Vincenzo commented
-<!-- skip-duplicate-words-test -->the thread saying he's on web so he can't talk.  So, maybe we can have him in in
+the thread saying he's on web so he can't talk.  So, maybe we can have him in in
 the future to talk about a future update to lnprototest.
 
 **Mark Erhardt**: Then maybe we should just wrap here, then I can go to lunch!

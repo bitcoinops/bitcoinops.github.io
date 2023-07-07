@@ -62,7 +62,7 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	@ ## Only applies to *.md files
 	@ ## Add <!-- skip-duplicate-words-test --> to same line to skip this test
 	@ ## Ignores any strings with non alphabetical characters
-	export LC_ALL=C ; ! git ls-files '*.md' | while read file ; do \
+	export LC_ALL=C ; ! git ls-files '*.md' | grep -v /podcast/ | while read file ; do \
 	    cat $$file \
 	      | sed '/skip-duplicate-words-test/d' \
 	      | sed '/^#/d' \

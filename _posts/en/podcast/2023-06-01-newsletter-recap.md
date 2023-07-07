@@ -1395,7 +1395,7 @@ _Bitcoin Core #27626_
 downloads.  And it sounds like that when, if I'm running a node and I receive
 notification of a new block in compact block format from a peer, I will then
 attempt to download any transactions that I need that I don't have for that
-<!-- skip-duplicate-words-test -->block from that same peer, but there's potential that that peer is slow for
+block from that same peer, but there's potential that that peer is slow for
 whatever reason and not able to quickly reply.  So in that case, we can use
 another node that has also already obtained the block and is more quickly able
 to give us the transactions that we're missing.  Murch, did I get that right; do
@@ -1549,7 +1549,7 @@ know the origin of the motivation for this relaxation of the signed message not
 needing to be 32 anymore.  Murch, are you familiar with the motivation of why we
 don't need to sign exactly 32 bytes?  I believe there was some discussion about
 some requirements on the implementations needing to hash something in order to
-<!-- skip-duplicate-words-test -->get to those 32 bytes, and that that was potentially an onerous thing, then
+get to those 32 bytes, and that that was potentially an onerous thing, then
 being able to sign a message of any size was the result of that, which resulted
 in this change.
 

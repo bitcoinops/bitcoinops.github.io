@@ -251,7 +251,7 @@ need to worry about these ephemeral keys that really need to be ephemeral.
 
 **Mike Schmidt**: Joost, can you comment a bit about some of the considerations
 that Greg Sanders brought up in terms of things that he's been experimenting
-<!-- skip-duplicate-words-test -->with with LN symmetry, and considerations around coinjoin and multiparty
+with with LN symmetry, and considerations around coinjoin and multiparty
 protocols that came out of that?
 
 **Joost Jager**: Yeah, so I don't know that much about LN symmetry, but I do
@@ -547,7 +547,7 @@ node; or at the expense of more bandwidth, can I actually run a mobile client in
 a privacy preserving way?  I think that's the biggest one.  I don't know, Ruben,
 if you have any other ones you want to add or any color to add to that?
 
-<!-- skip-duplicate-words-test -->**Ruben Somsen**: Yeah, no, I agree that that's the one that a lot of people
+**Ruben Somsen**: Yeah, no, I agree that that's the one that a lot of people
 come back to.  Yeah, I will say, Josie ran the numbers, that's kind of
 interesting to add here as well.  Basically, what we came up with is that it's
 got to be -- so essentially, there is this sort of trick we can use to minimize
@@ -1279,7 +1279,7 @@ they forwarded in case the transaction needs to go onchain.  So basically, the
 individual hops started requiring bigger block deltas for each hop, and that
 meant that overall the max_cltv, which is for the entire multi-hop payment,
 started being a limit for how many hops you could encode before reaching that
-<!-- skip-duplicate-words-test -->max_cltv.  So, I think that that was the main motivation for increasing that.
+max_cltv.  So, I think that that was the main motivation for increasing that.
 
 Of course, on the other hand, having a very large max_cltv means that you
 potentially have to wait an immense amount of time until you know whether
