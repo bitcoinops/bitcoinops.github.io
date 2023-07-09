@@ -7,179 +7,180 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-This week's newsletter summarizes an idea for preventing the pinning of
-coinjoin transactions and describes a proposal for speculatively using
-hoped-for consensus changes.   Also included is another entry in our
-limited weekly series about mempool policy, plus our regular sections
-describing popular questions and answers on the Bitcoin Stack Exchange,
-new releases and release candidates, and changes to popular Bitcoin
-infrastructure software.
+Le bulletin de cette semaine résume une idée pour empêcher l'épinglage des
+transactions coinjoin et décrit une proposition pour utiliser de manière
+spéculative les changements de consensus espérés. Vous y trouverez également
+une nouvelle contribution à notre série hebdomadaire limitée sur la politique
+de mempool, ainsi que nos sections régulières concernant les questions et
+réponses populaires sur le Bitcoin Stack Exchange, les nouvelles versions et
+les versions candidates, et les changements apportés aux principaux logiciels
+de l'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
-- **Preventing coinjoin pinning with v3 transaction relay:** Greg
-  Sanders [posted][sanders v3cj] to the Bitcoin-Dev mailing list a
-  description for how the proposed [v3 transaction relay rules][topic v3
-  transaction relay] could allow creating a [coinjoin][topic
-  coinjoin]-style multiparty transaction that wouldn't be vulnerable to
-  [transaction pinning][topic transaction pinning].  The specific
-  concern with pinning is that one of the participants in a coinjoin can
-  use their input to the transaction to create a conflicting transaction
-  that prevents the coinjoin transaction from confirming.
+- **Prévenir l'épinglage des coinjoin avec le relais de transaction v3 :** Greg
+  Sanders a [posté][sanders v3cj] sur la liste de diffusion Bitcoin-Dev une
+  description de la manière dont les [règles de relais de transaction v3][topic v3 transaction relay]
+  proposées pourraient permettre de créer une transaction multipartite de type
+  [coinjoin][topic coinjoin] qui ne serait pas vulnérable à l'[épinglage de transaction][topic transaction pinning].
+  Le problème spécifique de l'épinglage est que l'un des participants à une coinjoin
+  peut utiliser sa contribution à la transaction pour créer une transaction conflictuelle
+  qui empêche la transaction coinjoin de se confirmer.
 
-    Sanders proposes that coinjoin-style transactions can avoid this
-    problem by having each participant initially spend their bitcoins to
-    a script that can only be spent by either a signature from all
-    participants in the coinjoin or by just the participant after a
-    timelock expires.  Alternatively, for a coordinated coinjoin, the
-    coordinator and the participant must sign together (or the
-    participant alone after the timelock expiration).
+    Sanders propose que les transactions de type coinjoin puissent éviter
+    ce problème en demandant à chaque participant de dépenser initialement
+    ses bitcoins dans un script qui ne peut être dépensé que par une signature
+    de tous les participants au coinjoin ou par le seul participant après
+    l'expiration d'un timelock. Par ailleurs, dans le cas d'un coinjoin coordonné,
+    le coordinateur et le participant doivent signer ensemble (ou le participant
+    seul après l'expiration du timelock).
 
-    Up until the timelock expires, the participant must now get either
-    the other parties or the coordinator to co-sign any conflicting
-    transactions, which they are unlikely to do unless signing would be
-    in the best interests of all the participants (e.g. a [fee
-    bump][topic rbf]). {% assign timestamp="16:08" %}
+    Jusqu'à l'expiration du délai, le participant doit maintenant obtenir
+    des autres parties ou du coordinateur qu'ils cosignent toute transaction
+    conflictuelle, ce qu'ils ne feront probablement pas, à moins que la
+    signature ne soit dans l'intérêt de tous les participants (par exemple,
+    un [fee bump][topic rbf]). {% assign timestamp="16:08" %}
 
-- **Speculatively using hoped-for consensus changes:** Robin Linus
-  [posted][linus spec] to the Bitcoin-Dev mailing list an idea for
-  spending money to a script fragment that can't be executed for a long
-  time (such as 20 years).  If that script fragment is interpreted under
-  current consensus rules, it will allow miners in 20 years to claim all
-  the funds paid to it.  However, the fragment is designed so that an
-  upgrade to the consensus rules will give the fragment a different
-  meaning.  Linus gives the example of an `OP_ZKP_VERIFY` opcode that,
-  if added to Bitcoin, will allow anyone providing a Zero-Knowledge
-  Proof (ZKP) for a program with a particular hash to claim the funds.
+- **Spéculer en utilisant les changements de consensus espérés :** Robin Linus
+  a [posté][linus spec] sur la liste de diffusion Bitcoin-Dev une idée pour
+  dépenser de l'argent dans un fragment de script qui ne peut pas être exécuté
+  pendant une longue période (par exemple 20 ans). Si ce fragment de script est
+  interprété selon les règles actuelles de consensus, il permettra aux mineurs
+  dans 20 ans de réclamer tous les fonds qui lui ont été versés. Toutefois, le
+  fragment est conçu de manière à ce qu'une mise à jour des règles de consensus
+  lui donne une signification différente. Linus donne l'exemple d'un opcode
+  `OP_ZKP_VERIFY` qui, s'il est ajouté à Bitcoin, permettra à toute personne
+  fournissant une preuve de zéro connaissance (ZKP) pour un programme avec un
+  hachage particulier de réclamer les fonds.
 
-    This could allow people to spend BTC today to one of these scripts
-    and use the proof of that spend to receive an equivalent amount of
-    BTC on a [sidechain][topic sidechains] or alternative chain, called a
-    _one-way peg_.  The BTC on the other chain could be spent repeatedly
-    for 20 years, until the script timelock expired.  Then the current
-    owner of the BTC on the other chain could generate a ZKP proof that
-    they owned it and use that proof to withdraw the locked deposit on
-    the Bitcoin mainnet, creating a _two-way peg_.  With a good design
-    for the verification program, the withdrawal would be simple and
-    flexible, which would allow for fungible withdrawals.
+    Cela pourrait permettre aux gens de dépenser aujourd'hui des BTC dans
+    l'un de ces scripts et d'utiliser la preuve de cette dépense pour recevoir
+    un montant équivalent de BTC sur une [sidechain][topic sidechains] ou une
+    chaîne alternative, appelée _one-way peg_. Les BTC sur l'autre chaîne peuvent
+    être dépensés de manière répétée pendant 20 ans, jusqu'à ce que le timelock
+    du script expire. Ensuite, le propriétaire actuel des BTC sur l'autre chaîne
+    pourrait générer une preuve ZKP qu'il les possède et utiliser cette preuve
+    pour retirer le dépôt bloqué sur le réseau principal de Bitcoin, créant ainsi
+    un _two-way peg_. Avec une bonne conception du programme de vérification, le
+    retrait serait simple et flexible, ce qui permettrait des retraits fongibles.
 
-    The authors note that anyone who would benefit from this
-    construction (e.g. who receives BTC on another chain) is basically
-    making a bet that Bitcoin's consensus rules will be changed (e.g.
-    `OP_ZKP_VERIFY` will be added).  This gives them an incentive to
-    advocate for the change, but heavily incentivizing some users to
-    change the system may result in other users feeling like they're
-    being coerced.  The idea had not received any discussion on the
-    mailing list as of this writing. {% assign timestamp="1:33" %}
+    Les auteurs notent que toute personne qui bénéficierait de cette construction
+    (par exemple, qui reçoit des BTC sur une autre chaîne) fait en fait le pari que
+    les règles de consensus de Bitcoin seront modifiées (par exemple, `OP_ZKP_VERIFY`
+    sera ajouté). Cela les incite à plaider en faveur du changement, mais en incitant
+    fortement certains utilisateurs à changer le système, d'autres utilisateurs pourraient
+    avoir l'impression d'être contraints. L'idée n'a fait l'objet d'aucune discussion
+    sur la liste de diffusion au moment de la rédaction de ce document. {% assign timestamp="1:33" %}
 
-## Waiting for confirmation #7: Network Resources
+## En attente de confirmation #7 : Ressources du réseau
 
-_A limited weekly [series][policy series] about transaction relay,
-mempool inclusion, and mining transaction selection---including why
-Bitcoin Core has a more restrictive policy than allowed by consensus and
-how wallets can use that policy most effectively._
+_Une [série][policy series] hebdomadaire limitée sur le relais de transaction,
+l'inclusion dans le mempool et la sélection des transactions minières---y compris
+pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
+consensus et comment les portefeuilles peuvent utiliser cette politique de la
+manière la plus efficace._
 
 {% include specials/policy/en/07-network-resources.md %} {% assign timestamp="24:46" %}
 
-## Selected Q&A from Bitcoin Stack Exchange
+## Sélection de Q&R du Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
-contributors look for answers to their questions---or when we have a
-few spare moments to help curious or confused users.  In
-this monthly feature, we highlight some of the top-voted questions and
-answers posted since our last update.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs
+d'Optech cherchent des réponses à leurs questions---ou lorsque nous avons quelques moments
+libres pour aider les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous
+mettons en avant certaines des questions et réponses les plus appréciées, postées depuis
+notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Why do Bitcoin nodes accept blocks that have so many excluded transactions?]({{bse}}118707)
-  User commstark wonders why a node accepts a block from miners that exclude
-  transactions that were anticipated for that block according to that node's
-  [block template][reference getblocktemplate]. There are various [tools][miningpool observer] that
-  [show][mempool space] expected compared to actual blocks. Pieter Wuille points
-  out that due to inherent variance in different nodes' [mempools][waiting for
-  confirmation 1] related to transaction propagation, a consensus rule enforcing
-  block contents is not possible. {% assign timestamp="57:38" %}
+- [Pourquoi les nœuds Bitcoin acceptent-ils des blocs contenant autant de transactions exclues ?]({{bse}}118707)
+  L'utilisateur commstark se demande pourquoi un nœud accepte un bloc de mineurs
+  qui exclut les transactions prévues pour ce bloc selon le [modèle de bloc][reference getblocktemplate]
+  de ce nœud. Il existe divers [outils][miningpool observer] qui [montrent][mempool space]
+  les blocs prévus par rapport aux blocs réels. Pieter Wuille souligne qu'en raison de la
+  variance inhérente aux [mempools][waiting for confirmation 1] des différents nœuds liée
+  à la propagation des transactions, il n'est pas possible d'établir une règle de consensus
+  imposant le contenu des blocs. {% assign timestamp="57:38" %}
 
-- [Why does everyone say that soft forks restrict the existing ruleset?]({{bse}}118642)
-  Pieter Wuille uses the rules added during the [taproot][topic taproot] and
-  [segwit][topic segwit] soft fork [activations][topic soft fork activation] as
-  examples of tightening the consensus rules:
+- [Pourquoi tout le monde prétend-il que les fourches souples restreignent l'ensemble des règles existantes ?]({{bse}}118642)
+  Pieter Wuille utilise les règles ajoutées lors des [activations][topic soft fork activation]
+  des soft fork [taproot][topic taproot] et [segwit][topic segwit] comme exemples
+  de renforcement des règles de consensus :
 
-  - taproot added the requirement that `OP_1 <32 bytes>` (taproot) output spends
-    adhere to the taproot consensus rules
-  - segwit added the requirement that `OP_{0..16} <2..40 bytes>` (segwit) output
-    spends adhere to the segwit consensus rules and also requires empty witness
-    data for pre-segwit outputs {% assign timestamp="1:05:28" %}
+  - taproot a ajouté l'exigence que les dépenses de sortie `OP_1 <32 bytes>` (taproot)
+    adhèrent aux règles de consensus de taproot.
+  - segwit a ajouté l'exigence que `OP_{0..16} <2..40 bytes>` (segwit) adhèrent aux
+    règles de consensus segwit et exigent également des données témoins vides pour
+    les sorties pré-segwit. {% assign timestamp="1:05:28" %}
 
-- [Why is the default LN channel limit set to 16777215 sats?]({{bse}}118709)
-  Vojtěch Strnad explains the 2^24 satoshi limit history and motivation for
-  large (wumbo) channels and also links to Optech's [large channel topic][topic
-  large channels] for more information. {% assign timestamp="1:07:47" %}
+- [Pourquoi la limite par défaut du canal LN est-elle fixée à 16777215 sats ?]({{bse}}118709)
+  Vojtěch Strnad explique l'histoire de la limite de 2^24 satoshi et la motivation
+  pour les grands canaux (wumbo). Il renvoie également au [thème des grands canaux][topic large channels]
+  d'Optech pour plus d'informations. {% assign timestamp="1:07:47" %}
 
-- [Why does Bitcoin Core use ancestor score instead of just ancestor fee rate to select transactions?]({{bse}}118611)
-  Sdaftuar explains that performance optimization is the reason that the mining
-  block template transaction selection algorithm uses both the ancestor feerate and ancestor
-  score. (See [Waiting for confirmation #2: Incentives][waiting for confirmation
-  2]). {% assign timestamp="1:10:28" %}
+- [Pourquoi Bitcoin Core utilise-t-il le score de l'ancêtre au lieu du taux de frais de l'ancêtre pour sélectionner les transactions ?]({{bse}}118611)
+  Sdaftuar explique que l'optimisation des performances est la raison pour laquelle
+  l'algorithme de sélection des transactions du modèle de bloc minier utilise à la fois
+  le taux de frais  d'ancêtres et le score d'ancêtres. (Voir
+  [En attente de confirmation n° 2 : Incitations][waiting for confirmation 2]). {% assign timestamp="1:10:28" %}
 
-- [How does Lightning multipart payments (MPP) protocol define the amounts per part?]({{bse}}117405)
-  Rene Pickhardt points out that [multipath payments][topic multipath payments]
-  do not have a protocol-specified part size or algorithm for choosing part size and
-  points out some relevant payment-splitting research. {% assign timestamp="1:14:15" %}
+- [Comment le protocole Lightning multipart payments (MPP) définit-il les montants par part ?]({{bse}}117405)
+  Rene Pickhardt souligne que [les paiements par trajets multiples][topic multipath payments]
+  n'ont pas de taille de part spécifiée par le protocole ou d'algorithme pour choisir la taille
+  de la part et indique quelques recherches pertinentes sur le fractionnement des paiements. {% assign timestamp="1:14:15" %}
 
-## Releases and release candidates
+## Mises à jour et versions candidates
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d’infrastructure Bitcoin.
+ Veuillez envisager de passer aux nouvelles versions ou d’aider à tester les versions candidates.*
 
-- [BTCPay Server 1.10.3][] is the latest release for this self-hosted
-  payment processing software.  See their [blog post][btcpay 1.10] for a
-  tour of the headline features in the 1.10 branch. {% assign timestamp="1:16:08" %}
+- [BTCPay Server 1.10.3][] est la dernière version de ce logiciel de traitement de paiement
+  auto-hébergé. Consultez leur [billet de blog][btcpay 1.10] pour une visite des principales
+  fonctionnalités de la branche 1.10. {% assign timestamp="1:16:08" %}
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Core Lightning #6303][] adds a new `setconfig` RPC that allows
-  changing some configuration options without restarting the daemon. {% assign timestamp="1:21:14" %}
+- [Core Lightning #6303][] ajoute une nouvelle RPC `setconfig` qui permet
+  de changer certaines options de configuration sans redémarrer le démon. {% assign timestamp="1:21:14" %}
 
-- [Eclair #2701][] begins recording both when an offered [HTLC][topic
-  htlc] is received and when it is settled.  This allows tracking how
-  long the HTLC was pending from the node's perspective.  If many HTLCs,
-  or a few high-value HTLCs, are pending for long periods of time, this
-  may indicate a [channel jamming attack][topic channel jamming attacks]
-  is in progress.  Tracking HTLC duration helps detect such attacks and
-  may contribute to mitigating them. {% assign timestamp="1:22:21" %}
+- [Eclair #2701][] commence l'enregistrement à la fois au moment où un
+  [HTLC][topic htlc] offert est reçu et au moment où il est réglé. Cela
+  permet de savoir combien de temps le HTLC a été en attente du point de
+  vue du nœud. Si de nombreux HTLC, ou quelques HTLC de grande valeur,
+  sont en attente pendant de longues périodes, cela peut indiquer qu'une
+  [attaque par brouillage de canal][topic channel jamming attacks] est en
+  cours. Le suivi de la durée des HTLC permet de détecter de telles attaques
+  et peut contribuer à les atténuer. {% assign timestamp="1:22:21" %}
 
-- [Eclair #2696][] changes how Eclair allows users to configure what
-  feerates to use.  Previously, users could specify what feerate to use
-  with a _block target_, e.g. a setting of "6" meant Eclair would try to
-  get a transaction confirmed within six blocks.  Now Eclair accepts
-  "slow", "medium", and "fast", which it translates into specific
-  feerates using constants or block targets. {% assign timestamp="1:25:03" %}
+- [Eclair #2696][] modifie la façon dont Eclair permet aux utilisateurs de
+  configurer les taux de frais à utiliser. Auparavant, les utilisateurs pouvaient
+  spécifier la vitesse à utiliser avec un _block target_, par exemple, un
+  réglage de "6" signifiait qu'Eclair essaierait de faire confirmer une
+  transaction dans un délai de six blocs. Désormais, Eclair accepte les
+  termes "lent", "moyen" et "rapide", qu'il traduit en taux de frais spécifiques
+  à l'aide de constantes ou de cibles de blocs. {% assign timestamp="1:25:03" %}
 
-- [LND #7710][] adds the ability for plugins (or the daemon itself) to
-  retrieve data received earlier in an HTLC.  This is necessary for
-  [route blinding][topic rv routing] and may be used by various [channel
-  jamming][topic channel jamming attacks] countermeasures, among other
-  ideas for future features. {% assign timestamp="1:26:51" %}
+- [LND #7710][] ajoute la possibilité pour les plugins (ou le démon lui-même)
+  de récupérer les données reçues plus tôt dans un HTLC. Ceci est nécessaire pour
+  le [route aveugle][topic rv routing] et peut être utilisé par diverses contre-mesures
+  de [brouillage de canal][topic channel jamming attacks], parmi d'autres idées
+  pour de futures fonctionnalités. {% assign timestamp="1:26:51" %}
 
-- [LDK #2368][] allows accepting new channels created by a peer that use
-  [anchor outputs][topic anchor outputs] but requires the controlling
-  program deliberately choose to accept each new channel.  This is done
-  because properly settling an anchor channel may require the user to have
-  access to one or more UTXOs with sufficient value.  LDK, as a library
-  that is unaware of what non-LN UTXOs the user's wallet controls, uses
-  this prompt to give the controlling program a chance to verify that it
-  has the necessary UTXOs. {% assign timestamp="1:27:43" %}
+- [LDK #2368][] permet d'accepter de nouveaux canaux créés par un pair qui utilise
+  des [sorties d'ancrage][stopic anchor outputs] mais exige que le programme de contrôle
+  choisisse délibérément d'accepter chaque nouveau canal. En effet, pour régler correctement
+  un canal d'ancrage, l'utilisateur doit avoir accès à un ou plusieurs UTXO de valeur suffisante.
+  LDK, en tant que bibliothèque ignorant quels UTXOs non-LN le portefeuille de l'utilisateur
+  contrôle, utilise cette requête pour donner au programme de contrôle une chance de vérifier
+  qu'il a les UTXOs nécessaires. {% assign timestamp="1:27:43" %}
 
 - [LDK #2367][] makes [anchor channels][topic anchor outputs] accessible
   to regular consumers of the API. {% assign timestamp="1:33:34" %}
