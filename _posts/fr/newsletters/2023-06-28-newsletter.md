@@ -182,37 +182,34 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   contrôle, utilise cette requête pour donner au programme de contrôle une chance de vérifier
   qu'il a les UTXOs nécessaires. {% assign timestamp="1:27:43" %}
 
-- [LDK #2367][] makes [anchor channels][topic anchor outputs] accessible
-  to regular consumers of the API. {% assign timestamp="1:33:34" %}
+- [LDK #2367][] rend les [canaux d'ancrage][topic anchor outputs] accessibles aux consommateurs
+  réguliers de l'API. {% assign timestamp="1:33:34" %}
 
-- [LDK #2319][] allows a peer to create an HTLC that commits to paying
-  less than the amount the original spender said should be paid,
-  allowing the peer to keep the difference for itself as an extra fee.  This
-  is useful for the creation of [JIT channels][topic jit channels] where
-  a peer receives an HTLC for a receiver that doesn't have a channel
-  yet.  The peer creates an onchain transaction that funds the channel
-  and commits to the HTLC within that channel---but it incurs additional
-  transaction fees in creating that onchain transaction.  By taking an
-  extra fee, it is compensated for its costs if the receiver accepts the
-  new channel and settles the HTLC on time. {% assign timestamp="1:34:40" %}
+- [LDK #2319][] permet à un pair de créer un HTLC qui s'engage à payer moins que le montant que
+  le contributeur original a dit devoir être payé, ce qui permet au pair de garder la différence
+  pour lui-même en tant que frais supplémentaires. Ceci est utile pour la création de [JIT channels][topic jit channels]
+  où un pair reçoit un HTLC pour un destinataire qui n'a pas encore de canal. Le pair crée une
+  transaction onchain qui finance le canal et s'engage dans le HTLC au sein de ce canal---mais
+  il encourt des frais de transaction supplémentaires en créant cette transaction onchain. En prenant
+  des frais supplémentaires, il est compensé pour ses coûts si le destinataire accepte le nouveau canal
+  et règle le HTLC à temps. {% assign timestamp="1:34:40" %}
 
-- [LDK #2120][] adds support for finding a route to a receiver who is
-  using [blinded paths][topic rv routing]. {% assign timestamp="1:37:09" %}
+- [LDK #2120][] ajoute la prise en charge de la recherche d'un itinéraire vers un destinataire
+  qui utilise des [chemins aveugles][topic rv routing]. {% assign timestamp="1:37:09" %}
 
-- [LDK #2089][] adds an event handler that makes it easy for wallets to
-  fee bump any [HTLCs][topic htlc] that need to be settled onchain. {% assign timestamp="1:38:12" %}
+- [LDK #2089][] ajoute un gestionnaire d'événement qui permet aux portefeuilles de déclencher
+  facilement les [HTLC][topic htlc] qui doivent être réglés onchain. {% assign timestamp="1:38:12" %}
 
-- [LDK #2077][] refactors a large amount of code to make it easier later
-  to add support for [dual funded channels][topic dual funding]. {% assign timestamp="1:39:08" %}
+- [LDK #2077][] remanie une grande partie du code pour faciliter l'ajout ultérieur de la prise
+  en charge des [canaux à double financement][topic dual funding]. {% assign timestamp="1:39:08" %}
 
-- [Libsecp256k1 #1129][] implements the [ElligatorSwift][ElligatorSwift paper]
-  technique to introduce a 64-byte public key encoding that is computationally
-  indistinguishable from random data. The `ellswift` module provides functions
-  for encoding and decoding public keys in the new format as well as
-  convenience functions to generate new uniformly-random keys and perform
-  an Elliptic Curve Diffie-Hellman key exchange (ECDH) on ellswift-encoded
-  keys. The ellswift-based ECDH is to be used in establishing connections
-  for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]). {% assign timestamp="1:40:37" %}
+- [Libsecp256k1 #1129][] implémente la technique [ElligatorSwift][ElligatorSwift paper] pour introduire
+  un encodage de clé publique de 64 octets qui est informatiquement indiscernable des données aléatoires.
+  Le module `ellswift` fournit des fonctions pour encoder et décoder les clés publiques dans le nouveau
+  format ainsi que des fonctions de commodité pour générer de nouvelles clés uniformément aléatoires et
+  effectuer un échange de clés Diffie-Hellman à courbe elliptique (ECDH) sur les clés encodées ellswift.
+  L'ECDH basé sur ellswift doit être utilisé pour établir des connexions pour le protocole [transport P2P
+  chiffré version 2] [topic v2 p2p transport] ([BIP324][]). {% assign timestamp="1:40:37" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
@@ -223,7 +220,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [btcpay 1.10]: https://blog.btcpayserver.org/btcpay-server-1-10-0/
 [miningpool observer]: https://miningpool.observer/template-and-block
 [mempool space]: https://mempool.space/graphs/mining/block-health
-[waiting for confirmation 1]: /en/blog/waiting-for-confirmation/#why-do-we-have-a-mempool
+[waiting for confirmation 1]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
 [reference getblocktemplate]: https://developer.bitcoin.org/reference/rpc/getblocktemplate.html
-[waiting for confirmation 2]: /en/blog/waiting-for-confirmation/#incentives
+[waiting for confirmation 2]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-dincitation
 [ElligatorSwift paper]: https://eprint.iacr.org/2022/759
