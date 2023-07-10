@@ -175,7 +175,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   pour de futures fonctionnalités. {% assign timestamp="1:26:51" %}
 
 - [LDK #2368][] permet d'accepter de nouveaux canaux créés par un pair qui utilise
-  des [sorties d'ancrage][stopic anchor outputs] mais exige que le programme de contrôle
+  des [sorties d'ancrage][topic anchor outputs] mais exige que le programme de contrôle
   choisisse délibérément d'accepter chaque nouveau canal. En effet, pour régler correctement
   un canal d'ancrage, l'utilisateur doit avoir accès à un ou plusieurs UTXO de valeur suffisante.
   LDK, en tant que bibliothèque ignorant quels UTXOs non-LN le portefeuille de l'utilisateur
