@@ -48,7 +48,7 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: Multisignature
+  - title: Scriptless multisignature
     link: topic multisignature
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -63,7 +63,7 @@ excerpt: >
 ---
 Different algorithms exist for creating threshold signatures, but
 perhaps the simplest of these is a slight extension of a typical
-algorithm for creating a [multisignature][topic multisignature].  This
+algorithm for creating a [scriptless multisignature][topic multisignature].  This
 is easiest explained with an example: participants A, B, and C want to receive
 funds that can be spent by any three of them.  They cooperate to create
 an ordinary multisignature public key for receiving the funds, then they
