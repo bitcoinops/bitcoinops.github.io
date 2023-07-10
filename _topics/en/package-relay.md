@@ -2,8 +2,8 @@
 title: Package relay
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+aliases:
+  - BIP331
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -23,6 +23,18 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: BIP331
+      link: https://github.com/bitcoin/bips/pull/1382
+
+    - title: Bitcoin Core Draft Implementation
+      link: https://github.com/bitcoin/bitcoin/pull/27742
+
+    - title: Bitcoin Core Project Tracking Issue
+      link: https://github.com/bitcoin/bitcoin/issues/27463
+
+    - title: Package Relay Proposal
+      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+
     - title: Package relay strawman proposal
       link: https://gist.github.com/sdaftuar/8756699bfcad4d3806ba9f3396d4e66a
 
