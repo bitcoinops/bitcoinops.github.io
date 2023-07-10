@@ -165,10 +165,15 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27869][] wallet: Give deprecation warning when loading a legacy wallet FIXME:adamjonas
+- [Bitcoin Core #27869][] gives a deprecation warning when loading a
+  legacy wallet in the continued efforts outlined in [Bitcoin Core #20160][]
+  to help users migrate from legacy wallets to [descriptor][topic descriptors]
+  wallets as mentioned in Newsletters [#125][news125 descriptor wallets],
+  [#172][news172 descriptor wallets], and
+  [#230][news230 descriptor wallets].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1092,392,240,27869" %}
+{% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
 [news58 bolts619]: /en/newsletters/2019/08/07/#bolts-619
 [policy series]: /en/blog/waiting-for-confirmation/
 [news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
@@ -177,3 +182,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [russell clean up]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html
 [review club 27625]: https://bitcoincore.reviews/27625
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
+[news125 descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
+[news172 descriptor wallets]: /en/newsletters/2021/10/27/#bitcoin-core-23002
+[news230 descriptor wallets]: /en/newsletters/2022/12/14/#with-legacy-wallets-deprecated-will-bitcoin-core-be-able-to-sign-messages-for-an-address
