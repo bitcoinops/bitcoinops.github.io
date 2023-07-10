@@ -1,9 +1,9 @@
 ---
-title: Multisignature
+title: Scriptless multisignatures
 
 ## Optional.  Shorter name to use for reference style links e.g., "foo"
 ## will allow using the link [topic foo][].  Not case sensitive
-# shortname: foo
+shortname: multisignature
 
 ## Optional.  An entry will be added to the topics index for each alias
 aliases:
@@ -19,7 +19,7 @@ categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Multisignatures** are digital signatures created using two or more
+  **Scriptless multisignatures** are digital signatures created using two or more
   private keys which can be verified using only a single public key
   and a single signature.
 
@@ -99,7 +99,7 @@ see_also:
   - title: Threshold signature
     link: topic threshold signature
 ---
-Multisignatures can be compared with *multisig*, the use of public
+Scriptless multisignatures can be compared with *scripted multisig*, the use of public
 keys and signatures with Bitcoin's `OP_CHECKMULTISIG` and
 `OP_CHECKMULTISIGVERIFY` opcodes (and the `OP_CHECKSIGADD` opcode
 proposed for [tapscript][topic tapscript]).  Multisignatures have the
