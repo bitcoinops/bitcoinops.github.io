@@ -119,7 +119,7 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: Multisignatures
+  - title: Scriptless multisignatures
     link: topic multisignature
 
   - title: Schnorr signatures
