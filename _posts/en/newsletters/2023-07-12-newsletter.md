@@ -59,7 +59,7 @@ describing notable changes to popular Bitcoin infrastructure software.
 
   Initial replies to the clean-up proposal PR were positive.
 
-## Waiting for confirmation #8: Policy Proposals
+## Waiting for confirmation #9: Policy Proposals
 
 _A limited weekly [series][policy series] about transaction relay,
 mempool inclusion, and mining transaction selection---including why
