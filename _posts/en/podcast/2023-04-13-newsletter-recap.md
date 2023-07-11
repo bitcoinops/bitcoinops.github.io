@@ -1015,7 +1015,7 @@ would be able to create gossip, or anything like that?
 Okay, cool.  So, pyln is a part, in some ways I think, of the CLN repository.
 It's a little bit of a monorepo, not exactly, but there's a lot of little
 projects inside of the CLN GitHub repo, and pyln client is one of them.  So,
-<!-- skip-duplicate-words-test -->what it is is it's a Python client that you can use in any Python.  It gets
+what it is is it's a Python client that you can use in any Python.  It gets
 shipped on PyPI, you can install it using pip, so it's a full-fledged
 independent Python library that gets built and updated inside the CLN repo.
 
@@ -1205,7 +1205,7 @@ every input.  So, there would be an economic incentive to join multiple
 transactions into a single transaction in order to have smaller overall block
 space use.
 
-<!-- skip-duplicate-words-test -->The problem is that that is fairly complicated and it was years away at the
+The problem is that that is fairly complicated and it was years away at the
 point when people got really excited about being ready with taproot, and it was
 separated into future work.  So right now, the proposal cross-input signature
 aggregation is still under research and we'll have to see what happens in the

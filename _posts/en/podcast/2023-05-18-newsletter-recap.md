@@ -896,7 +896,7 @@ going to send to the biggest miners because they have the best chance of
 confirming your transaction.  And let's say this teeny, little miner with 1% or
 0.5% or 0.1% of the hashrate joins the network.  You're like, "Well, I'm not
 going to send it to you because there's diminishing returns in adding an extra
-<!-- skip-duplicate-words-test -->step in my broadcast system".  And so this then means that that miner who just
+step in my broadcast system".  And so this then means that that miner who just
 joined the network will also not be able to include very many fees, and that
 just changes the dynamic of the accessibility or the entry cost of becoming a
 miner.  Whereas today, hopefully, you can just spin up any node on the network

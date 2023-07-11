@@ -142,7 +142,7 @@ Bitcoin infrastructure software.
     [DLCs][topic dlc] previously described in [Newsletter #185][news185
     ctv-dlc], although at greater onchain cost than directly using CTV.
 
-    Discussion was still active as of this writing.
+    Discussion was still active as of this writing. {% assign timestamp="1:48" %}
 
 ## Changes to services and client software
 
@@ -151,25 +151,25 @@ wallets and services.*
 
 - **Kraken announces sending to taproot addresses:**
   In a recent [blog post][kraken bech32m], Kraken announced they support
-  withdrawing (sending) to [bech32m][topic bech32] addresses.
+  withdrawing (sending) to [bech32m][topic bech32] addresses. {% assign timestamp="53:01" %}
 
 - **Whirlpool coinjoin rust client library announced:**
   The [Samourai Whirlpool Client][whirlpool rust client] is a rust library for
-  interacting with the Whirlpool [coinjoin][topic coinjoin] platform.
+  interacting with the Whirlpool [coinjoin][topic coinjoin] platform. {% assign timestamp="53:45" %}
 
 - **Ledger supports miniscript:**
   Ledger's Bitcoin firmware v2.1.0 release for its hardware signing
-  devices supports [miniscript][topic miniscript], as announced [previously][ledger miniscript].
+  devices supports [miniscript][topic miniscript], as announced [previously][ledger miniscript]. {% assign timestamp="54:25" %}
 
 - **Liana wallet released:**
   The first version of the Liana wallet was [announced][liana blog]. The wallet
   supports singlesig wallets with a [timelocked][topic timelocks] recovery key.
   The project's future plans include implementing [taproot][topic taproot],
-  multisig wallets, and time-decaying multisig features.
+  multisig wallets, and time-decaying multisig features. {% assign timestamp="55:11" %}
 
 - **Electrum 4.3.3 released:**
   [Electrum 4.3.3][electrum 4.3.3] contains improvements for Lightning,
-  [PSBTs][topic psbt], hardware signers, and the build system.
+  [PSBTs][topic psbt], hardware signers, and the build system. {% assign timestamp="58:40" %}
 
 ## Releases and release candidates
 
@@ -180,7 +180,7 @@ release candidates.*
 - [HWI 2.2.0][] is a release of this application for allowing software
   wallets to interface with hardware signing devices.  It adds support
   for [P2TR][topic taproot] keypath spends using the BitBox02 hardware
-  signing device among other features and bug fixes.
+  signing device among other features and bug fixes. {% assign timestamp="1:00:04" %}
 
 ## Notable code and documentation changes
 
@@ -192,10 +192,10 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Core Lightning #5751][] deprecates support for creating new
-  P2SH-wrapped segwit addresses.
+  P2SH-wrapped segwit addresses. {% assign timestamp="1:02:54" %}
 
 - [BIPs #1378][] adds [BIP324][] for the [v2 encrypted P2P transport
-  protocol][topic v2 p2p transport].
+  protocol][topic v2 p2p transport]. {% assign timestamp="1:06:23" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5751,1378" %}
