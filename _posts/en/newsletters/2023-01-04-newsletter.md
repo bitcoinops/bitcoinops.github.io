@@ -22,8 +22,7 @@ notable changes to popular Bitcoin infrastructure software.
   Bitcoin Knots and trust it until this is resolved.  If you already did
   in the last few months, consider shutting that system down for now."
   <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
-  Other full node implementations are unaffected.
-
+  Other full node implementations are unaffected. {% assign timestamp="1:06" %}
 
 - **Software forks of Bitcoin Core:** last month saw the release of two
   patchsets on top of Bitcoin Core:
@@ -47,7 +46,7 @@ notable changes to popular Bitcoin infrastructure software.
       Peter Todd notes that Bitcoin Knots, another full node implementation, also
       advertises the service bit, although it doesn't contain code to
       specifically peer with nodes advertising full-RBF support.  The
-      patch is based on Bitcoin Core PR [#25600][bitcoin core #25600].
+      patch is based on Bitcoin Core PR [#25600][bitcoin core #25600]. {% assign timestamp="7:53" %}
 
 - **Continued RBF discussion:** in ongoing discussion about enabling
   [full-RBF][topic rbf] on mainnet, several parallel discussions were
@@ -83,7 +82,7 @@ notable changes to popular Bitcoin infrastructure software.
       long-term capital investment in mining equipment might instead
       prefer to optimize fee income over multiple blocks, and that might
       not always favor full-RBF.  He suggests three possible scenarios
-      for consideration.
+      for consideration. {% assign timestamp="23:39" %}
 
 ## Releases and release candidates
 
@@ -95,13 +94,13 @@ release candidates.*
   implementation.  It adds support for [zero-conf channels][topic
   zero-conf channels] and Short Channel IDentifier (SCID) aliases.  See
   its [release notes][eclair 0.8 rn] for more information about those
-  features and other changes.
+  features and other changes. {% assign timestamp="42:19" %}
 
 - [LDK 0.0.113][] is a new version of this library for building
-  LN-enabled wallets and applications.
+  LN-enabled wallets and applications. {% assign timestamp="43:48" %}
 
 - [BDK 0.26.0-rc.2][] is a release candidate of this library for
-  building wallets.
+  building wallets. {% assign timestamp="44:45" %}
 
 ## Notable code and documentation changes
 
@@ -118,10 +117,10 @@ bytes to 65 bytes. For example, a transaction with a single input and
 single output with 4 bytes of OP\_RETURN padding, which previously
 would have been rejected for being too small, could now be accepted
 into the node's mempool and relayed. See [Newsletter #222][min relay
-size ml] for background information and motivation for this change.
+size ml] for background information and motivation for this change. {% assign timestamp="47:04" %}
 
 - [Bitcoin Core #21576][] allows wallets using an external signer (e.g. [HWI][topic hwi]) to fee bump
-  using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC.
+  using [opt-in RBF][topic rbf] in the GUI and when using the `bumpfee` RPC. {% assign timestamp="48:47" %}
 
 - [Bitcoin Core #24865][] allows a wallet backup to be restored on a
   node that has been pruned of older blocks as long as the node still
@@ -129,7 +128,7 @@ size ml] for background information and motivation for this change.
   blocks are needed so that Bitcoin Core can scan them for any
   transactions affecting the wallet's balance.  Bitcoin Core is able to
   determine the age of the wallet because its backup contains the date
-  the wallet was created.
+  the wallet was created. {% assign timestamp="49:44" %}
 
 - [Bitcoin Core #23319][] updates the `getrawtransaction` RPC to provide
   additional information if the `verbose` parameter is set to `2`.  The
@@ -137,7 +136,7 @@ size ml] for background information and motivation for this change.
   information about each of the outputs from previous transactions
   ("prevouts") which are spent by being used as inputs to this
   transaction.  See [Newsletter #172][news172 prevout] for details about
-  the method used to retrieve the information.
+  the method used to retrieve the information. {% assign timestamp="52:52" %}
 
 - [Bitcoin Core #26628][] begins rejecting RPC requests that include the
   same parameter name multiple times.  Previously, the daemon treated a
@@ -145,13 +144,13 @@ size ml] for background information and motivation for this change.
   parameters, e.g. `{"foo"="bar", "foo"="baz"}` was treated as
   `{"foo"="baz"}`.  Now the request will fail.  When using `bitcoin-cli`
   with named parameters, the behavior is unchanged: multiple parameters using the same name
-  will not be rejected but only the last of the repeats will be sent.
+  will not be rejected but only the last of the repeats will be sent. {% assign timestamp="54:25" %}
 
 - [Eclair #2464][] adds the ability to trigger an event when a remote
   peer becomes ready to process payments.  This is especially useful in
   the context of [async payments][topic async payments] where the local
   node temporarily holds a payment for a remote peer, waits for the peer
-  to connect (or reconnect), and delivers the payment.
+  to connect (or reconnect), and delivers the payment. {% assign timestamp="56:29" %}
 
 - [Eclair #2482][] allows sending payments using [blinded routes][topic
   rv routing], which are paths whose last several hops are chosen
@@ -162,20 +161,20 @@ size ml] for background information and motivation for this change.
   encrypted details for the operators of the last several nodes to
   decrypt and use to forward the payment to the receiver.  This allows
   the receiver to accept a payment without disclosing the identity of
-  their node or channels to the spender, improving privacy.
+  their node or channels to the spender, improving privacy. {% assign timestamp="58:43" %}
 
 - [LND #2208][] begins preferring different payment paths depending on
   the maximum capacity of a channel relative to the amount to be spent.
   As the amount to be sent approaches the capacity of a channel, that
   channel becomes less likely to be selected for a path.  This is
   broadly similar to pathfinding code already used in Core Lightning and
-  LDK.
+  LDK. {% assign timestamp="59:29" %}
 
 - [LDK #1738][] and [#1908][ldk #1908] provide additional features for handling
-  [offers][topic offers].
+  [offers][topic offers]. {% assign timestamp="1:02:42" %}
 
 - [Rust Bitcoin #1467][] adds methods for calculating the size in
-  [weight units][] of transaction inputs and outputs.
+  [weight units][] of transaction inputs and outputs. {% assign timestamp="1:03:42" %}
 
 - [Rust Bitcoin #1330][] removes the `PackedLockTime` type, requiring
   downstream code instead use the almost-identical `absolute::LockTime` type.  A
@@ -183,13 +182,13 @@ size ml] for background information and motivation for this change.
   anyone updating their code is that `PackedLockTime` provided an `Ord`
   characteristic but `absolute::LockTime` does not (although the
   locktime will be considered in the `Ord` of the transaction containing
-  it).
+  it). {% assign timestamp="1:04:00" %}
 
 - [BTCPay Server #4411][] updates to using Core Lightning 22.11 (see
   [Newsletter #229][news229 cln]).  Anyone who wants to put a hash of an
   order description inside a [BOLT11][] invoice no longer needs to use the
   `invoiceWithDescriptionHash` plugin but can instead set the
-  `description` field and enable the `descriptionHashOnly` option.
+  `description` field and enable the `descriptionHashOnly` option. {% assign timestamp="1:05:52" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26265,21576,24865,23319,26628,2464,2482,2208,1738,1908,1467,1330,4411,25600" %}
