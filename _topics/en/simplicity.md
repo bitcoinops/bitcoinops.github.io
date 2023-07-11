@@ -49,6 +49,9 @@ optech_mentions:
 see_also:
   - title: "Simplicity: A New Language for Blockchains"
     link: https://blockstream.com/simplicity.pdf
+
+  - title: Covenants
+    link: topic covenants
 ---
 At its core, Simplicity consists of nine primitive operators called
 combinators whose semantics are formally specified. However,

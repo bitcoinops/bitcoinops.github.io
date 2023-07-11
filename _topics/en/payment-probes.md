@@ -59,9 +59,12 @@ optech_mentions:
     url: /en/newsletters/2022/07/13/#ldk-1567
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: JIT routing
+    link: topic jit routing
+
+  - title: Channel jamming attacks
+    link: topic channel jamming attacks
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

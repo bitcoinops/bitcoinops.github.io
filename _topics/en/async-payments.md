@@ -56,6 +56,12 @@ see_also:
   - title: PTLCs
     link: topic ptlc
 
+  - title: Signature adaptors
+    link: topic adaptor signatures
+
+  - title: Proof of payment
+    link: topic proof of payment
+
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
 ## threshold word count

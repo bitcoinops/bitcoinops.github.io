@@ -49,6 +49,12 @@ see_also:
   - title: Multisignatures
     link: topic multisignature
 
+  - title: Signer delegation
+    link: topic signer delegation
+
+  - title: Sidechains
+    link: topic sidechains
+
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

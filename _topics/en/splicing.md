@@ -8,6 +8,7 @@ title: Splicing
 ## schema for options
 categories:
   - Lightning Network
+  - Liquidity Management
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
@@ -19,6 +20,9 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: "Splicing specification (draft)"
+      link: https://github.com/lightning/bolts/pull/863
+
     - title: Splice proposal (Rusty Russell)
       link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 
@@ -62,9 +66,12 @@ optech_mentions:
     url: /en/newsletters/2023/07/19/#phoenix-wallet-adds-splicing-support
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Interactive transaction construction protocol
+    link: topic dual funding
+
+  - title: Submarine swaps
+    link: topic submarine swaps
 ---
 Splicing comes in two varieties:
 
@@ -82,7 +89,7 @@ Splicing comes in two varieties:
   secured by the old channel's security until the new channel has
   fully confirmed.
 
-Splicing is different from *submarine swaps* (such as those
+Splicing is different from [submarine swaps][topic submarine swaps] (such as those
 implemented by [Lightning Loop][]) where funds are transferred
 between users in exchange for onchain transactions---in submarine
 swaps, the overall balance of the channel stays the same; in

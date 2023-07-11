@@ -78,9 +78,9 @@ optech_mentions:
     url: /en/newsletters/2021/11/24/#lnd-0-14-0-beta
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Anonymity networks
+    link: topic anonymity networks
 ---
 Without any connections to honest peers, the eclipsed node won't
 receive the latest blocks on the most proof-of-work block chain.  This

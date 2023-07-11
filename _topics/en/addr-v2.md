@@ -71,6 +71,9 @@ optech_mentions:
 see_also:
   - title: P2P protocol `addr` message
     link: https://btcinformation.org/en/developer-reference#addr
+
+  - title: Anonymity networks
+    link: topic anonymity networks
 ---
 The original `addr` message allows relaying 128-bit IPv6 addresses
 with backwards compatibility for IPv4 and [onioncat-encoded][] version

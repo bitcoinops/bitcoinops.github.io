@@ -67,6 +67,12 @@ see_also:
   - title: Unannounced channels
     link: topic unannounced channels
 
+  - title: Onion messages
+    link: topic onion messages
+
+  - title: Offers
+    link: topic offers
+
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

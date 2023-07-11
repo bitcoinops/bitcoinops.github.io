@@ -149,6 +149,12 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
+  - title: Transaction pinning
+    link: topic transaction pinning
+
+  - title: Version 3 transaction relay
+    link: topic v3 transaction relay
+
   - title: Opt-in RBF FAQ
     link: https://bitcoincore.org/en/faq/optin_rbf/
 

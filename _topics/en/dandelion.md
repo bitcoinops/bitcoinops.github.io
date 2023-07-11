@@ -40,9 +40,15 @@ optech_mentions:
     url: /en/newsletters/2018/12/28/#dandelion
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#  - title:
-#    link:
+see_also:
+ - title: Transaction origin privacy
+   link: topic transaction origin privacy
+
+ - title: Anonymity networks
+   link: topic anonymity networks
+
+ - title: Version 2 encrypted P2P transport
+   link: topic v2 p2p transport
 ---
 This propagation behavior would help hide which node originated the
 transaction, especially if some of the nodes involved in the initial

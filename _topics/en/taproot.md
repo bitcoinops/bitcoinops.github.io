@@ -16,11 +16,11 @@ excerpt: >
 
 ## Optional
 primary_sources:
+    - title: BIP341
     - title: Original description
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
-    - title: bip-taproot
-    - title: Draft implementation
-      link: https://github.com/sipa/bitcoin/commits/taproot
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/pull/19953
 
 ## Optional
 optech_mentions:
@@ -240,6 +240,15 @@ optech_mentions:
 see_also:
   - title: MAST
     link: topic mast
+
+  - title: Tapscript
+    link: topic tapscript
+
+  - title: Schnorr signatures
+    link: topic schnorr signatures
+
+  - title: Pay-to-contract
+    link: topic p2c
 ---
 Coins protected by taproot may be spent either by satisfying one of
 the committed scripts or by simply providing a signature that verifies

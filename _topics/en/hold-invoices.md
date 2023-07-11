@@ -45,9 +45,9 @@ optech_mentions:
     url: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Channel jamming attacks
+    link: topic channel jamming attacks
 ---
 For example, Alice could automatically generate hold invoices on her
 website but wait until a customer actually paid before searching her

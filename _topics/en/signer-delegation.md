@@ -38,6 +38,9 @@ see_also:
   - title: Statechains
     link: topic statechains
 
+  - title: "OP_CHECKSIGFROMSTACK"
+    link: "topic op_checksigfromstack"
+
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

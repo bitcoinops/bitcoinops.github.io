@@ -64,6 +64,9 @@ see_also:
   - title: Taproot
     link: topic taproot
 
+  - title: Bech32 addresses
+    link: topic bech32
+
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

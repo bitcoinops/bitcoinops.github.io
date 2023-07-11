@@ -19,9 +19,6 @@ primary_sources:
   - title: Enhancing Bitcoin transactions with covenants
     link: https://fc17.ifca.ai/bitcoin/papers/bitcoin17-final28.pdf
 
-  - title: BIP119 OP_CHECKTEMPLATEVERIFY proposal
-    link: https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki
-
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -107,6 +104,9 @@ see_also:
 
   - title: OP_CHECKTEMPLATEVERIFY
     link: topic op_checktemplateverify
+
+  - title: SIGHASH_ANYPREVOUT
+    link: topic sighash_anyprevout
 
   - title: Vaults
     link: topic vaults

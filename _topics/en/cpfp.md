@@ -84,6 +84,9 @@ optech_mentions:
 see_also:
   - title: CPFP carve-out
     link: topic cpfp carve out
+
+  - title: Package relay
+    link: topic package relay
 ---
 Bitcoin consensus rules require that the transaction which creates an
 output must appear earlier in the block chain than the transaction

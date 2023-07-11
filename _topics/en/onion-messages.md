@@ -69,9 +69,9 @@ optech_mentions:
     url: /en/newsletters/2023/06/21/#ldk-2294
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Blinded paths
+    link: topic rv routing
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
