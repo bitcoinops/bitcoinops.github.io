@@ -85,9 +85,9 @@ optech_mentions:
     url: /en/newsletters/2023/05/24/#edge-firmware-for-coldcard-announced
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Output script descriptors
+    link: topic descriptors
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

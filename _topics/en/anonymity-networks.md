@@ -114,6 +114,9 @@ see_also:
   - title: Dandelion
     link: topic dandelion
 
+  - title: Addr v2
+    link: topic addr v2
+
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

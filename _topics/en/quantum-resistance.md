@@ -60,7 +60,6 @@ see_also:
   - title: Version 2 P2P transport
     link: topic v2 p2p transport
 
-
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >

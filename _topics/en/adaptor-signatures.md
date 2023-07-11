@@ -38,6 +38,9 @@ primary_sources:
     - title: One-time verifiably encrypted signatures (PDF)
       link: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
 
+    - title: Documentation for scriptless script protocols
+      link: https://github.com/BlockstreamResearch/scriptless-scripts
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:

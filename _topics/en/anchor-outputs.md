@@ -162,6 +162,9 @@ see_also:
 
   - title: Package relay
     link: topic package relay
+
+  - title: Ephemeral anchors
+    link: topic ephemeral anchors
 ---
 Each time the balance changes in an LN channel, a *commitment
 transaction* is created and signed by the participating parties.  The

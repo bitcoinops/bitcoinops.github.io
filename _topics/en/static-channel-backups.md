@@ -13,6 +13,7 @@ title: Static channel backups
 ## schema for options
 categories:
   - Lightning Network
+  - Backup and Recovery
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"

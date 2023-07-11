@@ -15,6 +15,8 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: BIP330
+
     - title: Erlay
       link: https://arxiv.org/pdf/1905.10518.pdf
 

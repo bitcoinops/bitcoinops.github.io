@@ -109,6 +109,9 @@ see_also:
   - title: Eltoo
     link: topic eltoo
 
+  - title: Covenants
+    link: topic covenants
+
 redirect_from:
   - /en/topics/sighash_noinput/
 

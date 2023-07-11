@@ -34,9 +34,9 @@ optech_mentions:
     url: /en/newsletters/2021/04/28/#why-does-the-mined-block-differ-so-much-from-the-block-template
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: "BIP320: nVersion bits for general purpose use"
+    link: BIP320
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

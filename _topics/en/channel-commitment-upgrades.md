@@ -36,9 +36,15 @@ optech_mentions:
     url: /en/newsletters/2022/04/06/#updating-ln-commitments
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Anchor outputs
+    link: topic anchor outputs
+
+  - title: "LN-Symmetry (Eltoo)"
+    link: topic eltoo
+
+  - title: PTLCs
+    link: topic ptlc
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

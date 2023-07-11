@@ -47,9 +47,9 @@ optech_mentions:
     url: /en/newsletters/2023/07/19/#libsecp256k1-1313
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Exfiltration resistant signing
+    link: topic exfiltration resistant signing
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

@@ -60,6 +60,12 @@ see_also:
   - title: Transaction pinning
     link: topic transaction pinning
 
+  - title: Anchor outputs
+    link: topic anchor outputs
+
+  - title: Version 3 transaction relay
+    link: topic v3 transaction relay
+
   - title: "Bitcoin Core #16421 allowing RBF replacement of carve outs"
     link: https://github.com/bitcoin/bitcoin/pull/16421
 ---

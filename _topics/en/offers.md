@@ -87,9 +87,9 @@ optech_mentions:
     url: /en/newsletters/2023/03/01/#ldk-1977
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Blinded paths
+    link: topic rv routing
 ---
 An example of a common use of this protocol would be that a merchant
 generates a QR code, the customer scans the QR code, the customer’s LN

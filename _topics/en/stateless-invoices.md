@@ -51,9 +51,9 @@ optech_mentions:
     url: /en/newsletters/2023/02/01/#ldk-1878
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Offers
+    link: topic offers
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

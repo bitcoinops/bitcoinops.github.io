@@ -17,7 +17,7 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: bip-schnorr
+    - title: BIP340
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -125,6 +125,8 @@ see_also:
     link: https://bitcoin.stackexchange.com/questions/82952/will-a-schnorr-soft-fork-introduce-a-new-address-format-i-e-not-bech32
   - title: Taproot
     link: topic taproot
+  - title: Scriptless multisignatures
+    link: topic multisignature
 ---
 Schnorr is secure under the same cryptographic assumptions as
 [ECDSA][] and it is easier and faster to create secure multiparty

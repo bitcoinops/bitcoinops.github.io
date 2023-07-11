@@ -79,6 +79,9 @@ optech_mentions:
 see_also:
    - title: CPFP carve out
      link: topic cpfp carve out
+
+   - title: Ephemeral anchors
+     link: topic ephemeral anchors
 ---
 Nodes such as Bitcoin Core that allow transactions to be replaced
 (RBF) or packaged with higher-fee child transactions (CPFP) place

@@ -13,6 +13,7 @@ aliases:
 ## schema for options
 categories:
   - Lightning Network
+  - Liquidity Management
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
@@ -115,8 +116,17 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
+  - title: Liquidity advertisements
+    link: topic liquidity advertisements
+
   - title: PSBT (dependency of dual funding)
     link: topic psbt
+
+  - title: Submarine swaps
+    link: topic submarine swaps
+
+  - title: Splicing
+    link: topic splicing
 ---
 [Early analysis][dryja single-funded] of LN determined that it would be
 significantly easier to build software where the user requesting to

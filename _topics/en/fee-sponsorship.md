@@ -49,6 +49,9 @@ see_also:
   - title: Transaction pinning
     link: topic transaction pinning
 
+  - title: Ephemeral anchors
+    link: topic ephemeral anchors
+
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
 ## threshold word count

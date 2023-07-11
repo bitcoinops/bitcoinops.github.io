@@ -32,6 +32,7 @@ properties:
         - Fee Management
         - Lightning Network
         - Lightweight Client Support
+        - Liquidity Management
         - Mining
         - P2P Network Protocol
         - Privacy Enhancements

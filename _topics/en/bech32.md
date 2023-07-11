@@ -1,6 +1,8 @@
 ---
-title: Bech32
+title: Bech32(m)
+shortname: bech32
 aliases:
+  - Bech32
   - Bech32m
   - BIP173
   - Native segwit address
@@ -12,15 +14,19 @@ categories:
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Bech32** is an address format used to pay native segwit outputs.
+  **Bech32** and **Bech32m** are address formats used to pay native segwit outputs.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: BIP173
-    - title: Bech32 reference code
+    - title: "BIP173: bech32"
+      link: BIP173
+
+    - title: "BIP350: bech32m"
+      link: BIP350
+
+    - title: "Bech32(m) reference code"
       link: https://github.com/sipa/bech32
-    - title: BIP350
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

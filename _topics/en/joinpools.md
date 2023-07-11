@@ -53,6 +53,9 @@ see_also:
   - title: Channel factories
     link: topic channel factories
 
+  - title: Covenants
+    link: topic covenants
+
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
 ## threshold word count

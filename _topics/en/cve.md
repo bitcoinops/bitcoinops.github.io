@@ -81,7 +81,9 @@ optech_mentions:
     url: /en/newsletters/2022/11/09/#bitcoin-core-pr-review-club
 
 ## Optional.  Same format as "primary_sources" above
-#see_also:
+see_also:
+  - title: Responsible disclosures
+    link: topic responsible disclosures
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

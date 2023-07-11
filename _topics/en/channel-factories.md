@@ -22,6 +22,12 @@ primary_sources:
     - title: Scalable Funding of Bitcoin Micropayment Networks
       link: "https://tik-old.ee.ethz.ch/file//a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf"
 
+    - title: Inherited identifiers proposal
+      link: https://github.com/JohnLaw2/btc-iids
+
+    - title: Factory optimized Lightning channels
+      link: https://github.com/JohnLaw2/ln-factory-optimized
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -44,9 +50,9 @@ optech_mentions:
     url: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: "LN-Symmetry (Eltoo)"
+    link: topic eltoo
 ---
 For example, three users create a channel factory by each of them
 depositing some funds to an onchain 3-of-3 multisig address.  Using
