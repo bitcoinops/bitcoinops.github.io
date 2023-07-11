@@ -1,6 +1,6 @@
 [TOC]
 
-- Deploy docker document https://docs.docker.com/desktop/
+- Ensure Docker is installed and running (https://docs.docker.com/desktop/)
 
 ## Building The Site Locally By Docker
 
