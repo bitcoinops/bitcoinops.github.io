@@ -31,7 +31,7 @@
     docker logs -f bitcoinops
     ```
 
-6. The bitcoinops container prints a log like this if building the site success.
+6. The bitcoinops container prints a log like this if building the site is successful.
     ```log
             Server address: http://0.0.0.0:4000/
         Server running... press ctrl-c to stop.
