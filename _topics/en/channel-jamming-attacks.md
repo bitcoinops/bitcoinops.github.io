@@ -31,6 +31,12 @@ primary_sources:
   - title: LN spam prevention
     link: https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md
 
+  - title: "Unjamming Lightning: A Systematic Approach"
+    link: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
+
+  - title: "Circuit Breaker: software to protect nodes from being flooded with htlcs"
+    link: https://github.com/lightningequipment/circuitbreaker
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -104,9 +110,9 @@ optech_mentions:
     url: /en/newsletters/2023/06/28/#lnd-7710
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: HTLCs
+    link: topic htlc
 
 ---
 An LN node can route a payment to itself across a path of 20 or more

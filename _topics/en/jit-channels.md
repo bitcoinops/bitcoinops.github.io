@@ -13,6 +13,7 @@ shortname: jit channels
 ## schema for options
 categories:
   - Lightning Network
+  - Liquidity Management
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"

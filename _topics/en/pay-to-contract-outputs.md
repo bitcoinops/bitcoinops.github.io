@@ -40,9 +40,12 @@ optech_mentions:
     url: /en/newsletters/2022/01/26/#psbt-extension-for-p2c-fields
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Proof of payment
+    link: topic proof of payment
+
+  - title: Taproot
+    link: topic taproot
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

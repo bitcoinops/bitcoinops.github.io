@@ -41,9 +41,9 @@ optech_mentions:
     url: /en/newsletters/2023/05/24/#state-compression-with-zero-knowledge-validity-proofs
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Uneconomical outputs
+    link: topic uneconomical outputs
 ---
 A merkle tree updated after every block accumulates references to
 every unspent transaction output, allowing nodes to skip storing the

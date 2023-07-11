@@ -46,6 +46,9 @@ see_also:
   - title: Package relay
     link: topic package relay
 
+  - title: Ephemeral anchors
+    link: topic ephemeral anchors
+
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
 ## threshold word count

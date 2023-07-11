@@ -6,6 +6,7 @@ shortname: jit routing
 ## schema for options
 categories:
   - Lightning Network
+  - Liquidity Management
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >

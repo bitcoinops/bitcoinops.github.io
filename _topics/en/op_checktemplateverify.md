@@ -2,8 +2,7 @@
 title: OP_CHECKTEMPLATEVERIFY
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
-  - OP_CHECKOUTPUTSHASHVERIFY
+#aliases:
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options

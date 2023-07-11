@@ -75,9 +75,9 @@ optech_mentions:
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Signature adaptors
+    link: topic adaptor signatures
 ---
 The transactions creating and settling the contract can be made
 indistinguishable from many other Bitcoin transactions or they can be

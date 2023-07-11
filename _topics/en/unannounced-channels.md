@@ -57,9 +57,9 @@ optech_mentions:
     url: /en/newsletters/2021/07/21/#c-lightning-4611
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Blinded paths
+    link: topic rv routing
 ---
 Most unannounced channels are believed to belong to users that simply
 don't intend to route payments, such as users of mobile clients that

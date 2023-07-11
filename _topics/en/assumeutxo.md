@@ -19,6 +19,9 @@ primary_sources:
     - title: AssumeUTXO proposal
       link: https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal
 
+    - title: AssumeUTXO project tracker
+      link: https://github.com/bitcoin/bitcoin/pull/27596
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -53,6 +56,7 @@ optech_mentions:
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
     link: https://github.com/bitcoin/bitcoin/issues/15605
+
   - title: "[bitcoin-dev] assumeutxo and UTXO snapshots"
     link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
 ---

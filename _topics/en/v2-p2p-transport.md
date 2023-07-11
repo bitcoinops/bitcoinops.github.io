@@ -59,8 +59,8 @@ optech_mentions:
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
-  - title: "Countersign: a secret authentication protocol"
-    link: https://gist.github.com/sipa/d7dcaae0419f10e5be0270fada84c20b
+  - title: Countersign
+    link: topic countersign
 ---
 Some other changes to the communication protocol are also suggested,
 such as allowing frequently-used protocol commands to be aliased to

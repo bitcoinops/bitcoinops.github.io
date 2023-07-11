@@ -77,6 +77,9 @@ see_also:
 
   - title: PTLCs
     link: topic ptlc
+
+  - title: Submarine swaps
+    link: topic submarine swaps
 ---
 Coinswaps are often compared to [coinjoins][topic coinjoin].  The most
 obvious difference is that a coinjoin uses a single transaction but a

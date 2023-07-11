@@ -54,8 +54,8 @@ see_also:
   - title: Transaction pinning
     link: topic transaction pinning
 
-  - title: Anchor outputs
-    link: topic anchor outputs
+  - title: Ephemeral anchors
+    link: topic ephemeral anchors
 ---
 V3 transaction relay is a superset of standard transaction policy.
 That is, v3 transactions follow all rules for standard transactions

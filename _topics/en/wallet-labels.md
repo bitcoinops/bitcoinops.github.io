@@ -52,9 +52,12 @@ optech_mentions:
     url: /en/newsletters/2023/07/05/#bips-1452
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: Output script descriptors
+    link: topic descriptors
+
+  - title: Output linking
+    link: topic output linking
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

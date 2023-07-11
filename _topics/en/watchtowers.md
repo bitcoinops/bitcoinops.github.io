@@ -6,6 +6,7 @@ title: Watchtowers
 categories:
   - Lightning Network
   - Security Enhancements
+  - Backup and Recovery
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
@@ -89,6 +90,9 @@ optech_mentions:
 see_also:
   - title: LND watchtower tutorial
     link: https://github.com/wbobeirne/watchtower-example
+
+  - title: Static channel backups
+    link: topic static channel backups
 ---
 The service provided by watchtowers allows their clients to go offline
 for significant amounts of time without having to worry about their

@@ -57,9 +57,9 @@ optech_mentions:
     url: /en/newsletters/2023/05/17/#challenges-with-zero-conf-channels-when-dual-funding
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: JIT channels
+    link: topic jit channels
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a

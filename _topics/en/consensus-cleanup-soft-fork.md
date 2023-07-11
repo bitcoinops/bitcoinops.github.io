@@ -42,7 +42,10 @@ optech_mentions:
     url: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#  - title:
-#    link:
+see_also:
+ - title: Soft fork activation
+   link: topic soft fork activation
+
+ - title: "CVE-2017-12842: fake SPV proofs using 64-byte transactions"
+   link: "https://bitcoinops.org/en/topics/cve/#CVE-2017-12842"
 ---
