@@ -63,8 +63,7 @@ excerpt: >
 
 ## January
 
-{:#stateless-invoices}
-In January, LDK [merged][news181 ldk1177] an implementation of
+- **Stateless invoices:** In January, LDK [merged][news181 ldk1177] an implementation of
 [stateless invoices][topic stateless invoices], which allows it to
 generate an infinite number of invoices without storing any data about
 them unless payment is successful.  Stateless invoices were previously
@@ -74,58 +73,54 @@ require any LN protocol changes.  Later that month, an [update][news182
 bolts912] to the LN specification was merged to allow other types of
 stateless invoices, with at least partial support for it being added to
 [Eclair][news183 stateless], [Core Lightning][news195 stateless], and
-[LND][news196 stateless].
+[LND][news196 stateless]. {% assign timestamp="7:37" %}
 
 {:#defense-fund}
-Also in January, a Bitcoin Legal Defense Fund was [announced][news183
+- **Legal defense fund:** Also in January, a Bitcoin Legal Defense Fund was [announced][news183
 defense fund] by Jack Dorsey, Alex Morcos, and Martin White.  It
 provides "a nonprofit entity that aims to minimize legal headaches that
 discourage software developers from actively developing Bitcoin and
-related projects."
+related projects." {% assign timestamp="11:21" %}
 
 ## February
 
-{:#fee-sponsorship}
-A [discussion][news182 accounts] in January about making it easier to
+- **Fee sponsorship:** A [discussion][news182 accounts] in January about making it easier to
 add fees to presigned transactions led to [renewed discussion][news188
 sponsorship] in February about Jeremy
 Rubin's [transaction fee sponsorship][topic fee sponsorship] idea from 2020.
 Several challenges to its implementation were mentioned.  Although the
 immediate discussion didn't make much progress, a technique that
 accomplished similar goals---but which, unlike sponsorship, didn't
-require a soft fork---would be [proposed][news231 v3relay] in October.
+require a soft fork---would be [proposed][news231 v3relay] in October. {% assign timestamp="12:45" %}
 
-{:#phantom-node-payments}
-LDK's early support for [stateless invoices][topic stateless invoices]
+- **Phantom node payments:** LDK's early support for [stateless invoices][topic stateless invoices]
 allowed it to add a new and [simple][news188 ldk1199] method for load
-balancing an LN node called *phantom node payments*.
+balancing an LN node called *phantom node payments*. {% assign timestamp="15:14" %}
 
 {:.center}
 ![Illustration of phantom node payment path](/img/posts/2022-02-phantom-node-payments.dot.png)
 
 ## March
 
-{:#ln-pathfinding}
-The LN pathfinding algorithm first published in 2021 by René Pickhardt
+- **LN pathfinding:** The LN pathfinding algorithm first published in 2021 by René Pickhardt
 and Stefan Richter received an [update][news192 pp] in March with
 Pickhardt noting an improvement that made it much more computationally
-efficient.
+efficient. {% assign timestamp="17:37" %}
 
-{:#zero-conf-channels}
-A consistent method for allowing [zero-conf channels][topic zero-conf
+- **Zero-conf channels:** A consistent method for allowing [zero-conf channels][topic zero-conf
 channels] was [specified][news203 zero-conf] and began seeing
 implementation support, starting with LDK's [addition][news192 ldk1311]
 in March of support for the related Short Channel IDentifier (SCID)
 *alias* field, followed by [Eclair][news205 scid],
 [Core Lightning][news208 scid cln], and
-[LND][news208 scid lnd].
+[LND][news208 scid lnd]. {% assign timestamp="21:12" %}
 
 {:.center}
 ![Illustration of zero-conf channels](/img/posts/2021-07-zeroconf-channels.png)
 
 <div markdown="1" class="callout" id="rbf">
 
-### 2022 summary<br>Replace-By-Fee
+## Summary 2022: Replace-By-Fee
 
 This year saw much discussion, and some significant actions, related to
 [Replace By Fee][topic rbf] (RBF).  Our January newsletter
@@ -198,12 +193,13 @@ enable full-RBF (or a similar feature in other software).  At the end of
 the year, full-RBF was still being discussed in other Bitcoin Core PRs
 and on the mailing list.
 
+{% assign timestamp="24:02" %}
+
 </div>
 
 ## April
 
-{:#silent-payments}
-In April, Ruben Somsen [proposed][news194 sp] the idea of [silent
+- **Silent payments:** In April, Ruben Somsen [proposed][news194 sp] the idea of [silent
 payments][topic silent payments], which would allow someone to pay a
 public identifier ("address") without using that identifier onchain. This
 would help prevent [address reuse][topic output linking].  For example,
@@ -214,37 +210,34 @@ reuses Alice’s public identifier, she would derive a different address
 to pay Alice, an address which neither Bob nor any other third party
 could directly determine belonged to Alice.  Later, developer W0ltx
 would create a [proposed implementation][news202 sp] of silent payments for Bitcoin Core,
-making [significant updates][news214 sp] to it later in the year.
+making [significant updates][news214 sp] to it later in the year. {% assign timestamp="31:17" %}
 
-{:#taro}
-Lightning Labs [announced][news195 taro] Taro, a proposed protocol
+- **Taro:** Lightning Labs [announced][news195 taro] Taro, a proposed protocol
 (based on previous proposals) for allowing users to commit to the creation
 and transfer of non-bitcoin tokens on Bitcoin’s block chain.  Taro is
 intended to be used with LN for routable offchain transfers.  Similar to
 previous proposals for cross-asset transfers on LN, intermediate nodes
 that just forward payments won’t need to be aware of the Taro protocol or
 the details of the assets being transferred---they’ll just transfer bitcoins
-using the same protocol as any other LN payment.
+using the same protocol as any other LN payment. {% assign timestamp="35:06" %}
 
 {:#quantum-safe-keys}
-April also saw [discussion][news196 qc] about quantum-safe key
+- **Quantum-safe key exchange:** April also saw [discussion][news196 qc] about quantum-safe key
 exchange, allowing users to receive bitcoins secured by keys that are
 [resistant][topic quantum resistance] to attacks by fast quantum
-computers that may exist in the future.
+computers that may exist in the future. {% assign timestamp="45:29" %}
 
 ## May
 
-{:#musig2}
-The [MuSig2][topic musig] protocol for creating [schnorr
+- **MuSig2:** The [MuSig2][topic musig] protocol for creating [schnorr
 multisignatures][topic multisignature] saw several developments in 2022.
 A [proposed BIP][news195 musig2] received significant [feedback][news198
 musig2] in May.  Later, in October, Yannick Seurin, Tim
 Ruffing, Elliott Jin, and Jonas Nick discovered a
 [vulnerability][news222 musig2] in some ways the protocol could be used,
-which the researchers announced that they planned to fix in an updated version.
+which the researchers announced that they planned to fix in an updated version. {% assign timestamp="48:51" %}
 
-{:#package-relay}
-A draft BIP for [package relay][topic package relay] was
+- **Package relay:** A draft BIP for [package relay][topic package relay] was
 [posted][news201 package relay] by Gloria Zhao in May.  Package relay
 fixes a significant problem with Bitcoin Core's [CPFP fee bumping][topic
 cpfp] where individual nodes will only accept a fee-bumping child
@@ -256,10 +249,10 @@ parent and child transaction to be evaluated as a single unit,
 eliminating the problem---although not eliminating other related
 problems such as [transaction pinning][topic transaction pinning].
 Additional discussion of package relay [occurred][news204 package relay]
-in June.
+in June. {% assign timestamp="52:12" %}
 
 {:#libbitcoinkernel}
-May also saw the [first merge][news198 lbk] for the Bitcoin Kernel
+- **Bitcoin kernel library:** May also saw the [first merge][news198 lbk] for the Bitcoin Kernel
 Library Project (libbitcoinkernel), an attempt to separate out as much
 of Bitcoin Core's consensus code as possible into a separate library,
 even if that code still has some non-consensus code attached.
@@ -267,11 +260,11 @@ Long-term, the goal is to trim down libbitcoinkernel until it contains
 only consensus code, making it easy for other projects to use that code
 or for auditors to analyze changes to Bitcoin Core's consensus logic.
 Several additional libbitcoinkernel PRs would be merged through the
-year.
+year. {% assign timestamp="54:49" %}
 
 <div markdown="1" class="callout" id="releases">
 
-### 2022 summary<br>Major releases of popular infrastructure projects
+## Summary 2022: Major releases of popular infrastructure projects
 
 - [Eclair 0.7.0][news185 eclair] added support for [anchor
   outputs][topic anchor outputs], relaying [onion messages][topic onion
@@ -360,29 +353,28 @@ year.
 ## June
 
 {:#ln-meet}
-In June, LN developers [met][news204 ln] to discuss the future of
+- **LN protocol developers meeting:** In June, LN developers [met][news204 ln] to discuss the future of
 protocol development.  Topics discussed included [taproot][topic
 taproot]-based LN channels, [tapscript][topic tapscript] and
 [MuSig2][topic musig] (including recursive MuSig2), updating the gossip
 protocol for announcing new and changed channels, [onion messages][topic
 onion messages], [blinded paths][topic rv routing], probing and balance
 sharing, [trampoline routing][topic trampoline payments], and the
-[offers][topic offers] and LNURL protocols.
+[offers][topic offers] and LNURL protocols. {% assign timestamp="57:46" %}
 
 ## July
 
 {:#onion-message-limiting}
-In July, Bastien Teinturier [posted][news207 onion] a summary of an idea
+- **Onion message rate limiting:** In July, Bastien Teinturier [posted][news207 onion] a summary of an idea
 he attributes to Rusty Russell for rate limiting [onion messages][topic
 onion messages] in order to prevent denial-of-service attacks.  However,
 Olaoluwa Osuntokun suggested reconsideration of his March
 [proposal][news190 onion] for preventing abuse of onion messages by
 charging for data relay.  It seemed that most developers in the
 discussion preferred to attempt rate limiting before adding additional
-fees to the protocol.
+fees to the protocol. {% assign timestamp="1:03:58" %}
 
-{:#miniscript-descriptors}
-This month Bitcoin Core also [merged a pull request][news209 miniscript]
+- **Miniscript descriptors:** This month Bitcoin Core also [merged a pull request][news209 miniscript]
 adding watch-only support for [output script descriptors][topic
 descriptors] written in [miniscript][topic miniscript].  A future PR is
 expected to allow the wallet to create signatures for spending
@@ -390,22 +382,22 @@ miniscript-based descriptors.  As other wallets and signing devices
 implement miniscript support, it should become easier for policies to be
 transferred between wallets or for multiple wallets to cooperate in
 spending bitcoins, such as multisig policies or policies involving
-different signers for different occasions (e.g. fallback signers).
+different signers for different occasions (e.g. fallback signers). {% assign timestamp="1:06:34" %}
 
 ## August
 
 {:#dual-funding}
-In August, Eclair [merged support][news213 dual funding] for the
+- **LN interactive and dual funding:** In August, Eclair [merged support][news213 dual funding] for the
 interactive funding protocol, a dependency for the [dual funding
 protocol][topic dual funding] that allows either (or both) of two nodes
 to contribute funds to a new LN channel.  Later that month, another
 [merge][news215 dual funding] brought Eclair experimental support for
 dual funding.  An open protocol for dual funding can help ensure
 merchants have access to channels that allow them to immediately receive
-payments from customers.
+payments from customers. {% assign timestamp="1:12:59" %}
 
 {:#jamming}
-Antoine Riard and Gleb Naumenko [published][news214 jam] a guide
+- **Channel jamming attack mitigation:** Antoine Riard and Gleb Naumenko [published][news214 jam] a guide
 to [channel jamming attacks][topic channel jamming attacks] and
 several proposed solutions.  For every channel an attacker controls,
 they can make more than a dozen other channels unusable by sending
@@ -419,13 +411,13 @@ Subsequently, Riard [published][news228 jam] an alternative solution
 involving non-tradable node-specific tokens.  In December, Joost Jager
 would [announce][news230 jam] a "simple but imperfect" utility that
 could help nodes mitigate some problems with jamming without requiring
-any changes to the LN protocol.
+any changes to the LN protocol. {% assign timestamp="1:15:18" %}
 
 {:.center}
 ![Illustration of the two types of channel jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
 
 {:#dlc-bls}
-Lloyd Fournier [wrote][news213 bls] about the benefits of having
+- **BLS signatures for DLCs:** Lloyd Fournier [wrote][news213 bls] about the benefits of having
 [DLC][topic dlc] oracles make their attestations using Boneh--Lynn--Shacham
 ([BLS][]) signatures.  Bitcoin does not support BLS signatures and a
 soft fork would be required to add them, but Fournier links to a paper
@@ -447,11 +439,11 @@ to the program source code and the value returned by running it. The
 attestation could be transformed into signatures that would allow
 settling the DLC on chain. As with current DLC contracts, the oracle
 would not know which onchain transactions were based on its BLS
-signatures.
+signatures. {% assign timestamp="1:18:18" %}
 
 <div markdown="1" class="callout" id="optech">
 
-### 2022 summary<br>Bitcoin Optech
+## Summary 2022: Bitcoin Optech
 
 In Optech's fifth year, we published 51 weekly [newsletters][] and added 11
 new pages to our [topics index][].  Altogether, Optech published over
@@ -459,12 +451,13 @@ new pages to our [topics index][].  Altogether, Optech published over
 the rough equivalent of a 200-page book. <!-- wc -w
 _posts/en/newsletters/2022-* ; a typical book has about 350 words per page -->
 
+{% assign timestamp="1:23:11" %}
+
 </div>
 
 ## September
 
-{:#fee-ratecards}
-Lisa Neigut [posted][news219 ratecards] to the Lightning-Dev mailing
+- **Fee ratecards:** Lisa Neigut [posted][news219 ratecards] to the Lightning-Dev mailing
 list a proposal for fee ratecards that would allow a node to advertise
 four tiered rates for forwarding fees.  Better advertisement of
 forwarding fees, including the ability to set negative fees in some
@@ -477,12 +470,12 @@ two nodes, with different costs each. If the path at the lowest cost
 fails, you just try another route that may have more hops but lower
 effective cost, or else try the same channel at a higher cost."  An
 alternative method for payment flow control was [suggested][news220 flow
-control] by René Pickhardt.
+control] by René Pickhardt. {% assign timestamp="1:26:07" %}
 
 ## October
 
 {:#v3-tx-relay}
-In October, Gloria Zhao [proposed][news220 v3] allowing transactions that
+- **Version 3 transaction relay:** In October, Gloria Zhao [proposed][news220 v3] allowing transactions that
 used version number 3 to use a modified set of transaction relay
 policies.  These policies are based on experience using [CPFP][topic
 cpfp] and [RBF][topic rbf], plus ideas for [package relay][topic package
@@ -493,10 +486,9 @@ settling payments ([HTLCs][topic htlc]), and enforcing misbehavior
 penalties.  Greg Sanders would [follow up][news223 ephemeral] later in
 the month with an additional proposal for *ephemeral anchors*, a
 simplified form of the [anchor outputs][topic anchor outputs] already
-usable with most LN implementations.
+usable with most LN implementations. {% assign timestamp="1:29:09" %}
 
-{:#async-payments}
-Eclair added [support][news220 async] for a basic form of async payments
+- **Async payments:** Eclair added [support][news220 async] for a basic form of async payments
 when [trampoline relay][topic trampoline payments] is used. Async
 payments would allow paying an offline node (such as a mobile wallet)
 without trusting a third-party with the funds. The ideal mechanism for
@@ -504,20 +496,19 @@ async payments depends on [PTLCs][topic ptlc], but a partial
 implementation just requires a third party to delay forwarding the funds
 until the offline node comes back online. Trampoline nodes can provide
 that delay and so this PR makes use of them to allow experimentation
-with async payments.
+with async payments. {% assign timestamp="1:33:25" %}
 
 {:#parsing-bugs}
-October also saw the [first][news222 bug] of two block parsing bugs that
+- **Block parsing bugs:** October also saw the [first][news222 bug] of two block parsing bugs that
 affected multiple applications.  An accidentally triggered bug in BTCD
 prevented it and downstream program LND from processing the latest
 blocks.  This could have led to users losing funds, although no such
 problems were reported.  A [second][news225 bug] related bug, this time
 deliberately triggered, affected BTCD and LND again, along with users of some
 versions of Rust-Bitcoin.  Again, there was a potential for users to
-lose money, although we are unaware of any reported incidents.
+lose money, although we are unaware of any reported incidents. {% assign timestamp="1:36:41" %}
 
-{:#zk-rollups}
-John Light [posted][news222 rollups] a research report he prepared about
+- **ZK rollups:** John Light [posted][news222 rollups] a research report he prepared about
 validity rollups---a type of sidechain where the current sidechain state
 is compactly stored on the mainchain. An owner of sidechain bitcoins can
 use the state stored on the mainchain to prove how many sidechain
@@ -526,19 +517,19 @@ validity proof, they can withdraw bitcoins they own from the sidechain
 even if the operators or miners of the sidechain try to prevent the
 withdrawal.  Light's research describes validity rollups in depth, looks
 at how support for them could be added to Bitcoin, and examines various
-concerns with their implementation.
+concerns with their implementation. {% assign timestamp="1:37:07" %}
 
 {:#v2-transport}
-The [BIP324][] proposal for an [encrypted v2 P2P transport
+- **Encrypted version 2 transport protocol:** The [BIP324][] proposal for an [encrypted v2 P2P transport
 protocol][news222 v2trans] received an update and mailing list
 discussion for the first time in three years.  Encrypting the transport
 of unconfirmed transactions can help hide their origin from eavesdroppers
 who control many internet relays (e.g. large ISPs and governments).  It
 can also help detect tampering and possibly make [eclipse attacks][topic
-eclipse attacks] more difficult.
+eclipse attacks] more difficult. {% assign timestamp="1:39:41" %}
 
 {:#core-meet}
-A meeting of Bitcoin protocol developers had several sessions
+- **Meeting of Bitcoin protocol developers:** A meeting of Bitcoin protocol developers had several sessions
 [transcribed][news223 xscribe] by Bryan Bishop, including discussions
 about [transport encryption][topic v2 p2p transport], transaction fees
 and [economic security][topic fee sniping], the FROST [threshold
@@ -547,11 +538,11 @@ using GitHub for source code and development discussion hosting,
 including provable specifications in BIPs, [package relay][topic package
 relay] and [v3 transaction relay][topic v3 transaction relay], the
 Stratum version 2 mining protocol, and getting code merged into Bitcoin
-Core and other free software projects.
+Core and other free software projects. {% assign timestamp="1:41:26" %}
 
 <div markdown="1" class="callout" id="softforks">
 
-### 2022 summary<br>Soft fork proposals
+### Summary 2022: Soft fork proposals
 
 January began with Jeremy Rubin [holding][news183a ctv] the first of
 several IRC meetings to review and discuss the
@@ -660,24 +651,26 @@ similar in capability to smart contracts used on some other
 cryptocurrency systems but would be compatible with Bitcoin's existing
 UTXO-based system.
 
+{% assign timestamp="1:43:40" %}
+
 </div>
 
 ## November
 
 {:#fat-errors}
-November saw Joost Jager [update][news224 fat] a proposal from 2019 to
+- **Fat error messages:** November saw Joost Jager [update][news224 fat] a proposal from 2019 to
 improve error reporting in LN for failed payments.  The error would
 report the identity of a channel where a payment failed to be forwarded
 by a node so that the spender could avoid using channels involving that
 node for a limited time.  Several LN implementations would update their
 code to support the proposal, even if they didn't immediately begin
 using it themselves, including [Eclair][news225 fat] and [Core
-Lightning][news226 fat].
+Lightning][news226 fat]. {% assign timestamp="1:51:24" %}
 
 ## December
 
 {:#ln-mod}
-In December, protocol developer John Law posted to the Lightning-Dev
+- **Modifying the LN protocol:** In December, protocol developer John Law posted to the Lightning-Dev
 mailing list his third major proposal for the year.  Like his previous
 two proposals, he suggested new ways LN offchain transactions could be
 designed to enable new features without requiring any changes to
@@ -687,7 +680,7 @@ could [remain offline][news221 ln-mod] for potentially months at a time,
 management of all settled funds to improve compatibility with
 [watchtowers][topic watchtowers], and [optimizing][news230 ln-mod] LN
 channels for use in [channel factories][topic channel factories] that
-could significantly decrease the onchain costs to use LN.
+could significantly decrease the onchain costs to use LN. {% assign timestamp="1:55:57" %}
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
