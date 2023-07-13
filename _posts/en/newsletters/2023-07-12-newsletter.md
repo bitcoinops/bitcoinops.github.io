@@ -57,7 +57,7 @@ describing notable changes to popular Bitcoin infrastructure software.
     almost always eventually receive at least some of their funds to their
     chosen address, such as an address in their [HD wallet][topic bip32].
 
-  Initial replies to the clean-up proposal PR were positive.
+  Initial replies to the clean-up proposal PR were positive. {% assign timestamp="0:58" %}
 
 ## Waiting for confirmation #9: Policy Proposals
 
@@ -66,7 +66,7 @@ mempool inclusion, and mining transaction selection---including why
 Bitcoin Core has a more restrictive policy than allowed by consensus and
 how wallets can use that policy most effectively._
 
-{% include specials/policy/en/09-proposals.md %}
+{% include specials/policy/en/09-proposals.md %} {% assign timestamp="18:59" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -80,7 +80,7 @@ client by removing an in-memory data structure, `mapRelay`, that may
 cause high memory consumption and is no longer needed, or at least
 is of very marginal benefit.
 This map contains transactions that may or may not also be in the mempool,
-and is sometimes used to reply to [`getdata`][wiki getdata] requests from peers.
+and is sometimes used to reply to [`getdata`][wiki getdata] requests from peers. {% assign timestamp="41:42" %}
 
 {% include functions/details-list.md
   q0="What are the reasons to remove `mapRelay`?"
@@ -153,7 +153,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LND v0.16.4-beta][] is a maintenance release of this LN node software
-  that fixes a memory leak that may affect some users.
+  that fixes a memory leak that may affect some users. {% assign timestamp="50:43" %}
 
 ## Notable code and documentation changes
 
@@ -170,7 +170,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   to help users migrate from legacy wallets to [descriptor][topic descriptors]
   wallets as mentioned in Newsletters [#125][news125 descriptor wallets],
   [#172][news172 descriptor wallets], and
-  [#230][news230 descriptor wallets].
+  [#230][news230 descriptor wallets]. {% assign timestamp="51:48" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
