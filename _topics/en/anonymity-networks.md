@@ -106,6 +106,9 @@ optech_mentions:
   - title: "Bitcoin Core #25355 adds support for transient I2P addresses"
     url: /en/newsletters/2022/09/07/#bitcoin-core-25355
 
+  - title: "Bitcoin Core #27411 stops announcing the local node's Tor or I2P address on other networks"
+    url: /en/newsletters/2023/07/19/#bitcoin-core-27411
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion
