@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Libsecp256k1 0.3.1 fixes a timing side-channel vulnerability"
     url: /en/newsletters/2023/04/12/#libsecp256k1-0-3-1
 
+  - title: "Libsecp256k1 #1313 tests compiler prebuilds to detect unwanted optimization of constant-time code"
+    url: /en/newsletters/2023/07/19/#libsecp256k1-1313
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
