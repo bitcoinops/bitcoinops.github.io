@@ -418,6 +418,15 @@ Optech reported on three significant security vulnerabilities this year:
 
 ## July
 
+{:#vls}
+The Validating Lightning Signer (VLS) project [released][jul vls] their
+first beta version in July.  The project allows the separation of an LN
+node from the keys that control its funds. An LN node running with VLS
+will route signing requests to a remote signing device instead of local
+keys. The beta release supports CLN and LDK, layer-1 and layer-2
+validation rules, backup and recovery capabilities, and provides a
+reference implementation.
+
 {:#ln-meeting}
 An LN developer [meeting][jul summit] held in July discussed a variety
 of topics, including reliable transaction confirmation at the base
