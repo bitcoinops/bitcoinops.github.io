@@ -32,7 +32,60 @@ effectively._
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Wallet 10101 beta testing pooling funds between LN and DLCs:**
+  10101 announced a [wallet][10101 github] built with LDK and BDK that allows users to trade
+  derivatives non-custodially using [DLCs][topic dlc] in an [offchain contract][10101 blog2]
+  that can also be used to send, receive, and forward LN payments. The DLCs rely
+  on oracles that use [adaptor signatures][topic adaptor signatures] for price
+  [attestation][10101 blog1].
+
+- **LDK Node announced:**
+  The LDK team [announced][ldk blog] LDK Node [v0.1.0][LDK Node v0.1.0]. LDK Node is a
+  Lightning node Rust library that uses the LDK and BDK libraries to enable developers
+  to quickly setup a self-custodial Lightning node while still providing a high degree of
+  customization for different use cases.
+
+- **Payjoin SDK announced:**
+  [Payjoin Dev Kit (PDK)][PDK github] was [announced][PDK blog] as a Rust
+  library that implements [BIP78][] for use in wallets and services that wish to
+  integrate [payjoin][topic payjoin] functionality.
+
+- **Validating Lightning Signer (VLS) beta announced:**
+  VLS allows the separation of a Lightning node from the keys that control its
+  funds. A Lightning node running with VLS will route signing requests to a
+  remote signing device instead of local keys. The [beta release][VLS gitlab]
+  supports CLN and LDK, layer-1 and layer-2 validation rules, backup/recovery
+  capabilities, and provides a reference implementation. The [blog
+  post][VLS blog] announcement also calls for testing, feature requests, and feedback from the community.
+
+- **BitGo adds MuSig2 support:**
+  BitGo [announced][bitgo blog] support for [BIP327][] ([MuSig2][topic musig])
+  and noted the reduced fees and additional privacy compared to their other
+  supported address types.
+
+- **Peach adds RBF support:**
+  The [Peach Bitcoin][peach website] mobile application for peer-to-peer
+  exchange [announced][peach tweet] support for [Replace-By-Fee (RBF)][topic rbf] fee bumping.
+
+- **Phoenix wallet adds splicing support:**
+  ACINQ [announced][acinq blog] beta testing for the next version of their
+  Phoenix mobile Lightning wallet. The wallet supports a single dynamic channel
+  that is rebalanced using [splicing][topic splicing] and
+  a mechanism similar to the [swap-in-potentiam][news233 sip] technique (see
+  [Podcast #259][pod259 phoenix]).
+
+- **Mining Development Kit call for feedback:**
+  The team working on the Mining Development Kit (MDK) has [posted an update][MDK blog] on their
+  progress to develop hardware, software, and firmware for Bitcoin mining systems. The post
+  calls for feedback from the community about use cases, scope, and approach.
+
+- **Binance adds Lightning support:**
+  Binance [announced][binance blog] support for sending (withdrawals) and
+  receiving (deposits) using the Lightning Network.
+
+- **Nunchuk adds CPFP support:**
+  Nunchuk [announced][nunchuk blog] support for [Child-Pays-For-Parent
+  (CPFP)][topic cpfp] fee bumping for both senders and receivers of a transaction.
 
 ## Notable code and documentation changes
 
@@ -86,3 +139,21 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news225 bolts1032]: /en/newsletters/2022/11/09/#bolts-1032
 [news246 secp]: /en/newsletters/2023/04/12/#libsecp256k1-0-3-1
 [news251 secp]: /en/newsletters/2023/05/17/#libsecp256k1-0-3-2
+[10101 github]: https://github.com/get10101/10101
+[10101 blog1]: https://10101.finance/blog/dlc-to-lightning-part-1/
+[10101 blog2]: https://10101.finance/blog/dlc-to-lightning-part-2
+[LDK Node v0.1.0]: https://github.com/lightningdevkit/ldk-node/releases/tag/v0.1.0
+[LDK blog]: https://lightningdevkit.org/blog/announcing-ldk-node
+[PDK github]: https://github.com/payjoin/rust-payjoin
+[PDK blog]: https://payjoindevkit.org/blog/pdk-an-sdk-for-payjoin-transactions/
+[VLS gitlab]: https://gitlab.com/lightning-signer/validating-lightning-signer/-/releases/v0.9.1
+[VLS blog]: https://vls.tech/posts/vls-beta/
+[bitgo blog]: https://blog.bitgo.com/save-fees-with-musig2-at-bitgo-3248d690f573
+[peach website]: https://peachbitcoin.com/
+[peach tweet]: https://twitter.com/peachbitcoin/status/1676955956905902081
+[acinq blog]: https://acinq.co/blog/phoenix-splicing-update
+[news233 sip]: /en/newsletters/2023/01/11/#non-interactive-ln-channel-open-commitments
+[MDK blog]: https://www.mining.build/update-on-the-mining-development-kit/
+[binance blog]: https://www.binance.com/en/support/announcement/binance-completes-integration-of-bitcoin-btc-on-lightning-network-opens-deposits-and-withdrawals-eefbfae2c0ae472d9e1e36f1a30bf340
+[nunchuk blog]: https://nunchuk.io/blog/cpfp
+[pod259 phoenix]: /en/podcast/2023/07/13/#phoenix

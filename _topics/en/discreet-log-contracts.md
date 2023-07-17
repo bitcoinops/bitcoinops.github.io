@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Proposal for vault-enabling opcodes could also make DLCs much more efficient"
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
+  - title: "Wallet 10101 allows pooling funds between LN and DLCs"
+    url: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
