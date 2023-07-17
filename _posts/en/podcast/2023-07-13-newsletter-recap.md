@@ -158,7 +158,8 @@ update.
 Rusty exactly proposed in the newsletter.  All of these have been, well, they're
 really old changes, so I think we've covered them dozens of times.  So, no.
 
-**Mike Schmidt**: T-Best, this is a little off topic, and I suspect that we'll
+{:#phoenix}
+**Mike Schmidt**: T-Bast, this is a little off topic, and I suspect that we'll
 be covering it in our monthly segment on Changes to client and service software,
 but there was a recent announcement of a new version of Phoenix Wallet, and I
 suspect that we probably won't bother you with bringing you on when we cover

@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Eclair #2584 adds support for both splice-in and splice-out"
     url: /en/newsletters/2023/04/19/#eclair-2584
 
+  - title: "Phoenix wallet adds splicing support"
+    url: /en/newsletters/2023/07/19/#phoenix-wallet-adds-splicing-support
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

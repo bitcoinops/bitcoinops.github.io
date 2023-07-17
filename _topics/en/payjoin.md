@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Advanced payjoin applications, including transaction cut-through"
     url: /en/newsletters/2023/05/17/#advanced-payjoin-applications
 
+  - title: "Payjoin Dev Kit (PDK) announced to provide a Rust SDK for payjoin"
+    url: /en/newsletters/2023/07/19/#payjoin-sdk-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
