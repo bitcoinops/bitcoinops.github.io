@@ -25,7 +25,7 @@ selection---including why Bitcoin Core has a more restrictive policy
 than allowed by consensus and how wallets can use that policy most
 effectively._
 
-{% include specials/policy/en/10-get-involved.md %}
+{% include specials/policy/en/10-get-involved.md %} {% assign timestamp="2:01" %}
 
 ## Changes to services and client software
 
@@ -37,18 +37,18 @@ wallets and services.*
   derivatives non-custodially using [DLCs][topic dlc] in an [offchain contract][10101 blog2]
   that can also be used to send, receive, and forward LN payments. The DLCs rely
   on oracles that use [adaptor signatures][topic adaptor signatures] for price
-  [attestation][10101 blog1].
+  [attestation][10101 blog1]. {% assign timestamp="14:56" %}
 
 - **LDK Node announced:**
   The LDK team [announced][ldk blog] LDK Node [v0.1.0][LDK Node v0.1.0]. LDK Node is a
   Lightning node Rust library that uses the LDK and BDK libraries to enable developers
   to quickly setup a self-custodial Lightning node while still providing a high degree of
-  customization for different use cases.
+  customization for different use cases. {% assign timestamp="17:14" %}
 
 - **Payjoin SDK announced:**
   [Payjoin Dev Kit (PDK)][PDK github] was [announced][PDK blog] as a Rust
   library that implements [BIP78][] for use in wallets and services that wish to
-  integrate [payjoin][topic payjoin] functionality.
+  integrate [payjoin][topic payjoin] functionality. {% assign timestamp="20:09" %}
 
 - **Validating Lightning Signer (VLS) beta announced:**
   VLS allows the separation of a Lightning node from the keys that control its
@@ -56,36 +56,36 @@ wallets and services.*
   remote signing device instead of local keys. The [beta release][VLS gitlab]
   supports CLN and LDK, layer-1 and layer-2 validation rules, backup/recovery
   capabilities, and provides a reference implementation. The [blog
-  post][VLS blog] announcement also calls for testing, feature requests, and feedback from the community.
+  post][VLS blog] announcement also calls for testing, feature requests, and feedback from the community. {% assign timestamp="25:27" %}
 
 - **BitGo adds MuSig2 support:**
   BitGo [announced][bitgo blog] support for [BIP327][] ([MuSig2][topic musig])
   and noted the reduced fees and additional privacy compared to their other
-  supported address types.
+  supported address types. {% assign timestamp="37:42" %}
 
 - **Peach adds RBF support:**
   The [Peach Bitcoin][peach website] mobile application for peer-to-peer
-  exchange [announced][peach tweet] support for [Replace-By-Fee (RBF)][topic rbf] fee bumping.
+  exchange [announced][peach tweet] support for [Replace-By-Fee (RBF)][topic rbf] fee bumping. {% assign timestamp="44:34" %}
 
 - **Phoenix wallet adds splicing support:**
   ACINQ [announced][acinq blog] beta testing for the next version of their
   Phoenix mobile Lightning wallet. The wallet supports a single dynamic channel
   that is rebalanced using [splicing][topic splicing] and
   a mechanism similar to the [swap-in-potentiam][news233 sip] technique (see
-  [Podcast #259][pod259 phoenix]).
+  [Podcast #259][pod259 phoenix]). {% assign timestamp="46:34" %}
 
 - **Mining Development Kit call for feedback:**
   The team working on the Mining Development Kit (MDK) has [posted an update][MDK blog] on their
   progress to develop hardware, software, and firmware for Bitcoin mining systems. The post
-  calls for feedback from the community about use cases, scope, and approach.
+  calls for feedback from the community about use cases, scope, and approach. {% assign timestamp="49:27" %}
 
 - **Binance adds Lightning support:**
   Binance [announced][binance blog] support for sending (withdrawals) and
-  receiving (deposits) using the Lightning Network.
+  receiving (deposits) using the Lightning Network. {% assign timestamp="51:33" %}
 
 - **Nunchuk adds CPFP support:**
   Nunchuk [announced][nunchuk blog] support for [Child-Pays-For-Parent
-  (CPFP)][topic cpfp] fee bumping for both senders and receivers of a transaction.
+  (CPFP)][topic cpfp] fee bumping for both senders and receivers of a transaction. {% assign timestamp="53:35" %}
 
 ## Notable code and documentation changes
 
@@ -103,15 +103,15 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   anonymity networks] to peers on Tor and I2P.  This helps prevent
   someone from associating a node's regular network address to one of its
   addresses on an anonymity network.  CJDNS is treated differently from
-  Tor and I2P at the moment, although that may change in the future.
+  Tor and I2P at the moment, although that may change in the future. {% assign timestamp="54:57" %}
 
 - [Core Lightning #6347][] adds the ability for a plugin to subscribe to
-  every event notification using the wildcard `*`.
+  every event notification using the wildcard `*`. {% assign timestamp="58:07" %}
 
 - [Core Lightning #6035][] adds the ability to request a [bech32m][topic
   bech32] address for receiving deposits to [P2TR][topic taproot] output
   scripts.  Transaction change will also now be sent to a P2TR output by
-  default.
+  default. {% assign timestamp="1:00:47" %}
 
 - [LND #7768][] implements BOLTs [#1032][bolts #1032] and [#1063][bolts
   #1063] (see [Newsletter #225][news225 bolts1032]), allowing the
@@ -121,7 +121,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   requirement that the amount and expiry delta equal exactly the amount
   they requested, but that exactitude meant a forwarding node could
   probe the next hop to see if it was the final receiver by slightly
-  changing either value.
+  changing either value. {% assign timestamp="1:02:28" %}
 
 - [Libsecp256k1 #1313][] begins automatic testing using development
   snapshots of the GCC and Clang compilers which may allow detection of
@@ -131,7 +131,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   side channels].  See [Newsletter #246][news246 secp] for one occasion
   where that may have happened and [Newsletter #251][news251 secp] for
   another occasion and an announcement that this sort of testing was
-  planned.
+  planned. {% assign timestamp="1:05:33" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27411,6347,6035,7768,1032,1063,1313" %}
