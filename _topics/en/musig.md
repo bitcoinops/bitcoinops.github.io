@@ -114,6 +114,9 @@ optech_mentions:
   - title: "Lightning Lab's Loop now uses MuSig2 by default for lower fees and improved privacy"
     url: /en/newsletters/2023/05/24/#lightning-loop-defaults-to-musig2
 
+  - title: "Taproot and MuSig2 LN channels"
+    url: /en/newsletters/2023/07/26/#taproot-and-musig2-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Multisignatures

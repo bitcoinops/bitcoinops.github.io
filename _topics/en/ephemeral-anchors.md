@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Bitcoin Inquisition #23 adds part of the support for ephemeral anchors"
     url: /en/newsletters/2023/04/26/#bitcoin-inquisition-23
 
+  - title: "LN developer discussion about multiple relay policy topics, including ephemeral anchors"
+    url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
