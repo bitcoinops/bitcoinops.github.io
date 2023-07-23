@@ -107,6 +107,9 @@ optech_mentions:
   - title: Suggestion to perform package relay using Nostr protocol
     url: /en/newsletters/2023/05/31/#transaction-relay-over-nostr
 
+  - title: "LN developer discussion about multiple relay policy topics, including package relay"
+    url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

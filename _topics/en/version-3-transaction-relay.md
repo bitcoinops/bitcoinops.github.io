@@ -49,6 +49,9 @@ optech_mentions:
   - title: Preventing coinjoin pinning with v3 transaction relay
     url: /en/newsletters/2023/06/28/#preventing-coinjoin-pinning-with-v3-transaction-relay
 
+  - title: "LN developer discussion about multiple relay policy topics, including v3 transaction relay"
+    url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
