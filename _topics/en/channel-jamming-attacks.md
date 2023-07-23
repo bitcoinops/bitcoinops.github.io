@@ -103,6 +103,9 @@ optech_mentions:
   - title: "LND #7710 allows retrieving extra data about an HTLC in support of jamming countermeasures"
     url: /en/newsletters/2023/06/28/#lnd-7710
 
+  - title: "LN developer discussion about channel jamming attacks"
+    url: /en/newsletters/2023/07/26/#ptlcs-and-redundant-overpayment
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

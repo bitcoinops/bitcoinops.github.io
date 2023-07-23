@@ -233,6 +233,9 @@ optech_mentions:
   - title: "Why P2TR outputs should use the noscript commitments when only keypath spending is desired"
     url: /en/newsletters/2022/06/29/#bip-341-should-key-path-only-p2tr-be-eschewed-altogether
 
+  - title: "Taproot and MuSig2 LN channels"
+    url: /en/newsletters/2023/07/26/#taproot-and-musig2-channels
+
 ## Optional
 see_also:
   - title: MAST
