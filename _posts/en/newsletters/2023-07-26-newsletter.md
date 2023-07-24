@@ -173,7 +173,37 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How can I manually (on paper) calculate a Bitcoin public key from a private key?]({{bse}}118933)
+  Andrew Poelstra gives an overview of computation-by-hand verification
+  techniques, like [codex32][news239 codex32], before walking through how a
+  public key could be hand-derived from a private key, a process he estimates would
+  take at least 1500 hours, even with process optimizations.
+
+- [Why are there 17 native segwit versions?]({{bse}}118974)
+  Murch explains that [segwit][topic segwit] defined 17 values (0-16) for the
+  [witness version][bip141 witness program] field because of the existing availability of constant
+  opcodes OP_0...OP_16 in [Script][wiki script]. He notes that additional
+  numbers would require the use of less data-efficient `OP_PUSHDATA` opcodes.
+
+- [Does `0 OP_CSV` force the spending transaction to signal BIP125 replaceability?]({{bse}}115586)
+  Murch points to a [discussion][rbf csv discussion] confirming that since both
+  the `OP_CHECKSEQUENCEVERIFY` (CSV) [timelock][topic timelocks] and
+  Replace-by-Fee ([RBF][topic rbf]) are [enforced]({{bse}}87376) using the `nSequence` field, an
+  output with `0 OP_CSV` requires the spending transaction to signal
+  [BIP125][] replaceability.
+
+- [How do route hints affect pathfinding?]({{bse}}118755)
+  Christian Decker explains two reasons an LN recipient would provide a sender
+  with route hints. One reason is if the recipient is using [unannounced
+  channels][topic unannounced channels] and hints are needed to help find a
+  route. The other reason is to provide the sender with a list of channels that
+  have sufficient balance to complete the payment, a technique he refers to as route boost.
+
+- [What does it mean that the security of 256-bit ECDSA, and therefore Bitcoin keys, is 128 bits?]({{bse}}118928)
+  Pieter Wuille clarifies that due to algorithms that can derive a private key
+  from a public key more efficiently than a brute-force search, 256-bit ECDSA
+  only provides 128-bit security. He goes on to point out the difference between
+  individual key security as compared to [seed][topic bip32] security.
 
 ## Releases and release candidates
 
@@ -216,3 +246,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news120 commitments]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
 [hwi 2.3.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.0
 [ldk 0.0.116]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.116
+[news239 codex32]: /en/newsletters/2023/02/22/#proposed-bip-for-codex32-seed-encoding-scheme
+[bip141 witness program]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#witness-program
+[wiki script]: https://en.bitcoin.it/wiki/Script#Constants
+[rbf csv discussion]: https://twitter.com/SomsenRuben/status/1683056160373391360
