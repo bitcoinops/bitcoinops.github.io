@@ -144,6 +144,9 @@ optech_mentions:
   - title: "Suggested best practices for CPFP or RBF fee-bumping a previous CPFP fee bump"
     url: /en/newsletters/2023/04/26/#best-practices-with-multiple-cpfps-cpfp-rbf
 
+  - title: "Question about whether 0 OP_CSV forces the spending transaction to signal BIP125 replaceability?"
+    url: /en/newsletters/2023/07/26/#does-0-op-csv-force-the-spending-transaction-to-signal-bip125-replaceability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Opt-in RBF FAQ
