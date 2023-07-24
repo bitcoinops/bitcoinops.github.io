@@ -200,7 +200,10 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core GUI #740][] Show own outputs on PSBT signing window FIXME:Murchandamus
+- [Bitcoin Core GUI #740][] updates the [PSBT][topic psbt] operations dialog to mark outputs
+  paying your own wallet with “own address”. This eases assessment of an
+  imported PSBT’s outcome, especially that the transaction returns change to
+  the sender.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}
