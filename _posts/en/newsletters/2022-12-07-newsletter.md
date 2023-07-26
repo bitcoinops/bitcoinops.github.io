@@ -47,7 +47,7 @@ infrastructure projects.
     Sanders's [implementation][bitcoin core #26403] of ephemeral anchors
     makes it possible to begin testing the idea along with the other v3
     transaction relay behaviors previously implemented by that
-    proposal's author.
+    proposal's author. {% assign timestamp="2:03" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -73,7 +73,7 @@ to be similar to choosing which transactions to include
 in a block, so this PR adds a class called `MiniMiner`.
 
 This PR review [spanned][review club 26152] two [weeks][review club
-26152-2].
+26152-2]. {% assign timestamp="25:23" %}
 
 {% include functions/details-list.md
   q0="What problem does this PR address?"
@@ -161,17 +161,17 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [BTCPay Server 1.7.1][] is the latest release of the most widely used
-  self-hosted payment processing software for Bitcoin.
+  self-hosted payment processing software for Bitcoin. {% assign timestamp="54:04" %}
 
 - [Core Lightning 22.11][] is the next major version of CLN.  It's also
   the first release to use a new version numbering scheme.[^semver]
   Included are several new features, including a new plugin manager,
-  and multiple bug fixes.
+  and multiple bug fixes. {% assign timestamp="55:21" %}
 
 - [LND 0.15.5-beta][] is a maintenance release of LND.  It contains
-  only minor bug fixes according to its release notes.
+  only minor bug fixes according to its release notes. {% assign timestamp="55:44" %}
 
-- [BDK 0.25.0][] is a new release for this library for building wallets.
+- [BDK 0.25.0][] is a new release for this library for building wallets. {% assign timestamp="56:05" %}
 
 ## Notable code and documentation changes
 
@@ -188,10 +188,10 @@ used together. This change makes it more convenient to use named
 parameter values without having to name every one.  The PR description
 provides examples demonstrating the increased convenience of this
 approach as well as a handy shell alias for frequent users of
-`bitcoin-cli`.
+`bitcoin-cli`. {% assign timestamp="57:42" %}
 
 - [Core Lightning #5722][] adds [documentation][grpc doc] about how to
-  use the GRPC interface plugin.
+  use the GRPC interface plugin. {% assign timestamp="1:03:16" %}
 
 - [Eclair #2513][] updates how it uses the Bitcoin Core wallet to ensure
   it always sends change to P2WPKH outputs.  This
@@ -211,14 +211,14 @@ approach as well as a handy shell alias for frequent users of
     However, the LN protocol requires certain output types.  For
     example, a P2PKH output can't be used to open an LN channel.
     For that reason, users of Eclair with Bitcoin Core need to ensure
-    they don't generate change outputs of an LN-incompatible type.
+    they don't generate change outputs of an LN-incompatible type. {% assign timestamp="1:05:23" %}
 
 - [Rust Bitcoin #1415][] begins using the [Kani Rust Verifier][] to
   prove some properties of Rust Bitcoin's code.  This complements other
-  continuous integration tests performed on the code, such as fuzzing.
+  continuous integration tests performed on the code, such as fuzzing. {% assign timestamp="1:08:21" %}
 
 - [BTCPay Server #4238][] adds an invoice refund endpoint to BTCPay's
-  Greenfield API, a more recent API different from the original BitPay-inspired API.
+  Greenfield API, a more recent API different from the original BitPay-inspired API. {% assign timestamp="1:09:16" %}
 
 ## Footnotes
 
