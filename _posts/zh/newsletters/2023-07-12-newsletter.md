@@ -81,7 +81,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
 [news58 bolts619]: /en/newsletters/2019/08/07/#bolts-619
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /zh/blog/waiting-for-confirmation/
 [news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [news67 bolts642]: /en/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
