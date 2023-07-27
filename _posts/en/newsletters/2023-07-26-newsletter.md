@@ -33,12 +33,12 @@ projects.
 
     No comments on Russell's proposal had been posted to the mailing
     list as of this writing but some initial comments had been posted to
-    his [pull request][bolts #1096] with the complete proposal.
+    his [pull request][bolts #1096] with the complete proposal. {% assign timestamp="1:03" %}
 
 - **LN Summit notes:** Carla Kirk-Cohen [posted][kc notes] to the
   Lightning-Dev mailing list a summary of several discussions from the
   recent meeting of LN developers in New York City.  Some of the topics
-  discussed included:
+  discussed included: {% assign timestamp="10:48" %}
 
     - *Reliable transaction confirmation:* [package relay][topic package
       relay], [v3 transaction relay][topic v3 transaction relay],
@@ -177,33 +177,33 @@ answers posted since our last update.*
   Andrew Poelstra gives an overview of computation-by-hand verification
   techniques, like [codex32][news239 codex32], before walking through how a
   public key could be hand-derived from a private key, a process he estimates would
-  take at least 1500 hours, even with process optimizations.
+  take at least 1500 hours, even with process optimizations. {% assign timestamp="57:18" %}
 
 - [Why are there 17 native segwit versions?]({{bse}}118974)
   Murch explains that [segwit][topic segwit] defined 17 values (0-16) for the
   [witness version][bip141 witness program] field because of the existing availability of constant
   opcodes OP_0...OP_16 in [Script][wiki script]. He notes that additional
-  numbers would require the use of less data-efficient `OP_PUSHDATA` opcodes.
+  numbers would require the use of less data-efficient `OP_PUSHDATA` opcodes. {% assign timestamp="59:43" %}
 
 - [Does `0 OP_CSV` force the spending transaction to signal BIP125 replaceability?]({{bse}}115586)
   Murch points to a [discussion][rbf csv discussion] confirming that since both
   the `OP_CHECKSEQUENCEVERIFY` (CSV) [timelock][topic timelocks] and
   Replace-by-Fee ([RBF][topic rbf]) are [enforced]({{bse}}87376) using the `nSequence` field, an
   output with `0 OP_CSV` requires the spending transaction to signal
-  [BIP125][] replaceability.
+  [BIP125][] replaceability. {% assign timestamp="1:03:04" %}
 
 - [How do route hints affect pathfinding?]({{bse}}118755)
   Christian Decker explains two reasons an LN recipient would provide a sender
   with route hints. One reason is if the recipient is using [unannounced
   channels][topic unannounced channels] and hints are needed to help find a
   route. The other reason is to provide the sender with a list of channels that
-  have sufficient balance to complete the payment, a technique he refers to as route boost.
+  have sufficient balance to complete the payment, a technique he refers to as route boost. {% assign timestamp="1:08:23" %}
 
 - [What does it mean that the security of 256-bit ECDSA, and therefore Bitcoin keys, is 128 bits?]({{bse}}118928)
   Pieter Wuille clarifies that due to algorithms that can derive a private key
   from a public key more efficiently than a brute-force search, 256-bit ECDSA
   only provides 128-bit security. He goes on to point out the difference between
-  individual key security as compared to [seed][topic bip32] security.
+  individual key security as compared to [seed][topic bip32] security. {% assign timestamp="1:12:26" %}
 
 ## Releases and release candidates
 
@@ -213,12 +213,12 @@ projects.  Please consider upgrading to new releases or helping to test release 
 - [HWI 2.3.0][] is a release of this middleware that allows software
   wallets to communicate with hardware signing devices.  It adds support
   for DIY Jade devices and a binary for running the main `hwi` program
-  on Apple Silicon hardware with MacOS 12.0+.
+  on Apple Silicon hardware with MacOS 12.0+. {% assign timestamp="1:15:09" %}
 
 - [LDK 0.0.116][] is a release of this library for creating LN-enabled
   software.  It includes support for [anchor outputs][topic anchor
   outputs] and [multipath payments][topic multipath payments] with
-  [keysend][topic spontaneous payments].
+  [keysend][topic spontaneous payments]. {% assign timestamp="1:16:37" %}
 
 ## Notable code and documentation changes
 
@@ -233,7 +233,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [Bitcoin Core GUI #740][] updates the [PSBT][topic psbt] operations dialog to mark outputs
   paying your own wallet with “own address”. This eases assessment of an
   imported PSBT’s outcome, especially that the transaction returns change to
-  the sender.
+  the sender. {% assign timestamp="1:17:18" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}
