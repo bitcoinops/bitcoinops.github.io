@@ -38,6 +38,9 @@ optech_mentions:
   - title: Transcript of discussion about multiple topics, including statechains
     url: /en/newsletters/2020/09/02/#sydney-meetup-discussion
 
+  - title: Discussion about blind MuSig2 signing for statechains
+    url: /en/newsletters/2023/08/02/#safety-of-blind-musig2-signing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo
