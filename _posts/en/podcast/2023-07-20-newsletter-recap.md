@@ -884,7 +884,7 @@ malicious intermediate node could easily probe whether the next node is the
 final recipient or not.  Unfortunately, the requirements for intermediate nodes
 were more lenient than requirements for final nodes.  Intermediate nodes allowed
 overpaying and increasing the CLTV [CHECKLOCKTIMEVERIFY] expiry, whereas final
-nodes required a perfect equality between HTLC values and onion values.
+nodes required a perfect equality between HTLC values and onion values".
 
 So due to that concern about probing, there's been changes, and we note those
 BOLTs #1032 and #1036 and we covered it in Newsletter #225 as well.  Murch, do
