@@ -168,7 +168,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   parameter that allows specifying one or more UTXOs from the wallet
   which should be used to fund the new channel.
 
-- [BTCPay Server #5155][] Add reporting feature FIXME:bitschmidty
+- [BTCPay Server #5155][] adds a reporting page to the back office that provides
+  payment and onchain wallet reports, the ability to export to CSV, and is
+  extendable by plugins.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="863,26467,6378,6449,6399,6389,6403,6437,6398,5492,2680,7820,7516,5155" %}
