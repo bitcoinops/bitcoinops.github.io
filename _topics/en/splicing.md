@@ -61,6 +61,9 @@ optech_mentions:
   - title: "Phoenix wallet adds splicing support"
     url: /en/newsletters/2023/07/19/#phoenix-wallet-adds-splicing-support
 
+  - title: "Eclair #2680 adds quiescence negotiation for splicing"
+    url: /en/newsletters/2023/08/02/#eclair-2680
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
