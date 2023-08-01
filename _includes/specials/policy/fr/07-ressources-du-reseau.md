@@ -1,92 +1,81 @@
-A previous post discussed protecting node resources, which may be unique to
-each node and thus sometimes configurable. We also made our case for why it is best
-to converge on one policy, but what should be part of that policy? This post
-will discuss the concept of network-wide resources, critical to things like
-scalability, upgradeability and accessibility of bootstrapping and maintaining
-a full node.
+Un article précédent traitait de la protection des ressources des nœuds, qui peut être unique
+à chaque nœud et donc parfois configurable. Nous avons également expliqué pourquoi il est préférable
+de converger vers une seule politique, mais qu'est-ce qui doit faire partie de cette politique ?
+Ce billet aborde le concept de ressources à l'échelle du réseau, essentielles pour des aspects tels
+que l'évolutivité, la mise à niveau et l'accessibilité du démarrage et de la maintenance d'un nœud complet.
 
-As discussed in [previous posts][policy01], many of the Bitcoin network’s
-ideological goals are embodied in its distributed structure. Bitcoin's peer-to-peer
-nature allows the rules of the network to emerge from rough
-consensus of the individual node operators’ choices and curbs attempts to
-acquire undue influence in the network. Those rules are then enforced by each
-node individually validating every transaction. A diverse and healthy node
-population requires that the cost of operating a node is kept low. It is hard
-to scale any project with a global audience, but doing so without sacrificing
-decentralization is akin to fighting with one hand tied to your back. The
-Bitcoin project attempts this balancing act by being fiercely protective of its
-shared network resources: the UTXO set, the data footprint of the blockchain
-and the computational effort required to process it, and upgrade hooks to
-evolve the Bitcoin protocol.
+Comme nous l'avons vu dans les [articles précédents][policy01], de nombreux objectifs idéologiques
+du réseau Bitcoin sont incarnés par sa structure distribuée. La nature pair-à-pair de Bitcoin permet
+aux règles du réseau d'émerger d'un consensus approximatif des choix des opérateurs de nœuds individuels
+et limite les tentatives d'acquisition d'une influence indue sur le réseau. Ces règles sont ensuite
+appliquées par chaque nœud qui valide individuellement chaque transaction. Une population de nœuds
+diversifiée et saine exige que le coût d'exploitation d'un nœud soit maintenu à un niveau bas. Il est
+difficile de faire évoluer un projet avec une audience mondiale, mais le faire sans sacrifier la
+décentralisation revient à se battre avec une main attachée dans le dos. Le projet Bitcoin tente
+de trouver cet équilibre en protégeant farouchement les ressources partagées du réseau : le stock
+d'UTXO, l'empreinte des données de la blockchain et l'effort de calcul nécessaire pour les traiter,
+ainsi que les mises à jour permettant de faire évoluer le protocole Bitcoin.
 
-There is no need to reiterate the entire blocksize war to realize that a limit
-on blockchain growth is necessary to keep it affordable to run your own node.
-However, blockchain growth is also dissuaded at the policy level by the
-`minRelayTxFee` of 1 sat/vbyte, ensuring a minimum cost to express some of the
-“[unbounded demand for highly-replicated perpetual storage][unbounded]”.
+Il n'est pas nécessaire de revenir sur la guerre des tailles de blocs pour comprendre qu'une limite à
+la croissance de la blockchain est nécessaire pour que l'exploitation de son propre nœud reste abordable.
+Cependant, la croissance de la blockchain est également dissuadée au niveau politique par le `minRelayTxFee`
+de 1 sat/vbyte, assurant un coût minimum pour exprimer une partie de la " [demande illimitée de stockage
+perpétuel hautement répliqué][unbounded] ".
 
-Originally, the network state was tracked by keeping all transactions that
-still had unspent outputs. This much bigger portion of the blockchain got
-reduced significantly with the [introduction of the UTXO set][ultraprune] as
-the means of keeping track of funds. Since then, the UTXO set has been a
-central data structure. Especially during IBD, but also generally, UTXO lookups
-represent a major portion of all memory accesses of a node. Bitcoin Core
-already uses a [manually optimized data structure for the UTXO cache][pooled
-resource], but the size of the UTXO set determines how much of it cannot fit in
-a node’s cache. A larger UTXO set means more cache misses which slows down
-block validation, IBD, and transaction validation speed. The dust limit is an
-example of a policy that restricts the creation of UTXOs, specifically curbing
-UTXOs that might never get spent because their amount [falls short][topic uneconomical outputs] of the cost
-for spending them. Even so, [“dust storms” with thousands of transactions
-occurred as recently as 2020][lopp storms].
+À l'origine, l'état du réseau était déterminé en conservant toutes les transactions dont les résultats
+n'avaient pas encore été dépensés. Cette partie beaucoup plus importante de la blockchain a été réduite de
+manière significative avec l'[introduction du jeu d'UTXO][ultraprune] comme moyen de suivre les fonds.
+Depuis lors, le jeu d'UTXO est une structure de données centrale. En particulier pendant les IBD, mais
+aussi de manière générale, les consultations d'UTXO représentent une part importante de tous les accès
+à la mémoire d'un nœud. Bitcoin Core utilise déjà une [structure de données optimisée manuellement pour
+le cache UTXO][pooled resource], mais la taille du jeu d'UTXO détermine la quantité qu'il ne peut pas
+contenir dans le cache d'un nœud. Un ensemble d'UTXO plus important se traduit par un plus grand nombre
+d'absences du cache, ce qui ralentit la vitesse de validation des blocs, de l'IBD et de la transaction.
+La limite de poussière est un exemple de politique qui restreint la création d'UTXO, en particulier les
+UTXO qui pourraient ne jamais être dépensés parce que leur montant [n'est pas à la hauteur][topic uneconomical outputs]
+du coût de leur dépense. Malgré cela, des ["tempêtes de poussière" avec des milliers de transactions se
+sont produites pas plus tard qu'en 2020][lopp storms].
 
-When it became popular to use bare multisig outputs to publish data onto the
-blockchain, the definition of standard transactions was amended to permit a
-single OP_RETURN output as an alternative. People realized that it would be
-impossible to prevent users from publishing data on the blockchain, but at
-least such data would not need to live in the UTXO set forever when published
-in outputs that could never be spent. Bitcoin Core 0.13.0 introduced a start-up
-option `-permitbaremultisig` that users may toggle to reject unconfirmed
-transactions with bare multisig outputs.
+Lorsqu'il est devenu populaire d'utiliser des sorties multisig brutes pour publier des données sur la
+blockchain, la définition des transactions standard a été modifiée pour permettre une sortie OP_RETURN
+unique en tant qu'alternative. Les gens ont réalisé qu'il serait impossible d'empêcher les utilisateurs
+de publier des données sur la blockchain, mais qu'au moins ces données n'auraient pas besoin de vivre dans
+le jeu d'UTXO pour toujours lorsqu'elles sont publiées dans des sorties qui ne peuvent jamais être dépensées.
+Bitcoin Core 0.13.0 a introduit une option de démarrage `-permitbaremultisig` que les utilisateurs peuvent
+activer pour rejeter les transactions non confirmées avec des sorties multisig brutes.
 
-While the consensus rules allow output scripts to be freeform, only a few
-well-understood patterns are relayed by Bitcoin Core nodes. This makes it
-easier to reason about many concerns in the network, including validation costs
-and protocol upgrade mechanisms. For example, an input script that contains
-op-codes, a P2SH input with more than 15 signatures, or a P2WSH input whose
-witness stack has more than 100 items each would make a transaction
-non-standard. (Check out this [policy overview][instagibbs policy zoo] for more
-examples of policies and their motivations.)
+Bien que les règles de consensus permettent aux scripts de sortie d'être libres, seuls quelques modèles bien
+compris sont relayés par les nœuds de Bitcoin Core. Il est ainsi plus facile de comprendre les nombreuses
+préoccupations du réseau, notamment les coûts de validation et les mécanismes de mise à jour du protocole.
+Par exemple, un script d'entrée qui contient des op-codes, une entrée P2SH avec plus de 15 signatures, ou une
+entrée P2WSH dont la pile de témoins contient plus de 100 éléments chacun, rendrait une transaction non standard.
+(Consultez cette [vue d'ensemble des politiques][instagibbs policy zoo] pour plus d'exemples de politiques et leurs motivations).
 
-Finally, the Bitcoin protocol is a living software project that will need to
-keep evolving to address future challenges and user needs. To that end, there
-are a number of upgrade hooks deliberately left consensus valid but unused,
-such as the annex, taproot leaf versions, witness versions, OP_SUCCESS, and a
-number of no-op opcodes. However, just like attacks are hindered by the lack of
-central points of failure, network-wide software upgrades involve a coordinated
-effort between tens of thousands of independent node operators. Nodes will not
-relay transactions that make use of any reserved upgrade hooks until their
-meaning has been defined. This discouragement is meant to dissuade applications
-from independently creating conflicting standards, which would make it
-impossible to adopt one application’s standard into consensus without
-invalidating another’s. Also, when a consensus change does happen, nodes that
-do not upgrade immediately—and thus do not know the new consensus rules—cannot
-be “tricked” into accepting a now-invalid transaction into their mempools. The
-proactive discouragement helps nodes be forward-compatible and enables the
-network to safely upgrade consensus rules without requiring a completely
-synchronized software update.
+Finalement, le protocole Bitcoin est un projet logiciel vivant qui devra continuer à évoluer pour répondre aux
+défis futurs et aux besoins des utilisateurs. À cette fin, il existe un certain nombre de mécanismes de mise à
+jour qui ont délibérément laissé le consensus valide mais inutilisé, tels que l'annexe, les versions des leaf
+taproots, les versions des témoins, OP_SUCCESS et un certain nombre d'opcodes no-op. Cependant, tout comme les
+attaques sont entravées par l'absence de points centraux de défaillance, les mises à jour logicielles à l'échelle
+du réseau impliquent un effort coordonné entre des dizaines de milliers d'opérateurs de nœuds indépendants.
+Les nœuds ne relaieront pas les transactions qui utilisent les hooks de mise à niveau réservés tant que leur
+signification n'aura pas été définie. Cette mesure vise à dissuader les applications de créer indépendamment des
+normes contradictoires, ce qui rendrait impossible l'adoption de la norme d'une application dans le consensus sans
+invalider celle d'une autre application. En outre, lorsqu'un changement de consensus se produit, les nœuds qui ne
+sont pas mis à niveau immédiatement---et qui ne connaissent donc pas les nouvelles règles de consensus---ne peuvent
+pas être "trompés" en acceptant une transaction désormais invalide dans leur pool de mémoires. Ce découragement
+proactif aide les nœuds à être compatibles avec l'avenir et permet au réseau de mettre à jour les règles de
+consensus en toute sécurité sans nécessiter une mise à jour logicielle entièrement synchronisée.
 
-We can see that using policy to protect shared network resources aids in
-protecting the network’s characteristics, and keeps paths for future protocol
-development open. Meanwhile, we are seeing how the friction of growing the
-network against a strictly limited blockweight has been driving adoption of
-best practices, good technical design, and innovation: next week’s post
-will explore mempool policy as an interface for second-layer protocols and
-smart contract systems.
+Nous pouvons voir que l'utilisation d'une politique pour protéger les ressources partagées du réseau aide à protéger
+les caractéristiques du réseau, et maintient ouvertes les voies pour le développement de protocoles futurs. Pendant
+ce temps, nous voyons comment la friction de la croissance du réseau contre une blockchain strictement limitée a
+conduit à l'adoption de meilleures pratiques, d'une bonne conception technique et de l'innovation : le billet de
+la semaine prochaine explorera la politique de mempool comme une interface pour les protocoles de deuxième couche
+et les systèmes de contrats intelligents.
 
-[policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
+[policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
 [unbounded]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
 [lopp storms]: https://blog.lopp.net/history-bitcoin-transaction-dust-spam-storms/
 [ultraprune]: https://github.com/bitcoin/bitcoin/pull/1677
-[pooled resource]: /en/newsletters/2023/05/03/#bitcoin-core-25325
+[pooled resource]: /fr/newsletters/2023/05/03/#bitcoin-core-25325
 [instagibbs policy zoo]: https://gist.github.com/instagibbs/ee32be0126ec132213205b25b80fb3e8
