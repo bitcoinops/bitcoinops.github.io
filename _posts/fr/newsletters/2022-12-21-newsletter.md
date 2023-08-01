@@ -1,5 +1,5 @@
 ---
-title: 'Lettre informative Bitcoin Optech #231: Spéciale Revue annuelle 2022'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #231: Revue Spéciale Année 2022'
 permalink: /fr/newsletters/2022/12/21/
 name: 2022-12-21-newsletter-fr
 slug: 2022-12-21-newsletter-fr
