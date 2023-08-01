@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin hebdomadaire Bitcoin Optech #257'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #257'
 permalink: /fr/newsletters/2023/06/28/
 name: 2023-06-28-newsletter-fr
 slug: 2023-06-28-newsletter-fr
@@ -18,9 +18,9 @@ de l'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Prévenir l'épinglage des coinjoin avec le relais de transaction v3 :** Greg
+- **Prévenir l'épinglage des coinjoin avec le relai de transaction v3 :** Greg
   Sanders a [posté][sanders v3cj] sur la liste de diffusion Bitcoin-Dev une
-  description de la manière dont les [règles de relais de transaction v3][topic v3 transaction relay]
+  description de la manière dont les [règles de relai de transaction v3][topic v3 transaction relay]
   proposées pourraient permettre de créer une transaction multipartite de type
   [coinjoin][topic coinjoin] qui ne serait pas vulnérable à l'[épinglage de transaction][topic transaction pinning].
   Le problème spécifique de l'épinglage est que l'un des participants à une coinjoin
@@ -213,7 +213,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [sanders v3cj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021780.html
 [linus spec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
 [BTCPay Server 1.10.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.10.3
