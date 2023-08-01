@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Optech Newsletter #219'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #219'
 permalink: /fr/newsletters/2022/09/28/
 name: 2022-09-28-newsletter-fr
 slug: 2022-09-28-newsletter-fr

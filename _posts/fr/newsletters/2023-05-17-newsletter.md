@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Hebdomadaire Optech #251'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #251'
 permalink: /fr/newsletters/2023/05/17/
 name: 2023-05-17-newsletter-fr
 slug: 2023-05-17-newsletter-fr

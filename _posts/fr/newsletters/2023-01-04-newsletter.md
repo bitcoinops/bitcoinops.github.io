@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Optech Newsletter #232'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #232'
 permalink: /fr/newsletters/2023/01/04/
 name: 2023-01-04-newsletter-fr
 slug: 2023-01-04-newsletter-fr
