@@ -80,7 +80,7 @@ pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
 consensus et comment les portefeuilles peuvent utiliser cette politique de la
 manière la plus efficace._
 
-{% include specials/policy/fr/07-resources-du-reseau.md %} {% assign timestamp="24:46" %}
+{% include specials/policy/fr/07-ressources-du-reseau.md %} {% assign timestamp="24:46" %}
 
 ## Sélection de Q&R du Bitcoin Stack Exchange
 
