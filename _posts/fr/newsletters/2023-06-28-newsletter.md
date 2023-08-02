@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume une idée pour empêcher l'épinglage des
-transactions coinjoin et décrit une proposition pour utiliser de manière
+transactions coinjoin et expose une proposition pour utiliser de manière
 spéculative les changements de consensus espérés. Vous y trouverez également
 une nouvelle contribution à notre série hebdomadaire limitée sur la politique
 de mempool, ainsi que nos sections régulières concernant les questions et
@@ -23,7 +23,7 @@ de l'infrastructure Bitcoin.
   description de la manière dont les [règles de relai de transaction v3][topic v3 transaction relay]
   proposées pourraient permettre de créer une transaction multipartite de type
   [coinjoin][topic coinjoin] qui ne serait pas vulnérable à l'[épinglage de transaction][topic transaction pinning].
-  Le problème spécifique de l'épinglage est que l'un des participants à une coinjoin
+  Le problème spécifique de l'épinglage est que l'un des participants à un coinjoin
   peut utiliser sa contribution à la transaction pour créer une transaction conflictuelle
   qui empêche la transaction coinjoin de se confirmer.
 
@@ -42,7 +42,7 @@ de l'infrastructure Bitcoin.
     un [fee bump][topic rbf]). {% assign timestamp="16:08" %}
 
 - **Spéculer en utilisant les changements de consensus espérés :** Robin Linus
-  a [posté][linus spec] sur la liste de diffusion Bitcoin-Dev une idée pour
+  a [exposé][linus spec] sur la liste de diffusion Bitcoin-Dev une idée pour
   dépenser de l'argent dans un fragment de script qui ne peut pas être exécuté
   pendant une longue période (par exemple 20 ans). Si ce fragment de script est
   interprété selon les règles actuelles de consensus, il permettra aux mineurs
@@ -98,13 +98,13 @@ notre dernière mise à jour.*
   qui exclut les transactions prévues pour ce bloc selon le [modèle de bloc][reference getblocktemplate]
   de ce nœud. Il existe divers [outils][miningpool observer] qui [montrent][mempool space]
   les blocs prévus par rapport aux blocs réels. Pieter Wuille souligne qu'en raison de la
-  variance inhérente aux [mempools][waiting for confirmation 1] des différents nœuds liée
+  variance inhérente aux [mempools][waiting for confirmation 1] des différents nœuds liés
   à la propagation des transactions, il n'est pas possible d'établir une règle de consensus
   imposant le contenu des blocs. {% assign timestamp="57:38" %}
 
-- [Pourquoi tout le monde prétend-il que les fourches souples restreignent l'ensemble des règles existantes ?]({{bse}}118642)
+- [Pourquoi tout le monde prétend-il que les soft forks restreignent l'ensemble des règles existantes ?]({{bse}}118642)
   Pieter Wuille utilise les règles ajoutées lors des [activations][topic soft fork activation]
-  des soft fork [taproot][topic taproot] et [segwit][topic segwit] comme exemples
+  des soft forks [taproot][topic taproot] et [segwit][topic segwit] comme exemples
   de renforcement des règles de consensus :
 
   - taproot a ajouté l'exigence que les dépenses de sortie `OP_1 <32 bytes>` (taproot)
@@ -118,10 +118,10 @@ notre dernière mise à jour.*
   pour les grands canaux (wumbo). Il renvoie également au [thème des grands canaux][topic large channels]
   d'Optech pour plus d'informations. {% assign timestamp="1:07:47" %}
 
-- [Pourquoi Bitcoin Core utilise-t-il le score de l'ancêtre au lieu du taux de frais de l'ancêtre pour sélectionner les transactions ?]({{bse}}118611)
+- [Pourquoi Bitcoin Core utilise-t-il le score de l'ascendant au lieu de son taux de frais pour sélectionner les transactions ?]({{bse}}118611)
   Sdaftuar explique que l'optimisation des performances est la raison pour laquelle
   l'algorithme de sélection des transactions du modèle de bloc minier utilise à la fois
-  le taux de frais  d'ancêtres et le score d'ancêtres. (Voir
+  le taux de frais et le score des ascendants. (Voir
   [En attente de confirmation n° 2 : Incitations][waiting for confirmation 2]). {% assign timestamp="1:10:28" %}
 
 - [Comment le protocole Lightning multipart payments (MPP) définit-il les montants par part ?]({{bse}}117405)
