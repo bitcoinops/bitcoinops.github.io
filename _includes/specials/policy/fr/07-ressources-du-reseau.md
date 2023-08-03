@@ -30,14 +30,14 @@ aussi de manière générale, les consultations d'UTXO représentent une part im
 à la mémoire d'un nœud. Bitcoin Core utilise déjà une [structure de données optimisée manuellement pour
 le cache UTXO][pooled resource], mais la taille du jeu d'UTXO détermine la quantité qu'il ne peut pas
 contenir dans le cache d'un nœud. Un ensemble d'UTXO plus important se traduit par un plus grand nombre
-d'absences du cache, ce qui ralentit la vitesse de validation des blocs, de l'IBD et de la transaction.
-La limite de poussière est un exemple de politique qui restreint la création d'UTXO, en particulier les
+d'échec du cache, ce qui ralentit la vitesse de validation des blocs, de l'IBD et de la transaction.
+La limite des poussières (dust limit) est un exemple de politique qui restreint la création d'UTXO, en particulier les
 UTXO qui pourraient ne jamais être dépensés parce que leur montant [n'est pas à la hauteur][topic uneconomical outputs]
 du coût de leur dépense. Malgré cela, des ["tempêtes de poussière" avec des milliers de transactions se
 sont produites pas plus tard qu'en 2020][lopp storms].
 
 Lorsqu'il est devenu populaire d'utiliser des sorties multisig brutes pour publier des données sur la
-blockchain, la définition des transactions standard a été modifiée pour permettre une sortie OP_RETURN
+blockchain, la définition des transactions standards a été modifiée pour permettre une sortie OP_RETURN
 unique en tant qu'alternative. Les gens ont réalisé qu'il serait impossible d'empêcher les utilisateurs
 de publier des données sur la blockchain, mais qu'au moins ces données n'auraient pas besoin de vivre dans
 le jeu d'UTXO pour toujours lorsqu'elles sont publiées dans des sorties qui ne peuvent jamais être dépensées.
