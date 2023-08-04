@@ -23,7 +23,7 @@ Bitcoin infrastructure software.
   news, as discussed a few weeks ago during the in-person LN developer
   conference, the `#lightning-dev` IRC chatroom on the [Libera.chat][]
   network has seen a significant burst of renewed activity for
-  LN-related discussion.
+  LN-related discussion. {% assign timestamp="1:13" %}
 
 - **Safety of blind MuSig2 signing:** Tom Trevethan [posted][trevethan
   blind] to the Bitcoin-Dev mailing list to request a review of a
@@ -44,7 +44,7 @@ Bitcoin infrastructure software.
     is an implementation related to Minicash that also integrates
     support for Bitcoin and LN.  Anyone interested in cryptography may
     find the thread interesting for its discussion of cryptographic
-    techniques.
+    techniques. {% assign timestamp="5:07" %}
 
 ## Releases and release candidates
 
@@ -55,7 +55,7 @@ release candidates.*
 - [BTCPay Server 1.11.1][] is the latest release of this self-hosted
   payment processor.  The 1.11.x release series includes improvements to
   invoice reporting, additional upgrades to the checkout process, and
-  new features for the point of service terminal.
+  new features for the point of service terminal. {% assign timestamp="24:30" %}
 
 ## Notable code and documentation changes
 
@@ -71,7 +71,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   transaction is change in `bumpfee`. The wallet deducts value from
   this output to add fees when creating the [replacement transaction][topic rbf]. By
   default, the wallet attempts to detect a change output automatically
-  and creates a new one if it fails to do so.
+  and creates a new one if it fails to do so. {% assign timestamp="25:31" %}
 
 - [Core Lightning #6378][] and [#6449][core lightning #6449] will mark
   an offchain incoming [HTLC][topic htlc] as failed if the node is
@@ -108,26 +108,26 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     is reasonable to claim a refund and, if it's not going to happen,
     create an offchain cancellation of the HTLC he received from Alice,
     allowing their channel to continue operating even if it means he
-    might lose the amount of the HTLC.
+    might lose the amount of the HTLC. {% assign timestamp="27:19" %}
 
 - [Core Lightning #6399][] adds support to the `pay` command for paying
   invoices created by the local node.  This can simplify account
   management code for software that calls CLN in the background, as
-  discussed in a recent [mailing list thread][fiatjaf custodial].
+  discussed in a recent [mailing list thread][fiatjaf custodial]. {% assign timestamp="33:03" %}
 
 - [Core Lightning #6389][] adds an optional CLNRest service, "a
   lightweight Python-based Core Lightning plugin that transforms RPC
   calls into a REST service. By generating REST API endpoints, it
   enables the execution of Core Lightning's RPC methods behind the
   scenes and provides responses in JSON format."  See its
-  [documentation][clnrest doc] for details.
+  [documentation][clnrest doc] for details. {% assign timestamp="35:48" %}
 
 - [Core Lightning #6403][] and [#6437][core lightning #6437] move the
   runes authorization and authentication mechanism out of CLN's commando
   plugin (see [Newsletter #210][news210 commando]) and into its core
   functionality, allowing other plugins to use them.  Several
   commands related to creating, destroying, and renaming runes are also
-  updated.
+  updated. {% assign timestamp="37:37" %}
 
 - [Core Lightning #6398][] extends the `setchannel` RPC with a new
   `ignorefeelimits` option that will ignore the minimum onchain fee
@@ -135,14 +135,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   set a feerate below the minimum the local node will permit.  This can
   help work around a potential bug in another LN node implementation or
   can be used to eliminate fee contention as a source of problems in
-  partly trusted channels.
+  partly trusted channels. {% assign timestamp="39:52" %}
 
 - [Core Lightning #5492][] adds User-level Statically Defined Tracepoints
   (USDT) and the means to use them.  These allow users to probe the
   internal operation of their node for debugging without introducing any
   significant overhead when tracepoints aren't being used.  See
   [Newsletter #133][news133 usdt] for the previous inclusion of USDT
-  support into Bitcoin Core.
+  support into Bitcoin Core. {% assign timestamp="45:52" %}
 
 - [Eclair #2680][] adds support for the quiescence negotiation protocol
   that is required by the [splicing protocol][topic splicing] proposed
@@ -156,21 +156,21 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   trips required to get the splice transaction mutually signed.  Eclair
   already supports splicing, but this change brings it closer to
   supporting the same splicing protocol that other node software will
-  likely use.
+  likely use. {% assign timestamp="51:42" %}
 
 - [LND #7820][] adds to the `BatchOpenChannel` RPC all the fields
   available to the non-batched `OpenChannel` RPC except for
   `funding_shim` (not needed for batched opens) and `fundmax` (you
   can't give one channel all of the balance when opening multiple
-  channels).
+  channels). {% assign timestamp="53:57" %}
 
 - [LND #7516][] extends the `OpenChannel` RPC with a new `utxo`
   parameter that allows specifying one or more UTXOs from the wallet
-  which should be used to fund the new channel.
+  which should be used to fund the new channel. {% assign timestamp="54:57" %}
 
 - [BTCPay Server #5155][] adds a reporting page to the back office that provides
   payment and onchain wallet reports, the ability to export to CSV, and is
-  extendable by plugins.
+  extendable by plugins. {% assign timestamp="57:26" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="863,26467,6378,6449,6399,6389,6403,6437,6398,5492,2680,7820,7516,5155" %}
