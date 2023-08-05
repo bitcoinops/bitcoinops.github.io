@@ -1,118 +1,80 @@
-[Last week’s post][policy08] described [anchor outputs][topic anchor outputs] and [CPFP carve
-out][topic cpfp carve out], ensuring either channel party can fee-bump their shared
-commitment transactions without requiring collaboration. This approach
-still contains a few drawbacks: channel funds are tied up to create
-anchor outputs, commitment transaction feerates typically overpay
-to ensure they meet mempool minimum feerates, and CPFP carve out only
-allows one extra descendant. Anchor outputs cannot ensure the same
-ability to fee-bump for transactions shared between more than two
-parties, such as [coinjoins][topic coinjoin] or multi-party contracting protocols. This
-post explores current efforts to address these and other limitations.
+[Le post de la semaine dernière][policy08] a décrit les [sorties d'ancrage][topic anchor outputs] et [l'exclusion
+CPFP][topic cpfp carve out], garantissant à chaque partie du canal la possibilité d'augmenter les frais de leurs transactions
+d'engagement partagées sans nécessiter de collaboration. Cette approche présente encore quelques inconvénients : les fonds du
+canal sont bloqués pour créer des sorties d'ancrage, les frais des transactions d'engagement sont généralement surestimés pour
+s'assurer qu'ils atteignent les frais minimaux du mempool, et l'exclusion CPFP ne permet qu'un seul descendant supplémentaire.
+Les sorties d'ancrage ne peuvent pas garantir la même capacité d'augmentation des frais pour les transactions partagées entre
+plus de deux parties, telles que les [coinjoins][topic coinjoin] ou les protocoles de contrat multi-parties. Ce post explore
+les efforts actuels pour remédier à ces limitations et à d'autres.
 
-[Package relay][topic package relay] includes P2P protocol and policy
-changes to enable the transport and validation of groups of
-transactions. It would allow a commitment transaction to be fee-bumped
-by a child even if the commitment transaction does not meet a mempool’s
-minimum feerate.  Additionally, _Package RBF_ would allow
-the fee-bumping child to pay for [replacing][topic rbf] transactions its parent
-conflicts with. Package relay is designed to remove a general limitation
-at the base protocol
-layer. However, due to its utility in fee-bumping of shared
-transactions, it has also spawned a number of efforts to eliminate [pinning][topic transaction pinning] for
-specific use cases. For example, Package RBF would allow commitment
-transactions to replace each other when broadcast with their
-respective fee-bumping children, removing the need for multiple anchor
-outputs on each commitment transaction.
+[Package relay][topic package relay] comprend un protocole P2P et des modifications de politique pour permettre le transport et
+la validation de groupes de transactions. Cela permettrait à une transaction d'engagement d'augmenter les frais même si la
+transaction d'engagement ne respecte pas le taux de frais minimal du mempool. De plus, _Package RBF_ permettrait au descendant
+qui augmente les frais de payer pour remplacer les transactions en conflit avec son parent. Package relay est conçu pour éliminer
+une limitation générale au niveau du protocole de base. Cependant, en raison de son utilité pour l'augmentation des frais des
+transactions partagées, il a également donné lieu à plusieurs efforts pour éliminer [l'épinglage][topic transaction pinning] pour
+des cas d'utilisation spécifiques. Par exemple, Package RBF permettrait aux transactions d'engagement de se remplacer mutuellement
+lorsqu'elles sont diffusées avec leurs descendants qui augmentent les frais, éliminant ainsi le besoin de plusieurs sorties
+d'ancrage sur chaque transaction d'engagement.
 
-A caveat is that existing RBF rules require the replacement
-transaction to pay a higher absolute fee than the aggregate fees paid
-by all to-be-replaced transactions. This rule helps prevent DoS
-through repeated replacements, but allows a malicious user to increase
-the cost to replace their transaction by attaching a child that is
-high fee but low feerate. This hinders the transaction from being
-mined by unfairly preventing its replacement by a high-feerate
-package, and is often referred to as “Rule 3 pinning.”
+Un inconvénient est que les règles RBF existantes exigent que la transaction de remplacement paie des frais absolus plus élevés
+que les frais totaux payés par toutes les transactions à remplacer. Cette règle aide à prévenir les attaques de type DoS par des
+remplacements répétés, mais permet à un utilisateur malveillant d'augmenter le coût de remplacement de sa transaction en attachant
+un descendant avec des frais élevés mais un taux de frais faible. Cela empêche la transaction d'être extraite en empêchant
+injustement son remplacement par un package à frais élevés, et est souvent appelé "épinglage de la règle 3".
 
-Developers have also proposed entirely different ways of adding fees
-to presigned transactions. For example, signing inputs of the
-transaction using `SIGHASH_ANYONECANPAY | SIGHASH_ALL` could allow the
-transaction broadcaster to provide fees by appending additional inputs
-to the transaction without changing the outputs. However, as RBF does
-not have any rule requiring the replacement transaction to have a
-higher “mining score” (i.e. would be selected for a block faster), an
-attacker could pin these types of transactions by creating
-replacements encumbered by low-feerate ancestors. What complicates
-the accurate assessment of the mining score of transactions and
-transaction packages is that the existing ancestor and descendant
-limits are insufficient to bound the computational complexity of this
-calculation. Any connected transactions can influence the
-order in which transactions get picked into a block. A fully-connected
-component, called a _cluster_, can be of any size given current
-ancestor and descendant limits.
+Les développeurs ont également proposé des moyens totalement différents d'ajouter des frais aux transactions pré-signées.
+Par exemple, la signature des entrées de la transaction en utilisant `SIGHASH_ANYONECANPAY | SIGHASH_ALL` pourrait permettre au
+diffuseur de la transaction de fournir des frais en ajoutant des entrées supplémentaires à la transaction sans modifier les sorties.
+Cependant, comme RBF n'a aucune règle exigeant que la transaction de remplacement ait un "score minier" plus élevé (c'est-à-dire
+qu'elle serait sélectionnée plus rapidement pour un bloc), un attaquant pourrait épingler ces types de transactions en créant des
+remplacements encombrés par des ancêtres à faible taux de frais. Ce qui complique l'évaluation précise du score minier des
+transactions et des packages de transactions, c'est que les limites existantes des ancêtres et des descendants sont insuffisantes
+pour limiter la complexité computationnelle de ce calcul. Toutes les transactions connectées peuvent influencer l'ordre dans lequel
+les transactions sont sélectionnées pour être incluses dans un bloc. Un composant entièrement connecté, appelé un _cluster_, peut
+avoir n'importe quelle taille compte tenu des limites actuelles des ancêtres et des descendants.
 
-A long term solution to address some mempool deficiencies and RBF
-pinning attacks is to [restructure the mempool data structure to track
-clusters][mempool clustering] instead of just ancestor and descendant
-sets. These clusters would be limited in size. A cluster limit would
-restrict the way users can spend unconfirmed UTXOs, but make it
-feasible to quickly linearize the entire mempool using the ancestor
-score-based mining algorithm, build block templates extremely quickly,
-and add a requirement that replacement transactions have a
-higher mining score than the to-be-replaced transaction(s).
+Une solution à long terme pour remédier à certaines lacunes du mempool et aux attaques d'épinglage RBF consiste à [restructurer la
+structure de données du mempool pour suivre les clusters][mempool clustering] au lieu de simplement les ensembles d'ancêtres et de
+descendants. Ces clusters seraient limités en taille. Une limite de cluster restreindrait la manière dont les utilisateurs peuvent
+dépenser des UTXO non confirmés, mais permettrait de linéariser rapidement l'ensemble du mempool en utilisant l'algorithme minier
+basé sur le score des ancêtres, de construire des modèles de bloc extrêmement rapidement, et d'exiger que les transactions de
+remplacement aient un score minier plus élevé que la ou les transactions à remplacer.
 
-Even so, it’s possible that no single set of policies can meet the
-wide range of needs and expectations for transaction relay. For
-example, while recipients of a batched payment transaction benefit
-from being able to spend their unconfirmed outputs,
-a relaxed descendant limit leaves room for pinning package RBF of a shared
-transaction through absolute fees. A proposal for [v3 transaction
-relay policy][topic v3 transaction relay] was developed to allow
-contracting protocols to opt in to a more restrictive set of package
-limits. V3 transactions would only permit packages of size two (one
-parent and one child) and limit the weight of the child. These limits
-would mitigate RBF pinning through absolute fees, and offer some of
-the benefits of cluster mempool without requiring a mempool
-restructure.
+Même ainsi, il est possible qu'aucun ensemble unique de politiques ne puisse répondre à la large gamme de besoins et d'attentes en
+matière de relais de transactions. Par exemple, bien que les destinataires d'une transaction de paiement groupé bénéficient de la
+possibilité de dépenser leurs sorties non confirmées, une limite de descendant plus souple laisse place à l'épinglage du package RBF
+d'une transaction partagée par des frais absolus. Une proposition pour [la politique de relais de transactions
+v3][topic v3 transaction relay] a été développée pour permettre aux protocoles de contrat d'opter pour un ensemble plus restrictif
+de limites de package. Les transactions V3 ne permettraient que des packages de taille deux (un parent et un enfant) et limiteraient
+le poids de l'enfant. Ces limites atténueraient l'épinglage RBF par des frais absolus et offriraient certains avantages du mempool
+en cluster sans nécessiter une restructuration du mempool.
 
-[Ephemeral Anchors][topic ephemeral anchors] builds upon the
-properties of v3 transactions and package relay to improve anchor
-outputs further. It exempts anchor outputs
-belonging to a zero-fee v3 transaction from the [dust limit][topic
-uneconomical outputs], provided the anchor output is
-spent by a fee-bumping child.  Since the zero-fee transaction must be
-fee-bumped by exactly one child (otherwise a miner would not be
-incentivized to include it in a block), this anchor output is
-“ephemeral” and would not become a part of the UTXO set. The ephemeral
-anchor proposal implicitly prevents non-anchor outputs from being
-spent while unconfirmed without `1 OP_CSV` timelocks, since the only
-allowed child must spend the anchor output.
-It would also make [LN symmetry][topic eltoo] feasible with [CPFP][topic cpfp] as the fee
-provisioning mechanism for channel closing transactions. It also makes
-this mechanism available for transactions shared between more than two
-participants. Developers have been using [bitcoin-inquisition][bitcoin inquisition repo] to deploy
-Ephemeral Anchors and proposed soft forks to build and test these
-multi-layer changes on a [signet][topic signet].
+[Les Ancres Éphémères][topic ephemeral anchors] s'appuient sur les propriétés des transactions V3 et du relais de packages pour
+améliorer davantage les sorties d'ancrage. Elles exemptent les sorties d'ancrage appartenant à une transaction V3 à frais nuls de la
+[limite de poussière][topic uneconomical outputs], à condition que la sortie d'ancrage soit dépensée par un descendant qui augmente
+les frais. Étant donné que la transaction sans frais doit être augmentée de frais par exactement un descendant (sinon un mineur ne
+serait pas incité à l'inclure dans un bloc), cette sortie d'ancrage est "éphémère" et ne fera pas partie de l'ensemble UTXO. La
+proposition d'ancres éphémères empêche implicitement les sorties autres que les sorties d'ancrage d'être dépensées lorsqu'elles ne
+sont pas confirmées sans verrouillages temporels `1 OP_CSV`, puisque le seul descendant autorisé doit dépenser la sortie d'ancrage.
+Cela rendrait également [la symétrie LN][topic eltoo] réalisable avec [CPFP][topic cpfp] en tant que mécanisme de provisionnement
+des frais pour les transactions de fermeture de canal. Cela rend également ce mécanisme disponible pour les transactions partagées
+entre plus de deux participants. Les développeurs ont utilisé [bitcoin-inquisition][bitcoin inquisition repo] pour déployer les
+Ancres Éphémères et ont proposé des soft forks pour construire et tester ces changements multi-couches sur un [signet][topic signet].
 
-The pinning problems highlighted in this post, among others, spawned a
-[wealth of discussions and proposals to improve RBF
-policy][2022 rbf] last year across mailing lists, pull requests,
-social media, and in-person meetings. Developers proposed and
-implemented solutions ranging from small amendments to a complete
-revamp. The `-mempoolfullrbf` option, intended to address pinning
-concerns and a discrepancy in BIP125 implementations, illuminated the
-difficulty and importance of collaboration in transaction relay
-policy. While a genuine effort had been made to engage the community
-using typical means, including starting the bitcoin-dev mailing list
-conversation a year in advance, it was clear that the existing
-communication and decision-making methods had not produced the
-intended result and needed refinement.
+Les problèmes d'épinglage mis en évidence dans ce post, entre autres, ont donné lieu à une [multitude de discussions et de
+propositions pour améliorer la politique RBF][2022 rbf] l'année dernière, sur les listes de diffusion, les PR, les
+réseaux sociaux et les réunions en personne. Les développeurs ont proposé et mis en œuvre des solutions allant de petites
+modifications à une refonte complète. L'option `-mempoolfullrbf`, destinée à résoudre les problèmes d'épinglage et les divergences
+dans les implémentations de BIP125, a mis en évidence la difficulté et l'importance de la collaboration dans la politique de relais
+de transactions. Bien qu'un véritable effort ait été fait pour impliquer la communauté en utilisant des moyens habituels, notamment
+en lançant la conversation sur la liste de diffusion bitcoin-dev un an à l'avance, il était clair que les méthodes de communication
+et de prise de décision existantes n'avaient pas produit le résultat escompté et nécessitaient des améliorations.
 
-Decentralized decision-making is a challenging process, but necessary
-to support the diverse ecosystem of protocols and applications that
-use Bitcoin’s transaction relay network. Next week will be our final
-post in this series, in which we hope to encourage our readers to
-participate in and improve upon this process.
+La prise de décision décentralisée est un processus complexe, mais nécessaire pour soutenir l'écosystème diversifié des protocoles
+et des applications qui utilisent le réseau de relais de transactions de Bitcoin. La semaine prochaine, nous publierons notre
+dernier post de cette série, dans lequel nous espérons encourager nos lecteurs à participer et à améliorer ce processus.
 
 [mempool clustering]: https://github.com/bitcoin/bitcoin/issues/27677
-[policy08]: /en/newsletters/2023/07/05/#waiting-for-confirmation-8-policy-as-an-interface
-[2022 rbf]: /en/newsletters/2022/12/21/#rbf
+[policy08]: /fr/newsletters/2023/07/05/#en-attente-de-confirmation-8--la-politique-comme-interface
+[2022 rbf]: /fr/newsletters/2022/12/21/#rbf
