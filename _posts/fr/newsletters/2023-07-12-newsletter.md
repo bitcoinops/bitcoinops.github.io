@@ -1,181 +1,162 @@
 ---
-title: 'Bitcoin Optech Newsletter #259'
-permalink: /en/newsletters/2023/07/12/
-name: 2023-07-12-newsletter
-slug: 2023-07-12-newsletter
+title: 'Bulletin Hebdomadaire Bitcoin Optech #259'
+permalink: /fr/newsletters/2023/07/12/
+name: 2023-07-12-newsletter-fr
+slug: 2023-07-12-newsletter-fr
 type: newsletter
 layout: newsletter
-lang: en
+lang: fr
 ---
-This week's newsletter describes a proposal to remove details from the
-LN specification that are no longer relevant to modern nodes and
-includes the penultimate entry in our limited weekly series about
-mempool policy, plus our regular sections summarizing a Bitcoin Core PR
-Review Club meeting, announcing new releases and release candidates, and
-describing notable changes to popular Bitcoin infrastructure software.
+Ce bulletin décrit une proposition visant à supprimer des détails de la spécification LN qui ne sont plus pertinents pour les
+nœuds modernes et inclut l'avant-dernière entrée de notre série hebdomadaire limitée sur la politique de mempool, ainsi que nos
+sections habituelles résumant une réunion du Bitcoin Core PR Review Club, annonçant de nouvelles versions et versions candidates,
+et décrivant les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
-## News
+## Nouvelles
 
-- **LN specification clean up proposed:** Rusty Russell [posted][russell
-  clean up] to the Lightning-Dev mailing list a link to a [PR][bolts
-  #1092] where he proposes to remove some features that are no longer
-  supported by modern LN implementations and to assume other features
-  will always be supported.  Related to the proposed changes, Russell also
-  provides the results of a survey he ran of public node features
-  according to their gossip messages.  His results imply that nearly all
-  nodes support the following features:
+- **Proposition de nettoyage de la spécification LN :** Rusty Russell [a posté][russell clean up] sur la liste de diffusion
+  Lightning-Dev un lien vers un [PR][bolts #1092] où il propose de supprimer certaines fonctionnalités qui ne sont plus
+  prises en charge par les implémentations LN modernes et de supposer que d'autres fonctionnalités seront toujours prises en charge.
+  En lien avec les changements proposés, Russell fournit également les résultats d'une enquête qu'il a menée sur les fonctionnalités
+  des nœuds publics en fonction de leurs messages de gossip. Ses résultats indiquent que presque tous les nœuds prennent en charge
+  les fonctionnalités suivantes :
 
-  - *Variable-sized onion messages:* made part of the specification in
-    2019 (see [Newsletter #58][news58 bolts619]) around the same time as
-    the specification was updated to use Type-Length-Value (TLV) fields.
-    This replaced the original format for encrypted onion routing that
-    required each hop to use a fixed-length message and limited the number
-    of hops to 20.  The variable-sized format makes it much easier to
-    relay arbitrary data to specific hops, with the only downside being
-    that the overall message size remains constant, so any increase in
-    the amount of data sent decreases the maximum number of hops.
+  - *Messages d'oignon de taille variable :* intégrés à la spécification en 2019
+    (voir [Newsletter #58][news58 bolts619]) à peu près en même temps que la spécification a été mise à jour pour utiliser des
+    champs Type-Length-Value (TLV). Cela a remplacé le format original pour le routage oignon chiffré qui nécessitait que chaque
+    saut utilise un message de longueur fixe et limitait le nombre de sauts à 20. Le format de taille variable facilite beaucoup le
+    relais de données arbitraires vers des sauts spécifiques, le seul inconvénient étant que la taille globale du message reste
+    constante, de sorte que toute augmentation de la quantité de données envoyées diminue le nombre maximum de sauts.
 
-  - *Gossip queries:* made part of the specification in 2018 (see [BOLTs #392][]).
-    This allows a node to request from its peers only a subset of gossip
-    messages sent by other nodes on the network.  For example, a node
-    may request only recent gossip updates, ignoring older updates to
-    save bandwidth and reduce processing time.
+  - *Requêtes de gossip :* intégrées à la spécification en 2018 (voir [BOLTs #392][]).
+    Cela permet à un nœud de demander à ses pairs uniquement un sous-ensemble des messages de gossip envoyés par d'autres nœuds sur
+    le réseau. Par exemple, un nœud peut demander uniquement les mises à jour de gossip récentes, en ignorant les mises à jour plus
+    anciennes pour économiser la bande passante et réduire le temps de traitement.
 
-  - *Data loss protection:* made part of the specification in 2017 (see
-    [BOLTs #240][]).  Nodes using this feature send information about
-    their latest channel state when they reconnect.  This may allow a
-    node to detect that it has lost data, and it encourages a node that
-    has not lost data to close the channel in its latest state.  See
-    [Newsletter #31][news31 data loss] for additional details.
+  - *Protection contre la perte de données :* intégrée à la spécification en 2017 (voir [BOLTs #240][]).
+    Les nœuds utilisant cette fonctionnalité envoient des informations sur leur dernier état de canal lorsqu'ils se reconnectent.
+    Cela peut permettre à un nœud de détecter qu'il a perdu des données, et cela encourage un nœud qui n'a pas perdu de données à
+    fermer le canal dans son dernier état. Voir [Newsletter #31][news31 data loss] pour des détails supplémentaires.
 
-  - *Static remote-party keys:* made part of the specification in 2019
-    (see [Newsletter #67][news67 bolts642]), this allows a node to
-    request that every channel update commit to sending the node's
-    non-[HTLC][topic htlc] funds to the same address.  Previously, a
-    different address was used in every channel update.  After this
-    change, a node that opted into this protocol and lost data would
-    almost always eventually receive at least some of their funds to their
-    chosen address, such as an address in their [HD wallet][topic bip32].
+  - *Clés de partie distante statiques :* intégrées à la spécification en 2019
+    (voir [Newsletter #67][news67 bolts642]), cela permet à un nœud de demander que chaque mise à jour de canal s'engage à envoyer
+    les fonds non-[HTLC][topic htlc] du nœud à la même adresse. Auparavant, une adresse différente était utilisée à chaque mise à
+    jour de canal. Après ce changement, un nœud qui a opté pour ce protocole et qui a perdu des données recevra presque toujours à
+    un moment donné au moins une partie de ses fonds à l'adresse choisie, comme une adresse dans son [portefeuille HD][topic bip32].
 
-  Initial replies to the clean-up proposal PR were positive. {% assign timestamp="0:58" %}
+  Les premières réponses au PR de proposition de nettoyage ont été positives. {% assign timestamp="0:58" %}
 
-## Waiting for confirmation #9: Policy Proposals
+## En attente de confirmation #9 : Propositions de politique
 
-_A limited weekly [series][policy series] about transaction relay,
-mempool inclusion, and mining transaction selection---including why
-Bitcoin Core has a more restrictive policy than allowed by consensus and
-how wallets can use that policy most effectively._
+_Une série hebdomadaire limitée [série][policy series] sur le relais des transactions, l'inclusion dans le mempool et la sélection
+des transactions minières--y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et
+comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/en/09-proposals.md %} {% assign timestamp="18:59" %}
+{% include specials/policy/fr/09-propositions.md %} {% assign timestamp="18:59" %}
 
 ## Bitcoin Core PR Review Club
 
-*In this monthly section, we summarize a recent [Bitcoin Core PR Review Club][]
-meeting, highlighting some of the important questions and answers.  Click on a
-question below to see a summary of the answer from the meeting.*
+*Dans cette section mensuelle, nous résumons une récente réunion du [Club de révision des PR de Bitcoin Core][]
+en mettant en évidence certaines des questions et réponses importantes. Cliquez sur
+une question ci-dessous pour voir un résumé de la réponse de la réunion.*
 
-[Stop relaying non-mempool txs][review club 27625]
-is a PR by Marco Falke (MarcoFalke) that simplifies the Bitcoin Core
-client by removing an in-memory data structure, `mapRelay`, that may
-cause high memory consumption and is no longer needed, or at least
-is of very marginal benefit.
-This map contains transactions that may or may not also be in the mempool,
-and is sometimes used to reply to [`getdata`][wiki getdata] requests from peers. {% assign timestamp="41:42" %}
+[Arrêter de relayer les txs non-mempools][review club 27625]
+est une PR de Marco Falke (MarcoFalke) qui simplifie le client Bitcoin Core
+en supprimant une structure de données en mémoire, `mapRelay`, qui peut
+causer une consommation élevée de mémoire et n'est plus nécessaire, ou du moins
+n'apporte que des avantages marginaux.
+Cette carte contient des transactions qui peuvent ou non être également dans le mempool,
+et est parfois utilisée pour répondre aux demandes [`getdata`][wiki getdata] des pairs. {% assign timestamp="41:42" %}
 
 {% include functions/details-list.md
-  q0="What are the reasons to remove `mapRelay`?"
-  a0="The memory consumption of this data structure is unbounded.
-      Though typically it doesn't use much memory, it's concerning when
-      the size of any data structure is determined by the behavior of
-      outside entities (peers) and has no maximum, as this can create
-      a DoS vulnerability."
+  q0="Quelles sont les raisons de supprimer `mapRelay`?"
+  a0="La consommation de mémoire de cette structure de données est illimitée.
+      Bien qu'elle n'utilise généralement pas beaucoup de mémoire, il est préoccupant lorsque
+      la taille de toute structure de données est déterminée par le comportement
+      d'entités externes (pairs) et n'a pas de maximum, car cela peut créer
+      une vulnérabilité DoS."
   a0link="https://bitcoincore.reviews/27625#l-19"
 
-  q1="Why is the memory usage of `mapRelay` hard to determine?"
-  a1="Each entry in `mapRelay` is a shared pointer to a transaction
-      (`CTransaction`), with the mempool possibly holding another pointer.
-      A second pointer to the same object uses very little additional
-      space relative to a single pointer.
-      If a shared transaction is removed from the mempool,
-      all of its space becomes attributable to the `mapRelay` entry.
-      So `mapRelay`'s memory usage doesn't depend only on the number
-      of transactions and their individual sizes, but also on how many
-      of its transactions are no longer in the mempool, which is hard
-      to predict."
+  q1="Pourquoi la consommation de mémoire de `mapRelay` est-elle difficile à déterminer?"
+  a1="Chaque entrée dans `mapRelay` est un pointeur partagé vers une transaction
+      (`CTransaction`), le mempool pouvant également contenir un autre pointeur.
+      Un deuxième pointeur vers le même objet utilise très peu d'espace supplémentaire
+      par rapport à un seul pointeur.
+      Si une transaction partagée est supprimée du mempool,
+      tout son espace devient attribuable à l'entrée `mapRelay`.
+      Ainsi, l'utilisation de la mémoire de `mapRelay` ne dépend pas seulement du nombre
+      de transactions et de leurs tailles individuelles, mais aussi du nombre
+      de transactions qui ne sont plus dans le mempool, ce qui est difficile
+      à prévoir."
   a1link="https://bitcoincore.reviews/27625#l-33"
 
-  q2="What problem is solved by introducing `m_most_recent_block_txs`?
-      (This is a list of only the transactions in the most recently-received
-      block.)"
-  a2="Without it, since `mapRelay` is no longer available, we wouldn't
-      be able to serve just-mined transactions (in the most recent block)
-      to peers requesting them, since we will have dropped them from
-      our mempool."
+  q2="Quel problème est résolu en introduisant `m_most_recent_block_txs`?
+      (Il s'agit d'une liste des transactions uniquement dans le bloc le plus récemment reçu.)"
+  a2="Sans cela, puisque `mapRelay` n'est plus disponible, nous ne pourrions pas
+      servir les transactions nouvellement extraites (dans le bloc le plus récent)
+      aux pairs qui les demandent, car nous les aurions supprimées de
+      notre mempool."
   a2link="https://bitcoincore.reviews/27625#l-45"
 
-  q3="Do you think it is necessary to introduce `m_most_recent_block_txs`,
-      as opposed to just removing `mapRelay` without any replacement?"
-  a3="There was some uncertainty among review club attendees on this question.
-      It was suggested that `m_most_recent_block_txs` might improve block
-      propagation speed, because if our peer doesn't yet have the block
-      that we just received, our node's ability to provide its transactions
-      may help complete our peer's [compact block][topic compact block relay].
-      Another suggestion was that it may help in the event of a chain split;
-      if our peer is on a different tip than us, it may not have that
-      transaction via a block."
+  q3="Pensez-vous qu'il est nécessaire d'introduire `m_most_recent_block_txs`,
+      plutôt que de simplement supprimer `mapRelay` sans le remplacer?"
+  a3="Il y avait une certaine incertitude parmi les participants du club de révision concernant cette question.
+      Il a été suggéré que `m_most_recent_block_txs` pourrait améliorer la vitesse de propagation des blocs,
+      car si notre pair n'a pas encore le bloc que nous venons de recevoir, la capacité de notre nœud à fournir ses transactions
+      peut aider à compléter notre pair avec le [bloc compact][topic compact block relay].
+      Une autre suggestion était que cela pourrait aider en cas de division de la chaîne ;
+      si notre pair est sur un point différent du nôtre, il se peut qu'il n'ait pas cette
+      transaction via un bloc."
   a3link="https://bitcoincore.reviews/27625#l-54"
 
-  q4="What are the memory requirements for `m_most_recent_block_txs`
-      compared to `mapRelay`?"
-  a4="The number of entries in `m_most_recent_block_txs` is bounded by
-      the number of transactions in a block. But the memory requirement
-      is even less than that many transactions, because `m_most_recent_block_txs`
-      entries are shared pointers (to transactions), and they are
-      also (already) pointed to by `m_most_recent_block`."
+  q4="Quelles sont les exigences de mémoire pour `m_most_recent_block_txs`
+      par rapport à `mapRelay`?"
+  a4="Le nombre d'entrées dans `m_most_recent_block_txs` est limité par
+      le nombre de transactions dans un bloc. Mais l'exigence de mémoire
+      est encore inférieure à celui de nombreuses transactions, car les entrées
+      de `m_most_recent_block_txs` sont des pointeurs partagés (vers des transactions), et ils sont
+      également (déjà) pointés par `m_most_recent_block`."
   a4link="https://bitcoincore.reviews/27625#l-65"
 
-  q5="Are there scenarios in which transactions would be made available
-      for a shorter or longer time than before as a result of this change?"
-  a5="Longer when the time since the last block is greater than 15 minutes
-      (which is the time that entries remained in `mapRelay`), shorter otherwise.
-      This seems acceptable since the 15-minute time choice was rather arbitrary.
-      But the change may decrease the availability of transactions in case of
-      chain splits greater than one block deep (which are extremely rare)
-      because we're not retaining transactions that are unique to non-best
-      chains."
+  q5="Y a-t-il des scénarios dans lesquels les transactions seraient disponibles
+      pendant une durée plus courte ou plus longue qu'auparavant en raison de ce changement?"
+  a5="Plus longtemps lorsque le temps écoulé depuis le dernier bloc est supérieur à 15 minutes
+      (qui est le temps pendant lequel les entrées restaient dans `mapRelay`), sinon plus court.
+      Cela semble acceptable car le choix du délai de 15 minutes était plutôt arbitraire.
+      Mais le changement peut réduire la disponibilité des transactions en cas de
+      divisions de chaînes supérieures à un bloc de profondeur (qui sont extrêmement rares)
+      car nous ne conservons pas les transactions qui sont uniques aux chaînes moins longues."
   a5link="https://bitcoincore.reviews/27625#l-70"
 %}
 
-## Releases and release candidates
+## Mises à jour et verions candidates
 
-*New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates.*
+*Nouvelles versions et versions candidates pour les principaux projets d’infrastructure
+Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
+les versions candidates.*
 
-- [LND v0.16.4-beta][] is a maintenance release of this LN node software
-  that fixes a memory leak that may affect some users. {% assign timestamp="50:43" %}
+- [LND v0.16.4-beta][] est une version de maintenance de ce logiciel de nœud LN
+  qui corrige une fuite de mémoire qui peut affecter certains utilisateurs. {% assign timestamp="50:43" %}
 
-## Notable code and documentation changes
+## Changements notables dans le code et la documentation
 
-*Notable changes this week in [Bitcoin Core][bitcoin core repo], [Core
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Interface de portefeuille
+matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo],
+[BDK][bdk repo], [Propositions d'amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo] et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27869][] gives a deprecation warning when loading a
-  legacy wallet in the continued efforts outlined in [Bitcoin Core #20160][]
-  to help users migrate from legacy wallets to [descriptor][topic descriptors]
-  wallets as mentioned in Newsletters [#125][news125 descriptor wallets],
-  [#172][news172 descriptor wallets], and
-  [#230][news230 descriptor wallets]. {% assign timestamp="51:48" %}
+- [Bitcoin Core #27869][] émet un avertissement de dépréciation lors du chargement d'un
+  portefeuille hérité dans le cadre des efforts continus décrits dans [Bitcoin Core #20160][]
+  pour aider les utilisateurs à migrer des portefeuilles hérités vers des portefeuilles [descripteurs][topic descriptors]
+  comme mentionné dans les bulletins d'information [#125][news125 descriptor wallets],
+  [#172][news172 descriptor wallets] et [#230][news230 descriptor wallets]. {% assign timestamp="51:48" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}
 [news58 bolts619]: /en/newsletters/2019/08/07/#bolts-619
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [news67 bolts642]: /en/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
@@ -184,4 +165,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
 [news125 descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
 [news172 descriptor wallets]: /en/newsletters/2021/10/27/#bitcoin-core-23002
-[news230 descriptor wallets]: /en/newsletters/2022/12/14/#with-legacy-wallets-deprecated-will-bitcoin-core-be-able-to-sign-messages-for-an-address
+[news230 descriptor wallets]: /fr/newsletters/2022/12/14/#avec-la-dépréciation-des-anciens-portefeuilles-bitcoin-core-sera-t-il-capable-de-signer-des-messages-pour-une-adresse
