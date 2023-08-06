@@ -4,10 +4,10 @@ des transactions plus restrictives que le consensus. Étant donné que les modif
 transactions dans Bitcoin Core peuvent avoir un impact sur la transmission des transactions d'une application, elles nécessitent
 une socialisation préalable avec la communauté Bitcoin plus large avant d'être prises en compte. De même, les applications
 et les protocoles de deuxième couche qui utilisent la transmission des transactions doivent être conçus en tenant compte des
-règles de politique afin d'éviter de créer des transactions qui seraientt rejetées.
+règles de politique afin d'éviter de créer des transactions qui seraient rejetées.
 
 Les protocoles de contrat dépendent encore plus étroitement des politiques liées à la priorisation, car la possibilité de les
-exécuter sur la chaîne dépend de la capacité à faire confirmer rapidement les transactions. Dans des environnements adverses,
+exécuter on chain dépend de la capacité à faire confirmer rapidement les transactions. Dans des environnements adverses,
 les contreparties malveillantes peuvent avoir intérêt à retarder la confirmation d'une transaction, il faut donc également
 réfléchir à la manière dont les particularités de l'interface de la politique de transmission des transactions peuvent être
 utilisées contre un utilisateur.
@@ -19,13 +19,13 @@ transmise en raison des limites de poussière des nœuds, ces paiements sont con
 sont supprimés des transactions d'engagement.
 
 Les protocoles de contrat utilisent souvent des chemins de dépense avec verrouillage temporel pour donner à chaque participant
-la possibilité de contester l'état publié sur la chaîne. Si l'utilisateur concerné ne parvient pas à faire confirmer une
+la possibilité de contester l'état publié on chain. Si l'utilisateur concerné ne parvient pas à faire confirmer une
 transaction dans ce laps de temps, il peut subir une perte de fonds. Cela rend les frais extrêmement importants en tant que
-mécanisme principal pour augmenter la priorité de confirmation, mais aussi plus difficiles. L'[estimation des frais][policy04] est
+mécanisme principal pour augmenter la priorité de confirmation, mais aussi plus difficiles à estimer. L'[estimation des frais][policy04] est
 compliquée par le fait que les transactions seront diffusées à un moment ultérieur inconnu, que les nœuds fonctionnent souvent
 en tant que clients légers et que certaines options d'augmentation des frais ne sont pas disponibles. Par exemple, si un
 participant à un canal LN se déconnecte, l'autre partie peut diffuser unilatéralement une transaction d'engagement pré-signée
-pour régler la répartition de leurs fonds partagés sur la chaîne. Aucune des parties ne peut dépenser unilatéralement l'UTXO
+pour régler la répartition de leurs fonds partagés on chain. Aucune des parties ne peut dépenser unilatéralement l'UTXO
 partagé, donc lorsque l'une des parties est déconnectée, il n'est pas possible de signer une transaction de [remplacement][topic rbf]
 pour augmenter les frais de la transaction d'engagement. À la place, les transactions d'engagement LN peuvent inclure des
 [sorties d'ancrage][topic anchor outputs] pour que les participants au canal puissent attacher un [enfant d'augmentation des
