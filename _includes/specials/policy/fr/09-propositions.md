@@ -28,18 +28,18 @@ Par exemple, la signature des entrées de la transaction en utilisant `SIGHASH_A
 diffuseur de la transaction de fournir des frais en ajoutant des entrées supplémentaires à la transaction sans modifier les sorties.
 Cependant, comme RBF n'a aucune règle exigeant que la transaction de remplacement ait un "score minier" plus élevé (c'est-à-dire
 qu'elle serait sélectionnée plus rapidement pour un bloc), un attaquant pourrait épingler ces types de transactions en créant des
-remplacements encombrés par des ancêtres à faible taux de frais. Ce qui complique l'évaluation précise du score minier des
-transactions et des packages de transactions, c'est que les limites existantes des ancêtres et des descendants sont insuffisantes
+remplacements encombrés par des ancêtres à faible taux de frais. Ce qui complique l'évaluation précise du score de minage des
+transactions et des packages de transactions, c'est que les limites existantes des ascendants et des descendants sont insuffisantes
 pour limiter la complexité computationnelle de ce calcul. Toutes les transactions connectées peuvent influencer l'ordre dans lequel
 les transactions sont sélectionnées pour être incluses dans un bloc. Un composant entièrement connecté, appelé un _cluster_, peut
-avoir n'importe quelle taille compte tenu des limites actuelles des ancêtres et des descendants.
+avoir n'importe quelle taille compte tenu des limites actuelles des ascendants et des descendants.
 
 Une solution à long terme pour remédier à certaines lacunes du mempool et aux attaques d'épinglage RBF consiste à [restructurer la
 structure de données du mempool pour suivre les clusters][mempool clustering] au lieu de simplement les ensembles d'ancêtres et de
 descendants. Ces clusters seraient limités en taille. Une limite de cluster restreindrait la manière dont les utilisateurs peuvent
-dépenser des UTXO non confirmés, mais permettrait de linéariser rapidement l'ensemble du mempool en utilisant l'algorithme minier
-basé sur le score des ancêtres, de construire des modèles de bloc extrêmement rapidement, et d'exiger que les transactions de
-remplacement aient un score minier plus élevé que la ou les transactions à remplacer.
+dépenser des UTXO non confirmés, mais permettrait de linéariser rapidement l'ensemble du mempool en utilisant l'algorithme de minage
+basé sur le score des ascendants, de construire des modèles de bloc extrêmement rapidement, et d'exiger que les transactions de
+remplacement aient un score de minage plus élevé que la ou les transactions à remplacer.
 
 Même ainsi, il est possible qu'aucun ensemble unique de politiques ne puisse répondre à la large gamme de besoins et d'attentes en
 matière de relais de transactions. Par exemple, bien que les destinataires d'une transaction de paiement groupé bénéficient de la
