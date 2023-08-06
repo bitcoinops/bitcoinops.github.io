@@ -31,3 +31,13 @@ développer de nouvelles fonctionnalités de protocole ou supprimer les fonction
 souhaitent faire partie du consensus approximatif du réseau ont différentes façons de participer : s'informer, soulever des
 questions et des problèmes, s'impliquer dans la conception du réseau, voire contribuer à la mise en œuvre d'améliorations.
 La prochaine fois que votre transaction prendra trop de temps à se confirmer, vous saurez quoi faire !
+
+[policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
+[policy02]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-dincitation
+[policy03]: /fr/newsletters/2023/05/31/#attente-de-la-confirmation-3--enchères-pour-lachat-dun-bloc-despace
+[policy04]: /fr/newsletters/2023/06/07/#en-attente-de-confirmation-4--estimation-du-taux-de-frais
+[policy05]: /fr/newsletters/2023/06/14/#en-attente-de-confirmation-5--politique-de-protection-des-ressources-des-nœuds
+[policy06]: /fr/newsletters/2023/06/21/#en-attente-de-confirmation-6--cohérence-des-politiques
+[policy07]: /fr/newsletters/2023/06/28/#en-attente-de-confirmation-7--ressources-du-réseau
+[policy08]: /fr/newsletters/2023/07/05/#en-attente-de-confirmation-8--la-politique-comme-interface
+[policy09]: /fr/newsletters/2023/07/12/#en-attente-de-confirmation-9--propositions-de-politique
