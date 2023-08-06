@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Eclair #2680 adds quiescence negotiation for splicing"
     url: /en/newsletters/2023/08/02/#eclair-2680
 
+  - title: "Core Lightning #6253 and #5675 add an experimental implementation of splicing"
+    url: /en/newsletters/2023/08/09/#core-lightning-6253
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

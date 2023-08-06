@@ -147,6 +147,9 @@ optech_mentions:
   - title: "Question about whether 0 OP_CSV forces the spending transaction to signal BIP125 replaceability?"
     url: /en/newsletters/2023/07/26/#does-0-op-csv-force-the-spending-transaction-to-signal-bip125-replaceability
 
+  - title: "Proposal to enable full-RBF by default"
+    url: /en/newsletters/2023/08/09/#full-rbf-by-default
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
