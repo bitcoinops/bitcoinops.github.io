@@ -136,7 +136,7 @@ Après avoir examiné la compréhension actuelle, les notes de discussion se son
 [news120 commitments]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
 [hwi 2.3.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.0
 [ldk 0.0.116]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.116
-[news239 codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-système-dencodage-des-semences-codex32
+[news239 codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-systeme-dencodage-des-semences-codex32
 [bip141 witness program]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#witness-program
 [wiki script]: https://en.bitcoin.it/wiki/Script#Constants
 [rbf csv discussion]: https://twitter.com/SomsenRuben/status/1683056160373391360
