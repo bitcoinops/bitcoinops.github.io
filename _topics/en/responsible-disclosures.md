@@ -63,6 +63,9 @@ optech_mentions:
   - title: "René Pickhardt disclosed fee ransom attack affecting multiple LN implementations"
     url: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
 
+  - title: "MilkSad team disclosed CVE-2023-39910 insecure entropy in Libbitcoin `bx` command"
+    url: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
@@ -78,7 +81,9 @@ optech_mentions:
 excerpt: >
   **Responsible disclosures** were occassions when someone discovered a
   vulnerability in Bitcoin-related software and reported it to
-  developers in a way that helped minimize harm.
+  developers, affected users, and the public in a way that helped
+  minimize harm.
+
 ---
 This page lists occasions when Optech reported on a responsible
 disclosure and makes a best-effort attempt to cite the names of the
