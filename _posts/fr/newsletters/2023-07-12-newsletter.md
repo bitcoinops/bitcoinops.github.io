@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Ce bulletin décrit une proposition visant à supprimer des détails de la spécification LN qui ne sont plus pertinents pour les
-nœuds modernes et inclut l'avant-dernière entrée de notre série hebdomadaire limitée sur la politique de mempool, ainsi que nos
+nœuds récents et inclut l'avant-dernière entrée de notre série hebdomadaire limitée sur la politique de mempool, ainsi que nos
 sections habituelles résumant une réunion du Bitcoin Core PR Review Club, annonçant de nouvelles versions et versions candidates,
 et décrivant les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
@@ -22,7 +22,7 @@ et décrivant les changements apportés aux principaux logiciels d'infrastructur
   les fonctionnalités suivantes :
 
   - *Messages d'oignon de taille variable :* intégrés à la spécification en 2019
-    (voir [Newsletter #58][news58 bolts619]) à peu près en même temps que la spécification a été mise à jour pour utiliser des
+    (voir [Newsletter #58][news58 bolts619]), à peu près en même temps que la spécification, a été mis à jour pour utiliser des
     champs Type-Length-Value (TLV). Cela a remplacé le format original pour le routage oignon chiffré qui nécessitait que chaque
     saut utilise un message de longueur fixe et limitait le nombre de sauts à 20. Le format de taille variable facilite beaucoup le
     relais de données arbitraires vers des sauts spécifiques, le seul inconvénient étant que la taille globale du message reste
@@ -49,7 +49,7 @@ et décrivant les changements apportés aux principaux logiciels d'infrastructur
 ## En attente de confirmation #9 : Propositions de politique
 
 _Une série hebdomadaire limitée [série][policy series] sur le relais des transactions, l'inclusion dans le mempool et la sélection
-des transactions minières--y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et
+des transactions de minage--y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et
 comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
 {% include specials/policy/fr/09-propositions.md %} {% assign timestamp="18:59" %}
