@@ -56,7 +56,7 @@ comment les portefeuilles peuvent utiliser cette politique de la manière la plu
 
 ## Bitcoin Core PR Review Club
 
-*Dans cette section mensuelle, nous résumons une récente réunion du [Club de révision des PR de Bitcoin Core][]
+*Dans cette section mensuelle, nous résumons une récente réunion du [Club de révision des PR de Bitcoin Core][Bitcoin Core PR Review Club]
 en mettant en évidence certaines des questions et réponses importantes. Cliquez sur
 une question ci-dessous pour voir un résumé de la réponse de la réunion.*
 
