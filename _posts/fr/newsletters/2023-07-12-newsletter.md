@@ -165,4 +165,4 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
 [news125 descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work
 [news172 descriptor wallets]: /en/newsletters/2021/10/27/#bitcoin-core-23002
-[news230 descriptor wallets]: /fr/newsletters/2022/12/14/#avec-la-dépréciation-des-anciens-portefeuilles-bitcoin-core-sera-t-il-capable-de-signer-des-messages-pour-une-adresse
+[news230 descriptor wallets]: /fr/newsletters/2022/12/14/#avec-la-depreciation-des-anciens-portefeuilles-bitcoin-core-sera-t-il-capable-de-signer-des-messages-pour-une-adresse
