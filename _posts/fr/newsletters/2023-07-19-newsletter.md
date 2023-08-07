@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Cette semaine, le bulletin comprend la dernière entrée de notre série hebdomadaire limitée sur la politique de la mempool,
+Cette semaine, le bulletin contient la dernière entrée de notre série hebdomadaire limitée sur la politique de la mempool,
 ainsi que nos sections régulières décrivant les changements notables apportés aux clients, aux services et aux principaux
 logiciels d'infrastructure Bitcoin.
 
