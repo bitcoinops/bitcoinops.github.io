@@ -124,7 +124,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27411,6347,6035,7768,1032,1063,1313" %}
-[série de politiques]: /fr/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
 [news225 bolts1032]: /fr/newsletters/2022/11/09/#bolts-1032
 [news246 secp]: /fr/newsletters/2023/04/12/#libsecp256k1-0-3-1
 [news251 secp]: /fr/newsletters/2023/05/17/#libsecp256k1-0-3-2
