@@ -19,7 +19,7 @@ _Aucune actualité significative n'a été trouvée cette semaine dans les liste
 
 _La dernière entrée de notre [série][policy series] hebdomadaire limitée  sur le relais des transactions, l'inclusion dans la mempool et la sélection des transactions minières - y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/fr/10-get-involved.md %} {% assign timestamp="2:01" %}
+{% include specials/policy/fr/10-impliquez-vous.md %} {% assign timestamp="2:01" %}
 
 Modifications apportées aux services et aux logiciels clients
 
