@@ -144,7 +144,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="863,26467,6378,6449,6399,6389,6403,6437,6398,5492,2680,7820,7516,5155" %}
 [clnrest doc]: https://github.com/rustyrussell/lightning/blob/02c2d8a9e3b450ce172e8bc50c855ac2a16f5cac/plugins/clnrest/README.md
-[news133 usdt]: /fr/newsletters/2021/01/27/#bitcoin-core-19866
+[news133 usdt]: /en/newsletters/2021/01/27/#bitcoin-core-19866
 [kc scripts]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004025.html
 [btcscripts spec]: https://btctranscripts.com/lightning-specification/
 [libera.chat]: https://libera.chat/
