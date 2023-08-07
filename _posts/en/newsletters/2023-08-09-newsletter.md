@@ -190,12 +190,85 @@ infrastructure software.
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-FIXME:LarryRuane
+[Silent Payments: Implement BIP352][review club 28122]
+is a PR by josibake that takes the first step in adding
+[silent payments][topic silent payments] to the Bitcoin Core wallet.
+This PR implements only the [BIP352][] logic, and doesn't include wallet changes.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/27625#l-19FIXME"
+  q0="Why does the PR add a custom ECDH hash function, rather than
+      using the default one provided by `secp256k1`?"
+  a0="We actually _don't_ want to hash the ECDH result; the custom
+      function prevents the default application of `sha256` on the
+      result of the ECDH operation. This is needed when the creator
+      of the transaction does not control all of the inputs.
+      Not hashing the result during ECDH allows individual participants
+      to do ECDH with just their private key, and then pass the partial
+      ECDH along. The partial ECDH results can then be summed up, and
+      the rest of the protocol performed (hashing with the counter, etc.)."
+  a0link="https://bitcoincore.reviews/28122#l-126"
+
+  q1="The PR adds functions for encoding and decoding silent payment
+      addresses. Why can’t we just add silent payment addresses as a new
+      `CTxDestination` variant and use the existing encoder class and
+      decoder function?"
+  a1="A silent payment address doesn't actually encode a specific output
+      script; it's not a `scriptPubKey`. Rather, it encodes the public keys
+      needed to _derive_ the actual output script, which is also dependent
+      on the inputs of your silent payment transaction.
+      That is, instead of giving you a `scriptPubKey` to send to
+      (which is what a traditional address does), a silent payment address
+      gives you pubkeys to do ECDH with, and then the protocol dictates how
+      to turn that shared secret into a `scriptPubKey` that the receiver
+      will be able to detect and later spend from."
+  a1link="https://bitcoincore.reviews/28122#l-153"
+
+  q2="[BIP352][] refers to versioning and forward compatibility.
+      What is forward compatibility and why is it important?"
+  a2="It allows (for example) a v0 wallet to decode and send to a v1 (and
+      v2 and so on) silent payment address (even though the wallet will
+      not be able to generate a v1 address).
+      This is important so that wallets don't need to upgrade immediately
+      (or else lose all functionality) when a new version is created."
+  a2link="https://bitcoincore.reviews/28122#l-170"
+
+  q3="What if a new version wants to intentionally break compatibility?"
+  a3="v31 is reserved for an upgrade that would break compatibility."
+  a3link="https://bitcoincore.reviews/28122#l-186"
+
+  q4="Why is it okay to allocate only one compatibility-breaking version
+      number (v31)?"
+  a4="We can postpone defining new rules for how versions _after_ the
+      breaking version should be treated until later, when needed."
+  a4link="https://bitcoincore.reviews/28122#l-188"
+
+  q5="In `DecodeSilentAddress` there is a check on the version and
+      data size. What is this check doing and why is it important?"
+  a5="If a new version adds more data to the address, we need a way of
+      getting only the forward compatible parts, that is, we must restrict
+      ourselves to parsing the first 66 bytes (v0 format). This is
+      important for forward compatibility."
+  a5link="https://bitcoincore.reviews/28122#l-194"
+
+  q6="The new silent payments code is under the wallet directory in
+      `src/wallet/silentpayments.cpp`. Is this a good place?
+      Can you think of a use case where we would want to use silent
+      payments code outside of a wallet context?"
+  a6="It's not ideal if one wants to implement a wallet-less server
+      that detects silent payments (or does related computation) on
+      behalf of a lighter silent payment wallet. One can imagine a use
+      case where a full node indexes the tweak data for transactions
+      and stores it in an index for light clients to query, or serves
+      that data via a [BIP158][]-like filter. However, until such
+      use cases arise, leaving the code in `src/wallet` provides
+      better code organization."
+  a6link="https://bitcoincore.reviews/28122#l-205"
+
+  q7="The `Recipient` class is initialized with two private keys in
+      the PR, the spend and scan key. are both keys necessary for scanning?"
+  a7="No, only the scan key is needed. The ability to scan for silent
+      payments without the spend key may be implemented in the future."
+  a7link="https://bitcoincore.reviews/28122#l-217"
 %}
 
 ## Releases and release candidates
@@ -293,3 +366,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [seed doc]: https://web.archive.org/web/20210122102710/https://github.com/libbitcoin/libbitcoin-explorer/wiki/bx-seed
 [news208 rbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [bdk 0.28.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.28.1
+[review club 28122]: https://bitcoincore.reviews/28122
+[bip352]: https://github.com/bitcoin/bips/pull/1458
+[bip158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
