@@ -115,7 +115,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   dans Bitcoin Core. {% assign timestamp="45:52" %}
 
 - [Eclair #2680][] ajoute la prise en charge du protocole de négociation d'état de repos
-  requis par le [protocole de fusion][topic splicing] proposé dans [BOLT #863][]. Le protocole d'état de repos empêche les
+  requis par le [protocole de fusion][topic splicing] proposé dans [BOLTs #863][]. Le protocole d'état de repos empêche les
   deux nœuds partageant un canal de s'envoyer de nouveaux [HTLCs][topic htlc]
   jusqu'à ce qu'une certaine opération soit terminée, comme la validation des
   paramètres d'une fusion et la signature coopérative de la transaction de fusion onchain
