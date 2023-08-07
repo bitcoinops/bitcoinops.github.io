@@ -44,6 +44,9 @@ optech_mentions:
   - title: Draft BIP for silent payments
     url: /en/newsletters/2023/06/14/#draft-bip-for-silent-payments
 
+  - title: "Bitcoin Core PR Review Club summary of #28122 adding silent payments"
+    url: /en/newsletters/2023/08/09/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
