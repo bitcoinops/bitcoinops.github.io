@@ -1,4 +1,4 @@
-Nous espérons que cette série a donné aux lecteurs une meilleure idée de ce qui se passe pendant qu'ils attendent la confirmation.
+Nous espérons que cette série a donné aux lecteurs une meilleure idée de ce qui se passe pendant qu'ils attendent une confirmation.
 Nous avons commencé par une discussion sur la façon dont certaines valeurs idéologiques de Bitcoin se traduisent dans sa structure
 et ses objectifs de conception. La structure distribuée du réseau pair à pair offre une résistance accrue à la censure et à la
 confidentialité par rapport à un modèle centralisé typique. Un réseau de relais de transactions ouvert permet à tout le monde
