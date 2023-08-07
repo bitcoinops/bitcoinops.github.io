@@ -111,9 +111,11 @@ Après avoir examiné la compréhension actuelle, les notes de discussion se son
 - [Que signifie-t-il que la sécurité de l'ECDSA 256 bits, et donc des clés Bitcoin, est de 128 bits ?]({{bse}}118928)
   Pieter Wuille précise que, en raison d'algorithmes qui peuvent dériver une clé privée à partir d'une clé publique de manière plus efficace qu'une recherche par force brute, l'ECDSA 256 bits ne fournit qu'une sécurité de 128 bits. Il souligne ensuite la différence entre la sécurité des clés individuelles et la sécurité des [semences][topic bip32]. {% assign timestamp="1:12:26" %}
 
-## Versions et candidats aux versions
+## Mises à jour et versions candidates
 
-*Nouvelles versions et candidats aux versions pour des projets d'infrastructure Bitcoin populaires. Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les candidats aux versions.*
+*Nouvelles versions et versions candidates pour les principaux projets d’infrastructure
+Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
+les versions candidates.*
 
 - [HWI 2.3.0][] est une version intermédiaire de cette interface qui permet aux portefeuilles logiciels de communiquer avec des dispositifs de signature matériels. Elle ajoute la prise en charge des dispositifs Jade DIY et un binaire pour exécuter le programme principal `hwi` sur du matériel Apple Silicon avec MacOS 12.0+. {% assign timestamp="1:15:09" %}
 
