@@ -21,7 +21,7 @@ _Une [série hebdomadaire limitée][policy series] sur le relais des transaction
 des transactions minières---y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus
 et comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/en/08-interface.md %} {% assign timestamp="0:30" %}
+{% include specials/policy/fr/08-interface.md %} {% assign timestamp="0:30" %}
 
 ## Mises à jour et versions candidates
 
