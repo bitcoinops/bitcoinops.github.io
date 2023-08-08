@@ -68,8 +68,8 @@ Les notes indiquent une décision de compromis, "v1.75 gossip", qui semblait per
 mais sans multiplicateur de valeur disponible.
 
 - *PTLCs et surpaiement redondant* : d'après les notes, l'ajout de la prise en charge des [PTLCs][topic ptlc] dans le protocole
-  a été brièvement discuté, principalement en relation avec les [adaptateurs de signature][topic adaptor signatures]. Plus de
-  texte dans les notes était consacré à une amélioration qui affecterait des parties similaires du protocole : la possibilité de
+  a été brièvement discuté, principalement en relation avec les [adaptateurs de signature][topic adaptor signatures]. Les notes
+  étaient notamment consacrées à une amélioration qui affecterait des parties similaires du protocole : la possibilité de
   [surpayer de manière redondante][topic redundant overpayments] une facture et de recevoir un remboursement pour la plupart ou
   la totalité du surpaiement. Par exemple, Alice souhaite finalement payer Bob 1 BTC. Elle envoie initialement à Bob 20 paiements
   [multipath][topic multipath payments] d'une valeur de 0,1 BTC chacun. En utilisant soit des mathématiques (via une technique
