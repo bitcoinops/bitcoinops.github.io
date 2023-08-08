@@ -291,7 +291,16 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27746][] Rework validation logic for assumeutxo FIXME:adamjonas
+- [Bitcoin Core #27746][] simplifies the relationship between block
+  storage and the chainstate objects by moving the decision of whether
+  to store a block on disk to validation logic that is independent of
+  the current chainstate.
+  The decision of whether to store a block on disk is related to
+  validation rules that do not require any UTXO state. Previously,
+  Bitcoin Core was using chainstate-specific heuristics for anti-DoS
+  reasons, but with [assumeUTXO][topic assumeutxo] and the possibility
+  of two coexisting chainstates, this has been reworked to achieve
+  the proposed separation.
 
 - [Core Lightning #6376][] and [#6475][core lightning #6475] implement a
   plugin called `renepay` that uses Pickhardt Payments to construct
