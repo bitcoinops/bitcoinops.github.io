@@ -293,7 +293,28 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #27746][] Rework validation logic for assumeutxo FIXME:adamjonas
 
-- [Core Lightning #6376][] and [#6475][core lightning #6475] renepay plugin FIXME:Murchandamus
+- [Core Lightning #6376][] and [#6475][core lightning #6475] implement a
+  plugin called `renepay` that uses Pickhardt Payments to construct
+  optimal [multipath payments][topic multipath payments] (see
+  [Newsletter #192][news192 pp]). Pickhardt Payments assumes liquidity in
+  each channel to be randomly distributed between 0 to full capacity in
+  the direction of flow. Large payment amounts may cause a failure
+  because a route may not provide sufficient liquidity along it, while
+  splitting a payment into many parts may cause a failure since each
+  separate route has a chance of failure. A payment is then modeled as
+  flow in the Lightning Network aiming to find a middle ground between
+  the count of payment parts and the amount per part. Using this
+  approach, Pickhardt Payments finds the optimal flow that satisfies the
+  capacity and balance constraints while maximizing the chance of
+  success. Responses from incomplete payment attempts are used to update
+  the assumed liquidity distributions for all involved channels reducing
+  those that failed to forward, but also accounting for the amounts
+  successfully staged. Since incorporating [BOLT7][] base fees in the flow
+  calculation would be computationally difficult (see [Newsletter
+  #163][news163 base]), nodes using `renepay`
+  for payment planning will instead overestimate the relative fee for
+  channels with non-zero base fees. The onion packages constructed for
+  payment delivery use the actual fees.
 
 - [Core Lightning #6466][] and [#6473][core lightning #6473] add
   support for backing up and restoring the wallet's [master
@@ -369,3 +390,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [review club 28122]: https://bitcoincore.reviews/28122
 [bip352]: https://github.com/bitcoin/bips/pull/1458
 [bip158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
+[news192 pp]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
+[news163 base]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
