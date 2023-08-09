@@ -27,7 +27,8 @@ d'infrastructure Bitcoin.
   sans obtenir aucune connaissance sur ce qu'elle signait ou comment sa signature partielle était utilisée. Le signataire aveugle
   se contenterait de signaler combien de signatures il avait créé avec une clé particulière.
 
-    La discussion sur la liste a examiné les écueils de diverses constructions liées au problème spécifique et encore plus généralisé de [la signature aveugle schnorr][generalized blind schnorr]. Il a également été mentionné un [gist][somsen gist]
+    La discussion sur la liste a examiné les écueils de diverses constructions liées au problème spécifique et encore plus
+    généralisé de [la signature aveugle schnorr][generalized blind schnorr]. Il a également été mentionné un [gist][somsen gist]
     d'il y a un an de Ruben Somsen sur un protocole de 1996 pour l'échange de clés [Diffie-Hellman (DH)][dhke] aveugle, qui peut
     être utilisé pour des ecash aveugles. [Lucre][] et [Minicash][] sont des implémentations antérieures de ce schéma sans rapport
     avec Bitcoin, et [Cashu][] est une implémentation liée à Minicash qui intègre également le support de Bitcoin et du LN.
