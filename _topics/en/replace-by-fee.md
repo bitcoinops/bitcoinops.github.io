@@ -171,7 +171,7 @@ implemented in [Bitcoin Core 0.12.0][core12 rbf] and subsequent
 versions; this allows the creator of a transaction to signal that
 they're willing to allow it to be replaced by a higher-paying version.
 An alternative form of RBF is **full-RBF** that allows any transaction to
-be replaced whether or not it signals BIP125 replacability.
+be replaced whether or not it signals BIP125 replaceability.
 
 BIP125 requires a replacement transaction to pay both higher feerate
 (BTC/vbyte) and a higher absolute fee (total BTC).  This can make
