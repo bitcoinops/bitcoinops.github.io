@@ -140,8 +140,7 @@ est un PR de josibake qui fait le premier pas pour ajouter des [paiements silenc
 Bitcoin Core. Ce PR ne met en œuvre que la logique de [BIP352][] et n'inclut pas de modifications du portefeuille.
 
 {% include functions/details-list.md
-  q0="Pourquoi le PR ajoute-t-il une fonction de hachage ECDH personnalisée plutôt que d'utiliser celle par défaut fournie par
-  `secp256k1`?"
+  q0="Pourquoi le PR ajoute-t-il une fonction de hachage ECDH personnalisée plutôt que d'utiliser celle par défaut fournie par `secp256k1`?"
   a0="En réalité, nous ne voulons pas hacher le résultat ECDH ; la fonction personnalisée empêche l'application par défaut de
   `sha256` sur le résultat de l'opération ECDH. Cela est nécessaire lorsque le créateur de la transaction ne contrôle pas toutes
   les entrées. Ne pas hacher le résultat pendant ECDH permet aux participants individuels de faire ECDH avec leur clé privée
@@ -149,9 +148,7 @@ Bitcoin Core. Ce PR ne met en œuvre que la logique de [BIP352][] et n'inclut pa
   le reste du protocole peut être effectué (hachage avec le compteur, etc.)."
   a0link="https://bitcoincore.reviews/28122#l-126"
 
-  q1="Le PR ajoute des fonctions pour encoder et décoder les adresses de paiement silencieux. Pourquoi ne pouvons-nous pas
-  simplement ajouter des adresses de paiement silencieux en tant que nouvelle variante de `CTxDestination` et utiliser la
-  classe d'encodeur existante et la fonction de décodeur ?"
+  q1="Le PR ajoute des fonctions pour encoder et décoder les adresses de paiement silencieux. Pourquoi ne pouvons-nous pas simplement ajouter des adresses de paiement silencieux en tant que nouvelle variante de `CTxDestination` et utiliser la classe d'encodeur existante et la fonction de décodeur ?"
   a1="Une adresse de paiement silencieux n'encode pas réellement un script de sortie spécifique ; ce n'est pas un `scriptPubKey`.
   Au lieu de cela, elle encode les clés publiques nécessaires pour _dériver_ le script de sortie réel, qui dépend également des
   entrées de votre transaction de paiement silencieux. Autrement dit, au lieu de vous donner un `scriptPubKey` à envoyer (ce
@@ -160,8 +157,7 @@ Bitcoin Core. Ce PR ne met en œuvre que la logique de [BIP352][] et n'inclut pa
   ultérieurement."
   a1link="https://bitcoincore.reviews/28122#l-153"
 
-  q2="[BIP352][] fait référence à la version et à la compatibilité ascendante. Qu'est-ce que la compatibilité ascendante et
-  pourquoi est-elle importante ?"
+  q2="[BIP352][] fait référence à la version et à la compatibilité ascendante. Qu'est-ce que la compatibilité ascendante et pourquoi est-elle importante ?"
   a2="Cela permet (par exemple) à un portefeuille v0 de décoder et d'envoyer vers une adresse de paiement silencieux v1 (et v2,
   et ainsi de suite) (même si le portefeuille ne pourra pas générer une adresse v1). C'est important pour que les portefeuilles
   n'aient pas besoin de se mettre à jour immédiatement."
