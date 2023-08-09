@@ -140,27 +140,63 @@ est un PR de josibake qui fait le premier pas pour ajouter des [paiements silenc
 Bitcoin Core. Ce PR ne met en œuvre que la logique de [BIP352][] et n'inclut pas de modifications du portefeuille.
 
 {% include functions/details-list.md
-  q0="Pourquoi le PR ajoute-t-il une fonction de hachage ECDH personnalisée plutôt que d'utiliser celle par défaut fournie par `secp256k1`?"
+  q0="Pourquoi le PR ajoute-t-il une fonction de hachage ECDH personnalisée plutôt que d'utiliser celle par défaut fournie
+      par `secp256k1`?"
   a0="En réalité, nous ne voulons pas hacher le résultat ECDH ; la fonction personnalisée empêche l'application par défaut de
-  `sha256` sur le résultat de l'opération ECDH. Cela est nécessaire lorsque le créateur de la transaction ne contrôle pas toutes
-  les entrées. Ne pas hacher le résultat pendant ECDH permet aux participants individuels de faire ECDH avec leur clé privée
-  uniquement, puis de transmettre le résultat partiel ECDH. Les résultats partiels ECDH peuvent ensuite être additionnés, et
-  le reste du protocole peut être effectué (hachage avec le compteur, etc.)."
+      `sha256` sur le résultat de l'opération ECDH. Cela est nécessaire lorsque le créateur de la transaction ne contrôle pas
+      toutes les entrées. Ne pas hacher le résultat pendant ECDH permet aux participants individuels de faire ECDH avec leur
+      clé privée uniquement, puis de transmettre le résultat partiel ECDH. Les résultats partiels ECDH peuvent ensuite être additionnés, et le reste du protocole peut être effectué (hachage avec le compteur, etc.)."
   a0link="https://bitcoincore.reviews/28122#l-126"
 
-  q1="Le PR ajoute des fonctions pour encoder et décoder les adresses de paiement silencieux. Pourquoi ne pouvons-nous pas simplement ajouter des adresses de paiement silencieux en tant que nouvelle variante de `CTxDestination` et utiliser la classe d'encodeur existante et la fonction de décodeur ?"
+  q1="Le PR ajoute des fonctions pour encoder et décoder les adresses de paiement silencieux. Pourquoi ne pouvons-nous pas
+      simplement ajouter des adresses de paiement silencieux en tant que nouvelle variante de `CTxDestination` et utiliser la classe d'encodeur existante et la fonction de décodeur ?"
   a1="Une adresse de paiement silencieux n'encode pas réellement un script de sortie spécifique ; ce n'est pas un `scriptPubKey`.
-  Au lieu de cela, elle encode les clés publiques nécessaires pour _dériver_ le script de sortie réel, qui dépend également des
-  entrées de votre transaction de paiement silencieux. Autrement dit, au lieu de vous donner un `scriptPubKey` à envoyer (ce
-  que fait une adresse traditionnelle), une adresse de paiement silencieux vous donne des clés publiques pour faire ECDH, puis
-  le protocole indique comment transformer ce secret partagé en un `scriptPubKey` que le destinataire pourra détecter et dépenser
-  ultérieurement."
+      Au lieu de cela, elle encode les clés publiques nécessaires pour _dériver_ le script de sortie réel, qui dépend également des
+      entrées de votre transaction de paiement silencieux. Autrement dit, au lieu de vous donner un `scriptPubKey` à envoyer (ce
+      que fait une adresse traditionnelle), une adresse de paiement silencieux vous donne des clés publiques pour faire ECDH, puis
+      le protocole indique comment transformer ce secret partagé en un `scriptPubKey` que le destinataire pourra détecter et dépenser ultérieurement."
   a1link="https://bitcoincore.reviews/28122#l-153"
 
-  q2="[BIP352][] fait référence à la version et à la compatibilité ascendante. Qu'est-ce que la compatibilité ascendante et pourquoi est-elle importante ?"
+  q2="[BIP352][] fait référence à la version et à la compatibilité ascendante. Qu'est-ce que la compatibilité ascendante et
+      pourquoi est-elle importante ?"
   a2="Cela permet (par exemple) à un portefeuille v0 de décoder et d'envoyer vers une adresse de paiement silencieux v1 (et v2,
-  et ainsi de suite) (même si le portefeuille ne pourra pas générer une adresse v1). C'est important pour que les portefeuilles
-  n'aient pas besoin de se mettre à jour immédiatement."
+      et ainsi de suite) (même si le portefeuille ne pourra pas générer une adresse v1). C'est important pour que les portefeuilles
+      n'aient pas besoin de se mettre à jour immédiatement."
+  a2link="https://bitcoincore.reviews/28122#l-170"
+
+  q3="Que se passe-t-il si une nouvelle version souhaite intentionnellement rompre la compatibilité?"
+  a3="La version v31 est réservée à une mise à niveau qui romprait la compatibilité."
+  a3link="https://bitcoincore.reviews/28122#l-186"
+
+  q4="Pourquoi est-il acceptable d'allouer seulement une version (v31) qui rompt la compatibilité?"
+  a4="Nous pouvons reporter la définition de nouvelles règles sur la façon dont les versions _après_ la version de rupture
+      doivent être traitées jusqu'à plus tard, lorsque cela sera nécessaire."
+  a4link="https://bitcoincore.reviews/28122#l-188"
+
+  q5="Dans `DecodeSilentAddress`, il y a une vérification de la version et de la taille des données. Que fait cette vérification
+      et pourquoi est-elle importante?"
+  a5="Si une nouvelle version ajoute plus de données à l'adresse, nous avons besoin d'un moyen d'obtenir uniquement les parties
+      compatibles vers l'avant, c'est-à-dire que nous devons nous limiter à l'analyse des 66 premiers octets (format v0). Cela est
+      important pour la compatibilité future."
+  a5link="https://bitcoincore.reviews/28122#l-194"
+
+  q6="Le nouveau code de paiements silencieux se trouve dans le répertoire du portefeuille (`src/wallet/silentpayments.cpp`).
+      Est-ce un bon emplacement?
+      Pouvez-vous imaginer un cas d'utilisation où nous voudrions utiliser le code de paiements silencieux en dehors du contexte
+      d'un portefeuille?"
+  a6="Ce n'est pas idéal si l'on souhaite implémenter un serveur sans portefeuille qui détecte les paiements silencieux (ou
+      effectue des calculs connexes) au nom d'un portefeuille de paiement silencieux plus léger. On peut imaginer un cas
+      d'utilisation où un nœud complet indexe les données de modification pour les transactions et les stocke dans un index pour
+      que les clients légers puissent les interroger, ou sert ces données via un filtre similaire à [BIP158][]. Cependant, jusqu'à
+      ce que de tels cas d'utilisation se présentent, laisser le code dans `src/wallet` offre une meilleure organisation du code."
+  a6link="https://bitcoincore.reviews/28122#l-205"
+
+  q7="La classe `Recipient` est initialisée avec deux clés privées dans le PR, la clé de dépense et la clé de balayage. Les deux
+      clés sont-elles nécessaires pour le balayage?"
+  a7="Non, seule la clé de balayage est nécessaire. La possibilité de balayer les paiements silencieux sans la clé de dépense peut
+      être implémentée à l'avenir."
+  a7link="https://bitcoincore.reviews/28122#l-217"
+%}
 
 ## Mises à jour et versions candidates
 
