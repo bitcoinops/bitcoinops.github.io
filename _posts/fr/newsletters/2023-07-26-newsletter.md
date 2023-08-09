@@ -34,7 +34,7 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
     - *Confirmation fiable des transactions :* [relais de paquets][topic package relay], [relais de transactions
       v3][topic v3 transaction relay], [points d'ancrage éphémères][topic ephemeral anchors], [mempool en
       grappe][topic cluster mempool] et d'autres sujets liés au relais de transactions et à l'extraction minière ont été discutés
-      dans le contexte de la manière dont ils permettront de confirmer de manière plus fiable les transactions LN onchain, sans la
+      dans le contexte dont ils permettront de confirmer de manière plus fiable les transactions LN onchain, sans la
       menace d'épinglage de [transaction][topic transaction pinning] ou la nécessité de payer des frais excessifs lors de
       l'utilisation de [CPFP][topic cpfp] ou de [RBF][topic rbf] pour augmenter les frais. Nous recommandons vivement aux lecteurs
       intéressés par la politique de relais de transactions, qui affecte presque tous les protocoles de deuxième couche, de lire
@@ -56,16 +56,16 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
       le canal est moins susceptible qu'aujourd'hui d'être la sortie réellement utilisée pour exploiter le canal, rompant ainsi
       le lien public entre les sorties et le financement du canal.
 
-Une autre considération discutée était de savoir si une UTXO d'une valeur de _n_ devrait être autorisée à annoncer un canal
-d'une capacité supérieure à _n_. Cela permettrait aux participants du canal de garder certaines de leurs transactions de
-financement privées. Par exemple, Alice et Bob pourraient ouvrir deux canaux distincts entre eux ; ils pourraient utiliser un
-canal pour créer une annonce d'une valeur supérieure à celle du canal, indiquant ainsi qu'ils pourraient transférer des paiements
-LN d'une valeur supérieure à la capacité de ce canal en utilisant leur autre canal qui n'avait pas été associé à une UTXO et
-qui était donc plus privé. Cela contribuerait à augmenter la plausibilité que n'importe quelle sortie sur le réseau, même une
-qui n'aurait jamais été divulguée dans LN, soit utilisée pour un canal LN.
+      Une autre considération discutée était de savoir si une UTXO d'une valeur de _n_ devrait être autorisée à annoncer un canal
+      d'une capacité supérieure à _n_. Cela permettrait aux participants du canal de garder certaines de leurs transactions de
+      financement privées. Par exemple, Alice et Bob pourraient ouvrir deux canaux distincts entre eux ; ils pourraient utiliser
+      un canal pour créer une annonce d'une valeur supérieure à celle du canal, indiquant ainsi qu'ils pourraient transférer
+      des paiements LN d'une valeur supérieure à la capacité de ce canal en utilisant leur autre canal qui n'avait pas été
+      associé à une UTXO et qui était donc plus privé. Cela contribuerait à augmenter la plausibilité que n'importe quelle
+      sortie sur le réseau, même une qui n'aurait jamais été divulguée dans LN, soit utilisée pour un canal LN.
 
-Les notes indiquent une décision de compromis, "v1.75 gossip", qui semblait permettre l'utilisation de n'importe quel script
-mais sans multiplicateur de valeur disponible.
+      Les notes indiquent une décision de compromis, "v1.75 gossip", qui semblait permettre l'utilisation de n'importe quel script
+      mais sans multiplicateur de valeur disponible.
 
 - *PTLCs et surpaiement redondant* : d'après les notes, l'ajout de la prise en charge des [PTLCs][topic ptlc] dans le protocole
   a été brièvement discuté, principalement en relation avec les [adaptateurs de signature][topic adaptor signatures]. Les notes
@@ -81,35 +81,74 @@ mais sans multiplicateur de valeur disponible.
   la possibilité d'apporter des modifications qui pourraient aider à prendre en charge les surpaiements redondants en même temps
   que les modifications nécessaires pour les PTLCs.
 
-- *Propositions d'atténuation des attaques de saturation des canaux* : une partie importante des notes résumait la discussion sur les propositions visant à atténuer les [attaques de saturation des canaux][topic channel jamming attacks]. La discussion a commencé par l'affirmation qu'aucune solution unique connue (comme la réputation ou les frais préalables) ne peut résoudre de manière satisfaisante le problème sans produire d'inconvénients inacceptables. La réputation à elle seule doit tenir compte des nouveaux nœuds sans réputation et du taux naturel d'échec des HTLC, des dispositions que l'attaquant peut utiliser pour causer un certain niveau de préjudice, même s'il est inférieur à ce qu'il pourrait faire aujourd'hui. Les frais préalables seuls doivent être fixés suffisamment élevés pour dissuader les attaquants, mais cela pourrait être suffisamment élevé pour dissuader également les utilisateurs honnêtes et créer une incitation perverse pour que les nœuds échouent délibérément à transférer un paiement. Au lieu de cela, il a été proposé que l'utilisation de plusieurs méthodes ensemble puisse permettre d'obtenir les avantages sans produire les coûts les plus élevés.
+- *Propositions d'atténuation des attaques de saturation des canaux* : une partie importante des notes résumait la discussion sur
+  les propositions visant à atténuer les [attaques de saturation des canaux][topic channel jamming attacks]. La discussion a
+  commencé par l'affirmation qu'aucune solution unique connue (comme la réputation ou les frais préalables) ne peut résoudre de
+  manière satisfaisante le problème sans produire d'inconvénients inacceptables. La réputation à elle seule doit tenir compte des
+  nouveaux nœuds sans réputation et du taux naturel d'échec des HTLC, des dispositions que l'attaquant peut utiliser pour causer un
+  certain niveau de préjudice, même s'il est inférieur à ce qu'il pourrait faire aujourd'hui. Les frais préalables seuls doivent
+  être fixés suffisamment élevés pour dissuader les attaquants, mais cela pourrait être suffisamment élevé pour dissuader également
+  les utilisateurs honnêtes et créer une incitation perverse pour que les nœuds échouent délibérément à transférer un paiement. Au
+  lieu de cela, il a été proposé que l'utilisation de plusieurs méthodes ensemble puisse permettre d'obtenir les avantages sans
+  produire les coûts les plus élevés.
 
-Après avoir examiné la compréhension actuelle, les notes de discussion se sont concentrées sur les détails concernant les tests du schéma de réputation locale décrit dans [Newsletter #226][news226 jamming] et la préparation d'une future mise en œuvre de frais préalables réduits pour l'accompagner. D'après les notes, il semblait que les participants soutenaient l'idée de voir la proposition testée.
+  Après avoir examiné la compréhension actuelle, les notes de discussion se sont concentrées sur les détails concernant les tests
+  du schéma de réputation locale décrit dans [Newsletter #226][news226 jamming] et la préparation d'une future mise en œuvre de
+  frais préalables réduits pour l'accompagner. D'après les notes, il semblait que les participants soutenaient l'idée de voir la
+  proposition testée.
 
-- *Engagements simplifiés* : les participants ont discuté de l'idée de protocole d'engagements simplifiés (voir [Newsletter #120][news120 commitments]), qui définit lequel des pairs est responsable de proposer la prochaine modification de la transaction d'engagement plutôt que de permettre à chaque pair de proposer une nouvelle transaction d'engagement à tout moment. Le fait de confier cette responsabilité à un pair élimine la complexité liée à l'envoi simultané de deux propositions, par exemple si Alice et Bob veulent tous deux ajouter un [HTLC][topic htlc] en même temps. Une complication particulière discutée dans les notes était les cas où l'un des pairs ne voulait pas accepter la proposition de l'autre pair, une situation difficile à résoudre dans le protocole actuel. Un inconvénient de l'approche des engagements simplifiés est qu'elle peut augmenter la latence dans certains cas, car le pair qui n'est pas actuellement responsable de proposer la prochaine modification devra demander ce privilège à son homologue avant de procéder. Les notes n'indiquaient pas de résolution claire à cette discussion.
+- *Engagements simplifiés* : les participants ont discuté de l'idée de protocole d'engagements simplifiés (voir [Newsletter
+  #120][news120 commitments]), qui définit lequel des pairs est responsable de proposer la prochaine modification de la
+  transaction d'engagement plutôt que de permettre à chaque pair de proposer une nouvelle transaction d'engagement à tout moment.
+  Le fait de confier cette responsabilité à un pair élimine la complexité liée à l'envoi simultané de deux propositions, par
+  exemple si Alice et Bob veulent tous deux ajouter un [HTLC][topic htlc] en même temps. Une complication particulière discutée
+  dans les notes était les cas où l'un des pairs ne voulait pas accepter la proposition de l'autre pair, une situation difficile
+  à résoudre dans le protocole actuel. Un inconvénient de l'approche des engagements simplifiés est qu'elle peut augmenter la
+  latence dans certains cas, car le pair qui n'est pas actuellement responsable de proposer la prochaine modification devra
+  demander ce privilège à son homologue avant de procéder. Les notes n'indiquaient pas de résolution claire à cette discussion.
 
-- *Le processus de spécification* : les participants ont discuté de diverses idées pour améliorer le processus de spécification et les documents qu'il gère, y compris les BOLTs et BLIPs actuels ainsi que d'autres idées de documentation. La discussion semblait très variée et aucune conclusion claire n'était apparente d'après les notes.
+- *Le processus de spécification* : les participants ont discuté de diverses idées pour améliorer le processus de spécification et
+  les documents qu'il gère, y compris les BOLTs et BLIPs actuels ainsi que d'autres idées de documentation. La discussion semblait
+  très variée et aucune conclusion claire n'était apparente d'après les notes.
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
-*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech cherchent des réponses à leurs questions, ou lorsque nous avons quelques moments libres pour aider les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en évidence certaines des questions et réponses les plus votées publiées depuis notre dernière mise à jour.*
+*[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech cherchent des réponses à leurs
+  questions, ou lorsque nous avons quelques moments libres pour aider les utilisateurs curieux ou confus. Dans cette rubrique
+  mensuelle, nous mettons en évidence certaines des questions et réponses les plus votées publiées depuis notre dernière mise
+  à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [Comment puis-je calculer manuellement (sur papier) une clé publique Bitcoin à partir d'une clé privée ?]({{bse}}118933)
-  Andrew Poelstra donne un aperçu des techniques de vérification par calcul manuel, comme [codex32][news239 codex32], avant de décrire comment une clé publique pourrait être dérivée à la main à partir d'une clé privée, un processus qu'il estime prendre au moins 1500 heures, même avec des optimisations du processus. {% assign timestamp="57:18" %}
+  Andrew Poelstra donne un aperçu des techniques de vérification par calcul manuel, comme [codex32][news239 codex32], avant de
+  décrire comment une clé publique pourrait être dérivée à la main à partir d'une clé privée, un processus qu'il estime prendre
+  au moins 1500 heures, même avec des optimisations du processus. {% assign timestamp="57:18" %}
 
   - [Pourquoi y a-t-il 17 versions natives segwit ?]({{bse}}118974)
-  Murch explique que [segwit][topic segwit] a défini 17 valeurs (0-16) pour le champ [version témoin][bip141 witness program] en raison de la disponibilité existante des opcodes constants OP_0...OP_16 dans [Script][wiki script]. Il note que des nombres supplémentaires nécessiteraient l'utilisation d'opcodes `OP_PUSHDATA` moins efficaces en termes de données. {% assign timestamp="59:43" %}
+  Murch explique que [segwit][topic segwit] a défini 17 valeurs (0-16) pour le champ de [version témoin][bip141 witness program] en
+  raison de la disponibilité existante des opcodes constants OP_0...OP_16 dans [Script][wiki script]. Il note que des nombres
+  supplémentaires nécessiteraient l'utilisation d'opcodes `OP_PUSHDATA` moins efficaces en termes de données. {% assign
+  timestamp="59:43" %}
 
 - [Est-ce que `0 OP_CSV` force la transaction de dépense à signaler la remplaçabilité BIP125 ?]({{bse}}115586)
-  Murch fait référence à une [discussion][rbf csv discussion] confirmant que puisque à la fois le [verrouillage temporel][topic timelocks] `OP_CHECKSEQUENCEVERIFY` (CSV) et le remplacement par frais ([RBF][topic rbf]) sont [appliqués]({{bse}}87376) en utilisant le champ `nSequence`, une sortie avec `0 OP_CSV` nécessite que la transaction de dépense signale la remplaçabilité [BIP125][]. {% assign timestamp="1:03:04" %}
+  Murch fait référence à une [discussion][rbf csv discussion] confirmant que puisque à la fois le [verrouillage
+  temporel][topic timelocks] `OP_CHECKSEQUENCEVERIFY` (CSV) et le remplacement par frais ([RBF][topic rbf]) sont
+  [appliqués]({{bse}}87376) en utilisant le champ `nSequence`, une sortie avec `0 OP_CSV` nécessite que la transaction
+  de dépense signale la remplaçabilité [BIP125][]. {% assign timestamp="1:03:04" %}
 
 - [Comment les indices de route affectent-ils la recherche de chemin ?]({{bse}}118755)
-  Christian Decker explique deux raisons pour lesquelles un destinataire LN fournirait des indices de route à un expéditeur. Une raison est si le destinataire utilise des [canaux non annoncés][topic unannounced channels] et que des indices sont nécessaires pour aider à trouver un chemin. L'autre raison est de fournir à l'expéditeur une liste de canaux ayant un solde suffisant pour effectuer le paiement, une technique qu'il appelle "route boost". {% assign timestamp="1:08:23" %}
+  Christian Decker explique deux raisons pour lesquelles un destinataire LN fournirait des indices de route à un expéditeur.
+  Une raison est si le destinataire utilise des [canaux non annoncés][topic unannounced channels] et que des indices sont
+  nécessaires pour aider à trouver un chemin. L'autre raison est de fournir à l'expéditeur une liste de canaux ayant un solde
+  suffisant pour effectuer le paiement, une technique qu'il appelle "route boost". {% assign timestamp="1:08:23" %}
 
-- [Que signifie-t-il que la sécurité de l'ECDSA 256 bits, et donc des clés Bitcoin, est de 128 bits ?]({{bse}}118928)
-  Pieter Wuille précise que, en raison d'algorithmes qui peuvent dériver une clé privée à partir d'une clé publique de manière plus efficace qu'une recherche par force brute, l'ECDSA 256 bits ne fournit qu'une sécurité de 128 bits. Il souligne ensuite la différence entre la sécurité des clés individuelles et la sécurité des [semences][topic bip32]. {% assign timestamp="1:12:26" %}
+- [Que signifie que la sécurité de l'ECDSA 256 bits, et donc des clés Bitcoin, est de 128 bits ?]({{bse}}118928)
+  Pieter Wuille précise que, en raison d'algorithmes qui peuvent dériver une clé privée à partir d'une clé publique de manière
+  plus efficace qu'une recherche par force brute, l'ECDSA 256 bits ne fournit qu'une sécurité de 128 bits. Il souligne ensuite
+  la différence entre la sécurité des clés individuelles et la sécurité des [semences][topic bip32].
+  {% assign timestamp="1:12:26" %}
 
 ## Mises à jour et versions candidates
 
@@ -117,15 +156,24 @@ Après avoir examiné la compréhension actuelle, les notes de discussion se son
 Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tester
 les versions candidates.*
 
-- [HWI 2.3.0][] est une version intermédiaire de cette interface qui permet aux portefeuilles logiciels de communiquer avec des dispositifs de signature matériels. Elle ajoute la prise en charge des dispositifs Jade DIY et un binaire pour exécuter le programme principal `hwi` sur du matériel Apple Silicon avec MacOS 12.0+. {% assign timestamp="1:15:09" %}
+- [HWI 2.3.0][] est une version intermédiaire de cette interface qui permet aux portefeuilles logiciels de communiquer avec des
+  dispositifs de signature matériels. Elle ajoute la prise en charge des dispositifs Jade DIY et un binaire pour exécuter le
+  programme principal `hwi` sur du matériel Apple Silicon avec MacOS 12.0+. {% assign timestamp="1:15:09" %}
 
-- [LDK 0.0.116][] est une version de cette bibliothèque permettant de créer des logiciels compatibles LN. Elle inclut la prise en charge des [sorties d'ancrage][topic anchor outputs] et des [paiements multipath][topic multipath payments] avec [keysend][topic spontaneous payments]. {% assign timestamp="1:16:37" %}
+- [LDK 0.0.116][] est une version de cette bibliothèque permettant de créer des logiciels compatibles LN. Elle inclut la prise
+  en charge des [sorties d'ancrage][topic anchor outputs] et des [paiements multipath][topic multipath payments] avec
+  [keysend][topic spontaneous payments]. {% assign timestamp="1:16:37" %}
 
 ## Modifications de code et de documentation notables
 
-*Modifications notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Interface de Portefeuille Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk repo], [Propositions d'Amélioration Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et [Bitcoin Inquisition][bitcoin inquisition repo].*
+*Modifications notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo],
+[Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Interface de Portefeuille
+Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk repo], [Propositions
+d'Amélioration Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core GUI #740][] met à jour la boîte de dialogue des opérations [PSBT][topic psbt] pour marquer les sorties payant votre propre portefeuille avec "adresse propre". Cela facilite l'évaluation du résultat d'un PSBT importé, en particulier lorsque la transaction renvoie de la monnaie au destinataire. {% assign timestamp="1:17:18" %}
+- [Bitcoin Core GUI #740][] met à jour la boîte de dialogue des opérations [PSBT][topic psbt] pour marquer les sorties payant
+  votre propre portefeuille avec "adresse propre". Cela facilite l'évaluation du résultat d'un PSBT importé, en particulier
+  lorsque la transaction renvoie de la monnaie au destinataire. {% assign timestamp="1:17:18" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}
