@@ -126,7 +126,7 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
   décrire comment une clé publique pourrait être dérivée à la main à partir d'une clé privée, un processus qu'il estime prendre
   au moins 1500 heures, même avec des optimisations du processus. {% assign timestamp="57:18" %}
 
-  - [Pourquoi y a-t-il 17 versions natives segwit ?]({{bse}}118974)
+- [Pourquoi y a-t-il 17 versions natives segwit ?]({{bse}}118974)
   Murch explique que [segwit][topic segwit] a défini 17 valeurs (0-16) pour le champ de [version témoin][bip141 witness program] en
   raison de la disponibilité existante des opcodes constants OP_0...OP_16 dans [Script][wiki script]. Il note que des nombres
   supplémentaires nécessiteraient l'utilisation d'opcodes `OP_PUSHDATA` moins efficaces en termes de données. {% assign
