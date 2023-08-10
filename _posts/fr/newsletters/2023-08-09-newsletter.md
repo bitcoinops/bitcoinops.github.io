@@ -41,7 +41,7 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
   seraient facturés en plus des frais habituels pour un paiement réussi. Lorsqu'un HTLC est propagé de l'émetteur Alice au
   nœud de transfert Bob, Alice paierait des frais d'engagement anticipé minimes ; la part de Bob de ces frais correspondrait
   à son coût de traitement de l'HTLC (comme la bande passante). À un moment donné après avoir accepté l'HTLC, Bob serait
-  responsable de payer périodiquement des frais de rétention inversée minimes à Alice jusqu'à ce que l'HTLC soit réglé; cela
+  responsable de payer périodiquement des frais de rétention inversée minimes à Alice jusqu'à ce que l'HTLC soit réglé ; cela
   la compenserait pour le retard dans l'acceptation ou l'annulation de son paiement. Si Bob transfère immédiatement le paiement
   à Carol après l'avoir reçu, il lui paierait des frais d'engagement anticipé légèrement inférieurs à ceux qu'il a reçus d'Alice
   (la différence étant le montant réel qu'il a reçu en compensation) et Carol lui fournirait des frais de rétention inversée
@@ -219,7 +219,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
 - [Bitcoin Core #27746][] simplifie la relation entre le stockage des blocs et les objets de l'état de la chaîne en déplaçant
-  la décision de stocker ou non un bloc sur le disque est liée aux règles de validation qui ne nécessitent pas d'état UTXO.
+  la décision de stocker ou non un bloc sur le disque vers une logique de validation indépendante de l'état de chaîne actuel.
+  La décision de stocker ou non un bloc sur disque est liée aux règles de validation qui ne nécessitent pas d'état UTXO.
   Auparavant, Bitcoin Core utilisait une heuristique spécifique à l'état de la chaîne pour des raisons anti-DoS, mais avec
   [assumeUTXO][topic assumeutxo] et la possibilité de deux états de chaîne coexistants, cela a été retravaillé pour réaliser
   la séparation proposée.
