@@ -79,7 +79,7 @@ optech_mentions:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Responsible disclosures** were occassions when someone discovered a
+  **Responsible disclosures** were occasions when someone discovered a
   vulnerability in Bitcoin-related software and reported it to
   developers, affected users, and the public in a way that helped
   minimize harm.
