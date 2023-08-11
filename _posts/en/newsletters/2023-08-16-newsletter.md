@@ -15,8 +15,6 @@ multisignatures.  Also included are our regular sections with
 announcements of new releases and release candidates and descriptions of
 notable changes to popular Bitcoin infrastructure projects.
 
-<!-- FIXME:delete this line if MuSig2 article is included in the newsletter, otherwise revise lede -->
-
 ## News
 
 - **Adding expiration metadata to silent payment addresses:** Peter Todd
@@ -65,6 +63,10 @@ notable changes to popular Bitcoin infrastructure projects.
     to address Gibson's concern about the encryption key.
 
     We expect to see continued discussion about the protocol.
+
+## Field Report: Implementing MuSig2
+
+{% include articles/bitgo-musig2.md extrah="#" %}
 
 ## Releases and release candidates
 
