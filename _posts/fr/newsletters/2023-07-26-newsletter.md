@@ -67,49 +67,26 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
       Les notes indiquent une décision de compromis, "v1.75 gossip", qui semblait permettre l'utilisation de n'importe quel script
       mais sans multiplicateur de valeur disponible.
 
-- *PTLCs et surpaiement redondant* : d'après les notes, l'ajout de la prise en charge des [PTLCs][topic ptlc] dans le protocole
-  a été brièvement discuté, principalement en relation avec les [adaptateurs de signature][topic adaptor signatures]. Les notes
-  étaient notamment consacrées à une amélioration qui affecterait des parties similaires du protocole : la possibilité de
-  [surpayer de manière redondante][topic redundant overpayments] une facture et de recevoir un remboursement pour la plupart ou
-  la totalité du surpaiement. Par exemple, Alice souhaite finalement payer Bob 1 BTC. Elle envoie initialement à Bob 20 paiements
-  [multipath][topic multipath payments] d'une valeur de 0,1 BTC chacun. En utilisant soit des mathématiques (via une technique
-  appelée _Boomerang_, voir [Newsletter #86][news86 boomerang]) soit des engagements en couches et un tour de communication
-  supplémentaire (appelé _Spear_), Bob ne peut réclamer qu'un maximum de 10 des paiements ; tous les autres qui arrivent à son
-  nœud sont rejetés. L'avantage de cette approche est que jusqu'à 10 des fragments MPP d'Alice peuvent ne pas parvenir à Bob
-  sans retarder le paiement. Les inconvénients semblent être une complexité supplémentaire et éventuellement (dans le cas de Spear)
-  une vitesse plus lente qu'aujourd'hui dans le meilleur des cas où chaque fragment atteint Bob. Les participants ont discuté de
-  la possibilité d'apporter des modifications qui pourraient aider à prendre en charge les surpaiements redondants en même temps
-  que les modifications nécessaires pour les PTLCs.
+    - *PTLCs et surpaiement redondant* : d'après les notes, l'ajout de la prise en charge des [PTLCs][topic ptlc] dans le protocole
+      a été brièvement discuté, principalement en relation avec les [adaptateurs de signature][topic adaptor signatures]. Les notes
+      étaient notamment consacrées à une amélioration qui affecterait des parties similaires du protocole : la possibilité de
+      [surpayer de manière redondante][topic redundant overpayments] une facture et de recevoir un remboursement pour la plupart ou
+      la totalité du surpaiement. Par exemple, Alice souhaite finalement payer Bob 1 BTC. Elle envoie initialement à Bob
+      20 paiements [multipath][topic multipath payments] d'une valeur de 0,1 BTC chacun. En utilisant soit des mathématiques (via une technique appelée _Boomerang_, voir [Newsletter #86][news86 boomerang]) soit des engagements en couches et un tour de communication supplémentaire (appelé _Spear_), Bob ne peut réclamer qu'un maximum de 10 des paiements ; tous les autres qui arrivent à son nœud sont rejetés. L'avantage de cette approche est que jusqu'à 10 des fragments MPP d'Alice peuvent ne pas parvenir à Bob sans retarder le paiement. Les inconvénients semblent être une complexité supplémentaire et éventuellement (dans le cas de Spear) une vitesse plus lente qu'aujourd'hui dans le meilleur des cas où chaque fragment atteint Bob. Les participants ont discuté de la possibilité d'apporter des modifications qui pourraient aider à prendre en charge les surpaiements redondants en même temps que les modifications nécessaires pour les PTLCs.
 
-- *Propositions d'atténuation des attaques de saturation des canaux* : une partie importante des notes résumait la discussion sur
-  les propositions visant à atténuer les [attaques de saturation des canaux][topic channel jamming attacks]. La discussion a
-  commencé par l'affirmation qu'aucune solution unique connue (comme la réputation ou les frais préalables) ne peut résoudre de
-  manière satisfaisante le problème sans produire d'inconvénients inacceptables. La réputation à elle seule doit tenir compte des
-  nouveaux nœuds sans réputation et du taux naturel d'échec des HTLC, des dispositions que l'attaquant peut utiliser pour causer un
-  certain niveau de préjudice, même s'il est inférieur à ce qu'il pourrait faire aujourd'hui. Les frais préalables seuls doivent
-  être fixés suffisamment élevés pour dissuader les attaquants, mais cela pourrait être suffisamment élevé pour dissuader également
-  les utilisateurs honnêtes et créer une incitation perverse pour que les nœuds échouent délibérément à transférer un paiement. Au
-  lieu de cela, il a été proposé que l'utilisation de plusieurs méthodes ensemble puisse permettre d'obtenir les avantages sans
-  produire les coûts les plus élevés.
+   -  *Propositions d'atténuation des attaques de saturation des canaux* : une partie importante des notes résumait la discussion
+      sur les propositions visant à atténuer les [attaques de saturation des canaux][topic channel jamming attacks]. La discussion
+      a commencé par l'affirmation qu'aucune solution unique connue (comme la réputation ou les frais préalables) ne peut résoudre de manière satisfaisante le problème sans produire d'inconvénients inacceptables. La réputation à elle seule doit tenir compte des nouveaux nœuds sans réputation et du taux naturel d'échec des HTLC, des dispositions que l'attaquant peut utiliser pour causer un certain niveau de préjudice, même s'il est inférieur à ce qu'il pourrait faire aujourd'hui. Les frais préalables seuls doivent être fixés suffisamment élevés pour dissuader les attaquants, mais cela pourrait être suffisamment élevé pour dissuader également les utilisateurs honnêtes et créer une incitation perverse pour que les nœuds échouent délibérément à transférer un paiement. Au lieu de cela, il a été proposé que l'utilisation de plusieurs méthodes ensemble puisse permettre d'obtenir les avantages sans produire les coûts les plus élevés.
 
-  Après avoir examiné la compréhension actuelle, les notes de discussion se sont concentrées sur les détails concernant les tests
-  du schéma de réputation locale décrit dans [Newsletter #226][news226 jamming] et la préparation d'une future mise en œuvre de
-  frais préalables réduits pour l'accompagner. D'après les notes, il semblait que les participants soutenaient l'idée de voir la
-  proposition testée.
+      Après avoir examiné la compréhension actuelle, les notes de discussion se sont concentrées sur les détails concernant
+      les tests du schéma de réputation locale décrit dans [Newsletter #226][news226 jamming] et la préparation d'une future mise en œuvre de frais préalables réduits pour l'accompagner. D'après les notes, il semblait que les participants soutenaient l'idée de voir la proposition testée.
 
-- *Engagements simplifiés* : les participants ont discuté de l'idée de protocole d'engagements simplifiés (voir [Newsletter
-  #120][news120 commitments]), qui définit lequel des pairs est responsable de proposer la prochaine modification de la
-  transaction d'engagement plutôt que de permettre à chaque pair de proposer une nouvelle transaction d'engagement à tout moment.
-  Le fait de confier cette responsabilité à un pair élimine la complexité liée à l'envoi simultané de deux propositions, par
-  exemple si Alice et Bob veulent tous deux ajouter un [HTLC][topic htlc] en même temps. Une complication particulière discutée
-  dans les notes était les cas où l'un des pairs ne voulait pas accepter la proposition de l'autre pair, une situation difficile
-  à résoudre dans le protocole actuel. Un inconvénient de l'approche des engagements simplifiés est qu'elle peut augmenter la
-  latence dans certains cas, car le pair qui n'est pas actuellement responsable de proposer la prochaine modification devra
-  demander ce privilège à son homologue avant de procéder. Les notes n'indiquaient pas de résolution claire à cette discussion.
+   - *Engagements simplifiés* : les participants ont discuté de l'idée de protocole d'engagements simplifiés (voir
+     [Newsletter #120][news120 commitments]), qui définit lequel des pairs est responsable de proposer la prochaine modification
+     de la transaction d'engagement plutôt que de permettre à chaque pair de proposer une nouvelle transaction d'engagement à tout moment. Le fait de confier cette responsabilité à un pair élimine la complexité liée à l'envoi simultané de deux propositions, par exemple si Alice et Bob veulent tous deux ajouter un [HTLC][topic htlc] en même temps. Une complication particulière discutée dans les notes était les cas où l'un des pairs ne voulait pas accepter la proposition de l'autre pair, une situation difficile à résoudre dans le protocole actuel. Un inconvénient de l'approche des engagements simplifiés est qu'elle peut augmenter la latence dans certains cas, car le pair qui n'est pas actuellement responsable de proposer la prochaine modification devra demander ce privilège à son homologue avant de procéder. Les notes n'indiquaient pas de résolution claire à cette discussion.
 
-- *Le processus de spécification* : les participants ont discuté de diverses idées pour améliorer le processus de spécification et
-  les documents qu'il gère, y compris les BOLTs et BLIPs actuels ainsi que d'autres idées de documentation. La discussion semblait
-  très variée et aucune conclusion claire n'était apparente d'après les notes.
+    - *Le processus de spécification* : les participants ont discuté de diverses idées pour améliorer le processus de spécification
+      et les documents qu'il gère, y compris les BOLTs et BLIPs actuels ainsi que d'autres idées de documentation. La discussion semblait très variée et aucune conclusion claire n'était apparente d'après les notes.
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
