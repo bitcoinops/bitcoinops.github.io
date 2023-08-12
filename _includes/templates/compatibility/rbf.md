@@ -112,10 +112,10 @@ block chain space used, this is the most efficient form of fee bumping.
 {:id="send-signals_bip125"}
 {% case rbf.send.signals_bip125 %}
   {% when "true" %}{:.feature-yes}
-  - **Signals BIP125 replacability when sending transactions**<br>
+  - **Signals BIP125 replaceability when sending transactions**<br>
     Allows sending of BIP125 opt-in-RBF transactions in the interface.
   {% when "false" %}{:.feature-no}
-  - **Does not signal BIP125 replacability when sending transactions**<br>
+  - **Does not signal BIP125 replaceability when sending transactions**<br>
     Does not allow sending of BIP125 opt-in-RBF transactions in the interface.
   {% when "na" %}{:.feature-neutral}
   - **Does not send transactions**<br>

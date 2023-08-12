@@ -110,12 +110,18 @@ optech_mentions:
     url: /en/newsletters/2023/06/28/#lnd-7710
 
   - title: "LN developer discussion about channel jamming attacks"
-    url: /en/newsletters/2023/07/26/#ptlcs-and-redundant-overpayment
+    url: /en/newsletters/2023/07/26/#channel-jamming-mitigation-proposals
+
+  - title: "DoS protection design philosophy and example of forward commitment fees and reverse hold fees"
+    url: /en/newsletters/2023/08/09/#denial-of-service-dos-protection-design-philosophy
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs
     link: topic htlc
+
+  - title: HTLC endorsement
+    link: topic htlc endorsement
 
 ---
 An LN node can route a payment to itself across a path of 20 or more

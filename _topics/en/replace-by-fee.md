@@ -147,6 +147,9 @@ optech_mentions:
   - title: "Question about whether 0 OP_CSV forces the spending transaction to signal BIP125 replaceability?"
     url: /en/newsletters/2023/07/26/#does-0-op-csv-force-the-spending-transaction-to-signal-bip125-replaceability
 
+  - title: "Proposal to enable full-RBF by default"
+    url: /en/newsletters/2023/08/09/#full-rbf-by-default
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
@@ -168,7 +171,7 @@ implemented in [Bitcoin Core 0.12.0][core12 rbf] and subsequent
 versions; this allows the creator of a transaction to signal that
 they're willing to allow it to be replaced by a higher-paying version.
 An alternative form of RBF is **full-RBF** that allows any transaction to
-be replaced whether or not it signals BIP125 replacability.
+be replaced whether or not it signals BIP125 replaceability.
 
 BIP125 requires a replacement transaction to pay both higher feerate
 (BTC/vbyte) and a higher absolute fee (total BTC).  This can make

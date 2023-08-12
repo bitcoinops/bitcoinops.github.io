@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Bitcoin Optech #129: Revue spéciale Année 2020'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #129: Revue Spéciale Année 2020'
 permalink: /fr/newsletters/2020/12/23/
 name: 2020-12-23-newsletter-fr
 slug: 2020-12-23-newsletter-fr
