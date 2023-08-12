@@ -45,9 +45,9 @@ les versions candidates.*
   des améliorations de la génération de factures, des mises à niveau supplémentaires du processus de paiement et de nouvelles
   fonctionnalités pour le terminal de point de vente. {% assign timestamp="24:30" %}
 
-## Modifications de code et de documentation notables
+## Changements notables dans le code et la documentation
 
-*Modifications notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo],
+*Changements notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning repo],
 [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPayServer][btcpay server repo], [BDK][bdk repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
@@ -58,7 +58,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   remplacement][topic rbf]. Par défaut, le portefeuille tente de détecter automatiquement une sortie de changement et en crée
   une nouvelle s'il échoue à le faire. {% assign timestamp="25:31" %}
 
-- [Core Lightning #6378][] et [#6449][core lightning #6449] marqueront un [HTLC][topic htlc] entrant hors chaîne comme échoué si
+- [Core Lightning #6378][] et [#6449][core lightning #6449] marqueront un [HTLC][topic htlc] entrant offchain comme échoué si
   le nœud est incapable (ou refuse en raison des coûts de frais) de temporiser un HTLC correspondant onchain. Par exemple, le nœud
   d'Alice transfère un HTLC au nœud de Bob avec une expiration de 20 blocs et le nœud de Bob transfère un HTLC avec le même hash
   de paiement au nœud de Carol avec une expiration de 10 blocs. Par la suite, le canal entre Bob et Carol est fermé de force
