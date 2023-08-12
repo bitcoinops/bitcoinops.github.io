@@ -23,7 +23,7 @@ infrastructure software.
   `bx seed` command to create [BIP32][topic BIP32] seeds, [BIP39][]
   mnemonics, private keys, or any other secure material, consider
   immediately moving any funds to a different secure address.  See the
-  News section below for details.
+  News section below for details. {% assign timestamp="1:25" %}
 
 ## News
 
@@ -77,7 +77,7 @@ infrastructure software.
   and a summary: "I think monetary-based DoS deterrence is still likely
   to be a fruitful area for research if people are interested, even if
   the current implementation work is focused on reputation-based
-  methods."
+  methods." {% assign timestamp="12:00" %}
 
 - **HTLC endorsement testing and data collection:** Carla Kirk-Cohen and
   Clara Shikhelman [posted][kcs endorsement] to the Lightning-Dev
@@ -90,11 +90,11 @@ infrastructure software.
   prevent leaking information that could reduce the privacy of spenders
   and receivers.  They intend for there to be multiple phases of
   testing and outline how participating nodes will act during the
-  different phases.
+  different phases. {% assign timestamp="18:41" %}
 
 - **Proposed changes to Bitcoin Core default relay policy:** Peter Todd
   started two threads on the Bitcoin-Dev mailing list related to pull
-  requests he's opened to change Bitcoin Core's default relay policy.
+  requests he's opened to change Bitcoin Core's default relay policy. {% assign timestamp="28:04" %}
 
   - *Full RBF by default:* the [first thread][todd rbf] and [pull
     request][bitcoin core #28132] proposes making [full RBF][topic rbf]
@@ -182,7 +182,7 @@ infrastructure software.
 
     We thank the researchers for their significant efforts in making a
     [responsible disclosure][topic responsible disclosures] of
-    [CVE-2023-39910][].
+    [CVE-2023-39910][]. {% assign timestamp="1:25" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -193,7 +193,7 @@ question below to see a summary of the answer from the meeting.*
 [Silent Payments: Implement BIP352][review club 28122]
 is a PR by josibake that takes the first step in adding
 [silent payments][topic silent payments] to the Bitcoin Core wallet.
-This PR implements only the [BIP352][] logic, and doesn't include wallet changes.
+This PR implements only the [BIP352][] logic, and doesn't include wallet changes. {% assign timestamp="53:57" %}
 
 {% include functions/details-list.md
   q0="Why does the PR add a custom ECDH hash function, rather than
@@ -279,7 +279,7 @@ projects.  Please consider upgrading to new releases or helping to test release 
 - [BDK 0.28.1][] is a release of this popular library for building
   wallet applications.  It includes a bug fix and adds a template for
   using [BIP86][] derivation paths for [P2TR][topic taproot] in
-  [descriptors][topic descriptors].
+  [descriptors][topic descriptors]. {% assign timestamp="1:12:41" %}
 
 ## Notable code and documentation changes
 
@@ -300,7 +300,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   Bitcoin Core was using chainstate-specific heuristics for anti-DoS
   reasons, but with [assumeUTXO][topic assumeutxo] and the possibility
   of two coexisting chainstates, this has been reworked to achieve
-  the proposed separation.
+  the proposed separation. {% assign timestamp="1:13:06" %}
 
 - [Core Lightning #6376][] and [#6475][core lightning #6475] implement a
   plugin called `renepay` that uses Pickhardt Payments to construct
@@ -323,12 +323,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   #163][news163 base]), nodes using `renepay`
   for payment planning will instead overestimate the relative fee for
   channels with non-zero base fees. The onion packages constructed for
-  payment delivery use the actual fees.
+  payment delivery use the actual fees. {% assign timestamp="1:15:51" %}
 
 - [Core Lightning #6466][] and [#6473][core lightning #6473] add
   support for backing up and restoring the wallet's [master
   secret][topic BIP32] in the [codex32][topic codex32] format specified
-  in [BIP93][].
+  in [BIP93][]. {% assign timestamp="1:27:13" %}
 
 - [Core Lightning #6253][] and [#5675][core lightning #5675] add an
   experimental implementation of the [BOLTs #863][] draft specification
@@ -344,13 +344,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   majority of their funds offchain and then create onchain spends from
   that balance when requested, allowing wallets to show users a single
   balance rather than a balance split between offchain and onchain
-  funds.
+  funds. {% assign timestamp="1:29:13" %}
 
 - [Rust Bitcoin #1945][] modifies the project's policies for how much
   review a PR requires before it is merged if it's just a refactor.
   Other projects with challenges getting refactors or small changes
   reviewed to the same high standard they hold other PRs may want to
-  investigate Rust Bitcoin's new policy.
+  investigate Rust Bitcoin's new policy. {% assign timestamp="1:30:01" %}
 
 - [BOLTs #759][] adds support for [onion messages][topic onion messages]
   to the LN specification.  Onion messages allow sending one-way
@@ -371,7 +371,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   paths][topic rv routing], which was added to the LN specification a
   few months ago (see [Newsletter #245][news245 blinded]), and onion
   messages are themselves used by the under-development [offers
-  protocol][topic offers].
+  protocol][topic offers]. {% assign timestamp="1:32:21" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27746,6376,6475,6466,6473,6253,5675,863,1945,759,28132,28130" %}
