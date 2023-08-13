@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Payjoin Dev Kit (PDK) announced to provide a Rust SDK for payjoin"
     url: /en/newsletters/2023/07/19/#payjoin-sdk-announced
 
+  - title: "Discussion about draft BIP for serverless payjoin"
+    url: /en/newsletters/2023/08/16/#serverless-payjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
