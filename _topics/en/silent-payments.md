@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Bitcoin Core PR Review Club summary of #28122 adding silent payments"
     url: /en/newsletters/2023/08/09/#bitcoin-core-pr-review-club
 
+  - title: "Proposal to add expiration metadata to silent payment addresses"
+    url: /en/newsletters/2023/08/16/#adding-expiration-metadata-to-silent-payment-addresses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
