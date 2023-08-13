@@ -157,5 +157,5 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
 [cashu]: https://github.com/cashubtc/cashu
 [fiatjaf custodial]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004008.html
 [news210 commando]: /en/newsletters/2022/07/27/#core-lightning-5370
-[dhke]: https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_de_Diffie-Hellman
+[dhke]: https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman
 [btcpay server 1.11.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.11.1
