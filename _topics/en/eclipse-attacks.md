@@ -77,6 +77,9 @@ optech_mentions:
   - title: LND 0.14.0-beta includes additional eclipse attack protection by sharing block headers
     url: /en/newsletters/2021/11/24/#lnd-0-14-0-beta
 
+  - title: "Bitcoin Core #27213 will attempt to open and maintain one connection on each reachable network"
+    url: /en/newsletters/2023/08/16/#bitcoin-core-27213
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks

@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Libsecp256k1 #1129 implements the ElligatorSwift technique for establishing v2 P2P connections"
     url: /en/newsletters/2023/06/28/#libsecp256k1-1129
 
+  - title: "Bitcoin Core #28008 adds encryption and decryption routines for v2 transport protocol encryption"
+    url: /en/newsletters/2023/08/16/#bitcoin-core-28008
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
