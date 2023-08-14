@@ -76,5 +76,5 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 [cashu]: https://github.com/cashubtc/cashu
 [fiatjaf custodial]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004008.html
 [news210 commando]: /zh/newsletters/2022/07/27/#core-lightning-5370
-[dhke]: https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+[dhke]: https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B
 [btcpay server 1.11.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.11.1
