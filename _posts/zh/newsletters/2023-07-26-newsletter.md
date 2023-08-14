@@ -77,7 +77,7 @@ lang: zh
 [russell closing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
 [kc notes]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
 [news193 gossip]: /en/newsletters/2022/03/30/#continued-discussion-about-updated-ln-gossip-protocol
-[news204 gossip]: /en/newsletters/2022/06/15/#gossip-network-updates
+[news204 gossip]: /zh/newsletters/2022/06/15/#gossip-network-updates
 [news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
 [news226 jamming]: /zh/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 [news120 commitments]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
