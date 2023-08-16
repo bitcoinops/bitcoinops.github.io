@@ -284,7 +284,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [todd rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021823.html
 [towns rbf]: https://github.com/bitcoin/bitcoin/pull/28132#issuecomment-1657669845
 [news207 onion]: /en/newsletters/2022/07/06/#onion-message-rate-limiting
-[news261 jamming]: /en/newsletters/2023/07/26/#channel-jamming-mitigation-proposals
+[news261 jamming]: /fr/newsletters/2023/07/26/#propositions-d-attenuation-des-attaques-de-saturation-des-canaux
 [todd opr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021840.html
 [CVE-2023-39910]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-39910
 [milksad]: https://milksad.info/
