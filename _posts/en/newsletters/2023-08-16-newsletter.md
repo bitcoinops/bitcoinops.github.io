@@ -38,7 +38,7 @@ notable changes to popular Bitcoin infrastructure projects.
     would support expiry dates up to about 45,000 years from now.
 
     The recommendation received a moderate amount of discussion on the
-    mailing list, with no clear resolution as of this writing.
+    mailing list, with no clear resolution as of this writing. {% assign timestamp="0:51" %}
 
 - **Serverless payjoin:** Dan Gould [posted][gould spj] to the
   Bitcoin-Dev mailing list a [draft BIP][spj bip] for _serverless
@@ -62,11 +62,11 @@ notable changes to popular Bitcoin infrastructure projects.
     Gould [has since revised][gould spj2] the proposal in an attempt
     to address Gibson's concern about the encryption key.
 
-    We expect to see continued discussion about the protocol.
+    We expect to see continued discussion about the protocol. {% assign timestamp="14:28" %}
 
 ## Field Report: Implementing MuSig2
 
-{% include articles/bitgo-musig2.md extrah="#" %}
+{% include articles/bitgo-musig2.md extrah="#" %} {% assign timestamp="33:10" %}
 
 ## Releases and release candidates
 
@@ -74,7 +74,7 @@ notable changes to popular Bitcoin infrastructure projects.
 projects.  Please consider upgrading to new releases or helping to test release candidates.*
 
 - [Core Lightning 23.08rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="44:40" %}
 
 ## Notable code and documentation changes
 
@@ -102,7 +102,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
     The merged PR attempts to open a connection to at least one peer on
     each reachable network and will prevent the sole peer on any network
-    from being automatically evicted.
+    from being automatically evicted. {% assign timestamp="45:46" %}
 
 - [Bitcoin Core #28008][] adds the encryption and decryption routines
   planned to be used for the implementation of the [v2 transport
@@ -121,10 +121,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
       derivation, and stream ciphers and AEADs for BIP324 packet
       encoding"
 
+  {% assign timestamp="50:29" %}
+
 - [LDK #2308][] allows a spender to include custom Tag-Length-Value
   (TLV) records in their payments which receivers using LDK or a
   compatible implementation can now extract from the payment.  This can
-  make it easy to send custom data and metadata with a payment.
+  make it easy to send custom data and metadata with a payment. {% assign timestamp="55:15" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27213,28008,2308" %}
