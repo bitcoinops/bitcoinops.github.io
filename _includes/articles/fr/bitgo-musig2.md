@@ -24,7 +24,7 @@ sortie détenue de manière collaborative, une dépense coopérative ne peut pas
 la blockchain d'une dépense taproot à signature unique.
 
 Naturellement, il y a quelques inconvénients à MuSig2. Deux d'entre eux importants tournent autour des
-[nonces](#nonces-deterministic-and-random). Contrairement aux signataires pour ECDSA (algorithme de signature numérique à
+[nonces](#nonces-déterministes-et-aléatoires). Contrairement aux signataires pour ECDSA (algorithme de signature numérique à
 courbes elliptiques) simple ou [schnorr signatures][topic schnorr signatures], les signataires MuSig2 ne peuvent pas utiliser
 de manière cohérente des nonces déterministes. Cette incapacité rend plus difficile de garantir des nonces de haute qualité et
 de se prémunir contre la réutilisation des nonces. MuSig2 nécessite deux tours de communication dans la plupart des cas.
