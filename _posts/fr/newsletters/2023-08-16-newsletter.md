@@ -92,7 +92,7 @@ versions ou d'aider à tester les versions candidates.*
       codage des paquets BIP324"
 
 - [LDK #2308][] permet à un dépensier d'inclure des enregistrements Tag-Length-Value (TLV) personnalisés dans leurs paiements,
-  que les destinataires utilisant LDK ou une implémentation compatible peuvent maintenant extraire du paiement. Cela peut 
+  que les destinataires utilisant LDK ou une implémentation compatible peuvent maintenant extraire du paiement. Cela peut
   faciliter l'envoi de données personnalisées et de métadonnées avec un paiement.
 
 {% include references.md %}
