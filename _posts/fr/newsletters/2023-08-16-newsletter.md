@@ -51,7 +51,7 @@ d'infrastructure Bitcoin.
 
 ## Rapport de terrain : Mise en œuvre de MuSig2
 
-{% include articles/bitgo-musig2.md extrah="#" %}
+{% include articles/fr/bitgo-musig2.md extrah="#" %}
 
 ## Mises à jour et versions candidates
 
