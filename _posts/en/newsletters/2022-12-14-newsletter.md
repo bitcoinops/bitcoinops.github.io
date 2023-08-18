@@ -77,7 +77,7 @@ notable changes to popular Bitcoin infrastructure software.
     this writing, Law's new proposal has also not received any
     discussion.  If the proposals are sound, they would have the
     advantage over other proposals of not requiring any changes to
-    Bitcoin's consensus rules.
+    Bitcoin's consensus rules. {% assign timestamp="2:34" %}
 
 - **Local jamming to prevent remote jamming:** Joost Jager
   [posted][jager jam] to the Lightning-Dev mailing list a link and
@@ -153,7 +153,7 @@ notable changes to popular Bitcoin infrastructure software.
     current LN protocol and which any LND user can deploy immediately on
     their forwarding node.  CircuitBreaker is MIT licensed and
     conceptually simple, so it should be possible to adapt or port for
-    other LN implementations.
+    other LN implementations. {% assign timestamp="9:28" %}
 
 - **Monitoring of full-RBF replacements:** developer 0xB10C
   [posted][0xb10c rbf] to the Bitcoin-Dev mailing list that they've
@@ -168,7 +168,7 @@ notable changes to popular Bitcoin infrastructure software.
     replacement transactions (if any are doing so).  However, we remind
     readers that payments received in unconfirmed transactions cannot be
     guaranteed even if miners don't currently seem to be mining
-    unsignaled replacements.
+    unsignaled replacements. {% assign timestamp="29:17" %}
 
 ## Changes to services and client software
 
@@ -176,23 +176,23 @@ notable changes to popular Bitcoin infrastructure software.
 wallets and services.*
 
 - **Lily Wallet adds coin selection:**
-  Lily Wallet [v1.2.0][lily v1.2.0] adds [coin selection][topic coin selection] features.
+  Lily Wallet [v1.2.0][lily v1.2.0] adds [coin selection][topic coin selection] features. {% assign timestamp="38:57" %}
 
 - **Vortex software creates LN channels from a coinjoin:**
   Using [taproot][topic taproot] and collaborative [coinjoin][topic coinjoin]
   transactions, users have [opened LN channels][vortex tweet] on Bitcoin mainnet using the
-  [Vortex][vortex github] software.
+  [Vortex][vortex github] software. {% assign timestamp="41:42" %}
 
 - **Mutiny demonstrates LN node in a browser PoC:**
   Using WASM and LDK, developers [demonstrated][mutiny tweet] a
   [proof-of-concept][mutiny github] implementation of an LN node running in a
-  mobile phone browser.
+  mobile phone browser. {% assign timestamp="49:31" %}
 
 - **Coinkite launches BinaryWatch.org:**
   The [BinaryWatch.org][] website checks binaries from Bitcoin-related projects
   and monitors for any changes. The company also operates [bitcoinbinary.org][] a
   service that archives [reproducible builds][topic reproducible builds] for
-  Bitcoin-related projects.
+  Bitcoin-related projects. {% assign timestamp="55:02" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -210,7 +210,7 @@ answers posted since our last update.*
   Tor addresses as compared to IPv4 and IPv6 addresses, a Bitcoin node operator
   exclusively using the Tor network could more easily be [eclipse attacked][topic eclipse
   attacks] when compared to operating only on clearnet or with a
-  combination of [anonymity networks][topic anonymity networks].
+  combination of [anonymity networks][topic anonymity networks]. {% assign timestamp="57:46" %}
 
 - [Why aren't 3 party (or more) channels realistically possible in Lightning today?]({{bse}}116257)
   Murch explains that since LN channels currently use the LN penalty mechanism
@@ -218,7 +218,7 @@ answers posted since our last update.*
   breach, extending LN penalty to handle multiple recipients of a justice
   transaction may be overly complicated and involve excessive overhead to
   implement. He then explains [eltoo's][topic eltoo] mechanism and how it might
-  handle multiparty channels.
+  handle multiparty channels. {% assign timestamp="1:01:38" %}
 
 - [With legacy wallets deprecated, will Bitcoin Core be able to sign messages for an address?]({{bse}}116187)
   Pieter Wuille distinguishes between Bitcoin Core [deprecating legacy
@@ -226,19 +226,19 @@ answers posted since our last update.*
   older address types like P2PKH addresses even in newer [descriptor][topic
   descriptors] wallets. While message signing is currently only possible for
   P2PKH addresses, efforts around [BIP322][topic generic signmessage] could
-  allow for message signing across other address types.
+  allow for message signing across other address types. {% assign timestamp="1:06:14" %}
 
 - [How do I set up a time-decay multisig?]({{bse}}116035)
   User Yoda asks how to set up a time-decaying multisig, a UTXO that is spendable
   with a broadening set of pubkeys over time. Michael Folkson provides an
   example using [policy][news74 policy miniscript] and [miniscript][topic
   miniscript], links to related resources, and notes the lack of user-friendly
-  options currently.
+  options currently. {% assign timestamp="1:09:07" %}
 
 - [When is a miniscript solution malleable?]({{bse}}116275)
   Antoine Poinsot defines what malleability means in the context of
   miniscript, describes static analysis of malleability in miniscript, and walks
-  through the original question's malleability example.
+  through the original question's malleability example. {% assign timestamp="1:11:01" %}
 
 ## Releases and release candidates
 
@@ -265,7 +265,7 @@ release candidates.*
     project maintainers never announced it and instead worked with other
     contributors to resolve [some last-minute issues][bcc milestone
     24.0.1], making this release of 24.0.1 the first announced release
-    of the 24.x branch.
+    of the 24.x branch. {% assign timestamp="1:14:02" %}
 
 - [libsecp256k1 0.2.0][] is the first tagged release of this widely-used
   library for Bitcoin-related cryptographic operations.  An
@@ -278,11 +278,11 @@ release candidates.*
   our autotools build scripts for years, and does not uniquely identify
   a set of source files. We will not be creating binary releases, but
   will take expected ABI compatibility issues into account for release
-  notes and versioning."
+  notes and versioning." {% assign timestamp="1:14:30" %}
 
 - [Core Lightning 22.11.1][] is a minor release that temporarily
   reintroduces some features that were deprecated in 22.11, as requested
-  by some downstream developers.
+  by some downstream developers. {% assign timestamp="1:15:26" %}
 
 ## Notable code and documentation changes
 
@@ -295,12 +295,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #25934][] adds an optional `label` argument to the
   `listsinceblock` RPC. Only transactions matching the label will be returned
-  when a label is specified.
+  when a label is specified. {% assign timestamp="1:16:24" %}
 
 - [LND #7159][] updates the `ListInvoiceRequest` and
   `ListPaymentsRequest` RPCs with new `creation_date_start` and
   `creation_date_end` fields that can be used to filter out invoices and
-  payments before or after the indicated date and time.
+  payments before or after the indicated date and time. {% assign timestamp="1:17:10" %}
 
 - [LDK #1835][] adds a fake Short Channel IDentifier (SCID) namespace for intercepted HTLCs, enabling
   Lightning Service Providers (LSPs) to create a [just-in-time][topic jit routing]
@@ -309,12 +309,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   that this is an intercept forward, similar to
   [phantom payments][LDK phantom payments] (see [Newsletter #188][news188 phantom]). LDK then generates an event,
   allowing the LSP the opportunity to open the JIT channel. The LSP can
-  then forward the payment over the newly opened channel or fail it.
+  then forward the payment over the newly opened channel or fail it. {% assign timestamp="1:17:38" %}
 
 - [BOLTs #1021][] allows onion-routing error messages to contain a
   [TLV][] stream, which may be used in the future to include additional
   information about the failure.  This is a first step towards
-  implementing [fat errors][news224 fat] as proposed in [BOLTs #1044][].
+  implementing [fat errors][news224 fat] as proposed in [BOLTs #1044][]. {% assign timestamp="1:21:28" %}
 
 ## Happy holidays!
 
