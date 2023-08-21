@@ -63,6 +63,9 @@ optech_mentions:
   - title: "Discussion about allowing uneconomical outputs that are part of a transaction package"
     url: /en/newsletters/2022/10/05/#ephemeral-dust
 
+  - title: "BOLTs #919 suggests LN nodes limit their maximum exposure to uneconomical HTLCs"
+    url: /en/newsletters/2023/08/23/#bolts-919
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)
