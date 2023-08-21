@@ -117,7 +117,47 @@ describing notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Scaling Lightning call for feedback:**
+  [Scaling Lightning][] is a testing toolkit for the Lightning Network on
+  regtest and signet. The project aims to provide tools to test different LN
+  implementations in a variety of configurations and scenarios. The project
+  provided a recent [video update][sl twitter update] for the community. LN
+  developers, researchers, and infrastructure operators are encouraged to
+  [provide feedback][sl tg].
+
+- **Torq v1.0 released:**
+  [Torq][torq github], an LN node management software targeting enterprise users, [announced][torq blog] a
+  v1.0 release including Lightning Service Provider (LSP) features, automation
+  workflows, and advanced features for large node operators.
+
+- **Blixt Wallet v0.6.8 released:**
+  The [v0.6.8 release][blixt v0.6.8] includes support for [hold invoices][topic
+  hold invoices] and [zero-conf channels][topic zero-conf channels] among other improvements.
+
+- **Sparrow 1.7.8 released:**
+  Sparrow [1.7.8][sparrow 1.7.8] added support for [BIP322][] [message signing][topic generic
+  signmessage], including P2TR addresses, and made various improvements to
+  [RBF][topic rbf] and [CPFP][topic cpfp] fee bumping features.
+
+- **Open source ASIC miner bitaxeUltra prototype:**
+  The [bitaxeUltra][github bitaxeUltra] is an open source miner using an
+  application-specific integrated circuit (ASIC) based on existing commercial
+  mining hardware.
+
+- **FROST software Frostsnap announced:**
+  The team [announced][frostsnap blog] their vision of [building][frostsnap
+  github] on the FROST [threshold signature][topic threshold signature] scheme
+  using an experimental FROST implementation, [secp256kfun][secp256kfun github].
+
+- **Libfloresta library announced:**
+  Building on previous work on the [utreexo][topic utreexo]-powered
+  [Floresta][news247 floresta] node, [Libfloresta][libfloresta blog] is a Rust
+  library for adding utreexo-based Bitcoin node functionality to applications.
+
+- **Wasabi Wallet 2.0.4 released:**
+  Wasabi [2.0.4][wasabi 2.0.4] adds features for fee bumping with [RBF][topic
+  rbf] or [CPFP][topic cpfp], [coinjoin][topic coinjoin] improvements, faster
+  wallet loading, RPC enhancements, and other improvements and bug fixes.
 
 ## Releases and release candidates
 
@@ -193,3 +233,17 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [ghost43 backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004052.html
 [voegtlin backups2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004055.html
 [hwi 2.3.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.1
+[Scaling Lightning]: https://github.com/scaling-lightning/scaling-lightning
+[sl twitter update]: https://twitter.com/max_blue__/status/1681781001373065216
+[sl tg]: https://t.me/+AytRsS0QKH5mMzM8
+[torq github]: https://github.com/lncapital/torq
+[torq blog]: https://ln.capital/articles/announcing-torq-V1.0
+[blixt v0.6.8]: https://github.com/hsjoberg/blixt-wallet/releases
+[sparrow 1.7.8]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.8
+[github bitaxeUltra]: https://github.com/skot/bitaxe/tree/ultra
+[frostsnap blog]: https://frostsnap.com/introducing-frostsnap.html
+[frostsnap github]: https://github.com/frostsnap/frostsnap
+[secp256kfun github]: https://github.com/LLFourn/secp256kfun
+[news247 floresta]: /en/newsletters/2023/04/19/#utreexo-based-electrum-server-announced
+[libfloresta blog]: https://blog.dlsouza.lol/2023/07/07/libfloresta.html
+[wasabi 2.0.4]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.4

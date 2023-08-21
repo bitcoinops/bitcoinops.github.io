@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Proposed BIP for multiformat single-sig message signing"
     url: /en/newsletters/2022/07/27/#multiformat-single-sig-message-signing
 
+  - title: "Sparrow 1.7.8 adds support for BIP322 generic signmessage"
+    url: /en/newsletters/2023/08/23/#sparrow-1-7-8-released
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -46,6 +46,9 @@ optech_mentions:
   - title: Transcripts of talks about the FROST and ROAST threshold signature schemes
     url: /en/newsletters/2022/10/26/#frost
 
+  - title: "Experimental implementation of FROST announced"
+    url: /en/newsletters/2023/08/23/#frost-software-frostsnap-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature

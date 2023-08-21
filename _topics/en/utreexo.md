@@ -40,6 +40,9 @@ optech_mentions:
   - title: ZeroSync protocol which uses a variation of utreexo
     url: /en/newsletters/2023/05/24/#state-compression-with-zero-knowledge-validity-proofs
 
+  - title: "Libflorestra library announced for using utreexo in applications"
+    url: /en/newsletters/2023/08/23/#libfloresta-library-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs
