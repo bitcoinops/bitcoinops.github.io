@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Example of using the MATT proposal plus OP_CAT to manage joinpools"
     url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
 
+  - title: "Fraud proofs for outdated backup state enforcable onchain with OP_CSFS + OP_CAT"
+    url: /en/newsletters/2023/08/23/#fraud-proofs-for-outdated-backup-state
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
