@@ -111,6 +111,10 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
+- [Bitcoin Core #27460][] adds a new `importmempool` RPC. The RPC will
+  load a `mempool.dat` file and attempt to add the loaded transactions
+  to its mempool.
+
 - [LDK #2248][] provides a built-in system that LDK downstream projects
   can use for tracking the UTXOs referenced in gossip messages.  LN
   nodes that process gossip must only accept messages that are signed by
