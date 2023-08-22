@@ -2,9 +2,9 @@
 *par [Brandon Black][] de [BitGo][]*
 
 Le premier [document MuSig][] a été publié en 2018, et le potentiel de [MuSig][topic musig] sur Bitcoin était l'un des arguments
-de vente utilisés pour obtenir le soutien de la mise à jour logicielle taproot. Les travaux sur MuSig ont continué avec la
+de vente utilisé pour obtenir le soutien de la mise à jour logicielle taproot. Les travaux sur MuSig ont continué avec la
 publication de [MuSig-DN][] et [MuSig2][] en 2020.
-Lorsque taproot s'est approché de l'activation sur le réseau principal de Bitcoin en 2021, l'excitation de pouvoir apporter
+En 2021, alors que l'activation de taproot sur le réseau principal Bitcoin approchait, l'excitation de pouvoir apporter
 la signature MuSig aux utilisateurs de Bitcoin était palpable. Chez BitGo, nous espérions lancer un portefeuille MuSig taproot
 simultanément à l'activation de taproot ; mais la spécification, les vecteurs de test et la mise en œuvre de référence étaient
 incomplets. À la place, BitGo a [lancé][bitgo blog taproot] le premier portefeuille multisig tapscript et a effectué la
@@ -15,19 +15,17 @@ incomplets. À la place, BitGo a [lancé][bitgo blog taproot] le premier portefe
 
 {{include.extrah}}### Comparé à Script Multisig
 
-Il y a deux principaux avantages de MuSig par rapport à un script multisig. Le premier et le plus évident avantage est une
-réduction de la taille de la transaction et des frais de mineur. Les signatures onchain font 64-73 octets, 16-18,25 octets
+Il existe deux principaux avantages à MuSig par rapport à un script multisig. Le premier et le plus évident est une
+réduction de la taille de la transaction et des frais de minage. Les signatures onchain font 64-73 octets, 16-18,25 octets
 virtuels (vB), et MuSig peut combiner deux (ou plus) signatures en une seule. Dans le cas de 2-sur-3 de BitGo, une entrée
 de clé MuSig coûte 57,5 vB, comparé à une entrée native SegWit à 104,5 vB ou à une profondeur 1 [tapscript][topic tapscript]
 à 107,5 vB. Le deuxième avantage de MuSig est une amélioration de la confidentialité. Avec un chemin de clé MuSig sur une
 sortie détenue de manière collaborative, une dépense coopérative ne peut pas être distinguée par un observateur tiers de
 la blockchain d'une dépense taproot à signature unique.
 
-Naturellement, il y a quelques inconvénients à MuSig2. Deux d'entre eux importants tournent autour des
+Naturellement, il y a quelques inconvénients à MuSig2. Deux des plus importants tournent autour des
 [nonces](#nonces-déterministes-et-aléatoires). Contrairement aux signataires pour ECDSA (algorithme de signature numérique à
-courbes elliptiques) simple ou [schnorr signatures][topic schnorr signatures], les signataires MuSig2 ne peuvent pas utiliser
-de manière cohérente des nonces déterministes. Cette incapacité rend plus difficile de garantir des nonces de haute qualité et
-de se prémunir contre la réutilisation des nonces. MuSig2 nécessite deux tours de communication dans la plupart des cas.
+courbes elliptiques) simple ou les [signautrees de schnorr][topic schnorr signatures], les signataires MuSig2 ne peuvent pas utiliser de manière cohérente des nonces déterministes. Cette incapacité rend plus difficile de garantir des nonces de haute qualité et de se prémunir contre leur réutilisation. MuSig2 nécessite deux tours de communication dans la plupart des cas.
 Tout d'abord, l'échange de nonces, puis la signature. Dans certains cas, le premier tour peut être précalculé, mais cela doit
 être entrepris avec prudence.
 
@@ -36,9 +34,9 @@ Tout d'abord, l'échange de nonces, puis la signature. Dans certains cas, le pre
 Les protocoles de signature MPC (calcul multi-parties) gagnent en popularité en raison des avantages mentionnés précédemment
 en termes de frais et de confidentialité. MuSig est un protocole de signature multi-signature (n-sur-n) _simple_, rendu possible
 par la linéarité des signatures schnorr. MuSig2 peut être expliqué lors d'une présentation de 30 minutes, et la mise en œuvre
-de référence complète ne compte que 461 lignes de code en Python. Les protocoles de signature seuil (t-sur-n), tels que
-[FROST][], sont beaucoup plus complexes, et même les multi-signatures à deux parties basées sur ECDSA reposent sur le
-chiffrement de Paillier et d'autres techniques.
+de référence complète ne compte que 461 lignes de code en Python. Les protocoles de [signature seuil][topic threshold signature]
+(t-sur-n), tels que [FROST][], sont beaucoup plus complexes, et même les multi-signatures à deux parties basées sur ECDSA reposent
+sur le chiffrement de Paillier et d'autres techniques.
 
 {{include.extrah}}## Choix des scripts
 
