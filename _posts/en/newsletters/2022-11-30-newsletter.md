@@ -78,7 +78,7 @@ infrastructure software.
     introducing a secondary vulnerability.
 
     Additional feedback for the proposals was received on its related
-    [pull request][bolts #1043].
+    [pull request][bolts #1043]. {% assign timestamp="00:33" %}
 
 ## Releases and release candidates
 
@@ -88,12 +88,12 @@ release candidates.*
 
 - [LND 0.15.5-beta.rc2][] is a release candidate for a maintenance
   release of LND.  It contains only minor bug fixes according to its
-  planned release notes.
+  planned release notes. {% assign timestamp="20:33" %}
 
 - [Core Lightning 22.11rc3][] is a release candidate for the next major
   version of CLN.  It'll also be the first release to use a new version
   numbering scheme, although CLN releases continue to use [semantic
-  versioning][].
+  versioning][]. {% assign timestamp="21:29" %}
 
 ## Notable code and documentation changes
 
@@ -107,19 +107,19 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [Core Lightning #5727][] begins deprecating numeric JSON request IDs
   in favor of IDs using the string type.  [Documentation][cln json ids]
   is added describing the benefit of string IDs and how to get the most
-  out of creating and interpreting them.
+  out of creating and interpreting them. {% assign timestamp="26:41" %}
 
 - [Eclair #2499][] allows specifying a blinded route to use when using a
   [BOLT12 offer][topic offers] to request payment.  The route may
   include a route leading up to the user's node plus additional hops
   going past it.  The hops going past the node won't be used, but they
   will make it harder for the spender to determine how many hops the
-  receiver is from the last non-blinded forwarding node in the route.
+  receiver is from the last non-blinded forwarding node in the route. {% assign timestamp="28:32" %}
 
 - [LND #7122][] adds support to `lncli` for processing binary [PSBT][topic
   psbt] files. [BIP174][] specifies that PSBTs may be encoded either as plain
   text Base64 or binary in a file. Prior, LND already supported importing
-  Base64-encoded PSBTs either as plain text or from file.
+  Base64-encoded PSBTs either as plain text or from file. {% assign timestamp="36:09" %}
 
 - [LDK #1852][] accepts a feerate increase proposed by a channel peer
   even if that feerate isn't high enough to safely keep the channel
@@ -130,7 +130,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   feerates that are too low, and work on proposals like [package
   relay][topic package relay] may make [anchor outputs][topic anchor
   outputs] or similar techniques adaptable enough to eliminate concerns
-  about present feerates.
+  about present feerates. {% assign timestamp="41:51" %}
 
 - [Libsecp256k1 #993][] includes in the default build options the
   modules for extrakeys (functions for working with x-only pubkeys),
@@ -139,7 +139,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   built by default "because we don't recommend ECDSA recovery for new
   protocols. In particular, the recovery API is prone to misuse: It
   invites the caller to forget to check the public key (and the
-  verification function always returns 1)."
+  verification function always returns 1)." {% assign timestamp="55:02" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5727,2499,7122,1852,993,1043" %}
