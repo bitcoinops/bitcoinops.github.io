@@ -228,7 +228,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 [frostsnap blog]: https://frostsnap.com/introducing-frostsnap.html
 [frostsnap github]: https://github.com/frostsnap/frostsnap
 [secp256kfun github]: https://github.com/LLFourn/secp256kfun
-[news247 floresta]: /en/newsletters/2023/04/19/#utreexo-based-electrum-server-announced
+[news247 floresta]: /cs/newsletters/2023/04/19/#oznamen-electrum-server-zalozeny-na-utreexo
 [libfloresta blog]: https://blog.dlsouza.lol/2023/07/07/libfloresta.html
 [wasabi 2.0.4]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.4
 [hwi 2.3.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.1
