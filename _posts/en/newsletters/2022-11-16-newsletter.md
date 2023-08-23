@@ -32,7 +32,7 @@ to popular Bitcoin infrastructure software.
 
     Ingala explains how the work could help design [joinpools][topic
     joinpools], optimistic rollups (see [Newsletter #222][news222
-    rollup]), and other stateful constructions.
+    rollup]), and other stateful constructions. {% assign timestamp="1:21" %}
 
 - **Paper about channel jamming attacks:** Clara Shikhelman and Sergei
   Tikhomirov [posted][st unjam post] to the Lightning-Dev mailing list
@@ -79,7 +79,7 @@ to popular Bitcoin infrastructure software.
         any available slot and funds.
 
     The paper received some discussion on the mailing list, with the
-    proposed local reputation method specifically being praised.
+    proposed local reputation method specifically being praised. {% assign timestamp="29:46" %}
 
 ## Changes to services and client software
 
@@ -88,25 +88,25 @@ wallets and services.*
 
 - **Sparrow 1.7.0 released:**
   [Sparrow 1.7.0][sparrow 1.7.0] adds support for a [Replace-By-Fee (RBF)][topic rbf]-enabled
-  transaction cancellation feature among other updates.
+  transaction cancellation feature among other updates. {% assign timestamp="55:59" %}
 
 - **Blixt Wallet adds taproot support:**
-  [Blixt Wallet v0.6.0][blixt v0.6.0] adds send and receive support for [taproot][topic taproot] addresses.
+  [Blixt Wallet v0.6.0][blixt v0.6.0] adds send and receive support for [taproot][topic taproot] addresses. {% assign timestamp="56:42" %}
 
 - **Specter-DIY v1.8.0 released:**
   [Specter-DIY v1.8.0][] now supports [reproducible builds][topic reproducible
-  builds] and [taproot][topic taproot] keypath spending support.
+  builds] and [taproot][topic taproot] keypath spending support. {% assign timestamp="57:07" %}
 
 - **Trezor Suite adds coin control features:**
   In a [recent blog post][trezor coin control], Trezor announced that Trezor
-  Suite now supports [coin control][topic coin selection] features.
+  Suite now supports [coin control][topic coin selection] features. {% assign timestamp="57:50" %}
 
 - **Strike adds taproot send support:**
-  Strike's wallet now allows sending to [bech32m][topic bech32] addresses.
+  Strike's wallet now allows sending to [bech32m][topic bech32] addresses. {% assign timestamp="58:32" %}
 
 - **Kollider exchange launches with Lightning support:**
   Kollider [announced][kollider launch] an exchange with LN deposit and
-  withdrawal capabilities as well as a browser-based Lightning wallet.
+  withdrawal capabilities as well as a browser-based Lightning wallet. {% assign timestamp="58:53" %}
 
 ## Releases and release candidates
 
@@ -123,11 +123,11 @@ release candidates.*
   believe could lead to problems for merchant services as described in
   previous newsletters [#222][news222 rbf] and [#223][news223 rbf].  It
   could also cause problems for transaction relay as described in
-  [Newsletter #224][news224 rbf].
+  [Newsletter #224][news224 rbf]. {% assign timestamp="1:00:06" %}
 
 - [LND 0.15.5-beta.rc1][] is a release candidate for a maintenance
   release of LND.  It's contains only minor bug fixes according to its
-  planned release notes.
+  planned release notes. {% assign timestamp="1:00:36" %}
 
 ## Notable code and documentation changes
 
@@ -146,27 +146,27 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   guaranteed for all RPCs, especially those provided by plugins.  When
   filtering is not available, the unfiltered full output will be
   returned.  For more information, see the added [documentation][cln
-  filter doc].
+  filter doc]. {% assign timestamp="1:00:54" %}
 
 - [Core Lightning #5698][] updates the experimental developer mode to
   allow receiving onion-wrapped error messages of any size. BOLT2
   currently recommends 256-byte errors, but it doesn’t forbid longer error
   messages and [BOLTs #1021][] is open to encourage use of 1024-byte
   error messages encoded using LN’s modern Type-Length-Value (TLV)
-  semantics.
+  semantics. {% assign timestamp="1:02:09" %}
 
 - [Core Lightning #5647][] adds the reckless plugin manager. The plugin manager
   may be used to install CLN plugins by name from the `lightningd/plugins`
   repository. The plugin manager automatically installs dependencies and verifies the
   installation. It can also be used to enable and disable plugins as well as
-  persist the plugin state in a configuration file.
+  persist the plugin state in a configuration file. {% assign timestamp="1:03:21" %}
 
 - [LDK #1796][] updates `Confirm::get_relevant_txids()` to return not
   just txids but also the hashes of the blocks containing those
   referenced transactions.  This makes it easier for a higher-level
   application to determine when a block chain reorganization may have
   changed the confirmation depth of a transaction.  If the block hash
-  for a given txid changes, then a reorganization has occurred.
+  for a given txid changes, then a reorganization has occurred. {% assign timestamp="1:04:52" %}
 
 - [BOLTs #1031][] allows a spender to pay a receiver slightly more than
   the requested amount when using [simplified multipath payments][topic
@@ -175,7 +175,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   example, Alice wants to split a 900 sat total into two parts, but both
   of the paths she chooses require 500 sat minimum amounts.  With this
   specification change, she can now send two 500 sat payments, choosing
-  to overpay by a total of 100 sats in order to use her preferred route.
+  to overpay by a total of 100 sats in order to use her preferred route. {% assign timestamp="1:06:14" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5681,5698,5647,1796,1031,1021" %}
