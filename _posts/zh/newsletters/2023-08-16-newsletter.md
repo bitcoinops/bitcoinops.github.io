@@ -63,5 +63,5 @@ lang: zh
 [spj bip]: https://github.com/bitcoin/bips/pull/1483
 [gibson spj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021872.html
 [gould spj2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021880.html
-[news236 spj]: /en/newsletters/2023/02/01/#serverless-payjoin-proposal
+[news236 spj]: /zh/newsletters/2023/02/01/#serverless-payjoin-proposal-payjoin
 [core lightning 23.08rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.08rc2
