@@ -179,7 +179,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 [news171 trim]: /en/newsletters/2021/10/20/#eclair-1985
 [news173 trim]: /en/newsletters/2021/11/03/#c-lightning-4837
 [news170 trim]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
-[elements project]: https://elementsproject.org/
+[Projet Elements]: https://elementsproject.org/
 [voegtlin backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004043.html
 [todd backups1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004046.html
 [todd backups2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004044.html
