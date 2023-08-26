@@ -145,7 +145,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 ][btcpay server repo], [BDK][bdk repo], [Propositions d'amélioration Bitcoin (BIPs)][bips repo], [BOLTs Lightning][bolts repo], et
 [Inquisition Bitcoin][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27981][] corrige un bogue qui aurait pu empêcher deux nœuds de recevoir des données l'un de l'autre. Si le 
+- [Bitcoin Core #27981][] corrige un bogue qui aurait pu empêcher deux nœuds de recevoir des données l'un de l'autre. Si le
   noeud d'Alice avait beaucoup de données en attente à envoyer au nœud de Bob, elle essaierait d'envoyer ces données avant
   d'accepter de nouvelles données de Bob. Si Bob avait également beaucoup de données en attente à envoyer au nœud d'Alice, il
   n'accepterait également pas de nouvelles données d'Alice. Cela pourrait conduire à ce que ni l'un ni l'autre ne tentent de
