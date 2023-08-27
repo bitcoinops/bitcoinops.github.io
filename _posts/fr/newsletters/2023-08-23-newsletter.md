@@ -7,14 +7,14 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Cette semaine, le bulletin décrit les preuves de fraude pour les sauvegardes obsolètes et inclut nos sections régulières décrivant
+Cette semaine, le bulletin décrit les preuves de fraude pour les sauvegardes obsolètes et comprend nos sections régulières décrivant
 les mises à jour des clients et des services, les nouvelles versions et les versions candidates, ainsi que les changements apportés
 aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
 - **Preuves de fraude pour les sauvegardes obsolètes :** Thomas Voegtlin a [posté][voegtlin backups] sur la liste de diffusion
-  Lightning-Dev une idée pour un service qui pourrait être pénalisé s'il fournissait à un utilisateur une version obsolète de
+  Lightning-Dev l'idée d'un service qui pourrait être pénalisé s'il fournissait à un utilisateur une version obsolète de
   l'état de sauvegarde de l'utilisateur, à l'exception de la version la plus récente. Le mécanisme de base est simple :
 
     - Alice a des données qu'elle souhaite sauvegarder. Elle inclut un numéro de version dans les données, crée une signature
@@ -27,7 +27,7 @@ aux principaux logiciels d'infrastructure Bitcoin.
       signature pour celles-ci. Bob renvoie une signature pour un engagement sur le nouveau numéro (plus élevé) de version avec
       le nouvel horaire actuel (plus élevé). Ils répètent cette étape plusieurs fois.
 
-    - Finalement, Alice demande ses données afin de tester Bob. Bob lui envoie une version des données et sa signature lui
+    - Enfin Alice demande ses données afin de tester Bob. Bob lui envoie une version des données et sa signature lui
       permettant de prouver qu'il s'agit réellement de ses données. Il lui envoie également une autre signature qui s'engage sur
       le numéro de version dans les données et l'heure actuelle.
 
@@ -36,21 +36,21 @@ aux principaux logiciels d'infrastructure Bitcoin.
       à l'engagement de signature qu'il vient de lui fournir.
 
   Jusqu'à présent, il n'y a rien de spécifique à Bitcoin dans ce mécanisme de génération de preuves de fraude de l'état le plus
-  récent. Cependant, Voegtlin a noté que si les opcodes [OP_CHECKSIGFROMSTACK (CSFS) et OP_CAT][topic op_checksigfromstack]
-  étaient ajoutés à Bitcoin lors d'une soft fork, il serait possible d'utiliser la preuve de fraude sur la chaîne.
+  récent. Cependant, Thomas Voegtlin a noté que si les opcodes [OP_CHECKSIGFROMSTACK (CSFS) et OP_CAT][topic op_checksigfromstack]
+  étaient ajoutés à Bitcoin lors d'une soft fork, il serait possible d'utiliser la preuve de fraude on-chain.
 
   Par exemple, Alice et Bob partagent un canal LN qui inclut une condition [taproot][topic taproot] supplémentaire qui permet à
   Alice de dépenser tous les fonds du canal si elle peut fournir ce type de preuve de fraude. Le fonctionnement normal du canal
   inclurait simplement une étape supplémentaire : après chaque mise à jour du canal, Alice donne à Bob une signature sur l'état
   actuel (qui inclut un numéro d'état). Ensuite, chaque fois qu'Alice se reconnecte à Bob de manière organique, elle demande la
-  dernière sauvegarde et utilise le mécanisme ci-dessus pour vérifier son intégrité. Si Bob fournit jamais une sauvegarde obsolète,
+  dernière sauvegarde et utilise le mécanisme ci-dessus pour vérifier son intégrité. Si Bob fournit une sauvegarde obsolète,
   Alice utilise la preuve de fraude et la condition de dépense CSFS pour dépenser l'intégralité du solde du canal.
 
-  Ce mécanisme rend plus sûr pour Alice d'utiliser un état fourni par Bob en tant qu'état de canal le plus récent dans les cas où
+  Ce mécanisme augmente la sécurité d'Alice quand elle utilise un état fourni par Bob en tant qu'état de canal le plus récent dans les cas où
   Alice a réellement perdu des données. Dans la conception actuelle du canal LN (LN-Penalty), si Bob trompe Alice en utilisant un
   ancien état, Bob pourra voler l'intégralité de son solde dans ce canal. Même avec des améliorations proposées comme
   [LN-Symmetry][topic eltoo], Alice en utilisant un ancien état pourrait permettre à Bob de lui voler des fonds. La possibilité de
-  pénaliser financièrement Bob pour avoir mal représenté le dernier état diminue probablement la probabilité qu'il mente à Alice.
+  pénaliser financièrement Bob pour avoir mal représenté le dernier état diminue probablement le risque qu'il mente à Alice.
 
   La proposition a suscité une quantité significative de discussions :
 
