@@ -108,6 +108,9 @@ optech_mentions:
   - title: "Example of using MATT-style covenants to replicate CTV features"
     url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
