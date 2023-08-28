@@ -86,6 +86,9 @@ optech_mentions:
   - title: "LND #7069 allows a client to ask its watchtower to delete a session"
     url: /en/newsletters/2023/04/12/#lnd-7069
 
+  - title: "LDK #2337 makes it easier to use LDK for building watchtowers"
+    url: /en/newsletters/2023/08/30/#ldk-2337
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

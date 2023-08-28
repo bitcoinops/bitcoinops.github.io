@@ -120,6 +120,9 @@ optech_mentions:
   - title: Discussion about blind MuSig2 signing for statechains
     url: /en/newsletters/2023/08/02/#safety-of-blind-musig2-signing
 
+  - title: "LND #7904 adds experimental support for taproot channels based on MuSig2"
+    url: /en/newsletters/2023/08/30/#lnd-7904
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures
