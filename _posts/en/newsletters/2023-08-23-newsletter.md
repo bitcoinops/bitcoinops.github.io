@@ -110,7 +110,7 @@ describing notable changes to popular Bitcoin infrastructure software.
       to minimize the risk of an anonymous peer being able to steal from
       an Electrum user who uses a mechanism like peer backups.
 
-  There was no clear resolution to the discussion.
+  There was no clear resolution to the discussion. {% assign timestamp="1:20" %}
 
 ## Changes to services and client software
 
@@ -123,41 +123,41 @@ wallets and services.*
   implementations in a variety of configurations and scenarios. The project
   provided a recent [video update][sl twitter update] for the community. LN
   developers, researchers, and infrastructure operators are encouraged to
-  [provide feedback][sl tg].
+  [provide feedback][sl tg]. {% assign timestamp="18:07" %}
 
 - **Torq v1.0 released:**
   [Torq][torq github], an LN node management software targeting enterprise users, [announced][torq blog] a
   v1.0 release including Lightning Service Provider (LSP) features, automation
-  workflows, and advanced features for large node operators.
+  workflows, and advanced features for large node operators. {% assign timestamp="30:31" %}
 
 - **Blixt Wallet v0.6.8 released:**
   The [v0.6.8 release][blixt v0.6.8] includes support for [hold invoices][topic
-  hold invoices] and [zero-conf channels][topic zero-conf channels] among other improvements.
+  hold invoices] and [zero-conf channels][topic zero-conf channels] among other improvements. {% assign timestamp="36:03" %}
 
 - **Sparrow 1.7.8 released:**
   Sparrow [1.7.8][sparrow 1.7.8] added support for [BIP322][] [message signing][topic generic
   signmessage], including P2TR addresses, and made various improvements to
-  [RBF][topic rbf] and [CPFP][topic cpfp] fee bumping features.
+  [RBF][topic rbf] and [CPFP][topic cpfp] fee bumping features. {% assign timestamp="37:19" %}
 
 - **Open source ASIC miner bitaxeUltra prototype:**
   The [bitaxeUltra][github bitaxeUltra] is an open source miner using an
   application-specific integrated circuit (ASIC) based on existing commercial
-  mining hardware.
+  mining hardware. {% assign timestamp="38:21" %}
 
 - **FROST software Frostsnap announced:**
   The team [announced][frostsnap blog] their vision of [building][frostsnap
   github] on the FROST [threshold signature][topic threshold signature] scheme
-  using an experimental FROST implementation, [secp256kfun][secp256kfun github].
+  using an experimental FROST implementation, [secp256kfun][secp256kfun github]. {% assign timestamp="39:10" %}
 
 - **Libfloresta library announced:**
   Building on previous work on the [utreexo][topic utreexo]-powered
   [Floresta][news247 floresta] node, [Libfloresta][libfloresta blog] is a Rust
-  library for adding utreexo-based Bitcoin node functionality to applications.
+  library for adding utreexo-based Bitcoin node functionality to applications. {% assign timestamp="42:25" %}
 
 - **Wasabi Wallet 2.0.4 released:**
   Wasabi [2.0.4][wasabi 2.0.4] adds features for fee bumping with [RBF][topic
   rbf] or [CPFP][topic cpfp], [coinjoin][topic coinjoin] improvements, faster
-  wallet loading, RPC enhancements, and other improvements and bug fixes.
+  wallet loading, RPC enhancements, and other improvements and bug fixes. {% assign timestamp="51:32" %}
 
 ## Releases and release candidates
 
@@ -165,10 +165,10 @@ wallets and services.*
 projects.  Please consider upgrading to new releases or helping to test release candidates.*
 
 - [Core Lightning 23.08rc3][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="43:57" %}
 
 - [HWI 2.3.1][] is a minor release of this toolkit for working with
-  hardware signing devices.
+  hardware signing devices. {% assign timestamp="44:35" %}
 
 ## Notable code and documentation changes
 
@@ -187,7 +187,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   of data queued to send to Alice's node, he also wouldn't accept new data
   from Alice.  This could lead to neither of them attempting to receive
   data from the other indefinitely.  The issue was originally discovered
-  in the [Elements Project][].
+  in the [Elements Project][]. {% assign timestamp="45:03" %}
 
 - [BOLTs #919][] updates the LN specification to suggest that nodes stop
   accepting additional trimmed HTLCs beyond a certain value.  A trimmed
@@ -202,20 +202,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   various implementations adding this limit: LDK in [Newsletter
   #162][news162 trim], Eclair in [Newsletter #171][news171 trim], and
   Core Lightning in [Newsletter #173][news173 trim], plus
-  [Newsletter #170][news170 trim] for a related security concern.
+  [Newsletter #170][news170 trim] for a related security concern. {% assign timestamp="46:55" %}
 
 - [Rust Bitcoin #1990][] optionally allows `bitcoin_hashes` to be
   compiled with slower implementations of SHA256, SHA512, and RIPEMD160
   that are also about half the size, likely making them better for
   applications on embedded devices that don't need to perform frequent
-  hashing.
+  hashing. {% assign timestamp="49:21" %}
 
 - [Rust Bitcoin #1962][] adds the ability to use hardware-optimized
-  SHA256 operations on compatible x86 architectures.
+  SHA256 operations on compatible x86 architectures. {% assign timestamp="50:09" %}
 
 - [BIPs #1485][] makes several updates to the [BIP300][] specification
   of [drivechains][topic sidechains].  The main change appears to be a
-  redefinition of `OP_NOP5` in certain contexts to `OP_DRIVECHAIN`.
+  redefinition of `OP_NOP5` in certain contexts to `OP_DRIVECHAIN`. {% assign timestamp="50:39" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,27981,919,1990,1962,1485,881" %}
