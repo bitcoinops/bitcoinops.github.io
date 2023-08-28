@@ -62,6 +62,9 @@ optech_mentions:
   - title: "LDK #2120 adds support for finding a route to a receiver who is using blinded paths"
     url: /en/newsletters/2023/06/28/#ldk-2120
 
+  - title: "LDK #2411 and #2412 add an API for constructing payment paths for blinded payments"
+    url: /en/newsletters/2023/08/30/#ldk-2411
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

@@ -66,6 +66,9 @@ optech_mentions:
   - title: "MilkSad team disclosed CVE-2023-39910 insecure entropy in Libbitcoin `bx` command"
     url: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
 
+  - title: "Matt Morehouse disclosed fake channels vulnerability against four major LN node implementations"
+    url: /en/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

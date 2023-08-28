@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Proposed joinpool construction for Ark could be less interactive with covenants"
     url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

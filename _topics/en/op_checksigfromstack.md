@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Fraud proofs for outdated backup state enforcable onchain with OP_CSFS + OP_CAT"
     url: /en/newsletters/2023/08/23/#fraud-proofs-for-outdated-backup-state
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
