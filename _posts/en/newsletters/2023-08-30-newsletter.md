@@ -79,7 +79,50 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Is there an economic incentive to switch from P2WPKH to P2TR?]({{bse}}119301)
+  Murch walks through common wallet usage patterns while comparing weights of
+  transaction inputs and outputs for P2WPKH and [P2TR][topic taproot] output types. He concludes
+  by saying: "Overall, you’d save up to 15.4% in transaction fees by using P2TR
+  instead of P2WPKH. If you make vastly more small payments than you receive
+  payments, you may save up to 1.5% by sticking to P2WPKH."
+
+- [What is the BIP324 encrypted packet structure?]({{bse}}119369)
+  Pieter Wuille outlines the network packet structure for [version 2 P2P
+  transport][topic v2 p2p transport] as proposed in [BIP324][] with
+  progress tracked in [Bitcoin Core #27634][].
+
+- [What is the false positive rate for compact block filters?]({{bse}}119142)
+  Murch answers from [BIP158][]'s section on [block filter][bip158 filters]
+  parameter selection that notes a false positive rate for [compact block
+  filters][topic compact block filters] of 1/784931, the equivalent of 1 block
+  every 8 weeks for a wallet monitoring about 1000 output scripts.
+
+- [What opcodes are part of the MATT proposal?]({{bse}}119239)
+  Salvatoshi explains his Merkleize All The Things ([MATT][merkle.fun]) proposal (see
+  Newsletters [#226][news226 matt], [#249][news249 matt], and [#254][news254
+  matt]), including its currently proposed opcodes:
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify],
+  OP_CHECKCONTRACTVERIFY, and [OP_CAT][].
+
+- [Is there a well defined last Bitcoin block?]({{bse}}119223)
+  RedGrittyBrick and Pieter Wuille point out that while there is not a block
+  height limit, the current consensus rules will not permit a new block beyond
+  Bitcoin's unsigned 32-bit timestamp limit in the year 2106. Transaction
+  [nLockTime][topic timelocks] values have the same [timestamp limit]({{bse}}110666).
+
+- [Why are miners setting the locktime in coinbase transactions?]({{bse}}110474)
+  Bordalix answers a long-open question about miners seemingly using the coinbase
+  transaction's locktime field to communicate something. A mining pool
+  operator explained that they "repurpose those 4 bytes to hold the stratum
+  session data for faster reconnect" and went on to [elaborate on the scheme][twitter satofishi].
+
+- [Why doesn't Bitcoin Core use auxiliary randomness when performing Schnorr signatures?]({{bse}}119042)
+  Matthew Leon asks why [BIP340][] recommends using auxiliary randomness when
+  generating a [schnorr signature][topic schnorr signatures] nonce for
+  protection against [side channel][topic side channels] attacks, yet Bitcoin
+  Core doesn't provide auxiliary randomness in its implementation. Andrew Chow
+  answers that the current implementation is still safe and that no PR has been
+  opened to address the recommendation.
 
 ## Releases and release candidates
 
@@ -167,7 +210,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     [#7347][lnd #7347], and [#7472][lnd #7472].
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472" %}
+{% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}
 [LND v0.17.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc1
 [core lightning 23.08]: https://github.com/ElementsProject/lightning/releases/tag/v23.08
 [delv mashup]: https://delvingbitcoin.org/t/combined-ctv-apo-into-minimal-txhash-csfs/60/6
@@ -178,3 +221,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [black mashup]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021907.html
 [news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [stateless funding]: https://gnusha.org/lightning-dev/2023-08-27.log
+[bip158 filters]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki#block-filters
+[merkle.fun]: https://merkle.fun/
+[news254 matt]: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
+[news249 matt]: /en/newsletters/2023/05/03/#matt-based-vaults
+[news226 matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
+[twitter satofishi]: https://twitter.com/satofishi/status/1693537663985361038
