@@ -5,7 +5,6 @@
     <a href="https://music.amazon.com/podcasts/d7540633-146f-4733-b716-4b38bafa8020/bitcoin-optech-podcast" title="Subscribe using Amazon Music"><img src="/img/podcast/amazon.png" alt="Amazon Music icon" /></a>
     <a href="https://open.spotify.com/show/5UnB50h4O1jKaq5AyfN9Qo" title="Subscribe using Spotify"><img src="/img/podcast/spotify.png" alt="Spotify icon" /></a>
     <a href="https://pca.st/tb9hbxoa" title="Subscribe using Pocket Casts"><img src="/img/podcast/pocket_casts.png" alt="Pocket Casts icon" /></a>
-    <a href="https://www.stitcher.com/show/1059448" title="Subscribe using Stitcher"><img src="/img/podcast/stitcher.png" alt="Stitcher icon" /></a>
     <a href="https://castbox.fm/channel/id5330863" title="Subscribe using Castbox"><img src="/img/podcast/castbox.png" alt="Castbox icon" /></a>
     <a href="https://podcastindex.org/podcast/6071192" title="Listen on Podcast 2.0 players"><img src="/img/podcast/podcast-index.png" alt="Podcast Index icon" /></a>
     <a href="https://anchor.fm/bitcoin-optech/" title="Listen on Anchor.fm"><img src="/img/podcast/anchor.png" alt="Anchor.fm icon" /></a>
