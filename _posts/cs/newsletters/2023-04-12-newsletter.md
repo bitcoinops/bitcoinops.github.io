@@ -138,7 +138,7 @@ zvažte upgrade či pomoc s testováním.*
 - [Libsecp256k1 0.3.1][] je  **bezpečnostním vydáním** opravujícím
   kód, který by měl běžet v konstantním čase, ale neběžel, když byl
   použit Clang 14 nebo vyšší. Tato zranitelnost mohla umožnit druh
-  [nepřímého útoku][topic side channels] spojený s časováním operací.
+  [útoku postranními kanály][topic side channels] spojený s časováním operací.
   Autoři doporučují provést aktualizaci.
 
 

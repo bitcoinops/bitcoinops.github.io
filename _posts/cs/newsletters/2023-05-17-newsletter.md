@@ -150,7 +150,7 @@ zvažte upgrade či pomoc s testováním.*
   verzí 13 a vyšší. Jak bylo autory [popsáno][secp ml], nová verze
   GCC se snaží optimalizovat kód libsecp, který byl navržen tak, aby běžel
   v pevném množství času. Kvůli optimalizaci je možné za určitých podmínek
-  spustit [útok na vedlejší kanál][topic side channels]. Patří se poznamenat,
+  spustit [útok postranními kanály][topic side channels]. Patří se poznamenat,
   že Bitcoin Core ECDH nepoužívá. Vývojáři pracují na mechanismu detekce
   podobných problémů v budoucnosti.
 
