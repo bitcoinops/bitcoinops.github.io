@@ -116,7 +116,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 
 - [Libsecp256k1 #1313][] přináší automatické testování vývojovými verzemi kompilátorů
   GCC a Clang. Testování může odhalit změny způsobující běh některého kódu
-  libsecp256k1 v proměnlivém čase, který může vést k [útokům vedlejšími kanály][topic
+  libsecp256k1 v proměnlivém čase, který může vést k [útokům postranními kanály][topic
   side channels]. [Zpravodaj č. 246][news246 secp] poukazuje na jednu příležitost,
   kde se tak mohlo stát, a [zpravodaj č. 251][news251 secp] odkazuje na jinou a na
   oznámení o plánech na podobné testování.
