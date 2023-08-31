@@ -49,7 +49,7 @@ infrastructure software.
     - LND 0.16.0
 
     There was some follow-up discussion on the mailing list and on
-    [IRC][stateless funding].
+    [IRC][stateless funding]. {% assign timestamp="21:11" %}
 
 - **Covenant mashup using `TXHASH` and `CSFS`:** Brandon Black
   [posted][black mashup] to the Bitcoin-Dev mailing list a proposal for
@@ -66,7 +66,7 @@ infrastructure software.
 
     The proposal received some discussion on the mailing list, with
     [additional revisions][delv mashup] posted and discussed on the
-    Delving Bitcoin forum.
+    Delving Bitcoin forum. {% assign timestamp="1:30" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -84,37 +84,37 @@ answers posted since our last update.*
   transaction inputs and outputs for P2WPKH and [P2TR][topic taproot] output types. He concludes
   by saying: "Overall, you’d save up to 15.4% in transaction fees by using P2TR
   instead of P2WPKH. If you make vastly more small payments than you receive
-  payments, you may save up to 1.5% by sticking to P2WPKH."
+  payments, you may save up to 1.5% by sticking to P2WPKH." {% assign timestamp="34:44" %}
 
 - [What is the BIP324 encrypted packet structure?]({{bse}}119369)
   Pieter Wuille outlines the network packet structure for [version 2 P2P
   transport][topic v2 p2p transport] as proposed in [BIP324][] with
-  progress tracked in [Bitcoin Core #27634][].
+  progress tracked in [Bitcoin Core #27634][]. {% assign timestamp="37:31" %}
 
 - [What is the false positive rate for compact block filters?]({{bse}}119142)
   Murch answers from [BIP158][]'s section on [block filter][bip158 filters]
   parameter selection that notes a false positive rate for [compact block
   filters][topic compact block filters] of 1/784931, the equivalent of 1 block
-  every 8 weeks for a wallet monitoring about 1000 output scripts.
+  every 8 weeks for a wallet monitoring about 1000 output scripts. {% assign timestamp="39:23" %}
 
 - [What opcodes are part of the MATT proposal?]({{bse}}119239)
   Salvatoshi explains his Merkleize All The Things ([MATT][merkle.fun]) proposal (see
   Newsletters [#226][news226 matt], [#249][news249 matt], and [#254][news254
   matt]), including its currently proposed opcodes:
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify],
-  OP_CHECKCONTRACTVERIFY, and [OP_CAT][].
+  OP_CHECKCONTRACTVERIFY, and [OP_CAT][]. {% assign timestamp="40:27" %}
 
 - [Is there a well defined last Bitcoin block?]({{bse}}119223)
   RedGrittyBrick and Pieter Wuille point out that while there is not a block
   height limit, the current consensus rules will not permit a new block beyond
   Bitcoin's unsigned 32-bit timestamp limit in the year 2106. Transaction
-  [nLockTime][topic timelocks] values have the same [timestamp limit]({{bse}}110666).
+  [nLockTime][topic timelocks] values have the same [timestamp limit]({{bse}}110666). {% assign timestamp="41:40" %}
 
 - [Why are miners setting the locktime in coinbase transactions?]({{bse}}110474)
   Bordalix answers a long-open question about miners seemingly using the coinbase
   transaction's locktime field to communicate something. A mining pool
   operator explained that they "repurpose those 4 bytes to hold the stratum
-  session data for faster reconnect" and went on to [elaborate on the scheme][twitter satofishi].
+  session data for faster reconnect" and went on to [elaborate on the scheme][twitter satofishi]. {% assign timestamp="46:10" %}
 
 - [Why doesn't Bitcoin Core use auxiliary randomness when performing Schnorr signatures?]({{bse}}119042)
   Matthew Leon asks why [BIP340][] recommends using auxiliary randomness when
@@ -122,7 +122,7 @@ answers posted since our last update.*
   protection against [side channel][topic side channels] attacks, yet Bitcoin
   Core doesn't provide auxiliary randomness in its implementation. Andrew Chow
   answers that the current implementation is still safe and that no PR has been
-  opened to address the recommendation.
+  opened to address the recommendation. {% assign timestamp="47:40" %}
 
 ## Releases and release candidates
 
@@ -136,13 +136,13 @@ projects.  Please consider upgrading to new releases or helping to test release 
   bip32] backup and restore, a new experimental plugin for improved
   payment pathfinding, experimental support for [splicing][topic
   splicing], and the ability to pay locally-generated invoices, among
-  many other new features and bug fixes.
+  many other new features and bug fixes. {% assign timestamp="49:21" %}
 
 - [LND v0.17.0-beta.rc1][] is a release candidate for the next major
   version of this popular LN node implementation.  A major new
   experimental feature planned for this release, which could likely
   benefit from testing, is support for "simple taproot channels" as
-  described in LND PR #7904 in the _notable changes_ section.
+  described in LND PR #7904 in the _notable changes_ section. {% assign timestamp="50:24" %}
 
 ## Notable code and documentation changes
 
@@ -156,7 +156,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #27460][] adds a new `importmempool` RPC. The RPC will
   load a `mempool.dat` file and attempt to add the loaded transactions
-  to its mempool.
+  to its mempool. {% assign timestamp="51:16" %}
 
 - [LDK #2248][] provides a built-in system that LDK downstream projects
   can use for tracking the UTXOs referenced in gossip messages.  LN
@@ -165,7 +165,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   processing and relaying spam messages, or attempting to forward
   payments over nonexistent channels (which will always fail).  The new
   built-in `UtxoSource` works for LN nodes connected to a local Bitcoin
-  Core.
+  Core. {% assign timestamp="53:43" %}
 
 - [LDK #2337][] makes it easier to use LDK for building
   [watchtowers][topic watchtowers] that run independently from a user's
@@ -175,21 +175,21 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   decrypt the previously-received encrypted data.  If the decryption
   succeeds, the watchtower can broadcast the decrypted penalty
   transaction.  This protects the user against their counterparty
-  publishing a revoked channel state when the user is unavailable.
+  publishing a revoked channel state when the user is unavailable. {% assign timestamp="55:00" %}
 
 - [LDK #2411][] and [#2412][ldk #2412] add an API for constructing
   payment paths for [blinded payments][topic rv routing].  The PRs help
   separate LDK's code for [onion messages][topic onion messages] (which
   use blinded paths) from blinded paths themselves.  A follow-up in
-  [#2413][ldk #2413] will actually add support for route blinding.
+  [#2413][ldk #2413] will actually add support for route blinding. {% assign timestamp="1:00:16" %}
 
 - [LDK #2507][] adds a workaround for a longstanding issue in another
-  implementation that leads to unnecessary channel force closures.
+  implementation that leads to unnecessary channel force closures. {% assign timestamp="1:04:46" %}
 
 - [LDK #2478][] adds an event that provides information about a forwarded
   [HTLC][topic htlc] that has now been settled, including what channel
   it came from, the amount of the HTLC, and the amount of fee
-  collected from it.
+  collected from it. {% assign timestamp="1:07:22" %}
 
 - [LND #7904][] adds experimental support for "simple taproot
   channels", allowing LN funding and commitment transactions to use
@@ -199,7 +199,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   privacy when channels are closed cooperatively.  LND continues to
   exclusively use [HTLCs][topic htlc], allowing payments starting in a
   taproot channel to continue to be forwarded through other LN nodes
-  that don't support taproot channels.
+  that don't support taproot channels. {% assign timestamp="1:09:07" %}
 
     <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
     listed them in that order rather than by PR number -->
