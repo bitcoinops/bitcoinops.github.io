@@ -8,8 +8,7 @@ share: false
 version: 1
 ---
 
-_Would you like to help translate our publications? See the [CONTRIBUTING
-documentation](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#translations)
-and the [Japanese translation issues and
-PRs](https://github.com/bitcoinops/bitcoinops.github.io/pulls?&q=label%3Alocalization-japanese)
-in our github repo._
+_記事の翻訳を手伝ってみませんか？Githubリポジトリの[CONTRIBUTINGドキュメント
+](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/CONTRIBUTING.md#translations)と
+[日本語翻訳のIssueとPR](https://github.com/bitcoinops/bitcoinops.github.io/pulls?&q=label%3Alocalization-japanese)を
+ご覧ください。_
