@@ -99,7 +99,7 @@ Bitcoin infrastructure software.
     option.  Daftuar later [closed][26438 close] the PR.
 
     It wasn't clear at the time of writing whether anyone would comment
-    further on the topic.
+    further on the topic. {% assign timestamp="0:54" %}
 
 - **Block parsing bug affecting multiple software:** as reported in
   [Newsletter #222][news222 bug], it appeared that a serious bug
@@ -132,7 +132,7 @@ Bitcoin infrastructure software.
     haven't been made public yet.
     We of course also thank all the reviewers of proposals and
     pull requests whose diligent effort prevented innumerable
-    security bugs from making it into released software.
+    security bugs from making it into released software. {% assign timestamp="14:36" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -150,7 +150,7 @@ Since this Review Club meeting, this PR has been closed in favor of
 PR [#26398][bitcoin core #26398], which
 relaxes policy even further by disallowing _only_ 64-byte transactions.
 The relative merits of these two slightly-different policies were
-discussed during the meeting.
+discussed during the meeting. {% assign timestamp="19:32" %}
 
 {% include functions/details-list.md
   q0="Why was the minimum transaction size 82 bytes?
@@ -236,7 +236,7 @@ release candidates.*
 - [Rust Bitcoin 0.28.2][] is a minor release containing a fixes for bugs
   that could "cause some specific transactions and/or blocks to fail to
   deserialize. No known such transactions exist on any public
-  blockchain."
+  blockchain." {% assign timestamp="28:41" %}
 
 - [Bitcoin Core 24.0 RC3][] is a release candidate for the
   next version of the network's most widely used full node
@@ -249,7 +249,7 @@ release candidates.*
   [#223][news223 rbf].  It could also cause problems for transaction
   relay as described in [Newsletter #224][news224 rbf].  Optech
   encourages any services that might be affected to evaluate the RC and
-  participate in the public discussion.
+  participate in the public discussion. {% assign timestamp="29:40" %}
 
 ## Notable code and documentation changes
 
@@ -261,12 +261,12 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #26419][] adds context to the validation interface logs
-  detailing why a transaction is removed from the mempool.
+  detailing why a transaction is removed from the mempool. {% assign timestamp="30:22" %}
 
 - [Eclair #2404][] adds support for Short Channel IDentifier (SCID)
   aliases and [zero-conf channels][topic zero-conf channels]
   even for channel state commitments that don't use [anchor
-  outputs][topic anchor outputs].
+  outputs][topic anchor outputs]. {% assign timestamp="31:21" %}
 
 - [Eclair #2468][] implements [BOLTs #1032][], allowing the ultimate receiver of a payment ([HTLC][topic
   HTLC]) to accept a greater amount than they requested and with a
@@ -275,7 +275,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   amount and expiry delta equal exactly the amount they requested, but
   that exactitude meant a forwarding node could probe the next hop to
   see if it was the final receiver by changing either value by the
-  slightest bit.
+  slightest bit. {% assign timestamp="32:11" %}
 
 - [Eclair #2469][] extends the amount of time it asks the last
   forwarding node to give the next hop to settle a payment.  The last
@@ -284,45 +284,45 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   extra settlement time implies that the next hop may be a routing node
   rather than the receiver.  The PR description for this feature states
   that Core Lightning and LDK already implement this behavior.  See also
-  the description for Eclair #2468 above.
+  the description for Eclair #2468 above. {% assign timestamp="34:31" %}
 
 - [Eclair #2362][] adds support for the `dont_forward` flag for channel
   updates from [BOLTs #999][].  Channel updates change the parameters of
   a channel and are often gossiped to inform other nodes on the network
   about how to use the channel, but when a channel update contains this
-  flag, it should not be forwarded to other nodes.
+  flag, it should not be forwarded to other nodes. {% assign timestamp="35:18" %}
 
 - [Eclair #2441][] allows Eclair to begin receiving onion-wrapped error
   messages of any size.  [BOLT2][] currently recommends 256 byte errors,
   but doesn't forbid longer error messages and [BOLTs #1021][] is open to
   encourage use of 1024-byte error messages encoded using LN's modern
-  Type-Length-Value (TLV) semantics.
+  Type-Length-Value (TLV) semantics. {% assign timestamp="36:40" %}
 
 - [LND #7100][] updates LND to use the latest version of BTCD (as a
   library), fixing the block parsing bug described in the *news* section
-  above.
+  above. {% assign timestamp="38:29" %}
 
 - [LDK #1761][] adds a `PaymentID` parameter to methods for sending
   payments which callers can use to prevent sending multiple identical
   payments.  Additionally, LDK may now continue trying to resend a
   payment indefinitely, rather than the previous behavior of ceasing
   retries after a few blocks of repeated failures; the `abandon_payment`
-  method may be used to prevent further retrying.
+  method may be used to prevent further retrying. {% assign timestamp="38:44" %}
 
 - [LDK #1743][] provides a new `ChannelReady` event when a channel
   becomes ready to use.  Notably, the event may be issued after a
   channel has received a suitable number of confirmations, or it may be
-  issued immediately in the case of a [zero-conf channel][topic zero-conf channels].
+  issued immediately in the case of a [zero-conf channel][topic zero-conf channels]. {% assign timestamp="40:57" %}
 
 - [BTCPay Server #4157][] adds opt-in support for a new version of the
-  checkout interface.  See the PR for screenshots and video previews.
+  checkout interface.  See the PR for screenshots and video previews. {% assign timestamp="42:05" %}
 
 - [BOLTs #1032][] allows the ultimate receiver of a payment
   ([HTLC][topic HTLC]) to accept a greater amount than they requested
   and with a longer time before it expires than they requested.  This
   makes it more difficult for a forwarding node to determine that the
   next hop is the receiver by slightly tweaking a payment's parameters.
-  See the description of Eclair #2468 above for more information.
+  See the description of Eclair #2468 above for more information. {% assign timestamp="42:45" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26438,26419,5674,2404,2468,2469,2362,2441,7100,1761,1743,4157,1032,1021,999,26398,11423" %}
