@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine annonce la divulgation responsable d'une vulnérabilité affectant d'anciennes implémentations de LN
-et résume une suggestion pour une synthèse des propositions d'opcodes pour les covenants. Sont également incluses nos sections
+Le bulletin de cette semaine relaie la divulgation responsable d'une vulnérabilité affectant d'anciennes implémentations de LN
+et évoque une synthèse des propositions d'opcodes pour les covenants. Sont également incluses nos sections
 régulières concernant les questions et réponses populaires sur le Bitcoin Stack Exchange, les nouvelles versions et
 les versions candidates, et les changements apportés aux principaux logiciels de l'infrastructure Bitcoin.
 
