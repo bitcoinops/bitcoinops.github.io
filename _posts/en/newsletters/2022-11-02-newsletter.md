@@ -18,7 +18,6 @@ candidates---including a security critical update for LND---and
 descriptions of notable changes to popular Bitcoin infrastructure
 software.
 
-
 ## News
 
 - **Mempool consistency:** Anthony Towns started a [discussion][towns
@@ -88,7 +87,7 @@ software.
 
     Towns's post received multiple insightful responses, with discussion
     ongoing as of this writing.  We will provide an update in next
-    week's newsletter.
+    week's newsletter. {% assign timestamp="3:15" %}
 
 - **BIP324 message identifiers:** Pieter Wuille [posted][wuille bip324]
   to the Bitcoin-Dev mailing list a response to the update of the
@@ -101,7 +100,7 @@ software.
   the risk of conflict between different future proposals to add
   messages to the network.  Wuille describes the tradeoffs between four
   different approaches to this problem and requests opinions about the
-  subject from the community.
+  subject from the community. {% assign timestamp="17:55" %}
 
 - **LN routing failure attribution:** LN payment attempts can end in
   failure for a variety of reasons, from the ultimate receiver refusing
@@ -128,7 +127,7 @@ software.
     payments][topic spontaneous payments] where each routing node is paid
     one sat even if the ultimate payment fails.  The spender could then
     identify which hop the payment failed at by comparing how many
-    satoshis it sent to how many satoshis it received back.
+    satoshis it sent to how many satoshis it received back. {% assign timestamp="21:24" %}
 
 - **Anchor outputs workaround:** Bastien Teinturier [posted][teinturier
   fees] to the Lightning-Dev mailing list a [proposal][bolts #1036] for using
@@ -147,7 +146,7 @@ software.
 
     He's seeking support from other LN developers for the idea of providing
     multiple feerate HTLCs.  All discussion as of this writing has
-    occurred on Teinturier's [PR][bolts #1036].
+    occurred on Teinturier's [PR][bolts #1036]. {% assign timestamp="33:08" %}
 
 ## Releases and release candidates
 
@@ -157,7 +156,7 @@ release candidates.*
 
 - [LND 0.15.4-beta][] and [0.14.4-beta][lnd 0.14.4-beta] are **security
   critical** releases containing a bug fix for a problem processing
-  recent blocks.  All users should upgrade.
+  recent blocks.  All users should upgrade. {% assign timestamp="42:27" %}
 
 - [Bitcoin Core 24.0 RC2][] is a release candidate for the
   next version of the network's most widely used full node
@@ -168,7 +167,7 @@ release candidates.*
   believe could lead to problems for merchant services as described
   in newsletters [#222][news222 rbf] and [#223][news223 rbf].  Optech
   encourages any services that might be affected to evaluate the RC and
-  participate in the public discussion.
+  participate in the public discussion. {% assign timestamp="51:36" %}
 
 ## Notable code and documentation changes
 
@@ -189,31 +188,32 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   discard any file containing a block not processed by synchronization.
   The combination of a small data allowance and repeated use of the
   `getblockfrompeer` RPC could cause multiple block-files ineligible for
-  pruning, and cause a pruned node to exceed its data allowance.
+  pruning, and cause a pruned node to exceed its data allowance. {% assign timestamp="52:50" %}
 
 - [Bitcoin Core #25957][] improves the performance of rescans for
-  descriptor wallets by using the [block filter index][topic compact block filters] (if enabled)
-to skip blocks that don't spend or create UTXOs relevant to the wallet.
+  descriptor wallets by using the [block filter index][topic compact block
+  filters] (if enabled) to skip blocks that don't spend or create UTXOs relevant
+  to the wallet. {% assign timestamp="55:18" %}
 
 - [Bitcoin Core #23578][] uses [HWI][topic hwi] and recently merged support for
   [BIP371][] (see [Newsletter #207][news207 bc22558]) to allow external signing
-  support for [taproot][topic taproot] keypath spends.
+  support for [taproot][topic taproot] keypath spends. {% assign timestamp="56:42" %}
 
 - [Core Lightning #5646][] updates the experimental implementation of
   [offers][topic offers] to remove [x-only public keys][news72 xonly]
   (instead using [compressed pubkeys][], which contain an extra byte).
   It also implements forwarding of [blinded payments][], another
   experimental protocol.  The PR description warns it "does not include
-  generating and actually paying invoices with blinded payments."
+  generating and actually paying invoices with blinded payments." {% assign timestamp="57:53" %}
 
 - [LND #6517][] adds a new RPC and event that allow a user to monitor
   when an incoming payment ([HTLC][topic htlc]) is fully locked in by
   the commitment transaction being updated to reflect the new channel
-  balance distribution.
+  balance distribution. {% assign timestamp="1:01:18" %}
 
 - [LND #7001][] adds new fields to the forwarding history RPC
   (`fwdinghistory`) indicating which channel partner forwarded a payment
-  (HTLC) to us and the partner to whom we relayed the payment.
+  (HTLC) to us and the partner to whom we relayed the payment. {% assign timestamp="1:03:52" %}
 
 - [LND #6831][] updates the HTLC interceptor implementation (see
   [Newsletter #104][news104 intercept]) to automatically reject an
@@ -223,18 +223,18 @@ to skip blocks that don't spend or create UTXOs relevant to the wallet.
   channel partner will need to force close the channel to protect its
   funds.  This merged PR's automatic rejection before that expiry
   ensures the channel stays open.  The spender can always try to send
-  the payment again.
+  the payment again. {% assign timestamp="1:05:58" %}
 
 <!-- The commit below appears to be a direct push to LND's master branch -->
 - [LND 609cc8b][] adds a [security policy][lnd secpol], including
-  instructions for reporting vulnerabilities.
+  instructions for reporting vulnerabilities. {% assign timestamp="1:08:42" %}
 
 - [Rust Bitcoin #957][] adds an API for signing [PSBTs][topic psbt].
-  It does not support signing [taproot][topic taproot] spends yet.
+  It does not support signing [taproot][topic taproot] spends yet. {% assign timestamp="1:09:15" %}
 
 - [BDK #779][] adds support for [low-r grinding][topic low-r grinding]
   of ECDSA signatures, which allows reducing the size for about half of
-  all signatures by one byte.
+  all signatures by one byte. {% assign timestamp="1:10:08" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23927,25957,5646,6517,7001,6831,957,779,1036,845,1378,23578,22558" %}
