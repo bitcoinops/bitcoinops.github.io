@@ -76,3 +76,4 @@ cache, a mempool is most useful when it is "hot" and must be limited in size
 to fit in memory.
 Next week's section will explore the use of incentive compatibility as
 a metric for keeping the most useful transactions in mempools.
+
