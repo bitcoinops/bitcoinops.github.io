@@ -49,6 +49,9 @@ optech_mentions:
   - title: "Experimental implementation of FROST announced"
     url: /en/newsletters/2023/08/23/#frost-software-frostsnap-announced
 
+  - title: Idea for privacy enhanced transaction cosigning using FROST
+    url: /en/newsletters/2023/09/06/#privacy-enhanced-co-signing
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature
