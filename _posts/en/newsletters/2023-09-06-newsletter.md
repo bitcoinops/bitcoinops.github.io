@@ -121,8 +121,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   transactions that are nonstandard and thus rejected by default nodes
   on mainnet.
 
-
-- [LDK #2468][] Offer outbound payments FIXME:bitschmidty
+- [LDK #2468][] allows users to provide a `payment_id` which is encrypted in an
+  invoice request's metadata field. LDK checks the metadata in received invoices
+  and will only pay if it recognizes the id and hasn't already paid another
+  invoice for it. This PR is part of [LDK's work][ldk bolt12] toward
+  implementing [BOLT12][topic offers].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28354,2468" %}
@@ -134,3 +137,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [frost]: https://eprint.iacr.org/2020/852
 [libsecp cl]: https://github.com/bitcoin-core/secp256k1/blob/master/CHANGELOG.md
 [libsecp256k1 0.4.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.4.0
+[ldk bolt12]: https://github.com/lightningdevkit/rust-lightning/issues/1970
