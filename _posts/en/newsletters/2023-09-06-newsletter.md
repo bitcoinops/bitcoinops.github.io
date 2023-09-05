@@ -115,7 +115,12 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #28354][] default acceptnonstdtxn=0 on all chains FIXME:glozow
+- [Bitcoin Core #28354][] changes the default value of
+  `-acceptnonstdtxn` to 0 on testnet, which is the default on all
+  other networks. This change may help applications avoid creating
+  transactions that are nonstandard and thus rejected by default nodes
+  on mainnet.
+
 
 - [LDK #2468][] Offer outbound payments FIXME:bitschmidty
 
