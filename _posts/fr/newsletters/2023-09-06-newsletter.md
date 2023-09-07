@@ -80,7 +80,7 @@ versions ou d'aider à tester les versions candidates.*
   modifications][libsecp cl] du projet pour plus d'informations.
 
 - [LND v0.17.0-beta.rc2][] est un candidat à la version majeure suivante de cette implémentation populaire de nœud LN.
-  Une nouvelle fonctionnalité expérimentale majeure prévue pour cette version, qui pourrait bénéficier de tests, est la prise 
+  Une nouvelle fonctionnalité expérimentale majeure prévue pour cette version, qui pourrait bénéficier de tests, est la prise
   en charge des "canaux taproot simples".
 
 ## Changements notables dans le code et la documentation
