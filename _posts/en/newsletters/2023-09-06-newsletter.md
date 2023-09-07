@@ -59,7 +59,7 @@ popular Bitcoin infrastructure software.
     compressed transactions.
 
     The idea received a moderate amount of discussion, mostly around
-    ideas for saving a small amount of additional space per input.
+    ideas for saving a small amount of additional space per input. {% assign timestamp="1:13" %}
 
 - **Privacy enhanced co-signing:** Nick Farrow [posts][farrow cosign] to
   the Bitcoin-Dev mailing list about how a [scriptless threshold
@@ -88,7 +88,7 @@ popular Bitcoin infrastructure software.
     transaction.  All the service will know is when it signed and any
     data the user provided to authenticate themselves with the service.
 
-    The idea received some discussion on the mailing list.
+    The idea received some discussion on the mailing list. {% assign timestamp="14:43" %}
 
 ## Releases and release candidates
 
@@ -98,12 +98,12 @@ projects.  Please consider upgrading to new releases or helping to test release 
 - [Libsecp256k1 0.4.0][] is the latest release of this library for
   Bitcoin-related cryptographic operations.  The new version includes a
   module with an implementation of ElligatorSwift encoding; see the
-  project [changelog][libsecp cl] for more information.
+  project [changelog][libsecp cl] for more information. {% assign timestamp="35:43" %}
 
 - [LND v0.17.0-beta.rc2][] is a release candidate for the next major
   version of this popular LN node implementation.  A major new
   experimental feature planned for this release, which could likely
-  benefit from testing, is support for "simple taproot channels".
+  benefit from testing, is support for "simple taproot channels". {% assign timestamp="37:26" %}
 
 ## Notable code and documentation changes
 
@@ -119,13 +119,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   `-acceptnonstdtxn` to 0 on testnet, which is the default on all
   other networks. This change may help applications avoid creating
   transactions that are nonstandard and thus rejected by default nodes
-  on mainnet.
+  on mainnet. {% assign timestamp="38:43" %}
 
 - [LDK #2468][] allows users to provide a `payment_id` which is encrypted in an
   invoice request's metadata field. LDK checks the metadata in received invoices
   and will only pay if it recognizes the id and hasn't already paid another
   invoice for it. This PR is part of [LDK's work][ldk bolt12] toward
-  implementing [BOLT12][topic offers].
+  implementing [BOLT12][topic offers]. {% assign timestamp="40:33" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28354,2468" %}
