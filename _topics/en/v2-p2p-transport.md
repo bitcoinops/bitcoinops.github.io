@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Bitcoin Core #28008 adds encryption and decryption routines for v2 transport protocol encryption"
     url: /en/newsletters/2023/08/16/#bitcoin-core-28008
 
+  - title: "Bitcoin Core PR Review Club summary about internal serialization changes for BIP324"
+    url: /en/newsletters/2023/09/13/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
