@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Cette semaine, la newsletter décrit une nouvelle technique de compression des transactions Bitcoin et résume une idée de
+Cette semaine, la newsletter s'intéresse à une nouvelle technique de compression des transactions Bitcoin et à une proposition de
 co-signature améliorée pour la confidentialité des transactions. Elle inclut également nos sections régulières annonçant les
 nouvelles versions de logiciels et les versions candidates, et décrivant les principaux changements apportés aux logiciels
 d'infrastructure Bitcoin les plus répandus.
@@ -18,8 +18,8 @@ d'infrastructure Bitcoin les plus répandus.
   [spécification préliminaire][compress spec] et une [proposition d'implémentation][compress impl] de la compression des
   transactions Bitcoin. Les transactions plus petites seraient plus pratiques à relayer via des supports à bande passante limitée,
   tels que par satellite ou par stéganographie (par exemple, en encodant une transaction dans une image bitmap). Les algorithmes de
-  compression traditionnels exploitent le fait que la plupart des données structurées ont certains éléments qui se produisent plus
-  fréquemment que d'autres éléments. Cependant, les transactions Bitcoin typiques sont principalement composées d'éléments
+  compression traditionnels exploitent le fait que certains éléments de la plupart des données structurées sont plus
+  fréquent que d'autres. Cependant, les transactions Bitcoin typiques sont principalement composées d'éléments
   uniformes---des données qui semblent aléatoires---comme des clés publiques et des hachages.
 
      La proposition de Briar aborde cette question en utilisant plusieurs approches :
@@ -44,7 +44,7 @@ d'infrastructure Bitcoin les plus répandus.
      sérialisée régulière. Cela signifie que les connexions à haut débit continueront probablement d'utiliser le format de
      transaction régulier et seules les transmissions à faible bande passante utiliseront des transactions compressées.
 
-     L'idée a suscité une quantité modérée de discussion, principalement autour d'idées visant à économiser une petite quantité
+     L'idée a suscité une quantité modérée de discussion, principalement autour de propositions visant à économiser une petite quantité
      d'espace supplémentaire par entrée.
 
 - **Co-signature améliorée pour la confidentialité :** Nick Farrow a [publié][farrow cosign] sur la liste de diffusion Bitcoin-Dev
