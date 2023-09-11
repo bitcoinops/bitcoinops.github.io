@@ -171,7 +171,10 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #26567][] Wallet: estimate the size of signed inputs using descriptors FIXME:Murchandamus
+- [Bitcoin Core #26567][] updates the wallet to estimate the weight of a
+  signed input from the [descriptor][topic descriptors] instead of doing a signing dry-run.
+  This approach will succeed even for more complex [miniscript][topic miniscript]
+  descriptors, where the dry-run approach was insufficient.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26567" %}
