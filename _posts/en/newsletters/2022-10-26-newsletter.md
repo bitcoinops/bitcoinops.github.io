@@ -95,12 +95,14 @@ infrastructure software.
     for the upcoming version of Bitcoin Core 24.0 and it is Optech's
     recommendation that any service depending on zero conf transactions
     carefully evaluate the risks, perhaps starting by reading the emails
-    linked in [last week's newsletter][news222 rbf].
+    linked in [last week's newsletter][news222 rbf]. {% assign timestamp="1:33" %}
 
 - **CoreDev.tech transcripts:** prior to The Atlanta Bitcoin Conference
   (TabConf), about 40 developers participated in a CoreDev.tech event.
   [Transcripts][coredev xs] for about half of the meetings from the event
   have been provided by Bryan Bishop.  Notable discussions included:
+
+  {% assign timestamp="53:38" %}
 
     - [Transport encryption][p2p encryption]: a conversation about the
       recent update to the [version 2 encrypted transport
@@ -207,7 +209,7 @@ infrastructure software.
     Jeremy Rubin [replied][rubin ephemeral] in support of the proposal
     but noted that it doesn't work for any contract that can't use v3
     transactions.  Several other developers also discussed the concept,
-    all of them seeming to find it appealing as of this writing.
+    all of them seeming to find it appealing as of this writing. {% assign timestamp="1:09:44" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -224,39 +226,39 @@ answers posted since our last update.*
   Vojtěch Strnad asks why someone would choose to use 1-of-1 multisig over
   P2WPKH given P2WPKH is cheaper and has a larger anonymity set. Murch lists a
   variety of resources showing at least one entity spending millions of 1-of-1
-  UTXOs over the years, although the motivations remain unclear.
+  UTXOs over the years, although the motivations remain unclear. {% assign timestamp="1:23:48" %}
 
 - [Why would a transaction have a locktime in the year 1987?]({{bse}}115549)
   1440000bytes points to a comment from Christian Decker referencing [a section][bolt 3 commitment]
   from the BOLT 3 Lightning spec that allocates the locktime field as "upper 8
   bits are 0x20, lower 24 bits are the lower 24 bits of the obscured commitment
-  transaction number".
+  transaction number". {% assign timestamp="1:24:12" %}
 
 - [What is the size limit on the UTXO set, if any?]({{bse}}115439)
   Pieter Wuille answers that there is no consensus limit on the UTXO set size and that the
   rate of growth of the UTXO set is bounded by the block size which limits the
   number of UTXOs that can be created in a given block. In a [related answer][se
   murch utxo calcs], Murch estimates that it would take about 11 years to create
-  a UTXO for every person on Earth.
+  a UTXO for every person on Earth. {% assign timestamp="1:24:48" %}
 
 - [Why is `-blockmaxweight` set to 3996000 by default?]({{bse}}115499)
   Vojtěch Strnad points out that the default setting for `-blockmaxweight` in
   Bitcoin Core is 3,996,000 which is less than the segwit limit of 4,000,000
   weight units (WU). Pieter Wuille explains that the difference allows
   buffer space for a miner to add a larger coinbase transaction with additional
-  outputs beyond the default coinbase transaction created by the block template.
+  outputs beyond the default coinbase transaction created by the block template. {% assign timestamp="1:25:31" %}
 
 - [Can a miner open a Lightning channel with a coinbase output?]({{bse}}115588)
   Murch points out challenges with a miner creating a Lightning channel using an
   output from their coinbase transaction including delays in closing the channel
   given the coinbase maturation period as well as needing to continuously renegotiate the
   channel open while hashing due to the coinbase transaction's hash constantly
-  changing during mining.
+  changing during mining. {% assign timestamp="1:26:40" %}
 
 - [What is the history on how previous soft forks were tested prior to being considered for activation?]({{bse}}115434)
   Michael Folkson quotes a [recent mailing list post][aj soft fork testing] from Anthony Towns which
   describes the testing around the P2SH, CLTV, CSV, segwit, [taproot][topic
-  taproot], CTV, and [Drivechain][topic sidechains] proposals.
+  taproot], CTV, and [Drivechain][topic sidechains] proposals. {% assign timestamp="1:27:44" %}
 
 ## Releases and release candidates
 
@@ -265,7 +267,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LDK 0.0.112][] is a release of this library for building LN-enabled
-  applications.
+  applications. {% assign timestamp="1:28:27" %}
 
 - [Bitcoin Core 24.0 RC2][] is a release candidate for the
   next version of the network's most widely used full node
@@ -276,7 +278,7 @@ release candidates.*
   believe could lead to problems for merchant services as described
   in the newsletters for this week and last week.  Optech encourages any
   services that might be affected to evaluate the RC and participate in
-  the public discussion.
+  the public discussion. {% assign timestamp="1:28:44" %}
 
 ## Notable code and documentation changes
 
@@ -291,7 +293,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   `sendtxrcncl` (send transaction reconciliation), that allows a node to
   signal to a peer that it supports [erlay][topic erlay].  This PR adds
   just the first part of the erlay protocol---other parts are needed
-  before it can be used.
+  before it can be used. {% assign timestamp="1:29:17" %}
 
 - [Eclair #2463][] and [#2461][eclair #2461] update Eclair's
   implementation of the [interactive and dual funding protocols][topic
@@ -299,7 +301,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   rbf] and also be confirmed (i.e. spend an output that's already in the
   block chain).  These changes ensure RBF can be used and that none of
   the fees contributed by an Eclair user will be used to help confirm any
-  of their peer's previous transactions.
+  of their peer's previous transactions. {% assign timestamp="1:31:38" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23443,2463,2461,25353" %}
