@@ -60,7 +60,7 @@ of notable merges to popular Bitcoin infrastructure projects.
     limits] to note that adding limits now would not only increase code
     complexity but could also lead to people losing their money if they
     already received bitcoins to a script which requires a large witness
-    to spend.
+    to spend. {% assign timestamp="0:10" %}
 
 - **Transaction replacement option:** as reported in Newsletters
   [#205][news205 rbf] and [#208][news208 rbf], Bitcoin Core merged
@@ -97,7 +97,7 @@ of notable merges to popular Bitcoin infrastructure projects.
     in its current state, Towns's PR will enable full RBF by default
     starting 1 May 2023.  Users objecting to full RBF will still be able
     to prevent their nodes from participating by setting the
-    `mempoolfullrbf` option to false.
+    `mempoolfullrbf` option to false. {% assign timestamp="5:34" %}
 
 - **Validity rollups research:** John Light [posted][light ml ru] to the
   Bitcoin-Dev mailing list a link to a [detailed research report][light
@@ -112,7 +112,7 @@ of notable merges to popular Bitcoin infrastructure projects.
 
     Light's research describes validity rollups in depth, looks at how
     support for them could be added to Bitcoin, and examines various
-    concerns with their implementation.
+    concerns with their implementation. {% assign timestamp="18:02" %}
 
 - **MuSig2 security vulnerability:** Jonas Nick [posted][nick musig2] to
   the Bitcoin-Dev mailing list about a vulnerability he and several
@@ -127,7 +127,7 @@ of notable merges to popular Bitcoin infrastructure projects.
     relatively rare cases" and encourages anyone using (or soon planning
     to use) MuSig2 to reach out to him and his co-authors with
     questions.  The draft BIP for MuSig2 is expected to be updated soon
-    to address the issue.
+    to address the issue. {% assign timestamp="52:00" %}
 
 - **Minimum relayable transaction size:** Greg Sanders [posted][sanders
   min] to the Bitcoin-Dev mailing list a request for Bitcoin Core to
@@ -156,7 +156,7 @@ of notable merges to popular Bitcoin infrastructure projects.
     allow additional experimentation and usage without changing the
     current risk profile.  Sanders has a [pull request][bitcoin core
     #26265] open to make this change.  See also [Newsletter #99][news99
-    min] for prior discussion related to this proposed change.
+    min] for prior discussion related to this proposed change. {% assign timestamp="55:55" %}
 
 - **BIP324 update:** Dhruv M [posted][dhruv 324] to the Bitcoin-Dev
   mailing list a summary of several updates to the BIP324 proposal for a
@@ -171,7 +171,7 @@ of notable merges to popular Bitcoin infrastructure projects.
     during transaction announcement, prevent tampering with connections
     (or at least make it easier to detect tampering), and also make P2P
     connection censorship and [eclipse attacks][topic eclipse attacks]
-    more difficult.
+    more difficult. {% assign timestamp="1:01:52" %}
 
 ## Changes to services and client software
 
@@ -181,29 +181,29 @@ wallets and services.*
 - **btcd v0.23.2 released:**
   btcd v0.23.2 (and [v0.23.1][btcd 0.23.1]) adds [addr v2][topic addr v2] and additional
   support for [PSBTs][topic psbt], [taproot][topic taproot], and [MuSig2][topic
-  musig] as well as other enhancements and fixes.
+  musig] as well as other enhancements and fixes. {% assign timestamp="1:05:30" %}
 
 - **ZEBEDEE announces hosted channel libraries:**
   In a recent [blog post][zbd nbd], ZEBEDEE announced an open source wallet (Open
   Bitcoin Wallet), Core Lightning plugin (Poncho), Lightning client (Cliché),
-  and Lightning library (Immortan) which focus on support for [hosted channels][].
+  and Lightning library (Immortan) which focus on support for [hosted channels][]. {% assign timestamp="1:06:30" %}
 
 - **Cashu launches with Lightning support:**
   E-cash software [Cashu][cashu github] launches as a proof-of-concept wallet with
-  Lightning receive support.
+  Lightning receive support. {% assign timestamp="1:08:47" %}
 
 - **Address explorer Spiral launches:**
   [Spiral][spiral explorer] is an open source public address [explorer][topic block explorers] that uses
-  cryptography to provide privacy to users querying information about an address.
+  cryptography to provide privacy to users querying information about an address. {% assign timestamp="1:13:10" %}
 
 - **BitGo announces Lightning support:**
   In a [blog post][bitgo lightning], BitGo describes its custodial Lightning
   service that runs nodes on behalf of its clients and maintains payment
-  channel liquidity.
+  channel liquidity. {% assign timestamp="1:16:15" %}
 
 - **ZeroSync project launches:**
   The [ZeroSync][zerosync github] project is using [Utreexo][topic utreexo] and
-  STARK proofs to sync a Bitcoin node, as occurs in Initial Block Download (IBD).
+  STARK proofs to sync a Bitcoin node, as occurs in Initial Block Download (IBD). {% assign timestamp="1:17:42" %}
 
 ## Releases and release candidates
 
@@ -213,9 +213,9 @@ release candidates.*
 
 - [Bitcoin Core 24.0 RC2][] is a release candidate for the
   next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+  implementation.  A [guide to testing][bcc testing] is available. {% assign timestamp="1:20:16" %}
 
-- [LND 0.15.3-beta][] is a minor release that fixes several bugs.
+- [LND 0.15.3-beta][] is a minor release that fixes several bugs. {% assign timestamp="1:21:22" %}
 
 ## Notable code and documentation changes
 
@@ -229,11 +229,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [Bitcoin Core #23549][] adds the `scanblocks` RPC that identifies
   relevant blocks in a given range for a provided set of [descriptors][topic descriptors].
   The RPC is only available on nodes that maintain a [compact block
-  filter][topic compact block filters] index (`-blockfilterindex=1`).
+  filter][topic compact block filters] index (`-blockfilterindex=1`). {% assign timestamp="1:21:38" %}
 
 - [Bitcoin Core #25412][] adds a new `/deploymentinfo` REST endpoint which
   contains information about soft fork deployments, similar to the
-  existing `getdeploymentinfo` RPC.
+  existing `getdeploymentinfo` RPC. {% assign timestamp="1:23:29" %}
 
 - [LND #6956][] allows configuring the minimum channel reserve enforced
   on payments received from a channel's partner.  A node won't accept a
@@ -242,11 +242,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   default in LND.  This ensures the partner will need to pay at least
   the reserve amount as a penalty if it attempts to close a channel in a
   outdated state.  This merged PR allows lowering or raising the reserve
-  amount.
+  amount. {% assign timestamp="1:23:49" %}
 
 - [LND #7004][] updates the version of the BTCD library used by LND,
   fixing the security vulnerability previously described in this
-  newsletter.
+  newsletter. {% assign timestamp="1:25:31" %}
 
 - [LDK #1625][] begins tracking information about the liquidity of
   distant channels which the local node has attempted to route payments
@@ -254,7 +254,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   which have either successfully been routed through the remote node or
   which failed due to apparent insufficient funds.  This information,
   adjusted for its age, is used as input for probabilistic pathfinding
-  (see [Newsletter #163][news163 pr]).
+  (see [Newsletter #163][news163 pr]). {% assign timestamp="1:25:54" %}
 
 ## Footnotes
 
