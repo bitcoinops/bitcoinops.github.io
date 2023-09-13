@@ -76,7 +76,7 @@ notable changes to popular Bitcoin infrastructure software.
         allowing her to safely go offline after her publication.
 
     Law's proposals were still receiving initial feedback as this
-    description was being written.
+    description was being written. {% assign timestamp="18:45" %}
 
 - **Recommendations for unique address servers:** Ruben Somsen
   [posted][somsen post] to the Bitcoin-Dev mailing list a
@@ -102,7 +102,7 @@ notable changes to popular Bitcoin infrastructure software.
     server will be further committing to the privacy loss.
 
     Discussion of the suggestions was ongoing on both the mailing list
-    and the document at the time this summary was being written.
+    and the document at the time this summary was being written. {% assign timestamp="1:32" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -113,7 +113,7 @@ question below to see a summary of the answer from the meeting.*
 [Make AddrFetch connections to fixed seeds][review club 26114]
 is a PR by Martin Zumsande that makes `AddrFetch` connections to
 the [fixed seeds][] (hard-coded IP addresses) instead of just adding
-them to `AddrMan` (the database of our peers).
+them to `AddrMan` (the database of our peers). {% assign timestamp="23:32" %}
 
 {% include functions/details-list.md
   q0="When a new node starts up from scratch, it must first connect
@@ -168,11 +168,11 @@ release candidates.*
 
 - [LND v0.15.2-beta][] is a security critical emergency release that
   fixes a parsing error that prevented LND from being able to parse
-  certain blocks.  All users should upgrade.
+  certain blocks.  All users should upgrade. {% assign timestamp="35:04" %}
 
 - [Bitcoin Core 24.0 RC1][] is the first release candidate for the
   next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+  implementation.  A [guide to testing][bcc testing] is available. {% assign timestamp="38:14" %}
 
 ## Notable code and documentation changes
 
@@ -188,7 +188,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   Using the flag, `--tor.encryptkey`, LND encrypts the private key and the
   encrypted blob is written to the same file on disk, allowing users to
   still keep the same functionality (like refreshing a hidden service),
-  but adds protection when running in untrusted environments.
+  but adds protection when running in untrusted environments. {% assign timestamp="39:18" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6500" %}
