@@ -35,7 +35,7 @@ software.
     users that opt-in to its client protocol.
 
     None of the specifications had received any discussion on the
-    mailing list as of this writing.
+    mailing list as of this writing. {% assign timestamp="1:10" %}
 
 - **LN messaging changes for PTLCs:** as the first LN implementation
   with experimental support for channels using [P2TR][topic taproot]
@@ -54,7 +54,7 @@ software.
   might even be required to support three or more different protocols
   simultaneously, to the disadvantage of all.
 
-    Sander's summary has not received any comments as of this writing.
+    Sander's summary has not received any comments as of this writing. {% assign timestamp="53:22" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -74,7 +74,7 @@ The PR derives two concrete classes from the `Transport` class,
 `V1Transport` (what we have today) and `V2Transport` (encrypted on the
 wire). This PR is part of the
 [BIP324][topic v2 p2p transport]
-_Version 2 P2P Encrypted Transport Protocol_ [project][v2 p2p tracking pr].
+_Version 2 P2P Encrypted Transport Protocol_ [project][v2 p2p tracking pr]. {% assign timestamp="28:31" %}
 
 {% include functions/details-list.md
   q0="What is the distinction between [*net*][net] and
@@ -159,7 +159,7 @@ release candidates.*
 - [LND v0.17.0-beta.rc2][] is a release candidate for the next major
   version of this popular LN node implementation.  A major new
   experimental feature planned for this release, which could likely
-  benefit from testing, is support for "simple taproot channels".
+  benefit from testing, is support for "simple taproot channels". {% assign timestamp="1:18:22" %}
 
 ## Notable code and documentation changes
 
@@ -174,7 +174,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [Bitcoin Core #26567][] updates the wallet to estimate the weight of a
   signed input from the [descriptor][topic descriptors] instead of doing a signing dry-run.
   This approach will succeed even for more complex [miniscript][topic miniscript]
-  descriptors, where the dry-run approach was insufficient.
+  descriptors, where the dry-run approach was insufficient. {% assign timestamp="1:20:52" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26567" %}
