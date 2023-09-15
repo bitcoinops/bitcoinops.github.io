@@ -65,7 +65,7 @@ projects.
 
     Neither of these needs to be done at the same time as implementing
     relay of v3 transactions, but several respondents to the thread
-    seemed to be in favor of all the proposed changes.
+    seemed to be in favor of all the proposed changes. {% assign timestamp="1:30" %}
 
 - **LN flow control:** Rene Pickhardt [posted][pickhardt ml valve] to the Lightning-Dev
   mailing list a summary of [recent research][pickhardt bitmex valve] he performed on using
@@ -104,7 +104,7 @@ projects.
     The discussion appeared to be ongoing at the time this summary was
     being written, but we expect that several new insights will come in
     the following weeks and months as node operators begin experimenting
-    with their channels `htlc_maximum_msat` parameters.
+    with their channels `htlc_maximum_msat` parameters. {% assign timestamp="22:06" %}
 
 ## Releases and release candidates
 
@@ -114,7 +114,7 @@ release candidates.*
 
 - [Bitcoin Core 24.0 RC1][] is the first release candidate for the
   next version of the network's most widely used full node
-  implementation.  A [guide to testing][bcc testing] is available.
+  implementation.  A [guide to testing][bcc testing] is available. {% assign timestamp="44:38" %}
 
 ## Notable code and documentation changes
 
@@ -133,13 +133,13 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   [PTLCs][topic ptlc], but a partial implementation just requires a third party to
   delay forwarding the funds until the offline node comes back online.
   Trampoline nodes can provide that delay and so this PR makes use of
-  them to allow experimentation with async payments.
+  them to allow experimentation with async payments. {% assign timestamp="51:28" %}
 
 - [BOLTs #962][] removes support for the original fixed-length onion
   data format from the specification.  The upgraded variable-length
   format was added to the specification over three years ago and test
   results mentioned in the commit message indicate almost no one is
-  using the older format any more.
+  using the older format any more. {% assign timestamp="54:38" %}
 
 - [BIPs #1370][] revises [BIP330][] ([Erlay][topic erlay] for reconciliation-based
   transaction announcements) to reflect the current proposed
@@ -153,11 +153,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   - Renaming `sendrecon` to `sendtxrcncl`,
   `reqreconcil` to `reqrecon`, and `reqbisec` to `reqsketchtext`.
 
-  - Adding details for negotiating support using `sendtxrcncl`.
+  - Adding details for negotiating support using `sendtxrcncl`. {% assign timestamp="55:29" %}
 
 - [BIPs #1367][] simplifies [BIP118][]'s description of
   [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] by referring to BIPs [340][bip340] and
-  [341][bip341] as much as possible.
+  [341][bip341] as much as possible. {% assign timestamp="1:03:04" %}
 
 - [BIPs #1349][] adds [BIP351][] titled “Private Payments”,
   describing a cryptographic protocol inspired by
@@ -172,17 +172,17 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   same notification address per receiver, this proposal uses OP_RETURN
   outputs labeled with the search key `PP` and a
   notification code specific to the sender-receiver pair to get the receiver's attention and establish the
-  shared secret for improved privacy.
+  shared secret for improved privacy. {% assign timestamp="1:08:54" %}
 
 - [BIPs #1293][] adds [BIP372][] titled "Pay-to-contract tweak fields for PSBT". This BIP
   proposes a standard for including additional [PSBT][topic psbt] fields
   that provide signing devices with contract commitment data required to participate in
-  [Pay-to-Contract][topic p2c] protocols (see [Newsletter #184][news184 psbt]).
+  [Pay-to-Contract][topic p2c] protocols (see [Newsletter #184][news184 psbt]). {% assign timestamp="1:12:26" %}
 
 - [BIPs #1364][] adds additional detail to the text for the
   [BIP300][] specification of [drivechains][topic sidechains].  The
   related specification of [BIP301][] for enforcing drivechain's blind
-  merge mining rules is also updated.
+  merge mining rules is also updated. {% assign timestamp="1:14:47" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2435,962,1370,1367,1349,1293,1364" %}
