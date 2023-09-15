@@ -86,6 +86,13 @@ Version 2_.
        et la validation des messages de la couche *net*."
   a0link="https://bitcoincore.reviews/28165#l-22"
 
+  q1="Plus concrètement, citez des exemples de classes ou de fonctions que nous associerions à *net_processing*,
+      et, en contraste, à *net* ?"
+  a1="*net_processing* : `PeerManager`, `ProcessMessage`.
+      *net* : `CNode`, `ReceiveMsgBytes`, `CConnMan`."
+  a1link="https://bitcoincore.reviews/28165#l-25"
+
+  
 %}
 
 ## Mises à jour et versions candidates
@@ -115,7 +122,7 @@ Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 {% include linkers/issues.md v=2 issues="26567" %}[LND v0.17.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc2
 [net]: https://github.com/bitcoin/bitcoin/blob/master/src/net.h
 [net_processing]: https://github.com/bitcoin/bitcoin/blob/master/src/net_processing.h
-[news195 taro]: /fr/newsletters/2022/04/13/#transferable-token-scheme
+[news195 taro]: /en/newsletters/2022/04/13/#transferable-token-scheme
 [osuntokun bips]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021938.html
 [osuntokun blip post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004089.html
 [osuntokun blip]: https://github.com/lightning/blips/pull/29
