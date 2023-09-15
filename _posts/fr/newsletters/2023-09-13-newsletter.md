@@ -92,7 +92,6 @@ Version 2_.
       *net* : `CNode`, `ReceiveMsgBytes`, `CConnMan`."
   a1link="https://bitcoincore.reviews/28165#l-25"
 
-  
 %}
 
 ## Mises à jour et versions candidates
