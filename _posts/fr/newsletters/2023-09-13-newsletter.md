@@ -104,11 +104,44 @@ Version 2_.
       qui amène le nœud à rejeter un bloc valide selon le consensus."
   a3link="https://bitcoincore.reviews/28165#l-45"
 
-q4="`CNetMsgMaker` et `Transport` "sérialisent" tous les deux des messages. Quelle est la différence dans ce qu'ils font ?"
+q4="`CNetMsgMaker` et `Transport` sérialisent tous les deux des messages. Quelle est la différence dans ce qu'ils font ?"
   a4="`CNetMsgMaker` effectue la sérialisation des structures de données
       en octets ; `Transport` reçoit ces octets, ajoute
       (sérialise) l'en-tête et l'envoie réellement."
   a4link="https://bitcoincore.reviews/28165#l-60"
+
+  q5="Dans le processus de transformation d'un objet d'application comme une `CTransactionRef` (transaction)
+      en octets / paquets réseau, que se passe-t-il ? Quelles structures de données sont-elles transformées dans le processus ?"
+  a5="`msgMaker.Make()` sérialise le message `CTransactionRef` en
+      appelant `SerializeTransaction()`, puis `PushMessage()` place le
+      message sérialisé dans la file d'attente `vSendMsg`, puis `SocketSendData()`
+      ajoute un en-tête/une somme de contrôle (après les modifications de cette PR) et demande au transport le prochain paquet à envoyer,
+      puis appelle `m_sock->Send()`."
+  a5link="https://bitcoincore.reviews/28165#l-83"
+
+  q6="Combien d'octets sont envoyés sur le réseau pour le message `sendtxrcncl` (en prenant ce message, utilisé
+      dans [Erlay][topic erlay], comme exemple simple)?"
+  a6="36 octets : 24 pour l'en-tête (4 octets de magie, 12 octets de commande,
+      4 octets de taille de message, 4 octets de somme de contrôle), puis 12 octets pour la
+      charge utile (4 octets de version, 8 octets de sel)."
+  a6link="https://bitcoincore.reviews/28165#l-86"
+
+  q7="Après le retour de `PushMessage()`, avons-nous déjà envoyé les octets correspondant à ce message au pair
+      (oui/non/peut-être) ? Pourquoi ?"
+  a7="Toutes les réponses sont possibles. **Oui** : nous (*net_processing*) n'avons pas besoin de faire
+      autre chose pour que le message soit envoyé.
+      **Non** : il est extrêmement improbable qu'il ait été reçu par le destinataire au moment où cette fonction retourne.
+      **Peut-être** : s'il n'y a aucune file d'attente, il aura atteint
+      la couche de socket du noyau, mais s'il y a des files d'attente, il
+      attendra encore qu'elles se vident avant d'arriver
+      à l'OS."
+  a7link="https://bitcoincore.reviews/28165#l-112"
+
+  q8="Quels threads accèdent à `CNode::vSendMsg` ?"
+  a8="`ThreadMessageHandler` si le message est envoyé de manière synchrone
+      (\"de manière optimiste\") ; `ThreadSocketHandler` s'il est mis en file d'attente
+      et récupéré et envoyé ultérieurement."
+  a8link="https://bitcoincore.reviews/28165#l-120"
 
 %}
 
