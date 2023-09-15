@@ -104,6 +104,12 @@ Version 2_.
       qui amène le nœud à rejeter un bloc valide selon le consensus."
   a3link="https://bitcoincore.reviews/28165#l-45"
 
+q4="`CNetMsgMaker` et `Transport` "sérialisent" tous les deux des messages. Quelle est la différence dans ce qu'ils font ?"
+  a4="`CNetMsgMaker` effectue la sérialisation des structures de données
+      en octets ; `Transport` reçoit ces octets, ajoute
+      (sérialise) l'en-tête et l'envoie réellement."
+  a4link="https://bitcoincore.reviews/28165#l-60"
+
 %}
 
 ## Mises à jour et versions candidates
