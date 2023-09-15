@@ -92,6 +92,11 @@ Version 2_.
       *net* : `CNode`, `ReceiveMsgBytes`, `CConnMan`."
   a1link="https://bitcoincore.reviews/28165#l-25"
 
+ q2="Est-ce que le BIP324 nécessite des modifications de la couche *net*, de la couche *net_processing*, ou des deux ?
+      Est-ce que cela affecte la politique ou le consensus ?"
+  a2="Ces modifications se font uniquement au niveau de la couche *net* ; elles n'affectent pas le consensus."
+  a2link="https://bitcoincore.reviews/28165#l-37"
+
 %}
 
 ## Mises à jour et versions candidates
