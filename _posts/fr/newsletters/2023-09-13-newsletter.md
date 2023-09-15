@@ -76,7 +76,7 @@ profond de sérialisation et de désérialisation. Ces classes ne réalisent pas
 
 Le PR dérive deux classes concrètes de la classe `Transport`, `V1Transport` (ce que nous avons aujourd'hui) et `V2Transport` (chiffré sur
 le fil). Ce PR fait partie du [BIP324][topic v2 p2p transport] et du [projet][v2 p2p tracking pr] _Protocole de transport chiffré P2P
-Version 2_ .
+Version 2_.
 
 {% include functions/details-list.md
   q0="Quelle est la distinction entre [*net*][net] et [*net_processing*][net_processing] ?"
@@ -86,12 +86,14 @@ Version 2_ .
        et la validation des messages de la couche *net*."
   a0link="https://bitcoincore.reviews/28165#l-22"
 
-  q1="Plus concrètement, citez des exemples de classes ou de fonctions que nous associerions à *net_processing*, et, en contraste, à *net* ?"
+  q1="Plus concrètement, citez des exemples de classes ou de fonctions que nous associerions à *net_processing*,
+      et, en contraste, à *net* ?"
   a1="*net_processing* : `PeerManager`, `ProcessMessage`.
       *net* : `CNode`, `ReceiveMsgBytes`, `CConnMan`."
   a1link="https://bitcoincore.reviews/28165#l-25"
 
-  q2="Est-ce que le BIP324 nécessite des modifications de la couche *net*, de la couche *net_processing*, ou des deux ? Est-ce que cela affecte la politique ou le consensus ?"
+  q2="Est-ce que le BIP324 nécessite des modifications de la couche *net*, de la couche *net_processing*, ou des deux ?
+      Est-ce que cela affecte la politique ou le consensus ?"
   a2="Ces modifications se font uniquement au niveau de la couche *net* ; elles n'affectent pas le consensus."
   a2link="https://bitcoincore.reviews/28165#l-37"
 
@@ -108,7 +110,8 @@ Version 2_ .
       (sérialise) l'en-tête et l'envoie réellement."
   a4link="https://bitcoincore.reviews/28165#l-60"
 
-  q5="Dans le processus de transformation d'un objet d'application comme une `CTransactionRef` (transaction) en octets / paquets réseau, que se passe-t-il ? Quelles structures de données sont-elles transformées dans le processus ?"
+  q5="Dans le processus de transformation d'un objet d'application comme une `CTransactionRef` (transaction)
+      en octets / paquets réseau, que se passe-t-il ? Quelles structures de données sont-elles transformées dans le processus ?"
   a5="`msgMaker.Make()` sérialise le message `CTransactionRef` en
       appelant `SerializeTransaction()`, puis `PushMessage()` place le
       message sérialisé dans la file d'attente `vSendMsg`, puis `SocketSendData()`
@@ -116,13 +119,15 @@ Version 2_ .
       puis appelle `m_sock->Send()`."
   a5link="https://bitcoincore.reviews/28165#l-83"
 
-  q6="Combien d'octets sont envoyés sur le réseau pour le message `sendtxrcncl` (en prenant ce message, utilisé dans [Erlay][topic erlay], comme exemple simple)?"
+  q6="Combien d'octets sont envoyés sur le réseau pour le message `sendtxrcncl` (en prenant ce message, utilisé
+      dans [Erlay][topic erlay], comme exemple simple)?"
   a6="36 octets : 24 pour l'en-tête (4 octets de magie, 12 octets de commande,
       4 octets de taille de message, 4 octets de somme de contrôle), puis 12 octets pour la
       charge utile (4 octets de version, 8 octets de sel)."
   a6link="https://bitcoincore.reviews/28165#l-86"
 
-  q7="Après le retour de `PushMessage()`, avons-nous déjà envoyé les octets correspondant à ce message au pair (oui/non/peut-être) ? Pourquoi ?"
+  q7="Après le retour de `PushMessage()`, avons-nous déjà envoyé les octets correspondant à ce message au pair
+      (oui/non/peut-être) ? Pourquoi ?"
   a7="Toutes les réponses sont possibles. **Oui** : nous (*net_processing*) n'avons pas besoin de faire
       autre chose pour que le message soit envoyé.
       **Non** : il est extrêmement improbable qu'il ait été reçu par le destinataire au moment où cette fonction retourne.
@@ -134,7 +139,7 @@ Version 2_ .
 
   q8="Quels threads accèdent à `CNode::vSendMsg` ?"
   a8="`ThreadMessageHandler` si le message est envoyé de manière synchrone
-      (« de manière optimiste ») ; `ThreadSocketHandler` s'il est mis en file d'attente
+      (\"de manière optimiste\") ; `ThreadSocketHandler` s'il est mis en file d'attente
       et récupéré et envoyé ultérieurement."
   a8link="https://bitcoincore.reviews/28165#l-120"
 %}
