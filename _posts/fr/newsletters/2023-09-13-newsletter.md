@@ -97,6 +97,13 @@ Version 2_.
   a2="Ces modifications se font uniquement au niveau de la couche *net* ; elles n'affectent pas le consensus."
   a2link="https://bitcoincore.reviews/28165#l-37"
 
+  q3="Quels sont des exemples de bugs d'implémentation qui pourraient entraîner un changement de consensus (accidentel) avec ce PR ?"
+  a3="Un bug qui limite la taille maximale des messages à moins de
+      4 Mo, ce qui peut amener le nœud à rejeter un bloc considéré comme valide par d'autres
+      nœuds ; un bug dans la désérialisation des blocs
+      qui amène le nœud à rejeter un bloc valide selon le consensus."
+  a3link="https://bitcoincore.reviews/28165#l-45"
+
 %}
 
 ## Mises à jour et versions candidates
