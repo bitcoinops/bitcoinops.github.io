@@ -42,7 +42,7 @@ popular Bitcoin infrastructure software.
     Neigut notes that some nodes are already adjusting their fees based
     on channel capacity, and that fee ratecards would provide a more
     efficient way for node operators to communicate their intentions to the network than
-    frequently advertising new feerates via the LN gossip network.
+    frequently advertising new feerates via the LN gossip network. {% assign timestamp="0:51" %}
 
 - **Bitcoin implementation designed for testing soft forks on signet:**
   Anthony Towns [posted][towns bi] to the Bitcoin-Dev mailing list a
@@ -60,7 +60,7 @@ popular Bitcoin infrastructure software.
     Towns is seeking constructive criticism of the idea for this new
     testing implementation, called [Bitcoin Inquisition][], as well as
     reviews of the [pull requests][bi prs] adding the initial set of
-    soft forks to it.
+    soft forks to it. {% assign timestamp="11:35" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -78,25 +78,25 @@ answers posted since our last update.*
   wallet][topic bip32] is not possible, other onchain data can be used to
   fingerprint wallet software including types of inputs used, types of outputs
   created, order of inputs and outputs in the transaction, [coin
-  selection][topic coin selection] algorithm, and use of [timelocks][topic timelocks].
+  selection][topic coin selection] algorithm, and use of [timelocks][topic timelocks]. {% assign timestamp="34:10" %}
 
 - [Why is there a 5-day gap between the genesis block and block 1?]({{bse}}115344)
   Murch notes that the gap in the timeline could be explained by the genesis
   block having a higher difficulty target than required, Satoshi setting the
   block's timestamp in the past, or the [original Bitcoin software waiting][github
-  jrubin annotated] for a peer before starting to mine.
+  jrubin annotated] for a peer before starting to mine. {% assign timestamp="38:08" %}
 
 - [Is it possible to set RBF as always-on in bitcoind?]({{bse}}115360)
   Michael Folkson and Murch explain the `walletrbf` configuration option and
   list a series of related changes involving defaulting to [RBF][topic rbf] in the
   GUI, defaulting to RBF in RPCs, and using [`mempoolfullrbf`][news208
-  mempoolfullrbf] to allow replacements without signaling.
+  mempoolfullrbf] to allow replacements without signaling. {% assign timestamp="42:09" %}
 
 - [Why would I need to ban peer nodes on the Bitcoin network?]({{bse}}115183)
   In contrast to [discouraging a peer][bitcoin 23.x banman], user RedGrittyBrick
   explains that a node operator could choose to manually ban a peer using the
   [`setban`][setban rpc] RPC if the peer is misbehaving, a suspected malicious or surveillance
-  node, or part of a cloud provider's network, among other reasons.
+  node, or part of a cloud provider's network, among other reasons. {% assign timestamp="45:53" %}
 
 ## Releases and release candidates
 
@@ -105,11 +105,11 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 0.12.1][] is a maintenance release containing several
-  bug fixes.
+  bug fixes. {% assign timestamp="49:06" %}
 
 - [Bitcoin Core 24.0 RC1][] is the first release candidate for the
   next version of the network's most widely used full node
-  implementation.
+  implementation. {% assign timestamp="49:17" %}
 
 ## Notable code and documentation changes
 
@@ -122,11 +122,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Bitcoin Core #26116][] allows the `importmulti` RPC to import a
   watch-only item even if the wallet's private keys are encrypted.  This
-  matches the behavior of the old `importaddress` RPC.
+  matches the behavior of the old `importaddress` RPC. {% assign timestamp="59:05" %}
 
 - [Core Lightning #5594][] makes several changes, including adding and
   updating several APIs, to allow the `autoclean` plugin to delete old
-  invoices, payments, and forwarded payments.
+  invoices, payments, and forwarded payments. {% assign timestamp="1:00:04" %}
 
 - [Core Lightning #5315][] allows the user to choose the *channel
   reserve* for a particular channel.  The reserve is the amount a node
@@ -141,7 +141,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
     dangerous---the lower the reserve, the less penalty there is for
     cheating---it can be useful for certain situations.  Most notably,
     setting the reserve to zero can allow the remote peer to spend all of their
-    funds, emptying their channel.
+    funds, emptying their channel. {% assign timestamp="1:01:02" %}
 
 - [Rust Bitcoin #1258][] adds a method for comparing two locktimes to
   determine whether one satisfies the other.  As described in the code
@@ -152,7 +152,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   check a lock time against various other locks e.g., filtering out
   locks which cannot be satisfied. Can also be used to remove the
   smaller value of two `OP_CHECKLOCKTIMEVERIFY` operations within one
-  branch of the script."
+  branch of the script." {% assign timestamp="1:04:09" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26116,5594,5315,1258" %}
