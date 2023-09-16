@@ -28,8 +28,8 @@ optech_mentions:
   - title: "Schéma de jeton transférable Taro"
     url: /en/newsletters/2022/04/13/#transferable-token-scheme
 
-  - title: "Mise à jour sur RGB"
-    url: /en/newsletters/2023/04/19/#rgb-update
+  - title: "Mise à jour RGB"
+    url: /fr/newsletters/2023/04/19/#mise-a-jour-rgb
 
   - title: "Spécifications publiées pour les actifs Taproot"
     url:  /en/newsletters/2023/09/13/#specifications-for-taproot-assets
