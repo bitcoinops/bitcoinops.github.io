@@ -150,9 +150,9 @@ q4="`CNetMsgMaker` et `Transport` sérialisent tous les deux des messages. Quell
 *Nouvelles versions et versions candidates pour les principaux projets d’infrastructure Bitcoin.
  Veuillez envisager de passer aux nouvelles versions ou d’aider à tester les versions candidates.*
 
-- [LND v0.17.0-beta.rc2][] est un candidat à la version pour la prochaine version majeure
-  de cette implémentation populaire de nœud LN. Une nouvelle fonctionnalité expérimentale majeure
-  prévue pour cette version, qui pourrait bénéficier de tests, est la prise en charge des "canaux taproot simples".
+- [LND v0.17.0-beta.rc2][] est une version candidate pour la prochaine mise à jour majeure
+  de cette implémentation populaire de nœud LN. La prise en charge des "canaux taproot simples", qui pourrait bénéficier
+  de tests, est une nouvelle fonctionnalité expérimentale majeure prévue dans cette version.
 
 ## Changements notables dans le code et la documentation
 
