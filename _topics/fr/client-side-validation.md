@@ -14,7 +14,7 @@ aliases:
 ## Requis. Au moins une catégorie à laquelle ce sujet appartient. Voir
 ## le schéma pour les options
 categories:
-  - Protocoles de contrat
+  - Contract Protocols
 
 ## Optionnel. Produit un lien Markdown avec soit "[titre][]" ou
 ## "[titre](lien)"
@@ -26,7 +26,7 @@ categories:
 ## true" pour mettre en gras l'entrée et "date"
 optech_mentions:
   - title: "Schéma de jeton transférable Taro"
-    url: /fr/newsletters/2022/04/13/#schéma-de-jeton-transférable
+    url: /en/newsletters/2022/04/13/#transferable-token-scheme
 
   - title: "Mise à jour sur RGB"
     url: /fr/newsletters/2023/04/19/#mise-à-jour-rgb
@@ -37,7 +37,7 @@ optech_mentions:
 ## Optionnel. Même format que "primary_sources" ci-dessus
 see_also:
   - title: "Pay to Contract (P2C)"
-    link: sujet p2c
+    link: topic p2c
 
 ## Optionnel. Forcer l'affichage (true) ou la non-affichage (false) de l'avis de sujet ébauche.
 ## Par défaut, il s'affiche si le contenu de la page est inférieur à un certain nombre de mots
@@ -69,12 +69,12 @@ créée par Alice est correctement formatée pour attribuer le jeton à une UTXO
 que Bob contrôle.
 
 **[RGB][]** est un protocole de validation côté client qui utilise
-[pay-to-contract][sujet p2c] pour permettre aux transactions de s'engager sur
+[pay-to-contract][topic p2c] pour permettre aux transactions de s'engager sur
 des données supplémentaires, telles que des transferts. Le protocole a été conçu pour
 être très flexible.
 
 **[Actifs Taproot][]**, anciennement appelé **Taro**, est un protocole fortement
-inspiré par RGB qui utilise l'engagement de [taproot][sujet taproot].
+inspiré par RGB qui utilise l'engagement de [taproot][topic taproot].
 La structure permet aux transactions de s'engager envers des données supplémentaires. La construction de Taproot elle-même découle du pay-to-contract. Comme son nom l'indique, le développement initial du protocole est spécifiquement axé sur le transfert d'actifs (c'est-à-dire des jetons numériques représentant des actifs).
 
 Les deux protocoles sont conçus pour être compatibles avec les transactions hors chaîne, telles que les paiements LN. Tout comme le cycle de vie d'un canal LN, une transaction de configuration sur chaîne est publiée, qui engage les jetons au contrôle mutuel des parties impliquées ; une série de transactions hors chaîne s'engage chacune envers l'allocation actuelle des jetons entre les parties ; et une transaction contenant l'engagement final est publiée sur chaîne.
@@ -84,4 +84,4 @@ Seuls les portefeuilles qui souhaitent prendre en charge les actifs RGB ou Tapro
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
 [rgb]: https://rgb.tech/
-[taproot assets]: https://docs.lightning.engineering/the-lightning-network/taproot-assets/
+[actifs taproot]: https://docs.lightning.engineering/the-lightning-network/taproot-assets/
