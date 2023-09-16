@@ -29,10 +29,10 @@ optech_mentions:
     url: /en/newsletters/2022/04/13/#transferable-token-scheme
 
   - title: "Mise à jour sur RGB"
-    url: /fr/newsletters/2023/04/19/#mise-à-jour-rgb
+    url: /en/newsletters/2023/04/19/#rgb-update
 
   - title: "Spécifications publiées pour les actifs Taproot"
-    url:  /fr/newsletters/2023/09/13/#spécifications-pour-les-actifs-taproot
+    url:  /en/newsletters/2023/09/13/#specifications-for-taproot-assets
 
 ## Optionnel. Même format que "primary_sources" ci-dessus
 see_also:
