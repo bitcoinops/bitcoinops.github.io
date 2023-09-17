@@ -4,9 +4,9 @@ title: Miniscript
 ## Requis. Au moins une catégorie à laquelle ce sujet appartient. Voir
 ## le schéma pour les options
 categories:
-  - Scripts and Addresses
-  - Wallet Collaboration Tools
-  - Developer Tools
+  - Scripts et adresses
+  - Outils de collaboration de portefeuille
+  - Outils de développement
 
 ## Requis. Utilisez le format Markdown. Un seul paragraphe. Aucun lien autorisé.
 excerpt: >
@@ -68,7 +68,7 @@ optech_mentions:
     url: /en/newsletters/2022/07/20/#bitcoin-core-24148
 
   - title: "Bilan de l'année 2022 : descripteurs de miniscripts dans Bitcoin Core"
-    url: /en/newsletters/2022/12/21/#descripteurs-de-miniscripts
+    url: /en/newsletters/2022/12/21/#miniscript-descriptors
 
   - title: "Bitcoin Core #24149 ajoute la prise en charge de la signature pour les descripteurs de sortie basés sur P2WSH et miniscripts"
     url: /en/newsletters/2023/02/22/#bitcoin-core-24149
