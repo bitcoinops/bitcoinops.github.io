@@ -4,9 +4,9 @@ title: Miniscript
 ## Requis. Au moins une catégorie à laquelle ce sujet appartient. Voir
 ## le schéma pour les options
 categories:
-  - Scripts et adresses
-  - Outils de collaboration de portefeuille
-  - Outils de développement
+  - Scripts and Addresses
+  - Wallet Collaboration Tools
+  - Developer Tools
 
 ## Requis. Utilisez le format Markdown. Un seul paragraphe. Aucun lien autorisé.
 excerpt: >
