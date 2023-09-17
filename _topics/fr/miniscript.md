@@ -83,6 +83,9 @@ voir_aussi:
   - title: "Miniscript : scripting Bitcoin simplifié"
     link: https://medium.com/blockstream/miniscript-bitcoin-scripting-3aeff3853620
 ---
-La représentation structurée des scripts Bitcoin fournie par miniscript permet aux portefeuilles d'être beaucoup plus dynamiques quant aux scripts qu'ils utilisent. En soutien à cette dynamique, des miniscripts peuvent être créés à l'aide d'un langage de politique facile à écrire. Les politiques sont composables, ce qui permet à toute sous-expression valide d'être remplacée par une autre sous-expression valide (dans certaines limites imposées par le système Bitcoin).
+La représentation structurée des scripts Bitcoin fournie par miniscript permet aux portefeuilles d'être beaucoup plus dynamiques quant
+aux scripts qu'ils utilisent. En soutien à cette dynamique, des miniscripts peuvent être créés à l'aide d'un langage de politique facile
+à écrire. Les politiques sont composables, ce qui permet à toute sous-expression valide d'être remplacée par une autre sous-expression
+valide (dans certaines limites imposées par le système Bitcoin).
 
 {% include references.md %}
