@@ -86,6 +86,9 @@ optech_mentions:
   - title: "LDK #1977 allows serializing and deserializing offers"
     url: /en/newsletters/2023/03/01/#ldk-1977
 
+  - title: "LDK #2371 adds support for managing payments using offers"
+    url: /en/newsletters/2023/09/20/#ldk-2371
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
