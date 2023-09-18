@@ -19,7 +19,7 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: Interactive miniscript demo
+    - title: Démo interactive de miniscript
       link: http://bitcoin.sipa.be/miniscript/
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
@@ -28,60 +28,60 @@ optech_mentions:
   - title: Présentation de Miniscript
     url: /en/newsletters/2019/02/05/#miniscript
 
-  - title: Final stack empty, insights from miniscript development
+  - title: Pile finale vide, aperçus du développement de Miniscript
     url: /en/newsletters/2019/05/29/#final-stack-empty
 
-  - title: Miniscript request for comments
+  - title: Demande de commentaires sur Miniscript
     url: /en/newsletters/2019/08/28/#miniscript-request-for-comments
 
-  - title: "2019 year-in-review: miniscript"
+  - title: "Bilan de l'année 2019 : Miniscript"
     url: /en/newsletters/2019/12/28/#miniscript
 
-  - title: Question about a specification for miniscript
+  - title: Question sur une spécification pour Miniscript
     url: /en/newsletters/2020/03/25/#where-can-i-find-the-miniscript-policy-language-specification
 
-  - title: "Minsc: a new spending policy language based on miniscript"
+  - title: "Minsc : un nouveau langage de politique de dépense basé sur Miniscript"
     url: /en/newsletters/2020/08/05/#new-spending-policy-language
 
-  - title: "PSBT specification updated to improve miniscript compatibility"
+  - title: "La spécification PSBT mise à jour pour améliorer la compatibilité avec Miniscript"
     url: /en/newsletters/2020/08/26/#bips-955
 
-  - title: "Miniscript to warn or fail for safety when mixed time/height locks used"
+  - title: "Miniscript pour avertir ou échouer pour des raisons de sécurité lorsque des verrous de temps/hauteur sont utilisés"
     url: /en/newsletters/2020/09/23/#research-into-conflicts-between-timelocks-and-heightlocks
 
-  - title: "Formal specification of miniscript"
+  - title: "Spécification formelle de Miniscript"
     url: /en/newsletters/2020/12/02/#formal-specification-of-miniscript
 
-  - title: Specter-DIY v1.5.0 adds support for miniscript
+  - title: Specter-DIY v1.5.0 ajoute la prise en charge de Miniscript
     url: /en/newsletters/2021/04/21/#specter-diy-v1-5-0
 
-  - title: "Bitcoin Core #24147 adds backend support for miniscript"
+  - title: "Bitcoin Core #24147 ajoute la prise en charge en arrière-plan de Miniscript"
     url: /en/newsletters/2022/04/13/#bitcoin-core-24147
 
-  - title: "Adapting descriptors and miniscript for hardware signing devices"
+  - title: "Adaptation des descripteurs et de Miniscript pour les appareils de signature matérielle"
     url: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
 
-  - title: "PR Review Club about miniscript support for descriptors"
+  - title: "Club de révision PR sur la prise en charge de Miniscript pour les descripteurs"
     url: /en/newsletters/2022/06/08/#bitcoin-core-pr-review-club
 
-  - title: "Bitcoin Core #24148 adds watch-only support for descriptors containing miniscript"
+  - title: "Bitcoin Core #24148 ajoute la prise en charge en lecture seule pour les descripteurs contenant des miniscripts"
     url: /en/newsletters/2022/07/20/#bitcoin-core-24148
 
-  - title: "2022 year-in-review: miniscript descriptors in Bitcoin Core"
+  - title: "Bilan de l'année 2022 : descripteurs de miniscripts dans Bitcoin Core"
     url: /en/newsletters/2022/12/21/#miniscript-descriptors
 
-  - title: "Bitcoin Core #24149 adds signing support for P2WSH-based miniscript-based output descriptors"
+  - title: "Bitcoin Core #24149 ajoute la prise en charge de la signature pour les descripteurs de sortie basés sur P2WSH et miniscripts"
     url: /en/newsletters/2023/02/22/#bitcoin-core-24149
 
-  - title: "MyCitadel v1.3.0 adds more advanced support for miniscript"
+  - title: "MyCitadel v1.3.0 ajoute une prise en charge plus avancée des miniscripts"
     url: /en/newsletters/2023/05/24/#mycitadel-wallet-adds-enhanced-miniscript-support
 
-  - title: "Bitcoin Core #26567 computes input weight for fee estimation using miniscript and descriptors"
+  - title: "Bitcoin Core #26567 calcule le poids de l'entrée pour l'estimation des frais en utilisant miniscript et descripteurs"
     url: /en/newsletters/2023/09/13/#bitcoin-core-26567
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: "Miniscript: streamlined Bitcoin scripting"
+  - title: "Miniscript : scripting Bitcoin simplifié"
     link: https://medium.com/blockstream/miniscript-bitcoin-scripting-3aeff3853620
 ---
 La représentation structurée des scripts Bitcoin fournie par miniscript permet aux portefeuilles d'être beaucoup plus dynamiques quant
