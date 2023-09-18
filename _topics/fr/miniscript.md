@@ -25,7 +25,7 @@ primary_sources:
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
-  - title: Miniscript presentation
+  - title: Présentation de Miniscript
     url: /en/newsletters/2019/02/05/#miniscript
 
   - title: Final stack empty, insights from miniscript development
