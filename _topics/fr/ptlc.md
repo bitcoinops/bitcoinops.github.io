@@ -62,7 +62,8 @@ optech_mentions:
     url: /en/newsletters/2021/10/13/#multiple-proposed-ln-improvements
 
   - title: "Utilisation des PTLC pour la réception hors ligne sans garde"
-url: /fr/newsletters/2021/10/20/#paiement-hors-ligne-ln-nodes
+    url: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
+
   - title: "Résumé de la conférence des développeurs LN, y compris la discussion sur les PTLC"
     url: /en/newsletters/2021/11/10/#ln-summit-2021-notes
 
