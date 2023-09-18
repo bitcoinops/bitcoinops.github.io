@@ -20,46 +20,46 @@ excerpt: >
 ## Optionnel. Produit un lien Markdown avec "[title][]" ou
 ## "[title](link)"
 primary_sources:
-    - title: v2 Encrypted Transport Protocol proposed BIP
+    - title: Proposition de protocole de transport chiffré v2 BIP
       link: https://github.com/bitcoin/bips/issues/1378
 
 ## Optionnel. Chaque entrée nécessite "title", "url" et "date". Peut également utiliser "feature:
 ## true" pour mettre en gras l'entrée
 optech_mentions:
-  - title: Continuing work on P2P protocol encryption
+  - title: Poursuite des travaux sur le chiffrement du protocole P2P
     url: /en/newsletters/2018/08/21/#p2p-protocol-encryption
 
-  - title: PR opened for initial BIP151 support
+  - title: PR ouverte pour le support initial de BIP151
     url: /en/newsletters/2018/08/28/#pr-opened-for-initial-bip151-support
 
-  - title: Criticism and defense of BIP151 choices
+  - title: Critique et défense des choix de BIP151
     url: /en/newsletters/2018/09/11/#bip151-discussion
 
-  - title: Announcement of v2 P2P transport proposal
+  - title: Annonce de la proposition de transport P2P v2
     url: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal
 
-  - title: "CoreDev.tech discussion of v2 P2P transport proposal"
+  - title: "Discussion sur CoreDev.tech de la proposition de transport P2P v2"
     url: /en/newsletters/2019/06/12/#v2-p2p
 
-  - title: "Update on BIP324 v2 encrypted transport protocol"
+  - title: "Mise à jour sur BIP324, protocole de transport chiffré v2"
     url: /en/newsletters/2022/10/19/#bip324-update
 
-  - title: "CoreDev.tech discussion of v2 P2P encrypted transport proposal"
+  - title: "Discussion sur CoreDev.tech de la proposition de transport chiffré P2P v2"
     url: /en/newsletters/2022/10/26/#transport-encryption
 
-  - title: "Request for feedback on message identifiers for v2 P2P encrypted transport"
+  - title: "Demande de commentaires sur les identifiants de message pour le transport chiffré P2P v2"
     url: /en/newsletters/2022/11/02/#bip324-message-identifiers
 
-  - title: "2022 year-in-review: encrypted v2 transport protocol"
+  - title: "Bilan de l'année 2022 : protocole de transport chiffré v2"
     url: /en/newsletters/2022/12/21/#v2-transport
 
-  - title: "Libsecp256k1 #1129 implements the ElligatorSwift technique for establishing v2 P2P connections"
+  - title: "Libsecp256k1 #1129 implémente la technique ElligatorSwift pour établir des connexions P2P v2"
     url: /en/newsletters/2023/06/28/#libsecp256k1-1129
 
-  - title: "Bitcoin Core #28008 adds encryption and decryption routines for v2 transport protocol encryption"
+  - title: "Bitcoin Core #28008 ajoute des routines de chiffrement et de déchiffrement pour le chiffrement du protocole de transport v2"
     url: /en/newsletters/2023/08/16/#bitcoin-core-28008
 
-  - title: "Bitcoin Core PR Review Club summary about internal serialization changes for BIP324"
+  - title: "Résumé du Bitcoin Core PR Review Club sur les modifications internes de sérialisation pour BIP324"
     url: /en/newsletters/2023/09/13/#bitcoin-core-pr-review-club
 
 ## Optionnel. Même format que "primary_sources" ci-dessus
