@@ -28,7 +28,33 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Bitcoin-like Script Symbolic Trace (B'SST) released:**
+  [B'SST][] is a Bitcoin and Element script analysis tool that provides feedback
+  on scripts including "conditions that the script enforces, possible
+  failures, possible values for data".
+
+- **STARK header chain verifier demo:**
+  The [ZeroSync][news222 zerosync] project announced a [demo][zerosync demo] and
+  [repository][zerosync code] using STARKs to prove and verify a chain of Bitcoin block headers.
+
+- **JoinMarket v0.9.10 released:**
+  The [v0.9.10][joinmarket v0.9.10] release adds [RBF][topic rbf] support for
+  non-[coinjoin][topic coinjoin] transactions and fee estimation updates, among
+  other improvements.
+
+- **BitBox adds miniscript:**
+  The [latest BitBox02 firmware][bitbox blog] adds [miniscript][topic
+  miniscript] support in addition to a security fix and usability enhancements.
+
+- **Machankura announces additive batching feature:**
+  Bitcoin service provider [Machankura][] has [announced][machankura tweet] a
+  beta feature that supports additive [batching][] using RBF in a [taproot][topic
+  taproot] wallet that has a FROST [threshold][topic threshold signature] spending condition.
+
+- **SimLN Lightning simulation tool:**
+  [SimLN][] is a simulation tool for LN researchers and protocol/application
+  developers that generates realistic LN payment activity. SimLN supports
+  LND and CLN with work on Eclair and LDK-Node in progress.
 
 ## Releases and release candidates
 
@@ -124,3 +150,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news252 bumpfee]: /en/newsletters/2023/05/24/#bitcoin-core-27021
 [news229 bumpfee]: /en/newsletters/2022/12/07/#bitcoin-core-pr-review-club
 [Core Lightning 23.08.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.08.1
+[B'SST]: https://github.com/dgpv/bsst
+[news222 zerosync]: /en/newsletters/2022/10/19/#zerosync-project-launches
+[zerosync demo]: https://zerosync.org/demo/
+[zerosync code]: https://github.com/ZeroSync/header_chain
+[joinmarket v0.9.10]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.10
+[bitbox blog]: https://bitbox.swiss/blog/bitbox-08-2023-marinelli-update/
+[Machankura]: https://8333.mobi/
+[machankura tweet]: https://twitter.com/machankura8333/status/1695827506794754104
+[batching]: /en/payment-batching/
+[SimLN]: https://github.com/bitcoin-dev-project/sim-ln
