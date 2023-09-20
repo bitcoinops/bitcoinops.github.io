@@ -28,8 +28,8 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-- **Bitcoin-like Script Symbolic Trace (B'SST) released:**
-  [B'SST][] is a Bitcoin and Element script analysis tool that provides feedback
+- **Bitcoin-like Script Symbolic Tracer (B'SST) released:**
+  [B'SST][] is a Bitcoin and Elements script analysis tool that provides feedback
   on scripts including "conditions that the script enforces, possible
   failures, possible values for data".
 
