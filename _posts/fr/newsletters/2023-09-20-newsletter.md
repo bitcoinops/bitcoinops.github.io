@@ -117,7 +117,7 @@ les versions candidates.*
 [news229 bumpfee]: /fr/newsletters/2022/12/07/#bitcoin-core-pr-review-club
 [Core Lightning 23.08.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.08.1
 [B'SST]: https://github.com/dgpv/bsst
-[news222 zerosync]: /fr/newsletters/2022/10/19/#lancement-du-projet-zeroSsync
+[news222 zerosync]: /fr/newsletters/2022/10/19/#lancement-du-projet-zerosync
 [zerosync demo]: https://zerosync.org/demo/
 [zerosync code]: https://github.com/ZeroSync/header_chain
 [joinmarket v0.9.10]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.10
