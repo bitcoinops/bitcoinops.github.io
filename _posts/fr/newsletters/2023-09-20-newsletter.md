@@ -124,5 +124,5 @@ les versions candidates.*
 [bitbox blog]: https://bitbox.swiss/blog/bitbox-08-2023-marinelli-update/
 [Machankura]: https://8333.mobi/
 [machankura tweet]: https://twitter.com/machankura8333/status/1695827506794754104
-[batching]: /en/payment-batching/
+[additif]: /en/payment-batching/
 [SimLN]: https://github.com/bitcoin-dev-project/sim-ln
