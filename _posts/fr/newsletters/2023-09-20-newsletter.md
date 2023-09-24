@@ -13,9 +13,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Événement journée de recherche sur Bitcoin :** Sergi Delgado Segura et Clara Shikhelman ont [publié][ds brd] sur les listes
+- **Bitcoin : Journée de la recherche :** Sergi Delgado Segura et Clara Shikhelman ont [publié][ds brd] sur les listes
   de diffusion Bitcoin-Dev et Lightning-Dev pour annoncer un événement intitulé _Bitcoin Research Day_ qui se tiendra à New York
-  le 27 octobre. Il s'agira d'un événement en personne avec des présentations de plusieurs chercheurs bien connus dans le domaine
+  le 27 octobre. Il s'agira d'un événement en présentiel avec des présentations de plusieurs chercheurs bien connus dans le domaine
   de Bitcoin. Les réservations sont nécessaires et quelques créneaux de présentation courts (5 minutes) étaient encore disponibles
   au moment de la publication.
 
@@ -67,9 +67,9 @@ les versions candidates.*
 
 - [Bitcoin Core #26152][] s'appuie sur une interface précédemment ajoutée (voir le [Bulletin #252][news252 bumpfee]) pour payer
   tout _déficit de frais_ dans les entrées sélectionnées pour être incluses dans une transaction. Un déficit de frais se produit
-  lorsque le portefeuille doit sélectionner des UTXO avec des ancêtres non confirmés qui paient des frais bas. Afin que la transaction
+  lorsque le portefeuille doit sélectionner des UTXO avec des ascendants non confirmés qui paient des frais bas. Afin que la transaction
   de l'utilisateur paie le taux de frais sélectionné par l'utilisateur, la transaction doit payer des frais suffisamment élevés pour
-  payer à la fois ses ancêtres non confirmés à faible taux de frais et elle-même. En bref, ce PR garantit qu'un utilisateur qui choisit
+  payer à la fois ses ascendants non confirmés à faible taux de frais et elle-même. En bref, ce PR garantit qu'un utilisateur qui choisit
   un taux de frais---en définissant une priorité qui affectera la confirmation de la transaction---recevra réellement cette priorité
   même si le portefeuille doit dépenser des UTXO non confirmés. Tous les autres portefeuilles que nous connaissons ne peuvent garantir
   une certaine priorité basée sur le taux de frais que s'ils ne dépensent que des UTXO confirmés. Voir également le
