@@ -127,6 +127,9 @@ optech_mentions:
   - title: "LND #7904 adds experimental support for taproot channels based on MuSig2"
     url: /en/newsletters/2023/08/30/#lnd-7904
 
+  - title: "LND #7994 adds RPC support for remote signing with the MuSig2 protocol"
+    url: /en/newsletters/2023/09/27/#lnd-7994
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

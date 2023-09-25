@@ -49,6 +49,9 @@ optech_mentions:
   - title: "Improving capital efficiency with multiparty channels in tunable penality channel factories"
     url: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
 
+  - title: "Using covenants to improve LN scalability through extremely efficient channel factories"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"
