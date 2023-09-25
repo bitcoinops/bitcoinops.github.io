@@ -21,7 +21,7 @@ infrastructure software.
   October 27th.  It will be an in-person event with talks from a number
   of well-known Bitcoin researchers.  Reservations are required and
   some short (5 minute) presentation slots were still available as of
-  the posting.
+  the posting. {% assign timestamp="0:52" %}
 
 ## Changes to services and client software
 
@@ -31,30 +31,30 @@ wallets and services.*
 - **Bitcoin-like Script Symbolic Tracer (B'SST) released:**
   [B'SST][] is a Bitcoin and Elements script analysis tool that provides feedback
   on scripts including "conditions that the script enforces, possible
-  failures, possible values for data".
+  failures, possible values for data". {% assign timestamp="9:23" %}
 
 - **STARK header chain verifier demo:**
   The [ZeroSync][news222 zerosync] project announced a [demo][zerosync demo] and
-  [repository][zerosync code] using STARKs to prove and verify a chain of Bitcoin block headers.
+  [repository][zerosync code] using STARKs to prove and verify a chain of Bitcoin block headers. {% assign timestamp="10:53" %}
 
 - **JoinMarket v0.9.10 released:**
   The [v0.9.10][joinmarket v0.9.10] release adds [RBF][topic rbf] support for
   non-[coinjoin][topic coinjoin] transactions and fee estimation updates, among
-  other improvements.
+  other improvements. {% assign timestamp="13:07" %}
 
 - **BitBox adds miniscript:**
   The [latest BitBox02 firmware][bitbox blog] adds [miniscript][topic
-  miniscript] support in addition to a security fix and usability enhancements.
+  miniscript] support in addition to a security fix and usability enhancements. {% assign timestamp="20:18" %}
 
 - **Machankura announces additive batching feature:**
   Bitcoin service provider [Machankura][] has [announced][machankura tweet] a
   beta feature that supports additive [batching][] using RBF in a [taproot][topic
-  taproot] wallet that has a FROST [threshold][topic threshold signature] spending condition.
+  taproot] wallet that has a FROST [threshold][topic threshold signature] spending condition. {% assign timestamp="13:51" %}
 
 - **SimLN Lightning simulation tool:**
   [SimLN][] is a simulation tool for LN researchers and protocol/application
   developers that generates realistic LN payment activity. SimLN supports
-  LND and CLN with work on Eclair and LDK-Node in progress.
+  LND and CLN with work on Eclair and LDK-Node in progress. {% assign timestamp="16:47" %}
 
 ## Releases and release candidates
 
@@ -63,12 +63,12 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 23.08.1][] is a maintenance release that includes
-  several bug fixes.
+  several bug fixes. {% assign timestamp="23:32" %}
 
 - [LND v0.17.0-beta.rc4][] is a release candidate for the next major
   version of this popular LN node implementation.  A major new
   experimental feature planned for this release, which could likely
-  benefit from testing, is support for "simple taproot channels".
+  benefit from testing, is support for "simple taproot channels". {% assign timestamp="24:09" %}
 
 ## Notable code and documentation changes
 
@@ -93,13 +93,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   All other wallets we're aware of can only guarantee a certain
   feerate-based priority if they only spend confirmed UTXOs.  See also
   [Newsletter #229][news229 bumpfee] for the summary of a Bitcoin Core
-  PR Review Club meeting about this PR.
+  PR Review Club meeting about this PR. {% assign timestamp="24:51" %}
 
 - [Bitcoin Core #28414][] updates the `walletprocesspsbt` RPC to include
   a complete serialized transaction (in hex) if the wallet processing
   step resulted in a ready-to-broadcast transaction.  This saves the
   user the step of calling `finalizepsbt` on an already-final
-  [PSBT][topic psbt].
+  [PSBT][topic psbt]. {% assign timestamp="28:21" %}
 
 - [Bitcoin Core #28448][] deprecates the `rpcserialversion` (RPC
   serialization version) configuration parameter.  This option was
@@ -108,20 +108,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   (without any segwit fields).  At this point, all programs should be
   updated to handle segwit transactions and this option should no longer
   be needed, although it can be temporarily re-enabled as a deprecated
-  API as described in the release notes added by the PR.
+  API as described in the release notes added by the PR. {% assign timestamp="30:11" %}
 
 - [Bitcoin Core #28196][] adds a substantial portion of the code
   necessary to support the [v2 transport protocol][topic v2 p2p
   transport] as specified in [BIP324][] along with extensive fuzz
   testing of the code.  This does not enable any new features but
   reduces the amount of code that will need to be added to enable those
-  features in future PRs.
+  features in future PRs. {% assign timestamp="31:20" %}
 
 - [Eclair #2743][] adds a `bumpforceclose` RPC that will manually tell
   the node to spend the [anchor output][topic anchor outputs] from a
   channel to [CPFP fee bump][topic cpfp] a commitment transaction.
   Eclair nodes provide automatic fee bumping when necessary, but this
-  allows an operator to manually access the same ability.
+  allows an operator to manually access the same ability. {% assign timestamp="33:35" %}
 
 - [LDK #2176][] increases the precision with which LDK attempts to
   probabilistically guess the amount of liquidity available in distant
@@ -129,19 +129,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   went as low as 0.01500 BTC in a 1.00000 BTC channel; the new precision
   tracks down to about 0.00006 BTC in the same-sized channel.  This may
   slightly increase the time it takes to find a path for a payment, but
-  tests indicate there is no major difference.
+  tests indicate there is no major difference. {% assign timestamp="34:09" %}
 
 - [LDK #2413][] supports sending payments to [blinded paths][topic rv
   routing] and allows receiving payments to paths where a single final
   hop is hidden (blinded) from the spender.  [PR #2514][ldk #2514], also
-  merged this week, provides other support for blinded payments in LDK.
+  merged this week, provides other support for blinded payments in LDK. {% assign timestamp="35:29" %}
 
 - [LDK #2371][] adds support for managing payments using [offers][topic
   offers].  It allows a client application using LDK to use an offer to
   register its intent to pay an invoice, timing out the payment attempt
   if a sent offer never results in a received invoice, and then using
   existing code in LDK to pay the invoice (including retrying if the
-  first attempts don't succeed).
+  first attempts don't succeed). {% assign timestamp="37:00" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26152,28414,28448,28196,2743,2176,2413,2514,2371" %}
