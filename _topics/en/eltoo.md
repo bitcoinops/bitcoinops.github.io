@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Discussion about the use of the annex field in LN-symmetry"
     url: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
 
+  - title: "Using eltoo-compatible covenants to improve LN scalability"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
