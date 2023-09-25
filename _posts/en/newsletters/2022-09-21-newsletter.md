@@ -38,7 +38,7 @@ software, and popular Bitcoin infrastructure software.
     several drawbacks compared to BIP300 but perhaps provides similar
     enough behavior that APO can be considered as enabling drivechains,
     which some individuals may consider a benefit and others may consider
-    a problem.
+    a problem. {% assign timestamp="1:07" %}
 
 ## Changes to services and client software
 
@@ -47,22 +47,22 @@ wallets and services.*
 
 - **Mempool Project launches Lightning Network explorer:**
   Mempool's open source [Lightning dashboard][mempool lightning] shows aggregate
-  network statistics as well as individual node liquidity and connectivity data.
+  network statistics as well as individual node liquidity and connectivity data. {% assign timestamp="51:19" %}
 
 - **Federation software Fedimint adds Lightning:**
   In a recent [blog post][blockstream blog fedimint], Blockstream outlines
   updates to the [Fedimint][] federated Chaumian e-cash project, including
   Lightning Network support. The project also [announced][fedimint signet tweet]
-  a public [signet][topic signet] and faucet are available.
+  a public [signet][topic signet] and faucet are available. {% assign timestamp="45:23" %}
 
 - **Bitpay wallet improves RBF support:**
   Bitpay [improves][bitpay 12051] its [existing][bitpay 11935] support for
   sending [RBF][topic rbf] transactions by better handling bumping of
-  transactions with multiple receivers.
+  transactions with multiple receivers. {% assign timestamp="52:02" %}
 
 - **Mutiny Lightning wallet announced:**
   Mutiny (previously pLN), a privacy-focused Lightning wallet that uses separate
-  nodes for each channel, was [announced][mutiny wallet].
+  nodes for each channel, was [announced][mutiny wallet]. {% assign timestamp="53:03" %}
 
 ## Notable code and documentation changes
 
@@ -75,24 +75,24 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Core Lightning #5581][] adds a new event notification topic
   "block_added". Subscribing plugins get notified each time a new block
-  is received from bitcoind.
+  is received from bitcoind. {% assign timestamp="56:41" %}
 
 - [Eclair #2418][] and [#2408][eclair #2408] add support for receiving
   payments sent with [blinded routes][topic rv routing].  A spender
   creating a blinded payment isn't provided with the identity of the
   node receiving the payment.  This may improve privacy, especially when
-  used with [unannounced channels][topic unannounced channels].
+  used with [unannounced channels][topic unannounced channels]. {% assign timestamp="54:46" %}
 
 - [Eclair #2416][] adds support for receiving payments requested using the
   [offers][topic offers] protocol as defined in the [proposed BOLT12][].
   This uses the recently-added support for receiving blinded payments
-  (see the previous list item for Eclair #2418).
+  (see the previous list item for Eclair #2418). {% assign timestamp="56:59" %}
 
 - [LND #6335][] adds a `TrackPayments` API that allows subscribing to a
   feed of all local payment attempts.  As described in the PR
   description, this can be used to collect statistical information about
   payments to help better send and route payments in the future, such as
-  for a node performing [trampoline routing][topic trampoline payments].
+  for a node performing [trampoline routing][topic trampoline payments]. {% assign timestamp="58:11" %}
 
 - [LDK #1706][] adds support for using [compact block filters][topic
   compact block filters] as specified in [BIP158][] for downloading
@@ -100,7 +100,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   transactions affecting the wallet, the full block of up to 4 megabytes
   is downloaded.  If it's certain the block doesn't contain any
   transactions affecting the wallet, no additional data is
-  downloaded.
+  downloaded. {% assign timestamp="59:37" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5581,2418,2408,2416,6335,1706" %}
