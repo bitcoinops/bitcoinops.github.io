@@ -111,7 +111,45 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How did peer discovery work in Bitcoin v0.1?]({{bse}}119507)
+  Pieter Wuille describes the evolution of the peer discovery mechanisms in
+  Bitcoin Core from the IRC-based peer finding in the 0.1 release through
+  hardcoded IP addresses to the DNS peer seeding currently used.
+
+- [Would a series of reorgs cause Bitcoin to break because of the 2-hour block time difference restriction?]({{bse}}119677)
+  User fiatjaf asks whether a series of block chain reorgs, potentially the
+  result of [fee sniping][topic fee sniping], could cause issues with Bitcoin's block
+  timestamp restrictions. Antoine Poinsot and Pieter Wuille describe the two
+  block timestamp restrictions (must be greater than the [Median Time Past
+  (MTP)][news146 mtp] and no more than two hours in the future according to the
+  node's local time) and conclude that neither restriction's conditions are exacerbated by a reorg.
+
+- [Is there a way to download blocks from scratch without downloading block headers first?]({{bse}}119503)
+  Pieter Wuille confirms that it is possible to download blocks without headers
+  but points out the downside is that the node would not know if it is on the
+  best chain until after downloading and processing all of the blocks. He
+  contrasts that approach with [headers-first sync][headers first pr] and
+  outlines the P2P messages exchanged for each approach.
+
+- [Where is the bitcoin source code is the 21 million hard cap stated?]({{bse}}119475)
+  Pieter Wuille explains Bitcoin Core's `GetBlockSubsidy` function that defines
+  the subsidy emission schedule. He also links to a previous Stack Exchange
+  discussion about Bitcoin's [20999999.9769 BTC limit]({{bse}}38998) and points to the `MAX_MONEY`
+  constant that is used as a sanity check in consensus validation code.
+
+- [Are blocks containing non-standard transactions relayed through the network or not as in the case of non-standard transactions?]({{bse}}119693)
+  User fiatjaf responds that while transactions that are non-standard according
+  to [policy][policy series] are not relayed on the P2P network by default, blocks containing
+  non-standard transactions are still relayed, assuming the block adheres to
+  consensus rules.
+
+- [When does Bitcoin Core allow you to "Abandon transaction"?]({{bse}}119771)
+  Murch details the three required conditions to be able to
+  [abandon][rpc abandontransaction] a transaction in Bitcoin Core:
+
+  - the transaction has not been previously abandoned
+  - neither the transaction nor a conflicting transaction are confirmed
+  - the transaction is not in the node's mempool
 
 ## Releases and release candidates
 
@@ -232,3 +270,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news244 law]: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
 [eclair keys]: https://github.com/ACINQ/eclair/blob/d3ac58863fbb76f4a44a779a52a6893b43566b29/docs/ManagingBitcoinCoreKeys.md
 [news269 psbt]: /en/newsletters/2023/09/20/#bitcoin-core-28414
+[news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
+[headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
+[policy series]: /en/blog/waiting-for-confirmation/
