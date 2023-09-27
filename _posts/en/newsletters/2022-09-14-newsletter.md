@@ -36,7 +36,7 @@ receives block headers from peers; these headers are sufficient
 to determine the (likely) best chain (the one with the most work).
 Second, the node uses this best chain of headers to request and download the
 corresponding full blocks.
-This PR affects only the first phase (headers download).
+This PR affects only the first phase (headers download). {% assign timestamp="4:58" %}
 
 {% include functions/details-list.md
   q0="Why do nodes (mostly) receive `inv` block announcements while
@@ -106,7 +106,7 @@ release candidates.*
 
 - [LDK 0.0.111][] adds support for creating, receiving, and relaying
   [onion messages][topic onion messages], among several other new
-  features and bug fixes.
+  features and bug fixes. {% assign timestamp="25:09" %}
 
 ## Notable code and documentation changes
 
@@ -120,7 +120,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [Bitcoin Core #25614][] builds on [Bitcoin Core #24464][], allowing
   the ability to add and trace logs with specific severity levels in
   addrdb, addrman, banman, i2p, mempool, netbase, net, net_processing,
-  timedata, and torcontrol.
+  timedata, and torcontrol. {% assign timestamp="26:20" %}
 
 - [Bitcoin Core #25768][] fixes a bug where the wallet wouldn't always
   rebroadcast unconfirmed transactions' child transactions.  Bitcoin
@@ -132,7 +132,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   unconfirmed parent transactions before child transactions (or, more
   generally, all unconfirmed ancestors before any descendants).  When a
   child transaction was received before its parent, it was internally
-  rejected instead of being rebroadcast.
+  rejected instead of being rebroadcast. {% assign timestamp="30:41" %}
 
 - [Bitcoin Core #19602][] adds a `migratewallet` RPC that will convert a
   wallet to natively using [descriptors][topic descriptors].  This works for pre-HD wallets (those
@@ -140,7 +140,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   wallets, and watch-only wallets without private keys.  Before calling
   this function, read the [documentation][managing wallets] and be aware
   that there are some API differences between non-descriptor wallets and
-  those that natively support descriptors.
+  those that natively support descriptors. {% assign timestamp="34:44" %}
 
 <!-- TODO:harding to separate dual funding from interactive funding -->
 
@@ -150,7 +150,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   inputs*---inputs which spend outputs that are a part of a confirmed
   transaction.  If enabled, this can prevent an initiator from delaying
   a channel open by basing it off of a large unconfirmed transaction
-  with a low feerate.
+  with a low feerate. {% assign timestamp="39:27" %}
 
 - [Eclair #2190][] removes support for the original fixed-length onion
   data format, which is also proposed for removal from the LN
@@ -159,12 +159,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   years ago and network scanning results mentioned in the BOLTs #962 PR
   indicate that it is supported by all but 5 out of over 17,000 publicly
   advertised nodes.  Core Lightning also removed support earlier this
-  year (see [Newsletter #193][news193 cln5058]).
+  year (see [Newsletter #193][news193 cln5058]). {% assign timestamp="44:26" %}
 
 - [Rust Bitcoin #1196][] modifies the previously-added `LockTime` type
   (see [Newsletter #211][news211 rb994]) to be a `absolute::LockTime`
   and adds a new `relative::LockTime` for representing locktimes used
-  with [BIP68][] and [BIP112][].
+  with [BIP68][] and [BIP112][]. {% assign timestamp="46:51" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25614,24464,25768,19602,2406,2190,962,619,1196" %}
