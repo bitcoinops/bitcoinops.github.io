@@ -98,7 +98,7 @@ notable changes to popular Bitcoin infrastructure software.
     above the normal amount).  In Law's [reply][law fee stop] to Towns,
     he noted that he's working on a specific design for a solution of
     that type which he will publish when he's finished thinking through
-    it.
+    it. {% assign timestamp="2:07" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -114,7 +114,7 @@ answers posted since our last update.*
 - [How did peer discovery work in Bitcoin v0.1?]({{bse}}119507)
   Pieter Wuille describes the evolution of the peer discovery mechanisms in
   Bitcoin Core from the IRC-based peer finding in the 0.1 release through
-  hardcoded IP addresses to the DNS peer seeding currently used.
+  hardcoded IP addresses to the DNS peer seeding currently used. {% assign timestamp="20:42" %}
 
 - [Would a series of reorgs cause Bitcoin to break because of the 2-hour block time difference restriction?]({{bse}}119677)
   User fiatjaf asks whether a series of block chain reorgs, potentially the
@@ -122,30 +122,30 @@ answers posted since our last update.*
   timestamp restrictions. Antoine Poinsot and Pieter Wuille describe the two
   block timestamp restrictions (must be greater than the [Median Time Past
   (MTP)][news146 mtp] and no more than two hours in the future according to the
-  node's local time) and conclude that neither restriction's conditions are exacerbated by a reorg.
+  node's local time) and conclude that neither restriction's conditions are exacerbated by a reorg. {% assign timestamp="22:48" %}
 
 - [Is there a way to download blocks from scratch without downloading block headers first?]({{bse}}119503)
   Pieter Wuille confirms that it is possible to download blocks without headers
   but points out the downside is that the node would not know if it is on the
   best chain until after downloading and processing all of the blocks. He
   contrasts that approach with [headers-first sync][headers first pr] and
-  outlines the P2P messages exchanged for each approach.
+  outlines the P2P messages exchanged for each approach. {% assign timestamp="26:56" %}
 
 - [Where is the bitcoin source code is the 21 million hard cap stated?]({{bse}}119475)
   Pieter Wuille explains Bitcoin Core's `GetBlockSubsidy` function that defines
   the subsidy emission schedule. He also links to a previous Stack Exchange
   discussion about Bitcoin's [20999999.9769 BTC limit]({{bse}}38998) and points to the `MAX_MONEY`
-  constant that is used as a sanity check in consensus validation code.
+  constant that is used as a sanity check in consensus validation code. {% assign timestamp="28:56" %}
 
 - [Are blocks containing non-standard transactions relayed through the network or not as in the case of non-standard transactions?]({{bse}}119693)
   User fiatjaf responds that while transactions that are non-standard according
   to [policy][policy series] are not relayed on the P2P network by default, blocks containing
   non-standard transactions are still relayed, assuming the block adheres to
-  consensus rules.
+  consensus rules. {% assign timestamp="31:50" %}
 
 - [When does Bitcoin Core allow you to "Abandon transaction"?]({{bse}}119771)
   Murch details the three required conditions to be able to
-  [abandon][rpc abandontransaction] a transaction in Bitcoin Core:
+  [abandon][rpc abandontransaction] a transaction in Bitcoin Core: {% assign timestamp="35:47" %}
 
   - the transaction has not been previously abandoned
   - neither the transaction nor a conflicting transaction are confirmed
@@ -160,7 +160,7 @@ release candidates.*
 - [LND v0.17.0-beta.rc5][] is a release candidate for the next major
   version of this popular LN node implementation.  A major new
   experimental feature planned for this release, which could likely
-  benefit from testing, is support for "simple taproot channels".
+  benefit from testing, is support for "simple taproot channels". {% assign timestamp="39:07" %}
 
 ## Notable code and documentation changes
 
@@ -175,7 +175,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [Bitcoin Core #28492][] updates the `descriptorprocesspsbt` RPC to
   include the complete serialized transaction if the processing of the
   [PSBT][topic psbt] results in a broadcastable transaction.  See [last
-  week's newsletter][news269 psbt] for a similar merged PR.
+  week's newsletter][news269 psbt] for a similar merged PR. {% assign timestamp="39:54" %}
 
 - [Bitcoin Core GUI #119][] updates the transaction list in the GUI to
   no longer provide a special category for "payment to yourself".  Now
@@ -183,12 +183,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   displayed on separate lines for spending and receiving.  This may
   improve clarity for [coinjoins][topic coinjoin] and [payjoins][topic
   payjoin], although Bitcoin Core does not currently support either of
-  those types of transactions by itself.
+  those types of transactions by itself. {% assign timestamp="41:13" %}
 
 - [Bitcoin Core GUI #738][] adds a menu option to allow
   migrating a legacy wallet based on keys and implied output script
   types stored in BerkeleyDB (BDB) to a modern wallet that uses
-  [descriptors][topic descriptors] stored in SQLite.
+  [descriptors][topic descriptors] stored in SQLite. {% assign timestamp="42:49" %}
 
 - [Bitcoin Core #28246][] updates how the Bitcoin Core wallet internally
   determines what output script (scriptPubKey) a transaction should pay.
@@ -196,7 +196,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   specified, but if support for [silent payments][topic silent payments]
   is added to Bitcoin Core, the output script will need to be derived
   based on data from the inputs selected for the transaction.  This
-  update makes that much simpler.
+  update makes that much simpler. {% assign timestamp="44:18" %}
 
 - [Core Lightning #6311][] removes the `--developer` build option that
   produced binaries with additional options over the standard CLN
@@ -204,25 +204,25 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   by starting `lightningd` with the `--developer` runtime configuration
   option.  An `--enable-debug` build option will still produce a
   slightly different binary with some modifications beneficial for
-  testing.
+  testing. {% assign timestamp="46:30" %}
 
 - [Core Lightning #6617][] updates the `showrunes` RPC to provide a new
   results field, `last_used`, that displays the last time the _rune_
-  (authentication token) was used.
+  (authentication token) was used. {% assign timestamp="47:23" %}
 
 - [Core Lightning #6686][] adds configurable Content-Security-Policy
   (CSP) and Cross-Origin-Resource-Sharing (CORS) headers for the REST
-  interface to CLN's API.
+  interface to CLN's API. {% assign timestamp="47:55" %}
 
 - [Eclair #2613][] allows Eclair to manage all of its own private keys
   and to use Bitcoin Core with only a watch-only wallet (a wallet with
   public keys but no private keys).  This can be especially useful if
   Eclair is being run in a more secure environment than Bitcoin Core.
-  For details, see the [documentation][eclair keys] added in this PR.
+  For details, see the [documentation][eclair keys] added in this PR. {% assign timestamp="48:44" %}
 
 - [LND #7994][] adds support to the remote signer RPC interface for
   opening taproot channels, which requires specifying a public key and
-  the [MuSig2][topic musig] two-part nonce.
+  the [MuSig2][topic musig] two-part nonce. {% assign timestamp="50:18" %}
 
 - [LDK #2547][] updates the probabilistic pathfinding code to assume
   that it's more likely remote channels have most of their liquidity
@@ -230,7 +230,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   channel between Alice and Bob, the least likely state for the channel
   is for Alice and Bob to each have 0.50 BTC.  It's more likely that one
   of them has 0.90 BTC---and even more likely than one of them has 0.99
-  BTC.
+  BTC. {% assign timestamp="51:10" %}
 
 - [LDK #2534][] adds `ChannelManager::send_preflight_probes` method for
   [probing][topic payment probes] payment paths before attempting to
@@ -253,7 +253,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
    representing a significant portion of a node's capital gets stuck, it
    can be very annoying.  It can also be possible to probe several paths
    simultaneously and use the results to choose the best path a few
-   moments later when sending a payment.
+   moments later when sending a payment. {% assign timestamp="53:01" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28492,119,738,28246,6311,6617,6686,2613,7994,2547,2534" %}
