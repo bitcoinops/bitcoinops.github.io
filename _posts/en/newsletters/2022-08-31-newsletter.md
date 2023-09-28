@@ -36,7 +36,7 @@ notable changes to popular Bitcoin infrastructure software.
     proposed format is attempting to achieve and what SLIP15 seems to
     provide.  Several other design aspects were also discussed, with
     discussion appearing to be ongoing as this summary was being
-    written.
+    written. {% assign timestamp="1:00" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -56,7 +56,7 @@ answers posted since our last update.*
   features will only include segwit v0 support,
   eventually support for [tapscript][topic tapscript] and
   [partial descriptors][Bitcoin Core #24114] could make it possible to
-  add commitments inside tapscript without solely using the `raw()` descriptor.
+  add commitments inside tapscript without solely using the `raw()` descriptor. {% assign timestamp="23:12" %}
 
 - [Why does Bitcoin Core rebroadcast transactions?]({{bse}}114973)
   Amir reza Riahi wonders why the Bitcoin Core wallet rebroadcasts transactions
@@ -65,11 +65,11 @@ answers posted since our last update.*
   necessary and notes work done to remove rebroadcasting responsibilities from
   the wallet to the mempool. Readers interested in rebroadcasting can also review the [24 Aug
   2022][prreview 25768], [07 Apr 2021][prreview 21061], and [27 Nov
-  2019][prreview 16698] PR Review Club meetings.
+  2019][prreview 16698] PR Review Club meetings. {% assign timestamp="24:56" %}
 
 - [When did Bitcoin Core deprecate the mining function?]({{bse}}114687)
   Pieter Wuille provides a historical overview of mining-related features within Bitcoin
-  Core over the years.
+  Core over the years. {% assign timestamp="33:27" %}
 
 - [UTXO spendable by me or deposit to exchange after 5 years?]({{bse}}114901)
   Stickies-v provides an overview of Bitcoin Script operators, how [taproot][topic
@@ -77,12 +77,12 @@ answers posted since our last update.*
   from a privacy and feerate perspective, and points out that Script's lack of
   [covenants][topic covenants] makes the proposed conditions impossible solely in
   Script. Vojtěch Strnad points out that pre-signed transactions can help
-  accomplish the proposed spending conditions.
+  accomplish the proposed spending conditions. {% assign timestamp="35:50" %}
 
 - [What was the bug for the Bitcoin value overflow in 2010?]({{bse}}114694)
   Andrew Chow summarizes the [value overflow bug][] and its multiple
   inflationary effects: the large outputs created as well as the miscalculated
-  transaction fee.
+  transaction fee. {% assign timestamp="41:03" %}
 
 ## Releases and release candidates
 
@@ -92,7 +92,7 @@ release candidates.*
 
 - [LND 0.15.1-beta][] is a release that "includes support
   for [zero conf channels][topic zero-conf channels], scid [aliases][],
-  [and] switches to using [taproot][topic taproot] addresses everywhere".
+  [and] switches to using [taproot][topic taproot] addresses everywhere". {% assign timestamp="45:13" %}
 
 ## Notable code and documentation changes
 
@@ -107,16 +107,16 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   to create a [PSBT][topic psbt] that fee bumps a transaction even if
   some or all of the inputs to the transaction don't belong to the
   wallet.  The PSBT can then be shared with the wallets that can sign
-  it.
+  it. {% assign timestamp="45:38" %}
 
 - [Eclair #2275][] adds support for fee bumping a [dual funded][topic
   dual funding] LN setup transaction.  The PR notes that, with this PR,
   "dual funding is fully supported by Eclair!"  Though it also notes
   that dual funding is disabled by default and that tests for [cross
   compatibility with Core Lightning][news143 cln df] will be added in
-  the future.
+  the future. {% assign timestamp="49:36" %}
 
-- [Eclair #2387][] adds support for [signet][topic signet].
+- [Eclair #2387][] adds support for [signet][topic signet]. {% assign timestamp="52:01" %}
 
 - [LDK #1652][] updates support for [onion messages][topic onion
   messages] with the ability to send *reply paths*, and to decode them
@@ -125,21 +125,21 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   message after relay, so it can't automatically send a reply back
   along the path the original message took.  That means a node which
   wants a reply to its onion message needs to provide hints to the
-  receiver about what path to use for sending a reply.
+  receiver about what path to use for sending a reply. {% assign timestamp="56:21" %}
 
 - [HWI #627][] adds support for [P2TR][topic taproot] keypath spends using
-  the BitBox02 hardware signing device.
+  the BitBox02 hardware signing device. {% assign timestamp="58:00" %}
 
 - [BDK #718][] begins verifying both ECDSA and [schnorr][topic schnorr
   signatures] signatures immediately after the wallet creates them.
   This is a recommendation of [BIP340][] (see [Newsletter #87][news87
   verify]), was discussed in [Newsletter #83][news83 verify], and was
   previously implemented in Bitcoin Core (see [Newsletter #175][news175
-  verify]).
+  verify]). {% assign timestamp="1:00:47" %}
 
 - [BDK #705][] and [#722][bdk #722] give software using the BDK library
   the ability to access additional server-side methods available from
-  Electrum and Esplora services.
+  Electrum and Esplora services. {% assign timestamp="1:02:19" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23202,2275,2387,1652,627,718,705,722,24114" %}
