@@ -22,7 +22,7 @@ Bitcoin infrastructure software.
   attacks][topic channel jamming attacks] and several proposed
   solutions.  The guide also examines how some solutions can benefit
   protocols building on top of LN, such as swap protocols and
-  short-duration [DLCs][topic dlc].
+  short-duration [DLCs][topic dlc]. {% assign timestamp="28:08" %}
 
 - **Updated silent payments PR:** woltx [posted][woltx sp] to the
   Bitcoin-Dev mailing list that the PR to Bitcoin Core for [silent
@@ -40,7 +40,7 @@ Bitcoin infrastructure software.
     transactions but that it would also create a bad experience for
     users in many case.  A slight tweak to the silent payment design was
     proposed to address the issue, although it also came with trade
-    offs.
+    offs. {% assign timestamp="2:00" %}
 
 ## Changes to services and client software
 
@@ -49,22 +49,22 @@ wallets and services.*
 
 - **Purse.io adds Lightning support:**
   In a [recent tweet][purse ln tweet], Purse.io announced support for
-  depositing (receiving) and withdrawing (sending) using the Lightning Network.
+  depositing (receiving) and withdrawing (sending) using the Lightning Network. {% assign timestamp="10:05" %}
 
 - **Proof of concept coinjoin implementation joinstr:**
   1440000bytes developed [joinstr][joinstr github], a proof of concept
   [coinjoin][topic coinjoin]
   implementation using the [nostr protocol][nostr github], a public key based
-  relay network with no central server.
+  relay network with no central server. {% assign timestamp="12:14" %}
 
 - **Coldcard firmware 5.0.6 released:**
   Coldcard’s version 5.0.6 adds more support for [BIP85][], `OP_RETURN` scripts,
-  and multisig [descriptors][topic descriptors].
+  and multisig [descriptors][topic descriptors]. {% assign timestamp="14:48" %}
 
 - **Nunchuk adds taproot support:**
   In the latest versions of [Nunchuk's mobile wallet][nunchuk appstore],
   [taproot][topic taproot] (single-sig), [signet][topic signet], and enhanced
-  [PSBT][topic psbt] support were added.
+  [PSBT][topic psbt] support were added. {% assign timestamp="20:26" %}
 
 ## Releases and release candidates
 
@@ -104,25 +104,25 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   outputs per the optional parameter `include_change`. Usually, change
   outputs are omitted as implicit by-products of outbound payments, but
   listing them may be interesting in the context of watch-only
-  descriptors.
+  descriptors. {% assign timestamp="47:46" %}
 
 - [Eclair #2234][] adds support for associating a DNS name with a node
   in its announcements as now allowed by [BOLTs #911][] (see [Newsletter
-  #212][news212 bolts911]).
+  #212][news212 bolts911]). {% assign timestamp="49:10" %}
 
 - [LDK #1503][] adds support for [onion messages][topic onion messages]
   as defined by [BOLTs #759][].  The PR indicates that this change is in
-  preparation for subsequently adding support for [offers][topic offers].
+  preparation for subsequently adding support for [offers][topic offers]. {% assign timestamp="50:03" %}
 
 - [LND #6596][] adds a new `wallet addresses list` RPC that lists all of the
-  wallet's addresses and their current balance.
+  wallet's addresses and their current balance. {% assign timestamp="53:30" %}
 
 - [BOLTs #1004][] begins recommending that nodes which maintain
   information about channels for routing should wait at least 12 blocks
   after a channel is closed before deleting their information it.  This
   delay will support detection of [splices][topic splicing] where a
   channel isn't actually closed but instead has funds added to or removed
-  from it in an onchain transaction.
+  from it in an onchain transaction. {% assign timestamp="54:05" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25504,2234,1503,911,759,6596,1004" %}
