@@ -83,8 +83,7 @@ d'infrastructure Bitcoin.
   IRC dans la version 0.1 jusqu'aux adresses IP codées en dur et au semis de pairs DNS actuellement utilisés.
   {% assign timestamp="20:42" %}
 
-- [Est-ce qu'une série de réorganisations pourrait causer la rupture de Bitcoin en raison de la restriction de différence de temps
-  de bloc de 2 heures ?]({{bse}}119677)
+- [Est-ce qu'une série de réorganisations pourrait causer la rupture de Bitcoin en raison de la restriction de différence de temps de bloc de 2 heures ?]({{bse}}119677)
   L'utilisateur fiatjaf demande si une série de réorganisations de la chaîne de blocs, potentiellement le résultat du
   [tir ciblé de frais][topic fee sniping], pourrait causer des problèmes avec les restrictions de temps de bloc de Bitcoin. Antoine
   Poinsot et Pieter Wuille décrivent les deux restrictions de temps de bloc (doivent être supérieures au [temps médian passé
@@ -103,8 +102,7 @@ d'infrastructure Bitcoin.
   constante `MAX_MONEY` qui est utilisée comme vérification de cohérence dans le code de validation du consensus.
   {% assign timestamp="28:56" %}
 
-- [Les blocs contenant des transactions non standard sont-ils relayés à travers le réseau ou non, comme c'est le cas pour les
-  transactions non standard ?]({{bse}}119693)
+- [Les blocs contenant des transactions non standard sont-ils relayés à travers le réseau ou non, comme c'est le cas pour les transactions non standard ?]({{bse}}119693)
   L'utilisateur fiatjaf répond que bien que les transactions non standard selon [la politique][policy series] ne soient pas relayées
   par défaut sur le réseau P2P, les blocs contenant des transactions non standard sont toujours relayés, à condition que le bloc
   respecte les règles de consensus.
@@ -197,30 +195,17 @@ les versions candidates.*
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28492,119,738,28246,6311,6617,6686,2613,7994,2547,2534" %}
 [LND v0.17.0-beta.rc5]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc5
-[news253 ark]: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
+[news253 ark]: /fr/newsletters/2023/05/31/#proposition-d-un-protocole-de-gestion-des-joinpool
 [maxwell clock stop]: https://www.reddit.com/r/Bitcoin/comments/37fxqd/it_looks_like_blockstream_is_working_on_the/crmr5p2/
 [law cov post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004092.html
 [law cov paper]: https://github.com/JohnLaw2/ln-scaling-covenants[towns cov]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
 [ln paper]: https://lightning.network/lightning-network-paper.pdf
 [law fee stop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
-[news221 law]: /en/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news230 law]: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
-[news244 law]: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
-[eclair keys]: https://github.com/ACINQ/eclair/blob/d3ac58863fbb76f4a44a779a52a6893b43566b29/docs/ManagingBitcoinCoreKeys.md
-[news269 psbt]: /en/newsletters/2023/09/20/#bitcoin-core-28414
-[news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
-[headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
-[policy series]: /en/blog/waiting-for-confirmation/
-
-[law cov paper]: https://github.com/JohnLaw2/ln-scaling-covenants
-[towns cov]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
-[ln paper]: https://lightning.network/lightning-network-paper.pdf
-[law fee stop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
-[news221 law]: /en/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
-[news230 law]: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
-[news244 law]: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
+[news221 law]: /fr/newsletters/2022/10/12/#ln-avec-une-proposition-de-hors-ligne-long
+[news230 law]: /fr/newsletters/2022/12/14/#proposition-d-optimisation-du-protocole-d-usines-à-canaux-ln
+[news244 law]: /fr/newsletters/2023/03/29/#prevenir-les-pertes-de-capitaux-grace-aux-usines-a-canaux-channel-factories-et-aux-canaux-multipartites
 [eclair keys]: https://github.com/ACINQ/eclair/blob/d3ac58863fbb76f4a44a779a52a6893b43566b29/docs/ManagingBitcoinCoreKeys.md
 [news269 psbt]: /fr/newsletters/2023/09/20/#bitcoin-core-28414
 [news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
-[policy series]: /en/blog/waiting-for-confirmation/
+[policy series]: /fr/blog/waiting-for-confirmation/
