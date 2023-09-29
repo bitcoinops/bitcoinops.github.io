@@ -202,7 +202,7 @@ les versions candidates.*
 [ln paper]: https://lightning.network/lightning-network-paper.pdf
 [law fee stop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
 [news221 law]: /fr/newsletters/2022/10/12/#ln-avec-une-proposition-de-hors-ligne-long
-[news230 law]: /fr/newsletters/2022/12/14/#proposition-d-optimisation-du-protocole-d-usines-à-canaux-ln
+[news230 law]: /fr/newsletters/2022/12/14/#proposition-d-optimisation-du-protocole-d-usines-a-canaux-ln
 [news244 law]: /fr/newsletters/2023/03/29/#prevenir-les-pertes-de-capitaux-grace-aux-usines-a-canaux-channel-factories-et-aux-canaux-multipartites
 [eclair keys]: https://github.com/ACINQ/eclair/blob/d3ac58863fbb76f4a44a779a52a6893b43566b29/docs/ManagingBitcoinCoreKeys.md
 [news269 psbt]: /fr/newsletters/2023/09/20/#bitcoin-core-28414
