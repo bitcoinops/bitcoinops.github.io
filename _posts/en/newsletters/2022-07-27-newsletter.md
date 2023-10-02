@@ -42,7 +42,7 @@ to popular Bitcoin infrastructure software.
     validation rules and a slightly different set of rules implemented
     in Electrum.
 
-    Sherief is planning to write a BIP specifying the behavior.
+    Sherief is planning to write a BIP specifying the behavior. {% assign timestamp="2:05" %}
 
 - **Proof of micro-burn:** several developers [discussed][pomb]
   use cases and designs of onchain transactions that destroy bitcoins
@@ -56,7 +56,7 @@ to popular Bitcoin infrastructure software.
     Several solutions were discussed using merkle trees, although one
     respondent suggested that the small amounts involved suggest that
     having participants trust (or partially trust) a centralized third
-    party may be a reasonable way to avoid unnecessary complexity.
+    party may be a reasonable way to avoid unnecessary complexity. {% assign timestamp="9:43" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -75,33 +75,33 @@ answers posted since our last update.*
   defined in BIP340-342, is designed to support batch validation of
   [schnorr signatures][topic schnorr signatures] in the future.
   Andrew Chow gives an additional reason for the behavior, noting that
-  certain malleability concerns are also mitigated by this approach.
+  certain malleability concerns are also mitigated by this approach. {% assign timestamp="30:41" %}
 
 - [What are packages in Bitcoin Core and what is their use case?]({{bse}}114305)
   Antoine Poinsot explains [packages][bitcoin docs packages] (a grouping of
   related transactions), their relation to [package relay][topic package relay],
-  and a recent [package relay BIP proposal][news201 package relay].
+  and a recent [package relay BIP proposal][news201 package relay]. {% assign timestamp="34:17" %}
 
 - [How much blockspace would it take to spend the complete UTXO set?]({{bse}}114043)
   Murch explores a hypothetical scenario of consolidating all existing UTXOs. He
   provides blockspace calculations for each output type and concludes the process would
-  take about 11,500 blocks.
+  take about 11,500 blocks. {% assign timestamp="37:43" %}
 
 - [Does an uneconomical output need to be kept in the UTXO set?]({{bse}}114493)
   Stickies-v notes that while provably unspendable UTXOs including `OP_RETURN`
   or scripts larger than the max script size are removed from the UTXO
   set, removing [uneconomical outputs][topic uneconomical outputs] could cause
-  issues, including a hard fork as Pieter Wuille points out, if those outputs are spent.
+  issues, including a hard fork as Pieter Wuille points out, if those outputs are spent. {% assign timestamp="39:37" %}
 
 - [Is there code in libsecp256k1 that should be moved to the Bitcoin Core codebase?]({{bse}}114467)
   Similar to other efforts to modularize areas of the Bitcoin Core codebase like
   [libbitcoinkernel][libbitcoinkernel project] or [process separation][devwiki
   process separation], Pieter Wuille notes a clear area of responsibility of the
-  [libsecp256k1][] project: everything that involves operations on private or public keys.
+  [libsecp256k1][] project: everything that involves operations on private or public keys. {% assign timestamp="47:07" %}
 
 - [Mining stale low-difficulty blocks as a DoS attack]({{bse}}114241)
   Andrew Chow explains that [assumevalid][assumevalid notes] and more recently
-  [`nMinimumChainWork`][Bitcoin Core #9053] help filter out low-difficulty chain attacks.
+  [`nMinimumChainWork`][Bitcoin Core #9053] help filter out low-difficulty chain attacks. {% assign timestamp="48:32" %}
 
 ## Releases and release candidates
 
@@ -128,7 +128,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 - [Bitcoin Core #25351][] ensures that after an import of addresses,
   keys, or descriptors to a wallet, the subsequent rescan will not only
   scan the blockchain but also evaluate whether transactions in the
-  mempool are relevant to the wallet.
+  mempool are relevant to the wallet. {% assign timestamp="51:42" %}
 
 - [Core Lightning #5370][] reimplements the `commando` plugin and makes
   it a built-in part of CLN.  Commando allows a node to receive commands
@@ -136,14 +136,14 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   *runes*, which is a custom CLN protocol based on a simplified version
   of [macaroons][].  Although Commando is now built into CLN, it's only
   operable if a user creates rune authentication tokens.  For additional
-  information, see CLN's manual pages for [commando][] and [commando-rune][].
+  information, see CLN's manual pages for [commando][] and [commando-rune][]. {% assign timestamp="53:51" %}
 
 - [BOLTs #1001][] recommends that nodes who advertise a change to their
   payment forwarding policies continue accepting payments received
   using the old policies for about 10 minutes.  This prevents payments
   from failing just because the sender hasn't heard about a recent
   policy update.  See [Newsletter #169][news169 cln4806] for the example
-  of an implementation adopting a rule like this.
+  of an implementation adopting a rule like this. {% assign timestamp="56:25" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25351,5370,1001,24058,9053" %}
