@@ -65,7 +65,7 @@ d'infrastructure Bitcoin.
 
     Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une [idée][maxwell clock stop] de Gregory Maxwell qui
     retarderait l'expiration lorsque "les blocs sont pleins" (par exemple, les frais sont supérieurs au montant normal). Dans sa
-    réponse à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
+    [réponse][law fee stop] à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
     qu'il aura fini d'y réfléchir. {% assign timestamp="2:07" %}
 
 ##  Questions et réponses sélectionnées de Bitcoin Stack Exchange
