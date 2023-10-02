@@ -158,7 +158,9 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Eclair #2756][] Add metrics on splicing FIXME:Murchandamus
+- [Eclair #2756][] introduces monitoring for [splicing][topic splicing] operations. The metrics
+  collect the initiator of the operation and distinguish three types of splices:
+  splice-in, splice-out, and splice-cpfp.
 
 - [LDK #2486][] Batch funding for v1 channel establishments
   FIXME:bitschmidty
