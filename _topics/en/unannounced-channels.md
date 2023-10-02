@@ -56,6 +56,9 @@ optech_mentions:
   - title: "C-Lightning #4611 updates the `keysend` RPC to support unannounced channels"
     url: /en/newsletters/2021/07/21/#c-lightning-4611
 
+  - title: "LND v0.17.0-beta ships with experimental support for unannounced taproot and MuSig2 LN channels"
+    url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
