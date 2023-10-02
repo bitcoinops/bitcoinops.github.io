@@ -198,7 +198,8 @@ les versions candidates.*
 [news253 ark]: /fr/newsletters/2023/05/31/#proposition-d-un-protocole-de-gestion-des-joinpool
 [maxwell clock stop]: https://www.reddit.com/r/Bitcoin/comments/37fxqd/it_looks_like_blockstream_is_working_on_the/crmr5p2/
 [law cov post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004092.html
-[law cov paper]: https://github.com/JohnLaw2/ln-scaling-covenants[towns cov]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
+[law cov paper]: https://github.com/JohnLaw2/ln-scaling-covenants
+[towns cov]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
 [ln paper]: https://lightning.network/lightning-network-paper.pdf
 [law fee stop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
 [news221 law]: /fr/newsletters/2022/10/12/#ln-avec-une-proposition-de-hors-ligne-long
