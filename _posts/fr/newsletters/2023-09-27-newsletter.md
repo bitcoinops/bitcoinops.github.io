@@ -63,7 +63,7 @@ d'infrastructure Bitcoin.
     l'expiration, ou peut-être plusieurs mois à l'avance s'ils sont préoccupés par le fait que plusieurs usines de plusieurs millions
     d'utilisateurs rencontrent des problèmes simultanément.
 
-    Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une idée de Gregory Maxwell qui
+    Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une [idée][maxwell clock stop] de Gregory Maxwell qui
     retarderait l'expiration lorsque "les blocs sont pleins" (par exemple, les frais sont supérieurs au montant normal). Dans sa
     réponse à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
     qu'il aura fini d'y réfléchir. {% assign timestamp="2:07" %}
