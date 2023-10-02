@@ -46,7 +46,7 @@ infrastructure projects.
       of hashcash-style proof of work committed to the transaction to
       relay.
 
-    The discussion did not reach a clear conclusion as of this writing.
+    The discussion did not reach a clear conclusion as of this writing. {% assign timestamp="2:30" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -57,7 +57,7 @@ question below to see a summary of the answer from the meeting.*
 [Decouple validation cache initialization from ArgsManager][review club 25527]
 is a PR by Carl Dong that separates node configuration logic from the
 initialization of signature and script caches.
-It is part of the [libbitcoinkernel project][libbitcoinkernel project].
+It is part of the [libbitcoinkernel project][libbitcoinkernel project]. {% assign timestamp="31:25" %}
 
 {% include functions/details-list.md
   q0="What does the `ArgsManager` do?  Why or why not should it belong
@@ -145,27 +145,27 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   proposed in 2017 in [Bitcoin Core #9527][] when the primary
   objections were the novelty at the time, the inability to bump
   transactions and the GUI not having functionality to disable RBF---all
-  of which have since been addressed.
+  of which have since been addressed. {% assign timestamp="45:50" %}
 
 - [Bitcoin Core #24584][] amends [coin selection][topic coin selection] to prefer input sets
   composed of a single output type. This addresses scenarios in which
   mixed-type input sets reveal the change output of preceding
   transactions. This follows a related privacy improvement to [always
   match the change type][#23789] to a recipient output (see
-  [Newsletter #181][news181 change matching]).
+  [Newsletter #181][news181 change matching]). {% assign timestamp="49:27" %}
 
 - [Core Lightning #5071][] adds a bookkeeper plugin that provides an
   accounting record of movements of bitcoins by the node running the
   plugin, including the ability to track the amount spent on fees.  The
-  merged PR includes several new RPC commands.
+  merged PR includes several new RPC commands. {% assign timestamp="53:55" %}
 
 - [BDK #645][] adds a way to specify which [taproot][topic taproot] spend paths to sign
   for.  Previously, BDK would sign for the keypath spend if it was able,
-  plus sign for any scriptpath leaves it had the keys for.
+  plus sign for any scriptpath leaves it had the keys for. {% assign timestamp="55:05" %}
 
 - [BOLTs #911][] adds the ability for an LN node to announce a DNS
   hostname that resolves to its IP address.  Previous discussion about
-  this idea was mentioned in [Newsletter #167][news167 ln dns].
+  this idea was mentioned in [Newsletter #167][news167 ln dns]. {% assign timestamp="56:02" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25610,24584,5071,645,911,13922,9527" %}
