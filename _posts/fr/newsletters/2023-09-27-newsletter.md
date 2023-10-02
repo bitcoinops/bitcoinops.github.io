@@ -98,7 +98,7 @@ d'infrastructure Bitcoin.
 
 - [Où est indiqué le plafond dur de 21 millions de bitcoins dans le code source de Bitcoin ?]({{bse}}119475)
   Pieter Wuille explique la fonction `GetBlockSubsidy` de Bitcoin Core qui définit le calendrier d'émission des subventions. Il renvoie
-  également à une discussion précédente sur Stack Exchange concernant la limite de 20 999 999,9769 BTC de Bitcoin et pointe vers la
+  également à une discussion précédente sur Stack Exchange concernant la [limite de 20 999 999,9769 BTC]({{bse}}38998) de Bitcoin et pointe vers la
   constante `MAX_MONEY` qui est utilisée comme vérification de cohérence dans le code de validation du consensus.
   {% assign timestamp="28:56" %}
 
