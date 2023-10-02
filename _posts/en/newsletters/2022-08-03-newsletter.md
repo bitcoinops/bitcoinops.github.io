@@ -45,7 +45,7 @@ infrastructure projects.
     wouldn't have a clear meaning to existing wallets.  That could
     create interoperability issues.  He suggested limiting the BIP to
     just two paths and waiting for anyone needing additional paths to
-    write their own BIP.
+    write their own BIP. {% assign timestamp="0:52" %}
 
 ## Notable code and documentation changes
 
@@ -58,21 +58,21 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [Core Lightning #5441][] updates `hsmtool` to make it easier to check
   a [BIP39][] passphrase against the [HD seed][topic bip32] used by
-  CLN's internal wallet.
+  CLN's internal wallet. {% assign timestamp="23:26" %}
 
 - [Eclair #2253][] adds support for relaying [blinded payments][topic rv
   routing] as specified in [BOLTs #765][] (see [Newsletter #187][news178
-  eclair 2061]).
+  eclair 2061]). {% assign timestamp="24:33" %}
 
 - [LDK #1519][] always includes the `htlc_maximum_msat` field in
   `channel_update` messages as will be required if [BOLTs #996][] is
   merged into the LN specification.  The reason given in the pull
-  request for the change is to simplify message parsing.
+  request for the change is to simplify message parsing. {% assign timestamp="26:40" %}
 
 - [Rust Bitcoin #994][] adds a `LockTime` type that can be used with
   nLockTime and [BIP65][] `OP_CHECKLOCKTIME` fields.  Locktime fields in
   Bitcoin can contain either a block height or a [Unix epoch time][]
-  value.
+  value. {% assign timestamp="29:37" %}
 
 - [Rust Bitcoin #1088][] adds the structures needed for [compact
   blocks][topic compact block relay] as specified in [BIP152][], as well
@@ -81,7 +81,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   block contains without sending complete copies of those transactions.
   If a peer has previously received and stored those transactions from
   when they were unconfirmed, it doesn't need to download them again,
-  saving bandwidth and speeding up the relay of new blocks.
+  saving bandwidth and speeding up the relay of new blocks. {% assign timestamp="32:50" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5441,2253,1519,994,1088,996,765" %}
