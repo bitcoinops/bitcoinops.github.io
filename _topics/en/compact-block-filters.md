@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Bitcoin Core #25957 improves the performance of wallet rescans using local block filters"
     url: /en/newsletters/2022/11/02/#bitcoin-core-25957
 
+  - title: "LND v0.17.0-beta released with improved compact block filter speed through batched downloading"
+    url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP37 transaction bloom filtering

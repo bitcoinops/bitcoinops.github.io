@@ -236,6 +236,9 @@ optech_mentions:
   - title: "Taproot and MuSig2 LN channels"
     url: /en/newsletters/2023/07/26/#taproot-and-musig2-channels
 
+  - title: "LND v0.17.0-beta ships with experimental support for taproot and MuSig2 LN channels"
+    url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
+
 ## Optional
 see_also:
   - title: MAST
