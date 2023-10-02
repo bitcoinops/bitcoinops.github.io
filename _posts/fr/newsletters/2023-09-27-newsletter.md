@@ -54,7 +54,7 @@ d'infrastructure Bitcoin.
     réduit la scalabilité globale du réseau.
 
     Anthony Towns a [répondu][towns cov] avec une préoccupation qu'il a appelée le problème du "troupeau tonitruant" (appelé "spam d'expiration
-    forcée" dans le document LN original) où l'échec délibéré ou accidentel d'un grand utilisateur dédié nécessite à de nombreux
+    forcée" dans le document [LN original][ln paper]) où l'échec délibéré ou accidentel d'un grand utilisateur dédié nécessite à de nombreux
     autres utilisateurs de mettre de nombreuses transactions sensibles au temps onchain en même temps. Par exemple, une usine avec un
     million d'utilisateurs peut nécessiter une confirmation sensible au temps jusqu'à un million de transactions plus une confirmation
     non sensible au temps jusqu'à deux millions de transactions supplémentaires pour que ces utilisateurs replacent ces fonds dans de
