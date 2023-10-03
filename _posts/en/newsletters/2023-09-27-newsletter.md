@@ -131,7 +131,7 @@ answers posted since our last update.*
   contrasts that approach with [headers-first sync][headers first pr] and
   outlines the P2P messages exchanged for each approach. {% assign timestamp="26:56" %}
 
-- [Where is the bitcoin source code is the 21 million hard cap stated?]({{bse}}119475)
+- [Where in the bitcoin source code is the 21 million hard cap stated?]({{bse}}119475)
   Pieter Wuille explains Bitcoin Core's `GetBlockSubsidy` function that defines
   the subsidy emission schedule. He also links to a previous Stack Exchange
   discussion about Bitcoin's [20999999.9769 BTC limit]({{bse}}38998) and points to the `MAX_MONEY`
