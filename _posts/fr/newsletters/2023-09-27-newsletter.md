@@ -177,14 +177,14 @@ les versions candidates.*
   l'état le moins probable du canal est que Alice et Bob aient chacun 0,50 BTC. Il est plus probable que l'un d'entre eux ait 0,90
   BTC---et encore plus probable que l'un d'entre eux ait 0,99 BTC. {% assign timestamp="51:10" %}
 
-- [LDK #2534][] ajoute la méthode `ChannelManager::send_preflight_probes` pour [sonder][topic payment probes] les chemins de paiement avant d'essayer d'envoyer
-  un paiement. Une sonde est générée par un expéditeur comme un paiement LN régulier, mais la valeur de son préimage [HTLC][topic htlc]
-  est définie sur une valeur inutilisable (par exemple, une valeur connue uniquement de l'expéditeur) ; lorsqu'elle atteint sa
-  destination, le destinataire ne connaît pas le préimage et le rejette, renvoyant une erreur. Si cette erreur est reçue, le sondeur
-  sait que le chemin de paiement avait suffisamment de liquidité pour prendre en charge le paiement lorsqu'il a été envoyé, et qu'un
-  paiement réel envoyé le long du même chemin pour le même montant réussira probablement. Si une autre erreur est reçue, telle qu'une
-  erreur indiquant que l'un des sauts le long du chemin ne pouvait pas transmettre le paiement, un nouveau chemin peut être sondé avant
-  d'envoyer le paiement réel.
+- [LDK #2534][] ajoute la méthode `ChannelManager::send_preflight_probes` pour [sonder][topic payment probes] les chemins de paiement
+  avant d'essayer d'envoyer un paiement. Une sonde est générée par un expéditeur comme un paiement LN régulier, mais la valeur de son
+  préimage [HTLC][topic htlc] est définie sur une valeur inutilisable (par exemple, une valeur connue uniquement de l'expéditeur);
+  lorsqu'elle atteint sa destination, le destinataire ne connaît pas le préimage et le rejette, renvoyant une erreur. Si cette erreur
+  est reçue, le sondeur sait que le chemin de paiement avait suffisamment de liquidité pour prendre en charge le paiement lorsqu'il a
+  été envoyé, et qu'un paiement réel envoyé le long du même chemin pour le même montant réussira probablement. Si une autre erreur est
+  reçue, telle qu'une erreur indiquant que l'un des sauts le long du chemin ne pouvait pas transmettre le paiement, un nouveau chemin
+  peut être sondé avant d'envoyer le paiement réel.
 
    La sonde préalable au paiement ("prévol") peut être utile avec de petites sommes d'argent pour trouver des sauts qui rencontrent des
    problèmes pouvant causer des retards. Si quelques centaines de sats (ou moins) restent bloqués pendant quelques heures, ce n'est pas
