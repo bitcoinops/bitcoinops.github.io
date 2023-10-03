@@ -162,8 +162,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   collect the initiator of the operation and distinguish three types of splices:
   splice-in, splice-out, and splice-cpfp.
 
-- [LDK #2486][] Batch funding for v1 channel establishments
-  FIXME:bitschmidty
+- [LDK #2486][] adds support for funding multiple channels in a single
+  transaction, ensuring atomicity with either all of the batched channels being funded
+  and opened or all of them closed.
 
 - [LDK #2609][] allows requesting the [descriptors][topic descriptors]
   used for receiving payments in past transactions.  Previously, users
