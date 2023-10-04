@@ -82,10 +82,10 @@ některé z otázek a odpovědí, které obdržely vysoký počet hlasů.*
   v2 p2p transport] dle návrhu v [BIP324][], jehož implementaci lze sledovat
   v [Bitcoin Core #27634][].
 
-- [Kolik falešně pozitivních výsledků vrací filtry kompaktních bloků?]({{bse}}119142)
+- [Kolik falešně pozitivních výsledků vrací kompaktní filtry bloků?]({{bse}}119142)
   Murch poukazuje na [BIP158][] a jeho část o výběru parametrů [filtru bloků][bip158
-  filters], která poznamenává, že míra falešně pozitivních výsledků [filtrů
-  kompaktních bloků][topic compact block filters] je 1:784 931, tedy zhruba
+  filters], která poznamenává, že míra falešně pozitivních výsledků [kompaktních
+  filtrů bloků][topic compact block filters] je 1:784 931, tedy zhruba
   jeden blok každých osm týdnů v případě peněženky monitorující kolem tisíce
   výstupních skriptů.
 
