@@ -33,7 +33,7 @@ infrastructure software.
   the hassle of connecting and unlocking a hardware security device and
   then authorizing the action.  This would make it easier for an end
   user to secure their LN balance with the same hardware signing device
-  security as their onchain balance.
+  security as their onchain balance. {% assign timestamp="1:48" %}
 
 - **Payment splitting and switching:** Gijs van Dam [posted][van dam pss
   post] to the Lightning-Dev mailing list about a [plugin][pss plugin] he's
@@ -69,7 +69,7 @@ infrastructure software.
     increased LN throughput and as part of a mitigation against
     [channel jamming attacks][topic channel jamming attacks]. The idea
     of PSS had received a small amount of discussion on the mailing list
-    as of this writing.
+    as of this writing. {% assign timestamp="12:23" %}
 
 - **Pooled liquidity for LN:** ZmnSCPxj [posted][zmnscpxj sidepools1] to
   the Lightning-Dev mailing list a suggestion for what he calls
@@ -126,7 +126,7 @@ infrastructure software.
 
     There were no public replies to the posts at the time of writing,
     although we learned from private correspondence with ZmnSCPxj that
-    he is working on further developing the idea.
+    he is working on further developing the idea. {% assign timestamp="34:31" %}
 
 ## Releases and release candidates
 
@@ -146,7 +146,7 @@ release candidates.*
   supports [compact block filters][topic compact block filters], as well
   as improvements to LND's built-in [watchtower][topic watchtowers]
   functionality.  For more information, please see the [release
-  notes][lnd rn] and [release blog post][lnd 17 blog].
+  notes][lnd rn] and [release blog post][lnd 17 blog]. {% assign timestamp="55:26" %}
 
 ## Notable code and documentation changes
 
@@ -160,16 +160,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Eclair #2756][] introduces monitoring for [splicing][topic splicing] operations. The metrics
   collect the initiator of the operation and distinguish three types of splices:
-  splice-in, splice-out, and splice-cpfp.
+  splice-in, splice-out, and splice-cpfp. {% assign timestamp="58:26" %}
 
 - [LDK #2486][] adds support for funding multiple channels in a single
   transaction, ensuring atomicity with either all of the batched channels being funded
-  and opened or all of them closed.
+  and opened or all of them closed. {% assign timestamp="1:01:33" %}
 
 - [LDK #2609][] allows requesting the [descriptors][topic descriptors]
   used for receiving payments in past transactions.  Previously, users
   had to store these themselves; with the updated API, the descriptors
-  can be reconstructed from other stored data.
+  can be reconstructed from other stored data. {% assign timestamp="1:02:34" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2756,2486,2609,28" %}
