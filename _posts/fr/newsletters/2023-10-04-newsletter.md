@@ -122,7 +122,7 @@ BOLTs][bolts repo], et [Bitcoin Inquisition][bitcoin inquisition repo].*
 {% include linkers/issues.md v=2 issues="2756,2486,2609,28" %}
 [LND v0.17.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta
 [teinturier remote post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004084.html
-[news210 commando]: /fr/newsletters/2022/07/27/#core-lightning-5370
+[news210 commando]: /en/newsletters/2022/07/27/#core-lightning-5370
 [van dam pss post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004114.html
 [pss plugin]: https://github.com/gijswijs/plugins/tree/master/pss
 [pss research]: https://eprint.iacr.org/2023/1360
