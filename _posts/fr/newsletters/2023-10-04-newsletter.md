@@ -21,7 +21,7 @@ d'infrastructure Bitcoin les plus répandus.
   nœud LN à partir d'un dispositif de signature matériel (ou de tout autre portefeuille). Le dispositif de signature n'aurait besoin de
   mettre en œuvre que le BLIP plus la communication entre pairs [BOLT8][] et le nœud LN n'aurait besoin de mettre en œuvre que le BLIP.
   Cela ressemble au plugin _commando_ de Core Lightning (voir [Bulletin #210][news210 commando]), qui permet un contrôle presque complet
-  à distance d'un nœud LN, mais Teinturier envisage sa fonctionnalité principalement pour le contrôle des actions de nœud les plus
+  à distance d'un nœud LN, mais Bastien Teinturier envisage sa fonctionnalité principalement pour le contrôle des actions de nœud les plus
   sensibles, telles que l'autorisation d'un paiement---le type d'actions pour lesquelles un utilisateur serait raisonnablement prêt à
   passer par la peine de connecter et de déverrouiller un dispositif de sécurité matériel, puis d'autoriser l'action. Cela faciliterait
   la sécurisation du solde LN d'un utilisateur avec le même niveau de sécurité de dispositif de signature matériel que son solde onchain.
@@ -41,8 +41,8 @@ d'infrastructure Bitcoin les plus répandus.
      du canal Alice-et-Bob, mais aussi celui du canal Alice-et-Carol et les canaux Carol-et-Bob. Même si l'attaquant suivait le solde de
      tous ces canaux, la difficulté de calcul pour suivre le paiement augmente, tout comme la possibilité que des parties des paiements
      d'autres utilisateurs qui passent simultanément par ces canaux puissent être confondues avec des parties du paiement original qui
-     est suivi. Un [article][pss research] de van Dam a montré une réduction de 62% de la quantité d'informations qu'un attaquant pouvait
-     obtenir lorsque PSS est déployé.
+     est suivi. Un [article][pss research] de van Dam a montré qu'un attaquant pouvait obtenir
+     une réduction de 62% de la quantité d'informations lorsque PSS est déployé.
 
      Deux avantages supplémentaires sont mentionnés dans l'article de van Dam sur PSS :
      une augmentation du débit de LN et une partie d'atténuation contre les [attaques de brouillage de canal][topic channel
@@ -65,21 +65,21 @@ d'infrastructure Bitcoin les plus répandus.
      la même quantité de fonds à travers Bob vers Carol dans le canal LN ordinaire---rétablissant l'équilibre dans le canal LN entre
      Alice et Bob.
 
-     Un avantage de cette approche est que personne n'a besoin de connaître le contrat d'état à part les participants de chaque contrat
+     L'avantage de cette approche c'est que personne n'a besoin de connaître le contrat d'état à part les participants de chaque contrat
      particulier. Pour tous les utilisateurs LN ordinaires et tous les nœuds de transfert qui ne sont pas impliqués dans un contrat
      particulier, LN continue de fonctionner en utilisant le protocole actuel. Un autre avantage, par rapport aux opérations de
-     rééquilibrage de canal existantes, est que l'approche du contrat d'état permet à un grand nombre de nœuds de transfert de
+     rééquilibrage de canal existantes, c'est que l'approche du contrat d'état permet à un grand nombre de nœuds de transfert de
      maintenir une relation directe entre pairs pour une petite quantité d'espace sur la chaîne, éliminant ainsi probablement les
-     frais de rééquilibrage hors chaîne entre ces pairs. Le maintien de frais de rééquilibrage minimaux facilite grandement aux nœuds
-     de transfert de maintenir l'équilibre de leurs canaux, ce qui améliore leur potentiel de revenus et rend l'envoi de paiements
+     frais de rééquilibrage hors chaîne entre ces pairs. Le maintien de frais de rééquilibrage minimaux aide grandement les nœuds
+     de transfert à maintenir l'équilibre de leurs canaux, ce qui améliore leur potentiel de revenus et rend l'envoi de paiements
      à travers LN plus fiable.
 
-     Un inconvénient de cette approche est qu'elle nécessite un contrat d'état multiparties, ce qui n'a jamais été mis en œuvre en
+     L'inconvénient de cette approche c'est qu'elle nécessite un contrat d'état multiparties, ce qui n'a jamais été mis en œuvre en
      production jusqu'à notre connaissance. ZmnSCPxj mentionne deux protocoles de contrat qui pourraient être utiles à utiliser comme
      base, [LN-Symmetry][topic eltoo] et [duplex payment channels][]. LN-Symmetry nécessiterait un changement de consensus, ce qui semble
      peu probable dans un avenir proche, c'est pourquoi un [article de suivi][zmnscpxj sidepools2] de ZmnSCPxj semble se concentrer sur
      les canaux de paiement duplex (que ZmnSCPxj appelle "Decker-Wattenhofer" d'après les chercheurs qui les ont proposés en premier).
-     Un inconvénient des canaux de paiement duplex est qu'ils ne peuvent pas rester ouverts indéfiniment, bien que l'analyse de ZmnSCPxj
+     Le problème avec les canaux de paiement duplex c'est qu'ils ne peuvent pas rester ouverts indéfiniment, bien que l'analyse de ZmnSCPxj
      indique qu'ils peuvent probablement rester ouverts suffisamment longtemps, et à travers suffisamment de changements d'état, pour
      amortir leur coût de manière efficace.
 
