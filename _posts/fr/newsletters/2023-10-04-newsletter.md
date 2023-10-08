@@ -1,5 +1,5 @@
 ---
-titre: 'Bulletin Hebdomadaire Bitcoin Optech #271'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #271'
 permalink: /fr/newsletters/2023/10/04/
 name: 2023-10-04-newsletter-fr
 slug: 2023-10-04-newsletter-fr
