@@ -32,12 +32,102 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+[util: Type-safe transaction identifiers][review club 28107] is a PR
+by Niklas Gögge (dergoegge) that improves type safety by introducing
+separate types for `txid` (the transaction identifier or hash that
+doesn't include the segwit witness data) and `wtxid` (same but includes
+the witness data), rather than both being represented by a `uint256`
+(a 256-bit integer, which can contain a SHA256 hash). This PR
+should have no operational effect; it aims to prevent future
+programming errors in which one kind of transaction ID is used where
+the other was intended. Such errors will be detected at compile time.
+
+To minimize disruption and ease review, these new types will initially
+be used in only one area of the code (the transaction "orphanage");
+future PRs will use the new types in other areas of the codebase.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/28165#l-22FIXME"
+  q0="What does it mean for a transaction identifier to be type-safe?
+      Why is that important or helpful? Are there any downsides?"
+  a0="Since a transaction identifier has one of two meanings (`txid`
+      or `wtxid`), type-safety is the property that an identifier can't
+      be used with the wrong meaning. That is, a `txid` can't be used
+      where a `wtxid` is expected, and vice versa, and that this is
+      enforced by the compiler's standard type checking."
+  a0link="https://bitcoincore.reviews/28107#l-38"
+
+  q1="Rather than the new class types `Txid` and a `Wtxid` _inheriting_
+      from `uint256`, should they  _include_ (wrap) a `uint256`?
+      What are the tradeoffs?"
+  a1="Those classes could do that, but it would cause much more code
+      churn (many more source lines would need to be touched)."
+  a1link="https://bitcoincore.reviews/28107#l-39"
+
+  q2="Why is it better to enforce types at compile-time instead of at
+      run-time?"
+  a2="Developers discover errors quickly as they're coding, rather
+      than relying on writing extensive test suites to catch bugs in runtime
+      (and these tests may still miss some errors). However, testing would
+      still be useful since type safety won't prevent consistent use of the
+      wrong type of transaction ID in the first place."
+  a2link="https://bitcoincore.reviews/28107#l-67"
+
+  q3="Conceptually, when writing new code that requires referring to
+      transactions, when should you use `txid` and when should you use
+      `wtxid`? Can you point to any examples in the code where using one
+      instead of the other could be very bad?"
+  a3="In general, use of `wtxid` is preferred since it commits to the
+      entire transaction. An important exception is the `prevout`
+      reference from each input to the output (UTXO) it's spending,
+      which must specify the transaction by `txid`.
+      An example of where it's important to use one and not the other is
+      given [here][wtxid example] (for more info, see [Newsletter
+      #104][news104 wtxid])."
+  a3link="https://bitcoincore.reviews/28107#l-85"
+
+  q4="In which concrete way(s) could using `transaction_identifier` instead
+      of `uint256` help find existing bugs or prevent the introduction of
+      new ones? On the other hand, could this change introduce new bugs?"
+  a4="Without this PR, a function that takes a `uint256` argument (such as
+      a block ID hash) could be passed a `txid`.
+      With this PR, this causes a compile-time error."
+  a4link="https://bitcoincore.reviews/28107#l-128"
+
+  q5="The [`GenTxid`][GenTxid] class already exists. How does it
+      already enforce type correctness, and how is it different from the
+      approach in this PR?"
+  a5="This class includes a hash and a flag indicating if the hash is a
+      `wtxid` or a `txid`, so it's still a single type rather than two
+      distinct types. This allows type checking, but it must be explicitly
+      programmed, and, more importantly, can only be done at run-time,
+      not compile-time. It satisfies the frequent use case of wanting
+      to take input that can be either kind of identifier. For this reason,
+      this PR doesn't remove `GenTxid`. A better alternative for the
+      future might be `std::variant<Txid, Wtxid>`."
+  a5link="https://bitcoincore.reviews/28107#l-161"
+
+  q6="How is `transaction_identifier` able to subclass `uint256`, given
+      that, in C++, integers are types and not classes?"
+  a6="Because `uint256` is itself a class, rather than a built-in type.
+      (The largest built-in C++ integer type is 64 bits.)"
+  a6link="https://bitcoincore.reviews/28107#l-194"
+
+  q7="Does a `uint256` behave otherwise the same as, for example, a
+      `uint64_t`?"
+  a7="No, arithmetic operations aren't permitted on `uint256` because
+      they don't make sense for hashes (which is the main use of `uint256`).
+      The name is misleading; it's really just a blob of 256 bits.
+      A separate `arith_uint256` allows arithmetic (used, for example,
+      in PoW calculations)."
+  a7link="https://bitcoincore.reviews/28107#l-203"
+
+  q8="Why does `transaction_identifier` subclass `uint256` instead of
+      being a completely new type?"
+  a8="It allows us to use explicit and implicit conversions to leave
+      code that is expecting a transaction ID in the form of a `uint256`
+      unchanged until it's an appropriate time to refactor to use the new,
+      stricter `Txid` or `Wtxid` types."
+  a8link="https://bitcoincore.reviews/28107#l-219"
 %}
 
 ## Releases and release candidates
@@ -104,3 +194,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [ldk 0.0.117]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.117
 [bdk 0.29.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.29.0
+[review club 28107]: https://bitcoincore.reviews/28107
+[wtxid example]: https://github.com/bitcoin/bitcoin/blob/3cd02806ecd2edd08236ede554f1685866625757/src/net_processing.cpp#L4334
+[GenTxid]: https://github.com/bitcoin/bitcoin/blob/dcfbf3c2107c3cb9d343ebfa0eee78278dea8d66/src/primitives/transaction.h#L425
+[news104 wtxid]: /en/newsletters/2020/07/01/#bips-933
