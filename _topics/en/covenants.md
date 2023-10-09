@@ -100,6 +100,9 @@ optech_mentions:
   - title: "Using covenants like OP_CTV and APO to improve LN scalability"
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
 
+  - title: "Draft BIP specification for `OP_TXHASH` proposed"
+    url: /en/newsletters/2023/10/11/#specification-for-op-txhash-proposed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

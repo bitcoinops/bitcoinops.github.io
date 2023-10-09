@@ -65,6 +65,9 @@ optech_mentions:
   - title: "Bitcoin Core #28196 adds a substantial portion of the code to provide BIP324 support"
     url: /en/newsletters/2023/09/20/#bitcoin-core-28196
 
+  - title: "Bitcoin Core #28331 adds optional support for v2 encrypted P2P transport"
+    url: /en/newsletters/2023/10/11/#bitcoin-core-28331
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
