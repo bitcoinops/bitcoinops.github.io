@@ -159,7 +159,21 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27596][bitcoin core #27596], [#28590][bitcoin core #28590], [#28562][bitcoin core #28562], [nd #28589][bitcoin core #28589] assumeutxo (2) FIXME:adamjonas
+- [Bitcoin Core #27596][bitcoin core #27596] finishes the first phase
+  of the [assumeutxo][topic assumeutxo] project, containing all the
+  remaining changes necessary to both use an assumedvalid snapshot
+  chainstate and do a full validation sync in the background. It
+  makes UTXO snapshots loadable via RPC (`loadtxoutset`) and adds
+  `assumeutxo` parameters to chainparams.
+
+    Although the feature set will not be available on mainnet until
+    [activated][bitcoin core #28553], this merge marks the culmination of
+    a multi-year effort. The project, [proposed in 2018][assumeutxo core dev] and
+    [formalized in 2019][assumeutxo 2019 mailing list],
+    will significantly improve the user experience of new full
+    nodes first coming onto the network. Follow-ups of the merge include
+    [Bitcoin Core #28590][bitcoin core #28590],
+    [#28562][bitcoin core #28562], and [#28589][bitcoin core #28589].
 
 - [Bitcoin Core #28331][], [#28588][bitcoin core #28588],
   [#28577][bitcoin core #28577], and [GUI #754][bitcoin core gui #754]
@@ -196,7 +210,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   node's wallet.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27596,28590,28562,28589,28331,28588,28577,754,27609,764,6676,1500" %}
+{% include linkers/issues.md v=2 issues="27596,28590,28562,28589,28331,28588,28577,28553,754,27609,764,6676,1500" %}
 [roose txhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021975.html
 [news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [ldk 0.0.117]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.117
@@ -205,3 +219,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [wtxid example]: https://github.com/bitcoin/bitcoin/blob/3cd02806ecd2edd08236ede554f1685866625757/src/net_processing.cpp#L4334
 [GenTxid]: https://github.com/bitcoin/bitcoin/blob/dcfbf3c2107c3cb9d343ebfa0eee78278dea8d66/src/primitives/transaction.h#L425
 [news104 wtxid]: /en/newsletters/2020/07/01/#bips-933
+[assumeutxo core dev]: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-07-priorities/#:~:text=“Assume%20UTXO”
+[assumeutxo 2019 mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
