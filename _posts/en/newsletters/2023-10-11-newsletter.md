@@ -177,7 +177,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     make it convenient for a lightweight client to securely connect to a
     trusted node over a P2P encrypted connection.
 
-- [Bitcoin Core #27609][] rpc: allow submitpackage to be called outside of regtest FIXME:glozow
+- [Bitcoin Core #27609][] makes the `submitpackage` RPC available on
+  non-regtest networks.  Users can use this RPC to submit packages of
+  a single transaction with its unconfirmed parents, where none of the
+  parents spend the output of another parent. The child transaction can
+  be used to CPFP parents that are below the node's dynamic mempool
+  minimum feerate. However, while [package relay][topic package relay]
+  is not yet supported, these transactions may not necessarily propagate
+  to other nodes on the network.
 
 - [Bitcoin Core GUI #764][] removes the ability to create a legacy
   wallet in the GUI.  The ability to create legacy wallets is being
