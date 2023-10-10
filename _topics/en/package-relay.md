@@ -110,6 +110,9 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including package relay"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Bitcoin Core #27609 makes the submitpackage RPC available on non-regtest networks"
+    url: /en/newsletters/2023/10/11/#bitcoin-core-28331
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
