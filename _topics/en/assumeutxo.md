@@ -52,6 +52,9 @@ optech_mentions:
   - title: Summaries of Bitcoin Core developers in-person meeting
     url: /en/newsletters/2023/05/17/#summaries-of-bitcoin-core-developers-in-person-meeting
 
+  - title: "Bitcoin Core #27596 adds assumedvalid snapshot chainstate and full validation sync in the background"
+    url: /en/newsletters/2023/10/11/#bitcoin-core-27596
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
