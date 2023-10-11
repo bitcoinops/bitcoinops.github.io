@@ -45,6 +45,11 @@ Pour minimiser les perturbations et faciliter l'examen, ces nouveaux types seron
        peut pas être utilisé là où un `wtxid` est attendu, et vice versa, et cela est vérifié par la vérification de type standard du
        compilateur."
   a0link="https://bitcoincore.reviews/28107#l-38"
+  q1="Plutôt que les nouveaux types de classe `Txid` et `Wtxid` _héritant_ de `uint256`, devraient-ils _inclure_ (envelopper)
+       un `uint256` ? Quels sont les compromis ?"
+  a1="Ces classes pourraient le faire, mais cela entraînerait beaucoup plus de modifications de code (beaucoup plus de lignes de code
+       source devraient être modifiées)."
+Lien a1="https://bitcoincore.reviews/28107#l-39"
 %}
 
 ## Mises à jour et verions candidates
