@@ -63,7 +63,7 @@ Pour minimiser les perturbations et faciliter l'examen, ces nouveaux types seron
        plutôt que l'autre pourrait être très mauvaise?"
   a3="En général, l'utilisation de `wtxid` est préférée car elle s'engage sur l'ensemble de la transaction. Une exception importante
        est la référence `prevout` de chaque entrée à la sortie (UTXO) qu'elle dépense, qui doit spécifier la transaction par `txid`.
-       Un exemple où il est important d'utiliser l'un et pas l'autre est donné [ici][exemple wtxid] (pour plus d'informations, voir le
+       Un exemple où il est important d'utiliser l'un et pas l'autre est donné [ici][wtxid exemple] (pour plus d'informations, voir le
        [Bulletin #104][news104 wtxid])."
   a3link="https://bitcoincore.reviews/28107#l-85"
 
