@@ -165,6 +165,7 @@ les versions candidates.*
 [bdk 0.29.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.29.0
 [review club 28107]: https://bitcoincore.reviews/28107
 [wtxid example]: https://github.com/bitcoin/bitcoin/blob/3cd02806ecd2edd08236ede554f1685866625757/src/net_processing.cpp#L4334
-[GenTxid]: https://github.com/bitcoin/bitcoin/blob/dcfbf3c2107c3cb9d343ebfa0eee78278dea8d66/src/primitives/transaction.h#L425[news104 wtxid]: /en/newsletters/2020/07/01/#bips-933
+[GenTxid]: https://github.com/bitcoin/bitcoin/blob/dcfbf3c2107c3cb9d343ebfa0eee78278dea8d66/src/primitives/transaction.h#L425
+[news104 wtxid]: /en/newsletters/2020/07/01/#bips-933
 [assumeutxo core dev]: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-07-priorities/#:~:text=“Assume%20UTXO”
 [assumeutxo 2019 mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
