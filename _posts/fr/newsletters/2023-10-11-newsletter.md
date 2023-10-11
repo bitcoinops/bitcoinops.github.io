@@ -45,61 +45,6 @@ Pour minimiser les perturbations et faciliter l'examen, ces nouveaux types seron
        peut pas être utilisé là où un `wtxid` est attendu, et vice versa, et cela est vérifié par la vérification de type standard du
        compilateur."
   a0link="https://bitcoincore.reviews/28107#l-38"
-
-  q1="Plutôt que les nouveaux types de classe `Txid` et `Wtxid` _héritant_ de `uint256`, devraient-ils _inclure_ (envelopper)
-       un `uint256` ? Quels sont les compromis ?"
-  a1="Ces classes pourraient le faire, mais cela entraînerait beaucoup plus de modifications de code (beaucoup plus de lignes de code
-       source devraient être modifiées)."
-Lien a1="https://bitcoincore.reviews/28107#l-39"
-
-  q2="Pourquoi est-il préférable d'imposer les types lors de la compilation plutôt qu'à l'exécution?"
-  a2="Les développeurs découvrent rapidement les erreurs lorsqu'ils codent, plutôt que de compter sur l'écriture de suites de tests
-       exhaustifs pour détecter les bugs à l'exécution (et ces tests peuvent encore manquer certaines erreurs). Cependant, les tests
-       restent utiles car la sécurité des types ne prévient pas l'utilisation cohérente du mauvais type d'identifiant de transaction
-       en premier lieu."
-  a2link="https://bitcoincore.reviews/28107#l-67"
-
-  q3="Conceptuellement, lors de l'écriture d'un nouveau code qui nécessite de faire référence à des transactions, quand devriez-vous
-       utiliser `txid` et quand devriez-vous utiliser `wtxid`? Pouvez-vous indiquer des exemples dans le code où l'utilisation de l'un
-       plutôt que l'autre pourrait être très mauvaise?"
-  a3="En général, l'utilisation de `wtxid` est préférée car elle s'engage sur l'ensemble de la transaction. Une exception importante
-       est la référence `prevout` de chaque entrée à la sortie (UTXO) qu'elle dépense, qui doit spécifier la transaction par `txid`.
-       Un exemple où il est important d'utiliser l'un et pas l'autre est donné [ici][exemple wtxid] (pour plus d'informations, voir le
-       [Bulletin #104][news104 wtxid])."
-  a3link="https://bitcoincore.reviews/28107#l-85"
-
-  q4="De quelle(s) manière(s) concrète(s) l'utilisation de `transaction_identifier` au lieu de `uint256` pourrait-elle aider à trouver
-       des bugs existants ou à prévenir l'introduction de nouveaux bugs? D'autre part, ce changement pourrait-il introduire de nouveaux
-       bugs?"
-  a4="Sans cette PR, une fonction prenant un argument `uint256` (comme un hachage d'ID de bloc) pourrait recevoir un `txid`. Avec cette
-       PR, cela provoque une erreur de compilation."
-  a4link="https://bitcoincore.reviews/28107#l-128"
-
-  q5="La classe [`GenTxid`][GenTxid] existe déjà. Comment applique-t-elle déjà la correction des types, et en quoi diffère-t-elle de
-       l'approche de cette PR?"
-  a5="Cette classe inclut un hachage et un indicateur indiquant si le hachage est un `wtxid` ou un `txid`, il s'agit donc toujours
-       d'un seul type plutôt que de deux types distincts. Cela permet la vérification des types, mais cela doit être programmé
-       explicitement et, plus important encore, cela ne peut être fait qu'à l'exécution, pas à la compilation. Cela satisfait le cas
-       d'utilisation fréquent de vouloir prendre une entrée qui peut être l'un ou l'autre type d'identifiant. Pour cette raison, cette
-       PR ne supprime pas `GenTxid`. Une meilleure alternative pour l'avenir pourrait être `std::variant<Txid, Wtxid>`."
-  a5link="https://bitcoincore.reviews/28107#l-161"
-
-  q6="Comment `transaction_identifier` peut-il hériter de `uint256`, étant donné que, en C++, les entiers sont des types et non des
-       classes?"
-  a6="Parce que `uint256` est lui-même une classe, plutôt qu'un type intégré. (Le plus grand type entier intégré en C++ est sur 64 bits.)"
-  a6link="https://bitcoincore.reviews/28107#l-194"
-
-  q7="Est-ce qu'un `uint256` se comporte autrement, par exemple, qu'un `uint64_t`?"
-  a7="Non, les opérations arithmétiques ne sont pas autorisées sur `uint256` car elles n'ont pas de sens pour les hachages (qui est
-       l'utilisation principale de `uint256`). Le nom est trompeur ; il s'agit en réalité d'un bloc de 256 bits. Un type séparé
-       `arith_uint256` permet les opérations arithmétiques (utilisées, par exemple, dans les calculs de preuve de travail)."
-  a7link="https://bitcoincore.reviews/28107#l-203"
-
-  q8="Pourquoi `transaction_identifier` hérite-t-il de `uint256` au lieu d'être un type complètement nouveau ?"
-  a8="Cela nous permet d'utiliser des conversions explicites et implicites pour laisser inchangé le code qui attend un ID de
-       transaction sous la forme d'un `uint256` jusqu'à ce qu'il soit approprié de refactoriser pour utiliser les nouveaux types
-       `Txid` ou `Wtxid` plus stricts."
-  a8link="https://bitcoincore.reviews/28107#l-219"
 %}
 
 ## Mises à jour et verions candidates
