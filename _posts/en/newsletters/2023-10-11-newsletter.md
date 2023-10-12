@@ -23,7 +23,7 @@ infrastructure projects.
   exactly how the opcode would work, it also looks at mitigating some
   potential downsides, such as full nodes potentially needing to hash up
   to several megabytes of data every time the opcode is invoked.
-  Roose's draft includes a sample implementation of the opcode.
+  Roose's draft includes a sample implementation of the opcode. {% assign timestamp="1:42" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -44,7 +44,7 @@ the other was intended. Such errors will be detected at compile time.
 
 To minimize disruption and ease review, these new types will initially
 be used in only one area of the code (the transaction "orphanage");
-future PRs will use the new types in other areas of the codebase.
+future PRs will use the new types in other areas of the codebase. {% assign timestamp="18:36" %}
 
 {% include functions/details-list.md
   q0="What does it mean for a transaction identifier to be type-safe?
@@ -142,12 +142,12 @@ release candidates.*
   prior release.  The release also improves pathfinding, improves
   [watchtower][topic watchtowers] support, enables [batch][topic payment
   batching] funding of new channels, among several other features and
-  bug fixes.
+  bug fixes. {% assign timestamp="27:33" %}
 
 - [BDK 0.29.0][] is a release of this library for building wallet
   applications.  It updates dependencies and fixes a (likely rare) bug
   affecting cases where a wallet received more than one output from
-  miner coinbase transactions.
+  miner coinbase transactions. {% assign timestamp="28:35" %}
 
 ## Notable code and documentation changes
 
@@ -173,7 +173,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     will significantly improve the user experience of new full
     nodes first coming onto the network. Follow-ups of the merge include
     [Bitcoin Core #28590][bitcoin core #28590],
-    [#28562][bitcoin core #28562], and [#28589][bitcoin core #28589].
+    [#28562][bitcoin core #28562], and [#28589][bitcoin core #28589]. {% assign timestamp="29:32" %}
 
 - [Bitcoin Core #28331][], [#28588][bitcoin core #28588],
   [#28577][bitcoin core #28577], and [GUI #754][bitcoin core gui #754]
@@ -189,7 +189,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     man-in-the-middle observers by comparing session identifiers.  In
     the future, the addition of other [features][topic countersign] may
     make it convenient for a lightweight client to securely connect to a
-    trusted node over a P2P encrypted connection.
+    trusted node over a P2P encrypted connection. {% assign timestamp="30:38" %}
 
 - [Bitcoin Core #27609][] makes the `submitpackage` RPC available on
   non-regtest networks.  Users can use this RPC to submit packages of
@@ -198,16 +198,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   be used to CPFP parents that are below the node's dynamic mempool
   minimum feerate. However, while [package relay][topic package relay]
   is not yet supported, these transactions may not necessarily propagate
-  to other nodes on the network.
+  to other nodes on the network. {% assign timestamp="33:08" %}
 
 - [Bitcoin Core GUI #764][] removes the ability to create a legacy
   wallet in the GUI.  The ability to create legacy wallets is being
   removed; all newly created wallets in future versions of Bitcoin Core
-  will be [descriptor][topic descriptors]-based.
+  will be [descriptor][topic descriptors]-based. {% assign timestamp="34:55" %}
 
 - [Core Lightning #6676][] adds a new `addpsbtoutput` RPC that will add
   an output to a [PSBT][topic psbt] for receiving funds onchain to the
-  node's wallet.
+  node's wallet. {% assign timestamp="36:29" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27596,28590,28562,28589,28331,28588,28577,28553,754,27609,764,6676,1500" %}
