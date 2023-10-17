@@ -106,7 +106,30 @@ notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BIP-329 Python library released:**
+  The [BIP-329 Python Library][] is a set of tools that can read, write,
+  encrypt, and decrypt [BIP329][]-compliant wallet label files.
+
+- **LN testing tool Doppler announced:**
+  Recently [announced][doppler announced], [Doppler][] supports defining Bitcoin and Lightning
+  node topologies and onchain/offchain payment activity using a Domain-Specific
+  Language (DSL) to test LND, CLN, and Eclair implementations together.
+
+- **Coldcard Mk4 v5.2.0 released:**
+  The firmware [updates][coldcard blog] include [BIP370][] support for
+  version 2 [PSBTs][topic psbt], additional [BIP39][] support, and multiple seed capabilities.
+
+- **Tapleaf circuits: a BitVM demo:**
+  [Tapleaf circuits][] is a proof-of-concept implementation of Bristol circuits
+  using the BitVM approach outlined earlier in the newsletter.
+
+- **Samourai Wallet 0.99.98i released:**
+  The [0.99.98i][samourai blog] release includes additional PSBT, UTXO labeling,
+  and batch-sending features.
+
+- **Krux: signing device firmware:**
+  [Krux][krux github] is an open-source firmware project for building hardware
+  signing devices using commodity hardware.
 
 ## Releases and release candidates
 
@@ -163,3 +186,10 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [kanjalkar mpsbt]: https://gist.github.com/sanket1729/4b525c6049f4d9e034d27368c49f28a6
 [chow mpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021988.html
 [towns mpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021991.html
+[BIP-329 Python Library]: https://github.com/Labelbase/python-bip329
+[Doppler]: https://github.com/tee8z/doppler
+[doppler announced]: https://twitter.com/voltage_cloud/status/1712171748144070863
+[coldcard blog]: https://blog.coinkite.com/5.2.0-seed-vault/
+[Tapleaf circuits]: https://github.com/supertestnet/tapleaf-circuits
+[samourai blog]: https://blog.samourai.is/wallet-update-0-99-98i/
+[krux github]: https://github.com/selfcustody/krux
