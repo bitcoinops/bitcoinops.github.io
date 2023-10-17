@@ -127,7 +127,14 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #27255][] MiniTapscript: port Miniscript to Tapscript FIXME:Murchandamus
+- [Bitcoin Core #27255][] ports [miniscript][topic miniscript] to [tapscript][topic tapscript]. This code change makes
+  miniscript an option for P2TR [output descriptors][topic descriptors], adding support for both
+  watching and signing "TapMiniscript descriptors". Previously, miniscript was
+  available only for P2WSH output descriptors. The author notes that a new
+  `multi_a` fragment is introduced exclusively for P2TR descriptors that
+  matches the semantics of `multi` in P2WSH descriptors. The discussion on the
+  PR notes that a majority of the work went towards proper tracking of the
+  changed resource limits for tapscript.
 
 - [Eclair #2703][] discourages spenders from forwarding payments through
   the local node when the node's balance is low and it would probably
