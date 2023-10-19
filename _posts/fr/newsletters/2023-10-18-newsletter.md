@@ -158,6 +158,6 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 [Doppler]: https://github.com/tee8z/doppler
 [doppler announced]: https://twitter.com/voltage_cloud/status/1712171748144070863
 [coldcard blog]: https://blog.coinkite.com/5.2.0-seed-vault/
-[Tapleaf circuits]: https://github.com/supertestnet/tapleaf-circuits
+[circuits Tapleaf]: https://github.com/supertestnet/tapleaf-circuits
 [samourai blog]: https://blog.samourai.is/wallet-update-0-99-98i/
 [krux github]: https://github.com/selfcustody/krux
