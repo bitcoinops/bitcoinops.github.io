@@ -28,7 +28,7 @@ notable changes to popular Bitcoin infrastructure software.
 
     The disclosure was made after Optech's usual news deadline, so we
     are only able to provide the above link in this week's newsletter.
-    We will provide a regular summary in next week's newsletter.
+    We will provide a regular summary in next week's newsletter. {% assign timestamp="1:09" %}
 
 - **Payments contingent on arbitrary computation:** Robin Linus
   [posted][linus post] to the Bitcoin-Dev mailing list a [paper][linus paper] he's
@@ -87,7 +87,7 @@ notable changes to popular Bitcoin infrastructure software.
     The idea received a significant amount of discussion on the mailing
     list as well as on Twitter and various Bitcoin-focused podcasts.  We
     expect continued discussion in the coming weeks and
-    months.
+    months. {% assign timestamp="8:15" %}
 
 - **Proposed BIP for MuSig2 fields in PSBTs:** Andrew Chow [posted][chow
   mpsbt] to the Bitcoin-Dev mailing list with a [draft BIP][mpsbt-bip],
@@ -99,7 +99,7 @@ notable changes to popular Bitcoin infrastructure software.
     Anthony Towns [asked][towns mpsbt] whether the proposed BIP would
     also include fields for [adaptor signatures][topic adaptor
     signatures], but continued discussion indicated that would likely
-    need to be defined in a separate BIP.
+    need to be defined in a separate BIP. {% assign timestamp="26:44" %}
 
 ## Changes to services and client software
 
@@ -108,28 +108,28 @@ wallets and services.*
 
 - **BIP-329 Python library released:**
   The [BIP-329 Python Library][] is a set of tools that can read, write,
-  encrypt, and decrypt [BIP329][]-compliant wallet label files.
+  encrypt, and decrypt [BIP329][]-compliant wallet label files. {% assign timestamp="29:10" %}
 
 - **LN testing tool Doppler announced:**
   Recently [announced][doppler announced], [Doppler][] supports defining Bitcoin and Lightning
   node topologies and onchain/offchain payment activity using a Domain-Specific
-  Language (DSL) to test LND, CLN, and Eclair implementations together.
+  Language (DSL) to test LND, CLN, and Eclair implementations together. {% assign timestamp="30:19" %}
 
 - **Coldcard Mk4 v5.2.0 released:**
   The firmware [updates][coldcard blog] include [BIP370][] support for
-  version 2 [PSBTs][topic psbt], additional [BIP39][] support, and multiple seed capabilities.
+  version 2 [PSBTs][topic psbt], additional [BIP39][] support, and multiple seed capabilities. {% assign timestamp="31:54" %}
 
 - **Tapleaf circuits: a BitVM demo:**
   [Tapleaf circuits][] is a proof-of-concept implementation of Bristol circuits
-  using the BitVM approach outlined earlier in the newsletter.
+  using the BitVM approach outlined earlier in the newsletter. {% assign timestamp="32:27" %}
 
 - **Samourai Wallet 0.99.98i released:**
   The [0.99.98i][samourai blog] release includes additional PSBT, UTXO labeling,
-  and batch-sending features.
+  and batch-sending features. {% assign timestamp="34:24" %}
 
 - **Krux: signing device firmware:**
   [Krux][krux github] is an open-source firmware project for building hardware
-  signing devices using commodity hardware.
+  signing devices using commodity hardware. {% assign timestamp="35:12" %}
 
 ## Releases and release candidates
 
@@ -138,7 +138,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Bitcoin Core 24.2rc2][] and [Bitcoin Core 25.1rc1][] are release
-  candidates for maintenance versions of Bitcoin Core.
+  candidates for maintenance versions of Bitcoin Core. {% assign timestamp="36:06" %}
 
 ## Notable code and documentation changes
 
@@ -157,7 +157,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   `multi_a` fragment is introduced exclusively for P2TR descriptors that
   matches the semantics of `multi` in P2WSH descriptors. The discussion on the
   PR notes that a majority of the work went towards proper tracking of the
-  changed resource limits for tapscript.
+  changed resource limits for tapscript. {% assign timestamp="38:07" %}
 
 - [Eclair #2703][] discourages spenders from forwarding payments through
   the local node when the node's balance is low and it would probably
@@ -165,14 +165,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   advertising that its maximum HTLC amount has been lowered.  Preventing
   rejected payments improves the experience for spenders and helps avoid
   the local node being penalized by pathfinding systems that discount
-  nodes that have failed to forward a payment in the recent past.
+  nodes that have failed to forward a payment in the recent past. {% assign timestamp="45:54" %}
 
 - [LND #7267][] makes it possible to create routes to [blinded
   paths][topic rv routing], bringing LND much closer to full support for
-  making blinded payments.
+  making blinded payments. {% assign timestamp="47:06" %}
 
 - [BDK #1041][] adds a module for getting data about the block chain
-  from Bitcoin Core using that program's RPC interface.
+  from Bitcoin Core using that program's RPC interface. {% assign timestamp="47:39" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27255,2703,7267,1041" %}
