@@ -146,7 +146,7 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 {% include linkers/issues.md v=2 issues="27255,2703,7267,1041" %}
 [linus post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021984.html
 [linus paper]: https://bitvm.org/bitvm.pdf
-[nand gate]: https://en.wikipedia.org/wiki/NAND_gate
+[porte nand]: https://en.wikipedia.org/wiki/NAND_gate
 [Bitcoin Core 24.2rc2]: https://bitcoincore.org/bin/bitcoin-core-24.2/
 [Bitcoin Core 25.1rc1]: https://bitcoincore.org/bin/bitcoin-core-25.1/
 [riard cve]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
@@ -154,7 +154,7 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 [kanjalkar mpsbt]: https://gist.github.com/sanket1729/4b525c6049f4d9e034d27368c49f28a6
 [chow mpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021988.html
 [towns mpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021991.html
-[BIP-329 Python Library]: https://github.com/Labelbase/python-bip329
+[bibliothèque Python BIP-329]: https://github.com/Labelbase/python-bip329
 [Doppler]: https://github.com/tee8z/doppler
 [doppler announced]: https://twitter.com/voltage_cloud/status/1712171748144070863
 [coldcard blog]: https://blog.coinkite.com/5.2.0-seed-vault/
