@@ -56,7 +56,7 @@ d'infrastructure Bitcoin.
     a gagné et l'autre renverra "vrai" si Bob a gagné. Une partie publiera ensuite onchain la transaction qui affirme que son programme
     s'évalue à vrai (qu'elle a gagné) ; l'autre partie acceptera cette affirmation (reconnaissant la perte des fonds) ou démontrera la
     fraude (recevant les fonds en cas de succès). Dans les cas où Alice et Bob ne seraient pas naturellement des adversaires, Alice peut
-    être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle n'est pas 
+    être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle n'est pas
     parvenue à calculer correctement.
 
     L'idée a fait l'objet d'un nombre important de discussions sur la liste de diffusion ainsi que sur Twitter et divers podcasts axés
