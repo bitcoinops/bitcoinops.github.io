@@ -19,7 +19,7 @@ d'infrastructure Bitcoin.
   Lightning-Dev la divulgation complète d'un problème qu'il avait précédemment [signalé de manière responsable][topic responsible
   disclosures] aux développeurs travaillant sur le protocole Bitcoin et diverses implémentations LN populaires. Les versions les plus
   récentes de Core Lightning, Eclair, LDK et LND contiennent toutes des mesures d'atténuation qui rendent l'attaque moins pratique,
-  bien qu'elles n'éliminent pas la préoccupation sous-jacente.
+  bien qu'elles n'éliminent pas le problème sous-jacent.
 
     La divulgation a été faite après la date limite habituelle des actualités d'Optech, nous ne pouvons donc fournir que le lien
     ci-dessus dans la newsletter de cette semaine. Nous fournirons un résumé régulier dans la newsletter de la semaine prochaine.
@@ -27,16 +27,16 @@ d'infrastructure Bitcoin.
 
 - **Paiements conditionnels à une computation arbitraire :** Robin Linus a [publié][linus post] sur la liste de diffusion Bitcoin-Dev
   un [article][linus paper] qu'il a écrit sur _BitVM_, une combinaison de méthodes qui permet de payer des bitcoins à quelqu'un qui
-  prouve avec succès qu'un programme arbitraire s'est exécuté correctement. Notamment, cela est possible sur Bitcoin aujourd'hui,
+  prouve avec succès qu'un programme arbitraire s'est exécuté correctement. Cette méthode est applicable sur Bitcoin dès aujourd'hui car
   aucun changement de consensus n'est requis.
 
     Pour fournir un contexte, une caractéristique bien connue de Bitcoin est d'exiger que quelqu'un satisfasse une expression de
-    programmation (appelée _script_) afin de dépenser des bitcoins associés à ce script. Par exemple, un script contenant une clé
-    publique qui ne peut être satisfaite que si la clé privée correspondante crée une signature s'engageant à une transaction de
+    programmation (appelée _script_) afin de dépenser des bitcoins associés à ce script. Par exemple, un script qui ne peut être exécuté
+    que si la clé privée correspondant à la clé publique qu'il contient crée une signature s'engageant à une transaction de
     dépense. Les scripts doivent être écrits dans le langage de Bitcoin (appelé _Script_) pour être appliqués par consensus, mais
     Script est délibérément limité dans sa flexibilité.
 
-    L'article de Linus contourne certaines de ces limites. Si Alice fait confiance à Bob pour agir si un programme est exécuté de
+    L'article de Linus contourne certaines de ces limites. Si Alice compte sur Bob pour agir si un programme est exécuté de
     manière incorrecte, mais ne veut pas lui faire confiance pour autre chose, elle peut payer des fonds à un [taproot][topic
     taproot] qui permettra à Bob de réclamer les fonds s'il démontre qu'Alice n'a pas exécuté correctement un programme arbitraire.
     Si Alice exécute correctement le programme, elle peut dépenser les fonds même si Bob tente de l'en empêcher.
@@ -52,19 +52,19 @@ d'infrastructure Bitcoin.
 
     BitVM peut être appliqué de manière fiable dans des cas où Alice et Bob sont des adversaires naturels, par exemple lorsqu'ils paient
     des fonds à une sortie qui sera payée à celui d'entre eux qui gagne à un jeu d'échecs. Ils peuvent ensuite utiliser deux programmes
-    arbitraires (presque identiques), chacun prenant le même ensemble arbitraire de coups d'échecs. Un programme renverra vrai si Alice
-    a gagné et l'autre renverra vrai si Bob a gagné. Une partie publiera ensuite onchain la transaction qui affirme que son programme
+    arbitraires (presque identiques), chacun prenant le même ensemble arbitraire de coups d'échecs. Un programme renverra "vrai" si Alice
+    a gagné et l'autre renverra "vrai" si Bob a gagné. Une partie publiera ensuite onchain la transaction qui affirme que son programme
     s'évalue à vrai (qu'elle a gagné) ; l'autre partie acceptera cette affirmation (reconnaissant la perte des fonds) ou démontrera la
     fraude (recevant les fonds en cas de succès). Dans les cas où Alice et Bob ne seraient pas naturellement des adversaires, Alice peut
-    être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle a échoué
-    à calculer correctement.
+    être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle n'est pas 
+    parvenue à calculer correctement.
 
     L'idée a fait l'objet d'un nombre important de discussions sur la liste de diffusion ainsi que sur Twitter et divers podcasts axés
     sur Bitcoin. Nous prévoyons des discussions continues dans les semaines et les mois à venir. {% assign timestamp="8:15" %}
 
 - **Proposition de BIP pour les champs MuSig2 dans les PSBT :** Andrew Chow [a posté][chow mpsbt] sur la liste de diffusion Bitcoin-Dev
   avec un [projet de BIP][mpsbt-bip], en partie basé sur [un travail antérieur][kanjalkar mpsbt] de Sanket Kanjalkar, pour ajouter
-  plusieurs champs à toutes les versions des [PSBT][topic psbt] pour les "clés, les nonces publiques et les signatures partielles
+  plusieurs champs à toutes les versions des [PSBT][topic psbt] pour les "clés, les nonces publics et les signatures partielles
   produites avec [MuSig2][topic musig]".
 
     Anthony Towns [a demandé][towns mpsbt] si le BIP proposé inclurait également des champs pour les [signatures adaptatives][topic
@@ -128,10 +128,10 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   PR note qu'une grande partie du travail a été consacrée au suivi approprié des
   limites de ressources modifiées pour tapscript. {% assign timestamp="38:07" %}
 
-- [Eclair #2703][] décourage les dépensiers de faire transiter les paiements par
+- [Eclair #2703][] décourage les utilisateurs qui font une dépense de faire transiter les paiements par
   le nœud local lorsque le solde du nœud est faible et qu'il serait probablement
   nécessaire de rejeter ces paiements. Cela est réalisé en annonçant que le montant HTLC maximum du nœud a été réduit.
-  Éviter les paiements rejetés améliore l'expérience des dépensiers et aide à éviter
+  Éviter les paiements rejetés améliore l'expérience lors d'une dépense et aide à éviter
   que le nœud local ne soit pénalisé par les systèmes de recherche de chemin qui rabaissent
   les nœuds qui n'ont pas réussi à faire transiter un paiement récemment. {% assign timestamp="45:54" %}
 
