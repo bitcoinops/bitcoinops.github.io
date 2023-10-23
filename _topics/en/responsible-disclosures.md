@@ -69,6 +69,9 @@ optech_mentions:
   - title: "Matt Morehouse disclosed fake channels vulnerability against four major LN node implementations"
     url: /en/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding
 
+  - title: "Antoine Riard responsibly discloses replacement cycle attacks affecting all HTLC-using software"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
