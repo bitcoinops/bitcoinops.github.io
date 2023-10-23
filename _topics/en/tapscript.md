@@ -85,6 +85,9 @@ optech_mentions:
   - title: "Description of tapscript signature malleability and proposed fix for SIGHASH_ANYPREVOUT"
     url: /en/newsletters/2023/02/15/#tapscript-signature-malleability
 
+  - title: "Research showing effect of OP_SUCCESSx on covenants using output script introspection"
+    url: /en/newsletters/2023/10/25/#op-success-changes-would-be-beneficial
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

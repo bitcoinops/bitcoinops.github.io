@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Bitcoin Core #27596 adds assumedvalid snapshot chainstate and full validation sync in the background"
     url: /en/newsletters/2023/10/11/#bitcoin-core-27596
 
+  - title: Bitcoin Core bug found in computation of UTXO set hash
+    url: /en/newsletters/2023/10/25/#bitcoin-utxo-set-summary-hash-replacement
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
