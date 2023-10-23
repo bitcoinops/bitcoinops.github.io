@@ -52,6 +52,9 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including v3 transaction relay"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Replacement cycle attacks not solved by current v3 transaction relay policies"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

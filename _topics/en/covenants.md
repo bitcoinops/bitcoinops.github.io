@@ -103,6 +103,9 @@ optech_mentions:
   - title: "Draft BIP specification for `OP_TXHASH` proposed"
     url: /en/newsletters/2023/10/11/#specification-for-op-txhash-proposed
 
+  - title: "Research into minimal opcodes for output script introspection to enable covenants"
+    url: /en/newsletters/2023/10/25/#research-into-generic-covenants-with-minimal-script-language-changes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
