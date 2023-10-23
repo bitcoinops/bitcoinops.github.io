@@ -430,7 +430,50 @@ answers posted since our last update.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 
-FIXME:bitschmidty
+- [How does the Branch and Bound coin selection algorithm work?]({{bse}}119919)
+  Murch summarizes his research work on the [Branch and Bound algorithm][branch
+  and bound paper] for [coin selection][topic coin selection] that "searches for
+  the least wasteful input set that produces a changeless transaction".
+
+- [Why is each transaction broadcast twice in the Bitcoin network?]({{bse}}119819)
+  Antoine Poinsot responds to an early mailing list post from Satoshi that
+  noted "Each transaction has to be broadcast twice". Poinsot clarified that
+  while at that time a transaction was broadcast twice (once during transaction
+  relay and once during block relay), the subsequent addition of [BIP152][] [compact block relay][topic
+  compact block relay] means the transaction data only needs to be broadcast
+  once to a peer.
+
+- [Why are OP_MUL and OP_DIV disabled in Bitcoin?]({{bse}}119785)
+  Antoine Poinsot points out that the `OP_MUL` and `OP_DIV` opcodes were
+  probably disabled, in addition to [other opcodes][github disable opcodes], as
+  a result of the ["1 RETURN"]({{bse}}38037) and [OP_LSHIFT crash][CVE-2010-5137] bugs discovered
+  in the weeks prior.
+
+- [Why are hashSequence and hashPrevouts computed separately?]({{bse}}119832)
+  Pieter Wuille explains that by splitting up to-be-signed transaction hash data
+  into previous outputs and sequences, those hash values can be used once for the whole
+  transaction involving all types of sighashes.
+
+- [Why does Miniscript add an extra size check for hash preimage comparisons?]({{bse}}119892)
+  Antoine Poinsot notes that hash preimages are limited in size in
+  [miniscript][topic miniscript] to avoid non-standard Bitcoin transactions,
+  avoid consensus-invalid cross-chain atomic swaps, and ensure that witness
+  costs can be accurately calculated.
+
+- [How can the next block fee be less than the mempool purging fee rate?]({{bse}}120015)
+  User Steven references mempool.space dashboards showing a default mempool
+  purging 1.51sat/vb transactions while also indicating an estimated next block
+  containing transactions with 1.49sat/vb. Glozow outlines the likely
+  explanation as a full mempool resulting in the eviction of a transaction that
+  bumped the node's mempool min feerate (by `-incrementalRelayFee`) but left
+  some lower feerate transactions in the mempool that did not need to be
+  evicted in order to stay within the maximum mempool size.
+
+  She also mentions the asymmetry between [ancestor scoring][waiting for confirmation 2] for block
+  template selection and descendant scoring for mempool eviction as another
+  possible explanation and links to a [cluster mempool][topic cluster
+  mempool]-related [issue][Bitcoin Core #27677] explaining the asymmetry and a
+  potential new approach.
 
 ## Releases and release candidates
 
@@ -496,7 +539,7 @@ We apologize for the delay._
     > version of the transaction.
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="27677" %}
 [news274 cycle]: /en/newsletters/2023/10/18/#security-disclosure-of-issue-affecting-ln
 [riard cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
 [corallo cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022015.html
@@ -531,3 +574,7 @@ We apologize for the delay._
 [news255 delta]: /en/newsletters/2023/06/14/#eclair-2677
 [bitcoin core developer wiki]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki
 [bitcoin core pr review club]: https://bitcoincore.reviews/#upcoming-meetings
+[branch and bound paper]: https://murch.one/erhardt2016coinselection.pdf
+[github disable opcodes]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-27496895958ca30c47bbb873299a2ad7a7ea1003a9faa96b317250e3b7aa1fefR94
+[CVE-2010-5137]: https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2010-5137
+[waiting for confirmation 2]: /en/blog/waiting-for-confirmation/#incentives
