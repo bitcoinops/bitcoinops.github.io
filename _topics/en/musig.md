@@ -130,6 +130,9 @@ optech_mentions:
   - title: "LND #7994 adds RPC support for remote signing with the MuSig2 protocol"
     url: /en/newsletters/2023/09/27/#lnd-7994
 
+  - title: "Proposed BIP for MuSig2 fields in PSBTs"
+    url: /en/newsletters/2023/10/18/#proposed-bip-for-musig2-fields-in-psbts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures
