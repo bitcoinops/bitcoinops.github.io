@@ -68,6 +68,9 @@ optech_mentions:
   - title: "LDK #2413 adds support for sending and receving payments with blinded paths"
     url: /en/newsletters/2023/09/20/#ldk-2413
 
+  - title: "LND #7267 makes it possible to create routes to blinded paths"
+    url: /en/newsletters/2023/10/18/#lnd-7267
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

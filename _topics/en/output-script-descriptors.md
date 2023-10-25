@@ -158,6 +158,9 @@ optech_mentions:
   - title: "BIPs #1354 adds BIP389 for multiple derivation path descriptors"
     url: /en/newsletters/2023/07/05/#bips-1354
 
+  - title: "Bitcoin Core #27255 ports miniscript to tapscript, providing tapscript descriptors"
+    url: /en/newsletters/2023/10/18/#bitcoin-core-27255
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
