@@ -201,6 +201,9 @@ optech_mentions:
   - title: "Bitcoin Core #25796 adds a new `descriptorprocesspsbt` RPC for updating a PSBT"
     url: /en/newsletters/2023/05/31/#bitcoin-core-25796
 
+  - title: "Proposed BIP for MuSig2 fields in PSBTs"
+    url: /en/newsletters/2023/10/18/#proposed-bip-for-musig2-fields-in-psbts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
