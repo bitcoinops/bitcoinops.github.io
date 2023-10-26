@@ -103,7 +103,7 @@ Bitcoin Stack Exchange.
   [transaction pinning attacks][topic transaction pinning].  However,
   techniques such as [v3 transaction relay][topic v3 transaction relay]
   that were designed to prevent pinning for LN and similar protocols do
-  not prevent replacement cycling.
+  not prevent replacement cycling. {% assign timestamp="1:40" %}
 
 - **Deployed mitigations in LN nodes for replacement cycling:** as
   [described][riard cycle1] by Antoine Riard, several mitigations have
@@ -366,7 +366,7 @@ Bitcoin Stack Exchange.
   any software that uses the `hash_serialized_2` field, please notify
   its authors about the problem and encourage them to read Jahr's email
   about the changes being made for the next major version of Bitcoin
-  Core to address the bug.
+  Core to address the bug. {% assign timestamp="24:21" %}
 
 - **Research into generic covenants with minimal Script language changes:**
   Rusty Russell [posted][russell scripts] to the Bitcoin-Dev mailing list a link to some
@@ -405,7 +405,7 @@ Bitcoin Stack Exchange.
 
   The research received some discussion and Russell indicated that he is
   working on a follow-up post related to introspection of output
-  amounts.
+  amounts. {% assign timestamp="40:02" %}
 
 - **Proposed BIP for OP_CAT:** Ethan Heilman [posted][heilman cat] to
   the Bitcoin-Dev mailing list a [proposed BIP][op_cat bip] to add an
@@ -418,7 +418,7 @@ Bitcoin Stack Exchange.
     The proposal received a moderate amount of discussion, most of it
     focused on limits in tapscript that might affect the usefulness and
     worst-case costs of enabling `OP_CAT` (and whether any of those
-    limits should be changed).
+    limits should be changed). {% assign timestamp="45:38" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -433,7 +433,7 @@ answers posted since our last update.*
 - [How does the Branch and Bound coin selection algorithm work?]({{bse}}119919)
   Murch summarizes his research work on the [Branch and Bound algorithm][branch
   and bound paper] for [coin selection][topic coin selection] that "searches for
-  the least wasteful input set that produces a changeless transaction".
+  the least wasteful input set that produces a changeless transaction". {% assign timestamp="52:17" %}
 
 - [Why is each transaction broadcast twice in the Bitcoin network?]({{bse}}119819)
   Antoine Poinsot responds to an early mailing list post from Satoshi that
@@ -441,24 +441,24 @@ answers posted since our last update.*
   while at that time a transaction was broadcast twice (once during transaction
   relay and once during block relay), the subsequent addition of [BIP152][] [compact block relay][topic
   compact block relay] means the transaction data only needs to be broadcast
-  once to a peer.
+  once to a peer. {% assign timestamp="54:29" %}
 
 - [Why are OP_MUL and OP_DIV disabled in Bitcoin?]({{bse}}119785)
   Antoine Poinsot points out that the `OP_MUL` and `OP_DIV` opcodes were
   probably disabled, in addition to [other opcodes][github disable opcodes], as
   a result of the ["1 RETURN"]({{bse}}38037) and [OP_LSHIFT crash][CVE-2010-5137] bugs discovered
-  in the weeks prior.
+  in the weeks prior. {% assign timestamp="56:57" %}
 
 - [Why are hashSequence and hashPrevouts computed separately?]({{bse}}119832)
   Pieter Wuille explains that by splitting up to-be-signed transaction hash data
   into previous outputs and sequences, those hash values can be used once for the whole
-  transaction involving all types of sighashes.
+  transaction involving all types of sighashes. {% assign timestamp="58:56" %}
 
 - [Why does Miniscript add an extra size check for hash preimage comparisons?]({{bse}}119892)
   Antoine Poinsot notes that hash preimages are limited in size in
   [miniscript][topic miniscript] to avoid non-standard Bitcoin transactions,
   avoid consensus-invalid cross-chain atomic swaps, and ensure that witness
-  costs can be accurately calculated.
+  costs can be accurately calculated. {% assign timestamp="59:52" %}
 
 - [How can the next block fee be less than the mempool purging fee rate?]({{bse}}120015)
   User Steven references mempool.space dashboards showing a default mempool
@@ -473,7 +473,7 @@ answers posted since our last update.*
   template selection and descendant scoring for mempool eviction as another
   possible explanation and links to a [cluster mempool][topic cluster
   mempool]-related [issue][Bitcoin Core #27677] explaining the asymmetry and a
-  potential new approach.
+  potential new approach. {% assign timestamp="1:00:51" %}
 
 ## Releases and release candidates
 
@@ -482,11 +482,11 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Bitcoin Core 25.1][] is a maintenance release mainly containing bug
-  fixes.  It is the current recommended version of Bitcoin Core.
+  fixes.  It is the current recommended version of Bitcoin Core. {% assign timestamp="1:12:00" %}
 
 - [Bitcoin Core 24.2][] is a maintenance release mainly containing bug
   fixes.  It is recommended for anyone still using 24.0 or 24.1 who is
-  unable or unwilling to upgrade to 25.1 at this time.
+  unable or unwilling to upgrade to 25.1 at this time. {% assign timestamp="1:12:00" %}
 
 - [Bitcoin Core 26.0rc1][] is a release candidate for the next major
   version of the predominant full node implementation.  Verified test
@@ -496,7 +496,7 @@ release candidates.*
   releases have had a testing guide on the [Bitcoin Core developer
   wiki][] and a meeting of the [Bitcoin Core PR Review Club][] dedicated
   to testing.  We encourage interested readers to periodically check to
-  see if those resources become available for the new release candidate.
+  see if those resources become available for the new release candidate. {% assign timestamp="1:14:23" %}
 
 ## Notable code and documentation changes
 
