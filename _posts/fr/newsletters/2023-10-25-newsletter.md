@@ -331,7 +331,7 @@ notre dernière mise à jour.*
 
   Elle mentionne également l'asymétrie entre le [score des ancêtres][waiting for confirmation 2] pour la sélection du modèle de bloc
   et le score des descendants pour l'éviction de la mempool comme une autre explication possible et renvoie à un [mempool de
-  cluster][cluster mempool]-[problème][Bitcoin Core #27677] expliquant l'asymétrie et une nouvelle approche potentielle.
+  cluster][topic cluster mempool]-[problème][Bitcoin Core #27677] expliquant l'asymétrie et une nouvelle approche potentielle.
 
 ## Mises à jour et versions candidates
 
@@ -419,7 +419,7 @@ prochaine. Nous nous excusons pour le retard._
 [news142 delta]: /en/newsletters/2021/03/31/#rust-lightning-849
 [news248 delta]: /fr/newsletters/2023/04/26/#lnd-v0-16-1-beta
 [news255 delta]: /fr/newsletters/2023/06/14/#eclair-2677
-[bitcoin core developer wiki]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki
+[wiki des développeurs de Bitcoin Core]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki
 [bitcoin core pr review club]: https://bitcoincore.reviews/#upcoming-meetings
 [branch and bound paper]: https://murch.one/erhardt2016coinselection.pdf
 [github disable opcodes]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-27496895958ca30c47bbb873299a2ad7a7ea1003a9faa96b317250e3b7aa1fefR94
