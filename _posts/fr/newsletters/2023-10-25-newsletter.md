@@ -135,7 +135,9 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
          ![Graphique de la probabilité que l'attaque échoue dans x blocs](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
 
      - **Analyse du mempool:** Les HTLC ont été conçus pour inciter Mallory à faire confirmer son préimage dans la chaîne de blocs
-         avant que Bob puisse réclamer son remboursement. C'est pratique pour Bob : la chaîne de blocs est largement disponible et de taille limitée, donc Bob peut facilement trouver n'importe quel préimage qui l'affecte. Si ce système fonctionnait comme prévu, Bob pourrait obtenir toutes les informations dont il a besoin pour utiliser LN de manière fiable à partir de la chaîne de blocs.
+         avant que Bob puisse réclamer son remboursement. C'est pratique pour Bob : la chaîne de blocs est largement disponible et de
+         taille limitée, donc Bob peut facilement trouver n'importe quel préimage qui l'affecte. Si ce système fonctionnait comme prévu,
+         Bob pourrait obtenir toutes les informations dont il a besoin pour utiliser LN de manière fiable à partir de la chaîne de blocs.
 
          Malheureusement, le remplacement cyclique signifie que Mallory peut ne plus être incitée à confirmer sa transaction avant que
          le remboursement de Bob puisse être réclamé. Cependant, pour initier un cycle de remplacement, Mallory doit toujours brièvement
@@ -157,7 +159,7 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
          autre chose qu'un communiqué de relations publiques". Olaoluwa Osuntokun a soutenu : "[à mon avis], il s'agit d'une attaque
          plutôt fragile, qui nécessite : une configuration par nœud, une synchronisation et une exécution extrêmement précises,
          une superposition non confirmante de toutes les transactions et une propagation instantanée à travers l'ensemble du réseau".
-         
+
              Nous chez Optech pensons qu'il est important de rappeler que cette attaque ne concerne que les nœuds de transfert. Un nœud
              de transfert est un portefeuille Bitcoin connecté à un service Internet toujours actif---un type de déploiement qui est
              constamment vulnérable au vol de tous ses fonds. Toute personne évaluant l'effet du remplacement cyclique sur le profil
