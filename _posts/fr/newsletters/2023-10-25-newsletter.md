@@ -345,7 +345,7 @@ notre dernière mise à jour.*
   toute personne utilisant encore la version 24.0 ou 24.1 et qui est incapable ou refuse de passer à la version 25.1 pour le moment.
 
 - [Bitcoin Core 26.0rc1][] est un candidat à la version suivante de la principale implémentation de nœud complet. Les binaires de test
-  vérifiés n'ont pas encore été publiés au moment de la rédaction de cet article, bien que nous nous attendions à ce qu'ils soient
+  vérifiés n'ont pas encore été publiés au moment de la rédaction de cet article, bien que nous  nous attendions à ce qu'ils soient
   publiés à l'URL précédente peu de temps après la publication de la lettre d'information. Les précédents candidats aux versions
   majeures ont eu un guide de test sur le [wiki des développeurs de Bitcoin Core][] et une réunion du [Bitcoin Core PR Review Club][]
   dédiée aux tests. Nous encourageons les lecteurs intéressés à vérifier périodiquement si ces ressources deviennent disponibles pour
