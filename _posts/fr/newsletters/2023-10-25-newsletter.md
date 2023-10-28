@@ -229,7 +229,7 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
              modifications de la politique de relais et de la mémoire tampon pour éviter certains problèmes, tels que son utilisation
              pour gaspiller la bande passante des nœuds.
 
-             Une [réponse][harding expire] à la proposition a suggéré un moyen plus faible d'atteindre certains des mêmes objectifs
+             Une [reponse][harding expire] à la proposition a suggéré un moyen plus faible d'atteindre certains des mêmes objectifs
              que `OP_EXPIRE`, mais sans nécessiter de modifications du consensus ou de la politique de relais. Cependant, Peter Todd
              a soutenu que cela n'empêche pas l'attaque de cycle de remplacement.
 
