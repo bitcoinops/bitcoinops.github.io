@@ -317,7 +317,7 @@ notre dernière mise à jour.*
   ces valeurs de hachage peuvent être utilisées une fois pour toute la transaction impliquant tous les types de sighashes.
 
 - [Pourquoi Miniscript ajoute-t-il une vérification de taille supplémentaire pour les comparaisons de préimages de
-  hachage ?]({{bse}}119892)
+hachage ?]({{bse}}119892)
   Antoine Poinsot note que les préimages de hachage sont limitées en taille dans [miniscript][topic miniscript] pour éviter les
   transactions Bitcoin non standard, éviter les échanges atomiques inter-chaînes invalides pour le consensus et garantir que les
   coûts des témoins peuvent être calculés avec précision.
