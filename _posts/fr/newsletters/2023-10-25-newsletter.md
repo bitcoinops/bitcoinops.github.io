@@ -8,24 +8,24 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine décrit l'attaque de remplacement cyclique contre les HTLC utilisés dans LN et d'autres systèmes, examine
-les mesures d'atténuation déployées pour contrer l'attaque et résume plusieurs propositions de mesures d'atténuation supplémentaires.
+les mesures d'atténuation déployées pour contrer l'attaque et résume d'autres propositions de mesures d'atténuation.
 On y décrit également un bogue notable affectant un RPC de Bitcoin Core, des recherches sur les covenants avec des modifications
-minimales du script Bitcoin, et une proposition de BIP pour un opcode `OP_CAT`. On y trouve également notre section mensuelle
-habituelle concernant les questions et réponses populaires sur le Bitcoin Stack Exchange
+minimales du script Bitcoin, et une proposition de BIP pour un opcode `OP_CAT`. On y trouve enfin notre section mensuelle
+reprenant certaines questions/réponses du Bitcoin Stack Exchange.
 
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 ## Nouvelles
 
 - **Vulnérabilité de remplacement cyclique contre les HTLC :** Comme mentionné brièvement dans [la newsletter de la semaine
-  dernière][news274 cycle], Antoine Riard a [publié][riard cycle1] sur les listes de diffusion Bitcoin-Dev et Lightning-Dev une
+  dernière][news274 cycle], Antoine Riard a [exposé][riard cycle1] sur les listes de diffusion Bitcoin-Dev et Lightning-Dev une
   vulnérabilité [divulguée de manière responsable][topic responsible disclosures] affectant toutes les implémentations LN. Depuis
-  la divulgation, les implémentations ont été mises à jour pour inclure des mesures d'atténuation contre l'attaque et nous
+  cette divulgation, les implémentations ont été mises à jour pour inclure des mesures d'atténuation contre l'attaque et nous
   recommandons vivement de mettre à jour vers la dernière version de votre logiciel LN préféré. Seuls les nœuds utilisés pour
   transférer des paiements sont concernés ; les utilisateurs qui n'utilisent leurs canaux que pour initier et recevoir des paiements
   ne sont pas affectés.
 
-  Nous avons organisé notre description de cette histoire en trois parties distinctes : une description de la vulnérabilité
+  Notre récit est organisé en trois parties distinctes : une description de la vulnérabilité
   (cette partie), une description des mesures d'atténuation déployées jusqu'à présent par différentes implémentations LN, et un
   résumé des mesures d'atténuation supplémentaires et des solutions proposées sur la liste de diffusion.
 
@@ -36,19 +36,19 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
   l'entrée _A_---et toutes les données qui y sont incluses---ont été supprimées de tous les mempools des nœuds qui ont traité le
   remplacement.
 
-  Bien qu'il ne soit pas sûr pour un portefeuille classique de faire cela[^rbf-warning], c'est un comportement que Mallory peut
+  Bien qu'il ne soit pas prudent de faire une telle opération avec un portefeuille classique [^rbf-warning], c'est un comportement que Mallory peut
   exploiter si elle souhaite supprimer une entrée des mempools des nœuds.
 
   En particulier, si Mallory partage le contrôle d'une sortie avec Bob, elle peut attendre qu'il dépense la sortie, remplacer sa
   dépense par une dépense de sa part qui contient une entrée supplémentaire, puis remplacer sa dépense par une transaction qui ne
   dépense plus leur sortie commune. C'est un _cycle de remplacement_. Les mineurs continueront à collecter les frais de transaction
-  de Mallory, mais il y a une forte probabilité que les dépenses de Bob et de Mallory de la sortie ne soient confirmées nulle part
-  près du moment où Bob diffuse sa dépense.
+  de Mallory, mais il y a une forte probabilité que ni les dépenses de Bob ni celles de Mallory ne soient confirmées
+  au moment où Bob diffuse ses dépenses.
 
   Cela est important dans le cas de LN et de plusieurs autres protocoles car certaines transactions doivent avoir lieu dans des
   fenêtres de temps spécifiques pour garantir que les utilisateurs qui transfèrent des paiements ne perdent pas d'argent. Par exemple,
   Mallory utilise l'un de ses nœuds (que nous appellerons _MalloryA_) pour transférer un paiement à Bob, et Bob transfère ce paiement
-  à un autre nœud de Mallory (_MalloryB_). MalloryB est censée soit donner à Bob un _préimage_ qui lui permet d'accepter le paiement
+  à un autre nœud de Mallory (_MalloryB_). MalloryB est censée soit donner à Bob une _préimage_ qui lui permet d'accepter le paiement
   transféré de MalloryA, soit MalloryB est censée annuler (révoquer) le paiement transféré qu'elle a reçu de Bob avant une certaine
   heure. Au lieu de cela, MalloryB ne fait rien à l'heure prévue et Bob est contraint de fermer le canal et de diffuser une
   transaction qui dépense le paiement transféré pour lui-même. Cette dépense devrait être confirmée rapidement, ce qui permet à Bob
@@ -56,14 +56,14 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
   tentative de transfert du paiement (à l'exception des frais de transaction payés pour fermer et régler le canal Bob-MalloryB).
 
   Alternativement, lorsque Bob ferme le canal et tente de dépenser le paiement transféré pour lui-même, MalloryB peut remplacer sa
-  dépense par une dépense contenant le préimage. Si cette transaction est confirmée rapidement, Bob apprendrait le préimage et
-  serait en mesure de réclamer le paiement transféré de MalloryA, ce qui rendrait Bob heureux.
+  dépense par une dépense contenant la préimage. Si cette transaction est confirmée rapidement, Bob connaitrait la préimage et
+  serait en mesure de réclamer le paiement transféré de MalloryA, ce qui ferait le bonheur de Bob.
 
-  Cependant, si MalloryB remplace la dépense de Bob par une dépense contenant le préimage, puis retire rapidement cette entrée, il
-  est peu probable que la dépense de Bob ou le préimage de MalloryB apparaissent dans la chaîne de blocs. Cela empêche Bob de
-  récupérer son argent auprès de MalloryB. Sans le préimage, le protocole LN sans confiance empêche Bob de pouvoir conserver le
+  Cependant, si MalloryB remplace la dépense de Bob par une dépense contenant la préimage, puis retire rapidement cette entrée, il
+  est peu probable que la dépense de Bob ou la préimage de MalloryB apparaissent dans la chaîne de blocs. Cela empêcherait Bob de
+  récupérer son argent auprès de MalloryB. Sans la préimage, le protocole LN sans confiance empêche Bob de pouvoir conserver le
   paiement transféré de MalloryA, il lui accorde donc un remboursement. À ce stade, MalloryB fait confirmer sa dépense contenant
-  le préimage, ce qui lui permet de réclamer le paiement transféré de Bob. Cela signifie que si un montant _x_ a été transféré,
+  la préimage, ce qui lui permet de réclamer le paiement transféré de Bob. Cela signifie que si un montant _x_ a été transféré,
   MalloryA ne paie rien, MalloryB reçoit _x_, et Bob perd _x_ (sans tenir compte des divers frais).
 
   Pour que l'attaque soit rentable, MalloryB doit partager un canal avec Bob, mais MalloryA peut se trouver n'importe où le long du
@@ -79,8 +79,8 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
 - **Mesures d'atténuation déployées dans les nœuds LN pour le remplacement cyclique** : comme [décrit][riard cycle1] par Antoine Riard,
   plusieurs mesures d'atténuation ont été déployées par les implémentations LN.
 
-     - **Rebroadcast fréquent** : après que le mempool d'un nœud relais ait remplacé la dépense de Bob par la dépense de Mallory,
-         puis ait supprimé l'entrée de Mallory lors de son deuxième remplacement, ce nœud relais sera immédiatement prêt à accepter
+     - **Rebroadcast fréquent** : après que le mempool d'un nœud relais a remplacé la dépense de Bob par la dépense de Mallory,
+         puis a supprimé l'entrée de Mallory lors de son deuxième remplacement, ce nœud relais sera immédiatement prêt à accepter
          à nouveau la dépense de Bob. Tout ce que Bob a à faire est de rebroadcast sa dépense, ce qui ne lui coûte rien de plus que
          les frais de transaction qu'il était déjà prêt à payer.
 
@@ -101,7 +101,7 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
          probablement raisonnablement sécurisé jusqu'à une valeur légèrement inférieure à `x*y*z`.
 
      - **Délais d'expiration CLTV plus longs:** lorsque Bob accepte un HTLC de MalloryA, il accepte de lui permettre de réclamer un
-         remboursement sur la chaîne après un certain nombre de blocs (disons 200 blocs). Lorsque Bob propose un HTLC équivalent à
+         remboursement on-chain après un certain nombre de blocs (disons 200 blocs). Lorsque Bob propose un HTLC équivalent à
          MalloryB, elle lui permet de réclamer un remboursement après un nombre plus petit de blocs (disons 100 blocs). Ces
          conditions d'expiration sont écrites à l'aide de l'opcode `OP_CHECKLOCKTIMEVERIFY` (CLTV), donc l'écart entre eux est appelé
          le _delta d'expiration CLTV_.
@@ -119,7 +119,7 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
 
          De plus, chaque fois que la dépense de retransmission de Bob se trouve dans le mempool d'un mineur, il y a une chance que
          le mineur l'inclue dans un modèle de bloc qui est miné, ce qui entraîne l'échec de l'attaque. Le remplacement initial de
-         Mallory avec son préimage pourrait également être extrait avant qu'elle n'ait la possibilité de le remplacer davantage,
+         Mallory avec sa préimage pourrait également être extrait avant qu'elle n'ait la possibilité de le remplacer davantage,
          ce qui entraînerait également l'échec de l'attaque. Si chaque cycle entraîne ces deux transactions passant un certain
          temps dans les mempools des mineurs, chaque retransmission de Bob multiplie ce temps. La durée d'expiration du CLTV
          multiplie encore ce temps.
@@ -134,15 +134,15 @@ habituelle concernant les questions et réponses populaires sur le Bitcoin Stack
 
          ![Graphique de la probabilité que l'attaque échoue dans x blocs](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
 
-     - **Analyse du mempool:** Les HTLC ont été conçus pour inciter Mallory à faire confirmer son préimage dans la chaîne de blocs
+     - **Analyse du mempool:** Les HTLC ont été conçus pour inciter Mallory à faire confirmer sa préimage dans la chaîne de blocs
          avant que Bob puisse réclamer son remboursement. C'est pratique pour Bob : la chaîne de blocs est largement disponible et de
          taille limitée, donc Bob peut facilement trouver n'importe quel préimage qui l'affecte. Si ce système fonctionnait comme prévu,
          Bob pourrait obtenir toutes les informations dont il a besoin pour utiliser LN de manière fiable à partir de la chaîne de blocs.
 
          Malheureusement, le remplacement cyclique signifie que Mallory peut ne plus être incitée à confirmer sa transaction avant que
          le remboursement de Bob puisse être réclamé. Cependant, pour initier un cycle de remplacement, Mallory doit toujours brièvement
-         divulguer son préimage aux mempools des mineurs afin de remplacer la dépense de Bob. Si Bob exécute un nœud complet de relais,
-         la transaction de préimage de Mallory peut se propager à travers le réseau jusqu'au nœud de Bob. Si Bob détecte ensuite le
+         divulguer sa préimage aux mempools des mineurs afin de remplacer la dépense de Bob. Si Bob exécute un nœud complet de relais,
+         la transaction de préimage de Mallory peut se propager à travers le réseau jusqu'au nœud de Bob. Si Bob détecte ensuite la
          préimage avant qu'il ne soit censé donner un remboursement à Mallory, l'attaque est déjouée et Mallory perd tout l'argent
          qu'elle a dépensé pour la tenter.
 
