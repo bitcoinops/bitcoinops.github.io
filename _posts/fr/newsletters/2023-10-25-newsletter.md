@@ -148,7 +148,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
 
          L'analyse du mempool n'est pas parfaite---il n'y a aucune garantie que la transaction de remplacement de Mallory se propagera
          jusqu'à Bob. Cependant, plus Bob rebroadcaste sa transaction (voir _mitigation de rebroadcast_) et plus Mallory a besoin de
-         garder son préimage caché à Bob (voir _mitigation du delta d'expiration du CLTV_), plus il est probable qu'une des
+         garder sa préimage cachée à Bob (voir _mitigation du delta d'expiration du CLTV_), plus il est probable qu'une des
          transactions de préimage parviendra à entrer dans le mempool de Bob à temps pour déjouer l'attaque.
 
          Eclair et LND implémentent actuellement l'analyse du mempool lorsqu'ils sont utilisés comme nœuds de transfert.
@@ -157,7 +157,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          de remplacement cyclique sont toujours réalisables pour les attaquants avancés". Matt Corallo a [écrit][corallo cycle1] :
          "les mesures d'atténuation déployées ne sont pas censées résoudre ce problème ; on peut même se demander si elles apportent
          autre chose qu'un communiqué de relations publiques". Olaoluwa Osuntokun a soutenu : "[à mon avis], il s'agit d'une attaque
-         plutôt fragile, qui nécessite : une configuration par nœud, une synchronisation et une exécution extrêmement précises,
+         plutôt fragile, qui nécessite une configuration par nœud, une synchronisation et une exécution extrêmement précises,
          une superposition non confirmante de toutes les transactions et une propagation instantanée à travers l'ensemble du réseau".
 
              Nous chez Optech pensons qu'il est important de rappeler que cette attaque ne concerne que les nœuds de transfert. Un nœud
@@ -190,9 +190,9 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
 
          Matt Corallo [remarque][corallo cycle2] le principal inconvénient de cette approche par rapport au simple rebroadcasting :
          même si Bob bat l'attaquant, Bob perd une partie de la valeur HTLC (ou potentiellement la totalité). Théoriquement, un
-         attaquant ne défierait pas un défenseur qu'il pense suivre une politique de destruction mutuelle assurée, donc Bob n'aurait
-         jamais réellement besoin de payer des frais de plus en plus élevés. Si cela serait vrai en pratique sur le réseau Bitcoin
-         reste à prouver.
+         attaquant ne défierait pas un défenseur s'il pense qu'il pratique une politique de destruction mutuelle, donc Bob n'aurait
+         jamais réellement besoin de payer des frais de plus en plus élevés.
+         En pratique ça n'a pas encore été prouvé sur le réseau Bitcoin.
 
      - **Nouvel essai automatique des transactions passées** : Corallo [a suggéré][corallo cycle1] que "la seule solution à ce problème
          sera lorsque les mineurs conserveront un historique des transactions qu'ils ont vues et les réessayeront après [...] une
@@ -206,9 +206,9 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          pré-signer suffisamment de transactions *différentes* pour couvrir tous les besoins raisonnables d'augmentation des frais.
          [...] Il n'y a aucune raison pour que les transactions B->C restent bloquées." (Emphase dans l'original.)
 
-             Cela pourrait fonctionner comme ceci : pour le HTLC entre Bob et MalloryB, Bob donne à MalloryB dix signatures différentes
+             Cela pourrait fonctionner comme ceci : pour l'HTLC entre Bob et MalloryB, Bob donne à MalloryB dix signatures différentes
              pour la même dépense de préimage à des taux de frais différents. Notez que cela ne nécessite pas que MalloryB divulgue
-             le préimage à Bob au moment de la signature. En même temps, MalloryB donne à Bob dix signatures différentes pour la même
+             la préimage à Bob au moment de la signature. En même temps, MalloryB donne à Bob dix signatures différentes pour la même
              dépense de remboursement à des taux de frais différents. Cela peut être fait avant que le remboursement puisse être
              diffusé. Les taux de frais utilisés pourraient être (en sats/vbyte) : 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
              ce qui devrait couvrir tout pour l'avenir prévisible.
@@ -271,10 +271,10 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          script arbitraire. Par exemple, Alice pourrait vouloir créer une convention qui lui permet de dépenser ses fonds vers une
          adresse arbitraire si elle dépense d'abord ses fonds dans une transaction de notification de [coffre-fort][topic vaults]
          et attend un certain nombre de blocs pour permettre à une transaction de gel de bloquer la dépense. Cependant, si l'adresse
-         arbitraire inclut un opcode `OP_SUCCESSx`, n'importe qui pourra voler son argent. Russell suggère deux solutions possibles
-         à ce problème dans sa recherche.
+         arbitraire inclut un opcode `OP_SUCCESSx`, n'importe qui pourra voler son argent. Dans son tracai lde recherche, Russell suggère
+         deux solutions possibles à ce problème.
 
-  La recherche a suscité quelques discussions et Russell a indiqué qu'il travaillait sur un article de suivi concernant
+  Ce travail a suscité quelques discussions et Russell a indiqué qu'il travaillait sur un article de suivi concernant
   l'introspection des montants de sortie.
 
 - **Proposition de BIP pour OP_CAT:** Ethan Heilman a [posté][heilman cat] sur la liste de diffusion Bitcoin-Dev une [proposition de
@@ -329,7 +329,7 @@ notre dernière mise à jour.*
   frais minimum de la mempool du nœud (par `-incrementalRelayFee`), mais qui a laissé certaines transactions à des taux de frais
   inférieurs dans la mempool qui n'avaient pas besoin d'être évacuées pour rester dans la taille maximale de la mempool.
 
-  Elle mentionne également l'asymétrie entre le [score des ancêtres][waiting for confirmation 2] pour la sélection du modèle de bloc
+  Elle mentionne également l'asymétrie entre le [score des ascendants][waiting for confirmation 2] pour la sélection du modèle de bloc
   et le score des descendants pour l'éviction de la mempool comme une autre explication possible et renvoie à un [mempool de
   cluster][topic cluster mempool]-[problème][Bitcoin Core #27677] expliquant l'asymétrie et une nouvelle approche potentielle.
 
@@ -342,7 +342,7 @@ notre dernière mise à jour.*
   actuelle de Bitcoin Core.
 
 - [Bitcoin Core 24.2][] est une version de maintenance contenant principalement des corrections de bugs. Elle est recommandée pour
-  toute personne utilisant encore la version 24.0 ou 24.1 et qui est incapable ou refuse de passer à la version 25.1 pour le moment.
+  toute personne utilisant encore la version 24.0 ou 24.1 et qui ne peut ou ne veut pas passer à la version 25.1 pour le moment.
 
 - [Bitcoin Core 26.0rc1][] est un candidat à la version suivante de la principale implémentation de nœud complet. Les binaires de test
   vérifiés n'ont pas encore été publiés au moment de la rédaction de cet article, bien que nous_nous attendions à ce qu'ils soient
