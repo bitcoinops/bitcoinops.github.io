@@ -222,7 +222,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          pour l'inclusion après un bloc spécifié si le script de la transaction exécute `OP_EXPIRE`. Cela peut être utilisé pour
          rendre la condition de préimage de Mallory d'un HTLC utilisable uniquement avant que la condition de remboursement de Bob
          ne puisse être dépensée. Cela empêche Mallory de pouvoir remplacer la dépense de remboursement de Bob, rendant impossible
-         pour Mallory d'exécuter une attaque de cycle de remplacement. `OP_EXPIRE` peut également résoudre certaines 
+         pour Mallory d'exécuter une attaque de cycle de remplacement. `OP_EXPIRE` peut également résoudre certaines
          [attaques de blocage de transaction][topic transaction pinning] contre les HTLC.
 
              Le principal inconvénient de `OP_EXPIRE` est qu'il nécessite des modifications du consensus pour être activé et des
