@@ -100,10 +100,11 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #28685][] coinstats, assumeutxo: fix hash_serialized2 calculation
-  FIXME:glozow (I suggest linking to last week's news story; feel free
-  at add extra details---it's great this bug was discovered now rather
-  than later)
+- [Bitcoin Core #28685][] fixes a bug in the calculation of the hash
+  of a UTXO set, mentioned in a [previous newsletter][news274 hash
+  bug]. It includes a breaking change to the `gettxoutsetinfo` RPC,
+  replacing the previous `hash_serialized_2` value with
+  `hash_serialized_3`, containing the corrected hash.
 
 - [Bitcoin Core #28651][] allows [miniscript][topic miniscript] to more
   accurately estimate the maximum number of bytes that will need to be
@@ -177,3 +178,4 @@ available from our [podcasts][podcast] page.
 [ldk 0.0.118]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.118
 [rust bitcoin 0.31.1]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/bitcoin-0.31.0
 [rb rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/bitcoin/CHANGELOG.md#0311---2023-10-18
+[news274 hash bug]: /en/newsletters/2023/10/25/#bitcoin-utxo-set-summary-hash-replacement
