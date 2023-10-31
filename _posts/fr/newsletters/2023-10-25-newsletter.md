@@ -170,7 +170,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
   faites sur les listes de diffusion Bitcoin-Dev et Lightning-Dev en réponse à la divulgation de l'attaque de remplacement cyclique.
   Les réponses suggérées comprenaient les éléments suivants :
 
-     - **Augmentation des frais jusqu'à la terre brûlée** : Le document d'Antoine Riard sur l'attaque et les publications sur les
+    - **Augmentation des frais jusqu'à la terre brûlée** : Le document d'Antoine Riard sur l'attaque et les publications sur les
          listes de diffusion de [Ziggie][ziggie cycle] et [Matt Morehouse][morehouse cycle] suggèrent que, au lieu de simplement
          rebroadcaster sa dépense de remboursement, le défenseur (par exemple, Bob) commence à diffuser des dépenses alternatives
          conflictuelles qui paient des frais de plus en plus élevés à mesure que la date limite approche avec l'attaquant en amont
@@ -194,7 +194,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          jamais réellement besoin de payer des frais de plus en plus élevés.
          En pratique ça n'a pas encore été prouvé sur le réseau Bitcoin.
 
-     - **Nouvel essai automatique des transactions passées** : Corallo [a suggéré][corallo cycle1] que "la seule solution à ce problème
+    - **Nouvel essai automatique des transactions passées** : Corallo [a suggéré][corallo cycle1] que "la seule solution à ce problème
          sera lorsque les mineurs conserveront un historique des transactions qu'ils ont vues et les réessayeront après [...] une
          attaque de ce type". Bastien Teinturier [a répondu][teinturier cycle] : "Je suis d'accord avec Matt, cependant, il est
          probable qu'un travail plus fondamental doive être effectué au niveau de la couche bitcoin pour permettre aux protocoles
@@ -202,7 +202,7 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          durable ne peut se produire qu'au niveau de la couche de base, par exemple en ajoutant un historique intensif de toutes
          les transactions observées".
 
-     - **Augmentation des frais pré-signés:** Peter Todd a soutenu que, "la bonne façon de faire des transactions pré-signées est de
+    - **Augmentation des frais pré-signés:** Peter Todd a soutenu que, "la bonne façon de faire des transactions pré-signées est de
          pré-signer suffisamment de transactions *différentes* pour couvrir tous les besoins raisonnables d'augmentation des frais.
          [...] Il n'y a aucune raison pour que les transactions B->C restent bloquées." (Emphase dans l'original.)
 
@@ -217,13 +217,13 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
              d'un taux de frais à un taux de frais plus élevé. Elle ne pourrait pas ajouter de nouvelles entrées à la dépense de
              préimage, et sans cette capacité, elle serait incapable d'initier le cycle de remplacement.
 
-     - **OP_EXPIRE:** dans un fil de discussion séparé, mais en citant le fil de discussion sur les cycles de remplacement, Peter Todd
+    - **OP_EXPIRE:** dans un fil de discussion séparé, mais en citant le fil de discussion sur les cycles de remplacement, Peter Todd
          a proposé plusieurs modifications de consensus pour permettre un opcode `OP_EXPIRE` qui rendrait une transaction invalide
          pour l'inclusion après un bloc spécifié si le script de la transaction exécute `OP_EXPIRE`. Cela peut être utilisé pour
          rendre la condition de préimage de Mallory d'un HTLC utilisable uniquement avant que la condition de remboursement de Bob
          ne puisse être dépensée. Cela empêche Mallory de pouvoir remplacer la dépense de remboursement de Bob, rendant impossible
-         pour Mallory d'exécuter une attaque de cycle de remplacement. `OP_EXPIRE` peut également résoudre certaines [attaques de
-         blocage de transaction][topic transaction pinning] contre les HTLC.
+         pour Mallory d'exécuter une attaque de cycle de remplacement. `OP_EXPIRE` peut également résoudre certaines 
+         [attaques de blocage de transaction][topic transaction pinning] contre les HTLC.
 
              Le principal inconvénient de `OP_EXPIRE` est qu'il nécessite des modifications du consensus pour être activé et des
              modifications de la politique de relais et de la mémoire tampon pour éviter certains problèmes, tels que son utilisation
@@ -316,8 +316,7 @@ notre dernière mise à jour.*
   Pieter Wuille explique que, en divisant les données de hachage de transaction à signer en sorties précédentes et en séquences,
   ces valeurs de hachage peuvent être utilisées une fois pour toute la transaction impliquant tous les types de sighashes.
 
-- [Pourquoi Miniscript ajoute-t-il une vérification de taille supplémentaire pour les comparaisons de préimages de hachage ?]
-  ({{bse}}119892)
+- [Pourquoi Miniscript ajoute-t-il une vérification de taille supplémentaire pour les comparaisons de préimages de hachage ?] ({{bse}}119892)
   Antoine Poinsot note que les préimages de hachage sont limitées en taille dans [miniscript][topic miniscript] pour éviter les
   transactions Bitcoin non standard, éviter les échanges atomiques inter-chaînes invalides pour le consensus et garantir que les
   coûts des témoins peuvent être calculés avec précision.
