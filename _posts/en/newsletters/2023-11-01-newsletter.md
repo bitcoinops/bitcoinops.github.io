@@ -112,11 +112,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   taproot] output.  The improved accuracy will help prevent Bitcoin
   Core's wallet from overpaying fees.
 
-- [Bitcoin Core #28565][] rpc: getaddrmaninfo followups
-  FIXME:bitschmidty (we didn't mention the original PR for
-  getaddrmaninfo because it was marked for debug only, but it's now been
-  unhidden, so I suggest adding a link to the original merge and
-  describing it like any other new feature)
+- [Bitcoin Core #28565][] builds on [#27511][Bitcoin Core #27511] to add a
+  `getaddrmaninfo` RPC that exposes counts of peer addresses that are either "new"
+  or "tried", segmented by network (IPv4, IPv6, Tor, I2P, CJDNS). See
+  [Newsletter #237][news237 pr review] and [Podcast #237][pod237 pr review] for
+  the motivation behind this segmentation.
 
 - [LND #7828][] begins requiring that peers respond to its LN protocol `ping`
   messages within a reasonable amount of time or they will be
@@ -160,7 +160,7 @@ available from our [podcasts][podcast] page.
 </div>
 
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086" %}
+{% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621
 [towns cov]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022099.html
 [russell cov]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
@@ -179,3 +179,5 @@ available from our [podcasts][podcast] page.
 [rust bitcoin 0.31.1]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/bitcoin-0.31.0
 [rb rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/bitcoin/CHANGELOG.md#0311---2023-10-18
 [news274 hash bug]: /en/newsletters/2023/10/25/#bitcoin-utxo-set-summary-hash-replacement
+[news237 pr review]: /en/newsletters/2023/02/08/#bitcoin-core-pr-review-club
+[pod237 pr review]: /en/podcast/2023/02/09/#bitcoin-core-pr-review-club-transcript
