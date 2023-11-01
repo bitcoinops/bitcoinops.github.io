@@ -160,11 +160,11 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          plutôt fragile, qui nécessite une configuration par nœud, une synchronisation et une exécution extrêmement précises,
          une superposition non confirmante de toutes les transactions et une propagation instantanée à travers l'ensemble du réseau".
 
-             Nous chez Optech pensons qu'il est important de rappeler que cette attaque ne concerne que les nœuds de transfert. Un nœud
-             de transfert est un portefeuille Bitcoin connecté à un service Internet toujours actif---un type de déploiement qui est
-             constamment vulnérable au vol de tous ses fonds. Toute personne évaluant l'effet du remplacement cyclique sur le profil
-             de risque de l'exploitation d'un nœud de transfert LN devrait le considérer dans le contexte du risque déjà toléré.
-             Bien sûr, il vaut la peine de chercher d'autres moyens de réduire ce risque, comme discuté dans notre prochaine actualité.
+         Nous chez Optech pensons qu'il est important de rappeler que cette attaque ne concerne que les nœuds de transfert. Un nœud
+         de transfert est un portefeuille Bitcoin connecté à un service Internet toujours actif---un type de déploiement qui est
+         constamment vulnérable au vol de tous ses fonds. Toute personne évaluant l'effet du remplacement cyclique sur le profil
+         de risque de l'exploitation d'un nœud de transfert LN devrait le considérer dans le contexte du risque déjà toléré.
+         Bien sûr, il vaut la peine de chercher d'autres moyens de réduire ce risque, comme discuté dans notre prochaine actualité.
 
 - **Propositions d'atténuation supplémentaires pour le remplacement cyclique** : à ce jour, plus de 40 publications distinctes ont été
   faites sur les listes de diffusion Bitcoin-Dev et Lightning-Dev en réponse à la divulgation de l'attaque de remplacement cyclique.
@@ -206,16 +206,16 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          pré-signer suffisamment de transactions *différentes* pour couvrir tous les besoins raisonnables d'augmentation des frais.
          [...] Il n'y a aucune raison pour que les transactions B->C restent bloquées." (Emphase dans l'original.)
 
-             Cela pourrait fonctionner comme ceci : pour l'HTLC entre Bob et MalloryB, Bob donne à MalloryB dix signatures différentes
-             pour la même dépense de préimage à des taux de frais différents. Notez que cela ne nécessite pas que MalloryB divulgue
-             la préimage à Bob au moment de la signature. En même temps, MalloryB donne à Bob dix signatures différentes pour la même
-             dépense de remboursement à des taux de frais différents. Cela peut être fait avant que le remboursement puisse être
-             diffusé. Les taux de frais utilisés pourraient être (en sats/vbyte) : 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
-             ce qui devrait couvrir tout pour l'avenir prévisible.
+         Cela pourrait fonctionner comme ceci : pour l'HTLC entre Bob et MalloryB, Bob donne à MalloryB dix signatures différentes
+         pour la même dépense de préimage à des taux de frais différents. Notez que cela ne nécessite pas que MalloryB divulgue
+         la préimage à Bob au moment de la signature. En même temps, MalloryB donne à Bob dix signatures différentes pour la même
+         dépense de remboursement à des taux de frais différents. Cela peut être fait avant que le remboursement puisse être
+         diffusé. Les taux de frais utilisés pourraient être (en sats/vbyte) : 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
+         ce qui devrait couvrir tout pour l'avenir prévisible.
 
-             Si la dépense de préimage de MalloryB était pré-signée, la seule modification qu'elle pourrait apporter serait de passer
-             d'un taux de frais à un taux de frais plus élevé. Elle ne pourrait pas ajouter de nouvelles entrées à la dépense de
-             préimage, et sans cette capacité, elle serait incapable d'initier le cycle de remplacement.
+         Si la dépense de préimage de MalloryB était pré-signée, la seule modification qu'elle pourrait apporter serait de passer
+         d'un taux de frais à un taux de frais plus élevé. Elle ne pourrait pas ajouter de nouvelles entrées à la dépense de
+         préimage, et sans cette capacité, elle serait incapable d'initier le cycle de remplacement.
 
     - **OP_EXPIRE:** dans un fil de discussion séparé, mais en citant le fil de discussion sur les cycles de remplacement, Peter Todd
          a proposé plusieurs modifications de consensus pour permettre un opcode `OP_EXPIRE` qui rendrait une transaction invalide
@@ -225,9 +225,9 @@ reprenant certaines questions/réponses du Bitcoin Stack Exchange.
          pour Mallory d'exécuter une attaque de cycle de remplacement. `OP_EXPIRE` peut également résoudre certaines
          [attaques de blocage de transaction][topic transaction pinning] contre les HTLC.
 
-             Le principal inconvénient de `OP_EXPIRE` est qu'il nécessite des modifications du consensus pour être activé et des
-             modifications de la politique de relais et de la mémoire tampon pour éviter certains problèmes, tels que son utilisation
-             pour gaspiller la bande passante des nœuds.
+         Le principal inconvénient de `OP_EXPIRE` est qu'il nécessite des modifications du consensus pour être activé et des
+         modifications de la politique de relais et de la mémoire tampon pour éviter certains problèmes, tels que son utilisation
+         pour gaspiller la bande passante des nœuds.
 
          Une [réponse][harding expire] à la proposition a suggéré un moyen plus faible pour atteindre certains des mêmes objectifs
          que `OP_EXPIRE`, mais sans nécessiter de modifications du consensus ou de la politique de relais. Cependant, Peter Todd
