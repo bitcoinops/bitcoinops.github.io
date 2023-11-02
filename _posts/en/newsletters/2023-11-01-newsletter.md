@@ -70,6 +70,8 @@ to popular Bitcoin infrastructure software.
       specifically notes several features that the `OP_CAT` versions
       lack compared to BIP345-style vaults.
 
+{% assign timestamp="0:40" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -79,11 +81,11 @@ release candidates.*
 - [LDK 0.0.118][] is the latest release of this library for building
   LN-enabled applications.  It includes partial experimental support for
   the [offers][topic offers] protocol in addition to other new features
-  and bug fixes.
+  and bug fixes. {% assign timestamp="14:57" %}
 
 - [Rust Bitcoin 0.31.1][] is the latest release of this library for
   working with Bitcoin data.  See its [release notes][rb rn] for a list
-  of new features and bug fixes.
+  of new features and bug fixes. {% assign timestamp="17:35" %}
 
 _Note:_ Bitcoin Core 26.0rc1, mentioned in our last newsletter, is
 tagged but binaries have not been uploaded due to a change by Apple that
@@ -104,19 +106,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   of a UTXO set, mentioned in a [previous newsletter][news274 hash
   bug]. It includes a breaking change to the `gettxoutsetinfo` RPC,
   replacing the previous `hash_serialized_2` value with
-  `hash_serialized_3`, containing the corrected hash.
+  `hash_serialized_3`, containing the corrected hash. {% assign timestamp="21:24" %}
 
 - [Bitcoin Core #28651][] allows [miniscript][topic miniscript] to more
   accurately estimate the maximum number of bytes that will need to be
   included in the witness structure in order to spend a [taproot][topic
   taproot] output.  The improved accuracy will help prevent Bitcoin
-  Core's wallet from overpaying fees.
+  Core's wallet from overpaying fees. {% assign timestamp="22:34" %}
 
 - [Bitcoin Core #28565][] builds on [#27511][Bitcoin Core #27511] to add a
   `getaddrmaninfo` RPC that exposes counts of peer addresses that are either "new"
   or "tried", segmented by network (IPv4, IPv6, Tor, I2P, CJDNS). See
   [Newsletter #237][news237 pr review] and [Podcast #237][pod237 pr review] for
-  the motivation behind this segmentation.
+  the motivation behind this segmentation. {% assign timestamp="24:57" %}
 
 - [LND #7828][] begins requiring that peers respond to its LN protocol `ping`
   messages within a reasonable amount of time or they will be
@@ -128,12 +130,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   payments, pings, and pongs are all encrypted); they trigger more
   frequent rotations of encryption keys as described in [BOLT1][]; and
   LND in particular uses `pong` messages to help prevent [eclipse
-  attacks][topic eclipse attacks] (see [Newsletter #164][news164 pong]).
+  attacks][topic eclipse attacks] (see [Newsletter #164][news164 pong]). {% assign timestamp="31:01" %}
 
 - [LDK #2660][] gives callers more flexibility over what feerates they
   can choose for onchain transactions, including settings for paying the
   absolute minimum, a low rate that may take over a day to confirm, a
-  normal priority, and a high priority.
+  normal priority, and a high priority. {% assign timestamp="33:14" %}
 
 - [BOLTs #1086][] specifies that nodes should reject (refund) an HTLC
   and return an `expiry_too_far` error if the instructions for creating
@@ -146,7 +148,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   maximum HTLC delta setting (or the same number of hops for a higher
   maximum HTLC delta setting, which can improve resistance to certain
   attacks, such as the replacement cycling attack described in [last
-  week's newsletter][news274 cycling]).
+  week's newsletter][news274 cycling]). {% assign timestamp="35:02" %}
 
 <div markdown="1" class="callout">
 ## Want more?
