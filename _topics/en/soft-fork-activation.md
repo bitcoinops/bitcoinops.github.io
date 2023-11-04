@@ -490,13 +490,13 @@ occasions included:
 
 - **Fix value overflow bug (August 2010):** someone
   created a transaction that spent 0.5 BTC to two outputs worth
-  92,233,720,368.54277039 BTC.  Bitcoin requires that the output
+  92,233,720,368.54275808 BTC.  Bitcoin requires that the output
   amount be less than or equal to the input amount, but this was
   checked by adding the output values into a single 64-bit
   integer which can only hold a maximum value of
-  9,223,372,036,854,776 sats (about 92 billion BTC) before rolling over to negative numbers,
-  starting with -9,223,372,036,854,776 sats.  This meant it looked like the
-  transaction spent a total of -0.1 BTC (negative 0.1 BTC).  This
+  9,223,372,036,854,775,807 sats (about 92 billion BTC) before rolling over to negative numbers,
+  starting with -9,223,372,036,854,775,808 sats.  This meant it looked like the
+  transaction spent a total of -0.01 BTC (negative 0.01 BTC).  This
   bypassed another rule that forbid individual negative outputs---but
   not negative aggregate amounts---since it assumed the sum of any set
   of positive values would also be positive.  This gave the person who
