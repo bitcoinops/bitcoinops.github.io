@@ -52,6 +52,10 @@ notable changes to popular Bitcoin infrastructure projects.
     focused on choosing the extra bytes for the segwit approach to
     create a memorable [bech32m address][topic bech32].
 
+## Field Report: A Miniscript Journey
+
+{% include articles/wizardsardine-miniscript.md extrah="#" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
