@@ -114,6 +114,9 @@ optech_mentions:
   - title: "LDK #2077 refactors code to make it easier later to add support for dual funded channels"
     url: /en/newsletters/2023/06/28/#ldk-2077
 
+  - title: "Core Lightning #6824 updates the implementation of the interactive funding protocol"
+    url: /en/newsletters/2023/11/08/#core-lightning-6824
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements
