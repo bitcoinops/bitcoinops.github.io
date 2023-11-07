@@ -54,12 +54,107 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+[Fee Estimator updates from Validation Interface/CScheduler thread][review club 28368]
+is a PR by Abubakar Sadiq Ismail (ismaelsadeeq)
+that modifies the way the transaction fee estimator data is updated.
+(Fee estimation is used when the node's owner initiates a transaction.)
+It moves fee estimator updates from occurring synchronously during mempool
+updates (transactions being added or removed) to instead occur asynchronously.
+While this adds more processing complexity overall, it improves critical-path
+performance (which the following discussion will make evident).
+
+When a new block is found, its transactions that are in the mempool are removed
+along with any transactions that conflict with the block's transactions.
+Since block processing and relay are performance-critical, it's beneficial
+to reduce the required amount of work during the processing of a new block,
+such as updating the fee estimator.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/28107#l-FIXME"
+  q0="Why is it beneficial to remove `CTxMempool`'s dependency on `CBlockPolicyEstimator`?"
+  a0="Currently, upon receiving a new block, its processing is blocked while the
+      fee estimator is updated. This delays
+      the completion of new block processing, and also delays relaying the block to peers.
+      Removing `CTxMempool`'s dependency on `CBlockPolicyEstimator`
+      allows fee estimates to be updated asynchronously (in a different thread)
+      so that validation and relay can complete more quickly.
+      It may also make testing `CTxMempool` easier.
+      Finally, it allows the future use of more complex fee estimation
+      algorithms without affecting block validation and relay performance."
+  a0link="https://bitcoincore.reviews/28368#l-30"
+
+  q1="Isn't fee estimation currently updated synchronously when transactions
+      are added to or removed from the mempool even without a new block arriving?"
+  a1="Yes, but performance isn't as critical at those times as during
+      block validation and relay."
+  a1link="https://bitcoincore.reviews/28368#l-41"
+
+  q2="Are there any benefits of the `CBlockPolicyEstimator` being a member
+      of `CTxMempool` and updating it synchronously (the current arrangement)?
+      Are there downsides to removing it?"
+  a2="Synchronous code is simpler and easier to reason about. Also, the fee
+      estimator has more visibility into the entire mempool; a downside is
+      the need to encapsulate all the information needed for fee estimation
+      into a new `NewMempoolTransactionInfo` structure.
+      However, not much information is needed by the fee estimator."
+  a2link="https://bitcoincore.reviews/28368#l-43"
+
+  q3="What do you think are the advantages and disadvantages of the approach
+      taken in this PR, compared with the one taken in [PR 11775][] that
+      splits `CValidationInterface`?"
+  a3="While it seems nice to split them, they still had a shared backend
+      (to keep the events well-ordered), so weren't really very independent
+      of each other.
+      There doesn't seem to be much practical benefit to splitting.
+      The current PR is more narrow, and minimally scoped to making fee
+      estimates update asynchronously."
+  a3link="https://bitcoincore.reviews/28368#l-71"
+
+  q4="In a subclass, why is implementing a `CValidationInterface` method
+      equivalent to subscribing to the event?"
+  a4="All subclasses of  `CValidationInterface` are clients.
+      The subclass can implement some or all `CValidationInterface` methods (callbacks),
+      for example, connecting or disconnecting a block, or a transaction
+      [added][tx add] to or [removed][tx remove] from the mempool.
+      After being registered (by calling `RegisterSharedValidationInterface()`),
+      any implemented `CValidationInterface` method will be executed each time
+      the method callback is fired using `CMainSignals`.
+      Callbacks are fired whenever the corresponding event occurs."
+  a4link="https://bitcoincore.reviews/28368#l-90"
+
+  q5="[`BlockConnected`][BlockConnected] and [`NewPoWValidBlock`][NewPoWValidBlock]
+      are different callbacks.
+      Which one is asynchronous and which one is synchronous? How can you tell?"
+  a5="`BlockConnected` is asynchronous; `NewPoWValidBlock` is synchronous.
+      Asynchronous callbacks queue an \"event\" to be run later within the
+      `CScheduler` thread."
+  a5link="https://bitcoincore.reviews/28368#l-105"
+
+  q6="In [commit 4986edb][], why are we adding a new callback,
+      `MempoolTransactionsRemovedForConnectedBlock`, instead of using
+      `BlockConnected` (which also indicates a transaction being removed
+      from the mempool)?"
+  a6="The fee estimator needs to know when transactions are removed from the
+      mempool for any reason, not just when a block is connected.
+      Also, the fee estimator needs a transaction's base fee, and this isn't
+      provided via `BlockConnected` (which provides a `CBlock`).
+      We could add the base fee to the `block.vtx` (transaction list) entries,
+      but it's undesirable to change such an important and ubiquitous data
+      structure just to support fee estimation."
+  a6link="https://bitcoincore.reviews/28368#l-130"
+
+  q7="Why don’t we use a `std::vector<CTxMempoolEntry>` as a parameter of
+      `MempoolTransactionsRemovedForBlock` callback?
+      This would eliminate the requirement for a new struct type to hold the
+      per-transaction information needed for fee estimation."
+  a7="The fee estimator doesn't need all of the fields from `CTxMempoolEntry`."
+  a7link="https://bitcoincore.reviews/28368#l-159"
+
+  q8="How is the base fee of a `CTransactionRef` computed?"
+  a8="It's the sum of the input values minus the sum of the output values.
+      However, the callback can't access the input values because they're stored
+      in the previous transaction outputs (which the callback doesn't have access to).
+      That's why the base fee is included in the `TransactionInfo` structure."
+  a8link="https://bitcoincore.reviews/28368#l-166"
 %}
 
 ## Releases and release candidates
@@ -142,3 +237,10 @@ available from our [podcasts][podcast] page.
 [news253 stuck]: /en/newsletters/2023/05/31/#eclair-2666
 [bitcoin core pr review club]: https://bitcoincore.reviews/#upcoming-meetings
 [26.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/26.0-Testing-Guide-Topics
+[review club 28368]: https://bitcoincore.reviews/28368
+[pr 11775]: https://github.com/bitcoin/bitcoin/pull/11775
+[tx add]: https://github.com/bitcoin/bitcoin/blob/eca2e430acf50f11da2220f56d13e20073a57c9b/src/validation.cpp#L1217
+[tx remove]: https://github.com/bitcoin/bitcoin/blob/eca2e430acf50f11da2220f56d13e20073a57c9b/src/txmempool.cpp#L504
+[BlockConnected]: https://github.com/bitcoin/bitcoin/blob/d53400e75e2a4573229dba7f1a0da88eb936811c/src/validationinterface.cpp#L227
+[NewPoWValidBlock]: https://github.com/bitcoin/bitcoin/blob/d53400e75e2a4573229dba7f1a0da88eb936811c/src/validationinterface.cpp#L260
+[commit 4986edb]: https://github.com/bitcoin-core-review-club/bitcoin/commit/4986edb99f8aa73f72e87f3bdc09387c3e516197
