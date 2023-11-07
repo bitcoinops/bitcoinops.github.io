@@ -106,6 +106,9 @@ optech_mentions:
   - title: "Research into minimal opcodes for output script introspection to enable covenants"
     url: /en/newsletters/2023/10/25/#research-into-generic-covenants-with-minimal-script-language-changes
 
+  - title: "HTLC aggregation with covenants"
+    url: /en/newsletters/2023/11/08/#htlc-aggregation-with-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
