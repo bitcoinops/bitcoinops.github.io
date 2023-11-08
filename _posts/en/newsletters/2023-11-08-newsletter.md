@@ -206,7 +206,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   information users need if they want to [CPFP][topic cpfp] fee bump a
   channel mutual close transaction.
 
-- [Eclair #2761][] allows forwarding a limited number [HTLCs][topic
+- [Eclair #2761][] allows forwarding a limited number of [HTLCs][topic
   htlc] to a party even if they're below their channel reserve
   requirement.  This can help resolve a _stuck funds problem_ that might
   occur after [splicing][topic splicing] or [dual funding][topic dual
