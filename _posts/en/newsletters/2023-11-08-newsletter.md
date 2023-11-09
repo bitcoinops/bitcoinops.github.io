@@ -34,7 +34,7 @@ popular Bitcoin infrastructure software.
     developers had begun experimenting with discussions on the
     [DelvingBitcoin][] web forum.  Optech will begin monitoring that
     forum for interesting or important discussions effective
-    immediately.
+    immediately. {% assign timestamp="1:05" %}
 
 - **HTLC aggregation with covenants:** Johan Torås Halseth
   [posted][halseth agg] to the Lightning-Dev mailing list a suggestion
@@ -45,7 +45,7 @@ popular Bitcoin infrastructure software.
   balance could be refunded to the other party.  Halseth notes that this
   would be more efficient onchain and could make it more difficult to
   perform certain types of [channel jamming attacks][topic channel
-  jamming attacks].
+  jamming attacks]. {% assign timestamp="5:36" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -67,7 +67,7 @@ When a new block is found, its transactions that are in the mempool are removed
 along with any transactions that conflict with the block's transactions.
 Since block processing and relay are performance-critical, it's beneficial
 to reduce the required amount of work during the processing of a new block,
-such as updating the fee estimator.
+such as updating the fee estimator. {% assign timestamp="16:47" %}
 
 {% include functions/details-list.md
   q0="Why is it beneficial to remove `CTxMempool`'s dependency on `CBlockPolicyEstimator`?"
@@ -166,13 +166,13 @@ release candidates.*
 - [Bitcoin Core 26.0rc2][] is a release candidate for the next major
   version of the predominant full node implementation. There's a brief overview to [suggested
   testing topics][26.0 testing] and a scheduled meeting of the [Bitcoin
-  Core PR Review Club][] dedicated to testing on 15 November 2023.
+  Core PR Review Club][] dedicated to testing on 15 November 2023. {% assign timestamp="26:14" %}
 
 - [Core Lightning 23.11rc1][] is a release candidate for the next
-  major version of this LN node implementation.
+  major version of this LN node implementation. {% assign timestamp="29:26" %}
 
 - [LND 0.17.1-beta.rc1][] is a releases candidate for a maintenance
-  release for this LN node implementation.
+  release for this LN node implementation. {% assign timestamp="31:28" %}
 
 ## Notable code and documentation changes
 
@@ -189,29 +189,29 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   when sending `commitment_signed`, and [add] a `next_funding_txid`
   field to `channel_reestablish` to ask our peer to retransmit
   signatures that we haven't received."  It is based on an
-  [update][36c04c8ac] to the proposed [dual funding PR][bolts #851].
+  [update][36c04c8ac] to the proposed [dual funding PR][bolts #851]. {% assign timestamp="32:38" %}
 
 - [Core Lightning #6783][] deprecates the `large-channels` configuration
   option, making [large channels][topic large channels] and large
-  payment amounts always enabled.
+  payment amounts always enabled. {% assign timestamp="34:59" %}
 
 - [Core Lightning #6780][] improves support for fee bumping onchain transactions
-  associated with [anchor outputs][topic anchor outputs].
+  associated with [anchor outputs][topic anchor outputs]. {% assign timestamp="36:29" %}
 
 - [Core Lightning #6773][] allows the `decode` RPC to verify that the
   contents of a backup file are valid and contain the latest information
-  necessary to perform a full recovery.
+  necessary to perform a full recovery. {% assign timestamp="39:06" %}
 
 - [Core Lightning #6734][] updates the `listfunds` RPC to provide
   information users need if they want to [CPFP][topic cpfp] fee bump a
-  channel mutual close transaction.
+  channel mutual close transaction. {% assign timestamp="39:58" %}
 
 - [Eclair #2761][] allows forwarding a limited number of [HTLCs][topic
   htlc] to a party even if they're below their channel reserve
   requirement.  This can help resolve a _stuck funds problem_ that might
   occur after [splicing][topic splicing] or [dual funding][topic dual
   funding].  See [Newsletter #253][news253 stuck] for another mitigation
-  by Eclair for a stuck funds problem.
+  by Eclair for a stuck funds problem. {% assign timestamp="41:02" %}
 
 <div markdown="1" class="callout">
 ## Want more?
