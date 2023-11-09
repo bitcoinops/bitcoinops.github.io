@@ -68,6 +68,9 @@ optech_mentions:
   - title: "LDK #1425 adds support for large channels"
     url: /en/newsletters/2022/05/04/#ldk-1425
 
+  - title: "Core Lightning #6783 deprecates the large-channels conf option, making them always enabled"
+    url: /en/newsletters/2023/11/08/#core-lightning-6783
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Origin of "wumbo" term (video)
