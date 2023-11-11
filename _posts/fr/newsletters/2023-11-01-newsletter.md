@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine fait suite à plusieurs discussions récentes sur les modifications proposées au langage de script de Bitcoin.
 Elle comprend également nos sections habituelles annonçant les nouvelles versions et décrivant les changements importants apportés aux
-logiciels d'infrastructure Bitcoin populaires.
+logiciels d'infrastructure Bitcoin les plus populaires.
 
 ## Nouvelles
 
@@ -18,7 +18,7 @@ logiciels d'infrastructure Bitcoin populaires.
 
     - *Recherche sur les covenants :* Anthony Towns a [répondu][towns cov] à un [message][russell cov] de Rusty Russell que nous avons
       mentionné [la semaine dernière][news274 cov]. Towns compare l'approche de Russell à d'autres approches spécifiquement pour les
-      [coffre-forts][topic vaults] basé sur [covenants][topic covenants] et la trouve peu attrayante. Dans une [réponse
+      [coffre-forts][topic vaults] basés sur [des covenants][topic covenants] et la trouve peu attrayante. Dans une [réponse
       ultérieure][russell cov2], Russell note qu'il existe différents designs pour les coffre-forts et que ceux-ci sont fondamentalement
       moins optimaux que d'autres types de transactions, ce qui implique que l'optimisation n'est pas essentielle pour les utilisateurs
       de coffre-forts. Il soutient que l'approche des coffre-forts du [BIP345][] est plus adaptée à un format d'adresse qu'à un ensemble
@@ -38,7 +38,7 @@ logiciels d'infrastructure Bitcoin populaires.
       capacité à permettre à des données authentifiées provenant d'un oracle d'être placées directement sur une pile d'évaluation.
 
     - *Proposition OP_CAT :* plusieurs personnes ont répondu au [message][heilman cat] d'Ethan Heilman annonçant une proposition de BIP
-      pour [OP_CAT][], que nous avons également mentionné [la semaine dernière][news274 cat].
+      pour [OP_CAT][], que nous avons également mentionnée [la semaine dernière][news274 cat].
 
       Après que plusieurs réponses aient exprimé des inquiétudes quant à savoir si `OP_CAT` serait excessivement limité par la limite
       de 520 octets sur la taille des éléments de la pile, Peter Todd a [décrit][todd 520] une façon d'augmenter cette limite dans une
