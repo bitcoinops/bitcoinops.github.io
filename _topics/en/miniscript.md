@@ -82,6 +82,10 @@ optech_mentions:
   - title: "Bitcoin Core #27255 ports miniscript to tapscript, providing tapscript descriptors"
     url: /en/newsletters/2023/10/18/#bitcoin-core-27255
 
+  - title: "Field Report: A Miniscript Journey"
+    url: /en/wizardsardine-miniscript/
+    date: 2023-11-15
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
