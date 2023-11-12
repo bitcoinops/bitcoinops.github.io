@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Suggested best practices for CPFP or RBF fee-bumping a previous CPFP fee bump"
     url: /en/newsletters/2023/04/26/#best-practices-with-multiple-cpfps-cpfp-rbf
 
+  - title: "Making anyone-can-spend outputs for CPFP with non-malleable txids"
+    url: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

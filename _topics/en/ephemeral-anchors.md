@@ -44,6 +44,9 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including ephemeral anchors"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Making ephemeral anchor spends with non-malleable txids"
+    url: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
