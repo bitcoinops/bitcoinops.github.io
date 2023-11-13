@@ -1,9 +1,9 @@
 {:.post-meta}
 *by [Antoine Poinsot][] from [Wizardsardine][]*
 
-Our (practical) interest for miniscript started back in early 2020 when we were
+Our (practical) interest for [miniscript][topic miniscript] started back in early 2020 when we were
 designing [Revault][], a multiparty [vault][topic vaults] architecture only
-using then available scripting primitives.
+using then-available scripting primitives.
 
 We initially showcased Revault using a fixed set of participants. We quickly ran
 into issues as we tried to generalize it to more participants in a production
@@ -28,12 +28,12 @@ scripts?
 These questions would have been a show stopper if it was not for miniscript. Two
 guys in a garage are not going to write a software that [creates some script on
 the fly, hope for the best][rekt lost funds] and on top of that call it a
-security enhancing Bitcoin wallet. We wanted to start a company around the
+security-enhancing Bitcoin wallet. We wanted to start a company around the
 development of Revault, but we wouldn't get funding without providing some
 reasonable assurance to an investor we could bring a safe product to market. And
 we wouldn't be able to solve all these engineering problems without funding.
 
-[Enters miniscript][sipa miniscript], "a language for writing (a subset of)
+[Enter miniscript][sipa miniscript], "a language for writing (a subset of)
 Bitcoin Scripts in a structured way, enabling analysis, composition, generic
 signing and more. [...] It has a structure that allows composition. It is very
 easy to statically analyze for various properties (spending conditions,
@@ -52,25 +52,25 @@ firmware. The latter part would turn out to be the most difficult.
 
 It was a chicken-and-egg problem: incentives were low for manufacturers to
 implement miniscript with no demand from users. And we couldn't release Revault
-without signing device support. Fortunately this cycle was eventually broken by
-[Stepan Snigirev][] in March 2021 by [bringing][github embit descriptors]
-[support][github specter descriptors] for miniscript descriptors to the [Specter
-DIY][]. The Specter DIY was however for a long time disclaimed as being merely a
+without signing device support. Fortunately, this cycle was eventually broken by
+[Stepan Snigirev][] in March 2021 by [bringing][github embit descriptors] initial
+[support][github specter descriptors] for miniscript descriptors to [Specter
+DIY][]. Specter DIY was however for a long time disclaimed as being merely a
 "functional prototype", and [Salvatore Ingala][] brought [miniscript to a
 production-ready signing device][ledger miniscript blog] for the first time in 2022 with the [new
-Bitcoin app][ledger bitcoin app] for the Ledger Nano S(+). The app was released
+Bitcoin app][ledger bitcoin app] for the Ledger Nano S (Plus). The app was released
 in January 2023, allowing us to publish the [Liana wallet][] with support for
-the most popular signing device.
+the most popular hardware signing device.
 
 One last development is left to wrap up our miniscript journey. [Liana][github
 liana] is a Bitcoin wallet focused on recovery options. It lets one specify some
-timelocked recovery conditions (for instance a third-party [recovery key that
+[timelocked][topic timelocks] recovery conditions (for instance a third-party [recovery key that
 cannot normally spend the funds][blog liana 0.2 recovery], or a
 [decaying/expanding multisig][blog liana 0.2 decaying]). Miniscript was
 initially only available for P2WSH scripts. Almost 2 years after [taproot][topic
 taproot] activated, it's unfortunate that you would have to publish your
 recovery spending paths onchain every time you spend. To this end, we have been
-working to port miniscript to tapscript (see [here][github minitapscript] and
+working to port miniscript to [tapscript][topic tapscript] (see [here][github minitapscript] and
 [here][Bitcoin Core #27255]).
 
 The future is bright. With most signing devices either having implemented or in
@@ -79,8 +79,8 @@ the process of implementing miniscript support (for instance recently
 [taproot and miniscript native frameworks][github bdk] being polished,
 contracting on Bitcoin with safe primitives is more accessible than ever.
 
-It's interesting to note how the funding of Open Source tools and frameworks
-lower the barrier to entry for innovative companies to compete and, more
+It's interesting to note how the funding of open source tools and frameworks
+lowers the barrier to entry for innovative companies to compete and, more
 generally, projects to be implemented. This trend accelerating in the past years
 can make us hopeful about the future of the space.
 
