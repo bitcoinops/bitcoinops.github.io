@@ -14,7 +14,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Hébergement de la liste de diffusion :** les administrateurs de la liste de diffusion Bitcoin-Dev [ont annoncé][bishop lists] que
+- **Hébergement de la liste de diffusion :** les administrateurs de la liste de diffusion Bitcoin-Dev [ont annoncés][bishop lists] que
   l'organisation hébergeant la liste prévoit de cesser d'héberger toutes les listes de diffusion à partir de la fin de l'année.
   Les archives des courriels précédents devraient continuer à être hébergées à leurs URL actuelles dans un avenir prévisible.
   Nous supposons que la fin de la transmission des courriels affecte également la liste de diffusion Lightning-Dev, qui est hébergée
@@ -30,7 +30,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 - **Agrégation HTLC avec des covenants :** Johan Torås Halseth [a posté][halseth agg] sur la liste de diffusion Lightning-Dev une
   suggestion pour utiliser un [covenant][topic covenants] afin d'agréger plusieurs [HTLC][topic htlc] en une seule sortie qui pourrait
-  être dépensée en une seule fois si une partie connaissait tous les préimages. Si une partie ne connaissait que certaines des préimages,
+  être dépensée en une seule fois si une partie connaissait toutes les préimages. Si une partie ne connaissait que certaines des préimages,
   elle pourrait simplement les réclamer, puis le solde restant pourrait être remboursé à l'autre partie. Halseth note que cela serait
   plus efficace on-chain et pourrait rendre plus difficile la réalisation de certains types [d'attaques de blocage de
   canal][topic channel jamming attacks]. {% assign timestamp="5:36" %}
@@ -121,7 +121,7 @@ q5="[`BlockConnected`][BlockConnected] et [`NewPoWValidBlock`][NewPoWValidBlock]
   a7="L'estimateur de frais n'a pas besoin de tous les champs de `CTxMempoolEntry`."
   a7link="https://bitcoincore.reviews/28368#l-159"
 
-  q8="Comment le frais de base d'une `CTransactionRef` est-il calculé ?"
+  q8="Comment les frais de base d'une `CTransactionRef` sont-ils calculé ?"
   a8="C'est la somme des valeurs d'entrée moins la somme des valeurs de sortie.
       Cependant, le rappel ne peut pas accéder aux valeurs d'entrée car elles sont stockées
       dans les sorties de transaction précédentes (auxquelles le rappel n'a pas accès).
@@ -171,7 +171,7 @@ versions ou d'aider à tester les versions candidates.*
 
 - [Eclair #2761][] permet de transférer un nombre limité de [HTLC][topic htlc] à une partie même s'ils sont inférieurs à leur réserve
   de canal requise. Cela peut aider à résoudre un problème de _fonds bloqués_ qui pourrait survenir après [un splicing][topic splicing]
-  ou [le financement double][topic dual funding]. Voir le [Bulletin #253][news253 stuck] pour une autre atténuation par Eclair pour un
+  ou [un financement double][topic dual funding]. Voir le [Bulletin #253][news253 stuck] pour une autre atténuation par Eclair pour un
   problème de fonds bloqués. {% assign timestamp="41:02" %}
 
 <div markdown="1" class="callout">
