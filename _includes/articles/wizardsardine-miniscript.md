@@ -57,7 +57,7 @@ without signing device support. Fortunately this cycle was eventually broken by
 [support][github specter descriptors] for miniscript descriptors to the [Specter
 DIY][]. The Specter DIY was however for a long time disclaimed as being merely a
 "functional prototype", and [Salvatore Ingala][] brought [miniscript to a
-production-ready signing device] for the first time in 2022 with the [new
+production-ready signing device][ledger miniscript blog] for the first time in 2022 with the [new
 Bitcoin app][ledger bitcoin app] for the Ledger Nano S(+). The app was released
 in January 2023, allowing us to publish the [Liana wallet][] with support for
 the most popular signing device.
@@ -100,6 +100,7 @@ challenging.
 [github specter descriptors]: https://github.com/cryptoadvance/specter-diy/pull/133
 [Specter DIY]: https://github.com/cryptoadvance/specter-diy
 [Salvatore Ingala]: https://github.com/bigspider
+[ledger miniscript blog]: https://www.ledger.com/blog/miniscript-is-coming
 [ledger bitcoin app]: https://github.com/LedgerHQ/app-bitcoin-new
 [Liana wallet]: https://wizardsardine.com/liana/
 [github liana]: https://github.com/wizardsardine/liana
