@@ -110,15 +110,6 @@ travaillent sur une solution pour un deuxième candidat à la version.
   telles que l'attaque de remplacement cyclique décrite dans [le bulletin de la semaine dernière][news274 cycling]).
   {% assign timestamp="35:02" %}
 
-<div markdown="1" class="callout">
-## Vous en voulez plus ?
-
-Pour plus de discussions sur les sujets mentionnés dans cebulletin, rejoignez-nous pour le récapitulatif hebdomadaire de Bitcoin Optech
-sur [Twitter Spaces][@bitcoinoptech] à 15h00 UTC le jeudi (le jour suivant la publication de la newsletter). La discussion est également
-enregistrée et sera disponible sur notre page de [podcasts][podcast].
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621
