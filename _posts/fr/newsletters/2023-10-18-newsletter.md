@@ -23,7 +23,6 @@ d'infrastructure Bitcoin.
 
     La divulgation a été faite après la date limite habituelle des actualités d'Optech, nous ne pouvons donc fournir que le lien
     ci-dessus dans la newsletter de cette semaine. Nous fournirons un résumé régulier dans la newsletter de la semaine prochaine.
-    {% assign timestamp="1:09" %}
 
 - **Paiements conditionnels à une computation arbitraire :** Robin Linus a [publié][linus post] sur la liste de diffusion Bitcoin-Dev
   un [article][linus paper] qu'il a écrit sur _BitVM_, une combinaison de méthodes qui permet de payer des bitcoins à quelqu'un qui
@@ -60,7 +59,7 @@ d'infrastructure Bitcoin.
     parvenue à calculer correctement.
 
     L'idée a fait l'objet d'un nombre important de discussions sur la liste de diffusion ainsi que sur Twitter et divers podcasts axés
-    sur Bitcoin. Nous prévoyons des discussions continues dans les semaines et les mois à venir. {% assign timestamp="8:15" %}
+    sur Bitcoin. Nous prévoyons des discussions continues dans les semaines et les mois à venir.
 
 - **Proposition de BIP pour les champs MuSig2 dans les PSBT :** Andrew Chow [a posté][chow mpsbt] sur la liste de diffusion Bitcoin-Dev
   avec un [projet de BIP][mpsbt-bip], en partie basé sur [un travail antérieur][kanjalkar mpsbt] de Sanket Kanjalkar, pour ajouter
@@ -69,7 +68,6 @@ d'infrastructure Bitcoin.
 
     Anthony Towns [a demandé][towns mpsbt] si le BIP proposé inclurait également des champs pour les [signatures adaptatives][topic
     adaptor signatures], mais les discussions ultérieures ont indiqué que cela devrait probablement être défini dans un BIP séparé.
-    {% assign timestamp="26:44" %}
 
 ## Modifications apportées aux services et aux logiciels clients
 
@@ -78,28 +76,28 @@ intéressantes des portefeuilles et services Bitcoin.*
 
 - **Sortie de la bibliothèque Python BIP-329 :**
   La [bibliothèque Python BIP-329][] est un ensemble d'outils qui peuvent lire, écrire, chiffrer et déchiffrer des fichiers d'étiquettes
-  de portefeuille conformes à [BIP329][]. {% assign timestamp="29:10" %}
+  de portefeuille conformes à [BIP329][].
 
 - **Annonce de l'outil de test LN Doppler :**
   Récemment [annoncé][doppler announced], [Doppler][] prend en charge la définition de topologies de nœuds Bitcoin et Lightning et
   l'activité de paiement onchain/offchain à l'aide d'un langage spécifique au domaine (DSL) pour tester les implémentations LND, CLN
-  et Eclair ensemble. {% assign timestamp="30:19" %}
+  et Eclair ensemble.
 
 - **Sortie de Coldcard Mk4 v5.2.0 :**
   Les mises à jour du firmware [incluent][coldcard blog] le support de [BIP370][] pour la version 2 [PSBTs][topic psbt], support
-  supplémentaire [BIP39][] et capacités de plusieurs semences. {% assign timestamp="31:54" %}
+  supplémentaire [BIP39][] et capacités de plusieurs semences.
 
 - **Circuits Tapleaf : une démo de BitVM :**
   [Circuits Tapleaf][] est une implémentation de concept de preuve de circuits Bristol
-  utilisant l'approche BitVM décrite précédemment dans le bulletin. {% assign timestamp="32:27" %}
+  utilisant l'approche BitVM décrite précédemment dans le bulletin.
 
 - **Samourai Wallet 0.99.98i publié :**
   La version [0.99.98i][samourai blog] inclut des fonctionnalités supplémentaires de PSBT, d'étiquetage des UTXO
-  et d'envoi en lot. {% assign timestamp="34:24" %}
+  et d'envoi en lot.
 
 - **Krux : firmware de dispositif de signature :**
   [Krux][krux github] est un projet de firmware open-source pour construire des dispositifs de signature matériels
-  en utilisant du matériel courant. {% assign timestamp="35:12" %}
+  en utilisant du matériel courant.
 
 ## Mises à jour et versions candidates
 
@@ -108,7 +106,7 @@ d'infrastructure Bitcoin. Veuillez envisager de passer aux nouvelles
 versions ou d'aider à tester les versions candidates.*
 
 - [Bitcoin Core 24.2rc2][] et [Bitcoin Core 25.1rc1][] sont des candidats à la version
-  pour les versions de maintenance de Bitcoin Core. {% assign timestamp="36:06" %}
+  pour les versions de maintenance de Bitcoin Core.
 
 ## Changements notables dans le code et la documentation
 
@@ -126,21 +124,21 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   fragment `multi_a` est introduit exclusivement pour les descripteurs P2TR qui
   correspond à la sémantique de `multi` dans les descripteurs P2WSH. La discussion sur le
   PR note qu'une grande partie du travail a été consacrée au suivi approprié des
-  limites de ressources modifiées pour tapscript. {% assign timestamp="38:07" %}
+  limites de ressources modifiées pour tapscript.
 
 - [Eclair #2703][] décourage les utilisateurs qui font une dépense de faire transiter les paiements par
   le nœud local lorsque le solde du nœud est faible et qu'il serait probablement
   nécessaire de rejeter ces paiements. Cela est réalisé en annonçant que le montant HTLC maximum du nœud a été réduit.
   Éviter les paiements rejetés améliore l'expérience lors d'une dépense et aide à éviter
   que le nœud local ne soit pénalisé par les systèmes de recherche de chemin qui rabaissent
-  les nœuds qui n'ont pas réussi à faire transiter un paiement récemment. {% assign timestamp="45:54" %}
+  les nœuds qui n'ont pas réussi à faire transiter un paiement récemment.
 
 - [LND #7267][] rend possible la création de routes vers des
   chemins [aveugles][topic rv routing], rapprochant ainsi LND d'une prise en charge complète
-  des paiements aveugles. {% assign timestamp="47:06" %}
+  des paiements aveugles.
 
 - [BDK #1041][] ajoute un module pour obtenir des données sur la chaîne de blocs à partir de Bitcoin Core en utilisant l'interface
-  RPC de ce programme. {% assign timestamp="47:39" %}
+  RPC de ce programme.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27255,2703,7267,1041" %}

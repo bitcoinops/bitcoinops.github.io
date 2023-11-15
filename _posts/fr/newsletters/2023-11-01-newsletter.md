@@ -50,7 +50,7 @@ logiciels d'infrastructure Bitcoin les plus populaires.
       James O'Beirne souligne les limitations significatives de l'utilisation de `OP_CAT` pour implémenter des coffres-forts. Il note
       spécifiquement plusieurs fonctionnalités que les versions `OP_CAT` n'ont pas par rapport aux coffres-forts de style BIP345.
 
-{% assign timestamp="0:40" %}
+
 
 ## Mises à jour et versions candidates
 
@@ -60,10 +60,10 @@ les versions candidates.*
 
 - [LDK 0.0.118][] est la dernière version de cette bibliothèque pour la construction d'applications compatibles LN. Elle inclut un
   support expérimental partiel pour le protocole [offers][topic offers], ainsi que d'autres nouvelles fonctionnalités et corrections
-  de bugs. {% assign timestamp="14:57" %}
+  de bugs.
 
 - [Rust Bitcoin 0.31.1][] est la dernière version de cette bibliothèque pour travailler avec les données Bitcoin. Consultez ses [notes
-  de version][rb rn] pour une liste des nouvelles fonctionnalités et corrections de bugs. {% assign timestamp="17:35" %}
+  de version][rb rn] pour une liste des nouvelles fonctionnalités et corrections de bugs.
 
 _Remarque:_ Bitcoin Core 26.0rc1, mentionné dans notre dernière newsletter, est étiqueté mais les binaires n'ont pas été téléchargés
 en raison d'un changement d'Apple qui a empêché la création de binaires reproductibles pour macOS. Les développeurs de Bitcoin Core
@@ -78,16 +78,16 @@ travaillent sur une solution pour un deuxième candidat à la version.
 
 - [Bitcoin Core #28685][] corrige un bug dans le calcul du hachage d'un ensemble de UTXO, mentionné dans une [newsletter
   précédente][news274 hash bug]. Il inclut un changement incompatible avec la version précédente de l'API `gettxoutsetinfo`, remplaçant
-  la valeur précédente `hash_serialized_2` par `hash_serialized_3`, contenant le hachage corrigé. {% assign timestamp="21:24" %}
+  la valeur précédente `hash_serialized_2` par `hash_serialized_3`, contenant le hachage corrigé.
 
 - [Bitcoin Core #28651][] permet à [miniscript][topic miniscript] d'estimer plus précisément le nombre maximal d'octets qui devront
   être inclus dans la structure de témoin pour dépenser une sortie [taproot][topic taproot]. Cette amélioration de précision aidera
-  le portefeuille de Bitcoin Core à éviter de payer des frais excessifs. {% assign timestamp="22:34" %}
+  le portefeuille de Bitcoin Core à éviter de payer des frais excessifs.
 
 - [Bitcoin Core #28565][] s'appuie sur [#27511][Bitcoin Core #27511] pour ajouter une API `getaddrmaninfo` qui expose les comptes des
   adresses de pairs qui sont soit "nouvelles" soit "essayées", segmentées par réseau (IPv4, IPv6, Tor, I2P, CJDNS). Voir [Newsletter
   #237][news237 pr review] et le [Podcast #237][pod237 pr review] pour plus d'informations concernant la motivation derrière cette
-  segmentation. {% assign timestamp="24:57" %}
+  segmentation.
 
 - [LND #7828][] commence à exiger que les pairs répondent à ses messages de protocole LN `ping` dans un délai raisonnable, sinon ils
   seront déconnectés. Cela permet de garantir que les connexions restent actives (réduisant ainsi les chances qu'une connexion morte
@@ -95,11 +95,11 @@ travaillent sur une solution pour un deuxième candidat à la version.
   et pongs LN : ils peuvent aider à dissimuler le trafic réseau, rendant ainsi plus difficile le suivi des paiements par un observateur
   du réseau (car les paiements, les pings et les pongs sont tous chiffrés) ; ils déclenchent des rotations plus fréquentes des clés
   de chiffrement, comme décrit dans [BOLT1][] ; et LND utilise en particulier les messages `pong` pour aider à prévenir les [attaques
-  par éclipse][topic eclipse attacks] (voir [Newsletter #164][news164 pong]). {% assign timestamp="31:01" %}
+  par éclipse][topic eclipse attacks] (voir [Newsletter #164][news164 pong]).
 
 - [LDK #2660][] donne aux appelants plus de flexibilité sur les frais qu'ils peuvent choisir pour les transactions onchain, y compris
   des paramètres pour payer le minimum absolu, un taux bas qui peut prendre plus d'un jour pour être confirmé, une priorité normale et
-  une priorité élevée. {% assign timestamp="33:14" %}
+  une priorité élevée.
 
 - [BOLTs #1086][] spécifie que les nœuds doivent rejeter (rembourser) un HTLC et renvoyer une erreur `expiry_too_far` si les instructions
   pour créer une demande de [HTLC][topic htlc] transmise demandent au nœud local d'attendre plus de 2 016 blocs avant de pouvoir réclamer
@@ -108,7 +108,6 @@ travaillent sur une solution pour un deuxième candidat à la version.
   de ce paramètre permet de faire transiter les paiements sur plus de canaux pour le même paramètre de variation HTLC maximal (ou le
   même nombre de sauts pour un paramètre de variation HTLC maximal plus élevé, ce qui peut améliorer la résistance à certaines attaques,
   telles que l'attaque de remplacement cyclique décrite dans [le bulletin de la semaine dernière][news274 cycling]).
-  {% assign timestamp="35:02" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}

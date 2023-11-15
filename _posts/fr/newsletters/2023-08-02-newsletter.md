@@ -19,7 +19,7 @@ d'infrastructure Bitcoin.
   spécification du LN ont été transcrites. Les transcriptions sont maintenant [disponibles][btcscripts spec] sur Bitcoin
   Transcripts. Dans une actualité connexe, comme discuté il y a quelques semaines lors de la conférence des développeurs LN en
   personne, le salon de discussion IRC `#lightning-dev` sur le réseau [Libera.chat][] a connu une activité renouvelée
-  significative pour les discussions liées au LN. {% assign timestamp="1:13" %}
+  significative pour les discussions liées au LN.
 
 - **Sécurité de la signature aveugle MuSig2 :** Tom Trevethan a [publié][trevethan blind] sur la liste de diffusion Bitcoin-Dev
   pour demander une revue d'un protocole cryptographique prévu dans le cadre d'un déploiement de [statechains][topic statechains].
@@ -33,7 +33,7 @@ d'infrastructure Bitcoin.
     être utilisé pour des ecash aveugles. [Lucre][] et [Minicash][] sont des implémentations antérieures de ce schéma sans rapport
     avec Bitcoin, et [Cashu][] est une implémentation liée à Minicash qui intègre également le support de Bitcoin et du LN.
     Toute personne intéressée par la cryptographie peut trouver le fil intéressant pour sa discussion sur les techniques
-    cryptographiques. {% assign timestamp="5:07" %}
+    cryptographiques.
 
 ## Mises à jour et versions candidates
 
@@ -43,7 +43,7 @@ les versions candidates.*
 
 - [BTCPay Server 1.11.1][] est la dernière version de ce processeur de paiement auto-hébergé. La série de versions 1.11.x comprend
   des améliorations de la génération de factures, des mises à niveau supplémentaires du processus de paiement et de nouvelles
-  fonctionnalités pour le terminal de point de vente. {% assign timestamp="24:30" %}
+  fonctionnalités pour le terminal de point de vente.
 
 ## Changements notables dans le code et la documentation
 
@@ -56,7 +56,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
 - [Bitcoin Core #26467][] permet à l'utilisateur de spécifier quelle sortie d'une transaction est le changement dans `bumpfee`.
   Le portefeuille déduit de la valeur de cette sortie pour ajouter des frais lors de la création de la [transaction de
   remplacement][topic rbf]. Par défaut, le portefeuille tente de détecter automatiquement une sortie de changement et en crée
-  une nouvelle s'il échoue à le faire. {% assign timestamp="25:31" %}
+  une nouvelle s'il échoue à le faire.
 
 - [Core Lightning #6378][] et [#6449][core lightning #6449] marqueront un [HTLC][topic htlc] entrant offchain comme échoué si
   le nœud est incapable (ou refuse en raison des coûts de frais) de temporiser un HTLC correspondant onchain. Par exemple, le nœud
@@ -80,25 +80,25 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
 
     La solution mise en œuvre dans cette PR est que Bob attende aussi longtemps que raisonnable pour réclamer un remboursement
     et, s'il ne se produit pas, crée une annulation offchain du HTLC qu'il a reçu d'Alice, permettant à leur canal de continuer
-    à fonctionner même si cela signifie qu'il pourrait perdre le montant du HTLC. {% assign timestamp="27:19" %}
+    à fonctionner même si cela signifie qu'il pourrait perdre le montant du HTLC.
 
 - [Core Lightning #6399][] ajoute la prise en charge de la commande `pay` pour payer les factures créées par le nœud local.
   Cela peut simplifier le code de gestion des comptes pour les logiciels qui appellent CLN en arrière-plan, comme discuté
-  dans un récent [thread de la liste de diffusion][fiatjaf custodial]. {% assign timestamp="33:03" %}
+  dans un récent [thread de la liste de diffusion][fiatjaf custodial].
 
 - [Core Lightning #6389][] ajoute un service optionnel CLNRest, "un
   plugin Core Lightning léger basé sur Python qui transforme les appels RPC
   en un service REST. En générant des points d'API REST, il permet
   l'exécution des méthodes RPC de Core Lightning en arrière-plan
   et fournit des réponses au format JSON."  Consultez sa
-  [documentation][clnrest doc] pour plus de détails. {% assign timestamp="35:48" %}
+  [documentation][clnrest doc] pour plus de détails.
 
 - [Core Lightning #6403][] et [#6437][core lightning #6437] déplacent le
   mécanisme d'autorisation et d'authentification des runes hors du plugin commando de CLN
   (voir [Newsletter #210][news210 commando]) et dans sa fonctionnalité principale,
   permettant à d'autres plugins de les utiliser. Plusieurs
   commandes liées à la création, la destruction et le renommage des runes sont également
-  mises à jour. {% assign timestamp="37:37" %}
+  mises à jour.
 
 - [Core Lightning #6398][] étend le RPC `setchannel` avec une nouvelle
   option `ignorefeelimits` qui ignorera les limites minimales de frais onchain
@@ -106,14 +106,14 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   définir un taux de frais inférieur au minimum que le nœud local autorisera. Cela peut
   aider à contourner un bug potentiel dans une autre implémentation de nœud LN ou
   peut être utilisé pour éliminer les problèmes de contention de frais dans
-  les canaux partiellement fiables. {% assign timestamp="39:52" %}
+  les canaux partiellement fiables.
 
 - [Core Lightning #5492][] ajoute des points de trace définis statiquement au niveau de l'utilisateur
   (User-level Statically Defined Tracepoints - USDT) et les moyens de les utiliser. Cela permet aux utilisateurs de sonder
   le fonctionnement interne de leur nœud à des fins de débogage sans introduire de
   surcharge significative lorsque les points de trace ne sont pas utilisés. Consultez la
   [Newsletter #133][news133 usdt] pour l'inclusion précédente du support USDT
-  dans Bitcoin Core. {% assign timestamp="45:52" %}
+  dans Bitcoin Core.
 
 - [Eclair #2680][] ajoute la prise en charge du protocole de négociation d'état de repos
   requis par le [protocole de fusion][topic splicing] proposé dans [BOLTs #863][]. Le protocole d'état de repos empêche les
@@ -126,21 +126,21 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   de fusion signée mutuellement. Eclair
   prend déjà en charge la fusion, mais cette modification le rapproche
   de la prise en charge du même protocole de fusion que les autres logiciels de nœud
-  utiliseront probablement. {% assign timestamp="51:42" %}
+  utiliseront probablement.
 
 - [LND #7820][] ajoute à RPC `BatchOpenChannel` tous les champs
   disponibles dans le RPC non groupé `OpenChannel`, à l'exception de
   `funding_shim` (pas nécessaire pour les ouvertures groupées) et `fundmax` (vous
   ne pouvez pas donner à un canal tout le solde lors de l'ouverture de plusieurs
-  canaux). {% assign timestamp="53:57" %}
+  canaux).
 
 - [LND #7516][] étend le RPC `OpenChannel` avec un nouveau paramètre `utxo`
   qui permet de spécifier un ou plusieurs UTXOs du portefeuille.
-  qui devrait être utilisé pour financer la nouvelle chaîne. {% assign timestamp="54:57" %}
+  qui devrait être utilisé pour financer la nouvelle chaîne.
 
 - [BTCPay Server #5155][] ajoute une page de rapport au back office qui fournit
   des rapports de paiement et de portefeuille onchain, la possibilité d'exporter au format CSV, et est
-  extensible par des plugins. {% assign timestamp="57:26" %}
+  extensible par des plugins.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="863,26467,6378,6449,6399,6389,6403,6437,6398,5492,2680,7820,7516,5155" %}

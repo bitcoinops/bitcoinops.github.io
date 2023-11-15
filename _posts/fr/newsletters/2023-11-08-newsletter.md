@@ -26,14 +26,14 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
     Nous sommes également conscients que, dans les mois précédant l'annonce, certains développeurs bien établis avaient commencé à
     expérimenter des discussions sur le forum web [DelvingBitcoin][]. Optech commencera à surveiller ce forum pour les discussions
-    intéressantes ou importantes à partir de maintenant. {% assign timestamp="1:05" %}
+    intéressantes ou importantes à partir de maintenant.
 
 - **Agrégation HTLC avec des covenants :** Johan Torås Halseth [a posté][halseth agg] sur la liste de diffusion Lightning-Dev une
   suggestion pour utiliser un [covenant][topic covenants] afin d'agréger plusieurs [HTLC][topic htlc] en une seule sortie qui pourrait
   être dépensée en une seule fois si une partie connaissait toutes les préimages. Si une partie ne connaissait que certaines des préimages,
   elle pourrait simplement les réclamer, puis le solde restant pourrait être remboursé à l'autre partie. Halseth note que cela serait
   plus efficace on-chain et pourrait rendre plus difficile la réalisation de certains types [d'attaques de blocage de
-  canal][topic channel jamming attacks]. {% assign timestamp="5:36" %}
+  canal][topic channel jamming attacks].
 
 ## Bitcoin Core PR Review Club
 
@@ -55,7 +55,7 @@ Lorsqu'un nouveau bloc est trouvé, ses transactions présentes dans la mempool 
 conflit avec les transactions du bloc.
 Étant donné que le traitement et la transmission des blocs sont critiques en termes de performances, cela est bénéfique pour réduire
 la quantité de travail nécessaire lors du traitement d'un nouveau bloc, tel que la mise à jour de l'estimateur de frais.
-{% assign timestamp="16:47" %}
+
 
 {% include functions/details-list.md
   q0="Pourquoi est-il bénéfique de supprimer la dépendance de `CTxMempool` à `CBlockPolicyEstimator`?"
@@ -137,13 +137,13 @@ versions ou d'aider à tester les versions candidates.*
 
 - [Bitcoin Core 26.0rc2][] est un candidat à la version pour la prochaine version majeure
   de l'implémentation principale du nœud complet. Il y a un bref aperçu à propos de [suggestions de tests][26.0 testing]
-  et une réunion prévue du [Bitcoin Core PR Review Club][] dédiée aux tests le 15 novembre 2023. {% assign timestamp="26:14" %}
+  et une réunion prévue du [Bitcoin Core PR Review Club][] dédiée aux tests le 15 novembre 2023.
 
 - [Core Lightning 23.11rc1][] est un candidat à la version pour la prochaine
-  version majeure de cette implémentation de nœud LN. {% assign timestamp="29:26" %}
+  version majeure de cette implémentation de nœud LN.
 
 - [LND 0.17.1-beta.rc1][] est un candidat à la version pour une version de maintenance
-  de cette implémentation de nœud LN. {% assign timestamp="31:28" %}
+  de cette implémentation de nœud LN.
 
 ## Changements notables dans le code et la documentation
 
@@ -155,24 +155,24 @@ versions ou d'aider à tester les versions candidates.*
 - [Core Lightning #6824][] met à jour la mise en œuvre du [protocole de financement interactif][topic dual funding] pour "stocker l'état
   lors de l'envoi de `commitment_signed`, et [ajouter] un champ `next_funding_txid` à `channel_reestablish` pour demander à notre pair
   de retransmettre les signatures que nous n'avons pas reçues." Cela est basé sur une [mise à jour][36c04c8ac] de la proposition [de
-  financement interactif][bolts #851]. {% assign timestamp="32:38" %}
+  financement interactif][bolts #851].
 
 - [Core Lightning #6783][] déprécie l'option de configuration `large-channels`, rendant les [grands canaux][topic large channels] et
-  les montants de paiement importants toujours activés. {% assign timestamp="34:59" %}
+  les montants de paiement importants toujours activés.
 
 - [Core Lightning #6780][] améliore la prise en charge de l'augmentation des frais des transactions onchain associées aux [sorties
-  d'ancrage][topic anchor outputs]. {% assign timestamp="36:29" %}
+  d'ancrage][topic anchor outputs].
 
 - [Core Lightning #6773][] permet à la RPC `decode` de vérifier que le contenu d'un fichier de sauvegarde est valide et contient les
-  dernières informations nécessaires pour effectuer une récupération complète. {% assign timestamp="39:06" %}
+  dernières informations nécessaires pour effectuer une récupération complète.
 
 - [Core Lightning #6734][] met à jour la RPC `listfunds` pour fournir aux utilisateurs les informations nécessaires s'ils souhaitent
-  augmenter les frais [CPFP][topic cpfp] d'une transaction de fermeture mutuelle de canal. {% assign timestamp="39:58" %}
+  augmenter les frais [CPFP][topic cpfp] d'une transaction de fermeture mutuelle de canal.
 
 - [Eclair #2761][] permet de transférer un nombre limité de [HTLC][topic htlc] à une partie même s'ils sont inférieurs à leur réserve
   de canal requise. Cela peut aider à résoudre un problème de _fonds bloqués_ qui pourrait survenir après [un splicing][topic splicing]
   ou [un financement double][topic dual funding]. Voir le [Bulletin #253][news253 stuck] pour une autre atténuation par Eclair pour un
-  problème de fonds bloqués. {% assign timestamp="41:02" %}
+  problème de fonds bloqués.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6824,6783,6780,6773,6734,2761,851" %}
