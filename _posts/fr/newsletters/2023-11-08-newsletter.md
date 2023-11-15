@@ -174,15 +174,6 @@ versions ou d'aider à tester les versions candidates.*
   ou [un financement double][topic dual funding]. Voir le [Bulletin #253][news253 stuck] pour une autre atténuation par Eclair pour un
   problème de fonds bloqués. {% assign timestamp="41:02" %}
 
-<div markdown="1" class="callout">
-## Vous en voulez plus?
-
-Pour plus de discussions sur les sujets mentionnés dans ce bulletin, rejoignez-nous pour le récapitulatif hebdomadaire Bitcoin Optech
-sur [Twitter Spaces][@bitcoinoptech] à 15h00 UTC le jeudi (le jour suivant la publication de la newsletter). La discussion est également
-enregistrée et sera disponible sur notre page de [podcasts][podcast].
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6824,6783,6780,6773,6734,2761,851" %}
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/

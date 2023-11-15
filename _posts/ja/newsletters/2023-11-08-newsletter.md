@@ -170,16 +170,6 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
   _資金のスタック問題_ を解決するのに役立ちます。資金のスタック問題に対するEclairの別の緩和策については、
   [ニュースレター #253][news253 stuck]をご覧ください。
 
-<div markdown="1" class="callout">
-## もっと知りたいですか？
-
-このニュースレターで言及されたトピックについてもっと議論したい方は、
-（ニュースレターが公開された翌日の）木曜日の15:00 UTCから[Twitter
-Spaces][@bitcoinoptech]で毎週開催されているBitcoin Optech Recapにご参加ください。
-この議論は録画もされ、[ポッドキャスト][podcast]ページからご覧いただけます。
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6824,6783,6780,6773,6734,2761,851" %}
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/

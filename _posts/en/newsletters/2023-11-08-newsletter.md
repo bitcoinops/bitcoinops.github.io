@@ -213,17 +213,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   funding].  See [Newsletter #253][news253 stuck] for another mitigation
   by Eclair for a stuck funds problem. {% assign timestamp="41:02" %}
 
-<div markdown="1" class="callout">
-## Want more?
-
-For more discussion about the topics mentioned in this newsletter, join
-us for the weekly Bitcoin Optech Recap on [Twitter
-Spaces][@bitcoinoptech] at 15:00 UTC on Thursday (the day after the
-newsletter is published).  The discussion is also recorded and will be
-available from our [podcasts][podcast] page.
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6824,6783,6780,6773,6734,2761,851" %}
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/

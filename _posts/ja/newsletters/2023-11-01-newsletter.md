@@ -113,16 +113,6 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
   または、より高い最大HTLC delta設定の場合は同じホップ数で、
   [先週のニュースレター][news274 cycling]で説明した置換サイクル攻撃などの特定の攻撃に対する耐性を向上させることができます）。
 
-<div markdown="1" class="callout">
-## もっと知りたいですか？
-
-このニュースレターで言及されたトピックについてもっと議論したい方は、
-（ニュースレターが公開された翌日の）木曜日の15:00 UTCから[Twitter
-Spaces][@bitcoinoptech]で毎週開催されているBitcoin Optech Recapにご参加ください。
-この議論は録画もされ、[ポッドキャスト][podcast]ページからご覧いただけます。
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /ja/newsletters/2021/09/01/#lnd-5621
