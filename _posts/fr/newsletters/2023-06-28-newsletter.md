@@ -39,7 +39,7 @@ de l'infrastructure Bitcoin.
     des autres parties ou du coordinateur qu'ils cosignent toute transaction
     conflictuelle, ce qu'ils ne feront probablement pas, à moins que la
     signature ne soit dans l'intérêt de tous les participants (par exemple,
-    un [fee bump][topic rbf]). {% assign timestamp="16:08" %}
+    un [fee bump][topic rbf]).
 
 - **Spéculer en utilisant les changements de consensus espérés :** Robin Linus
   a [exposé][linus spec] sur la liste de diffusion Bitcoin-Dev une idée pour
@@ -70,7 +70,7 @@ de l'infrastructure Bitcoin.
     sera ajouté). Cela les incite à plaider en faveur du changement, mais en incitant
     fortement certains utilisateurs à changer le système, d'autres utilisateurs pourraient
     avoir l'impression d'être contraints. L'idée n'a fait l'objet d'aucune discussion
-    sur la liste de diffusion au moment de la rédaction de ce document. {% assign timestamp="1:33" %}
+    sur la liste de diffusion au moment de la rédaction de ce document.
 
 ## En attente de confirmation #7 : Ressources du réseau
 
@@ -80,7 +80,7 @@ pourquoi Bitcoin Core a une politique plus restrictive que celle permise par le
 consensus et comment les portefeuilles peuvent utiliser cette politique de la
 manière la plus efficace._
 
-{% include specials/policy/fr/07-ressources-du-reseau.md %} {% assign timestamp="24:46" %}
+{% include specials/policy/fr/07-ressources-du-reseau.md %}
 
 ## Sélection de Q&R du Bitcoin Stack Exchange
 
@@ -100,7 +100,7 @@ notre dernière mise à jour.*
   les blocs prévus par rapport aux blocs réels. Pieter Wuille souligne qu'en raison de la
   variance inhérente aux [mempools][waiting for confirmation 1] des différents nœuds liés
   à la propagation des transactions, il n'est pas possible d'établir une règle de consensus
-  imposant le contenu des blocs. {% assign timestamp="57:38" %}
+  imposant le contenu des blocs.
 
 - [Pourquoi tout le monde prétend-il que les soft forks restreignent l'ensemble des règles existantes ?]({{bse}}118642)
   Pieter Wuille utilise les règles ajoutées lors des [activations][topic soft fork activation]
@@ -111,23 +111,23 @@ notre dernière mise à jour.*
     adhèrent aux règles de consensus de taproot.
   - segwit a ajouté l'exigence que `OP_{0..16} <2..40 bytes>` (segwit) adhèrent aux
     règles de consensus segwit et exigent également des données témoins vides pour
-    les sorties pré-segwit. {% assign timestamp="1:05:28" %}
+    les sorties pré-segwit.
 
 - [Pourquoi la limite par défaut du canal LN est-elle fixée à 16777215 sats ?]({{bse}}118709)
   Vojtěch Strnad explique l'histoire de la limite de 2^24 satoshi et la motivation
   pour les grands canaux (wumbo). Il renvoie également au [thème des grands canaux][topic large channels]
-  d'Optech pour plus d'informations. {% assign timestamp="1:07:47" %}
+  d'Optech pour plus d'informations.
 
 - [Pourquoi Bitcoin Core utilise-t-il le score de l'ascendant au lieu de son taux de frais pour sélectionner les transactions ?]({{bse}}118611)
   Sdaftuar explique que l'optimisation des performances est la raison pour laquelle
   l'algorithme de sélection des transactions du modèle de bloc minier utilise à la fois
   le taux de frais et le score des ascendants. (Voir
-  [En attente de confirmation n° 2 : Incitations][waiting for confirmation 2]). {% assign timestamp="1:10:28" %}
+  [En attente de confirmation n° 2 : Incitations][waiting for confirmation 2]).
 
 - [Comment le protocole Lightning multipart payments (MPP) définit-il les montants par part ?]({{bse}}117405)
   Rene Pickhardt souligne que [les paiements par trajets multiples][topic multipath payments]
   n'ont pas de taille de part spécifiée par le protocole ou d'algorithme pour choisir la taille
-  de la part et indique quelques recherches pertinentes sur le fractionnement des paiements. {% assign timestamp="1:14:15" %}
+  de la part et indique quelques recherches pertinentes sur le fractionnement des paiements.
 
 ## Mises à jour et versions candidates
 
@@ -136,7 +136,7 @@ notre dernière mise à jour.*
 
 - [BTCPay Server 1.10.3][] est la dernière version de ce logiciel de traitement de paiement
   auto-hébergé. Consultez leur [billet de blog][btcpay 1.10] pour une visite des principales
-  fonctionnalités de la branche 1.10. {% assign timestamp="1:16:08" %}
+  fonctionnalités de la branche 1.10.
 
 ## Changements notables dans le code et la documentation
 
@@ -149,7 +149,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
 - [Core Lightning #6303][] ajoute une nouvelle RPC `setconfig` qui permet
-  de changer certaines options de configuration sans redémarrer le démon. {% assign timestamp="1:21:14" %}
+  de changer certaines options de configuration sans redémarrer le démon.
 
 - [Eclair #2701][] commence l'enregistrement à la fois au moment où un
   [HTLC][topic htlc] offert est reçu et au moment où il est réglé. Cela
@@ -158,7 +158,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   sont en attente pendant de longues périodes, cela peut indiquer qu'une
   [attaque par brouillage de canal][topic channel jamming attacks] est en
   cours. Le suivi de la durée des HTLC permet de détecter de telles attaques
-  et peut contribuer à les atténuer. {% assign timestamp="1:22:21" %}
+  et peut contribuer à les atténuer.
 
 - [Eclair #2696][] modifie la façon dont Eclair permet aux utilisateurs de
   configurer les taux de frais à utiliser. Auparavant, les utilisateurs pouvaient
@@ -166,13 +166,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   réglage de "6" signifiait qu'Eclair essaierait de faire confirmer une
   transaction dans un délai de six blocs. Désormais, Eclair accepte les
   termes "lent", "moyen" et "rapide", qu'il traduit en taux de frais spécifiques
-  à l'aide de constantes ou de cibles de blocs. {% assign timestamp="1:25:03" %}
+  à l'aide de constantes ou de cibles de blocs.
 
 - [LND #7710][] ajoute la possibilité pour les plugins (ou le démon lui-même)
   de récupérer les données reçues plus tôt dans un HTLC. Ceci est nécessaire pour
   le [route aveugle][topic rv routing] et peut être utilisé par diverses contre-mesures
   de [brouillage de canal][topic channel jamming attacks], parmi d'autres idées
-  pour de futures fonctionnalités. {% assign timestamp="1:26:51" %}
+  pour de futures fonctionnalités.
 
 - [LDK #2368][] permet d'accepter de nouveaux canaux créés par un pair qui utilise
   des [sorties d'ancrage][topic anchor outputs] mais exige que le programme de contrôle
@@ -180,10 +180,10 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   un canal d'ancrage, l'utilisateur doit avoir accès à un ou plusieurs UTXO de valeur suffisante.
   LDK, en tant que bibliothèque ignorant quels UTXOs non-LN le portefeuille de l'utilisateur
   contrôle, utilise cette requête pour donner au programme de contrôle une chance de vérifier
-  qu'il a les UTXOs nécessaires. {% assign timestamp="1:27:43" %}
+  qu'il a les UTXOs nécessaires.
 
 - [LDK #2367][] rend les [canaux d'ancrage][topic anchor outputs] accessibles aux consommateurs
-  réguliers de l'API. {% assign timestamp="1:33:34" %}
+  réguliers de l'API.
 
 - [LDK #2319][] permet à un pair de créer un HTLC qui s'engage à payer moins que le montant que
   le contributeur original a dit devoir être payé, ce qui permet au pair de garder la différence
@@ -192,16 +192,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   transaction onchain qui finance le canal et s'engage dans le HTLC au sein de ce canal---mais
   il encourt des frais de transaction supplémentaires en créant cette transaction onchain. En prenant
   des frais supplémentaires, il est compensé pour ses coûts si le destinataire accepte le nouveau canal
-  et règle le HTLC à temps. {% assign timestamp="1:34:40" %}
+  et règle le HTLC à temps.
 
 - [LDK #2120][] ajoute la prise en charge de la recherche d'un itinéraire vers un destinataire
-  qui utilise des [chemins aveugles][topic rv routing]. {% assign timestamp="1:37:09" %}
+  qui utilise des [chemins aveugles][topic rv routing].
 
 - [LDK #2089][] ajoute un gestionnaire d'événement qui permet aux portefeuilles de déclencher
-  facilement les [HTLC][topic htlc] qui doivent être réglés onchain. {% assign timestamp="1:38:12" %}
+  facilement les [HTLC][topic htlc] qui doivent être réglés onchain.
 
 - [LDK #2077][] remanie une grande partie du code pour faciliter l'ajout ultérieur de la prise
-  en charge des [canaux à double financement][topic dual funding]. {% assign timestamp="1:39:08" %}
+  en charge des [canaux à double financement][topic dual funding].
 
 - [Libsecp256k1 #1129][] implémente la technique [ElligatorSwift][ElligatorSwift paper] pour introduire
   un encodage de clé publique de 64 octets qui est informatiquement indiscernable des données aléatoires.
@@ -209,7 +209,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   format ainsi que des fonctions de commodité pour générer de nouvelles clés uniformément aléatoires et
   effectuer un échange de clés Diffie-Hellman à courbe elliptique (ECDH) sur les clés encodées ellswift.
   L'ECDH basé sur ellswift doit être utilisé pour établir des connexions pour le protocole [transport P2P
-  chiffré version 2] [topic v2 p2p transport] ([BIP324][]). {% assign timestamp="1:40:37" %}
+  chiffré version 2] [topic v2 p2p transport] ([BIP324][]).
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}

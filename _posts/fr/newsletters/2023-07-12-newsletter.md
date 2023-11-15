@@ -44,7 +44,7 @@ et décrivant les changements apportés aux principaux logiciels d'infrastructur
     jour de canal. Après ce changement, un nœud qui a opté pour ce protocole et qui a perdu des données recevra presque toujours à
     un moment donné au moins une partie de ses fonds à l'adresse choisie, comme une adresse dans son [portefeuille HD][topic bip32].
 
-  Les premières réponses au PR de proposition de nettoyage ont été positives. {% assign timestamp="0:58" %}
+  Les premières réponses au PR de proposition de nettoyage ont été positives.
 
 ## En attente de confirmation #9 : Propositions de politique
 
@@ -52,7 +52,7 @@ _Une série hebdomadaire limitée [série][policy series] sur le relais des tran
 des transactions de minage--y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et
 comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/fr/09-propositions.md %} {% assign timestamp="18:59" %}
+{% include specials/policy/fr/09-propositions.md %}
 
 ## Bitcoin Core PR Review Club
 
@@ -66,7 +66,7 @@ en supprimant une structure de données en mémoire, `mapRelay`, qui peut
 causer une consommation élevée de mémoire et n'est plus nécessaire, ou du moins
 n'apporte que des avantages marginaux.
 Cette carte contient des transactions qui peuvent ou non être également dans le mempool,
-et est parfois utilisée pour répondre aux demandes [`getdata`][wiki getdata] des pairs. {% assign timestamp="41:42" %}
+et est parfois utilisée pour répondre aux demandes [`getdata`][wiki getdata] des pairs.
 
 {% include functions/details-list.md
   q0="Quelles sont les raisons de supprimer `mapRelay`?"
@@ -136,7 +136,7 @@ Bitcoin. Veuillez envisager de passer aux nouvelles versions ou d’aider à tes
 les versions candidates.*
 
 - [LND v0.16.4-beta][] est une version de maintenance de ce logiciel de nœud LN
-  qui corrige une fuite de mémoire qui peut affecter certains utilisateurs. {% assign timestamp="50:43" %}
+  qui corrige une fuite de mémoire qui peut affecter certains utilisateurs.
 
 ## Changements notables dans le code et la documentation
 
@@ -151,7 +151,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][
   portefeuille hérité dans le cadre des efforts continus décrits dans [Bitcoin Core #20160][]
   pour aider les utilisateurs à migrer des portefeuilles hérités vers des portefeuilles [descripteurs][topic descriptors]
   comme mentionné dans les bulletins d'information [#125][news125 descriptor wallets],
-  [#172][news172 descriptor wallets] et [#230][news230 descriptor wallets]. {% assign timestamp="51:48" %}
+  [#172][news172 descriptor wallets] et [#230][news230 descriptor wallets].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1092,392,240,20160,27869" %}

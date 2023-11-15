@@ -66,7 +66,7 @@ d'infrastructure Bitcoin.
     Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une [idée][maxwell clock stop] de Gregory Maxwell qui
     retarderait l'expiration lorsque "les blocs sont pleins" (par exemple, les frais sont supérieurs au montant normal). Dans sa
     [réponse][law fee stop] à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
-    qu'il aura fini d'y réfléchir. {% assign timestamp="2:07" %}
+    qu'il aura fini d'y réfléchir.
 
 ##  Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
@@ -81,36 +81,31 @@ d'infrastructure Bitcoin.
 - [Comment fonctionnait la découverte des pairs dans Bitcoin v0.1 ?]({{bse}}119507)
   Pieter Wuille décrit l'évolution des mécanismes de découverte des pairs dans Bitcoin Core, depuis la recherche de pairs basée sur
   IRC dans la version 0.1 jusqu'aux adresses IP codées en dur et au semis de pairs DNS actuellement utilisés.
-  {% assign timestamp="20:42" %}
 
 - [Est-ce qu'une série de réorganisations pourrait causer la rupture de Bitcoin en raison de la restriction de différence de temps de bloc de 2 heures ?]({{bse}}119677)
   L'utilisateur fiatjaf demande si une série de réorganisations de la chaîne de blocs, potentiellement le résultat du
   [tir ciblé de frais][topic fee sniping], pourrait causer des problèmes avec les restrictions de temps de bloc de Bitcoin. Antoine
   Poinsot et Pieter Wuille décrivent les deux restrictions de temps de bloc (doivent être supérieures au [temps médian passé
   (MTP)][news146 mtp] et ne pas dépasser deux heures dans le futur selon l'heure locale du nœud) et concluent que les conditions des
-  deux restrictions ne sont pas exacerbées par une réorg. {% assign timestamp="22:48" %}
+  deux restrictions ne sont pas exacerbées par une réorg.
 
 - [Existe-t-il un moyen de télécharger les blocs à partir de zéro sans télécharger d'abord les en-têtes de bloc ?]({{bse}}119503)
   Pieter Wuille confirme qu'il est possible de télécharger les blocs sans les en-têtes, mais souligne que le désavantage est que le
   nœud ne saurait pas s'il est sur la meilleure chaîne avant d'avoir téléchargé et traité tous les blocs. Il compare cette approche
   avec [la synchronisation des en-têtes en premier][headers first pr] et décrit les messages P2P échangés pour chaque approche.
-  {% assign timestamp="26:56" %}
 
 - [Où est indiqué le plafond dur de 21 millions de bitcoins dans le code source de Bitcoin ?]({{bse}}119475)
   Pieter Wuille explique la fonction `GetBlockSubsidy` de Bitcoin Core qui définit le calendrier d'émission des subventions. Il renvoie
   également à une discussion précédente sur Stack Exchange concernant la [limite de 20 999 999,9769 BTC]({{bse}}38998) de Bitcoin et pointe vers la
   constante `MAX_MONEY` qui est utilisée comme vérification de cohérence dans le code de validation du consensus.
-  {% assign timestamp="28:56" %}
 
 - [Les blocs contenant des transactions non standard sont-ils relayés à travers le réseau ou non, comme c'est le cas pour les transactions non standard ?]({{bse}}119693)
   L'utilisateur fiatjaf répond que bien que les transactions non standard selon [la politique][policy series] ne soient pas relayées
   par défaut sur le réseau P2P, les blocs contenant des transactions non standard sont toujours relayés, à condition que le bloc
   respecte les règles de consensus.
-  {% assign timestamp="31:50" %}
 
 - [Quand Bitcoin Core vous permet-il d'"abandonner une transaction" ?]({{bse}}119771)
   Murch détaille les trois conditions requises pour pouvoir [abandonner][rpc abandontransaction] une transaction dans Bitcoin Core :
-  {% assign timestamp="35:47" %}
 
   - la transaction n'a pas été abandonnée précédemment
   - ni la transaction ni une transaction en conflit ne sont confirmées
@@ -124,7 +119,7 @@ les versions candidates.*
 
 - [LND v0.17.0-beta.rc5][] est un candidat aux versions pour la prochaine version majeure de cette implémentation populaire de nœud LN.
   Une nouvelle fonctionnalité expérimentale majeure prévue pour cette version, qui pourrait bénéficier de tests, est la prise en charge
-  des "canaux taproot simples". {% assign timestamp="39:07" %}
+  des "canaux taproot simples".
 
 ## Modifications de code et de documentation notables
 
@@ -135,47 +130,47 @@ les versions candidates.*
 
 - [Bitcoin Core #28492][] met à jour le RPC `descriptorprocesspsbt` pour inclure la transaction sérialisée complète si le traitement du
   [PSBT][topic psbt] aboutit à une transaction diffusable. Voir [le bulletin de la semaine dernière][news269 psbt] pour un PR fusionné
-  similaire. {% assign timestamp="39:54" %}
+  similaire.
 
 - [Bitcoin Core GUI #119][] met à jour la liste des transactions dans l'interface graphique pour ne plus fournir de catégorie spéciale
   pour "paiement à vous-même". Maintenant, les transactions qui ont à la fois des entrées et des sorties qui affectent le portefeuille
   sont affichées sur des lignes séparées pour les dépenses et les réceptions. Cela peut améliorer la clarté pour les
   [coinjoins][topic coinjoin] et les [payjoins][topic payjoin], bien que Bitcoin Core ne supporte actuellement aucun de ces types de
-  transactions par lui-même. {% assign timestamp="41:13" %}
+  transactions par lui-même.
 
 - [Bitcoin Core GUI #738][] ajoute une option de menu permettant de migrer un portefeuille hérité basé sur des clés et des types de
   script de sortie implicites stockés dans BerkeleyDB (BDB) vers un portefeuille moderne qui utilise des [descripteurs][topic descriptors]
-  stockés dans SQLite. {% assign timestamp="42:49" %}
+  stockés dans SQLite.
 
 - [Bitcoin Core #28246][] met à jour la façon dont le portefeuille Bitcoin Core détermine internement quel script de sortie
   (scriptPubKey) une transaction doit payer. Auparavant, les transactions payaient simplement le script de sortie spécifié par
   l'utilisateur, mais si le support des [paiements silencieux][topic silent payments] est ajouté à Bitcoin Core, le script de sortie
   devra être dérivé en fonction des données des entrées sélectionnées pour la transaction. Cette mise à jour rend cela beaucoup plus
-  simple. {% assign timestamp="44:18" %}
+  simple.
 
 - [Core Lightning #6311][] supprime l'option de construction `--developer` qui produisait des binaires avec des options supplémentaires
   par rapport aux binaires CLN standard. Maintenant, les fonctionnalités expérimentales et non par défaut peuvent être accessibles en
   démarrant `lightningd` avec l'option de configuration d'exécution `--developer`. Une option de construction `--enable-debug` produira
-  toujours un binaire légèrement différent avec certaines modifications bénéfiques pour les tests. {% assign timestamp="46:30" %}
+  toujours un binaire légèrement différent avec certaines modifications bénéfiques pour les tests.
 
 - [Core Lightning #6617][] met à jour le RPC `showrunes` pour fournir un nouveau champ de résultats, `last_used`, qui affiche la dernière
-  fois que le _rune_ (jeton d'authentification) a été utilisé. {% assign timestamp="47:23" %}
+  fois que le _rune_ (jeton d'authentification) a été utilisé.
 
 - [Core Lightning #6686][] ajoute des en-têtes de stratégie de sécurité du contenu (CSP) et de partage des ressources entre origines
-  (CORS) configurables pour l'interface REST de l'API de CLN. {% assign timestamp="47:55" %}
+  (CORS) configurables pour l'interface REST de l'API de CLN.
 
 - [Eclair #2613][] permet à Eclair de gérer toutes ses propres clés privées et d'utiliser Bitcoin Core avec seulement un portefeuille
   en mode surveillance (un portefeuille avec des clés publiques mais sans clés privées). Cela peut être particulièrement utile si Eclair
   est exécuté dans un environnement plus sécurisé que Bitcoin Core.
-  Pour plus de détails, consultez la [documentation][eclair keys] ajoutée dans cette PR. {% assign timestamp="48:44" %}
+  Pour plus de détails, consultez la [documentation][eclair keys] ajoutée dans cette PR.
 
 - [LND #7994][] ajoute la prise en charge de l'interface RPC du signataire distant pour l'ouverture de canaux taproot, ce qui nécessite
-  de spécifier une clé publique et le nonce en deux parties [MuSig2][topic musig]. {% assign timestamp="50:18" %}
+  de spécifier une clé publique et le nonce en deux parties [MuSig2][topic musig].
 
 - [LDK #2547][] met à jour le code de recherche de chemin probabiliste en supposant qu'il est plus probable que les canaux distants
   aient la plupart de leur liquidité poussée d'un côté du canal. Par exemple, dans un canal distant de 1,00 BTC entre Alice et Bob,
   l'état le moins probable du canal est que Alice et Bob aient chacun 0,50 BTC. Il est plus probable que l'un d'entre eux ait 0,90
-  BTC---et encore plus probable que l'un d'entre eux ait 0,99 BTC. {% assign timestamp="51:10" %}
+  BTC---et encore plus probable que l'un d'entre eux ait 0,99 BTC.
 
 - [LDK #2534][] ajoute la méthode `ChannelManager::send_preflight_probes` pour [sonder][topic payment probes] les chemins de paiement
   avant d'essayer d'envoyer un paiement. Une sonde est générée par un expéditeur comme un paiement LN régulier, mais la valeur de son
@@ -190,7 +185,7 @@ les versions candidates.*
    problèmes pouvant causer des retards. Si quelques centaines de sats (ou moins) restent bloqués pendant quelques heures, ce n'est pas
    grave pour la plupart des dépensiers---mais si le montant total d'un paiement représentant une partie importante du capital d'un nœud
    reste bloqué, cela peut être très ennuyeux. Il est également possible de sonder plusieurs chemins simultanément et d'utiliser les
-   résultats pour choisir le meilleur chemin quelques instants plus tard lors de l'envoi d'un paiement. {% assign timestamp="53:01" %}
+   résultats pour choisir le meilleur chemin quelques instants plus tard lors de l'envoi d'un paiement.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28492,119,738,28246,6311,6617,6686,2613,7994,2547,2534" %}

@@ -19,7 +19,7 @@ _Aucune actualité significative n'a été trouvée cette semaine dans les liste
 
 _La dernière entrée de notre [série][policy series] hebdomadaire limitée  sur le relais des transactions, l'inclusion dans la mempool et la sélection des transactions minières - y compris pourquoi Bitcoin Core a une politique plus restrictive que celle autorisée par consensus et comment les portefeuilles peuvent utiliser cette politique de la manière la plus efficace._
 
-{% include specials/policy/fr/10-impliquez-vous.md %} {% assign timestamp="2:01" %}
+{% include specials/policy/fr/10-impliquez-vous.md %}
 
 Modifications apportées aux services et aux logiciels clients
 
@@ -30,54 +30,54 @@ intéressantes des portefeuilles et services Bitcoin.*
   10101 a annoncé un [portefeuille][10101 github] construit avec LDK et BDK qui permet aux utilisateurs de négocier des dérivés
   sans garde en utilisant des [DLCs][topic dlc] dans un [contrat hors chaîne][10101 blog2] qui peut également être utilisé pour
   envoyer, recevoir et transférer des paiements LN. Les DLC reposent sur des oracles qui utilisent des [signatures
-  d'adaptateur][topic adaptor signatures] pour l'[attestation][10101 blog1] des prix. {% assign timestamp="14:56" %}
+  d'adaptateur][topic adaptor signatures] pour l'[attestation][10101 blog1] des prix.
 
 - **LDK Node annoncé :**
   L'équipe LDK a [annoncé][ldk blog] LDK Node [v0.1.0][LDK Node v0.1.0]. LDK Node est une
   bibliothèque Rust de nœud Lightning qui utilise les bibliothèques LDK et BDK pour permettre aux développeurs
   de configurer rapidement un nœud Lightning auto-hébergé tout en offrant un degré élevé de
-  personnalisation pour différents cas d'utilisation. {% assign timestamp="17:14" %}
+  personnalisation pour différents cas d'utilisation.
 
 - **Payjoin SDK annoncé :**
   [Payjoin Dev Kit (PDK)][PDK github] a été [annoncé][PDK blog] en tant que bibliothèque Rust
   qui implémente [BIP78][] pour une utilisation dans les portefeuilles et les services souhaitant
-  intégrer la fonctionnalité [payjoin][topic payjoin]. {% assign timestamp="20:09" %}
+  intégrer la fonctionnalité [payjoin][topic payjoin].
 
 - **Annonce de la version bêta de Validating Lightning Signer (VLS) :**
   VLS permet de séparer un nœud Lightning des clés qui contrôlent ses
   fonds. Un nœud Lightning fonctionnant avec VLS routera les demandes de signature vers un
   dispositif de signature distant au lieu des clés locales. La [version bêta][VLS gitlab]
   prend en charge CLN et LDK, les règles de validation de la couche 1 et de la couche 2, les capacités de sauvegarde/récupération
-  et fournit une implémentation de référence. L'annonce du [blog][VLS blog] appelle également à des tests, des demandes de fonctionnalités et des commentaires de la communauté. {% assign timestamp="25:27" %}
+  et fournit une implémentation de référence. L'annonce du [blog][VLS blog] appelle également à des tests, des demandes de fonctionnalités et des commentaires de la communauté.
 
 - **BitGo ajoute la prise en charge de MuSig2 :**
   BitGo a [annoncé][bitgo blog] la prise en charge de [BIP327][] ([MuSig2][topic musig])
   et a pointé les frais réduits et la confidentialité supplémentaire par rapport à leurs autres
-  types d'adresses pris en charge. {% assign timestamp="37:42" %}
+  types d'adresses pris en charge.
 
 - **Peach ajoute la prise en charge de RBF :**
   L'application mobile [Peach Bitcoin][peach website] pour l'échange pair à pair
-  a [annoncé][peach tweet] la prise en charge de l'augmentation des frais [Replace-By-Fee (RBF)][topic rbf]. {% assign timestamp="44:34" %}
+  a [annoncé][peach tweet] la prise en charge de l'augmentation des frais [Replace-By-Fee (RBF)][topic rbf].
 
 - **Le portefeuille Phoenix ajoute la prise en charge du splicing :**
   ACINQ a [annoncé][acinq blog] les tests bêta de la prochaine version de leur
   portefeuille mobile Lightning Phoenix. Le portefeuille prend en charge un seul canal dynamique
   qui est rééquilibré en utilisant le [splicing][topic splicing] et
   un mécanisme similaire à la technique [swap-in-potentiam][news233 sip] (voir
-  [Podcast #259][pod259 phoenix]). {% assign timestamp="46:34" %}
+  [Podcast #259][pod259 phoenix]).
 
 - **Appel à commentaires sur le Mining Development Kit (MDK) :**
   L'équipe travaillant sur le Mining Development Kit (MDK) a [publié une mise à jour][MDK blog] sur leurs
   progrès pour développer du matériel, des logiciels et des micrologiciels pour les systèmes de minage de Bitcoin. L'article
-  appelle à des commentaires de la communauté sur les cas d'utilisation, la portée et l'approche. {% assign timestamp="49:27" %}
+  appelle à des commentaires de la communauté sur les cas d'utilisation, la portée et l'approche.
 
 - **Binance ajoute la prise en charge de Lightning :**
   Binance a [annoncé][binance blog] la prise en charge de l'envoi (retraits) et
-  de la réception (dépôts) en utilisant le réseau Lightning. {% assign timestamp="51:33" %}
+  de la réception (dépôts) en utilisant le réseau Lightning.
 
 - **Nunchuk ajoute la prise en charge de CPFP :**
   Nunchuk a [annoncé][nunchuk blog] la prise en charge de l'augmentation des frais [Child-Pays-For-Parent
-  (CPFP)][topic cpfp] pour les expéditeurs et les destinataires d'une transaction. {% assign timestamp="53:35" %}
+  (CPFP)][topic cpfp] pour les expéditeurs et les destinataires d'une transaction.
 
 ## Changements notables dans le code et la documentation
 
@@ -94,14 +94,14 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   à des pairs sur Tor et I2P. Cela aide à empêcher
   quelqu'un d'associer l'adresse réseau régulière d'un nœud à l'une de ses
   adresses sur un réseau d'anonymat. CJDNS est traité différemment de
-  Tor et I2P pour le moment, bien que cela puisse changer à l'avenir. {% assign timestamp="54:57" %}
+  Tor et I2P pour le moment, bien que cela puisse changer à l'avenir.
 
 - [Core Lightning #6347][] ajoute la possibilité pour un plugin de s'abonner à
-  chaque notification d'événement en utilisant le caractère générique `*`. {% assign timestamp="58:07" %}
+  chaque notification d'événement en utilisant le caractère générique `*`.
 
 - [Core Lightning #6035][] ajoute la possibilité de demander une adresse [bech32m][topic bech32]
   pour recevoir des dépôts sur des scripts de sortie [P2TR][topic taproot]. Les modifications de transaction
-  seront également désormais envoyées à une sortie P2TR par défaut. {% assign timestamp="1:00:47" %}
+  seront également désormais envoyées à une sortie P2TR par défaut.
 
 - [LND #7768][] implémente les BOLT [#1032][bolts #1032] et [#1063][bolts #1063]
   (voir [Newsletter #225][news225 bolts1032]), permettant au
@@ -110,7 +110,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   demandé. Auparavant, les destinataires basés sur LND adhéraient à
   l'exigence de [BOLT4][] selon laquelle le montant et le delta d'expiration devaient être exactement égaux au montant
   demandé, mais cette exactitude permettait à un nœud de transfert de
-  sonder le prochain saut pour voir s'il était le destinataire final en modifiant légèrement l'une ou l'autre valeur. {% assign timestamp="1:02:28" %}
+  sonder le prochain saut pour voir s'il était le destinataire final en modifiant légèrement l'une ou l'autre valeur.
 
 - [Libsecp256k1 #1313][] commence les tests automatiques à l'aide de versions de développement
   des compilateurs GCC et Clang, ce qui peut permettre de détecter
@@ -120,7 +120,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   side channels]. Voir [Newsletter #246][news246 secp] pour une occasion
   où cela aurait pu se produire et [Newsletter #251][news251 secp] pour
   une autre occasion et une annonce selon laquelle ce type de test était
-  prévu. {% assign timestamp="1:05:33" %}
+  prévu.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27411,6347,6035,7768,1032,1063,1313" %}
