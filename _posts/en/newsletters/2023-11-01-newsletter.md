@@ -150,17 +150,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   attacks, such as the replacement cycling attack described in [last
   week's newsletter][news274 cycling]). {% assign timestamp="35:02" %}
 
-<div markdown="1" class="callout">
-## Want more?
-
-For more discussion about the topics mentioned in this newsletter, join
-us for the weekly Bitcoin Optech Recap on [Twitter
-Spaces][@bitcoinoptech] at 15:00 UTC on Thursday (the day after the
-newsletter is published).  The discussion is also recorded and will be
-available from our [podcasts][podcast] page.
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621

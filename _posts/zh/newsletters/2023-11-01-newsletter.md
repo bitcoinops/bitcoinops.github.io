@@ -55,13 +55,6 @@ _注意：_ 在我们上一期的周报中提到的 Bitcoin Core 26.0rc1 已经�
 
 - [BOLTs #1086][] 规定：如果创建一个转发 [HTLC][topic htlc] 请求的指令需要本地节点等待超过 2,016 个区块才能申请退款，应该拒绝（退款） HTLC 并返回一个 `expiry_too_far` 错误。降低此设置的数值可以减少节点在任何形式的[通道钉死攻击][topic channel jamming attacks]或长时间的[暂缓兑付发票][topic hold invoices]的最坏情况下而损失的资金。提高设置数值，可实现付款在相同的最大 HTLC 过期时间差设定（HTLC delta setting）下在更多通道上进行转发（或者在相同数量的跳数时允许更高的最大 HTLC 过期时间差设定），可以提高对一些特定攻击的抗性，例如[上周的周报][news274 cycling]中描述的替换循环攻击。 {% assign timestamp="35:02" %}
 
-<div markdown="1" class="callout">
-## 想了解更多？
-
-想了解更多本周报中提到的内容，请加入我们每周的比特币 Optech 回顾的 [Twitter Space][@bitcoinoptech]，时间为每周四 15:00 UTC（即周报发布后的一天）。讨论内容会被录制下来，也将在我们的[播客][podcast]页面上提供。
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621

@@ -135,16 +135,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
   což může zlepšit obranu proti určitým útokům, jako je replacement cycling
   popsaný v [minulém čísle][news274 cycling]).
 
-<div markdown="1" class="callout">
-## Chcete víc?
-
-Další diskuze o tématech zmíněných v tomto zpravodaji proběhnou v týdenním
-Bitcoin Optech Recap na [Twitter Spaces][@bitcoinoptech] ve čtvrtek (den po
-vydání zpravodaje) v 16:00 SEČ. Diskuze jsou nahrávány a zpřístupněny
-na stránce našeho [podcastu][podcast].
-
-</div>
-
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621
