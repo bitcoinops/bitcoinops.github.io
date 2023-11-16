@@ -109,4 +109,4 @@ challenging.
 [github minitapscript]: https://github.com/sipa/miniscript/pull/134
 [github bitbox v9.15.0]: https://github.com/digitalbitbox/bitbox02-firmware/releases/tag/firmware%2Fv9.15.0
 [github coldcard 227]: https://github.com/Coldcard/firmware/pull/227
-[github bdk]: https://github.com/bitcoindevkit/bdk
+[github bdk]: https://github.com/bitcoindevkit/
