@@ -89,6 +89,12 @@ optech_mentions:
   - title: "LDK #2371 adds support for managing payments using offers"
     url: /en/newsletters/2023/09/20/#ldk-2371
 
+  - title: "Ideas for creating a Lightning Address protocol compatible with offers"
+    url: /en/newsletters/2023/11/22/#offers-compatible-ln-addresses
+
+  - title: "Eclair #2752 allows an offer to reference a node using a short channel identifier (SCID)"
+    url: /en/newsletters/2023/11/22/#eclair-2752
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
