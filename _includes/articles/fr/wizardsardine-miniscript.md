@@ -15,11 +15,11 @@ Comment pouvons-nous appliquer des optimisations et nous assurer que le script r
 l'avance le budget à allouer pour l'augmentation des frais en fonction de la configuration du script ? Comment pouvons-nous nous assurer
 que _toute_ transaction dépensant ces scripts passera les vérifications de conformité les plus courantes ?
 - Enfin, même en supposant que nos scripts correspondent aux sémantiques prévues et qu'ils sont toujours dépensables, comment pouvons-nous
-les dépenser _concrètement_ ? Comment pouvons-nous produire un témoin satisfaisant ("signer pour") chaque configuration possible ?
+les dépenser _concrètement_ ? Comment pouvons-nous produire un témoin conforme ("signer pour") à chaque configuration possible ?
 Comment pouvons-nous rendre les dispositifs de signature matérielle compatibles avec nos scripts ?
 
-Ces questions auraient été un obstacle majeur si ce n'était pas pour miniscript. Deux personnes dans un garage ne vont pas écrire un
-logiciel qui [crée un script à la volée, et espère le meilleur][rekt lost funds] et en plus l'appeler un portefeuille Bitcoin améliorant
+Ces questions auraient constitué des obstacles majeurs si ce n'était pas pour miniscript. Deux personnes dans un garage ne vont pas écrire un
+logiciel qui [crée un script à la volée, et espère le meilleur][rekt lost funds] et se permettre d'appeler ça un portefeuille Bitcoin améliorant
 la sécurité. Nous voulions créer une entreprise autour du développement de Revault, mais nous n'obtiendrions pas de financement sans
 fournir une certaine assurance raisonnable à un investisseur que nous pourrions proposer un produit sûr sur le marché. Et nous ne
 pourrions pas résoudre tous ces problèmes d'ingénierie sans financement.
@@ -49,21 +49,21 @@ Il ne reste plus qu'un dernier développement pour conclure notre parcours minis
 axé sur les options de récupération. Il permet de spécifier certaines conditions de récupération avec verrouillage temporel (par exemple,
 une [clé de récupération tierce qui ne peut normalement pas dépenser les fonds][blog liana 0.2 recovery], ou un [multisig en déclin/
 expansion][blog liana 0.2 decaying]). Miniscript était initialement disponible uniquement pour les scripts P2WSH. Près de 2 ans après
-l'activation de [taproot][topic taproot], il est regrettable que vous deviez publier vos chemins de dépense de récupération sur la chaîne
-à chaque fois que vous dépensez. À cette fin, nous avons travaillé pour porter miniscript à tapscript (voir [ici][github minitapscript] et
+l'activation de [taproot][topic taproot], il est regrettable que vous deviez publier vos chemins de dépense de récupération on chain
+à chaque fois que vous faites une dépense. À cette fin, nous avons travaillé pour porter miniscript à tapscript (voir [ici][github minitapscript] et
 [ici][Bitcoin Core #27255]).
 
-L'avenir est prometteur. Avec la plupart des appareils de signature ayant déjà implémenté ou en cours d'implémentation de la prise en
-charge de miniscript (par exemple récemment [Bitbox][github bitbox v9.15.0] et [Coldcard][github coldcard 227]), ainsi que les frameworks
-natifs de [taproot et miniscript][github bdk] qui sont peaufinés, la contractualisation sur Bitcoin avec des primitives sécurisées est
+L'avenir est prometteur. La plupart des appareils de signature ayant déjà implémenté ou étant en cours d'implémentation 
+de miniscript (par exemple récemment [Bitbox][github bitbox v9.15.0] et [Coldcard][github coldcard 227]), les frameworks
+natifs de [taproot et miniscript][github bdk] ayant été peaufinés, la contractualisation sur Bitcoin avec des primitives sécurisées est
 plus accessible que jamais.
 
 Il est intéressant de noter comment le financement des outils et des frameworks Open Source réduit les barrières à l'entrée pour les
-entreprises innovantes afin de concurrencer et, plus généralement, de mettre en œuvre des projets. Cette tendance, qui s'est accélérée ces
-dernières années, nous permet d'être optimistes quant à l'avenir de cet espace.
+entreprises innovantes qui peuvent désormais affronter la concurrence et, plus généralement, mettre en œuvre des projets. Cette tendance, 
+qui s'est accélérée ces dernières années, nous permet d'être optimistes quant à l'avenir de cet espace.
 
-[0] Il y avait toujours un risque, bien sûr. Mais au moins, nous étions confiants de pouvoir passer à l'étape hors chaîne. Celle-ci s'est
-avérée être (comme prévu) plus difficile.
+[0] Il y avait toujours un risque, bien sûr. Mais au moins, nous étions confiants de pouvoir passer à l'étape off-chain. Celle-ci s'est
+avérée (comme prévu) plus difficile.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24147,24148,24149,27255" %}
