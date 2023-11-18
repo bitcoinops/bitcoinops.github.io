@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine décrit une mise à jour de la proposition concernant les points d'ancrage éphémères et fournit un rapport
+Le bulletin de cette semaine décrit une mise à jour de la proposition sur les points d'ancrage éphémères et fournit un rapport
 d'une contribution de terrain sur Miniscript par un développeur travaillant chez Wizardsardine. Sont également incluses nos sections
 régulières avec des annonces de mises à jour et versions candidates, ainsi que les changements apportés aux principaux logiciels
 d'infrastructure Bitcoin.
@@ -24,16 +24,16 @@ d'infrastructure Bitcoin.
   utilisateur pour une raison quelconque, souhaite ajouter des frais plus élevés, elle peut [remplacer][topic rbf] l'augmentation des
   frais CPFP par sa propre augmentation des frais CPFP à un taux plus élevé.
 
-    Le type de script pouvant être dépensé par n'importe qui proposé pour une utilisation est un script de sortie composé de l'équivalent
+    Le script anyone-can-spend proposé est un script de sortie composé de l'équivalent
     de `OP_TRUE`, qui peut être dépensé par une entrée avec un script d'entrée vide. Comme l'a publié Sanders cette semaine, l'utilisation
     d'un script de sortie hérité signifie que la transaction enfant qui le dépense a un txid malléable, c'est-à-dire que n'importe quel
-    mineur peut ajouter des données au script d'entrée pour modifier le txid de la transaction enfant. Cela peut rendre déconseillé
+    mineur peut ajouter des données au script d'entrée pour modifier le txid de la transaction enfant. Il est donc déconseillé
     d'utiliser la transaction enfant pour autre chose que l'augmentation des frais, car même si elle est confirmée, elle peut être
     confirmée avec un txid différent qui invalide toutes les transactions petites-filles.
 
     Sanders suggère plutôt d'utiliser l'un des scripts de sortie qui avaient été réservés pour les futures mises à niveau de SegWit.
-    Cela utilise légèrement plus d'espace dans le bloc---quatre octets pour SegWit contre un octet pour `OP_TRUE` nu---mais élimine toute
-    préoccupation concernant la malléabilité de la transaction. Après quelques discussions sur le fil, Sanders a proposé plus tard
+    Cela consomme légèrement plus d'espace dans le bloc---quatre octets pour SegWit contre un octet pour `OP_TRUE` nu---mais élimine tout
+    problème concernant la malléabilité de la transaction. Après quelques discussions sur le fil, Sanders a proposé plus tard
     d'offrir les deux options : une version `OP_TRUE` pour ceux qui ne se soucient pas de la malléabilité et qui veulent minimiser la
     taille de la transaction, ainsi qu'une version SegWit légèrement plus grande mais qui n'autorise pas la mutation de la transaction
     enfant. Les discussions supplémentaires sur le fil se sont concentrées sur le choix des octets supplémentaires pour l'approche SegWit
@@ -67,18 +67,18 @@ versions ou d'aider à tester les versions candidates.*
 - [Bitcoin Core #28207][] met à jour la façon dont le mempool est stocké sur le disque (ce qui se produit normalement lors de l'arrêt du
   nœud, mais peut également être déclenché par l'API `savemempool`). Auparavant, il était stocké dans une sérialisation simple des données
   sous-jacentes. Maintenant, cette structure sérialisée est XORée par une valeur aléatoire générée indépendamment par chaque nœud,
-  obfusquant les données. Elle est XORée par la même valeur lors du chargement pour supprimer l'obfuscation. L'obfuscation empêche
+  obfusquant les données. Elle est XORée par la même valeur lors du chargement pour supprimer l'obscurcissement. L'obscurcissement empêche
   quelqu'un de pouvoir mettre certaines données dans une transaction pour obtenir une séquence particulière d'octets dans les données
   du mempool enregistrées, ce qui pourrait amener des programmes tels que les scanners de virus à signaler les données du mempool
   enregistrées comme dangereuses. La même méthode était précédemment appliquée au stockage de l'ensemble UTXO dans
   [PR #6650][bitcoin core #6650]. Tout logiciel qui a besoin de lire les données du mempool à partir du disque devrait pouvoir appliquer
   facilement lui-même l'opération XOR, ou utiliser le paramètre de configuration `-persistmempoolv1` pour demander l'enregistrement dans
-  le format non obfusqué. Notez que le paramètre de configuration de compatibilité ascendante est prévu d'être supprimé dans une version
+  le format non obscurci. Notez qu'on prévoit de supprimer le paramètre de configuration de compatibilité ascendante dans une version
   future.
 
 - [LDK #2715][] permet à un nœud d'accepter facultativement une valeur [HTLC][topic htlc] plus petite que celle censée être livrée.
   Cela est utile lorsque le pair amont paie le nœud via un nouveau [canal JIT][topic jit channels], ce qui coûte au pair amont des
-  frais de transaction on-chain qu'il souhaite déduire du montant de l'HTLC payé au nœud. Voir [Newsletter #257][news257 jitfee] pour
+  frais de transaction on-chain qu'il déduira s'il le souhaite du montant de l'HTLC payé au nœud. Voir [Newsletter #257][news257 jitfee] pour
   l'implémentation précédente de la partie amont de cette fonctionnalité dans LDK.
 
 {% include snippets/recap-ad.md when="2023-11-16 15:00" %}
