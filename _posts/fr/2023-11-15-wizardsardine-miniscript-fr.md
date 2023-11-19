@@ -3,7 +3,7 @@ title: 'Rapport de terrain : Un voyage avec Miniscript'
 permalink: /fr/wizardsardine-miniscript/
 name: 2023-11-15-wizardsardine-miniscript-fr
 slug: 2023-11-15-wizardsardine-miniscript-fr
-type: articles
+type: posts
 layout: post
 lang: fr
 version: 1
