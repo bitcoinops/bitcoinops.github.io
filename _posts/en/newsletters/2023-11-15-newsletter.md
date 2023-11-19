@@ -50,11 +50,11 @@ notable changes to popular Bitcoin infrastructure projects.
     segwit version that is slightly larger but does not allow the child
     transaction to be mutated.  Additional discussion in the thread
     focused on choosing the extra bytes for the segwit approach to
-    create a memorable [bech32m address][topic bech32].
+    create a memorable [bech32m address][topic bech32]. {% assign timestamp="1:54" %}
 
 ## Field Report: A Miniscript Journey
 
-{% include articles/wizardsardine-miniscript.md extrah="#" %}
+{% include articles/wizardsardine-miniscript.md extrah="#" %} {% assign timestamp="20:17" %}
 
 ## Releases and release candidates
 
@@ -63,16 +63,16 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LND 0.17.1-beta][] is a maintenance release for this LN node
-  implementation that includes several bug fixes and minor improvements.
+  implementation that includes several bug fixes and minor improvements. {% assign timestamp="37:27" %}
 
 - [Bitcoin Core 26.0rc2][] is a release candidate for the next major
   version of the predominant full node implementation. There's a [testing
   guide][26.0 testing] and a scheduled
   meeting of the [Bitcoin Core PR Review Club][] dedicated to testing on
-  15 November 2023.
+  15 November 2023. {% assign timestamp="40:05" %}
 
 - [Core Lightning 23.11rc1][] is a release candidate for the next
-  major version of this LN node implementation.
+  major version of this LN node implementation. {% assign timestamp="53:24" %}
 
 ## Notable code and documentation changes
 
@@ -100,7 +100,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the XOR operation itself, or use the configuration setting
   `-persistmempoolv1` to request saving in the unobfuscated format.
   Note, the backward-compatibility configuration setting is planned to
-  be removed in a future release.
+  be removed in a future release. {% assign timestamp="55:33" %}
 
 - [LDK #2715][] allows a node to optionally accept a smaller value
   [HTLC][topic htlc] than is supposed to be delivered.  This is useful
@@ -108,7 +108,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   channel][topic jit channels], which costs the upstream peer an onchain
   transaction fee that they want to deduct from the amount of the HTLC
   being paid to the node.  See [Newsletter #257][news257 jitfee] for
-  LDK's previous implementation of the upstream portion of this feature.
+  LDK's previous implementation of the upstream portion of this feature. {% assign timestamp="1:02:34" %}
 
 {% include snippets/recap-ad.md when="2023-11-16 15:00" %}
 {% include references.md %}
