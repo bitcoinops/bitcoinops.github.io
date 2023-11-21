@@ -89,4 +89,4 @@ versions ou d'aider à tester les versions candidates.*
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta
 [sanders mal]: https://delvingbitcoin.org/t/segwit-ephemeral-anchors/160
-[news257 jitfee]: /en/newsletters/2023/06/28/#ldk-2319
+[news257 jitfee]: /fr/newsletters/2023/06/28/#ldk-2319
