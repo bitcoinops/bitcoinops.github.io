@@ -75,7 +75,45 @@ describing notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BitMask Wallet 0.6.3 released:**
+  [BitMask][bitmask website] is a web and browser extension-based wallet for Bitcoin,
+  Lightning, RGB, and [payjoin][topic payjoin].
+
+- **Opcode documentation website announced:**
+  The [https://opcodeexplained.com/] website was recently [announced][OE tweet]
+  and provides explanations of many of Bitcoin's opcodes. The effort is ongoing
+  and [contributions are welcome][OE github].
+
+- **Athena Bitcoin adds Lightning support:**
+  The Bitcoin ATM [operator][athena website] recently [announced][athena tweet]
+  support for receiving Lightning payments for cash withdrawals.
+
+- **Blixt v0.6.9 released:**
+  The [v0.6.9][blixt v0.6.9] release includes support for simple taproot
+  channels, defaults to [bech32m][topic bech32] receive addresses, and adds
+  additional [zero conf channel][topic zero-conf channels] support.
+
+- **Durabit whitepaper announced:**
+  The [Durabit whitepaper][] outlines a protocol using [timelocked][topic
+  timelocks] Bitcoin transactions in conjunction with a chaumian-style mint
+  to incentivize the seeding of large files.
+
+- **BitStream whitepaper announced:**
+  The [BitStream whitepaper][] and [early prototype][bitstream github] layout a
+  protocol for the hosting and atomic exchange of digital content for
+  coins using timelocks and merkle trees with verification and fraud
+  proofs.  For previous discussion of paid data transfer protocols, see
+  [Newsletter #53][news53 data].
+
+- **BitVM proof of concepts:**
+  Two proof of concepts building on [BitVM][news273 bitvm] were posted including
+  one [implementing][bitvm tweet blake3] the [BLAKE3][] hash function and
+  [another][bitvm techmix poc] that [implements][bitvm sha256] SHA256.
+
+- **Bitkit adds taproot send support:**
+  [Bitkit][bitkit website], a mobile Bitcoin and Lightning wallet, added
+  [taproot][topic taproot] sending support in the [v1.0.0-beta.86][bitkit
+  v1.0.0-beta.86] release.
 
 ## Releases and release candidates
 
@@ -127,3 +165,21 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
 [lightning address]: https://lightningaddress.com/
 [lnd v0.17.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.2-beta
+[bitmask website]: https://bitmask.app/
+[https://opcodeexplained.com/]: https://opcodeexplained.com/opcodes/
+[OE tweet]: https://twitter.com/thunderB__/status/1722301073585475712
+[OE github]: https://github.com/thunderbiscuit/opcode-explained
+[athena website]: https://athenabitcoin.com/
+[athena tweet]: https://twitter.com/btc_penguin/status/1722008223777964375
+[blixt v0.6.9]: https://github.com/hsjoberg/blixt-wallet/releases/tag/v0.6.9
+[Durabit whitepaper]: https://github.com/4de67a207019fd4d855ef0a188b4519c/Durabit/blob/main/Durabit%20-%20A%20Bitcoin-native%20Incentive%20Mechanism%20for%20Data%20Distribution.pdf
+[BitStream whitepaper]: https://robinlinus.com/bitstream.pdf
+[bitstream github]: https://github.com/robinlinus/bitstream
+[news273 bitvm]: /en/newsletters/2023/10/18/#payments-contingent-on-arbitrary-computation
+[bitvm tweet blake3]: https://twitter.com/robin_linus/status/1721969594686926935
+[BLAKE3]: https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3
+[bitvm techmix poc]: https://techmix.github.io/tapleaf-circuits/
+[bitvm sha256]: https://raw.githubusercontent.com/TechMiX/tapleaf-circuits/abc38e880872150ceec08a8b67ac2fddaddd06dc/scripts/circuits/bristol_sha256.js
+[bitkit website]: https://bitkit.to/
+[bitkit v1.0.0-beta.86]: https://github.com/synonymdev/bitkit/releases/tag/v1.0.0-beta.86
+[news53 data]: /en/newsletters/2019/07/03/#standardized-atomic-data-delivery-following-ln-payments
