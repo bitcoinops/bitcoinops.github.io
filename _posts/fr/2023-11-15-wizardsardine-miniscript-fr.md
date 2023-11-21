@@ -11,4 +11,4 @@ excerpt: >
    Ce rapport de terrain présente l'adoption de l'écosystème Miniscript du point de vue de Wizardsardine.
 
 ---
-{% include articles/wizardsardine-miniscript.md %}
+{% include articles/fr/wizardsardine-miniscript.md %}
