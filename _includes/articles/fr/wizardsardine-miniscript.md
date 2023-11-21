@@ -2,7 +2,7 @@
 *par [Antoine Poinsot][] de [Wizardsardine][]*
 
 Notre intérêt (pratique) pour miniscript a commencé au début de 2020 lorsque nous concevions [Revault][], une architecture de
-[coffre-fort][topic coffres-forts] multipartie utilisant uniquement les primitives de script disponibles à l'époque.
+[coffre-fort][topic vaults] multipartie utilisant uniquement les primitives de script disponibles à l'époque.
 
 Nous avons initialement présenté Revault en utilisant un ensemble fixe de participants. Nous avons rapidement rencontré des problèmes
 lorsque nous avons essayé de le généraliser à un plus grand nombre de participants dans un environnement de production.
@@ -79,7 +79,7 @@ avérée (comme prévu) plus difficile.
 [Salvatore Ingala]: https://github.com/bigspider
 [ledger miniscript blog]: https://www.ledger.com/blog/miniscript-is-coming
 [ledger bitcoin app]: https://github.com/LedgerHQ/app-bitcoin-new
-[Liana wallet]: https://wizardsardine.com/liana/
+[portefeuille Liana]: https://wizardsardine.com/liana/
 [github liana]: https://github.com/wizardsardine/liana
 [blog liana 0.2 recovery]: https://wizardsardine.com/blog/liana-0.2-release/#trust-distributed-safety-net
 [blog liana 0.2 decaying]: https://wizardsardine.com/blog/liana-0.2-release/#decaying-multisig
