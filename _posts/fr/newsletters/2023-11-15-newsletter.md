@@ -41,7 +41,7 @@ d'infrastructure Bitcoin.
 
 ## Rapport de terrain : Un voyage avec Miniscript
 
-{% include articles/wizardsardine-miniscript.md extrah="#" %}
+{% include articles/fr/wizardsardine-miniscript.md %}
 
 ## Mises à jour et versions candidates
 
