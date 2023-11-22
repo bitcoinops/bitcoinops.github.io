@@ -68,7 +68,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   The email spurred an active discussion.  One notable suggestion was
   possibly allowing both the first and third suggestions to be used (the
   suggestions for linking domains to nodes and storing offers directly
-  in DNS).
+  in DNS). {% assign timestamp="1:20" %}
 
 ## Changes to services and client software
 
@@ -77,43 +77,43 @@ wallets and services.*
 
 - **BitMask Wallet 0.6.3 released:**
   [BitMask][bitmask website] is a web and browser extension-based wallet for Bitcoin,
-  Lightning, RGB, and [payjoin][topic payjoin].
+  Lightning, RGB, and [payjoin][topic payjoin]. {% assign timestamp="17:42" %}
 
 - **Opcode documentation website announced:**
   The [https://opcodeexplained.com/] website was recently [announced][OE tweet]
   and provides explanations of many of Bitcoin's opcodes. The effort is ongoing
-  and [contributions are welcome][OE github].
+  and [contributions are welcome][OE github]. {% assign timestamp="20:08" %}
 
 - **Athena Bitcoin adds Lightning support:**
   The Bitcoin ATM [operator][athena website] recently [announced][athena tweet]
-  support for receiving Lightning payments for cash withdrawals.
+  support for receiving Lightning payments for cash withdrawals. {% assign timestamp="21:42" %}
 
 - **Blixt v0.6.9 released:**
   The [v0.6.9][blixt v0.6.9] release includes support for simple taproot
   channels, defaults to [bech32m][topic bech32] receive addresses, and adds
-  additional [zero conf channel][topic zero-conf channels] support.
+  additional [zero conf channel][topic zero-conf channels] support. {% assign timestamp="22:22" %}
 
 - **Durabit whitepaper announced:**
   The [Durabit whitepaper][] outlines a protocol using [timelocked][topic
   timelocks] Bitcoin transactions in conjunction with a chaumian-style mint
-  to incentivize the seeding of large files.
+  to incentivize the seeding of large files. {% assign timestamp="23:07" %}
 
 - **BitStream whitepaper announced:**
   The [BitStream whitepaper][] and [early prototype][bitstream github] layout a
   protocol for the hosting and atomic exchange of digital content for
   coins using timelocks and merkle trees with verification and fraud
   proofs.  For previous discussion of paid data transfer protocols, see
-  [Newsletter #53][news53 data].
+  [Newsletter #53][news53 data]. {% assign timestamp="25:01" %}
 
 - **BitVM proof of concepts:**
   Two proof of concepts building on [BitVM][news273 bitvm] were posted including
   one [implementing][bitvm tweet blake3] the [BLAKE3][] hash function and
-  [another][bitvm techmix poc] that [implements][bitvm sha256] SHA256.
+  [another][bitvm techmix poc] that [implements][bitvm sha256] SHA256. {% assign timestamp="42:33" %}
 
 - **Bitkit adds taproot send support:**
   [Bitkit][bitkit website], a mobile Bitcoin and Lightning wallet, added
   [taproot][topic taproot] sending support in the [v1.0.0-beta.86][bitkit
-  v1.0.0-beta.86] release.
+  v1.0.0-beta.86] release. {% assign timestamp="55:17" %}
 
 ## Releases and release candidates
 
@@ -122,14 +122,14 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LND v0.17.2-beta][] is a maintenance release that only includes one
-  small change to fix the bug reported in [LND #8186][].
+  small change to fix the bug reported in [LND #8186][]. {% assign timestamp="55:53" %}
 
 - [Bitcoin Core 26.0rc2][] is a release candidate for the next major
   version of the predominant full-node implementation. There's a [testing
-  guide][26.0 testing] available.
+  guide][26.0 testing] available. {% assign timestamp="56:34" %}
 
 - [Core Lightning 23.11rc3][] is a release candidate for the next
-  major version of this LN node implementation.
+  major version of this LN node implementation. {% assign timestamp="57:37" %}
 
 ## Notable code and documentation changes
 
@@ -143,7 +143,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Core Lightning #6857][] updates the names of several configuration
   options used for the REST interface to prevent them from conflicting
-  with the [c-lightning-rest][] plugin.
+  with the [c-lightning-rest][] plugin. {% assign timestamp="58:45" %}
 
 - [Eclair #2752][] allows data in an [offer][topic offers] to reference
   a node using either its public key or the identity of one of its
@@ -152,7 +152,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   channel identifier_ (SCID), which only uses 8 bytes. Because channels
   are shared by two nodes, an additional bit is prepended to the SCID to
   specifically identify one of the two nodes.  Because offers may often
-  be used in size-constrained media, the space savings are significant.
+  be used in size-constrained media, the space savings are significant. {% assign timestamp="59:42" %}
 
 {% include snippets/recap-ad.md when="2023-11-22 15:00" %}
 {% include references.md %}
