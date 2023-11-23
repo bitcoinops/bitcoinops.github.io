@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Question: Will liquidity ads allow for third-party purchased liquidity ('sidecar channels')?"
     url: /en/newsletters/2021/08/25/#will-ln-liquidity-advertisements-and-dual-funding-allow-for-third-party-purchased-liquidity-sidecar-channels
 
+  - title: "Discussion about proposed updates to the liquidity advertisements protocol"
+    url: /en/newsletters/2023/11/29/#update-to-the-liquidity-ads-specification
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dual funding
