@@ -65,9 +65,9 @@ intéressantes des portefeuilles et services Bitcoin.*
   Lightning, RGB et [payjoin][topic payjoin].
 
 - **Annonce du site de documentation des opcodes :**
-  Le site [https://opcodeexplained.com/] a récemment été [annoncé][tweet OE]
+  Le site [https://opcodeexplained.com/] a récemment été [annoncé][OE tweet]
   et fournit des explications sur de nombreux opcodes de Bitcoin. L'effort est en cours
-  et [les contributions sont les bienvenues][github OE].
+  et [les contributions sont les bienvenues][OE github].
 
 - **Athena Bitcoin ajoute la prise en charge de Lightning :**
   L'opérateur de distributeur automatique de Bitcoin [a récemment annoncé][tweet athena]
@@ -155,7 +155,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
 [athena website]: https://athenabitcoin.com/
 [athena tweet]: https://twitter.com/btc_penguin/status/1722008223777964375
 [blixt v0.6.9]: https://github.com/hsjoberg/blixt-wallet/releases/tag/v0.6.9
-[Durabit whitepaper]: https://github.com/4de67a207019fd4d855ef0a188b4519c/Durabit/blob/main/Durabit%20-%20A%20Bitcoin-native%20Incentive%20Mechanism%20for%20Data%20Distribution.pdf
+[livre blanc Durabit]: https://github.com/4de67a207019fd4d855ef0a188b4519c/Durabit/blob/main/Durabit%20-%20A%20Bitcoin-native%20Incentive%20Mechanism%20for%20Data%20Distribution.pdf
 [livre blanc BitStream]: https://robinlinus.com/bitstream.pdf
 [bitstream github]: https://github.com/robinlinus/bitstream
 [news273 bitvm]: /fr/newsletters/2023/10/18/#paiements-conditionnels-a-une-computation-arbitraire
