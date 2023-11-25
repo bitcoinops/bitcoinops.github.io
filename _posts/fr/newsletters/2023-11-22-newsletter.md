@@ -70,7 +70,7 @@ intéressantes des portefeuilles et services Bitcoin.*
   et [les contributions sont les bienvenues][OE github].
 
 - **Athena Bitcoin ajoute la prise en charge de Lightning :**
-  L'opérateur de distributeur automatique de Bitcoin [a récemment annoncé][tweet athena]
+  L'opérateur de distributeur automatique de Bitcoin [a récemment annoncé][athena tweet]
   la prise en charge des paiements Lightning pour les retraits en espèces.
 
 - **Sortie de Blixt v0.6.9 :**
