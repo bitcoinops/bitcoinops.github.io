@@ -86,7 +86,7 @@ intéressantes des portefeuilles et services Bitcoin.*
 - **Annonce du livre blanc BitStream :**
   Le [livre blanc BitStream][] présente un [prototype préliminaire][bitstream github]
   de protocole pour l'hébergement et l'échange atomique de contenu numérique contre
-  des pièces en utilisant des verrous temporels et des arbres de Merkle avec vérification et preuves
+  des satoshis en utilisant des verrous temporels et des arbres de Merkle avec vérification et preuves
   de fraude. Pour une discussion antérieure sur les protocoles de transfert de données payantes, voir
   [Newsletter #53][news53 data].
 
@@ -134,8 +134,8 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay
   utilise 33 octets. Un canal peut être identifié à l'aide d'un [BOLT7][] _short
   channel identifier_ (SCID), qui n'utilise que 8 octets. Étant donné que les canaux
   sont partagés par deux nœuds, un bit supplémentaire est ajouté au SCID pour
-  identifier spécifiquement l'un des deux nœuds. Étant donné que les offres sont souvent
-  utilisées dans des médias à contraintes de taille, les économies d'espace sont significatives.
+  identifier spécifiquement l'un des deux nœuds. Comme les offres sont souvent
+  utilisées dans des médias à contraintes de taille, les économies d'espace sont toujours intéressantes.
 
 {% include snippets/recap-ad.md when="2023-11-22 15:00" %}
 {% include references.md %}
