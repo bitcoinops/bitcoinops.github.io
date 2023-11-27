@@ -113,7 +113,12 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Rust Bitcoin #2213][] Fix InputWeightPrediction::P2WPKH_MAX constant DER sig length FIXME:Murchandamus
+- [Rust Bitcoin #2213][] amends the weight prediction for P2WPKH inputs
+  processes during fee estimation. Since transactions with high-s signatures
+  are considered non-standard since Bitcoin Core versions [0.10.3][bcc
+  0.10.3] and [0.11.1][bcc 0.11.1], transaction building processes
+  can safely assume that any serialized ECDSA signatures will at most take
+  72 bytes instead of the previously used upper bound of 73 bytes.
 
 - [BDK #1190][] adds a new `Wallet::list_output` method that retrieves
   all outputs in the wallet, both spent outputs and unspent outputs.
@@ -130,3 +135,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [neigut liqad]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-November/004217.html
 [policy series]: /en/blog/waiting-for-confirmation/
 [p2c paper]: https://arxiv.org/abs/1212.3257
+[bcc 0.11.1]: https://bitcoin.org/en/release/v0.11.1#test-for-lows-signatures-before-relaying
+[bcc 0.10.3]: https://bitcoin.org/en/release/v0.10.3#test-for-lows-signatures-before-relaying
