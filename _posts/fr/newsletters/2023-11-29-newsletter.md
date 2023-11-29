@@ -39,7 +39,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [Le schéma de signature numérique Schnorr est-il un schéma interactif de multisignature, et également pas un schéma non interactif
-  agrégé ?]({{bse}}120402)
+agrégé ?]({{bse}}120402)
   Pieter Wuille décrit les différences entre les multisignatures, l'agrégation de signatures, l'agrégation de clés et le multisig
   Bitcoin, et mentionne plusieurs schémas connexes, notamment [BIP340][], [les signqtures de Schnorr][topic schnorr signatures],
   [MuSig2][topic musig], FROST et Bellare-Neven 2006.
