@@ -21,11 +21,11 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   de liquidité entrante (par exemple, un commerçant) de trouver des pairs bien connectés pouvant fournir cette liquidité à un taux du
   marché, en utilisant uniquement des logiciels open source et le protocole de diffusion décentralisé LN.
 
-    Les mises à jour comprennent quelques changements structurels ainsi qu'une plus grande flexibilité quant à la durée du contrat et
-    au plafond des frais de transfert. Le message a reçu plusieurs réponses sur la liste de diffusion et d'autres modifications de la
+    Les mises à jour comprennent quelques changements structurels ainsi qu'une plus grande flexibilité de la durée du contrat et
+    du plafond des frais de transfert. Le message a reçu plusieurs réponses sur la liste de diffusion et d'autres modifications de la
     [spécification][bolts #878] sont attendues. Le message de Neigut note également que la construction actuelle des annonces de liquidité
-    et des annonces de canal rend théoriquement possible de prouver cryptographiquement un cas où une partie viole son contrat. Il reste
-    à résoudre le problème de concevoir une preuve de fraude compacte pouvant être utilisée dans un contrat de caution pour inciter
+    et des annonces de canal rend théoriquement possible de prouver cryptographiquement, le cas échéant, une violation du contrat par une des deux parties.
+    Il reste à résoudre le problème de la conception d'une preuve de fraude compacte pouvant être utilisée dans un contrat de caution pour inciter
     au respect du contrat.
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
@@ -38,12 +38,12 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Le schéma de signature numérique Schnorr est-il un schéma interactif de multisignature, et également pas un schéma non interactif agrégé ?]({{bse}}120402)
+- [Le schéma de signature numérique Schnorr est-il un schéma interactif de multisignature sans être un schéma non interactif agrégé ?]({{bse}}120402)
   Pieter Wuille décrit les différences entre les multisignatures, l'agrégation de signatures, l'agrégation de clés et le multisig
   Bitcoin, et mentionne plusieurs schémas connexes, notamment [BIP340][], [les signqtures de Schnorr][topic schnorr signatures],
   [MuSig2][topic musig], FROST et Bellare-Neven 2006.
 
-- [Est-il conseillé d'utiliser un nœud complet de version candidate sur le réseau principal ?]({{bse}}120375)
+- [Est-il conseillé d'utiliser un nœud complet tourant sur une version candidate sur le réseau principal ?]({{bse}}120375)
   Vojtěch Strnad et Murch soulignent que l'exécution de versions candidates de Bitcoin Core sur le réseau principal ne pose que peu
   de risques pour le _réseau_ Bitcoin, mais les utilisateurs des API, du portefeuille ou d'autres fonctionnalités de Bitcoin Core
   doivent faire preuve de prudence et effectuer des tests appropriés pour leur configuration.
@@ -54,7 +54,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   et [`OP_CHECKLOCKTIMEVERIFY`]({{bse}}120259).
 
 - [Que se passerait-il si nous fournissons à OP_CHECKMULTISIG plus de signatures que le nombre seuil (m) ?]({{bse}}120604)
-  Pieter Wuille explique que bien que cela était possible auparavant, le [BIP147][] soft fork de malleabilité des éléments de pile
+  Pieter Wuille explique que bien que cela était possible auparavant, le [BIP147][] soft fork de malléabilité des éléments de pile
   factices n'autorise plus la présence d'un élément de pile supplémentaire dans OP_CHECKMULTISIG et OP_CHECKMULTISIGVERIFY avec une
   valeur arbitraire.
 
@@ -93,7 +93,7 @@ matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
 - [Rust Bitcoin #2213][] modifie la prédiction du poids pour les entrées P2WPKH lors du processus de l'estimation des frais. Depuis
-  les versions [0.10.3][bcc 0.10.3] et [0.11.1][bcc 0.11.1] de Bitcoin Core, les transactions avec des signatures de haute taille
+  les versions [0.10.3][bcc 0.10.3] et [0.11.1][bcc 0.11.1] de Bitcoin Core, les transactions avec des signatures de grande taille
   sont considérées comme non standard. Par conséquent, les processus de construction de transactions peuvent supposer en toute
   sécurité que les signatures ECDSA sérialisées prendront au maximum 72 octets au lieu de la limite supérieure précédemment utilisée
   de 73 octets.
