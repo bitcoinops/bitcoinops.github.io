@@ -34,6 +34,9 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including cluster mempool"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Multiple discussions about cluster mempool"
+    url: /en/newsletters/2023/12/06/#cluster-mempool-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

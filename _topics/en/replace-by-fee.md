@@ -162,6 +162,9 @@ optech_mentions:
   - title: "Summary of well-known behavior for wallets to avoid when creating multiple replacements"
     url: /en/newsletters/2023/10/25/#fn:rbf-warning
 
+  - title: "Discussion of cluster mempool for RBF"
+    url: /en/newsletters/2023/12/06/#post-cluster-package-rbf
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
