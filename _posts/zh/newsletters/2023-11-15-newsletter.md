@@ -19,7 +19,7 @@ lang: zh
 
 ## 田野调查：一段 Miniscript 旅程
 
-{% include articles/wizardsardine-miniscript.md extrah="#" %} {% assign timestamp="20:17" %}
+{% include articles/zh/wizardsardine-miniscript.md extrah="#" %}
 
 ## 版本和候选版本
 
