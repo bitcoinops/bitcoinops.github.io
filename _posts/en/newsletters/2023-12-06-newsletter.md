@@ -139,12 +139,78 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+The [Testing Bitcoin Core 26.0 Release Candidates][review club v26-rc-testing]
+review club meeting did not review a particular PR, but rather was
+a group testing effort.
+
+
+Before each [major Bitcoin Core release][], extensive testing by the
+community is considered essential.
+For this reason, a volunteer writes a testing guide for a [release candidate][]
+so that as many people as possible can productively test without having to
+independently ascertain what's new or changed in the release, and reinvent
+the various setup steps to test these features or changes.
+
+Testing can be difficult because when one encounters unexpected behavior,
+it's often unclear if it's due to an actual bug or if the tester is making a mistake.
+It wastes developers' time to report bugs to them that aren't real bugs.
+To mitigate these problems and promote testing efforts, a Review
+Club meeting is held for a particular release candidate, in this instance, 26.0rc2.
+
+The [26.0 release candidate testing guide][26.0 testing] was written by Max
+Edwards, who also hosted the review club meeting with help from
+Stéphan (stickies-v).
+
+Attendees were also encouraged to get testing ideas by reading the
+[26.0 release notes][].
+
+This review club session covered two RPCs,
+[`getprioritisedtransactions`][PR getprioritisedtransactions]
+(also covered in an [earlier review club meeting][news250 pr review],
+although the name of that RPC was changed after that review club meeting
+was held), and [`importmempool`][PR importmempool].
+The [New RPCs][] section of the release notes describes these and other
+added RPCs.
+The meeting also covered [V2 transport (BIP324)][topic v2 p2p transport],
+and intended to cover [TapMiniscript][PR TapMiniscript] but this topic
+wasn't discussed due to time limitations.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/28368#l-30FIXME"
+  q0="Which operating systems are people running?"
+  a0="Ubuntu 22.04 on WSL (Windows Subsystem for Linux); macOS 13.4 (M1 chip)."
+  a0link="https://bitcoincore.reviews/v26-rc-testing#l-18"
+
+  q1="What are your results testing `getprioritisedtransactions`?"
+  a1="Attendees reported that it worked as expected, but one noticed
+      that the effects of [`prioritisetransaction`][prioritisetransaction]
+      compounded; that is, running it twice on the same transaction doubled
+      its fee.
+      This is expected behavior, as the fee argument is _added_
+      to the transaction's existing priority."
+  a1link="https://bitcoincore.reviews/v26-rc-testing#l-32"
+
+  q2="What are your results testing `importmempool`?"
+  a2="One attendee received the error
+      \"Can only import the mempool after the block download and sync is done\"
+      but after waiting 2 minutes, the RPC was successful.
+      Another participant noted that it takes a long time to complete."
+  a2link="https://bitcoincore.reviews/v26-rc-testing#l-45"
+
+  q3="What happens if we interrupt the CLI process during the import,
+      then restart it (without stopping `bitcoind`)?"
+  a3="This did not seem to cause any problem; the second import request
+      completed as expected. It appears that the import process
+      continued even after the CLI command was interrupted and
+      that the second request didn't (for example) cause two import
+      threads to run simultaneously and conflict with each other."
+  a3link="https://bitcoincore.reviews/v26-rc-testing#l-91"
+
+  q4="What are your results running V2 transport?"
+  a4="The attendees weren't able to connect to a known mainnet
+      V2-enabled node; it didn't seem to accept the connection request.
+      It was suggested that all of its inbound slots may have been in use.
+      Therefore, no P2P testing could be done during the meeting."
+  a4link="https://bitcoincore.reviews/v26-rc-testing#l-115"
 %}
 
 ## Releases and release candidates
@@ -199,3 +265,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [wuille incomplete]: https://github.com/bitcoinops/bitcoinops.github.io/pull/1421#discussion_r1414487021
 [mempool replacements]: https://github.com/bitcoin/bitcoin/blob/fa9cba7afb73c01bd2c8fefd662dfc80dd98c5e8/doc/policy/mempool-replacements.md
 [LND 0.17.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.3-beta.rc1
+[review club v26-rc-testing]: https://bitcoincore.reviews/v26-rc-testing
+[major bitcoin core release]: https://bitcoincore.org/en/lifecycle/#major-releases
+[26.0 release notes]: https://github.com/bitcoin/bitcoin/blob/44d8b13c81e5276eb610c99f227a4d090cc532f6/doc/release-notes.md
+[new rpcs]: https://github.com/bitcoin/bitcoin/blob/44d8b13c81e5276eb610c99f227a4d090cc532f6/doc/release-notes.md#new-rpcs
+[news250 pr review]: /en/newsletters/2023/05/10/#bitcoin-core-pr-review-club
+[release candidate]: https://bitcoincore.org/en/lifecycle/#versioning
+[pr getprioritisedtransactions]: https://github.com/bitcoin/bitcoin/pull/27501
+[pr importmempool]: https://github.com/bitcoin/bitcoin/pull/27460
+[pr tapminiscript]: https://github.com/bitcoin/bitcoin/pull/27255
+[prioritisetransaction]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html
