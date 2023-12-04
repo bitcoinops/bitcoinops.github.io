@@ -175,7 +175,9 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #28848][] bugfix, Change up submitpackage results to return results for all transactions FIXME:glozow
+- [Bitcoin Core #28848][] updates the `submitpackage` RPC to be more helpful when
+  any transaction fails. Instead of throwing a `JSONRPCError` with the first
+  failure, it returns results for each transaction whenever possible.
 
 - [LDK #2540][] Route blinding FIXME:bitschmidty
 
