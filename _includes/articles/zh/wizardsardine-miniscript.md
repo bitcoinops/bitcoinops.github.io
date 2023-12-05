@@ -16,7 +16,7 @@
 
 当时，miniscript 距离成为任何比特币应用程序开发人员可以使用的成套解决方案还很遥远。(如果你是 2023 年之后阅读这篇文章的新比特币开发人员，是的，曾经我们手动编写比特币脚本)。我们不得不将 miniscript 集成到 Bitcoin Core 中(见 PRs [#24147][Bitcoin Core #24147]、[#24148][Bitcoin Core #24148]和[#24149][Bitcoin Core #24149])，并将其用作 Revault 钱包的后端，且说服签名设备制造商在他们的固件中实现它。后半部分将是最困难的。
 
-这是一个先有鸡还是先有蛋的问题：在没有用户需求的情况下，制造商实现 miniscript 的动机很低，并且我们无法在没有签名设备支持的情况下发布 Revault。幸运的是，这一循环最终在 2021 年 3 月被 [Stepan Snigirev][] 打破，他为 [Specter DIY][]带来[github embit descriptors]对 miniscript 描述符的[支持][github specter descriptors]。然而，Specter DIY 长时间被声明为仅仅是一个“功能原型”，是 [Salvatore Ingala][] 在 2022 年首次将 [miniscript 带到了生产就绪的签名设备上][ledger miniscript blog]，推出了适用于 Ledger Nano S（+）的[新比特币应用程序][ledger bitcoin app]。该应用程序于 2023 年 1 月发布，才使我们能够发布支持最流行签名设备的[Liana 钱包][]。
+这是一个先有鸡还是先有蛋的问题：在没有用户需求的情况下，制造商实现 miniscript 的动机很低，并且我们无法在没有签名设备支持的情况下发布 Revault。幸运的是，这一循环最终在 2021 年 3 月被 [Stepan Snigirev][] 打破，他为 [Specter DIY][]带来[github embit descriptors]对 miniscript 描述符的[支持][github specter descriptors]。然而，Specter DIY 长时间被声明为仅仅是一个“功能原型”，是 [Salvatore Ingala][] 在 2022 年首次将 [miniscript 带到了生产就绪的签名设备上][ledger miniscript blog]，推出了适用于 Ledger Nano S（+）的[新比特币应用程序][ledger bitcoin app]。该应用程序于 2023 年 1 月发布，才使我们能够发布支持最流行签名设备的[Liana 钱包][Liana wallet]。
 
 还剩下最后一个开发工作来结束我们的 Miniscript 旅程。[Liana][github liana] 是一个专注于钱包恢复选项的比特币钱包。它允许指定一些带时间锁的恢复条件 (例如第三方恢复密钥，它们[通常不能花费资金][blog liana 0.2 recovery]，或[衰减/扩张的多重签名][blog liana 0.2 decaying])。最初，Miniscript 仅适用于 P2WSH 脚本。但在 [taproot][topic taproot]激活两年后，每次花钱都必须在链上发布你的恢复花费路径是令人遗憾的。为此，我们一直在努力将 miniscript 移植到 tapscript 中(见[此处][github minitapscript]和[此处][Bitcoin Core #27255])。
 
