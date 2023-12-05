@@ -245,12 +245,15 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   any transaction fails. Instead of throwing a `JSONRPCError` with the first
   failure, it returns results for each transaction whenever possible.
 
-- [LDK #2540][] Route blinding FIXME:bitschmidty
+- [LDK #2540][] builds on LDK's recent [blinded path][topic rv routing]
+  work (see Newsletters [#257][news257 ldk2120] and [#266][news266 ldk2411])
+  by supporting forwarding as the intro node in a blinded path and is part of
+  LDK's BOLT12 [offers][topic offers] tracking [issue][LDK #1970].
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="28848,2540" %}
+{% include linkers/issues.md v=2 issues="28848,2540,1970" %}
 [bitcoin core 26.0]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [26.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/26.0-Release-Candidate-Testing-Guide
 [wg-cluster-mempool]:  https://delvingbitcoin.org/c/implementation/wg-cluster-mempool/9
@@ -275,3 +278,5 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [pr importmempool]: https://github.com/bitcoin/bitcoin/pull/27460
 [pr tapminiscript]: https://github.com/bitcoin/bitcoin/pull/27255
 [prioritisetransaction]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html
+[news257 ldk2120]: /en/newsletters/2023/06/28/#ldk-2120
+[news266 ldk2411]: /en/newsletters/2023/08/30/#ldk-2411
