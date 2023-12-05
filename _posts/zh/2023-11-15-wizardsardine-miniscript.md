@@ -1,8 +1,8 @@
 ---
 title: 'Field Report: A Miniscript Journey'
 permalink: /zh/wizardsardine-miniscript/
-name: 2023-11-15-wizardsardine-miniscript
-slug: 2023-11-15-wizardsardine-miniscript
+name: 2023-11-15-wizardsardine-miniscript-zh
+slug: 2023-11-15-wizardsardine-miniscript-zh
 type: posts
 layout: post
 lang: zh
