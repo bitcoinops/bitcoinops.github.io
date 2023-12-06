@@ -217,7 +217,8 @@ Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][
 [news250 pr review]: /fr/newsletters/2023/05/10/#bitcoin-core-pr-review-club
 [release candidate]: https://bitcoincore.org/en/lifecycle/#versioning
 [pr getprioritisedtransactions]: https://github.com/bitcoin/bitcoin/pull/27501
-[pr importmempool]: https://github.com/bitcoin/bitcoin/pull/27460[pr tapminiscript]: https://github.com/bitcoin/bitcoin/pull/27255
+[pr importmempool]: https://github.com/bitcoin/bitcoin/pull/27460
+[pr tapminiscript]: https://github.com/bitcoin/bitcoin/pull/27255
 [prioritisetransaction]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html
 [news257 ldk2120]: /fr/newsletters/2023/06/28/#ldk-2120
 [news266 ldk2411]: /fr/newsletters/2023/08/30/#ldk-2411
