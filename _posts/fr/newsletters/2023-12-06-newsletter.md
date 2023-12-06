@@ -10,8 +10,8 @@ lang: fr
 
 Le bulletin de cette semaine décrit plusieurs discussions sur le cluster mempool proposé et résume les résultats d'un test effectué à
 l'aide de warnet. Nous incluons également nos sections habituelles qui résument une réunion du Bitcoin Core PR Review Club, annoncent
-de nouvelles versions et des versions candidates, et décrivent les changements notables apportés aux logiciels d'infrastructure
-Bitcoin populaires.
+de nouvelles versions et des versions candidates, et décrivent les changements notables apportés aux principaux logiciels d'infrastructure
+Bitcoin.
 
 ## Nouvelles
 
@@ -39,43 +39,43 @@ Bitcoin populaires.
       décrit également un petit nombre de théorèmes qui mettent en évidence certaines des propriétés utiles de cette conception. Le seul message dans ce fil de discussion (au moment de la rédaction de cet article) est très utile pour comprendre les autres discussions du WG, bien que son auteur (Pieter Wuille) [avertisse][wuille incomplete] qu'il est encore "très incomplet".
 
     - [Fusion de linéarisations incomparables][cluster merge] examine comment fusionner deux ensembles différents de morceaux
-      ("morcelage") pour le même ensemble de transactions, spécifiquement des morcelages incomparables. En comparant différentes listes
-      de morceaux ("morcelage"), nous pouvons déterminer laquelle serait meilleure pour les mineurs. Les morcelages peuvent être comparés
+      pour le même ensemble de transactions, spécifiquement des morcelages incomparables. En comparant différentes listes
+      de morceaux, nous pouvons déterminer laquelle serait meilleure pour les mineurs. Les fragments peuvent être comparés
       si l'un d'entre eux accumule toujours la même quantité de frais ou plus dans n'importe quel nombre de vbytes (discret par rapport
       à la taille des morceaux). Par exemple :
 
-      ![morcelages comparables](/img/posts/2023-12-comparable-chunkings.png)
+      ![fragments comparables](/img/posts/2023-12-comparable-chunkings.png)
 
-      Les morcelages sont incomparables si l'un d'entre eux accumule un montant plus élevé de frais dans un certain nombre de vbytes,
-      mais que l'autre morcelage accumule un montant plus élevé de frais dans un plus grand nombre de vbytes. Par exemple :
+      Les fragments ne sont pas comparables si l'un d'entre eux accumule un montant plus élevé de frais dans un certain nombre de vbytes,
+      mais que l'autre accumule un montant plus élevé de frais dans un plus grand nombre de vbytes. Par exemple :
 
-      ![morcelages incomparables](/img/posts/2023-12-incomparable-chunkings.png)
+      ![fragments incomparables](/img/posts/2023-12-incomparable-chunkings.png)
 
-      Comme l'un des théorèmes dans le fil précédemment lié le note, "si on a deux morcelages incomparables pour un graphe, alors un
-      autre morcelage doit exister qui est strictement meilleur que les deux". Cela signifie qu'une méthode efficace pour fusionner
-      deux morcelages incomparables différents peut être un outil puissant pour améliorer la rentabilité des mineurs. Par exemple, une
+      Comme l'un des théorèmes dans le fil précédemment lié le note, "si on a deux fragments incomparables pour un graphe, alors un
+      autre fragment doit exister qui est strictement meilleur que les deux". Cela signifie qu'une méthode efficace pour fusionner
+      deux fragments incomparables différents serait un outil puissant pour améliorer la rentabilité des mineurs. Par exemple, une
       nouvelle transaction a été reçue qui est liée à d'autres transactions déjà dans le mempool, donc son cluster doit être mis à jour,
-      ce qui implique également la mise à jour de son morcelage. Deux méthodes différentes pour effectuer cette mise à jour peuvent être
+      ce qui implique également la mise à jour de son fragment. Deux méthodes différentes pour effectuer cette mise à jour peuvent être
       utilisées :
 
-      1. Un nouveau morcelage pour le cluster mis à jour est calculé à partir de zéro. Pour les grands clusters, il peut être
-      computationnellement impraticable de trouver un morcelage optimal, donc le nouveau morcelage pourrait être moins optimal que
-      l'ancien morcelage.
+      1. Un nouveau fragment pour le cluster mis à jour est calculé à partir de zéro. Pour les grands clusters, il peut être
+      computationnellement impraticable de trouver un fragment optimal, donc le nouveau fragment pourrait être moins optimal que
+      l'ancien.
 
-      2. Le morcelage précédent pour le cluster précédent est mis à jour en insérant la nouvelle transaction dans un emplacement valide
+      2. Le fragment précédent pour le cluster précédent est mis à jour en insérant la nouvelle transaction dans un emplacement valide
       (parents avant enfants). Cela a l'avantage de préserver toutes les optimisations existantes dans les morceaux non modifiés,
       mais l'inconvénient est que cela pourrait placer la transaction dans un emplacement sous-optimal.
 
       Après que les deux types de mises à jour différentes ont été effectuées, une comparaison peut révéler que l'une d'entre elles
       est strictement meilleure, auquel cas elle peut être utilisée. Mais si les mises à jour sont incomparables, une méthode de fusion
-      garantie pour produire un résultat équivalent ou meilleur peut être utilisée à la place pour produire un troisième morcelage qui
-      capturera les meilleurs aspects des deux approches---en utilisant de nouveaux morcelages lorsqu'ils sont meilleurs mais en
-      conservant les anciens morcelages lorsqu'ils étaient plus proches de l'optimal.
+      garantie pour produire un résultat équivalent ou meilleur peut être utilisée à la place pour produire un troisième fragment qui
+      capturera les meilleurs aspects des deux approches---en utilisant de nouveaux fragments lorsqu'ils sont meilleurs mais en
+      conservant les anciens quand ils sont plus proches de l'optimal.
 
     - [Paquet post-cluster RBF][cluster rbf] discute d'une alternative aux règles actuellement utilisées pour [replace by fee][topic rbf].
       Lorsqu'un remplacement valide d'une ou plusieurs transactions est reçu, une version temporaire de tous les clusters qu'il affecte
-      peut être créée et leur morcelage mis à jour dérivé. Cela peut être comparé au morcelage des clusters d'origine qui sont
-      actuellement dans le mempool (qui n'incluent pas le remplacement). Si le morcelage avec le remplacement gagne toujours des frais
+      peut être créée et leur fragment mis à jour peut être dérivé. Cela peut être comparé aux fragments des clusters d'origine qui sont
+      actuellement dans le mempool (qui n'incluent pas le remplacement). Si le fragment avec le remplacement gagne toujours des frais
       égaux ou supérieurs à l'original pour n'importe quel nombre de vbytes, et s'il augmente le montant total des frais dans le mempool
       suffisamment pour payer ses frais de relais, alors il devrait être inclus dans le mempool.
 
@@ -101,11 +101,11 @@ La réunion du [Test de Bitcoin Core 26.0 Version Candidate][review club v26-rc-
 particulier, mais a plutôt été un effort de test de groupe.
 
 Avant chaque [version majeure de Bitcoin Core][], des tests approfondis par la communauté sont considérés comme essentiels. Pour cette
-raison, un volontaire rédige un guide de test pour un [candidat à la version][release candidate] afin que le plus grand nombre de
-personnes possible puissent tester de manière productive sans avoir à déterminer indépendamment ce qui est nouveau ou modifié dans la
+raison, un volontaire rédige un guide de test pour une [version candidate][release candidate] afin que le plus grand nombre de
+personnes possible puisse tester de manière productive sans avoir à déterminer indépendamment ce qui est nouveau ou modifié dans la
 version, et réinventer les différentes étapes de configuration pour tester ces fonctionnalités ou modifications.
 
-Le test peut être difficile car lorsqu'on rencontre un comportement inattendu, il n'est souvent pas clair s'il s'agit d'un bogue réel
+Le test peut être difficile car lorsqu'on rencontre un comportement inattendu, on ne sait pas toujours s'il s'agit d'un bogue réel
 ou si le testeur commet une erreur. Il est inutile de signaler des bogues aux développeurs qui ne sont pas de vrais bogues. Pour
 atténuer ces problèmes et promouvoir les efforts de test, une réunion du Review Club est organisée pour un candidat à la version
 particulier, en l'occurrence 26.0rc2.
@@ -135,7 +135,7 @@ RPC ajoutés. La réunion a également abordé [V2 transport (BIP324)][topic v2 
   q2="Quels sont vos résultats concernant le test de `importmempool`?"
   a2="Un participant a reçu l'erreur
       \"Can only import the mempool after the block download and sync is done\"
-      mais après avoir attendu 2 minutes, la RPC a réussi.
+      mais après avoir attendu deux minutes, la RPC a réussi.
       Un autre participant a noté que cela prend beaucoup de temps pour se terminer."
   a2link="https://bitcoincore.reviews/v26-rc-testing#l-45"
 
