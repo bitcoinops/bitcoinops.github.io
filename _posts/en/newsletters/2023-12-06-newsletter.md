@@ -44,6 +44,8 @@ infrastructure software.
     The WG archives can now be read by anyone, but only invited members
     can post.  Some noteworthy topics they've discussed include:
 
+  {% assign timestamp="0:57" %}
+
     - [Cluster mempool definitions and theory][clusterdef] defines the terms being
       used in the design of cluster mempool.  It also describes a small
       number of theorems that showcase some of the useful properties of
@@ -130,7 +132,7 @@ infrastructure software.
   several proposed changes to peer management code are merged (either
   independently or together).  He also notes that he's excited to use
   simulations for testing other proposed changes and to quantify the
-  effect of proposed attacks.
+  effect of proposed attacks. {% assign timestamp="32:42" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -139,10 +141,9 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-The [Testing Bitcoin Core 26.0 Release Candidates][review club v26-rc-testing]
-review club meeting did not review a particular PR, but rather was
+[Testing Bitcoin Core 26.0 Release Candidates][review club v26-rc-testing]
+was a review club meeting that did not review a particular PR, but rather was
 a group testing effort.
-
 
 Before each [major Bitcoin Core release][], extensive testing by the
 community is considered essential.
@@ -161,11 +162,9 @@ The [26.0 release candidate testing guide][26.0 testing] was written by Max
 Edwards, who also hosted the review club meeting with help from
 Stéphan (stickies-v).
 
-Attendees were also encouraged to get testing ideas by reading the
-[26.0 release notes][].
+Attendees were also encouraged to get testing ideas by reading the [26.0 release notes][].
 
-This review club session covered two RPCs,
-[`getprioritisedtransactions`][PR getprioritisedtransactions]
+This review club session covered two RPCs, [`getprioritisedtransactions`][PR getprioritisedtransactions]
 (also covered in an [earlier review club meeting][news250 pr review],
 although the name of that RPC was changed after that review club meeting
 was held), and [`importmempool`][PR importmempool].
@@ -174,6 +173,8 @@ added RPCs.
 The meeting also covered [V2 transport (BIP324)][topic v2 p2p transport],
 and intended to cover [TapMiniscript][PR TapMiniscript] but this topic
 wasn't discussed due to time limitations.
+
+{% assign timestamp="43:18" %}
 
 {% include functions/details-list.md
   q0="Which operating systems are people running?"
@@ -226,10 +227,10 @@ release candidates.*
   miniscript], new RPCs for working with states for [assumeUTXO][topic
   assumeutxo], and an experimental RPC for processing [packages][topic
   package relay] of transactions (which is not yet supported for relay),
-  among numerous other improvements and bug fixes.
+  among numerous other improvements and bug fixes. {% assign timestamp="45:30" %}
 
 - [LND 0.17.3-beta.rc1][] is a release candidate that contains several
-  bug fixes.
+  bug fixes. {% assign timestamp="57:41" %}
 
 ## Notable code and documentation changes
 
@@ -243,12 +244,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #28848][] updates the `submitpackage` RPC to be more helpful when
   any transaction fails. Instead of throwing a `JSONRPCError` with the first
-  failure, it returns results for each transaction whenever possible.
+  failure, it returns results for each transaction whenever possible. {% assign timestamp="58:49" %}
 
 - [LDK #2540][] builds on LDK's recent [blinded path][topic rv routing]
   work (see Newsletters [#257][news257 ldk2120] and [#266][news266 ldk2411])
   by supporting forwarding as the intro node in a blinded path and is part of
-  LDK's BOLT12 [offers][topic offers] tracking [issue][LDK #1970].
+  LDK's BOLT12 [offers][topic offers] tracking [issue][LDK #1970]. {% assign timestamp="59:49" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
