@@ -11,4 +11,4 @@ excerpt: >
    这份田野调查报告从 Wizardsardine 的角度概述了 miniscript 生态的采用情况。
 
 ---
-{% include articles/wizardsardine-miniscript.md %}
+{% include articles/zh/wizardsardine-miniscript.md %}
