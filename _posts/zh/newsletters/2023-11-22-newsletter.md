@@ -27,53 +27,53 @@ lang: zh
 
     * _直接在 DNS 中存储要约：_ 一个域名可能有多个 DNS 记录，直接存储特定地址的要约。例如，一条名为 `alice._lnaddress.domain.com` 的 DNS `TXT` 记录包含了 Alice 的要约。另一条 `bob._lnaddress.domain.com` 的记录包含了 Bob 的要约。Teinturier 指出，这就要求域名所有者为每个用户创建一个 DNS 记录（如果用户需要更改默认要约，还需要更新该记录）。
 
-  这封邮件引发了热烈的讨论。其中一个值得注意的建议是可能可以同时使用第一和第三个建议（将域名链接到节点和直接在 DNS 中存储要约）。{% assign timestamp="1:20" %}
+  这封邮件引发了热烈的讨论。其中一个值得注意的建议是可能可以同时使用第一和第三个建议（将域名链接到节点和直接在 DNS 中存储要约）。
 
 ## 服务和客户端软件的改变
 
 *在这个月度栏目中，我们将列举比特币钱包和服务的有趣升级*。
 
 - **BitMask 钱包 0.6.3 发布：**
-  [BitMask][bitmask website] 是一款基于网页和浏览器扩展的钱包，适用于比特币、闪电币、RGB 和 [payjoin][topic payjoin]。{% assign timestamp="17:42" %}
+  [BitMask][bitmask website] 是一款基于网页和浏览器扩展的钱包，适用于比特币、闪电币、RGB 和 [payjoin][topic payjoin]。
 
 - **Opcode 文档网站发布：**
-  [https://opcodeexplained.com/] 网站近日[公布][OE tweet]，提供了许多比特币操作码的解释。这项工作正在进行中，[欢迎贡献][OE github]。{% assign timestamp="20:08" %}
+  [https://opcodeexplained.com/] 网站近日[公布][OE tweet]，提供了许多比特币操作码的解释。这项工作正在进行中，[欢迎贡献][OE github]。
 
 - **Athena Bitcoin 增加闪电支持：**
-  这个比特币 ATM [运营商][athena website]最近[宣布][athena tweet]支持通过闪电支付来取现。{% assign timestamp="21:42" %}
+  这个比特币 ATM [运营商][athena website]最近[宣布][athena tweet]支持通过闪电支付来取现。
 
 - **Blixt v0.6.9 发布：**
-  [v0.6.9][blixt v0.6.9] 版本包括对简单 taproot 通道的支持，默认为 [bech32m][topic bech32] 接收地址，并增加了额外的[零确认通道][topic zero-conf channels]的支持。 {% assign timestamp="22:22" %}
+  [v0.6.9][blixt v0.6.9] 版本包括对简单 taproot 通道的支持，默认为 [bech32m][topic bech32] 接收地址，并增加了额外的[零确认通道][topic zero-conf channels]的支持。
 
 - **Durabit 白皮书公布：**
-  [Durabit 白皮书][Durabit whitepaper]概述了一种综合使用[时间锁][topic timelocks]的比特币交易和 Chaumian 式铸币厂来激励大文件做种的协议。 {% assign timestamp="23:07" %}
+  [Durabit 白皮书][Durabit whitepaper]概述了一种综合使用[时间锁][topic timelocks]的比特币交易和 Chaumian 式铸币厂来激励大文件做种的协议。
 
 - **BitStream 白皮书发布：**
-  [BitStream 白皮书][BitStream whitepaper]和[早期原型][bitstream github]设计了一个使用时间锁和梅克尔树以及验证和欺诈证明的数字内容托管和原子交换协议。有关付费数据传输协议的先前讨论，请参阅[周报 #53][news53 data]。 {% assign timestamp="25:01" %}
+  [BitStream 白皮书][BitStream whitepaper]和[早期原型][bitstream github]设计了一个使用时间锁和梅克尔树以及验证和欺诈证明的数字内容托管和原子交换协议。有关付费数据传输协议的先前讨论，请参阅[周报 #53][news53 data]。
 
 - **BitVM 概念验证：**
-  两个基于 [BitVM][news273 bitvm] 的概念证明已发布，其中一个[实现][bitvm tweet blake3]了 [BLAKE3][] 哈希函数，[另一个][bitvm techmix poc] [实现了][bitvm sha256] SHA256。 {% assign timestamp="42:33" %}
+  两个基于 [BitVM][news273 bitvm] 的概念证明已发布，其中一个[实现][bitvm tweet blake3]了 [BLAKE3][] 哈希函数，[另一个][bitvm techmix poc] [实现了][bitvm sha256] SHA256。
 
 - **Bitkit 增加了 taproot 发送支持：**
-  比特币和闪电移动端钱包 [Bitkit][bitkit website] 在 [v1.0.0-beta.86][bitkit v1.0.0-beta.86] 版本中添加了对 [taproot][topic taproot] 付款的支持。 {% assign timestamp="55:17" %}
+  比特币和闪电移动端钱包 [Bitkit][bitkit website] 在 [v1.0.0-beta.86][bitkit v1.0.0-beta.86] 版本中添加了对 [taproot][topic taproot] 付款的支持。
 
 ## 新版本和候选版本
 
 *热门的比特币基础设施项目的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
-- [LND v0.17.2-beta][] 是一个维护版本，只包含一个小改动，以修复 [LND #8186][] 中报告的错误。 {% assign timestamp="55:53" %}
+- [LND v0.17.2-beta][] 是一个维护版本，只包含一个小改动，以修复 [LND #8186][] 中报告的错误。
 
-- [Bitcoin Core 26.0rc2][] 是主流全节点实现的下一个主要版本的候选发布版。[测试指南][26.0 testing]已可用。 {% assign timestamp="56:34" %}
+- [Bitcoin Core 26.0rc2][] 是主流全节点实现的下一个主要版本的候选发布版。[测试指南][26.0 testing]已可用。
 
-- [Core Lightning 23.11rc3][] 是该闪电网络实现的下一个主要版本的候选发布版。 {% assign timestamp="57:37" %}
+- [Core Lightning 23.11rc3][] 是该闪电网络实现的下一个主要版本的候选发布版。
 
 ## 重大的代码和文档变更
 
 *本周出现重大变更的有：[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和 [Bitcoin Inquisition][bitcoin inquisition repo]。*
 
-- [Core Lightning #6857][] 更新了用于 REST 接口的几个配置项的名称，以防止它们与 [c-lightning-rest][] 插件冲突。 {% assign timestamp="58:45" %}
+- [Core Lightning #6857][] 更新了用于 REST 接口的几个配置项的名称，以防止它们与 [c-lightning-rest][] 插件冲突。
 
-- [Eclair #2752][] 允许[要约][topic offers]中的数据使用节点的公钥或其中一个通道的身份来引用节点。公钥是识别节点的典型方法，但它需要使用 33 个字节。使用 [BOLT7][] _短信道标识符_（SCID）可以识别信道，它只使用 8 个字节。由于通道是由两个节点共享的，因此在 SCID 前还要预留一个比特，专门用来辨识两个节点中的一个。由于要约可能经常用于大小受限的媒介，因此这些节省下来的空间会非常可观。 {% assign timestamp="59:42" %}
+- [Eclair #2752][] 允许[要约][topic offers]中的数据使用节点的公钥或其中一个通道的身份来引用节点。公钥是识别节点的典型方法，但它需要使用 33 个字节。使用 [BOLT7][] _短信道标识符_（SCID）可以识别信道，它只使用 8 个字节。由于通道是由两个节点共享的，因此在 SCID 前还要预留一个比特，专门用来辨识两个节点中的一个。由于要约可能经常用于大小受限的媒介，因此这些节省下来的空间会非常可观。
 
 {% include snippets/recap-ad.md when="2023-11-22 15:00" %}
 {% include references.md %}
