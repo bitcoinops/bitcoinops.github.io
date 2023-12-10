@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Discussion about proposed updates to the liquidity advertisements protocol"
     url: /en/newsletters/2023/11/29/#update-to-the-liquidity-ads-specification
 
+  - title: "Discussion about griefing liquidity advertisements"
+    url: /en/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dual funding
