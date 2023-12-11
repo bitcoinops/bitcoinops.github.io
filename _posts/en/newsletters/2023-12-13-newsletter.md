@@ -96,7 +96,25 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are all the rules related to CPFP fee bumping?]({{bse}}120853)
+  Pieter Wuille points out that contrary to the [RBF][topic rbf] fee bumping
+  technique that has a list of associated policy rules, the [CPFP][topic cpfp]
+  fee bumping technique has no additional policy rules.
+
+- [How is the total number of RBF replaced transactions calculated?]({{bse}}120823)
+  Murch and Pieter Wuille walk through some examples of RBF replacements in the
+  context of [BIP125][]’s rule 5: “The number of original transactions to be
+  replaced and their descendant transactions which will be evicted from the
+  mempool must not exceed a total of 100 transactions”. Readers may also be
+  interested in the [Add BIP-125 rule 5 testcase with default
+  mempool][review club 25228] PR Review Club meeting.
+
+- [What types of RBF exist and which one does Bitcoin Core support and use by default?]({{bse}}120749)
+  Murch provides some of Bitcoin Core’s transaction replacement history and in a
+  [related question]({{bse}}120773), a summary of RBF replacement rules and
+  links to Bitcoin Core’s [Mempool Replacements][bitcoin core mempool
+  replacements] documentation and one developer's ideas for [RBF
+  improvements][glozow rbf improvements].
 
 ## Releases and release candidates
 
@@ -171,3 +189,6 @@ newsletter.  Regular publication will resume on Wednesday, January 3rd.
 [envoy v1.4.0]: https://github.com/Foundation-Devices/envoy/releases/tag/v1.4.0
 [bbqr github]: https://github.com/coinkite/BBQr
 [zeus v0.8.0]: https://github.com/ZeusLN/zeus/releases/tag/v0.8.0
+[review club 25228]: https://bitcoincore.reviews/25228
+[bitcoin core mempool replacements]: https://github.com/bitcoin/bitcoin/blob/master/doc/policy/mempool-replacements.md
+[glozow rbf improvements]: https://gist.github.com/glozow/25d9662c52453bd08b4b4b1d3783b9ff
