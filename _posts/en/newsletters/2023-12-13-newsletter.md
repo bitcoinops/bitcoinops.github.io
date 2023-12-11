@@ -50,7 +50,39 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Stratum v2 mining pool launches:**
+  [DEMAND][demand website] is a mining pool built off of the [Stratum v2
+  reference implementation][news247 sri] initially allowing for solo mining, with
+  pooled mining planned for the future.
+
+- **Bitcoin network simulation tool warnet announced:**
+  The [warnet software][warnet github] allows for specifying node topologies,
+  running [scripted scenarios][warnet scenarios] across that network, and
+  [monitoring][warnet monitoring] and analyzing resulting behaviors.
+
+- **Payjoin client for Bitcoin Core released:**
+  The [payjoin-cli][] is a rust project that adds command line [payjoin][topic payjoin] sending
+  and receiving capabilities for Bitcoin Core.
+
+- **Call for community block arrival timestamps:**
+  A contributor to the [Bitcoin Block Arrival Time Dataset][block arrival github]
+  repository [called][b10c tweet] for node operators to submit their block arrival
+  timestamps for research. There is a similar repository for collecting [stale
+  block data][stale block github].
+
+- **Envoy 1.4 released:**
+  Bitcoin wallet Envoy’s [1.4 release][envoy v1.4.0] adds [coin control][topic
+  coin selection] and [wallet labeling][topic wallet labels] ([BIP329][]
+  coming soon), among other features.
+
+- **BBQr encoding scheme announced:**
+  The [scheme][bbqr github] can efficiently encode larger files, for example [PSBTs][topic
+  psbt], into an animated QR series for use in air-gapped wallet configurations.
+
+- **Zeus v0.8.0 released:**
+  The [v0.8.0][zeus v0.8.0] release contains an embedded LND node, additional
+  [zero conf channel][topic zero-conf channels] support, and support for simple taproot channels,
+  among other changes.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -127,3 +159,15 @@ newsletter.  Regular publication will resume on Wednesday, January 3rd.
 [news136 bip129]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
 [recap279 liqad]: /en/podcast/2023/11/30/#update-to-the-liquidity-ads-specification-transcript
 [news182 block1983702]: /en/newsletters/2022/01/12/#bitcoin-core-23882
+[demand website]: https://dmnd.work/
+[news247 sri]: /en/newsletters/2023/04/19/#stratum-v2-reference-implementation-update-announced
+[warnet github]: https://github.com/bitcoin-dev-project/warnet
+[warnet scenarios]: https://github.com/bitcoin-dev-project/warnet/blob/main/docs/scenarios.md
+[warnet monitoring]: https://github.com/bitcoin-dev-project/warnet/blob/main/docs/monitoring.md
+[payjoin-cli]: https://github.com/payjoin/rust-payjoin/tree/master/payjoin-cli
+[block arrival github]: https://github.com/bitcoin-data/block-arrival-times
+[b10c tweet]: https://twitter.com/0xb10c/status/1732826609260872161
+[stale block github]: https://github.com/bitcoin-data/stale-blocks
+[envoy v1.4.0]: https://github.com/Foundation-Devices/envoy/releases/tag/v1.4.0
+[bbqr github]: https://github.com/coinkite/BBQr
+[zeus v0.8.0]: https://github.com/ZeusLN/zeus/releases/tag/v0.8.0

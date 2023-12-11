@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Discussion about draft BIP for serverless payjoin"
     url: /en/newsletters/2023/08/16/#serverless-payjoin
 
+  - title: "Payjoin client for Bitcoin Core released"
+    url: /en/newsletters/2023/12/13/#payjoin-client-for-bitcoin-core-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
