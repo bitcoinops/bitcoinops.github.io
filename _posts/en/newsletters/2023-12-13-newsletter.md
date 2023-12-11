@@ -116,6 +116,22 @@ nswer -->{% endcomment %}
   replacements] documentation and one developer's ideas for [RBF
   improvements][glozow rbf improvements].
 
+- [What is the Block 1,983,702 Problem?]({{bse}}120834)
+  Antoine Poinsot gives an overview of the issues that led to [BIP30][]
+  restricting duplicate txids and [BIP34][] mandating the inclusion of the
+  current block height in the coinbase field. He then points out that there are
+  numerous blocks whose random coinbase field content happens to match the
+  mandatory height prefix of a later block. Block 1,983,702 being the first
+  for which it would be practically possible to repeat the coinbase transaction
+  of the prior block. In a [related question]({{bse}}120836), Murch and
+  Antoine Poinsot evaluate that possibility in greater detail.  See also
+  [Newsletter #182][news182 block1983702].
+
+- [What are hash functions used for in bitcoin?]({{bse}}120418)
+  Pieter Wuille lists over thirty different instances across consensus rules,
+  peer-to-peer protocol, wallet and node implementation details that make use
+  of no less than 10 different hash functions.
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
