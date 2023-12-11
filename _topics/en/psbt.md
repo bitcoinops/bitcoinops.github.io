@@ -204,6 +204,9 @@ optech_mentions:
   - title: "Proposed BIP for MuSig2 fields in PSBTs"
     url: /en/newsletters/2023/10/18/#proposed-bip-for-musig2-fields-in-psbts
 
+  - title: "BBQr encoding scheme announced for encoding PSBTs and other data"
+    url: /en/newsletters/2023/12/13/#bbqr-encoding-scheme-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
