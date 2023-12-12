@@ -89,6 +89,7 @@ test-after-build: build
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
 	! find _site/ -name '*.html' | xargs grep '\[^' | grep .
 	! find _site/ -name '*.html' | xargs grep '\[\]' | grep -v skip-test | grep .
+	! find _site/ -name '*.html' | xargs grep 'timestamp=' | grep -v skip-test | grep .
 
 	## Check for duplicate anchors
 	! find _site/ -name '*.html' | while read file ; do \
