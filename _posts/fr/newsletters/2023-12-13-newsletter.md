@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #281'
-permalink: /fr/bulletins/2023/12/13/
+permalink: /fr/newsletter/2023/12/13/
 name: 2023-12-13-newsletter-fr
 slug: 2023-12-13-newsletter-fr
 type: newsletter
