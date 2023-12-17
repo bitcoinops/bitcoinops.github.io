@@ -43,28 +43,26 @@ intéressantes des portefeuilles et services Bitcoin.*
   permettant initialement le minage en solo, avec le minage en pool prévu pour l'avenir.
 
 - **Annonce de l'outil de simulation du réseau Bitcoin warnet :**
-  Le [logiciel warnet][warnet github] permet de spécifier des topologies de nœuds, d'exécuter des scénarios scriptés sur ce réseau et
-  de surveiller et analyser les comportements qui en résultent.
+  Le [logiciel warnet][warnet github] permet de spécifier des topologies de nœuds, d'exécuter des [scénarios scriptés][warnet scenarios] sur ce réseau et de [surveiller][warnet monitoring] et analyser les comportements qui en résultent.
 
 - **Publication d'un client Payjoin pour Bitcoin Core :**
   Le [payjoin-cli][] est un projet en Rust qui ajoute des fonctionnalités d'envoi et de réception de [payjoin][topic payjoin] en ligne
   de commande pour Bitcoin Core.
 
 - **Appel aux horodatages d'arrivée des blocs par la communauté :**
-  Un contributeur au référentiel [Bitcoin Block Arrival Time Dataset][block arrival github] a appelé les opérateurs de nœuds à soumettre
+  Un contributeur au référentiel [Bitcoin Block Arrival Time Dataset][block arrival github] a [appelé][b10c tweet] les opérateurs de nœuds à soumettre
   leurs horodatages d'arrivée de bloc à des fins de recherche. Il existe un référentiel similaire pour collecter des [données sur les
   blocs obsolètes][stale block github].
 
 - **Envoy 1.4 publié :**
-  La version 1.4 du portefeuille Bitcoin Envoy ajoute notamment la [gestion des pièces][topic coin selection] et l'[étiquetage des
-  portefeuilles][topic wallet labels] (BIP329 à venir), ainsi que d'autres fonctionnalités.
+  La version 1.4 du portefeuille Bitcoin [Envoy][envoy v1.4.0] ajoute notamment la [gestion des pièces][topic coin selection] et l'[étiquetage des portefeuilles][topic wallet labels] ([BIP329][] à venir), ainsi que d'autres fonctionnalités.
 
 - **Annonce du schéma d'encodage BBQr :**
   Le [schéma][bbqr github] peut encoder efficacement des fichiers plus volumineux, tels que des [PSBT][topic psbt], en une série de
   QR animés pour une utilisation dans des configurations de portefeuille hors ligne.
 
 - **Zeus v0.8.0 publié :**
-  La version v0.8.0 de Zeus contient un nœud LND intégré, un support supplémentaire pour les [canaux zero conf][topic zero-conf channels]
+  La version v0.8.0 de [Zeus][zeus v0.8.0] contient un nœud LND intégré, un support supplémentaire pour les [canaux zero conf][topic zero-conf channels]
   et les canaux taproot simples, entre autres modifications.
 
 ## Sélection de Q&R du Bitcoin Stack Exchange
