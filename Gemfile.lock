@@ -107,4 +107,4 @@ DEPENDENCIES
   toml
 
 RUBY VERSION
-   ruby 2.6.4p104
+   ruby 3.2.2
