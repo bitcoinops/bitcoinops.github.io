@@ -19,12 +19,12 @@ schema_file = ARGV[0]
 to_validate = ARGV[1]
 
 file = File.open(schema_file, 'r')
-schema = YAML.load(file)
+schema = YAML.load(file, aliases: true)
 file.close()
 
 file = File.open(to_validate, 'r')
 if to_validate.end_with?(".yaml") or to_validate.end_with?(".md")
-  document = YAML.load(file)
+  document = YAML.load(file, aliases: true)
 elsif to_validate.end_with?(".toml")
   document = TOML.load_file(file)
 else
