@@ -10,6 +10,7 @@ group :development do
   gem 'jekyll'
   gem "minima", "~> 2.0"  ## Default Jekyll theme
   gem 'jekyll-redirect-from'
+  gem 'rexml', '~> 3.2.4'
 end
 
 group :testing do
