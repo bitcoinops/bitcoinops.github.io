@@ -43,7 +43,7 @@ infrastructure software.
     the risk that providers may close channels shortly after receiving
     their liquidity fees.  If channels opened through liquidity ads
     typically generate significant forwarding fee income, there would be
-    an incentive to keep channels open.
+    an incentive to keep channels open. {% assign timestamp="0:46" %}
 
 ## Changes to services and client software
 
@@ -53,36 +53,36 @@ wallets and services.*
 - **Stratum v2 mining pool launches:**
   [DEMAND][demand website] is a mining pool built off of the [Stratum v2
   reference implementation][news247 sri] initially allowing for solo mining, with
-  pooled mining planned for the future.
+  pooled mining planned for the future. {% assign timestamp="15:43" %}
 
 - **Bitcoin network simulation tool warnet announced:**
   The [warnet software][warnet github] allows for specifying node topologies,
   running [scripted scenarios][warnet scenarios] across that network, and
-  [monitoring][warnet monitoring] and analyzing resulting behaviors.
+  [monitoring][warnet monitoring] and analyzing resulting behaviors. {% assign timestamp="16:31" %}
 
 - **Payjoin client for Bitcoin Core released:**
   The [payjoin-cli][] is a rust project that adds command line [payjoin][topic payjoin] sending
-  and receiving capabilities for Bitcoin Core.
+  and receiving capabilities for Bitcoin Core. {% assign timestamp="17:30" %}
 
 - **Call for community block arrival timestamps:**
   A contributor to the [Bitcoin Block Arrival Time Dataset][block arrival github]
   repository [called][b10c tweet] for node operators to submit their block arrival
   timestamps for research. There is a similar repository for collecting [stale
-  block data][stale block github].
+  block data][stale block github]. {% assign timestamp="18:44" %}
 
 - **Envoy 1.4 released:**
   Bitcoin wallet Envoy’s [1.4 release][envoy v1.4.0] adds [coin control][topic
   coin selection] and [wallet labeling][topic wallet labels] ([BIP329][]
-  coming soon), among other features.
+  coming soon), among other features. {% assign timestamp="21:41" %}
 
 - **BBQr encoding scheme announced:**
   The [scheme][bbqr github] can efficiently encode larger files, for example [PSBTs][topic
-  psbt], into an animated QR series for use in air-gapped wallet configurations.
+  psbt], into an animated QR series for use in air-gapped wallet configurations. {% assign timestamp="22:09" %}
 
 - **Zeus v0.8.0 released:**
   The [v0.8.0][zeus v0.8.0] release contains an embedded LND node, additional
   [zero conf channel][topic zero-conf channels] support, and support for simple taproot channels,
-  among other changes.
+  among other changes. {% assign timestamp="22:45" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -99,7 +99,7 @@ nswer -->{% endcomment %}
 - [What are all the rules related to CPFP fee bumping?]({{bse}}120853)
   Pieter Wuille points out that contrary to the [RBF][topic rbf] fee bumping
   technique that has a list of associated policy rules, the [CPFP][topic cpfp]
-  fee bumping technique has no additional policy rules.
+  fee bumping technique has no additional policy rules. {% assign timestamp="25:16" %}
 
 - [How is the total number of RBF replaced transactions calculated?]({{bse}}120823)
   Murch and Pieter Wuille walk through some examples of RBF replacements in the
@@ -107,14 +107,14 @@ nswer -->{% endcomment %}
   replaced and their descendant transactions which will be evicted from the
   mempool must not exceed a total of 100 transactions”. Readers may also be
   interested in the [Add BIP-125 rule 5 testcase with default
-  mempool][review club 25228] PR Review Club meeting.
+  mempool][review club 25228] PR Review Club meeting. {% assign timestamp="29:41" %}
 
 - [What types of RBF exist and which one does Bitcoin Core support and use by default?]({{bse}}120749)
   Murch provides some of Bitcoin Core’s transaction replacement history and in a
   [related question]({{bse}}120773), a summary of RBF replacement rules and
   links to Bitcoin Core’s [Mempool Replacements][bitcoin core mempool
   replacements] documentation and one developer's ideas for [RBF
-  improvements][glozow rbf improvements].
+  improvements][glozow rbf improvements]. {% assign timestamp="31:37" %}
 
 - [What is the Block 1,983,702 Problem?]({{bse}}120834)
   Antoine Poinsot gives an overview of the issues that led to [BIP30][]
@@ -125,12 +125,12 @@ nswer -->{% endcomment %}
   for which it would be practically possible to repeat the coinbase transaction
   of the prior block. In a [related question]({{bse}}120836), Murch and
   Antoine Poinsot evaluate that possibility in greater detail.  See also
-  [Newsletter #182][news182 block1983702].
+  [Newsletter #182][news182 block1983702]. {% assign timestamp="34:48" %}
 
 - [What are hash functions used for in bitcoin?]({{bse}}120418)
   Pieter Wuille lists over thirty different instances across consensus rules,
   peer-to-peer protocol, wallet and node implementation details that make use
-  of no less than 10 different hash functions.
+  of no less than 10 different hash functions. {% assign timestamp="45:12" %}
 
 ## Releases and release candidates
 
@@ -140,7 +140,7 @@ release candidates.*
 
 - [LND 0.17.3-beta][] is a release that contains several bug fixes,
   including a reduction in memory when used with the Bitcoin Core
-  backend.
+  backend. {% assign timestamp="51:59" %}
 
 ## Notable code and documentation changes
 
@@ -153,20 +153,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
 - [LDK #2685][] adds the ability to obtain block chain data from an
-  Electrum-style server.
+  Electrum-style server. {% assign timestamp="52:22" %}
 
 - [Libsecp256k1 #1446][] removes some x86_64 assembly code from the
   project, switching to using existing C language code that has always
   been used for other platforms.  The assembly code was human-optimized
   several years ago to improve performance but, in the meantime, compilers
   improved and recent versions of both GCC and LLVM (clang) now produce
-  even more performant code.
+  even more performant code. {% assign timestamp="53:04" %}
 
 - [BTCPay Server #5389][] adds support for [BIP129][] secure multisig
   wallet setup (see [Newsletter #136][news136 bip129]).  This allows
   BTCPay server to interact with multiple software wallets and hardware
   signing devices as part of a simple coordinated multisig setup
-  procedure.
+  procedure. {% assign timestamp="53:36" %}
 
 - [BTCPay Server #5490][] begins using [fee estimates][ms fee api] from
   [mempool.space][] by default, with a fallback on fee estimates from
@@ -174,7 +174,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   that they felt Bitcoin Core's fee estimates fail to respond quickly to
   changes in the local mempool.  For previous related discussion about
   the challenges to improving fee estimation accuracy, see [Bitcoin Core
-  #27995][].
+  #27995][]. {% assign timestamp="59:54" %}
 
 ## Happy holidays!
 
