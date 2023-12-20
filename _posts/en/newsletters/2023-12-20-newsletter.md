@@ -1,8 +1,8 @@
 ---
 title: 'Bitcoin Optech Newsletter #282: 2023 Year-in-Review Special'
-permalink: /en/newsletters/2022/12/20/
-name: 2022-12-20-newsletter
-slug: 2022-12-20-newsletter
+permalink: /en/newsletters/2023/12/20/
+name: 2023-12-20-newsletter
+slug: 2023-12-20-newsletter
 type: newsletter
 layout: newsletter
 lang: en
