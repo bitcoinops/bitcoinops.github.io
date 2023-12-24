@@ -791,7 +791,7 @@ mercredi 3 janvier.*
 [sept tapassets]: /fr/newsletters/2023/09/13/#specifications-pour-les-actifs-taproot
 [tapsim]: /fr/newsletters/2023/06/21/#debogueur-pour-tapscript-tapsim
 [tldr]: https://tldr.bitcoinsearch.xyz/
-[index des sujets]: /en/topic/
+[index des sujets]: /en/topics/
 [yirs 2018]: /fr/newsletters/2018/12/28/
 [yirs 2019]: /fr/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
