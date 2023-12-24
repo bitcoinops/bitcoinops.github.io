@@ -653,8 +653,8 @@ Optech a également publié deux rapports de terrain proposés par la communaut�
 [la mise en œuvre de MuSig2][implementing MuSig2] pour réduire les coûts de transaction et améliorer la confidentialité, et un deuxième
 rapport d'Antoine Poinsot de Wizardsardine sur [la création de logiciels avec miniscript][building software with miniscript].
 
-[la mise en œuvre de musig2]: /fr/bitgo-musig2/
-[la création de logiciels avec miniscript]: /fr/wizardsardine-miniscript/
+[implementing MuSig2]: /fr/bitgo-musig2/
+[building software with miniscript]: /fr/wizardsardine-miniscript/
 
 </div>
 
@@ -783,7 +783,7 @@ mercredi 3 janvier.*
 [oct pss]: /fr/newsletters/2023/10/04/#division-et-commutation-des-paiements
 [oct sidepool]: /fr/newsletters/2023/10/04/#liquidite-mutualisee-pour-ln
 [oct txhash]: /fr/newsletters/2023/10/11/#specification-pour-op-txhash-proposee
-[série de politiques]: /fr/blog/en-attente-de-confirmation/
+[policy series]: /fr/blog/en-attente-de-confirmation/
 [sep lnscale]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [sep secp]: /fr/newsletters/2023/09/06/#libsecp256k1-0-4-0
 [sept compress]: /fr/newsletters/2023/09/06/#compression-des-transactions-bitcoin
@@ -791,7 +791,7 @@ mercredi 3 janvier.*
 [sept tapassets]: /fr/newsletters/2023/09/13/#specifications-pour-les-actifs-taproot
 [tapsim]: /fr/newsletters/2023/06/21/#debogueur-pour-tapscript-tapsim
 [tldr]: https://tldr.bitcoinsearch.xyz/
-[index des sujets]: /en/topics/
+[topics index]: /en/topics/
 [yirs 2018]: /fr/newsletters/2018/12/28/
 [yirs 2019]: /fr/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
