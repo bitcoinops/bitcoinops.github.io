@@ -688,7 +688,7 @@ mercredi 3 janvier.*
 {% include linkers/issues.md v=2 issues="" %}
 [apr bitgo]: /fr/bitgo-musig2/
 [apr blinding]: /fr/newsletters/2023/04/05/#bolts-765
-[apr htlcendo]: /fr/newsletters/2023/05/17/#test-de-l-approbation-htlc 
+[apr htlcendo]: /fr/newsletters/2023/05/17/#test-de-l-approbation-htlc
 [apr ldk]: /fr/newsletters/2023/04/26/#ldk-0-0-115
 [apr lnd]: /fr/newsletters/2023/04/05/#lnd-v0-16-0-beta
 [apr loop]: /fr/newsletters/2023/05/24/#lightning-loop-est-par-defaut-musig2
