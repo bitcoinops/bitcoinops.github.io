@@ -783,7 +783,7 @@ mercredi 3 janvier.*
 [oct pss]: /fr/newsletters/2023/10/04/#division-et-commutation-des-paiements
 [oct sidepool]: /fr/newsletters/2023/10/04/#liquidite-mutualisee-pour-ln
 [oct txhash]: /fr/newsletters/2023/10/11/#specification-pour-op-txhash-proposee
-[policy series]: /fr/blog/en-attente-de-confirmation/
+[policy series]: /fr/blog//waiting-for-confirmation/
 [sep lnscale]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [sep secp]: /fr/newsletters/2023/09/06/#libsecp256k1-0-4-0
 [sept compress]: /fr/newsletters/2023/09/06/#compression-des-transactions-bitcoin
@@ -792,8 +792,8 @@ mercredi 3 janvier.*
 [tapsim]: /fr/newsletters/2023/06/21/#debogueur-pour-tapscript-tapsim
 [tldr]: https://tldr.bitcoinsearch.xyz/
 [topics index]: /en/topics/
-[yirs 2018]: /fr/newsletters/2018/12/28/
-[yirs 2019]: /fr/newsletters/2019/12/28/
+[yirs 2018]: /en/newsletters/2018/12/28/
+[yirs 2019]: /en/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
 [yirs 2021]: /fr/newsletters/2021/12/22/
 [yirs 2022]: /fr/newsletters/2022/12/21/
