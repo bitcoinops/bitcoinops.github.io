@@ -1,11 +1,11 @@
 ---
-title : 'Bulletin Bitcoin Optech #282: Revue spéciale Année 2023'
-permalink : /fr/newsletters/2023/12/20/
-name : 2023-12-20-newsletter-fr
-slug : 2023-12-20-newsletter-fr
-type : newsletter
-layout : newsletter
-lang : fr
+title: 'Bulletin Bitcoin Optech #282: Revue spéciale Année 2023'
+permalink: /fr/newsletters/2023/12/20/
+name: 2023-12-20-newsletter-fr
+slug: 2023-12-20-newsletter-fr
+type: newsletter
+layout: newsletter
+lang: fr
 
 extrait : >
   Cette édition spéciale de la lettre d'information Optech résume les faits marquants de l'évolution du bitcoin pendant toute l'année 2023.
