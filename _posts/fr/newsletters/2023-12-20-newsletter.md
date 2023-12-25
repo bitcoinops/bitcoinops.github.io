@@ -721,7 +721,7 @@ mercredi 3 janvier.*
 [dec payjoin]: /fr/newsletters/2023/12/13/#publication-d-un-client-payjoin-pour-bitcoin-core
 [dec warnet announce]: /fr/newsletters/2023/12/13/#annonce-de-l-outil-de-simulation-du-reseau-bitcoin-warnet
 [dec zipkin warnet]: /fr/newsletters/2023/12/06/#test-avec-warnet
-[feb bitcoinsearch]: /fr/newsletters/2023/02/15/#bitcoinsearch-xyz
+[feb bitcoinsearch]: /fr/newsletters/2023/02/15/#bitcoinsearch.xyz
 [feb cln offers]: /fr/newsletters/2023/02/08/#core-lightning-5892
 [feb codex32]: /fr/newsletters/2023/02/22/#proposition-de-bip-pour-le-systeme-d-encodage-des-semences-codex32
 [feb eclair offers]: /fr/newsletters/2023/02/22/#eclair-2479
