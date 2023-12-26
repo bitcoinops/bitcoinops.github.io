@@ -179,7 +179,7 @@ une sidechain pendant longtemps, puis permettre aux destinataires des fonds sur 
 ultérieurement---mais seulement si les utilisateurs de Bitcoin décident finalement de modifier les règles de consensus d'une
 certaine manière.
 Cela pourrait permettre aux utilisateurs désireux de prendre un risque financier de commencer immédiatement à utiliser leurs fonds avec
-les nouvelles fonctionnalités de consensus qu'ils désirent, tout en offrant un moyen de faire revenir ces fonds plus tard sur le mainnet 
+les nouvelles fonctionnalités de consensus qu'ils désirent, tout en offrant un moyen de faire revenir ces fonds plus tard sur le mainnet
 de Bitcoin.
 
 En août, Brandon Black a [proposé][aug combo] une version de `OP_TXHASH` combinée avec [`OP_CHECKSIGFROMSTACK`][topic
