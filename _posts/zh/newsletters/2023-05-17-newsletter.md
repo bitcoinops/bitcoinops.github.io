@@ -37,9 +37,9 @@ lang: zh
 
 - **Bitcoin Core 开发人员面对面会议摘要：**几位从事 Bitcoin Core 工作的开发人员最近开会讨论了该项目的各个方面。会议期间的几次讨论的笔记已经发表。讨论的主题包括[模糊测试][fuzz testing]、[假设UTXO][assumeUTXO]、[ASMap][]、[静默支付][silent payments]、[libbitcoinkernel][]、[重构（或不重构）][refactoring (or not)]和[包中继][package relay]。还讨论了我们认为值得特别关注的另外两个主题：{% assign timestamp="37:35" %}
 
-    * [交易池聚类][mempool clustering]总结了一项重大重新设计交易及其元数据如何存储在 Bitcoin Core 交易池中的建议。这些说明描述了当前设计的许多问题，提供了新设计的概述，并提出了一些挑战和所涉及的权衡。设计的[描述][bitcoin core #27677]和演示文稿中[幻灯片][mempool slides]的副本随后已发布。
+    - [<!--mempool-clustering-->交易池聚类][mempool clustering]总结了一项重大重新设计交易及其元数据如何存储在 Bitcoin Core 交易池中的建议。这些说明描述了当前设计的许多问题，提供了新设计的概述，并提出了一些挑战和所涉及的权衡。设计的[描述][bitcoin core #27677]和演示文稿中[幻灯片][mempool slides]的副本随后已发布。
 
-    * [项目元讨论][project meta discussion]总结了关于项目目标的各种讨论，以及如何在面临许多内部和外部挑战的情况下实现这些目标。一些讨论已经导致项目管理的实验性变化，例如在版本 25 之后的下一个主要版本采用更加以项目为中心的方法。
+    - [<!--project-meta-discussion-->项目元讨论][project meta discussion]总结了关于项目目标的各种讨论，以及如何在面临许多内部和外部挑战的情况下实现这些目标。一些讨论已经导致项目管理的实验性变化，例如在版本 25 之后的下一个主要版本采用更加以项目为中心的方法。
 
 ## 等待确认 #1: 我们为什么需要一个交易池？
 
