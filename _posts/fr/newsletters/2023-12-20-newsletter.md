@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 
-extrait : >
+excerpt : >
   Cette édition spéciale de la lettre d'information Optech résume les faits marquants de l'évolution du bitcoin pendant toute l'année 2023.
 ---
 {{page.excerpt}} C'est la suite de nos résumés de [2018][yirs 2018], [2019][yirs 2019], [2020][yirs 2020], [2021][yirs 2021] et
