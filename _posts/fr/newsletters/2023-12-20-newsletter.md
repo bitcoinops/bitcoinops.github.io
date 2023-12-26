@@ -73,7 +73,7 @@ extrait : >
 {:#inquisition}
 Anthony Towns a [annoncé][jan inquisition] Bitcoin Inquisition, un fork logiciel de Bitcoin Core conçu pour être utilisé sur le signet
 par défaut afin de tester les propositions de soft fork et autres changements de protocole importants.
-À la fin de l'année, il contenait le support de plusieurs propositions : [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
+À la fin de l'année, il prenait en charge : [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], et les bases des [ancres éphémères][topic ephemeral anchors], avec des PR
 ouvertes dans son référentiel pour ajouter le support de [OP_CAT][], `OP_VAULT`, et la [restriction contre les transactions de 64
 octets][topic consensus cleanup].
@@ -84,7 +84,7 @@ Lightning, en répondant aux défis auxquels sont confrontés les portefeuilles 
 Un client peut recevoir des fonds dans une transaction on-chain tout en étant hors ligne. La transaction peut recevoir suffisamment de
 confirmations pour qu'il soit immédiatement sûr d'ouvrir un canal avec un pair pré-sélectionné lorsque le client revient en ligne---sans
 avoir à faire confiance à ce pair. Quelques mois seulement après la proposition, au moins un portefeuille LN populaire <!-- Phoenix -->
-utilisait une implémentation de cette idée.
+utilisait une implémentation de cette méthode.
 
 {:#bip329}
 Un format standard pour l'exportation et l'importation des [étiquettes de portefeuille][topic wallet labels] a été [assigné][jan bip329]
@@ -125,9 +125,9 @@ paiements sont divisés et envoyés via plusieurs canaux, réduisant la dépenda
 {:#htlc-endorsement}
 Les idées d'un [document][jamming paper] publié l'année dernière ont été particulièrement
 au centre des efforts de 2023 pour atténuer les [attaques de brouillage de canal LN][topic channel jamming attacks]. En février, Carla
-Kirk-Cohen et Clara Shikhelman, co-auteure du document,
-ont commencé à [demander][feb htlcendo] des commentaires sur les paramètres suggérés à utiliser lors de la mise en œuvre de l'une des
-idées du document, [l'approbation HTLC][topic htlc endorsement]. En avril, elles ont [publié][apr htlcendo] une spécification provisoire
+Kirk-Cohen et Clara Shikhelman, co-auteures du document,
+ont [sollicité][feb htlcendo] des commentaires sur les paramètres à utiliser lors de la mise en œuvre de
+[l'approbation HTLC][topic htlc endorsement]. En avril, elles ont [publié][apr htlcendo] une spécification provisoire
 pour leurs plans de test. En juillet, l'idée et la proposition ont été [discutées][jul htlcendo] lors de la réunion de développement LN,
 ce qui a conduit à un échange sur la liste de diffusion concernant une [approche alternative][aug antidos] visant à faire en sorte que
 les coûts supportés à la fois par les attaquants et les utilisateurs honnêtes reflètent les coûts sous-jacents supportés par les
@@ -176,13 +176,13 @@ Bitcoin et les [tapscript][topic tapscript].
 
 En [j]uin][jun specsf], Robin Linus a décrit comment les utilisateurs pouvaient verrouiller des fonds aujourd'hui, les utiliser sur
 une sidechain pendant longtemps, puis permettre aux destinataires des fonds sur la sidechain de les retirer efficacement sur Bitcoin
-à un moment ultérieur---mais seulement si les utilisateurs de Bitcoin décident finalement de modifier les règles de consensus d'une
+ultérieurement---mais seulement si les utilisateurs de Bitcoin décident finalement de modifier les règles de consensus d'une
 certaine manière.
 Cela pourrait permettre aux utilisateurs désireux de prendre un risque financier de commencer immédiatement à utiliser leurs fonds avec
-de nouvelles fonctionnalités de consensus qu'ils désirent, tout en offrant un moyen de faire revenir ces fonds sur le mainnet de Bitcoin
-ultérieurement.
+les nouvelles fonctionnalités de consensus qu'ils désirent, tout en offrant un moyen de faire revenir ces fonds plus tard sur le mainnet 
+de Bitcoin.
 
-En août, Brandon Black a [proposé][aug combo]  une version de `OP_TXHASH` combinée avec [`OP_CHECKSIGFROMSTACK`][topic
+En août, Brandon Black a [proposé][aug combo] une version de `OP_TXHASH` combinée avec [`OP_CHECKSIGFROMSTACK`][topic
 op_checksigfromstack] qui fournirait la plupart des fonctionnalités de [`OP_CHECKTEMPLATEVERIFY`][topic op_checktemplateverify] (CTV) et
 [`SIGHASH_ANYPREVOUT`][topic sighash_anyprevout] (APO) sans coût supplémentaire important sur la chaîne par rapport à ces propositions
 individuelles.
@@ -216,18 +216,18 @@ réalisation de certains types d'[attaques par brouillage de canal][topic channe
 
 {:#watchaccount}
 Sergi Delgado Segura [a proposé][apr watchtower] un mécanisme de responsabilité pour les [watchtowers][topic watchtowers] dans les cas
-où ils ne répondent pas aux violations de protocole qu'ils étaient capables de détecter. Par exemple, Alice fournit à un watchtower des
-données pour détecter et répondre à la confirmation d'un ancien état de canal LN ; plus tard, cet état est confirmé mais le watchtower
-ne répond pas. Alice souhaite pouvoir tenir l'opérateur du watchtower responsable en prouvant publiquement qu'il n'a pas répondu de
+où ils ne répondent pas aux violations de protocole qu'ils étaient capables de détecter. Par exemple, Alice fournit à une watchtower des
+données pour détecter et répondre à la confirmation d'un ancien état de canal LN ; plus tard, cet état est confirmé mais la watchtower
+ne répond pas. Alice souhaite pouvoir tenir l'opérateur de la watchtower responsable en prouvant publiquement qu'il n'a pas répondu de
 manière appropriée. Delgado suggère un mécanisme basé sur des accumulateurs cryptographiques que les watchtowers peuvent utiliser pour
-créer des engagements, que les utilisateurs peuvent ensuite utiliser pour produire des preuves de responsabilité en cas de violation.
+créer des engagements et que les utilisateurs peuvent ensuite utiliser pour produire des preuves de responsabilité en cas de violation.
 
 {:#route-blinding}
-[Routage aveugle][topic rv routing], décrit pour la première fois trois ans plus tôt, a été [ajouté][apr blinding] à la spécification LN
-en avril. Il permet à un destinataire de fournir à un dépensier l'identifiant d'un nœud de routage particulier et un chemin chiffré en
-oignon de ce nœud jusqu'au nœud du destinataire. Le dépensier transmet un paiement et les informations de chemin chiffré au nœud de
+[Routage aveugle][topic rv routing], décrit pour la première fois trois ans auparavant, a été [ajouté][apr blinding] à la spécification LN
+en avril. Il permet à un destinataire de fournir à celui qui dépense l'identifiant d'un nœud de routage particulier et un chemin chiffré en
+oignon de ce nœud jusqu'au nœud du destinataire. L'émetteur transmet un paiement et les informations de chemin chiffré au nœud de
 routage sélectionné ; le nœud de routage déchiffre les informations pour le prochain saut ; ce prochain saut déchiffre le saut suivant ;
-et ainsi de suite, jusqu'à ce que le paiement arrive au nœud du destinataire sans que le dépensier ni aucun des nœuds de routage ne
+et ainsi de suite, jusqu'à ce que le paiement arrive au nœud du destinataire sans que l'émetteur ni aucun des nœuds de routage ne
 sachent (avec certitude) quel nœud appartenait au destinataire. Cela améliore considérablement la confidentialité de la réception
 d'argent via LN.
 
@@ -281,8 +281,8 @@ pour créer des "payjoins" avec Bitcoin Core.
 {:#ark}
 Burak Keceli a [proposé][may ark] un nouveau protocole de type [joinpool][topic joinpools] appelé Ark, où les propriétaires de Bitcoin
 peuvent choisir d'utiliser une contrepartie comme co-signataire sur toutes les transactions pendant une certaine période de temps.
-Les propriétaires peuvent soit retirer leurs bitcoins on-chain après l'expiration du verrouillage temporel, soit les transférer
-instantanément et de manière fiable off-chain à la contrepartie avant l'expiration du verrouillage temporel. Le protocole fournit un
+Les propriétaires peuvent soit retirer leurs bitcoins on-chain après l'expiration du verrouillage temporel, soit les transférer off-chain
+instantanément et de manière fiable à la contrepartie avant l'expiration du verrouillage temporel. Le protocole fournit un
 protocole de transfert atomique sans confiance à un seul saut et à une seule direction, du propriétaire à la contrepartie, pour diverses
 utilisations telles que le mélange de pièces, les transferts internes et le paiement des factures LN. Des préoccupations ont été
 soulevées concernant l'empreinte élevée sur la chaîne et la nécessité pour l'opérateur de conserver une grande quantité de fonds dans
@@ -467,7 +467,7 @@ chacun avec 1 BTC, l'état peut être mis à jour de sorte qu'Alice ait 2 BTC, B
 utiliser et à annoncer des canaux LN réguliers, et si ces canaux devenaient déséquilibrés, un rebalancement peut être effectué via un
 échange entre pairs hors chaîne dans le contrat d'état. Cette méthode est privée pour les participants, nécessite moins d'espace sur
 la chaîne et élimine probablement les frais de rebalancement hors chaîne, améliorant ainsi le potentiel de revenus pour les nœuds de
-transfert et la fiabilité des paiements LN. Cependant, cela nécessite un contrat d'état multiparty, qui n'a pas été testé en production.
+transfert et la fiabilité des paiements LN. Cependant, cela nécessite un contrat d'état multipartie, qui n'a pas été testé en production.
 ZmnSCPxj suggère de s'appuyer sur [LN-Symmetry][topic eltoo] ou les canaux de paiement duplex, qui ont tous deux des avantages et des
 inconvénients.
 
@@ -510,7 +510,7 @@ plusieurs développeurs.
 Avec la spécification finale des [chemins aveugles][topic rv routing] et [messages en onion][topic onion messages], et leur mise en œuvre
 dans plusieurs nœuds LN populaires, ont permis de réaliser des progrès significatifs cette année dans le développement du [protocole des
 offres][topic offers] qui en dépend. Les offres permettent à un portefeuille du destinataire de générer une _offre_ courte qui peut être
-partagée avec le portefeuille du dépensier. Le portefeuille du dépensier peut utiliser l'offre pour contacter le portefeuille du
+partagée avec le portefeuille de celui qui dépense. Le portefeuille de l'émetteur peut ainsi utiliser l'offre pour contacter le portefeuille du
 destinataire via le protocole LN afin de demander une facture spécifique, qu'il peut ensuite payer de la manière habituelle. Cela permet
 la création d'offres réutilisables qui peuvent chacune produire une facture différente, des factures qui peuvent être mises à jour avec
 des informations actuelles (par exemple, le taux de change) juste quelques secondes avant leur paiement, et des offres qui peuvent être
@@ -672,10 +672,10 @@ d'autres aspects de la gestion du mempool et de la transmission des transactions
 [publiées][dec cluster] début décembre.
 
 {:#warnet}
-En décembre, a également été [annoncé][dec warnet announce] publiquement un nouvel outil permettant de lancer un grand nombre de nœuds
-Bitcoin avec un ensemble défini de connexions entre eux (généralement sur un réseau de test). Cela peut être utilisé pour tester des
+En décembre, un nouvel outil permettant de lancer un grand nombre de nœuds Bitcoin avec un ensemble défini de connexions entre eux
+(généralement sur un réseau de test) a été [annoncé][dec warnet announce] publiquement. Il peut être utilisé pour tester des
 comportements difficiles à reproduire avec un petit nombre de nœuds ou qui causeraient des problèmes sur les réseaux publics, tels que
-des attaques connues et la propagation d'informations divulguées. Un [exemple public][dec zipkin warnet] d'utilisation de l'outil était
+des attaques connues et la propagation d'informations inutiles. Un [exemple public][dec zipkin warnet] d'utilisation de l'outil était
 la mesure de la consommation de mémoire de Bitcoin Core avant et après une modification proposée.
 
 *Nous remercions tous les contributeurs de Bitcoin mentionnés ci-dessus, ainsi que les nombreux autres dont le travail était tout aussi
