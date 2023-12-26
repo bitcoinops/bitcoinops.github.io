@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Bitcoin Optech #282: Revue spéciale Année 2023'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #282: Revue Spéciale Année 2023'
 permalink: /fr/newsletters/2023/12/20/
 name: 2023-12-20-newsletter-fr
 slug: 2023-12-20-newsletter-fr
