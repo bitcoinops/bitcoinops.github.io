@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Replacement cycle attacks not solved by current v3 transaction relay policies"
     url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
 
+  - title: Discussion about the costs of pinning when v3 policies are used
+    url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

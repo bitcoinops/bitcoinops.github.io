@@ -59,6 +59,9 @@ optech_mentions:
   - title: "LND v0.17.0-beta ships with experimental support for unannounced taproot and MuSig2 LN channels"
     url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
 
+  - title: "Core Lightning #6869 updates the listchannels RPC to no longer list unannounced channels"
+    url: /en/newsletters/2024/01/03/#core-lightning-6869
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

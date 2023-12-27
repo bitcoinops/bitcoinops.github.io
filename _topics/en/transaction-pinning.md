@@ -81,6 +81,9 @@ optech_mentions:
   - title: "OP_EXPIRE opcode proposed that may help mitigate transaction pinning of HTLCs"
     url: /en/newsletters/2023/10/25/#op-expire
 
+  - title: Discussion about the costs of pinning when v3 transaction relay policies are used
+    url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

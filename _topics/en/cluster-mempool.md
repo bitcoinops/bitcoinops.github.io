@@ -37,6 +37,9 @@ optech_mentions:
   - title: "Multiple discussions about cluster mempool"
     url: /en/newsletters/2023/12/06/#cluster-mempool-discussion
 
+  - title: "Discussion about cluster fee estimation"
+    url: /en/newsletters/2024/01/03/#cluster-fee-estimation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

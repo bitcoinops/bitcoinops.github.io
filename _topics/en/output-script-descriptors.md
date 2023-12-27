@@ -161,6 +161,12 @@ optech_mentions:
   - title: "Bitcoin Core #27255 ports miniscript to tapscript, providing tapscript descriptors"
     url: /en/newsletters/2023/10/18/#bitcoin-core-27255
 
+  - title: How to specify unspendable keys in descriptors
+    url: /en/newsletters/2024/01/03/#how-to-specify-unspendable-keys-in-descriptors
+
+  - title: Proposed BIP specifying how to include descriptors in PSBTs
+    url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
