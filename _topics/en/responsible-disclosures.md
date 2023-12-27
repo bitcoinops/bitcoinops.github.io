@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Antoine Riard responsibly discloses replacement cycle attacks affecting all HTLC-using software"
     url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
 
+  - title: "Niklas Gögge responsibly disclosed two vulnerabilities affecting LND"
+    url: /en/newsletters/2024/01/03/#disclosure-of-past-lnd-vulnerabilities
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

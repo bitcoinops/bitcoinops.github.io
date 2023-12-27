@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BOLTs #759 adds support for onion messages to the LN specification"
     url: /en/newsletters/2023/08/09/#bolts-759
 
+  - title: "LDK #2723 adds support for sending onion messages using direct connections"
+    url: /en/newsletters/2024/01/03/#ldk-2723
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
