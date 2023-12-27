@@ -146,11 +146,21 @@ a.site-title {
 .callout {
   border: thin solid black;
   padding: 0.5em;
+  position: relative;
   
   h2, h3, h4 {
     text-align: center;
     font-size: 110%;
   }
+
+  i.fa{
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+.callout:has(i.fa){
+  padding-bottom: 20px;
 }
 
 div.xoverflow {
