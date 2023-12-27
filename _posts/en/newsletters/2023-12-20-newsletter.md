@@ -73,7 +73,7 @@ excerpt: >
 ## January
 
 {:#inquisition}
-Anthony Towns [announced][jan inquisition] Bitcoin Inquisition, a
+- **Bitcoin Inquisition:** Anthony Towns [announced][jan inquisition] Bitcoin Inquisition, a
 software fork of Bitcoin Core designed to be used on the default signet
 for testing proposed soft forks and other significant protocol changes.
 By the end of the year, it contained support for several proposals:
@@ -81,10 +81,10 @@ By the end of the year, it contained support for several proposals:
 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], and basic
 [ephemeral anchors][topic ephemeral anchors], with pull requests open in
 its repository to add support for [OP_CAT][], `OP_VAULT`, and the
-[restriction against 64-byte transactions][topic consensus cleanup].
+[restriction against 64-byte transactions][topic consensus cleanup]. {% assign timestamp="10:59" %}
 
 {:#potentiam}
-ZmnSCPxj and Jesse Posner [proposed][jan potentiam] _swap-in-potentiam_,
+- **Swap-in-potentiam:** ZmnSCPxj and Jesse Posner [proposed][jan potentiam] _swap-in-potentiam_,
 a non-interactive method for opening Lightning Network channels,
 addressing challenges faced by often-offline wallets like those on
 mobile devices.  A client can receive funds in an onchain transaction
@@ -92,21 +92,21 @@ while it is offline.  The transaction can receive enough confirmations
 to make it immediately safe to open a channel with a pre-selected peer
 when the client comes back online---without placing any trust in that
 peer.  Within a few months of the proposal, at least one popular LN
-wallet <!-- Phoenix --> was using an implementation of the idea.
+wallet <!-- Phoenix --> was using an implementation of the idea. {% assign timestamp="14:03" %}
 
 {:#bip329}
-A standard format for [wallet label][topic wallet labels] export and
+- **BIP329 wallet label export format:** A standard format for [wallet label][topic wallet labels] export and
 import was [assigned][jan bip329] the identifier [BIP329][].  Not only
 does the standard make it easier to back up important wallet data that
 can't be recovered from a [BIP32 seed][topic bip32], but it also makes
 it much easier to copy transaction metadata into non-wallet programs,
 such as accounting software.  By the end of the year, several wallets
-had implemented BIP329 export.
+had implemented BIP329 export. {% assign timestamp="19:32" %}
 
 ## February
 
 {:#ordinals}
-February saw the [beginning][feb ord1] of a [discussion][feb ord2] that
+- **Ordinals and inscriptions:** February saw the [beginning][feb ord1] of a [discussion][feb ord2] that
 would continue for the rest of the year about Ordinals and Inscriptions,
 two related protocols for associating meaning and data with transaction
 outputs.  Andrew Poelstra summarized the position of many protocol
@@ -116,34 +116,33 @@ and/or breaking legitimate use cases." Given the method used by
 Inscriptions allows storing large amounts of data, Christopher Allen
 suggested increasing Bitcoin Core's 83-byte limit for data storage in
 outputs prefixed by `OP_RETURN`; a proposal that was also [advanced][aug
-opreturn] by Peter Todd later in the year.
+opreturn] by Peter Todd later in the year. {% assign timestamp="20:22" %}
 
 {:#chatbtc}
-BitcoinSearch.xyz was [launched][feb bitcoinsearch] early in the year,
+- **Bitcoin Search, ChatBTC, and TL;DR:** BitcoinSearch.xyz was [launched][feb bitcoinsearch] early in the year,
 providing a search engine for Bitcoin technical documentation and
 discussions.  By the end of the year, the site offered a [chat
-interface][chatbtc] and [summaries][tldr] of recent discussions.
+interface][chatbtc] and [summaries][tldr] of recent discussions. {% assign timestamp="41:50" %}
 
 {:#peer-storage}
-Core Lightning [added][feb storage] experimental support for peer
+- **Peer storage backups:** Core Lightning [added][feb storage] experimental support for peer
 storage backups, which allow a node to store a small encrypted backup
 file for its peers. If a peer later needs to reconnect, perhaps after
 losing data, it can request the backup file.  The peer can use a key
 derived from its wallet seed to decrypt the file and use the contents to
-recover the latest state of all of its channels.
+recover the latest state of all of its channels. {% assign timestamp="43:40" %}
 
 {:#ln-qos}
-Joost Jager [proposed][feb lnflag] a "high availability" flag for LN
+- **LN quality of service:** Joost Jager [proposed][feb lnflag] a "high availability" flag for LN
 channels, allowing the channel to signal it offered reliable payment
 forwarding.  Christian Decker noted challenges in creating reputation
 systems, such as infrequent node encounters. A previously proposed
 alternative approach was also mentioned: [overpayment with
 recovery][topic redundant overpayments] (previously termed boomerang or
 refundable overpayments), where payments are split and sent via multiple
-routes, reducing reliance on highly available channels.
+routes, reducing reliance on highly available channels. {% assign timestamp="44:10" %}
 
-{:#htlc-endorsement}
-Ideas from a [paper][jamming paper] posted last year became a particular
+- **HTLC endorsement:** Ideas from a [paper][jamming paper] posted last year became a particular
 focus of the 2023 effort to mitigate [LN channel jamming][topic channel
 jamming attacks].  In February, Carla Kirk-Cohen and the paper's
 co-author Clara Shikhelman began [asking][feb htlcendo] for feedback on
@@ -160,10 +159,9 @@ continue earning reasonable returns if attackers begin using those
 services.  In August, it was [announced][aug htlcendo] developers
 associated with Eclair, Core Lightning, and LND were all implementing
 parts of the HTLC endorsement protocol in order to begin collecting data
-related to it.
+related to it. {% assign timestamp="47:31" %}
 
-{:#codex32}
-Russell O'Connor and Andrew Poelstra [proposed][feb codex32] a new BIP
+- **Codex32:** Russell O'Connor and Andrew Poelstra [proposed][feb codex32] a new BIP
 for backing up and restoring [BIP32][] seeds called [codex32][topic
 codex32].  Similar to SLIP39, it allows creating several shares using
 Shamir’s Secret Sharing Scheme with configurable threshold requirements.
@@ -176,12 +174,12 @@ instructions, and paper cutouts, including generating an encoded seed
 (with dice), protecting it with a checksum, creating checksummed shares,
 verifying checksums, and recovering the seed. This allows users to
 periodically verify the integrity of individual shares without relying
-on trusted computing devices.
+on trusted computing devices. {% assign timestamp="48:33" %}
 
 ## March
 
 {:#mpchan}
-In March, pseudonymous developer John Law [published][mar mpchan] a
+- **Hierarchical channels:** In March, pseudonymous developer John Law [published][mar mpchan] a
 paper describing a way to create a hierarchy of channels for multiple
 users from a single onchain transaction.  The design can allow
 all online users to spend their funds even when some of their channel
@@ -189,12 +187,15 @@ counterparties are offline, which is not currently possible in LN.  This
 optimization would allow always-online users to use their capital more
 efficiently, likely reducing the costs for other users of LN.  The proposal
 depends on Law's tunable penalty protocol, which has not seen any
-public software development since it was proposed in 2022.
+public software development since it was proposed in 2022. {% assign timestamp="50:57" %}
 
 ![Tunable Penalty Protocol](/img/posts/2023-03-tunable-commitment.dot.png)
 
 <div markdown="1" class="callout" id="softforks">
-### 2023 summary<br>Soft fork proposals
+
+### Summary 2023: Soft fork proposals
+
+{% assign timestamp="54:22" %}
 
 A [proposal][jan op_vault] for a new `OP_VAULT` opcode was posted in
 January by James O'Beirne, [followed][feb op_vault] in February by a
@@ -265,10 +266,11 @@ efficient onchain and could make it more difficult to perform certain
 types of [channel jamming attacks][topic channel jamming attacks].
 
 </div>
+
 ## April
 
 {:#watchaccount}
-Sergi Delgado Segura [proposed][apr watchtower] an accountability
+- **Watchtower accountability proofs:** Sergi Delgado Segura [proposed][apr watchtower] an accountability
 mechanism for [watchtowers][topic watchtowers] for cases where they fail to respond to
 protocol breaches that they were capable of detecting. For example,
 Alice provides a watchtower with data for detecting and responding to
@@ -278,10 +280,9 @@ able to hold the watchtower operator accountable by publicly proving it
 failed to respond appropriately.  Delgado suggests a mechanism based on
 cryptographic accumulators that watchtowers can use for creating
 commitments, which users can later use to produce accountability proofs
-if a breach occurs.
+if a breach occurs. {% assign timestamp="1:04:24" %}
 
-{:#route-blinding}
-[Route blinding][topic rv routing], first described three years earlier,
+- **Route blinding:** [Route blinding][topic rv routing], first described three years earlier,
 was [added][apr blinding] to the LN specification in April.  It allows a
 receiver to provide a spender with the identifier of a particular
 forwarding node and an onion-encrypted path from that node to the
@@ -291,20 +292,19 @@ decrypts information for the next hop; that next hop decrypts the hop
 after it; and so on, until the payment arrives at the receiver's node
 with neither the spender nor any of the forwarding nodes ever learning
 (for sure) which node belonged to the receiver.  It significantly
-improves the privacy of receiving money using LN.
+improves the privacy of receiving money using LN. {% assign timestamp="1:05:58" %}
 
-{:#musig2}
-[BIP327][] was [assigned][apr musig2] to the [MuSig2][topic musig]
+- **MuSig2:** [BIP327][] was [assigned][apr musig2] to the [MuSig2][topic musig]
 protocol for creating [scriptless multisignatures][topic multisignature]
 in April.  This protocol would be implemented in multiple programs and
 systems over the year, including LND's [signrpc][apr signrpc] RPC, <!-- sic -->
 Lightning Lab's [Loop][apr loop] service, BitGo's [multisignature
 service][apr bitgo], LND's experimental [simple taproot channels][apr
 taproot channels], and a [draft BIP][apr musig2 psbt] for extending
-[PSBTs][topic psbt].
+[PSBTs][topic psbt]. {% assign timestamp="1:08:36" %}
 
 {:#clientvalidation}
-Maxim Orlovsky [announced][apr rgb] the release of RGB v0.10 in April, a
+- **RGB and Taproot Assets:** Maxim Orlovsky [announced][apr rgb] the release of RGB v0.10 in April, a
 new version of this protocol for allowing the creation and transfer of
 tokens (among other things) using contracts that are defined and
 [validated][topic client-side validation] offchain.
@@ -314,34 +314,33 @@ typical transaction and which can keep all information about the
 contract state (including its existence) completely private from third
 parties.  Later in the year, the Taproot Assets protocol, which is
 partly derived from RGB, released [specifications][sept tapassets]
-intended to become BIPs.
+intended to become BIPs. {% assign timestamp="1:12:47" %}
 
 {:#splicing}
-April also saw significant [discussion][apr splicing] about the
+- **Channel splicing:** April also saw significant [discussion][apr splicing] about the
 proposed protocol for [splicing][topic splicing], which allows nodes to
 continue using a channel while funds are added to it or removed from it.
 This is especially useful for keeping funds in a channel while still
 allowing instant onchain payments to be made from that balance, allowing
 a wallet user interface to show users a single balance from which they
 can make either onchain or offchain payments.  By the end of the year,
-both Core Lightning and Eclair would support splicing.
+both Core Lightning and Eclair would support splicing. {% assign timestamp="1:16:06" %}
 
 ![Splicing](/img/posts/2023-04-splicing1.dot.png)
 
 ## May
 
 {:#lspspec}
-A set of draft specifications for Lightning Service Providers (LSPs) was
+- **LSP specifications:** A set of draft specifications for Lightning Service Providers (LSPs) was
 [released][may lsp] in May.  Standards make it easy for a client to
 connect to multiple LSPs, which will prevent vendor lock-in and improve
 privacy.  The first specification released describes an API for allowing
 a client to purchase a channel from an LSP, achieving a functionality
 similar to [liquidity advertisements][topic liquidity advertisements].
 The second describes an API for setting up and managing [just-in-time
-(JIT) channels][topic jit channels].
+(JIT) channels][topic jit channels]. {% assign timestamp="1:21:10" %}
 
-{:#payjoin}
-Dan Gould spent a significant part of the year working on enhancements
+- **Payjoin:** Dan Gould spent a significant part of the year working on enhancements
 to the [payjoin][topic payjoin] protocol, a privacy-enhancing technique
 that makes it much more difficult for a third party to reliably
 associate inputs and outputs in a transaction with either the spender or
@@ -360,10 +359,9 @@ once after the transaction is initiated before it can be broadcast).
 Throughout the year, he was a top contributor to the [payjoin
 development kit][jul pdk] (PDK) as well as the [payjoin-cli][dec
 payjoin] project that provides an add-on for creating payjoins with
-Bitcoin Core.
+Bitcoin Core. {% assign timestamp="1:23:07" %}
 
-{:#ark}
-Burak Keceli [proposed][may ark] a new [joinpool][topic joinpools]-style protocol called
+- **Ark:** Burak Keceli [proposed][may ark] a new [joinpool][topic joinpools]-style protocol called
 Ark, where Bitcoin owners can opt-in to use a counterparty as a
 co-signer on all transactions within a certain time period. Owners can
 either withdraw their bitcoins onchain after the expiry of the timelock
@@ -375,12 +373,12 @@ transfers, and paying LN invoices.  Concerns were raised about the high
 onchain footprint and the need for the operator to keep a large amount
 of funds in a hot wallet compared to LN.  However, several
 developers remained enthusiastic about the proposed protocol and its
-potential to provide a simple and trustless experience for its users.
+potential to provide a simple and trustless experience for its users. {% assign timestamp="1:27:40" %}
 
 ## June
 
 {:#silentpayments}
-Josie Baker and Ruben Somsen [posted][jun sp] a draft BIP for [silent
+- **Silent payments:** Josie Baker and Ruben Somsen [posted][jun sp] a draft BIP for [silent
 payments][topic silent payments], a type of reusable payment code that
 will produce a unique onchain address each time it is used, preventing
 [output linking][topic output linking].  Output linking can
@@ -389,10 +387,13 @@ involved in a transaction). The draft goes into detail about the
 benefits of the proposal, its tradeoffs, and how software can
 effectively use it.  Ongoing work implementing silent payments for
 Bitcoin Core was also [discussed][aug sp] during a Bitcoin Core PR
-Review Club meeting.
+Review Club meeting. {% assign timestamp="1:30:33" %}
 
 <div markdown="1" class="callout" id="security">
-### 2023 summary<br>Security disclosures
+
+### Summary 2023: Security disclosures
+
+{% assign timestamp="1:32:34" %}
 
 Optech reported on three significant security vulnerabilities this year:
 
@@ -419,16 +420,16 @@ Optech reported on three significant security vulnerabilities this year:
 ## July
 
 {:#vls}
-The Validating Lightning Signer (VLS) project [released][jul vls] their
+- **Validating Lightning Signer:** The Validating Lightning Signer (VLS) project [released][jul vls] their
 first beta version in July.  The project allows the separation of an LN
 node from the keys that control its funds. An LN node running with VLS
 will route signing requests to a remote signing device instead of local
 keys. The beta release supports CLN and LDK, layer-1 and layer-2
 validation rules, backup and recovery capabilities, and provides a
-reference implementation.
+reference implementation. {% assign timestamp="1:36:10" %}
 
 {:#ln-meeting}
-An LN developer [meeting][jul summit] held in July discussed a variety
+- **LN developer meeting:** An LN developer [meeting][jul summit] held in July discussed a variety
 of topics, including reliable transaction confirmation at the base
 layer, [taproot][topic taproot] and [MuSig2][topic musig] channels,
 updated channel announcements, [PTLCs][topic ptlc] and [redundant
@@ -436,12 +437,11 @@ overpayment][topic redundant overpayments], [channel jamming mitigation
 proposals][topic channel jamming attacks], simplified commitments, and
 the specification process.  Other LN discussions around the same time
 included a [clean up][jul cleanup] of the LN specification to remove unused legacy
-features and a [simplified protocol][jul lnclose] for closing channels.
+features and a [simplified protocol][jul lnclose] for closing channels. {% assign timestamp="1:38:00" %}
 
 ## August
 
-{:#onion-messages}
-[Support][aug onion] for [onion messages][topic onion messages] was
+- **Onion messages:** [Support][aug onion] for [onion messages][topic onion messages] was
 added to the LN specification in August.  Onion messages allow sending
 one-way messages across the network. Like payments ([HTLCs][topic
 htlc]), the messages use onion encryption so that each forwarding node
@@ -450,10 +450,10 @@ next receive the message. Message payloads are also encrypted so that
 only the ultimate receiver can read it.  Onion messages use [blinded
 paths][topic rv routing], which were added to the LN specification in
 April, and onion messages are themselves used by the proposed [offers
-protocol][topic offers].
+protocol][topic offers]. {% assign timestamp="1:38:28" %}
 
 {:#backup-proofs}
-Thomas Voegtlin [proposed][aug fraud] a protocol that would allow
+- **Outdated backup proofs:** Thomas Voegtlin [proposed][aug fraud] a protocol that would allow
 penalizing providers for offering outdated backup states to users. This
 service involves a simple mechanism where a user, Alice, backs up data
 with a version number and signature to Bob. Bob adds a nonce and commits
@@ -467,10 +467,10 @@ of Bob deceiving Alice and stealing her balance.  The proposal sparked
 significant discussion.  Peter Todd pointed out its versatility beyond
 LN and suggested a simpler mechanism without fraud proofs, while Ghost43
 highlighted the importance of such proofs when dealing with anonymous
-peers.
+peers. {% assign timestamp="1:41:52" %}
 
 {:#tapchan}
-LND added [experimental support][aug lnd taproot] for "simple taproot
+- **Simple taproot channels:** LND added [experimental support][aug lnd taproot] for "simple taproot
 channels", allowing LN funding and commitment transactions to use
 [P2TR][topic taproot] with support for [MuSig2][topic musig]-style
 [scriptless multisignature signing][topic multisignature] when both
@@ -478,12 +478,12 @@ parties are cooperating.  This reduces transaction weight and
 improves privacy when channels are closed cooperatively. LND continues
 to exclusively use [HTLCs][topic htlc], allowing payments starting in a
 taproot channel to continue to be forwarded through other LN nodes that
-don’t support taproot channels.
+don’t support taproot channels. {% assign timestamp="1:44:39" %}
 
 ## September
 
 {:#compressed-txes}
-In September, Tom Briar [published][sept compress] a draft specification
+- **Compressed Bitcoin transactions:** In September, Tom Briar [published][sept compress] a draft specification
 and implementation of compressed Bitcoin transactions. The proposal
 addresses the challenge of compressing uniformly distributed data in
 Bitcoin transactions by replacing integer representations with
@@ -493,10 +493,13 @@ from P2WPKH transactions. While the compressed format saves space,
 converting it back into a usable format requires more CPU, memory, and
 I/O than processing regular serialized transactions, which is an
 acceptable tradeoff in situations such as broadcast by satellite or
-steganographic transfer.
+steganographic transfer. {% assign timestamp="1:46:40" %}
 
 <div markdown="1" class="callout" id="releases">
-### 2023 summary<br>Major releases of popular infrastructure projects
+
+### Summary 2023: Major releases of popular infrastructure projects
+
+ {% assign timestamp="1:48:19" %}
 
 - [Eclair 0.8.0][jan eclair] added support for [zero-conf
   channels][topic zero-conf channels] and Short Channel IDentifier
@@ -598,7 +601,7 @@ steganographic transfer.
 ## October
 
 {:#pss}
-Gijs van Dam posted [research results and code][oct pss] about _payment
+- **Payment switching and splitting:** Gijs van Dam posted [research results and code][oct pss] about _payment
 splitting and switching_ (PSS). His code allows nodes to split incoming
 payments into [multiple parts][topic multipath payments], which can take
 different routes before reaching the final recipient. For instance, a
@@ -608,10 +611,9 @@ attackers probe channel balances to track payments across the network.
 Van Dam's research showed a 62% decrease in information gained by
 attackers using PSS.  Additionally, PSS offers increased Lightning
 Network throughput and may help mitigate [channel jamming attacks][topic
-channel jamming attacks].
+channel jamming attacks]. {% assign timestamp="1:49:46" %}
 
-{:#sidepools}
-Developer ZmnSCPxj [proposed][oct sidepool] a concept called _sidepools_
+- **Sidepools:** Developer ZmnSCPxj [proposed][oct sidepool] a concept called _sidepools_
 that aims to enhance LN's liquidity management. Sidepools involve
 multiple forwarding nodes depositing funds into a multiparty offchain
 state contract similar to LN channels. This allows funds to be
@@ -626,10 +628,9 @@ revenue potential for forwarding nodes and reliability for LN payments.
 However, it requires a multiparty state contract, which is untested in
 production.  ZmnSCPxj suggests building on [LN-Symmetry][topic eltoo]
 or duplex payment channels, both of which have advantages and
-disadvantages.
+disadvantages. {% assign timestamp="1:51:30" %}
 
-{:#assumeutxo}
-October saw the [completion][oct assumeutxo] of the first phase of the
+- **AssumeUTXO:** October saw the [completion][oct assumeutxo] of the first phase of the
 [assumeUTXO project][topic assumeutxo], containing all the remaining
 changes necessary to both use an assumedvalid snapshot chainstate and do
 a full validation sync in the background. It makes UTXO snapshots
@@ -637,10 +638,10 @@ loadable via an RPC.  Although the feature set is not yet directly
 usable by inexperienced users, this merge marked the culmination of a
 multi-year effort. The project, proposed in 2018 and formalized in 2019,
 will significantly improve the user experience of new full nodes first
-coming onto the network.
+coming onto the network. {% assign timestamp="1:55:28" %}
 
 {:#p2pv2}
-Also [accomplished][oct p2pv2] by the Bitcoin Core project in October was the
+- **Version 2 P2P transport:** Also [accomplished][oct p2pv2] by the Bitcoin Core project in October was the
 addition of support for [version 2 encrypted P2P transport][topic v2 p2p
 transport] as specified in [BIP324][]. The feature is currently disabled
 by default but can be enabled using the `-v2transport` option.
@@ -651,18 +652,17 @@ encrypted transport to detect active man-in-the-middle observers by
 comparing session identifiers. In the future, the addition of [other
 features][topic countersign] may make it convenient for a lightweight
 client to securely connect to a trusted node over a P2P encrypted
-connection.
+connection. {% assign timestamp="1:55:51" %}
 
-{:#miniscript}
-Miniscript descriptor support saw several additional improvements in
+- **Miniscript:** Miniscript descriptor support saw several additional improvements in
 Bitcoin Core throughout the year.  February saw the
 [ability][feb miniscript] to create miniscript descriptors for P2WSH
 output scripts.  October saw miniscript support [updated][oct
 miniscript] to support taproot, including miniscript descriptors for
-tapscript.
+tapscript. {% assign timestamp="1:57:18" %}
 
 {:#statebitvm}
-A method for state compression in Bitcoin using zero-knowledge validity
+- **State compression and BitVM:** A method for state compression in Bitcoin using zero-knowledge validity
 proofs was [described][may state] by Robin Linus and Lukas George in
 May.  This massively reduces the amount of state that a client needs to
 download in order to trustlessly verify future operations in a system,
@@ -676,12 +676,11 @@ offchain data exchange but needs only a single onchain transaction for
 agreement, or a small number of onchain transactions if there's a
 dispute. BitVM makes complex trustless contracts possible even in
 adversarial scenarios, which has caught the attention of several
-developers.
+developers. {% assign timestamp="2:00:07" %}
 
 ## November
 
-{:#offers}
-With the final specification of [blinded paths][topic rv routing] and
+- **Offers:** With the final specification of [blinded paths][topic rv routing] and
 [onion messages][topic onion messages], and their implementation in
 multiple popular LN nodes, a significant amount of progress was made
 through this year in the development of the [offers protocol][topic offers]
@@ -698,10 +697,10 @@ implementations of offers in [Core Lightning][feb cln offers] and
 [Eclair][feb eclair offers] were updated during the year, and support
 for offers was added to [LDK][sept ldk offers].  Additionally, November
 saw a [discussion][nov offers] about creating an updated version of
-Lightning Addresses that is compatible with offers.
+Lightning Addresses that is compatible with offers. {% assign timestamp="2:05:53" %}
 
 {:#liqad}
-November also saw an [update][nov liqad] to the specification for
+- **Liquidity advertisements:** November also saw an [update][nov liqad] to the specification for
 [liquidity advertisements][topic liquidity advertisements] that allow a
 node to announce that it's willing to contribute some of its funds to a
 new [dual-funded channel][topic dual funding] in exchange for a fee,
@@ -712,10 +711,11 @@ from a liquidity advertisement should contain a time lock.  A time lock
 could give an incentive-based assurance to the buyer that they would
 actually receive the liquidity they paid for, but the time lock could
 also be used by a malicious or inconsiderate buyer to lock up an excess
-amount of the provider's capital.
+amount of the provider's capital. {% assign timestamp="2:08:26" %}
 
 <div markdown="1" class="callout" id="optech">
-### 2023 summary<br>Bitcoin Optech
+
+### Summary 2023: Bitcoin Optech
 
 {% comment %}<!-- commands to help me create this summary for next year
 
@@ -725,7 +725,7 @@ wc -w _posts/en/newsletters/2023-* _includes/specials/policy/en/*
 git log --diff-filter=A --since='1 year ago' --name-only --pretty=format: _topics/en | sort -u | wc -l
 
 wget https://anchor.fm/s/d9918154/podcast/rss
-# use vim to delete all podcasts before this year
+Note: use vim to delete all podcasts before this year
 grep duration rss | sed 's!^.*>\([0-9].*\):..</.*$!\1!' | sed 's/:/ * 60 + /' | bc -l | numsum | echo $(cat) / 60 | bc -l
 -->{% endcomment %}
 
@@ -761,6 +761,8 @@ grep duration rss | sed 's!^.*>\([0-9].*\):..</.*$!\1!' | sed 's/:/ * 60 + /' | 
     }
 }
 </style>
+
+{% assign timestamp="1:11" %}
 
 In Optech's sixth year, we published 51 weekly [newsletters][],
 published a 10-part [series about mempool policy][policy series], and
@@ -851,7 +853,7 @@ with miniscript][].
 ## December
 
 {:#clustermempool}
-Several Bitcoin Core developers [began][may cluster] working on a new
+- **Cluster mempool:** Several Bitcoin Core developers [began][may cluster] working on a new
 [cluster mempool][topic cluster mempool] design to
 simplify mempool operations while maintaining the necessary transaction
 ordering, where parent transactions must be confirmed before their
@@ -863,17 +865,16 @@ dropping the lowest feerate chunks.  This fixes some existing
 undesirable behavior (e.g., where miners might lose out on fee revenue
 due to suboptimal evictions) and may be able to improve other aspects of
 mempool management and transaction relay in the future.  Archives of
-their discussions were [published][dec cluster] in early December.
+their discussions were [published][dec cluster] in early December. {% assign timestamp="2:11:10" %}
 
-{:#warnet}
-December also saw the public [announcement][dec warnet announce] of a new
+- **Warnet:** December also saw the public [announcement][dec warnet announce] of a new
 tool for launching a large number of Bitcoin nodes with a defined set of
 connections between them (usually on a test network).  This can be used
 to test behavior that's difficult to replicate using small numbers of nodes
 or which would cause problems on public networks, such as known attacks
 and propagation of gossiped information.  One [public example][dec
 zipkin warnet] of using the tool was measuring the memory consumption of
-Bitcoin Core before and after a proposed change.
+Bitcoin Core before and after a proposed change. {% assign timestamp="2:13:12" %}
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
