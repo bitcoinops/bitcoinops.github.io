@@ -207,6 +207,9 @@ optech_mentions:
   - title: "BBQr encoding scheme announced for encoding PSBTs and other data"
     url: /en/newsletters/2023/12/13/#bbqr-encoding-scheme-announced
 
+  - title: Proposed BIP specifying how to include descriptors in PSBTs
+    url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
