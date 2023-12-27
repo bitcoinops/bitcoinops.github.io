@@ -1,6 +1,6 @@
 {% assign newsletter_sections = page.references | group_by:"header" %}
 {% assign header_names = newsletter_sections | map: "name" %}
-{% unless header_names contains "News" %}
+{% unless header_names contains "News" or header_names contains "January" %}
 ## News
 *No significant news this week was found on the Bitcoin-Dev or Lightning-Dev mailing lists.*
 {% endunless %}
