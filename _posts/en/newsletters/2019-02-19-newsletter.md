@@ -252,6 +252,6 @@ None this week.
 [eltoo]: https://blockstream.com/eltoo.pdf
 [lau output tagging]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016549.html
 [nick output tagging]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016667.html
-[channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf
+[channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [electrum personal server]: https://github.com/chris-belcher/electrum-personal-server
 [key origin information]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification

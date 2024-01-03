@@ -20,7 +20,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Scalable Funding of Bitcoin Micropayment Networks
-      link: "https://tik-old.ee.ethz.ch/file//a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf"
+      link: "https://tik-old.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf"
 
     - title: Inherited identifiers proposal
       link: https://github.com/JohnLaw2/btc-iids
