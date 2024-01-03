@@ -619,7 +619,7 @@ newsletters] or follow our [RSS feed][].*
 [building on bitcoin]: https://building-on-bitcoin.com/
 [bustapay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
 [chaincode lightning residency]: https://lightningresidency.com/
-[channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf
+[channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [c-lightning 0.6]: https://github.com/ElementsProject/lightning/releases/tag/v0.6
 [coredevtech nyc]: https://coredev.tech/2018_newyork.html
 [coredevtech tokyo]: https://coredev.tech/2018_tokyo.html
