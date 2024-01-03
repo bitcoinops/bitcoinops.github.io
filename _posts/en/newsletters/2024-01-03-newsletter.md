@@ -71,8 +71,8 @@ infrastructure.
   confirmed at an acceptable feerate.
 
     Law notes that this addresses one of the longstanding concerns noted
-    in the [original Lightning Network paper][] about _forced expiration
-    floods_ where too many channels all closing simultaneously may
+    in the [original Lightning Network paper][] about [forced expiration
+    floods][topic expiration floods] where too many channels all closing simultaneously may
     result in insufficient block space for all of them to be
     confirmed before their timelocks expire, potentially resulting in
     some users losing money.  With fee-dependent timelocks in place,
@@ -111,7 +111,7 @@ infrastructure.
 - **Cluster fee estimation:** Abubakar Sadiq Ismail [posted][ismail
   cluster] to Delving Bitcoin about using some of the tools and insights
   from the design of [cluster mempool][topic cluster mempool] to improve
-  fee estimation in Bitcoin Core.  The current fee estimation algorithm
+  [fee estimation][topic fee estimation] in Bitcoin Core.  The current fee estimation algorithm
   in Bitcoin Core tracks the number of blocks it takes for transactions
   entering the local node's mempool to become confirmed.  When
   confirmation happens, the transaction's feerate is used to update a
@@ -229,10 +229,9 @@ infrastructure.
 - **Verification of arbitrary programs using proposed opcode from MATT:**
   Johan Torås Halseth [posted][halseth ccv] to Delving Bitcoin about
   [elftrace][], a proof of concept program that can use the
-  `OP_CHECKCONTRACTVERIFY` opcode from the [MATT][] soft fork proposal
-  to allow a party in a contract protocol to claim money if an arbitrary
-  program executed successfully.  It is similar in concept to BitVM (see
-  [Newsletter #273][news273 bitvm]) but simpler in its Bitcoin
+  `OP_CHECKCONTRACTVERIFY` opcode from the [MATT][topic matt] soft fork proposal
+  to allow a party in a contract protocol to [claim money][topic acc] if an arbitrary
+  program executed successfully.  It is similar in concept to [BitVM][topic acc] but simpler in its Bitcoin
   implementation due to using an opcode specifically designed for
   program execution verification.  Elftrace works with programs compiled
   for the RISC-V architecture using Linux's [ELF][] format; almost any
@@ -288,7 +287,7 @@ infrastructure.
     constructing party.  Ingala roughly describes how this feature could
     be added to a multiparty contract protocol using [OP_CAT][],
     `OP_CHECKCONTRACTVERIFY`, and amount introspection from the proposed
-    [MATT][] soft fork, with him noting that it would be easier with the
+    [MATT][topic matt] soft fork, with him noting that it would be easier with the
     addition also of [OP_CSFS][topic op_checksigfromstack] and 64-bit
     arithmetic operators in [tapscript][topic tapscript].
 
@@ -405,7 +404,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [black descpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022186.html
 [halseth ccv]: https://delvingbitcoin.org/t/verification-of-risc-v-execution-using-op-ccv/313
 [elftrace]: https://github.com/halseth/elftrace
-[matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
 [news273 bitvm]: /en/newsletters/2023/10/18/#payments-contingent-on-arbitrary-computation
 [elf]: https://en.m.wikipedia.org/wiki/Executable_and_Linkable_Format
 [ingala exit]: https://delvingbitcoin.org/t/aggregate-delegated-exit-for-l2-pools/297
