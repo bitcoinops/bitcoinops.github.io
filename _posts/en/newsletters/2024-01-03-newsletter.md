@@ -45,7 +45,7 @@ infrastructure.
   Gögge made his initial disclosure to the LND developers over two years
   ago and versions of LND containing fixes for both vulnerabilities have
   been available for over 18 months.  Optech is unaware of any users who
-  were affected by either vulnerability.
+  were affected by either vulnerability. {% assign timestamp="2:07" %}
 
 - **Fee-dependent timelocks:** John Law [posted][law fdt] to the
   Bitcoin-Dev and Lightning-Dev mailing lists with a rough proposal for
@@ -106,7 +106,7 @@ infrastructure.
     Law and [others][evo fdt] about the effect of miners accepting
     out-of-band fees---fees to confirm a transaction that are paid
     separately from the normal transaction fee mechanism (e.g. by paying
-    a particular miner directly).
+    a particular miner directly). {% assign timestamp="25:09" %}
 
 - **Cluster fee estimation:** Abubakar Sadiq Ismail [posted][ismail
   cluster] to Delving Bitcoin about using some of the tools and insights
@@ -143,7 +143,7 @@ infrastructure.
     feerate rather than the feerates of individual transactions.
 
     The proposal was well received, with developers discussing the
-    details an updated algorithm would need to consider.
+    details an updated algorithm would need to consider. {% assign timestamp="8:32" %}
 
 - **How to specify unspendable keys in descriptors:** Salvatore Ingala
   started a [discussion][ingala undesc] on Delving Bitcoin about how to allow
@@ -170,7 +170,7 @@ infrastructure.
     generating the proof.  In the last post in the thread at the time of
     writing, Ingala noted that some of the work of specifying policies
     related to unspendable keys can be split between descriptors and
-    [BIP388][] wallet policies.
+    [BIP388][] wallet policies. {% assign timestamp="17:48" %}
 
 - **V3 transaction pinning costs:** Peter Todd [posted][todd v3] to the
   Bitcoin-Dev mailing list an analysis of the proposed [v3 transaction
@@ -210,7 +210,7 @@ infrastructure.
     Additional discussion in the conversation discussed specifics of the
     v3 relay rules, [ephemeral anchors][topic ephemeral anchors], and
     how they compare to currently-available [CPFP carve-out][topic cpfp
-    carve out] and [anchor outputs][topic anchor outputs].
+    carve out] and [anchor outputs][topic anchor outputs]. {% assign timestamp="34:14" %}
 
 - **Descriptors in PSBT draft BIP:** the SeedHammer team
   [posted][seedhammer descpsbt] a draft BIP to the Bitcoin-Dev mailing
@@ -224,7 +224,7 @@ infrastructure.
   want to create.  As of this writing, the draft BIP has not received
   any replies on the mailing list, although an earlier [post][seedhammer
   descpsbt2] in November about a precursor proposal did receive
-  [feedback][black descpsbt].
+  [feedback][black descpsbt]. {% assign timestamp="48:19" %}
 
 - **Verification of arbitrary programs using proposed opcode from MATT:**
   Johan Torås Halseth [posted][halseth ccv] to Delving Bitcoin about
@@ -238,7 +238,7 @@ infrastructure.
   for the RISC-V architecture using Linux's [ELF][] format; almost any
   programmer can easily create programs for that target, making using
   elftrace highly accessible.  The forum post hasn't received any
-  replies as of this writing.
+  replies as of this writing. {% assign timestamp="57:52" %}
 
 - **Pool exit payment batching with delegation using fraud proofs:**
   Salvatore Ingala [posted][ingala exit] to Delving Bitcoin a proposal
@@ -293,7 +293,7 @@ infrastructure.
     arithmetic operators in [tapscript][topic tapscript].
 
     The idea has received a small amount of discussion as of this
-    writing.
+    writing. {% assign timestamp="1:04:59" %}
 
 - **New coin selection strategies:** Mark Erhardt [posted][erhardt coin]
   to Delving Bitcoin about edge-cases users may have experienced with
@@ -307,7 +307,7 @@ infrastructure.
   The ultimate goal is for Bitcoin Core to generally select the set of
   inputs that will minimize the percentage of UTXO value that is spent
   on fees over the long term, while also not creating unnecessarily
-  large transactions when feerates are high.
+  large transactions when feerates are high. {% assign timestamp="1:14:36" %}
 
 ## Releases and release candidates
 
@@ -318,12 +318,12 @@ release candidates.*
 - [Core Lightning 23.11.2][] is a bug fix release that helps ensure LND
   nodes can pay invoices created by Core Lightning users.  See the
   description of Core Lightning #6957 in the _notable changes_ section
-  below for more details.
+  below for more details. {% assign timestamp="1:17:57" %}
 
 - [Libsecp256k1 0.4.1][] is a minor release that "lightly increases the
   speed of the ECDH operation and significantly enhances the performance
   of many library functions when using the default configuration on
-  x86_64."
+  x86_64." {% assign timestamp="1:18:14" %}
 
 ## Notable code and documentation changes
 
@@ -338,7 +338,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 - [Bitcoin Core #28349][] begins requiring the use of C++20-compatible
   compilers, allowing future PRs to begin using C++20 features.  As the
   PR description states, "C++20 allows to write safer code, because it
-  allows to enforce more stuff at compile time".
+  allows to enforce more stuff at compile time". {% assign timestamp="1:19:06" %}
 
 - [Core Lightning #6957][] fixes an unintentional incompatibility that
   prevented LND users from being able to pay invoices generated by Core
@@ -348,28 +348,28 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   value to a default of 18 but LND is using a value of 9, which is lower
   than Core Lightning will accept by default.  The problem is addressed
   by Core Lightning now including a field in its invoices that requests
-  a value of 18.
+  a value of 18. {% assign timestamp="1:20:21" %}
 
 - [Core Lightning #6869][] updates the `listchannels` RPC to no longer
   list [unannounced channels][topic unannounced channels].  Users who need that information can use the
-  `listpeerchannels` RPC.
+  `listpeerchannels` RPC. {% assign timestamp="1:21:15" %}
 
 - [Eclair #2796][] updates its dependency on [logback-classic][] to fix
   a vulnerability.  Eclair doesn't use the feature affected by the
   vulnerability directly, but the upgrade ensures that any plugins or
-  other related software that use the feature won't be vulnerable.
+  other related software that use the feature won't be vulnerable. {% assign timestamp="1:21:47" %}
 
 - [Eclair #2787][] upgrades its support of header retrieval from
   BitcoinHeaders.net to the latest API.  Header retrieval over DNS helps
   protect nodes from [eclipse attacks][topic eclipse attacks].  See
   [Newsletter #123][news123 headers] for the description of Eclair
   originally supporting DNS-based header retrieval.  Other software
-  using BitcoinHeaders.net may need to upgrade to the new API soon.
+  using BitcoinHeaders.net may need to upgrade to the new API soon. {% assign timestamp="1:22:23" %}
 
 - [LDK #2781][] and [#2688][ldk #2688] update support for sending and
   receiving [blinded payments][topic rv routing], particularly multi-hop
   blinded paths, as well as complying with the requirement that
-  [offers][topic offers] always include at least one blinded hop.
+  [offers][topic offers] always include at least one blinded hop. {% assign timestamp="1:23:14" %}
 
 - [LDK #2723][] adds support for sending [onion messages][topic onion
   messages] using _direct connections_.  In the case where a sender
@@ -379,10 +379,10 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   connection to the receiver, send the message, and then optionally
   close the connection.  This allows onion messages to work well even if
   only a small number of nodes on the network support them (which is the
-  case now).
+  case now). {% assign timestamp="1:24:16" %}
 
 - [BIPs #1504][] updates BIP2 to allow any BIP to be written in
-  Markdown.  Previously all BIPs had to be written in Mediawiki markup.
+  Markdown.  Previously all BIPs had to be written in Mediawiki markup. {% assign timestamp="1:25:00" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
