@@ -191,7 +191,7 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   énormes économies pour de grands groupes d'utilisateurs déplaçant leurs fonds d'un
   contrat à un autre peuvent être critiques lorsque les frais de transaction sont élevés
   et que de nombreux utilisateurs ont des soldes relativement faibles dans le contrat. Par
-  exemple, 100 utilisateurs ont chacun un solde de 10 000 sats ($4 USD au au moment de la rédaction,
+  exemple, 100 utilisateurs ont chacun un solde de 10 000 sats ($4 USD au moment de la rédaction,
   si chaque utilisateur devait payer des frais de transaction pour sortir du contrat et entrer dans un nouveau contrat,
   alors même avec une taille de transaction de dépense très petite de 100 vbytes, des frais de transaction de 100 sats/vbyte
   consommeraient l'intégralité de leur solde. Si ils peuvent déplacer leurs fonds combinés de 1 million de sats dans une seule
