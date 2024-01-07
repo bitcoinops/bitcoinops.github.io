@@ -32,8 +32,8 @@ logiciels d'infrastructure Bitcoin les plus populaires.
       les paiements qu'il envoie, lui donnant ainsi plus de frais de transfert et plus d'informations sur les paiements envoyés par
       le nœud.
 
-  Gögge a d'abord divulgué ces deux vulnérabilités aux développeurs de LND il y a plus de deux ans et des versions de LND contenant des correctifs
-  sont disponibles depuis plus de 18 mois. Optech n'a connaissance d'aucun utilisateur ayant été affecté
+  Gögge a d'abord divulgué ces deux vulnérabilités aux développeurs de LND il y a plus de deux ans et des versions de LND contenant des
+  correctifs sont disponibles depuis plus de 18 mois. Optech n'a connaissance d'aucun utilisateur ayant été affecté
   par l'une ou l'autre vulnérabilité.
 
 - **Timelocks dépendant des frais :** John Law [a publié][law fdt] sur les listes de diffusion Bitcoin-Dev et Lightning-Dev une
@@ -70,10 +70,10 @@ logiciels d'infrastructure Bitcoin les plus populaires.
    pour les valider.
 
    La proposition a suscité un débat modéré, les répondants suggérant de [stocker][riard fdt] les paramètres des verrous temporels
-   dépendant des frais dans l'annexe [taproot][topic taproot], de faire en sorte que les blocs [s'engagent][boris fdt] à leur taux de frais médian
-   pour prendre en charge les clients légers, et des [détails][harding pruned] sur la manière dont les nœuds prunés mis à niveau
-   pourraient prendre en charge le soft-fork. Il y a également eu un débat entre Law et [d'autres][evo fdt] sur l'effet des
-   mineurs acceptant des frais payés en dehors du mécanisme normal de
+   dépendant des frais dans l'annexe [taproot][topic taproot], de faire en sorte que les blocs [s'engagent][boris fdt] à leur taux
+   de frais médian pour prendre en charge les clients légers, et des [détails][harding pruned] sur la manière dont les nœuds prunés
+   mis à niveau pourraient prendre en charge le soft-fork. Il y a également eu un débat entre Law et [d'autres][evo fdt] sur l'effet
+   des mineurs acceptant des frais payés en dehors du mécanisme normal de
    frais de transaction (par exemple, en payant directement un mineur particulier).
 
 - **Estimation des frais de cluster :** Abubakar Sadiq Ismail a [publié][ismail cluster] sur Delving Bitcoin à propos de l'utilisation
@@ -85,9 +85,10 @@ logiciels d'infrastructure Bitcoin les plus populaires.
 
    Dans cette approche, certaines transactions ne sont pas comptabilisées par Bitcoin Core, tandis que d'autres sont
    potentiellement mal comptées. Cela est dû à [CPFP][topic cpfp], où les transactions enfants (et autres descendants) incitent les
-   mineurs à confirmer leurs parents (et autres ascendants). Les transactions enfants peuvent avoir un taux de frais élevé par elles-mêmes,
+   mineurs à confirmer leurs parents (et autres ascendants). Les transactions enfants peuvent avoir un taux de frais élevé par
+   elles-mêmes,
    mais lorsque leurs frais et ceux de leurs ancêtres sont considérés ensemble, le taux de frais peut être significativement plus bas,
-   ce qui les amène à prendre plus de temps que prévu pour être confirmées. Pour éviter que cela ne provoque une surestimation des frais, 
+   ce qui les amène à prendre plus de temps que prévu pour être confirmées. Pour éviter que cela ne provoque une surestimation des frais,
    Bitcoin Core ne met pas à jour ses estimations en utilisant une transaction qui entre dans le mempool lorsque
    son parent n'est pas confirmé. De même, une transaction parent peut avoir un taux de frais faible par elle-même, mais lorsque les
    frais de ses descendants sont également pris en compte, le taux de frais peut être significativement plus élevé, ce qui les amène à
@@ -107,13 +108,15 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   pour cela est l'envoi d'argent à une sortie taproot qui ne peut être dépensée que via une dépense de scriptpath. Pour ce faire, la clé
   qui permet les dépenses de keypath doit être définie sur une clé non dépensable.
 
-   Ingala a relevé plusieurs problèmes à résoudre liés à l'utilisation de clés non dépensables dans les descripteurs et plusieurs solutions proposées
+   Ingala a relevé plusieurs problèmes à résoudre liés à l'utilisation de clés non dépensables dans les descripteurs et plusieurs
+   solutions proposées
    avec différents compromis. Pieter Wuille en personne a résumé plusieurs discussions récentes sur les descripteurs, y compris une
    [idée particulière][wuille undesc2] concernant les clés non dépensables. Josie Baker a demandé des détails sur la raison pour laquelle
    la clé non dépensable ne peut pas être une valeur constante (comme le point nothing-up-my-sleeve (NUMS) dans BIP341), ce qui
    permettrait à tout le monde de savoir immédiatement qu'une clé non dépensable a été utilisée---un avantage possible pour certains
    protocoles, tels que les [paiements silencieux][topic silent payments]. Ingala a répondu à Baker que "c'est une forme de marquage.
-   Vous pouvez toujours révéler cette information vous-même si vous le souhaitez ou en avez besoin, mais c'est mieux que les normes ne vous
+   Vous pouvez toujours révéler cette information vous-même si vous le souhaitez ou en avez besoin, mais c'est mieux que les normes ne
+   vous
    obligent pas à le faire." Wuille a ensuite répondu avec un algorithme pour générer la preuve. Dans le dernier message du fil au
    moment de l'écriture, Ingala a noté que certaines tâches de spécification des politiques liées aux clés non dépensables peuvent être
    réparties entre les descripteurs et les politiques de portefeuille [BIP388][].
@@ -199,10 +202,11 @@ logiciels d'infrastructure Bitcoin les plus populaires.
 
    Le regroupement des paiements est réalisé en demandant à l'un des participants du protocole de contrat multipartie de construire une
    dépense des fonds partagés vers les sorties convenues par les autres participants actifs. Le contrat le permet, mais seulement
-   si celui qui construit la dépense finance une caution qu'il perdra si quelqu'un peut prouver qu'il a mal 
+   si celui qui construit la dépense finance une caution qu'il perdra si quelqu'un peut prouver qu'il a mal
    dépensé les fonds du contrat ; le montant du dépôt devrait être considérablement plus élevé que ce que la partie qui construit peut
    gagner en tentant un transfert incorrect de fonds. Si personne ne génère de preuve de fraude montrant que la partie qui construit a
-   agi de manière inappropriée dans un délai donné, le dépôt est remboursé à celui qui a construit la dépense. Ingala décrit approximativement
+   agi de manière inappropriée dans un délai donné, le dépôt est remboursé à celui qui a construit la dépense. Ingala décrit
+   approximativement
    comment cette fonctionnalité pourrait être ajoutée à un protocole de contrat multipartie en utilisant [OP_CAT][],
    `OP_CHECKCONTRACTVERIFY`, et l'introspection du montant de la proposition de soft fork [MATT][], en notant que cela serait plus facile
    avec l'ajout également de [OP_CSFS][topic op_checksigfromstack] et d'opérateurs arithmétiques sur 64 bits dans
