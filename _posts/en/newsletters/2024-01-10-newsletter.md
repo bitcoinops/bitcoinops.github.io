@@ -258,7 +258,12 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [LND #8308][] zpay32: Change min_final_cltv_expiry_delta.  FIXME:Murchandamus, see also: https://bitcoinops.org/en/newsletters/2024/01/03/#core-lightning-6957
+- [LND #8308][] raises the `min_final_cltv_expiry_delta` from 9 to 18 as
+  recommended by BOLT 02 for terminal payments. This value affects external
+  invoices that don't supply the `min_final_cltv_expiry` parameter. The change
+  remedies the interoperability issue discovered after CLN stopped
+  including the parameter when the default of 18 was used, as
+  [mentioned][cln hotfix] in last week's newsletter.
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
@@ -275,3 +280,4 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [russell inline]: https://rusty.ozlabs.org/2024/01/08/txhash-tx-stacking.html
 [sanders lns]: https://delvingbitcoin.org/t/ln-symmetry-project-recap/359
 [poc lns]: https://github.com/instagibbs/lightning/tree/eltoo_support
+[cln hotfix]: /en/newsletters/2024/01/03/#core-lightning-6957
