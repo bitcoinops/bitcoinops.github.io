@@ -155,6 +155,9 @@ optech_mentions:
   - title: "Core Lightning #6334 updates and expands CLN's experimental support for anchor outputs"
     url: /en/newsletters/2023/07/05/#core-lightning-6334
 
+  - title: Discussion about LN anchors and v3 transaction relay proposal
+    url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out

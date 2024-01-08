@@ -58,6 +58,9 @@ optech_mentions:
   - title: Discussion about the costs of pinning when v3 policies are used
     url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
 
+  - title: Discussion about LN anchors and v3 transaction relay proposal
+    url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

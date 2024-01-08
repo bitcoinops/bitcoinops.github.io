@@ -24,6 +24,9 @@ primary_sources:
     - title: Eltoo
       link: https://blockstream.com/eltoo.pdf
 
+    - title: LN-Symmetry Project
+      link: https://delvingbitcoin.org/t/ln-symmetry-project-recap/359
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -74,6 +77,9 @@ optech_mentions:
 
   - title: "Using eltoo-compatible covenants to improve LN scalability"
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
+  - title: "LN-Symmetry research implementation with summary of initial results"
+    url: /en/newsletters/2024/01/10/#ln-symmetry-research-implementation
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
