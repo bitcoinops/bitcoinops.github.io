@@ -34,7 +34,7 @@ optech_mentions:
   - title: "Improvements to features for miners that accept out-of-band fees"
     url: /en/newsletters/2023/05/10/#bitcoin-core-pr-review-club
 
-  - title: Discussion about the effect of out-of-band fees on proposed fee-depenndent timelocks
+  - title: Discussion about the effect of out-of-band fees on proposed fee-dependent timelocks
     url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
 
   - title: "Frequent use of exogenous fees may risk mining decentralization due to out-of-band fees"
@@ -67,7 +67,7 @@ to increase its feerate but is unable to use either [RBF][topic rbf] or
 [CPFP][topic cpfp] fee bumping.  Instead, she contacts a miner directly
 and pays them to include the transaction in their candidate blocks,
 which will eventually lead to confirmation (unless the miner gives up).
-Alice's payment can be completely independent from her transaction; she
+Alice's payment can be completely independent of her transaction; she
 may even pay using a non-bitcoin form of currency.
 
 Consistent use of out-of-band fees weakens Bitcoin's censorship
@@ -81,9 +81,9 @@ will be confirmed within 6 blocks: `1 - (1 - 0.55)**6`
 
 The advantage to Alice of paying small miners out of band is minuscule,
 likely meaning they will not receive the same opportunity to earn fees
-as large miners.  If large miners are significantly more profitable than
+as large miners.  If large miners earn a significantly higher percentage of profit than
 small miners for a long period of time, we would expect large miners to
-control a majority of total network hash rate.  The fewer entities
+control a majority of total network hash rate.  The fewer entities that
 control a majority of hash rate, the fewer entities there are that need
 to be compromised to censor which transactions get included in blocks.
 
