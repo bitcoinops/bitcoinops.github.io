@@ -21,7 +21,7 @@ categories:
 ## "[title](link)"
 primary_sources:
     - title: Route blinding
-      link: https://github.com/lightningnetwork/lightning-rfc/blob/route-blinding/proposals/route-blinding.md
+      link: https://github.com/lightning/bolts/blob/master/proposals/route-blinding.md
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
