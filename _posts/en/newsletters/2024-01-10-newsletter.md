@@ -240,12 +240,114 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+[Nuke adjusted time (attempt 2)][review club 28956]
+is a PR by Niklas Gögge that modifies a block validity
+check related to the block's timestamp.
+Roughly, if a block's timestamp (contained in its header)
+is too far in the past or the future, the node rejects the
+block as invalid. Note that if the block is invalid because
+its timestamp is too far in the future, it can become valid
+later (although the chain may have moved on).
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/v26-rc-testing#l-18FIXME"
+  q0="Is it necessary for block headers to have a timestamp? If so, why?"
+  a0="Yes, the timestamp is used in difficulty adjustment and
+      to validate transaction timelocks."
+  a0link="https://bitcoincore.reviews/28956#l-39"
+
+  q1="What is the difference between Median Time Past (MTP) and
+      network-adjusted time? Which of these are relevant to the PR?"
+  a1="MTP is the median time of the last 11 blocks, and is the lower
+      bound of block timestamp validity. Network-adjusted
+      time is calculated as our own node's time plus the median
+      of the offsets between our time and that of a random selection
+      of 199 of our outbound peers. (This median can be negative.)
+      The network-adjusted time plus 2 hours is the maximum
+      valid block timestamp.
+      Only network-adjusted time is relevant to this PR."
+  a1link="https://bitcoincore.reviews/28956#l-67"
+
+  q2="Why are these times conceptually very different?"
+  a2="MTP is uniquely defined for all nodes synced to
+      the same chain; there is consensus on time.
+      Network-adjusted time can vary across nodes."
+  a2link="https://bitcoincore.reviews/28956#l-74"
+
+  q3="Why don't we just use MTP for everything and scrap
+      network-adjusted time?"
+  a3="MTP is used as the lower bound of block timestamp
+      validity, but it can't be used as an upper bound
+      because future block timestamps are unknown."
+  a3link="https://bitcoincore.reviews/28956#l-77"
+
+  q4="Why are limits enforced on how far \"off\" a block
+      header's timestamp is allowed to be from the node's internal clock?
+      And since we don't require exact agreement on time, can these
+      limits be made more strict?"
+  a4="The block timestamp range is restricted so that malicious
+      nodes' ability to manipulate difficulty adjustments and
+      locktimes is limited. These kinds of attacks are called
+      timewarp attacks.
+      The valid range can be made more strict to an extent,
+      but making it too strict could lead to temporary chain splits
+      since some nodes may reject blocks that other nodes accept.
+      Block timestamps don't need to be exactly correct, but
+      they need to track actual time over the long run."
+  a4link="https://bitcoincore.reviews/28956#l-82"
+
+  q5="Before this PR, why would an attacker try to manipulate
+      a node's network-adjusted time?"
+  a5="If the node is a miner, to get its mined blocks rejected
+      by the network or to get it to not accept a valid block so
+      it keeps wasting hashrate on an old tip
+      (both of those would give an advantage to a competing miner);
+      to get the attacked node to follow the wrong chain;
+      to cause a time-locked transaction to not be mined when
+      it should be;
+      to perform a [time dilation attack][] on the Lightning Network."
+  a5link="https://bitcoincore.reviews/28956#l-89"
+
+  q6="Prior to this PR, how could an attacker try to manipulate a
+      node's network-adjusted time? Which network message(s) would
+      they use?"
+  a6="An attacker would need to send us version messages with
+      manipulated timestamps from multiple peers that they control.
+      They would need us to make more than 50% of our outbound
+      connections to their nodes, which is hard but much easier
+      than completely eclipsing the node."
+  a6link="https://bitcoincore.reviews/28956#l-100"
+
+  q7="This PR uses the node's local clock as the upper-bound
+      block validation time, rather than network-adjusted time.
+      Can we be sure that this reduces esoteric attack surfaces,
+      rather than increasing them?"
+  a7="Discussion ensued with no clear resolution as to whether it's
+      easier for an attacker to affect a node's peer set or its
+      internal clock (using malware or NTP fakery, for example),
+      but most participants agreed that the PR is an improvement."
+  a7link="https://bitcoincore.reviews/28956#l-102"
+
+  q8="Does this PR change consensus behavior? If so, is this a
+      soft fork, a hard fork, or neither? Why?"
+  a8="Because consensus rules can't consider data from outside of the
+      block chain (such as each node's own clock), this PR can't be
+      considered a consensus change; it's just a network _acceptance_
+      policy change. But that doesn't mean it's optional; having
+      some policy rule limiting how far a block's timestamp can be
+      in the future is [essential][se timestamp accecptance]
+      to the security of the network."
+  a8link="https://bitcoincore.reviews/28956#l-141"
+
+  q9="Which operations were relying on network-adjusted time
+      prior to this PR?"
+  a9="[`TestBlockValidity`][TestBlockValidity function],
+      [`CreateNewBlock`][CreateNewBlock function] (used by miners
+      to build block templates), and
+      [`CanDirectFetch`][CanDirectFetch function] (used in the P2P
+      layer). The variety of these uses shows that the PR doesn't
+      just affect block validity, but there are other implications,
+      which we need to validate."
+  a9link="https://bitcoincore.reviews/28956#l-197"
 %}
 
 ## Notable code and documentation changes
@@ -281,3 +383,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [sanders lns]: https://delvingbitcoin.org/t/ln-symmetry-project-recap/359
 [poc lns]: https://github.com/instagibbs/lightning/tree/eltoo_support
 [cln hotfix]: /en/newsletters/2024/01/03/#core-lightning-6957
+[review club 28956]: https://bitcoincore.reviews/28956
+[time dilation attack]: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
+[se timestamp accecptance]: https://bitcoin.stackexchange.com/a/121251/97099
+[TestBlockValidity function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/validation.cpp#L4228
+[CreateNewBlock function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/node/miner.cpp#L106
+[CanDirectFetch function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/net_processing.cpp#L1314
