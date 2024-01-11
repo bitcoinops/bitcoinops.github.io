@@ -59,7 +59,7 @@ software.
       its dependency on exogenous fees significantly incentivizes paying
       out-of-band fees.  In particular, the unilateral close of a
       channel with no pending payments ([HTLCs][topic htlc]) would
-      allow a large miner accepting out-of-band fees to include twice as
+      allow a large miner accepting out-of-band fees to include twice as many
       close transactions in a block than could be included by a smaller
       miner who only accepted in-band fees paid for through CPFP fee
       bumping.  The large miner could profitably encourage this by
