@@ -24,6 +24,8 @@ software.
   Peter Todd [posting][todd v3] a critique of v3 relay policy on his
   blog.  We've arbitrarily divided the discussion into several parts:
 
+  {% assign timestamp="1:03" %}
+
   - **Frequent use of exogenous fees may risk mining decentralization:**
     an ideal version of the Bitcoin protocol would reward each miner
     proportionately to their hashrate.  The implicit fees paid in
@@ -196,6 +198,8 @@ software.
   change such as [SIGHASH_ANYPREVOUT][topic sighash_anyprevout].
   Sanders offers several highlights from his work:
 
+  {% assign timestamp="35:03" %}
+
     - *Simplicity:* LN-Symmetry is a much simpler protocol than the
       currently used LN-Penalty/[LN-Anchors][topic anchor outputs]
       protocol.
@@ -248,6 +252,8 @@ is too far in the past or the future, the node rejects the
 block as invalid. Note that if the block is invalid because
 its timestamp is too far in the future, it can become valid
 later (although the chain may have moved on).
+
+  {% assign timestamp="50:01" %}
 
 {% include functions/details-list.md
   q0="Is it necessary for block headers to have a timestamp? If so, why?"
@@ -365,7 +371,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   invoices that don't supply the `min_final_cltv_expiry` parameter. The change
   remedies the interoperability issue discovered after CLN stopped
   including the parameter when the default of 18 was used, as
-  [mentioned][cln hotfix] in last week's newsletter.
+  [mentioned][cln hotfix] in last week's newsletter. {% assign timestamp="1:05:06" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
