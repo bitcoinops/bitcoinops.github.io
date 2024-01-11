@@ -300,7 +300,7 @@ les versions candidates.*
 [black descpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022186.html
 [halseth ccv]: https://delvingbitcoin.org/t/verification-of-risc-v-execution-using-op-ccv/313
 [elftrace]: https://github.com/halseth/elftrace
-[matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
+[matt]: /fr/newsletters/2022/11/16/#contrats-intelligents-generaux-en-bitcoin-via-des-clauses-restrictives
 [news273 bitvm]: /fr/newsletters/2023/10/18/#paiements-conditionnels-a-une-computation-arbitraire
 [elf]: https://en.m.wikipedia.org/wiki/Executable_and_Linkable_Format
 [ingala exit]: https://delvingbitcoin.org/t/aggregate-delegated-exit-for-l2-pools/297
