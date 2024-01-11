@@ -301,7 +301,7 @@ les versions candidates.*
 [halseth ccv]: https://delvingbitcoin.org/t/verification-of-risc-v-execution-using-op-ccv/313
 [elftrace]: https://github.com/halseth/elftrace
 [matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
-[news273 bitvm]: /en/newsletters/2023/10/18/#payments-contingent-on-arbitrary-computation
+[news273 bitvm]: /fr/newsletters/2023/10/18/#paiements-conditionnels-a-une-computation-arbitraire
 [elf]: https://en.m.wikipedia.org/wiki/Executable_and_Linkable_Format
 [ingala exit]: https://delvingbitcoin.org/t/aggregate-delegated-exit-for-l2-pools/297
 [erhardt coin]: https://delvingbitcoin.org/t/gutterguard-and-coingrinder-simulation-results/279/1
