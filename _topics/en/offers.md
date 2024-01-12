@@ -13,6 +13,8 @@ aliases:
 ## schema for options
 categories:
   - Lightning Network
+  - Invoicing
+  - Wallet Collaboration Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
