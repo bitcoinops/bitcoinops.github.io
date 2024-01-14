@@ -109,6 +109,9 @@ optech_mentions:
   - title: "Bitcoin Core #27411 stops announcing the local node's Tor or I2P address on other networks"
     url: /en/newsletters/2023/07/19/#bitcoin-core-27411
 
+  - title: "Bitcoin Core #29200 allows the I2P to use connections encrypted with both ECIES-X25519 and ElGamal"
+    url: /en/newsletters/2024/01/17/#bitcoin-core-29200
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion

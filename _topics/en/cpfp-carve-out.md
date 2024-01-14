@@ -55,6 +55,9 @@ optech_mentions:
   - title: Research into alternatives to CPFP carve-out for fee bumping in multiparty contract protocols
     url: /en/newsletters/2021/12/08/#fee-bumping-research
 
+  - title: "Discussion about the incompatibility between cluster mempool and CPFP carve-out"
+    url: /en/newsletters/2024/01/17/#cpfp-carve-out-needs-to-be-removed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

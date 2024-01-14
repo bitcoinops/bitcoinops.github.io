@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
     url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
 
+  - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
+    url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha

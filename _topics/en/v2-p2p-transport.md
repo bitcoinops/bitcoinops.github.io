@@ -68,6 +68,9 @@ optech_mentions:
   - title: "Bitcoin Core #28331 adds optional support for v2 encrypted P2P transport"
     url: /en/newsletters/2023/10/11/#bitcoin-core-28331
 
+  - title: "Bitcoin Core #29058 begins using v2 P2P transport by default for some connections"
+    url: /en/newsletters/2024/01/17/#bitcoin-core-29058
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
