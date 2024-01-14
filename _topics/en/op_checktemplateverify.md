@@ -114,6 +114,9 @@ optech_mentions:
   - title: "Using covenants like OP_CTV and APO to improve LN scalability"
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
 
+  - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
+    url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
