@@ -61,6 +61,9 @@ optech_mentions:
   - title: Discussion about LN anchors and v3 transaction relay proposal
     url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
 
+  - title: Discussion about cluster mempool and a need for a CPFP carve out replacement like v3 relay
+    url: /en/newsletters/2024/01/17/#cpfp-carve-out-needs-to-be-removed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

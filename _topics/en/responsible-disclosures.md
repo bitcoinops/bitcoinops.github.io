@@ -75,6 +75,9 @@ optech_mentions:
   - title: "Niklas Gögge responsibly disclosed two vulnerabilities affecting LND"
     url: /en/newsletters/2024/01/03/#disclosure-of-past-lnd-vulnerabilities
 
+  - title: "Matt Morehouse responsibly disclosed vulnerability affecting Core Lightning"
+    url: /en/newsletters/2024/01/17/#disclosure-of-past-vulnerability-in-core-lightning
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

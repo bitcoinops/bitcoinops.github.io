@@ -74,6 +74,9 @@ optech_mentions:
   - title: "LDK #2781 and #2688 update support for sending and receiving blinded payments"
     url: /en/newsletters/2024/01/03/#ldk-2781
 
+  - title: "LND #8095 and #8142 add additional logic to parts of LND's codebase for handling binded paths"
+    url: /en/newsletters/2024/01/17/#lnd-8095
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

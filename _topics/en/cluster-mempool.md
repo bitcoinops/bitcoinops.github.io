@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Discussion about cluster fee estimation"
     url: /en/newsletters/2024/01/03/#cluster-fee-estimation
 
+  - title: "Overview of cluster mempoool, including discussion about its effect on CPFP carve-out"
+    url: /en/newsletters/2024/01/17/#overview-of-cluster-mempool-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
