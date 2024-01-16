@@ -218,7 +218,13 @@ Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
 Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [Bitcoin Inquisition][bitcoin inquisition repo].*
 
-- [Bitcoin Core #29058][] net, cli: use v2transport for manual/addrfetch connections, add to -netinfo FIXME:adamjonas
+- [Bitcoin Core #29058][] is a preparation step to activate
+  [version 2 P2P transport (BIP324)][topic v2 p2p transport] by default.
+  This patch adds v2transport support for `-connect`, `-addnode` and
+  `-seednode` configuration arguments if `-v2transport` is enabled and
+  reconnects with v1 if the peer does not support v2. Additionally,
+  this update adds a column displaying the transport protocol version
+  to the `netinfo` peer connection `bitcoin-cli` dashboard.
 
 - [Bitcoin Core #29200][] allows the [I2P network support][topic
   anonymity networks] to use connections encrypted using "ECIES-X25519
