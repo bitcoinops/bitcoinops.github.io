@@ -39,7 +39,7 @@ popular Bitcoin infrastructure software
     the race condition from crashing the node.
 
     For more information, we recommend reading Morehouse's excellent
-    [full disclosure][morehouse full] blog post.
+    [full disclosure][morehouse full] blog post. {% assign timestamp="2:15" %}
 
 - **New LNHANCE combination soft fork proposed:** Brandon Black
   [posted][black lnhance] to Delving Bitcoin details about a soft fork
@@ -63,7 +63,7 @@ popular Bitcoin infrastructure software
     CTV-style congestion control and CSFS-style signature delegation.
 
     As of this writing, technical discussion was limited to the request
-    about what protocols the combination proposal would enable.
+    about what protocols the combination proposal would enable. {% assign timestamp="4:59" %}
 
 - **Proposal for 64-bit arithmetic soft fork:** Chris Stewart
   [posted][stewart 64] a [draft BIP][bip 64] to Delving Bitcoin for
@@ -81,7 +81,7 @@ popular Bitcoin infrastructure software
     proposal, such as how to encode the integer value, what
     [taproot][topic taproot] upgrade feature to use, and whether
     creating a new set of arithmetic opcodes is preferred to upgrading
-    existing ones.
+    existing ones. {% assign timestamp="21:08" %}
 
 - **Overview of cluster mempool proposal:** Suhas Daftuar
   [posted][daftuar cluster] a summary of the [cluster mempool][topic
@@ -129,7 +129,7 @@ popular Bitcoin infrastructure software
   developers working on software for mining, wallets, or contract
   protocols to read Daftuar's description and ask questions about
   anything that's not clear or which might adversely affect how Bitcoin
-  software will interact with cluster mempool.
+  software will interact with cluster mempool. {% assign timestamp="38:25" %}
 
 - **Updated specification and implementation of Bitcoin transaction compression:**
   Tom Briar [posted][briar compress] to the Bitcoin-Dev mailing list an
@@ -142,7 +142,7 @@ popular Bitcoin infrastructure software
   original proposal.  Briar describes the notable changes: "removing the
   grinding of the nLocktime in favor of a relative block height, which
   all of the compressed inputs use, and the use of a second kind of
-  variable integer."
+  variable integer." {% assign timestamp="45:22" %}
 
 - **Discussion of Miner Extractable Value (MEV) in non-zero ephemeral anchors:**
   Gregory Sanders [posted][sanders mev] to Delving Bitcoin to discuss
@@ -195,7 +195,7 @@ popular Bitcoin infrastructure software
     to miners in a way that ensures all miners and relay nodes can
     obtain the same set of transactions.
 
-  No clear conclusion seemed to have been reached at the time of writing.
+  No clear conclusion seemed to have been reached at the time of writing. {% assign timestamp="46:51" %}
 
 ## Releases and release candidates
 
@@ -206,7 +206,7 @@ release candidates.*
 - [LDK 0.0.119][] is a new release of this library for building
   LN-enabled applications.  Multiple new features are added, including
   receiving payments to multi-hop [blinded paths][topic rv routing],
-  along with multiple bug fixes and other improvements.
+  along with multiple bug fixes and other improvements. {% assign timestamp="56:24" %}
 
 ## Notable code and documentation changes
 
@@ -224,13 +224,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   `-seednode` configuration arguments if `-v2transport` is enabled and
   reconnects with v1 if the peer does not support v2. Additionally,
   this update adds a column displaying the transport protocol version
-  to the `netinfo` peer connection `bitcoin-cli` dashboard.
+  to the `netinfo` peer connection `bitcoin-cli` dashboard. {% assign timestamp="57:17" %}
 
 - [Bitcoin Core #29200][] allows the [I2P network support][topic
   anonymity networks] to use connections encrypted using "ECIES-X25519
   and ElGamal (types 4 and, 0, respectively). This allows to connect to
   I2P peers of either type, and the newer, faster ECIES-X25519 will be
-  preferred."
+  preferred." {% assign timestamp="58:59" %}
 
 - [Bitcoin Core #28890][] removes the `-rpcserialversion` configuration
   parameter that was previously deprecated (see [Newsletter
@@ -238,7 +238,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   to v0 segwit to allow older programs to continue to access blocks and
   transactions in stripped format (without any segwit fields). At this
   point, all programs should be updated to handle segwit transactions
-  and this option should no longer be needed.
+  and this option should no longer be needed. {% assign timestamp="1:00:08" %}
 
 - [Eclair #2808][] updates the `open` command with  a
   `--fundingFeeBudgetSatoshis` parameter that defines the maximum amount
@@ -247,7 +247,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   try to pay a lower fee if possible, but it will pay up to the budgeted
   amount if necessary.  The `rbfopen` command is also updated to accept
   the same parameter which defines the maximum amount to spend on [RBF
-  fee bumping][topic rbf].
+  fee bumping][topic rbf]. {% assign timestamp="1:01:25" %}
 
 - [LND #8188][] adds several new RPCs for quickly obtaining debugging
   information, encrypting it to a public key, and decrypting it given a
@@ -255,7 +255,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   public key in the GitHub issue template and would ask users to run the
   `lncli encryptdebugpackage` command and upload the encrypted output
   files to the GitHub issue to provide us with the information we
-  normally require to debug user problems."
+  normally require to debug user problems." {% assign timestamp="1:02:09" %}
 
 - [LND #8096][] adds a "fee spike buffer".  In the current LN protocol,
   the party who single-funded a channel is responsible for paying
@@ -272,11 +272,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   funds to ensure an additional payment can be received even if feerates
   rise.  LND now implements this solution, which is also implemented by
   Core Lightning and Eclair (see Newsletters [#85][news85 stuck] and
-  [#89][news89 stuck]).
+  [#89][news89 stuck]). {% assign timestamp="1:07:44" %}
 
 - [LND #8095][] and [#8142][lnd #8142] add additional logic to parts of
   LND's codebase for handling [blinded paths][topic rv routing].  This is
-  part of ongoing work to add full support for blinded paths to LND.
+  part of ongoing work to add full support for blinded paths to LND. {% assign timestamp="1:09:08" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
