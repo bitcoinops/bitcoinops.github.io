@@ -275,7 +275,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   [#89][news89 stuck]).
 
 - [LND #8095][] and [#8142][lnd #8142] add additional logic to parts of
-  LND's codebase for handling [binded paths][topic rv routing].  This is
+  LND's codebase for handling [blinded paths][topic rv routing].  This is
   part of ongoing work to add full support for blinded paths to LND.
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
