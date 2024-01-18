@@ -14,7 +14,7 @@ specification and implementation of transaction compression, and
 summarizes a discussion about Miner Extractable Value (MEV) in non-zero
 ephemeral anchors.  Also included are our regular sections with the
 announcements of new releases and descriptions of notable changes to
-popular Bitcoin infrastructure software
+popular Bitcoin infrastructure software.
 
 ## News
 
@@ -33,7 +33,7 @@ popular Bitcoin infrastructure software
     broken counterparties, which puts the user's funds at risk.
     Analysis indicated that CLN had fixed the original fake funding
     vulnerability but was unable to safely include a test for it before
-    the vulnerability was disclosed, resulting the subsequent merge of a
+    the vulnerability was disclosed, resulting in the subsequent merge of a
     plugin introducing the exploitable race condition.  After
     Morehouse's disclosure, a quick patch was merged in CLN to prevent
     the race condition from crashing the node.
@@ -109,12 +109,12 @@ popular Bitcoin infrastructure software
       significantly exceed its limits, at which point the protocol would
       need to be engineered for those much higher limits. That would
       accommodate users of carve outs but restrict what regular
-      transaction broadcasters can do---an undesireable proposition.
+      transaction broadcasters can do---an undesirable proposition.
 
       A proposed solution to the incompatibility between carve out and
       cluster mempool is [v3 transaction relay][topic v3 transaction
       relay], which would allow regular users of v1 and v2 transactions
-      to continuing using them in all the historically typical ways, but
+      to continue using them in all the historically typical ways, but
       also allow the users of contract protocols like LN to opt in to v3
       transactions that enforce a restricted set of relationships
       between transactions (_topology_).  The restricted topology would
@@ -136,7 +136,7 @@ popular Bitcoin infrastructure software
   updated [draft specification][compress spec] and [proposed
   implementation][bitcoin core #28134] of compressed Bitcoin
   transactions.  Smaller transactions would be more practical to relay
-  through bandwidth constrained mediums, such as by satellite or through
+  through bandwidth-constrained mediums, such as by satellite or through
   steganography (e.g., encoding a transaction in a bitmap image).  See
   [Newsletter #267][news267 compress] for our description of the
   original proposal.  Briar describes the notable changes: "removing the
@@ -185,7 +185,7 @@ popular Bitcoin infrastructure software
     output, destroying those satoshis by making them permanently
     unspendable.  This would only happen if a commitment transaction
     containing a trimmed HTLC was put onchain; normally trimmed HTLCs
-    are resolved offchain and their value successfully transferred from
+    are resolved offchain and their value is successfully transferred from
     one party to the other.
 
   - *Ensure MEV transactions propagate easily:* instead of having miners
@@ -195,7 +195,7 @@ popular Bitcoin infrastructure software
     to miners in a way that ensures all miners and relay nodes can
     obtain the same set of transactions.
 
-  No clear conclusion seemed to have been reached at the time of writing. {% assign timestamp="46:51" %}
+  No clear conclusion has been reached at the time of writing. {% assign timestamp="46:51" %}
 
 ## Releases and release candidates
 
@@ -220,7 +220,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #29058][] is a preparation step to activate
   [version 2 P2P transport (BIP324)][topic v2 p2p transport] by default.
-  This patch adds v2transport support for `-connect`, `-addnode` and
+  This patch adds v2transport support for `-connect`, `-addnode`, and
   `-seednode` configuration arguments if `-v2transport` is enabled and
   reconnects with v1 if the peer does not support v2. Additionally,
   this update adds a column displaying the transport protocol version
@@ -261,9 +261,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the party who single-funded a channel is responsible for paying
   any onchain fees directly <!-- endogenously --> included in the
   commitment transaction and the presigned HTLC-Success and HTLC-Timeout
-  transactions (HTLC-X transactions).  If the funding party doesn't have
-  much funds in the channel and if feerates rise, the funding party may
-  not be able accept a new incoming payment because they don't have
+  transactions (HTLC-X transactions).  If the funding party is low on
+  funds in the channel and if feerates rise, the funding party may
+  not be able to accept a new incoming payment because they don't have
   enough funds to pay for its fees---this is despite the fact that an
   incoming payment would increase the funding party's balance, if the
   payment settles.  To avoid this type of stuck-channel problem, a
