@@ -1,6 +1,6 @@
 ---
 title: 'Bulletin Bitcoin Optech #284'
-permalink: /fr/bulletins/2024/01/10/
+permalink: /fr/newsletters/2024/01/10/
 name: 2024-01-10-newsletter-fr
 slug: 2024-01-10-newsletter-fr
 type: newsletter
