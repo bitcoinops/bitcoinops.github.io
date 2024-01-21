@@ -273,6 +273,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
 [review club 28956]: https://bitcoincore.reviews/28956
 [attaque de dilatation temporelle]: /en/newsletters/2020/06/10/#time-dilation-attacks-against-ln
 [se timestamp accecptance]: https://bitcoin.stackexchange.com/a/121251/97099
-[TestBlockValidity function] : https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/validation.cpp#L4228
-[CreateNewBlock function] : https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/node/miner.cpp#L106
-[CanDirectFetch function] : https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/net_processing.cpp#L1314
+[TestBlockValidity function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/validation.cpp#L4228
+[CreateNewBlock function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/node/miner.cpp#L106
+[CanDirectFetch function]: https://github.com/bitcoin/bitcoin/blob/063a8b83875997068b3eb506b5f30f2691d18052/src/net_processing.cpp#L1314
