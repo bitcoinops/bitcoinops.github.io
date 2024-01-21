@@ -1,4 +1,4 @@
----
+Un att---
 title: 'Bulletin Bitcoin Optech #284'
 permalink: /fr/newsletters/2024/01/10/
 name: 2024-01-10-newsletter-fr
@@ -177,7 +177,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
       pour le PR ?"
   a1="MTP est le temps médian des 11 derniers blocs et constitue la limite inférieure de validité de l'horodatage du bloc. Le temps
       ajusté au réseau est calculé en ajoutant notre propre temps à la médiane des décalages entre notre temps et celui d'une sélection
-      aléatoire de 199 de nos pairs sortants. (Cette médiane peut être négative.) Le temps ajusté au réseau plus 2 heures est
+      aléatoire de 199 de nos pairs sortants (Cette médiane peut être négative). Le temps ajusté au réseau plus 2 heures est
       l'horodatage maximal valide du bloc. Seul le temps ajusté au réseau est pertinent pour ce PR."
   a1link="https://bitcoincore.reviews/28956#l-67"
 
@@ -193,7 +193,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
 
   q4="Pourquoi des limites sont-elles imposées sur l'écart autorisé entre l'horodatage de l'en-tête d'un bloc et l'horloge interne du
       nœud ? Et puisque nous n'exigeons pas un accord exact sur l'heure, ces limites peuvent-elles être rendues plus strictes ?"
-  a4="La plage d'horodatage du bloc est de limiter la capacité des nœuds malveillants à manipuler les ajustements de difficulté
+  a4="Avoir une plage d'horodatage du bloc restreinte limite la capacité des nœuds malveillants à manipuler les ajustements de difficulté
       et la durée de verrouillage. Ces types d'attaques sont appelées attaques de manipulation temporelle. La plage valide peut être
       rendue plus stricte dans une certaine mesure, mais la rendre trop stricte pourrait entraîner des divisions temporaires de la
       chaîne, car certains nœuds peuvent rejeter des blocs que d'autres nœuds acceptent. Les horodatages des blocs n'ont pas besoin
@@ -201,16 +201,17 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
   a4link="https://bitcoincore.reviews/28956#l-82"
 
   q5="Avant cette proposition de modification, pourquoi un attaquant essaierait-il de manipuler l'heure ajustée du réseau d'un nœud ?"
-  a5="Si le nœud est un mineur, pour que ses blocs minés soient rejetés par le réseau ou pour qu'il n'accepte pas un bloc valide, afin
-      qu'il continue de gaspiller sa puissance de calcul sur une ancienne chaine (ces deux situations donneraient un avantage à un mineur
-      concurrent) ; pour amener le nœud attaqué à suivre la mauvaise chaîne ; pour empêcher une transaction verrouillée dans le temps
-      d'être minée quand elle devrait l'être ; pour effectuer une [attaque de dilatation temporelle][] sur le réseau Lightning."
+  a5="Si le nœud est un mineur, l'attaquant pourrait manipuler l'heure pour que les blocs qu'il mine soient rejetés par le réseau 
+      ou pour qu'il n'accepte pas un bloc valide, ou pour qu'il continue de gaspiller sa puissance de calcul sur une ancienne chaine
+      (ces deux situations donneraient un avantage à un mineur concurrent) ; 
+      il pourrait aussi avoir pour objectif d'amener le nœud attaqué à suivre la mauvaise chaîne ; ou d'empêcher une transaction verrouillée dans le temps
+      d'être minée quand elle devrait l'être ; ou encore d'effectuer une [attaque de dilatation temporelle][] sur le réseau Lightning."
   a5link="https://bitcoincore.reviews/28956#l-89"
 
   q6="Avant cette proposition de modification, comment un attaquant pouvait-il essayer de manipuler l'heure ajustée du réseau d'un nœud ?
       Quel(s) message(s) réseau utiliserait-il ?"
-  a6="Un attaquant devrait nous envoyer des messages de version avec des horodatages manipulés provenant de plusieurs pairs qu'il
-      contrôle. Il devrait nous amener à établir plus de 50 % de nos connexions sortantes vers ses nœuds, ce qui est difficile mais
+  a6="Un attaquant aurait dû vous envoyer des messages de version avec des horodatages manipulés provenant de plusieurs pairs qu'il
+      contrôle. Il aurait dû vous amener à établir plus de 50 % de vos connexions sortantes vers ses nœuds, ce qui est difficile mais
       beaucoup plus facile que d'éclipser complètement le nœud."
   a6link="https://bitcoincore.reviews/28956#l-100"
 
