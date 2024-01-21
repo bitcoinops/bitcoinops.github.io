@@ -200,7 +200,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
       d'être exactement corrects, mais ils doivent suivre le temps réel sur le long terme."
   a4link="https://bitcoincore.reviews/28956#l-82"
 
-  q5="Avant cette proposition de modification, pourquoi un attaquant essaierait-il de manipuler l'heure ajustée du réseau d'un nœud ?
+  q5="Avant cette proposition de modification, pourquoi un attaquant essaierait-il de manipuler l'heure ajustée du réseau d'un nœud ?"
   a5="Si le nœud est un mineur, pour que ses blocs minés soient rejetés par le réseau ou pour qu'il n'accepte pas un bloc valide, afin
       qu'il continue de gaspiller sa puissance de calcul sur une ancienne chaine (ces deux situations donneraient un avantage à un mineur
       concurrent) ; pour amener le nœud attaqué à suivre la mauvaise chaîne ; pour empêcher une transaction verrouillée dans le temps
