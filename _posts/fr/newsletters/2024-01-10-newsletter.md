@@ -208,21 +208,21 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
   a5link="https://bitcoincore.reviews/28956#l-89"
 
   q6="Avant cette proposition de modification, comment un attaquant pouvait-il essayer de manipuler l'heure ajustée du réseau d'un nœud ?
-      Quel(s) message(s) réseau utiliserait-il ?
+      Quel(s) message(s) réseau utiliserait-il ?"
   a6="Un attaquant devrait nous envoyer des messages de version avec des horodatages manipulés provenant de plusieurs pairs qu'il
       contrôle. Il devrait nous amener à établir plus de 50 % de nos connexions sortantes vers ses nœuds, ce qui est difficile mais
       beaucoup plus facile que d'éclipser complètement le nœud."
   a6link="https://bitcoincore.reviews/28956#l-100"
 
   q7="Cette proposition de modification utilise l'horloge locale du nœud comme limite supérieure pour la validation des blocs, plutôt que
-      l'heure ajustée du réseau. Pouvons-nous être sûrs que cela réduit les surfaces d'attaque ésotériques plutôt que de les augmenter ?
+      l'heure ajustée du réseau. Pouvons-nous être sûrs que cela réduit les surfaces d'attaque ésotériques plutôt que de les augmenter ?"
   a7="Une discussion a eu lieu sans résolution claire quant à savoir s'il est plus facile pour un attaquant d'affecter l'ensemble de
       pairs d'un nœud ou son horloge interne (en utilisant des logiciels malveillants ou des manipulations NTP, par exemple), mais la
       plupart des participants ont convenu que cette proposition de modification est une amélioration."
   a7link="https://bitcoincore.reviews/28956#l-102"
 
   q8="Cette proposition de modification modifie-t-elle le comportement du consensus ? Si oui, s'agit-il d'un soft fork, d'un hard fork
-      ou aucun des deux ? Pourquoi ?
+      ou aucun des deux ? Pourquoi ?"
   a8="Étant donné que les règles de consensus ne peuvent pas prendre en compte des données extérieures à la chaîne de blocs (comme
       l'horloge de chaque nœud), cette proposition de modification ne peut pas être considérée comme un changement de consensus ; il
       s'agit simplement d'un changement de politique d'acceptation du réseau. Mais cela ne signifie pas que c'est facultatif ; avoir
@@ -230,7 +230,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
       [essentiel][se timestamp accecptance] pour la sécurité du réseau."
   a7link="https://bitcoincore.reviews/28956#l-141"
 
-  q9="Quelles opérations dépendaient de l'heure ajustée du réseau avant cette proposition de modification ?
+  q9="Quelles opérations dépendaient de l'heure ajustée du réseau avant cette proposition de modification ?"
   a9="Les fonctions [`TestBlockValidity`][TestBlockValidity function], [`CreateNewBlock`][CreateNewBlock function] (utilisée par les
       mineurs pour construire des modèles de blocs) et la fonction [`CanDirectFetch`][CanDirectFetch function] (utilisée dans la couche
       P2P). La variété de ces utilisations montre que cette proposition de modification n'affectent que la validité des blocs, mais il
