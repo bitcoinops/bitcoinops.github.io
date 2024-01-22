@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Discussion about Miner Extractable Value (MEV) in non-zero ephemeral anchors"
     url: /en/newsletters/2024/01/17/#discussion-of-miner-extractable-value-mev-in-non-zero-ephemeral-anchors
 
+  - title: Proposed changes to LN for v3 relay and ephemeral anchors
+    url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
