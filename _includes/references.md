@@ -16,6 +16,7 @@
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bdk repo]: https://github.com/bitcoindevkit/bdk
+[binana repo]: https://github.com/bitcoin-inquisition/binana
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
 [bip-coshv]: https://github.com/JeremyRubin/bips/blob/op-checkoutputshashverify/bip-coshv.mediawiki
@@ -67,7 +68,7 @@
 [output script descriptors]: {{_link_descriptors}}
 {% endif %}
 
-{% comment %}<!-- BIPs and BLIPs in order lowest to highest
+{% comment %}<!-- BIPs, BLIPs, and BINANAs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
 the loop is run each time this file is included (but it still only adds
 about 1 second of compile time to the whole site).  However, Jekyll 4.0
@@ -79,6 +80,11 @@ for details --> {% endcomment %}
 {% for i in (1..400) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
+{% endfor %}
+
+{% for i in (1..10) %}
+{% assign i_padded = "0000" | append: i | slice: -4, 4 %}
+[BIN24-{{i}}]: https://github.com/bitcoin-inquisition/binana/blob/master/2024/BIN-2024-{{i_padded}}.md
 {% endfor %}
 
 {% for i in (1..25) %}

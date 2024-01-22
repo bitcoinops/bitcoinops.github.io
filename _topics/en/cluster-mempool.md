@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Overview of cluster mempoool, including discussion about its effect on CPFP carve-out"
     url: /en/newsletters/2024/01/17/#overview-of-cluster-mempool-proposal
 
+  - title: "Interplay between cluster mempool, CPFP carve-out removal, and LN use of v3 relay"
+    url: /en/newsletters/2024/01/24/#imbued-v3-logic
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
