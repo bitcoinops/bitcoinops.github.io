@@ -78,6 +78,9 @@ optech_mentions:
   - title: "Matt Morehouse responsibly disclosed vulnerability affecting Core Lightning"
     url: /en/newsletters/2024/01/17/#disclosure-of-past-vulnerability-in-core-lightning
 
+  - title: "Niklas Gögge responsibly disclosed a consensus bug affecting btcd"
+    url: /en/newsletters/2024/01/24/#disclosure-of-fixed-consensus-failure-in-btcd
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
