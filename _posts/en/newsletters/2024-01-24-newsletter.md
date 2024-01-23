@@ -141,7 +141,30 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitscmidty
+- **Envoy 1.5 released:**
+  [Envoy 1.5][] adds support for [taproot][topic taproot] sending and receiving and
+  changes the way [uneconomical outputs][topic uneconomical outputs] are
+  handled in addition to bugfixes and [other updates][envoy blog].
+
+- **Liana v4.0 released:**
+  [Liana v4.0][] was [released][liana blog] and includes support for [RBF fee
+  bumping][topic rbf], transaction canceling using RBF, automatic [coin
+  selection][topic coin selection], and hardware signing device address
+  verification.
+
+- **Mercury Layer announced:**
+  [Mercury Layer][] is an [implementation][mercury layer github] of
+  [statechains][topic statechains] that uses a [variation][mercury blind musig]
+  of the [MuSig2][topic musig] protocol to achieve blinded signing by the
+  statechain operator.
+
+- **AQUA wallet announced:**
+  [AQUA wallet][] is an [open source][aqua github] mobile wallet that supports
+  Bitcoin, Lightning, and the Liquid [sidechain][topic sidechains].
+
+- **Samourai Wallet announces atomic swap feature:**
+  The [cross-chain atomic swap][samourai gitlab swap] feature, based on previous
+ [research][samourai gitlab comit], allows peer-to-peer coin swaps between the Bitcoin and Monero chains.
 
 ## Releases and release candidates
 
@@ -203,3 +226,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [hwi 2.4.0-rc1]: https://github.com/bitcoin-core/HWI/releases/tag/2.4.0-rc.1
 [ldk 0.0.120]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.120
 [cast]: https://en.wikipedia.org/wiki/Type_conversion#Explicit_type_conversion
+[Envoy 1.5]: https://github.com/Foundation-Devices/envoy/releases/tag/v1.5.1
+[envoy blog]: https://foundationdevices.com/2024/01/envoy-version-1-5-1-is-now-live/
+[Liana v4.0]: https://github.com/wizardsardine/liana/releases/tag/v4.0
+[liana blog]: https://www.wizardsardine.com/blog/liana-4.0-release/
+[Mercury Layer]: https://mercurylayer.com/
+[mercury blind musig]: https://github.com/commerceblock/mercurylayer/blob/dev/docs/blind_musig.md
+[mercury layer github]: https://github.com/commerceblock/mercurylayer/tree/dev/docs
+[AQUA Wallet]: https://aquawallet.io/
+[aqua github]: https://github.com/AquaWallet/aqua-wallet
+[samourai gitlab swap]: https://code.samourai.io/wallet/comit-swaps-java/-/blob/master/docs/SWAPS.md
+[samourai gitlab comit]: https://code.samourai.io/wallet/comit-swaps-java/-/blob/master/docs/files/Atomic_Swaps_between_Bitcoin_and_Monero-COMIT.pdf
