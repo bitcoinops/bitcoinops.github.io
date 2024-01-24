@@ -78,7 +78,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
       de découpage, mais restreindrait ce que les diffuseurs de transactions régulières peuvent faire, ce qui est---une proposition
       indésirable.
 
-      Une solution proposée à l'incompatibilité entre découpage et mempool en cluster est le 
+      Une solution proposée à l'incompatibilité entre découpage et mempool en cluster est le
       [relais de transaction v3][topic v3 transaction relay], qui permettrait aux utilisateurs réguliers de transactions v1 et v2
       de pouvoir continuer à les utiliser de toutes les manières historiquement typiques, mais aussi permettre aux utilisateurs de
       protocoles de contrat comme LN d'opter pour des transactions v3 qui imposent un ensemble restreint de relations entre les
