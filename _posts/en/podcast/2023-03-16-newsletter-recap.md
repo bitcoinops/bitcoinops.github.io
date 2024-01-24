@@ -575,7 +575,7 @@ say an ABI is an API in some sense.
 _LND v0.16.0-beta.rc3_
 
 The last release candidate that we had is LND v0.16.0-beta.rc3, and a few weeks
-ago we had some folks on from the Core Lighting team to explain the upcoming
+ago we had some folks on from the Core Lightning team to explain the upcoming
 release, and I thought that was useful, as opposed to us trying to jump into
 each of these release candidates and explain for ourselves.  I think, Murch, if
 you agree, maybe this is something that we should bring in some LND folks next

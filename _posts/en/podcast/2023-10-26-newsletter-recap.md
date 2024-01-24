@@ -32,7 +32,7 @@ open-source Bitcoin developers, joined by my co-host, Murch.
 
 **Mike Schmidt**: And t-bast.
 
-**Bastien Teinturier**: Hi, I'm t-Bast, I work on Eclair and the lighting
+**Bastien Teinturier**: Hi, I'm t-Bast, I work on Eclair and the Lightning
 specification at ACINQ.
 
 **Mike Schmidt**: Fabien?

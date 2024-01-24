@@ -932,7 +932,7 @@ paid.  And so there's all these kinds of things you can layer on top that PTLCs
 are quite nice for.
 
 It also, if I remember right, it can also help reduce the amount of state that
-Lighting nodes have to store with some tricks.  So that's kind of the what and
+Lightning nodes have to store with some tricks.  So that's kind of the what and
 why.  But I guess why now?  Basically, Taproot channel spec is getting close
 from what I understand from the LND folks, roastbeef et al, and the LDK folks
 have fairly advanced implementations and there's a spec being worked on.  So,
