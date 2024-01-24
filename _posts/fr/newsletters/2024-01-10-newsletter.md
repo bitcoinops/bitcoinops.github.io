@@ -201,7 +201,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
   a4link="https://bitcoincore.reviews/28956#l-82"
 
   q5="Avant cette proposition de modification, pourquoi un attaquant essaierait-il de manipuler l'heure ajustée du réseau d'un nœud ?"
-  a5="Si le nœud est un mineur, l'attaquant pourrait manipuler l'heure pour que les blocs qu'il mine soient rejetés par le réseau 
+  a5="Si le nœud est un mineur, l'attaquant pourrait manipuler l'heure pour que les blocs qu'il mine soient rejetés par le réseau
       ou pour qu'il n'accepte pas un bloc valide, ou pour qu'il continue de gaspiller sa puissance de calcul sur une ancienne chaine
       (ces deux situations donneraient un avantage à un mineur concurrent) ;
       il pourrait aussi avoir pour objectif d'amener le nœud attaqué à suivre la mauvaise chaîne ; ou d'empêcher une transaction
