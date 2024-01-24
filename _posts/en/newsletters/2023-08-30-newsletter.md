@@ -18,7 +18,7 @@ infrastructure software.
 ## News
 
 - **Disclosure of past LN vulnerability related to fake funding:** Matt
-  Morehouse [posted][morehouse dos] to the Lighting-Dev mailing list
+  Morehouse [posted][morehouse dos] to the Lightning-Dev mailing list
   the summary of a vulnerability he had previously [responsibly
   disclosed][topic responsible disclosures] and which is now addressed
   in the latest versions of all popular LN implementations.  To

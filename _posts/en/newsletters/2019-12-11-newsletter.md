@@ -64,7 +64,7 @@ projects.
 (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 - [C-Lightning #3260][] adds new `createonion` and `sendonion` RPC
-  methods that allow external tools or C-Lighting plugins to create and
+  methods that allow external tools or C-Lightning plugins to create and
   send encrypted LN messages that the node itself doesn't necessarily
   understand.  Some use cases for this mechanism described in the PR
   include: cross-chain atomic swaps, rendez-vous routing (see [Newsletter
