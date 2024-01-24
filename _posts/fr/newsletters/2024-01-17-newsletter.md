@@ -186,7 +186,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   et si les taux de frais augmentent, la partie qui finance peut ne pas être en mesure d'accepter un nouveau paiement entrant car elle
   n'a pas suffisamment de fonds pour payer ses frais, malgré le fait qu'un paiement entrant augmenterait le solde de la partie qui
   finance, si le paiement est réglé. Pour éviter ce type de problème de canal bloqué, une recommandation dans [BOLT2][] (ajoutée il y a
-  plusieurs années dans [BOLT #740][]) suggère que le financeur conserve volontairement une réserve supplémentaire de fonds pour
+  plusieurs années dans [BOLTs #740][]) suggère que le financeur conserve volontairement une réserve supplémentaire de fonds pour
   garantir qu'un paiement supplémentaire puisse être reçu même si les taux de frais augmentent. LND met maintenant en œuvre cette
   solution, qui est également mise en œuvre par Core Lightning et Eclair (voir les Bulletins [#85][news85 stuck] et [#89][news89 stuck]).
 
