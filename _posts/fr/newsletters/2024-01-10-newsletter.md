@@ -1,4 +1,4 @@
-Un att---
+---
 title: 'Bulletin Bitcoin Optech #284'
 permalink: /fr/newsletters/2024/01/10/
 name: 2024-01-10-newsletter-fr
@@ -203,8 +203,9 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
   q5="Avant cette proposition de modification, pourquoi un attaquant essaierait-il de manipuler l'heure ajustée du réseau d'un nœud ?"
   a5="Si le nœud est un mineur, l'attaquant pourrait manipuler l'heure pour que les blocs qu'il mine soient rejetés par le réseau 
       ou pour qu'il n'accepte pas un bloc valide, ou pour qu'il continue de gaspiller sa puissance de calcul sur une ancienne chaine
-      (ces deux situations donneraient un avantage à un mineur concurrent) ; 
-      il pourrait aussi avoir pour objectif d'amener le nœud attaqué à suivre la mauvaise chaîne ; ou d'empêcher une transaction verrouillée dans le temps
+      (ces deux situations donneraient un avantage à un mineur concurrent) ;
+      il pourrait aussi avoir pour objectif d'amener le nœud attaqué à suivre la mauvaise chaîne ; ou d'empêcher une transaction
+      verrouillée dans le temps
       d'être minée quand elle devrait l'être ; ou encore d'effectuer une [attaque de dilatation temporelle][] sur le réseau Lightning."
   a5link="https://bitcoincore.reviews/28956#l-89"
 
