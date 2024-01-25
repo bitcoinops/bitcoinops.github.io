@@ -95,7 +95,7 @@ lang: zh
 [compress spec]: https://github.com/bitcoin/bitcoin/blob/7e8511c1a8229736d58bd904595815636f410aa8/doc/compressed_transactions.md
 [news201 mev]: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
 [news266 lnbugs]: /zh/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding
-[race condition]: https://en.wikipedia.org/wiki/Race_condition
+[race condition]: https://zh.wikipedia.org/wiki/%E7%AB%B6%E7%88%AD%E5%8D%B1%E5%AE%B3
 [morehouse full]: https://morehouse.github.io/lightning/cln-channel-open-race/
 [black lnhance]: https://delvingbitcoin.org/t/lnhance-bips-and-implementation/376/
 [stewart 64]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397/
