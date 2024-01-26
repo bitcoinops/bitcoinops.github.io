@@ -230,7 +230,7 @@ peut devenir valide ultérieurement (bien que la chaîne puisse avoir avancé).
       s'agit simplement d'un changement de politique d'acceptation du réseau. Mais cela ne signifie pas que c'est facultatif ; avoir
       une règle de politique limitant l'écart possible entre l'horodatage d'un bloc et l'heure actuelle est
       [essentiel][se timestamp accecptance] pour la sécurité du réseau."
-  a7link="https://bitcoincore.reviews/28956#l-141"
+  a8link="https://bitcoincore.reviews/28956#l-141"
 
   q9="Quelles opérations dépendaient de l'heure ajustée du réseau avant cette proposition de modification ?"
   a9="Les fonctions [`TestBlockValidity`][TestBlockValidity function], [`CreateNewBlock`][CreateNewBlock function] (utilisée par les
