@@ -42,7 +42,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
     Dans le fil de discussion, Black et d'autres décrivent certains des protocoles qui seraient activés par cette combinaison de
     changements de consensus : [LN-Symmetry][topic eltoo] (eltoo), [Ark][topic ark]-style [joinpools][topic joinpools], les
-    [DLC][topic dlc] avec signature réduite,et les [coffres-forts][topic vaults] sans transactions pré-signées, parmi les autres
+    [DLC][topic dlc] avec signature réduite, et les [coffres-forts][topic vaults] sans transactions pré-signées, parmi les autres
     avantages décrits des propositions sous-jacentes, tels que le contrôle de congestion de style CTV et la délégation de signature
     de style CSFS.
 
@@ -69,11 +69,11 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     - *La suppression du découpage CPFP est nécessaire :* la politique de mempool de [décuopage CPFP][topic cpfp carve out] ajoutée à
       Bitcoin Core en [2019][news56 carveout] tente de résoudre la version CPFP d'[épinglage de transaction][topic transaction pinning],
       où un attaquant contrepartie utilise les limites de Bitcoin Core sur le nombre et la taille des transactions connexes pour retarder
-      l'examen d'une transaction enfant appartenant à un pair honnête. Le décupage permet à une transaction de dépasser légèrement les
+      l'examen d'une transaction enfant appartenant à un pair honnête. Le découpage permet à une transaction de dépasser légèrement les
       limites. Dans le mempool en cluster, les transactions connexes sont placées dans un cluster et les limites sont appliquées par
       cluster, et non par transaction. Selon cette politique, il n'y a aucun moyen connu de garantir qu'un cluster ne contient qu'un
       maximum de découpage, à moins de restreindre les relations autorisées entre les transactions relayées sur le réseau bien au-delà
-      des restrictions actuelles. Un cluster avec plusieurs décupage pourrait dépasser considérablement ses limites, auquel cas le
+      des restrictions actuelles. Un cluster avec plusieurs découpage pourrait dépasser considérablement ses limites, auquel cas le
       protocole devrait être conçu pour ces limites beaucoup plus élevées. Cela permettrait de répondre aux besoins des utilisateurs
       de découpage, mais restreindrait ce que les diffuseurs de transactions régulières peuvent faire, ce qui est---une proposition
       indésirable.
@@ -175,16 +175,16 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   RBF][topic rbf].
 
 - [LND #8188][] ajoute plusieurs nouvelles RPC pour obtenir rapidement des informations de débogage, les chiffrer avec une clé publique
-  et les déchiffrer avec une clé privée. Comme l'explique le PR, "L'idée est que nous publierions une clé publique dans le modèle de
-  problème GitHub et demanderions aux utilisateurs d'exécuter la commande `lncli encryptdebugpackage` et de télécharger les fichiers
-  de sortie chiffrés sur le problème GitHub pour nous fournir les informations dont nous avons normalement besoin pour résoudre les
-  problèmes des utilisateurs."
+  et les déchiffrer avec une clé privée. Comme l'explique le PR, "L'idée serait de publier une clé publique dans le modèle de
+  problème GitHub et de demander aux utilisateurs d'exécuter la commande `lncli encryptdebugpackage` puis de télécharger les fichiers
+  de sortie chiffrés sur la page GitHub réservée au signalement de problèmes afin de nous fournir les informations dont nous avons
+  besoin pour résoudre les problèmes des utilisateurs."
 
 - [LND #8096][] ajoute un "tampon d'augmentation des frais". Dans le protocole LN actuel, la partie qui finance seule un canal est
   responsable du paiement de tous les frais onchain inclus directement <!-- endogenously --> dans la transaction d'engagement et les
   transactions HTLC-Success et HTLC-Timeout pré-signées (transactions HTLC-X). Si la partie qui finance manque de fonds dans le canal
   et si les taux de frais augmentent, la partie qui finance peut ne pas être en mesure d'accepter un nouveau paiement entrant car elle
-  n'a pas suffisamment de fonds pour payer ses frais, malgré le fait qu'un paiement entrant augmenterait le solde de la partie qui
+  n'a pas suffisamment de fonds pour payer ses frais, bien qu'un paiement entrant augmenterait le solde de la partie qui
   finance, si le paiement est réglé. Pour éviter ce type de problème de canal bloqué, une recommandation dans [BOLT2][] (ajoutée il y a
   plusieurs années dans [BOLTs #740][]) suggère que le financeur conserve volontairement une réserve supplémentaire de fonds pour
   garantir qu'un paiement supplémentaire puisse être reçu même si les taux de frais augmentent. LND met maintenant en œuvre cette
