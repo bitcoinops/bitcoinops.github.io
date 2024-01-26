@@ -50,7 +50,7 @@ popular Bitcoin infrastructure software.
     Stewart [replied][stewart bitcoin-s] to the Delving Bitcoin thread
     with a patch for the same failure in the bitcoin-s library.  Authors
     of any code that might be used to validate BIP68 relative locktimes
-    are urged to check the code for the same flaw.
+    are urged to check the code for the same flaw. {% assign timestamp="1:33" %}
 
 - **Proposed changes to LN for v3 relay and ephemeral anchors:** Bastien
   Teinturier [posted][teinturier v3] to Delving Bitcoin to describe the
@@ -104,13 +104,13 @@ popular Bitcoin infrastructure software.
     larger this size, the more an honest user will need to pay to
     overcome a [transaction pin][topic transaction pinning] (see
     [Newsletter #283][news283 v3pin]).  The smaller the size, the fewer
-    inputs an honest user can use to contribute fees.
+    inputs an honest user can use to contribute fees. {% assign timestamp="13:40" %}
 
 - **New documentation repository:** Anthony Towns [posted][towns binana]
   to the Bitcoin-Dev mailing list to announce a new repository for
   protocol specifications, _Bitcoin Inquisition Numbers And Names
   Authority_ ([BINANA][binana repo]).  Four specifications are available
-  in the repository at the time of writing:
+  in the repository at the time of writing: {% assign timestamp="29:56" %}
 
     - [BIN24-1][] `OP_CAT` by Ethan Heilman and Armin Sabouri.  See
       the description of their soft fork proposal in [Newsletter
@@ -144,27 +144,27 @@ wallets and services.*
 - **Envoy 1.5 released:**
   [Envoy 1.5][] adds support for [taproot][topic taproot] sending and receiving and
   changes the way [uneconomical outputs][topic uneconomical outputs] are
-  handled in addition to bugfixes and [other updates][envoy blog].
+  handled in addition to bugfixes and [other updates][envoy blog]. {% assign timestamp="45:41" %}
 
 - **Liana v4.0 released:**
   [Liana v4.0][] was [released][liana blog] and includes support for [RBF fee
   bumping][topic rbf], transaction canceling using RBF, automatic [coin
   selection][topic coin selection], and hardware signing device address
-  verification.
+  verification. {% assign timestamp="46:39" %}
 
 - **Mercury Layer announced:**
   [Mercury Layer][] is an [implementation][mercury layer github] of
   [statechains][topic statechains] that uses a [variation][mercury blind musig]
   of the [MuSig2][topic musig] protocol to achieve blinded signing by the
-  statechain operator.
+  statechain operator. {% assign timestamp="47:46" %}
 
 - **AQUA wallet announced:**
   [AQUA wallet][] is an [open source][aqua github] mobile wallet that supports
-  Bitcoin, Lightning, and the Liquid [sidechain][topic sidechains].
+  Bitcoin, Lightning, and the Liquid [sidechain][topic sidechains]. {% assign timestamp="57:18" %}
 
 - **Samourai Wallet announces atomic swap feature:**
   The [cross-chain atomic swap][samourai gitlab swap] feature, based on previous
- [research][samourai gitlab comit], allows peer-to-peer coin swaps between the Bitcoin and Monero chains.
+ [research][samourai gitlab comit], allows peer-to-peer coin swaps between the Bitcoin and Monero chains. {% assign timestamp="57:49" %}
 
 ## Releases and release candidates
 
@@ -176,11 +176,11 @@ release candidates.*
   LN-enabled applications.  It "fixes a denial-of-service vulnerability
   which is reachable from untrusted input from peers if the
   `UserConfig::manually_accept_inbound_channels` option is enabled."
-  Several other bug fixes and minor improvements are also included.
+  Several other bug fixes and minor improvements are also included. {% assign timestamp="58:37" %}
 
 - [HWI 2.4.0-rc1][] is a release candidate for the next version of this
   package providing a common interface to multiple different hardware
-  signing devices.
+  signing devices. {% assign timestamp="59:11" %}
 
 ## Notable code and documentation changes
 
@@ -194,20 +194,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 
 - [Bitcoin Core #29239][] updates the `addnode` RPC to connect using the
   [v2 transport protocol][topic v2 p2p transport] when the
-  `-v2transport` configuration setting is enabled.
+  `-v2transport` configuration setting is enabled. {% assign timestamp="59:37" %}
 
 - [Eclair #2810][] allows the onion-encrypted information for
   [trampoline routing][topic trampoline payments] to use more than 400
   bytes, with the maximum size now being the 1,300 byte maximum from
   [BOLT4][].  Trampoline routing that requires less than 400 bytes is
-  padded to 400 bytes.
+  padded to 400 bytes. {% assign timestamp="1:02:16" %}
 
 - [LDK #2791][], [#2801][ldk #2801], and [#2812][ldk #2812] complete
   adding support for [route blinding][topic rv routing] and begins
-  advertising the feature bit for it.
+  advertising the feature bit for it. {% assign timestamp="1:05:32" %}
 
 - [Rust Bitcoin #2230][] adds a function for calculating the _effective
-  value_ of an input, which is its value minus the cost to spend it.
+  value_ of an input, which is its value minus the cost to spend it. {% assign timestamp="1:07:43" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
