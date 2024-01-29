@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Interplay between cluster mempool, CPFP carve-out removal, and LN use of v3 relay"
     url: /en/newsletters/2024/01/24/#imbued-v3-logic
 
+  - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
+    url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

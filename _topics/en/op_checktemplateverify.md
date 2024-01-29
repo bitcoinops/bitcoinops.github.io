@@ -117,6 +117,9 @@ optech_mentions:
   - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
     url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
 
+  - title: Opposition to CTV based on commonly requiring exogenous fee
+    url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

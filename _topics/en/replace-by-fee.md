@@ -165,6 +165,9 @@ optech_mentions:
   - title: "Discussion of cluster mempool for RBF"
     url: /en/newsletters/2023/12/06/#post-cluster-package-rbf
 
+  - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
+    url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
