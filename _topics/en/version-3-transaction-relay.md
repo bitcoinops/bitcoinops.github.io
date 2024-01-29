@@ -67,6 +67,9 @@ optech_mentions:
   - title: Proposed changes to LN for v3 relay and ephemeral anchors
     url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
 
+  - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
+    url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

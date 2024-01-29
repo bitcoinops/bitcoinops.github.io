@@ -89,6 +89,9 @@ optech_mentions:
   - title: "LDK #2337 makes it easier to use LDK for building watchtowers"
     url: /en/newsletters/2023/08/30/#ldk-2337
 
+  - title: "LND #7733 updates its watchtower support for simple taproot channels"
+    url: /en/newsletters/2024/01/31/#lnd-7733
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: LND watchtower tutorial

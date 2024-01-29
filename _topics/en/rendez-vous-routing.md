@@ -80,6 +80,9 @@ optech_mentions:
   - title: "LDK #2791, #2801, and #2812 complete adding support for route blinding"
     url: /en/newsletters/2024/01/24/#ldk-2791
 
+  - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
+    url: /en/newsletters/2024/01/31/#eclair-2811
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
