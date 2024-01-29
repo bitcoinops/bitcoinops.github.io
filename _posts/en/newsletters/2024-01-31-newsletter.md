@@ -118,7 +118,37 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How does block synchronization work in Bitcoin Core today?]({{bse}}121292)
+  Pieter Wuille describes the block header tree, block data, and active chaintip
+  block chain data structures and goes on to explain the header synchronization, block
+  synchronization, and block activation processes that act upon them.
+
+- [How does headers-first prevent disk-fill attack?]({{bse}}76018)
+  Pieter Wuille follows up on an old question to explain the more recent IBD
+  "Headers Presync" (see [Newsletter #216][news216 headers presync]) header spam
+  mitigations added to Bitcoin Core in 24.0.
+
+- [Is BIP324 v2transport redundant on Tor and I2P connections?]({{bse}}121360)
+  Pieter Wuille concedes a lack of [v2 transport][topic v2 p2p transport]
+  encryption benefits when using [anonymity networks][topic anonymity networks]
+  but notes potential computational improvements over v1 unencrypted transport.
+
+- [What's a rule of thumb for setting the maximum number of connections?]({{bse}}121088)
+  Pieter Wuille distinguishes between [outbound and inbound
+  connections]({{bse}}121015) and lists considerations around setting higher
+  `-maxconnections` values.
+
+- [Why isn't the upper bound (+2h) on the block timestamp set as a consensus rule?]({{bse}}121248)
+  In this and [other]({{bse}}121247) related [questions]({{bse}}121253), Pieter
+  Wuille explains the requirement that a new block's timestamp must be no later
+  than two hours in the future, the importance of the requirement, and why "consensus
+  rules can only depend on information that is committed to by block hashes".
+
+- [Sigop count and its influence on transaction selection?]({{bse}}121355)
+  User Cosmik Debris asks how the limit on signature check operations, "sigops", impact miners'
+  block template construction and mempool-based [fee estimation][topic fee
+  estimation]. User mononaut outlines the infrequency of sigops being the
+  limiting factor in block template construction and discusses the `-bytespersigop` option.
 
 ## Releases and release candidates
 
@@ -227,3 +257,4 @@ repo]._
 [zhao kindredimpl]: https://github.com/bitcoin/bitcoin/pull/29306
 [pt ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022309.html
 [news286 imbued]: /en/newsletters/2024/01/24/#imbued-v3-logic
+[news216 headers presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
