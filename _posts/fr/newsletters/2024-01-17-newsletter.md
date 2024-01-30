@@ -101,7 +101,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   toutes les entrées compressées, et utilisation d'un deuxième type d'entier variable."
 
 - **Discussion sur la valeur extractible par les mineurs (MEV) dans les ancres éphémères non nulles :** Gregory Sanders a
-  [publié][sanders mev] sur Delving Bitcoin pour discuter des préoccupations concernant les sorties d'[{ancres éphémères][topic ephemeral
+  [publié][sanders mev] sur Delving Bitcoin pour discuter des préoccupations concernant les sorties d'[ancres éphémères][topic ephemeral
   anchors] qui contiennent plus de 0 satoshis. Une ancre éphémère paie un script de sortie standardisé que n'importe qui peut dépenser.
 
  Une façon d'utiliser les ancres éphémères serait de leur attribuer un montant de sortie nul, ce qui est raisonnable étant donné que les
