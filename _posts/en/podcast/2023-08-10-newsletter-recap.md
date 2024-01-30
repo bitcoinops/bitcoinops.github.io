@@ -915,10 +915,10 @@ So, that first PR for Core isn't really talking about how we do it in the
 wallet, how we parse the address, and it's more just, how do we make sure the
 right primitives are in Core so that we can implement this protocol?  So, for
 example, with silent payments, we use the private keys of the UTXOs that you
-want to spend to do the Diffie-Hellman step.  So, we needed to add some
+want to spend to do the Diffie--Hellman step.  So, we needed to add some
 functions in Bitcoin Core so that we could add private keys together.  For the
 receiver, they look at a transaction and they look at the public keys and then
-they want to add those public keys together to do the Diffie-Hellman step.  So,
+they want to add those public keys together to do the Diffie--Hellman step.  So,
 we needed to add some functions to Bitcoin Core for adding public keys.
 
 Then, we added some functions that do the silent payments protocol.  And then,

@@ -42,7 +42,7 @@ Bitcoin infrastructure projects.
   Snigirev's idea eliminates the need to route the encrypted pre-image.
   He notes that the routing of a payment from Alice to Bob already
   requires them to have a common shared secret (derived using Elliptic
-  Curve Diffie-Hellman ([ECDH][]).  This secret can be hashed once to
+  Curve Diffie--Hellman ([ECDH][]).  This secret can be hashed once to
   produce a unique pre-image known to both of them, and that pre-image
   can be hashed again to be the payment hash.  To use this system,
   whenever Bob receives a payment to a hash that he didn't create an

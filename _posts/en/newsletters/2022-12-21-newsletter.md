@@ -424,7 +424,7 @@ any changes to the LN protocol.
 
 {:#dlc-bls}
 Lloyd Fournier [wrote][news213 bls] about the benefits of having
-[DLC][topic dlc] oracles make their attestations using Boneh-Lynn-Shacham
+[DLC][topic dlc] oracles make their attestations using Boneh--Lynn--Shacham
 ([BLS][]) signatures.  Bitcoin does not support BLS signatures and a
 soft fork would be required to add them, but Fournier links to a paper
 he co-authored that describes how information can be securely extracted

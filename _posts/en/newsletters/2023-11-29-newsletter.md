@@ -54,7 +54,7 @@ answers posted since our last update.*
   Pieter Wuille describes the differences between multisignatures, signature
   aggregation, key aggregation, and Bitcoin multisig and notes several related
   schemes including [BIP340][] [schnorr signatures][topic schnorr signatures],
-  [MuSig2][topic musig], FROST, and Bellare-Neven 2006.  {% assign timestamp="38:49" %}
+  [MuSig2][topic musig], FROST, and Bellare--Neven 2006.  {% assign timestamp="38:49" %}
 
 - [Is it advisable to operate a release candidate full node on mainnet?]({{bse}}120375)
   Vojtěch Strnad and Murch point out that running Bitcoin Core release

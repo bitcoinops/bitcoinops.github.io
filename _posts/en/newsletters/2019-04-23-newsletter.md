@@ -142,7 +142,7 @@ backported to its pending release.*
   values seem high, recall this is for a simulation network more than 25
   times the size of the current mainnet network and 1,000 times the size
   of the network a bit over a year ago.)  A notable part of this change
-  is C-Lightning switching from its rather unique [Bellman-Ford-Gibson
+  is C-Lightning switching from its rather unique [Bellman--Ford--Gibson
   (BFG)][bfg post] routing algorithm to a [slightly-customized][e197956]
   version of [Dijkstra][].
 
@@ -180,7 +180,7 @@ backported to its pending release.*
     (what developers call previous outputs (prevouts)).   Each of the
     scriptPubKeys is hashed to give each item the same size and then
     these items are sorted into a list that has duplicated elements
-    removed.  This list is then encoded using the [Golomb-Rice Coded
+    removed.  This list is then encoded using the [Golomb--Rice Coded
     Sets][gcs] (GCS) algorithm also described in BIP158, losslessly
     reducing the size of the list.  This specific basic filter provides
     enough information for anyone who knows a Bitcoin address to find

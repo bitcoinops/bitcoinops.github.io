@@ -209,7 +209,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   indistinguishable from random data. The `ellswift` module provides functions
   for encoding and decoding public keys in the new format as well as
   convenience functions to generate new uniformly-random keys and perform
-  an Elliptic Curve Diffie-Hellman key exchange (ECDH) on ellswift-encoded
+  an Elliptic Curve Diffie--Hellman key exchange (ECDH) on ellswift-encoded
   keys. The ellswift-based ECDH is to be used in establishing connections
   for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]). {% assign timestamp="1:40:37" %}
 

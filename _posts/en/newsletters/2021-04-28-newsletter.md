@@ -80,7 +80,7 @@ Bitcoin infrastructure software.
     signature object for the adaptors, so it uses `OP_CHECKMULTISIG` and
     is not quite as scriptless as before.  The separated construction also requires a [security
     warning][ecdh warning] related to reusing some of the involved keys
-    with Elliptic Curve Diffie Hellman (ECDH) key exchange and ElGamal
+    with Elliptic Curve Diffie--Hellman (ECDH) key exchange and ElGamal
     encryption.  Beyond that, this technique makes signature adaptors entirely
     usable on Bitcoin today, and it's what various [DLC][topic dlc]
     projects have been using.
