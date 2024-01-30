@@ -532,7 +532,7 @@ one is to the libsecp repository.  It is the 0.4.0 release, and there's a couple
 of things that I think are worth highlighting here.  First is that this release
 adds a new module to libsecp, called ellswift, which implements ElligatorSwift,
 and that's in libsecp.  This will be used for encoding public keys and x-only
-Diffie-Hellman key exchange for them.  And ElligatorSwift allows representing
+Diffie--Hellman key exchange for them.  And ElligatorSwift allows representing
 libsecp256k1 pubkeys as 64-byte arrays, which cannot be distinguished from
 uniformly random data.  And this technology is part of what BIP324 is using, as
 part of the P2P encrypted transport protocol project that's currently in

@@ -595,7 +595,7 @@ signature aggregation, what is multisignature, and what is this thing in Bitcoin
 that we call multisig.  And then he also, based on the definitions of those
 terms, jumped into a bunch of related schemes that are applicable in Bitcoin,
 including schnorr signatures as defined in BIP340, MuSig2, Frost, and I don't
-think this one is actually applicable to Bitcoin, but the Bellare-Neven 2006
+think this one is actually applicable to Bitcoin, but the Bellare--Neven 2006
 scheme.  I don't know, Murch, how much you want to dig into any of those, or if
 that's an exercise for the listener.  What do you think?
 
