@@ -175,7 +175,7 @@ candidates.*
 [sign to contract]: https://www.wpsoftware.net/andrew/secrets/slides.pdf
 [secp s2c]: https://github.com/bitcoin-core/secp256k1/pull/589
 [secp nonce]: https://github.com/bitcoin-core/secp256k1/pull/590
-[ecdh]: https://en.wikipedia.org/wiki/Elliptic_curve_Diffie-Hellman
+[ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie–Hellman
 [ecies]: https://en.wikipedia.org/wiki/Integrated_Encryption_Scheme
 [bip340 update]: #updates-to-bip340-schnorr-keys-and-signatures
 [news83 eclair determ]: /en/newsletters/2020/02/05/#eclair-1295

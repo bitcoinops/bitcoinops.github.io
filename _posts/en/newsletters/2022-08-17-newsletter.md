@@ -27,7 +27,7 @@ infrastructure software.
 
     This week, Lloyd Fournier [posted][fournier dlc-dev] to the DLC-Dev
     mailing list about the benefits of having an oracle make their
-    attestation using Boneh-Lynn-Shacham ([BLS][]) signatures.  Bitcoin
+    attestation using Boneh--Lynn--Shacham ([BLS][]) signatures.  Bitcoin
     does not support BLS signatures and a soft fork would be required to
     add them, but Fournier links to a [paper][fournier et al] he
     co-authored that describes how information can be securely extracted

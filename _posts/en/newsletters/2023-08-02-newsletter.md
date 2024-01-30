@@ -38,7 +38,7 @@ Bitcoin infrastructure software.
     related to the specific problem and of [even more generalized blind
     schnorr signing][generalized blind schnorr].  Also mentioned was a
     year-old [gist][somsen gist] by Ruben Somsen about a 1996 protocol
-    for blind [Diffie-Hellman (DH) key exchange][dhke], which can be used for
+    for blind [Diffie--Hellman (DH) key exchange][dhke], which can be used for
     blinded ecash.  [Lucre][] and [Minicash][] are previous
     implementations of this scheme unrelated to Bitcoin, and [Cashu][]
     is an implementation related to Minicash that also integrates
