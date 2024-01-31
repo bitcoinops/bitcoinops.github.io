@@ -1,0 +1,23 @@
+---
+---
+{% capture raw_categories %}
+{%- for topic in site.topics -%}
+  {%- for category in topic.categories -%}
+    {{category}}|
+  {%- endfor -%}
+{%- endfor -%}
+{% endcapture %}
+{% assign categories = raw_categories | split: "|" | sort_natural | uniq %}
+[
+  {% for topic in site.topics %}
+    {% assign topic_slug = topic.shortname | default: topic.title | slugify %}
+      {
+        "title": {{ topic.title | jsonify }},
+        "slug": {{ topic_slug | jsonify }},
+        "optech_url": "{{ site.url }}{{ topic.url }}",
+        "categories": {{ topic.categories | jsonify }},
+        "aliases":  {{ topic.aliases | jsonify }},
+        "excerpt": {{ topic.excerpt | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
