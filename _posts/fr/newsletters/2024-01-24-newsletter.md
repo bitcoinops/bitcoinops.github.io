@@ -115,7 +115,7 @@ intéressantes des portefeuilles et services Bitcoin.*
 - **Liana v4.0 publié :**
   [Liana v4.0][] a été [publié][liana blog] et inclut la prise en charge de [l'augmentation des frais RBF][topic rbf], l'annulation de
   transaction en utilisant RBF, la [sélection automatique des pièces][topic coin selection] et la vérification de l'adresse du dispositif
-  de signature matérielle.
+  matériel de signature.
 
 - **Mercury Layer annoncé :**
   [Mercury Layer][] est une [implémentation][mercury layer github] de [statechains][topic statechains] qui utilise une
