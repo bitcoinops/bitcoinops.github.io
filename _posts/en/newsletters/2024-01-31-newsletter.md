@@ -247,7 +247,7 @@ repo]._
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="29291,2811,2813,2814,8167,7733,8275,1092,2366,716,1172,3" %}
-[hwi 2.4.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.4.0-
+[hwi 2.4.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.4.0
 [news286 bip68ver]: /en/newsletters/2024/01/24/#disclosure-of-fixed-consensus-failure-in-btcd
 [trezor safe 3]: https://trezor.io/trezor-safe-3
 [news283 fdt]: /en/newsletters/2024/01/03/#fee-dependent-timelocks
