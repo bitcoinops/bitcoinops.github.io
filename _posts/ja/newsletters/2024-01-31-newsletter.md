@@ -178,7 +178,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
   `.wtxid`プロパティと`.ntxid`プロパティ（それぞれ[BIP141][]と[BIP140][]に基づく）も同様に、
   `.compute_wtxid`と`.compute_ntxid`にリネームされています。
 
-- [HWI #716][]は、[Trezor Safe 3][]ハードウェア署名デバイスのサポートを追加しました。
+- [HWI #716][]は、Trezor Safe 3ハードウェア署名デバイスのサポートを追加しました。
 
 - [BDK #1172][]は、ウォレット用にブロック単位のAPIを追加しました。
   ウォレットに影響するトランザクションが含まれていると思われる一連のブロックにアクセスできるユーザーは、
@@ -198,7 +198,6 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 {% include linkers/issues.md v=2 issues="29291,2811,2813,2814,8167,7733,8275,1092,2366,716,1172,3" %}
 [hwi 2.4.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.4.0
 [news286 bip68ver]: /ja/newsletters/2024/01/24/#btcd
-[trezor safe 3]: https://trezor.io/trezor-safe-3
 [news283 fdt]: /ja/newsletters/2024/01/03/#fee-dependent-timelocks
 [zhao v3kindred]: https://delvingbitcoin.org/t/sibling-eviction-for-v3-transactions/472
 [news259 lncleanup]: /ja/newsletters/2023/07/12/#ln
