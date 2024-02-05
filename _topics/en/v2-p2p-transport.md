@@ -71,6 +71,9 @@ optech_mentions:
   - title: "Bitcoin Core #29058 begins using v2 P2P transport by default for some connections"
     url: /en/newsletters/2024/01/17/#bitcoin-core-29058
 
+  - title: "Bitcoin Core #29347 enables v2 P2P transport by default"
+    url: /en/newsletters/2024/02/07/#bitcoin-core-29347
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
