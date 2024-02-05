@@ -70,6 +70,9 @@ optech_mentions:
   - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
     url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
 
+  - title: "Challenges opening zero-conf channels when using the initially allowed v3 transaction topology"
+    url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

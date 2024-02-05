@@ -71,6 +71,9 @@ optech_mentions:
   - title: "Core Lightning #6253 and #5675 add an experimental implementation of splicing"
     url: /en/newsletters/2023/08/09/#core-lightning-6253
 
+  - title: "Challenges with splicing and zero-conf channels when using v3 transaction topology"
+    url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

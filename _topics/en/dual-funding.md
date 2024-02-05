@@ -117,6 +117,9 @@ optech_mentions:
   - title: "Core Lightning #6824 updates the implementation of the interactive funding protocol"
     url: /en/newsletters/2023/11/08/#core-lightning-6824
 
+  - title: "Requirement to verify external inputs use segwit in dual funding and related protocols"
+    url: /en/newsletters/2024/02/07/#requirement-to-verify-inputs-use-segwit-in-protocols-vulnerable-to-txid-malleability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

@@ -84,6 +84,9 @@ optech_mentions:
   - title: Discussion about the costs of pinning when v3 transaction relay policies are used
     url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
 
+  - title: "Proposal for replace-by-feerate to avoid transaction pinning"
+    url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
