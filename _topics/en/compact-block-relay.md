@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Bitcoin Core #27626 allows parallel download of compact blocks from multiple peers"
     url: /en/newsletters/2023/05/31/#bitcoin-core-27626
 
+  - title: "Improvements to compact block peer selection made to address block stalling attack"
+    url: /en/newsletters/2024/02/07/#bitcoin-core-22147
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

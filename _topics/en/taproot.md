@@ -239,6 +239,9 @@ optech_mentions:
   - title: "LND v0.17.0-beta ships with experimental support for taproot and MuSig2 LN channels"
     url: /en/newsletters/2023/10/04/#lnd-v0-17-0-beta
 
+  - title: "Taproot massively reduces worst case bandwidth for malleablity protection in contract protocols"
+    url: /en/newsletters/2024/02/07/#requirement-to-verify-inputs-use-segwit-in-protocols-vulnerable-to-txid-malleability
+
 ## Optional
 see_also:
   - title: MAST

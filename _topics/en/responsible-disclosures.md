@@ -81,6 +81,9 @@ optech_mentions:
   - title: "Niklas Gögge responsibly disclosed a consensus bug affecting btcd"
     url: /en/newsletters/2024/01/24/#disclosure-of-fixed-consensus-failure-in-btcd
 
+  - title: "Eugene Siegel responsibly disclosed a Bitcoin Core block stalling bug affecting LN"
+    url: /en/newsletters/2024/02/07/#public-disclosure-of-a-block-stalling-bug-in-bitcoin-core-affecting-ln
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
