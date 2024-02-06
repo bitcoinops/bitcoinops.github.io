@@ -3,7 +3,7 @@
 [compatibility matrix]: /en/compatibility/
 [topics]: /en/topics/
 [podcast]: /en/podcast/
-[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
+[op_cat]: /en/topics/op_cat/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 [scaling payment batching]: /en/payment-batching/
