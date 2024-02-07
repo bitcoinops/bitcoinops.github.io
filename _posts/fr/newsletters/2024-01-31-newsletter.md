@@ -53,7 +53,7 @@ aux projets d'infrastructure Bitcoin.
   remplacements de toutes sortes plus incitatifs à l'avenir.
 
   Au moment de la rédaction de cet article, il n'y avait aucune objection à cette idée sur le forum. Une question notable concernait la
-  nécessité des [ancres éphémère][topic ephemeral anchors]s, mais l'auteur de cette proposition (Gregory Sanders) a répondu : "Je n'ai
+  nécessité des [ancres éphémères][topic ephemeral anchors], mais l'auteur de cette proposition (Gregory Sanders) a répondu : "Je n'ai
   pas l'intention d'abandonner
   le travail sur les ancres éphémères. Les sorties à zéro satoshi ont plusieurs cas d'utilisation importants en dehors de LN."
 
@@ -111,7 +111,7 @@ nswer -->{% endcomment %}
 
 - [Comptage des sigop et son influence sur la sélection des transactions?]({{bse}}121355)
   L'utilisateur Cosmik Debris demande comment la limite des opérations de vérification de signature, "sigops", affecte la construction
-  du modèle de bloc des mineurs et l'[estimation des frais[topic fee estimation] basée sur le mempool. L'utilisateur mononaut explique
+  du modèle de bloc des mineurs et l'[estimation des frais][topic fee estimation] basée sur le mempool. L'utilisateur mononaut explique
   la rareté des sigops en tant que facteur limitant dans la construction du modèle de bloc et discute de l'option `-bytespersigop`.
 
 ## Mises à jour et versions candidates
