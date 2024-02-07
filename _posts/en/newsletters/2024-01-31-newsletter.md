@@ -77,7 +77,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   [ephemeral anchors][topic ephemeral anchors], but the author of that
   proposal (Gregory Sanders) replied, "I have no plans on dropping
   ephemeral anchor work.  Zero-satoshi outputs have a number of
-  important use cases outside of LN."
+  important use cases outside of LN." {% assign timestamp="1:10" %}
 
 - **Opposition to CTV based on commonly requiring exogenous fees:**
   Peter Todd [posted][pt ctv] to the Bitcoin-Dev mailing list an
@@ -104,7 +104,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
     #283][news283 fdt]) could make CTV safe to use with endogenous fees
     in cases where particular versions of a transaction needed to be
     confirmed by a deadline, although fee-dependent timelocks might
-    delay some contract settlements by an indefinite amount of time.
+    delay some contract settlements by an indefinite amount of time. {% assign timestamp="19:11" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -121,34 +121,34 @@ nswer -->{% endcomment %}
 - [How does block synchronization work in Bitcoin Core today?]({{bse}}121292)
   Pieter Wuille describes the block header tree, block data, and active chaintip
   block chain data structures and goes on to explain the header synchronization, block
-  synchronization, and block activation processes that act upon them.
+  synchronization, and block activation processes that act upon them. {% assign timestamp="28:14" %}
 
 - [How does headers-first prevent disk-fill attack?]({{bse}}76018)
   Pieter Wuille follows up on an old question to explain the more recent IBD
   "Headers Presync" (see [Newsletter #216][news216 headers presync]) header spam
-  mitigations added to Bitcoin Core in 24.0.
+  mitigations added to Bitcoin Core in 24.0. {% assign timestamp="30:31" %}
 
 - [Is BIP324 v2transport redundant on Tor and I2P connections?]({{bse}}121360)
   Pieter Wuille concedes a lack of [v2 transport][topic v2 p2p transport]
   encryption benefits when using [anonymity networks][topic anonymity networks]
-  but notes potential computational improvements over v1 unencrypted transport.
+  but notes potential computational improvements over v1 unencrypted transport. {% assign timestamp="33:57" %}
 
 - [What's a rule of thumb for setting the maximum number of connections?]({{bse}}121088)
   Pieter Wuille distinguishes between [outbound and inbound
   connections]({{bse}}121015) and lists considerations around setting higher
-  `-maxconnections` values.
+  `-maxconnections` values. {% assign timestamp="34:57" %}
 
 - [Why isn't the upper bound (+2h) on the block timestamp set as a consensus rule?]({{bse}}121248)
   In this and [other]({{bse}}121247) related [questions]({{bse}}121253), Pieter
   Wuille explains the requirement that a new block's timestamp must be no later
   than two hours in the future, the importance of the requirement, and why "consensus
-  rules can only depend on information that is committed to by block hashes".
+  rules can only depend on information that is committed to by block hashes". {% assign timestamp="37:01" %}
 
 - [Sigop count and its influence on transaction selection?]({{bse}}121355)
   User Cosmik Debris asks how the limit on signature check operations, "sigops", impact miners'
   block template construction and mempool-based [fee estimation][topic fee
   estimation]. User mononaut outlines the infrequency of sigops being the
-  limiting factor in block template construction and discusses the `-bytespersigop` option.
+  limiting factor in block template construction and discusses the `-bytespersigop` option. {% assign timestamp="43:22" %}
 
 ## Releases and release candidates
 
@@ -159,7 +159,7 @@ release candidates.*
 - [HWI 2.4.0][] is a release of the next version of this
   package providing a common interface to multiple different hardware
   signing devices.  The new release adds support for Trezor Safe 3 and
-  contains several minor improvements.
+  contains several minor improvements. {% assign timestamp="48:03" %}
 
 ## Notable code and documentation changes
 
@@ -176,7 +176,7 @@ repo]._
   executing an `OP_CHECKSEQUENCEVERIFY` opcode appears to have a
   negative version number.  This test, if it had been run by alternative
   consensus implementations, would have caught the consensus failure bug
-  mentioned in [last week's newsletter][news286 bip68ver].
+  mentioned in [last week's newsletter][news286 bip68ver]. {% assign timestamp="48:41" %}
 
 - [Eclair #2811][], [#2813][eclair #2813], and [#2814][eclair #2814]
   add the ability for a [trampoline payment][topic trampoline payments]
@@ -194,7 +194,7 @@ repo]._
     it used longer paths that increased the probability of forwarding
     failure and required paying more forwarding fees for success.  Now
     forwarding payments through even a single trampoline node can
-    prevent that node from learning the ultimate receiver.
+    prevent that node from learning the ultimate receiver. {% assign timestamp="49:23" %}
 
 - [LND #8167][] allows an LND node to mutually close a channel that
   still has one or more pending payments ([HTLCs][topic htlc]).  The
@@ -203,16 +203,16 @@ repo]._
   be accepted.  After all pending HTLCs are resolved offchain, the two
   parties negotiate and sign a mutual close transaction.  Previously,
   when LND received a `shutdown` message, it would force close the
-  channel, requiring extra onchain transactions and fees to settle.
+  channel, requiring extra onchain transactions and fees to settle. {% assign timestamp="52:10" %}
 
 - [LND #7733][] updates [watchtower][topic watchtowers] support to enable
   backing up and enforcing correct shutdown of the [simple taproot
   channels][topic simple taproot channels] that are now supported
-  experimentally by LND.
+  experimentally by LND. {% assign timestamp="53:01" %}
 
 - [LND #8275][] begins requiring peers support certain
   universally-deployed features as specified in [BOLTs #1092][] (see
-  [Newsletter #259][news259 lncleanup]).
+  [Newsletter #259][news259 lncleanup]). {% assign timestamp="54:01" %}
 
 - [Rust Bitcoin #2366][] deprecates the `.txid()` method on
   `Transaction` objects and begins providing a replacement method
@@ -223,10 +223,10 @@ repo]._
   name for the method will help downstream programmers realize its
   potential costs.  The `.wtxid()` and `.ntxid()` method (respectively
   based on [BIP141][] and [BIP140][]) are similarly renamed to
-  `.compute_wtxid()` and `.compute_ntxid()`.
+  `.compute_wtxid()` and `.compute_ntxid()`. {% assign timestamp="56:34" %}
 
 - [HWI #716][] adds support for the Trezor Safe 3 hardware signing
-  device.
+  device. {% assign timestamp="58:35" %}
 
 - [BDK #1172][] adds a block-by-block API for the wallet.  A user with
   access to a sequence of blocks
@@ -236,12 +236,12 @@ repo]._
   software can use some sort of filtering method (e.g. [compact block
   filtering][topic compact block filters]) to find only blocks that are
   likely to have wallet-affecting transactions and iterate over that
-  subset of blocks.
+  subset of blocks. {% assign timestamp="58:49" %}
 
 - [BINANAs #3][] adds [BIN24-5][] with a list of specification
   repositories related to Bitcoin, such as BIPs, BOLTs, BLIPs, SLIPs,
   LNPBPs, and DLC specifications.  Some specification repositories for
-  other related projects are also listed.
+  other related projects are also listed. {% assign timestamp="59:29" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
