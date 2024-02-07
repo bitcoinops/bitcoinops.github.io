@@ -19,7 +19,7 @@ popular Bitcoin infrastructure projects.
   the functionality of the
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (`OP_CSFS`) opcode
   from [ElementsProject.org][] on Bitcoin using the proposed [BIP340][] specification of [schnorr
-  signatures][topic schnorr signatures] and an [OP_CAT][csfs cat] opcode
+  signatures][topic schnorr signatures] and an [OP_CAT][] opcode
   that was part of Bitcoin until mid-2010 (and which is often mentioned
   as a candidate for reintroduction).  Enabling CSFS-like behavior on
   Bitcoin would allow the creation of [covenants][topic covenants] and
@@ -73,6 +73,5 @@ BOLTs][bolts repo].*
 {% include linkers/issues.md issues="16528,20226,163,430,415" %}
 [btcpay server 1.0.6.8]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.8
 [poelstra 340cat]: https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298
-[csfs cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [news96 descriptor wallets]: /en/newsletters/2020/05/06/#bitcoin-core-16528
 [news132 bitcoin core v0.21]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
