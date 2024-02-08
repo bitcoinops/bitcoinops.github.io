@@ -73,6 +73,8 @@ Bitcoin-Dev mailing list.
     attacker's receiving node received an amount extracted from the
     victim's node.
 
+    {% assign timestamp="1:26" %}
+
     As Siegel reports, two changes were made to Bitcoin Core to prevent
     stalling:
 
@@ -115,7 +117,7 @@ Bitcoin-Dev mailing list.
     output for CPFP fee bumping now, waiting for [cluster mempool][topic
     cluster mempool] to hopefully allow v3 to permit more permissive
     topologies (i.e., more than just one parent, one child), and then to
-    drop the extra output in favor of using a more permissive topology.
+    drop the extra output in favor of using a more permissive topology. {% assign timestamp="17:08" %}
 
 - **Requirement to verify inputs use segwit in protocols vulnerable to txid malleability:**
   Bastien Teinturier [posted][teinturier segwit] to Delving Bitcoin to
@@ -171,6 +173,8 @@ Bitcoin-Dev mailing list.
        cases, but in the worst case it will consume almost 20,000 times
        as much bandwidth as the first procedure.<!-- ~4,000,000 byte
        transaction divided by ~22 byte P2WPKH scriptPubKey -->
+
+  {% assign timestamp="27:00" %}
 
 - **Proposal for replace by feerate to escape pinning:** Peter Todd
   [posted][todd rbfr] to the Bitcoin-Dev mailing list a proposal for a
@@ -228,12 +232,12 @@ Bitcoin-Dev mailing list.
 
   The separate discussions were not reconciled as of this writing.
   Peter Todd has released an experimental [implementation][libre relay]
-  of the replace by feerate rules.
+  of the replace by feerate rules. {% assign timestamp="35:21" %}
 
 - **Bitcoin-Dev mailing list migration update:** as of this writing, the
   Bitcoin-Dev mailing list is no longer accepting new emails as part of
   the process of migrating it to a different list server (see [Newsleter #276][news276 ml]).  Optech will
-  provide an update when the migration is complete.
+  provide an update when the migration is complete. {% assign timestamp="51:15" %}
 
 ## Releases and release candidates
 
@@ -246,7 +250,7 @@ release candidates.*
   that fixes multiple bugs: Channel open hanging until restart, a memory
   leak when using polling mode for `bitcoind`, sync getting lost for
   pruned nodes and the REST proxy not working when TLS certificate
-  encryption is turned on."
+  encryption is turned on." {% assign timestamp="1:00:02" %}
 
 ## Notable code and documentation changes
 
@@ -264,7 +268,7 @@ repo]._
   software.  However, the library hasn't seen any significant adoption
   and it has become a burden on maintenance of Bitcoin Core.  The plan
   is to "not migrate it to CMake and let it end with v27. Any remaining
-  use-cases could be handled in the future by [libbitcoinkernel][]."
+  use-cases could be handled in the future by [libbitcoinkernel][]." {% assign timestamp="1:01:13" %}
 
 - [Bitcoin Core #28956][] removes adjusted time from Bitcoin Core and
   warns users if their computer's clock appears to be out of sync with the
@@ -275,25 +279,25 @@ repo]._
   give blocks it produced a more accurate time.  However, adjusted time
   has also led to problems in the past and does not provide meaningful
   benefits to nodes on the current network.  See [Newsletter
-  #284][news284 adjtime] for previous coverage of this PR.
+  #284][news284 adjtime] for previous coverage of this PR. {% assign timestamp="1:07:23" %}
 
 - [Bitcoin Core #29347][] enables [v2 P2P transport][topic v2 p2p
   transport] by default.  New connections between two peers that both
-  support the v2 protocol will use encryption.
+  support the v2 protocol will use encryption. {% assign timestamp="1:10:03" %}
 
 - [Core Lightning #6985][] adds options to `hsmtool` that allow it to
   return the private keys for the onchain wallet in a way that allows
-  those keys to be imported into another wallet.
+  those keys to be imported into another wallet. {% assign timestamp="1:10:45" %}
 
 - [Core Lightning #6904][] makes various updates to CLN's connection
   and gossip management code.  A user-visible change is the addition of
   fields that indicate when a peer last had a stable connection to the
   local node for at least a minute.  This can allow removing peers with
-  unstable connections.
+  unstable connections. {% assign timestamp="1:12:54" %}
 
 - [Core Lightning #7022][] removes `lnprototest` from Core Lightning's
   testing infrastructure.  See [Newsletter #145][news145 lnproto] for
-  our description of them being added.
+  our description of them being added. {% assign timestamp="1:14:53" %}
 
 - [Core Lightning #6936][] adds infrastructure to assist with
   deprecating CLN features.  Features are now deprecated in code using
@@ -304,7 +308,7 @@ repo]._
   feature would be reported as deprecated but continued functioning
   by default for a long time after it was planned for removal, possibly
   leading users to continue depending on it and making actual removal
-  more difficult.
+  more difficult. {% assign timestamp="1:16:16" %}
 
 - [LND #8345][] begins testing whether transactions are likely to relay
   before broadcasting them by calling a full node's `testmempoolaccept`
@@ -313,7 +317,7 @@ repo]._
   potentially speeding up the discovery of a problem and limiting the
   potential harm from a bug.  Versions of the `testmempoolaccept` RPC
   are available in Bitcoin Core, most modern software forks of Bitcoin
-  Core, and the btcd full node.
+  Core, and the btcd full node. {% assign timestamp="1:18:02" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
