@@ -220,7 +220,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 - [Core Lightning #6985][]は、オンチェーンウォレットの秘密鍵を
   他のウォレットにインポートできる方法で返せるようにするオプションを`hsmtool`に追加しました。
 
-- [Core Lightning #6974][]では、CLNの接続とゴシップの管理コードにさまざまなアップデートが行われました。
+- [Core Lightning #6904][]では、CLNの接続とゴシップの管理コードにさまざまなアップデートが行われました。
   ユーザーの目に見える変更としては、ピアがローカルノードと最後に安定した接続を1分以上保ったタイミングを示すフィールドが追加されました。
   これにより、接続が不安定なピアを削除することができます。
 
@@ -244,7 +244,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="29189,28956,29347,6985,6974,7022,6936,7022,6936,8345,22144,22147" %}
+{% include linkers/issues.md v=2 issues="29189,28956,29347,6985,6904,7022,6936,7022,6936,8345,22144,22147" %}
 [news154 stall]: /ja/newsletters/2021/06/23/#bitcoin-core-22144
 [news145 lnproto]: /ja/newsletters/2021/04/21/#c-lightning-4444
 [siegel stall]: https://delvingbitcoin.org/t/block-stalling-issue-in-core-prior-to-v22-0/499/
