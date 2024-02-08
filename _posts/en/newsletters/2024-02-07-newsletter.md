@@ -285,7 +285,7 @@ repo]._
   return the private keys for the onchain wallet in a way that allows
   those keys to be imported into another wallet.
 
-- [Core Lightning #6974][] makes various updates to CLN's connection
+- [Core Lightning #6904][] makes various updates to CLN's connection
   and gossip management code.  A user-visible change is the addition of
   fields that indicate when a peer last had a stable connection to the
   local node for at least a minute.  This can allow removing peers with
@@ -318,7 +318,7 @@ repo]._
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="29189,28956,29347,6985,6974,7022,6936,7022,6936,8345,22144,22147" %}
+{% include linkers/issues.md v=2 issues="29189,28956,29347,6985,6904,7022,6936,7022,6936,8345,22144,22147" %}
 [news154 stall]: /en/newsletters/2021/06/23/#bitcoin-core-22144
 [news145 lnproto]: /en/newsletters/2021/04/21/#c-lightning-4444
 [siegel stall]: https://delvingbitcoin.org/t/block-stalling-issue-in-core-prior-to-v22-0/499/
