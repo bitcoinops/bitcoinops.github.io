@@ -45,7 +45,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
   The proposed rules for [v3 transaction relay][topic v3 transaction
   relay] only allow an unconfirmed v3 parent to have a single child
   transaction in the mempool.  Because neither transaction can have any
-  either ancestors or dependents in the mempool, applying the
+  other ancestors or dependents in the mempool, applying the
   existing RBF rules to replacements of a v3 child is easy and Zhao
   has [implemented it][zhao
   kindredimpl].  If, as described in [last week's newsletter][news286
