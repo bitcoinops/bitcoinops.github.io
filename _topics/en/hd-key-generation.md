@@ -84,6 +84,9 @@ optech_mentions:
   - title: "ColdCard 6.0.0X adds support for BIP129 exchange of xpubs during multisig wallet set up"
     url: /en/newsletters/2023/05/24/#edge-firmware-for-coldcard-announced
 
+  - title: "Rust Bitcoin #2451 removes the requirement that an HD derivation path start with an `m`"
+    url: /en/newsletters/2024/02/14/#rust-bitcoin-2451
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors
