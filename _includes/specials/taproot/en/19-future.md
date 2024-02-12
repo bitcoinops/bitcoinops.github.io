@@ -100,7 +100,7 @@ expressed the desire to build on top of taproot.
       extended to handle larger numbers.
 
     - **OP_CAT:** one of the previously-disabled opcodes that deserves
-      special mention is [OP_CAT][op_cat subtopic], which researchers
+      special mention is [OP_CAT][], which researchers
       have since discovered can [enable][keytrees] all [sorts][rubin
       pqc] of [interesting][poelstra cat] behavior on Bitcoin by itself,
       or which can be [combined][topic op_checksigfromstack] with other
@@ -130,7 +130,6 @@ rules.
 [p4tr vaults]: /en/preparing-for-taproot/#vaults-with-taproot
 [rubin delegation]: /en/newsletters/2021/03/24/#signing-delegation-under-existing-consensus-rules
 [p4tr taproot assumption]: /en/preparing-for-taproot/#is-cooperation-always-an-option
-[op_cat subtopic]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [keytrees]: https://blockstream.com/2015/08/24/en-treesignatures/#h.2lysjsnoo7jd
 [rubin pqc]: https://rubin.io/blog/2021/07/06/quantum-bitcoin/
 [poelstra cat]: https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-i.html
