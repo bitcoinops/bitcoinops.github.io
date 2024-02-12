@@ -275,7 +275,6 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [news185 optxhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [news187 optx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 [rubin recurse]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
-[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [shinobi recurse]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019891.html
 [news157 csfs]: /en/newsletters/2021/07/14/#request-for-op-checksigfromstack-design-suggestions
 [darosior reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019892.html

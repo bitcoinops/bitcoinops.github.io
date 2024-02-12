@@ -223,7 +223,6 @@ BOLTs][bolts repo].*
 [lnd leader]: https://github.com/bhandras/lnd/blob/f41771ce54bb7721101658477ad538991fc99fe6/docs/leader_election.md
 [nick varsig]: https://github.com/bitcoin-core/secp256k1/pull/844/commits/a0c3fc177f7f435e593962504182c3861c47d1be
 [news48 generic csfs]: /en/newsletters/2019/05/29/#not-generic-enough
-[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [rubin cost/benefit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
 [offers spec changes]: https://github.com/lightningnetwork/lightning-rfc/pull/798#issuecomment-871124755
 [suredbits enterprise ln]: /en/suredbits-enterprise-ln/
