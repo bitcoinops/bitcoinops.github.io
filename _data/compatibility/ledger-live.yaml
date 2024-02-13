@@ -52,12 +52,15 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
+      bech32m: "untested"
       default: "bech32"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "true"
       segwit_v1: "Fails when transaction is sent to the hardwave device for signing."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/ledger-live/segwit/receive-screen.png
       caption: >

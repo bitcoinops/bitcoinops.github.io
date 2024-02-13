@@ -40,12 +40,15 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "untested"
       default: "p2sh_wrapped_p2wsh"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "false"
       segwit_v1: ""
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/kraken/segwit/receive-screen.png
       caption: >

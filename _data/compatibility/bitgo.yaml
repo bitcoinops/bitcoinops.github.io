@@ -52,12 +52,15 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "untested"
       default: "p2sh_wrapped"
     send:
       bech32: "true" 
+      bech32m: "untested"
       change_bech32: "true"
       segwit_v1: "Error occurs during sending process, after validation."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitgo/segwit/receive-screen.png
       caption: >

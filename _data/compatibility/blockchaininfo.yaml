@@ -45,12 +45,15 @@ segwit:
     receive:
       p2sh_wrapped: "false"
       bech32: "true"
+      bech32m: "untested"
       default: "bech32"  # https://github.com/bitcoinops/bitcoinops.github.io/pull/510#issuecomment-859732513
     send:
       bech32: "true" 
+      bech32m: "untested"
       change_bech32: "true"  # https://github.com/bitcoinops/bitcoinops.github.io/pull/510#issuecomment-859732513
       segwit_v1: "Error occurs during sending process, after validation."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/blockchaininfo/segwit/receive-screen.png
       caption: >

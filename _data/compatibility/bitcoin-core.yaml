@@ -83,13 +83,17 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
+      bech32m: "untested"
+      bech32m: "untested"
       default: "p2sh_wrapped"
     send:
       bech32: "true" 
+      bech32m: "untested"
       change_bech32: "true"
       segwit_v1: "Transaction can be created and broadcast, but does not make it
       to the mempool."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitcoin-core/segwit/receive-screen.png
       caption: >

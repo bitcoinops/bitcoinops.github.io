@@ -50,6 +50,23 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
 
+{:id="segwit-receive-bech32m"}
+{% case segwit.receive.bech32m %}
+  {% when "true" %}{:.feature-yes}
+  - **Allows receiving to bech32m segwit addresses**<br>
+    Allows the generation of bech32m native (either P2WPKH or P2WSH) segwit receiving addresses.
+  {% when "false" %}{:.feature-no}
+  - **Does not allow receiving to bech32m segwit addresses**<br>
+    Does not allow the generation of bech32 native (either P2WPKH or P2WSH) segwit receiving addresses.
+  {% when "na" %}{:.feature-neutral}
+  - **No receiving capabilities**<br>
+    There are no receiving capabilities for this service.
+  {% when "untested" %}{:.feature-neutral}
+  - **Not tested: Can bech32m segwit transaction outputs be received?**<br>
+    We either didn’t test this or could not appropriately determine the results.
+  {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
+{% endcase %}
+
 {:id="segwit-receive-default"}
 {% case segwit.receive.default %}
   {% when "p2pkh" %}{:.feature-no}
@@ -117,6 +134,23 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
   - **Not tested: Can transaction outputs be sent to bech32 P2WSH addresses?**<br>
+    We either didn’t test this or could not appropriately determine the results.
+  {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
+{% endcase %}
+
+{:id="segwit-send-bech32m"}
+{% case segwit.send.bech32m %}
+  {% when "true" %}{:.feature-yes}
+  - **Allows sending to bech32m P2WPKH addresses**<br>
+    Allows sending to bech32m P2WPKH native segwit addresses.
+  {% when "false" %}{:.feature-no}
+  - **Does not allow sending to bech32m P2WPKH addresses**<br>
+    Does not allow sending to bech32m P2WPKH native segwit addresses.
+  {% when "na" %}{:.feature-neutral}
+  - **No sending capabilities**<br>
+    There are no sending capabilities for this service.
+  {% when "untested" %}{:.feature-neutral}
+  - **Not tested: Can transaction outputs be sent to bech32m P2WPKH addresses?**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}

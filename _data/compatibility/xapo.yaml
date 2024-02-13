@@ -62,13 +62,16 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "untested"
       default: "p2sh_wrapped_p2wsh"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "false"
       segwit_v1: "Xapo allows users to create segwit v1 transactions in the UI. However,
         the transaction gets stuck as pending for an indeterminate period of time."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/xapo/segwit/receive-screen.png
       caption: >

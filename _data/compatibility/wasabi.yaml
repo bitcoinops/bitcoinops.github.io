@@ -57,12 +57,15 @@ segwit:
     receive:
       p2sh_wrapped: "false"
       bech32: "true"
+      bech32m: "untested"
       default: "bech32"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "true"
       segwit_v1: "Fails on validation of the address."
       bech32_p2wsh: "true"
+      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/wasabi/segwit/receive-screen.png
       caption: >

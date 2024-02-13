@@ -145,6 +145,10 @@ properties:
                 description: Does the wallet allow receiving to Bech32 native segwit addresses?
                 type: string
                 enum: *feat
+              bech32m:
+                description: Does the wallet allow receiving to Bech32m native segwit addresses?
+                type: string
+                enum: *feat
               default: 
                 description: What is the default address receive type?
                 type: string
@@ -164,6 +168,10 @@ properties:
                 description: Does the wallet allow sending to Bech32 native segwit addresses?
                 type: string
                 enum: *feat
+              bech32m:
+                description: Does the wallet allow sending to Bech32m native segwit addresses?
+                type: string
+                enum: *feat
               change_bech32:
                 description: Does the wallet return change to itself in a Bech32 native segwit address?
                 type: string
@@ -173,6 +181,10 @@ properties:
                 type: string
               bech32_p2wsh:
                 description: Does the wallet allow sending to Bech32 native segwit p2wsh addresses?
+                type: string
+                enum: *feat
+              bech32m_p2wsh:
+                description: Does the wallet allow sending to Bech32m native segwit p2wsh addresses?
                 type: string
                 enum: *feat
             additionalProperties: false
