@@ -111,12 +111,91 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+[Add `maxfeerate` and `maxburnamount` args to `submitpackage`][review club 28950]
+is a PR by Greg Sanders (GitHub instagibbs) that adds functionality to the
+`submitpackage` RPC that is already present in the single-transaction
+RPCs `sendrawtransaction` and `testmempoolaccept`. This PR is part of
+the larger [package relay][topic package relay] project. Specifically,
+the PR allows a package submitter to specify arguments (mentioned in the
+PR title) that enable sanity-checking of the transactions in the requested
+package to prevent accidental loss of funds. The review club meeting
+was hosted by Abubakar Sadiq Ismail (GitHub ismaelsadeeq).
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/28956#l-39FIXME"
+  q0="Why is it important to perform these checks on submitted packages?"
+  a0="It's helpful to users to ensure the transactions within packages
+      have the same safeguards as individual transaction submission."
+  a0link="https://bitcoincore.reviews/28950#l-27"
+
+  q1="Are there other important checks apart from `maxburnamount` and
+      `maxfeerate` that should be performed on packages before they are
+      accepted to the mempool?"
+  a1="Yes, two examples are the base fee check and maximum standard
+      transaction size. These are low-cost checks, so can be checked
+      early and fail the package quickly."
+  a1link="https://bitcoincore.reviews/28950#l-33"
+
+  q2="The options `maxburnamount` and `maxfeerate` can prevent a
+      transaction from entering the mempool and being relayed. Can we
+      consider these options as policy rules? Why or why not?"
+  a2="This is policy; these checks don't apply to transactions in
+      mined blocks (so this isn't consensus). These don't even
+      affect relay of transactions from peers, only transactions
+      submitted locally using RPC."
+  a2link="https://bitcoincore.reviews/28950#l-47"
+
+  q3="Why do we validate maxfeerate against the modified feerate
+      instead of the base fee rate?"
+  a3="(Earlier review clubs [24152][review club 24152],
+      [24538][review club 24538], and [27501][review club 27501]
+      covered the concept of modified versus base fees.)
+      Most participants thought the base fee should be used instead
+      of the modified fee, because `sendrawtransaction` and `testmempoolaccept`
+      use the base fee in their checks, so that would seem more consistent.
+      It may not make any practical difference since `prioritisetransaction`
+      (which makes modified and base fees different) is generally used
+      only by miners."
+  a3link="https://bitcoincore.reviews/28950#l-69"
+
+  q4="We validate maxfeerate against the modified feerate of individual
+      package transactions, not package feerate. When can this be inaccurate?"
+  a4="When a package child transaction is rejected because its modified
+      fee rate exceeds `maxfeerate` individually, but does not if it's checked
+      as a package."
+  a4link="https://bitcoincore.reviews/28950#l-84"
+
+  q5="Given that possible inaccuracy, why not check `maxfeerate` against
+      package feerate instead?"
+  a5="Because this can cause a different inaccuracy. Suppose
+      transaction A has zero fee and B CPFPs (bumps) A. Both A and B
+      are physically large so neither exceeds `maxfeerate`. But now
+      high-fee rate C is added which spends from both A and B.
+      (This is an allowed package topology because it's only two levels,
+      although it was pointed out that the `submitpackage` RPC doesn't allow
+      this topology.) In this case, C would be accepted because much of its
+      fee is absorbed by A and B, but C should be rejected."
+  a5link="https://bitcoincore.reviews/28950#l-108"
+
+  q6="Why can’t `maxfeerate` be checked immediately after decoding like
+      `maxburnamount` is?"
+  a6="Because transaction inputs famously don't explicitly state the
+      input amount; they can only be known after looking up the parent
+      output. The fee rate requires the fee, which requires the input
+      amounts."
+  a6link="https://bitcoincore.reviews/28950#l-141"
+
+  q7="How does the `maxfeerate` check in `testmempoolaccept` RPC differ
+      from `submitpackage` RPC? Why can’t they be the same?"
+  a7="`submitpackage` uses modified fees while
+      `testmempoolaccept` uses base fees, as explained earlier.
+      Also, the fee rate check is done after the `testaccept` package
+      processing because the transactions are not added
+      to mempool and broadcasted after the processing, so we can safely
+      check `maxfeerate` and return appropriate error messages.
+      The same can't be done in `submitpackage` because the package
+      transactions might have already been accepted into the mempool and
+      broadcasted to peers, rendering the check redundant."
+  a7link="https://bitcoincore.reviews/28950#l-153"
 %}
 
 ## Notable code and documentation changes
@@ -210,3 +289,7 @@ repo]._
 [migration email]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
 [news276 ml]: /en/newsletters/2023/11/08/#mailing-list-hosting
 [news288 ml]: /en/newsletters/2024/02/07/#bitcoin-dev-mailing-list-migration-update
+[review club 28950]: https://bitcoincore.reviews/28950
+[review club 24152]: https://bitcoincore.reviews/24152
+[review club 24538]: https://bitcoincore.reviews/24538
+[review club 27501]: https://bitcoincore.reviews/27501
