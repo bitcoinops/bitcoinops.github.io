@@ -53,7 +53,7 @@ libres. Nous incluons également nos sections habituelles résumant une réunion
   - Moins de 0,1% <!-- 10/14124 --> étaient supérieurs à 1 000 vbytes. Il s'agit également d'un comportement que les portefeuilles LN
     devraient modifier. Les recherches supplémentaires de Daftuar ont montré que presque toutes les dépenses d'ancrage étaient
     inférieures à 500 vbytes, ce qui suggère potentiellement que la limite de taille v3 pourrait être réduite. Cela rendrait moins
-    coûteux pour un défenseur de surmonter une tentative d'attaque par [épinglage][épinglage de transaction] contre une dépense
+    coûteux pour un défenseur de surmonter une tentative d'attaque par [épinglage][topic transaction pinning] contre une dépense
     d'ancrage, mais cela empêcherait également les portefeuilles LN de pouvoir contribuer à des frais à partir de plus de quelques UTXO.
     Teinturier [a noté][teinturier better] que "il est très tentant de réduire la valeur de 1 000 vbytes, mais les données passées ne
     montrent que des tentatives honnêtes (avec très peu de HTLC en attente) car nous n'avons pas encore vu d'attaques généralisées sur
@@ -202,7 +202,8 @@ d'Amélioration Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28948,6785,2818,2816,8338,2856,2442,2451,1131,1096" %}
-[fsfe]: https://fsfe.org/activities/ilovefs/index.en.html[fsf]: https://www.fsf.org/blogs/community/i-love-free-software-day-is-here-share-your-love-software-and-a-video
+[fsfe]: https://fsfe.org/activities/ilovefs/index.en.html
+[fsf]: https://www.fsf.org/blogs/community/i-love-free-software-day-is-here-share-your-love-software-and-a-video
 [sanders future]: https://delvingbitcoin.org/t/v3-and-some-possible-futures/523
 [news261 close]: /fr/newsletters/2023/07/26/#protocole-de-fermeture-ln-simplifie
 [teinturier better]: https://delvingbitcoin.org/t/v3-transaction-policy-for-anti-pinning/340/37
