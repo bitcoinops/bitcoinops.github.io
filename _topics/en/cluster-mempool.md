@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Cluster mempool could help solve challenges opening zero-conf channels with v3 transaction relay"
     url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
 
+  - title: "Ideas for post-v3 relay enhancements after cluster mempool is deployed"
+    url: /en/newsletters/2024/02/14/#ideas-for-relay-enhancements-after-cluster-mempool-is-deployed
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

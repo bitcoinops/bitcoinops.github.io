@@ -73,6 +73,15 @@ optech_mentions:
   - title: "Challenges opening zero-conf channels when using the initially allowed v3 transaction topology"
     url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
 
+  - title: "Ideas for post-v3 relay enhancements after cluster mempool is deployed"
+    url: /en/newsletters/2024/02/14/#ideas-for-relay-enhancements-after-cluster-mempool-is-deployed
+
+  - title: "Research about historic use of anchor outputs for possibly imbuing them with v3 properties"
+    url: /en/newsletters/2024/02/14/#what-would-have-happened-if-v3-semantics-had-been-applied-to-anchor-outputs-a-year-ago
+
+  - title: "Bitcoin Core #28948 adds support for (but does not enable) version 3 transaction relay"
+    url: /en/newsletters/2024/02/14/#bitcoin-core-28948
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

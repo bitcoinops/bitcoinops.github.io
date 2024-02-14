@@ -158,6 +158,15 @@ optech_mentions:
   - title: Discussion about LN anchors and v3 transaction relay proposal
     url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
 
+  - title: "Research about historic use of anchor outputs for possibly imbuing them with v3 properties"
+    url: /en/newsletters/2024/02/14/#what-would-have-happened-if-v3-semantics-had-been-applied-to-anchor-outputs-a-year-ago
+
+  - title: "Core Lightning #6785 makes anchor-style channels the default"
+    url: /en/newsletters/2024/02/14/#core-lightning-6785
+
+  - title: "Eclair #2816 allows the node operator to choose the max fee for an anchor output"
+    url: /en/newsletters/2024/02/14/#eclair-2816
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
