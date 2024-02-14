@@ -83,7 +83,7 @@ vydání a souhrnem významných změn v populárním bitcoinovém páteřním s
     nepřeposílají platby a mají dostatečnou rezervu, potřebují z bezpečnostních
     důvodů jedno oddělené UTXO pouze, chtějí-li přijmout příchozí platbu.
 
-  - *Dodatek k logice v3:* V reakci na obavy vyjádřené během setkání vývojářů specifikace
+  - *Vštípená v3 logika:* V reakci na obavy vyjádřené během setkání vývojářů specifikace
     LN, že design, implementace a nasazení těchto změn mohou trvat dlouho,
     [navrhuje][sanders transition] Gregory Sanders mezikrok,
     ve kterém by bylo zvláštním způsobem nakládáno s transakcemi, které vypadají
