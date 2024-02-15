@@ -238,5 +238,5 @@ repo]._
 [news284 ptexogenous]: /cs/newsletters/2024/01/10/#caste-pouzivani-externich-poplatku-muze-ohrozovat-decentralizaci-tezby
 [zhao kindredimpl]: https://github.com/bitcoin/bitcoin/pull/29306
 [pt ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022309.html
-[news286 imbued]: /cs/newsletters/2024/01/24/#dodatek-k-logice-v3
+[news286 imbued]: /cs/newsletters/2024/01/24/#vstipena-v3-logika
 [news216 headers presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
