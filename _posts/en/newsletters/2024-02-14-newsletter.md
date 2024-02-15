@@ -27,7 +27,7 @@ popular Bitcoin infrastructure software.
   by relaxing some of its rules that may no longer be needed and adding
   a requirement that a transaction (or a [package][topic package relay]
   of transactions) pay a feerate that makes them likely to be mined
-  within the next block or two.
+  within the next block or two. {% assign timestamp="1:11" %}
 
 - **What would have happened if v3 semantics had been applied to anchor outputs a year ago?**
   Suhas Daftuar [posted][daftuar retrospective] to Delving Bitcoin about
@@ -87,14 +87,14 @@ popular Bitcoin infrastructure software.
   it was our impression from the results that LN wallets might need to
   make a few small changes to better conform with v3 semantics before
   Bitcoin Core could safely start treating anchor spends as v3
-  transactions.
+  transactions. {% assign timestamp="25:55" %}
 
 - **Bitcoin-Dev mailing list move:** the protocol development discussion
   mailing list is now hosted on a new server with a new email address.
   Everyone who wishes to continue receiving posts needs to resubscribe.
   For details, see the [migration email][] by Bryan Bishop.  For past
   discussion about the migration, see Newsletters [#276][news276 ml] and
-  [#288][news288 ml].
+  [#288][news288 ml]. {% assign timestamp="35:47" %}
 
 - **I Love Free Software Day:** every year on February 14th,
   organizations such as [FSF][] and [FSFE][] encourage users of free
@@ -102,7 +102,7 @@ popular Bitcoin infrastructure software.
   all the people maintaining and contributing to Free Software".  Even
   if you're reading this newsletter after Feb 14th, we encourage you to
   take a moment to thank some of your favorite contributors to Bitcoin FOSS
-  projects.
+  projects. {% assign timestamp="37:56" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -120,6 +120,8 @@ the PR allows a package submitter to specify arguments (mentioned in the
 PR title) that enable sanity-checking of the transactions in the requested
 package to prevent accidental loss of funds. The review club meeting
 was hosted by Abubakar Sadiq Ismail (GitHub ismaelsadeeq).
+
+{% assign timestamp="39:57" %}
 
 {% include functions/details-list.md
   q0="Why is it important to perform these checks on submitted packages?"
@@ -222,11 +224,11 @@ repo]._
   transactions defined in [BIP68][].  The new rules are intended to help
   contract protocols such as LN ensure their precommitted transactions
   can always be confirmed quickly with minimal extra fees needed to
-  escape [transaction pinning attacks][topic transaction pinning].
+  escape [transaction pinning attacks][topic transaction pinning]. {% assign timestamp="46:24" %}
 
 - [Core Lightning #6785][] makes [anchor-style][topic anchor outputs]
   channels the default on Bitcoin.  Non-anchor channels are still used
-  for channels on Elements-compatible [sidechains][topic sidechains].
+  for channels on Elements-compatible [sidechains][topic sidechains]. {% assign timestamp="49:39" %}
 
 - [Eclair #2818][] maximizes the number of inputs the Eclair wallet
   believes it can safely spend by detecting some cases when an existing
@@ -244,7 +246,7 @@ repo]._
   spent.  Eclair can independently detect a double spend of the parent
   transaction and it will now tell Bitcoin Core's wallet to
   [abandon][rpc abandontransaction] Eclair's earlier attempt to unlock
-  the UTXO and allow it to be spent again.
+  the UTXO and allow it to be spent again. {% assign timestamp="50:18" %}
 
 - [Eclair #2816][] allows the node operator to choose the maximum amount
   they're willing to spend on an [anchor output][topic anchor outputs]
@@ -254,25 +256,25 @@ repo]._
   suggested by its feerate estimator, up to an absolute total of 10,000
   sat.  Eclair will also still pay up to the amount at risk from
   [HTLCs][topic htlc] expiring soon, which could be higher
-  than 10,000 sats.
+  than 10,000 sats. {% assign timestamp="52:29" %}
 
 - [LND #8338][] adds initial functions for a new protocol for
   cooperatively closing channels (see [Newsletter #261][news261 close]
-  and [BOLTs #1096][]).
+  and [BOLTs #1096][]). {% assign timestamp="56:20" %}
 
 - [LDK #2856][] updates LDK's implementation of [route
   blinding][topic rv routing] to ensure the receiver has enough blocks
   to claim a payment.  This is based on an update of the route blinding
-  specification in [BOLTs #1131][].
+  specification in [BOLTs #1131][]. {% assign timestamp="56:56" %}
 
 - [LDK #2442][] includes details about each pending [HTLC][topic htlc] in the
   `ChannelDetails`.  This lets the consumer of the API learn what next
-  needs to happen to move the HTLC closer to being accepted or rejected.
+  needs to happen to move the HTLC closer to being accepted or rejected. {% assign timestamp="59:09" %}
 
 - [Rust Bitcoin #2451][] removes the requirement that an HD derivation path start
   with an `m`.  In [BIP32][], the string `m` is a variable representing
   the master private key.  When referring to just a path, the `m` is
-  unnecessary and may be wrong in some contexts.
+  unnecessary and may be wrong in some contexts. {% assign timestamp="59:39" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
