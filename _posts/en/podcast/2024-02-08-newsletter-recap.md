@@ -41,7 +41,7 @@ implementations, Eclair, and one popular wallet, Phoenix.
 
 **Mike Schmidt**: Eugene?
 
-**Eugene Siegel: **Hi, I'm Eugene and I work on LND.
+**Eugene Siegel**: Hi, I'm Eugene and I work on LND.
 
 **Mike Schmidt**: Well thanks, Bastien and Eugene, for joining us.  For those
 following along, this is Newsletter #288, and we're going to go through in order
