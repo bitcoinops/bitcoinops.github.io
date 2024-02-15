@@ -44,13 +44,13 @@ libres. Nous incluons également nos sections habituelles résumant une réunion
     canaux d'ancrage en séquence à l'ouverture de nouveaux canaux avec leur monnaie rendue lors de la fermeture de l'ancrage. Les
     portefeuilles LN ne pourraient pas utiliser ce comportement si les sorties de style ancrage étaient dotées de propriétés v3.
 
-- Environ 1,2% <!-- 173 / 14124 --> n'ont jamais été exploités et n'ont pas été analysés plus en détail.
+- Environ 1,2% <!-- 173 / 14124 --> n'ont jamais été exploitées et n'ont pas été analysées plus en détail.
 
   - Environ 0,1% <!-- 19/14124 --> ont dépensé une sortie non confirmée non liée, ce qui a entraîné une dépense d'ancrage ayant plus
     d'un parent autorisé. Le développeur Bastien Teinturier pense que cela pourrait être un comportement d'Eclair et note qu'Eclair
     résoudrait automatiquement cette situation même avec son code actuel.
 
-  - Moins de 0,1% <!-- 10/14124 --> étaient supérieurs à 1 000 vbytes. Il s'agit également d'un comportement que les portefeuilles LN
+  - Moins de 0,1% <!-- 10/14124 --> étaient supérieures à 1 000 vbytes. Il s'agit également d'un comportement que les portefeuilles LN
     devraient modifier. Les recherches supplémentaires de Daftuar ont montré que presque toutes les dépenses d'ancrage étaient
     inférieures à 500 vbytes, ce qui suggère potentiellement que la limite de taille v3 pourrait être réduite. Cela rendrait moins
     coûteux pour un défenseur de surmonter une tentative d'attaque par [épinglage][topic transaction pinning] contre une dépense
