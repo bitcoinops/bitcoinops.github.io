@@ -49,7 +49,7 @@ transaction pour éviter le blocage des transactions, et fournit une brève mise
     une moyenne de 10 minutes entre les blocs, cela signifie qu'un attaquant qui contrôle _x_ connexions peuvent retarder la réception
     d'un bloc par un nœud Bitcoin pendant environ le temps nécessaire pour produire _x_ blocs. Si le paiement de transfert doit être
     réclamé dans les 40 blocs, un attaquant contrôlant 50 connexions a de bonnes chances d'empêcher le nœud Bitcoin de voir le bloc
-    contenant la préimage jusqu'à ce que le nœud dépensier puisse recevoir un remboursement du paiement. Si cela se produit, le nœud
+    contenant la préimage avant que le nœud dépensier ne puisse recevoir un remboursement du paiement. Si cela se produit, le nœud
     dépensier de l'attaquant n'a rien payé et le nœud receveur de l'attaquant a reçu une somme extraite du nœud de la victime.
 
    Comme le rapporte Siegel, deux modifications ont été apportées à Bitcoin Core pour éviter les blocages :
@@ -119,7 +119,7 @@ transaction pour éviter le blocage des transactions, et fournit une brève mise
        <!-- ~4 000 000 octets de transaction divisés par ~22 octets de scriptPubKey P2WPKH -->
 
 - **Proposition de remplacement par feerate pour échapper au pinning :** Peter Todd [a posté][todd rbfr] sur la liste de diffusion
-  Bitcoin-Dev une proposition pour un ensemble de politiques de [remplacement de transaction][topic rbf] qui peuvent être utilisées même
+  Bitcoin-Dev une proposition pour un ensemble de politiques de [remplacement de transaction][topic rbf] qui peuvent être appliquées même
   lorsque les politiques de remplacement par frais (RBF) existantes n'autorisent pas le remplacement d'une transaction. Sa proposition se
   décline en deux variations différentes :
 
@@ -132,8 +132,8 @@ transaction pour éviter le blocage des transactions, et fournit une brève mise
       soit également suffisamment élevé pour le placer parmi les ~1 000 000 vbytes supérieurs du mempool (ce qui signifie que le
       remplaçant serait miné si un bloc était produit immédiatement après son acceptation).
 
-  Mark Erhardt a décrit ([1][erhardt rbfr1], [2][erhardt rbfr2]) comment les politiques proposées pourraient être utilisées de manière
-  abusive pour permettre de gaspiller une quantité infinie de bande passante des nœuds à un coût minimal pour un attaquant. Peter Todd
+  Mark Erhardt a décrit ([1][erhardt rbfr1], [2][erhardt rbfr2]) comment les politiques proposées pourraient être détournées
+  pour permettre de gaspiller une quantité infinie de bande passante des nœuds à un coût minimal pour un attaquant. Peter Todd
   a mis à jour les politiques pour éliminer cet abus particulier, mais d'autres préoccupations ont été soulevées par Gregory Sanders et
   Gloria Zhao dans un fil de discussion [Delving Bitcoin][sz rbfr] :
 
@@ -206,9 +206,9 @@ transaction pour éviter le blocage des transactions, et fournit une brève mise
 
 - [Core Lightning #6936][] ajoute une infrastructure pour faciliter l'obsolescence des fonctionnalités de CLN. Les fonctionnalités sont
   maintenant dépréciées dans le code à l'aide de fonctions qui désactivent automatiquement ces fonctionnalités par défaut en fonction de
-  la version actuelle du programme. Les utilisateurs peuvent toujours activer de force les fonctionnalités même après leur version de
-  dépréciation indiquée tant que le code existe toujours. Cela évite un problème occasionnel où une fonctionnalité de CLN serait signalée
-  comme dépréciée mais continuerait de fonctionner par défaut pendant longtemps après sa planification de suppression, ce qui pourrait
+  la version actuelle du programme. Les utilisateurs peuvent toujours activer de force les fonctionnalités même après la version qui les désactive
+  tant que le code existe toujours. Cela évite un problème occasionnel où une fonctionnalité de CLN serait signalée
+  comme dépréciée mais continuerait de fonctionner par défaut pendant longtemps après la planification de sa suppression, ce qui pourrait
   amener les utilisateurs à continuer de dépendre de cette fonctionnalité et rendre la suppression réelle plus difficile.
 
 - [LND #8345][] commence à tester si les transactions sont susceptibles d'être relayées avant de les diffuser en appelant le RPC
