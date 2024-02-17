@@ -44,7 +44,7 @@ libres. Nous incluons également nos sections habituelles résumant une réunion
     canaux d'ancrage en séquence à l'ouverture de nouveaux canaux avec leur monnaie rendue lors de la fermeture de l'ancrage. Les
     portefeuilles LN ne pourraient pas utiliser ce comportement si les sorties de style ancrage étaient dotées de propriétés v3.
 
-- Environ 1,2% <!-- 173 / 14124 --> n'ont jamais été exploitées et n'ont pas été analysées plus en détail.
+  - Environ 1,2% <!-- 173 / 14124 --> n'ont jamais été exploitées et n'ont pas été analysées plus en détail.
 
   - Environ 0,1% <!-- 19/14124 --> ont dépensé une sortie non confirmée non liée, ce qui a entraîné une dépense d'ancrage ayant plus
     d'un parent autorisé. Le développeur Bastien Teinturier pense que cela pourrait être un comportement d'Eclair et note qu'Eclair
