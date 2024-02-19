@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Trezor team disclosed a bug in the C-language bech32 specification affecting multiple wallets"
     url: /en/newsletters/2018/11/06/#overflow-bug-in-reference-c-language-bech32-implementation
 
+  - title: "Suhas Daftuar disclosed a bug that could temporarily exclude a Bitcoin Core node from consensus"
+    url: /en/newsletters/2019/03/12/#bitcoin-core-vulnerability-disclosure
+
   - title: "Braydon Fuller and Javed Khan report CVE-2018-17145 DoS vulnerability to devs of full nodes"
     url: /en/newsletters/2020/09/16/#inventory-out-of-memory-denial-of-service-attack-invdos
 
