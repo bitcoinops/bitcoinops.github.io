@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Bitcoin Core #27213 will attempt to open and maintain one connection on each reachable network"
     url: /en/newsletters/2023/08/16/#bitcoin-core-27213
 
+  - title: "Improved reproducible ASMap creation process"
+    url: /en/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks
