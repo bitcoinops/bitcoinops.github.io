@@ -50,6 +50,9 @@ optech_mentions:
   - title: "Proposal to add expiration metadata to silent payment addresses"
     url: /en/newsletters/2023/08/16/#adding-expiration-metadata-to-silent-payment-addresses
 
+  - title: "Human readable payment instructions proposed that are compatible with silent payment addresses"
+    url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

@@ -97,6 +97,9 @@ optech_mentions:
   - title: "Eclair #2752 allows an offer to reference a node using a short channel identifier (SCID)"
     url: /en/newsletters/2023/11/22/#eclair-2752
 
+  - title: "Human readable payment instructions proposed that are compatible with offers"
+    url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

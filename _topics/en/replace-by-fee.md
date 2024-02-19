@@ -171,6 +171,9 @@ optech_mentions:
   - title: "Proposal for replace-by-feerate to avoid transaction pinning"
     url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
 
+  - title: "Pure replace by feerate is not guaranteed to be incentive compatible"
+    url: /en/newsletters/2024/02/21/#pure-replace-by-feerate-doesn-t-guarantee-incentive-compatibility
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
