@@ -32,9 +32,10 @@ libres. Nous incluons également nos sections habituelles résumant une réunion
 
   - Environ 94% <!-- (14124 - 856) / 14124 --> auraient réussi selon les règles v3.
 
-  - Environ 2,1% <!-- 302/14124 --> avaient plus d'un parent (par exemple, des tentatives de dépenses [CPFP][topic cpfp]). Certains
-    portefeuilles LN le font pour des raisons d'efficacité lors de la fermeture de plusieurs canaux en peu de temps. Ils devraient
-    désactiver ce comportement si les sorties de style ancrage devaient être dotées de propriétés v3.
+  - Environ 2,1% <!-- 302/14124 --> avaient plus d'un parent (par exemple, des
+    tentatives de dépenses [CPFP][topic cpfp]). Certains portefeuilles LN le
+    font pour des raisons d'efficacité lors de la fermeture de plusieurs canaux
+    en peu de temps. Ils devraient désactiver ce comportement si les sorties de style ancrage devaient être dotées de propriétés v3.
 
   - Environ 1,8% <!-- 251/14124 --> n'étaient pas le premier enfant du parent. En utilisant la proposition pour _imbued v3_, le deuxième
     enfant pourrait remplacer le premier enfant dans un [paquet][topic package relay] (voir le [Bulletin #287][news287 kindred]).
