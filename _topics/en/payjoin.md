@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Payjoin client for Bitcoin Core released"
     url: /en/newsletters/2023/12/13/#payjoin-client-for-bitcoin-core-released
 
+  - title: "Mutiny Wallet v0.5.7 adds support for payjoin"
+    url: /en/newsletters/2024/02/21/#mutiny-wallet-v0-5-7-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
