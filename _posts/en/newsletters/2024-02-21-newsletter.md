@@ -215,7 +215,27 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Multiparty coordination protocol NWC announced:**
+  [Nostr Wallet Connect (NWC)][nwc blog] is a coordination protocol to
+  facilitate communications in interactive use cases involving multiple parties.
+  While the initial focus of NWC is Lightning, interactive protocols
+  like [joinpools][topic joinpools], [Ark][topic ark], [DLCs][topic dlc], or
+  [multisignature][topic multisignature] schemes could eventually benefit from
+  the protocol.
+
+- **Mutiny Wallet v0.5.7 released:**
+  The [Mutiny Wallet][mutiny github] release adds [payjoin][topic payjoin] support
+  and makes improvements to NWC and LSP features.
+
+- **GroupHug transaction batching service:**
+  [GroupHug][grouphug github] is a [batching][scaling payment batching] service
+  using [PSBTs][topic psbt], with [limitations][grouphug blog].
+
+- **Boltz announces taproot swaps:**
+  Non-custodial swap exchange Boltz [announced][boltz blog] an upgrade
+  to their atomic swap protocol to use [taproot][topic
+  taproot], [schnorr signatures][topic schnorr signatures], and [MuSig2][topic musig].
+
 
 ## Releases and release candidates
 
@@ -293,3 +313,8 @@ repo]._
 [bip inout]: https://github.com/Christewart/bips/blob/92c108136a0400b3a2fd66ea6c291ec317ee4a01/bip-op-inout-amount.mediawiki
 [mempool series]: /en/blog/waiting-for-confirmation/
 [Core Lightning 24.02rc1]: https://github.com/ElementsProject/lightning/releases/tag/v24.02rc1
+[nwc blog]: https://blog.getalby.com/scaling-bitcoin-apps/
+[mutiny github]: https://github.com/MutinyWallet/mutiny-web
+[grouphug blog]: https://peachbitcoin.com/blog/group-hug/
+[grouphug github]: https://github.com/Peach2Peach/groupHug
+[boltz blog]: https://blog.boltz.exchange/p/introducing-taproot-swaps-putting
