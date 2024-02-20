@@ -44,15 +44,14 @@ segwit:
     receive:
       p2sh_wrapped: "false"
       bech32: "false"
-      bech32m: "untested"
+      bech32m: "false"
       default: "p2pkh"
     send:
       bech32: "true" 
-      bech32m: "untested"
+      bech32m: "false"
       change_bech32: "untested"
       segwit_v1: "Does not pass front end javascript validation"
       bech32_p2wsh: "false"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/binance/segwit/receive-screen.png
       caption: >

@@ -55,7 +55,6 @@ segwit:
       segwit_v1: "Address text input doesn’t allow bech32 addresses due to
       character limits."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitstamp/segwit/receive-screen.png
       caption: >

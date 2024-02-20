@@ -72,7 +72,6 @@ segwit:
       change_bech32: "true"
       segwit_v1: "Error message during broadcasting of transaction"
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/blocksettle/segwit/SegWit_wallet_overview.png
       caption: >

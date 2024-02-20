@@ -116,7 +116,6 @@ segwit:
       change_bech32: "false"
       segwit_v1: "Fails on validation of the address."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/greenaddress/segwit/receive-screen.png
       caption: >

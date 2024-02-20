@@ -183,8 +183,4 @@ properties:
                 description: Does the wallet allow sending to Bech32 native segwit p2wsh addresses?
                 type: string
                 enum: *feat
-              bech32m_p2wsh:
-                description: Does the wallet allow sending to Bech32m native segwit p2wsh addresses?
-                type: string
-                enum: *feat
             additionalProperties: false

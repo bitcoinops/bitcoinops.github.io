@@ -39,15 +39,14 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
-      bech32m: "untested"
+      bech32m: "true"
       default: "bech32_p2wsh"
     send:
       bech32: "true"
-      bech32m: "untested"
+      bech32m: "true"
       change_bech32: "untested"
       segwit_v1: "true"
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitnob/segwit/send-screen-default.png
       caption: >

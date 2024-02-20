@@ -60,11 +60,10 @@ segwit:
       default: "p2sh_wrapped"
     send:
       bech32: "true"
-      bech32m: "untested"
+      bech32m: "true"
       change_bech32: "false"
       segwit_v1: "An attempt to send to a bech32m taproot address shows an error that the address is invalid."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/edge/segwit/receive-screen.png
       caption: >

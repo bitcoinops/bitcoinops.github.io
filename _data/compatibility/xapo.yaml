@@ -71,7 +71,6 @@ segwit:
       segwit_v1: "Xapo allows users to create segwit v1 transactions in the UI. However,
         the transaction gets stuck as pending for an indeterminate period of time."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/xapo/segwit/receive-screen.png
       caption: >

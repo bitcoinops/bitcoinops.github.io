@@ -55,7 +55,6 @@ segwit:
       change_bech32: "true"
       segwit_v1: "Address does not pass validation."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitrefill/segwit/receive-screen.png
       caption: >

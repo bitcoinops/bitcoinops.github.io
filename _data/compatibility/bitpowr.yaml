@@ -56,7 +56,6 @@ segwit:
       change_bech32: "true"
       segwit_v1: "true"
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/bitpowr/segwit/receive-screen.png
       caption: >

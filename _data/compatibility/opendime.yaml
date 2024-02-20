@@ -54,7 +54,6 @@ segwit:
       change_bech32: "na"
       segwit_v1: "Untested."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/opendime/segwit/receive-screen.png
       caption: >

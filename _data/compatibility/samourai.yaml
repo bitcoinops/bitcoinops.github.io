@@ -70,15 +70,14 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
-      bech32m: "untested"
+      bech32m: "false"
       default: "bech32"
     send:
       bech32: "true"
-      bech32m: "untested"
+      bech32m: "true"
       change_bech32: "true"
       segwit_v1: "Fails on broadcast of transaction to the network."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/samourai/segwit/receive-screen.png
       caption: >

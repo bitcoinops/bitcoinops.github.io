@@ -67,7 +67,6 @@ segwit:
       change_bech32: "false"
       segwit_v1: "Allows v1 address to be entered in the UI. Fails during broadcast."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/copay/segwit/receive-screen.png
       caption: >

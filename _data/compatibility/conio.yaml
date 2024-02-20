@@ -77,7 +77,6 @@ segwit:
       change_bech32: "false"
       segwit_v1: "Server error 500 while attemping to send."
       bech32_p2wsh: "true"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/conio/segwit/receive-screen.png
       caption: >

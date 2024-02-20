@@ -67,7 +67,6 @@ segwit:
       change_bech32: "untested"
       segwit_v1: "Bech32 not supported."
       bech32_p2wsh: "false"
-      bech32m_p2wsh: "untested"
   examples:
     - image: /img/compatibility/abra/segwit/receive-screen.png
       caption: >
