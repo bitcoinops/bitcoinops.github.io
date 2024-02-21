@@ -8,9 +8,7 @@ layout: newsletter
 lang: zh
 version: 1
 excerpt: >
-  Optech Newsletter 试运行，包括有关 
-  `OP_CODESEPARATOR` 操作码、BetterHash 挖矿协议以及 BIP157/158 
-  紧凑区块过滤器的新闻。
+  Optech Newsletter 试运行，包括有关 `OP_CODESEPARATOR` 操作码、BetterHash 挖矿协议以及 BIP157/158 紧凑区块过滤器的新闻。
 ---
 
 **这份来自 2018 年 6 月 8 日的 Newsletter，是 Optech Newsletter 的预览版。**
@@ -38,7 +36,7 @@ excerpt: >
 
 - **[哈希率增加][hash-rate-increases]：** 本周挖矿难度增加了近 15%，短期平均网络哈希率显示持续增长。这意味着区块产生的频率比正常情况更高，只要这一趋势持续，交易费用可能会保持较低水平。这是[合并交易输出][consolidate]或发送低费用交易的好时机。
 
-[hash-rate-increases]: https://bitcoinops.org/en/newsletters/2018/06/08/#hash-rate-increases 
+[hash-rate-increases]: https://bitcoinops.org/en/newsletters/2018/06/08/#hash-rate-increases
 [consolidate]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 
 - **[非常低费用的交易][very-low-fee-transactions]：** 在具有非默认交易接受策略的节点上观察到支付低于 10 nBTC/vbyte 的非常低费用的交易数量增加（默认策略是拒绝支付低于 10 nBTC/vbyte 的交易）。这可能表明配置错误的钱包支付了过低的费用，或者表明一些支付者认为这是节省费用的可行策略。值得尝试以确定这些极低的费用是否可以用于合并和其他非时间敏感的钱包内转账。
