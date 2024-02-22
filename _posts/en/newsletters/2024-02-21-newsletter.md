@@ -64,7 +64,7 @@ popular Bitcoin infrastructure software.
   that is already supported by some Bitcoin software, such as Electrum.
   A third significantly discussed topic was how addresses should be
   displayed, e.g. `example@example.com`, `@example@example.com`,
-  `example$example.com`, etc.
+  `example$example.com`, etc. {% assign timestamp="1:41" %}
 
 - **Thinking about mempool incentive compatibility:** Suhas Daftuar
   [posted][daftuar incentive] to Delving Bitcoin several insights into
@@ -131,7 +131,7 @@ popular Bitcoin infrastructure software.
     harmful to the decentralization of mining on the network overall.
     [...] Understanding those scenarios may also be helpful to us as we
     try to design incentive-compatible protocols that are DoS-resistant,
-    so that we know where the boundaries are of what is possible."
+    so that we know where the boundaries are of what is possible." {% assign timestamp="9:50" %}
 
 - **Cashu and other ecash system design discussion:** several weeks ago, developer
   Thunderbiscuit [posted][thunderbiscuit ecash] to Delving Bitcoin a
@@ -142,7 +142,7 @@ popular Bitcoin infrastructure software.
   some of the constraints of the simple version of blind signing and
   how alternative protocols might be able to provide additional
   benefits.  The discussion was entirely theoretical but we think it
-  could be interesting to anyone curious about ecash-style systems.
+  could be interesting to anyone curious about ecash-style systems. {% assign timestamp="29:15" %}
 
 - **Continued discussion about 64-bit arithmetic and `OP_INOUT_AMOUNT` opcode:**
   several developers have [continued discussing][64bit discuss] a
@@ -177,7 +177,7 @@ popular Bitcoin infrastructure software.
   much easier for contracts to verify that the input and output
   amounts were within the range expected by the contract, e.g. that a
   user only withdrew from a [joinpool][topic joinpools] the amount to
-  which they were entitled.
+  which they were entitled. {% assign timestamp="39:52" %}
 
 - **Improved reproducible ASMap creation process:** Fabian Jahr
   [posted][jahr asmap] to Delving Bitcoin about advancements in creating
@@ -208,7 +208,7 @@ popular Bitcoin infrastructure software.
     If the process is eventually found acceptable (perhaps with
     additional refinements), it's possible future versions of Bitcoin
     Core could be shipped with ASMaps and the feature enabled by
-    default, improving resistance to eclipse attacks.
+    default, improving resistance to eclipse attacks. {% assign timestamp="49:17" %}
 
 ## Changes to services and client software
 
@@ -221,21 +221,20 @@ wallets and services.*
   While the initial focus of NWC is Lightning, interactive protocols
   like [joinpools][topic joinpools], [Ark][topic ark], [DLCs][topic dlc], or
   [multisignature][topic multisignature] schemes could eventually benefit from
-  the protocol.
+  the protocol. {% assign timestamp="1:11:00" %}
 
 - **Mutiny Wallet v0.5.7 released:**
   The [Mutiny Wallet][mutiny github] release adds [payjoin][topic payjoin] support
-  and makes improvements to NWC and LSP features.
+  and makes improvements to NWC and LSP features. {% assign timestamp="1:19:07" %}
 
 - **GroupHug transaction batching service:**
   [GroupHug][grouphug github] is a [batching][scaling payment batching] service
-  using [PSBTs][topic psbt], with [limitations][grouphug blog].
+  using [PSBTs][topic psbt], with [limitations][grouphug blog]. {% assign timestamp="1:19:48" %}
 
 - **Boltz announces taproot swaps:**
   Non-custodial swap exchange Boltz [announced][boltz blog] an upgrade
   to their atomic swap protocol to use [taproot][topic
-  taproot], [schnorr signatures][topic schnorr signatures], and [MuSig2][topic musig].
-
+  taproot], [schnorr signatures][topic schnorr signatures], and [MuSig2][topic musig]. {% assign timestamp="1:22:43" %}
 
 ## Releases and release candidates
 
@@ -244,7 +243,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 24.02rc1][] is a release candidate for the next major
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="1:24:07" %}
 
 ## Notable code and documentation changes
 
@@ -263,7 +262,7 @@ repo]._
   be used when estimated feerates are high compared to their long-term
   baseline, allowing the wallet to create small transactions now (with
   the consequence that it may need to create larger transactions at a
-  later time, hopefully when feerates are lower).
+  later time, hopefully when feerates are lower). {% assign timestamp="1:24:58" %}
 
 - [BOLTs #851][] adds support for [dual funding][topic dual funding] to
   the LN specification along with support for the interactive
@@ -278,7 +277,7 @@ repo]._
   the funding or where they each contribute funds to the initial channel
   state.  This can be combined with the experimental [liquidity
   advertisements protocol][topic liquidity advertisements], which has
-  not yet been added to the specification.
+  not yet been added to the specification. {% assign timestamp="1:29:00" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
