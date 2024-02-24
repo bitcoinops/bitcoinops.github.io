@@ -260,7 +260,7 @@ repo], [Lightning BOLTs][bolts repo],
 [news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
 [news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
 [jahr asmap]: https://delvingbitcoin.org/t/asmap-creation-process/548
-[autonomous systems]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
+[systèmes autonomes]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [daftuar feerate rule]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#feerate-rule-9
 [news288 rbfr]: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
 [daftuar incompatible]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#using-feerate-diagrams-as-an-rbf-policy-tool-13
