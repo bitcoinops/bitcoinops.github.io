@@ -262,10 +262,10 @@ repo], [Lightning BOLTs][bolts repo],
 [jahr asmap]: https://delvingbitcoin.org/t/asmap-creation-process/548
 [systèmes autonomes]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [daftuar feerate rule]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#feerate-rule-9
-[news288 rbfr]: /fr/newsletters/2024/02/07/proposition-de-remplacement-par-feerate-pour-echapper-au-pinning
+[news288 rbfr]: /fr/newsletters/2024/02/07/#proposition-de-remplacement-par-feerate-pour-echapper-au-pinning
 [daftuar incompatible]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#using-feerate-diagrams-as-an-rbf-policy-tool-13
 [daftuar incentive]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553
-[news285 64bit]: /fr/newsletters/2024/01/17/proposition-de-soft-fork-pour-l-arithmetique-sur-64-bits
+[news285 64bit]: /fr/newsletters/2024/01/17/#proposition-de-soft-fork-pour-l-arithmetique-sur-64-bits
 [dnssec]: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
 [corallo dns]: https://delvingbitcoin.org/t/human-readable-bitcoin-payment-instructions/542/
 [dns bip]: https://github.com/TheBlueMatt/bips/blob/d46a29ff4b4ac27210bc81474ae18e4802141324/bip-XXXX.mediawiki
