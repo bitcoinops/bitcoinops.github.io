@@ -256,16 +256,16 @@ repo], [Lightning BOLTs][bolts repo],
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1551,27877,851" %}
-[news283 coingrinder]: /en/newsletters/2024/01/03/#new-coin-selection-strategies
+[news283 coingrinder]: /fr/newsletters/2024/01/03/#nouvelles-strategies-de-selection-de-pieces
 [news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
 [news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
 [jahr asmap]: https://delvingbitcoin.org/t/asmap-creation-process/548
 [systèmes autonomes]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 [daftuar feerate rule]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#feerate-rule-9
-[news288 rbfr]: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
+[news288 rbfr]: /fr/newsletters/2024/02/07/proposition-de-remplacement-par-feerate-pour-echapper-au-pinning
 [daftuar incompatible]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553#using-feerate-diagrams-as-an-rbf-policy-tool-13
 [daftuar incentive]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553
-[news285 64bit]: /en/newsletters/2024/01/17/#proposal-for-64-bit-arithmetic-soft-fork
+[news285 64bit]: /fr/newsletters/2024/01/17/proposition-de-soft-fork-pour-l-arithmetique-sur-64-bits
 [dnssec]: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
 [corallo dns]: https://delvingbitcoin.org/t/human-readable-bitcoin-payment-instructions/542/
 [dns bip]: https://github.com/TheBlueMatt/bips/blob/d46a29ff4b4ac27210bc81474ae18e4802141324/bip-XXXX.mediawiki
@@ -273,7 +273,7 @@ repo], [Lightning BOLTs][bolts repo],
 [dns blip]: https://github.com/lightning/blips/pull/32
 [dnssec-prover]: https://github.com/TheBlueMatt/dnssec-prover
 [dns demo]: http://http-dns-prover.as397444.net/
-[news278 dns]: /en/newsletters/2023/11/22/#offers-compatible-ln-addresses
+[news278 dns]: /fr/newsletters/2023/11/22/#adresses-ln-compatibles-avec-les-offres
 [news166 tluv]: /en/newsletters/2021/09/15/#amount-introspection
 [64bit discuss]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397
 [stewart inout]: https://delvingbitcoin.org/t/op-inout-amount/549
@@ -283,7 +283,7 @@ repo], [Lightning BOLTs][bolts repo],
 [openalias]: https://openalias.org/
 [cashu]: https://github.com/cashubtc/nuts
 [bip inout]: https://github.com/Christewart/bips/blob/92c108136a0400b3a2fd66ea6c291ec317ee4a01/bip-op-inout-amount.mediawiki
-[mempool series]: /en/blog/waiting-for-confirmation/
+[mempool series]: /fr/blog/waiting-for-confirmation/
 [Core Lightning 24.02rc1]: https://github.com/ElementsProject/lightning/releases/tag/v24.02rc1
 [nwc blog]: https://blog.getalby.com/scaling-bitcoin-apps/
 [mutiny github]: https://github.com/MutinyWallet/mutiny-web
