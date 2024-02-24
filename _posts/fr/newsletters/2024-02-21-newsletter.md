@@ -278,7 +278,7 @@ repo], [Lightning BOLTs][bolts repo],
 [64bit discuss]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397
 [stewart inout]: https://delvingbitcoin.org/t/op-inout-amount/549
 [thunderbiscuit ecash]: https://delvingbitcoin.org/t/building-intuition-for-the-cashu-blind-signature-scheme/506
-[blind signature scheme]: https://en.wikipedia.org/wiki/Blind_signature
+[schema de signature aveugle]: https://en.wikipedia.org/wiki/Blind_signature
 [chaumian ecash]: https://en.wikipedia.org/wiki/Ecash
 [openalias]: https://openalias.org/
 [cashu]: https://github.com/cashubtc/nuts
