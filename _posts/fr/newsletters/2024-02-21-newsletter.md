@@ -40,14 +40,14 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
   détails pertinents pour les nœuds LN. Le BOLT permet à un propriétaire de domaine de définir un
   enregistrement générique tel que `*.user._bitcoin-payment.example.com` qui se résoudra en une URI
   BIP21 contenant le paramètre `omlookup` (recherche de [message en onion][topic onion messages]) et un
-  [chemin aveuglé][topic rv routing] vers un nœud LN particulier. Un dépensier souhaitant faire une
-  offre à `example@example.com` passera alors la partie récepteur (`example`) à ce nœud LN pour
+  [chemin aveuglé][topic rv routing] vers un nœud LN particulier. Une personne souhaitant effectuer
+  une transaction vers `example@example.com` passera alors la partie récepteur (`example`) à ce nœud LN pour
   permettre à un nœud multi-utilisateur de gérer correctement le paiement. Le BLIP décrit une option
   permettant à tout nœud LN de résoudre de manière sécurisée les instructions de paiement pour tout
   autre nœud via le protocole de communication LN.
 
-  Au moment de la rédaction, la plupart des discussions sur la proposition pouvaient être trouvées sur
-  la [PR du dépôt BIP][bips #1551]. Une suggestion était d'utiliser une solution HTTPS qui pourrait
+  Au moment de la rédaction de cet article, la plupart des discussions sur la proposition pouvaient être trouvées sur
+  la [PR du dépôt BIP][bips #1551]. Quelqu'un suggère d'utiliser une solution HTTPS qui pourrait
   être plus accessible à de nombreux développeurs web mais nécessiterait des dépendances
   supplémentaires ; Corallo a dit
   qu'il ne changera pas cette partie de la spécification, mais il a écrit une [petite
@@ -66,11 +66,11 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
   pour quiconque s'intéresse à la conception de la politique de relais de transactions de Bitcoin
   Core. Parmi les réflexions que nous avons trouvées les plus intéressantes, on note :
 
-  - *Le remplacement pur par taux de frais ne garantit pas la compatibilité des incitations :* il
+  - *Le simple remplacement par taux de frais ne garantit pas la compatibilité des incitations :* il
     semble que [remplacer][topic rbf] une transaction payant un taux de frais inférieur par une
     transaction payant un taux de frais supérieur devrait être un gain strict pour les mineurs. Daftuar
     fournit un [exemple illustré][daftuar feerate rule] expliquant pourquoi ce n'est pas toujours le
-    cas. Pour une discussion précédente sur le remplacement pur par taux de frais, voir le [Bulletin
+    cas. Pour une discussion précédente sur le remplacement par taux de frais, voir le [Bulletin
     #288][news288 rbfr].
 
   - *Les mineurs avec différents taux de hachage ont des priorités différentes :* un mineur avec 1 %
@@ -82,23 +82,23 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
     potentiellement).
 
     En comparaison, un mineur avec 25 % du taux de hachage total du réseau qui renonce à inclure une
-    transaction dans le prochain bloc aura 25 % de chances de miner un bloc successeur immédiat qui
-    pourrait inclure cette transaction. Ce grand mineur est incité à éviter de collecter certains frais
+    transaction dans le prochain bloc aura 25 % de chances de miner le bloc suivant qui
+    pourrait inclure cette transaction. Ce mineur important est incité à éviter de collecter certains frais
     maintenant si cela est susceptible d'augmenter significativement les frais disponibles dans le
     futur.
 
     Daftuar donne un [exemple][daftuar incompatible] de deux transactions conflictuelles. La transaction
     plus petite paie un taux de frais plus élevé ; la transaction plus grande paie plus de frais
-    absolus. S'il n'y a pas beaucoup de transactions dans le mempool proches du taux de frais de la
+    en valeur absolue. S'il n'y a pas beaucoup de transactions dans le mempool proches du taux de frais de la
     transaction plus grande, un bloc la contenant paierait plus de frais à son mineur qu'un bloc
     contenant la transaction plus petite (taux de frais plus élevé). Cependant, s'il y a beaucoup de
     transactions dans le mempool avec des taux de frais similaires à la grande transaction, un mineur
     avec une petite part du taux de hachage total du réseau pourrait être motivé à miner la version plus
     petite (taux de frais plus élevé) pour obtenir autant de frais maintenant---mais un mineur avec une
     plus grande part du taux de hachage total du réseau pourrait être motivé à attendre qu'il soit
-    rentable de miner la plus grande version (taux de frais inférieur)(ou jusqu'à ce que le dépensier
-    devienne encore plus fatigué d'attendre et crée une
-    version à taux de frais encore plus élevée). Les incitations différentes de différents mineurs peuvent
+    rentable de miner la plus grande transaction (taux de frais inférieur)
+    (ou jusqu'à ce que le dépensier, lassé d'attendre, crée une nouvelle version de la transaction
+    avec un taux de frais plus élevé). Les incitations différentes de différents mineurs peuvent
     impliquer qu'il n'y a pas de politique universelle pour la compatibilité des incitations.
 
   - *Trouver des comportements compatibles avec les incitations qui ne peuvent pas résister aux
@@ -126,16 +126,16 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
   certaines des contraintes de la version simple de la signature aveugle et
   comment des protocoles alternatifs pourraient offrir des avantages supplémentaires. La discussion
   était entièrement théorique mais nous pensons qu'elle
-  pourrait être intéressante pour quiconque curieux des systèmes de style ecash.
+  pourrait être intéressante pour quiconque s'intéresse aux systèmes de style ecash.
 
 - **Discussion continue sur l'arithmétique 64 bits et l'opcode `OP_INOUT_AMOUNT` :**
   plusieurs développeurs ont [continué à discuter][64bit discuss] d'un
-  potentiel futur soft fork qui pourrait ajouter des opérations arithmétiques 64 bits
+  potentiel soft fork qui pourrait ajouter des opérations arithmétiques 64 bits
   à Bitcoin (voir le [Bulletin #285][news285 64bit]). La plupart des discussions
   depuis notre mention précédente ont continué à se concentrer sur comment encoder
   les valeurs 64 bits dans les scripts, la principale différence étant de savoir si
   utiliser un format qui minimise les données onchain ou un format qui est
-  le plus simple à opérer de manière programmatique. Il a également été discuté de l'utilisation de
+  le plus simple à opérer de manière programmatique. On a également discuté de l'utilisation de
   nombres signés ou de permettre uniquement des nombres non signés (pour ceux qui
   ne savent pas, ce qui semble inclure un innovateur avancé de Bitcoin auto-proclamé, les nombres
   signés indiquent quel _signe_ ils utilisent (signe positif ou signe négatif) ; les nombres non
@@ -164,8 +164,8 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
   asmap] sur Delving Bitcoin concernant les avancées dans la création d'une carte des [systèmes
   autonomes][] (ASMap) qui contrôlent chacun le routage pour de grandes parties de l'internet. Bitcoin
   Core essaie actuellement de maintenir des connexions avec des pairs provenant d'une collection
-  diversifiée de sous-réseaux de l'espace de noms global afin qu'un attaquant doive obtenir des
-  adresses IP sur chaque sous-réseau pour réaliser le type le plus simple d'[attaque par
+  diversifiée de sous-réseaux de l'espace de noms global afin de compliquer la tâche des attaquants qui, dès lors,
+  doivent obtenir des adresses IP sur chaque sous-réseau pour réaliser le type le plus simple d'[attaque par
   éclipse][topic eclipse attacks] contre un nœud. Cependant, certains FAI et services d'hébergement
   contrôlent des adresses IP sur plusieurs sous-réseaux, affaiblissant cette protection. Le projet
   ASMap vise à fournir des informations approximatives sur quels FAI contrôlent quelles adresses IP
@@ -174,12 +174,12 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
   de manière reproductible, permettant une vérification indépendante que son contenu était précis au
   moment de sa création.
 
-  Dans le post de cette semaine, Jahr décrit les outils et techniques qu'il dit avoir "trouvé qu'il y
+  Dans le post de cette semaine, Jahr décrit les outils et techniques qui ont permis de découvrir "qu'il y
   a de bonnes chances que dans un groupe de 5 ou plus, la majorité des participants auront le même
   résultat. [...] Ce processus peut être initié par n'importe qui, très similaire à un PR Core. Les
   participants qui ont un résultat correspondant pourraient être interprétés comme des ACKs. Si
-  quelqu'un voit quelque chose d'étrange dans le résultat ou s'ils n'ont tout simplement pas obtenu de
-  correspondance, ils peuvent demander que les données brutes soient partagées pour enquêter
+  quelqu'un voit quelque chose d'étrange dans le résultat ou s'il n'a tout simplement pas obtenu de
+  correspondance, il peut demander que les données brutes soient partagées pour enquêter
   davantage."
 
   Si le processus est finalement jugé acceptable (peut-être avec des raffinements supplémentaires), il
@@ -234,9 +234,9 @@ repo], [Lightning BOLTs][bolts repo],
   [sélection de pièces][topic coin selection], CoinGrinder (voir le
   [Bulletin #283][news283 coingrinder]). Cette stratégie est destinée à
   être utilisée lorsque les taux de frais estimés sont élevés par rapport à leur base de long terme,
-  permettant au portefeuille de créer de petites transactions maintenant (avec
-  la conséquence qu'il pourrait avoir besoin de créer de plus grandes transactions à un
-  moment ultérieur, espérons-le lorsque les taux de frais seront plus bas).
+  permettant au portefeuille de créer des transactions plus légères tout de suite (avec
+  la conséquence qu'il pourrait avoir besoin de créer des transactions plus lourdes à un
+  moment ultérieur, en espérant que le taux de frais soit plus bas).
 
 - [BOLTs #851][] ajoute le support pour le [double financement][topic dual funding] à
   la spécification LN ainsi que le support pour le protocole de construction de transaction
@@ -247,8 +247,8 @@ repo], [Lightning BOLTs][bolts repo],
   ouvrir un canal avec Bob. Avant ce
   changement de spécification, Alice devait fournir tout le financement pour le
   canal. Maintenant, en utilisant une implémentation qui supporte le financement dual, Alice peut
-  ouvrir un canal avec Bob où il fournit tout le
-  financement ou où ils contribuent chacun des fonds à l'état initial du canal. Cela peut être combiné
+  ouvrir un canal avec Bob dont il fournit tout le
+  financement ou pour lequel chacun contribue. Cela peut être combiné
   avec le [protocole expérimental d'annonces de liquidité][topic liquidity advertisements], qui n'a
   pas encore été ajouté à la spécification.
 
