@@ -75,7 +75,7 @@ endcomment %}
   times the minimum cost to create and spend a P2PKH output. A reference
   is made to a [2013 discussion][dust convo].
 
-- [History of transactions in Lighting Network.]({{bse}}85901) A LN
+- [History of transactions in Lightning Network.]({{bse}}85901) A LN
   beginner asks how the history of transactions conducted on LN for a
   user can be saved and how a payer receives a proof of payment. Mark H
   responds saying the LN wallet would need to save transaction history

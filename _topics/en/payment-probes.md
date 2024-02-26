@@ -58,6 +58,12 @@ optech_mentions:
   - title: "LDK #1567 adds support for a basic payment probing API"
     url: /en/newsletters/2022/07/13/#ldk-1567
 
+  - title: "LDK #2534 adds additional support for pre-payment probing"
+    url: /en/newsletters/2023/09/27/#ldk-2534
+
+  - title: "Dynamic Payment Switching and Splitting (PSS) proposed to thwart Balance Discovery Attacks"
+    url: /en/newsletters/2023/10/04/#payment-splitting-and-switching
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: JIT routing

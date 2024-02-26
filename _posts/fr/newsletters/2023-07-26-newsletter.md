@@ -25,11 +25,10 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
     Aucun commentaire sur la proposition de Russell n'avait été publié sur la liste de diffusion à l'heure de la rédaction de cet
     article, mais quelques commentaires initiaux avaient été publiés sur sa [demande de PR][bolts #1096] avec la proposition
-    complète. {% assign timestamp="1:03" %}
+    complète.
 
 - **Notes du sommet LN:** Carla Kirk-Cohen a [publié][kc notes] sur la liste de diffusion Lightning-Dev un résumé de plusieurs
   discussions de la récente réunion des développeurs LN à New York. Certaines des discussions ont porté sur les sujets suivants :
-  {% assign timestamp="10:48" %}
 
     - *Confirmation fiable des transactions :* [relais de paquets][topic package relay], [relais de transactions
       v3][topic v3 transaction relay], [points d'ancrage éphémères][topic ephemeral anchors], [mempool en
@@ -101,7 +100,7 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 - [Comment puis-je calculer manuellement (sur papier) une clé publique Bitcoin à partir d'une clé privée ?]({{bse}}118933)
   Andrew Poelstra donne un aperçu des techniques de vérification par calcul manuel, comme [codex32][news239 codex32], avant de
   décrire comment une clé publique pourrait être dérivée à la main à partir d'une clé privée, un processus qu'il estime prendre
-  au moins 1500 heures, même avec des optimisations du processus. {% assign timestamp="57:18" %}
+  au moins 1500 heures, même avec des optimisations du processus.
 
 - [Pourquoi y a-t-il 17 versions natives segwit ?]({{bse}}118974)
   Murch explique que [segwit][topic segwit] a défini 17 valeurs (0-16) pour le champ de [version témoin][bip141 witness program] en
@@ -113,19 +112,18 @@ que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
   Murch fait référence à une [discussion][rbf csv discussion] confirmant que puisque à la fois le [verrouillage
   temporel][topic timelocks] `OP_CHECKSEQUENCEVERIFY` (CSV) et le remplacement par frais ([RBF][topic rbf]) sont
   [appliqués]({{bse}}87376) en utilisant le champ `nSequence`, une sortie avec `0 OP_CSV` nécessite que la transaction
-  de dépense signale la remplaçabilité [BIP125][]. {% assign timestamp="1:03:04" %}
+  de dépense signale la remplaçabilité [BIP125][].
 
 - [Comment les indices de route affectent-ils la recherche de chemin ?]({{bse}}118755)
   Christian Decker explique deux raisons pour lesquelles un destinataire LN fournirait des indices de route à un expéditeur.
   Une raison est si le destinataire utilise des [canaux non annoncés][topic unannounced channels] et que des indices sont
   nécessaires pour aider à trouver un chemin. L'autre raison est de fournir à l'expéditeur une liste de canaux ayant un solde
-  suffisant pour effectuer le paiement, une technique qu'il appelle "route boost". {% assign timestamp="1:08:23" %}
+  suffisant pour effectuer le paiement, une technique qu'il appelle "route boost".
 
 - [Que signifie que la sécurité de l'ECDSA 256 bits, et donc des clés Bitcoin, est de 128 bits ?]({{bse}}118928)
   Pieter Wuille précise que, en raison d'algorithmes qui peuvent dériver une clé privée à partir d'une clé publique de manière
   plus efficace qu'une recherche par force brute, l'ECDSA 256 bits ne fournit qu'une sécurité de 128 bits. Il souligne ensuite
   la différence entre la sécurité des clés individuelles et la sécurité des [semences][topic bip32].
-  {% assign timestamp="1:12:26" %}
 
 ## Mises à jour et versions candidates
 
@@ -135,11 +133,11 @@ les versions candidates.*
 
 - [HWI 2.3.0][] est une version intermédiaire de cette interface qui permet aux portefeuilles logiciels de communiquer avec des
   dispositifs de signature matériels. Elle ajoute la prise en charge des dispositifs Jade DIY et un binaire pour exécuter le
-  programme principal `hwi` sur du matériel Apple Silicon avec MacOS 12.0+. {% assign timestamp="1:15:09" %}
+  programme principal `hwi` sur du matériel Apple Silicon avec MacOS 12.0+.
 
 - [LDK 0.0.116][] est une version de cette bibliothèque permettant de créer des logiciels compatibles LN. Elle inclut la prise
   en charge des [sorties d'ancrage][topic anchor outputs] et des [paiements multipath][topic multipath payments] avec
-  [keysend][topic spontaneous payments]. {% assign timestamp="1:16:37" %}
+  [keysend][topic spontaneous payments].
 
 ## Modifications de code et de documentation notables
 
@@ -150,7 +148,7 @@ d'Amélioration Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et [B
 
 - [Bitcoin Core GUI #740][] met à jour la boîte de dialogue des opérations [PSBT][topic psbt] pour marquer les sorties payant
   votre propre portefeuille avec "adresse propre". Cela facilite l'évaluation du résultat d'un PSBT importé, en particulier
-  lorsque la transaction renvoie de la monnaie au destinataire. {% assign timestamp="1:17:18" %}
+  lorsque la transaction renvoie de la monnaie au destinataire.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}

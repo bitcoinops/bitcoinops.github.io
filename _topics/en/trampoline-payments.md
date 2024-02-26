@@ -49,6 +49,12 @@ optech_mentions:
   - title: "Eclair #2435 adds support for basic async payments for trampoline relay"
     url: /en/newsletters/2022/10/05/#eclair-2435
 
+  - title: "Eclair #2810 allows trampoline routing infomation to use more than 400 bytes"
+    url: /en/newsletters/2024/01/24/#eclair-2810
+
+  - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
+    url: /en/newsletters/2024/01/31/#eclair-2811
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

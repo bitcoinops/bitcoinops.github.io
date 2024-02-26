@@ -142,7 +142,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
 [rust bitcoin 0.30.0]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/bitcoin-0.30.0
 [news230 tp]: /zh/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
-[channel factories paper]: https://tik-old.ee.ethz.ch/file//a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf
+[channel factories paper]: https://tik-old.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [law factories]: https://raw.githubusercontent.com/JohnLaw2/ln-efficient-factories/main/efficientfactories10.pdf
 [news206 msat]: /zh/newsletters/2022/06/29/#core-lightning-5306
 [rb sec]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/SECURITY.md

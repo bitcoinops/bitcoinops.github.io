@@ -108,6 +108,18 @@ optech_mentions:
   - title: "Example of using MATT-style covenants to replicate CTV features"
     url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
+  - title: "Using covenants like OP_CTV and APO to improve LN scalability"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
+  - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
+    url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
+
+  - title: Opposition to CTV based on commonly requiring exogenous fee
+    url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

@@ -3,7 +3,7 @@
 [compatibility matrix]: /en/compatibility/
 [topics]: /en/topics/
 [podcast]: /en/podcast/
-[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
+[op_cat]: /en/topics/op_cat/
 [optech email]: mailto:info@bitcoinops.org
 [rss feed]: /feed.xml
 [scaling payment batching]: /en/payment-batching/
@@ -16,6 +16,7 @@
 
 {% comment %}<!-- reused (or likely to be reused) external links, alphabetical order -->{% endcomment %}
 [bdk repo]: https://github.com/bitcoindevkit/bdk
+[binana repo]: https://github.com/bitcoin-inquisition/binana
 [bip-anyprevout]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
 [bip-coshv]: https://github.com/JeremyRubin/bips/blob/op-checkoutputshashverify/bip-coshv.mediawiki
@@ -45,6 +46,7 @@
 [libsecp256k1 repo]: https://github.com/bitcoin-core/secp256k1
 [lnd repo]: https://github.com/lightningnetwork/lnd/
 [nostr]: https://github.com/nostr-protocol/nips
+[@bitcoinoptech]: https://twitter.com/bitcoinoptech
 [rust bitcoin repo]: https://github.com/rust-bitcoin/rust-bitcoin
 [rust-lightning repo]: https://github.com/rust-bitcoin/rust-lightning
 
@@ -66,7 +68,7 @@
 [output script descriptors]: {{_link_descriptors}}
 {% endif %}
 
-{% comment %}<!-- BIPs and BLIPs in order lowest to highest
+{% comment %}<!-- BIPs, BLIPs, and BINANAs in order lowest to highest
 Note: as of 2019-02-24/Jekyll 3.8.3, this is currently inefficient as
 the loop is run each time this file is included (but it still only adds
 about 1 second of compile time to the whole site).  However, Jekyll 4.0
@@ -80,6 +82,11 @@ for details --> {% endcomment %}
 [BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
 {% endfor %}
 
+{% for i in (1..10) %}
+{% assign i_padded = "0000" | append: i | slice: -4, 4 %}
+[BIN24-{{i}}]: https://github.com/bitcoin-inquisition/binana/blob/master/2024/BIN-2024-{{i_padded}}.md
+{% endfor %}
+
 {% for i in (1..25) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BLIP{{i}}]: https://github.com/lightning/blips/blob/master/blip-{{i_padded}}.md
@@ -88,6 +95,7 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
+[BIP345]: https://github.com/bitcoin/bips/pull/1421
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md

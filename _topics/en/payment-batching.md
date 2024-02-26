@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Proposal for `OP_VAULT` opcode supports batching vault withdrawals"
     url: /en/newsletters/2023/01/18/#proposal-for-new-vault-specific-opcodes
 
+  - title: "Proposal for a pool exit protocol that allows highly efficient payment batching"
+    url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKTEMPLATEVERIFY

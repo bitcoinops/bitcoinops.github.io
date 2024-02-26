@@ -13,6 +13,8 @@ aliases:
 ## schema for options
 categories:
   - Lightning Network
+  - Invoicing
+  - Wallet Collaboration Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
@@ -85,6 +87,18 @@ optech_mentions:
 
   - title: "LDK #1977 allows serializing and deserializing offers"
     url: /en/newsletters/2023/03/01/#ldk-1977
+
+  - title: "LDK #2371 adds support for managing payments using offers"
+    url: /en/newsletters/2023/09/20/#ldk-2371
+
+  - title: "Ideas for creating a Lightning Address protocol compatible with offers"
+    url: /en/newsletters/2023/11/22/#offers-compatible-ln-addresses
+
+  - title: "Eclair #2752 allows an offer to reference a node using a short channel identifier (SCID)"
+    url: /en/newsletters/2023/11/22/#eclair-2752
+
+  - title: "Human readable payment instructions proposed that are compatible with offers"
+    url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -61,6 +61,9 @@ optech_mentions:
   - title: Challenges related to timelocks when using CPFP fee bumping in LN
     url: /en/newsletters/2021/04/21/#using-anchor-outputs-by-default-in-lnd
 
+  - title: "Soft fork proposal for fee-dependent timelocks"
+    url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

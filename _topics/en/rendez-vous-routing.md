@@ -21,7 +21,7 @@ categories:
 ## "[title](link)"
 primary_sources:
     - title: Route blinding
-      link: https://github.com/lightningnetwork/lightning-rfc/blob/route-blinding/proposals/route-blinding.md
+      link: https://github.com/lightning/bolts/blob/master/proposals/route-blinding.md
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -61,6 +61,27 @@ optech_mentions:
 
   - title: "LDK #2120 adds support for finding a route to a receiver who is using blinded paths"
     url: /en/newsletters/2023/06/28/#ldk-2120
+
+  - title: "LDK #2411 and #2412 add an API for constructing payment paths for blinded payments"
+    url: /en/newsletters/2023/08/30/#ldk-2411
+
+  - title: "LDK #2413 adds support for sending and receving payments with blinded paths"
+    url: /en/newsletters/2023/09/20/#ldk-2413
+
+  - title: "LND #7267 makes it possible to create routes to blinded paths"
+    url: /en/newsletters/2023/10/18/#lnd-7267
+
+  - title: "LDK #2781 and #2688 update support for sending and receiving blinded payments"
+    url: /en/newsletters/2024/01/03/#ldk-2781
+
+  - title: "LND #8095 and #8142 add additional logic to parts of LND's codebase for handling binded paths"
+    url: /en/newsletters/2024/01/17/#lnd-8095
+
+  - title: "LDK #2791, #2801, and #2812 complete adding support for route blinding"
+    url: /en/newsletters/2024/01/24/#ldk-2791
+
+  - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
+    url: /en/newsletters/2024/01/31/#eclair-2811
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

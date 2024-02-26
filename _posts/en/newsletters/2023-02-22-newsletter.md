@@ -214,7 +214,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   wallet cannot yet estimate the input weight for some descriptors
   before signing and cannot yet sign [PSBTs][topic PSBT] in some
   edge-cases. Miniscript support for P2TR outputs is also still
-  pending. assign timestamp="53:57"
+  pending. {% assign timestamp="53:57" %}
 
 - [Bitcoin Core #25344][] updates the `bumpfee` and `psbtbumpfee` RPCs
   for creating [Replace By Fee][topic rbf] (RBF) fee bumps.  The update

@@ -46,13 +46,13 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   predetermined threshold, and then a second pass to store them. To
   prevent an attacker sending the main chain during presync and then a
   different, malicious chain during redownload, the node stores
-  commitments to the headers chain during presync.
+  commitments to the headers chain during presync. {% assign timestamp="2:34" %}
 
 - [Bitcoin Core #25355][] adds support for transient, one-time I2P
   addresses when only outbound [I2P connections][topic anonymity networks] are allowed. In I2P, the
   recipient learns the I2P address of the connection initiator.
   Non-listening I2P nodes will now by default make use of transient I2P
-  addresses when making outbound connections.
+  addresses when making outbound connections. {% assign timestamp="22:41" %}
 
 - [BDK #689][] adds an `allow_dust` method which allows a wallet to
   create a transaction that violates the [dust limit][topic uneconomical
@@ -62,11 +62,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   prevents users from creating such unrelayable transactions by
   enforcing the dust limit on the transactions it creates, but this new
   option allows ignoring that policy.  The author of the PR mentions
-  that they're using it for testing their wallet.
+  that they're using it for testing their wallet. {% assign timestamp="31:45" %}
 
 - [BDK #682][] adds signing capabilities for hardware signing devices using
   [HWI][topic hwi] and the [rust-hwi][rust-hwi github] library. The PR also introduces a Ledger
-  device emulator for testing.
+  device emulator for testing. {% assign timestamp="39:07" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25717,25355,689,682" %}

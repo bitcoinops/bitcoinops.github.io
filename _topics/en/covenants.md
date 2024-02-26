@@ -94,6 +94,21 @@ optech_mentions:
   - title: "Proposed joinpool construction for Ark could be less interactive with covenants"
     url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
+  - title: "Using covenants like OP_CTV and APO to improve LN scalability"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
+  - title: "Draft BIP specification for `OP_TXHASH` proposed"
+    url: /en/newsletters/2023/10/11/#specification-for-op-txhash-proposed
+
+  - title: "Research into minimal opcodes for output script introspection to enable covenants"
+    url: /en/newsletters/2023/10/25/#research-into-generic-covenants-with-minimal-script-language-changes
+
+  - title: "HTLC aggregation with covenants"
+    url: /en/newsletters/2023/11/08/#htlc-aggregation-with-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

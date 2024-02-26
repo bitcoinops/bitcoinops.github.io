@@ -18,7 +18,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Countersign
-      link: https://gist.github.com/sipa/d7dcaae0419f10e5be0270fada84c20b
+      link: https://github.com/sipa/writeups/tree/main/private-authentication-protocols
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

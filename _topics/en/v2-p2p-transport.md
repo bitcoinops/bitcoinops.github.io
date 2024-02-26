@@ -59,6 +59,21 @@ optech_mentions:
   - title: "Bitcoin Core #28008 adds encryption and decryption routines for v2 transport protocol encryption"
     url: /en/newsletters/2023/08/16/#bitcoin-core-28008
 
+  - title: "Bitcoin Core PR Review Club summary about internal serialization changes for BIP324"
+    url: /en/newsletters/2023/09/13/#bitcoin-core-pr-review-club
+
+  - title: "Bitcoin Core #28196 adds a substantial portion of the code to provide BIP324 support"
+    url: /en/newsletters/2023/09/20/#bitcoin-core-28196
+
+  - title: "Bitcoin Core #28331 adds optional support for v2 encrypted P2P transport"
+    url: /en/newsletters/2023/10/11/#bitcoin-core-28331
+
+  - title: "Bitcoin Core #29058 begins using v2 P2P transport by default for some connections"
+    url: /en/newsletters/2024/01/17/#bitcoin-core-29058
+
+  - title: "Bitcoin Core #29347 enables v2 P2P transport by default"
+    url: /en/newsletters/2024/02/07/#bitcoin-core-29347
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151

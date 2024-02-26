@@ -104,6 +104,12 @@ optech_mentions:
   - title: "BIPs #1367 simplifies BIP118’s description of SIGHASH_ANYPREVOUT"
     url: /en/newsletters/2022/10/05/#bips-1367
 
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
+  - title: "Using covenants like OP_CTV and APO to improve LN scalability"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

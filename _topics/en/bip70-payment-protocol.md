@@ -9,6 +9,7 @@ title: BIP70 payment protocol
 ## schema for options
 categories:
   - Wallet Collaboration Tools
+  - Invoicing
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

@@ -37,6 +37,7 @@ requests, and other templated URLs.
 [btcpay server #{{_issue}}]: https://github.com/btcpayserver/btcpayserver/issues/{{_issue}}
 [bdk #{{_issue}}]: https://github.com/bitcoindevkit/bdk/issues/{{_issue}}
 [bitcoin inquisition #{{_issue}}]: https://github.com/bitcoin-inquisition/bitcoin/issues/{{_issue}}
+[binanas #{{_issue}}]: https://github.com/bitcoin-inquisition/binana/issues/{{_issue}}
 
 {% if include.v > 0 %}
 [ldk #{{_issue}}]: https://github.com/lightningdevkit/rust-lightning/issues/{{_issue}}

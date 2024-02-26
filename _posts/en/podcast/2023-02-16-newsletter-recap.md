@@ -976,7 +976,7 @@ something?
 **Alex Myers**: Yeah, there is ongoing discussion, I believe.  I think the spec
 needs to be cleaned up a bit, but I know in the mailing list, this has been
 discussed in the past, the next step.  So, this is just a completely
-experimental feature for Core Lighting in this release; it's an optional feature
+experimental feature for Core Lightning in this release; it's an optional feature
 bit, so it's definitely not anything that other nodes will expect you to have.
 But yeah, if it all looks good, this will definitely inform the spec going
 forward and hopefully can be integrated into the BOLTs.

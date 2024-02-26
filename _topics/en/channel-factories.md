@@ -20,7 +20,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Scalable Funding of Bitcoin Micropayment Networks
-      link: "https://tik-old.ee.ethz.ch/file//a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf"
+      link: "https://tik-old.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf"
 
     - title: Inherited identifiers proposal
       link: https://github.com/JohnLaw2/btc-iids
@@ -48,6 +48,15 @@ optech_mentions:
 
   - title: "Improving capital efficiency with multiparty channels in tunable penality channel factories"
     url: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
+
+  - title: "Using covenants to improve LN scalability through extremely efficient channel factories"
+    url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
+  - title: "Proposal for fee-dependent timelocks that would make mass factory closures more safe"
+    url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
+
+  - title: "Proposal for a mass-exit protocol that allows highly efficient payment batching"
+    url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

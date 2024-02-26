@@ -40,6 +40,9 @@ optech_mentions:
   - title: "Bitcoin Core #19109 adds a per-peer rolling bloom filter to track recent tx announcements"
     url: /en/newsletters/2020/07/22/#bitcoin-core-19109
 
+  - title: "Replacement cycle mitigation of frequent transaction rebroadcasting with potential privacy reduction"
+    url: /en/newsletters/2023/10/25/#frequent-rebroadcasting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks

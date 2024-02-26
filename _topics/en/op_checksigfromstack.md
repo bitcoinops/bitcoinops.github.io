@@ -47,11 +47,14 @@ optech_mentions:
   - title: "Proposal for `OP_TX` opcode composable with `OP_CHECKSIGFROMSTACK`"
     url: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 
-  - title: "Example of using the MATT proposal plus OP_CAT to manage joinpools"
-    url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
-
   - title: "Fraud proofs for outdated backup state enforcable onchain with OP_CSFS + OP_CAT"
     url: /en/newsletters/2023/08/23/#fraud-proofs-for-outdated-backup-state
+
+  - title: "Mashup of OP_CTV and APO proposed using OP_CSFS and OP_TXHASH"
+    url: /en/newsletters/2023/08/30/#covenant-mashup-using-txhash-and-csfs
+
+  - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
+    url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
@@ -167,15 +170,14 @@ features for Bitcoin users:
 ### Relationship to OP_CAT
 
 Proposals to add `OP_CSFS` to Bitcoin are often combined with
-proposals to restore the `OP_CAT` opcode [removed][dead cat] as part
+proposals to restore the [OP_CAT][topic op_cat] opcode [removed][dead cat] as part
 of the response to the [value overflow incident][].  This opcode
 [catenates][] two elements, appending one to the other.  This makes it
 possible to construct a message (such as a serialized transaction) by
 appending together individual parts of the message (e.g. the fields of
 a transaction).  Initializing the stack with the message already split
 into parts simplifies the writing of scripts that perform tests on
-those parts.  Beyond the basic risks of adding any new consensus
-code to Bitcoin, there are no published downsides of adding `OP_CAT`.
+those parts.
 
 {% include references.md %}
 [dead cat]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-8458adcedc17d046942185cb709ff5c3R94

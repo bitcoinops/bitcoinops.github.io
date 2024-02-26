@@ -126,6 +126,9 @@ optech_mentions:
   - title: "LDK #2156 adds support for keysend payments that use simplified multipath payments"
     url: /en/newsletters/2023/06/21/#ldk-2156
 
+  - title: "Dynamic Payment Switching and Splitting (PSS) proposed for improved payment privacy"
+    url: /en/newsletters/2023/10/04/#payment-splitting-and-switching
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Atomic Multipath Payments (AMPs)

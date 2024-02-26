@@ -44,6 +44,21 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including ephemeral anchors"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Making ephemeral anchor spends with non-malleable txids"
+    url: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
+
+  - title: Discussion about ephemeral anchors for LN and v3 transaction relay proposal
+    url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
+
+  - title: Discussion about cluster mempool and a need for a CPFP carve out replacement like ephemeral anchors
+    url: /en/newsletters/2024/01/17/#cpfp-carve-out-needs-to-be-removed
+
+  - title: "Discussion about Miner Extractable Value (MEV) in non-zero ephemeral anchors"
+    url: /en/newsletters/2024/01/17/#discussion-of-miner-extractable-value-mev-in-non-zero-ephemeral-anchors
+
+  - title: Proposed changes to LN for v3 relay and ephemeral anchors
+    url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay

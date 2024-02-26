@@ -592,7 +592,6 @@ Alex Morcos.
 [news136 sms]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
 [news183 dos]: /en/newsletters/2022/01/19/#mailing-list-discussion
 [zmnscpxj cat1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020434.html
-[op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
 [news187 op_tx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
 [ivgi cat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020442.html
 [zmnscpxj cat2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020441.html

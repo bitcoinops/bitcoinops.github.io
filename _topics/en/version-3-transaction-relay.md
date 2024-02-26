@@ -52,6 +52,36 @@ optech_mentions:
   - title: "LN developer discussion about multiple relay policy topics, including v3 transaction relay"
     url: /en/newsletters/2023/07/26/#reliable-transaction-confirmation
 
+  - title: "Replacement cycle attacks not solved by current v3 transaction relay policies"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
+  - title: Discussion about the costs of pinning when v3 policies are used
+    url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
+
+  - title: Discussion about LN anchors and v3 transaction relay proposal
+    url: /en/newsletters/2024/01/10/#discussion-about-ln-anchors-and-v3-transaction-relay-proposal
+
+  - title: Discussion about cluster mempool and a need for a CPFP carve out replacement like v3 relay
+    url: /en/newsletters/2024/01/17/#cpfp-carve-out-needs-to-be-removed
+
+  - title: Proposed changes to LN for v3 relay and ephemeral anchors
+    url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
+
+  - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
+    url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
+
+  - title: "Challenges opening zero-conf channels when using the initially allowed v3 transaction topology"
+    url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
+
+  - title: "Ideas for post-v3 relay enhancements after cluster mempool is deployed"
+    url: /en/newsletters/2024/02/14/#ideas-for-relay-enhancements-after-cluster-mempool-is-deployed
+
+  - title: "Research about historic use of anchor outputs for possibly imbuing them with v3 properties"
+    url: /en/newsletters/2024/02/14/#what-would-have-happened-if-v3-semantics-had-been-applied-to-anchor-outputs-a-year-ago
+
+  - title: "Bitcoin Core #28948 adds support for (but does not enable) version 3 transaction relay"
+    url: /en/newsletters/2024/02/14/#bitcoin-core-28948
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

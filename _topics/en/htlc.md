@@ -84,6 +84,15 @@ optech_mentions:
   - title: "Updating LN for taproot: from HTLCs to PTLCs"
     url: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
 
+  - title: "Replacement cycle attacks on HTLCs"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
+  - title: "OP_EXPIRE opcode proposed that may help mitigate transaction pinning of HTLCs"
+    url: /en/newsletters/2023/10/25/#op-expire
+
+  - title: "HTLC aggregation with covenants"
+    url: /en/newsletters/2023/11/08/#htlc-aggregation-with-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki

@@ -168,12 +168,12 @@ intéressantes des portefeuilles et services Bitcoin.*
 
 ## Optech recommande
 
-[BitcoinSearch.xyz][] est un moteur de recherche récemment lancé pour la
-documentation technique et les discussions sur le bitcoin. Il a été utilisé
-pour trouver rapidement plusieurs des sources liées dans ce bulletin, ce qui
-représente une grande amélioration par rapport aux méthodes plus laborieuses
-que nous utilisions auparavant. Les contributions à son [code][bitcoinsearch
-repos] sont les bienvenues.
+- [BitcoinSearch.xyz][] est un moteur de recherche récemment lancé pour la
+  documentation technique et les discussions sur le bitcoin. Il a été utilisé
+  pour trouver rapidement plusieurs des sources liées dans ce bulletin, ce qui
+  représente une grande amélioration par rapport aux méthodes plus laborieuses
+  que nous utilisions auparavant. Les contributions à son [code][bitcoinsearch
+  repos] sont les bienvenues.
 
 ## Mises à jour et versions candidates
 

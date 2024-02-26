@@ -59,7 +59,7 @@ infrastructure software.
     oracles over existing DLC oracles which need to be aware of the
     contract at the time the contract is being created.  As of this
     writing, the post had not received replies by other DLC
-    contributors.
+    contributors. {% assign timestamp="1:59" %}
 
 ## Releases and release candidates
 
@@ -72,10 +72,10 @@ release candidates.*
   numerous new features and bug fixes, including support for [compact
   block relay][topic compact block relay] data structures ([BIP152][])
   and improvements to [taproot][topic taproot] and [PSBT][topic psbt]
-  support.
+  support. {% assign timestamp="40:47" %}
 
 - [Core Lightning 0.12.0rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="43:02" %}
 
 ## Notable code and documentation changes
 
@@ -101,11 +101,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   The key origin information may indicate that an alternative key
   generation scheme is being used, such as incremental tweaking to
   create [vanity addresses][] or [cooperative tweaking for
-  privacy][reusable taproot addresses].
+  privacy][reusable taproot addresses]. {% assign timestamp="43:19" %}
 
 - [Bitcoin Core #22751][] adds a `simulaterawtransaction` RPC which
   accepts an array of unconfirmed transactions and returns how much BTC
-  those transactions will add or subtract from the wallet's balance.
+  those transactions will add or subtract from the wallet's balance. {% assign timestamp="44:50" %}
 
 - [Eclair #2273][] implements the [proposed][bolts #851] interactive
   funding protocol where two LN nodes coordinate more closely to open a
@@ -113,21 +113,21 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   closer to support for [dual funding][topic dual funding] which allows
   funds to be contributed to a new channel by either of the nodes
   participating in that channel.  Additional preparation for dual
-  funding was also merged this week in [Eclair #2247][].
+  funding was also merged this week in [Eclair #2247][]. {% assign timestamp="47:34" %}
 
 - [Eclair #2361][] begins requiring channel updates to include the
   `htlc_maximum_msat` field as proposed by [BOLTs #996][] (see
-  [Newsletter #211][news211 bolts996]).
+  [Newsletter #211][news211 bolts996]). {% assign timestamp="50:27" %}
 
 - [LND #6810][] begins using receiving payments to [taproot][topic
   taproot] outputs in almost all of the wallet's automatically-generated
   output scripts.  In addition, [LND #6633][] implements support for
   `option_any_segwit` (see [Newsletter #151][news151 any_segwit]), which
   allows receiving the funds from a mutual close of a channel to a
-  taproot output.
+  taproot output. {% assign timestamp="52:03" %}
 
 - [LND #6816][] adds [documentation][lnd 0conf] about how to use
-  [zero-conf channels][topic zero-conf channels].
+  [zero-conf channels][topic zero-conf channels]. {% assign timestamp="53:10" %}
 
 - [BDK #640][] updates the `get_balance` function to return the current
   balance separated into four categories: an `available` balance for
@@ -136,7 +136,7 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   `untrusted-pending` balance for unconfirmed outputs from external
   wallets, and an `immature` balance for outputs from coinbase (mining)
   outputs that haven't reached the minimum 100 confirmations necessary
-  to become spendable according to Bitcoin's consensus rules.
+  to become spendable according to Bitcoin's consensus rules. {% assign timestamp="53:58" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23480,22751,2273,2361,2247,996,6810,6633,6816,640,851" %}

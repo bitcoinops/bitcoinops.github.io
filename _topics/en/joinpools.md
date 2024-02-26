@@ -45,6 +45,12 @@ optech_mentions:
   - title: "Example of using the MATT proposal plus OP_CAT to manage joinpools"
     url: /en/newsletters/2023/06/07/#using-matt-to-replicate-ctv-and-manage-joinpools
 
+  - title: "Proposal for fee-dependent timelocks that would make mass joinpool closures more safe"
+    url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
+
+  - title: "Proposal for a mass-exit protocol that allows highly efficient payment batching"
+    url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coinjoin

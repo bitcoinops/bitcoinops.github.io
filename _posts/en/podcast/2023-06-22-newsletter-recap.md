@@ -231,7 +231,7 @@ I think my questions are answered.
 **Thomas Voegtlin**: Yeah, okay.  My feeling is that I'm not sure whether, okay,
 I don't want to sound pessimistic, but I'm not sure whether my proposal is
 really understood well by everybody.  But I do see that both these companies who
-are designing the protocol, Lighting Labs and Async, they have this business
+are designing the protocol, Lightning Labs and Async, they have this business
 model either with the submarine swap service or with the JIT channels, and they
 do not open source their service.  So, I'm wondering whether there is a conflict
 of interest here, because the fact that they don't open source it means that

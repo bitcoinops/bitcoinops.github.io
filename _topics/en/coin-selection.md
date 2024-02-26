@@ -63,6 +63,15 @@ optech_mentions:
   - title: "Bitcoin Core #27021 adds interface for calculating an output's ancestor fee deficit"
     url: /en/newsletters/2023/05/24/#bitcoin-core-27021
 
+  - title: "Bitcoin Core #26152 now pays any fee deficit for unconfirmed outputs chosen by coin selection"
+    url: /en/newsletters/2023/09/20/#bitcoin-core-26152
+
+  - title: "New coin selection strategies proposed and tested for Bitcoin Core"
+    url: /en/newsletters/2024/01/03/#new-coin-selection-strategies
+
+  - title: "Bitcoin Core #27877 updates Bitcoin Core's wallet with CoinGrinder coin selection strategy"
+    url: /en/newsletters/2024/02/21/#bitcoin-core-27877
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies

@@ -13,7 +13,5 @@ env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
-# xenial builds fail if you don't update bundler
 before_install:
-  - yes | gem update --system
   - sudo apt install optipng

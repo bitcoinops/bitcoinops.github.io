@@ -76,6 +76,16 @@ optech_mentions:
   - title: "MyCitadel v1.3.0 adds more advanced support for miniscript"
     url: /en/newsletters/2023/05/24/#mycitadel-wallet-adds-enhanced-miniscript-support
 
+  - title: "Bitcoin Core #26567 computes input weight for fee estimation using miniscript and descriptors"
+    url: /en/newsletters/2023/09/13/#bitcoin-core-26567
+
+  - title: "Bitcoin Core #27255 ports miniscript to tapscript, providing tapscript descriptors"
+    url: /en/newsletters/2023/10/18/#bitcoin-core-27255
+
+  - title: "Field Report: A Miniscript Journey"
+    url: /en/wizardsardine-miniscript/
+    date: 2023-11-15
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

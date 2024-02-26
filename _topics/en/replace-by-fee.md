@@ -150,6 +150,30 @@ optech_mentions:
   - title: "Proposal to enable full-RBF by default"
     url: /en/newsletters/2023/08/09/#full-rbf-by-default
 
+  - title: "Replacement cycle attacks on HTLCs"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
+  - title: Proposal for miners to automatically retry previously replaced transactions
+    url: /en/newsletters/2023/10/25/#automatic-retrying-of-past-transactions
+
+  - title: Recommendation to RBF fee bump pre-signed transactions with more pre-signed transactions
+    url: /en/newsletters/2023/10/25/#presigned-fee-bumps
+
+  - title: "Summary of well-known behavior for wallets to avoid when creating multiple replacements"
+    url: /en/newsletters/2023/10/25/#fn:rbf-warning
+
+  - title: "Discussion of cluster mempool for RBF"
+    url: /en/newsletters/2023/12/06/#post-cluster-package-rbf
+
+  - title: "Idea to apply RBF rules to v3 transactions to allow removing CPFP carve-out for cluster mempool"
+    url: /en/newsletters/2024/01/31/#kindred-replace-by-fee
+
+  - title: "Proposal for replace-by-feerate to avoid transaction pinning"
+    url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
+
+  - title: "Pure replace by feerate is not guaranteed to be incentive compatible"
+    url: /en/newsletters/2024/02/21/#pure-replace-by-feerate-doesn-t-guarantee-incentive-compatibility
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

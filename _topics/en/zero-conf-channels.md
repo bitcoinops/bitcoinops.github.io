@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Challenges with zero-conf channels when dual funding"
     url: /en/newsletters/2023/05/17/#challenges-with-zero-conf-channels-when-dual-funding
 
+  - title: "Challenges opening zero-conf channels when using the initially allowed v3 transaction topology"
+    url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: JIT channels

@@ -75,6 +75,18 @@ optech_mentions:
   - title: Preventing coinjoin pinning with v3 transaction relay
     url: /en/newsletters/2023/06/28/#preventing-coinjoin-pinning-with-v3-transaction-relay
 
+  - title: "Replacement cycle attack against HTLCs creating pinning-like problems"
+    url: /en/newsletters/2023/10/25/#replacement-cycling-vulnerability-against-htlcs
+
+  - title: "OP_EXPIRE opcode proposed that may help mitigate transaction pinning of HTLCs"
+    url: /en/newsletters/2023/10/25/#op-expire
+
+  - title: Discussion about the costs of pinning when v3 transaction relay policies are used
+    url: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
+
+  - title: "Proposal for replace-by-feerate to avoid transaction pinning"
+    url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out
