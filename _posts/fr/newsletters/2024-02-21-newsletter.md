@@ -31,7 +31,6 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   protocole, et une [offre][topic offers] LN à utiliser par les portefeuilles compatibles LN :
 
   ```text
-
 bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&b12=lno1qexampleblindedpathforanoffer...
   ```
 
