@@ -101,8 +101,7 @@ bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&
     avec un taux de frais plus élevé). Les incitations différentes de différents mineurs peuvent
     impliquer qu'il n'y a pas de politique universelle pour la compatibilité des incitations.
 
-  - *Trouver des comportements compatibles avec les incitations qui ne peuvent pas résister aux
-    attaques DoS serait utile :*
+  - *Trouver des comportements compatibles avec les incitations qui ne peuvent pas résister aux attaques DoS serait utile :*
     Daftuar décrit comment le projet Bitcoin Core
     essaie d'[implémenter][mempool series] des règles de politique qui sont
     à la fois compatibles avec les incitations et résistantes aux attaques par déni de service (DoS).
