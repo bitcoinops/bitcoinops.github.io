@@ -123,6 +123,9 @@ optech_mentions:
   - title: "BOLTs #851 adds support for dual funding and interactive tx construction to the LN specification"
     url: /en/newsletters/2024/02/21/#bolts-851
 
+  - title: "LDK #2770 begins preparing to later add support for dual-funded channels"
+    url: /en/newsletters/2024/02/28/#ldk-2770
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

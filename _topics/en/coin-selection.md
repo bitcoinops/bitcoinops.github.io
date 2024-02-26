@@ -72,6 +72,9 @@ optech_mentions:
   - title: "Bitcoin Core #27877 updates Bitcoin Core's wallet with CoinGrinder coin selection strategy"
     url: /en/newsletters/2024/02/21/#bitcoin-core-27877
 
+  - title: "New coin selection strategy for LN liquidity providers"
+    url: /en/newsletters/2024/02/28/#coin-selection-for-liquidity-providers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies

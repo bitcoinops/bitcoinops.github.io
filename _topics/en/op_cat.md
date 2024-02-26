@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Comments on draft BIP for `OP_CAT`"
     url: /en/newsletters/2023/11/01/#op-cat-proposal
 
+  - title: "Simple vault prototype using `OP_CAT` and schnorr signatures"
+    url: /en/newsletters/2024/02/28/#simple-vault-prototype-using-op-cat
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK
