@@ -236,7 +236,30 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Why can't nodes have the relay option to disallow certain transaction types?]({{bse}}121734)
+  Ava Chow outlines thoughts about the purpose of [mempool and relay policy][policy series],
+  benefits of more-homogeneous mempools including [fee estimation][topic fee
+  estimation] and [compact block relay][topic compact block relay], and touches
+  on policy workarounds such as miners accepting [fees out-of-band][topic
+  out-of-band fees].
+
+- [What is the circular dependency in signing a chain of unconfirmed transactions?]({{bse}}121959)
+  Ava Chow explains the concern of [circular dependencies][mastering 06 cds]
+  when using unconfirmed legacy Bitcoin transactions.
+
+- [How does Ocean’s TIDES payout scheme work?]({{bse}}120719)
+  User Lagrang3 explains the Transparent Index of Distinct Extended Shares
+  (TIDES) miner payout scheme used by the Ocean mining pool.
+
+- [What data does the Bitcoin Core wallet search for during a blockchain rescan?]({{bse}}121563)
+  Pieter Wuille and Ava Chow summarize how the Bitcoin Core wallet software
+  identifies relevant transactions to a particular legacy or [descriptor][topic descriptors] wallet.
+
+- [How does transaction rebroadcasting for watch-only wallets work?]({{bse}}121899)
+  Ava Chow notes that the transaction rebroadcasting logic is the same
+  regardless of wallet type. However, for a watch-only-originated
+  transaction to be eligible for rebroadcasting by the node, the transaction
+  must have made it to the node's mempool at some point.
 
 ## Releases and release candidates
 
@@ -282,3 +305,5 @@ repo]._
 [towns lnecash]: https://delvingbitcoin.org/t/ecash-and-lightning-via-zkcp/586
 [towns futures]: https://delvingbitcoin.org/t/an-onchain-implementation-of-mining-feerate-futures/547/6?u=harding
 [calle lnecash]: https://delvingbitcoin.org/t/ecash-and-lightning-via-zkcp/586/2
+[policy series]: /en/blog/waiting-for-confirmation/
+[mastering 06 cds]: https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06_transactions.adoc#circular-dependencies
