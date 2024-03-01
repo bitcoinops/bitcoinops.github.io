@@ -141,7 +141,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 {:id="segwit-send-bech32m"}
 {% case segwit.send.bech32m %}
   {% when "true" %}{:.feature-yes}
-  - **Allows sending to bech32m P2WPKH addresses**<br>
+  - **Allows sending to bech32m addresses**<br>
     Allows sending to bech32m P2WPKH native segwit addresses.
   {% when "false" %}{:.feature-no}
   - **Does not allow sending to bech32m P2WPKH addresses**<br>
