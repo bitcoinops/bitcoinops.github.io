@@ -28,7 +28,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   l'enregistrement TXT suivant pourrait indiquer une adresse [bech32m][topic bech32] à utiliser comme
   solution de secours par les portefeuilles onchain simples, une adresse de [paiement
   silencieux][topic silent payments] à utiliser par les portefeuilles onchain qui supportent ce
-  protocole, et une [offre][topic offers] LN à utiliser par les portefeuilles compatibles LN :
+  protocole, et une [offre][topic offers] LN à utiliser par les portefeuilles compatibles LN:
 
   ```text
 bitcoin:bc1qexampleaddress0123456?sp=sp1qexampleaddressforsilentpayments0123456&b12=lno1qexampleblindedpathforanoffer...
