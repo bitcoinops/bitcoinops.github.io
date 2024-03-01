@@ -150,7 +150,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No sending capabilities**<br>
     There are no sending capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested: Can transaction outputs be sent to bech32m P2WPKH addresses?**<br>
+  - **Not tested: Can transaction outputs be sent to bech32m addresses?**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
