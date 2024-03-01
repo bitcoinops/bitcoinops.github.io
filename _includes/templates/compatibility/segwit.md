@@ -54,7 +54,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 {% case segwit.receive.bech32m %}
   {% when "true" %}{:.feature-yes}
   - **Allows receiving to bech32m segwit addresses**<br>
-    Allows the generation of bech32m native (either P2WPKH or P2WSH) segwit receiving addresses.
+    Allows the generation of bech32m (P2TR) receiving addresses.
   {% when "false" %}{:.feature-no}
   - **Does not allow receiving to bech32m segwit addresses**<br>
     Does not allow the generation of bech32 native (either P2WPKH or P2WSH) segwit receiving addresses.
