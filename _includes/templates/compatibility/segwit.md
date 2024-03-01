@@ -62,7 +62,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
   - **No receiving capabilities**<br>
     There are no receiving capabilities for this service.
   {% when "untested" %}{:.feature-neutral}
-  - **Not tested: Can bech32m segwit transaction outputs be received?**<br>
+  - **Not tested: Can bech32m transaction outputs be received?**<br>
     We either didn’t test this or could not appropriately determine the results.
   {% else %}{% include ERROR_42_UNEXPECTED_VALUE %}
 {% endcase %}
