@@ -53,7 +53,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
 {:id="segwit-receive-bech32m"}
 {% case segwit.receive.bech32m %}
   {% when "true" %}{:.feature-yes}
-  - **Allows receiving to bech32m segwit addresses**<br>
+  - **Allows receiving to bech32m addresses**<br>
     Allows the generation of bech32m (P2TR) receiving addresses.
   {% when "false" %}{:.feature-no}
   - **Does not allow receiving to bech32m segwit addresses**<br>
