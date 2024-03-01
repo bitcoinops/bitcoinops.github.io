@@ -57,7 +57,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
     Allows the generation of bech32m (P2TR) receiving addresses.
   {% when "false" %}{:.feature-no}
   - **Does not allow receiving to bech32m segwit addresses**<br>
-    Does not allow the generation of bech32 native (either P2WPKH or P2WSH) segwit receiving addresses.
+    Does not allow the generation of bech32m (P2TR) receiving addresses.
   {% when "na" %}{:.feature-neutral}
   - **No receiving capabilities**<br>
     There are no receiving capabilities for this service.
