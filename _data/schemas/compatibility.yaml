@@ -146,7 +146,7 @@ properties:
                 type: string
                 enum: *feat
               bech32m:
-                description: Does the wallet allow receiving to Bech32m native segwit addresses?
+                description: Does the wallet allow receiving to Bech32m addresses?
                 type: string
                 enum: *feat
               default: 
