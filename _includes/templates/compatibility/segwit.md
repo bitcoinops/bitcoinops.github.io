@@ -145,7 +145,7 @@ segwit transactions to pay less total fee to achieve the same feerate as legacy 
     Allows sending to bech32m (P2TR) addresses.
   {% when "false" %}{:.feature-no}
   - **Does not allow sending to bech32m addresses**<br>
-    Does not allow sending to bech32m P2WPKH native segwit addresses.
+    Does not allow sending to bech32m addresses.
   {% when "na" %}{:.feature-neutral}
   - **No sending capabilities**<br>
     There are no sending capabilities for this service.
