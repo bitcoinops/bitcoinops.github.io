@@ -98,6 +98,9 @@ optech_mentions:
   - title: "Discussion about storing vault-related data in taproot annexes"
     url: /en/newsletters/2023/06/14/#discussion-about-the-taproot-annex
 
+  - title: "Simple vault prototype using `OP_CAT` and schnorr signatures"
+    url: /en/newsletters/2024/02/28/#simple-vault-prototype-using-op-cat
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

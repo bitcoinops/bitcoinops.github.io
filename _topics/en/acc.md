@@ -40,6 +40,9 @@ optech_mentions:
   - title: Verification of arbitrary programs using proposed opcode from MATT
     url: /en/newsletters/2024/01/03/#verification-of-arbitrary-programs-using-proposed-opcode-from-matt
 
+  - title: Sending and receiving ecash using LN and ZKCPs
+    url: /en/newsletters/2024/02/28/#sending-and-receiving-ecash-using-ln-and-zkcps
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
