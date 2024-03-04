@@ -50,7 +50,7 @@ see_also:
     link: https://gist.github.com/t-bast/5fd89979a8088b99d0b95c124902aa56
 
 ---
-SIP is a [submarine swap](https://bitcoinops.org/en/topics/submarine-swaps/)
+SIP is a [submarine swap][topic submarine swaps]
 mechanism that differs from typical purely HTLC based submarine swaps by
 allowing for a pre-commital stage. This allows for reusable swap addresses and
 more flexibility with onchain funds.
