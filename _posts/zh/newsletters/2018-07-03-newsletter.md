@@ -53,7 +53,7 @@ excerpt: >
 - 升级到于 2018 年 6 月 15 日发布的 [Bitcoin Core 0.16.1][Bitcoin Core 0.16.1]。特别推荐矿工进行升级。参见 [Newsletter #1][newsletter #1]
 
 [Bitcoin Core 0.16.1]: https://bitcoincore.org/en/download/
-[newsletter #1]: /en/newsletters/2018/06/26/
+[newsletter #1]: /zh/newsletters/2018/06/26/
 
 ### 仪表盘项目
 
