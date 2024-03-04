@@ -27,7 +27,7 @@ excerpt: >
 
 提醒还没有成为正式会员的公司。我们请求您支付 5000 美元的象征性贡献，以帮助我们资助我们的开支。
 
-[newsletter page]: /en/newsletters/
+[newsletter page]: /zh/newsletters/
 
 
 ## 第一次 Optech 工作坊！
