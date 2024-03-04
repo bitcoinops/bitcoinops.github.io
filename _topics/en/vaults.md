@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Simple vault prototype using `OP_CAT` and schnorr signatures"
     url: /en/newsletters/2024/02/28/#simple-vault-prototype-using-op-cat
 
+  - title: "BIPs #1421 adds BIP345 for the OP_VAULT opcode and related consensus changes"
+    url: /en/newsletters/2024/03/06/#bips-1421
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults
