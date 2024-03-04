@@ -75,6 +75,9 @@ optech_mentions:
   - title: "New coin selection strategy for LN liquidity providers"
     url: /en/newsletters/2024/02/28/#coin-selection-for-liquidity-providers
 
+  - title: "LND #8378 makes several improvements to LND’s coin selection features"
+    url: /en/newsletters/2024/03/06/#lnd-8378
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies
