@@ -51,7 +51,7 @@ see_also:
 
 ---
 SIP is a [submarine swap][topic submarine swaps]
-mechanism that differs from typical purely HTLC based submarine swaps by
+mechanism that differs from typical purely HTLC-based submarine swaps by
 allowing for a pre-commital stage. This allows for reusable swap addresses and
 more flexibility with onchain funds.
 
