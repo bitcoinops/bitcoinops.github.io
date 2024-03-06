@@ -66,7 +66,7 @@ the help of Bob. Alice also has the third option of waiting for the recovery
 timeout if Bob is offline or uncooperative.
 
 SIP is primarily geared towards mobile users who may go offline for extended
-periods of time. The main trick of SIP is splitting the confirmation
+periods. The main trick of SIP is splitting the confirmation
 requirements between a pre-commital address and a committed address, allowing
 for the immediate usage of funds when the mobile user comes online.
 
