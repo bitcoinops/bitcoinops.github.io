@@ -102,6 +102,10 @@ release candidates.*
 - [Bitcoin Core 26.1rc1][] is a release candidate for a maintenance release
   of this predominant full node implementation.
 
+- [Wasabi Wallet v2.0.6][] is a new major release with many performance
+  improvements, new hardware wallets support, 11 new RPC calls, framework
+  and GUI improvements, UX improvements, minor bug fixes and more.
+
 ## Notable code and documentation changes
 
 _Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
@@ -174,3 +178,4 @@ repo]._
 [news251 block]: /en/newsletters/2023/05/17/#bitcoin-core-27608
 [eclair v0.10.0]: https://github.com/ACINQ/eclair/releases/tag/v0.10.0
 [bitcoin core 26.1rc1]: https://bitcoincore.org/bin/bitcoin-core-26.1/
+[wasabi wallet v2.0.6]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.6
