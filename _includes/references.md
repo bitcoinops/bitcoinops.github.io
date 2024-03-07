@@ -95,7 +95,6 @@ for details --> {% endcomment %}
 {% comment %}<!-- Later link definitions supersede earlier definitions.
 When more recent information about a BIP is available not in the regular
 place, put links here. -->{% endcomment %}
-[BIP345]: https://github.com/bitcoin/bips/pull/1421
 
 {% comment %}<!-- BOLTs in order lowest to highest -->{% endcomment %}
 [BOLT1]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md

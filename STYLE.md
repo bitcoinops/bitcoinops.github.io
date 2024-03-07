@@ -93,7 +93,7 @@ beginning of a sentence).
 | Use | Don't use | Notes |
 |-|-|-|
 | anti fee sniping | anti-fee sniping, anti-fee-sniping | |
-| block chain | blockchain | |
+| blockchain | block chain | "block chain" is acceptable in unmodified older documents |
 | chain split | chainsplit | |
 | CPFP or Child Pays For Parent | Child-Pays-For-Parent | |
 | coinjoin | Coinjoin, coinJoin or coin-join | |

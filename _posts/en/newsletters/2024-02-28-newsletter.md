@@ -80,7 +80,7 @@ infrastructure projects.
   whether larger miners might have an advantage over smaller miners,
   with Anthony Towns [providing][towns futures] a payoff table showing
   that an attempt to game the contract would result in greater profits
-  for miners using the default transaction selection algorithm.
+  for miners using the default transaction selection algorithm. {% assign timestamp="1:31" %}
 
 - **Coin selection for liquidity providers:** Richard Myers
   [posted][myers cs] to Delving Bitcoin about creating a [coin
@@ -90,7 +90,7 @@ infrastructure projects.
   implemented in a Bitcoin Core [draft PR][bitcoin core #29442].
   Testing the algorithm, he found "a 15% reduction in on-chain fees
   compared to [Bitcoin Core's] default coin selection".  Myers is
-  seeking criticism of the approach and suggestions for improvement.
+  seeking criticism of the approach and suggestions for improvement. {% assign timestamp="7:20" %}
 
 - **Simple vault prototype using `OP_CAT`:** developer Rijndael
   [posted][rijndael vault] to Delving Bitcoin about a Rust-language
@@ -207,7 +207,7 @@ infrastructure projects.
   </table>
 
   The prototype has received a small amount of discussion and analysis
-  on the forum as of this writing.
+  on the forum as of this writing. {% assign timestamp="21:15" %}
 
 - **Sending and receiving ecash using LN and ZKCPs:** Anthony Towns
   [posted][towns lnecash] to Delving Bitcoin about linking
@@ -222,7 +222,7 @@ infrastructure projects.
   [replied][calle lnecash] with some concerns but also support for the idea, a reference
   to a zero-knowledge proof system already implemented for Cashu, and
   a note that he's actively researching and writing code to support
-  atomic ecash-to-LN transfers.
+  atomic ecash-to-LN transfers. {% assign timestamp="44:44" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -241,25 +241,25 @@ nswer -->{% endcomment %}
   benefits of more-homogeneous mempools including [fee estimation][topic fee
   estimation] and [compact block relay][topic compact block relay], and touches
   on policy workarounds such as miners accepting [fees out-of-band][topic
-  out-of-band fees].
+  out-of-band fees]. {% assign timestamp="49:41" %}
 
 - [What is the circular dependency in signing a chain of unconfirmed transactions?]({{bse}}121959)
   Ava Chow explains the concern of [circular dependencies][mastering 06 cds]
-  when using unconfirmed legacy Bitcoin transactions.
+  when using unconfirmed legacy Bitcoin transactions. {% assign timestamp="53:28" %}
 
 - [How does Ocean’s TIDES payout scheme work?]({{bse}}120719)
   User Lagrang3 explains the Transparent Index of Distinct Extended Shares
-  (TIDES) miner payout scheme used by the Ocean mining pool.
+  (TIDES) miner payout scheme used by the Ocean mining pool. {% assign timestamp="34:02" %}
 
 - [What data does the Bitcoin Core wallet search for during a blockchain rescan?]({{bse}}121563)
   Pieter Wuille and Ava Chow summarize how the Bitcoin Core wallet software
-  identifies relevant transactions to a particular legacy or [descriptor][topic descriptors] wallet.
+  identifies relevant transactions to a particular legacy or [descriptor][topic descriptors] wallet. {% assign timestamp="57:57" %}
 
 - [How does transaction rebroadcasting for watch-only wallets work?]({{bse}}121899)
   Ava Chow notes that the transaction rebroadcasting logic is the same
   regardless of wallet type. However, for a watch-only-originated
   transaction to be eligible for rebroadcasting by the node, the transaction
-  must have made it to the node's mempool at some point.
+  must have made it to the node's mempool at some point. {% assign timestamp="59:37" %}
 
 ## Releases and release candidates
 
@@ -272,7 +272,7 @@ release candidates.*
   plugin that "make emergency recoveries less stressful", improvements
   to [anchor channels][topic anchor outputs], 50% faster block chain
   syncing, and a bug fix for the parsing of a large
-  transaction found on testnet.
+  transaction found on testnet. {% assign timestamp="1:02:20" %}
 
 ## Notable code and documentation changes
 
@@ -286,7 +286,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 repo]._
 
 - [LDK #2770][] begins preparing to later add support for [dual-funded
-  channels][topic dual funding].
+  channels][topic dual funding]. {% assign timestamp="1:04:20" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}

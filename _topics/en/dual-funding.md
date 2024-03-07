@@ -126,6 +126,9 @@ optech_mentions:
   - title: "LDK #2770 begins preparing to later add support for dual-funded channels"
     url: /en/newsletters/2024/02/28/#ldk-2770
 
+  - title: "Eclair #2829 allows plugins to set a policy for contributing funds in a dual-funded channel open"
+    url: /en/newsletters/2024/03/06/#eclair-2829
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements
