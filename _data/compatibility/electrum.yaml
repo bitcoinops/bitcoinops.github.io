@@ -82,9 +82,11 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
+      bech32m: "untested"
       default: "bech32"
     send:
       bech32: "true" 
+      bech32m: "true"
       change_bech32: "true"
       segwit_v1: "Error message during broadcasting of transaction."
       bech32_p2wsh: "true"

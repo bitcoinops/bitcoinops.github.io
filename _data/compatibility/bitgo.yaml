@@ -52,9 +52,11 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "true"
       default: "p2sh_wrapped"
     send:
       bech32: "true" 
+      bech32m: "true"
       change_bech32: "true"
       segwit_v1: "Error occurs during sending process, after validation."
       bech32_p2wsh: "true"
