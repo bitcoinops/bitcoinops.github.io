@@ -18,8 +18,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Mise à jour des URI `bitcoin:` de BIP21 :** Josie Baker a [posté][baker bip21] sur Delving
-  Bitcoin pour discuter de la manière dont les URI [BIP21][] sont spécifiées pour être utilisées,
-  comment elles sont utilisées aujourd'hui, et comment elles pourraient être utilisées à l'avenir. La
+  Bitcoin pour discuter des utilisations prévues par les spécifications des URI [BIP21][],
+  de leur utilisation réelle aujourd'hui, et de leurs utilisions possibles à l'avenir. La
   spécification exige que le corps immédiatement après le deux-points soit une adresse Bitcoin P2PKH
   classique, par exemple `bitcoin:1BoB...`. Après le corps, des paramètres supplémentaires peuvent
   être passés en utilisant le codage de requête HTTP, y compris des adresses pour des formats
@@ -33,9 +33,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
      Comme discuté dans le fil, une amélioration pourrait être que le créateur de l'URI spécifie toutes
      les méthodes de paiement qu'ils prennent en charge en utilisant des paramètres nus, par exemple :
-     `bitcoin:?bc1q...&sp1q...`. Le dépensier (qui est généralement responsable du paiement des frais)
+     `bitcoin:?bc1q...&sp1q...`. Celui qui effectue la dépense (et qui est généralement responsable du paiement des frais)
      pourrait alors choisir sa méthode de paiement préférée dans la liste. Bien que certains points
-     techniques mineurs soient encore discutés au moment de la rédaction, aucune critique majeure de
+     techniques mineurs soient encore discutés au moment de la rédaction de cet article, aucune critique majeure de
      cette approche n'a été publiée.
 
 - **PSBT pour plusieurs sessions de signature MuSig2 concurrentes :** Salvatore Ingala a
@@ -116,8 +116,8 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
 - [Eclair #2829][] permet aux plugins de définir une politique de contribution à l'ouverture d'un
   [canal à double financement][topic dual funding]. Par défaut, Eclair ne contribue pas à l'ouverture
-  d'un canal à double financement. Cette PR permet aux plugins d'outrepasser cette politique et de décider
-  de la part des fonds de l'opérateur du nœud qui doit être contribuée à un nouveau canal.
+  d'un canal à double financement. Ce PR permet aux plugins de outrepasser cette politique et de décider
+  quelle part des fonds de l'opérateur de nœud doit être versée à un nouveau canal.
 
 - [LND #8378][] apporte plusieurs améliorations aux fonctionnalités de [sélection de pièces][topic
   coin selection] de LND, y compris permettre aux utilisateurs de choisir leur stratégie de sélection
