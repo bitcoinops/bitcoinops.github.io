@@ -261,7 +261,7 @@ financement][topic dual funding].
 [Core Lightning 24.02]: https://github.com/ElementsProject/lightning/releases/tag/v24.02
 [myers csliq]: https://delvingbitcoin.org/t/liquidity-provider-utxo-management/600
 [news134 cat]: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
-[news59 vaults]: /en/newsletters/2019/08/14/#bitcoin-vaults-sans-covenants
+[news59 vaults]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [cashu]: https://github.com/cashubtc/nuts
 [zmnscpxj futures]: https://delvingbitcoin.org/t/an-onchain-implementation-of-mining-feerate-futures/547
 [harding futures]: https://delvingbitcoin.org/t/an-onchain-implementation-of-mining-feerate-futures/547/2
