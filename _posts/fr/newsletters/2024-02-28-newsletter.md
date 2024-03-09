@@ -201,7 +201,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Pourquoi les nœuds ne peuvent-ils pas avoir l'option de relais pour interdire certains types de transactions ?]({{bse}}121734) 
+- [Pourquoi les nœuds ne peuvent-ils pas avoir l'option de relais pour interdire certains types de transactions ?]({{bse}}121734)
   Ava Chow expose des réflexions sur le but de la [politique de mempool
   et de relais][policy series], les avantages de mempools plus homogènes incluant l'[estimation des
   frais][topic fee estimation] et le [relais de blocs compacts][topic compact block relay], et aborde
