@@ -143,8 +143,8 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [baker bip21]: https://delvingbitcoin.org/t/revisiting-bip21/630
 [bitescrow]: https://github.com/BitEscrow/escrow-core
 [chow bips]: https://gnusha.org/pi/bitcoindev/2092f7ff-4860-47f8-ba1a-c9d97927551e@achow101.com/
-[dashjr en retard]: https://twitter.com/LukeDashjr/status/1761127972302459000
-[news37 invalide]: /en/newsletters/2019/03/12/#bitcoin-core-vulnerability-disclosure
-[news251 bloc]: /fr/newsletters/2023/05/17/#bitcoin-core-27608
+[dashjr backlogged]: https://twitter.com/LukeDashjr/status/1761127972302459000
+[news37 invalid]: /en/newsletters/2019/03/12/#bitcoin-core-vulnerability-disclosure
+[news251 block]: /fr/newsletters/2023/05/17/#bitcoin-core-27608
 [eclair v0.10.0]: https://github.com/ACINQ/eclair/releases/tag/v0.10.0
 [bitcoin core 26.1rc1]: https://bitcoincore.org/bin/bitcoin-core-26.1/
