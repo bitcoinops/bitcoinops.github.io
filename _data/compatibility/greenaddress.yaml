@@ -108,9 +108,11 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "untested"
       default: "p2sh_wrapped"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "false"
       segwit_v1: "Fails on validation of the address."
       bech32_p2wsh: "true"
