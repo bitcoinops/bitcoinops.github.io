@@ -16,7 +16,6 @@ GitHub project to a self-hosted GitLab project.  Also included are our
 regular sections announcing new releases and release candidates and summarizing
 recent changes to popular Bitcoin infrastructure software.
 
-
 ## News
 
 - **Updating BIP21 `bitcoin:` URIs:** Josie Baker [posted][baker bip21]
@@ -42,7 +41,7 @@ recent changes to popular Bitcoin infrastructure software.
     spender (who is usually responsible for paying fees) could then
     choose their preferred payment method from the list.  Although some
     minor technical points were still being discussed at the time of
-    writing, no major criticisms of this approach have been posted.
+    writing, no major criticisms of this approach have been posted. {% assign timestamp="18:07" %}
 
 - **PSBTs for multiple concurrent MuSig2 signing sessions:** Salvatore
   Ingala [posted][ingala musig2] to Delving Bitcoin about minimizing the
@@ -62,7 +61,7 @@ recent changes to popular Bitcoin infrastructure software.
   constant no matter how many inputs a transaction has.
 
   In a [reply][scott musig2], developer Christopher Scott noted that
-  [BitEscrow][] already uses a similar mechanism.
+  [BitEscrow][] already uses a similar mechanism. {% assign timestamp="46:30" %}
 
 - **Discussion about adding more BIP editors:** Ava Chow [posted][chow
   bips] to the Bitcoin-Dev mailing list to suggest the addition of BIP
@@ -71,7 +70,7 @@ recent changes to popular Bitcoin infrastructure software.
   Chow suggested two well-known expert contributors to become editors,
   which seemed to have support.  Also discussed was whether the
   additional editors should have the ability to assign BIP numbers.  No
-  clear resolution has been reached as of this writing.
+  clear resolution has been reached as of this writing. {% assign timestamp="58:33" %}
 
 - **GitLab backup for Bitcoin Core GitHub project:** Fabian Jahr
   [posted][jahr gitlab] to Delving Bitcoin about maintaining a backup of
@@ -83,7 +82,7 @@ recent changes to popular Bitcoin infrastructure software.
   GitLab and plans to keep backups going forward to allow rapidly
   switching to GitLab if necessary.  His post has not received any
   comments as of this writing, but we thank him for making a potential
-  transition as easy as possible.
+  transition as easy as possible. {% assign timestamp="1:11" %}
 
 ## Releases and release candidates
 
@@ -97,10 +96,10 @@ release candidates.*
   [offers][topic offers], and a fully working [splicing][topic splicing]
   prototype" in addition to "various on-chain fee improvements, more
   configuration options, performance enhancements and various minor bug
-  fixes".
+  fixes". {% assign timestamp="1:03:24" %}
 
 - [Bitcoin Core 26.1rc1][] is a release candidate for a maintenance release
-  of this predominant full node implementation.
+  of this predominant full node implementation. {% assign timestamp="1:05:18" %}
 
 ## Notable code and documentation changes
 
@@ -134,21 +133,21 @@ repo]._
     makes it invalid.  If so, the mutated block can be rejected early
     on, hopefully preventing anything about it from being cached or used
     to prevent the correct processing of a valid version of the block that
-    will be received later.
+    will be received later. {% assign timestamp="1:06:53" %}
 
 - [Eclair #2829][] allows plugins to set a policy for contributing funds
   towards a [dual-funded channel open][topic dual funding].  By default,
   Eclair will not contribute funds towards opening a dual-funded
   channel.  This PR allows plugins to override that policy and decide
   how much of the node operator's funds should be contributed towards a
-  new channel.
+  new channel. {% assign timestamp="1:17:29" %}
 
 - [LND #8378][] makes several improvements to LND's [coin
   selection][topic coin selection] features, including allowing users to
   choose their coin selection strategy and also allowing a user to
   specify some inputs that must be included in a transaction but
   allowing the coin selection strategy to find any additional needed
-  inputs.
+  inputs. {% assign timestamp="1:19:06" %}
 
 - [BIPs #1421][] adds [BIP345][] for the `OP_VAULT` opcode and related
   consensus changes that, if activated in a soft fork, would add support
@@ -157,7 +156,7 @@ repo]._
   transaction substitution attacks.  BIP345 vaults also allow
   [batched][topic payment batching] operations that make them more
   efficient than most proposed designs that only use more generic
-  [covenant][topic covenants] mechanisms.
+  [covenant][topic covenants] mechanisms. {% assign timestamp="1:20:28" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
