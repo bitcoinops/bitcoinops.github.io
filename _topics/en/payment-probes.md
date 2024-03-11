@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Dynamic Payment Switching and Splitting (PSS) proposed to thwart Balance Discovery Attacks"
     url: /en/newsletters/2023/10/04/#payment-splitting-and-switching
 
+  - title: "LND #8136 updates the `EstimateRouteFee` RPC to use payment probing"
+    url: /en/newsletters/2024/03/13/#lnd-8136
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: JIT routing

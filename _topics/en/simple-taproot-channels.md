@@ -35,6 +35,9 @@ optech_mentions:
   - title: "LND #7733 updates its watchtower support for simple taproot channels"
     url: /en/newsletters/2024/01/31/#lnd-7733
 
+  - title: "LND #8499 makes significant changes to the TLV types used for simple taproot channels"
+    url: /en/newsletters/2024/03/13/#lnd-8499
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
