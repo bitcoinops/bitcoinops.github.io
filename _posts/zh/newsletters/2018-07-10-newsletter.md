@@ -12,7 +12,7 @@ version: 1
 
 ## 行动项目
 
-- **<!--bitcoin-core-minimum-relay-fee-->在下一个主要版本中**，Bitcoin Optech 的最小中继费用可能会降低。确保您的软件不会假设 1 satoshi/byte 是不安全的最低可能底线。有关更多信息，请参见下面的*新闻*部分。
+- **<!--bitcoin-core-minimum-relay-fee-->在下一个主要版本中**，Bitcoin Optech 的最小中继费用可能会降低。确保您的软件不会假设 1 satoshi/vbyte 是不安全的最低可能底线。有关更多信息，请参见下面的*新闻*部分。
 
 - **<!--ensure-your-software-->确保您用于计算动态费用交易大小的软件能够准确计算签名大小**，或者至少使用比特币签名为 72 字节的最坏情况假设。有关更多信息，请参见下面的*新闻*部分。
 
