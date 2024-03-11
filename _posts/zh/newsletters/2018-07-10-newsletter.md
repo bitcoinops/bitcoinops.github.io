@@ -8,7 +8,7 @@ layout: newsletter
 lang: zh
 version: 1
 ---
-本周的 Newsletter 包括有关最低费用和即将发布的比特币核心版本的新闻和行动项目，关于 Schnorr 签名提案的特别专题，以及最近在里斯本举行的 Building on Bitcoin 会议记录。
+本周的 Newsletter 包括有关最低费用和即将发布的 Bitcoin Core 版本的新闻和行动项目，关于 Schnorr 签名提案的特别专题，以及最近在里斯本举行的 Building on Bitcoin 会议记录。
 
 ## 行动项目
 
