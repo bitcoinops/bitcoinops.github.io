@@ -65,8 +65,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   le taux de frais apparent ; mais, avec la construction de ZmnSCPxj, ce n'est pas un risque : le
   choix de Bob de savoir s'il utilise ou non la dépense de grande taille est purement informé par sa
   perspective sur les conditions actuelles de minage et de mempool. Cette réponse a également envisagé
-  si les mineurs plus importants pourraient avoir un avantage sur les mineurs plus petits, avec
-  Anthony Towns [fournissant][towns futures] un tableau des gains montrant qu'une tentative de
+  si les mineurs plus importants pourraient avoir un avantage sur les mineurs plus petits et
+  Anthony Towns [a fourni][towns futures] un tableau des gains montrant qu'une tentative de
   manipuler le contrat résulterait en des profits plus importants pour les mineurs utilisant
   l'algorithme de sélection de transaction par défaut.
 
@@ -116,7 +116,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     exigent une dépense à partir d'une transaction initiatrice avec deux sorties, Mallory est incapable
     de voler les fonds d'Alice.
 
-    Puisque l'argent est retourné au même script de coffre d'où il a commencé, Mallory peut toujours
+    Puisque l'argent est retourné au même script de coffre d'où il est parti, Mallory peut toujours
     créer une autre transaction initiatrice et forcer Alice à passer par le même cycle encore et
     encore, entraînant des coûts de frais pour Mallory et Alice. La [documentation étendue][cat vault
     readme] de Rijndael pour le projet note que vous voudriez probablement permettre à Alice de dépenser
@@ -176,7 +176,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   </tr>
   </table>
 
-  Le prototype a reçu une petite quantité de discussions et d'analyses sur le forum à ce jour.
+  Le prototype a suscité quelques discussions et analyses sur le forum à ce jour.
 
 - **Envoyer et recevoir de l'ecash en utilisant LN et ZKCPs :** Anthony Towns a [posté][towns
   lnecash] sur Delving Bitcoin à propos de la liaison des "mint d'[ecash][topic ecash] au réseau
@@ -217,7 +217,7 @@ nswer -->{% endcomment %}
   Extended Shares (TIDES) utilisé par le pool de minage Ocean.
 
 - [Quelles données le portefeuille Bitcoin Core recherche-t-il lors d'un nouveau balayage de la blockchain ?]({{bse}}121563)
-  Pieter Wuille et Ava Chow résument comment le logiciel de portefeuille Bitcoin Core
+  Pieter Wuille et Ava Chow expliquent comment le logiciel de portefeuille Bitcoin Core
   identifie les transactions pertinentes pour un portefeuille legacy ou [descriptor][topic
   descriptors] particulier.
 
