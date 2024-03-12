@@ -173,31 +173,12 @@ source: [Optech dashboard][periodic txn data]*
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Does not include Bitcoin Core
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Does not include Bitcoin Core
 #13907 or #13666 described above.  Note: the bulk of the changes to all three
 projects this week seemed to be improvements to their automated testing
 code; we aren't describing those in this newsletter, but we're sure
 users and developers highly appreciate that work.*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="2b67354aa584c4aabae049a67767ac7b70e2d01a"
-  end="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="f0f5e11b826e020c11c37343bcbaf9725627378b"
-  end="6989316b11c51922b4c6ae3507ac06680ec530b9"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="80a8e57ede82292818032eeb3510da067fddfd5e"
-  end="a97955845ff43d4780b33a7301695db33823c57c"
-%}
 
 - [Bitcoin Core #13925][]: increases the maximum number of file
   descriptors Bitcoin Core's internal database can use, which can

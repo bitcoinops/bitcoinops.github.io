@@ -99,32 +99,13 @@ answers made since our last update.*
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
 
 {% comment %}<!-- I didn't notice anything interesting in LND this week -harding -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="df660aa7717a6f4784e90535a13a95d82244565a"
-  end="427253cf7e19ed9ef86b45457de41e345676c88e"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="3f5ec993300e38369110706ac83301b8875500d6"
-  end="26f68da5b2883885fcf6a8e79b3fc9bb12cc9eef"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="80a875a9a54e26c2ea4c90aee8fe606ddcc27c55"
-  end="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
-%}
 
 - [Bitcoin Core #12254][] adds the functions necessary to allow Bitcoin
   Core to generate [BIP158][] compact block filters.  This code isn't

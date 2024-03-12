@@ -74,9 +74,9 @@ in the past week from popular Bitcoin infrastructure projects.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14573][] moves various miscellaneous options that
   opened separate dialogues in the Bitcoin-Qt GUI to a new top-level
@@ -121,30 +121,6 @@ return to our regular Tuesday publication schedule starting on January
 
 {% include references.md %}
 {% include linkers/issues.md issues="1984,2039,2324,14573,2155,2154,2132,2161" %}
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="89cdcfedcac776fec6101654f98e87112ca0de5d"
-  end="34241716852df6ea6a3543822f3bf6f886519d4b"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="5451211d1947de5b2376aff5eb39c6e9f969cbbb"
-  end="0fafd5e2fd824f38ec6a03a56488de9c0798f34f"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="dc7b76e5e6a9cd8a28731a7634db50f33287619b"
-  end="2c53572798f78ce2a66aced0627b7b3f2adb0514"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-  end="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-%}
 [V0.17.1rc1]: https://bitcoincore.org/bin/bitcoin-core-0.17.1/
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
 [maxwell-todd por]: https://web.archive.org/web/20170928054354/https://iwilcox.me.uk/2014/proving-bitcoin-reserves
