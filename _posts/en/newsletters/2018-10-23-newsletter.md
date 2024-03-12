@@ -107,34 +107,9 @@ popular Bitcoin infrastructure projects.
 
 ## Notable merges
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="be992701b018f256db6d64786624be4cb60d8975"
-  end="5c25409d6851182c5e351720cee36812c229b77a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="e5b84cfadab56037ae3957e704b3e570c9368297"
-  end="6b19df162a161079ab794162b45e8f4c7bb8beec"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="a44491fff0ccd7bde20661eecf88bf136db5f6e6"
-  end="7eec2253e962e524f8fd92b74f411f0b99706ba9"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1e6f1f5ad5e7f1e3ef79313ec02023902bf8175c"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14291][]: For use with Bitcoin Core's multiwallet mode,
   a new `listwalletdir` RPC can list all available wallets in the wallet
