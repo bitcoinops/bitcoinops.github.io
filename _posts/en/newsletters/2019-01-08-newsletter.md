@@ -73,9 +73,9 @@ Bitcoin infrastructure projects are also provided.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14565][] significantly improves the error handling for
   the `importmulti` RPC and will return a `warnings` field for each
@@ -118,30 +118,6 @@ commits].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="14565,14811,2172,2188,2374,2354" %}
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="34241716852df6ea6a3543822f3bf6f886519d4b"
-  end="fe5a70b9fefa0548f497a749746f53f3d7fd0ebb"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="0fafd5e2fd824f38ec6a03a56488de9c0798f34f"
-  end="3c950e8f0dc103feeffd9c42c9683e1164b4e8d8"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="2c53572798f78ce2a66aced0627b7b3f2adb0514"
-  end="6f027a24a04912859f44c314bf00e9d3fcb27500"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-  end="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-%}
 
 [0.17.1 bin]: https://bitcoincore.org/bin/bitcoin-core-0.17.1/
 [0.17.1 notes]: https://bitcoincore.org/en/releases/0.17.1/

@@ -111,34 +111,9 @@ get the latest news and check out the previously published issues:
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="f1e2f2a85962c1664e4e55471061af0eaa798d40"
-  end="742ee213499194f97e59dae4971f1474ae7d57ad"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="e5b84cfadab56037ae3957e704b3e570c9368297"
-  end="6b19df162a161079ab794162b45e8f4c7bb8beec"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="22b8a88b488faa94a009b2c58415ae825152f709"
-  end="d5bb536ef0c08a813f767b3fb016eb20292de4dd"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14454][] adds support to the [importmulti][rpc
   importmulti] RPC for segwit addresses and scripts (P2WPKH, P2WSH, and

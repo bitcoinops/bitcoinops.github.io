@@ -114,30 +114,11 @@ answers made since our last update.*
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="c53e083a49291b611d278a8db24ff235c1202e43"
-  end="920c090f63f4990bf0f3b3d1a6d3d8a8bcd14ba0"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="3b2c807288b1b7f40d609533c1e96a510ac5fa6d"
-  end="f4305097e1638f6f8958dfa9eec941d8bf80246e"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="36eab5de26e203311ceeb65c94ec5beb9c94ff5d"
-  end="3ce53ab9eddd397d57b6afc5faefe6703e56ac26"
-%}
 
 - [Bitcoin Core #13152][]: when connected to the peer-to-peer network,
   nodes share the IP addresses of other nodes they've heard about and

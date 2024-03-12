@@ -99,31 +99,12 @@ meeting log].
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].*
+*Notable commits this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], and [C-lightning][core lightning repo].*
 
 {% comment %}<!-- IMO, c-lightning only had 6 commits this week, mostly
 minor doc updates, so no news for them.  I'm still leaving them
 mentioned above for easy copy/paste next week. -harding -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
-  end="df660aa7717a6f4784e90535a13a95d82244565a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="6989316b11c51922b4c6ae3507ac06680ec530b9"
-  end="3f5ec993300e38369110706ac83301b8875500d6"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="a97955845ff43d4780b33a7301695db33823c57c"
-  end="80a875a9a54e26c2ea4c90aee8fe606ddcc27c55"
-%}
 
 - Bitcoin Core 0.17 branched: this allows developers to focus on
   ensuring stability, translation completeness, and other release

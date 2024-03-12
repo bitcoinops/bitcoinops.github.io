@@ -96,9 +96,9 @@ maintenance release.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [LND #1937][] stores the most recent channel reestablishment message
   in the node's database so that it can be resent even after a channel
@@ -159,31 +159,6 @@ commits].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="1937,14477,2081" %}
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="a7dc03223e915d7afb30498fe5faa12b5402f7d8"
-  end="ed12fd83ca7999a896350197533de5e9202bc2fe"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="8924d8fb20eb2abfd9cc93c6cc7eb6951184cb88"
-  end="f4b6e0b7755982fc571e2763e0a2ec93c8e89900"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="95e47cdac298b8e534feb073c70da004c08b3e93"
-  end="3ba751797bcc54e7e071518f680b08a3ae7f42fc"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="314a61d72474aa29ff4afba8472553ad91d88e9d"
-  end="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-%}
-
 
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
 [last week's newsletter]: {{news23}}#news

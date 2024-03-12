@@ -123,38 +123,13 @@ answers made since our last update.*
 
 ## Notable merges
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 {% comment %}<!-- no commits to libsecp256k1; one interesting commit
 #448 to C-Lightning, but I'm not confident enough of my understanding of
 it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="5c25409d6851182c5e351720cee36812c229b77a"
-  end="f1e2f2a85962c1664e4e55471061af0eaa798d40"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="e5b84cfadab56037ae3957e704b3e570c9368297"
-  end="6b19df162a161079ab794162b45e8f4c7bb8beec"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="7eec2253e962e524f8fd92b74f411f0b99706ba9"
-  end="22b8a88b488faa94a009b2c58415ae825152f709"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
 
 - [Bitcoin Core #14451][] allows optionally building Bitcoin-Qt without
   support for the [BIP70][] payment protocol and adds a deprecation
