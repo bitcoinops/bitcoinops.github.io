@@ -155,7 +155,7 @@ backported to its pending release.*
   not be useful to a high-level API consumer.  Although there are
   differences in implementation and motivation, this seems conceptually
   related to [C-Lightning #2382][] as described in the *notable code
-  changes* section of [Newsletter #36][] in two separate bullet points.
+  changes* section of [Newsletter #36][].
 
 - [Eclair #951][] implements a channel backup mechanism and provides
   [documentation][eclair backup] for using it.  Unlike the LND static
@@ -242,3 +242,5 @@ backported to its pending release.*
 [lightning loop]: https://github.com/lightninglabs/loop
 [rbf usability study]: /en/rbf-in-the-wild/
 [gcs]:  https://en.wikipedia.org/wiki/Golomb_coding#Rice_coding
+[newsletter #33]: /en/newsletters/2019/02/12/#bitcoin-core-14897
+[newsletter #36]: /en/newsletters/2019/03/05/#c-lightning-2382

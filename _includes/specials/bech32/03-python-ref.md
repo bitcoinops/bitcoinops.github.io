@@ -86,7 +86,7 @@ The Gemini exchange also [apparently][gemini reddit] added bech32
 sending support this week, and users report that Gemini defaults to accepting
 deposits to bech32 addresses as well.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 easy]: /en/newsletters/2019/03/19/#bech32-sending-support
 [bech32 reference libraries]: https://github.com/sipa/bech32/tree/master/ref
 [segwit addr to bytes]: https://github.com/sipa/bech32/blob/master/ref/python/tests.py#L30
 [bitgo segwit]: https://blog.bitgo.com/native-segwit-addresses-via-bitgos-api-4946f2007be9

@@ -44,7 +44,7 @@ infrastructure projects.
 ## News
 
 - **Bitcoin-Dev mailing list status update:** the service outage
-  reported in [last week's newsletter][Newsletter #36] has been resolved
+  reported in [last week's newsletter][Newsletter #36 ml] has been resolved
   but list administrators are [planning][bishop list] to migrate to
   another solution.  Many posts sent in the past two weeks have been
   relayed to list subscribers, but some have been lost.  If you don't
@@ -92,7 +92,7 @@ infrastructure projects.
 
 - **Cleanup soft fork proposal discussion:** this week saw discussion
   about the consensus cleanup soft fork [proposal][bip-cleanup]
-  described in [last week's newsletter][newsletter #36].  Russell
+  described in [last week's newsletter][newsletter #36 cleanup].  Russell
   O'Connor [raised the concern][roconnor codesep] that invalidation of
   the `OP_CODESEPARATOR` opcode could prevent
   existing UTXOs using the opcode from being spent.  It's not possible to detect this
@@ -276,3 +276,6 @@ merge affected.*
 [onioncat]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat
 [batching chapter]: /en/payment-batching/
 [gui 0.18]: https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3AGUI+milestone%3A0.18.0
+[newsletter #36 ml]: /en/newsletters/2019/03/05/#bitcoin-dev-mailing-list-outage
+[newsletter #36 cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
+[newsletter #13]: /en/newsletters/2018/09/18/#bitcoin-core-14054

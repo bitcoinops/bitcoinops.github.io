@@ -132,3 +132,5 @@ return to our regular Tuesday publication schedule starting on January
 [ln minisketch]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html
 [optimized transaction relay]: http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/
 [naumenko relay simulator]: https://github.com/naumenkogs/Bitcoin-Simulator
+[newsletter #9]: /en/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions
+[newsletter #10]: /en/newsletters/2018/08/28/#c-lightning-1854

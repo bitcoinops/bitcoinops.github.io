@@ -219,20 +219,20 @@ wiki page for changes -->{% endcomment %}
 [xs review]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-code-review/
 [xs wallet arch]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/
 [xs cleanup sf]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-great-consensus-cleanup/
-[bg consensus cleanup]: {{news36}}/
+[bg consensus cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
 [xs maint]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-maintainers/
 [xs script change]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-noinput-etc/
 [xs taproot]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-taproot/
-[bg taproot]: {{news46}}/
+[bg taproot]: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
 [xs utreexo]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-utreexo/
 [xs assumeutxo]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-assumeutxo/
-[bg assumeutxo]: {{news41}}/
+[bg assumeutxo]: /en/newsletters/2019/04/09/#discussion-about-an-assumed-valid-mechanism-for-utxo-snapshots
 [xs hwi]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/
-[bg hwi]: {{news34}}/
+[bg hwi]: /en/newsletters/2019/02/19/#bitcoin-core-preliminary-hardware-wallet-support
 [xs v2 p2p]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/
-[bg v2 p2p]: {{news39}}/
+[bg v2 p2p]: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal
 [xs signet]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/
-[bg signet]: {{news37}}/
+[bg signet]: /en/newsletters/2019/03/12/#feedback-requested-on-signet
 [xs blind state]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-statechains/
 [coredev.tech]: https://coredev.tech/
 [transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning
@@ -243,9 +243,13 @@ wiki page for changes -->{% endcomment %}
 [optech twitter]: https://www.twitter.com/bitcoinoptech
 [founding sponsors]: /about/#founding-sponsors
 [member companies]: /#members
-[countersign blurb]: {{news27}}#august
+[countersign blurb]: /en/newsletters/2018/12/28/#august
 [cpfp carve out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [russell-corallo rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016530.html
 [hillebrand optech]: https://www.youtube.com/playlist?list=PLPj3KCksGbSY9pV6EI5zkHcut5UTCs1cp
 [routing success probability]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/lightning-network-routing-security/
 [utreexo]: https://eprint.iacr.org/2019/611
+[newsletter #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
+[newsletter #48]: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
+[newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out

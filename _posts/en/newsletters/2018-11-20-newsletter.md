@@ -327,3 +327,7 @@ newsletter's author.
 [ln1.1 outline]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [input consolidations]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [lnrfc rz]: https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx
+[newsletter #21]: /en/newsletters/2018/11/13/#advertising-node-liquidity
+[newsletter #17]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
+[newsletter #12]: /en/newsletters/2018/09/11/#workshop
+[newsletter #19]: /en/newsletters/2018/10/30/#lnd-1535-1512

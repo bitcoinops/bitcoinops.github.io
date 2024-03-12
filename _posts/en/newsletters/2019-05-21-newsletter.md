@@ -188,3 +188,5 @@ wiki page for changes -->{% endcomment %}
 [mcf future ln]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/ln-present-and-future-panel/
 [email bip-anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[newsletter #39]: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal

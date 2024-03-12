@@ -141,7 +141,7 @@ repo], and [C-lightning][core lightning repo].*
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
 [bls announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
-[#3 schnorr]: {{news3}}#featured-news-schnorr-signature-proposed-bip
+[#3 schnorr]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [bls signatures]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [mimblewimble paper]: https://scalingbitcoin.org/papers/mimblewimble.txt
@@ -151,3 +151,4 @@ repo], and [C-lightning][core lightning repo].*
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
+[newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors

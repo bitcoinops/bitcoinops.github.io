@@ -160,3 +160,5 @@ repo].*
 [kotliar BoB]: https://www.youtube.com/watch?v=Cpid31c6HZc&feature=youtu.be&t=8m49s
 [mallers video]: https://www.youtube.com/watch?v=R0C83h-ZM-4&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=17&t=0s
 [mallers]: https://twitter.com/JackMallers
+[newsletter #19]: /en/newsletters/2018/10/30/#lightning-residency-and-hackday
+[newsletter #3]: /en/newsletters/2018/07/10/#merchant-adoption
