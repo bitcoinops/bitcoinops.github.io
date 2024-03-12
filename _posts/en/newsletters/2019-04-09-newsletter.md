@@ -187,3 +187,5 @@ their pending releases.*
 [bitcoin core 0.5.0]: https://bitcoin.org/en/release/v0.5.0
 [sendmany wackiness]: https://github.com/bitcoin/bitcoin/pull/15595#issue-260932169
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #31]: /en/newsletters/2019/01/29/#lnd-2370
+[newsletter #33]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs

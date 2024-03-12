@@ -178,3 +178,4 @@ its master development branch; some may also be backported to the
 [bolt2 delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection
 [p2p protocol encryption]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #22]: /en/newsletters/2018/11/20/#monitor-feerates

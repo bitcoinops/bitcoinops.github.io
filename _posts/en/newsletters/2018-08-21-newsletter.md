@@ -141,7 +141,7 @@ mentioned above for easy copy/paste next week. -harding -->{% endcomment %}
 {% include references.md %}
 {% include linkers/issues.md issues="13917,11526,13918,1693,1460,13960" %}
 
-[news5 news]: {{news5}}#news
+[news5 news]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
 [dandelion protocol]: https://arxiv.org/abs/1701.04439
 [2018-08-16 meeting log]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2018/bitcoin-core-dev.2018-08-16-19.03.log.html
 [nmnkgl relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015863.html

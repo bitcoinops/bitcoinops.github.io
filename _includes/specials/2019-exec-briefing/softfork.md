@@ -2,10 +2,10 @@
 {% capture the-next-softfork %}In his presentation, Lee describes the various phases
   of a soft fork from idea to proposal to implementation to activation.
   Using this framework, he identifies the current state of the
-  Schnorr/Taproot soft fork (see [Newsletter #46][]), the consensus
-  cleanup soft fork ([#36][Newsletter #36]), and the noinput soft fork
+  Schnorr/Taproot soft fork (see [Newsletter #46][newsletter #46 taproot]), the consensus
+  cleanup soft fork ([#36][Newsletter #36 cc]), and the noinput soft fork
   proposals ([BIP118][] and [bip-anyprevout], see [#47][Newsletter
-  #47]).  Although later in the presentation he provides an overview of
+  #47 apo]).  Although later in the presentation he provides an overview of
   the consensus cleanup soft fork (fixing several non-urgent problems
   in the protocol) and the noinput proposals (enabling new features for
   contract protocols such as the [Eltoo][] layer for LN), his talk---and
@@ -56,3 +56,7 @@
   available.  Lee finishes his talk by providing a rough, and heavily
   caveated, timeline for when we might see the changes described in
   his talk.{% endcapture %}
+
+[newsletter #36 cc]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
+[newsletter #46 taproot]: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
+[newsletter #47 apo]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes

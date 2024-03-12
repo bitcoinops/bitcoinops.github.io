@@ -106,9 +106,6 @@ place, put links here. -->{% endcomment %}
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 
-{% comment %}<!-- links old newsletters -->{% endcomment %}
-{% include linkers/newsletters.md %}
-
 {% comment %}
 <!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->

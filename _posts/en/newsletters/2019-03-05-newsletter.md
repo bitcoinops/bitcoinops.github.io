@@ -479,3 +479,5 @@ independently reporting this error.
 [4 july fork]: https://en.bitcoin.it/wiki/July_2015_chain_forks
 [CVE-2017-12842 description]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
 [1opreturn fix]: https://github.com/bitcoin/bitcoin/commit/73aa262647ff9948eaf95e83236ec323347e95d0#diff-8458adcedc17d046942185cb709ff5c3R1114
+[newsletter #10]: /en/newsletters/2018/08/28/#requests-for-soft-fork-solutions-to-the-time-warp-attack
+[newsletter #16]: /en/newsletters/2018/10/09/#forward-blocks-on-chain-capacity-increases-without-a-hard-fork

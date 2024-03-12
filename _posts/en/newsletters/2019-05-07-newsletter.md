@@ -220,3 +220,4 @@ wiki page for changes -->{% endcomment %}
 [tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
 [tap ref]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #40]: /en/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses

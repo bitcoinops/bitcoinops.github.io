@@ -301,3 +301,5 @@ and [libsecp256k1][libsecp256k1 repo].*
 [day 3]: https://www.youtube.com/watch?v=U5fEvfAFs_o
 [utreexo]: https://dci.mit.edu/research/2018/11/28/utreexo-a-dynamic-accumulator-for-bitcoin-state-a-description-of-research-by-thaddeus-dryja
 [btcpay utxo]: https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync
+[newsletter #21]: /en/newsletters/2018/11/13/#lightning-application-residency-videos
+[newsletter #31]: /en/newsletters/2019/01/29/#c-lightning-2283

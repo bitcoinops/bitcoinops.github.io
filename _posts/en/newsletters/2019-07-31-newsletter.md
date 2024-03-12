@@ -243,4 +243,6 @@ answers made since our last update.*
 [bloom announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html
 [signmessage bech32]: /en/bech32-sending-support/#message-signing-support
 [filter privacy]: https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
-
+[newsletter #43]: /en/newsletters/2019/04/23/#basic-bip158-support-merged-in-bitcoin-core
+[newsletter #56]: /en/newsletters/2019/07/24/#bitcoin-core-16152
+[newsletter #37]: /en/newsletters/2019/03/12/#version-2-addr-message-proposed

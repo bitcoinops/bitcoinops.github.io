@@ -220,6 +220,7 @@ and [libsecp256k1][libsecp256k1 repo].*
 {% include references.md %}
 {% include linkers/issues.md issues="14955,14353,15193,2314,2405,2350,2460,2370,2283,784" %}
 [top bse]: https://bitcoin.stackexchange.com/users?tab=Reputation&filter=all
-[payjoin summary]: {{news27}}#july
+[payjoin summary]: /en/newsletters/2018/12/28/#july
 [payjoin post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016625.html
 [contact core]: https://bitcoincore.org/en/contact/
+[newsletter #26]: /en/newsletters/2018/12/18/#c-lightning-2155
