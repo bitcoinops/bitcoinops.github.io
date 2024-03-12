@@ -53,12 +53,53 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:LarryRuane
+[Re enable `OP_CAT`][review club bitcoin-inquisition 39]
+is a PR by Armin Sabouri (GitHub 0xBEEFCAF3) that reintroduces the
+[OP_CAT][topic op_cat] opcode but only on
+[signet][topic signet] [Bitcoin Inquisition][bitcoin inquisition repo]
+and only for [tapscript][topic tapscript] (taproot script).
+Satoshi Nakamoto disabled this opcode in 2010, probably
+out of an overabundance of caution. The operation replaces the
+top two elements on the script evaluation stack with the concatenation
+of those elements.
+
+The motivations for `OP_CAT` were not discussed.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/28950#l-FIXME"
+  q0="What are the various conditions under which the execution of
+      `OP_CAT` may result in failure?"
+  a0="Fewer than 2 items on the stack, resulting item is too large,
+      disallowed by script verify flags (for example, the soft fork is
+      not activated yet), and appears in a non-taproot script (witness
+      version 0 or legacy)."
+  a0link="https://bitcoincore.reviews/bitcoin-inquisition-39#l-46"
+
+  q1="`OP_CAT` redefines one of the `OP_SUCCESSx` opcodes.
+      Why doesn't it redefine one of the `OP_NOPx` opcodes (which have
+      also been used to implement soft fork upgrades in the past)?"
+  a1="Both `OP_SUCCESSx` and `OP_NOPx` opcodes can be redefined
+      to implement soft forks because they restrict the validation
+      rules (they always succeed while the redefined opcodes may fail).
+      Since script execution continues following an `OP_NOP`,
+      redefined `OP_NOP` opcodes can't affect the execution stack
+      (otherwise scripts that used to fail could succeed, which
+      would loosen the rules).
+      Redefined `OP_SUCCESS` opcodes can affect the stack, because
+      `OP_SUCCESS` immediately terminates the script (successfully).
+      Since `OP_CAT` needs to affect the stack, it can't redefine
+      one of the `OP_NOP` opcodes."
+  a1link="https://bitcoincore.reviews/bitcoin-inquisition-39#l-33"
+
+  q2="This PR adds both `SCRIPT_VERIFY_OP_CAT` and
+      `SCRIPT_VERIFY_DISCOURAGE_OP_CAT`. Why are both needed?"
+  a2="It allows the soft fork to be phased in. First both are set to `true`
+      (consensus-enabled but not relayed or mined)
+      until most network nodes are upgraded.
+      Then `SCRIPT_VERIFY_DISCOURAGE_OP_CAT` is set to `false` to enable
+      actual usage. If the Bitcoin Inquisition experiment later fails, the
+      process can be run in reverse.
+      If both are set to `false`, `OP_CAT` is just `OP_SUCCESS`."
+  a2link="https://bitcoincore.reviews/bitcoin-inquisition-39#l-60"
 %}
 
 ## Releases and release candidates
@@ -122,3 +163,4 @@ repo]._
 [bitcoin core 26.1rc1]: https://bitcoincore.org/bin/bitcoin-core-26.1/
 [Bitcoin Core 27.0rc1]: https://bitcoincore.org/bin/bitcoin-core-27.0/test.rc1/
 [Core Lightning v24.02.1]: https://github.com/ElementsProject/lightning/releases/tag/v24.02.1
+[review club bitcoin-inquisition 39]: https://bitcoincore.reviews/bitcoin-inquisition-39
