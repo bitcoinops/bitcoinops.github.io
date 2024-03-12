@@ -206,7 +206,7 @@ users and developers highly appreciate that work.*
 {% include references.md %}
 {% include linkers/issues.md issues="13922,13907,13925,1644,13666,1811" %}
 
-[news3 lower relay]: {{news3}}#news
+[news3 lower relay]: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
 [fields post]: https://medium.com/mit-media-lab-digital-currency-initiative/http-coryfields-com-cash-48a99b85aad4
 [narula recs]: https://medium.com/mit-media-lab-digital-currency-initiative/reducing-the-risk-of-catastrophic-cryptocurrency-bugs-dcdd493c7569

@@ -28,12 +28,14 @@ If you haven't implemented bech32 sending support yet, we suggest you
 try to get it implemented by 24 August 2019 (the two-year anniversary of
 segwit activation).  Not long after that, Bitcoin Core's next release is
 expected to begin defaulting to bech32 receiving addresses in its GUI
-and perhaps also its API methods (see Newsletters [#40][Newsletter #40]
-and [#42][Newsletter #42]).  We expect other wallets to do the
+and perhaps also its API methods (see Newsletters [#40][Newsletter #40 bech32]
+and [#42][Newsletter #42 bech32]).  We expect other wallets to do the
 same---except for the ones that have already made bech32 their default
 (or even their only supported address format).
 
 [nullc bank analogy]: https://old.reddit.com/r/Bitcoin/comments/9iw1p2/hey_guys_its_time_to_make_bech32_standard_on/e6onq8t/
 [over 200,000 bitcoins]: https://p2sh.info/dashboard/db/p2wpkh-statistics?orgId=1
-[news38 bech32]: {{news38}}#bech32-sending-support
-[news40 bech32]: {{news40}}#bech32-sending-support
+[news38 bech32]: /en/newsletters/2019/03/19/#bech32-sending-support
+[news40 bech32]: /en/newsletters/2019/04/02/#bech32-sending-support
+[newsletter #40 bech32]: /en/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses
+[newsletter #42 bech32]: /en/newsletters/2019/04/16/#bitcoin-core-15711

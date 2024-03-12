@@ -169,4 +169,4 @@ repo].*
 [elementsproject]: https://elementsproject.org/
 [port scan summary]: https://gist.github.com/harding/bf6115a567e80ba5e737242b91c97db2
 [nmap]: https://nmap.org/download.html
-[news16 mpecdsa]: {{news16}}#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels
+[news16 mpecdsa]: /en/newsletters/2018/10/09/#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels

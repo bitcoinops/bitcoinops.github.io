@@ -173,3 +173,4 @@ c-lightning: git log --topo-order -p d84d358562a3bcdf48856fdea24511907ff53fd9..0
 [bse 76541]: {{bse}}76541
 
 [lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c]: https://github.com/lightningnetwork/lnd/commit/ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c
+[newsletter #3]: /en/newsletters/2018/07/10/#transaction-fees-remain-very-low

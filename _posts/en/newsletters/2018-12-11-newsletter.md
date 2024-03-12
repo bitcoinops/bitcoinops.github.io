@@ -105,3 +105,4 @@ repo].*
 [explorer announce]: https://blockstream.com/2018/11/06/explorer-launch/
 [explorer code announce]: https://blockstream.com/2018/12/06/esplora-source-announcement/
 [weight sighash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016534.html
+[newsletter #23]: /en/newsletters/2018/11/27/#sighash-updates
