@@ -139,7 +139,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   <tr>
     <th>Disponibilité</th>
     <td markdown="span">**Maintenant**</td>
-  <td markdown="span">Nécessite un soft fork de `OP_VAULT` et [OP_CTV][topic op_checktemplateverify]</td>
+    <td markdown="span">Nécessite un soft fork de `OP_VAULT` et [OP_CTV][topic op_checktemplateverify]</td>
     <td markdown="span">Nécessite un soft fork de `OP_CAT`</td>
   </tr>
 
@@ -149,7 +149,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     <td markdown="span">**Non vulnérable**</td>
     <td markdown="span">**Non vulnérable**</td>
   </tr>
-  <th markdown="span">Retraits partiels de montant</th> <td markdown="span">Seulement si préarrangé</td>
+    <th markdown="span">Retraits partiels de montant</th>
+    <td markdown="span">Seulement si préarrangé</td>
     <td markdown="span">**Oui**</td>
     <td markdown="span">Non</td>
   </tr>
@@ -162,14 +163,14 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   </tr>
 
   <tr>
-  <th markdown="span">Regroupement pour re-vaulting/mise en quarantaine pour économie de frais</th>
+    <th markdown="span">Regroupement pour re-vaulting/mise en quarantaine pour économie de frais</th>
     <td markdown="span">Non</td>
     <td markdown="span">**Oui**</td>
     <td markdown="span">Non</td>
   </tr>
 
   <tr>
-  <th markdown="span">Efficacité opérationnelle dans le meilleur cas, c'est-à-dire uniquement les dépenses légitimes<br>*(estimé très approximativement par Optech)*</th>
+    <th markdown="span">Efficacité opérationnelle dans le meilleur cas, c'est-à-dire uniquement les dépenses légitimes<br>*(estimé très approximativement par Optech)*</th>
     <td markdown="span">**2x la taille d'une signature unique régulière**</td>
     <td markdown="span">3x la taille d'une signature unique régulière</td>
     <td markdown="span">4x la taille d'une signature unique régulière</td>
