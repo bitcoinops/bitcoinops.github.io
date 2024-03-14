@@ -37,14 +37,14 @@ infrastructure software.
     one potential future soft fork, [OP_CHECKTEMPLATEVERIFY][topic
     op_checktemplateverify].  ZmnSCPxj also briefly considers the
     challenges of generalizing the construction to other proposed soft
-    forks, particularly those that upgrade an `OP_SUCCESSx` opcode.
+    forks, particularly those that upgrade an `OP_SUCCESSx` opcode. {% assign timestamp="1:11" %}
 
 - **Overview of Chia Lisp for Bitcoiners:** Anthony Towns [posted][towns
   lisp] to Delving Bitcoin a detailed overview of the [Lisp][] variant
   used by the Chia cryptocurrency.  Towns has previously proposed a soft
   fork introduction of a Lisp-based scripting language for Bitcoin (see
   [Newsletter #191][news191 lisp]).  Anyone interested in the topic is
-  strongly encouraged to read his post.
+  strongly encouraged to read his post. {% assign timestamp="14:06" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -64,6 +64,8 @@ top two elements on the script evaluation stack with the concatenation
 of those elements.
 
 The motivations for `OP_CAT` were not discussed.
+
+{% assign timestamp="35:48" %}
 
 {% include functions/details-list.md
   q0="What are the various conditions under which the execution of
@@ -110,13 +112,13 @@ release candidates.*
 
 - [Core Lightning v24.02.1][] is a minor update to this LN node
   containing "a few minor fixes [and] improvements in the cost function
-  of the routing algorithm."
+  of the routing algorithm." {% assign timestamp="50:33" %}
 
 - [Bitcoin Core 26.1rc1][] is a release candidate for a maintenance release
-  of the network's predominant full node implementation.
+  of the network's predominant full node implementation. {% assign timestamp="51:03" %}
 
 - [Bitcoin Core 27.0rc1][] is a release candidate for the next major
-  version of the network's predominant full node implementation.
+  version of the network's predominant full node implementation. {% assign timestamp="52:11" %}
 
 ## Notable code and documentation changes
 
@@ -134,13 +136,13 @@ repo]._
   [payment probe][topic payment probes] will be sent.  If the probe
   successfully completes before the timeout is reached, the cost of using
   the chosen route will be returned.  Otherwise, an error will be
-  returned.
+  returned. {% assign timestamp="54:58" %}
 
 - [LND #8499][] makes significant changes to the Type-Length-Value (TLV)
   types used for [simple taproot channels][topic simple taproot
   channels] in order to improve LND's API for it.  We aren't aware of any
   other LN implementations currently using simple taproot channels, but if
-  any are using it, be aware that this may constitute a breaking change.
+  any are using it, be aware that this may constitute a breaking change. {% assign timestamp="57:26" %}
 
 - [LDK #2916][] adds a simple API for converting a payment preimage into
   a payment hash.  An LN invoice includes a payment hash; to claim a
@@ -149,7 +151,7 @@ repo]._
   from its downstream peer to claim the payment from its upstream peer).
   Since a hash can be derived from a preimage (but not vice versa),
   receivers and forwarding nodes may only store the preimage.  This API
-  allows them to easily derive the hash on demand.
+  allows them to easily derive the hash on demand. {% assign timestamp="58:31" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
