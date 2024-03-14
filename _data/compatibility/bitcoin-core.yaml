@@ -83,9 +83,11 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "true"
+      bech32m: "true"
       default: "p2sh_wrapped"
     send:
       bech32: "true" 
+      bech32m: "true"
       change_bech32: "true"
       segwit_v1: "Transaction can be created and broadcast, but does not make it
       to the mempool."

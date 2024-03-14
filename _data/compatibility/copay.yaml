@@ -59,9 +59,11 @@ segwit:
     receive:
       p2sh_wrapped: "false"
       bech32: "false"
+      bech32m: "untested"
       default: "p2pkh"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "false"
       segwit_v1: "Allows v1 address to be entered in the UI. Fails during broadcast."
       bech32_p2wsh: "true"

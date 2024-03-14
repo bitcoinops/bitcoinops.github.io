@@ -117,7 +117,7 @@ infrastructure software.
     LN-Symmetry would require a consensus change, which seems unlikely
     to happen in the near future, so a [follow-up post][zmnscpxj
     sidepools2] by ZmnSCPxj appears to be focusing on duplex payment
-    channels (which ZmnSCPxj calls "Decker-Wattenhofer" after the
+    channels (which ZmnSCPxj calls "Decker--Wattenhofer" after the
     researchers who first proposed them).  A downside of duplex payment
     channels is that they can't be kept open indefinitely, although
     ZmnSCPxj's analysis indicates they can probably be kept open for

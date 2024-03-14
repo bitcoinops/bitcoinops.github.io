@@ -103,7 +103,7 @@ appeared in the forward blocks.
 
 This talk describes an alternative to the Schnorr
 signature scheme described in the [MuSig paper][] that makes use of [pairing-based cryptography][],
-specifically an adaptation of the [Boneh-Lynn-Shacham (BLS) signature
+specifically an adaptation of the [Boneh--Lynn--Shacham (BLS) signature
 scheme][bls sigs].  Although pairing-based schemes require an additional
 fundamental security assumption beyond those made by both Bitcoin's
 current ECDSA scheme and proposed Schnorr scheme, the authors present

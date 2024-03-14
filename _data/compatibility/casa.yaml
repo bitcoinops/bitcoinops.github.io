@@ -40,9 +40,11 @@ segwit:
     receive:
       p2sh_wrapped: "true"
       bech32: "false"
+      bech32m: "untested"
       default: "p2sh_wrapped_p2wsh"
     send:
       bech32: "true" 
+      bech32m: "true"
       change_bech32: "false"
       segwit_v1: "Fails on signing attempt."
       bech32_p2wsh: "true"

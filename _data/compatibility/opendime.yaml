@@ -46,9 +46,11 @@ segwit:
     receive:
       p2sh_wrapped: "false"
       bech32: "false"
+      bech32m: "untested"
       default: "p2pkh"
     send:
       bech32: "true"
+      bech32m: "untested"
       change_bech32: "na"
       segwit_v1: "Untested."
       bech32_p2wsh: "true"

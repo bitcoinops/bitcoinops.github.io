@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Simple vault prototype using `OP_CAT` and schnorr signatures"
     url: /en/newsletters/2024/02/28/#simple-vault-prototype-using-op-cat
 
+  - title: "Bitcoin PR Review Club for `OP_CAT` on signet with Bitcoin Inquisition"
+    url: /en/newsletters/2024/03/13/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK

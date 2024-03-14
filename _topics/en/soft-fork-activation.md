@@ -145,6 +145,9 @@ optech_mentions:
   - title: "Question about why Bitcoin Core hasn't buried the taproot deployment"
     url: /en/newsletters/2023/03/29/#why-isn-t-the-taproot-deployment-buried-in-bitcoin-core
 
+  - title: "Trustless onchain betting on potential soft forks"
+    url: /en/newsletters/2024/03/13/#trustless-onchain-betting-on-potential-soft-forks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP activation heights, times, and thresholds

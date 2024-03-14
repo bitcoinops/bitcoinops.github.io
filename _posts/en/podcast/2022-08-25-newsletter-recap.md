@@ -87,7 +87,7 @@ you reuse addresses, that's very bad for privacy, because any reuse of the same
 scriptPubKey will make it immediately obvious that the same entity is involved
 in a transaction.  However, if you publish a pubkey, somebody can use their
 private key to generate a shared secret.  And essentially, some of you might
-have heard of the Diffie-Hellman handshake, which is the observation that a
+have heard of the Diffie--Hellman handshake, which is the observation that a
 public key multiplied by a private key of the other party gets the same result
 as a private key multiplied by the public key of the other party.  So, public
 key and private key versus private key and public key of the corresponding
