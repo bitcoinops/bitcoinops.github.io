@@ -51,7 +51,7 @@ see_also:
 excerpt: >
   **Cross-input signature aggregation** is a proposal to reduce the
   number of signatures a transaction requires.  In theory, every
-  signature required to a make a transaction valid could be combined into a
+  signature required to make a transaction valid could be combined into a
   single signature that covers the whole transaction.
 
 ---
@@ -59,7 +59,7 @@ For example, Alice controls two [P2TR][topic taproot] UTXOs.  Normally,
 if she creates a transaction spending both UTXOs with a keypath spend,
 she'll need to include one 16-vbyte signature in each output.  However,
 any node could aggregate both public keys from the UTXOs and Alice could
-produce a single 16-vbyte [MuSig]topic musig]-style [scriptless
+produce a single 16-vbyte [MuSig][topic musig]-style [scriptless
 multisigature][topic multisignature] that corresponded to the aggregate
 public key, proving that she controlled the private key for both of the
 original public keys.
