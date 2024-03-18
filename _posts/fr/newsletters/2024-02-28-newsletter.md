@@ -149,6 +149,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     <td markdown="span">**Non vulnérable**</td>
     <td markdown="span">**Non vulnérable**</td>
   </tr>
+  <tr>
     <th markdown="span">Retraits partiels de montant</th>
     <td markdown="span">Seulement si préarrangé</td>
     <td markdown="span">**Oui**</td>
