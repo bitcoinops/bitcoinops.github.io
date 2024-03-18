@@ -141,4 +141,4 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [Bitcoin Core 26.1rc1]: https://bitcoincore.org/bin/bitcoin-core-26.1/
 [Bitcoin Core 27.0rc1]: https://bitcoincore.org/bin/bitcoin-core-27.0/test.rc1/
 [Core Lightning v24.02.1]: https://github.com/ElementsProject/lightning/releases/tag/v24.02.1
-[review club bitcoin-inquisition 39] : https://bitcoincore.reviews/bitcoin-inquisition-39
+[review club bitcoin-inquisition 39]: https://bitcoincore.reviews/bitcoin-inquisition-39
