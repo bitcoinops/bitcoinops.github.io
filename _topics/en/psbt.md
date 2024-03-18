@@ -210,6 +210,9 @@ optech_mentions:
   - title: Proposed BIP specifying how to include descriptors in PSBTs
     url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
 
+  - title: "Rust Bitcoin #2458 adds support for signing PSBTs that include taproot inputs"
+    url: /en/newsletters/2024/03/20/#rust-bitcoin-2458
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

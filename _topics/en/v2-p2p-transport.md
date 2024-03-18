@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Bitcoin Core #29347 enables v2 P2P transport by default"
     url: /en/newsletters/2024/02/07/#bitcoin-core-29347
 
+  - title: "New project to create a BIP324 proxy for light clients"
+    url: /en/newsletters/2024/03/20/#bip324-proxy-for-light-clients
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
