@@ -16,9 +16,9 @@ rbf:
       shows_replaced_version: "false"
       shows_original_version: "false"
     send:
-      signals_bip125: "false"
-      list: "untested"
-      details: "untested"
+      signals_bip125: "true"
+      list: "true"
+      details: "true"
       shows_replaced_version: "untested"
       shows_original_version: "untested"
   examples:

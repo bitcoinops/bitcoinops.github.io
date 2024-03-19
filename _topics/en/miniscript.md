@@ -86,6 +86,9 @@ optech_mentions:
     url: /en/wizardsardine-miniscript/
     date: 2023-11-15
 
+  - title: "Ledger Bitcoin App 2.2.0 adds miniscript support for taproot"
+    url: /en/newsletters/2024/03/20/#ledger-bitcoin-app-2-2-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"
