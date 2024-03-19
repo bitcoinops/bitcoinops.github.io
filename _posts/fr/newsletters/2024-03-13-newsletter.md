@@ -24,8 +24,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   ratio sur lequel ils sont tous deux d'accord (par exemple, 1:1), de sorte qu'Alice reçoive tous les
   bitcoins combinés si le fork est activé à un certain moment et Bob reçoive tous les bitcoins
   combinés s'il ne l'est pas. Si, avant la date limite, un split de chaîne persistant se produit où
-  une chaîne active le fork et l'autre l'interdit, Alice reçoit les bitcoins combinés sur la chaîne
-  activée et Bob reçoit les bitcoins combinés sur la chaîne où l'activation est interdite.
+  une chaîne active le fork et l'autre le rejette, Alice reçoit les bitcoins combinés sur la chaîne
+  activée et Bob reçoit les bitcoins combinés sur la chaîne où l'activation est rejetée.
 
   L'idée de base a été proposée auparavant ([exemple][rubin bet]) mais la version de ZmnSCPxj traite
   des spécificités attendues pour au moins un futur soft fork potentiel,
@@ -33,7 +33,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   défis de généralisation de la construction à d'autres soft forks proposés, en particulier ceux qui
   mettent à niveau un opcode `OP_SUCCESSx`.
 
-- **Aperçu de Chia Lisp pour les Bitcoiners :** Anthony Towns a [posté][towns lisp] sur Delving
+- **Aperçu de Chia Lisp pour les Bitcoiners :** Anthony Towns a [publié][towns lisp] sur Delving
   Bitcoin un aperçu détaillé de la variante [Lisp][] utilisée par la cryptomonnaie Chia. Towns a
   précédemment proposé une introduction de soft fork d'un langage de script basé sur Lisp pour Bitcoin
   (voir le [Bulletin #191][news191 lisp]). Toute personne intéressée par le sujet est fortement
