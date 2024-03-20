@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Challenges with splicing and zero-conf channels when using v3 transaction topology"
     url: /en/newsletters/2024/02/07/#securely-opening-zero-conf-channels-with-v3-transactions
 
+  - title: "Phoenix Wallet v2.2.0 adds support for splicing using the quiescence protocol"
+    url: /en/newsletters/2024/03/20/#phoenix-wallet-v2-2-0-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

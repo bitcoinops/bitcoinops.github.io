@@ -87,7 +87,40 @@ infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **BitGo adds RBF support:**
+  In a [recent blog][bitgo blog], BitGo announced support for fee bumping using
+  [replace-by-fee (RBF)][topic rbf] in their wallet and API.
+
+- **Phoenix Wallet v2.2.0 released:**
+  With this release, Phoenix can now support [splices][topic splicing] while
+  making LN payments using the quiescence protocol (see [Newsletter
+  #262][news262 eclair2680]). Additionally, Phoenix improved the swap-in feature
+  privacy and fees by using their [swaproot][swaproot blog] protocol.
+
+- **Bitkey hardware signing device released:**
+  The [Bitkey][bitkey website] device is designed to be used in a 2-of-3
+  multisig setup with a mobile device and a Bitkey server key. Source code for
+  the firmware and various components are [available][bitkey github] under a
+  Commons Clause modified MIT License.
+
+- **Envoy v1.6.0 released:**
+  The [release][envoy blog] adds features for fee bumping transactions as well as canceling
+  transactions, both enabled using replace-by-fee (RBF).
+
+- **VLS v0.11.0 released:**
+  The [beta release][vls beta 3] allows multiple signing devices for the same
+  Lightning node, a feature they call [tag team signing][vls blog].
+
+- **Portal hardware signing device announced:**
+  The [recently announced][portal tweet] Portal device works with smartphones
+  using NFC with hardware and software source [available][portal github].
+
+- **Braiins mining pool adds Lightning support:**
+  The Braiins mining pool [announced][braiins tweet] a beta for mining payouts through Lightning.
+
+- **Ledger Bitcoin App 2.2.0 released:**
+  The [2.2.0 release][ledger 2.2.0] adds [miniscript][topic miniscript] support
+  for [taproot][topic taproot].
 
 ## Releases and release candidates
 
@@ -159,3 +192,15 @@ until about six months after the release of the upcoming version 27.*
 [falbesoner bip324]: https://delvingbitcoin.org/t/bip324-proxy-easy-integration-of-v2-transport-protocol-for-light-clients-poc/678
 [towns lisp]: https://delvingbitcoin.org/t/btc-lisp-as-an-alternative-to-script/682
 [oconnor lisp]: https://delvingbitcoin.org/t/btc-lisp-as-an-alternative-to-script/682/7
+[bitgo blog]: https://blog.bitgo.com/available-now-for-clients-bitgo-introduces-replace-by-fee-f74e2593b245
+[news262 eclair2680]: /en/newsletters/2023/08/02/#eclair-2680
+[swaproot blog]: https://acinq.co/blog/phoenix-swaproot
+[bitkey website]: https://bitkey.world/
+[bitkey github]: https://github.com/proto-at-block/bitkey
+[envoy blog]: https://foundation.xyz/2024/03/envoy-version-1-6-0-is-now-live/
+[vls beta 3]: https://gitlab.com/lightning-signer/validating-lightning-signer/-/releases/v0.11.0
+[vls blog]: https://vls.tech/posts/tag-team/
+[portal tweet]: https://twitter.com/afilini/status/1766085500106920268
+[portal github]: https://github.com/TwentyTwoHW
+[braiins tweet]: https://twitter.com/BraiinsMining/status/1760319741560856983
+[ledger 2.2.0]: https://github.com/LedgerHQ/app-bitcoin-new/releases/tag/2.2.0

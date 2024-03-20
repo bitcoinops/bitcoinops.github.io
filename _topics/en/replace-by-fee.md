@@ -174,6 +174,9 @@ optech_mentions:
   - title: "Pure replace by feerate is not guaranteed to be incentive compatible"
     url: /en/newsletters/2024/02/21/#pure-replace-by-feerate-doesn-t-guarantee-incentive-compatibility
 
+  - title: "BitGo adds RBF support"
+    url: /en/newsletters/2024/03/20/#bitgo-adds-rbf-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
