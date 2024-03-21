@@ -40,7 +40,7 @@ infrastructure software.
   recommended to use it for anything but tests right now".  However, he
   is working on rewriting the proxy in Rust and may also make some or
   all of its functions available as a library for light clients or other
-  software that wants to natively support the v2 Bitcoin P2P protocol.
+  software that wants to natively support the v2 Bitcoin P2P protocol. {% assign timestamp="1:20" %}
 
 - **Overview of BTC Lisp:** Anthony Towns [posted][towns lisp] to
   Delving Bitcoin about his experiments over the past couple of years
@@ -80,7 +80,7 @@ infrastructure software.
   Simphony [high-level non-consensus language] ends up, it can probably
   be translated/compiled [to] your low level BTC lisp language, with each
   translator/compiler language pair offering different potential
-  complexity/optimization opportunities."
+  complexity/optimization opportunities." {% assign timestamp="10:44" %}
 
 ## Changes to services and client software
 
@@ -89,38 +89,38 @@ wallets and services.*
 
 - **BitGo adds RBF support:**
   In a [recent blog][bitgo blog], BitGo announced support for fee bumping using
-  [replace-by-fee (RBF)][topic rbf] in their wallet and API.
+  [replace-by-fee (RBF)][topic rbf] in their wallet and API. {% assign timestamp="38:59" %}
 
 - **Phoenix Wallet v2.2.0 released:**
   With this release, Phoenix can now support [splices][topic splicing] while
   making LN payments using the quiescence protocol (see [Newsletter
   #262][news262 eclair2680]). Additionally, Phoenix improved the swap-in feature
-  privacy and fees by using their [swaproot][swaproot blog] protocol.
+  privacy and fees by using their [swaproot][swaproot blog] protocol. {% assign timestamp="40:11" %}
 
 - **Bitkey hardware signing device released:**
   The [Bitkey][bitkey website] device is designed to be used in a 2-of-3
   multisig setup with a mobile device and a Bitkey server key. Source code for
   the firmware and various components are [available][bitkey github] under a
-  Commons Clause modified MIT License.
+  Commons Clause modified MIT License. {% assign timestamp="44:19" %}
 
 - **Envoy v1.6.0 released:**
   The [release][envoy blog] adds features for fee bumping transactions as well as canceling
-  transactions, both enabled using replace-by-fee (RBF).
+  transactions, both enabled using replace-by-fee (RBF). {% assign timestamp="47:49" %}
 
 - **VLS v0.11.0 released:**
   The [beta release][vls beta 3] allows multiple signing devices for the same
-  Lightning node, a feature they call [tag team signing][vls blog].
+  Lightning node, a feature they call [tag team signing][vls blog]. {% assign timestamp="49:22" %}
 
 - **Portal hardware signing device announced:**
   The [recently announced][portal tweet] Portal device works with smartphones
-  using NFC with hardware and software source [available][portal github].
+  using NFC with hardware and software source [available][portal github]. {% assign timestamp="50:54" %}
 
 - **Braiins mining pool adds Lightning support:**
-  The Braiins mining pool [announced][braiins tweet] a beta for mining payouts through Lightning.
+  The Braiins mining pool [announced][braiins tweet] a beta for mining payouts through Lightning. {% assign timestamp="51:44" %}
 
 - **Ledger Bitcoin App 2.2.0 released:**
   The [2.2.0 release][ledger 2.2.0] adds [miniscript][topic miniscript] support
-  for [taproot][topic taproot].
+  for [taproot][topic taproot]. {% assign timestamp="54:14" %}
 
 ## Releases and release candidates
 
@@ -129,10 +129,10 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Bitcoin Core 26.1rc2][] is a release candidate for a maintenance release
-  of the network's predominant full node implementation.
+  of the network's predominant full node implementation. {% assign timestamp="55:51" %}
 
 - [Bitcoin Core 27.0rc1][] is a release candidate for the next major
-  version of the network's predominant full node implementation.
+  version of the network's predominant full node implementation. {% assign timestamp="56:48" %}
 
 ## Notable code and documentation changes
 
@@ -152,7 +152,7 @@ until about six months after the release of the upcoming version 27.*
 - [Bitcoin Core #27375][] adds support to the `-proxy` and `-onion`
   features for using Unix domain sockets rather than local TCP ports.
   Sockets can be faster than TCP ports and offer different security
-  tradeoffs.
+  tradeoffs. {% assign timestamp="57:43" %}
 
 - [Bitcoin Core #27114][] allows adding "in" and "out" to the
   `whitelist` configuration parameter to give special access to
@@ -161,7 +161,7 @@ until about six months after the release of the upcoming version 27.*
   connects to the user's local node (an incoming connection).  By
   specifying "out", the user can now ensure a peer receives special
   access if the local node connects to it, such as by the user calling
-  the `addnode` RPC.
+  the `addnode` RPC. {% assign timestamp="58:59" %}
 
 - [Bitcoin Core #29306][] adds [sibling eviction][topic kindred
   rbf] for transactions descended from an unconfirmed [v3
@@ -169,16 +169,16 @@ until about six months after the release of the upcoming version 27.*
   alternative to [CPFP carve-out][topic cpfp carve out], which is
   currently used by [LN anchor outputs][topic anchor outputs].  V3
   transaction relay, including sibling eviction, is not currently
-  enabled for mainnet.
+  enabled for mainnet. {% assign timestamp="1:02:19" %}
 
 - [LND #8310][] allows the `rpcuser` and `rpcpass` (password)
   configuration parameters to be retrieved from the system environment.
   This can allow, for example, a `lnd.conf` file to be managed using a
   non-private revision control system without storing the private
-  username and password.
+  username and password. {% assign timestamp="1:09:04" %}
 
 - [Rust Bitcoin #2458][] adds support for signing [PSBTs][topic psbt]
-  that include taproot inputs.
+  that include taproot inputs. {% assign timestamp="1:10:12" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
