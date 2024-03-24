@@ -52,4 +52,4 @@ activation.  With some wallets already defaulting to bech32 and several
 more planning to do so in the coming months, we expect to see increased
 adoption before the end of 2019.
 
-[bech32 fees]: {{news42}}#bech32-sending-support
+[bech32 fees]: /en/newsletters/2019/04/16/#bech32-sending-support

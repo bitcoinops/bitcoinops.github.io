@@ -61,5 +61,5 @@ their preferred wallet.
 [wasabi wallet]: https://wasabiwallet.io/
 [trust wallet]: https://trustwallet.com/
 [electrum]: https://electrum.org/
-[news45 bech32]: {{news45}}#bech32-sending-support
+[news45 bech32]: /en/newsletters/2019/05/07/#bech32-sending-support
 {% endauto_anchor %}

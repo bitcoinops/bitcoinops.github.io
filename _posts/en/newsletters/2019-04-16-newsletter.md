@@ -86,7 +86,8 @@ their pending releases.*
 {% include linkers/issues.md issues="15555,15711,2933,2908,2540,2554,2506,2022" %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
 [lnd releases]: https://github.com/lightningnetwork/lnd/releases
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 easy]: /en/newsletters/2019/03/19/#bech32-sending-support
 [lnd issue]: https://github.com/lightningnetwork/lnd/issues/new
 [lnd recover]: https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #38]: /en/newsletters/2019/03/19/#lnd-2022

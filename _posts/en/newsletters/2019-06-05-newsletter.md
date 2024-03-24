@@ -189,8 +189,9 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15741,2985,2761" %}
 [bech32 series]: /en/bech32-sending-support/
-[news48 coshv]: {{news48}}#proposed-transaction-output-commitments
+[news48 coshv]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
 [alt-coshv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016997.html
 [kotliar ln]: https://www.youtube.com/watch?v=1UDD9PMFTds
 [Bitcoin Core PR Review Club]:https://bitcoin-core-review-club.github.io/
 [core prs]: https://github.com/bitcoin/bitcoin/pulls
+[newsletter #26]: /en/newsletters/2018/12/18/#minisketch-library-released

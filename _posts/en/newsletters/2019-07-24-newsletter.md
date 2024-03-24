@@ -146,3 +146,5 @@ wiki page for changes -->{% endcomment %}
 [signet wiki]: https://en.bitcoin.it/wiki/Signet
 [signet bip post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017123.html
 [jit with fee]: https://lists.ozlabs.org/pipermail/c-lightning/2019-July/000160.html
+[newsletter #54]: /en/newsletters/2019/07/10/#brainstorming-just-in-time-routing-and-free-channel-rebalancing
+[newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out

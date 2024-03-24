@@ -91,7 +91,7 @@ you pay to access all of segwit's benefits.*
 
 {% include linkers/issues.md issues="2858" %}
 [bech32 series]: /en/bech32-sending-support/
-[oddness byte]: {{news48}}#move-the-oddness-byte
+[oddness byte]: /en/newsletters/2019/05/29/#move-the-oddness-byte
 [vault1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html
 [vault2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html
 [pubkey32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017247.html

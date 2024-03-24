@@ -207,3 +207,10 @@ infrastructure projects.
 [ldev mv]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001915.html
 [bdev mv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016785.html
 [groups.io]: https://groups.io/
+[newsletter #37]: /en/newsletters/2019/03/12/#removal-of-bip61-p2p-reject-messages
+[newsletter #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[newsletter #25]: /en/newsletters/2018/12/11/#modern-block-explorer-open-sourced
+[newsletter #7]: /en/newsletters/2018/08/07/#lnd-1543
+[newsletter #19]: /en/newsletters/2018/10/30/#lnd-1535-1512
+[newsletter #22]: /en/newsletters/2018/11/20/#lnd-2124
+[newsletter #30]: /en/newsletters/2019/01/22/#lnd-2448

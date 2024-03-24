@@ -37,7 +37,7 @@ everything since bech32 was first announced about two years ago.
   various block explorers should check the [bech32 adoption][] Bitcoin
   Wiki page.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 easy]: /en/newsletters/2019/03/19/#bech32-sending-support
 [top bech32 qa]: https://bitcoin.stackexchange.com/search?tab=votes&q=bech32
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 {% endauto_anchor %}

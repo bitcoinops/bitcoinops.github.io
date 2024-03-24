@@ -30,9 +30,9 @@ the amount of business they do using Ethereum.
   expects them to be using in the near future.  He then explained two of
   Bitrefill's services for LN users (including businesses), [Thor][] and [Thor
   Turbo][].  Finally, he briefly described several planned improvements to LN:
-  reusable addresses (see [Newsletter #30][]), splicing in and out (see
-  [#22][Newsletter #22]), and larger channels (also [#22][Newsletter
-  #22]).
+  reusable addresses (see [Newsletter #30][newsletter #30 spon]), splicing in and out (see
+  [#22][Newsletter #22 splice]), and larger channels (also [#22][Newsletter
+  #22 wumbo]).
 
   Overall, Kotliar made a compelling case that LN's faster speed, lower fees,
   and improved invoicing means businesses that expect to remain competitive
@@ -41,3 +41,6 @@ the amount of business they do using Ethereum.
 
 [thor]: https://www.bitrefill.com/thor-lightning-network-channels/?hl=en
 [thor turbo]: https://www.bitrefill.com/thor-turbo-channels/?hl=en
+[newsletter #30 spon]: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
+[newsletter #22 splice]: /en/newsletters/2018/11/20/#splicing
+[newsletter #22 wumbo]: /en/newsletters/2018/11/20/#wumbo

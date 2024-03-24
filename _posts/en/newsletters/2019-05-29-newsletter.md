@@ -417,3 +417,6 @@ the author.
 [optech contributors]: /about/#contributors
 [special section about the proposal]: #proposed-transaction-output-commitments
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #32]: /en/newsletters/2019/02/05/#miniscript
+[newsletter #18]: /en/newsletters/2018/10/23/#two-papers-published-on-fast-multiparty-ecdsa
+[newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes

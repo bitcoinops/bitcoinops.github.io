@@ -169,9 +169,9 @@ infrastructure projects.
 {% include linkers/issues.md issues="16185,627,1106,3449,3401,3390,15759,15450,16421,656,337,3004,3025,2938,2924,2964,15681" %}
 
 [bolt7 format]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md#definition-of-short_channel_id
-[lnd hold invoices]: {{news38}}#lnd-2022
-[listpayments deprecated]: {{news36}}#c-lightning-2382
-[carve-out]: {{news56}}#bitcoin-core-15681
+[lnd hold invoices]: /en/newsletters/2019/03/19/#lnd-2022
+[listpayments deprecated]: /en/newsletters/2019/03/05/#c-lightning-2382
+[carve-out]: /en/newsletters/2019/07/24/#bitcoin-core-15681
 [eltoo sample]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002131.html
 [eltoo ms 1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002132.html
 [eltoo ms 2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002135.html

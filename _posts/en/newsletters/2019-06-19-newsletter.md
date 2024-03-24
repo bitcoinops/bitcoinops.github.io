@@ -259,7 +259,7 @@ wiki page for changes -->{% endcomment %}
 {% include linkers/issues.md issues="15024,2696,1009,15834,3133,3140,3134,2700,2699,555,2672,14897,15776" %}
 [bech32 series]: /en/bech32-sending-support/
 [bech32 pos ref]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014396.html
-[news43 merges]: {{news43}}#notable-code-and-documentation-changes
+[news43 merges]: /en/newsletters/2019/04/23/#notable-code-and-documentation-changes
 [cl rc]: https://github.com/ElementsProject/lightning/tags
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
 [snigirev post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002009.html
@@ -281,7 +281,7 @@ wiki page for changes -->{% endcomment %}
 [bb dong transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
 [bb nick video]: https://youtu.be/DKOG0BQMmmg?t=21860
 [Jonas Nick]: https://twitter.com/n1ckler
-[bg taproot]: {{news46}}/
+[bg taproot]: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
 [bb nick transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/secure-protocols-bip-taproot/
 [bb guillemet video]: https://youtu.be/DqhxPWsJFZE?t=9534
 [Charles Guillemet]: https://twitter.com/p3b7_
@@ -291,3 +291,4 @@ wiki page for changes -->{% endcomment %}
 [watchtower tutorial]: https://github.com/wbobeirne/watchtower-example
 [prometheus]: https://prometheus.io/
 [pos ref anchor]: https://github.com/bitcoin/bips/pull/555#issuecomment-315517707
+[newsletter #30]: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments

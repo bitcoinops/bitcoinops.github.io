@@ -77,6 +77,7 @@ scale.
 
 {% include references.md %}
 
+[newsletter #6]: /en/newsletters/2018/07/31/#field-report-consolidation-of-4-million-utxos-at-xapo
 [optech team]: /about/
 [announcement]: /en/announcing-bitcoin-optech/
 [workshops]: /workshops/
