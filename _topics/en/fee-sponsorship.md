@@ -41,6 +41,9 @@ optech_mentions:
   - title: "2022 year-in-review: fee sponsorship"
     url: /en/newsletters/2022/12/21/#fee-sponsorship
 
+  - title: Proposals for more block space efficient transaction fee sponsorship
+    url: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Child Pays For Parent
