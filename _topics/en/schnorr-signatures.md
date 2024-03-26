@@ -119,6 +119,9 @@ optech_mentions:
   - title: "BIPs #1446 makes a small change and a number of additions to the BIP340 specification"
     url: /en/newsletters/2023/05/31/#bips-1446
 
+  - title: "Explanation for why BIP340 uses secp256k1 instead of a different curve"
+    url: /en/newsletters/2024/03/27/#why-does-bip-340-use-secp256k1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Will a schnorr soft fork introduce a new address format?

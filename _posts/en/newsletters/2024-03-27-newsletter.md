@@ -176,7 +176,46 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What are the risks of running a pre-SegWit node (0.12.1)?]({{bse}}122211)
+  Michael Folkson, Vojtěch Strnad, and Murch list downsides to running Bitcoin
+  Core 0.12.1 for an individual user including a higher risk of accepting an
+  invalid transaction or block, increased vulnerability to double spend attacks,
+  higher reliance on others to do updated consensus validation, much slower
+  block validation, missing many performance improvements, inability to use
+  [compact block relay][topic compact block relay], not relaying ~95% of current
+  unconfirmed transactions, less accurate [fee estimation][topic fee
+  estimation], and vulnerability to security issues fixed in previous versions.
+  Wallet users of 0.12.1 would also miss out on developments around
+  [miniscript][topic miniscript], [descriptor][topic descriptors] wallets, and
+  the fee savings and additional script capabilities enabled by [segwit][topic
+  segwit], [taproot][topic taproot], and [schnorr signatures][topic schnorr
+  signatures]. Effects on the Bitcoin network if Bitcoin Core
+  0.12.1 was more broadly adopted could include: higher chance of invalid
+  blocks being accepted by the network and associated reorg risk, miner
+  centralization pressure from increased stale block risk, and decreased mining
+  rewards for miners running that version.
+
+- [When is OP_RETURN cheaper than OP_FALSE OP_IF?]({{bse}}122321)
+  Vojtěch Strnad details the overheads associated with `OP_RETURN`-based data
+  embedding and `OP_FALSE` `OP_IF`-based embedding, concluding that "`OP_RETURN`
+  is cheaper for data smaller than 143 bytes".
+
+- [Why does BIP-340 use secp256k1?]({{bse}}122268)
+  Pieter Wuille explains the rationale of choosing secp256k1 over Ed25519 for
+  [BIP340][] schnorr signatures and notes "reusability of existing key derivation
+  infrastructure" and "not changing security assumptions" as reasons for the choice.
+
+- [What criteria does Bitcoin Core use to create block templates?]({{bse}}122216)
+  Murch explains Bitcoin Core's current ancestor set feerate-based algorithm for
+  transaction selection for a block candidate and mentions ongoing work on [cluster
+  mempool][topic cluster mempool] which offers various improvements.
+
+- [How does the initialblockdownload field in the getblockchaininfo RPC work?]({{bse}}122169)
+  Pieter Wuille notes the two conditions that need to occur after node startup
+  for `initialblockdownload` to become false:
+
+  1. "The currently active chain has at least as much cumulative PoW as the hardcoded constant in the software"
+  2. "The timestamp of the currently active tip is no more than 24 hours in the past"
 
 ## Releases and release candidates
 
