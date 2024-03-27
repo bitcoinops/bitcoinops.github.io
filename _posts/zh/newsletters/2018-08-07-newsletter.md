@@ -14,7 +14,7 @@ lang: zh
 - Optech 已开始计划其首次欧洲工作坊，预计将于 11 月在巴黎举行。如果任何认为他们将能够参加的会员公司对讨论的主题感兴趣，请[给 Optech 发送电子邮件][optech email]。关于工作坊的更多信息将在几周内发布。
 
 ## 仪表板项目
-
+{% assign img1_label = "Transactions signaling opt-in RBF, August 2017 - August 2018" %}
 - **<!--transaction-fees-remain-very-low-->交易[费用仍旧非常低][fee metrics]**：任何能等待 10 个或更多区块确认的人都可以合理支付默认的最低费率。这是[合并 UTXO][consolidate info]的好时机。
 
 - **<!--ddoption-of-opt-in-rbf-remains-fairly-low-->选择加入 RBF 的采用率仍然相当低**，但在过去一年中有实质性增长，从 [1.5% 增长到 5.7% 的交易][rbf data]。此数据来源于 Optech 的 beta 仪表板，我们鼓励人们尝试并向我们提供反馈！
