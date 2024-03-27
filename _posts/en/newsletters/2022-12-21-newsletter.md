@@ -83,6 +83,8 @@ provides "a nonprofit entity that aims to minimize legal headaches that
 discourage software developers from actively developing Bitcoin and
 related projects."
 
+{% assign timestamp="7:19" %}
+
 ## February
 
 {:#fee-sponsorship}
@@ -103,6 +105,8 @@ balancing an LN node called *phantom node payments*.
 {:.center}
 ![Illustration of phantom node payment path](/img/posts/2022-02-phantom-node-payments.dot.png)
 
+{% assign timestamp="12:41" %}
+
 ## March
 
 {:#ln-pathfinding}
@@ -122,6 +126,8 @@ in March of support for the related Short Channel IDentifier (SCID)
 
 {:.center}
 ![Illustration of zero-conf channels](/img/posts/2021-07-zeroconf-channels.png)
+
+{% assign timestamp="17:37" %}
 
 <div markdown="1" class="callout" id="rbf">
 ### 2022 summary<br>Replace-By-Fee
@@ -197,6 +203,8 @@ enable full-RBF (or a similar feature in other software).  At the end of
 the year, full-RBF was still being discussed in other Bitcoin Core PRs
 and on the mailing list.
 
+{% assign timestamp="24:03" %}
+
 </div>
 
 ## April
@@ -230,6 +238,8 @@ April also saw [discussion][news196 qc] about quantum-safe key
 exchange, allowing users to receive bitcoins secured by keys that are
 [resistant][topic quantum resistance] to attacks by fast quantum
 computers that may exist in the future.
+
+{% assign timestamp="31:17" %}
 
 ## May
 
@@ -267,6 +277,8 @@ only consensus code, making it easy for other projects to use that code
 or for auditors to analyze changes to Bitcoin Core's consensus logic.
 Several additional libbitcoinkernel PRs would be merged through the
 year.
+
+{% assign timestamp="48:51" %}
 
 <div markdown="1" class="callout" id="releases">
 ### 2022 summary<br>Major releases of popular infrastructure projects
@@ -367,6 +379,8 @@ onion messages], [blinded paths][topic rv routing], probing and balance
 sharing, [trampoline routing][topic trampoline payments], and the
 [offers][topic offers] and LNURL protocols.
 
+{% assign timestamp="57:43" %}
+
 ## July
 
 {:#onion-message-limiting}
@@ -389,6 +403,8 @@ implement miniscript support, it should become easier for policies to be
 transferred between wallets or for multiple wallets to cooperate in
 spending bitcoins, such as multisig policies or policies involving
 different signers for different occasions (e.g. fallback signers).
+
+{% assign timestamp="1:03:58" %}
 
 ## August
 
@@ -447,6 +463,8 @@ settling the DLC on chain. As with current DLC contracts, the oracle
 would not know which onchain transactions were based on its BLS
 signatures.
 
+{% assign timestamp="1:12:56" %}
+
 <div markdown="1" class="callout" id="optech">
 ### 2022 summary<br>Bitcoin Optech
 
@@ -455,6 +473,8 @@ new pages to our [topics index][].  Altogether, Optech published over
 70,000 words about Bitcoin software research and development this year,
 the rough equivalent of a 200-page book. <!-- wc -w
 _posts/en/newsletters/2022-* ; a typical book has about 350 words per page -->
+
+{% assign timestamp="1:23:12" %}
 
 </div>
 
@@ -475,6 +495,8 @@ fails, you just try another route that may have more hops but lower
 effective cost, or else try the same channel at a higher cost."  An
 alternative method for payment flow control was [suggested][news220 flow
 control] by René Pickhardt.
+
+{% assign timestamp="1:26:07" %}
 
 ## October
 
@@ -545,6 +567,8 @@ including provable specifications in BIPs, [package relay][topic package
 relay] and [v3 transaction relay][topic v3 transaction relay], the
 Stratum version 2 mining protocol, and getting code merged into Bitcoin
 Core and other free software projects.
+
+{% assign timestamp="1:29:09" %}
 
 <div markdown="1" class="callout" id="softforks">
 ### 2022 summary<br>Soft fork proposals
@@ -656,6 +680,8 @@ similar in capability to smart contracts used on some other
 cryptocurrency systems but would be compatible with Bitcoin's existing
 UTXO-based system.
 
+{% assign timestamp="1:43:40" %}
+
 </div>
 ## November
 
@@ -668,6 +694,8 @@ node for a limited time.  Several LN implementations would update their
 code to support the proposal, even if they didn't immediately begin
 using it themselves, including [Eclair][news225 fat] and [Core
 Lightning][news226 fat].
+
+{% assign timestamp="1:51:24" %}
 
 ## December
 
@@ -683,6 +711,8 @@ management of all settled funds to improve compatibility with
 [watchtowers][topic watchtowers], and [optimizing][news230 ln-mod] LN
 channels for use in [channel factories][topic channel factories] that
 could significantly decrease the onchain costs to use LN.
+
+{% assign timestamp="1:55:57" %}
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
