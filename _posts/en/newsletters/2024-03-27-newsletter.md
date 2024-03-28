@@ -254,7 +254,7 @@ until about six months after the release of the upcoming version 27.*
   well-known template for an unspendable output.
 
 - [LND #8418][] begins polling its connected Bitcoin protocol client
-  for its full node peers' [BIP130][] `feefilter` values.  The
+  for its full node peers' [BIP133][] `feefilter` values.  The
   `feefilter` message allows a node to tell its connected peers the
   lowest feerate it'll accept for a transaction to relay.  LND will now
   use this information to avoid sending transactions with too low of a
