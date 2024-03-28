@@ -54,7 +54,7 @@ changes to popular Bitcoin infrastructure projects.
     mempool.  The description argues that the existence of attacks that allow wasting
     bandwidth means that it should be reasonable to deliberately allow
     some amount of free relay, such as by enabling proposals like
-    replace by feerate (see [Newsletter #288][news288 rbfr]).
+    replace by feerate (see [Newsletter #288][news288 rbfr]). {% assign timestamp="1:22" %}
 
 - **Transaction fee sponsorship improvements:** Martin Habovštiak
   [posted][habovstiak boost] to the Bitcoin-Dev mailing list an idea for
@@ -126,7 +126,7 @@ changes to popular Bitcoin infrastructure projects.
     by cluster mempool and which could create problems for users who
     didn't need sponsors, indicating that sponsorship (if it is ever
     added to Bitcoin) should only be available to transactions that
-    opt-in to allowing it.
+    opt-in to allowing it. {% assign timestamp="9:55" %}
 
 - **Mempool-based feerate estimation:** Abubakar Sadiq Ismail
   [posted][ismail fees] to Delving Bitcoin about improving Bitcoin
@@ -162,7 +162,7 @@ changes to popular Bitcoin infrastructure projects.
   confirmation-based estimation) is that it could be more resistant to
   manipulation and positive feedback loops.
 
-  Discussion was ongoing as of this writing.
+  Discussion was ongoing as of this writing. {% assign timestamp="34:49" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -193,22 +193,22 @@ nswer -->{% endcomment %}
   0.12.1 was more broadly adopted could include: higher chance of invalid
   blocks being accepted by the network and associated reorg risk, miner
   centralization pressure from increased stale block risk, and decreased mining
-  rewards for miners running that version.
+  rewards for miners running that version. {% assign timestamp="50:30" %}
 
 - [When is OP_RETURN cheaper than OP_FALSE OP_IF?]({{bse}}122321)
   Vojtěch Strnad details the overheads associated with `OP_RETURN`-based data
   embedding and `OP_FALSE` `OP_IF`-based embedding, concluding that "`OP_RETURN`
-  is cheaper for data smaller than 143 bytes".
+  is cheaper for data smaller than 143 bytes". {% assign timestamp="55:51" %}
 
 - [Why does BIP-340 use secp256k1?]({{bse}}122268)
   Pieter Wuille explains the rationale of choosing secp256k1 over Ed25519 for
   [BIP340][] schnorr signatures and notes "reusability of existing key derivation
-  infrastructure" and "not changing security assumptions" as reasons for the choice.
+  infrastructure" and "not changing security assumptions" as reasons for the choice. {% assign timestamp="56:33" %}
 
 - [What criteria does Bitcoin Core use to create block templates?]({{bse}}122216)
   Murch explains Bitcoin Core's current ancestor set feerate-based algorithm for
   transaction selection for a block candidate and mentions ongoing work on [cluster
-  mempool][topic cluster mempool] which offers various improvements.
+  mempool][topic cluster mempool] which offers various improvements. {% assign timestamp="58:08" %}
 
 - [How does the initialblockdownload field in the getblockchaininfo RPC work?]({{bse}}122169)
   Pieter Wuille notes the two conditions that need to occur after node startup
@@ -217,6 +217,8 @@ nswer -->{% endcomment %}
   1. "The currently active chain has at least as much cumulative PoW as the hardcoded constant in the software"
   2. "The timestamp of the currently active tip is no more than 24 hours in the past"
 
+{% assign timestamp="1:04:45" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -224,13 +226,13 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Bitcoin Core 26.1rc2][] is a release candidate for a maintenance release
-  of the network's predominant full node implementation.
+  of the network's predominant full node implementation. {% assign timestamp="1:07:34" %}
 
 - [Bitcoin Core 27.0rc1][] is a release candidate for the next major
   version of the network's predominant full node implementation.
   There's a brief overview to [suggested testing topics][bcc testing]
   and a scheduled meeting of the [Bitcoin Core PR Review Club][]
-  dedicated to testing today (March 27th) at 15:00 UTC.
+  dedicated to testing today (March 27th) at 15:00 UTC. {% assign timestamp="1:07:55" %}
 
 ## Notable code and documentation changes
 
@@ -251,7 +253,7 @@ until about six months after the release of the upcoming version 27.*
   for `maxfeerate` and `maxburnamount` which will terminate the call in
   failure if the provided package has an aggregate feerate above the
   indicated maximum or sends more than the indicated amount to a
-  well-known template for an unspendable output.
+  well-known template for an unspendable output. {% assign timestamp="1:17:13" %}
 
 - [LND #8418][] begins polling its connected Bitcoin protocol client
   for its full node peers' [BIP133][] `feefilter` values.  The
@@ -261,13 +263,13 @@ until about six months after the release of the upcoming version 27.*
   feerate.  Only `feefilter` values from outbound peers are used, as
   those are the peers the user's node chose to connect to and so they
   are less likely to be controlled by attackers than inbound peers that
-  requested a connection.
+  requested a connection. {% assign timestamp="1:19:07" %}
 
 - [LDK #2756][] adds support for including a [trampoline routing][topic
   trampoline payments] packet in its messages.  This doesn't provide full
   support for using trampoline routing or providing trampoline routing
   services, but it does make it easier for other code to accomplish that
-  using LDK.
+  using LDK. {% assign timestamp="1:23:44" %}
 
 - [LDK #2935][] begins supporting sending [keysend payments][topic
   spontaneous payments] to [blinded paths][topic rv routing].  Keysend
@@ -277,17 +279,17 @@ until about six months after the release of the upcoming version 27.*
   not combined with keysend payments, but they can make sense when a
   Lightning service provider (LSP) or some other node wants to provide a
   generic invoice for a particular receiver without revealing the
-  receiver's node ID.
+  receiver's node ID. {% assign timestamp="1:25:55" %}
 
 - [LDK #2419][] adds a state machine for handling [interactive
   transaction construction][topic dual funding], a dependency for
-  dual-funded channels and [splicing][topic splicing].
+  dual-funded channels and [splicing][topic splicing]. {% assign timestamp="1:27:39" %}
 
 - [Rust Bitcoin #2549][] makes various changes to the APIs for working
-  with relative [locktimes][topic timelocks].
+  with relative [locktimes][topic timelocks]. {% assign timestamp="1:32:54" %}
 
 - [BTCPay Server #5852][] adds support for scanning BBQr animated QR
-  codes (see [Newsletter #281][news281 bbqr]) for [PSBTs][topic psbt].
+  codes (see [Newsletter #281][news281 bbqr]) for [PSBTs][topic psbt]. {% assign timestamp="1:33:36" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
