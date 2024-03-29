@@ -41,6 +41,9 @@ optech_mentions:
   - title: Discussion of minimum safe transaction sizes
     url: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
 
+  - title: "Renewed discussion of consensus cleanup soft fork"
+    url: /en/newsletters/2024/04/03/#revisiting-consensus-cleanup
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
