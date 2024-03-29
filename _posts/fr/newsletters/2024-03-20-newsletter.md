@@ -7,15 +7,15 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine annonce un projet pour créer un proxy BIP324 pour les clients légers
+Le bulletin de cette semaine annonce un projet de création de proxy BIP324 pour les clients légers
 et résume les discussions sur une proposition de langage BTC Lisp. Sont également incluses nos sections
 régulières avec des annonces de mises à jour et versions candidates, ainsi que les
 changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Proxy BIP324 pour clients légers :** Sebastian Falbesoner a [publié][falbesoner bip324] sur
-  Delving Bitcoin pour annoncer un proxy TCP pour traduire entre la version 1 (v1) du protocole P2P
+- **Proxy BIP324 pour clients légers :** Sebastian Falbesoner a [annoncé][falbesoner bip324] sur
+  Delving Bitcoin un proxy TCP pour traduire entre la version 1 (v1) du protocole P2P
   Bitcoin et le [protocole v2][topic v2 p2p transport] défini dans le [BIP324][]. Ceci est
   particulièrement destiné à permettre aux portefeuilles clients légers écrits pour v1 de tirer
   avantage du chiffrement du trafic de v2.
@@ -45,7 +45,7 @@ changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
   "[BTC Lisp] peut être un peu coûteux on-chain, mais il semble que vous pouvez faire à peu près
   n'importe quoi [...] Je ne pense pas que mettre en œuvre soit un interpréteur Lisp soit le paquet
-  d'opcodes qui devrait l'accompagner soit trop difficile [mais] c'est assez ennuyeux d'écrire du code
+  d'opcodes qui devrait l'accompagner soit trop difficile [mais] c'est assez pénible d'écrire du code
   Lisp sans un compilateur traduisant d'une représentation de niveau supérieur vers les opcodes de
   niveau de consensus, [bien que] cela semble soluble. Ceci pourrait être poussé plus loin [en] mettant
   en œuvre un langage comme celui-ci et en le déployant sur signet/inquisition."
