@@ -145,11 +145,11 @@ jusqu'à environ six mois après la sortie de la version 27 à venir.*
   nœud local se connecte à lui, comme lorsque l'utilisateur appelle
   le RPC `addnode`.
 
-- [Bitcoin Core #29306][] ajoute [l'éviction de frères][topic kindred
+- [Bitcoin Core #29306][] ajoute [l'éviction de transactions frères][topic kindred
   rbf] pour les transactions descendantes d'un [parent non confirmé v3][topic v3 transaction relay].
   Cela peut fournir une alternative satisfaisante à [CPFP carve-out][topic cpfp carve out], qui est
   actuellement utilisé par [les sorties d'ancrage LN][topic anchor outputs]. La V3 des relais de transactions,
-  y compris l'éviction de frères et sœurs, n'est actuellement pas activé pour le mainnet.
+  y compris l'éviction de transactions frères, n'est actuellement pas activé pour le mainnet.
 
 - [LND #8310][] permet de récupérer les paramètres de configuration `rpcuser` et `rpcpass` (mot de
   passe) depuis l'environnement système. Cela peut permettre, par exemple, de gérer un fichier
