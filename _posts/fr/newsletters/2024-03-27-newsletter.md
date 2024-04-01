@@ -203,7 +203,7 @@ les versions candidates.*
   Voici un bref aperçu des [sujets de test suggérés][bcc testing] et une réunion programmée du
   [Bitcoin Core PR Review Club][] dédiée aux tests aujourd'hui (27 mars) à 15:00 UTC.
 
-# Modifications de code et de documentation notables
+## Changements notables dans le code et la documentation
 
 _Modifications notables cette semaine dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core
 lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo],
