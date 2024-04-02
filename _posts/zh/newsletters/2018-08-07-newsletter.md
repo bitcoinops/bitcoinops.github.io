@@ -58,21 +58,22 @@ lang: zh
   end="80a8e57ede82292818032eeb3510da067fddfd5e"
 %}
 
-- **<!--bitcoin-core-13697-->[Bitcoin Core #13697][]**：Pieter Wuille 在 [Newsletter #5][] 中提到的这个 PR 已被合并，它为即将发布的 0.17 RPC `scantxoutset` 添加了[输出脚本描述符][output script descriptors]支持。这些描述符为软件提供了一种全面的方式来描述你想要找到的输出脚本，预计将随时间适应 Bitcoin Core API 的其他部分，如 [importprivkey][rpc importprivkey]、[importaddress][rpc importaddress]、[importpubkey][rpc importpubkey]、[importmulti][rpc importmulti] 和 [importwallet][rpc importwallet]。
+- [Bitcoin Core #13697][]：Pieter Wuille 在 [Newsletter #5][] 中提到的这个 PR 已被合并，它为即将发布的 0.17 RPC `scantxoutset` 添加了[输出脚本描述符][output script descriptors]支持。这些描述符为软件提供了一种全面的方式来描述你想要找到的输出脚本，预计将随时间适应 Bitcoin Core API 的其他部分，如 [importprivkey][rpc importprivkey]、[importaddress][rpc importaddress]、[importpubkey][rpc importpubkey]、[importmulti][rpc importmulti] 和 [importwallet][rpc importwallet]。
 
-- **<!--bitcoin-core-13799-->[Bitcoin Core #13799][]**：在第一份 Optech 新闻简报发布之前，一个 PR 被合并，其内容是如果配置文件或启动参数包含 Bitcoin Core 无法识别的选项，会故意导致 Bitcoin Core 在启动时中止。这极大地简化了调试常见错误（如拼写错误）的流程——但它也阻止用户在他们的 bitcoin.conf 中放入适用于 `bitcoin-cli` 等客户端的选项。这个新 PR 移除了启动中止，只会产生警告。可能在未来的版本中，将实现一个客户端兼容机制，并恢复启动中止。
+- [Bitcoin Core #13799][]：在第一份 Optech 新闻简报发布之前，一个 PR 被合并，其内容是如果配置文件或启动参数包含 Bitcoin Core 无法识别的选项，会故意导致 Bitcoin Core 在启动时中止。这极大地简化了调试常见错误（如拼写错误）的流程——但它也阻止用户在他们的 bitcoin.conf 中放入适用于 `bitcoin-cli` 等客户端的选项。这个新 PR 移除了启动中止，只会产生警告。可能在未来的版本中，将实现一个客户端兼容机制，并恢复启动中止。
 
-- **<!--lnd-1579-->[LND #1579][]**：此更新将主要后端接口（如 bitcoind、btcd 和 neutrino SPV）与 [BIP158][] 致密区块过滤器的最新（希望是最终）版本兼容，该版本在 btcd 全节点、btcwallet 和 Neutrino 轻钱包中实现。这些过滤器允许客户端确定一个区块是否可能包含影响其钱包的交易，类似于 [BIP37][] 布隆过滤器，但对服务器来说更高效（因为它们不需要重新扫描旧区块），并且为客户端提供了额外的隐私，因为它们不直接向服务器提供任何有关他们感兴趣的交易的信息。
+- [LND #1579][]：此更新将主要后端接口（如 bitcoind、btcd 和 neutrino SPV）与 [BIP158][] 致密区块过滤器的最新（希望是最终）版本兼容，该版本在 btcd 全节点、btcwallet 和 Neutrino 轻钱包中实现。这些过滤器允许客户端确定一个区块是否可能包含影响其钱包的交易，类似于 [BIP37][] 布隆过滤器，但对服务器来说更高效（因为它们不需要重新扫描旧区块），并且为客户端提供了额外的隐私，因为它们不直接向服务器提供任何有关他们感兴趣的交易的信息。
 
-- **<!--lnd-1543-->[LND #1543][]**：此 PR 继续朝着创建 LN 看守塔的方向努力，这些看守塔可以通过监控试图盗取频道并广播用户预签名的违约补救交易来协助轻客户端和其他不在线的程序。这个特定的 PR 由密码学家 Conner Fromknecht 添加了看守塔版本 0 的编码和加密方法。
+- [LND #1543][]：此 PR 继续朝着创建 LN 看守塔的方向努力，这些看守塔可以通过监控试图盗取频道并广播用户预签名的违约补救交易来协助轻客户端和其他不在线的程序。这个特定的 PR 由密码学家 Conner Fromknecht 添加了看守塔版本 0 的编码和加密方法。
 
-- **<!--c-lightning-55d450ff-->[C-lightning 55d450ff][]**：C-lightning 拒绝转发当转发费用超过支付的一定百分比时的支付。然而，当转发的金额非常小，例如在 [Satoshis.Place][] 上仅购买几个像素，每个像素 10 nBTC 时，由于最低费用总是占很高的百分比（例如，支付 10 nBTC 的最低费用为 10 nBTC 就是 100% 的费用），这条规则总是被触发。此 PR 提供了一条新规则，允许转发费用高达 50 nBTC 的支付无视其费率百分比通过，并添加了一个选项，以便用户可以自定义该值。
+- [C-lightning 55d450ff][]：C-lightning 拒绝转发当转发费用超过支付的一定百分比时的支付。然而，当转发的金额非常小，例如在 [Satoshis.Place][] 上仅购买几个像素，每个像素 10 nBTC 时，由于最低费用总是占很高的百分比（例如，支付 10 nBTC 的最低费用为 10 nBTC 就是 100% 的费用），这条规则总是被触发。此 PR 提供了一条新规则，允许转发费用高达 50 nBTC 的支付无视其费率百分比通过，并添加了一个选项，以便用户可以自定义该值。
 
 {% include references.md %}
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
+[Newsletter #5]: /zh/newsletters/2018/07/24/
 [bls announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
-[#3 schnorr]: {{news3}}#featured-news-schnorr-signature-proposed-bip
+[#3 schnorr]: /zh/newsletters/2018/07/10/#特别新闻schnorr-签名提议-bip
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [bls signatures]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [mimblewimble paper]: https://scalingbitcoin.org/papers/mimblewimble.txt
