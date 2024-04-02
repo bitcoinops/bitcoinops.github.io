@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
     url: /en/newsletters/2024/01/31/#eclair-2811
 
+  - title: "LDK #2756 adds support for including a trampoline routing packet in its messages"
+    url: /en/newsletters/2024/03/27/#ldk-2756
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"

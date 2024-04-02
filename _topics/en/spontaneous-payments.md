@@ -85,6 +85,9 @@ optech_mentions:
   - title: "LDK #2156 adds support for keysend payments that use simplified multipath payments"
     url: /en/newsletters/2023/06/21/#ldk-2156
 
+  - title: "LDK #2935 begins supporting sending keysend payments to blinded paths"
+    url: /en/newsletters/2024/03/27/#ldk-2935
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

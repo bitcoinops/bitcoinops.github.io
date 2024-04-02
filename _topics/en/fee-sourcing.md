@@ -38,6 +38,9 @@ optech_mentions:
   - title: Opposition to CTV based on commonly requiring exogenous fee
     url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
 
+  - title: "More efficient fee sponsorship for exogenous fees compared favorably to endogenous fees"
+    url: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

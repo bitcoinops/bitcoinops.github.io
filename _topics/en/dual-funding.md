@@ -129,6 +129,9 @@ optech_mentions:
   - title: "Eclair #2829 allows plugins to set a policy for contributing funds in a dual-funded channel open"
     url: /en/newsletters/2024/03/06/#eclair-2829
 
+  - title: "LDK #2419 adds a state machine for handling interactive transaction construction"
+    url: /en/newsletters/2024/03/27/#ldk-2419
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements
