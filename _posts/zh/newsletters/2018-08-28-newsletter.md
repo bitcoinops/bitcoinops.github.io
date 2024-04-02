@@ -16,7 +16,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--pr-opened-for-initial-bip151-support-->为初始 BIP151 支持打开 PR：** Jonas Schnelli 向 Bitcoin Core 提出 PR，提供了点对点网络协议的[BIP151][]加密的[初始实现][Bitcoin Core #14032]。他还更新了 BIP151 规范的[更新草案][bip151 update]，其中包含了他在实现开发中所做的更改。如果被接受，这将允许全节点和轻量级客户端在不被 ISP 窃听的情况下通信区块、交易和控制消息，这可以使确定哪个程序发起了交易变得更加困难（尤其是结合 Bitcoin Core 现有的交易起源保护或未来提案，例如[Dandelion 协议][]）。
+- **<!--pr-opened-for-initial-bip151-support-->为初始 BIP151 支持打开 PR：** Jonas Schnelli 向 Bitcoin Core 提出 PR，提供了点对点网络协议的[BIP151][]加密的[初始实现][Bitcoin Core #14032]。他还更新了 BIP151 规范的[更新草案][bip151 update]，其中包含了他在实现开发中所做的更改。如果被接受，这将允许全节点和轻量级客户端在不被 ISP 窃听的情况下通信区块、交易和控制消息，这可以使确定哪个程序发起了交易变得更加困难（尤其是结合 Bitcoin Core 现有的交易起源保护或未来提案，例如[Dandelion 协议][Dandelion protocol]）。
 
     Schnelli 还在与其他开发人员合作实现和测试被认为能抵抗量子计算机攻击的 [NewHope 密钥交换协议][newhope]，以便记录两个对等方之间今天通信的窃听者将来在拥有快速量子计算机时无法解密那些数据。
 
@@ -30,7 +30,7 @@ lang: zh
 
 *[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选地之一 —— 或者当我们有一些闲暇时间帮助回答其他人的问题时。在这个月度专栏中，我们突出显示自上次更新以来一些得票最高的问题和答案。*
 
-- [你可以支付 0 个比特币吗？][bse 78355] Andrew Chow 解释说，你不仅可以向一个地址或其他脚本支付零值金额，你还可以从零值输出中支付——但前提是你找到一个不使用 Bitcoin Core 默认设置的矿工。
+- **<!--can-you-pay-0-bitcoins-->[你可以支付 0 个比特币吗？][bse 78355]** Andrew Chow 解释说，你不仅可以向一个地址或其他脚本支付零值金额，你还可以从零值输出中支付——但前提是你找到一个不使用 Bitcoin Core 默认设置的矿工。
 
 - [你能创建一个不存在交易的 SPV 证明吗？][bse 77764] 简化支付验证（SPV, Simplified Payment Verification）使用默克尔树（Merkle tree）来证明某个交易存在于某个区块中，而该区块本身属于最佳区块链——即工作量证明最多的区块链。但你能做反向操作吗？你能证明某个交易不在某个特定的区块中，或者不在最佳区块链的任何区块中吗？
 
