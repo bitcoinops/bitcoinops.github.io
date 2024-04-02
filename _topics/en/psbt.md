@@ -213,6 +213,9 @@ optech_mentions:
   - title: "Rust Bitcoin #2458 adds support for signing PSBTs that include taproot inputs"
     url: /en/newsletters/2024/03/20/#rust-bitcoin-2458
 
+  - title: "BTCPay Server #5852 adds support for scanning BBQr animated QR codes"
+    url: /en/newsletters/2024/03/27/#btcpay-server-5852
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

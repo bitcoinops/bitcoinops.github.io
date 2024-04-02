@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Cluster fee estimation to improve accuracy in a world with CPFP fee bumping"
     url: /en/newsletters/2024/01/03/#cluster-fee-estimation
 
+  - title: "Discussion of incorporating live mempool data into Bitcoin Core's feerate estimation"
+    url: /en/newsletters/2024/03/27/#mempool-based-feerate-estimation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection
