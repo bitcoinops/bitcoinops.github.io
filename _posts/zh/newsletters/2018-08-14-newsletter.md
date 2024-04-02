@@ -91,7 +91,7 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="13922,13907,13925,1644,13666,1811" %}
 
-[news3 lower relay]: https://bitcoinops.org/zh/newsletters/2018/07/10/#新闻
+[news3 lower relay]: /zh/newsletters/2018/07/10/#新闻
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
 [fields post]: https://medium.com/mit-media-lab-digital-currency-initiative/http-coryfields-com-cash-48a99b85aad4
 [narula recs]: https://medium.com/mit-media-lab-digital-currency-initiative/reducing-the-risk-of-catastrophic-cryptocurrency-bugs-dcdd493c7569
