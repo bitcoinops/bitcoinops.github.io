@@ -105,7 +105,13 @@ until about six months after the release of the upcoming version 27.*
   without manually abandoning the mempool-conflicted transaction and are
   counted towards the wallet's balance.
 
-- [Bitcoin Core #29242][] Mempool util: Add RBF diagram checks for single chunks against clusters of size 2 FIXME:harding
+- [Bitcoin Core #29242][] introduces utility functions to compare two
+  [Feerate Diagrams][sdaftuar incentive compatibility] and to evaluate the
+  incentive compatibility of replacing clusters with up to two transactions.
+  These functions lay the groundwork for [package][topic package relay]
+  [replace-by-fee][topic rbf] with clusters of up to size two including
+  [Topologically Restricted Until Confirmation (TRUC) transactions][TRUC BIP
+  draft] (aka [v3 transactions][topic v3 transaction relay]).
 
 - [Core Lightning #7094][] removes multiple features that were
   previously deprecated using Core Lightning's new deprecation system
@@ -130,6 +136,8 @@ until about six months after the release of the upcoming version 27.*
 [news36 cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
 [news37 confiscation]: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
 [erhardt bip editors]: https://gnusha.org/pi/bitcoindev/52a0d792-d99f-4360-ba34-0b12de183fef@murch.one/
+[sdaftuar incentive compatibility]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553
+[TRUC BIP draft]: https://github.com/bitcoin/bips/pull/1541
 [news288 cln deprecation]: /en/newsletters/2024/02/07/#core-lightning-6936
 [26.1 rn]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-26.1.md
 [HWI 3.0.0-rc1]: https://github.com/bitcoin-core/HWI/releases/tag/3.0.0-rc.1

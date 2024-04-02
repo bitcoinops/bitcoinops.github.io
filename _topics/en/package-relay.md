@@ -113,6 +113,9 @@ optech_mentions:
   - title: "Bitcoin Core #27609 makes the submitpackage RPC available on non-regtest networks"
     url: /en/newsletters/2023/10/11/#bitcoin-core-27609
 
+  - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
