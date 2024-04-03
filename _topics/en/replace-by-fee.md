@@ -177,6 +177,9 @@ optech_mentions:
   - title: "BitGo adds RBF support"
     url: /en/newsletters/2024/03/20/#bitgo-adds-rbf-support
 
+  - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
