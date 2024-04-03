@@ -64,7 +64,7 @@ create, so that the Bitcoin consensus protocol can calculate how much the
 recent inter-block average differs from the ideal of ten minutes.
 
 Consensus rules prevent a single miner, or small number of miners, from
-including manipulative times in their block headers by requiring that
+claiming they created a block far in the past by requiring that
 any time in a block header must be greater than the median time of the
 previous 11 blocks, called the _median time past_ (MTP) rule.
 
@@ -103,7 +103,7 @@ remaining subsidy, which was valued at approximately $91 billion USD at
 the time of this writing (April 2024).
 
 Since the discovery of the attack, a significant amount of user funds
-(but believed to be far less than $91 billion) is new stored in contract
+(but believed to be far less than $91 billion) is now stored in contract
 protocols that use [timelocks][topic timelocks].  Since the activation of
 [BIP113][], those contracts all depend on MTP rather than block header
 time.  During a time warp attack, MTP increases significantly slower
@@ -112,11 +112,14 @@ much longer than they expected or could potentially lead to users losing
 money (depending on the contract).
 
 The time warp attack would also result in much faster creation of new
-blocks than expected, making it easy to overwhelm nodes.  With a reduced
+blocks than expected, making it easy to overwhelm the CPU or bandwidth
+of many nodes.  With a reduced
 number of nodes on the network, many other attacks would be easier,
 including [eclipse attacks][topic eclipse attacks] and unwanted
-consensus changes.  A high rate of block production could also simply
-render Bitcoin unusable.
+consensus changes.  A high rate of block production (due to a low
+difficulty of creating each block) could also prevent miners from
+converging on a single best chain, forcing nodes to frequently
+reorganize and making transaction confirmation completely unreliable.
 
 ## Proposed use as an upgrade mechanism
 
@@ -125,7 +128,7 @@ changing the consensus rules to deliberately encourage miners to perform
 a timewarp to produce blocks more quickly.  Those blocks would commit to
 essential transaction data, such as amounts and previous transaction,
 allowing non-upgraded full nodes to continue verifying consensus rules
-such as the 21 million bitcoin limit.  Upgrade nodes would look for
+such as the 21 million bitcoin limit.  Upgraded nodes would look for
 other transaction data, such as signatures, in _extension blocks_ that
 would not be seen by older nodes.  This could increase the maximum
 number of confirmed transactions on the network using only a
@@ -136,7 +139,7 @@ Bitcoin.
 
 ## Solutions
 
-Because the set up for the attack is public, takes about a month, and
+Because the setup for the attack is public, takes about a month, and
 requires cooperation from miners controlling a large portion of total
 network hashrate, there has been an apparent lack of urgency to fixing
 the attack.
