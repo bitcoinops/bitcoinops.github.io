@@ -76,11 +76,11 @@ unanticipated, the behavior was unspecified, but nearly everyone at the
 time ran the same full node software, so we can describe what it did: a
 later transaction overwrote an identical earlier transaction in the
 output-tracking database.  Both transactions paid the same output
-script, but only one of them was now spendable, meaning the attacker
-lost money.
+script, but only one of them was now spendable, meaning the transaction
+creator lost money.
 
-However, if the attacker had created the first transaction, spent its
-output, and then created the duplicate transaction, they (or anyone else)
+However, if the creator had spent the
+output of the first transaction before creating the duplicate transaction, they (or anyone else)
 could have also spent the duplicate output by simply rebroadcasting the
 first spend.  If their spends had multiple outputs, they could quickly
 multiply the number of potential duplicate transactions on the network
@@ -103,12 +103,12 @@ cleanup] soft fork has proposed to fix the eventual problem by requiring
 slightly more unique data be included in coinbase transactions.
 
 For reference, the txids of two different historic duplicate
-transactions (four transactions total) are:
-`e3bf3d07d4b0375638d5f1db5255fe07ba2c4cb067cd81b84ee974b6585fb468` (in
-block 91,842) and
-`d5d27987d2a3dfc724e359870c6644b40e497bdc0589a033220fe15429d88599` (in
-block 91,880).  Neither has had its output spent in since
-they were created over a decade ago.
+transactions (four transactions total) are
+[d5d2...8599][] (in blocks 91,812 and 91,842)
+and
+[e3bf...b468][] (in blocks 91,722 and 91,880).
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
+[d5d2...8599]: https://blockstream.info/tx/d5d27987d2a3dfc724e359870c6644b40e497bdc0589a033220fe15429d88599
+[e3bf...b468]: https://blockstream.info/tx/e3bf3d07d4b0375638d5f1db5255fe07ba2c4cb067cd81b84ee974b6585fb468
