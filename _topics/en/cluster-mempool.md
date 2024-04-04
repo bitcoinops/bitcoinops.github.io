@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Ideas for post-v3 relay enhancements after cluster mempool is deployed"
     url: /en/newsletters/2024/02/14/#ideas-for-relay-enhancements-after-cluster-mempool-is-deployed
 
+  - title: "Bitcoin Core #29242 introduces utility functions to compare two feerate diagrams"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
