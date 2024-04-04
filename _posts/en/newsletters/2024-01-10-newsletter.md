@@ -222,13 +222,13 @@ software.
       some channel funds to pay the penalties, so it is preferable to
       avoid supporting them if they are not necessary for safety.
 
-    - *Expiry deltas:* LN-Symmetry requires longer HTLC expiry deltas
+    - *Expiry deltas:* LN-Symmetry requires longer CLTV expiry deltas
       than expected.  When Alice forwards an HTLC to Bob, she gives him
       a certain number of blocks to claim its funds with a preimage;
       after that time expires, she can take back the funds.  When Bob
       further forwards the HTLC to Carol, he gives her a lower number of
       blocks during which she must reveal the preimage.  The delta
-      between those two expires is the _HTLC expiry delta_.  Sanders
+      between those two expires is the _CLTV expiry delta_.  Sanders
       found that the delta needed to be long enough to prevent the
       counterparty from benefiting if they aborted the protocol midway
       through a commitment round.

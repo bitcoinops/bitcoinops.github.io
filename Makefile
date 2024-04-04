@@ -83,6 +83,7 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	## Check for mistakes typical spell checkers can't catch
 	! git --no-pager grep -i '[d]iscrete log contract'
 	! git --no-pager grep -i '[r]eplaca' # e.g., replaceability
+	! git --no-pager grep -i '[h]tlc expiry delta' # instead use: CLTV expiry delta
 
 test-after-build: build
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
