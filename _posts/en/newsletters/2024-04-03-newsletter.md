@@ -48,7 +48,7 @@ Bitcoin infrastructure software.
   To address the concern, Poinsot proposed that the updated consensus
   rules only apply to transaction outputs created after a particular
   block height.  Any outputs created earlier than that height would
-  still be spendable under the old rules.
+  still be spendable under the old rules. {% assign timestamp="0:46" %}
 
 - **Choosing new BIP editors:** Mark "Murch" Erhardt continued the
   [thread][erhardt bip editors] about adding new BIP editors by
@@ -58,7 +58,7 @@ Bitcoin infrastructure software.
   editors to the repository on the following Monday (April 8th)."
 
     Discussion was ongoing at the time of writing and we will do our
-    best to report on the results in next week's newsletter.
+    best to report on the results in next week's newsletter. {% assign timestamp="27:21" %}
 
 ## Releases and release candidates
 
@@ -68,15 +68,15 @@ release candidates.*
 
 - [Bitcoin Core 26.1][] is a maintenance release of the network's
   predominant full node implementation.  Its [release notes][26.1 rn]
-  describe several bug fixes.
+  describe several bug fixes. {% assign timestamp="37:22" %}
 
 - [Bitcoin Core 27.0rc1][] is a release candidate for the next major
   version of the network's predominant full node implementation.
-  Testers are encouraged to review the list of [suggested testing topics][bcc testing].
+  Testers are encouraged to review the list of [suggested testing topics][bcc testing]. {% assign timestamp="39:09" %}
 
 - [HWI 3.0.0-rc1][] is a release candidate for the next version of this
   package providing a common interface to multiple different hardware
-  signing devices.
+  signing devices. {% assign timestamp="39:40" %}
 
 ## Notable code and documentation changes
 
@@ -103,7 +103,7 @@ until about six months after the release of the upcoming version 27.*
   `mempoolconflicts` field when calling `gettransaction` on the wallet
   transaction. Inputs to a mempool-conflicted transaction may be respent
   without manually abandoning the mempool-conflicted transaction and are
-  counted towards the wallet's balance.
+  counted towards the wallet's balance. {% assign timestamp="40:59" %}
 
 - [Bitcoin Core #29242][] introduces utility functions to compare two
   [Feerate Diagrams][sdaftuar incentive compatibility] and to evaluate the
@@ -111,11 +111,11 @@ until about six months after the release of the upcoming version 27.*
   These functions lay the groundwork for [package][topic package relay]
   [replace-by-fee][topic rbf] with clusters of up to size two including
   [Topologically Restricted Until Confirmation (TRUC) transactions][TRUC BIP
-  draft] (aka [v3 transactions][topic v3 transaction relay]).
+  draft] (aka [v3 transactions][topic v3 transaction relay]). {% assign timestamp="43:50" %}
 
 - [Core Lightning #7094][] removes multiple features that were
   previously deprecated using Core Lightning's new deprecation system
-  (see [Newsletter #288][news288 cln deprecation]).
+  (see [Newsletter #288][news288 cln deprecation]). {% assign timestamp="52:59" %}
 
 - [BDK #1351][] makes several changes to how BDK interprets the
   `stop_gap` parameter, which controls its [gap limit][topic gap limits]
@@ -123,7 +123,7 @@ until about six months after the release of the upcoming version 27.*
   other wallets where a `stop_gap` limit of 10 will result in BDK
   continuing to generate new addresses for scanning for transactions
   until 10 consecutive addresses have been generated with no matching
-  transactions found.
+  transactions found. {% assign timestamp="54:41" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
