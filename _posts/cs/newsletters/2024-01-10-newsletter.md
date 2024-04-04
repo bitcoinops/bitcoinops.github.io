@@ -187,12 +187,12 @@ bitcoinovém páteřním software.
       na placení pokut. Bylo by tedy lepší se podpory trestů vyvarovat, pokud by
       nebyly nezbytně nutné pro bezpečnost.
 
-    - *Expiry delta:* LN-Symmetry vyžaduje delší HTLC expiry delta, než bylo
+    - *Expiry delta:* LN-Symmetry vyžaduje delší CLTV expiry delta, než bylo
       očekáváno. Když Alice přepošle HTLC Bobovi, dá mu určitý počet bloků
       na nárokování svých prostředků pomocí předobrazu. Po vypršení doby
       si může prostředky vzít zpět. Pokud Bob HTLC dále přepošle Carol,
       dá on jí nižší počet bloků na odhalení předobrazu. Rozdíl mezi těmito
-      dvěma hodnotami je _HTLC expiry delta_. Sanders zjistil, že tyto rozdíly
+      dvěma hodnotami je _CLTV expiry delta_. Sanders zjistil, že tyto rozdíly
       musí být dostatečně dlouhé, aby zabránily protistraně v obohacení,
       pokud by protokol v půlce přerušila.
 
