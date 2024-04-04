@@ -12,13 +12,12 @@ order to lower costs and improve customer experiences.
 An initial focus for the group is working with its member organizations to
 reduce transaction sizes and minimize the effect of subsequent transaction fee
 increases.  We provide [workshops][],
-[weekly newsletters][], [original research][dashboard], [case studies
+[weekly newsletters][], [case studies
 and announcements][blog], a [podcast][], and help facilitate improved relations between
 businesses and the open source community.
 
 [workshops]: /en/workshops
 [weekly newsletters]: /en/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
 [podcast]: /en/podcast/
 
