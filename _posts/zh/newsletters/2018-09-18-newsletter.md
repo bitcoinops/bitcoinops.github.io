@@ -75,7 +75,7 @@ lang: zh
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [workshop]: /workshops
-[news8 news]: {{news8}}#news
+[news8 news]: /zh/newsletters/2018/08/14/#新闻
 [c-lightning 0.6.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.6.1
 [BIP322 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016393.html
 [BIP322 PR]: https://github.com/bitcoin/bips/pull/725
