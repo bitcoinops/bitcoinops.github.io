@@ -43,6 +43,9 @@ optech_mentions:
   - title: Sending and receiving ecash using LN and ZKCPs
     url: /en/newsletters/2024/02/28/#sending-and-receiving-ecash-using-ln-and-zkcps
 
+  - title: "Development of domain-specific languages for smart contracting, including with BitVM"
+    url: /en/newsletters/2024/04/10/#dsl-for-experimenting-with-contracts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
