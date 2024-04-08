@@ -89,13 +89,53 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Implement 64 bit arithmetic op codes in the Script interpreter][review
+club 29221] is a PR by Chris Stewart (GitHub Christewart) that
+introduces new opcodes allowing users to perform arithmetic operations
+on larger (64-bit) operands in Bitcoin Script than is currently allowed
+(32-bit).
 
-{% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/bitcoin-inquisition-39#l-46FIXME"
-%}
+This change, in combination with some existing soft fork proposals like
+[OP_TLUV][ml OP_TLUV] that enable transaction introspection, would allow
+users to build scripting logic based on a transaction's
+satoshi-denominated output values, which can easily overflow a 32-bit
+integer.
+
+Discussion on the approach, such as whether to upgrade existing opcodes
+or introduce new ones (e.g., `OP_ADD64`), is still ongoing.
+
+For more information, see the (WIP) [BIP][bip 64bit arithmetic], and the
+[discussion][delving 64bit arithmetic] on the Delving Bitcoin forum.
+
+{% include functions/details-list.md q0="What does the `CScriptNum`
+  `nMaxNumSize` parameter do?" a0="It represents the maximum size (in
+  bytes) of the `CScriptNum` stack element being evaluated. By default,
+  it is set to 4 bytes." a0link="https://bitcoincore.reviews/29221#l-34"
+
+  q1="What 2 opcodes accept 5-byte numeric inputs?"
+  a1="`OP_CHECKSEQUENCEVERIFY` and `OP_CHECKLOCKTIMEVERIFY` use signed
+  integers to represent time stamps. Using 4 bytes, that would put the
+  upper range of allowed dates in 2038. For that reason, a carve-out was
+  made for these 2 time-based opcodes to accept 5-byte inputs. This is
+  documented [in the code][docs 5byte carveout]."
+  a1link="https://bitcoincore.reviews/29221#l-45"
+
+  q2="Why was the `fRequireMinimal` flag introduced to `CScriptNum`?"
+  a2="`CScriptNum` has a variable length encoding. As described in
+  [BIP62][] (rule 4), this introduces opportunity for malleability. For
+  example, zero can be encoded as `OP_0`, `0x00`, `0x0000`, ... [Bitcoin
+  Core #5065][] fixed this in standard transactions [by requiring][doc SCRIPT_VERIFY_MINIMALDATA]
+  a minimal representation for data pushes and stack elements that
+  represent numbers." a2link="https://bitcoincore.reviews/29221#l-57"
+
+  q3="Is the implementation in this PR malleability safe? Why?" a3="The
+  current implementation requires a fixed-length 8-byte representation
+  for the operands of a 64-bit opcode, making it safe against
+zero-padding malleability. The rationale is to simplify implementation
+logic, at the cost of increased blockspace usage. The author has also
+explored using a `CScriptNum` variable encoding in [a different
+branch][64bit arith cscriptnum]."
+a3link="https://bitcoincore.reviews/29221#l-67" %}
 
 ## Releases and release candidates
 
@@ -264,7 +304,7 @@ until about six months after the release of the upcoming version 27.*
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 16:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="729,29648,29130,8159,8160,8485,8515,6703,6934,835,18,22,2652,7174" %}
+{% include linkers/issues.md v=2 issues="729,29648,29130,8159,8160,8485,8515,6703,6934,835,18,22,2652,7174,5065" %}
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
 [Bitcoin Core 27.0rc1]: https://bitcoincore.org/bin/bitcoin-core-27.0/test.rc1/
 [HWI 3.0.0]: https://github.com/bitcoin-core/HWI/releases/tag/3.0.0
@@ -282,3 +322,10 @@ until about six months after the release of the upcoming version 27.*
 [erhardt editors]: https://gnusha.org/pi/bitcoindev/c304a456-b15f-4544-8f86-d4a17fb0aa8c@murch.one/
 [lopp testnet]: https://gnusha.org/pi/bitcoindev/CADL_X_eXjbRFROuJU0b336vPVy5Q2RJvhcx64NSNPH-3fDCUfw@mail.gmail.com/
 [kim testnet]: https://gnusha.org/pi/bitcoindev/950b875a-e430-4bd8-870d-f9a9fab2493an@googlegroups.com/
+[review club 29221]: https://bitcoincore.reviews/29221
+[delving 64bit arithmetic]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397
+[bip 64bit arithmetic]: https://github.com/bitcoin/bips/pull/1538
+[64bit arith cscriptnum]: https://github.com/Christewart/bitcoin/tree/64bit-arith-cscriptnum
+[docs 5byte carveout]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.cpp#L531-L544
+[doc SCRIPT_VERIFY_MINIMALDATA]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.h#L69-L73
+[ml OP_TLUV]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
