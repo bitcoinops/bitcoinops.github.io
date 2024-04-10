@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Bitcoin Core #29242 introduces utility functions to compare two feerate diagrams"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
 
+  - title: "Analysis: what would have happened if cluster mempool had been deployed a year ago?"
+    url: /en/newsletters/2024/04/17/#what-would-have-happened-if-cluster-mempool-had-been-deployed-a-year-ago
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
