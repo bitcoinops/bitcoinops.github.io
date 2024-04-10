@@ -180,6 +180,9 @@ optech_mentions:
   - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
 
+  - title: "Analysis of how cluster mempool would've affected RBF in 2023"
+    url: /en/newsletters/2024/04/17/#rbf-differences-were-negligible
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
