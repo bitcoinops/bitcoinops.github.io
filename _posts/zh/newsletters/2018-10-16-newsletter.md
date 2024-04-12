@@ -1,4 +1,3 @@
-
 ---
 title: "Bitcoin Optech Newsletter #17"
 permalink: /zh/newsletters/2018/10/16/
