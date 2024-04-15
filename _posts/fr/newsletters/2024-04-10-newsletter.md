@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine annonce un nouveau langage spécifique à un domaine pour expérimenter
-avec les protocoles de contrat, résume une discussion sur la modification des responsabilités des
+Le bulletin de cette semaine annonce un nouveau langage spécifique à un domaine (DSL) pour tester
+les protocoles de contrat, résume une discussion sur la modification des responsabilités des
 éditeurs de BIP, et décrit des propositions pour réinitialiser et modifier le testnet. Sont
 également incluses nos sections habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
 des annonces de mises à jour et versions candidates, ainsi que les changements
@@ -31,14 +31,14 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 - **Mise à jour de BIP2 :** Tim Ruffing a [posté][ruffing bip2] sur la liste de diffusion
   Bitcoin-Dev à propos de la mise à jour de [BIP2][], qui spécifie le processus actuel pour ajouter de
-  nouveaux BIP et mettre à jour les BIP existants. Plusieurs problèmes avec le processus actuel
-  mentionnés par Ruffing et d'autres incluaient :
+  nouveaux BIP et mettre à jour les BIP existants. Ruffing a soulevé plusieurs problèmes du processus actuel
+  notamment :
 
-    - *Évaluation et discrétion éditoriale :* quel effort les éditeurs de BIP devraient-ils être tenus
+    - *Évaluation et discrétion éditoriale :* quels efforts les éditeurs de BIP devraient-ils être tenus
       de déployer pour s'assurer que les nouveaux BIP sont de haute qualité et centrés sur Bitcoin ?
-      Séparément, quelle discrétion devraient-ils avoir pour pouvoir rejeter de nouveaux BIPs ? Ruffing et
+      Séparément, quelle latitude devraient-ils avoir pour pouvoir rejeter de nouveaux BIPs ? Ruffing et
       plusieurs autres ont mentionné qu'ils préféreraient minimiser les exigences et privilèges
-      éditoriaux, peut-être en dépendant des éditeurs de BIP uniquement pour prévenir les abus systémiques
+      éditoriaux, peut-être en ne dépendant des éditeurs de BIP que pour lutter contre les abus systémiques
       (par exemple, le spam massif). Bien sûr, les éditeurs de BIP, comme tout autre membre de la
       communauté, seraient en mesure de suggérer volontairement des améliorations à toute proposition de
       BIP qu'ils trouvent intéressante.
@@ -50,17 +50,17 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
       pour les retours de la communauté sur chaque BIP. Cela n'a pas été largement utilisé et les
       résultats ont été controversés.
 
-  L'idée de mettre à jour BIP2 était encore en discussion au moment de la rédaction.
+  L'idée de mettre à jour BIP2 était encore en discussion au moment de la rédaction de cet article.
 
-  Dans une discussion séparée mais liée, la nomination et le plaidoyer pour de nouveaux éditeurs de
+  Dans une autre discussion liée à ce sujet, la nomination et le plaidoyer pour de nouveaux éditeurs de
   BIP mentionnés dans [le bulletin de la semaine dernière][news296 editors] ont été
   [prolongés][erhardt editors] jusqu'à la fin de journée UTC le vendredi 19 avril. Il est espéré que
   les nouveaux éditeurs recevront l'accès à la fusion d'ici la fin de journée du lundi suivant.
 
 - **Discussion sur la réinitialisation et la modification du testnet :** Jameson Lopp a
-  [posté][lopp testnet] sur la liste de diffusion Bitcoin-Dev à propos des problèmes avec le testnet
+  [évoqué][lopp testnet], sur la liste de diffusion Bitcoin-Dev, les problèmes avec le testnet
   public actuel de Bitcoin (testnet3) et a suggéré de le redémarrer, potentiellement avec un ensemble
-  différent de règles de consensus spéciales.
+  différent de règles de consensus pour des cas particuliers.
 
   Les versions précédentes du testnet ont dû être redémarrées lorsque certaines personnes ont commencé
   à attribuer une valeur économique aux pièces du testnet, ce qui a rendu leur acquisition gratuite
