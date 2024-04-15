@@ -285,7 +285,7 @@ issues="729,29648,29130,8159,8160,8485,8515,6703,6934,835,18,22,2652,7174,5065" 
 [review club 29221]: https://bitcoincore.reviews/29221
 [delving 64bit arithmetic]: https://delvingbitcoin.org/t/64-bit-arithmetic-soft-fork/397
 [bip 64bit arithmetic]: https://github.com/bitcoin/bips/pull/1538
-[arithmétique 64 bits cscriptnum] : https://github.com/Christewart/bitcoin/tree/64bit-arith-cscriptnum
-[docs découpage 5 octets] : https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.cpp#L531-L544
-[doc SCRIPT_VERIFY_MINIMALDATA] : https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.h#L69-L73
-[ml OP_TLUV] : https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
+[64bit arith cscriptnum]: https://github.com/Christewart/bitcoin/tree/64bit-arith-cscriptnum
+[docs 5byte carveout]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.cpp#L531-L544
+[doc SCRIPT_VERIFY_MINIMALDATA]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.h#L69-L73
+[ml OP_TLUV]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
