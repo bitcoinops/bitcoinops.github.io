@@ -88,7 +88,37 @@ summarizing notable changes to popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Phoenix for server announced:**
+  Phoenix Wallet announced a simplified, headless Lightning node,
+  [phoenixd][phoenixd github], focused on sending and receiving payments.
+  phoenixd targets developers, is based on the existing Phoenix Wallet software,
+  and automates channel, peer, and liquidity management.
+
+- **Mercury Layer adds Lightning swaps:**
+  The Mercury Layer [statechain][topic statechains] uses [hold invoices][topic
+  hold invoices] to enable swapping a statechain coin for a Lightning payment.
+
+- **Stratum V2 Reference Implementation v1.0.0 released:**
+  The [v1.0.0 release][sri blog] "is a result of improvements in the Stratum V2
+  specification through the working group collaboration and rigorous testing".
+
+- **Teleport Transactions update:**
+  A fork of the [original Teleport Transactions][news192 tt] repository was
+  [announced][tt tweet] along with several completed updates and improvements.
+
+- **Bitcoin Keeper v1.2.1 released:**
+  The [v1.2.1 release][bitcoin keeper v.1.2.1] adds support for [taproot][topic
+  taproot] wallets.
+
+- **BIP-329 label management software:**
+  The version 2 release of [Labelbase][labelbase blog] includes a self-hosted
+  option and [BIP329][] import/export capabilities among other features.
+
+- **Key agent Sigbash launches:**
+  The [Sigbash][] signing service allows users to purchase an xpub for use
+  in a multisig setup that will only [PSBT][topic psbt]-sign if certain
+  user-specified conditions (hashrate, Bitcoin price, address balance, after a
+  certain time) are met.
 
 ## Releases and release candidates
 
@@ -162,3 +192,10 @@ repo]._
 [ldk 0.0.122]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.122
 [ldk 0.0.121]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.121
 [btcpay server 1.13.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.13.1
+[phoenixd github]: https://github.com/ACINQ/phoenixd
+[sri blog]: https://stratumprotocol.org/blog/sri-1-0-0/
+[news192 tt]: /en/newsletters/2022/03/23/#coinswap-implementation-teleport-transactions-announced
+[tt tweet]: https://twitter.com/RajarshiMaitra/status/1768623072280809841
+[bitcoin keeper v.1.2.1]: https://github.com/bithyve/bitcoin-keeper/releases/tag/v1.2.1
+[labelbase blog]: https://labelbase.space/ann-v2/
+[Sigbash]: https://sigbash.com/
