@@ -405,7 +405,6 @@ reach out to [mike@bitcoinops.org](mailto:mike@bitcoinops.org).
 [announcement]: /en/announcing-bitcoin-optech/
 [workshops]: /workshops/
 [newsletters]: /en/newsletters/
-[dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /en/dashboard-announcement/
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [scaling book feebumping]: https://github.com/bitcoinops/scaling-book/blob/master/1.fee_bumping/fee_bumping.md

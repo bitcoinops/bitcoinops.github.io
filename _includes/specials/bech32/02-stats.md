@@ -6,8 +6,7 @@ track various segwit adoption statistics so that you can decide whether
 it's popular enough that your wallet or service might become an outlier
 by failing to support it soon.
 
-Optech tracks statistics about segwit use on our [dashboard][optech
-dashboard]; another site tracking related statistics is [P2SH.info][].
+A site tracking related statistics is [P2SH.info][].
 We see an average of about 200 outputs per block are sent to native
 segwit addresses (bech32).  Those outputs are then spent in about 10% of all
 Bitcoin transactions.  That makes payments involving native segwit addresses
@@ -47,7 +46,6 @@ bech32 sending support so that all wallets that want to take advantage
 of native segwit can do so in the next few months.
 
 [bech32 easy]: {{news38}}#bech32-sending-support
-[optech dashboard]: https://dashboard.bitcoinops.org/
 [p2sh.info]: https://p2sh.info/
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [when segwit]: https://whensegwit.com/

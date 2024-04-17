@@ -33,7 +33,7 @@ members. We've undertaken projects in two broad areas:
 1. High-quality online documentation and material for Bitcoin engineers, freely
    available to everyone and released under permissive open source licenses.
    Those materials include our [weekly newsletter][], [blog posts and field
-   reports][], [dashboard][], [compatibility matrix][], [topic index][] and
+   reports][], [compatibility matrix][], [topic index][] and
    [taproot workbooks][].
 
 2. In-person [workshops][] and informal dinners and social events, open to
