@@ -87,6 +87,9 @@ optech_mentions:
   - title: "Proposal for replace-by-feerate to avoid transaction pinning"
     url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
 
+  - title: Discussion about weak blocks helping with transaction pinning
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
    - title: CPFP carve out

@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Discussion of incorporating live mempool data into Bitcoin Core's feerate estimation"
     url: /en/newsletters/2024/03/27/#mempool-based-feerate-estimation
 
+  - title: Discussion about weak blocks helping with feerate estimation
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection
