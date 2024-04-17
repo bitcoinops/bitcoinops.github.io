@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Improvements to compact block peer selection made to address block stalling attack"
     url: /en/newsletters/2024/02/07/#bitcoin-core-22147
 
+  - title: "Proposal to use weak blocks to improve compact block relay when mempool policies diverge"
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

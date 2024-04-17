@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Improved reproducible ASMap creation process"
     url: /en/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process
 
+  - title: "Bitcoin Core #29850 limits the max number of IP addresses accepted from an individual DNS seed"
+    url: /en/newsletters/2024/04/24/#bitcoin-core-29850
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anonymity networks
