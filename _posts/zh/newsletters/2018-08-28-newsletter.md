@@ -41,28 +41,9 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的提交。提醒：新的合并到 Bitcoin Core 的代码被提交到其主开发分支，并不太可能成为即将发布的 0.17 版本的一部分——你可能要等到大约六个月后的 0.18 版本。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。提醒：新的合并到 Bitcoin Core 的代码被提交到其主开发分支，并不太可能成为即将发布的 0.17 版本的一部分——你可能要等到大约六个月后的 0.18 版本。*
 
 {% comment %}<!-- I didn't notice anything interesting in LND this week -harding -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="df660aa7717a6f4784e90535a13a95d82244565a"
-  end="427253cf7e19ed9ef86b45457de41e345676c88e"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="3f5ec993300e38369110706ac83301b8875500d6"
-  end="26f68da5b2883885fcf6a8e79b3fc9bb12cc9eef"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="80a875a9a54e26c2ea4c90aee8fe606ddcc27c55"
-  end="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
-%}
 
 - [Bitcoin Core #12254][] 添加了必要的功能，允许 Bitcoin Core 生成 [BIP158][] 致密区块过滤器。这段代码目前尚未被 Bitcoin Core 使用，但未来的工作预计将使用这些功能提供两个特性：
 
