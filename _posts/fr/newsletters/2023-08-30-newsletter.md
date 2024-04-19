@@ -150,8 +150,8 @@ notre dernière mise à jour.*
   [HTLC][topic htlc], permettant aux paiements commençant dans un canal taproot de continuer à être transférés via d'autres nœuds
   LN qui ne prennent pas en charge les canaux taproot.
 
-    <!-- Les PR liées suivantes ont des titres "1/x", "2/x", etc. Je les ai listées dans cet ordre plutôt que par numéro de PR -->
-    Ce PR comprend 134 validations qui ont été précédemment fusionnées dans une branche d'essai à partir des PR suivants : [#7332][lnd #7332], [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340], [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346], [#7347][lnd #7347] et [#7472][lnd #7472].
+  <!-- Les PR liées suivantes ont des titres "1/x", "2/x", etc. Je les ai listées dans cet ordre plutôt que par numéro de PR -->
+  Ce PR comprend 134 validations qui ont été précédemment fusionnées dans une branche d'essai à partir des PR suivants : [#7332][lnd #7332], [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340], [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346], [#7347][lnd #7347] et [#7472][lnd #7472].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}
