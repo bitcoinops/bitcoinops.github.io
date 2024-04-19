@@ -36,32 +36,32 @@ to popular Bitcoin infrastructure software.
   fraud proofs in the version 0 DLC coordination specification.  Two
   types of fraud were discussed:
 
-    - *Equivocation:* where an oracle signs for the same event more than
-      once, producing conflicting results.  A proof of equivocation can
-      be automatically verified by software without third-party trust.
+  - *Equivocation:* where an oracle signs for the same event more than
+    once, producing conflicting results.  A proof of equivocation can
+    be automatically verified by software without third-party trust.
 
-    - *Lying:* where an oracle signs for an outcome that users know is
-      wrong.  This will almost always depend on evidence not available
-      to the user's contract software, so this type of fraud proof must
-      be verified manually by the user, who can compare the original
-      contract to the outcome signed by the oracle.
+  - *Lying:* where an oracle signs for an outcome that users know is
+    wrong.  This will almost always depend on evidence not available
+    to the user's contract software, so this type of fraud proof must
+    be verified manually by the user, who can compare the original
+    contract to the outcome signed by the oracle.
 
-    Discussion participants seemed to all favor providing an
-    equivocation proof, although there was some concern that it could be
-    too much work for the v0 specification.  As an intermediate
-    solution, it was suggested to focus on proofs of lying.  When the
-    format of those proofs has been established, software can then be
-    updated to take two separate proofs for the same oracle and event
-    to create a proof of equivocation.
+  Discussion participants seemed to all favor providing an
+  equivocation proof, although there was some concern that it could be
+  too much work for the v0 specification.  As an intermediate
+  solution, it was suggested to focus on proofs of lying.  When the
+  format of those proofs has been established, software can then be
+  updated to take two separate proofs for the same oracle and event
+  to create a proof of equivocation.
 
-    One concern with proofs of lying was that users could be spammed by
-    fake proofs, forcing users to either waste their time verifying
-    false proofs or give up checking fraud proofs altogether.
-    Counterarguments included being able to get part of the proof from
-    an onchain transaction (which requires that someone paid an onchain
-    fee) and also that users could choose where they download fraud
-    proofs from, preferring to get them from a source that was known for
-    only propagating accurate information.
+  One concern with proofs of lying was that users could be spammed by
+  fake proofs, forcing users to either waste their time verifying
+  false proofs or give up checking fraud proofs altogether.
+  Counterarguments included being able to get part of the proof from
+  an onchain transaction (which requires that someone paid an onchain
+  fee) and also that users could choose where they download fraud
+  proofs from, preferring to get them from a source that was known for
+  only propagating accurate information.
 
 ## Notable code and documentation changes
 
@@ -77,18 +77,18 @@ BOLTs][bolts repo].*
   Core to interact with external hardware signing devices through the
   [HWI][topic hwi] or any other application which implements the same interface.
 
-    Bitcoin Core has been able to interface with hardware signers using HWI
-    [since Bitcoin Core version 0.18][hwi release]. Until this PR, however, [the
-    process][hwi old process] required use of the command line to transfer
-    data between Bitcoin Core and HWI. This PR simplifies the user experience
-    by enabling Bitcoin Core to directly communicate with HWI. The PR includes
-    [full documentation][hwi new process] on how to use the new signer interface
-    along with HWI.
+  Bitcoin Core has been able to interface with hardware signers using HWI
+  [since Bitcoin Core version 0.18][hwi release]. Until this PR, however, [the
+  process][hwi old process] required use of the command line to transfer
+  data between Bitcoin Core and HWI. This PR simplifies the user experience
+  by enabling Bitcoin Core to directly communicate with HWI. The PR includes
+  [full documentation][hwi new process] on how to use the new signer interface
+  along with HWI.
 
-    The new signer interface is currently only accessible through RPC methods. A
-    [draft PR][signer gui] adds support for the signer interface to the GUI,
-    allowing the use of hardware signers with Bitcoin Core without any use of
-    the command line.
+  The new signer interface is currently only accessible through RPC methods. A
+  [draft PR][signer gui] adds support for the signer interface to the GUI,
+  allowing the use of hardware signers with Bitcoin Core without any use of
+  the command line.
 
 - [Rust-Lightning #791][] adds support for polling `BlockSource` interfaces on
   startup to sync blocks and headers, with fork detection during sync.

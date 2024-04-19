@@ -27,10 +27,10 @@ projects.
   which means that a set of signatures can be half-aggregated by a third
   party without any involvement from the signers."
 
-    A [separate document][cia doc] provides examples of how half
-    aggregation could benefit the operators of Bitcoin and LN nodes, plus
-    several concerns that would need to be considered in the design of a
-    soft fork adding half aggregation to the consensus protocol.
+  A [separate document][cia doc] provides examples of how half
+  aggregation could benefit the operators of Bitcoin and LN nodes, plus
+  several concerns that would need to be considered in the design of a
+  soft fork adding half aggregation to the consensus protocol.
 
 - **X-only workaround:** Bitcoin public keys are points on a
   two-dimensional graph which are referenced by the intersection of an
@@ -43,19 +43,19 @@ projects.
   omit including the *y* point entirely, saving one vbyte per signature
   over the original taproot design.
 
-    At the time, this technique (called *x-only public keys*) was thought
-    to be an optimization with no significant tradeoffs, but later
-    design work on OP_TAPLEAF_UPDATE_VERIFY ([TLUV][news166 tluv])
-    revealed that x-only pubkeys required either computationally
-    limiting the proposal or storing extra data in the block chain or
-    UTXO set.  The problem may affect other advanced uses of pubkeys as
-    well.
+  At the time, this technique (called *x-only public keys*) was thought
+  to be an optimization with no significant tradeoffs, but later
+  design work on OP_TAPLEAF_UPDATE_VERIFY ([TLUV][news166 tluv])
+  revealed that x-only pubkeys required either computationally
+  limiting the proposal or storing extra data in the block chain or
+  UTXO set.  The problem may affect other advanced uses of pubkeys as
+  well.
 
-    This week, Tim Ruffing [posted][ruffing xonly] to the Bitcoin-Dev
-    mailing list a potential workaround that only requires a slight bit
-    of additional computation by signers---an amount that even a
-    resource-constrained hardware signing device can probably perform
-    without making its user wait too long.
+  This week, Tim Ruffing [posted][ruffing xonly] to the Bitcoin-Dev
+  mailing list a potential workaround that only requires a slight bit
+  of additional computation by signers---an amount that even a
+  resource-constrained hardware signing device can probably perform
+  without making its user wait too long.
 
 - **Allowing deliberately slow LN payment forwarding:** in a reply to a
   thread about recursive/nested [MuSig2][topic musig] (see [Newsletter #204][news204

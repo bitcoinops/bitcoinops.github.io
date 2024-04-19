@@ -52,13 +52,13 @@ notable changes to popular Bitcoin infrastructure software.
   payment, allowing the service to reconstruct the invoice, accept the
   payment, and fulfill the order.
 
-    Although some respondents [expressed concern][osuntokun reply] that
-    the idea was unnecessary---it's possible to flood apps with requests
-    in other ways, and any solution to those problems should also fix
-    invoice request flooding---others thought the idea was useful.  The
-    idea does not seem to require any protocol changes, just software
-    changes (or plugins) to create and manage the invoice generation and
-    reconstruction.
+  Although some respondents [expressed concern][osuntokun reply] that
+  the idea was unnecessary---it's possible to flood apps with requests
+  in other ways, and any solution to those problems should also fix
+  invoice request flooding---others thought the idea was useful.  The
+  idea does not seem to require any protocol changes, just software
+  changes (or plugins) to create and manage the invoice generation and
+  reconstruction.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

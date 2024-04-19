@@ -38,26 +38,26 @@ popular Bitcoin infrastructure software.
   for the users of that code---or anyone who depends on remaining in
   consensus with users of that code.
 
-    The potential issues affect not only software written in C and
-    compiled with GCC, but any software or library that depends on
-    software or libraries compiled with the affected versions of GCC.
-    It also
-    includes programs written in other languages whose compilers or
-    interpreters were built using GCC. Although the full extent of
-    the issue is still unknown, Russell O'Connor has run
-    [an analysis][oconnor blog] of an entire Linux system and found only a
-    handful of instances where this bug causes a miscompilation, suggesting
-    that it's fairly rare for code to be miscompiled due to the bug.
+  The potential issues affect not only software written in C and
+  compiled with GCC, but any software or library that depends on
+  software or libraries compiled with the affected versions of GCC.
+  It also
+  includes programs written in other languages whose compilers or
+  interpreters were built using GCC. Although the full extent of
+  the issue is still unknown, Russell O'Connor has run
+  [an analysis][oconnor blog] of an entire Linux system and found only a
+  handful of instances where this bug causes a miscompilation, suggesting
+  that it's fairly rare for code to be miscompiled due to the bug.
 
-    Issues were opened in both the [libsecp256k1][libsecp256k1 #823] and
-    [Bitcoin Core][bitcoin core #20005] repositories to find and
-    mitigate any effects of this bug.  The topic was also
-    [discussed][irc memcmp] during the weekly Bitcoin Core Developers
-    Meeting.
+  Issues were opened in both the [libsecp256k1][libsecp256k1 #823] and
+  [Bitcoin Core][bitcoin core #20005] repositories to find and
+  mitigate any effects of this bug.  The topic was also
+  [discussed][irc memcmp] during the weekly Bitcoin Core Developers
+  Meeting.
 
-    As of this writing, developers have tested Bitcoin Core 0.20.1 and
-    not found any direct problems.  If any noteworthy problems are found
-    in other software, we'll provide an update in a future newsletter.
+  As of this writing, developers have tested Bitcoin Core 0.20.1 and
+  not found any direct problems.  If any noteworthy problems are found
+  in other software, we'll provide an update in a future newsletter.
 
 - **US Patent 7,110,538 has expired:** Bitcoin transactions are secured using
   [ECDSA][] (the _Elliptic Curve Digital Signature Algorithm_). Verifying
@@ -68,26 +68,26 @@ popular Bitcoin infrastructure software.
   multiplications more efficient therefore has the potential to significantly
   speed up Bitcoin Core's initial sync.
 
-    In a [2011 bitcointalk post][finney endomorphism], Hal Finney described a
-    method by Gallant, Lambert and Vanstone (GLV) to
-    efficiently compute elliptic curve point multiplications using an
-    [endomorphism][] on the curve (a mapping from the curve to itself which
-    preserves all relationships between points). By using this GLV endomorphism,
-    the multiplication can be broken into two parts, which are calculated
-    simultaneously to arrive at the solution. Doing this can reduce the
-    number of expensive computations by up to 33%. Finney wrote a proof-of-concept
-    implementation of the GLV endomorphism, which he claimed sped up signature
-    verification by around 25%.
+  In a [2011 bitcointalk post][finney endomorphism], Hal Finney described a
+  method by Gallant, Lambert and Vanstone (GLV) to
+  efficiently compute elliptic curve point multiplications using an
+  [endomorphism][] on the curve (a mapping from the curve to itself which
+  preserves all relationships between points). By using this GLV endomorphism,
+  the multiplication can be broken into two parts, which are calculated
+  simultaneously to arrive at the solution. Doing this can reduce the
+  number of expensive computations by up to 33%. Finney wrote a proof-of-concept
+  implementation of the GLV endomorphism, which he claimed sped up signature
+  verification by around 25%.
 
-    Pieter Wuille separately implemented the GLV endomorphism algorithm
-    in the [libsecp256k1][libsecp] library, which is used to verify signatures in Bitcoin Core.
-    However, the algorithm was encumbered by [U.S. Patent 7,110,538][endomorphism
-    patent] and so to avoid any legal uncertainty, the implementation has not previously been
-    distributed to users. On September 25, the patent expired, removing that legal
-    uncertainty.
-    [A PR has been opened in the libsecp256k1 repo][endomorphism PR] to
-    always use the GLV endomorphism algorithm, which is expected to decrease
-    Bitcoin Core's initial sync time significantly.
+  Pieter Wuille separately implemented the GLV endomorphism algorithm
+  in the [libsecp256k1][libsecp] library, which is used to verify signatures in Bitcoin Core.
+  However, the algorithm was encumbered by [U.S. Patent 7,110,538][endomorphism
+  patent] and so to avoid any legal uncertainty, the implementation has not previously been
+  distributed to users. On September 25, the patent expired, removing that legal
+  uncertainty.
+  [A PR has been opened in the libsecp256k1 repo][endomorphism PR] to
+  always use the GLV endomorphism algorithm, which is expected to decrease
+  Bitcoin Core's initial sync time significantly.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

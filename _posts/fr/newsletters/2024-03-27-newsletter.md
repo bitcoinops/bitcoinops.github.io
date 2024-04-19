@@ -30,22 +30,22 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   être multiplié par Alice ayant plusieurs pairs de type Bob qui rejettent tous les remplacements et
   Mallory envoyant plusieurs transactions spécialement construites de ce type en parallèle.
 
-    L'attaque est limitée par les coûts de frais que Mallory paiera lorsque une version de ses
-    transactions sera finalement confirmée, bien que la description de l'attaque note que cela peut être
-    essentiellement nul si Mallory prévoyait de toute façon d'envoyer une transaction. La quantité
-    maximale de bande passante qui peut être gaspillée est limitée par les limites de relais de
-    transaction existantes de Bitcoin Core, bien qu'il soit possible que la réalisation de cette attaque
-    de nombreuses fois en parallèle puisse retarder la propagation de transactions légitimes non confirmées.
+  L'attaque est limitée par les coûts de frais que Mallory paiera lorsque une version de ses
+  transactions sera finalement confirmée, bien que la description de l'attaque note que cela peut être
+  essentiellement nul si Mallory prévoyait de toute façon d'envoyer une transaction. La quantité
+  maximale de bande passante qui peut être gaspillée est limitée par les limites de relais de
+  transaction existantes de Bitcoin Core, bien qu'il soit possible que la réalisation de cette attaque
+  de nombreuses fois en parallèle puisse retarder la propagation de transactions légitimes non confirmées.
 
-    La description mentionne également un autre type bien connu de gaspillage de bande passante de nœud,
-    où un utilisateur diffuse un ensemble de transactions volumineuses et travaille ensuite avec un
-    mineur pour créer un bloc qui contient une transaction relativement petite qui entre en conflit avec
-    toutes les transactions relayées. Par exemple, une transaction de 29 000 vbytes pourrait retirer
-    environ 200 mégaoctets de transactions de la mempool de chaque nœud complet relayant. La description
-    soutient que l'existence d'attaques permettant de gaspiller de la bande passante signifie qu'il
-    devrait être raisonnable de permettre volontairement une certaine quantité de relais gratuit, comme
-    en activant des propositions telles que le remplacement par taux de frais (voir le [Bulletin
-    #288][news288 rbfr]).
+  La description mentionne également un autre type bien connu de gaspillage de bande passante de nœud,
+  où un utilisateur diffuse un ensemble de transactions volumineuses et travaille ensuite avec un
+  mineur pour créer un bloc qui contient une transaction relativement petite qui entre en conflit avec
+  toutes les transactions relayées. Par exemple, une transaction de 29 000 vbytes pourrait retirer
+  environ 200 mégaoctets de transactions de la mempool de chaque nœud complet relayant. La description
+  soutient que l'existence d'attaques permettant de gaspiller de la bande passante signifie qu'il
+  devrait être raisonnable de permettre volontairement une certaine quantité de relais gratuit, comme
+  en activant des propositions telles que le remplacement par taux de frais (voir le [Bulletin
+  #288][news288 rbfr]).
 
 - **Améliorations du parrainage des frais de transaction :** Martin Habovštiak a [posté][habovstiak
   boost] sur la liste de diffusion Bitcoin-Dev une idée permettant à une transaction de booster la
@@ -62,49 +62,49 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   utiliser un outpoint à la place --> 8 vbytes pour un seul parrainage et 8 vbytes pour chaque
   parrainage supplémentaire.
 
-    Après avoir entendu parler de l'idée de Habovštiak, David Harding [a posté][harding sponsor] sur
-    Delving Bitcoin une amélioration de l'efficacité qu'il et Rubin avaient précédemment développée en
-    janvier. La transaction de parrainage s'engage envers la transaction boostée en utilisant le message
-    d'engagement de signature, qui n'est jamais publié on-chain, donc aucun espace de bloc n'est
-    utilisé pour un seul engagement. Pour permettre cela, la transaction de parrainage doit apparaître
-    dans les blocs et les messages de [relais de paquets][topic package relay] immédiatement après la
-    transaction boostée, permettant aux vérificateurs de nœuds complets d'inférer le txid de la
-    transaction boostée lorsqu'ils vérifient la transaction de parrainage.
+  Après avoir entendu parler de l'idée de Habovštiak, David Harding [a posté][harding sponsor] sur
+  Delving Bitcoin une amélioration de l'efficacité qu'il et Rubin avaient précédemment développée en
+  janvier. La transaction de parrainage s'engage envers la transaction boostée en utilisant le message
+  d'engagement de signature, qui n'est jamais publié on-chain, donc aucun espace de bloc n'est
+  utilisé pour un seul engagement. Pour permettre cela, la transaction de parrainage doit apparaître
+  dans les blocs et les messages de [relais de paquets][topic package relay] immédiatement après la
+  transaction boostée, permettant aux vérificateurs de nœuds complets d'inférer le txid de la
+  transaction boostée lorsqu'ils vérifient la transaction de parrainage.
 
-    Pour les cas où un bloc peut contenir plusieurs transactions de parrainage qui s'engagent chacune
-    envers certaines des mêmes transactions boostées, il n'est pas possible de simplement avoir une
-    série de transactions boostées apparaissant immédiatement avant leurs parrains, donc des engagements
-    entièrement inférables ne sont pas une option. Harding décrit une alternative simple qui n'utilise
-    que 0.5 vbytes par transaction boostée ; Anthony Towns [améliore][towns sponsor] cela avec une
-    version qui n'utiliserait jamais plus de 0.5 vbytes par boost et utiliserait moins d'espace dans la
-    plupart des cas.
+  Pour les cas où un bloc peut contenir plusieurs transactions de parrainage qui s'engagent chacune
+  envers certaines des mêmes transactions boostées, il n'est pas possible de simplement avoir une
+  série de transactions boostées apparaissant immédiatement avant leurs parrains, donc des engagements
+  entièrement inférables ne sont pas une option. Harding décrit une alternative simple qui n'utilise
+  que 0.5 vbytes par transaction boostée ; Anthony Towns [améliore][towns sponsor] cela avec une
+  version qui n'utiliserait jamais plus de 0.5 vbytes par boost et utiliserait moins d'espace dans la
+  plupart des cas.
 
-    Habovštiak et Harding notent tous deux le potentiel pour l'externalisation : quiconque prévoit de
-    diffuser une transaction de toute façon (ou qui a une transaction non confirmée qu'il est prêt à
-    mettre à jour avec [RBF][topic rbf]) peut augmenter son taux de frais et booster une autre
-    transaction à un coût insignifiant de 0.5 vbytes ou moins par boost ; pour comparaison, 0.5 vbytes
-    représente environ 0.3% d'une transaction P2TR à 1 entrée, 2 sorties. Malheureusement, ils
-    avertissent tous les deux qu'il n'y a pas de moyen pratique de payer sans confiance un tiers pour un
-    boost ; cependant, Habovštiak souligne que quiconque paie via LN recevrait [une preuve de
-    paiement][topic proof of payment] et pourrait donc potentiellement prouver une tromperie.
+  Habovštiak et Harding notent tous deux le potentiel pour l'externalisation : quiconque prévoit de
+  diffuser une transaction de toute façon (ou qui a une transaction non confirmée qu'il est prêt à
+  mettre à jour avec [RBF][topic rbf]) peut augmenter son taux de frais et booster une autre
+  transaction à un coût insignifiant de 0.5 vbytes ou moins par boost ; pour comparaison, 0.5 vbytes
+  représente environ 0.3% d'une transaction P2TR à 1 entrée, 2 sorties. Malheureusement, ils
+  avertissent tous les deux qu'il n'y a pas de moyen pratique de payer sans confiance un tiers pour un
+  boost ; cependant, Habovštiak souligne que quiconque paie via LN recevrait [une preuve de
+  paiement][topic proof of payment] et pourrait donc potentiellement prouver une tromperie.
 
-    Towns note en outre que les parrains semblent compatibles avec la conception proposée pour [le pool
-    de mémoire tampon en cluster][topic cluster mempool], que les versions les plus efficaces de
-    parrainage présentent quelques défis légers pour la mise en cache de la validité des transactions,
-    et conclut avec un tableau montrant l'espace de bloc relatif consommé par diverses techniques
-    actuelles et proposées de hausse des frais. À 0.5 vbytes ou moins par boost, les versions les plus
-    efficaces de parrainage des frais est seulement surpassée par les 0.0 vbytes
-    utilisés dans le meilleur cas avec RBF et en payant les mineurs [hors bande][topic out-of-band
-    fees]. Parce que le parrainage des frais permet une augmentation dynamique des frais et est presque
-    aussi efficace que de payer les mineurs hors bande, cela pourrait résoudre une préoccupation majeure
-    avec les protocoles qui dépendent des [frais exogènes][topic fee sourcing].
+  Towns note en outre que les parrains semblent compatibles avec la conception proposée pour [le pool
+  de mémoire tampon en cluster][topic cluster mempool], que les versions les plus efficaces de
+  parrainage présentent quelques défis légers pour la mise en cache de la validité des transactions,
+  et conclut avec un tableau montrant l'espace de bloc relatif consommé par diverses techniques
+  actuelles et proposées de hausse des frais. À 0.5 vbytes ou moins par boost, les versions les plus
+  efficaces de parrainage des frais est seulement surpassée par les 0.0 vbytes
+  utilisés dans le meilleur cas avec RBF et en payant les mineurs [hors bande][topic out-of-band
+  fees]. Parce que le parrainage des frais permet une augmentation dynamique des frais et est presque
+  aussi efficace que de payer les mineurs hors bande, cela pourrait résoudre une préoccupation majeure
+  avec les protocoles qui dépendent des [frais exogènes][topic fee sourcing].
 
-    Dans une [discussion continue][daftuar sponsor] peu avant la publication de ce bulletin, Suhas
-    Daftuar a exprimé des préoccupations selon lesquelles les sponsors pourraient introduire des
-    problèmes qui ne sont pas facilement adressés par le cluster de mempool et qui pourraient créer des
-    problèmes pour les utilisateurs qui n'avaient pas besoin de sponsors, indiquant que le parrainage
-    (s'il est jamais ajouté à Bitcoin) devrait seulement être disponible pour les transactions qui
-    choisissent de l'autoriser.
+  Dans une [discussion continue][daftuar sponsor] peu avant la publication de ce bulletin, Suhas
+  Daftuar a exprimé des préoccupations selon lesquelles les sponsors pourraient introduire des
+  problèmes qui ne sont pas facilement adressés par le cluster de mempool et qui pourraient créer des
+  problèmes pour les utilisateurs qui n'avaient pas besoin de sponsors, indiquant que le parrainage
+  (s'il est jamais ajouté à Bitcoin) devrait seulement être disponible pour les transactions qui
+  choisissent de l'autoriser.
 
 - **Estimation du taux de frais basée sur le Mempool :** Abubakar Sadiq Ismail a [posté][ismail
   fees] sur Delving Bitcoin concernant l'amélioration de l'estimation du taux de frais de Bitcoin Core

@@ -31,24 +31,24 @@ developments.
   Transactions (PSBTs) specification, Andrew Chow, [proposed][psbt
   extensions] a few minor changes for general adoption:
 
-    - *Reserved types for proprietary use:* some applications are
-      already including data in PSBTs using types that aren't specified
-      in [BIP174][].  It's proposed that one type byte or a range of
-      type bytes be reserved for private PSBT extensions, similar to
-      reserved IP address ranges for private networks.  The exact
-      construction of this mechanism was a particular focus of
-      discussion this week.
+  - *Reserved types for proprietary use:* some applications are
+    already including data in PSBTs using types that aren't specified
+    in [BIP174][].  It's proposed that one type byte or a range of
+    type bytes be reserved for private PSBT extensions, similar to
+    reserved IP address ranges for private networks.  The exact
+    construction of this mechanism was a particular focus of
+    discussion this week.
 
-    - *Global version number:* although the goal is to design enhancements
-      to PSBTs so that they're backwards compatible, Chow proposed to
-      add a version byte to PSBTs indicating the most advanced feature
-      they use so that older parsers can detect when they're being given
-      a PSBT they might not understand.  PSBTs without an explicit
-      version number would be considered to use version 0.
+  - *Global version number:* although the goal is to design enhancements
+    to PSBTs so that they're backwards compatible, Chow proposed to
+    add a version byte to PSBTs indicating the most advanced feature
+    they use so that older parsers can detect when they're being given
+    a PSBT they might not understand.  PSBTs without an explicit
+    version number would be considered to use version 0.
 
-    - *Multi-byte types:* To allow more types, multi-byte types are
-      proposed.  Mailing list discussion seems to favor using the same
-      CompactSize unsigned integers used in the Bitcoin protocol.
+  - *Multi-byte types:* To allow more types, multi-byte types are
+    proposed.  Mailing list discussion seems to favor using the same
+    CompactSize unsigned integers used in the Bitcoin protocol.
 
 - **Trampoline payments:** Bastien Teinturier opened a [PR][trampoline
   pr] in the BOLTs repository and started a [discussion][trampoline

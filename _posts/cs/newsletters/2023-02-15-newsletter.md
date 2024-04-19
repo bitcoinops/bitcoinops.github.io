@@ -23,47 +23,47 @@ na bitcoinovou technickou dokumentaci a diskuze.
   vláknech emailové skupiny Bitcoin-Dev pokračovala tento týden
   diskuze o ukládání dat v blockchainu.
 
-    - *Offchain obarvování mincí:* Anthony Towns [poslal][towns color]
-      souhrn protokolu používaného pro přiřazování zvláštního významu
-      některým výstupům. Těmto technikám se obecně říká *obarvování mincí*.
-      Též popsal související protokol používaný pro ukládání binárních
-      dat uvnitř bitcoinových transakcí a jejich asociaci s konkrétními
-      obarvenými mincemi. Po souhrnu současného stavu popsal metodu
-      pro ukládání dat pomocí zpráv na [Nostru][nostr] a jejich asociaci
-      s obarvenými mincemi, které by mohly být posílány v bitcoinových
-      transakcích. To by mělo několik výhod:
+  - *Offchain obarvování mincí:* Anthony Towns [poslal][towns color]
+    souhrn protokolu používaného pro přiřazování zvláštního významu
+    některým výstupům. Těmto technikám se obecně říká *obarvování mincí*.
+    Též popsal související protokol používaný pro ukládání binárních
+    dat uvnitř bitcoinových transakcí a jejich asociaci s konkrétními
+    obarvenými mincemi. Po souhrnu současného stavu popsal metodu
+    pro ukládání dat pomocí zpráv na [Nostru][nostr] a jejich asociaci
+    s obarvenými mincemi, které by mohly být posílány v bitcoinových
+    transakcích. To by mělo několik výhod:
 
-      - *Redukce nákladů:* žádné transakční poplatky za data přenášená
-        offchain.
+    - *Redukce nákladů:* žádné transakční poplatky za data přenášená
+      offchain.
 
-      - *Soukromí:* dva lidé mohou vyměnit obarvené mince, aniž by
-        kdokoliv jiný věděl o datech, na která poukazují.
+    - *Soukromí:* dva lidé mohou vyměnit obarvené mince, aniž by
+      kdokoliv jiný věděl o datech, na která poukazují.
 
-      - *Pro vytvoření není třeba transakce:* data mohou být asociována
-        s existujícími UTXO, není nutné vytvářet nová UTXO.
+    - *Pro vytvoření není třeba transakce:* data mohou být asociována
+      s existujícími UTXO, není nutné vytvářet nová UTXO.
 
-      - *Odolnost vůči cenzuře:* není-li asociace mezi daty a obarvenými
-        mincemi běžně známa, je posílání obarvených mincí natolik odolné
-        vůči cenzuře, jako je sám bitcoin.
+    - *Odolnost vůči cenzuře:* není-li asociace mezi daty a obarvenými
+      mincemi běžně známa, je posílání obarvených mincí natolik odolné
+      vůči cenzuře, jako je sám bitcoin.
 
-      Ve spojení s odolností vůči cenzuře Towns říká, že „obarvené
-      bitcoiny jsou v podstatě nevyhnutelné a něco, s čím se musíme
-      potýkat, spíš než něco, co se snažit potlačovat.” Porovnává
-      myšlenku, že obarvené mince mohou mít větší hodnotu než zaměnitelné
-      bitcoiny, s provozem bitcoinu a vyžadováním poplatků podle váhy
-      transakce oproti poplatkům podle přenášené hodnoty. V závěru
-      říká, že nevěří, že by toto muselo nutně vést ke špatným
-      incentivám.
+    Ve spojení s odolností vůči cenzuře Towns říká, že „obarvené
+    bitcoiny jsou v podstatě nevyhnutelné a něco, s čím se musíme
+    potýkat, spíš než něco, co se snažit potlačovat.” Porovnává
+    myšlenku, že obarvené mince mohou mít větší hodnotu než zaměnitelné
+    bitcoiny, s provozem bitcoinu a vyžadováním poplatků podle váhy
+    transakce oproti poplatkům podle přenášené hodnoty. V závěru
+    říká, že nevěří, že by toto muselo nutně vést ke špatným
+    incentivám.
 
-    - *Více prostoru pro `OP_RETURN` v běžných transakcích:*
-      Christopher Allen [se tázal][allen op_return], zda-li je lepší
-      umístit libovolná data ve witnessu transakce nebo v `OP_RETURN`
-      výstupu. Po krátké diskuzi se několik účastníků  ([1][todd or],
-      [2][o'connor or], [3][poelstra or]) vyjádřilo, že by souhlasili
-      s uvolněním výchozích pravidel pro přeposílání a těžbu, aby
-      umožnila více než 83 bytů v rámci `OP_RETURN` výstupů. Podle nich
-      by rozšíření `OP_RETURN` nepřineslo větší škody, neboť jsou
-      již používány i jiné metody ukládání dat.
+  - *Více prostoru pro `OP_RETURN` v běžných transakcích:*
+    Christopher Allen [se tázal][allen op_return], zda-li je lepší
+    umístit libovolná data ve witnessu transakce nebo v `OP_RETURN`
+    výstupu. Po krátké diskuzi se několik účastníků  ([1][todd or],
+    [2][o'connor or], [3][poelstra or]) vyjádřilo, že by souhlasili
+    s uvolněním výchozích pravidel pro přeposílání a těžbu, aby
+    umožnila více než 83 bytů v rámci `OP_RETURN` výstupů. Podle nich
+    by rozšíření `OP_RETURN` nepřineslo větší škody, neboť jsou
+    již používány i jiné metody ukládání dat.
 
 - **Ředění poplatků v protokolech s více účastníky:** Yuval Kogman
   [zaslal][kogman dilution] do emailové skupiny Bitcoin-Dev popis
@@ -76,21 +76,21 @@ na bitcoinovou technickou dokumentaci a diskuze.
   witness mnohem větší. To v důsledků sníží jednotkový poplatek za
   transakci. V emailové skupině bylo probráno několik důsledků:
 
-    - *Bob platí za Malloryho:* má-li Mallory vedlejší úmysly, například
-      chce-li poslat libovolná data, může na jejich poplatek použít
-      část Bobova poplatku. Příklad: Bob chce vytvořit transakci
-      o velikosti 1 000 vbytů s poplatkem 10 000 satoshi, tedy
-      10 sat/vbyte, s cílem rychlého potvrzení transakce. Mallory přidá
-      do transakce 9 000 vbytů dat, která Bob neočekával, což sníží
-      jednotkový poplatek na 1 sat/vbyte. I když Bob platí v obou
-      případech stejnou absolutní částku, nedostane, co chtěl (rychlou
-      konfirmaci), a Mallory mohl přidat data v hodnotě 9 000 sat, aniž
-      by ho to stálo cokoliv navíc.
+  - *Bob platí za Malloryho:* má-li Mallory vedlejší úmysly, například
+    chce-li poslat libovolná data, může na jejich poplatek použít
+    část Bobova poplatku. Příklad: Bob chce vytvořit transakci
+    o velikosti 1 000 vbytů s poplatkem 10 000 satoshi, tedy
+    10 sat/vbyte, s cílem rychlého potvrzení transakce. Mallory přidá
+    do transakce 9 000 vbytů dat, která Bob neočekával, což sníží
+    jednotkový poplatek na 1 sat/vbyte. I když Bob platí v obou
+    případech stejnou absolutní částku, nedostane, co chtěl (rychlou
+    konfirmaci), a Mallory mohl přidat data v hodnotě 9 000 sat, aniž
+    by ho to stálo cokoliv navíc.
 
-    - *Mallory zpomaluje konfirmaci:* transakce s nižším jednotkovým
-      poplatkem může být potvrzena pomaleji. V časově citlivých protokolech
-      to může pro Boba znamenat vážný problém. V jiných případech
-      by mohl Bob poplatek navýšit, což by ho stálo dodatečné prostředky.
+  - *Mallory zpomaluje konfirmaci:* transakce s nižším jednotkovým
+    poplatkem může být potvrzena pomaleji. V časově citlivých protokolech
+    to může pro Boba znamenat vážný problém. V jiných případech
+    by mohl Bob poplatek navýšit, což by ho stálo dodatečné prostředky.
 
   Kogman ve svém příspěvku popisuje několik opatření, avšak všechny vyžadují
   nějaký kompromis. Ve svém [druhém příspěvku][kogman dilution2] poznamenává,
@@ -104,24 +104,24 @@ na bitcoinovou technickou dokumentaci a diskuze.
   alternativy by vyžadovalo přidání dodatečného 32bytového hashe do
   witnessu utrácející transakce.
 
-    ```text
-      *
+  ```text
+    *
+   / \
+  A   *
      / \
-    A   *
-       / \
-      A   B
-    ```
+    A   B
+  ```
 
-   Znamená to, že i kdyby Mallory poskytl Bobovi platný witness pro svou
-   tapscriptovou transakci před tím, než by Bob poskytl svůj podpis, mohl by
-   Mallory stále odeslat alternativní verzi transakce s větším witnessem.
-   Bob by tomu mohl zabránit, kdyby od Malloryho obdržel kopii kompletního
-   stromu tapscriptů.
+  Znamená to, že i kdyby Mallory poskytl Bobovi platný witness pro svou
+  tapscriptovou transakci před tím, než by Bob poskytl svůj podpis, mohl by
+  Mallory stále odeslat alternativní verzi transakce s větším witnessem.
+  Bob by tomu mohl zabránit, kdyby od Malloryho obdržel kopii kompletního
+  stromu tapscriptů.
 
-   V kontextu budoucích soft forků bitcoinu otevřel Anthony Towns [pull
-   request][bitcoin inquisition #19] v repozitáři Bitcoin Inquisition
-   používaném pro testování [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
-   (APO). APO by tak měl k zamezení tohoto problému používat dodatečná data.
+  V kontextu budoucích soft forků bitcoinu otevřel Anthony Towns [pull
+  request][bitcoin inquisition #19] v repozitáři Bitcoin Inquisition
+  používaném pro testování [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]
+  (APO). APO by tak měl k zamezení tohoto problému používat dodatečná data.
 
 ## Změny ve službách a klientech
 

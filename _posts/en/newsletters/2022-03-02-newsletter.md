@@ -59,9 +59,9 @@ software.
   trustlessly construct an address allowing spending the funds in either
   of two different ways:
 
-    1. Using the taproot keypath spend, as described above.
-    2. Using a scriptpath spend for a [tapscript][topic tapscript] using
-       the `OP_EVICT` opcode
+  1. Using the taproot keypath spend, as described above.
+  2. Using a scriptpath spend for a [tapscript][topic tapscript] using
+     the `OP_EVICT` opcode
 
   <br>In the case of evicting Dan, the opcode would accept the following
   parameters:

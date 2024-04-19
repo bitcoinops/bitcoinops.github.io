@@ -97,7 +97,9 @@ Bitcoin Stack Exchange.
   Bob---but MalloryA can be anywhere along the forwarding path to Bob.
   For example:
 
-      MalloryA -> X -> Y -> Z -> Bob -> MalloryB
+  ```
+  MalloryA -> X -> Y -> Z -> Bob -> MalloryB
+  ```
 
   Replacement cycling has similar consequences for LN nodes to existing
   [transaction pinning attacks][topic transaction pinning].  However,
@@ -109,141 +111,141 @@ Bitcoin Stack Exchange.
   [described][riard cycle1] by Antoine Riard, several mitigations have
   been deployed by LN implementations.
 
-    - **Frequent rebroadcasting:** after a relay node's mempool has
-      Bob's spend replaced by Mallory's spend, and then has Mallory's
-      input removed by Mallory's second replacement,
-      that relay node will immediately be willing to accept
-      Bob's spend again.  All Bob needs to do is re-broadcast his spend,
-      which costs him nothing beyond the transaction fee he was already
-      willing to pay.
+  - **Frequent rebroadcasting:** after a relay node's mempool has
+    Bob's spend replaced by Mallory's spend, and then has Mallory's
+    input removed by Mallory's second replacement,
+    that relay node will immediately be willing to accept
+    Bob's spend again.  All Bob needs to do is re-broadcast his spend,
+    which costs him nothing beyond the transaction fee he was already
+    willing to pay.
 
-      Before the private disclosure of replacement cycling, LN
-      implementations only rebroadcast their transactions infrequently
-      (once per block or less).  There's normally a [privacy cost][topic
-      transaction origin privacy] to broadcasting and rebroadcasting
-      transactions---it might make it easier for third parties to
-      associate Bob's onchain LN activities with his IP
-      address---although few public LN forwarding nodes currently try to
-      hide this.  Now Core Lightning, Eclair, LDK, and LND will all
-      rebroadcast more frequently.
+    Before the private disclosure of replacement cycling, LN
+    implementations only rebroadcast their transactions infrequently
+    (once per block or less).  There's normally a [privacy cost][topic
+    transaction origin privacy] to broadcasting and rebroadcasting
+    transactions---it might make it easier for third parties to
+    associate Bob's onchain LN activities with his IP
+    address---although few public LN forwarding nodes currently try to
+    hide this.  Now Core Lightning, Eclair, LDK, and LND will all
+    rebroadcast more frequently.
 
-      After each time Bob rebroadcasts, Mallory can use the same
-      technique to replace his transaction again.  However, the BIP125
-      replacement rules will require Mallory to pay additional
-      transaction fees for each of her replacements,
-      meaning each rebroadcast by Bob lowers the profitability to
-      Mallory of a successful attack.
+    After each time Bob rebroadcasts, Mallory can use the same
+    technique to replace his transaction again.  However, the BIP125
+    replacement rules will require Mallory to pay additional
+    transaction fees for each of her replacements,
+    meaning each rebroadcast by Bob lowers the profitability to
+    Mallory of a successful attack.
 
-      This suggests a rough formula for the maximum amount of an HTLC
-      that a node should accept.  If the cost the attacker will need
-      to pay for each replacement cycle is _x_, the
-      number of blocks the defender has is _y_, and the number of
-      effective rebroadcasts the defender will make per average block is
-      _z_, an HTLC is probably reasonably secure up to a value a bit
-      below `x*y*z`.
+    This suggests a rough formula for the maximum amount of an HTLC
+    that a node should accept.  If the cost the attacker will need
+    to pay for each replacement cycle is _x_, the
+    number of blocks the defender has is _y_, and the number of
+    effective rebroadcasts the defender will make per average block is
+    _z_, an HTLC is probably reasonably secure up to a value a bit
+    below `x*y*z`.
 
-    - **Longer CLTV expiry deltas:** when Bob accepts an HTLC from
-      MalloryA, he agrees to allow her to claim an onchain refund after
-      a certain number of blocks (let's say 200 blocks).  When Bob
-      offers an equivalent HTLC to MalloryB, she allows him to claim a
-      refund after a smaller number of blocks (let's say, 100 blocks).
-      Those expiry conditions are written using the
-      `OP_CHECKLOCKTIMEVERIFY` (CLTV) opcode, so the delta between them
-      is called the _CLTV expiry delta_.
+  - **Longer CLTV expiry deltas:** when Bob accepts an HTLC from
+    MalloryA, he agrees to allow her to claim an onchain refund after
+    a certain number of blocks (let's say 200 blocks).  When Bob
+    offers an equivalent HTLC to MalloryB, she allows him to claim a
+    refund after a smaller number of blocks (let's say, 100 blocks).
+    Those expiry conditions are written using the
+    `OP_CHECKLOCKTIMEVERIFY` (CLTV) opcode, so the delta between them
+    is called the _CLTV expiry delta_.
 
-      The longer a CLTV expiry delta is, the longer the originating
-      spender of a payment will need to wait to recover their funds if
-      the payment fails, so spenders prefer to route payments through
-      channels with shorter deltas.  However, it's also the case that,
-      the longer a delta is, the more time a forwarding node like Bob
-      has to respond to problems like [transaction pinning][topic
-      transaction pinning] and mass channel closures.  These competing
-      interests have led to frequent tweaks of the default delta in LN
-      software (see Newsletters [#40][news40 delta], [#95][news95
-      delta], [#109][news109 delta], [#112][news112 delta],
-      [#142][news142 delta], [#248][news248 delta], and [#255][news255
-      delta]).
+    The longer a CLTV expiry delta is, the longer the originating
+    spender of a payment will need to wait to recover their funds if
+    the payment fails, so spenders prefer to route payments through
+    channels with shorter deltas.  However, it's also the case that,
+    the longer a delta is, the more time a forwarding node like Bob
+    has to respond to problems like [transaction pinning][topic
+    transaction pinning] and mass channel closures.  These competing
+    interests have led to frequent tweaks of the default delta in LN
+    software (see Newsletters [#40][news40 delta], [#95][news95
+    delta], [#109][news109 delta], [#112][news112 delta],
+    [#142][news142 delta], [#248][news248 delta], and [#255][news255
+    delta]).
 
-      In the case of replacement cycling, a longer CLTV delta gives
-      Bob more rounds of rebroadcasting, which raises the cost of the
-      attack according to the rough formula mentioned in the rebroadcast
-      mitigation description.
+    In the case of replacement cycling, a longer CLTV delta gives
+    Bob more rounds of rebroadcasting, which raises the cost of the
+    attack according to the rough formula mentioned in the rebroadcast
+    mitigation description.
 
-      Additionally, each time Bob's rebroadcast spend is in a miner's
-      mempool, there's a chance that the miner will include it in a
-      block template that gets mined, resulting in the attack failing.
-      Mallory's initial replacement with her preimage could also get
-      mined before she has a chance to replace it further, again
-      resulting in the attack failing.  If each cycle results in those
-      two transactions spending a certain amount of time in miner
-      mempools, than each rebroadcast by Bob multiplies that time.  The
-      CLTV expiry delta further multiplies that time.
+    Additionally, each time Bob's rebroadcast spend is in a miner's
+    mempool, there's a chance that the miner will include it in a
+    block template that gets mined, resulting in the attack failing.
+    Mallory's initial replacement with her preimage could also get
+    mined before she has a chance to replace it further, again
+    resulting in the attack failing.  If each cycle results in those
+    two transactions spending a certain amount of time in miner
+    mempools, than each rebroadcast by Bob multiplies that time.  The
+    CLTV expiry delta further multiplies that time.
 
-      For example, even if those transactions only
-      spend 1% of the time per block in the average miner's mempool, there's about
-      a 50% chance that the attack will fail with a CLTV expiry delta of
-      just 70 blocks.  Using the current default CLTV expiry delta
-      numbers for different LN implementations listed in Riard's email,
-      the following plot shows the probability that Mallory's attack
-      will fail (and she loses any money she spent on replacements) under
-      the assumption that the expected HTLC spends are in miner mempools
-      for either 0.1% of the time, 1% of the time, or 5% of the time.
-      For reference, given a 600-second average time between blocks,
-      those percentages correspond to just 0.6 seconds, 6 seconds, and
-      30 seconds out of every 10 minutes.
+    For example, even if those transactions only
+    spend 1% of the time per block in the average miner's mempool, there's about
+    a 50% chance that the attack will fail with a CLTV expiry delta of
+    just 70 blocks.  Using the current default CLTV expiry delta
+    numbers for different LN implementations listed in Riard's email,
+    the following plot shows the probability that Mallory's attack
+    will fail (and she loses any money she spent on replacements) under
+    the assumption that the expected HTLC spends are in miner mempools
+    for either 0.1% of the time, 1% of the time, or 5% of the time.
+    For reference, given a 600-second average time between blocks,
+    those percentages correspond to just 0.6 seconds, 6 seconds, and
+    30 seconds out of every 10 minutes.
 
-      ![Plot of probability attack will fail within x blocks](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
+    ![Plot of probability attack will fail within x blocks](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
 
-    - **Mempool scanning:** HTLCs were designed to incentivize Mallory
-      to get her preimage confirmed into the block chain before Bob can
-      claim his refund.  This is convenient for Bob: the block chain is
-      widely available and limited in size, so Bob can easily find any
-      preimage that affects him.  If this system worked as intended, Bob
-      could get all the information he needs to trustlessly operate on
-      LN from the block chain.
+  - **Mempool scanning:** HTLCs were designed to incentivize Mallory
+    to get her preimage confirmed into the block chain before Bob can
+    claim his refund.  This is convenient for Bob: the block chain is
+    widely available and limited in size, so Bob can easily find any
+    preimage that affects him.  If this system worked as intended, Bob
+    could get all the information he needs to trustlessly operate on
+    LN from the block chain.
 
-      Unfortunately, replacement cycling means Mallory may no longer be
-      incentivized to confirm her transaction before Bob's refund can be
-      claimed.  Yet, to initiate a replacement cycle, Mallory still
-      needs to briefly disclose her preimage to miner mempools in order
-      to replace Bob's spend.  If Bob runs a relaying full node,
-      Mallory's preimage transaction may propagate across the network to
-      Bob's node.  If Bob then detects the preimage before he's due to
-      give MalloryA a refund, the attack is defeated and Mallory loses
-      any money she spent on attempting it.
+    Unfortunately, replacement cycling means Mallory may no longer be
+    incentivized to confirm her transaction before Bob's refund can be
+    claimed.  Yet, to initiate a replacement cycle, Mallory still
+    needs to briefly disclose her preimage to miner mempools in order
+    to replace Bob's spend.  If Bob runs a relaying full node,
+    Mallory's preimage transaction may propagate across the network to
+    Bob's node.  If Bob then detects the preimage before he's due to
+    give MalloryA a refund, the attack is defeated and Mallory loses
+    any money she spent on attempting it.
 
-      Mempool scanning isn't perfect---there's no guarantee that
-      Mallory's replacement transaction will propagate to Bob.  However,
-      the more times Bob rebroadcasts his transaction (see _rebroadcast
-      mitigation_) and the more time Mallory needs to keep her preimage
-      hidden from Bob (see _CLTV expiry delta mitigation_), the more
-      likely it is that one of the preimage transactions will make it
-      into Bob's mempool in time for him to defeat the attack.
+    Mempool scanning isn't perfect---there's no guarantee that
+    Mallory's replacement transaction will propagate to Bob.  However,
+    the more times Bob rebroadcasts his transaction (see _rebroadcast
+    mitigation_) and the more time Mallory needs to keep her preimage
+    hidden from Bob (see _CLTV expiry delta mitigation_), the more
+    likely it is that one of the preimage transactions will make it
+    into Bob's mempool in time for him to defeat the attack.
 
-      Eclair and LND currently implement mempool scanning when used as
-      forwarding nodes.
+    Eclair and LND currently implement mempool scanning when used as
+    forwarding nodes.
 
-    - **Discussion of mitigation effectiveness:** Riard's initial
-      announcement said, "I believe replacement cycling attacks are
-      still practical for advanced attackers."  Matt Corallo
-      [wrote][corallo cycle1], "the deployed mitigations are not
-      expected to fix this issue; its arguable if they provide anything
-      more than a PR statement."  Olaoluwa Osuntokun [argued][osuntokun
-      cycle1], "[in my opinion], this is a rather fragile attack, which
-      requires: per-node setup, extremely precise timing and execution,
-      non-confirming superposition of all transactions, and instant
-      propagation across the entire network".
+  - **Discussion of mitigation effectiveness:** Riard's initial
+    announcement said, "I believe replacement cycling attacks are
+    still practical for advanced attackers."  Matt Corallo
+    [wrote][corallo cycle1], "the deployed mitigations are not
+    expected to fix this issue; its arguable if they provide anything
+    more than a PR statement."  Olaoluwa Osuntokun [argued][osuntokun
+    cycle1], "[in my opinion], this is a rather fragile attack, which
+    requires: per-node setup, extremely precise timing and execution,
+    non-confirming superposition of all transactions, and instant
+    propagation across the entire network".
 
-        We at Optech think it's important to restate that this attack
-        only affects forwarding nodes.  A forwarding node is a Bitcoin
-        hot wallet connected to an always-on internet service---a type
-        of deployment that is perpetually one vulnerability away from
-        having all of its funds stolen.  Anyone evaluating the effect of
-        replacement cycling on the risk profile of operating an LN
-        forwarding node should consider it in the context of the risk
-        that is already being tolerated.  Of course, it's worth
-        searching for other ways to reduce that risk, as discussed in
-        our next news item.
+    We at Optech think it's important to restate that this attack
+    only affects forwarding nodes.  A forwarding node is a Bitcoin
+    hot wallet connected to an always-on internet service---a type
+    of deployment that is perpetually one vulnerability away from
+    having all of its funds stolen.  Anyone evaluating the effect of
+    replacement cycling on the risk profile of operating an LN
+    forwarding node should consider it in the context of the risk
+    that is already being tolerated.  Of course, it's worth
+    searching for other ways to reduce that risk, as discussed in
+    our next news item.
 
 - **Proposed additional mitigations for replacement cycling:** as of
   this writing, there have been over 40 separate posts made to the
@@ -251,99 +253,99 @@ Bitcoin Stack Exchange.
   disclosure of the replacement cycling attack.  Suggested responses
   included the following:
 
-    - **Incrementing fees towards scorched earth:** Antoine Riard's
-      [paper][riard cycle paper] about the attack and mailing list posts
-      by [Ziggie][ziggie cycle] and [Matt Morehouse][morehouse cycle]
-      suggest that, instead of having the defender (e.g. Bob) just
-      rebroadcast his refund spend, he starts broadcasting conflicting
-      alternative spends that pay ever-increasing feerates as the
-      deadline approaches with the upstream attacker (e.g. MalloryA).
+  - **Incrementing fees towards scorched earth:** Antoine Riard's
+    [paper][riard cycle paper] about the attack and mailing list posts
+    by [Ziggie][ziggie cycle] and [Matt Morehouse][morehouse cycle]
+    suggest that, instead of having the defender (e.g. Bob) just
+    rebroadcast his refund spend, he starts broadcasting conflicting
+    alternative spends that pay ever-increasing feerates as the
+    deadline approaches with the upstream attacker (e.g. MalloryA).
 
-      The BIP125 rules require the downstream attacker (e.g. MalloryB)
-      pay even higher fees for each of her replacements of Bob's spend,
-      meaning Bob can further reduce the profitability of the attack if
-      Mallory is successful.  Consider our rough `x*y*z` formula
-      described in the _rebroadcasting mitigation_ section.  If the cost
-      of _x_ is increased for some of the rebroadcasts, the overall cost
-      to the attacker increases and the maximum safe value of an HTLC is
-      higher.
+    The BIP125 rules require the downstream attacker (e.g. MalloryB)
+    pay even higher fees for each of her replacements of Bob's spend,
+    meaning Bob can further reduce the profitability of the attack if
+    Mallory is successful.  Consider our rough `x*y*z` formula
+    described in the _rebroadcasting mitigation_ section.  If the cost
+    of _x_ is increased for some of the rebroadcasts, the overall cost
+    to the attacker increases and the maximum safe value of an HTLC is
+    higher.
 
-      Riard argues in his paper that the costs may not be symmetric,
-      particularly during periods where typical feerates are increasing
-      and the attacker may be able to get some of their transactions
-      evicted from miner mempools.  On the mailing list, he also
-      [argues][riard cycle2] that an attacker can spread his attack
-      across multiple victims using a form of [payment batching][topic
-      payment batching], slightly increasing its efficacy.
+    Riard argues in his paper that the costs may not be symmetric,
+    particularly during periods where typical feerates are increasing
+    and the attacker may be able to get some of their transactions
+    evicted from miner mempools.  On the mailing list, he also
+    [argues][riard cycle2] that an attacker can spread his attack
+    across multiple victims using a form of [payment batching][topic
+    payment batching], slightly increasing its efficacy.
 
-      Matt Corallo [notes][corallo cycle2] the major downside of this
-      approach compared to just rebroadcasting: even if Bob defeats the
-      attacker, Bob loses some of the HTLC value (or, potentially, all
-      of it).  Theoretically, an attacker won't challenge a defender who
-      they believe will follow a policy of mutually assured destruction,
-      so Bob would never actually need to pay higher and higher
-      feerates.  Whether that would be true in practice on the Bitcoin
-      network is unproven.
+    Matt Corallo [notes][corallo cycle2] the major downside of this
+    approach compared to just rebroadcasting: even if Bob defeats the
+    attacker, Bob loses some of the HTLC value (or, potentially, all
+    of it).  Theoretically, an attacker won't challenge a defender who
+    they believe will follow a policy of mutually assured destruction,
+    so Bob would never actually need to pay higher and higher
+    feerates.  Whether that would be true in practice on the Bitcoin
+    network is unproven.
 
-    - **Automatic retrying of past transactions:** Corallo
-      [suggested][corallo cycle1] that, "the only fix for this issue
-      will be when miners keep a history of transactions they've seen
-      and try them again after [...] an attack like this."  Bastien
-      Teinturier [replied][teinturier cycle], "I agree with Matt though
-      that more fundamental work most likely needs to happen at the
-      bitcoin layer to allow L2 protocols to be more robust against that
-      class of attacks."  Riard also [said][riard cycle3] something
-      similar, "a sustainable fix can [only] happen at the base-layer,
-      e.g adding a memory-intensive history of all seen transactions".
+  - **Automatic retrying of past transactions:** Corallo
+    [suggested][corallo cycle1] that, "the only fix for this issue
+    will be when miners keep a history of transactions they've seen
+    and try them again after [...] an attack like this."  Bastien
+    Teinturier [replied][teinturier cycle], "I agree with Matt though
+    that more fundamental work most likely needs to happen at the
+    bitcoin layer to allow L2 protocols to be more robust against that
+    class of attacks."  Riard also [said][riard cycle3] something
+    similar, "a sustainable fix can [only] happen at the base-layer,
+    e.g adding a memory-intensive history of all seen transactions".
 
-    - **Presigned fee bumps:** Peter Todd [argued][todd cycle1] that,
-      "the correct way to do pre-signed transactions is to pre-sign
-      enough *different* transactions to cover all reasonable needs for
-      bumping fees. [...] There is zero reason why the B->C transactions
-      should be getting stuck."  (Emphasis in the original.)
+  - **Presigned fee bumps:** Peter Todd [argued][todd cycle1] that,
+    "the correct way to do pre-signed transactions is to pre-sign
+    enough *different* transactions to cover all reasonable needs for
+    bumping fees. [...] There is zero reason why the B->C transactions
+    should be getting stuck."  (Emphasis in the original.)
 
-        That could work something like this: for the HTLC between Bob
-        and MalloryB, Bob gives MalloryB ten different signatures for
-        the same preimage spend at different feerates.  Note that this
-        doesn't require that MalloryB disclose the preimage to Bob at
-        signing time.  At the same time, MalloryB gives Bob ten
-        different signatures for the same refund spend at different
-        feerates.  This can be done before the refund can be broadcast.
-        The feerates used might be (in sats/vbyte): 1, 2, 4, 8, 16, 32,
-        64, 128, 256, 512, 1024, which should cover anything for the
-        foreseeable future.
+    That could work something like this: for the HTLC between Bob
+    and MalloryB, Bob gives MalloryB ten different signatures for
+    the same preimage spend at different feerates.  Note that this
+    doesn't require that MalloryB disclose the preimage to Bob at
+    signing time.  At the same time, MalloryB gives Bob ten
+    different signatures for the same refund spend at different
+    feerates.  This can be done before the refund can be broadcast.
+    The feerates used might be (in sats/vbyte): 1, 2, 4, 8, 16, 32,
+    64, 128, 256, 512, 1024, which should cover anything for the
+    foreseeable future.
 
-        If MalloryB's preimage spend was presigned, the only replacement
-        she could make would be to go from one feerate to a higher
-        feerate.  She couldn't add new inputs to the preimage spend, and
-        without that capability, she would be unable to initiate the
-        replacement cycle.
+    If MalloryB's preimage spend was presigned, the only replacement
+    she could make would be to go from one feerate to a higher
+    feerate.  She couldn't add new inputs to the preimage spend, and
+    without that capability, she would be unable to initiate the
+    replacement cycle.
 
-    - **OP_EXPIRE:** in a separate thread, but quoting from the
-      replacement cycles thread, Peter Todd [proposed][todd expire1]
-      several consensus changes to enable an `OP_EXPIRE` opcode that would
-      make a transaction invalid for inclusion after a specified block
-      height if the transaction's script executes `OP_EXPIRE`.  This can
-      be used to make Mallory's preimage condition of an HTLC only
-      usable before Bob's refund condition becomes spendable.  This
-      prevents Mallory from being able to replace Bob's refund spend,
-      making it impossible for Mallory to execute a replacement cycle
-      attack.  `OP_EXPIRE` may also address some [transaction pinning
-      attacks][topic transaction pinning] against HTLCs.
+  - **OP_EXPIRE:** in a separate thread, but quoting from the
+    replacement cycles thread, Peter Todd [proposed][todd expire1]
+    several consensus changes to enable an `OP_EXPIRE` opcode that would
+    make a transaction invalid for inclusion after a specified block
+    height if the transaction's script executes `OP_EXPIRE`.  This can
+    be used to make Mallory's preimage condition of an HTLC only
+    usable before Bob's refund condition becomes spendable.  This
+    prevents Mallory from being able to replace Bob's refund spend,
+    making it impossible for Mallory to execute a replacement cycle
+    attack.  `OP_EXPIRE` may also address some [transaction pinning
+    attacks][topic transaction pinning] against HTLCs.
 
-        The main downside of `OP_EXPIRE` is that it requires changes to
-        consensus to enable and changes to relay and mempool policy to
-        avoid certain problems, such as it being used to waste node
-        bandwidth.
+    The main downside of `OP_EXPIRE` is that it requires changes to
+    consensus to enable and changes to relay and mempool policy to
+    avoid certain problems, such as it being used to waste node
+    bandwidth.
 
-        A [reply][harding expire] to the proposal suggested a weaker way
-        to accomplish some of the same goals as `OP_EXPIRE` but without
-        any consensus or relay policy changes required.  However, Peter
-        Todd [argued][todd expire2] that it doesn't prevent the
-        replacement cycling attack.
+    A [reply][harding expire] to the proposal suggested a weaker way
+    to accomplish some of the same goals as `OP_EXPIRE` but without
+    any consensus or relay policy changes required.  However, Peter
+    Todd [argued][todd expire2] that it doesn't prevent the
+    replacement cycling attack.
 
-    Optech expects continued discussion about the subject and will
-    summarize any notable developments in future newsletters.
+  Optech expects continued discussion about the subject and will
+  summarize any notable developments in future newsletters.
 
 - **Bitcoin UTXO set summary hash replacement:** Fabian Jahr
   [posted][jahr hash_serialized_2] to the Bitcoin-Dev mailing list to
@@ -378,30 +380,30 @@ Bitcoin Stack Exchange.
   the implementation of [covenants][topic covenants].  Some of his
   findings that we thought were significant included:
 
-    - *Simple:* with three new opcodes, plus any one of several covenant
-      opcodes previous proposed (like [OP_TX][news187 op_tx]), a single
-      output script and its [taproot][topic taproot] commitment can be
-      fully introspected.  Each of the new opcodes is simple to
-      understand and appear simple to implement.
+  - *Simple:* with three new opcodes, plus any one of several covenant
+    opcodes previous proposed (like [OP_TX][news187 op_tx]), a single
+    output script and its [taproot][topic taproot] commitment can be
+    fully introspected.  Each of the new opcodes is simple to
+    understand and appear simple to implement.
 
-    - *Fairly concise:* Russell's example uses about 30 vbytes to
-      perform a reasonable introspection (the size of the script to be
-      enforced would be in addition to those vbytes).
+  - *Fairly concise:* Russell's example uses about 30 vbytes to
+    perform a reasonable introspection (the size of the script to be
+    enforced would be in addition to those vbytes).
 
-    - *OP_SUCCESS changes would be beneficial:* the [BIP342][]
-      specification of [tapscript][topic tapscript] specifies several
-      `OP_SUCCESSx` opcodes that make any script including them always
-      succeed, allowing future soft forks to attach conditions to the
-      opcodes (making them behave like regular opcodes).  However, that
-      behavior makes it unsafe to use introspection with a covenant that
-      allows including parts of an arbitrary script.  For example, Alice
-      might want to create a covenant that allows her to spend her funds
-      to an arbitrary address if she first spends her funds in a
-      [vault][topic vaults] notification transaction and waits for some
-      number of blocks to allow a freeze transaction to block the spend.
-      However, if the arbitrary address includes an `OP_SUCCESSx`
-      opcode, anyone will be able to steal her money.  Russell suggests
-      two possible solutions to this problem is his research.
+  - *OP_SUCCESS changes would be beneficial:* the [BIP342][]
+    specification of [tapscript][topic tapscript] specifies several
+    `OP_SUCCESSx` opcodes that make any script including them always
+    succeed, allowing future soft forks to attach conditions to the
+    opcodes (making them behave like regular opcodes).  However, that
+    behavior makes it unsafe to use introspection with a covenant that
+    allows including parts of an arbitrary script.  For example, Alice
+    might want to create a covenant that allows her to spend her funds
+    to an arbitrary address if she first spends her funds in a
+    [vault][topic vaults] notification transaction and waits for some
+    number of blocks to allow a freeze transaction to block the spend.
+    However, if the arbitrary address includes an `OP_SUCCESSx`
+    opcode, anyone will be able to steal her money.  Russell suggests
+    two possible solutions to this problem is his research.
 
   The research received some discussion and Russell indicated that he is
   working on a follow-up post related to introspection of output
@@ -415,10 +417,10 @@ Bitcoin Stack Exchange.
   itself would add to Script.  His proposed reference implementation is
   only 13 lines of code (excluding whitespace).
 
-    The proposal received a moderate amount of discussion, most of it
-    focused on limits in tapscript that might affect the usefulness and
-    worst-case costs of enabling `OP_CAT` (and whether any of those
-    limits should be changed). {% assign timestamp="45:38" %}
+  The proposal received a moderate amount of discussion, most of it
+  focused on limits in tapscript that might affect the usefulness and
+  worst-case costs of enabling `OP_CAT` (and whether any of those
+  limits should be changed). {% assign timestamp="45:38" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

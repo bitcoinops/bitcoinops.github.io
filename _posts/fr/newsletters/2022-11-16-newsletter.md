@@ -32,9 +32,9 @@ sur les projets d'infrastructure Bitcoin populaires.
   le jeu est joué dans une autre construction hors chaîne, comme un canal de
   paiement).
 
-    Ingala explique comment le travail pourrait aider à la conception des
-    [joinpools][topic joinpools], optimistic rollups (voir la [Newsletter #222][news222
-    rollup]), et d'autres constructions avec état.
+  Ingala explique comment le travail pourrait aider à la conception des
+  [joinpools][topic joinpools], optimistic rollups (voir la [Newsletter #222][news222
+  rollup]), et d'autres constructions avec état.
 
 - **Document sur les attaques par brouillage de canaux :** Clara Shikhelman et Sergei
   Tikhomirov [ont posté][st unjam post] sur la liste de diffusion du Lightning-Dev
@@ -44,44 +44,44 @@ sur les projets d'infrastructure Bitcoin populaires.
   nombre de canaux inutilisables pendant de longues périodes à un coût négligeable
   pour un attaquant.
 
-    Les auteurs divisent les attaques par brouillage en deux types. Le premier est
-    le "brouillage lent", qui consiste à rendre indisponibles pendant de longues
-    périodes les canaux limités ou les fonds destinés à l'acheminement des paiements,
-    ce qui se produit rarement lors de paiements légitimes. Le second type est le
-    *brouillage rapide*, où les créneaux et les fonds ne sont bloqués que brièvement
-    ---ce qui arrive souvent avec les paiements normaux, ce qui rend le brouillage
-    rapide potentiellement plus difficile à atténuer.
+  Les auteurs divisent les attaques par brouillage en deux types. Le premier est
+  le "brouillage lent", qui consiste à rendre indisponibles pendant de longues
+  périodes les canaux limités ou les fonds destinés à l'acheminement des paiements,
+  ce qui se produit rarement lors de paiements légitimes. Le second type est le
+  *brouillage rapide*, où les créneaux et les fonds ne sont bloqués que brièvement
+  ---ce qui arrive souvent avec les paiements normaux, ce qui rend le brouillage
+  rapide potentiellement plus difficile à atténuer.
 
-    Ils suggèrent deux solutions:
+  Ils suggèrent deux solutions:
 
-    - *Frais inconditionnels* (identiques aux *frais initiaux* décrits dans les
-      bulletins d'information précédents), où un certain montant de frais est payé
-      aux nœuds de transmission même si un paiement n'atteint pas le destinataire.
-      Les auteurs proposent à la fois une commission initiale *base* indépendante
-      du montant du paiement et une commission *proportionnelle* qui augmente avec
-      le montant du paiement. Ces deux frais distincts concernent respectivement
-      le brouillage des créneaux HTLC et le brouillage des liquidités. Les frais
-      peuvent être très faibles car ils sont uniquement destinés à empêcher le
-      brouillage rapide, qui nécessite de fréquents renvois de faux paiements qui
-      devraient chacun payer des frais initiaux supplémentaires, ce qui augmente
-      le coût pour l'attaquant.
+  - *Frais inconditionnels* (identiques aux *frais initiaux* décrits dans les
+    bulletins d'information précédents), où un certain montant de frais est payé
+    aux nœuds de transmission même si un paiement n'atteint pas le destinataire.
+    Les auteurs proposent à la fois une commission initiale *base* indépendante
+    du montant du paiement et une commission *proportionnelle* qui augmente avec
+    le montant du paiement. Ces deux frais distincts concernent respectivement
+    le brouillage des créneaux HTLC et le brouillage des liquidités. Les frais
+    peuvent être très faibles car ils sont uniquement destinés à empêcher le
+    brouillage rapide, qui nécessite de fréquents renvois de faux paiements qui
+    devraient chacun payer des frais initiaux supplémentaires, ce qui augmente
+    le coût pour l'attaquant.
 
-    - *Réputation locale avec transmission,* où chaque nœud conserverait des
-      statistiques sur chacun de ses pairs concernant le temps pendant lequel
-      les paiements transférés restent en attente et les frais de transfert perçus.
-      Si le temps par frais d'un pair est élevé, il considère ce pair comme à haut
-      risque et ne lui permet d'utiliser qu'un nombre limité de créneaux et de
-      fonds du nœud local. Dans le cas contraire, il considère que ce pair présente
-      un risque faible.
+  - *Réputation locale avec transmission,* où chaque nœud conserverait des
+    statistiques sur chacun de ses pairs concernant le temps pendant lequel
+    les paiements transférés restent en attente et les frais de transfert perçus.
+    Si le temps par frais d'un pair est élevé, il considère ce pair comme à haut
+    risque et ne lui permet d'utiliser qu'un nombre limité de créneaux et de
+    fonds du nœud local. Dans le cas contraire, il considère que ce pair présente
+    un risque faible.
 
-        Lorsqu'un nœud reçoit un paiement transféré d'un pair qu'il considère à faible
-        risque, il vérifie si ce pair a marqué le paiement comme étant également à
-        faible risque. Si le noeud de transfert en amont et le paiement sont tous deux
-        à faible risque, il autorise le paiement à utiliser tout créneau et fonds
-        disponibles.
+    Lorsqu'un nœud reçoit un paiement transféré d'un pair qu'il considère à faible
+    risque, il vérifie si ce pair a marqué le paiement comme étant également à
+    faible risque. Si le noeud de transfert en amont et le paiement sont tous deux
+    à faible risque, il autorise le paiement à utiliser tout créneau et fonds
+    disponibles.
 
-    Le document a fait l'objet de quelques discussions sur la liste de diffusion,
-    la méthode de réputation locale proposée ayant été particulièrement appréciée.
+  Le document a fait l'objet de quelques discussions sur la liste de diffusion,
+  la méthode de réputation locale proposée ayant été particulièrement appréciée.
 
 ## Changements dans les services et les logiciels clients
 

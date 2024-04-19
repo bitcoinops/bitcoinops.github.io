@@ -24,26 +24,26 @@ None this week.
   the [Lightning-Dev mailing list][] saw a surge of new proposals and
   discussion about earlier proposals.  Below are some highlights:
 
-    - **Advertising node liquidity:** Lisa Neigut [proposes][neigut
-      liquidity] allowing LN nodes advertise that they're willing to
-      provide incoming capacity in exchange for a certain level of fees.
-      Merchants need their payment channels to have incoming capacity in
-      order to be able receive secure offchain payments from
-      customers---the current alternatives are either requiring some of
-      their customers to wait for several onchain confirmations to open
-      a new channel or making manual channel liquidity arrangements with
-      other merchants.  Although solving this problem would be highly
-      advantageous for merchant adoption of LN, it does pose some
-      technical challenges that discussion participants attempt to solve
-      both in this thread and in a [related thread][zmn liquidity].
+  - **Advertising node liquidity:** Lisa Neigut [proposes][neigut
+    liquidity] allowing LN nodes advertise that they're willing to
+    provide incoming capacity in exchange for a certain level of fees.
+    Merchants need their payment channels to have incoming capacity in
+    order to be able receive secure offchain payments from
+    customers---the current alternatives are either requiring some of
+    their customers to wait for several onchain confirmations to open
+    a new channel or making manual channel liquidity arrangements with
+    other merchants.  Although solving this problem would be highly
+    advantageous for merchant adoption of LN, it does pose some
+    technical challenges that discussion participants attempt to solve
+    both in this thread and in a [related thread][zmn liquidity].
 
-    - **Making path probing more convenient:** Anthony Towns
-      [proposes][probe cancel] a method for allowing all the nodes along
-      a path to forget about a small-value payment if one of the nodes
-      on the path is offline.  This reduces the resources required in
-      the case of a routing failure by a node that proactively probes
-      its available payment paths to determine which are the fastest and
-      most reliable for sending payments.
+  - **Making path probing more convenient:** Anthony Towns
+    [proposes][probe cancel] a method for allowing all the nodes along
+    a path to forget about a small-value payment if one of the nodes
+    on the path is offline.  This reduces the resources required in
+    the case of a routing failure by a node that proactively probes
+    its available payment paths to determine which are the fastest and
+    most reliable for sending payments.
 
 - **Opportunity available for providing utility functions outside of Bitcoin Core:**
   Bitcoin Core's RPC interface currently provides over
@@ -56,14 +56,14 @@ None this week.
   workflows.  This will help keep the project focused on its main
   objectives.
 
-    This does provide a nice opportunity for an independent developer or
-    other third-party to create a separate project for a library, local
-    program, or RPC interface that provides a stable interface to
-    utility functions that work well in conjunction with Bitcoin Core,
-    and which perhaps even provides some of the utility functions that
-    Bitcoin Core already supports for users not running a node.  Some
-    ideas for how to implement such a tool were discussed both during
-    and [after][core dev log] the meeting.
+  This does provide a nice opportunity for an independent developer or
+  other third-party to create a separate project for a library, local
+  program, or RPC interface that provides a stable interface to
+  utility functions that work well in conjunction with Bitcoin Core,
+  and which perhaps even provides some of the utility functions that
+  Bitcoin Core already supports for users not running a node.  Some
+  ideas for how to implement such a tool were discussed both during
+  and [after][core dev log] the meeting.
 
 ## Lightning Application Residency Videos
 

@@ -38,17 +38,17 @@ None this week.
   it supported by payment processors such as BTCPay.
   The suggestions are pretty simple:
 
-    - Version the protocol so spending clients and receiving servers can
-      negotiate what protocol features they support
-    - Rename the protocol to *payjoin,* as many people aren't quite sure
-      what to call it right now
-    - Use [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) for
-      communicating transaction and signature data between clients and
-      servers
-    - Specify that transactions should use a short list of best-practice
-      transaction features and avoid odd-looking coin selection so that
-      payjoin transactions blend in with normal transactions and create
-      maximum confusion for block chain analysts
+  - Version the protocol so spending clients and receiving servers can
+    negotiate what protocol features they support
+  - Rename the protocol to *payjoin,* as many people aren't quite sure
+    what to call it right now
+  - Use [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) for
+    communicating transaction and signature data between clients and
+    servers
+  - Specify that transactions should use a short list of best-practice
+    transaction features and avoid odd-looking coin selection so that
+    payjoin transactions blend in with normal transactions and create
+    maximum confusion for block chain analysts
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

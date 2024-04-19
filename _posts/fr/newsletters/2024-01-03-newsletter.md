@@ -24,13 +24,13 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   utilisant une version antérieure de LND devrait envisager de mettre à jour immédiatement en raison de ces vulnérabilités et d'autres
   vulnérabilités connues affectant les anciennes versions. En bref, les deux vulnérabilités divulguées étaient les suivantes :
 
-    - Une vulnérabilité de déni de service (DoS) qui aurait pu entraîner l'épuisement de la mémoire de LND et sa fermeture. Si LND ne
-      fonctionne pas, il ne peut pas diffuser de transactions sensibles au temps, ce qui peut entraîner une perte de fonds.
+  - Une vulnérabilité de déni de service (DoS) qui aurait pu entraîner l'épuisement de la mémoire de LND et sa fermeture. Si LND ne
+    fonctionne pas, il ne peut pas diffuser de transactions sensibles au temps, ce qui peut entraîner une perte de fonds.
 
-    - Une vulnérabilité de censure qui aurait pu permettre à un attaquant d'empêcher un nœud LND de prendre connaissance des mises à
-      jour des canaux ciblés à travers le réseau. Un attaquant aurait pu l'utiliser pour orienter un nœud vers certaines routes pour
-      les paiements qu'il envoie, lui donnant ainsi plus de frais de transfert et plus d'informations sur les paiements envoyés par
-      le nœud.
+  - Une vulnérabilité de censure qui aurait pu permettre à un attaquant d'empêcher un nœud LND de prendre connaissance des mises à
+    jour des canaux ciblés à travers le réseau. Un attaquant aurait pu l'utiliser pour orienter un nœud vers certaines routes pour
+    les paiements qu'il envoie, lui donnant ainsi plus de frais de transfert et plus d'informations sur les paiements envoyés par
+    le nœud.
 
   Gögge a d'abord divulgué ces deux vulnérabilités aux développeurs de LND il y a plus de deux ans et des versions de LND contenant des
   correctifs sont disponibles depuis plus de 18 mois. Optech n'a connaissance d'aucun utilisateur ayant été affecté
@@ -51,30 +51,30 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   Bob lors de la négociation de leur contrat. Cela garantirait que Bob ait une chance de confirmer sa transaction à un taux de frais
   acceptable.
 
-   Law note que cela répond à l'une des préoccupations de longue date mentionnées dans le [document original sur le réseau Lightning][]
-   concernant les "inondations d'expiration forcée" où trop de canaux se ferment simultanément, ce qui peut entraîner un espace de bloc
-   insuffisant pour tous les confirmer avant l'expiration de leurs verrous temporels, ce qui pourrait entraîner des pertes d'argent pour
-   certains utilisateurs. Avec la mise en place de verrous temporels dépendant des frais, les utilisateurs des canaux fermés enchériront
-   simplement sur les taux de frais jusqu'à ce qu'ils dépassent le verrou dépendant des frais, après quoi l'expiration des verrous
-   temporels sera retardée jusqu'à ce que les frais soient suffisamment bas pour que toutes les transactions payant ce taux de frais
-   soient confirmées. Les canaux LN n'impliquent actuellement que deux utilisateurs chacun, mais des propositions telles que les
-   [usines de canaux][topic channel factories] et les [joinpools][topic joinpools] où plus de deux utilisateurs partagent un UTXO sont
-   encore plus vulnérables aux inondations d'expiration forcée, donc cette solution renforce considérablement leur sécurité. Law note
-   également que, dans au moins certaines de ces constructions, la partie qui détient la condition de remboursement (par exemple, Alice
-   dans notre exemple précédent) est la plus désavantagée par l'augmentation des frais, étant donné que son capital est bloqué dans le
-   contrat jusqu'à ce que les frais diminuent. Les verrous dépendant des frais donnent à cette partie un incitatif supplémentaire à
-   agir de manière à maintenir les taux de frais bas, par exemple en ne fermant pas de nombreux canaux dans un court laps de temps.
+  Law note que cela répond à l'une des préoccupations de longue date mentionnées dans le [document original sur le réseau Lightning][]
+  concernant les "inondations d'expiration forcée" où trop de canaux se ferment simultanément, ce qui peut entraîner un espace de bloc
+  insuffisant pour tous les confirmer avant l'expiration de leurs verrous temporels, ce qui pourrait entraîner des pertes d'argent pour
+  certains utilisateurs. Avec la mise en place de verrous temporels dépendant des frais, les utilisateurs des canaux fermés enchériront
+  simplement sur les taux de frais jusqu'à ce qu'ils dépassent le verrou dépendant des frais, après quoi l'expiration des verrous
+  temporels sera retardée jusqu'à ce que les frais soient suffisamment bas pour que toutes les transactions payant ce taux de frais
+  soient confirmées. Les canaux LN n'impliquent actuellement que deux utilisateurs chacun, mais des propositions telles que les
+  [usines de canaux][topic channel factories] et les [joinpools][topic joinpools] où plus de deux utilisateurs partagent un UTXO sont
+  encore plus vulnérables aux inondations d'expiration forcée, donc cette solution renforce considérablement leur sécurité. Law note
+  également que, dans au moins certaines de ces constructions, la partie qui détient la condition de remboursement (par exemple, Alice
+  dans notre exemple précédent) est la plus désavantagée par l'augmentation des frais, étant donné que son capital est bloqué dans le
+  contrat jusqu'à ce que les frais diminuent. Les verrous dépendant des frais donnent à cette partie un incitatif supplémentaire à
+  agir de manière à maintenir les taux de frais bas, par exemple en ne fermant pas de nombreux canaux dans un court laps de temps.
 
-   Les détails de mise en œuvre des verrous temporels dépendant des frais sont choisis pour les rendre faciles à utiliser en option
-   pour les participants au contrat et pour minimiser la quantité d'informations supplémentaires que les nœuds complets doivent stocker
-   pour les valider.
+  Les détails de mise en œuvre des verrous temporels dépendant des frais sont choisis pour les rendre faciles à utiliser en option
+  pour les participants au contrat et pour minimiser la quantité d'informations supplémentaires que les nœuds complets doivent stocker
+  pour les valider.
 
-   La proposition a suscité un débat modéré, les répondants suggérant de [stocker][riard fdt] les paramètres des verrous temporels
-   dépendant des frais dans l'annexe [taproot][topic taproot], de faire en sorte que les blocs [s'engagent][boris fdt] à leur taux
-   de frais médian pour prendre en charge les clients légers, et des [détails][harding pruned] sur la manière dont les nœuds prunés
-   mis à niveau pourraient prendre en charge le soft-fork. Il y a également eu un débat entre Law et [d'autres][evo fdt] sur l'effet
-   des mineurs acceptant des frais payés en dehors du mécanisme normal de
-   frais de transaction (par exemple, en payant directement un mineur particulier).
+  La proposition a suscité un débat modéré, les répondants suggérant de [stocker][riard fdt] les paramètres des verrous temporels
+  dépendant des frais dans l'annexe [taproot][topic taproot], de faire en sorte que les blocs [s'engagent][boris fdt] à leur taux
+  de frais médian pour prendre en charge les clients légers, et des [détails][harding pruned] sur la manière dont les nœuds prunés
+  mis à niveau pourraient prendre en charge le soft-fork. Il y a également eu un débat entre Law et [d'autres][evo fdt] sur l'effet
+  des mineurs acceptant des frais payés en dehors du mécanisme normal de
+  frais de transaction (par exemple, en payant directement un mineur particulier).
 
 - **Estimation des frais de cluster :** Abubakar Sadiq Ismail a [publié][ismail cluster] sur Delving Bitcoin à propos de l'utilisation
   de certains outils et d'informations issus de la conception du [cluster mempool][topic cluster mempool] pour améliorer l'estimation
@@ -83,24 +83,24 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   est utilisé pour prédire le temps qu'il faudra pour que les transactions avec des taux de frais similaires soient
   confirmées.
 
-   Dans cette approche, certaines transactions ne sont pas comptabilisées par Bitcoin Core, tandis que d'autres sont
-   potentiellement mal comptées. Cela est dû à [CPFP][topic cpfp], où les transactions enfants (et autres descendants) incitent les
-   mineurs à confirmer leurs parents (et autres ascendants). Les transactions enfants peuvent avoir un taux de frais élevé par
-   elles-mêmes,
-   mais lorsque leurs frais et ceux de leurs ancêtres sont considérés ensemble, le taux de frais peut être significativement plus bas,
-   ce qui les amène à prendre plus de temps que prévu pour être confirmées. Pour éviter que cela ne provoque une surestimation des frais,
-   Bitcoin Core ne met pas à jour ses estimations en utilisant une transaction qui entre dans le mempool lorsque
-   son parent n'est pas confirmé. De même, une transaction parent peut avoir un taux de frais faible par elle-même, mais lorsque les
-   frais de ses descendants sont également pris en compte, le taux de frais peut être significativement plus élevé, ce qui les amène à
-   être confirmées plus rapidement que prévu. Les estimations de frais de Bitcoin Core ne compensent pas cette situation.
+  Dans cette approche, certaines transactions ne sont pas comptabilisées par Bitcoin Core, tandis que d'autres sont
+  potentiellement mal comptées. Cela est dû à [CPFP][topic cpfp], où les transactions enfants (et autres descendants) incitent les
+  mineurs à confirmer leurs parents (et autres ascendants). Les transactions enfants peuvent avoir un taux de frais élevé par
+  elles-mêmes,
+  mais lorsque leurs frais et ceux de leurs ancêtres sont considérés ensemble, le taux de frais peut être significativement plus bas,
+  ce qui les amène à prendre plus de temps que prévu pour être confirmées. Pour éviter que cela ne provoque une surestimation des frais,
+  Bitcoin Core ne met pas à jour ses estimations en utilisant une transaction qui entre dans le mempool lorsque
+  son parent n'est pas confirmé. De même, une transaction parent peut avoir un taux de frais faible par elle-même, mais lorsque les
+  frais de ses descendants sont également pris en compte, le taux de frais peut être significativement plus élevé, ce qui les amène à
+  être confirmées plus rapidement que prévu. Les estimations de frais de Bitcoin Core ne compensent pas cette situation.
 
-   Le cluster de mempool regroupera les transactions connexes et les divisera en fragments qui seront rentables à miner ensemble. Ismail
-   suggère de suivre les taux de frais des fragments plutôt que des transactions individuelles (bien qu'un fragment puisse être une seule
-   transaction) et ensuite d'essayer de trouver ces mêmes fragments dans les blocs. Si un fragment est confirmé, alors les estimations de
-   frais sont mises à jour en utilisant son taux de frais de fragment plutôt que les taux de frais des transactions individuelles.
+  Le cluster de mempool regroupera les transactions connexes et les divisera en fragments qui seront rentables à miner ensemble. Ismail
+  suggère de suivre les taux de frais des fragments plutôt que des transactions individuelles (bien qu'un fragment puisse être une seule
+  transaction) et ensuite d'essayer de trouver ces mêmes fragments dans les blocs. Si un fragment est confirmé, alors les estimations de
+  frais sont mises à jour en utilisant son taux de frais de fragment plutôt que les taux de frais des transactions individuelles.
 
-   La proposition a été bien accueillie, avec les développeurs discutant des détails qu'un algorithme mis à jour devrait prendre en
-   compte.
+  La proposition a été bien accueillie, avec les développeurs discutant des détails qu'un algorithme mis à jour devrait prendre en
+  compte.
 
 - **Comment spécifier des clés non dépensables dans les descripteurs :** Salvatore Ingala a lancé une [discussion][ingala undesc] sur
   Delving Bitcoin sur la façon de permettre aux [descripteurs][topic descriptors], en particulier ceux pour [taproot][topic taproot],
@@ -108,18 +108,18 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   pour cela est l'envoi d'argent à une sortie taproot qui ne peut être dépensée que via une dépense de scriptpath. Pour ce faire, la clé
   qui permet les dépenses de keypath doit être définie sur une clé non dépensable.
 
-   Ingala a relevé plusieurs problèmes à résoudre liés à l'utilisation de clés non dépensables dans les descripteurs et plusieurs
-   solutions proposées
-   avec différents compromis. Pieter Wuille en personne a résumé plusieurs discussions récentes sur les descripteurs, y compris une
-   [idée particulière][wuille undesc2] concernant les clés non dépensables. Josie Baker a demandé des détails sur la raison pour laquelle
-   la clé non dépensable ne peut pas être une valeur constante (comme le point nothing-up-my-sleeve (NUMS) dans BIP341), ce qui
-   permettrait à tout le monde de savoir immédiatement qu'une clé non dépensable a été utilisée---un avantage possible pour certains
-   protocoles, tels que les [paiements silencieux][topic silent payments]. Ingala a répondu à Baker que "c'est une forme de marquage.
-   Vous pouvez toujours révéler cette information vous-même si vous le souhaitez ou en avez besoin, mais c'est mieux que les normes ne
-   vous
-   obligent pas à le faire." Wuille a ensuite répondu avec un algorithme pour générer la preuve. Dans le dernier message du fil au
-   moment de l'écriture, Ingala a noté que certaines tâches de spécification des politiques liées aux clés non dépensables peuvent être
-   réparties entre les descripteurs et les politiques de portefeuille [BIP388][].
+  Ingala a relevé plusieurs problèmes à résoudre liés à l'utilisation de clés non dépensables dans les descripteurs et plusieurs
+  solutions proposées
+  avec différents compromis. Pieter Wuille en personne a résumé plusieurs discussions récentes sur les descripteurs, y compris une
+  [idée particulière][wuille undesc2] concernant les clés non dépensables. Josie Baker a demandé des détails sur la raison pour laquelle
+  la clé non dépensable ne peut pas être une valeur constante (comme le point nothing-up-my-sleeve (NUMS) dans BIP341), ce qui
+  permettrait à tout le monde de savoir immédiatement qu'une clé non dépensable a été utilisée---un avantage possible pour certains
+  protocoles, tels que les [paiements silencieux][topic silent payments]. Ingala a répondu à Baker que "c'est une forme de marquage.
+  Vous pouvez toujours révéler cette information vous-même si vous le souhaitez ou en avez besoin, mais c'est mieux que les normes ne
+  vous
+  obligent pas à le faire." Wuille a ensuite répondu avec un algorithme pour générer la preuve. Dans le dernier message du fil au
+  moment de l'écriture, Ingala a noté que certaines tâches de spécification des politiques liées aux clés non dépensables peuvent être
+  réparties entre les descripteurs et les politiques de portefeuille [BIP388][].
 
 - **Coûts d'épinglage des transactions V3 :** Peter Todd a [publié][todd v3] sur la liste de diffusion Bitcoin-Dev une analyse de la
   politique des [relais des transactions V3][topic v3 transaction relay] proposée pour les protocoles de contrat tels que LN. Par
@@ -135,16 +135,16 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   Si cela dépasse ce que Bob est prêt à payer, la transaction de Mallory, grande et à faible taux de frais, peut ne pas être confirmée
   avant l'expiration d'un verrouillage temporel critique et permettre à Mallory de voler de l'argent à Bob.
 
-   Dans la proposition de relais de transaction V3, les règles permettent à une transaction optant pour la politique V3 de n'avoir qu'un
-   maximum d'une transaction enfant non confirmée qui sera relayée, stockée dans les mempools et minée par les nœuds qui acceptent de
-   suivre la politique V3. Comme le montre Peter Todd dans son message, cela permettrait toujours à Mallory d'augmenter les coûts de Bob
-   d'environ 1,5 fois ce qu'il voulait payer. Les répondants ont largement convenu qu'il y avait un risque que Bob doive payer plus en
-   cas de contrepartie malveillante, mais ils ont noté qu'un multiple faible est bien meilleur que les 100 fois ou plus que Bob pourrait
-   devoir payer selon les règles de relais actuelles.
+  Dans la proposition de relais de transaction V3, les règles permettent à une transaction optant pour la politique V3 de n'avoir qu'un
+  maximum d'une transaction enfant non confirmée qui sera relayée, stockée dans les mempools et minée par les nœuds qui acceptent de
+  suivre la politique V3. Comme le montre Peter Todd dans son message, cela permettrait toujours à Mallory d'augmenter les coûts de Bob
+  d'environ 1,5 fois ce qu'il voulait payer. Les répondants ont largement convenu qu'il y avait un risque que Bob doive payer plus en
+  cas de contrepartie malveillante, mais ils ont noté qu'un multiple faible est bien meilleur que les 100 fois ou plus que Bob pourrait
+  devoir payer selon les règles de relais actuelles.
 
-   Des discussions supplémentaires dans la conversation ont porté sur les détails des règles de relais V3, les
-   [ancrages éphémères][topic ephemeral anchors] et leur comparaison avec les [exclusions CPFP][topic cpfp carve out] et les
-   [sorties d'ancrage][topic anchor outputs] actuellement disponibles.
+  Des discussions supplémentaires dans la conversation ont porté sur les détails des règles de relais V3, les
+  [ancrages éphémères][topic ephemeral anchors] et leur comparaison avec les [exclusions CPFP][topic cpfp carve out] et les
+  [sorties d'ancrage][topic anchor outputs] actuellement disponibles.
 
 - **Descripteurs dans le projet de BIP PSBT :** l'équipe SeedHammer a [publié][seedhammer descpsbt] un projet de BIP sur la liste de
   diffusion Bitcoin-Dev pour inclure des [descripteurs][topic descriptors] dans les [PSBT][topic psbt]. L'utilisation principale semble
@@ -200,19 +200,19 @@ logiciels d'infrastructure Bitcoin les plus populaires.
   consommeraient l'intégralité de leur solde. S'ils peuvent déplacer leurs fonds combinés de 1 million de sats dans une seule
   transaction de 200 vbytes à 100 sats/vbyte, alors chaque utilisateur ne paiera que 200 sats (2% de leur solde).
 
-   Le regroupement des paiements est réalisé en demandant à l'un des participants du protocole de contrat multipartie de construire une
-   dépense des fonds partagés vers les sorties convenues par les autres participants actifs. Le contrat le permet, mais seulement
-   si celui qui construit la dépense finance une caution qu'il perdra si quelqu'un peut prouver qu'il a mal
-   dépensé les fonds du contrat ; le montant du dépôt devrait être considérablement plus élevé que ce que la partie qui construit peut
-   gagner en tentant un transfert incorrect de fonds. Si personne ne génère de preuve de fraude montrant que la partie qui construit a
-   agi de manière inappropriée dans un délai donné, le dépôt est remboursé à celui qui a construit la dépense. Ingala décrit
-   approximativement
-   comment cette fonctionnalité pourrait être ajoutée à un protocole de contrat multipartie en utilisant [OP_CAT][],
-   `OP_CHECKCONTRACTVERIFY`, et l'introspection du montant de la proposition de soft fork [MATT][], en notant que cela serait plus facile
-   avec l'ajout également de [OP_CSFS][topic op_checksigfromstack] et d'opérateurs arithmétiques sur 64 bits dans
-   [tapscript][topic tapscript].
+  Le regroupement des paiements est réalisé en demandant à l'un des participants du protocole de contrat multipartie de construire une
+  dépense des fonds partagés vers les sorties convenues par les autres participants actifs. Le contrat le permet, mais seulement
+  si celui qui construit la dépense finance une caution qu'il perdra si quelqu'un peut prouver qu'il a mal
+  dépensé les fonds du contrat ; le montant du dépôt devrait être considérablement plus élevé que ce que la partie qui construit peut
+  gagner en tentant un transfert incorrect de fonds. Si personne ne génère de preuve de fraude montrant que la partie qui construit a
+  agi de manière inappropriée dans un délai donné, le dépôt est remboursé à celui qui a construit la dépense. Ingala décrit
+  approximativement
+  comment cette fonctionnalité pourrait être ajoutée à un protocole de contrat multipartie en utilisant [OP_CAT][],
+  `OP_CHECKCONTRACTVERIFY`, et l'introspection du montant de la proposition de soft fork [MATT][], en notant que cela serait plus facile
+  avec l'ajout également de [OP_CSFS][topic op_checksigfromstack] et d'opérateurs arithmétiques sur 64 bits dans
+  [tapscript][topic tapscript].
 
-   L'idée a fait l'objet d'un petit nombre de discussions à l'heure actuelle.
+  L'idée a fait l'objet d'un petit nombre de discussions à l'heure actuelle.
 
 - **Nouvelles stratégies de sélection de pièces :** Mark Erhardt [a posté][erhardt coin] sur Delving Bitcoin à propos des cas
   particuliers que les utilisateurs ont pu rencontrer avec la stratégie de sélection d'UTXO de Bitcoin Core et propose deux nouvelles

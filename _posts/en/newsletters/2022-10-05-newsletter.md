@@ -21,51 +21,51 @@ projects.
   policies.  Any transaction which sets its version parameter to `3`
   will:
 
-    - Be replaceable while it is unconfirmed by a transaction paying a
-      higher feerate and a higher total fee (the current main
-      [RBF][topic rbf] rules)
+  - Be replaceable while it is unconfirmed by a transaction paying a
+    higher feerate and a higher total fee (the current main
+    [RBF][topic rbf] rules)
 
-    - Require all of its descendents also be v3 transactions for as long
-      as it remains unconfirmed.  Descendents violating this rule will
-      not be relayed or mined by default
+  - Require all of its descendents also be v3 transactions for as long
+    as it remains unconfirmed.  Descendents violating this rule will
+    not be relayed or mined by default
 
-    - Be rejected if any of its v3 unconfirmed ancestors already have
-      any other descendants in the mempool (or in a [package][topic
-      package relay] containing this transaction)
+  - Be rejected if any of its v3 unconfirmed ancestors already have
+    any other descendants in the mempool (or in a [package][topic
+    package relay] containing this transaction)
 
-    - Be required to be 1,000 vbytes or smaller if any of its v3
-      ancestors are unconfirmed
+  - Be required to be 1,000 vbytes or smaller if any of its v3
+    ancestors are unconfirmed
 
-    Accompanying the proposed relay rules was a simplification of the
-    previously-proposed package relay rules (see [Newsletter
-    #167][news167 packages]).
+  Accompanying the proposed relay rules was a simplification of the
+  previously-proposed package relay rules (see [Newsletter
+  #167][news167 packages]).
 
-    Together, the v3 relay and updated package relay rules are designed
-    to allow LN commitment transactions to include only minimal fees (or
-    potentially even zero fees) and have their actual fees paid by a
-    child transaction, all while preventing [pinning][topic transaction pinning].  Almost all LN
-    nodes already use a mechanism like this, [anchor outputs][topic anchor outputs], but the
-    proposed upgrade should make confirming commitment
-    transactions simpler and more robust.
+  Together, the v3 relay and updated package relay rules are designed
+  to allow LN commitment transactions to include only minimal fees (or
+  potentially even zero fees) and have their actual fees paid by a
+  child transaction, all while preventing [pinning][topic transaction pinning].  Almost all LN
+  nodes already use a mechanism like this, [anchor outputs][topic anchor outputs], but the
+  proposed upgrade should make confirming commitment
+  transactions simpler and more robust.
 
-    Greg Sanders [replied][sanders tx3] with two suggestions:
+  Greg Sanders [replied][sanders tx3] with two suggestions:
 
-    - *Ephemeral dust:* any transactions paying a zero-value (or
-      otherwise *uneconomical*) output should be exempt from the
-      [dust policy][topic uneconomical outputs] if that transaction is part of a package which
-      spends the dust output.
+  - *Ephemeral dust:* any transactions paying a zero-value (or
+    otherwise *uneconomical*) output should be exempt from the
+    [dust policy][topic uneconomical outputs] if that transaction is part of a package which
+    spends the dust output.
 
-    - *Standard OP_TRUE:* that outputs paying an output consisting
-      entirely of `OP_TRUE` should be relayed by default.  Such an
-      output can be spent by anyone---it has no security.  That makes it
-      easy for either party to an LN channel (or even third parties) to
-      fee-bump a transaction spending that `OP_TRUE` output.  No data
-      needs to be put on the stack to spend an `OP_TRUE` output, making
-      it cost-efficient to spend.
+  - *Standard OP_TRUE:* that outputs paying an output consisting
+    entirely of `OP_TRUE` should be relayed by default.  Such an
+    output can be spent by anyone---it has no security.  That makes it
+    easy for either party to an LN channel (or even third parties) to
+    fee-bump a transaction spending that `OP_TRUE` output.  No data
+    needs to be put on the stack to spend an `OP_TRUE` output, making
+    it cost-efficient to spend.
 
-    Neither of these needs to be done at the same time as implementing
-    relay of v3 transactions, but several respondents to the thread
-    seemed to be in favor of all the proposed changes. {% assign timestamp="1:30" %}
+  Neither of these needs to be done at the same time as implementing
+  relay of v3 transactions, but several respondents to the thread
+  seemed to be in favor of all the proposed changes. {% assign timestamp="1:30" %}
 
 - **LN flow control:** Rene Pickhardt [posted][pickhardt ml valve] to the Lightning-Dev
   mailing list a summary of [recent research][pickhardt bitmex valve] he performed on using
@@ -84,27 +84,27 @@ projects.
   research provides several code snippets that can be used to calculate
   actual appropriate `htlc_maximum_msat` values.
 
-    In a [separate email][pickhardt ratecards], Pickhardt also suggests that the previous
-    idea of *fee ratecards* (see [last week's newsletter][news219 ratecards]) could
-    instead become *maximum amount per-forward ratecards*, where a
-    spender would be charged a lower feerate to send small payments and
-    a higher feerate to send larger payments.  Unlike the original
-    ratecards proposal, they would be absolute amounts and not relative
-    to the channel's current balance.  Anthony Towns [described][towns ratecards]
-    several challenges with the original ratecards idea that wouldn't be
-    problems for flow control based on adjusting `htlc_maximum_msat`.
+  In a [separate email][pickhardt ratecards], Pickhardt also suggests that the previous
+  idea of *fee ratecards* (see [last week's newsletter][news219 ratecards]) could
+  instead become *maximum amount per-forward ratecards*, where a
+  spender would be charged a lower feerate to send small payments and
+  a higher feerate to send larger payments.  Unlike the original
+  ratecards proposal, they would be absolute amounts and not relative
+  to the channel's current balance.  Anthony Towns [described][towns ratecards]
+  several challenges with the original ratecards idea that wouldn't be
+  problems for flow control based on adjusting `htlc_maximum_msat`.
 
-    ZmnSCPxj [criticized][zmnscpxj valve] several aspects of the idea, including
-    noting that spenders could still send the same amount of value
-    through a lower-max rate channel, resulting in it again becoming
-    unbalanced, just by splitting an overall payment into additional
-    small parts.  Towns suggested this could potentially be addressed by
-    rate limiting.
+  ZmnSCPxj [criticized][zmnscpxj valve] several aspects of the idea, including
+  noting that spenders could still send the same amount of value
+  through a lower-max rate channel, resulting in it again becoming
+  unbalanced, just by splitting an overall payment into additional
+  small parts.  Towns suggested this could potentially be addressed by
+  rate limiting.
 
-    The discussion appeared to be ongoing at the time this summary was
-    being written, but we expect that several new insights will come in
-    the following weeks and months as node operators begin experimenting
-    with their channels `htlc_maximum_msat` parameters. {% assign timestamp="22:06" %}
+  The discussion appeared to be ongoing at the time this summary was
+  being written, but we expect that several new insights will come in
+  the following weeks and months as node operators begin experimenting
+  with their channels `htlc_maximum_msat` parameters. {% assign timestamp="22:06" %}
 
 ## Releases and release candidates
 

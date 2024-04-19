@@ -58,12 +58,12 @@ lang: zh
 - [<!--understanding-how-ordinals-work-with-in-bitcoin-what-is-exactly-stored-on-the-blockchain-->了解序数如何在比特币中使用。区块链上到底存储了什么？]({{bse}}117018)
   Vojtěch Strnad 解释澄清了 Ordinals Inscriptions 并不使用 `OP_RETURN`，而是使用类似于以下的 `OP_PUSHDATAx` 操作码将数据嵌入到未执行的脚本分支中：
 
-    ```
-    OP_0
-    OP_IF
-    <data pushes>
-    OP_ENDIF
-    ```
+  ```
+  OP_0
+  OP_IF
+  <data pushes>
+  OP_ENDIF
+  ```
 
 - [<!--why-doesn-t-the-protocol-allow-unconfirmed-transactions-to-expire-at-a-given-height-->为什么协议不允许未确认的交易在指定的高度上过期？]({{bse}}116926)
   Larry Ruane 引用了中本聪来解释为什么交易指定过期高度是一个看似有用，但不严谨的能力。过期高度是指，一个交易在这个区块高度之后如果还未被矿工打包，则不再有效（因此不再会被打包）。

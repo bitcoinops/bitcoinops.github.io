@@ -35,21 +35,21 @@ infrastructure software.
   else---including performing time-sensitive operations that are
   necessary to prevent loss of money.
 
-    In Morehouse's testing against his own nodes, he was able to cause
-    significant problems with Core Lightning, Eclair, LDK, and LND,
-    including two cases that (in our opinion) could likely lead to loss
-    of funds among many nodes.  Morehouse's [full description][morehouse
-    post] links to the PRs where the issue was addressed (which includes
-    PRs covered in Newsletters [#237][news237 dos] and [#240][news240
-    dos]) and lists the LN releases that addressed the vulnerability:
+  In Morehouse's testing against his own nodes, he was able to cause
+  significant problems with Core Lightning, Eclair, LDK, and LND,
+  including two cases that (in our opinion) could likely lead to loss
+  of funds among many nodes.  Morehouse's [full description][morehouse
+  post] links to the PRs where the issue was addressed (which includes
+  PRs covered in Newsletters [#237][news237 dos] and [#240][news240
+  dos]) and lists the LN releases that addressed the vulnerability:
 
-    - Core Lightning 23.02
-    - Eclair 0.9.0
-    - LDK 0.0.114
-    - LND 0.16.0
+  - Core Lightning 23.02
+  - Eclair 0.9.0
+  - LDK 0.0.114
+  - LND 0.16.0
 
-    There was some follow-up discussion on the mailing list and on
-    [IRC][stateless funding]. {% assign timestamp="21:11" %}
+  There was some follow-up discussion on the mailing list and on
+  [IRC][stateless funding]. {% assign timestamp="21:11" %}
 
 - **Covenant mashup using `TXHASH` and `CSFS`:** Brandon Black
   [posted][black mashup] to the Bitcoin-Dev mailing list a proposal for
@@ -64,9 +64,9 @@ infrastructure software.
   toward consensus on a path toward enabling [...] amazing ways to use
   bitcoin in the future".
 
-    The proposal received some discussion on the mailing list, with
-    [additional revisions][delv mashup] posted and discussed on the
-    Delving Bitcoin forum. {% assign timestamp="1:30" %}
+  The proposal received some discussion on the mailing list, with
+  [additional revisions][delv mashup] posted and discussed on the
+  Delving Bitcoin forum. {% assign timestamp="1:30" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

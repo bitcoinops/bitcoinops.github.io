@@ -34,9 +34,9 @@ Bitcoin Core, LND, and C-Lightning projects.
   sourced from Optech's beta dashboard, which we encourage people to try out and
   provide us feedback!
 
-    ![{{img1_label}}](/img/posts/rbf.png)
-    *{{img1_label}},
-    source: [Optech dashboard][rbf data]*
+  ![{{img1_label}}](/img/posts/rbf.png)
+  *{{img1_label}},
+  source: [Optech dashboard][rbf data]*
 
 ## News
 
@@ -63,25 +63,23 @@ Bitcoin Core, LND, and C-Lightning projects.
   non-interactive coinjoins such as those described in the [Mimblewimble
   paper][].
 
-    BLS signatures do come with three downsides that have lead most
-    Bitcoin protocol developers to focus on Schnorr signatures for the
-    short-term.  The first is that there's no known way to verify them
-    as fast as Schnorr signatures---and signature verification speed is
-    also important for network scalability.  Second, to prove that BLS
-    signatures are secure requires making an additional assumption about
-    part of the scheme being secure that isn't required for proving the
-    security of Bitcoin's current scheme (ECDSA) or proposed
-    Schnorr-based scheme.  Finally, BLS signatures have only been around
-    for about half as long as Schnorr signatures, are even less commonly
-    used, and are not believed to have received the same amount of
-    expert review as Schnorr signatures.
+  BLS signatures do come with three downsides that have lead most
+  Bitcoin protocol developers to focus on Schnorr signatures for the
+  short-term.  The first is that there's no known way to verify them
+  as fast as Schnorr signatures---and signature verification speed is
+  also important for network scalability.  Second, to prove that BLS
+  signatures are secure requires making an additional assumption about
+  part of the scheme being secure that isn't required for proving the
+  security of Bitcoin's current scheme (ECDSA) or proposed
+  Schnorr-based scheme.  Finally, BLS signatures have only been around
+  for about half as long as Schnorr signatures, are even less commonly
+  used, and are not believed to have received the same amount of
+  expert review as Schnorr signatures.
 
-    Still, this open source library gives developers a convenient way to
-    begin experimenting with BLS signatures and even start to use them
-    in applications that don't need to be as secure as the Bitcoin
-    network.
-
-
+  Still, this open source library gives developers a convenient way to
+  begin experimenting with BLS signatures and even start to use them
+  in applications that don't need to be as secure as the Bitcoin
+  network.
 
 ## Notable commits
 

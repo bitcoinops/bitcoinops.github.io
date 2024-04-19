@@ -24,20 +24,20 @@ von erwähnenswerten Änderungen an beliebter Bitcoin Infrastruktursoftware.
   und nicht nur die Mittel, sondern auch alle vom Benutzer manuell eingegebenen
   Informationen über seine Transaktionen, wiederherzustellen.
 
-    In Anbetracht der bisherigen Schwierigkeiten, BIP32-Wallets untereinander
-    kompatibel zu machen wäre es vielleicht einfacher, den Transaktionsverlauf
-    aus einem Wallet zu exportieren, damit er in anderen Programmen verwendet
-    werden kann; etwa für die Buchhaltung.
+  In Anbetracht der bisherigen Schwierigkeiten, BIP32-Wallets untereinander
+  kompatibel zu machen wäre es vielleicht einfacher, den Transaktionsverlauf
+  aus einem Wallet zu exportieren, damit er in anderen Programmen verwendet
+  werden kann; etwa für die Buchhaltung.
 
-    Die Entwickler Clark Moody und Pavol Rusnak [antworteten beide][moody slip15]
-    mit einem [Verweis][rusnak slip15] auf [SLIP15][], welches das offene
-    Exportformat beschreibt, das für Wallets der Marke Trezor entwickelt
-    wurde. Craig Raw [verwies][raw slip15] auf mehrere signifikante Unterschiede
-    zwischen dem, was sein vorgeschlagenen Format zu erreichen versucht, und
-    dem, was SLIP15 zur Verfügung zu stellen scheint. Mehrere andere
-    Designaspekte wurden ebenfalls diskutiert. Zum Zeitpunkt der Publikation
-    dieser Zusammenfassung, schien die Diskussion noch nicht abgeschlossen
-    zu sein.
+  Die Entwickler Clark Moody und Pavol Rusnak [antworteten beide][moody slip15]
+  mit einem [Verweis][rusnak slip15] auf [SLIP15][], welches das offene
+  Exportformat beschreibt, das für Wallets der Marke Trezor entwickelt
+  wurde. Craig Raw [verwies][raw slip15] auf mehrere signifikante Unterschiede
+  zwischen dem, was sein vorgeschlagenen Format zu erreichen versucht, und
+  dem, was SLIP15 zur Verfügung zu stellen scheint. Mehrere andere
+  Designaspekte wurden ebenfalls diskutiert. Zum Zeitpunkt der Publikation
+  dieser Zusammenfassung, schien die Diskussion noch nicht abgeschlossen
+  zu sein.
 
 ## Ausgewählte Q&A aus dem Bitcoin Stack Exchange
 

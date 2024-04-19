@@ -28,72 +28,72 @@ projects.
   receives multiple proofs to determine which demonstrates the most
   proof of work.
 
-    They also have a suboptimal prototype which proves that all
-    transaction state changes for the block chain respected the currency
-    rules (e.g., how many bitcoins can be created by a new block, that
-    each non-coinbase transaction must not create UTXOs with more
-    bitcoin value than those it destroys (spends), and that a miner may
-    claim any difference between the UTXOs destroyed in a block and
-    those created).  A client receiving this proof and a copy of the
-    current UTXO set would be able to verify that the set was accurate
-    and complete.  They call this an _assumevalid_ proof after the
-    [feature in Bitcoin Core][assumevalid] that optionally skips
-    verification of scripts for older blocks when many contributors
-    agree that their nodes all validated those blocks successfully.
+  They also have a suboptimal prototype which proves that all
+  transaction state changes for the block chain respected the currency
+  rules (e.g., how many bitcoins can be created by a new block, that
+  each non-coinbase transaction must not create UTXOs with more
+  bitcoin value than those it destroys (spends), and that a miner may
+  claim any difference between the UTXOs destroyed in a block and
+  those created).  A client receiving this proof and a copy of the
+  current UTXO set would be able to verify that the set was accurate
+  and complete.  They call this an _assumevalid_ proof after the
+  [feature in Bitcoin Core][assumevalid] that optionally skips
+  verification of scripts for older blocks when many contributors
+  agree that their nodes all validated those blocks successfully.
 
-    To minimize the complexity of their proof, they use a version of
-    [utreexo][topic utreexo] with a hash function optimized for their
-    system.  They separately suggest that combining their proof with a
-    utreexo client will allow that client to begin operating as a full
-    node almost immediately after downloading a very small amount of
-    data.
+  To minimize the complexity of their proof, they use a version of
+  [utreexo][topic utreexo] with a hash function optimized for their
+  system.  They separately suggest that combining their proof with a
+  utreexo client will allow that client to begin operating as a full
+  node almost immediately after downloading a very small amount of
+  data.
 
-    Regarding the usability of their prototypes, they write that "we
-    have implemented the header chain proof and the assumevalid state
-    proof as prototypes.  The former is feasible to prove, while the
-    latter still requires performance improvements to prove
-    reasonable-sized blocks".  They are also working on validating
-    complete blocks, including scripts, but say that they need at least
-    a 40x speed up for that to be viable.
+  Regarding the usability of their prototypes, they write that "we
+  have implemented the header chain proof and the assumevalid state
+  proof as prototypes.  The former is feasible to prove, while the
+  latter still requires performance improvements to prove
+  reasonable-sized blocks".  They are also working on validating
+  complete blocks, including scripts, but say that they need at least
+  a 40x speed up for that to be viable.
 
-    In addition to state compression of the Bitcoin block chain, they
-    also describe a protocol that can be used for a
-    client-side-validation token protocol similar to that used for Lightning Labs'
-    Taproot Assets and some uses of RGB (see Newsletters [#195][news195
-    taro] and [#247][news247 rgb]).  When Alice transfers to Bob some
-    amount of a token, Bob needs to verify the history of every previous
-    transfer of those specific tokens back to when they were created.
-    In an ideal scenario, that history grows linearly with the number of
-    transfers.  But if Bob wants to pay Carol an amount higher than he
-    received from Alice, he will need to combine some of the tokens he
-    received from Alice with some tokens he received in a
-    different transaction.  Carol will then need to verify both the
-    history going back through Alice and also the history of Bob's other
-    tokens.  This is called a merge.  If merges happen often, the size
-    of the history that needs to be verified approaches the size of the
-    history of every transfer of that token between any users.  In
-    comparative terms, in Bitcoin every full node verifies every
-    transaction made by every user; in token protocols using client-side
-    validation, that's not strictly required but eventually becomes
-    effectively the case if merges are common.
+  In addition to state compression of the Bitcoin block chain, they
+  also describe a protocol that can be used for a
+  client-side-validation token protocol similar to that used for Lightning Labs'
+  Taproot Assets and some uses of RGB (see Newsletters [#195][news195
+  taro] and [#247][news247 rgb]).  When Alice transfers to Bob some
+  amount of a token, Bob needs to verify the history of every previous
+  transfer of those specific tokens back to when they were created.
+  In an ideal scenario, that history grows linearly with the number of
+  transfers.  But if Bob wants to pay Carol an amount higher than he
+  received from Alice, he will need to combine some of the tokens he
+  received from Alice with some tokens he received in a
+  different transaction.  Carol will then need to verify both the
+  history going back through Alice and also the history of Bob's other
+  tokens.  This is called a merge.  If merges happen often, the size
+  of the history that needs to be verified approaches the size of the
+  history of every transfer of that token between any users.  In
+  comparative terms, in Bitcoin every full node verifies every
+  transaction made by every user; in token protocols using client-side
+  validation, that's not strictly required but eventually becomes
+  effectively the case if merges are common.
 
-    That means a protocol that can compress the state of Bitcoin can
-    also be adapted to compress the state of a token's history, even one
-    where merges are common.  The authors describe how they would
-    accomplish that.  Their goal is to produce a proof that each
-    previous transfer of the token followed the token's rules, including
-    using their proofs for Bitcoin to prove that each previous transfer
-    was anchored in the block chain.  Alice could then transfer the
-    tokens to Bob and give him a short constant-sized proof of validity;
-    Bob could verify the proof to know that the transfer happened at a
-    certain block height and paid his token wallet, giving him exclusive
-    control over the tokens.
+  That means a protocol that can compress the state of Bitcoin can
+  also be adapted to compress the state of a token's history, even one
+  where merges are common.  The authors describe how they would
+  accomplish that.  Their goal is to produce a proof that each
+  previous transfer of the token followed the token's rules, including
+  using their proofs for Bitcoin to prove that each previous transfer
+  was anchored in the block chain.  Alice could then transfer the
+  tokens to Bob and give him a short constant-sized proof of validity;
+  Bob could verify the proof to know that the transfer happened at a
+  certain block height and paid his token wallet, giving him exclusive
+  control over the tokens.
 
-    Although the paper frequently mentions additional research and
-    development that can be performed,
-    we find this to be encouraging progress towards a
-    [feature][coinwitness] that Bitcoin developers have desired for over
-    a decade. {% assign timestamp="1:05" %}
+  Although the paper frequently mentions additional research and
+  development that can be performed,
+  we find this to be encouraging progress towards a
+  [feature][coinwitness] that Bitcoin developers have desired for over
+  a decade. {% assign timestamp="1:05" %}
 
 ## Waiting for confirmation #2: Incentives
 

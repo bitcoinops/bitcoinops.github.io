@@ -32,12 +32,12 @@ infrastructure software.
   chain and Bob receives the combined bitcoins on the
   activation-forbidden chain.
 
-    The basic idea has been proposed before ([example][rubin bet]) but
-    ZmnSCPxj's version deals with the specifics expected for at least
-    one potential future soft fork, [OP_CHECKTEMPLATEVERIFY][topic
-    op_checktemplateverify].  ZmnSCPxj also briefly considers the
-    challenges of generalizing the construction to other proposed soft
-    forks, particularly those that upgrade an `OP_SUCCESSx` opcode. {% assign timestamp="1:11" %}
+  The basic idea has been proposed before ([example][rubin bet]) but
+  ZmnSCPxj's version deals with the specifics expected for at least
+  one potential future soft fork, [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify].  ZmnSCPxj also briefly considers the
+  challenges of generalizing the construction to other proposed soft
+  forks, particularly those that upgrade an `OP_SUCCESSx` opcode. {% assign timestamp="1:11" %}
 
 - **Overview of Chia Lisp for Bitcoiners:** Anthony Towns [posted][towns
   lisp] to Delving Bitcoin a detailed overview of the [Lisp][] variant

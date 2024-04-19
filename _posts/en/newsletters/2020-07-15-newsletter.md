@@ -32,12 +32,12 @@ infrastructure projects.
   contract to be settled in its latest state even if earlier states are
   confirmed onchain.
 
-    The main difference between the noinput and anyprevout proposals is
-    that noinput would require its own new version of segwit but
-    anyprevout uses one of the upgrade features from the proposed [BIP342][]
-    specification of [tapscript][topic tapscript].  Additional
-    differences between the proposals are described in the [revised
-    text][anyprevout revisions] itself.
+  The main difference between the noinput and anyprevout proposals is
+  that noinput would require its own new version of segwit but
+  anyprevout uses one of the upgrade features from the proposed [BIP342][]
+  specification of [tapscript][topic tapscript].  Additional
+  differences between the proposals are described in the [revised
+  text][anyprevout revisions] itself.
 
 ## Notable code and documentation changes
 

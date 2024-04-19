@@ -39,55 +39,55 @@ software.
   on by default doesn't match the approach I've seen core take in the
   past."
 
-    Towns then contemplates whether this is a new direction for
-    development: "full [RBF][topic RBF] has been controversial for ages,
-    but widely liked by devs [...] so maybe this is just a special case
-    and not a precedent, and when people propose other default false
-    options, there will be substantially more resistance to them being
-    merged, despite all the talk about users having options that's going
-    on right now."  But, assuming it is a new direction, he evaluates
-    some potential consequences of that decision:
+  Towns then contemplates whether this is a new direction for
+  development: "full [RBF][topic RBF] has been controversial for ages,
+  but widely liked by devs [...] so maybe this is just a special case
+  and not a precedent, and when people propose other default false
+  options, there will be substantially more resistance to them being
+  merged, despite all the talk about users having options that's going
+  on right now."  But, assuming it is a new direction, he evaluates
+  some potential consequences of that decision:
 
-    - *It should be easier to get default-disabled alternative relay options merged:*
-      if giving users more options is seen as better, there are many
-      aspects of relay policy that can be made configurable.  For
-      example, Bitcoin Knots provides a script pubkey reuse
-      (`spkreuse`) option for configuring a node to refuse to relay
-      any transactions which [reuse an address][topic output linking].
+  - *It should be easier to get default-disabled alternative relay options merged:*
+    if giving users more options is seen as better, there are many
+    aspects of relay policy that can be made configurable.  For
+    example, Bitcoin Knots provides a script pubkey reuse
+    (`spkreuse`) option for configuring a node to refuse to relay
+    any transactions which [reuse an address][topic output linking].
 
-    - *More permissive policies require widespread acceptance or better peering:*
-      A Bitcoin Core node by default relays transactions with eight peers via outbound connections,
-      so at least 30% of the network needs to support a more
-      permissive policy before a node has a 95% chance of finding at
-      least one randomly-selected peer that supports the same policy.
-      The fewer nodes that support a policy, the less likely it is
-      that a node will find a peer supporting that policy.
+  - *More permissive policies require widespread acceptance or better peering:*
+    A Bitcoin Core node by default relays transactions with eight peers via outbound connections,
+    so at least 30% of the network needs to support a more
+    permissive policy before a node has a 95% chance of finding at
+    least one randomly-selected peer that supports the same policy.
+    The fewer nodes that support a policy, the less likely it is
+    that a node will find a peer supporting that policy.
 
-    - *Better peering involves tradeoffs:* Bitcoin nodes can announce
-      their capabilities using the services field of the P2P `addr`,
-      [`addrv2`][topic addr v2], and `version` messages, allowing nodes
-      with common interests to find each other and form sub-networks
-      (called *preferential peering*).  Alternatively, full node
-      operators with common interests can use other software to form
-      independent relay networks (such as a network among LN nodes).
-      This can make relay effective even when just a few nodes
-      implement a policy, but nodes implementing a rare policy are
-      easier to identify and censor.  It also requires miners to
-      join these sub-networks and alternative networks, raising the
-      complexity and cost of mining.  That increases the pressure to
-      centralize transaction selection, which also makes censorship
-      easier.
+  - *Better peering involves tradeoffs:* Bitcoin nodes can announce
+    their capabilities using the services field of the P2P `addr`,
+    [`addrv2`][topic addr v2], and `version` messages, allowing nodes
+    with common interests to find each other and form sub-networks
+    (called *preferential peering*).  Alternatively, full node
+    operators with common interests can use other software to form
+    independent relay networks (such as a network among LN nodes).
+    This can make relay effective even when just a few nodes
+    implement a policy, but nodes implementing a rare policy are
+    easier to identify and censor.  It also requires miners to
+    join these sub-networks and alternative networks, raising the
+    complexity and cost of mining.  That increases the pressure to
+    centralize transaction selection, which also makes censorship
+    easier.
 
-        Additionally, nodes implementing different policies from some
-        of their peers won't be able to take full advantage of
-        technologies like [compact block relay][topic compact block
-        relay] and [erlay][topic erlay] for minimizing latency and
-        bandwidth when two peers already have some of the same
-        information.
+    Additionally, nodes implementing different policies from some
+    of their peers won't be able to take full advantage of
+    technologies like [compact block relay][topic compact block
+    relay] and [erlay][topic erlay] for minimizing latency and
+    bandwidth when two peers already have some of the same
+    information.
 
-    Towns's post received multiple insightful responses, with discussion
-    ongoing as of this writing.  We will provide an update in next
-    week's newsletter. {% assign timestamp="3:15" %}
+  Towns's post received multiple insightful responses, with discussion
+  ongoing as of this writing.  We will provide an update in next
+  week's newsletter. {% assign timestamp="3:15" %}
 
 - **BIP324 message identifiers:** Pieter Wuille [posted][wuille bip324]
   to the Bitcoin-Dev mailing list a response to the update of the
@@ -111,23 +111,23 @@ software.
   doesn't provide any authenticated method for routing nodes to
   communicate that information to a spender.
 
-    Several years ago, Joost Jager proposed a solution (see [Newsletter
-    #51][news51 attrib]), which he has now [updated][jager attrib] with
-    improvements and additional details.  The mechanism would ensure
-    identification of the pair of nodes between which a payment failed
-    (or between which one of them an earlier failure message was
-    censored or became garbled).  The main downside of Jager's proposal
-    is that it would significantly increase the size of LN onion
-    messages for failures if other LN properties remained the same,
-    although the size of onion messages for failures wouldn't need to be
-    as large if the maximum number of LN hops was decreased.
+  Several years ago, Joost Jager proposed a solution (see [Newsletter
+  #51][news51 attrib]), which he has now [updated][jager attrib] with
+  improvements and additional details.  The mechanism would ensure
+  identification of the pair of nodes between which a payment failed
+  (or between which one of them an earlier failure message was
+  censored or became garbled).  The main downside of Jager's proposal
+  is that it would significantly increase the size of LN onion
+  messages for failures if other LN properties remained the same,
+  although the size of onion messages for failures wouldn't need to be
+  as large if the maximum number of LN hops was decreased.
 
-    Alternatively, Rusty Russell [suggested][russell attrib] that a
-    spender could use a mechanism similar to [spontaneous
-    payments][topic spontaneous payments] where each routing node is paid
-    one sat even if the ultimate payment fails.  The spender could then
-    identify which hop the payment failed at by comparing how many
-    satoshis it sent to how many satoshis it received back. {% assign timestamp="21:24" %}
+  Alternatively, Rusty Russell [suggested][russell attrib] that a
+  spender could use a mechanism similar to [spontaneous
+  payments][topic spontaneous payments] where each routing node is paid
+  one sat even if the ultimate payment fails.  The spender could then
+  identify which hop the payment failed at by comparing how many
+  satoshis it sent to how many satoshis it received back. {% assign timestamp="21:24" %}
 
 - **Anchor outputs workaround:** Bastien Teinturier [posted][teinturier
   fees] to the Lightning-Dev mailing list a [proposal][bolts #1036] for using
@@ -144,9 +144,9 @@ software.
   the HTLC's value---no additional UTXO management is required, except in
   cases where none of the presigned feerates was high enough.
 
-    He's seeking support from other LN developers for the idea of providing
-    multiple feerate HTLCs.  All discussion as of this writing has
-    occurred on Teinturier's [PR][bolts #1036]. {% assign timestamp="33:08" %}
+  He's seeking support from other LN developers for the idea of providing
+  multiple feerate HTLCs.  All discussion as of this writing has
+  occurred on Teinturier's [PR][bolts #1036]. {% assign timestamp="33:08" %}
 
 ## Releases and release candidates
 

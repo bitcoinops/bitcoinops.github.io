@@ -24,47 +24,47 @@ to popular Bitcoin infrastructure software.
   published [the MuSig2 paper][musig 2 paper] describing a new variant of the
   [MuSig][topic musig] signature scheme with a two round signing protocol.
 
-    MuSig is a signature scheme that allows multiple signers to create an
-    aggregate public key derived from their individual private keys, and then
-    collaborate to create a single valid signature for that public key. The
-    aggregate public key and signature are indistinguishable from any other
-    [schnorr][topic schnorr signatures] public key and signature.
+  MuSig is a signature scheme that allows multiple signers to create an
+  aggregate public key derived from their individual private keys, and then
+  collaborate to create a single valid signature for that public key. The
+  aggregate public key and signature are indistinguishable from any other
+  [schnorr][topic schnorr signatures] public key and signature.
 
-    The original version of MuSig required a three round signing protocol:
-    first, the co-signers exchange commitments to nonce values, then they
-    exchange the nonce values themselves, and finally, they exchange the
-    partial signatures. Without this three round protocol, an attacker could
-    interact with an honest signer in multiple concurrent signing sessions to
-    obtain a signature on a message that the honest signer did not want to sign.
+  The original version of MuSig required a three round signing protocol:
+  first, the co-signers exchange commitments to nonce values, then they
+  exchange the nonce values themselves, and finally, they exchange the
+  partial signatures. Without this three round protocol, an attacker could
+  interact with an honest signer in multiple concurrent signing sessions to
+  obtain a signature on a message that the honest signer did not want to sign.
 
-    Using deterministic nonces, which is very common practice in single-signer
-    schemes, is unsafe for multi-signer schemes, as described in the [original
-    MuSig blog post][musig blog post unsafe deterministic nonce]. Precomputing the
-    nonces in advance and exchanging them at key setup time is also unsafe, as
-    described in a [blog post by Jonas Nick][unsafe nonce sharing]. It _is_,
-    however, safe to precompute the nonces and exchange the nonce commitments
-    early, moving one of the three rounds to the key setup stage.
+  Using deterministic nonces, which is very common practice in single-signer
+  schemes, is unsafe for multi-signer schemes, as described in the [original
+  MuSig blog post][musig blog post unsafe deterministic nonce]. Precomputing the
+  nonces in advance and exchanging them at key setup time is also unsafe, as
+  described in a [blog post by Jonas Nick][unsafe nonce sharing]. It _is_,
+  however, safe to precompute the nonces and exchange the nonce commitments
+  early, moving one of the three rounds to the key setup stage.
 
-    Removing the requirement to exchange nonce commitments has been an active
-    area of research, and last month the [MuSig-DN paper][musig-dn] was published, demonstrating
-    how nonce commitment exchange could be removed by generating the nonce
-    deterministically from the signers' public keys and the message, and providing a
-    non-interactive zero-knowledge proof that the nonce was generated
-    deterministically along with the nonce. This removed the requirement of
-    exchanging nonce commitments at the cost of a more expensive signing operation.
+  Removing the requirement to exchange nonce commitments has been an active
+  area of research, and last month the [MuSig-DN paper][musig-dn] was published, demonstrating
+  how nonce commitment exchange could be removed by generating the nonce
+  deterministically from the signers' public keys and the message, and providing a
+  non-interactive zero-knowledge proof that the nonce was generated
+  deterministically along with the nonce. This removed the requirement of
+  exchanging nonce commitments at the cost of a more expensive signing operation.
 
-    The new MuSig2 scheme achieves a simple two round signing protocol without the
-    need for a zero-knowledge proof. What's more, the first round (nonce exchange)
-    can be done at key setup time, allowing two different variants:
+  The new MuSig2 scheme achieves a simple two round signing protocol without the
+  need for a zero-knowledge proof. What's more, the first round (nonce exchange)
+  can be done at key setup time, allowing two different variants:
 
-    - interactive setup (key setup and nonce exchange) and non-interactive signing
+  - interactive setup (key setup and nonce exchange) and non-interactive signing
 
-    - non-interactive setup (address computed from public keys) and interactive
-      signing (nonce exchange followed partial signature exchange)
+  - non-interactive setup (address computed from public keys) and interactive
+    signing (nonce exchange followed partial signature exchange)
 
-    The non-interactive signing variant could be particularly useful for cold storage
-    schemes and offline signers, and also for offchain contract protocols such as LN,
-    where the nonces could be exchanged at channel setup time.
+  The non-interactive signing variant could be particularly useful for cold storage
+  schemes and offline signers, and also for offchain contract protocols such as LN,
+  where the nonces could be exchanged at channel setup time.
 
 - **More LN upfront fees discussion:** after [last week's
   discussion][news119 upfront], Joost Jager asked developers on the
@@ -78,14 +78,14 @@ to popular Bitcoin infrastructure software.
   trust-based methods that may involve such small amounts of fee that
   users will find them acceptable.
 
-    Unfortunately, none of the methods discussed this week seemed to
-    meet with widespread acceptance.  Several developers expressed
-    concern that methods could be abused to penalize small honest nodes.
-    Other developers noted that the alternative to upfront payment is
-    an increased reliance on reputation---which likely
-    disproportionately benefits larger nodes.  We're sure developers will
-    continue working on this important issue and we'll report on any
-    notable progress in future newsletters.
+  Unfortunately, none of the methods discussed this week seemed to
+  meet with widespread acceptance.  Several developers expressed
+  concern that methods could be abused to penalize small honest nodes.
+  Other developers noted that the alternative to upfront payment is
+  an increased reliance on reputation---which likely
+  disproportionately benefits larger nodes.  We're sure developers will
+  continue working on this important issue and we'll report on any
+  notable progress in future newsletters.
 
 - **Simplified HTLC negotiation:** Rusty Russell [posted][russell
   simplified] to the Lightning-Dev mailing list about simplifying how
@@ -101,18 +101,18 @@ to popular Bitcoin infrastructure software.
   HTLCs have been resolved and the channel is quiet---that improves
   safety but is more restrictive than desired.
 
-    Russell's proposal this week was to allow only one party in
-    a channel to propose HTLC changes.  This eliminates the risk of
-    conflicting proposals but it increases the average network
-    communication overhead by half a round trip (assuming each party
-    proposes an equal number of HTLC changes).  Responsibility for
-    proposing changes can be transferred from one party to the other as
-    needed, allowing each party to propose channel updates at different
-    times.
+  Russell's proposal this week was to allow only one party in
+  a channel to propose HTLC changes.  This eliminates the risk of
+  conflicting proposals but it increases the average network
+  communication overhead by half a round trip (assuming each party
+  proposes an equal number of HTLC changes).  Responsibility for
+  proposing changes can be transferred from one party to the other as
+  needed, allowing each party to propose channel updates at different
+  times.
 
-    As of this writing, the proposal received only a small amount of
-    discussion from other LN implementation maintainers, so its future
-    remains uncertain.
+  As of this writing, the proposal received only a small amount of
+  discussion from other LN implementation maintainers, so its future
+  remains uncertain.
 
 ## Changes to services and client software
 
@@ -166,22 +166,22 @@ wallets and services.*
   [##taproot-activation][] IRC chatroom ([logs][##taproot-activation
   logs]).
 
-    {% comment %}<!-- $ git diff 450d2b2371...865d2c37e2 | grep '^+' \
-                        | grep -v '^+$' | grep -v '^+ */[/*]' | grep -v '^+ *\*' \
-                        | grep -v '^+++' | wc -l
-                      512
-    -->{% endcomment %}
+  {% comment %}<!-- $ git diff 450d2b2371...865d2c37e2 | grep '^+' \
+                      | grep -v '^+$' | grep -v '^+ */[/*]' | grep -v '^+ *\*' \
+                      | grep -v '^+++' | wc -l
+                    512
+  -->{% endcomment %}
 
-    The code [consists][sipa summary] of about [700 lines][sipa
-    consensus] of consensus-related changes (500 excluding comments and
-    whitespace) and [2,100 lines][sipa tests] of tests.  Over 30 people
-    directly reviewed this PR and its [predecessor][Bitcoin Core
-    #17977], and many others participated in developing and reviewing
-    the underlying research, the BIPs, the related code in libsecp256k1,
-    and other parts of the system.  There is still more work to do, but
-    getting the code properly reviewed was arguably the most critical
-    step---so we extend our most grateful appreciation to everyone who
-    helped achieve this milestone.
+  The code [consists][sipa summary] of about [700 lines][sipa
+  consensus] of consensus-related changes (500 excluding comments and
+  whitespace) and [2,100 lines][sipa tests] of tests.  Over 30 people
+  directly reviewed this PR and its [predecessor][Bitcoin Core
+  #17977], and many others participated in developing and reviewing
+  the underlying research, the BIPs, the related code in libsecp256k1,
+  and other parts of the system.  There is still more work to do, but
+  getting the code properly reviewed was arguably the most critical
+  step---so we extend our most grateful appreciation to everyone who
+  helped achieve this milestone.
 
 - [Bitcoin Core #19988][] redesigns the logic Bitcoin Core uses to
   request transactions from its peers.  The major changes described by

@@ -33,28 +33,28 @@ notables apportés aux principaux logiciels d'infrastructure Bitcoin.
   à entrées multiples car ils ne s'engagent que sur une seule entrée
   ou sortie.
 
-    Les ancrages éphémères, similaires aux [parrainages de frais][topic
-    fee sponsorship], permettent à n'importe qui de faire payer une
-    transaction [CPFP][topic cpfp]. La transaction faisant l'objet
-    de la demande de remboursement est autorisée à ne pas contenir
-    de frais. Puisque n'importe qui peut faire payer une transaction
-    en utilisant des ancrages éphémères, ce mécanisme peut également
-    être utilisé pour payer des frais pour les transactions présignées
-    à entrées multiples qui sont une cible pour `SIGHASH_GROUP`.
+  Les ancrages éphémères, similaires aux [parrainages de frais][topic
+  fee sponsorship], permettent à n'importe qui de faire payer une
+  transaction [CPFP][topic cpfp]. La transaction faisant l'objet
+  de la demande de remboursement est autorisée à ne pas contenir
+  de frais. Puisque n'importe qui peut faire payer une transaction
+  en utilisant des ancrages éphémères, ce mécanisme peut également
+  être utilisé pour payer des frais pour les transactions présignées
+  à entrées multiples qui sont une cible pour `SIGHASH_GROUP`.
 
-    `SIGHASH_GROUP` présenterait encore deux avantages : premièrement,
-    il pourrait permettre le [traitement par lots][topic payment batching]
-    de multiples transactions présignées non liées, ce qui pourrait
-    réduire la surcharge de la taille des transactions, réduisant ainsi
-    les coûts pour l'utilisateur et augmentant la capacité du réseau.
-    Deuxièmement, elle ne nécessite pas de transaction enfant, ce qui
-    réduirait encore les coûts et augmenterait la capacité.
+  `SIGHASH_GROUP` présenterait encore deux avantages : premièrement,
+  il pourrait permettre le [traitement par lots][topic payment batching]
+  de multiples transactions présignées non liées, ce qui pourrait
+  réduire la surcharge de la taille des transactions, réduisant ainsi
+  les coûts pour l'utilisateur et augmentant la capacité du réseau.
+  Deuxièmement, elle ne nécessite pas de transaction enfant, ce qui
+  réduirait encore les coûts et augmenterait la capacité.
 
-    Towns conclut en notant que l'ancrage éphémère, avec sa dépendance
-    à l'égard du [relais de transaction v3][topic v3 transaction relay],
-    reprend la plupart des avantages de `SIGHASH_GROUP` et offre l'avantage
-    significatif d'être beaucoup plus facile à mettre en production que
-    le changement de consensus par embranchement convergent de `SIGHASH_GROUP`.
+  Towns conclut en notant que l'ancrage éphémère, avec sa dépendance
+  à l'égard du [relais de transaction v3][topic v3 transaction relay],
+  reprend la plupart des avantages de `SIGHASH_GROUP` et offre l'avantage
+  significatif d'être beaucoup plus facile à mettre en production que
+  le changement de consensus par embranchement convergent de `SIGHASH_GROUP`.
 
 - **Demande de preuve qu'un paiement asynchrone a été accepté :** Valentine
   Wallace a [posté][wallace pop] sur la liste de diffusion Lightning-Dev une

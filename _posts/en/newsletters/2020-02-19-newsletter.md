@@ -38,103 +38,103 @@ popular services, client software, and infrastructure projects.
   summary of Anon's concerns and the replies posted by several Bitcoin
   contributors.
 
-    1. {:#tap1} Anon asks, "Is taproot actually more private than bare
-       MAST and schnorr separately?  What are the actual anonymity set
-       benefits compared to doing them separately?"
+  1. {:#tap1} Anon asks, "Is taproot actually more private than bare
+     MAST and schnorr separately?  What are the actual anonymity set
+     benefits compared to doing them separately?"
 
-       Anthony Towns [replies][towns tap], "Yes [it is more private],
-       presuming single-pubkey-single-signature remains a common
-       authorization pattern."  Towns shows that single-sig spends
-       currently represent more than 57% of all transaction outputs (and
-       possibly much more, given the frequent use of P2SH-wrapped
-       P2WPKH).  The number of people able to use single-sig will
-       only increase if schnorr becomes available because it simplifies
-       using interactive n-of-n multisig, interactive
-       k-of-n threshold signing, and adaptor signatures (scriptless
-       scripts) that look like single-sig spends onchain.
+     Anthony Towns [replies][towns tap], "Yes [it is more private],
+     presuming single-pubkey-single-signature remains a common
+     authorization pattern."  Towns shows that single-sig spends
+     currently represent more than 57% of all transaction outputs (and
+     possibly much more, given the frequent use of P2SH-wrapped
+     P2WPKH).  The number of people able to use single-sig will
+     only increase if schnorr becomes available because it simplifies
+     using interactive n-of-n multisig, interactive
+     k-of-n threshold signing, and adaptor signatures (scriptless
+     scripts) that look like single-sig spends onchain.
 
-       Yet as more people turn to multisig and advanced contracts,
-       there's an increasing number of practical use cases that can be
-       satisfied by a single signature most of the time but which still
-       require the use of scripts sometimes.  With just MAST---and not
-       taproot---those use cases would need to always use MAST.  MAST
-       could also be used for single-sig spends but it would require
-       larger transactions and more fees than a pure single-sig
-       construction, so single-sig users would probably not use MAST.
-       That would create a clear divide for chain analysis between
-       spends that use MAST and spends that don't.
+     Yet as more people turn to multisig and advanced contracts,
+     there's an increasing number of practical use cases that can be
+     satisfied by a single signature most of the time but which still
+     require the use of scripts sometimes.  With just MAST---and not
+     taproot---those use cases would need to always use MAST.  MAST
+     could also be used for single-sig spends but it would require
+     larger transactions and more fees than a pure single-sig
+     construction, so single-sig users would probably not use MAST.
+     That would create a clear divide for chain analysis between
+     spends that use MAST and spends that don't.
 
-       Taproot eliminates that divide by allowing cheap single-sig
-       spends that are identical in appearance to those of users who can
-       use single-sig but who also have fallback scripts (though
-       actually spending using a fallback script will be identifiable onchain).
-       This creates a larger anonymity set than doing MAST and schnorr
-       separately as long as there really is a group of people who
-       sometimes spend using a single signature and other times spend
-       using a script.
+     Taproot eliminates that divide by allowing cheap single-sig
+     spends that are identical in appearance to those of users who can
+     use single-sig but who also have fallback scripts (though
+     actually spending using a fallback script will be identifiable onchain).
+     This creates a larger anonymity set than doing MAST and schnorr
+     separately as long as there really is a group of people who
+     sometimes spend using a single signature and other times spend
+     using a script.
 
-    2. {:#tap2} Anon asks, "Is taproot actually cheaper than bare MAST
-       and schnorr separately?"  Earlier in the email, Anon claimed that
-       taproot saves 67 bytes compared to MAST+schnorr for key-path
-       spending but adds 67 bytes for script-path spending.
+  2. {:#tap2} Anon asks, "Is taproot actually cheaper than bare MAST
+     and schnorr separately?"  Earlier in the email, Anon claimed that
+     taproot saves 67 bytes compared to MAST+schnorr for key-path
+     spending but adds 67 bytes for script-path spending.
 
-       Towns points out a redundant data field in Anon's calculation and
-       shows that taproot actually only adds about 33 bytes in the
-       script-path spending case, making the cost-benefit analysis
-       asymmetric in favor of taproot.  David Harding [notes][harding
-       tap] that the extra size (which translates to 8.25 vbytes) is
-       quite small compared to all the other data a script-path spender
-       would need to provide to spend a UTXO (e.g. 41 vbytes of input
-       data, 16-vbyte signatures or other witnesses of various sizes,
-       one or more 8-vbyte merkle nodes, and the script to execute).
+     Towns points out a redundant data field in Anon's calculation and
+     shows that taproot actually only adds about 33 bytes in the
+     script-path spending case, making the cost-benefit analysis
+     asymmetric in favor of taproot.  David Harding [notes][harding
+     tap] that the extra size (which translates to 8.25 vbytes) is
+     quite small compared to all the other data a script-path spender
+     would need to provide to spend a UTXO (e.g. 41 vbytes of input
+     data, 16-vbyte signatures or other witnesses of various sizes,
+     one or more 8-vbyte merkle nodes, and the script to execute).
 
-    3. {:#tap3} Anon asks, "Is taproot riskier than bare MAST and
-       schnorr separately given the new crypto?"
+  3. {:#tap3} Anon asks, "Is taproot riskier than bare MAST and
+     schnorr separately given the new crypto?"
 
-       Towns replies that he "doesn't think so; most of the risk for
-       either of those is in getting the details right. [...] Most of
-       the complicated crypto parts are at the application layer:
-       [MuSig][topic musig], threshold signatures, adaptor signatures,
-       scriptless scripts, etc."  He also links several resources for
-       those wanting to learn more ([1][taplearn1], [2][taplearn2],
-       [3][taplearn3]).
+     Towns replies that he "doesn't think so; most of the risk for
+     either of those is in getting the details right. [...] Most of
+     the complicated crypto parts are at the application layer:
+     [MuSig][topic musig], threshold signatures, adaptor signatures,
+     scriptless scripts, etc."  He also links several resources for
+     those wanting to learn more ([1][taplearn1], [2][taplearn2],
+     [3][taplearn3]).
 
-    4. {:#tap4} Anon asks, "couldn't we forego the [Nothing Up My
-       Sleeve]<!-- prevent link --> [NUMS][] point requirement and be able to check if it's a
-       hash root directly?"  This is a requirement that wallets create
-       and later publish a taproot internal key even if it's just a
-       random curve point because they never intended to use a key-path
-       spend.  Anon essentially proposes allowing the spender to skip
-       publishing an internal key and go straight to script-path
-       verification.
+  4. {:#tap4} Anon asks, "couldn't we forego the [Nothing Up My
+     Sleeve]<!-- prevent link --> [NUMS][] point requirement and be able to check if it's a
+     hash root directly?"  This is a requirement that wallets create
+     and later publish a taproot internal key even if it's just a
+     random curve point because they never intended to use a key-path
+     spend.  Anon essentially proposes allowing the spender to skip
+     publishing an internal key and go straight to script-path
+     verification.
 
-       Towns replies, "That would decrease the anonymity set by a lot."
-       The reason is that a non-present internal key would reveal at
-       spend time that the spender never had any intention of using a
-       key-path spend, distinguishing their spends from other spends
-       where using a key-path was an option.  Towns further notes that
-       not publishing an internal key would only save 8 vbytes.
+     Towns replies, "That would decrease the anonymity set by a lot."
+     The reason is that a non-present internal key would reveal at
+     spend time that the spender never had any intention of using a
+     key-path spend, distinguishing their spends from other spends
+     where using a key-path was an option.  Towns further notes that
+     not publishing an internal key would only save 8 vbytes.
 
-       Jonas Nick and Jeremy Rubin each provide their own analysis.
-       Nick [concludes][nick tap] that "[because] anonymity sets in
-       Bitcoin are permanent and software tends to be deployed longer
-       than anyone would expect [...] realistically taproot is superior
-       to [Anon's proposed] optimization."  Rubin [concludes][rubin tap]
-       the opposite, favoring either Anon's proposal or Rubin's own
-       proposed alternative (which would still result in the same
-       privacy loss).
+     Jonas Nick and Jeremy Rubin each provide their own analysis.
+     Nick [concludes][nick tap] that "[because] anonymity sets in
+     Bitcoin are permanent and software tends to be deployed longer
+     than anyone would expect [...] realistically taproot is superior
+     to [Anon's proposed] optimization."  Rubin [concludes][rubin tap]
+     the opposite, favoring either Anon's proposal or Rubin's own
+     proposed alternative (which would still result in the same
+     privacy loss).
 
-    5. {:#tap5} Anon asks, "Is the development model of trying to jam a
-       bunch of features into Bitcoin all at once good for Bitcoin
-       development?"
+  5. {:#tap5} Anon asks, "Is the development model of trying to jam a
+     bunch of features into Bitcoin all at once good for Bitcoin
+     development?"
 
-       Towns replies that "bundling these particular changes together
-       [gives] the advantages of taproot"---the flexibility to use either
-       key-path or script-path spending, that "key-path comes at no cost
-       compared to not using taproot", that "adding a script-path comes
-       at no cost if you don't end up using it," and that "if you can
-       interactively verify the script conditions off-chain, you can
-       always use the key path".
+     Towns replies that "bundling these particular changes together
+     [gives] the advantages of taproot"---the flexibility to use either
+     key-path or script-path spending, that "key-path comes at no cost
+     compared to not using taproot", that "adding a script-path comes
+     at no cost if you don't end up using it," and that "if you can
+     interactively verify the script conditions off-chain, you can
+     always use the key path".
 
     The discussion did not reach an obvious conclusion.  If there are
     any additional notable developments, we'll report on them in a
@@ -152,18 +152,18 @@ popular services, client software, and infrastructure projects.
   ([PoDLE][]) which JoinMarket uses to avoid the same type of
   costless UTXO disclosure attacks.
 
-    This week, Lisa Neigut published her [analysis][neigut podle1] of
-    the PoDLE idea for interactive funding.  She also separately
-    [described][neigut podle2] an attack where dishonest Mallory waits
-    for honest Alice to submit a PoDLE and then uses that to get other
-    nodes to blacklist Alice.  Neigut proposed a mitigation but an
-    alternative more compact mitigation was [proposed][gibson podle] by
-    JoinMarket developer Adam Gibson.  Gibson's approach requires the
-    PoDLE commit to the node that's expected to receive it, preventing
-    it from being maliciously reused with other nodes.  Gibson also
-    described some of the design decisions that went into
-    JoinMarket's use of PoDLE and suggested how LN developers might want
-    to use different tradeoffs for LN's own unique constraints.
+  This week, Lisa Neigut published her [analysis][neigut podle1] of
+  the PoDLE idea for interactive funding.  She also separately
+  [described][neigut podle2] an attack where dishonest Mallory waits
+  for honest Alice to submit a PoDLE and then uses that to get other
+  nodes to blacklist Alice.  Neigut proposed a mitigation but an
+  alternative more compact mitigation was [proposed][gibson podle] by
+  JoinMarket developer Adam Gibson.  Gibson's approach requires the
+  PoDLE commit to the node that's expected to receive it, preventing
+  it from being maliciously reused with other nodes.  Gibson also
+  described some of the design decisions that went into
+  JoinMarket's use of PoDLE and suggested how LN developers might want
+  to use different tradeoffs for LN's own unique constraints.
 
 - **Decoy nodes and lightweight rendez-vous routing:** Bastien
   Teinturier previously [posted][teinturier delink] about breaking the

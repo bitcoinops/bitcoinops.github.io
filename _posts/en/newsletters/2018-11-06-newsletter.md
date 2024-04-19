@@ -29,46 +29,46 @@ changes in popular Bitcoin infrastructure projects.
   blocks decreased suddenly around October 20th and began rebounding
   towards normal a few days ago.
 
-    ![Percentage of blocks including segwit transactions, last several weeks](/img/posts/segwit-blocks-2018-11.png)
+  ![Percentage of blocks including segwit transactions, last several weeks](/img/posts/segwit-blocks-2018-11.png)
 
-    A simple explanation for this sudden decrease and rebound could be a
-    minor misconfiguration.  By default, Bitcoin Core does not produce
-    segwit-including blocks in order to maintain [getblocktemplate][rpc
-    getblocktemplate] (GBT) compatibility with older pre-segwit mining
-    software.  When miners change their software or configuration, it's
-    easily possible to forget to pass the extra flag to enable segwit.
-    To illustrate how easy it is to make this mistake, the example below
-    calls GBT with its default parameter and its segwit parameter---and
-    then compares the results by the total potential block reward
-    (subsidy + fees) each block template could earn.
+  A simple explanation for this sudden decrease and rebound could be a
+  minor misconfiguration.  By default, Bitcoin Core does not produce
+  segwit-including blocks in order to maintain [getblocktemplate][rpc
+  getblocktemplate] (GBT) compatibility with older pre-segwit mining
+  software.  When miners change their software or configuration, it's
+  easily possible to forget to pass the extra flag to enable segwit.
+  To illustrate how easy it is to make this mistake, the example below
+  calls GBT with its default parameter and its segwit parameter---and
+  then compares the results by the total potential block reward
+  (subsidy + fees) each block template could earn.
 
-    ```bash
-    $ ## GBT with default parameters
-    $ bitcoin-cli getblocktemplate | jq '.coinbasevalue / 1e8'
-    12.54348709
+  ```bash
+  $ ## GBT with default parameters
+  $ bitcoin-cli getblocktemplate | jq '.coinbasevalue / 1e8'
+  12.54348709
 
-    $ ## GBT with segwit enabled
-    $ bitcoin-cli getblocktemplate '{"rules": ["segwit"]}' | jq '.coinbasevalue / 1e8'
-    12.56368175
-    ```
+  $ ## GBT with segwit enabled
+  $ bitcoin-cli getblocktemplate '{"rules": ["segwit"]}' | jq '.coinbasevalue / 1e8'
+  12.56368175
+  ```
 
-    As you can see, a miner who enabled segwit would've earned more
-    income than a non-segwit miner if one of those example block
-    templates had been mined.  Although a small difference in absolute
-    terms  due to currently almost-empty mempools (about 0.02 BTC or
-    $100 USD), in relative terms the segwit-including example block
-    template receives almost 50% more fee income than the legacy-only
-    template.  As mining is expected to be a commodity service with thin
-    profit margins, this seems to be enough of an incentive to get miners to
-    create segwit-including blocks---and it will only become more
-    important in the future as more users switch to using segwit, the
-    block subsidy decreases, and perhaps fees increase.
+  As you can see, a miner who enabled segwit would've earned more
+  income than a non-segwit miner if one of those example block
+  templates had been mined.  Although a small difference in absolute
+  terms  due to currently almost-empty mempools (about 0.02 BTC or
+  $100 USD), in relative terms the segwit-including example block
+  template receives almost 50% more fee income than the legacy-only
+  template.  As mining is expected to be a commodity service with thin
+  profit margins, this seems to be enough of an incentive to get miners to
+  create segwit-including blocks---and it will only become more
+  important in the future as more users switch to using segwit, the
+  block subsidy decreases, and perhaps fees increase.
 
-    [Bitcoin Core 0.17.0.1][] updated bitcoind's built-in documentation
-    for GBT to mention the need to enable segwit, and it has been proposed
-    in developer discussion to enable segwit GBT by default in some
-    future version (but still provide a backwards-compatible option to
-    disable it).
+  [Bitcoin Core 0.17.0.1][] updated bitcoind's built-in documentation
+  for GBT to mention the need to enable segwit, and it has been proposed
+  in developer discussion to enable segwit GBT by default in some
+  future version (but still provide a backwards-compatible option to
+  disable it).
 
 - **Overflow bug in reference C-language bech32 implementation:** Trezor
   [publicly disclosed][bech32 overflow blog] a bug they discovered in
@@ -78,11 +78,11 @@ changes in popular Bitcoin infrastructure projects.
   other [reference implementations][bech32 refs] written in other
   programming languages ([source][achow bech32]).
 
-    As Trezor responsibly disclosed the bug to multiple other projects,
-    they learned from Ledger about an additional bug in the
-    [trezor-crypto][] library for Bitcoin Cash-style addresses that use
-    the same basic structure as Bitcoin bech32 addresses.  A
-    [patch][cashaddr patch] for that has also been released.
+  As Trezor responsibly disclosed the bug to multiple other projects,
+  they learned from Ledger about an additional bug in the
+  [trezor-crypto][] library for Bitcoin Cash-style addresses that use
+  the same basic structure as Bitcoin bech32 addresses.  A
+  [patch][cashaddr patch] for that has also been released.
 
 - **Discussion about improving Lightning payments:** in advance of an
   upcoming meeting between LN protocol developers, Rusty Russell started
@@ -90,16 +90,16 @@ changes in popular Bitcoin infrastructure projects.
   potentially be solved using scriptless scripts as described in
   [Newsletter #16][].
 
-    1. An invoice can only be paid a maximum of one time.  It'd be nice
-       for multiple people to be able to pay the same invoice, such as a
-       static donation invoice or a monthly recurrent payment.
+  1. An invoice can only be paid a maximum of one time.  It'd be nice
+     for multiple people to be able to pay the same invoice, such as a
+     static donation invoice or a monthly recurrent payment.
 
-    2. The protocol doesn't provide proof of payment by a particular spender.  You can prove that
-       a particular invoice was paid, and that invoice could commit to
-       the identity of the person who was supposed to pay it, but both
-       the spender and the nodes who help route the payment to the
-       recipient all have the same data about the payment, so any one of
-       them could claim to have sent the payment themselves.
+  2. The protocol doesn't provide proof of payment by a particular spender.  You can prove that
+     a particular invoice was paid, and that invoice could commit to
+     the identity of the person who was supposed to pay it, but both
+     the spender and the nodes who help route the payment to the
+     recipient all have the same data about the payment, so any one of
+     them could claim to have sent the payment themselves.
 
 ## Optech recommends
 

@@ -22,23 +22,23 @@ popular Bitcoin infrastructure software.
   upgrade to a bug fix release, 0.14.1 (described in the *Releases and
   release candidates* section below).
 
-    A related [discussion][xraid interop] was started on the
-    Lightning-Dev mailing list about improving interoperability testing.
-    Christian Decker, who previously created and maintained the LN
-    [integration testing framework][ln integration], said that [he
-    believes][decker interop] basic interoperability testing is
-    "unlikely to catch any but the most egregious issues".  LN
-    developers participating in the discussion [noted][zmn interop] that
-    catching these sort of bugs is why every major implementation
-    provides release candidates (RCs) and why expert users and
-    administrators of production systems are encouraged to contribute to
-    the testing of those RCs.
+  A related [discussion][xraid interop] was started on the
+  Lightning-Dev mailing list about improving interoperability testing.
+  Christian Decker, who previously created and maintained the LN
+  [integration testing framework][ln integration], said that [he
+  believes][decker interop] basic interoperability testing is
+  "unlikely to catch any but the most egregious issues".  LN
+  developers participating in the discussion [noted][zmn interop] that
+  catching these sort of bugs is why every major implementation
+  provides release candidates (RCs) and why expert users and
+  administrators of production systems are encouraged to contribute to
+  the testing of those RCs.
 
-    For anyone interested in participating in such testing, the Optech
-    newsletter lists RCs from four major LN implementations, plus
-    various other Bitcoin software.  The LND version under discussion was
-    listed as an RC in Newsletters [#174][news174 lnd] and [#175][news175
-    lnd].
+  For anyone interested in participating in such testing, the Optech
+  newsletter lists RCs from four major LN implementations, plus
+  various other Bitcoin software.  The LND version under discussion was
+  listed as an RC in Newsletters [#174][news174 lnd] and [#175][news175
+  lnd].
 
 ## Releases and release candidates
 

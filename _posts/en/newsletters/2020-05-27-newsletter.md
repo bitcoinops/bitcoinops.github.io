@@ -40,11 +40,11 @@ Voegtlin agrees) -->
   fork][topic consensus cleanup] by forbidding transactions with a
   stripped size of fewer than 65 bytes.
 
-    After describing the motivation for the current relay rule, Sanders
-    [asks][sanders 64] whether the rule can be simplified to only forbid
-    transactions whose stripped size is exactly 64 bytes.  ZmnSCPxj
-    [replies][zmn padding] that anything under 64 bytes could still be
-    vulnerable, but that the 65-bytes-or-greater rule seems fine.
+  After describing the motivation for the current relay rule, Sanders
+  [asks][sanders 64] whether the rule can be simplified to only forbid
+  transactions whose stripped size is exactly 64 bytes.  ZmnSCPxj
+  [replies][zmn padding] that anything under 64 bytes could still be
+  vulnerable, but that the 65-bytes-or-greater rule seems fine.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

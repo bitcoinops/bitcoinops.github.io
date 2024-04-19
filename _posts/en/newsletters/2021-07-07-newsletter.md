@@ -28,12 +28,12 @@ projects.
   descriptor features they want to implement, e.g. newer wallets may
   never implement the legacy `pkh()` descriptor.
 
-    Descriptors were originally implemented for Bitcoin Core and have
-    seen increased adoption over the past year by other projects.
-    They're poised to see a significant increase in use as wallets begin
-    to explore the flexibility enabled by [taproot][topic taproot] and
-    the ability to simplify access to the flexible scripts through tools
-    like [miniscript][topic miniscript].
+  Descriptors were originally implemented for Bitcoin Core and have
+  seen increased adoption over the past year by other projects.
+  They're poised to see a significant increase in use as wallets begin
+  to explore the flexibility enabled by [taproot][topic taproot] and
+  the ability to simplify access to the flexible scripts through tools
+  like [miniscript][topic miniscript].
 
 {% comment %}<!-- Gentry uses a lowercase leading character (bLIPs).  I
 asked in IRC why, but unless there's a *really* compelling reason, I'd
@@ -48,19 +48,19 @@ at the beginning of a sentence. -harding -->{% endcomment %}
   René Pickhardt linked to an almost [identical proposal][pickhardt
   lips] he made in 2018.
 
-    In discussion, the idea seemed to have broad support, although
-    [concerns][teinturier blips] were raised that it doesn't actually
-    solve the barrier to getting those standards incorporated in the
-    base BOLTs documents---that barrier being experienced developers
-    lacking enough time to review the many community proposals.  If
-    BLIPs are merged without significant review, that increases the
-    chance that they'll contain bugs or that they'll fail to achieve
-    broad support from multiple stakeholders, leading to fragmentation
-    as different projects adopt competing standards.  Still,
-    non-mainline protocols are already being created and most discussion
-    participants seemed to believe providing a well-known archive where
-    documentation about those protocols could be published would be
-    primarily beneficial.
+  In discussion, the idea seemed to have broad support, although
+  [concerns][teinturier blips] were raised that it doesn't actually
+  solve the barrier to getting those standards incorporated in the
+  base BOLTs documents---that barrier being experienced developers
+  lacking enough time to review the many community proposals.  If
+  BLIPs are merged without significant review, that increases the
+  chance that they'll contain bugs or that they'll fail to achieve
+  broad support from multiple stakeholders, leading to fragmentation
+  as different projects adopt competing standards.  Still,
+  non-mainline protocols are already being created and most discussion
+  participants seemed to believe providing a well-known archive where
+  documentation about those protocols could be published would be
+  primarily beneficial.
 
 - **Zero-conf channel opens:** Rusty Russell started a
   [discussion][russell zeroconf] on the Lightning-Dev mailing list about
@@ -72,20 +72,20 @@ at the beginning of a sentence. -harding -->{% endcomment %}
   acceptor spending some of those funds back through the funder using
   the standard LN protocol.
 
-    For example, Alice has several BTC in an account at Bob's custodial
-    exchange.  Alice asks Bob to open a new channel paying her 1.0 BTC.
-    Because Bob trusts himself not to double-spend the channel he just
-    opened, he can allow Alice to send 0.1 BTC through his node to
-    third-party Carol even before the channel open transaction has
-    received a single confirmation.
+  For example, Alice has several BTC in an account at Bob's custodial
+  exchange.  Alice asks Bob to open a new channel paying her 1.0 BTC.
+  Because Bob trusts himself not to double-spend the channel he just
+  opened, he can allow Alice to send 0.1 BTC through his node to
+  third-party Carol even before the channel open transaction has
+  received a single confirmation.
 
-    {:.center}
-    ![Zero-conf channel illustration](/img/posts/2021-07-zeroconf-channels.png)
+  {:.center}
+  ![Zero-conf channel illustration](/img/posts/2021-07-zeroconf-channels.png)
 
-    Some LN implementations already support the idea in a
-    non-standardized way and all discussion participants seemed to favor
-    standardizing it.  The exact details to use were still being
-    discussed at the time of writing.
+  Some LN implementations already support the idea in a
+  non-standardized way and all discussion participants seemed to favor
+  standardizing it.  The exact details to use were still being
+  discussed at the time of writing.
 
 ## Preparing for taproot #3: taproot descriptors
 

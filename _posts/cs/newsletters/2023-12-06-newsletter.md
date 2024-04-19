@@ -41,73 +41,73 @@ bitcoinovém páteřním software.
   Archiv pracovní skupiny je nyní přístupný všem, avšak pouze pozvaní členové
   mohou přispívat. Vybíráme některá zajímavá diskutovaná témata:
 
-    - [Definice a teorie cluster mempoolu][clusterdef] přináší definice
-      termínů použitých v návrhu cluster mempoolu. Též přináší několik
-      vět, které demonstrují užitečné vlastnosti tohoto návrhu. Tento jediný
-      příspěvek vlákna (v době psaní zpravodaje) je užitečný k porozumění
-      dalších debat pracovní skupiny, ačkoliv jeho autor (Pieter Wuille)
-      [varuje][wuille incomplete], že je stále „velice neúplný.”
+  - [Definice a teorie cluster mempoolu][clusterdef] přináší definice
+    termínů použitých v návrhu cluster mempoolu. Též přináší několik
+    vět, které demonstrují užitečné vlastnosti tohoto návrhu. Tento jediný
+    příspěvek vlákna (v době psaní zpravodaje) je užitečný k porozumění
+    dalších debat pracovní skupiny, ačkoliv jeho autor (Pieter Wuille)
+    [varuje][wuille incomplete], že je stále „velice neúplný.”
 
-    - [Sloučení neporovnatelných linearizací][cluster merge] zkoumá, jak sloučit
-      dvě odlišené sady chunků (chunkování, „chunkings”) shodných množin transakcí,
-      které jsou _neporovnatelné_. Porovnáním dvou odlišných sad chunků (chunkování)
-      bychom mohli určit, která z nich by byla pro těžaře výhodnější. Chunkování
-      by mohla být porovnána, pokud by jedno z nich vždy akumulovalo shodnou
-      nebo vyšší výši poplatků v rámci libovolné hodnoty vbyte (diskrétní
-      podle velikost chunku). Například:
+  - [Sloučení neporovnatelných linearizací][cluster merge] zkoumá, jak sloučit
+    dvě odlišené sady chunků (chunkování, „chunkings”) shodných množin transakcí,
+    které jsou _neporovnatelné_. Porovnáním dvou odlišných sad chunků (chunkování)
+    bychom mohli určit, která z nich by byla pro těžaře výhodnější. Chunkování
+    by mohla být porovnána, pokud by jedno z nich vždy akumulovalo shodnou
+    nebo vyšší výši poplatků v rámci libovolné hodnoty vbyte (diskrétní
+    podle velikost chunku). Například:
 
-      ![Comparable chunkings](/img/posts/2023-12-comparable-chunkings.png)
+    ![Comparable chunkings](/img/posts/2023-12-comparable-chunkings.png)
 
-      Naopak neporovnatelná by byla, pokud by jedno z nich akumulovalo
-      větší výši poplatků v rámci určitého rozmezí vbyte, a to druhé
-      větší výši poplatků v jiném rozmezí, například:
+    Naopak neporovnatelná by byla, pokud by jedno z nich akumulovalo
+    větší výši poplatků v rámci určitého rozmezí vbyte, a to druhé
+    větší výši poplatků v jiném rozmezí, například:
 
-      ![Incomparable chunkings](/img/posts/2023-12-incomparable-chunkings.png)
+    ![Incomparable chunkings](/img/posts/2023-12-incomparable-chunkings.png)
 
-      Jak poznamenává jedna z vět zmíněná v předchozím příspěvku, „existují-li
-      dvě neporovnatelná chunkování, potom musí existovat třetí, které je
-      lepší než obě.” To znamená, že efektivní způsob, jakým sloučit dvě
-      odlišná, neporovnatelná chunkování může být mocným nástrojem pro zvýšení
-      těžařovy profitability. Příklad: je přijata nový transakce, která
-      souvisí s jinou transakcí z mempoolu. Její cluster musí být aktualizován,
-      a tedy i její chunkování musí být upraveno. Mohou být provedeny dva různé
-      způsoby této úpravy:
+    Jak poznamenává jedna z vět zmíněná v předchozím příspěvku, „existují-li
+    dvě neporovnatelná chunkování, potom musí existovat třetí, které je
+    lepší než obě.” To znamená, že efektivní způsob, jakým sloučit dvě
+    odlišná, neporovnatelná chunkování může být mocným nástrojem pro zvýšení
+    těžařovy profitability. Příklad: je přijata nový transakce, která
+    souvisí s jinou transakcí z mempoolu. Její cluster musí být aktualizován,
+    a tedy i její chunkování musí být upraveno. Mohou být provedeny dva různé
+    způsoby této úpravy:
 
-      1. Je spočítáno nové chunkování pro aktualizovaný cluster. Pro velké clustery
-         může být nalezení optimálního chunkování výpočetně nepraktické, nové
-         chunkování tedy může být méně optimální než staré.
+    1. Je spočítáno nové chunkování pro aktualizovaný cluster. Pro velké clustery
+       může být nalezení optimálního chunkování výpočetně nepraktické, nové
+       chunkování tedy může být méně optimální než staré.
 
-      2. Předchozí chunkování z předchozího clusteru je aktualizováno
-         vložením nové transakce na místo, které je validní (předci
-         před potomky). Výhodou je, že jakékoliv stávající optimalizace
-         zůstávají nedotčené, na druhou stranu by transakce mohla být
-         umístěna v neoptimálním místě.
+    2. Předchozí chunkování z předchozího clusteru je aktualizováno
+       vložením nové transakce na místo, které je validní (předci
+       před potomky). Výhodou je, že jakékoliv stávající optimalizace
+       zůstávají nedotčené, na druhou stranu by transakce mohla být
+       umístěna v neoptimálním místě.
 
-      Když jsou obě metody vykonány, můžeme porovnáním zjistit, že výsledek
-      jedné je lepší, může tedy být použit. Avšak jsou-li obě aktualizace
-      neporovnatelné, lze použít metodu, která zaručuje ekvivalentní nebo
-      lepší výsledek sloučení, k vytvoření třetího chunkování, které obsáhne
-      nejlepší součásti obou přístupů: použitím nových chunkování, pokud jsou
-      lepší, nebo zachování předchozích, pokud ta se blíží optimu.
+    Když jsou obě metody vykonány, můžeme porovnáním zjistit, že výsledek
+    jedné je lepší, může tedy být použit. Avšak jsou-li obě aktualizace
+    neporovnatelné, lze použít metodu, která zaručuje ekvivalentní nebo
+    lepší výsledek sloučení, k vytvoření třetího chunkování, které obsáhne
+    nejlepší součásti obou přístupů: použitím nových chunkování, pokud jsou
+    lepší, nebo zachování předchozích, pokud ta se blíží optimu.
 
-    - [RBF balíčku v době clusterů][cluster rbf] se zabývá alternativami
-      k pravidlům používaným v současnosti pro [nahrazování poplatkem][topic
-      rbf]. Obdrží-li uzel validní nahrazení jedné nebo více transakcí,
-      může být vytvořena dočasná verze všech dotčených clusterů a odvozeno
-      jejich nové chunkování. To potom může být porovnáno s chunkováním
-      původních clusterů v mempoolu (bez nahrazení). Pokud chunkování
-      s nahrazením přináší vždy stejně nebo více na poplatcích než originální
-      pro jakýkoliv počet vbyte, a pokud navyšuje celkovou hodnotu poplatků
-      v mempoolu natolik, aby zaplatilo za své poplatky, potom může být
-      začleněno do mempoolu.
+  - [RBF balíčku v době clusterů][cluster rbf] se zabývá alternativami
+    k pravidlům používaným v současnosti pro [nahrazování poplatkem][topic
+    rbf]. Obdrží-li uzel validní nahrazení jedné nebo více transakcí,
+    může být vytvořena dočasná verze všech dotčených clusterů a odvozeno
+    jejich nové chunkování. To potom může být porovnáno s chunkováním
+    původních clusterů v mempoolu (bez nahrazení). Pokud chunkování
+    s nahrazením přináší vždy stejně nebo více na poplatcích než originální
+    pro jakýkoliv počet vbyte, a pokud navyšuje celkovou hodnotu poplatků
+    v mempoolu natolik, aby zaplatilo za své poplatky, potom může být
+    začleněno do mempoolu.
 
-      Toto vyhodnocování založené na důkazech by mohlo nahradit několik
-      [heuristik][mempool replacements], které jsou v současnosti v Bitcoin
-      Core používány k určení, zda má být transakce nahrazena. To by mohlo
-      v několika oblastech zlepšit pravidla RBF, včetně navrhovaného
-      [přeposílání balíčků][topic package relay] pro nahrazování.
-      Několik [dalších][cluster rbf-old1] vláken [se též][cluster rbf-old2]
-      zabývalo [tímto][cluster rbf-old3] tématem.
+    Toto vyhodnocování založené na důkazech by mohlo nahradit několik
+    [heuristik][mempool replacements], které jsou v současnosti v Bitcoin
+    Core používány k určení, zda má být transakce nahrazena. To by mohlo
+    v několika oblastech zlepšit pravidla RBF, včetně navrhovaného
+    [přeposílání balíčků][topic package relay] pro nahrazování.
+    Několik [dalších][cluster rbf-old1] vláken [se též][cluster rbf-old2]
+    zabývalo [tímto][cluster rbf-old3] tématem.
 
 - **Testování s warnetem:** Matthew Zipkin zaslal do Delving Bitcoin
   [příspěvek][zipkin warnet] s výsledky simulací, které provádí pomocí

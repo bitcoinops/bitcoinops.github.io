@@ -21,89 +21,89 @@ and descriptions of popular Bitcoin infrastructure software.
   describing how the opcode (and some other tapscript changes) would
   work.
 
-    In short, a new `OP_TAPLEAF_UPDATE_VERIFY` opcode (TLUV) takes
-    information about the taproot input being spent, makes modifications
-    described in a tapscript, and requires that the result be equivalent
-    to the scriptPubKey in the output in the same position as the input.
-    This allows TLUV to constrain where the bitcoins can be spent (the
-    definition of a [covenant][topic covenants]), similar to other
-    proposed opcodes such as [OP_CHECKSIGFROMSTACK][topic
-    op_checksigfromstack] (CSFS) and [OP_CHECKTEMPLATEVERIFY][topic
-    op_checktemplateverify] (CTV).  Where it differs from previous
-    proposals are the modifications it allows the creator of the
-    tapscript to make:
+  In short, a new `OP_TAPLEAF_UPDATE_VERIFY` opcode (TLUV) takes
+  information about the taproot input being spent, makes modifications
+  described in a tapscript, and requires that the result be equivalent
+  to the scriptPubKey in the output in the same position as the input.
+  This allows TLUV to constrain where the bitcoins can be spent (the
+  definition of a [covenant][topic covenants]), similar to other
+  proposed opcodes such as [OP_CHECKSIGFROMSTACK][topic
+  op_checksigfromstack] (CSFS) and [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] (CTV).  Where it differs from previous
+  proposals are the modifications it allows the creator of the
+  tapscript to make:
 
-    - **Internal key tweak:** every taproot address commits to an
-      internal key that can be used to spend with just a signature.  In order to
-      use a tapscript (including TLUV), the current internal key needs
-      to be revealed.  TLUV allows specifying a tweak to be added to
-      that key.  For example, if the internal key is an aggregation of
-      keys `A+B+C`, key `C` can be removed by specifying a tweak of `-C`
-      or key `X` can be added by specifying a tweak of `X`.  TLUV
-      computes the modified internal key and ensures that is what the
-      same-position output will pay.
+  - **Internal key tweak:** every taproot address commits to an
+    internal key that can be used to spend with just a signature.  In order to
+    use a tapscript (including TLUV), the current internal key needs
+    to be revealed.  TLUV allows specifying a tweak to be added to
+    that key.  For example, if the internal key is an aggregation of
+    keys `A+B+C`, key `C` can be removed by specifying a tweak of `-C`
+    or key `X` can be added by specifying a tweak of `X`.  TLUV
+    computes the modified internal key and ensures that is what the
+    same-position output will pay.
 
-      One powerful use of this described in Towns's email is the ability
-      to more effectively create a [joinpool][], a single UTXO shared by
-      multiple users who each control a portion of the UTXO's funds but
-      don't have to reveal that ownership publicly onchain (nor reveal
-      how many owners the UTXO has).  If all pool members sign together,
-      they can spend their funds in highly fungible transactions.  If
-      there's any disagreement, each pool member can use a transaction
-      to exit the pool with all their funds (minus an onchain
-      transaction fee).
+    One powerful use of this described in Towns's email is the ability
+    to more effectively create a [joinpool][], a single UTXO shared by
+    multiple users who each control a portion of the UTXO's funds but
+    don't have to reveal that ownership publicly onchain (nor reveal
+    how many owners the UTXO has).  If all pool members sign together,
+    they can spend their funds in highly fungible transactions.  If
+    there's any disagreement, each pool member can use a transaction
+    to exit the pool with all their funds (minus an onchain
+    transaction fee).
 
-      It's possible to create a joinpool using just presigned
-      transactions today, but this requires creating an exponentially
-      increasing number of signatures if we want each member of the pool
-      to be able to leave individually without the cooperation of the
-      other members.  CTV has a similar problem where exiting a pool
-      might require creating multiple transactions that affect multiple
-      other users.  TLUV allows any single member to exit at any time
-      without requiring anything be presigned or affecting any other
-      users, beyond revealing that one member has left the joinpool.
+    It's possible to create a joinpool using just presigned
+    transactions today, but this requires creating an exponentially
+    increasing number of signatures if we want each member of the pool
+    to be able to leave individually without the cooperation of the
+    other members.  CTV has a similar problem where exiting a pool
+    might require creating multiple transactions that affect multiple
+    other users.  TLUV allows any single member to exit at any time
+    without requiring anything be presigned or affecting any other
+    users, beyond revealing that one member has left the joinpool.
 
-    - **Merkle tree tweak:** taproot addresses can also commit to the
-      merkle root for a tree of tapscripts, and it'll be one of those
-      tapscripts in the transaction input that will be executing the
-      TLUV opcode.  TLUV allows that script to specify how that part of
-      the merkle tree should be modified.  For example, the currently
-      executed node (tapleaf) can be removed from the tree (e.g. someone
-      exiting a joinpool) or replaced with a tapleaf paying a different
-      tapscript.  TLUV computes the modified merkle root and ensures
-      that is what the same-position output will pay.
+  - **Merkle tree tweak:** taproot addresses can also commit to the
+    merkle root for a tree of tapscripts, and it'll be one of those
+    tapscripts in the transaction input that will be executing the
+    TLUV opcode.  TLUV allows that script to specify how that part of
+    the merkle tree should be modified.  For example, the currently
+    executed node (tapleaf) can be removed from the tree (e.g. someone
+    exiting a joinpool) or replaced with a tapleaf paying a different
+    tapscript.  TLUV computes the modified merkle root and ensures
+    that is what the same-position output will pay.
 
-      Towns's email describes how this can be used to implement Bryan
-      Bishop's 2019 [vault][topic vaults] design (see [Newsletter
-      #59][news59 vaults]).  Alice creates two keypairs, one for her
-      less secure hot wallet and one for her more secure cold wallet.
-      The cold wallet key becomes the taproot internal key, allowing it
-      to spend the funds any time.  The hot wallet key is used with TLUV
-      to only allow spending to a modification of the merkle tree that
-      includes a time delay before a second spend from the hot wallet
-      key may be sent.
+    Towns's email describes how this can be used to implement Bryan
+    Bishop's 2019 [vault][topic vaults] design (see [Newsletter
+    #59][news59 vaults]).  Alice creates two keypairs, one for her
+    less secure hot wallet and one for her more secure cold wallet.
+    The cold wallet key becomes the taproot internal key, allowing it
+    to spend the funds any time.  The hot wallet key is used with TLUV
+    to only allow spending to a modification of the merkle tree that
+    includes a time delay before a second spend from the hot wallet
+    key may be sent.
 
-      That means Alice can start a spend of all her funds with her hot
-      key, but she has to create an onchain transaction for that and
-      then wait for the time delay (e.g.  1 day) to complete before she
-      can truly spend her funds to an arbitrary address.  If someone
-      else is using Alice's hot key to start the spending process, Alice
-      can use her cold key to move the funds to a safe address.
+    That means Alice can start a spend of all her funds with her hot
+    key, but she has to create an onchain transaction for that and
+    then wait for the time delay (e.g.  1 day) to complete before she
+    can truly spend her funds to an arbitrary address.  If someone
+    else is using Alice's hot key to start the spending process, Alice
+    can use her cold key to move the funds to a safe address.
 
-    - **Amount introspection:** in addition to TLUV, a second opcode
-      would be added that pushes to the script execution stack the
-      bitcoin value of the input and its corresponding output.  This
-      allows math and comparison opcodes to restrict the amount that can
-      be spent.
+  - **Amount introspection:** in addition to TLUV, a second opcode
+    would be added that pushes to the script execution stack the
+    bitcoin value of the input and its corresponding output.  This
+    allows math and comparison opcodes to restrict the amount that can
+    be spent.
 
-      In the case of a joinpool, this would be used to ensure a
-      departing member could only withdraw their own funds.  In a vault,
-      this could be used to set a periodic withdrawal limit, e.g. 1 BTC
-      per day.
+    In the case of a joinpool, this would be used to ensure a
+    departing member could only withdraw their own funds.  In a vault,
+    this could be used to set a periodic withdrawal limit, e.g. 1 BTC
+    per day.
 
-    As of this writing, the proposal was still receiving initial
-    feedback on the mailing list.  We'll summarize any notable comments
-    in a future newsletter.
+  As of this writing, the proposal was still receiving initial
+  feedback on the mailing list.  We'll summarize any notable comments
+  in a future newsletter.
 
 - **Signet reorg discussion:** developer 0xB10C [posted][b10c post] a
   proposal to the Bitcoin-Dev mailing list for creating periodic block
@@ -114,10 +114,10 @@ and descriptions of popular Bitcoin infrastructure software.
   times a day, and would follow two different patterns that replicated
   what possible reorgs on mainnet would look like.
 
-    0xB10C requested feedback and received several comments as of this
-    writing.  We encourage anyone interested in testing reorgs (or
-    wanting to avoid them) on signet to read the discussion and
-    consider participating.
+  0xB10C requested feedback and received several comments as of this
+  writing.  We encourage anyone interested in testing reorgs (or
+  wanting to avoid them) on signet to read the discussion and
+  consider participating.
 
 ## Preparing for taproot #13: Backup and security schemes
 

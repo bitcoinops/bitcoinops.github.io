@@ -36,23 +36,23 @@ None this week.
   cover the full range of topics, from introductory to advanced.  Three
   talks may be especially interesting to Optech members:
 
-    1. *Exchange security* by Warren Togami.  Describes the causes
-       behind several notable major thefts from Bitcoin and altcoin
-       exchanges and lists a number of techniques businesses can use to
-       reduce their risk of loss.  ([Video][warren vid],
-       [transcript][warren transcript])
+  1. *Exchange security* by Warren Togami.  Describes the causes
+     behind several notable major thefts from Bitcoin and altcoin
+     exchanges and lists a number of techniques businesses can use to
+     reduce their risk of loss.  ([Video][warren vid],
+     [transcript][warren transcript])
 
-    2. *Wallet Security, Key Management & Hardware Security Modules
-       (HSMs)]* by Bryan Bishop.  Suggests methods for decreasing the
-       risk that private keys will be stolen or misused.
-       ([Video][kanzure wallet vid], [transcript][kanzure wallet
-       transcript])
+  2. *Wallet Security, Key Management & Hardware Security Modules
+     (HSMs)]* by Bryan Bishop.  Suggests methods for decreasing the
+     risk that private keys will be stolen or misused.
+     ([Video][kanzure wallet vid], [transcript][kanzure wallet
+     transcript])
 
-    3. *Handling reorgs and forks* by Bryan Bishop.  Describes how to
-       secure your transactions against changes in the Bitcoin block
-       chain or consensus rules, including suggestions for how to test
-       your systems.  ([Video][kanzure reorg vid], [transcript][kanzure
-       reorg transcript])
+  3. *Handling reorgs and forks* by Bryan Bishop.  Describes how to
+     secure your transactions against changes in the Bitcoin block
+     chain or consensus rules, including suggestions for how to test
+     your systems.  ([Video][kanzure reorg vid], [transcript][kanzure
+     reorg transcript])
 
 ## CoreDev.tech
 
@@ -86,17 +86,17 @@ on some of the transcripts for the event in Tokyo last week:
   many normal cases (including imports of HD extended private and public
   keys).
 
-    Somewhat related is DESCRIPT, a language that uses a subset of the
-    full Bitcoin Script language to make it easy to construct some
-    simple policies.  "We have a DESCRIPT compiler that takes something
-    we're calling a policy language (AND, OR, threshold, public key,
-    hashlock, timelock) together with probabilities for each OR to tell
-    whether it's 50/50 or whether one side of the OR is more likely than
-    the right, and it will find [...] the optimal script in this subset
-    of script that we have defined."  For example, it could allow you
-    "to do something like a multisig that after some time degrades into
-    a weaker multisig---like a 2-of-3 but after a year I can spend it
-    with just one of those keys."
+  Somewhat related is DESCRIPT, a language that uses a subset of the
+  full Bitcoin Script language to make it easy to construct some
+  simple policies.  "We have a DESCRIPT compiler that takes something
+  we're calling a policy language (AND, OR, threshold, public key,
+  hashlock, timelock) together with probabilities for each OR to tell
+  whether it's 50/50 or whether one side of the OR is more likely than
+  the right, and it will find [...] the optimal script in this subset
+  of script that we have defined."  For example, it could allow you
+  "to do something like a multisig that after some time degrades into
+  a weaker multisig---like a 2-of-3 but after a year I can spend it
+  with just one of those keys."
 
 ## Notable code changes
 

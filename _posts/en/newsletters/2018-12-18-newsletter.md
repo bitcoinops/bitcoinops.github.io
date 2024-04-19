@@ -33,30 +33,30 @@ in the past week from popular Bitcoin infrastructure projects.
   libminisketch allows transferring the differences *without knowing what
   they are ahead of time.*
 
-    For example, Alice has elements 1, 2, and 3.  Bob has elements 1 and 3.
-    Despite neither knowing which elements the other has, Alice can send
-    Bob a *sketch* the size of a single element that contains enough
-    information for him reconstruct element 2.  If Bob instead has
-    elements 1 and 2 (not 3), the exact same sketch allows him to
-    reconstruct element 3.  Alternatively, if Bob sends Alice a sketch
-    based on his two-element set while Alice has her three-element
-    set, she can determine which element Bob is missing and send it
-    to him directly.
+  For example, Alice has elements 1, 2, and 3.  Bob has elements 1 and 3.
+  Despite neither knowing which elements the other has, Alice can send
+  Bob a *sketch* the size of a single element that contains enough
+  information for him reconstruct element 2.  If Bob instead has
+  elements 1 and 2 (not 3), the exact same sketch allows him to
+  reconstruct element 3.  Alternatively, if Bob sends Alice a sketch
+  based on his two-element set while Alice has her three-element
+  set, she can determine which element Bob is missing and send it
+  to him directly.
 
-    These sketches can provide a powerful new way to optimize relay of
-    unconfirmed transactions for the Bitcoin P2P network.  The current
-    gossip-based mechanism has each node receiving or sending 32-byte
-    identifiers for each transaction for each of their peers.  For
-    example, if you have 100 peers, you send or receive 3,200 bytes of
-    announcements, plus overhead, for what is (on average) just a 400
-    byte transaction.  An early estimate using a [simulator][naumenko
-    relay simulator] indicates combining sketches with shortened
-    transaction identifiers (for relay only) could reduce total
-    transaction propagation bandwidth by a factor of 44x.  Sketches also
-    have the potential to provide other desirable features---for
-    example, LN protocol developer Rusty Russell started a [thread][ln
-    minisketch] on the Lightning-Dev mailing list about using them for
-    sending LN routing table updates.
+  These sketches can provide a powerful new way to optimize relay of
+  unconfirmed transactions for the Bitcoin P2P network.  The current
+  gossip-based mechanism has each node receiving or sending 32-byte
+  identifiers for each transaction for each of their peers.  For
+  example, if you have 100 peers, you send or receive 3,200 bytes of
+  announcements, plus overhead, for what is (on average) just a 400
+  byte transaction.  An early estimate using a [simulator][naumenko
+  relay simulator] indicates combining sketches with shortened
+  transaction identifiers (for relay only) could reduce total
+  transaction propagation bandwidth by a factor of 44x.  Sketches also
+  have the potential to provide other desirable features---for
+  example, LN protocol developer Rusty Russell started a [thread][ln
+  minisketch] on the Lightning-Dev mailing list about using them for
+  sending LN routing table updates.
 
 - **Description about what might be included in a Schnorr/Taproot soft fork:**
   Bitcoin protocol developer Anthony Towns has [posted][towns

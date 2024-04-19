@@ -50,22 +50,22 @@ code changes in popular Bitcoin infrastructure projects.
   the onchain payment contains a refund condition that allows Bob to
   spend it back to himself after a timelock expires.
 
-    Most of the process is trustless, so neither party has an
-    opportunity to steal from the other (provided the software operates
-    (and is operated) correctly).  The exception is the creation of the
-    initial onchain transaction and the possible need for Bob to create
-    a refund transaction: if the trustless exchange doesn't happen, Bob
-    will receive no compensation for the onchain transaction fees
-    required for both of those transactions.  According to the [Loop
-    documentation][], their implementation has Alice send Bob a small
-    trusted payment via LN in advance of the trustless exchange as an act of
-    good faith and an assurance that the operation won't end up costing
-    Bob money.
+  Most of the process is trustless, so neither party has an
+  opportunity to steal from the other (provided the software operates
+  (and is operated) correctly).  The exception is the creation of the
+  initial onchain transaction and the possible need for Bob to create
+  a refund transaction: if the trustless exchange doesn't happen, Bob
+  will receive no compensation for the onchain transaction fees
+  required for both of those transactions.  According to the [Loop
+  documentation][], their implementation has Alice send Bob a small
+  trusted payment via LN in advance of the trustless exchange as an act of
+  good faith and an assurance that the operation won't end up costing
+  Bob money.
 
-    By allowing Alice and Bob to swap onchain and offchain funds, all
-    while continuing to use their existing channels, Loop helps users
-    keep their channels open longer and makes it conceivable that they
-    could stay open indefinitely.
+  By allowing Alice and Bob to swap onchain and offchain funds, all
+  while continuing to use their existing channels, Loop helps users
+  keep their channels open longer and makes it conceivable that they
+  could stay open indefinitely.
 
 - **Square Crypto developer group announced:** the CEO of Square
   [announced on Twitter][sqcrypto announced] that they are forming a
