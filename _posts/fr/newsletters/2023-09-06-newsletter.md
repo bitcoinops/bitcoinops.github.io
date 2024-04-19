@@ -62,12 +62,12 @@ d'infrastructure Bitcoin les plus répandus.
   actuellement utilisés que nous connaissons révèlent directement les transactions des utilisateurs au fournisseur de services
   avant la signature, permettant au service de refuser de signer certaines transactions.
 
-      Comme le décrit Farrow, FROST permet de masquer la transaction signée au service à chaque étape du processus, de la
-      génération d'un script de sortie, à la signature, à la publication de la transaction entièrement signée. Tout ce que le
-      service saura, c'est quand il a signé et toutes les données que l'utilisateur a fournies pour s'authentifier auprès du
-      service.
+  Comme le décrit Farrow, FROST permet de masquer la transaction signée au service à chaque étape du processus, de la
+  génération d'un script de sortie, à la signature, à la publication de la transaction entièrement signée. Tout ce que le
+  service saura, c'est quand il a signé et toutes les données que l'utilisateur a fournies pour s'authentifier auprès du
+  service.
 
-      L'idée a fait l'objet de discussions sur la liste de diffusion.
+  L'idée a fait l'objet de discussions sur la liste de diffusion.
 
 ## Mises à jour et versions candidates
 
