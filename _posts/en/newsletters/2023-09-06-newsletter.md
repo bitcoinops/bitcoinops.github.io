@@ -27,39 +27,39 @@ popular Bitcoin infrastructure software.
   uniform elements---data that looks random---like public keys and hash
   digests.
 
-    Briar's proposal addresses this using several approaches:
+  Briar's proposal addresses this using several approaches:
 
-    - For the parts of a transaction where an integer is currently
-      represented by 4 bytes (e.g., transaction version and outpoint
-      index), these are replaced by a variable-length integer that can
-      be as small as 2 bits.
+  - For the parts of a transaction where an integer is currently
+    represented by 4 bytes (e.g., transaction version and outpoint
+    index), these are replaced by a variable-length integer that can
+    be as small as 2 bits.
 
-    - The uniformly distributed 32-byte outpoint txid in each input
-      is replaced by a reference to the location of that
-      transaction in the block chain using its block height and location
-      within the block, e.g.  `123456` and `789` would indicate the
-      789th transaction in block 123,456.  Because the block at a
-      particular height can change due to a block chain reorganization
-      (breaking the reference and making it impossible to uncompress the transaction),
-      this method is only used when the referenced transaction has at
-      least 100 confirmations.
+  - The uniformly distributed 32-byte outpoint txid in each input
+    is replaced by a reference to the location of that
+    transaction in the block chain using its block height and location
+    within the block, e.g.  `123456` and `789` would indicate the
+    789th transaction in block 123,456.  Because the block at a
+    particular height can change due to a block chain reorganization
+    (breaking the reference and making it impossible to uncompress the transaction),
+    this method is only used when the referenced transaction has at
+    least 100 confirmations.
 
-    - For P2WPKH transactions where the witness structure needs to
-      include a signature plus a 33-byte public key,
-      the public key is omitted and a technique of reconstructing it
-      from the signature is used.
+  - For P2WPKH transactions where the witness structure needs to
+    include a signature plus a 33-byte public key,
+    the public key is omitted and a technique of reconstructing it
+    from the signature is used.
 
-    Some other techniques are used to save a few extra bytes in typical
-    transactions.  The general downside of the proposal is that
-    converting a compressed transaction back into something that full
-    nodes and other software can use requires more CPU, memory, and I/O
-    than processing a regular serialized transaction.  That means
-    high-bandwidth connections will likely continue to use the regular
-    transaction format and only low-bandwidth transmission will use
-    compressed transactions.
+  Some other techniques are used to save a few extra bytes in typical
+  transactions.  The general downside of the proposal is that
+  converting a compressed transaction back into something that full
+  nodes and other software can use requires more CPU, memory, and I/O
+  than processing a regular serialized transaction.  That means
+  high-bandwidth connections will likely continue to use the regular
+  transaction format and only low-bandwidth transmission will use
+  compressed transactions.
 
-    The idea received a moderate amount of discussion, mostly around
-    ideas for saving a small amount of additional space per input. {% assign timestamp="1:13" %}
+  The idea received a moderate amount of discussion, mostly around
+  ideas for saving a small amount of additional space per input. {% assign timestamp="1:13" %}
 
 - **Privacy enhanced co-signing:** Nick Farrow [posts][farrow cosign] to
   the Bitcoin-Dev mailing list about how a [scriptless threshold
@@ -73,22 +73,22 @@ popular Bitcoin infrastructure software.
   the service provider if needed, but the service provider makes
   operations easier in most cases.
 
-    With scripted threshold signature schemes like 2-of-3
-    `OP_CHECKMULTISIG`, the service's public key must be associated with
-    the output being spent, so any service will be able to find the
-    transactions it signed by looking at onchain data, allowing it
-    accumulate data about its users.  Worse, all currently used protocols
-    we're aware of directly reveal user transactions to the service
-    provider before signing, allowing the service to refuse to sign
-    certain transactions.
+  With scripted threshold signature schemes like 2-of-3
+  `OP_CHECKMULTISIG`, the service's public key must be associated with
+  the output being spent, so any service will be able to find the
+  transactions it signed by looking at onchain data, allowing it
+  accumulate data about its users.  Worse, all currently used protocols
+  we're aware of directly reveal user transactions to the service
+  provider before signing, allowing the service to refuse to sign
+  certain transactions.
 
-    As Farrow describes, FROST allows hiding the signed transaction from
-    the service at every step of the process, from generation of an
-    output script, to signing, to publication of the fully signed
-    transaction.  All the service will know is when it signed and any
-    data the user provided to authenticate themselves with the service.
+  As Farrow describes, FROST allows hiding the signed transaction from
+  the service at every step of the process, from generation of an
+  output script, to signing, to publication of the fully signed
+  transaction.  All the service will know is when it signed and any
+  data the user provided to authenticate themselves with the service.
 
-    The idea received some discussion on the mailing list. {% assign timestamp="14:43" %}
+  The idea received some discussion on the mailing list. {% assign timestamp="14:43" %}
 
 ## Releases and release candidates
 

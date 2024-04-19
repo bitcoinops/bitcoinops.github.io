@@ -34,18 +34,18 @@ projects.
   fairly easily identified and so wallets not using BIP69 may also be
   easier to identify by negation.
 
-    In this [thread][bip69 thread] to the Bitcoin-Dev mailing list, Ryan
-    Havar suggests that one reason wallet authors like BIP69 is that its
-    deterministic ordering makes it easy and fast for their tests to
-    ensure that they haven't leaked any information about the source of
-    their inputs or the destination of their outputs (e.g.  in some old
-    wallets, the fist output always went to the recipient and the second
-    output was always change---making coin tracking trivial).  Havar
-    then suggests an alternative deterministic ordering based on private
-    information that would be available to the test suite but not
-    exposed by production wallets, allowing developers who want to
-    thwart block chain analysis---but also have simple and fast
-    tests---to migrate away from BIP69.
+  In this [thread][bip69 thread] to the Bitcoin-Dev mailing list, Ryan
+  Havar suggests that one reason wallet authors like BIP69 is that its
+  deterministic ordering makes it easy and fast for their tests to
+  ensure that they haven't leaked any information about the source of
+  their inputs or the destination of their outputs (e.g.  in some old
+  wallets, the fist output always went to the recipient and the second
+  output was always change---making coin tracking trivial).  Havar
+  then suggests an alternative deterministic ordering based on private
+  information that would be available to the test suite but not
+  exposed by production wallets, allowing developers who want to
+  thwart block chain analysis---but also have simple and fast
+  tests---to migrate away from BIP69.
 
 - **Overt ASICBoost support for S9 miners:** support for this
   efficiency-improving feature was announced by both [Bitmain][bitmain oab]
@@ -59,12 +59,12 @@ projects.
   indicate an improvement of 10% (or perhaps more) on existing Antminer S9
   hardware.
 
-    The overt form of ASICBoost alters the versionbits field in the
-    block header, which can cause programs such as Bitcoin Core to display
-    a warning such as "13 of last 100 blocks have unexpected version".
-    Some ASICBoost miners have voluntarily restricted their altered
-    versionbits range to that defined by [BIP320][], giving future
-    programs the option to ignore those bits for upgrade signaling.
+  The overt form of ASICBoost alters the versionbits field in the
+  block header, which can cause programs such as Bitcoin Core to display
+  a warning such as "13 of last 100 blocks have unexpected version".
+  Some ASICBoost miners have voluntarily restricted their altered
+  versionbits range to that defined by [BIP320][], giving future
+  programs the option to ignore those bits for upgrade signaling.
 
 - **Open sourced HSM-based multisig cold storage solution:** [Square][] has
   released code and documentation for the cold storage solution they've
@@ -82,11 +82,11 @@ projects.
   days) also in New York City with a few speeches, many demos, and lots
   of hacking.
 
-    Pierre Rochard has written summaries of all the presentations
-    given at the residency program ([day 1][lr1], [day 2][lr2],
-    [day 3][lr3], [day 4][lr4]) and videos of the
-    presentations are expected to be posted soon.  Videos of the
-    hackday are available now: [day 1][hd1], [day 2][hd2].
+  Pierre Rochard has written summaries of all the presentations
+  given at the residency program ([day 1][lr1], [day 2][lr2],
+  [day 3][lr3], [day 4][lr4]) and videos of the
+  presentations are expected to be posted soon.  Videos of the
+  hackday are available now: [day 1][hd1], [day 2][hd2].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

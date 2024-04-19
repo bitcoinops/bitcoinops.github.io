@@ -27,32 +27,32 @@ changes to popular Bitcoin infrastructure software.
   after the introduction of that type of address and its subsequent
   widespread adoption (see [Newsletter #54][news54 bech32 signing]).
 
-    This week, BIP322 author Karl-Johan Alm [posted][alm signmessage] to
-    the Bitcoin-Dev mailing list an alternative proposal for message
-    signing that would use a technique called virtual transactions.  The
-    first virtual transaction would be deliberately invalid by
-    attempting to spend from a non-existent previous transaction (one
-    whose txid is all zeroes).  This first transaction pays the address
-    (script) the user wants to sign for and contains a hash commitment
-    to the desired message.  A second transaction spends the output of
-    the first transaction---if the signatures and other data for that
-    spend could be a valid transaction, then the message is considered
-    signed (although the second virtual transaction still can't be
-    included onchain because it spends from an invalid previous
-    transaction).
+  This week, BIP322 author Karl-Johan Alm [posted][alm signmessage] to
+  the Bitcoin-Dev mailing list an alternative proposal for message
+  signing that would use a technique called virtual transactions.  The
+  first virtual transaction would be deliberately invalid by
+  attempting to spend from a non-existent previous transaction (one
+  whose txid is all zeroes).  This first transaction pays the address
+  (script) the user wants to sign for and contains a hash commitment
+  to the desired message.  A second transaction spends the output of
+  the first transaction---if the signatures and other data for that
+  spend could be a valid transaction, then the message is considered
+  signed (although the second virtual transaction still can't be
+  included onchain because it spends from an invalid previous
+  transaction).
 
-    The advantage of using virtual transactions, which were also adopted
-    in the [BIP325][] specification for [signet][topic signet] (see
-    [Newsletter #109][news109 signet bip]), is that they may work with
-    existing software that's configured to sign arbitrary transactions,
-    including those in [PSBT][topic psbt] format.  The revised
-    specification also allows one of the virtual transactions to contain inputs
-    that reference specific UTXOs, allowing users to (arguably) prove
-    control over those funds, similar to [BIP127][] proof of reserves.
+  The advantage of using virtual transactions, which were also adopted
+  in the [BIP325][] specification for [signet][topic signet] (see
+  [Newsletter #109][news109 signet bip]), is that they may work with
+  existing software that's configured to sign arbitrary transactions,
+  including those in [PSBT][topic psbt] format.  The revised
+  specification also allows one of the virtual transactions to contain inputs
+  that reference specific UTXOs, allowing users to (arguably) prove
+  control over those funds, similar to [BIP127][] proof of reserves.
 
-    Alm is seeking feedback on the alternative proposal, including
-    whether or not it should replace BIP322 or be opened as a separate
-    BIP.
+  Alm is seeking feedback on the alternative proposal, including
+  whether or not it should replace BIP322 or be opened as a separate
+  BIP.
 
 ## Releases and release candidates
 
@@ -100,21 +100,21 @@ release candidates.*
   receipt of the local peer's version with a `verack` message.  Unknown
   messages received from a node after their `verack` are ignored, like before.
 
-    By ignoring messages before `verack`, the local node makes it safe
-    for a peer to send special messages identifying any features it
-    supports.  If the node recognizes any special messages, it can
-    enable its support for the corresponding features; otherwise, it can
-    just ignore the message.  See [Newsletter #111][news111 pre-verack]
-    for previous discussion about this proposed method for protocol
-    feature negotiation.
+  By ignoring messages before `verack`, the local node makes it safe
+  for a peer to send special messages identifying any features it
+  supports.  If the node recognizes any special messages, it can
+  enable its support for the corresponding features; otherwise, it can
+  just ignore the message.  See [Newsletter #111][news111 pre-verack]
+  for previous discussion about this proposed method for protocol
+  feature negotiation.
 
-    *Correction:* this item originally incorrectly stated that Bitcoin
-    Core penalized peers who sent unknown messages after their `verack`
-    messages.  We've corrected it to indicate that unknown messages were
-    never specifically penalized, although messages received out of the
-    expected order were penalized.  Before this change, that included
-    receiving any message besides `version` or `wtxidrelay` before `verack`.  We thank
-    Marco Falke for reporting the error in our description.
+  *Correction:* this item originally incorrectly stated that Bitcoin
+  Core penalized peers who sent unknown messages after their `verack`
+  messages.  We've corrected it to indicate that unknown messages were
+  never specifically penalized, although messages received out of the
+  expected order were penalized.  Before this change, that included
+  receiving any message besides `version` or `wtxidrelay` before `verack`.  We thank
+  Marco Falke for reporting the error in our description.
 
 - [Bitcoin Core #19725][] updates the `getpeerinfo` RPC.  Its results
   now return a new `connection_type` field that indicates the

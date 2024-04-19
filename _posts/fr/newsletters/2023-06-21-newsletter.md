@@ -21,66 +21,66 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   séparés. Voegtlin explique comment cela pourrait être utile à la fois pour les [submarine swaps][topic submarine swaps] et
   les [canaux JIT][topic jit channels] :
 
-    - *Les swaps sous-marins*, où le paiement d'une facture LN offchain permet de recevoir des fonds onchain (les swaps
-      sous-marins peuvent également fonctionner dans l'autre sens, de onchain à offchain, mais cela n'est pas discuté ici).
-      Le bénéficiaire onchain choisit un secret et le payeur offchain paie un [HTLC][topic htlc] au hash de ce secret, qui
-      est acheminé par LN à un fournisseur de services d'échange sous-marin. Le fournisseur de services reçoit un HTLC offchain
-      pour ce secret et crée une transaction onchain en payant ce HTLC. Lorsque l'utilisateur est convaincu que la transaction
-      onchain est sécurisée, il divulgue le secret pour régler le HTLC onchain, ce qui permet au prestataire de services de
-      régler le HTLC offchain (et tous les paiements transmis sur le LN qui dépendent également du même secret).
+  - *Les swaps sous-marins*, où le paiement d'une facture LN offchain permet de recevoir des fonds onchain (les swaps
+    sous-marins peuvent également fonctionner dans l'autre sens, de onchain à offchain, mais cela n'est pas discuté ici).
+    Le bénéficiaire onchain choisit un secret et le payeur offchain paie un [HTLC][topic htlc] au hash de ce secret, qui
+    est acheminé par LN à un fournisseur de services d'échange sous-marin. Le fournisseur de services reçoit un HTLC offchain
+    pour ce secret et crée une transaction onchain en payant ce HTLC. Lorsque l'utilisateur est convaincu que la transaction
+    onchain est sécurisée, il divulgue le secret pour régler le HTLC onchain, ce qui permet au prestataire de services de
+    régler le HTLC offchain (et tous les paiements transmis sur le LN qui dépendent également du même secret).
 
-        Toutefois, si le destinataire ne divulgue pas son secret, le prestataire de services ne recevra aucune compensation
-        et devra dépenser la sortie onchain qu'il vient de créer, ce qui implique des coûts pour aucun gain. Pour éviter cet
-        abus, les services d'échange sous-marin existants exigent que le créditeur paie une redevance en utilisant le LN avant
-        que le service ne crée une transaction onchain (le service peut éventuellement rembourser une partie ou la
-        totalité de cette redevance si la HTLC onchain est réglée). Les frais initiaux et l'échange sous-marin portent
-        sur des montants différents et doivent être réglés à des moments différents, de sorte qu'ils doivent utiliser des
-        secrets différents. Une facture BOLT11 actuelle ne peut contenir qu'un seul engagement pour un secret et un seul
-        montant, de sorte que tout portefeuille effectuant des échanges sous-marins doit être programmé pour gérer
-        l'interaction avec le serveur ou nécessite que l'expéditeur et le destinataire complètent un flux de travail
-        en plusieurs étapes.
+    Toutefois, si le destinataire ne divulgue pas son secret, le prestataire de services ne recevra aucune compensation
+    et devra dépenser la sortie onchain qu'il vient de créer, ce qui implique des coûts pour aucun gain. Pour éviter cet
+    abus, les services d'échange sous-marin existants exigent que le créditeur paie une redevance en utilisant le LN avant
+    que le service ne crée une transaction onchain (le service peut éventuellement rembourser une partie ou la
+    totalité de cette redevance si la HTLC onchain est réglée). Les frais initiaux et l'échange sous-marin portent
+    sur des montants différents et doivent être réglés à des moments différents, de sorte qu'ils doivent utiliser des
+    secrets différents. Une facture BOLT11 actuelle ne peut contenir qu'un seul engagement pour un secret et un seul
+    montant, de sorte que tout portefeuille effectuant des échanges sous-marins doit être programmé pour gérer
+    l'interaction avec le serveur ou nécessite que l'expéditeur et le destinataire complètent un flux de travail
+    en plusieurs étapes.
 
-    - *Les canaux JIT (Just-in-Time)*, où un utilisateur sans canaux (ou sans liquidité) crée un canal virtuel avec un
-      fournisseur de services ; lorsque le premier paiement de ce canal virtuel arrive, le fournisseur de services crée
-      une transaction onchain qui finance le canal et contient ce paiement. Comme pour tout HTLC LN, le paiement offchain
-      est effectué selon un secret que seul le destinataire (l'utilisateur) connaît. Si l'utilisateur est convaincu que
-      la transaction de financement du canal JIT est sécurisée, il divulgue le secret pour réclamer le paiement.
+  - *Les canaux JIT (Just-in-Time)*, où un utilisateur sans canaux (ou sans liquidité) crée un canal virtuel avec un
+    fournisseur de services ; lorsque le premier paiement de ce canal virtuel arrive, le fournisseur de services crée
+    une transaction onchain qui finance le canal et contient ce paiement. Comme pour tout HTLC LN, le paiement offchain
+    est effectué selon un secret que seul le destinataire (l'utilisateur) connaît. Si l'utilisateur est convaincu que
+    la transaction de financement du canal JIT est sécurisée, il divulgue le secret pour réclamer le paiement.
 
-        Cependant, si l'utilisateur ne divulgue pas son secret, le fournisseur de services ne recevra aucune compensation
-        et pourrait avoir des coûts onchain sans le moindre gain. Thomas Voegtlin pense que les fournisseurs de services de canaux JIT
-        existants évitent ce problème en demandant à l'utilisateur de divulguer son secret avant que la transaction de
-        financement ne soit sécurisée, ce qui, selon lui, peut créer des problèmes juridiques et empêcher les portefeuilles
-        non hébergés d'offrir un service similaire.
+    Cependant, si l'utilisateur ne divulgue pas son secret, le fournisseur de services ne recevra aucune compensation
+    et pourrait avoir des coûts onchain sans le moindre gain. Thomas Voegtlin pense que les fournisseurs de services de canaux JIT
+    existants évitent ce problème en demandant à l'utilisateur de divulguer son secret avant que la transaction de
+    financement ne soit sécurisée, ce qui, selon lui, peut créer des problèmes juridiques et empêcher les portefeuilles
+    non hébergés d'offrir un service similaire.
 
-    Il suggère qu'autoriser une facture BOLT11 à contenir deux engagements distincts en matière de secrets,
-    chacun pour un montant différent, permettra d'utiliser un secret et un montant pour une commission initiale destinée à
-    payer les coûts de transaction onchain et l'autre secret et montant pour le swap sous-marin ou le financement du
-    canal JIT proprement dit. La proposition a reçu plusieurs commentaires, nous en résumons quelques-uns :
+  Il suggère qu'autoriser une facture BOLT11 à contenir deux engagements distincts en matière de secrets,
+  chacun pour un montant différent, permettra d'utiliser un secret et un montant pour une commission initiale destinée à
+  payer les coûts de transaction onchain et l'autre secret et montant pour le swap sous-marin ou le financement du
+  canal JIT proprement dit. La proposition a reçu plusieurs commentaires, nous en résumons quelques-uns :
 
-    - *Une logique dédiée est nécessaire pour les échanges sous-marins :* Olaoluwa Osuntokun [note][o 2p] que le destinataire
-      d'un swap sous-marin doit créer un secret, le distribuer, puis effectuer un paiement onchain. Le moyen le plus économique
-      de régler ce paiement est d'interagir avec le fournisseur de services d'échange. Si l'émetteur et le récepteur interagissent
-      de toute façon avec le fournisseur de services, comme c'est souvent le cas dans certaines implémentations existantes où
-      l'émetteur et le récepteur sont la même entité, ils n'ont pas besoin de communiquer des informations supplémentaires à
-      l'aide d'une facture. Voegtlin [a répondu][v 2p2] qu'un logiciel dédié peut gérer l'interaction, éliminant le besoin
-      d'une logique supplémentaire dans le portefeuille offchain qui paie les fonds et le portefeuille onchain qui reçoit les
-      fonds---mais cela n'est possible que si le portefeuille LN peut payer deux secrets et montants distincts dans la même facture.
+  - *Une logique dédiée est nécessaire pour les échanges sous-marins :* Olaoluwa Osuntokun [note][o 2p] que le destinataire
+    d'un swap sous-marin doit créer un secret, le distribuer, puis effectuer un paiement onchain. Le moyen le plus économique
+    de régler ce paiement est d'interagir avec le fournisseur de services d'échange. Si l'émetteur et le récepteur interagissent
+    de toute façon avec le fournisseur de services, comme c'est souvent le cas dans certaines implémentations existantes où
+    l'émetteur et le récepteur sont la même entité, ils n'ont pas besoin de communiquer des informations supplémentaires à
+    l'aide d'une facture. Voegtlin [a répondu][v 2p2] qu'un logiciel dédié peut gérer l'interaction, éliminant le besoin
+    d'une logique supplémentaire dans le portefeuille offchain qui paie les fonds et le portefeuille onchain qui reçoit les
+    fonds---mais cela n'est possible que si le portefeuille LN peut payer deux secrets et montants distincts dans la même facture.
 
-    - *ossification de BOLT11 :* Matt Corallo [répond][c 2p] qu'il n'a pas encore été possible de faire en sorte que toutes les
-      implémentations LN mettent à jour leur support BOLT11 pour supporter les factures qui ne contiennent pas de montant
-      (pour permettre les [paiements spontanés][topic spontaneous payments]), donc il ne pense pas que l'ajout d'un champ
-      supplémentaire soit une approche pratique pour le moment. Bastien Teinturier fait un [commentaire similaire][t 2p],
-      suggérant d'ajouter un support aux [offres][topic offers] à la place. Voegtlin [n'est pas d'accord][v 2p3] et pense
-      que l'ajout d'un soutien est pratique.
+  - *ossification de BOLT11 :* Matt Corallo [répond][c 2p] qu'il n'a pas encore été possible de faire en sorte que toutes les
+    implémentations LN mettent à jour leur support BOLT11 pour supporter les factures qui ne contiennent pas de montant
+    (pour permettre les [paiements spontanés][topic spontaneous payments]), donc il ne pense pas que l'ajout d'un champ
+    supplémentaire soit une approche pratique pour le moment. Bastien Teinturier fait un [commentaire similaire][t 2p],
+    suggérant d'ajouter un support aux [offres][topic offers] à la place. Voegtlin [n'est pas d'accord][v 2p3] et pense
+    que l'ajout d'un soutien est pratique.
 
-    - *Alternative au splice-out :* Corallo demande également pourquoi le protocole devrait être modifié pour supporter les
-      submarine swaps si [splice outs][topic splicing] devient disponible. Cela n'a pas été mentionné dans le fil de discussion,
-     les swaps sous-marins et les splice outs permettent tous deux de déplacer des fonds offchain vers une sortie
-      onchain---mais les splice outs peuvent être plus efficaces onchain et ne sont pas vulnérables aux problèmes de frais non
-      compensés. Voegtlin répond que les échanges sous-marins permettent à un utilisateur de LN d'augmenter sa capacité à
-      recevoir de nouveaux paiements LN, ce qui n'est pas le cas du splicing.
+  - *Alternative au splice-out :* Corallo demande également pourquoi le protocole devrait être modifié pour supporter les
+    submarine swaps si [splice outs][topic splicing] devient disponible. Cela n'a pas été mentionné dans le fil de discussion,
+   les swaps sous-marins et les splice outs permettent tous deux de déplacer des fonds offchain vers une sortie
+    onchain---mais les splice outs peuvent être plus efficaces onchain et ne sont pas vulnérables aux problèmes de frais non
+    compensés. Voegtlin répond que les échanges sous-marins permettent à un utilisateur de LN d'augmenter sa capacité à
+    recevoir de nouveaux paiements LN, ce qui n'est pas le cas du splicing.
 
-    La discussion semblait être en cours au moment de la rédaction du présent document.
+  La discussion semblait être en cours au moment de la rédaction du présent document.
 
 ## En attente de confirmation #6 : Cohérence des politiques
 

@@ -80,51 +80,51 @@ infrastructure projects.
   input heuristic][uih2], inconsistent input/output script types, and
   changeless transactions.
 
-    After seeing the new changes, Ryan Havar raised concerns [on
-    Reddit][havar reddit] about the possibly high rate of false positive
-    privacy warnings, leading to him opening an [issue][havar github] on
-    Esplora's GitHub about the problem.  Attempting to address
-    these concerns, Ivgi started a [conversation][esplora convo] with
-    several Bitcoin Core developers.  Privacy advocates may wish to
-    review this conversation, which covered topics such as:
+  After seeing the new changes, Ryan Havar raised concerns [on
+  Reddit][havar reddit] about the possibly high rate of false positive
+  privacy warnings, leading to him opening an [issue][havar github] on
+  Esplora's GitHub about the problem.  Attempting to address
+  these concerns, Ivgi started a [conversation][esplora convo] with
+  several Bitcoin Core developers.  Privacy advocates may wish to
+  review this conversation, which covered topics such as:
 
-    - Gregory Maxwell and Pieter Wuille believe Bitcoin Core would
-      occasionally match Unnecessary Input Heuristic #2 (UIH2) since
-      the release of Bitcoin 0.1 in 2009, with increasing frequency in
-      more recent releases, making this heuristic less useful than
-      hypothesized for distinguishing between commercial services and
-      end-user wallets.
+  - Gregory Maxwell and Pieter Wuille believe Bitcoin Core would
+    occasionally match Unnecessary Input Heuristic #2 (UIH2) since
+    the release of Bitcoin 0.1 in 2009, with increasing frequency in
+    more recent releases, making this heuristic less useful than
+    hypothesized for distinguishing between commercial services and
+    end-user wallets.
 
-    - Bitcoin Core's coin selection updates over the past two releases
-      allow it to frequently produce transactions without change outputs.
-      These transactions are more efficient and more privacy
-      preserving than transactions with change, but Esplora currently
-      displays them in red as privacy-leaking transactions because they also match the
-      pattern of the user using a "max send" feature to send all their
-      bitcoins from one wallet to another wallet or exchange.
+  - Bitcoin Core's coin selection updates over the past two releases
+    allow it to frequently produce transactions without change outputs.
+    These transactions are more efficient and more privacy
+    preserving than transactions with change, but Esplora currently
+    displays them in red as privacy-leaking transactions because they also match the
+    pattern of the user using a "max send" feature to send all their
+    bitcoins from one wallet to another wallet or exchange.
 
-    - Maxwell proposed that a useful addition to the privacy analysis would
-      be identifying when a user controlled multiple UTXOs received to
-      the same address but only sent a transaction spending a subset of
-      those UTXOs.  This behavior makes it possible to connect later
-      transactions spending those UTXOs to the earlier transaction,
-      destroying privacy.
+  - Maxwell proposed that a useful addition to the privacy analysis would
+    be identifying when a user controlled multiple UTXOs received to
+    the same address but only sent a transaction spending a subset of
+    those UTXOs.  This behavior makes it possible to connect later
+    transactions spending those UTXOs to the earlier transaction,
+    destroying privacy.
 
-    Overall, it's great to see developers building tools that help
-    people identify flaws in their software or their behavior, but it's
-    also important to consider how users will interact with the tool.
-    As Wuille said near the end of the conversation: "I am super happy
-    that there is a decent explorer now for debugging stuff out there,
-    but I'm concerned about making it sound like it's an actual
-    production tool.  I know people will use explorers, and one that
-    gives good information is better than one that confuses everything.
-    But, really, we shouldn't encourage using [it].  If this privacy
-    detection feature causes people to go look up all their transactions
-    because of a gamification like feeling 'oooh let's see how my
-    transaction did here?!', it's probably a net negative. [...] The
-    most important thing to put on a block explorer is 'Warning: looking
-    up your own addresses on a block explorer leaks your privacy to the
-    site operator'."
+  Overall, it's great to see developers building tools that help
+  people identify flaws in their software or their behavior, but it's
+  also important to consider how users will interact with the tool.
+  As Wuille said near the end of the conversation: "I am super happy
+  that there is a decent explorer now for debugging stuff out there,
+  but I'm concerned about making it sound like it's an actual
+  production tool.  I know people will use explorers, and one that
+  gives good information is better than one that confuses everything.
+  But, really, we shouldn't encourage using [it].  If this privacy
+  detection feature causes people to go look up all their transactions
+  because of a gamification like feeling 'oooh let's see how my
+  transaction did here?!', it's probably a net negative. [...] The
+  most important thing to put on a block explorer is 'Warning: looking
+  up your own addresses on a block explorer leaks your privacy to the
+  site operator'."
 
 - **Spy node ban list updated:** some IP addresses are performing
   various attacks that are likely aimed at monitoring transaction

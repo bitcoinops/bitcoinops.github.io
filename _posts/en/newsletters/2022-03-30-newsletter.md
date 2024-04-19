@@ -27,14 +27,14 @@ projects.
   there being a corresponding change in the other transaction details
   (e.g. output addresses or amounts).
 
-    If there are current or proposed applications that would benefit
-    from being able to replace witnesses, Ruane also seeks feedback on
-    how much the witness should need to shrink in order to allow
-    replacement.  The more shrinkage required, the fewer replacements
-    are possible---limiting the amount of node bandwidth that could be
-    wasted in the worst case by an attacker.  But requiring more
-    shrinkage would also prevent applications from accessing small or
-    moderate savings through witness replacement.
+  If there are current or proposed applications that would benefit
+  from being able to replace witnesses, Ruane also seeks feedback on
+  how much the witness should need to shrink in order to allow
+  replacement.  The more shrinkage required, the fewer replacements
+  are possible---limiting the amount of node bandwidth that could be
+  wasted in the worst case by an attacker.  But requiring more
+  shrinkage would also prevent applications from accessing small or
+  moderate savings through witness replacement.
 
 - **Continued discussion about updated LN gossip protocol:** as reported
   in [Newsletter #188][news188 gossip], LN protocol developers are
@@ -42,31 +42,31 @@ projects.
   information about available payment channels.  In particular, this
   week saw two active threads:
 
-    - *Major update:* in [response][osuntokun gossip1.1] to Rusty
-      Russell's [major update][russell gossip2] proposal from last month,
-      Olaoluwa Osuntokun repeatedly expressed concern with an aspect of
-      the proposal that would introduce plausible deniability in the
-      link between onchain funds and a specific LN channel.  That
-      capability would also make it easier for non-LN users to advertise
-      the existence of channels that might not actually exist, which
-      could degrade the ability of a spender to find a working path
-      across the network to the node receiving the funds.
+  - *Major update:* in [response][osuntokun gossip1.1] to Rusty
+    Russell's [major update][russell gossip2] proposal from last month,
+    Olaoluwa Osuntokun repeatedly expressed concern with an aspect of
+    the proposal that would introduce plausible deniability in the
+    link between onchain funds and a specific LN channel.  That
+    capability would also make it easier for non-LN users to advertise
+    the existence of channels that might not actually exist, which
+    could degrade the ability of a spender to find a working path
+    across the network to the node receiving the funds.
 
-    - *Minor update:* Osuntokun [posted][osuntokun gossip2] a separate
-      proposal for a much smaller update to the gossip protocol aimed
-      mainly at allowing taproot-based channels.  The proposal uses
-      [MuSig2][topic musig] to allow a single signature to prove
-      authorization related to all four public keys involved (two node
-      identifier keys, two channel-spending keys) and would likely
-      require that the channel setup transaction be spendable using
-      MuSig2.
+  - *Minor update:* Osuntokun [posted][osuntokun gossip2] a separate
+    proposal for a much smaller update to the gossip protocol aimed
+    mainly at allowing taproot-based channels.  The proposal uses
+    [MuSig2][topic musig] to allow a single signature to prove
+    authorization related to all four public keys involved (two node
+    identifier keys, two channel-spending keys) and would likely
+    require that the channel setup transaction be spendable using
+    MuSig2.
 
-        He also suggested that it might be useful to add an SPV partial
-        merkle branch proof to the channel announcement message.  This
-        would prove that the channel setup transaction was included in a
-        block, eliminating lightweight clients from having to download
-        the entire block containing the transaction in order to verify
-        its existence.
+    He also suggested that it might be useful to add an SPV partial
+    merkle branch proof to the channel announcement message.  This
+    would prove that the channel setup transaction was included in a
+    block, eliminating lightweight clients from having to download
+    the entire block containing the transaction in order to verify
+    its existence.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

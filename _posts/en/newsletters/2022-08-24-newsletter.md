@@ -34,13 +34,13 @@ Bitcoin infrastructure software.
   the addition of a new type of [output script descriptor][topic
   descriptors] for silent payments.
 
-    The design of the new descriptor received quite a bit of discussion
-    on the PR.  It was noted that only allowing a single silent payment
-    descriptor per wallet would be most efficient for monitoring for new
-    transactions but that it would also create a bad experience for
-    users in many case.  A slight tweak to the silent payment design was
-    proposed to address the issue, although it also came with trade
-    offs. {% assign timestamp="2:00" %}
+  The design of the new descriptor received quite a bit of discussion
+  on the PR.  It was noted that only allowing a single silent payment
+  descriptor per wallet would be most efficient for monitoring for new
+  transactions but that it would also create a bad experience for
+  users in many case.  A slight tweak to the silent payment design was
+  proposed to address the issue, although it also came with trade
+  offs. {% assign timestamp="2:00" %}
 
 ## Changes to services and client software
 

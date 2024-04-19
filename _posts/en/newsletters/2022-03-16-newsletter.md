@@ -21,24 +21,24 @@ to popular Bitcoin infrastructure projects.
   those receiving bitcoins use to specify how they'll later prove they
   authorized any spending of those bitcoins.
 
-    - *Looping (folding):* developer ZmnSCPxj [described][zmnscpxj fold]
-      a proposed `OP_FOLD` opcode as a way to allow loop-like behavior
-      in Bitcoin Script.  He described a series of constraints that
-      could be placed on the looping to ensure they didn't use any more
-      CPU or memory than Bitcoin Script and tapscript can currently
-      use---but which would reduce bandwidth by eliminating the need to
-      include repeated code in scripts.
+  - *Looping (folding):* developer ZmnSCPxj [described][zmnscpxj fold]
+    a proposed `OP_FOLD` opcode as a way to allow loop-like behavior
+    in Bitcoin Script.  He described a series of constraints that
+    could be placed on the looping to ensure they didn't use any more
+    CPU or memory than Bitcoin Script and tapscript can currently
+    use---but which would reduce bandwidth by eliminating the need to
+    include repeated code in scripts.
 
-    - *Using Chia Lisp:* Anthony Towns [posted][towns btc-lisp] about
-      adding to Bitcoin a variation on [Chia Lisp][], which is a dialect
-      of [Lisp][] designed for the Chia altcoin.  This
-      would be a completely different alternative to traditional Bitcoin
-      Script and tapscript, providing some of the same benefits of a
-      fresh start as the previously proposed [Simplicity][topic
-      simplicity] language.  Towns suggests that his
-      alternative---"Binary Tree Coded Script" or "btc-script"---would be
-      easier to understand and use than Simplicity, although perhaps it
-      would be harder to formally validate.
+  - *Using Chia Lisp:* Anthony Towns [posted][towns btc-lisp] about
+    adding to Bitcoin a variation on [Chia Lisp][], which is a dialect
+    of [Lisp][] designed for the Chia altcoin.  This
+    would be a completely different alternative to traditional Bitcoin
+    Script and tapscript, providing some of the same benefits of a
+    fresh start as the previously proposed [Simplicity][topic
+    simplicity] language.  Towns suggests that his
+    alternative---"Binary Tree Coded Script" or "btc-script"---would be
+    easier to understand and use than Simplicity, although perhaps it
+    would be harder to formally validate.
 
 - **Ideas for improving RBF policy:** Gloria Zhao [posted][zhao rbf] a
   summary of discussion about Replace-by-Fee ([RBF][topic rbf]) policy
@@ -48,18 +48,18 @@ to popular Bitcoin infrastructure projects.
   transactions and their replacements, such as by limiting the number of
   related transactions that get relayed within a certain amount of time.
 
-    Zhao also summarized a separate [discussion][daftuar limits] on a
-    gist which examined allowing transactions to suggest a descendant
-    limit to use.  For example, a transaction could suggest limiting the
-    maximum amount of space it and its descendants could consume in the
-    mempool to 1,000 vbytes instead of the default 100,000 vbytes.  This
-    would make the worst case [pinning attack][topic transaction pinning]
-    less expensive for the honest party to overcome.
+  Zhao also summarized a separate [discussion][daftuar limits] on a
+  gist which examined allowing transactions to suggest a descendant
+  limit to use.  For example, a transaction could suggest limiting the
+  maximum amount of space it and its descendants could consume in the
+  mempool to 1,000 vbytes instead of the default 100,000 vbytes.  This
+  would make the worst case [pinning attack][topic transaction pinning]
+  less expensive for the honest party to overcome.
 
-    Additionally, Zhao is seeking feedback on an algorithm for
-    calculating the value to miners of a transaction given the current
-    mempool.  This could facilitate more flexible decision making in node
-    software about whether or not to accept a replacement transaction.
+  Additionally, Zhao is seeking feedback on an algorithm for
+  calculating the value to miners of a transaction given the current
+  mempool.  This could facilitate more flexible decision making in node
+  software about whether or not to accept a replacement transaction.
 
 - **Continued CTV discussion:** as mentioned in [Newsletter
   #183][news183 ctv meeting], meetings to discuss the proposed

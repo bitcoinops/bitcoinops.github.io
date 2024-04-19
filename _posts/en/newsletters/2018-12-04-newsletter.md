@@ -33,37 +33,37 @@ maintenance release.
   parent has a low feerate.  This is called Child Pays For Parent
   (CPFP).
 
-    CPFP even works for multiple descendant transactions, but the more
-    relationships that need to be considered, the longer it takes the node
-    to create the most profitable possible block template for
-    miners to work on.  For this reason, Bitcoin Core
-    limits[^fn-cpfp-limits] the maximum number and size of related
-    transactions.  For users fee bumping their own transactions, the
-    limits are high enough to rarely cause problems.  But for users of
-    multiparty protocols, a malicious counterparty can exploit the
-    limits to prevent an honest user from being able to fee bump a
-    transaction.  This can be a major problem for protocols like LN that
-    rely on timelocks---if a transaction isn't confirmed before the
-    timelock expires, the counterparty can take back some or all of the
-    funds they previously paid.
+  CPFP even works for multiple descendant transactions, but the more
+  relationships that need to be considered, the longer it takes the node
+  to create the most profitable possible block template for
+  miners to work on.  For this reason, Bitcoin Core
+  limits[^fn-cpfp-limits] the maximum number and size of related
+  transactions.  For users fee bumping their own transactions, the
+  limits are high enough to rarely cause problems.  But for users of
+  multiparty protocols, a malicious counterparty can exploit the
+  limits to prevent an honest user from being able to fee bump a
+  transaction.  This can be a major problem for protocols like LN that
+  rely on timelocks---if a transaction isn't confirmed before the
+  timelock expires, the counterparty can take back some or all of the
+  funds they previously paid.
 
-    To help solve this problem, Matt Corallo has [suggested][carve out
-    thread] a change to the CPFP policy to carve-out (reserve) some
-    space for a small transaction that only has one ancestor in the
-    mempool (all of its other ancestors must already be in the block
-    chain).  This accompanies a proposal for LN described in the *News*
-    section of [last week's newsletter][] where LN would mostly ignore
-    onchain fees (except for cooperative closes of channels) and use
-    CPFP fee bumping to choose the fee when the channel was
-    closed---reducing complexity and improving safety.  However, to make
-    this safe for LN no matter how high fees get, nodes need to also
-    support relaying packages of transactions that include both
-    low-feerate ancestors plus high-feerate descendants in a way that
-    doesn't cause nodes to automatically reject the earlier transactions
-    as being too cheap and so not see the subsequent fee bumps.  Whereas
-    the carve-out policy is probably easy to implement, package relay is
-    something that's been discussed for a long time without yet being
-    formally specificed or implemented.
+  To help solve this problem, Matt Corallo has [suggested][carve out
+  thread] a change to the CPFP policy to carve-out (reserve) some
+  space for a small transaction that only has one ancestor in the
+  mempool (all of its other ancestors must already be in the block
+  chain).  This accompanies a proposal for LN described in the *News*
+  section of [last week's newsletter][] where LN would mostly ignore
+  onchain fees (except for cooperative closes of channels) and use
+  CPFP fee bumping to choose the fee when the channel was
+  closed---reducing complexity and improving safety.  However, to make
+  this safe for LN no matter how high fees get, nodes need to also
+  support relaying packages of transactions that include both
+  low-feerate ancestors plus high-feerate descendants in a way that
+  doesn't cause nodes to automatically reject the earlier transactions
+  as being too cheap and so not see the subsequent fee bumps.  Whereas
+  the carve-out policy is probably easy to implement, package relay is
+  something that's been discussed for a long time without yet being
+  formally specificed or implemented.
 
 - **Organization of LN 1.1 specification effort:** although LN protocol
   developers decided [which efforts][ln1.1 accepted proposals] they want
@@ -87,10 +87,10 @@ maintenance release.
   and your correct balance will be displayed.  No funds were at risk,
   they just weren't tracked correctly.
 
-    The Bitcoin Core project is planning to start tagging release
-    candidates for [maintenance version][maintenance release] 0.17.1 soon.
-    This is expected to resolve some bugs with build system incompatibilities on
-    recent Linux distributions as well as fix other [minor issues][0.17.1 milestone].
+  The Bitcoin Core project is planning to start tagging release
+  candidates for [maintenance version][maintenance release] 0.17.1 soon.
+  This is expected to resolve some bugs with build system incompatibilities on
+  recent Linux distributions as well as fix other [minor issues][0.17.1 milestone].
 
 [LND 0.5.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5.1-beta
 
@@ -116,13 +116,13 @@ repo].*
   `getaddressinfo` RPC to independently indicate that the wallet knows
   how to solve for that address.
 
-    The new `desc` fields are not expected to be particularly useful at
-    the moment as they can currently only be used with the
-    `scantxoutset` RPC, but they will provide a compact way of providing
-    all the information necessary for making addresses solvable to
-    future and upgraded RPCs for Bitcoin Core such as those used for interactions between
-    offline/online (cold/hot) wallets, multisig wallets, coinjoin
-    implementations, and other cases.
+  The new `desc` fields are not expected to be particularly useful at
+  the moment as they can currently only be used with the
+  `scantxoutset` RPC, but they will provide a compact way of providing
+  all the information necessary for making addresses solvable to
+  future and upgraded RPCs for Bitcoin Core such as those used for interactions between
+  offline/online (cold/hot) wallets, multisig wallets, coinjoin
+  implementations, and other cases.
 
 - [LND #2081][] adds RPCs that allow signing a transaction template
   where some inputs are controlled by LND.  Although this particular

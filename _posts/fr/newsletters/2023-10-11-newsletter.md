@@ -128,21 +128,21 @@ les versions candidates.*
   et effectuer une synchronisation complète de validation en arrière-plan. Il rend les instantanés UTXO chargeables via RPC
   (`loadtxoutset`) et ajoute des paramètres `assumeutxo` à chainparams.
 
-    Bien que l'ensemble de fonctionnalités ne soit pas disponible sur mainnet avant [activation][bitcoin core #28553], cette fusion
-    marque la culmination d'un effort pluriannuel. Le projet, [proposé en 2018][assumeutxo core dev] et [formalisé en
-    2019][assumeutxo 2019 mailing list], améliorera considérablement l'expérience des nouveaux utilisateurs de noeuds complets
-    sur le réseau. Les suivis de la fusion comprennent [Bitcoin Core #28590][bitcoin core #28590], [#28562][bitcoin core #28562] et
-    [#28589][bitcoin core #28589].
+  Bien que l'ensemble de fonctionnalités ne soit pas disponible sur mainnet avant [activation][bitcoin core #28553], cette fusion
+  marque la culmination d'un effort pluriannuel. Le projet, [proposé en 2018][assumeutxo core dev] et [formalisé en
+  2019][assumeutxo 2019 mailing list], améliorera considérablement l'expérience des nouveaux utilisateurs de noeuds complets
+  sur le réseau. Les suivis de la fusion comprennent [Bitcoin Core #28590][bitcoin core #28590], [#28562][bitcoin core #28562] et
+  [#28589][bitcoin core #28589].
 
 - [Bitcoin Core #28331][], [#28588][bitcoin core #28588], [#28577][bitcoin core #28577] et [GUI #754][bitcoin core gui #754] ajoutent
   la prise en charge du [transport P2P chiffré de version 2][topic v2 p2p transport] tel que spécifié dans [BIP324][]. Cette
   fonctionnalité est actuellement désactivée par défaut, mais peut être activée en utilisant l'option `-v2transport`.
 
-    Le transport chiffré contribue à améliorer la confidentialité des utilisateurs de Bitcoin en empêchant les observateurs passifs
-    (comme les fournisseurs d'accès Internet) de déterminer directement quelles transactions les nœuds relaient à leurs pairs. Il est
-    également possible d'utiliser le transport chiffré pour contrer les observateurs actifs de type homme du milieu en comparant les
-    identifiants de session. À l'avenir, l'ajout d'autres [fonctionnalités][topic countersign] pourrait permettre à un client léger de
-    se connecter de manière sécurisée à un nœud de confiance via une connexion chiffrée P2P.
+  Le transport chiffré contribue à améliorer la confidentialité des utilisateurs de Bitcoin en empêchant les observateurs passifs
+  (comme les fournisseurs d'accès Internet) de déterminer directement quelles transactions les nœuds relaient à leurs pairs. Il est
+  également possible d'utiliser le transport chiffré pour contrer les observateurs actifs de type homme du milieu en comparant les
+  identifiants de session. À l'avenir, l'ajout d'autres [fonctionnalités][topic countersign] pourrait permettre à un client léger de
+  se connecter de manière sécurisée à un nœud de confiance via une connexion chiffrée P2P.
 
 - [Bitcoin Core #27609][] rend la RPC `submitpackage` disponible sur les réseaux non-regtest. Les utilisateurs peuvent utiliser cette
   RPC pour soumettre des packages d'une seule transaction avec ses parents non confirmés, où aucun des parents ne dépense la sortie

@@ -60,8 +60,10 @@ Pieter Wuille 在比特币开发者邮件列表中[发帖][schnorr post]，提�
 
     请注意，要在 Bitcoin Core 中将最低中继费用降低到其默认值以下，您需要更改两个设置。下面显示的是 Bitcoin Core 0.16.1 中具有默认值的两个设置；要降低这些值，请将它们都更改为相同的值，但请注意，将它们降低太多（可能低于默认值的 1/10）会使您面临浪费带宽的攻击，并降低您的节点的 BIP152 致密区块效率。
 
-      minrelaytxfee=0.00001000
-      incrementalrelayfee=0.00001000
+    ```
+    minrelaytxfee=0.00001000
+    incrementalrelayfee=0.00001000
+    ```
 
     如果您的组织生产用户端软件，您可能希望确保它可以与费用设置为 1 satoshi/byte 以下的交易和估算费用一起工作。如果您需要有关最低中继费用的更多信息，请联系 Optech。
 

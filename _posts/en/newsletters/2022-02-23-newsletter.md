@@ -27,9 +27,9 @@ projects.
   sponsorship][topic fee sponsorship] (previously described in
   [Newsletter #116][news116 sponsorship]).
 
-    The ideas received significant discussion on the mailing list, with
-    many responses mentioning challenges to implementation of fee
-    sponsorship.
+  The ideas received significant discussion on the mailing list, with
+  many responses mentioning challenges to implementation of fee
+  sponsorship.
 
 - **Updated LN gossip proposal:** Rusty Russell [posted][russell gossip]
   to the Lightning-Dev mailing list a detailed proposal for a new set of

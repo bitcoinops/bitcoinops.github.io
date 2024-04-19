@@ -20,21 +20,21 @@ popular Bitcoin infrastructure projects.
   other contract protocols.  The idea is an outgrowth of his transaction
   sponsorship idea described in [Newsletter #116][news116 sponsorship].
 
-    The basic idea for fee accounts is that users could create
-    transactions that deposited bitcoins into an account tracked by
-    upgraded full nodes that understood the new consensus rules.  When
-    the user subsequently wanted to add fees to a transaction, they
-    would sign a short message containing the amount they wanted to pay
-    plus the txid of that transaction.  Upgraded full nodes would allow
-    any block containing both the transaction and the signed message to
-    pay the miner of that block the signed fee amount.
+  The basic idea for fee accounts is that users could create
+  transactions that deposited bitcoins into an account tracked by
+  upgraded full nodes that understood the new consensus rules.  When
+  the user subsequently wanted to add fees to a transaction, they
+  would sign a short message containing the amount they wanted to pay
+  plus the txid of that transaction.  Upgraded full nodes would allow
+  any block containing both the transaction and the signed message to
+  pay the miner of that block the signed fee amount.
 
-    Rubin suggests that this would eliminate many problems with
-    [CPFP][topic cpfp] and [RBF][topic rbf] fee bumping related to
-    contract protocols where two or more users shared ownership of a
-    UTXO, or other cases where the use of presigned transactions meant
-    the current network feerates couldn't have been known when the
-    transaction was signed in the past.
+  Rubin suggests that this would eliminate many problems with
+  [CPFP][topic cpfp] and [RBF][topic rbf] fee bumping related to
+  contract protocols where two or more users shared ownership of a
+  UTXO, or other cases where the use of presigned transactions meant
+  the current network feerates couldn't have been known when the
+  transaction was signed in the past.
 
 ## Bitcoin Core PR Review Club
 

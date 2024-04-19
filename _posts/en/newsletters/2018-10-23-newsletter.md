@@ -30,42 +30,44 @@ popular Bitcoin infrastructure projects.
   8,400 listening nodes with an IPv4 address did indeed have port 8332
   open (13.2%).
 
-    This may indicate that many node operators are unaware that RPC
-    communication over the Internet is completely insecure by default
-    and exposes your node to multiple attacks that could cost you money
-    even if you've disabled the wallet on your node.  RPC communication
-    is not encrypted, so any eavesdropper observing even a single request
-    to your server can steal your authentication credentials and use them
-    to run commands that empty your wallet (if you have one), trick your
-    node into using a fork of the block chain with almost no
-    proof-of-work security, overwrite arbitrary files on your
-    filesystem, or do other damage.  Even if you never connect to your
-    node over the Internet, having an open RPC port carries a risk that
-    an attacker will guess your login credentials.
+  This may indicate that many node operators are unaware that RPC
+  communication over the Internet is completely insecure by default
+  and exposes your node to multiple attacks that could cost you money
+  even if you've disabled the wallet on your node.  RPC communication
+  is not encrypted, so any eavesdropper observing even a single request
+  to your server can steal your authentication credentials and use them
+  to run commands that empty your wallet (if you have one), trick your
+  node into using a fork of the block chain with almost no
+  proof-of-work security, overwrite arbitrary files on your
+  filesystem, or do other damage.  Even if you never connect to your
+  node over the Internet, having an open RPC port carries a risk that
+  an attacker will guess your login credentials.
 
-    By default, nodes do not accept connections to RPC from any other
-    computer---you have to enable a configuration option to allow RPC
-    connections.  To determine whether you've enabled this feature,
-    check your Bitcoin configuration file and startup parameters for the
-    `rpcallowip` parameter.  If this option is present, you should
-    remove it and restart your node unless you have a good reason to
-    believe all RPC connections to your node are encrypted or are
-    exclusive to a trusted private network.  If you want to test your
-    node remotely for an open RPC port, you can run the following
-    [nmap][] command after replacing *ADDRESS* with the IP address of
-    your node:
+  By default, nodes do not accept connections to RPC from any other
+  computer---you have to enable a configuration option to allow RPC
+  connections.  To determine whether you've enabled this feature,
+  check your Bitcoin configuration file and startup parameters for the
+  `rpcallowip` parameter.  If this option is present, you should
+  remove it and restart your node unless you have a good reason to
+  believe all RPC connections to your node are encrypted or are
+  exclusive to a trusted private network.  If you want to test your
+  node remotely for an open RPC port, you can run the following
+  [nmap][] command after replacing *ADDRESS* with the IP address of
+  your node:
 
-        nmap -Pn -p 8332 ADDRESS
+  ```
+  nmap -Pn -p 8332 ADDRESS
+  ```
 
-    If the result in the *state* field is "open", you should follow the
-    instructions above to remove the `rpcallowip` parameter.  If the
-    result is either "closed" or "filtered", your node is safe unless
-    you've set a custom RPC port or otherwise have enabled a customized
-    configuration.
+  If the result in the *state* field is "open", you should follow the
+  instructions above to remove the `rpcallowip` parameter.  If the
+  result is either "closed" or "filtered", your node is safe unless
+  you've set a custom RPC port or otherwise have enabled a customized
+  configuration.
 
-    A [PR][Bitcoin Core #14532] has been opened to Bitcoin Core to make
-    it harder for users to configure their node this way and to print
-    additional warnings about enabling such behavior.
+  A [PR][Bitcoin Core #14532] has been opened to Bitcoin Core to make
+  it harder for users to configure their node this way and to print
+  additional warnings about enabling such behavior.
 
 - **Two papers published on fast multiparty ECDSA:** in multiparty
   ECDSA, two or more parties can cooperatively (but trustlessly) create
@@ -80,27 +82,27 @@ popular Bitcoin infrastructure projects.
   underlying multiparty ECDSA may also be used with scriptless scripts
   as described in [Newsletter #16][news16 mpecdsa].
 
-    Best of all, these advantages are available immediately to anyone
-    who implements them because the Bitcoin protocol's current support
-    for ECDSA means it also supports pure ECDSA multiparty schemes as
-    well.  No changes are required to the consensus rules, the P2P
-    protocol, address formats, or any other shared resource.  All you
-    need are two or more wallets that implement multiparty ECDSA key
-    generation and signing.  This can make the scheme appealing to
-    existing services that gain from the additional security of Bitcoin
-    multisig but lose from having to pay additional transaction fees for
-    the extra pubkeys and signatures.
+  Best of all, these advantages are available immediately to anyone
+  who implements them because the Bitcoin protocol's current support
+  for ECDSA means it also supports pure ECDSA multiparty schemes as
+  well.  No changes are required to the consensus rules, the P2P
+  protocol, address formats, or any other shared resource.  All you
+  need are two or more wallets that implement multiparty ECDSA key
+  generation and signing.  This can make the scheme appealing to
+  existing services that gain from the additional security of Bitcoin
+  multisig but lose from having to pay additional transaction fees for
+  the extra pubkeys and signatures.
 
-    It will likely take time for experts to review these papers,
-    evaluate their security properties, and consider implementing
-    them---and some experts are already busy working on implementing a
-    consensus change proposal to enable a Schnorr signature
-    scheme that can simplify generation of multiparty pubkeys and signatures
-    and also provide multiple other benefits.
+  It will likely take time for experts to review these papers,
+  evaluate their security properties, and consider implementing
+  them---and some experts are already busy working on implementing a
+  consensus change proposal to enable a Schnorr signature
+  scheme that can simplify generation of multiparty pubkeys and signatures
+  and also provide multiple other benefits.
 
-    - [Fast Multiparty Threshold ECDSA with Fast Trustless Setup][mpecdsa goldfeder] by Rosario Gennaro and Steven Goldfeder
+  - [Fast Multiparty Threshold ECDSA with Fast Trustless Setup][mpecdsa goldfeder] by Rosario Gennaro and Steven Goldfeder
 
-    - [Fast Secure Multiparty ECDSA with Practical Distributed Key Generation and Applications to Cryptocurrency Custody][mpecdsa lindell] by Yehuda Lindell, Ariel Nof, and Samuel Ranellucci
+  - [Fast Secure Multiparty ECDSA with Practical Distributed Key Generation and Applications to Cryptocurrency Custody][mpecdsa lindell] by Yehuda Lindell, Ariel Nof, and Samuel Ranellucci
 
 [mpecdsa goldfeder]: http://stevengoldfeder.com/papers/GG18.pdf
 [mpecdsa lindell]: https://eprint.iacr.org/2018/987.pdf

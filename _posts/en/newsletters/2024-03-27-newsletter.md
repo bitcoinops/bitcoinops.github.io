@@ -35,26 +35,26 @@ changes to popular Bitcoin infrastructure projects.
   Bob-like peers who all reject the replacements and Mallory sending
   multiple specially constructed transactions of this type in parallel.
 
-    The attack is limited by the fee costs Mallory will pay when some
-    version of her transactions eventually confirms, although the attack description
-    notes that this can be essentially zero if Mallory was planning to
-    send a transaction anyway.  The maximum amount of bandwidth that can
-    be wasted is limited by Bitcoin Core's existing transaction relay
-    limits, although it is possible that performing this attack many
-    times in parallel could delay the propagation of legitimate
-    unconfirmed transactions.
+  The attack is limited by the fee costs Mallory will pay when some
+  version of her transactions eventually confirms, although the attack description
+  notes that this can be essentially zero if Mallory was planning to
+  send a transaction anyway.  The maximum amount of bandwidth that can
+  be wasted is limited by Bitcoin Core's existing transaction relay
+  limits, although it is possible that performing this attack many
+  times in parallel could delay the propagation of legitimate
+  unconfirmed transactions.
 
-    The description also mentions another well-known type of node bandwidth
-    wasting, where a user broadcasts a set of large transactions and
-    then works with a miner to create a block that contains a relatively
-    small transaction that conflicts with all the relayed transactions.
-    For example, a 29,000-vbyte transaction <!-- 500 inputs --> could
-    remove about 200 megabytes of transactions <!-- 500 txes each
-    100,000 vbytes (~400,000 bytes) --> from every relaying full node's
-    mempool.  The description argues that the existence of attacks that allow wasting
-    bandwidth means that it should be reasonable to deliberately allow
-    some amount of free relay, such as by enabling proposals like
-    replace by feerate (see [Newsletter #288][news288 rbfr]). {% assign timestamp="1:22" %}
+  The description also mentions another well-known type of node bandwidth
+  wasting, where a user broadcasts a set of large transactions and
+  then works with a miner to create a block that contains a relatively
+  small transaction that conflicts with all the relayed transactions.
+  For example, a 29,000-vbyte transaction <!-- 500 inputs --> could
+  remove about 200 megabytes of transactions <!-- 500 txes each
+  100,000 vbytes (~400,000 bytes) --> from every relaying full node's
+  mempool.  The description argues that the existence of attacks that allow wasting
+  bandwidth means that it should be reasonable to deliberately allow
+  some amount of free relay, such as by enabling proposals like
+  replace by feerate (see [Newsletter #288][news288 rbfr]). {% assign timestamp="1:22" %}
 
 - **Transaction fee sponsorship improvements:** Martin Habovštiak
   [posted][habovstiak boost] to the Bitcoin-Dev mailing list an idea for
@@ -74,59 +74,59 @@ changes to popular Bitcoin infrastructure projects.
   an outpoint instead --> 8 vbytes for a single sponsorship and 8 vbytes
   for each additional sponsorship.
 
-    After hearing about Habovštiak's idea, David Harding
-    [posted][harding sponsor] to Delving Bitcoin an efficiency
-    improvement he and Rubin had previously developed in January.  The
-    sponsor transaction commits to the boosted transaction using the
-    signature commitment message, which is never published onchain, so
-    zero block space is used for a single commitment.  To allow this,
-    the sponsor transaction must appear in blocks and [package
-    relay][topic package relay] messages immediately after the boosted
-    transaction, allowing full node verifiers to infer the txid of the
-    boosted transaction when they verify the sponsor transaction.
+  After hearing about Habovštiak's idea, David Harding
+  [posted][harding sponsor] to Delving Bitcoin an efficiency
+  improvement he and Rubin had previously developed in January.  The
+  sponsor transaction commits to the boosted transaction using the
+  signature commitment message, which is never published onchain, so
+  zero block space is used for a single commitment.  To allow this,
+  the sponsor transaction must appear in blocks and [package
+  relay][topic package relay] messages immediately after the boosted
+  transaction, allowing full node verifiers to infer the txid of the
+  boosted transaction when they verify the sponsor transaction.
 
-    For cases where a block may contain multiple sponsor transactions
-    that each commit to some of the same boosted transactions, it's not
-    possible to simply have a series of boosted transactions appear
-    immediately before their sponsors, so entirely inferable commitments
-    is not an option.  Harding describes a simple alternative that only
-    uses 0.5 vbytes per boosted transaction; Anthony Towns
-    [improves][towns sponsor] upon that with a version that would never
-    use more than 0.5 vbytes per boost and would use less space
-    in most cases.
+  For cases where a block may contain multiple sponsor transactions
+  that each commit to some of the same boosted transactions, it's not
+  possible to simply have a series of boosted transactions appear
+  immediately before their sponsors, so entirely inferable commitments
+  is not an option.  Harding describes a simple alternative that only
+  uses 0.5 vbytes per boosted transaction; Anthony Towns
+  [improves][towns sponsor] upon that with a version that would never
+  use more than 0.5 vbytes per boost and would use less space
+  in most cases.
 
-    Both Habovštiak and Harding note the potential for outsourcing:
-    anyone who is planning to broadcast a transaction anyway (or who
-    has an unconfirmed transaction they're willing to update with
-    [RBF][topic rbf]) can increase its feerate and boost another
-    transaction at an insignificant cost of 0.5 vbytes or less per
-    boost; for comparison, 0.5 vbytes is about 0.3% of a 1-input,
-    2-output P2TR transaction.  Unfortunately, they both warn that
-    there's no convenient way to trustlessly pay a third party for a
-    boost; however, Habovštiak points out that anyone paying over LN
-    would receive [proof of payment][topic proof of payment] and so
-    could potentially prove deceit.
+  Both Habovštiak and Harding note the potential for outsourcing:
+  anyone who is planning to broadcast a transaction anyway (or who
+  has an unconfirmed transaction they're willing to update with
+  [RBF][topic rbf]) can increase its feerate and boost another
+  transaction at an insignificant cost of 0.5 vbytes or less per
+  boost; for comparison, 0.5 vbytes is about 0.3% of a 1-input,
+  2-output P2TR transaction.  Unfortunately, they both warn that
+  there's no convenient way to trustlessly pay a third party for a
+  boost; however, Habovštiak points out that anyone paying over LN
+  would receive [proof of payment][topic proof of payment] and so
+  could potentially prove deceit.
 
-    Towns further notes that sponsors seems compatible with the proposed
-    design for [cluster mempool][topic cluster mempool], that the most
-    efficient versions of sponsorship present some mild challenges for
-    transaction validity caching, and concludes with a table showing the
-    relative block space consumed by various current and proposed fee
-    bumping techniques.  At 0.5 vbytes or less per boost, the most
-    efficient form of fee sponsorship is only bested by the 0.0 vbytes
-    used in the best case with RBF and paying miners [out-of-band][topic
-    out-of-band fees].  Because fee sponsorship allows dynamic fee
-    bumping and is almost as efficient as paying miners out-of-band, it
-    may resolve a major concern with protocols that depend on [exogenous
-    fees][topic fee sourcing].
+  Towns further notes that sponsors seems compatible with the proposed
+  design for [cluster mempool][topic cluster mempool], that the most
+  efficient versions of sponsorship present some mild challenges for
+  transaction validity caching, and concludes with a table showing the
+  relative block space consumed by various current and proposed fee
+  bumping techniques.  At 0.5 vbytes or less per boost, the most
+  efficient form of fee sponsorship is only bested by the 0.0 vbytes
+  used in the best case with RBF and paying miners [out-of-band][topic
+  out-of-band fees].  Because fee sponsorship allows dynamic fee
+  bumping and is almost as efficient as paying miners out-of-band, it
+  may resolve a major concern with protocols that depend on [exogenous
+  fees][topic fee sourcing].
 
-    In [continued discussion][daftuar sponsor] shortly before this
-    newsletter was about to be published, Suhas Daftuar raised concerns
-    that sponsors could introduce problems that are not easily addressed
-    by cluster mempool and which could create problems for users who
-    didn't need sponsors, indicating that sponsorship (if it is ever
-    added to Bitcoin) should only be available to transactions that
-    opt-in to allowing it. {% assign timestamp="9:55" %}
+  In [continued discussion][daftuar sponsor] shortly before this
+  newsletter was about to be published, Suhas Daftuar raised concerns
+  that sponsors could introduce problems that are not easily addressed
+  by cluster mempool and which could create problems for users who
+  didn't need sponsors, indicating that sponsorship (if it is ever
+  added to Bitcoin) should only be available to transactions that
+  opt-in to allowing it. {% assign timestamp="9:55" %}
 
 - **Mempool-based feerate estimation:** Abubakar Sadiq Ismail
   [posted][ismail fees] to Delving Bitcoin about improving Bitcoin

@@ -26,27 +26,27 @@ software.
   that can eliminate them as a concern without significantly disturbing
   existing uses of Bitcoin may warrant consideration.
 
-    Aronesty suggested allowing users to receive payments to a public
-    key secured by a quantum-safe algorithm---also perhaps securing the
-    bitcoins with an existing-style Bitcoin public key so that an
-    exploitable problem would need to be found with both key algorithms
-    before any bitcoins could be stolen as the result of a cryptographic
-    key failure.  This would require a soft fork consensus change and
-    would likely reduce the maximum number of useful transactions per
-    block in the worst case given that quantum-safe witness data is
-    larger than Bitcoin's currently-used ECDSA and [schnorr][topic
-    schnorr signatures] witness data.
+  Aronesty suggested allowing users to receive payments to a public
+  key secured by a quantum-safe algorithm---also perhaps securing the
+  bitcoins with an existing-style Bitcoin public key so that an
+  exploitable problem would need to be found with both key algorithms
+  before any bitcoins could be stolen as the result of a cryptographic
+  key failure.  This would require a soft fork consensus change and
+  would likely reduce the maximum number of useful transactions per
+  block in the worst case given that quantum-safe witness data is
+  larger than Bitcoin's currently-used ECDSA and [schnorr][topic
+  schnorr signatures] witness data.
 
-    Lloyd Fournier [suggested][fournier qc] instead that a standardized
-    scheme be developed that allows taproot outputs to commit to
-    quantum-safe public keys in addition to their usual schnorr public
-    keys.  The quantum safe public keys might not be currently
-    spendable, but if Bitcoin users became more concerned about an
-    impending fast QC, they could choose to soft fork in a consensus
-    change that required the quantum-safe spending paths be used.
-    Fournier also suggested that details about the problem and possible
-    solutions could be [described][qc issue] for current and future
-    researchers and developers on [BitcoinProblems.org][].
+  Lloyd Fournier [suggested][fournier qc] instead that a standardized
+  scheme be developed that allows taproot outputs to commit to
+  quantum-safe public keys in addition to their usual schnorr public
+  keys.  The quantum safe public keys might not be currently
+  spendable, but if Bitcoin users became more concerned about an
+  impending fast QC, they could choose to soft fork in a consensus
+  change that required the quantum-safe spending paths be used.
+  Fournier also suggested that details about the problem and possible
+  solutions could be [described][qc issue] for current and future
+  researchers and developers on [BitcoinProblems.org][].
 
 ## Changes to services and client software
 

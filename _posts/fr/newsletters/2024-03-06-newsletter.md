@@ -31,12 +31,12 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   plus utilisées pour transmettre des identifiants persistants respectueux de la vie privée, tels que
   ceux pour les [paiements silencieux][topic silent payments] et les [offres][topic offers].
 
-     Comme discuté dans le fil, une amélioration pourrait être que le créateur de l'URI spécifie toutes
-     les méthodes de paiement qu'ils prennent en charge en utilisant des paramètres nus, par exemple :
-     `bitcoin:?bc1q...&sp1q...`. Celui qui effectue la dépense (et qui est généralement responsable du paiement des frais)
-     pourrait alors choisir sa méthode de paiement préférée dans la liste. Bien que certains points
-     techniques mineurs soient encore discutés au moment de la rédaction de cet article, aucune critique majeure de
-     cette approche n'a été publiée.
+  Comme discuté dans le fil, une amélioration pourrait être que le créateur de l'URI spécifie toutes
+  les méthodes de paiement qu'ils prennent en charge en utilisant des paramètres nus, par exemple :
+  `bitcoin:?bc1q...&sp1q...`. Celui qui effectue la dépense (et qui est généralement responsable du paiement des frais)
+  pourrait alors choisir sa méthode de paiement préférée dans la liste. Bien que certains points
+  techniques mineurs soient encore discutés au moment de la rédaction de cet article, aucune critique majeure de
+  cette approche n'a été publiée.
 
 - **PSBT pour plusieurs sessions de signature MuSig2 concurrentes :** Salvatore Ingala a
   [posté][ingala musig2] sur Delving Bitcoin à propos de la minimisation de la quantité d'état
@@ -109,10 +109,10 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
   le bloc du premier pair ; une correction pour cela a été décrite dans le [Bulletin #251][news251
   block].
 
-     Le code ajouté dans cette PR permet de vérifier rapidement si un bloc nouvellement reçu contient
-     l'un des types de mutations connus qui le rend invalide. Si c'est le cas, le bloc muté peut être
-     rejeté dès le début, en espérant empêcher quoi que ce soit à son sujet d'être mis en cache ou
-     utilisé pour empêcher le traitement correct d'une version valide du bloc qui sera reçue plus tard.
+  Le code ajouté dans cette PR permet de vérifier rapidement si un bloc nouvellement reçu contient
+  l'un des types de mutations connus qui le rend invalide. Si c'est le cas, le bloc muté peut être
+  rejeté dès le début, en espérant empêcher quoi que ce soit à son sujet d'être mis en cache ou
+  utilisé pour empêcher le traitement correct d'une version valide du bloc qui sera reçue plus tard.
 
 - [Eclair #2829][] permet aux plugins de définir une politique de contribution à l'ouverture d'un
   [canal à double financement][topic dual funding]. Par défaut, Eclair ne contribue pas à l'ouverture

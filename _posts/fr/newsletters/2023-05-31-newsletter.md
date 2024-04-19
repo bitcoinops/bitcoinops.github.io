@@ -24,115 +24,115 @@ et décrivant les changements notables apportés aux principaux logiciels de l'i
   leurs bitcoins sur la chaîne après l'expiration du délai, soit les transférer instantanément
   et en toute confiance hors de la chaîne à la contrepartie avant l'expiration du délai.
 
-    Comme tout utilisateur de Bitcoin, la contrepartie peut diffuser à tout moment une transaction
-    onchain qui ne dépense que ses propres fonds. Si une sortie de cette transaction est utilisée
-    comme entrée dans la transaction offchain qui transfère des fonds du propriétaire à la contrepartie,
-    le transfert offchain devient invalide à moins que la transaction onchain ne soit confirmée dans
-    un délai raisonnable. Dans ce cas, la contrepartie ne signera pas sa transaction onchain tant
-    qu'elle n'aura pas reçu la transaction offchain signée. Il s'agit d'un protocole de transfert
-    atomique sans confiance, à un seul saut et dans une seule direction, entre le propriétaire et
-    la contrepartie. Keceli décrit trois utilisations de ce protocole de transfert atomique :
+  Comme tout utilisateur de Bitcoin, la contrepartie peut diffuser à tout moment une transaction
+  onchain qui ne dépense que ses propres fonds. Si une sortie de cette transaction est utilisée
+  comme entrée dans la transaction offchain qui transfère des fonds du propriétaire à la contrepartie,
+  le transfert offchain devient invalide à moins que la transaction onchain ne soit confirmée dans
+  un délai raisonnable. Dans ce cas, la contrepartie ne signera pas sa transaction onchain tant
+  qu'elle n'aura pas reçu la transaction offchain signée. Il s'agit d'un protocole de transfert
+  atomique sans confiance, à un seul saut et dans une seule direction, entre le propriétaire et
+  la contrepartie. Keceli décrit trois utilisations de ce protocole de transfert atomique :
 
-    - *Mélange de pièces :* plusieurs utilisateurs du joinpool peuvent tous, avec la coopération
-      de la contrepartie, procéder à des échanges atomiques de leurs valeurs offchain actuelles
-      contre un montant équivalent de nouvelles valeurs offchain. Cette opération peut être réalisée
-      rapidement, car une défaillance de la composante onchain annulera simplement l'échange, ce qui
-      ramènera tous les fonds à leur point de départ. Un protocole d'aveuglement similaire à ceux
-      utilisés par certaines implémentations existantes de [coinjoin][topic coinjoin] peut empêcher
-      tout utilisateur ou la contrepartie de déterminer quel utilisateur s'est retrouvé avec quels bitcoins.
+  - *Mélange de pièces :* plusieurs utilisateurs du joinpool peuvent tous, avec la coopération
+    de la contrepartie, procéder à des échanges atomiques de leurs valeurs offchain actuelles
+    contre un montant équivalent de nouvelles valeurs offchain. Cette opération peut être réalisée
+    rapidement, car une défaillance de la composante onchain annulera simplement l'échange, ce qui
+    ramènera tous les fonds à leur point de départ. Un protocole d'aveuglement similaire à ceux
+    utilisés par certaines implémentations existantes de [coinjoin][topic coinjoin] peut empêcher
+    tout utilisateur ou la contrepartie de déterminer quel utilisateur s'est retrouvé avec quels bitcoins.
 
-    - *Effectuer des transferts internes :* un utilisateur peut transférer ses fonds hors chaîne
-      à un autre utilisateur avec la même contrepartie. L'atomicité garantit que le destinataire
-      recevra son argent ou que le prêteur sera remboursé. Un destinataire qui ne fait pas confiance
-      à l'émetteur et à la contrepartie devra attendre autant de confirmations qu'il le ferait pour
-      une transaction onchain normale.
+  - *Effectuer des transferts internes :* un utilisateur peut transférer ses fonds hors chaîne
+    à un autre utilisateur avec la même contrepartie. L'atomicité garantit que le destinataire
+    recevra son argent ou que le prêteur sera remboursé. Un destinataire qui ne fait pas confiance
+    à l'émetteur et à la contrepartie devra attendre autant de confirmations qu'il le ferait pour
+    une transaction onchain normale.
 
-        Keceli et un commentateur [lient][keceli reply0] à une recherche [précédente][harding reply0]
-        décrivant comment un paiement zéro-conf peut être rendu non profitable à la double dépense en
-        l'associant à une liaison de fidélité qui peut être réclamée par tout mineur qui a observé
-        les deux versions de la transaction doublement dépensée. Cela pourrait permettre aux destinataires
-        d'accepter un paiement en quelques secondes même s'ils n'ont pas confiance dans les autres
-        parties individuelles.
+    Keceli et un commentateur [lient][keceli reply0] à une recherche [précédente][harding reply0]
+    décrivant comment un paiement zéro-conf peut être rendu non profitable à la double dépense en
+    l'associant à une liaison de fidélité qui peut être réclamée par tout mineur qui a observé
+    les deux versions de la transaction doublement dépensée. Cela pourrait permettre aux destinataires
+    d'accepter un paiement en quelques secondes même s'ils n'ont pas confiance dans les autres
+    parties individuelles.
 
-    - *Paiement des factures LN :* un utilisateur peut rapidement s'engager à verser ses fonds hors
-      chaîne à la contrepartie si cette dernière connaît un secret, ce qui permet à l'utilisateur de
-      payer des factures de type LN [HTLC][topic HTLC] par l'intermédiaire de la contrepartie.
+  - *Paiement des factures LN :* un utilisateur peut rapidement s'engager à verser ses fonds hors
+    chaîne à la contrepartie si cette dernière connaît un secret, ce qui permet à l'utilisateur de
+    payer des factures de type LN [HTLC][topic HTLC] par l'intermédiaire de la contrepartie.
 
-        Comme dans le cas des virements internes, un utilisateur ne peut pas recevoir des fonds en
-        toute confiance. Il ne doit donc pas révéler un secret avant qu'un paiement ait reçu un nombre
-        suffisant de confirmations ou qu'il soit garanti par une clause de fidélité qu'il juge convaincante.
+    Comme dans le cas des virements internes, un utilisateur ne peut pas recevoir des fonds en
+    toute confiance. Il ne doit donc pas révéler un secret avant qu'un paiement ait reçu un nombre
+    suffisant de confirmations ou qu'il soit garanti par une clause de fidélité qu'il juge convaincante.
 
-    M. Keceli affirme que le protocole de base peut être mis en œuvre sur Bitcoin aujourd'hui en utilisant
-    une interaction fréquente entre les membres du groupe. Si une proposition de [covenant][topic covenants]
-    comme [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
-    ou [OP_CAT + OP_CHEKSIGFROMSTACK][topic op_checksigfromstack] est mise en œuvre, les membres du joinpool
-    n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, effectueront
-    un paiement, ou rafraîchiront le timelock sur leurs fonds offchain.
+  M. Keceli affirme que le protocole de base peut être mis en œuvre sur Bitcoin aujourd'hui en utilisant
+  une interaction fréquente entre les membres du groupe. Si une proposition de [covenant][topic covenants]
+  comme [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], [SIGHASH_ANYPREVOUT][topic sighash_anyprevout],
+  ou [OP_CAT + OP_CHEKSIGFROMSTACK][topic op_checksigfromstack] est mise en œuvre, les membres du joinpool
+  n'auront besoin d'interagir avec la contrepartie que lorsqu'ils participeront à un coinjoin, effectueront
+  un paiement, ou rafraîchiront le timelock sur leurs fonds offchain.
 
-    Chaque coinjoin, paiement ou rafraîchissement nécessite la publication d'un engagement dans une transaction
-    onchain, bien qu'un nombre pratiquement illimité d'opérations puisse être regroupé dans la même petite transaction.
-    Pour permettre aux opérations de se terminer rapidement, Keceli suggère qu'une transaction onchain soit effectuée
-    toutes les cinq secondes environ, afin que les utilisateurs n'aient pas à attendre plus longtemps. Chaque transaction
-    est séparée---il n'est pas possible de combiner les engagements de plusieurs transactions en utilisant
-    [replace-by-fee][topic rbf] sans rompre les engagements ou exiger la participation de tous les utilisateurs
-    impliqués dans les tours précédents---de sorte que plus de 6,3 millions de transactions pourraient devoir être
-    confirmées chaque année pour une contrepartie, bien que les transactions individuelles soient relativement petites.
+  Chaque coinjoin, paiement ou rafraîchissement nécessite la publication d'un engagement dans une transaction
+  onchain, bien qu'un nombre pratiquement illimité d'opérations puisse être regroupé dans la même petite transaction.
+  Pour permettre aux opérations de se terminer rapidement, Keceli suggère qu'une transaction onchain soit effectuée
+  toutes les cinq secondes environ, afin que les utilisateurs n'aient pas à attendre plus longtemps. Chaque transaction
+  est séparée---il n'est pas possible de combiner les engagements de plusieurs transactions en utilisant
+  [replace-by-fee][topic rbf] sans rompre les engagements ou exiger la participation de tous les utilisateurs
+  impliqués dans les tours précédents---de sorte que plus de 6,3 millions de transactions pourraient devoir être
+  confirmées chaque année pour une contrepartie, bien que les transactions individuelles soient relativement petites.
 
-    Les commentaires sur le protocole envoyés à la liste de diffusion sont les suivants :
+  Les commentaires sur le protocole envoyés à la liste de diffusion sont les suivants :
 
-    - *Une demande de documentation supplémentaire :* au [moins][stone reply] deux [répondants][dryja reply]
-      ont demandé une documentation supplémentaire sur le fonctionnement du système, estimant qu'il était difficile
-      de l'analyser à partir de la description de haut niveau fournie à la liste de diffusion. Keceli a depuis
-      commencé à publier des [projets de spécifications][arc specs].
+  - *Une demande de documentation supplémentaire :* au [moins][stone reply] deux [répondants][dryja reply]
+    ont demandé une documentation supplémentaire sur le fonctionnement du système, estimant qu'il était difficile
+    de l'analyser à partir de la description de haut niveau fournie à la liste de diffusion. Keceli a depuis
+    commencé à publier des [projets de spécifications][arc specs].
 
-    - *Inquiétude quant à la lenteur de la réception par rapport au LN :* [Plusieurs personnes][dryja reply]
-      ont [noté][harding reply1] que, dans la conception initiale, il n'est pas possible de recevoir en toute
-      confiance un paiement du joinpool (que ce soit offchain ou onchain) sans attendre un nombre suffisant de
-      confirmations. Cela peut prendre des heures, alors que de nombreux paiements LN s'effectuent actuellement
-      en moins d'une seconde. Même avec des bons de fidélité, le LN serait plus rapide en moyenne.
+  - *Inquiétude quant à la lenteur de la réception par rapport au LN :* [Plusieurs personnes][dryja reply]
+    ont [noté][harding reply1] que, dans la conception initiale, il n'est pas possible de recevoir en toute
+    confiance un paiement du joinpool (que ce soit offchain ou onchain) sans attendre un nombre suffisant de
+    confirmations. Cela peut prendre des heures, alors que de nombreux paiements LN s'effectuent actuellement
+    en moins d'une seconde. Même avec des bons de fidélité, le LN serait plus rapide en moyenne.
 
-    - *Inquiétude quant à l'importance de l'empreinte onchain :* Une [réponse][jk_14] a noté qu'à raison d'une
-      transaction toutes les cinq secondes, environ 200 contreparties de ce type consommeraient la totalité de
-      l'espace de chaque bloc. Une autre [réponse][harding reply0] a supposé que chacune des transactions onchain
-      de la contrepartie sera à peu près de la taille d'une transaction d'ouverture ou de fermeture coopérative
-      de canal LN, de sorte qu'une contrepartie avec un million d'utilisateurs qui crée 6,3 millions de transactions
-      onchain par an utiliserait une quantité d'espace équivalente à chacun de ces utilisateurs ouvrant ou fermant
-      en moyenne 6,3 canaux chacun par an ; ainsi, les coûts onchain de LN pourraient être inférieurs à l'utilisation
-      de la contrepartie jusqu'à ce qu'elle ait atteint une échelle massive.
+  - *Inquiétude quant à l'importance de l'empreinte onchain :* Une [réponse][jk_14] a noté qu'à raison d'une
+    transaction toutes les cinq secondes, environ 200 contreparties de ce type consommeraient la totalité de
+    l'espace de chaque bloc. Une autre [réponse][harding reply0] a supposé que chacune des transactions onchain
+    de la contrepartie sera à peu près de la taille d'une transaction d'ouverture ou de fermeture coopérative
+    de canal LN, de sorte qu'une contrepartie avec un million d'utilisateurs qui crée 6,3 millions de transactions
+    onchain par an utiliserait une quantité d'espace équivalente à chacun de ces utilisateurs ouvrant ou fermant
+    en moyenne 6,3 canaux chacun par an ; ainsi, les coûts onchain de LN pourraient être inférieurs à l'utilisation
+    de la contrepartie jusqu'à ce qu'elle ait atteint une échelle massive.
 
-    - *Inquiétude au sujet d'un grand hot wallet et des coûts d'investissement :* Une [réponse][harding reply0]
-      a estimé que la contrepartie devrait conserver un montant de bitcoins (probablement dans un "hot wallet")
-      égal au montant que les utilisateurs pourraient dépenser dans un avenir proche. Après une dépense, la contrepartie
-      ne recevrait pas ses bitcoins pendant une période pouvant aller jusqu'à 28 jours selon la proposition de conception
-      actuelle. Si la contrepartie appliquait un taux d'intérêt faible de 1,5 % par an à son capital, cela équivaudrait
-      à une charge de 0,125 % sur le montant de chaque transaction effectuée avec la participation de la contrepartie
-      (y compris les coinjoins, les transferts internes et les paiements LN). À titre de comparaison, les
-      [statistiques publiques][1ml stats] disponibles au moment de la rédaction (collectées par 1ML) indiquent un taux
-      médian par saut pour les transferts LN de 0,0026 %, soit près de 50 fois moins.
+  - *Inquiétude au sujet d'un grand hot wallet et des coûts d'investissement :* Une [réponse][harding reply0]
+    a estimé que la contrepartie devrait conserver un montant de bitcoins (probablement dans un "hot wallet")
+    égal au montant que les utilisateurs pourraient dépenser dans un avenir proche. Après une dépense, la contrepartie
+    ne recevrait pas ses bitcoins pendant une période pouvant aller jusqu'à 28 jours selon la proposition de conception
+    actuelle. Si la contrepartie appliquait un taux d'intérêt faible de 1,5 % par an à son capital, cela équivaudrait
+    à une charge de 0,125 % sur le montant de chaque transaction effectuée avec la participation de la contrepartie
+    (y compris les coinjoins, les transferts internes et les paiements LN). À titre de comparaison, les
+    [statistiques publiques][1ml stats] disponibles au moment de la rédaction (collectées par 1ML) indiquent un taux
+    médian par saut pour les transferts LN de 0,0026 %, soit près de 50 fois moins.
 
-    Plusieurs commentaires sur la liste étaient également enthousiastes quant à la proposition et attendaient avec impatience
-    de voir Keceli et d'autres explorer l'espace de conception des "managed joinpools".
+  Plusieurs commentaires sur la liste étaient également enthousiastes quant à la proposition et attendaient avec impatience
+  de voir Keceli et d'autres explorer l'espace de conception des "managed joinpools".
 
 - **Relais de transaction sur Nostr :** Joost Jager a [posté][jager nostr] sur la liste de diffusion Bitcoin-Dev pour
   demander des commentaires sur l'idée de Ben Carman d'utiliser le protocole [Nostr][] pour relayer les transactions
   qui pourraient ne pas bien se propager sur le réseau P2P des nœuds complets Bitcoin qui fournissent des services de relais.
 
-    En particulier, Jager examine la possibilité d'utiliser Nostr pour le relais des paquets de transactions, comme le relais
-    d'une transaction ancestrale avec un taux inférieur à la valeur minimale acceptée en l'associant à un descendant qui paie
-    des frais suffisamment élevés pour compenser la déficience de son ancêtre. Cela rend la substitution de frais
-    [CPFP][topic cpfp] plus fiable et plus efficace, et c'est une fonctionnalité appelée [package relay][topic package relay]
-    que les développeurs de Bitcoin Core ont travaillé à mettre en œuvre pour le réseau P2P de Bitcoin. L'un des défis de
-    l'examen de la conception et de la mise en œuvre du relais de paquet est de s'assurer que les nouvelles méthodes de
-    relais ne créent pas de nouvelles vulnérabilités de déni de service (DoS) contre des nœuds et des mineurs individuels
-    (ou le réseau en général).
+  En particulier, Jager examine la possibilité d'utiliser Nostr pour le relais des paquets de transactions, comme le relais
+  d'une transaction ancestrale avec un taux inférieur à la valeur minimale acceptée en l'associant à un descendant qui paie
+  des frais suffisamment élevés pour compenser la déficience de son ancêtre. Cela rend la substitution de frais
+  [CPFP][topic cpfp] plus fiable et plus efficace, et c'est une fonctionnalité appelée [package relay][topic package relay]
+  que les développeurs de Bitcoin Core ont travaillé à mettre en œuvre pour le réseau P2P de Bitcoin. L'un des défis de
+  l'examen de la conception et de la mise en œuvre du relais de paquet est de s'assurer que les nouvelles méthodes de
+  relais ne créent pas de nouvelles vulnérabilités de déni de service (DoS) contre des nœuds et des mineurs individuels
+  (ou le réseau en général).
 
-    Jager note que les relais Nostr ont la possibilité d'utiliser facilement d'autres types de protection contre les dénis
-    de service à partir du réseau de relais P2P, par exemple en exigeant un petit paiement pour relayer une transaction.
-    Selon lui, cela peut permettre de relayer des paquets ou d'autres transactions alternatives, même si une transaction
-    ou un paquet malveillant peut entraîner le gaspillage d'une petite quantité de ressources du nœud.
+  Jager note que les relais Nostr ont la possibilité d'utiliser facilement d'autres types de protection contre les dénis
+  de service à partir du réseau de relais P2P, par exemple en exigeant un petit paiement pour relayer une transaction.
+  Selon lui, cela peut permettre de relayer des paquets ou d'autres transactions alternatives, même si une transaction
+  ou un paquet malveillant peut entraîner le gaspillage d'une petite quantité de ressources du nœud.
 
-    Le message de M. Jager contenait un lien vers une [vidéo][jager video] où il faisait une démonstration de la fonction.
-    À l'heure où nous écrivons ces lignes, son message n'a reçu que quelques réponses, toutes positives.
+  Le message de M. Jager contenait un lien vers une [vidéo][jager video] où il faisait une démonstration de la fonction.
+  À l'heure où nous écrivons ces lignes, son message n'a reçu que quelques réponses, toutes positives.
 
 ## Attente de la confirmation #3 : Enchères pour l'achat d'un bloc d'espace
 
@@ -225,9 +225,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   succès, il aura de toute façon plus en jeu que la réserve. En cas d'échec, son solde reviendra au montant précédent,
   qui aura été supérieur à la réserve.
 
-    Il s'agit d'une mesure d'atténuation d'un *problème de fonds bloqués*, qui se produit lorsqu'un paiement oblige la partie
-    responsable du paiement des frais à payer une valeur supérieure à son solde disponible actuel, même s'il s'agit de la partie
-    qui reçoit le paiement. Pour une discussion précédente sur ce problème, voir [Newsletter #85][news85 stuck funds].
+  Il s'agit d'une mesure d'atténuation d'un *problème de fonds bloqués*, qui se produit lorsqu'un paiement oblige la partie
+  responsable du paiement des frais à payer une valeur supérieure à son solde disponible actuel, même s'il s'agit de la partie
+  qui reçoit le paiement. Pour une discussion précédente sur ce problème, voir [Newsletter #85][news85 stuck funds].
 
 - [BTCPay Server 97e7e][] commence à définir le paramètre [BIP78][] `minfeerate` (" taux de frais minimum ") pour les paiements
   [payjoin][topic payjoin]. Voir aussi le [rapport de bug][btcpay server #4689] qui a conduit à ce commit.
@@ -240,9 +240,9 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   avec [taproot][topic taproot] et [tapscript][topic tapscript] (respectivement, BIPs [341][bip341] et [342][bip342]) utilisent des
   messages de 32 octets.
 
-    Les ajouts décrivent comment utiliser efficacement des messages de longueur arbitraire, recommandent l'utilisation d'un préfixe
-    de balise haché et fournissent des recommandations pour accroître la sécurité lors de l'utilisation de la même clé dans
-    différents domaines (tels que la signature de transactions ou la signature de messages en texte clair).
+  Les ajouts décrivent comment utiliser efficacement des messages de longueur arbitraire, recommandent l'utilisation d'un préfixe
+  de balise haché et fournissent des recommandations pour accroître la sécurité lors de l'utilisation de la même clé dans
+  différents domaines (tels que la signature de transactions ou la signature de messages en texte clair).
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27469,27626,25796,2668,2666,4689,1446" %}

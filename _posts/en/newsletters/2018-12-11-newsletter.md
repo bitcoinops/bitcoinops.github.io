@@ -28,24 +28,24 @@ in the past week to popular infrastructure projects are also described.
   announce] of both its backend and frontend code.  The code supports
   Bitcoin mainnet, Bitcoin testnet, and the Liquid sidechain.
 
-    Although block explorers have been a mainstay of Bitcoin web
-    applications since 2010, we do note that the method used by block
-    explorers of maintaining multiple indexes over all block chain data
-    inherently has a poor scalability characteristic---their cost
-    increases over time as the block chain grows---and so it is
-    generally inadvisable to build software or services that depend upon
-    your own block explorer.  Trusting someone else's block explorer
-    (which is a common cost-cutting measure when indexing data yourself
-    becomes too expensive) introduces third party trust into Bitcoin
-    software, increases centralization, and decreases privacy.  If at
-    all possible, it is preferable to build software and services in a
-    way that doesn't require the types of fast and arbitrary searches
-    that block explorers make convenient.
+  Although block explorers have been a mainstay of Bitcoin web
+  applications since 2010, we do note that the method used by block
+  explorers of maintaining multiple indexes over all block chain data
+  inherently has a poor scalability characteristic---their cost
+  increases over time as the block chain grows---and so it is
+  generally inadvisable to build software or services that depend upon
+  your own block explorer.  Trusting someone else's block explorer
+  (which is a common cost-cutting measure when indexing data yourself
+  becomes too expensive) introduces third party trust into Bitcoin
+  software, increases centralization, and decreases privacy.  If at
+  all possible, it is preferable to build software and services in a
+  way that doesn't require the types of fast and arbitrary searches
+  that block explorers make convenient.
 
-    That said, the new open source explorer appears to be quite
-    efficient compared to earlier open source alternatives such as
-    BitPay Insight.  It also includes modern features (such as bech32
-    address support) and a very nice default theme.
+  That said, the new open source explorer appears to be quite
+  efficient compared to earlier open source alternatives such as
+  BitPay Insight.  It also includes modern features (such as bech32
+  address support) and a very nice default theme.
 
 - **Sighash options for covering transaction weight:** as part of the
   signature hashes discussion described in the *News* section of

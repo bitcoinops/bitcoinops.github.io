@@ -179,22 +179,22 @@ release candidates.*
 - [LND v0.17.5-beta][] is a maintenance release that makes LND
   compatible with Bitcoin Core 27.x.
 
-    As [reported][lnd #8571] to the LND developers, older versions of
-    LND depended on an older version of [btcd][] that intended to set
-    its maximum feerate to 10 million sat/kB (equivalent to 0.1 BTC/kB).
-    However, Bitcoin Core accepts feerates in BTC/kvB, so the maximum
-    feerate was actually being set to 10 million BTC/kvB.  Bitcoin Core
-    27.0 included a [PR][bitcoin core #29434] that limited maximum
-    feerates to 1 BTC/kvB in order to prevent certain problems and under
-    the assumption that anyone setting a higher value was likely making
-    a mistake (if they really wanted a higher maximum value, they could
-    simply set the parameter to 0 to disable the check).  In this case,
-    LND (via btcd) was indeed making a mistake, but the modification to
-    Bitcoin Core prevented LND from being able to send onchain
-    transactions, which can be dangerous for an LN node that sometimes
-    needs to send time-sensitive transactions.  This maintenance release
-    correctly sets the maximum value to 0.1 BTC/kvB, making LND
-    compatible with new versions of Bitcoin Core. {% assign timestamp="41:40" %}
+  As [reported][lnd #8571] to the LND developers, older versions of
+  LND depended on an older version of [btcd][] that intended to set
+  its maximum feerate to 10 million sat/kB (equivalent to 0.1 BTC/kB).
+  However, Bitcoin Core accepts feerates in BTC/kvB, so the maximum
+  feerate was actually being set to 10 million BTC/kvB.  Bitcoin Core
+  27.0 included a [PR][bitcoin core #29434] that limited maximum
+  feerates to 1 BTC/kvB in order to prevent certain problems and under
+  the assumption that anyone setting a higher value was likely making
+  a mistake (if they really wanted a higher maximum value, they could
+  simply set the parameter to 0 to disable the check).  In this case,
+  LND (via btcd) was indeed making a mistake, but the modification to
+  Bitcoin Core prevented LND from being able to send onchain
+  transactions, which can be dangerous for an LN node that sometimes
+  needs to send time-sensitive transactions.  This maintenance release
+  correctly sets the maximum value to 0.1 BTC/kvB, making LND
+  compatible with new versions of Bitcoin Core. {% assign timestamp="41:40" %}
 
 ## Notable code and documentation changes
 

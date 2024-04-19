@@ -26,31 +26,31 @@ Bitcoin Infrastrukturprojekten.
   Blöcken aufgenommen und dann als Teil dieser Blöcke weitergeleitet werden.
   Andere Node-Softwares implementieren ähnliche Richtlinien.
 
-    Die Standardminimumgebührenrate zu senken wurde bereits in der
-    Vergangenheit diskutiert (siehe [Newsletter #3][news3 min]), wurde aber
-    [nicht in Bitcoin Core übernommen][bitcoin core #13922].
-    Die [Diskussion um das Thema][chauhan min] erwachte in den letzten Wochen
-    wieder:
+  Die Standardminimumgebührenrate zu senken wurde bereits in der
+  Vergangenheit diskutiert (siehe [Newsletter #3][news3 min]), wurde aber
+  [nicht in Bitcoin Core übernommen][bitcoin core #13922].
+  Die [Diskussion um das Thema][chauhan min] erwachte in den letzten Wochen
+  wieder:
 
-    - *Wirksamkeit individueller Änderungen:* Es wurde von mehreren Personen
-      [debattiert][todd min] wie effektiv es für einzelne Node-Betreiber war,
-      die Richtlinien ihres eigenen Nodes zu ändern.
+  - *Wirksamkeit individueller Änderungen:* Es wurde von mehreren Personen
+    [debattiert][todd min] wie effektiv es für einzelne Node-Betreiber war,
+    die Richtlinien ihres eigenen Nodes zu ändern.
 
-    - *Vergangene Fehlschläge:* Es wurde [erwähnt][harding min], dass der
-      vorherige Versuch, die Standardgebührenrate zu senken dadurch behindert
-      wurde, dass niedrigere Raten auch die Kosten für mehrere untergeordnete
-      Denial-of-Service (DoS) Angriffe senken würden.
+  - *Vergangene Fehlschläge:* Es wurde [erwähnt][harding min], dass der
+    vorherige Versuch, die Standardgebührenrate zu senken dadurch behindert
+    wurde, dass niedrigere Raten auch die Kosten für mehrere untergeordnete
+    Denial-of-Service (DoS) Angriffe senken würden.
 
-    - *Alternative Weiterleitungskriterien:*
-      Es wurde [vorgeschlagen][todd min2], dass Transaktionen, die bestimmte
-      Standardkriterien verletzen (z. B. die Standard-Minimumgebührenrate)
-      stattdessen separate Kriterien erfüllen könnten, die DoS-Angriffe
-      kostspielig machen würden. Zum Beispiel, wenn eine bescheidene Menge von
-      Hashcash-ähnlichen Arbeitsnachweisen zur Transaktionsweiterleitung
-      beitragen würde.
+  - *Alternative Weiterleitungskriterien:*
+    Es wurde [vorgeschlagen][todd min2], dass Transaktionen, die bestimmte
+    Standardkriterien verletzen (z. B. die Standard-Minimumgebührenrate)
+    stattdessen separate Kriterien erfüllen könnten, die DoS-Angriffe
+    kostspielig machen würden. Zum Beispiel, wenn eine bescheidene Menge von
+    Hashcash-ähnlichen Arbeitsnachweisen zur Transaktionsweiterleitung
+    beitragen würde.
 
-    Zum Zeitpunkt der Abfassung dieses Newsletters ist die Diskussion noch
-    zu keinem eindeutigen Ergebnis gekommen.
+  Zum Zeitpunkt der Abfassung dieses Newsletters ist die Diskussion noch
+  zu keinem eindeutigen Ergebnis gekommen.
 
 ## Bitcoin Core PR Review Club
 

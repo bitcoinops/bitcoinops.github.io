@@ -21,21 +21,21 @@ Taprootの準備についての提案、人気のあるBitcoinインフラスト
   代替設計を好む開発者からのフィードバックを求めました。
   いくつかの代替案が議論されましたが、スレッドは[OP_CAT][] opcodeを同時に導入すべきかどうかという議論にも分岐しました。
 
-    `OP_CAT`と`OP_CSFS`は、任意のトランザクションのイントロスペクションを可能にします。
-    つまり、ビットコインを受け取ったスクリプトが、そのビットコインを後で使用するトランザクションのほぼすべてのパーツをチェックできるようになります。
-    これにより多くの高度な機能（[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]や、
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]などの、
-    他の提案中のアップグレードバージョン[^expensive]を含む）を有効にできますが、
-    `OP_CAT`を使用すると再帰的な[Covenants][topic covenants]を作成することが可能で、
-    そのCovenantsにコミットしたビットコインの使用可能性を永続的に制限することができます。
-    BitcoinでCovenantsを許可することをに[反対する][rubin cost/benefit]人もいますが、
-    再帰的なCovenantsの最悪なケースの問題は、現在のビットコインで既に存在しているという趣旨で
-    いくつか[議論][harding altcoins]が[されて][towns multisig]おり、
-    `OP_CAT`または同様のopcodeを有効にすることについて心配する必要はありません。
+  `OP_CAT`と`OP_CSFS`は、任意のトランザクションのイントロスペクションを可能にします。
+  つまり、ビットコインを受け取ったスクリプトが、そのビットコインを後で使用するトランザクションのほぼすべてのパーツをチェックできるようになります。
+  これにより多くの高度な機能（[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]や、
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]などの、
+  他の提案中のアップグレードバージョン[^expensive]を含む）を有効にできますが、
+  `OP_CAT`を使用すると再帰的な[Covenants][topic covenants]を作成することが可能で、
+  そのCovenantsにコミットしたビットコインの使用可能性を永続的に制限することができます。
+  BitcoinでCovenantsを許可することをに[反対する][rubin cost/benefit]人もいますが、
+  再帰的なCovenantsの最悪なケースの問題は、現在のビットコインで既に存在しているという趣旨で
+  いくつか[議論][harding altcoins]が[されて][towns multisig]おり、
+  `OP_CAT`または同様のopcodeを有効にすることについて心配する必要はありません。
 
-    そのような議論がありながらも、Rubinは、
-    `OP_CSFS`はそれ自体で十分に役に立つと[主張し][rubin just csfs]、
-    `OP_CAT`を追加する提案から独立した`OP_CSFS`の提案を維持したいと考えています。
+  そのような議論がありながらも、Rubinは、
+  `OP_CSFS`はそれ自体で十分に役に立つと[主張し][rubin just csfs]、
+  `OP_CAT`を追加する提案から独立した`OP_CSFS`の提案を維持したいと考えています。
 
 - **bech32mサポートの追跡:**
   Bitcoin Wikiの[bech32採用][wiki bech32 adoption]ページが[更新され][erhardt bech32m tweet]、

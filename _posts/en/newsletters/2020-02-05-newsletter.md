@@ -69,36 +69,36 @@ public key may leak the secret key through an (invalid) signature."
   appropriate public key, so the function can save CPU time by accepting
   the public key as a parameter.
 
-    Jonas Nick [replied][nick nonce] that the approach was reasonable,
-    but doing it safely would require including the public key in the
-    data used to create a deterministic nonce.  Otherwise, if an attacker
-    could obtain two signatures created by the same private key for two
-    different public keys, and all of the other data remained the same,
-    you would unknowingly be reusing a nonce and the attacker could
-    derive your private key and steal your bitcoins.  Discussion about
-    addressing problem would continue in a [separate issue][nonce
-    issue].
+  Jonas Nick [replied][nick nonce] that the approach was reasonable,
+  but doing it safely would require including the public key in the
+  data used to create a deterministic nonce.  Otherwise, if an attacker
+  could obtain two signatures created by the same private key for two
+  different public keys, and all of the other data remained the same,
+  you would unknowingly be reusing a nonce and the attacker could
+  derive your private key and steal your bitcoins.  Discussion about
+  addressing problem would continue in a [separate issue][nonce
+  issue].
 
-    Additionally, as it became clear that implementations that accept
-    public keys without verifying them could end up producing reused
-    nonces, Gregory Maxwell [posted][curves post] to a mailing list
-    dedicated to [ed25519][] implementations (which also use a variation
-    of schnorr signatures) about the risk.  Ed25519 co-author Daniel
-    Bernstein replied that "the standard defense against faults is for
-    the signer to verify each signature."  This would detect that an
-    invalid public key had been provided, and some wallets such as
-    Bitcoin Core certainly do perform this check for any signatures they
-    generate even for the currently-used ECDSA signature algorithm.
-    However, the computational overhead of this approach may not be
-    acceptable to many applications and there remains a risk that
-    inexperienced developers will not know to
-    perform this step, and so it seems preferable to use Jonas Nick's
-    suggestion (relayed by Maxwell) of including the public key in the
-    data used to produce a deterministic nonce.
+  Additionally, as it became clear that implementations that accept
+  public keys without verifying them could end up producing reused
+  nonces, Gregory Maxwell [posted][curves post] to a mailing list
+  dedicated to [ed25519][] implementations (which also use a variation
+  of schnorr signatures) about the risk.  Ed25519 co-author Daniel
+  Bernstein replied that "the standard defense against faults is for
+  the signer to verify each signature."  This would detect that an
+  invalid public key had been provided, and some wallets such as
+  Bitcoin Core certainly do perform this check for any signatures they
+  generate even for the currently-used ECDSA signature algorithm.
+  However, the computational overhead of this approach may not be
+  acceptable to many applications and there remains a risk that
+  inexperienced developers will not know to
+  perform this step, and so it seems preferable to use Jonas Nick's
+  suggestion (relayed by Maxwell) of including the public key in the
+  data used to produce a deterministic nonce.
 
-    So far, no changes have been made to BIP340 as a direct result of
-    this issue, but proposed changes such as including the public key in
-    the deterministic nonce algorithm are being discussed.
+  So far, no changes have been made to BIP340 as a direct result of
+  this issue, but proposed changes such as including the public key in
+  the deterministic nonce algorithm are being discussed.
 
 - **Alternative x-only pubkey tiebreaker:** As the above issue was
   discussed, Pieter Wuille [proposed][pubkey pr] slightly speeding up
@@ -109,10 +109,10 @@ public key may leak the secret key through an (invalid) signature."
   is a significant change, the proposal also changes the tagged hash
   used to generate part of the signature.
 
-    This change hasn't yet been announced to the mailing list, probably
-    because developers are evaluating what other changes they might want
-    to make at the same time in order to address the safety of providing
-    precomputed public keys to the signature function.
+  This change hasn't yet been announced to the mailing list, probably
+  because developers are evaluating what other changes they might want
+  to make at the same time in order to address the safety of providing
+  precomputed public keys to the signature function.
 
 - **Interactive construction of LN funding transactions:** in the
   current LN protocol, the onchain transaction that opens a new channel
@@ -125,77 +125,77 @@ public key may leak the secret key through an (invalid) signature."
   creating channels where payments can initially flow in both
   directions, improving the liquidity of the network.
 
-    However, the dual-funding proposal is complicated, so Neigut started
-    a [thread][neigut thread] on the Lightning-Dev mailing list this
-    week about splitting out one aspect of the new protocol: the ability
-    for LN nodes to collaboratively construct a funding transaction.
-    This has previously been described as improving security (see
-    [Newsletter #78][news78 dual-funding]) and Neigut notes that the
-    collaboration mechanism could also help support related work on
-    batched closings (mutually closing multiple channels at the same
-    time) and [splicing][topic splicing] (moving funds into or out of a
-    channel without affecting the spendability of other funds already in
-    the channel).  Replies to Neigut's proposal included:
+  However, the dual-funding proposal is complicated, so Neigut started
+  a [thread][neigut thread] on the Lightning-Dev mailing list this
+  week about splitting out one aspect of the new protocol: the ability
+  for LN nodes to collaboratively construct a funding transaction.
+  This has previously been described as improving security (see
+  [Newsletter #78][news78 dual-funding]) and Neigut notes that the
+  collaboration mechanism could also help support related work on
+  batched closings (mutually closing multiple channels at the same
+  time) and [splicing][topic splicing] (moving funds into or out of a
+  channel without affecting the spendability of other funds already in
+  the channel).  Replies to Neigut's proposal included:
 
-    * A suggestion to set the nLockTime field's value to a recent or
-      upcoming block height in order to implement anti-fee sniping which
-      helps disincentivize block chain reorganizations and which will
-      help funding transactions blend in with other wallets that have
-      already implement anti-fee sniping (including LND's sweeping mode,
-      see [Newsletter #18][news18 lnd afs]).
+  * A suggestion to set the nLockTime field's value to a recent or
+    upcoming block height in order to implement anti-fee sniping which
+    helps disincentivize block chain reorganizations and which will
+    help funding transactions blend in with other wallets that have
+    already implement anti-fee sniping (including LND's sweeping mode,
+    see [Newsletter #18][news18 lnd afs]).
 
-    * More broadly, a suggestion to implement a common set of values for
-      free parameters in a transaction (such as nVersion, nSequence,
-      nLockTime, input ordering, and output ordering) with other
-      collaborative transaction creation systems (such as
-      [coinjoin][topic coinjoin] software).  This would avoid producing
-      any obvious indicators that an LN funding transaction is being
-      created (especially if [taproot][topic taproot] is adopted, as
-      mutual LN close transactions can look like single-sig spends).
+  * More broadly, a suggestion to implement a common set of values for
+    free parameters in a transaction (such as nVersion, nSequence,
+    nLockTime, input ordering, and output ordering) with other
+    collaborative transaction creation systems (such as
+    [coinjoin][topic coinjoin] software).  This would avoid producing
+    any obvious indicators that an LN funding transaction is being
+    created (especially if [taproot][topic taproot] is adopted, as
+    mutual LN close transactions can look like single-sig spends).
 
-    * {:#psbt-interaction} A suggestion to communicate proposed transaction details using
-      [BIP174][] Partially-Signed Bitcoin Transactions ([PSBTs][topic
-      psbt]).  Though Neigut replied that she thinks PSBT is "a bit
-      overweight for transaction collaboration between two peers."
+  * {:#psbt-interaction} A suggestion to communicate proposed transaction details using
+    [BIP174][] Partially-Signed Bitcoin Transactions ([PSBTs][topic
+    psbt]).  Though Neigut replied that she thinks PSBT is "a bit
+    overweight for transaction collaboration between two peers."
 
-    * {:#podle} A sub-discussion about how to avoid probing where Mallory starts
-      the process of opening a dual-funded channel with Bob but then
-      aborts after she receives the identity of one of Bob's UTXOs.
-      By aborting before the funding transaction is complete, Mallory
-      can costlessly learn which network identity (node) owns which
-      UTXOs.
+  * {:#podle} A sub-discussion about how to avoid probing where Mallory starts
+    the process of opening a dual-funded channel with Bob but then
+    aborts after she receives the identity of one of Bob's UTXOs.
+    By aborting before the funding transaction is complete, Mallory
+    can costlessly learn which network identity (node) owns which
+    UTXOs.
 
-        One proposal to fix this would require the person proposing to
-        open the channel (e.g. Mallory) to provide their UTXO(s) in a
-        ready-to-spend state so that probing would cost money (e.g.
-        transaction fees).  A downside of this approach is that the
-        construction proposed would be easily identifiable by block
-        chain analysis, making it easy to determine when a dual-funded
-        channel was opened.
+    One proposal to fix this would require the person proposing to
+    open the channel (e.g. Mallory) to provide their UTXO(s) in a
+    ready-to-spend state so that probing would cost money (e.g.
+    transaction fees).  A downside of this approach is that the
+    construction proposed would be easily identifiable by block
+    chain analysis, making it easy to determine when a dual-funded
+    channel was opened.
 
-        Another proposal was to use [PoDLE][], which was originally
-        developed for JoinMarket based on a suggestion by Gregory
-        Maxwell.  This protocol allows an initiating user such as
-        Mallory to commit to a UTXO in a way that prevents anyone from
-        identifying that UTXO.  The participating user, such as Bob,
-        publishes the commitment across the network (e.g.  the
-        JoinMarket network) so that nobody else will start a session
-        with Mallory while she's using that particular UTXO.  Then Bob
-        asks Mallory to identify her UTXO and, if it's a valid UTXO that
-        matches her commitment, Bob discloses his UTXO to Mallory so
-        that they can proceed with the protocol (e.g.  a coinjoin).  If
-        Mallory aborts the protocol before completion, the commitment
-        previously published across the network prevents her from being
-        able to start a new session with any other user and so learn
-        their UTXO.  Mallory's only option is to spend her coins from
-        herself to herself in order to generate a new UTXO---a process
-        that costs her money and so limits her ability to spy on users.
-        (Note, though, that PoDLE as implemented in JoinMarket allows
-        Mallory up to three retries by default so honest users aren't
-        penalized for occasional accidental failures, such as a loss of
-        network connectivity.)  The idea is to adapt this protocol for
-        LN in order to prevent attackers from learning which available
-        UTXOs are controlled by LN users.
+    Another proposal was to use [PoDLE][], which was originally
+    developed for JoinMarket based on a suggestion by Gregory
+    Maxwell.  This protocol allows an initiating user such as
+    Mallory to commit to a UTXO in a way that prevents anyone from
+    identifying that UTXO.  The participating user, such as Bob,
+    publishes the commitment across the network (e.g.  the
+    JoinMarket network) so that nobody else will start a session
+    with Mallory while she's using that particular UTXO.  Then Bob
+    asks Mallory to identify her UTXO and, if it's a valid UTXO that
+    matches her commitment, Bob discloses his UTXO to Mallory so
+    that they can proceed with the protocol (e.g.  a coinjoin).  If
+    Mallory aborts the protocol before completion, the commitment
+    previously published across the network prevents her from being
+    able to start a new session with any other user and so learn
+    their UTXO.  Mallory's only option is to spend her coins from
+    herself to herself in order to generate a new UTXO---a process
+    that costs her money and so limits her ability to spy on users.
+    (Note, though, that PoDLE as implemented in JoinMarket allows
+    Mallory up to three retries by default so honest users aren't
+    penalized for occasional accidental failures, such as a loss of
+    network connectivity.)  The idea is to adapt this protocol for
+    LN in order to prevent attackers from learning which available
+    UTXOs are controlled by LN users.
 
 ## Notable code and documentation changes
 

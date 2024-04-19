@@ -52,18 +52,18 @@ Bitcoin infrastructure projects.
   has written a [proof of concept][decker spontaneous] patch and plugin
   for C-Lightning that implements this.
 
-    Snigirev's second idea allows an offline device, such as a vending
-    machine, to generate a unique LN invoice that can be paid by an
-    online user to another online node that knows how to produce the
-    pre-image and claim the payment on behalf of the offline device.
-    This results in the payer receiving the pre-image as a proof of
-    payment.  The payer can then show this proof to the offline
-    device to receive the promised good or service, such as food from a
-    vending machine.  Again, this uses a shared secret derived using
-    ECDH---but in this case the secret is shared between the offline
-    device that generates the invoice and the online node that
-    ultimately receives the payment.  See Snigirev's post for the
-    protocol details.
+  Snigirev's second idea allows an offline device, such as a vending
+  machine, to generate a unique LN invoice that can be paid by an
+  online user to another online node that knows how to produce the
+  pre-image and claim the payment on behalf of the offline device.
+  This results in the payer receiving the pre-image as a proof of
+  payment.  The payer can then show this proof to the offline
+  device to receive the promised good or service, such as food from a
+  vending machine.  Again, this uses a shared secret derived using
+  ECDH---but in this case the secret is shared between the offline
+  device that generates the invoice and the online node that
+  ultimately receives the payment.  See Snigirev's post for the
+  protocol details.
 
 - **Authenticating messages about LN delays:** when a payment fails in
   LN, it's often possible for the node attempting the payment to receive
@@ -81,16 +81,16 @@ Bitcoin infrastructure projects.
   where delays occurred during the routing of the payment and avoid
   those channels in the future.
 
-    To prevent some nodes along the path from lying about other nodes,
-    he propose the error messages and timestamps be protected by a
-    message authentication code.  This could also prevent intermediate
-    nodes from corrupting encrypted error messages from endpoint nodes.
+  To prevent some nodes along the path from lying about other nodes,
+  he propose the error messages and timestamps be protected by a
+  message authentication code.  This could also prevent intermediate
+  nodes from corrupting encrypted error messages from endpoint nodes.
 
-    Jager's proposal also discusses how this type of system could be
-    implemented in the current routing protocol and how it could
-    address concerns related to routing privacy.  The proposal
-    has received a moderate amount of positive discussion on the mailing
-    list so far.
+  Jager's proposal also discusses how this type of system could be
+  implemented in the current routing protocol and how it could
+  address concerns related to routing privacy.  The proposal
+  has received a moderate amount of positive discussion on the mailing
+  list so far.
 
 ## Breaking Bitcoin
 

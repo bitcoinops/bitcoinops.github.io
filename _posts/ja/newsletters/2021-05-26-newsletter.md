@@ -95,14 +95,14 @@ John Pfeffer、Alex Morcosを中心とした寛大な[支援者][supporters]に�
 - [<!--why-are-there-more-than-two-transaction-outputs-in-a-coinbase-transaction-->コインベーストランザクション内に２つ以上のトランザクションアウトプットがあるのはなぜですか？]({{bse}}105831)
   Andrew Chowは、コインベーストランザクションでよくあるアウトプットについて説明しています:
 
-    * 単一のマイナーのブロック報酬の支払い
+  * 単一のマイナーのブロック報酬の支払い
 
-    * マイニングプールがマイナーに支払うような複数の支払い
+  * マイニングプールがマイナーに支払うような複数の支払い
 
-    * [BIP141][bip141 commitment]の`OP_RETURN` witness commitment
+  * [BIP141][bip141 commitment]の`OP_RETURN` witness commitment
 
-    * [マージマイニング][se 273 merge mining]や他のプロトコル用の、
-      追加の`OP_RETURN`コミットメント
+  * [マージマイニング][se 273 merge mining]や他のプロトコル用の、
+    追加の`OP_RETURN`コミットメント
 
 - [<!--fundrawtransaction-what-is-it-->fundrawtransaction - これは何ですか？]({{bse}}105811)
   Pieter Wuilleは、RPCを使ってコインを送金する４つの方法の例を挙げて、

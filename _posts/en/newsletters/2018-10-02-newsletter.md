@@ -39,20 +39,20 @@ projects.
   the most proof of work contained the duplicate inputs and a weaker
   chain did not.
 
-    Eventually, the chain without the duplicate inputs gained more proof
-    of work and the vulnerable nodes attempted to switch to it.  This
-    caused the vulnerable nodes to attempt to re-add the duplicate input
-    to the UTXO database twice, triggering an assert and causing them to
-    shutdown.  When restarted, operators of the vulnerable nodes needed
-    to manually trigger a lengthy reindex procedure to fix their nodes'
-    database inconsistencies.  (This side-effect of recovering from a
-    duplicate inputs chainsplit was previously known to developers.)
+  Eventually, the chain without the duplicate inputs gained more proof
+  of work and the vulnerable nodes attempted to switch to it.  This
+  caused the vulnerable nodes to attempt to re-add the duplicate input
+  to the UTXO database twice, triggering an assert and causing them to
+  shutdown.  When restarted, operators of the vulnerable nodes needed
+  to manually trigger a lengthy reindex procedure to fix their nodes'
+  database inconsistencies.  (This side-effect of recovering from a
+  duplicate inputs chainsplit was previously known to developers.)
 
-    Nodes upgraded to Bitcoin Core 0.16.3, 0.17.0RC4, or running other
-    software that wasn't vulnerable had no reported problems.  However,
-    many block explorers with a testnet mode did accept the vulnerable
-    block, providing a reminder that users should be careful about using
-    third-parties to determine whether or not transactions are valid.
+  Nodes upgraded to Bitcoin Core 0.16.3, 0.17.0RC4, or running other
+  software that wasn't vulnerable had no reported problems.  However,
+  many block explorers with a testnet mode did accept the vulnerable
+  block, providing a reminder that users should be careful about using
+  third-parties to determine whether or not transactions are valid.
 
 ## Notable code changes
 

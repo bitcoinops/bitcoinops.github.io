@@ -45,9 +45,9 @@ been moved to its own [section][release rc section].*
   invoices][topic hold invoices] (for example,  Carol) paid the routing
   nodes (such as Bob) for tying up their routing capital.
 
-    Several responders seemed to like the idea and began discussing how
-    it might be implemented as well as what technical challenges it
-    would need to overcome.
+  Several responders seemed to like the idea and began discussing how
+  it might be implemented as well as what technical challenges it
+  would need to overcome.
 
 - **LN direct messages:** Rusty Russell [proposed][russell dm] allowing
   LN nodes to route encrypted messages between peers without using the
@@ -61,14 +61,16 @@ been moved to its own [section][release rc section].*
   recipient and back to the sender.  For example, if Alice wants to
   communicate with Carol, she might choose the following path:
 
-        Alice → Bob → Carol → Dan → Alice
+  ```
+  Alice → Bob → Carol → Dan → Alice
+  ```
 
-    This type of circle routing would make surveillance more difficult
-    and would eliminate the overhead for routing nodes of having to
-    store the return path, making the protocol stateless for routing
-    nodes.  Discussion remains ongoing as of this writing, with a focus
-    on enhancing privacy and preventing the mechanism from being abused
-    for spam.
+  This type of circle routing would make surveillance more difficult
+  and would eliminate the overhead for routing nodes of having to
+  store the return path, making the protocol stateless for routing
+  nodes.  Discussion remains ongoing as of this writing, with a focus
+  on enhancing privacy and preventing the mechanism from being abused
+  for spam.
 
 ## Notable talks from the 2020 Stanford Blockchain Conference
 
@@ -87,40 +89,40 @@ and Bryan Bishop for providing [transcripts][].
   perspective. ([transcript][axiomatic txt], [video][axiomatic vid],
   [paper][axiomatic paper]).
 
-    Roughgarden began his talk by introducing _mechanism design_ as the inverse
-    of the better-known _game theory_. Game theory describes
-    the rules of a game and then reasons about what equilibria and behavior are
-    the result of those rules. By contrast, mechanism design starts with an intended
-    outcome and tries to design game rules that will result in that desired outcome.
-    Roughgarden asks "Wouldn't it be nice if we had a mathematical
-    description of the space of block chain protocols [...] and we could [...
-    pick our] favorite objective function and [...] find a protocol that is optimal?"
-    Roughgarden then gives three 'axioms' for desired behavior when
-    designing the reward mechanism for a block chain:
+  Roughgarden began his talk by introducing _mechanism design_ as the inverse
+  of the better-known _game theory_. Game theory describes
+  the rules of a game and then reasons about what equilibria and behavior are
+  the result of those rules. By contrast, mechanism design starts with an intended
+  outcome and tries to design game rules that will result in that desired outcome.
+  Roughgarden asks "Wouldn't it be nice if we had a mathematical
+  description of the space of block chain protocols [...] and we could [...
+  pick our] favorite objective function and [...] find a protocol that is optimal?"
+  Roughgarden then gives three 'axioms' for desired behavior when
+  designing the reward mechanism for a block chain:
 
-    1. _sybil resistance_:
-       no miner should be able to increase their reward by splitting their
-       public identity into multiple parts.
+  1. _sybil resistance_:
+     no miner should be able to increase their reward by splitting their
+     public identity into multiple parts.
 
-    2. _collusion resistance_:
-       no group of miners should be able to increase their reward by joining their
-       independent identities into a single joined identity.
+  2. _collusion resistance_:
+     no group of miners should be able to increase their reward by joining their
+     independent identities into a single joined identity.
 
-    3. _anonymity_: the reward distribution should not depend
-       on the miners' public identities, and if the miners' hashrates are
-       permuted, then the reward should be permuted in the same ways.
+  3. _anonymity_: the reward distribution should not depend
+     on the miners' public identities, and if the miners' hashrates are
+     permuted, then the reward should be permuted in the same ways.
 
-    The paper then gives a formal proof that the unique reward mechanism that
-    satisfies these axioms is a proportional mechanism (i.e. that each miner
-    receives rewards proportional to their hashrate).
-    The paper only deals with the theory around the creation of a single block,
-    and so does not consider longer-term strategies like [selfish mining][].
+  The paper then gives a formal proof that the unique reward mechanism that
+  satisfies these axioms is a proportional mechanism (i.e. that each miner
+  receives rewards proportional to their hashrate).
+  The paper only deals with the theory around the creation of a single block,
+  and so does not consider longer-term strategies like [selfish mining][].
 
-    The result may appear to be self-evident to people familiar with
-    Bitcoin, but the formal treatment seems novel and may be a good
-    basis for
-    exploring more complex behavior for miners (eg long-term strategies and
-    pooling behavior).
+  The result may appear to be self-evident to people familiar with
+  Bitcoin, but the formal treatment seems novel and may be a good
+  basis for
+  exploring more complex behavior for miners (eg long-term strategies and
+  pooling behavior).
 
 - **Boomerang: Redundancy Improves Latency and Throughput in Payment-Channel Networks:**
   Joachim Neu presented his work with Vivek Bagaria and David Tse on reducing latency
@@ -129,39 +131,39 @@ and Bryan Bishop for providing [transcripts][].
   ([transcript][boomerang txt], [video][boomerang vid], [paper][boomerang
   paper]).
 
-    Multipath payments suffer from the "everyone-waits-for-the-last"
-    _straggler problem_. This concept from distributed computing describes how, if a
-    goal depends on n tasks, then the goal must wait for the slowest of all n of
-    those tasks to complete. In the context of a multipath payment, this means that
-    if a payer wants to pay 0.05 BTC split into five parts of 0.01 BTC, the
-    payment will only complete when all of those constituent parts complete. This
-    leads to high latency for payments and reduced routing liquidity, particularly if one or more
-    of the parts fails and needs to be retried.
+  Multipath payments suffer from the "everyone-waits-for-the-last"
+  _straggler problem_. This concept from distributed computing describes how, if a
+  goal depends on n tasks, then the goal must wait for the slowest of all n of
+  those tasks to complete. In the context of a multipath payment, this means that
+  if a payer wants to pay 0.05 BTC split into five parts of 0.01 BTC, the
+  payment will only complete when all of those constituent parts complete. This
+  leads to high latency for payments and reduced routing liquidity, particularly if one or more
+  of the parts fails and needs to be retried.
 
-    A common approach to fixing the straggler problem is to introduce
-    redundancy. In our example above, this would involve the payer making
-    seven partial payments of 0.01 BTC, and the receiver claiming the first five
-    of those payments that successfully route. The problem then becomes how to
-    prevent the receiver from claiming all seven parts resulting in an
-    overpayment of 0.02 BTC.
+  A common approach to fixing the straggler problem is to introduce
+  redundancy. In our example above, this would involve the payer making
+  seven partial payments of 0.01 BTC, and the receiver claiming the first five
+  of those payments that successfully route. The problem then becomes how to
+  prevent the receiver from claiming all seven parts resulting in an
+  overpayment of 0.02 BTC.
 
-    Neu et al. present a novel scheme called a _boomerang_ contract. The receiver
-    selects the pre-images for the payment parts as shares in a [publicly
-    verifiable secret sharing][pvss] scheme. In our example above, the secret can
-    be reconstructed from six of the seven payment pre-images. The payer then
-    constructs the seven payment parts, but each payment part is associated
-    with a reverse (boomerang) condition that pays the payer back the full amount
-    if the payer knows the full secret. If the receiver claims five or fewer
-    of the payment parts, the payer never learns the full secret, and the
-    boomerang clause cannot be invoked, but if the receiver cheats and
-    claims six or more of the parts, then the payer is able to invoke the
-    boomerang clause of the contract and none of the payment parts can be
-    redeemed by the receiver.
+  Neu et al. present a novel scheme called a _boomerang_ contract. The receiver
+  selects the pre-images for the payment parts as shares in a [publicly
+  verifiable secret sharing][pvss] scheme. In our example above, the secret can
+  be reconstructed from six of the seven payment pre-images. The payer then
+  constructs the seven payment parts, but each payment part is associated
+  with a reverse (boomerang) condition that pays the payer back the full amount
+  if the payer knows the full secret. If the receiver claims five or fewer
+  of the payment parts, the payer never learns the full secret, and the
+  boomerang clause cannot be invoked, but if the receiver cheats and
+  claims six or more of the parts, then the payer is able to invoke the
+  boomerang clause of the contract and none of the payment parts can be
+  redeemed by the receiver.
 
-    The paper goes on to describe an implementation of boomerang contracts in
-    Bitcoin using [adaptor signatures][] based on a schnorr signature scheme.
-    Neu also noted that it is possible to create adaptor signatures
-    over ECDSA, so boomerang contracts could theoretically be implemented in Bitcoin today.
+  The paper goes on to describe an implementation of boomerang contracts in
+  Bitcoin using [adaptor signatures][] based on a schnorr signature scheme.
+  Neu also noted that it is possible to create adaptor signatures
+  over ECDSA, so boomerang contracts could theoretically be implemented in Bitcoin today.
 
 - **Remote Side-Channel Attacks on Anonymous Transactions:** Florian Tramer
   presented his work with Dan Boneh and Kenneth G. Paterson on timing
@@ -169,35 +171,35 @@ and Bryan Bishop for providing [transcripts][].
   ([transcript][side-channel txt], [video][side-channel vid],
   [paper][side-channel paper]).
 
-    Monero and Zcash are privacy-focused cryptocurrencies which use
-    cryptographic techniques ([ring signatures][] and [bulletproofs][]
-    for Monero and [zk-SNARKs][] for Zcash) to hide the sender's identity,
-    receiver's identity, and amounts in a transaction from the public ledger.
-    Tramer et al. show that even if these cryptographic constructions are
-    correct, implementation details can allow information about the
-    identities and amounts to be leaked to adversaries on the network.
+  Monero and Zcash are privacy-focused cryptocurrencies which use
+  cryptographic techniques ([ring signatures][] and [bulletproofs][]
+  for Monero and [zk-SNARKs][] for Zcash) to hide the sender's identity,
+  receiver's identity, and amounts in a transaction from the public ledger.
+  Tramer et al. show that even if these cryptographic constructions are
+  correct, implementation details can allow information about the
+  identities and amounts to be leaked to adversaries on the network.
 
-    When a Monero or Zcash node receives a transaction from the peer-to-peer
-    network, that transaction is passed to the node's wallet to determine
-    if the transaction belongs to the wallet.
-    If the
-    transaction does belong to the wallet, then the wallet must do additional computation
-    to decrypt the data and amounts from the transaction, and if the wallet pauses
-    its node's peer-to-peer activity while it is doing this additional computational work,
-    then an adversary can use a [timing attack][] to discover which transactions
-    are associated with which node. The authors demonstrate that these timing attacks
-    can be carried out remotely (across a WAN connection from London to Zurich)
-    and that it may also be possible to use similar timing attacks to reveal
-    the amounts in Zcash transactions.
+  When a Monero or Zcash node receives a transaction from the peer-to-peer
+  network, that transaction is passed to the node's wallet to determine
+  if the transaction belongs to the wallet.
+  If the
+  transaction does belong to the wallet, then the wallet must do additional computation
+  to decrypt the data and amounts from the transaction, and if the wallet pauses
+  its node's peer-to-peer activity while it is doing this additional computational work,
+  then an adversary can use a [timing attack][] to discover which transactions
+  are associated with which node. The authors demonstrate that these timing attacks
+  can be carried out remotely (across a WAN connection from London to Zurich)
+  and that it may also be possible to use similar timing attacks to reveal
+  the amounts in Zcash transactions.
 
-    The attacks in the paper do not apply to Bitcoin Core, since the difference
-    in computation that the Bitcoin Core wallet does for its own transactions
-    and other transactions is minimal (no advanced cryptography is involved),
-    and since v0.16, wallet operations have been processed asynchronously from peer-to-peer
-    behavior (see [Bitcoin Core #10286][]). However, the observations
-    in the paper are sufficiently general to be interesting to anyone implementing
-    systems on Bitcoin, namely that allowing wallet or application processing to
-    affect peer-to-peer behavior can leak information.
+  The attacks in the paper do not apply to Bitcoin Core, since the difference
+  in computation that the Bitcoin Core wallet does for its own transactions
+  and other transactions is minimal (no advanced cryptography is involved),
+  and since v0.16, wallet operations have been processed asynchronously from peer-to-peer
+  behavior (see [Bitcoin Core #10286][]). However, the observations
+  in the paper are sufficiently general to be interesting to anyone implementing
+  systems on Bitcoin, namely that allowing wallet or application processing to
+  affect peer-to-peer behavior can leak information.
 
 Related: the Optech newsletter summarized a selection of talks from last year's Stanford
 Blockchain Conference in [Newsletter #32][news46 sbc].

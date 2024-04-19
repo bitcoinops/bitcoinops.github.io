@@ -29,15 +29,15 @@ software.
   needs to be written and by using merkle trees to reduce the amount of
   data that needs to be transferred to prove certain operations occurred.
 
-    Taro is [intended][gentry taro] to be used with LN for routable
-    offchain transfers.  Similar to previous proposals for cross-asset
-    transfers on LN, intermediate nodes that just route payments won't
-    need to be aware of the Taro protocol or the details of the assets
-    being transferred---they'll just transfer BTC using the same protocol
-    as any other LN payment.
+  Taro is [intended][gentry taro] to be used with LN for routable
+  offchain transfers.  Similar to previous proposals for cross-asset
+  transfers on LN, intermediate nodes that just route payments won't
+  need to be aware of the Taro protocol or the details of the assets
+  being transferred---they'll just transfer BTC using the same protocol
+  as any other LN payment.
 
-    The idea received a moderate amount of discussion on the mailing
-    lists this week.
+  The idea received a moderate amount of discussion on the mailing
+  lists this week.
 
 - **MuSig2 proposed BIP:** Jonas Nick, Tim Ruffing, and Elliott Jin
   [posted][nick musig2] a [proposed BIP][musig2 bip] to the Bitcoin-Dev
@@ -55,12 +55,12 @@ software.
   privacy over onchain multisig where the number of separate keys and
   signatures is revealed.
 
-    MuSig2 is superior in almost all imagined applications over the
-    original MuSig proposal (now called *MuSig1*).  MuSig2 is easier to
-    implement than the alternative MuSig-DN (deterministic nonce),
-    although there are tradeoffs between MuSig2 and MuSig-DN that some
-    application developers may wish to consider when choosing which
-    protocol to use.
+  MuSig2 is superior in almost all imagined applications over the
+  original MuSig proposal (now called *MuSig1*).  MuSig2 is easier to
+  implement than the alternative MuSig-DN (deterministic nonce),
+  although there are tradeoffs between MuSig2 and MuSig-DN that some
+  application developers may wish to consider when choosing which
+  protocol to use.
 
 ## Bitcoin Core PR Review Club
 

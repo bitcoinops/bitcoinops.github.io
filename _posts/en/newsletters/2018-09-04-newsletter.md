@@ -29,8 +29,8 @@ Bitcoin infrastructure projects.
   how he built it for anyone who wants to independently replicate the
   data or otherwise extend the dashboard using their own full node.
 
-    The rest of the Optech team thanks Marcin for his dedicated work and
-    keen insight, and we wish him all the best in the upcoming year.
+  The rest of the Optech team thanks Marcin for his dedicated work and
+  keen insight, and we wish him all the best in the upcoming year.
 
 ## News
 
@@ -58,28 +58,28 @@ Bitcoin infrastructure projects.
   parts of the transaction to be changed by other people such as
   other participants in a multiparty contract.
 
-    In [BIP143][], segwit preserved all of the original Bitcoin 0.1
-    signature hash (sighash) flags but made some minor (but useful)
-    changes to what data wallets include in the hash that made it harder
-    for miners to DoS attack other miners and which made it easier for
-    underpowered devices such as hardware wallets to protect users
-    funds.  This week, BIP143 co-author Johnson Lau [posted][sighash
-    changes] some suggested changes to sighash flags, including new
-    flags, that could be implemented as a soft fork using the witness
-    script update mechanism provided as part of segwit.
+  In [BIP143][], segwit preserved all of the original Bitcoin 0.1
+  signature hash (sighash) flags but made some minor (but useful)
+  changes to what data wallets include in the hash that made it harder
+  for miners to DoS attack other miners and which made it easier for
+  underpowered devices such as hardware wallets to protect users
+  funds.  This week, BIP143 co-author Johnson Lau [posted][sighash
+  changes] some suggested changes to sighash flags, including new
+  flags, that could be implemented as a soft fork using the witness
+  script update mechanism provided as part of segwit.
 
-    {% comment %}<!-- for reference: numbers in following paragraph
-    correspond to the numbered bullet points in Lau's email -->{%
-    endcomment %}
+  {% comment %}<!-- for reference: numbers in following paragraph
+  correspond to the numbered bullet points in Lau's email -->{%
+  endcomment %}
 
-    If the changes are adopted, some of the notable advantages include:
-    making it easier for hardware wallets to securely participate in
-    CoinJoin-style transactions <!--#1--> as well as other smart
-    contracts<!--#2-->, potentially easier fee bumping by any individual
-    party in a multiparty transaction<!--#6-->, and preventing counter
-    parties and third parties to sophisticated smart contracts from
-    bloating the size of multiparty transactions in a DoS attack that
-    lowers a transaction's fee priority.<!--#8-->
+  If the changes are adopted, some of the notable advantages include:
+  making it easier for hardware wallets to securely participate in
+  CoinJoin-style transactions <!--#1--> as well as other smart
+  contracts<!--#2-->, potentially easier fee bumping by any individual
+  party in a multiparty transaction<!--#6-->, and preventing counter
+  parties and third parties to sophisticated smart contracts from
+  bloating the size of multiparty transactions in a DoS attack that
+  lowers a transaction's fee priority.<!--#8-->
 
 ## Notable commits
 

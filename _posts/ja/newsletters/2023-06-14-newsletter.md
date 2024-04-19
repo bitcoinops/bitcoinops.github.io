@@ -24,25 +24,25 @@ Bitcoin Core PR Review Clubミーティングの要約や、新しいソフト�
   そのデータにコミットしなければなりません（第三者が追加、削除、変更できないようにするため）が、
   現時点ではそれ以外に定義された目的はなく、将来のプロトコルアップグレード、特にソフトフォークのために予約されています。
 
-    annexのフォーマットを定義する提案は[以前から][riard annex]ありましたが、
-    広く受け入れられ実装されたものはありませんでした。Jagerは、
-    ソフトフォークにバンドルされる可能性のある将来の標準化の取り組みを著しく複雑にするこなく、
-    誰でも任意のデータをannexに追加できるようにするために使用できる2つのフォーマット（[1][jager annex]、[2][jager annex2]）を提案しました。
+  annexのフォーマットを定義する提案は[以前から][riard annex]ありましたが、
+  広く受け入れられ実装されたものはありませんでした。Jagerは、
+  ソフトフォークにバンドルされる可能性のある将来の標準化の取り組みを著しく複雑にするこなく、
+  誰でも任意のデータをannexに追加できるようにするために使用できる2つのフォーマット（[1][jager annex]、[2][jager annex2]）を提案しました。
 
-    Greg Sandersは、Jagerが具体的にどんなデータをannexに保存したいのかを[尋ね][sanders annex]、
-    Bitcoin Inquisitionを使用した[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]のソフトフォーク提案で、
-    [LN-Symmetry][topic eltoo]プロトコルをテストするためにannexを使用した自分の使用法を説明しました
-    （[ニュースレター #244][news244 annex]参照）。
-    Sandersはまた、annexの問題点を説明しました。マルチパーティプロトコル（[Coinjoin][topic coinjoin]など）では、
-    各署名はその署名が含まれるインプットのannexのみにコミットし、
-    同じトランザクションの他のインプットのannexにはコミットしません。
-    つまり、アリス、ボブ、マロリーが一緒にCoinjoinに署名する場合、
-    アリスとボブは、マロリーが巨大なannexを持つバージョンのトランザクションをブロードキャストして
-    承認を遅らせることを防ぐことができません。Bitcoin Coreや他のフルノードは、
-    現在annexを含むトランザクションをリレーしないため、これは今のところ問題になっていません。
-    Jagerは、ソフトフォークを必要としないタイプの[Vault][topic vaults]のために、
-    一時鍵の署名を保存したいと[答え][jager annex4]、Bitcoin Coreのいくつかの[これまでの研究][bitcoin core #24007]により、
-    マルチパーティプロトコルにおけるannexのリレーの問題に対処できる可能性があることを[示唆しました][jager annex3]。
+  Greg Sandersは、Jagerが具体的にどんなデータをannexに保存したいのかを[尋ね][sanders annex]、
+  Bitcoin Inquisitionを使用した[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]のソフトフォーク提案で、
+  [LN-Symmetry][topic eltoo]プロトコルをテストするためにannexを使用した自分の使用法を説明しました
+  （[ニュースレター #244][news244 annex]参照）。
+  Sandersはまた、annexの問題点を説明しました。マルチパーティプロトコル（[Coinjoin][topic coinjoin]など）では、
+  各署名はその署名が含まれるインプットのannexのみにコミットし、
+  同じトランザクションの他のインプットのannexにはコミットしません。
+  つまり、アリス、ボブ、マロリーが一緒にCoinjoinに署名する場合、
+  アリスとボブは、マロリーが巨大なannexを持つバージョンのトランザクションをブロードキャストして
+  承認を遅らせることを防ぐことができません。Bitcoin Coreや他のフルノードは、
+  現在annexを含むトランザクションをリレーしないため、これは今のところ問題になっていません。
+  Jagerは、ソフトフォークを必要としないタイプの[Vault][topic vaults]のために、
+  一時鍵の署名を保存したいと[答え][jager annex4]、Bitcoin Coreのいくつかの[これまでの研究][bitcoin core #24007]により、
+  マルチパーティプロトコルにおけるannexのリレーの問題に対処できる可能性があることを[示唆しました][jager annex3]。
 
 - **サイレントペイメントのBIPドラフト:** Josie BakerとRuben Somsenは、
   [サイレントペイメント][topic silent payments]のBIPドラフトをBitcoin-Devメーリングリストに[投稿しました][bs sp]。

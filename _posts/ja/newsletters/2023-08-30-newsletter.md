@@ -30,19 +30,19 @@ lang: ja
   ボブのLNノードは他のこと（資金の損失を防ぐために必要な時間的制約のある処理の実行を含む）が実行できなくなるほど、
   ボブのリソースを浪費する可能性があります。
 
-    Morehouseが自身のノードに対してテストをしたところ、
-    Core Lightning、Eclair、LDKおよびLNDで重大な問題を引き起こすことができました。
-    そのうち2つのケースでは、（私たちの意見では）多くのノード間で資金の損失につながる可能性があると思われるものでした。
-    Morehouseの[完全な説明][morehouse post]は、
-    問題が解決されたPRへのリンク（ニュースレター [#237][news237 dos]と[#240][news240 dos]で取り上げたPRを含む）と
-    脆弱性に対処したLNリリースのリストを示しています:
+  Morehouseが自身のノードに対してテストをしたところ、
+  Core Lightning、Eclair、LDKおよびLNDで重大な問題を引き起こすことができました。
+  そのうち2つのケースでは、（私たちの意見では）多くのノード間で資金の損失につながる可能性があると思われるものでした。
+  Morehouseの[完全な説明][morehouse post]は、
+  問題が解決されたPRへのリンク（ニュースレター [#237][news237 dos]と[#240][news240 dos]で取り上げたPRを含む）と
+  脆弱性に対処したLNリリースのリストを示しています:
 
-    - Core Lightning 23.02
-    - Eclair 0.9.0
-    - LDK 0.0.114
-    - LND 0.16.0
+  - Core Lightning 23.02
+  - Eclair 0.9.0
+  - LDK 0.0.114
+  - LND 0.16.0
 
-    メーリングリストと[IRC][stateless funding]でフォローアップの議論が行われました。
+  メーリングリストと[IRC][stateless funding]でフォローアップの議論が行われました。
 
 - **`TXHASH`と`CSFS`を使用したCovenantのマッシュアップ:** Brandon Blackは、
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV)と
@@ -55,8 +55,8 @@ lang: ja
   「CTVとAPOの個別および組み合わせについて私たちの考えを明確にし、
   将来的にビットコインの驚くべき使用法を可能にする方向での合意に向けて進む可能性がある」ことでした。
 
-    この提案は、メーリングリスト上でいくつかの議論を受け、
-    Delving Bitcoinのフォーラムに[追加の修正][delv mashup]が投稿され、議論されました。
+  この提案は、メーリングリスト上でいくつかの議論を受け、
+  Delving Bitcoinのフォーラムに[追加の修正][delv mashup]が投稿され、議論されました。
 
 ## Bitcoin Stack Exchangeから選ばれたQ&A
 
