@@ -82,7 +82,6 @@ Imagine Alice forwards a payment to Bob who forwards the payment to
 Carol.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
@@ -98,12 +97,10 @@ to Bob.  Everyone gets back what they started with, which is a safe
 outcome.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
     Refunds after expiry:
-
         Alice <------ Bob <------ Carol
               (1 BTC)     (1 BTC)
 
@@ -113,12 +110,10 @@ spends nothing and Carol receives payment with Bob losing the
 difference.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
     Refund after expiry to Alice and payment to Carol:
-
         Alice <------ Bob ------> Carol
               (1 BTC)     (1 BTC)
 
