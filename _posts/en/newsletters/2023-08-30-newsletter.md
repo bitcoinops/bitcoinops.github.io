@@ -201,13 +201,13 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   taproot channel to continue to be forwarded through other LN nodes
   that don't support taproot channels. {% assign timestamp="1:09:07" %}
 
-    <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
-    listed them in that order rather than by PR number -->
-    This PR includes 134 commits that were previously merged into a
-    staging branch from the following PRs: [#7332][lnd #7332],
-    [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340],
-    [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346],
-    [#7347][lnd #7347], and [#7472][lnd #7472].
+  <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
+  listed them in that order rather than by PR number -->
+  This PR includes 134 commits that were previously merged into a
+  staging branch from the following PRs: [#7332][lnd #7332],
+  [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340],
+  [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346],
+  [#7347][lnd #7347], and [#7472][lnd #7472].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}

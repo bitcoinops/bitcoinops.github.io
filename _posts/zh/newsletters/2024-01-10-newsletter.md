@@ -37,10 +37,10 @@ lang: zh
 
     HTLC-Success 和 HTLC-Timeout 交易（HTLC-X 交易）使用相同的内生费用也将是一个额外的挑战。即使有 APO，这在朴素的情况下意味着要创建 <i>n<sup>2</sup></i> 个签名，尽管 Peter Todd 指出，通过假设 HTLC-X 交易将支付与承诺交易相似的费率，可以减少签名的数量。
 
-      <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
-           BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
-           = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
-           everything by 1,000 s/vb to get total sats -->
+    <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
+         BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
+         = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
+         everything by 1,000 s/vb to get total sats -->
 
     关于内生费用是否会导致过量资本被预留用于费用的[争论][teinturier fees]仍悬而未决。例如，如果 Alice 签署从 10 s/vb 到 1,000 s/vb 的费用变体，她必须基于对手方 Bob 可能会把 1,000 s/vb 的变体放在链上的可能性做出决定，即使她自己不会支付那个费率。这意味着她不能接受 Bob 的付款，因为他花掉了他所需的 1,000 s/vb 变体的钱。例如，有 20 个HTLC 的承诺交易将使 100 万 sats 暂时无法使用（在撰写本文时为 450 美元）。如果 HTLC-X 交易也使用内生费用，则 20 个 HTLC 暂时无法支出的金额将接近 450万 sats（2,050美元）。相比之下，如果期望 Bob 外生性地支付费用，那么 Alice 就不需要为了她的安全去减少通道的容量。
 
