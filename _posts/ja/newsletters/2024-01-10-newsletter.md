@@ -109,10 +109,10 @@ LN-Symmetryの研究実装の発表を掲載しています。また、Bitcoin C
     Peter Toddは、HTLC-Xトランザクションがコミットメントトランザクションと同様の手数料率を支払うと仮定することで、
     署名の数を減らすことができると述べています。
 
-     <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
-          BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
-          = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
-          everything by 1,000 s/vb to get total sats -->
+    <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
+         BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
+         = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
+         everything by 1,000 s/vb to get total sats -->
 
      内部的手数料によって過剰な資本が手数料のために留保されるかどうかについては、未解決の[議論][teinturier fees]がありました。
      たとえば、アリスが10 s/vbから1,000 s/vbまでのバージョンに署名した場合、
