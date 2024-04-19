@@ -85,6 +85,9 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	! git --no-pager grep -i '[r]eplaca' # e.g., replaceability
 	! git --no-pager grep -i '[h]tlc expiry delta' # instead use: CLTV expiry delta
 
+	## Check for indentation that's forward incompatible with Hugo
+	! git ls-files '*.md' | xargs -i _contrib/find-bad-indentation '{}' | grep .
+
 test-after-build: build
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
 	! find _site/ -name '*.html' | xargs grep ']\[' | grep -v skip-test | grep .
