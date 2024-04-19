@@ -164,12 +164,12 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
   LNDは引き続き[HTLC][topic htlc]のみを使用し、Taprootチャネルで開始された支払いを、
   Taprootチャネルをサポートしない他のLNノードを介して転送し続けることができます。
 
-    <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
-    listed them in that order rather than by PR number -->
-    このPRをには、以下のPRからステージングブランチにマージされた134のコミットが含まれています:
-    [#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、
-    [#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347]、
-    [#7472][lnd #7472]。
+  <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
+  listed them in that order rather than by PR number -->
+  このPRをには、以下のPRからステージングブランチにマージされた134のコミットが含まれています:
+  [#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、
+  [#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347]、
+  [#7472][lnd #7472]。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}
