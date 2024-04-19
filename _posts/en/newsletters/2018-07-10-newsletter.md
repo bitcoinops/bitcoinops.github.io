@@ -123,30 +123,32 @@ to pursue later." ([source][pwuille comment])
   that may roughly halve the value (although the exact amount has not
   been determined yet).
 
-    This may be included in the next major version of Bitcoin Core.  If
-    so, it'll mean that you may be able to create cheaper consolidation
-    transactions once the change has been well deployed.  However, it
-    also means that if you don't upgrade any nodes you use for detecting
-    unconfirmed transactions, they may not see unconfirmed transactions
-    with low feerates unless you change the defaults.  This could affect
-    the information you display to your users.  Those nodes will still
-    see all confirmed transactions in valid blocks.
+  This may be included in the next major version of Bitcoin Core.  If
+  so, it'll mean that you may be able to create cheaper consolidation
+  transactions once the change has been well deployed.  However, it
+  also means that if you don't upgrade any nodes you use for detecting
+  unconfirmed transactions, they may not see unconfirmed transactions
+  with low feerates unless you change the defaults.  This could affect
+  the information you display to your users.  Those nodes will still
+  see all confirmed transactions in valid blocks.
 
-    Note that to lower the minimum relay fee in Bitcoin Core below its
-    default, you need to change two settings.  Shown below are the two
-    settings with their default values in Bitcoin Core 0.16.1; to lower
-    the values, change both of them to the same value, but be aware that
-    reducing them too far (perhaps to less than 1/10th the default)
-    exposes you to bandwidth-wasting attacks and reduces BIP152 compact
-    block efficiency for your node.
+  Note that to lower the minimum relay fee in Bitcoin Core below its
+  default, you need to change two settings.  Shown below are the two
+  settings with their default values in Bitcoin Core 0.16.1; to lower
+  the values, change both of them to the same value, but be aware that
+  reducing them too far (perhaps to less than 1/10th the default)
+  exposes you to bandwidth-wasting attacks and reduces BIP152 compact
+  block efficiency for your node.
 
-      minrelaytxfee=0.00001000
-      incrementalrelayfee=0.00001000
+  ```
+  minrelaytxfee=0.00001000
+  incrementalrelayfee=0.00001000
+  ```
 
-    If your organization produces end-user software, you may wish to
-    ensure that it works with transactions and fee estimations set below
-    the value of 1 satoshi per byte.  Please contact Optech if you need
-    more information about minimum relay fees.
+  If your organization produces end-user software, you may wish to
+  ensure that it works with transactions and fee estimations set below
+  the value of 1 satoshi per byte.  Please contact Optech if you need
+  more information about minimum relay fees.
 
 [min fee discussion]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2018/bitcoin-core-dev.2018-07-05-19.22.log.html#l-24
 
@@ -158,22 +160,22 @@ to pursue later." ([source][pwuille comment])
   less than half being 71 bytes, and the small remainder being 70 bytes
   or smaller.
 
-    At a guess, the developers of some software looked at a
-    randomly-selected signature, saw that it was 71 bytes, and assumed
-    all signatures would be 71 bytes.  However, when the software
-    generates a 72-byte signature, this makes the actual size of the
-    transaction one byte larger per signature than the estimated size,
-    causing the fees paid per byte to be slightly lower than expected.
+  At a guess, the developers of some software looked at a
+  randomly-selected signature, saw that it was 71 bytes, and assumed
+  all signatures would be 71 bytes.  However, when the software
+  generates a 72-byte signature, this makes the actual size of the
+  transaction one byte larger per signature than the estimated size,
+  causing the fees paid per byte to be slightly lower than expected.
 
-    This didn't cause significant problems when fee estimates were high,
-    but now that fee estimates are near the default minimum relay fee of
-    1 satoshi per byte, any transactions created with a fee slightly
-    below that may not be relayed to miners and so remain unconfirmed
-    indefinitely.
+  This didn't cause significant problems when fee estimates were high,
+  but now that fee estimates are near the default minimum relay fee of
+  1 satoshi per byte, any transactions created with a fee slightly
+  below that may not be relayed to miners and so remain unconfirmed
+  indefinitely.
 
-    It is recommended that organizations check their software to ensure
-    it, at the least, makes a worst-case assumption of signatures being
-    72 bytes.
+  It is recommended that organizations check their software to ensure
+  it, at the least, makes a worst-case assumption of signatures being
+  72 bytes.
 
 - **Upcoming Bitcoin Core 0.17 feature freeze:** next week developers
   [plan][#12624] to stop merging new features for the next major
@@ -184,21 +186,21 @@ to pursue later." ([source][pwuille comment])
   chance to ensure it's part of 0.17.  Features currently not yet merged
   but likely to be added to Bitcoin Core 0.17.0 include:
 
-    - `scantxoutset` RPC that allows searching the unspent transaction
-      output set for addresses or scripts.  Intended for use with
-      address sweeping, e.g. finding funds that you own and bringing
-      them into one of your current wallets.
+  - `scantxoutset` RPC that allows searching the unspent transaction
+    output set for addresses or scripts.  Intended for use with
+    address sweeping, e.g. finding funds that you own and bringing
+    them into one of your current wallets.
 
-    - [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) support,
-      a protocol for exchanging information about Bitcoin transactions
-      between wallets to facilitate better interoperability between
-      multisig wallets, hot/cold wallets, coinjoins, and other
-      cooperating wallets.
+  - [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) support,
+    a protocol for exchanging information about Bitcoin transactions
+    between wallets to facilitate better interoperability between
+    multisig wallets, hot/cold wallets, coinjoins, and other
+    cooperating wallets.
 
-    - [Delayed transaction sending by network group][#13298], a proposal that is
-      hoped will make it harder for spy nodes to determine which client
-      first broadcast a transaction (indicating it may have been the
-      spender).
+  - [Delayed transaction sending by network group][#13298], a proposal that is
+    hoped will make it harder for spy nodes to determine which client
+    first broadcast a transaction (indicating it may have been the
+    spender).
 
 [#12624]: https://github.com/bitcoin/bitcoin/issues/12624
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki

@@ -35,12 +35,12 @@ infrastructure projects.
   Core's existing transaction origin protection or future proposals such
   as the [Dandelion protocol][]).
 
-    Schnelli is also working with other developers to implement and test
-    the [NewHope key exchange protocol][newhope] which is believed to be
-    resistant to attacks by quantum computers so that an eavesdropper who
-    records communication between two peers today won't be able to
-    decrypt that data in a future where they posses a fast quantum
-    computer.
+  Schnelli is also working with other developers to implement and test
+  the [NewHope key exchange protocol][newhope] which is believed to be
+  resistant to attacks by quantum computers so that an eavesdropper who
+  records communication between two peers today won't be able to
+  decrypt that data in a future where they posses a fast quantum
+  computer.
 
 - **Requests for soft fork solutions to the time warp attack:** Bitcoin
   blocks include the time the block was supposedly created by a miner.
@@ -51,18 +51,18 @@ infrastructure projects.
   over a long period of time in order to lower difficulty even as blocks
   are being produced more frequently than once every 10 minutes.
 
-    Gregory Maxwell has [asked][timewarp maxwell] the Bitcoin protocol
-    development mailing list for proposed soft fork solutions to the
-    attack before he proposes his own solution.  So far, Johnson Lau has
-    [proposed][timewarp lau] one technique.
+  Gregory Maxwell has [asked][timewarp maxwell] the Bitcoin protocol
+  development mailing list for proposed soft fork solutions to the
+  attack before he proposes his own solution.  So far, Johnson Lau has
+  [proposed][timewarp lau] one technique.
 
-    Note: anyone monitoring the block chain for this type of attack
-    would have at least one month's notice before any significant damage
-    was done.  For that reason and because there are multiple known
-    methods of countering the attack (with varying tradeoffs), fixing
-    the time warp attack has never been considered urgent.  However, if
-    the attack risk can be mitigated fully or partly by a
-    non-controversial soft fork, that would certainly be nice.
+  Note: anyone monitoring the block chain for this type of attack
+  would have at least one month's notice before any significant damage
+  was done.  For that reason and because there are multiple known
+  methods of countering the attack (with varying tradeoffs), fixing
+  the time warp attack has never been considered urgent.  However, if
+  the attack risk can be mitigated fully or partly by a
+  non-controversial soft fork, that would certainly be nice.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -86,10 +86,10 @@ answers made since our last update.*
   create the reverse?  Could you prove that a transaction is not in a
   particular block or in any block on the best block chain?
 
-    Gregory Maxwell explains that it's possible, and it would also
-    involve using merkle trees, but that it would likely require
-    computationally expensive (but bandwidth efficient) zero-knowledge
-    proofs (ZKPs).
+  Gregory Maxwell explains that it's possible, and it would also
+  involve using merkle trees, but that it would likely require
+  computationally expensive (but bandwidth efficient) zero-knowledge
+  proofs (ZKPs).
 
 - [Can you convert a P2PKH address to P2SH or segwit?][bse 72775] **Don't do this.**
   Pieter Wuille explains why this is a very bad idea and likely to
@@ -112,21 +112,21 @@ wait until version 0.18 in about six months from now.*
   currently used by Bitcoin Core, but future work is expect to use these
   functions to provide two features:
 
-    1. [BIP157][] support for sending filters to light clients over the
-       peer-to-peer (P2P) network protocol.  This can allow P2P
-       lightweight wallets to find blocks with transactions that affect
-       their wallet much more privately than currently possible with
-       BIP37 bloom filters.
+  1. [BIP157][] support for sending filters to light clients over the
+     peer-to-peer (P2P) network protocol.  This can allow P2P
+     lightweight wallets to find blocks with transactions that affect
+     their wallet much more privately than currently possible with
+     BIP37 bloom filters.
 
-    2. Faster rescans for Bitcoin Core's built-in wallet.
-       Occasionally users of Bitcoin Core need to rescan the block
-       chain to see if any historic transactions affected their
-       wallet---for example, when they import a new private key, public
-       key, or address.  This currently takes over an hour even on
-       modern desktops, but users with local BIP157 filters will be able
-       to perform the rescan much faster and still with [information
-       theoretic perfect privacy][] (which lightweight clients don't
-       have).
+  2. Faster rescans for Bitcoin Core's built-in wallet.
+     Occasionally users of Bitcoin Core need to rescan the block
+     chain to see if any historic transactions affected their
+     wallet---for example, when they import a new private key, public
+     key, or address.  This currently takes over an hour even on
+     modern desktops, but users with local BIP157 filters will be able
+     to perform the rescan much faster and still with [information
+     theoretic perfect privacy][] (which lightweight clients don't
+     have).
 
 - [Bitcoin Core #12676][] adds a field to the `getrawmempool`,
   `getmempoolentry`, `getmempoolancestors`, and `getmempooldescendants`

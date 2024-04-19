@@ -131,8 +131,8 @@ mentioned above for easy copy/paste next week. -harding -->{% endcomment %}
   use its own unconfirmed change outputs for funding transactions,
   allowing it to potentially open multiple channels in the next block.
 
-    Note: this was only the most notable of several minor (but useful)
-    improvements to the autopilot feature merged this week.
+  Note: this was only the most notable of several minor (but useful)
+  improvements to the autopilot feature merged this week.
 
 - [LND #1460][] the payinvoice and sendpayment commands now require
   extra confirmation, although this can be bypassed with the `--force`

@@ -27,31 +27,31 @@ infrastructure projects.
 ## News
 
 - **Eltoo sample implementation and discussion:** on the
- Lightning-Dev mailing list, Richard Myers [posted][eltoo sample] a link
- to a sample implementation of an eltoo payment flow between nodes on a
- custom [signet][].  [Eltoo][] is a proposal to replace LN's current
- LN-penalty enforcement layer with a new layer named LN-eltoo.
- LN-penalty prevents counterparty theft by giving nodes the ability to
- financially penalize a counterparty that attempts to publish an old
- channel state onchain.  LN-eltoo accomplishes the same goal by giving the
- later states the ability to spend funds from earlier states within a
- certain period of time---eliminating the need for a penalty, simplifying
- many aspects of the protocol, and reducing
- the complexity of many proposed protocol enhancements.  Myers's sample
- implementation works by using the Bitcoin Core functional test
- framework to simulate payments in an eltoo payment channel.
+  Lightning-Dev mailing list, Richard Myers [posted][eltoo sample] a link
+  to a sample implementation of an eltoo payment flow between nodes on a
+  custom [signet][].  [Eltoo][] is a proposal to replace LN's current
+  LN-penalty enforcement layer with a new layer named LN-eltoo.
+  LN-penalty prevents counterparty theft by giving nodes the ability to
+  financially penalize a counterparty that attempts to publish an old
+  channel state onchain.  LN-eltoo accomplishes the same goal by giving the
+  later states the ability to spend funds from earlier states within a
+  certain period of time---eliminating the need for a penalty, simplifying
+  many aspects of the protocol, and reducing
+  the complexity of many proposed protocol enhancements.  Myers's sample
+  implementation works by using the Bitcoin Core functional test
+  framework to simulate payments in an eltoo payment channel.
 
-    This led to a discussion ([1][eltoo ms 1], [2][eltoo ms 2]) of
-    whether using [miniscript][] would help make LN "more future-proof
-    and extensible than directly using Bitcoin Script."
+  This led to a discussion ([1][eltoo ms 1], [2][eltoo ms 2]) of
+  whether using [miniscript][] would help make LN "more future-proof
+  and extensible than directly using Bitcoin Script."
 
-    It also led to eltoo co-author Christian Decker writing a
-    [summary][eltoo summary] of why he thinks eltoo is especially
-    valuable in providing a clean separation of protocol layers.  For
-    example, by making state changes in eltoo similar to state changes
-    in Bitcoin, this would allow tools and contract protocols built for
-    regular Bitcoin transactions (state changes) to be easily reused
-    within payment channels.
+  It also led to eltoo co-author Christian Decker writing a
+  [summary][eltoo summary] of why he thinks eltoo is especially
+  valuable in providing a clean separation of protocol layers.  For
+  example, by making state changes in eltoo similar to state changes
+  in Bitcoin, this would allow tools and contract protocols built for
+  regular Bitcoin transactions (state changes) to be easily reused
+  within payment channels.
 
 - **Request for comments on limiting LN gossip updates to once per day:**
   Rusty Russell [posted][less gossip] to the Lightning-Dev
@@ -139,14 +139,14 @@ infrastructure projects.
 - [C-Lightning #3004][] removes all the features deprecated in
   C-Lightning 0.7.0, including:
 
-    - The deprecated `listpayments` RPC as well as the deprecated
-      `description` parameter or output field in `pay`, `sendpay`, and
-      `waitsendpay`.  (See [Newsletter #36][listpayments deprecated])
+  - The deprecated `listpayments` RPC as well as the deprecated
+    `description` parameter or output field in `pay`, `sendpay`, and
+    `waitsendpay`.  (See [Newsletter #36][listpayments deprecated])
 
-    - The deprecated older style of colon-delimited short channel
-      identifier (`Block:Transaction_index:Output_index`).  Instead, use
-      the standardized [BOLT7 format][] delimited using an x
-      (`BxTxO`).
+  - The deprecated older style of colon-delimited short channel
+    identifier (`Block:Transaction_index:Output_index`).  Instead, use
+    the standardized [BOLT7 format][] delimited using an x
+    (`BxTxO`).
 
 - [C-Lightning #2924][] abstracts C-Lightning's database handling code
   and SQL queries so that it can be adapted to handle other backends

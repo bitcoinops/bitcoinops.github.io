@@ -85,21 +85,21 @@ infrastructure software.
   The source of the debate appears to have been the existence of two
   different designs for time stamping systems:
 
-    - *Time Stamped Proofs of Existence (TSPoE):* a Bitcoin transaction
-      commits to a hash digest which commits to a document.  When the
-      transaction is confirmed in a block, it's possible for the creator
-      of the commitment to prove to third parties that the document
-      existed at the time the block was created.  Notably, each time
-      stamping transaction can be completely independent from other time
-      stamping transactions, meaning it's possible to timestamp the same
-      document multiple times with no connection between the time
-      stamps.
+  - *Time Stamped Proofs of Existence (TSPoE):* a Bitcoin transaction
+    commits to a hash digest which commits to a document.  When the
+    transaction is confirmed in a block, it's possible for the creator
+    of the commitment to prove to third parties that the document
+    existed at the time the block was created.  Notably, each time
+    stamping transaction can be completely independent from other time
+    stamping transactions, meaning it's possible to timestamp the same
+    document multiple times with no connection between the time
+    stamps.
 
-    - *Event Ordering (EO):* a series of transactions all related to
-      each other in a specified manner each commits to documents in a
-      way that allows any user of the system to see all the commitments.
-      For any document that is timestamped two or more times under this
-      system, it is possible to determine when it was first timestamped.
+  - *Event Ordering (EO):* a series of transactions all related to
+    each other in a specified manner each commits to documents in a
+    way that allows any user of the system to see all the commitments.
+    For any document that is timestamped two or more times under this
+    system, it is possible to determine when it was first timestamped.
 
   The TSPoE system as implemented by OTS is essentially perfectly
   efficient.  It uses the same amount of global storage space to time

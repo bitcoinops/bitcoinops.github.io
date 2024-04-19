@@ -31,19 +31,19 @@ candidates and changes to popular Bitcoin infrastructure software.
   data that is transformed into the seed (e.g.  [BIP39][] or [SLIP39][]
   seed words).
 
-    Kosakovsky's proposal is to create a super-keychain whose child keys
-    are transformed into seeds, seed words, or other data that can be
-    input into various wallets' HD keychain recovery fields.  That way a
-    user with multiple wallets can backup all of them using just the
-    super-keychain's seed (plus the derivation paths and the library for
-    transforming deterministic entropy into input data).
+  Kosakovsky's proposal is to create a super-keychain whose child keys
+  are transformed into seeds, seed words, or other data that can be
+  input into various wallets' HD keychain recovery fields.  That way a
+  user with multiple wallets can backup all of them using just the
+  super-keychain's seed (plus the derivation paths and the library for
+  transforming deterministic entropy into input data).
 
-    {% assign img="/img/posts/2020-04-subkeychains.dot.png" %}
-    [![Using one BIP32 keychain to seed child BIP32 keychains]({{img}})]({{img}})
+  {% assign img="/img/posts/2020-04-subkeychains.dot.png" %}
+  [![Using one BIP32 keychain to seed child BIP32 keychains]({{img}})]({{img}})
 
-    Reaction to the proposal was mixed (pro: [1][react gray], [2][react back]; con: [1][react allen], [2][react rusnak]), but this week one hardware wallet
-    manufacturer [stated][novak post] their intent to implement support
-    for the protocol and requested additional review of the proposal.
+  Reaction to the proposal was mixed (pro: [1][react gray], [2][react back]; con: [1][react allen], [2][react rusnak]), but this week one hardware wallet
+  manufacturer [stated][novak post] their intent to implement support
+  for the protocol and requested additional review of the proposal.
 
 ## Releases and release candidates
 

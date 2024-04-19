@@ -173,20 +173,20 @@ et les mineurs sur la façon d'activer taproot.
   est ensuite devenu le [mécanisme][topic soft fork activation] utilisé
   pour activer taproot.
 
-    Alors que des discussions sur l'activation étaient en cours,
-    une dernière [discussion][quant] a porté sur l'une de ses décisions
-    de conception, l'utilisation de clés publiques nues, qui, selon certains,
-    pourrait accroître le risque de vol des fonds des utilisateurs par
-    les futurs ordinateurs quantiques. De nombreux développeurs ont fait
-    valoir que ces inquiétudes étaient injustifiées ou, du moins, exagérées.
+  Alors que des discussions sur l'activation étaient en cours,
+  une dernière [discussion][quant] a porté sur l'une de ses décisions
+  de conception, l'utilisation de clés publiques nues, qui, selon certains,
+  pourrait accroître le risque de vol des fonds des utilisateurs par
+  les futurs ordinateurs quantiques. De nombreux développeurs ont fait
+  valoir que ces inquiétudes étaient injustifiées ou, du moins, exagérées.
 
-    En mars également, Bitcoin Core a fusionné la prise en charge du [BIP350][],
-    ce qui lui permet de payer les adresses [bech32m][topic bech32]. Cette légère
-    variation des adresses bech32 qui sont utilisées pour les paiements
-    aux adresses de la version originale de segwit corrige un bogue qui
-    aurait pu faire perdre de l'argent aux utilisateurs de taproot dans
-    certains cas très rares.  (Les sorties segwit originales créées à partir
-    des adresses bech32 sont sûres et non affectées par le bogue).
+  En mars également, Bitcoin Core a fusionné la prise en charge du [BIP350][],
+  ce qui lui permet de payer les adresses [bech32m][topic bech32]. Cette légère
+  variation des adresses bech32 qui sont utilisées pour les paiements
+  aux adresses de la version originale de segwit corrige un bogue qui
+  aurait pu faire perdre de l'argent aux utilisateurs de taproot dans
+  certains cas très rares.  (Les sorties segwit originales créées à partir
+  des adresses bech32 sont sûres et non affectées par le bogue).
 
   {% comment %}
   /en/newsletters/2021/03/03/#rust-lightning-794
@@ -220,7 +220,6 @@ et les mineurs sur la façon d'activer taproot.
   confidentialité des portefeuilles utilisant divers protocoles contractuels
   comme LN et [coinswaps][topic coinswap]. Optech a également [commencé][p4tr begins]
   sa série [Preparing for Taproot][p4tr].
-
 
 - **Juillet<!--taproot-->** a rencontré une [page][bech32m page] du Bitcoin Wiki
   consacrée au suivi du support du format d'adresse bech32m nécessaire aux

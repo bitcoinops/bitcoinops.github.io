@@ -39,145 +39,145 @@ notable code changes in popular Bitcoin infrastructure projects.
   Time Lock Contract (HTLC) which is designed to be settled in either of
   the following ways:
 
-     - If Bob discloses the preimage for `<hash>`, he can spend 1 BTC of
-       Alice's money
+  - If Bob discloses the preimage for `<hash>`, he can spend 1 BTC of
+    Alice's money
 
-     - Otherwise, after 80 blocks, Alice can refund that 1 BTC back to
-       herself
+  - Otherwise, after 80 blocks, Alice can refund that 1 BTC back to
+    herself
 
-    Alice also told Bob that the goal of her payment is to pay Mallory, so Bob
-    uses a channel he has with Mallory to send her a related HTLC:
+  Alice also told Bob that the goal of her payment is to pay Mallory, so Bob
+  uses a channel he has with Mallory to send her a related HTLC:
 
-     - If Mallory discloses the preimage for `<hash>`, she can spend 1
-       BTC of Bob's money (we're ignoring routing fees in this example)
+  - If Mallory discloses the preimage for `<hash>`, she can spend 1
+    BTC of Bob's money (we're ignoring routing fees in this example)
 
-     - Otherwise, after 40 blocks, Bob can refund that 1 BTC back to
-       himself
+  - Otherwise, after 40 blocks, Bob can refund that 1 BTC back to
+    himself
 
-    Although the above HTLCs are usually created and settled offchain,
-    each party also has a *commitment transaction* they can use to
-    put the HTLC commitment onchain.  A separate onchain *settlement
-    transaction* can fulfill either condition of the HTLC.
+  Although the above HTLCs are usually created and settled offchain,
+  each party also has a *commitment transaction* they can use to
+  put the HTLC commitment onchain.  A separate onchain *settlement
+  transaction* can fulfill either condition of the HTLC.
 
-    For example, Mallory can publish the commitment transaction and then
-    create a settlement transaction that provides the preimage and
-    claims Bob's 1 BTC.  If Bob sees Mallory's preimage settlement
-    transaction before the 80 block timeout from the Alice-Bob contract,
-    Bob can extract that preimage and use it to claim the 1 BTC from
-    Alice (either onchain or offchain).  Or, if Bob doesn't see a
-    preimage settlement transaction, Bob can create his own refund
-    settlement transaction after 40 blocks that takes back his 1 BTC,
-    allowing him to also initiate the refund of Alice's 1 BTC (again, either onchain
-    or offchain).  In either case, this leaves everyone in compliance
-    with the intent of their contracts.
+  For example, Mallory can publish the commitment transaction and then
+  create a settlement transaction that provides the preimage and
+  claims Bob's 1 BTC.  If Bob sees Mallory's preimage settlement
+  transaction before the 80 block timeout from the Alice-Bob contract,
+  Bob can extract that preimage and use it to claim the 1 BTC from
+  Alice (either onchain or offchain).  Or, if Bob doesn't see a
+  preimage settlement transaction, Bob can create his own refund
+  settlement transaction after 40 blocks that takes back his 1 BTC,
+  allowing him to also initiate the refund of Alice's 1 BTC (again, either onchain
+  or offchain).  In either case, this leaves everyone in compliance
+  with the intent of their contracts.
 
-    Unfortunately, as disclosed this week, there appears to be a way for
-    Mallory to circumvent the process by both preventing Bob from
-    learning the preimage while also preventing him from sending his
-    refund settlement transaction.
+  Unfortunately, as disclosed this week, there appears to be a way for
+  Mallory to circumvent the process by both preventing Bob from
+  learning the preimage while also preventing him from sending his
+  refund settlement transaction.
 
-    - **Preimage denial:** Mallory can prevent Bob from learning the
-      preimage by giving her preimage settlement transaction a low
-      feerate that keeps it from being confirmed quickly.  If Bob is
-      only looking for preimages in the block chain, he won't see
-      Mallory's transaction while it remains unconfirmed.
+  - **Preimage denial:** Mallory can prevent Bob from learning the
+    preimage by giving her preimage settlement transaction a low
+    feerate that keeps it from being confirmed quickly.  If Bob is
+    only looking for preimages in the block chain, he won't see
+    Mallory's transaction while it remains unconfirmed.
 
-    - **Refund denial:** Mallory's prior broadcast of the preimage
-      settlement transaction can prevent miners and Bitcoin relay nodes
-      from accepting Bob's later broadcast of the refund settlement
-      transaction because the two transactions *conflict*, meaning they
-      both spend the same input (a UTXO created in the commitment
-      transaction).  In theory, Bob's refund settlement transaction will
-      pay a higher feerate and so can [replace][topic rbf] Mallory's
-      preimage settlement but, in practice, Mallory can use various
-      [transaction pinning][topic transaction pinning] techniques to
-      prevent that replacement from happening.
+  - **Refund denial:** Mallory's prior broadcast of the preimage
+    settlement transaction can prevent miners and Bitcoin relay nodes
+    from accepting Bob's later broadcast of the refund settlement
+    transaction because the two transactions *conflict*, meaning they
+    both spend the same input (a UTXO created in the commitment
+    transaction).  In theory, Bob's refund settlement transaction will
+    pay a higher feerate and so can [replace][topic rbf] Mallory's
+    preimage settlement but, in practice, Mallory can use various
+    [transaction pinning][topic transaction pinning] techniques to
+    prevent that replacement from happening.
 
-    Because Bob is prevented from either learning about the preimage
-    settlement transaction or getting his refund settlement transaction
-    confirmed, Alice is able to reclaim the 1 BTC she offered Bob in the
-    Alice-Bob HTLC once its 80 block timeout expires.  When Mallory's
-    preimage settlement transaction does eventually confirm, Mallory
-    gets the 1 BTC that Bob offered her in the Bob-Mallory HTLC.  This
-    leaves Bob 1 BTC poorer than when he started.
+  Because Bob is prevented from either learning about the preimage
+  settlement transaction or getting his refund settlement transaction
+  confirmed, Alice is able to reclaim the 1 BTC she offered Bob in the
+  Alice-Bob HTLC once its 80 block timeout expires.  When Mallory's
+  preimage settlement transaction does eventually confirm, Mallory
+  gets the 1 BTC that Bob offered her in the Bob-Mallory HTLC.  This
+  leaves Bob 1 BTC poorer than when he started.
 
-    Several solutions were considered in the thread, but all had
-    problems or involved significant tradeoffs:
+  Several solutions were considered in the thread, but all had
+  problems or involved significant tradeoffs:
 
-    - **Require a mempool:** Bob could use a Bitcoin full node to
-      monitor the Bitcoin P2P relay network and learn about Mallory's
-      settlement transaction.  Some LN nodes such as Eclair already do
-      this and it seems like a [reasonable amount of extra
-      burden][osuntokun reasonable] since the problem only directly affects
-      routing nodes (like Bob).  Nodes that just send or receive
-      payments on behalf of themselves are only indirectly affected,[^non-routing-issues] so everyday users
-      could still run lightweight LN clients on mobile devices.
-      Unfortunately, not all full nodes receive the same transactions as other nodes
-      even when everything is working perfectly.  Worse, there are techniques
-      attackers like Mallory can use to [send different conflicting
-      transactions][corallo mempool not guaranteed] to different peers
-      (for example, sending the pinned preimage settlement transaction
-      to known miners but sending a different non-settlement transaction
-      with at least one of the same inputs to non-miner relay nodes).
+  - **Require a mempool:** Bob could use a Bitcoin full node to
+    monitor the Bitcoin P2P relay network and learn about Mallory's
+    settlement transaction.  Some LN nodes such as Eclair already do
+    this and it seems like a [reasonable amount of extra
+    burden][osuntokun reasonable] since the problem only directly affects
+    routing nodes (like Bob).  Nodes that just send or receive
+    payments on behalf of themselves are only indirectly affected,[^non-routing-issues] so everyday users
+    could still run lightweight LN clients on mobile devices.
+    Unfortunately, not all full nodes receive the same transactions as other nodes
+    even when everything is working perfectly.  Worse, there are techniques
+    attackers like Mallory can use to [send different conflicting
+    transactions][corallo mempool not guaranteed] to different peers
+    (for example, sending the pinned preimage settlement transaction
+    to known miners but sending a different non-settlement transaction
+    with at least one of the same inputs to non-miner relay nodes).
 
-    - **Beg or pay for preimages:** The relay network could provide
-      [information about conflicts][harding reject] to transaction
-      submitters such as Bob so they wouldn't need to continuously
-      monitor relay themselves.  This still suffers from the problem of
-      bad actors such as Mallory using [targeted relay][corallo targeted
-      relay] to send different transactions to miners and non-miners.
-      Additionally Bob might be able to [pay][harding pay] miners or
-      other third party nodes for the preimage he needs, although this
-      requires some people run additional software and [might not be as
-      easy][zmn ptlcs] to do after the deployment of some proposed
-      upgrades to the LN protocol.
+  - **Beg or pay for preimages:** The relay network could provide
+    [information about conflicts][harding reject] to transaction
+    submitters such as Bob so they wouldn't need to continuously
+    monitor relay themselves.  This still suffers from the problem of
+    bad actors such as Mallory using [targeted relay][corallo targeted
+    relay] to send different transactions to miners and non-miners.
+    Additionally Bob might be able to [pay][harding pay] miners or
+    other third party nodes for the preimage he needs, although this
+    requires some people run additional software and [might not be as
+    easy][zmn ptlcs] to do after the deployment of some proposed
+    upgrades to the LN protocol.
 
-    - **Settlement transaction anchor outputs:** Onchain settlement
-      transactions could be redesigned to spend their value to [anchor
-      outputs][topic anchor outputs] that could be [CPFP fee
-      bumped][topic cpfp] using [CPFP carve-out][topic cpfp carve out].
-      This would require those transactions to be larger (increasing
-      onchain fees) and presigned (reducing flexibility).  This would
-      only directly affect channels which are unilaterally closed while payments
-      are pending, which is already a situation that can
-      significantly increase onchain costs and so is something users try
-      to avoid.  However, raising the cost of onchain enforcement also
-      raises the minimum practical value of payments that can be sent trustlessly
-      through LN.  Despite these challenges,
-      as of this writing, this appears to be the most preferred
-      solution.
+  - **Settlement transaction anchor outputs:** Onchain settlement
+    transactions could be redesigned to spend their value to [anchor
+    outputs][topic anchor outputs] that could be [CPFP fee
+    bumped][topic cpfp] using [CPFP carve-out][topic cpfp carve out].
+    This would require those transactions to be larger (increasing
+    onchain fees) and presigned (reducing flexibility).  This would
+    only directly affect channels which are unilaterally closed while payments
+    are pending, which is already a situation that can
+    significantly increase onchain costs and so is something users try
+    to avoid.  However, raising the cost of onchain enforcement also
+    raises the minimum practical value of payments that can be sent trustlessly
+    through LN.  Despite these challenges,
+    as of this writing, this appears to be the most preferred
+    solution.
 
-    Corallo labeled this a severe issue but noted its similar
-    consequences to another known issue related to fee management in
-    onchain LN transactions.  The existing issue (described in
-    [Newsletter #78][news78 anchor outputs]) is that commitment
-    transactions have their feerate set at the time the transaction is
-    signed, which might be days or weeks before they're broadcast to
-    Bitcoin relay nodes.  If the minimum feerate necessary to get a
-    transaction included in the next few blocks has increased
-    significantly since the transaction was last signed, then the
-    commitment transaction might not confirm until after Alice is able
-    to reclaim her funds from Bob, again creating the opportunity for
-    Bob to end up both paying Mallory and giving a refund to Alice.
-    (This existing issue is what developers were working on fixing when
-    the new issue was discovered.[^package-relay])
+  Corallo labeled this a severe issue but noted its similar
+  consequences to another known issue related to fee management in
+  onchain LN transactions.  The existing issue (described in
+  [Newsletter #78][news78 anchor outputs]) is that commitment
+  transactions have their feerate set at the time the transaction is
+  signed, which might be days or weeks before they're broadcast to
+  Bitcoin relay nodes.  If the minimum feerate necessary to get a
+  transaction included in the next few blocks has increased
+  significantly since the transaction was last signed, then the
+  commitment transaction might not confirm until after Alice is able
+  to reclaim her funds from Bob, again creating the opportunity for
+  Bob to end up both paying Mallory and giving a refund to Alice.
+  (This existing issue is what developers were working on fixing when
+  the new issue was discovered.[^package-relay])
 
-    So far we're unaware of any real-world losses due to onchain fee
-    management problems in LN, possibly in part because the past two
-    years has seen few large fee spikes that lasted long enough to
-    significantly delay the confirmation of transactions with
-    previously acceptable feerates.  That good luck is unlikely to
-    continue indefinitely, so this new problem gives LN developers an
-    additional reason to prioritize the implementation of improved
-    onchain fee management.  In the interim, node operators concerned
-    about the attack may wish to increase their [cltv_expiry_delta][]
-    to give preimage settlement transactions more time to confirm.
-    Current defaults in popular LN nodes are [14][cl ced] for
-    C-Lightning, [40][lnd ced] for LND, [72][rl ced] for Rust-Lightning,
-    and [144][eclair ced] for Eclair.  Note that increasing the value
-    will make your channels less desirable to spenders,
-    as higher values increases the normal worst case
-    amount of time a payment could be stuck waiting to be settled.
+  So far we're unaware of any real-world losses due to onchain fee
+  management problems in LN, possibly in part because the past two
+  years has seen few large fee spikes that lasted long enough to
+  significantly delay the confirmation of transactions with
+  previously acceptable feerates.  That good luck is unlikely to
+  continue indefinitely, so this new problem gives LN developers an
+  additional reason to prioritize the implementation of improved
+  onchain fee management.  In the interim, node operators concerned
+  about the attack may wish to increase their [cltv_expiry_delta][]
+  to give preimage settlement transactions more time to confirm.
+  Current defaults in popular LN nodes are [14][cl ced] for
+  C-Lightning, [40][lnd ced] for LND, [72][rl ced] for Rust-Lightning,
+  and [144][eclair ced] for Eclair.  Note that increasing the value
+  will make your channels less desirable to spenders,
+  as higher values increases the normal worst case
+  amount of time a payment could be stuck waiting to be settled.
 
 - **Multiparty vault architecture:** Antoine "Darosior" Poinsot
   [announced][darosior revault] a demo implementation of a vaults

@@ -22,8 +22,8 @@ Taprootの準備の提案、リリースおよびリリース候補の発表、
   リリースから数日のうちに、
   [50 BTCを超える額][waxwing toot]（現在の価値にして200万USD以上）がタイムロックされたFidelity bondに預け入れられました。
 
-    具体的な実装はJoinMarket独自のものですが、全体的な設計は、
-    Bitcoin上に構築された他の分散プロトコルにも役立つ可能性があります。
+  具体的な実装はJoinMarket独自のものですが、全体的な設計は、
+  Bitcoin上に構築された他の分散プロトコルにも役立つ可能性があります。
 
 ## Bitcoin Core PR Review Club
 

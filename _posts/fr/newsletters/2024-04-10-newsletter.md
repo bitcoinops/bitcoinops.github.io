@@ -34,21 +34,21 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   nouveaux BIP et mettre à jour les BIP existants. Ruffing a soulevé plusieurs problèmes du processus actuel
   notamment :
 
-    - *Évaluation et discrétion éditoriale :* quels efforts les éditeurs de BIP devraient-ils être tenus
-      de déployer pour s'assurer que les nouveaux BIP sont de haute qualité et centrés sur Bitcoin ?
-      Séparément, quelle latitude devraient-ils avoir pour pouvoir rejeter de nouveaux BIPs ? Ruffing et
-      plusieurs autres ont mentionné qu'ils préféreraient minimiser les exigences et privilèges
-      éditoriaux, peut-être en ne dépendant des éditeurs de BIP que pour lutter contre les abus systémiques
-      (par exemple, le spam massif). Bien sûr, les éditeurs de BIP, comme tout autre membre de la
-      communauté, seraient en mesure de suggérer volontairement des améliorations à toute proposition de
-      BIP qu'ils trouvent intéressante.
+  - *Évaluation et discrétion éditoriale :* quels efforts les éditeurs de BIP devraient-ils être tenus
+    de déployer pour s'assurer que les nouveaux BIP sont de haute qualité et centrés sur Bitcoin ?
+    Séparément, quelle latitude devraient-ils avoir pour pouvoir rejeter de nouveaux BIPs ? Ruffing et
+    plusieurs autres ont mentionné qu'ils préféreraient minimiser les exigences et privilèges
+    éditoriaux, peut-être en ne dépendant des éditeurs de BIP que pour lutter contre les abus systémiques
+    (par exemple, le spam massif). Bien sûr, les éditeurs de BIP, comme tout autre membre de la
+    communauté, seraient en mesure de suggérer volontairement des améliorations à toute proposition de
+    BIP qu'ils trouvent intéressante.
 
-    - *Licences :* certaines licences autorisées pour les BIP sont conçues pour le logiciel et peuvent
-      ne pas avoir de sens pour la documentation.
+  - *Licences :* certaines licences autorisées pour les BIP sont conçues pour le logiciel et peuvent
+    ne pas avoir de sens pour la documentation.
 
-    - *Commentaires :* en tant que changement par rapport à [BIP1][], BIP2 a tenté de fournir un espace
-      pour les retours de la communauté sur chaque BIP. Cela n'a pas été largement utilisé et les
-      résultats ont été controversés.
+  - *Commentaires :* en tant que changement par rapport à [BIP1][], BIP2 a tenté de fournir un espace
+    pour les retours de la communauté sur chaque BIP. Cela n'a pas été largement utilisé et les
+    résultats ont été controversés.
 
   L'idée de mettre à jour BIP2 était encore en discussion au moment de la rédaction de cet article.
 

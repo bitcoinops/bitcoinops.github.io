@@ -20,41 +20,41 @@ d'infrastructure Bitcoin.
   de preuve de concept][payjoin impl] pour une version sans serveur de
   [BIP78][], le protocole [payjoin][topic payjoin].
 
-    Sans payjoin, un paiement Bitcoin typique n'inclut que les entrées de
-    l'expéditeur, ce qui conduit les organisations de surveillance des
-    transactions à adopter l'[heuristique de propriété des entrées communes][],
-    selon laquelle elles supposent que toutes les entrées d'une transaction
-    appartiennent au même portefeuille. Payjoin brise cette heuristique en
-    permettant au destinataire de contribuer au paiement. Cela apporte une
-    amélioration immédiate de la confidentialité aux utilisateurs de Payjoin
-    et, de manière générale, améliore la confidentialité de tous les
-    utilisateurs de Bitcoin en rendant l'heuristique moins fiable.
+  Sans payjoin, un paiement Bitcoin typique n'inclut que les entrées de
+  l'expéditeur, ce qui conduit les organisations de surveillance des
+  transactions à adopter l'[heuristique de propriété des entrées communes][],
+  selon laquelle elles supposent que toutes les entrées d'une transaction
+  appartiennent au même portefeuille. Payjoin brise cette heuristique en
+  permettant au destinataire de contribuer au paiement. Cela apporte une
+  amélioration immédiate de la confidentialité aux utilisateurs de Payjoin
+  et, de manière générale, améliore la confidentialité de tous les
+  utilisateurs de Bitcoin en rendant l'heuristique moins fiable.
 
-    Cependant, payjoin n'est pas aussi flexible que les paiements Bitcoin
-    classiques. La plupart des paiements typiques peuvent être envoyés
-    lorsque le destinataire est hors ligne, mais payjoin exige que le
-    destinataire soit en ligne pour contribuer et signer pour ses entrées.
-    Le protocole payjoin existant exige également que le destinataire
-    accepte les requêtes HTTP à une adresse réseau accessible à l'expéditeur,
-    ce qui est généralement réalisé par le destinataire qui exécute un
-    serveur Web sur une adresse IP publique contenant un logiciel compatible
-    avec payjoin. Comme mentionné dans le [bulletin n°132][news132 payjoin],
-    une suggestion pour augmenter l'utilisation de payjoin serait d'autoriser
-    payjoin sur une base plus P2P entre les portefeuilles typiques des
-    utilisateurs finaux.
+  Cependant, payjoin n'est pas aussi flexible que les paiements Bitcoin
+  classiques. La plupart des paiements typiques peuvent être envoyés
+  lorsque le destinataire est hors ligne, mais payjoin exige que le
+  destinataire soit en ligne pour contribuer et signer pour ses entrées.
+  Le protocole payjoin existant exige également que le destinataire
+  accepte les requêtes HTTP à une adresse réseau accessible à l'expéditeur,
+  ce qui est généralement réalisé par le destinataire qui exécute un
+  serveur Web sur une adresse IP publique contenant un logiciel compatible
+  avec payjoin. Comme mentionné dans le [bulletin n°132][news132 payjoin],
+  une suggestion pour augmenter l'utilisation de payjoin serait d'autoriser
+  payjoin sur une base plus P2P entre les portefeuilles typiques des
+  utilisateurs finaux.
 
-    Gould suggère d'intégrer aux portefeuilles compatibles avec payjoin un
-    serveur HTTP léger prenant en charge le cryptage par le [protocole de
-    bruits][] et permettant d'utiliser le [protocole TURN][] pour traverser
-    le [NAT][]. Cela permettrait à deux portefeuilles de communiquer de
-    manière interactive pendant la brève période nécessaire pour créer un
-    paiement payjoin, sans avoir besoin d'un serveur web à long terme.
-    Cela ne permet pas de créer des payjoins lorsque le récepteur est
-    hors ligne, bien que Gould suggère d'étudier le [protocole nostr][]
-    pour de futures propositions visant à permettre un "payjoin asynchrone".
+  Gould suggère d'intégrer aux portefeuilles compatibles avec payjoin un
+  serveur HTTP léger prenant en charge le cryptage par le [protocole de
+  bruits][] et permettant d'utiliser le [protocole TURN][] pour traverser
+  le [NAT][]. Cela permettrait à deux portefeuilles de communiquer de
+  manière interactive pendant la brève période nécessaire pour créer un
+  paiement payjoin, sans avoir besoin d'un serveur web à long terme.
+  Cela ne permet pas de créer des payjoins lorsque le récepteur est
+  hors ligne, bien que Gould suggère d'étudier le [protocole nostr][]
+  pour de futures propositions visant à permettre un "payjoin asynchrone".
 
-    Au moment où nous écrivons ces lignes, aucune réponse à la proposition
-    n'a été postée sur la liste de diffusion.
+  Au moment où nous écrivons ces lignes, aucune réponse à la proposition
+  n'a été postée sur la liste de diffusion.
 
 - **Preuve de paiement asynchrone LN :** Comme indiqué dans [le bulletin
   de la semaine dernière][news235 async], les développeurs de LN recherchent
@@ -67,60 +67,60 @@ d'infrastructure Bitcoin.
   Lorsque Bob informe le LSP qu'il est de nouveau en ligne, le LSP commence
   à transmettre le paiement à Bob.
 
-    Le problème que pose cette approche dans le réseau local LN actuel basé
-    sur [HTLC][topic htlc] est que, si Bob est hors ligne, il ne peut pas
-    fournir à Alice une facture spécifique au paiement qui fait référence
-    à un secret qu'il a choisi. Alice peut choisir son propre secret et
-    l'inclure dans le paiement asynchrone qu'elle envoie à Bob---c'est ce
-    qu'on appelle un paiement [keysend][topic spontaneous payments]---mais
-    comme Alice connaissait le secret du keysend depuis le début, elle ne
-    peut pas l'utiliser comme preuve qu'elle a payé Bob.
-    Alternativement, Bob pourrait pré-générer plusieurs factures
-    standards et les donner à son LSP, qui pourrait les distribuer à des
-    acheteurs potentiels comme Alice. Le paiement de ces factures générerait
-    une preuve de paiement lorsque Bob l'accepterait finalement,
-    mais cela permettrait au LSP de distribuer la même facture à plusieurs
-    acheteurs, les amenant tous à payer le même secret. Lorsque le LSP
-    apprend le secret après que Bob a accepté le premier de ces
-    paiements, il est en mesure de voler les fonds pour le reste des
-    paiements de la facture réutilisée---ce qui rend la solution de la
-    facture pré-générée pour les HTLC sûre uniquement si Bob fait confiance
-    à son LSP.
+  Le problème que pose cette approche dans le réseau local LN actuel basé
+  sur [HTLC][topic htlc] est que, si Bob est hors ligne, il ne peut pas
+  fournir à Alice une facture spécifique au paiement qui fait référence
+  à un secret qu'il a choisi. Alice peut choisir son propre secret et
+  l'inclure dans le paiement asynchrone qu'elle envoie à Bob---c'est ce
+  qu'on appelle un paiement [keysend][topic spontaneous payments]---mais
+  comme Alice connaissait le secret du keysend depuis le début, elle ne
+  peut pas l'utiliser comme preuve qu'elle a payé Bob.
+  Alternativement, Bob pourrait pré-générer plusieurs factures
+  standards et les donner à son LSP, qui pourrait les distribuer à des
+  acheteurs potentiels comme Alice. Le paiement de ces factures générerait
+  une preuve de paiement lorsque Bob l'accepterait finalement,
+  mais cela permettrait au LSP de distribuer la même facture à plusieurs
+  acheteurs, les amenant tous à payer le même secret. Lorsque le LSP
+  apprend le secret après que Bob a accepté le premier de ces
+  paiements, il est en mesure de voler les fonds pour le reste des
+  paiements de la facture réutilisée---ce qui rend la solution de la
+  facture pré-générée pour les HTLC sûre uniquement si Bob fait confiance
+  à son LSP.
 
-    Cette semaine, Anthony Towns a [proposé][towns async] une solution
-    basée sur les [adaptateurs de signature][topic adaptor signatures].
-    Cette solution dépendrait de la mise à niveau prévue de LN pour
-    utiliser les [PTLC][topic ptlc]. Bob pré-générerait une série de
-    nonces de signature et les donnerait à son LSP. Le LSP donnerait
-    un nonce de signature à Alice, Alice choisirait un message pour sa
-    preuve de paiement (par exemple "Alice a payé Bob 1000 sats à
-    2023-02-01 12:34:56Z"), puis utiliserait le nonce de Bob et son
-    message pour générer un adaptateur de signature pour son PTLC.
-    Lorsque Bob revient en ligne, le LSP lui transmet le paiement et
-    Bob vérifie que le nonce n'a pas été utilisé auparavant, qu'il est
-    d'accord avec le message, que le paiement est par ailleurs valide
-    et que le calcul de l'adaptateur de signature est valide ; il accepte
-    alors le paiement et Alice, lorsqu'elle recevra finalement le PTLC
-    réglé, aura une signature de Bob qui s'engage sur le message
-    qu'elle a choisi.
+  Cette semaine, Anthony Towns a [proposé][towns async] une solution
+  basée sur les [adaptateurs de signature][topic adaptor signatures].
+  Cette solution dépendrait de la mise à niveau prévue de LN pour
+  utiliser les [PTLC][topic ptlc]. Bob pré-générerait une série de
+  nonces de signature et les donnerait à son LSP. Le LSP donnerait
+  un nonce de signature à Alice, Alice choisirait un message pour sa
+  preuve de paiement (par exemple "Alice a payé Bob 1000 sats à
+  2023-02-01 12:34:56Z"), puis utiliserait le nonce de Bob et son
+  message pour générer un adaptateur de signature pour son PTLC.
+  Lorsque Bob revient en ligne, le LSP lui transmet le paiement et
+  Bob vérifie que le nonce n'a pas été utilisé auparavant, qu'il est
+  d'accord avec le message, que le paiement est par ailleurs valide
+  et que le calcul de l'adaptateur de signature est valide ; il accepte
+  alors le paiement et Alice, lorsqu'elle recevra finalement le PTLC
+  réglé, aura une signature de Bob qui s'engage sur le message
+  qu'elle a choisi.
 
-    La solution de Towns implique que le LSP reçoive des factures
-    pré-générées de Bob---ce qui est similaire à la solution non
-    sécurisée/de confiance pour les HTLC, pourtant la solution de
-    l'adaptateur de signature PTLC est sécurisée et sans confiance
-    car chaque paiement d'un expéditeur différent (comme Alice)
-    utilise un point de clé publique PTLC différent et Bob est
-    capable d'empêcher la réutilisation des nonces. Chaque point
-    PTLC est différent car il dérive d'un message unique sélectionné
-    par chaque expéditeur. Bob peut empêcher la réutilisation des
-    nonces en vérifiant l'absence de nonces réutilisés avant
-    d'accepter chaque paiement.
+  La solution de Towns implique que le LSP reçoive des factures
+  pré-générées de Bob---ce qui est similaire à la solution non
+  sécurisée/de confiance pour les HTLC, pourtant la solution de
+  l'adaptateur de signature PTLC est sécurisée et sans confiance
+  car chaque paiement d'un expéditeur différent (comme Alice)
+  utilise un point de clé publique PTLC différent et Bob est
+  capable d'empêcher la réutilisation des nonces. Chaque point
+  PTLC est différent car il dérive d'un message unique sélectionné
+  par chaque expéditeur. Bob peut empêcher la réutilisation des
+  nonces en vérifiant l'absence de nonces réutilisés avant
+  d'accepter chaque paiement.
 
-    Dans son message, Towns [fait référence][towns sa1] à deux messages
-    [précédents][towns sa2] de la liste de diffusion qu'il a écrits sur
-    la preuve de paiement LN à l'aide d'adaptateurs de signature. Au
-    moment où nous écrivons ces lignes, aucune réponse à cette idée n'a
-    été postée sur la liste de diffusion.
+  Dans son message, Towns [fait référence][towns sa1] à deux messages
+  [précédents][towns sa2] de la liste de diffusion qu'il a écrits sur
+  la preuve de paiement LN à l'aide d'adaptateurs de signature. Au
+  moment où nous écrivons ces lignes, aucune réponse à cette idée n'a
+  été postée sur la liste de diffusion.
 
 ## Principaux changements de code et de documentation
 
@@ -179,11 +179,11 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   l'algorithme de signature schnorr de Bitcoin est utilisé. À la place,
   des signatures ECDSA sont générées et vérifiées pour les adresses P2TR.
 
-    Note: Optech [déconseille généralement][p4tr new hd] l'utilisation
-    de fonctions de signature ECDSA avec des clés destinées à être
-    utilisées avec des signatures schnorr, mais les développeurs de LND
-    ont pris des [mesures de précaution supplémentaires][osuntokun sigs]
-    pour éviter les problèmes.
+  Note: Optech [déconseille généralement][p4tr new hd] l'utilisation
+  de fonctions de signature ECDSA avec des clés destinées à être
+  utilisées avec des signatures schnorr, mais les développeurs de LND
+  ont pris des [mesures de précaution supplémentaires][osuntokun sigs]
+  pour éviter les problèmes.
 
 - [LDK #1878][] ajoute la possibilité de définir une valeur `min_final_cltv_expiry`
   par paiement (plutôt que globale). Cette valeur détermine le nombre maximum
@@ -192,12 +192,12 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   peuvent demander un délai supplémentaire en définissant un paramètre
   dans une facture [BOLT11][].
 
-    Pour que LDK puisse prendre en charge cette fonctionnalité en combinaison
-    avec son implémentation unique des [factures sans état][topic stateless
-    invoices], LDK code la valeur dans le [secret de paiement][topic payment
-    secrets] que l'expéditeur est obligé d'envoyer. Il fournit 12 bits pour
-    la valeur d'expiration, ce qui permet des expirations allant jusqu'à
-    4 096 blocs (environ 4 semaines).
+  Pour que LDK puisse prendre en charge cette fonctionnalité en combinaison
+  avec son implémentation unique des [factures sans état][topic stateless
+  invoices], LDK code la valeur dans le [secret de paiement][topic payment
+  secrets] que l'expéditeur est obligé d'envoyer. Il fournit 12 bits pour
+  la valeur d'expiration, ce qui permet des expirations allant jusqu'à
+  4 096 blocs (environ 4 semaines).
 
 - [LDK #1860][] ajoute la prise en charge des canaux utilisant des
   [sorties d'ancrage][topic anchor outputs].

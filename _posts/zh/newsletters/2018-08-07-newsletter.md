@@ -19,9 +19,9 @@ lang: zh
 
 - **<!--ddoption-of-opt-in-rbf-remains-fairly-low-->选择加入 RBF 的采用率仍然相当低**，但在过去一年中有实质性增长，从 [1.5% 增长到 5.7% 的交易][rbf data]。此数据来源于 Optech 的 beta 仪表板，我们鼓励人们尝试并向我们提供反馈！
 
-    ![{{img1_label}}](/img/posts/rbf.png)
-    *{{img1_label}},
-    source: [Optech dashboard][rbf data]*
+  ![{{img1_label}}](/img/posts/rbf.png)
+  *{{img1_label}},
+  source: [Optech dashboard][rbf data]*
 
 ## 新闻
 
@@ -30,9 +30,9 @@ lang: zh
 - **<!--library-announced-for-bls-signatures-->宣布用于 BLS 签名的库：**著名开发者 Bram Cohen [宣布][bls announce]了一个“初版（但功能完备的）用于基于 [MuSig][] 构造的 [BLS 签名][BLS signatures]库”。这些签名提供了与 [Newsletter #3 特别新闻][#3 schnorr] 中描述的 Schnorr 签名相同的大部分好处，但也允许非交互式签名聚合，这可以通过减少区块链中的签名数据量（可能是非常大的百分比）来提高可扩展性，并通过实施非交互式 CoinJoin 技术（如 [Mimblewimble 论文][Mimblewimble
   paper]中描述的那样）来增强隐私。
 
-    BLS 签名确实有三个缺点，这导致大多数比特币协议开发人员短期内专注于 Schnorr 签名。第一个是没有已知方法可以像验证 Schnorr 签名那样快速验证它们——签名验证速度对于网络可扩展性也很重要。其次，为了证明 BLS 签名的安全性，需要对方案的一部分安全性做出额外的假设，而这对于证明比特币当前的方案（ECDSA）或提议的基于 Schnorr 的方案的安全性并不需要。最后，BLS 签名只存在 Schnorr 签名大约一半的时间，使用得更少，并且据信没有接受到与 Schnorr 签名相同数量的专家审查。
+  BLS 签名确实有三个缺点，这导致大多数比特币协议开发人员短期内专注于 Schnorr 签名。第一个是没有已知方法可以像验证 Schnorr 签名那样快速验证它们——签名验证速度对于网络可扩展性也很重要。其次，为了证明 BLS 签名的安全性，需要对方案的一部分安全性做出额外的假设，而这对于证明比特币当前的方案（ECDSA）或提议的基于 Schnorr 的方案的安全性并不需要。最后，BLS 签名只存在 Schnorr 签名大约一半的时间，使用得更少，并且据信没有接受到与 Schnorr 签名相同数量的专家审查。
 
-    尽管如此，这个开源库为开发人员提供了一个方便的方式来开始尝试 BLS 签名，甚至可以开始在不需要像比特币网络那样安全的应用程序中使用它们。
+  尽管如此，这个开源库为开发人员提供了一个方便的方式来开始尝试 BLS 签名，甚至可以开始在不需要像比特币网络那样安全的应用程序中使用它们。
 
 ## 值得注意的提交
 

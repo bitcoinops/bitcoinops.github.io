@@ -47,18 +47,18 @@ changes to popular Bitcoin infrastructure projects.
   over and the attacker has withdrawn their illicit gains to an address
   entirely under the attacker's control.
 
-    The paper describes an attack that can steal from lightweight
-    clients in as little as two hours.  With there currently being so
-    few servers and nodes providing data to lightweight LN clients, it
-    may be fairly easy for an attacker to create enough sybils to
-    execute the attack.  Attacks against LN nodes backed by a local
-    Bitcoin full verification node take longer---still only a matter of
-    hours---and may require creating many more sybils.
-    The authors note that the attacks probably also apply to other
-    time-sensitive contract protocols.  The general solution to the
-    problem is to improve eclipse attack resistance, with one specific
-    proposed improvement being to allow nodes to opt-in to [alternative
-    transport protocols][Bitcoin Core #18988].
+  The paper describes an attack that can steal from lightweight
+  clients in as little as two hours.  With there currently being so
+  few servers and nodes providing data to lightweight LN clients, it
+  may be fairly easy for an attacker to create enough sybils to
+  execute the attack.  Attacks against LN nodes backed by a local
+  Bitcoin full verification node take longer---still only a matter of
+  hours---and may require creating many more sybils.
+  The authors note that the attacks probably also apply to other
+  time-sensitive contract protocols.  The general solution to the
+  problem is to improve eclipse attack resistance, with one specific
+  proposed improvement being to allow nodes to opt-in to [alternative
+  transport protocols][Bitcoin Core #18988].
 
 - **Fee overpayment attack on multi-input segwit transactions:** The
   fee paid by a Bitcoin transaction is the difference between
@@ -71,154 +71,154 @@ changes to popular Bitcoin infrastructure projects.
   wants to calculate the fee to either look up each UTXO's previous
   transaction or to maintain a database of verified UTXO data.
 
-    Hardware wallets don't maintain a UTXO set, so the only trustless
-    way for them to determine the amount of fee paid by a transaction
-    with legacy UTXOs is to get a copy of each legacy UTXO's previous
-    transaction, hash the previous transaction to ensure its txid
-    matches the UTXO reference, and use the now-verified amount of the
-    UTXO to perform the fee calculation.  In the worst case, legacy transactions can
-    be almost as large as one megabyte and it's possible for a spending
-    transaction to reference thousands of previous transactions, so amount
-    verification can require the processing of gigabytes of data by
-    resource-constrained hardware wallets.
+  Hardware wallets don't maintain a UTXO set, so the only trustless
+  way for them to determine the amount of fee paid by a transaction
+  with legacy UTXOs is to get a copy of each legacy UTXO's previous
+  transaction, hash the previous transaction to ensure its txid
+  matches the UTXO reference, and use the now-verified amount of the
+  UTXO to perform the fee calculation.  In the worst case, legacy transactions can
+  be almost as large as one megabyte and it's possible for a spending
+  transaction to reference thousands of previous transactions, so amount
+  verification can require the processing of gigabytes of data by
+  resource-constrained hardware wallets.
 
-    One of the several improvements made in [BIP143][] segwit v0 was an
-    attempt to eliminate this burden by having [signatures commit to the
-    amount][bip143 motivation] of the UTXO they were spending.  This
-    meant that any signatures that committed to an incorrect amount
-    would be invalid, which developers of both [Bitcoin Core][towns
-    benefits] and [hardware wallets][palatinus inpatient] believed would
-    allow signers to safely accept amounts from untrusted software.
+  One of the several improvements made in [BIP143][] segwit v0 was an
+  attempt to eliminate this burden by having [signatures commit to the
+  amount][bip143 motivation] of the UTXO they were spending.  This
+  meant that any signatures that committed to an incorrect amount
+  would be invalid, which developers of both [Bitcoin Core][towns
+  benefits] and [hardware wallets][palatinus inpatient] believed would
+  allow signers to safely accept amounts from untrusted software.
 
-    Unfortunately, signing a single UTXO's amount turned out to be
-    insufficient.  In 2017, Greg Sanders [described][sanders attack] an
-    attack that can be used to trick a user into significantly
-    overpaying their transaction fee.  To start, an attacker takes
-    control of the desktop or mobile software that interfaces with a
-    hardware wallet and waits for the user to initiate a payment.  The
-    compromised software creates two variations of the requested
-    transaction that each spend the same two segwit UTXOs controlled by
-    the user's attached hardware wallet.  In the first transaction, the
-    compromised software understates the amount of one of the UTXOs
-    being spent.  This will cause the hardware wallet to under-calculate
-    the transaction fee by that same understated amount.  In the second
-    transaction, the compromised software understates the amount of the
-    second UTXO.  That will cause the hardware wallet to also
-    under-calculate the second transaction's fee.
+  Unfortunately, signing a single UTXO's amount turned out to be
+  insufficient.  In 2017, Greg Sanders [described][sanders attack] an
+  attack that can be used to trick a user into significantly
+  overpaying their transaction fee.  To start, an attacker takes
+  control of the desktop or mobile software that interfaces with a
+  hardware wallet and waits for the user to initiate a payment.  The
+  compromised software creates two variations of the requested
+  transaction that each spend the same two segwit UTXOs controlled by
+  the user's attached hardware wallet.  In the first transaction, the
+  compromised software understates the amount of one of the UTXOs
+  being spent.  This will cause the hardware wallet to under-calculate
+  the transaction fee by that same understated amount.  In the second
+  transaction, the compromised software understates the amount of the
+  second UTXO.  That will cause the hardware wallet to also
+  under-calculate the second transaction's fee.
 
-    The compromised software sends the first transaction to the hardware
-    wallet.  The user checks the amount, receiver address, and calculated
-    transaction fee.  The user authorizes signing and the signed
-    transaction is returned to the compromised software.  This first
-    transaction is invalid under BIP143 because one of its signatures
-    commits to an incorrect UTXO amount.  The compromised software then
-    claims that there was some minor problem that prevented the
-    transaction from being broadcast and tells the user they need to
-    re-sign the transaction, but the software doesn't re-send the first
-    transaction---it instead sends the second transaction.  Based on the
-    information displayed by the hardware wallet (amount, receiver, and
-    fee), the second transaction looks identical to the first
-    transaction, so it's likely the user will authorize signing it.
-    This second transaction is also BIP143 invalid because one of its
-    signatures commits to an incorrect amount.  However, each of the two
-    transactions also had one valid signature and the compromised
-    software is able to use those two valid signatures to synthesize a
-    valid transaction that overpays its fees.
+  The compromised software sends the first transaction to the hardware
+  wallet.  The user checks the amount, receiver address, and calculated
+  transaction fee.  The user authorizes signing and the signed
+  transaction is returned to the compromised software.  This first
+  transaction is invalid under BIP143 because one of its signatures
+  commits to an incorrect UTXO amount.  The compromised software then
+  claims that there was some minor problem that prevented the
+  transaction from being broadcast and tells the user they need to
+  re-sign the transaction, but the software doesn't re-send the first
+  transaction---it instead sends the second transaction.  Based on the
+  information displayed by the hardware wallet (amount, receiver, and
+  fee), the second transaction looks identical to the first
+  transaction, so it's likely the user will authorize signing it.
+  This second transaction is also BIP143 invalid because one of its
+  signatures commits to an incorrect amount.  However, each of the two
+  transactions also had one valid signature and the compromised
+  software is able to use those two valid signatures to synthesize a
+  valid transaction that overpays its fees.
 
-    ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
+  ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
-    The worst case is an attack that prompts the user to sign *n* times
-    for a wallet that controls *n* UTXOs and which results in spending
-    all of the wallet's funds to fees except for the legitimate payment
-    amount.
+  The worst case is an attack that prompts the user to sign *n* times
+  for a wallet that controls *n* UTXOs and which results in spending
+  all of the wallet's funds to fees except for the legitimate payment
+  amount.
 
-    Similar to the other attack described in Sander's 2017 email (see
-    [Newsletter #97][news97 spk commit]), this attack only affects
-    *stateless signers*, such as hardware wallets, which depend on an
-    external system to tell them about the UTXOs they control.
-    Networked wallets which track the amounts of their received UTXOs
-    won't sign for incorrect UTXO amounts and so aren't affected by this
-    attack.  Of course, networked wallets are vulnerable to other
-    attacks, which is why hardware wallets can enhance user security.
+  Similar to the other attack described in Sander's 2017 email (see
+  [Newsletter #97][news97 spk commit]), this attack only affects
+  *stateless signers*, such as hardware wallets, which depend on an
+  external system to tell them about the UTXOs they control.
+  Networked wallets which track the amounts of their received UTXOs
+  won't sign for incorrect UTXO amounts and so aren't affected by this
+  attack.  Of course, networked wallets are vulnerable to other
+  attacks, which is why hardware wallets can enhance user security.
 
-    This past week, Trezor [announced][trezor post] that Saleem Rashid
-    rediscovered this vulnerability about three months ago.  In
-    response, Trezor has updated its firmware to require copies of
-    previous transactions for segwit UTXOs the same way it requires them
-    for legacy UTXOs.  This has broken compatibility with several
-    wallets that interface with Trezor devices, either directly or
-    through [HWI][topic hwi] (see [HWI #340][]).  In cases where wallets have full copies
-    of the previous transactions or are able to obtain them, restoring
-    compatibility should just be a matter of updating the wallet code.
-    In other cases where wallets may not store full copies of previous
-    transactions that paid the wallet, this may require redesigning the
-    wallet to store that data plus require rescanning the block chain
-    for past wallet transactions.  Software that creates or updates
-    [Partially Signed Bitcoin Transactions][topic psbt] (PSBTs) will
-    need to be [upgraded][Bitcoin Core #19215] to include the full copies
-    of previous transactions into the PSBTs.  For cases where PSBTs are
-    stored in size-constrained
-    media (e.g., QR codes, see [Newsletter #96][news96 qr]), the
-    potentially significant increase in data size may require abandoning
-    the protocol or switching to higher-capacity media.
+  This past week, Trezor [announced][trezor post] that Saleem Rashid
+  rediscovered this vulnerability about three months ago.  In
+  response, Trezor has updated its firmware to require copies of
+  previous transactions for segwit UTXOs the same way it requires them
+  for legacy UTXOs.  This has broken compatibility with several
+  wallets that interface with Trezor devices, either directly or
+  through [HWI][topic hwi] (see [HWI #340][]).  In cases where wallets have full copies
+  of the previous transactions or are able to obtain them, restoring
+  compatibility should just be a matter of updating the wallet code.
+  In other cases where wallets may not store full copies of previous
+  transactions that paid the wallet, this may require redesigning the
+  wallet to store that data plus require rescanning the block chain
+  for past wallet transactions.  Software that creates or updates
+  [Partially Signed Bitcoin Transactions][topic psbt] (PSBTs) will
+  need to be [upgraded][Bitcoin Core #19215] to include the full copies
+  of previous transactions into the PSBTs.  For cases where PSBTs are
+  stored in size-constrained
+  media (e.g., QR codes, see [Newsletter #96][news96 qr]), the
+  potentially significant increase in data size may require abandoning
+  the protocol or switching to higher-capacity media.
 
-    Ledger has made a similar change, but their [support
-    article][ledger update] says they only display a warning when
-    spending segwit UTXOs without full copies of their previous
-    transactions.  Although requiring previous transactions does
-    maximize user safety against this attack, there are also arguments
-    for allowing hardware wallets to optionally continue to use segwit's
-    signed UTXO values rather than breaking existing software and
-    expending additional resources on legacy-style value verification:
+  Ledger has made a similar change, but their [support
+  article][ledger update] says they only display a warning when
+  spending segwit UTXOs without full copies of their previous
+  transactions.  Although requiring previous transactions does
+  maximize user safety against this attack, there are also arguments
+  for allowing hardware wallets to optionally continue to use segwit's
+  signed UTXO values rather than breaking existing software and
+  expending additional resources on legacy-style value verification:
 
-    - **Attack already well-known for three years:** Sanders publicly
-      described the attack almost three years ago and it's been
-      mentioned or alluded to by others on the [mailing list][lau
-      sighash2], in [BIPs][bip341 all amounts], and in Newsletters
-      [#11][news11 sighash] and [#46][news46 digest changes], among
-      other discussions.  It was [believed][wuille minimal impact] that
-      "everyone thought it was too hard to deal with, and only of
-      minimal impact".
-      Any attacker who gains access to the software controller for
-      a hardware wallet is perhaps more likely to perform a different
-      attack---such as an [address substitution attack][hw
-      security]---that pays the attacker directly rather than overpaying
-      transaction fees.
+  - **Attack already well-known for three years:** Sanders publicly
+    described the attack almost three years ago and it's been
+    mentioned or alluded to by others on the [mailing list][lau
+    sighash2], in [BIPs][bip341 all amounts], and in Newsletters
+    [#11][news11 sighash] and [#46][news46 digest changes], among
+    other discussions.  It was [believed][wuille minimal impact] that
+    "everyone thought it was too hard to deal with, and only of
+    minimal impact".
+    Any attacker who gains access to the software controller for
+    a hardware wallet is perhaps more likely to perform a different
+    attack---such as an [address substitution attack][hw
+    security]---that pays the attacker directly rather than overpaying
+    transaction fees.
 
-    - **Double signing can also lead to spending twice:** the attack
-      depends on using compromised software to get a hardware wallet
-      user to authorize two slightly different transactions (each with
-      two inputs) that look identical to the user.  Yet the same
-      compromised software could show the user two completely different
-      transactions (each spending a different input) that look
-      identical, resulting in paying the same recipient twice.  Both
-      attacks are indistinguishable from the user's perspective, but the
-      fix for the fee overpayment attack doesn't fix the [spending twice
-      attack][maxwell spend twice].
+  - **Double signing can also lead to spending twice:** the attack
+    depends on using compromised software to get a hardware wallet
+    user to authorize two slightly different transactions (each with
+    two inputs) that look identical to the user.  Yet the same
+    compromised software could show the user two completely different
+    transactions (each spending a different input) that look
+    identical, resulting in paying the same recipient twice.  Both
+    attacks are indistinguishable from the user's perspective, but the
+    fix for the fee overpayment attack doesn't fix the [spending twice
+    attack][maxwell spend twice].
 
-    - **Multisig setups may require multiple compromises:** to perform
-      the attack against funds secured by multisig with multiple
-      hardware wallets, each signer that is needed to meet the minimal
-      threshold (e.g., "2" in a "2-of-3" multisig) would need to be
-      tricked into signing the same two transaction variations.  For
-      thresholds that include an online wallet which knows the value of
-      the UTXO it's signing for (e.g., a policy-based remote signer), the
-      attack only works if that online wallet is also compromised.
+  - **Multisig setups may require multiple compromises:** to perform
+    the attack against funds secured by multisig with multiple
+    hardware wallets, each signer that is needed to meet the minimal
+    threshold (e.g., "2" in a "2-of-3" multisig) would need to be
+    tricked into signing the same two transaction variations.  For
+    thresholds that include an online wallet which knows the value of
+    the UTXO it's signing for (e.g., a policy-based remote signer), the
+    attack only works if that online wallet is also compromised.
 
-    A long-term solution to the attack is to change the transaction
-    digest so that each signature commits to the value of all UTXOs
-    being spent in that transaction.  That will make the signature
-    invalid if compromised software lies about the amount of any UTXO.  This was
-    [proposed][lau sighash2] by Johnson Lau in 2018 (see [Newsletter
-    #11][news11 sighash]) and has been included in the [BIP341][]
-    specification of [taproot][topic taproot] since its earliest public
-    drafts (see [Newsletter #46][news46 digest changes]).  If taproot is
-    adopted, then it should become safer for stateless signers
-    like hardware wallets to sign for taproot UTXOs without evaluating
-    previous transactions.  Unfortunately, that still doesn't fix the
-    spending twice attack, which is an issue with the [stateless design][wuille stateless]
-    of most hardware wallets that prevents them from internally tracking
-    their own transaction history.
+  A long-term solution to the attack is to change the transaction
+  digest so that each signature commits to the value of all UTXOs
+  being spent in that transaction.  That will make the signature
+  invalid if compromised software lies about the amount of any UTXO.  This was
+  [proposed][lau sighash2] by Johnson Lau in 2018 (see [Newsletter
+  #11][news11 sighash]) and has been included in the [BIP341][]
+  specification of [taproot][topic taproot] since its earliest public
+  drafts (see [Newsletter #46][news46 digest changes]).  If taproot is
+  adopted, then it should become safer for stateless signers
+  like hardware wallets to sign for taproot UTXOs without evaluating
+  previous transactions.  Unfortunately, that still doesn't fix the
+  spending twice attack, which is an issue with the [stateless design][wuille stateless]
+  of most hardware wallets that prevents them from internally tracking
+  their own transaction history.
 
 ## Bitcoin Core PR Review Club
 
@@ -289,24 +289,24 @@ release candidates.*
   used with Coldcard's native multisig support ([#68][news68
   sortedmulti]).
 
-    Many less visible improvements have also been made to the code in
-    order to eliminate bugs, enhance security, and prepare for future
-    changes.  One forward-looking change that's attracted some attention
-    is the addition of an `asmap` configuration setting that allows
-    using a separately downloaded database to improve Bitcoin Core's
-    ability to diversify its connections among networks
-    controlled by many different groups, increasing its resistance to
-    [eclipse attacks][topic eclipse attacks] such as the [Erebus
-    attack][] (see [Newsletter #83][news83 asmap]).  However, one of the
-    authors of the feature
-    [notes][wuille asmap], "it's highly experimental for now, and
-    unclear how to progress from that.  Gathering and compiling the
-    ASN [Autonomous Service Number] data is very nontrivial, and poses
-    trust questions."
+  Many less visible improvements have also been made to the code in
+  order to eliminate bugs, enhance security, and prepare for future
+  changes.  One forward-looking change that's attracted some attention
+  is the addition of an `asmap` configuration setting that allows
+  using a separately downloaded database to improve Bitcoin Core's
+  ability to diversify its connections among networks
+  controlled by many different groups, increasing its resistance to
+  [eclipse attacks][topic eclipse attacks] such as the [Erebus
+  attack][] (see [Newsletter #83][news83 asmap]).  However, one of the
+  authors of the feature
+  [notes][wuille asmap], "it's highly experimental for now, and
+  unclear how to progress from that.  Gathering and compiling the
+  ASN [Autonomous Service Number] data is very nontrivial, and poses
+  trust questions."
 
-    For more information about all the changes as well as a list of over
-    100 people who contributed to this new version, see the project's
-    [release notes][core20 rn].
+  For more information about all the changes as well as a list of over
+  100 people who contributed to this new version, see the project's
+  [release notes][core20 rn].
 
 - [LND 0.10.1-beta][] is a new minor release of this popular LN node
   software.  The release notes announce no major new features but

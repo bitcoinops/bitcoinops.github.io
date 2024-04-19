@@ -28,17 +28,17 @@ notable changes to popular Bitcoin infrastructure projects.
   receivers to provide spenders with a different regular address for
   each separate payment.
 
-    Peter Todd notes that it would be desirable for all addresses to
-    expire: at some point, most users are going to stop using a wallet.
-    The expected one-time use of regular addresses makes expiry less of
-    a concern, but the expected repeated use of silent payments makes it
-    more important that they include an expiry time.  He suggests the
-    inclusion of either a two-byte expiry time in addresses that would
-    support expiry dates up 180 years from now or a three-byte time that
-    would support expiry dates up to about 45,000 years from now.
+  Peter Todd notes that it would be desirable for all addresses to
+  expire: at some point, most users are going to stop using a wallet.
+  The expected one-time use of regular addresses makes expiry less of
+  a concern, but the expected repeated use of silent payments makes it
+  more important that they include an expiry time.  He suggests the
+  inclusion of either a two-byte expiry time in addresses that would
+  support expiry dates up 180 years from now or a three-byte time that
+  would support expiry dates up to about 45,000 years from now.
 
-    The recommendation received a moderate amount of discussion on the
-    mailing list, with no clear resolution as of this writing. {% assign timestamp="0:51" %}
+  The recommendation received a moderate amount of discussion on the
+  mailing list, with no clear resolution as of this writing. {% assign timestamp="0:51" %}
 
 - **Serverless payjoin:** Dan Gould [posted][gould spj] to the
   Bitcoin-Dev mailing list a [draft BIP][spj bip] for _serverless
@@ -54,15 +54,15 @@ notable changes to popular Bitcoin infrastructure projects.
   downloads the revised PSBT, decrypts it, ensures that it is correct,
   signs it, and broadcasts it to the Bitcoin network.
 
-    In a [reply][gibson spj], Adam Gibson warned about the danger of
-    including the encryption key in the BIP21 URI and the risk to
-    privacy of the relay being able to correlate the receiver's and
-    spender's IP addresses with the set of the transactions broadcast
-    within a window of time near when they completed their session.
-    Gould [has since revised][gould spj2] the proposal in an attempt
-    to address Gibson's concern about the encryption key.
+  In a [reply][gibson spj], Adam Gibson warned about the danger of
+  including the encryption key in the BIP21 URI and the risk to
+  privacy of the relay being able to correlate the receiver's and
+  spender's IP addresses with the set of the transactions broadcast
+  within a window of time near when they completed their session.
+  Gould [has since revised][gould spj2] the proposal in an attempt
+  to address Gibson's concern about the encryption key.
 
-    We expect to see continued discussion about the protocol. {% assign timestamp="14:28" %}
+  We expect to see continued discussion about the protocol. {% assign timestamp="14:28" %}
 
 ## Field Report: Implementing MuSig2
 
@@ -100,26 +100,26 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   become isolated from the main network and so fail to receive the
   latest blocks.
 
-    The merged PR attempts to open a connection to at least one peer on
-    each reachable network and will prevent the sole peer on any network
-    from being automatically evicted. {% assign timestamp="45:46" %}
+  The merged PR attempts to open a connection to at least one peer on
+  each reachable network and will prevent the sole peer on any network
+  from being automatically evicted. {% assign timestamp="45:46" %}
 
 - [Bitcoin Core #28008][] adds the encryption and decryption routines
   planned to be used for the implementation of the [v2 transport
   protocol][topic v2 P2P transport] as specified in [BIP324][].  Quoting
   from the pull request, the following ciphers and classes are added:
 
-    - "The ChaCha20Poly1305 AEAD from RFC8439 section 2.8"
+  - "The ChaCha20Poly1305 AEAD from RFC8439 section 2.8"
 
-    - "The [Forward Secrecy] FSChaCha20 stream cipher as specified in
-      BIP324, a rekeying wrapper around ChaCha20"
+  - "The [Forward Secrecy] FSChaCha20 stream cipher as specified in
+    BIP324, a rekeying wrapper around ChaCha20"
 
-    - "The FSChaCha20Poly1305 AEAD as specified in BIP324, a rekeying
-      wrapper around ChaCha20Poly1305"
+  - "The FSChaCha20Poly1305 AEAD as specified in BIP324, a rekeying
+    wrapper around ChaCha20Poly1305"
 
-    - "A BIP324Cipher class that encapsulates key agreement, key
-      derivation, and stream ciphers and AEADs for BIP324 packet
-      encoding"
+  - "A BIP324Cipher class that encapsulates key agreement, key
+    derivation, and stream ciphers and AEADs for BIP324 packet
+    encoding"
 
   {% assign timestamp="50:29" %}
 

@@ -35,16 +35,16 @@ and describe notable changes to popular Bitcoin infrastructure software.
     when her transaction has six confirmations, the token transfer will
     be secure against a fork of up to six blocks.
 
-      The outputs which control the amounts don't need to be outputs of
-      the transaction containing the commitment (though that would be
-      allowed).  This eliminates the ability to use onchain transaction
-      analysis to track RGB-based transfers.  The tokens could have been
-      transferred to any existing UTXO---or to any UTXO that the
-      receiver knows will exist in the future (e.g. a presigned spend
-      from their cold wallet which may not appear onchain for years).
-      The bitcoin value of the various outputs, and their other
-      characteristics, are irrelevant to the RGB protocol, although
-      Alice and Bob will want to ensure they're easy to spend.
+    The outputs which control the amounts don't need to be outputs of
+    the transaction containing the commitment (though that would be
+    allowed).  This eliminates the ability to use onchain transaction
+    analysis to track RGB-based transfers.  The tokens could have been
+    transferred to any existing UTXO---or to any UTXO that the
+    receiver knows will exist in the future (e.g. a presigned spend
+    from their cold wallet which may not appear onchain for years).
+    The bitcoin value of the various outputs, and their other
+    characteristics, are irrelevant to the RGB protocol, although
+    Alice and Bob will want to ensure they're easy to spend.
 
   - Later, Carol wants to buy 100 tokens from Bob in an atomic swap
     using a single onchain transaction.  She generates an unsigned PSBT
@@ -54,17 +54,17 @@ and describe notable changes to popular Bitcoin infrastructure software.
     commits to the amounts and UTXO identifiers where she will receive
     her tokens and Bob will receive his token change.
 
-      Bob provides Carol with the original contract and the commitment
-      Alice previously created that proves Bob now controls 400 tokens.
-      Bob doesn't need to know what Alice did with her remaining 600 tokens
-      and Alice has no involvement in the exchange between Bob and
-      Carol.  This provides both privacy and scalability.  Bob updates
-      the PSBT with a signed input for the UTXO controlling the tokens.
+    Bob provides Carol with the original contract and the commitment
+    Alice previously created that proves Bob now controls 400 tokens.
+    Bob doesn't need to know what Alice did with her remaining 600 tokens
+    and Alice has no involvement in the exchange between Bob and
+    Carol.  This provides both privacy and scalability.  Bob updates
+    the PSBT with a signed input for the UTXO controlling the tokens.
 
-      Carol verifies the original contract and the history of previous
-      state updates.  She also ensures that everything else in the PSBT
-      is correct.  She provides her signature and broadcasts the
-      transaction.
+    Carol verifies the original contract and the history of previous
+    state updates.  She also ensures that everything else in the PSBT
+    is correct.  She provides her signature and broadcasts the
+    transaction.
 
   Although each of the example transfers above was made onchain, it's
   straightforward to modify the protocol to operate offchain.  Carol

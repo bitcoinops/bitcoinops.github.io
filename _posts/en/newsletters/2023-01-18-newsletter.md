@@ -20,129 +20,129 @@ Bitcoin infrastructure software.
   [proposal][obeirne paper] for a soft fork to add two new opcodes,
   `OP_VAULT` and `OP_UNVAULT`.
 
-    - `OP_VAULT` would accept three parameters: a commitment to a
-      highly trusted spending path, a [delay period][topic timelocks], and a commitment to
-      a less trusted spending path.
+  - `OP_VAULT` would accept three parameters: a commitment to a
+    highly trusted spending path, a [delay period][topic timelocks], and a commitment to
+    a less trusted spending path.
 
-    - `OP_UNVAULT` would also accept three parameters.  When used for
-      the vaults O'Beirne envisions, these would be the same commitment
-      to a highly trusted spending path, the same delay period, and a
-      commitment to one or more outputs to include in a later
-      transaction.
+  - `OP_UNVAULT` would also accept three parameters.  When used for
+    the vaults O'Beirne envisions, these would be the same commitment
+    to a highly trusted spending path, the same delay period, and a
+    commitment to one or more outputs to include in a later
+    transaction.
 
-    To create a [vault][topic vaults], Alice chooses a highly trusted
-    spending path, such as a multisig requiring she access several
-    separate signing devices or cold wallets stored in separate
-    locations.  She also chooses a less trusted spending path, such as a
-    single signature from her regular hot wallet.  Finally, she chooses
-    a delay period specified using the same data type as [BIP68][],
-    which allows specifying times as short as a few minutes up to about
-    a year.  With her parameters selected, Alice creates a normal
-    Bitcoin address for receiving funds to her vault, with that address
-    committing to a script using `OP_VAULT`.
+  To create a [vault][topic vaults], Alice chooses a highly trusted
+  spending path, such as a multisig requiring she access several
+  separate signing devices or cold wallets stored in separate
+  locations.  She also chooses a less trusted spending path, such as a
+  single signature from her regular hot wallet.  Finally, she chooses
+  a delay period specified using the same data type as [BIP68][],
+  which allows specifying times as short as a few minutes up to about
+  a year.  With her parameters selected, Alice creates a normal
+  Bitcoin address for receiving funds to her vault, with that address
+  committing to a script using `OP_VAULT`.
 
-    To spend funds previously received to her vault address, Alice would start by
-    determining the outputs she ultimately wanted to pay (e.g. send a
-    payment to Bob and return any change back to her vault).  In typical
-    usage, Alice would fulfill the conditions of her less trusted
-    spending path, such as providing a signature from her hot wallet,
-    to create a transaction that pays all the vaulted funds to a single
-    output.  That output contains `OP_UNVAULT` with the same parameters
-    for the highly trusted spending path and delay.  The third parameter
-    is a commitment to the outputs Alice ultimately wants to pay.  Alice
-    finishes constructing the transaction---including attaching fees
-    using [fee sponsorship][topic fee sponsorship], a type of [anchor
-    output][topic anchor outputs], or another mechanism.
+  To spend funds previously received to her vault address, Alice would start by
+  determining the outputs she ultimately wanted to pay (e.g. send a
+  payment to Bob and return any change back to her vault).  In typical
+  usage, Alice would fulfill the conditions of her less trusted
+  spending path, such as providing a signature from her hot wallet,
+  to create a transaction that pays all the vaulted funds to a single
+  output.  That output contains `OP_UNVAULT` with the same parameters
+  for the highly trusted spending path and delay.  The third parameter
+  is a commitment to the outputs Alice ultimately wants to pay.  Alice
+  finishes constructing the transaction---including attaching fees
+  using [fee sponsorship][topic fee sponsorship], a type of [anchor
+  output][topic anchor outputs], or another mechanism.
 
-    Alice broadcasts her transaction and it is later included in a
-    block.  This allows anyone to observe that an unvaulting attempt is
-    in progress.  Alice's software detects that this is a spend of her
-    vaulted funds and verifies that the third parameter of the
-    `OP_UNVAULT` output of the confirmed transaction matches exactly the
-    commitment Alice created earlier.  Assuming it matches, Alice now
-    waits for the delay period to complete, after which Alice can
-    broadcast a transaction that spends from the `OP_UNVAULT` UTXO to the
-    outputs she committed to earlier (e.g. Bob and a change output).
-    This would be a successful spend of Alice's funds using her less
-    trusted path, e.g. using just her hot wallet.
+  Alice broadcasts her transaction and it is later included in a
+  block.  This allows anyone to observe that an unvaulting attempt is
+  in progress.  Alice's software detects that this is a spend of her
+  vaulted funds and verifies that the third parameter of the
+  `OP_UNVAULT` output of the confirmed transaction matches exactly the
+  commitment Alice created earlier.  Assuming it matches, Alice now
+  waits for the delay period to complete, after which Alice can
+  broadcast a transaction that spends from the `OP_UNVAULT` UTXO to the
+  outputs she committed to earlier (e.g. Bob and a change output).
+  This would be a successful spend of Alice's funds using her less
+  trusted path, e.g. using just her hot wallet.
 
-    However, imagine that Alice's software sees the confirmed unvaulting
-    attempt and doesn't recognize it.  In this case, her software has the
-    opportunity during the delay period to freeze the funds.  It creates
-    a transaction spending the `OP_UNVAULT` output to the highly trusted
-    address which was the subject of the previous commitments.  As long
-    as this freezing transaction confirms before the delay period ends,
-    Alice's funds are secured against the compromise of her less trusted
-    spending path.  After the funds have been transferred to Alice's
-    highly trusted spending path, Alice can spend them at any time by
-    satisfying the conditions of that path (e.g. using her cold
-    wallets).
+  However, imagine that Alice's software sees the confirmed unvaulting
+  attempt and doesn't recognize it.  In this case, her software has the
+  opportunity during the delay period to freeze the funds.  It creates
+  a transaction spending the `OP_UNVAULT` output to the highly trusted
+  address which was the subject of the previous commitments.  As long
+  as this freezing transaction confirms before the delay period ends,
+  Alice's funds are secured against the compromise of her less trusted
+  spending path.  After the funds have been transferred to Alice's
+  highly trusted spending path, Alice can spend them at any time by
+  satisfying the conditions of that path (e.g. using her cold
+  wallets).
 
-    Beyond proposing the new opcodes, O'Beirne also describes the
-    motivation for vaults and analyzes other vault proposals, including
-    those that are available on Bitcoin now using presigned transactions
-    and those that would depend on other soft fork [covenant][topic
-    covenants] proposals.  Several described advantages of the `OP_VAULT`
-    proposal include:
+  Beyond proposing the new opcodes, O'Beirne also describes the
+  motivation for vaults and analyzes other vault proposals, including
+  those that are available on Bitcoin now using presigned transactions
+  and those that would depend on other soft fork [covenant][topic
+  covenants] proposals.  Several described advantages of the `OP_VAULT`
+  proposal include:
 
-    - *Smaller witnesses:* flexible covenant proposals, such as those
-      using the proposed [OP_CHECKSIGFROMSTACK][topic
-      op_checksigfromstack], would require that transaction witnesses
-      for unvaulting transactions include copies of a significant amount
-      of the data included elsewhere in the transaction, bloating the
-      size and fee cost of those transactions.  `OP_VAULT` requires much
-      less script and witness data to be included onchain.
+  - *Smaller witnesses:* flexible covenant proposals, such as those
+    using the proposed [OP_CHECKSIGFROMSTACK][topic
+    op_checksigfromstack], would require that transaction witnesses
+    for unvaulting transactions include copies of a significant amount
+    of the data included elsewhere in the transaction, bloating the
+    size and fee cost of those transactions.  `OP_VAULT` requires much
+    less script and witness data to be included onchain.
 
-    - *Fewer steps for spending:* less flexible covenant proposals and
-      vaults available today based on presigned transactions require
-      withdrawing funds to a predetermined address before they can be sent
-      to an ultimate destination.  Such proposals also generally require that
-      each received output be spent in a separate transaction from other
-      received outputs, preventing the use of [payment batching][topic
-      payment batching].  This increases the number of transactions
-      involved, which also bloats the size and cost of spending.
+  - *Fewer steps for spending:* less flexible covenant proposals and
+    vaults available today based on presigned transactions require
+    withdrawing funds to a predetermined address before they can be sent
+    to an ultimate destination.  Such proposals also generally require that
+    each received output be spent in a separate transaction from other
+    received outputs, preventing the use of [payment batching][topic
+    payment batching].  This increases the number of transactions
+    involved, which also bloats the size and cost of spending.
 
-      `OP_VAULT` requires fewer transactions when spending a single
-      output in typical cases and it also supports batching when
-      spending or freezing multiple outputs, potentially saving a large
-      amount of space and allowing vaults to receive many more
-      transactions before their outputs would need to be consolidated
-      for safety.
+    `OP_VAULT` requires fewer transactions when spending a single
+    output in typical cases and it also supports batching when
+    spending or freezing multiple outputs, potentially saving a large
+    amount of space and allowing vaults to receive many more
+    transactions before their outputs would need to be consolidated
+    for safety.
 
-    In discussion of the idea, Greg Sanders proposed (as [summarized by
-    O'Beirne][obeirne scripthash]) a slightly different construction which
-    "would allow all outputs in vault lifecycles to be [P2TR][topic
-    taproot], for example, which would conceal the operation of the
-    vault---a very nice feature".
+  In discussion of the idea, Greg Sanders proposed (as [summarized by
+  O'Beirne][obeirne scripthash]) a slightly different construction which
+  "would allow all outputs in vault lifecycles to be [P2TR][topic
+  taproot], for example, which would conceal the operation of the
+  vault---a very nice feature".
 
-    Separately, Anthony Towns [notes][towns op_vault] that the proposal
-    allows the vault user to freeze their funds at any time just by
-    spending the funds to the address for the highly trusted spending
-    path, allowing the user to unfreeze their funds later.  This
-    benefits the vault owner because they don't need to access any
-    specially-secured key material, such as a cold wallet, in order to
-    block a theft attempt.  However, any third party who learns the
-    address can also freeze the user's funds (although they'll have to
-    pay a transaction fee to do so), creating an inconvenience for the
-    user.  Given that many lightweight wallets disclose their addresses
-    to third parties in order to locate their onchain transactions,
-    vaults built on those wallets might unintentionally give third
-    parties the ability to inconvenience vault users.  Towns suggests an
-    alternative construction for the freezing condition that would
-    require providing an additional piece of non-private information in
-    order to initiate a freezing, preserving the benefits of the scheme
-    but also reducing the risk that a wallet would unnecessarily give
-    third parties the ability to freeze funds and inconvenience the user.  Towns
-    also suggests a possible improvement in batching support and
-    contemplates taproot support.
+  Separately, Anthony Towns [notes][towns op_vault] that the proposal
+  allows the vault user to freeze their funds at any time just by
+  spending the funds to the address for the highly trusted spending
+  path, allowing the user to unfreeze their funds later.  This
+  benefits the vault owner because they don't need to access any
+  specially-secured key material, such as a cold wallet, in order to
+  block a theft attempt.  However, any third party who learns the
+  address can also freeze the user's funds (although they'll have to
+  pay a transaction fee to do so), creating an inconvenience for the
+  user.  Given that many lightweight wallets disclose their addresses
+  to third parties in order to locate their onchain transactions,
+  vaults built on those wallets might unintentionally give third
+  parties the ability to inconvenience vault users.  Towns suggests an
+  alternative construction for the freezing condition that would
+  require providing an additional piece of non-private information in
+  order to initiate a freezing, preserving the benefits of the scheme
+  but also reducing the risk that a wallet would unnecessarily give
+  third parties the ability to freeze funds and inconvenience the user.  Towns
+  also suggests a possible improvement in batching support and
+  contemplates taproot support.
 
-    Several replies also mentioned that `OP_UNVAULT` can provide many of
-    the features of the [OP_CHECKTEMPLATEVERIFY][topic
-    op_checktemplateverify] (CTV) proposal, including the benefits to
-    [DLCs][topic dlc] previously described in [Newsletter #185][news185
-    ctv-dlc], although at greater onchain cost than directly using CTV.
+  Several replies also mentioned that `OP_UNVAULT` can provide many of
+  the features of the [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] (CTV) proposal, including the benefits to
+  [DLCs][topic dlc] previously described in [Newsletter #185][news185
+  ctv-dlc], although at greater onchain cost than directly using CTV.
 
-    Discussion was still active as of this writing. {% assign timestamp="1:48" %}
+  Discussion was still active as of this writing. {% assign timestamp="1:48" %}
 
 ## Changes to services and client software
 

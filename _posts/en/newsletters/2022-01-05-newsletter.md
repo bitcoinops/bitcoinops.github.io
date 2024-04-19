@@ -29,16 +29,16 @@ projects.
   immediately accept unconfirmed transactions in exchange for low-cost
   goods and services.
 
-    Rubin's alternative still encourages moving to full RBF, but
-    suggests starting by allowing full RBF of any transaction for *n*
-    seconds after it is first received by a node.  After *n* seconds,
-    the BIP125 opt-in flag is honored the same as now.  This can allow
-    merchants to accept unconfirmed transactions like they do now after
-    those *n* seconds have elapsed.  More importantly, it may allow
-    protocols that depend on replaceability for security to not have to
-    worry about non-opt-in transactions as long as a protocol node or
-    watchtower can reasonably respond within a fraction of *n* seconds
-    of first learning of a transaction.
+  Rubin's alternative still encourages moving to full RBF, but
+  suggests starting by allowing full RBF of any transaction for *n*
+  seconds after it is first received by a node.  After *n* seconds,
+  the BIP125 opt-in flag is honored the same as now.  This can allow
+  merchants to accept unconfirmed transactions like they do now after
+  those *n* seconds have elapsed.  More importantly, it may allow
+  protocols that depend on replaceability for security to not have to
+  worry about non-opt-in transactions as long as a protocol node or
+  watchtower can reasonably respond within a fraction of *n* seconds
+  of first learning of a transaction.
 
 - **BIP119 CTV review workshops:** Jeremy Rubin [announced][rubin
   ctv-review] on the Bitcoin-Dev mailing list that he will be hosting
@@ -91,12 +91,12 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the validation logic by adding support for [CPFP][topic cpfp] and
   [RBF][topic rbf].
 
-    In a later follow-up PR, a method may be added to allow peers to
-    submit packages of transactions to the local node which will be
-    validated using the now-available logic.  That will enable [package
-    relay][topic package relay], enhancing the reliability and
-    security of contract protocols such as LN.  The PR also adds
-    [documentation][package doc] about the package validation rules.
+  In a later follow-up PR, a method may be added to allow peers to
+  submit packages of transactions to the local node which will be
+  validated using the now-available logic.  That will enable [package
+  relay][topic package relay], enhancing the reliability and
+  security of contract protocols such as LN.  The PR also adds
+  [documentation][package doc] about the package validation rules.
 
 [package doc]: https://github.com/glozow/bitcoin/blob/046e8ff264be6b888c0f9a9d822e32aa74e19b78/doc/policy/packages.md
 
@@ -135,8 +135,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   ability to create bech32m addresses in addition to older address
   types.
 
-    {:.center}
-    ![Screenshot address picker](/img/posts/2022-01-core-gui-address-picker.png)
+  {:.center}
+  ![Screenshot address picker](/img/posts/2022-01-core-gui-address-picker.png)
 
 - [Eclair #2090][] adds support for rate limiting [onion messages][topic onion messages] via the
   `max-per-peer-per-second` configuration option.
@@ -170,14 +170,14 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   the [payment preimage][] used to satisfy the [payment hash][] used to
   secure the payment's [HTLC][topic htlc].
 
-    This is a simplified implementation of the idea described in
-    [Newsletter #168][news168 stateless].  Other LN implementations
-    may store information about an invoice (e.g. an arbitrary order
-    identifier provided by a merchant's shopkeeping software), but
-    Rust-Lightning sidesteps that as it is a library that expects to be
-    integrated directly into a higher-level app and so allows the
-    higher-level application to manage the details of its own payment
-    requests.
+  This is a simplified implementation of the idea described in
+  [Newsletter #168][news168 stateless].  Other LN implementations
+  may store information about an invoice (e.g. an arbitrary order
+  identifier provided by a merchant's shopkeeping software), but
+  Rust-Lightning sidesteps that as it is a library that expects to be
+  integrated directly into a higher-level app and so allows the
+  higher-level application to manage the details of its own payment
+  requests.
 
 - [HWI #545][], [#546][HWI #546], and [#547][HWI #547] add support for
   [taproot][topic taproot] by enabling support for `tr()`

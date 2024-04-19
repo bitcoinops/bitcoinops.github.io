@@ -28,17 +28,17 @@ infrastructure software.
   explicitly signal replaceability or for them to be evicted from the
   mempool if their parent transaction is replaced.
 
-    Riard analyzed how the inability to use inherited replaceability
-    might affect various current and proposed protocols.  Only LN
-    appears to be affected and only in the sense that an existing attack
-    (see [Newsletter #95][news95 atomicity attack]) that uses
-    [pinning][topic transaction pinning] becomes cheaper.  The ongoing
-    deployment of [anchor outputs][topic anchor outputs] by
-    various LN implementations will eliminate the ability to perform that
-    pinning.
+  Riard analyzed how the inability to use inherited replaceability
+  might affect various current and proposed protocols.  Only LN
+  appears to be affected and only in the sense that an existing attack
+  (see [Newsletter #95][news95 atomicity attack]) that uses
+  [pinning][topic transaction pinning] becomes cheaper.  The ongoing
+  deployment of [anchor outputs][topic anchor outputs] by
+  various LN implementations will eliminate the ability to perform that
+  pinning.
 
-    As of this writing, there has not been any substantial discussion of
-    the issue on the mailing list.
+  As of this writing, there has not been any substantial discussion of
+  the issue on the mailing list.
 
 - **Call for Brink grant applications:**
   Bitcoin Optech encourages any engineer contributing to open source

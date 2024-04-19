@@ -78,7 +78,9 @@ accordingly.
     characters are allowed in bech32 HRPs but are not part of the QR
     code uppercase alphanumeric set:
 
-        !"#&'()';<=>?@[\]^_`{|}~
+    ```
+    !"#&'()';<=>?@[\]^_`{|}~
+    ```
 
     None of the bech32 HRPs used in Bitcoin (bc, tb, bcrt) use any of
     these characters, and neither does any other application as far as

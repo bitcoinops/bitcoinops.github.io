@@ -35,13 +35,13 @@ recent changes to popular Bitcoin infrastructure software.
   those for [silent payments][topic silent payments] and [offers][topic
   offers].
 
-    As discussed on the thread, an improvement could be having the
-    creator of the URI specify all of the payment methods they supported
-    using bare parameters, for example: `bitcoin:?bc1q...&sp1q...`.  The
-    spender (who is usually responsible for paying fees) could then
-    choose their preferred payment method from the list.  Although some
-    minor technical points were still being discussed at the time of
-    writing, no major criticisms of this approach have been posted. {% assign timestamp="18:07" %}
+  As discussed on the thread, an improvement could be having the
+  creator of the URI specify all of the payment methods they supported
+  using bare parameters, for example: `bitcoin:?bc1q...&sp1q...`.  The
+  spender (who is usually responsible for paying fees) could then
+  choose their preferred payment method from the list.  Although some
+  minor technical points were still being discussed at the time of
+  writing, no major criticisms of this approach have been posted. {% assign timestamp="18:07" %}
 
 - **PSBTs for multiple concurrent MuSig2 signing sessions:** Salvatore
   Ingala [posted][ingala musig2] to Delving Bitcoin about minimizing the
@@ -128,12 +128,12 @@ repo]._
   Core to stop waiting for the block from the first peer; a fix for this
   was described in [Newsletter #251][news251 block].
 
-    The code added in this PR allows quickly checking whether a
-    newly-received block contains one of the known mutation types that
-    makes it invalid.  If so, the mutated block can be rejected early
-    on, hopefully preventing anything about it from being cached or used
-    to prevent the correct processing of a valid version of the block that
-    will be received later. {% assign timestamp="1:06:53" %}
+  The code added in this PR allows quickly checking whether a
+  newly-received block contains one of the known mutation types that
+  makes it invalid.  If so, the mutated block can be rejected early
+  on, hopefully preventing anything about it from being cached or used
+  to prevent the correct processing of a valid version of the block that
+  will be received later. {% assign timestamp="1:06:53" %}
 
 - [Eclair #2829][] allows plugins to set a policy for contributing funds
   towards a [dual-funded channel open][topic dual funding].  By default,

@@ -24,19 +24,19 @@ d'infrastructure Bitcoin.
   demander si une limite de taille devrait être imposée pour décourager
   un tel stockage de données.
 
-    Andrew Poelstra [a répondu][poelstra ordinal] qu'il n'existe aucun moyen
-    efficace d'empêcher le stockage de données. L'ajout de nouvelles restrictions
-    pour empêcher le stockage de données non désirées dans les témoins saperait
-    les avantages discutés lors de la conception de taproot (voir [bulletin
-    #65][news65 tapscript]) et n'aboutirait probablement qu'à un stockage des
-    données par d'autres moyens. Ces autres moyens pourraient augmenter les
-    coûts pour ceux qui génèrent les données---mais probablement pas suffisamment
-    pour décourager le comportement de manière significative---et les méthodes
-    de stockage alternatives pourraient créer de nouveaux problèmes pour les
-    utilisateurs traditionnels de Bitcoin.
+  Andrew Poelstra [a répondu][poelstra ordinal] qu'il n'existe aucun moyen
+  efficace d'empêcher le stockage de données. L'ajout de nouvelles restrictions
+  pour empêcher le stockage de données non désirées dans les témoins saperait
+  les avantages discutés lors de la conception de taproot (voir [bulletin
+  #65][news65 tapscript]) et n'aboutirait probablement qu'à un stockage des
+  données par d'autres moyens. Ces autres moyens pourraient augmenter les
+  coûts pour ceux qui génèrent les données---mais probablement pas suffisamment
+  pour décourager le comportement de manière significative---et les méthodes
+  de stockage alternatives pourraient créer de nouveaux problèmes pour les
+  utilisateurs traditionnels de Bitcoin.
 
-    Au moment où nous écrivons ces lignes, le sujet fait l'objet d'un débat animé.
-    Nous ferons le point dans le bulletin de la semaine prochaine.
+  Au moment où nous écrivons ces lignes, le sujet fait l'objet d'un débat animé.
+  Nous ferons le point dans le bulletin de la semaine prochaine.
 
 - **Résumé de l'appel concernant l'atténuation du brouillage LN :** Carla
   Kirk-Cohen et Clara Shikhelman ont [posté][ckccs jamming] sur la liste de
@@ -51,9 +51,9 @@ d'infrastructure Bitcoin.
   de services Lightning (LSP). Consultez le message de la liste de diffusion
   pour obtenir des résumés détaillés et une [transcription][jam xs].
 
-    Les prochaines réunions vidéo sont prévues toutes les deux semaines ;
-    surveillez la liste de diffusion Lightning-Dev pour connaître les annonces
-    des prochaines réunions.
+  Les prochaines réunions vidéo sont prévues toutes les deux semaines ;
+  surveillez la liste de diffusion Lightning-Dev pour connaître les annonces
+  des prochaines réunions.
 
 ## Bitcoin Core PR Review Club
 

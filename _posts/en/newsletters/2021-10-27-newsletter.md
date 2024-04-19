@@ -96,23 +96,23 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   about each previously-created output ("prevout") being spent in the
   block.
 
-    When a block creates a new unspent transaction output (UTXO),
-    Bitcoin Core stores it in a database.  When a later transaction
-    attempts to spend that UTXO, Bitcoin Core retrieves it from the
-    database and verifies the spend fulfills all required conditions
-    (e.g. includes a valid signature for the correct public key).  If
-    every spend in a block is valid, Bitcoin Core moves those prevout
-    entries out of the UTXO database and into an *undo* file that can be
-    used to restore the UTXO database to its previous state if the block
-    is later removed from the chain during a reorg.
+  When a block creates a new unspent transaction output (UTXO),
+  Bitcoin Core stores it in a database.  When a later transaction
+  attempts to spend that UTXO, Bitcoin Core retrieves it from the
+  database and verifies the spend fulfills all required conditions
+  (e.g. includes a valid signature for the correct public key).  If
+  every spend in a block is valid, Bitcoin Core moves those prevout
+  entries out of the UTXO database and into an *undo* file that can be
+  used to restore the UTXO database to its previous state if the block
+  is later removed from the chain during a reorg.
 
-    This PR retrieves the prevouts from the undo file and includes them
-    as part of the information that's actually included in the block or
-    computed from its contents.  For users and applications who need
-    prevout data, this is much faster and more convenient than directly
-    looking up each previous transaction and its outputs.  Full nodes
-    that have pruning enabled will delete older undo files and so will
-    be unable to use the new verbosity level three for those blocks.
+  This PR retrieves the prevouts from the undo file and includes them
+  as part of the information that's actually included in the block or
+  computed from its contents.  For users and applications who need
+  prevout data, this is much faster and more convenient than directly
+  looking up each previous transaction and its outputs.  Full nodes
+  that have pruning enabled will delete older undo files and so will
+  be unable to use the new verbosity level three for those blocks.
 
 - [C-Lightning #4771][] updates the `pay` command to prefer routes that
   include channels with a larger total amount of funds (channel

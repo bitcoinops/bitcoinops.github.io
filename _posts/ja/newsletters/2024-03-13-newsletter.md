@@ -27,11 +27,11 @@ lang: ja
   アリスは有効になったチェーンで合算したビットコインを受け取り、
   ボブは禁止されたチェーンで合算したビットコインを受け取ります。
 
-    基本的なアイディアは以前提案されていますが（[例][rubin bet]）、
-    ZmnSCPxjのバージョンでは、少なくとも１つの将来の潜在的なソフトフォーク
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]で予想される仕様を扱っています。
-    ZmnSCPxjはまた、他の提案中のソフトフォーク、特に`OP_SUCCESSx` opcodeを
-    アップグレードするソフトフォークへの構成を一般化する際の課題についても簡単に考察しています。
+  基本的なアイディアは以前提案されていますが（[例][rubin bet]）、
+  ZmnSCPxjのバージョンでは、少なくとも１つの将来の潜在的なソフトフォーク
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]で予想される仕様を扱っています。
+  ZmnSCPxjはまた、他の提案中のソフトフォーク、特に`OP_SUCCESSx` opcodeを
+  アップグレードするソフトフォークへの構成を一般化する際の課題についても簡単に考察しています。
 
 - **ビットコイナー向けChia Lispの概要:**
   Anthony Townsは、暗号通貨Chiaで使用されているバージョンの[Lisp][]の概要を

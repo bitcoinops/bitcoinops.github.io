@@ -26,54 +26,54 @@ axé sur la documentation technique et les discussions sur Bitcoin.
   Cette semaine, plusieurs fils de discussion sur la liste de diffusion Bitcoin-Dev
   ont vu se poursuivre les discussions sur le stockage des données dans la chaîne de blocs.
 
-    - *Coloration des pièces hors chaîne :* Anthony Towns [a publié][towns color]
-      un résumé d'un protocole actuellement utilisé pour attribuer une signification
-      particulière à certains résultats de transaction, une catégorie de techniques
-      généralement appelée *coin coloring*. Il a également résumé un protocole
-      connexe utilisé pour stocker des données binaires codées dans les transactions
-      Bitcoin et les associer à des pièces de couleur particulières. Après avoir
-      résumé l'état actuel des choses, il a décrit une méthode permettant de stocker
-      des données à l'aide du protocole de transfert de messages [nostr][] et de
-      les associer à des pièces colorées qui pourraient être transférées dans des
-      transactions Bitcoin. Cette méthode présenterait plusieurs avantages :
+  - *Coloration des pièces hors chaîne :* Anthony Towns [a publié][towns color]
+    un résumé d'un protocole actuellement utilisé pour attribuer une signification
+    particulière à certains résultats de transaction, une catégorie de techniques
+    généralement appelée *coin coloring*. Il a également résumé un protocole
+    connexe utilisé pour stocker des données binaires codées dans les transactions
+    Bitcoin et les associer à des pièces de couleur particulières. Après avoir
+    résumé l'état actuel des choses, il a décrit une méthode permettant de stocker
+    des données à l'aide du protocole de transfert de messages [nostr][] et de
+    les associer à des pièces colorées qui pourraient être transférées dans des
+    transactions Bitcoin. Cette méthode présenterait plusieurs avantages :
 
-      - *Réduction des coûts :* aucun frais de transaction ne doit être payé pour
-        les données stockées hors chaîne.
+    - *Réduction des coûts :* aucun frais de transaction ne doit être payé pour
+      les données stockées hors chaîne.
 
-      - *Privé :* deux personnes peuvent échanger une pièce de monnaie colorée
-        sans que personne d'autre ne sache rien des données qu'elle référence.
+    - *Privé :* deux personnes peuvent échanger une pièce de monnaie colorée
+      sans que personne d'autre ne sache rien des données qu'elle référence.
 
-      - *Aucune transaction requise pour la création :* Les données peuvent être
-        associées à un UTXO existant ; il n'est pas nécessaire de créer
-        un nouvel UTXO.
+    - *Aucune transaction requise pour la création :* Les données peuvent être
+      associées à un UTXO existant ; il n'est pas nécessaire de créer
+      un nouvel UTXO.
 
-      - *Résistant à la censure :* si l'association entre les données et la
-        pièce colorée n'est pas largement connue, alors les transferts de la
-        pièce colorée sont tout aussi résistants à la censure que n'importe
-        quel autre paiement Bitcoin onchain.
+    - *Résistant à la censure :* si l'association entre les données et la
+      pièce colorée n'est pas largement connue, alors les transferts de la
+      pièce colorée sont tout aussi résistants à la censure que n'importe
+      quel autre paiement Bitcoin onchain.
 
-      Considérant l'aspect de résistance à la censure, Towns soutient que
-      "les bitcoins colorés sont largement inévitables et simplement quelque
-      chose avec lequel il faut composer, plutôt que quelque chose que nous
-      devrions passer du temps à essayer de prévenir/éviter." Il compare
-      l'idée que les pièces colorées pourraient avoir plus de valeur que
-      les bitcoins fongibles au fonctionnement du bitcoin qui facture les
-      frais de transaction en fonction du poids de la transaction plutôt
-      que de la valeur transférée, et conclut qu'il ne pense pas que cela
-      conduise nécessairement à des incitations significativement désalignées.
+    Considérant l'aspect de résistance à la censure, Towns soutient que
+    "les bitcoins colorés sont largement inévitables et simplement quelque
+    chose avec lequel il faut composer, plutôt que quelque chose que nous
+    devrions passer du temps à essayer de prévenir/éviter." Il compare
+    l'idée que les pièces colorées pourraient avoir plus de valeur que
+    les bitcoins fongibles au fonctionnement du bitcoin qui facture les
+    frais de transaction en fonction du poids de la transaction plutôt
+    que de la valeur transférée, et conclut qu'il ne pense pas que cela
+    conduise nécessairement à des incitations significativement désalignées.
 
-    - *Augmentation de l'espace `OP_RETURN` autorisé dans les transactions standard:*
-      Christopher Allen [a demandé][allen op_return] s'il était préférable
-      de mettre des données arbitraires dans une sortie de transaction en
-      utilisant `OP_RETURN` ou les données témoins d'une transaction. Après
-      quelques discussions, plusieurs participants ([1][todd ou], [2][o'connor ou],
-      [3][poelstra ou]) ont noté qu'ils étaient en faveur d'un assouplissement
-      des politiques de relais de transaction et d'extraction par défaut
-      pour permettre aux sorties `OP_RETURN` de stocker plus de 83 octets
-      de données arbitraires. Ils ont estimé que d'autres méthodes pour
-      stocker de grandes quantités de données sont actuellement utilisées
-      et qu'il n'y aurait pas de préjudice supplémentaire à utiliser
-      `OP_RETURN` à la place.
+  - *Augmentation de l'espace `OP_RETURN` autorisé dans les transactions standard:*
+    Christopher Allen [a demandé][allen op_return] s'il était préférable
+    de mettre des données arbitraires dans une sortie de transaction en
+    utilisant `OP_RETURN` ou les données témoins d'une transaction. Après
+    quelques discussions, plusieurs participants ([1][todd ou], [2][o'connor ou],
+    [3][poelstra ou]) ont noté qu'ils étaient en faveur d'un assouplissement
+    des politiques de relais de transaction et d'extraction par défaut
+    pour permettre aux sorties `OP_RETURN` de stocker plus de 83 octets
+    de données arbitraires. Ils ont estimé que d'autres méthodes pour
+    stocker de grandes quantités de données sont actuellement utilisées
+    et qu'il n'y aurait pas de préjudice supplémentaire à utiliser
+    `OP_RETURN` à la place.
 
 - **Dilution des frais dans les protocoles multipartites :** Yuval Kogman
   a [posté][kogman dilution] sur la liste de diffusion Bitcoin-Dev la
@@ -87,23 +87,23 @@ axé sur la documentation technique et les discussions sur Bitcoin.
   diminue effectivement le taux d'erreur pour la transaction. Plusieurs
   implications de cette situation ont été discutées sur la liste de diffusion :
 
-    - *Mallory demande à Bob de payer ses frais :* si Mallory a une
-      motivation ultérieure pour inclure un grand témoin dans la chaîne
-      de blocs---par exemple, elle veut ajouter des données arbitraires---elle
-      peut utiliser une partie des frais de Bob pour payer les frais correspondants.
-      Par exemple, Bob veut créer une transaction de 1 000 vbytes avec des frais
-      de 10 000 satoshis, en payant 10 sat/vbyte pour qu'elle soit confirmée
-      rapidement. Mallory bourre la transaction de 9 000 vbytes de données que
-      Bob n'attendait pas, ce qui réduit son tarif à 1 sat/vbyte. Bien que Bob
-      paie les mêmes frais absolus dans les deux cas, il n'obtient pas ce qu'il
-      voulait (confirmation rapide) et Mallory obtient 9 000 sats de données
-      ajoutées à la chaîne de blocs sans frais pour elle.
+  - *Mallory demande à Bob de payer ses frais :* si Mallory a une
+    motivation ultérieure pour inclure un grand témoin dans la chaîne
+    de blocs---par exemple, elle veut ajouter des données arbitraires---elle
+    peut utiliser une partie des frais de Bob pour payer les frais correspondants.
+    Par exemple, Bob veut créer une transaction de 1 000 vbytes avec des frais
+    de 10 000 satoshis, en payant 10 sat/vbyte pour qu'elle soit confirmée
+    rapidement. Mallory bourre la transaction de 9 000 vbytes de données que
+    Bob n'attendait pas, ce qui réduit son tarif à 1 sat/vbyte. Bien que Bob
+    paie les mêmes frais absolus dans les deux cas, il n'obtient pas ce qu'il
+    voulait (confirmation rapide) et Mallory obtient 9 000 sats de données
+    ajoutées à la chaîne de blocs sans frais pour elle.
 
-    - *Mallory peut ralentir la confirmation :* une transaction avec un taux
-      de frais inférieur peut être confirmée plus lentement. Dans un protocole
-      sensible au temps, cela pourrait causer un sérieux problème à Bob.
-      Dans d'autres cas, Bob peut avoir besoin de faire payer la transaction,
-      ce qui lui coûtera de l'argent supplémentaire.
+  - *Mallory peut ralentir la confirmation :* une transaction avec un taux
+    de frais inférieur peut être confirmée plus lentement. Dans un protocole
+    sensible au temps, cela pourrait causer un sérieux problème à Bob.
+    Dans d'autres cas, Bob peut avoir besoin de faire payer la transaction,
+    ce qui lui coûtera de l'argent supplémentaire.
 
   Kogman décrit plusieurs mesures d'atténuation dans son article, bien qu'elles
   impliquent toutes des compromis. Dans un [deuxième article][kogman dilution2],
@@ -119,27 +119,27 @@ axé sur la documentation technique et les discussions sur Bitcoin.
   placer un hachage supplémentaire de 32 octets dans les données témoins de
   la transaction de dépense.
 
-    ```text
-      *
+  ```text
+    *
+   / \
+  A   *
      / \
-    A   *
-       / \
-      A   B
-    ```
+    A   B
+  ```
 
-   Cela signifie que même si Mallory fournit à Bob un témoin valide pour
-   sa dépense de tapscript avant que Bob ne fournisse sa propre signature,
-   il est toujours possible pour Mallory de diffuser une version alternative
-   de la transaction avec un témoin plus important. Bob ne peut éviter
-   ce problème qu'en recevant de Mallory une copie complète de son arbre
-   de tapscripts.
+  Cela signifie que même si Mallory fournit à Bob un témoin valide pour
+  sa dépense de tapscript avant que Bob ne fournisse sa propre signature,
+  il est toujours possible pour Mallory de diffuser une version alternative
+  de la transaction avec un témoin plus important. Bob ne peut éviter
+  ce problème qu'en recevant de Mallory une copie complète de son arbre
+  de tapscripts.
 
-   Dans le contexte des futures mises à jour de l'embranchement convergent
-   de Bitcoin, Anthony Towns a ouvert une [issue][bitcoin inquisition #19]
-   au dépôt de Bitcoin Inquisition utilisé pour tester [SIGHASH_ANYPREVOUT][topic
-   sighash_anyprevout] (APO) pour envisager qu'APO s'engage à fournir des
-   données supplémentaires afin d'éviter ce problème pour les utilisateurs
-   de cette extension.
+  Dans le contexte des futures mises à jour de l'embranchement convergent
+  de Bitcoin, Anthony Towns a ouvert une [issue][bitcoin inquisition #19]
+  au dépôt de Bitcoin Inquisition utilisé pour tester [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout] (APO) pour envisager qu'APO s'engage à fournir des
+  données supplémentaires afin d'éviter ce problème pour les utilisateurs
+  de cette extension.
 
 ## Modifications apportées aux services et aux logiciels clients
 

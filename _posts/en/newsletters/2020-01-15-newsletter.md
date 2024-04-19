@@ -27,61 +27,61 @@ software.
   submitted a proposal for a mechanism that contains those attributes.
   In short, the attributes are:
 
-    1. The ability to abort if a serious objection to the proposed
-       consensus rules changes is encountered
+  1. The ability to abort if a serious objection to the proposed
+     consensus rules changes is encountered
 
-    2. The allocation of enough time after the release of updated
-       software to ensure that most economic nodes are upgraded to
-       enforce those rules
+  2. The allocation of enough time after the release of updated
+     software to ensure that most economic nodes are upgraded to
+     enforce those rules
 
-    3. The expectation that the network hash rate will be roughly the
-       same before and after the change, as well as during any transition
+  3. The expectation that the network hash rate will be roughly the
+     same before and after the change, as well as during any transition
 
-    4. The prevention, as much as possible, of the creation of blocks
-       that are invalid under the new rules, which could lead to false
-       confirmations in non-upgraded nodes and SPV clients
+  4. The prevention, as much as possible, of the creation of blocks
+     that are invalid under the new rules, which could lead to false
+     confirmations in non-upgraded nodes and SPV clients
 
-    5. The assurance that the abort mechanisms can't be misused by
-       griefers or partisans to withhold a widely desired upgrade with
-       no known problems
+  5. The assurance that the abort mechanisms can't be misused by
+     griefers or partisans to withhold a widely desired upgrade with
+     no known problems
 
-    Corallo believes that a well-crafted soft fork using the [BIP9][]
-    versionbits activation mechanism and surrounded with good community
-    engagement fulfills the first four criteria---but not the fifth.
-    Alternatively, a [BIP8][] flag-day soft fork fulfills the fifth
-    criteria but encounters challenges fulfilling the other four
-    criteria.  Corallo also worries that using BIP8 from the start of a
-    soft fork deployment gives the impression that the developers of
-    node software get to decide the rules of the system.
+  Corallo believes that a well-crafted soft fork using the [BIP9][]
+  versionbits activation mechanism and surrounded with good community
+  engagement fulfills the first four criteria---but not the fifth.
+  Alternatively, a [BIP8][] flag-day soft fork fulfills the fifth
+  criteria but encounters challenges fulfilling the other four
+  criteria.  Corallo also worries that using BIP8 from the start of a
+  soft fork deployment gives the impression that the developers of
+  node software get to decide the rules of the system.
 
-    As an alternative to either BIP9 or BIP8 alone, Corallo proposes
-    a three-step process:  use BIP9 to allow a proposal to be
-    activated within a one-year window; pause for a six-month discussion
-    period if the proposal is not activated; and---if it's clear that
-    the community still wants the proposal activated---force activation
-    using a BIP8 flag day set to two years in the future (with faster
-    activation possible using versionbits signaling).  Node software can
-    prepare for this maximum 42-month process by including, even in its
-    initial versions, a configuration option that users can manually enable
-    to enforce the BIP8 flag day if necessary.  If the first 18 months of
-    the activation period passes without activation (but also without
-    any blocking problems being discovered), new releases can enable
-    this option by default for the remaining 24 months of the activation
-    period.
+  As an alternative to either BIP9 or BIP8 alone, Corallo proposes
+  a three-step process:  use BIP9 to allow a proposal to be
+  activated within a one-year window; pause for a six-month discussion
+  period if the proposal is not activated; and---if it's clear that
+  the community still wants the proposal activated---force activation
+  using a BIP8 flag day set to two years in the future (with faster
+  activation possible using versionbits signaling).  Node software can
+  prepare for this maximum 42-month process by including, even in its
+  initial versions, a configuration option that users can manually enable
+  to enforce the BIP8 flag day if necessary.  If the first 18 months of
+  the activation period passes without activation (but also without
+  any blocking problems being discovered), new releases can enable
+  this option by default for the remaining 24 months of the activation
+  period.
 
-    In the responses to the post, [Jorge Timón][timon sf] and [Luke
-    Dashjr][dashjr sf] both proposed that any BIP8-like mechanism use
-    mandatory versionbits signaling leading up to the flag day (similar
-    to how [BIP148][] proposed to activate segwit); Corallo
-    [notes][corallo reply timon] that this conflicts with the third and
-    fourth goals.  Jeremy Rubin provides a [quick analysis][rubin sf] of
-    his previous [spork proposal][spork vid] (see [Newsletter #32][spork
-    summary]) in the context of the five goals.  Anthony Towns provides
-    [lucid commentary][towns sf] on several aspects of Corallo's
-    proposal and Timón's response.
+  In the responses to the post, [Jorge Timón][timon sf] and [Luke
+  Dashjr][dashjr sf] both proposed that any BIP8-like mechanism use
+  mandatory versionbits signaling leading up to the flag day (similar
+  to how [BIP148][] proposed to activate segwit); Corallo
+  [notes][corallo reply timon] that this conflicts with the third and
+  fourth goals.  Jeremy Rubin provides a [quick analysis][rubin sf] of
+  his previous [spork proposal][spork vid] (see [Newsletter #32][spork
+  summary]) in the context of the five goals.  Anthony Towns provides
+  [lucid commentary][towns sf] on several aspects of Corallo's
+  proposal and Timón's response.
 
-    No clear conclusion was reached in the thread and we expect
-    to see continued discussion.
+  No clear conclusion was reached in the thread and we expect
+  to see continued discussion.
 
 ## Notable code and documentation changes
 

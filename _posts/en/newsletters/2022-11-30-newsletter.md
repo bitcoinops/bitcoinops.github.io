@@ -23,62 +23,62 @@ infrastructure software.
   from being able to send payments---a problem called [channel jamming
   attacks][topic channel jamming attacks].
 
-    In LN today, spenders choose a path from their node to the receiving
-    node across multiple channels operated by independent forwarding
-    nodes.  They create a set of trustless instructions that describes
-    where each forwarding node should next relay the payment, encrypting
-    those instructions so that each node receives only the minimum
-    information it needs to do its job.
+  In LN today, spenders choose a path from their node to the receiving
+  node across multiple channels operated by independent forwarding
+  nodes.  They create a set of trustless instructions that describes
+  where each forwarding node should next relay the payment, encrypting
+  those instructions so that each node receives only the minimum
+  information it needs to do its job.
 
-    Riard proposes that each forwarding node should only accept the relay
-    instructions if they include one or more credential tokens that were
-    previously issued by that forwarding node.  The credentials include
-    a [blind signature][] that prevents the forwarding node from
-    directly determining which node was issued the credential
-    (preventing the forwarding node from learning the network identity
-    of the spender).  Each node may issue credentials according to its
-    own policy, although Riard suggests several distribution methods:
+  Riard proposes that each forwarding node should only accept the relay
+  instructions if they include one or more credential tokens that were
+  previously issued by that forwarding node.  The credentials include
+  a [blind signature][] that prevents the forwarding node from
+  directly determining which node was issued the credential
+  (preventing the forwarding node from learning the network identity
+  of the spender).  Each node may issue credentials according to its
+  own policy, although Riard suggests several distribution methods:
 
-    - *Upfront payments:* if Alice's node wants to forward payments
-      through Bob's node, her node first uses LN to buy a credential
-      from Bob.
+  - *Upfront payments:* if Alice's node wants to forward payments
+    through Bob's node, her node first uses LN to buy a credential
+    from Bob.
 
-    - *Previous success:* if a payment that Alice sent through Bob's
-      node is successfully accepted by the ultimate receiver, Bob's node
-      can return a credential token to Alice's node---or even more
-      tokens than were previously used, allowing Alice's node to send
-      additional value through Bob's node in the future.
+  - *Previous success:* if a payment that Alice sent through Bob's
+    node is successfully accepted by the ultimate receiver, Bob's node
+    can return a credential token to Alice's node---or even more
+    tokens than were previously used, allowing Alice's node to send
+    additional value through Bob's node in the future.
 
-    - *UTXO ownership proofs or other alternatives:* although not
-      necessary for Riard's initial proposal, some forwarding nodes may
-      experiment with giving credentials to everyone who proves they own
-      a Bitcoin UTXO, perhaps with modifiers that give older or
-      higher-value UTXOs more credential tokens than newer or
-      lower-value UTXOs.  Any other criteria can be used as each
-      forwarding node chooses for itself how to distribute its
-      credential tokens.
+  - *UTXO ownership proofs or other alternatives:* although not
+    necessary for Riard's initial proposal, some forwarding nodes may
+    experiment with giving credentials to everyone who proves they own
+    a Bitcoin UTXO, perhaps with modifiers that give older or
+    higher-value UTXOs more credential tokens than newer or
+    lower-value UTXOs.  Any other criteria can be used as each
+    forwarding node chooses for itself how to distribute its
+    credential tokens.
 
-    Clara Shikhelman, whose own co-authored proposal partly based on
-    local reputation was described in [Newsletter #226][news226 jam],
-    replied to [ask][shikelman credentials] whether credential tokens
-    were transferable between users and whether that could lead to the
-    creation of a market for tokens.  She also asked how they would work
-    with [blinded paths][topic rv routing] where a spending node
-    wouldn't know the full path to the receiving node.
+  Clara Shikhelman, whose own co-authored proposal partly based on
+  local reputation was described in [Newsletter #226][news226 jam],
+  replied to [ask][shikelman credentials] whether credential tokens
+  were transferable between users and whether that could lead to the
+  creation of a market for tokens.  She also asked how they would work
+  with [blinded paths][topic rv routing] where a spending node
+  wouldn't know the full path to the receiving node.
 
-    Riard [replied][riard double spend] that it would be difficult to
-    redistribute credential tokens and create a market for them because
-    any transfer would require trust.  For example, if Bob's node
-    issues a new credential to Alice, who then tries to sell the
-    credential to Carol, there's no trustless way for Alice to prove she
-    won't try to use the token herself even after Carol has paid her.
+  Riard [replied][riard double spend] that it would be difficult to
+  redistribute credential tokens and create a market for them because
+  any transfer would require trust.  For example, if Bob's node
+  issues a new credential to Alice, who then tries to sell the
+  credential to Carol, there's no trustless way for Alice to prove she
+  won't try to use the token herself even after Carol has paid her.
 
-    For blinded paths, [it appears][harding paths] the receiver can
-    provide any necessary credentials in an encrypted form without
-    introducing a secondary vulnerability.
+  For blinded paths, [it appears][harding paths] the receiver can
+  provide any necessary credentials in an encrypted form without
+  introducing a secondary vulnerability.
 
-    Additional feedback for the proposals was received on its related
-    [pull request][bolts #1043]. {% assign timestamp="00:33" %}
+  Additional feedback for the proposals was received on its related
+  [pull request][bolts #1043]. {% assign timestamp="00:33" %}
 
 ## Releases and release candidates
 

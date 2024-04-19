@@ -1,8 +1,8 @@
 {% comment %}<!--
   Using dump-multisigs from img/posts/2021-07-multisig-fungibility.gnuplot
 
-    for i in `seq 691039 692039` ; do dump-multisigs $i ; done > RESULTS
-    echo $( grep of RESULTS | wc -l ) / $( cat RESULTS | wc -l ) | bc -l
+  for i in `seq 691039 692039` ; do dump-multisigs $i ; done > RESULTS
+  echo $( grep of RESULTS | wc -l ) / $( cat RESULTS | wc -l ) | bc -l
 -->{% endcomment %}
 この記事を書く前に受信した1,000ブロックでは、全トランザクションインプットの11%がマルチシグopcodeを含んでいました。
 このようなトランザクションを作成するユーザーやサービスの多くが、

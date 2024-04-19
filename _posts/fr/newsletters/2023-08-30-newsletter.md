@@ -25,17 +25,17 @@ les versions candidates, et les changements apportés aux principaux logiciels d
   ou des millions de fois, cela pourrait gaspiller les ressources de Bob au point où son nœud LN ne peut plus rien faire---y compris
   effectuer des opérations sensibles au facteur temps nécessaires pour éviter la perte d'argent.
 
-    Dans les tests de Morehouse sur ses propres nœuds, il a pu causer des problèmes importants avec Core Lightning, Eclair, LDK et
-    LND, y compris deux cas qui (selon nous) pourraient probablement entraîner une perte de fonds parmi de nombreux nœuds. La
-    [description complète][morehouse post] de Morehouse renvoie aux PR où le problème a été résolu (ce qui inclut les PR couverts
-    dans les bulletins [#237][news237 dos] et [#240][news240 dos]) et liste les versions LN qui ont résolu la vulnérabilité :
+  Dans les tests de Morehouse sur ses propres nœuds, il a pu causer des problèmes importants avec Core Lightning, Eclair, LDK et
+  LND, y compris deux cas qui (selon nous) pourraient probablement entraîner une perte de fonds parmi de nombreux nœuds. La
+  [description complète][morehouse post] de Morehouse renvoie aux PR où le problème a été résolu (ce qui inclut les PR couverts
+  dans les bulletins [#237][news237 dos] et [#240][news240 dos]) et liste les versions LN qui ont résolu la vulnérabilité :
 
-    - Core Lightning 23.02
-    - Eclair 0.9.0
-    - LDK 0.0.114
-    - LND 0.16.0
+  - Core Lightning 23.02
+  - Eclair 0.9.0
+  - LDK 0.0.114
+  - LND 0.16.0
 
-    Il y a eu des discussions de suivi sur la liste de diffusion et sur [IRC][stateless funding].
+  Il y a eu des discussions de suivi sur la liste de diffusion et sur [IRC][stateless funding].
 
 - **Synthèse de covenants utilisant `TXHASH` et `CSFS` :** Brandon Black [a publié][black mashup] sur la liste de diffusion
   Bitcoin-Dev une proposition pour une version de `OP_TXHASH` (voir [Bulletin #185][news185 txhash]) combinée avec
@@ -45,8 +45,8 @@ les versions candidates, et les changements apportés aux principaux logiciels d
   la motivation pour la créer était de "clarifier notre réflexion sur [CTV et APO] individuellement et ensemble, et potentiellement
   de progresser vers un consensus sur une voie permettant [...] des façons étonnantes d'utiliser le bitcoin à l'avenir".
 
-    La proposition a suscité des discussions sur la liste de diffusion, avec des [révisions supplémentaires][delv mashup] publiées
-    et discutées sur le forum Delving Bitcoin.
+  La proposition a suscité des discussions sur la liste de diffusion, avec des [révisions supplémentaires][delv mashup] publiées
+  et discutées sur le forum Delving Bitcoin.
 
 ## Sélection de Q&R du Bitcoin Stack Exchange
 

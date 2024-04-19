@@ -22,52 +22,52 @@ projets d'infrastructure Bitcoin.
   modifié de politiques de relais de transaction. Toute transaction qui définit
   son paramètre de version à `3` pourra:
 
-    - Etre remplaçable tant qu'elle n'est pas confirmée par une transaction payant
-      un taux plus élevé et des frais totaux plus élevés (l'actuelle principale
-      [RBF][topic rbf] rules)
+  - Etre remplaçable tant qu'elle n'est pas confirmée par une transaction payant
+    un taux plus élevé et des frais totaux plus élevés (l'actuelle principale
+    [RBF][topic rbf] rules)
 
-    - Exiger que tous ses descendants soient également des transactions v3 tant
-    qu'elle reste non confirmée. Les descendants qui ne respectent pas cette règle
-    ne seront pas relayés ou minés par défaut.
+  - Exiger que tous ses descendants soient également des transactions v3 tant
+  qu'elle reste non confirmée. Les descendants qui ne respectent pas cette règle
+  ne seront pas relayés ou minés par défaut.
 
-    - Être rejetée si l'un de ses ascendants v3 non confirmés a déjà d'autres
-      descendants dans le mempool (ou dans un [package][topic package relay]
-      contenant cette transaction)
+  - Être rejetée si l'un de ses ascendants v3 non confirmés a déjà d'autres
+    descendants dans le mempool (ou dans un [package][topic package relay]
+    contenant cette transaction)
 
-    - Doit être de 1 000 vbytes ou moins si l'un de ses ascendants v3 ne sont pas
-      confirmés
+  - Doit être de 1 000 vbytes ou moins si l'un de ses ascendants v3 ne sont pas
+    confirmés
 
-    Les règles de relais proposées s'accompagnent d'une simplification des règles
-      de relais des paquets précédemment proposées. (voir la [Newsletter #167]
-      [news167 packages]).
+  Les règles de relais proposées s'accompagnent d'une simplification des règles
+    de relais des paquets précédemment proposées. (voir la [Newsletter #167]
+    [news167 packages]).
 
-    Ensemble, les règles de relais v3 et de relais de paquets actualisés sont
-    conçues pour permettre aux transactions d'engagement LN de n'inclure
-    que des frais minimaux (ou potentiellement même des frais nuls) et que leur
-    coût réel soit payé par une transaction enfant, tout en empêchant
-    le [pinning][topic transaction pinning]. Presque tous les nœuds LN utilisent
-    déjà un mécanisme de ce type, [anchor outputs][topic anchor outputs], mais
-    la mise à niveau proposée devrait rendre la confirmation des opérations
-    d'engagement plus simple et plus solide.
+  Ensemble, les règles de relais v3 et de relais de paquets actualisés sont
+  conçues pour permettre aux transactions d'engagement LN de n'inclure
+  que des frais minimaux (ou potentiellement même des frais nuls) et que leur
+  coût réel soit payé par une transaction enfant, tout en empêchant
+  le [pinning][topic transaction pinning]. Presque tous les nœuds LN utilisent
+  déjà un mécanisme de ce type, [anchor outputs][topic anchor outputs], mais
+  la mise à niveau proposée devrait rendre la confirmation des opérations
+  d'engagement plus simple et plus solide.
 
-    Greg Sanders [a répondu][sanders tx3] avec deux suggestions:
+  Greg Sanders [a répondu][sanders tx3] avec deux suggestions:
 
-    - *Ephemeral dust:* que toutes les transactions avec paiement d'une valeur zéro
-    (ou autrement *non rentable*) soient exemptées de la [dust policy]
-    [topic uneconomical outputs] si cette transaction fait partie d'un paquet
-    qui dépense la poussière en sortie.
+  - *Ephemeral dust:* que toutes les transactions avec paiement d'une valeur zéro
+  (ou autrement *non rentable*) soient exemptées de la [dust policy]
+  [topic uneconomical outputs] si cette transaction fait partie d'un paquet
+  qui dépense la poussière en sortie.
 
-    - *Standard OP_TRUE:* que les sorties payant une sortie constituée entièrement
-      de `OP_TRUE` soient relayées par défaut. Une telle sortie peut être
-      dépensée par n'importe qui--elle n'a aucune sécurité. Il est donc facile
-      pour l'une ou l'autre des parties d'un canal LN (ou même pour des tiers)
-      de faire payer une transaction qui dépense cette sortie `OP_TRUE`. Aucune
-      donnée n'a besoin d'être mise sur la pile pour dépenser une sortie `OP_TRUE`,
-      ce qui rend sa dépense rentable.
+  - *Standard OP_TRUE:* que les sorties payant une sortie constituée entièrement
+    de `OP_TRUE` soient relayées par défaut. Une telle sortie peut être
+    dépensée par n'importe qui--elle n'a aucune sécurité. Il est donc facile
+    pour l'une ou l'autre des parties d'un canal LN (ou même pour des tiers)
+    de faire payer une transaction qui dépense cette sortie `OP_TRUE`. Aucune
+    donnée n'a besoin d'être mise sur la pile pour dépenser une sortie `OP_TRUE`,
+    ce qui rend sa dépense rentable.
 
-    Aucun de ces éléments ne doit être réalisé en même temps que la mise en œuvre
-    du relais des transactions v3, mais plusieurs personnes ayant répondu au fil
-    de discussion semblaient être en faveur de tous les changements proposés.
+  Aucun de ces éléments ne doit être réalisé en même temps que la mise en œuvre
+  du relais des transactions v3, mais plusieurs personnes ayant répondu au fil
+  de discussion semblaient être en faveur de tous les changements proposés.
 
 - **LN flow control:** Rene Pickhardt [a posté][pickhardt ml valve] à la liste de
   diffusion Lightning-Dev un résumé de sa [recherche récente][pickhardt bitmex valve]
@@ -86,28 +86,28 @@ projets d'infrastructure Bitcoin.
   fournissent plusieurs extraits de code qui peuvent être utilisés pour calculer les
   valeurs `htlc_maximum_msat` appropriées.
 
-    Dans un [autre courriel][pickhardt ratecards], Pickhardt suggère également
-    que l'idée précédente de *fee ratecards* (voir la [newsletter de la semaine dernière]
-    [news219 ratecards]) pourraient plutôt devenir des
-    *maximum amount per-forward ratecards*, où celui qui effectue la dépense se verrait facturer
-    un feerate plus bas pour envoyer de petits paiements et un feerate plus élevé
-    pour envoyer des paiements plus importants. A la différence de la proposition
-    originale de carte de taux, il s'agirait de montants absolus et non relatifs au
-    solde actuel du canal. Anthony Towns [a décrit][towns ratecards]
-    plusieurs défis avec l'idée originale des cartes de taux qui ne seraient pas
-    des problèmes pour le contrôle de flux basé sur l'ajustement de `htlc_maximum_msat`.
+  Dans un [autre courriel][pickhardt ratecards], Pickhardt suggère également
+  que l'idée précédente de *fee ratecards* (voir la [newsletter de la semaine dernière]
+  [news219 ratecards]) pourraient plutôt devenir des
+  *maximum amount per-forward ratecards*, où celui qui effectue la dépense se verrait facturer
+  un feerate plus bas pour envoyer de petits paiements et un feerate plus élevé
+  pour envoyer des paiements plus importants. A la différence de la proposition
+  originale de carte de taux, il s'agirait de montants absolus et non relatifs au
+  solde actuel du canal. Anthony Towns [a décrit][towns ratecards]
+  plusieurs défis avec l'idée originale des cartes de taux qui ne seraient pas
+  des problèmes pour le contrôle de flux basé sur l'ajustement de `htlc_maximum_msat`.
 
-    ZmnSCPxj [a critiqué][zmnscpxj valve] plusieurs aspects de l'idée, y compris
-    le fait que ceux qui effectuent la dépense pourraient toujours envoyer la même quantité de
-    valeur par le biais d'un canal à taux maximum inférieur, ce qui aurait pour
-    conséquence de le déséquilibrer à nouveau, simplement en divisant un paiement
-    global en petites parties supplémentaires. Towns a suggéré que ce problème
-    pourrait être résolu en limitant le taux.
+  ZmnSCPxj [a critiqué][zmnscpxj valve] plusieurs aspects de l'idée, y compris
+  le fait que ceux qui effectuent la dépense pourraient toujours envoyer la même quantité de
+  valeur par le biais d'un canal à taux maximum inférieur, ce qui aurait pour
+  conséquence de le déséquilibrer à nouveau, simplement en divisant un paiement
+  global en petites parties supplémentaires. Towns a suggéré que ce problème
+  pourrait être résolu en limitant le taux.
 
-    La discussion semblait être en cours au moment où ce résumé a été écrit, mais
-    nous nous attendons à ce que plusieurs nouveaux aperçus viennent dans les <!-- skip-duplicate-words-test -->
-    semaines et les mois suivants, alors que les opérateurs de nœuds commencent
-    à expérimenter avec leurs paramètres `htlc_maximum_msat`.
+  La discussion semblait être en cours au moment où ce résumé a été écrit, mais
+  nous nous attendons à ce que plusieurs nouveaux aperçus viennent dans les <!-- skip-duplicate-words-test -->
+  semaines et les mois suivants, alors que les opérateurs de nœuds commencent
+  à expérimenter avec leurs paramètres `htlc_maximum_msat`.
 
 ## Mises à jour et release candidate
 

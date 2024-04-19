@@ -20,103 +20,103 @@ summaries of notable changes to popular Bitcoin infrastructure software.
   subsidy declines, two new threads were started on the Bitcoin-Dev
   mailing list:
 
-    - [Tail emission is not inflationary][todd tail] starts with an argument by
-      Peter Todd that perpetually paying miners with newly created
-      bitcoins will not lead to the number of bitcoins in circulation
-      increasing forever.  Instead, he believes some bitcoins will be lost
-      every year and, eventually, the rate at which bitcoins are lost will
-      converge on the rate at which new bitcoins are produced, resulting in
-      a roughly stable number of coins in circulation.  He also notes
-      that adding a perpetual block subsidy to Bitcoin would be a hard
-      fork.  Quite a few people replied to his post and on a [thread
-      about it][talk tail] on BitcoinTalk; we will only attempt to summarize a
-      few replies we found most notable.
+  - [Tail emission is not inflationary][todd tail] starts with an argument by
+    Peter Todd that perpetually paying miners with newly created
+    bitcoins will not lead to the number of bitcoins in circulation
+    increasing forever.  Instead, he believes some bitcoins will be lost
+    every year and, eventually, the rate at which bitcoins are lost will
+    converge on the rate at which new bitcoins are produced, resulting in
+    a roughly stable number of coins in circulation.  He also notes
+    that adding a perpetual block subsidy to Bitcoin would be a hard
+    fork.  Quite a few people replied to his post and on a [thread
+    about it][talk tail] on BitcoinTalk; we will only attempt to summarize a
+    few replies we found most notable.
 
-        - *Hard fork not required:* Vjudeu [suggests][vjudeu sf] that a soft fork
-          can create new bitcoins by imbuing transaction outputs paying
-          zero satoshis with special meaning.  For example, when a node
-          opting into the fork sees a zero-sat output, it looks at
-          another part of the transaction for the actual value
-          transferred.  This creates two classes of bitcoins, but
-          presumably the soft fork would provide a mechanism to convert
-          legacy-bitcoins to modified-bitcoins.  Vjudeu notes the same
-          mechanism could also be used for privacy-enhancing bitcoin
-          amount blinding (e.g. using [confidential transactions][]).
+    - *Hard fork not required:* Vjudeu [suggests][vjudeu sf] that a soft fork
+      can create new bitcoins by imbuing transaction outputs paying
+      zero satoshis with special meaning.  For example, when a node
+      opting into the fork sees a zero-sat output, it looks at
+      another part of the transaction for the actual value
+      transferred.  This creates two classes of bitcoins, but
+      presumably the soft fork would provide a mechanism to convert
+      legacy-bitcoins to modified-bitcoins.  Vjudeu notes the same
+      mechanism could also be used for privacy-enhancing bitcoin
+      amount blinding (e.g. using [confidential transactions][]).
 
-        - *No reason to believe perpetual issuance is sufficient*:
-          Anthony Towns [posts][towns pi] to the mailing list and Gregory
-          Maxwell [posts][maxwell pi] to BitcoinTalk that there's no reason to
-          believe that paying miners an amount of coins equal to the
-          average rate of lost coins will provide sufficient PoW
-          security, and that there are cases where it could overpay for
-          PoW security.  If a perpetual issuance can't guarantee security
-          and if it has a significant likelihood of producing additional
-          problems, it seems preferable to stick with a finite subsidy
-          that---while it also can't guarantee security---at least it
-          doesn't produce additional problems and is already
-          accepted by all Bitcoiners (implicitly or explicitly).
+    - *No reason to believe perpetual issuance is sufficient*:
+      Anthony Towns [posts][towns pi] to the mailing list and Gregory
+      Maxwell [posts][maxwell pi] to BitcoinTalk that there's no reason to
+      believe that paying miners an amount of coins equal to the
+      average rate of lost coins will provide sufficient PoW
+      security, and that there are cases where it could overpay for
+      PoW security.  If a perpetual issuance can't guarantee security
+      and if it has a significant likelihood of producing additional
+      problems, it seems preferable to stick with a finite subsidy
+      that---while it also can't guarantee security---at least it
+      doesn't produce additional problems and is already
+      accepted by all Bitcoiners (implicitly or explicitly).
 
-            Maxwell further notes that Bitcoin miners on average collect
-            significantly more value through just transaction fees than
-            many altcoins pay their miners through the combination of
-            subsidies, fees, and other incentives.  Those altcoins are not
-            suffering fundamental PoW attacks, implying that it *might*
-            be the case that enough value is being paid through
-            transaction fees alone to keep Bitcoin secure.  In short,
-            Bitcoin may already be past the point where it needs its
-            subsidy to obtain sufficient PoW security.  (Though the
-            subsidy also provides other benefits at present, as
-            discussed in the summary below for Bram Cohen's thread.)
+      Maxwell further notes that Bitcoin miners on average collect
+      significantly more value through just transaction fees than
+      many altcoins pay their miners through the combination of
+      subsidies, fees, and other incentives.  Those altcoins are not
+      suffering fundamental PoW attacks, implying that it *might*
+      be the case that enough value is being paid through
+      transaction fees alone to keep Bitcoin secure.  In short,
+      Bitcoin may already be past the point where it needs its
+      subsidy to obtain sufficient PoW security.  (Though the
+      subsidy also provides other benefits at present, as
+      discussed in the summary below for Bram Cohen's thread.)
 
-            Towns points out that Peter Todd's results depend on a
-            constant average rate of bitcoins being lost each year, but
-            this conflicts with what Towns thinks should be a
-            system-wide goal to minimize lost bitcoins.  Relatedly,
-            Maxwell describes how coin loss could be almost entirely
-            eliminated by allowing anyone to automatically opt-in to
-            using a script that would donate any of their coins which
-            hadn't moved for, say, 120 years---well past the expected
-            lifetime of the original owner and their heirs.
+      Towns points out that Peter Todd's results depend on a
+      constant average rate of bitcoins being lost each year, but
+      this conflicts with what Towns thinks should be a
+      system-wide goal to minimize lost bitcoins.  Relatedly,
+      Maxwell describes how coin loss could be almost entirely
+      eliminated by allowing anyone to automatically opt-in to
+      using a script that would donate any of their coins which
+      hadn't moved for, say, 120 years---well past the expected
+      lifetime of the original owner and their heirs.
 
-        - *Censorship resistance:* developer ZmnSCPxj [expanded][zmnscpxj cr] an
-          [argument][voskuil cr] by Eric Voskuil that transaction fees enhance
-          Bitcoin's censorship resistance.  For example, if 90% of the
-          block reward comes from subsidy and 10% from transaction fees,
-          then the most revenue a censoring miner can lose directly is
-          10%.  But if 90% comes from fees and 10% from subsidy, the
-          miner could directly lose up to 90%---a much stronger
-          incentive to avoid censorship.
+    - *Censorship resistance:* developer ZmnSCPxj [expanded][zmnscpxj cr] an
+      [argument][voskuil cr] by Eric Voskuil that transaction fees enhance
+      Bitcoin's censorship resistance.  For example, if 90% of the
+      block reward comes from subsidy and 10% from transaction fees,
+      then the most revenue a censoring miner can lose directly is
+      10%.  But if 90% comes from fees and 10% from subsidy, the
+      miner could directly lose up to 90%---a much stronger
+      incentive to avoid censorship.
 
-            Peter Todd [countered][todd cr] with the opinion that a perpetual
-            issuance would raise more money for PoW security than
-            "piddling transaction fees", and that a higher block reward
-            would increase the cost an attacker would have to pay miners
-            to censor transactions.
+      Peter Todd [countered][todd cr] with the opinion that a perpetual
+      issuance would raise more money for PoW security than
+      "piddling transaction fees", and that a higher block reward
+      would increase the cost an attacker would have to pay miners
+      to censor transactions.
 
-    - [Fee sniping][cohen fs]: Bram Cohen posted about the problem of [fee sniping][topic fee sniping]
-      and suggests keeping transaction fees at about 10% of total block
-      rewards (the remainder being subsidy) as a possible solution.  He
-      briefly mentions some other possible solutions, but others
-      provided additional suggestions in more detail.
+  - [Fee sniping][cohen fs]: Bram Cohen posted about the problem of [fee sniping][topic fee sniping]
+    and suggests keeping transaction fees at about 10% of total block
+    rewards (the remainder being subsidy) as a possible solution.  He
+    briefly mentions some other possible solutions, but others
+    provided additional suggestions in more detail.
 
-        - *Paying fees forward:* Russell O'Connor [put forward][oconnor forward fees] an old
-          idea that miners could calculate the maximum amount of fees
-          they could collect from the top transactions in their mempool
-          without incentivizing fee sniping.  They could then offer any
-          additional fees they collected as a bribe to the next miner
-          for building the next block cooperatively rather than
-          competitively.  Discussion participants went through
-          [several][oconnor ff2] iterations of [this][towns ff] idea but Peter Todd
-          [noted][todd centralizing] that a fundamental concern with this technique is
-          that smaller miners would need to pay higher bribes than
-          larger miners, creating economies of scale that could further
-          centralize Bitcoin mining.
+    - *Paying fees forward:* Russell O'Connor [put forward][oconnor forward fees] an old
+      idea that miners could calculate the maximum amount of fees
+      they could collect from the top transactions in their mempool
+      without incentivizing fee sniping.  They could then offer any
+      additional fees they collected as a bribe to the next miner
+      for building the next block cooperatively rather than
+      competitively.  Discussion participants went through
+      [several][oconnor ff2] iterations of [this][towns ff] idea but Peter Todd
+      [noted][todd centralizing] that a fundamental concern with this technique is
+      that smaller miners would need to pay higher bribes than
+      larger miners, creating economies of scale that could further
+      centralize Bitcoin mining.
 
-        - *Improving market design:* Anthony Towns [suggests][towns market design] that
-          improvements in Bitcoin software and user processes could
-          significantly even out fees, making fee sniping less likely.
-          But he further notes that it doesn't seem like a major
-          priority today just for "refuting some FUD".
+    - *Improving market design:* Anthony Towns [suggests][towns market design] that
+      improvements in Bitcoin software and user processes could
+      significantly even out fees, making fee sniping less likely.
+      But he further notes that it doesn't seem like a major
+      priority today just for "refuting some FUD".
 
 ## Changes to services and client software
 

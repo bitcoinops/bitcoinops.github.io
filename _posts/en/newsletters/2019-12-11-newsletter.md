@@ -32,29 +32,29 @@ projects.
   channels is being closed using an older state; this allows their
   clients to go offline without risking a loss of funds.
 
-    Conner Fromknecht started a [thread][fromknecht eltoo tower] asking
-    what data watchtowers would need to store for eltoo and how that
-    would affect the scalability of watchtowers or the privacy of their
-    clients.  One option would be for a watchtower to store only the
-    latest update transaction.  This is highly scalabale because it only
-    requires a constant amount of storage per channel, and it's secure
-    because only the final settlement transaction can spend from the
-    final update transaction.  The offline node can broadcast the
-    settlement transaction whenever it next comes online, even if that
-    is months or years later.
+  Conner Fromknecht started a [thread][fromknecht eltoo tower] asking
+  what data watchtowers would need to store for eltoo and how that
+  would affect the scalability of watchtowers or the privacy of their
+  clients.  One option would be for a watchtower to store only the
+  latest update transaction.  This is highly scalabale because it only
+  requires a constant amount of storage per channel, and it's secure
+  because only the final settlement transaction can spend from the
+  final update transaction.  The offline node can broadcast the
+  settlement transaction whenever it next comes online, even if that
+  is months or years later.
 
-    An alternative mechanism discussed would be for the watchtower to also store the
-    settlement transaction.  This could provide
-    additional safety in case the node lost all data while it was
-    offline by sending funds to the node's desired withdrawal address
-    (such as an address in its cold wallet).  However, it would
-    increase the storage requirements for watchtowers and, worse, the
-    obvious way to implement it would significantly reduce user privacy
-    by giving watchtowers enough data to learn details about previous
-    payments made in the user's payment channels.  Some participants in
-    the thread discussed ways to obtain the safety benefits while
-    mitigating the privacy loss, although no clear conclusion was
-    reached in the thread as of this writing.
+  An alternative mechanism discussed would be for the watchtower to also store the
+  settlement transaction.  This could provide
+  additional safety in case the node lost all data while it was
+  offline by sending funds to the node's desired withdrawal address
+  (such as an address in its cold wallet).  However, it would
+  increase the storage requirements for watchtowers and, worse, the
+  obvious way to implement it would significantly reduce user privacy
+  by giving watchtowers enough data to learn details about previous
+  payments made in the user's payment channels.  Some participants in
+  the thread discussed ways to obtain the safety benefits while
+  mitigating the privacy loss, although no clear conclusion was
+  reached in the thread as of this writing.
 
 ## Notable code and documentation changes
 

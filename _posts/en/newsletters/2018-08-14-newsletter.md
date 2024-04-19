@@ -65,18 +65,17 @@ source: [Optech dashboard][periodic txn data]*
   cryptocurrency maintainers but possibly also useful for organizations
   using cryptocurrencies.
 
-
-    Optech encourages our member companies (and any others reading this
-    newsletter) to consider how easy it would be for an anonymous
-    researcher to report a critical bug to your staff.  An easy way to
-    test your process could be tasking one of your team members to
-    install Tor and actually attempt to securely submit a report using
-    no information about your operation other than what they can easily
-    find on your website.  If you provide bug bounties, you may also
-    wish to make clear that you will provide the same levels of reward
-    to anyone who initially reports a PGP-signed disclosure, subject to
-    you later collecting any information from them you may need for legal
-    compliance.
+  Optech encourages our member companies (and any others reading this
+  newsletter) to consider how easy it would be for an anonymous
+  researcher to report a critical bug to your staff.  An easy way to
+  test your process could be tasking one of your team members to
+  install Tor and actually attempt to securely submit a report using
+  no information about your operation other than what they can easily
+  find on your website.  If you provide bug bounties, you may also
+  wish to make clear that you will provide the same levels of reward
+  to anyone who initially reports a PGP-signed disclosure, subject to
+  you later collecting any information from them you may need for legal
+  compliance.
 
 - **Pay-to-End-Point (P2EP) idea proposed:** blog posts by [Adam
   Ficsor][nopara73 p2ep] (nopara73) of zkSNACKs and [Matthew
@@ -93,11 +92,11 @@ source: [Optech dashboard][periodic txn data]*
   the spender, or (if P2EP is widely used) just making block chain
   analysis less reliable in general.
 
-    If discussions continue positively and a specific proposal is agreed
-    upon, several privacy focused wallets are considering adding support
-    for P2EP spending and [BTCPay
-    Server](https://github.com/btcpayserver/btcpayserver) is considering
-    adding support for P2EP receiving.
+  If discussions continue positively and a specific proposal is agreed
+  upon, several privacy focused wallets are considering adding support
+  for P2EP spending and [BTCPay
+  Server](https://github.com/btcpayserver/btcpayserver) is considering
+  adding support for P2EP receiving.
 
 - **Bitcoin Core wallet to begin only creating low-R signatures:**
   the DER format used to encode Bitcoin signatures
@@ -106,24 +105,24 @@ source: [Optech dashboard][periodic txn data]*
   the elliptical curve used for Bitcoin.  The R value is randomly
   derived, so half of all signatures have this extra byte.
 
-    Merged this week, Bitcoin Core PR [#13666][Bitcoin Core #13666] generates multiple signatures for
-    each transaction (if necessary) using an incremental nonce until a
-    signature is found that has a low-R value that doesn't require this
-    extra byte.  By doing so, Bitcoin Core transactions will save one
-    byte per every two signatures (on average).  If all wallets did
-    this, it could save up to several thousand bytes (or up to a couple
-    thousand vbytes) per typical full block, increasing block chain
-    capacity by up to a few thousand transactions a day.  The cost is
-    that it will take Bitcoin Core twice as long to generate an average
-    signature and that it reduces the entropy (randomness) of the
-    generated signatures by 1 bit, neither of which is significant.  It
-    may also make transactions created by Bitcoin Core somewhat easier
-    to identify if no other wallets adopt this change.
+  Merged this week, Bitcoin Core PR [#13666][Bitcoin Core #13666] generates multiple signatures for
+  each transaction (if necessary) using an incremental nonce until a
+  signature is found that has a low-R value that doesn't require this
+  extra byte.  By doing so, Bitcoin Core transactions will save one
+  byte per every two signatures (on average).  If all wallets did
+  this, it could save up to several thousand bytes (or up to a couple
+  thousand vbytes) per typical full block, increasing block chain
+  capacity by up to a few thousand transactions a day.  The cost is
+  that it will take Bitcoin Core twice as long to generate an average
+  signature and that it reduces the entropy (randomness) of the
+  generated signatures by 1 bit, neither of which is significant.  It
+  may also make transactions created by Bitcoin Core somewhat easier
+  to identify if no other wallets adopt this change.
 
-    Note that this change does not affect other software in any way
-    (except for other wallets being able to use the extra block chain
-    capacity).  It's purely a feature built into the Bitcoin Core wallet
-    and not something that will be enforced by the protocol.
+  Note that this change does not affect other software in any way
+  (except for other wallets being able to use the extra block chain
+  capacity).  It's purely a feature built into the Bitcoin Core wallet
+  and not something that will be enforced by the protocol.
 
 - **Lowering minimum relay fees in two steps:** as mentioned in
   [Newsletter #3][news3 lower relay], Bitcoin Core developers are
@@ -133,13 +132,13 @@ source: [Optech dashboard][periodic txn data]*
   same schedule---evaluating and testing the change has turned out to
   be harder than one might expect for just changing a few variables.
 
-    The currently-discussed plan is to lower the default fee for relay
-    nodes and miners first, wait to see if it receives sufficient
-    adoption for what are currently sub-default fee transactions to
-    get mined, and then lower the minimum fee the wallet uses in a later
-    release.  We will post future updates in this newsletter about how
-    your organization can help use and encourage the adoption of lower
-    minimum relay fees.
+  The currently-discussed plan is to lower the default fee for relay
+  nodes and miners first, wait to see if it receives sufficient
+  adoption for what are currently sub-default fee transactions to
+  get mined, and then lower the minimum fee the wallet uses in a later
+  release.  We will post future updates in this newsletter about how
+  your organization can help use and encourage the adoption of lower
+  minimum relay fees.
 
 - **P2P protocol change to restrict locators:** the [getblocks][p2p
   getblocks] and [getheaders][p2p getheaders] messages allow a node to
@@ -148,22 +147,22 @@ source: [Optech dashboard][periodic txn data]*
   to find the last block the two nodes have in common and sends
   information about subsequent blocks.
 
-    According to an [email][bd locators] posted to the bitcoin-dev
-    mailing list by Gregory Maxwell, Bitcoin Talk user Coinr8d was
-    concerned that the requesting node could send up to 32 MiB of block
-    hashes to the receiving node, causing the receiving node to spend a
-    lot of I/O looking for blocks it didn't have.  However, Maxwell's
-    tests didn't find this to be a significant problem.  Still, Maxwell
-    proposed limiting the number of allowed locators in these messages.
-    Libbitcoin developer Eric Voskuil said his software was already
-    enforcing a limit and that he was aware of a program (BitcoinJ) that
-    slightly exceeded the limit proposed by Maxwell.
+  According to an [email][bd locators] posted to the bitcoin-dev
+  mailing list by Gregory Maxwell, Bitcoin Talk user Coinr8d was
+  concerned that the requesting node could send up to 32 MiB of block
+  hashes to the receiving node, causing the receiving node to spend a
+  lot of I/O looking for blocks it didn't have.  However, Maxwell's
+  tests didn't find this to be a significant problem.  Still, Maxwell
+  proposed limiting the number of allowed locators in these messages.
+  Libbitcoin developer Eric Voskuil said his software was already
+  enforcing a limit and that he was aware of a program (BitcoinJ) that
+  slightly exceeded the limit proposed by Maxwell.
 
-    The subsequently merged PR [Bitcoin Core #13907][] by Maxwell set
-    the limit to equal to the maximum requested by BitcoinJ.  If you are
-    aware of software requesting more than 101 elements using the
-    `getblocks` or `getheaders` P2P messages, please post to the
-    bitcoin-dev mailing list or contact someone from Optech.
+  The subsequently merged PR [Bitcoin Core #13907][] by Maxwell set
+  the limit to equal to the maximum requested by BitcoinJ.  If you are
+  aware of software requesting more than 101 elements using the
+  `getblocks` or `getheaders` P2P messages, please post to the
+  bitcoin-dev mailing list or contact someone from Optech.
 
 - **Schnorr BIP discussion:** a [discussion][schnorr discuss] between
   experts about the algorithm for generating Schnorr signatures last

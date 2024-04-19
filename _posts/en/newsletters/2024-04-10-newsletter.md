@@ -38,23 +38,23 @@ popular Bitcoin infrastructure software.
   existing BIPs.  Several problems with the current process mentioned by
   Ruffing and others included:
 
-    - *Editorial evaluation and discretion:* how much effort should BIP
-      editors be required to expend on ensuring new BIPs are high
-      quality and focused on Bitcoin?  Separately, how much discretion
-      should they have in being able to reject new BIPs?  Ruffing and
-      several others mentioned that they'd prefer minimizing editorial
-      requirements and privileges, perhaps depending on BIP editors
-      only to prevent systemic abuse (e.g. mass spamming).  Of course,
-      BIP editors---like any other community members---would be able to
-      voluntarily suggest improvements to any BIP proposals they found
-      interesting.
+  - *Editorial evaluation and discretion:* how much effort should BIP
+    editors be required to expend on ensuring new BIPs are high
+    quality and focused on Bitcoin?  Separately, how much discretion
+    should they have in being able to reject new BIPs?  Ruffing and
+    several others mentioned that they'd prefer minimizing editorial
+    requirements and privileges, perhaps depending on BIP editors
+    only to prevent systemic abuse (e.g. mass spamming).  Of course,
+    BIP editors---like any other community members---would be able to
+    voluntarily suggest improvements to any BIP proposals they found
+    interesting.
 
-    - *Licensing:* some allowed licenses for BIPs are designed for
-      software and may not make sense for documentation.
+  - *Licensing:* some allowed licenses for BIPs are designed for
+    software and may not make sense for documentation.
 
-    - *Comments:* as a change from [BIP1][], BIP2 attempted to provide a
-      place for community feedback on each BIP.  This has not been
-      widely used and the results have been controversial.
+  - *Comments:* as a change from [BIP1][], BIP2 attempted to provide a
+    place for community feedback on each BIP.  This has not been
+    widely used and the results have been controversial.
 
   The idea of updating BIP2 was still being discussed at the time of
   writing.

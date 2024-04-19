@@ -32,64 +32,64 @@ Bitcoin les plus répandus.
 - **Forks logiciels de Bitcoin Core:** Le mois dernier, deux ensembles
   de correctifs ont été publiés pour compléter Bitcoin Core :
 
-    - *Bitcoin Inquisition :* Anthony Towns a [annoncé][towns bci] à
-      la liste de diffusion Bitcoin-Dev une version de [Bitcoin Inquisition][],
-      un fork logiciel de Bitcoin Core conçu pour être utilisé sur le [signet][topic signet]
-      par défaut pour tester les soft forks proposés et d'autres changements
-      de protocole importants. Cette version contient le support des propositions
-      [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] et [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
-      Le courriel de Towns comprend également des informations supplémentaires
-      qui seront utiles à toute personne participant aux tests de signet.
+  - *Bitcoin Inquisition :* Anthony Towns a [annoncé][towns bci] à
+    la liste de diffusion Bitcoin-Dev une version de [Bitcoin Inquisition][],
+    un fork logiciel de Bitcoin Core conçu pour être utilisé sur le [signet][topic signet]
+    par défaut pour tester les soft forks proposés et d'autres changements
+    de protocole importants. Cette version contient le support des propositions
+    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] et [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
+    Le courriel de Towns comprend également des informations supplémentaires
+    qui seront utiles à toute personne participant aux tests de signet.
 
-    - *Noeud d'appairage Full-RBF :* Peter Todd [a annoncé][todd rbf node]
-      un patch sur Bitcoin Core 24.0.1 qui active un [bit de service full-RBF][]
-      lorsqu'il annonce son adresse réseau à d'autres nœuds, mais seulement
-      si le nœud est configuré avec `mempoolfullrbf` activé. Les nœuds qui
-      exécutent le correctif se connectent également à un maximum de quatre
-      pairs supplémentaires qui avaient annoncé qu'ils prenaient en charge
-      full-RBF. Peter Todd note que Bitcoin Knots, une autre implémentation
-      de nœuds complets, annonce également le bit de service, bien qu'il ne
-      contienne pas de code pour se connecter spécifiquement à des nœuds
-      annonçant le support de full-RBF. Le correctif est basé sur le PR [#25600]
-      de Bitcoin Core [bitcoin core #25600].
+  - *Noeud d'appairage Full-RBF :* Peter Todd [a annoncé][todd rbf node]
+    un patch sur Bitcoin Core 24.0.1 qui active un [bit de service full-RBF][]
+    lorsqu'il annonce son adresse réseau à d'autres nœuds, mais seulement
+    si le nœud est configuré avec `mempoolfullrbf` activé. Les nœuds qui
+    exécutent le correctif se connectent également à un maximum de quatre
+    pairs supplémentaires qui avaient annoncé qu'ils prenaient en charge
+    full-RBF. Peter Todd note que Bitcoin Knots, une autre implémentation
+    de nœuds complets, annonce également le bit de service, bien qu'il ne
+    contienne pas de code pour se connecter spécifiquement à des nœuds
+    annonçant le support de full-RBF. Le correctif est basé sur le PR [#25600]
+    de Bitcoin Core [bitcoin core #25600].
 
 - **Suite de la discussion autour de RBF :** Dans la discussion en cours
   sur l'activation de [full-RBF][topic rbf] sur le réseau principal,
   plusieurs discussions parallèles ont eu lieu le mois dernier sur la
   liste de diffusion :
 
-    - *Noeuds Full-RBF :* Peter Todd a sondé les nœuds complets qui
-      annonçaient qu'ils exécutaient Bitcoin Core 24.x et acceptaient
-      les connexions entrantes sur une adresse IPv4.  Il a [constaté][todd probe]
-      qu'environ 17 % d'entre eux relayaient un remplacement complet
-      de RBF : une transaction qui remplaçait une transaction qui ne
-      contenait pas le signal [BIP125][]. Cela suggère que ces noeuds
-      fonctionnaient avec l'option de configuration `mempoolfullrbf`
-      définie sur `true`, même si l'option est définie par défaut
-      sur `false`.
+  - *Noeuds Full-RBF :* Peter Todd a sondé les nœuds complets qui
+    annonçaient qu'ils exécutaient Bitcoin Core 24.x et acceptaient
+    les connexions entrantes sur une adresse IPv4.  Il a [constaté][todd probe]
+    qu'environ 17 % d'entre eux relayaient un remplacement complet
+    de RBF : une transaction qui remplaçait une transaction qui ne
+    contenait pas le signal [BIP125][]. Cela suggère que ces noeuds
+    fonctionnaient avec l'option de configuration `mempoolfullrbf`
+    définie sur `true`, même si l'option est définie par défaut
+    sur `false`.
 
-    - *Réexamen du RBF-FSS:*  Daniel Lipshitz [a posté][lipshitz fss]
-      sur la liste de diffusion Bitcoin-Dev une idée pour un type de
-      remplacement de transaction appelé First Seen Safe (FSS) où le
-      remplacement paierait aux sorties originales au moins les mêmes
-      montants que la transaction originale, assurant que le mécanisme
-      de remplacement ne pourrait pas être utilisé pour voler le récepteur
-      de la transaction originale. Yuval Kogman a [répondu][kogman fss]
-      avec un lien vers une [version antérieure][rbf-fss] de la même idée
-      postée en 2015 par Peter Todd. Dans une réponse [ultérieure][todd fss],
-      Todd a décrit plusieurs façons dont l'idée est beaucoup moins
-      préférable que l'opt-in ou le RBF complet.
+  - *Réexamen du RBF-FSS:*  Daniel Lipshitz [a posté][lipshitz fss]
+    sur la liste de diffusion Bitcoin-Dev une idée pour un type de
+    remplacement de transaction appelé First Seen Safe (FSS) où le
+    remplacement paierait aux sorties originales au moins les mêmes
+    montants que la transaction originale, assurant que le mécanisme
+    de remplacement ne pourrait pas être utilisé pour voler le récepteur
+    de la transaction originale. Yuval Kogman a [répondu][kogman fss]
+    avec un lien vers une [version antérieure][rbf-fss] de la même idée
+    postée en 2015 par Peter Todd. Dans une réponse [ultérieure][todd fss],
+    Todd a décrit plusieurs façons dont l'idée est beaucoup moins
+    préférable que l'opt-in ou le RBF complet.
 
-    - *Motivation du Full-RBF :* Anthony Towns [a répondu][towns rbfm] à
-      un fil de discussion sur la motivation de divers groupes à effectuer
-      des full-RBF. Towns analyse ce que la rationalité économique
-      signifie---et ne signifie pas---dans le contexte de la sélection des
-      transactions des mineurs. Les mineurs optimisant leurs profits à très
-      court terme préféreraient naturellement le full-RBF. Cependant, Towns
-      note que les mineurs qui ont fait un investissement à long terme dans
-      l'équipement minier pourraient plutôt préférer optimiser les revenus
-      des frais sur plusieurs blocs, et cela pourrait ne pas toujours favoriser
-      le full-RBF. Il suggère trois scénarios possibles à considérer.
+  - *Motivation du Full-RBF :* Anthony Towns [a répondu][towns rbfm] à
+    un fil de discussion sur la motivation de divers groupes à effectuer
+    des full-RBF. Towns analyse ce que la rationalité économique
+    signifie---et ne signifie pas---dans le contexte de la sélection des
+    transactions des mineurs. Les mineurs optimisant leurs profits à très
+    court terme préféreraient naturellement le full-RBF. Cependant, Towns
+    note que les mineurs qui ont fait un investissement à long terme dans
+    l'équipement minier pourraient plutôt préférer optimiser les revenus
+    des frais sur plusieurs blocs, et cela pourrait ne pas toujours favoriser
+    le full-RBF. Il suggère trois scénarios possibles à considérer.
 
 ## Mises à jour et version candidate
 
