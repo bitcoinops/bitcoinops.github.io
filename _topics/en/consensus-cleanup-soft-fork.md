@@ -44,6 +44,9 @@ optech_mentions:
   - title: "Renewed discussion of consensus cleanup soft fork"
     url: /en/newsletters/2024/04/03/#revisiting-consensus-cleanup
 
+  - title: "Question: where exactly is the 'off-by-one' difficulty bug and how does it relate to time warp?"
+    url: /en/newsletters/2024/04/24/#where-exactly-is-the-off-by-one-difficulty-bug
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
