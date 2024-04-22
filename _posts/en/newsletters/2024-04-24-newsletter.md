@@ -137,7 +137,36 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Where exactly is the "off-by-one" difficulty bug?]({{bse}}20597)
+  Antoine Poinsot explains the off-by-one error in Bitcoin's difficulty retargeting
+  calculation that enables the [time warp attack][topic time warp] which the
+  [consensus cleanup][topic consensus cleanup] proposal aims to address (see
+  [Newsletter #296][news296 cc]).
+
+- [How is P2TR different than P2PKH using opcodes from a developer perspective?]({{bse}}122548)
+  Murch concludes that the example Bitcoin Script provided as a P2PKH output
+  script would be non-standard, more expensive than P2TR, but consensus valid.
+
+- [Are replacement transactions larger in size than their predecessors and than non-RBF transactions?]({{bse}}122473)
+  Vojtěch Strnad notes that [RBF][topic rbf]-signaling transactions are the same
+  size as non-signaling transactions and gives scenarios of when replacement
+  transactions could be either the same size, larger, or smaller than the
+  original transaction being replaced.
+
+- [Are Bitcoin signatures still vulnerable to nonce reuse?]({{bse}}122621)
+  Pieter Wuille confirms that both the ECDSA and [schnorr][topic schnorr
+  signatures] signature schemes, including their [multisignature
+  variants][topic multisignature], are vulnerable to [nonce reuse][taproot nonces].
+
+- [How do miners manually add transactions to a block template?]({{bse}}122725)
+  Ava Chow outlines different approaches that a miner could use to include
+  transactions in a block that wouldn't otherwise be included in Bitcoin Core's
+  `getblocktemplate`:
+
+  - use `sendrawtransaction` to include the transaction in the miner's mempool
+    and then adjust the transaction's [perceived absolute
+    fee][prioritisetransaction fee_delta] using `prioritisetransaction`
+  - use a modified `getblocktemplate` implementation or separate block-building software
 
 ## Releases and release candidates
 
@@ -216,3 +245,6 @@ repo]._
 [news296 bips]: /en/newsletters/2024/04/03/#choosing-new-bip-editors
 [news297 bips]: /en/newsletters/2024/04/10/#updating-bip2
 [LND v0.17.5-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.5-beta
+[news296 cc]: /en/newsletters/2024/04/03/#revisiting-consensus-cleanup
+[prioritisetransaction fee_delta]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html#argument-3-fee-delta
+[taproot nonces]: /en/preparing-for-taproot/#multisignature-nonces
