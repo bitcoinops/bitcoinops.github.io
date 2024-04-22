@@ -183,6 +183,9 @@ optech_mentions:
   - title: "Analysis of how cluster mempool would've affected RBF in 2023"
     url: /en/newsletters/2024/04/17/#rbf-differences-were-negligible
 
+  - title: "Question about the size of transactions that opt-in to RBF, opt-out of RBF, and replacements"
+    url: /en/newsletters/2024/04/24/#are-replacement-transactions-larger-in-size-than-their-predecessors-and-than-non-rbf-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
