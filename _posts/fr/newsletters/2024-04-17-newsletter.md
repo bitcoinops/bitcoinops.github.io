@@ -162,12 +162,9 @@ repo]._
 {% include linkers/issues.md v=2 issues="2704,5421" %}
 [Bitcoin Core 27.0]: https://bitcoincore.org/bin/bitcoin-core-27.0/
 [feerate diagram]: https://delvingbitcoin.org/t/mempool-incentive-compatibility/553/1
-[rbf doc]:
-https://github.com/bitcoin/bitcoin/blob/0de63b8b46eff5cda85b4950062703324ba65a80/doc/policy/mempool-replacements.md
-[daftuar cluster]:
-https://delvingbitcoin.org/t/research-into-the-effects-of-a-cluster-size-limited-mempool-in-2023/794
-[bcc27 rn]:
-https://github.com/bitcoin/bitcoin/blob/c7567d9223a927a88173ff04eeb4f54a5c02b43d/doc/release-notes/release-notes-27.0.md
+[rbf doc]: https://github.com/bitcoin/bitcoin/blob/0de63b8b46eff5cda85b4950062703324ba65a80/doc/policy/mempool-replacements.md
+[daftuar cluster]: https://delvingbitcoin.org/t/research-into-the-effects-of-a-cluster-size-limited-mempool-in-2023/794
+[bcc27 rn]: https://github.com/bitcoin/bitcoin/blob/c7567d9223a927a88173ff04eeb4f54a5c02b43d/doc/release-notes/release-notes-27.0.md
 [news288 libconsensus]: /fr/newsletters/2024/02/07/#bitcoin-core-29189
 [news297 libconsensus]: /fr/newsletters/2024/04/10/#bitcoin-core-29648
 [news288 v2 p2p]: /fr/newsletters/2024/02/07/#bitcoin-core-29347
