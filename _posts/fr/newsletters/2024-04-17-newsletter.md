@@ -19,33 +19,33 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Suhas Daftuar a [publié][daftuar cluster] sur Delving Bitcoin qu'il avait enregistré chaque transaction
   que son nœud avait reçue en 2023 et les a maintenant exécutées via une version de développement de Bitcoin Core
   avec le [cluster mempool][topic cluster mempool] activé pour quantifier les différences entre la version existante
-  et la version de développement. Quelques-unes de ses conclusions incluent :
+  et la version de développement. Voilà quelques-unes de ses conclusions :
 
    - *Le nœud cluster mempool a accepté 0,01 % de transactions en plus :*
-    "En 2023, les limites d'ancêtres/descendants du nœud de base ont causé le rejet de plus de 46k tx à un moment donné. [...]
+    "En 2023, les limites d'ascendants/descendants du nœud de base ont causé le rejet de plus de 46k tx à un moment donné. [...]
     Seulement ~14k transactions ont été rejetées en raison d'une limite de taille de cluster atteinte."
     Environ 10k des transactions rejetées initialement par le nœud cluster mempool (70 % des 14k rejetées)
     auraient été acceptées plus tard si elles avaient été rediffusées après la confirmation de certains
-    de leurs ancêtres, ce qui est un comportement de portefeuille attendu.
+    de leurs ascendants, ce qui est un comportement de portefeuille attendu.
 
   - *Les différences RBF étaient négligeables :* "Les règles RBF appliquées dans les deux
-    simulations sont différentes, mais cela s'est avéré avoir un
+    simulations sont différentes, mais cela a eu un
     effet négligeable sur les nombres d'acceptation globaux ici." Voir
     ci-dessous pour plus de détails.
 
 - *Le mempool en cluster était tout aussi bon pour les mineurs que la sélection de transactions
     traditionnelle :*
-    Daftuar a noté qu'il est actuellement le cas que presque chaque
-    transaction finit par être incluse dans un bloc éventuellement, donc la sélection de transactions de
-    Bitcoin Core actuelle et la sélection de transactions du mempool en cluster captureraient en fait
-    environ la même quantité de frais.
-    Cependant, dans une analyse que Daftuar prévient probablement surestime
+    Daftuar a noté qu'actuellement presque chaque transaction finit
+    par être incluse dans un bloc, de sorte que la sélection de transactions
+    actuelle de Bitcoin Core et la sélection de transactions de pool de mémoire de cluster
+    permettraient de capturer le même montant en frais.
+    Cependant, dans une analyse dont Daftuar prévient qu'elle surestime probablement
     les résultats, le mempool en cluster a capturé plus de frais que la sélection de transactions
     traditionnelle environ 73 % du temps. La sélection de transactions traditionnelle était
-    meilleure environ 8 % du temps. Daftuar a conclu, "Bien qu'il puisse être
-    non concluant de dire si le mempool en cluster est matériellement meilleur que
-    la base selon l'activité réseau en 2023, il me semble très
-    improbable que le mempool en cluster soit matériellement pire."
+    meilleure environ 8 % du temps. Daftuar a conclu, "Bien qu'on ne puisse pas conclure 
+    que le mempool en cluster est matériellement meilleur que
+    la référence basée sur l'activité du réseau en 2023, il me semble très
+    improbable qu'il soit matériellement pire."
 
   Daftuar a également considéré l'effet du mempool en cluster sur le [remplacement de transaction
   RBF][topic rbf]. Il commence avec un excellent résumé de la
