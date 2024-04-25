@@ -1,6 +1,6 @@
 ---
-title : 'Bulletin Hebdomadaire Bitcoin Optech #293'
-permalink : /fr/newsletters/2024/03/13/
+title: 'Bulletin Hebdomadaire Bitcoin Optech #293'
+permalink: /fr/newsletters/2024/03/13/
 name: 2024-03-13-newsletter-fr
 slug: 2024-03-13-newsletter-fr
 type: newsletter
