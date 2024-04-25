@@ -43,8 +43,11 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
 
-	## Check that posts declare a slug, see issue #155 and PR #156
+	## Check that posts declare certain fields, see issue #155 and PR #156
 	! git --no-pager grep -L "^slug: " _posts
+	! git --no-pager grep -L "^title: " _posts
+	! git --no-pager grep -L "^permalink: " _posts
+	! git --no-pager grep -L "^name: " _posts
 	## Check that all slugs are unique
 	! git --no-pager grep -h "^slug: " _posts | sort | uniq -d | grep .
 	## Check that all post titles are unique (per language)
