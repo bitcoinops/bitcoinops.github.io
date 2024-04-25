@@ -8,7 +8,7 @@ shortname: cves
 ## Optional.  An entry will be added to the topics index for each alias
 #
 ## PUT IN NUMERICAL ORDER
-aliases:
+title-aliases:
   - CVE-2012-2459
   - CVE-2013-2292
   - CVE-2017-12842
@@ -21,7 +21,7 @@ aliases:
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -188,7 +188,7 @@ extra:
 {% endfor %}
 
 ### Other CVEs
-{% for alias in page.aliases %}
+{% for alias in page.title-aliases %}
   * {:#{{alias}}} **[{{alias}}]({{page.extra.cves[alias].link | default: "#CVE-LINK-NOT-PROVIDED"}}):** {{page.extra.cves[alias].summary}}
 
   {%- for mention in page.optech_mentions -%}

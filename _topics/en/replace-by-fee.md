@@ -2,14 +2,14 @@
 title: Replace-by-fee (RBF)
 shortname: rbf
 
-aliases:
+title-aliases:
   - BIP125
   - Opt-in Replace-by-Fee
   - Full-RBF
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Transaction Relay Policy
   - Mining
