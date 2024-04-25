@@ -81,7 +81,7 @@ summarizing notable changes to popular Bitcoin infrastructure software.
   > previously undetected (by BIP125 policy) but would be detected and
   > prevented in the new rules.
 
-  There were no replies to the post as of this writing.
+  There were no replies to the post as of this writing. {% assign timestamp="0:42" %}
 
 ## Changes to services and client software
 
@@ -92,33 +92,33 @@ wallets and services.*
   Phoenix Wallet announced a simplified, headless Lightning node,
   [phoenixd][phoenixd github], focused on sending and receiving payments.
   phoenixd targets developers, is based on the existing Phoenix Wallet software,
-  and automates channel, peer, and liquidity management.
+  and automates channel, peer, and liquidity management. {% assign timestamp="19:26" %}
 
 - **Mercury Layer adds Lightning swaps:**
   The Mercury Layer [statechain][topic statechains] uses [hold invoices][topic
-  hold invoices] to enable swapping a statechain coin for a Lightning payment.
+  hold invoices] to enable swapping a statechain coin for a Lightning payment. {% assign timestamp="21:32" %}
 
 - **Stratum V2 Reference Implementation v1.0.0 released:**
   The [v1.0.0 release][sri blog] "is a result of improvements in the Stratum V2
-  specification through the working group collaboration and rigorous testing".
+  specification through the working group collaboration and rigorous testing". {% assign timestamp="22:46" %}
 
 - **Teleport Transactions update:**
   A fork of the [original Teleport Transactions][news192 tt] repository was
-  [announced][tt tweet] along with several completed updates and improvements.
+  [announced][tt tweet] along with several completed updates and improvements. {% assign timestamp="25:09" %}
 
 - **Bitcoin Keeper v1.2.1 released:**
   The [v1.2.1 release][bitcoin keeper v.1.2.1] adds support for [taproot][topic
-  taproot] wallets.
+  taproot] wallets. {% assign timestamp="28:10" %}
 
 - **BIP-329 label management software:**
   The version 2 release of [Labelbase][labelbase blog] includes a self-hosted
-  option and [BIP329][] import/export capabilities among other features.
+  option and [BIP329][] import/export capabilities among other features. {% assign timestamp="29:02" %}
 
 - **Key agent Sigbash launches:**
   The [Sigbash][] signing service allows users to purchase an xpub for use
   in a multisig setup that will only [PSBT][topic psbt]-sign if certain
   user-specified conditions (hashrate, Bitcoin price, address balance, after a
-  certain time) are met.
+  certain time) are met. {% assign timestamp="31:37" %}
 
 ## Releases and release candidates
 
@@ -138,7 +138,7 @@ release candidates.*
   adds a new [coin selection][topic coin selection] strategy to be used
   during high feerates (see [Newsletter #290][news290 coingrinder]).
   For a complete list of major changes, please see the [release
-  notes][bcc27 rn].
+  notes][bcc27 rn]. {% assign timestamp="35:19" %}
 
 - [BTCPay Server 1.13.1][] is the latest release of this
   self-hosted payment processor.  Since we last covered a BTCPay Server
@@ -148,12 +148,12 @@ release candidates.*
   improved plugin flexibility and begun migrating all altcoin support to
   plugins, and added support for BBQr-encoded [PSBTs][topic psbt] (see
   [Newsletter #295][news295 bbqr]), among numerous other new features
-  and bug fixes.
+  and bug fixes. {% assign timestamp="41:50" %}
 
 - [LDK 0.0.122][] is the latest release of this library for building
   LN-enabled applications; it follows the [0.0.121][ldk 0.0.121] release
   that fixes a denial-of-service vulnerability.  The latest release
-  also fixes several bugs.
+  also fixes several bugs. {% assign timestamp="42:55" %}
 
 ## Notable code and documentation changes
 
@@ -170,7 +170,7 @@ repo]._
   about its `ChannelManager` class.  The channel manager is "a lightning
   node's channel state machine and payment management logic, which
   facilitates sending, forwarding, and receiving payments through
-  lightning channels."
+  lightning channels." {% assign timestamp="44:40" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
