@@ -4,7 +4,7 @@ shortname: jit routing
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Liquidity Management
 

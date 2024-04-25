@@ -6,12 +6,12 @@ title: Payment batching
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
  - Batching
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.

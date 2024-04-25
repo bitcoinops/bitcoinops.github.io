@@ -6,12 +6,12 @@ title: Quantum resistance
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Post-quantum cryptography
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Enhancements
 
 ## Optional.  Produces a Markdown link with either "[title][]" or

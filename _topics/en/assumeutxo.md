@@ -3,7 +3,7 @@ title: AssumeUTXO
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Consensus Enforcement
   - P2P Network Protocol
 
