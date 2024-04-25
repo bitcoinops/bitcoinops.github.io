@@ -42,7 +42,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     Cependant, dans une analyse dont Daftuar prévient qu'elle surestime probablement
     les résultats, le mempool en cluster a capturé plus de frais que la sélection de transactions
     traditionnelle environ 73 % du temps. La sélection de transactions traditionnelle était
-    meilleure environ 8 % du temps. Daftuar a conclu, "Bien qu'on ne puisse pas conclure 
+    meilleure environ 8 % du temps. Daftuar a conclu, "Bien qu'on ne puisse pas conclure
     que le mempool en cluster est matériellement meilleur que
     la référence basée sur l'activité du réseau en 2023, il me semble très
     improbable qu'il soit matériellement pire."
