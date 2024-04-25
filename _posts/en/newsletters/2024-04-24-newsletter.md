@@ -114,7 +114,7 @@ infrastructure software.
 
   Sanders has written a "basic [proof-of-concept][sanders poc] with
   light tests to demonstrate the high-level idea".  Discussion of the
-  idea was ongoing at the time of writing.
+  idea was ongoing at the time of writing. {% assign timestamp="0:56" %}
 
 - **BIP editors update:** after public discussion (see Newsletters
   [#292][news292 bips], [#296][news296 bips], and [#297][news297 bips]), the
@@ -123,7 +123,7 @@ infrastructure software.
   Jon Atack,
   Mark "Murch" Erhardt,
   Olaoluwa "Roasbeef" Osuntokun, and
-  Ruben Somsen.
+  Ruben Somsen. {% assign timestamp="20:08" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -141,22 +141,22 @@ nswer -->{% endcomment %}
   Antoine Poinsot explains the off-by-one error in Bitcoin's difficulty retargeting
   calculation that enables the [time warp attack][topic time warp] which the
   [consensus cleanup][topic consensus cleanup] proposal aims to address (see
-  [Newsletter #296][news296 cc]).
+  [Newsletter #296][news296 cc]). {% assign timestamp="26:44" %}
 
 - [How is P2TR different than P2PKH using opcodes from a developer perspective?]({{bse}}122548)
   Murch concludes that the example Bitcoin Script provided as a P2PKH output
-  script would be non-standard, more expensive than P2TR, but consensus valid.
+  script would be non-standard, more expensive than P2TR, but consensus valid. {% assign timestamp="32:10" %}
 
 - [Are replacement transactions larger in size than their predecessors and than non-RBF transactions?]({{bse}}122473)
   Vojtěch Strnad notes that [RBF][topic rbf]-signaling transactions are the same
   size as non-signaling transactions and gives scenarios of when replacement
   transactions could be either the same size, larger, or smaller than the
-  original transaction being replaced.
+  original transaction being replaced. {% assign timestamp="34:15" %}
 
 - [Are Bitcoin signatures still vulnerable to nonce reuse?]({{bse}}122621)
   Pieter Wuille confirms that both the ECDSA and [schnorr][topic schnorr
   signatures] signature schemes, including their [multisignature
-  variants][topic multisignature], are vulnerable to [nonce reuse][taproot nonces].
+  variants][topic multisignature], are vulnerable to [nonce reuse][taproot nonces]. {% assign timestamp="36:59" %}
 
 - [How do miners manually add transactions to a block template?]({{bse}}122725)
   Ava Chow outlines different approaches that a miner could use to include
@@ -167,6 +167,8 @@ nswer -->{% endcomment %}
     and then adjust the transaction's [perceived absolute
     fee][prioritisetransaction fee_delta] using `prioritisetransaction`
   - use a modified `getblocktemplate` implementation or separate block-building software
+
+  {% assign timestamp="39:48" %}
 
 ## Releases and release candidates
 
@@ -192,7 +194,7 @@ release candidates.*
     transactions, which can be dangerous for an LN node that sometimes
     needs to send time-sensitive transactions.  This maintenance release
     correctly sets the maximum value to 0.1 BTC/kvB, making LND
-    compatible with new versions of Bitcoin Core.
+    compatible with new versions of Bitcoin Core. {% assign timestamp="41:40" %}
 
 ## Notable code and documentation changes
 
@@ -226,7 +228,7 @@ repo]._
   showed that all seeds at that time returned 50 or fewer results, even
   though the maximum allowed was 256. This merged PR reduces the maximum
   number down to an amount similar to what seed nodes are currently
-  returning.
+  returning. {% assign timestamp="46:35" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
