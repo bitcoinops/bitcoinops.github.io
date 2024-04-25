@@ -66,10 +66,9 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Silent payments** are a type of payment that can be made to a
-  unique onchain address for every payment even though the receiver
-  provided the spender with a reusable (offchain) address.  This helps
-  improve privacy.
+  **Silent payments** unlocks the ability to receive private payments from
+  anyone on a single static address without requiring any interaction or
+  extra on-chain overhead. This helps improve privacy.
 
 ---
 
