@@ -3,7 +3,7 @@ title: Watchtowers
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Security Enhancements
   - Backup and Recovery

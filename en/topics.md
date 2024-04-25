@@ -13,7 +13,7 @@ rather than URL. -->{% endcomment %}
 {% capture raw_topics_list %}
 {%- for topic in site.topics -%}
   <!--{% include functions/sort-rename.md name=topic.title %}-->[{{topic.title}}]({{topic.url}})ENDTOPIC
-  {%- for alias in topic.aliases -%}
+  {%- for alias in topic.title-aliases -%}
     <!--{% include functions/sort-rename.md name=alias %}-->*[{{alias}}]({{topic.url}})*ENDTOPIC
   {%- endfor -%}
 {%- endfor -%}

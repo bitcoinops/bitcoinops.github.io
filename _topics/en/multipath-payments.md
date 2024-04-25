@@ -10,14 +10,14 @@ title: Multipath payments
 ## LND source code calls these multi-path payments, Eclair source code
 ## calls them multi-part payments, no C-Lightning sources yet but Rusty and
 ## Zmn call them multipath payments
-aliases:
+title-aliases:
   - Multipart payments
   - Simplified multipath payments
   - Base AMP
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.

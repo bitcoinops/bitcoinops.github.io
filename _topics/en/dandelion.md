@@ -1,9 +1,9 @@
 ---
 title: Dandelion
-aliases:
+title-aliases:
   - BIP156
 
-categories:
+topic-categories:
   - P2P Network Protocol
   - Privacy Enhancements
 

@@ -22,10 +22,10 @@ layout: post
 
   <!-- Build natural sentence-style list of aliases for this page's topic -->
   {% if page.aliases != nil %}
-    {% assign num_aliases = page.aliases | size %}
+    {% assign num_aliases = page.title-aliases | size %}
     {% capture aliases %}{:.center}{{newline}}*Also covering&nbsp;{% endcapture %}
     {% if num_aliases > 2 %}
-      {% for alias in page.aliases %}
+      {% for alias in page.title-aliases %}
         {% if forloop.last %}
           {% capture aliases %}{{aliases}}, and {{alias}}{% endcapture %}
         {% elsif forloop.first %}
@@ -35,7 +35,7 @@ layout: post
         {% endif %}
       {% endfor %}
     {% else %}
-      {% capture aliases %}{{aliases}}{{page.aliases | join: ' and '}}{% endcapture %}
+      {% capture aliases %}{{aliases}}{{page.title-aliases | join: ' and '}}{% endcapture %}
     {% endif %}
     {% assign aliases = aliases | append: '*' %}
   {% endif %}

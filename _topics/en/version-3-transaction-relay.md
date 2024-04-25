@@ -6,12 +6,12 @@ title: Version 3 transaction relay
 shortname: v3 transaction relay
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - "Topologically Restricted Until Confirmation (TRUC)"
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Transaction Relay Policy
 

@@ -7,10 +7,10 @@ layout: page
 
 {% capture raw_categories %}
 {%- for topic in site.topics -%}
-  {%- if topic.categories == empty -%}
+  {%- if topic.topic-categories == empty -%}
     {% include ERROR_92_MISSING_TOPIC_CATEGORY %}
   {%- endif -%}
-  {%- for category in topic.categories -%}
+  {%- for category in topic.topic-categories -%}
     {{category}}|
   {%- endfor -%}
 {%- endfor -%}
@@ -32,7 +32,7 @@ produce code blocks -->{% endcomment %}
   <h3 id="{{category | slugify}}">{{category}}</h3>
   <ul>
   {% for topic in site.topics %}
-    {% if topic.categories contains category %}
+    {% if topic.topic-categories contains category %}
       <li><a href="{{topic.url}}">{{topic.title}}</a></li>
     {% endif %}
   {% endfor %}
