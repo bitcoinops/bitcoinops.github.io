@@ -66,13 +66,14 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Silent payments** unlocks the ability to receive private payments from
-  anyone on a single static address without requiring any interaction or
-  extra on-chain overhead. This helps improve privacy.
+  **Silent payments** are a type of payment that can be made to a
+  unique onchain address for every payment even though the receiver
+  provided the spender with a reusable (offchain) address.  This helps
+  improve privacy.
 
 ---
 
-Traditionally, a new address is generated whenever a user receives
+Traditionally, a new address should be generated whenever a user receives
 two or more payments. This is because when you receive several payments
 to the same Bitcoin address, others can reasonably assume that the same
 person received all of those payments even if the payments are later
@@ -86,9 +87,9 @@ shared secret which is then used to tweak the silent payment address,
 before sending the payment to the tweaked address.
 
 The intended recipient detects the payment by scanning every transaction
-in the blockchain. This is the main downside, along with the lack of
-light client support, and the requirement to control your own input(s)
-as the sender. An example use case would be private one-time donations.
+in the blockchain. This is the main downside, along with the requirement to
+control your own input(s) as the sender. An example use case would be
+one-time donations.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
