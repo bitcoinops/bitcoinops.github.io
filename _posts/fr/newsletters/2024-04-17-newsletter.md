@@ -8,8 +8,8 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume une analyse de la manière dont un nœud avec un mempool en
-cluster s'est comporté lorsqu'il a été testé avec toutes les transactions observées sur le réseau en
-2023. Nous incluons également nos sections régulières décrivant les mises à jour des clients et des services,
+cluster s'est comporté lorsqu'il a été testé avec toutes les transactions observées sur le réseau en 2023.
+Nous incluons également nos sections régulières décrivant les mises à jour des clients et des services,
 les nouvelles versions et les versions candidates, ainsi que les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
 
@@ -21,7 +21,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   avec le [cluster mempool][topic cluster mempool] activé pour quantifier les différences entre la version existante
   et la version de développement. Voilà quelques-unes de ses conclusions :
 
-   - *Le nœud cluster mempool a accepté 0,01 % de transactions en plus :*
+  - *Le nœud cluster mempool a accepté 0,01 % de transactions en plus :*
     "En 2023, les limites d'ascendants/descendants du nœud de base ont causé le rejet de plus de 46k tx à un moment donné. [...]
     Seulement ~14k transactions ont été rejetées en raison d'une limite de taille de cluster atteinte."
     Environ 10k des transactions rejetées initialement par le nœud cluster mempool (70 % des 14k rejetées)
@@ -33,8 +33,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     effet négligeable sur les nombres d'acceptation globaux ici." Voir
     ci-dessous pour plus de détails.
 
-- *Le mempool en cluster était tout aussi bon pour les mineurs que la sélection de transactions
-    traditionnelle :*
+  - *Le mempool en cluster était tout aussi bon pour les mineurs que la sélection de transactions traditionnelle :*
     Daftuar a noté qu'actuellement presque chaque transaction finit
     par être incluse dans un bloc, de sorte que la sélection de transactions
     actuelle de Bitcoin Core et la sélection de transactions de pool de mémoire de cluster
