@@ -8,6 +8,14 @@ required:
   - logo
 additionalProperties: false
 properties:
+  layout:
+    description: The layout to use
+    type: string
+
+  permalink:
+    description: The relative URL to use for the output page
+    type: string
+
   name:
     description: The name of the tool
     type: string

@@ -34,9 +34,8 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
     <th>Bech32 change</th>
   </tr>
 
-{% assign tools = site.data.compatibility | sort %}
-{% for wrapped_tool in tools %}
-  {% assign tool = wrapped_tool[1] %}
+{% assign tools = site.compat | sort %}
+{% for tool in tools %}
     {% if tool.segwit %}
       <tr>
         <td><a href="{{tool.internal_url}}#segwit">{{tool.name}}</a></td>
@@ -103,9 +102,8 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
     <th>Shows original</th>
   </tr>
 
-{% assign tools = site.data.compatibility | sort %}
-{% for wrapped_tool in tools %}
-  {% assign tool = wrapped_tool[1] %}
+{% assign tools = site.compat | sort %}
+{% for tool in tools %}
     {% if tool.rbf %}
       <tr>
         <td><a href="{{tool.internal_url}}#rbf">{{tool.name}}</a></td>
