@@ -10,8 +10,8 @@ export GIT_PAGER='_contrib/kill0'
 JEKYLL_FLAGS = --future --drafts --unpublished --incremental
 
 ## Expected filenames in output directory
-compatibility_validation = $(wildcard _data/compatibility/*.yaml)
-compatibility_validation := $(patsubst _data/compatibility/%.yaml,_site/en/compatibility/%/index.html,$(compatibility_validation))
+compatibility_validation = $(wildcard _compat/en/*.md)
+compatibility_validation := $(patsubst _compat/en/%.md,_site/en/compatibility/%/index.html,$(compatibility_validation))
 topic_validation = $(wildcard _topics/en/*.md)
 topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 
@@ -126,7 +126,7 @@ email: clean
 	$(MAKE) preview JEKYLL_ENV=email
 
 ## Path-based rules
-_site/en/compatibility/%/index.html : _data/compatibility/%.yaml
+_site/en/compatibility/%/index.html : _compat/en/%.md
 	bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $<
 
 _site/en/topics/%/index.html : _topics/en/%.md
