@@ -21,7 +21,7 @@ layout: post
   {% endfor %}
 
   <!-- Build natural sentence-style list of aliases for this page's topic -->
-  {% if page.aliases != nil %}
+  {% if page.title-aliases != nil %}
     {% assign num_aliases = page.title-aliases | size %}
     {% capture aliases %}{:.center}{{newline}}*Also covering&nbsp;{% endcapture %}
     {% if num_aliases > 2 %}
