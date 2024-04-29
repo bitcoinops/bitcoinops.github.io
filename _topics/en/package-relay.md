@@ -24,7 +24,6 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: BIP331
-      link: https://github.com/bitcoin/bips/pull/1382
 
     - title: Bitcoin Core Draft Implementation
       link: https://github.com/bitcoin/bitcoin/pull/27742
@@ -115,6 +114,9 @@ optech_mentions:
 
   - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: BIP331 assigned to ancestor package relay proposal
+    url: /en/newsletters/2024/05/01/#bips-1382
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
