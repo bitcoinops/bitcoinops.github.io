@@ -81,6 +81,9 @@ optech_mentions:
   - title: "LND #8515 updates multiple RPCs to accept the name of the coin selection strategy to be used"
     url: /en/newsletters/2024/04/10/#lnd-8515
 
+  - title: Notes from Bitcoin developer discussion about coin selection
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies

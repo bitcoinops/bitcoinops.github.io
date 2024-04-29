@@ -120,6 +120,9 @@ optech_mentions:
   - title: "Mutinynet launches a signet with 30 second block times and hosted infrastructure tools"
     url: /en/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing
 
+  - title: Notes from Bitcoin developer discussion about signet and testnet4
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

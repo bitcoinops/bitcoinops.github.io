@@ -104,6 +104,38 @@ software.
   in the U.S. or with ties to its people, to stay informed and to
   consider offering support when opportunities arise.
 
+- **CoreDev.tech Berlin event:** many Bitcoin Core contributors met in person
+  for a periodic [CoreDev.tech][] event last month in Berlin.
+  [Transcripts][coredev xs] for some of the sessions from the event have been
+  provided by attendees.  Presentations, code reviews, working groups, or other
+  sessions covered, among other topics:
+
+  - ASMap research findings
+  - assumeUTXO Mainnet Readiness
+  - BTC Lisp
+  - CMake
+  - cluster mempool
+  - coin selection
+  - cross-input signature aggregation
+  - current network spam
+  - fee estimation
+  - general BIP discussion
+  - great consensus cleanup
+  - GUI discussions
+  - legacy wallet removal
+  - libbitcoinkernel
+  - MuSig2
+  - P2P monitoring
+  - package relay review
+  - private transaction broadcasting
+  - review of current GitHub Issues
+  - review of current GitHub PRs
+  - signet/testnet4
+  - silent payments
+  - Stratum v2 template provider
+  - warnet
+  - weak blocks
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -220,3 +252,5 @@ repo]._
 [news294 sockets]: /en/newsletters/2024/03/20/#bitcoin-core-27375
 [bitcoin inquisition 25.2]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v25.2-inq
 [lnd v0.18.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc1
+[coredev.tech]: https://coredev.tech/
+[coredev xs]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/

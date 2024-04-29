@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Human readable payment instructions proposed that are compatible with silent payment addresses"
     url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 
+  - title: Notes from Bitcoin developer discussion about multiple aspects of silent payments
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

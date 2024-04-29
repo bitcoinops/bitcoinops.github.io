@@ -167,6 +167,9 @@ optech_mentions:
   - title: Proposed BIP specifying how to include descriptors in PSBTs
     url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
 
+  - title: Notes from Bitcoin developer discussion about descriptors for silent payments
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

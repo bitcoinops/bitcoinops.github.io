@@ -33,6 +33,9 @@ optech_mentions:
   - title: Draft BIP about half aggregation of BIP340 schnorr signatures
     url: /en/newsletters/2022/07/13/#half-aggregation-of-bip340-signatures
 
+  - title: Notes from Bitcoin developer discussion about CISA
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
@@ -49,7 +52,7 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Cross-input signature aggregation** is a proposal to reduce the
+  **Cross-input signature aggregation (CISA)** is a proposal to reduce the
   number of signatures a transaction requires.  In theory, every
   signature required to make a transaction valid could be combined into a
   single signature that covers the whole transaction.
