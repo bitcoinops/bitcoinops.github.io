@@ -120,6 +120,9 @@ optech_mentions:
   - title: Opposition to CTV based on commonly requiring exogenous fee
     url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
 
+  - title: "Exploding keys, a soft fork proposal with similar capabilities to CTV"
+    url: /en/newsletters/2024/05/01/#ctv-like-exploding-keys-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
