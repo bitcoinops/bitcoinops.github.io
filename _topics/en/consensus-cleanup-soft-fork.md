@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Question: where exactly is the 'off-by-one' difficulty bug and how does it relate to time warp?"
     url: /en/newsletters/2024/04/24/#where-exactly-is-the-off-by-one-difficulty-bug
 
+  - title: Notes from Bitcoin developer discussion about consensus cleanup
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation
