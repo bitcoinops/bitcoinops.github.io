@@ -78,12 +78,12 @@ two or more payments. This is because when you receive several payments
 to the same Bitcoin address, others can reasonably assume that the same
 person received all of those payments even if the payments are later
 spent in separate transactions. This is also known as address reuse,
-and more can be found under [Output linking][topic output linking].
+and more can be found under [output linking][topic output linking].
 
-With silent payments, a user can generate a silent payment address
+With silent payments, a receiver can generate a silent payment address
 and make it publicly known. The sender then takes a public key from
 one of their chosen inputs for the payment, and uses it to derive a
-shared secret which is then used to tweak the silent payment address,
+shared secret which is then used to tweak the static silent payment address,
 before sending the payment to the tweaked address.
 
 The intended recipient detects the payment by scanning every transaction
