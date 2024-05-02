@@ -78,7 +78,7 @@ software.
   OP_CTV, while saving a few bytes of witness data. On its own it's
   maybe not all that compelling, but I wanted to put it out there as
   maybe it could be a useful primitive as part of a more complex
-  covenant construction."
+  covenant construction." {% assign timestamp="0:59" %}
 
 - **Analyzing a contract protocol with Alloy:** Dmitry Petukhov
   [posted][petukhov alloy] to Delving Bitcoin a [specification][petukhov
@@ -89,7 +89,7 @@ software.
   that any potential implementors should observe.  We recommend anyone
   interested in formal
   modeling of contract protocols read his post and his extensively
-  documented specification.
+  documented specification. {% assign timestamp="13:07" %}
 
 - **Arrests of Bitcoin developers:** as widely reported elsewhere, two
   developers of the Samourai privacy-enhanced Bitcoin wallet were
@@ -102,7 +102,7 @@ software.
   leave reporting about this legal situation to other publications---but
   we urge anyone interested in the success of Bitcoin, especially those
   in the U.S. or with ties to its people, to stay informed and to
-  consider offering support when opportunities arise.
+  consider offering support when opportunities arise. {% assign timestamp="22:37" %}
 
 - **CoreDev.tech Berlin event:** many Bitcoin Core contributors met in person
   for a periodic [CoreDev.tech][] event last month in Berlin.
@@ -136,6 +136,8 @@ software.
   - warnet
   - weak blocks
 
+ {% assign timestamp="28:53" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -145,10 +147,10 @@ release candidates.*
 - [Bitcoin Inquisition 25.2][] is the latest release of this
   experimental full node designed for testing protocol changes on
   [signet][topic signet].  The latest version adds support for
-  [OP_CAT][topic op_cat] on signet.
+  [OP_CAT][topic op_cat] on signet. {% assign timestamp="31:35" %}
 
 - [LND v0.18.0-beta.rc1][] is a release candidate for the next major
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="35:59" %}
 
 ## Notable code and documentation changes
 
@@ -170,7 +172,7 @@ repo]._
   possibly other programs.  This PR makes the option officially
   supported and slightly changes its semantics to make it consistent
   with other options for Unix sockets in Bitcoin Core, such as the
-  change described in [Newsletter #294][news294 sockets].
+  change described in [Newsletter #294][news294 sockets]. {% assign timestamp="36:48" %}
 
 - [Core Lightning #7240][] adds support for retrieving required blocks
   from the Bitcoin P2P network if the local Bitcoin node has pruned
@@ -179,12 +181,12 @@ repo]._
   request it from a peer.  If the block is successfully retrieved,
   Bitcoin Core authenticates it by connecting it to the header
   it keeps (even for pruned blocks) and saves it locally, where it
-  can be retrieved using standard block-retrieval RPCs.
+  can be retrieved using standard block-retrieval RPCs. {% assign timestamp="39:39" %}
 
 - [Eclair #2851][] begins depending on Bitcoin Core 26.1 or greater and
   removes code for ancestor-aware funding.  Instead, the upgrade allows
   it to use Bitcoin Core's new native code that is designed to compensate for any _fee
-  deficit_ (see [Newsletter #269][news269 fee deficit]).
+  deficit_ (see [Newsletter #269][news269 fee deficit]). {% assign timestamp="43:39" %}
 
 - [LND #8147][], [#8422][lnd #8422], [#8423][lnd #8423], [#8148][lnd
   #8148], [#8667][lnd #8667], and [#8674][lnd #8674] replace LND's old
@@ -198,7 +200,7 @@ repo]._
   easier, makes use of both [CPFP][topic cpfp] and [RBF][topic rbf] fee
   bumping (each when appropriate), does a better job of batching fee
   bumps to save on fees, and only updates feerates each block rather
-  than every 30 seconds.
+  than every 30 seconds. {% assign timestamp="45:49" %}
 
 - [LND #8627][] now defaults to rejecting user-requested changes to
   channel settings that require above-zero _inbound forwarding fees_.  For
@@ -213,7 +215,7 @@ repo]._
   possibly achieve the desired result while remaining backwards
   compatible by raising his outbound forwarding fee to Carol and then
   using negative inbound forwarding fees to offer discounts on payments
-  that don't originate from Alice.
+  that don't originate from Alice. {% assign timestamp="47:37" %}
 
 - [Libsecp256k1 #1058][] changes the algorithm used for generating
   public keys and signatures.  Both the old algorithm and the new
@@ -221,17 +223,17 @@ repo]._
   [side-channel][topic side channels] vulnerabilities.  Benchmarks with the
   new algorithm show it to be about 12% faster.  A [short blog
   post][stratospher comb] by one of the PR reviewers describes how the
-  new algorithm works.
+  new algorithm works. {% assign timestamp="1:00:01" %}
 
 - [BIPs #1382][] assigns [BIP331][] to the proposal for [ancestor
-  package relay][topic package relay].
+  package relay][topic package relay]. {% assign timestamp="1:02:01" %}
 
 - [BIPs #1068][] swaps two parameters in [BIP47][] version 1 reusable
   payment codes to match an implementation in Samourai wallet.  Details
   about where to find information for later versions of reusable
   payment codes is also added to the BIP.  Note that Samourai's initial
   implementation of BIP47 occurred years ago and that this PR was open
-  for over three years before its merge this past week.
+  for over three years before its merge this past week. {% assign timestamp="1:03:35" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
