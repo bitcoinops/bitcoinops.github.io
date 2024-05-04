@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine décrit une proposition pour relayer des blocs faibles afin
 d'améliorer la performance des blocs compacts dans un réseau avec plusieurs politiques divergentes
-de mempool et annonce l'ajout de cinq éditeurs de BIP. Sont également incluses nos
+de mempool et annonce l'ajout de cinq éditeurs de BIP. On y trouvera également nos
 rubriques habituelles avec des questions et réponses populaires
 de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et
 versions candidates, ainsi que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
@@ -185,8 +185,8 @@ repo], [Lightning BOLTs][bolts repo], [Inquisition Bitcoin][bitcoin inquisition 
   construire un ensemble d'adresses IP. Ils sélectionnent ensuite aléatoirement certaines de ces
   adresses IP et s'y connectent en tant que pairs. Si le nouveau nœud obtient à peu près le même
   nombre d'adresses IP de chaque graine à laquelle il se connecte, alors il est peu probable que tous
-  les pairs qu'il sélectionne proviennent du même nœud de graine, aidant à garantir qu'il a une
-  perspective diversifiée sur le réseau et n'est pas vulnérable aux [attaques par éclipse][topic
+  les pairs qu'il sélectionne proviennent du même nœud de graine, ce qui contribue à garantir qu'il a une
+  perspective diversifiée sur le réseau et qu'il n'est pas vulnérable aux [attaques par éclipse][topic
   eclipse attacks].
 
   Cependant, si une graine renvoyait un nombre beaucoup plus important d'adresses IP que toute autre
