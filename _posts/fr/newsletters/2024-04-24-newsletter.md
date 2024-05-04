@@ -200,8 +200,8 @@ repo], [Lightning BOLTs][bolts repo], [Inquisition Bitcoin][bitcoin inquisition 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="8571,29434,29850,16070" %}[sanders weak]:
-https://delvingbitcoin.org/t/second-look-at-weak-blocks/805
+{% include linkers/issues.md v=2 issues="8571,29434,29850,16070" %}
+[sanders weak]: https://delvingbitcoin.org/t/second-look-at-weak-blocks/805
 [news173 weak]: /en/newsletters/2021/11/03/#feerate-communication
 [news253 weak]: /fr/newsletters/2023/05/31/#relais-de-transaction-sur-nostr
 [sanders poc]: https://github.com/instagibbs/bitcoin/commits/2024-03-weakblocks_poc/
