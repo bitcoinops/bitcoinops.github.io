@@ -227,7 +227,7 @@ issues="27679,7240,2851,22087,8147,8422,8423,8148,8667,8627,1058,1382,1068,8674"
 [news291 catvault]: /fr/newsletters/2024/02/28/#prototype-simple-de-coffre-fort-utilisant-op-cat
 [news297 inbound]: /fr/newsletters/2024/04/10/#lnd-6703
 [news294 sockets]: /fr/newsletters/2024/03/20/#bitcoin-core-27375
-[inquisition bitcoin 25.2]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v25.2-inq
+[Bitcoin Inquisition 25.2]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v25.2-inq
 [lnd v0.18.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc1
 [coredev.tech]: https://coredev.tech/
 [coredev xs]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/
