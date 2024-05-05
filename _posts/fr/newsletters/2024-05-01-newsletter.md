@@ -218,11 +218,11 @@ issues="27679,7240,2851,22087,8147,8422,8423,8148,8667,8627,1058,1382,1068,8674"
 [news269 fee deficit]: /fr/newsletters/2023/09/20/#bitcoin-core-26152
 [news 297 inbound]: /fr/newsletters/2024/04/10/#lnd-6703
 [stratospher comb]: https://github.com/stratospher/blogosphere/blob/main/sdmc.md
-[alliage de Petukhov]: https://delvingbitcoin.org/t/analyzing-simple-vault-covenant-with-alloy/819
-[mods de Petukhov]: https://delvingbitcoin.org/t/basic-vault-prototype-using-op-cat/576/16
-[spécification de Petukhov]: https://gist.github.com/dgpv/514134c9727653b64d675d7513f983dd
+[petukhov alloy]: https://delvingbitcoin.org/t/analyzing-simple-vault-covenant-with-alloy/819
+[petukhov mods]: https://delvingbitcoin.org/t/basic-vault-prototype-using-op-cat/576/16
+[petukhov spec]: https://gist.github.com/dgpv/514134c9727653b64d675d7513f983dd
 [alloy]: https://fr.wikipedia.org/wiki/Alloy_(langage_de_spécification)
-[explosion de Dryja]: https://delvingbitcoin.org/t/exploding-keys-covenant-construction/832
+[dryja exploding]: https://delvingbitcoin.org/t/exploding-keys-covenant-construction/832
 [zmq]: https://fr.wikipedia.org/wiki/ZeroMQ
 [news291 catvault]: /fr/newsletters/2024/02/28/#prototype-simple-de-coffre-fort-utilisant-op-cat
 [news297 inbound]: /fr/newsletters/2024/04/10/#lnd-6703
