@@ -80,16 +80,23 @@ person received all of those payments even if the payments are later
 spent in separate transactions. This is also known as address reuse,
 and more can be found under [output linking][topic output linking].
 
-With silent payments, a receiver can generate a silent payment address
-and make it publicly known. The sender then takes a public key from
-one of their chosen inputs for the payment, and uses it to derive a
-shared secret which is then used to tweak the static silent payment address,
-before sending the payment to the tweaked address.
+Using a new address often requires a secure interaction between sender
+and receiver so that the receiver can provide a fresh address everytime. 
+However, interaction is often infeasible and in many cases undesirable.
 
-The intended recipient detects the payment by scanning every transaction
-in the blockchain. This is the main downside, along with the requirement to
-control your own input(s) as the sender. An example use case would be
-one-time donations.
+With silent payments, a receiver can generate a silent payment address
+and make it publicly known, thus eliminating the need for interaction. 
+The sender can select one or more of their chosen inputs and use their
+secret key(s) to derive the shared secret (together with public key of
+the silent payment address), which is used to generate the destination.
+
+The intended recipient detects the payment by scanning eligible transactions
+in the blockchain, before performing ECDH calculation with the summed 
+input public keys of the transaction and the scan key from their address.
+This is the main downside in that it is more computationally expensive than
+simply scanning the UTXO set for a `scriptPubKey` as in [BIP32][] style wallets.
+Additionally, using silent payments in a collaborative setting is left for
+future work, and it remains an open question whether this is provably secure.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
