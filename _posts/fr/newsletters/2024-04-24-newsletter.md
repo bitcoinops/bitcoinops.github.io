@@ -139,7 +139,7 @@ nswer -->{% endcomment %}
 
 - [Comment les mineurs ajoutent-ils manuellement des transactions à un modèle de bloc?]({{bse}}122725)
   Ava Chow décrit différentes approches qu'un mineur pourrait utiliser pour inclure des transactions
-  dans un bloc qui ne seraient autrement pas incluses dans le `getblocktemplate` de Bitcoin Core :
+  dans un bloc qui ne seraient autrement pas incluses dans le `getblocktemplate` de Bitcoin Core:
 
   - utiliser `sendrawtransaction` pour inclure la transaction dans le mempool du mineur puis ajuster
     le [frais absolu perçu][prioritisetransaction fee_delta] de la transaction en utilisant
