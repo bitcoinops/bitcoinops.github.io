@@ -118,6 +118,9 @@ optech_mentions:
   - title: BIP331 assigned to ancestor package relay proposal
     url: /en/newsletters/2024/05/01/#bips-1382
 
+  - title: "Bitcoin Core #28970 adds support for one-parent-one-child (1p1c) package relay with no P2P changes"
+    url: /en/newsletters/2024/05/08/#bitcoin-core-28970
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
