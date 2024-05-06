@@ -152,14 +152,67 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Index TxOrphanage by wtxid, allow entries with same txid][review club
+30000] is a PR by Gloria Zhao (GitHub glozow) that allows multiple
+transactions with the same `txid` to exist in `TxOrphanage` at the same
+time by indexing them on `wtxid` instead of `txid`.
+
+This PR makes the opportunistic 1-parent-1-child (1p1c) [package
+acceptance][topic package relay] introduced in [Bitcoin Core #28970][] more robust.
 
 {% include functions/details-list.md
-  q0="FIXME"
+  q0="Why would we want to allow multiple transactions with the same
+      txid to exist in the TxOrphanage at the same time? What kind of
+      situation does this prevent?"
+  a0="By definition, the witness data of orphan transactions cannot be
+      validated because the parent transaction is unknown. When multiple
+      transactions (with different wtxids) of the same txid are
+      received, it is thus impossible to know which version is the
+      correct one. By allowing them to exist in parallel inside
+      TxOrphanage, an attacker is prevented from sending an incorrect
+      malleated version that prevents further acceptance of the correct
+      version."
+  a0link="https://bitcoincore.reviews/30000#l-11"
 
-  a0="FIXME"
-  
-  a0link="https://bitcoincore.reviews/29221#l-34FIXME"
+  q1="What are some examples of same-txid-different-witness orphans?"
+  a1="A same-txid-different-witness transaction can have an invalid
+      signature (and thus be invalid) or a larger witness (but same fee
+      and thus lower feerate)."
+  a1link="https://bitcoincore.reviews/30000#l-67"
+
+  q2="Let’s consider the effects of only allowing 1 entry per txid. What
+      happens if a malicious peer sends us a mutated version of the
+      orphan transaction, where the parent is not low feerate? What
+      needs to happen for us to end up accepting this child to mempool?
+      (There are multiple answers)"
+  a2="When a mutated child is in the orphanage and a valid
+      not-low-feerate parent is received, the parent will be accepted
+      into the mempool, and the mutated child invalidated and removed
+      from the orphanage."
+  a2link="https://bitcoincore.reviews/30000#l-52"
+
+  q3="Let’s consider the effects if we have a 1-parent-1-child (1p1c)
+      package (where the parent is low feerate and must be submitted
+      with its child). What needs to happen for us to end up accepting
+      the correct parent+child package to mempool?"
+  a3="Since the parent is low feerate, it will not be accepted into the
+      mempool by itself. However, since [Bitcoin Core #28970][], it can
+      be opportunistically accepted as a 1p1c package if the child is in
+      the orphanage. If the orphaned child is mutated, the parent is
+      rejected from the mempool, and the orphan removed from the
+      orphanage."
+  a3link="https://bitcoincore.reviews/30000#l-60"
+
+  q4="Instead of allowing multiple transactions with the same txid
+      (where we are obviously wasting some space on a version we will
+      not accept), should we allow a transaction to replace an existing
+      entry in the TxOrphanage? What would be the requirements for
+      replacement?"
+  a4="It appears there is no good metric by which to judge whether a
+      transaction should be allowed to replace an existing one. One
+      potential avenue to explore is to replace duplicated transactions
+      from the same peer only."
+  a4link="https://bitcoincore.reviews/30000#l-80"
 %}
 
 ## Releases and release candidates
@@ -268,7 +321,7 @@ repo]._
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30012,28016,29623,27742" %}
+{% include linkers/issues.md v=2 issues="30012,28016,29623,27742,28970" %}
 [lnd v0.18.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc1
 [libsecp256k1 v0.5.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.5.0
 [heilman lamport]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAEM=y+XyW8wNOekw13C5jDMzQ-dOJpQrBC+qR8-uDot25tM=XA@mail.gmail.com/
@@ -280,3 +333,4 @@ repo]._
 [news300 secp]: /en/newsletters/2024/05/01/#libsecp256k1-1058
 [news288 time]: /en/newsletters/2024/02/07/#bitcoin-core-28956
 [news141 key hiding]: /en/newsletters/2021/03/24/#p2pkh-hides-keys
+[review club 30000]: https://bitcoincore.reviews/30000
