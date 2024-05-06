@@ -52,6 +52,9 @@ optech_mentions:
   - title: "2022 year-in-review: quantum-safe key exchange"
     url: /en/newsletters/2022/12/21/#quantum-safe-keys
 
+  - title: "Consensus-enforcement of quantum-resistant lamport signatures without consensus changes"
+    url: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

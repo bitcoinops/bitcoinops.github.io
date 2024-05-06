@@ -89,6 +89,7 @@ notable changes to popular Bitcoin infrastructure software.
   accepts payments to public keys in the P2PK style instead of hashes in
   the P2PKH style.
 
+  {:#p2pkh-hides-keys}
   But P2PKH hash indirection does have one advantage: it can hide keys
   from public view until they're needed to authorize a spend.  This
   means an adversary who has the ability to compromise the security of a public key
