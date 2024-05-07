@@ -25,8 +25,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   OP_CTV <hash>
   ```
 
-  Le préimage pour le digest du hash est un engagement sur les parties clés d'une transaction, surtout
-  le montant de chaque sortie et le script pour payer chaque sortie. Par exemple :
+  La préimage pour le digest du hash est un engagement sur les parties clés d'une transaction, plus particulièrement
+  le montant de chaque sortie et le script à payer pour chacune. Par exemple :
 
   ```text
   hash(
@@ -68,7 +68,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
   Dryja écrit que les clés explosives "offrent la fonctionnalité de base de
   OP_CTV, tout en économisant quelques octets de données de témoin. En soi, ce n'est peut-être pas si
-  convaincant, mais je voulais le mettre en avant car cela pourrait être un primitif utile dans le
+  convaincant, mais je voulais le mettre en avant car cela pourrait être une primitive utile dans le
   cadre d'une construction de covenant plus complexe."
 
 - **Analyse d'un protocole de contrat avec Alloy :** Dmitry Petukhov a [publié][petukhov alloy] sur
@@ -85,10 +85,10 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   suite, deux autres entreprises ont annoncé leur intention de cesser de servir les clients américains
   en raison des risques juridiques.
 
-  La spécialité d'Optech est d'écrire sur la technologie Bitcoin, donc nous prévoyons de laisser le
-  reportage sur cette situation juridique à d'autres publications---mais nous exhortons quiconque
-  s'intéresse au succès de Bitcoin, en particulier ceux aux États-Unis ou liés à ses habitants, de
-  rester informé et de considérer l'offre de soutien lorsque des opportunités se présentent.
+  La spécialité d'Optech est d'écrire sur la technologie Bitcoin, donc nous prévoyons de laisser la
+  couverture de cette situation juridique à d'autres publications---mais nous exhortons quiconque
+  s'intéresse au succès de Bitcoin, en particulier aux États-Unis, de
+  rester informé et à envisagez d’offrir votre soutien lorsque des opportunités se présentent.
 
 - **Événement CoreDev.tech à Berlin :** de nombreux contributeurs de Bitcoin Core se sont rencontrés
   en personne pour un événement périodique [CoreDev.tech][] le mois dernier à Berlin.
@@ -145,12 +145,12 @@ d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [I
 Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #27679][] permet aux notifications envoyées en utilisant le dispatcher [ZMQ][]
-  d'être publiées sur un socket de domaine Unix. Cela était auparavant supporté (peut-être
+  d'être publiées sur un socket de domaine Unix. Cela était auparavant possible (peut-être
   involontairement) en passant une option de configuration d'une manière qui n'était pas documentée.
 
 - [Bitcoin Core #22087][] a rendu l'analyse des options de configuration plus stricte, brisant le
   support non documenté dans Bitcoin Core 27.0, ce qui a [affecté LND][gugger zmq] et possiblement
-  d'autres programmes. Cette PR rend l'option officiellement supportée et modifie légèrement sa
+  d'autres programmes. Ce PR rend l'option officiellement prise en charge et modifie légèrement sa
   sémantique pour la rendre cohérente avec d'autres options pour les sockets Unix dans Bitcoin Core,
   comme le changement décrit dans le [Bulletin #294][news294 sockets].
 
@@ -162,7 +162,7 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
   être récupéré en utilisant les RPC de récupération de bloc standard.
 
 - [Eclair #2851][] commence à dépendre de Bitcoin Core 26.1 ou supérieur et supprime le code pour le
-  financement conscient des ancêtres. À la place, la mise à niveau lui permet d'utiliser le nouveau
+  financement conscient des ascendants. À la place, la mise à niveau lui permet d'utiliser le nouveau
   code natif de Bitcoin Core qui est conçu pour compenser tout _déficit de frais_ (voir le [Bulletin
 #269][news269 fee deficit]).
 
