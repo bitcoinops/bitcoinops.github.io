@@ -82,7 +82,7 @@ and descriptions of changes to popular Bitcoin infrastructure software.
   commits to the actual size of the ECDSA signature.  For example:
 
   ```text
-  OP_DUP <pubkey> OP_CHECKSIG OP_SIZE <size> OP_EQUAL
+  OP_DUP <pubkey> OP_CHECKSIGVERIFY OP_SIZE <size> OP_EQUAL
   OP_IF
     # We now know the size is equal to <size> bytes
     OP_SHA256 <digest_x> OP_CHECKEQUALVERIFY
@@ -317,6 +317,12 @@ repo]._
   severe security problems.  This is a follow up to the removal of
   network adjusted time from consensus code (see [Newsletter
   #288][news288 time]).
+
+## Corrections
+
+The example script for lamport signing ECDSA signature verification
+originally used `OP_CHECKSIG` but was updated after publication to use
+`OP_CHECKSIGVERIFY`; we thank Antoine Poinsot for reporting our error.
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
