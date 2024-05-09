@@ -44,31 +44,6 @@ lang: zh
 
 本周在 [Bitcoin Core][core commits]、[LND][lnd commits]、[C-lightning][cl commits] 和 [libsecp256k1][secp commits] 中的重要代码变更如下：
 
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="be992701b018f256db6d64786624be4cb60d8975"
-  end="5c25409d6851182c5e351720cee36812c229b77a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="e5b84cfadab56037ae3957e704b3e570c9368297"
-  end="6b19df162a161079ab794162b45e8f4c7bb8beec"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="a44491fff0ccd7bde20661eecf88bf136db5f6e6"
-  end="7eec2253e962e524f8fd92b74f411f0b99706ba9"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1e6f1f5ad5e7f1e3ef79313ec02023902bf8175c"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
-
 - [Bitcoin Core #14291][]：在 Bitcoin Core 的多钱包模式下使用时，新的 `listwalletdir` RPC 可以列出钱包目录中的所有可用钱包。
 
 - [Bitcoin Core #14424][]：修复了 0.17.0 版本的一个可能的回归，该问题影响仅监视的钱包，这些钱包要求用户导入多签脚本的公钥（而不仅仅是导入脚本），以便 Bitcoin Core 能够尝试使用 `includeWatching` 标志的 [fundrawtransaction][rpc fundrawtransaction] 等 RPC 来花费脚本。这个 PR 已经被标记为 0.17.1 的后续版本。对于 0.17.0 用户的一个解决方法在 [Bitcoin Core #14415][] 中有描述。
