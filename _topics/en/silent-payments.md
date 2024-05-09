@@ -73,8 +73,8 @@ excerpt: >
 
 ---
 
-Traditionally, a new address should be generated whenever a user receives
-two or more payments. This is because when you receive several payments
+Traditionally, a new address should be generated for every
+payment. This is because when you receive several payments
 to the same Bitcoin address, others can reasonably assume that the same
 person received all of those payments even if the payments are later
 spent in separate transactions. This is also known as address reuse,
