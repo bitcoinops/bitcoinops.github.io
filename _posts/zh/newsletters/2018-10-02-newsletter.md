@@ -25,7 +25,26 @@ lang: zh
 
 ## 值得注意的代码变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的代码变更。*
+*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的代码变更。*
+
+{% include linkers/github-log.md
+  refname="core commits"
+  repo="bitcoin/bitcoin"
+  start="920c090f63f4990bf0f3b3d1a6d3d8a8bcd14ba0"
+  end="c9327306b580bb161d1732c0a0260b46c0df015c"
+%}
+{% include linkers/github-log.md
+  refname="lnd commits"
+  repo="lightningnetwork/lnd"
+  start="f4305097e1638f6f8958dfa9eec941d8bf80246e"
+  end="79ed4e8b600e4834f058cbf3cb8b93f5aa5ab3d4"
+%}
+{% include linkers/github-log.md
+  refname="cl commits"
+  repo="ElementsProject/lightning"
+  start="3ce53ab9eddd397d57b6afc5faefe6703e56ac26"
+  end="d6fcfe00c722f7e6f4b691cd47743ed593aeea0e"
+%}
 
 - [Bitcoin Core #14305][]：在发现几个基于 Python 的测试由于使用了错误命名的变量而错误地通过的情况后，使用 Python 3 的 `__slots__` 特性为类实现了一个变量名称白名单。
 

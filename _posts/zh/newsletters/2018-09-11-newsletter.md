@@ -31,7 +31,26 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——您可能需要等待大约六个月后的 0.18 版本。*
+*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——您可能需要等待大约六个月后的 0.18 版本。*
+
+{% include linkers/github-log.md
+  refname="core commits"
+  repo="bitcoin/bitcoin"
+  start="68f3c7eb080e461cfeac37f8db7034fe507241d0"
+  end="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
+%}
+{% include linkers/github-log.md
+  refname="lnd commits"
+  repo="lightningnetwork/lnd"
+  start="2b448be048daf85cef4cbb37ceed4413fdb051e6"
+  end="1941353fb28755a170793e43595601d75c8f3dda"
+%}
+{% include linkers/github-log.md
+  refname="cl commits"
+  repo="ElementsProject/lightning"
+  start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
+  end="634f19a7b230edc686be56ab950b80784e56252c"
+%}
 
 - [Bitcoin Core #12775][] 为 Bitcoin Core 添加对 RapidCheck（一个 [QuickCheck][] 重新实现）的支持，提供一套基于属性的测试套件，它根据程序员告诉它的函数属性（例如，它接受什么作为输入并返回什么作为输出）自动生成自己的测试。
 

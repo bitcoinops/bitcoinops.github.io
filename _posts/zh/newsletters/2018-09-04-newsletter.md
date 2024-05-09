@@ -35,9 +35,28 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——你可能需要等到大约六个月后的 0.18 版本。*
+*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——你可能需要等到大约六个月后的 0.18 版本。*
 
 {% comment %}<!-- 本周 LND 只有三次合并，个人觉得都不太激动人心 -harding -->{% endcomment %}
+
+{% include linkers/github-log.md
+  refname="core commits"
+  repo="bitcoin/bitcoin"
+  start="427253cf7e19ed9ef86b45457de41e345676c88e"
+  end="68f3c7eb080e461cfeac37f8db7034fe507241d0"
+%}
+{% include linkers/github-log.md
+  refname="lnd commits"
+  repo="lightningnetwork/lnd"
+  start="26f68da5b2883885fcf6a8e79b3fc9bb12cc9eef"
+  end="2b448be048daf85cef4cbb37ceed4413fdb051e6"
+%}
+{% include linkers/github-log.md
+  refname="cl commits"
+  repo="ElementsProject/lightning"
+  start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
+  end="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
+%}
 
 - [Bitcoin Core #12952][]：在经过几个主要版本的弃用并且在即将发布的 0.17 版本中默认禁用后，Bitcoin Core 的内置账户系统已从主开发分支中移除。账户系统于 2010 年末添加，以允许早期的比特币交易所在 Bitcoin Core 中管理其用户账户，但它缺少许多真正生产系统所需的特性（如原子数据库更新），并且经常让用户感到困惑，因此逐步移除它已经是几年来的一个目标。
 

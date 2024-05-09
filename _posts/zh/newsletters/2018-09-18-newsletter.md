@@ -37,7 +37,26 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——您可能需要等待大约六个月后的 0.18 版本。*
+*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的提交。提醒：新合并到 Bitcoin Core 的代码是提交到其主开发分支的，不太可能成为即将发布的 0.17 版本的一部分——您可能需要等待大约六个月后的 0.18 版本。*
+
+{% include linkers/github-log.md
+  refname="core commits"
+  repo="bitcoin/bitcoin"
+  start="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
+  end="c53e083a49291b611d278a8db24ff235c1202e43"
+%}
+{% include linkers/github-log.md
+  refname="lnd commits"
+  repo="lightningnetwork/lnd"
+  start="1941353fb28755a170793e43595601d75c8f3dda"
+  end="3b2c807288b1b7f40d609533c1e96a510ac5fa6d"
+%}
+{% include linkers/github-log.md
+  refname="cl commits"
+  repo="ElementsProject/lightning"
+  start="634f19a7b230edc686be56ab950b80784e56252c"
+  end="36eab5de26e203311ceeb65c94ec5beb9c94ff5d"
+%}
 
 - [Bitcoin Core #14054][]：此 PR 阻止节点默认发送 [BIP61][] 点对点协议[拒绝消息][p2p reject]。这些消息的实现是为了让轻客户端开发者更容易获取关于连接和交易转发问题的反馈。然而，没有要求（或方法来要求）节点发送拒绝消息或准确的拒绝消息，因此这些消息可能只会浪费带宽。
 

@@ -36,7 +36,27 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中值得注意的提交。*
+*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中值得注意的提交。*
+
+
+{% include linkers/github-log.md
+  refname="core commits"
+  repo="bitcoin/bitcoin"
+  start="ef4fac0ea5b4891f4529e4b59dfd1f7aeb3009b5"
+  end="2b67354aa584c4aabae049a67767ac7b70e2d01a"
+%}
+{% include linkers/github-log.md
+  refname="lnd commits"
+  repo="lightningnetwork/lnd"
+  start="92b0b10dc75de87be3a9f895c8dfc5a84a2aec7a"
+  end="f0f5e11b826e020c11c37343bcbaf9725627378b"
+%}
+{% include linkers/github-log.md
+  refname="cl commits"
+  repo="ElementsProject/lightning"
+  start="0b597f671aa31c1c56d32a554fcdf089646fc7c1"
+  end="80a8e57ede82292818032eeb3510da067fddfd5e"
+%}
 
 - [Bitcoin Core #13697][]：Pieter Wuille 在 [Newsletter #5][] 中提到的这个 PR 已被合并，它为即将发布的 0.17 RPC `scantxoutset` 添加了[输出脚本描述符][output script descriptors]支持。这些描述符为软件提供了一种全面的方式来描述你想要找到的输出脚本，预计将随时间适应 Bitcoin Core API 的其他部分，如 [importprivkey][rpc importprivkey]、[importaddress][rpc importaddress]、[importpubkey][rpc importpubkey]、[importmulti][rpc importmulti] 和 [importwallet][rpc importwallet]。
 
