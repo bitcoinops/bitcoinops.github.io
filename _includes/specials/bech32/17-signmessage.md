@@ -67,3 +67,4 @@ wallet developers to agree on a standard and then widely implement it.
 [trezor segwit signmessage]: https://github.com/trezor/trezor-mcu/issues/169
 [electrum segwit signmessage]: https://github.com/spesmilo/electrum/issues/2977
 [trezor electrum incompatible]: https://github.com/spesmilo/electrum/issues/3861
+[newsletter #13]: /en/newsletters/2018/09/18/#review-proposed-bip322-for-generic-message-signing

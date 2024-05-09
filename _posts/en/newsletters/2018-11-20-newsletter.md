@@ -40,27 +40,27 @@ new features is available.  Some highlights from the meeting include:
   wallet balance, Alice can only spend at most 10% of her funds at a
   time.
 
-    Multipath payments provide a solution to this problem: if Alice
-    wants to send 15% of her funds, she can send 7.5% to Charlie through
-    her channel with Bob and 7.5% through her channel with Dan (who also
-    has a channel with Charlie).  Although the partial payments are
-    routed through separate paths, they can each commit to the same
-    hash Alice would've used to send a single-path payment.  If Charlie
-    receives multiple payments within a reasonable time period that
-    equal or exceed the expected amount, he can guarantee that he'll
-    receive all of them by simply revealing the single preimage used by
-    all of the hashes.  This reuses the same proven security mechanism
-    currently used for single-path payments and so doesn't introduce any
-    new security assumptions.  The same mechanism also works if some
-    other party along the path with sufficient channel capacity
-    merges together the partial payments and forwards a single
-    payment along the remainder of the path to Charlie.
+  Multipath payments provide a solution to this problem: if Alice
+  wants to send 15% of her funds, she can send 7.5% to Charlie through
+  her channel with Bob and 7.5% through her channel with Dan (who also
+  has a channel with Charlie).  Although the partial payments are
+  routed through separate paths, they can each commit to the same
+  hash Alice would've used to send a single-path payment.  If Charlie
+  receives multiple payments within a reasonable time period that
+  equal or exceed the expected amount, he can guarantee that he'll
+  receive all of them by simply revealing the single preimage used by
+  all of the hashes.  This reuses the same proven security mechanism
+  currently used for single-path payments and so doesn't introduce any
+  new security assumptions.  The same mechanism also works if some
+  other party along the path with sufficient channel capacity
+  merges together the partial payments and forwards a single
+  payment along the remainder of the path to Charlie.
 
-    For more information, see the following Lightning-Dev threads which
-    often call this feature Atomic Multi-path Payments (AMP): [an early
-    proposal with separate hashes/preimages][roasbeef amp], [something
-    like the currently favored proposal][zmn base amp], [a possibly too
-    optimistic proposal][pickhardt local amp].
+  For more information, see the following Lightning-Dev threads which
+  often call this feature Atomic Multi-path Payments (AMP): [an early
+  proposal with separate hashes/preimages][roasbeef amp], [something
+  like the currently favored proposal][zmn base amp], [a possibly too
+  optimistic proposal][pickhardt local amp].
 
 - **Dual-funded channels:** a nice feature of the current implementation
   is that only one party to the channel needs to initially commit any
@@ -75,20 +75,20 @@ new features is available.  Some highlights from the meeting include:
   requires they pay onchain transaction fees and wait for onchain
   confirmations that can take hours.
 
-    A proposed solution to this problem is to allow dual-funded
-    channels.  Alice agrees to put 0.1 BTC into a channel with Bob if
-    Bob agrees to open the channel with 0.1 BTC of his own funds.  This
-    can cost Bob money---namely onchain transaction fees and the
-    opportunity cost of having his funds committed for some time---but
-    Bob also receives the opportunity to earn LN routing fees for any
-    payments sent to Alice.
+  A proposed solution to this problem is to allow dual-funded
+  channels.  Alice agrees to put 0.1 BTC into a channel with Bob if
+  Bob agrees to open the channel with 0.1 BTC of his own funds.  This
+  can cost Bob money---namely onchain transaction fees and the
+  opportunity cost of having his funds committed for some time---but
+  Bob also receives the opportunity to earn LN routing fees for any
+  payments sent to Alice.
 
-    The basic implementation of dual-funding is probably simple (LN
-    nodes already handle bidirectional payments) but creating an
-    incentive mechanism that can reward capital providers like Bob is
-    still being discussed.  For more information, see the following
-    threads: [1][neigut liquidity], [2][zmn liquidity], [3][zmn dual
-    rbf].  Also see the section on *advertising node liquidity* in [Newsletter #21][].
+  The basic implementation of dual-funding is probably simple (LN
+  nodes already handle bidirectional payments) but creating an
+  incentive mechanism that can reward capital providers like Bob is
+  still being discussed.  For more information, see the following
+  threads: [1][neigut liquidity], [2][zmn liquidity], [3][zmn dual
+  rbf].  Also see the section on *advertising node liquidity* in [Newsletter #21][].
 
 - **Splicing:** you can't currently
   increase a channel's maximum balance or send some of the channel's funds onchain to
@@ -98,26 +98,26 @@ new features is available.  Some highlights from the meeting include:
   appropriate number of onchain confirmations have been received for the
   close-and-reopen transaction.
 
-    Splicing provides a solution where parties cooperatively create an
-    onchain transaction that adds to or subtracts from the channel.
-    When adding funds (splicing in), the funds previously in the channel
-    can continue to be used offchain without interruption while the new
-    funds are being confirmed.  When spending funds onchain (splicing
-    out), the remaining funds can also continue to be used offchain
-    without interruption while the onchain recipient sees no difference
-    from a normal transaction.  This allows the wallet UI to make
-    in-channel funds part of the total available balance for spending in
-    onchain transactions so that users don't need to manually manage
-    offchain and onchain balances separately.  <span id="multipath-splicing-ux">Combined with multipath
-    payments that allow funds from multiple channels to be intermixed in
-    payments, this greatly simplifies spending: users will just click a
-    link, review the invoice, and click *Pay*---letting the wallet
-    automatically use any of its available balance for either an onchain
-    payment or an offchain payment using any number of paths.</span>
+  Splicing provides a solution where parties cooperatively create an
+  onchain transaction that adds to or subtracts from the channel.
+  When adding funds (splicing in), the funds previously in the channel
+  can continue to be used offchain without interruption while the new
+  funds are being confirmed.  When spending funds onchain (splicing
+  out), the remaining funds can also continue to be used offchain
+  without interruption while the onchain recipient sees no difference
+  from a normal transaction.  This allows the wallet UI to make
+  in-channel funds part of the total available balance for spending in
+  onchain transactions so that users don't need to manually manage
+  offchain and onchain balances separately.  <span id="multipath-splicing-ux">Combined with multipath
+  payments that allow funds from multiple channels to be intermixed in
+  payments, this greatly simplifies spending: users will just click a
+  link, review the invoice, and click *Pay*---letting the wallet
+  automatically use any of its available balance for either an onchain
+  payment or an offchain payment using any number of paths.</span>
 
-    For more information, see the following threads: [1][zmn splicing
-    cut-through], [2][pickhardt bolt splicing], [3][russell splicing].
-    Also see the news item about *channel splicing* in [Newsletter #17][].
+  For more information, see the following threads: [1][zmn splicing
+  cut-through], [2][pickhardt bolt splicing], [3][russell splicing].
+  Also see the news item about *channel splicing* in [Newsletter #17][].
 
 - **Wumbo:** by agreement among early LN implementations, currently each
   channel's capacity is limited by default to about 0.168 BTC (about $40
@@ -125,18 +125,18 @@ new features is available.  Some highlights from the meeting include:
   why limit] to help prevent users from putting too much money into
   unproven software.
 
-    Several years later, LN has matured significantly and some
-    participants want to signal that they're willing to open higher
-    value channels.  The 1.1 spec proposal will allow such participants
-    to set a bit named "wumbo" (jumbo) to indicate their willingness to
-    accept larger channels and larger in-channel payments.
+  Several years later, LN has matured significantly and some
+  participants want to signal that they're willing to open higher
+  value channels.  The 1.1 spec proposal will allow such participants
+  to set a bit named "wumbo" (jumbo) to indicate their willingness to
+  accept larger channels and larger in-channel payments.
 
-    For more information, see the following threads: [1][zmn describing
-    wumbo], [2][zmn global wumbo].  For etymological reference, the name
-    wumbo appears to come from a [segment][youtube wumbo] in the
-    SpongeBob SquarePants cartoon where an "M" is interpreted as
-    standing for Mini, is inverted into a "W", and redefined as standing
-    for wumbo.
+  For more information, see the following threads: [1][zmn describing
+  wumbo], [2][zmn global wumbo].  For etymological reference, the name
+  wumbo appears to come from a [segment][youtube wumbo] in the
+  SpongeBob SquarePants cartoon where an "M" is interpreted as
+  standing for Mini, is inverted into a "W", and redefined as standing
+  for wumbo.
 
 - **Hidden destinations:** LN payments currently route payments using an
   onion method similar to sending data to a Tor exit node.  Alice wants
@@ -148,23 +148,23 @@ new features is available.  Some highlights from the meeting include:
   receives the payment, he can simply return the success preimage to
   Dan, who returns it to Charlene, and so forth back to Alice.
 
-    However, Tor also has a hidden service mode where both the
-    sender and the recipient each choose part of the path so that
-    neither of them can determine exactly where the packets came from or
-    went---providing significantly improved privacy.  This proposal for
-    LN mirrors that mode.  Alice will still choose Bob, Charlene, and
-    Dan, but Zed can prevent Alice from learning about his routes by
-    choosing Edmond, Fran, and George.  Zed provides information about
-    how to find Edmond to Alice---but the information about Fran,
-    George, and Zed's own node is encrypted so that Alice can't see it.
-    This can allow hidden channels---a current feature of several LN
-    implementations---to stay hidden even when routing payments from
-    arbitrary spenders.
+  However, Tor also has a hidden service mode where both the
+  sender and the recipient each choose part of the path so that
+  neither of them can determine exactly where the packets came from or
+  went---providing significantly improved privacy.  This proposal for
+  LN mirrors that mode.  Alice will still choose Bob, Charlene, and
+  Dan, but Zed can prevent Alice from learning about his routes by
+  choosing Edmond, Fran, and George.  Zed provides information about
+  how to find Edmond to Alice---but the information about Fran,
+  George, and Zed's own node is encrypted so that Alice can't see it.
+  This can allow hidden channels---a current feature of several LN
+  implementations---to stay hidden even when routing payments from
+  arbitrary spenders.
 
-    This feature is also called rendez-vous routing.  For more
-    information, see the [description][lnrfc rz] on the LN protocol
-    documentation wiki.  See also the following mailing list threads:
-    [1][cjp rz], [2][zmn rz], [3][zmn rz packetswitch].
+  This feature is also called rendez-vous routing.  For more
+  information, see the [description][lnrfc rz] on the LN protocol
+  documentation wiki.  See also the following mailing list threads:
+  [1][cjp rz], [2][zmn rz], [3][zmn rz packetswitch].
 
 Although discussed at the summit, the proposed 1.1 goals don't directly
 address *watchtowers* that help protect channels for users that are
@@ -196,41 +196,41 @@ independent events is the square of the average.
   Bitcoin hash rate and difficulty for an unknown length of time.
   Relevant consequences for Bitcoin businesses include:
 
-    - *Slower confirmation times:* the average time between blocks may
-      increase moderately to 11 or 12 minutes and the chance of there
-      being a long wait between blocks will increase significantly in
-      relative percentages (e.g. with historically typical 9 minute
-      average block intervals, about 0.7% of blocks take more than 45
-      minutes; with a 12 minute interval, 2.3% take more than 45
-      minutes).  Recommendation: Bitcoin users are already familiar with
-      occasional long delays, so likely no action is needed.
+  - *Slower confirmation times:* the average time between blocks may
+    increase moderately to 11 or 12 minutes and the chance of there
+    being a long wait between blocks will increase significantly in
+    relative percentages (e.g. with historically typical 9 minute
+    average block intervals, about 0.7% of blocks take more than 45
+    minutes; with a 12 minute interval, 2.3% take more than 45
+    minutes).  Recommendation: Bitcoin users are already familiar with
+    occasional long delays, so likely no action is needed.
 
-    - *Possibly increased fees:* a longer time between finding blocks
-      means less space for transactions, which can cause fee increases.
-      Occasional long waits between blocks also tend to create sudden
-      fee spikes that can persist for hours afterwards.  Recommendation:
-      ensure your fee estimation is working correctly and consider
-      preparing any fee-reduction measures you're willing to use such as
-      payment batching.
+  - *Possibly increased fees:* a longer time between finding blocks
+    means less space for transactions, which can cause fee increases.
+    Occasional long waits between blocks also tend to create sudden
+    fee spikes that can persist for hours afterwards.  Recommendation:
+    ensure your fee estimation is working correctly and consider
+    preparing any fee-reduction measures you're willing to use such as
+    payment batching.
 
-    - *Increased revenues for profit-maximizing miners:* miners not only
-      profit from increased fees, but each time
-      Bitcoin's difficulty adjusts downwards, mining becomes more
-      profitable for Bitcoin miners (all other things being equal).
-      Recommendation: do the math on reactivating slightly-old miners
-      and overclocking current miners.  With the recent price drop, this
-      might instead mean you don't need to turn off a miner that
-      would've otherwise been unprofitable to operate.
+  - *Increased revenues for profit-maximizing miners:* miners not only
+    profit from increased fees, but each time
+    Bitcoin's difficulty adjusts downwards, mining becomes more
+    profitable for Bitcoin miners (all other things being equal).
+    Recommendation: do the math on reactivating slightly-old miners
+    and overclocking current miners.  With the recent price drop, this
+    might instead mean you don't need to turn off a miner that
+    would've otherwise been unprofitable to operate.
 
-    - *Possible sudden end:* it's possible a large set of ideological miners
-      producing blocks for Bitcoin Cash will all return to mining for
-      the most profitable chain at roughly the same time.  Combined
-      with any past difficulty decreases, this could produce a series of
-      Bitcoin blocks with shorter average time between blocks than
-      normal.  This will likely wipe out any moderate backlog and allow
-      fees to drop to their default minimums.  Recommendation: consider
-      preparing to perform fee-reducing [input consolidations][] if fees
-      drop to their minimums.
+  - *Possible sudden end:* it's possible a large set of ideological miners
+    producing blocks for Bitcoin Cash will all return to mining for
+    the most profitable chain at roughly the same time.  Combined
+    with any past difficulty decreases, this could produce a series of
+    Bitcoin blocks with shorter average time between blocks than
+    normal.  This will likely wipe out any moderate backlog and allow
+    fees to drop to their default minimums.  Recommendation: consider
+    preparing to perform fee-reducing [input consolidations][] if fees
+    drop to their minimums.
 
 - **Lightning protocol discussion:** over 75 emails have been posted to
   the Lightning-Dev mailing list in the past week, representing almost
@@ -260,34 +260,9 @@ independent events is the square of the average.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="e70a19e7132dac91b7948fcbfac086f86fec3d88"
-  end="35739976c1d9ad250ece573980c57e7e7976ae23"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="d4b042dc1946ece8b60d538ade8e912f035612fe"
-  end="4da1c867c3209dab4e4a824b73d89fc38b616b37"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="62e6a9ff542e40364b67a7aa419e33ed72b96a42"
-  end="d5aaa11373cc6759f9f894a1daf7fb88d0834bc9"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-  end="314a61d72474aa29ff4afba8472553ad91d88e9d"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [C-Lightning #2075][] adds support for plugins.  As their
   [documentation][cl plugin] describes, "plugins are a simple yet
@@ -352,3 +327,7 @@ newsletter's author.
 [ln1.1 outline]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [input consolidations]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [lnrfc rz]: https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx
+[newsletter #21]: /en/newsletters/2018/11/13/#advertising-node-liquidity
+[newsletter #17]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
+[newsletter #12]: /en/newsletters/2018/09/11/#workshop
+[newsletter #19]: /en/newsletters/2018/10/30/#lnd-1535-1512

@@ -25,24 +25,24 @@ popular Bitcoin infrastructure software.
   would need to pay proportionally more than a payment which leaves 75%
   of its outbound capacity available.
 
-    Developer ZmnSCPxj [described][zmnscpxj ratecards] a simple way to
-    use ratecards, "you can model a rate card as four separate channels
-    between the same two nodes, with different costs each.  If the path
-    at the lowest cost fails, you just try another route that may
-    have more hops but lower effective cost, or else try the same
-    channel at a higher cost."
+  Developer ZmnSCPxj [described][zmnscpxj ratecards] a simple way to
+  use ratecards, "you can model a rate card as four separate channels
+  between the same two nodes, with different costs each.  If the path
+  at the lowest cost fails, you just try another route that may
+  have more hops but lower effective cost, or else try the same
+  channel at a higher cost."
 
-    The proposal also allows for negative fees.  For example, a channel
-    could subsidize payments forwarded through it when it had more than
-    75% outbound capacity by adding 1 satoshi to every 1,000 satoshis in
-    payment value.  Negative fees could be used by merchants to
-    incentivize others to restore inbound capacity to channels
-    frequently used for receiving payments.
+  The proposal also allows for negative fees.  For example, a channel
+  could subsidize payments forwarded through it when it had more than
+  75% outbound capacity by adding 1 satoshi to every 1,000 satoshis in
+  payment value.  Negative fees could be used by merchants to
+  incentivize others to restore inbound capacity to channels
+  frequently used for receiving payments.
 
-    Neigut notes that some nodes are already adjusting their fees based
-    on channel capacity, and that fee ratecards would provide a more
-    efficient way for node operators to communicate their intentions to the network than
-    frequently advertising new feerates via the LN gossip network. {% assign timestamp="0:51" %}
+  Neigut notes that some nodes are already adjusting their fees based
+  on channel capacity, and that fee ratecards would provide a more
+  efficient way for node operators to communicate their intentions to the network than
+  frequently advertising new feerates via the LN gossip network. {% assign timestamp="0:51" %}
 
 - **Bitcoin implementation designed for testing soft forks on signet:**
   Anthony Towns [posted][towns bi] to the Bitcoin-Dev mailing list a
@@ -57,10 +57,10 @@ popular Bitcoin infrastructure software.
   changes to transaction relay policy (such as [package relay][topic
   package relay]).
 
-    Towns is seeking constructive criticism of the idea for this new
-    testing implementation, called [Bitcoin Inquisition][], as well as
-    reviews of the [pull requests][bi prs] adding the initial set of
-    soft forks to it. {% assign timestamp="11:35" %}
+  Towns is seeking constructive criticism of the idea for this new
+  testing implementation, called [Bitcoin Inquisition][], as well as
+  reviews of the [pull requests][bi prs] adding the initial set of
+  soft forks to it. {% assign timestamp="11:35" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -136,12 +136,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   of the channel balance, penalizing by that amount any peers that
   attempt to cheat.
 
-    This merged PR allows the user to reduce the reserve for a specific
-    channel, including reducing it to zero.  Although this can be
-    dangerous---the lower the reserve, the less penalty there is for
-    cheating---it can be useful for certain situations.  Most notably,
-    setting the reserve to zero can allow the remote peer to spend all of their
-    funds, emptying their channel. {% assign timestamp="1:01:02" %}
+  This merged PR allows the user to reduce the reserve for a specific
+  channel, including reducing it to zero.  Although this can be
+  dangerous---the lower the reserve, the less penalty there is for
+  cheating---it can be useful for certain situations.  Most notably,
+  setting the reserve to zero can allow the remote peer to spend all of their
+  funds, emptying their channel. {% assign timestamp="1:01:02" %}
 
 - [Rust Bitcoin #1258][] adds a method for comparing two locktimes to
   determine whether one satisfies the other.  As described in the code

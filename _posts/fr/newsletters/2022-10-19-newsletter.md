@@ -29,39 +29,39 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   élément de conception discuté lors du développement de taproot
   (voir la [Newsletter #65][news65 tapscript limits]).
 
-    Peu après la confirmation de grandes transactions, les utilisateurs
-    ont commencé à signaler que l'implémentation du nœud complet BTCD et celle
-    du réseau Lightning LND ne fournissaient pas les données des blocs les plus
-    récents disponibles pour les nœuds complets Bitcoin Core. Pour les nœuds
-    BTCD, cela signifiait que les transactions qui avaient été récemment confirmées
-    étaient signalées comme étant toujours non confirmées. Pour LND, cela signifiait
-    que les nouveaux canaux qui étaient récemment prêts à être utilisés n'étaient
-    pas signalés comme étant totalement ouverts.
+  Peu après la confirmation de grandes transactions, les utilisateurs
+  ont commencé à signaler que l'implémentation du nœud complet BTCD et celle
+  du réseau Lightning LND ne fournissaient pas les données des blocs les plus
+  récents disponibles pour les nœuds complets Bitcoin Core. Pour les nœuds
+  BTCD, cela signifiait que les transactions qui avaient été récemment confirmées
+  étaient signalées comme étant toujours non confirmées. Pour LND, cela signifiait
+  que les nouveaux canaux qui étaient récemment prêts à être utilisés n'étaient
+  pas signalés comme étant totalement ouverts.
 
-    Un développeur de BTCD et de LND a corrigé le problème dans le code de BTCD,
-    que LND utilise comme une bibliothèque, et a rapidement publié de nouvelles
-    versions pour [LND][lnd 0.15.2-beta] (comme mentionné dans [la newsletter]
-    [news221 lnd] de la semaine dernière) et [BTCD]. Tous les utilisateurs de
-    BTCD et LND doivent effectuer une mise à jour.
+  Un développeur de BTCD et de LND a corrigé le problème dans le code de BTCD,
+  que LND utilise comme une bibliothèque, et a rapidement publié de nouvelles
+  versions pour [LND][lnd 0.15.2-beta] (comme mentionné dans [la newsletter]
+  [news221 lnd] de la semaine dernière) et [BTCD]. Tous les utilisateurs de
+  BTCD et LND doivent effectuer une mise à jour.
 
-    Tant qu'un utilisateur n'aura pas mis à jour son logiciel, il souffrira des
-    problèmes d'absence de confirmation décrits ci-dessus et pourra également être
-    vulnérable à plusieurs attaques. Certaines de ces attaques nécessitent l'accès
-    à une puissance de hachage importante (ce qui les rend coûteuses et, espérons-le,
-    peu pratiques dans ce cas). D'autres attaques, en particulier celles
-    contre les utilisateurs de LND, exigent que l'attaquant prenne le risque de perdre une
-    partie de ses fonds dans un canal, ce qui est aussi, espérons-le, suffisamment dissuasif.
-    À nouveau, nous recommandons de mettre à jour et, en outre, nous recommandons à toute
-    personne utilisant un logiciel Bitcoin de s'inscrire aux annonces de sécurité de
-    l'équipe de développement de ce logiciel.
+  Tant qu'un utilisateur n'aura pas mis à jour son logiciel, il souffrira des
+  problèmes d'absence de confirmation décrits ci-dessus et pourra également être
+  vulnérable à plusieurs attaques. Certaines de ces attaques nécessitent l'accès
+  à une puissance de hachage importante (ce qui les rend coûteuses et, espérons-le,
+  peu pratiques dans ce cas). D'autres attaques, en particulier celles
+  contre les utilisateurs de LND, exigent que l'attaquant prenne le risque de perdre une
+  partie de ses fonds dans un canal, ce qui est aussi, espérons-le, suffisamment dissuasif.
+  À nouveau, nous recommandons de mettre à jour et, en outre, nous recommandons à toute
+  personne utilisant un logiciel Bitcoin de s'inscrire aux annonces de sécurité de
+  l'équipe de développement de ce logiciel.
 
-    Après les divulgations ci-dessus, Loki Verloren a [posté][verloren limits]
-    sur la liste de diffusion Bitcoin-Dev pour suggérer que des limites directes soient
-    ajoutées à la taille des témoins de taproot. Greg Sanders a [fait remarquer][sanders limits]
-    pour faire remarquer que l'ajout de limites maintenant n'augmenterait pas seulement
-    la complexité du code, mais pourrait également conduire à ce que des personnes
-    perdent leur argent si elles ont déjà reçu des bitcoins d'un script qui nécessite
-    un grand témoin pour les dépenser.
+  Après les divulgations ci-dessus, Loki Verloren a [posté][verloren limits]
+  sur la liste de diffusion Bitcoin-Dev pour suggérer que des limites directes soient
+  ajoutées à la taille des témoins de taproot. Greg Sanders a [fait remarquer][sanders limits]
+  pour faire remarquer que l'ajout de limites maintenant n'augmenterait pas seulement
+  la complexité du code, mais pourrait également conduire à ce que des personnes
+  perdent leur argent si elles ont déjà reçu des bitcoins d'un script qui nécessite
+  un grand témoin pour les dépenser.
 
 - **Option de remplacement de transaction :** comme indiqué dans les Newsletters
   [#205][news205 rbf] et [#208][news208 rbf], Bitcoin Core a fusionné
@@ -73,30 +73,30 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   à condition que les transactions de remplacement respectent toutes les autres
   règles de Bitcoin Core pour les remplacements.
 
-    Dario Sneidermanis a [posté][sne rbf] sur la liste de diffusion Bitcoin-Dev que
-    cette nouvelle option peut créer des problèmes pour les services qui acceptent actuellement
-    des transactions non confirmées comme définitives. Bien que ce soit possible depuis des
-    années, les utilisateurs peuvent exécuter des logiciels non Bitcoin Core (ou des
-    versions éditées de Bitcoin Core) qui permettent le remplacement de transactions *full*[^full-rbf]
-    non signalées, rien ne prouve que ces logiciels sont largement utilisés. Sneidermanis pense
-    qu'une option facilement accessible dans Bitcoin Core pourrait changer cela en permettant à suffisamment
-    d'utilisateurs et de mineurs d'activer le RBF complet et de rendre le remplacement non signalé
-    fiable. Un remplacement non signalé plus fiable rendrait également
-    efficaces les tentatives de vol des services qui acceptent les transactions non confirmées comme définitives, ce qui
-    obligerait ces services à modifier leur comportement.
+  Dario Sneidermanis a [posté][sne rbf] sur la liste de diffusion Bitcoin-Dev que
+  cette nouvelle option peut créer des problèmes pour les services qui acceptent actuellement
+  des transactions non confirmées comme définitives. Bien que ce soit possible depuis des
+  années, les utilisateurs peuvent exécuter des logiciels non Bitcoin Core (ou des
+  versions éditées de Bitcoin Core) qui permettent le remplacement de transactions *full*[^full-rbf]
+  non signalées, rien ne prouve que ces logiciels sont largement utilisés. Sneidermanis pense
+  qu'une option facilement accessible dans Bitcoin Core pourrait changer cela en permettant à suffisamment
+  d'utilisateurs et de mineurs d'activer le RBF complet et de rendre le remplacement non signalé
+  fiable. Un remplacement non signalé plus fiable rendrait également
+  efficaces les tentatives de vol des services qui acceptent les transactions non confirmées comme définitives, ce qui
+  obligerait ces services à modifier leur comportement.
 
-    En plus de la description du problème et de la description détaillée de la manière
-    dont les services choisissent d'accepter des transactions non confirmées,
-    Sneidermanis a également proposé une approche alternative : supprimer l'option de configuration
-    de la prochaine version de Bitcoin Core, mais aussi ajouter du code qui
-    activera par défaut le RBF complet à un moment ultérieur. Anthony Towns
-    [a publié][towns rbf] plusieurs options à prendre en considération et a ouvert une
-    [pull request][bitcoin core #26323] qui implémente une version légèrement modifiée
-    de la proposition de Sneidermanis.  Si elle est fusionnée et publiée
-    dans son état actuel, le PR de Towns activera par défaut le RBF complet
-    à partir du 1er mai 2023.  Les utilisateurs qui s'opposent à la RBF complète pourront
-    toujours empêcher leurs nœuds de participer en définissant l'option
-    `mempoolfullrbf` à false.
+  En plus de la description du problème et de la description détaillée de la manière
+  dont les services choisissent d'accepter des transactions non confirmées,
+  Sneidermanis a également proposé une approche alternative : supprimer l'option de configuration
+  de la prochaine version de Bitcoin Core, mais aussi ajouter du code qui
+  activera par défaut le RBF complet à un moment ultérieur. Anthony Towns
+  [a publié][towns rbf] plusieurs options à prendre en considération et a ouvert une
+  [pull request][bitcoin core #26323] qui implémente une version légèrement modifiée
+  de la proposition de Sneidermanis.  Si elle est fusionnée et publiée
+  dans son état actuel, le PR de Towns activera par défaut le RBF complet
+  à partir du 1er mai 2023.  Les utilisateurs qui s'opposent à la RBF complète pourront
+  toujours empêcher leurs nœuds de participer en définissant l'option
+  `mempoolfullrbf` à false.
 
 - **Recherche sur les rollups de validité** : John Light a [posté][light ml ru]
   sur la liste de diffusion Bitcoin-Dev un lien vers un [rapport de recherche détaillé][light ru]
@@ -108,9 +108,9 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   qu'ils possèdent de la sidechain même si les opérateurs ou les mineurs de la
   chaîne latérale tentent d'empêcher le retrait.
 
-    Les recherches de Light décrivent en profondeur les validity rollups, examinent comment
-    leur prise en charge pourrait être ajoutée à Bitcoin, et étudient les différents
-    problèmes liés à leur mise en œuvre.
+  Les recherches de Light décrivent en profondeur les validity rollups, examinent comment
+  leur prise en charge pourrait être ajoutée à Bitcoin, et étudient les différents
+  problèmes liés à leur mise en œuvre.
 
 - **Validité de la sécurité de MuSig2 :** Jonas Nick a [signalé][nick musig2] sur la
   liste de diffusion Bitcoin-Dev une vulnérabilité que lui et plusieurs
@@ -120,10 +120,10 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   pour laquelle l'utilisateur signera (comme avec [BIP32][topic bip32] extended pubkeys)
   et peut manipuler la version de la clé pour laquelle l'utilisateur signera.
 
-    Jonas Nick pense que la vulnérabilité "ne devrait s'appliquer que dans des cas relativement rares"
-    et encourage toute personne utilisant (ou prévoyant d'utiliser bientôt MuSig2
-    à lui poser des questions, ainsi qu'à ses co-auteurs.
-    Le projet de BIP pour MuSig2 devrait être mis à jour prochainement afin d'aborder ce problème.
+  Jonas Nick pense que la vulnérabilité "ne devrait s'appliquer que dans des cas relativement rares"
+  et encourage toute personne utilisant (ou prévoyant d'utiliser bientôt MuSig2
+  à lui poser des questions, ainsi qu'à ses co-auteurs.
+  Le projet de BIP pour MuSig2 devrait être mis à jour prochainement afin d'aborder ce problème.
 
 - **Taille minimale des transactions relayables :** Greg Sanders a [posté][sanders
   min] sur la liste de diffusion Bitcoin-Dev une demande pour que Bitcoin Core puisse
@@ -136,22 +136,22 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   qu'il a reçu un paiement d'un million de BTC avec des dizaines de confirmations même si
   aucun paiement de ce type n'a jamais été confirmé.
 
-    Lorsque la vulnérabilité n'était connue qu'en privé par quelques développeurs,
-    une limite a été ajoutée à Bitcoin Core pour empêcher le relais de toute transaction
-    de moins de 85 octets (sans compter les témoins), qui est à peu près la plus
-    petite taille pouvant être créée à l'aide de modèles de transaction standard.
-    Cela obligerait un attaquant à faire miner sa transaction par un logiciel
-    non basé sur Bitcoin Core.
-    Plus tard, le [consensus cleanup soft fork proposal][topic consensus
-    cleanup] a suggéré de résoudre définitivement le problème en interdisant toutes
-    transactions de moins de 65 octets d'être incluses dans les nouveaux blocs.
+  Lorsque la vulnérabilité n'était connue qu'en privé par quelques développeurs,
+  une limite a été ajoutée à Bitcoin Core pour empêcher le relais de toute transaction
+  de moins de 85 octets (sans compter les témoins), qui est à peu près la plus
+  petite taille pouvant être créée à l'aide de modèles de transaction standard.
+  Cela obligerait un attaquant à faire miner sa transaction par un logiciel
+  non basé sur Bitcoin Core.
+  Plus tard, le [consensus cleanup soft fork proposal][topic consensus
+  cleanup] a suggéré de résoudre définitivement le problème en interdisant toutes
+  transactions de moins de 65 octets d'être incluses dans les nouveaux blocs.
 
-    Sanders suggère d'abaisser la limite de la politique de relais des transactions
-    de 85 octets à la limite de 65 octets suggérée dans le nettoyage de consensus, ce qui peut
-    permettre une expérimentation et un usage supplémentaire sans changer le
-    profil de risque actuel. Sanders a ouvert une [pull request][bitcoin core
-    #26265] pour effectuer ce changement. Voir aussi la [Newsletter #99][news99
-    min] pour une discussion antérieure liée à cette proposition de changement.
+  Sanders suggère d'abaisser la limite de la politique de relais des transactions
+  de 85 octets à la limite de 65 octets suggérée dans le nettoyage de consensus, ce qui peut
+  permettre une expérimentation et un usage supplémentaire sans changer le
+  profil de risque actuel. Sanders a ouvert une [pull request][bitcoin core
+  #26265] pour effectuer ce changement. Voir aussi la [Newsletter #99][news99
+  min] pour une discussion antérieure liée à cette proposition de changement.
 
 - **Mise à jour BIP324:** Dhruv M a [posté][dhruv 324] sur la liste de
   diffusion Bitcoin-Dev un résumé de plusieurs mises à jour de la proposition
@@ -161,11 +161,11 @@ et des descriptions d'ajout sur les projets d'infrastructure Bitcoin populaires.
   évaluer la proposition, y compris un excellent [guide sur les
   modifications du code][bip324 changes] à travers plusieurs référentiels.
 
-    Comme décrit dans la section *motivation* de l'ébauche du BIP,
-    un protocole de transport crypté natif pour les noeuds Bitcoin peut améliorer la vie privée
-    lors de l'annonce des transactions, empêcher la falsification des connexions
-    (ou du moins rendre plus facile la détection de la falsification), et également rendre la censure des
-    connexions P2P et les [attaques d'éclipse][topic eclipse attacks] plus faciles à détecter.
+  Comme décrit dans la section *motivation* de l'ébauche du BIP,
+  un protocole de transport crypté natif pour les noeuds Bitcoin peut améliorer la vie privée
+  lors de l'annonce des transactions, empêcher la falsification des connexions
+  (ou du moins rendre plus facile la détection de la falsification), et également rendre la censure des
+  connexions P2P et les [attaques d'éclipse][topic eclipse attacks] plus faciles à détecter.
 
 ## Changements dans les services et les logiciels clients
 
@@ -274,12 +274,12 @@ the "full RBF" term.  -->
       le même montant d'argent au destinataire initial. Cette idée, appelée plus tard First
       Seen Safe (FSS) RBF, était un type de remplacement *partiel*.
 
-        En comparaison, le remplacement complet à cette époque signifiait que le remplacement
-        pouvait changer complètement tout ce qui concernait la
-        transaction originale (à condition qu'elle soit toujours en conflit avec la transaction
-        originale en dépensant au moins une des mêmes entrées). C'est
-        cet usage de full qui est utilisé dans le titre de [BIP125][],
-        "Opt-in Full Replace-by-Fee Signaling".
+      En comparaison, le remplacement complet à cette époque signifiait que le remplacement
+      pouvait changer complètement tout ce qui concernait la
+      transaction originale (à condition qu'elle soit toujours en conflit avec la transaction
+      originale en dépensant au moins une des mêmes entrées). C'est
+      cet usage de full qui est utilisé dans le titre de [BIP125][],
+      "Opt-in Full Replace-by-Fee Signaling".
 
     - Le remplacement complet de **n'importe quelle** transaction* est différent du remplacement seulement
       des transactions qui acceptent de permettre le remplacement via un signal BIP125. Le RBF
@@ -288,10 +288,10 @@ the "full RBF" term.  -->
       minorité de transactions opte pour le RBF, ce qui peut être considéré comme une adoption partielle de la
       méthode RBF.
 
-        En comparaison, l'adoption *complète* de RBF peut être permise en autorisant
-        toute transaction non confirmée à être remplacée. C'est cette utilisation de
-        complet qui est actuellement discutée dans l'option de configuration `mempoolfullrbf`
-        de Bitcoin Core.
+      En comparaison, l'adoption *complète* de RBF peut être permise en autorisant
+      toute transaction non confirmée à être remplacée. C'est cette utilisation de
+      complet qui est actuellement discutée dans l'option de configuration `mempoolfullrbf`
+      de Bitcoin Core.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="23549,25412,25667,2448,6956,6972,7004,1625,26323,1372,1378,26265" %}

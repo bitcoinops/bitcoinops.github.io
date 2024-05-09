@@ -44,16 +44,16 @@ wallets and services.*
   chain analysts much less reliable, improving privacy for even Bitcoin
   users who aren't using payjoin.
 
-    This week, BTCPay [announced][btcpay pj announce] the release of
-    version 1.0.4.0 which includes an implementation of payjoin support
-    for both receiving payments in payment processor mode and sending
-    them using BTCPay's internal wallet.  For details on using the
-    protocol, see their [user guide][btcpay pj ug].  For technical
-    details on their implementation, see their [specification][btcpay pj
-    spec] or the [issue][btcpay-doc 486] where future improvements are
-    being actively discussed.  For this change to have the maximum
-    impact, other popular wallets need to implement support for creating
-    compatible payjoin payments.
+  This week, BTCPay [announced][btcpay pj announce] the release of
+  version 1.0.4.0 which includes an implementation of payjoin support
+  for both receiving payments in payment processor mode and sending
+  them using BTCPay's internal wallet.  For details on using the
+  protocol, see their [user guide][btcpay pj ug].  For technical
+  details on their implementation, see their [specification][btcpay pj
+  spec] or the [issue][btcpay-doc 486] where future improvements are
+  being actively discussed.  For this change to have the maximum
+  impact, other popular wallets need to implement support for creating
+  compatible payjoin payments.
 
 - **Lightning Labs drafts Lightning Service Authentication Tokens (LSAT) specification:**
   Lightning Labs has [announced][ll lsat announcement] LSAT, a

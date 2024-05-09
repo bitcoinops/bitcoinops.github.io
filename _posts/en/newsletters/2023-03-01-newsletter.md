@@ -23,34 +23,34 @@ summaries of notable changes to popular Bitcoin infrastructure software.
   to verify the integrity of backups using just pen, paper,
   documentation, and a modest amount of time.
 
-    As designed, Codex32 provides very strong assurances about its
-    ability to detect errors in the backups.  Peter Todd suggested a far
-    easier method would be to generate recovery codes that could have
-    their parts added together to produce a checksum.  If dividing the
-    checksum by a known constant produced no remainder, it would verify
-    the integrity of the backup within the parameters of the checksum
-    algorithm.  Peter Todd suggested using an algorithm that provided
-    roughly 99.9% protection against any typos, which he thought would
-    be sufficiently strong, easy for people to use, and easy for people
-    to memorize so that they didn't need the extra Codex32 materials.
+  As designed, Codex32 provides very strong assurances about its
+  ability to detect errors in the backups.  Peter Todd suggested a far
+  easier method would be to generate recovery codes that could have
+  their parts added together to produce a checksum.  If dividing the
+  checksum by a known constant produced no remainder, it would verify
+  the integrity of the backup within the parameters of the checksum
+  algorithm.  Peter Todd suggested using an algorithm that provided
+  roughly 99.9% protection against any typos, which he thought would
+  be sufficiently strong, easy for people to use, and easy for people
+  to memorize so that they didn't need the extra Codex32 materials.
 
-    Russell O'Connor [replied][o'connor codex32] that a full Codex32
-    recovery code can be checked much faster than full verification if
-    the user is willing to accept less protection.  Checking just two
-    characters at a time would guarantee detection of any
-    single-character mistake in a recovery code and provide 99.9%
-    protection against other substitution errors.  The process would be
-    somewhat similar to generating the type of checksum that Peter Todd
-    described, although it would require using a special lookup table
-    which ordinary users would be unlikely to memorize.  If verifiers
-    were willing to use a different lookup table each time they checked
-    their code, each additional verification would increase their chance
-    of detecting an error up until the seventh verification, where they
-    would have the same assurance as they would receive from performing
-    full Codex32 verification.  No changes are required to Codex32 to
-    obtain the reinforcing quick check property, although Codex32's
-    documentation will need to be updated to provide the necessary
-    tables and worksheets in order to make it usable. {% assign timestamp="2:31" %}
+  Russell O'Connor [replied][o'connor codex32] that a full Codex32
+  recovery code can be checked much faster than full verification if
+  the user is willing to accept less protection.  Checking just two
+  characters at a time would guarantee detection of any
+  single-character mistake in a recovery code and provide 99.9%
+  protection against other substitution errors.  The process would be
+  somewhat similar to generating the type of checksum that Peter Todd
+  described, although it would require using a special lookup table
+  which ordinary users would be unlikely to memorize.  If verifiers
+  were willing to use a different lookup table each time they checked
+  their code, each additional verification would increase their chance
+  of detecting an error up until the seventh verification, where they
+  would have the same assurance as they would receive from performing
+  full Codex32 verification.  No changes are required to Codex32 to
+  obtain the reinforcing quick check property, although Codex32's
+  documentation will need to be updated to provide the necessary
+  tables and worksheets in order to make it usable. {% assign timestamp="2:31" %}
 
 ## Releases and release candidates
 
@@ -106,14 +106,14 @@ funds. {% assign timestamp="12:59" %}
   to prevent denial of service resource exhaustion attacks.  The new
   limits are:
 
-    - A maximum of 250 data-sharing peers which don't have a funded
-      channel with the local node.
+  - A maximum of 250 data-sharing peers which don't have a funded
+    channel with the local node.
 
-    - A maximum of 50 peers which may currently be trying to open a
-      channel with the local node.
+  - A maximum of 50 peers which may currently be trying to open a
+    channel with the local node.
 
-    - A maximum of 4 channels that have not yet been funded from a
-      single peer. {% assign timestamp="18:37" %}
+  - A maximum of 4 channels that have not yet been funded from a
+    single peer. {% assign timestamp="18:37" %}
 
 - [LDK #1977][] makes public its structures for serializing and parsing
   [offers][topic offers] as defined in [draft BOLT12][bolts #798].  LDK

@@ -37,36 +37,36 @@ notable changes to popular Bitcoin infrastructure projects.
   delegates (Alice and Bob), assuming the trusted third party hasn't
   colluded with a previous delegate to cheat.
 
-    This week, Tom Trevethan [posted][trevethan statechains] to the
-    Bitcoin-Dev mailing list about two modifications of the
-    statechain design that could allow it to be used with the current
-    Bitcoin protocol rather than waiting for proposed soft fork changes
-    such as [schnorr signatures][topic schnorr signatures]
-    and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]:
+  This week, Tom Trevethan [posted][trevethan statechains] to the
+  Bitcoin-Dev mailing list about two modifications of the
+  statechain design that could allow it to be used with the current
+  Bitcoin protocol rather than waiting for proposed soft fork changes
+  such as [schnorr signatures][topic schnorr signatures]
+  and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]:
 
-    1. Replace the eltoo mechanism (which requires either [BIP118][]
-       `SIGHASH_NOINPUT` or [bip-anyprevout][] `SIGHASH_ANYPREVOUT`)
-       with a decrementing locktime similar to that proposed for
-       [duplex micropayment channels][].  E.g., when Alice receives
-       control over a statechain UTXO, a timelock would prevent her from
-       being able to unilaterally spend it onchain for 30 days; when
-       Alice transfers the UTXO to Bob, a timelock would restrict him
-       for only 29 days---this gives a spend by Bob precedence over a
-       spend by Alice.  The downside of this approach is that delegates
-       might need to wait a long time before being able to spend their
-       funds without permission from the trusted third party.
+  1. Replace the eltoo mechanism (which requires either [BIP118][]
+     `SIGHASH_NOINPUT` or [bip-anyprevout][] `SIGHASH_ANYPREVOUT`)
+     with a decrementing locktime similar to that proposed for
+     [duplex micropayment channels][].  E.g., when Alice receives
+     control over a statechain UTXO, a timelock would prevent her from
+     being able to unilaterally spend it onchain for 30 days; when
+     Alice transfers the UTXO to Bob, a timelock would restrict him
+     for only 29 days---this gives a spend by Bob precedence over a
+     spend by Alice.  The downside of this approach is that delegates
+     might need to wait a long time before being able to spend their
+     funds without permission from the trusted third party.
 
-    2. Replace the 2-of-2 schnorr multisig between the trusted third
-       party and the current delegate (using an [adaptor
-       signature][scriptless scripts]) with a single-sig using [secure
-       multiparty computation][mpc].  The main downside of this approach
-       is an increased complexity that makes security review harder.
+  2. Replace the 2-of-2 schnorr multisig between the trusted third
+     party and the current delegate (using an [adaptor
+     signature][scriptless scripts]) with a single-sig using [secure
+     multiparty computation][mpc].  The main downside of this approach
+     is an increased complexity that makes security review harder.
 
-    Several people replied to the thread with comments and suggested
-    alternatives.  Also [discussed][patent discussion] was a previous
-    [patent application][trevethan application] by Trevethan related to
-    offchain payments secured by a trusted third party using
-    decrementing timelocks and multiparty ECDSA.
+  Several people replied to the thread with comments and suggested
+  alternatives.  Also [discussed][patent discussion] was a previous
+  [patent application][trevethan application] by Trevethan related to
+  offchain payments secured by a trusted third party using
+  decrementing timelocks and multiparty ECDSA.
 
 - **Mitigating differential power analysis in schnorr signatures:**
   Lloyd Fournier started a [discussion][fournier dpa] on the Bitcoin-Dev
@@ -82,19 +82,19 @@ notable changes to popular Bitcoin infrastructure projects.
   operation rather than a more standard method of hashing the private
   key with the randomness.
 
-    BIP340 co-author Pieter Wuille [replied][wuille dpa] with an
-    explanation: in key and signature aggregation where
-    a mathematical relationship is created between the private keys of
-    cooperating users, the attacker---if he's one of the cooperating
-    users---may be able to combine knowledge of his private key with
-    information learned from power analysis of other users' signature generation in order to learn about the
-    other users' private keys.  It is believed that this
-    attack would be easier to execute when looking at the power
-    consumption of a relatively complex hash function like SHA256
-    compared to a relatively trivial function like xor (binary
-    addition).  For more information, Wuille links to a
-    [discussion][nonce function discussion] between himself and several
-    other Bitcoin cryptographers.
+  BIP340 co-author Pieter Wuille [replied][wuille dpa] with an
+  explanation: in key and signature aggregation where
+  a mathematical relationship is created between the private keys of
+  cooperating users, the attacker---if he's one of the cooperating
+  users---may be able to combine knowledge of his private key with
+  information learned from power analysis of other users' signature generation in order to learn about the
+  other users' private keys.  It is believed that this
+  attack would be easier to execute when looking at the power
+  consumption of a relatively complex hash function like SHA256
+  compared to a relatively trivial function like xor (binary
+  addition).  For more information, Wuille links to a
+  [discussion][nonce function discussion] between himself and several
+  other Bitcoin cryptographers.
 
 - **Proposed update to BIP322 generic `signmessage`:** after starting a
   discussion a few weeks ago about the future of the [generic

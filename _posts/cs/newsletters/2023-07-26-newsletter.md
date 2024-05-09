@@ -38,116 +38,116 @@ páteřních projektech.
   Lightning-Dev [příspěvek][kc notes] se souhrnem diskuzí z nedávného
   setkání vývojářů LN v New Yorku. Mezi diskutovanými tématy bylo:
 
-    - *Spolehlivé potvrzování transakcí:* [přeposílání balíčků][topic
-      package relay], [přeposílání v3 transakcí][topic v3 transaction relay],
-      [dočasné anchor výstupy][topic ephemeral anchors], [cluster
-      mempool][topic cluster mempool] i další témata související s
-      přeposíláním transakcí a těžbou byly předmětem diskuzí v kontextu
-      hledání jasnější cesty ke spolehlivějšímu potvrzování onchain
-      transakcí bez hrozby [pinningu][topic transaction pinning] nebo
-      nutnosti přeplácet během navyšování poplatků pomocí [CPFP][topic cpfp]
-      a [RBF][topic rbf]. Doporučujeme čtenářům zajímajícím se o pravidla
-      přeposílání transakcí, která mají dopad na všechny protokoly druhé
-      vrstvy, aby si přečetli poznámky obsahující zajímavé informace
-      poskytnuté vývojáři LN.
+  - *Spolehlivé potvrzování transakcí:* [přeposílání balíčků][topic
+    package relay], [přeposílání v3 transakcí][topic v3 transaction relay],
+    [dočasné anchor výstupy][topic ephemeral anchors], [cluster
+    mempool][topic cluster mempool] i další témata související s
+    přeposíláním transakcí a těžbou byly předmětem diskuzí v kontextu
+    hledání jasnější cesty ke spolehlivějšímu potvrzování onchain
+    transakcí bez hrozby [pinningu][topic transaction pinning] nebo
+    nutnosti přeplácet během navyšování poplatků pomocí [CPFP][topic cpfp]
+    a [RBF][topic rbf]. Doporučujeme čtenářům zajímajícím se o pravidla
+    přeposílání transakcí, která mají dopad na všechny protokoly druhé
+    vrstvy, aby si přečetli poznámky obsahující zajímavé informace
+    poskytnuté vývojáři LN.
 
-    - *Taproot a MuSig2 kanály:* krátká diskuze o vývoji kanálů založených
-      na [P2TR][topic taproot] výstupech a [MuSig2][topic musig] pro
-      elektronické podpisy. Významná část poznámek se týká zjednodušeného
-      protokolu kooperativního zavření kanálu, kterému jsme se věnovali
-      v předchozím bodě.
+  - *Taproot a MuSig2 kanály:* krátká diskuze o vývoji kanálů založených
+    na [P2TR][topic taproot] výstupech a [MuSig2][topic musig] pro
+    elektronické podpisy. Významná část poznámek se týká zjednodušeného
+    protokolu kooperativního zavření kanálu, kterému jsme se věnovali
+    v předchozím bodě.
 
-    - *Aktualizovaná oznámení o kanálech:* gossip protokol LN v současnosti
-      přeposílá oznámení o nových nebo aktualizovaných kanálech jen, pokud
-      jsou tyto kanály financovány P2WSH výstupem se skriptem 2-ze-2 `OP_CHECKMULTISIG`.
-      Abychom mohli začít používat [P2TR][topic taproot]
-      výstupy a [multisig][topic multisignature] commitmenty založené na
-      [MuSig2][topic musig], musí být tento gossip protokol aktualizován.
-      Jedním z diskutovaných [témat][topic channel announcements] během
-      předchozího setkání LN vývojářů (viz [zpravodaj č. 204][news204 gossip])
-      bylo, zda bychom měli učinit minimální aktualizaci protokolu (nazývanou
-      gossip v1.5), která by pouze přidala P2TR výstupy, či širší aktualizaci
-      protokolu (gossip v2.0), která by umožnila používat UTXO všech druhů.
-      Pokud by mohl být použit jakýkoliv výstup, znamenalo by to, že výstup
-      použitý pro oznámení kanálu nemusí být výstup, který je skutečně
-      používán pro provoz kanálu. Tato vlastnost by porušila veřejnou vazbu
-      mezi výstupy a financováním kanálů.
+  - *Aktualizovaná oznámení o kanálech:* gossip protokol LN v současnosti
+    přeposílá oznámení o nových nebo aktualizovaných kanálech jen, pokud
+    jsou tyto kanály financovány P2WSH výstupem se skriptem 2-ze-2 `OP_CHECKMULTISIG`.
+    Abychom mohli začít používat [P2TR][topic taproot]
+    výstupy a [multisig][topic multisignature] commitmenty založené na
+    [MuSig2][topic musig], musí být tento gossip protokol aktualizován.
+    Jedním z diskutovaných [témat][topic channel announcements] během
+    předchozího setkání LN vývojářů (viz [zpravodaj č. 204][news204 gossip])
+    bylo, zda bychom měli učinit minimální aktualizaci protokolu (nazývanou
+    gossip v1.5), která by pouze přidala P2TR výstupy, či širší aktualizaci
+    protokolu (gossip v2.0), která by umožnila používat UTXO všech druhů.
+    Pokud by mohl být použit jakýkoliv výstup, znamenalo by to, že výstup
+    použitý pro oznámení kanálu nemusí být výstup, který je skutečně
+    používán pro provoz kanálu. Tato vlastnost by porušila veřejnou vazbu
+    mezi výstupy a financováním kanálů.
 
-      Další diskutovanou myšlenkou bylo, zda by mělo být UTXO s hodnotou _n_
-      umožněno oznamovat kanál s kapacitou větší než _n_. Díky tomu
-      by mohli účastníci kanálu ponechat některé z otevíracích transakcí
-      skryté. Například pokud by Alice a Bob spolu otevřeli dva kanály, mohli
-      by použít jeden kanál k vytvoření oznámení s hodnotou vyšší než je hodnota
-      tohoto kanálu. Tím by dali najevo, že mohou přeposílat platby vyšší, než
-      kolik činí hodnota kanálu; k tomu by využívali druhého, skrytého kanálu.
-      Díky tomu by mohli zvýšit pravděpodobnost, že kterýkoliv
-      výstup v síti, včetně nikdy neoznámených, by mohl být používán pro
-      LN kanál.
+    Další diskutovanou myšlenkou bylo, zda by mělo být UTXO s hodnotou _n_
+    umožněno oznamovat kanál s kapacitou větší než _n_. Díky tomu
+    by mohli účastníci kanálu ponechat některé z otevíracích transakcí
+    skryté. Například pokud by Alice a Bob spolu otevřeli dva kanály, mohli
+    by použít jeden kanál k vytvoření oznámení s hodnotou vyšší než je hodnota
+    tohoto kanálu. Tím by dali najevo, že mohou přeposílat platby vyšší, než
+    kolik činí hodnota kanálu; k tomu by využívali druhého, skrytého kanálu.
+    Díky tomu by mohli zvýšit pravděpodobnost, že kterýkoliv
+    výstup v síti, včetně nikdy neoznámených, by mohl být používán pro
+    LN kanál.
 
-      Poznámka také hovoří o kompromisním rozhodnutí (gossip v1.75),
-      které by umožnilo používat jakýkoliv skript, ale bez navýšené
-      hodnoty.
+    Poznámka také hovoří o kompromisním rozhodnutí (gossip v1.75),
+    které by umožnilo používat jakýkoliv skript, ale bez navýšené
+    hodnoty.
 
-    - *PTLC a redundantní přeplatky:* dle poznámek bylo krátce diskutováno
-      i přidání [PTLC][topic ptlc] do protokolu, hlavně v souvislosti se
-      [signature adaptors][topic adaptor signatures]. Větší část obsahu
-      poznámky byla věnována vylepšení, které by mělo dopad na obdobné
-      součásti protokolu: možnost [redundantního přeplacení][topic
-      redundant overpayments] faktury a následného vrácení většiny nebo
-      celého přeplatku. Příklad: Alice chce zaplatit Bobovi 1 BTC.
-      Nejprve pošle Bobovi 20 [plateb s více cestami][topic multipath payments],
-      každou o hodnotě 0,1 BTC. Díky použití buď matematiky (techniky
-      nazývané _boomerang_, viz [zpravodaj č. 86][news86 boomerang], *angl.*)
-      nebo commitmentů s více vrstvami a jednoho kola komunikace navíc
-      (tzv. _spear_) by byl Bob schopný nárokovat maximálně 10 těchto plateb.
-      Každá další platba, která by dosáhla jeho uzlu, by byla odmítnuta. Výhodou tohoto
-      přístupu je, že až 10 částečných plateb od Alice by mohlo selhat, aniž
-      by byla zpožděna celá platba. Nevýhodou se jeví býti zvýšená
-      složitost a, v případě spearu, pravděpodobně i nižší rychlost, než
-      kterou lze dosáhnout v dnešním stavu. Účastníci diskutovali, zda
-      by mohly být najednou učiněny změny potřebné pro PTLC i redundantní
-      přeplatky.
+  - *PTLC a redundantní přeplatky:* dle poznámek bylo krátce diskutováno
+    i přidání [PTLC][topic ptlc] do protokolu, hlavně v souvislosti se
+    [signature adaptors][topic adaptor signatures]. Větší část obsahu
+    poznámky byla věnována vylepšení, které by mělo dopad na obdobné
+    součásti protokolu: možnost [redundantního přeplacení][topic
+    redundant overpayments] faktury a následného vrácení většiny nebo
+    celého přeplatku. Příklad: Alice chce zaplatit Bobovi 1 BTC.
+    Nejprve pošle Bobovi 20 [plateb s více cestami][topic multipath payments],
+    každou o hodnotě 0,1 BTC. Díky použití buď matematiky (techniky
+    nazývané _boomerang_, viz [zpravodaj č. 86][news86 boomerang], *angl.*)
+    nebo commitmentů s více vrstvami a jednoho kola komunikace navíc
+    (tzv. _spear_) by byl Bob schopný nárokovat maximálně 10 těchto plateb.
+    Každá další platba, která by dosáhla jeho uzlu, by byla odmítnuta. Výhodou tohoto
+    přístupu je, že až 10 částečných plateb od Alice by mohlo selhat, aniž
+    by byla zpožděna celá platba. Nevýhodou se jeví býti zvýšená
+    složitost a, v případě spearu, pravděpodobně i nižší rychlost, než
+    kterou lze dosáhnout v dnešním stavu. Účastníci diskutovali, zda
+    by mohly být najednou učiněny změny potřebné pro PTLC i redundantní
+    přeplatky.
 
-    - *Návrhy na obranu před zahlcením kanálu:* podstatná část poznámek
-      poskytla souhrn diskuze o návrzích na zabránění [útoků zahlcením
-      kanálu][topic channel jamming attacks]. Diskuze začala tvrzením,
-      že žádné jedno řešení (jako je reputace nebo poplatek předem)
-      nemůže úspěšně adresovat problém, aniž by nepřineslo nepřijatelné
-      vedlejší efekty. Systém reputace musí myslet na nové uzly bez
-      historie a na přirozenou míru neúspěšných HTLC; těchto by mohl
-      útočník zneužít a přinést určitou míru škody, i když menší než
-      dnes. Poplatky předem musí být nastaveny dostatečně vysoko, aby
-      odradily útočníky, ale ne příliš, aby také neodrazovaly poctivé
-      uživatele a aby neposkytovaly uzlům podnět k úmyslnému selhání
-      přeposílaných plateb. Namísto toho bylo navrženo, aby se používalo
-      několik způsobů najednou, což by umožnilo vyhnout se nejhorším
-      scénářům.
+  - *Návrhy na obranu před zahlcením kanálu:* podstatná část poznámek
+    poskytla souhrn diskuze o návrzích na zabránění [útoků zahlcením
+    kanálu][topic channel jamming attacks]. Diskuze začala tvrzením,
+    že žádné jedno řešení (jako je reputace nebo poplatek předem)
+    nemůže úspěšně adresovat problém, aniž by nepřineslo nepřijatelné
+    vedlejší efekty. Systém reputace musí myslet na nové uzly bez
+    historie a na přirozenou míru neúspěšných HTLC; těchto by mohl
+    útočník zneužít a přinést určitou míru škody, i když menší než
+    dnes. Poplatky předem musí být nastaveny dostatečně vysoko, aby
+    odradily útočníky, ale ne příliš, aby také neodrazovaly poctivé
+    uživatele a aby neposkytovaly uzlům podnět k úmyslnému selhání
+    přeposílaných plateb. Namísto toho bylo navrženo, aby se používalo
+    několik způsobů najednou, což by umožnilo vyhnout se nejhorším
+    scénářům.
 
-      Dále se poznámky soustředily na podrobnosti o testování schémat
-      lokální reputace popsaných ve [zpravodaji č. 226][news226 jamming]
-      (*angl.*) a přípravy na pozdější implementaci nízkých poplatků
-      napřed. Zdá se, že účastníci vyjádřili podporu testování
-      těchto návrhů.
+    Dále se poznámky soustředily na podrobnosti o testování schémat
+    lokální reputace popsaných ve [zpravodaji č. 226][news226 jamming]
+    (*angl.*) a přípravy na pozdější implementaci nízkých poplatků
+    napřed. Zdá se, že účastníci vyjádřili podporu testování
+    těchto návrhů.
 
-    - *Jednodušší commitmenty:* účastníci diskutovali o protokolu zjednodušených
-      commitmentů (viz [zpravodaj č. 120][news120 commitments], *angl.*),
-      který definuje, která strana je zodpovědná za návrh příští změny
-      commitment transakce (oproti současnému stavu, kdy může změnu provést
-      kdykoliv kterákoliv strana). Pokud by byla zodpovědnost na jedné
-      ze stran, odstranilo by to složitost v případech existence dvou
-      návrhu odeslaných zhruba ve stejnou dobu (např. pokud by Alice
-      i Bob chtěli ve stejný okamžik přidat [HTLC][topic htlc]). Obzvláště
-      komplikovaný případ je, pokud jedna ze stran nechce akceptovat návrh
-      druhé strany. Tato situace je v současném protokolu těžko řešitelná.
-      Nevýhodou přístupu se zjednodušenými commitmenty je v některých případech
-      navýšení latence, jelikož by jedna strana musela před změnou požádat
-      druhou stranu o povolení. Poznámky nezmínily žádný jasný závěr
-      diskuze.
+  - *Jednodušší commitmenty:* účastníci diskutovali o protokolu zjednodušených
+    commitmentů (viz [zpravodaj č. 120][news120 commitments], *angl.*),
+    který definuje, která strana je zodpovědná za návrh příští změny
+    commitment transakce (oproti současnému stavu, kdy může změnu provést
+    kdykoliv kterákoliv strana). Pokud by byla zodpovědnost na jedné
+    ze stran, odstranilo by to složitost v případech existence dvou
+    návrhu odeslaných zhruba ve stejnou dobu (např. pokud by Alice
+    i Bob chtěli ve stejný okamžik přidat [HTLC][topic htlc]). Obzvláště
+    komplikovaný případ je, pokud jedna ze stran nechce akceptovat návrh
+    druhé strany. Tato situace je v současném protokolu těžko řešitelná.
+    Nevýhodou přístupu se zjednodušenými commitmenty je v některých případech
+    navýšení latence, jelikož by jedna strana musela před změnou požádat
+    druhou stranu o povolení. Poznámky nezmínily žádný jasný závěr
+    diskuze.
 
-    - *Proces specifikace:* účastníci diskutovali o několika myšlenkách na
-      vylepšení procesu specifikace a jeho dokumentů, včetně současných
-      BOLTů a BLIPů. Diskuze byla, zdá se, velice pestrá a nepřinesla
-      žádné jasné závěry.
+  - *Proces specifikace:* účastníci diskutovali o několika myšlenkách na
+    vylepšení procesu specifikace a jeho dokumentů, včetně současných
+    BOLTů a BLIPů. Diskuze byla, zdá se, velice pestrá a nepřinesla
+    žádné jasné závěry.
 
 ## Vybrané otázky a odpovědi z Bitcoin Stack Exchange
 

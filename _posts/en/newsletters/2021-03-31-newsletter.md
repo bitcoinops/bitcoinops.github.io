@@ -32,37 +32,37 @@ Bitcoin infrastructure software.
   the following states are equally as likely for that channel, and that
   the same holds true for every other channel on the network:
 
-    | Alice | Bob |
-    | 0 sat | 100,000,000 sat |
-    | 1 sat | 99,999,999 sat |
-    | ... | ...|
-    | 100,000,000 sat | 0 sat |
+  | Alice | Bob |
+  | 0 sat | 100,000,000 sat |
+  | 1 sat | 99,999,999 sat |
+  | ... | ...|
+  | 100,000,000 sat | 0 sat |
 
-   Making this assumption allows the authors to draw conclusions about
-   the probability that a payment will succeed based on its amount and how
-   many hops (channels) it needs to traverse.  This allows the authors to
-   prove the benefit of several known heuristics---such as keeping paths
-   short and using [multipath payments][topic multipath payments] to break
-   larger payments into smaller payments (under certain other
-   assumptions).  They also use the model to evaluate new proposals,
-   such as allowing [Just-In-Time (JIT) rebalancing][topic jit routing]
-   via [bolts #780][].
+  Making this assumption allows the authors to draw conclusions about
+  the probability that a payment will succeed based on its amount and how
+  many hops (channels) it needs to traverse.  This allows the authors to
+  prove the benefit of several known heuristics---such as keeping paths
+  short and using [multipath payments][topic multipath payments] to break
+  larger payments into smaller payments (under certain other
+  assumptions).  They also use the model to evaluate new proposals,
+  such as allowing [Just-In-Time (JIT) rebalancing][topic jit routing]
+  via [bolts #780][].
 
-   The paper uses its conclusions to provide a routing algorithm that it
-   claims can reduce payment retry attempts by 20% compared to their
-   simplification of existing routing algorithms.  The new algorithm
-   prefers routes with a higher computed probability of success, whereas
-   existing algorithms use a heuristic approach.  Combined with JIT
-   rebalancing, they estimate a 48% improvement.  Given that each retry
-   usually requires several seconds, and could take much longer in some
-   cases, this could provide an improved user experience.
-   The algorithm was tested against several example networks, including
-   one drawn from a snapshot of almost 1,000 live channels.
+  The paper uses its conclusions to provide a routing algorithm that it
+  claims can reduce payment retry attempts by 20% compared to their
+  simplification of existing routing algorithms.  The new algorithm
+  prefers routes with a higher computed probability of success, whereas
+  existing algorithms use a heuristic approach.  Combined with JIT
+  rebalancing, they estimate a 48% improvement.  Given that each retry
+  usually requires several seconds, and could take much longer in some
+  cases, this could provide an improved user experience.
+  The algorithm was tested against several example networks, including
+  one drawn from a snapshot of almost 1,000 live channels.
 
-   The paper deliberately does not take routing fees into consideration,
-   and most responses on the mailing list focused on how to
-   use the results while still ensuring users don't pay an excessive
-   amount of fees.
+  The paper deliberately does not take routing fees into consideration,
+  and most responses on the mailing list focused on how to
+  use the results while still ensuring users don't pay an excessive
+  amount of fees.
 
 - **Updated article about payment batching:** Optech has published an
   [article about payment batching][batching post], updated from our

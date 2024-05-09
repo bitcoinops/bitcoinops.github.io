@@ -485,7 +485,7 @@ disclosed later.  The notable vulnerabilities included:
   specification of PSBT and software such as Electrum, Bitcoin Core, and
   HWI.
 
-    ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
+  ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
 - [LN payment atomicity attack:][attack ln atomicity] as LN developers
   worked to implement the [anchor outputs][topic anchor outputs]

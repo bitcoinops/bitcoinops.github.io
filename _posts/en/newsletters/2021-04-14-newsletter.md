@@ -26,62 +26,62 @@ Bitcoin infrastructure software.
   their start and stop points were specified.  PR#21377 uses Median Time
   Past ([MTP][]); PR#21392 uses the height of the current block.
 
-    MTP is normally roughly consistent between Bitcoin's main network
-    (mainnet) and its various test networks, such as testnet, the default
-    [signet][topic signet], and various independent signets.  This
-    allows multiple networks to share a single set of activation
-    parameters even if they have vastly different block heights,
-    minimizing the work of keeping those networks' users in sync with
-    mainnet's consensus changes.
+  MTP is normally roughly consistent between Bitcoin's main network
+  (mainnet) and its various test networks, such as testnet, the default
+  [signet][topic signet], and various independent signets.  This
+  allows multiple networks to share a single set of activation
+  parameters even if they have vastly different block heights,
+  minimizing the work of keeping those networks' users in sync with
+  mainnet's consensus changes.
 
-    Unfortunately, MTP can be easily manipulated in small ways by a
-    small number of miners and in large ways by a majority of hash rate.
-    It can also revert to an earlier time even by accident during a
-    block chain reorganization.  By comparison, heights can only
-    decrease in extraordinary reorgs.[^height-decreasing]
-    That generally allows reviewers to make the simplifying
-    assumption that height will only ever increase, making it easier to
-    analyze height-based activation mechanisms than MTP mechanisms.
+  Unfortunately, MTP can be easily manipulated in small ways by a
+  small number of miners and in large ways by a majority of hash rate.
+  It can also revert to an earlier time even by accident during a
+  block chain reorganization.  By comparison, heights can only
+  decrease in extraordinary reorgs.[^height-decreasing]
+  That generally allows reviewers to make the simplifying
+  assumption that height will only ever increase, making it easier to
+  analyze height-based activation mechanisms than MTP mechanisms.
 
-    These tradeoffs between the two proposals, among other concerns,
-    created an impasse that some developers thought was preventing either
-    PR from receiving additional review and, ultimately, getting one of
-    them merged into Bitcoin Core.  That impasse was resolved to the
-    satisfaction of some participants in the activation discussion when
-    the authors of the two PRs agreed to a compromise:
+  These tradeoffs between the two proposals, among other concerns,
+  created an impasse that some developers thought was preventing either
+  PR from receiving additional review and, ultimately, getting one of
+  them merged into Bitcoin Core.  That impasse was resolved to the
+  satisfaction of some participants in the activation discussion when
+  the authors of the two PRs agreed to a compromise:
 
-    1. To use MTP for the time when nodes begin counting blocks
-       signaling for the soft fork, with counting starting at the
-       beginning of the next 2,016-block retarget period after the start
-       time.  This is identical to the way
-       [BIP9][] versionbits and [BIP148][] UASF started counting blocks
-       for the soft forks they helped activate.
+  1. To use MTP for the time when nodes begin counting blocks
+     signaling for the soft fork, with counting starting at the
+     beginning of the next 2,016-block retarget period after the start
+     time.  This is identical to the way
+     [BIP9][] versionbits and [BIP148][] UASF started counting blocks
+     for the soft forks they helped activate.
 
-    2. To also use MTP for the time when nodes stop counting block
-       signaling for a soft fork that hasn't locked in yet.  However,
-       in a difference from BIP9, the MTP stop time is only checked at
-       the end of retarget periods where counting was performed.
-       This removes the
-       ability for an activation attempt to go directly from *started*
-       to *failed*, simplifying analysis and guaranteeing that there
-       will be at least one complete 2,016 block period where miners can
-       signal for activation.
+  2. To also use MTP for the time when nodes stop counting block
+     signaling for a soft fork that hasn't locked in yet.  However,
+     in a difference from BIP9, the MTP stop time is only checked at
+     the end of retarget periods where counting was performed.
+     This removes the
+     ability for an activation attempt to go directly from *started*
+     to *failed*, simplifying analysis and guaranteeing that there
+     will be at least one complete 2,016 block period where miners can
+     signal for activation.
 
-    3. To use height for the minimum activation parameter.  This further
-       simplifies analysis and also remains compatible with the goal of
-       allowing multiple test networks to share activation parameters.
-       Even though height may differ on those networks, they can all use
-       a minimum activation height of `0` to activate within the window
-       defined by MTP.
+  3. To use height for the minimum activation parameter.  This further
+     simplifies analysis and also remains compatible with the goal of
+     allowing multiple test networks to share activation parameters.
+     Even though height may differ on those networks, they can all use
+     a minimum activation height of `0` to activate within the window
+     defined by MTP.
 
-    Although some discussion participants expressed their displeasure
-    with the compromise proposal, its [implementation][bitcoin core
-    #21377] has now received reviews or
-    expressions of support from over a dozen active contributors to
-    Bitcoin Core and the maintainers of two other full node
-    implementations (btcd and libbitcoin).  We hope this momentum
-    to activate taproot continues and we'll be able to report additional
-    progress in a future newsletter.
+  Although some discussion participants expressed their displeasure
+  with the compromise proposal, its [implementation][bitcoin core
+  #21377] has now received reviews or
+  expressions of support from over a dozen active contributors to
+  Bitcoin Core and the maintainers of two other full node
+  implementations (btcd and libbitcoin).  We hope this momentum
+  to activate taproot continues and we'll be able to report additional
+  progress in a future newsletter.
 
 ## Bitcoin Core PR Review Club
 
@@ -197,26 +197,26 @@ BOLTs][bolts repo].*
     means it's possible for a chain with fewer blocks to have more PoW
     than a chain with more blocks.
 
-      Bitcoin users use the chain with the most PoW---not the most
-      blocks---to determine whether they've received money.  When users
-      see a valid variation on that chain where some of the blocks on
-      the end have been replaced by different blocks, they use that
-      *reorganized* chain if it contains more PoW than their current
-      chain.  Because the reorg chain may contain fewer blocks, despite
-      having more cumulative PoW, it's possible for the height of the
-      chain to decrease.
+    Bitcoin users use the chain with the most PoW---not the most
+    blocks---to determine whether they've received money.  When users
+    see a valid variation on that chain where some of the blocks on
+    the end have been replaced by different blocks, they use that
+    *reorganized* chain if it contains more PoW than their current
+    chain.  Because the reorg chain may contain fewer blocks, despite
+    having more cumulative PoW, it's possible for the height of the
+    chain to decrease.
 
-      Although this is a theoretical concern, it's usually not a
-      practical problem.  Decreasing height is only possible when a
-      reorg crosses at least one of the *retarget* boundaries between
-      one set of 2,016 blocks and another set of 2,016 blocks.  It also
-      requires a reorg involving a large number of blocks or
-      a recent major change in the amount of PoW required
-      (indicating either a recent major increase or decrease of hash rate,
-      or an observable manipulation by miners).  In the context of
-      [BIP8][], we don't believe a reorg that decreased height would
-      have any more impact on users during an activation than a more
-      typical reorg.
+    Although this is a theoretical concern, it's usually not a
+    practical problem.  Decreasing height is only possible when a
+    reorg crosses at least one of the *retarget* boundaries between
+    one set of 2,016 blocks and another set of 2,016 blocks.  It also
+    requires a reorg involving a large number of blocks or
+    a recent major change in the amount of PoW required
+    (indicating either a recent major increase or decrease of hash rate,
+    or an observable manipulation by miners).  In the context of
+    [BIP8][], we don't believe a reorg that decreased height would
+    have any more impact on users during an activation than a more
+    typical reorg.
 
 {% include references.md %}
 {% include linkers/issues.md issues="21594,21166,5108,5047,21377,21392,19438,21151" %}

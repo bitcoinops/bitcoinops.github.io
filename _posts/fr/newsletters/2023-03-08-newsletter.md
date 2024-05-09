@@ -23,64 +23,64 @@ d'infrastructure Bitcoin.
   #234][news234 vault]). Cette alternative ajouterait trois opcodes au lieu de
   deux. Voici un exemple :
 
-    - *Alice dépose des fonds dans un coffre-fort* en payant une [sortie
-      P2TR][topic taproot] avec un arbre de script qui contient au moins
-      deux [couches de script][topic tapscript], l'un qui peut déclencher
-      le processus de dégagement différé et l'autre qui peut instantanément
-      geler ses fonds, par exemple `tr(key,{trigger,freeze})`.
+  - *Alice dépose des fonds dans un coffre-fort* en payant une [sortie
+    P2TR][topic taproot] avec un arbre de script qui contient au moins
+    deux [couches de script][topic tapscript], l'un qui peut déclencher
+    le processus de dégagement différé et l'autre qui peut instantanément
+    geler ses fonds, par exemple `tr(key,{trigger,freeze})`.
 
-      - Le *déclencheur des couches de script* contient ses conditions
-        d'autorisation sans confiance (telles que l'exigence d'une signature
-        de son hot wallet) et un opcode `OP_TRIGGER_FORWARD`. Au moment où
-        elle crée cette couche de script, elle fournit à l'opcode un paramètre
-        de *délai de dépense*, par exemple un timelock relatif de 1 000 blocs
-        (environ 1 semaine).
+    - Le *déclencheur des couches de script* contient ses conditions
+      d'autorisation sans confiance (telles que l'exigence d'une signature
+      de son hot wallet) et un opcode `OP_TRIGGER_FORWARD`. Au moment où
+      elle crée cette couche de script, elle fournit à l'opcode un paramètre
+      de *délai de dépense*, par exemple un timelock relatif de 1 000 blocs
+      (environ 1 semaine).
 
-      - Le *gel de la couche de script* contient toutes les conditions
-        d'autorisation qu'Alice souhaite spécifier (y compris aucune) et
-        un opcode `OP_FORWARD_DESTINATION`. Au moment où elle crée ces
-        couches de script, elle choisit également ses conditions d'autorisation
-        sans confiance (telles que l'exigence de signatures multiples provenant
-        de plusieurs portefeuilles froids et de dispositifs de signature
-        matériels). Il fournit à l'opcode un engagement à respecter ces
-        conditions sous la forme d'un condensé de hachage.
+    - Le *gel de la couche de script* contient toutes les conditions
+      d'autorisation qu'Alice souhaite spécifier (y compris aucune) et
+      un opcode `OP_FORWARD_DESTINATION`. Au moment où elle crée ces
+      couches de script, elle choisit également ses conditions d'autorisation
+      sans confiance (telles que l'exigence de signatures multiples provenant
+      de plusieurs portefeuilles froids et de dispositifs de signature
+      matériels). Il fournit à l'opcode un engagement à respecter ces
+      conditions sous la forme d'un condensé de hachage.
 
-    - *Alice déclenche un déblocage* en dépensant la sortie reçue dans l'arbre
-      de script ci-dessus (en l'utilisant comme entrée) et en choisissant la
-      couche de script de déblocage (trigger). A ce moment, elle fournit deux
-      paramètres supplémentaires à l'opcode `OP_TRIGGER_FORWARD`, l'index de
-      la sortie qui recevra les fonds de cette entrée et un engagement basé
-      sur le hachage de la façon dont elle veut être en mesure de dépenser
-      les fonds plus tard. L'opcode vérifie que la sortie indiquée de cette
-      transaction paie une sortie P2TR avec une arborescence de scripts similaire
-      à celle qui est dépensée, sauf que la couche de script de déclenchement
-      est remplacée par un script utilisant un délai relatif `OP_CHECKSEQUENCEVERIFY`
-      (CSV) égal au délai spécifié précédemment (par exemple, 1000 blocs) et un
-      opcode `OP_FORWARD_OUTPUTS` qui inclut le hachage de l'engagement d'Alice.
-      La méthode de reconstruction de l'arbre des scripts est similaire à une
-      proposition antérieure de [conditions de dépense][topic covenants],
-      `OP_TAPLEAF_UPDATE_VERIFY` (voir [Bulletin #166][news166 tluv]).
+  - *Alice déclenche un déblocage* en dépensant la sortie reçue dans l'arbre
+    de script ci-dessus (en l'utilisant comme entrée) et en choisissant la
+    couche de script de déblocage (trigger). A ce moment, elle fournit deux
+    paramètres supplémentaires à l'opcode `OP_TRIGGER_FORWARD`, l'index de
+    la sortie qui recevra les fonds de cette entrée et un engagement basé
+    sur le hachage de la façon dont elle veut être en mesure de dépenser
+    les fonds plus tard. L'opcode vérifie que la sortie indiquée de cette
+    transaction paie une sortie P2TR avec une arborescence de scripts similaire
+    à celle qui est dépensée, sauf que la couche de script de déclenchement
+    est remplacée par un script utilisant un délai relatif `OP_CHECKSEQUENCEVERIFY`
+    (CSV) égal au délai spécifié précédemment (par exemple, 1000 blocs) et un
+    opcode `OP_FORWARD_OUTPUTS` qui inclut le hachage de l'engagement d'Alice.
+    La méthode de reconstruction de l'arbre des scripts est similaire à une
+    proposition antérieure de [conditions de dépense][topic covenants],
+    `OP_TAPLEAF_UPDATE_VERIFY` (voir [Bulletin #166][news166 tluv]).
 
-    - *Alice complète le déblocage* en attendant que le verrouillage temporel
-      relatif ait expiré et en dépensant la sortie du déblocage, en
-      choisissant le tapleaf avec l'opcode `OP_FORWARD_OUTPUTS`. L'opcode
-      vérifie que les montants des sorties de la transaction de dépense
-      et le hachage du script correspondent à l'engagement pris par Alice
-      lors de la transaction précédente. Dans ce cas, Alice a déposé avec
-      succès des fonds dans un coffre-fort, a commencé un déblocage, a été
-      forcée d'attendre au moins 1 000 blocs pour permettre à ses programmes
-      de surveillance de vérifier qu'elle voulait vraiment dépenser les fonds
-      pour les sorties spécifiées, et a terminé la dépense.
+  - *Alice complète le déblocage* en attendant que le verrouillage temporel
+    relatif ait expiré et en dépensant la sortie du déblocage, en
+    choisissant le tapleaf avec l'opcode `OP_FORWARD_OUTPUTS`. L'opcode
+    vérifie que les montants des sorties de la transaction de dépense
+    et le hachage du script correspondent à l'engagement pris par Alice
+    lors de la transaction précédente. Dans ce cas, Alice a déposé avec
+    succès des fonds dans un coffre-fort, a commencé un déblocage, a été
+    forcée d'attendre au moins 1 000 blocs pour permettre à ses programmes
+    de surveillance de vérifier qu'elle voulait vraiment dépenser les fonds
+    pour les sorties spécifiées, et a terminé la dépense.
 
-    - En cas de problème, *Alice gèle les fonds*. Elle peut le faire à tout
-      moment à partir du moment où elle dépose des fonds dans le coffre-fort
-      jusqu'à ce qu'une levée du verrouillage soit effectuée. Pour geler les fonds,
-      elle choisit simplement de dépenser le script de gel à partir
-      de la sortie des transactions de mise en coffre ou de déclenchement.
-      Rappelons qu'Alice a explicitement placé le script de gel
-      dans la transaction de mise en coffre, et notons qu'elle a été
-      implicitement reportée par la transaction de déclenchement qui
-      a initié le déblocage.
+  - En cas de problème, *Alice gèle les fonds*. Elle peut le faire à tout
+    moment à partir du moment où elle dépose des fonds dans le coffre-fort
+    jusqu'à ce qu'une levée du verrouillage soit effectuée. Pour geler les fonds,
+    elle choisit simplement de dépenser le script de gel à partir
+    de la sortie des transactions de mise en coffre ou de déclenchement.
+    Rappelons qu'Alice a explicitement placé le script de gel
+    dans la transaction de mise en coffre, et notons qu'elle a été
+    implicitement reportée par la transaction de déclenchement qui
+    a initié le déblocage.
 
   L'un des avantages de cette approche par rapport à la conception
   originale de l'option `OP_VAULT` est que le script de gel peut contenir

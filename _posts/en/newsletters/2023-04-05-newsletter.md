@@ -24,31 +24,31 @@ popular Bitcoin infrastructure software.
   respond.  Alice would like to be able to hold the watchtower operator
   accountable by publicly proving it failed to respond appropriately.
 
-    The basic principle would be for a watchtower to have a well-known
-    public key and to use the corresponding private key to generate a
-    signature for any breach-detection data it accepted.  Alice could
-    then publish the data and the signature after an unresolved breach
-    to prove the watchtower failed its responsibility.  However, Delgado
-    noted that practical accountability isn't that simple:
+  The basic principle would be for a watchtower to have a well-known
+  public key and to use the corresponding private key to generate a
+  signature for any breach-detection data it accepted.  Alice could
+  then publish the data and the signature after an unresolved breach
+  to prove the watchtower failed its responsibility.  However, Delgado
+  noted that practical accountability isn't that simple:
 
-    - *Data storage requirements:* the above mechanism would require
-      Alice to store an additional signature every time she sent the
-      watchtower new breach-detection data, which could be quite
-      often for an active LN channel.
+  - *Data storage requirements:* the above mechanism would require
+    Alice to store an additional signature every time she sent the
+    watchtower new breach-detection data, which could be quite
+    often for an active LN channel.
 
-    - *No deletion capability:* the above mechanism potentially requires
-      the watchtower to store the breach-detection data in perpetuity.
-      Watchtowers may only want to store data for a limited time, e.g.
-      they may accept payment for a particular term.
+  - *No deletion capability:* the above mechanism potentially requires
+    the watchtower to store the breach-detection data in perpetuity.
+    Watchtowers may only want to store data for a limited time, e.g.
+    they may accept payment for a particular term.
 
-    Delgado suggests cryptographic accumulators provide a practical
-    solution to both problems.  Accumulators allow compactly proving a
-    particular element is a member of a large set of elements and also
-    allow adding new elements to the set without rebuilding the entire
-    data structure.  Some accumulators allow deleting elements from the
-    set without rebuilding.  In a
-    [gist][segura watchtowers gist], Delgado outlines several different
-    accumulator constructions worth considering. {% assign timestamp="0:36" %}
+  Delgado suggests cryptographic accumulators provide a practical
+  solution to both problems.  Accumulators allow compactly proving a
+  particular element is a member of a large set of elements and also
+  allow adding new elements to the set without rebuilding the entire
+  data structure.  Some accumulators allow deleting elements from the
+  set without rebuilding.  In a
+  [gist][segura watchtowers gist], Delgado outlines several different
+  accumulator constructions worth considering. {% assign timestamp="0:36" %}
 
 ## Releases and release candidates
 

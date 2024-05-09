@@ -3,7 +3,7 @@ title: AssumeUTXO
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Consensus Enforcement
   - P2P Network Protocol
 
@@ -57,6 +57,9 @@ optech_mentions:
 
   - title: Bitcoin Core bug found in computation of UTXO set hash
     url: /en/newsletters/2023/10/25/#bitcoin-utxo-set-summary-hash-replacement
+
+  - title: Notes from Bitcoin developer discussion about assumeUTXO for mainnet
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

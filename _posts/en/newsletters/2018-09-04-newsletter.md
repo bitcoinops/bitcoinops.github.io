@@ -29,8 +29,8 @@ Bitcoin infrastructure projects.
   how he built it for anyone who wants to independently replicate the
   data or otherwise extend the dashboard using their own full node.
 
-    The rest of the Optech team thanks Marcin for his dedicated work and
-    keen insight, and we wish him all the best in the upcoming year.
+  The rest of the Optech team thanks Marcin for his dedicated work and
+  keen insight, and we wish him all the best in the upcoming year.
 
 ## News
 
@@ -58,57 +58,38 @@ Bitcoin infrastructure projects.
   parts of the transaction to be changed by other people such as
   other participants in a multiparty contract.
 
-    In [BIP143][], segwit preserved all of the original Bitcoin 0.1
-    signature hash (sighash) flags but made some minor (but useful)
-    changes to what data wallets include in the hash that made it harder
-    for miners to DoS attack other miners and which made it easier for
-    underpowered devices such as hardware wallets to protect users
-    funds.  This week, BIP143 co-author Johnson Lau [posted][sighash
-    changes] some suggested changes to sighash flags, including new
-    flags, that could be implemented as a soft fork using the witness
-    script update mechanism provided as part of segwit.
+  In [BIP143][], segwit preserved all of the original Bitcoin 0.1
+  signature hash (sighash) flags but made some minor (but useful)
+  changes to what data wallets include in the hash that made it harder
+  for miners to DoS attack other miners and which made it easier for
+  underpowered devices such as hardware wallets to protect users
+  funds.  This week, BIP143 co-author Johnson Lau [posted][sighash
+  changes] some suggested changes to sighash flags, including new
+  flags, that could be implemented as a soft fork using the witness
+  script update mechanism provided as part of segwit.
 
-    {% comment %}<!-- for reference: numbers in following paragraph
-    correspond to the numbered bullet points in Lau's email -->{%
-    endcomment %}
+  {% comment %}<!-- for reference: numbers in following paragraph
+  correspond to the numbered bullet points in Lau's email -->{%
+  endcomment %}
 
-    If the changes are adopted, some of the notable advantages include:
-    making it easier for hardware wallets to securely participate in
-    CoinJoin-style transactions <!--#1--> as well as other smart
-    contracts<!--#2-->, potentially easier fee bumping by any individual
-    party in a multiparty transaction<!--#6-->, and preventing counter
-    parties and third parties to sophisticated smart contracts from
-    bloating the size of multiparty transactions in a DoS attack that
-    lowers a transaction's fee priority.<!--#8-->
+  If the changes are adopted, some of the notable advantages include:
+  making it easier for hardware wallets to securely participate in
+  CoinJoin-style transactions <!--#1--> as well as other smart
+  contracts<!--#2-->, potentially easier fee bumping by any individual
+  party in a multiparty transaction<!--#6-->, and preventing counter
+  parties and third parties to sophisticated smart contracts from
+  bloating the size of multiparty transactions in a DoS attack that
+  lowers a transaction's fee priority.<!--#8-->
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
 
 {% comment %}<!-- LND only had three merges this week, none of them exciting IMO -harding -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="427253cf7e19ed9ef86b45457de41e345676c88e"
-  end="68f3c7eb080e461cfeac37f8db7034fe507241d0"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="26f68da5b2883885fcf6a8e79b3fc9bb12cc9eef"
-  end="2b448be048daf85cef4cbb37ceed4413fdb051e6"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
-  end="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
-%}
 
 - [Bitcoin Core #12952][]: after being deprecated for several major
   release and disabled by default in the upcoming 0.17 release, the

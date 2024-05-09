@@ -6,12 +6,12 @@ title: Point Time Locked Contracts (PTLCs)
 shortname: ptlc
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Lightning Network
   - Privacy Enhancements
@@ -95,10 +95,10 @@ unlocking method:
   SHA256, which produces a 256-bit (32-byte) digest commonly generated
   from a 32-byte preimage.
 
-    When used to secure multiple payments (e.g. a routed LN payment or
-    an atomic swap), all payments use the same preimage and hash lock.
-    This creates a link between those payments if they're published
-    onchain or if they're routed offchain though surveillance nodes.
+  When used to secure multiple payments (e.g. a routed LN payment or
+  an atomic swap), all payments use the same preimage and hash lock.
+  This creates a link between those payments if they're published
+  onchain or if they're routed offchain though surveillance nodes.
 
 - **PTLC point locks:** are locked using a public key (a *point* on
   Bitcoin's elliptic curve) and unlocked by providing a corresponding
@@ -110,9 +110,9 @@ unlocking method:
   with other keys and signatures needed to authorize any spend,
   allowing point locks to use zero bytes of distinct block space.
 
-    Each point lock can use different keys and signatures, so there is
-    nothing about the point lock that correlates different payments
-    either onchain or when routed offchain through surveillance nodes.
+  Each point lock can use different keys and signatures, so there is
+  nothing about the point lock that correlates different payments
+  either onchain or when routed offchain through surveillance nodes.
 
 Implementation of PTLCs in Bitcoin requires creating [signature
 adaptors][topic adaptor signatures] that will be easier to combine

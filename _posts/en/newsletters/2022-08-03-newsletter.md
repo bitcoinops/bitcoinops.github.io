@@ -22,30 +22,30 @@ infrastructure projects.
   The second address would be for internal payments within the wallet,
   namely returning change back to the wallet after spending a UTXO.
 
-    As [specified][bip32 wallet layout] in BIP32, most wallets use
-    separate paths for generating external versus internal addresses in
-    order to enhance privacy.  An external path used for receiving
-    payments might be shared with less-trusted devices, e.g. uploading
-    it to a webserver to receive payments.  The internal path used only
-    for change might only be needed at times when the private key is
-    also needed, so it could receive the same security.  If the example
-    webserver were compromised and the external addresses were leaked,
-    the attacker would learn about each time the user received money,
-    how much they received, and when they initially spent the money---but
-    they wouldn't necessarily learn how much money was sent in the
-    initial spend, and they also might not learn about any spends that
-    entirely consisted of spending change.
+  As [specified][bip32 wallet layout] in BIP32, most wallets use
+  separate paths for generating external versus internal addresses in
+  order to enhance privacy.  An external path used for receiving
+  payments might be shared with less-trusted devices, e.g. uploading
+  it to a webserver to receive payments.  The internal path used only
+  for change might only be needed at times when the private key is
+  also needed, so it could receive the same security.  If the example
+  webserver were compromised and the external addresses were leaked,
+  the attacker would learn about each time the user received money,
+  how much they received, and when they initially spent the money---but
+  they wouldn't necessarily learn how much money was sent in the
+  initial spend, and they also might not learn about any spends that
+  entirely consisted of spending change.
 
-    Replies from [Pavol Rusnak][rusnak desc] and [Craig Raw][raw desc]
-    indicated that Trezor Wallet and Sparrow Wallet already supported
-    the scheme Chow proposed.  Rusnak also asked whether a single
-    descriptor should be able to describe more than two related paths.
-    Dmitry Petukhov [noted][petukhov desc] that only internal and
-    external paths are widely used today and that any additional paths
-    wouldn't have a clear meaning to existing wallets.  That could
-    create interoperability issues.  He suggested limiting the BIP to
-    just two paths and waiting for anyone needing additional paths to
-    write their own BIP. {% assign timestamp="0:52" %}
+  Replies from [Pavol Rusnak][rusnak desc] and [Craig Raw][raw desc]
+  indicated that Trezor Wallet and Sparrow Wallet already supported
+  the scheme Chow proposed.  Rusnak also asked whether a single
+  descriptor should be able to describe more than two related paths.
+  Dmitry Petukhov [noted][petukhov desc] that only internal and
+  external paths are widely used today and that any additional paths
+  wouldn't have a clear meaning to existing wallets.  That could
+  create interoperability issues.  He suggested limiting the BIP to
+  just two paths and waiting for anyone needing additional paths to
+  write their own BIP. {% assign timestamp="0:52" %}
 
 ## Notable code and documentation changes
 

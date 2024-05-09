@@ -25,55 +25,55 @@ software.
 - **Softwarové forky Bitcoin Core:** minulý měsíc byly vydány dvě modifikace
   Bitcoin Core:
 
-    - *Bitcoin Inquisition:* Anthony Towns [oznámil][towns bci] v emailové
-	skupině Bitcoin-Dev novou verzi [Bitcoin Inquisition][], softwarového
-	forku Bitcoin Core navrženého k testování soft forků a jiných změn protokolu
-	na [signetu][topic signet]. Tato verze obsahuje podporu pro navrhované
-	[SIGHASH_ANYPREVOUT][topic sighash_anyprevout] a [OP_CHECKTEMPLATEVERIFY][topic
-	op_checktemplateverify]. Townsův email dále obsahuje dodatečné informace pro
-	každého, kdy bych se chtěl tohoto testování zúčastnit.
+  - *Bitcoin Inquisition:* Anthony Towns [oznámil][towns bci] v emailové
+      skupině Bitcoin-Dev novou verzi [Bitcoin Inquisition][], softwarového
+      forku Bitcoin Core navrženého k testování soft forků a jiných změn protokolu
+      na [signetu][topic signet]. Tato verze obsahuje podporu pro navrhované
+      [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] a [OP_CHECKTEMPLATEVERIFY][topic
+      op_checktemplateverify]. Townsův email dále obsahuje dodatečné informace pro
+      každého, kdy bych se chtěl tohoto testování zúčastnit.
 
-    - *Uzel pro full RBF spojení:* Peter Todd [oznámil][todd rbf node]
-      patch Bitcoin Core 24.0.1, který nastavuje [full-RBF service bit][]
-	  během oznamování síťových adres dalším uzlům, avšak pouze má-li
-	  uzel nastavenu volbu `mempoolfullrbf`. Uzly běžící s tímto patchem
-	  se navíc připojují až k čtyřem dalším uzlům oznamujícím podporu pro
-	  full RBF. Peter Todd poznamenává, že Bitcoin Knots, jiná implementace
-	  plného uzlu, také oznamuje tento service bit, i když neobsahuje obdobný
-	  kód pro připojování. Patch je založen na Bitcoin Core pull requestu
-	  [#25600][bitcoin core #25600].
+  - *Uzel pro full RBF spojení:* Peter Todd [oznámil][todd rbf node]
+    patch Bitcoin Core 24.0.1, který nastavuje [full-RBF service bit][]
+        během oznamování síťových adres dalším uzlům, avšak pouze má-li
+        uzel nastavenu volbu `mempoolfullrbf`. Uzly běžící s tímto patchem
+        se navíc připojují až k čtyřem dalším uzlům oznamujícím podporu pro
+        full RBF. Peter Todd poznamenává, že Bitcoin Knots, jiná implementace
+        plného uzlu, také oznamuje tento service bit, i když neobsahuje obdobný
+        kód pro připojování. Patch je založen na Bitcoin Core pull requestu
+        [#25600][bitcoin core #25600].
 
 - **Pokračuje diskuze o RBF:** v pokračující diskuzi o aktivaci [full-RBF][topic
   rbf] na mainnetu se minulý měsíc v emailové skupině rozvíjelo několik
   paralelních debat:
 
-    - *Uzly s full RBF:* Peter Todd prozkoumal plné uzly, které oznamovaly,
-	  že provozovaly Bitcoin Core 24.x a akceptovaly spojení na IPv4 adrese.
-	  [Zjistil][todd probe], že kolem 17 % přeposílalo full RBF nahrazení:
-	  transakce, které nahradily transakce bez [BIP125][] signálu.
-	  Může to znamenat, že tyto uzly měly aktivovánu volbu `mempoolfullrbf`,
-	  i když je ve výchozím stavu vypnuta.
+  - *Uzly s full RBF:* Peter Todd prozkoumal plné uzly, které oznamovaly,
+        že provozovaly Bitcoin Core 24.x a akceptovaly spojení na IPv4 adrese.
+        [Zjistil][todd probe], že kolem 17 % přeposílalo full RBF nahrazení:
+        transakce, které nahradily transakce bez [BIP125][] signálu.
+        Může to znamenat, že tyto uzly měly aktivovánu volbu `mempoolfullrbf`,
+        i když je ve výchozím stavu vypnuta.
 
-    - *Nové úvahy o RBF-FSS:* Daniel Lipshitz [zaslal][lipshitz
-      fss] do emailové skupiny Bitcoin-Dev nápad na druh nahrazování
-	  transakcí nazývaný First Seen Safe (FSS), kde by nahrazující transakce
-	  platila původním výstupům minimálně stejnou částku jako původní transakce.
-	  To by zaručilo, že by mechanismus nahrazování nemohl být použit
-	  ke krádeži prostředků od příjemce původní transakce. Yuval Kogman ve
-	  své [odpovědi][kogman fss] připojil odkaz na [ranější verzi][rbf-fss]
-	  stejné myšlenky sdílené v roce 2015 Peterem Toddem. Todd v
-	  [následující odpovědi][todd fss] popsal, proč je tento způsob
-	  méně preferovaný než opt-in nebo full RBF.
+  - *Nové úvahy o RBF-FSS:* Daniel Lipshitz [zaslal][lipshitz
+    fss] do emailové skupiny Bitcoin-Dev nápad na druh nahrazování
+        transakcí nazývaný First Seen Safe (FSS), kde by nahrazující transakce
+        platila původním výstupům minimálně stejnou částku jako původní transakce.
+        To by zaručilo, že by mechanismus nahrazování nemohl být použit
+        ke krádeži prostředků od příjemce původní transakce. Yuval Kogman ve
+        své [odpovědi][kogman fss] připojil odkaz na [ranější verzi][rbf-fss]
+        stejné myšlenky sdílené v roce 2015 Peterem Toddem. Todd v
+        [následující odpovědi][todd fss] popsal, proč je tento způsob
+        méně preferovaný než opt-in nebo full RBF.
 
-    - *Motivace k full RBF:* Anthony Towns zaslal do vlákna [příspěvek][towns
-	  rbfm] s výčtem motivací různých skupin k používání full RBF. Towns
-	  analyzuje, co znamená a neznamená ekonomická racionalita v kontextu
-	  výběru transakcí těžařem. Těžaři optimalizující pro krátkodobý profit
-	  by přirozeně preferovali full RBF. Avšak, poznamenává Towns, těžaři,
-	  kteří učinili dlouhodobé kapitálové investice do zařízení, mohou namísto
-	  toho optimalizovat příjem z poplatků napříč několika bloky a nemusí
-	  tak nezbytně nutně upřednostňovat full RBF. Navrhuje k úvaze tři různé
-	  scénáře.
+  - *Motivace k full RBF:* Anthony Towns zaslal do vlákna [příspěvek][towns
+        rbfm] s výčtem motivací různých skupin k používání full RBF. Towns
+        analyzuje, co znamená a neznamená ekonomická racionalita v kontextu
+        výběru transakcí těžařem. Těžaři optimalizující pro krátkodobý profit
+        by přirozeně preferovali full RBF. Avšak, poznamenává Towns, těžaři,
+        kteří učinili dlouhodobé kapitálové investice do zařízení, mohou namísto
+        toho optimalizovat příjem z poplatků napříč několika bloky a nemusí
+        tak nezbytně nutně upřednostňovat full RBF. Navrhuje k úvaze tři různé
+        scénáře.
 
 ## Vydání nových verzí
 

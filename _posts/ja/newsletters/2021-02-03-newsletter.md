@@ -38,8 +38,8 @@ lang: ja
 - [Bitcoin Core GUI #163][]は、GUIピア詳細領域の*Direction*フィールドをDirectionとピア接続のタイプの両方を表示する*Connection Type*に置き換えます。
   詳細については、Connection Typeフィールド名の上にカーソルを置くと以下のようなツールチップが表示されます。
 
-    {:.center}
-    ![Illustration of GUI peer detail connection type](/img/posts/2021-02-gui-peer-connection-type.png)
+  {:.center}
+  ![Illustration of GUI peer detail connection type](/img/posts/2021-02-gui-peer-connection-type.png)
 
 - [HWI #430][]では、`displayaddress`コマンドでTrezor Oneのマルチシグアドレス用の[BIP32][] 拡張公開鍵（xpub）を表示できるようになりました。
 

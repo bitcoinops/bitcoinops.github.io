@@ -26,10 +26,10 @@ and notable changes to popular infrastructure projects.
   transaction pinning].  Also included in his post is the result of
   [research][revault research] into some of the ideas described earlier.
 
-    Ensuring that fee bumping works reliably is a requirement for the
-    safety of most contract protocols, and it remains a problem without any
-    comprehensive solution yet.  It is encouraging to see continuing
-    research into the problem.
+  Ensuring that fee bumping works reliably is a requirement for the
+  safety of most contract protocols, and it remains a problem without any
+  comprehensive solution yet.  It is encouraging to see continuing
+  research into the problem.
 
 ## Bitcoin Core PR Review Club
 

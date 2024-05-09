@@ -28,14 +28,14 @@ software.
   scripts after block 709,632 are safe even if there's a problem with
   miners.
 
-    Developers are encouraged to start [implementing taproot][taproot
-    uses] so they can
-    be ready to take advantage of greater efficiency, privacy, and
-    fungibility as soon as the activation is complete.
+  Developers are encouraged to start [implementing taproot][taproot
+  uses] so they can
+  be ready to take advantage of greater efficiency, privacy, and
+  fungibility as soon as the activation is complete.
 
-    Readers celebrating the lock-in of taproot may also wish to read a
-    [short thread][wuille taproot] about taproot's origins and history by
-    developer Pieter Wuille.
+  Readers celebrating the lock-in of taproot may also wish to read a
+  [short thread][wuille taproot] about taproot's origins and history by
+  developer Pieter Wuille.
 
 - **BIP proposed for wallets to set nSequence by default on taproot transactions:**
   Chris Belcher [posted][belcher post] a draft BIP to the Bitcoin-Dev
@@ -46,26 +46,26 @@ software.
   contract protocols such as taproot-enabled LN or advanced
   [coinswaps][topic coinswap].
 
-    Anti fee sniping is a technique some wallets implement to discourage
-    miners from trying to steal fees from each other in a way that would
-    reduce the amount of proof of work expended on securing Bitcoin and
-    limit users' ability to rely on confirmation scores.  All wallets
-    that implement anti fee sniping today use nLockTime height locks,
-    but it's also possible to implement the same protection using
-    [BIP68][] nSequence height locks.  This wouldn't be any more
-    effective at preventing fee sniping, but it would provide a good
-    reason for regular wallets to set their nSequence values to the same
-    values that are required for transactions in certain
-    multisignature-based contract protocols, such as ideas for coinswaps
-    and taproot-enabled LN.  This helps make regular wallet transactions
-    look like contract protocol transactions and vice versa.
+  Anti fee sniping is a technique some wallets implement to discourage
+  miners from trying to steal fees from each other in a way that would
+  reduce the amount of proof of work expended on securing Bitcoin and
+  limit users' ability to rely on confirmation scores.  All wallets
+  that implement anti fee sniping today use nLockTime height locks,
+  but it's also possible to implement the same protection using
+  [BIP68][] nSequence height locks.  This wouldn't be any more
+  effective at preventing fee sniping, but it would provide a good
+  reason for regular wallets to set their nSequence values to the same
+  values that are required for transactions in certain
+  multisignature-based contract protocols, such as ideas for coinswaps
+  and taproot-enabled LN.  This helps make regular wallet transactions
+  look like contract protocol transactions and vice versa.
 
-    Belcher's proposal suggests wallets randomly choose between using
-    either nLockTime or nSequence with 50% probability when both options
-    are available.  Overall, if the proposal is implemented, it will
-    allow users of regular single-sig transactions or uncomplicated
-    multisignatures to join together with users of contract protocols to
-    mutually improve each others' privacy and fungibility.
+  Belcher's proposal suggests wallets randomly choose between using
+  either nLockTime or nSequence with 50% probability when both options
+  are available.  Overall, if the proposal is implemented, it will
+  allow users of regular single-sig transactions or uncomplicated
+  multisignatures to join together with users of contract protocols to
+  mutually improve each others' privacy and fungibility.
 
 ## Field Report: Using RBF and Additive Batching
 
@@ -107,8 +107,8 @@ BOLTs][bolts repo].*
   finalized, users will be able to use their HWI-compatible hardware wallets
   directly from the Bitcoin Core GUI.
 
-    {:.center}
-    ![Screenshot of HWI path configuration option](/img/posts/2021-06-gui-hwi.png)
+  {:.center}
+  ![Screenshot of HWI path configuration option](/img/posts/2021-06-gui-hwi.png)
 
 - [Bitcoin Core #21573][] updates the version of libsecp256k1 included
   in Bitcoin Core.  The most notable change is the use of the

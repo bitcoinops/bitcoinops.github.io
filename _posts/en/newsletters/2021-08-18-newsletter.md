@@ -22,21 +22,21 @@ infrastructure software.
   difficult for users to create *uneconomical outputs*---UTXOs that
   would cost more in fees to spend that they hold in value.
 
-    This week, Jeremy Rubin [posted][rubin dust] to the Bitcoin-Dev
-    mailing list a five-point argument for removing the dust limit and
-    stated a belief that the reason for the limit is to prevent "spam"
-    and "[dust fingerprint attacks][topic output linking]".  Others
-    [replied][corallo dust] with [counterarguments][harding dust] and
-    noted that the limit exists not to prevent spam but to prevent
-    users from permanently wasting the resources of full node operators
-    by creating UTXOs that the users will have no financial incentive to
-    ever spend.  Parts of the discussion also [described][riard dust]
-    the [impact][towns dust] of both the dust limit and uneconomical
-    outputs on parts of LN.
+  This week, Jeremy Rubin [posted][rubin dust] to the Bitcoin-Dev
+  mailing list a five-point argument for removing the dust limit and
+  stated a belief that the reason for the limit is to prevent "spam"
+  and "[dust fingerprint attacks][topic output linking]".  Others
+  [replied][corallo dust] with [counterarguments][harding dust] and
+  noted that the limit exists not to prevent spam but to prevent
+  users from permanently wasting the resources of full node operators
+  by creating UTXOs that the users will have no financial incentive to
+  ever spend.  Parts of the discussion also [described][riard dust]
+  the [impact][towns dust] of both the dust limit and uneconomical
+  outputs on parts of LN.
 
-    As of this writing, it did not appear any agreement was likely to be
-    reached.  At least for the short term, we expect the dust limit to
-    remain.
+  As of this writing, it did not appear any agreement was likely to be
+  reached.  At least for the short term, we expect the dust limit to
+  remain.
 
 ## Changes to services and client software
 
@@ -115,16 +115,16 @@ BOLTs][bolts repo].*
   transactions or 101KvB in weight. The same rules apply to the transaction
   combined with its mempool descendants.
 
-    Those ancestor and descendant limits are enforced when a transaction is
-    considered for addition to the mempool. If adding the transaction would
-    cause one of the limits to be exceeded, then the transaction is rejected.
-    Although package semantics have not been finalized, [#21800][bitcoin core #21800]
-    implements ancestor and descendant limit checks for validating
-    arbitrary packages (i.e. when multiple transactions are considered
-    for addition to the mempool at the same time). Mempool package acceptance
-    was implemented for testing only in [#20833][mempool package test accept],
-    and will eventually be exposed over the p2p network as part of [package
-    relay][topic package relay].
+  Those ancestor and descendant limits are enforced when a transaction is
+  considered for addition to the mempool. If adding the transaction would
+  cause one of the limits to be exceeded, then the transaction is rejected.
+  Although package semantics have not been finalized, [#21800][bitcoin core #21800]
+  implements ancestor and descendant limit checks for validating
+  arbitrary packages (i.e. when multiple transactions are considered
+  for addition to the mempool at the same time). Mempool package acceptance
+  was implemented for testing only in [#20833][mempool package test accept],
+  and will eventually be exposed over the p2p network as part of [package
+  relay][topic package relay].
 
 - [Bitcoin Core #21500][] updates the `listdescriptors` RPC with a
   `private` parameter that, when set, will return the private form of

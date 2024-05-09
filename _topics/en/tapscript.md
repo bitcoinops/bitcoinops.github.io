@@ -3,7 +3,7 @@ title: Tapscript
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Soft Forks
   - Scripts and Addresses
 

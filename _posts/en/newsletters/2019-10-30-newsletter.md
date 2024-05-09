@@ -42,30 +42,30 @@ the Bitcoin Stack Exchange.
   inclusion of CPFP carve-out in the upcoming Bitcoin Core version
   0.19.0 (see [Newsletter #56][pr15681]).
 
-    In the first thread, Johan Halseth posted an [email][halseth
-    carve-out] about loosening mempool policy in order to make
-    simplified commitments even simpler.  This received several
-    objections on the basis that a slight change wouldn't be effective
-    and too much change would put the network at risk of
-    bandwidth-wasting attacks.  However, this discussion (and a separate
-    [discussion][rubin justification] started on the #bitcoin-core-dev
-    IRC channel by Jeremy Rubin) revealed that many developers wanted to
-    gain a better understanding of the current rules and how they might
-    be improved.  A good outline of the subject was sourced from a
-    presentation given by Suhas Daftuar that has now been converted into
-    a [wiki page][daftuar duo].
+  In the first thread, Johan Halseth posted an [email][halseth
+  carve-out] about loosening mempool policy in order to make
+  simplified commitments even simpler.  This received several
+  objections on the basis that a slight change wouldn't be effective
+  and too much change would put the network at risk of
+  bandwidth-wasting attacks.  However, this discussion (and a separate
+  [discussion][rubin justification] started on the #bitcoin-core-dev
+  IRC channel by Jeremy Rubin) revealed that many developers wanted to
+  gain a better understanding of the current rules and how they might
+  be improved.  A good outline of the subject was sourced from a
+  presentation given by Suhas Daftuar that has now been converted into
+  a [wiki page][daftuar duo].
 
-    In the second thread, Joost Jager [resumed][anchor thread] an old
-    thread started by Rusty Russell with a proposed specification for
-    simplified commitments (see [Newsletter #23][opt_simplified]).
-    Based on the upcoming carve-out feature and other developments in
-    LN, Jager makes several suggestions, including: using the name
-    "anchor output" for the outputs meant to be spent with CPFP; using
-    an additional set of pubkeys for the anchors to ease splitting
-    responsibilities between cold and hot wallets; and using static keys
-    to simplify backup recovery.  He subsequently opened a [PR][BOLTs
-    #688] to the BOLTs repository to add simplified commitments to the
-    LN protocol specification.
+  In the second thread, Joost Jager [resumed][anchor thread] an old
+  thread started by Rusty Russell with a proposed specification for
+  simplified commitments (see [Newsletter #23][opt_simplified]).
+  Based on the upcoming carve-out feature and other developments in
+  LN, Jager makes several suggestions, including: using the name
+  "anchor output" for the outputs meant to be spent with CPFP; using
+  an additional set of pubkeys for the anchors to ease splitting
+  responsibilities between cold and hot wallets; and using static keys
+  to simplify backup recovery.  He subsequently opened a [PR][BOLTs
+  #688] to the BOLTs repository to add simplified commitments to the
+  LN protocol specification.
 
 - **Publication of videos and study material from schnorr/taproot workshop:**
   Optech published a [blog post][taproot workshop] with links to videos, Jupyter
@@ -75,10 +75,10 @@ the Bitcoin Stack Exchange.
   guide students through actually using them, and then describe strategies
   for making optimal use of the features they add to Bitcoin.
 
-    All developers interested in these features which may be added to
-    Bitcoin in the future are encouraged to review the study material,
-    especially developers participating in the [taproot review][]
-    described in [last week's newsletter][tr].
+  All developers interested in these features which may be added to
+  Bitcoin in the future are encouraged to review the study material,
+  especially developers participating in the [taproot review][]
+  described in [last week's newsletter][tr].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -124,13 +124,13 @@ endcomment %}
   0.18.0][core 0.18.0] and will be disabled by default in the upcoming
   0.19.0; see [Newsletter #19][pr14451] for more information.
 
-    This is the last significant feature in Bitcoin Core to depend on
-    OpenSSL, and a [PR][Bitcoin Core #17265] has been opened to complete
-    the removal of that dependency.  OpenSSL has been the source of
-    previous vulnerabilities in Bitcoin Core (e.g. [Heartbleed][] and
-    [non-strict signature encoding][ber]) and much effort over the past
-    five-plus years has been invested into eliminating it as a
-    dependency.
+  This is the last significant feature in Bitcoin Core to depend on
+  OpenSSL, and a [PR][Bitcoin Core #17265] has been opened to complete
+  the removal of that dependency.  OpenSSL has been the source of
+  previous vulnerabilities in Bitcoin Core (e.g. [Heartbleed][] and
+  [non-strict signature encoding][ber]) and much effort over the past
+  five-plus years has been invested into eliminating it as a
+  dependency.
 
 {% include linkers/issues.md issues="17165,17265,688" %}
 [bitcoin core 0.19.0]: https://bitcoincore.org/bin/bitcoin-core-0.19.0/

@@ -17,11 +17,11 @@ lang: zh
   - **<!--frequent-use-of-exogenous-fees-may-risk-mining-decentralization-->频繁使用外生费用可能会危及挖矿的去中心化：**
     比特币协议的理想版本应该按照矿工的算力比例奖励每个矿工。交易中支付的隐式手续费保留了这一属性：拥有 10% 总算力的矿工有 10% 的机会获取下一个区块的费用，而拥有 1% 算力的矿工则有 1% 的机会。在交易之外并且直接支付给某个矿工的手续费，叫做[协议外的手续费][topic out-of-band fees]，违反了这一属性：一个支付给控制超过 55% 算力的矿工的系统，在 6 个区块内<!-- 1 - (1 - 0.55)**6 -->有 99% 的机会确认交易，很可能导致很少的动力向拥有 1% 或更少算力的小矿工支付费用。如果小矿工获得的报酬比大矿工相对更少，矿业将自然地中心化，这将减少为了审查交易（不让交易得到确认）而需要攻陷的实体的数量。
 
-      活跃使用的协议，例如：[带有锚点输出的 LN 承诺交易 (LN-Anchors)][topic anchor outputs]、[谨慎日志合约][dlc cpfp]和[客户端验证][topic client-side validation]，允许它们至少有一部分链上交易通过_外生性的_方式支付费用，这意味着交易核心支付的费用可以通过使用一个或多个独立的 UTXO 来增加。例如，在 LN-Anchors 中，承诺交易包括一个输出，用于每个参与方使用[子为父偿（CPFP）][topic cpfp]增加费用 (子交易花费额外的 UTXO)。还有，使用 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 部分签名的 HTLC-Success 和 HTLC-Failure 交易(HTLC-X 交易)，它们可以聚合到一个交易中，至少有一个额外的输入来支付费用（额外的输入是单独的 UTXO）。
+    活跃使用的协议，例如：[带有锚点输出的 LN 承诺交易 (LN-Anchors)][topic anchor outputs]、[谨慎日志合约][dlc cpfp]和[客户端验证][topic client-side validation]，允许它们至少有一部分链上交易通过_外生性的_方式支付费用，这意味着交易核心支付的费用可以通过使用一个或多个独立的 UTXO 来增加。例如，在 LN-Anchors 中，承诺交易包括一个输出，用于每个参与方使用[子为父偿（CPFP）][topic cpfp]增加费用 (子交易花费额外的 UTXO)。还有，使用 `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` 部分签名的 HTLC-Success 和 HTLC-Failure 交易(HTLC-X 交易)，它们可以聚合到一个交易中，至少有一个额外的输入来支付费用（额外的输入是单独的 UTXO）。
 
-      对专注于使用 [P2TR][topic taproot] 和提议的临时锚点的 LN 的思想实验版本，Peter Todd 认为其对外生费用的依赖明显激励了协议外费用。特别是，没有待处理付款 ([HTLCs][topic htlc]) 的通道的单方面关闭将允许接受协议外费用的大矿工在一个区块中包含两倍于只接受通过 CPFP 追加协议内费用的较小矿工可以包含的关闭交易数量。大型矿工可以通过为使用协议外支付的用户提供适度折扣来鼓励这种做法并获利。Peter Todd 称这是对去中心化的威胁。
+    对专注于使用 [P2TR][topic taproot] 和提议的临时锚点的 LN 的思想实验版本，Peter Todd 认为其对外生费用的依赖明显激励了协议外费用。特别是，没有待处理付款 ([HTLCs][topic htlc]) 的通道的单方面关闭将允许接受协议外费用的大矿工在一个区块中包含两倍于只接受通过 CPFP 追加协议内费用的较小矿工可以包含的关闭交易数量。大型矿工可以通过为使用协议外支付的用户提供适度折扣来鼓励这种做法并获利。Peter Todd 称这是对去中心化的威胁。
 
-      该帖子确实建议了协议中一些使用外生费用的情况是可以接受的，因此可能担心的是预期使用频率以及使用它们和协议外支付之间相对大小的差异。换句话说，频繁发生的零等待单方关闭（开销占比100%）可能会被认为是比更少见的有 20 个待处理 HTLC 的单方关闭具有更大的风险，后者的开销不到 10%。
+    该帖子确实建议了协议中一些使用外生费用的情况是可以接受的，因此可能担心的是预期使用频率以及使用它们和协议外支付之间相对大小的差异。换句话说，频繁发生的零等待单方关闭（开销占比100%）可能会被认为是比更少见的有 20 个待处理 HTLC 的单方关闭具有更大的风险，后者的开销不到 10%。
 
   - **<!--implications-of-exogenous-fees-on-safety-scalability-and-costs-->外生费用对安全性、可扩展性和成本的影响：**
     Peter Todd 的帖子还指出，现有的设计，比如 [LN-Anchors（LN 锚点）][topic anchor outputs]和未来使用[临时锚点][topic ephemeral anchors]的设计都要求每个用户在他们的钱包中保留一个额外的 UTXO，用于必要的费用提升。由于创建 UTXO 会消耗区块空间，因此理论上可以将比特币协议的最大独立用户数量减少一半或更多。这也意味着用户无法安全地将其全部钱包余额分配给其 LN 通道，从而恶化了 LN 用户体验。最后，使用 [CPFP 费用提升][topic cpfp]或将额外的输入附加到交易中以外生方式支付费用，比直接从交易的输入支付费用（内生费用）需要更多的区块空间，也需要支付更多的交易费用，因此即使其他问题并非关注的焦点，从理论上讲也更昂贵。
@@ -31,32 +31,32 @@ lang: zh
   - **<!--an-alternative-use-endogenous-fees-with-presigned-incremental-rbf-bumps-->替代方法：使用预签名的递增的 RBF 内生费用：**
     Peter Todd 建议并分析了一种替代方法，即以不同的费率签署每个承诺交易的多个版本。例如，他建议签署 50 个不同版本的 LN-Penalty 承诺交易，费率从 10 sats/vbyte 开始，每个版本增加 10%，直到签署支付 1,000 sats/vbyte 的交易。对于没有待处理支付 （HTLC） 的承诺交易，他的分析表明签名时间约为 5 毫秒。然而，对于附加到承诺事务的每个 HTLC，签名数量将增加 50 个，签名时间将增加 5 毫秒。Bastien Teinturier 链接到了他关于类似方法[之前的讨论][bolts #1036]。
 
-      尽管这个想法在某些情况下可能有效，但 Peter Todd 的帖子指出，带有预签名的递增提升的内生费用并不是在所有情况下都是对外生费用令人满意的替代。当包含多个 HTLC 的预签名承诺交易所需的延迟乘以典型支付路径上的多个跳时，[延迟][harding delays]很容易超过一秒，至少在理论上会延长到一分钟以上。Peter Todd 指出，如果提议的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码（APO）可用，延迟可以减少到大致恒定的时间。
+    尽管这个想法在某些情况下可能有效，但 Peter Todd 的帖子指出，带有预签名的递增提升的内生费用并不是在所有情况下都是对外生费用令人满意的替代。当包含多个 HTLC 的预签名承诺交易所需的延迟乘以典型支付路径上的多个跳时，[延迟][harding delays]很容易超过一秒，至少在理论上会延长到一分钟以上。Peter Todd 指出，如果提议的 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 操作码（APO）可用，延迟可以减少到大致恒定的时间。
 
-      即使延迟是固定的 5 毫秒，[也有可能][harding stuckless]导致使用内生费用的转发节点赚取的转发费用比使用外生费用的节点少，因为 LN 支付者预期会产生[冗余的超额支付][topic redundant overpayments]，这将经济地奖励更快的转发，即使差异只有毫秒级别。
+    即使延迟是固定的 5 毫秒，[也有可能][harding stuckless]导致使用内生费用的转发节点赚取的转发费用比使用外生费用的节点少，因为 LN 支付者预期会产生[冗余的超额支付][topic redundant overpayments]，这将经济地奖励更快的转发，即使差异只有毫秒级别。
 
-      HTLC-Success 和 HTLC-Timeout 交易（HTLC-X 交易）使用相同的内生费用也将是一个额外的挑战。即使有 APO，这在朴素的情况下意味着要创建 <i>n<sup>2</sup></i> 个签名，尽管 Peter Todd 指出，通过假设 HTLC-X 交易将支付与承诺交易相似的费率，可以减少签名的数量。
+    HTLC-Success 和 HTLC-Timeout 交易（HTLC-X 交易）使用相同的内生费用也将是一个额外的挑战。即使有 APO，这在朴素的情况下意味着要创建 <i>n<sup>2</sup></i> 个签名，尽管 Peter Todd 指出，通过假设 HTLC-X 交易将支付与承诺交易相似的费率，可以减少签名的数量。
 
-      <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
-           BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
-           = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
-           everything by 1,000 s/vb to get total sats -->
+    <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
+         BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
+         = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
+         everything by 1,000 s/vb to get total sats -->
 
-      关于内生费用是否会导致过量资本被预留用于费用的[争论][teinturier fees]仍悬而未决。例如，如果 Alice 签署从 10 s/vb 到 1,000 s/vb 的费用变体，她必须基于对手方 Bob 可能会把 1,000 s/vb 的变体放在链上的可能性做出决定，即使她自己不会支付那个费率。这意味着她不能接受 Bob 的付款，因为他花掉了他所需的 1,000 s/vb 变体的钱。例如，有 20 个HTLC 的承诺交易将使 100 万 sats 暂时无法使用（在撰写本文时为 450 美元）。如果 HTLC-X 交易也使用内生费用，则 20 个 HTLC 暂时无法支出的金额将接近 450万 sats（2,050美元）。相比之下，如果期望 Bob 外生性地支付费用，那么 Alice 就不需要为了她的安全去减少通道的容量。
+    关于内生费用是否会导致过量资本被预留用于费用的[争论][teinturier fees]仍悬而未决。例如，如果 Alice 签署从 10 s/vb 到 1,000 s/vb 的费用变体，她必须基于对手方 Bob 可能会把 1,000 s/vb 的变体放在链上的可能性做出决定，即使她自己不会支付那个费率。这意味着她不能接受 Bob 的付款，因为他花掉了他所需的 1,000 s/vb 变体的钱。例如，有 20 个HTLC 的承诺交易将使 100 万 sats 暂时无法使用（在撰写本文时为 450 美元）。如果 HTLC-X 交易也使用内生费用，则 20 个 HTLC 暂时无法支出的金额将接近 450万 sats（2,050美元）。相比之下，如果期望 Bob 外生性地支付费用，那么 Alice 就不需要为了她的安全去减少通道的容量。
 
   - **<!--overall-conclusions-->总体结论：** 在撰写本文时，讨论仍在继续。Peter Todd 总结说：“由于上述提及的矿工去中心化风险，现有的锚点输出的使用应该被逐步淘汰；不应该在新的协议或 Bitcoin Core 中添加新的锚点输出支持”。LN 开发人员 Rusty Russell [发帖][russell inline]谈及在新协议中使用更有效的外生费用形式以最大限度地减少对协议外费用的担忧。在 Delving Bitcoin 帖子中，其他 LN、v3 交易和临时锚点的开发人员对锚点的有用性进行了辩护，他们似乎可能会继续研究与 v3 相关的协议。如果发生任何重大变化，我们将在未来的周报中提供更新。
 
 - **<!--ln-symmetry-research-implementation-->LN-Symmetry 研究实现：** Gregory Sanders 在 Delving Bitcoin 上[发布了][sanders lns]他使用 Core Lightning 的软件分支对 [LN-Symmetry][topic eltoo] 协议（最初称为eltoo）进行的[概念验证实现][poc lns]。LN-Symmetry 提供双向支付通道，保证能够在链上发布最新的通道状态，而无需进行惩罚交易。然而，它们需要允许子交易从父交易的任何可能版本中支付，这只有通过类似 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 的软分叉协议更改才能实现。Sanders 提供了他工作中的几个亮点：
 
-    - *<!--simplicity-->简单性：* LN-Symmetry 是一种比目前使用的 LN-Penalty/[LN-Anchors（LN-锚点）][topic anchor outputs]协议简单得多的协议。
+  - *<!--simplicity-->简单性：* LN-Symmetry 是一种比目前使用的 LN-Penalty/[LN-Anchors（LN-锚点）][topic anchor outputs]协议简单得多的协议。
 
-    - *<!--pinning-->交易钉死：* “[交易钉死][topic transaction pinning]很难避免”。Sander 在这个问题上的担忧而付出的工作给了他洞察力和灵感，曾让他在[包中继][topic package relay]和广受赞誉的[临时锚点][topic ephemeral anchors]提议中作出贡献。
+  - *<!--pinning-->交易钉死：* “[交易钉死][topic transaction pinning]很难避免”。Sander 在这个问题上的担忧而付出的工作给了他洞察力和灵感，曾让他在[包中继][topic package relay]和广受赞誉的[临时锚点][topic ephemeral anchors]提议中作出贡献。
 
-    - *CTV：* “[CTV][topic op_checktemplateverify] (通过仿真)[...]允许非常简单的“快速转发”，如果广泛采用，可能会减少支付时间。”
+  - *CTV：* “[CTV][topic op_checktemplateverify] (通过仿真)[...]允许非常简单的“快速转发”，如果广泛采用，可能会减少支付时间。”
 
-    - *<!--penalties-->惩罚：* 惩罚似乎确实没有必要。这是 LN-Symmetry 的希望，但有些人认为仍然需要惩罚协议来阻止恶意交易对手试图盗窃。对惩罚的支持大大增加了协议的复杂性，并且需要保留一些通道资金来支付惩罚，所以如果它们对安全性不是必需的，最好避免支持它们。
+  - *<!--penalties-->惩罚：* 惩罚似乎确实没有必要。这是 LN-Symmetry 的希望，但有些人认为仍然需要惩罚协议来阻止恶意交易对手试图盗窃。对惩罚的支持大大增加了协议的复杂性，并且需要保留一些通道资金来支付惩罚，所以如果它们对安全性不是必需的，最好避免支持它们。
 
-    - *<!--expiry-deltas-->到期时间差值：* LN-Symmetry 需要比预期更长的 HTLC 到期时间差。当 Alice 将 HTLC 转发给 Bob 时，她会给他一定值的区块数，以使用原像来领取其资金；该时间到期后，她可以收回资金。当 Bob 进一步将 HTLC 转发给 Carol 时，他给了她较少的区块数，在此期间她必须展示原像。这两个到期之间的差值就是 _HTLC 到期时间差值_。Sanders 发现，到期时间差需要足够长，以防止交易对手在承诺轮次中途中止协议时受益。
+  - *<!--expiry-deltas-->到期时间差值：* LN-Symmetry 需要比预期更长的 HTLC 到期时间差。当 Alice 将 HTLC 转发给 Bob 时，她会给他一定值的区块数，以使用原像来领取其资金；该时间到期后，她可以收回资金。当 Bob 进一步将 HTLC 转发给 Carol 时，他给了她较少的区块数，在此期间她必须展示原像。这两个到期之间的差值就是 _HTLC 到期时间差值_。Sanders 发现，到期时间差需要足够长，以防止交易对手在承诺轮次中途中止协议时受益。
 
   Sanders 目前正在致力于改进 Bitcoin Core 的交易池和中继策略，这将使未来部署 LN-Symmetry 和其他协议变得更加容易。
 

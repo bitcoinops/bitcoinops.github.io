@@ -59,26 +59,7 @@ lang: zh
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的显著提交。不包括上文描述的 Bitcoin Core #13907 或 #13666。注意：本周所有三个项目的大部分更改似乎是对其自动化测试代码的改进；我们没有在这份简报中描述这些改进，但我们确信用户和开发者非常欣赏这项工作。*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="2b67354aa584c4aabae049a67767ac7b70e2d01a"
-  end="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="f0f5e11b826e020c11c37343bcbaf9725627378b"
-  end="6989316b11c51922b4c6ae3507ac06680ec530b9"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="80a8e57ede82292818032eeb3510da067fddfd5e"
-  end="a97955845ff43d4780b33a7301695db33823c57c"
-%}
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的显著提交。不包括上文描述的 Bitcoin Core #13907 或 #13666。注意：本周所有三个项目的大部分更改似乎是对其自动化测试代码的改进；我们没有在这份简报中描述这些改进，但我们确信用户和开发者非常欣赏这项工作。*
 
 - [Bitcoin Core #13925][]：增加 Bitcoin Core 内部数据库可以使用的文件描述符的最大数量，这可以允许更多的文件描述符被用于网络连接。如果你修改了 Bitcoin Core 以接受超过 117 个进来的连接，在升级过了这个合并之后，你可能会看到连接数量的进一步增加。（注意：我们不建议增加默认值，除非你有特殊需求。）
 

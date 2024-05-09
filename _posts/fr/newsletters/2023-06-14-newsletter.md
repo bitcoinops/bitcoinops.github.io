@@ -23,24 +23,24 @@ principaux changements apportés aux logiciels d'infrastructure Bitcoin les plus
   mais il n'a pas d'autre objectif défini pour l'instant---il est réservé aux futures mises à jour du protocole, en particulier
   aux soft forks.
 
-    Bien qu'il y ait eu des [propositions antérieures][riard annex] pour définir un format pour l'annexe, elles n'ont pas été
-    largement acceptées et mises en œuvre. Jager a proposé deux formats ([1][jager annex], [2][jager annex2]) qui pourraient
-    être utilisés pour permettre à quiconque d'ajouter des données arbitraires à l'annexe d'une manière qui ne compliquerait
-    pas de manière significative les efforts de normalisation ultérieurs qui pourraient être regroupés avec un soft fork.
+  Bien qu'il y ait eu des [propositions antérieures][riard annex] pour définir un format pour l'annexe, elles n'ont pas été
+  largement acceptées et mises en œuvre. Jager a proposé deux formats ([1][jager annex], [2][jager annex2]) qui pourraient
+  être utilisés pour permettre à quiconque d'ajouter des données arbitraires à l'annexe d'une manière qui ne compliquerait
+  pas de manière significative les efforts de normalisation ultérieurs qui pourraient être regroupés avec un soft fork.
 
-    Greg Sanders [a répondu][sanders annex] pour demander quelles données Jager voulait spécifiquement stocker dans
-    l'annexe et a décrit sa propre utilisation de l'annexe en testant le protocole [LN-Symmetry][topic eltoo] avec la
-    proposition de soft fork [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] à l'aide de Bitcoin Inquisition (voir le
-    [Bulletin d'information #244][news244 annex]). Sanders a également décrit un problème avec l'annexe : dans un protocole
-    multipartite (comme un [coinjoin][topic coinjoin]), chaque signature n'engage que l'annexe pour l'entrée contenant
-    cette signature---et non les annexes pour d'autres entrées dans la même transaction. Cela signifie que si Alice, Bob
-    et Mallory signent ensemble une coinjoin, Alice et Bob n'ont aucun moyen d'empêcher Mallory de diffuser une version
-    de la transaction avec une annexe importante qui retarde sa confirmation. Étant donné que Bitcoin Core et d'autres nœuds
-    complets ne relaient pas actuellement les transactions contenant des annexes, ce problème ne se pose pas pour l'instant.
-    Jager [a répondu][jager annex4] qu'il souhaite stocker des signatures à partir de clés éphémères pour un type de
-    [coffre-fort][topic vaults] qui ne nécessite pas de soft fork, et il [a suggéré][jager annex3] que certains
-    [travaux antérieurs][bitcoin core #24007] dans Bitcoin Core pourraient éventuellement résoudre le problème du relais
-    des annexes dans certains protocoles multipartites.
+  Greg Sanders [a répondu][sanders annex] pour demander quelles données Jager voulait spécifiquement stocker dans
+  l'annexe et a décrit sa propre utilisation de l'annexe en testant le protocole [LN-Symmetry][topic eltoo] avec la
+  proposition de soft fork [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] à l'aide de Bitcoin Inquisition (voir le
+  [Bulletin d'information #244][news244 annex]). Sanders a également décrit un problème avec l'annexe : dans un protocole
+  multipartite (comme un [coinjoin][topic coinjoin]), chaque signature n'engage que l'annexe pour l'entrée contenant
+  cette signature---et non les annexes pour d'autres entrées dans la même transaction. Cela signifie que si Alice, Bob
+  et Mallory signent ensemble une coinjoin, Alice et Bob n'ont aucun moyen d'empêcher Mallory de diffuser une version
+  de la transaction avec une annexe importante qui retarde sa confirmation. Étant donné que Bitcoin Core et d'autres nœuds
+  complets ne relaient pas actuellement les transactions contenant des annexes, ce problème ne se pose pas pour l'instant.
+  Jager [a répondu][jager annex4] qu'il souhaite stocker des signatures à partir de clés éphémères pour un type de
+  [coffre-fort][topic vaults] qui ne nécessite pas de soft fork, et il [a suggéré][jager annex3] que certains
+  [travaux antérieurs][bitcoin core #24007] dans Bitcoin Core pourraient éventuellement résoudre le problème du relais
+  des annexes dans certains protocoles multipartites.
 
 - **Projet de BIP pour les paiements silencieux :** Josie Baker et Ruben Somsen ont [posté][bs sp] sur la liste de diffusion
   Bitcoin-Dev un projet de BIP pour les [paiements silencieux][topic silent payments], un type de code de paiement réutilisable

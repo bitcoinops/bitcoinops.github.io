@@ -46,9 +46,9 @@ páteřních projektech.
   podpisem Alice a buď Bobovým podpisem nebo expirací několikatýdenního
   časového zámku (např. 6 000 bloků). [Příklad][potentiam minsc]:
 
-   ```hack
-   pk(A) && (pk(B) || older(6000))
-   ```
+  ```hack
+  pk(A) && (pk(B) || older(6000))
+  ```
 
   Tato adresa může obdržet platbu a nabírat konfirmace, zatímco je Alice
   offline. Dokud platba nedosáhne expiračního počtu konfirmací, musí Bob

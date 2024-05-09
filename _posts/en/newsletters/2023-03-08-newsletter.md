@@ -22,63 +22,63 @@ popular Bitcoin infrastructure software.
   [Newsletter #234][news234 vault]).  His alternative would add three
   opcodes instead of two.  To provide an example:
 
-    - *Alice deposits funds in a vault* by paying a [P2TR output][topic
-      taproot] with a script tree that contains at least two [leafscripts][topic
-      tapscript], one which can trigger the time-delayed unvaulting
-      process and one which can instantly freeze her funds, e.g.
-      `tr(key,{trigger,freeze})`.
+  - *Alice deposits funds in a vault* by paying a [P2TR output][topic
+    taproot] with a script tree that contains at least two [leafscripts][topic
+    tapscript], one which can trigger the time-delayed unvaulting
+    process and one which can instantly freeze her funds, e.g.
+    `tr(key,{trigger,freeze})`.
 
-      - The *trigger leafscript* contains her less-trusted authorization
-        conditions (such as requiring a signature from her hot wallet)
-        and an `OP_TRIGGER_FORWARD` opcode.  At the time she creates
-        this leafscript, she provides the opcode a *spend delay*
-        parameter, e.g. a relative timelock of 1,000 blocks (about 1
-        week).
+    - The *trigger leafscript* contains her less-trusted authorization
+      conditions (such as requiring a signature from her hot wallet)
+      and an `OP_TRIGGER_FORWARD` opcode.  At the time she creates
+      this leafscript, she provides the opcode a *spend delay*
+      parameter, e.g. a relative timelock of 1,000 blocks (about 1
+      week).
 
-      - The *freeze leafscript* contains any authorization conditions
-        Alice wants to specify (including none at all) and
-        an `OP_FORWARD_DESTINATION` opcode.  At the time she creates
-        this leafscript, she also chooses her more-trusted authorization
-        conditions (such as requiring multiple signatures from multiple
-        cold wallets and hardware signing devices).  She provides the
-        opcode a commitment to those conditions in the form of a hash
-        digest.
+    - The *freeze leafscript* contains any authorization conditions
+      Alice wants to specify (including none at all) and
+      an `OP_FORWARD_DESTINATION` opcode.  At the time she creates
+      this leafscript, she also chooses her more-trusted authorization
+      conditions (such as requiring multiple signatures from multiple
+      cold wallets and hardware signing devices).  She provides the
+      opcode a commitment to those conditions in the form of a hash
+      digest.
 
-    - *Alice triggers an unvaulting* by spending the output received to
-      the above script tree (using it as an input) and choosing the
-      trigger leafscript.  At this time, she provides two additional
-      parameters to the `OP_TRIGGER_FORWARD` opcode, the index of the
-      output which will receive this input's funds and a hash-based
-      commitment to how she wants to be able to spend the funds later.
-      The opcode verifies that the indicated output of this transaction
-      pays a P2TR output with a script tree similar to the one being spent except that the
-      trigger leafscript is replaced with a script using an
-      `OP_CHECKSEQUENCEVERIFY` (CSV) relative delay equal to the delay
-      specified previously (e.g., 1000 blocks) and an
-      `OP_FORWARD_OUTPUTS` opcode which includes Alice's commitment
-      hash.  The method of reconstructing the script tree is similar to
-      an earlier [covenant][topic covenants] proposal,
-      `OP_TAPLEAF_UPDATE_VERIFY` (see [Newsletter #166][news166 tluv]).
+  - *Alice triggers an unvaulting* by spending the output received to
+    the above script tree (using it as an input) and choosing the
+    trigger leafscript.  At this time, she provides two additional
+    parameters to the `OP_TRIGGER_FORWARD` opcode, the index of the
+    output which will receive this input's funds and a hash-based
+    commitment to how she wants to be able to spend the funds later.
+    The opcode verifies that the indicated output of this transaction
+    pays a P2TR output with a script tree similar to the one being spent except that the
+    trigger leafscript is replaced with a script using an
+    `OP_CHECKSEQUENCEVERIFY` (CSV) relative delay equal to the delay
+    specified previously (e.g., 1000 blocks) and an
+    `OP_FORWARD_OUTPUTS` opcode which includes Alice's commitment
+    hash.  The method of reconstructing the script tree is similar to
+    an earlier [covenant][topic covenants] proposal,
+    `OP_TAPLEAF_UPDATE_VERIFY` (see [Newsletter #166][news166 tluv]).
 
-    - *Alice completes the unvaulting* by waiting until the relative
-      timelock has expired and then spending the unvaulting output,
-      choosing the tapleaf with the `OP_FORWARD_OUTPUTS` opcode.  The
-      opcode verifies that the spending transaction's output amounts and
-      script’s hash to the same commitment Alice made in the previous
-      transaction.  In this case, Alice has successfully deposited funds
-      to a vault, begun an unvaulting, been forced to wait at least
-      1,000 blocks to allow her monitoring programs to verify she really
-      did want to spend the funds to the specified outputs, and
-      completed the spend.
+  - *Alice completes the unvaulting* by waiting until the relative
+    timelock has expired and then spending the unvaulting output,
+    choosing the tapleaf with the `OP_FORWARD_OUTPUTS` opcode.  The
+    opcode verifies that the spending transaction's output amounts and
+    script’s hash to the same commitment Alice made in the previous
+    transaction.  In this case, Alice has successfully deposited funds
+    to a vault, begun an unvaulting, been forced to wait at least
+    1,000 blocks to allow her monitoring programs to verify she really
+    did want to spend the funds to the specified outputs, and
+    completed the spend.
 
-    - If something goes wrong, *Alice freezes the funds*.  She can do
-      this at any time from the moment she deposits funds in the vault
-      up until an unvaulting is completed.  To freeze funds, she simply
-      chooses to spend the freeze leafscript from the output of
-      either the vaulting or trigger transactions.  Recall
-      that Alice explicitly placed the freeze leafscript in the vaulting
-      transaction, and note that it was implicitly carried over by the
-      trigger transaction which initiated the unvaulting.
+  - If something goes wrong, *Alice freezes the funds*.  She can do
+    this at any time from the moment she deposits funds in the vault
+    up until an unvaulting is completed.  To freeze funds, she simply
+    chooses to spend the freeze leafscript from the output of
+    either the vaulting or trigger transactions.  Recall
+    that Alice explicitly placed the freeze leafscript in the vaulting
+    transaction, and note that it was implicitly carried over by the
+    trigger transaction which initiated the unvaulting.
 
   One of the advantages to users of this approach over the original
   `OP_VAULT` design is that the freeze leafscript can contain any

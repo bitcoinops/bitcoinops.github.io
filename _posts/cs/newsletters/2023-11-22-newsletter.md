@@ -24,41 +24,41 @@ software.
   adresy na LN faktury. Teinturier poznamenává, že tento způsob přináší
   několik problémů:
 
-    - _Ztráta soukromí_: provozovatel serveru nejspíše zná IP
-      adresy plátce i příjemce.
+  - _Ztráta soukromí_: provozovatel serveru nejspíše zná IP
+    adresy plátce i příjemce.
 
-    - _Hrozba krádeže:_ provozovatel serveru může pomocí man-in-the-middle
-      útoku ukrást prostředky.
+  - _Hrozba krádeže:_ provozovatel serveru může pomocí man-in-the-middle
+    útoku ukrást prostředky.
 
-    - _Infrastruktura a závislosti:_ provozovatel serveru musí nastavit
-      DNS a HTTPS hosting a platící software musí být schopen používat
-      DNS a HTTPS.
+  - _Infrastruktura a závislosti:_ provozovatel serveru musí nastavit
+    DNS a HTTPS hosting a platící software musí být schopen používat
+    DNS a HTTPS.
 
   Teinturier nabízí tři návrhy založené na nabídkách:
 
-    - _Svázání domény a uzlu:_ DNS záznam převádí doménu (např. example.com)
-      na identifikátor LN uzlu. Plátce pošle tomuto uzlu [onion zprávu][topic
-      onion messages] s žádostí o nabídku konečnému příjemci (např.
-      alice@example.com). Uzel domény vrátí nabídku podepsanou svým klíčem,
-      což by plátci pomohlo usvědčit uzel o podvodu, pokud by poskytnutá
-      nabídka nebyla od Alice. Plátce by nato mohl použít protokol nabídek
-      k získání faktury od Alice. Plátce dále může svázat adresu alice@example.com
-      s touto nabídkou, nebude tedy muset před budoucími platbami Alici uzel
-      znovu kontaktovat. Dle Teinturiera je tento návrh velice jednoduchý.
+  - _Svázání domény a uzlu:_ DNS záznam převádí doménu (např. example.com)
+    na identifikátor LN uzlu. Plátce pošle tomuto uzlu [onion zprávu][topic
+    onion messages] s žádostí o nabídku konečnému příjemci (např.
+    alice@example.com). Uzel domény vrátí nabídku podepsanou svým klíčem,
+    což by plátci pomohlo usvědčit uzel o podvodu, pokud by poskytnutá
+    nabídka nebyla od Alice. Plátce by nato mohl použít protokol nabídek
+    k získání faktury od Alice. Plátce dále může svázat adresu alice@example.com
+    s touto nabídkou, nebude tedy muset před budoucími platbami Alici uzel
+    znovu kontaktovat. Dle Teinturiera je tento návrh velice jednoduchý.
 
-    - _Certifikáty v oznámeních o uzlu:_ stávající mechanismus, jehož LN uzly
-      využívají, aby se celé síti oznámily, může být upraven, aby umožnil
-      začlenění řetězce SSL certifikátů. Ten by prokázal (dle certifikační
-      autority) tvrzení vlastníka example.com, že je ovládán adresou
-      alice@example.com. Teinturier poznamenává, že by si to vyžádalo, aby
-      LN software implementoval kryptografii kompatibilní s SSL.
+  - _Certifikáty v oznámeních o uzlu:_ stávající mechanismus, jehož LN uzly
+    využívají, aby se celé síti oznámily, může být upraven, aby umožnil
+    začlenění řetězce SSL certifikátů. Ten by prokázal (dle certifikační
+    autority) tvrzení vlastníka example.com, že je ovládán adresou
+    alice@example.com. Teinturier poznamenává, že by si to vyžádalo, aby
+    LN software implementoval kryptografii kompatibilní s SSL.
 
-    - _Ukládání nabídek přímo v DNS:_ doména může mít několik DNS záznamů,
-      které by přímo obsahovaly nabídky pro určité adresy. Například `TXT`
-      záznam pro `alice._lnaddress.domain.com` obsahuje nabídku pro Alici.
-      Jiný záznam `bob._lnaddress.domain.com` obsahuje nabídku pro Boba.
-      Teinturier poznamenává nutnost vytvořit DNS záznam pro každého
-      uživatele (a aktualizovat tento záznam při každé změně nabídky).
+  - _Ukládání nabídek přímo v DNS:_ doména může mít několik DNS záznamů,
+    které by přímo obsahovaly nabídky pro určité adresy. Například `TXT`
+    záznam pro `alice._lnaddress.domain.com` obsahuje nabídku pro Alici.
+    Jiný záznam `bob._lnaddress.domain.com` obsahuje nabídku pro Boba.
+    Teinturier poznamenává nutnost vytvořit DNS záznam pro každého
+    uživatele (a aktualizovat tento záznam při každé změně nabídky).
 
   Příspěvek vzbudil živou diskuzi. Jedna reakce navrhla použití
   první a třetí možnosti najednou (svázání uzlu a domény a ukládání nabídek

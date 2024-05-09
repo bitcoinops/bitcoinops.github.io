@@ -19,38 +19,38 @@ changes to popular Bitcoin infrastructure software.
   implementation][payjoin impl] for a serverless version of [BIP78][],
   the [payjoin][topic payjoin] protocol.
 
-    Without payjoin, a typical Bitcoin payment only includes inputs from
-    the spender, leading to transaction surveillance organizations
-    adopting the [common input ownership heuristic][] where they assume
-    all inputs in a transaction belong to the same wallet.  Payjoin
-    breaks this heuristic by allowing the receiver to contribute inputs
-    to the payment.  This provides an immediate privacy improvement to
-    the users of payjoin and generally improves the privacy of all Bitcoin
-    users by making the heuristic less reliable.
+  Without payjoin, a typical Bitcoin payment only includes inputs from
+  the spender, leading to transaction surveillance organizations
+  adopting the [common input ownership heuristic][] where they assume
+  all inputs in a transaction belong to the same wallet.  Payjoin
+  breaks this heuristic by allowing the receiver to contribute inputs
+  to the payment.  This provides an immediate privacy improvement to
+  the users of payjoin and generally improves the privacy of all Bitcoin
+  users by making the heuristic less reliable.
 
-    However, payjoin isn't as flexible as typical Bitcoin payments.
-    Most typical payments can be sent when the receiver is offline, but
-    payjoin requires the receiver to be online to contribute and sign
-    for their inputs.  The existing payjoin protocol also requires the
-    receiver to accept HTTP requests at a network address accessible to
-    the spender, which is commonly accomplished by the receiver running
-    a webserver on a public IP address which contains payjoin-compatible
-    software.  As mentioned in [Newsletter #132][news132 payjoin], one
-    suggestion for increasing the use of payjoin would be to allow
-    payjoin on a more P2P basis between typical end-user wallets.
+  However, payjoin isn't as flexible as typical Bitcoin payments.
+  Most typical payments can be sent when the receiver is offline, but
+  payjoin requires the receiver to be online to contribute and sign
+  for their inputs.  The existing payjoin protocol also requires the
+  receiver to accept HTTP requests at a network address accessible to
+  the spender, which is commonly accomplished by the receiver running
+  a webserver on a public IP address which contains payjoin-compatible
+  software.  As mentioned in [Newsletter #132][news132 payjoin], one
+  suggestion for increasing the use of payjoin would be to allow
+  payjoin on a more P2P basis between typical end-user wallets.
 
-    Gould suggests building into payjoin-compatible wallets a
-    lightweight HTTP server with [noise protocol][] encryption support
-    plus the ability to use the [TURN protocol][] to traverse [NAT][].
-    This would allow two wallets to communicate interactively for the
-    brief period it takes to create a payjoin payment, with no need for
-    a long-term webserver.  This does not allow payjoins to be created
-    while the receiver is offline, although Gould does suggest
-    investigating the [nostr protocol][] for future proposals to enable
-    "async payjoin".
+  Gould suggests building into payjoin-compatible wallets a
+  lightweight HTTP server with [noise protocol][] encryption support
+  plus the ability to use the [TURN protocol][] to traverse [NAT][].
+  This would allow two wallets to communicate interactively for the
+  brief period it takes to create a payjoin payment, with no need for
+  a long-term webserver.  This does not allow payjoins to be created
+  while the receiver is offline, although Gould does suggest
+  investigating the [nostr protocol][] for future proposals to enable
+  "async payjoin".
 
-    As of this writing, no replies to the proposal have been posted to
-    the mailing list. {% assign timestamp="1:30" %}
+  As of this writing, no replies to the proposal have been posted to
+  the mailing list. {% assign timestamp="1:30" %}
 
 - **LN async proof of payment:** as mentioned in [last week's
   newsletter][news235 async], LN developers are seeking a method for
@@ -63,53 +63,53 @@ changes to popular Bitcoin infrastructure software.
   online, the LSP will begin forwarding the payment the rest of the way
   to Bob.
 
-    A challenge with this approach in the current [HTLC][topic
-    htlc]-based LN is that, if Bob is offline, he can't provide Alice
-    with a payment-specific invoice that references a secret he's
-    chosen.  Alice can instead choose her own secret and include it in
-    the async payment she sends Bob---this is called a [keysend][topic
-    spontaneous payments] payment---but since Alice knew the keysend
-    secret all along, she can't use her knowledge of it as proof that
-    she paid Bob.  Alternatively, Bob could pre-generate several
-    standard invoices and give them to his LSP, who could distribute
-    them to potential spenders like Alice.  Paying those invoices would
-    generate proof of payment when Bob ultimately accepted payment, but
-    it would allow the LSP to distribute the same invoice to several
-    spenders, causing them all to pay the same secret.  When the LSP learned
-    the secret as a consequence of Bob accepting the first of those
-    payments, the LSP would be able to steal payments for the remainder
-    of the payments to the reused invoice---making the pre-generated
-    invoice solution for HTLCs only secure if Bob trusts his LSP.
+  A challenge with this approach in the current [HTLC][topic
+  htlc]-based LN is that, if Bob is offline, he can't provide Alice
+  with a payment-specific invoice that references a secret he's
+  chosen.  Alice can instead choose her own secret and include it in
+  the async payment she sends Bob---this is called a [keysend][topic
+  spontaneous payments] payment---but since Alice knew the keysend
+  secret all along, she can't use her knowledge of it as proof that
+  she paid Bob.  Alternatively, Bob could pre-generate several
+  standard invoices and give them to his LSP, who could distribute
+  them to potential spenders like Alice.  Paying those invoices would
+  generate proof of payment when Bob ultimately accepted payment, but
+  it would allow the LSP to distribute the same invoice to several
+  spenders, causing them all to pay the same secret.  When the LSP learned
+  the secret as a consequence of Bob accepting the first of those
+  payments, the LSP would be able to steal payments for the remainder
+  of the payments to the reused invoice---making the pre-generated
+  invoice solution for HTLCs only secure if Bob trusts his LSP.
 
-    This week, Anthony Towns [proposed][towns async] a solution based on
-    [signature adaptors][topic adaptor signatures].  This would depend
-    on the planned upgrade of LN to use [PTLCs][topic ptlc].  Bob would
-    pre-generate a series of signature nonces and give them to his LSP.
-    The LSP would give a signature nonce to Alice, Alice would choose a
-    message for her proof of payment (e.g. "Alice paid Bob 1000 sats at
-    2023-02-01 12:34:56Z"), and then use Bob's nonce and her message
-    to generate a signature adaptor for her PTLC.  When Bob comes back
-    online, the LSP forwards him the payment and Bob verifies the nonce
-    hasn't been used before, that he agrees with the message, that the
-    payment is otherwise valid, and that the signature adaptor math is
-    valid; he then accepts the payment and Alice, when she ultimately
-    receives the settled PTLC, will have a signature from Bob that
-    commits to her chosen message.
+  This week, Anthony Towns [proposed][towns async] a solution based on
+  [signature adaptors][topic adaptor signatures].  This would depend
+  on the planned upgrade of LN to use [PTLCs][topic ptlc].  Bob would
+  pre-generate a series of signature nonces and give them to his LSP.
+  The LSP would give a signature nonce to Alice, Alice would choose a
+  message for her proof of payment (e.g. "Alice paid Bob 1000 sats at
+  2023-02-01 12:34:56Z"), and then use Bob's nonce and her message
+  to generate a signature adaptor for her PTLC.  When Bob comes back
+  online, the LSP forwards him the payment and Bob verifies the nonce
+  hasn't been used before, that he agrees with the message, that the
+  payment is otherwise valid, and that the signature adaptor math is
+  valid; he then accepts the payment and Alice, when she ultimately
+  receives the settled PTLC, will have a signature from Bob that
+  commits to her chosen message.
 
-    Towns's solution involves the LSP receiving pre-generated invoices
-    from Bob---this is similar to the insecure/trusted solution for
-    HTLCs, yet the PTLC signature adaptor solution is secure and
-    trustless because each payment from a different spender (like Alice)
-    uses a different PTLC public key point and Bob is able to prevent
-    nonce reuse.  Each PTLC point is different because it derives from a
-    unique message selected by each spender.  Bob is able to prevent
-    nonce reuse by checking for reused nonces before he accepts each
-    payment.
+  Towns's solution involves the LSP receiving pre-generated invoices
+  from Bob---this is similar to the insecure/trusted solution for
+  HTLCs, yet the PTLC signature adaptor solution is secure and
+  trustless because each payment from a different spender (like Alice)
+  uses a different PTLC public key point and Bob is able to prevent
+  nonce reuse.  Each PTLC point is different because it derives from a
+  unique message selected by each spender.  Bob is able to prevent
+  nonce reuse by checking for reused nonces before he accepts each
+  payment.
 
-    In his post, Towns [references][towns sa1] two [previous][towns sa2]
-    mailing list posts he's written about LN proof of payment using
-    signature adaptors.  As of this writing, no replies to the idea have
-    been posted to the mailing list. {% assign timestamp="18:44" %}
+  In his post, Towns [references][towns sa1] two [previous][towns sa2]
+  mailing list posts he's written about LN proof of payment using
+  signature adaptors.  As of this writing, no replies to the idea have
+  been posted to the mailing list. {% assign timestamp="18:44" %}
 
 ## Notable code and documentation changes
 
@@ -163,10 +163,10 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   signature algorithm is used.  Instead, ECDSA signatures are generated
   and verified for P2TR addresses.
 
-    Note: Optech generally [recommends against][p4tr new hd] using ECDSA
-    signature functions with keys intended for use with schnorr
-    signatures, but LND developers have taken [extra precautionary
-    steps][osuntokun sigs] to avoid problems. {% assign timestamp="44:33" %}
+  Note: Optech generally [recommends against][p4tr new hd] using ECDSA
+  signature functions with keys intended for use with schnorr
+  signatures, but LND developers have taken [extra precautionary
+  steps][osuntokun sigs] to avoid problems. {% assign timestamp="44:33" %}
 
 - [LDK #1878][] adds the ability to set a per-payment (rather than
   global) `min_final_cltv_expiry` value.  This value determines the
@@ -174,12 +174,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
   expires.  The standard default value is 18 blocks but receivers can
   request more time by setting a parameter in a [BOLT11][] invoice.
 
-    In order for LDK to support this feature in combination with its unique
-    implementation of [stateless invoices][topic stateless invoices],
-    LDK encodes the value into the [payment secret][topic payment
-    secrets] that the spender is obliged to send.  It provides 12 bits
-    for the expiry value, which allows expiries of up to 4,096 blocks
-    (about 4 weeks). {% assign timestamp="47:47" %}
+  In order for LDK to support this feature in combination with its unique
+  implementation of [stateless invoices][topic stateless invoices],
+  LDK encodes the value into the [payment secret][topic payment
+  secrets] that the spender is obliged to send.  It provides 12 bits
+  for the expiry value, which allows expiries of up to 4,096 blocks
+  (about 4 weeks). {% assign timestamp="47:47" %}
 
 - [LDK #1860][] adds support for channels using [anchor outputs][topic
   anchor outputs]. {% assign timestamp="50:35" %}

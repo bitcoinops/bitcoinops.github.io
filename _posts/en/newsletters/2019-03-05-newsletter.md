@@ -44,27 +44,27 @@ commits in popular Bitcoin infrastructure projects.
   Bitcoin's viability.  Still, it would be best to fix the
   vulnerabilities proactively rather than reactively.
 
-    Optech summarizes the proposal in the following bullet points, but
-    we recognize that many readers will be unfamiliar with the details
-    of concepts such as `OP_CODESEPARATOR`, `FindAndDelete()`, time warp
-    attacks, and merkle tree vulnerabilities, so we've also included an
-    appendix to this newsletter that provides additional background on
-    these subjects.
+  Optech summarizes the proposal in the following bullet points, but
+  we recognize that many readers will be unfamiliar with the details
+  of concepts such as `OP_CODESEPARATOR`, `FindAndDelete()`, time warp
+  attacks, and merkle tree vulnerabilities, so we've also included an
+  appendix to this newsletter that provides additional background on
+  these subjects.
 
-    - **Prevent use of `OP_CODESEPARATOR` and `FindAndDelete()` in legacy transactions:**
-      nobody is known to be using these two
-      features of Bitcoin in legacy (non-segwit) Bitcoin transactions,
-      but an attacker can abuse them to significantly increase the
-      amount of computational work necessary to verify a non-standard
-      transaction, creating blocks that could take half an hour or
-      longer to verify.  Most readers will probably never have heard
-      about either of these features because neither one of them enables
-      any known useful behavior that can't be accomplished in some other
-      way, but anyone who does still need `OP_CODESEPARATOR` can use
-      the [BIP143][] segwit version of it, which was implemented in a
-      way that avoids the computational blowup.  Transactions making use
-      of these features have not been mined or relayed by default since
-      Bitcoin Core 0.16.1, released in June 2018.
+  - **Prevent use of `OP_CODESEPARATOR` and `FindAndDelete()` in legacy transactions:**
+    nobody is known to be using these two
+    features of Bitcoin in legacy (non-segwit) Bitcoin transactions,
+    but an attacker can abuse them to significantly increase the
+    amount of computational work necessary to verify a non-standard
+    transaction, creating blocks that could take half an hour or
+    longer to verify.  Most readers will probably never have heard
+    about either of these features because neither one of them enables
+    any known useful behavior that can't be accomplished in some other
+    way, but anyone who does still need `OP_CODESEPARATOR` can use
+    the [BIP143][] segwit version of it, which was implemented in a
+    way that avoids the computational blowup.  Transactions making use
+    of these features have not been mined or relayed by default since
+    Bitcoin Core 0.16.1, released in June 2018.
 
 {% comment %}<!--
       ## How long until all bitcoins are released by a timewarp
@@ -77,72 +77,72 @@ commits in popular Bitcoin infrastructure projects.
          ...:
          18.666666666666668 -->{% endcomment %}
 
-    - **Fix the time warp attack:** this attack allows miners controlling
-      a majority of hashrate to maintain or decrease mining difficulty even when
-      total network hashrate is steady or increasing, allowing them to
-      produce blocks faster than targeted by the protocol.  The increase
-      in block production would accelerate release of Bitcoin's block
-      subsidy, potentially releasing all remaining bitcoins within three
-      weeks of the attack starting.  However, the setup for the attack
-      would be publicly visible for at least a week before it had any
-      effect, so fixing it has not had a high priority in the absence of
-      a cartel of miners attempting it.  The proposed soft fork fixes
-      the problem by requiring the first block in a new difficulty
-      period have a timestamp no earlier than 600 seconds before the
-      last block in the previous period.  See also [Newsletter #10][]
-      where we mention a mailing list discussion about the topic.
+  - **Fix the time warp attack:** this attack allows miners controlling
+    a majority of hashrate to maintain or decrease mining difficulty even when
+    total network hashrate is steady or increasing, allowing them to
+    produce blocks faster than targeted by the protocol.  The increase
+    in block production would accelerate release of Bitcoin's block
+    subsidy, potentially releasing all remaining bitcoins within three
+    weeks of the attack starting.  However, the setup for the attack
+    would be publicly visible for at least a week before it had any
+    effect, so fixing it has not had a high priority in the absence of
+    a cartel of miners attempting it.  The proposed soft fork fixes
+    the problem by requiring the first block in a new difficulty
+    period have a timestamp no earlier than 600 seconds before the
+    last block in the previous period.  See also [Newsletter #10][]
+    where we mention a mailing list discussion about the topic.
 
-    - **Forbid use of non-push opcodes in scriptSig:** since the July
-      2010 [fix][1opreturn fix] for a critical security vulnerability,
-      each sciptSig is evaluated down to only data elements before it is
-      combined with a coin's scriptPubKey for script verification.  This
-      eliminated almost any reason to ever use a non-data-pushing opcode
-      in scriptSig (the exception being that it could be slightly more
-      efficient for putting duplicate or permutated data elements on the
-      stack).  However,
-      because Bitcoin still technically allows non-push opcodes in
-      scriptSig, this could be abused by an attacker to increase the
-      amount of work it takes to verify a transaction included in a
-      block.  Forbidding use of non-push opcodes in scriptSig has been
-      the default relay and mining policy since 2011 and was forbidden
-      by design for payments sent to [BIP16][] P2SH and [BIP141][]
-      segwit.
+  - **Forbid use of non-push opcodes in scriptSig:** since the July
+    2010 [fix][1opreturn fix] for a critical security vulnerability,
+    each sciptSig is evaluated down to only data elements before it is
+    combined with a coin's scriptPubKey for script verification.  This
+    eliminated almost any reason to ever use a non-data-pushing opcode
+    in scriptSig (the exception being that it could be slightly more
+    efficient for putting duplicate or permutated data elements on the
+    stack).  However,
+    because Bitcoin still technically allows non-push opcodes in
+    scriptSig, this could be abused by an attacker to increase the
+    amount of work it takes to verify a transaction included in a
+    block.  Forbidding use of non-push opcodes in scriptSig has been
+    the default relay and mining policy since 2011 and was forbidden
+    by design for payments sent to [BIP16][] P2SH and [BIP141][]
+    segwit.
 
-   - **Limit legacy and BIP143 sighashes to the currently defined set:**
-     you prove that a transaction is an authorized spend of your
-     bitcoins by generating a digital signature that commits to a hash
-     of the spending transaction.  However, to enable extra flexibility,
-     Bitcoin allows you to use a one-byte *signature hash type* to
-     indicate exactly what parts of the transaction (and related data)
-     get included in the hash.  Only 6 of the possible 256 values for
-     the byte have a defined meaning so far---if you use any other
-     value, your signature commits to almost exactly the same data as
-     used for `SIGHASH_ALL`.  The one difference is that the signature
-     hash must commit to its own sighash flag, which will be different
-     for the otherwise-equivalent data and which complicates caching.
-     Since the adoption of [BIP141][] segwit, any new sighash types are
-     expected to be introduced using new witness versions, so removing the
-     ability to specify undefined sighash types allows improved caching
-     for reduced node overhead.
+  - **Limit legacy and BIP143 sighashes to the currently defined set:**
+    you prove that a transaction is an authorized spend of your
+    bitcoins by generating a digital signature that commits to a hash
+    of the spending transaction.  However, to enable extra flexibility,
+    Bitcoin allows you to use a one-byte *signature hash type* to
+    indicate exactly what parts of the transaction (and related data)
+    get included in the hash.  Only 6 of the possible 256 values for
+    the byte have a defined meaning so far---if you use any other
+    value, your signature commits to almost exactly the same data as
+    used for `SIGHASH_ALL`.  The one difference is that the signature
+    hash must commit to its own sighash flag, which will be different
+    for the otherwise-equivalent data and which complicates caching.
+    Since the adoption of [BIP141][] segwit, any new sighash types are
+    expected to be introduced using new witness versions, so removing the
+    ability to specify undefined sighash types allows improved caching
+    for reduced node overhead.
 
-   - **Forbid transactions 64 bytes or smaller:** derived elements
-     (nodes) in Bitcoin's merkle trees are formed by combining two
-     32-byte hash digests into a single 64-byte binary blob and then
-     hashing it.  However, the transaction identifier (txid) for a
-     64-byte transaction is also produced by hashing a 64-byte binary
-     blob in exactly the same way.  This can allow a transaction to
-     masquerade as a pair of hashes, or a pair of hashes to masquerade
-     as a transaction, creating vulnerabilities for Bitcoin merkle
-     proofs and SPV proofs.  As there is no known way to spend bitcoins
-     securely with a transaction 64 bytes or smaller, the proposed soft
-     fork would forbid such transactions from being included in blocks.
+  - **Forbid transactions 64 bytes or smaller:** derived elements
+    (nodes) in Bitcoin's merkle trees are formed by combining two
+    32-byte hash digests into a single 64-byte binary blob and then
+    hashing it.  However, the transaction identifier (txid) for a
+    64-byte transaction is also produced by hashing a 64-byte binary
+    blob in exactly the same way.  This can allow a transaction to
+    masquerade as a pair of hashes, or a pair of hashes to masquerade
+    as a transaction, creating vulnerabilities for Bitcoin merkle
+    proofs and SPV proofs.  As there is no known way to spend bitcoins
+    securely with a transaction 64 bytes or smaller, the proposed soft
+    fork would forbid such transactions from being included in blocks.
 
-   The proposal plans to use the [BIP9][] activation mechanism, with
-   signaling starting on 1 August 2019 and ending a year later if the
-   proposal isn't activated.  As this is still a proposal, it will
-   need to be evaluated by protocol experts, implemented in a full node
-   (see Corallo's [PR][Bitcoin Core #15482]), and willingly adopted by
-   users in order to be enforced.
+  The proposal plans to use the [BIP9][] activation mechanism, with
+  signaling starting on 1 August 2019 and ending a year later if the
+  proposal isn't activated.  As this is still a proposal, it will
+  need to be evaluated by protocol experts, implemented in a full node
+  (see Corallo's [PR][Bitcoin Core #15482]), and willingly adopted by
+  users in order to be enforced.
 
 ## Notable code and documentation changes
 
@@ -479,3 +479,5 @@ independently reporting this error.
 [4 july fork]: https://en.bitcoin.it/wiki/July_2015_chain_forks
 [CVE-2017-12842 description]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
 [1opreturn fix]: https://github.com/bitcoin/bitcoin/commit/73aa262647ff9948eaf95e83236ec323347e95d0#diff-8458adcedc17d046942185cb709ff5c3R1114
+[newsletter #10]: /en/newsletters/2018/08/28/#requests-for-soft-fork-solutions-to-the-time-warp-attack
+[newsletter #16]: /en/newsletters/2018/10/09/#forward-blocks-on-chain-capacity-increases-without-a-hard-fork

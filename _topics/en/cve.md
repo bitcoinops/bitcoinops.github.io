@@ -8,7 +8,7 @@ shortname: cves
 ## Optional.  An entry will be added to the topics index for each alias
 #
 ## PUT IN NUMERICAL ORDER
-aliases:
+title-aliases:
   - CVE-2012-2459
   - CVE-2013-2292
   - CVE-2017-12842
@@ -17,10 +17,11 @@ aliases:
   - CVE-2020-26895
   - CVE-2020-26896
   - CVE-2021-31876
+  - CVE-2023-39910
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -80,6 +81,9 @@ optech_mentions:
   - title: "CVE-2017-12842: Bitcoin Core PR Review Club discussion about lowering min relayable tx size"
     url: /en/newsletters/2022/11/09/#bitcoin-core-pr-review-club
 
+  - title: "Milk Sad team disclosed CVE-2023-39910 insecure entropy in Libbitcoin `bx` command"
+    url: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Responsible disclosures
@@ -95,6 +99,13 @@ excerpt: >
 
 extra:
   cves:
+    CVE-2023-39910:
+      link: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
+      summary: >
+        Vulnerability in Libbitcoin `bx` command produces insecure
+        entropy when used with the `seed` parameter, having led to the
+        theft of the full balance of multiple wallets.
+
     CVE-2020-26896:
       link: /en/newsletters/2020/10/28/#cve-2020-26896-improper-preimage-revelation
       summary: >
@@ -177,7 +188,7 @@ extra:
 {% endfor %}
 
 ### Other CVEs
-{% for alias in page.aliases %}
+{% for alias in page.title-aliases %}
   * {:#{{alias}}} **[{{alias}}]({{page.extra.cves[alias].link | default: "#CVE-LINK-NOT-PROVIDED"}}):** {{page.extra.cves[alias].summary}}
 
   {%- for mention in page.optech_mentions -%}

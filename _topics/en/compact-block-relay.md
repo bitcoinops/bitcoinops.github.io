@@ -6,12 +6,12 @@ title: Compact block relay
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BIP152
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Bandwidth Reduction
   - Mining
   - P2P Network Protocol
@@ -53,6 +53,9 @@ optech_mentions:
 
   - title: "Improvements to compact block peer selection made to address block stalling attack"
     url: /en/newsletters/2024/02/07/#bitcoin-core-22147
+
+  - title: "Proposal to use weak blocks to improve compact block relay when mempool policies diverge"
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

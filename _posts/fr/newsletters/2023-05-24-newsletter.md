@@ -25,62 +25,62 @@ versions candidates, ainsi que les changements apportés aux principaux projets 
   Cela permet à un client qui reçoit plusieurs preuves de déterminer laquelle démontre
   la plus grande preuve de travail.
 
-    Ils disposent également d'un prototype sous-optimal qui prouve que tous les
-    changements d'état des transactions de la chaîne de blocs respectent les règles
-    monétaires (par exemple, le nombre de bitcoins pouvant être créés par un nouveau
-    bloc, le fait que chaque transaction, en dehors des transactions coinbase, ne doit pas créer
-    d'UTXO ayant une valeur supérieure à celle des bitcoins qu'elle détruit (dépense),
-    et qu'un mineur peut réclamer toute différence entre les UTXO détruits dans un
-    bloc et ceux qui ont été créés). Un client recevant cette preuve et une copie de
-    l'ensemble d'UTXO actuel serait en mesure de vérifier que l'ensemble est exact et
-    complet. Ils appellent cela une preuve _assumevalid_, d'après la [fonctionnalité de Bitcoin Core][assumevalid]
-    qui permet de ne pas vérifier les scripts des anciens blocs lorsque de nombreux contributeurs
-    s'accordent à dire que leurs nœuds ont tous validé ces blocs avec succès.
+  Ils disposent également d'un prototype sous-optimal qui prouve que tous les
+  changements d'état des transactions de la chaîne de blocs respectent les règles
+  monétaires (par exemple, le nombre de bitcoins pouvant être créés par un nouveau
+  bloc, le fait que chaque transaction, en dehors des transactions coinbase, ne doit pas créer
+  d'UTXO ayant une valeur supérieure à celle des bitcoins qu'elle détruit (dépense),
+  et qu'un mineur peut réclamer toute différence entre les UTXO détruits dans un
+  bloc et ceux qui ont été créés). Un client recevant cette preuve et une copie de
+  l'ensemble d'UTXO actuel serait en mesure de vérifier que l'ensemble est exact et
+  complet. Ils appellent cela une preuve _assumevalid_, d'après la [fonctionnalité de Bitcoin Core][assumevalid]
+  qui permet de ne pas vérifier les scripts des anciens blocs lorsque de nombreux contributeurs
+  s'accordent à dire que leurs nœuds ont tous validé ces blocs avec succès.
 
-    Pour minimiser la complexité de leur preuve, ils utilisent une version de [utreexo][topic utreexo]
-    avec une fonction de hachage optimisée pour leur système. Ils suggèrent séparément que
-    la combinaison de leur preuve avec un client utreexo permettra à ce dernier de commencer
-    à fonctionner comme un nœud complet presque immédiatement après avoir téléchargé une très
-    petite quantité de données.
+  Pour minimiser la complexité de leur preuve, ils utilisent une version de [utreexo][topic utreexo]
+  avec une fonction de hachage optimisée pour leur système. Ils suggèrent séparément que
+  la combinaison de leur preuve avec un client utreexo permettra à ce dernier de commencer
+  à fonctionner comme un nœud complet presque immédiatement après avoir téléchargé une très
+  petite quantité de données.
 
-    En ce qui concerne la facilité d'utilisation de leurs prototypes, ils écrivent que
-    "nous avons mis en œuvre la preuve de la chaîne d'en-tête et la preuve de l'état
-    supposé valide en tant que prototypes. Il est possible de prouver la première, tandis
-    que la seconde nécessite encore des améliorations de performance pour prouver des blocs
-    de taille raisonnable". Ils travaillent également sur la validation de blocs complets,
-    y compris les scripts, mais affirment qu'ils ont besoin d'une augmentation de la vitesse
-    d'au moins 40 fois pour que cela soit viable.
+  En ce qui concerne la facilité d'utilisation de leurs prototypes, ils écrivent que
+  "nous avons mis en œuvre la preuve de la chaîne d'en-tête et la preuve de l'état
+  supposé valide en tant que prototypes. Il est possible de prouver la première, tandis
+  que la seconde nécessite encore des améliorations de performance pour prouver des blocs
+  de taille raisonnable". Ils travaillent également sur la validation de blocs complets,
+  y compris les scripts, mais affirment qu'ils ont besoin d'une augmentation de la vitesse
+  d'au moins 40 fois pour que cela soit viable.
 
-    Outre la compression de l'état de la chaîne de blocs Bitcoin, ils décrivent également
-    un protocole qui peut être utilisé pour un protocole de jetons à validation côté client
-    similaire à celui utilisé pour les actifs Taproot de Lightning Labs et certaines utilisations
-    de RGB (voir les lettres d'information [#195][news195 taro] et [#247][news247 rgb]).
-    Lorsque Alice transfère à Bob une certaine quantité de jetons, Bob doit vérifier l'historique
-    de tous les transferts précédents de ces jetons spécifiques depuis leur création. Dans
-    un scénario idéal, cet historique croît linéairement avec le nombre de transferts. Mais
-    si Bob veut payer à Carole un montant supérieur à celui qu'il a reçu d'Alice, il devra
-    combiner certains des jetons qu'il a reçus d'Alice avec d'autres jetons qu'il a reçus
-    lors d'une autre transaction. Carol devra alors vérifier à la fois l'historique de la
-    transaction avec Alice et l'historique des autres jetons de Bob. C'est ce qu'on appelle
-    une fusion. Si les fusions sont fréquentes, la taille de l'historique qui doit être vérifié
-    approche la taille de l'historique de chaque transfert de ce jeton entre les utilisateurs.
-    En termes comparatifs, dans Bitcoin, chaque nœud complet vérifie chaque transaction effectuée
-    par chaque utilisateur ; dans les protocoles de jetons utilisant la validation côté client,
-    cela n'est pas strictement nécessaire mais finit par le devenir si les fusions sont fréquentes.
+  Outre la compression de l'état de la chaîne de blocs Bitcoin, ils décrivent également
+  un protocole qui peut être utilisé pour un protocole de jetons à validation côté client
+  similaire à celui utilisé pour les actifs Taproot de Lightning Labs et certaines utilisations
+  de RGB (voir les lettres d'information [#195][news195 taro] et [#247][news247 rgb]).
+  Lorsque Alice transfère à Bob une certaine quantité de jetons, Bob doit vérifier l'historique
+  de tous les transferts précédents de ces jetons spécifiques depuis leur création. Dans
+  un scénario idéal, cet historique croît linéairement avec le nombre de transferts. Mais
+  si Bob veut payer à Carole un montant supérieur à celui qu'il a reçu d'Alice, il devra
+  combiner certains des jetons qu'il a reçus d'Alice avec d'autres jetons qu'il a reçus
+  lors d'une autre transaction. Carol devra alors vérifier à la fois l'historique de la
+  transaction avec Alice et l'historique des autres jetons de Bob. C'est ce qu'on appelle
+  une fusion. Si les fusions sont fréquentes, la taille de l'historique qui doit être vérifié
+  approche la taille de l'historique de chaque transfert de ce jeton entre les utilisateurs.
+  En termes comparatifs, dans Bitcoin, chaque nœud complet vérifie chaque transaction effectuée
+  par chaque utilisateur ; dans les protocoles de jetons utilisant la validation côté client,
+  cela n'est pas strictement nécessaire mais finit par le devenir si les fusions sont fréquentes.
 
-    Cela signifie qu'un protocole capable de comprimer l'état de Bitcoin peut également
-    être adapté pour comprimer l'état de l'historique d'un jeton, même si les fusions sont
-    fréquentes. Les auteurs décrivent comment ils y parviendraient. Leur objectif est de
-    produire une preuve que chaque transfert précédent du jeton a suivi les règles du jeton,
-    y compris en utilisant leurs preuves pour Bitcoin afin de prouver que chaque transfert
-    précédent a été ancré dans la chaîne de blocs. Alice pourrait alors transférer les jetons
-    à Bob et lui donner une courte preuve de validité de taille constante ; Bob pourrait
-    vérifier la preuve pour savoir que le transfert a eu lieu à une certaine hauteur de bloc
-    et payer son portefeuille de jetons, ce qui lui donnerait le contrôle exclusif des jetons.
+  Cela signifie qu'un protocole capable de comprimer l'état de Bitcoin peut également
+  être adapté pour comprimer l'état de l'historique d'un jeton, même si les fusions sont
+  fréquentes. Les auteurs décrivent comment ils y parviendraient. Leur objectif est de
+  produire une preuve que chaque transfert précédent du jeton a suivi les règles du jeton,
+  y compris en utilisant leurs preuves pour Bitcoin afin de prouver que chaque transfert
+  précédent a été ancré dans la chaîne de blocs. Alice pourrait alors transférer les jetons
+  à Bob et lui donner une courte preuve de validité de taille constante ; Bob pourrait
+  vérifier la preuve pour savoir que le transfert a eu lieu à une certaine hauteur de bloc
+  et payer son portefeuille de jetons, ce qui lui donnerait le contrôle exclusif des jetons.
 
-    Bien que le document mentionne fréquemment des recherches et des développements supplémentaires,
-    nous estimons qu'il s'agit d'un progrès encourageant vers une [fonctionnalité][coinwitness] que
-    les développeurs de Bitcoin souhaitent depuis plus d'une décennie.
+  Bien que le document mentionne fréquemment des recherches et des développements supplémentaires,
+  nous estimons qu'il s'agit d'un progrès encourageant vers une [fonctionnalité][coinwitness] que
+  les développeurs de Bitcoin souhaitent depuis plus d'une décennie.
 
 ## En attente de confirmation #2 : Mesures d'incitation
 
@@ -174,7 +174,7 @@ ascendants pour cette fréquence est calculé et le résultat est déduit de sa 
 choisir des produits fortement déficitaires pour une nouvelle transaction lorsque d'autres produits pouvant être dépensés sont
 disponibles. Dans un [PR de suivi][bitcoin core #26152], l'interface sera également utilisée pour permettre au portefeuille de
 payer les frais supplémentaires (appelés _bump fees_) s'il doit de toute façon choisir des sorties déficientes, garantissant ainsi
-que la nouvelle transaction paie le taux effectif demandé par l'utilisateur.
+  que la nouvelle transaction paie le taux effectif demandé par l'utilisateur.
 
   L'algorithme est capable d'évaluer les frais de majoration pour n'importe quelle constellation d'ascendants en évaluant l'ensemble
   de la grappe de transactions non confirmées de l'UTXO non confirmée et en élaguant les transactions qui auront été sélectionnées

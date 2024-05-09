@@ -35,26 +35,26 @@ to popular Bitcoin infrastructure software.
   requesting a second invoice to make a second payment attempt can
   result in paying twice.
 
-    This week, Rusty Russell [posted][russell invoice cancel] to the
-    Lightning-Dev mailing list a change to his proposed [offers][topic
-    offers] specification that allows the receiver of a payment to
-    commit to a new invoice which supplants the previous invoice.  If
-    the spender pays the second invoice, there's still a risk that they
-    will pay twice, but the receiver's signature on the offer combined
-    with LN's inherent proof of payment will allow the spender to prove
-    the receiver acted deceitfully if both payments were accepted.  When
-    paying a receiver with an established reputation, such as a popular
-    business, that may be enough to eliminate stuck payments as a major
-    problem.
+  This week, Rusty Russell [posted][russell invoice cancel] to the
+  Lightning-Dev mailing list a change to his proposed [offers][topic
+  offers] specification that allows the receiver of a payment to
+  commit to a new invoice which supplants the previous invoice.  If
+  the spender pays the second invoice, there's still a risk that they
+  will pay twice, but the receiver's signature on the offer combined
+  with LN's inherent proof of payment will allow the spender to prove
+  the receiver acted deceitfully if both payments were accepted.  When
+  paying a receiver with an established reputation, such as a popular
+  business, that may be enough to eliminate stuck payments as a major
+  problem.
 
-    The update to the offers specification also allows the receiver to
-    indicate that they received the payment and the problem is with a
-    downstream node.  In that case, the funds for both the spender and
-    the receiver are fully secure and the only consequence is that the
-    spender will need to wait a while before they can reuse that
-    particular one of their payment slots ([HTLC][topic htlc] slots).
-    This ability to communicate interactively is a clear advantage of
-    offers over plain invoices.
+  The update to the offers specification also allows the receiver to
+  indicate that they received the payment and the problem is with a
+  downstream node.  In that case, the funds for both the spender and
+  the receiver are fully secure and the only consequence is that the
+  spender will need to wait a while before they can reuse that
+  particular one of their payment slots ([HTLC][topic htlc] slots).
+  This ability to communicate interactively is a clear advantage of
+  offers over plain invoices.
 
 - **Using anchor outputs by default in LND:** Olaoluwa Osuntokun
   [posted][osuntokun anchor] to the LND engineering mailing list about
@@ -64,31 +64,31 @@ to popular Bitcoin infrastructure software.
   [CPFP][topic cpfp] fee bumped.  Unfortunately, there are some
   challenges with CPFP fee bumping in the LN model:
 
-    - *Not always optional:* for regular onchain transactions, many
-      users can just wait longer for their transaction to confirm as an
-      alternative to fee bumping.  For LN, sometimes waiting isn't an
-      option---a fee bump will need to be submitted within a matter of
-      hours or funds could be lost.
+  - *Not always optional:* for regular onchain transactions, many
+    users can just wait longer for their transaction to confirm as an
+    alternative to fee bumping.  For LN, sometimes waiting isn't an
+    option---a fee bump will need to be submitted within a matter of
+    hours or funds could be lost.
 
-    - *Timelocked outputs:* for most regular onchain payments, a user
-      who wants to CPFP bump can pay for a fee bump using the funds
-      stored in their output from the transaction they want to bump.  In
-      the case of LN, those funds aren't available until the channel
-      close has been fully settled onchain.  That means the user needs
-      to use a separate UTXO to pay the fees.
+  - *Timelocked outputs:* for most regular onchain payments, a user
+    who wants to CPFP bump can pay for a fee bump using the funds
+    stored in their output from the transaction they want to bump.  In
+    the case of LN, those funds aren't available until the channel
+    close has been fully settled onchain.  That means the user needs
+    to use a separate UTXO to pay the fees.
 
-    To address the above two concerns, LND is requiring users of anchor
-    outputs to retain at least one confirmed UTXO of reasonable value in
-    their wallet any time a channel is open.  That ensures they can CPFP
-    fee bump when necessary, but it has certain consequences, such as
-    preventing spending the last of your onchain funds (even to open a
-    new channel) while you still have at least one channel open.
+  To address the above two concerns, LND is requiring users of anchor
+  outputs to retain at least one confirmed UTXO of reasonable value in
+  their wallet any time a channel is open.  That ensures they can CPFP
+  fee bump when necessary, but it has certain consequences, such as
+  preventing spending the last of your onchain funds (even to open a
+  new channel) while you still have at least one channel open.
 
-    Osuntokun's request is for wallets or services built on LND to let
-    the development team know if any of the above concerns, or any other
-    concerns related to anchor outputs, will cause serious problems.
-    Although the question is specific to LND, the answers may have
-    implications for all LN nodes.
+  Osuntokun's request is for wallets or services built on LND to let
+  the development team know if any of the above concerns, or any other
+  concerns related to anchor outputs, will cause serious problems.
+  Although the question is specific to LND, the answers may have
+  implications for all LN nodes.
 
 - **Sapio public launch:** Jeremy Rubin [posted][rubin sapio] to the
   Bitcoin-Dev mailing list an announcement that he has made available

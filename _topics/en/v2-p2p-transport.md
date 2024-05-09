@@ -4,11 +4,11 @@ shortname: v2 p2p transport
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - P2P Network Protocol
   - Privacy Enhancements
 
-aliases:
+title-aliases:
   - BIP151
   - BIP324
 

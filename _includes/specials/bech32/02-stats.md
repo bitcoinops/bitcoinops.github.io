@@ -46,7 +46,7 @@ other community efforts will help convince the stragglers to catch up on
 bech32 sending support so that all wallets that want to take advantage
 of native segwit can do so in the next few months.
 
-[bech32 easy]: {{news38}}#bech32-sending-support
+[bech32 easy]: /en/newsletters/2019/03/19/#bech32-sending-support
 [optech dashboard]: https://dashboard.bitcoinops.org/
 [p2sh.info]: https://p2sh.info/
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
