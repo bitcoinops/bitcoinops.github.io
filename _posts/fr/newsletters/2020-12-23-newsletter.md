@@ -495,7 +495,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
   mises à jour de la spécification [BIP174][] de PSBT et de logiciels
   tels qu'Electrum, Bitcoin Core et HWI.
 
-    ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
+  ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
 - [Attaque contre l'atomicité des paiements LN :][attack ln atomicity]
   Alors que les développeurs de LN s'efforçaient de mettre en œuvre le

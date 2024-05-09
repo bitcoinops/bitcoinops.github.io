@@ -6,12 +6,12 @@ title: Cluster mempool
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Transaction Relay Policy
   - Mining
 
@@ -57,6 +57,9 @@ optech_mentions:
 
   - title: "Bitcoin Core #29242 introduces utility functions to compare two feerate diagrams"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: "Analysis: what would have happened if cluster mempool had been deployed a year ago?"
+    url: /en/newsletters/2024/04/17/#what-would-have-happened-if-cluster-mempool-had-been-deployed-a-year-ago
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

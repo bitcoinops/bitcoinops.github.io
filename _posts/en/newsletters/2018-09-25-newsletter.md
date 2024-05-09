@@ -18,28 +18,28 @@ infrastructure projects.
   described in last week's Optech newsletter is now known to allow
   miners to trick affected systems into accepting invalid bitcoins.
 
-    As of this writing, it's believed that a majority of large Bitcoin
-    services and miners have upgraded, likely ensuring that any blocks
-    exploiting the bug will be quickly reorganized out of the most
-    proof-of-work chain---reducing the risk for SPV clients and
-    non-upgraded nodes.
+  As of this writing, it's believed that a majority of large Bitcoin
+  services and miners have upgraded, likely ensuring that any blocks
+  exploiting the bug will be quickly reorganized out of the most
+  proof-of-work chain---reducing the risk for SPV clients and
+  non-upgraded nodes.
 
-    If you don't plan to upgrade or if you use an SPV client, you should
-    consider waiting for more confirmations than you usually do (30
-    confirmations---about 5 hours worth---is a normal
-    [recommendation][reorg risk recommendation] in these sort of
-    situations, as that's enough time for people to notice a problem and
-    get warnings published).  Otherwise, upgrading to one of the
-    following versions remains highly recommended for any system,
-    especially those systems handling money:
+  If you don't plan to upgrade or if you use an SPV client, you should
+  consider waiting for more confirmations than you usually do (30
+  confirmations---about 5 hours worth---is a normal
+  [recommendation][reorg risk recommendation] in these sort of
+  situations, as that's enough time for people to notice a problem and
+  get warnings published).  Otherwise, upgrading to one of the
+  following versions remains highly recommended for any system,
+  especially those systems handling money:
 
-    * [0.16.3][] (current stable)
+  * [0.16.3][] (current stable)
 
-    * [0.17.0RC4][bcc 0.17] (release candidate for next major version)
+  * [0.17.0RC4][bcc 0.17] (release candidate for next major version)
 
-    * [0.15.2][] (backport to old version, may have other issues)
+  * [0.15.2][] (backport to old version, may have other issues)
 
-    * [0.14.3][] (backport to old version, may have other issues)
+  * [0.14.3][] (backport to old version, may have other issues)
 
 - **Allocate time to test Bitcoin Core 0.17RC4:** Bitcoin Core has
   uploaded [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 4.
@@ -52,30 +52,30 @@ infrastructure projects.
   information about this bug were the only significant news this week.
   For more information, we suggest reading the following sources:
 
-    - [Bitcoin Core full disclosure][]
+  - [Bitcoin Core full disclosure][]
 
-    - [Original confidential report][], now public
+  - [Original confidential report][], now public
 
-    - [Additional technical information][bse 79484] by Andrew Chow (also described below)
+  - [Additional technical information][bse 79484] by Andrew Chow (also described below)
 
-    - [CVE-2018-17144 entry][cve-2018-17144], National Vulnerability Database (NVE) entry
-      being updated by Luke Dashjr
+  - [CVE-2018-17144 entry][cve-2018-17144], National Vulnerability Database (NVE) entry
+    being updated by Luke Dashjr
 
-    We're aware of several very insightful people currently reflecting
-    upon the bug, its ultimate causes, and possible methods for reducing
-    the risk of future serious bugs.  An especially good venue for
-    Bitcoin Core internal discussion will be during the October 8th
-    though 10th [CoreDev.tech][] meetings following the Tokyo Scaling
-    Bitcoin conference.  We plan to follow up with links to any
-    significant conclusions that are published.
+  We're aware of several very insightful people currently reflecting
+  upon the bug, its ultimate causes, and possible methods for reducing
+  the risk of future serious bugs.  An especially good venue for
+  Bitcoin Core internal discussion will be during the October 8th
+  though 10th [CoreDev.tech][] meetings following the Tokyo Scaling
+  Bitcoin conference.  We plan to follow up with links to any
+  significant conclusions that are published.
 
-    Optech thanks the original reporter, Awemany, for his responsible
-    disclosure as well as the following developers who unhesitatingly
-    made the time to quickly confirm the issue, address it, and quietly
-    provide round-the-clock monitoring for attempts to exploit the
-    then-undisclosed inflation risk: Pieter Wuille, Gregory Maxwell,
-    Wladimir van der Laan, Cory Fields, Suhas Daftuar, Alex Morcos, and
-    Matt Corallo.
+  Optech thanks the original reporter, Awemany, for his responsible
+  disclosure as well as the following developers who unhesitatingly
+  made the time to quickly confirm the issue, address it, and quietly
+  provide round-the-clock monitoring for attempts to exploit the
+  then-undisclosed inflation risk: Pieter Wuille, Gregory Maxwell,
+  Wladimir van der Laan, Cory Fields, Suhas Daftuar, Alex Morcos, and
+  Matt Corallo.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -114,30 +114,11 @@ answers made since our last update.*
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="c53e083a49291b611d278a8db24ff235c1202e43"
-  end="920c090f63f4990bf0f3b3d1a6d3d8a8bcd14ba0"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="3b2c807288b1b7f40d609533c1e96a510ac5fa6d"
-  end="f4305097e1638f6f8958dfa9eec941d8bf80246e"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="36eab5de26e203311ceeb65c94ec5beb9c94ff5d"
-  end="3ce53ab9eddd397d57b6afc5faefe6703e56ac26"
-%}
 
 - [Bitcoin Core #13152][]: when connected to the peer-to-peer network,
   nodes share the IP addresses of other nodes they've heard about and
@@ -169,16 +150,16 @@ wait until version 0.18 in about six months from now.*
   times, quite humorous).  See [hsmd.c][].  The code comments even
   document other code comments:
 
-    ```c
-    /*~ You'll find FIXMEs like this scattered through the code.{% comment %}skip-test{% endcomment %}
-     * Sometimes they suggest simple improvements which someone like
-     * yourself should go ahead an implement.  Sometimes they're deceptive
-     * quagmires which will cause you nothing but grief.  You decide! */
+  ```c
+  /*~ You'll find FIXMEs like this scattered through the code.{% comment %}skip-test{% endcomment %}
+   * Sometimes they suggest simple improvements which someone like
+   * yourself should go ahead an implement.  Sometimes they're deceptive
+   * quagmires which will cause you nothing but grief.  You decide! */
 
-     /* FIXME: We should cache these. */{% comment %}skip-test{% endcomment %}
-     get_channel_seed(&c->id, c->dbid, &channel_seed);
-     derive_funding_key(&channel_seed, &funding_pubkey, &funding_privkey);
-    ```
+   /* FIXME: We should cache these. */{% comment %}skip-test{% endcomment %}
+   get_channel_seed(&c->id, c->dbid, &channel_seed);
+   derive_funding_key(&channel_seed, &funding_pubkey, &funding_privkey);
+  ```
 
 - [C-Lightning #1947][] can now make multiple requests in parallel to bitcoind,
   speeding up operations on slow systems or on nodes performing long-running

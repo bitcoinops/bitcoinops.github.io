@@ -2,12 +2,12 @@
 title: Transaction pinning
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
   - Fee Management
   - Contract Protocols
@@ -86,6 +86,9 @@ optech_mentions:
 
   - title: "Proposal for replace-by-feerate to avoid transaction pinning"
     url: /en/newsletters/2024/02/07/#proposal-for-replace-by-feerate-to-escape-pinning
+
+  - title: Discussion about weak blocks helping with transaction pinning
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

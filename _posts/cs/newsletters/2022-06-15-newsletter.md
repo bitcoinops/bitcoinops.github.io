@@ -23,164 +23,164 @@ projektech.
   [zpravodaj č. 201][news201 relay]) obdržel v posledních několika
   týdnech další komentáře:
 
-    - *Limity:* Anthony Towns [se ptal][towns relay], zda
-	  by vyjednávání mezi dvěma spojeními o podpoře přeposílání balíčků
-	  nemělo obsahovat informace o nastaveních omezení velikosti a hloubky,
-	  jinak by mohly uzly s nestandardním nastavením plýtvat datovým tokem
-	  opakovanými oznámeními o balíčcích, které nevyžadovaly. Autorka BIP
-	  Gloria Zhao [navrhuje][zhao negotiation], aby první verze protokolu
-	  implikovala maximální velikost balíčku 25 transakcí a 101 000 vbyte.
+  - *Limity:* Anthony Towns [se ptal][towns relay], zda
+        by vyjednávání mezi dvěma spojeními o podpoře přeposílání balíčků
+        nemělo obsahovat informace o nastaveních omezení velikosti a hloubky,
+        jinak by mohly uzly s nestandardním nastavením plýtvat datovým tokem
+        opakovanými oznámeními o balíčcích, které nevyžadovaly. Autorka BIP
+        Gloria Zhao [navrhuje][zhao negotiation], aby první verze protokolu
+        implikovala maximální velikost balíčku 25 transakcí a 101 000 vbyte.
 
-    - *Zpráva pouze s grafem balíčku:* Eric Voskuil [doporučuje][voskuil graph],
-	  aby spojení, které se dozví o transakci s vysokým poplatkem, která je
-	  potomkem transakce s nízkým poplatkem, jen informovalo svá
-	  spojení o vztahu mezi těmito dvěma transakcemi (tento vztah se nazývá
-	  graf baličku). Příjemce by si potom mohl vyžádat transakce, které nemá.
-	  V jiné části tohoto vlákna Towns [poznamenal][towns graph], že graf
-	  nemůže být validován, dokud nebyly obdrženy všechny transakce. Musí se
-	  tedy zajistit, aby spojení nemohla o grafu lhát za účelem zabránit
-	  šíření transakce.
+  - *Zpráva pouze s grafem balíčku:* Eric Voskuil [doporučuje][voskuil graph],
+        aby spojení, které se dozví o transakci s vysokým poplatkem, která je
+        potomkem transakce s nízkým poplatkem, jen informovalo svá
+        spojení o vztahu mezi těmito dvěma transakcemi (tento vztah se nazývá
+        graf baličku). Příjemce by si potom mohl vyžádat transakce, které nemá.
+        V jiné části tohoto vlákna Towns [poznamenal][towns graph], že graf
+        nemůže být validován, dokud nebyly obdrženy všechny transakce. Musí se
+        tedy zajistit, aby spojení nemohla o grafu lhát za účelem zabránit
+        šíření transakce.
 
-    - *Používání krátkých ID:* několik vývojářů navrhlo používat krátké
-	  identifikátory ve stylu [BIP152][]. Zhao [vysvětlila][zhao sids],
-	  že krátká ID by měla smysl pro přeposílání bloků, kde uzly nejdříve
-	  validují proof of work nového bloku (jehož vytvoření je nákladné),
-	  aby bylo pro útočníka nákladné zneužít tohoto mechanismu k plýtvání
-	  zdrojů. Avšak pro přeposílání dat, která lze vytvářet snadno, by
-	  mohla být krátká ID zneužita znova a znova, což by umožnilo
-	  DoS útok.
+  - *Používání krátkých ID:* několik vývojářů navrhlo používat krátké
+        identifikátory ve stylu [BIP152][]. Zhao [vysvětlila][zhao sids],
+        že krátká ID by měla smysl pro přeposílání bloků, kde uzly nejdříve
+        validují proof of work nového bloku (jehož vytvoření je nákladné),
+        aby bylo pro útočníka nákladné zneužít tohoto mechanismu k plýtvání
+        zdrojů. Avšak pro přeposílání dat, která lze vytvářet snadno, by
+        mohla být krátká ID zneužita znova a znova, což by umožnilo
+        DoS útok.
 
-    - *Nestandardní rodiče:* Suhas Daftuar [popisuje][daftuar repeat]
-	  scénář, ve kterém by mohl uzel implementující přeposílání balíčků
-	  dokola vyžadovat stejná data. To by se mohlo stát hlavně v případě,
-	  kdy se pravidla přeposílání liší mezi staršími a novějšími uzly,
-	  například po aktivaci soft forku.
+  - *Nestandardní rodiče:* Suhas Daftuar [popisuje][daftuar repeat]
+        scénář, ve kterém by mohl uzel implementující přeposílání balíčků
+        dokola vyžadovat stejná data. To by se mohlo stát hlavně v případě,
+        kdy se pravidla přeposílání liší mezi staršími a novějšími uzly,
+        například po aktivaci soft forku.
 
-    - *Těžkosti s oznamováním hashe bloku:* Daftuar také poznamenává,
-	  že jedna z vlastností návrhu by mohla způsobit potíže jinému software.
-	  Podle současného návrhu BIP se do každého oznámení o balíčku vkládá
-	  hash bloku, který je pro uzel nejnovější. Umožňuje to příjemci
-	  ignorovat balíčky týkající se starších bloků (nebo i jiného
-	  block chainu). V takovém případě by balíček nemusel správně fungovat
-	  s příjemcovým mempoolem. Jak však poznamenává Daftuar, pravděpodobně
-	  existuje množství software, které odesílá transakce (a které by
-	  nakonec posílalo i balíčky), ale neudržuje si přehled o hashi
-	  nejnovějšího bloku.
+  - *Těžkosti s oznamováním hashe bloku:* Daftuar také poznamenává,
+        že jedna z vlastností návrhu by mohla způsobit potíže jinému software.
+        Podle současného návrhu BIP se do každého oznámení o balíčku vkládá
+        hash bloku, který je pro uzel nejnovější. Umožňuje to příjemci
+        ignorovat balíčky týkající se starších bloků (nebo i jiného
+        block chainu). V takovém případě by balíček nemusel správně fungovat
+        s příjemcovým mempoolem. Jak však poznamenává Daftuar, pravděpodobně
+        existuje množství software, které odesílá transakce (a které by
+        nakonec posílalo i balíčky), ale neudržuje si přehled o hashi
+        nejnovějšího bloku.
 
 - **Shrnutí sezení vývojářů LN:** Olaoluwa Osuntokun poskytl
   [podrobné shrnutí][osuntokun summary] sezení vývojářů LN, které se konalo
   minulý týden v Oaklandu. Probíraná témata:
 
-    - *Taprootové LN kanály:* účastníci debatovali o první krocích přechodu
-	  LN k plnému využití schopností [taprootu][topic taproot]. Následovat
-	  bude zřejmě začlenění podpory pro [PTLC][topic ptlc][^ptlc] (viz též
-      [zpravodaj č. 164][news164 taproot ln], *angl.*).
+  - *Taprootové LN kanály:* účastníci debatovali o první krocích přechodu
+        LN k plnému využití schopností [taprootu][topic taproot]. Následovat
+        bude zřejmě začlenění podpory pro [PTLC][topic ptlc][^ptlc] (viz též
+    [zpravodaj č. 164][news164 taproot ln], *angl.*).
 
-    - *Tapscript a MuSig2[^musig2]:* součástí přechodu na taprootové
-	  kanály je také převod současných skriptů na taprootové způsobem,
-	  který by nejefektivněji využíval blokový prostor. Žádoucí by též
-	  bylo používat [MuSig2][topic musig] pro tvorbu podpisů v místech,
-	  kde se předpokládá spolupráce obou podepisujících. Obě tyto potřeby musí
-	  být naimplementovány a řádně otestovány.
+  - *Tapscript a MuSig2[^musig2]:* součástí přechodu na taprootové
+        kanály je také převod současných skriptů na taprootové způsobem,
+        který by nejefektivněji využíval blokový prostor. Žádoucí by též
+        bylo používat [MuSig2][topic musig] pro tvorbu podpisů v místech,
+        kde se předpokládá spolupráce obou podepisujících. Obě tyto potřeby musí
+        být naimplementovány a řádně otestovány.
 
-    - *Rekurzivní MuSig2:* jednoduchá implementace MuSig2 umožňuje Alici
-	  a Bobovi se společně podílet na tvorbě podpisu. Rekurzivní MuSig2 by
-	  například umožnil Alici vytvořit svou část podpisu za použití své
-	  horké peněženky i hardwarového podepisujícího zařízení, aniž by
-	  Bob musel učinit jakékoliv zvláštní kroky či vůbec tušil, že Alice
-	  podepsala více než jedním klíčem. Diskutováno bylo, jak navrhnout
-	  použití MuSig2 v LN tak, aby byl rekurzivní MuSig2 k dispozici.
-	  Probírána byla také bezpečnost rekurzivního MuSig2.
+  - *Rekurzivní MuSig2:* jednoduchá implementace MuSig2 umožňuje Alici
+        a Bobovi se společně podílet na tvorbě podpisu. Rekurzivní MuSig2 by
+        například umožnil Alici vytvořit svou část podpisu za použití své
+        horké peněženky i hardwarového podepisujícího zařízení, aniž by
+        Bob musel učinit jakékoliv zvláštní kroky či vůbec tušil, že Alice
+        podepsala více než jedním klíčem. Diskutováno bylo, jak navrhnout
+        použití MuSig2 v LN tak, aby byl rekurzivní MuSig2 k dispozici.
+        Probírána byla také bezpečnost rekurzivního MuSig2.
 
-    - *BOLT jako rozšíření:* alternativní způsob změn specifikace
-      protokolu LN. V současnosti se specifikace mění aplikací patche
-	  (diff) na existující specifikaci. Avšak někteří vývojáři preferují
-	  způsob použitý u BIP, kde jsou významné změny protokolu specifikovány
-	  v jednom či více dedikovaných dokumentech. Tito vývojáři věří, že
-	  oddělené dokumenty se snáze čtou i píší a mohly by tak
-	  zjednodušit a zrychlit vývoj.
+  - *BOLT jako rozšíření:* alternativní způsob změn specifikace
+    protokolu LN. V současnosti se specifikace mění aplikací patche
+        (diff) na existující specifikaci. Avšak někteří vývojáři preferují
+        způsob použitý u BIP, kde jsou významné změny protokolu specifikovány
+        v jednom či více dedikovaných dokumentech. Tito vývojáři věří, že
+        oddělené dokumenty se snáze čtou i píší a mohly by tak
+        zjednodušit a zrychlit vývoj.
 
-    - *Aktualizace gossip protokolu:* pokračovalo se v existující
-	  debatě o aktualizaci LN gossip protokolu (viz [zpravodaj č. 188][news188
-      gossip], *angl.*), který se používá pro přeposílání oznámení o nových
-	  a pozměněných kanálech. Dle shrnutí by účastníci sezení upřednostňovali
-	  soustředit se v blízké budoucnosti na drobnější změny protokolu:
-	  podpora taprootových kanálů s MuSig2 a plné využití [TLV][news55 tlv][^tlv].
+  - *Aktualizace gossip protokolu:* pokračovalo se v existující
+        debatě o aktualizaci LN gossip protokolu (viz [zpravodaj č. 188][news188
+    gossip], *angl.*), který se používá pro přeposílání oznámení o nových
+        a pozměněných kanálech. Dle shrnutí by účastníci sezení upřednostňovali
+        soustředit se v blízké budoucnosti na drobnější změny protokolu:
+        podpora taprootových kanálů s MuSig2 a plné využití [TLV][news55 tlv][^tlv].
 
-    - *Efektivní gossip s minisketchem:* jak bylo zmíněno ve [zpravodaji č. 198][news198
-	  minisketch], pokračuje zkoumání použití knihovny [minisketch][topic minisketch]
-	  s cílem snížit datové nároky LN gossip protokolu mezi uzly, což
-	  by také mohlo snížit nejnižší povolenou dobu mezi aktualizacemi.
+  - *Efektivní gossip s minisketchem:* jak bylo zmíněno ve [zpravodaji č. 198][news198
+        minisketch], pokračuje zkoumání použití knihovny [minisketch][topic minisketch]
+        s cílem snížit datové nároky LN gossip protokolu mezi uzly, což
+        by také mohlo snížit nejnižší povolenou dobu mezi aktualizacemi.
 
-    - *DoS onion zpráv:* několik implementací LN již podporuje [onion zprávy][topic
-	  onion messages] jako alternativu k posílání zpráv použitím [keysend][topic
-	  spontaneous payments] plateb i jako komunikační vrstvu pro navrhovaný
-	  [BOLT12 protocol][topic offers] pro nabídky. Avšak jak bylo zmíněno
-	  ve [zpravodaji č. 190][news190 onion] (*angl.*), někteří vývojáři
-	  se obávají, že onion zprávy mohou být zranitelné vůči několika
-	  typům DoS útoků. Několik způsobů ochrany proti DoS bylo diskutováno.
+  - *DoS onion zpráv:* několik implementací LN již podporuje [onion zprávy][topic
+        onion messages] jako alternativu k posílání zpráv použitím [keysend][topic
+        spontaneous payments] plateb i jako komunikační vrstvu pro navrhovaný
+        [BOLT12 protocol][topic offers] pro nabídky. Avšak jak bylo zmíněno
+        ve [zpravodaji č. 190][news190 onion] (*angl.*), někteří vývojáři
+        se obávají, že onion zprávy mohou být zranitelné vůči několika
+        typům DoS útoků. Několik způsobů ochrany proti DoS bylo diskutováno.
 
-    - *Zaslepené cesty:* mechanismus („blinded paths”) navržený před několika
-	  lety (viz [zpravodaj č. 85][news85 blinded], *angl.*) a dnes používaný
-	  pro onion zprávy je předmětem experimentů pro použití s běžnými platbami.
-	  Umožnil by tím přijímat platby, aniž by byla odhalena identita adresátova
-	  LN uzlu. Výzvou toho přístupu je nutnost komunikace většího množství
-	  routovacích informací, vyžadovány jsou tedy objemnější faktury. Efektivní
-	  implementace tak může záviset na novějších protokolech jako BOLT12
-	  nabídky nebo [LNURL][]. Diskutováno bylo také několik dalších
-	  obav.
+  - *Zaslepené cesty:* mechanismus („blinded paths”) navržený před několika
+        lety (viz [zpravodaj č. 85][news85 blinded], *angl.*) a dnes používaný
+        pro onion zprávy je předmětem experimentů pro použití s běžnými platbami.
+        Umožnil by tím přijímat platby, aniž by byla odhalena identita adresátova
+        LN uzlu. Výzvou toho přístupu je nutnost komunikace většího množství
+        routovacích informací, vyžadovány jsou tedy objemnější faktury. Efektivní
+        implementace tak může záviset na novějších protokolech jako BOLT12
+        nabídky nebo [LNURL][]. Diskutováno bylo také několik dalších
+        obav.
 
-    - *Sondování a sdílení zůstatku:* použitím různých technik je možné
-	  *vysondovat* zůstatky na kanálech v síti. Toto sondování lze provádět
-	  v podstatě zdarma, ale může vedle ztráty soukromí způsobit potíže i
-	  běžným uživatelům sítě. Opatření proti nesouvisejícímu [útoku
-	  zahlcením kanálu][topic channel jamming attacks] („channel jamming
-	  attack”) mohou pomoci omezit sondování, ale v současnosti stále
-	  budí obavy. Účastníci diskutovali o některých rychlých změnách
-	  nastavení uzlu, které by mohly sondování ztížit.
+  - *Sondování a sdílení zůstatku:* použitím různých technik je možné
+        *vysondovat* zůstatky na kanálech v síti. Toto sondování lze provádět
+        v podstatě zdarma, ale může vedle ztráty soukromí způsobit potíže i
+        běžným uživatelům sítě. Opatření proti nesouvisejícímu [útoku
+        zahlcením kanálu][topic channel jamming attacks] („channel jamming
+        attack”) mohou pomoci omezit sondování, ale v současnosti stále
+        budí obavy. Účastníci diskutovali o některých rychlých změnách
+        nastavení uzlu, které by mohly sondování ztížit.
 
-      Jeden myšlenkový experiment, o kterém se již dříve diskutovalo,
-	  se zabýval sdílením informací, které by bylo možné získat sondováním.
-	  Kdyby tak činil každý uzel, datové nároky a ztráta soukromí by
-	  znegovaly hlavní výhody LN, ale zefektivnilo by to routování
-	  plateb. Nikdo tuto myšlenku nenavrhuje, ale diskutovalo se o
-	  dřívějším nápadu, že by každý uzel sdílel tyto informace pouze
-	  se svými kanály. Někteří tvrdili, že by to mohlo významně navýšit
-	  podíl úspěšných plateb, například doplněním o [Just-In-Time (JIT)
-	  vyrovnání zůstatků][topic jit routing].
+    Jeden myšlenkový experiment, o kterém se již dříve diskutovalo,
+        se zabýval sdílením informací, které by bylo možné získat sondováním.
+        Kdyby tak činil každý uzel, datové nároky a ztráta soukromí by
+        znegovaly hlavní výhody LN, ale zefektivnilo by to routování
+        plateb. Nikdo tuto myšlenku nenavrhuje, ale diskutovalo se o
+        dřívějším nápadu, že by každý uzel sdílel tyto informace pouze
+        se svými kanály. Někteří tvrdili, že by to mohlo významně navýšit
+        podíl úspěšných plateb, například doplněním o [Just-In-Time (JIT)
+        vyrovnání zůstatků][topic jit routing].
 
-    - *Trampolínové routování a mobilní platby:*
-	  [trampolínové routování][topic trampoline payments] umožňuje plátci
-	  delegovat hledání cesty na jiný uzel v síti bez ztráty soukromí (např.
-	  odhalením plátce a adresáta). Toto delegování je užitečné především
-	  pro mobilní LN klienty, které se nesnaží přeposílat jiné platby
-	  pro jiné uzly. Bylo zmíněno, že trampolínové platby by mohly být
-	  zkombinovány se *zadržením platby prvním bodem cesty*
-      (viz [zpravodaj č. 171][news171 ln offline], *angl.*), kde je
-	  platba pozastavena uzlem, se kterým má plátce otevřený kanál, do doby,
-	  než je příjemce online. To by umožňovalo mobilním uzlům, které
-	  jsou často offline, spolehlivě přijímat platby od jiných mobilních
-	  uzlů.
+  - *Trampolínové routování a mobilní platby:*
+        [trampolínové routování][topic trampoline payments] umožňuje plátci
+        delegovat hledání cesty na jiný uzel v síti bez ztráty soukromí (např.
+        odhalením plátce a adresáta). Toto delegování je užitečné především
+        pro mobilní LN klienty, které se nesnaží přeposílat jiné platby
+        pro jiné uzly. Bylo zmíněno, že trampolínové platby by mohly být
+        zkombinovány se *zadržením platby prvním bodem cesty*
+    (viz [zpravodaj č. 171][news171 ln offline], *angl.*), kde je
+        platba pozastavena uzlem, se kterým má plátce otevřený kanál, do doby,
+        než je příjemce online. To by umožňovalo mobilním uzlům, které
+        jsou často offline, spolehlivě přijímat platby od jiných mobilních
+        uzlů.
 
-    - *LNURL s BOLT12:* LNURL protokol umožňuje uzlu vyžádat si [BOLT11][]
-	  fakturu z webového serveru. BOLT12 [nabídky][topic offers] umožňují
-	  vyžádat si fakturu z uzlu sítě. Mezi jinými aspekty těchto protokolů
-	  diskutovali účastníci, jak by mohly být tyto dva protokoly navzájem
-	  kompatibilní, aby mohly uzly používat oba dva.
+  - *LNURL s BOLT12:* LNURL protokol umožňuje uzlu vyžádat si [BOLT11][]
+        fakturu z webového serveru. BOLT12 [nabídky][topic offers] umožňují
+        vyžádat si fakturu z uzlu sítě. Mezi jinými aspekty těchto protokolů
+        diskutovali účastníci, jak by mohly být tyto dva protokoly navzájem
+        kompatibilní, aby mohly uzly používat oba dva.
 
 - **Signalizace likvidity routovacími poplatky:** vývojář ZmnSCPxj
   poslal do emailové skupiny Lightning-Dev [příspěvek][zmnscpxj hilolohi]
   s tezí, jak by bylo možné optimálně dosáhnout levných a spolehlivých
   plateb díky aplikaci teorie her na chování plátců a routovacích uzlů:
 
-    - Plátci by měli volit cesty s nižšími routovacími poplatky.
+  - Plátci by měli volit cesty s nižšími routovacími poplatky.
 
-	- Routovací uzly by měly se snižující se kapacitou kanálu žádat
-	  vyšší poplatky. Například pokud je většina zůstatku kanálu na straně
-	  Alice, může spolehlivě přeposílat platby Bobovi a tak by nemusela
-	  žádat vysoké poplatky. Ale jak se zůstatek kanálu přelévá směrem
-	  k Bobovi, schopnost Alice přeposílat platby se snižuje; měla by
-	  si tedy nechat platit více na poplatcích.
+  - Routovací uzly by měly se snižující se kapacitou kanálu žádat
+    vyšší poplatky. Například pokud je většina zůstatku kanálu na straně
+    Alice, může spolehlivě přeposílat platby Bobovi a tak by nemusela
+    žádat vysoké poplatky. Ale jak se zůstatek kanálu přelévá směrem
+    k Bobovi, schopnost Alice přeposílat platby se snižuje; měla by
+    si tedy nechat platit více na poplatcích.
 
   ZmnSCPxj argumentuje ekonomií nabídky a poptávky: se zvyšující se
   poptávkou po platbách jedním směrem (např. od Alice k Bobovi) se nabídka

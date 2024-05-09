@@ -39,22 +39,22 @@ infrastructure software.
   otherwise unable to keep track of network gossip in order to calculate
   routes themselves.
 
-    Teinturier notes that ACINQ has been running a single-bounce
-    trampoline node for users of their Phoenix wallet.  This provides
-    the route-finding benefit but, as described in a [blog post][acinq
-    post], it means ACINQ can see the destination of all its users'
-    payments.  The solution to this problem is allowing routing nodes
-    to advertise the ability to accept onion-wrapped trampoline routes
-    where spender Alice sends her money first to one trampoline (e.g.
-    ACINQ's node), then possibly to other trampolines, and finally to
-    the receiver node.  This prevents any individual trampoline from
-    learning the node identifier for both the spender and receiver.  The
-    proposed specification would provide a standardized way to achieve
-    this.
+  Teinturier notes that ACINQ has been running a single-bounce
+  trampoline node for users of their Phoenix wallet.  This provides
+  the route-finding benefit but, as described in a [blog post][acinq
+  post], it means ACINQ can see the destination of all its users'
+  payments.  The solution to this problem is allowing routing nodes
+  to advertise the ability to accept onion-wrapped trampoline routes
+  where spender Alice sends her money first to one trampoline (e.g.
+  ACINQ's node), then possibly to other trampolines, and finally to
+  the receiver node.  This prevents any individual trampoline from
+  learning the node identifier for both the spender and receiver.  The
+  proposed specification would provide a standardized way to achieve
+  this.
 
-    It's Teinturier opinion that "the code changes are very reasonable
-    as it reuses a lot of components that are already part of every
-    lightning implementation and doesn't introduce new assumptions."
+  It's Teinturier opinion that "the code changes are very reasonable
+  as it reuses a lot of components that are already part of every
+  lightning implementation and doesn't introduce new assumptions."
 
 ## Releases and release candidates
 
@@ -149,11 +149,11 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [Rust Bitcoin #499][] adds support for two global [PSBT][topic psbt] fields
   specified after [BIP174][]'s original publication:
 
-    1. The extended public key field which enables change detection for signing
-      wallets (see [Newsletter #55][news55 psbt xpub])
+  1. The extended public key field which enables change detection for signing
+    wallets (see [Newsletter #55][news55 psbt xpub])
 
-    2. The version number field which helps identify backwards-incompatible
-      changes to the PSBT spec (see [Newsletter #72][news72 psbt version])
+  2. The version number field which helps identify backwards-incompatible
+    changes to the PSBT spec (see [Newsletter #72][news72 psbt version])
 
   This is one of the last changes in a larger effort detailed in [#473][Rust Bitcoin
   #473] to bring Rust Bitcoin's PSBT implementation up-to-date with current

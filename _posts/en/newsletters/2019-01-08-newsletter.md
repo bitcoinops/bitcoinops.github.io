@@ -33,15 +33,15 @@ Bitcoin infrastructure projects are also provided.
   them to unilaterally attach additional transaction fees to a channel
   close transaction.
 
-    The most recent discussion in this thread of almost 70 posts has
-    mostly involved edge cases related to new sighash flags,
-    particularly a BIP118-like `SIGHASH_NOINPUT_UNSAFE`.  As part of the
-    discussion, protocol developer Johnson Lau described an
-    [optimization for Eltoo-based payment channels][lau bip68].  Also
-    [discussed][rm codesep] is whether the `OP_CODESEPARATOR` opcode
-    should be disabled in a script update that supports MAST (e.g. via
-    Taproot).  That opcode is not in common use, but if you plan to use
-    it in future Script versions, you should comment on the thread.
+  The most recent discussion in this thread of almost 70 posts has
+  mostly involved edge cases related to new sighash flags,
+  particularly a BIP118-like `SIGHASH_NOINPUT_UNSAFE`.  As part of the
+  discussion, protocol developer Johnson Lau described an
+  [optimization for Eltoo-based payment channels][lau bip68].  Also
+  [discussed][rm codesep] is whether the `OP_CODESEPARATOR` opcode
+  should be disabled in a script update that supports MAST (e.g. via
+  Taproot).  That opcode is not in common use, but if you plan to use
+  it in future Script versions, you should comment on the thread.
 
 - **Cross-chain LN as an options contract:** pseudonymous LN
   contributor ZmnSCPxj started a thread on the Lightning-Dev mailing
@@ -50,32 +50,32 @@ Bitcoin infrastructure projects are also provided.
   delaying payment settlement.  A [previous thread][cjp risk] by Corné
   Plooy in May 2018 described the same thing.
 
-    For example, Mallory learns that Bob is willing to route payments
-    from Bitcoin to Litecoin, so she sends a payment from one of her
-    Bitcoin nodes through Bob to one of her Litecoin nodes.  If this
-    were a normal payment, she'd settle it immediately by releasing the
-    preimage for the payment's hashlock---but instead her node delays
-    for 24 hours waiting for the exchange rate to change.  If the
-    exchange rate increases in Litecoin's favor, Mallory settles the
-    payment and receives litecoin today at yesterday's exchange rate.
-    If the exchange rate stays the same or increases in Bitcoin's favor,
-    Mallory causes the payment to fail and gets her bitcoin back.  Since
-    no fees are charged for failed payments, Mallory received an
-    opportunity to temporarily lock-in the price of Litecoin for nothing
-    but the cost of owning the bitcoins Mallory would've traded.
+  For example, Mallory learns that Bob is willing to route payments
+  from Bitcoin to Litecoin, so she sends a payment from one of her
+  Bitcoin nodes through Bob to one of her Litecoin nodes.  If this
+  were a normal payment, she'd settle it immediately by releasing the
+  preimage for the payment's hashlock---but instead her node delays
+  for 24 hours waiting for the exchange rate to change.  If the
+  exchange rate increases in Litecoin's favor, Mallory settles the
+  payment and receives litecoin today at yesterday's exchange rate.
+  If the exchange rate stays the same or increases in Bitcoin's favor,
+  Mallory causes the payment to fail and gets her bitcoin back.  Since
+  no fees are charged for failed payments, Mallory received an
+  opportunity to temporarily lock-in the price of Litecoin for nothing
+  but the cost of owning the bitcoins Mallory would've traded.
 
-    There currently aren't any known cross-currency LN nodes, but the
-    availability of this trick means that future such nodes could be
-    abused for speculation rather than payment routing.  If this turns
-    out to be a real problem and if an acceptable solution isn't found,
-    it may be the case that payment channel networks for different
-    currencies will be isolated from each other.
+  There currently aren't any known cross-currency LN nodes, but the
+  availability of this trick means that future such nodes could be
+  abused for speculation rather than payment routing.  If this turns
+  out to be a real problem and if an acceptable solution isn't found,
+  it may be the case that payment channel networks for different
+  currencies will be isolated from each other.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14565][] significantly improves the error handling for
   the `importmulti` RPC and will return a `warnings` field for each
@@ -118,30 +118,6 @@ commits].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="14565,14811,2172,2188,2374,2354" %}
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="34241716852df6ea6a3543822f3bf6f886519d4b"
-  end="fe5a70b9fefa0548f497a749746f53f3d7fd0ebb"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="0fafd5e2fd824f38ec6a03a56488de9c0798f34f"
-  end="3c950e8f0dc103feeffd9c42c9683e1164b4e8d8"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="2c53572798f78ce2a66aced0627b7b3f2adb0514"
-  end="6f027a24a04912859f44c314bf00e9d3fcb27500"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-  end="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-%}
 
 [0.17.1 bin]: https://bitcoincore.org/bin/bitcoin-core-0.17.1/
 [0.17.1 notes]: https://bitcoincore.org/en/releases/0.17.1/
@@ -153,3 +129,5 @@ commits].*
 [cl plugin event]: https://github.com/ElementsProject/lightning/blob/master/doc/PLUGINS.md#event-notifications
 [cl helloworld.py]: https://github.com/ElementsProject/lightning/blob/master/contrib/plugins/helloworld.py
 [btcpay]: https://github.com/btcpayserver/btcpayserver
+[newsletter #25]: /en/newsletters/2018/12/11/#sighash-options-for-covering-transaction-weight
+[newsletter #20]: /en/newsletters/2018/11/06/#temporary-reduction-in-segwit-block-production

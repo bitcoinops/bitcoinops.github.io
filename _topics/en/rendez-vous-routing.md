@@ -6,14 +6,14 @@ title: Rendez-vous routing
 shortname: rv routing
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Hidden destinations
   - Blinded paths
   - Route blinding
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Privacy Enhancements
 
@@ -82,6 +82,9 @@ optech_mentions:
 
   - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
     url: /en/newsletters/2024/01/31/#eclair-2811
+
+  - title: "LND #8159 and #8160 add experimental support for sending payments to blinded routes"
+    url: /en/newsletters/2024/04/10/#lnd-8159
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

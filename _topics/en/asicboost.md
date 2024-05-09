@@ -6,13 +6,13 @@ title: ASICBoost
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Overt ASICBoost
   - Covert ASICBoost
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Mining
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -57,12 +57,12 @@ ASICBoost can be implemented in two forms:
   field of a block header.  This can be done undetectably, although
   naive implementations often leave clues.
 
-    Covert ASICBoost is not compatible with blocks that contain
-    secondary commitments to their transactions, as is the case with any
-    block that contains a segwit transaction.  This produced
-    [controversy][segwit asicboost] when it was discovered that a mining
-    hardware manufacturer who strongly objected to segwit had secretly
-    designed features into their ASICs to use covert ASICBoost.
+  Covert ASICBoost is not compatible with blocks that contain
+  secondary commitments to their transactions, as is the case with any
+  block that contains a segwit transaction.  This produced
+  [controversy][segwit asicboost] when it was discovered that a mining
+  hardware manufacturer who strongly objected to segwit had secretly
+  designed features into their ASICs to use covert ASICBoost.
 
 [segwit asicboost]: /en/topics/soft-fork-activation/#2016-7-bip9-bip148-and-bip91-the-bip141143-segwit-activation
 

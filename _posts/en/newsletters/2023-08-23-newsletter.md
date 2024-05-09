@@ -20,31 +20,31 @@ describing notable changes to popular Bitcoin infrastructure software.
   version of the user's backup state besides the most recent version.
   The basic mechanism is simple:
 
-    - Alice has some data she wants to back up.  She includes a version
-      number in the data, creates a signature for the data, and gives
-      Bob both the data and her signature.
+  - Alice has some data she wants to back up.  She includes a version
+    number in the data, creates a signature for the data, and gives
+    Bob both the data and her signature.
 
-    - Immediately after receiving Alice's data, Bob sends her a
-      signature that commits to both the version number of her data and
-      the current time.
+  - Immediately after receiving Alice's data, Bob sends her a
+    signature that commits to both the version number of her data and
+    the current time.
 
-    - Later, Alice updates the data, increments the version number, and
-      provides Bob with the updated data and her signature for it.  Bob
-      returns a signature for a commitment to the new (higher) version
-      number with the new (higher) current time.  They repeat this step
-      many times.
+  - Later, Alice updates the data, increments the version number, and
+    provides Bob with the updated data and her signature for it.  Bob
+    returns a signature for a commitment to the new (higher) version
+    number with the new (higher) current time.  They repeat this step
+    many times.
 
-    - Eventually, Alice requests her data in order to test Bob.  Bob
-      sends her a version of the data and her signature for the data,
-      allowing her to prove it actually is her data.  He also sends her
-      another signature that commits to the version number in the data
-      and the current time.
+  - Eventually, Alice requests her data in order to test Bob.  Bob
+    sends her a version of the data and her signature for the data,
+    allowing her to prove it actually is her data.  He also sends her
+    another signature that commits to the version number in the data
+    and the current time.
 
-    - If Bob was dishonest and sent Alice old data with an old
-      version number, Alice can generate a _fraud proof_: she can
-      show that Bob previously signed a higher version number with
-      an earlier time than the signature commitment he just provided
-      her.
+  - If Bob was dishonest and sent Alice old data with an old
+    version number, Alice can generate a _fraud proof_: she can
+    show that Bob previously signed a higher version number with
+    an earlier time than the signature commitment he just provided
+    her.
 
   As described so far, there's nothing Bitcoin-specific to this
   mechanism for generating latest-state fraud proofs.  However, Voegtlin
@@ -102,13 +102,13 @@ describing notable changes to popular Bitcoin infrastructure software.
     penalized for lying), Bob could store his state with Alice and she
     could be penalized for lying.
 
-      Voegtlin extended this idea to [warn][voegtlin backups2] that the
-      providers of wallet software have a significant need for a good
-      reputation and that they lose reputation when their users lose
-      funds---even if the software functioned as best as possible.  As
-      the developer of wallet software, it is thus very important to him
-      to minimize the risk of an anonymous peer being able to steal from
-      an Electrum user who uses a mechanism like peer backups.
+    Voegtlin extended this idea to [warn][voegtlin backups2] that the
+    providers of wallet software have a significant need for a good
+    reputation and that they lose reputation when their users lose
+    funds---even if the software functioned as best as possible.  As
+    the developer of wallet software, it is thus very important to him
+    to minimize the risk of an anonymous peer being able to steal from
+    an Electrum user who uses a mechanism like peer backups.
 
   There was no clear resolution to the discussion. {% assign timestamp="1:20" %}
 

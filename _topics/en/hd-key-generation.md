@@ -6,13 +6,13 @@ title: HD key generation
 shortname: bip32
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
  - BIP32
  - HD wallets
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Wallet Collaboration Tools
 

@@ -23,11 +23,11 @@ infrastructure software.
   small fixes.  Any modification of the terms of a stable BIP would need
   to be made through a new BIP which extends the earlier document.
 
-    Anthony Towns [argued][towns bips] against the idea and suggested
-    several alternative tweaks to the current process, including a
-    Drafts folder in the BIPs repository and removing the ability of the
-    BIPs maintainers to choose which numbers to give particular
-    proposals.
+  Anthony Towns [argued][towns bips] against the idea and suggested
+  several alternative tweaks to the current process, including a
+  Drafts folder in the BIPs repository and removing the ability of the
+  BIPs maintainers to choose which numbers to give particular
+  proposals.
 
 - **Package mempool acceptance and package RBF:** Gloria Zhao [posted][zhao
   post] to the Bitcoin-Dev mailing list about a design for the [package
@@ -40,18 +40,18 @@ infrastructure software.
   summarizes her proposed changes to Bitcoin Core's transaction
   acceptance rules:
 
-    > - Packages may contain already-in-mempool transactions.
-    > - Packages are two generations, multi-parent-one-child.
-    > - Fee-related checks use the package feerate. This means that wallets can
-    >   create a package that utilizes CPFP.
-    > - Parents are allowed to RBF mempool transactions with a set of rules
-    >   similar to [BIP125][]. This enables a combination of CPFP and RBF,
-    >   where a transaction's descendant fees pay for replacing mempool
-    >   conflicts.
+  > - Packages may contain already-in-mempool transactions.
+  > - Packages are two generations, multi-parent-one-child.
+  > - Fee-related checks use the package feerate. This means that wallets can
+  >   create a package that utilizes CPFP.
+  > - Parents are allowed to RBF mempool transactions with a set of rules
+  >   similar to [BIP125][]. This enables a combination of CPFP and RBF,
+  >   where a transaction's descendant fees pay for replacing mempool
+  >   conflicts.
 
-    The email requests feedback on the proposal from developers who expect
-    to use the features or who think they might be affected by the
-    changes.
+  The email requests feedback on the proposal from developers who expect
+  to use the features or who think they might be affected by the
+  changes.
 
 - **DNS records for LN nodes:** Andy Schroder [posted][schroder post] to
   the Lightning-Dev mailing list a suggestion to standardize the use of

@@ -4,7 +4,7 @@ shortname: consensus cleanup
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Soft Forks
   - Scripts and Addresses
   - Mining
@@ -43,6 +43,12 @@ optech_mentions:
 
   - title: "Renewed discussion of consensus cleanup soft fork"
     url: /en/newsletters/2024/04/03/#revisiting-consensus-cleanup
+
+  - title: "Question: where exactly is the 'off-by-one' difficulty bug and how does it relate to time warp?"
+    url: /en/newsletters/2024/04/24/#where-exactly-is-the-off-by-one-difficulty-bug
+
+  - title: Notes from Bitcoin developer discussion about consensus cleanup
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

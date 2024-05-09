@@ -48,30 +48,30 @@ changes to popular Bitcoin infrastructure projects.
   large diversity of IP addresses from which to they can perform an
   eclipse attack.
 
-    However, there are large ISPs such as cloud computing operations
-    that manage multiple facilities that each use different IP ranges,
-    making it possible for customers to more easily acquire addresses
-    from multiple prefixes.  One possible solution to that problem would
-    be to track which IP addresses are controlled by which ISPs and then
-    partition the node's outgoing connections among different ISPs
-    regardless of what addresses they use.  For example, this might be
-    able to group together all IP addresses from Amazon AWS no matter
-    what region the customer used for their servers.
+  However, there are large ISPs such as cloud computing operations
+  that manage multiple facilities that each use different IP ranges,
+  making it possible for customers to more easily acquire addresses
+  from multiple prefixes.  One possible solution to that problem would
+  be to track which IP addresses are controlled by which ISPs and then
+  partition the node's outgoing connections among different ISPs
+  regardless of what addresses they use.  For example, this might be
+  able to group together all IP addresses from Amazon AWS no matter
+  what region the customer used for their servers.
 
-    ISP-to-IP-address information is available from a whole-Internet
-    routing table.  Unfortunately, those tables are over a gigabyte in
-    size---too large to practically include with full nodes.  Pieter
-    Wuille has been working on a compact encoding of just the information
-    needed to identify different ISPs by their IP addresses (using the
-    ISP's Autonomous System Number, ASN).  Wuille's table reduces the
-    extra storage requirements to about 1 MB.  During this week's [IRC
-    meeting][core dev meeting] of Bitcoin Core developers, Wuille and
-    Matt Corallo asked whether 1 MB of extra data was small enough to
-    distribute with Bitcoin Core in order to improve its ability to
-    ensure connections to peers on different networks.  Meeting
-    participants expressed support for the idea before spending time
-    debating some implementation details.  Based on that feedback, we
-    expect to see more development of this idea.
+  ISP-to-IP-address information is available from a whole-Internet
+  routing table.  Unfortunately, those tables are over a gigabyte in
+  size---too large to practically include with full nodes.  Pieter
+  Wuille has been working on a compact encoding of just the information
+  needed to identify different ISPs by their IP addresses (using the
+  ISP's Autonomous System Number, ASN).  Wuille's table reduces the
+  extra storage requirements to about 1 MB.  During this week's [IRC
+  meeting][core dev meeting] of Bitcoin Core developers, Wuille and
+  Matt Corallo asked whether 1 MB of extra data was small enough to
+  distribute with Bitcoin Core in order to improve its ability to
+  ensure connections to peers on different networks.  Meeting
+  participants expressed support for the idea before spending time
+  debating some implementation details.  Based on that feedback, we
+  expect to see more development of this idea.
 
 ## Bech32 sending support
 
@@ -180,3 +180,4 @@ endcomment %}
 [vulnerabilities announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017040.html
 [eclipse attack]: https://eprint.iacr.org/2015/263.pdf
 [core dev meeting]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2019/bitcoin-core-dev.2019-06-20-19.01.log.html#l-36
+[newsletter #6]: /en/newsletters/2018/07/31/#bitcoin-core-12257

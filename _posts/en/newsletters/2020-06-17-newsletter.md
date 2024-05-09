@@ -35,15 +35,15 @@ infrastructure software.
   many protocols that create onchain transactions with unique
   fingerprints.
 
-    The authors outline how CoinPool could work using existing features
-    of Bitcoin plus taproot, [SIGHASH_NOINPUT][topic sighash_anyprevout], and the ability to use
-    a delete-only accumulator via Bitcoin Script (e.g. a merkle tree;
-    perhaps something like the proposed [BIP116][]
-    `OP_MERKLEBRANCHVERIFY`).  They don't appear to be advocating a
-    specific design but instead want to start a discussion about how
-    CoinPool or something like it could provide a generalized mechanism
-    that wallets use by default to eliminate the onchain footprint of
-    various current and proposed multi-user protocols.
+  The authors outline how CoinPool could work using existing features
+  of Bitcoin plus taproot, [SIGHASH_NOINPUT][topic sighash_anyprevout], and the ability to use
+  a delete-only accumulator via Bitcoin Script (e.g. a merkle tree;
+  perhaps something like the proposed [BIP116][]
+  `OP_MERKLEBRANCHVERIFY`).  They don't appear to be advocating a
+  specific design but instead want to start a discussion about how
+  CoinPool or something like it could provide a generalized mechanism
+  that wallets use by default to eliminate the onchain footprint of
+  various current and proposed multi-user protocols.
 
 - **WabiSabi coordinated coinjoins with arbitrary output values:** in
   the [coinjoin][topic coinjoin] protocol, a group of users
@@ -53,89 +53,89 @@ infrastructure software.
   privacy provided by the coinjoin, and different implementations
   use different methods:
 
-    <!-- Taker creates tx template, see discussion between harding and
-    waxwing: http://gnusha.org/joinmarket/2020-06-14.log -->
+  <p><!-- Taker creates tx template, see discussion between harding and
+  waxwing: http://gnusha.org/joinmarket/2020-06-14.log --></p>
 
-    - [Joinmarket][] has two types of users: those who pay to coinjoin
-      (*market takers*) and those who are paid for allowing their UTXOs to
-      be used (*market makers*).  To create a coinjoin, takers
-      contact several makers, collect their input and output
-      information, and create the transaction template.  This gives the
-      taker knowledge of which inputs fund which outputs for all
-      participants in the coinjoin, but it also ensures that each maker
-      only has knowledge about which of their own inputs funds which of
-      their own outputs.  The taker directly gains the privacy benefits of
-      the coinjoin and the makers directly gain income for providing
-      liquidity.  If the taker preserves their own individual privacy, the makers
-      also indirectly gain increased privacy against third party block
-      chain surveillance.  Makers who want guarantees about their privacy
-      can always operate as takers for a few rounds of mixing.
+  - [Joinmarket][] has two types of users: those who pay to coinjoin
+    (*market takers*) and those who are paid for allowing their UTXOs to
+    be used (*market makers*).  To create a coinjoin, takers
+    contact several makers, collect their input and output
+    information, and create the transaction template.  This gives the
+    taker knowledge of which inputs fund which outputs for all
+    participants in the coinjoin, but it also ensures that each maker
+    only has knowledge about which of their own inputs funds which of
+    their own outputs.  The taker directly gains the privacy benefits of
+    the coinjoin and the makers directly gain income for providing
+    liquidity.  If the taker preserves their own individual privacy, the makers
+    also indirectly gain increased privacy against third party block
+    chain surveillance.  Makers who want guarantees about their privacy
+    can always operate as takers for a few rounds of mixing.
 
-        <!-- Quotes from joinmarket README.md:
-          - "Ability to spend directly, or with coinjoin"
-          - "Can specify exact amount of coinjoin (figures from 0.01 to 30.0 btc"
-        -->
+    <p><!-- Quotes from joinmarket README.md:
+      - "Ability to spend directly, or with coinjoin"
+      - "Can specify exact amount of coinjoin (figures from 0.01 to 30.0 btc"
+    --></p>
 
-        This model gives takers a lot of flexibility with their own
-        inputs and outputs to the transaction template.  For example, a
-        taker can choose the amounts of the coinjoin they want to create
-        or can spend their money to a third party as part of a coinjoin.
+    This model gives takers a lot of flexibility with their own
+    inputs and outputs to the transaction template.  For example, a
+    taker can choose the amounts of the coinjoin they want to create
+    or can spend their money to a third party as part of a coinjoin.
 
-    - [Wasabi][] uses a centralized coordinator who organizes every
-      coinjoin made using that software.  To prevent that coordinator
-      from learning which inputs fund which outputs, users anonymously
-      commit to the outputs they want to create, receiving a [chaumian
-      blinded signature][] over the commitment.  Later, each user connects
-      under another anonymous identity and submits each output along with
-      its unblinded signature.  The signature provably came from the coordinator
-      but the unblinded signature can't be connected to the specific
-      user who received the blinded signature.  This allows constructing the
-      transaction template without the coordinator learning which inputs
-      funded which outputs.
+  - [Wasabi][] uses a centralized coordinator who organizes every
+    coinjoin made using that software.  To prevent that coordinator
+    from learning which inputs fund which outputs, users anonymously
+    commit to the outputs they want to create, receiving a [chaumian
+    blinded signature][] over the commitment.  Later, each user connects
+    under another anonymous identity and submits each output along with
+    its unblinded signature.  The signature provably came from the coordinator
+    but the unblinded signature can't be connected to the specific
+    user who received the blinded signature.  This allows constructing the
+    transaction template without the coordinator learning which inputs
+    funded which outputs.
 
-        Because the coordinator is unable to view the output at the time
-        it creates its blinded signature, it can't allow a user to
-        specify an arbitrary amount or the user could attempt to receive
-        more money than they contributed to the coinjoin.  This isn't a
-        security risk---the other participants will refuse to sign any
-        malformed transaction---but such a failure requires restarting
-        the protocol.  If arbitrary amounts were allowed, the blinding
-        would prevent identification of the lying user and make it
-        impossible to ban them from future rounds, allowing an unlimited
-        DoS of the protocol.  Instead, Wasabi requires that all outputs
-        either belong to a small set of allowed sizes (e.g. 0.1 BTC, 0.2
-        BTC, 0.4 BTC, etc) or be an unblinded change output.  This
-        limits the ability to use Wasabi with user-specified amounts or
-        for making payments with arbitrary amounts.
+    Because the coordinator is unable to view the output at the time
+    it creates its blinded signature, it can't allow a user to
+    specify an arbitrary amount or the user could attempt to receive
+    more money than they contributed to the coinjoin.  This isn't a
+    security risk---the other participants will refuse to sign any
+    malformed transaction---but such a failure requires restarting
+    the protocol.  If arbitrary amounts were allowed, the blinding
+    would prevent identification of the lying user and make it
+    impossible to ban them from future rounds, allowing an unlimited
+    DoS of the protocol.  Instead, Wasabi requires that all outputs
+    either belong to a small set of allowed sizes (e.g. 0.1 BTC, 0.2
+    BTC, 0.4 BTC, etc) or be an unblinded change output.  This
+    limits the ability to use Wasabi with user-specified amounts or
+    for making payments with arbitrary amounts.
 
-    This week, several contributors to Wasabi [posted][wabisabi post]
-    to the Bitcoin-Dev mailing list about a new
-    protocol they call WabiSabi that conceptually extends their existing protocol
-    with a technique adapted from [confidential transactions][].  This allows a
-    client to create a commitment to arbitrary output amounts and---without
-    revealing the amounts---prove that each amount is individually
-    within a specified range (e.g. 0.0001 BTC to 21 million BTC) and
-    that they collectively sum to a specified value.  The coordinator
-    uses this specified value to verify that the sum of the outputs the
-    client wants to create is equal to the sum of the inputs provided by
-    the client (minus fees).  The coordinator can then provide an
-    anonymous credential for each output that allows the
-    client to later anonymously submit the output to the
-    coordinator for inclusion in the transaction template.
+  This week, several contributors to Wasabi [posted][wabisabi post]
+  to the Bitcoin-Dev mailing list about a new
+  protocol they call WabiSabi that conceptually extends their existing protocol
+  with a technique adapted from [confidential transactions][].  This allows a
+  client to create a commitment to arbitrary output amounts and---without
+  revealing the amounts---prove that each amount is individually
+  within a specified range (e.g. 0.0001 BTC to 21 million BTC) and
+  that they collectively sum to a specified value.  The coordinator
+  uses this specified value to verify that the sum of the outputs the
+  client wants to create is equal to the sum of the inputs provided by
+  the client (minus fees).  The coordinator can then provide an
+  anonymous credential for each output that allows the
+  client to later anonymously submit the output to the
+  coordinator for inclusion in the transaction template.
 
-    Software that implements the protocol will be able to create
-    coordinated coinjoins that
-    allow the clients to select their output amounts, facilitating
-    experiments with non-equal value coinjoins (see [Newsletter
-    #79][news79 unequal coinjoin]) and payments made within a coinjoin
-    (either to third parties not participating in the coinjoin or to
-    parties within a coinjoin).
+  Software that implements the protocol will be able to create
+  coordinated coinjoins that
+  allow the clients to select their output amounts, facilitating
+  experiments with non-equal value coinjoins (see [Newsletter
+  #79][news79 unequal coinjoin]) and payments made within a coinjoin
+  (either to third parties not participating in the coinjoin or to
+  parties within a coinjoin).
 
-    The proposed protocol contains a significant number of differences
-    from Wasabi's current protocol (such as replacing blind signatures
-    with keyed-verification anonymous credentials), so its authors are
-    seeking review, criticism, and suggestions about how the protocol
-    can be used most effectively.
+  The proposed protocol contains a significant number of differences
+  from Wasabi's current protocol (such as replacing blind signatures
+  with keyed-verification anonymous credentials), so its authors are
+  seeking review, criticism, and suggestions about how the protocol
+  can be used most effectively.
 
 ## Changes to services and client software
 

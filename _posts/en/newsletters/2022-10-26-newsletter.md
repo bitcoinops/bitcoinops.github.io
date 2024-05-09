@@ -27,75 +27,75 @@ infrastructure software.
   the #bitcoin-core-dev IRC room.  Some highlights of the discussion
   include:
 
-    - *Free option problem:* Sergej Kotliar [warned][kotliar free
-      option] that he believes the greatest problem with any type of transaction
-      replacement is that it creates a free American call option.  For
-      example, customer Alice requests to buy widgets from merchant Bob.
-      Bob gives Alice an invoice for 1 BTC at the current price of
-      $20,000 USD/BTC.  Alice sends Bob the 1 BTC in a transaction with
-      a low feerate.  The transaction remains unconfirmed when the
-      exchange rate changes to $25,000 USD/BTC, meaning Alice is now
-      paying $5,000 more.  At this point, she quite rationally chooses
-      to replace her transaction with one paying the BTC back to
-      herself, effectively canceling the transaction.  However, if instead the
-      exchange rate had changed in Alice's favor (e.g. $15,000 USD/BTC), Bob
-      can't cancel Alice's payment and so he has no way in the normal
-      onchain Bitcoin transaction flow to exercise the same option,
-      creating an asymmetric exchange rate risk.  By comparison, when
-      transaction replacement isn't possible, Alice and Bob share the
-      same exchange rate risk.
+  - *Free option problem:* Sergej Kotliar [warned][kotliar free
+    option] that he believes the greatest problem with any type of transaction
+    replacement is that it creates a free American call option.  For
+    example, customer Alice requests to buy widgets from merchant Bob.
+    Bob gives Alice an invoice for 1 BTC at the current price of
+    $20,000 USD/BTC.  Alice sends Bob the 1 BTC in a transaction with
+    a low feerate.  The transaction remains unconfirmed when the
+    exchange rate changes to $25,000 USD/BTC, meaning Alice is now
+    paying $5,000 more.  At this point, she quite rationally chooses
+    to replace her transaction with one paying the BTC back to
+    herself, effectively canceling the transaction.  However, if instead the
+    exchange rate had changed in Alice's favor (e.g. $15,000 USD/BTC), Bob
+    can't cancel Alice's payment and so he has no way in the normal
+    onchain Bitcoin transaction flow to exercise the same option,
+    creating an asymmetric exchange rate risk.  By comparison, when
+    transaction replacement isn't possible, Alice and Bob share the
+    same exchange rate risk.
 
-        Kotliar notes that the problem exists today with [BIP125][]
-        opt-in [RBF][topic rbf] being available, but believes that
-        full-RBF would make the problem worse.
+    Kotliar notes that the problem exists today with [BIP125][]
+    opt-in [RBF][topic rbf] being available, but believes that
+    full-RBF would make the problem worse.
 
-        Greg Sanders and Jeremy Rubin [replied][sanders cpfp] in
-        [separate][rubin cpfp] emails to note that merchant Bob could
-        incentivize miners to confirm customer Alice's original
-        transaction using [CPFP][topic cpfp], particularly if [package
-        relay][topic package relay] was enabled.
+    Greg Sanders and Jeremy Rubin [replied][sanders cpfp] in
+    [separate][rubin cpfp] emails to note that merchant Bob could
+    incentivize miners to confirm customer Alice's original
+    transaction using [CPFP][topic cpfp], particularly if [package
+    relay][topic package relay] was enabled.
 
-        Antoine Riard [noted][riard free option] that the same risk
-        exists with LN, as Alice could wait to pay merchant Bob's
-        invoice up until shortly before it expired, giving her time to
-        wait for the exchange rate to change.  Although in that case, if
-        Bob noticed that the exchange rate had changed significantly, he
-        could instruct his node not to accept the payment, returning the
-        money to Alice.
+    Antoine Riard [noted][riard free option] that the same risk
+    exists with LN, as Alice could wait to pay merchant Bob's
+    invoice up until shortly before it expired, giving her time to
+    wait for the exchange rate to change.  Although in that case, if
+    Bob noticed that the exchange rate had changed significantly, he
+    could instruct his node not to accept the payment, returning the
+    money to Alice.
 
-    - *Bitcoin Core not in charge of network:* Gloria Zhao [wrote][zhao
-      no control] in the IRC discussion, "I think whatever option we
-      take, it should be made abundantly clear to users that Core does
-      not control whether full RBF happens or not. We could revert
-      [25353][bitcoin core #25353] and it could still happen. [...]"
+  - *Bitcoin Core not in charge of network:* Gloria Zhao [wrote][zhao
+    no control] in the IRC discussion, "I think whatever option we
+    take, it should be made abundantly clear to users that Core does
+    not control whether full RBF happens or not. We could revert
+    [25353][bitcoin core #25353] and it could still happen. [...]"
 
-        After the meeting, Zhao also posted a detailed [overview][zhao
-        overview] of the situation.
+    After the meeting, Zhao also posted a detailed [overview][zhao
+    overview] of the situation.
 
-    - *No removal means the problem could happen:* in the IRC discussion,
-      Anthony Towns [echoed][towns uncoordinated] his points from last
-      week, "if we're not going to remove the `mempoolfullrbf` option from
-      24.0, we're going for an uncoordinated deployment."
+  - *No removal means the problem could happen:* in the IRC discussion,
+    Anthony Towns [echoed][towns uncoordinated] his points from last
+    week, "if we're not going to remove the `mempoolfullrbf` option from
+    24.0, we're going for an uncoordinated deployment."
 
-        Greg Sanders was [doubtful][sanders doubt], "the question is:
-        will 5%+ set a variable? I suspect not."  Towns [replied][towns
-        uasf], "[UASF][topic soft fork activation] `uacomment`
-        demonstrated it's easy to get ~11% to set a variable in just a
-        couple of weeks".
+    Greg Sanders was [doubtful][sanders doubt], "the question is:
+    will 5%+ set a variable? I suspect not."  Towns [replied][towns
+    uasf], "[UASF][topic soft fork activation] `uacomment`
+    demonstrated it's easy to get ~11% to set a variable in just a
+    couple of weeks".
 
-    - *Should be an option:* Martin Zumsande [said][zumsande option] in
-      the IRC discussion, "I think that if a meaningful number of node
-      operators and miners want a specific policy, it shouldn't be on
-      the devs to tell them 'you can't have that now'. Devs can and
-      should give a recommendation (by picking the default), but
-      providing options to informed users should never be a problem."
+  - *Should be an option:* Martin Zumsande [said][zumsande option] in
+    the IRC discussion, "I think that if a meaningful number of node
+    operators and miners want a specific policy, it shouldn't be on
+    the devs to tell them 'you can't have that now'. Devs can and
+    should give a recommendation (by picking the default), but
+    providing options to informed users should never be a problem."
 
-    As of this writing, no clear resolution had been reached.  The
-    `mempoolfullrbf` option is still included in the release candidates
-    for the upcoming version of Bitcoin Core 24.0 and it is Optech's
-    recommendation that any service depending on zero conf transactions
-    carefully evaluate the risks, perhaps starting by reading the emails
-    linked in [last week's newsletter][news222 rbf]. {% assign timestamp="1:33" %}
+  As of this writing, no clear resolution had been reached.  The
+  `mempoolfullrbf` option is still included in the release candidates
+  for the upcoming version of Bitcoin Core 24.0 and it is Optech's
+  recommendation that any service depending on zero conf transactions
+  carefully evaluate the risks, perhaps starting by reading the emails
+  linked in [last week's newsletter][news222 rbf]. {% assign timestamp="1:33" %}
 
 - **CoreDev.tech transcripts:** prior to The Atlanta Bitcoin Conference
   (TabConf), about 40 developers participated in a CoreDev.tech event.
@@ -104,88 +104,88 @@ infrastructure software.
 
   {% assign timestamp="53:38" %}
 
-    - [Transport encryption][p2p encryption]: a conversation about the
-      recent update to the [version 2 encrypted transport
-      protocol][topic v2 p2p transport] proposal (see
-      [Newsletter #222][news222 bip324]).  This protocol would make it
-      harder for network eavesdroppers to learn which IP address
-      originated a transaction and improve the ability to detect and
-      resist man-in-the-middle attacks between honest nodes.
+  - [Transport encryption][p2p encryption]: a conversation about the
+    recent update to the [version 2 encrypted transport
+    protocol][topic v2 p2p transport] proposal (see
+    [Newsletter #222][news222 bip324]).  This protocol would make it
+    harder for network eavesdroppers to learn which IP address
+    originated a transaction and improve the ability to detect and
+    resist man-in-the-middle attacks between honest nodes.
 
-        The discussion covers several of the protocol design
-        considerations and is a recommended read for anyone wondering
-        why the protocol authors made certain decisions.  It also
-        examines the relationship to the earlier [countersign][topic
-        countersign] authentication protocol.
+    The discussion covers several of the protocol design
+    considerations and is a recommended read for anyone wondering
+    why the protocol authors made certain decisions.  It also
+    examines the relationship to the earlier [countersign][topic
+    countersign] authentication protocol.
 
-    - [Fees][fee chat]: a wide-ranging discussion about transaction fees
-      historically, presently, and in the future.  Some topics included
-      queries about why blocks are seemingly almost always nearly full
-      but the mempool isn't, debate about how long we have for a significant
-      fee market to develop before we have to [worry][topic fee sniping]
-      about Bitcoin's long-term stability, and what solutions we could
-      deploy if we did believe a problem existed.
+  - [Fees][fee chat]: a wide-ranging discussion about transaction fees
+    historically, presently, and in the future.  Some topics included
+    queries about why blocks are seemingly almost always nearly full
+    but the mempool isn't, debate about how long we have for a significant
+    fee market to develop before we have to [worry][topic fee sniping]
+    about Bitcoin's long-term stability, and what solutions we could
+    deploy if we did believe a problem existed.
 
-    - [FROST][]: a presentation about the FROST threshold signature
-      scheme.  The transcript documents several excellent technical
-      questions about the cryptographic choices in the design and may
-      be useful reading for anyone interested in learning more
-      about FROST specifically or cryptographic protocol design in
-      general.  See also the TabConf transcript about [ROAST][], another
-      threshold signature scheme for Bitcoin.
+  - [FROST][]: a presentation about the FROST threshold signature
+    scheme.  The transcript documents several excellent technical
+    questions about the cryptographic choices in the design and may
+    be useful reading for anyone interested in learning more
+    about FROST specifically or cryptographic protocol design in
+    general.  See also the TabConf transcript about [ROAST][], another
+    threshold signature scheme for Bitcoin.
 
-    - [GitHub][github chat]: a discussion about moving the Bitcoin Core
-      project's git hosting from GitHub to another issue and PR
-      management solution, as well as considering the benefits of
-      continuing to use GitHub.
+  - [GitHub][github chat]: a discussion about moving the Bitcoin Core
+    project's git hosting from GitHub to another issue and PR
+    management solution, as well as considering the benefits of
+    continuing to use GitHub.
 
-    - [Provable specifications in BIPs][hacspec chat]: part of a discussion
-      about using the [hacspec][] specification language in BIPs to
-      provide specifications that are provably correct.  See also the
-      [transcript][hacspec preso] for a related talk during the TabConf.
+  - [Provable specifications in BIPs][hacspec chat]: part of a discussion
+    about using the [hacspec][] specification language in BIPs to
+    provide specifications that are provably correct.  See also the
+    [transcript][hacspec preso] for a related talk during the TabConf.
 
-    - [Package and v3 transaction relay][package relay chat]: the
-      transcript of a presentation about proposals to enable [package
-      transaction relay][topic package relay] and use new transaction
-      relay rules to eliminate [pinning attacks][topic transaction
-      pinning] in certain cases.
+  - [Package and v3 transaction relay][package relay chat]: the
+    transcript of a presentation about proposals to enable [package
+    transaction relay][topic package relay] and use new transaction
+    relay rules to eliminate [pinning attacks][topic transaction
+    pinning] in certain cases.
 
-    - [Stratum v2][stratum v2 chat]: a discussion that started with the
-      announcement of a new open-source project implementing the Stratum
-      version 2 pooled mining protocol.  Improvements made available by
-      Stratum v2 include authenticated connections and the ability for
-      individual miners (those with local mining equipment) to choose
-      which transactions to mine (rather than the pool choosing
-      transactions).  In addition to many other benefits, it was
-      mentioned in the discussion that allowing individual miners to
-      choose their own block template might become highly desirable to
-      pools that are worried about governments mandating which
-      transactions can be mined, as in the [Tornado Cash][] controversy.
-      Most of the discussion focused on the changes that would need to
-      be made to Bitcoin Core to enable native support for Stratum v2.
-      See also the TabConf transcript about [Braidpool][braidpool chat],
-      a decentralized pooled mining protocol.
+  - [Stratum v2][stratum v2 chat]: a discussion that started with the
+    announcement of a new open-source project implementing the Stratum
+    version 2 pooled mining protocol.  Improvements made available by
+    Stratum v2 include authenticated connections and the ability for
+    individual miners (those with local mining equipment) to choose
+    which transactions to mine (rather than the pool choosing
+    transactions).  In addition to many other benefits, it was
+    mentioned in the discussion that allowing individual miners to
+    choose their own block template might become highly desirable to
+    pools that are worried about governments mandating which
+    transactions can be mined, as in the [Tornado Cash][] controversy.
+    Most of the discussion focused on the changes that would need to
+    be made to Bitcoin Core to enable native support for Stratum v2.
+    See also the TabConf transcript about [Braidpool][braidpool chat],
+    a decentralized pooled mining protocol.
 
-    - [Merging][merging chat] is a discussion about strategies to help
-      get code reviewed in the Bitcoin Core project, although many
-      suggestions also apply to other projects.  Ideas included:
+  - [Merging][merging chat] is a discussion about strategies to help
+    get code reviewed in the Bitcoin Core project, although many
+    suggestions also apply to other projects.  Ideas included:
 
-        - Break big changes into several small PRs
+    - Break big changes into several small PRs
 
-        - Make it easy for reviewers to understand the ultimate
-          objective.  For all PRs, this means writing a motivational PR
-          description.  For changes that are being made incrementally,
-          use tracking issues, project boards, and motivate
-          refactorings by also opening the PRs that will use that
-          refactored code to accomplish a desirable goal
+    - Make it easy for reviewers to understand the ultimate
+      objective.  For all PRs, this means writing a motivational PR
+      description.  For changes that are being made incrementally,
+      use tracking issues, project boards, and motivate
+      refactorings by also opening the PRs that will use that
+      refactored code to accomplish a desirable goal
 
-        - Produce high-level explainers for long-running projects
-          describing the state before the project, the current progress,
-          what it will take to accomplish the outcome, and the benefits
-          that will provide to users
+    - Produce high-level explainers for long-running projects
+      describing the state before the project, the current progress,
+      what it will take to accomplish the outcome, and the benefits
+      that will provide to users
 
-        - Form working groups with those who are interested in the same
-          projects or code subsystems
+    - Form working groups with those who are interested in the same
+      projects or code subsystems
 
 - **Ephemeral anchors:** Greg Sanders followed up previous discussion
   about v3 transaction relay (see [Newsletter #220][news220 ephemeral])
@@ -199,17 +199,17 @@ infrastructure software.
   would only affect Bitcoin Core's policy; no consensus rules would be
   changed.
 
-    Described advantages of this proposal include that it eliminates the need
-    to use one-block relative timelocks (called `1 OP_CSV` after the
-    code used to enable them) to prevent [transaction pinning][topic
-    transaction pinning] and allows anyone to fee bump the parent
-    transaction (similar to an earlier [fee sponsorship][topic fee
-    sponsorship] soft fork proposal).
+  Described advantages of this proposal include that it eliminates the need
+  to use one-block relative timelocks (called `1 OP_CSV` after the
+  code used to enable them) to prevent [transaction pinning][topic
+  transaction pinning] and allows anyone to fee bump the parent
+  transaction (similar to an earlier [fee sponsorship][topic fee
+  sponsorship] soft fork proposal).
 
-    Jeremy Rubin [replied][rubin ephemeral] in support of the proposal
-    but noted that it doesn't work for any contract that can't use v3
-    transactions.  Several other developers also discussed the concept,
-    all of them seeming to find it appealing as of this writing. {% assign timestamp="1:09:44" %}
+  Jeremy Rubin [replied][rubin ephemeral] in support of the proposal
+  but noted that it doesn't work for any contract that can't use v3
+  transactions.  Several other developers also discussed the concept,
+  all of them seeming to find it appealing as of this writing. {% assign timestamp="1:09:44" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

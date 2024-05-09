@@ -85,32 +85,32 @@ páteřním software.
   architektů návrhu. Jedna drobnost, kterou jsme před tím nepopsali,
   upoutala naši pozornost:
 
-    - *CPFP carve out musí být odstraněno:* pravidlo mempoolu
-      [CPFP carve out][topic cpfp carve out], které bylo do Bitcoin Core
-      [přidáno][news56 carveout] v roce 2019, adresuje CPFP verzi [pinningu
-      transakcí][topic transaction pinning]. V této obdobě protistrana-útočník
-      zneužívá omezení v Bitcoin Core na počet a velikost souvisejících transakcí,
-      aby pozdržel operace nad dceřinou transakcí patřící čestnému spojení.
-      Pravidlo carve out umožňuje, aby jedna transakce tato omezení mírně
-      překročila. V cluster mempoolu jsou související transakce umístěny
-      do clusteru a omezení jsou aplikována na cluster, nikoliv na jednotlivé
-      transakce. S tímto pravidlem není možné zajistit, aby cluster obsahoval
-      maximálně jeden carve out, aniž bychom začali omezovat vztahy mezi
-      přeposílanými transakcemi daleko za hranicí dnešních omezení.
-      Cluster s několika carve out by mohl výrazně překročit limity,
-      načež by musel být pro ně protokol přestavěn. To by sice vyhovovalo
-      uživatelům carve out, ale omezovalo by to možnosti během běžného
-      zveřejňování transakcí.
+  - *CPFP carve out musí být odstraněno:* pravidlo mempoolu
+    [CPFP carve out][topic cpfp carve out], které bylo do Bitcoin Core
+    [přidáno][news56 carveout] v roce 2019, adresuje CPFP verzi [pinningu
+    transakcí][topic transaction pinning]. V této obdobě protistrana-útočník
+    zneužívá omezení v Bitcoin Core na počet a velikost souvisejících transakcí,
+    aby pozdržel operace nad dceřinou transakcí patřící čestnému spojení.
+    Pravidlo carve out umožňuje, aby jedna transakce tato omezení mírně
+    překročila. V cluster mempoolu jsou související transakce umístěny
+    do clusteru a omezení jsou aplikována na cluster, nikoliv na jednotlivé
+    transakce. S tímto pravidlem není možné zajistit, aby cluster obsahoval
+    maximálně jeden carve out, aniž bychom začali omezovat vztahy mezi
+    přeposílanými transakcemi daleko za hranicí dnešních omezení.
+    Cluster s několika carve out by mohl výrazně překročit limity,
+    načež by musel být pro ně protokol přestavěn. To by sice vyhovovalo
+    uživatelům carve out, ale omezovalo by to možnosti během běžného
+    zveřejňování transakcí.
 
-      Navržené řešení nekompatibility mezi carve out pravidlem a cluster
-      mempoolem je [přeposílání transakcí verze 3][topic v3 transaction
-      relay]. To by umožňovalo běžným uživatelům transakcí verzí 1 a 2
-      pokračovat obvyklým způsobem, ale zároveň by mohli uživatelé
-      protokolů jako LN zvolit použití v3 transakcí, které vynucují
-      omezení sady vztahů mezi transakcemi (_topologie_). Tato omezená
-      topologie by bránila pinningu transakcí a mohla by být zkombinována
-      s náhradami carve out transakcí jakou jsou [dočasné anchory][topic ephemeral
-      anchors].
+    Navržené řešení nekompatibility mezi carve out pravidlem a cluster
+    mempoolem je [přeposílání transakcí verze 3][topic v3 transaction
+    relay]. To by umožňovalo běžným uživatelům transakcí verzí 1 a 2
+    pokračovat obvyklým způsobem, ale zároveň by mohli uživatelé
+    protokolů jako LN zvolit použití v3 transakcí, které vynucují
+    omezení sady vztahů mezi transakcemi (_topologie_). Tato omezená
+    topologie by bránila pinningu transakcí a mohla by být zkombinována
+    s náhradami carve out transakcí jakou jsou [dočasné anchory][topic ephemeral
+    anchors].
 
   Je důležité, že tato velká změna správy mempoolu Bitcoin Core bere
   do úvahy všechny současné i možné budoucí způsoby používání bitcoinu.

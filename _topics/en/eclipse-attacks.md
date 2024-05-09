@@ -2,12 +2,12 @@
 title: Eclipse attacks
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - P2P Network Protocol
   - Security Problems
 
@@ -82,6 +82,9 @@ optech_mentions:
 
   - title: "Improved reproducible ASMap creation process"
     url: /en/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process
+
+  - title: "Bitcoin Core #29850 limits the max number of IP addresses accepted from an individual DNS seed"
+    url: /en/newsletters/2024/04/24/#bitcoin-core-29850
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

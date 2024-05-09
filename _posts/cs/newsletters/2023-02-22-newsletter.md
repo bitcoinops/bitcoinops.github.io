@@ -86,7 +86,7 @@ páteřních bitcoinových projektů.
   bech32] adresy. Příklad jednoho takového dílu z návrhu BIP:
 
   ```text
-    ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
+  ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
   ```
 
   Hlavní výhodou Codex32 oproti všem existujícím schématům je, že
@@ -157,12 +157,12 @@ některé z otázek a odpovědí, které obdržely vysoký počet hlasů.*
   Vojtěch Strnad vysvětluje, že Ordinals Inscriptions nepoužívají `OP_RETURN`,
   ale vkládají data do nespuštěné větve skriptu pomocí `OP_PUSHDATAx` opkódů:
 
-    ```
-    OP_0
-    OP_IF
-    <tady jsou data>
-    OP_ENDIF
-    ```
+  ```
+  OP_0
+  OP_IF
+  <tady jsou data>
+  OP_ENDIF
+  ```
 
 - [Proč protokol neumožňuje expiraci nepotvrzených transakcí v dané výšce?]({{bse}}116926)
   Larry Ruane odkazuje na Satoshiho, proč by nebylo moudré, aby transakce

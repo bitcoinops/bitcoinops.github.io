@@ -6,12 +6,12 @@ title: Time warp
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -35,6 +35,9 @@ optech_mentions:
 
   - title: "Consensus cleanup proposal: fix the time warp attack"
     url: /en/newsletters/2019/03/05/#the-time-warp-attack
+
+  - title: "Question: where exactly is the 'off-by-one' difficulty bug and how does it relate to time warp?"
+    url: /en/newsletters/2024/04/24/#where-exactly-is-the-off-by-one-difficulty-bug
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

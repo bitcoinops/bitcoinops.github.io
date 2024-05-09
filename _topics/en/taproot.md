@@ -3,7 +3,7 @@ title: Taproot
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Soft Forks
   - Scripts and Addresses
   - Privacy Enhancements
@@ -241,6 +241,9 @@ optech_mentions:
 
   - title: "Taproot massively reduces worst case bandwidth for malleablity protection in contract protocols"
     url: /en/newsletters/2024/02/07/#requirement-to-verify-inputs-use-segwit-in-protocols-vulnerable-to-txid-malleability
+
+  - title: "Rust Bitcoin #2652 begins returning the internal taproot key when signing for a taproot input"
+    url: /en/newsletters/2024/04/10/#rust-bitcoin-2652
 
 ## Optional
 see_also:

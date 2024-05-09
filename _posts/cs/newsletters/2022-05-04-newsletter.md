@@ -21,30 +21,30 @@ verzí a významné změny v populárních bitcoinových infrastrukturních proj
   jež byl zmíněn ve [zpravodaji č. 195][news195 musig2] *(angl.)*. Připojil
   několik postřehů z implementace, na které on a další pracovali pro btcd a LND:
 
-    - *Interakce s BIP86:* klíče vytvořené podle [BIP32][topic bip32][^bip32]
-	  peněženkou, která též implementuje [BIP86][][^bip86], se řídí doporučením
-	  z [BIP341][][^bip341], aby byly klíče pro platbu klíčem vytvořeny tweaknutím[^tweak]
-	  s hashem sebe sama. Napomáhá to zabránit situacím, ve kterých by mohl
-	  účastník vícenásobného podpisu ([multisignature][topic multisignature])
-	  ukrást všechny prostředky tajným včleněním další platební podmínky.
-	  Chtějí-li však účastníci vícenásobného podpisu tuto podmínku záměrně začlenit,
-	  musejí sdílet verze svých klíčů před tweaknutím („interní klíč”).
+  - *Interakce s BIP86:* klíče vytvořené podle [BIP32][topic bip32][^bip32]
+        peněženkou, která též implementuje [BIP86][][^bip86], se řídí doporučením
+        z [BIP341][][^bip341], aby byly klíče pro platbu klíčem vytvořeny tweaknutím[^tweak]
+        s hashem sebe sama. Napomáhá to zabránit situacím, ve kterých by mohl
+        účastník vícenásobného podpisu ([multisignature][topic multisignature])
+        ukrást všechny prostředky tajným včleněním další platební podmínky.
+        Chtějí-li však účastníci vícenásobného podpisu tuto podmínku záměrně začlenit,
+        musejí sdílet verze svých klíčů před tweaknutím („interní klíč”).
 
-      Osuntokun doporučuje, aby implementace BIP86 vracely jak původní,
-	  interní klíč, tak i klíč tweaknutý. Uživatelé těchto implementací
-	  by si potom mohli vybrat podle potřeby.
+    Osuntokun doporučuje, aby implementace BIP86 vracely jak původní,
+        interní klíč, tak i klíč tweaknutý. Uživatelé těchto implementací
+        by si potom mohli vybrat podle potřeby.
 
-    - *Interakce s platbami skriptem:* Klíče určené pro platbu skriptem mají
-	  podobný problém jako v předchozím odstavci: kdo utrácí, musí znát interní klíč.
-	  I zde by napomohlo, kdyby implementace vracely také interní klíč.
+  - *Interakce s platbami skriptem:* Klíče určené pro platbu skriptem mají
+        podobný problém jako v předchozím odstavci: kdo utrácí, musí znát interní klíč.
+        I zde by napomohlo, kdyby implementace vracely také interní klíč.
 
-    - *Zkratka pro posledního podepisujícího:* Osuntokun také požadoval
-	  objasnění části návrhu, která umožňuje poslednímu podepisujícímu (a pouze
-	  poslednímu) použít pro generování nonce[^nonce] deterministický zdroj
-	  náhodných čísel nebo zdroj nižší kvality. Brandon Black v [odpovědi][black musig2]
-	  popsal situaci, která stála za tímto návrhem: měli účastníka vícenásobného
-	  podpisu, který neměl snadný přístup k bezpečnému prostředí, který ale
-	  mohl pokaždé podepisovat až jako poslední.
+  - *Zkratka pro posledního podepisujícího:* Osuntokun také požadoval
+        objasnění části návrhu, která umožňuje poslednímu podepisujícímu (a pouze
+        poslednímu) použít pro generování nonce[^nonce] deterministický zdroj
+        náhodných čísel nebo zdroj nižší kvality. Brandon Black v [odpovědi][black musig2]
+        popsal situaci, která stála za tímto návrhem: měli účastníka vícenásobného
+        podpisu, který neměl snadný přístup k bezpečnému prostředí, který ale
+        mohl pokaždé podepisovat až jako poslední.
 
 - **Jak mezi uživateli měřit podporu změny konsenzu:** Keagan McClelland
   ve svém [příspěvku][mcclelland measure] do emailové skupiny Bitcoin-Dev navrhuje,

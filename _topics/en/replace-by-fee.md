@@ -2,14 +2,14 @@
 title: Replace-by-fee (RBF)
 shortname: rbf
 
-aliases:
+title-aliases:
   - BIP125
   - Opt-in Replace-by-Fee
   - Full-RBF
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Transaction Relay Policy
   - Mining
@@ -179,6 +179,12 @@ optech_mentions:
 
   - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: "Analysis of how cluster mempool would've affected RBF in 2023"
+    url: /en/newsletters/2024/04/17/#rbf-differences-were-negligible
+
+  - title: "Question about the size of transactions that opt-in to RBF, opt-out of RBF, and replacements"
+    url: /en/newsletters/2024/04/24/#are-replacement-transactions-larger-in-size-than-their-predecessors-and-than-non-rbf-transactions
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

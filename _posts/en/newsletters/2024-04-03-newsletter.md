@@ -57,8 +57,8 @@ Bitcoin infrastructure software.
   candidates find broad support, those candidates could be added as new
   editors to the repository on the following Monday (April 8th)."
 
-    Discussion was ongoing at the time of writing and we will do our
-    best to report on the results in next week's newsletter. {% assign timestamp="27:21" %}
+  Discussion was ongoing at the time of writing and we will do our
+  best to report on the results in next week's newsletter. {% assign timestamp="27:21" %}
 
 ## Releases and release candidates
 

@@ -34,23 +34,23 @@ popular Bitcoin infrastructure software.
   integer into an unsigned integer, ensuring that the rules apply to any
   transaction that isn't version 0 or 1.
 
-    Gögge discovered that btcd did not implement this conversion from
-    signed to unsigned integers, so it was possible to construct a
-    transaction with a negative version number which Bitcoin Core would
-    require to follow the BIP68 rules but btcd would not.  In that case,
-    one node could reject the transaction (and any block that contained
-    it) and the other node could accept it (and its block), leading to a
-    chain split.  An attacker could use this to trick the operator of a
-    btcd node (or software connected to a btcd node) into accepting
-    invalid bitcoins.
+  Gögge discovered that btcd did not implement this conversion from
+  signed to unsigned integers, so it was possible to construct a
+  transaction with a negative version number which Bitcoin Core would
+  require to follow the BIP68 rules but btcd would not.  In that case,
+  one node could reject the transaction (and any block that contained
+  it) and the other node could accept it (and its block), leading to a
+  chain split.  An attacker could use this to trick the operator of a
+  btcd node (or software connected to a btcd node) into accepting
+  invalid bitcoins.
 
-    The bug was privately disclosed to the btcd maintainers who fixed it
-    in the recent v0.24.0 release.  Anyone using btcd for consensus
-    enforcement is strongly urged to upgrade.  Additionally, Chris
-    Stewart [replied][stewart bitcoin-s] to the Delving Bitcoin thread
-    with a patch for the same failure in the bitcoin-s library.  Authors
-    of any code that might be used to validate BIP68 relative locktimes
-    are urged to check the code for the same flaw. {% assign timestamp="1:33" %}
+  The bug was privately disclosed to the btcd maintainers who fixed it
+  in the recent v0.24.0 release.  Anyone using btcd for consensus
+  enforcement is strongly urged to upgrade.  Additionally, Chris
+  Stewart [replied][stewart bitcoin-s] to the Delving Bitcoin thread
+  with a patch for the same failure in the bitcoin-s library.  Authors
+  of any code that might be used to validate BIP68 relative locktimes
+  are urged to check the code for the same flaw. {% assign timestamp="1:33" %}
 
 - **Proposed changes to LN for v3 relay and ephemeral anchors:** Bastien
   Teinturier [posted][teinturier v3] to Delving Bitcoin to describe the
@@ -112,24 +112,24 @@ popular Bitcoin infrastructure software.
   Authority_ ([BINANA][binana repo]).  Four specifications are available
   in the repository at the time of writing: {% assign timestamp="29:56" %}
 
-    - [BIN24-1][] `OP_CAT` by Ethan Heilman and Armin Sabouri.  See
-      the description of their soft fork proposal in [Newsletter
-      #274][news274 cat].
+  - [BIN24-1][] `OP_CAT` by Ethan Heilman and Armin Sabouri.  See
+    the description of their soft fork proposal in [Newsletter
+    #274][news274 cat].
 
-    - [BIN24-2][] Heretical Deployments by Anthony Towns, describing the
-      use of [Bitcoin Inquisition][bitcoin inquisition repo] for
-      proposed soft forks and other changes on the default [signet][topic signet].  See
-      the extended description in [Newsletter #232][news232 inqui].
+  - [BIN24-2][] Heretical Deployments by Anthony Towns, describing the
+    use of [Bitcoin Inquisition][bitcoin inquisition repo] for
+    proposed soft forks and other changes on the default [signet][topic signet].  See
+    the extended description in [Newsletter #232][news232 inqui].
 
-    - [BIN24-3][] `OP_CHECKSIGFROMSTACK` by Brandon Black, specifying
-      this [long-proposed idea][topic OP_CHECKSIGFROMSTACK].  See [last
-      week's newsletter][news285 lnhance] for Black's proposal to
-      include this opcode as part of the LNHANCE soft fork bundle.
+  - [BIN24-3][] `OP_CHECKSIGFROMSTACK` by Brandon Black, specifying
+    this [long-proposed idea][topic OP_CHECKSIGFROMSTACK].  See [last
+    week's newsletter][news285 lnhance] for Black's proposal to
+    include this opcode as part of the LNHANCE soft fork bundle.
 
-    - [BIN24-4][] `OP_INTERNALKEY` by Brandon Black, specifying an
-      opcode for retrieving the taproot internal key from the script
-      interpreter.  This was also described in last week's newsletter as
-      part of the LNHANCE soft fork bundle.
+  - [BIN24-4][] `OP_INTERNALKEY` by Brandon Black, specifying an
+    opcode for retrieving the taproot internal key from the script
+    interpreter.  This was also described in last week's newsletter as
+    part of the LNHANCE soft fork bundle.
 
   Bitcoin Optech has added the BINANA repository to the list of
   documentation sources we monitor for updates, which also includes

@@ -24,10 +24,10 @@ notable changes to popular Bitcoin infrastructure software.
   Timón [expressed][timon st] concern about the use of speedy trial for
   a soft fork he thought was controversial.
 
-    Russell O'Connor [explained][oconnor st] how the concerns had been
-    previously addressed.  Anthony Towns further [described][towns st]
-    how an unwanted soft fork activation using speedy trial could be
-    resisted by objecting users.
+  Russell O'Connor [explained][oconnor st] how the concerns had been
+  previously addressed.  Anthony Towns further [described][towns st]
+  how an unwanted soft fork activation using speedy trial could be
+  resisted by objecting users.
 
 - **Payment delivery algorithm update:** René Pickhardt [posted][pickhardt
   payment delivery] to the Lightning-Dev mailing list that he'd found a much
@@ -35,11 +35,11 @@ notable changes to popular Bitcoin infrastructure software.
   Richter's pathfinding algorithm published last year.  See [Newsletter
   #163][news163 pp] for earlier discussion about the algorithm.
 
-    Pickhardt's email also suggests ways in which fast payment success
-    could be improved, such as through the implementation of [stuckless
-    payments][news53 stuckless] and by allowing [refundable
-    overpayments][news86 boomerang] as proposed in [several][boomerang]
-    academic [papers][spear].
+  Pickhardt's email also suggests ways in which fast payment success
+  could be improved, such as through the implementation of [stuckless
+  payments][news53 stuckless] and by allowing [refundable
+  overpayments][news86 boomerang] as proposed in [several][boomerang]
+  academic [papers][spear].
 
 ## Changes to services and client software
 

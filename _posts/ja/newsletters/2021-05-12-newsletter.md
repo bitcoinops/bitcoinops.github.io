@@ -22,13 +22,13 @@ Bitcoin Core PR Review Clubミーティングの概要や、リリースおよ�
   ただ、子トランザクションが明示的に交換可能であることを示している場合は交換可能で、
   親トランザクションが交換された場合は子トランザクションがmempoolから削除されます。
 
-    Riardは、推論継承による交換が使用できないことが、現在および提案されているさまざまなプロトコルにどう影響するかを分析しました。
-    影響を受けるのはLNだけのようですが、それは[Pinning][topic transaction pinning]を使った既存の攻撃
-    （[ニュースレーター #95][news95 atomicity attack]参照）がより安価になるという意味に過ぎません。
-    さまざまなLNの実装が[Anchor Output][topic anchor outputs]を継続的に展開することで、
-    そのPinningを実行する機能はなくなります。
+  Riardは、推論継承による交換が使用できないことが、現在および提案されているさまざまなプロトコルにどう影響するかを分析しました。
+  影響を受けるのはLNだけのようですが、それは[Pinning][topic transaction pinning]を使った既存の攻撃
+  （[ニュースレーター #95][news95 atomicity attack]参照）がより安価になるという意味に過ぎません。
+  さまざまなLNの実装が[Anchor Output][topic anchor outputs]を継続的に展開することで、
+  そのPinningを実行する機能はなくなります。
 
-    この記事の執筆時点では、メーリングリストでこの問題について実質的な議論はされていません。
+  この記事の執筆時点では、メーリングリストでこの問題について実質的な議論はされていません。
 
 - **<!--call-for-brink-grant-applications-->Brinkグラント申請の募集:**
   Bitcoin Optechでは、オープンソースのBitcoinもしくはLightningプロジェクトに貢献しているエンジニアの方に、

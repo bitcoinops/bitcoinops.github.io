@@ -26,24 +26,24 @@ infrastructure software.
   The 28-day timelock prevents Alice from simply closing the channel
   after she receives payment and using her funds for something else.
 
-    Continuing the example, Bob opens the channel with an additional
-    contribution of 100,000,000 sats (1 BTC) of his funds.  He then
-    sends almost all of his funds through the channel.  Now Alice's
-    balance in the channel isn't the 10,000 sats she received a fee
-    for---it's almost 10,000 times higher than that amount.  If Bob is
-    malicious, he won't allow those funds to move again until the
-    expiration of the 28-day timelock to which Alice committed.
+  Continuing the example, Bob opens the channel with an additional
+  contribution of 100,000,000 sats (1 BTC) of his funds.  He then
+  sends almost all of his funds through the channel.  Now Alice's
+  balance in the channel isn't the 10,000 sats she received a fee
+  for---it's almost 10,000 times higher than that amount.  If Bob is
+  malicious, he won't allow those funds to move again until the
+  expiration of the 28-day timelock to which Alice committed.
 
-    A mitigation suggested by Teinturier and discussed by him and others
-    was to only apply the timelock to the liquidity contribution
-    (e.g., only Alice's 10,000 sats).  This introduces
-    complexities and inefficiencies, although it may solve the problem.
-    An alternative that Teinturier proposed was simply dropping the
-    timelock (or making it optional) and letting liquidity buyers take
-    the risk that providers may close channels shortly after receiving
-    their liquidity fees.  If channels opened through liquidity ads
-    typically generate significant forwarding fee income, there would be
-    an incentive to keep channels open. {% assign timestamp="0:46" %}
+  A mitigation suggested by Teinturier and discussed by him and others
+  was to only apply the timelock to the liquidity contribution
+  (e.g., only Alice's 10,000 sats).  This introduces
+  complexities and inefficiencies, although it may solve the problem.
+  An alternative that Teinturier proposed was simply dropping the
+  timelock (or making it optional) and letting liquidity buyers take
+  the risk that providers may close channels shortly after receiving
+  their liquidity fees.  If channels opened through liquidity ads
+  typically generate significant forwarding fee income, there would be
+  an incentive to keep channels open. {% assign timestamp="0:46" %}
 
 ## Changes to services and client software
 
