@@ -88,4 +88,4 @@ lang: zh
 [elementsproject]: https://elementsproject.org/
 [port scan summary]: https://gist.github.com/harding/bf6115a567e80ba5e737242b91c97db2
 [nmap]: https://nmap.org/download.html
-[news16 mpecdsa]: {{news16}}#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels
+[news16 mpecdsa]: /zh/newsletters/2018/10/09/#多方-ecdsa-用于无脚本的闪电网络支付通道
