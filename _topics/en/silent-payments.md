@@ -75,8 +75,8 @@ excerpt: >
 
 Traditionally, a new address should be generated for every
 payment. This is because when you receive several payments
-to the same Bitcoin address, others can reasonably assume that the same
-person received all of those payments even if the payments are later
+to the same Bitcoin address, it is a given that the same
+person or entity received all of those payments even if the outputs are later
 spent in separate transactions. This is also known as address reuse,
 and more can be found under [output linking][topic output linking].
 
