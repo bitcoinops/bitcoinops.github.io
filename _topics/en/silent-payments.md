@@ -91,7 +91,7 @@ secret key(s) to derive the shared secret (together with public key of
 the silent payment address), which is used to generate the destination.
 
 The intended recipient detects the payment by scanning eligible transactions
-in the blockchain, before performing ECDH calculation with the summed
+in the blockchain, before performing an ECDH calculation with the summed
 input public keys of the transaction and the scan key from their address.
 This is the main downside in that it is more computationally expensive than
 simply scanning the UTXO set for a `scriptPubKey` as in [BIP32][] style wallets.
