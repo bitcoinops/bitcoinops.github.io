@@ -143,7 +143,7 @@ and descriptions of changes to popular Bitcoin infrastructure software.
   the stack.  Andrew Poelstra [described][poelstra lamport2] how this can
   be combined with [BitVM][topic acc]-style operations to create a
   [covenant][topic covenants], although he warns that would almost certainly violate at
-  least one consensus size limit.
+  least one consensus size limit. {% assign timestamp="1:00" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -159,6 +159,8 @@ time by indexing them on `wtxid` instead of `txid`.
 
 This PR makes the opportunistic 1-parent-1-child (1p1c) [package
 acceptance][topic package relay] introduced in [Bitcoin Core #28970][] more robust.
+
+ {% assign timestamp="31:04" %}
 
 {% include functions/details-list.md
   q0="Why would we want to allow multiple transactions with the same
@@ -225,10 +227,10 @@ release candidates.*
   Bitcoin-related cryptographic operations.  It speeds up key generation
   and signing (see [last week's newsletter][news300 secp]) and reduces
   the compiled size "which we expect to benefit embedded users in
-  particular."  It also adds a function for sorting public keys.
+  particular."  It also adds a function for sorting public keys. {% assign timestamp="51:15" %}
 
 - [LND v0.18.0-beta.rc1][] is a release candidate for the next major
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="52:12" %}
 
 ## Notable code and documentation changes
 
@@ -284,7 +286,7 @@ repo]._
   eliminate this concern.  See also this newsletter's _Bitcoin PR Review
   Club_ section for another related PR.
   Additional improvements requiring changes to the P2P protocol are
-  described in [BIP331][].
+  described in [BIP331][]. {% assign timestamp="26:33" %}
 
 - [Bitcoin Core #28016][] begins waiting for all seed nodes to be polled
   before polling DNS seeds.  Users can configure both seed nodes and DNS
@@ -308,7 +310,7 @@ repo]._
   physically near the user, DNS would usually win.  After this PR, seed
   nodes are given preference, due to the belief that a user who sets a
   non-default `seednode` option would prefer the results of that option over
-  default results.
+  default results. {% assign timestamp="53:05" %}
 
 - [Bitcoin Core #29623][] makes various improvements to warning users if
   their local time seems to be more than 10 minutes out of sync with the
@@ -316,7 +318,7 @@ repo]._
   temporarily reject valid blocks, which can lead to several potentially
   severe security problems.  This is a follow up to the removal of
   network adjusted time from consensus code (see [Newsletter
-  #288][news288 time]).
+  #288][news288 time]). {% assign timestamp="57:00" %}
 
 ## Corrections
 
