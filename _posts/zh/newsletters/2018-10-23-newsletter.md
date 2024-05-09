@@ -42,7 +42,7 @@ lang: zh
 
 ## 值得注意的合并
 
-本周在 [Bitcoin Core][core commits]、[LND][lnd commits]、[C-lightning][cl commits] 和 [libsecp256k1][secp commits] 中的重要代码变更如下：
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-lightning][core lightning repo] 和 [libsecp256k1][libsecp256k1 repo] 中的重要代码变更如下：*
 
 - [Bitcoin Core #14291][]：在 Bitcoin Core 的多钱包模式下使用时，新的 `listwalletdir` RPC 可以列出钱包目录中的所有可用钱包。
 
