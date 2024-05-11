@@ -89,7 +89,7 @@ The sender can select one or more of their chosen inputs and use their
 secret key(s) to derive the shared secret (together with the public key of
 the silent payment address), which is used to generate the destination.
 
-The intended recipient detects the payment by scanning eligible transactions
+The intended recipient detects the payment by scanning transactions
 in the blockchain and performing an ECDH calculation with the summed
 input public keys of the transaction and the scan key from their address.
 The main downside is that it is more computationally expensive than
