@@ -83,8 +83,8 @@ Using a new address often requires a secure interaction between sender
 and receiver so that the receiver can provide a fresh address every time.
 However, interaction is often infeasible and in many cases undesirable.
 
-With silent payments, a receiver can generate a silent payment address
-and make it publicly known, thus eliminating the need for interaction.
+With silent payments, a receiver can generate and publish a single silent payment address,
+eliminating the need for interaction.
 The sender can select one or more of their chosen inputs and use their
 secret key(s) to derive the shared secret (together with the public key of
 the silent payment address), which is used to generate the destination.
