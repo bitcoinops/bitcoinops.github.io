@@ -73,21 +73,21 @@ excerpt: >
 
 ---
 
-Traditionally, a user who receives payments should generate a new Bitcoin address for every
-payment. This is because receiving multiple payments
-to the same address reveals that the same
-user received those payments, even if the outputs are later
-spent in separate transactions. This is known as [address reuse][topic output linking].
+Traditionally, a user who receives payments should generate a new Bitcoin
+address for every payment. This is because receiving multiple payments
+to the same address reveals that the same user received those payments,
+even if the outputs are later spent in separate transactions.
+This is known as [address reuse][topic output linking].
 
 Using a new address often requires a secure interaction between sender
 and receiver so that the receiver can provide a fresh address every time.
 However, interaction is often infeasible and in many cases undesirable.
 
-With silent payments, a receiver can generate and publish a single silent payment address,
-eliminating the need for interaction.
-The sender can select one or more of their chosen inputs and use their
-secret key(s) to derive the shared secret (together with the public key of
-the silent payment address), which is used to generate the destination.
+With silent payments, a receiver can generate and publish a single silent
+payment address, eliminating the need for interaction.
+The sender then selects one or more of their chosen inputs and uses their
+secret key(s) together with public key of the silent payment address to
+derive a shared secret which is used to generate the destination.
 
 The intended recipient detects the payment by scanning transactions
 in the blockchain and performing an ECDH calculation with the summed
