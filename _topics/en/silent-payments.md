@@ -80,7 +80,7 @@ person or entity received all of those payments even if the outputs are later
 spent in separate transactions. This is known as [address reuse][topic output linking].
 
 Using a new address often requires a secure interaction between sender
-and receiver so that the receiver can provide a fresh address everytime.
+and receiver so that the receiver can provide a fresh address every time.
 However, interaction is often infeasible and in many cases undesirable.
 
 With silent payments, a receiver can generate a silent payment address
