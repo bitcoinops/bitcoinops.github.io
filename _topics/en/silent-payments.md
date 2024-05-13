@@ -94,8 +94,9 @@ in the blockchain and performing an ECDH calculation with the summed
 input public keys of the transaction and the scan key from their address.
 The main downside is that it is more computationally expensive than
 simply scanning the UTXO set for a `scriptPubKey` as in [BIP32][]-style wallets.
-Additionally, using silent payments in a collaborative setting is left for
-future work, and it remains an open question whether it can be made provably secure.
+Additionally, using silent payments in a collaborative setting such as 
+[coinjoining][topic coinjoins] is left for future work, and it remains an open
+question whether such collaboration can be made provably secure.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
