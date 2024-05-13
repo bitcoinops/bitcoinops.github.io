@@ -17,8 +17,8 @@ categories:
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: Silent Payments
-      link: https://gist.github.com/RubenSomsen/c43b79517e7cb701ebf77eec6dbb46b8
+    - title: BIP352 silent payments
+      link: BIP352
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
