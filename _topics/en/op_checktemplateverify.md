@@ -123,6 +123,9 @@ optech_mentions:
   - title: "Exploding keys, a soft fork proposal with similar capabilities to CTV"
     url: /en/newsletters/2024/05/01/#ctv-like-exploding-keys-proposal
 
+  - title: "BIP119 extensions for smaller hashes and arbitrary data commitments"
+    url: /en/newsletters/2024/05/15/#bip119-extensions-for-smaller-hashes-and-arbitrary-data-commitments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
