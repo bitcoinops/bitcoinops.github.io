@@ -95,7 +95,7 @@ input public keys of the transaction and the scan key from their address.
 The main downside is that it is more computationally expensive than
 simply scanning the UTXO set for a `scriptPubKey` as in [BIP32][]-style wallets.
 Additionally, using silent payments in a collaborative setting such as
-[coinjoining][topic coinjoins] is left for future work, and it remains an open
+[coinjoining][topic coinjoin] is left for future work, and it remains an open
 question whether such collaboration can be made provably secure.
 
 {% include references.md %}
