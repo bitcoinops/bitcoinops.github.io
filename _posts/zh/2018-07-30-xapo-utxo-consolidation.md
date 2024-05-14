@@ -15,4 +15,4 @@ excerpt: >
 *by [Anthony Towns](https://twitter.com/ajtowns)<br>在 [Xapo][] 的 Bitcoin Core 的开发者
 *
 
-{% include articles/towns-xapo-consolidation.md hlevel='##' %}
+{% include articles/zh/towns-xapo-consolidation.md hlevel='##' %}
