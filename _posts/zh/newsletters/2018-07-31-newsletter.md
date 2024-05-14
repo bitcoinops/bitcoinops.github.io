@@ -23,7 +23,7 @@ lang: zh
 
 *由 [Xapo][] 的 Bitcoin Core 开发人员 [Anthony Towns](https://twitter.com/ajtowns) 编写*
 
-{% include articles/towns-xapo-consolidation.md hlevel='###' %}
+{% include articles/zh/towns-xapo-consolidation.md hlevel='###' %}
 
 ## 新闻
 
