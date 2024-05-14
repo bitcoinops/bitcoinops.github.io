@@ -91,8 +91,8 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [key origin]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82#key-origin-identification
 [towns mining estimate]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/playing-with-fire-adjusting-bitcoin-block-subsidy/
 [square]: https://cash.app/bitcoin
-[newsletter #5]: /zh/newsletters/2018/07/24/
-[newsletter #7]: /zh/newsletters/2018/08/07/
-[newsletter #9]: /zh/newsletters/2018/08/21/
-[newsletter #12]: /zh/newsletters/2018/09/11/
-[newsletter #17]: /zh/newsletters/2018/10/16/
+[newsletter #5]: /zh/newsletters/2018/07/24/#first-use-of-output-script-descriptors
+[newsletter #7]: /zh/newsletters/2018/08/07/#bitcoin-core-13697
+[newsletter #9]: /zh/newsletters/2018/08/21/#output-script-descriptors-enhancements
+[newsletter #12]: /zh/newsletters/2018/09/11/#bitcoin-core-14096
+[newsletter #17]: /zh/newsletters/2018/10/16/#descript-script-descriptors-and-descript
