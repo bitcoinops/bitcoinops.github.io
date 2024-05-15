@@ -115,7 +115,14 @@ repo]._
   `warnings` field from a string to an array of strings so that several
   warnings can be returned instead of just one.
 
-- [Core Lightning #7111][] Plugins: Can now opt in to handle `check` command on their commands, for more thorough checking.  FIXME:Gustavojfe to write
+- [Core Lightning #7111][] makes the `check` RPC command available to
+  plugins through the libplugin utility. Usage is also extended by
+  enabling `check setconfig` which validates that configuration options
+  would be accepted, and the existing `check keysend` now validates if
+  hsmd would approve the transaction. A pre-initialization message has
+  been added with pre-set HSM development flags. For further references
+  on the `check` command, see also Newsletters [#25][news25 cln check]
+  and [#47][news47 cln check].
 
 - [Libsecp256k1 #1518][] adds a `secp256k1_pubkey_sort` function that
   sorts a set of public keys into a canonical order.  This is useful for
@@ -196,3 +203,5 @@ any inconvenience.
 [collision attack]: https://en.wikipedia.org/wiki/Collision_attack
 [rss feed]: /feed.xml
 [ldk v0.0.123]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.123
+[news25 cln check]: /en/newsletters/2018/12/11/#c-lightning-2123
+[news47 cln check]: /en/newsletters/2019/05/21/#c-lightning-2631
