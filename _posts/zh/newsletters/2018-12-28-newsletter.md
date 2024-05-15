@@ -103,7 +103,7 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 - [Scaling Bitcoin Conference][]，十月，东京（[视频][scaling bitcoin vids]、[会议记录][scaling bitcoin ts]）
 - [Bitcoin Core 开发者见面会东京][coredevtech tokyo]，十月，东京（[会议记录][coredevtech ts]）
 - [Chaincode Lightning Residency][]，十月，纽约市（[视频][ln residency vids]）
-- [闪电协议开发峰会][lightning protocol development summit]，十一月，阿德莱德
+- **<!--lightning-protocol-development-summit-->[闪电协议开发峰会][lightning protocol development summit]**，十一月，阿德莱德
 
 </div>
 
