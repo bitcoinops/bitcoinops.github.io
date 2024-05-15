@@ -7,9 +7,9 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的新闻简报包括常规的仪表板和行动项目，开发人员 Anthony Towns 关于 Xapo 合并 400 万个 UTXO 的特写文章，有关比特币脚本系统可能升级的新闻，一些在比特币堆栈交换上高票问题和回答的链接，以及 Bitcoin Core、Lightning Network Daemon (LND) 和 C-lightning 项目的开发分支中的一些值得注意的提交。
+本周的 Newsletter 包括常规的仪表板和行动项，开发人员 Anthony Towns 关于 Xapo 合并 400 万个 UTXO 的特写文章，有关比特币脚本系统可能升级的新闻，一些在比特币堆栈交换上高票问题和回答的链接，以及 Bitcoin Core、Lightning Network Daemon (LND) 和 C-lightning 项目的开发分支中的一些值得注意的提交。
 
-## 行动项目
+## 行动项
 
 - **<!--bitcoin-core-0.16.2-released-->发布 Bitcoin Core 0.16.2**：一个小版本，带来了错误修复和小改进。如果您使用 [abandontransaction][rpc abandontransaction] 或 [verifytxoutproof][rpc verifytxoutproof] RPC，您应该特别考虑升级。否则，我们建议您查看[发布说明][bitcoin core 0.16.2]了解可能影响您操作的其他变化，并在方便时升级。
 
@@ -39,7 +39,7 @@ lang: zh
 [sipa slides]: https://prezi.com/view/YkJwE7LYJzAzJw9g1bWV/
 [kanzure transcript]: http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/
 
-## 精选自 Bitcoin Stack Exchange 的问答环节
+## Bitcoin Stack Exchange 精选问答
 
 {% comment %}<!--
 https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer
@@ -67,7 +67,7 @@ https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswe
 
 - **<!--lnd-1531-->[LND #1531][]**：守护进程不再在内存池中寻找花费——它等待它们首先被确认为区块的一部分。这允许相同的代码在像 Bitcoin Core 和 btcd 这样的完整节点以及没有访问未确认交易的 [BIP157][] 基础轻量级客户端上工作。这是正在进行的努力的一部分，以帮助没有完整节点的人使用 LN。
 
-- **<!--in-several-commits-->在几次提交中**，[C-lightning][c-lightning repo] 开发人员几乎完成了从在 `gossipd` 中处理与对等方相关的功能到在 `channeld` 或 `connectd` 中处理它们的过渡。
+- **<!--in-several-commits-->在几次提交中**，[C-lightning][core lightning repo] 开发人员几乎完成了从在 `gossipd` 中处理与对等方相关的功能到在 `channeld` 或 `connectd` 中处理它们的过渡。
 
 - **<!--c-lightning-has-improved-->C-lightning 改进了其秘密处理**，以便秘密和签名始终由与网络直接连接的系统部分之外的单独守护进程生成和存储。
 
