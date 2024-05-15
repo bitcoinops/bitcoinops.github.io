@@ -82,7 +82,7 @@ LN 协议开发人员 Christian Decker、Rusty Russell 和 Olaoluwa Osuntokun �
 Eltoo 的优势在于用户软件不需要管理使早期余额更新不安全的数据。这简化了备份并降低了与数据丢失相关的风险——但或许最重要的是，它使得支付通道在单笔链上交易中更容易和计算效率更高地在许多用户之间打开。这为其他提案（如 [Channel Factories][]）奠定了基础，这些提案可以使 LN 通道在链上操作中的效率提高 10 倍或更多。
 
 {:#sighash_noinput}
-Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOINPUT_UNSAFE[^fn-unsafe]。这将允许授权花费 UTXO 的签名表明签名不仅适用于该 UTXO，还适用于任何可以由同一私钥签名花费的 UTXO。此外，Eltoo 的发布机制[可能不可靠安全][eltoo pinning]，因为当前的节点中继策略允许[交易固定][]。尽管如此，协议开发人员对该提案持乐观态度，许多人希望 noinput 功能可以成为未来可能的 Schnorr 和 Taproot 软分叉提案的一部分。
+Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOINPUT_UNSAFE[^fn-unsafe]。这将允许授权花费 UTXO 的签名表明签名不仅适用于该 UTXO，还适用于任何可以由同一私钥签名花费的 UTXO。此外，Eltoo 的发布机制[可能不可靠安全][eltoo pinning]，因为当前的节点中继策略允许[交易固定][transaction pinning]。尽管如此，协议开发人员对该提案持乐观态度，许多人希望 noinput 功能可以成为未来可能的 Schnorr 和 Taproot 软分叉提案的一部分。
 
 ## 五月
 
