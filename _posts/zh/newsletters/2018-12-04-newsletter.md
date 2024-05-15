@@ -11,7 +11,7 @@ lang: zh
 
 ## 行动项
 
-- Bitcoin Core 正在准备即将发布的 [维护版本][maintenance release] 0.17.1。维护版本包括错误修复和次要功能的回溯移植。任何打算采用此版本的人都被鼓励查看 [回溯修复列表][0.17.1 milestone] 并在发布候选版本可用时帮助测试。
+- **<!--bitcoin-core-is-preparing-->Bitcoin Core 正在准备**即将发布的 [维护版本][maintenance release] 0.17.1。维护版本包括错误修复和次要功能的回溯移植。任何打算采用此版本的人都被鼓励查看 [回溯修复列表][0.17.1 milestone] 并在发布候选版本可用时帮助测试。
 
 ## 新闻
 
