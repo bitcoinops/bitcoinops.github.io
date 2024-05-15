@@ -67,7 +67,7 @@ lang: ja
   ECDSA署名の実際のサイズにコミットするランポート署名を含めることができます。たとえば:
 
   ```text
-  OP_DUP <公開鍵> OP_CHECKSIG OP_SIZE <サイズ> OP_EQUAL
+  OP_DUP <公開鍵> OP_CHECKSIGVERIFY OP_SIZE <サイズ> OP_EQUAL
   OP_IF
     # サイズが<サイズ>バイトと等しい場合
     OP_SHA256 <ダイジェストx> OP_CHECKEQUALVERIFY
@@ -244,6 +244,11 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
   ユーザーに警告するためのさまざまな改善が行われています。時計が狂っているノードは、
   有効なブロックを一時的に拒否する可能性があり、いくつかの深刻なセキュリティ問題につながる可能性があります。
   これは、コンセンサスコードからネットワーク調整時刻を削除したことに続くものです（[ニュースレター #288][news288 time]参照）。
+
+## 訂正
+
+ECDSA署名とランポート署名のサンプルスクリプトは、元々`OP_CHECKSIG`を使用していましたが、
+公開後に`OP_CHECKSIGVERIFY`を使用するように更新されました。間違いを報告してくれたAntoine Poinsotに感謝します。
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
