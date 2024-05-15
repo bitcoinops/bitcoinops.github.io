@@ -38,6 +38,9 @@ optech_mentions:
   - title: "Core Lightning #6466 and #6473 add support for backing up and restoring codex32-encoded seeds"
     url: /en/newsletters/2023/08/09/#core-lightning-6466
 
+  - title: "Penlock proposed as an alternative to codex32 that provides BIP39 seed phrase splitting"
+    url: /en/newsletters/2024/05/17/#bip39-seed-phrase-splitting
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP32 hierarchical derivation from seeds

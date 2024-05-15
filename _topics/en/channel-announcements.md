@@ -38,6 +38,9 @@ optech_mentions:
   - title: LN developer discussion about updated channel announcements
     url: /en/newsletters/2023/07/26/#updated-channel-announcements
 
+  - title: New anonymous usage tokens proposed that could be used to improve channel announcement privacy
+    url: /en/newsletters/2024/05/17/#anonymous-usage-tokens
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
