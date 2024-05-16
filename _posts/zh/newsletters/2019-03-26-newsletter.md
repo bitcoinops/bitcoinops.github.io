@@ -40,13 +40,13 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- 多个关于 LN 传输安全的问题：Rene Pickhardt 提出了几个关于用于通信 LN 消息的加密的问题，例如[为什么消息长度被加密？]({{bse}}85259)和[ChaCha20-Poly1305 有什么特别之处？]({{bse}}84953)。这些问题的答案在比特币 P2P 加密传输协议的提议 BIP 的背景下可能特别有趣，该协议计划使用相同的密码。
+- **<!--multiple-questions-about-ln-transport-security-->多个关于 LN 传输安全的问题：**Rene Pickhardt 提出了几个关于用于通信 LN 消息的加密的问题，例如[为什么消息长度被加密？]({{bse}}85259)和[ChaCha20-Poly1305 有什么特别之处？]({{bse}}84953)。这些问题的答案在比特币 P2P 加密传输协议的提议 BIP 的背景下可能特别有趣，该协议计划使用相同的密码。
 
 - 多个关于 Schnorr 签名的问题：Pickhard 还提出了几个关于 [BIP-Schnorr][]、[Taproot][] 和使这些功能在比特币交易中可用的计划的问题。参见 [Schnorr 是否允许每个区块一个签名？]({{bse}}85213)和 [MuSig 的安全性是否与当前的比特币多签相同？]({{bse}}85101)。
 
 - [secp256k1 曲线参数是如何选择的？]({{bse}}85387)这是比特币中使用的椭圆曲线。一些曲线参数在安全性中起着重要作用，因此了解这些参数是否被明智地选择是很有用的。其他参数对安全性影响不大，但它们的历史可能仍然很有趣。在他的回答中，Gregory Maxwell 提供了他迄今为止所了解的历史、对为什么仍然未解决的问题不影响安全性的解释以及为什么我们可能永远无法了解某些曲线参数起源的更多信息。
 
-- [开发钱包时我应该支持哪些地址？]({{bse}}84978)一个开发者问他是否应该支持 P2PKH (`1foo...`) 地址和 P2SH 包装的 segwit (`3bar...`) 地址，还是仅提供 P2SH 地址是安全的。Andrew Chow 回答说，仅 P2SH 地址就足够了。Gregory Maxwell 补充说，如果开发者决定显示两个地址，一个更好的组合将是 P2SH 包装的 segwit 地址和本地 segwit（bech32）地址 (`bc1baz...`)。
+- **<!--what-addresses-should-i-support-when-developing-a-wallet-->[开发钱包时我应该支持哪些地址？]({{bse}}84978)**一个开发者问他是否应该支持 P2PKH (`1foo...`) 地址和 P2SH 包装的 segwit (`3bar...`) 地址，还是仅提供 P2SH 地址是安全的。Andrew Chow 回答说，仅 P2SH 地址就足够了。Gregory Maxwell 补充说，如果开发者决定显示两个地址，一个更好的组合将是 P2SH 包装的 segwit 地址和本地 segwit（bech32）地址 (`bc1baz...`)。
 
 ## 值得注意的代码和文档更改
 
