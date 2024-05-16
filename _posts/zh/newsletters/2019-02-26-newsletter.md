@@ -23,7 +23,7 @@ lang: zh
 
   - **<!--adapter-signatures-for-scriptless-scripts-->用于无脚本脚本的适配器签名。**使用多步骤协议，Alice 可以向 Bob 证明她的最终签名将揭示一个满足某个特定条件的值。例如，该值可以是另一个允许 Bob 自己索取某个其他支付（如原子交换或闪电网络支付承诺）的签名。对于 Alice 和 Bob 之外的所有人来说，该签名只是另一个没有特殊意义的有效签名。这通常可以通过消除链上包含特殊数据的需要（例如当前在原子交换和闪电网络支付承诺中使用的哈希和哈希锁）来提高链上部分协议的隐私性和效率。
 
-更新的库本身并未使这些功能在侧链上可用，但它确实提供了生成和验证签名所需的代码——允许开发人员构建将 Schnorr 基于系统投入生产所需的工具。希望这些代码将获得更多审查并被移植到上游 [libsecp256k1][] 库中以最终用于 Bitcoin Core 相关的软分叉提案。欲了解更多信息，请阅读[博客文章][schnorr libsecp256k1-zkp]或[开发者文档][schnorr docs]。
+  - **<!--the-updated-library-doesnt-make-the-features-available-on-sidechains-by-itself-->更新的库本身并未使这些功能在侧链上可用**，但它确实提供了生成和验证签名所需的代码——允许开发人员构建将 Schnorr 基于系统投入生产所需的工具。希望这些代码将获得更多审查并被移植到上游 [libsecp256k1][] 库中以最终用于 Bitcoin Core 相关的软分叉提案。欲了解更多信息，请阅读[博客文章][schnorr libsecp256k1-zkp]或[开发者文档][schnorr docs]。
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -42,7 +42,7 @@ lang: zh
 
 *本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中值得注意的更改。*
 
-- [Bitcoin Core #15348][] 添加了一个[生产力提示][productivity hints]文档，描述了开发人员发现的提高效率的工具和技术。尽管有些是特定于 Bitcoin Core 和 C++ 开发的，但其他的更广泛适用于任何使用 git 或 GitHub 的开发人员。
+- **<!--bitcoin-core-15348-->[Bitcoin Core #15348][]** 添加了一个[生产力提示][productivity hints]文档，描述了开发人员发现的提高效率的工具和技术。尽管有些是特定于 Bitcoin Core 和 C++ 开发的，但其他的更广泛适用于任何使用 git 或 GitHub 的开发人员。
 
 - [C-Lightning #2343][] 将项目现有文档以更好的格式提供在 [ReadTheDocs.io][cl rtd] 上。
 
