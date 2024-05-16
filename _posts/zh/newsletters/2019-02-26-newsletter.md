@@ -21,9 +21,9 @@ lang: zh
 
   - [MuSig][] 多方签名。链上，它们看起来与单一公钥和签名相同，但公钥和签名是通过多步骤协议由一组私钥生成的。而当前 Bitcoin Script 使用的 multisig 需要 *n* 个公钥和 *k* 个签名以实现 k-of-n multisig 安全性，MuSig 可以仅用一个公钥和一个签名提供相同的安全性——减少了区块链空间，提高了验证效率，增加了隐私，并允许比 Bitcoin Script 当前字节大小和签名操作限制支持的更大签名者集合。但它有两个缺点：隐私的增加也破坏了可证明的责任制——无法知道创建签名的特定授权签名者子集是谁——并且多步骤协议需要特别小心地管理秘密 nonce 以避免意外泄露私钥。为解决第二个问题，Poelstra 的帖子详细介绍了 libsecp256k1-zkp 如何尝试最小化 nonce 相关故障的风险，并预示未来可能有更好的解决方案。
 
-  - 用于无脚本脚本的适配器签名。使用多步骤协议，Alice 可以向 Bob 证明她的最终签名将揭示一个满足某个特定条件的值。例如，该值可以是另一个允许 Bob 自己索取某个其他支付（如原子交换或闪电网络支付承诺）的签名。对于 Alice 和 Bob 之外的所有人来说，该签名只是另一个没有特殊意义的有效签名。这通常可以通过消除链上包含特殊数据的需要（例如当前在原子交换和闪电网络支付承诺中使用的哈希和哈希锁）来提高链上部分协议的隐私性和效率。
+  - **<!--adapter-signatures-for-scriptless-scripts-->用于无脚本脚本的适配器签名。**使用多步骤协议，Alice 可以向 Bob 证明她的最终签名将揭示一个满足某个特定条件的值。例如，该值可以是另一个允许 Bob 自己索取某个其他支付（如原子交换或闪电网络支付承诺）的签名。对于 Alice 和 Bob 之外的所有人来说，该签名只是另一个没有特殊意义的有效签名。这通常可以通过消除链上包含特殊数据的需要（例如当前在原子交换和闪电网络支付承诺中使用的哈希和哈希锁）来提高链上部分协议的隐私性和效率。
 
-  更新的库本身并未使这些功能在侧链上可用，但它确实提供了生成和验证签名所需的代码——允许开发人员构建将 Schnorr 基于系统投入生产所需的工具。希望这些代码将获得更多审查并被移植到上游 [libsecp256k1][] 库中以最终用于 Bitcoin Core 相关的软分叉提案。欲了解更多信息，请阅读[博客文章][schnorr libsecp256k1-zkp]或[开发者文档][schnorr docs]。
+更新的库本身并未使这些功能在侧链上可用，但它确实提供了生成和验证签名所需的代码——允许开发人员构建将 Schnorr 基于系统投入生产所需的工具。希望这些代码将获得更多审查并被移植到上游 [libsecp256k1][] 库中以最终用于 Bitcoin Core 相关的软分叉提案。欲了解更多信息，请阅读[博客文章][schnorr libsecp256k1-zkp]或[开发者文档][schnorr docs]。
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -60,3 +60,4 @@ lang: zh
 [cl rtd]: https://lightning.readthedocs.io/
 [elements project]: https://elementsproject.org/
 [liquid]: https://blockstream.com/liquid/
+[productivity hints]: https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md
