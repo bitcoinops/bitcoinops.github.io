@@ -155,7 +155,7 @@ repo]._
   #200][news200 policies].
 
 - [BIPs #1567][] adds [BIP387][] with new `multi_a()` and
-  `sortedmultia_a()` descriptors that provide scripted multisig
+  `sortedmulti_a()` descriptors that provide scripted multisig
   capabilities within [tapscript][topic tapscript].  Taking an example
   from the BIP, the descriptor fragment
   `multi_a(k,KEY_1,KEY_2,...,KEY_n)` will produce a script such as
