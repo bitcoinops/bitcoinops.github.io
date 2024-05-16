@@ -65,7 +65,7 @@ lang: zh
 
     - 地址是一个见证公钥哈希 `wpkh()`，也称为 P2WPKH。描述符可以简洁地描述 P2PKH、P2SH、P2WPKH、P2WSH 和嵌套 segwit 的所有常见用法。
 
-    - [密钥来源信息][key origin information]在方括号 `[...]` 之间描述。
+    - **<!--key-origin-information-->[密钥来源信息][key origin information]**在方括号 `[...]` 之间描述。
 
         - **<!--bip32-keyid-->`f6bb4c63`** 是标识路径提供者密钥的指纹。指纹是其 `ripemd(sha256())` 哈希的前 32 位，如 [BIP32][bip32 keyid] 定义。这使得工具（如与 PSBT 一起使用的工具）可以轻松处理多重签名脚本和其他使用不同密钥的情况。
 
