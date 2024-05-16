@@ -168,7 +168,7 @@ _ scriptPubKey
 
 - Rusty Russell 的 [The Megatransaction][megatransaction] - 一个需要 25 秒验证的区块
 
-- Sergio Demian Lerner 的 [CVE-2013-2292 描述][] - 一个理论上假设需要三分钟验证的区块
+- Sergio Demian Lerner 的 [CVE-2013-2292 描述][CVE-2013-2292 description] - 一个理论上假设需要三分钟验证的区块
 
 - Peter Todd 的 [关于 `OP_CODESEPARATOR` 的猜测][todd codesep] - 关于在修复 `1 OP_RETURN` 错误之前如何使用 `OP_CODESEPARATOR` 以及 Nakamoto 是否考虑使用它来启用签名委托的信息（授权支出输出的签名者能够在不创建链上交易的情况下授予他人支出权限）
 
