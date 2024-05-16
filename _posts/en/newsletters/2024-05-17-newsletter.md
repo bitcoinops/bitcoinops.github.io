@@ -132,27 +132,48 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Bitcoin Inquisition][bitcoin inquisition repo], and [BINANAs][binana
 repo]._
 
-FIXME:Gustavojfe to add summaries.  Let harding know if you have any
-questions.  Add an HTML comment <!-- like this --> to any of your
-summaries that you have notes about, e.g. if you aren't sure why I
-thought something was noteworthy or if you aren't 100% sure your
-description is correct.  That way harding and the other reviewers will
-give it extra attention.
+- [Core Lightning #7190][] adds an additional offset (called `chainlag`)
+  into the [HTLC][topic htlc] timelock calculation.  This allows HTLCs
+  to target the current block height instead of the most recent block
+  that the LN node has processed (its sync height).  This makes it safe
+  for a node to send payments during the blockchain sync process.
 
-- [Core Lightning #7190][] Add the `chainlag` to the payment
+- [LDK #2973][] implements support for `OnionMessenger` to intercept [onion messages][topic onion messages] on
+  behalf of offline peers. It generates events on message interception and on
+  the peer's return to online status for forwarding. Users should maintain an
+  _allow list_ to only store messages for relevant peers. This is a
+  stepping stone to supporting [async payments][topic async payments]
+  through `held_htlc_available` [BOLTs #989][].  In that protocol, Alice
+  wants to pay Carol through Bob, but Alice doesn't know if Carol is
+  online.  Alice sends an onion message to Bob; Bob holds the message
+  until Carol comes online; Carol opens the message, which tells her to
+  request a payment from Alice (or Alice's Lightning service provider);
+  Carol requests the payment and Alice sends it in the normal way.
 
-- [LDK #2973][] Support generating events when an OM for an offline peer is received.
+- [LDK #2907][] extends `OnionMessage` handling to accept an optional
+  `Responder` input and return an object `ResponseInstructions` that indicates how
+  the response to the message should be handled. This change enables asynchronous
+  onion messaging responses and opens the door to more complex response
+  mechanisms, such as might be needed for [async payments][topic async
+  payments].
 
-- [LDK #2907][] Introduce ResponseInstructions for OnionMessage Handling
+- [BDK #1403][] updates the `bdk_electrum` crate to make use of new
+  sync/full-scan structures introduced in [BDK #1413][], queryable `CheckPoint`
+  linked list [BDK #1369][], and cheaply-clonable transactions in `Arc`
+  pointers [BDK #1373][]. This change improves the performance of
+  wallets scanning for transaction data using an Electrum-style server.
+  It is also now an option to fetch `TxOut`s to allow for
+  fee calculation on transactions received from an external wallet.
 
-- [BDK #1403][] Update `bdk_electrum` crate to use sync/full-scan structs
-
-- [BIPs #1458][] josibake/silent-payments-bip
+- [BIPs #1458][] adds [BIP352][] which proposes [silent payments][topic silent
+  payments], a protocol for reusable
+  payment addresses that generate a unique onchain address each time it is
+  used. The BIP draft was first discussed in [Newsletter #255][news255 bip352].
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-05-21 14:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="7190,2973,2907,1403,1458" %}
+{% include linkers/issues.md v=2 issues="7190,2973,2907,1403,1458,989,1413,1369,1373" %}
 [lnd v0.18.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc2
 [gibson autct]: https://delvingbitcoin.org/t/anonymous-usage-tokens-from-curve-trees-or-autct/862/
 [news261 lngossip]: /en/newsletters/2023/07/26/#updated-channel-announcements
@@ -172,3 +193,4 @@ give it extra attention.
 [bitvmx website]: https://bitvmx.org/
 [erhardt bip2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/0bc47189-f9a6-400b-823c-442974c848d5@murch.one/
 [news297 bip2]: /en/newsletters/2024/04/10/#updating-bip2
+[news255 bip352]: /en/newsletters/2023/06/14/#draft-bip-for-silent-payments
