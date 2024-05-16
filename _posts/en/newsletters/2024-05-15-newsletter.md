@@ -47,7 +47,7 @@ changes to popular Bitcoin infrastructure software.
   Kim includes several warnings in his announcement: "the code and
   protocol is not peer reviewed [...] there will be breaking changes
   [...] utreexod is based on [btcd][] [which may have] consensus
-  incompatibilities".
+  incompatibilities". {% assign timestamp="0:56" %}
 
 - **BIP119 extensions for smaller hashes and arbitrary data commitments:**
   Jeremy Rubin [posted][rubin bip119e] to the Bitcoin-Dev mailing list a
@@ -84,7 +84,7 @@ changes to popular Bitcoin infrastructure software.
     blockchain with minimal use of block weight.
 
   The proposal has not received any discussion on the mailing list as of
-  this writing.
+  this writing. {% assign timestamp="20:15" %}
 
 ## Releases and release candidates
 
@@ -95,10 +95,10 @@ release candidates.*
 - [LDK v0.0.123][] is a release of this popular library for building
   LN-enabled applications.  It includes an update to its settings for
   [trimmed HTLCs][topic trimmed htlc], improvements to [offers][topic
-  offers] support, and many other improvements.
+  offers] support, and many other improvements. {% assign timestamp="25:16" %}
 
 - [LND v0.18.0-beta.rc2][] is a release candidate for the next major
-  version of this popular LN node.
+  version of this popular LN node. {% assign timestamp="26:08" %}
 
 ## Notable code and documentation changes
 
@@ -113,7 +113,7 @@ repo]._
 
 - [Bitcoin Core #29845][] updates several `get*info` RPCs to change the
   `warnings` field from a string to an array of strings so that several
-  warnings can be returned instead of just one.
+  warnings can be returned instead of just one. {% assign timestamp="28:16" %}
 
 - [Core Lightning #7111][] makes the `check` RPC command available to
   plugins through the libplugin utility. Usage is also extended by
@@ -122,12 +122,12 @@ repo]._
   hsmd would approve the transaction. A pre-initialization message has
   been added with pre-set HSM development flags. For further references
   on the `check` command, see also Newsletters [#25][news25 cln check]
-  and [#47][news47 cln check].
+  and [#47][news47 cln check]. {% assign timestamp="29:34" %}
 
 - [Libsecp256k1 #1518][] adds a `secp256k1_pubkey_sort` function that
   sorts a set of public keys into a canonical order.  This is useful for
   both [MuSig2][topic musig] and [silent payments][topic silent
-  payments], and likely many other protocols involving multiple keys.
+  payments], and likely many other protocols involving multiple keys. {% assign timestamp="32:04" %}
 
 - [Rust Bitcoin #2707][] updates the API for tagged hashes
   introduced as part of [taproot][topic taproot] to expect the digests in
@@ -138,7 +138,7 @@ repo]._
   transactions and blocks in one byte order (internal byte order) but
   are displayed and called in user interfaces in the reverse order
   (display byte order).  This PR tries to prevent even more hashes from
-  having different byte orders for different circumstances.
+  having different byte orders for different circumstances. {% assign timestamp="34:30" %}
 
 - [BIPs #1389][] adds [BIP388][] which describes "wallet policies for
   descriptor wallets", a templated set of [output script
@@ -152,7 +152,7 @@ repo]._
   and the number of details that need to be verified by users.  Any
   software needing the full power of descriptors can still use them
   independently of BIP388.  For additional information, see [Newsletter
-  #200][news200 policies].
+  #200][news200 policies]. {% assign timestamp="37:29" %}
 
 - [BIPs #1567][] adds [BIP387][] with new `multi_a()` and
   `sortedmultia_a()` descriptors that provide scripted multisig
@@ -161,13 +161,13 @@ repo]._
   `multi_a(k,KEY_1,KEY_2,...,KEY_n)` will produce a script such as
   `KEY_1 OP_CHECKSIG KEY_2 OP_CHECKSIGADD ... KEY_n OP_CHECKSIGADD OP_k
   OP_NUMEQUAL`.  See also Newsletters [#191][news191 multi_a],
-  [#227][news227 multi_a], and [#273][news273 multi_a].
+  [#227][news227 multi_a], and [#273][news273 multi_a]. {% assign timestamp="42:21" %}
 
 - [BIPs #1525][] adds [BIP347][] which proposes an [OP_CAT][topic
   op_cat] opcode that could be used in [tapscript][topic tapscript] if
   it was [activated][topic soft fork activation] in a soft fork.  See
   also Newsletters [#274][news274 op_cat], [#275][news275 op_cat],
-  and [#293][news293 op_cat].
+  and [#293][news293 op_cat]. {% assign timestamp="44:08" %}
 
 ## Newsletter publication date changes
 
@@ -179,7 +179,7 @@ determine how many people read the newsletter.  You can prevent tracking
 by disabling the loading of external resources before reading the
 newsletter.  If you desire even more privacy, we recommend subscribing
 to our [RSS feed][] over an ephemeral Tor connection.  We apologize for
-any inconvenience.
+any inconvenience. {% assign timestamp="46:05" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
