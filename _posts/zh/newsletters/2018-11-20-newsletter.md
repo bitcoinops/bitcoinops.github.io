@@ -121,5 +121,5 @@ exp(-45/12) # 45 分钟区块，12 分钟平均间隔
 [lnrfc rz]: https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx
 [newsletter #21]: /zh/newsletters/2018/11/13/#advertising-node-liquidity
 [newsletter #17]: /zh/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
-[newsletter #12]: /zh/newsletters/2018/09/11/#plans-for-the-second-optech-workshop
+[newsletter #12]: /zh/newsletters/2018/09/11/##plans-for-the-second-optech-workshop-optech-workshop
 [newsletter #19]: /zh/newsletters/2018/10/30/#lnd-1535-1512
