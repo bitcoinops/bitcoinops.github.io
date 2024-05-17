@@ -11,7 +11,7 @@ lang: zh
 
 ## 行动项
 
-- **!--help-test-bitcoin-core-0.17.1RC1-->帮助测试 Bitcoin Core 0.17.1RC1：** 该[维护版本][maintenance release]的第一个候选版本已被[上传][V0.17.1rc1]。企业和个人用户对守护程序和 GUI 的测试非常受欢迎，并有助于确保高质量的发布。
+- **<!--help-test-bitcoin-core-0.17.1RC1-->帮助测试 Bitcoin Core 0.17.1RC1：** 该[维护版本][maintenance release]的第一个候选版本已被[上传][V0.17.1rc1]。企业和个人用户对守护程序和 GUI 的测试非常受欢迎，并有助于确保高质量的发布。
 
 ## 新闻
 
