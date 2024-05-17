@@ -109,7 +109,7 @@ Bitcoin 0.1 及其后所有版本实现的共识规则要求一个区块的时�
 
 - Jameson Lopp 的 [关于 Bitcoin 时间戳可靠性的文章][lopp timestamp]
 
-- **<!--proposal-to-use-timewarp-to-eliminate-the-need-for-hard-forks-->Mark Friedenbach 的[使用时间扭曲消除硬分叉需求的提议][Friedenbach proposal]；**另请参见我们在 [Newsletter #16][] 中的摘要 - 提议的清理软分叉消除了使用这个有争议想法的能力
+- **<!--proposal-to-use-timewarp-to-eliminate-the-need-for-hard-forks-->**Mark Friedenbach 的[使用时间扭曲消除硬分叉需求的提议][Friedenbach proposal]；另请参见我们在 [Newsletter #16][] 中的摘要 - 提议的清理软分叉消除了使用这个有争议想法的能力
 
 ### Merkle 树攻击
 
@@ -146,7 +146,7 @@ _ scriptPubKey
 
 - Sergio Demian Lerner 的 [CVE-2017-12842 描述][cve-2017-12842 description]
 
-- **<!--mailing-list-discussion-by-various-authors-->各种作者在[邮件列表讨论][bitcoin-dev merkle tree]**
+- **<!--mailing-list-discussion-by-various-authors-->**各种作者在[邮件列表讨论][bitcoin-dev merkle tree]
 
 ### 传统交易验证
 
