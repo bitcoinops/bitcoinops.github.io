@@ -15,9 +15,9 @@ lang: zh
 
 ## 新闻
 
-- **<!--schnorr-ready-fork-of-libsecp256k1-available-->Schnorr 准备就绪的 libsecp256k1 分支可用：**Blockstream 的密码学家 Andrew Poelstra [宣布][schnorr libsecp256k1-zkp]，用于[Elements Project][]（如 [Liquid][]）侧链的 [libsecp256k1-zkp][] 库现在支持多种配置的 [BIP-Schnorr][] 兼容签名：
+- **<!--schnorr-ready-fork-of-libsecp256k1-available-->Schnorr 准备就绪的 libsecp256k1 分支可用：**Blockstream 的密码学家 Andrew Poelstra [宣布][schnorr libsecp256k1-zkp]，用于 [Elements Project][]（如 [Liquid][]）侧链的 [libsecp256k1-zkp][] 库现在支持多种配置的 [BIP-Schnorr][] 兼容签名：
 
-  - 基本的单一公钥和签名。这些的使用与 Bitcoin 当前的 ECDSA 算法几乎相同，尽管签名序列化后大约少了八个字节，并且可以批量高效验证。
+  - **<!--basic-single-pubkeys-and-signatures-->基本的单一公钥和签名。**这些的使用与 Bitcoin 当前的 ECDSA 算法几乎相同，尽管签名序列化后大约少了八个字节，并且可以批量高效验证。
 
   - [MuSig][] 多方签名。链上，它们看起来与单一公钥和签名相同，但公钥和签名是通过多步骤协议由一组私钥生成的。而当前 Bitcoin Script 使用的 multisig 需要 *n* 个公钥和 *k* 个签名以实现 k-of-n multisig 安全性，MuSig 可以仅用一个公钥和一个签名提供相同的安全性——减少了区块链空间，提高了验证效率，增加了隐私，并允许比 Bitcoin Script 当前字节大小和签名操作限制支持的更大签名者集合。但它有两个缺点：隐私的增加也破坏了可证明的责任制——无法知道创建签名的特定授权签名者子集是谁——并且多步骤协议需要特别小心地管理秘密 nonce 以避免意外泄露私钥。为解决第二个问题，Poelstra 的帖子详细介绍了 libsecp256k1-zkp 如何尝试最小化 nonce 相关故障的风险，并预示未来可能有更好的解决方案。
 
@@ -32,17 +32,17 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- **<!--why-does-bip44-have-internal-and-external-addresses-->[为什么 BIP44 有内部和外部地址？]({{bse}}84594)**外部地址是你提供给其他人以便他们付款的地址；内部地址是你在自己的交易中用于接收找零的地址。Pieter Wuille 解释道，[BIP32][]，基于 [BIP44][]，鼓励使用不同的派生路径来区分这些密钥，以防你需要向审计员证明你收到了多少钱，但不想让他们知道你花了多少钱（或剩下了多少钱）。通过给审计员仅提供外部地址的扩展公钥（xpub），他可以跟踪你的收款，但仍无法通过找零地址直接获取你的支出或当前余额的任何信息。
+- **<!--why-does-bip44-have-internal-and-external-addresses-->**[为什么 BIP44 有内部和外部地址？]({{bse}}84594)外部地址是你提供给其他人以便他们付款的地址；内部地址是你在自己的交易中用于接收找零的地址。Pieter Wuille 解释道，[BIP32][]，基于 [BIP44][]，鼓励使用不同的派生路径来区分这些密钥，以防你需要向审计员证明你收到了多少钱，但不想让他们知道你花了多少钱（或剩下了多少钱）。通过给审计员仅提供外部地址的扩展公钥（xpub），他可以跟踪你的收款，但仍无法通过找零地址直接获取你的支出或当前余额的任何信息。
 
-- **<!--taproot-and-scriptless-scripts-both-use-schnorr-but-how-are-they-different-->[Taproot 和无脚本脚本都使用 Schnorr，但它们有什么不同？]({{bse}}84086)**在不同的答案中，Gregory Maxwell 和 Andrew Chow 各自描述了这两种基于 Schnorr 签名提案的区别。还包括适配器签名的描述，适配器签名可用于增强无信任合约协议的效率和隐私性。
+- **<!--taproot-and-scriptless-scripts-both-use-schnorr-but-how-are-they-different-->**[Taproot 和无脚本脚本都使用 Schnorr，但它们有什么不同？]({{bse}}84086)在不同的答案中，Gregory Maxwell 和 Andrew Chow 各自描述了这两种基于 Schnorr 签名提案的区别。还包括适配器签名的描述，适配器签名可用于增强无信任合约协议的效率和隐私性。
 
-- **<!--how-much-of-block-propagation-time-is-used-in-verification-->[区块传播时间有多少用于验证？]({{bse}}84045)**Gregory Maxwell 解释说，对于正常情况，这可能接近 0% 而不是 1%，但对于特意构造以耗时验证的最坏情况区块，它可能会大得多。
+- **<!--how-much-of-block-propagation-time-is-used-in-verification-->**[区块传播时间有多少用于验证？]({{bse}}84045)Gregory Maxwell 解释说，对于正常情况，这可能接近 0% 而不是 1%，但对于特意构造以耗时验证的最坏情况区块，它可能会大得多。
 
 ## 值得注意的代码和文档更改
 
 *本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中值得注意的更改。*
 
-- **<!--bitcoin-core-15348-->[Bitcoin Core #15348][]** 添加了一个[生产力提示][productivity hints]文档，描述了开发人员发现的提高效率的工具和技术。尽管有些是特定于 Bitcoin Core 和 C++ 开发的，但其他的更广泛适用于任何使用 git 或 GitHub 的开发人员。
+- **<!--bitcoin-core-15348-->**[Bitcoin Core #15348][] 添加了一个[生产力提示][productivity hints]文档，描述了开发人员发现的提高效率的工具和技术。尽管有些是特定于 Bitcoin Core 和 C++ 开发的，但其他的更广泛适用于任何使用 git 或 GitHub 的开发人员。
 
 - [C-Lightning #2343][] 将项目现有文档以更好的格式提供在 [ReadTheDocs.io][cl rtd] 上。
 
