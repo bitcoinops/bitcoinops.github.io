@@ -25,7 +25,7 @@ lang: zh
 
 - **<!--open-sourced-hsm-based-multisig-cold-storage-solution-->开源的基于 HSM 的多签名冷存储解决方案：** [Square][] 已发布他们实现的用于保护客户存款的冷存储解决方案的代码和文档，以及用于在任意时间点审计 HD 钱包余额的 CLI 工具。Optech 尚未评估他们的解决方案，但我们可以推荐感兴趣的人阅读 Square 的优秀[博客文章][subzero blog]并访问 [Subzero][] 冷存储解决方案和 [Beancounter][] 审计工具的仓库。
 
-- **<!--overt-asicboost-support-for-s9-miners-->闪电网络实习和黑客日：** 上周 [Chaincode Labs][] 主办了为期五天的[闪电网络实习][Lightning Network Residency]项目，以帮助开发人员上手这一新兴协议。此后，Fulmo 在纽约市组织了第四届 [闪电网络黑客日][Lightning Network Hackday]（实际上是两天），其中包括一些演讲、许多演示和大量的黑客攻击。
+- **<!--lightning-residency-and-hackday-->闪电网络实习和黑客日：** 上周 [Chaincode Labs][] 主办了为期五天的[闪电网络实习][Lightning Network Residency]项目，以帮助开发人员上手这一新兴协议。此后，Fulmo 在纽约市组织了第四届 [闪电网络黑客日][Lightning Network Hackday]（实际上是两天），其中包括一些演讲、许多演示和大量的黑客攻击。
 
     Pierre Rochard 已编写在实习项目中所有演讲的摘要（[第1天][lr1]，[第2天][lr2]，[第3天][lr3]，[第4天][lr4]），演讲视频预计很快发布。黑客日的视频现已可用：[第1天][hd1]，[第2天][hd2]。
 
@@ -41,7 +41,7 @@ lang: zh
 
 ## 值得注意的合并
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-lightning][c-lightning repo] 和 [libsecp256k1][libsecp256k1 repo] 中流行的 Bitcoin 基础设施项目中值得注意的代码更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-lightning][core lightning repo] 和 [libsecp256k1][libsecp256k1 repo] 中流行的 Bitcoin 基础设施项目中值得注意的代码更改。*
 
 {% comment %}<!-- no commits to libsecp256k1; one interesting commit
 #448 to C-Lightning, but I'm not confident enough of my understanding of
