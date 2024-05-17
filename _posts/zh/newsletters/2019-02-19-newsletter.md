@@ -43,7 +43,7 @@ lang: zh
 
 - [Bitcoin Core #14481][] 更新了 `listunspent`、`signrawtransactionwithkey` 和 `signrawtransactionwithwallet` RPC，每个包含一个新的 `witnessScript` 字段。第一个 RPC 返回 witnessScript，另外两个可以将其作为输入。之前 Bitcoin Core 过载了现有 P2SH `redeemScript` 字段用于 segwit witnessScripts，但这在 P2SH 包装 segwit 的情况下可能特别令人困惑。此更改明确了哪些数据用于何处。
 
-- [Bitcoin Core #15063][] 允许钱包在[BIP70][]支持已禁用的情况下回退到[BIP21][]解析 `bitcoin:` URI。正如 [BIP72][] 所规定的那样，`bitcoin:` URI 以向后兼容的方式扩展，包含一个额外的 `r=` 参数，包含 BIP70 URL。这是为了允许已经使用 BIP21 URI 的服务升级以支持 BIP70 而不失去现有用户。然而，现在许多钱包服务正在弃用其 BIP70 支持，相同的机制可以反过来使用，使先前支持 BIP70 的服务允许其非 BIP70 用户通过点击 `bitcoin:` 链接继续获取支付详细信息。
+- [Bitcoin Core #15063][] 允许钱包在 [BIP70][] 支持已禁用的情况下回退到 [BIP21][] 解析 `bitcoin:` URI。正如 [BIP72][] 所规定的那样，`bitcoin:` URI 以向后兼容的方式扩展，包含一个额外的 `r=` 参数，包含 BIP70 URL。这是为了允许已经使用 BIP21 URI 的服务升级以支持 BIP70 而不失去现有用户。然而，现在许多钱包服务正在弃用其 BIP70 支持，相同的机制可以反过来使用，使先前支持 BIP70 的服务允许其非 BIP70 用户通过点击 `bitcoin:` 链接继续获取支付详细信息。
 
 - [Bitcoin Core #15153][] 添加了一个 GUI 菜单以打开钱包，[#15195][Bitcoin Core #15195] 添加了一个菜单以关闭钱包。这使得从 GUI 使用 Bitcoin Core 的多钱包模式变得更容易，尽管目前还不能在不使用调试控制台的情况下从 GUI 创建钱包（该任务是[动态钱包清单][Bitcoin Core #13059]中的最后一项）。
 
