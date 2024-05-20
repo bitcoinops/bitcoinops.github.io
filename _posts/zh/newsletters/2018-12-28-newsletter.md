@@ -96,14 +96,14 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 ### 2018 年总结<br>值得注意的技术会议和其他事件
 
 - [BPASE][bpase]，一月，斯坦福大学
-- [Bitcoin Core 开发者见面会 NYC][coredevtech nyc]，三月，纽约市（[会议记录][coredevtech ts]）
+- **<!--bitcoin-core-developers-meetup-nyc-->**[Bitcoin Core 开发者见面会 NYC][coredevtech nyc]，三月，纽约市（[会议记录][coredevtech ts]）
 - [L2 Summit][]，五月，波士顿
 - [Building on Bitcoin][]，七月，里斯本（[会议记录][bob ts]）
 - [Edge Dev++][]，十月，东京（[视频][edge dev vids]、[会议记录][edge dev ts]）
 - [Scaling Bitcoin Conference][]，十月，东京（[视频][scaling bitcoin vids]、[会议记录][scaling bitcoin ts]）
-- [Bitcoin Core 开发者见面会东京][coredevtech tokyo]，十月，东京（[会议记录][coredevtech ts]）
+- **<!--bitcoin-core-developers-meetup-tokyo-->**[Bitcoin Core 开发者见面会东京][coredevtech tokyo]，十月，东京（[会议记录][coredevtech ts]）
 - [Chaincode Lightning Residency][]，十月，纽约市（[视频][ln residency vids]）
-- **<!--lightning-protocol-development-summit-->[闪电协议开发峰会][lightning protocol development summit]**，十一月，阿德莱德
+- **<!--lightning-protocol-development-summit-->**[闪电协议开发峰会][lightning protocol development summit]，十一月，阿德莱德
 
 </div>
 
@@ -203,21 +203,21 @@ Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 研究了如何减少用于中
 
 我们调查了各种[减少交易手续费的技术][techniques for reducing transaction fees]，其使用情况可以通过查看确认的交易轻松跟踪。
 
-- **<!--compressed-pubkeys-->压缩公钥** 每次使用可节省 32 字节，自 [2012 年以来][Bitcoin Core 0.6] 得到了广泛使用。使用压缩公钥的输入数量从一月份的约 96% 上升到十二月份的 98%。
+- **<!--compressed-pubkeys-->****压缩公钥** 每次使用可节省 32 字节，自 [2012 年以来][Bitcoin Core 0.6] 得到了广泛使用。使用压缩公钥的输入数量从一月份的约 96% 上升到十二月份的 98%。
 
-- **<!--segwit-spends-->Segwit 支出** 可将见证数据对手续费的影响减少最多 75%，具体取决于 segwit 的使用方式（见下图）。使用 segwit 的输入数量从一月份的约 10% 上升到十二月份的 38%。
+- **<!--segwit-spends-->****Segwit 支出** 可将见证数据对手续费的影响减少最多 75%，具体取决于 segwit 的使用方式（见下图）。使用 segwit 的输入数量从一月份的约 10% 上升到十二月份的 38%。
 
-- **<!--batched-payment-->批量支付** 将输入或输入集的大小和手续费开销分摊到更多的输出上，使其成为高频支付者（如交易所）[节省最多 80% 手续费][payment batching]的绝佳方式。全年向三个或更多输出支付的交易数量徘徊在 11% 左右。注意：这个启发法还包括 coinjoin 交易和其他不严格是批量支付的技术。
+- **<!--batched-payments-->****批量支付** 将输入或输入集的大小和手续费开销分摊到更多的输出上，使其成为高频支付者（如交易所）[节省最多 80% 手续费][payment batching]的绝佳方式。全年向三个或更多输出支付的交易数量徘徊在 11% 左右。注意：这个启发法还包括 coinjoin 交易和其他不严格是批量支付的技术。
 
-- **<!--opt-in-rbf-->选择性 RBF**（Replace-by-Fee） 允许高效的手续费提升，使支付者可以从低手续费开始，然后再增加出价。信号 RBF 的交易数量从一月份的约 4% 上升到十二月份的 6%。
+- **<!--opt-in-rbf-->****选择性 RBF**（Replace-by-Fee） 允许高效的手续费提升，使支付者可以从低手续费开始，然后再增加出价。信号 RBF 的交易数量从一月份的约 4% 上升到十二月份的 6%。
 
 ![Plot of wrapped and native segwit use in 2018](/img/posts/2018-12-segwit.png)
 
 Segwit 支出有两类：
 
-- **<!--nested-->嵌套** Segwit 将扩展机制放在向后兼容的 P2SH 脚本内，使其与几乎所有软件兼容，但无法实现其全部效率。使用嵌套 segwit 的输入数量从一月份的约 10% 上升到十二月份的 33%。
+- **<!--nested-->****嵌套** Segwit 将扩展机制放在向后兼容的 P2SH 脚本内，使其与几乎所有软件兼容，但无法实现其全部效率。使用嵌套 segwit 的输入数量从一月份的约 10% 上升到十二月份的 33%。
 
-- **<!--native-->原生** Segwit 更高效，但仅与支持发送到 segwit 地址的钱包兼容。原生 segwit 输入的数量从一月份的几乎 0% 上升到十二月份的约 5%。
+- **<!--native-->****原生** Segwit 更高效，但仅与支持发送到 segwit 地址的钱包兼容。原生 segwit 输入的数量从一月份的几乎 0% 上升到十二月份的约 5%。
 
 ![Plot of UTXO set changes per block in 2018](/img/posts/2018-12-utxo.png)
 
