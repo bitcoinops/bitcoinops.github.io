@@ -11,17 +11,17 @@ lang: zh
 
 ## 行动项
 
-- **<!--upgrade-to-clightning-0-7-->升级到 C-Lightning 0.7：**此新主要版本的最显著功能是一个插件系统，允许你的代码提供自定义 RPC 或在内部 lightningd 事件上运行。该版本还实现了协议增强和若干错误修复。请参阅[发布公告][cl 0.7]了解详细信息并考虑[升级][cl upgrade]。
+- **<!--upgrade-to-c-lightning-0-7-->****升级到 C-Lightning 0.7：**此新主要版本的最显著功能是一个插件系统，允许你的代码提供自定义 RPC 或在内部 lightningd 事件上运行。该版本还实现了协议增强和若干错误修复。请参阅[发布公告][cl 0.7]了解详细信息并考虑[升级][cl upgrade]。
 
 ## 新闻
 
-- **<!--bitcoin-dev-mailing-list-outage-->Bitcoin-Dev 邮件列表中断：**发送到 Bitcoin-Dev 邮件列表的邮件未能传递给读者。列表管理员正试图解决该问题，并且还在调查替代列表提供者。由 Linux Foundation 托管的其他比特币相关列表（例如 Lightning-Dev 列表）似乎没有遇到同样的问题。未来的 Optech Newsletter 将提到订阅者为继续接收协议讨论而需要采取的任何行动。
+- **<!--bitcoin-dev-mailing-list-outage-->****Bitcoin-Dev 邮件列表中断：**发送到 Bitcoin-Dev 邮件列表的邮件未能传递给读者。列表管理员正试图解决该问题，并且还在调查替代列表提供者。由 Linux Foundation 托管的其他比特币相关列表（例如 Lightning-Dev 列表）似乎没有遇到同样的问题。未来的 Optech Newsletter 将提到订阅者为继续接收协议讨论而需要采取的任何行动。
 
-- **<!--cleanup-soft-fork-proposal-->清理软分叉提案：**Matt Corallo 提交了一个 [Bitcoin Core 拉取请求][Bitcoin Core #15482]并尝试向 Bitcoin-Dev 邮件列表发送一个[提议的 BIP][BIP-cleanup]，以进行可能的软分叉，消除可能让某人攻击 Bitcoin 网络或其用户的几个边缘情况漏洞。这些漏洞已被公开多年，人们认为任何实际攻击都将代价过高而无法获利，或可以足够快地处理以防止威胁到比特币的生存能力。然而，最好是主动修复这些漏洞而不是被动应对。
+- **<!--cleanup-soft-fork-proposal-->****清理软分叉提案：**Matt Corallo 提交了一个 [Bitcoin Core 拉取请求][Bitcoin Core #15482]并尝试向 Bitcoin-Dev 邮件列表发送一个[提议的 BIP][BIP-cleanup]，以进行可能的软分叉，消除可能让某人攻击 Bitcoin 网络或其用户的几个边缘情况漏洞。这些漏洞已被公开多年，人们认为任何实际攻击都将代价过高而无法获利，或可以足够快地处理以防止威胁到比特币的生存能力。然而，最好是主动修复这些漏洞而不是被动应对。
 
   Optech 用以下要点总结了该提案，但我们认识到许多读者可能不熟悉 `OP_CODESEPARATOR`、`FindAndDelete()`、时间扭曲攻击和默克尔树漏洞等概念的细节，所以我们还在本期 Newsletter 中附上了一个附录，提供关于这些主题的额外背景信息。
 
-  - **<!--prevent-use-of-->防止在传统交易中使用 `OP_CODESEPARATOR` 和 `FindAndDelete()`：**目前没有人被知晓在传统（非 segwit）Bitcoin 交易中使用这两个功能，但攻击者可以滥用它们显著增加验证非标准交易所需的计算工作量，从而创建可能需要半小时或更长时间来验证的区块。大多数读者可能从未听说过这些功能，因为没有已知的有用行为是它们不能以其他方式完成的，但仍需要 `OP_CODESEPARATOR` 的人可以使用 [BIP143][] segwit 版本，它以避免计算爆炸的方式实现了该功能。自 2018 年 6 月发布的 Bitcoin Core 0.16.1 以来，这些功能的使用未被默认挖掘或传播。
+  - **<!--prevent-use-of-op-codeseparator-and-findanddelete-in-legacy-transactions-->****防止在传统交易中使用 `OP_CODESEPARATOR` 和 `FindAndDelete()`：**目前没有人被知晓在传统（非 segwit）Bitcoin 交易中使用这两个功能，但攻击者可以滥用它们显著增加验证非标准交易所需的计算工作量，从而创建可能需要半小时或更长时间来验证的区块。大多数读者可能从未听说过这些功能，因为没有已知的有用行为是它们不能以其他方式完成的，但仍需要 `OP_CODESEPARATOR` 的人可以使用 [BIP143][] segwit 版本，它以避免计算爆炸的方式实现了该功能。自 2018 年 6 月发布的 Bitcoin Core 0.16.1 以来，这些功能的使用未被默认挖掘或传播。
 
 {% comment %}<!--
       ## How long until all bitcoins are released by a timewarp
@@ -34,13 +34,13 @@ lang: zh
          ...:
          18.666666666666668 -->{% endcomment %}
 
-  - **<!--fix-the-time-warp-attack-->修复时间扭曲攻击：**此攻击允许控制大多数算力的矿工即使总网络算力稳定或增加，也能维持或降低挖矿难度，使其能够比协议目标更快地生产区块。区块生产的增加将加速比特币区块补贴的释放，可能在攻击开始后的三周内释放所有剩余比特币。然而，攻击的设置至少在产生任何影响前会有一周的时间公开可见，因此在没有矿工卡特尔尝试的情况下，修复它并不是一个高优先级。提议的软分叉通过要求新难度周期中的第一个区块时间戳不早于前一周期最后一个区块的时间戳前 600 秒来解决这个问题。参见 [Newsletter #10][] 提到的邮件列表讨论。
+  - **<!--fix-the-time-warp-attack-->****修复时间扭曲攻击：**此攻击允许控制大多数算力的矿工即使总网络算力稳定或增加，也能维持或降低挖矿难度，使其能够比协议目标更快地生产区块。区块生产的增加将加速比特币区块补贴的释放，可能在攻击开始后的三周内释放所有剩余比特币。然而，攻击的设置至少在产生任何影响前会有一周的时间公开可见，因此在没有矿工卡特尔尝试的情况下，修复它并不是一个高优先级。提议的软分叉通过要求新难度周期中的第一个区块时间戳不早于前一周期最后一个区块的时间戳前 600 秒来解决这个问题。参见 [Newsletter #10][] 提到的邮件列表讨论。
 
-  - **<!--forbid-use-of-non-push-opcodes-in-scriptsig-->禁止在 scriptSig 中使用非推送操作码：**自 2010 年 7 月修复关键安全漏洞的[修复][1opreturn fix]以来，每个 scriptSig 在与一个币的 scriptPubKey 结合进行脚本验证之前都会被评估为仅包含数据元素。这几乎消除了在 scriptSig 中使用非数据推送操作码的任何理由（例外情况是它可能在堆栈上放置重复或排列的数据元素时略微更有效）。然而，因为比特币仍然技术上允许在 scriptSig 中使用非推送操作码，这可能被攻击者滥用以增加验证包含在区块中的交易所需的工作量。自 2011 年以来，禁止在 scriptSig 中使用非推送操作码已成为默认的中继和挖矿策略，并且在设计时已为发送到 [BIP16][] P2SH 和 [BIP141][] segwit 的支付禁止。
+  - **<!--forbid-use-of-non-push-opcodes-in-scriptsig-->****禁止在 scriptSig 中使用非推送操作码：**自 2010 年 7 月修复关键安全漏洞的[修复][1opreturn fix]以来，每个 scriptSig 在与一个币的 scriptPubKey 结合进行脚本验证之前都会被评估为仅包含数据元素。这几乎消除了在 scriptSig 中使用非数据推送操作码的任何理由（例外情况是它可能在堆栈上放置重复或排列的数据元素时略微更有效）。然而，因为比特币仍然技术上允许在 scriptSig 中使用非推送操作码，这可能被攻击者滥用以增加验证包含在区块中的交易所需的工作量。自 2011 年以来，禁止在 scriptSig 中使用非推送操作码已成为默认的中继和挖矿策略，并且在设计时已为发送到 [BIP16][] P2SH 和 [BIP141][] segwit 的支付禁止。
 
-  - **<!--limit-legacy-and-bip143-sighashes-to-the-currently-defined-set-->将传统和 BIP143 签名哈希限制为当前定义的集合：**你通过生成一个数字签名来证明一笔交易是你比特币的授权支出，该签名承诺对支出交易的哈希。然而，为了提供额外的灵活性，比特币允许你使用一个一字节*签名哈希类型*来指示究竟哪些交易部分（及相关数据）包含在哈希中。到目前为止，这个字节的 256 个可能值中只有 6 个具有定义的含义——如果你使用任何其他值，你的签名将承诺几乎与 `SIGHASH_ALL` 使用的数据完全相同。唯一的区别是签名哈希必须承诺其自己的签名哈希标志，这对于否则等效的数据将不同，并且会使缓存复杂化。自采用 [BIP141][] segwit 以来，预期任何新的签名哈希类型都将通过新的见证版本引入，因此删除指定未定义签名哈希类型的能力允许改进的缓存以减少节点开销。
+  - **<!--limit-legacy-and-bip143-sighashes-to-the-currently-defined-set-->****将传统和 BIP143 签名哈希限制为当前定义的集合：**你通过生成一个数字签名来证明一笔交易是你比特币的授权支出，该签名承诺对支出交易的哈希。然而，为了提供额外的灵活性，比特币允许你使用一个一字节*签名哈希类型*来指示究竟哪些交易部分（及相关数据）包含在哈希中。到目前为止，这个字节的 256 个可能值中只有 6 个具有定义的含义——如果你使用任何其他值，你的签名将承诺几乎与 `SIGHASH_ALL` 使用的数据完全相同。唯一的区别是签名哈希必须承诺其自己的签名哈希标志，这对于否则等效的数据将不同，并且会使缓存复杂化。自采用 [BIP141][] segwit 以来，预期任何新的签名哈希类型都将通过新的见证版本引入，因此删除指定未定义签名哈希类型的能力允许改进的缓存以减少节点开销。
 
-  - **<!--forbid-transactions-64-bytes-or-smaller-->禁止 64 字节或更小的交易：**比特币的默克尔树中派生的元素（节点）是通过将两个 32 字节的哈希摘要组合成一个 64 字节的二进制 blob 然后对其进行哈希形成的。然而，64 字节交易的交易标识符（txid）也是通过对一个 64 字节二进制 blob 进行哈希生成的。这可能允许交易伪装成一对哈希，或者一对哈希伪装成交易，从而创建比特币默克尔证明和 SPV 证明的漏洞。因为没有已知的方法可以通过 64 字节或更小的交易安全地支出比特币，提议的软分叉将禁止此类交易包含在区块中。
+  - **<!--forbid-transactions-64-bytes-or-smaller-->****禁止 64 字节或更小的交易：**比特币的默克尔树中派生的元素（节点）是通过将两个 32 字节的哈希摘要组合成一个 64 字节的二进制 blob 然后对其进行哈希形成的。然而，64 字节交易的交易标识符（txid）也是通过对一个 64 字节二进制 blob 进行哈希生成的。这可能允许交易伪装成一对哈希，或者一对哈希伪装成交易，从而创建比特币默克尔证明和 SPV 证明的漏洞。因为没有已知的方法可以通过 64 字节或更小的交易安全地支出比特币，提议的软分叉将禁止此类交易包含在区块中。
 
   该提案计划使用 [BIP9][] 激活机制，信号从 2019 年 8 月 1 日开始，如果未激活则在一年后结束。由于这仍然是一个提案，需要协议专家进行评估，在完整节点中实现（参见 Corallo 的 [PR][Bitcoin Core #15482]），并被用户自愿采用以便强制执行。
 
@@ -107,7 +107,7 @@ Bitcoin 0.1 及其后所有版本实现的共识规则要求一个区块的时�
 
 更多信息：
 
-- Jameson Lopp 的 [关于 Bitcoin 时间戳可靠性的文章][lopp timestamp]
+- **<!--article-about-bitcoin-timestamp-reliability-->**Jameson Lopp 的 [关于 Bitcoin 时间戳可靠性的文章][lopp timestamp]
 
 - **<!--proposal-to-use-timewarp-to-eliminate-the-need-for-hard-forks-->**Mark Friedenbach 的[使用时间扭曲消除硬分叉需求的提议][Friedenbach proposal]；另请参见我们在 [Newsletter #16][] 中的摘要 - 提议的清理软分叉消除了使用这个有争议想法的能力
 
@@ -144,9 +144,9 @@ _ scriptPubKey
 
 更多信息：
 
-- Sergio Demian Lerner 的 [CVE-2017-12842 描述][cve-2017-12842 description]
+- **<!--cve-2017-12842-description-->**Sergio Demian Lerner 的 [CVE-2017-12842 描述][cve-2017-12842 description]
 
-- **<!--mailing-list-discussion-by-various-authors-->**各种作者在[邮件列表讨论][bitcoin-dev merkle tree]
+- **<!--mailing-list-discussion-->**各种作者在[邮件列表讨论][bitcoin-dev merkle tree]
 
 ### 传统交易验证
 
@@ -166,13 +166,13 @@ _ scriptPubKey
 
 更多信息：
 
-- Rusty Russell 的 [The Megatransaction][megatransaction] - 一个需要 25 秒验证的区块
+- **<!--the-megatransaction-->**Rusty Russell 的 [The Megatransaction][megatransaction] - 一个需要 25 秒验证的区块
 
-- Sergio Demian Lerner 的 [CVE-2013-2292 描述][CVE-2013-2292 description] - 一个理论上假设需要三分钟验证的区块
+- **<!--cve-2013-2292-description-->**Sergio Demian Lerner 的 [CVE-2013-2292 描述][CVE-2013-2292 description] - 一个理论上假设需要三分钟验证的区块
 
-- Peter Todd 的 [关于 `OP_CODESEPARATOR` 的猜测][todd codesep] - 关于在修复 `1 OP_RETURN` 错误之前如何使用 `OP_CODESEPARATOR` 以及 Nakamoto 是否考虑使用它来启用签名委托的信息（授权支出输出的签名者能够在不创建链上交易的情况下授予他人支出权限）
+- **<!--speculations-on-op-codeseparator-->**Peter Todd 的 [关于 `OP_CODESEPARATOR` 的猜测][todd codesep] - 关于在修复 `1 OP_RETURN` 错误之前如何使用 `OP_CODESEPARATOR` 以及 Nakamoto 是否考虑使用它来启用签名委托的信息（授权支出输出的签名者能够在不创建链上交易的情况下授予他人支出权限）
 
-- [<!--op-->`1 OP_RETURN` 错误描述][1return] - 一个允许任何人支出他人比特币的已修复错误。被称为“迄今为止 Bitcoin 最大的安全问题”。Satoshi Nakamoto 的[对此错误的修复][1opreturn fix]涉及将 scriptSig 的评估与每个支出对应的 scriptPubKey 分离，实际上消除了任何使用 `OP_CODESEPARATOR` 和 `FindAndDelete()` 的用途
+- **<!--op-1-op-return-bug-description-->**[<!--op-->`1 OP_RETURN` 错误描述][1return] - 一个允许任何人支出他人比特币的已修复错误。被称为“迄今为止 Bitcoin 最大的安全问题”。Satoshi Nakamoto 的[对此错误的修复][1opreturn fix]涉及将 scriptSig 的评估与每个支出对应的 scriptPubKey 分离，实际上消除了任何使用 `OP_CODESEPARATOR` 和 `FindAndDelete()` 的用途
 
 ## 更正
 
