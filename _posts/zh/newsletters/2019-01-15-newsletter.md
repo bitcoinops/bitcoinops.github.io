@@ -11,11 +11,11 @@ lang: zh
 
 ## 行动项
 
-- **<!--upgrade-to-c-lightning-0.6.3-->升级到 C-Lightning 0.6.3：** 这个[版本][cl 0.6.3]修复了一个可以用来使 C-Lightning 节点崩溃并可能窃取资金的远程 DoS 漏洞。详情请参阅下文的*值得注意的代码更改*部分。此版本还包括其他不太严重的错误修复和新功能。
+- **<!--upgrade-to-c-lightning-0-6-3-->****升级到 C-Lightning 0.6.3：** 这个[版本][cl 0.6.3]修复了一个可以用来使 C-Lightning 节点崩溃并可能窃取资金的远程 DoS 漏洞。详情请参阅下文的*值得注意的代码更改*部分。此版本还包括其他不太严重的错误修复和新功能。
 
 ## 新闻
 
-- **<!--weak-signature-nonces-discovered-->发现弱签名随机数：** 研究人员 Joachim Breitner 和 Nadia Heninger 的一篇预印本[论文][weak nonces]描述了他们如何通过寻找使用小于 256 位预期熵的随机数生成的签名发现了数百个比特币私钥。Gregory Maxwell 的独立[代码考古][gmaxwell bitcore]表明，主要罪魁祸首可能是 BitPay Bitcore 软件，该软件在 2014 年 7 月左右引入了一个漏洞，并在大约一个月后发布了修复程序。（注意：BitPay Bitcore 与 Bitcoin Core 无关。）从那时起，该漏洞传播到依赖 Bitcore 的软件如 BitPay Copay。论文中发现的约 97% 的错误签名与 Maxwell 的 Copay 假设兼容，并且该论文为其余 3% 的签名提供了合理的解释，这表明只要用户不继续使用通过早期漏洞程序花费比特币的地址，现代钱包的用户可能是安全的。
+- **<!--weak-signature-nonces-discovered-->****发现弱签名随机数：** 研究人员 Joachim Breitner 和 Nadia Heninger 的一篇预印本[论文][weak nonces]描述了他们如何通过寻找使用小于 256 位预期熵的随机数生成的签名发现了数百个比特币私钥。Gregory Maxwell 的独立[代码考古][gmaxwell bitcore]表明，主要罪魁祸首可能是 BitPay Bitcore 软件，该软件在 2014 年 7 月左右引入了一个漏洞，并在大约一个月后发布了修复程序。（注意：BitPay Bitcore 与 Bitcoin Core 无关。）从那时起，该漏洞传播到依赖 Bitcore 的软件如 BitPay Copay。论文中发现的约 97% 的错误签名与 Maxwell 的 Copay 假设兼容，并且该论文为其余 3% 的签名提供了合理的解释，这表明只要用户不继续使用通过早期漏洞程序花费比特币的地址，现代钱包的用户可能是安全的。
 
   如果你曾使用受影响版本的 Bitcore（0.1.28 到 0.1.35）、Copay（0.4.1 到 0.4.3）或其他易受攻击的软件，你应该创建一个新钱包文件，将所有资金从旧钱包文件发送到新钱包中的地址，并停止使用以前的钱包文件。在设计签署比特币交易的软件时，你应该优先使用生成签名随机数的同行评审实现，如实现了 [RFC6979][] 的 [libsecp256k1][]。
 
