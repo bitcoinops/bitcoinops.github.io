@@ -15,17 +15,17 @@ lang: zh
 
 ## 新闻
 
-- **<!--discussion-about-tagging-outputs-to-enable-restricted-features-on-spending-->关于标记输出以启用受限支出功能的讨论：**[BIP118][] SIGHASH_NOINPUT_UNSAFE（noinput）提案允许生成授权支出一个 UTXO 的签名的人可选择允许该签名重复用于支出发送到相同公钥的其他 UTXO。这在与包含相同公钥的协议（例如支付通道）一起使用时可以启用新功能（参见提议的闪电网络 [Eltoo][]层），但它也可能使得在用户重用地址时发生*重放攻击*，导致资金损失。例如：Alice 使用她之前收到的一个硬币到她的一个地址，并使用 SIGHASH_NOINPUT_UNSAFE 签署了对 Bob 的支出。后来有人向 Alice 的同一地址支付了一些钱，意图向她发送更多的钱。Bob（或其他任何人）现在可以通过重放 Alice 之前的签名将该输出发送给 Bob。
+- **<!--discussion-about-tagging-outputs-to-enable-restricted-features-on-spending-->****关于标记输出以启用受限支出功能的讨论：**[BIP118][] SIGHASH_NOINPUT_UNSAFE（noinput）提案允许生成授权支出一个 UTXO 的签名的人可选择允许该签名重复用于支出发送到相同公钥的其他 UTXO。这在与包含相同公钥的协议（例如支付通道）一起使用时可以启用新功能（参见提议的闪电网络 [Eltoo][]层），但它也可能使得在用户重用地址时发生*重放攻击*，导致资金损失。例如：Alice 使用她之前收到的一个硬币到她的一个地址，并使用 SIGHASH_NOINPUT_UNSAFE 签署了对 Bob 的支出。后来有人向 Alice 的同一地址支付了一些钱，意图向她发送更多的钱。Bob（或其他任何人）现在可以通过重放 Alice 之前的签名将该输出发送给 Bob。
 
   避免这种事故的一种方法是简单地在功能名称后附加“UNSAFE”，鼓励开发人员在其工具中实施之前了解协议的细微差别。然而，一些开发者一直在寻找额外的方法来防止问题发生。去年十二月，Johnson Lau [提议][lau output tagging]只有在创建时已被特别标记为允许使用 noinput 的输出，才能使用 noinput。这仅允许在支付者和接收者都同意的情况下（如支付通道）使用该功能，防止任何误传或误解导致资金损失。
 
   [上周重新讨论][nick output tagging]和本周的讨论分析了这对提议的二层协议（如 Eltoo 和 [Channel Factories][]）的影响。尽管标记增加了复杂性，但普遍认为它不会从根本上增加成本或降低所描述提案的有效性，尽管它可能使它们的隐私性略有降低。
 
-- **<!--bitcoin-core-preliminary-hardware-wallet-support-->Bitcoin Core 初步硬件钱包支持：**经过数月的渐进改进，本周合并了支持 Bitcoin Core 主开发分支与硬件钱包通过[硬件钱包交互][HWI]（HWI）工具接收和发送交易所需的最终一组 PR。HWI 是 Bitcoin Core 项目的一部分，但尚未与 Bitcoin Core 软件一起分发，目前仅可通过命令行访问。它提供了一个坚实的基础，可以构建工具，使得使用 Bitcoin Core 原生钱包和完整验证节点的外部密钥存储变得容易。还请注意，已经可以将硬件钱包连接到使用 [Electrum Personal Server][] 连接到你的完整节点的 Electrum 钱包。
+- **<!--bitcoin-core-preliminary-hardware-wallet-support-->****Bitcoin Core 初步硬件钱包支持：**经过数月的渐进改进，本周合并了支持 Bitcoin Core 主开发分支与硬件钱包通过[硬件钱包交互][HWI]（HWI）工具接收和发送交易所需的最终一组 PR。HWI 是 Bitcoin Core 项目的一部分，但尚未与 Bitcoin Core 软件一起分发，目前仅可通过命令行访问。它提供了一个坚实的基础，可以构建工具，使得使用 Bitcoin Core 原生钱包和完整验证节点的外部密钥存储变得容易。还请注意，已经可以将硬件钱包连接到使用 [Electrum Personal Server][] 连接到你的完整节点的 Electrum 钱包。
 
   使用硬件安全模块（HSM）、冷钱包和多重签名等先进安全技术的组织可能需要调查 HWI 的设计及其如何与使用[输出脚本描述符][descriptor]和 [BIP174][] PSBT 的 Bitcoin Core 交互。这些下一代密钥和交易数据（及元数据）编码，以及其他进展如 [miniscript][] 策略语言，使得构建和操作与完整节点交互的安全比特币存储解决方案比以往更容易。
 
-- **<!--bitcoin-core-freeze-week-->Bitcoin Core 冻结周：**按照[计划][Bitcoin Core #14438]，项目已停止接受即将发布的 0.18 主要版本的新功能。正如经常发生的情况，这之前是一周左右的最后时刻审查和合并新功能，这反映在本周的*值得注意的更改*部分中。接下来的两周将专注于开发人员测试和错误修复，随后发布供用户测试的候选版本（RC）。主要版本的 RC 周期通常持续两到四周，然后才最终发布。
+- **<!--bitcoin-core-freeze-week-->****Bitcoin Core 冻结周：**按照[计划][Bitcoin Core #14438]，项目已停止接受即将发布的 0.18 主要版本的新功能。正如经常发生的情况，这之前是一周左右的最后时刻审查和合并新功能，这反映在本周的*值得注意的更改*部分中。接下来的两周将专注于开发人员测试和错误修复，随后发布供用户测试的候选版本（RC）。主要版本的 RC 周期通常持续两到四周，然后才最终发布。
 
   相关的是，项目倾向于在新开发周期的早期合并主要新功能，以便它们尽可能多地进行额外的开发人员测试。在 0.18 分支大约在 3 月 1 日创建之后，任何希望在 0.19 版本（预计 2019 年 10 月发布）中看到某个功能的人建议要么在接下来的两个月内尝试为其打开 PR，要么协助审查现有该功能的 PR。一些需要更多审查或开发的现有 PR 包括支持 BIP156 蒲公英[隐私增强交易中继][Bitcoin Core #13947]、BIP151 [加密 P2P 连接][Bitcoin Core #14032]、BIP157/158 [紧凑区块过滤器][Bitcoin Core #14121]、使用 GNU Guix 简化的[可重复构建][Bitcoin Core #15277]、改进对[外部签名者][Bitcoin Core #14912]（如硬件钱包）的支持、[将钱包与节点分离][Bitcoin Core #10973]以及允许[RBF 对任何交易][Bitcoin Core #10823]在其在内存池中存在超过几小时后。
 
@@ -85,4 +85,4 @@ lang: zh
 [channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [electrum personal server]: https://github.com/chris-belcher/electrum-personal-server
 [key origin information]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification
-[newsletter #5]: /zh/newsletters/2018/07/24/#bitcoin-core-9662-bitcoin-core-9662
+[newsletter #5]: /zh/newsletters/2018/07/24/#bitcoin-core-9662
