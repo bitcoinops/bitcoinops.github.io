@@ -12,11 +12,11 @@ lang: zh
 
 ## 行动项
 
-- **<!--bech32-security-update-for-c-implementation-->Bech32 安全更新用于 C 语言实现：**如果你使用的是 C 语言的 bech32 地址解码的[参考实现][bech32 c]，你需要[更新][bech32 patch]来修复一个潜在的溢出漏洞。其他参考实现不受影响；详细信息请参见下面的新闻部分。
+- **<!--bech32-security-update-for-c-implementation-->****Bech32 安全更新用于 C 语言实现：**如果你使用的是 C 语言的 bech32 地址解码的[参考实现][bech32 c]，你需要[更新][bech32 patch]来修复一个潜在的溢出漏洞。其他参考实现不受影响；详细信息请参见下面的新闻部分。
 
 ## 新闻
 
-- **<!--temporary-reduction-in-segwit-block-production-->临时减少 segwit 区块产出：** Optech 调查了关于一个挖矿池停止产生包含 segwit 交易的区块的报道。我们发现 segwit 区块的数量在 10 月 20 日左右突然减少，并在几天前开始回升至正常水平。
+- **<!--temporary-reduction-in-segwit-block-production-->****临时减少 segwit 区块产出：** Optech 调查了关于一个挖矿池停止产生包含 segwit 交易的区块的报道。我们发现 segwit 区块的数量在 10 月 20 日左右突然减少，并在几天前开始回升至正常水平。
 
     ![最近几周包含 segwit 交易的区块百分比](/img/posts/segwit-blocks-2018-11.png)
 
@@ -36,11 +36,11 @@ lang: zh
 
     [Bitcoin Core 0.17.0.1][] 更新了 bitcoind 的内置 GBT 文档，提到需要启用 segwit，并且在开发者讨论中已经提议在未来的某个版本中默认启用 segwit GBT（但仍然提供向后兼容的选项来禁用它）。
 
-- **<!--overflow-bug-in-reference-c-language-bech32-implementation-->参考 C 语言 bech32 实现的溢出漏洞：** Trezor [公开披露][bech32 overflow blog]了他们在 C 编程语言的 bech32 地址函数的[参考实现][bech32 c]中发现的一个漏洞。已经发布了一个[补丁][bech32 patch]来修复这个漏洞。该漏洞不影响其他用其他编程语言编写的[参考实现][bech32 refs]的用户（[来源][achow bech32]）。
+- **<!--overflow-bug-in-reference-c-language-bech32-implementation-->****参考 C 语言 bech32 实现的溢出漏洞：** Trezor [公开披露][bech32 overflow blog]了他们在 C 编程语言的 bech32 地址函数的[参考实现][bech32 c]中发现的一个漏洞。已经发布了一个[补丁][bech32 patch]来修复这个漏洞。该漏洞不影响其他用其他编程语言编写的[参考实现][bech32 refs]的用户（[来源][achow bech32]）。
 
     当 Trezor 负责任地向多个其他项目披露这个漏洞时，他们从 Ledger 那里得知 [trezor-crypto][] 库中存在另一个漏洞，该库用于 Bitcoin Cash 风格的地址，这些地址与比特币 bech32 地址使用相同的基本结构。也为此发布了一个[补丁][cashaddr patch]。
 
-- **<!--discussion-about-improving-Lightning-payments-->关于改进闪电网络支付的讨论：**在闪电网络（LN）协议开发者之间即将进行的会议之前，Rusty Russell 开启了一个[讨论][ln bolt11 ss]，关于他认为可能通过在 [Newsletter #16][] 中描述的无脚本脚本解决的两个问题。
+- **<!--discussion-about-improving-lightning-payments-->****关于改进闪电网络支付的讨论：**在闪电网络（LN）协议开发者之间即将进行的会议之前，Rusty Russell 开启了一个[讨论][ln bolt11 ss]，关于他认为可能通过在 [Newsletter #16][] 中描述的无脚本脚本解决的两个问题。
 
     1. 一个发票最多只能支付一次。能够让多人支付同一个发票会很好，例如一个静态的捐赠发票或每月的重复支付。
 

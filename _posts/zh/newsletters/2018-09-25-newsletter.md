@@ -9,7 +9,7 @@ lang: zh
 ---
 本周 Newsletter 包括与上周 Bitcoin Core 0.16.3 和 Bitcoin Core 0.17RC4 的安全发布相关的行动项和新闻、过去一个月来自 Bitcoin Stack Exchange 上的热门问题和回答以及对流行的比特币基础设施项目值得注意的合并的简短描述。
 
-- **升级到 Bitcoin Core 0.16.3 以修复 CVE-2018-17144：** 如上周五（UTC）广泛报道的，上周 Optech Newsletter 中描述的拒绝服务漏洞现在被知道可以让矿工欺骗受影响的系统接受无效的比特币。
+- **<!--upgrade-to-bitcoin-core-0-16-3-to-fix-cve-2018-17144-->****升级到 Bitcoin Core 0.16.3 以修复 CVE-2018-17144：** 如上周五（UTC）广泛报道的，上周 Optech Newsletter 中描述的拒绝服务漏洞现在被知道可以让矿工欺骗受影响的系统接受无效的比特币。
 
     在撰写本文时，据信大多数大型比特币服务和矿工已经升级，这很可能确保任何利用该漏洞的区块将会迅速被最多工作量证明链重组掉——降低了 SPV 客户端和未升级节点的风险。
 
@@ -23,19 +23,19 @@ lang: zh
 
     * [0.14.3][]（回溯到旧版本，可能有其他问题）
 
-- **<!--allocate-time-to-test-bitcoin-core-0.17rc4-->分配时间测试 Bitcoin Core 0.17RC4：** Bitcoin Core 已上传 0.17RC4 的[二进制文件][bcc 0.17]。测试非常受欢迎，并且可以帮助确保最终版本的质量。
+- **<!--allocate-time-to-test-bitcoin-core-0-17rc4-->****分配时间测试 Bitcoin Core 0.17RC4：** Bitcoin Core 已上传 0.17RC4 的[二进制文件][bcc 0.17]。测试非常受欢迎，并且可以帮助确保最终版本的质量。
 
 ## 新闻
 
-- **<!--cve-2018-17144-->CVE-2018-17144:** 关于此漏洞的最初和后续信息披露是本周唯一的重要新闻。想要获取更多信息，我们建议阅读以下来源：
+- **<!--cve-2018-17144-->****CVE-2018-17144:** 关于此漏洞的最初和后续信息披露是本周唯一的重要新闻。想要获取更多信息，我们建议阅读以下来源：
 
-    - [Bitcoin Core 完整披露][Bitcoin Core full disclosure]
+    - **<!--bitcoin-core-full-disclosure-->**[Bitcoin Core 完整披露][Bitcoin Core full disclosure]
 
-    - **<!--original-confidential-report-->[最初的机密报告][Original confidential report]，** 现在已公开
+    - **<!--original-confidential-report-->**[最初的机密报告][Original confidential report]， 现在已公开
 
-    - **<!--additional-technical-information-->由 Andrew Chow 提供的[额外技术信息][bse 79484]（下文也有描述）**
+    - **<!--additional-technical-information-->**由 Andrew Chow 提供的[额外技术信息][bse 79484]（下文也有描述）
 
-    - [CVE-2018-17144 条目][cve-2018-17144], 国家漏洞数据库（NVE）条目，由 Luke Dashjr 更新
+    - **<!--cve-2018-17144-entry-->**[CVE-2018-17144 条目][cve-2018-17144], 国家漏洞数据库（NVE）条目，由 Luke Dashjr 更新
 
     我们知道有几位非常有洞察力的人目前正在反思这个漏洞、其根本原因以及减少未来严重漏洞风险的可能方法。对于 Bitcoin Core 内部讨论来说，特别好的一个场合将是 10 月 8-10 日在东京 Scaling Bitcoin 会议之后的 [CoreDev.tech][] 会议。我们计划跟进并提供任何重要结论的链接。
 
@@ -45,13 +45,13 @@ lang: zh
 
 *[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选地之一——或者当我们有几个空闲时间帮助回答其他人问题时。在这个月度特色中，我们突出展示自上次更新以来得票最多的一些问题和答案。*
 
-- **<!--how-cve-2018-17144-works-->[CVE-2018-17144 是如何工作的？][bse 79484]** Andrew Chow 提供了一个详细解释，说明了在受此漏洞影响的版本中，Bitcoin Core 如何可能崩溃或被欺骗接受同一输入的多次花费。
+- **<!--how-does-cve-2018-17144-work-->**[CVE-2018-17144 是如何工作的？][bse 79484] Andrew Chow 提供了一个详细解释，说明了在受此漏洞影响的版本中，Bitcoin Core 如何可能崩溃或被欺骗接受同一输入的多次花费。
 
-- [为什么比特币不使用 UDP 而是 TCP？][bse 79175] Gregory Maxwell 描述了一个重要的比特币软件已经在使用 UDP 的案例，然后详细说明了为什么在流行的完整节点软件中没有实现 UDP 支持。他最后描述了一些如果实现了 UDP 支持可能获得的潜在好处。
+- **<!--why-doesn-t-bitcoin-use-udp-instead-of-tcp-->**[为什么比特币不使用 UDP 而是 TCP？][bse 79175] Gregory Maxwell 描述了一个重要的比特币软件已经在使用 UDP 的案例，然后详细说明了为什么在流行的完整节点软件中没有实现 UDP 支持。他最后描述了一些如果实现了 UDP 支持可能获得的潜在好处。
 
-- [如果你使用 Wasabi 钱包的 CoinJoin 混币，被交易所列入黑名单的可能性有多大？][bse 78654] Wasabi 钱包作者 Adam Ficsor 解释说，没有什么能阻止交易所拒绝通过 Wasabi 混合的资金，但 Wasabi 的几个特点（如要求的匿名集合为 100）可以帮助使封锁用户对业务不利。另外，他链接到一个可能允许用户绕过地址黑名单的工具。
+- **<!--how-likely-are-you-to-get-blacklisted-by-an-exchange-if-you-use-wasabi-wallet-s-coinjoin-mixing-->**[如果你使用 Wasabi 钱包的 CoinJoin 混币，被交易所列入黑名单的可能性有多大？][bse 78654] Wasabi 钱包作者 Adam Ficsor 解释说，没有什么能阻止交易所拒绝通过 Wasabi 混合的资金，但 Wasabi 的几个特点（如要求的匿名集合为 100）可以帮助使封锁用户对业务不利。另外，他链接到一个可能允许用户绕过地址黑名单的工具。
 
-- **<!--whats-the-minimum-number-for-a-bitcoin-private-key?-->[比特币私钥的最小数是多少？][bse 79472]** Mark Erhardt 和 Gregory Maxwell 在彼此一分钟内提供了答案，但截至撰写本文时，Nate Eldredge 对 Maxwell 答案的幽默改写比任何一个答案都获得了更多的赞。
+- **<!--what-s-the-minimum-number-for-a-bitcoin-private-key-->**[比特币私钥的最小数是多少？][bse 79472]Mark Erhardt 和 Gregory Maxwell 在彼此一分钟内提供了答案，但截至撰写本文时，Nate Eldredge 对 Maxwell 答案的幽默改写比任何一个答案都获得了更多的赞。
 
 ## 值得注意的提交
 
