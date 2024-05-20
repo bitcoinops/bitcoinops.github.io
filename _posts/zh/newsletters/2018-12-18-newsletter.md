@@ -11,19 +11,19 @@ lang: zh
 
 ## 行动项
 
-- **<!--help-test-bitcoin-core-0.17.1RC1-->帮助测试 Bitcoin Core 0.17.1RC1：** 该[维护版本][maintenance release]的第一个候选版本已被[上传][V0.17.1rc1]。企业和个人用户对守护程序和 GUI 的测试非常受欢迎，并有助于确保高质量的发布。
+- **<!--help-test-bitcoin-core-0-17-1rc1-->****帮助测试 Bitcoin Core 0.17.1RC1：** 该[维护版本][maintenance release]的第一个候选版本已被[上传][V0.17.1rc1]。企业和个人用户对守护程序和 GUI 的测试非常受欢迎，并有助于确保高质量的发布。
 
 ## 新闻
 
-- **<!--minisketch-library-released-->Minisketch 库发布：** 比特币开发人员 Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 一直在研究[优化的交易中继][optimized transaction relay]，如 [Newsletter #9][] 的新闻部分所述。这项研究的一个结果是他们发布了一个新的独立库，[libminisketch][]，它允许在大约预期差异本身的字节大小内传输两个信息集之间的差异。这可能听起来不令人兴奋——`rsync` 工具已经这样做了超过二十年——但 libminisketch 允许在不知道差异是什么的情况下传输它们。
+- **<!--minisketch-library-released-->****Minisketch 库发布：** 比特币开发人员 Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 一直在研究[优化的交易中继][optimized transaction relay]，如 [Newsletter #9][] 的新闻部分所述。这项研究的一个结果是他们发布了一个新的独立库，[libminisketch][]，它允许在大约预期差异本身的字节大小内传输两个信息集之间的差异。这可能听起来不令人兴奋——`rsync` 工具已经这样做了超过二十年——但 libminisketch 允许在不知道差异是什么的情况下传输它们。
 
   例如，Alice 有元素 1、2 和 3。Bob 有元素 1 和 3。尽管双方都不知道对方有哪些元素，Alice 可以发送一个大小为单个元素的*草图*给 Bob，该草图包含足够的信息让他重建元素 2。如果 Bob 拥有元素 1 和 2（没有 3），相同的草图可以让他重建元素 3。或者，如果 Bob 向 Alice 发送一个基于他两个元素集的草图，而 Alice 有她的三个元素集，她可以确定 Bob 缺少哪个元素并直接发送给他。
 
   这些草图可以为比特币 P2P 网络的未确认交易中继提供一种强大的新优化方式。当前的 gossip 机制让每个节点为其每个对等节点接收或发送每个交易的 32 字节标识符。例如，如果你有 100 个对等节点，你会发送或接收 3200 字节的公告，加上开销，对于一个平均仅 400 字节的交易。使用[模拟器][naumenko relay simulator]进行的早期估算表明，结合仅用于中继的缩短交易标识符的草图可以将总交易传播带宽减少 44 倍。草图还具有提供其他期望特性的潜力——例如，LN 协议开发人员 Rusty Russell 在 Lightning-Dev 邮件列表上发起了一个[线程][ln minisketch]，讨论使用它们发送 LN 路由表更新。
 
-- **<!--description-about-what-might-be-included-in-a-schnorr-taproot-soft-fork-->关于 Schnorr/Taproot 软分叉可能包含内容的描述：** 比特币协议开发人员 Anthony Towns 发布[发布][towns schnorr taproot]了一封电子邮件，详细描述了他认为应该包含在一个增加 Schnorr 签名方案和 Taproot 风格 MAST 的软分叉中的内容。这不是正式提案，但它类似于我们从其他开发人员那里听到的意见，因此应该提供当前思路的良好概述。
+- **<!--description-about-what-might-be-included-in-a-schnorr-taproot-soft-fork-->****关于 Schnorr/Taproot 软分叉可能包含内容的描述：** 比特币协议开发人员 Anthony Towns 发布[发布][towns schnorr taproot]了一封电子邮件，详细描述了他认为应该包含在一个增加 Schnorr 签名方案和 Taproot 风格 MAST 的软分叉中的内容。这不是正式提案，但它类似于我们从其他开发人员那里听到的意见，因此应该提供当前思路的良好概述。
 
-- **<!--ln-protocol-irc-meeting-->LN 协议 IRC 会议：** LN 的协议开发人员同意在收到一些开发人员的请求后，将他们定期举行的 LN 规范开发会议从 Google Hangout 转为 IRC 会议。[下次会议][ln irc meeting]将于 1 月 8 日星期二 19:00（UTC）举行。
+- **<!--ln-protocol-irc-meeting-->****LN 协议 IRC 会议：** LN 的协议开发人员同意在收到一些开发人员的请求后，将他们定期举行的 LN 规范开发会议从 Google Hangout 转为 IRC 会议。[下次会议][ln irc meeting]将于 1 月 8 日星期二 19:00（UTC）举行。
 
 ## 值得注意的代码更改
 
