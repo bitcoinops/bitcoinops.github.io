@@ -12,9 +12,9 @@ lang: zh
 
 ## 行动项
 
-- **<!--allocate-time-to-test-bitcoin-core-->分配时间测试 Bitcoin Core 0.17RC3：** Bitcoin Core 已上传 0.17RC3 的[二进制文件][bcc 0.17]。测试非常受欢迎，可以帮助确保最终版本的质量。
+- **<!--allocate-time-to-test-bitcoin-core-0-17rc3-->****分配时间测试 Bitcoin Core 0.17RC3：** Bitcoin Core 已上传 0.17RC3 的[二进制文件][bcc 0.17]。测试非常受欢迎，可以帮助确保最终版本的质量。
 
-- **<!--plans-for-the-second-optech-workshop-->第二次 Optech [研讨会][workshop]**的计划正在进展中，日期和地点已确认为 11 月 12-13 日在巴黎举行。暂定的议题列表包括：
+- **<!--workshop-->**第二次 Optech [研讨会][workshop]的计划正在进展中，日期和地点已确认为 11 月 12-13 日在巴黎举行。暂定的议题列表包括：
     - 作为费用替代技术的 Replace-by-fee 与 Child-pays-for-parent
     - 部分签名的比特币交易（BIP 174）
     - 钱包互操作性的输出脚本描述符（gist）
@@ -25,9 +25,9 @@ lang: zh
 
 ## 新闻
 
-- **BIP151 讨论：** 如 [Newsletter #10][news10 news] 中提到的，Jonas Schnelli 已[提出][schnelli bip151]点对点网络协议的 BIP151 加密的更新草案。密码学家 Tim Ruffing 本周在 Bitcoin-Dev 邮件列表上提供了对草案的[建设性批评][ruffing bip151]，Schnelli 和 Gregory Maxwell 也提供了建设性的反驳。这些帖子对于想了解协议中特定密码学选择背后的原因的人来说可能是有趣的阅读，例如使用 NewHope 量子计算抗性密钥交换的原因。
+- **<!--bip151-discussion-->****BIP151 讨论：** 如 [Newsletter #10][news10 news] 中提到的，Jonas Schnelli 已[提出][schnelli bip151]点对点网络协议的 BIP151 加密的更新草案。密码学家 Tim Ruffing 本周在 Bitcoin-Dev 邮件列表上提供了对草案的[建设性批评][ruffing bip151]，Schnelli 和 Gregory Maxwell 也提供了建设性的反驳。这些帖子对于想了解协议中特定密码学选择背后的原因的人来说可能是有趣的阅读，例如使用 NewHope 量子计算抗性密钥交换的原因。
 
-- **W3C Web 支付工作组更新：** 闪电网络开发者 Christian Decker 是该组的成员，该组试图为基于 Web 的支付创建标准。Decker 在发送到 Lightning-Dev 邮件列表的[回复][decker w3c]中解释了他为什么认为当前的草案规范将与比特币地址的支付和闪电网络支付基本兼容。草案甚至明确为比特币分配了 XBT 货币代码。
+- **<!--w3c-web-payments-working-group-update-->****W3C Web 支付工作组更新：** 闪电网络开发者 Christian Decker 是该组的成员，该组试图为基于 Web 的支付创建标准。Decker 在发送到 Lightning-Dev 邮件列表的[回复][decker w3c]中解释了他为什么认为当前的草案规范将与比特币地址的支付和闪电网络支付基本兼容。草案甚至明确为比特币分配了 XBT 货币代码。
 
 ## 值得注意的提交
 
@@ -39,7 +39,7 @@ lang: zh
 
 - [Bitcoin Core #14096][] 提供[输出脚本描述符的文档][documentation for output script descriptors]，这些描述符用于 Bitcoin Core 0.17 中的新 `scantxoutset` RPC，并预计将来用于与钱包的其他交互。
 
-- **LND** 在过去一周进行近 30 次合并，其中许多合并对其自动导航设施进行小的增强或修复——它能够允许用户选择自动与自动选择的对等方开启新通道。几次合并还更新了 LND 依赖的库版本。
+- **<!--lnd-->****LND** 在过去一周进行近 30 次合并，其中许多合并对其自动导航设施进行小的增强或修复——它能够允许用户选择自动与自动选择的对等方开启新通道。几次合并还更新了 LND 依赖的库版本。
 
 - [C-Lightning #1899][] 本周向其仓库添加了数百行文档，大部分是内联代码文档或其 [/doc 目录][c-lightning docs] 中文件的更新。
 

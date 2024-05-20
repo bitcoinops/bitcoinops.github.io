@@ -15,9 +15,9 @@ lang: zh
 
 ## 新闻
 
-- **<!--proposal-for-lightning-network-payment-channel-splicing-->闪电网络支付通道拼接提议：** 拼接是一种允许用户在不关闭并重新打开一个全新通道的延迟下，向现有支付通道添加或移除资金的想法。Rusty Russell 发布了一个[技术提议][complex splice]，允许一次进行单个拼接，尽管他指出该提议复杂。René Pickhardt 描述了一种[更简单的方案][simpler splice]，可能更容易实现和推理，但可能需要更多的链上交易。有人建议，简单但成本更高的解决方案可以是版本 1，更复杂但成本更低的解决方案可以是版本 2。
+- **<!--proposal-for-lightning-network-payment-channel-splicing-->****闪电网络支付通道拼接提议：** 拼接是一种允许用户在不关闭并重新打开一个全新通道的延迟下，向现有支付通道添加或移除资金的想法。Rusty Russell 发布了一个[技术提议][complex splice]，允许一次进行单个拼接，尽管他指出该提议复杂。René Pickhardt 描述了一种[更简单的方案][simpler splice]，可能更容易实现和推理，但可能需要更多的链上交易。有人建议，简单但成本更高的解决方案可以是版本 1，更复杂但成本更低的解决方案可以是版本 2。
 
-- **<!--edge-dev++-talks-published-->Edge Dev++ 演讲发布：** 为期两天的一系列来自领先比特币贡献者的演讲面向开发者已经以[视频][dev vids]和[文本记录][dev transcripts]的形式发布。演讲涵盖了从入门到高级的全部主题。三场演讲可能对 Optech 成员特别有趣：
+- **<!--edge-dev-talks-published-->****Edge Dev++ 演讲发布：** 为期两天的一系列来自领先比特币贡献者的演讲面向开发者已经以[视频][dev vids]和[文本记录][dev transcripts]的形式发布。演讲涵盖了从入门到高级的全部主题。三场演讲可能对 Optech 成员特别有趣：
 
     1. *交易所安全*，作者：Warren Togami。描述了几起比特币和山寨币交易所重大盗窃背后的原因，并列出了一些企业可用来降低损失风险的技术。([视频][warren vid], [文本记录][warren transcript])
 
@@ -29,11 +29,11 @@ lang: zh
 
 CoreDev.tech 是一个仅限邀请的活动，面向比特币基础设施项目（如 Bitcoin Core 和闪电网络）的知名贡献者。讨论没有被记录，但 Bryan Bishop 有帮助地写下了一些活动期间讨论的粗略非官方文本记录。以下简短摘要基于上周在东京举行的活动的一些文本记录：
 
-- **[Bitcoin Optech][optech transcript]：** 介绍了 Bitcoin Optech 并进行了简短的讨论，随后讨论了使用比特币的企业在使用 Bitcoin Core 和其他开源基础设施项目时遇到的常见问题。
+- **<!--bitcoin-optech-optech-transcript-->****[Bitcoin Optech][optech transcript]：** 介绍了 Bitcoin Optech 并进行了简短的讨论，随后讨论了使用比特币的企业在使用 Bitcoin Core 和其他开源基础设施项目时遇到的常见问题。
 
-- **[使用 UTXO 累加器减少数据存储需求][utreexo]：** Tadge Dryja 描述了他一直在研究的 UTXO 累加器，这些累加器在功能上与上周通讯中描述的累加器类似，但具有基于哈希的不同构造。他进一步描述了它们如何与 Cory Field 的 [UTXO 哈希集（UHO）][UHO] 想法结合，以使完整节点存储 UTXO 的哈希而非完整的 UTXO，以大幅减少修剪的完整节点所使用的存储量，而不一定需要对共识规则进行任何更改。
+- **<!--using-utxo-accumulators-to-reduce-data-storage-requirements-utreexo-->****[使用 UTXO 累加器减少数据存储需求][utreexo]：** Tadge Dryja 描述了他一直在研究的 UTXO 累加器，这些累加器在功能上与上周通讯中描述的累加器类似，但具有基于哈希的不同构造。他进一步描述了它们如何与 Cory Field 的 [UTXO 哈希集（UHO）][UHO] 想法结合，以使完整节点存储 UTXO 的哈希而非完整的 UTXO，以大幅减少修剪的完整节点所使用的存储量，而不一定需要对共识规则进行任何更改。
 
-- **[脚本描述符和 DESCRIPT][Script descriptors and DESCRIPT]：**Bitcoin Core 等钱包默认监视支付给它们的交易输出的方式“含糊不清、缺乏灵活性且扩展性差”。[输出脚本描述符][Output script descriptors]是一种简单的语言，用于向钱包描述脚本，使钱包更容易处理许多常规情况（包括导入 HD 扩展私钥和公钥）。
+- **<!--script-descriptors-and-descript-->****[脚本描述符和 DESCRIPT][Script descriptors and DESCRIPT]：**Bitcoin Core 等钱包默认监视支付给它们的交易输出的方式“含糊不清、缺乏灵活性且扩展性差”。[输出脚本描述符][Output script descriptors]是一种简单的语言，用于向钱包描述脚本，使钱包更容易处理许多常规情况（包括导入 HD 扩展私钥和公钥）。
 
     与此相关的是 DESCRIPT，一种使用完整比特币脚本语言的子集的语言，使构建一些简单策略变得容易。"我们有一个 DESCRIPT 编译器，它采用我们称之为策略语言（AND、OR、阈值、公钥、哈希锁、时序锁）以及每个 OR 的概率来告诉它是 50/50 还是 OR 的一侧比另一侧更有可能，并且它会找到 [...] 在我们已定义的脚本子集中的最优脚本。" 例如，它可以允许您"做一些像多签名那样的事情，在一段时间后降级为较弱的多签名——像 2-of-3 但一年后我可以仅用其中一个密钥支出它。"
 
