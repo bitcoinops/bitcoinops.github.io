@@ -116,7 +116,7 @@ On June 25th 2019, the Samourai Wallet team launched a coinjoin feature called W
 
 In February 2021, the WabiSabi paper was published following extensive public discussions aimed at developing a third-generation coinjoin protocol. This new protocol introduced cryptographic advancements that eliminated the fixed output limit characteristic of earlier versions. As a result, it became feasible to break down total bitcoin amounts into varying output sizes while still providing privacy against the coordinator. This innovation significantly diminished the amount of toxic change created while still being able to mix important amounts. On the other hand, WabiSabi requires an important amount of similarly-valued inputs to work efficiently, which makes it non-trivial to run a coordinator.
 
-On June 15th 2022, Wasabi Wallet 2.0 was launched with the new WabiSabi coinjoin protocol. It also improved the user experience by automating the coinjoin process.
+On June 15th, 2022, Wasabi Wallet 2.0 was launched with the new WabiSabi coinjoin protocol. It also improved the user experience by automating the coinjoin process.
 
 {% include references.md %}
 [gmaxwell coinjoin]: https://bitcointalk.org/index.php?topic=279249.0
