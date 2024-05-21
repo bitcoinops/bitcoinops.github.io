@@ -110,7 +110,7 @@ In November 2016, an alternative to coinjoins was release with Tumblebit. Users 
 
 On August 14th 2017, the ZeroLink paper was introduced as The Bitcoin Fungibility Framework. It was a collaboration between the Hidden Wallet (now Wasabi Wallet) and Samourai Wallet teams. The research paper was authored by Adam Ficsor (Nopara73) with some support from TDev. It provided a framework not only for a coinjoin protocol, but for privacy wallets in general.
 
-On October 31st 2018, Wasabi Wallet 1.0 was officially released publicly. It provided an efficient alternative to Joinmarket for less technical users and a full zero-link coinjoin implementation. Like Tumblebit, there was no need to trust the central coordinator. Unlike Tumblebit, you could get anonymity very quickly and for a low fee.
+On October 31st, 2018, Wasabi Wallet 1.0 was officially released publicly. It provided an efficient alternative to Joinmarket for less technical users and a full zero-link coinjoin implementation. Like Tumblebit, there was no need to trust the central coordinator. Unlike Tumblebit, you could get anonymity very quickly and for a low fee.
 
 On June 25th, 2019, the Samourai Wallet team launched a coinjoin feature called Whirlpool, which implements the Zerolink protocol with one major change. Instead of registering non-private UTXOs as inputs in a coinjoin transaction and getting the exceeding change as a non-private output, a premixing transaction takes place beforehand. In it, excess change is separated from UTXOs to mix and from the coordinator fee. Subsequently, UTXOs to mix would form a coinjoin transaction that produces no toxic change outputs.
 
