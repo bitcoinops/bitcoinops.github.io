@@ -62,7 +62,7 @@ BIPs process.
   proof-of-concept [forum][hodlboard] that requires providing an autct
   proof to sign up, providing an environment where everyone is
   known to be a holder of bitcoins but no one needs to provide any
-  identifying information about themselves or their bitcoins.
+  identifying information about themselves or their bitcoins. {% assign timestamp="1:58" %}
 
 - **BIP39 seed phrase splitting:** Rama Gan [posted][gan penlock] to the
   Bitcoin-Dev mailing list a link to a [set of tools][penlock website]
@@ -82,7 +82,7 @@ BIPs process.
   reconstitute the shares into the original seed; and the ability to
   verify checksums on both the shares and the original seed, allowing
   users to detect data corruption early when the original data might
-  still be recoverable.
+  still be recoverable. {% assign timestamp="31:48" %}
 
 - **Alternative to BitVM:** Sergio Demian Lerner and several co-authors
   [posted][lerner bitvmx] to the Bitcoin-Dev mailing list about a new
@@ -101,7 +101,7 @@ BIPs process.
   to the original BitVM (see [Newsletter #273][news273 bitvm]) and to
   the limited details available about follow-up projects from the
   original BitVM developers.  An accompanying [website][bitvmx website]
-  provides additional information in a slightly less technical form.
+  provides additional information in a slightly less technical form. {% assign timestamp="38:05" %}
 
 - **Continued discussion about updating BIP2:** Mark "Murch" Erhardt
   [continued][erhardt bip2] the discussion on the Bitcoin-Dev mailing
@@ -110,7 +110,7 @@ BIPs process.
   describes several problems, suggests solutions for many of them,
   and solicits feedback on his suggestions as well as proposals for
   solutions to the remaining problems.  For previous discussion about
-  updating BIP2, see [Newsletter #297][news297 bip2].
+  updating BIP2, see [Newsletter #297][news297 bip2]. {% assign timestamp="40:41" %}
 
 ## Releases and release candidates
 
@@ -119,7 +119,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LND v0.18.0-beta.rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="44:25" %}
 
 ## Notable code and documentation changes
 
@@ -136,7 +136,7 @@ repo]._
   into the [HTLC][topic htlc] timelock calculation.  This allows HTLCs
   to target the current block height instead of the most recent block
   that the LN node has processed (its sync height).  This makes it safe
-  for a node to send payments during the blockchain sync process.
+  for a node to send payments during the blockchain sync process. {% assign timestamp="44:51" %}
 
 - [LDK #2973][] implements support for `OnionMessenger` to intercept [onion messages][topic onion messages] on
   behalf of offline peers. It generates events on message interception and on
@@ -148,14 +148,14 @@ repo]._
   online.  Alice sends an onion message to Bob; Bob holds the message
   until Carol comes online; Carol opens the message, which tells her to
   request a payment from Alice (or Alice's Lightning service provider);
-  Carol requests the payment and Alice sends it in the normal way.
+  Carol requests the payment and Alice sends it in the normal way. {% assign timestamp="46:18" %}
 
 - [LDK #2907][] extends `OnionMessage` handling to accept an optional
   `Responder` input and return an object `ResponseInstructions` that indicates how
   the response to the message should be handled. This change enables asynchronous
   onion messaging responses and opens the door to more complex response
   mechanisms, such as might be needed for [async payments][topic async
-  payments].
+  payments]. {% assign timestamp="48:21" %}
 
 - [BDK #1403][] updates the `bdk_electrum` crate to make use of new
   sync/full-scan structures introduced in [BDK #1413][], queryable `CheckPoint`
@@ -163,12 +163,12 @@ repo]._
   pointers [BDK #1373][]. This change improves the performance of
   wallets scanning for transaction data using an Electrum-style server.
   It is also now an option to fetch `TxOut`s to allow for
-  fee calculation on transactions received from an external wallet.
+  fee calculation on transactions received from an external wallet. {% assign timestamp="48:59" %}
 
 - [BIPs #1458][] adds [BIP352][] which proposes [silent payments][topic silent
   payments], a protocol for reusable
   payment addresses that generate a unique onchain address each time it is
-  used. The BIP draft was first discussed in [Newsletter #255][news255 bip352].
+  used. The BIP draft was first discussed in [Newsletter #255][news255 bip352]. {% assign timestamp="50:57" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-05-21 14:30" %}
