@@ -2,12 +2,12 @@
 title: Coin selection
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Privacy Enhancements
 
@@ -80,6 +80,9 @@ optech_mentions:
 
   - title: "LND #8515 updates multiple RPCs to accept the name of the coin selection strategy to be used"
     url: /en/newsletters/2024/04/10/#lnd-8515
+
+  - title: Notes from Bitcoin developer discussion about coin selection
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

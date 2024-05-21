@@ -37,16 +37,16 @@ of this wallet in Februray 2019 -->
   issues this may create with software and services that haven't
   upgraded to bech32 sending support yet:
 
-    ![Dialog in Electrum allowing the user to choose the address type
-    and warning them that some services may not support bech32
-    addresses](/img/posts/2019-05-electrum-choose-wallet-type.png)
+  ![Dialog in Electrum allowing the user to choose the address type
+  and warning them that some services may not support bech32
+  addresses](/img/posts/2019-05-electrum-choose-wallet-type.png)
 
-    Please note that it's neither required nor recommended for wallet
-    authors to create a new seed in order to support a new address
-    format.  Other wallets, such as Bitcoin Core 0.16.0 and above, can
-    produce legacy, p2sh-segwit, and bech32 addresses all from the same
-    seed---the user just needs to specify which address type they want
-    (if they don't want the default).
+  Please note that it's neither required nor recommended for wallet
+  authors to create a new seed in order to support a new address
+  format.  Other wallets, such as Bitcoin Core 0.16.0 and above, can
+  produce legacy, p2sh-segwit, and bech32 addresses all from the same
+  seed---the user just needs to specify which address type they want
+  (if they don't want the default).
 
 As time goes on, we expect more new wallets to only implement receiving
 to the current best address format. Today that's v0 segwit addresses for
@@ -61,5 +61,5 @@ their preferred wallet.
 [wasabi wallet]: https://wasabiwallet.io/
 [trust wallet]: https://trustwallet.com/
 [electrum]: https://electrum.org/
-[news45 bech32]: {{news45}}#bech32-sending-support
+[news45 bech32]: /en/newsletters/2019/05/07/#bech32-sending-support
 {% endauto_anchor %}

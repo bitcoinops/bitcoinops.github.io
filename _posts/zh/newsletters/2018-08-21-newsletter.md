@@ -36,28 +36,9 @@ Bitcoin Core 和大多数自由和开源软件项目一样，是自下而上组�
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的值得注意的提交。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的值得注意的提交。*
 
 {% comment %}<!-- 依我看来，c-lightning 本周只有 6 次提交，主要是小的文档更新，因此没有新闻报道。我仍然会在上面提及它们，以便下周易于复制/粘贴。-harding -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="1b04b55f2d22078ca79cd38fc1078e15fa9cbe94"
-  end="df660aa7717a6f4784e90535a13a95d82244565a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="6989316b11c51922b4c6ae3507ac06680ec530b9"
-  end="3f5ec993300e38369110706ac83301b8875500d6"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="a97955845ff43d4780b33a7301695db33823c57c"
-  end="80a875a9a54e26c2ea4c90aee8fe606ddcc27c55"
-%}
 
 - Bitcoin Core 0.17 分支：这允许开发者专注于确保稳定性、翻译完整性和其他发布特性，而新特性的开发继续在主分支上进行。本值得注意的提交部分仅关注每个项目的主开发分支，因此从此时起提及的提交不太可能包含在 Bitcoin Core 0.17 版本中，且不应期待在 0.18 版本之前出现。
 

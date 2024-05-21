@@ -6,13 +6,13 @@ title: Accountable Computing Contracts
 shortname: ACC
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BitVM
   - Zero-Knowledge Contingent Payments (ZKCP)
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -45,6 +45,9 @@ optech_mentions:
 
   - title: "Development of domain-specific languages for smart contracting, including with BitVM"
     url: /en/newsletters/2024/04/10/#dsl-for-experimenting-with-contracts
+
+  - title: "BitVMX: an alternative to BitVM for verification of program execution"
+    url: /en/newsletters/2024/05/17/#alternative-to-bitvm
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

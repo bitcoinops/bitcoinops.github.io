@@ -25,28 +25,28 @@ infrastructure projects.
   be included in blocks by miners and those blocks will be relayed.
   Other node software implements similar policies.
 
-    Lowering the default minimum feerate has been discussed in the past
-    (see [Newsletter #3][news3 min]) but [hasn't been merged][bitcoin
-    core #13922] into Bitcoin Core.  The topic saw renewed
-    [discussion][chauhan min] in the past couple weeks:
+  Lowering the default minimum feerate has been discussed in the past
+  (see [Newsletter #3][news3 min]) but [hasn't been merged][bitcoin
+  core #13922] into Bitcoin Core.  The topic saw renewed
+  [discussion][chauhan min] in the past couple weeks:
 
-    - *Individual change effectiveness:* it was [debated][todd min] by
-      [several][vjudeu min] people how effective it was for individual
-      node operators to change their policies.
+  - *Individual change effectiveness:* it was [debated][todd min] by
+    [several][vjudeu min] people how effective it was for individual
+    node operators to change their policies.
 
-    - *Past failures:* it was [mentioned][harding min] that the previous
-      attempt to lower the default feerate was hampered by the lower
-      rate also reducing the cost of several minor denial-of-service
-      (DoS) attacks.
+  - *Past failures:* it was [mentioned][harding min] that the previous
+    attempt to lower the default feerate was hampered by the lower
+    rate also reducing the cost of several minor denial-of-service
+    (DoS) attacks.
 
-    - *Alternative relay criteria:* it was [suggested][todd min2] that
-      transactions violating certain default criteria (such as the
-      default minimum feerate) could instead fulfill some separate
-      criteria that make DoS attacks costly---for example, if a modest amount
-      of hashcash-style proof of work committed to the transaction to
-      relay.
+  - *Alternative relay criteria:* it was [suggested][todd min2] that
+    transactions violating certain default criteria (such as the
+    default minimum feerate) could instead fulfill some separate
+    criteria that make DoS attacks costly---for example, if a modest amount
+    of hashcash-style proof of work committed to the transaction to
+    relay.
 
-    The discussion did not reach a clear conclusion as of this writing. {% assign timestamp="2:30" %}
+  The discussion did not reach a clear conclusion as of this writing. {% assign timestamp="2:30" %}
 
 ## Bitcoin Core PR Review Club
 

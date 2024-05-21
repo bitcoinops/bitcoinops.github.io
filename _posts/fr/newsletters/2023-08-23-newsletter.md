@@ -17,23 +17,23 @@ aux principaux logiciels d'infrastructure Bitcoin.
   Lightning-Dev l'idée d'un service qui pourrait être pénalisé s'il fournissait à un utilisateur une version obsolète de
   l'état de sauvegarde de l'utilisateur, à l'exception de la version la plus récente. Le mécanisme de base est simple :
 
-    - Alice a des données qu'elle souhaite sauvegarder. Elle inclut un numéro de version dans les données, crée une signature
-      pour les données et donne à Bob à la fois les données et sa signature.
+  - Alice a des données qu'elle souhaite sauvegarder. Elle inclut un numéro de version dans les données, crée une signature
+    pour les données et donne à Bob à la fois les données et sa signature.
 
-    - Immédiatement après avoir reçu les données d'Alice, Bob lui envoie une signature qui s'engage à la fois sur le numéro de
-      version de ses données et sur l'heure actuelle.
+  - Immédiatement après avoir reçu les données d'Alice, Bob lui envoie une signature qui s'engage à la fois sur le numéro de
+    version de ses données et sur l'heure actuelle.
 
-    - Plus tard, Alice met à jour les données, incrémente le numéro de version et fournit à Bob les données mises à jour et sa
-      signature pour celles-ci. Bob renvoie une signature pour un engagement sur le nouveau numéro (plus élevé) de version avec
-      le nouvel horaire actuel (plus élevé). Ils répètent cette étape plusieurs fois.
+  - Plus tard, Alice met à jour les données, incrémente le numéro de version et fournit à Bob les données mises à jour et sa
+    signature pour celles-ci. Bob renvoie une signature pour un engagement sur le nouveau numéro (plus élevé) de version avec
+    le nouvel horaire actuel (plus élevé). Ils répètent cette étape plusieurs fois.
 
-    - Enfin Alice demande ses données afin de tester Bob. Bob lui envoie une version des données et sa signature lui
-      permettant de prouver qu'il s'agit réellement de ses données. Il lui envoie également une autre signature qui s'engage sur
-      le numéro de version dans les données et l'heure actuelle.
+  - Enfin Alice demande ses données afin de tester Bob. Bob lui envoie une version des données et sa signature lui
+    permettant de prouver qu'il s'agit réellement de ses données. Il lui envoie également une autre signature qui s'engage sur
+    le numéro de version dans les données et l'heure actuelle.
 
-    - Si Bob était malhonnête et a envoyé à Alice d'anciennes données avec un ancien numéro de version, Alice peut générer une
-      _preuve de fraude_ : elle peut montrer que Bob a précédemment signé un numéro de version supérieur avec une heure antérieure
-      à l'engagement de signature qu'il vient de lui fournir.
+  - Si Bob était malhonnête et a envoyé à Alice d'anciennes données avec un ancien numéro de version, Alice peut générer une
+    _preuve de fraude_ : elle peut montrer que Bob a précédemment signé un numéro de version supérieur avec une heure antérieure
+    à l'engagement de signature qu'il vient de lui fournir.
 
   Jusqu'à présent, il n'y a rien de spécifique à Bitcoin dans ce mécanisme de génération de preuves de fraude de l'état le plus
   récent. Cependant, Thomas Voegtlin a noté que si les opcodes [OP_CHECKSIGFROMSTACK (CSFS) et OP_CAT][topic op_checksigfromstack]
@@ -72,11 +72,11 @@ aux principaux logiciels d'infrastructure Bitcoin.
     avec Bob (et Bob étant pénalisé pour mentir), Bob pourrait stocker son état avec Alice et elle pourrait être pénalisée pour
     mentir.
 
-      Voegtlin a étendu cette idée pour [mettre en garde][voegtlin backups2] que les fournisseurs de logiciels de portefeuille ont
-      un besoin important d'une bonne réputation et qu'ils perdent en réputation lorsque leurs utilisateurs perdent des fonds, même
-      si le logiciel fonctionne aussi bien que possible. En tant que développeur de logiciels de portefeuille, il est donc très
-      important pour lui de minimiser le risque qu'un pair anonyme puisse voler un utilisateur d'Electrum qui utilise un mécanisme
-      comme les sauvegardes entre pairs.
+    Voegtlin a étendu cette idée pour [mettre en garde][voegtlin backups2] que les fournisseurs de logiciels de portefeuille ont
+    un besoin important d'une bonne réputation et qu'ils perdent en réputation lorsque leurs utilisateurs perdent des fonds, même
+    si le logiciel fonctionne aussi bien que possible. En tant que développeur de logiciels de portefeuille, il est donc très
+    important pour lui de minimiser le risque qu'un pair anonyme puisse voler un utilisateur d'Electrum qui utilise un mécanisme
+    comme les sauvegardes entre pairs.
 
 Il n'y a pas eu de résolution claire à la discussion.
 

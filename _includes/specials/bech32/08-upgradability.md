@@ -52,4 +52,4 @@ into providing bech32 sending support now is something you won't need to
 repeat when future expected changes to the Bitcoin protocol are
 deployed.
 
-[news40 bech32]: {{news40}}#bech32-sending-support
+[news40 bech32]: /en/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses

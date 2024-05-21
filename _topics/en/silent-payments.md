@@ -6,19 +6,19 @@ title: Silent payments
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Privacy Enhancements
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: Silent Payments
-      link: https://gist.github.com/RubenSomsen/c43b79517e7cb701ebf77eec6dbb46b8
+    - title: BIP352 silent payments
+      link: BIP352
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -53,6 +53,12 @@ optech_mentions:
   - title: "Human readable payment instructions proposed that are compatible with silent payment addresses"
     url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 
+  - title: Notes from Bitcoin developer discussion about multiple aspects of silent payments
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
+  - title: "BIPs #1458 adds BIP352 for silent payments"
+    url: /en/newsletters/2024/05/17/#bips-1458
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
@@ -72,6 +78,31 @@ excerpt: >
   improve privacy.
 
 ---
+
+Traditionally, a user who receives payments should generate a new Bitcoin
+address for every payment. This is because receiving multiple payments
+to the same address reveals that the same user received those payments,
+even if the outputs are later spent in separate transactions.
+This is known as [address reuse][topic output linking].
+
+Using a new address often requires a secure interaction between sender
+and receiver so that the receiver can provide a fresh address every time.
+However, interaction is often infeasible and in many cases undesirable.
+
+With silent payments, a receiver can generate and publish a single silent
+payment address, eliminating the need for interaction.
+The sender then selects one or more of their chosen inputs and uses their
+secret key(s) together with public key of the silent payment address to
+derive a shared secret which is used to generate the destination.
+
+The intended recipient detects the payment by scanning transactions
+in the blockchain and performing an ECDH calculation with the summed
+input public keys of the transaction and the scan key from their address.
+The main downside is that it is more computationally expensive than
+simply scanning the UTXO set for a `scriptPubKey` as in [BIP32][]-style wallets.
+Additionally, using silent payments in a collaborative setting such as
+[coinjoining][topic coinjoin] is left for future work, and it remains an open
+question whether such collaboration can be made provably secure.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}

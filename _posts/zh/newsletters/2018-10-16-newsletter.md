@@ -39,26 +39,8 @@ CoreDev.tech 是一个仅限邀请的活动，面向比特币基础设施项目�
 
 ## 值得注意的代码变更
 
-本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中的显著代码变更。
+本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中的显著代码变更。
 
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="c9327306b580bb161d1732c0a0260b46c0df015c"
-  end="be992701b018f256db6d64786624be4cb60d8975"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="79ed4e8b600e4834f058cbf3cb8b93f5aa5ab3d4"
-  end="e5b84cfadab56037ae3957e704b3e570c9368297"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="d6fcfe00c722f7e6f4b691cd47743ed593aeea0e"
-  end="a44491fff0ccd7bde20661eecf88bf136db5f6e6"
-%}
 {% comment %}<!-- last secp256k1 commit checked: 1e6f1f5ad5e7f1e3ef79313ec02023902bf8175c -->{% endcomment %}
 
 - [LND #1970][]：AbandonChannel RPC 方法（仅在开发者调试模式中可用）现在在用户告诉其节点放弃一个支付通道时提供了额外的信息（如果不小心使用，此方法可能导致金钱损失）。额外的信息足以允许稍后重新启动一个开放的支付通道，或证明程序有足够的信息对现已关闭的支付通道做出更多的承诺。

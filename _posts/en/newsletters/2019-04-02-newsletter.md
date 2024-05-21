@@ -149,10 +149,10 @@ its master development branch; some may also be backported to the
   delay fulfilling his HTLC until 400 blocks, and Alice could then cancel her
   HTLC with Bob before Bob had time to fulfil the HTLC.
 
-    Subsequent routers each successively subtract their delta from the value of
-    the terms they give to the next node in the route.  Using a high CLTV delta
-    therefore reduces the possible number of hops that can be used in a route, and
-    makes a channel less attractive for use when routing payments.
+  Subsequent routers each successively subtract their delta from the value of
+  the terms they give to the next node in the route.  Using a high CLTV delta
+  therefore reduces the possible number of hops that can be used in a route, and
+  makes a channel less attractive for use when routing payments.
 
 - [Eclair #894][] replaces the JSON-RPC interface with an HTTP
   POST interface.  Instead of RPC commands, HTTP endpoints are used
@@ -178,3 +178,4 @@ its master development branch; some may also be backported to the
 [bolt2 delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection
 [p2p protocol encryption]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #22]: /en/newsletters/2018/11/20/#monitor-feerates

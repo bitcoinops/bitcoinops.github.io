@@ -19,9 +19,9 @@ lang: zh
 
 - **<!--ddoption-of-opt-in-rbf-remains-fairly-low-->选择加入 RBF 的采用率仍然相当低**，但在过去一年中有实质性增长，从 [1.5% 增长到 5.7% 的交易][rbf data]。此数据来源于 Optech 的 beta 仪表板，我们鼓励人们尝试并向我们提供反馈！
 
-    ![{{img1_label}}](/img/posts/rbf.png)
-    *{{img1_label}},
-    source: [Optech dashboard][rbf data]*
+  ![{{img1_label}}](/img/posts/rbf.png)
+  *{{img1_label}},
+  source: [Optech dashboard][rbf data]*
 
 ## 新闻
 
@@ -30,33 +30,13 @@ lang: zh
 - **<!--library-announced-for-bls-signatures-->宣布用于 BLS 签名的库：**著名开发者 Bram Cohen [宣布][bls announce]了一个“初版（但功能完备的）用于基于 [MuSig][] 构造的 [BLS 签名][BLS signatures]库”。这些签名提供了与 [Newsletter #3 特别新闻][#3 schnorr] 中描述的 Schnorr 签名相同的大部分好处，但也允许非交互式签名聚合，这可以通过减少区块链中的签名数据量（可能是非常大的百分比）来提高可扩展性，并通过实施非交互式 CoinJoin 技术（如 [Mimblewimble 论文][Mimblewimble
   paper]中描述的那样）来增强隐私。
 
-    BLS 签名确实有三个缺点，这导致大多数比特币协议开发人员短期内专注于 Schnorr 签名。第一个是没有已知方法可以像验证 Schnorr 签名那样快速验证它们——签名验证速度对于网络可扩展性也很重要。其次，为了证明 BLS 签名的安全性，需要对方案的一部分安全性做出额外的假设，而这对于证明比特币当前的方案（ECDSA）或提议的基于 Schnorr 的方案的安全性并不需要。最后，BLS 签名只存在 Schnorr 签名大约一半的时间，使用得更少，并且据信没有接受到与 Schnorr 签名相同数量的专家审查。
+  BLS 签名确实有三个缺点，这导致大多数比特币协议开发人员短期内专注于 Schnorr 签名。第一个是没有已知方法可以像验证 Schnorr 签名那样快速验证它们——签名验证速度对于网络可扩展性也很重要。其次，为了证明 BLS 签名的安全性，需要对方案的一部分安全性做出额外的假设，而这对于证明比特币当前的方案（ECDSA）或提议的基于 Schnorr 的方案的安全性并不需要。最后，BLS 签名只存在 Schnorr 签名大约一半的时间，使用得更少，并且据信没有接受到与 Schnorr 签名相同数量的专家审查。
 
-    尽管如此，这个开源库为开发人员提供了一个方便的方式来开始尝试 BLS 签名，甚至可以开始在不需要像比特币网络那样安全的应用程序中使用它们。
+  尽管如此，这个开源库为开发人员提供了一个方便的方式来开始尝试 BLS 签名，甚至可以开始在不需要像比特币网络那样安全的应用程序中使用它们。
 
 ## 值得注意的提交
 
-*本周在 [Bitcoin Core][core commits]、[LND][lnd commits] 和 [C-lightning][cl commits] 中值得注意的提交。*
-
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="ef4fac0ea5b4891f4529e4b59dfd1f7aeb3009b5"
-  end="2b67354aa584c4aabae049a67767ac7b70e2d01a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="92b0b10dc75de87be3a9f895c8dfc5a84a2aec7a"
-  end="f0f5e11b826e020c11c37343bcbaf9725627378b"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="0b597f671aa31c1c56d32a554fcdf089646fc7c1"
-  end="80a8e57ede82292818032eeb3510da067fddfd5e"
-%}
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo] 和 [C-lightning][core lightning repo] 中值得注意的提交。*
 
 - [Bitcoin Core #13697][]：Pieter Wuille 在 [Newsletter #5][] 中提到的这个 PR 已被合并，它为即将发布的 0.17 RPC `scantxoutset` 添加了[输出脚本描述符][output script descriptors]支持。这些描述符为软件提供了一种全面的方式来描述你想要找到的输出脚本，预计将随时间适应 Bitcoin Core API 的其他部分，如 [importprivkey][rpc importprivkey]、[importaddress][rpc importaddress]、[importpubkey][rpc importpubkey]、[importmulti][rpc importmulti] 和 [importwallet][rpc importwallet]。
 

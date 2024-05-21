@@ -26,16 +26,16 @@ changes to popular Bitcoin infrastructure projects.
   activation code and the latest allowed activation of that initial
   deployment about one year subsequently.
 
-    More controversial was whether the `LockinOnTimeout` (LOT) parameter
-    should default to *true* (requiring miners to either eventually signal
-    in favor of the new rules or risk a chainsplit) or *false* (allowing
-    miners to signal however they'd like without immediate consequences,
-    though some users could choose to enable `LOT=true` later).  Folkson
-    wrote a [second post][folkson2] to the mailing list summarizing the
-    arguments he's seen for the two different options and announcing a
-    follow-up meeting to discuss them (and some less controversial
-    issues) in the Freenode ##taproot-activation channel on February
-    16th at 19:00 UTC.
+  More controversial was whether the `LockinOnTimeout` (LOT) parameter
+  should default to *true* (requiring miners to either eventually signal
+  in favor of the new rules or risk a chainsplit) or *false* (allowing
+  miners to signal however they'd like without immediate consequences,
+  though some users could choose to enable `LOT=true` later).  Folkson
+  wrote a [second post][folkson2] to the mailing list summarizing the
+  arguments he's seen for the two different options and announcing a
+  follow-up meeting to discuss them (and some less controversial
+  issues) in the Freenode ##taproot-activation channel on February
+  16th at 19:00 UTC.
 
 - **New mailing list for Discreet Log Contracts:** Nadav Kohen
   [announced][kohen post] the creation of a [new mailing list][dlc list]

@@ -20,52 +20,52 @@ páteřních bitcoinových projektů.
   funkce návrhu `OP_VAULT`/`OP_UNVAULT` (viz [zpravodaj č. 234][news234 vault]).
   Jeho verze by přidala tři opkódy namísto dvou, viz příklad:
 
-    - *Alice zašle prostředky do úschovny* zaplacením [P2TR výstupu][topic
-      taproot] se stromem skriptů, který obsahuje alespoň dva [koncové skripty][topic
-      tapscript] („leafscript”): jeden pro spuštění procesu otevření úschovny s časovým
-      zpožděním a druhý pro okamžité zmrazení prostředků, např.
-      `tr(klíč,{spusť,zmraz})`.
+  - *Alice zašle prostředky do úschovny* zaplacením [P2TR výstupu][topic
+    taproot] se stromem skriptů, který obsahuje alespoň dva [koncové skripty][topic
+    tapscript] („leafscript”): jeden pro spuštění procesu otevření úschovny s časovým
+    zpožděním a druhý pro okamžité zmrazení prostředků, např.
+    `tr(klíč,{spusť,zmraz})`.
 
-      - Skript *spusť* obsahuje její méně důvěryhodný způsob autorizace
-        (např. podpis z horké peněženky) a opkód `OP_TRIGGER_FORWARD`.
-        V době vytvoření tohoto skriptu poskytne opkódu parametr
-        *časového zpoždění*, např. relativní časový zámek 1 000 bloků
-        (zhruba jeden týden).
+    - Skript *spusť* obsahuje její méně důvěryhodný způsob autorizace
+      (např. podpis z horké peněženky) a opkód `OP_TRIGGER_FORWARD`.
+      V době vytvoření tohoto skriptu poskytne opkódu parametr
+      *časového zpoždění*, např. relativní časový zámek 1 000 bloků
+      (zhruba jeden týden).
 
-      - Skript *zmraz* obsahuje jakýkoliv Alicin způsob autorizace (nebo žádný)
-        a opkód `OP_FORWARD_DESTINATION`. V době vytvoření tohoto skriptu
-        si také zvolí důvěryhodnější způsob autorizace (např. vícenásobný
-        podpis z několika studených peněženek a podpisových zařízení).
-        Opkódu poskytne commitment tohoto způsobu v podobě hashe.
+    - Skript *zmraz* obsahuje jakýkoliv Alicin způsob autorizace (nebo žádný)
+      a opkód `OP_FORWARD_DESTINATION`. V době vytvoření tohoto skriptu
+      si také zvolí důvěryhodnější způsob autorizace (např. vícenásobný
+      podpis z několika studených peněženek a podpisových zařízení).
+      Opkódu poskytne commitment tohoto způsobu v podobě hashe.
 
-    - *Alice spustí otevírání úschovny* utracením výstupu výše uvedeného
-      skriptu (tj. jeho použitím jako vstupu) a zvolením spouštěcího
-      skriptu. Zároveň poskytne dva dodatečné parametry opkódu `OP_TRIGGER_FORWARD`:
-      index výstupu, který obdrží prostředky tohoto vstupu, a commitment
-      (ve formě hashe), který určí, jak bude později moci prostředky utratit.
-      Opkód ověří, že uvedený výstup této transakce platí P2TR výstup stromem
-      skriptů, který je podobný právě utrácenému s tím rozdílem, že spouštěcí
-      skript je nahrazen skriptem obsahujícím  relativní zpoždění (`OP_CHECKSEQUENCEVERIFY`,
-      CSV) shodné se zpožděním uvedeným dříve (např. 1 000 bloků). Druhým rozdílem
-      je opkód `OP_FORWARD_OUTPUTS` obsahující hash Alicina commitmentu.
-      Tento způsob rekonstrukce stromu skriptů připomíná `OP_TAPLEAF_UPDATE_VERIFY`,
-      dřívější návrh [kovenantů][topic covenants] (viz [zpravodaj č.
-      166][news166 tluv], *angl.*).
+  - *Alice spustí otevírání úschovny* utracením výstupu výše uvedeného
+    skriptu (tj. jeho použitím jako vstupu) a zvolením spouštěcího
+    skriptu. Zároveň poskytne dva dodatečné parametry opkódu `OP_TRIGGER_FORWARD`:
+    index výstupu, který obdrží prostředky tohoto vstupu, a commitment
+    (ve formě hashe), který určí, jak bude později moci prostředky utratit.
+    Opkód ověří, že uvedený výstup této transakce platí P2TR výstup stromem
+    skriptů, který je podobný právě utrácenému s tím rozdílem, že spouštěcí
+    skript je nahrazen skriptem obsahujícím  relativní zpoždění (`OP_CHECKSEQUENCEVERIFY`,
+    CSV) shodné se zpožděním uvedeným dříve (např. 1 000 bloků). Druhým rozdílem
+    je opkód `OP_FORWARD_OUTPUTS` obsahující hash Alicina commitmentu.
+    Tento způsob rekonstrukce stromu skriptů připomíná `OP_TAPLEAF_UPDATE_VERIFY`,
+    dřívější návrh [kovenantů][topic covenants] (viz [zpravodaj č.
+    166][news166 tluv], *angl.*).
 
-    - *Alice dokončí otevření úschovny* vyčkáním na uvolnění časového zámku
-      a následným utracením výstupu se zvoleným skriptem obsahujícím opkód
-      `OP_FORWARD_OUTPUTS`. Opkód ověří, že hash částky a skriptu výstupu
-      odpovídá commitmentu, který Alice učinila v předchozí transakci.
-      V tomto případě Alice úspěšně zaslala prostředky do úschovny, započala
-      otevření úschovny, musela počkat nejméně 1 000 bloků (aby měl její software
-      dostatek času na potvrzení záměru) a nakonec platbu dokončila.
+  - *Alice dokončí otevření úschovny* vyčkáním na uvolnění časového zámku
+    a následným utracením výstupu se zvoleným skriptem obsahujícím opkód
+    `OP_FORWARD_OUTPUTS`. Opkód ověří, že hash částky a skriptu výstupu
+    odpovídá commitmentu, který Alice učinila v předchozí transakci.
+    V tomto případě Alice úspěšně zaslala prostředky do úschovny, započala
+    otevření úschovny, musela počkat nejméně 1 000 bloků (aby měl její software
+    dostatek času na potvrzení záměru) a nakonec platbu dokončila.
 
-    - V případě problémů *Alice prostředky zmrazí*. Může tak učinit kdykoliv
-      počínaje okamžikem vkladu prostředků do úschovny až do dokončení otevírání
-      úschovny. Aby mohla prostředky zmrazit, jednoduše zvolí zmrazovací
-      skript z výstupu transakce (buď vkladové nebo spouštěcí), neboť Alice
-      vložila zmrazovací skript do vkladové transakce a tento skript byl
-      automaticky přenesen dále.
+  - V případě problémů *Alice prostředky zmrazí*. Může tak učinit kdykoliv
+    počínaje okamžikem vkladu prostředků do úschovny až do dokončení otevírání
+    úschovny. Aby mohla prostředky zmrazit, jednoduše zvolí zmrazovací
+    skript z výstupu transakce (buď vkladové nebo spouštěcí), neboť Alice
+    vložila zmrazovací skript do vkladové transakce a tento skript byl
+    automaticky přenesen dále.
 
   Jednou z výhod, které tento přístup poskytuje oproti původním designu
   `OP_VAULT`, je možnost stanovit v zmrazovacím skriptu jakékoliv podmínky

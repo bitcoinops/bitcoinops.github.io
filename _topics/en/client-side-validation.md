@@ -6,14 +6,14 @@ title: Client-side validation
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - RGB
   - Taro
   - Taproot Assets
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
 
 ## Optional.  Produces a Markdown link with either "[title][]" or

@@ -22,18 +22,18 @@ of being focused on timelocks:
   suggest that more than a signature is required, but a few criticisms
   have been raised:
 
-    - Someone truly desperate to spend their timelocked bitcoins can take
-      out a loan, perhaps secured by some other asset.  This undermines
-      the utility of this self contract.
+  - Someone truly desperate to spend their timelocked bitcoins can take
+    out a loan, perhaps secured by some other asset.  This undermines
+    the utility of this self contract.
 
-    - In addition to the consensus-enforced scriptpath timelock, the user
-      can allow keypath spending between their key and the key of a
-      third party who only signs when the timelock has expired.  This is
-      not only more efficient, but it also allows implementing a more
-      flexible spending policy such as providing the user the ability to
-      sell any forkcoins they receive or to work with a third party who
-      will allow them to spend early in case of major life changes or
-      price appreciations.
+  - In addition to the consensus-enforced scriptpath timelock, the user
+    can allow keypath spending between their key and the key of a
+    third party who only signs when the timelock has expired.  This is
+    not only more efficient, but it also allows implementing a more
+    flexible spending policy such as providing the user the ability to
+    sell any forkcoins they receive or to work with a third party who
+    will allow them to spend early in case of major life changes or
+    price appreciations.
 
 - **Vaults:** as mentioned in Antoine Poinsot's [column][p4tr vaults]
   here a few weeks ago, [vaults][topic vaults] also use timelocks

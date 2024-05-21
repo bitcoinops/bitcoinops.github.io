@@ -41,30 +41,30 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
   que des frais peu élevés) choisiraient de préférence des chemins de paiement
   constitués de nœuds auto-identifiés comme hautement disponibles.
 
-    Christian Decker [a répondu][decker qos] avec un excellent résumé des
-    problèmes des systèmes de réputation, y compris les cas de réputation
-    autoproclamée. L'une de ses préoccupations était que les clients typiques
-    n'enverront pas assez de paiements pour rencontrer fréquemment les
-    mêmes nœuds dans un grand réseau de canaux de paiement. Si les affaires
-    récurrentes sont rares de toute façon, alors la menace de ne pas fournir
-    temporairement des affaires récurrentes peut ne pas être efficace.
+  Christian Decker [a répondu][decker qos] avec un excellent résumé des
+  problèmes des systèmes de réputation, y compris les cas de réputation
+  autoproclamée. L'une de ses préoccupations était que les clients typiques
+  n'enverront pas assez de paiements pour rencontrer fréquemment les
+  mêmes nœuds dans un grand réseau de canaux de paiement. Si les affaires
+  récurrentes sont rares de toute façon, alors la menace de ne pas fournir
+  temporairement des affaires récurrentes peut ne pas être efficace.
 
-    Antoine Riard [a rappelé][riard boomerang] aux participants une approche
-    alternative pour accélérer les paiements : le surpaiement avec récupération.
-    Précédemment décrits comme des paiements boomerang (voir le [bulletin
-    n°86][news86 boomerang]) et des trop-perçus remboursables (voir le [bulletin
-    n°192][news192 pp]), un utilisateur prendrait le montant de son paiement
-    plus un peu d'argent supplémentaire, le diviserait en plusieurs [parties][topic
-    multipath payments], et enverrait les parties par différentes voies. Lorsqu'un
-    nombre suffisant de pièces est arrivé pour payer la facture, le destinataire
-    ne réclame que ces pièces et rejette toutes les pièces supplémentaires (avec
-    des fonds supplémentaires) qui arrivent plus tard. Cela exige que les
-    expéditeurs qui veulent des paiements rapides aient des fonds supplémentaires
-    dans leur canal, mais cela fonctionne même si certains des chemins choisis
-    par l'expéditeur échouent. Cela réduit la nécessité pour les utilisateurs
-    d'être en mesure de trouver facilement des canaux hautement disponibles.
-    Le défi de cette approche est de construire un mécanisme qui empêche les
-    récepteurs de garder tout paiement excédentaire qui arrive.
+  Antoine Riard [a rappelé][riard boomerang] aux participants une approche
+  alternative pour accélérer les paiements : le surpaiement avec récupération.
+  Précédemment décrits comme des paiements boomerang (voir le [bulletin
+  n°86][news86 boomerang]) et des trop-perçus remboursables (voir le [bulletin
+  n°192][news192 pp]), un utilisateur prendrait le montant de son paiement
+  plus un peu d'argent supplémentaire, le diviserait en plusieurs [parties][topic
+  multipath payments], et enverrait les parties par différentes voies. Lorsqu'un
+  nombre suffisant de pièces est arrivé pour payer la facture, le destinataire
+  ne réclame que ces pièces et rejette toutes les pièces supplémentaires (avec
+  des fonds supplémentaires) qui arrivent plus tard. Cela exige que les
+  expéditeurs qui veulent des paiements rapides aient des fonds supplémentaires
+  dans leur canal, mais cela fonctionne même si certains des chemins choisis
+  par l'expéditeur échouent. Cela réduit la nécessité pour les utilisateurs
+  d'être en mesure de trouver facilement des canaux hautement disponibles.
+  Le défi de cette approche est de construire un mécanisme qui empêche les
+  récepteurs de garder tout paiement excédentaire qui arrive.
 
 - **Feedback demandé sur la notation de bon voisinage des LN :** Carla Kirk-Cohen
   et Clara Shikhelman ont [posté][ckc-cs reputation] sur la liste de diffusion
@@ -74,14 +74,14 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
   critères pour juger et recommandent des paramètres par défaut pour chaque
   critère, mais cherchent à obtenir des commentaires sur les choix effectués.
 
-    Si un nœud détermine que l'un de ses pairs est un bon voisin et que
-    ce voisin marque un paiement transmis comme étant endossé par lui,
-    le nœud peut donner à ce paiement l'accès à davantage de ses ressources
-    que ce qu'il donne aux paiements non qualifiés. Le nœud peut également
-    approuver le paiement lorsqu'il le transmet au canal suivant. Comme
-    décrit dans un article antérieur co-écrit par Shikhelman (voir [bulletin
-    #226][news226 jam]), ceci fait partie d'une proposition visant à atténuer
-    les [attaques par brouillage de canal][topic channel jamming attacks].
+  Si un nœud détermine que l'un de ses pairs est un bon voisin et que
+  ce voisin marque un paiement transmis comme étant endossé par lui,
+  le nœud peut donner à ce paiement l'accès à davantage de ses ressources
+  que ce qu'il donne aux paiements non qualifiés. Le nœud peut également
+  approuver le paiement lorsqu'il le transmet au canal suivant. Comme
+  décrit dans un article antérieur co-écrit par Shikhelman (voir [bulletin
+  #226][news226 jam]), ceci fait partie d'une proposition visant à atténuer
+  les [attaques par brouillage de canal][topic channel jamming attacks].
 
 - **Proposition de BIP pour le système d'encodage des semences Codex32 :** Russell
 O'Connor et Andrew Poelstra (utilisant des anagrammes de leurs noms) ont
@@ -93,47 +93,47 @@ soient utilisées ensemble pour récupérer la graine. Un attaquant qui obtient
 moins que le nombre seuil de parts n'apprendra rien sur la graine.
 Contrairement aux codes de récupération BIP39, Electrum, Aezeed et SLIP39
 qui utilisent une liste de mots, Codex32 utilise le même alphabet que les
-adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
+  adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
 
-    ```text
-    ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
-    ```
+  ```text
+  ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
+  ```
 
-    Le principal avantage de Codex32 par rapport à tous les systèmes
-    existants est que toutes les opérations peuvent être effectuées en
-    utilisant uniquement un stylo, du papier, des instructions et des
-    découpes de papier. Cela inclut la génération d'une graine codée
-    (le dé peut être utilisé ici), la protection de la graine avec une
-    somme de contrôle, la génération de parts avec somme de contrôle,
-    la vérification des sommes de contrôle et la récupération de la graine.
-    Nous avons trouvé que l'idée de pouvoir vérifier manuellement les
-    sommes de contrôle sur les sauvegardes de graines ou de parts était
-    un concept particulièrement puissant. La seule méthode dont disposent
-    actuellement les utilisateurs pour vérifier la sauvegarde d'une graine
-    individuelle est de l'entrer dans un dispositif informatique de
-    confiance et de voir s'il obtient les clés publiques attendues---mais
-    déterminer si un dispositif est de confiance n'est souvent pas une
-    procédure triviale. Pire encore, pour vérifier l'intégrité des partages
-    SSSS existants (par exemple, dans SLIP39), l'utilisateur doit réunir
-    chaque partage qu'il souhaite vérifier avec suffisamment d'autres
-    partages pour atteindre le seuil, puis les entrer dans un dispositif
-    informatique de confiance. Cela signifie que la vérification de
-    l'intégrité des partages annule l'un des principaux avantages des
-    partages, à savoir la possibilité de préserver la sécurité des
-    informations en les répartissant entre plusieurs endroits ou personnes.
-    Avec Codex32, les utilisateurs peuvent vérifier régulièrement
-    l'intégrité de chaque partage individuellement en utilisant
-    simplement du papier, un stylo, quelques documents imprimés
-    et quelques minutes de temps.
+  Le principal avantage de Codex32 par rapport à tous les systèmes
+  existants est que toutes les opérations peuvent être effectuées en
+  utilisant uniquement un stylo, du papier, des instructions et des
+  découpes de papier. Cela inclut la génération d'une graine codée
+  (le dé peut être utilisé ici), la protection de la graine avec une
+  somme de contrôle, la génération de parts avec somme de contrôle,
+  la vérification des sommes de contrôle et la récupération de la graine.
+  Nous avons trouvé que l'idée de pouvoir vérifier manuellement les
+  sommes de contrôle sur les sauvegardes de graines ou de parts était
+  un concept particulièrement puissant. La seule méthode dont disposent
+  actuellement les utilisateurs pour vérifier la sauvegarde d'une graine
+  individuelle est de l'entrer dans un dispositif informatique de
+  confiance et de voir s'il obtient les clés publiques attendues---mais
+  déterminer si un dispositif est de confiance n'est souvent pas une
+  procédure triviale. Pire encore, pour vérifier l'intégrité des partages
+  SSSS existants (par exemple, dans SLIP39), l'utilisateur doit réunir
+  chaque partage qu'il souhaite vérifier avec suffisamment d'autres
+  partages pour atteindre le seuil, puis les entrer dans un dispositif
+  informatique de confiance. Cela signifie que la vérification de
+  l'intégrité des partages annule l'un des principaux avantages des
+  partages, à savoir la possibilité de préserver la sécurité des
+  informations en les répartissant entre plusieurs endroits ou personnes.
+  Avec Codex32, les utilisateurs peuvent vérifier régulièrement
+  l'intégrité de chaque partage individuellement en utilisant
+  simplement du papier, un stylo, quelques documents imprimés
+  et quelques minutes de temps.
 
-    La discussion sur la liste de diffusion a principalement porté
-    sur les différences entre Codex32 et SLIP39, qui est utilisé en
-    production depuis quelques années maintenant. Nous recommandons
-    à toute personne intéressée par Codex32 de consulter son [site
-    Web][codex32 website] ou de regarder la [vidéo][codex32 video]
-    de l'un de ses auteurs. Avec le projet de BIP, les auteurs espèrent
-    que les portefeuilles commenceront à prendre en charge l'utilisation
-    de graines codées en Codex32.
+  La discussion sur la liste de diffusion a principalement porté
+  sur les différences entre Codex32 et SLIP39, qui est utilisé en
+  production depuis quelques années maintenant. Nous recommandons
+  à toute personne intéressée par Codex32 de consulter son [site
+  Web][codex32 website] ou de regarder la [vidéo][codex32 video]
+  de l'un de ses auteurs. Avec le projet de BIP, les auteurs espèrent
+  que les portefeuilles commenceront à prendre en charge l'utilisation
+  de graines codées en Codex32.
 
 ## Questions et réponses sélectionnées dans Bitcoin Stack Exchange
 
@@ -180,12 +180,12 @@ adresses [bech32][topic bech32]. Un exemple de part de l'ébauche du BIP :
   mais incorporent des données dans une branche de script non exécutée en utilisant
   les opcodes `OP_PUSHDATAx` similaires à :
 
-    ```
-    OP_0
-    OP_IF
-    <data pushes>
-    OP_ENDIF
-    ```
+  ```
+  OP_0
+  OP_IF
+  <data pushes>
+  OP_ENDIF
+  ```
 
 - [Pourquoi le protocole ne permet-il pas aux transactions non confirmées d'expirer à une hauteur donnée ?]({{bse}}116926)
   Larry Ruane fait référence à Satoshi pour expliquer pourquoi il ne

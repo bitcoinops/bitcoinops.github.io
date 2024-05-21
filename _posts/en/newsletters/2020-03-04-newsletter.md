@@ -34,11 +34,11 @@ popular Bitcoin infrastructure projects.
   generation algorithm that uses the randomness to obfuscate the private key
   in order to protect the key against [differential power analysis][].
 
-    Because of the significance of some of these changes, the tag for
-    the tagged hashes in BIP340 is changed, ensuring that any code
-    written for the earlier drafts will generate signatures that fail
-    validation under the proposed revisions.  Wuille requests community
-    feedback on the changes.
+  Because of the significance of some of these changes, the tag for
+  the tagged hashes in BIP340 is changed, ensuring that any code
+  written for the earlier drafts will generate signatures that fail
+  validation under the proposed revisions.  Wuille requests community
+  feedback on the changes.
 
 - **Improving feature negotiation between full nodes at startup:** Suhas
   Daftuar [requested feedback][daftuar wtxid] on a proposal to insert a
@@ -54,10 +54,10 @@ popular Bitcoin infrastructure projects.
   insertion of negotiation messages would cause any problems.  If you're
   aware of any problems, please reply to the thread.
 
-    *Correction (2020-12-16): the paragraph above was edited to remove
-    an erroneous claim that inserting a message during version
-    negotiation had backwards compatibility issues.  The original text
-    is preserved in place as an HTML comment.*
+  *Correction (2020-12-16): the paragraph above was edited to remove
+  an erroneous claim that inserting a message during version
+  negotiation had backwards compatibility issues.  The original text
+  is preserved in place as an HTML comment.*
 
 - **Proposal to standardize an exfiltration resistant nonce protocol:** Stepan
   Snigirev [started][snigirev nonce] a discussion on the Bitcoin-Dev

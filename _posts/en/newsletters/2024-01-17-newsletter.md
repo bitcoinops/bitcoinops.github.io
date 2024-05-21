@@ -24,22 +24,22 @@ popular Bitcoin infrastructure software.
   disclosures] that affected Core Lightning versions 23.02 through
   23.05.2.  More recent versions of 23.08 or higher are not affected.
 
-    The new vulnerability was discovered by Morehouse's following up on
-    his prior work on fake funding, which he also responsibly disclosed
-    (see [Newsletter #266][news266 lnbugs]).  When re-testing nodes that
-    had implemented fixes for fake funding, he triggered a [race
-    condition][] that crashed CLN with about 30 seconds of effort.  If
-    an LN node is offline, it can't defend a user against malicious or
-    broken counterparties, which puts the user's funds at risk.
-    Analysis indicated that CLN had fixed the original fake funding
-    vulnerability but was unable to safely include a test for it before
-    the vulnerability was disclosed, resulting in the subsequent merge of a
-    plugin introducing the exploitable race condition.  After
-    Morehouse's disclosure, a quick patch was merged in CLN to prevent
-    the race condition from crashing the node.
+  The new vulnerability was discovered by Morehouse's following up on
+  his prior work on fake funding, which he also responsibly disclosed
+  (see [Newsletter #266][news266 lnbugs]).  When re-testing nodes that
+  had implemented fixes for fake funding, he triggered a [race
+  condition][] that crashed CLN with about 30 seconds of effort.  If
+  an LN node is offline, it can't defend a user against malicious or
+  broken counterparties, which puts the user's funds at risk.
+  Analysis indicated that CLN had fixed the original fake funding
+  vulnerability but was unable to safely include a test for it before
+  the vulnerability was disclosed, resulting in the subsequent merge of a
+  plugin introducing the exploitable race condition.  After
+  Morehouse's disclosure, a quick patch was merged in CLN to prevent
+  the race condition from crashing the node.
 
-    For more information, we recommend reading Morehouse's excellent
-    [full disclosure][morehouse full] blog post. {% assign timestamp="2:15" %}
+  For more information, we recommend reading Morehouse's excellent
+  [full disclosure][morehouse full] blog post. {% assign timestamp="2:15" %}
 
 - **New LNHANCE combination soft fork proposed:** Brandon Black
   [posted][black lnhance] to Delving Bitcoin details about a soft fork
@@ -54,16 +54,16 @@ popular Bitcoin infrastructure software.
   potentially make scripts more reusable by allowing the value of the
   key to be retrieved from the script interpreter.
 
-    In the thread, Black and others describe some of the protocols that
-    would be enabled by this combination of consensus changes:
-    [LN-Symmetry][topic eltoo] (eltoo), [Ark][topic ark]-style
-    [joinpools][topic joinpools], reduced-signature [DLCs][topic dlc],
-    and [vaults][topic vaults] without presigned transactions, among
-    other described benefits of the underlying proposals, such as
-    CTV-style congestion control and CSFS-style signature delegation.
+  In the thread, Black and others describe some of the protocols that
+  would be enabled by this combination of consensus changes:
+  [LN-Symmetry][topic eltoo] (eltoo), [Ark][topic ark]-style
+  [joinpools][topic joinpools], reduced-signature [DLCs][topic dlc],
+  and [vaults][topic vaults] without presigned transactions, among
+  other described benefits of the underlying proposals, such as
+  CTV-style congestion control and CSFS-style signature delegation.
 
-    As of this writing, technical discussion was limited to the request
-    about what protocols the combination proposal would enable. {% assign timestamp="4:59" %}
+  As of this writing, technical discussion was limited to the request
+  about what protocols the combination proposal would enable. {% assign timestamp="4:59" %}
 
 - **Proposal for 64-bit arithmetic soft fork:** Chris Stewart
   [posted][stewart 64] a [draft BIP][bip 64] to Delving Bitcoin for
@@ -77,11 +77,11 @@ popular Bitcoin infrastructure software.
   introspection (see Newsletters [#166][news166 tluv] and [#283][news283
   exits]).
 
-    As of this writing, discussion was focused on details of the
-    proposal, such as how to encode the integer value, what
-    [taproot][topic taproot] upgrade feature to use, and whether
-    creating a new set of arithmetic opcodes is preferred to upgrading
-    existing ones. {% assign timestamp="21:08" %}
+  As of this writing, discussion was focused on details of the
+  proposal, such as how to encode the integer value, what
+  [taproot][topic taproot] upgrade feature to use, and whether
+  creating a new set of arithmetic opcodes is preferred to upgrading
+  existing ones. {% assign timestamp="21:08" %}
 
 - **Overview of cluster mempool proposal:** Suhas Daftuar
   [posted][daftuar cluster] a summary of the [cluster mempool][topic
@@ -92,36 +92,36 @@ popular Bitcoin infrastructure software.
   proposal.  One detail we have not previously covered caught our
   attention:
 
-    - *CPFP carve out needs to be removed:* the [CPFP carve out][topic
-      cpfp carve out] mempool policy added to Bitcoin Core in [2019][news56 carveout]
-      attempts to address the CPFP version of [transaction
-      pinning][topic transaction pinning] where a counterparty attacker
-      uses Bitcoin Core's limits on the number and size of related
-      transactions to delay consideration of a child transaction
-      belonging to an honest peer.  The carve out allows one transaction
-      to slightly exceed the limits.  In cluster mempool, related
-      transactions are placed in a cluster and the limits are applied
-      per cluster, not per transaction.  Under that policy, there's no
-      known way to ensure a cluster only contains a maximum of one carve
-      out unless we restrict the relationships allowed between
-      transactions relayed on the network far beyond the current
-      restrictions.  A cluster with multiple carve outs could
-      significantly exceed its limits, at which point the protocol would
-      need to be engineered for those much higher limits. That would
-      accommodate users of carve outs but restrict what regular
-      transaction broadcasters can do---an undesirable proposition.
+  - *CPFP carve out needs to be removed:* the [CPFP carve out][topic
+    cpfp carve out] mempool policy added to Bitcoin Core in [2019][news56 carveout]
+    attempts to address the CPFP version of [transaction
+    pinning][topic transaction pinning] where a counterparty attacker
+    uses Bitcoin Core's limits on the number and size of related
+    transactions to delay consideration of a child transaction
+    belonging to an honest peer.  The carve out allows one transaction
+    to slightly exceed the limits.  In cluster mempool, related
+    transactions are placed in a cluster and the limits are applied
+    per cluster, not per transaction.  Under that policy, there's no
+    known way to ensure a cluster only contains a maximum of one carve
+    out unless we restrict the relationships allowed between
+    transactions relayed on the network far beyond the current
+    restrictions.  A cluster with multiple carve outs could
+    significantly exceed its limits, at which point the protocol would
+    need to be engineered for those much higher limits. That would
+    accommodate users of carve outs but restrict what regular
+    transaction broadcasters can do---an undesirable proposition.
 
-      A proposed solution to the incompatibility between carve out and
-      cluster mempool is [v3 transaction relay][topic v3 transaction
-      relay], which would allow regular users of v1 and v2 transactions
-      to continue using them in all the historically typical ways, but
-      also allow the users of contract protocols like LN to opt in to v3
-      transactions that enforce a restricted set of relationships
-      between transactions (_topology_).  The restricted topology would
-      mitigate transaction pinning attacks
-      and could be combined with nearly drop-in replacements for carve
-      out transactions such as [ephemeral anchors][topic ephemeral
-      anchors].
+    A proposed solution to the incompatibility between carve out and
+    cluster mempool is [v3 transaction relay][topic v3 transaction
+    relay], which would allow regular users of v1 and v2 transactions
+    to continue using them in all the historically typical ways, but
+    also allow the users of contract protocols like LN to opt in to v3
+    transactions that enforce a restricted set of relationships
+    between transactions (_topology_).  The restricted topology would
+    mitigate transaction pinning attacks
+    and could be combined with nearly drop-in replacements for carve
+    out transactions such as [ephemeral anchors][topic ephemeral
+    anchors].
 
   It's important that a major change to Bitcoin Core's mempool
   management algorithms take into account all the ways people use

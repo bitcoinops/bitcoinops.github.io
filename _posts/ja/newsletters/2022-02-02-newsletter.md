@@ -47,19 +47,19 @@ CTVと`SIGHASH_ANYPREVOUT`を有効にするためのTapscriptへの代替変更
   Tapscriptが公開鍵を指定し、スタック上の特定のデータ
   （`OP_TXHASH`によって作成された計算済みのトランザクションダイジェストなど）に対して対応する署名を要求できるようにします。
 
-    O'Connorは、これらの2つのopcodeにより、これまでの2つのソフトフォークの提案、
-    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] ([BIP118][]で定義されたAPO)および
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] ([BIP119][]で定義されたCTV)を
-    エミュレーションできることを説明しました。目的によっては、
-    このエミュレーションはCTVやAPOを直接使用するよりも効率が悪いかもしれませんが、
-    `OP_TXHASH`と`OP_CSFS`はTapscript言語をよりシンプルに保ち、
-    特に[OP_CAT][]などのTapscriptへの他のシンプルな追加要素と組み合わせた場合、
-    今後のScript作成者に柔軟性を提供することができます。
+  O'Connorは、これらの2つのopcodeにより、これまでの2つのソフトフォークの提案、
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] ([BIP118][]で定義されたAPO)および
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] ([BIP119][]で定義されたCTV)を
+  エミュレーションできることを説明しました。目的によっては、
+  このエミュレーションはCTVやAPOを直接使用するよりも効率が悪いかもしれませんが、
+  `OP_TXHASH`と`OP_CSFS`はTapscript言語をよりシンプルに保ち、
+  特に[OP_CAT][]などのTapscriptへの他のシンプルな追加要素と組み合わせた場合、
+  今後のScript作成者に柔軟性を提供することができます。
 
-    Anthony Townsは、[返信][towns pop_sigdata]で、他の代替opcodeを使用した同様のアプローチを提案しました。
+  Anthony Townsは、[返信][towns pop_sigdata]で、他の代替opcodeを使用した同様のアプローチを提案しました。
 
-    この要約が書かれている時点では、このアイディアはまだ活発に議論されていました。
-    私たちは、将来のニュースレターで、この話題を再度取り上げる予定です。
+  この要約が書かれている時点では、このアイディアはまだ活発に議論されていました。
+  私たちは、将来のニュースレターで、この話題を再度取り上げる予定です。
 
 ## リリースとリリース候補
 

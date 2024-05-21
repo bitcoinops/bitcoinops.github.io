@@ -29,23 +29,23 @@ software.
   the money to miners if the commitment transaction gets published
   (which, in most cases, shouldn't happen).
 
-    As reported by Riard, LN implementations allowed setting their
-    uneconomical limit to 20% or more of a channel's value, so five
-    or fewer payments could spend all of a channel's value to miner
-    donations.  Losing value to miners is a fundamental risk of the
-    small-payments mechanism used in LN, but risking losing all of a
-    channel's value in just five payments was apparently considered
-    excessive.
+  As reported by Riard, LN implementations allowed setting their
+  uneconomical limit to 20% or more of a channel's value, so five
+  or fewer payments could spend all of a channel's value to miner
+  donations.  Losing value to miners is a fundamental risk of the
+  small-payments mechanism used in LN, but risking losing all of a
+  channel's value in just five payments was apparently considered
+  excessive.
 
-    Several mitigations are described in Riard's email, including having
-    LN nodes simply refuse to route payments that would risk donating
-    more than a certain amount of their funds to miner fees.
-    Implementing this may decrease the ability of nodes to
-    simultaneously route more than a few small payments that are
-    uneconomical onchain, although it's unclear whether it will cause any
-    problems in practice.  All affected LN implementations tracked by
-    Optech have released, or soon will release, a version implementing
-    at least one of the proposed mitigations.
+  Several mitigations are described in Riard's email, including having
+  LN nodes simply refuse to route payments that would risk donating
+  more than a certain amount of their funds to miner fees.
+  Implementing this may decrease the ability of nodes to
+  simultaneously route more than a few small payments that are
+  uneconomical onchain, although it's unclear whether it will cause any
+  problems in practice.  All affected LN implementations tracked by
+  Optech have released, or soon will release, a version implementing
+  at least one of the proposed mitigations.
 
 - **Multiple proposed LN improvements:** Anthony Towns [posted][towns
   proposal] to the Lightning-Dev mailing list a detailed proposal, with
@@ -59,47 +59,47 @@ software.
   it was implemented and tested by LN developers.  Looking at the major
   features:
 
-    - **Reduced payment latency:** some details necessary to process a
-      payment but not specific to the details of the payment can be
-      exchanged by channel partners in advance, allowing a node to
-      initiate or route a payment by simply sending the payment and
-      a signature for the payment to the channel partner.  No round-trip
-      communication is required on the critical path, allowing payments
-      to propagate across the network at close to the speed of the
-      underlying links between LN nodes.  Refunding a payment in case of
-      failure would be slower, but not slower than before this change.
-      This feature is an extension of ideas previously proposed by
-      developer ZmnSCPxj (see [Newsletter #152][news152 ff]), who also
-      [wrote][zmnscpxj name drop] a related post this week based on some
-      of his out of band discussions with Towns.
+  - **Reduced payment latency:** some details necessary to process a
+    payment but not specific to the details of the payment can be
+    exchanged by channel partners in advance, allowing a node to
+    initiate or route a payment by simply sending the payment and
+    a signature for the payment to the channel partner.  No round-trip
+    communication is required on the critical path, allowing payments
+    to propagate across the network at close to the speed of the
+    underlying links between LN nodes.  Refunding a payment in case of
+    failure would be slower, but not slower than before this change.
+    This feature is an extension of ideas previously proposed by
+    developer ZmnSCPxj (see [Newsletter #152][news152 ff]), who also
+    [wrote][zmnscpxj name drop] a related post this week based on some
+    of his out of band discussions with Towns.
 
-    - **Improved backup resiliency:** currently LN requires both channel
-      parties and any [watchtowers][topic watchtowers] they use to store
-      information about every prior state of the channel in case of attempted
-      theft.  Towns's proposal uses deterministic derivation for most
-      information about channel state and encodes a state number in
-      each transaction to allow recovering the necessary information
-      (with some small amount of brute force grinding required in some
-      cases).  This allows a node to backup all of the key-related
-      information it needs at the time a channel is created.  Any other
-      required information should be obtainable from either the block
-      chain (in case of a theft attempt) or from the channel
-      partner (in the case a node loses its own data).
+  - **Improved backup resiliency:** currently LN requires both channel
+    parties and any [watchtowers][topic watchtowers] they use to store
+    information about every prior state of the channel in case of attempted
+    theft.  Towns's proposal uses deterministic derivation for most
+    information about channel state and encodes a state number in
+    each transaction to allow recovering the necessary information
+    (with some small amount of brute force grinding required in some
+    cases).  This allows a node to backup all of the key-related
+    information it needs at the time a channel is created.  Any other
+    required information should be obtainable from either the block
+    chain (in case of a theft attempt) or from the channel
+    partner (in the case a node loses its own data).
 
-    - **Receiving payments with an offline key:** an online (hot) key is
-      fundamentally required to send or route a payment in LN, but the
-      current protocol also requires an online key in order to receive a
-      payment.  Based on an adaptation of ZmnSCPxj's previously
-      mentioned idea by Lloyd Fournier (also covered in [Newsletter
-      #152][news152 ff]), it would be possible for a receiving node to
-      only need to bring its keys online in order to open a channel,
-      close a channel, or rebalance its channels.  This could
-      improve the security of merchant nodes.
+  - **Receiving payments with an offline key:** an online (hot) key is
+    fundamentally required to send or route a payment in LN, but the
+    current protocol also requires an online key in order to receive a
+    payment.  Based on an adaptation of ZmnSCPxj's previously
+    mentioned idea by Lloyd Fournier (also covered in [Newsletter
+    #152][news152 ff]), it would be possible for a receiving node to
+    only need to bring its keys online in order to open a channel,
+    close a channel, or rebalance its channels.  This could
+    improve the security of merchant nodes.
 
-    The proposal would also provide the [better known][zmnscpxj taproot ln]
-    privacy and efficiency advantages of upgrading LN to use taproot and
-    [PTLCs][topic ptlc].  The idea was well discussed on the mailing
-    list, with discussion ongoing at the time of writing.
+  The proposal would also provide the [better known][zmnscpxj taproot ln]
+  privacy and efficiency advantages of upgrading LN to use taproot and
+  [PTLCs][topic ptlc].  The idea was well discussed on the mailing
+  list, with discussion ongoing at the time of writing.
 
 ## Bitcoin Core PR Review Club
 
@@ -201,14 +201,14 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
   where not all of the outputs being spent by the transaction are owned by the
   wallet.
 
-    Previously, the wallet was not able to estimate the fee required
-    for spending outputs that it didn't own, since it didn't know
-    the size of the input required to spend that output. This PR
-    updates those RPC methods to accept a `solving_data` argument. By providing
-    the public keys, serialized scriptPubKeys, or [descriptors][topic
-    descriptors] for the outputs being spent in the transaction, the wallet can
-    estimate the size of the inputs required to spend those outputs (and therefore
-    the fee required to spend the outputs).
+  Previously, the wallet was not able to estimate the fee required
+  for spending outputs that it didn't own, since it didn't know
+  the size of the input required to spend that output. This PR
+  updates those RPC methods to accept a `solving_data` argument. By providing
+  the public keys, serialized scriptPubKeys, or [descriptors][topic
+  descriptors] for the outputs being spent in the transaction, the wallet can
+  estimate the size of the inputs required to spend those outputs (and therefore
+  the fee required to spend the outputs).
 
 - [Bitcoin Core #22340][] After a block is mined, it is broadcast to the p2p network,
   where it will eventually be relayed to all nodes on the network. Traditionally,

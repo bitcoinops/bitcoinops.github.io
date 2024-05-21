@@ -25,17 +25,17 @@ les versions candidates, et les changements apportés aux principaux logiciels d
   ou des millions de fois, cela pourrait gaspiller les ressources de Bob au point où son nœud LN ne peut plus rien faire---y compris
   effectuer des opérations sensibles au facteur temps nécessaires pour éviter la perte d'argent.
 
-    Dans les tests de Morehouse sur ses propres nœuds, il a pu causer des problèmes importants avec Core Lightning, Eclair, LDK et
-    LND, y compris deux cas qui (selon nous) pourraient probablement entraîner une perte de fonds parmi de nombreux nœuds. La
-    [description complète][morehouse post] de Morehouse renvoie aux PR où le problème a été résolu (ce qui inclut les PR couverts
-    dans les bulletins [#237][news237 dos] et [#240][news240 dos]) et liste les versions LN qui ont résolu la vulnérabilité :
+  Dans les tests de Morehouse sur ses propres nœuds, il a pu causer des problèmes importants avec Core Lightning, Eclair, LDK et
+  LND, y compris deux cas qui (selon nous) pourraient probablement entraîner une perte de fonds parmi de nombreux nœuds. La
+  [description complète][morehouse post] de Morehouse renvoie aux PR où le problème a été résolu (ce qui inclut les PR couverts
+  dans les bulletins [#237][news237 dos] et [#240][news240 dos]) et liste les versions LN qui ont résolu la vulnérabilité :
 
-    - Core Lightning 23.02
-    - Eclair 0.9.0
-    - LDK 0.0.114
-    - LND 0.16.0
+  - Core Lightning 23.02
+  - Eclair 0.9.0
+  - LDK 0.0.114
+  - LND 0.16.0
 
-    Il y a eu des discussions de suivi sur la liste de diffusion et sur [IRC][stateless funding].
+  Il y a eu des discussions de suivi sur la liste de diffusion et sur [IRC][stateless funding].
 
 - **Synthèse de covenants utilisant `TXHASH` et `CSFS` :** Brandon Black [a publié][black mashup] sur la liste de diffusion
   Bitcoin-Dev une proposition pour une version de `OP_TXHASH` (voir [Bulletin #185][news185 txhash]) combinée avec
@@ -45,8 +45,8 @@ les versions candidates, et les changements apportés aux principaux logiciels d
   la motivation pour la créer était de "clarifier notre réflexion sur [CTV et APO] individuellement et ensemble, et potentiellement
   de progresser vers un consensus sur une voie permettant [...] des façons étonnantes d'utiliser le bitcoin à l'avenir".
 
-    La proposition a suscité des discussions sur la liste de diffusion, avec des [révisions supplémentaires][delv mashup] publiées
-    et discutées sur le forum Delving Bitcoin.
+  La proposition a suscité des discussions sur la liste de diffusion, avec des [révisions supplémentaires][delv mashup] publiées
+  et discutées sur le forum Delving Bitcoin.
 
 ## Sélection de Q&R du Bitcoin Stack Exchange
 
@@ -150,8 +150,8 @@ notre dernière mise à jour.*
   [HTLC][topic htlc], permettant aux paiements commençant dans un canal taproot de continuer à être transférés via d'autres nœuds
   LN qui ne prennent pas en charge les canaux taproot.
 
-    <!-- Les PR liées suivantes ont des titres "1/x", "2/x", etc. Je les ai listées dans cet ordre plutôt que par numéro de PR -->
-    Ce PR comprend 134 validations qui ont été précédemment fusionnées dans une branche d'essai à partir des PR suivants : [#7332][lnd #7332], [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340], [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346], [#7347][lnd #7347] et [#7472][lnd #7472].
+  <!-- Les PR liées suivantes ont des titres "1/x", "2/x", etc. Je les ai listées dans cet ordre plutôt que par numéro de PR -->
+  Ce PR comprend 134 validations qui ont été précédemment fusionnées dans une branche d'essai à partir des PR suivants : [#7332][lnd #7332], [#7333][lnd #7333], [#7331][lnd #7331], [#7340][lnd #7340], [#7344][lnd #7344], [#7345][lnd #7345], [#7346][lnd #7346], [#7347][lnd #7347] et [#7472][lnd #7472].
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}

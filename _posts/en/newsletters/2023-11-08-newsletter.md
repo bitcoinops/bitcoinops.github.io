@@ -24,17 +24,17 @@ popular Bitcoin infrastructure software.
   future.  We assume that the end of email relay also affects the
   Lightning-Dev mailing list, which is hosted by the same organization.
 
-    The administrators sought feedback from the community about options,
-    including migrating the mailing list to Google Groups.  If such a
-    migration happens, Optech will begin using that as one of our [news
-    sources][sources].
+  The administrators sought feedback from the community about options,
+  including migrating the mailing list to Google Groups.  If such a
+  migration happens, Optech will begin using that as one of our [news
+  sources][sources].
 
-    We're also aware that,
-    in the months prior to the announcement, some well-established
-    developers had begun experimenting with discussions on the
-    [DelvingBitcoin][] web forum.  Optech will begin monitoring that
-    forum for interesting or important discussions effective
-    immediately. {% assign timestamp="1:05" %}
+  We're also aware that,
+  in the months prior to the announcement, some well-established
+  developers had begun experimenting with discussions on the
+  [DelvingBitcoin][] web forum.  Optech will begin monitoring that
+  forum for interesting or important discussions effective
+  immediately. {% assign timestamp="1:05" %}
 
 - **HTLC aggregation with covenants:** Johan Torås Halseth
   [posted][halseth agg] to the Lightning-Dev mailing list a suggestion

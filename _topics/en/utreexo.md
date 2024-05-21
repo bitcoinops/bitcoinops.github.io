@@ -3,7 +3,7 @@ title: Utreexo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - P2P Network Protocol
   - Consensus Enforcement
 
@@ -42,6 +42,9 @@ optech_mentions:
 
   - title: "Libflorestra library announced for using utreexo in applications"
     url: /en/newsletters/2023/08/23/#libfloresta-library-announced
+
+  - title: "Release of utreexod beta"
+    url: /en/newsletters/2024/05/15/#release-of-utreexod-beta
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

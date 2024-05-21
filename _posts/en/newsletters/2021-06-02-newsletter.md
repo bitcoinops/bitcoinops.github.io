@@ -31,22 +31,22 @@ Bitcoin infrastructure software.
   all transactions in the mempool based on their effective feerate
   whether or not those transactions have any ancestors.
 
-    However, Erhardt and Shikhelman note that a more sophisticated
-    algorithm that may require a bit more CPU can find sets of related
-    transactions that are even more profitable to mine than Bitcoin
-    Core's existing simple algorithm.  The authors tested their
-    algorithm on historic mempool data and found that it would've
-    collected slightly more fees than Bitcoin Core's existing algorithm
-    in almost all recent blocks.
+  However, Erhardt and Shikhelman note that a more sophisticated
+  algorithm that may require a bit more CPU can find sets of related
+  transactions that are even more profitable to mine than Bitcoin
+  Core's existing simple algorithm.  The authors tested their
+  algorithm on historic mempool data and found that it would've
+  collected slightly more fees than Bitcoin Core's existing algorithm
+  in almost all recent blocks.
 
-    If implemented and used by miners, the improved algorithm could
-    allow multiple users who each received an output from a large
-    [coinjoin][topic coinjoin] or [batched payment][topic payment
-    batching] to each pay a small part of the total fee necessary to [CPFP
-    fee bump][topic cpfp] that coinjoin or payment.  That would be an
-    improvement over the current case where each user's CPFP fee bump is
-    considered independently and multiple related fee bumps may not have
-    an aggregate effect on whether an ancestor transaction is mined.
+  If implemented and used by miners, the improved algorithm could
+  allow multiple users who each received an output from a large
+  [coinjoin][topic coinjoin] or [batched payment][topic payment
+  batching] to each pay a small part of the total fee necessary to [CPFP
+  fee bump][topic cpfp] that coinjoin or payment.  That would be an
+  improvement over the current case where each user's CPFP fee bump is
+  considered independently and multiple related fee bumps may not have
+  an aggregate effect on whether an ancestor transaction is mined.
 
 ## Releases and release candidates
 

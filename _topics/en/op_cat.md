@@ -6,12 +6,12 @@ title: OP_CAT
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
 
@@ -56,6 +56,9 @@ optech_mentions:
 
   - title: "Bitcoin PR Review Club for `OP_CAT` on signet with Bitcoin Inquisition"
     url: /en/newsletters/2024/03/13/#bitcoin-core-pr-review-club
+
+  - title: "BIPs #1525 adds BIP347 which proposes an `OP_CAT` opcode for tapscript"
+    url: /en/newsletters/2024/05/15/#bips-1525
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

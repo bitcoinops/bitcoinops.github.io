@@ -6,12 +6,12 @@ title: Fee estimation
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -46,6 +46,9 @@ optech_mentions:
 
   - title: "Discussion of incorporating live mempool data into Bitcoin Core's feerate estimation"
     url: /en/newsletters/2024/03/27/#mempool-based-feerate-estimation
+
+  - title: Discussion about weak blocks helping with feerate estimation
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -62,22 +62,22 @@ popular Bitcoin infrastructure software.
   signature over particular data on the stack---such as the computed
   digest of the transaction created by `OP_TXHASH`.
 
-    O'Connor explained how these two opcodes would allow emulation of
-    two earlier soft fork proposals, [SIGHASH_ANYPREVOUT][topic
-    sighash_anyprevout] (APO, specified in [BIP118][]) and
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV,
-    specified in [BIP119][]).  For some purposes, the emulation might be
-    less efficient than using CTV or APO directly, but `OP_TXHASH` and
-    `OP_CSFS` would keep the Tapscript language simpler and provide more
-    flexibility for future script writers, especially if combined
-    with other simple additions to tapscript such as [OP_CAT][].
+  O'Connor explained how these two opcodes would allow emulation of
+  two earlier soft fork proposals, [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout] (APO, specified in [BIP118][]) and
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV,
+  specified in [BIP119][]).  For some purposes, the emulation might be
+  less efficient than using CTV or APO directly, but `OP_TXHASH` and
+  `OP_CSFS` would keep the Tapscript language simpler and provide more
+  flexibility for future script writers, especially if combined
+  with other simple additions to tapscript such as [OP_CAT][].
 
-    In a [reply][towns pop_sigdata], Anthony Towns suggested a similar
-    approach using other alternative opcodes.
+  In a [reply][towns pop_sigdata], Anthony Towns suggested a similar
+  approach using other alternative opcodes.
 
-    The ideas were still being actively discussed as this summary was
-    being written.  We expect to revisit the topic in a future
-    newsletter.
+  The ideas were still being actively discussed as this summary was
+  being written.  We expect to revisit the topic in a future
+  newsletter.
 
 ## Releases and release candidates
 

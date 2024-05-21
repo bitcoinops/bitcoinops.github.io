@@ -28,56 +28,56 @@ notable changes to popular Bitcoin infrastructure software.
   open but which opened a total of 190 channels<!-- n=20 ; n*(n - 1)/2
   -->.
 
-    Law notes that the existing LN channel protocol (commonly called
-    LN-penalty) creates two problems for channels opened from within a
-    factory:
+  Law notes that the existing LN channel protocol (commonly called
+  LN-penalty) creates two problems for channels opened from within a
+  factory:
 
-    - *Long required HTLC expiries:* trustlessness requires that any
-      participant in a factory be able to exit it and regain exclusive
-      control over their funds onchain.  This is accomplished by the
-      participant publishing the current state of balances in the
-      factory onchain.  However, a mechanism is needed to prevent the
-      participant from publishing an earlier state, e.g. one where they
-      controlled a greater amount of money.  The original factory
-      proposal accomplishes this by using one or more timelocked
-      transactions that ensure more recent states can be confirmed more
-      quickly than outdated states.
+  - *Long required HTLC expiries:* trustlessness requires that any
+    participant in a factory be able to exit it and regain exclusive
+    control over their funds onchain.  This is accomplished by the
+    participant publishing the current state of balances in the
+    factory onchain.  However, a mechanism is needed to prevent the
+    participant from publishing an earlier state, e.g. one where they
+    controlled a greater amount of money.  The original factory
+    proposal accomplishes this by using one or more timelocked
+    transactions that ensure more recent states can be confirmed more
+    quickly than outdated states.
 
-        A consequence of this, described by Law, is that any LN payment
-        ([HTLC][topic htlc]) that is routed through a channel in a
-        channel factory needs to provide enough time for the latest
-        state timelock to expire so the factory can be unilaterally
-        closed.  Worse, this applies each time a payment is forwarded
-        through a factory.  For example, if a payment is forwarded
-        through 10 factories each with a 1-day expiry, it's possible that
-        a payment could be [jammed][topic channel jamming attacks] by
-        accident or on purpose for 10 days (or longer, depending on
-        other HTLC settings).
+    A consequence of this, described by Law, is that any LN payment
+    ([HTLC][topic htlc]) that is routed through a channel in a
+    channel factory needs to provide enough time for the latest
+    state timelock to expire so the factory can be unilaterally
+    closed.  Worse, this applies each time a payment is forwarded
+    through a factory.  For example, if a payment is forwarded
+    through 10 factories each with a 1-day expiry, it's possible that
+    a payment could be [jammed][topic channel jamming attacks] by
+    accident or on purpose for 10 days (or longer, depending on
+    other HTLC settings).
 
-    - *All or nothing:* for factories to truly achieve their best
-      efficiencies, all of their channels also need to be cooperatively
-      closed in a single onchain transaction.  Cooperative closes aren't
-      possible if any of the original participants becomes
-      unresponsive---and the chance of a participant becoming
-      unresponsive approaches 100% as the number of participants
-      increases, limiting the maximum benefit factories can provide.
+  - *All or nothing:* for factories to truly achieve their best
+    efficiencies, all of their channels also need to be cooperatively
+    closed in a single onchain transaction.  Cooperative closes aren't
+    possible if any of the original participants becomes
+    unresponsive---and the chance of a participant becoming
+    unresponsive approaches 100% as the number of participants
+    increases, limiting the maximum benefit factories can provide.
 
-        Law cites previous work in allowing factories to remain
-        operational even if one participant wants to leave or,
-        conversely, one participant becomes unresponsive, such as the
-        proposals for `OP_TAPLEAF_UPDATE_VERIFY` and `OP_EVICT` (see
-        Newsletters [#166][news166 tluv] and [#189][news189 evict]).
+    Law cites previous work in allowing factories to remain
+    operational even if one participant wants to leave or,
+    conversely, one participant becomes unresponsive, such as the
+    proposals for `OP_TAPLEAF_UPDATE_VERIFY` and `OP_EVICT` (see
+    Newsletters [#166][news166 tluv] and [#189][news189 evict]).
 
-    Three proposed protocols are presented by Law to address the
-    concerns.  All derive from a previous proposal by Law [posted][law
-    tp] in October for *tunable penalties*---the ability to separate the
-    management of the enforcement mechanism (penalties) from the
-    management of other funds.  That previous proposal has not yet
-    received any discussion on the Lightning-Dev mailing list.  As of
-    this writing, Law's new proposal has also not received any
-    discussion.  If the proposals are sound, they would have the
-    advantage over other proposals of not requiring any changes to
-    Bitcoin's consensus rules. {% assign timestamp="2:34" %}
+  Three proposed protocols are presented by Law to address the
+  concerns.  All derive from a previous proposal by Law [posted][law
+  tp] in October for *tunable penalties*---the ability to separate the
+  management of the enforcement mechanism (penalties) from the
+  management of other funds.  That previous proposal has not yet
+  received any discussion on the Lightning-Dev mailing list.  As of
+  this writing, Law's new proposal has also not received any
+  discussion.  If the proposals are sound, they would have the
+  advantage over other proposals of not requiring any changes to
+  Bitcoin's consensus rules. {% assign timestamp="2:34" %}
 
 - **Local jamming to prevent remote jamming:** Joost Jager
   [posted][jager jam] to the Lightning-Dev mailing list a link and
@@ -87,73 +87,73 @@ notable changes to popular Bitcoin infrastructure software.
   behalf of each of its peers.  For example, consider the worst case
   HTLC jamming attack:
 
-    ![Illustration of two different jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
+  ![Illustration of two different jamming attacks](/img/posts/2020-12-ln-jamming-attacks.png)
 
-    With the current LN protocol, Alice is fundamentally limited to
-    concurrently forwarding a maximum of [483 pending HTLCs][].  If she
-    instead uses CircuitBreaker to limit her channel with Mallory to
-    10 concurrent pending HTLC forwards, her downstream channel with Bob
-    (not visualized) and all other channels in this circuit will be
-    protected from all but those first 10 HTLCs that Mallory keeps
-    pending.  This may significantly reduce the effectiveness of
-    Mallory's attack by requiring she open many more channels to block
-    the same number of HTLC slots, which may increase the cost of the
-    attack by requiring she pay more onchain fees.
+  With the current LN protocol, Alice is fundamentally limited to
+  concurrently forwarding a maximum of [483 pending HTLCs][].  If she
+  instead uses CircuitBreaker to limit her channel with Mallory to
+  10 concurrent pending HTLC forwards, her downstream channel with Bob
+  (not visualized) and all other channels in this circuit will be
+  protected from all but those first 10 HTLCs that Mallory keeps
+  pending.  This may significantly reduce the effectiveness of
+  Mallory's attack by requiring she open many more channels to block
+  the same number of HTLC slots, which may increase the cost of the
+  attack by requiring she pay more onchain fees.
 
-    Although CircuitBreaker was originally implemented to simply refuse
-    to accept any HTLCs in any channel which exceeded its limit, Jager
-    notes that he recently implemented an optional additional mode which
-    puts any HTLCs in a queue rather than immediately refusing or
-    forwarding them.  When the number of concurrent pending HTLCs in a
-    channel drops below the channel limit, CircuitBreaker forwards the
-    oldest non-expired HTLC from the queue.  Jager describes two
-    advantages of this approach:
+  Although CircuitBreaker was originally implemented to simply refuse
+  to accept any HTLCs in any channel which exceeded its limit, Jager
+  notes that he recently implemented an optional additional mode which
+  puts any HTLCs in a queue rather than immediately refusing or
+  forwarding them.  When the number of concurrent pending HTLCs in a
+  channel drops below the channel limit, CircuitBreaker forwards the
+  oldest non-expired HTLC from the queue.  Jager describes two
+  advantages of this approach:
 
-    - *Backpressure:* if a node in the middle of a circuit refuses an
-      HTLC, all nodes in the circuit (not just those further down the
-      circuit) can use that HTLC's slot and funds to forward other
-      payments.  That means there's limited incentive for Alice to
-      refuse more than 10 HTLCs from Mallory---she can simply hope that
-      some later node in the circuit will run CircuitBreaker or
-      equivalent software.
+  - *Backpressure:* if a node in the middle of a circuit refuses an
+    HTLC, all nodes in the circuit (not just those further down the
+    circuit) can use that HTLC's slot and funds to forward other
+    payments.  That means there's limited incentive for Alice to
+    refuse more than 10 HTLCs from Mallory---she can simply hope that
+    some later node in the circuit will run CircuitBreaker or
+    equivalent software.
 
-        However, if a later node (say Bob) uses CircuitBreaker to queue
-        excess HTLCs, then Alice could still have her HTLC slots or
-        funds exhausted by Mallory even though Bob and later nodes in
-        the circuit retain the same benefits as now (with the exception
-        of possibly increased channel closing costs for Bob in some
-        cases; see Jager's email or the CircuitBreaker documentation for
-        details).  This gently pressures Alice into running
-        CircuitBreaker or something similar.
+    However, if a later node (say Bob) uses CircuitBreaker to queue
+    excess HTLCs, then Alice could still have her HTLC slots or
+    funds exhausted by Mallory even though Bob and later nodes in
+    the circuit retain the same benefits as now (with the exception
+    of possibly increased channel closing costs for Bob in some
+    cases; see Jager's email or the CircuitBreaker documentation for
+    details).  This gently pressures Alice into running
+    CircuitBreaker or something similar.
 
-    - *Failure attribution:* the current LN protocol allows (in many
-      cases) a spender to identify which channel refused to forward an
-      HTLC.  Some spender software tries to avoid using those channels
-      in future HTLCs for a certain amount of time.  In the case of
-      refusing HTLCs from malicious actors like Mallory, this obviously
-      doesn't matter, but if a node running CircuitBreaker refuses HTLCs
-      from honest spenders, this may not only reduce its income from
-      those refused HTLCs but also the income it would've received from
-      subsequent payment attempts.
+  - *Failure attribution:* the current LN protocol allows (in many
+    cases) a spender to identify which channel refused to forward an
+    HTLC.  Some spender software tries to avoid using those channels
+    in future HTLCs for a certain amount of time.  In the case of
+    refusing HTLCs from malicious actors like Mallory, this obviously
+    doesn't matter, but if a node running CircuitBreaker refuses HTLCs
+    from honest spenders, this may not only reduce its income from
+    those refused HTLCs but also the income it would've received from
+    subsequent payment attempts.
 
-        However, the LN protocol doesn't currently have a widely
-        deployed way to determine which channel delayed an HTLC, so it's
-        less consequential in this regard to delay forwarding an HTLC
-        than it is to outright refuse to forward it.  Jager notes that
-        this is changing due to many LN implementations working on
-        supporting more detailed onion-routed error messages (see
-        [Newsletters #224][news224 fat]), so this advantage may
-        disappear some day.
+    However, the LN protocol doesn't currently have a widely
+    deployed way to determine which channel delayed an HTLC, so it's
+    less consequential in this regard to delay forwarding an HTLC
+    than it is to outright refuse to forward it.  Jager notes that
+    this is changing due to many LN implementations working on
+    supporting more detailed onion-routed error messages (see
+    [Newsletters #224][news224 fat]), so this advantage may
+    disappear some day.
 
-    Jager calls CircuitBreaker, "a simple but imperfect way to deal with
-    channel jamming and spamming".  Work continues on finding and
-    deploying a protocol-level change that will more comprehensively
-    mitigate concerns about jamming attacks, but CircuitBreaker stands
-    out as a seemingly reasonable solution that's compatible with the
-    current LN protocol and which any LND user can deploy immediately on
-    their forwarding node.  CircuitBreaker is MIT licensed and
-    conceptually simple, so it should be possible to adapt or port for
-    other LN implementations. {% assign timestamp="9:28" %}
+  Jager calls CircuitBreaker, "a simple but imperfect way to deal with
+  channel jamming and spamming".  Work continues on finding and
+  deploying a protocol-level change that will more comprehensively
+  mitigate concerns about jamming attacks, but CircuitBreaker stands
+  out as a seemingly reasonable solution that's compatible with the
+  current LN protocol and which any LND user can deploy immediately on
+  their forwarding node.  CircuitBreaker is MIT licensed and
+  conceptually simple, so it should be possible to adapt or port for
+  other LN implementations. {% assign timestamp="9:28" %}
 
 - **Monitoring of full-RBF replacements:** developer 0xB10C
   [posted][0xb10c rbf] to the Bitcoin-Dev mailing list that they've
@@ -163,12 +163,12 @@ notable changes to popular Bitcoin infrastructure software.
   replacement using the `mempoolfullrbf` configuration option (see
   [Newsletter #208][news208 rbf]).
 
-    Users and services can use the website as an indicator for which
-    large mining pools might be currently confirming unsignaled
-    replacement transactions (if any are doing so).  However, we remind
-    readers that payments received in unconfirmed transactions cannot be
-    guaranteed even if miners don't currently seem to be mining
-    unsignaled replacements. {% assign timestamp="29:17" %}
+  Users and services can use the website as an indicator for which
+  large mining pools might be currently confirming unsignaled
+  replacement transactions (if any are doing so).  However, we remind
+  readers that payments received in unconfirmed transactions cannot be
+  guaranteed even if miners don't currently seem to be mining
+  unsignaled replacements. {% assign timestamp="29:17" %}
 
 ## Changes to services and client software
 
@@ -261,11 +261,11 @@ release candidates.*
   [release notes][bcc rn] for the full list of new features and bug
   fixes.
 
-    Note: a version 24.0 was tagged and had its binaries released, but
-    project maintainers never announced it and instead worked with other
-    contributors to resolve [some last-minute issues][bcc milestone
-    24.0.1], making this release of 24.0.1 the first announced release
-    of the 24.x branch. {% assign timestamp="1:14:02" %}
+  Note: a version 24.0 was tagged and had its binaries released, but
+  project maintainers never announced it and instead worked with other
+  contributors to resolve [some last-minute issues][bcc milestone
+  24.0.1], making this release of 24.0.1 the first announced release
+  of the 24.x branch. {% assign timestamp="1:14:02" %}
 
 - [libsecp256k1 0.2.0][] is the first tagged release of this widely-used
   library for Bitcoin-related cryptographic operations.  An

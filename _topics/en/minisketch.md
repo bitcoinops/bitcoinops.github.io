@@ -1,12 +1,12 @@
 ---
 title: Minisketch
 
-aliases:
+title-aliases:
   - Libminisketch
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Developer Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.

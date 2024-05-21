@@ -50,24 +50,24 @@ notable changes to popular infrastructure software.
   lists about the problem---and about possible future improvements to compact
   block filters, such as:
 
-    - *New filters:* creating additional optional filter types to allow
-      lightweight clients to search for other types of data.
+  - *New filters:* creating additional optional filter types to allow
+    lightweight clients to search for other types of data.
 
-    - *New P2P protocol message:* adding a new P2P protocol message for
-      retrieving block undo data.  Block undo data includes the previous
-      outputs (and related information<!--like heights-->) for each
-      input spent in a block, which can be combined with a block to
-      fully verify a filter was generated from that data.  Undo data can
-      itself be [verified][harding undo verification] in the case of
-      discrepancies between peers.
+  - *New P2P protocol message:* adding a new P2P protocol message for
+    retrieving block undo data.  Block undo data includes the previous
+    outputs (and related information<!--like heights-->) for each
+    input spent in a block, which can be combined with a block to
+    fully verify a filter was generated from that data.  Undo data can
+    itself be [verified][harding undo verification] in the case of
+    discrepancies between peers.
 
-    - *Multi-block filters:* these could further reduce the data
-      lightweight clients will need to download.
+  - *Multi-block filters:* these could further reduce the data
+    lightweight clients will need to download.
 
-    - *Committed block filters:* requiring miners commit to the filter
-      for their blocks, reducing the amount of data lightweight clients
-      need to download to monitor for discrepancies between the filters
-      being served by different peers.
+  - *Committed block filters:* requiring miners commit to the filter
+    for their blocks, reducing the amount of data lightweight clients
+    need to download to monitor for discrepancies between the filters
+    being served by different peers.
 
 ## Bitcoin Core PR Review Club
 

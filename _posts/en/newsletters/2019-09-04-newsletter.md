@@ -22,9 +22,9 @@ notes a few changes in popular Bitcoin infrastructure projects.
   versions, upgrading to a more recent version is [strongly
   recommended][cve ln]:
 
-    - C-Lightning < 0.7.1
-    - LND < 0.7
-    - Eclair <= 0.3
+  - C-Lightning < 0.7.1
+  - LND < 0.7
+  - Eclair <= 0.3
 
 ## News
 

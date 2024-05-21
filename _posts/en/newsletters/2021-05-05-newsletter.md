@@ -22,24 +22,24 @@ to popular Bitcoin infrastructure software.
   other compatible taproot-enforcing software by the [minimum activation
   block specified in BIP341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment).
 
-    Anyone wanting to trustlessly monitor signaling progress can upgrade
-    to Bitcoin Core 0.21.1 and use the `getblockchaininfo` RPC.  For
-    example, the following command line prints the number of blocks in
-    the current retarget period, the number of those blocks which have
-    signaled, and whether it's possible for taproot to activate in this
-    period (assuming there's no reorg):
+  Anyone wanting to trustlessly monitor signaling progress can upgrade
+  to Bitcoin Core 0.21.1 and use the `getblockchaininfo` RPC.  For
+  example, the following command line prints the number of blocks in
+  the current retarget period, the number of those blocks which have
+  signaled, and whether it's possible for taproot to activate in this
+  period (assuming there's no reorg):
 
-    ```text
-    $ bitcoin-cli getblockchaininfo \
-      | jq '.softforks.taproot.bip9.statistics | .elapsed,.count,.possible'
-    353
-    57
-    false
-    ```
+  ```text
+  $ bitcoin-cli getblockchaininfo \
+    | jq '.softforks.taproot.bip9.statistics | .elapsed,.count,.possible'
+  353
+  57
+  false
+  ```
 
-    If you prefer a graphical representation with supplementary
-    information about miner progress and don't need to use your own
-    node, we recommend [taproot.watch][] by Hampus Sjöberg.
+  If you prefer a graphical representation with supplementary
+  information about miner progress and don't need to use your own
+  node, we recommend [taproot.watch][] by Hampus Sjöberg.
 
 ## News
 
@@ -55,18 +55,18 @@ to popular Bitcoin infrastructure software.
   independent systems---but Fournier's proposal provides additional
   redundancy that would be especially useful for everyday users.
 
-    Two weeks ago, Rusty Russell restarted the [thread][russell
-    ecdh channels] after trying to [specify][russell ecdh spec] and
-    implement the idea.  After some additional mailing list discussion with Fournier
-    and a group [conversation][lndev deterministic] in the weekly LN
-    protocol development meeting, Russell indicated he was leaning
-    against the idea, [saying][russell backups] "I see encrypted backups
-    as a more-likely-to-be-implemented solution though.  Because they're
-    useful to send to places other than peers, and they can also contain
-    HTLC information if you want."  Being able to contain
-    [HTLC][topic htlc] information would allow settling payments that
-    were pending at that time, which is a capability no recovery
-    mechanism based solely on a BIP32 seed could provide.
+  Two weeks ago, Rusty Russell restarted the [thread][russell
+  ecdh channels] after trying to [specify][russell ecdh spec] and
+  implement the idea.  After some additional mailing list discussion with Fournier
+  and a group [conversation][lndev deterministic] in the weekly LN
+  protocol development meeting, Russell indicated he was leaning
+  against the idea, [saying][russell backups] "I see encrypted backups
+  as a more-likely-to-be-implemented solution though.  Because they're
+  useful to send to places other than peers, and they can also contain
+  HTLC information if you want."  Being able to contain
+  [HTLC][topic htlc] information would allow settling payments that
+  were pending at that time, which is a capability no recovery
+  mechanism based solely on a BIP32 seed could provide.
 
 ## Releases and release candidates
 
@@ -85,13 +85,13 @@ release candidates.*
   soft fork using such addresses, such as taproot.  The release
   additionally includes bug fixes and minor improvements.
 
-    Note: due to a [problem][wincodesign] with the certificate authority
-    that provides the code signing certificates for the Windows versions
-    of Bitcoin Core, users on Windows will need to click through an
-    extra prompt to install.  It is expected that there will be a
-    0.21.1.1 release with an updated certificate when the problem is
-    fixed.  If you are planning to upgrade anyway, there's no reason to
-    delay using 0.21.1 because of this problem.
+  Note: due to a [problem][wincodesign] with the certificate authority
+  that provides the code signing certificates for the Windows versions
+  of Bitcoin Core, users on Windows will need to click through an
+  extra prompt to install.  It is expected that there will be a
+  0.21.1.1 release with an updated certificate when the problem is
+  fixed.  If you are planning to upgrade anyway, there's no reason to
+  delay using 0.21.1 because of this problem.
 
 - [BTCPay 1.1.0][] is the latest major release for this self-hosted payment
   processing software. It includes [Lightning Loop][news53 lightning loop]

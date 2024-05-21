@@ -2,12 +2,12 @@
 title: Signet
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Developer Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -119,6 +119,9 @@ optech_mentions:
 
   - title: "Mutinynet launches a signet with 30 second block times and hosted infrastructure tools"
     url: /en/newsletters/2023/05/24/#mutinynet-announces-new-signet-for-testing
+
+  - title: Notes from Bitcoin developer discussion about signet and testnet4
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

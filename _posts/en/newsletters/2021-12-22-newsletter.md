@@ -166,19 +166,19 @@ addresses.
   enforcement.  Speedy trial would go on to become the actual
   [mechanism][topic soft fork activation] used to activate taproot.
 
-    While activation discussions were underway, there was a final
-    [discussion][quant] about one of its design decisions, using bare
-    public keys, which was argued might put user funds at increased
-    risk of being stolen by future quantum computers.  Many developers
-    argued that the concerns were unwarranted or, at least, overblown.
+  While activation discussions were underway, there was a final
+  [discussion][quant] about one of its design decisions, using bare
+  public keys, which was argued might put user funds at increased
+  risk of being stolen by future quantum computers.  Many developers
+  argued that the concerns were unwarranted or, at least, overblown.
 
-    Also in March, Bitcoin Core merged support for [BIP350][], allowing
-    it to pay to [bech32m][topic bech32] addresses.  This slight variation
-    on the bech32 addresses that are used for payments to original
-    segwit version addresses fixes a bug which could've caused taproot
-    users to lose money in some very rare cases.  (Original segwit
-    outputs created from bech32 addresses are safe and unaffected by the
-    bug.)
+  Also in March, Bitcoin Core merged support for [BIP350][], allowing
+  it to pay to [bech32m][topic bech32] addresses.  This slight variation
+  on the bech32 addresses that are used for payments to original
+  segwit version addresses fixes a bug which could've caused taproot
+  users to lose money in some very rare cases.  (Original segwit
+  outputs created from bech32 addresses are safe and unaffected by the
+  bug.)
 
   {% comment %}
   /en/newsletters/2021/03/03/#rust-lightning-794

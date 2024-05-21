@@ -2,12 +2,12 @@
 title: Package relay
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BIP331
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Transaction Relay Policy
 
@@ -24,7 +24,6 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: BIP331
-      link: https://github.com/bitcoin/bips/pull/1382
 
     - title: Bitcoin Core Draft Implementation
       link: https://github.com/bitcoin/bitcoin/pull/27742
@@ -115,6 +114,12 @@ optech_mentions:
 
   - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: BIP331 assigned to ancestor package relay proposal
+    url: /en/newsletters/2024/05/01/#bips-1382
+
+  - title: "Bitcoin Core #28970 adds support for one-parent-one-child (1p1c) package relay with no P2P changes"
+    url: /en/newsletters/2024/05/08/#bitcoin-core-28970
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

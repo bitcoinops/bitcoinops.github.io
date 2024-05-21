@@ -6,12 +6,12 @@ title: CLTV expiry delta
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -82,7 +82,6 @@ Imagine Alice forwards a payment to Bob who forwards the payment to
 Carol.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
@@ -98,12 +97,10 @@ to Bob.  Everyone gets back what they started with, which is a safe
 outcome.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
     Refunds after expiry:
-
         Alice <------ Bob <------ Carol
               (1 BTC)     (1 BTC)
 
@@ -113,12 +110,10 @@ spends nothing and Carol receives payment with Bob losing the
 difference.
 
     Forwarded payments:
-
         Alice ------> Bob ------> Carol
               (1 BTC)     (1 BTC)
 
     Refund after expiry to Alice and payment to Carol:
-
         Alice <------ Bob ------> Carol
               (1 BTC)     (1 BTC)
 

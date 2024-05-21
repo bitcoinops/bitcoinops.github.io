@@ -6,12 +6,12 @@ title: Channel announcements
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -37,6 +37,9 @@ optech_mentions:
 
   - title: LN developer discussion about updated channel announcements
     url: /en/newsletters/2023/07/26/#updated-channel-announcements
+
+  - title: New anonymous usage tokens proposed that could be used to improve channel announcement privacy
+    url: /en/newsletters/2024/05/17/#anonymous-usage-tokens
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

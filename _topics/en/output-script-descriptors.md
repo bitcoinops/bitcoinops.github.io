@@ -2,12 +2,12 @@
 title: Output script descriptors
 shortname: descriptors
 
-aliases:
+title-aliases:
   - Descriptors
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Wallet Collaboration Tools
 
@@ -166,6 +166,15 @@ optech_mentions:
 
   - title: Proposed BIP specifying how to include descriptors in PSBTs
     url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
+
+  - title: Notes from Bitcoin developer discussion about descriptors for silent payments
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
+  - title: "BIP388 added with wallet policies for descriptor wallets"
+    url: /en/newsletters/2024/05/15/#bips-1389
+
+  - title: "BIPs #1567 adds BIP387 with new `multi_a()` and `sortedmultia_a()` descriptors"
+    url: /en/newsletters/2024/05/15/#bips-1567
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -30,27 +30,27 @@ notable changes to popular Bitcoin infrastructure projects.
   higher fee, they can [replace][topic rbf] the CPFP fee bump with their
   own higher-feerate CPFP fee bump.
 
-    The type of anyone-can-spend script proposed for use is an output
-    script consisting of the equivalent of `OP_TRUE`, which can be spent by an input
-    with an empty input script.  As Sanders posted this week, using a
-    legacy output script means that the child transaction spending it
-    has a malleable txid, e.g. any miner can add data to the input
-    script to change the child transaction's txid.  That can make it
-    unwise to use the child transaction for anything besides fee bumping
-    as, even if it gets confirmed, it might get confirmed with a
-    different txid that invalidates any grandchild transactions.
+  The type of anyone-can-spend script proposed for use is an output
+  script consisting of the equivalent of `OP_TRUE`, which can be spent by an input
+  with an empty input script.  As Sanders posted this week, using a
+  legacy output script means that the child transaction spending it
+  has a malleable txid, e.g. any miner can add data to the input
+  script to change the child transaction's txid.  That can make it
+  unwise to use the child transaction for anything besides fee bumping
+  as, even if it gets confirmed, it might get confirmed with a
+  different txid that invalidates any grandchild transactions.
 
-    Sanders suggests instead using one of the output scripts that had
-    been reserved for future segwit upgrades.  This uses slightly more
-    block space---four bytes for segwit versus one byte for bare
-    `OP_TRUE`---but eliminates any concerns about transaction
-    malleability.  After some discussion on the thread, Sanders later
-    proposed offering both: an `OP_TRUE` version for anyone who doesn't
-    care about malleability and wants to minimize transaction size, plus a
-    segwit version that is slightly larger but does not allow the child
-    transaction to be mutated.  Additional discussion in the thread
-    focused on choosing the extra bytes for the segwit approach to
-    create a memorable [bech32m address][topic bech32]. {% assign timestamp="1:54" %}
+  Sanders suggests instead using one of the output scripts that had
+  been reserved for future segwit upgrades.  This uses slightly more
+  block space---four bytes for segwit versus one byte for bare
+  `OP_TRUE`---but eliminates any concerns about transaction
+  malleability.  After some discussion on the thread, Sanders later
+  proposed offering both: an `OP_TRUE` version for anyone who doesn't
+  care about malleability and wants to minimize transaction size, plus a
+  segwit version that is slightly larger but does not allow the child
+  transaction to be mutated.  Additional discussion in the thread
+  focused on choosing the extra bytes for the segwit approach to
+  create a memorable [bech32m address][topic bech32]. {% assign timestamp="1:54" %}
 
 ## Field Report: A Miniscript Journey
 

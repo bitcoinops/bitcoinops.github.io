@@ -24,46 +24,46 @@ describing notable changes to popular Bitcoin infrastructure software.
   associate email-style addresses with LN invoices.  Teinturier notes
   that this creates several problems:
 
-    - _Lack of privacy:_ the server operator likely learns the IP
-      address of the spender and the receiver.
+  - _Lack of privacy:_ the server operator likely learns the IP
+    address of the spender and the receiver.
 
-    - _Risk of theft:_ the server operator can man-in-the-middle
-      invoices to steal funds.
+  - _Risk of theft:_ the server operator can man-in-the-middle
+    invoices to steal funds.
 
-    - _Infrastructure and dependencies:_ the server operator must setup
-      DNS and HTTPS hosting, and the spender software must be able to
-      use DNS and HTTPS.
+  - _Infrastructure and dependencies:_ the server operator must setup
+    DNS and HTTPS hosting, and the spender software must be able to
+    use DNS and HTTPS.
 
   Teinturier offers three proposed designs based on offers:
 
-    - _Linking domains to nodes:_ a DNS record maps a domain (e.g.
-      example.com) to an LN node identifier.  The spender sends an
-      [onion message][topic onion messages] to that node requesting an
-      offer for the ultimate receiver (e.g. alice@example.com).  The
-      domain node replies with an offer signed by its node key, allowing
-      the spender to later prove fraud if it provided an offer that
-      wasn't from Alice.  The spender can now use the offer protocol to
-      request an invoice from Alice.  The spender can also associate
-      alice@example.com with the offer, so it doesn't need to contact
-      the domain node for future payments to Alice.  Teinturier notes
-      that this design is extremely simple.
+  - _Linking domains to nodes:_ a DNS record maps a domain (e.g.
+    example.com) to an LN node identifier.  The spender sends an
+    [onion message][topic onion messages] to that node requesting an
+    offer for the ultimate receiver (e.g. alice@example.com).  The
+    domain node replies with an offer signed by its node key, allowing
+    the spender to later prove fraud if it provided an offer that
+    wasn't from Alice.  The spender can now use the offer protocol to
+    request an invoice from Alice.  The spender can also associate
+    alice@example.com with the offer, so it doesn't need to contact
+    the domain node for future payments to Alice.  Teinturier notes
+    that this design is extremely simple.
 
-    - _Certificates in node announcements:_ the existing mechanism an LN
-      node uses to advertise itself to the network is modified to allow
-      an advertisement to contain an SSL certificate chain proving that
-      (according to a certificate authority) the owner of example.com
-      claimed this particular node is controlled by alice@example.com.
-      Teinturier notes that this would require LN implementations to
-      implement SSL-compatible cryptography.
+  - _Certificates in node announcements:_ the existing mechanism an LN
+    node uses to advertise itself to the network is modified to allow
+    an advertisement to contain an SSL certificate chain proving that
+    (according to a certificate authority) the owner of example.com
+    claimed this particular node is controlled by alice@example.com.
+    Teinturier notes that this would require LN implementations to
+    implement SSL-compatible cryptography.
 
-    - _Store offers directly in DNS:_ a domain may have multiple DNS
-      records that directly store offers for particular addresses.  For
-      example, a DNS `TXT` record, `alice._lnaddress.domain.com`,
-      includes an offer for Alice.  Another record,
-      `bob._lnaddress.domain.com` includes an offer for Bob.  Teinturier
-      notes that this requires the domain owner create one DNS record
-      per user (and update that record if the user needs to change their
-      default offer).
+  - _Store offers directly in DNS:_ a domain may have multiple DNS
+    records that directly store offers for particular addresses.  For
+    example, a DNS `TXT` record, `alice._lnaddress.domain.com`,
+    includes an offer for Alice.  Another record,
+    `bob._lnaddress.domain.com` includes an offer for Bob.  Teinturier
+    notes that this requires the domain owner create one DNS record
+    per user (and update that record if the user needs to change their
+    default offer).
 
   The email spurred an active discussion.  One notable suggestion was
   possibly allowing both the first and third suggestions to be used (the

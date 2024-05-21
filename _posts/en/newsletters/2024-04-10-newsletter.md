@@ -30,7 +30,7 @@ popular Bitcoin infrastructure software.
   project to allow a higher-level language to describe a contract
   protocol that will be compiled down to the necessary operations and
   low-level code to execute that protocol.  This work is being done as
-  part of enhancing [BitVM][topic acc].
+  part of enhancing [BitVM][topic acc]. {% assign timestamp="1:24" %}
 
 - **Updating BIP2:** Tim Ruffing [posted][ruffing bip2] to the
   Bitcoin-Dev mailing list about updating [BIP2][], which specifies the
@@ -38,23 +38,23 @@ popular Bitcoin infrastructure software.
   existing BIPs.  Several problems with the current process mentioned by
   Ruffing and others included:
 
-    - *Editorial evaluation and discretion:* how much effort should BIP
-      editors be required to expend on ensuring new BIPs are high
-      quality and focused on Bitcoin?  Separately, how much discretion
-      should they have in being able to reject new BIPs?  Ruffing and
-      several others mentioned that they'd prefer minimizing editorial
-      requirements and privileges, perhaps depending on BIP editors
-      only to prevent systemic abuse (e.g. mass spamming).  Of course,
-      BIP editors---like any other community members---would be able to
-      voluntarily suggest improvements to any BIP proposals they found
-      interesting.
+  - *Editorial evaluation and discretion:* how much effort should BIP
+    editors be required to expend on ensuring new BIPs are high
+    quality and focused on Bitcoin?  Separately, how much discretion
+    should they have in being able to reject new BIPs?  Ruffing and
+    several others mentioned that they'd prefer minimizing editorial
+    requirements and privileges, perhaps depending on BIP editors
+    only to prevent systemic abuse (e.g. mass spamming).  Of course,
+    BIP editors---like any other community members---would be able to
+    voluntarily suggest improvements to any BIP proposals they found
+    interesting.
 
-    - *Licensing:* some allowed licenses for BIPs are designed for
-      software and may not make sense for documentation.
+  - *Licensing:* some allowed licenses for BIPs are designed for
+    software and may not make sense for documentation.
 
-    - *Comments:* as a change from [BIP1][], BIP2 attempted to provide a
-      place for community feedback on each BIP.  This has not been
-      widely used and the results have been controversial.
+  - *Comments:* as a change from [BIP1][], BIP2 attempted to provide a
+    place for community feedback on each BIP.  This has not been
+    widely used and the results have been controversial.
 
   The idea of updating BIP2 was still being discussed at the time of
   writing.
@@ -63,7 +63,7 @@ popular Bitcoin infrastructure software.
   new BIP editors mentioned in [last week's newsletter][news296 editors]
   has been [extended][erhardt editors] to the UTC end of day on Friday,
   April 19th.  It is hoped that the new editors will receive merge
-  access by the end of the day on the following Monday.
+  access by the end of the day on the following Monday. {% assign timestamp="15:50" %}
 
 - **Discussion about resetting and modifying testnet:** Jameson Lopp
   [posted][lopp testnet] to the Bitcoin-Dev mailing list about problems
@@ -80,7 +80,7 @@ popular Bitcoin infrastructure software.
   Multiple people discussed potential changes to testnet to address that
   and other problems, although at least one respondent [preferred][kim
   testnet] allowing problems to continue as it made for interesting
-  testing.
+  testing. {% assign timestamp="21:00" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -89,14 +89,12 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-[Implement 64 bit arithmetic op codes in the Script interpreter][review
-club 29221] is a PR by Chris Stewart (GitHub Christewart) that
+[Implement 64 bit arithmetic op codes in the Script interpreter][review club 29221] is a PR by Chris Stewart (GitHub Christewart) that
 introduces new opcodes allowing users to perform arithmetic operations
 on larger (64-bit) operands in Bitcoin Script than is currently allowed
 (32-bit).
 
-This change, in combination with some existing soft fork proposals like
-[OP_TLUV][ml OP_TLUV] that enable transaction introspection, would allow
+This change, in combination with some existing soft fork proposals like [OP_TLUV][ml OP_TLUV] that enable transaction introspection, would allow
 users to build scripting logic based on a transaction's
 satoshi-denominated output values, which can easily overflow a 32-bit
 integer.
@@ -104,8 +102,9 @@ integer.
 Discussion on the approach, such as whether to upgrade existing opcodes
 or introduce new ones (e.g., `OP_ADD64`), is still ongoing.
 
-For more information, see the (WIP) [BIP][bip 64bit arithmetic], and the
-[discussion][delving 64bit arithmetic] on the Delving Bitcoin forum.
+For more information, see the (WIP) [BIP][bip 64bit arithmetic], and the [discussion][delving 64bit arithmetic] on the Delving Bitcoin forum.
+
+{% assign timestamp="37:19" %}
 
 {% include functions/details-list.md q0="What does the `CScriptNum`
   `nMaxNumSize` parameter do?" a0="It represents the maximum size (in
@@ -147,18 +146,17 @@ release candidates.*
   providing a common interface to multiple different hardware signing
   devices.  The only significant change in this release is that emulated
   hardware wallets will no longer be automatically detected; see the
-  description of [HWI #729][] below for details.
+  description of [HWI #729][] below for details. {% assign timestamp="46:17" %}
 
 - [Core Lightning 24.02.2][] is a maintenance release that fixes "a
   [small incompatibility][core lightning #7174]" between Core Lightning's
   and LDK's implementation of a particular part of the LN gossip
-  protocol.
+  protocol. {% assign timestamp="48:06" %}
 
 - [Bitcoin Core 27.0rc1][] is a release candidate for the next major
   version of the network's predominant full node implementation.
   Testers are encouraged to review the list of [suggested testing
-  topics][bcc testing].
-
+  topics][bcc testing]. {% assign timestamp="49:41" %}
 
 ## Notable code and documentation changes
 
@@ -180,7 +178,7 @@ until about six months after the release of the upcoming version 27.*
   Libconsensus was an attempt to make Bitcoin Core's consensus logic
   usable in other software.  However, the library hasn't seen any
   significant adoption and it has become a burden on maintenance of
-  Bitcoin Core.
+  Bitcoin Core. {% assign timestamp="50:25" %}
 
 - [Bitcoin Core #29130][] adds two new RPCs.  The first will generate a
   [descriptor][topic descriptors] for a user based on the settings they want and then add
@@ -195,17 +193,17 @@ until about six months after the release of the upcoming version 27.*
   The second RPC is `gethdkeys` (get [HD][topic bip32] keys), which will
   return each xpub used by the wallet and (optionally) also each xpriv.
   When a wallet contains multiple xpubs, the particular one to use can
-  be indicated when calling `createwalletdescriptor`.
+  be indicated when calling `createwalletdescriptor`. {% assign timestamp="53:18" %}
 
 - [LND #8159][] and [#8160][lnd #8160] add experimental (disabled by
   default) support for sending payments to [blinded routes][topic rv
   routing].  A [follow-up PR][lnd #8485] is expected to add complete
-  error handling for failed blinded payments.
+  error handling for failed blinded payments. {% assign timestamp="56:44" %}
 
 - [LND #8515][] updates multiple RPCs to accept the name of the [coin
   selection strategy][topic coin selection] to be used.  See [Newsletter
   #292][news292 lndcs] for the previous improvements to the flexibility
-  of LND's coin selection that this PR builds upon.
+  of LND's coin selection that this PR builds upon. {% assign timestamp="59:08" %}
 
 - [LND #6703][] and [#6934][lnd #6934] add support for inbound routing
   fees.  A node can already advertise the cost it will charge to forward
@@ -285,7 +283,7 @@ until about six months after the release of the upcoming version 27.*
   aware of one maintainer of a non-LND implementation
   [indicating][corallo free money] that they'll adopt LND's method---and
   only in cases where negative inbound forwarding fees are offered, as
-  that's "free money for our users."
+  that's "free money for our users." {% assign timestamp="1:01:48" %}
 
 - [Rust Bitcoin #2652][] changes what public key is returned by the API
   when signing a [taproot][topic taproot] input as part of processing a
@@ -293,13 +291,13 @@ until about six months after the release of the upcoming version 27.*
   the signing private key.  However, the PR notes that "it is common to
   think of the internal key as being the one that signs even though this
   is not technically true. We also have the internal key in the PSBT."
-  With the merge of this PR, the now API returns the internal key.
+  With the merge of this PR, the now API returns the internal key. {% assign timestamp="1:16:52" %}
 
 - [HWI #729][] stops automatically enumerating and using device
   emulators.  Emulators are mainly used by developers of HWI and
   hardware wallets, but attempting to automatically detect them may
   cause issues for regular users.  Developers who do want to work with
-  emulators now need to pass an additional `--emulators` option.
+  emulators now need to pass an additional `--emulators` option. {% assign timestamp="46:29" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 16:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}

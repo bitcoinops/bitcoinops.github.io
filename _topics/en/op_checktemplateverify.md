@@ -2,11 +2,11 @@
 title: OP_CHECKTEMPLATEVERIFY
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
   - Fee Management
@@ -119,6 +119,12 @@ optech_mentions:
 
   - title: Opposition to CTV based on commonly requiring exogenous fee
     url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
+
+  - title: "Exploding keys, a soft fork proposal with similar capabilities to CTV"
+    url: /en/newsletters/2024/05/01/#ctv-like-exploding-keys-proposal
+
+  - title: "BIP119 extensions for smaller hashes and arbitrary data commitments"
+    url: /en/newsletters/2024/05/15/#bip119-extensions-for-smaller-hashes-and-arbitrary-data-commitments
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
