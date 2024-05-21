@@ -216,6 +216,9 @@ optech_mentions:
   - title: "BTCPay Server #5852 adds support for scanning BBQr animated QR codes"
     url: /en/newsletters/2024/03/27/#btcpay-server-5852
 
+  - title: "Discussion about using PSBTs with silent payments"
+    url: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
