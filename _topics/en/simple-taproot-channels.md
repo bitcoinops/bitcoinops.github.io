@@ -38,6 +38,9 @@ optech_mentions:
   - title: "LND #8499 makes significant changes to the TLV types used for simple taproot channels"
     url: /en/newsletters/2024/03/13/#lnd-8499
 
+  - title: "Discussion of channel upgrade methods, such as switching to simple taproot channels"
+    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
