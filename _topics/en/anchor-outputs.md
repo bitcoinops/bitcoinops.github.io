@@ -186,8 +186,11 @@ become unresponsive).  Because the broadcast of the commitment
 transaction may occur a long time after it was created, the commitment
 transaction may pay too much or too little in transaction fees.
 Paying a too-low feerate may prevent the commitment transaction from
-confirming before any timelocks contained within it expire, allowing
-funds to be stolen.
+confirming making funds stuck indefinitely for the closing party---the
+output *to us* in the commitment trasaction has a time lock relative
+to it's confirmation height `to_self_delay OP_CHECKSEQUENCEVERIFY`
+which is part of the protection mechanism against cheating by broadcasting
+an old commitment state.
 
 The solution to this is for the commitment transaction to pay a
 minimal amount of fees and then to allow either channel participant to fee
