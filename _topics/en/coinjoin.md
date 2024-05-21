@@ -106,7 +106,7 @@ It took only 4 days after Maxwell’s post for someone to try to claim the bount
 
 On January 9th 2015, Chris Belcher announced Joinmarket. It was the first non-broken implementation of a coinjoin protocol. The idea was simple: set the incentives right by creating a market of takers and makers, allowing the latter to earn a fee for providing liquidity.
 
-In November 2016, an alternative to coinjoins was release with Tumblebit. Users could create two fixed-amount payment channels to a Tumbler (coordinator) who can't steal their coins or deanonymize them. The coins get sent back to a user from payment channels of other users. It takes a total of 4 transactions to complete, but you get a very high anonymity rate. The wallets Breeze and Hidden Wallet (now Wasabi Wallet) were the main clients to use this privacy technique.
+In November 2016, an alternative to coinjoins was released with Tumblebit. Users could create two fixed-amount payment channels to a Tumbler (coordinator) who can't steal their coins or deanonymize them. The coins get sent back to a user from the payment channels of other users. It takes a total of 4 transactions to complete, but you get a very high anonymity rate. The wallets Breeze and Hidden Wallet (now Wasabi Wallet) were the main clients to use this privacy technique.
 
 On August 14th 2017, the ZeroLink paper was introduced as The Bitcoin Fungibility Framework. It was a collaboration between the Hidden Wallet (now Wasabi Wallet) and Samourai Wallet teams. The research paper was authored by Adam Ficsor (Nopara73) with some support from TDev. It provided a framework not only for a coinjoin protocol, but for privacy wallets in general.
 
