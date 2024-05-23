@@ -160,8 +160,7 @@ confidentialité, nous vous recommandons de vous abonner à notre [flux RSS][] v
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="1525,1567,1389,2707,1518,7111,29845" %}
 [lnd v0.18.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc2
-[mb3e byte order]:
-https://github.com/bitcoinbook/bitcoinbook/blob/6d1c26e1640ae32b28389d5ae4caf1214c2be7db/ch06_transactions.adoc#internal_and_display_order
+[mb3e byte order]: https://github.com/bitcoinbook/bitcoinbook/blob/6d1c26e1640ae32b28389d5ae4caf1214c2be7db/ch06_transactions.adoc#internal_and_display_order
 [news200 policies]: /en/newsletters/2022/05/18/#adapting-miniscript-and-output-script-descriptors-for-hardware-signing-devices
 [news191 multi_a]: /en/newsletters/2022/03/16/#bitcoin-core-24043
 [news227 multi_a]: /fr/newsletters/2022/11/23/#comment-puis-je-creer-une-adresse-taproot-multisig
