@@ -105,7 +105,7 @@ repo], [Lightning BOLTs][bolts repo], [Inquisition Bitcoin][bitcoin inquisition 
   l'activation de `check setconfig` qui valide que les options de configuration seraient acceptées, et
   le `check keysend` existant valide maintenant si hsmd approuverait la transaction. Un message de
   pré-initialisation a été ajouté avec des drapeaux de développement HSM prédéfinis. Pour plus de
-  références sur la commande `check`, voir également les Bulletrins [#25][news25 cln check] et
+  références sur la commande `check`, voir également les Bulletins [#25][news25 cln check] et
   [#47][news47 cln check].
 
 - [Libsecp256k1 #1518][] ajoute une fonction `secp256k1_pubkey_sort` qui trie un ensemble de clés
@@ -177,5 +177,5 @@ confidentialité, nous vous recommandons de vous abonner à notre [flux RSS][] v
 [attaque par collision]: https://en.wikipedia.org/wiki/Collision_attack
 [flux rss]: /feed.xml
 [ldk v0.0.123]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.123
-[news25 cln check] : /en/newsletters/2018/12/11/#c-lightning-2123
-[news47 cln check] : /en/newsletters/2019/05/21/#c-lightning-2631
+[news25 cln check]: /en/newsletters/2018/12/11/#c-lightning-2123
+[news47 cln check]: /en/newsletters/2019/05/21/#c-lightning-2631
