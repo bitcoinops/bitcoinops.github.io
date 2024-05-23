@@ -91,10 +91,8 @@ see_also:
     link: topic payjoin
   - title: "Coinjoin (Bitcoin Wiki: Privacy)"
     link: https://en.bitcoin.it/Privacy#CoinJoin
-
   - title: "Privacy Privacy Wiki"
     link: https://en.bitcoin.it/wiki/Privacy
-
   - title: "Coinjoins.org - Learn about collaborative bitcoin transactions"
     link: https://coinjoins.org/
 
