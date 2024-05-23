@@ -89,7 +89,6 @@ optech_mentions:
 see_also:
   - title: Payjoin
     link: topic payjoin
-    
   - title: "Coinjoin (Bitcoin Wiki: Privacy)"
     link: https://en.bitcoin.it/Privacy#CoinJoin
 
