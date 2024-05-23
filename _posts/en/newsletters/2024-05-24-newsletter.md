@@ -188,7 +188,49 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Silent payment resources:**
+  Several [silent payment][topic silent payments] resources have been announced
+  including a [silentpayments.xyz][sp website] informational website, [two][bi
+  ts sp] TypeScript [libraries][bw ts sp], a [Go-based backend][gh blindbitd], a
+  [web wallet][gh silentium], and [more][sp website devs]. Caution is advised as
+  most of the software is new, beta, or a work in progress.
+
+- **Cake Wallet adds silent payments:**
+  [Cake Wallet][cake wallet website] recently [announced][cake wallet
+  announcement] their latest beta release supports silent payments.
+
+- **Coordinator-less coinjoin PoC:**
+  [Emessbee][gh emessbee] is a proof-of-concept project to create [coinjoin][topic coinjoin]
+  transactions without a central coordinator.
+
+- **OCEAN adds BOLT12 support:**
+  The OCEAN mining pool uses a [signed message][topic generic signmessage] to associate
+  a Bitcoin address to a [BOLT12 offer][topic offers] as part of their [Lightning
+  payout][ocean docs] setup.
+
+- **Coinbase adds Lightning support:**
+  Using Lightning infrastructure from [Lightspark][lightspark website], [Coinbase added
+  Lightning][coinbase blog] deposit and withdrawal support.
+
+- **Bitcoin escrow tooling announced:**
+  The [BitEscrow][bitescrow website] team announced a set of [developer tools][bitescrow docs] for
+  implementing non-custodial Bitcoin escrow.
+
+- **Block's call for mining community feedback:**
+  In an [update][block blog] to their 3nm chip progress, Block is seeking mining
+  community feedback about mining hardware software features, maintenance, and
+  other questions.
+
+- **Sentrum wallet tracker released:**
+  [Sentrum][gh sentrum] is a watch-only wallet that supports a variety of notification channels.
+
+- **Stack Wallet adds FROST support:**
+  [Stack Wallet v2.0.0][gh stack wallet] adds FROST [threshold][topic threshold
+  signature] multisig support using the Modular FROST Rust library.
+
+- **Transaction broadcast tool announced:**
+  [Pushtx][gh pushtx] is a simple Rust program that broadcasts transactions directly to the
+  Bitcoin P2P network.
 
 ## Releases and release candidates
 
@@ -316,3 +358,21 @@ repo]._
 [news301 prclub]: /en/newsletters/2024/05/08/#bitcoin-core-pr-review-club
 [news301 bcc28970]: /en/newsletters/2024/05/08/#bitcoin-core-28970
 [news283 ldk2723]: /en/newsletters/2024/01/03/#ldk-2723
+[sp website]: https://silentpayments.xyz/
+[bi ts sp]: https://github.com/Bitshala-Incubator/silent-pay
+[bw ts sp]: https://github.com/BlueWallet/SilentPayments
+[gh blindbitd]: https://github.com/setavenger/blindbitd
+[gh silentium]: https://github.com/louisinger/silentium
+[sp website devs]: https://silentpayments.xyz/docs/developers/
+[cake wallet website]: https://cakewallet.com/
+[cake wallet announcement]: https://twitter.com/cakewallet/status/1791500775262437396
+[gh emessbee]: https://github.com/supertestnet/coinjoin-workshop
+[coinbase blog]: https://www.coinbase.com/blog/coinbase-integrates-bitcoins-lightning-network-in-partnership-with
+[lightspark website]: https://www.lightspark.com/
+[block blog]: https://www.mining.build/latest-updates-3nm-system/
+[gh sentrum]: https://github.com/sommerfelddev/sentrum
+[ocean docs]: https://ocean.xyz/docs/lightning
+[bitescrow website]: https://www.bitescrow.app/
+[bitescrow docs]: https://www.bitescrow.app/dev
+[gh stack wallet]: https://github.com/cypherstack/stack_wallet/releases/tag/build_222
+[gh pushtx]: https://github.com/alfred-hodler/pushtx
