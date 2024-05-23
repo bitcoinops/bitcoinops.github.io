@@ -220,30 +220,85 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Bitcoin Inquisition][bitcoin inquisition repo], and [BINANAs][binana
 repo]._
 
-FIXME:Gustavojfe to add summaries
+- [Bitcoin Core #27101][] introduces support for
+  JSON-RPC 2.0 requests and server responses. Notable changes are that the
+  server always returns HTTP 200 "OK" unless there is an HTTP error or malformed
+  request, it returns either error or result fields but never both, and single
+  and batch requests result in the same error handling behavior. If version 2.0
+  isn't specified in the request body, the legacy JSON-RPC 1.1 protocol is used.
 
-- [Bitcoin Core #27101][] Support JSON-RPC 2.0 when requested by client
+- [Bitcoin Core #30000][] allows multiple transactions with the same
+  `txid` to coexist in `TxOrphanage` by indexing them by `wtxid` instead
+  of `txid`. The orphanage is a limited-size staging area that Bitcoin Core
+  uses to store transactions which reference the txids of parent
+  transactions that Bitcoin Core can't currently access.
+  If a parent transaction with the txid is received, the child
+  can then be processed.  Opportunistic 1-parent-1-child (1p1c)
+  [package acceptance][topic package relay] sends a child transaction
+  first, expecting it to be stored in the orphanage, and then sends the
+  parent---allowing their aggregate feerate to be considered.
 
-- [Bitcoin Core #30000][] p2p: index TxOrphanage by wtxid, allow entries
-  with same txid (maybe link back to PR review club summary in
-  2024-05-08 newsletter -harding)
+  However, when opportunistic 1p1c was merged (see [Newsletter
+  #301][news301 bcc28970]), it was known that an attacker could prevent
+  an honest user from using the feature by preemptively submitting a version
+  of a child transaction with invalid witness data.  That malformed
+  child transaction would have the same txid as an honest child but
+  would fail validation when its parent was received, preventing the
+  child from contributing to the [CPFP][topic cpfp] package
+  feerate necessary for package acceptance to work.
 
-- [Bitcoin Core #28233][] validation: don't clear cache on periodic flush: >2x block connection speed
+  Because transactions in the orphanage were indexed by txid before this
+  PR, the first version of a transaction with a particular txid would be
+  the one stored in the orphanage, so an attacker who could submit
+  transactions faster and more frequently than an honest user could
+  block the honest user indefinitely.  After this PR, multiple
+  transactions with the same txid can be accepted, each one with
+  different witness data (and, thus, a different wtxid).  When a parent
+  transaction is received, the node will have enough information to drop
+  any malformed child transactions and then perform the expected 1p1c
+  package acceptance on a valid child.  This PR was previously discussed
+  in the PR Review Club summary in [Newsletter #301][news301 prclub].
 
-- [Core Lightning #7304][] make explicit connection to node if necessary
-  (the interesting part of this PR isn't the LDK interop but that CLN
-  will use its routing table to open a TCP/IP connection to a node
-  just to deliver an onion message.  I'm not sure we've previously
-  discussed that this is allowed with onion messages -harding)
+- [Bitcoin Core #28233][] builds on [#17487][bitcoin core #17487] to
+  remove the periodic flush of the warm coins (UTXO) cache every 24
+  hours.  Before #17487, frequent flushing to disk reduced the risk that
+  a node or hardware crash would require a lengthy reindex procedure.
+  After #17487, new UTXOs can be written to disk without emptying the
+  memory cache---although the cache still needs to be emptied when it
+  nears the maximum allocated memory space.  A warm cache almost doubles
+  the block validation speed on a node with the default cache settings,
+  with even more improved performance available on nodes that allocate
+  additional memory to the cache.
 
-- [Core Lightning #7063][] channeld: Adjust the feerate security margin profile
+- [Core Lightning #7304][] adds a reply flow to [offers][topic offers]-style `invoice_requests` when it can’t
+  find a path to the `reply_path` node.  CLN's `connectd` will open a transient TCP/IP
+  connection to the requesting node to deliver an [onion message][topic onion
+  messages] containing an invoice. This PR improves Core Lightning’s
+  interoperability with LDK and also allows using onion messages even
+  while only a few nodes support them (see [Newsletter #283][news283
+  ldk2723]).
 
-- [Rust Bitcoin #2740][] Add difficulty adjustment calculation
+- [Core Lightning #7063][] updates the feerate security margin
+  multiplier to dynamically adjust for likely fee
+  increases. The multiplier tries to ensure that channel transactions
+  pay enough feerate that they will be confirmed, either directly (for
+  transactions that can't be fee bumped) or through fee bumping.  The
+  multiplier now starts at 2x current [feerate estimates][topic fee
+  estimation] for low rates (1 sat/vbyte) and gradually decreases to 1.1x
+  as feerates approach the daily high `maxfeerate`.
+
+- [Rust Bitcoin #2740][] adds a `from_next_work_required` method to the `pow`
+  (proof of work) API that takes a `CompactTarget` (representing the previous
+  difficulty target), a `timespan` (the time difference between the current and
+  previous blocks), and a `Params` network parameters object. It returns a new
+  `CompactTarget` representing the next difficulty target. The algorithm
+  implemented in this function is based on the Bitcoin Core implementation found
+  in the  `pow.cpp` file.
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-05-27 14:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27101,30000,28233,7304,7063,2740,1117,868" %}
+{% include linkers/issues.md v=2 issues="27101,30000,28233,7304,7063,2740,1117,868,17487" %}
 [lnd v0.18.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.0-beta.rc2
 [kc upchan]: https://delvingbitcoin.org/t/upgrading-existing-lightning-channels/881
 [tuttle poolcash]: https://delvingbitcoin.org/t/ecash-tides-using-cashu-and-stratum-v2/870
@@ -258,3 +313,6 @@ FIXME:Gustavojfe to add summaries
 [news244 annex]: /en/newsletters/2023/03/29/#bitcoin-inquisition-22
 [news248 ephemeral]: /en/newsletters/2023/04/26/#bitcoin-inquisition-23
 [Bitcoin Inquisition 27.0]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq
+[news301 prclub]: /en/newsletters/2024/05/08/#bitcoin-core-pr-review-club
+[news301 bcc28970]: /en/newsletters/2024/05/08/#bitcoin-core-28970
+[news283 ldk2723]: /en/newsletters/2024/01/03/#ldk-2723
