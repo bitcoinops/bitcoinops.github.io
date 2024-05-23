@@ -167,6 +167,6 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [bitvmx paper]: https://bitvmx.org/files/bitvmx-whitepaper.pdf
 [news273 bitvm]: /fr/newsletters/2023/10/18/#paiements-conditionnels-a-une-computation-arbitraire
 [bitvmx website]: https://bitvmx.org/
-[erhardt bip2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/0bc47189-f9a6-400b-823c-442974c848d5@murch.one/[news297
-bip2]: /fr/newsletters/2024/04/10/#mise-a-jour-de-bip2
-[news255 bip352]: /en/newsletters/2023/06/14/#projet-de-bip-pour-les-paiements-silencieux
+[erhardt bip2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/0bc47189-f9a6-400b-823c-442974c848d5@murch.one/
+[news297 bip2]: /fr/newsletters/2024/04/10/#mise-a-jour-de-bip2
+[news255 bip352]: /fr/newsletters/2023/06/14/#projet-de-bip-pour-les-paiements-silencieux
