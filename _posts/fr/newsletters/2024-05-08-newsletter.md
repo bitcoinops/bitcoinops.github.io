@@ -61,7 +61,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   octets zéro (0x00) initiaux des deux composants de la signature. Pour des valeurs aléatoires, un
   octet 0x00 se produira 1/256ème du temps, donc les signatures Bitcoin varient naturellement en
   taille. Cette variation est exacerbée par l'octet initial pour les valeurs R étant un 0x00 la moitié
-  du temps (voir [low-r grinding][topic low-r grinding]) mais, en théorie, la
+  du temps (voir [low-r grinding][topic low-r grinding]) mais, en théorie,
   la variation peut être réduite à une transaction étant un octet plus petite 1/256ème du temps.
 
   Même si un ordinateur quantique rapide permet à un attaquant de créer des signatures sans
