@@ -93,6 +93,9 @@ optech_mentions:
   - title: "HTLC aggregation with covenants"
     url: /en/newsletters/2023/11/08/#htlc-aggregation-with-covenants
 
+  - title: "Core Lightning #7190 introduces `chainlag` to allow safely sending payments during block sync"
+    url: /en/newsletters/2024/05/17/#core-lightning-7190
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contracts from Bitcoin Wiki

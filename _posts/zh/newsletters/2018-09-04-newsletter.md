@@ -7,23 +7,23 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周 Newsletter 包括请帮助测试 Bitcoin Core 下一个版本的候选发布版本的提醒、关于 Optech 新公共仪表板开发的信息、两个在 Bitcoin-Dev邮件列表上的讨论摘要以及比特币基础设施项目值得注意的提交。
+本周 Newsletter 包括请帮助测试 Bitcoin Core 下一个版本的候选发布版本的提醒、关于 Optech 新公共仪表盘开发的信息、两个在 Bitcoin-Dev邮件列表上的讨论摘要以及比特币基础设施项目值得注意的提交。
 
 ## 行动项
 
-- **<!--allocate-time-to-test-bitcoin-core-->分配时间测试 Bitcoin Core 0.17RC2：** Bitcoin Core 已经上传了 0.17RC2 的[二进制文件][bcc 0.17]。测试非常受欢迎，可以帮助确保最终发布版本的质量。
+- **<!--allocate-time-to-test-bitcoin-core-0-17rc2-->****分配时间测试 Bitcoin Core 0.17RC2：** Bitcoin Core 已经上传了 0.17RC2 的[二进制文件][bcc 0.17]。测试非常受欢迎，可以帮助确保最终发布版本的质量。
 
-## 仪表板项
+## 仪表盘项
 
-- **<!--optech-dashboard-->Optech 仪表板：** Marcin Jachymiak 在[博客文章][dashboard post]中介绍了他在今年夏天的实习期间为 Optech 开发的实时仪表板，不仅提供了仪表板为您提供的信息概览，还描述了他的构建过程，以便任何希望独立复制数据或使用自己的完整节点扩展仪表板的人。
+- **<!--optech-dashboard-->****Optech 仪表盘：** Marcin Jachymiak 在[博客文章][dashboard post]中介绍了他在今年夏天的实习期间为 Optech 开发的实时仪表盘，不仅提供了仪表盘为您提供的信息概览，还描述了他的构建过程，以便任何希望独立复制数据或使用自己的完整节点扩展仪表盘的人。
 
     Optech 团队的其他成员感谢 Marcin 的专心工作和敏锐的洞察力，并祝他在未来的一年中一切顺利。
 
 ## 新闻
 
-- **<!--discussion-of-resetting-testnet-->关于重置测试网的讨论：** 比特币的第一个公共测试网于 2010 年末引入；几个月后，它被重置为 testnet2；并于 2012 年中再次重置为当前的 testnet3。如今，testnet3 拥有超过 140 万个区块，并在存档节点上消耗超过 20GB 的磁盘空间。在 Bitcoin-Dev 邮件列表上开始了一场关于再次重置测试网以提供一个更小的链进行实验的[讨论][testnet reset]。除了讨论是否有必要拥有一个大的测试链供实验之外，还有人[建议][signed testnet]未来的测试网可能会想使用签名区块（signed blocks）而不是工作量证明（proof of work）来使链的运作比当前的 testnet3 更加可预测，后者容易受到疯狂的哈希率波动的影响。这也将允许轻松管理测试网的灾难演练，如大型链重组。
+- **<!--discussion-of-resetting-testnet-->****关于重置测试网的讨论：** 比特币的第一个公共测试网于 2010 年末引入；几个月后，它被重置为 testnet2；并于 2012 年中再次重置为当前的 testnet3。如今，testnet3 拥有超过 140 万个区块，并在存档节点上消耗超过 20GB 的磁盘空间。在 Bitcoin-Dev 邮件列表上开始了一场关于再次重置测试网以提供一个更小的链进行实验的[讨论][testnet reset]。除了讨论是否有必要拥有一个大的测试链供实验之外，还有人[建议][signed testnet]未来的测试网可能会想使用签名区块（signed blocks）而不是工作量证明（proof of work）来使链的运作比当前的 testnet3 更加可预测，后者容易受到疯狂的哈希率波动的影响。这也将允许轻松管理测试网的灾难演练，如大型链重组。
 
-- **<!--proposed-sighash-updates-->建议的 sighash 更新：** 在签名交易之前，比特币钱包会创建未签名交易和一些其他数据的加密哈希。然后，钱包不是直接签名交易，而是签名该哈希。自原始 Bitcoin 0.1 实现以来，钱包被允许在签名前从哈希中移除某些部分的未签名交易，这允许这些部分的交易由其他人更改，如多方合约中的其他参与者。
+- **<!--proposed-sighash-updates-->****建议的 sighash 更新：** 在签名交易之前，比特币钱包会创建未签名交易和一些其他数据的加密哈希。然后，钱包不是直接签名交易，而是签名该哈希。自原始 Bitcoin 0.1 实现以来，钱包被允许在签名前从哈希中移除某些部分的未签名交易，这允许这些部分的交易由其他人更改，如多方合约中的其他参与者。
 
     在 [BIP143][] 中，隔离见证保留了所有原始 Bitcoin 0.1 的 sighash 标志，但对包含在哈希中的钱包数据进行了一些小的（但有用的）更改，这使得矿工更难对其他矿工进行 DoS 攻击，并使得如硬件钱包这样的低功耗设备更容易保护用户资金。本周，BIP143 的合著者 Johnson Lau [发布][sighash changes]一些对 sighash 标志的建议更改，包括新的标志，这些可以作为软分叉使用隔离见证提供的见证脚本更新机制来实现。
 

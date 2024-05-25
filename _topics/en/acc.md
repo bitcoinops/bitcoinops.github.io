@@ -46,6 +46,9 @@ optech_mentions:
   - title: "Development of domain-specific languages for smart contracting, including with BitVM"
     url: /en/newsletters/2024/04/10/#dsl-for-experimenting-with-contracts
 
+  - title: "BitVMX: an alternative to BitVM for verification of program execution"
+    url: /en/newsletters/2024/05/17/#alternative-to-bitvm
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
