@@ -48,6 +48,9 @@ optech_mentions:
   - title: Using adaptor signatures to prove an async payment was accepted
     url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
 
+  - title: "LDK #2973 adds support for intercepting onion messages to facilitate async payments"
+    url: /en/newsletters/2024/05/17/#ldk-2973
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments

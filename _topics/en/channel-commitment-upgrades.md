@@ -35,6 +35,9 @@ optech_mentions:
   - title: Updating LN commitments
     url: /en/newsletters/2022/04/06/#updating-ln-commitments
 
+  - title: Analysis of multiple proposals for upgrading LN channels
+    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anchor outputs

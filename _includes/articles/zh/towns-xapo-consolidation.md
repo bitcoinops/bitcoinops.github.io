@@ -11,7 +11,7 @@
 *{{img1_label}},
 source: [Statoshi](https://statoshi.info/dashboard/db/unspent-transaction-output-set?panelId=6&fullscreen&from=1514759562608&to=1532039707168)*
 
-[newsletter 3]: /zh/newsletters/2018/07/10/#仪表板项目
+[newsletter 3]: /zh/newsletters/2018/07/10/#仪表盘项
 [Xapo]: https://www.xapo.com/
 
 UTXO 合并背后的思想本质上是这样的：当你的平均支出付款大于你的平均收入付款（或者当它们相同，但你正在批量支出付款）时，你通常需要合并许多 UTXO 以资助一个支出交易，这会增加你的交易大小，从而增加你支出的费用。通过提前合并 UTXO，你可以提前合并输入（inputs），让你更多地控制大部分费用发生的时间。如果你能在费用低时进行，这让你可以大幅减少这些成本。
