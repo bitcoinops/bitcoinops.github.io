@@ -89,6 +89,9 @@ optech_mentions:
   - title: "Ledger Bitcoin App 2.2.0 adds miniscript support for taproot"
     url: /en/newsletters/2024/03/20/#ledger-bitcoin-app-2-2-0-released
 
+  - title: Draft BIP proposed for miniscript
+    url:  /en/newsletters/2024/05/24/#proposed-miniscript-bip
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Miniscript: streamlined Bitcoin scripting"

@@ -38,6 +38,9 @@ optech_mentions:
   - title: Sending and receiving ecash using LN and ZKCPs
     url: /en/newsletters/2024/02/28/#sending-and-receiving-ecash-using-ln-and-zkcps
 
+  - title: Proposal to pay miners with ecash
+    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

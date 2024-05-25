@@ -56,6 +56,12 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about multiple aspects of silent payments
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: "BIPs #1458 adds BIP352 for silent payments"
+    url: /en/newsletters/2024/05/17/#bips-1458
+
+  - title: "Discussion about using PSBTs with silent payments"
+    url: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
