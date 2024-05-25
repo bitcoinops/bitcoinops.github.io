@@ -18,14 +18,14 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 - **Signatures Lamport appliquées par consensus en plus des signatures ECDSA :**
   Ethan Heilman a [posté][heilman lamport] sur la liste de diffusion Bitcoin-Dev une méthode
   permettant d'exiger qu'une transaction soit signée par une [signature Lamport][] pour être valide.
-  Cela peut rendre les dépenses de sorties P2SH et P2WSH [résistantes aux quantiques][topic quantum
+  Cela peut rendre les dépenses de sorties P2SH et P2WSH [résistantes aux attaques quantiques][topic quantum
   resistance] et, [selon][poelstra lamport1] Andrew Poelstra, cela signifie "que les limites de taille
   sont désormais la seule raison pour laquelle Bitcoin n'a pas de covenants." Nous résumerons le
   protocole ci-dessous, mais pour garder notre description simple et claire, nous omettrons plusieurs
-  avertissements de sécurité, donc veuillez ne rien mettre en œuvre basé sur ce résumé.
+  avertissements de sécurité, donc veuillez ne rien mettre en œuvre en vous basant uniquement sur ce résumé.
 
-  Les clés publiques Lamport se composent de deux listes de digests de hachage. Les signatures Lamport
-  consistent en les préimages pour les hachages sélectionnés. Un programme partagé entre le signataire
+  Les clés publiques Lamport se composent de deux listes de digests de hachage. Les signatures Lamport sont constituées
+  des pré-images des hachages sélectionnés. Un programme partagé entre le signataire
   et le validateur interprète quelles préimages sont révélées comme instructions. Par exemple, Bob
   veut vérifier qu'Alice a signé un nombre entre 0 et 31 (en binaire, 00000 à 11111). Alice crée une
   clé privée Lamport à partir de deux listes de nombres aléatoires :
@@ -85,13 +85,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   OP_ENDIF
   ```
 
-  Pour satisfaire ce fragment de script, le dépensier fournit une signature ECDSA. La signature est
+  Pour satisfaire ce fragment de script, l'émetteur qui effectue la dépense fournit une signature ECDSA. La signature est
   dupliquée et validée ; le script échoue si ce n'est pas une signature valide. Dans un monde
   post-quantique, un attaquant pourrait réussir ce test, permettant la validation de continuer. La
-  taille de la signature dupliquée est mesurée. Si elle est égale à `<size>` octets, le dépensier doit
+  taille de la signature dupliquée est mesurée. Si elle est égale à `<size>` octets, l'émetteur doit
   révéler la préimage pour `<digest_x>`. Cette `<size>` peut être réglée sur un octet de moins que le
   cas commun, ce qui se produit naturellement une fois tous les 256 signatures. Sinon, dans le cas
-  commun ou avec une signature gonflée en taille, le dépensier doit révéler la préimage pour
+  commun ou avec une signature gonflée en taille, l'émetteur doit révéler la préimage pour
   `<digest_y>`. Si une préimage valide pour la taille de signature réelle n'est pas révélée, le script
   échoue.
 
@@ -239,23 +239,23 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
   Des améliorations supplémentaires nécessitant des changements au protocole P2P sont décrites dans
   [BIP331][].
 
-- [Bitcoin Core #28016][] commence à attendre que tous les nœuds de semence soient interrogés avant
-  de sonder les semences DNS. Les utilisateurs peuvent configurer à la fois des nœuds de semence et
-  des semences DNS. Un nœud de semence est un nœud complet Bitcoin régulier ; Bitcoin Core peut ouvrir
+- [Bitcoin Core #28016][] commence à attendre que tous les nœud seed (nœuds d'archive) soient interrogés avant
+  de sonder les seeds DNS. Les utilisateurs peuvent configurer à la fois des nœuds seed et
+  des seeds DNS. Un nœud seed est un nœud complet Bitcoin régulier ; Bitcoin Core peut ouvrir
   une connexion TCP avec le nœud, demander une liste d'adresses pour des pairs potentiels, et fermer
-  la connexion. Une semence DNS retourne des adresses IP pour des pairs potentiels via DNS, permettant
+  la connexion. Une seed DNS retourne des adresses IP pour des pairs potentiels via DNS, permettant
   à ces informations de voyager et d'être mises en cache à travers le réseau DNS de sorte que le
-  propriétaire du serveur de semence DNS n'apprenne pas l'adresse IP du client demandant
+  propriétaire du serveur de seeds DNS n'apprenne pas l'adresse IP du client demandant
   l'information. Par défaut, Bitcoin Core tente de se connecter à des pairs dont il a déjà appris les
-  adresses IP ; si aucune de ces connexions n'est réussie, il interroge les semences DNS ; si aucune
-  des semences DNS n'est accessible, il contacte un ensemble de nœuds de semence codés en dur. Les
-  utilisateurs peuvent éventuellement fournir leur propre liste de nœuds de semence à contacter.
-  Avant cette PR, si un utilisateur configurait le sondage des nœuds de semence et conservait la
+  adresses IP ; si aucune de ces connexions n'est réussie, il interroge les seeds DNS ; si aucune
+  des seeds DNS n'est accessible, il contacte un ensemble de nœuds seed codés en dur. Les
+  utilisateurs peuvent éventuellement fournir leur propre liste de nœuds seed à contacter.
+  Avant cette PR, si un utilisateur configurait le sondage des nœuds seed et conservait la
   configuration par défaut pour utiliser également les DNS seeds, ils seraient tous deux contactés en
   parallèle et le plus rapide dominerait les adresses des pairs que le nœud essaierait. Étant donné le
   faible surcoût du DNS et le fait que les résultats pourraient déjà être mis en cache par un serveur
-  physiquement proche de l'utilisateur, le DNS gagnerait généralement. Après cette PR, les nœuds de
-  semence sont privilégiés, en raison de la croyance qu'un utilisateur qui définit une option
+  physiquement proche de l'utilisateur, le DNS gagnerait généralement. Après cette PR, les nœuds
+  seed sont privilégiés, en raison de la croyance qu'un utilisateur qui définit une option
   `seednode` non par défaut préférerait les résultats de cette option plutôt que les résultats par
   défaut.
 
