@@ -65,7 +65,7 @@ lang: zh
 {% include linkers/issues.md issues="1937,14477,2081" %}
 
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
-[last week's newsletter]: /zh/newsletters/2018/11/27/#simplified-fee-bumping-for-ln-ln
+[last week's newsletter]: /zh/newsletters/2018/11/27/#simplified-fee-bumping-for-ln
 [carve out thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [ln1.1 accepted proposals]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [ln spec meetings]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001673.html
