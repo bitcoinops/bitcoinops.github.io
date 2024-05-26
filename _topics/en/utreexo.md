@@ -43,6 +43,9 @@ optech_mentions:
   - title: "Libflorestra library announced for using utreexo in applications"
     url: /en/newsletters/2023/08/23/#libfloresta-library-announced
 
+  - title: "Release of utreexod beta"
+    url: /en/newsletters/2024/05/15/#release-of-utreexod-beta
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Uneconomical outputs
