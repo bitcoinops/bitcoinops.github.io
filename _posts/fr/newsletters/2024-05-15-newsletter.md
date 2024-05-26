@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine annonce la sortie en bêta d'un nœud complet supportant utreexo et
 résume deux extensions proposées au BIP119 `OP_CHECKTEMPLATEVERIFY`. Elle inclut également nos
-sections habituelles annonçant les nouvelles versions et les candidats à la version, ainsi que la
+sections habituelles annonçant les nouvelles versions et les versions candidates, ainsi que la
 description des modifications notables apportées aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Actualités
@@ -27,7 +27,7 @@ description des modifications notables apportées aux logiciels d'infrastructure
   dépasser la capacité de stockage d'un appareil.
 
   Les notes de version publiées par Kim indiquent que le nœud est compatible avec les portefeuilles
-  basés sur [BDK][bdk repo], ainsi que de nombreux autres portefeuilles grâce au support pour
+  basés sur [BDK][bdk repo], ainsi que de nombreux autres portefeuilles grâce à la prise en charge d'
   [Electrum personal server][]. Le nœud prend en charge le relais de transactions avec des extensions
   au protocole réseau P2P permettant la transmission des preuves utreexo. Les nœuds utreexo
   _réguliers_ et _ponts_ sont pris en charge ; les nœuds utreexo réguliers utilisent l'engagement
@@ -48,8 +48,8 @@ description des modifications notables apportées aux logiciels d'infrastructure
   BIP][bip119e] pour étendre le [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposé
   (`OP_CTV`) avec deux fonctionnalités supplémentaires :
 
-  - *Support pour les hachages HASH160 :* ce sont les digestes de hachage utilisés pour les adresses
-    P2PKH, P2SH et P2WPKH. Ils font 20 octets comparés aux digestes de hachage de 32 octets utilisés
+  - *Support pour les hachages HASH160 :* ce sont les digests de hachage utilisés pour les adresses
+    P2PKH, P2SH et P2WPKH. Ils font 20 octets comparés aux digests de hachage de 32 octets utilisés
     dans la proposition de base [BIP119][]. En
     protocoles multipartites naïfs, une [attaque par collision][] contre un hash de 20 octets peut être
     réalisée en environ 2<sup>80</sup> opérations de force brute, ce qui est à la portée d'un attaquant
@@ -65,8 +65,8 @@ description des modifications notables apportées aux logiciels d'infrastructure
     hash fourni. L'une de ces sorties pourrait être une sortie `OP_RETURN` qui s'engage sur certaines
     données que le créateur du script souhaite publier sur la blockchain, telles que les données
     nécessaires pour récupérer l'état du canal LN à partir d'une sauvegarde. Cependant, placer des
-    données dans le champ témoin serait nettement moins coûteux. La forme proposée mise à jour de
-    `OP_CTV` permet au créateur du script d'exiger qu'un élément supplémentaire de données de la pile
+    données dans le champ témoin serait nettement moins coûteux. La mise à jour de
+    `OP_CTV` proposée permet au créateur du script d'exiger qu'un élément supplémentaire de données de la pile
     témoin soit inclus lorsque les entrées et les sorties sont hashées. Ces données seront vérifiées
     contre le digest de hash fourni par le créateur du script. Cela garantit que les données sont
     publiées sur la blockchain avec une utilisation minimale du poids du bloc.
