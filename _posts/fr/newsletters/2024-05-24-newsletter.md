@@ -330,11 +330,11 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [annonce cake wallet]: https://twitter.com/cakewallet/status/1791500775262437396
 [gh emessbee]: https://github.com/supertestnet/coinjoin-workshop
 [blog coinbase]: https://www.coinbase.com/blog/coinbase-integrates-bitcoins-lightning-network-in-partnership-with
-[site web lightspark] : https://www.lightspark.com/
+[site web lightspark]: https://www.lightspark.com/
 [blog block]: https://www.mining.build/latest-updates-3nm-system/
 [gh sentrum]: https://github.com/sommerfelddev/sentrum
 [docs ocean]: https://ocean.xyz/docs/lightning
-[site web bitescrow] : https://www.bitescrow.app/
+[site web bitescrow]: https://www.bitescrow.app/
 [docs bitescrow]: https://www.bitescrow.app/dev
 [gh stack wallet]: https://github.com/cypherstack/stack_wallet/releases/tag/build_222
 [gh pushtx]: https://github.com/alfred-hodler/pushtx
