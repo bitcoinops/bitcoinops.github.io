@@ -10,17 +10,17 @@ lang: zh
 
 本周的 Newsletter 包括有关 Bitcoin Core 首次发布候选版本的信息、关于 BIP151 P2P 协议加密和潜在的未来软分叉的消息、来自 Bitcoin Stack Exchange 的热门问题及其答案，以及在流行的 Bitcoin 基础设施项目中一些值得注意的合并。
 
-## 行动项目
+## 行动项
 
-- **<!--allocate-time-to-test-bitcoin-core-0.17rc2-->分配时间测试 Bitcoin Core 0.17RC2：** Bitcoin Core 已经上传 0.17RC2 的[二进制文件][bcc 0.17]。测试非常受欢迎，并且可以帮助确保最终发布版本的质量。
+- **<!--allocate-time-to-test-bitcoin-core-0-17rc2-->****分配时间测试 Bitcoin Core 0.17RC2：** Bitcoin Core 已经上传 0.17RC2 的[二进制文件][bcc 0.17]。测试非常受欢迎，并且可以帮助确保最终发布版本的质量。
 
 ## 新闻
 
-- **<!--pr-opened-for-initial-bip151-support-->为初始 BIP151 支持打开 PR：** Jonas Schnelli 向 Bitcoin Core 提出 PR，提供了点对点网络协议的[BIP151][]加密的[初始实现][Bitcoin Core #14032]。他还更新了 BIP151 规范的[更新草案][bip151 update]，其中包含了他在实现开发中所做的更改。如果被接受，这将允许全节点和轻量级客户端在不被 ISP 窃听的情况下通信区块、交易和控制消息，这可以使确定哪个程序发起了交易变得更加困难（尤其是结合 Bitcoin Core 现有的交易起源保护或未来提案，例如[Dandelion 协议][Dandelion protocol]）。
+- **<!--pr-opened-for-initial-bip151-support-->****为初始 BIP151 支持打开 PR：** Jonas Schnelli 向 Bitcoin Core 提出 PR，提供了点对点网络协议的 [BIP151][] 加密的[初始实现][Bitcoin Core #14032]。他还更新了 BIP151 规范的[更新草案][bip151 update]，其中包含了他在实现开发中所做的更改。如果被接受，这将允许全节点和轻量级客户端在不被 ISP 窃听的情况下通信区块、交易和控制消息，这可以使确定哪个程序发起了交易变得更加困难（尤其是结合 Bitcoin Core 现有的交易起源保护或未来提案，例如[蒲公英协议][Dandelion protocol]）。
 
     Schnelli 还在与其他开发人员合作实现和测试被认为能抵抗量子计算机攻击的 [NewHope 密钥交换协议][newhope]，以便记录两个对等方之间今天通信的窃听者将来在拥有快速量子计算机时无法解密那些数据。
 
-- **<!--requests-for-soft-fork-solutions-to-the-time-warp-attack-->请求软分叉解决方案以应对时间扭曲攻击：** Bitcoin 区块包括矿工声称创建区块的时间。这些时间戳被用来调整挖掘区块的难度，以便平均每 10 分钟产生一个区块。然而，时间扭曲攻击允许代表大部分网络哈希率的矿工在很长一段时间内持续撒谎关于区块的创建时间以降低难度，即使区块的产生频率超过每 10 分钟一次。
+- **<!--requests-for-soft-fork-solutions-to-the-time-warp-attack-->****请求软分叉解决方案以应对时间扭曲攻击：** Bitcoin 区块包括矿工声称创建区块的时间。这些时间戳被用来调整挖掘区块的难度，以便平均每 10 分钟产生一个区块。然而，时间扭曲攻击允许代表大部分网络哈希率的矿工在很长一段时间内持续撒谎关于区块的创建时间以降低难度，即使区块的产生频率超过每 10 分钟一次。
 
     Gregory Maxwell 在 Bitcoin 协议开发邮件列表中[询问][timewarp maxwell]关于该攻击的提出的软分叉解决方案，然后他将提出自己的解决方案。到目前为止，Johnson Lau 已经[提出][timewarp lau]了一种技术。
 
@@ -30,13 +30,13 @@ lang: zh
 
 *[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找问题答案的首选地之一 —— 或者当我们有一些闲暇时间帮助回答其他人的问题时。在这个月度专栏中，我们突出显示自上次更新以来一些得票最高的问题和答案。*
 
-- **<!--can-you-pay-0-bitcoins-->[你可以支付 0 个比特币吗？][bse 78355]** Andrew Chow 解释说，你不仅可以向一个地址或其他脚本支付零值金额，你还可以从零值输出中支付——但前提是你找到一个不使用 Bitcoin Core 默认设置的矿工。
+- **<!--can-you-pay-0-bitcoins-->**[你可以支付 0 个比特币吗？][bse 78355] Andrew Chow 解释说，你不仅可以向一个地址或其他脚本支付零值金额，你还可以从零值输出中支付——但前提是你找到一个不使用 Bitcoin Core 默认设置的矿工。
 
-- [你能创建一个不存在交易的 SPV 证明吗？][bse 77764] 简化支付验证（SPV, Simplified Payment Verification）使用默克尔树（Merkle tree）来证明某个交易存在于某个区块中，而该区块本身属于最佳区块链——即工作量证明最多的区块链。但你能做反向操作吗？你能证明某个交易不在某个特定的区块中，或者不在最佳区块链的任何区块中吗？
+- **<!--can-you-create-an-spv-proof-of-the-absence-of-a-transaction-->**[你能创建一个不存在交易的 SPV 证明吗？][bse 77764] 简化支付验证（SPV, Simplified Payment Verification）使用默克尔树（Merkle tree）来证明某个交易存在于某个区块中，而该区块本身属于最佳区块链——即工作量证明最多的区块链。但你能做反向操作吗？你能证明某个交易不在某个特定的区块中，或者不在最佳区块链的任何区块中吗？
 
     Gregory Maxwell 解释说这是可能的，它也会涉及到使用默克尔树，但这可能需要计算量大（但带宽效率高）的零知识证明（ZKPs, Zero-Knowledge Proofs）。
 
-- [你能将 P2PKH 地址转换为 P2SH 或 Segwit 吗？][bse 72775] **不要这样做。**
+- **<!--can-you-convert-a-p2pkh-address-to-p2sh-or-segwit-->**[你能将 P2PKH 地址转换为 P2SH 或 Segwit 吗？][bse 72775] **不要这样做。**
   Pieter Wuille 解释了为什么这是一个非常糟糕的主意，并且很可能导致资金丢失。注意：这是一个较早的答案，本月因一些用户试图将其他人的地址转换为 Segwit 并因此丢失资金而受到更多关注。
 
 ## 值得注意的提交

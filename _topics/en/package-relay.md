@@ -121,6 +121,9 @@ optech_mentions:
   - title: "Bitcoin Core #28970 adds support for one-parent-one-child (1p1c) package relay with no P2P changes"
     url: /en/newsletters/2024/05/08/#bitcoin-core-28970
 
+  - title: "Bitcoin Core #30000 indexes orphan txes by wtxid, removing a problem with orphan-based package relay"
+    url: /en/newsletters/2024/05/24/#bitcoin-core-30000
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

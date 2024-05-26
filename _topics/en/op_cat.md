@@ -57,6 +57,12 @@ optech_mentions:
   - title: "Bitcoin PR Review Club for `OP_CAT` on signet with Bitcoin Inquisition"
     url: /en/newsletters/2024/03/13/#bitcoin-core-pr-review-club
 
+  - title: "BIPs #1525 adds BIP347 which proposes an `OP_CAT` opcode for tapscript"
+    url: /en/newsletters/2024/05/15/#bips-1525
+
+  - title: "Bitcoin Inquisition 27.0 begins enforcing `OP_CAT` on signet"
+    url: /en/newsletters/2024/05/24/#bitcoin-inquisition-27-0
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK
