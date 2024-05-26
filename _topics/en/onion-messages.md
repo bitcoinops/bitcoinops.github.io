@@ -74,6 +74,12 @@ optech_mentions:
   - title: "LDK #2723 adds support for sending onion messages using direct connections"
     url: /en/newsletters/2024/01/03/#ldk-2723
 
+  - title: "LDK #2973 adds support for intercepting onion messages to facilitate async payments"
+    url: /en/newsletters/2024/05/17/#ldk-2973
+
+  - title: "CLN #7304 adds support for direct peer connections for message relay"
+    url: /en/newsletters/2024/05/24/#core-lightning-7304
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

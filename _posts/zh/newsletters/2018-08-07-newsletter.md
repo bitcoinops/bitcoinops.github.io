@@ -7,17 +7,17 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的新闻简报包括常规的仪表板和行动项目，一个关于通过闪电网络进行通用比特币合约讨论的链接，一个最近宣布的用于增强可扩展性的 BLS 签名库的简要描述，以及来自 Bitcoin Core、LND 和 C-Lightning 项目的一些值得注意的提交。
+本周的 Newsletter 包括常规的仪表盘和行动项，一个关于通过闪电网络进行通用比特币合约讨论的链接，一个最近宣布的用于增强可扩展性的 BLS 签名库的简要描述，以及来自 Bitcoin Core、LND 和 C-Lightning 项目的一些值得注意的提交。
 
-## 行动项目
+## 行动项
 
-- Optech 已开始计划其首次欧洲工作坊，预计将于 11 月在巴黎举行。如果任何认为他们将能够参加的会员公司对讨论的主题感兴趣，请[给 Optech 发送电子邮件][optech email]。关于工作坊的更多信息将在几周内发布。
+- **<!--optech-has-begun-->**Optech 已开始计划其首次欧洲工作坊，预计将于 11 月在巴黎举行。如果任何认为他们将能够参加的会员公司对讨论的主题感兴趣，请[给 Optech 发送电子邮件][optech email]。关于工作坊的更多信息将在几周内发布。
 
-## 仪表板项目
+## 仪表盘项
 {% assign img1_label = "Transactions signaling opt-in RBF, August 2017 - August 2018" %}
-- **<!--transaction-fees-remain-very-low-->交易[费用仍旧非常低][fee metrics]**：任何能等待 10 个或更多区块确认的人都可以合理支付默认的最低费率。这是[合并 UTXO][consolidate info]的好时机。
+- **<!--fees-remain-very-low-->**交易[费用仍旧非常低][fee metrics]：任何能等待 10 个或更多区块确认的人都可以合理支付默认的最低费率。这是[合并 UTXO][consolidate info]的好时机。
 
-- **<!--ddoption-of-opt-in-rbf-remains-fairly-low-->选择加入 RBF 的采用率仍然相当低**，但在过去一年中有实质性增长，从 [1.5% 增长到 5.7% 的交易][rbf data]。此数据来源于 Optech 的 beta 仪表板，我们鼓励人们尝试并向我们提供反馈！
+- **<!--adoption-of-opt-in-rbf-->**选择加入 RBF 的采用率仍然相当低，但在过去一年中有实质性增长，从 [1.5% 增长到 5.7% 的交易][rbf data]。此数据来源于 Optech 的 beta 仪表盘，我们鼓励人们尝试并向我们提供反馈！
 
   ![{{img1_label}}](/img/posts/rbf.png)
   *{{img1_label}},
@@ -25,9 +25,9 @@ lang: zh
 
 ## 新闻
 
-- **<!--discussion-of-arbitrary-contracts-over-ln-->关于通过 LN 进行任意合约的讨论：**上周 Lightning Network (LN) 开发邮件列表上的一个[帖子][contract thread]描述了在支付通道中执行任意比特币合约的基本原则。与独立的合约相比，该合约解析为 True 以成为有效交易，完全相同的合约被包含在 LN 支付中，并且必须返回 true 以使通道内支付交易有效。任意合约中的所有其他内容以及 LN 支付可以保持不变，具体例外在知识渊博的匿名研究员 ZmnSCPxj 启动的这个帖子中进行了讨论。
+- **<!--discussion-of-arbitrary-contracts-over-ln-->****关于通过 LN 进行任意合约的讨论：**上周 Lightning Network (LN) 开发邮件列表上的一个[帖子][contract thread]描述了在支付通道中执行任意比特币合约的基本原则。与独立的合约相比，该合约解析为 True 以成为有效交易，完全相同的合约被包含在 LN 支付中，并且必须返回 true 以使通道内支付交易有效。任意合约中的所有其他内容以及 LN 支付可以保持不变，具体例外在知识渊博的匿名研究员 ZmnSCPxj 启动的这个帖子中进行了讨论。
 
-- **<!--library-announced-for-bls-signatures-->宣布用于 BLS 签名的库：**著名开发者 Bram Cohen [宣布][bls announce]了一个“初版（但功能完备的）用于基于 [MuSig][] 构造的 [BLS 签名][BLS signatures]库”。这些签名提供了与 [Newsletter #3 特别新闻][#3 schnorr] 中描述的 Schnorr 签名相同的大部分好处，但也允许非交互式签名聚合，这可以通过减少区块链中的签名数据量（可能是非常大的百分比）来提高可扩展性，并通过实施非交互式 CoinJoin 技术（如 [Mimblewimble 论文][Mimblewimble
+- **<!--library-announced-for-bls-signatures-->****宣布用于 BLS 签名的库：**著名开发者 Bram Cohen [宣布][bls announce]了一个“初版（但功能完备的）用于基于 [MuSig][] 构造的 [BLS 签名][BLS signatures]库”。这些签名提供了与 [Newsletter #3 特别新闻][#3 schnorr] 中描述的 Schnorr 签名相同的大部分好处，但也允许非交互式签名聚合，这可以通过减少区块链中的签名数据量（可能是非常大的百分比）来提高可扩展性，并通过实施非交互式 CoinJoin 技术（如 [Mimblewimble 论文][Mimblewimble
   paper]中描述的那样）来增强隐私。
 
   BLS 签名确实有三个缺点，这导致大多数比特币协议开发人员短期内专注于 Schnorr 签名。第一个是没有已知方法可以像验证 Schnorr 签名那样快速验证它们——签名验证速度对于网络可扩展性也很重要。其次，为了证明 BLS 签名的安全性，需要对方案的一部分安全性做出额外的假设，而这对于证明比特币当前的方案（ECDSA）或提议的基于 Schnorr 的方案的安全性并不需要。最后，BLS 签名只存在 Schnorr 签名大约一半的时间，使用得更少，并且据信没有接受到与 Schnorr 签名相同数量的专家审查。

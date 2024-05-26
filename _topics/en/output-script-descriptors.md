@@ -170,6 +170,12 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about descriptors for silent payments
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: "BIP388 added with wallet policies for descriptor wallets"
+    url: /en/newsletters/2024/05/15/#bips-1389
+
+  - title: "BIPs #1567 adds BIP387 with new `multi_a()` and `sortedmultia_a()` descriptors"
+    url: /en/newsletters/2024/05/15/#bips-1567
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
