@@ -75,7 +75,7 @@ popular Bitcoin infrastructure software.
   upgrading to taproot channels. This gives us the ability to upgrade to
   `option_zero_fee_htlc_tx` anchor channels, and provides a commitment
   format upgrade mechanism that can be used to get us to V3 channels
-  (once specified)."
+  (once specified)." {% assign timestamp="1:27" %}
 
 - **Challenges in rewarding pool miners:** Ethan Tuttle [posted][tuttle
   poolcash] to Delving Bitcoin to suggest that [mining pools][topic
@@ -118,13 +118,15 @@ popular Bitcoin infrastructure software.
   may at least allow miners to detect if they aren't being paid
   correctly after a longer period (hours to days).
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="6:58" %}
 
 - **Discussion about PSBTs for silent payments:** Josie Baker
   [started][baker psbtsp] a discussion on Delving Bitcoin about
   [PSBT][topic psbt] extensions for [silent payments][topic silent
   payments] (SPs), citing a [draft specification][toth psbtsp] by Andrew
   Toth.  PSBTs for SPs have two aspects:
+
+  {% assign timestamp="12:40" %}
 
   - **Spending to SP addresses:** the actual output script placed in a
     transaction depends on both the silent payment address and the
@@ -154,7 +156,7 @@ popular Bitcoin infrastructure software.
   analysis.  The draft BIP is derived from miniscript's long-standing
   website and should correspond with existing implementations of
   miniscript both for P2WSH witness script and P2TR [tapscript][topic
-  tapscript].
+  tapscript]. {% assign timestamp="21:32" %}
 
 - **Channel value pegging:** Tony Klausing [posted][klausing stable] to
   Delving Bitcoin a proposal, with working [code][klausing code], for
@@ -181,7 +183,7 @@ popular Bitcoin infrastructure software.
   relationship preferable to custodial futures markets.  He also
   suggests that it could be used as the basis for a bank that issues
   dollar-denominated [ecash][topic ecash].  The scheme would work for
-  any asset for which a market price could be determined.
+  any asset for which a market price could be determined. {% assign timestamp="31:42" %}
 
 ## Changes to services and client software
 
@@ -193,44 +195,44 @@ wallets and services.*
   including a [silentpayments.xyz][sp website] informational website, [two][bi
   ts sp] TypeScript [libraries][bw ts sp], a [Go-based backend][gh blindbitd], a
   [web wallet][gh silentium], and [more][sp website devs]. Caution is advised as
-  most of the software is new, beta, or a work in progress.
+  most of the software is new, beta, or a work in progress. {% assign timestamp="43:50" %}
 
 - **Cake Wallet adds silent payments:**
   [Cake Wallet][cake wallet website] recently [announced][cake wallet
-  announcement] their latest beta release supports silent payments.
+  announcement] their latest beta release supports silent payments. {% assign timestamp="46:14" %}
 
 - **Coordinator-less coinjoin PoC:**
   [Emessbee][gh emessbee] is a proof-of-concept project to create [coinjoin][topic coinjoin]
-  transactions without a central coordinator.
+  transactions without a central coordinator. {% assign timestamp="46:26" %}
 
 - **OCEAN adds BOLT12 support:**
   The OCEAN mining pool uses a [signed message][topic generic signmessage] to associate
   a Bitcoin address to a [BOLT12 offer][topic offers] as part of their [Lightning
-  payout][ocean docs] setup.
+  payout][ocean docs] setup. {% assign timestamp="47:10" %}
 
 - **Coinbase adds Lightning support:**
   Using Lightning infrastructure from [Lightspark][lightspark website], [Coinbase added
-  Lightning][coinbase blog] deposit and withdrawal support.
+  Lightning][coinbase blog] deposit and withdrawal support. {% assign timestamp="48:57" %}
 
 - **Bitcoin escrow tooling announced:**
   The [BitEscrow][bitescrow website] team announced a set of [developer tools][bitescrow docs] for
-  implementing non-custodial Bitcoin escrow.
+  implementing non-custodial Bitcoin escrow. {% assign timestamp="49:20" %}
 
 - **Block's call for mining community feedback:**
   In an [update][block blog] to their 3nm chip progress, Block is seeking mining
   community feedback about mining hardware software features, maintenance, and
-  other questions.
+  other questions. {% assign timestamp="49:48" %}
 
 - **Sentrum wallet tracker released:**
-  [Sentrum][gh sentrum] is a watch-only wallet that supports a variety of notification channels.
+  [Sentrum][gh sentrum] is a watch-only wallet that supports a variety of notification channels. {% assign timestamp="50:34" %}
 
 - **Stack Wallet adds FROST support:**
   [Stack Wallet v2.0.0][gh stack wallet] adds FROST [threshold][topic threshold
-  signature] multisig support using the Modular FROST Rust library.
+  signature] multisig support using the Modular FROST Rust library. {% assign timestamp="51:19" %}
 
 - **Transaction broadcast tool announced:**
   [Pushtx][gh pushtx] is a simple Rust program that broadcasts transactions directly to the
-  Bitcoin P2P network.
+  Bitcoin P2P network. {% assign timestamp="53:41" %}
 
 ## Releases and release candidates
 
@@ -246,10 +248,10 @@ release candidates.*
   `bitcoin-util` that can be used to test script opcode behavior".
   Support has been dropped for `annexdatacarrier` and pseudo [ephemeral
   anchors][topic ephemeral anchors] (see Newsletters [#244][news244
-  annex] and [#248][news248 ephemeral]).
+  annex] and [#248][news248 ephemeral]). {% assign timestamp="56:30" %}
 
 - [LND v0.18.0-beta.rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="1:00:10" %}
 
 ## Notable code and documentation changes
 
@@ -267,7 +269,7 @@ repo]._
   server always returns HTTP 200 "OK" unless there is an HTTP error or malformed
   request, it returns either error or result fields but never both, and single
   and batch requests result in the same error handling behavior. If version 2.0
-  isn't specified in the request body, the legacy JSON-RPC 1.1 protocol is used.
+  isn't specified in the request body, the legacy JSON-RPC 1.1 protocol is used. {% assign timestamp="1:00:30" %}
 
 - [Bitcoin Core #30000][] allows multiple transactions with the same
   `txid` to coexist in `TxOrphanage` by indexing them by `wtxid` instead
@@ -299,7 +301,7 @@ repo]._
   transaction is received, the node will have enough information to drop
   any malformed child transactions and then perform the expected 1p1c
   package acceptance on a valid child.  This PR was previously discussed
-  in the PR Review Club summary in [Newsletter #301][news301 prclub].
+  in the PR Review Club summary in [Newsletter #301][news301 prclub]. {% assign timestamp="1:01:27" %}
 
 - [Bitcoin Core #28233][] builds on [#17487][bitcoin core #17487] to
   remove the periodic flush of the warm coins (UTXO) cache every 24
@@ -310,7 +312,7 @@ repo]._
   nears the maximum allocated memory space.  A warm cache almost doubles
   the block validation speed on a node with the default cache settings,
   with even more improved performance available on nodes that allocate
-  additional memory to the cache.
+  additional memory to the cache. {% assign timestamp="1:02:42" %}
 
 - [Core Lightning #7304][] adds a reply flow to [offers][topic offers]-style `invoice_requests` when it can’t
   find a path to the `reply_path` node.  CLN's `connectd` will open a transient TCP/IP
@@ -318,7 +320,7 @@ repo]._
   messages] containing an invoice. This PR improves Core Lightning’s
   interoperability with LDK and also allows using onion messages even
   while only a few nodes support them (see [Newsletter #283][news283
-  ldk2723]).
+  ldk2723]). {% assign timestamp="1:09:41" %}
 
 - [Core Lightning #7063][] updates the feerate security margin
   multiplier to dynamically adjust for likely fee
@@ -327,7 +329,7 @@ repo]._
   transactions that can't be fee bumped) or through fee bumping.  The
   multiplier now starts at 2x current [feerate estimates][topic fee
   estimation] for low rates (1 sat/vbyte) and gradually decreases to 1.1x
-  as feerates approach the daily high `maxfeerate`.
+  as feerates approach the daily high `maxfeerate`. {% assign timestamp="1:10:18" %}
 
 - [Rust Bitcoin #2740][] adds a `from_next_work_required` method to the `pow`
   (proof of work) API that takes a `CompactTarget` (representing the previous
@@ -335,7 +337,7 @@ repo]._
   previous blocks), and a `Params` network parameters object. It returns a new
   `CompactTarget` representing the next difficulty target. The algorithm
   implemented in this function is based on the Bitcoin Core implementation found
-  in the  `pow.cpp` file.
+  in the  `pow.cpp` file. {% assign timestamp="1:17:54" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-05-27 14:30" %}
