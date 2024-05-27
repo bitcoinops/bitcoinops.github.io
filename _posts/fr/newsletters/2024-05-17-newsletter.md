@@ -155,7 +155,7 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [news261 lngossip]: /fr/newsletters/2023/07/26/#annonces-de-canaux-mises-a-jour
 [news205 riddle]: /en/newsletters/2022/06/22/#new-riddle-anti-sybil-method
 [news85 podle]: /en/newsletters/2020/02/19/#using-podle-in-ln
-[arbres de courbes]: https://eprint.iacr.org/2022/756
+[arbres courbes]: https://eprint.iacr.org/2022/756
 [autct repo]: https://github.com/AdamISZ/aut-ct
 [hodlboard]: https://hodlboard.org/
 [gan penlock]: https://mailing-list.bitcoindevs.xyz/bitcoindev/9bt6npqSdpuYOcaDySZDvBOwXVq_v70FBnIseMT6AXNZ4V9HylyubEaGU0S8K5TMckXTcUqQIv-FN-QLIZjj8hJbzfB9ja9S8gxKTaQ2FfM=@proton.me/
