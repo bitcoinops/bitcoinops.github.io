@@ -307,7 +307,7 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [kc upchan]: https://delvingbitcoin.org/t/upgrading-existing-lightning-channels/881
 [tuttle poolcash]: https://delvingbitcoin.org/t/ecash-tides-using-cashu-and-stratum-v2/870
 [corallo pooldelay]: https://delvingbitcoin.org/t/ecash-tides-using-cashu-and-stratum-v2/870/14
-[proposition corallo sv2]: https://github.com/stratum-mining/sv2-spec/discussions/76#discussioncomment-9472619
+[corallo sv2 proposal]: https://github.com/stratum-mining/sv2-spec/discussions/76#discussioncomment-9472619
 [baker psbtsp]: https://delvingbitcoin.org/t/bip352-psbt-support/877
 [toth psbtsp]: https://gist.github.com/andrewtoth/dc26f683010cd53aca8e477504c49260
 [chow miniscript]: https://mailing-list.bitcoindevs.xyz/bitcoindev/0be34bd2-637b-44b1-a0d5-e0ad5812d505@achow101.com/
@@ -320,21 +320,21 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [news301 prclub]: /fr/newsletters/2024/05/08/#bitcoin-core-pr-review-club
 [news301 bcc28970]: /fr/newsletters/2024/05/08/#bitcoin-core-28970
 [news283 ldk2723]: /fr/newsletters/2024/01/03/#ldk-2723
-[site web sp]: https://silentpayments.xyz/
+[sp website]: https://silentpayments.xyz/
 [bi ts sp]: https://github.com/Bitshala-Incubator/silent-pay
 [bw ts sp]: https://github.com/BlueWallet/SilentPayments
 [gh blindbitd]: https://github.com/setavenger/blindbitd
 [gh silentium]: https://github.com/louisinger/silentium
-[site web développeurs sp]: https://silentpayments.xyz/docs/developers/
-[site web cake wallet]: https://cakewallet.com/
-[annonce cake wallet]: https://twitter.com/cakewallet/status/1791500775262437396
+[sp website devs]: https://silentpayments.xyz/docs/developers/
+[cake wallet website]: https://cakewallet.com/
+[cake wallet announcement]: https://twitter.com/cakewallet/status/1791500775262437396
 [gh emessbee]: https://github.com/supertestnet/coinjoin-workshop
-[blog coinbase]: https://www.coinbase.com/blog/coinbase-integrates-bitcoins-lightning-network-in-partnership-with
-[site web lightspark]: https://www.lightspark.com/
-[blog block]: https://www.mining.build/latest-updates-3nm-system/
+[coinbase blog]: https://www.coinbase.com/blog/coinbase-integrates-bitcoins-lightning-network-in-partnership-with
+[lightspark website]: https://www.lightspark.com/
+[block blog]: https://www.mining.build/latest-updates-3nm-system/
 [gh sentrum]: https://github.com/sommerfelddev/sentrum
-[docs ocean]: https://ocean.xyz/docs/lightning
-[site web bitescrow]: https://www.bitescrow.app/
-[docs bitescrow]: https://www.bitescrow.app/dev
+[ocean docs]: https://ocean.xyz/docs/lightning
+[bitescrow website]: https://www.bitescrow.app/
+[bitescrow docs]: https://www.bitescrow.app/dev
 [gh stack wallet]: https://github.com/cypherstack/stack_wallet/releases/tag/build_222
 [gh pushtx]: https://github.com/alfred-hodler/pushtx
