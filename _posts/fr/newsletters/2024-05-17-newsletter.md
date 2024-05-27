@@ -12,7 +12,7 @@ pourraient être utilisés pour les annonces de canaux LN et plusieurs autres pr
 coordination résistants aux attaques Sybil, inclut des liens vers des discussions sur un nouveau
 schéma de division de phrase de semence BIP39, annonce une alternative à BitVM pour vérifier
 l'exécution réussie de programmes arbitraires dans des protocoles de contrat interactifs, et
-transmet des suggestions pour la mise à jour du processus BIP.
+rapporte des suggestions pour la mise à jour du processus BIP.
 
 ## Actualités
 
@@ -33,7 +33,7 @@ transmet des suggestions pour la mise à jour du processus BIP.
   spécifique qu'ils co-détiennent, ce qui peut associer ces fonds à d'autres transactions en chaîne
   passées ou futures qu'ils créent (ou conduire à une association inexacte).
 
-  Avec le schéma de Gibson, appelé jetons d'utilisation anonymes avec arbres de courbes (autct), les
+  Avec le schéma de Gibson, appelé jetons d'utilisation anonymes avec arbres courbes (autct), les
   co-propriétaires du canal pourraient signer un message sans révéler leur UTXO. Un attaquant sans
   UTXO ne pourrait pas créer de signature valide. Un attaquant qui possède un UTXO pourrait créer une
   signature valide, mais il devrait conserver autant d'argent dans cet UTXO qu'un nœud LN devrait
@@ -41,9 +41,9 @@ transmet des suggestions pour la mise à jour du processus BIP.
   lngossip] pour une discussion précédente sur la dissociation des [annonces de canal][topic channel
   announcements] d'UTXOs particuliers.
 
-  Gibson décrit également plusieurs autres façons dont autct pourrait être utilisé. Un mécanisme de
+  Gibson décrit également plusieurs autres façons d'utiliser les autct. Un mécanisme de
   base pour accomplir ce type de confidentialité, les signatures en anneau, est connu depuis
-  longtemps, mais Gibson utilise une nouvelle construction cryptographique ([arbres de courbes][])
+  longtemps, mais Gibson utilise une nouvelle construction cryptographique ([arbres courbes][])
   pour rendre les preuves plus compactes et plus rapides à vérifier. Il fait également en sorte que
   chaque preuve s'engage privément sur la clé utilisée afin qu'un seul UTXO ne puisse pas être utilisé
   pour créer un nombre illimité de signatures valides.
@@ -61,12 +61,12 @@ transmet des suggestions pour la mise à jour du processus BIP.
   presque tous les dispositifs de signature matérielle actuels et de nombreux portefeuilles logiciels.
 
   Andrew Poelstra, co-auteur de codex32, [a répondu][poelstra penlock1] avec plusieurs commentaires et
-  suggestions. Sans que nous essayions les deux schémas---ce qui prendrait plusieurs heures
-  chacun---l'ensemble exact des compromis entre eux n'est pas clair pour nous. Cependant, les deux
-  semblent offrir les mêmes capacités fondamentales : des instructions pour générer une semence de
-  manière sécurisée hors ligne; la capacité de diviser la semence en plusieurs parts en utilisant [le
-  partage secret de Shamir][sss]; la capacité de reconstituer les parts en la semence originale; et la
-  capacité de vérifier les sommes de contrôle sur les parts et la semence originale, permettant aux
+  suggestions. Sans essayer les deux schémas---ce qui prendrait plusieurs heures
+  pour chacun---l'ensemble exact des compromis n'est pas clair. Cependant, les deux
+  semblent offrir les mêmes capacités fondamentales : des instructions pour générer une seed de
+  manière sécurisée hors ligne ; la capacité de diviser la seed en plusieurs parts en utilisant [le
+  partage secret de Shamir][sss]; la capacité de reconstituer les parts en la seed originale; et la
+  capacité de vérifier les sommes de contrôle sur les parts et la seed originale, permettant aux
   utilisateurs de détecter la corruption des données tôt lorsque les données originales pourraient
   encore être récupérables.
 
