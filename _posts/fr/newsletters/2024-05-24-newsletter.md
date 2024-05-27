@@ -314,8 +314,8 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 [chow bip]: https://github.com/achow101/bips/blob/miniscript/bip-miniscript.md
 [klausing stable]: https://delvingbitcoin.org/t/stable-channels-peer-to-peer-dollar-balances-on-lightning/875
 [klausing code]: https://github.com/toneloc/stable-channels/
-[news244 annexe]: /fr/newsletters/2023/03/29/#bitcoin-inquisition-22
-[news248 éphémère]: /fr/newsletters/2023/04/26/#bitcoin-inquisition-23
+[news244 annex]: /fr/newsletters/2023/03/29/#bitcoin-inquisition-22
+[news248 ephemeral]: /fr/newsletters/2023/04/26/#bitcoin-inquisition-23
 [Bitcoin Inquisition 27.0]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq
 [news301 prclub]: /fr/newsletters/2024/05/08/#bitcoin-core-pr-review-club
 [news301 bcc28970]: /fr/newsletters/2024/05/08/#bitcoin-core-28970
