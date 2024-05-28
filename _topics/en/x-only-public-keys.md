@@ -52,7 +52,7 @@ see_also:
   - title: Schnorr signatures
     link: topic schnorr signatures
 
-    title: Taproot
+  - title: Taproot
     link: topic taproot
 
 ## Optional.  Force the display (true) or non-display (false) of stub
