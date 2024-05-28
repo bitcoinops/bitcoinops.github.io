@@ -98,7 +98,7 @@ see_also:
 
 ---
 
-On July 2nd 2011, the Bitcointalk user [Hashcoin][hashcoin ref] first described the concept of a collaborative transaction to achieve privacy. Later in 2013, the concept was named a coinjoin after a [proposal][gmaxwell coinjoin] by Gregory Maxwell. He laid out the ideas and set up a developer bounty to make them a reality.
+On July 2nd 2011, the Bitcointalk user [Hashcoin][hashcoin ref] first described the concept of a collaborative transaction to achieve privacy. Later in 2013, the concept was named coinjoin after a [proposal][gmaxwell coinjoin] by Gregory Maxwell. He laid out the ideas and set up a developer bounty to make them a reality.
 
 It took only 4 days after Maxwell’s post for someone to try to claim the bounty with the [first coinjoin coordinator implementation][first cj implementation]. In the months that followed, more projects were released with the goal of correctly implementing the coinjoin protocol: Bitprivacy, Sharedcoin, Coinmux, Darkwallet, CoinJumble, and CoinShuffle. They all had one thing in common: they failed to provide guaranteed privacy to the user.
 
