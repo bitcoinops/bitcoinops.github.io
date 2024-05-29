@@ -121,7 +121,7 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
   l'interception de messages et lorsque le pair revient en ligne pour la transmission. Les
   utilisateurs doivent maintenir une _liste d'autorisation_ pour stocker uniquement les messages pour
   les pairs pertinents. C'est un pas vers le support des [paiements asynchrones][topic async payments]
-  à travers `held_htlc_available` de [BOLTs #989][].. Dans ce protocole, Alice veut payer Carol à travers
+  à travers `held_htlc_available` de [BOLTs #989][]. Dans ce protocole, Alice veut payer Carol à travers
   Bob, mais Alice ne sait pas si Carol est en ligne. Alice envoie un message onion à Bob ; Bob retient
   le message jusqu'à ce que Carol soit en ligne ; Carol ouvre le message, qui lui dit de demander un
   paiement à Alice (ou au fournisseur de services Lightning d'Alice) ; Carol demande le paiement et
