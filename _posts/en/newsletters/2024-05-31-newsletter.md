@@ -97,7 +97,40 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What's the smallest possible coinbase transaction / block size?]({{bse}}122951)
+  Antoine Poinsot explains minimum restrictions around the coinbase transaction
+  and concludes the smallest possible valid Bitcoin block at current block heights is 145 bytes.
+
+- [Understanding Script's number encoding, CScriptNum]({{bse}}122939)
+  Antoine Poinsot describes how CScriptNum represents integers in Bitcoin's
+  Script, provides some example encodings, and links to two serialization
+  implementations.
+
+- [Is there a way to make a BTC wallet address public but hide how many BTC it contains?]({{bse}}122786)
+  Vojtěch Strnad points out that [silent payment][topic silent payments] reusable
+  payment addresses allow a public payment identifier to be posted without
+  observers being able to associate transactions paying to it.
+
+- [Testing increased feerates in regtest]({{bse}}122837)
+  In regtest, Ava Chow recommends using Bitcoin Core's test framework and
+  setting `-maxmempool` to a low value and `-datacarriersize` to a high value in
+  order to help simulate high feerate environments.
+
+- [Why is my P2P_V2 peer connected over a v1 connection?]({{bse}}122774)
+  Pieter Wuille hypothesizes that outdated peer addr information was what caused
+  a user to see a peer that supported BIP324 [encrypted transport][topic v2 p2p
+  transport] that was connected with a v1 non-encrypted connection.
+
+- [Does a P2PKH transaction send to the hash of the uncompressed key or the compressed key?]({{bse}}122875)
+  Pieter Wuille notes that both compressed and uncompressed public keys can be
+  used resulting in distinct P2PKH addresses, adding that P2WPKH only allows
+  compressed public keys by policy and P2TR uses [x-only public keys][topic
+  X-only public keys].
+
+- [What are different ways to broadcast a block to the Bitcoin network?]({{bse}}122953)
+  Pieter Wuille outlines 4 ways to announce blocks on the P2P network: using
+  [BIP130][], using [BIP152][], sending [unsolicited `block` messages][], and the older
+  `inv` / `getdata` / `block` message flow.
 
 ## Releases and release candidates
 
@@ -156,3 +189,4 @@ repo]._
 [core lightning 24.05rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.05rc2
 [news297 inbound]: /en/newsletters/2024/04/10/#lnd-6703
 [news285 encdebug]: /en/newsletters/2024/01/17/#lnd-8188
+[unsolicited `block` messages]: https://developer.bitcoin.org/devguide/p2p_network.html#block-broadcasting
