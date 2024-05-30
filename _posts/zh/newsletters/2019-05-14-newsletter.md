@@ -300,4 +300,4 @@ wiki page for changes -->{% endcomment %}
 [discreet log contracts]: https://adiabat.github.io/dlc.pdf
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
-[newsletter #3]: /zh/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
+[newsletter #3]: /zh/newsletters/2018/07/10/#特别新闻schnorr-签名提议-bip
