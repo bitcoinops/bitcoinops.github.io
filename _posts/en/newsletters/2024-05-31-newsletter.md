@@ -162,18 +162,55 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Bitcoin Inquisition][bitcoin inquisition repo], and [BINANAs][binana
 repo]._
 
-- [Bitcoin Core #29612][] rpc: Optimize serialization and enhance metadata of dumptxoutset output
-    
-- [Bitcoin Core #27064][] system: use %LOCALAPPDATA% as default datadir on windows
-    
-- [Bitcoin Core #29873][] policy: restrict all TRUC (v3) transactions to 10kvB; Note: we previously discussed this, I'm sure there's a link in the recent v3 tx relay topic entries -harding
+- [Bitcoin Core #29612][] updates the serialization format of the UTXO set dump
+  output through the `dumptxoutset` RPC. This results in a 17.4% space
+  optimization. The `loadtxoutset` RPC now expects the new format when loading
+  the UTXO set dump file; the old format is no longer supported. See Newsletters
+  [#178][news178 txoutset] and [#72][news72 txoutset] for previous references to
+  `dumptxoutset`.
 
-- [Bitcoin Core #30062][] net: add ASMap info in `getrawaddrman` RPC
-    
-- [Bitcoin Core #26606][] wallet: Implement independent BDB parser
-    
-- [BOLTs #1092][] clean up; I'm sure we've mentioned this at least once before -harding
-    
+- [Bitcoin Core #27064][] changes the default data directory on Windows from
+  `C:\Users\Username\AppData\Roaming\Bitcoin` to
+  `C:\Users\Username\AppData\Local\Bitcoin` on fresh installs only.
+
+- [Bitcoin Core #29873][] introduces a 10 kvB data weight limit for
+  [Topologically Restricted Until Confirmation (TRUC)][topic v3 transaction
+  relay] transactions (v3 transactions) to reduce the potential cost of mitigation against
+  [transaction pinning][topic transaction pinning] attacks, improve block template
+  construction efficiency, and impose tighter memory limits on certain data
+  structures. V3 transactions are a subset of standard transactions with
+  additional rules designed to allow transaction replacement while minimizing
+  the cost of overcoming transaction-pinning attacks.  See Newsletter
+  [#289][news289 v3] and [#296][news296 v3] for more on v3 transactions.
+
+- [Bitcoin Core #30062][] adds two new fields, `mapped_as` and
+  `source_mapped_as`, to the `getrawaddrman` RPC, a command that returns
+  information about the network addresses of peer nodes. The new fields return
+  the Autonomous System Number (ASN) mapped to the peer and its source, to
+  provide approximate information about which ISPs control which IP addresses
+  and increase Bitcoin Core's resistance to [eclipse attacks][topic eclipse
+  attacks]. See Newsletter [#52][news52 asmap], [#83][news83 asmap],
+  [#101][news101 asmap], [#290][news290 asmap].
+
+- [Bitcoin Core #26606][] introduces `BerkeleyRODatabase`, an independent
+  implementation of a Berkeley Database (BDB) file parser that provides
+  read-only access to BDB files. Legacy wallet data can now be extracted without
+  the need for the heavy BDB library, to ease the migration to
+  [descriptor][topic descriptors] wallets. The `wallettool`'s `dump` command is
+  changed to use `BerkeleyRODatabase`.
+
+- [BOLTs #1092][] cleans up the Lightning Network (LN) specification by removing
+  the unused and no longer supported features `initial_routing_sync` and
+  `option_anchor_outputs`. Three features are now assumed to be present in all
+  nodes: `var_onion_optin` for variable-sized [onion messages][topic onion
+  messages] to relay arbitrary data to specific hops, `option_data_loss_protect`
+  for nodes to send information about their latest channel state when they
+  reconnect, and `option_static_remotekey` to allow a node to request that every
+  channel update commit to sending the node's non-[HTLC][topic htlc] funds to
+  the same address. The `gossip_queries` feature for specific gossip requests is
+  changed so that a node that doesn't support it won't be queried by other
+  nodes. See Newsletter [#259][news259 cleanup].
+
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-06-04 14:30" %}
 {% include references.md %}
@@ -190,3 +227,12 @@ repo]._
 [news297 inbound]: /en/newsletters/2024/04/10/#lnd-6703
 [news285 encdebug]: /en/newsletters/2024/01/17/#lnd-8188
 [unsolicited `block` messages]: https://developer.bitcoin.org/devguide/p2p_network.html#block-broadcasting
+[news72 txoutset]: /en/newsletters/2019/11/13/#bitcoin-core-16899
+[news178 txoutset]: /en/newsletters/2021/12/08/#bitcoin-core-23155
+[news289 v3]: /en/newsletters/2024/02/14/#bitcoin-core-28948
+[news296 v3]: /en/newsletters/2024/04/03/#bitcoin-core-29242
+[news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
+[news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
+[news101 asmap]: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
+[news290 asmap]: /en/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process
+[news259 cleanup]: /en/newsletters/2023/07/12/#ln-specification-clean-up-proposed
