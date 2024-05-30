@@ -26,6 +26,9 @@ lang: zh
 
 ## Bitcoin Stack Exchange 精选问答
 
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
 *[Bitcoin Stack Exchange][bitcoin.se] 是 Optech 贡献者寻找答案的首要地点之一——或者当我们有一些空闲时间来帮助好奇或困惑的用户时。 在这个月度功能中，我们突出了自上次更新以来得到的一些最受欢迎的问题和答案。 上个月省略了本节以为我们年终特别活动腾出了空间，因此此次更新包括了从 12 月到 1 月的条目。*
 
 - **<!--how-should-an-ln-node-decide-which-channels-to-open-->**[LN 节点应该如何决定开放哪些通道？]({{bse}}83362) LN 协议开发人员和教育者 Rene Pickhardt 描述了一些可以帮助开放生产性通道的标准。 他还链接到一些关于使用 LND 的自动驾驶功能和他自己的 C-Lightning 插件来自动选择通道的有趣讨论。
