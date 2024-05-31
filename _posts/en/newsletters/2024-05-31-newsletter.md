@@ -68,7 +68,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
     [tapscript][topic tapscript] default specified in [BIP342][].
 
   Usiwoma's post provides an example and links to previous discussion
-  and a [refrence implementation][usiwoma poc] he has created.
+  and a [reference implementation][usiwoma poc] he has created.
 
 - **Should overlapping soft fork proposals be considered mutually exclusive?**
   Pierre Rochard [asks][rochard exclusive] if proposed soft forks that
