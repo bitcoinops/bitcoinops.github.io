@@ -17,7 +17,7 @@ lang: zh
 
 - **<!--continued-sighash-discussion-->****持续的签名哈希讨论：**如 [Newsletter #25][] 的新闻部分所述，Bitcoin-Dev 邮件列表上的开发者讨论了如何修改签名哈希以使交易能够获得新的功能。签名哈希使得花费者能够允许他们的交易在签名后以指定的方式进行修改——例如，两个一起开设支付通道的人可以使用特定类型的签名哈希，使他们中的任何一个都可以单方面为通道关闭交易附加额外的交易费用。
 
-  最近的这次讨论涉及了几乎 70 个帖子，主要讨论了新的签名哈希标志的边缘情况，特别是类似 BIP118 的 `SIGHASH_NOINPUT_UNSAFE`。作为讨论的一部分，协议开发者 Johnson Lau 描述了一种[基于 Eltoo 的支付通道优化][lau bip68]。还[讨论了][rm codesep] 是否应该在支持 MAST（例如通过 Taproot）的脚本更新中禁用 `OP_CODESEPARATOR` 操作码。该操作码不常用，但如果你计划在未来的脚本版本中使用它，你应该在这个线程中发表评论。
+  最近的这次讨论涉及了几乎 70 个帖子，主要讨论了新的签名哈希标志的边缘情况，特别是类似 BIP118 的 `SIGHASH_NOINPUT_UNSAFE`。作为讨论的一部分，协议开发者 Johnson Lau 描述了一种[基于 Eltoo 的支付通道优化][lau bip68]。还[讨论了][rm codesep]是否应该在支持 MAST（例如通过 Taproot）的脚本更新中禁用 `OP_CODESEPARATOR` 操作码。该操作码不常用，但如果你计划在未来的脚本版本中使用它，你应该在这个线程中发表评论。
 
 - **<!--cross-chain-ln-as-an-options-contract-->****跨链 LN 作为期权合约：**匿名 LN 贡献者 ZmnSCPxj 在 Lightning-Dev 邮件列表中发起了一个讨论，指出用户可以通过延迟支付结算来滥用跨货币支付，从而创建几乎免费的[短期期权合约][short-term options contracts]。2018 年 5 月，Corné Plooy 的一个[之前的帖子][cjp risk]描述了同样的事情。
 
