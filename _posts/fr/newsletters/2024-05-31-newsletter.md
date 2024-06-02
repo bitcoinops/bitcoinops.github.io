@@ -121,7 +121,7 @@ nswer -->{% endcomment %}
 
 - [Quelles sont les différentes manières de diffuser un bloc sur le réseau Bitcoin ?]({{bse}}122953)
   Pieter Wuille décrit 4 façons d'annoncer des blocs sur le réseau P2P : en utilisant [BIP130][],
-  [BIP152][], en envoyant des [messages `block` non sollicités][], et l'ancien flux de messages 
+  [BIP152][], en envoyant des [messages `block` non sollicités][], et l'ancien flux de messages
   `inv / `getdata` / `block`.
 
 ## Mises à jour et versions candidates
