@@ -1,10 +1,10 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #305'
 permalink: /fr/newsletters/2024/05/31/
-name: 2024-05-31-newsletter
-slug: 2024-05-31-newsletter
-type: newsletter-fr
-layout: newsletter-fr
+name: 2024-05-31-newsletter-fr
+slug: 2024-05-31-newsletter-fr
+type: newsletter
+layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine décrit un protocole proposé pour les clients légers concernant les
