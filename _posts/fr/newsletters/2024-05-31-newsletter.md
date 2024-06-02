@@ -63,8 +63,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   Le post de Usiwoma fournit un exemple et des liens vers des discussions précédentes ainsi qu'une
   [implémentation de référence][usiwoma poc] qu'il a créée.
 
-- **Les propositions de soft fork qui se chevauchent doivent-elles être considérées comme
-mutuellement exclusives ?**
+- **Les propositions de soft fork qui se chevauchent doivent-elles être considérées comme mutuellement exclusives ?**
   Pierre Rochard [demande][rochard exclusive] si les propositions de soft forks, qui peuvent offrir beaucoup
   des mêmes fonctionnalités à un coût similaire, devraient être considérés comme mutuellement
   exclusifs, ou s'il serait judicieux d'activer plusieurs propositions et de laisser les développeurs
@@ -77,7 +76,6 @@ mutuellement exclusives ?**
   logiciel en pré-production pour se faire une idée, surtout en comparaison avec d'autres manières
   d'ajouter la fonctionnalité à Bitcoin.
 
-## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
