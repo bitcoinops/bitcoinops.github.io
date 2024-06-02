@@ -216,5 +216,5 @@ repo]._
 [news52 asmap]: /en/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix
 [news83 asmap]: /en/newsletters/2020/02/05/#bitcoin-core-16702
 [news101 asmap]: /en/newsletters/2020/06/10/#bitcoin-core-0-20-0
-[news290 asmap]: /fr/newsletters/2024/02/21/##amelioration-du-processus-de-creation-de-asmap-reproductible
-[news259 cleanup]: /fr/newsletters/2023/07/12/##proposition-de-nettoyage-de-la-specification-ln
+[news290 asmap]: /fr/newsletters/2024/02/21/#amelioration-du-processus-de-creation-de-asmap-reproductible
+[news259 cleanup]: /fr/newsletters/2023/07/12/#proposition-de-nettoyage-de-la-specification-ln
