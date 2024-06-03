@@ -12,7 +12,7 @@ paiements silencieux, résume deux nouveaux descripteurs proposés pour taproot,
 discussion sur la question de savoir si des opcodes avec des fonctionnalités superposées devraient
 être ajoutés lors d'un soft fork. Sont également incluses nos
 rubriques habituelles avec des questions et réponses populaires
-de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et
+de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et de
 versions candidates, ainsi que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Actualités
@@ -35,16 +35,16 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   supplémentaires au niveau du bloc qui leur permettent de savoir combien ils ont reçu et comment
   dépenser ultérieurement le paiement.
 
-- **Descripteurs taproot bruts :** Oghenovo Usiwoma a [publié][usiwoma descriptors] sur Delving
-  Bitcoin à propos de deux nouvelles propositions de [descripteurs][topic descriptors] pour construire des
+- **Descripteurs taproot bruts :** Oghenovo Usiwoma a [discuté][usiwoma descriptors] sur Delving
+  Bitcoin de deux nouvelles propositions de [descripteurs][topic descriptors] pour construire des
   conditions de dépense [taproot][topic taproot] :
 
   - `rawnode(<hash>)` prend le hash d'un nœud de l'arbre de Merkle, que ce soit pour un nœud interne
     ou pour un nœud secondaire. Cela permet à un portefeuille ou à un autre programme de scan de trouver
     des scripts de sortie particuliers sans savoir exactement quels tapscripts ils utilisent. Ce n'est
-    pas sûr pour recevoir de l'argent dans la plupart des situations---un script inconnu pourrait être
+    pas entièrement fiable---un script inconnu pourrait être
     soit inexploitable, soit permettre à un tiers de dépenser des fonds---mais il peut y avoir des
-    protocoles où cela est sûr.
+    protocoles où cela fonctionne en toute sécurité.
 
     Anthony Towns donne un [exemple][towns descriptors] où Alice souhaite que Bob puisse hériter de son
     argent ; pour ses chemins de dépense, elle ne donne à Bob que les hashes des nœuds bruts ; pour son
@@ -80,8 +80,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech cherchent des réponses à leurs
-  questions, ou lorsque nous avons quelques moments libres pour aider les utilisateurs curieux ou confus. Dans cette rubrique
-  mensuelle, nous mettons en évidence certaines des questions et réponses les plus votées publiées depuis notre dernière mise
+  questions, ou lorsqu'ils ont quelques moments libres, aident les utilisateurs curieux ou confus. Dans cette rubrique
+  mensuelle, nous mettons en évidence certaines des questions et réponses les plus populaires publiées depuis notre dernière mise
   à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aa
