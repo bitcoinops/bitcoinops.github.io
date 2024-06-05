@@ -88,6 +88,9 @@ optech_mentions:
   - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee with v3-compatible packages"
     url: /en/newsletters/2024/04/03/#bitcoin-core-29242
 
+  - title: "BIPs #1541 adds BIP431 with a specification of TRUC transactions"
+    url: /en/newsletters/2024/06/07/#bips-1541
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
