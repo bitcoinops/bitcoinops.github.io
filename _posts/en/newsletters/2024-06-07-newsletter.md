@@ -199,17 +199,46 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Core Lightning #7252][] changes the behavior of `lightningd` to ignore the
+  `ignore_fee_limits` setting during a cooperative channel closure. This fixes
+  an issue where a Core Lightning (CLN) channel opener node overpays fees when
+  the counterparty is an LDK node. In this scenario, when the LDK non-opener node
+  (Alice) initiates a cooperative channel closure and begins fee negotiation,
+  the CLN opener node (Bob) responds that the fee can be anything between
+  `min_sats` and `max_channel_size` due to the `ignore_fee_limits`
+  setting. LDK [will][ldk #1101] "always select the highest
+  allowed amount" (contrary to the BOLTs specification), so Bob picks
+  the upper bound, and Alice
+  accepts, resulting in Alice broadcasting a transaction with considerably
+  overpaid fees.
 
-- [Core Lightning #7252][] lightningd: don't ignore fee limits on mutual close.
+- [LDK #2931][] enhances the logging during pathfinding to include additional
+  data about direct channels such as whether they’re missing, their minimum
+  [HTLC][topic htlc] amount, and their maximum HTLC amount. The added logging
+  aims to better troubleshoot routing issues by providing visibility into the
+  available liquidity and limitations on each channel.
 
-- [LDK #2931][] log-outbound-channels
+- [Rust Bitcoin #2644][] adds HKDF (HMAC (Hash-based Message Authentication
+  Code) Extract-and-Expand Key Derivation Function) to the `bitcoin_hashes`
+  component to implement [BIP324][] in Rust Bitcoin. HKDK is used to derive
+  cryptographic keys from a source of keying material in a secure and
+  standardized way. BIP324 (also known as [v2 P2P transport][topic v2
+  p2p transport]) is a method for allowing Bitcoin nodes to communicate
+  with each other
+  over encrypted connections (enabled by default in Bitcoin Core).
 
-- [Rust Bitcoin #2644][] Add HMAC Extract-and-Expand Key Derivation Function
+- [BIPs #1541][] adds [BIP431][] with a specification of Topologically Restricted Until
+  Confirmation ([TRUC][topic v3 transaction relay]) transactions (v3 transactions) which are a
+  subset of standard transactions with additional rules designed to allow
+  [transaction replacement][topic rbf] while minimizing the cost of overcoming
+  [transaction-pinning][topic transaction pinning] attacks.
 
-- [BIPs #1541][] BIP431: Opt In Topologically Restricted Until Confirmation Transactions For More Robust Fee-bumping
-
-- [BIPs #1556][] BIP 337: Compressed Transactions
+- [BIPs #1556][] adds [BIP337][] with a specification of _compressed transactions_, a
+  serialization protocol to compress bitcoin transactions to reduce their size
+  by up to 50%. They are practical for low-bandwidth transmission such as by
+  satellite, HAM radio, or through steganography. Two RPC commands are proposed:
+  `compressrawtransaction` and `decompressrawtransaction`. See Newsletter
+  [#267][news267 bip337] for a more detailed explanation of BIP337.
 
 - [BLIPs #32][] adds [BLIP32][] describing how proposed DNS-based
   human-readable Bitcoin payment instructions (see [Newsletter
@@ -227,7 +256,7 @@ FIXME:Gustavojfe
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="7252,2931,2644,1541,1556,32,1601,29775,1555" %}
+{% include linkers/issues.md v=2 issues="7252,2931,2644,1541,1556,32,1601,29775,1555,1101" %}
 [rubin fe paper]: https://rubin.io/public/pdfs/fedcov.pdf
 [core lightning 24.05rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.05rc2
 [news290 omdns]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
@@ -246,3 +275,7 @@ FIXME:Gustavojfe
 [irc disclose]: https://bitcoin-irc.chaincode.com/bitcoin-core-dev/2024-06-06#1031717;
 [disclosure policy]: https://gist.github.com/darosior/eb71638f20968f0dc896c4261a127be6
 [Bitcoin Core 27.1rc1]: https://bitcoincore.org/bin/bitcoin-core-27.1/
+[news289 v3]: /en/newsletters/2024/02/14/#bitcoin-core-28948
+[news296 v3]: /en/newsletters/2024/04/03/#bitcoin-core-29242
+[news305 v3]: /en/newsletters/2024/05/31/#bitcoin-core-29873
+[news267 bip337]: /en/newsletters/2023/09/06/#bitcoin-transaction-compression
