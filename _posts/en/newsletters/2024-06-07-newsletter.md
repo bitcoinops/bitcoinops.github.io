@@ -59,10 +59,11 @@ Bitcoin infrastructure software.
     deliberately) to reduce an entire period of 2,016 blocks to the
     minimum difficulty (difficulty-1) by mining the ultimate block in a
     period with a timestamp more than 20 minutes after the penultimate
-    block.  Now difficulty-1 will only be used if every block in the
-    previous period had a timestamp more than 20 minutes after its
-    preceding block or if a regular mainnet-style difficulty adjustment
-    would result in difficulty-1.
+    block.  Now period difficulty can only adjust downward in the normal
+    way used on mainnet---although it is still possible to mine all
+    individual blocks, except the first block in a new period, at
+    difficulty-1 if they have a timestamp more than 20 minutes after the
+    previous block.[^testnet-fixup]
 
   - *Time warp fixed:* it was possible on testnet3 (and also mainnet) to
     produce blocks significantly faster than once every 10 minutes
@@ -258,6 +259,13 @@ repo], and [BINANAs][binana repo]._
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
+
+## Footnotes
+
+[^testnet-fixup]:
+    This paragraph was edited after publication.  We thank Mark "Murch"
+    Erhardt for the [correction][murch correction].
+
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="7252,2931,2644,1541,1556,32,1601,29775,1555,1101" %}
 [rubin fe paper]: https://rubin.io/public/pdfs/fedcov.pdf
@@ -282,3 +290,4 @@ repo], and [BINANAs][binana repo]._
 [news296 v3]: /en/newsletters/2024/04/03/#bitcoin-core-29242
 [news305 v3]: /en/newsletters/2024/05/31/#bitcoin-core-29873
 [news267 bip337]: /en/newsletters/2023/09/06/#bitcoin-transaction-compression
+[murch correction]: https://github.com/bitcoinops/bitcoinops.github.io/pull/1714#discussion_r1630230324
