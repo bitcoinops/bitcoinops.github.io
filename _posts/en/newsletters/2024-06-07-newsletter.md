@@ -38,7 +38,10 @@ Bitcoin infrastructure software.
   intention of the project to begin disclosing vulnerabilities affecting
   Bitcoin Core 24.x and below.  It is **strongly recommended** that all
   users and administrators upgrade to Bitcoin Core 25.0 or above within
-  the next two weeks.
+  the next two weeks.  It is always ideal to use the latest version when
+  possible, either the absolute latest version (27.0 as of writing) or
+  the latest version in a particular release series (e.g. 25.2 for the
+  25.x release series or 26.1 for the 26.x release series).
 
   As has always been our policy, Optech will provide summaries of all
   significant security disclosures affecting any of the infrastructure
