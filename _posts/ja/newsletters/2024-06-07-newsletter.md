@@ -27,6 +27,8 @@ BIP21仕様`bitcoin:` URIの更新案を掲載しています。
 
   この方針についてさらに議論する機会を得た後、Bitcoin Core 24.*以下に影響する脆弱性の開示を始めることがプロジェクトの意図です。
   すべてのユーザーと管理者は、今後二週間以内にBitcoin Core 25.0以上にアップグレードすることを**強く推奨します**。
+  可能な場合は常に最新バージョン（執筆時点では27.0）、または特定のリリースシリーズの最新バージョン（例：
+  25.xリリースシリーズの場合は25.2、26.xリリースシリーズの場合は26.1）を使用するのが理想的です。
 
   これまでと同様に、Optechは監視しているインフラプロジェクト（ Bitcoin Coreを含む）に影響する
   すべての重要なセキュリティの開示の要約を提供します。
@@ -41,8 +43,9 @@ BIP21仕様`bitcoin:` URIの更新案を掲載しています。
   - *<!--bip-and-experimental-implementation-of-testnet4-->難易度-1への戻りが少ない:*
     （偶然であれ故意であれ）最後から2番めのブロックから20分以上後のタイムスタンプを持つ最後のブロックをマイニングすることで、
     2016ブロックの全期間を最小難易度（難易度-1）に減らすことは簡単でした。
-    今後は、前の期間のすべてのブロックのタイムスタンプがその前のブロックから20分以上後である場合か、
-    通常のmainnetと同じ難易度調整の結果で難易度-1になる場合のみ、難易度-1になります。
+    現在、期間の難易度は、mainnetで使用される通常の方法でのみ下方調整できますが、
+    タイムスタンプが前のブロックから20分以上経過している場合、新しい期間の最初のブロックを除く
+    すべての個々のブロックを難易度-1でマイニングすることは可能です。[^testnet-fixup]
 
   - *<!--time-warp-fixed-->タイムワープの修正:*
     testnet3（およびmainnet）では、[タイムワープ攻撃][topic time warp]を悪用することで難易度を上げることなく、
@@ -194,6 +197,11 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
   その結果を[DNSSEC][]署名と一緒にアリスへのOnionメッセージの応答に入れます。
   アリスはその情報を検証し、それを使って[オファー][topic offers]プロトコルでボブにインボイスを要求します。
 
+## 脚注
+
+[^testnet-fixup]:
+  この段落は公開後に編集されました。[訂正][murch correction]してくださったMark "Murch" Erhardtに感謝します。
+
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
@@ -220,3 +228,4 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 [news296 v3]: /ja/newsletters/2024/04/03/#bitcoin-core-29242
 [news305 v3]: /ja/newsletters/2024/05/31/#bitcoin-core-29873
 [news267 bip337]: /ja/newsletters/2023/09/06/#bitcoin
+[murch correction]: https://github.com/bitcoinops/bitcoinops.github.io/pull/1714#discussion_r1630230324
