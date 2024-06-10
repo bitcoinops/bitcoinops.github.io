@@ -32,6 +32,7 @@
 [bitcoin transcripts]: https://twitter.com/btctranscripts
 [bitcoin.pdf]: https://bitcoincore.org/bitcoin.pdf
 [bitcoin.se]: https://bitcoin.stackexchange.com/
+[blips repo]: https://github.com/lightning/blips
 [bolts repo]: https://github.com/lightning/bolts
 [btcpay server repo]: https://github.com/btcpayserver/btcpayserver/
 [c-lightning]: https://github.com/ElementsProject/lightning
@@ -77,7 +78,7 @@ in the included file is redefined, the cached file will be used, so the
 loop will only be run once no matter how many times this file is
 included in documents.  See https://github.com/jekyll/jekyll/pull/7108
 for details --> {% endcomment %}
-{% for i in (1..400) %}
+{% for i in (1..450) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BIP{{i}}]: https://github.com/bitcoin/bips/blob/master/bip-{{i_padded}}.mediawiki
 {% endfor %}
@@ -87,7 +88,7 @@ for details --> {% endcomment %}
 [BIN24-{{i}}]: https://github.com/bitcoin-inquisition/binana/blob/master/2024/BIN-2024-{{i_padded}}.md
 {% endfor %}
 
-{% for i in (1..25) %}
+{% for i in (1..50) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BLIP{{i}}]: https://github.com/lightning/blips/blob/master/blip-{{i_padded}}.md
 {% endfor %}
