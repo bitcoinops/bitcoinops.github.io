@@ -36,7 +36,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
   keys) and determine if the block filter contains a payment to their
   corresponding tweaked key.  If it does, they download additional
   block-level data that allows them to learn how much they've received
-  and how to later spend the payment.
+  and how to later spend the payment. {% assign timestamp="1:52" %}
 
 - **Raw taproot descriptors:** Oghenovo Usiwoma [posted][usiwoma descriptors] to
   Delving Bitcoin about two new proposed [descriptors][topic
@@ -68,7 +68,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
     [tapscript][topic tapscript] default specified in [BIP342][].
 
   Usiwoma's post provides an example and links to previous discussion
-  and a [reference implementation][usiwoma poc] he has created.
+  and a [reference implementation][usiwoma poc] he has created. {% assign timestamp="14:56" %}
 
 - **Should overlapping soft fork proposals be considered mutually exclusive?**
   Pierre Rochard [asks][rochard exclusive] if proposed soft forks that
@@ -83,7 +83,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
   may produce several problems.  He suggests anyone who favors a
   particular proposal test using its features in pre-production software
   to get a feel for them, especially in comparison to alternative ways
-  the feature can be added to Bitcoin.
+  the feature can be added to Bitcoin. {% assign timestamp="28:02" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -99,38 +99,38 @@ nswer -->{% endcomment %}
 
 - [What's the smallest possible coinbase transaction / block size?]({{bse}}122951)
   Antoine Poinsot explains minimum restrictions around the coinbase transaction
-  and concludes the smallest possible valid Bitcoin block at current block heights is 145 bytes.
+  and concludes the smallest possible valid Bitcoin block at current block heights is 145 bytes. {% assign timestamp="1:13:32" %}
 
 - [Understanding Script's number encoding, CScriptNum]({{bse}}122939)
   Antoine Poinsot describes how CScriptNum represents integers in Bitcoin's
   Script, provides some example encodings, and links to two serialization
-  implementations.
+  implementations. {% assign timestamp="1:14:18" %}
 
 - [Is there a way to make a BTC wallet address public but hide how many BTC it contains?]({{bse}}122786)
   Vojtěch Strnad points out that [silent payment][topic silent payments] reusable
   payment addresses allow a public payment identifier to be posted without
-  observers being able to associate transactions paying to it.
+  observers being able to associate transactions paying to it. {% assign timestamp="1:16:04" %}
 
 - [Testing increased feerates in regtest]({{bse}}122837)
   In regtest, Ava Chow recommends using Bitcoin Core's test framework and
   setting `-maxmempool` to a low value and `-datacarriersize` to a high value in
-  order to help simulate high feerate environments.
+  order to help simulate high feerate environments. {% assign timestamp="1:18:05" %}
 
 - [Why is my P2P_V2 peer connected over a v1 connection?]({{bse}}122774)
   Pieter Wuille hypothesizes that outdated peer addr information was what caused
   a user to see a peer that supported BIP324 [encrypted transport][topic v2 p2p
-  transport] that was connected with a v1 non-encrypted connection.
+  transport] that was connected with a v1 non-encrypted connection. {% assign timestamp="1:20:41" %}
 
 - [Does a P2PKH transaction send to the hash of the uncompressed key or the compressed key?]({{bse}}122875)
   Pieter Wuille notes that both compressed and uncompressed public keys can be
   used resulting in distinct P2PKH addresses, adding that P2WPKH only allows
   compressed public keys by policy and P2TR uses [x-only public keys][topic
-  X-only public keys].
+  X-only public keys]. {% assign timestamp="1:21:58" %}
 
 - [What are different ways to broadcast a block to the Bitcoin network?]({{bse}}122953)
   Pieter Wuille outlines 4 ways to announce blocks on the P2P network: using
   [BIP130][], using [BIP152][], sending [unsolicited `block` messages][], and the older
-  `inv` / `getdata` / `block` message flow.
+  `inv` / `getdata` / `block` message flow. {% assign timestamp="1:23:20" %}
 
 ## Releases and release candidates
 
@@ -146,10 +146,10 @@ release candidates.*
   watchtowers] now support [simple taproot channels][topic simple
   taproot channels], and sending encrypted debugging information is now
   streamlined (see [Newsletter #285][news285 encdebug]), with many other features also
-  added and many bugs fixed.
+  added and many bugs fixed. {% assign timestamp="43:23" %}
 
 - [Core Lightning 24.05rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="1:12:21" %}
 
 ## Notable code and documentation changes
 
@@ -167,11 +167,11 @@ repo]._
   optimization. The `loadtxoutset` RPC now expects the new format when loading
   the UTXO set dump file; the old format is no longer supported. See Newsletters
   [#178][news178 txoutset] and [#72][news72 txoutset] for previous references to
-  `dumptxoutset`.
+  `dumptxoutset`. {% assign timestamp="1:27:11" %}
 
 - [Bitcoin Core #27064][] changes the default data directory on Windows from
   `C:\Users\Username\AppData\Roaming\Bitcoin` to
-  `C:\Users\Username\AppData\Local\Bitcoin` on fresh installs only.
+  `C:\Users\Username\AppData\Local\Bitcoin` on fresh installs only. {% assign timestamp="1:29:59" %}
 
 - [Bitcoin Core #29873][] introduces a 10 kvB data weight limit for
   [Topologically Restricted Until Confirmation (TRUC)][topic v3 transaction
@@ -181,7 +181,7 @@ repo]._
   structures. V3 transactions are a subset of standard transactions with
   additional rules designed to allow transaction replacement while minimizing
   the cost of overcoming transaction-pinning attacks.  See Newsletter
-  [#289][news289 v3] and [#296][news296 v3] for more on v3 transactions.
+  [#289][news289 v3] and [#296][news296 v3] for more on v3 transactions. {% assign timestamp="1:30:55" %}
 
 - [Bitcoin Core #30062][] adds two new fields, `mapped_as` and
   `source_mapped_as`, to the `getrawaddrman` RPC, a command that returns
@@ -190,14 +190,14 @@ repo]._
   provide approximate information about which ISPs control which IP addresses
   and increase Bitcoin Core's resistance to [eclipse attacks][topic eclipse
   attacks]. See Newsletter [#52][news52 asmap], [#83][news83 asmap],
-  [#101][news101 asmap], [#290][news290 asmap].
+  [#101][news101 asmap], [#290][news290 asmap]. {% assign timestamp="1:34:15" %}
 
 - [Bitcoin Core #26606][] introduces `BerkeleyRODatabase`, an independent
   implementation of a Berkeley Database (BDB) file parser that provides
   read-only access to BDB files. Legacy wallet data can now be extracted without
   the need for the heavy BDB library, to ease the migration to
   [descriptor][topic descriptors] wallets. The `wallettool`'s `dump` command is
-  changed to use `BerkeleyRODatabase`.
+  changed to use `BerkeleyRODatabase`. {% assign timestamp="1:38:17" %}
 
 - [BOLTs #1092][] cleans up the Lightning Network (LN) specification by removing
   the unused and no longer supported features `initial_routing_sync` and
@@ -209,7 +209,7 @@ repo]._
   channel update commit to sending the node's non-[HTLC][topic htlc] funds to
   the same address. The `gossip_queries` feature for specific gossip requests is
   changed so that a node that doesn't support it won't be queried by other
-  nodes. See Newsletter [#259][news259 cleanup].
+  nodes. See Newsletter [#259][news259 cleanup]. {% assign timestamp="1:41:41" %}
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when="2024-06-04 14:30" %}
