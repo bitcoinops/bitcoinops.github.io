@@ -45,7 +45,7 @@ Bitcoin infrastructure software.
 
   As has always been our policy, Optech will provide summaries of all
   significant security disclosures affecting any of the infrastructure
-  projects we monitor (which includes Bitcoin Core).
+  projects we monitor (which includes Bitcoin Core). {% assign timestamp="1:02" %}
 
 - **BIP and experimental implementation of testnet4:** Fabian Jahr
   [posted][jahr testnet4] to the Bitcoin-Dev mailing list to announce a
@@ -73,7 +73,7 @@ Bitcoin infrastructure software.
     consensus cleanup] soft fork for mainnet.
 
   The draft BIP also mentions some additional and alternative ideas for
-  testnet4 that were discussed but not used.
+  testnet4 that were discussed but not used. {% assign timestamp="10:17" %}
 
 - **Functional encryption covenants:** Jeremy Rubin [posted][rubin
   fe post] to Delving Bitcoin his [paper][rubin fe paper]
@@ -99,7 +99,7 @@ Bitcoin infrastructure software.
 
   Besides the need for trusted setup, Rubin describes the other major
   downside of functional encryption as "under-developed cryptography that makes it
-  impractical to use presently".
+  impractical to use presently". {% assign timestamp="24:58" %}
 
 - **Updates to proposed soft fork for 64-bit arithmetic:** Chris
   Stewart [posted][stewart 64bit] to Delving Bitcoin to announce an
@@ -127,7 +127,7 @@ Bitcoin infrastructure software.
   rather than requiring scripts additionally verify that operations were successful.
   For cases where it could be useful to test whether an operation would
   result in an overflow, new opcodes such as `ADD_OF` would be made
-  available.
+  available. {% assign timestamp="31:27" %}
 
 - **`OP_CAT` script to validate proof of work:** Anthony Towns
   [posted][towns powcat] to Delving Bitcoin about a script for
@@ -140,7 +140,7 @@ Bitcoin infrastructure software.
   that uses their PoW to claim the coins.
 
   Towns's post describes the script and the motivation for several
-  design choices.
+  design choices. {% assign timestamp="33:32" %}
 
 - **Proposed update to BIP21:** Matt Corallo [posted][corallo bip21] to
   the Bitcoin-Dev mailing list about updating the [BIP21][]
@@ -178,7 +178,7 @@ Bitcoin infrastructure software.
 
   Corallo notes in his post that the changes are safe for all known
   deployed software as wallets will ignore or reject any `bitcoin:` URIs
-  that they cannot successfully parse.
+  that they cannot successfully parse. {% assign timestamp="42:12" %}
 
 ## Releases and release candidates
 
@@ -187,10 +187,10 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 24.05rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="54:53" %}
 
 - [Bitcoin Core 27.1rc1][] is a release candidate for a maintenance
-  version of the predominant full node implementation.
+  version of the predominant full node implementation. {% assign timestamp="55:51" %}
 
 ## Notable code and documentation changes
 
@@ -214,13 +214,13 @@ repo], and [BINANAs][binana repo]._
   allowed amount" (contrary to the BOLTs specification), so Bob picks
   the upper bound, and Alice
   accepts, resulting in Alice broadcasting a transaction with considerably
-  overpaid fees.
+  overpaid fees. {% assign timestamp="56:50" %}
 
 - [LDK #2931][] enhances the logging during pathfinding to include additional
   data about direct channels such as whether they’re missing, their minimum
   [HTLC][topic htlc] amount, and their maximum HTLC amount. The added logging
   aims to better troubleshoot routing issues by providing visibility into the
-  available liquidity and limitations on each channel.
+  available liquidity and limitations on each channel. {% assign timestamp="1:02:19" %}
 
 - [Rust Bitcoin #2644][] adds HKDF (HMAC (Hash-based Message Authentication
   Code) Extract-and-Expand Key Derivation Function) to the `bitcoin_hashes`
@@ -229,20 +229,20 @@ repo], and [BINANAs][binana repo]._
   standardized way. BIP324 (also known as [v2 P2P transport][topic v2
   p2p transport]) is a method for allowing Bitcoin nodes to communicate
   with each other
-  over encrypted connections (enabled by default in Bitcoin Core).
+  over encrypted connections (enabled by default in Bitcoin Core). {% assign timestamp="1:04:11" %}
 
 - [BIPs #1541][] adds [BIP431][] with a specification of Topologically Restricted Until
   Confirmation ([TRUC][topic v3 transaction relay]) transactions (v3 transactions) which are a
   subset of standard transactions with additional rules designed to allow
   [transaction replacement][topic rbf] while minimizing the cost of overcoming
-  [transaction-pinning][topic transaction pinning] attacks.
+  [transaction-pinning][topic transaction pinning] attacks. {% assign timestamp="1:05:19" %}
 
 - [BIPs #1556][] adds [BIP337][] with a specification of _compressed transactions_, a
   serialization protocol to compress bitcoin transactions to reduce their size
   by up to 50%. They are practical for low-bandwidth transmission such as by
   satellite, HAM radio, or through steganography. Two RPC commands are proposed:
   `compressrawtransaction` and `decompressrawtransaction`. See Newsletter
-  [#267][news267 bip337] for a more detailed explanation of BIP337.
+  [#267][news267 bip337] for a more detailed explanation of BIP337. {% assign timestamp="1:07:34" %}
 
 - [BLIPs #32][] adds [BLIP32][] describing how proposed DNS-based
   human-readable Bitcoin payment instructions (see [Newsletter
@@ -255,7 +255,7 @@ repo], and [BINANAs][binana repo]._
   record for the `bob` entry at `example.com` and places the results
   along with a [DNSSEC][] signature into an onion message reply to
   Alice.  Alice verifies the information and uses it to request an
-  invoice from Bob using the [offers][topic offers] protocol.
+  invoice from Bob using the [offers][topic offers] protocol. {% assign timestamp="1:09:28" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
