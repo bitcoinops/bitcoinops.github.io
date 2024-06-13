@@ -124,27 +124,75 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #29496][] bumps `TX_MAX_STANDARD_VERSION` to 3, which makes
+  Topologically Restricted Until Confirmation ([TRUC][topic v3 transaction
+  relay]) transactions standard. If a transaction’s version is 3, it will be
+  treated as a TRUC transaction as defined in the [BIP431][] specification. The
+  `CURRENT_VERSION` remains 2, meaning the wallet will not create TRUC
+  transactions yet.
 
-- [Bitcoin Core #29496][] policy: bump TX_MAX_STANDARD_VERSION to 3
+- [Bitcoin Core #28307][] fixes a bug that imposed the 520-byte P2SH maximum
+  script size limit on SegWit redeem scripts for both P2SH-segwit and bech32.
+  This fix enables the creation of multisig [output descriptors][topic
+  descriptors] involving more than 15 keys (now allowing up to the `OP_CHECKMULTISIG` consensus limit of 20), including
+  signing for these scripts, along with other post-segwit redeem scripts that
+  exceed the P2SH limit.
 
-- [Bitcoin Core #28307][] rpc, wallet: fix incorrect segwit redeem script size limit
+- [Bitcoin Core #30047][] refactors the model of the [bech32][topic bech32] encoding scheme
+  `charlimit` from a constant of 90 to an `Enum`. This change allows for easy
+  support of new address types that use the bech32 encoding scheme but don't
+  have the same character limit as [BIP173][] was designed for. For example, to enable
+  parsing [silent payment][topic silent payments] addresses, which require up to
+  118 characters.
 
-- [Bitcoin Core #30047][] refactor: Model the bech32 charlimit as an Enum ; mainly just looking for a quick mention that this is being done for silent payments -harding
+- [Bitcoin Core #28979][] updates the behavior of the `sendall` RPC
+  command (see [Newsletter #194][news194 sendall]) to spend unconfirmed
+  change in addition to its previous behavior of spending confirmed
+  outputs. If unconfirmed change is spent, it will compensate for any
+  _fee deficit_ (see [Newsletter #269][news269 deficit]).
 
-- [Bitcoin Core #28979][] wallet, rpc: document and update `sendall` behavior around unconfirmed inputs
+- [Eclair #2854][] and [LDK #3083][] implement [BOLTs #1163][] to remove the
+  requirement of a `channel_update` on an [onion message][topic onion messages]
+  delivery failure. This requirement facilitated an attack where a relayer node
+  that generated the delivery failure error status could identify the sender of
+  the [HTLC][topic htlc] through the `channel_update` field, compromising the
+  sender’s privacy.
 
-- [Eclair #2854][] and [LDK #3083][] both related to [BOLTs #1163][]
+- [LND #8491][] adds a `cltv_expiry` flag on the `lncli` RPC commands
+  `addinvoice` and `addholdinvoice` to allow users to set the
+  `min_final_cltv_expiry_delta` (the [CLTV expiry delta][topic cltv expiry delta] for the last hop).
+  No motivation for the change is described on the pull request, but it
+  could be in response to LND recently raising its default from 9 blocks
+  to 18 blocks to follow the [BOLT2][] specification (see [Newsletter
+  #284][news284 lnd final delta]).
 
-- [LND #8491][] invoice_cltv_expiry
+- [LDK #3080][] refactors `MessagerRouter`’s `create_blinded_path` command into
+  two methods: one for compact [blinded path][topic rv routing] creation, and
+  one for normal blinded paths. This enables optionality depending on
+  the caller's context.  Compact blinded paths use short channel
+  identifiers (SCIDs) that reference a funding transaction (or a channel
+  alias) and are typically 8 bytes; normal blinded paths reference an LN
+  node by its 33-byte public key.  Compact paths may become stale if a
+  channel is closed or [spliced][topic splicing], so they're best used
+  for short-term QR codes or payment links where byte space is at a
+  premium.  Normal paths are preferable for long-term uses, including
+  [onion message][topic onion messages]-based [offers][topic offers]
+  where the use of node identifiers may allow forwarding a message to a
+  peer even if the node and the peer no longer share a channel (since
+  onion messages don't require channels).
+  `ChannelManager` is updated to use compact blinded paths for short-lived
+  [offers][topic offers] and refunds, while reply paths are refactored to use
+  normal (non-compact) blinded paths.
 
-- [LDK #3080][] Optional compact blinded path creation
-
-- [LDK #3072][] Reintroduce addresses to NodeAnnouncementInfo. ; this
-  might not be notable - fell free to delete if your research indicates
-  it's just something minor -harding
-
-- [BIPs #1551][] Add BIP 353: DNS Payment Instructions
+- [BIPs #1551][] adds [BIP353][] with a specification for DNS Payment Instructions,
+  a protocol to encode [BIP21][] URIs in DNS TXT records, for
+  human readability and to provide the ability to query such resolutions
+  privately. For example, `example@example.com` could resolve to a DNS address
+  such as `example.user._bitcoin-payment.example.com`, which will return a
+  DNSSEC-signed TXT record containing a BIP21 URI like
+  `bitcoin:bc1qexampleaddress0123456`. See [Newsletter #290][news290
+  bip353] for our previous description and [last week's newsletter][news306
+  dns] for the merge of a related BLIP.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -164,3 +212,9 @@ FIXME:Gustavojfe
 [gh thecharlatan]: https://github.com/TheCharlatan
 [gh b47bd95]: https://github.com/bitcoin/bitcoin/commit/b47bd959207e82555f07e028cc2246943d32d4c3
 [reindex flag set]: https://github.com/bitcoin/bitcoin/blob/457e1846d2bf6ef9d54b9ba1a330ba8bbff13091/src/node/blockstorage.cpp#L58
+[news198 sendall]: /en/newsletters/2022/04/06/#bitcoin-core-24118
+[news290 bip353]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+[news194 sendall]: /en/newsletters/2022/04/06/#bitcoin-core-24118
+[news269 deficit]: /en/newsletters/2023/09/20/#bitcoin-core-26152
+[news284 lnd final delta]: /en/newsletters/2024/01/10/#lnd-8308
+[news306 dns]: /en/newsletters/2024/06/07/#blips-32
