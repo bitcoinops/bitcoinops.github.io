@@ -7,13 +7,13 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine annonce une divulgation à venir de
+Le bulletin de cette semaine annonce une divulgation prochaine de
 vulnérabilités affectant les anciennes versions de Bitcoin Core, décrit une proposition
 de BIP pour une nouvelle version de testnet, résume une proposition pour
 des covenants basés sur le chiffrement fonctionnel, examine une mise à jour de
-la proposition pour effectuer des opérations arithmétiques 64 bits dans Bitcoin Script, lie à un
+la proposition pour effectuer des opérations arithmétiques 64 bits dans Bitcoin Script, renvoie à un
 script pour valider la preuve de travail sur signet avec l'opcode `OP_CAT`, et
-regarde une proposition de mise à jour de la spécification BIP21 des URI `bitcoin:`.
+examine une proposition de mise à jour de la spécification BIP21 des URI `bitcoin:`.
 Sont également incluses nos sections habituelles avec
 des annonces de mises à jour et versions candidates, ainsi que les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
@@ -31,14 +31,14 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   version de Bitcoin Core affectée par la vulnérabilité atteigne
   la fin de vie (ce qui est environ un an et demi après sa sortie).
   Pour les vulnérabilités critiques rares, les membres de l'équipe de sécurité de Bitcoin Core
-  discuteront en privé du calendrier de divulgation le plus approprié à utiliser.
+  discuteront en privé du calendrier de divulgation le plus approprié.
 
-  Après que cette politique ait eu l'occasion d'être davantage discutée, il est
-  l'intention du projet de commencer à divulguer les vulnérabilités affectant
+  Une fois que ce calendrier sera défini en détail, les
+  contributeurs commencerons à divulguer les vulnérabilités affectant
   Bitcoin Core 24.x et précédente. Il est **fortement recommandé** que tous
   les utilisateurs et administrateurs passent à Bitcoin Core 25.0 ou supérieur dans
-  les deux prochaines semaines. Il est toujours idéal d'utiliser la version la plus récente
-  possible, soit la dernière version absolue (27.0 au moment de la rédaction) ou
+  les deux prochaines semaines. L'idéal étant d'utiliser la version la plus récente
+  possible, soit la dernière version (27.0 au moment de la rédaction) ou
   la dernière version dans une série de versions particulière (par exemple, 25.2 pour la
   série de versions 25.x ou 26.1 pour la série de versions 26.x).
 
@@ -50,7 +50,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   a [posté][jahr testnet4] sur la liste de diffusion Bitcoin-Dev pour annoncer une
   [proposition de BIP][bips #1601] pour testnet4, une nouvelle version de [testnet][topic
   testnet] conçue pour éliminer certains problèmes avec le testnet3 existant (voir le [Bulletin
-  #297][news297 testnet]). Jahr lie également à
+  #297][news297 testnet]). Jahr renvoie également à
   une [pull request][bitcoin Core #29775] de Bitcoin Core avec une proposition de mise en œuvre. Testnet4 a
   deux différences notables par rapport à testnet3 :
 
@@ -58,9 +58,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     délibérément) de réduire une période entière de 2 016 blocs à la
     difficulté minimale (difficulté-1) en minant le dernier bloc d'une
     période avec un horodatage de plus de 20 minutes après l'avant-dernier
-    bloc. Désormais, la difficulté-1 ne sera utilisée que si chaque bloc de la période précédente avait
-    un horodatage de plus de 20 minutes après son bloc précédent ou si un ajustement de difficulté de
-    style mainnet régulier aboutirait à une difficulté-1.
+    bloc. Désormais, la difficulté d'une période ne peut être ajustée qu'à la baisse, bien qu'il soit
+    toujours possible d'exploiter tous les blocs individuels, à l'exception du premier bloc d'une
+    nouvelle période, en difficulté-1 s'ils ont un horodatage plus de 20 minutes après le bloc précédent.
 
   - *Correction du time warp :* il était possible sur testnet3 (et également sur mainnet) de produire
     des blocs significativement plus rapidement qu'une fois toutes les 10 minutes sans augmenter la
@@ -79,7 +79,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   plusieurs parties où une seule d'entre elles aurait besoin d'avoir agi honnêtement à un moment
   donné.
 
-  En essence, le chiffrement fonctionnel permettrait la création d'une clé publique qui correspondrait
+  Le chiffrement fonctionnel permettrait essentiellement la création d'une clé publique qui correspondrait
   à un programme particulier. Une partie qui pourrait satisfaire le programme serait capable de créer
   une signature qui correspondrait à la clé publique (sans jamais découvrir une clé privée
   correspondante).
@@ -87,13 +87,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Rubin note que cela a un avantage sur les propositions de covenant existantes en ce que toutes les
   opérations (à l'exception de la vérification de la signature résultante) se produisent off-chain
   et aucune donnée (à l'exception de la clé publique et de la signature) n'a besoin d'être publiée on-chain
-  Cela est toujours plus privé et économisera souvent de l'espace. Plusieurs programmes de
+  C'est toujours plus privé et économisera souvent de l'espace. Plusieurs programmes de
   covenant peuvent être utilisés dans le même script en effectuant plusieurs vérifications de
   signature.
 
   Outre le besoin d'une configuration de confiance, Rubin décrit l'autre inconvénient majeur du
-  chiffrement fonctionnel comme étant une "cryptographie sous-développée qui le rend impraticable à
-  utiliser actuellement".
+  chiffrement fonctionnel comme étant une "cryptographie sous-développée qui
+  rend son utilisation actuellement peu pratique".
 
 - **Mises à jour de la proposition de soft fork pour l'arithmétique 64 bits :** Chris Stewart a
   [publié][stewart 64bit] sur Delving Bitcoin pour annoncer une mise à jour de sa proposition
@@ -145,7 +145,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     l'encodage base58check, mais cela n'est utilisé que pour les adresses héritées pour
     les sorties P2PKH et P2SH. Les sorties modernes utilisent [bech32][topic bech32]
     et bech32m. Les paiements futurs seront reçus aux adresses de [paiement silencieux][topic silent
-    payments] et le protocole [offres][topic offers]  de LN, qui seront presque certainement utilisés comme
+    payments] et le protocole [offres][topic offers] de LN, qui seront très certainement utilisés comme
     charge utile de BIP21.
 
   - *Corps vide :* BIP21 exige actuellement qu'une adresse Bitcoin soit fournie dans
@@ -154,7 +154,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     paiement, comme le [protocole de paiement BIP70][topic bip70 payment protocol], ont spécifié de
     nouveaux paramètres de requête à utiliser (voir
     [BIP72][]), mais les clients qui ne comprenaient pas le paramètre
-    revenaient à utiliser l'adresse dans le corps. Dans certains cas,
+    se contentaient d'utiliser l'adresse dans le corps. Dans certains cas,
     les destinataires peuvent ne pas vouloir revenir à l'un des types d'adresses de base
     (base58check, bech32 ou bech32m), comme les utilisateurs soucieux de leur vie privée utilisant des
     paiements silencieux. La mise à jour proposée permet au champ du corps d'être vide.
@@ -191,16 +191,16 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 
 - [Core Lightning #7252][] change le comportement de `lightningd` pour ignorer le paramètre
   `ignore_fee_limits` lors d'une fermeture de canal coopérative. Cela corrige un problème où un nœud
-  ouvreur de canal Core Lightning (CLN) paie trop de frais lorsque la contrepartie est un nœud LDK.
+  qui ouvre des canaux Core Lightning (CLN) paie trop de frais lorsque la contrepartie est un nœud LDK.
   Dans ce scénario, lorsque le nœud non-ouvreur LDK (Alice) initie une fermeture de canal coopérative
   et commence la négociation des frais, le nœud ouvreur CLN (Bob) répond que les frais peuvent être
   n'importe quoi entre `min_sats` et `max_channel_size` en raison du paramètre `ignore_fee_limits`.
   LDK [choisira][ldk #1101] "toujours le montant le plus élevé autorisé" (contrairement à la
-  spécification des BOLTs), donc Bob choisit la limite supérieure, et Alice accepte, résultant en
-  Alice diffusant une transaction avec des frais considérablement surpayés.
+  spécification des BOLTs), donc Bob choisit la limite supérieure, et Alice accepte, ce qui amènera
+  Alice à diffuser une transaction avec des frais considérablement surévalués.
 
 - [LDK #2931][] améliore les journaux lors de la recherche de chemin pour inclure des données
-  supplémentaires sur les canaux directs telles que s'ils sont manquants, leur montant minimum
+  supplémentaires sur les canaux directs, par exemple, s'ils sont manquants, leur montant minimum
   [HTLC][topic htlc], et leur montant maximum HTLC. L'ajout de journaux vise à mieux dépanner les
   problèmes de routage en fournissant une visibilité sur la liquidité disponible et les limitations de
   chaque canal.
