@@ -145,11 +145,11 @@ repo], and [BINANAs][binana repo]._
   parsing [silent payment][topic silent payments] addresses, which require up to
   118 characters.
 
-- [Bitcoin Core #28979][] updates the behavior of the `sendall` RPC
-  command (see [Newsletter #194][news194 sendall]) to spend unconfirmed
-  change in addition to its previous behavior of spending confirmed
-  outputs. If unconfirmed change is spent, it will compensate for any
-  _fee deficit_ (see [Newsletter #269][news269 deficit]).
+- [Bitcoin Core #28979][] updates the documentation of the `sendall` RPC
+  command (see [Newsletter #194][news194 sendall]) to mention that it spends unconfirmed
+  change in addition to confirmed
+  outputs. If unconfirmed outputs are spent, it will compensate for any
+  _fee deficit_ (see [Newsletter #269][news269 deficit]). _This item was corrected after publication._[^correction-28979]
 
 - [Eclair #2854][] and [LDK #3083][] implement [BOLTs #1163][] to remove the
   requirement of a `channel_update` on an [onion message][topic onion messages]
@@ -196,6 +196,16 @@ repo], and [BINANAs][binana repo]._
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
+
+## Footnotes
+
+[^correction-28979]:
+    Our original published description of Bitcoin Core #28979 claimed
+    `sendall` spending unconfirmed change was a behavior change.  We
+    thank Gustavo Flores for his original correct description (the error
+    being introduced by the newsletter's editor) and Mark "Murch"
+    Erhardt for reporting the error.
+
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="29496,28307,30047,28979,2854,3083,1163,8491,3080,3072,1551,30132" %}
 [beast post]: https://delvingbitcoin.org/t/proposing-a-p2qrh-bip-towards-a-quantum-resistant-soft-fork/956
