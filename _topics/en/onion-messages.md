@@ -83,6 +83,9 @@ optech_mentions:
   - title: "BLIPs #32 adds BLIP32 describing DNS-based payment instructions with onion messages"
     url: /en/newsletters/2024/06/07/#blips-32
 
+  - title: "Eclair #2854 and LDK #3083 implement BOLTs #1163 to make message delivery failures more private"
+    url: /en/newsletters/2024/06/14/#eclair-2854
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
