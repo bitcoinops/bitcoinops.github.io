@@ -15,13 +15,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **propositon de BIP pour un format d'adresse résistant aux quantiques :** le développeur Hunter Beast
+- **proposition de BIP pour un format d'adresse résistant aux quantiques :** le développeur Hunter Beast
   a [publié][beast post] à la fois sur Delving Bitcoin et sur la liste de diffusion une [propositon de
   BIP][quantum draft] pour attribuer des adresses segwit version 3 à un algorithme de
-  signature [résistant aux quantiques][topic quantum resistance]. La propositon de BIP décrit le problème
+  signature [résistant aux quantiques][topic quantum resistance]. La proposition de BIP décrit le problème
   et renvoie à plusieurs algorithmes potentiels ainsi qu'à leur taille prévue sur la chaîne. Le choix
-  des algorithmes et les détails spécifiques de mise en œuvre sont laissés à de future discussion,
-  tout comme les BIP supplémentaires nécessaires pour réaliser pleinement la vision d'ajouter une
+  des algorithmes et les détails spécifiques de mise en œuvre sont laissés à de futures discussions,
+  tout comme les BIP supplémentaires nécessaires pour ajouter une
   résistance complète aux quantiques à Bitcoin.
 
 ## Bitcoin Core PR Review Club
@@ -68,7 +68,7 @@ effacés une seconde fois. [Bitcoin Core #30132][] peut rendre le démarrage du 
   les blocs manquants avec une synchronisation en arrière-plan, via `BaseIndex::StartBackgroundSync()`.
   Lorsque l'index rattrape le chaintip, il traite tous les autres blocs à travers l'interface
   de validation en utilisant `ValidationSignals::BlockConnected`."
-  a1link="https://bitcoincore.reviews/30132#l-52"
+  a1link="https://bitcoincore.reviews/30132#l-52" 
 
   q2="Comment cette PR affecte-t-elle la logique des index optionnels qui traitent les nouveaux blocs ?"
   a2="Avant cette PR, l'effacement des index optionnels sans effacer l'état de la chaîne
@@ -109,7 +109,7 @@ Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk rep
 d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips
 repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 - [Bitcoin Core #29496][] augmente `TX_MAX_STANDARD_VERSION` à 3, ce qui rend les transactions
-Topologically Restricted Until Confirmation ([TRUC][topic v3 transaction relay]) standard. Si la
+topologiquement restreintes jusqu'à confirmation ([TRUC][topic v3 transaction relay]) standard. Si la
 version d'une transaction est 3, elle sera traitée comme une transaction TRUC comme défini dans la
 spécification [BIP431][]. La `CURRENT_VERSION` reste à 2, ce qui signifie que le portefeuille ne
 créera pas encore de transactions TRUC.
@@ -155,7 +155,7 @@ créera pas encore de transactions TRUC.
   devenir obsolètes si un canal est fermé ou [splicé][topic splicing], ils sont donc mieux utilisés
   pour les codes QR à court terme ou les liens de paiement où l'espace en octets est précieux. Les
   chemins normaux sont préférables pour les utilisations à long terme, y compris les [messages
-  en oignon][topic onion messages] basés sur les  [offres][topic offers] où l'utilisation des identifiants de nœud
+  en oignon][topic onion messages] basés sur les [offres][topic offers] où l'utilisation des identifiants de nœud
   peut permettre de transmettre un message à un pair même si le nœud et le pair ne partagent plus de
   canal (puisque les messages en oignon ne nécessitent pas de canaux).
   `ChannelManager` est mis à jour pour utiliser des chemins aveugles compacts pour les [offres][topic
