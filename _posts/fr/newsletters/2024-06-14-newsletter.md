@@ -68,7 +68,7 @@ effacés une seconde fois. [Bitcoin Core #30132][] peut rendre le démarrage du 
   les blocs manquants avec une synchronisation en arrière-plan, via `BaseIndex::StartBackgroundSync()`.
   Lorsque l'index rattrape le chaintip, il traite tous les autres blocs à travers l'interface
   de validation en utilisant `ValidationSignals::BlockConnected`."
-  a1link="https://bitcoincore.reviews/30132#l-52" 
+  a1link="https://bitcoincore.reviews/30132#l-52"
 
   q2="Comment cette PR affecte-t-elle la logique des index optionnels qui traitent les nouveaux blocs ?"
   a2="Avant cette PR, l'effacement des index optionnels sans effacer l'état de la chaîne
@@ -108,11 +108,12 @@ lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo],
 Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk repo], [Propositions
 d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips
 repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
+
 - [Bitcoin Core #29496][] augmente `TX_MAX_STANDARD_VERSION` à 3, ce qui rend les transactions
-topologiquement restreintes jusqu'à confirmation ([TRUC][topic v3 transaction relay]) standard. Si la
-version d'une transaction est 3, elle sera traitée comme une transaction TRUC comme défini dans la
-spécification [BIP431][]. La `CURRENT_VERSION` reste à 2, ce qui signifie que le portefeuille ne
-créera pas encore de transactions TRUC.
+  topologiquement restreintes jusqu'à confirmation ([TRUC][topic v3 transaction relay]) standard. Si la
+  version d'une transaction est 3, elle sera traitée comme une transaction TRUC comme défini dans la
+  spécification [BIP431][]. La `CURRENT_VERSION` reste à 2, ce qui signifie que le portefeuille ne
+  créera pas encore de transactions TRUC.
 
 - [Bitcoin Core #28307][] corrige un bug qui imposait la limite de taille maximale de script de 520
   octets P2SH aux scripts de rachat SegWit pour les P2SH-segwit et bech32. Cette correction permet la
@@ -186,8 +187,7 @@ Mark "Murch" Erhardt pour avoir signalé l'erreur.
 {% include references.md %}
 {% include linkers/issues.md v=2
 issues="29496,28307,30047,28979,2854,3083,1163,8491,3080,3072,1551,30132" %}
-[beast post]:
-https://delvingbitcoin.org/t/proposing-a-p2qrh-bip-towards-a-quantum-resistant-soft-fork/956
+[beast post]: https://delvingbitcoin.org/t/proposing-a-p2qrh-bip-towards-a-quantum-resistant-soft-fork/956
 [quantum draft]: https://github.com/cryptoquick/bips/blob/p2qrh/bip-p2qrh.mediawiki
 [core lightning 24.05]: https://github.com/ElementsProject/lightning/releases/tag/v24.05
 [Bitcoin Core 27.1]: https://bitcoincore.org/bin/bitcoin-core-27.1/
