@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Longer CLTV expiry deltas as a mitigation against replacement cycling attacks"
     url: /en/newsletters/2023/10/25/#longer-cltv-expiry-deltas
 
+  - title: "LND #8491 adds a `cltv_expiry` flag on the lncli RPC commands `addinvoice` and `addholdinvoice`"
+    url: /en/newsletters/2024/06/14/#lnd-8491
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

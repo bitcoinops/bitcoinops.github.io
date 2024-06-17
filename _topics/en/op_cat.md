@@ -63,6 +63,9 @@ optech_mentions:
   - title: "Bitcoin Inquisition 27.0 begins enforcing `OP_CAT` on signet"
     url: /en/newsletters/2024/05/24/#bitcoin-inquisition-27-0
 
+  - title: "`OP_CAT` script to validate proof of work"
+    url: /en/newsletters/2024/06/07/#op-cat-script-to-validate-proof-of-work
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK
