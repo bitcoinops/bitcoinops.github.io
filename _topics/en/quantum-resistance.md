@@ -55,6 +55,9 @@ optech_mentions:
   - title: "Consensus-enforcement of quantum-resistant lamport signatures without consensus changes"
     url: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
 
+  - title: "Draft BIP for quantum-safe address format"
+    url: /en/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
