@@ -117,9 +117,10 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
   [BIP173][]の設計と同じ文字数制限を持たない新しいアドレスタイプを簡単にサポートできます。
   たとえば、118文字を必要とする[サイレントペイメント][topic silent payments]アドレスの解析を有効にすることができます。
 
-- [Bitcoin Core #28979][]は、`sendall` RPCコマンド（[ニュースレター #194][news194 sendall]参照）の動作を更新し、
-  承認済みのアウトプットを使用する従来の動作に加えて、未承認のお釣りを使用するようになりました。
-  未承認のお釣りが使用される場合、手数料の不足分が補填されます（[ニュースレター #269][news269 deficit]参照）。
+- [Bitcoin Core #28979][]は、`sendall` RPCコマンド（[ニュースレター #194][news194 sendall]参照）のドキュメントを更新し、
+  承認済みのアウトプットに加えて未承認のお釣りも使用すると記載しています。
+  未承認のアウトプットが使用される場合、手数料の不足分が補填されます（[ニュースレター #269][news269 deficit]参照）。
+  この項目は、公開後に修正されました。[^correction-28979]
 
 - [Eclair #2854][]と[LDK #3083][]は、[BOLTs #1163][]を実装し、
   [Onionメッセージ][topic onion messages]の配送に失敗した場合の`channel_update`の要件を削除しました。
@@ -154,6 +155,14 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
+
+## 脚注
+
+[^correction-28979]:
+    Bitcoin Core #28979について最初に公開した説明では、`sendall`が未承認のお釣りを使用する変更は、
+    動作の変更であると記載していました。（誤りはニュースレターの編集者によるもので）
+    Gustavo Floresの元の正しい記述と、誤りを報告してくれたMark "Murch" Erhardtに感謝します。
+
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="29496,28307,30047,28979,2854,3083,1163,8491,3080,3072,1551,30132" %}
 [beast post]: https://delvingbitcoin.org/t/proposing-a-p2qrh-bip-towards-a-quantum-resistant-soft-fork/956
