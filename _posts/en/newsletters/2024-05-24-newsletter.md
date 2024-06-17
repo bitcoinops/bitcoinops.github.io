@@ -126,8 +126,6 @@ popular Bitcoin infrastructure software.
   payments] (SPs), citing a [draft specification][toth psbtsp] by Andrew
   Toth.  PSBTs for SPs have two aspects:
 
-  {% assign timestamp="12:40" %}
-
   - **Spending to SP addresses:** the actual output script placed in a
     transaction depends on both the silent payment address and the
     inputs in the transaction.  Any change to the inputs in a PSBT can
@@ -148,6 +146,7 @@ popular Bitcoin infrastructure software.
     key.  This can be just an additional PSBT field.
 
   Discussion was ongoing at the time of writing.
+  {% assign timestamp="12:40" %}
 
 - **Proposed miniscript BIP:** Ava Chow [posted][chow miniscript] to
   the Bitcoin-Dev mailing list a [draft BIP][chow bip] for
