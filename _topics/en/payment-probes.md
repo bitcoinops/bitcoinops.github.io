@@ -67,6 +67,9 @@ optech_mentions:
   - title: "LND #8136 updates the `EstimateRouteFee` RPC to use payment probing"
     url: /en/newsletters/2024/03/13/#lnd-8136
 
+  - title: "LDK #3103 begins using data collected from frequent probing in its testing benchmarks"
+    url: /en/newsletters/2024/06/21/#ldk-3103
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: JIT routing
