@@ -218,7 +218,7 @@ repo], and [BINANAs][binana repo]._
 [news303 cln chainlag]: /en/newsletters/2024/05/17/#core-lightning-7190
 [news302 cln check]: /en/newsletters/2024/05/15/#core-lightning-7111
 [news300 cln prune]: /en/newsletters/2024/05/01/#core-lightning-7240
-[review club 30132]: https://bitcoincore.reviews/30000
+[review club 30132]: https://bitcoincore.reviews/30132
 [gh thecharlatan]: https://github.com/TheCharlatan
 [gh b47bd95]: https://github.com/bitcoin/bitcoin/commit/b47bd959207e82555f07e028cc2246943d32d4c3
 [reindex flag set]: https://github.com/bitcoin/bitcoin/blob/457e1846d2bf6ef9d54b9ba1a330ba8bbff13091/src/node/blockstorage.cpp#L58
