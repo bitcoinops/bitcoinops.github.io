@@ -171,7 +171,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 ## 脚注
 {:.no_toc}
 
-[newsletter #38]: /zh/newsletters/2019/03/19/#bech32-sending-support
+[newsletter #38]: /zh/newsletters/2019/03/19/#bech32-发送支持
 [newsletter #39]: /en/newsletters/2019/03/26/#bech32-sending-support
 [newsletter #40]: /en/newsletters/2019/04/02/#bech32-sending-support
 [newsletter #41]: /en/newsletters/2019/04/09/#bech32-sending-support
