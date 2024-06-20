@@ -140,15 +140,34 @@ repo], and [BINANAs][binana repo]._
   any future Bitcoin implementations based on reading Bitcoin Core's
   code will use the correct type.
 
-- [LND #8730][] lncli: new command `wallet estimatefeerate`
+- [Eclair #2867][] defines a new type of `EncodedNodeId` to be assigned for
+  mobile wallets in a [blinded path][topic rv routing]. This allows a wallet
+  provider to be notified that the next node is a mobile device, enabling them
+  to account for mobile-specific conditions.
 
-- [LDK #3098][] Parse v2 gossip (note that this appears to be version 2
-  of LDK's custom rapid gossip sync protocol, not the proposed upgrade
-  to the BOLT7 gossip standard that is sometimes called "v2 gossip" -harding)
+- [LND #8730][] introduces a RPC command `lncli wallet estimatefee` which
+  receives a confirmation target as input and returns a [fee estimation][topic fee estimation] for
+  on-chain transactions in both sat/kw (satoshis per kilo-weight unit) and
+  sat/vbyte.
 
-- [LDK #3078][] Asynchronous `Bolt12Invoice` payment
+- [LDK #3098][] updates LDK's Rapid Gossip Sync (RGS) to v2, which extends v1 by
+  adding additional fields in the serialized structure. These new fields include
+  a byte indicating the number of default node features, an array of node
+  features, and supplemental feature or socket address information following
+  each node public key. This update is distinct from the proposed [BOLT7][] gossip update
+  similarly referred to as gossip v2.
 
-- [LDK #3082][] BOLT 12 static invoice encoding and building
+- [LDK #3078][] adds support for asynchronous payment of [BOLT12][topic offers]
+  invoices by generating an `InvoiceReceived` event upon reception if the
+  configuration option `manually_handle_bolt12_invoices` is set. A new command
+  `send_payment_for_bolt12_invoice` is exposed on `ChannelManager` to pay the
+  invoice.  This can allow code to evaluate an invoice before deciding
+  whether to pay or reject it.
+
+- [LDK #3082][] introduces BOLT12 static invoice (reusable payment request)
+  support by adding an encoding and parsing interface, and builder methods to
+  construct a BOLT12 static invoice as a response to `InvoiceRequest` from an
+  [offer][topic offers].
 
 - [LDK #3103][] begins using a performance scorer in benchmarks based on
   frequent [probes][topic payment probes] of actual payment paths.  The
