@@ -89,6 +89,9 @@ optech_mentions:
   - title: "LDK #3080 allows creating either compact or regular binded paths"
     url: /en/newsletters/2024/06/14/#ldk-3080
 
+  - title: "Eclair #2867 defines an encoded node ID to use to identify mobile wallets in blinded paths"
+    url: /en/newsletters/2024/06/21/#eclair-2867
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
