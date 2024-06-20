@@ -72,7 +72,42 @@ popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Casa adds descriptor support:**
+  In a [blog post][casa blog], multisig service provider Casa announced support
+  for [output script descriptors][topic descriptors].
+
+- **Specter-DIY v1.9.0 released:**
+  The [v1.9.0][specter-diy v1.9.0] release adds support for taproot [miniscript][topic
+  miniscript] and a [BIP85][] app, among other changes.
+
+- **Constant-time analysis tool cargo-checkct announced:**
+  A Ledger [blog post][ledger cargo-checkct blog] announced
+  [cargo-checkct][cargo-checkct github], a tool that evaluates whether Rust
+  cryptographic libraries run in constant time to avoid [timing
+  attacks][topic side channels].
+
+- **Jade adds miniscript support:**
+  The Jade hardware signing device firmware [now supports][jade tweet] miniscript.
+
+- **Ark implementation announced:**
+  Ark Labs [announced][ark labs blog] a few initiatives around the [Ark
+  protocol][topic ark] including an [Ark implementation][ark github] and
+  [developer resources][ark developer hub].
+
+- **Volt Wallet beta announced:**
+  [Volt Wallet][volt github] supports descriptors, [taproot][topic taproot],
+  [PSBTs][topic psbt], and other BIPs, plus Lightning.
+
+- **Joinstr adds electrum support:**
+  [Coinjoin][topic coinjoin] software [joinstr][news214 joinstr] added an [electrum
+  plugin][joinstr blog].
+
+- **Bitkit v1.0.1 released:**
+  Bitkit [announced][bitkit blog] its self-custodial Bitcoin and Lightning
+  mobile apps moved out of beta and are available on mobile app stores.
+
+- **Civkit alpha announced:**
+  [Civkit][civkit tweet] is a P2P trading marketplace built on nostr and the Lightning Network.
 
 ## Releases and release candidates
 
@@ -137,3 +172,16 @@ repo], and [BINANAs][binana repo]._
 [bcc 27.1]: /en/newsletters/2024/06/14/#bitcoin-core-27-1
 [bitcoin core 26.2rc1]: https://bitcoincore.org/bin/bitcoin-core-26.2/
 [news286 btcd]: /en/newsletters/2024/01/24/#disclosure-of-fixed-consensus-failure-in-btcd
+[casa blog]: https://blog.casa.io/introducing-wallet-descriptors/
+[specter-diy v1.9.0]: https://github.com/cryptoadvance/specter-diy/releases/tag/v1.9.0
+[cargo-checkct github]: https://github.com/Ledger-Donjon/cargo-checkct
+[ledger cargo-checkct blog]: https://www.ledger.com/blog-cargo-checkct-our-home-made-tool-guarding-against-timing-attacks-is-now-open-source
+[jade tweet]: https://x.com/BlockstreamJade/status/1790587478287814859
+[ark labs blog]: https://blog.arklabs.to/introducing-ark-labs-a-new-venture-to-bring-seamless-and-scalable-payments-to-bitcoin-811388c0001b
+[ark github]: https://github.com/ark-network/ark/
+[ark developer hub]: https://arkdev.info/docs/
+[volt github]: https://github.com/Zero-1729/volt
+[news214 joinstr]: /en/newsletters/2022/08/24/#proof-of-concept-coinjoin-implementation-joinstr
+[joinstr blog]: https://uncensoredtech.substack.com/p/tutorial-electrum-plugin-for-joinstr
+[bitkit blog]: https://blog.bitkit.to/synonym-officially-launches-the-bitkit-wallet-on-app-stores-9de547708d4e
+[civkit tweet]: https://x.com/gregory_nico/status/1800818359946154471
