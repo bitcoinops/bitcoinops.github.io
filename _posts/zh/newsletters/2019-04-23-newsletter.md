@@ -36,7 +36,7 @@ lang: zh
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/06-stackexchange.md %}
+{% include specials/bech32/zh/06-stackexchange.md %}
 
 ## 值得注意的代码和文档变化
 

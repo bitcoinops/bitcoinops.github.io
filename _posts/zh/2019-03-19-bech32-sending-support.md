@@ -58,7 +58,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #43][].*
 
-{% include specials/bech32/06-stackexchange.md %}
+{% include specials/bech32/zh/06-stackexchange.md %}
 
 ## 基于 bech32 的其他地址格式
 
@@ -176,7 +176,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #40]: /zh/newsletters/2019/04/02/#bech32-发送支持
 [newsletter #41]: /zh/newsletters/2019/04/09/#bech32-发送支持
 [newsletter #42]: /zh/newsletters/2019/04/16/#bech32-发送支持
-[newsletter #43]: /en/newsletters/2019/04/23/#bech32-sending-support
+[newsletter #43]: /zh/newsletters/2019/04/23/#bech32-发送支持
 [newsletter #44]: /en/newsletters/2019/04/30/#bech32-sending-support
 [newsletter #45]: /en/newsletters/2019/05/07/#bech32-sending-support
 [newsletter #46]: /en/newsletters/2019/05/14/#bech32-sending-support
