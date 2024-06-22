@@ -260,7 +260,7 @@ Optech 不知道这些目标何时——或是否——会实现，但我们将�
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/09-qrcode.md %}
+{% include specials/bech32/zh/09-qrcode.md %}
 
 ## 值得注意的代码和文档更改
 
@@ -299,5 +299,5 @@ wiki page for changes -->{% endcomment %}
 [scriptless scripts]: http://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/
 [discreet log contracts]: https://adiabat.github.io/dlc.pdf
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
 [newsletter #3]: /zh/newsletters/2018/07/10/#特别新闻schnorr-签名提议-bip
