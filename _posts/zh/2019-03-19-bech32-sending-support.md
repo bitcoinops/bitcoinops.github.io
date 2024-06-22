@@ -34,7 +34,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #39][].*
 
-{% include specials/bech32/zh/2-stats.md %}
+{% include specials/bech32/zh/02-stats.md %}
 
 ## 使用 bech32 参考库
 
