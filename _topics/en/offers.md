@@ -100,6 +100,12 @@ optech_mentions:
   - title: "Human readable payment instructions proposed that are compatible with offers"
     url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 
+  - title: "LDK #3078 adds support for inspection of BOLT12-returned invoices before payment"
+    url: /en/newsletters/2024/06/21/#ldk-3078
+
+  - title: "LDK #3082 adds an interface for building static reusable offers"
+    url: /en/newsletters/2024/06/21/#ldk-3082
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

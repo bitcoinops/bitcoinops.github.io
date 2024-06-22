@@ -23,7 +23,7 @@ infrastructure projects.
   potential algorithms along with their expected onchain size.  The
   choice of algorithms and the specific implementation details are
   left for future discussion, as are additional BIPs necessary to fully
-  realize the vision of adding full quantum resistance to Bitcoin.
+  realize the vision of adding full quantum resistance to Bitcoin. {% assign timestamp="3:36" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -57,6 +57,8 @@ Before [Bitcoin Core #30132][], the optional indexes would be wiped a
 second time. [Bitcoin Core #30132][] can make node startup more
 efficient by avoiding the wiping of the optional indexes when not
 necessary.
+
+{% assign timestamp="23:28" %}
 
 {% include functions/details-list.md
   q0="What is the behavior change introduced by this PR?"
@@ -108,10 +110,10 @@ release candidates.*
   [offer][topic offers] invoices (see [Newsletter #304][news304 cln
   offers]), and a fix for a fee overpayment issue when the
   `ignore_fee_limits` configuration option is used (see [Newsletter
-  #306][news306 cln overpay]).
+  #306][news306 cln overpay]). {% assign timestamp="30:45" %}
 
 - [Bitcoin Core 27.1][] is a maintenance release of the predominant
-  full node implementation.  It contains multiple bug fixes.
+  full node implementation.  It contains multiple bug fixes. {% assign timestamp="32:46" %}
 
 ## Notable code and documentation changes
 
@@ -129,34 +131,34 @@ repo], and [BINANAs][binana repo]._
   relay]) transactions standard. If a transaction’s version is 3, it will be
   treated as a TRUC transaction as defined in the [BIP431][] specification. The
   `CURRENT_VERSION` remains 2, meaning the wallet will not create TRUC
-  transactions yet.
+  transactions yet. {% assign timestamp="34:48" %}
 
 - [Bitcoin Core #28307][] fixes a bug that imposed the 520-byte P2SH maximum
   script size limit on SegWit redeem scripts for both P2SH-segwit and bech32.
   This fix enables the creation of multisig [output descriptors][topic
   descriptors] involving more than 15 keys (now allowing up to the `OP_CHECKMULTISIG` consensus limit of 20), including
   signing for these scripts, along with other post-segwit redeem scripts that
-  exceed the P2SH limit.
+  exceed the P2SH limit. {% assign timestamp="38:58" %}
 
 - [Bitcoin Core #30047][] refactors the model of the [bech32][topic bech32] encoding scheme
   `charlimit` from a constant of 90 to an `Enum`. This change allows for easy
   support of new address types that use the bech32 encoding scheme but don't
   have the same character limit as [BIP173][] was designed for. For example, to enable
   parsing [silent payment][topic silent payments] addresses, which require up to
-  118 characters.
+  118 characters. {% assign timestamp="37:04" %}
 
 - [Bitcoin Core #28979][] updates the documentation of the `sendall` RPC
   command (see [Newsletter #194][news194 sendall]) to mention that it spends unconfirmed
   change in addition to confirmed
   outputs. If unconfirmed outputs are spent, it will compensate for any
-  _fee deficit_ (see [Newsletter #269][news269 deficit]). _This item was corrected after publication._[^correction-28979]
+  _fee deficit_ (see [Newsletter #269][news269 deficit]). _This item was corrected after publication._[^correction-28979] {% assign timestamp="41:23" %}
 
 - [Eclair #2854][] and [LDK #3083][] implement [BOLTs #1163][] to remove the
   requirement of a `channel_update` on an [onion message][topic onion messages]
   delivery failure. This requirement facilitated an attack where a relayer node
   that generated the delivery failure error status could identify the sender of
   the [HTLC][topic htlc] through the `channel_update` field, compromising the
-  sender’s privacy.
+  sender’s privacy. {% assign timestamp="43:12" %}
 
 - [LND #8491][] adds a `cltv_expiry` flag on the `lncli` RPC commands
   `addinvoice` and `addholdinvoice` to allow users to set the
@@ -164,7 +166,7 @@ repo], and [BINANAs][binana repo]._
   No motivation for the change is described on the pull request, but it
   could be in response to LND recently raising its default from 9 blocks
   to 18 blocks to follow the [BOLT2][] specification (see [Newsletter
-  #284][news284 lnd final delta]).
+  #284][news284 lnd final delta]). {% assign timestamp="44:23" %}
 
 - [LDK #3080][] refactors `MessagerRouter`’s `create_blinded_path` command into
   two methods: one for compact [blinded path][topic rv routing] creation, and
@@ -182,7 +184,7 @@ repo], and [BINANAs][binana repo]._
   onion messages don't require channels).
   `ChannelManager` is updated to use compact blinded paths for short-lived
   [offers][topic offers] and refunds, while reply paths are refactored to use
-  normal (non-compact) blinded paths.
+  normal (non-compact) blinded paths. {% assign timestamp="45:41" %}
 
 - [BIPs #1551][] adds [BIP353][] with a specification for DNS Payment Instructions,
   a protocol to encode [BIP21][] URIs in DNS TXT records, for
@@ -192,7 +194,7 @@ repo], and [BINANAs][binana repo]._
   DNSSEC-signed TXT record containing a BIP21 URI like
   `bitcoin:bc1qexampleaddress0123456`. See [Newsletter #290][news290
   bip353] for our previous description and [last week's newsletter][news306
-  dns] for the merge of a related BLIP.
+  dns] for the merge of a related BLIP. {% assign timestamp="47:13" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -218,7 +220,7 @@ repo], and [BINANAs][binana repo]._
 [news303 cln chainlag]: /en/newsletters/2024/05/17/#core-lightning-7190
 [news302 cln check]: /en/newsletters/2024/05/15/#core-lightning-7111
 [news300 cln prune]: /en/newsletters/2024/05/01/#core-lightning-7240
-[review club 30132]: https://bitcoincore.reviews/30000
+[review club 30132]: https://bitcoincore.reviews/30132
 [gh thecharlatan]: https://github.com/TheCharlatan
 [gh b47bd95]: https://github.com/bitcoin/bitcoin/commit/b47bd959207e82555f07e028cc2246943d32d4c3
 [reindex flag set]: https://github.com/bitcoin/bitcoin/blob/457e1846d2bf6ef9d54b9ba1a330ba8bbff13091/src/node/blockstorage.cpp#L58

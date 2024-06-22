@@ -87,6 +87,9 @@ optech_mentions:
   - title: "Eugene Siegel responsibly disclosed a Bitcoin Core block stalling bug affecting LN"
     url: /en/newsletters/2024/02/07/#public-disclosure-of-a-block-stalling-bug-in-bitcoin-core-affecting-ln
 
+  - title: "Matt Morehouse responsibly disclosed vulnerability affecting LND onion packet parsing"
+    url: /en/newsletters/2024/06/21/#disclosure-of-vulnerability-affecting-old-versions-of-lnd
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
