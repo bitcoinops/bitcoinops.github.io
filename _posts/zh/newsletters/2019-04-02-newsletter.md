@@ -23,13 +23,13 @@ lang: zh
 
 - **<!--trampoline-payments-for-ln-->****LN 的蹦床支付：** Pierre-Marie Padiou 在 Lightning-Dev 邮件列表中启动了一个[线程][trampoline thread]，建议 Alice 可以通过首先向一个中间节点（Dan）发送支付并要求 Dan 找出到 Zed 的剩余路径来向 Zed 发送支付，即使她不知道到他节点的路径。这将特别有利于 Alice，如果她运行一个不试图跟踪整个网络的轻量级 LN 节点。为了增加隐私，Alice 可以使用多个中间节点而不仅仅是一个（每个节点收到 Alice 加密的自己的指令）。电子邮件中描述的一个缺点是，Alice 只能大致猜测所需的费用，因为她不知道实际路径，所以她可能最终支付的费用比她自己选择路线时要多。
 
-- **<!--bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses-->****Bitcoin Core 计划将默认接收地址切换到 bech32：** 自[0.16.0 版本][0.16.0 segwit]以来，Bitcoin Core 的内置钱包在用户希望接收支付时默认为生成 P2SH 包裹的 segwit 地址。这些地址与所有广泛使用的软件向后兼容。正如在[问题][Bitcoin Core #15560]和[项目的每周会议][core meeting segwit]中讨论的那样，从 Bitcoin Core 0.20 开始（预计约一年后），Bitcoin Core 将默认使用本机 segwit 地址（bech32），提供额外的费用节省和其他好处。目前，许多钱包和服务[已经支持发送到 bech32 地址][bech32 adoption]，如果 Bitcoin Core 项目在接下来的六个月中看到足够的额外采用，它将提前切换到 bech32 接收地址。在 GUI 或通过 RPC 请求时，P2SH 包裹的 segwit 地址将继续提供，如果用户不想要更新，也可以配置他们的默认地址类型。（同样，先锋用户现在可以在任何 Bitcoin Core 0.16.0 及以上版本中设置 `addresstype=bech32` 配置选项以更改其默认值。）
+- **<!--bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses-->****Bitcoin Core 计划将默认接收地址切换到 bech32：** 自 [0.16.0 版本][0.16.0 segwit]以来，Bitcoin Core 的内置钱包在用户希望接收支付时默认为生成 P2SH 包裹的 segwit 地址。这些地址与所有广泛使用的软件向后兼容。正如在[问题][Bitcoin Core #15560]和[项目的每周会议][core meeting segwit]中讨论的那样，从 Bitcoin Core 0.20 开始（预计约一年后），Bitcoin Core 将默认使用本机 segwit 地址（bech32），提供额外的费用节省和其他好处。目前，许多钱包和服务[已经支持发送到 bech32 地址][bech32 adoption]，如果 Bitcoin Core 项目在接下来的六个月中看到足够的额外采用，它将提前切换到 bech32 接收地址。在 GUI 或通过 RPC 请求时，P2SH 包裹的 segwit 地址将继续提供，如果用户不想要更新，也可以配置他们的默认地址类型。（同样，先锋用户现在可以在任何 Bitcoin Core 0.16.0 及以上版本中设置 `addresstype=bech32` 配置选项以更改其默认值。）
 
 ## Bech32 发送支持
 
 *第 3 周，共 24 周。在 2019 年 8 月 24 日 segwit 软分叉锁定的二周年纪念日前，Optech Newsletter 将包含此每周部分，为开发人员和组织提供有关实现 bech32 发送支持（支付本机 segwit 地址的能力）的信息。这[不需要实现 segwit][bech32 series]本身，但确实允许你支付的人访问 segwit 的所有多个好处。*
 
-{% include specials/bech32/03-python-ref.md %}
+{% include specials/bech32/zh/03-python-ref.md %}
 
 ## 值得注意的代码和文档更改
 
@@ -61,5 +61,5 @@ lang: zh
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [bolt2 delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection
 [p2p protocol encryption]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
 [newsletter #22]: /zh/newsletters/2018/11/20/#monitor-feerates
