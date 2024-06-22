@@ -52,7 +52,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #42][].*
 
-{% include specials/bech32/05-fee-savings.md %}
+{% include specials/bech32/zh/05-fee-savings.md %}
 
 ## Bitcoin Stack Exchange 精选 bech32 问题
 
@@ -175,7 +175,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #39]: /en/newsletters/2019/03/26/#bech32-sending-support
 [newsletter #40]: /en/newsletters/2019/04/02/#bech32-sending-support
 [newsletter #41]: /en/newsletters/2019/04/09/#bech32-sending-support
-[newsletter #42]: /en/newsletters/2019/04/16/#bech32-sending-support
+[newsletter #42]: /zh/newsletters/2019/04/16/#bech32-发送支持
 [newsletter #43]: /en/newsletters/2019/04/23/#bech32-sending-support
 [newsletter #44]: /en/newsletters/2019/04/30/#bech32-sending-support
 [newsletter #45]: /en/newsletters/2019/05/07/#bech32-sending-support
