@@ -31,7 +31,7 @@ lang: zh
 
 *第 2 周，共 24 周。从现在到 2019 年 8 月 24 日 segwit 软分叉锁定的第二个周年纪念日，Optech Newsletter 将包含这一每周部分，提供信息以帮助开发者和组织实现 bech32 发送支持——支付本地 segwit 地址的能力。这[不要求实现 segwit][bech32 series]本身，但它确实允许你支付的对象访问 segwit 的所有多个好处。*
 
-{% include specials/bech32/02-stats.md %}
+{% include specials/bech32/zh/02-stats.md %}
 
 ## Bitcoin Stack Exchange 精选问答
 
