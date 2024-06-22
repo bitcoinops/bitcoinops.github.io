@@ -219,6 +219,9 @@ optech_mentions:
   - title: "Discussion about using PSBTs with silent payments"
     url: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
 
+  - title: "Continued discussion about using PSBTs with silent payments"
+    url: /en/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors
