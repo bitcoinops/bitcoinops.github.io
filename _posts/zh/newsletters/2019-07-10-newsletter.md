@@ -28,7 +28,7 @@ lang: zh
 
 ## Bech32 发送支持
 
-*在 [系列][bech32 series] 中的第 17 周，关于允许你支付的人访问所有 segwit 的好处。*
+*在 [Bech32 系列][bech32 series] 中的第 17 周，关于允许你支付的人访问所有 segwit 的好处。*
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
@@ -37,16 +37,16 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中值得注意的更改。*
 
-- [Bitcoin Core #15427][] 扩展 `utxoupdatepsbt` RPC，添加了一个 `descriptors` 参数，该参数接收一个 [输出脚本描述符] 并使用它来更新 [BIP174][] 部分签名比特币交易 (PSBT)，包括交易中涉及脚本（地址）的信息。这是对 RPC 以前行为的补充，之前的行为是从节点的内存池和 UTXO 集中添加信息。这个新功能对于硬件钱包和其他配对钱包尤其有用，因为它使得可以向 PSBT 添加 HD 密钥路径信息，这样被要求签名 PSBT 的钱包可以轻松派生签名所需的密钥，或验证找零输出确实支付回钱包。
+- [Bitcoin Core #15427][] 扩展 `utxoupdatepsbt` RPC，添加了一个 `descriptors` 参数，该参数接收一个[输出脚本描述符]并使用它来更新 [BIP174][] 部分签名比特币交易 (PSBT)，包括交易中涉及脚本（地址）的信息。这是对 RPC 以前行为的补充，之前的行为是从节点的内存池和 UTXO 集中添加信息。这个新功能对于硬件钱包和其他配对钱包尤其有用，因为它使得可以向 PSBT 添加 HD 密钥路径信息，这样被要求签名 PSBT 的钱包可以轻松派生签名所需的密钥，或验证找零输出确实支付回钱包。
 
 - [Bitcoin Core #16257][] 如果未签名交易的费率高于 `maxtxfee` 配置选项（默认：0.1 BTC）设置的最大金额，将中止向其添加资金。以前，资金代码会默默地将费用减少到最大值，这可能导致用户由于交易中的输入错误而多付高达 1200 美元的费用（按当前价格计算）。新行为给了用户修复输入错误的机会，消除了任何资金损失。
 
 - [Eclair #1045][] 增加了对标签长度值 (Tag-Length-Value, TLV) 消息编码的支持。LN 实现计划在未来将大多数消息移到这种格式。LND 和 C-Lightning 之前已经实现了 TLV 支持。
 
 {% include linkers/issues.md issues="15427,16326,16257,1045" %}
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
 [eclair 0.3.1]: https://github.com/ACINQ/eclair/releases/tag/v0.3.1
 [tlv pr]: https://github.com/lightningnetwork/lightning-rfc/pull/607
