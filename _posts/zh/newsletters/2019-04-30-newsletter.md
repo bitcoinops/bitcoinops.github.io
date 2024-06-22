@@ -26,7 +26,7 @@ lang: zh
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/07-altbech32.md %}
+{% include specials/bech32/zh/07-altbech32.md %}
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -62,4 +62,4 @@ endcomment %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
 [dust convo]: https://github.com/bitcoin/bitcoin/pull/2577#issuecomment-17738577
 [bitcoincore.org]: https://bitcoincore.org/
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
