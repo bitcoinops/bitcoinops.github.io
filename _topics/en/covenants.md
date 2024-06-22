@@ -109,6 +109,9 @@ optech_mentions:
   - title: "HTLC aggregation with covenants"
     url: /en/newsletters/2023/11/08/#htlc-aggregation-with-covenants
 
+  - title: "Idea to add covenants to Bitcoin without consensus changes using functional encryption"
+    url: /en/newsletters/2024/06/07/#functional-encryption-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
