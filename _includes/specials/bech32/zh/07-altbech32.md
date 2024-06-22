@@ -10,7 +10,7 @@
 - **<!--backup-seeds-->****备份种子：** 2018 年 6 月，Jonas Schnelli 提出了 Bech32X，一种使用 bech32 进行错误校正来编码 Bitcoin 私钥、扩展私钥 (xprivs) 和扩展公钥 (xpubs) 的方案。详见完整的[草案规范][bech32x]。示例：
   `pk1lmll7u25wppjn5ghyhgm7kndgjwgphae8lez0gra436mj7ygaptggl447a4xh7`
 
-- **<!--elements-based-sidechains-->****基于 Elements 的侧链：** 基于 [ElementsProject.org][] 的侧链，如 [Blockstream Liquid][]，使用 bech32 地址和一种称为 “blech32” 地址的变体。Blech32 地址旨在与该平台的 [保密资产][] 一起使用，并将很快由 Liquid 侧链的 Esplora 块浏览器支持。我们不知道 blech32 的规范文档，但[此代码][blech32 py]被标记为参考实现，并在项目其他地方被引用为 “参见 liquid_addr.py 获取与 bech32 的紧凑差异。” blech32 地址示例：
+- **<!--elements-based-sidechains-->****基于 Elements 的侧链：** 基于 [ElementsProject.org][] 的侧链，如 [Blockstream Liquid][]，使用 bech32 地址和一种称为 “blech32” 地址的变体。Blech32 地址旨在与该平台的[保密资产][confidential assets]一起使用，并将很快由 Liquid 侧链的 Esplora 块浏览器支持。我们不知道 blech32 的规范文档，但[此代码][blech32 py]被标记为参考实现，并在项目其他地方被引用为 “参见 liquid_addr.py 获取与 bech32 的紧凑差异。” blech32 地址示例：
   `lq1qqf8er278e6nyvuwtgf39e6ewvdcnjupn9a86rzpx655y5lhkt0walu3djf9cklkxd3ryld97hu8h3xepw7sh2rlu7q45dcew5`
 
 - **<!--output-script-descriptors-->****输出脚本描述符：** 尽管与 bech32 的关系不那么直接，但基于 bech32 使用的 Bose-Chaudhuri-Hocquenghem (BCH) 码的校验和已被添加到 Bitcoin Core 支持的[输出脚本描述符][output script descriptors] 中。详见 Pieter Wuille 的[详细评论][descriptors checksum]。示例：
