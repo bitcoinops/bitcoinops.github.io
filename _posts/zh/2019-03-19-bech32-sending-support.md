@@ -112,7 +112,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #52][].*
 
-{% include specials/bech32/15-data-entry.md %}
+{% include specials/bech32/zh/15-data-entry.md %}
 
 ## 快速测试清单
 
@@ -185,7 +185,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #49]: /en/newsletters/2019/06/05/#bech32-sending-support
 [newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support
 [newsletter #51]: /en/newsletters/2019/06/26/#bech32-sending-support
-[newsletter #52]: /en/newsletters/2019/06/26/#bech32-sending-support
+[newsletter #52]: /zh/newsletters/2019/06/26/#bech32-发送支持
 [newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
 [newsletter #54]: /en/newsletters/2019/07/10/#bech32-sending-support
 [newsletter #55]: /en/newsletters/2019/07/17/#bech32-sending-support

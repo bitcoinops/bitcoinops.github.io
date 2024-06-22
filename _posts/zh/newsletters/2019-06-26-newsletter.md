@@ -33,7 +33,7 @@ slug: 2019-06-26-newsletter-zh
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/15-data-entry.md %}
+{% include specials/bech32/zh/15-data-entry.md %}
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -63,7 +63,7 @@ wiki page for changes -->{% endcomment %}
 - [Bitcoin Core #16026][] 使 `createmultisig` 和 `addmultisigaddress` RPC 在任何公钥使用未压缩公钥时总是返回遗留 P2SH 多重签名地址。根据 [BIP143][]，当前版本的 segwit（版本 0）不应使用未压缩公钥。Bitcoin Core 不会中继使用未压缩公钥的 segwit 输出的花费，而且未来的软分叉可能会使它们永久无法花费。
 
 {% include linkers/issues.md issues="13756,15651,16171,7386,16026" %}
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
 [bip125 recv wallet policy]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki#receiving-wallet-policy
 [dust attacks]: {{bse}}81509
 [cl rc]: https://github.com/ElementsProject/lightning/tags
@@ -74,4 +74,4 @@ wiki page for changes -->{% endcomment %}
 [vulnerabilities announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017040.html
 [eclipse attack]: https://eprint.iacr.org/2015/263.pdf
 [core dev meeting]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2019/bitcoin-core-dev.2019-06-20-19.01.log.html#l-36
-[newsletter #6]: /en/newsletters/2018/07/31/#bitcoin-core-12257
+[newsletter #6]: /zh/newsletters/2018/07/31/#bitcoin-core-12257
