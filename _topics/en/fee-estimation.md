@@ -50,6 +50,9 @@ optech_mentions:
   - title: Discussion about weak blocks helping with feerate estimation
     url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
 
+  - title: "LND #8730 introduces an RPC command `lncli wallet estimatefee`"
+    url: /en/newsletters/2024/06/21/#lnd-8730
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection
