@@ -30,7 +30,7 @@ lang: zh
 
 *第 4 周，共 24 周。在 2019 年 8 月 24 日 Segwit 软分叉锁定的第二周年纪念日之前，Optech Newsletter 将包含这一每周部分，提供帮助开发人员和组织实施 bech32 发送支持的信息——即支付原生 segwit 地址的能力。这[不需要自己实现 segwit][bech32 series]，但它确实允许你支付的人访问 segwit 的所有多重好处。*
 
-{% include specials/bech32/04-ecc.md %}
+{% include specials/bech32/zh/04-ecc.md %}
 
 ## 值得注意的代码和文档更改
 
@@ -65,6 +65,6 @@ lang: zh
 [round-robin]: https://en.wikipedia.org/wiki/Round-robin_scheduling
 [bitcoin core 0.5.0]: https://bitcoin.org/en/release/v0.5.0
 [sendmany wackiness]: https://github.com/bitcoin/bitcoin/pull/15595#issue-260932169
-[bech32 series]: /en/bech32-sending-support/
-[newsletter #31]: /en/newsletters/2019/01/29/#lnd-2370
-[newsletter #33]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
+[bech32 series]: /zh/bech32-sending-support/
+[newsletter #31]: /zh/newsletters/2019/01/29/#lnd-2370
+[newsletter #33]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
