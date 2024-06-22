@@ -21,13 +21,13 @@ lang: zh
 
 ## 新闻
 
-- **<!--soft-fork-discussion-->****软分叉讨论：**在 Bitcoin-Dev 邮件列表中，多个回复被发布，响应 [bip-taproot][] 和 [bip-tapscript][]。此外，Anthony Towns [发布][anyprevout post] 了一个使用 bip-taproot 功能实现类似于 [BIP118][] SIGHASH_NOINPUT 的额外软分叉更改提案。由于本周的 Newsletter 已经包含关于 Taproot 的特别部分，我们将推迟对反馈和扩展的总结到下周的 Newsletter，这样读者可以先消化 Taproot 的基本内容。
+- **<!--soft-fork-discussion-->****软分叉讨论：**在 Bitcoin-Dev 邮件列表中，多个回复被发布，响应 [bip-taproot][] 和 [bip-tapscript][]。此外，Anthony Towns [发布][anyprevout post]了一个使用 bip-taproot 功能实现类似于 [BIP118][] SIGHASH_NOINPUT 的额外软分叉更改提案。由于本周的 Newsletter 已经包含关于 Taproot 的特别部分，我们将推迟对反馈和扩展的总结到下周的 Newsletter，这样读者可以先消化 Taproot 的基本内容。
 
 - **<!--addition-of-derivation-paths-to-bip174-psbts-->****向 BIP174 PSBT 添加派生路径：**Stepan Snigirev [在][psbt path] Bitcoin-Dev 邮件列表中建议允许 PSBT 包含用于生成找零输出地址的公钥的 BIP32 扩展公钥（xpub）和派生路径。这可以帮助多重签名钱包确定交易的找零输出是否支付给正确的签名者集。[BIP174][] 的作者 Andrew Chow 对此想法持开放态度，硬件钱包的开发者也是如此。
 
 ## Taproot 和 Tapscript 提案 BIP 概述
 
-上周，Pieter Wuille [发送邮件][taproot post] 到 Bitcoin-Dev 邮件列表，提供了两个提案 BIP 的链接。第一个，[bip-taproot][]，允许使用 Schnorr 风格签名或 Merkle 化脚本进行支出。第二个，[bip-tapscript][]，定义了用于 bip-taproot Merkle 支出的比特币现有脚本语言的轻微变体。
+上周，Pieter Wuille [发送邮件][taproot post]到 Bitcoin-Dev 邮件列表，提供了两个提案 BIP 的链接。第一个，[bip-taproot][]，允许使用 Schnorr 风格签名或 Merkle 化脚本进行支出。第二个，[bip-tapscript][]，定义了用于 bip-taproot Merkle 支出的比特币现有脚本语言的轻微变体。
 
 对于已经熟悉比特币脚本和类似 [MAST][] 概念的读者，应该可以直接理解这些 BIP。对于背景较少的读者，我们准备了以下总结，从希望升级使用 Taproot 和 Tapscript 的现有钱包的角度来看这些提案的一些关键特性。这仅仅是这些提案所提供的功能的表面，开发人员一直在等待 Schnorr 签名和基于 MAST 的限制，因为它们提供了以前难以或无法在比特币上构建的新功能的构建模块。我们将这些进展的描述留到另一个时间，重点讨论这两个提案 BIP 如何使现有的比特币使用变得比现在更好。
 
@@ -37,11 +37,11 @@ lang: zh
 
 在我们讨论这些提案可能为比特币添加的功能之前，先看一些不属于提案的内容：
 
-- **<!--no-cross-input-signature-aggregation-->**没有跨输入签名聚合：就像当前的比特币交易一样，每个输入都需要包含其所有必要的签名。这意味着诸如合并和混币的交易不会获得任何特殊折扣。如果 Taproot 和 Tapscript 提案成为比特币的一部分，我们认为开发人员将继续寻找将跨输入签名聚合带入比特币的方法，但他们需要找到方法来解决在研究 bip-taproot 描述的高级技术时发现的[复杂性][sigagg complications]。（参见 [Newsletter #3][] 中在 [bip-schnorr][] 上下文中的相关讨论。）
+- **<!--no-cross-input-signature-aggregation-->****没有跨输入签名聚合：**就像当前的比特币交易一样，每个输入都需要包含其所有必要的签名。这意味着诸如合并和混币的交易不会获得任何特殊折扣。如果 Taproot 和 Tapscript 提案成为比特币的一部分，我们认为开发人员将继续寻找将跨输入签名聚合带入比特币的方法，但他们需要找到方法来解决在研究 bip-taproot 描述的高级技术时发现的[复杂性][sigagg complications]。（参见 [Newsletter #3][] 中在 [bip-schnorr][] 上下文中的相关讨论。）
 
-- **<!--no-new-sighash-types-->**没有新的 sighash 类型：尽管某些现有的 sighash 类型被稍微修改了一下，但提案并未提供类似于 [BIP118][] SIGHASH_NOINPUT 的任何内容。然而，bip-tapscript 提供了一种前向兼容机制（标记公钥），使未来的软分叉可以轻松扩展签名检查操作码以包含新的 sighash 类型或其他更改。
+- **<!--no-new-sighash-types-->****没有新的 sighash 类型：**尽管某些现有的 sighash 类型被稍微修改了一下，但提案并未提供类似于 [BIP118][] SIGHASH_NOINPUT 的任何内容。然而，bip-tapscript 提供了一种前向兼容机制（标记公钥），使未来的软分叉可以轻松扩展签名检查操作码以包含新的 sighash 类型或其他更改。
 
-- **<!--no-activation-mechanism-specified-->**没有指定激活机制：如果用户决定他们想开始执行软分叉的新规则，安全性要求足够多的用户在同一个区块开始执行新规则，以阻止矿工创建违反新规则的区块。过去使用了各种机制来实现这一点，并描述了其他选项供未来使用。然而，bip-taproot 并未提及这些技术。Optech 同意 BIP 主要作者的观点，[激活讨论为时过早][discuss activation]。我们首先需要确保对提案的安全性和可取性达成广泛共识，然后再开始讨论最佳的激活方式。
+- **<!--no-activation-mechanism-specified-->****没有指定激活机制：**如果用户决定他们想开始执行软分叉的新规则，安全性要求足够多的用户在同一个区块开始执行新规则，以阻止矿工创建违反新规则的区块。过去使用了各种机制来实现这一点，并描述了其他选项供未来使用。然而，bip-taproot 并未提及这些技术。Optech 同意 BIP 主要作者的观点，[激活讨论为时过早][discuss activation]。我们首先需要确保对提案的安全性和可取性达成广泛共识，然后再开始讨论最佳的激活方式。
 
 ### 使用 Taproot 的单签名支出
 
@@ -130,7 +130,7 @@ lang: zh
 
 对于聚合，创建两个或更多私钥并派生其公钥。然后将公钥组合成一个与任何其他比特币公钥无法区分的公钥。这被用作前一小节中描述的 segwit 见证程序。之后，部分或全部私钥的拥有者创建签名，这些签名被组合成一个与任何其他 bip-schnorr 签名无法区分的签名。这必须如前一小节中所述提交到相同的交易摘要，但结果是一个完全无法区分于单签名支出的多重签名支出。
 
-您可能已经注意到前一段在聚合密钥和签名的确切机制上是模糊的。原因是有多种已知方法，参与者可以使用其中的任何一种。研究人员甚至可以找到新方法并在比特币钱包中实现它们，而无需任何共识更改。这是因为签名算法只需要一个公钥和一个单签名，它们在上述单签名小节中描述的规则下有效。也就是说，在已知的方法中，[MuSig 协议][musig] 可能是在比特币上下文中研究最深入的聚合协议。
+您可能已经注意到前一段在聚合密钥和签名的确切机制上是模糊的。原因是有多种已知方法，参与者可以使用其中的任何一种。研究人员甚至可以找到新方法并在比特币钱包中实现它们，而无需任何共识更改。这是因为签名算法只需要一个公钥和一个单签名，它们在上述单签名小节中描述的规则下有效。也就是说，在已知的方法中，[MuSig 协议][musig]可能是在比特币上下文中研究最深入的聚合协议。
 
 无论有多少签名者，聚合密钥和签名所用的字节数都是完全相同的。这可以与 P2WSH 多重签名相比，后者每增加一个公钥增加 8.50 vbytes，每增加一个签名增加约 18.25 vbytes。
 
@@ -264,7 +264,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案(BIPs)][bips repo]中的值得注意的更改。*
 
 - [Bitcoin Core #15730][] 扩展了 `getwalletinfo` RPC，增加了一个 `scanning` 字段，告知用户程序在重新扫描区块链以查找影响其钱包的交易（如果用户请求重新扫描或自动触发）的进度。否则，它仅返回 `false`。
 
@@ -283,7 +283,6 @@ wiki page for changes -->{% endcomment %}
 [^vbytes-decimal]:
   技术上，vbytes 是一个整数单位，使其与传统的比特币区块权重中的字节单位向后兼容。
   我们在本文档中将其用作浮点单位以获得更高的精度。
-
 
 
 {% include linkers/issues.md issues="15730,15930,2524,15939" %}
