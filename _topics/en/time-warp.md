@@ -39,6 +39,9 @@ optech_mentions:
   - title: "Question: where exactly is the 'off-by-one' difficulty bug and how does it relate to time warp?"
     url: /en/newsletters/2024/04/24/#where-exactly-is-the-off-by-one-difficulty-bug
 
+  - title: "Draft BIP for testnet4 includes fix for time warp attack"
+    url: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal
