@@ -74,5 +74,5 @@ lang: zh
 [sqcrypto announced]: https://twitter.com/jack/status/1108487911802966017
 [taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [v2 transport]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
 [newsletter #10]: /zh/newsletters/2018/08/28//#pr-opened-for-initial-bip151-support
