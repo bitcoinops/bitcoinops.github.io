@@ -46,7 +46,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #41][].*
 
-{% include specials/bech32/04-ecc.md %}
+{% include specials/bech32/zh/04-ecc.md %}
 
 ## 使用原生 segwit 节省费用
 
@@ -174,7 +174,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #38]: /zh/newsletters/2019/03/19/#bech32-发送支持
 [newsletter #39]: /zh/newsletters/2019/03/26/#bech32-发送支持
 [newsletter #40]: /zh/newsletters/2019/04/02/#bech32-发送支持
-[newsletter #41]: /en/newsletters/2019/04/09/#bech32-sending-support
+[newsletter #41]: /zh/newsletters/2019/04/09/#bech32-发送支持
 [newsletter #42]: /en/newsletters/2019/04/16/#bech32-sending-support
 [newsletter #43]: /en/newsletters/2019/04/23/#bech32-sending-support
 [newsletter #44]: /en/newsletters/2019/04/30/#bech32-sending-support
