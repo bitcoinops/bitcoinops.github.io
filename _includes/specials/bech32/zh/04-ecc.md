@@ -94,5 +94,5 @@ pos: Array [ 43 ]
 [javascript sample code]: https://github.com/sipa/bech32/tree/master/ecc/javascript
 [interactive demo]: http://bitcoin.sipa.be/bech32/demo/demo.html
 [bech32 errors]: https://github.com/sipa/bech32/blob/master/ecc/javascript/segwit_addr_ecc.js#L54
-[newsletter #40 bech32]: /en/newsletters/2019/04/02/#bech32-sending-support
+[newsletter #40 bech32]: /zh/newsletters/2019/04/02/#bech32-发送支持
 [newsletter #41 bech32]: /zh/newsletters/2019/04/09/#bech32-发送支持
