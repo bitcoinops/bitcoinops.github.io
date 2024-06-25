@@ -41,7 +41,7 @@ popular Bitcoin infrastructure software.
 
   Anyone operating an LND node should upgrade to version 0.17.0 or
   above.  Upgrading to the latest version (0.18.0 at the time of
-  writing) is always recommended.
+  writing) is always recommended. {% assign timestamp="0:54" %}
 
 - **Continued discussion of PSBTs for silent payments:** several
   developers have been discussing adding support for coordinating the
@@ -65,7 +65,7 @@ popular Bitcoin infrastructure software.
 
   All active participants in the discussion at the time of writing seem
   roughly agreed on this approach, although discussion of edge cases is
-  continuing.
+  continuing. {% assign timestamp="7:32" %}
 
 ## Changes to services and client software
 
@@ -74,40 +74,40 @@ wallets and services.*
 
 - **Casa adds descriptor support:**
   In a [blog post][casa blog], multisig service provider Casa announced support
-  for [output script descriptors][topic descriptors].
+  for [output script descriptors][topic descriptors]. {% assign timestamp="10:55" %}
 
 - **Specter-DIY v1.9.0 released:**
   The [v1.9.0][specter-diy v1.9.0] release adds support for taproot [miniscript][topic
-  miniscript] and a [BIP85][] app, among other changes.
+  miniscript] and a [BIP85][] app, among other changes. {% assign timestamp="40:52" %}
 
 - **Constant-time analysis tool cargo-checkct announced:**
   A Ledger [blog post][ledger cargo-checkct blog] announced
   [cargo-checkct][cargo-checkct github], a tool that evaluates whether Rust
   cryptographic libraries run in constant time to avoid [timing
-  attacks][topic side channels].
+  attacks][topic side channels]. {% assign timestamp="41:26" %}
 
 - **Jade adds miniscript support:**
-  The Jade hardware signing device firmware [now supports][jade tweet] miniscript.
+  The Jade hardware signing device firmware [now supports][jade tweet] miniscript. {% assign timestamp="43:15" %}
 
 - **Ark implementation announced:**
   Ark Labs [announced][ark labs blog] a few initiatives around the [Ark
   protocol][topic ark] including an [Ark implementation][ark github] and
-  [developer resources][ark developer hub].
+  [developer resources][ark developer hub]. {% assign timestamp="45:32" %}
 
 - **Volt Wallet beta announced:**
   [Volt Wallet][volt github] supports descriptors, [taproot][topic taproot],
-  [PSBTs][topic psbt], and other BIPs, plus Lightning.
+  [PSBTs][topic psbt], and other BIPs, plus Lightning. {% assign timestamp="46:42" %}
 
 - **Joinstr adds electrum support:**
   [Coinjoin][topic coinjoin] software [joinstr][news214 joinstr] added an [electrum
-  plugin][joinstr blog].
+  plugin][joinstr blog]. {% assign timestamp="47:20" %}
 
 - **Bitkit v1.0.1 released:**
   Bitkit [announced][bitkit blog] its self-custodial Bitcoin and Lightning
-  mobile apps moved out of beta and are available on mobile app stores.
+  mobile apps moved out of beta and are available on mobile app stores. {% assign timestamp="47:50" %}
 
 - **Civkit alpha announced:**
-  [Civkit][civkit tweet] is a P2P trading marketplace built on nostr and the Lightning Network.
+  [Civkit][civkit tweet] is a P2P trading marketplace built on nostr and the Lightning Network. {% assign timestamp="48:20" %}
 
 ## Releases and release candidates
 
@@ -117,7 +117,7 @@ release candidates.*
 
 - [Bitcoin Core 26.2rc1][] is a release candidate for a maintenance
   version of Bitcoin Core for users who cannot upgrade to the latest
-  [27.1 release][bcc 27.1].
+  [27.1 release][bcc 27.1]. {% assign timestamp="49:01" %}
 
 ## Notable code and documentation changes
 
@@ -138,40 +138,40 @@ repo], and [BINANAs][binana repo]._
   failure (see [Newsletter #286][news286 btcd]).  By always storing and
   using transaction versions using unsigned integers, it is hoped that
   any future Bitcoin implementations based on reading Bitcoin Core's
-  code will use the correct type.
+  code will use the correct type. {% assign timestamp="50:11" %}
 
 - [Eclair #2867][] defines a new type of `EncodedNodeId` to be assigned for
   mobile wallets in a [blinded path][topic rv routing]. This allows a wallet
   provider to be notified that the next node is a mobile device, enabling them
-  to account for mobile-specific conditions.
+  to account for mobile-specific conditions. {% assign timestamp="52:04" %}
 
 - [LND #8730][] introduces a RPC command `lncli wallet estimatefee` which
   receives a confirmation target as input and returns a [fee estimation][topic fee estimation] for
   on-chain transactions in both sat/kw (satoshis per kilo-weight unit) and
-  sat/vbyte.
+  sat/vbyte. {% assign timestamp="52:33" %}
 
 - [LDK #3098][] updates LDK's Rapid Gossip Sync (RGS) to v2, which extends v1 by
   adding additional fields in the serialized structure. These new fields include
   a byte indicating the number of default node features, an array of node
   features, and supplemental feature or socket address information following
   each node public key. This update is distinct from the proposed [BOLT7][] gossip update
-  similarly referred to as gossip v2.
+  similarly referred to as gossip v2. {% assign timestamp="28:14" %}
 
 - [LDK #3078][] adds support for asynchronous payment of [BOLT12][topic offers]
   invoices by generating an `InvoiceReceived` event upon reception if the
   configuration option `manually_handle_bolt12_invoices` is set. A new command
   `send_payment_for_bolt12_invoice` is exposed on `ChannelManager` to pay the
   invoice.  This can allow code to evaluate an invoice before deciding
-  whether to pay or reject it.
+  whether to pay or reject it. {% assign timestamp="32:35" %}
 
 - [LDK #3082][] introduces BOLT12 static invoice (reusable payment request)
   support by adding an encoding and parsing interface, and builder methods to
   construct a BOLT12 static invoice as a response to `InvoiceRequest` from an
-  [offer][topic offers].
+  [offer][topic offers]. {% assign timestamp="33:53" %}
 
 - [LDK #3103][] begins using a performance scorer in benchmarks based on
   frequent [probes][topic payment probes] of actual payment paths.  The
-  hope is that this results in more realistic benchmarks.
+  hope is that this results in more realistic benchmarks. {% assign timestamp="35:18" %}
 
 - [LDK #3037][] begins force closing channels if their feerate is stale
   and too low.  LDK continuously keeps track of the lowest acceptable
@@ -179,7 +179,7 @@ repo], and [BINANAs][binana repo]._
   day.  Each block, LDK will close any channel that pays a feerate below
   that past-day minimum.  The goal is "to ensure that channel feerates
   are always sufficient to get our commitment transaction confirmed
-  on-chain if we need to force close".
+  on-chain if we need to force close". {% assign timestamp="38:07" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
