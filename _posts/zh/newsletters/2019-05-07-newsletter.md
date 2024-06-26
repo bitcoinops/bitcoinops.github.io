@@ -23,7 +23,7 @@ lang: zh
 
   - **<!--initial-rpc-support-for-output-script-descriptors-->***初步 RPC 支持输出脚本描述符：* 比特币软件需要一种方法来找到区块链上支付给用户钱包的所有交易。如果钱包只支持一种 scriptPubKey 格式——例如，对于 P2PKH，钱包会哈希每个公钥并查找支付给 `0x76a9[钱包公钥的 hash160]88ac` 的任何 scriptPubKey，这很容易。但 Bitcoin Core 的内置钱包目前支持多种不同的 scriptPubKey 格式——P2PK、P2PKH、P2WPKH、裸多重签名、P2SH 承诺和 P2WSH 承诺。这提供了灵活性和向后兼容性，但也带来了较差的可扩展性：钱包在扫描旧的或罕见的脚本时消耗了 CPU 时间，而大多数用户从未使用过这些脚本。
 
-    [输出脚本描述符][Output script descriptors] 是 Pieter Wuille 开发的一种新语言，用于简洁地描述 scriptPubKeys 以便钱包准确知道应该扫描什么。最终目标是让 Bitcoin Core 的钱包包含一个描述所有脚本的简单描述符列表——对于大多数用户来说，这个列表可能只有一个描述符，但支持未来升级和高级用例（包括多重签名和硬件签名）的广泛灵活性；请参见 PR [#15487][Bitcoin Core #15487] 和 [#15764][Bitcoin Core #15764] 以了解实现此目标的工作。然而，为了让用户和项目开发人员在对钱包进行根本性更改之前积累使用描述符的经验，0.18 版本更新了现有 RPC 并添加了新的 RPC 来处理描述符。带有描述符支持的现有 RPC 包括 `scantxoutset`、`importmulti`、`getaddressinfo` 和 `listunspent`。新的 RPC 包括 `deriveaddresses` 和 `getdescriptorinfo`。
+    [输出脚本描述符][Output script descriptors]是 Pieter Wuille 开发的一种新语言，用于简洁地描述 scriptPubKeys 以便钱包准确知道应该扫描什么。最终目标是让 Bitcoin Core 的钱包包含一个描述所有脚本的简单描述符列表——对于大多数用户来说，这个列表可能只有一个描述符，但支持未来升级和高级用例（包括多重签名和硬件签名）的广泛灵活性；请参见 PR [#15487][Bitcoin Core #15487] 和 [#15764][Bitcoin Core #15764] 以了解实现此目标的工作。然而，为了让用户和项目开发人员在对钱包进行根本性更改之前积累使用描述符的经验，0.18 版本更新了现有 RPC 并添加了新的 RPC 来处理描述符。带有描述符支持的现有 RPC 包括 `scantxoutset`、`importmulti`、`getaddressinfo` 和 `listunspent`。新的 RPC 包括 `deriveaddresses` 和 `getdescriptorinfo`。
 
   - **<!--basic-hardware-signer-support-through-independent-tool-->***通过独立工具提供基本的硬件签名支持：* 虽然与 0.18 分开发布，但仍然是 Bitcoin Core 项目的一部分，[硬件钱包交互][HWI](HWI)工具允许熟悉命令行的用户使用 Bitcoin Core 与几种流行的硬件钱包一起工作。内部，该工具大量使用 PSBT 和输出脚本描述符，使其可以与支持这些接口的其他钱包（例如 [Wasabi 钱包的实验性支持][wasabi hwi]）集成。已经开始了将 HWI 更直接地与主要的 Bitcoin Core 工具集成并为其构建图形界面的工作。
 
@@ -65,7 +65,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案(BIPs)][bips repo]中的值得注意的变化。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的变化。*
 
 - [Bitcoin Core #15323][] 更新了 `getmempoolinfo` RPC 和 `/rest/mempool/info.json` REST 端点，使它们返回一个 `loaded` 字段，如果保存的内存池已从磁盘完全加载，则为 *true*，如果仍在加载，则为 *false*。
 
@@ -73,7 +73,7 @@ wiki page for changes -->{% endcomment %}
 
 {% comment %}<!-- This was direct pushed (no PR): https://github.com/lightningd/plugins/commit/187c66a9b1412edced3c51cb53ba568f245a5614 -->{% endcomment %}
 
-- [C-Lightning 插件库][C-Lightning plugin repository]接收了一个[自动驾驶][cl autopilot]插件，该插件可以帮助用户选择一个或多个通道以开始发送闪电网络支付。该插件基于之前对主 C-Lightning 代码库的 [PR][C-Lightning #1888]。
+- **<!--c-lightning-plugin-repository-->**[C-Lightning 插件库][C-Lightning plugin repository]接收了一个[自动驾驶][cl autopilot]插件，该插件可以帮助用户选择一个或多个通道以开始发送闪电网络支付。该插件基于之前对主 C-Lightning 代码库的 [PR][C-Lightning #1888]。
 
 {% include linkers/issues.md issues="15487,15764,15323,15141,1888" %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
