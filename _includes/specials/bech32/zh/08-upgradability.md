@@ -26,5 +26,5 @@ bc1pqzkqvpm76ewe20lcacq740p054at9sv7vxs0jn2u0r90af0k63332hva8pt
 ```
 
 这意味着任何以 Newsletter #40 中描述的通用方式实现 Bech32 支持的人都不需要做任何特殊的事情来支持未来的脚本升级。简而言之，您现在提供 Bech32 发送支持的工作将来在比特币协议的预期变化部署时无需重复。
-```
+
 [news40 bech32]: /zh/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses
