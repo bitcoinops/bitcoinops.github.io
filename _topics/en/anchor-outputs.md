@@ -74,6 +74,9 @@ optech_mentions:
   - title: "LND #4558 updates LND to the latest anchor outputs specification"
     url: /en/newsletters/2020/09/16/#lnd-4558
 
+  - title: "Vulnerability disclosed against experimenal anchor outputs proposal"
+    url: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
+
   - title: "LND #4606 & #4592 improve LND's effectiveness at fee bumping anchor outputs"
     url: /en/newsletters/2020/09/23/#lnd-4606
 
@@ -166,6 +169,9 @@ optech_mentions:
 
   - title: "Eclair #2816 allows the node operator to choose the max fee for an anchor output"
     url: /en/newsletters/2024/02/14/#eclair-2816
+
+  - title: "Core Lightning #7388 removes the ability to create old non-zero-fee anchor-style channels"
+    url: /en/newsletters/2024/06/28/#core-lightning-7388
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
