@@ -6,6 +6,70 @@ slug: 2024-06-14-newsletter
 type: newsletter
 layout: newsletter
 lang: en
+
+review-club:
+  summary: |
+    [Don't wipe indexes again when continuing a prior reindex][review club
+    30132] is a PR by [TheCharlatan][gh thecharlatan] that can improve
+    startup time when a user restarts their node before an ongoing reindex
+    has completed.
+
+    Bitcoin Core implements five indexes. The UTXO set and the block index
+    are required, whereas the transaction index, [compact block
+    filter][topic compact block filters] index, and coinstats index are
+    optional. When running with `-reindex`, all indexes are wiped and
+    rebuilt. This process can take quite a while, and it is not guaranteed
+    to finish before the node is stopped for any reason.
+
+    Because the node needs an up-to-date UTXO set and block index,
+    the reindexing status is persisted on disk. When a reindex is started, a
+    flag is [set][reindex flag set], and it will only be unset when the
+    reindex is finished. This way, when the node starts, it can detect that
+    it should continue reindexing, even if the user didn’t provide the flag
+    as a startup option.
+
+    When restarting (without `-reindex`) after an unfinished reindex, the
+    required indexes are preserved and will continue to be rebuilt.
+    Before [Bitcoin Core #30132][], the optional indexes would be wiped a
+    second time. [Bitcoin Core #30132][] can make node startup more
+    efficient by avoiding the wiping of the optional indexes when not
+    necessary.
+
+  qa:
+    - question: What is the behavior change introduced by this PR?
+      answer: |
+        Behaviour is changed in three ways. First, as per the goal of this
+        PR, optional indexes are no longer wiped again when the node is
+        restarted before reindexing is completed. This aligns the wiping
+        behavior of optional indexes with that of required indexes. Second,
+        when a user requests a reindex through the GUI, this request is no
+        longer ignored, reversing a subtle bug introduced in [b47bd95][gh
+        b47bd95]. Third, the log line "Initializing databases...\\n" is
+        removed.
+      link: https://bitcoincore.reviews/30132#l-19
+
+    - question: What are the two ways an optional index can process new blocks?
+      answer: |
+        When an optional index is initialized, it checks if its highest
+        block is the same as the current chaintip. If it is not, it will first
+        process all missing blocks with a background sync, through
+        `BaseIndex::StartBackgroundSync()`. When the index catches up
+        with the chaintip, it will process all further blocks through the
+        validation interface using `ValidationSignals::BlockConnected`.
+      link: https://bitcoincore.reviews/30132#l-52
+
+    - question: How does this PR affect the logic of optional indexes processing new blocks?
+      answer: |
+        Before this PR, wiping the optional indexes without wiping the
+        chainstate means these indexes will be considered out-of-sync. As per
+        the previous question, that means they will first perform a background
+        sync before switching to the validation interface. With this PR, the
+        optional indexes remain in sync with the chainstate, and as such no
+        background sync is required. Note: background sync only starts after
+        reindex has completed, whereas processing validation events happens in
+        parallel.
+      link: https://bitcoincore.reviews/30132#l-70
+
 ---
 This week's newsletter announces a draft BIP for a quantum-safe Bitcoin
 address format and includes our regular sections with the summary of a
@@ -32,67 +96,9 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-[Don't wipe indexes again when continuing a prior reindex][review club
-30132] is a PR by [TheCharlatan][gh thecharlatan] that can improve
-startup time when a user restarts their node before an ongoing reindex
-has completed.
-
-Bitcoin Core implements five indexes. The UTXO set and the block index
-are required, whereas the transaction index, [compact block
-filter][topic compact block filters] index, and coinstats index are
-optional. When running with `-reindex`, all indexes are wiped and
-rebuilt. This process can take quite a while, and it is not guaranteed
-to finish before the node is stopped for any reason.
-
-Because the node needs an up-to-date UTXO set and block index,
-the reindexing status is persisted on disk. When a reindex is started, a
-flag is [set][reindex flag set], and it will only be unset when the
-reindex is finished. This way, when the node starts, it can detect that
-it should continue reindexing, even if the user didn’t provide the flag
-as a startup option.
-
-When restarting (without `-reindex`) after an unfinished reindex, the
-required indexes are preserved and will continue to be rebuilt.
-Before [Bitcoin Core #30132][], the optional indexes would be wiped a
-second time. [Bitcoin Core #30132][] can make node startup more
-efficient by avoiding the wiping of the optional indexes when not
-necessary.
+{% include functions/review-club.md %}
 
 {% assign timestamp="23:28" %}
-
-{% include functions/details-list.md
-  q0="What is the behavior change introduced by this PR?"
-  a0="Behaviour is changed in three ways. First, as per the goal of this
-  PR, optional indexes are no longer wiped again when the node is
-  restarted before reindexing is completed. This aligns the wiping
-  behavior of optional indexes with that of required indexes. Second,
-  when a user requests a reindex through the GUI, this request is no
-  longer ignored, reversing a subtle bug introduced in [b47bd95][gh
-  b47bd95]. Third, the log line \"Initializing databases...\\n\" is
-  removed."
-  a0link="https://bitcoincore.reviews/30132#l-19"
-
-  q1="What are the two ways an optional index can process new blocks?"
-  a1="When an optional index is initialized, it checks if its highest
-  block is the same as the current chaintip. If it is not, it will first
-  process all missing blocks with a background sync, through
-  `BaseIndex::StartBackgroundSync()`. When the index catches up
-  with the chaintip, it will process all further blocks through the
-  validation interface using `ValidationSignals::BlockConnected`."
-  a1link="https://bitcoincore.reviews/30132#l-52"
-
-  q2="How does this PR affect the logic of optional indexes processing
-  new blocks?"
-  a2="Before this PR, wiping the optional indexes without wiping the
-  chainstate means these indexes will be considered out-of-sync. As per
-  the previous question, that means they will first perform a background
-  sync before switching to the validation interface. With this PR, the
-  optional indexes remain in sync with the chainstate, and as such no
-  background sync is required. Note: background sync only starts after
-  reindex has completed, whereas processing validation events happens in
-  parallel."
-  a2link="https://bitcoincore.reviews/30132#l-70"
-%}
 
 ## Releases and release candidates
 
