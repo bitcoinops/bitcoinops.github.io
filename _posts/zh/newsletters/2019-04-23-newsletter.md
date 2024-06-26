@@ -73,8 +73,8 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15555,14121,15839,14897,15776,15834,15557,885,2541,2545,2546,951,927,2382" %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
-[bech32 series]: /en/bech32-sending-support/
-[rbf core fail]: /en/rbf-in-the-wild/#bitcoin-core-increase-transaction-fee-almost
+[bech32 series]: /zh/bech32-sending-support/
+[rbf core fail]: /zh/rbf-in-the-wild/#bitcoin-core差点增加交易费用
 [million channels project]: https://github.com/rustyrussell/million-channels-project
 [bfg post]: https://medium.com/@rusty_lightning/routing-dijkstra-bellman-ford-and-bfg-7715840f004
 [dijkstra]: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
