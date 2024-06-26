@@ -73,7 +73,7 @@ wiki page for changes -->{% endcomment %}
 
 {% comment %}<!-- This was direct pushed (no PR): https://github.com/lightningd/plugins/commit/187c66a9b1412edced3c51cb53ba568f245a5614 -->{% endcomment %}
 
-- [C-Lightning 插件库][] 接收了一个[自动驾驶][cl autopilot]插件，该插件可以帮助用户选择一个或多个通道以开始发送闪电网络支付。该插件基于之前对主 C-Lightning 代码库的 [PR][C-Lightning #1888]。
+- [C-Lightning 插件库][C-Lightning plugin repository]接收了一个[自动驾驶][cl autopilot]插件，该插件可以帮助用户选择一个或多个通道以开始发送闪电网络支付。该插件基于之前对主 C-Lightning 代码库的 [PR][C-Lightning #1888]。
 
 {% include linkers/issues.md issues="15487,15764,15323,15141,1888" %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
