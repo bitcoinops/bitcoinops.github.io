@@ -171,7 +171,9 @@ inquisition]_
   de frais des canaux sont toujours suffisants pour faire confirmer notre transaction d'engagement
   on-chain si nous devons fermer de force".
 
-{% include snippets/recap-ad.md when=quatre_jours_après_publication %}{% include references.md %}
+{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
+{% include snippets/recap-ad.md when=four_days_after_posting %}
+{% include references.md %}
 {% include linkers/issues.md v=2 issues="2867,8730,3098,3078,3082,3103,3037,29325" %}
 [news304 sp-psbt]: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
 [news58 variable onions]: /en/newsletters/2019/08/07/#bolts-619
