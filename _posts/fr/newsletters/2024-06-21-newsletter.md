@@ -119,12 +119,14 @@ les versions candidates.*
 
 ## Changements notables dans le code et la documentation
 
-_Changes récents notables dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
-repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo],
-[Interface de Portefeuille Matériel (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [Serveur
-BTCPay][btcpay server repo], [BDK][bdk repo], [Propositions d'Amélioration de Bitcoin (BIPs)][bips
-repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips repo], [Inquisition Bitcoin][bitcoin
-inquisition]_
+_Changes récents notables dans [Bitcoin Core][bitcoin core repo], [Core
+Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
+Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
+Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
+repo], and [BINANAs][binana repo]._
 
 - [Bitcoin Core #29325][] commence à stocker les versions de transaction comme des entiers non
   signés. Depuis la version originale de Bitcoin 0.1, elles étaient stockées comme des entiers signés.
