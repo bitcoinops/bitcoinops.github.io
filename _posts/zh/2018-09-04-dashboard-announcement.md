@@ -17,8 +17,8 @@ excerpt: >
 这个夏天，我作为 [Bitcoin Optech](/) 的一名实习生，致力于一个比特币指标仪表盘的开发。在这篇文章中，我将描述仪表盘的目的以及其实现方式。
 
 Optech 仪表盘的目标是展示一系列关于如何有效利用区块空间的指标。重要的指标是那些显示活动的指标，例如：
- - **<!--batching-->[批处理](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Payment_batching)：** 将本可以作为多个不同交易的输出合并到一个交易中
- - **<!--consolidations-->[合并](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation)：**在低费用时期将多个 UTXO 合并为一个 UTXO，以避免将来支付更高的费用
+ - **<!--batching-->**[批处理](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Payment_batching)： 将本可以作为多个不同交易的输出合并到一个交易中
+ - **<!--consolidations-->**[合并](https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation)：在低费用时期将多个 UTXO 合并为一个 UTXO，以避免将来支付更高的费用
  - 粉尘创建：在不同的费率下，创建的 UTXO 花费成本高于其价值
  - 隔离见证采用：创建和从隔离见证输出中花费
 
