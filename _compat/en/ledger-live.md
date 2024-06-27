@@ -76,6 +76,7 @@ segwit:
     #    Ledger Live displays an error during hardware device signing when trying
     #    to send to a segwit v1 address.
 ---
+
 <!-- Ledger Live -->
 
 {% assign tool = page %}

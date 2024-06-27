@@ -61,6 +61,7 @@ segwit:
     #    Jaxx displays a validation error when trying to send to a segwit v1
     #    address (or any other bech32 address).
 ---
+
 <!-- Jaxx -->
 
 {% assign tool = page %}

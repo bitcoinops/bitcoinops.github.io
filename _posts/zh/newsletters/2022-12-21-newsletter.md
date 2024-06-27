@@ -207,6 +207,7 @@ Lloyd Fournier [写了一篇][news213 bls]关于 [DLC][topic dlc] 预言机使�
 ### 2022 总结<br>Bitcoin Optech
 
 在 Optech 的第五年，我们发布了 51 份[周报][newsletters]，并在我们的[主题索引][topics index]中新增了 11 个页面。 Optech 今年总共发表了超过 70,000 字的有关比特币软件研发的文章，大致相当于一本 200 页的书。
+
 <!-- wc -w _posts/en/newsletters/2022-* ; a typical book has about 350 words per page -->
 
 </div>

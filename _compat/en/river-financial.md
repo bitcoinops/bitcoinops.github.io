@@ -61,6 +61,7 @@ segwit:
       caption: >
         River supports withdrawals to legacy and segwit addresses.
 ---
+
 <!-- River Financial -->
 
 {% assign tool = page %}
