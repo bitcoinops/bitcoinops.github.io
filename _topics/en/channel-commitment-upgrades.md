@@ -38,6 +38,9 @@ optech_mentions:
   - title: Analysis of multiple proposals for upgrading LN channels
     url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
 
+  - title: "BOLTs #869 introduces a new channel quiescence protocol, in part for channel upgrades"
+    url: /en/newsletters/2024/06/28/#bolts-869
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anchor outputs

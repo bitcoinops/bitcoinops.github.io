@@ -143,33 +143,83 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #29575][] net_processing: make any misbehavior trigger immediate discouragement
+- [Bitcoin Core #29575][] simplifies the peer misbehavior scoring system to only
+  use two increments: 100 points (results in immediate disconnection and
+  discouragement) and 0 points (allowed behavior). Most types of misbehaviors
+  are avoidable and have been bumped to a score of 100, while two
+  behaviors that honest and correctly functioning nodes might perform
+  under certain circumstances have been reduced to 0. This PR also
+  removes the heuristic that only considers P2P `headers` messages
+  containing a maximum of eight block headers as a possible [BIP130][]
+  announcement of a new block. Bitcoin Core now treats all `headers`
+  messages that don't connect to a block tree known by the node as
+  potential new block announcements and requests any missing blocks.
 
-- [Bitcoin Core #28984][] Cluster size 2 package rbf
+- [Bitcoin Core #28984][] adds support for a limited version of
+  [replace-by-fee][topic rbf] for [packages][topic package relay]
+  with clusters of size two (one parent, one child), including
+  Topologically Restricted Until Confirmation ([TRUC][topic v3 transaction
+  relay]) transactions (aka v3 transactions). These clusters can only replace an
+  existing cluster of the same size or smaller. See [Newsletter #296][news296
+  packagerbf] for related context.
 
-- [Core Lightning #7388][] no longer allow creation of old
-  (experimental-only!) non-zero-fee anchor channels. [...] We still
-  support existing ones, though we were the only implementation which
-  ever did, and only in experimental mode, so we should be able to
-  upgrade them and avoid a forced close, with a bit of engineering...
+- [Core Lightning #7388][] removes the ability to create non-zero-fee
+  [anchor-style][topic anchor outputs] channels to conform to changes in
+  the BOLT specification made in 2021 (see [Newsletter #165][news165
+  anchors]), while maintaining support for existing channels. Core
+  Lightning was the only implementation fully add this, and only in
+  experimental mode, before it was discovered to be insecure (see
+  [Newsletter #115][news115 anchors]) and replaced with zero-fee anchor
+  channels. Other updates include rejecting `encrypted_recipient_data`
+  containing both `scid` and `node`, parsing LaTeX formatting added to
+  the onion specification,
+  and other BOLT specification changes mentioned in Newsletters [#259][news259
+  bolts] and [#305][news305 bolts].
 
-  Harding notes: there's a lot of updates in this PR.  I think we've
-  discussed most of them in the past, so a quick mention for them is
-  fine but what I think is really worth announcing in this item are the
-  changes in commit
-  https://github.com/ElementsProject/lightning/pull/7388/commits/27a846a133832b6629231440b72f085c096e28d5
+- [LND #8734][] improves the payment route estimation abort process when a user
+  interrupts the `lncli estimateroutefee` RPC command by making the payment loop
+  aware of the client's streaming context. Previously, interrupting this command
+  would cause the server to continue [payment probing][topic payment probes]
+  routes unnecessarily. See Newsletter [#293][news293 routefee] for a previous
+  reference to this command.
 
-- [LND #8734][] routing: cancelable payment loop
+- [LDK #3127][] implements non-strict forwarding to improve payment reliability,
+  as specified in [BOLT4][], allowing [HTLCs][topic htlc] to be forwarded to a
+  peer through channels other than the one specified by `short_channel_id` in
+  the onion message. Channels with the least amount of outbound liquidity that
+  can pass the HTLC are selected to maximize the probability of success for
+  subsequent HTLCs.
 
-- [LDK #3127][] Implement non-strict forwarding
+- [Rust Bitcoin #2794][] implements the enforcement of the redeem script size
+  limit of 520 bytes for P2SH and of the witness script size limit of 10,000
+  bytes for P2WSH by adding fallible constructors to `ScriptHash` and
+  `WScriptHash`.
 
-- [Rust Bitcoin #2794][]
+- [BDK #1395][] removes the `rand` dependency in both explicit and implicit
+  usage, replacing it with `rand-core` to simplify dependencies, avoid the added
+  complexity of `thread_rng` and `getrandom`, and provide greater flexibility by
+  allowing users to pass their own Random Number Generators (RNGs).
 
-- [BDK #1395][] Remove `rand` dependency from `bdk`
+- [BIPs #1620][] and [BIPs #1622][] add changes to [BIP352][]
+  specification of [silent payments][topic silent payments].
+  Discussions in the PR implementing silent payments in the `secp256k1` library
+  recommend adding corner-case handling to [BIP352][], specifically to handle
+  invalid private/public key sums for sending and scanning: fail if private key
+  sum is zero (for sender), and fail if public key sum is point at infinity (for
+  receiver). In #1622, BIP352 is changed to calculate `input_hash`
+  after key aggregation, not before, to reduce redundancy and make the process
+  clearer for both sender and receiver.
 
-- [BIPs #1620][] and [#1622][bips #1622] BIP-352: handle invalid privkey / pubkey sums for sending / scanning, add changelog / BIP-352: generate `input_hash` after summing up keys (simplification)
-
-- [BOLTs #869][] BOLT 2: quiescence protocol (feature 34/35) option_quiesce
+- [BOLTs #869][] introduces a new channel quiescence protocol on BOLT2, which
+  aims to make [protocol upgrades][topic channel commitment upgrades]
+  and major changes to payment channels safer and
+  more efficient by ensuring a stable channel state during the process. The
+  protocol introduces a new message type, `stfu` (SomeThing Fundamental is
+  Underway), which can only be sent if the `option_quiesce` has been negotiated.
+  Upon sending `stfu`, the sender stops all update messages. The receiver should
+  then stop sending updates and respond with `stfu` if possible, so that the
+  channel becomes completely quiescent. See Newsletters [#152][news152
+  quiescence] and [#262][news262 quiescence].
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -179,3 +229,11 @@ repo], and [BINANAs][binana repo]._
 [pickhardt feasible1]: https://delvingbitcoin.org/t/estimating-likelihood-for-lightning-payments-to-be-in-feasible/973
 [pickhardt feasible2]: https://delvingbitcoin.org/t/estimating-likelihood-for-lightning-payments-to-be-in-feasible/973/4
 [lnd v0.18.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.1-beta
+[news296 packagerbf]: /en/newsletters/2024/04/03/#bitcoin-core-29242
+[news259 bolts]: /en/newsletters/2024/05/31/#bolts-1092
+[news305 bolts]:/en/newsletters/2023/07/12/#ln-specification-clean-up-proposed
+[news293 routefee]: /en/newsletters/2024/03/13/#lnd-8136
+[news152 quiescence]: /en/newsletters/2021/06/09/#c-lightning-4532
+[news262 quiescence]:/en/newsletters/2023/08/02/#eclair-2680
+[news115 anchors]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
+[news165 anchors]: /en/newsletters/2021/09/08/#bolts-824

@@ -124,6 +124,9 @@ optech_mentions:
   - title: "Bitcoin Core #30000 indexes orphan txes by wtxid, removing a problem with orphan-based package relay"
     url: /en/newsletters/2024/05/24/#bitcoin-core-30000
 
+  - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
+    url: /en/newsletters/2024/06/28/#bitcoin-core-28984
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping

@@ -186,6 +186,9 @@ optech_mentions:
   - title: "Question about the size of transactions that opt-in to RBF, opt-out of RBF, and replacements"
     url: /en/newsletters/2024/04/24/#are-replacement-transactions-larger-in-size-than-their-predecessors-and-than-non-rbf-transactions
 
+  - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
+    url: /en/newsletters/2024/06/28/#bitcoin-core-28984
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
