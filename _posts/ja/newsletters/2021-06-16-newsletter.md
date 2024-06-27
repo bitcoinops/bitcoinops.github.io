@@ -67,6 +67,7 @@ lang: ja
   詳細は[変更ログ][rb changelog]をご覧ください。
 
 - [Rust-Lightning 0.0.98][]は、いくつかの改善とバグ修正を含むマイナーリリースです。
+
   <!-- there's no release notes or changelog I can see, so not much to say here. -->
 
 - [LND 0.13.0-beta.rc5][LND 0.13.0-beta]は、プルーニングされたBitcoinフルノードの使用をサポートし、

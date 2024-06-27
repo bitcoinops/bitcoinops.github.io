@@ -421,6 +421,7 @@ Optechの4年めは、51の週刊[ニュースレター][newsletters]を発行�
 [Taprootの準備][p4tr]に関する21部構成のシリーズを（[2人][zmn guest]のゲスト[投稿者][darosior guest]の助けを借りて）
 書きました。合計すると、Optechは今年、Bitcoinソフトウェアの研究と開発について8万語以上を公開し、
 これはおよそ250ページの本に匹敵します。
+
 <!-- wc -w _posts/en/newsletters/2021-*_includes/specials/taproot/en/* -->
 
 </div>

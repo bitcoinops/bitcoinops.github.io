@@ -119,6 +119,7 @@ segwit:
     #  caption: >
     #    Sending to segwit v1 addresses fails during broadcast of transaction.
 ---
+
 <!-- Electrum -->
 
 {% assign tool = page %}

@@ -130,6 +130,7 @@ segwit:
     #  caption: >
     #    Green displays a validation error when trying to send to a segwit v1 address.
 ---
+
 <!-- GreenAddress -->
 
 {% assign tool = page %}

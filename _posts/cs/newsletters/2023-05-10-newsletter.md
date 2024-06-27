@@ -230,8 +230,7 @@ tuto jednoduchou misi rozšiřovat a proto také poskytujeme průvodce
 mezi kterými nechyběli mnozí z těch, o kterých máme tu čest psát.
 
 Nic z toho by nebylo možné bez našich přispěvatelů, mezi kterými byli
-za poslední rok:
-<!-- alphabetical -->
+za poslední rok: <!-- alphabetical -->
 Adam Jonas,
 Copinmalin,
 David A. Harding,

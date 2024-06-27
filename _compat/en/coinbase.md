@@ -88,6 +88,7 @@ segwit:
     #    segwit v0. Coinbase detects segwit v1 addresses and displays a
     #    validation error.
 ---
+
 <!-- Coinbase -->
 
 {% assign tool = page %}

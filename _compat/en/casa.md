@@ -60,6 +60,7 @@ segwit:
         Casa Keymaster allows sending to bech32 addresses. Change addresses
         are not bech32 native, but P2SH-wrapped segwit addresses.
 ---
+
 <!-- Casa -->
 
 {% assign tool = page %}

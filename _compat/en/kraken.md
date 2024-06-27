@@ -62,6 +62,7 @@ segwit:
       caption: >
         Default send screen.
 ---
+
 <!-- Kraken -->
 
 {% assign tool = page %}

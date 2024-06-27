@@ -80,6 +80,7 @@ segwit:
     #    Wasabi displays a validation error when attempting to send to a segwit
     #    v1 address.
 ---
+
 <!-- Wasabi -->
 
 {% assign tool = page %}
