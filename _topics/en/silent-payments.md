@@ -65,6 +65,9 @@ optech_mentions:
   - title: "Continued discussion about using PSBTs with silent payments"
     url: /en/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments
 
+  - title: "BIPs #1620 and #1622 make minor updates to the BIP352 specification of silent payments"
+    url: /en/newsletters/2024/06/28/#bips-1620
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
