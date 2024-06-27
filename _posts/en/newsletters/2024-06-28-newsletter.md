@@ -63,7 +63,60 @@ answers posted since our last update.*
 nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How is the progress of Initial Block Download (IBD) calculated?]({{bse}}123350)
+  Pieter Wuille points to Bitcoin Core's `GuessVerificationProgress` function
+  and explains that the estimated total transactions in the chain uses hardcoded
+  statistics that are updated as part of each major release.
+
+- [What is `progress increase per hour` during synchronization?]({{bse}}123279)
+  Pieter Wuille clarifies that progress increase per hour is the percentage of
+  the blockchain synchronized per hour and not an increase in progress rate. He goes on
+  to note reasons why progress is not constant and can vary.
+
+- [Should an even Y coordinate be enforced after every key-tweak operation, or only at the end?]({{bse}}119485)
+  Pieter Wuille agrees that when to perform a key negation to enforce [x-only
+  public keys][topic X-only public keys] is largely a matter
+  of opinion while pointing out pros and cons within different protocols.
+
+- [Signet mobile phone wallets?]({{bse}}123045)
+  Murch lists four [signet][topic signet]-compatible mobile wallet apps:
+  Nunchuk, Lava, Envoy, and Xverse.
+
+- [What block had the most transaction fees? Why?]({{bse}}7582)
+  Murch uncovers block 409,008 with the most bitcoin-denominated fees (291.533
+  BTC caused by a missing change output) and block 818,087 with the most
+  USD-denominated fees ($3,189,221.5 USD, also presumed to be caused by a missing
+  change output).
+
+- [bitcoin-cli listtransactions fee amount is way off, why?]({{bse}}123391)
+  Ava Chow notes this discrepancy occurs when Bitcoin Core's wallet is unaware of
+  one of the inputs to a transaction, but knows others, as in the example given
+  in the question of a [payjoin][topic payjoin] transaction. She goes on to note
+  "The wallet really shouldn't be returning the fee here since it can't
+  accurately determine it."
+
+- [Did uncompressed public keys use the `04` prefix before compressed public keys were used?]({{bse}}123252)
+  Pieter Wuille explains that historically signature verification was done by the
+  OpenSSL library that allows uncompressed (`04` prefix), compressed (`02` and
+  `03` prefixes), and hybrid (`06` and `07` prefixes) public keys.
+
+- [What happens if an HTLC's value is below the dust limit?]({{bse}}123393)
+  Antoine Poinsot points out that any output in a LN commitment transaction
+  could have a value below the [dust limit][topic uneconomical outputs] which
+  results in the satoshis in those outputs being used instead for fees (see
+  [trimmed HTLCs][topic trimmed htlc]).
+
+- [How does subtractfeefrom work?]({{bse}}123262)
+  Murch provides an overview of how [coin selection][topic coin selection] in
+  Bitcoin Core works when the optional `subtractfeefrom` is used. He also notes
+  using `subtractfeefromoutput` causes several bugs when finding changeless transactions.
+
+- [What's the difference between the 3 index directories "blocks/index/", "bitcoin/indexes" and "chainstate"?]({{bse}}123364)
+  Ava Chow lists some data directories in Bitcoin Core:
+
+  - `blocks/index` which contains the LevelDB database for the block index
+  - `chainstate/` which contains LevelDB database for the UTXO set
+  - `indexes/` which contains the txindex, coinstatsindex, and blockfilterindex optional indexes
 
 ## Releases and release candidates
 
