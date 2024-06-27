@@ -84,6 +84,9 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about coin selection
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: "Effect of SubtractFeeFromOutputs on coin selection in Bitcoin Core"
+    url: /en/newsletters/2024/06/28/#how-does-subtractfeefrom-work
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies
