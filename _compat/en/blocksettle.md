@@ -96,6 +96,7 @@ segwit:
         The change address defaults to native bech32 segwit addresses, however,
         it is manually selectable by the user
 ---
+
 <!-- BlockSettle -->
 
 {% assign tool = page %}

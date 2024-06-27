@@ -86,6 +86,7 @@ segwit:
     #    Xapo allows users to create segwit v1 transactions in the UI. However,
     #    the transaction gets stuck as pending.
 ---
+
 <!-- Xapo -->
 
 {% assign tool = page %}

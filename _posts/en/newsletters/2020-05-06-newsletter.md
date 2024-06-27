@@ -16,8 +16,9 @@ notable code changes from popular Bitcoin infrastructure software.
 
 ## Action items
 
-{:.center style="font-size: 1.5em"}
 <!-- $$\frac{50}{2^{\lfloor height/210000 \rfloor}}$$ -->
+
+{:.center style="font-size: 1.5em"}
 ![Happy halving!](/img/posts/2020-05-halving.png)
 
 ## News

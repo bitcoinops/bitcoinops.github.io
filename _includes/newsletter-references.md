@@ -8,8 +8,9 @@
 {% for section in newsletter_sections %}
   <h2 id="{{ section.name | slugify: 'latin'}}"> {{ section.name }}
     {% if page.special_sections contains section.name %}
-      <!-- Special sections are section that do not have list items, therefore
-        we display the timestamp and transcript links in the header -->
+
+    <!-- Special sections are section that do not have list items, therefore
+    we display the timestamp and transcript links in the header -->
       {% assign reference = section.items | first %}
       <span style="font-size:0.5em">{% include functions/podcast-note.md %}</span>
     {% endif %}

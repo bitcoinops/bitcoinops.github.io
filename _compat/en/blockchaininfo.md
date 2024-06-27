@@ -68,6 +68,7 @@ segwit:
     #    Blockchain initially allows to send to segwit v1 addresses but an error
     #    occurs after completing the send process.
 ---
+
 <!-- Blockchain.info -->
 
 {% assign tool = page %}

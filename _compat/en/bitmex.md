@@ -51,6 +51,7 @@ segwit:
       caption: >
         BitMEX uses a static P2SH address per user account.
 ---
+
 <!-- BitMex -->
 
 {% assign tool = page %}

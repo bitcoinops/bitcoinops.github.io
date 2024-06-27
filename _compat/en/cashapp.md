@@ -75,6 +75,7 @@ segwit:
       caption: >
         Cash App allows sending to either wrapped or native segwit addresses.
 ---
+
 <!-- Cash App -->
 
 {% assign tool = page %}

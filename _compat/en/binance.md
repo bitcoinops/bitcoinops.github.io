@@ -75,6 +75,7 @@ segwit:
       caption: >
         Bech32 P2WPKH addresses can be successfully added using the address book functionality.
 ---
+
 <!-- Binance -->
 
 {% assign tool = page %}

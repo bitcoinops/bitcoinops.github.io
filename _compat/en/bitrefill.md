@@ -69,6 +69,7 @@ segwit:
     #  caption: >
     #    Bitrefill displays an address validation error for segwit v1 addresses.
 ---
+
 <!-- Bitrefill -->
 
 {% assign tool = page %}

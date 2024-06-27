@@ -59,6 +59,7 @@ segwit:
          Bitnob's default receive address type is p2wsh (native segwit)
 
 ---
+
 <!-- BitNob -->
 
 {% assign tool = page %}

@@ -69,8 +69,8 @@ changes to popular Bitcoin infrastructure projects.
   discussed was using an outpoint commitment --> 42 vbytes for a single
   sponsorship and about 32 bytes for each additional sponsorship.  In
   Habovštiak's version, the sponsor transaction commits to the boosted
-  transaction using the taproot [annex][topic annex], which uses about
-  <!-- 32 / 4; might have encoding overhead and might also end up using
+  transaction using the taproot [annex][topic annex], which uses about <!--
+  32 / 4; might have encoding overhead and might also end up using
   an outpoint instead --> 8 vbytes for a single sponsorship and 8 vbytes
   for each additional sponsorship.
 

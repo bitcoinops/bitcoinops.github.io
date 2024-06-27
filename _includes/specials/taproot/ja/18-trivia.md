@@ -46,17 +46,16 @@
   スキーム[EdDSA][]は、現在いくつかの標準の基礎となっています。
   Bitcoinのコンセンサスでは使用されていませんが、他のシステムのコンテキストでの参照は、
   Optechが追跡している多くのBitcoinリポジトリで見られます。
+
   <!-- source: quick git grep -i -->
 
 - **Pay to contract:** Ilja GerhardtとTimo Hankeは、支払いがその契約のハッシュにコミットすることを可能する、
-  2013年のSan JoseのBitcoinカンファレンスでHankeによって紹介された[プロトコル][gh p2c]を作成しました。
-  <!-- source: Wuille; I found some independent confirmation in dead links on Google -harding -->
+  2013年のSan JoseのBitcoinカンファレンスでHankeによって紹介された[プロトコル][gh p2c]を作成しました。 <!-- source: Wuille; I found some independent confirmation in dead links on Google -harding -->
   契約のコピーと、特定の攻撃を回避するために使用されるnonceを持っている人であればコミットメントを検証できますが、
   それ以外の人にとってはその支払いは他のBitcoinの支払いと同じように見えます。
 
   この*pay-to-contract* (P2C)プロトコルを少し改良したものが、
-  [サイドチェーン][topic sidechains]に関する[2014年の論文][sidechains.pdf]に含まれており、
-  <!-- Algorithm 1: GenerateCrossChainAddress -->
+  [サイドチェーン][topic sidechains]に関する[2014年の論文][sidechains.pdf]に含まれており、 <!-- Algorithm 1: GenerateCrossChainAddress -->
   コミットメントには支払いのための元の公開鍵も含まれるようになっています。
   Taprootはこれと同じ構造を採用していますが、オフチェーン契約の条項にコミットする代わりに、
   アウトプットの作成者は、受信したビットコインをオンチェーンで使用する方法について、
@@ -66,6 +65,7 @@
   2018年1月22日にカリフォルニア州ロス・アルトスのダイナー「A Good Morning」で考案されました。
   Pieter Wuilleは、このアイディアは「私が短時間テーブルを離れている間に… !$%@」[sic]
   Andrew PoelstraとGregory Maxwellによって開発されたと書いています。
+
   <!-- personal correspondence with Wuille -harding -->
 
 <!-- weird comment below because HTML has silly rules about anchor ids -->

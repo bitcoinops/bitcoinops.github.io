@@ -4,6 +4,7 @@ permalink: /en/topic-dates/
 layout: page
 ---
 {% include linkers/topic-pages.md %}
+
 <!-- Build a list of months in reverse chronological order -->
 {% assign this_year = site.time | date: "%Y" | plus: 0 %}<!-- "plus: 0" casts string to int -->
 {% capture months %}

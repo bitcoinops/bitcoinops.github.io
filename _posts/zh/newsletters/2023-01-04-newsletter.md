@@ -12,9 +12,9 @@ lang: zh
 ## 新闻
 
 - **Bitcoin Knots 签名密钥泄露：**Bitcoin Knots 全节点实现的维护者宣称他们用于签署 Knots 发布的 PGP 密钥遭到泄露。他们说，“在这个问题得到解决之前，不要下载和信任 Bitcoin Knots。如果你在过去的几个月里已经这样做了，请考虑立即关闭该系统。”
-  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   其他全节点实现不受影响。
 
+  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
 
 - **Bitcoin Core 的软件 fork：**上个月在 Bitcoin Core 上有两个补丁集发布：
 

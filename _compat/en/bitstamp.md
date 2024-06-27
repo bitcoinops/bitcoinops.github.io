@@ -63,6 +63,7 @@ segwit:
       caption: >
         Bitstamp receives deposits to P2SH-P2WSH addresses.
 ---
+
 <!-- BitStamp -->
 
 {% assign tool = page %}

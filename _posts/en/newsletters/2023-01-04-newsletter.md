@@ -21,8 +21,9 @@ notable changes to popular Bitcoin infrastructure software.
   they use to sign releases of Knots.  They say, "do not download
   Bitcoin Knots and trust it until this is resolved.  If you already did
   in the last few months, consider shutting that system down for now."
-  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   Other full node implementations are unaffected. {% assign timestamp="1:06" %}
+
+  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
 
 - **Software forks of Bitcoin Core:** last month saw the release of two
   patchsets on top of Bitcoin Core:

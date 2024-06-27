@@ -45,6 +45,7 @@ Optechは、Bitcoin関連の企業がBitcoinのスケーリングを可能にす
 * 150の[ニュースレター][newsletters]、多数の[ブログの投稿][blog posts]およびフィールドレポート、
   [bech32の特別シリーズ][bech32]や、[インタラクティブなTaprootのワークショップ][interactive taproot workshop]を公開しました。
   合計で約250,000語を掲載しており、印刷すると約700ページに相当します。
+
   <!-- wc _posts/en/newsletters/*md _posts/en/*md
   _includes/articles/*md _includes/specials/2019-exec-briefing/*md
   _includes/specials/bech32/*md-->

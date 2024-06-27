@@ -63,6 +63,7 @@
   [EdDSA][], is now the basis of several standards.  Although not used
   in Bitcoin consensus, references to it in the context of other systems
   can be found in many of the Bitcoin repositories tracked by Optech.
+
   <!-- source: quick git grep -i -->
 
 - **Pay to contract:** Ilja Gerhardt and Timo Hanke created a
@@ -87,6 +88,7 @@
   Altos, California, at the diner "A Good Morning" on 22 January 2018.
   Pieter Wuille writes that the idea was developed by Andrew Poelstra
   and Gregory Maxwell "while I briefly left the table... !$%@" [sic].
+
   <!-- personal correspondence with Wuille -harding -->
 
 <!-- weird comment below because HTML has silly rules about anchor ids -->

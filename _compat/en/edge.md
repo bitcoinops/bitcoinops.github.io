@@ -80,6 +80,7 @@ segwit:
         "Segwit" wallets use P2SH-wrapped P2WPKH addresses. Both wallet types
         can send to segwit v0 addresses.
 ---
+
 <!-- Edge -->
 
 {% assign tool = page %}

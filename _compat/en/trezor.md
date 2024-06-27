@@ -72,6 +72,7 @@ segwit:
     #    Trezor Suite displays a validation error when attempting to send to a segwit
     #    v1 address.
 ---
+
 <!-- Trezor -->
 
 {% assign tool = page %}

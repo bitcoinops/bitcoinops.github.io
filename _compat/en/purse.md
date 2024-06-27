@@ -62,6 +62,7 @@ segwit:
     #  caption: >
     #    Purse can send to a segwit address of any witness program version.
 ---
+
 <!-- Purse -->
 
 {% assign tool = page %}
