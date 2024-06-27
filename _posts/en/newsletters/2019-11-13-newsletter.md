@@ -107,8 +107,8 @@ popular Bitcoin infrastructure projects.
   sphinx] to the Lightning-Dev mailing list this week about a
   [recently-published][breaking onion routing] flaw in the original
   description of Sphinx that may allow a destination node to "deduce a
-  lower bound for the length of the path [back to the source node]."
-  <!-- quote from Osuntokun email -->  The fix is easy: instead of
+  lower bound for the length of the path [back to the source node]." <!-- quote from Osuntokun email -->
+  The fix is easy: instead of
   initializing part of an onion packet with zero bytes, random-value
   bytes are used instead.  Osuntokun created a [PR][lnd-onion]
   implementing this in the onion library used by LND as well as a

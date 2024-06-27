@@ -110,6 +110,7 @@ segwit:
         being paid to. Can be overridden with change control's 'Custom change
         address'.
 ---
+
 <!-- Bitcoin Core Wallet -->
 
 {% assign tool = page %}

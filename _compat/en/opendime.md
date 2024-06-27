@@ -63,6 +63,7 @@ segwit:
         Opendime has a single P2PKH receive address. It can send to bech32
         addresses using the included balance.py script.
 ---
+
 <!-- OpenDime -->
 
 {% assign tool = page %}

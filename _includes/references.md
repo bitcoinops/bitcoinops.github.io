@@ -107,10 +107,8 @@ place, put links here. -->{% endcomment %}
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
 
-{% comment %}
-<!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
-version of BitcoinCore.org's RPC docs-->
-{% endcomment %}
+{% comment %}<!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
+version of BitcoinCore.org's RPC docs-->{% endcomment %}
 {% assign rpc_prefix = "https://bitcoincore.org/en/doc/0.20.0/rpc" %}
 [rpc abandontransaction]: {{rpc_prefix}}/wallet/abandontransaction/
 [rpc fundrawtransaction]: {{rpc_prefix}}/rawtransactions/fundrawtransaction/

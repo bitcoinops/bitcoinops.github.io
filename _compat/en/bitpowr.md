@@ -71,6 +71,7 @@ segwit:
         Bitpowr supports bech32, p2pkh and p2sh wrapped change addresses. You can choose via the API
         and its default to bech32 on dashboard.
 ---
+
 <!-- BitPowr -->
 
 {% assign tool = page %}

@@ -103,6 +103,7 @@ segwit:
       caption: >
         Samourai has options to view the wallet's X/Y/ZPUBs.
 ---
+
 <!-- Samourai -->
 
 {% assign tool = page %}

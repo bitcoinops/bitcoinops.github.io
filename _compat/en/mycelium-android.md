@@ -67,6 +67,7 @@ segwit:
     #    address (or any other bech32m address).
     #    https://github.com/mycelium-com/wallet-android/issues/645
 ---
+
 <!-- Mycelium Android -->
 
 {% assign tool = page %}

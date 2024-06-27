@@ -1,4 +1,5 @@
 {% capture /dev/null %}
+
 <!--
 recap-ad.md: creates an advertisement for the next recap
 -->

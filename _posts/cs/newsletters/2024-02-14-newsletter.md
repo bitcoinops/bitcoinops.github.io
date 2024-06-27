@@ -47,8 +47,8 @@ změn v populárním bitcoinovém páteřním software.
     logiku by mohl druhý potomek nahradit prvního potomka v rámci [balíčku][topic
     package relay] (viz [zpravodaj č. 287][news287 kindred]).
 
-  - Kolem 1,2 % bylo očividně prapotomkem commitment transakce, tedy utracení
-    <!-- intentional --> utracení anchor výstupu. LN peněženky to mohou dělat
+  - Kolem 1,2 % bylo očividně prapotomkem commitment transakce, tedy utracení <!-- intentional -->
+    utracení anchor výstupu. LN peněženky to mohou dělat
     z několika různých důvodů, od zavírání několika anchor kanálů v řadě po
     otevírání nových kanálů zůstatkem po zavření anchor kanálu. LN peněženky
     by toto chování musely opustit, pokud by byly anchor výstupům vštípeny vlastnosti
