@@ -47,6 +47,9 @@ optech_mentions:
   - title: "Libsecp256k1 #993 includes in the default build options a modules for working with x-only pubkeys"
     url: /en/newsletters/2022/11/30/#libsecp256k1-993
 
+  - title: "Should an even Y coordinate be enforced after every key-tweak operation, or only at the end?"
+    url: /en/newsletters/2024/06/28/#should-an-even-y-coordinate-be-enforced-after-every-key-tweak-operation-or-only-at-the-end
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
