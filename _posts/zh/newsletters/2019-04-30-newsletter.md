@@ -26,7 +26,7 @@ lang: zh
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption
 wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/07-altbech32.md %}
+{% include specials/bech32/zh/07-altbech32.md %}
 
 ## Bitcoin Stack Exchange 精选问答
 
@@ -50,7 +50,7 @@ endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的更改。注意：除非另有说明，所有描述的 Bitcoin Core 合并都是在其主开发分支上；有些可能也会回移到其待定版本。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的更改。注意：除非另有说明，所有描述的 Bitcoin Core 合并都是在其主开发分支上；有些可能也会回移到其待定版本。*
 
 - [Bitcoin Core #14039][] 使 Bitcoin Core 拒绝通过 RPC 提交或通过 P2P 网络接收的交易，如果它们使用 segwit 风格的扩展交易编码但不包括任何 segwit 输入。扩展交易编码包括 segwit 标记、segwit 标志和见证数据字段。包含在传统输入中的签名不承诺这些字段，因此将这些字段添加到完全由传统输入组成的交易中会在交易中产生（小）带宽浪费。[BIP144][] 规定不需要扩展格式的交易应使用传统格式。之前 Bitcoin Core 接受格式不正确的交易并通过在计算其大小（权重）或将其中继到其他节点之前剥离不必要的 segwit 部分来规范它们；现在它将拒绝接受不使用适当格式的交易。
 
@@ -62,4 +62,4 @@ endcomment %}
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
 [dust convo]: https://github.com/bitcoin/bitcoin/pull/2577#issuecomment-17738577
 [bitcoincore.org]: https://bitcoincore.org/
-[bech32 series]: /en/bech32-sending-support/
+[bech32 series]: /zh/bech32-sending-support/
