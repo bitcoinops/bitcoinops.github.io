@@ -25,6 +25,7 @@ rather than URL. -->{% endcomment %}
 {% assign number_of_aliases = number_of_entries | minus: number_of_topics %}
 
 <div class="center" markdown="1">
+
 {{number_of_topics}} topics (and
 {{number_of_aliases}} aliases in *italics* for topics with alternative
 names).

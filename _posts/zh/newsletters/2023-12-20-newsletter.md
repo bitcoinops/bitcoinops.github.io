@@ -108,6 +108,7 @@ Russell O'Connor 和 Andrew Poelstra 为备份和存储 [BIP32][] 助记词[提�
 ![Tunable Penalty Protocol](/img/posts/2023-03-tunable-commitment.dot.png)
 
 <div markdown="1" class="callout" id="softforks">
+
 ### 2023 总结<br>软分叉提议
 
 James O'Beirne 在一月[提出][jan op_vault]了一种新的 `OP_VAULT` 操作码，[随后][feb op_vault]在二月为之编写了一份 BIP 草案以及提交到 Bitcoin Inquisition 的实现。几周后，Gregory Sanders [提出][feb op_vault2]了 `OP_VAULT` 的一种替代性设计。
@@ -164,6 +165,7 @@ Burak Keceli [提出了][may ark]一种新的 [joinpool][topic joinpools] 式协
 Josie Baker 和 Ruben Somsen [发布了][jun sp]一份用于[静默支付][topic silent payments]的 BIP 草案，这是一种可复用的支付代码，每次使用时都会产生一个唯一的链上地址，从而防止[输出关联（地址复用）][topic output linking]。输出关联可以显著降低用户（包括未直接参与交易的用户）的隐私。该草案详细介绍了该提案的好处、它的权衡以及软件如何有效地使用它。此外，在 Bitcoin Core PR 审核俱乐部会议期间还[讨论了][aug sp]正在进行的为 Bitcoin Core 实施静默支付的工作。
 
 <div markdown="1" class="callout" id="security">
+
 ### 2023 总结<br>安全披露
 
 Optech 今年报告了三个重大安全漏洞：
@@ -202,6 +204,7 @@ LND 添加了对“简单 taproot 通道”的[实验性支持][aug lnd taproot]
 今年九月，Tom Briar [发布了][sept compress]一份压缩比特币交易的规范和实现草案。该提案解决了压缩比特币交易中均匀分布数据的难题，用变长整数来表示整数，使用区块高度和位置来引用交易而不是其输出点 txid，并省略了 P2WPKH 交易中的公钥。虽然压缩格式节省了空间，但与处理常规序列化的交易相比，将其转换回可用格式需要更多的 CPU、内存和 I/O，在卫星广播或隐秘传输等情况下，这是可以接受的权衡。
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2023 总结<br>流行基础设施项目的主要发布
 
 - [Eclair 0.8.0][jan eclair] 新增了对[零配置通道][topic zero-conf channels]和短通道标识符 (SCID) 别名的支持。
@@ -278,6 +281,7 @@ Robin Linus 和 Lukas George 在今年五月[描述][may state]了一种在比�
 十一月还有[流动性广告][topic liquidity advertisements]规范的[更新][nov liqad]，允许节点向新建立的[双向注资通道][topic dual funding]宣布提供部分资金以获得手续费的意愿，从而使请求的节点能够迅速开始接收闪电网络的付款。这些更新大部分都是次要的，但关于流动性广告创建的通道是否应包含时间锁的讨论一直[持续][dec liqad]到十二月。时间锁可以向买方提供激励性保证，即他们将实际收到所支付的流动性，但时间锁也可能被恶意或不考虑他人的买方用来对提供者锁定额外资本。
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2023 总结<br>Bitcoin Optech
 
 {% comment %}<!-- commands to help me create this summary for next year

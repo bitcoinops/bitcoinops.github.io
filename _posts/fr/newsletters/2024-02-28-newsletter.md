@@ -132,47 +132,99 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   <tr>
     <th></th>
     <th>Pré-signé</th>
-    <th markdown="span">BIP345 `OP_VAULT`</th>
-    <th markdown="span">`OP_CAT` avec schnorr</th>
+    <th markdown="span">
+
+    BIP345 `OP_VAULT`
+
+    </th>
+    <th markdown="span">
+
+    `OP_CAT` avec schnorr
+
+    </th>
   </tr>
 
   <tr>
     <th>Disponibilité</th>
-    <td markdown="span">**Maintenant**</td>
-    <td markdown="span">Nécessite un soft fork de `OP_VAULT` et [OP_CTV][topic op_checktemplateverify]</td>
-    <td markdown="span">Nécessite un soft fork de `OP_CAT`</td>
+    <td markdown="span">
+
+    **Maintenant**
+
+    </td>
+    <td markdown="span">
+
+    Nécessite un soft fork de `OP_VAULT` et [OP_CTV][topic op_checktemplateverify]
+
+    </td>
+    <td markdown="span">
+
+    Nécessite un soft fork de `OP_CAT`
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">Attaque de remplacement d'adresse de dernière minute</th>
     <td markdown="span">Vulnérable</td>
-    <td markdown="span">**Non vulnérable**</td>
-    <td markdown="span">**Non vulnérable**</td>
+    <td markdown="span">
+
+    **Non vulnérable**
+
+    </td>
+    <td markdown="span">
+
+    **Non vulnérable**
+
+    </td>
   </tr>
   <tr>
     <th markdown="span">Retraits partiels de montant</th>
     <td markdown="span">Seulement si préarrangé</td>
-    <td markdown="span">**Oui**</td>
+    <td markdown="span">
+
+    **Oui**
+
+    </td>
     <td markdown="span">Non</td>
   </tr>
 
   <tr>
     <th markdown="span">Adresses de dépôt calculables statiques et non interactives</th>
     <td markdown="span">Non</td>
-    <td markdown="span">**Oui**</td>
-    <td markdown="span">**Oui**</td>
+    <td markdown="span">
+
+    **Oui**
+
+    </td>
+    <td markdown="span">
+
+    **Oui**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">Regroupement pour re-vaulting/mise en quarantaine pour économie de frais</th>
     <td markdown="span">Non</td>
-    <td markdown="span">**Oui**</td>
+    <td markdown="span">
+
+    **Oui**
+
+    </td>
     <td markdown="span">Non</td>
   </tr>
 
   <tr>
-    <th markdown="span">Efficacité opérationnelle dans le meilleur cas, c'est-à-dire uniquement les dépenses légitimes<br>*(estimé très approximativement par Optech)*</th>
-    <td markdown="span">**2x la taille d'une signature unique régulière**</td>
+    <th markdown="span">
+
+    Efficacité opérationnelle dans le meilleur cas, c'est-à-dire uniquement les dépenses légitimes<br>*(estimé très approximativement par Optech)*
+
+    </th>
+    <td markdown="span">
+
+    **2x la taille d'une signature unique régulière**
+
+    </td>
     <td markdown="span">3x la taille d'une signature unique régulière</td>
     <td markdown="span">4x la taille d'une signature unique régulière</td>
   </tr>

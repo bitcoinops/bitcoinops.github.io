@@ -146,48 +146,100 @@ projektech.
   <tr>
 	<th></th>
 	<th>Předem podepsané</th>
-	<th markdown="span">BIP345 `OP_VAULT`</th>
-	<th markdown="span">`OP_CAT` se Schnorrem</th>
+	<th markdown="span">
+
+        BIP345 `OP_VAULT`
+
+        </th>
+	<th markdown="span">
+
+        `OP_CAT` se Schnorrem
+
+        </th>
   </tr>
 
   <tr>
 	<th>Dostupnost</th>
-	<td markdown="span">**Nyní**</td>
-	<td markdown="span">Vyžaduje soft fork s `OP_VAULT` a [OP_CTV][topic op_checktemplateverify]</td>
-	<td markdown="span">Vyžaduje soft fork s `OP_CAT`</td>
+	<td markdown="span">
+
+        **Nyní**
+
+        </td>
+	<td markdown="span">
+
+        Vyžaduje soft fork s `OP_VAULT` a [OP_CTV][topic op_checktemplateverify]
+
+        </td>
+	<td markdown="span">
+
+        Vyžaduje soft fork s `OP_CAT`
+
+        </td>
   </tr>
 
   <tr>
 	<th markdown="span">Útok nahrazení adresy na poslední chvíli</th>
 	<td markdown="span">Zranitelné</td>
-	<td markdown="span">**Nejsou zranitelné**</td>
-	<td markdown="span">**Nejsou zranitelné**</td>
+	<td markdown="span">
+
+        **Nejsou zranitelné**
+
+        </td>
+	<td markdown="span">
+
+        **Nejsou zranitelné**
+
+        </td>
   </tr>
 
   <tr>
 	<th markdown="span">Vybrání části prostředků</th>
 	<td markdown="span">Pokud zajištěno předem</td>
-	<td markdown="span">**Ano**</td>
+	<td markdown="span">
+
+        **Ano**
+
+        </td>
 	<td markdown="span">Ne</td>
   </tr>
 
   <tr>
 	<th markdown="span">Statické a neinteraktivně odvoditelné adresy pro vklady</th>
 	<td markdown="span">Ne</td>
-	<td markdown="span">**Ano**</td>
-	<td markdown="span">**Ano**</td>
+	<td markdown="span">
+
+        **Ano**
+
+        </td>
+	<td markdown="span">
+
+        **Ano**
+
+        </td>
   </tr>
 
   <tr>
 	<th markdown="span">Redukce poplatků dávkovým návratem do úschovny</th>
 	<td markdown="span">Ne</td>
-	<td markdown="span">**Ano**</td>
+	<td markdown="span">
+
+        **Ano**
+
+        </td>
 	<td markdown="span">Ne</td>
   </tr>
 
   <tr>
-	<th markdown="span">Provozní účinnost v nejlepším případě, tedy pouze legitimní platby<br>*(hrubý odhad Optechu)*</th>
-	<td markdown="span">**2× velikost běžné single-sig**</td>
+	<th markdown="span">
+
+        Provozní účinnost v nejlepším případě, tedy pouze legitimní platby<br>*(hrubý odhad Optechu)*
+
+        </th>
+	<td markdown="span">
+
+        **2× velikost běžné single-sig**
+
+        </td>
 	<td markdown="span">3× velikost běžné single-sig</td>
 	<td markdown="span">4× velikost běžné single-sig</td>
   </tr>

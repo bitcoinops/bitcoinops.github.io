@@ -142,6 +142,7 @@ Un grand nombre de contre-arguments ont été présentés et le soutien de
 la communauté pour taproot semble être inchangé.
 
 <div markdown="1" class="callout" id="taproot">
+
 ### Sommaire 2021<br>Activiation de Taproot
 
 Fin 2020, une implémentation de l'embranchement convergent [taproot][topic taproot]
@@ -309,6 +310,7 @@ dont l'utilisation principale de LN est de recevoir des paiements
 au lieu de les envoyer.
 
 <div markdown="1" class="callout" id="releases">
+
 ### Sommaire 2021<br>Mises à jour et version candidate
 
 - [Eclair 0.5.0][] a ajouté la prise en charge d'un mode cluster évolutif
@@ -541,6 +543,7 @@ de l'année, une [variation][cl#4771] de cette technique sera implémentée
 dans C-Lightning.
 
 <div markdown="1" class="callout" id="optech">
+
 ### Sommaire 2021<br>Bitcoin Optech
 
 Au cours de la quatrième année d'Optech, nous avons publié 51 [bulletins][]
