@@ -174,6 +174,7 @@ LNの他のユーザーのコストが削減される可能性があります。
 ![Tunable Penaltyプロトコル](/img/posts/2023-03-tunable-commitment.dot.png)
 
 <div markdown="1" class="callout" id="softforks">
+
 ### 2023年のまとめ<br>ソフトフォークの提案
 
 新しい`OP_VAULT`opcodeの[提案][jan op_vault]が、1月にJames O'Beirneによって投稿され、
@@ -329,6 +330,7 @@ Bitcoin Coreにサイレントペイメントを実装する進行中の作業�
 Bitcoin Core PR Review Clubミーティングで[議論されました][aug sp]。
 
 <div markdown="1" class="callout" id="security">
+
 ### 2023年のまとめ<br>セキュリティの開示
 
 Optechは今年、3つの重大なセキュリティの脆弱性について報告しました:
@@ -417,6 +419,7 @@ Bitcoinトランザクションの一様に分散したデータを圧縮する�
 これは、衛星によるブロードキャストやステガノグラフィーによる転送では許容可能なトレードオフです。
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2023年のまとめ<br>人気のインフラストラクチャプロジェクトのメジャーリリース
 
 - [Eclair 0.8.0][jan eclair]は、[ゼロ承認チャネル][topic zero-conf channels]と
@@ -585,6 +588,7 @@ Liquidity Adsから作成されたチャネルがタイムロックを含むべ�
 悪意のある購入者や配慮のない購入者によって、過剰な量の提供者の資本をロックするために使用される可能性もあります。
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2023年のまとめ<br>Bitcoin Optech
 
 {% comment %}<!-- commands to help me create this summary for next year

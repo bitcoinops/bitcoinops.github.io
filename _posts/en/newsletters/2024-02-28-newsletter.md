@@ -159,48 +159,100 @@ infrastructure projects.
   <tr>
     <th></th>
     <th>Presigned</th>
-    <th markdown="span">BIP345 `OP_VAULT`</th>
-    <th markdown="span">`OP_CAT` with schnorr</th>
+    <th markdown="span">
+
+    BIP345 `OP_VAULT`
+
+    </th>
+    <th markdown="span">
+
+    `OP_CAT` with schnorr
+
+    </th>
   </tr>
 
   <tr>
     <th>Availability</th>
-    <td markdown="span">**Now**</td>
-    <td markdown="span">Requires soft fork of `OP_VAULT` and [OP_CTV][topic op_checktemplateverify]</td>
-    <td markdown="span">Requires soft fork of `OP_CAT`</td>
+    <td markdown="span">
+
+    **Now**
+
+    </td>
+    <td markdown="span">
+
+    Requires soft fork of `OP_VAULT` and [OP_CTV][topic op_checktemplateverify]
+
+    </td>
+    <td markdown="span">
+
+    Requires soft fork of `OP_CAT`
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">Last-minute address replacement attack</th>
     <td markdown="span">Vulnerable</td>
-    <td markdown="span">**Not vulnerable**</td>
-    <td markdown="span">**Not vulnerable**</td>
+    <td markdown="span">
+
+    **Not vulnerable**
+
+    </td>
+    <td markdown="span">
+
+    **Not vulnerable**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">Partial amount withdrawals</th>
     <td markdown="span">Only if prearranged</td>
-    <td markdown="span">**Yes**</td>
+    <td markdown="span">
+
+    **Yes**
+
+    </td>
     <td markdown="span">No</td>
   </tr>
 
   <tr>
     <th markdown="span">Static and non-interactive computable deposit addresses</th>
     <td markdown="span">No</td>
-    <td markdown="span">**Yes**</td>
-    <td markdown="span">**Yes**</td>
+    <td markdown="span">
+
+    **Yes**
+
+    </td>
+    <td markdown="span">
+
+    **Yes**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">Batched re-vaulting/quarantining for fee savings</th>
     <td markdown="span">No</td>
-    <td markdown="span">**Yes**</td>
+    <td markdown="span">
+
+    **Yes**
+
+    </td>
     <td markdown="span">No</td>
   </tr>
 
   <tr>
-    <th markdown="span">Operational efficiency in best case, i.e. only legitimate spends<br>*(only very roughly estimated by Optech)*</th>
-    <td markdown="span">**2x size of regular single-sig**</td>
+    <th markdown="span">
+
+    Operational efficiency in best case, i.e. only legitimate spends<br>*(only very roughly estimated by Optech)*
+
+    </th>
+    <td markdown="span">
+
+    **2x size of regular single-sig**
+
+    </td>
     <td markdown="span">3x size of regular single-sig</td>
     <td markdown="span">4x size of regular single-sig</td>
   </tr>

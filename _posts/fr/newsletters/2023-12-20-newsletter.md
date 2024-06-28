@@ -161,6 +161,7 @@ pénalité réglable de Law, qui n'a connu aucun développement logiciel public 
 ![Protocole de pénalité réglable](/img/posts/2023-03-tunable-commitment.dot.png)
 
 <div markdown="1" class="callout" id="softforks">
+
 ### Résumé 2023<br>Propositions de soft fork
 
 Une [proposition][jan op_vault] pour un nouvel opcode `OP_VAULT` a été publiée en Janvier par James O'Beirne, suivi en
@@ -300,6 +301,7 @@ ses compromis et comment le logiciel peut l'utiliser efficacement. Des travaux e
 pour Bitcoin Core ont également été [discutés][aug sp] lors d'une réunion du Bitcoin Core PR Review Club.
 
 <div markdown="1" class="callout" id="security">
+
 ### Résumé 2023<br>Vulnérabilités de sécurité
 
 Optech a signalé trois vulnérabilités de sécurité importantes cette année :
@@ -374,6 +376,7 @@ le traitement des transactions sérialisées régulières, ce qui est un comprom
 par satellite ou le transfert stéganographique.
 
 <div markdown="1" class="callout" id="releases">
+
 ### Résumé 2023<br>Mises à jour majeures des principaux projets d'infrastructure
 
 - [Eclair 0.8.0][jan eclair] a ajouté la prise en charge des [canaux sans confirmation][topic zero-conf channels] et des alias
@@ -530,6 +533,7 @@ il a payé, mais le verrouillage temporel pourrait également être utilisé par
 quantité excessive du capital du fournisseur.
 
 <div markdown="1" class="callout" id="optech">
+
 ### Résumé 2023<br>Bitcoin Optech
 
 {% comment %}<!-- commands to help me create this summary for next year

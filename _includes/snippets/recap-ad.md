@@ -23,6 +23,7 @@ recap-ad.md: creates an advertisement for the next recap
 {% assign recap_formatted_time_utc = include.when | date: "%H:%M" %}
 {% endcapture %}{% capture recap_ad_text %}
 <div markdown="1" class="callout">
+
 {% case page.lang %}
 {% when "cs" %}
 
