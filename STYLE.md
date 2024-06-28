@@ -194,3 +194,22 @@ spelled the same.
   for placing a space between a number and its unit of measurement, e.g.
   "1 sat/vB" or "20 MB" are acceptable.  Exception: percentages, e.g.
   "50%" is acceptable.
+
+## Linking
+
+- **Separate links:** avoid placing two links immediately next to each
+  other as they may appear as one link.  Discouraged:
+  [package](/en/topics/package-relay/)&nbsp;[replace-by-fee](/en/topics/replace-by-fee/).
+  Preferred:
+  [replace-by-fee](/en/topics/replace-by-fee/) for
+  [packages](/en/topics/package-relay/).
+
+- **Link abbreviations not expansions:** when introducing an
+  abbreviation and including a link at the same time, link the
+  abbrevation rather than the expansion.  The goal is to minimize the
+  amount of special formatting on the page (e.g. blue links) without
+  reducing the information density.  Discouraged: [topologically
+  restricted until
+  confirmation](/en/topics/version-3-transaction-relay/)
+  (TRUC).  Preferred: topologically restricted until confirmation
+  ([TRUC](/en/topics/version-3-transaction-relay/)).
