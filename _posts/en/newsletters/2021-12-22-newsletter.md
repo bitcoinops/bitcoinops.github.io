@@ -135,6 +135,7 @@ counterarguments were presented and community support for taproot seemed
 to be unchanged.
 
 <div markdown="1" class="callout" id="taproot">
+
 ### 2021 summary<br>Taproot activation
 
 By the end of 2020, an implementation of the [taproot][topic taproot]
@@ -293,6 +294,7 @@ state.  That initial ability to receive funds makes dual-funding particularly us
 use of LN is receiving payments instead of sending them.
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2021 summary<br>Major releases of popular infrastructure projects
 
 - [Eclair 0.5.0][] added support for a scalable cluster mode (see
@@ -498,6 +500,7 @@ differently.  By the end of the year, a [variation][cl#4771] on the
 technique would be implemented in C-Lightning.
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2021 summary<br>Bitcoin Optech
 
 In Optech's fourth year, we published 51 weekly [newsletters][], added 30

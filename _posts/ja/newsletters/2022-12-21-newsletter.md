@@ -110,6 +110,7 @@ LDKの関連するSCID（Short Channel IDentifier）*エイリアス*フィー�
 ![ゼロ承認チャネルの図](/img/posts/2021-07-zeroconf-channels.png)
 
 <div markdown="1" class="callout" id="rbf">
+
 ### 2022年のまとめ<br>Replace-By-Fee
 
 今年は、RBF（[Replace By Fee][topic rbf]）に関して多くの議論といくつかの重要なアクションがありました。
@@ -228,6 +229,7 @@ Bitcoin Coreの[CPFPによる手数料の引き上げ][topic cpfp]の重大な�
 いくつかの追加のPRが今年中にマージされるでしょう。
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2022年のまとめ<br>人気のあるインフラストラクチャプロジェクトのメジャーリリース
 
 - [Eclair 0.7.0][news185 eclair]は、[アンカー・アウトプット][topic anchor outputs]や
@@ -373,6 +375,7 @@ Bitcoinに変更を加えることなくBitcoin互換の[署名アダプター][
 オラクルはどのオンチェーントランザクションがそのBLS署名に基づくものなのか知りません。
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2022年のまとめ<br>Bitcoin Optech
 
 Optechの5年めは、51の週間[ニュースレター][newsletters]を発行し、
@@ -454,6 +457,7 @@ Stratumバージョン2マイニングプロトコル、
 Bryan Bishopによって[書き起こされた][news223 xscribe]いくつかのセッションがありました。
 
 <div markdown="1" class="callout" id="softforks">
+
 ### 2022年のまとめ<br>ソフトフォークの提案
 
 1月、Jeremy Rubinが[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV)のソフトフォークの提案を
