@@ -167,7 +167,7 @@ repo], and [BINANAs][binana repo]._
   [anchor-style][topic anchor outputs] channels to conform to changes in
   the BOLT specification made in 2021 (see [Newsletter #165][news165
   anchors]), while maintaining support for existing channels. Core
-  Lightning was the only implementation fully add this, and only in
+  Lightning was the only implementation to fully add this, and only in
   experimental mode, before it was discovered to be insecure (see
   [Newsletter #115][news115 anchors]) and replaced with zero-fee anchor
   channels. Other updates include rejecting `encrypted_recipient_data`
