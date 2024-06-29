@@ -18,9 +18,9 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 - **Estimation de la probabilité qu'un paiement LN soit réalisable :** René Pickhardt a
   [posté][pickhardt feasible1] sur Delving Bitcoin à propos de l'estimation de la probabilité qu'un
   paiement LN soit réalisable étant donné la connaissance publique de la capacité maximale d'un canal
-  mais sans connaissance de sa distribution de solde actuelle. Par exemple, Alice a un canal avec Bob
-  et Bob a un canal avec Carol. Alice connaît la capacité du canal Bob-Carol mais pas combien de ce
-  solde est contrôlé par Bob et combien est contrôlé par Carol.
+  mais sans aucune connaissance de sa distribution de solde actuelle. Par exemple, Alice a un canal avec Bob
+  et Bob a un canal avec Carol. Alice connaît la capacité du canal Bob-Carol mais pas la part de ce
+  solde contrôlée par Bob ni la part contrôlée par Carol.
 
   Pickhardt note que certaines distributions de richesse sont impossibles dans un réseau de paiement.
   Par exemple, Carol ne peut pas recevoir plus d'argent dans son canal avec Bob que la capacité de ce
@@ -56,7 +56,7 @@ nswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 
-- [Comment est calculé le progrès du Téléchargement Initial de Bloc (IBD) ?]({{bse}}123350)
+- [Comment est calculé la progression du Téléchargement Initial de Bloc (IBD) ?]({{bse}}123350)
   Pieter Wuille pointe vers la fonction `GuessVerificationProgress` de Bitcoin Core
   et explique que le total estimé des transactions dans la chaîne utilise des statistiques codées en
   dur qui sont mises à jour dans le cadre de chaque version majeure.
@@ -116,11 +116,11 @@ nswer -->{% endcomment %}
 *Nouvelles versions et candidats à la version pour les projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les candidats à la version.*
 
-- [LND v0.18.1-beta][] est une version mineure avec un correctif pour "un [problème][lnd #8862] qui
+- [LND v0.18.1-beta][] est une version mineure qui corrige "un [problème][lnd #8862] qui
   survient lors de la gestion d'une erreur après avoir tenté de diffuser des transactions si un
   backend btcd avec une version antérieure (pré-v0.24.2) est utilisé."
 
-- [Bitcoin Core 26.2rc1][] est un candidat à la version pour une version de maintenance de la série
+- [Bitcoin Core 26.2rc1][] est un candidat pour une version de maintenance de la série
   de versions antérieures de Bitcoin Core.
 
 ## Changements notables dans le code et la documentation
