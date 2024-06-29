@@ -17,7 +17,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Divulgation d'une vulnérabilité affectant d'anciennes versions de LND :** Matt
-  Morehouse a [posté][morehouse onion] sur Delving Bitcoin la divulgation d'une
+  Morehouse a [divulgué][morehouse onion] sur Delving Bitcoin une
   vulnérabilité affectant les versions de LND antérieures à 0.17.0. LN relaie
   les instructions de paiement et les [messages en onion][topic onion messages] en utilisant
   des paquets chiffrés en onion qui contiennent plusieurs charges utiles chiffrées.
@@ -169,7 +169,7 @@ repo], and [BINANAs][binana repo]._
 - [LDK #3037][] commence à fermer de force les canaux si leur taux de frais est obsolète et trop
   bas. LDK suit continuellement le taux de frais acceptable le plus bas que son [estimateur][topic fee
   estimation] a retourné dans la journée précédente. À chaque bloc, LDK fermera tout canal qui paie un
-  taux de frais en dessous de ce minimum du jour précédent. L'objectif est "de s'assurer que les taux
+  taux de frais inférieur au minimum de la veille. L'objectif est "de s'assurer que les taux
   de frais des canaux sont toujours suffisants pour faire confirmer notre transaction d'engagement
   on-chain si nous devons fermer de force".
 
