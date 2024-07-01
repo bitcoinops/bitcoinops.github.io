@@ -25,11 +25,11 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: BIP431
     - title: "New transaction policies (nVersion=3) for contracting protocols"
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
-
-    - title: Opt In Topologically Restricted Until Confirmation Transactions For More Robust Fee-bumping
-      link: https://github.com/bitcoin/bips/blob/158acdbbbf8ef13f6b345b6281a96e88e20d2cf9/bip-truc.mediawiki
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/pull/28948
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
