@@ -45,13 +45,25 @@ lang: zh
   <tr>
     <th></th>
     <th>预签名</th>
-    <th markdown="span">BIP345 `OP_VAULT`</th>
-    <th markdown="span">`OP_CAT` 结合 schnorr</th>
+    <th markdown="span">
+
+    BIP345 `OP_VAULT`
+
+    </th>
+    <th markdown="span">
+
+    `OP_CAT` 结合 schnorr
+
+    </th>
   </tr>
 
   <tr>
     <th>可用性</th>
-    <td markdown="span">**当前**</td>
+    <td markdown="span">
+
+    **当前**
+
+    </td>
     <td markdown="span">需要 `OP_VAULT` 和 [OP_CTV][topic op_checktemplateverify] 软分叉</td>
     <td markdown="span">需要 `OP_CAT` 软分叉</td>
   </tr>
@@ -59,34 +71,62 @@ lang: zh
   <tr>
     <th markdown="span">最后时刻地址替换攻击</th>
     <td markdown="span">受影响</td>
-    <td markdown="span">**不受影响**</td>
-    <td markdown="span">**不受影响**</td>
+    <td markdown="span">
+
+    **不受影响**
+
+    </td>
+    <td markdown="span">
+
+    **不受影响**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">部分提款</th>
     <td markdown="span">仅当预先规划好时</td>
-    <td markdown="span">**是**</td>
+    <td markdown="span">
+
+    **是**
+
+    </td>
     <td markdown="span">否</td>
   </tr>
 
   <tr>
     <th markdown="span">静态且非交互的可计算提款地址</th>
     <td markdown="span">否</td>
-    <td markdown="span">**是**</td>
-    <td markdown="span">**是**</td>
+    <td markdown="span">
+
+    **是**
+
+    </td>
+    <td markdown="span">
+
+    **是**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">批量重新入库/隔离以节省手续费</th>
     <td markdown="span">否</td>
-    <td markdown="span">**是**</td>
+    <td markdown="span">
+
+    **是**
+
+    </td>
     <td markdown="span">否</td>
   </tr>
 
   <tr>
     <th markdown="span">最佳情况下的操作效率，例如只存在合法花费<br>*(only very roughly estimated by Optech)*</th>
-    <td markdown="span">**2x 普通单签的体积**</td>
+    <td markdown="span">
+
+    **2x 普通单签的体积**
+
+    </td>
     <td markdown="span">3x 普通单签的体积</td>
     <td markdown="span">4x 普通单签的体积</td>
   </tr>

@@ -132,7 +132,11 @@ Taprootの準備に関する最新のコラム、新しいソフトウェアの�
    </tr>
 
    <tr>
-    <th markdown="span">第三者による流動性の購入("[sidecar channels][]")</th>
+    <th markdown="span">
+
+    第三者による流動性の購入("[sidecar channels][]")
+
+    </th>
     <td>はい。アリスはボブにキャロルとのチャネルの資金の支払いが可能</td>
     <td markdown="span">[おそらく可能]({{bse}}107786)</td>
    </tr>

@@ -155,9 +155,17 @@ BOLTs][bolts repo].*
     </tr>
 
     <tr>
-     <th markdown="span">Third-party purchased liquidity ("[sidecar channels][]")</th>
+     <th markdown="span">
+
+     Third-party purchased liquidity ("[sidecar channels][]")
+
+     </th>
      <td>Yes, Alice can pay Bob to fund a channel to Carol</td>
-     <td markdown="span">[Maybe.]({{bse}}107786)</td>
+     <td markdown="span">
+
+     [Maybe.]({{bse}}107786)
+
+     </td>
     </tr>
 
   </table>

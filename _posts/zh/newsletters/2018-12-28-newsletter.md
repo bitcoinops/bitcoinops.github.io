@@ -62,6 +62,7 @@ lang: zh
 许多比特币用户都熟悉能够创建与其比特币地址对应的签名消息。目前还没有标准的方法来使用 P2SH 或 segwit 地址进行签名。三月的讨论最终变成了 [BIP322][]，提出了一个通用格式，能够为任何可支配的比特币脚本创建签名证明。
 
 <div markdown="1" class="callout">
+
 ### 2018 年总结<br>热门基础设施项目的主要发布
 
 - [Bitcoin Core 0.16][] 在二月发布，钱包默认支持接收 segwit 地址、支持 [BIP159][] 允许修剪节点信号表示其愿意提供最近区块，并进行了许多性能改进。
@@ -75,6 +76,7 @@ lang: zh
 - [Bitcoin Core 0.17][] 在十月发布，包含可选的部分支出避免功能、动态创建和加载钱包的能力以及 [BIP174][] 支持部分签名比特币交易，以便比特币程序之间进行通信。
 
 </div>
+
 ## 四月
 
 LN 协议开发人员 Christian Decker、Rusty Russell 和 Olaoluwa Osuntokun 宣布了 [Eltoo][]，一种 LN 的替代强制机制的提议。当前机制（[LN-penalty][]）要求使以前的链下余额更新变得不安全，以防用户尝试将其放到链上。Eltoo 机制允许在有限的时间窗口内将以前的余额更新链上支付给后来的余额更新。在正常操作中，各方通常只会在链上发布最终通道余额，但即使一方发布了旧余额，其通道对手方也可以简单地发布第二笔交易，将其纠正为最终余额。双方都不会失去任何东西，只有支付的交易费用。
@@ -87,12 +89,15 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 ## 五月
 
 <div id="dandelion" markdown="1">
+
 五月，一份[蒲公英协议的草案][BIP156] 发布到 Bitcoin-Dev 邮件列表。蒲公英 可以私密地中继交易，使得无法可靠地确定支出者的 IP 地址。即使不使用类似 Tor 的方法，这也能奏效，并且蒲公英可以与 Tor 结合使用，进一步降低隐私泄露的风险。蒲公英本身仅对中继全节点（非 P2P 轻客户端[^fn-dandelion-lite]）用户完全有利，需要与某种形式的加密结合，以防止 ISP 能够识别支出者。
 
 然而，蒲公英部分依赖中继节点假装它们从未见过之前帮助中继的交易。这使得节点容易受到拒绝服务攻击，攻击者可以浪费节点的带宽和内存——开发人员仍在[解决这些问题][daftuar dandelion]，以便采用该协议。
+
 </div>
 
 <div markdown="1" class="callout">
+
 ### 2018 年总结<br>值得注意的技术会议和其他事件
 
 - [BPASE][bpase]，一月，斯坦福大学
@@ -125,6 +130,7 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 签名方案与一月描述的 muSig 协议（或类似协议）兼容，因此包含了提高效率和隐私的好处。使用 Schnorr 还简化了 Taproot、Graftroot、更私密的 LN 支付通道、更私密的跨链原子交换、同链上的更私密的原子交换（提供改进的 coinjoin）和其他提高效率、隐私或两者的技术的实现。
 
 <div id="p2ep" markdown="1">
+
 与此同时，隐私圆桌会议的参与者描述了一种称为 Pay-to-EndPoint ([P2EP][]) 的方法，可以通过将有限形式的 coinjoin 应用于交互支付显著提高钱包对区块链分析的抵抗力。该提案的[简化形式][bustapay]也已被描述。该协议通过让交易的接收者将一些现有的比特币混入交易中，防止外部观察者能够自动假设交易的所有输入都来自同一个人。使用这种技术的人越多，输入关联假设就越不可靠——提高了所有比特币用户的隐私，而不仅仅是使用 P2EP 的人。
 
 {% capture today-private %}输入：<br>&nbsp;&nbsp;Alice (2 BTC)<br>&nbsp;&nbsp;Alice (2 BTC)<br><br>输出：<br>&nbsp;&nbsp;Alice 的找零 (1 BTC)<br>&nbsp;&nbsp;Bob 的收入 (3 BTC){% endcapture %}
@@ -151,6 +157,7 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 另外，Pieter Wuille 自二月以来一直在基于他、Gregory Maxwell 和其他人开发的协议撰写一个[草案文件][untrackable auth]，允许在加密之上进行可选的认证。类似于 [BIP150][]，这将使在互联网或绑定到可信节点的轻量级钱包中更容易安全地设置白名单节点。值得注意的是，这个当前的想法是启用认证而不向第三方透露身份，以便在匿名网络（如 Tor）上的节点或简单更改 IP 地址的节点不会被追踪其网络身份。尽管 Wuille 发现了他最初记录的提案中的缺陷，但随着开发协议的研究推进，提案已被更新。
 
 <div markdown="1" class="callout">
+
 ### 2018 年总结<br>Bitcoin Optech
 
 自五月启动 [Optech][] 以来，我们已经签约了 15 家公司成为会员，举办了两次[研讨会][optech workshops]，制作了 28 期每周 [Newsletter][optech newsletters]，建立了一个[仪表盘][optech dashboard]，并在一本关于可独立部署的扩展技术的书籍上取得了扎实的开端。要了解我们在 2018 年取得的成就以及我们 2019 年的计划，请参阅我们的简短[年度报告][optech annual report]。
@@ -171,6 +178,7 @@ Eltoo 需要一个新的可选签名哈希的软分叉，[BIP118][] SIGHASH_NOIN
 另外，LN 协议开发者 Rusty Russell 提出了一种[拼接][splicing]的方法，允许用户在不暂停该通道中的支付的情况下添加或减少通道中的资金。这特别有助于钱包隐藏管理余额的技术细节。例如，Alice 的钱包可以自动从同一个支付通道中链下使用 LN 通过该支付通道支付给 Bob 或链上使用拼接出（提现）从该支付通道支付给 Bob。
 
 <div markdown="1" class="callout">
+
 ### 2018 年总结<br>新的开源基础设施解决方案
 
 - [Electrs][] 于七月发布，提供了用 Rust 编程语言编写的高效重实现的 Electrum 风格的交易查找服务器。资源需求显著低于替代方案。Electrum 风格的服务器为许多钱包和其他服务提供了后端支持。
@@ -197,6 +205,7 @@ Pieter Wuille、Gregory Maxwell 和 Gleb Naumenko 研究了如何减少用于中
 最后，在 2018 年即将结束时，开发人员继续讨论如何将 Schnorr 签名、Taproot MAST、SIGHASH_NOINPUT_UNSAFE 和其他更改集成到一个具体的软分叉提案中。协议开发者 Anthony Towns 简明[总结][schnorr and more]了如果今天发布提案，可能包含的内容。
 
 <div markdown="1" class="callout">
+
 ### 2018 年总结<br>手续费减少技术的使用
 
 ![Plot of compressed pubkey, segwit, payment batching, and opt-in RBF use in 2018](/img/posts/2018-12-overall.png)

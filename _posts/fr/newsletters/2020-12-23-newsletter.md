@@ -144,6 +144,7 @@ problème pour le système de signature ECDSA actuel de Bitcoin et le système
 proposé de [signature schnorr][topic schnorr signatures].
 
 <div markdown="1" class="callout" id="taproot">
+
 ### Sommaire 2020<br>Taproot, tapscript, et signatures schnorr
 
 Presque tous les mois de l'année 2020 ont été marqués par un développement
@@ -429,6 +430,7 @@ possibilité pour un opérateur de nœud d'opter pour la création et le service
 de filtres de blocs compacts en activant seulement deux options de configuration.
 
 <div markdown="1" class="callout" id="releases">
+
 ### Sommaire 2020<br>Mise à jour majeure des principaux projets d'infrastructure
 
 - [LND 0.9.0-beta][] a publié en janvier une amélioration du mécanisme
@@ -637,6 +639,7 @@ le nœud peut choisir un taux de frais approprié au moment de la diffusion. Cel
 simplifie le protocole LN et améliore plusieurs aspects de sa sécurité.
 
 <div markdown="1" class="callout" id="optech">
+
 ### Sommaire 2020<br>Bitcoin Optech
 
 Au cours de la troisième année d'existence d'Optech, 10 nouvelles sociétés

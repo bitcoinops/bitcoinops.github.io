@@ -172,7 +172,10 @@ Besides coinswaps, there are several other [proposed uses][scriptless
 scripts repo] for adaptor signatures.
 
 <div class="qa_details">
-<details markdown="1"><summary>Click to display the same coinswap example in mathematical terms</summary>
+<details markdown="1">
+
+<summary>Click to display the same coinswap example in mathematical terms</summary>
+
 *In the following example, we assume the use of BIP340
 schnorr signatures.  We use lowercase variables for scalars and
 uppercase variables for elliptic curve points.  We represent
@@ -250,6 +253,7 @@ earlier:
 
 Bob uses that signature to broadcast the transaction Alice
 originally gave him.
+
 </details><br>
 </div>
 

@@ -85,7 +85,11 @@ pages of the Bitcoin Wiki so other developers can learn from your code.
       </tr>
 
       <tr>
-        <th markdown="1">Implicit scripts (e.g. [BIP44][])</th>
+        <th markdown="1">
+
+        Implicit scripts (e.g. [BIP44][])
+
+        </th>
         <td>Seed words</td>
         <td>Automatic (no user action required)</td>
         <td>Must scan for all supported scripts, O(n)</td>
@@ -102,7 +106,11 @@ pages of the Bitcoin Wiki so other developers can learn from your code.
       </tr>
 
       <tr>
-        <th markdown="1">Explicit scripts ([descriptors][topic descriptors])</th>
+        <th markdown="1">
+
+        Explicit scripts ([descriptors][topic descriptors])
+
+        </th>
         <td>Seed words and descriptor</td>
         <td>User must back up the new descriptor</td>
         <td>Only scans for the script templates that were actually used, O(n); n=1 for a new wallet</td>

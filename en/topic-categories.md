@@ -18,6 +18,7 @@ layout: page
 {% assign categories = raw_categories | split: "|" | sort_natural | uniq %}
 
 <div class="center" markdown="1">
+
 {{ categories | size }} categories for {{site.topics | size}} unique
 topics, with many topics appearing in multiple categories.
 
