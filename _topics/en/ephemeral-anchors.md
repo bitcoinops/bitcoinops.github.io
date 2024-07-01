@@ -6,8 +6,8 @@ title: Ephemeral anchors
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#title-aliases:
-#  - Foo
+title-aliases:
+  - "Ephemeral dust"
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -19,8 +19,11 @@ topic-categories:
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: BIP432
     - title: Ephemeral Anchors
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/pull/30239
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
