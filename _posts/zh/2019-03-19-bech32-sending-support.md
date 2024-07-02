@@ -177,7 +177,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #41]: /zh/newsletters/2019/04/09/#bech32-发送支持
 [newsletter #42]: /zh/newsletters/2019/04/16/#bech32-发送支持
 [newsletter #43]: /zh/newsletters/2019/04/23/#bech32-发送支持
-[newsletter #44]: /en/newsletters/2019/04/30/#bech32-sending-support
+[newsletter #44]: /en/newsletters/2019/04/30/#bech32-发送支持
 [newsletter #45]: /zh/newsletters/2019/05/07/#bech32-发送支持
 [newsletter #46]: /en/newsletters/2019/05/14/#bech32-sending-support
 [newsletter #47]: /en/newsletters/2019/05/21/#bech32-sending-support
