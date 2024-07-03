@@ -22,6 +22,8 @@ primary_sources:
     - title: Interactive miniscript demo
       link: http://bitcoin.sipa.be/miniscript/
 
+    - title: BIP379
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -91,6 +93,9 @@ optech_mentions:
 
   - title: Draft BIP proposed for miniscript
     url:  /en/newsletters/2024/05/24/#proposed-miniscript-bip
+
+  - title: "BIP379 added with a specification for Miniscript"
+    url: /en/newsletters/2024/07/05/#bips-1610
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

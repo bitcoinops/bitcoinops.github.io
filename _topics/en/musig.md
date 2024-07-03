@@ -136,6 +136,9 @@ optech_mentions:
   - title: "PSBTs for multiple concurrent MuSig2 signing sessions"
     url: /en/newsletters/2024/03/06/#psbts-for-multiple-concurrent-musig2-signing-sessions
 
+  - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
+    url: /en/newsletters/2024/07/05/#bips-1540
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures

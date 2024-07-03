@@ -51,6 +51,9 @@ optech_mentions:
   - title: "How does the TIDES payout scheme work?"
     url: /en/newsletters/2024/02/28/#how-does-ocean-s-tides-payout-scheme-work
 
+  - title: "Bitcoin Core #30200 adds a new mining interface to better support Stratum v2 in the future"
+    url: /en/newsletters/2024/07/05/#bitcoin-core-30200
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

@@ -87,6 +87,9 @@ optech_mentions:
   - title: "Rust Bitcoin #2451 removes the requirement that an HD derivation path start with an `m`"
     url: /en/newsletters/2024/02/14/#rust-bitcoin-2451
 
+  - title: "BIP328 added with a specifications BIP32-compatible MuSig2 key derivation"
+    url: /en/newsletters/2024/07/05/#bips-1540
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output script descriptors
