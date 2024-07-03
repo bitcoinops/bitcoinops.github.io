@@ -176,6 +176,9 @@ optech_mentions:
   - title: "BIPs #1567 adds BIP387 with new `multi_a()` and `sortedmultia_a()` descriptors"
     url: /en/newsletters/2024/05/15/#bips-1567
 
+  - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
+    url: /en/newsletters/2024/07/05/#bips-1540
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript
