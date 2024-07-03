@@ -106,6 +106,9 @@ optech_mentions:
   - title: "LDK #3082 adds an interface for building static reusable offers"
     url: /en/newsletters/2024/06/21/#ldk-3082
 
+  - title: "Discussion of fully implementing offers versus incremently adding features from it"
+    url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
