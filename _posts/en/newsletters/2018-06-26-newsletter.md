@@ -47,7 +47,7 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 
 - **Bitcoin Core [0.16.1 released][]:** contains a fix for a case that could cause monetary loss for miners in situations expected to be quite rare. Also fixes a DoS attack that mostly affected new nodes and includes a change to relay policy in advance of a possible future soft fork more than a year from now.  Upgrade is recommended for all users and highly recommended for miners.
 
-[0.16.1 released]: https://bitcoincore.org/en/2018/06/15/release-0.16.1/
+[0.16.1 released]: https://bitcoincore.org/en/releases/0.16.1/
 
 - **Bitcoin-dev mailing list changing hosts:** if you subscribe to the [public Bitcoin Development mailing list][mailing list], note that an announcement will soon be posted about a change of domain name.  It's not known yet if any user action will be required besides addressing emails to a different domain name, although a change of hosts three years ago required all members re-subscribe.
 
