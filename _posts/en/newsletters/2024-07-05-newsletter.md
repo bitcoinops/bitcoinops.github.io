@@ -251,35 +251,57 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-<!-- FIXME: Gustavojfe -->
+- [Bitcoin Core #28167][] introduces `-rpccookieperms` as a new `bitcoind`
+  startup option, allowing users to set file read permissions for the RPC
+  authentication cookie by choosing between owner (default), group, or all
+  users.
 
-- [Bitcoin Core #28167][] init: Add option for rpccookie permissions (replace 26088)
+- [Bitcoin Core #30007][] adds Ava Chow's (achow101) DNS seeder to `chainparams`
+  to provide an additional trusted source of peer discovery. It uses
+  [Dnsseedrs][dnsseedrs], a new open source bitcoin DNS seeder written in Rust that
+  crawls node addresses on the IPv4, IPv6, Tor v3, I2P,
+  and CJDNS networks.
 
-- [Bitcoin Core #30007][] chainparams: Add achow101 DNS seeder <!-- we
-  don't usually cover changes to seeder params, but it'd be nice to
-  mention that there's new seeder software available.  Also, our usual
-  policy is not to mention names in this section, but seeds are based on
-  (limited) trust, so it's ok to mention that this new seed is being run
-  by Ava -harding -->
+- [Bitcoin Core #30200][] introduces a new `Mining` interface.  Existing
+  RPCs like `getblocktemplate` and `generateblock` begin using the
+  interface immediately.  Future work like a [Stratum V2][topic pooled
+  mining] interface that uses Bitcoin Core as the template provider will
+  use the new mining interface.
 
-- [Bitcoin Core #30200][] Introduce Mining interface <!-- suggest
-  mentioning both what this does immediately (not much!) and how it
-  might be used in the future, e.g. for binding to a stratum v2 interface -harding -->
+- [Core Lightning #7342][] corrects the handling of a startup edge case where
+  the service aborts because it detects that `bitcoind` has gone backwards on
+  its block height, which may happen during a blockchain reorganization.
+  It will now wait for the block header height to reach the previous
+  level and begin scanning the newly received (reorged) blocks.
 
-- [Core Lightning #7342][] lightningd: wait for bitcoind at startup if it's fallen behind.
-  <!-- goal here is just to quickly mention this edge case (bitcoind
-  falling behind) that CLN devs encountered so that other LN devs are
-  encouraged to check how their own code addresses it.  We don't need to
-  go into too much detail about CLN's particular solution, as any devs
-  who are interested can just check the commits themselves -->
+- [LND #8796][] loosens restrictions on channel opening parameters by now
+  allowing peers to initiate non-[zero-conf][topic zero-conf channels] channels
+  with a `min_depth` of zero. Nonetheless, LND will still wait for at least one
+  confirmation before considering the channel usable. This change improves
+  interoperability with other Lightning implementations that support this, such
+  as LDK, and aligns with the [BOLT2][] specification.
 
-- [LND #8796][] multi: allow min-depth of zero for non-zero conf channels
+- [LDK #3125][] introduces support for encoding and parsing `HeldHtlcAvailable`
+  and `ReleaseHeldHtlc` messages required by the upcoming implementation of
+  [async payments][topic async payments] protocol. It also adds [onion message][topic onion messages]
+  payloads to these messages, and an `AsyncPaymentsMessageHandler` trait for
+  `OnionMessenger`.
 
-- [LDK #3125][] Async payments message encoding and prefactor
+- [BIPs #1610][] adds [BIP379][BIP379 md] with a specification for [Miniscript][topic
+  miniscript], a language that compiles to Bitcoin Script but which allows
+  composition, templating, and definitive analysis. See [Newsletter #304][news304
+  miniscript] for an earlier reference to this BIP.
 
-- [BIPs #1610][] BIP 379: Specify Miniscript
-
-- [BIPs #1540][] 328, 390, 373: BIPs for MuSig2 derivation, descriptors, and PSBT fields
+- [BIPs #1540][] adds BIPs [328][bip328], [390][bip390], and [373][bip373] with a specification for a
+  [MuSig2][topic musig] derivation scheme for aggregate keys (328), output
+  script [descriptors][topic descriptors] (390), and [PSBT][topic psbt] fields
+  to allow MuSig2 data to be included in a PSBT of any version (373). MuSig2 is
+  a protocol for aggregating public keys and signatures for the [schnorr digital
+  signature][topic schnorr signatures] algorithm that requires only two rounds
+  of communication (MuSig1 requires three) to provide a signing experience
+  that does not differ excessively from script-based multisig. The derivation scheme allows for
+  [BIP32][topic bip32]-style extended public keys to be constructed from a [BIP327][]
+  MuSig2 aggregate public key.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -311,3 +333,6 @@ repo], and [BINANAs][binana repo]._
 [bcco announce]: https://bitcoincore.org/en/security-advisories/
 [new disclosure policy]: https://mailing-list.bitcoindevs.xyz/bitcoindev/rALfxJ5b5hyubGwdVW3F4jtugxnXRvc-tjD_qwW7z73rd5j7lXGNdEHWikmSdmNG3vkSOIwEryZzOZr_DgmVDDmt9qsX0gpRAcpY9CfwSk4=@protonmail.com/T/#u
 [CVE-2015-3641]: https://nvd.nist.gov/vuln/detail/CVE-2015-3641
+[dnsseedrs]: https://github.com/achow101/dnsseedrs
+[news304 miniscript]: /en/newsletters/2024/05/24/#proposed-miniscript-bip
+[BIP379 md]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
