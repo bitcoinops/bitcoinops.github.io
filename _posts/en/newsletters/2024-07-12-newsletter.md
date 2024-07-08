@@ -57,14 +57,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Rust Bitcoin #2949][] adds a new method `is_standard_op_return()` to validate
+  OP_RETURN outputs against current standardness rules, allowing
+  programmers to test whether OP_RETURN data exceeds the 80-byte
+  maximum size enforced by Bitcoin Core.  Programmers who aren't worried
+  about exceeding the current default Bitcoin Core limit can continue to
+  use Rust Bitcoin's existing `is_op_return` function.
 
-- [Rust Bitcoin #2949][] OP_RETURN standardness check
-
-- [BDK #1487][] Add support for custom sorting and deprecate BIP69 <!--
-  maybe mention
-  https://bitcoinops.org/en/newsletters/2018/10/30/#bip69-discussion and
-  https://bitcoinops.org/en/newsletters/2021/06/02/#bolts-872 -->
+- [BDK #1487][] introduces support for custom input and output sorting functions
+  by adding a `Custom` variant to the `TxOrdering` enum, to enhance flexibility
+  in transaction construction. Explicit [BIP69][] support is removed because
+  it may not provide the desired privacy due to its low adoption rate (see Newsletters
+  [#19][news19 bip69] and [#151][news151 bip69]), but users can still create
+  BIP69-compliant transactions by implementing appropriate custom sorting.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -74,3 +79,5 @@ FIXME:Gustavojfe
 [sources]: /internal/sources/
 [interesting transaction]: https://stacker.news/items/600187
 [LND v0.18.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.2-beta
+[news19 bip69]: /en/newsletters/2018/10/30/#bip69-discussion
+[news151 bip69]: /en/newsletters/2021/06/02/#bolts-872
