@@ -177,7 +177,7 @@ repo], and [BINANAs][binana repo]._
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2867,8730,3098,3078,3082,3103,3037,29325" %}
-[news304 sp-psbt]: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
+[news304 sp-psbt]: /fr/newsletters/2024/05/24/#discussion-sur-les-psbt-pour-les-paiements-silencieux
 [news58 variable onions]: /en/newsletters/2019/08/07/#bolts-619
 [morehouse onion]: https://delvingbitcoin.org/t/dos-disclosure-lnd-onion-bomb/979
 [bcc 27.1]: /fr/newsletters/2024/06/14/#bitcoin-core-27-1
