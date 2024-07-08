@@ -349,7 +349,7 @@ or minimum cost flow problems.  So, it gives us an overview of how to address
 these kinds of questions.
 
 There is this one professor, I think he's in Chicago, and I'm probably horribly
-mispronouncing the name now, Ziridopoulos, and he already saw some of the
+mispronouncing the name now, Sidiropoulos, and he already saw some of the
 results.  And I mean, he is working in algorithmic geometry and he kind of could
 connect the dots of what I'm doing.  And he just last week sent me a draft of a
 follow-up paper that he was writing, where he says he can calculate or estimate
