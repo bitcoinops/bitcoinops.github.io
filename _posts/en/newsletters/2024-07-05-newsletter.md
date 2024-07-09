@@ -21,7 +21,7 @@ notable changes to popular Bitcoin infrastructure software.
   affecting versions of Bitcoin Core that have been past their
   end-of-life for almost two years<!-- 0.21.x EOL 2022-10-01 per
   https://bitcoincore.org/en/lifecycle/ -->.  We summarize the
-  disclosures below:
+  disclosures below: {% assign timestamp="0:59" %}
 
   - [Remote code execution due to bug in miniupnpc][]: before Bitcoin
     Core 0.11.1 (released October 2015), nodes had [UPnP][] enabled by
@@ -229,7 +229,7 @@ notable changes to popular Bitcoin infrastructure software.
   concluded.  BLIPs are optional specifications and it appeared from the
   discussion that this BLIP might be implemented in LND but not in
   Eclair or lightning-kmp (the basis for Phoenix wallet); plans for
-  other implementations were not discussed.
+  other implementations were not discussed. {% assign timestamp="22:17" %}
 
 ## Releases and release candidates
 
@@ -238,7 +238,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Bitcoin Core 26.2rc1][] is a release candidate for a maintenance
-  version of Bitcoin Core's older release series.
+  version of Bitcoin Core's older release series. {% assign timestamp="36:43" %}
 
 ## Notable code and documentation changes
 
@@ -254,43 +254,43 @@ repo], and [BINANAs][binana repo]._
 - [Bitcoin Core #28167][] introduces `-rpccookieperms` as a new `bitcoind`
   startup option, allowing users to set file read permissions for the RPC
   authentication cookie by choosing between owner (default), group, or all
-  users.
+  users. {% assign timestamp="37:48" %}
 
 - [Bitcoin Core #30007][] adds Ava Chow's (achow101) DNS seeder to `chainparams`
   to provide an additional trusted source of peer discovery. It uses
   [Dnsseedrs][dnsseedrs], a new open source bitcoin DNS seeder written in Rust that
   crawls node addresses on the IPv4, IPv6, Tor v3, I2P,
-  and CJDNS networks.
+  and CJDNS networks. {% assign timestamp="39:07" %}
 
 - [Bitcoin Core #30200][] introduces a new `Mining` interface.  Existing
   RPCs like `getblocktemplate` and `generateblock` begin using the
   interface immediately.  Future work like a [Stratum V2][topic pooled
   mining] interface that uses Bitcoin Core as the template provider will
-  use the new mining interface.
+  use the new mining interface. {% assign timestamp="40:37" %}
 
 - [Core Lightning #7342][] corrects the handling of a startup edge case where
   the service aborts because it detects that `bitcoind` has gone backwards on
   its block height, which may happen during a blockchain reorganization.
   It will now wait for the block header height to reach the previous
-  level and begin scanning the newly received (reorged) blocks.
+  level and begin scanning the newly received (reorged) blocks. {% assign timestamp="41:33" %}
 
 - [LND #8796][] loosens restrictions on channel opening parameters by now
   allowing peers to initiate non-[zero-conf][topic zero-conf channels] channels
   with a `min_depth` of zero. Nonetheless, LND will still wait for at least one
   confirmation before considering the channel usable. This change improves
   interoperability with other Lightning implementations that support this, such
-  as LDK, and aligns with the [BOLT2][] specification.
+  as LDK, and aligns with the [BOLT2][] specification. {% assign timestamp="42:55" %}
 
 - [LDK #3125][] introduces support for encoding and parsing `HeldHtlcAvailable`
   and `ReleaseHeldHtlc` messages required by the upcoming implementation of
   [async payments][topic async payments] protocol. It also adds [onion message][topic onion messages]
   payloads to these messages, and an `AsyncPaymentsMessageHandler` trait for
-  `OnionMessenger`.
+  `OnionMessenger`. {% assign timestamp="45:26" %}
 
 - [BIPs #1610][] adds [BIP379][BIP379 md] with a specification for [Miniscript][topic
   miniscript], a language that compiles to Bitcoin Script but which allows
   composition, templating, and definitive analysis. See [Newsletter #304][news304
-  miniscript] for an earlier reference to this BIP.
+  miniscript] for an earlier reference to this BIP. {% assign timestamp="46:21" %}
 
 - [BIPs #1540][] adds BIPs [328][bip328], [390][bip390], and [373][bip373] with a specification for a
   [MuSig2][topic musig] derivation scheme for aggregate keys (328), output
@@ -301,7 +301,7 @@ repo], and [BINANAs][binana repo]._
   of communication (MuSig1 requires three) to provide a signing experience
   that does not differ excessively from script-based multisig. The derivation scheme allows for
   [BIP32][topic bip32]-style extended public keys to be constructed from a [BIP327][]
-  MuSig2 aggregate public key.
+  MuSig2 aggregate public key. {% assign timestamp="49:07" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
