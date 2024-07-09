@@ -91,6 +91,9 @@ optech_mentions:
   - title: "BIP and experimental implementation of testnet4"
     url: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
 
+  - title: "Bitcoin Core PR Review Club about testnet4"
+    url: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet
