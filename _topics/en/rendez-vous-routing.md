@@ -92,6 +92,9 @@ optech_mentions:
   - title: "Eclair #2867 defines an encoded node ID to use to identify mobile wallets in blinded paths"
     url: /en/newsletters/2024/06/21/#eclair-2867
 
+  - title: "Proposed BLIP for adding a blinded path field to BOLT11 invoices"
+    url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

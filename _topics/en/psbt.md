@@ -222,6 +222,9 @@ optech_mentions:
   - title: "Continued discussion about using PSBTs with silent payments"
     url: /en/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments
 
+  - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
+    url: /en/newsletters/2024/07/05/#bips-1540
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

@@ -51,6 +51,9 @@ optech_mentions:
   - title: "LDK #2973 adds support for intercepting onion messages to facilitate async payments"
     url: /en/newsletters/2024/05/17/#ldk-2973
 
+  - title: "LDK #3125 introduces support for encoding and parsing messages needed for async payments"
+    url: /en/newsletters/2024/07/05/#ldk-3125
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments

@@ -49,7 +49,7 @@ infrastructure projects.
   provides a useful basis for making comparisons.
   In a [reply][pickhardt feasible2], Pickhardt describes how the
   likelihood metric could be used by wallets and business software to
-  automatically make some intelligent decisions on behalf of its users.
+  automatically make some intelligent decisions on behalf of its users. {% assign timestamp="1:04" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -66,50 +66,50 @@ nswer -->{% endcomment %}
 - [How is the progress of Initial Block Download (IBD) calculated?]({{bse}}123350)
   Pieter Wuille points to Bitcoin Core's `GuessVerificationProgress` function
   and explains that the estimated total transactions in the chain uses hardcoded
-  statistics that are updated as part of each major release.
+  statistics that are updated as part of each major release. {% assign timestamp="31:25" %}
 
 - [What is `progress increase per hour` during synchronization?]({{bse}}123279)
   Pieter Wuille clarifies that progress increase per hour is the percentage of
   the blockchain synchronized per hour and not an increase in progress rate. He goes on
-  to note reasons why progress is not constant and can vary.
+  to note reasons why progress is not constant and can vary. {% assign timestamp="33:50" %}
 
 - [Should an even Y coordinate be enforced after every key-tweak operation, or only at the end?]({{bse}}119485)
   Pieter Wuille agrees that when to perform a key negation to enforce [x-only
   public keys][topic X-only public keys] is largely a matter
-  of opinion while pointing out pros and cons within different protocols.
+  of opinion while pointing out pros and cons within different protocols. {% assign timestamp="34:45" %}
 
 - [Signet mobile phone wallets?]({{bse}}123045)
   Murch lists four [signet][topic signet]-compatible mobile wallet apps:
-  Nunchuk, Lava, Envoy, and Xverse.
+  Nunchuk, Lava, Envoy, and Xverse. {% assign timestamp="37:28" %}
 
 - [What block had the most transaction fees? Why?]({{bse}}7582)
   Murch uncovers block 409,008 with the most bitcoin-denominated fees (291.533
   BTC caused by a missing change output) and block 818,087 with the most
   USD-denominated fees ($3,189,221.5 USD, also presumed to be caused by a missing
-  change output).
+  change output). {% assign timestamp="39:01" %}
 
 - [bitcoin-cli listtransactions fee amount is way off, why?]({{bse}}123391)
   Ava Chow notes this discrepancy occurs when Bitcoin Core's wallet is unaware of
   one of the inputs to a transaction, but knows others, as in the example given
   in the question of a [payjoin][topic payjoin] transaction. She goes on to note
   "The wallet really shouldn't be returning the fee here since it can't
-  accurately determine it."
+  accurately determine it." {% assign timestamp="41:48" %}
 
 - [Did uncompressed public keys use the `04` prefix before compressed public keys were used?]({{bse}}123252)
   Pieter Wuille explains that historically signature verification was done by the
   OpenSSL library that allows uncompressed (`04` prefix), compressed (`02` and
-  `03` prefixes), and hybrid (`06` and `07` prefixes) public keys.
+  `03` prefixes), and hybrid (`06` and `07` prefixes) public keys. {% assign timestamp="44:57" %}
 
 - [What happens if an HTLC's value is below the dust limit?]({{bse}}123393)
   Antoine Poinsot points out that any output in a LN commitment transaction
   could have a value below the [dust limit][topic uneconomical outputs] which
   results in the satoshis in those outputs being used instead for fees (see
-  [trimmed HTLCs][topic trimmed htlc]).
+  [trimmed HTLCs][topic trimmed htlc]). {% assign timestamp="46:34" %}
 
 - [How does subtractfeefrom work?]({{bse}}123262)
   Murch provides an overview of how [coin selection][topic coin selection] in
   Bitcoin Core works when the optional `subtractfeefrom` is used. He also notes
-  using `subtractfeefromoutput` causes several bugs when finding changeless transactions.
+  using `subtractfeefromoutput` causes several bugs when finding changeless transactions. {% assign timestamp="47:11" %}
 
 - [What's the difference between the 3 index directories "blocks/index/", "bitcoin/indexes" and "chainstate"?]({{bse}}123364)
   Ava Chow lists some data directories in Bitcoin Core:
@@ -117,6 +117,8 @@ nswer -->{% endcomment %}
   - `blocks/index` which contains the LevelDB database for the block index
   - `chainstate/` which contains LevelDB database for the UTXO set
   - `indexes/` which contains the txindex, coinstatsindex, and blockfilterindex optional indexes
+
+  {% assign timestamp="51:19" %}
 
 ## Releases and release candidates
 
@@ -127,10 +129,10 @@ release candidates.*
 - [LND v0.18.1-beta][] is a minor release with a fix for "an [issue][lnd
   #8862] that arises when handling an error after attempting to
   broadcast transactions if a btcd backend with an older version
-  (pre-v0.24.2) is used."
+  (pre-v0.24.2) is used." {% assign timestamp="52:18" %}
 
 - [Bitcoin Core 26.2rc1][] is a release candidate for a maintenance
-  version of Bitcoin Core's older release series.
+  version of Bitcoin Core's older release series. {% assign timestamp="53:02" %}
 
 ## Notable code and documentation changes
 
@@ -153,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   containing a maximum of eight block headers as a possible [BIP130][]
   announcement of a new block. Bitcoin Core now treats all `headers`
   messages that don't connect to a block tree known by the node as
-  potential new block announcements and requests any missing blocks.
+  potential new block announcements and requests any missing blocks. {% assign timestamp="53:29" %}
 
 - [Bitcoin Core #28984][] adds support for a limited version of
   [replace-by-fee][topic rbf] for [packages][topic package relay]
@@ -161,7 +163,7 @@ repo], and [BINANAs][binana repo]._
   Topologically Restricted Until Confirmation ([TRUC][topic v3 transaction
   relay]) transactions (aka v3 transactions). These clusters can only replace an
   existing cluster of the same size or smaller. See [Newsletter #296][news296
-  packagerbf] for related context.
+  packagerbf] for related context. {% assign timestamp="56:38" %}
 
 - [Core Lightning #7388][] removes the ability to create non-zero-fee
   [anchor-style][topic anchor outputs] channels to conform to changes in
@@ -174,31 +176,31 @@ repo], and [BINANAs][binana repo]._
   containing both `scid` and `node`, parsing LaTeX formatting added to
   the onion specification,
   and other BOLT specification changes mentioned in Newsletters [#259][news259
-  bolts] and [#305][news305 bolts].
+  bolts] and [#305][news305 bolts]. {% assign timestamp="1:00:28" %}
 
 - [LND #8734][] improves the payment route estimation abort process when a user
   interrupts the `lncli estimateroutefee` RPC command by making the payment loop
   aware of the client's streaming context. Previously, interrupting this command
   would cause the server to continue [payment probing][topic payment probes]
   routes unnecessarily. See Newsletter [#293][news293 routefee] for a previous
-  reference to this command.
+  reference to this command. {% assign timestamp="1:03:24" %}
 
 - [LDK #3127][] implements non-strict forwarding to improve payment reliability,
   as specified in [BOLT4][], allowing [HTLCs][topic htlc] to be forwarded to a
   peer through channels other than the one specified by `short_channel_id` in
   the onion message. Channels with the least amount of outbound liquidity that
   can pass the HTLC are selected to maximize the probability of success for
-  subsequent HTLCs.
+  subsequent HTLCs. {% assign timestamp="1:03:59" %}
 
 - [Rust Bitcoin #2794][] implements the enforcement of the redeem script size
   limit of 520 bytes for P2SH and of the witness script size limit of 10,000
   bytes for P2WSH by adding fallible constructors to `ScriptHash` and
-  `WScriptHash`.
+  `WScriptHash`. {% assign timestamp="1:05:39" %}
 
 - [BDK #1395][] removes the `rand` dependency in both explicit and implicit
   usage, replacing it with `rand-core` to simplify dependencies, avoid the added
   complexity of `thread_rng` and `getrandom`, and provide greater flexibility by
-  allowing users to pass their own Random Number Generators (RNGs).
+  allowing users to pass their own Random Number Generators (RNGs). {% assign timestamp="1:07:05" %}
 
 - [BIPs #1620][] and [BIPs #1622][] add changes to [BIP352][]
   specification of [silent payments][topic silent payments].
@@ -208,7 +210,7 @@ repo], and [BINANAs][binana repo]._
   sum is zero (for sender), and fail if public key sum is point at infinity (for
   receiver). In #1622, BIP352 is changed to calculate `input_hash`
   after key aggregation, not before, to reduce redundancy and make the process
-  clearer for both sender and receiver.
+  clearer for both sender and receiver. {% assign timestamp="1:08:55" %}
 
 - [BOLTs #869][] introduces a new channel quiescence protocol on BOLT2, which
   aims to make [protocol upgrades][topic channel commitment upgrades]
@@ -219,7 +221,7 @@ repo], and [BINANAs][binana repo]._
   Upon sending `stfu`, the sender stops all update messages. The receiver should
   then stop sending updates and respond with `stfu` if possible, so that the
   channel becomes completely quiescent. See Newsletters [#152][news152
-  quiescence] and [#262][news262 quiescence].
+  quiescence] and [#262][news262 quiescence]. {% assign timestamp="1:11:57" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
