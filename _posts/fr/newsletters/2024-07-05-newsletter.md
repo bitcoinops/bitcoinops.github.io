@@ -271,23 +271,23 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [l402]: https://github.com/lightninglabs/L402
 [exécution de code à distance due à un bug dans miniupnpc]: https://bitcoincore.org/en/2024/07/03/disclose_upnp_rce/
 [cve-2015-6031]: https://nvd.nist.gov/vuln/detail/CVE-2015-6031
-[plantage du nœud dû à des messages volumineux de plusieurs pairs]: https://bitcoincore.org/en/2024/07/03/disclose_receive_buffer_oom/
+[Crash du nœud DoS de plusieurs pairs avec de grands messages]: https://bitcoincore.org/en/2024/07/03/disclose_receive_buffer_oom/
 [censure des transactions non confirmées]: https://bitcoincore.org/en/2024/07/03/disclose_already_asked_for/
-[liste d'interdiction non limitée causant un DoS CPU/mémoire]: https://bitcoincore.org/en/2024/07/03/disclose-unbounded-banlist/
-[division du réseau due à un ajustement excessif du temps]: https://bitcoincore.org/en/2024/07/03/disclose-timestamp-overflow/
-[DoS CPU et blocage du nœud dû à la gestion des orphelins]: https://bitcoincore.org/en/2024/07/03/disclose-orphan-dos/
-[DoS mémoire dû à de grands messages `inv`]: https://bitcoincore.org/en/2024/07/03/disclose-inv-buffer-blowup/
+[Liste d'interdiction non limitée CPU/mémoire DoS]: https://bitcoincore.org/en/2024/07/03/disclose-unbounded-banlist/
+[Séparation de réseau due à un ajustement excessif du temps]: https://bitcoincore.org/en/2024/07/03/disclose-timestamp-overflow/
+[CPU DoS et blocage du nœud dû au traitement des orphelins]: https://bitcoincore.org/en/2024/07/03/disclose-orphan-dos/
+[DoS mémoire à partir de grands messages `inv`]: https://bitcoincore.org/en/2024/07/03/disclose-inv-buffer-blowup/
 [DoS mémoire utilisant des en-têtes de faible difficulté]: https://bitcoincore.org/en/2024/07/03/disclose-header-spam/
-[DoS gaspillage de CPU dû à des requêtes mal formées]: https://bitcoincore.org/en/2024/07/03/disclose-getdata-cpu/
+[DoS gaspillant du CPU en raison de demandes malformées]: https://bitcoincore.org/en/2024/07/03/disclose-getdata-cpu/
 [news70 bip70]: /en/newsletters/2019/10/30/#bitcoin-core-17165
-[crash lié à la mémoire lors de tentatives d'analyse des URI BIP72]: https://bitcoincore.org/en/2024/07/03/disclose-bip70-crash/
+[Crash lié à la mémoire lors des tentatives de parse des URI BIP72]: https://bitcoincore.org/en/2024/07/03/disclose-bip70-crash/
 [cve-2020-14198]: https://nvd.nist.gov/vuln/detail/CVE-2020-14198
-[annonce news306]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
+[news306 disclosure]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
 [upnp]: https://en.wikipedia.org/wiki/Universal_Plug_and_Play
 [nat]: https://en.wikipedia.org/wiki/Network_address_translation
 [bibliothèque miniupnpc]: https://miniupnp.tuxfamily.org/
-[divulgation par poinsot]: https://mailing-list.bitcoindevs.xyz/bitcoindev/xsylfaVvODFtrvkaPyXh0mIc64DWMCchxiVdTApFqJ_0Q5v0bOoDpS_36HwDKmzdDO9U2RKMzESEiVaq47FTamegi2kCNtVZeDAjSR4G7Ic=@protonmail.com/
-[annonce bcco]: https://bitcoincore.org/en/security-advisories/
+[poinsot disclose]: https://mailing-list.bitcoindevs.xyz/bitcoindev/xsylfaVvODFtrvkaPyXh0mIc64DWMCchxiVdTApFqJ_0Q5v0bOoDpS_36HwDKmzdDO9U2RKMzESEiVaq47FTamegi2kCNtVZeDAjSR4G7Ic=@protonmail.com/
+[bcco announce]: https://bitcoincore.org/en/security-advisories/
 [nouvelle politique de divulgation]: https://mailing-list.bitcoindevs.xyz/bitcoindev/rALfxJ5b5hyubGwdVW3F4jtugxnXRvc-tjD_qwW7z73rd5j7lXGNdEHWikmSdmNG3vkSOIwEryZzOZr_DgmVDDmt9qsX0gpRAcpY9CfwSk4=@protonmail.com/T/#u
 [CVE-2015-3641]: https://nvd.nist.gov/vuln/detail/CVE-2015-3641
 [dnsseedrs]: https://github.com/achow101/dnsseedrs
