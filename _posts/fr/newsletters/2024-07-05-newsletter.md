@@ -260,8 +260,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
   permet de construire des clés publiques étendues de style [BIP32][topic bip32] à partir d'une clé publique
   agrégée MuSig2 [BIP327][].
 
-{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30"
-%}
+{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28167,30007,30200,7342,8796,3125,1610,1540,15617" %}
@@ -292,5 +291,5 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [nouvelle politique de divulgation]: https://mailing-list.bitcoindevs.xyz/bitcoindev/rALfxJ5b5hyubGwdVW3F4jtugxnXRvc-tjD_qwW7z73rd5j7lXGNdEHWikmSdmNG3vkSOIwEryZzOZr_DgmVDDmt9qsX0gpRAcpY9CfwSk4=@protonmail.com/T/#u
 [CVE-2015-3641]: https://nvd.nist.gov/vuln/detail/CVE-2015-3641
 [dnsseedrs]: https://github.com/achow101/dnsseedrs
-[news304 miniscript]: /fr/newsletters/2024/05/24/#proposed-miniscript-bip
+[news304 miniscript]: /en/newsletters/2024/05/24/#proposed-miniscript-bip
 [BIP379 md]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
