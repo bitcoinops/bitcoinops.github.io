@@ -37,8 +37,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     permettaient également jusqu'à environ 130 connexions par défaut<!-- 125 entrantes + 8 sortantes sur
     les vieux nœuds ; plus sur les nœuds récents -->. Si chaque pair envoyait un message de taille
     maximale à peu près en même temps, cela forcerait un nœud à allouer environ 4 gigaoctets de mémoire
-    en plus des autres besoins du nœud, ce qui était plus que ce que de nombreux nœuds avaient
-    disponible. La vulnérabilité a été divulguée de manière responsable par l'utilisateur de
+    en plus des autres besoins du nœud, ce qui était plus que ce que de nombreux nœuds disposaient.
+    La vulnérabilité a été divulguée de manière responsable par l'utilisateur de
     BitcoinTalk.org Evil-Knievel, assignée [CVE-2015-3641][], et corrigée dans Bitcoin Core 0.10.1 en
     limitant la taille maximale du message à environ 2 mégaoctets (plus tard augmentée à environ 4
     mégaoctets pour segwit).
@@ -96,7 +96,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     incapable de générer des modèles de blocs, empêchant potentiellement un mineur de gagner des
     revenus, et pourrait être utilisé pour empêcher la confirmation de transactions, entraînant
     potentiellement des pertes financières pour les utilisateurs de protocoles de contrat (tels que LN).
-    Le développeur sec.eine a divulgué responsablement la vulnérabilité et elle a été corrigée dans
+    Le développeur sec.eine a divulgué de façon responsable la vulnérabilité et elle a été corrigée dans
     Bitcoin Core 0.18.0.
 
   - [DoS mémoire à partir de grands messages `inv`][] : un message P2P `inv` peut contenir une liste
@@ -108,7 +108,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     plus de 6,5 gigaoctets de mémoire en plus des besoins réguliers en mémoire du nœud, suffisamment
     pour faire crasher de nombreux nœuds. Les nœuds crashés pourraient être incapables de traiter les
     transactions en temps opportun pour les utilisateurs de protocoles de contrat, entraînant
-    potentiellement des pertes d'argent. John Newbery a divulgué responsablement la vulnérabilité et a
+    potentiellement des pertes d'argent. John Newbery a divulgué de façon responsable la vulnérabilité et a
     fourni une correction qui répondait à n'importe quel nombre de hashes dans un message `inv` avec un
     seul message `getheaders`; la correction a été incluse dans Bitcoin Core 0.20.0.
 
@@ -125,7 +125,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     incorporé dans Bitcoin Core 0.12 a permis au nœud de commencer à accepter les en-têtes de faible
     difficulté en mémoire, permettant potentiellement à un attaquant de remplir la mémoire avec des
     en-têtes bidon. Cela pourrait conduire au crash du nœud, ce qui pourrait entraîner la perte de fonds
-    pour les utilisateurs de protocoles de contrat (tels que LN). Cory Fields a divulgué responsablement
+    pour les utilisateurs de protocoles de contrat (tels que LN). Cory Fields a divulgué de façon responsable
     la vulnérabilité et elle a été corrigée dans la version 0.15.0.
 
   - [DoS gaspillant du CPU en raison de demandes malformées][] : avant Bitcoin Core 0.20.0, un
@@ -187,8 +187,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   nombreux avantages des offres, ils ont donc seulement besoin de cette petite mise à niveau pour
   utiliser les chemins masqués afin d'obtenir la même confidentialité que les offres fourniraient.
 
-  Au moment de la rédaction, il n'était pas clair si la discussion était conclu. Les BLIPs sont des
-  spécifications optionnelles et il est apparu de la discussion que ce BLIP pourrait être implémenté
+  Au moment de la rédaction de cette newsletter, la discussion ne semblait pas close. Les BLIPs sont des
+  spécifications optionnelles et il ressort de la discussion que ce BLIP pourrait être implémenté
   dans LND mais pas dans Eclair ou lightning-kmp (la base pour le portefeuille Phoenix) ; les plans
   pour d'autres implémentations n'ont pas été discutés.
 
