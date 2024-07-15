@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine inclut nos sections habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
-des annonces de mises à jour et versions candidates, ainsi que les changements
+Le bulletin de cette semaine comporte nos sections habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
+il annonce les mises à jour et les versions candidates, et présente les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
@@ -82,7 +82,7 @@ Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à
 à la version.*
 
 - [Bitcoin Core 26.2][] est une version de maintenance de la série de versions plus ancienne de
-  Bitcoin Core. Il est encouragé à ceux qui sont sur la version 26.1 ou antérieure et qui ne peuvent
+  Bitcoin Core. Nous recommandons à ceux qui sont sur la version 26.1 ou antérieure et qui ne peuvent
   ou ne veulent pas mettre à niveau vers la dernière version (27.1) de passer à cette version de
   maintenance.
 
