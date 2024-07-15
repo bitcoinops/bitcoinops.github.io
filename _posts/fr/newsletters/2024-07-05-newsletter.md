@@ -282,7 +282,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [news70 bip70]: /en/newsletters/2019/10/30/#bitcoin-core-17165
 [Crash lié à la mémoire lors des tentatives de parse des URI BIP72]: https://bitcoincore.org/en/2024/07/03/disclose-bip70-crash/
 [cve-2020-14198]: https://nvd.nist.gov/vuln/detail/CVE-2020-14198
-[news306 disclosure]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
+[news306 disclosure]: /fr/newsletters/2024/06/07/#divulgation-a-venir-de-vulnerabilites-affectant-les-anciennes-versions-de-bitcoin-core
 [upnp]: https://en.wikipedia.org/wiki/Universal_Plug_and_Play
 [nat]: https://en.wikipedia.org/wiki/Network_address_translation
 [bibliothèque miniupnpc]: https://miniupnp.tuxfamily.org/
@@ -291,5 +291,5 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [nouvelle politique de divulgation]: https://mailing-list.bitcoindevs.xyz/bitcoindev/rALfxJ5b5hyubGwdVW3F4jtugxnXRvc-tjD_qwW7z73rd5j7lXGNdEHWikmSdmNG3vkSOIwEryZzOZr_DgmVDDmt9qsX0gpRAcpY9CfwSk4=@protonmail.com/T/#u
 [CVE-2015-3641]: https://nvd.nist.gov/vuln/detail/CVE-2015-3641
 [dnsseedrs]: https://github.com/achow101/dnsseedrs
-[news304 miniscript]: /en/newsletters/2024/05/24/#proposed-miniscript-bip
+[news304 miniscript]: /fr/newsletters/2024/05/24/#proposition-de-bip-miniscript
 [BIP379 md]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
