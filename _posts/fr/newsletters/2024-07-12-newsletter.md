@@ -73,6 +73,7 @@ et du time warp. Il est le résultat d'une
   solides qu'aucun pré-minage sur cette chaîne Testnet 4 n'a eu lieu avant que ce bloc mainnet ne soit
   miné."
   a3link="https://bitcoincore.reviews/29775#l-17"
+%}
 
 ## Mises à jour et versions candidates
 
