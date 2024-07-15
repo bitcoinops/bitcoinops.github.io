@@ -57,17 +57,17 @@ excerpt: >
 
 ---
 A conceptually simple client-side validation protocol might assign an
-off-chain state (like a numeber of tokens) with a particular UTXO.
+off-chain state (like a number of tokens) with a particular UTXO.
 Only the set of validators needs to know
 about that assignment; it does not need to be published to the block
 chain or anywhere else that is public. When the UTXO is spent, the
-user has an ability to update the state and use spending transaction
-to assigns the new state to a new UTXO. This mechanism has a name 
+user has the ability to update the state and use spending transactions
+to assign the new state to a new UTXO. This mechanism is known as
 **single-use seals**, and it leverages anti-double-spending property of bitcoin.
 
 
 As an example, if Alice
-currently controls the UTXO holding with the token and Bob wants to
+currently controls the UTXO associated with the token and Bob wants to
 buy it from her, she can provide him with evidence of the original
 assignment and then he can use his validated copy of the block chain
 plus client-side validation to verify the history of every transfer of the
@@ -75,9 +75,9 @@ token leading up to Alice.  He can also verify that a transaction
 created by Alice is correctly formatted to assign the token to a UTXO
 that Bob controls.
 
-**[RGB][]** is a client-side validation protocol working with arbitrary
+**[RGB][]** is a client-side validation protocol for working with arbitrary
 reach state and Turing-complete state evolution rules. It uses
-taproot-embedded OP_RETURN commitments (naned **tapret**) to allow
+taproot-embedded OP_RETURN commitments (named **tapret**) to allow
 transactions to commit to smart contract state.
 
 **[Taproot Assets][]**, formerly called **Taro**, is a protocol heavily
