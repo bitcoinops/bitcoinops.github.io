@@ -15,7 +15,7 @@ Bitcoin infrastructure software.
 ## News
 
 *No significant news this week was found in any of our [sources][].  For
-fun, you may want to check out a recent [interesting transaction][].*
+fun, you may want to check out a recent [interesting transaction][].* {% assign timestamp="1:00" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -77,6 +77,8 @@ difficulty adjustment and time warp bugs. It is the result of a
   a3link="https://bitcoincore.reviews/29775#l-17"
 %}
 
+{% assign timestamp="15:14" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -86,10 +88,10 @@ release candidates.*
 - [Bitcoin Core 26.2][] is a maintenance version of Bitcoin Core's older
   release series.  Anyone on 26.1 or earlier who is unable or unwilling to
   upgrade to the latest release (27.1) is encouraged to upgrade to this
-  maintenance release.
+  maintenance release. {% assign timestamp="37:23" %}
 
 - [LND v0.18.2-beta][] is a minor release to fix a bug affecting users
-  of older versions of the btcd backend.
+  of older versions of the btcd backend. {% assign timestamp="37:42" %}
 
 ## Notable code and documentation changes
 
@@ -107,14 +109,14 @@ repo], and [BINANAs][binana repo]._
   programmers to test whether OP_RETURN data exceeds the 80-byte
   maximum size enforced by Bitcoin Core.  Programmers who aren't worried
   about exceeding the current default Bitcoin Core limit can continue to
-  use Rust Bitcoin's existing `is_op_return` function.
+  use Rust Bitcoin's existing `is_op_return` function. {% assign timestamp="40:04" %}
 
 - [BDK #1487][] introduces support for custom input and output sorting functions
   by adding a `Custom` variant to the `TxOrdering` enum, to enhance flexibility
   in transaction construction. Explicit [BIP69][] support is removed because
   it may not provide the desired privacy due to its low adoption rate (see Newsletters
   [#19][news19 bip69] and [#151][news151 bip69]), but users can still create
-  BIP69-compliant transactions by implementing appropriate custom sorting.
+  BIP69-compliant transactions by implementing appropriate custom sorting. {% assign timestamp="41:20" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
