@@ -55,9 +55,9 @@ nswer -->{% endcomment %}
 - [<!--what-s-the-difference-between-the-3-index-directories-blocks-index-bitcoin-indexes-and-chainstate-->“blocks/index/”，“bitcoin/indexes” 和 “chainstate” 三个索引目录之间有什么区别？]({{bse}}123364)
   Ava Chow 列出了一些 Bitcoin Core 中的数据目录：
 
-    - `blocks/index`，包含区块索引的 LevelDB 数据库
-    - `chainstate/`，包含 UTXO 集的 LevelDB 数据库
-    - `indexes/`，包含 txindex、coinstatsindex 和 blockfilterindex 可选索引
+  - `blocks/index`，包含区块索引的 LevelDB 数据库
+  - `chainstate/`，包含 UTXO 集的 LevelDB 数据库
+  - `indexes/`，包含 txindex、coinstatsindex 和 blockfilterindex 可选索引
 
 ## 版本和候选版本
 
