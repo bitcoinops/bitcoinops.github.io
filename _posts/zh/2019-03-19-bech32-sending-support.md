@@ -70,7 +70,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #45][].*
 
-{% include specials/bech32/08-upgradability.md %}
+{% include specials/bech32/zh/08-upgradability.md %}
 
 ## 使用 bech32 地址创建更高效的二维码
 
