@@ -21,6 +21,9 @@ primary_sources:
     - title: "Bitcoin Core #27677: new mempool design"
       link: https://github.com/bitcoin/bitcoin/issues/27677
 
+    - title: Introduction to cluster linearization
+      link: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
+
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
@@ -60,6 +63,9 @@ optech_mentions:
 
   - title: "Analysis: what would have happened if cluster mempool had been deployed a year ago?"
     url: /en/newsletters/2024/04/17/#what-would-have-happened-if-cluster-mempool-had-been-deployed-a-year-ago
+
+  - title: "Introduction to cluster linearization"
+    url: /en/newsletters/2024/07/19/#introduction-to-cluster-linearization
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
