@@ -57,11 +57,11 @@ excerpt: >
 
 ---
 A conceptually simple client-side validation protocol might assign an
-off-chain state (like a number of tokens) with a particular UTXO.
+off-chain state (like an amount of owned tokens) with a particular UTXO.
 Only the set of validators needs to know
-about that assignment; it does not need to be published to the block
-chain or anywhere else that is public. When the UTXO is spent, the
-user has the ability to update the state and use spending transactions
+about that assignment; it does not need to be published anywhere public, such as the blockchain.
+When the UTXO is spent, the
+user can update the state and use spending transactions
 to assign the new state to a new UTXO. This mechanism is known as
 **single-use seals**, and it leverages anti-double-spending property of bitcoin.
 
@@ -76,7 +76,7 @@ created by Alice is correctly formatted to assign the token to a UTXO
 that Bob controls.
 
 **[RGB][]** is a client-side validation protocol for working with arbitrary
-reach state and Turing-complete state evolution rules. It uses
+reachable state and Turing-complete state evolution rules. It uses
 taproot-embedded OP_RETURN commitments (named **tapret**) to allow
 transactions to commit to smart contract state.
 
