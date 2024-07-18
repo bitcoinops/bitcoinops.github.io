@@ -54,6 +54,9 @@ optech_mentions:
   - title: "Bitcoin Core #30200 adds a new mining interface to better support Stratum v2 in the future"
     url: /en/newsletters/2024/07/05/#bitcoin-core-30200
 
+  - title: "Stratum.work website with real-time visualization of Stratum messages from several mining pools"
+    url: /en/newsletters/2024/07/19/#real-time-stratum-visualization-tool-released
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
