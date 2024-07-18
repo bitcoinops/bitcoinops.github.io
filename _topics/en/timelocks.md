@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Soft fork proposal for fee-dependent timelocks"
     url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
 
+  - title: "BIP46 added for timelocked fidelity bonds"
+    url: /en/newsletters/2024/07/19/#bips-1599
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs
