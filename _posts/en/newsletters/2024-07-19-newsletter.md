@@ -136,25 +136,63 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #26596][] wallet: Migrate legacy wallets to descriptor wallets without requiring BDB
+- [Bitcoin Core #26596][] uses the new read-only legacy database for migrating
+  legacy wallets to [descriptor][topic descriptors] wallets. This change does
+  not deprecate legacy wallets or the legacy `BerkeleyDatabase`. A new
+  `LegacyDataSPKM` class has been created that contains only the essential data
+  and functions needed to load a legacy wallet for migration. See Newsletter
+  [#305][news305 bdb] for an introduction to the `BerkeleyRODatabase`.
 
-- [Core Lightning #7455][] ideally all these commits:
+- [Core Lightning #7455][] enhances `connectd`'s [onion message][topic onion
+  messages] handling by implementing forwarding via both `short_channel_id`
+  (SCID) and `node_id` (see [Newsletter #307][news307 ldk3080] for
+  discussion about a similar change to LDK). Onion messages are now
+  always enabled, and incoming messages are rate limited to 4 per
+  second.
 
-  - "config: onion messages are now always enabled."
-  - "connectd: ratelimit onion messages"
-  - "connectd: forward onion messages by scid as well as node_id."
+- [Eclair #2878][] makes the [route blinding][topic rv routing] and channel
+  quiescence features optional, since they're now fully implemented and part
+  of the BOLT specification (see Newsletters [#245][news245 blind] and
+  [#309][news309 stfu]). An Eclair node advertises support for these
+  features to its peers, but has `route_blinding` disabled by default because it
+  will not forward [blinded payments][topic rv routing] that do not use
+  [trampoline routing][topic trampoline payments].
 
-- [Eclair #2878][] Activate route blinding and quiescence features
+- [Rust Bitcoin #2646][] introduces new inspectors for script and witness
+  structures such as `redeem_script` to ensure that compliance with [BIP16][]
+  rules regarding P2SH spending, `taproot_control_block` and `taproot_annex` to
+  ensure compliance with [BIP341][] rules and `witness_script` to ensure that
+  the P2WSH witness script complies with [BIP141][] rules. See Newsletter
+  [#309][news309 p2sh].
 
-- [Rust Bitcoin #2646][] Some additional inspectors on Script and Witness
+- [BDK #1489][] updates `bdk_electrum` to use merkle proofs for simplified
+  payment verification (SPV). It fetches merkle proofs and block headers alongside
+  transactions, validates that transactions are in confirmed blocks before
+  inserting anchors, and removes reorg handling from `full_scan`. The PR also
+  introduces `ConfirmationBlockTime` as a new anchor type, replacing previous
+  types.
 
-- [BDK #1489][] feat(electrum)!: Update `bdk_electrum` to use merkle proofs <!-- what!  they didn't do this before?  WTF was their security model? -->
+- [BIPs #1599][] adds [BIP46][] for a derivation scheme for HD wallets that
+  create [timelocked][topic timelocks] addresses used for [fidelity
+  bonds][news161 fidelity] as used for JoinMarket-style [coinjoin][topic coinjoin] market matching. Fidelity
+  bonds improve the sybil resistance of the protocol by creating a reputation
+  system where makers prove their intentional sacrifice of the time value of
+  money by timelocking bitcoin.
 
-- [BIPs #1599][] bip-0046: Address Scheme for Timelocked Fidelity Bonds
+- [BOLTs #1173][] makes the `channel_update` field optional in failure [onion
+  messages][topic onion messages]. Nodes now ignore this field outside the
+  current payment to prevent fingerprinting of [HTLC][topic htlc] senders. The change aims to
+  discourage payment delays due to outdated channel parameters while still
+  allowing nodes with stale gossip data to benefit from updates when needed.
 
-- [BIPs #1173][] Drop the required `channel_update` in failure onions
-
-- [BLIPs #25][] valentinewallace/2023-05-forward-less-than-onion
+- [BLIPs #25][] adds [BLIP25][] describing how to allow forwarding HTLCs that
+  underpay the encoded onion value. For example, Alice provides a lightning
+  invoice to Bob but she has no payment channels, so when Bob pays, Carol
+  (Alice’s LSP) creates a channel on the fly. To allow Carol to take a fee from
+  Alice to cover the cost of the initial onchain fee that creates a [JIT channel][topic jit channels],
+  this protocol is used, and Alice is forwarded an HTLC that underpays the
+  encoded onion value.  For previous discussion about an implementation
+  of this in LDK, see [Newsletter #257][news257 jit htlc].
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -182,3 +220,10 @@ repo], and [BINANAs][binana repo]._
 [b10c nostr]: https://primal.net/e/note1qckcs4y67eyaawad96j7mxevucgygsfwxg42cvlrs22mxptrg05qtv0jz3
 [braiins mini miner]: https://braiins.com/hardware/bmm-100-mini-miner
 [pushtx spec]: https://pushtx.org/#url-protocol-spec
+[news305 bdb]: /en/newsletters/2024/05/31/#bitcoin-core-26606
+[news309 p2sh]: /en/newsletters/2024/06/28/#rust-bitcoin-2794
+[news161 fidelity]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+[news257 jit htlc]: /en/newsletters/2023/06/28/#ldk-2319
+[news307 ldk3080]: /en/newsletters/2024/06/14/#ldk-3080
+[news245 blind]: /en/newsletters/2023/04/05/#bolts-765
+[news309 stfu]: /en/newsletters/2024/06/28/#bolts-869
