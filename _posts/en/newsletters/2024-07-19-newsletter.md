@@ -84,7 +84,46 @@ popular Bitcoin infrastructure projects.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **ZEUS adds BOLT12 offers and BIP353 support:**
+  The [v0.8.5][zeus v0.8.5] release leverages the [TwelveCash][twelve cash
+  website] service to support [offers][topic offers] and [BIP353][] (see
+  [Newsletter #307][news307 bip353]).
+
+- **Phoenix adds BOLT12 offers and BIP353 support:**
+  The [Phoenix 2.3.1][phoenix 2.3.1] release added offers support and [Phoenix
+  2.3.3][phoenix 2.3.3] added [BIP353][] support.
+
+- **Stack Wallet adds RBF and CPFP support:**
+  Stack Wallet's [v2.1.1][stack wallet v2.1.1] release added support for fee bumping using
+  [RBF][topic rbf] and [CPFP][topic cpfp] as well as [Tor][topic anonymity
+  networks] support.
+
+- **BlueWallet adds silent payment send support:**
+  In the [v6.6.7][bluewallet v6.6.7] release, BlueWallet added the ability to send to
+  [silent payment][topic silent payments] addresses.
+
+- **BOLT12 Playground announced:**
+  Strike [announced][strike bolt12 playground] a testing environment for BOLT12
+  offers. The project uses Docker to initiate and automate wallets, channels, and payments
+  across different LN implementations.
+
+- **Moosig testing repository announced:**
+  Ledger has published a Python-based testing [repository][moosig github] for using
+  [MuSig2][topic musig] and [BIP388][] wallet [policies for descriptor wallets][news302 bip388].
+
+- **Real-time Stratum visualization tool released:**
+  The [stratum.work website][stratum.work], based on [previous research][b10c
+  nostr] displays real-time Stratum messages from a variety of Bitcoin mining
+  pools, with [source code available][stratum work github].
+
+- **BMM 100 Mini Miner announced:**
+  The [mining hardware][braiins mini miner] from Braiins comes with a subset of [Stratum V2][topic
+  pooled mining] features enabled by default.
+
+- **Coldcard publishes URL-based transaction broadcast specification:**
+  The [protocol][pushtx spec] enables broadcasting of a Bitcoin transaction
+  using an HTTP GET request and can be used by NFC-based hardware signing
+  devices, among other use cases.
 
 ## Notable code and documentation changes
 
@@ -128,3 +167,18 @@ repo], and [BINANAs][binana repo]._
 [wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
 [frost]: https://eprint.iacr.org/2020/852.pdf
 [ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
+[zeus v0.8.5]: https://github.com/ZeusLN/zeus/releases/tag/v0.8.5
+[twelve cash website]: https://twelve.cash/
+[news307 bip353]: /en/newsletters/2024/06/14/#bips-1551
+[phoenix 2.3.1]: https://github.com/ACINQ/phoenix/releases/tag/android-v2.3.1
+[phoenix 2.3.3]: https://github.com/ACINQ/phoenix/releases/tag/android-v2.3.3
+[stack wallet v2.1.1]: https://github.com/cypherstack/stack_wallet/releases/tag/build_235
+[bluewallet v6.6.7]: https://github.com/BlueWallet/BlueWallet/releases/tag/v6.6.7
+[strike bolt12 playground]: https://strike.me/blog/bolt12-playground/
+[moosig github]: https://github.com/LedgerHQ/moosig
+[news302 bip388]: /en/newsletters/2024/05/15/#bips-1389
+[stratum.work]: https://stratum.work/
+[stratum work github]: https://github.com/bboerst/stratum-work
+[b10c nostr]: https://primal.net/e/note1qckcs4y67eyaawad96j7mxevucgygsfwxg42cvlrs22mxptrg05qtv0jz3
+[braiins mini miner]: https://braiins.com/hardware/bmm-100-mini-miner
+[pushtx spec]: https://pushtx.org/#url-protocol-spec
