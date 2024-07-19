@@ -183,7 +183,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 [pushtx spec]: https://pushtx.org/#url-protocol-spec
 [news305 bdb]: /ja/newsletters/2024/05/31/#bitcoin-core-26606
 [news309 p2sh]: /ja/newsletters/2024/06/28/#rust-bitcoin-2794
-[news161 fidelity]: /en/newsletters/2021/08/11/#implementation-of-fidelity-bonds
+[news161 fidelity]: /ja/newsletters/2021/08/11/#implementation-of-fidelity-bonds-fidelity-bond
 [news257 jit htlc]: /ja/newsletters/2023/06/28/#ldk-2319
 [news307 ldk3080]: /ja/newsletters/2024/06/14/#ldk-3080
 [news245 blind]: /ja/newsletters/2023/04/05/#bolts-765
