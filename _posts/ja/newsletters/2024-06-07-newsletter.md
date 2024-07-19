@@ -172,7 +172,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
 
 - [Rust Bitcoin #2644][]は、`bitcoin_hashes`コンポーネントにHKDF
   (HMAC (Hash-based Message Authentication Code) Extract-and-Expand Key Derivation Function)を追加し、
-  Rust Bitcoinで[BIP324][]を実装します。HKDKは、キーマテリアルのソースから安全かつ標準化された方法で暗号鍵を導出するために使用されます。
+  Rust Bitcoinで[BIP324][]を実装します。HKDFは、キーマテリアルのソースから安全かつ標準化された方法で暗号鍵を導出するために使用されます。
   （[v2 P2Pトランスポート][topic v2 p2p transport]として知られている）BIP324は、
   （Bitcoin Coreでデフォルトで有効になっている）暗号化接続を介して、Bitcoinノードが相互に通信できるようにする方法です。
 

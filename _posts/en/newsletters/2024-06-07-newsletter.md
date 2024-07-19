@@ -224,7 +224,7 @@ repo], and [BINANAs][binana repo]._
 
 - [Rust Bitcoin #2644][] adds HKDF (HMAC (Hash-based Message Authentication
   Code) Extract-and-Expand Key Derivation Function) to the `bitcoin_hashes`
-  component to implement [BIP324][] in Rust Bitcoin. HKDK is used to derive
+  component to implement [BIP324][] in Rust Bitcoin. HKDF is used to derive
   cryptographic keys from a source of keying material in a secure and
   standardized way. BIP324 (also known as [v2 P2P transport][topic v2
   p2p transport]) is a method for allowing Bitcoin nodes to communicate

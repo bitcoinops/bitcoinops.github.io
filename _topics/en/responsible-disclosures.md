@@ -90,6 +90,42 @@ optech_mentions:
   - title: "Matt Morehouse responsibly disclosed vulnerability affecting LND onion packet parsing"
     url: /en/newsletters/2024/06/21/#disclosure-of-vulnerability-affecting-old-versions-of-lnd
 
+  - title: "Wladimir Van Der Laan responsibly disclosed vulnerability affecting miniupnpc, used by Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#remote-code-execution-due-to-bug-in-miniupnpc
+    date: 2015-09-15
+
+  - title: "Evil-Knievel responsibly disclosed vulnerability that could be used to crash Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#node-crash-dos-from-multiple-peers-with-large-messages
+    date: 2015-02-05
+
+  - title: "John Newbery responsibly disclosed tx censorship vulnerability co-discovered by Amiti Uttarwar"
+    url: /en/newsletters/2024/07/05/#censorship-of-unconfirmed-transactions
+    date: 2020-04-03
+
+  - title: "Practicalswift responsibly disclosed a netsplit vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#netsplit-from-excessive-time-adjustment
+    date: 2020-10-10
+
+  - title: "Sec.eine responsibly disclosed a node stalling vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#cpu-dos-and-node-stalling-from-orphan-handling
+    date: 2019-03-19
+
+  - title: "John Newbery responsibly disclosed memory Dos vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#memory-dos-from-large-inv-messages
+    date: 2020-05-08
+
+  - title: "Cory Fields responsibly disclosed memory DoS vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#memory-dos-using-low-difficulty-headers
+    date: 2017-08-08
+
+  - title: "John Newbery responsibly disclosed CPU-wasting DoS in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#cpu-wasting-dos-due-to-malformed-requests
+    date: 2020-05-08
+
+  - title: "Michael Ford responsibly disclosed a BIP70-related vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/07/05/#memory-related-crash-in-attempts-to-parse-bip72-uris
+    date: 2019-08-12
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
