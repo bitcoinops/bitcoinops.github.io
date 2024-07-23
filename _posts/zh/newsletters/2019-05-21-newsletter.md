@@ -17,7 +17,7 @@ lang: zh
 
 ## 新闻
 
-- **提议的 anyprevout 签名哈希模式：** 两周前，Anthony Towns 在 Bitcoin-Dev 和 Lightning-Dev 邮件列表上[发布了][email bip-anyprevout]一个提议的 BIP 供大家考虑。这个想法，[bip-anyprevout][]，提供了两种新的签名哈希（sighash）模式，使签名能够对所花费资金的详细信息进行更少的承诺，而不是默认的 [bip-taproot][] 和 [bip-tapscript][] sighash 模式。这使得之前由 [BIP118][] 描述的功能得以实现，并进行了一些修改，使其能够与 Taproot 一起工作，并降低误用的风险。其中一种新的 sighash 模式与 LN 的 [Eltoo][] 层直接兼容，只需对 Taproot 进行修改并添加一个*陪护签名*（稍后描述）。另一种 sighash 模式比 Eltoo 所需的更多数据进行承诺，这可能使其在 Eltoo 中的非典型承诺或其他协议中有用。
+- **<!--proposed-anyprevout-sighash-modes-->****提议的 anyprevout 签名哈希模式：** 两周前，Anthony Towns 在 Bitcoin-Dev 和 Lightning-Dev 邮件列表上[发布了][email bip-anyprevout]一个提议的 BIP 供大家考虑。这个想法，[bip-anyprevout][]，提供了两种新的签名哈希（sighash）模式，使签名能够对所花费资金的详细信息进行更少的承诺，而不是默认的 [bip-taproot][] 和 [bip-tapscript][] sighash 模式。这使得之前由 [BIP118][] 描述的功能得以实现，并进行了一些修改，使其能够与 Taproot 一起工作，并降低误用的风险。其中一种新的 sighash 模式与 LN 的 [Eltoo][] 层直接兼容，只需对 Taproot 进行修改并添加一个*陪护签名*（稍后描述）。另一种 sighash 模式比 Eltoo 所需的更多数据进行承诺，这可能使其在 Eltoo 中的非典型承诺或其他协议中有用。
 
   该提案相对于 BIP118 noinput 的一个显著优势是，它可以使用 Taproot 协作消费，允许 LN 通道或其他合同协议的两个或多个参与方在不透露任何合同条款（包括使用 anyprevout）的情况下选择性地花费他们的资金。
 
@@ -29,13 +29,13 @@ lang: zh
 
   该提案已经开始在邮件列表上[接收反馈][anyprevout list]，因此我们将在后续的 Newsletter 中提供总结任何重要讨论的更新。
 
-- **Magical Crypto Friends 会议上的技术兴趣演讲：** Bryan Bishop 提供了 MCF 会议上约十二场演讲和小组讨论的[文字记录][mcf transcripts]，会议组织者也上传了大部分[视频][mcf vids]。虽然这些演讲中只有一场描述了任何具体的新进展，但其中几场讨论了诸如保密交易、taproot、schnorr 和其他与比特币相关的技术的细节和影响。我们发现以下演讲特别有趣：
+- **<!--talks-of-technical-interest-at-magical-crypto-friends-conference-->****Magical Crypto Friends 会议上的技术兴趣演讲：** Bryan Bishop 提供了 MCF 会议上约十二场演讲和小组讨论的[文字记录][mcf transcripts]，会议组织者也上传了大部分[视频][mcf vids]。虽然这些演讲中只有一场描述了任何具体的新进展，但其中几场讨论了诸如保密交易、taproot、schnorr 和其他与比特币相关的技术的细节和影响。我们发现以下演讲特别有趣：
 
-  - Andrew Poelstra 关于加密货币中使用的加密技术的[演讲][mcf andytoshi]。特别是，他关注了构建系统的困难，这些系统中*每个*方面都需要正确完成才能抵御攻击。
+  - **<!--talk-->**Andrew Poelstra 关于加密货币中使用的加密技术的[演讲][mcf andytoshi]。特别是，他关注了构建系统的困难，这些系统中*每个*方面都需要正确完成才能抵御攻击。
 
-  - Rodolfo Novak、Elaine Ou、Adam Back 和 Richard Myers 关于在没有直接访问互联网的情况下使用比特币的[小组讨论][mcf nonet]。讨论主题包括基于卫星的区块传播、网状网络、业余无线电和物理传输数据（sneakernets），以及它们如何使比特币对于当前用户更加稳健，对于网络访问有限的地区用户更加可访问。我们发现关于比特币数据中继安全性的附带讨论特别有趣——简而言之，比特币协议已经设计为无信任地接受来自随机节点的数据，因此非网络中继不一定会改变信任模型。
+  - **<!--panel-->**Rodolfo Novak、Elaine Ou、Adam Back 和 Richard Myers 关于在没有直接访问互联网的情况下使用比特币的[小组讨论][mcf nonet]。讨论主题包括基于卫星的区块传播、网状网络、业余无线电和物理传输数据（sneakernets），以及它们如何使比特币对于当前用户更加稳健，对于网络访问有限的地区用户更加可访问。我们发现关于比特币数据中继安全性的附带讨论特别有趣——简而言之，比特币协议已经设计为无信任地接受来自随机节点的数据，因此非网络中继不一定会改变信任模型。
 
-  - Will O'Beirne、Lisa Neigut、Alex Bosworth 之间在 Leigh Cuen 主持下关于 LN 未来的[对话][mcf future ln]，主要讨论了当前开发工作围绕 LN 1.1 规范的短期和中期结论。这个讨论中没有任何炒作的说法，只是简单描述了 LN 预计将如何改进，以使用户和企业更容易采用。
+  - **<!--conversation-->**Will O'Beirne、Lisa Neigut、Alex Bosworth 之间在 Leigh Cuen 主持下关于 LN 未来的[对话][mcf future ln]，主要讨论了当前开发工作围绕 LN 1.1 规范的短期和中期结论。这个讨论中没有任何炒作的说法，只是简单描述了 LN 预计将如何改进，以使用户和企业更容易采用。
 
 ## Bech32 发送支持
 
