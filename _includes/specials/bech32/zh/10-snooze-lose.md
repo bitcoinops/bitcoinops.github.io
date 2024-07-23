@@ -11,7 +11,7 @@ Bech32 发送并不是一些仍需测试的实验性新技术——原生 Segwit
 
 [nullc bank analogy]: https://old.reddit.com/r/Bitcoin/comments/9iw1p2/hey_guys_its_time_to_make_bech32_standard_on/e6onq8t/
 [over 200,000 bitcoins]: https://p2sh.info/dashboard/db/p2wpkh-statistics?orgId=1
-[news38 bech32]: /zh/newsletters/2019/03/19/#bech32-sending-support
-[news40 bech32]: /zh/newsletters/2019/04/02/#bech32-sending-support
+[news38 bech32]: /zh/newsletters/2019/03/19/#bech32-发送支持
+[news40 bech32]: /zh/newsletters/2019/04/02/#bech32-发送支持
 [newsletter #40 bech32]: /zh/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses
 [newsletter #42 bech32]: /zh/newsletters/2019/04/16/#bitcoin-core-15711
