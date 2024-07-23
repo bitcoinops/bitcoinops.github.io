@@ -113,7 +113,7 @@ wallets and services.*
 
 - **Real-time Stratum visualization tool released:**
   The [stratum.work website][stratum.work], based on [previous research][b10c
-  nostr] displays real-time Stratum messages from a variety of Bitcoin mining
+  nostr], displays real-time Stratum messages from a variety of Bitcoin mining
   pools, with [source code available][stratum work github]. {% assign timestamp="1:01:01" %}
 
 - **BMM 100 Mini Miner announced:**
@@ -159,10 +159,10 @@ repo], and [BINANAs][binana repo]._
   [trampoline routing][topic trampoline payments]. {% assign timestamp="1:11:58" %}
 
 - [Rust Bitcoin #2646][] introduces new inspectors for script and witness
-  structures such as `redeem_script` to ensure that compliance with [BIP16][]
-  rules regarding P2SH spending, `taproot_control_block` and `taproot_annex` to
-  ensure compliance with [BIP341][] rules and `witness_script` to ensure that
-  the P2WSH witness script complies with [BIP141][] rules. See Newsletter
+  structures such as `redeem_script` to ensure compliance with [BIP16][];
+  rules regarding P2SH spending, `taproot_control_block`, and `taproot_annex` to
+  ensure compliance with [BIP341][] rules; and `witness_script` to ensure
+  P2WSH witness scripts comply with [BIP141][] rules. See Newsletter
   [#309][news309 p2sh]. {% assign timestamp="1:13:03" %}
 
 - [BDK #1489][] updates `bdk_electrum` to use merkle proofs for simplified
