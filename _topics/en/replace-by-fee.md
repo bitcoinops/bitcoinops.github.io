@@ -189,6 +189,9 @@ optech_mentions:
   - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
     url: /en/newsletters/2024/06/28/#bitcoin-core-28984
 
+  - title: "Question: why does RBF rule #3 exist?"
+    url: /en/newsletters/2024/07/26/#why-does-rbf-rule-3-exist
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
