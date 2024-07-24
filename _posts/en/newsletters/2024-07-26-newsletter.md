@@ -172,18 +172,33 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #30320][] updates [assumeUTXO][topic assumeutxo] behavior to
+  avoid loading a snapshot if it's not an ancestor of the current best header
+  `m_best_header` and instead sync as a regular node. If the snapshot later
+  becomes an ancestor of the best header due to a chain reorganization,
+  assumeUTXO snapshot loading resumes.
 
-- [Bitcoin Core #30320][] assumeutxo: Don't load a snapshot if it's not in the best header chain
+- [Bitcoin Core #29523][] adds a `max_tx_weight` option to transaction funding
+  RPC commands `fundrawtransaction`, `walletcreatefundedpsbt`, and `send`. This
+  ensures the resulting transaction weight doesn't exceed the specified limit,
+  which can be beneficial for future [RBF][topic rbf] attempts or for specific
+  transaction protocols. If not set, the `MAX_STANDARD_TX_WEIGHT` of
+  400,000 weight units (100,000 vbytes) is used as the default value.
 
-- [Bitcoin Core #29523][] Wallet:  Add `max_tx_weight` to transaction funding options (take 2)
+- [Core Lightning #7461][] adds support for nodes to self-fetch and self-pay
+  [BOLT12 offers][topic offers] and invoices, which may simplify account
+  management code that calls CLN in the background as described in
+  [Newsletter #262][cln self-pay].  The PR also allows nodes to pay an invoice
+  even if the node itself is the head of the [blinded path][topic rv routing].
+  In addition, unannounced nodes (those without [unannounced channels][topic unannounced channels]) can now create
+  offers by automatically adding a blinded path whose penultimate hop is
+  one of their channel peers.
 
-- [Core Lightning #7461][]
-    - offers: add self-fetchinvoices for offers, and self-pay for the resulting invoice. <!-- maybe related to https://bitcoinops.org/en/newsletters/2023/08/02/#core-lightning-6399 -->
-    - plugins/offers: create blinded path if necessary.
-    - plugin/pay: Handle paying to blinded path starting with us.
-
-- [Eclair #2881][] Reject new `static_remote_key` channels
+- [Eclair #2881][] removes support for new incoming `static_remote_key`
+  channels, while maintaining support for existing ones and for new outgoing
+  channels that use this option. Nodes should use [anchor outputs][topic anchor
+  outputs] instead, as incoming `static_remote_key` new channels are now
+  considered obsolete.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -204,3 +219,4 @@ FIXME:Gustavojfe
 [todd unsolvable]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Zp1utYduhnWf4oA4@petertodd.org/
 [teinurier hacky]: https://github.com/bitcoin/bitcoin/issues/29319#issuecomment-1968709925
 [daftuar prefer not]: https://github.com/bitcoin/bitcoin/issues/29319#issuecomment-1968709925
+[cln self-pay]: /en/newsletters/2023/08/02/#core-lightning-6399
