@@ -34,6 +34,12 @@ optech_mentions:
   - title: Disclosure of a free relay attack against Bitcoin Core and some other nodes
     url: /en/newsletters/2024/03/27/#disclosure-of-free-relay-attack
 
+  - title: "Disclosure of a free relay attack exploiting differences in RBF policy"
+    url: /en/newsletters/2024/07/26/#free-relay-attacks
+
+  - title: "Discussion of free relay related to replace-by-feerate proposals"
+    url: /en/newsletters/2024/07/26/#free-relay-and-replace-by-feerate
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
