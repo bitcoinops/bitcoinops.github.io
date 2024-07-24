@@ -25,11 +25,11 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: "BIP431: Topology Restrictions for Pinning"
+      link: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
+
     - title: "New transaction policies (nVersion=3) for contracting protocols"
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
-
-    - title: Opt In Topologically Restricted Until Confirmation Transactions For More Robust Fee-bumping
-      link: https://github.com/bitcoin/bips/blob/158acdbbbf8ef13f6b345b6281a96e88e20d2cf9/bip-truc.mediawiki
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -93,6 +93,9 @@ optech_mentions:
 
   - title: "Bitcoin Core #29496 makes TRUC transactions standard"
     url: /en/newsletters/2024/06/14/#bitcoin-core-29496
+
+  - title: "Criticism of motivations for preferring TRUC over replace-by-feerate as a pinning solution"
+    url: /en/newsletters/2024/07/26/#truc-utility
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
