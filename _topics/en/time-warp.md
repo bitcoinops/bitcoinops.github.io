@@ -42,6 +42,9 @@ optech_mentions:
   - title: "Draft BIP for testnet4 includes fix for time warp attack"
     url: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
 
+  - title: "Question: how many blocks per second can sustainably be created using a time warp attack?"
+    url: /en/newsletters/2024/07/26/#how-many-blocks-per-second-can-sustainably-be-created-using-a-time-warp-attack
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

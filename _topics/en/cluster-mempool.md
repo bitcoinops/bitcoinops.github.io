@@ -69,6 +69,10 @@ optech_mentions:
 
   - title: "Discussion about replacing CPFP carve-out with either TRUC or RBFR to unblock cluster mempool"
     url: /en/newsletters/2024/07/26/#path-to-cluster-mempool
+
+  - title: "Question: why is restructure of mempool required with cluster mempool?"
+    url: /en/newsletters/2024/07/26/#why-is-restructure-of-mempool-required-with-cluster-mempool
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
