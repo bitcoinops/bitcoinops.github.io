@@ -40,6 +40,7 @@
 [core lightning repo]: https://github.com/ElementsProject/lightning
 [eclair repo]: https://github.com/ACINQ/eclair
 [elementsproject.org]: https://elementsproject.org/
+[FIXME]: https://example.com/FIXME{% comment %}<!-- for use during drafting; skip-test -->{% endcomment %}
 [hwi repo]: https://github.com/bitcoin-core/HWI
 [ldk repo]: https://github.com/lightningdevkit/rust-lightning
 [libminisketch]: https://github.com/sipa/minisketch
