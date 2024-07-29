@@ -126,6 +126,9 @@ optech_mentions:
     url: /en/newsletters/2024/07/05/#memory-related-crash-in-attempts-to-parse-bip72-uris
     date: 2019-08-12
 
+  - title: "Peter Todd responsibly disclosed a free relay attack exploiting RBF policy differences"
+    url: /en/newsletters/2024/07/26/#free-relay-attacks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
