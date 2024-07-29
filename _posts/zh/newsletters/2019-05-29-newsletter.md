@@ -1,6 +1,6 @@
 ---
 title: 'Bitcoin Optech Newsletter #48'
-permalink: /en/newsletters/2019/05/29/
+permalink: /zh/newsletters/2019/05/29/
 name: 2019-05-29-newsletter-zh
 slug: 2019-05-29-newsletter-zh
 type: newsletter
