@@ -73,6 +73,9 @@ optech_mentions:
   - title: "Question: why is restructure of mempool required with cluster mempool?"
     url: /en/newsletters/2024/07/26/#why-is-restructure-of-mempool-required-with-cluster-mempool
 
+  - title: "Optimizing block building with cluster mempool"
+    url: /en/newsletters/2024/08/02/#optimizing-block-building-with-cluster-mempool
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
