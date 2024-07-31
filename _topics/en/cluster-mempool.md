@@ -76,6 +76,9 @@ optech_mentions:
   - title: "Optimizing block building with cluster mempool"
     url: /en/newsletters/2024/08/02/#optimizing-block-building-with-cluster-mempool
 
+  - title: "Bitcoin Core #30126 introduces a cluster linearization function for eventual use by cluster mempool"
+    url: /en/newsletters/2024/08/02/#bitcoin-core-30126
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
