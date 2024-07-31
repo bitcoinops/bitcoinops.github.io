@@ -163,25 +163,70 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-<!-- FIXME:Gustavojfe -->
+- [Bitcoin Core #30515][] adds a UTXO's block hash and confirmation count as
+  additional fields to the `scantxoutset` RPC command response. This provides a
+  more reliable identifier for the UTXO's block than just the block height,
+  especially since chain reorganizations can occur.
 
-- [Bitcoin Core #30515][] rpc: add utxo's blockhash and number of confirmations to scantxoutset output
+- [Bitcoin Core #30126][] introduces a [cluster linearization][wuille
+  cluster] function `Linearize` that operates on clusters of related
+  transactions to create or improve linearizations, as part of the
+  [cluster mempool][topic cluster mempool] project. Cluster
+  linearizations suggest a fee-maximizing order in which a cluster's
+  transactions could be added to block templates (or a minimal-fee-loss
+  order in which they can be evicted from a full mempool).  These functions
+  are not yet integrated into the mempool, so there's no behavior change
+  in this PR.
 
-- [Bitcoin Core #30126][] cluster mempool: cluster linearization algorithm <!-- just a quick mention that functions useful for performing cluster linearization have been merged, with a link to our topic page about it.  Explicitly note that this doesn't yet change how the mempool works -->
+- [Bitcoin Core #30482][] improves parameter validation for REST endpoint
+  `getutxos` by rejecting truncated or overlarge txids and throwing an
+  `HTTP_BAD_REQUEST` parse error. Previously this would also fail, but would be
+  handled silently.
 
-- [Bitcoin Core #30482][] rest: Reject truncated hex txid early in getutxos parsing
+- [Bitcoin Core #30275][] changes the default mode of the `estimatesmartfee` RPC
+  command from conservative to economical. This change is based on user and
+  developer observations that the conservative mode often leads to overpayment
+  of transaction fees because it is less responsive to short-term fee market
+  drops than the economical mode when [estimating fees][topic fee estimation].
 
-- [Bitcoin Core #30275][] Fee Estimation: change `estimatesmartfee` default mode to `economical` <!-- mention the motivation for this change from the PR discussion -->
+- [Bitcoin Core #30408][] replaces the use of the wording "public key script" to
+  "output script" to refer to a `scriptPubKey` in the help text for the following
+  RPC commands `decodepsbt`, `decoderawtransaction`, `decodescript`, `getblock`
+  (if verbosity=3), `getrawtransaction` (if verbosity=2,3),  and `gettxout`.
+  This is the same wording used in the proposed BIP for transaction
+  terminology (See Newsletter [#246][news246 bipterminology]).
 
-- [Bitcoin Core #30408][] rpc: doc: use "output script" terminology consistently in "asm"/"hex" results <!-- We don't usually mention small documentation changes like this, but use this as an opportunity to link to bip-terminology and show that projects are adopting it -->
+- [Core Lightning #7474][] updates the [offers][topic offers] plugin to allow
+  for the newly defined experimental ranges for Type-Length-Value (TLV) types
+  used in offers, invoice requests, and invoices. This was recently added to the
+  unmerged [BOLT12 pull request][bolt12 pr] in the BOLTs repository.
 
-- [Core Lightning #7474][] common/bolt12, offers plugin: handle experimental ranges in bolt12 correctly.  <!-- use as opportunity to mention the changes to the spec itself since we won't cover those directly due to BOLT12 not being merged into the BOLTs repo -->
+- [LND #8891][] adds a new `min_relay_fee_rate` field to the expected response
+  from an  external [fee estimation][topic fee estimation] API source, allowing
+  the service to specify the minimum relay fee rate. If not specified, the
+  default `FeePerKwFloor` of 1012 sats/kvB (1.012 sats/vbyte) will be used. The PR also improves
+  startup reliability by returning an error from `EstimateFeePerKW` if called
+  before the fee estimator has fully initialized.
 
-- [LND #8891][] chainfee: allow specifying min relay feerate from the API source
+- [LDK #3139][] improves the security of BOLT12 [offers][topic offers] by
+  authenticating the use of [blinded paths][topic rv routing].  Without
+  this authentication, attacker Mallory can take Bob's offer and request
+  an invoice from each node on the network to determine which one of
+  them belongs to Bob, negating the privacy benefit of using a blinded
+  path.  To fix this, a 128-bit nonce
+  is now included in each offer's encrypted blinded path, rather than in the offer's
+  unencrypted metadata. This change invalidates outbound
+  payments and refunds with non-empty blinded paths created
+  in prior versions. On the other hand, offers created in prior versions are
+  still valid but are vulnerable to de-anonymization attacks, so users
+  may want to regenerate them after they update to a version of LDK that
+  includes this patch.
 
-- [LDK #3139][] Authenticate use of offer blinded paths
-
-- [Rust Bitcoin #3010][] Add `length` field to `sha256::Midstate`
+- [Rust Bitcoin #3010][] introduces a length field to `sha256::Midstate`,
+  allowing for more flexible and accurate tracking of the hash state
+  when incrementally generating a SHA256 digest. This
+  change may affect existing implementations that rely on the previous
+  `Midstate` structure.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -201,3 +246,5 @@ repo], and [BINANAs][binana repo]._
 [nat traversal]: https://en.wikipedia.org/wiki/NAT_traversal
 [wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
 [goegge disclosure]: https://mailing-list.bitcoindevs.xyz/bitcoindev/bf5287e8-0960-45e8-9c90-64ffc5fdc9aan@googlegroups.com/
+[news246 bipterminology]: /en/newsletters/2023/04/12/#proposed-bip-for-transaction-terminology
+[bolt12 pr]: https://github.com/lightning/bolts/pull/798
