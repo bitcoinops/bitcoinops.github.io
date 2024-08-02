@@ -227,3 +227,4 @@ release candidates.*
 [wuille churn]: https://bitcoincore.reviews/18991.html#l-365
 [btchip-python]: https://github.com/LedgerHQ/btchip-python
 [coinscope paper]: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf
+[hwi]: https://github.com/bitcoin-core/HWI

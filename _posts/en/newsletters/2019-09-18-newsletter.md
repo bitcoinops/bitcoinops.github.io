@@ -270,3 +270,6 @@ Bishop, we found the following topic particularly interesting:
 [paper txprobe]: https://arxiv.org/pdf/1812.00942.pdf
 [coinscope]: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf
 [sb ts]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/
+[eltoo]: https://blockstream.com/eltoo.pdf
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
+[miniscript]: /en/topics/miniscript/

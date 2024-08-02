@@ -177,3 +177,4 @@ version 0.20.*
 [zmn padding]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017886.html
 [RFC6979]:https://tools.ietf.org/html/rfc6979
 [Ed25519]:https://ed25519.cr.yp.to/
+[cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842

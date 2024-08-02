@@ -195,3 +195,4 @@ wiki page for changes -->{% endcomment %}
 [Bitcoin Core PR Review Club]:https://bitcoin-core-review-club.github.io/
 [core prs]: https://github.com/bitcoin/bitcoin/pulls
 [newsletter #26]: /en/newsletters/2018/12/18/#minisketch-library-released
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

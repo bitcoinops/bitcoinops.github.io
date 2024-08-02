@@ -162,3 +162,4 @@ release candidates.*
 [stack exchange signet setup]: https://bitcoin.stackexchange.com/questions/98553/how-do-i-get-set-up-on-signet/98554#98554
 [bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
 [psbt ext]: /en/newsletters/2019/03/12/#extension-fields-to-partially-signed-bitcoin-transactions-psbts
+[hwi]: https://github.com/bitcoin-core/HWI

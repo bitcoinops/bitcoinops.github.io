@@ -162,3 +162,4 @@ repo].*
 [mallers]: https://twitter.com/JackMallers
 [newsletter #19]: /en/newsletters/2018/10/30/#lightning-residency-and-hackday
 [newsletter #3]: /en/newsletters/2018/07/10/#merchant-adoption
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
