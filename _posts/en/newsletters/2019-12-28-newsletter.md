@@ -798,3 +798,6 @@ schedule on January 8th.*
 [wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/
+[eltoo]: https://blockstream.com/eltoo.pdf
+[hwi]: https://github.com/bitcoin-core/HWI
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

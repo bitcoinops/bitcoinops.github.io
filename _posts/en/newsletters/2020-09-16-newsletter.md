@@ -221,3 +221,4 @@ release candidates.*
 [news104 scorched earth]: /en/newsletters/2020/07/01/#discussion-of-htlc-mining-incentives
 [sighash]: https://btcinformation.org/en/developer-guide#signature-hash-types
 [bindings readme]: https://github.com/rust-bitcoin/rust-lightning/tree/main/lightning-c-bindings
+[hwi]: https://github.com/bitcoin-core/HWI

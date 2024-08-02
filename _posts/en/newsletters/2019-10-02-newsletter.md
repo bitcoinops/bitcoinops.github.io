@@ -148,3 +148,4 @@ projects.
 [optech ln warning]: /en/newsletters/2019/09/04/#upgrade-ln-implementations
 [workshop transcript]: http://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
 [russell disclosure]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002174.html
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

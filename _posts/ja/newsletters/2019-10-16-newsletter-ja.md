@@ -115,4 +115,4 @@ lang: ja
 [css ts]: https://diyhpl.us/wiki/transcripts/cryptoeconomic-systems/2019/
 [css vids]: https://www.youtube.com/channel/UCJkYmuzqAnIKn3NPg5lc0Wg/videos
 [eclair 0.3.2]: https://github.com/ACINQ/eclair/releases/tag/v0.3.2
-
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

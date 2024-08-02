@@ -131,3 +131,4 @@ clarifies that since 0.10.0, Bitcoin Core uses [headers-first][] IBD
 [tapscript limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
 [watchtower discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
 [headers-first]: https://bitcoin.org/en/p2p-network-guide#headers-first
+[eltoo]: https://blockstream.com/eltoo.pdf

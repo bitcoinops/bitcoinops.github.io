@@ -150,3 +150,4 @@ repo], and [C-lightning][core lightning repo].*
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
 [newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

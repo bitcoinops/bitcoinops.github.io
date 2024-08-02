@@ -420,3 +420,5 @@ the author.
 [newsletter #32]: /en/newsletters/2019/02/05/#miniscript
 [newsletter #18]: /en/newsletters/2018/10/23/#two-papers-published-on-fast-multiparty-ecdsa
 [newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
+[miniscript]: /en/topics/miniscript/
+[musig]: https://eprint.iacr.org/2018/068

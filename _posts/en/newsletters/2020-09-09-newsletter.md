@@ -194,3 +194,4 @@ link to for BitBox seems unfair. -harding -->{% endcomment %}
 [belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news82 lnd acl]: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
 [review club client]: https://bitcoincore.reviews/19339#l-104
+[hwi]: https://github.com/bitcoin-core/HWI

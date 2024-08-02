@@ -170,6 +170,7 @@ to share your experiences in implementing better Bitcoin technology, please cont
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
 [inv]: https://bitcoin.org/en/developer-reference#inv
 [workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 {% include references.md %}
 {% include linkers/issues.md issues="13697,13557,12196,9662,12196,13604,13298,13652" %}

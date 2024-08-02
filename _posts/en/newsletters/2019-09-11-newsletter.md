@@ -179,3 +179,5 @@ infrastructure projects.
 [signet]: https://en.bitcoin.it/wiki/Signet
 [less gossip]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002134.html
 [txprobe paper]: https://arxiv.org/pdf/1812.00942.pdf
+[eltoo]: https://blockstream.com/eltoo.pdf
+[miniscript]: /en/topics/miniscript/

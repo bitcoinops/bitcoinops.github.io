@@ -301,3 +301,4 @@ release candidates.*
 [flood and loot]: https://arxiv.org/abs/2006.08513
 [thunderhub]: https://www.thunderhub.io/
 [balance of satoshis]: https://github.com/alexbosworth/balanceofsatoshis
+[hwi]: https://github.com/bitcoin-core/HWI

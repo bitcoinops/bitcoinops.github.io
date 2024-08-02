@@ -154,4 +154,4 @@ answers made since our last update.*
 [liquid]: https://blockstream.com/liquid/
 [schnorr docs]: https://github.com/ElementsProject/secp256k1-zkp/blob/secp256k1-zkp/src/modules/musig/musig.md
 [productivity hints]: https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md
-
+[musig]: https://eprint.iacr.org/2018/068

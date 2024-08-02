@@ -170,3 +170,4 @@ changes to popular Bitcoin infrastructure projects.
 [zmn internal tagging]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html
 [gui bech32]: /en/newsletters/2019/04/16/#bitcoin-core-15711
 [orig output tagging]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[eltoo]: https://blockstream.com/eltoo.pdf

@@ -109,3 +109,4 @@ on the Optech website.  {% include specials/bech32/23-compat.md %}
 [news34 pr15368]: /en/newsletters/2019/02/19/#bitcoin-core-15368
 [hc heights]: #hardcoded-previous-soft-fork-activation-blocks
 [cl release]: https://github.com/ElementsProject/lightning/releases/tag/v0.7.2.1
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -206,3 +206,4 @@ release candidates.*
 [bitcoinissafe.com]: https://bitcoinissafe.com/
 [lightning terminal blog]: https://lightning.engineering/posts/2020-08-04-lightning-terminal/
 [news39 lightning loop announced]: /en/newsletters/2019/03/26/#loop-announced
+[hwi]: https://github.com/bitcoin-core/HWI

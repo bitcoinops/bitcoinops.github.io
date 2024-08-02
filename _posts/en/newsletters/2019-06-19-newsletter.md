@@ -292,3 +292,4 @@ wiki page for changes -->{% endcomment %}
 [prometheus]: https://prometheus.io/
 [pos ref anchor]: https://github.com/bitcoin/bips/pull/555#issuecomment-315517707
 [newsletter #30]: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

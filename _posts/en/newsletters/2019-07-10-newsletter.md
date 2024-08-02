@@ -114,3 +114,4 @@ wiki page for changes -->{% endcomment %}
 [tlv pr]: https://github.com/lightningnetwork/lightning-rfc/pull/607
 [pickhardt jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
 [zmn jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002055.html
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

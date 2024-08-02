@@ -118,3 +118,4 @@ infrastructure projects.
 [eviction-logic]: https://github.com/bitcoin/bitcoin/issues/19500#issuecomment-657257874
 [news32 bcc14929]: /en/newsletters/2019/02/05/#bitcoin-core-14929
 [ban vs discourage]: https://github.com/bitcoin/bitcoin/blob/f4de89edfa8be4501534fec0c662c650a4ce7ef2/src/banman.h#L29-L55
+[hwi]: https://github.com/bitcoin-core/HWI
