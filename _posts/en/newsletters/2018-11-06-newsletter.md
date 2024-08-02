@@ -159,3 +159,4 @@ repo].*
 [cashaddr patch]: https://github.com/trezor/trezor-crypto/commit/2bbbc3e15573294c6dd0273d2a8542ba42507eb0
 [ln bolt11 ss]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001489.html
 [newsletter #16]: /en/newsletters/2018/10/09/#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

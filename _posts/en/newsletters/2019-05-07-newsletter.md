@@ -221,3 +221,5 @@ wiki page for changes -->{% endcomment %}
 [tap ref]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
 [newsletter #40]: /en/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[hwi]: https://github.com/bitcoin-core/HWI

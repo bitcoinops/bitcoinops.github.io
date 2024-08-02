@@ -313,3 +313,4 @@ and [libsecp256k1][libsecp256k1 repo].*
 [btcpay utxo]: https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync
 [newsletter #21]: /en/newsletters/2018/11/13/#lightning-application-residency-videos
 [newsletter #31]: /en/newsletters/2019/01/29/#c-lightning-2283
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -258,3 +258,7 @@ None this week.
 [electrum personal server]: https://github.com/chris-belcher/electrum-personal-server
 [key origin information]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification
 [newsletter #5]: /en/newsletters/2018/07/24/#bitcoin-core-9662
+[hwi]: https://github.com/bitcoin-core/HWI
+[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[miniscript]: /en/topics/miniscript/

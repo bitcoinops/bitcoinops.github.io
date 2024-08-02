@@ -267,3 +267,4 @@ highlight a selection of the transcripts from the previous month.*
 [r point evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
 [news111 proposed tiebreaker]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
 [btcd 0.21.0-beta]: https://github.com/btcsuite/btcd/releases/tag/v0.21.0-beta
+[hwi]: https://github.com/bitcoin-core/HWI

@@ -252,3 +252,4 @@ BOLTs][bolts repo].*
 [news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [core version]: https://bitcoin.org/en/release/v0.19.0.1
 [broken docs]: https://btcinformation.org/en/developer-examples#regtest-mode
+[hwi]: https://github.com/bitcoin-core/HWI

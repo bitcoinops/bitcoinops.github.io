@@ -253,3 +253,7 @@ wiki page for changes -->{% endcomment %}
 [newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
 [newsletter #48]: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
 [newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[hwi]: https://github.com/bitcoin-core/HWI
+[eltoo]: https://blockstream.com/eltoo.pdf
+[musig]: https://eprint.iacr.org/2018/068

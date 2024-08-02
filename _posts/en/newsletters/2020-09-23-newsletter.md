@@ -315,3 +315,4 @@ release candidates.*
 [ledger coin control article]: https://www.ledger.com/coin-control-now-available-in-ledger-live
 [sparrow twitter thread]: https://twitter.com/craigraw/status/1301045693814132736
 [joinmarket 0.7.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.7.0.md
+[hwi]: https://github.com/bitcoin-core/HWI

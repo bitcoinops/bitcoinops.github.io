@@ -63,3 +63,4 @@ endcomment %}
 [dust convo]: https://github.com/bitcoin/bitcoin/pull/2577#issuecomment-17738577
 [bitcoincore.org]: https://bitcoincore.org/
 [bech32 series]: /zh/bech32-sending-support/
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -597,3 +597,4 @@ the fault of the newsletter author.
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
 [newsletter #3]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395

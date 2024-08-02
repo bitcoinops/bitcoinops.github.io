@@ -369,3 +369,4 @@ release candidates.*
 [potzblitz]: https://www.youtube.com/playlist?list=PLwgam6YBS0-jk1TlXD7QXDjTYJh-eJn_X
 [news68 ruffing]: /en/newsletters/2019/10/16/#the-quest-for-practical-threshold-schnorr-signatures
 [cpp compiler support]: https://en.cppreference.com/w/cpp/compiler_support#C.2B.2B17_features
+[hwi]: https://github.com/bitcoin-core/HWI

@@ -130,3 +130,4 @@ flag, and several notable recent Bitcoin Core merges.
 [#13570]: https://github.com/bitcoin/bitcoin/pull/13570
 [#13096]: https://github.com/bitcoin/bitcoin/pull/13096
 [tx-as-internal-node]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
+[musig]: https://eprint.iacr.org/2018/068

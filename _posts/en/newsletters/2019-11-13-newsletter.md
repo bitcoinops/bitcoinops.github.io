@@ -293,3 +293,4 @@ popular Bitcoin infrastructure projects.
 [news60 16248]: /en/newsletters/2019/08/21/#bitcoin-core-16248
 [bse bech32 extension]: {{bse}}91602
 [topics announcement]: /en/topics-announcement/
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
