@@ -152,7 +152,8 @@ Ceci est le dernier bulletin hebdomadaire de Bitcoin Optech de l'année. Le
 mercredi 20 décembre, nous publierons notre sixième bulletin annuel rétrospectif.
 La publication régulière reprendra le mercredi 3 janvier.
 
-{% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}{% include snippets/recap-ad.md when=day_after_posting %}
+{% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
+{% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2685,5389,5490,1446,27995" %}
 [LND 0.17.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.3-beta

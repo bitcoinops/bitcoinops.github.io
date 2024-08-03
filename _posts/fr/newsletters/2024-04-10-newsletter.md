@@ -263,8 +263,7 @@ six mois après la sortie de la version à venir 27.*
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 16:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2
-issues="729,29648,29130,8159,8160,8485,8515,6703,6934,835,18,22,2652,7174,5065" %}
+{% include linkers/issues.md v=2 issues="729,29648,29130,8159,8160,8485,8515,6703,6934,835,18,22,2652,7174,5065" %}
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
 [Bitcoin Core 27.0rc1]: https://bitcoincore.org/bin/bitcoin-core-27.0/test.rc1/
 [HWI 3.0.0]: https://github.com/bitcoin-core/HWI/releases/tag/3.0.0
