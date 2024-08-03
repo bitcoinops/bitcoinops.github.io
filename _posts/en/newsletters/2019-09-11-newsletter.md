@@ -13,10 +13,6 @@ normal number of LN gossip updates to one per day, and provides our
 longest-to-date list of notable changes to popular Bitcoin
 infrastructure projects.
 
-{% comment %}<!-- evidence for being "longest-ever":
-    find _posts/en/newsletters/ -type f | while read file ; do echo -n "$file "; sed -n '/^## Notable code/,${/^## [^\(Notable\)]/Q; /linkers\/issues.md/Q; p}' $file | wc -l ; done | sort -n -k2 | tail
--->{% endcomment %}
-
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
 
