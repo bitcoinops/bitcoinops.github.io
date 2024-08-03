@@ -212,8 +212,7 @@ Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2
-issues="27679,7240,2851,22087,8147,8422,8423,8148,8667,8627,1058,1382,1068,8674" %}
+{% include linkers/issues.md v=2 issues="27679,7240,2851,22087,8147,8422,8423,8148,8667,8627,1058,1382,1068,8674" %}
 [gugger zmq]: https://github.com/lightningnetwork/lnd/pull/8664#issuecomment-2065802617
 [news269 fee deficit]: /fr/newsletters/2023/09/20/#bitcoin-core-26152
 [news 297 inbound]: /fr/newsletters/2024/04/10/#lnd-6703
