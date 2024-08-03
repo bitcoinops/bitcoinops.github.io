@@ -82,9 +82,9 @@ lang: zh
 
 - [LND #7904][] 添加了对“简单 taproot 通道”的实验性支持，允许闪电网络的充值和承诺交易使用 [P2TR][topic taproot]，并支持当双方合作时使用无脚本[多签][topic multisignature]签署的 [MuSig2][topic musig]。这减少了交易的重量，并在通道合作关闭时提高了隐私。LND 继续只使用 [HTLCs][topic htlc]，允许从 taproot 通道开始的支付继续通过其他不支持 taproot 通道的闪电网络节点进行转发。{% assign timestamp="1:09:07" %}
 
-    <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
-    listed them in that order rather than by PR number -->
-    这个 PR 包含了之前合并到的 134 个提交。从以下 PR 的 staging 分支合并：[#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、[#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347] 和 [#7472][lnd #7472]。
+  <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
+  listed them in that order rather than by PR number -->
+  这个 PR 包含了之前合并到的 134 个提交。从以下 PR 的 staging 分支合并：[#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、[#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347] 和 [#7472][lnd #7472]。
 
 
 {% include references.md %}
