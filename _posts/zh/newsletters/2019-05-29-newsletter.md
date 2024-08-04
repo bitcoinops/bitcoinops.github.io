@@ -59,7 +59,7 @@ Alice 想支付给十个人，但当前的交易费用很高，所以她不想�
 | 总费用             | 0.00204641 BTC         | 0.00059687 BTC         | 0.00020431 BTC         |
 | **与前一列相比的节省** | ---                   | **71%**               | **66%**               |
 
-我们看到这种类型的信任延迟付款比支付批处理节省了 66%，比单独发送付款节省了 90%。请注意，在费用分层更大或接收者超过十个的情况下，节省可能会更大。
+我们看到这种类型的无需信任延迟付款比支付批处理节省了 66%，比单独发送付款节省了 90%。请注意，在费用分层更大或接收者超过十个的情况下，节省可能会更大。
 
 ### CheckOutputsHashVerify
 
@@ -172,7 +172,7 @@ endcomment %}
 [updated qr paragraph]: /zh/bech32-sending-support/#qrcode-edit
 [optech twitter]: https://twitter.com/bitcoinoptech
 [optech contributors]: /about/#contributors
-[special section about the proposal]: #proposed-transaction-output-commitments
+[special section about the proposal]: #提议的交易输出承诺
 [bech32 series]: /zh/bech32-sending-support/
 [newsletter #32]: /zh/newsletters/2019/02/05/#miniscript
 [newsletter #18]: /zh/newsletters/2018/10/23/#two-papers-published-on-fast-multiparty-ecdsa
