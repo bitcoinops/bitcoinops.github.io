@@ -139,15 +139,16 @@ assures several receivers that they can each be paid.  This two-step
 process can probably be used anywhere payment batching is an option
 but it can likely reduce fees even further than payment batching.
 
-Later versions of the proposal placed greater emphasis on other
+The original proposal also emphasized other
 contracts and [covenants][topic covenants] that could be created using
 the new opcode, such as the ability to create [channel
-factories][topic channel factories], [vaults][topic vaults], and
+factories][topic channel factories], [vaults][topic vaults],
 [coinjoin transactions][topic coinjoin] in new ways that might
-simplify construction or reduce fees.  Other authors have mentioned
-that the new opcode could possibly be used to allow users to
+simplify construction or reduce fees, and described how 
+the new opcode could possibly be used to allow users to
 trustlessly [pool their funds][joinpool] together into a single UTXO
-in a way that would increase privacy.
+in a way that would increase privacy. These other concepts have been
+described in further detail in subsequent works by a variety of authors.
 
 Criticisms of the proposal have focused on it being [too
 specific][maxwell-attributed specific] to the congestion control
