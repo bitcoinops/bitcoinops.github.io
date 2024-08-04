@@ -21,5 +21,5 @@
 [wasabi wallet]: https://wasabiwallet.io/
 [trust wallet]: https://trustwallet.com/
 [electrum]: https://electrum.org/
-[news45 bech32]: /zh/newsletters/2019/05/07/#bech32-sending-support
+[news45 bech32]: /zh/newsletters/2019/05/07/#bech32-发送支持
 {% endauto_anchor %}
