@@ -110,8 +110,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   simple de faire cela nécessiterait un très grand nombre de signatures à inclure pour obtenir une
   sécurité pratique. Heilman [décrit][heilman lamport2] un mécanisme beaucoup plus efficace. Ce
   mécanisme dépasse toujours les limites de consensus pour P2SH <!-- taille de script de rachat de 520
-  octets --> mais nous pensons qu'il pourrait juste fonctionner avec les limites supérieures de P2WSH
-  <!-- taille maximale de script de 10 000 octets -->.
+  octets --> mais nous pensons qu'il pourrait juste fonctionner avec les limites supérieures de P2WSH <!--
+  taille maximale de script de 10 000 octets -->.
 
   De plus, un attaquant individuel avec un ordinateur quantique rapide ou un
   ordinateur classique suffisamment puissant pourrait découvrir un nonce ECDSA court qui lui

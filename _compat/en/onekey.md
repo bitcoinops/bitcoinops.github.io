@@ -65,6 +65,7 @@ segwit:
         By default, OneKey generates a BIP49 P2SH-P2WPKH Base58 receive addresses.
         There is also an option to generate a BIP44 P2PKH, BIP84 P2WPKH and BIP86 P2TR addresses.
 ---
+
 <!-- Onekey -->
 
 {% assign tool = page %}

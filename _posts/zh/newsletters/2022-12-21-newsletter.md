@@ -90,6 +90,7 @@ LKD 对[无状态发票][topic stateless invoices]的初步支持，使它可以
 ![Illustration of zero-conf channels](/img/posts/2021-07-zeroconf-channels.png)
 
 <div markdown="1" class="callout" id="rbf">
+
 ### 2022 summary<br>Replace-By-Fee
 
 今年，我们看到了许多关于 “[手续费替换][topic rbf]（RBF）” 的讨论，以及一些重要的行动。我们一月份的周报[总结][news181 rbf]了一项来自 Jeremy Rubin 的提议：任意交易都可以在原版交易到达节点后的一段时间内被更高手续费的替代版本替换；超时之后，再应用现有的规则 —— 仅允许遵循 [BIP125][] 的替代版本替换原版。这将允许商家在替换窗口关闭之后接受未确认的交易，就像现在这样。更重要的是，它也许可以让依赖于可替换性来实现安全性的协议不必担心未携带 BIP125 信号的交易，只要一个协议节点或者瞭望塔拥有合理的机会、在知晓一笔交易后即时响应即可。
@@ -131,6 +132,7 @@ Lightning Labs [推出][news195 taro]了 Taro，这个协议（基于以前的�
 在 5 月份，我们还见证了比特币内核库项目（libbitcoinkernel）的[第一次合并][news198 lbk]，试图将尽可能多的 Bitcoin Core 共识代码分离到一个单独的库中，即使该代码仍附带有一些非共识代码。从长远来看，这一目标是精简 libbitcoinkernel 到只包含共识代码，让其他项目可以轻松使用该代码或让审计人员分析对 Bitcoin Core 的共识逻辑的变更。几个额外的 libbitcoinkernel PR 也在今年合并。
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2022 总结<br>流行基础设施项目的主要发布
 
 - [Eclair 0.7.0][news185 eclair] 添加了对[锚点输出][topic anchor outputs]、中继[洋葱消息][topic onion messages]以及在生产环境中使用 PostgreSQL 数据库的支持。
@@ -201,9 +203,11 @@ Lloyd Fournier [写了一篇][news213 bls]关于 [DLC][topic dlc] 预言机使�
 然后他们可以根据合约分配他们的存款资金，甚至不需要告知预言机他们计划使用它。到了结算合约的时候，每一方都可以自己运行程序。如果他们都同意运行结果，就可以合作结算合约，根本不需要预言机的参与；如果他们不同意，他们中的任何一方都可以将程序发送到预言机（可能需要为其服务支付少量费用）并收到 BLS 对程序源代码的证明以及运行程序的返回值。证明可以转换为允许在链上结算 DLC 的签名。与当前的 DLC 合约一样，预言机无法根据其 BLS 签名知道是哪些链上交易。
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2022 总结<br>Bitcoin Optech
 
 在 Optech 的第五年，我们发布了 51 份[周报][newsletters]，并在我们的[主题索引][topics index]中新增了 11 个页面。 Optech 今年总共发表了超过 70,000 字的有关比特币软件研发的文章，大致相当于一本 200 页的书。
+
 <!-- wc -w _posts/en/newsletters/2022-* ; a typical book has about 350 words per page -->
 
 </div>
@@ -235,6 +239,7 @@ eclipse attacks]更加困难。
 一次比特币协议开发者会议中，Bryan Bishop [主持][news223 xscribe] 了几项议题讨论，包括[传输加密][topic v2 p2p transport]、交易费和[经济安全性][topic fee sniping]、 FROST [门限签名][topic threshold signature]方案、使用GitHub进行源代码托管和开发讨论的可持续性、BIP 中的可证明规范、[包中继][topic package relay]和 [v3 交易中继][topic v3 transaction relay]、Stratum 第二版采矿协议、以及让代码合并到比特币核心和其他自由软件项目。
 
 <div markdown="1" class="callout" id="softforks">
+
 ### 2022 年软分叉提议总结
 
 一月伴随着 Jeremy Rubin [举行][news183a ctv]第一次 IRC 会议，审核和讨论 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify](CTV) 软分叉提案。同时，Peter Todd 在 Bitcoin-Dev 邮件列表中[发布][news183b ctv]了对该提案的一些担忧，最值得注意的是，他认为此前的软分叉已经使几乎所有比特币用户受益。

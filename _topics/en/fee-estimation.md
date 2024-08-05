@@ -53,6 +53,9 @@ optech_mentions:
   - title: "LND #8730 introduces an RPC command `lncli wallet estimatefee`"
     url: /en/newsletters/2024/06/21/#lnd-8730
 
+  - title: "Bitcoin Core #30275 updates `estimatesmartfee` RPC default from conservative to economical"
+    url: /en/newsletters/2024/08/02/#bitcoin-core-30275
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection

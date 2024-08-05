@@ -118,6 +118,7 @@ Bitcoinの元々の機能の1つである公開鍵のハッシュは（Bitcoin�
 多数の反論が提示され、Taprootに対するコミュニティの支持は変わりませんでした。
 
 <div markdown="1" class="callout" id="taproot-activation">
+
 ### 2021年のまとめ<br>Taprootの有効化
 
 2020年の年末に、[Schnorr署名][topic schnorr signatures]と[Tapscript][topic tapscript]のサポートを含む
@@ -245,6 +246,7 @@ AMPの1つの重大な欠点を考慮から排除しています。
 デュアル・ファンディングは特に有用です。
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2021年のまとめ<br>人気のあるインフラストラクチャプロジェクトのメジャーリリース
 
 - [Eclair 0.5.0][]では、スケーラブルなクラスターモード（[ニュースレター #128][news128 akka]参照）、
@@ -410,6 +412,7 @@ Fidelity bondは、サードパーティのシステムでの不正行為の代�
 C-Lightningに実装される予定です。
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2021年のまとめ<br>Bitcoin Optech
 
 Optechの4年めは、51の週刊[ニュースレター][newsletters]を発行し、
@@ -418,6 +421,7 @@ Optechの4年めは、51の週刊[ニュースレター][newsletters]を発行�
 [Taprootの準備][p4tr]に関する21部構成のシリーズを（[2人][zmn guest]のゲスト[投稿者][darosior guest]の助けを借りて）
 書きました。合計すると、Optechは今年、Bitcoinソフトウェアの研究と開発について8万語以上を公開し、
 これはおよそ250ページの本に匹敵します。
+
 <!-- wc -w _posts/en/newsletters/2021-*_includes/specials/taproot/en/* -->
 
 </div>

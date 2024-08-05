@@ -137,7 +137,7 @@ describing notable changes to popular Bitcoin infrastructure projects.
     makes it easier to analyze TRUC independently of cluster mempool
     than it is to analyze RBFR.
 
-  As of this writing, discussion on the mailing list is ongoing.
+  As of this writing, discussion on the mailing list is ongoing. {% assign timestamp="0:31" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -153,12 +153,12 @@ answers posted since our last update.*
 - [Why is restructure of mempool required with cluster mempool?]({{bse}}123682)
   Murch explains issues with Bitcoin Core’s current mempool data structure, how
   cluster mempool addresses those issues, and how [cluster mempool][topic
-  cluster mempool] may be deployed in Bitcoin Core.
+  cluster mempool] may be deployed in Bitcoin Core. {% assign timestamp="29:54" %}
 
 - [DEFAULT_MAX_PEER_CONNECTIONS for Bitcoin Core is 125 or 130?]({{bse}}123645)
   Lightlike clarifies that while the maximum number of automatic peer
   connections is 125 in Bitcoin Core, a node operator might add up to 8
-  additional connections manually.
+  additional connections manually. {% assign timestamp="36:32" %}
 
 - [Why do protocol developers work on maximizing miner revenue?]({{bse}}123679)
   David A. Harding lists several advantages of being able to predict which
@@ -166,35 +166,35 @@ answers posted since our last update.*
   fee revenue, noting “This allows spenders to make reasonable feerate
   estimates, volunteer relay nodes to operate with a modest amount of bandwidth
   and memory, and small decentralized miners to earn just as much fee revenue as
-  large miners”.
+  large miners”. {% assign timestamp="38:34" %}
 
 - [Is there an economic incentive to use P2WSH over P2TR?]({{bse}}123500)
   Vojtěch Strnad points out that while certain uses of P2WSH can be cheaper than
   P2TR outputs, most use cases of P2WSH, like multisig and LN, would benefit
   from the reduced fees enabled by hiding unused script paths in [taproot][topic
   taproot] and using [schnorr signatures][topic schnorr signatures] for
-  key aggregation schemes like [MuSig2][topic musig] and FROST.
+  key aggregation schemes like [MuSig2][topic musig] and FROST. {% assign timestamp="42:26" %}
 
 - [How many blocks per second can sustainably be created using a time warp attack?]({{bse}}123698)
   Murch calculates that in the context of a [time warp attack][topic time warp],
   “An attacker would be able to sustain a cadence of 6 blocks per second without
-  increasing the difficulty.”
+  increasing the difficulty.” {% assign timestamp="45:30" %}
 
 - [pkh() nested in tr() is allowed?]({{bse}}123568)
   Pieter Wuille points out that, according to [BIP386][], "tr() Output Script
   Descriptors", `pkh()` nested in `tr()` is not a valid descriptor, but that
   under [BIP379][] "Miniscript" such a construction is allowed and that it is up
-  to the application developer to decide which specific BIPs they adhere to.
+  to the application developer to decide which specific BIPs they adhere to. {% assign timestamp="49:01" %}
 
 - [Can a block more than a week old be considered a valid chain tip?]({{bse}}123671)
   Murch concludes that such a chain tip could be considered valid, but that the
   node would remain in the "initialblockdownload" state as long as the chain
-  tip is more than 24 hours in the past according to the node’s local time.
+  tip is more than 24 hours in the past according to the node’s local time. {% assign timestamp="51:25" %}
 
 - [SIGHASH_ANYONECANPAY mediated tx modification]({{bse}}123429)
   Murch explains the challenges of using `SIGHASH_ALL | SIGHASH_ANYONECANPAY` in
   an onchain crowdfunding scheme and how [SIGHASH_ANYPREVOUT][topic
-  sighash_anyprevout] might help.
+  sighash_anyprevout] might help. {% assign timestamp="57:35" %}
 
 - [Why does RBF rule #3 exist?]({{bse}}123595)
   Antoine Poinsot confirms that [RBF][topic rbf] rule #4 (replacement
@@ -202,7 +202,7 @@ answers posted since our last update.*
   is stronger than rule #3 (replacement pays absolute fees of at least the sum
   paid by the original transaction) and notes that the reason for the two
   similar rules in the documentation comes from the two separate checks in the
-  code.
+  code. {% assign timestamp="1:00:35" %}
 
 ## Releases and release candidates
 
@@ -211,7 +211,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [BDK 1.0.0-beta.1][] is a release candidate for "the beta first version of
-  `bdk_wallet` with a stable 1.0.0 API".
+  `bdk_wallet` with a stable 1.0.0 API". {% assign timestamp="1:02:05" %}
 
 ## Notable code and documentation changes
 
@@ -228,14 +228,14 @@ repo], and [BINANAs][binana repo]._
   avoid loading a snapshot if it's not an ancestor of the current best header
   `m_best_header` and instead sync as a regular node. If the snapshot later
   becomes an ancestor of the best header due to a chain reorganization,
-  assumeUTXO snapshot loading resumes.
+  assumeUTXO snapshot loading resumes. {% assign timestamp="1:02:58" %}
 
 - [Bitcoin Core #29523][] adds a `max_tx_weight` option to transaction funding
   RPC commands `fundrawtransaction`, `walletcreatefundedpsbt`, and `send`. This
   ensures the resulting transaction weight doesn't exceed the specified limit,
   which can be beneficial for future [RBF][topic rbf] attempts or for specific
   transaction protocols. If not set, the `MAX_STANDARD_TX_WEIGHT` of
-  400,000 weight units (100,000 vbytes) is used as the default value.
+  400,000 weight units (100,000 vbytes) is used as the default value. {% assign timestamp="1:07:42" %}
 
 - [Core Lightning #7461][] adds support for nodes to self-fetch and self-pay
   [BOLT12 offers][topic offers] and invoices, which may simplify account
@@ -244,13 +244,13 @@ repo], and [BINANAs][binana repo]._
   even if the node itself is the head of the [blinded path][topic rv routing].
   In addition, unannounced nodes (those without [unannounced channels][topic unannounced channels]) can now create
   offers by automatically adding a blinded path whose penultimate hop is
-  one of their channel peers.
+  one of their channel peers. {% assign timestamp="1:10:03" %}
 
 - [Eclair #2881][] removes support for new incoming `static_remote_key`
   channels, while maintaining support for existing ones and for new outgoing
   channels that use this option. Nodes should use [anchor outputs][topic anchor
   outputs] instead, as incoming `static_remote_key` new channels are now
-  considered obsolete.
+  considered obsolete. {% assign timestamp="1:11:06" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -272,4 +272,3 @@ repo], and [BINANAs][binana repo]._
 [teinurier hacky]: https://github.com/bitcoin/bitcoin/issues/29319#issuecomment-1968709925
 [daftuar prefer not]: https://github.com/bitcoin/bitcoin/issues/29319#issuecomment-1968709925
 [cln self-pay]: /en/newsletters/2023/08/02/#core-lightning-6399
-[BIP379]: https://github.com/bitcoin/bips/blob/master/bip-0379.md

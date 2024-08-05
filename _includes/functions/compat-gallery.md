@@ -9,8 +9,10 @@
   {% endif %}
   {% endcapture %}
 <div markdown="1" class="compat-usability">
+
 [![{{example.caption|escape_once}}]({{example.image}})]({{link}})
 <br /><span class="compat-caption">{{example.caption}}</span>
+
 </div>
   {% assign break = forloop.index | modulo:2 %}
   {% if break == 0 %}<br clear="both" />{% endif %}

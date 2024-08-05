@@ -73,7 +73,11 @@ Bitcoin Wikiの[taproot uses][wiki taproot uses]ページや
       </tr>
 
       <tr>
-        <th markdown="1">Implicit scripts (例：[BIP44][])</th>
+        <th markdown="1">
+
+        Implicit scripts (例：[BIP44][])
+
+        </th>
         <td>シードワード</td>
         <td>自動（ユーザー操作は不要）</td>
         <td>サポートされているすべてのスクリプトをスキャン、O(n)</td>
@@ -90,7 +94,11 @@ Bitcoin Wikiの[taproot uses][wiki taproot uses]ページや
       </tr>
 
       <tr>
-        <th markdown="1">Explicit scripts ([descriptor][topic descriptors])</th>
+        <th markdown="1">
+
+        Explicit scripts ([descriptor][topic descriptors])
+
+        </th>
         <td>シードワードとdescriptor</td>
         <td>ユーザーは新しいdescriptorのバックアップが必要</td>
         <td>実際に使用されたスクリプトテンプレートのみをスキャン、O(n); 新しいウォレットの場合はn=1</td>

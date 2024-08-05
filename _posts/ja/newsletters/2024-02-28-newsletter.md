@@ -129,48 +129,96 @@ lang: ja
   <tr>
     <th></th>
     <th>事前署名版</th>
-    <th markdown="span">BIP345 `OP_VAULT`</th>
-    <th markdown="span">`OP_CAT`とSchnorr</th>
+    <th markdown="span">
+
+    BIP345 `OP_VAULT`
+
+    </th>
+    <th markdown="span">
+
+    `OP_CAT`とSchnorr
+
+    </th>
   </tr>
 
   <tr>
     <th>有効性</th>
-    <td markdown="span">**現在利用可能**</td>
-    <td markdown="span">`OP_VAULT`と[OP_CTV][topic op_checktemplateverify]のソフトフォークが必要</td>
-    <td markdown="span">`OP_CAT`のソフトフォークが必要</td>
+    <td markdown="span">
+
+    **現在利用可能**
+
+    </td>
+    <td markdown="span">
+
+    `OP_VAULT`と[OP_CTV][topic op_checktemplateverify]のソフトフォークが必要
+
+    </td>
+    <td markdown="span">
+
+    `OP_CAT`のソフトフォークが必要
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">直前のアドレス置換</th>
     <td markdown="span">脆弱</td>
-    <td markdown="span">**脆弱ではない**</td>
-    <td markdown="span">**脆弱ではない**</td>
+    <td markdown="span">
+
+    **脆弱ではない**
+
+    </td>
+    <td markdown="span">
+
+    **脆弱ではない**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">一部の引き出し</th>
     <td markdown="span">事前に取り決めがある場合のみ可能</td>
-    <td markdown="span">**可能**</td>
+    <td markdown="span">
+
+    **可能**
+
+    </td>
     <td markdown="span">不可能</td>
   </tr>
 
   <tr>
     <th markdown="span">静的で非対話型の計算可能なデポジットアドレス</th>
     <td markdown="span">不可能</td>
-    <td markdown="span">**可能**</td>
-    <td markdown="span">**可能**</td>
+    <td markdown="span">
+
+    **可能**
+
+    </td>
+    <td markdown="span">
+
+    **可能**
+
+    </td>
   </tr>
 
   <tr>
     <th markdown="span">手数料節約のためのRe-Vault/隔離のバッチ化</th>
     <td markdown="span">不可能</td>
-    <td markdown="span">**可能**</td>
+    <td markdown="span">
+
+    **可能**
+
+    </td>
     <td markdown="span">不可能</td>
   </tr>
 
   <tr>
     <th markdown="span">最良（つまり正当な使用）の場合の効率（Optechによる非常に大まかな推定）</th>
-    <td markdown="span">**通常のシングルシグの2倍のサイズ**</td>
+    <td markdown="span">
+
+    **通常のシングルシグの2倍のサイズ**
+
+    </td>
     <td markdown="span">通常のシングルシグの3倍のサイズ</td>
     <td markdown="span">通常のシングルシグの4倍のサイズ</td>
   </tr>

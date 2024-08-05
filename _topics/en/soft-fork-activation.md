@@ -578,25 +578,34 @@ ongoing.
 
 <!-- "in all possible scenarios, LOT=False puts users and the network at
 significant risk." -->
+
 [dashjr lot=false]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018498.html
+
 <!-- "I'm still incredibly worried about users pushing for some
 UASF-style forced-signaling guerilla faster-activation. [...] However,
 as we saw with BIP 148/UASF, even a tiny minority of transacting users
 can set the tone and claim victory over how a soft-fork activates." -->
+
 [corallo co-opt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018595.html
+
 <!-- "With lot=false and lot=true nodes active on the network, a chain
 split occurs if the activation is blocked [...] as default scenario
 for every consensus change [...] It doesn't seem as focussed on safety
 as I'd expect from bitcoin." -->
+
 [towns chain split]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018723.html
+
 <!-- "As for a "mandatory signaling period" as a part of BIP 8 [...]
 in practice, we've seen that version bits are set on the pool side,
 and not on the node side, meaning the goal of ensuring miners have
 upgraded isn't really accomplished in practice, you just end up
 forking the chain for no gain." -->
+
 [corallo pool side]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017582.html
+
 <!-- "[LOT=true does not prove] that developers don't control changes
 to the system." -->
+
 [harding f7]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
 
 Other activation ideas have also been discussed, including

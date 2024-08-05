@@ -248,8 +248,7 @@ discussion [podcast][podcast] with guests that have included many of the
 contributors whose work we've been privileged to write about.
 
 None of that would be possible without our many contributors, who in the
-past year have included:
-<!-- alphabetical -->
+past year have included: <!-- alphabetical -->
 Adam Jonas,
 Copinmalin,
 David A. Harding,

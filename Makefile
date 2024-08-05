@@ -43,6 +43,9 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
 
+	## Hugo will end a paragraph if a line within it starts an HTML comment; we don't want that
+	! git grep -l '^ *<!--' '*.md' | xargs perl -0777 -ne 'print "$$ARGV\n" if /.+\n^ *<!--/m' | grep .
+
 	## Check that posts declare certain fields, see issue #155 and PR #156
 	! git --no-pager grep -L "^slug: " _posts
 	! git --no-pager grep -L "^title: " _posts
