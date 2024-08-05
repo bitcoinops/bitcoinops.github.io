@@ -144,7 +144,7 @@ contracts and [covenants][topic covenants] that could be created using
 the new opcode, such as the ability to create [channel
 factories][topic channel factories], [vaults][topic vaults],
 [coinjoin transactions][topic coinjoin] in new ways that might
-simplify construction or reduce fees, and described how 
+simplify construction or reduce fees, and described how
 the new opcode could possibly be used to allow users to
 trustlessly [pool their funds][joinpool] together into a single UTXO
 in a way that would increase privacy. These other concepts have been
