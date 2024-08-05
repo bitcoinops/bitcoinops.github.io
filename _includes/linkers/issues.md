@@ -1,4 +1,5 @@
 {% capture /dev/null %}
+
 <!--
 issues.md: creates Markdown reference-style links to issues, pull
 requests, and other templated URLs.

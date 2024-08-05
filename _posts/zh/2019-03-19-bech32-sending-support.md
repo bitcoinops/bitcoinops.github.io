@@ -70,19 +70,19 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #45][].*
 
-{% include specials/bech32/08-upgradability.md %}
+{% include specials/bech32/zh/08-upgradability.md %}
 
 ## 使用 bech32 地址创建更高效的二维码
 
 *最初发布于 [Newsletter #46][].*
 
-{% include specials/bech32/09-qrcode.md %}
+{% include specials/bech32/zh/09-qrcode.md %}
 
 ## Bech32 支持作为能力的代理
 
 *最初发布于 [Newsletter #47][].*
 
-{% include specials/bech32/10-snooze-lose.md %}
+{% include specials/bech32/zh/10-snooze-lose.md %}
 
 ## 仅支持接收 bech32 的钱包
 
@@ -178,9 +178,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #42]: /zh/newsletters/2019/04/16/#bech32-发送支持
 [newsletter #43]: /zh/newsletters/2019/04/23/#bech32-发送支持
 [newsletter #44]: /zh/newsletters/2019/04/30/#bech32-发送支持
-[newsletter #45]: /en/newsletters/2019/05/07/#bech32-sending-support
-[newsletter #46]: /en/newsletters/2019/05/14/#bech32-sending-support
-[newsletter #47]: /en/newsletters/2019/05/21/#bech32-sending-support
+[newsletter #45]: /zh/newsletters/2019/05/07/#bech32-发送支持
+[newsletter #46]: /zh/newsletters/2019/05/14/#bech32-发送支持
+[newsletter #47]: /zh/newsletters/2019/05/21/#bech32-发送支持
 [newsletter #48]: /en/newsletters/2019/05/29/#bech32-sending-support
 [newsletter #49]: /en/newsletters/2019/06/05/#bech32-sending-support
 [newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support

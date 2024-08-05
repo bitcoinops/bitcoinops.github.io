@@ -86,6 +86,12 @@ optech_mentions:
   - title: "Eclair #2854 and LDK #3083 implement BOLTs #1163 to make message delivery failures more private"
     url: /en/newsletters/2024/06/14/#eclair-2854
 
+  - title: "Core Lightning #7455 makes multiple changes to its onion message defaults"
+    url: /en/newsletters/2024/07/19/#core-lightning-7455
+
+  - title: "BOLTs #1173 makes the channel_update field optional in failure onion messages"
+    url: /en/newsletters/2024/07/19/#bolts-1173
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

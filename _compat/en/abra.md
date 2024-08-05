@@ -89,6 +89,7 @@ segwit:
         When using a non bech32 address, the "Review" button is enabled. Button
         is disabled when using bech32 address format.
 ---
+
 <!-- Abra -->
 
 {% assign tool = page %}

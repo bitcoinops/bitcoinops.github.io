@@ -109,6 +109,15 @@ optech_mentions:
   - title: "Discussion of fully implementing offers versus incremently adding features from it"
     url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
 
+  - title: "Core Lightning #7461 adds support for nodes to self-fetch and self-pay BOLT12 offers and invoices"
+    url: /en/newsletters/2024/07/26/#core-lightning-7461
+
+  - title: "CLN #7474 updates the offers plugin to understand the newly defined experimental TLV ranges"
+    url: /en/newsletters/2024/08/02/#core-lightning-7474
+
+  - title: "LDK #3139 improves the security of BOLT12 offers by authenticating the use of blinded paths"
+    url: /en/newsletters/2024/08/02/#ldk-3139
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

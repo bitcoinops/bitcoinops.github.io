@@ -77,6 +77,7 @@ segwit:
     #  caption: >
     #    BitGo's web wallet displays an error when attempting send to segwit v1 addresses.
 ---
+
 <!-- BitGo -->
 
 {% assign tool = page %}

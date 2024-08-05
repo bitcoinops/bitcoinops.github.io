@@ -491,7 +491,9 @@ Alex Morcosを含む[多くのサポーター][supporters]にも感謝します�
 {% assign sorted_praise = page.praise | sort_natural: "author" %}
 {% for comment in sorted_praise %}
   <blockquote markdown="1">
+
   {{comment.text | default: 'TODO'}}
+
   </blockquote>
 
   {:.right}

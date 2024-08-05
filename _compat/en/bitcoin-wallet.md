@@ -24,6 +24,7 @@ segwit:
       change_bech32: "true"
       bech32_p2wsh: "true"
 ---
+
 <!-- Bitcoin Wallet -->
 
 {% assign tool = page %}

@@ -126,6 +126,17 @@ optech_mentions:
     url: /en/newsletters/2024/07/05/#memory-related-crash-in-attempts-to-parse-bip72-uris
     date: 2019-08-12
 
+  - title: "Peter Todd responsibly disclosed a free relay attack exploiting RBF policy differences"
+    url: /en/newsletters/2024/07/26/#free-relay-attacks
+
+  - title: "Eugene Siegel responsibly disclosed a remote crash vulnerability in Bitcoin Core"
+    url: /en/newsletters/2024/08/02/#remote-crash-by-sending-excessive-addr-messages
+    date: 2021-06-21
+
+  - title: "Michael Ford disclosed a Bitcoin Core vulnerability based on a discovery by Ronald Huveneers"
+    url: /en/newsletters/2024/08/02/#remote-crash-on-local-network-when-upnp-enabled
+    date: 2020-10-13
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

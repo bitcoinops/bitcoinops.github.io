@@ -52,6 +52,9 @@ optech_mentions:
   - title: Idea for privacy enhanced transaction cosigning using FROST
     url: /en/newsletters/2023/09/06/#privacy-enhanced-co-signing
 
+  - title: "ChillDKG distributed key generation protocol for FROST"
+    url: /en/newsletters/2024/07/19/#distributed-key-generation-protocol-for-frost
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature

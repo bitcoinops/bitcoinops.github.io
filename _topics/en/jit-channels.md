@@ -39,6 +39,9 @@ optech_mentions:
   - title: "LDK #2715 allows accepting underfunded HTLCs in support of JIT channel creation"
     url: /en/newsletters/2023/11/15/#ldk-2715
 
+  - title: "BLIPs #25 allows accepting underfunded HTLCs in support of JIT channel creation"
+    url: /en/newsletters/2024/07/19/#blips-25
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

@@ -21,8 +21,9 @@ Replace-By-Feeポリシーに関する継続的な議論の要約を掲載して
   彼らは、「これが解決されるまで、Bitcoin Knotsをダウンロードし信用しないでください。
   ここ数ヶ月の間に既にダウンロードして実行している場合は、今のところそのシステムのシャットダウンを検討してください。
   」と言っています。
-  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   他のフルノード実装は影響を受けません。
+
+  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
 
 - **Bitcoin Coreのソフトウェアフォーク:** 先月、Bitcoin Coreを元にした2つのパッチセットがリリースされました：
 

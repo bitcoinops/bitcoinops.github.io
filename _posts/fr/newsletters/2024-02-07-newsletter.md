@@ -117,8 +117,8 @@ transaction pour éviter le blocage des transactions, et fournit une brève mise
   2. Si vous ne contribuez pas à une entrée ou si vous ne dépensez pas une sortie segwit v1, obtenez les transactions précédentes
      complètes pour toutes les entrées, vérifiez que leurs sorties dépensées dans cette transaction sont toutes des sorties segwit
      et engagez-vous à ces transactions en utilisant votre signature. Vous pouvez également utiliser cette deuxième procédure dans
-     tous les cas, mais dans le pire des cas, elle consommera près de 20 000 fois plus de bande passante que la première procédure.
-     <!-- ~4 000 000 octets de transaction divisés par ~22 octets de scriptPubKey P2WPKH -->
+     tous les cas, mais dans le pire des cas, elle consommera près de 20 000 fois plus de bande passante que la première procédure.  <!--
+     ~4 000 000 octets de transaction divisés par ~22 octets de scriptPubKey P2WPKH -->
 
 - **Proposition de remplacement par feerate pour échapper au pinning :** Peter Todd [a posté][todd rbfr] sur la liste de diffusion
   Bitcoin-Dev une proposition pour un ensemble de politiques de [remplacement de transaction][topic rbf] qui peuvent être appliquées même

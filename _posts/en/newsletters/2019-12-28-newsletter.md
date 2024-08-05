@@ -133,6 +133,7 @@ software solutions for their needs rather than having to choose one
 solution or another.
 
 <div markdown="1" id="miniscript">
+
 Also in February, Pieter Wuille gave a [presentation][wuille sbc
 miniscript] during the [Stanford Blockchain Conference][] on
 [miniscript][topic miniscript], a spin-off from his work on output
@@ -165,11 +166,13 @@ feedback] and [opening a PR][Bitcoin Core #16800] to add support to
 Bitcoin Core.  Miniscript would also be used by LN developers in
 December to [analyze and optimize][anchor miniscript] several new
 scripts for upgraded versions of some of their onchain transactions.
+
 </div>
 
 ## March
 
 <div markdown="1" id="cleanup">
+
 In March, Matt Corallo proposed the [consensus cleanup soft fork][topic
 consensus cleanup] to eliminate potential problems in Bitcoin's
 consensus code.  If adopted, the fixes would eliminate the [time warp
@@ -184,9 +187,11 @@ for the worst case CPU usage and validity caching) received some
 [criticism][news37 cleanup discussion].  Perhaps it was for that reason
 that the proposal didn't make any obvious progress towards
 implementation in the second half of the year.
+
 </div>
 
 <div markdown="1" id="signet">
+
 March also saw Kalle Alm request initial feedback on [signet][topic
 signet], which would eventually become [BIP325][].  The signet protocol
 allows creating testnets where all valid new blocks must be signed by a
@@ -202,6 +207,7 @@ Signet would mature throughout the year and eventually be
 [integrated][cl signet] into software such as C-Lightning as well as
 used for a demonstration of [eltoo][].  A [pull request][Bitcoin Core
 #16411] adding support to Bitcoin Core remains open.
+
 </div>
 
 {:#loop}
@@ -216,6 +222,7 @@ expected or that the user receives a refund of all costs except for any
 onchain transaction fees.  This makes Loop almost completely trustless.
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2019 summary<br>Major releases of popular infrastructure projects
 
 - [C-Lightning 0.7][] released in March added a plugin system that
@@ -283,6 +290,7 @@ and refactoring existing code on the path towards a goal of ultimately
 adding AssumeUTXO to Bitcoin Core.
 
 <div markdown="1" id="trampoline">
+
 Also in April, Pierre-Marie Padiou [proposed][trampoline proposed] the idea of [trampoline payments][topic
 trampoline payments], a method for allowing lightweight LN nodes to
 outsource pathfinding to heavyweight routing nodes.  A lightweight
@@ -299,11 +307,13 @@ recipient or just another trampoline node.
 A [PR][trampolines pr] adding features for trampoline payments to the LN
 specification is currently open and the Eclair implementation of LN has
 added [experimental support][exp tramp] for relaying trampoline payments.
+
 </div>
 
 ## May
 
 <div markdown="1" id="taproot">
+
 In May, Pieter Wuille proposed a [taproot soft fork][topic taproot]
 consisting of [bip-taproot][] and [bip-tapscript][] (which both depend
 on last year's [bip-schnorr][] proposal).  If implemented, this change
@@ -326,9 +336,11 @@ The proposals received significant discussion and review throughout the
 rest of the year, including through a series of [group review sessions][taproot
 review] organized by Anthony Towns that had more than 150 people sign up
 to help review.
+
 </div>
 
 <div markdown="1" id="anyprevout">
+
 Towns also proposed in May two new signature hashes to be used in
 combination with tapscript, `SIGHASH_ANYPREVOUT` and
 `SIGHASH_ANYPREVOUTANYSCRIPT`.  A signature hash (sighash) is the hash
@@ -347,9 +359,11 @@ Eltoo can simplify several aspects of channel construction and
 management; it's especially desirable for simplifying [channels
 involving more than two participants][topic channel factories] that can
 significantly reduce onchain channel costs.
+
 </div>
 
 <div markdown="1" id="ctv">
+
 A third soft fork proposed this month came from Jeremy Rubin, who
 [described][coshv] a new opcode now called `OP_CHECKTEMPLATEVERIFY`
 (CTV).  This would allow a limited form of [covenant][topic covenants]
@@ -366,9 +380,11 @@ Rubin would continue working on CTV for the remainder of the year,
 including opening PRs ([1][Bitcoin Core #17268], [2][Bitcoin Core #17292]) for improvements to parts
 of Bitcoin Core where optimizations could make a deployed version of CTV
 more effective.
+
 </div>
 
 <div markdown="1" class="callout" id="conferences">
+
 ### 2019 summary<br>Notable technical conferences and other events
 
 - [Stanford Blockchain Conference][], January, Stanford University
@@ -380,11 +396,13 @@ more effective.
 - [Edge Dev++][], September, Tel Aviv
 - [Scaling Bitcoin][], September, Tel Aviv
 - [Cryptoeconomic Systems Summit][], October, MIT
+
 </div>
 
 ## June
 
 <div markdown="1" id="erlay-and-other-p2p-improvements">
+
 Gleb Naumenko, Pieter Wuille, Gregory Maxwell, Sasha Fedorova, and Ivan
 Beschastnikh published a [paper][erlay] about [erlay][topic erlay],
 a protocol for relaying unconfirmed transaction announcements between nodes
@@ -406,9 +424,11 @@ problem described in the [TxProbe][] paper by Sergi Delgado-Segura and
 others) and the addition of [two extra outbound connections][] used only
 for the relay of new blocks, improving resistance against eclipse
 attacks.
+
 </div>
 
 <div markdown="1" id="watchtowers">
+
 After a significant amount of prior work, June also saw the
 [merge][altruist watchtowers] of altruist [LN watchtowers][topic
 watchtowers] into LND.  Altruist watchtowers don't receive any reward
@@ -424,11 +444,13 @@ the remainder of the year, including a [proposed
 specification][watchtower spec] and [discussion][eltoo watchtowers]
 about how they could be combined with next-generation payment channels
 such as [eltoo][topic eltoo].
+
 </div>
 
 ## July
 
 <div markdown="1" id="reproducibility">
+
 In July, the Bitcoin Core project [merged][guix merge] Carl Dong's PR adding
 support for reproducible builds of Bitcoin Core's Linux binaries using
 GNU Guix (pronounced "geeks").  Although Bitcoin Core has long provided
@@ -449,11 +471,13 @@ Gitian-based mechanism).
 Independently, documentation was added this year to both the
 [C-Lightning][cl repro] and [LND][lnd repro] repositories describing how
 to create reproducible builds of their software using trusted compilers.
+
 </div>
 
 ## August
 
 <div markdown="1" id="vaults">
+
 In August, Bryan Bishop described a method for implementing [vaults on
 Bitcoin without using covenants][].  *Vaults* is a term used to describe a
 script that limits an attacker's ability to steal funds even if they
@@ -469,9 +493,11 @@ proposals as well as a mitigation for the weakness that would limit the
 maximum amount of funds that could be stolen from a vault by an
 attacker.  The development of practical vaults could be useful for both
 individual users and large custodial organizations such as exchanges.
+
 </div>
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2019 summary<br>Bitcoin Optech
 
 In Optech's second year, we signed up six new member companies, held an
@@ -495,6 +521,7 @@ feed][].
 ## September
 
 <div markdown="1" id="snicker">
+
 Adam Gibson [proposed][snicker] a novel form of non-interactive
 [coinjoin][topic coinjoin] for the existing Bitcoin system.  The
 protocol, called SNICKER, involves a user selecting one of their UTXOs
@@ -512,6 +539,7 @@ SNICKER's major advantages over other coinjoin approaches are that it
 doesn't require the users be online at the same time and that it should
 be easy to add support for it to any wallet that already has [BIP174][]
 PSBT support, which is an increasing number of wallets.
+
 </div>
 
 {:#ln-cve}
@@ -532,6 +560,7 @@ communication protocol will help avoid other failures of this type.
 ## October
 
 <div markdown="1" id="anchor-outputs">
+
 LN developers made significant progress in October and November towards
 addressing a long-standing concern about ensuring that users can always
 close their channels without excessive delays.  If a user decides that
@@ -567,9 +596,11 @@ on the [revisions][anchor outputs] to the LN scripts and protocol
 messages necessary to start using the change.  As of this writing, those
 specification changes are awaiting final implementation and acceptance
 before seeing deployment on the network.
+
 </div>
 
 <div markdown="1" class="callout" id="new-infrastructure">
+
 ### 2019 summary<br>New open source infrastructure solutions
 
 - [Proof of reserves tool][] released in February allows exchanges and
@@ -587,11 +618,13 @@ before seeing deployment on the network.
   June) provides a non-custodial service that allows users to add or
   remove funds from their LN channels without closing existing channels
   or opening new channels.
+
 </div>
 
 ## November
 
 <div markdown="1" id="bech32-mutability">
+
 Discussion in November about using bech32 addresses for [taproot][topic
 taproot] payments brought additional attention to an [issue][bech32
 malleability issue] discovered in May.  According to [BIP173][],
@@ -617,6 +650,7 @@ addresses.  He also described a small tweak to the bech32 algorithm that
 will allow other applications using bech32, as well as next-generation
 Bitcoin address formats, to use BCH error detection without this
 problem.
+
 </div>
 
 {:#openssl}

@@ -78,6 +78,7 @@ segwit:
       caption: >
         Copay can send to both P2WPKH and P2WSH bech32 addresses.
 ---
+
 <!-- Copay -->
 
 {% assign tool = page %}

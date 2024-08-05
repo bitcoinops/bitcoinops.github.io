@@ -1,4 +1,5 @@
 {% capture /dev/null %}
+
 <!-- Tested the following on regtest:
   - according to getblockchaininfo, taproot becomes active at min_lockin_height
   - a tx with nlocktime x can't be sent at height x-1 and can be sent at height x
@@ -9,6 +10,7 @@ Not tested:
 
 <!-- last block before taproot rules enforced -->
 {% assign ante_trb = "709,631" %}
+
 <!-- Conservatively reorg safe block after activation (+144 blocks) -->
 {% assign safe_trb = "709,776" %}
 {% endcapture %}
