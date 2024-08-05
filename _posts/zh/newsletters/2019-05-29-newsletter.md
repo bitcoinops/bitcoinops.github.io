@@ -11,7 +11,7 @@ lang: zh
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
-{% include specials/2019-exec-briefing/fees.md %}
+{% include specials/2019-exec-briefing/zh/fees.md %}
 
 ## 行动项
 
