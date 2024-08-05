@@ -99,7 +99,7 @@ Rubin 和其他人提供了至少初步的回应以应对这些关注点。我�
 
 {% comment %}<!-- weekly reminder for harding: check Bech32 Adoption wiki page for changes -->{% endcomment %}
 
-{% include specials/bech32/11-only-bech32.md %}
+{% include specials/bech32/zh/11-only-bech32.md %}
 
 **更正 Newsletter #46：** 我们关于 bech32 QR 码的部分错误地声称，带有附加参数的 BIP21 URI 中使用的 bech32 地址不能使用 QR 大写字母数字模式。Nadav Ivgi 亲切地[通知我们][ivgi tweet]，QR 码可以混合模式。我们已更新[该段落][updated qr paragraph]，包括正确的信息、一些附加细节和一组附加的 QR 码示例。
 
