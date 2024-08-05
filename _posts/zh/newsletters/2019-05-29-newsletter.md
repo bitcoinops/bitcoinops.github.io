@@ -29,7 +29,7 @@ lang: zh
 
     本周，John Newbery [建议][smaller v1 spk]我们使用某种方法避免在 scriptPubKey 中放置此字节。Wuille 同意这可能有用，并将尝试实现一种变体，其中该位将作为 taproot 见证数据的一部分。这将减少创建一个 taproot 输出的成本一个 vbyte（使其与当前的 P2WSH 相同）。
 
-- **<!--presentation-a-return-to-fees-->****演讲：重返费用：** 本月早些时候在纽约区块链周期间，Bitcoin Optech 贡献者 Mike Schmidt 在 Optech 的首次高管简报会上做了关于比特币交易费用的演讲。[他演讲的视频][vid return to fees]现已上线。{{return-to-fees}}
+- **<!--presentation-a-return-to-fees-->****演讲：重返费用：** 本月早些时候在纽约区块链周期间，Bitcoin Optech 贡献者 Mike Schmidt 在 Optech 的首次高管简报会上做了关于比特币交易费用的演讲。[他演讲的视频][vid return to fees]现已上线。{{return-to-fees-zh}}
 
 ## 提议的交易输出承诺
 
