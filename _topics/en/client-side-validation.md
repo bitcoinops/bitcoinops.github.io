@@ -65,7 +65,6 @@ user can update the state and use spending transactions
 to assign the new state to a new UTXO. This mechanism is known as
 **single-use seals**, and it leverages anti-double-spending property of bitcoin.
 
-
 As an example, if Alice
 currently controls the UTXO associated with the token and Bob wants to
 buy it from her, she can provide him with evidence of the original
