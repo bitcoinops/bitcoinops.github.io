@@ -66,7 +66,7 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15741,2985,2761" %}
 [bech32 series]: /zh/bech32-sending-support/
-[news48 coshv]: /zh/newsletters/2019/05/29/#proposed-transaction-output-commitments
+[news48 coshv]: /zh/newsletters/2019/05/29/#提议的交易输出承诺
 [alt-coshv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016997.html
 [kotliar ln]: https://www.youtube.com/watch?v=1UDD9PMFTds
 [Bitcoin Core PR Review Club]:https://bitcoin-core-review-club.github.io/
