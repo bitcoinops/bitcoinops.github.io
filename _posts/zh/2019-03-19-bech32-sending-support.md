@@ -88,7 +88,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #48][].*
 
-{% include specials/bech32/11-only-bech32.md %}
+{% include specials/bech32/zh/11-only-bech32.md %}
 
 ## Bech32 趣闻
 
@@ -181,7 +181,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #45]: /zh/newsletters/2019/05/07/#bech32-发送支持
 [newsletter #46]: /zh/newsletters/2019/05/14/#bech32-发送支持
 [newsletter #47]: /zh/newsletters/2019/05/21/#bech32-发送支持
-[newsletter #48]: /en/newsletters/2019/05/29/#bech32-sending-support
+[newsletter #48]: /zh/newsletters/2019/05/29/#bech32-发送支持
 [newsletter #49]: /en/newsletters/2019/06/05/#bech32-sending-support
 [newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support
 [newsletter #51]: /en/newsletters/2019/06/26/#bech32-sending-support
