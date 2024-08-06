@@ -16,7 +16,7 @@ infrastructure software.
 
 ## News
 
-- **Disclosure of vulnerabilities affecting Bitcoin Core versions before 0.21.0:**
+- **Disclosure of vulnerabilities affecting Bitcoin Core versions before 22.0:**
   Niklas Gögge [posted][goegge disclosure] to the Bitcoin-Dev mailing
   list a link to announcements of
   two vulnerabilities affecting versions of Bitcoin Core that have been
