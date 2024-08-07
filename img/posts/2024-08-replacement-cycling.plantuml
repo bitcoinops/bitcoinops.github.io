@@ -1,0 +1,26 @@
+@startditaa
++----------+ 
+| Bob exit +<-------+------+ 
++----------+        + CPFP +         Replacement cycle
+                    + fee  +              Step 1
++----------+        + bump +          Bob's broadcast
+| Bob UTXO +<-------+------+
++----------+
+
+--------------------------------------------------------
+
++--------------+ 
+| Mallory exit +<---+------+ 
++--------------+    + CPFP +         Replacement cycle
+                    + fee  +              Step 2
++--------------+    + bump +         Mallory's alternative
+| Mallory UTXO +<---+------+
++--------------+
+
+--------------------------------------------------------
+
++--------------+    +----------+     Replacement cycle
+| Mallory UTXO +<---+ Ordinary +          Step 3
++--------------+    + spend    +     Alternative removed
+                    +----------+
+@endditaa

@@ -315,8 +315,6 @@ FIXME:Gustavojfe
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="30493,30285,30352,30562,7476,2884,8952,8735,8764,1601" %}
-[topic block withholding]: https://example.com/FIXME:harding-to-add-topic-page
-[topic replacement cycling]: https://example.com/FIXME:harding-to-add-topic-page
 [BDK 1.0.0-beta.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.1
 [libsecp256k1 0.5.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.5.1
 [news274 cycle mitigate]: /en/newsletters/2023/10/25/#deployed-mitigations-in-ln-nodes-for-replacement-cycling
