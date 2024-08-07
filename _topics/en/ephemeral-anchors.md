@@ -6,8 +6,9 @@ title: Ephemeral anchors
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#title-aliases:
-#  - Foo
+title-aliases:
+  - "Pay-to-Anchor (P2A)"
+  - Ephemeral dust
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -58,6 +59,9 @@ optech_mentions:
 
   - title: Proposed changes to LN for v3 relay and ephemeral anchors
     url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
+
+  - title: Description of a replacement cycling attack against transactions using P2A
+    url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
