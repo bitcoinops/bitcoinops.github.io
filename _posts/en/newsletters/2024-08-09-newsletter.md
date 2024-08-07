@@ -297,6 +297,14 @@ FIXME:Gustavojfe
 
 - [Bitcoin Core #30352][] and [#30562][bitcoin core #30562] policy: Add PayToAnchor(P2A), `OP_1 <0x4e73>` as a standard output script for spending Also #30562
 
+- [Bitcoin Core #29775][] adds a `testnet4` configuration option that
+  will set the network to [testnet4][topic testnet] as specified in
+  [BIP94][].  Testnet4 includes fixes several problems with the previous
+  testnet3 (see [Newsletter #306][news306 testnet]).  The existing
+  Bitcoin Core `testnet` configuration option that uses testnet3 remains
+  available but is expected to be deprecated and removed in subsequent
+  releases.
+
 - [Core Lightning #7476][]
   - common/bolt12: allow missing offer_issuer_id.
   - BOLT12: reject zero-length blinded paths.
@@ -314,7 +322,7 @@ FIXME:Gustavojfe
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30493,30285,30352,30562,7476,2884,8952,8735,8764,1601" %}
+{% include linkers/issues.md v=2 issues="30493,30285,30352,30562,7476,2884,8952,8735,8764,1601,29775" %}
 [BDK 1.0.0-beta.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.1
 [libsecp256k1 0.5.1]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.5.1
 [news274 cycle mitigate]: /en/newsletters/2023/10/25/#deployed-mitigations-in-ln-nodes-for-replacement-cycling
@@ -331,3 +339,4 @@ FIXME:Gustavojfe
 [ocean pool]: https://ocean.xyz/blocktemplate
 [rosenfeld pool]: https://bitcoil.co.il/pool_analysis.pdf
 [elftrace]: https://github.com/halseth/elftrace
+[news306 testnet]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
