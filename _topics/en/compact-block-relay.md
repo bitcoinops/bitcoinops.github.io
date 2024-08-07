@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Proposal to use weak blocks to improve compact block relay when mempool policies diverge"
     url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
 
+  - title: "Recent statistics on the success rate of compact block reconstruction"
+    url: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

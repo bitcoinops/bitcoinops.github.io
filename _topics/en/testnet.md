@@ -94,6 +94,9 @@ optech_mentions:
   - title: "Bitcoin Core PR Review Club about testnet4"
     url: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #29775 adds a `testnet4` configuration option"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-29775
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet
@@ -110,7 +113,7 @@ excerpt: >
   **Testnet** is a testing network included with Bitcoin Core and
   supported by many other Bitcoin applications.  **Testnet3** is the
   longest-running incarnation of testnet as of 2024, with **testnet4**
-  currently being a proposed replacement.
+  currently being a recently started replacement.
 
 ---
 

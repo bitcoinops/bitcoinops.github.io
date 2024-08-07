@@ -192,6 +192,9 @@ optech_mentions:
   - title: "Question: why does RBF rule #3 exist?"
     url: /en/newsletters/2024/07/26/#why-does-rbf-rule-3-exist
 
+  - title: "Nodes with full-RBF successfully reconstructing more compact blocks than nodes with only opt-in RBF"
+    url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
