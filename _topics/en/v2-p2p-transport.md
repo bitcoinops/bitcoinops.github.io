@@ -20,8 +20,8 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: v2 Encrypted Transport Protocol proposed BIP
-      link: https://github.com/bitcoin/bips/issues/1378
+    - title: "BIP324: Version 2 P2P Encrypted Transport Protocol"
+      link: BIP324
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

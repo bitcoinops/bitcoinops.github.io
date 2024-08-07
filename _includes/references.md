@@ -128,6 +128,8 @@ for details --> {% endcomment %}
 [BIP90]: https://github.com/bitcoin/bips/blob/master/bip-0090.mediawiki
 [BIP91]: https://github.com/bitcoin/bips/blob/master/bip-0091.mediawiki
 [BIP93]: https://github.com/bitcoin/bips/blob/master/bip-0093.mediawiki
+[BIP94]: https://github.com/bitcoin/bips/blob/master/bip-0094.mediawiki
+[BIP103]: https://github.com/bitcoin/bips/blob/master/bip-0103.mediawiki
 [BIP111]: https://github.com/bitcoin/bips/blob/master/bip-0111.mediawiki
 [BIP112]: https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
 [BIP113]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki

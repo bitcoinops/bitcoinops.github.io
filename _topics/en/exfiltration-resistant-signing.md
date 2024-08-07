@@ -1,5 +1,5 @@
 ---
-title: Exfiltration resistant signing
+title: Exfiltration-resistant signing
 
 ## Optional.  Shorter name to use for reference style links e.g., "foo"
 ## will allow using the link [topic foo][].  Not case sensitive
@@ -24,7 +24,7 @@ primary_sources:
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
-  - title: Proposal to standardize an exfiltration resistant nonce protocol
+  - title: Proposal to standardize an exfiltration-resistant nonce protocol
     url: /en/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
 
   - title: Overview of anti-covert-channel signing techniques
@@ -32,6 +32,9 @@ optech_mentions:
 
   - title: Description of anti-exfiltration technique being used in BitBox02 and Jade hardware wallets
     url: /en/newsletters/2021/02/17/#anti-exfiltration
+
+  - title: "Dark Skippy: faster exfiltration of HD wallet seeds"
+    url: /en/newsletters/2024/08/09/#faster-seed-exfiltration-attack
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:
@@ -41,7 +44,7 @@ optech_mentions:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Exfiltration resistant signing** is the process of creating
+  **Exfiltration-resistant signing** is the process of creating
   signatures for Bitcoin transactions using a protocol that can be
   audited to ensure the signature doesn't contain any biased or
   otherwise manipulated elements that could be used to compromise the
