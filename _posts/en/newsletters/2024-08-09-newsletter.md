@@ -267,12 +267,72 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+  [Add PayToAnchor(P2A), OP_1 <0x4e73>, as standard output script for
+  spending][review club 30352] is a PR by [instagibbs][gh instagibbs]
+  that introduces a new `TxoutType::ANCHOR` output script type. Anchor
+  outputs have a `OP_1 <0x4e73>` output script (resulting in a
+  [`bc1pfeessrawgf`][mempool bc1pfeessrawgf] address). Making these
+  outputs standard facilitates creating and relaying transactions that
+  spend from an anchor output.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/29775#l-29FIXME"
+  q0="Before `TxoutType::ANCHOR` is defined in this PR,
+  what `TxoutType` would a `scriptPubKey` `OP_1 <0x4e73>` be classified
+  as?"
+  a0="Because it consists of a 1-byte push opcode (`OP_1`) and a 2-byte
+  data push (`0x4e73`), it is a valid v1 witness output. Because it is
+  not 32 bytes, it doesn't qualify as a `WITNESS_V1_TAPROOT`, thus
+  defaulting to a `TxoutType::WITNESS_UNKNOWN`."
+  a0link="https://bitcoincore.reviews/30352#l-18"
+
+  q1="Based on the answer to the previous question, would it be standard
+  to create this output type? What about to spend it? (Hint: how
+  do [`IsStandard`][gh isstandard] and [`AreInputsStandard`][gh
+  areinputsstandard] treat this type?)"
+  a1="Because `IsStandard` (which is used to check outputs) only
+  considers `TxoutType::NONSTANDARD` to be non-standard, creating it
+  would be standard. Because `AreInputsStandard` considers a transaction
+  that spends from a `TxoutType::WITNESS_UNKNOWN` to be non-standard, it
+  would not be standard to spend it."
+  a1link="https://bitcoincore.reviews/30352#l-24"
+
+  q2="Before this PR, with default settings, which output types can
+  be _created_ in a standard transaction? Is that the same as the script
+  types that can be _spent_ in a standard transaction?"
+  a2="All defined `TxoutType`'s except `TxoutType::NONSTANDARD` can be
+  created. All defined `TxoutType`'s except `TxoutType::NONSTANDARD` and
+  `TxoutType::WITNESS_UNKNOWN` are allowed to be spent (although it's
+  impossible to spend `TxoutType::NULL_DATA`)."
+  a2link="https://bitcoincore.reviews/30352#l-42"
+
+  q3="Define _anchor output_, without mentioning Lightning Network
+  transactions (try to be more general)."
+  a3="An anchor output is an extra output created on presigned
+  transactions to allow fees to be added via CPFP at the time of
+  broadcasting. See also [topic anchor outputs] for more information."
+  a3link="https://bitcoincore.reviews/30352#l-48"
+
+  q4="Why does the size of the output script of an anchor output
+  matter?"
+  a4="A large output script makes it costlier to relay and prioritize
+  the transaction."
+  a4link="https://bitcoincore.reviews/30352#l-66"
+
+  q5="How many virtual bytes are needed to create and spend a P2A
+  output?"
+  a5="Creating a P2A output requires 13 vbytes. Spending it requires 41
+  vbytes."
+  a5link="https://bitcoincore.reviews/30352#l-120"
+
+  q6="The 3rd commit [adds][gh 30352 3rd commit] `if
+  (prevScript.IsPayToAnchor()) return false` to `IsWitnessStandard`.
+  What does this do, and why is it needed?"
+  a6="It ensures that an anchor output can only be spent without witness
+  data. This prevents an attacker from taking an honest spending
+  transaction, adding witness data to it and then propagating it at a
+  higher absolute fee but lower feerate. This would force the honest
+  user to pay increasingly higher fees to replace it."
+  a6link="https://bitcoincore.reviews/30352#l-154"
 %}
 
 ## Releases and release candidates
@@ -409,3 +469,9 @@ repo], and [BINANAs][binana repo]._
 [news306 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 [news311 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
 [news277 p2a]: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
+[review club 30352]: https://bitcoincore.reviews/30352
+[gh instagibbs]: https://github.com/instagibbs
+[mempool bc1pfeessrawgf]: https://mempool.space/address/bc1pfeessrawgf
+[gh isstandard]: https://github.com/bitcoin/bitcoin/blob/fa0b5d68823b69f4861b002bbfac2fd36ed46356/src/policy/policy.cpp#L7
+[gh areinputsstandard]: https://github.com/bitcoin/bitcoin/blob/fa0b5d68823b69f4861b002bbfac2fd36ed46356/src/policy/policy.cpp#L177
+[gh 30352 3rd commit]: https://github.com/bitcoin-core-review-club/bitcoin/commit/ccad5a5728c8916f8cec09e838839775a6026293#diff-ea6d307faa4ec9dfa5abcf6858bc19603079f2b8e110e1d62da4df98f4bdb9c0R228-R232
