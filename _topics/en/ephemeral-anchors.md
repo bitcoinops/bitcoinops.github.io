@@ -66,6 +66,9 @@ optech_mentions:
   - title: "Bitcoin Core #30352 introduces a new standard output type, Pay-To-Anchor (P2A)"
     url: /en/newsletters/2024/08/09/#bitcoin-core-30352
 
+  - title: "Bitcoin Core PR Review Club for #30352: Add PayToAnchor (P2A) as standard output script for spending"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
