@@ -321,12 +321,13 @@ repo], and [BINANAs][binana repo]._
   builds on work discussed in last week’s Newsletter [#314][news314 cluster].
 
 - [Bitcoin Core #30352][] introduces a new output type, Pay-To-Anchor (P2A), and
-  makes its spending standard. This output type is keyless and enables compact,
-  txid-stable anchors for [CPFP][topic cpfp] fee bumping. Combined with
+  makes its spending standard. This output type is keyless (allowing anyone to spend it) and enables compact
+  anchors for [CPFP][topic cpfp] fee bumping that are resistant to
+  txid malleability (see [Newsletter #277][news277 p2a]). Combined with
   [TRUC][topic v3 transaction relay] transactions, this advances the
   implementation of [ephemeral anchors][topic ephemeral anchors] to replace
-  [anchor outputs][topic anchor outputs] based on the [CPFP carve-out][topic
-  cpfp carve out] relay rule, for LN commitment transactions.
+  LN [anchor outputs][topic anchor outputs] that are based on the [CPFP carve-out][topic
+  cpfp carve out] relay rule.
 
 - [Bitcoin Core #29775][] adds a `testnet4` configuration option that will set
   the network to [testnet4][topic testnet] as specified in [BIP94][].  Testnet4
@@ -335,7 +336,7 @@ repo], and [BINANAs][binana repo]._
   option that uses testnet3 remains available but is expected to be deprecated
   and removed in subsequent releases.
 
-- [Core Lightning #7476][] catches up to the latest [BOLT12
+- [Core Lightning #7476][] catches up to the latest proposed [BOLT12
   specification][bolt12 spec] updates by adding the rejection of zero-length
   [blinded paths][topic rv routing] in [offers][topic offers] and invoice
   requests. Additionally, it allows `offer_issuer_id` to be missing in offers
@@ -343,12 +344,13 @@ repo], and [BINANAs][binana repo]._
   is used as the final blinded path key, since it's safe to assume that the
   offer issuer has access to this key.
 
-- [Eclair #2884][] implements [BLIP0004][blips endorsement] for [HTLC
+- [Eclair #2884][] implements [BLIP4][] for [HTLC
   endorsement][topic htlc endorsement], becoming the first LN implementation to
   do so, to partially mitigate [channel jamming attacks][topic channel jamming
-  attacks] on the network. This PR enables the relaying of incoming endorsement
-  values, introducing a reputation system for LN where relaying nodes can choose
-  to pass an endorsement when forwarding an [HTLC][topic htlc] to the next hop.
+  attacks] on the network. This PR enables the optional relaying of incoming endorsement
+  values, with relaying nodes using their local determination of the
+  inbound peer's reputation to decide whether they should include an
+  endorsement when forwarding an [HTLC][topic htlc] to the next hop.
   If widely adopted by the network, endorsed HTLCs could receive preferential
   access to scarce network resources such as liquidity and HTLC slots. This
   implementation builds on previous Eclair work discussed in Newsletter
@@ -356,12 +358,12 @@ repo], and [BINANAs][binana repo]._
 
 
 - [LND #8952][] refactors the `channel` component in `lnwallet` to use the typed
-  `List`, as part of a series of PRs implementing dynamic commitments, also
-  known as [channel commitment upgrades][topic channel commitment upgrades].
+  `List`, as part of a series of PRs implementing dynamic commitments, a
+  type of [channel commitment upgrade][topic channel commitment upgrades].
 
 - [LND #8735][] adds the ability to generate invoices with [blinded paths][topic
   rv routing] using the `-blind` flag in the `addinvoice` command. It also
-  allows payment of such invoices. Note that this is only implemented for BOLT11
+  allows payment of such invoices. Note that this is only implemented for [BOLT11][]
   invoices, as [BOLT12][topic offers] is not yet implemented in LND. [LND
   #8764][] extends the previous PR by allowing the use of multiple blinded paths
   when paying an invoice, specifically to perform multipath payments
@@ -369,10 +371,10 @@ repo], and [BINANAs][binana repo]._
 
 - [BIPs #1601][] merges [BIP94][] to introduce testnet4, a new version of
   [testnet][topic testnet] that includes consensus rule improvements aimed at
-  preventing network attacks using only CPU mining. All previous soft forks are
+  preventing easy-to-perform network attacks. All previous mainnet soft forks are
   enabled from the genesis block in testnet4, and the port used is `48333` by
   default. See Newsletters [#306][news306 testnet4] and [#311][news311 testnet4]
-  for more details on how testnet4 fixes the issues that led to the fall of
+  for more details on how testnet4 fixes the issues that led to problematic behavior with
   testnet3.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
@@ -403,7 +405,7 @@ repo], and [BINANAs][binana repo]._
 [news314 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
 [bolt12 spec]: https://github.com/lightning/bolts/pull/798
 [news257 eclair]: /en/newsletters/2023/06/28/#eclair-2701
-[blips endorsement]: https://github.com/lightning/blips/pull/27
 [news306 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 [news311 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
 [news312 chilldkg]: /en/newsletters/2024/07/19/#distributed-key-generation-protocol-for-frost
+[news277 p2a]: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
