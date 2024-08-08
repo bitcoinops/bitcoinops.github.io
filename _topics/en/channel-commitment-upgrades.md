@@ -41,6 +41,9 @@ optech_mentions:
   - title: "BOLTs #869 introduces a new channel quiescence protocol, in part for channel upgrades"
     url: /en/newsletters/2024/06/28/#bolts-869
 
+  - title: "LND #8952 refactors code to make it easier to implement dynamic commitments"
+    url: /en/newsletters/2024/08/09/#lnd-8952
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anchor outputs

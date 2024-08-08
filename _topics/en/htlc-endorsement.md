@@ -50,6 +50,9 @@ optech_mentions:
   - title: "HTLC endorsement testing and data collection"
     url: /en/newsletters/2023/08/09/#htlc-endorsement-testing-and-data-collection
 
+  - title: "Eclair #2884 implements BLIP4 for HTLC endorsement"
+    url: /en/newsletters/2024/08/09/#eclair-2884
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

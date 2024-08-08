@@ -306,35 +306,76 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-FIXME:Gustavojfe
+- [Bitcoin Core #30493][] enables [full RBF][topic rbf] as the default setting,
+  while leaving the option for node operators to revert to opt-in RBF. Full RBF
+  allows for the replacement of any unconfirmed transaction, regardless of
+  [BIP125][bip125 github] signaling. It has been an option in Bitcoin Core since
+  July 2022 (see Newsletter [#208][news208 fullrbf]), but was previously
+  disabled by default. For the discussions about making full RBF the default,
+  see Newsletter [#263][news263 fullrbf].
 
-- [Bitcoin Core #30493][] policy: enable full-rbf by default
+- [Bitcoin Core #30285][] adds two key [cluster linearization][wuille cluster]
+  algorithms to the [cluster mempool][topic cluster mempool] project:
+  `MergeLinearizations` for combining two existing linearizations, and
+  `PostLinearize` for improving linearizations by additional processing. This PR
+  builds on work discussed in last week’s Newsletter [#314][news314 cluster].
 
-- [Bitcoin Core #30285][] Merge bitcoin/bitcoin#30285: cluster mempool: merging & postprocessing of linearizations <!-- just a quick mention to let readers know that cluster mempool progress is being made quickly -->
+- [Bitcoin Core #30352][] introduces a new output type, Pay-To-Anchor (P2A), and
+  makes its spending standard. This output type is keyless (allowing anyone to spend it) and enables compact
+  anchors for [CPFP][topic cpfp] fee bumping that are resistant to
+  txid malleability (see [Newsletter #277][news277 p2a]). Combined with
+  [TRUC][topic v3 transaction relay] transactions, this advances the
+  implementation of [ephemeral anchors][topic ephemeral anchors] to replace
+  LN [anchor outputs][topic anchor outputs] that are based on the [CPFP carve-out][topic
+  cpfp carve out] relay rule.
 
-- [Bitcoin Core #30352][] and [#30562][bitcoin core #30562] policy: Add PayToAnchor(P2A), `OP_1 <0x4e73>` as a standard output script for spending Also #30562
+- [Bitcoin Core #29775][] adds a `testnet4` configuration option that will set
+  the network to [testnet4][topic testnet] as specified in [BIP94][].  Testnet4
+  includes fixes several problems with the previous testnet3 (see [Newsletter
+  #306][news306 testnet]).  The existing Bitcoin Core `testnet` configuration
+  option that uses testnet3 remains available but is expected to be deprecated
+  and removed in subsequent releases.
 
-- [Bitcoin Core #29775][] adds a `testnet4` configuration option that
-  will set the network to [testnet4][topic testnet] as specified in
-  [BIP94][].  Testnet4 includes fixes several problems with the previous
-  testnet3 (see [Newsletter #306][news306 testnet]).  The existing
-  Bitcoin Core `testnet` configuration option that uses testnet3 remains
-  available but is expected to be deprecated and removed in subsequent
-  releases.
+- [Core Lightning #7476][] catches up to the latest proposed [BOLT12
+  specification][bolt12 spec] updates by adding the rejection of zero-length
+  [blinded paths][topic rv routing] in [offers][topic offers] and invoice
+  requests. Additionally, it allows `offer_issuer_id` to be missing in offers
+  with a provided blinded path. In such cases, the key used to sign the invoice
+  is used as the final blinded path key, since it's safe to assume that the
+  offer issuer has access to this key.
 
-- [Core Lightning #7476][]
-  - common/bolt12: allow missing offer_issuer_id.
-  - BOLT12: reject zero-length blinded paths.
+- [Eclair #2884][] implements [BLIP4][] for [HTLC
+  endorsement][topic htlc endorsement], becoming the first LN implementation to
+  do so, to partially mitigate [channel jamming attacks][topic channel jamming
+  attacks] on the network. This PR enables the optional relaying of incoming endorsement
+  values, with relaying nodes using their local determination of the
+  inbound peer's reputation to decide whether they should include an
+  endorsement when forwarding an [HTLC][topic htlc] to the next hop.
+  If widely adopted by the network, endorsed HTLCs could receive preferential
+  access to scarce network resources such as liquidity and HTLC slots. This
+  implementation builds on previous Eclair work discussed in Newsletter
+  [#257][news257 eclair].
 
-- [Eclair #2884][] Add HTLC endorsement/confidence
-  Implements https://github.com/lightning/blips/pull/27
 
+- [LND #8952][] refactors the `channel` component in `lnwallet` to use the typed
+  `List`, as part of a series of PRs implementing dynamic commitments, a
+  type of [channel commitment upgrade][topic channel commitment upgrades].
 
-- [LND #8952][] ProofOfKeags/refactor/lnwallet-channel-typed-list <!-- quick mention to let people know that https://bitcoinops.org/en/topics/channel-commitment-upgrades/ is being worked on -->
+- [LND #8735][] adds the ability to generate invoices with [blinded paths][topic
+  rv routing] using the `-blind` flag in the `addinvoice` command. It also
+  allows payment of such invoices. Note that this is only implemented for [BOLT11][]
+  invoices, as [BOLT12][topic offers] is not yet implemented in LND. [LND
+  #8764][] extends the previous PR by allowing the use of multiple blinded paths
+  when paying an invoice, specifically to perform multipath payments
+  ([MPP][topic multipath payments]).
 
-- [LND #8735][] and [#8764][lnd #8764] Route Blinding
-
-- [BIPs #1601][] Add BIP94: Testnet 4
+- [BIPs #1601][] merges [BIP94][] to introduce testnet4, a new version of
+  [testnet][topic testnet] that includes consensus rule improvements aimed at
+  preventing easy-to-perform network attacks. All previous mainnet soft forks are
+  enabled from the genesis block in testnet4, and the port used is `48333` by
+  default. See Newsletters [#306][news306 testnet4] and [#311][news311 testnet4]
+  for more details on how testnet4 fixes the issues that led to problematic behavior with
+  testnet3.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -358,3 +399,13 @@ FIXME:Gustavojfe
 [elftrace]: https://github.com/halseth/elftrace
 [news306 testnet]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
 [news312 chilldkg]: /en/newsletters/2024/07/19/#distributed-key-generation-protocol-for-frost
+[bip125 github]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
+[news208 fullrbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
+[news263 fullrbf]: /en/newsletters/2023/08/09/#full-rbf-by-default
+[wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
+[news314 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
+[bolt12 spec]: https://github.com/lightning/bolts/pull/798
+[news257 eclair]: /en/newsletters/2023/06/28/#eclair-2701
+[news306 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
+[news311 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news277 p2a]: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
