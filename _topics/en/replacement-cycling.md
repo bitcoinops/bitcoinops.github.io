@@ -63,13 +63,14 @@ Mallory and Bob may share funds, as in an LN channel.  Each of them has a
 _unilateral exit transaction_ (such as an LN _commitment transaction_)
 that they can publish onchain at any time to terminate the fund sharing
 arrangement.  To allow either of them to fee bump the transaction, it
-contains at least one output each of them is able to spend for a [CPFP
-fee bump][topic cpfp].
+contains at least one output each of them can spend in a child
+transaction for a [CPFP fee bump][topic cpfp].
 
 If Bob wants to terminate the fund sharing, he can broadcast his
-unilateral exit transaction along with a CPFP fee bump.  Mallory has the
+unilateral exit transaction along with a child transaction for the CPFP
+fee bump.  Mallory has the
 ability to broadcast her own unilateral exit transaction with a
-higher-value fee bump.  Because the two exit transactions spend the same
+higher-fee child transaction.  Because the two exit transactions spend the same
 inputs, they _conflict_, and Bob's lower-fee exit transaction will be
 [replaced][topic rbf] in mempools with Mallory's higher-fee alternative.
 That's fine for Bob: in the protocol, he doesn't care which exit
@@ -77,7 +78,7 @@ transaction gets confirmed---either transaction will end the fund
 sharing arrangement.
 
 However, after Mallory's alternative exit transaction has entered
-mempools, she can replace her CPFP fee bump with another conflicting
+mempools, she can replace her child transaction with another conflicting
 transaction---this one with no relationship to either exit transaction.
 This replacement removes Mallory's alternative transaction, leaving the
 mempool devoid of any transaction that terminates the fund sharing
@@ -86,7 +87,7 @@ arrangement.
 {:.center}
 ![Illustration of a replacement cycle attack](/img/posts/2024-08-replacement-cycling.png)
 
-Bob can broadcast his exact same exit transaction and CPFP fee bump from
+Bob can broadcast his exact same exit transaction and child transaction from
 before, but Mallory can repeat the sequence of steps to remove his
 transaction from mempools---although she'll need to use a different UTXO
 or pay a higher feerate to reuse the same input each time.  The cycle of
@@ -97,7 +98,7 @@ Replacement cycling is especially concerning in protocols that use time
 sensitive transactions.  For example, forwarded [HTLCs][topic htlc] in
 LN must be resolved within a certain number of blocks.  If Mallory is
 able to use replacement cycling to prevent Bob from resolving HTLCs
-forward to Mallory within a certain amount of time, Mallory can steal
+forwarded to Mallory within a certain amount of time, Mallory can steal
 from Bob.
 
 Several mitigations for replacement have been [deployed][news274

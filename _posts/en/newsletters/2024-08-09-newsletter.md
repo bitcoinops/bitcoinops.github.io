@@ -7,13 +7,22 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter FIXME:harding
+This week's newsletter announces the Dark Skippy fast seed exfiltration
+attack, summarizes discussion about block withholding attacks and
+proposed solutions, shares statistics about compact block
+reconstruction, describes a replacement cycling attack against
+transactions with pay-to-anchor outputs, mentions a new BIP specifying
+threshold signing with FROST, and relays an announcement of an
+improvement to Eftrace that allows it to opportunistically verify
+zero-knowledge proofs using two proposed soft forks.
 
 ## News
 
-- **Faster key exfiltration attack:** Lloyd Fournier, Nick Farrow, and
+- **Faster seed exfiltration attack:** Lloyd Fournier, Nick Farrow, and
   Robin Linus announced [Dark Skippy][], an improved method for key
-  exfiltration from a Bitcoin signing device.  _Key exfiltration_ occurs
+  exfiltration from a Bitcoin signing device which they previously
+  [responsibly disclosed][topic responsible disclosures] to
+  approximately 15 different hardware signing device vendors.  _Key exfiltration_ occurs
   when transaction signing code deliberately creates its signatures in
   such a way that they leak information about the underlying key
   material, such as a private key or a [BIP32 HD wallet seed][topic
@@ -34,12 +43,12 @@ This week's newsletter FIXME:harding
   the attacker over the internet.  Exfiltration is mainly considered to
   be a risk for hardware signing devices that don't have direct access
   to the internet.  A device that has had its logic corrupted, either
-  through its firmware or through hardware logic, can now exfiltrate a
+  through its firmware or through hardware logic, can now quickly exfiltrate a
   seed even if the device is never connected to a computer (e.g. all
   data is transferred using NFC, SD cards, or QR codes).
 
-  Methods of performing [exfiltration resistant signing][topic
-  exfiltration resistant signing] for Bitcoin have been discussed
+  Methods of performing [exfiltration-resistant signing][topic
+  exfiltration-resistant signing] for Bitcoin have been discussed
   (including in Optech newsletters as far back as [Newsletter
   #87][news87 anti-exfil]) and are currently implemented in two hardware
   signing devices that we are aware of (see [Newsletter #136][news136
@@ -48,18 +57,16 @@ This week's newsletter FIXME:harding
   single-sig signing, although that may be less of a downside if users
   become accustomed to other types of signing, such as [scriptless
   multisignatures][topic multisignature], that also require additional
-  round trips of communication.  Alternative methods of exfiltration
-  resistant signing that offer different tradeoffs are also known,
+  round trips of communication.  Alternative methods of exfiltration-resistant
+  signing that offer different tradeoffs are also known,
   although none has been implemented in Bitcoin hardware signing devices
   to our knowledge.
 
   Optech recommends that anyone using hardware signing devices to protect
-  substantial amounts of money take steps to prepare against corrupted
-  hardware or firmware, either through the use of exfiltration resistant
-  signing or though the use of multiple independent devices (e.g. with
+  substantial amounts of money guard against corrupted
+  hardware or firmware, either through the use of exfiltration-resistant
+  signing or through the use of multiple independent devices (e.g. with
   scripted or scriptless multisignature or threshold signing).
-
-<!-- FIXME:harding add Meni's reference for block withholding attack to topic page -->
 
 - **Block withholding attacks and potential solutions:**
   Anthony Towns [posted][towns withholding] to the Bitcoin-Dev mailing
@@ -82,7 +89,7 @@ This week's newsletter FIXME:harding
   prevents the pool from earning any income from that miner.
 
   Stratum v2 includes an optional mode that pools can enable to allow
-  miners to include a different set of transaction in their candidate
+  miners to include a different set of transactions in their candidate
   blocks than what the pool suggests mining.  The pool miner can even
   attempt mining transactions that the pool doesn't have.  This can make
   it expensive for the pool to validate miner shares: each share can
@@ -99,13 +106,15 @@ This week's newsletter FIXME:harding
   collect payment from a classic block withholding attack.
 
   This incentivizes pools to either forbid client transaction selection
-  or to require pool miners use a public identity so that bad actors can
+  or require that pool miners use a persistant public identity (e.g. a
+  name validated through government-issued documentation) so that bad
+  actors can
   be banned.
 
   One solution Towns proposes is for pools to provide multiple block
   templates, allowing each miner to choose their preferred template.
   This is similar to the existing system used by [Ocean Pool][].  Shares
-  submitted based on a pool-created templates can be validated quickly
+  submitted based on pool-created templates can be validated quickly
   and with a minimum amount of bandwidth.  This prevents the invalid
   shares attack that pays 100% but does not help with the approximately
   99.9% profitable block withholding attack.
@@ -129,7 +138,7 @@ This week's newsletter FIXME:harding
     clients to upgrade, but it would reduce their security
     significantly.
 
-  - *Requires pool miners use a private template from the pool:* not
+  - *Requires pool miners to use a private template from the pool:* not
     only would a template be required to prevent the 100% invalid shares
     attack but the pool would need to keep that template secret from
     pool miners until after all shares generated using that template
@@ -153,14 +162,14 @@ This week's newsletter FIXME:harding
   it costs almost nothing to attack pools that allow anonymous miners,
   whereas pools that require miners to identify themselves can ban known
   attackers.  Fixing block withholding could help Bitcoin mining to
-  become more decentralized.
+  become more anonymous and decentralized.
 
 - **Statistics on compact block reconstruction:** developer 0xB10C
   [posted][0xb10c compact] to Delving Bitcoin about the recent
   reliability of [compact block][topic compact block relay]
   reconstruction.  Many relaying full nodes have been using [BIP152][]
   compact block relay since the feature was added to Bitcoin Core 0.13.0
-  in 2016.  This allows two peers which have already shared some
+  in 2016.  This allows two peers that have already shared some
   unconfirmed transactions to use a short reference to those
   transactions when they are confirmed in a new block rather than
   re-transmitting the entire transaction.  This significantly reduces
@@ -168,7 +177,7 @@ This week's newsletter FIXME:harding
   to propagate more quickly.
 
   Faster propagation of new blocks decreases the number of accidental
-  blockchain forks.  Fewer forks reduces the amount of proof-of-work that
+  blockchain forks.  Fewer forks reduces the amount of proof-of-work (PoW) that
   is wasted and reduces the number of _block races_ that benefit larger
   mining pools over smaller pools, helping to make Bitcoin more secure
   and more decentralized.
@@ -200,18 +209,16 @@ This week's newsletter FIXME:harding
   consideration of a [pull request][bitcoin core #30493] to enable
   `mempoolfullrbf` by default in an upcoming version of Bitcoin Core.
 
-<!-- FIXME:harding update ephemeral anchors topic to include P2A -->
-
 - **Replacement cycle attack against pay-to-anchor:** Peter Todd
   [posted][todd cycle] to the Bitcoin-Dev mailing list about the
   pay-to-anchor (P2A) output type that is part of the [ephemeral
-  anchors][topic ephemeral anchors] proposal.  P2A is an transaction
+  anchors][topic ephemeral anchors] proposal.  P2A is a transaction
   output that anyone can spend.  This can be useful for [CPFP][topic
   cpfp] fee bumping---especially in multiparty protocols such as LN.
   However, CPFP fee bumping in LN is currently vulnerable to a
   counterparty performing a [replacement cycling attack][topic
-  replacement cycling] where the malicious counterparty perfroms a
-  two-step process.  They first replace an honest user's version of a
+  replacement cycling] where the malicious counterparty performs a
+  two-step process.  They first [replace][topic rbf] an honest user's version of a
   transaction with the counterparty's version of the same transaction.
   They then replace the replacement with a transaction unrelated to
   either user's version of the transaction.  When an LN channel has
@@ -226,8 +233,8 @@ This week's newsletter FIXME:harding
   benefit from the attack, so there's no direct incentive for third
   parties to attack P2A outputs.  The attack can be free in the case
   where the attacker is planning to broadcast their own transaction at a
-  feerate higher than the honest user's P2A spend and the attacker is
-  able to successfully complete the replacement cycle without their
+  feerate higher than the honest user's P2A spend and the attacker
+  successfully completes the replacement cycle without their
   intermediate state getting confirmed by miners.  All existing deployed
   LN mitigations against replacement cycling attacks (see [Newsletter
   #274][news274 cycle mitigate]) will be equally effective at defeating
@@ -238,10 +245,11 @@ This week's newsletter FIXME:harding
   mailing list to announce the availability of a [proposed BIP][frost
   sign bip] for creating [scriptless threshold signatures][topic
   threshold signature] for Bitcoin's implementation of [schnorr
-  signatures][topic schnorr signatures].  This allows a set of wallets
-  that have already performed a set up procedure to securely create
+  signatures][topic schnorr signatures].  This allows a set of signers
+  that have already performed a setup procedure (e.g. using
+  [ChillDKG][news312 chilldkg]) to securely create
   signatures that only require interaction from a dynamic subset of
-  those wallets.  The signatures are indistinguishable onchain from
+  those signers.  The signatures are indistinguishable onchain from
   schnorr signatures created by single-sig users and scriptless
   multisignature users, improving privacy and fungibility.
 
@@ -273,10 +281,19 @@ FIXME:stickies-v
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
-- [Libsecp256k1 0.5.1][] FIXME:harding
+- [Libsecp256k1 0.5.1][] is a minor release for this library of
+  Bitcoin-related cryptographic functions.  It changes the default size
+  of the precomputed table for signing to match Bitcoin Core's default
+  and adds example code for ElligatorSwift-based key exchange (which is
+  the protocol used in [version 2 encrypted P2P transport][topic v2 p2p
+  transport]).
 
-- [BDK 1.0.0-beta.1][] is a release candidate for "the first beta version of
-  `bdk_wallet` with a stable 1.0.0 API".  FIXME:harding update
+- [BDK 1.0.0-beta.1][] is a release candidate for this library for
+  building wallets and other Bitcoin-enabled applications.  The original
+  `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
+  modules have been extracted into their own crates, including
+  `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
 
 ## Notable code and documentation changes
 
@@ -389,3 +406,4 @@ repo], and [BINANAs][binana repo]._
 [blips endorsement]: https://github.com/lightning/blips/pull/27
 [news306 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 [news311 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news312 chilldkg]: /en/newsletters/2024/07/19/#distributed-key-generation-protocol-for-frost
