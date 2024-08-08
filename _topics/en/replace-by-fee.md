@@ -195,6 +195,9 @@ optech_mentions:
   - title: "Nodes with full-RBF successfully reconstructing more compact blocks than nodes with only opt-in RBF"
     url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
 
+  - title: "Bitcoin Core #30493 enables full RBF by default"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-30493
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

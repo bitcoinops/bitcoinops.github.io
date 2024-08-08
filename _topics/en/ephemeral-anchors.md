@@ -63,6 +63,9 @@ optech_mentions:
   - title: Description of a replacement cycling attack against transactions using P2A
     url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
 
+  - title: "Bitcoin Core #30352 introduces a new standard output type, Pay-To-Anchor (P2A)"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-30352
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
