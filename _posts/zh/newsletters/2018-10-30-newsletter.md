@@ -96,3 +96,4 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [newsletter #9]: /zh/newsletters/2018/08/21/#output-script-descriptors-enhancements
 [newsletter #12]: /zh/newsletters/2018/09/11/#bitcoin-core-14096
 [newsletter #17]: /zh/newsletters/2018/10/16/#script-descriptors-and-descript
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

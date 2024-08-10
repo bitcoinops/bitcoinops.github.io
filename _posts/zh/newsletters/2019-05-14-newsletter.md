@@ -300,3 +300,4 @@ wiki page for changes -->{% endcomment %}
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /zh/bech32-sending-support/
 [newsletter #3]: /zh/newsletters/2018/07/10/#特别新闻schnorr-签名提议-bip
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395

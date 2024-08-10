@@ -74,8 +74,8 @@ Network, including presentations from experts in the space. Videos of the
 with the slide decks for the expert presentations. The following
 talks may be of particular interest to members:
 
-- [**The Lightning Protocol - an Application Developers Perspective**][bosworth
-  video] - [Alex Bosworth][bosworth], infrastructure lead at Lightning Labs,
+- [**The Lightning Protocol - an Application Developers Perspective**][bosworth video] -
+  [Alex Bosworth][bosworth], infrastructure lead at Lightning Labs,
   gives a comprehensive overview of the Lightning protocol, explaining all of the
   [BOLTs][], and how they are relevant for developers building on top of the
   protocol. This talk should be useful for any developers wanting to integrate
@@ -162,3 +162,4 @@ repo].*
 [mallers]: https://twitter.com/JackMallers
 [newsletter #19]: /en/newsletters/2018/10/30/#lightning-residency-and-hackday
 [newsletter #3]: /en/newsletters/2018/07/10/#merchant-adoption
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

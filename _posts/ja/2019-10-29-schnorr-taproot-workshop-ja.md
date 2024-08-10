@@ -30,7 +30,7 @@ auto_id: false
 4. [ケーススタディ](#case-studies)-新しいschnorrおよびtaprootテクノロジーの実用的なアプリケーションの説明。
 
 すべてのプレゼンテーションのスライドは[こちら][slides].からダウンロードできます。
-またブライアン・ビショップが提供してくれたニューヨークのセッションの[transcript] []も存在します。
+またブライアン・ビショップが提供してくれたニューヨークのセッションの[transcript][]も存在します。
 
 ## Introduction
 
@@ -45,7 +45,7 @@ John Newberyは、schnorrとtaprootがなぜ有用な技術であるかを要約
 
 #### 0.1 Test Notebook
 
-ワークショップを開始する前に、ユーザーはリポジトリ[README] [readme]の指示に従い、[workshop repository] []のクローンを作成し、テストノートブックを実行して、環境が正しく設定されていることを確認してください。
+ワークショップを開始する前に、ユーザーはリポジトリ[README][readme]の指示に従い、[workshop repository][]のクローンを作成し、テストノートブックを実行して、環境が正しく設定されていることを確認してください。
 
 [→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/0.1-test-notebook.ipynb)
 
@@ -82,7 +82,7 @@ Elichaiは、シュノア署名の背後にある数学を説明し、Bip-Schnor
 [![MuSig](/img/posts/taproot-workshop/musig.png)](https://www.youtube.com/watch?v=5MbTptrXEC4&list=PLPrDsP88ifOVTEJf_jQGunDUS05M9GdIC&index=4)
 {:.center}
 
-Elichaiは[MuSigアルゴリズム] [musig]（Gregory Maxwell、Andrew Poelstra、Yannick Seurin、Pieter Wuille執筆）について説明し、複数の公開鍵/部分署名を単一の公開鍵/署名に集約する方法を示します。
+Elichaiは[MuSigアルゴリズム][musig]（Gregory Maxwell、Andrew Poelstra、Yannick Seurin、Pieter Wuille執筆）について説明し、複数の公開鍵/部分署名を単一の公開鍵/署名に集約する方法を示します。
 
 [→ このノートブックをGoogle Colabで実行する](https://colab.research.google.com/github/bitcoinops/taproot-workshop/blob/Colab/1.2-musig.ipynb)
 
@@ -163,3 +163,4 @@ Taprootは、複数の支出パスをコミットすることを許可し、行�
 [transcript]: https://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
 [readme]: https://github.com/bitcoinops/taproot-workshop/blob/master/README.md
 [workshop repository]: https://github.com/bitcoinops/taproot-workshop/
+[musig]: https://eprint.iacr.org/2018/068

@@ -246,3 +246,4 @@ answers made since our last update.*
 [newsletter #43]: /en/newsletters/2019/04/23/#basic-bip158-support-merged-in-bitcoin-core
 [newsletter #56]: /en/newsletters/2019/07/24/#bitcoin-core-16152
 [newsletter #37]: /en/newsletters/2019/03/12/#version-2-addr-message-proposed
+[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

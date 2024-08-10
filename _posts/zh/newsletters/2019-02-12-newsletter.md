@@ -49,3 +49,4 @@ lang: zh
 [reserve audit tool]: https://blockstream.com/2019/02/04/standardizing-bitcoin-proof-of-reserves/
 [eclair tor]: https://github.com/ACINQ/eclair/blob/master/TOR.md
 [rbf report]: /en/rbf-in-the-wild/
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

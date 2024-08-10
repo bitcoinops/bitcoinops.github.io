@@ -137,6 +137,9 @@ optech_mentions:
     url: /en/newsletters/2024/08/02/#remote-crash-on-local-network-when-upnp-enabled
     date: 2020-10-13
 
+  - title: "Lloyd Fournier, Nick Farrow, and Robin Linus disclosed Dark Skippy fast seed exfiltration attack"
+    url: /en/newsletters/2024/08/09/#faster-seed-exfiltration-attack
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

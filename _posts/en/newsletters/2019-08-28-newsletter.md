@@ -193,3 +193,4 @@ author.
 [miniscript vid]: https://www.youtube.com/watch?v=XM1lzN4Zfks
 [miniscript xs]: http://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/miniscript/
 [miniscript summary]: /en/newsletters/2019/02/05#miniscript
+[miniscript]: /en/topics/miniscript/

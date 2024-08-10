@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Bitcoin Core #30126 introduces a cluster linearization function for eventual use by cluster mempool"
     url: /en/newsletters/2024/08/02/#bitcoin-core-30126
 
+  - title: "Bitcoin Core #30285 adds two key cluster linearization algorithms"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-30285
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay

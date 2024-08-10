@@ -76,6 +76,7 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
 [inv]: https://bitcoin.org/en/developer-reference#inv
 [workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 {% include references.md %}
 {% include linkers/issues.md issues="13697,13557,12196,9662,12196,13604,13298,13652" %}

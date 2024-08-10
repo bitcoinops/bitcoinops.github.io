@@ -64,3 +64,4 @@ CoreDev.tech 是一个仅限邀请的活动，面向比特币基础设施项目�
 [kanzure reorg transcript]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/reorgs/
 [kanzure reorg vid]: https://youtu.be/EUUQbveGF5E?t=4
 [UHO]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

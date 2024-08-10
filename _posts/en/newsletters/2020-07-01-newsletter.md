@@ -348,7 +348,7 @@ release candidates.*
 [nadahalli post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018015.html
 [osuntokun rcs]: https://groups.google.com/a/lightning.engineering/forum/#!topic/lnd/jgd1ZC9T5n4
 [mb ts]: https://diyhpl.us/wiki/transcripts/la-bitdevs/2020-05-21-alekos-filini-magical-bitcoin/
-[mb vid]: https://www.youtube.com/watch?v=QVhC2DOIl7I)
+[mb vid]: https://www.youtube.com/watch?v=QVhC2DOIl7I
 [watchtowers ts]: https://diyhpl.us/wiki/transcripts/lightning-hack-day/2020-05-24-sergi-delgado-watchtowers/
 [watchtowers vid]: https://www.youtube.com/watch?v=Vkq9CVxMclE
 [watchtowers slides]: https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
@@ -369,3 +369,4 @@ release candidates.*
 [potzblitz]: https://www.youtube.com/playlist?list=PLwgam6YBS0-jk1TlXD7QXDjTYJh-eJn_X
 [news68 ruffing]: /en/newsletters/2019/10/16/#the-quest-for-practical-threshold-schnorr-signatures
 [cpp compiler support]: https://en.cppreference.com/w/cpp/compiler_support#C.2B.2B17_features
+[hwi]: https://github.com/bitcoin-core/HWI

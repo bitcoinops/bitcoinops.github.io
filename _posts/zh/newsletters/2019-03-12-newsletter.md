@@ -87,3 +87,7 @@ lang: zh
 [newsletter #36 ml]: /zh/newsletters/2019/03/05/#bitcoin-dev-mailing-list-outage
 [newsletter #36 cleanup]: /zh/newsletters/2019/03/05/#cleanup-soft-fork-proposal
 [newsletter #13]: /zh/newsletters/2018/09/18/#bitcoin-core-14054
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395
+[miniscript]: /en/topics/miniscript/
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[musig]: https://eprint.iacr.org/2018/068

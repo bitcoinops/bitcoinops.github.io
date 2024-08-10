@@ -187,3 +187,4 @@ release candidates.*
 [news30 probing]: /en/newsletters/2019/01/22/#eclair-762
 [zap 0.7.0]: https://github.com/LN-Zap/zap-desktop/releases/tag/v0.7.0-beta
 [btcpay 1.0.5.0]: https://blog.btcpayserver.org/btcpay-server-1-0-5-0/
+[hwi]: https://github.com/bitcoin-core/HWI

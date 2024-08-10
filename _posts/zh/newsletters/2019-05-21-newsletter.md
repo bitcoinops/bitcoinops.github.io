@@ -75,3 +75,4 @@ wiki page for changes -->{% endcomment %}
 [bech32 series]: /zh/bech32-sending-support/
 [newsletter #34]: /zh/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
 [newsletter #39]: /zh/newsletters/2019/03/26/#version-2-p2p-transport-proposal
+[eltoo]: https://blockstream.com/eltoo.pdf

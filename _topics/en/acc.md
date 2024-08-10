@@ -49,6 +49,9 @@ optech_mentions:
   - title: "BitVMX: an alternative to BitVM for verification of program execution"
     url: /en/newsletters/2024/05/17/#alternative-to-bitvm
 
+  - title: "Optimistic verification of zero-knowledge proofs using CAT, MATT, and Elftrace"
+    url: /en/newsletters/2024/08/09/#optimistic-verification-of-zero-knowledge-proofs-using-cat-matt-and-elftrace
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

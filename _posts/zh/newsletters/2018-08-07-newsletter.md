@@ -63,3 +63,4 @@ lang: zh
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
