@@ -174,7 +174,7 @@ repo], et [BINANAs][binana repo]._
   la valeur en onion encodée. Par exemple, Alice fournit une facture lightning à Bob mais elle n'a pas de
   canaux de paiement, donc quand Bob paie, Carol (le LSP d'Alice) crée un canal à la volée. Pour
   permettre à Carol de prendre des frais d'Alice pour couvrir le coût de la commission initiale
-  onchain qui crée un [canal JIT][topic jit channels], ce protocole est utilisé, et Alice 
+  onchain qui crée un [canal JIT][topic jit channels], ce protocole est utilisé, et Alice
   recoit un HTLC qui sous-paie la valeur en onion encodée. Pour une discussion précédente sur une
   mise en œuvre de cela dans LDK, voir le [Bulletin #257][news257 jit htlc].
 
