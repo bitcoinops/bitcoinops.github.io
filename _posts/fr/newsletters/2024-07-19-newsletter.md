@@ -74,7 +74,7 @@ portefeuilles et services Bitcoin.*
 
 - **ZEUS ajoute les offres BOLT12 et le support BIP353 :**
   La version [v0.8.5][zeus v0.8.5] tire parti du service [TwelveCash][twelve cash website] pour
-  supporter les [offres][topic offers] et [BIP353][] (voir [Newsletter #307][news307 bip353]).
+  prendre en charge les [offres][topic offers] et [BIP353][] (voir [Newsletter #307][news307 bip353]).
 
 - **Phoenix ajoute les offres BOLT12 et le support BIP353 :**
   La version [Phoenix 2.3.1][phoenix 2.3.1] a ajouté le support des offres et [Phoenix 2.3.3][phoenix
@@ -137,11 +137,11 @@ repo], et [BINANAs][binana repo]._
   une discussion sur un changement similaire dans LDK). Les messages onion sont maintenant
   toujours activés, et les messages entrants sont limités à 4 par seconde.
 
-- [Eclair #2878][] rend les fonctionnalités de [routa veuglé][topic rv routing] et de quiescence
+- [Eclair #2878][] rend les fonctionnalités de [masquage de route][topic rv routing] et de mise en veille
   des canaux optionnelles, puisqu'elles sont maintenant entièrement implémentées et font
   partie de la spécification BOLT (voir les Bulletins [#245][news245 blind] et
   [#309][news309 stfu]). Un nœud Eclair annonce le support de ces
-  fonctionnalités à ses pairs, mais a `route_blinding` désactivé par défaut car il
+  fonctionnalités à ses pairs, mais la fonction `route_blinding` est désactivée par défaut car il
   ne transférera pas les [paiements aveuglés][topic rv routing] qui n'utilisent pas
   le [trampoline routing][topic trampoline payments].
 
