@@ -182,6 +182,9 @@ repo], et [BINANAs][binana repo]._
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26596,7455,2878,2646,1489,1599,1173,25" %}
+[ruffing nick post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/8768422323203aa3a8b280940abd776526fab12e.camel@timruffing.de/T/#u
+[chilldkg bip]: https://github.com/BlockstreamResearch/bip-frost-dkg
+[chilldkg ref]: https://github.com/BlockstreamResearch/bip-frost-dkg/tree/master/python/chilldkg_ref
 [nick follow-up]: https://mailing-list.bitcoindevs.xyz/bitcoindev/7084f935-0201-4909-99ff-c76f83572a7c@gmail.com/
 [wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
 [frost]: https://eprint.iacr.org/2020/852.pdf
