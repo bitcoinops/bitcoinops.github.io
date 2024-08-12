@@ -5,9 +5,9 @@
 
   在他演讲的一个特别有趣的部分，Kotliar 显示了当前链上支付中或许有高达 70% 是用户将资金从一个交易所转移到另一个交易所（甚至在同一交易所的不同用户之间）。如果所有这些活动都可以通过 LN 支付从链上转移，交易所及其用户可以节省大量资金，并且比特币中的每个人都将受益于可用区块空间的增加。
 
-  Kotliar 用几个简短的片段结束了他的演讲。他描述了 Bitrefill 看到 LN 用户今天使用的软件和服务，以及他预计他们在不久的将来会使用的。他接着解释了 Bitrefill 为 LN 用户（包括企业）提供的两个服务，[Thor][] 和 [Thor Turbo][]。最后，他简要描述了对 LN 的几项计划改进：可重复使用地址（参见 [Newsletter #30][newsletter #30 spon]）、拼接进出（参见 [#22][Newsletter #22 splice]）和更大的通道（也参见 [#22][Newsletter #22 wumbo]）。
+Kotliar 用几个简短的片段结束了他的演讲。他描述了 Bitrefill 看到 LN 用户今天使用的软件和服务，以及他预计他们在不久的将来会使用的。他接着解释了 Bitrefill 为 LN 用户（包括企业）提供的两个服务，[Thor][] 和 [Thor Turbo][]。最后，他简要描述了对 LN 的几项计划改进：可重复使用地址（参见 [Newsletter #30][newsletter #30 spon]）、拼接进出（参见 [#22][Newsletter #22 splice]）和更大的通道（也参见 [#22][Newsletter #22 wumbo]）。
 
-  总的来说，Kotliar 提出了一个令人信服的观点，即 LN 的更快速度、更低费用和改进的发票意味着希望在不久的将来保持竞争力以服务比特币客户的企业，应该立即开始研究实现 LN 支持。{% endcapture %}
+总的来说，Kotliar 提出了一个令人信服的观点，即 LN 的更快速度、更低费用和改进的发票意味着希望在不久的将来保持竞争力以服务比特币客户的企业，应该立即开始研究实现 LN 支持。{% endcapture %}
 
 [thor]: https://www.bitrefill.com/thor-lightning-network-channels/?hl=en
 [thor turbo]: https://www.bitrefill.com/thor-turbo-channels/?hl=en
