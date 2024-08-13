@@ -100,6 +100,9 @@ optech_mentions:
   - title: "BIPs #1601 adds BIP94 specifying testnet4"
     url: /en/newsletters/2024/08/09/#bips-1601
 
+  - title: "New time warp attack discovered during analysis of testnet4's attempted time warp fix"
+    url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet
