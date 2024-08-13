@@ -92,6 +92,9 @@ optech_mentions:
   - title: "BOLTs #1173 makes the channel_update field optional in failure onion messages"
     url: /en/newsletters/2024/07/19/#bolts-1173
 
+  - title: "Discussion of onion denial-of-service risk with proposed mitigations"
+    url: /en/newsletters/2024/08/16/#onion-message-dos-risk-discussion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
