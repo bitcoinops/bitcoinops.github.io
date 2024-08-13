@@ -66,7 +66,7 @@ zero-knowledge proofs using two proposed soft forks.
   substantial amounts of money guard against corrupted
   hardware or firmware, either through the use of exfiltration-resistant
   signing or through the use of multiple independent devices (e.g. with
-  scripted or scriptless multisignature or threshold signing).
+  scripted or scriptless multisignature or threshold signing). {% assign timestamp="1:24" %}
 
 - **Block withholding attacks and potential solutions:**
   Anthony Towns [posted][towns withholding] to the Bitcoin-Dev mailing
@@ -162,7 +162,7 @@ zero-knowledge proofs using two proposed soft forks.
   it costs almost nothing to attack pools that allow anonymous miners,
   whereas pools that require miners to identify themselves can ban known
   attackers.  Fixing block withholding could help Bitcoin mining to
-  become more anonymous and decentralized.
+  become more anonymous and decentralized. {% assign timestamp="17:21" %}
 
 - **Statistics on compact block reconstruction:** developer 0xB10C
   [posted][0xb10c compact] to Delving Bitcoin about the recent
@@ -207,7 +207,7 @@ zero-knowledge proofs using two proposed soft forks.
   the effect of enabling `mempoolfullrbf` only goes back about a week,
   but it matches Maxwell's report.  This has helped motivate
   consideration of a [pull request][bitcoin core #30493] to enable
-  `mempoolfullrbf` by default in an upcoming version of Bitcoin Core.
+  `mempoolfullrbf` by default in an upcoming version of Bitcoin Core. {% assign timestamp="21:47" %}
 
 - **Replacement cycle attack against pay-to-anchor:** Peter Todd
   [posted][todd cycle] to the Bitcoin-Dev mailing list about the
@@ -238,7 +238,7 @@ zero-knowledge proofs using two proposed soft forks.
   intermediate state getting confirmed by miners.  All existing deployed
   LN mitigations against replacement cycling attacks (see [Newsletter
   #274][news274 cycle mitigate]) will be equally effective at defeating
-  P2A replacement cycling.
+  P2A replacement cycling. {% assign timestamp="36:23" %}
 
 - **Proposed BIP for scriptless threshold signatures:** Sivaram
   Dhakshinamoorthy [posted][dhakshinamoorthy frost] to the Bitcoin-Dev
@@ -251,14 +251,14 @@ zero-knowledge proofs using two proposed soft forks.
   signatures that only require interaction from a dynamic subset of
   those signers.  The signatures are indistinguishable onchain from
   schnorr signatures created by single-sig users and scriptless
-  multisignature users, improving privacy and fungibility.
+  multisignature users, improving privacy and fungibility. {% assign timestamp="42:24" %}
 
 - **Optimistic verification of zero-knowledge proofs using CAT, MATT, and Elftrace:**
   Johan T. Halseth [posted][halseth zkelf] to Delving Bitcoin to
   announce that his tool, [Elftrace][], now has the ability to verify
   zero-knowledge (ZK) proofs.  For this to be useful onchain, both
   [OP_CAT][topic op_cat] and the [MATT][topic acc] proposed soft forks
-  would need to be activated.
+  would need to be activated. {% assign timestamp="50:40" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -267,13 +267,11 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-  [Add PayToAnchor(P2A), OP_1 <0x4e73>, as standard output script for
-  spending][review club 30352] is a PR by [instagibbs][gh instagibbs]
-  that introduces a new `TxoutType::ANCHOR` output script type. Anchor
-  outputs have a `OP_1 <0x4e73>` output script (resulting in a
-  [`bc1pfeessrawgf`][mempool bc1pfeessrawgf] address). Making these
-  outputs standard facilitates creating and relaying transactions that
-  spend from an anchor output.
+[Add PayToAnchor(P2A), OP_1 <0x4e73>, as standard output script for spending][review club 30352] is a PR by [instagibbs][gh instagibbs]
+that introduces a new `TxoutType::ANCHOR` output script type. Anchor
+outputs have a `OP_1 <0x4e73>` output script (resulting in a [`bc1pfeessrawgf`][mempool bc1pfeessrawgf] address). Making these
+outputs standard facilitates creating and relaying transactions that
+spend from an anchor output.
 
 {% include functions/details-list.md
   q0="Before `TxoutType::ANCHOR` is defined in this PR,
@@ -335,6 +333,8 @@ the meeting.*
   a6link="https://bitcoincore.reviews/30352#l-154"
 %}
 
+{% assign timestamp="33:15" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -346,14 +346,14 @@ release candidates.*
   of the precomputed table for signing to match Bitcoin Core's default
   and adds example code for ElligatorSwift-based key exchange (which is
   the protocol used in [version 2 encrypted P2P transport][topic v2 p2p
-  transport]).
+  transport]). {% assign timestamp="53:11" %}
 
 - [BDK 1.0.0-beta.1][] is a release candidate for this library for
   building wallets and other Bitcoin-enabled applications.  The original
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="53:43" %}
 
 ## Notable code and documentation changes
 
@@ -372,13 +372,13 @@ repo], and [BINANAs][binana repo]._
   [BIP125][bip125 github] signaling. It has been an option in Bitcoin Core since
   July 2022 (see Newsletter [#208][news208 fullrbf]), but was previously
   disabled by default. For the discussions about making full RBF the default,
-  see Newsletter [#263][news263 fullrbf].
+  see Newsletter [#263][news263 fullrbf]. {% assign timestamp="54:39" %}
 
 - [Bitcoin Core #30285][] adds two key [cluster linearization][wuille cluster]
   algorithms to the [cluster mempool][topic cluster mempool] project:
   `MergeLinearizations` for combining two existing linearizations, and
   `PostLinearize` for improving linearizations by additional processing. This PR
-  builds on work discussed in last week’s Newsletter [#314][news314 cluster].
+  builds on work discussed in last week’s Newsletter [#314][news314 cluster]. {% assign timestamp="57:33" %}
 
 - [Bitcoin Core #30352][] introduces a new output type, Pay-To-Anchor (P2A), and
   makes its spending standard. This output type is keyless (allowing anyone to spend it) and enables compact
@@ -387,14 +387,14 @@ repo], and [BINANAs][binana repo]._
   [TRUC][topic v3 transaction relay] transactions, this advances the
   implementation of [ephemeral anchors][topic ephemeral anchors] to replace
   LN [anchor outputs][topic anchor outputs] that are based on the [CPFP carve-out][topic
-  cpfp carve out] relay rule.
+  cpfp carve out] relay rule. {% assign timestamp="1:02:26" %}
 
 - [Bitcoin Core #29775][] adds a `testnet4` configuration option that will set
   the network to [testnet4][topic testnet] as specified in [BIP94][].  Testnet4
   includes fixes several problems with the previous testnet3 (see [Newsletter
   #306][news306 testnet]).  The existing Bitcoin Core `testnet` configuration
   option that uses testnet3 remains available but is expected to be deprecated
-  and removed in subsequent releases.
+  and removed in subsequent releases. {% assign timestamp="1:02:39" %}
 
 - [Core Lightning #7476][] catches up to the latest proposed [BOLT12
   specification][bolt12 spec] updates by adding the rejection of zero-length
@@ -402,7 +402,7 @@ repo], and [BINANAs][binana repo]._
   requests. Additionally, it allows `offer_issuer_id` to be missing in offers
   with a provided blinded path. In such cases, the key used to sign the invoice
   is used as the final blinded path key, since it's safe to assume that the
-  offer issuer has access to this key.
+  offer issuer has access to this key. {% assign timestamp="1:08:21" %}
 
 - [Eclair #2884][] implements [BLIP4][] for [HTLC
   endorsement][topic htlc endorsement], becoming the first LN implementation to
@@ -414,12 +414,11 @@ repo], and [BINANAs][binana repo]._
   If widely adopted by the network, endorsed HTLCs could receive preferential
   access to scarce network resources such as liquidity and HTLC slots. This
   implementation builds on previous Eclair work discussed in Newsletter
-  [#257][news257 eclair].
-
+  [#257][news257 eclair]. {% assign timestamp="1:08:55" %}
 
 - [LND #8952][] refactors the `channel` component in `lnwallet` to use the typed
   `List`, as part of a series of PRs implementing dynamic commitments, a
-  type of [channel commitment upgrade][topic channel commitment upgrades].
+  type of [channel commitment upgrade][topic channel commitment upgrades]. {% assign timestamp="1:12:10" %}
 
 - [LND #8735][] adds the ability to generate invoices with [blinded paths][topic
   rv routing] using the `-blind` flag in the `addinvoice` command. It also
@@ -427,7 +426,7 @@ repo], and [BINANAs][binana repo]._
   invoices, as [BOLT12][topic offers] is not yet implemented in LND. [LND
   #8764][] extends the previous PR by allowing the use of multiple blinded paths
   when paying an invoice, specifically to perform multipath payments
-  ([MPP][topic multipath payments]).
+  ([MPP][topic multipath payments]). {% assign timestamp="1:13:40" %}
 
 - [BIPs #1601][] merges [BIP94][] to introduce testnet4, a new version of
   [testnet][topic testnet] that includes consensus rule improvements aimed at
@@ -435,7 +434,7 @@ repo], and [BINANAs][binana repo]._
   enabled from the genesis block in testnet4, and the port used is `48333` by
   default. See Newsletters [#306][news306 testnet4] and [#311][news311 testnet4]
   for more details on how testnet4 fixes the issues that led to problematic behavior with
-  testnet3.
+  testnet3. {% assign timestamp="1:14:44" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
