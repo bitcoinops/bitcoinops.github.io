@@ -48,8 +48,8 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: Exfiltration resistant signing
-    link: topic exfiltration resistant signing
+  - title: Exfiltration-resistant signing
+    link: topic exfiltration-resistant signing
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

@@ -177,3 +177,5 @@ endcomment %}
 [newsletter #32]: /zh/newsletters/2019/02/05/#miniscript
 [newsletter #18]: /zh/newsletters/2018/10/23/#two-papers-published-on-fast-multiparty-ecdsa
 [newsletter #47]: /zh/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
+[musig]: https://eprint.iacr.org/2018/068
+[miniscript]: /en/topics/miniscript/

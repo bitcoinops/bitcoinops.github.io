@@ -166,3 +166,4 @@ repo].*
 [ln1.1 accepted proposals]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [ln spec meetings]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001673.html
 [0.17.1 milestone]: https://github.com/bitcoin/bitcoin/milestone/39?closed=1
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

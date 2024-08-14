@@ -215,3 +215,4 @@ release candidates.*
 [19031 handshake]: https://bitcoincore.reviews/19031#l-121
 [19031 v2 deprecate]: https://lists.torproject.org/pipermail/tor-dev/2020-June/014365.html
 [19031 v2 schedule]: https://blog.torproject.org/v2-deprecation-timeline
+[hwi]: https://github.com/bitcoin-core/HWI

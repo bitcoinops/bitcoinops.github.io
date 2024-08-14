@@ -211,3 +211,4 @@ community feedback process for these proposals.
 [transcript]: https://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
 [readme]: https://github.com/bitcoinops/taproot-workshop/blob/master/README.md
 [workshop repository]: https://github.com/bitcoinops/taproot-workshop/
+[musig]: https://eprint.iacr.org/2018/068

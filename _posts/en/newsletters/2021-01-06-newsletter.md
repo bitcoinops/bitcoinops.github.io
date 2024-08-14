@@ -81,15 +81,6 @@ release candidates.*
   support for creating and signing [PSBTs][topic psbt] and includes
   several bug fixes.
 
-{% comment %}<!--
-- Bitcoin Core 0.20.2rc1 and 0.19.2rc1 are expected to be
-  [available][bitcoincore.org/bin] sometime after the publication of
-  this newsletter.  They contain several bug fixes, such as an
-  improvement described in [Newsletter #110][news110 bcc19620] that will
-  prevent them from redownloading future taproot transactions that they
-  don't understand.
--->{% endcomment %}
-
 ## Notable code and documentation changes
 
 *Notable changes this week in [Bitcoin Core][bitcoin core repo],

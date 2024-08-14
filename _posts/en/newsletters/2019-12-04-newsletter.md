@@ -157,3 +157,4 @@ infrastructure projects.
 [coincovenants]: https://bitcointalk.org/index.php?topic=278122.0
 [simplicity]: https://blockstream.com/simplicity.pdf
 [covenant allusion]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-11-28#25861296
+[musig]: https://eprint.iacr.org/2018/068

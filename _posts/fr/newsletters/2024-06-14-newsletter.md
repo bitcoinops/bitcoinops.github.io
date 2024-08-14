@@ -185,8 +185,7 @@ description correcte originale (l'erreur ayant été introduite par l'éditeur d
 Mark "Murch" Erhardt pour avoir signalé l'erreur.
 
 {% include references.md %}
-{% include linkers/issues.md v=2
-issues="29496,28307,30047,28979,2854,3083,1163,8491,3080,3072,1551,30132" %}
+{% include linkers/issues.md v=2 issues="29496,28307,30047,28979,2854,3083,1163,8491,3080,3072,1551,30132" %}
 [beast post]: https://delvingbitcoin.org/t/proposing-a-p2qrh-bip-towards-a-quantum-resistant-soft-fork/956
 [quantum draft]: https://github.com/cryptoquick/bips/blob/p2qrh/bip-p2qrh.mediawiki
 [core lightning 24.05]: https://github.com/ElementsProject/lightning/releases/tag/v24.05

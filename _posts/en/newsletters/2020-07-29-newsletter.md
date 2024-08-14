@@ -233,3 +233,4 @@ release candidates.*
 [wtxid relay backport]: https://github.com/bitcoin/bitcoin/pull/19606
 [stack exchange miner signaling]: https://bitcoin.stackexchange.com/questions/97041/how-does-a-miner-put-his-vote-for-certain-bip/97047#97047
 [news96 simplicity]: /en/newsletters/2020/05/06/#simplicity-next-generation-smart-contracting
+[hwi]: https://github.com/bitcoin-core/HWI

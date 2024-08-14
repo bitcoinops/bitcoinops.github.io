@@ -104,13 +104,6 @@ lang: ja
   そのサポートを[watchtower][topic watchtowers]の実装に追加し、コストを削減し安全性を向上させています。
   このリリースでは、[PSBT][topic psbt]の作成と署名のための一般的なサポートも追加され、いくつかのBug Fixが含まれています。
 
-{% comment %}<!--
-- Bitcoin Core 0.20.2rc1 および 0.19.2rc1 はこのニュースレターの公開後、
-  いつかの時点でare expected to be[利用可能][bitcoincore.org/bin]になる予定です。
-  [Newsletter #110][news110 bcc19620]で説明されている改善などいくつかのBug Fixが含まれており、
-  理解できない将来のtaprootトランザクションの再ダウンロードを防ぎます。
--->{% endcomment %}
-
 ## 注目すべきコードとドキュメントの変更
 
 *今週の[Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、
