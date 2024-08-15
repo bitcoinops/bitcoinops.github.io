@@ -29,6 +29,9 @@ optech_mentions:
   - title: "LND #8627 defaults to rejecting channel settings that require above-zero inbound forwarding fees"
     url: /en/newsletters/2024/05/01/#lnd-8627
 
+  - title: "LND #8886 updates the BuildRoute function to support inbound forwarding fees"
+    url: /en/newsletters/2024/08/16/#lnd-8886
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

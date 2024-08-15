@@ -53,6 +53,9 @@ optech_mentions:
   - title: "Eclair #2884 implements BLIP4 for HTLC endorsement"
     url: /en/newsletters/2024/08/09/#eclair-2884
 
+  - title: "BLIPs #27 adds BLIP04 for an experimental HTLC endorsement signaling protocol"
+    url: /en/newsletters/2024/08/16/#blips-27
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

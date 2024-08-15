@@ -220,38 +220,97 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-<!-- FIXME:Gustavojfe -->
+- [Bitcoin Core #29519][] resets the `pindexLastCommonBlock` value after an
+  [assumeUTXO][topic assumeutxo] snapshot is loaded, so that a node prioritizes
+  downloading blocks after the most recent block in the snapshot. This fixes a
+  bug where a node would set `pindexLastCommonBlock` from existing peers before
+  loading the snapshot and start downloading blocks from that much-older block.
+  Although older blocks still need to be downloaded for assumeUTXO's
+  background validation, newer blocks should receive priority so that
+  users can see whether their recent transactions have been confirmed.
 
-- [Bitcoin Core #29519][] p2p: For assumeutxo, download snapshot chain before background chain
+- [Bitcoin Core #30598][] removes block height from the [assumeUTXO][topic
+  assumeutxo] snapshot file metadata as it is not a unique identifier in a
+  pre-sanitized untrusted file compared to the block hash that is kept. A node
+  can still obtain block height from many other internal sources.
 
-- [Bitcoin Core #30598][] assumeutxo: Drop block height from metadata
+- [Bitcoin Core #28280][] optimizes Initial Block Download (IBD) performance for
+  pruned nodes by not emptying the UTXO cache during pruning flushes. It does
+  this by separately tracking "dirty" cache entries---entries that have changed since they
+  were last written to the database. This allows a node to avoid
+  unnecessarily scanning the entire cache during prune flushes and instead focus
+  on the dirty entries.  The optimization results in up to 32% faster IBD for
+  pruned nodes with high `dbcache` settings, and about 9% improvement with
+  default settings. See Newsletter [#304][news304 cache].
 
-- [Bitcoin Core #28280][] Don't empty dbcache on prune flushes: >30% faster IBD
+- [Bitcoin Core #28052][] adds [XOR][] encoding to `blocksdir *.dat` files on
+  creation as a preventative mechanism against unintentional and accidental data
+  corruption by anti-virus or similar software. This can be
+  optionally disabled and doesn't protect against intentional data corruption
+  attacks. This was implemented for the `chainstate` files in [Bitcoin Core
+  #6650][] in September 2015 and the mempool in [#28207][bitcoin core
+  #28207] in November 2023 (see [Newsletter #277][news277 bcc28207]).
 
-- [Bitcoin Core #28052][] blockstorage: XOR blocksdir \*.dat files
+- [Core Lightning #7528][] adjusts the [fee rate estimation][topic fee
+  estimation] for sweeps of non-time-sensitive unilateral channel closures to an
+  absolute deadline of 2016 blocks (approximately 2 weeks). Previously, the fee
+  rate was set to target confirmation within 300 blocks, which sometimes caused
+  transactions to be stuck at the [minimum relay fee limit][topic default
+  minimum transaction relay feerates], resulting in indefinite delays.
 
-- [Core Lightning #7528][] onchaind: Adjust the sweep target deadline for fee estimation
+- [Core Lightning #7533][] updates the internal coin movement notifications and
+  the transaction bookkeeper to properly account for the spending of funding
+  outputs for [splicing][topic splicing] transactions. Previously, there was no
+  logging or tracking of this.
 
-- [Core Lightning #7533][] bkpr: properly account for fees and channel closures if splice
+- [Core Lightning #7517][] introduces `askrene`, a new experimental plugin and
+  API infrastructure for minimum-cost pathfinding based on the `renepay` plugin
+  (See Newsletter [#263][news263 renepay]) for an improved implementation of
+  Pickhart Payments. The `getroutes` RPC command allows the specification of
+  persistent channel capacity data and transient information such as [blinded
+  paths][topic rv routing] or route hints, and returns a set of possible routes
+  along with their estimated probability of success. Several other RPC commands
+  are added to manage routing data in layers by adding channels, manipulating
+  channel data, excluding nodes from routing, inspecting layer data, and
+  managing ongoing payment attempts.
 
-- [Core Lightning #7517][] askrene
+- [LND #8955][] adds an optional `utxo` field on the `sendcoins` command (and
+  `Outpoints` for the corresponding `SendCoinsRequest` RPC command) to simplify
+  the [coin selection][topic coin selection] user experience to a single step.
+  Previously, a user had to go through a multi-step command process that
+  included coin selection, fee estimation, [PSBT][topic psbt] funding, PSBT
+  completion, and transaction broadcasting.
 
-- [LND #8955][] yyforyongyu/cr-8516-240729-sendcoins
+- [LND #8886][] updates the `BuildRoute` function to support [inbound forwarding
+  fees][topic inbound forwarding fees] by reversing the pathfinding process, now
+  working from receiver to sender, allowing for more accurate fee calculations
+  over multiple hops. See Newsletter [#297][news297 inboundfees] for more on
+  inbound fees.
 
-- [LND #8886][] bitromortac/buildroute-inbound-fees
+- [LND #8967][] adds a new wire message type `Stfu` (SomeThing Fundamental is
+  Underway) designed to lock the channel state before initiating [protocol
+  upgrades][topic channel commitment upgrades]. The `Stfu` message type includes
+  fields for the channel id, an initiator flag, and additional data for
+  potential future extensions. This is part of the Quiescence protocol
+  implementation (see Newsletter [#309][news309 quiescence]).
 
-- [LND #8967][] add wire messages for quiescence
+- [LDK #3215][] checks that a transaction is at least 65 bytes long to protect
+  against an [unlikely and costly attack][spv attack] against a light client SPV
+  wallet where a valid SPV proof can be created for a fake 64-byte transaction
+  by matching the hash of an inner merkle node. See [merkle tree
+  vulnerabilities][topic merkle tree vulnerabilities].
 
-- [LDK #3215][] tx-sync: Protect against Core's Merkle leaf node weakness
-
-- [BIPs #1658][] BIP94: Change timewarp delta to 7200 seconds
-
-- [BLIPs #27][] blip-0004: add experimental HTLC endorsement signaling
+- [BLIPs #27][] adds BLIP04 for an experimental [HTLC endorsement][topic htlc
+  endorsement] signaling protocol proposal to partially mitigate [channel
+  jamming attacks][topic channel jamming attacks] on the network. It outlines
+  the experimental endorsement TLV values, the deployment approach, and the
+  eventual deprecation of the experimental phase when HTLC endorsements are
+  merged into the BOLTs.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="29519,30598,28280,28052,7528,7533,7517,8955,8886,8967,3215,1658,27,30454,42" %}
+{% include linkers/issues.md v=2 issues="29519,30598,28280,28052,7528,7533,7517,8955,8886,8967,3215,1658,27,30454,42,6650,28207" %}
 [BDK 1.0.0-beta.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.1
 [erhardt se]: https://bitcoin.stackexchange.com/a/123700
 [erhardt warp]: https://delvingbitcoin.org/t/zawy-s-alternating-timestamp-attack/1062
@@ -267,3 +326,10 @@ repo], and [BINANAs][binana repo]._
 [fields cmake]: https://mailing-list.bitcoindevs.xyz/bitcoindev/6cfd5a56-84b4-4cbc-a211-dd34b8942f77n@googlegroups.com/
 [Core Lightning 24.08rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.08rc2
 [LND v0.18.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta.rc1
+[news304 cache]: /en/newsletters/2024/05/24/#bitcoin-core-28233
+[news263 renepay]: /en/newsletters/2023/08/09/#core-lightning-6376
+[news309 quiescence]: /en/newsletters/2024/06/28/#bolts-869
+[spv attack]: https://web.archive.org/web/20240329003521/https://bitslog.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
+[news297 inboundfees]: /en/newsletters/2024/04/10/#lnd-6703
+[news277 bcc28207]: /en/newsletters/2023/11/15/#bitcoin-core-28207
+[xor]: https://en.wikipedia.org/wiki/One-time_pad

@@ -44,6 +44,9 @@ optech_mentions:
   - title: "LND #8952 refactors code to make it easier to implement dynamic commitments"
     url: /en/newsletters/2024/08/09/#lnd-8952
 
+  - title: "LND #8967 adds Stfu wire message to lock channel state before initiating protocol upgrades"
+    url: /en/newsletters/2024/08/16/#lnd-8967
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Anchor outputs
