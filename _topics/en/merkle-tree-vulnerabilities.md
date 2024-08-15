@@ -53,6 +53,9 @@ optech_mentions:
   - title: "CVE-2017-12842: Bitcoin Core PR Review Club discussion about lowering min relayable tx size"
     url: /en/newsletters/2022/11/09/#bitcoin-core-pr-review-club
 
+  - title: "LDK #3215 rejects transactions less than 65 bytes to protect against merkle tree vulnerabilites"
+    url: /en/newsletters/2024/08/16/#ldk-3215
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CVEs
