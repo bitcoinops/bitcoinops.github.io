@@ -96,4 +96,4 @@ you pay to access all of segwit's benefits.*
 [vault2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html
 [pubkey32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017247.html
 [pr pubkey32]: https://github.com/sipa/bips/pull/52
-[taproot-workshop]: /workshops#taproot-workshop
+[taproot-workshop]: /en/workshops#taproot-workshop

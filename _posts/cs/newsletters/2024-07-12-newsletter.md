@@ -113,7 +113,7 @@ repo]._
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2949,1487" %}
 [bitcoin core 26.2]: https://bitcoincore.org/bin/bitcoin-core-26.2/
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [interesting transaction]: https://stacker.news/items/600187
 [news19 bip69]: /en/newsletters/2018/10/30/#bip69-discussion
 [news151 bip69]: /en/newsletters/2021/06/02/#bolts-872
