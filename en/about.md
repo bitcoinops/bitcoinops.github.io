@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /en/about/
+redirect_from: /about
 ---
 
 The Bitcoin Operations Technology Group (Optech) works to bring the best
