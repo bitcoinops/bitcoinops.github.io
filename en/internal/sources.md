@@ -3,6 +3,7 @@ layout: page
 title: Sources
 permalink: /en/internal/sources/
 breadcrumbs: false
+redirect_from: /internal/sources
 ---
 # Sources for the Optech Newsletter
 
