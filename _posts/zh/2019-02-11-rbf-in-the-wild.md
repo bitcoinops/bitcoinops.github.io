@@ -12,7 +12,7 @@ excerpt: >
   一项关于支持可选择 RBF (BIP125) 的钱包和区块浏览器在可用性问题上的研究。
 
 ---
-可选择通过费用替代（RBF）于 2015 年 12 月标准化。但谁在支持它，用户体验如何？这篇文章展示了用户在流行的比特币钱包和区块浏览器中看到的 [BIP125][] 可选择 RBF 的研究结果。研究成果最初在最近一次 [Bitcoin Optech 研讨会](/workshops/)中展示。
+可选择通过费用替代（RBF）于 2015 年 12 月标准化。但谁在支持它，用户体验如何？这篇文章展示了用户在流行的比特币钱包和区块浏览器中看到的 [BIP125][] 可选择 RBF 的研究结果。研究成果最初在最近一次 [Bitcoin Optech 研讨会](/en/workshops/)中展示。
 
 理解其他钱包、交易所和区块浏览器如何处理可选择 RBF 交易对比特币服务来说是一个重要的考虑因素。为了让交易所或钱包支持 RBF，他们希望知道 RBF 得到了广泛的支持，并且接收钱包或区块浏览器中的用户体验不会混淆。
 
@@ -241,9 +241,9 @@ BRD 在替换交易上显示“失败”标签。在测试中，“失败”交�
 
 
 {% include references.md %}
-[optech team]: /about/
+[optech team]: /en/about/
 [announcement]: /zh/announcing-bitcoin-optech/
-[workshops]: /workshops/
+[workshops]: /en/workshops/
 [newsletters]: /zh/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /zh/dashboard-announcement/

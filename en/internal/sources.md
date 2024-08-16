@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Sources
-permalink: /internal/sources/
+permalink: /en/internal/sources/
+breadcrumbs: false
 ---
 # Sources for the Optech Newsletter
 

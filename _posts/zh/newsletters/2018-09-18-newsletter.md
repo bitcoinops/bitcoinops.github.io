@@ -55,7 +55,7 @@ lang: zh
 {% include linkers/issues.md issues="14054,1843,1516,7965,14168,10973,14180,1860" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
-[workshop]: /workshops
+[workshop]: /en/workshops
 [news8 news]: /zh/newsletters/2018/08/14/#新闻
 [c-lightning 0.6.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.6.1
 [BIP322 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016393.html

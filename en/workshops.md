@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Workshops
-permalink: /workshops/
+permalink: /en/workshops/
 ---
 
 Bitcoin Optech will run a series of workshops to bring Bitcoin engineers

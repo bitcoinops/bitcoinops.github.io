@@ -952,7 +952,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [somsen sas post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
-[atelier taproot]: /workshops/#taproot-workshop
+[atelier taproot]: /en/workshops/#taproot-workshop
 [todd segwit review]: https://petertodd.org/2016/segwit-consensus-critical-code-review#peer-to-peer-networking
 [index des sujets]: /en/topics/
 [tx origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis
