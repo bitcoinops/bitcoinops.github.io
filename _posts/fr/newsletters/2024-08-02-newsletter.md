@@ -212,10 +212,10 @@ inquisition repo], et [BINANAs][binana repo]._
 [delgado hyperion]: https://delvingbitcoin.org/t/hyperion-a-discrete-time-network-event-simulator-for-bitcoin-core/1042
 [hyperion]: https://github.com/sr-gi/hyperion
 [news310 disclosure]: /fr/newsletters/2024/07/05/#divulgation-de-vulnerabilites-affectant-les-versions-de-bitcoin-core-anterieures-a-0-21-0
-[Remote crash by sending excessive `addr` messages]: https://bitcoincore.org/en/2024/07/31/disclose-addrman-int-overflow/
+[Crash à distance en envoyant des messages `addr` excessifs]: https://bitcoincore.org/en/2024/07/31/disclose-addrman-int-overflow/
 [news159 bcc22387]: /en/newsletters/2021/07/28/#bitcoin-core-22387
 [news310 miniupnpc]: /fr/newsletters/2024/07/05/#execution-de-code-a-distance-due-a-un-bug-dans-miniupnpc
-[Remote crash on local network when UPnP enabled]: https://bitcoincore.org/en/2024/07/31/disclose-upnp-oom/
+[Crash à distance sur le réseau local lorsque UPnP est activé]: https://bitcoincore.org/en/2024/07/31/disclose-upnp-oom/
 [upnp]: https://en.wikipedia.org/wiki/Universal_Plug_and_Play
 [nat traversal]: https://en.wikipedia.org/wiki/NAT_traversal
 [wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
