@@ -197,7 +197,7 @@ Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Interface de Portefeuille Matériel (HWI)][hwi
 repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk repo],
 [Propositions d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisitionrepo] et [BINANAs][binana
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo] et [BINANAs][binana
 repo]._
 
 - [Bitcoin Core #30320][] met à jour le comportement [assumeUTXO][topic assumeutxo] pour éviter de
