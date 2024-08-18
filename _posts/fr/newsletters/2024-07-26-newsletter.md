@@ -236,8 +236,8 @@ repo]._
 [news288 rbfr]: /fr/newsletters/2024/02/07/#proposition-de-remplacement-par-feerate-pour-echapper-au-pinning
 [news283 truc pin]: /fr/newsletters/2024/01/03/#couts-d-epinglage-des-transactions-v3
 [news288 rbfr]: /fr/newsletters/2024/02/07/#proposition-de-remplacement-par-feerate-pour-echapper-au-pinning
-[news290 rbf]: /en/newsletters/2024/02/21/#le-simple-remplacement-par-taux-de-frais-ne-garantit-pas-la-compatibilite-des-incitations
-[news285 cluster cpfp-co]: /en/newsletters/2024/01/17/#la-suppression-du-decoupage-cpfp-est-necessaire
+[news290 rbf]: /fr/newsletters/2024/02/21/#le-simple-remplacement-par-taux-de-frais-ne-garantit-pas-la-compatibilite-des-incitations
+[news285 cluster cpfp-co]: /fr/newsletters/2024/01/17/#la-suppression-du-decoupage-cpfp-est-necessaire
 [news286 imbued]: /fr/newsletters/2024/01/24/#logique-imbriquee-v3
 [news287 sibling]: /fr/newsletters/2024/01/31/#remplacement-par-frais-de-parente
 [news289 imbued]: /fr/newsletters/2024/02/14/#que-se-serait-il-passe-si-les-regles-v3-avaient-ete-appliquees-aux-sorties-d-ancrage-il-y-a-un-an
