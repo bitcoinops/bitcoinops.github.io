@@ -96,40 +96,40 @@ wiki page for changes -->{% endcomment %}
 [xs review]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-code-review/
 [xs wallet arch]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/
 [xs cleanup sf]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-great-consensus-cleanup/
-[bg consensus cleanup]: /en/newsletters/2019/03/05/#cleanup-soft-fork-proposal
+[bg consensus cleanup]: /zh/newsletters/2019/03/05/#cleanup-soft-fork-proposal
 [xs maint]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-maintainers/
 [xs script change]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-noinput-etc/
 [xs taproot]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-taproot/
-[bg taproot]: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
+[bg taproot]: /zh/newsletters/2019/05/14/#taproot-和-tapscript-提案-bip-概述
 [xs utreexo]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-utreexo/
 [xs assumeutxo]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-assumeutxo/
-[bg assumeutxo]: /en/newsletters/2019/04/09/#discussion-about-an-assumed-valid-mechanism-for-utxo-snapshots
+[bg assumeutxo]: /zh/newsletters/2019/04/09/#discussion-about-an-assumed-valid-mechanism-for-utxo-snapshots
 [xs hwi]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/
-[bg hwi]: /en/newsletters/2019/02/19/#bitcoin-core-preliminary-hardware-wallet-support
+[bg hwi]: /zh/newsletters/2019/02/19/#bitcoin-core-preliminary-hardware-wallet-support
 [xs v2 p2p]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/
-[bg v2 p2p]: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal
+[bg v2 p2p]: /zh/newsletters/2019/03/26/#version-2-p2p-transport-proposal
 [xs signet]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/
-[bg signet]: /en/newsletters/2019/03/12/#feedback-requested-on-signet
+[bg signet]: /zh/newsletters/2019/03/12/#feedback-requested-on-signet
 [xs blind state]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-statechains/
 [coredev.tech]: https://coredev.tech/
 [transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning
 [rbf rule 6]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016998.html
 [next sf vid]: https://youtu.be/fDJRy6K_3yo
-[proof-of-concept newsletter]: /en/newsletters/2018/06/08/
+[proof-of-concept newsletter]: /zh/newsletters/2018/06/08/
 [newsletter rss]: /feed.xml
 [optech twitter]: https://www.twitter.com/bitcoinoptech
-[founding sponsors]: /en/about/#founding-sponsors
+[founding sponsors]: /zh/about/#资金
 [member companies]: /#members
-[countersign blurb]: /en/newsletters/2018/12/28/#august
+[countersign blurb]: /zh/newsletters/2018/12/28/#八月
 [cpfp carve out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [russell-corallo rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016530.html
 [hillebrand optech]: https://www.youtube.com/playlist?list=PLPj3KCksGbSY9pV6EI5zkHcut5UTCs1cp
 [routing success probability]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/lightning-network-routing-security/
 [utreexo]: https://eprint.iacr.org/2019/611
-[newsletter #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
-[newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
-[newsletter #48]: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
-[newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out
+[newsletter #34]: /zh/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[newsletter #47]: /zh/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
+[newsletter #48]: /zh/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
+[newsletter #24]: /zh/newsletters/2018/12/04/#cpfp-carve-out
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [hwi]: https://github.com/bitcoin-core/HWI
 [eltoo]: https://blockstream.com/eltoo.pdf
