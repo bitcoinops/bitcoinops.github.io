@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine résume une discussion très variée sur le relai gratuit et les
+Le bulletin de cette semaine résume une vaste discussion sur le relai gratuit et les
 améliorations du bumping de frais dans Bitcoin Core. Sont également incluses nos
 rubriques habituelles avec des questions et réponses populaires
 de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et de
@@ -18,8 +18,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 - **Discussion variée sur le relai gratuit et les améliorations du bumping de frais :** Peter Todd
   a [posté][todd fr-rbf] sur la liste de diffusion Bitcoin-Dev un résumé d'une attaque de relai
   gratuit qu'il avait précédemment [divulguée de manière responsable][topic responsible disclosures]
-  aux développeurs de Bitcoin Core. Cela a mené à une discussion enchevêtrée sur plusieurs problèmes
-  et propositions d'améliorations. Certains des sujets discutés incluaient :
+  aux développeurs de Bitcoin Core. Cela a mené à une discussion complexe sur de multiples problèmes
+  et améliorations proposées. Voilà quelques-uns des thèmes abordés :
 
   - *Attaques de relai gratuit :* le [relai gratuit][topic free relay] se produit lorsqu'un nœud
     complet relaye des transactions non confirmées sans que le montant des revenus de frais dans son
@@ -29,7 +29,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
     Le relai gratuit permet à un attaquant d'augmenter considérablement la bande passante utilisée par
     les nœuds de relais, ce qui peut réduire le nombre de nœuds de relais. Si le nombre de nœuds de
-    relais exploités indépendamment devient trop faible, les dépensiers envoient essentiellement des
+    relais exploités indépendamment devient trop faible, ceux qui effectuent la dépense envoient essentiellement des
     transactions directement aux mineurs, ce qui présente les mêmes risques de centralisation que les
     [frais hors bande][topic out-of-band fees].
 
@@ -59,8 +59,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
   - *Utilité de TRUC :* Peter Todd a argumenté que [TRUC][topic v3 transaction relay] était une
     "mauvaise proposition". Il avait précédemment critiqué le protocole (voir le [Bulletin #283][news283
-    truc pin]) et spécifiquement critiqué la spécification de TRUC, [BIP431][], qui utilise des
-    préoccupations concernant le relai gratuit pour plaider en faveur de TRUC plutôt que sa propre
+    truc pin]) et spécifiquement critiqué la spécification de TRUC, [BIP431][], qui exploite les
+    inquiétudes concernant le relai gratuit pour plaider en faveur de TRUC plutôt que sa propre
     proposition RBFR.
 
     Cependant, BIP431 argumente également contre des versions de RBFR, telles que le RBFR en une seule
@@ -84,8 +84,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     proposition de [cluster de mempool][topic cluster mempool] nécessite de désactiver [CPFP
     carve-out][topic cpfp carve out] (CPFP-CO), qui est actuellement utilisé par les [soreties
     d'ancrage][topic anchor outputs] de LN pour protéger une grande quantité d'argent dans les canaux de
-    paiement. En combinaison avec [le relai par paquet][topic package relay] (spécifiquement le remplacement
-    de paquet par frais), le RBFR en une seule fois pourrait être capable de remplacer CPFP-CO sans
+    paiement. En combinaison avec [le relai par paquet][topic package relay] (spécifiquement le paquet
+    Replace By Fee), le RBFR en une seule fois pourrait être capable de remplacer CPFP-CO sans
     nécessiter de changements dans aucun logiciel LN qui augmente déjà à plusieurs reprises les frais de
     ses dépenses de sortie d'ancrage par RBF. Cependant, le RBFR en une seule fois dépend de l'apprentissage
     des taux de frais du haut-mempool de quelque chose comme le cluster de mempool, donc à la fois RBFR et
@@ -141,8 +141,8 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
 
 - [Pourquoi les développeurs de protocole travaillent-ils à maximiser les revenus des mineurs ?]({{bse}}123679)
   David A. Harding liste plusieurs avantages à pouvoir prédire quelles transactions entrent dans un
-  bloc en supposant que les mineurs maximiseront les revenus des frais, notant "Cela permet aux
-  dépensiers de faire des estimations de taux de frais raisonnables, aux nœuds de relais bénévoles de
+  bloc en supposant que les mineurs maximiseront les revenus des frais, notant "Cela permet à ceux
+  qui effectuent une dépense de faire des estimations de taux de frais raisonnables, aux nœuds de relais bénévoles de
   fonctionner avec une quantité modeste de bande passante et de mémoire, et aux petits mineurs
   décentralisés de gagner autant de revenus de frais que les grands mineurs".
 
@@ -164,9 +164,9 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   sous [BIP379][] "Miniscript" une telle construction est autorisée et qu'il appartient
   au développeur d'application de décider quels BIP spécifiques ils suivent.
 
-- [Un bloc de plus d'une semaine peut-il être considéré comme une pointe de chaîne valide ?]({{bse}}123671)
-  Murch conclut qu'une telle pointe de chaîne pourrait être considérée comme valide, mais que le
-  nœud resterait dans l'état "initialblockdownload" tant que la pointe de chaîne est plus de 24 heures
+- [Un bloc de plus d'une semaine peut-il être considéré comme une extrémité de chaîne valide ?]({{bse}}123671)
+  Murch conclut qu'une telle extrémité de chaîne pourrait être considérée comme valide, mais que le
+  nœud resterait dans l'état "initialblockdownload" tant que l"extrémité de chaîne est à plus de 24 heures
   dans le passé selon l'heure locale du nœud.
 
 - [Modification de tx médiée par SIGHASH_ANYONECANPAY]({{bse}}123429)
@@ -201,8 +201,8 @@ repo], [Rust Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], 
 repo]._
 
 - [Bitcoin Core #30320][] met à jour le comportement [assumeUTXO][topic assumeutxo] pour éviter de
-  charger un instantané s'il n'est pas un ancêtre de l'en-tête actuel le plus à jour `m_best_header`
-  et synchronise à la place comme un nœud régulier. Si l'instantané devient plus tard un ancêtre de
+  charger un instantané s'il n'est pas un ascendant de l'en-tête actuel le plus à jour `m_best_header`
+  et synchronise à la place comme un nœud régulier. Si l'instantané devient plus tard un ascendant de
   l'en-tête le plus à jour en raison d'une réorganisation de la chaîne, le chargement de l'instantané
   assumeUTXO reprend.
 
