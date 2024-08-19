@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Stratum.work website with real-time visualization of Stratum messages from several mining pools"
     url: /en/newsletters/2024/07/19/#real-time-stratum-visualization-tool-released
 
+  - title: "Stratum v2 benchmarking tool released"
+    url: /en/newsletters/2024/08/23/#stratum-v2-benchmarking-tool-released
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
