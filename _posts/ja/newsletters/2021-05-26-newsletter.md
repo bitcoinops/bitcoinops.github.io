@@ -215,7 +215,7 @@ John Pfeffer、Alex Morcosを中心とした寛大な[支援者][supporters]に�
 [shigeyuki azuchi]: https://github.com/azuchi
 [akio nakamura]: https://github.com/AkioNak
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [info]: mailto:info@bitcoinops.org
 [bip141 commitment]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure
 [se 273 merge mining]: https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work

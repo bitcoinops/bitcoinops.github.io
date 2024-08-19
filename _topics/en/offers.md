@@ -118,6 +118,9 @@ optech_mentions:
   - title: "LDK #3139 improves the security of BOLT12 offers by authenticating the use of blinded paths"
     url: /en/newsletters/2024/08/02/#ldk-3139
 
+  - title: "Proposal to allow opt-in identification and authentication of LN payers when using offers"
+    url: /en/newsletters/2024/08/16/#optional-identification-and-authentication-of-ln-payers
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

@@ -45,6 +45,9 @@ optech_mentions:
   - title: "Question: how many blocks per second can sustainably be created using a time warp attack?"
     url: /en/newsletters/2024/07/26/#how-many-blocks-per-second-can-sustainably-be-created-using-a-time-warp-attack
 
+  - title: "New time warp vulnernability affecting testnet4 despite previous time warp fixes"
+    url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

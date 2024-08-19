@@ -153,7 +153,7 @@ Zhiwei "Jeffrey" Hu
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [financial supporters]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html

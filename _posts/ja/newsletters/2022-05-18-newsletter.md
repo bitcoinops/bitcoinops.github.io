@@ -528,7 +528,7 @@ Alex Morcosを含む[多くのサポーター][supporters]にも感謝します�
 [sanders op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020458.html
 [ingala desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020423.html
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [news191 pinning]: /ja/newsletters/2022/03/16/#rbf
 [MyCitadel Wallet]: https://github.com/mycitadel/mycitadel-desktop
 [RGB]: https://www.rgbfaq.com/what-is-rgb

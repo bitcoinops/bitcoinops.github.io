@@ -64,6 +64,9 @@ optech_mentions:
   - title: "Bitcoin Core #30320 only loads a AssumeUTXO snapshot if it's the ancestor of the most-PoW chain"
     url: /en/newsletters/2024/07/26/#bitcoin-core-30320
 
+  - title: "Bitcoin Core #30598 removes block height from the assumeUTXO snapshot file metadata"
+    url: /en/newsletters/2024/08/16/#bitcoin-core-30598
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"

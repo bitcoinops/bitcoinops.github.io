@@ -63,7 +63,7 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs]
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2949,1487" %}
 [bitcoin core 26.2]: https://bitcoincore.org/bin/bitcoin-core-26.2/
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [interesting transaction]: https://stacker.news/items/600187
 [LND v0.18.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.2-beta
 [news19 bip69]: /zh/newsletters/2018/10/30/#bip69-discussion
