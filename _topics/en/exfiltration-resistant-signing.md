@@ -36,6 +36,9 @@ optech_mentions:
   - title: "Dark Skippy: faster exfiltration of HD wallet seeds"
     url: /en/newsletters/2024/08/09/#faster-seed-exfiltration-attack
 
+  - title: "Discussion of a simple (but imperfect) anti-exfiltration protocol"
+    url: /en/newsletters/2024/08/23/#simple-but-imperfect-anti-exfiltration-protocol
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
