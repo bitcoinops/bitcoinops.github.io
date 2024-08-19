@@ -103,6 +103,9 @@ optech_mentions:
   - title: "New time warp attack discovered during analysis of testnet4's attempted time warp fix"
     url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
 
+  - title: "New CPUNet testnet announced with a modified PoW algorithm designed for CPU-only mining"
+    url: /en/newsletters/2024/08/23/#cpunet-testnet-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet
