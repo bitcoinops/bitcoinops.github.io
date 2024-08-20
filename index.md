@@ -11,7 +11,7 @@ layout: home
 Bitcoin Optech helps Bitcoin users and businesses integrate scaling
 technologies.
 
-We provide [workshops][], [documentation][scaling book], [weekly
+We provide [workshops][], [weekly
 newsletters][], [original research][dashboard], [case studies and
 announcements][blog], [analysis of Bitcoin software and
 services][compatibility], a [podcast][], and help facilitate improved relations between
@@ -20,13 +20,12 @@ and the open source community.
 
 [Learn more about us][about].
 
-[scaling book]: https://github.com/bitcoinops/scaling-book
-[workshops]: /workshops
+[workshops]: /en/workshops
 [weekly newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/
 [podcast]: /en/podcast/
-[about]: /about
+[about]: /en/about
 [compatibility]: /en/compatibility/
 
 {% assign posts_en = site.posts | where:"lang","en" %}

@@ -47,7 +47,7 @@ lang: zh
 {% include linkers/issues.md issues="12775,12490,14096,1899" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
-[workshop]: /workshops
+[workshop]: /en/workshops
 [documentation for output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [news10 news]: /zh/newsletters/2018/08/28/#新闻
 [decker w3c]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html

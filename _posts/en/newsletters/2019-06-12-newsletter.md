@@ -241,7 +241,7 @@ wiki page for changes -->{% endcomment %}
 [proof-of-concept newsletter]: /en/newsletters/2018/06/08/
 [newsletter rss]: /feed.xml
 [optech twitter]: https://www.twitter.com/bitcoinoptech
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [member companies]: /#members
 [countersign blurb]: /en/newsletters/2018/12/28/#august
 [cpfp carve out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html

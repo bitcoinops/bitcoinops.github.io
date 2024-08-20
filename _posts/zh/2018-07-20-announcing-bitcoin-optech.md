@@ -20,7 +20,7 @@ excerpt: >
 在 Wences Casares、John Pfeffer 和 Chaincode Labs 的慷慨支持下，我们过去几个月与整个生态系统中的工程师和经理会面；开始为比特币工程师制作[每周 Newsletter][newsletters]，重点介绍他们如何更有效地使用区块链；并在旧金山组织了我们的第一个[研讨会][workshop]，汇集了来自交易所、托管和钱包公司的工程师，利用比特币区块链讨论如何高效使用区块链以及与开源社区的互动方式。
 
 [newsletters]: /zh/newsletters
-[workshop]: /workshops
+[workshop]: /en/workshops
 
 在接下来的几个月里，我们计划：
 

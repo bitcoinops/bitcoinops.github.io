@@ -171,7 +171,7 @@ endcomment %}
 [ivgi tweet]: https://twitter.com/shesek/status/1131733590235131905
 [updated qr paragraph]: /zh/bech32-sending-support/#qrcode-edit
 [optech twitter]: https://twitter.com/bitcoinoptech
-[optech contributors]: /about/#contributors
+[optech contributors]: /en/about/#contributors
 [special section about the proposal]: #提议的交易输出承诺
 [bech32 series]: /zh/bech32-sending-support/
 [newsletter #32]: /zh/newsletters/2019/02/05/#miniscript

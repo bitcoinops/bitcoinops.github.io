@@ -74,6 +74,6 @@ future we'll be able to get back to running workshops and social events.
 [compatibility matrix]: /en/compatibility/
 [topic index]: /en/topics/
 [taproot workbooks]: /en/schorr-taproot-workshop/
-[workshops]: /workshops/
+[workshops]: /en/workshops/
 [Haegwan Kim]: https://twitter.com/haegwankim
 

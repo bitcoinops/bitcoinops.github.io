@@ -192,7 +192,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
 [halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html
