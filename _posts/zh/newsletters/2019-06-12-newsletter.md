@@ -21,11 +21,11 @@ lang: zh
 
 - **<!--bitcoin-core-contributor-meetings-->****Bitcoin Core 贡献者会议：** 上周，许多贡献者亲自参加了定期举行的 [CoreDev.tech][] 活动，贡献者 Bryan Bishop 提供了实时[会议记录][coredev.tech transcripts]：
 
-  - 6月5日：在一次[代码审查][xs review]会议中，讨论了发给活跃的 Bitcoin Core 贡献者的调查，并提出了几项简化审查流程的建议。
+  - **<!--code-review-->**6月5日：在一次[代码审查][xs review]会议中，讨论了发给活跃的 Bitcoin Core 贡献者的调查，并提出了几项简化审查流程的建议。
 
     参与者讨论了将[钱包架构][xs wallet arch]更改为使用[输出脚本描述符][output script descriptors]来生成地址、跟踪付款时间以及查找或推导出用于支付的特定私钥。
 
-  - 6月6日：讨论了[共识清理软分叉][xs cleanup sf]，包括它与 [bip-taproot][] 的交互，是否应该删除部分内容，以及是否应该添加任何内容。([更多背景信息][bg consensus cleanup])
+  - **<!--consensus-cleanup-soft-fork-->**6月6日：讨论了[共识清理软分叉][xs cleanup sf]，包括它与 [bip-taproot][] 的交互，是否应该删除部分内容，以及是否应该添加任何内容。([更多背景信息][bg consensus cleanup])
     {:#cleanup-discussion}
 
     小组讨论了如何使[维护者][xs maint]的工作更轻松。除了其他考虑因素外，维护者提到他们非常感谢长期贡献者 Michael Ford 所提供的问题和 PR 管理服务。会议参与者对此的回应是授予 Ford 维护者身份，使他能更有效地工作。
@@ -39,7 +39,7 @@ lang: zh
     {:#utreexo}
     在关于 [Utreexo][] 累加器的[问答环节][xs utreexo]中，讨论了 UTXO 集的存储要求最小化的这个新兴提案的一些有趣细节。
 
-  - 6月7日：演示并讨论了 [assumeutxo][xs assumeutxo] 提案的代码，包括如何使该提案与其他想法兼容。([更多背景信息][bg assumeutxo])
+  - **<!--assumeutxo-->**6月7日：演示并讨论了 [assumeutxo][xs assumeutxo] 提案的代码，包括如何使该提案与其他想法兼容。([更多背景信息][bg assumeutxo])
     {:#assume-utxo-demo}
 
     {:#hwi}

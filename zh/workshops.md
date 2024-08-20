@@ -62,4 +62,4 @@ redirect_from: /workshops
 
 {% include references.md %}
 
-[taproot workshop blog post]: /zh/schorr-taproot-workshop/
+[taproot workshop blog post]: /en/schorr-taproot-workshop/
