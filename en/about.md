@@ -1,7 +1,8 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /en/about/
+redirect_from: /about
 ---
 
 The Bitcoin Operations Technology Group (Optech) works to bring the best
@@ -16,7 +17,7 @@ and announcements][blog], a [podcast][], and help facilitate improved relations 
 businesses and the open source community.
 
 [scaling book]: https://github.com/bitcoinops/scaling-book
-[workshops]: /workshops
+[workshops]: /en/workshops
 [weekly newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /en/blog/

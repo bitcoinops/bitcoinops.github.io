@@ -660,7 +660,7 @@ newsletters] or follow our [RSS feed][].*
 [optech annual report]: /en/2018-optech-annual-report/
 [optech dashboard]: https://dashboard.bitcoinops.org/
 [optech newsletters]: /en/newsletters/
-[optech workshops]: /workshops/
+[optech workshops]: /en/workshops/
 [p2ep]: https://blockstream.com/2018/08/08/improving-privacy-using-pay-to-endpoint/
 [satoshis.place]: https://satoshis.place/
 [scaling bitcoin conference]: https://tokyo2018.scalingbitcoin.org/
