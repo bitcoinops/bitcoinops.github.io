@@ -13,7 +13,7 @@ Bitcoin Operations Technology Group（简称 Optech）致力于将最好的开�
 [weekly newsletters]: /zh/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [blog]: /zh/blog/
-[podcast]: /zh/podcast/
+[podcast]: /en/podcast/
 
 如果你是比特币公司的工程师或经理，或者是开源贡献者，并希望成为其中的一员，请通过 [info@bitcoinops.org](mailto:info@bitcoinops.org) 联系我们。
 
