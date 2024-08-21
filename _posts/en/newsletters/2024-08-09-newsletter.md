@@ -106,7 +106,7 @@ zero-knowledge proofs using two proposed soft forks.
   collect payment from a classic block withholding attack.
 
   This incentivizes pools to either forbid client transaction selection
-  or require that pool miners use a persistant public identity (e.g. a
+  or require that pool miners use a persistent public identity (e.g. a
   name validated through government-issued documentation) so that bad
   actors can
   be banned.
