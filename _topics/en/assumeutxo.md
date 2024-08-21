@@ -67,6 +67,9 @@ optech_mentions:
   - title: "Bitcoin Core #30598 removes block height from the assumeUTXO snapshot file metadata"
     url: /en/newsletters/2024/08/16/#bitcoin-core-30598
 
+  - title: "Bitcoin Core #28553 adds assumeUTXO snapshot parameters for mainnet block 840,000"
+    url: /en/newsletters/2024/08/23/#bitcoin-core-28553
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core issue #15605: AssumeUTXO discussion"
