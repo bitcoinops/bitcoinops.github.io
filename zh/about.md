@@ -7,7 +7,7 @@ redirect_from: /about
 
 Bitcoin Operations Technology Group（简称 Optech）致力于将最好的开源技术和技术手段引入使用比特币的企业，以降低成本并改善客户体验。
 
-该组织的初期重点是与其成员组织合作，减少交易大小并尽量减少随后的交易费用增加的影响。我们提供[研讨会][workshops]、[文档][scaling book]、[每周通讯][weekly newsletters]、[原创研究][dashboard]、[案例研究和公告][blog]、[播客][podcast]，并帮助促进企业与开源社区之间的关系。
+该组织的初期重点是与其成员组织合作，减少交易大小并尽量减少随后的交易费用增加的影响。我们提供[研讨会][workshops]、[每周通讯][weekly newsletters]、[原创研究][dashboard]、[案例研究和公告][blog]、[播客][podcast]，并帮助促进企业与开源社区之间的关系。
 
 [scaling book]: https://github.com/bitcoinops/scaling-book
 [workshops]: /zh/workshops
