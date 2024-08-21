@@ -31,8 +31,7 @@ Optech does not exist to make a profit, and all materials and documentation
 produced are released under the MIT license.
 
 Seed funding was provided by Wences Casares and John Pfeffer to cover outside
-contractors and incidental expenses. Resources are provided by Chaincode Labs
-to support Optech.
+contractors and incidental expenses.
 
 Our generous member companies pay an annual contribution to cover expenses.
 
