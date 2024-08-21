@@ -41,7 +41,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     voir le [Bulletin #310][news310 miniupnpc]) étaient vulnérables à un
     dispositif malveillant sur le réseau local envoyant à plusieurs reprises des variantes
     d'un message UPnP. Chaque message pourrait entraîner l'allocation de
-    mémoire supplémentaire jusqu'à ce que le nœud se crashe ou soit terminé par le
+    mémoire supplémentaire jusqu'à ce que le nœud se crashe ou soit arrêté par le
     système d'exploitation. Un bug de boucle infinie dans la dépendance de Bitcoin Core
     miniupnpc a été signalé au projet miniupnpc par Ronald Huveneers,
     avec Michael Ford découvrant et divulguant de manière responsable comment il
@@ -58,55 +58,55 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     le cluster de mempool, les _clusters_ de transactions liées sont divisés en
     une liste ordonnée de _morceaux_, chaque morceau respectant deux contraintes :
 
-  1. Si des transactions au sein du morceau dépendent d'autres transactions non confirmées, ces autres
-     transactions doivent soit faire partie
-     de ce morceau ou apparaisse dans un morceau plus tôt dans la liste ordonnée de morceaux.
+  1. Si des transactions au sein du segment dépendent d’autres transactions non confirmées,
+     ces autres transactions doivent soit faire partie de ce segment,
+     soit apparaître dans un segment antérieur dans la liste ordonnée des segments.
 
-  2. Chaque morceau doit avoir un taux de frais égal ou supérieur à ceux qui viennent après lui dans
-     la liste ordonnée.
+  3. Chaque segment doit avoir un taux de frais égal ou supérieur à celui des segments
+     qui le suivent dans la liste ordonnée.
 
-  Cela permet de placer chaque morceau de chaque cluster dans le mempool dans une seule liste, classée
+  Cela permet de placer chaque segment de chaque cluster dans le mempool dans une seule liste, classée
   par taux de frais---du plus élevé au plus bas. Avec un mempool segmenté classé par taux de frais, un
-  mineur peut construire un modèle de bloc en itérant simplement sur chaque morceau et en l'incluant
-  dans son modèle jusqu'à ce qu'il atteigne un morceau qui ne rentre pas dans le poids maximal
+  mineur peut construire un modèle de bloc en itérant simplement sur chaque segment et en l'incluant
+  dans son modèle jusqu'à ce qu'il atteigne un segment qui ne rentre pas dans le poids maximal
   souhaité pour le bloc (qui est généralement un peu en dessous de la limite de 1 million de vbytes
   pour laisser de la place à la transaction coinbase du mineur).
 
-  Cependant, les clusters et les morceaux varient en taille, avec une limite supérieure par défaut
+  Cependant, les clusters et les segment varient en taille, avec une limite supérieure par défaut
   pour un cluster dans Bitcoin Core attendue à environ 100 000 vbytes. Cela signifie qu'un mineur
   construisant un modèle de bloc ciblant 998 000 vbytes, et qui a déjà 899 001 vbytes remplis, peut
-  rencontrer un morceau de 99 000 vbytes qui ne rentre pas, laissant environ 10% de l'espace de son
-  bloc inutilisé. Ce mineur ne peut pas simplement sauter ce morceau de 99 000 vbytes et essayer
-  d'inclure le morceau suivant car le morceau suivant pourrait inclure une transaction qui dépend du
-  morceau de 99 000 vbytes. Si un mineur échoue à inclure une transaction dépendante dans son modèle
+  rencontrer un segment de 99 000 vbytes qui ne rentre pas, laissant environ 10% de l'espace de son
+  bloc inutilisé. Ce mineur ne peut pas simplement sauter ce segment de 99 000 vbytes et essayer
+  d'inclure le segment suivant car il pourrait inclure une transaction qui dépend du
+  segment de 99 000 vbytes. Si un mineur échoue à inclure une transaction dépendante dans son modèle
   de bloc, tout bloc qu'il produit à partir de ce modèle sera invalide.
 
-  Pour contourner ce problème de cas limite, Wuille décrit comment de grands morceaux peuvent être
-  décomposés en plus petits _sous-morceaux_ qui peuvent être considérés pour l'inclusion dans l'espace
-  restant du bloc en fonction de leurs taux de frais. Un sous-morceau peut être créé en retirant
-  simplement la dernière transaction dans n'importe quel morceau ou sous-morceau existant qui a deux
-  transactions ou plus. Cela produira toujours au moins un sous-morceau plus petit que son morceau
-  original et cela peut parfois résulter en plusieurs sous-morceaux. Wuille démontre que le nombre de
-  morceaux et de sous-morceaux équivaut au nombre de transactions, chaque transaction appartenant à un
-  morceau ou sous-morceau unique. Cela rend possible de précalculer le morceau ou sous-morceau de
+  Pour contourner ce problème de cas limite, Wuille décrit comment de grands segment peuvent être
+  décomposés en plus petits _sous-segments_ qui peuvent être envisagés pour l'inclusion dans l'espace
+  restant du bloc en fonction de leurs taux de frais. Un sous-segment peut être créé en retirant
+  simplement la dernière transaction dans n'importe quel segment ou sous-segment existant qui a deux
+  transactions ou plus. Cela produira toujours au moins un sous-segment plus petit que son segment
+  original et cela peut parfois résulter en plusieurs sous-segments. Wuille démontre que le nombre de
+  segments et de sous-segments équivaut au nombre de transactions, chaque transaction appartenant à un
+  segment ou sous-segment unique. Cela rend possible de précalculer le segment ou sous-segment de
   chaque transaction, appelé son _ensemble d'absorption_, et d'associer cela à la transaction. Wuille
   montre comment l'algorithme de morcellement existant calcule déjà l'ensemble d'absorption de chaque
   transaction.
 
-  Lorsqu'un mineur a rempli un modèle avec tous les morceaux complets possibles, il peut prendre les
+  Lorsqu'un mineur a rempli un modèle avec tous les segments complets possibles, il peut prendre les
   ensembles d'absorption précalculés pour toutes les transactions pas encore incluses dans le bloc et
   les considérer dans l'ordre des taux de frais. Cela ne nécessite qu'une seule opération de tri sur
   une liste avec le même nombre d'éléments qu'il y a de transactions dans le mempool (presque toujours
   moins d'un million avec les paramètres actuels). Les ensembles d'absorption avec les meilleurs taux
-  de frais (morceaux et sous-morceaux) peuvent ensuite être utilisés pour remplir l'espace restant du
+  de frais (segments et sous-segments) peuvent ensuite être utilisés pour remplir l'espace restant du
   bloc. Cela nécessite de suivre le nombre de transactions d'un cluster qui ont été incluses jusqu'à
-  présent et de sauter tout sous-morceau qui ne rentre pas ou dont certaines transactions ont déjà été
+  présent et de sauter tout sous-segment qui ne rentre pas ou dont certaines transactions ont déjà été
   incluses.
 
-  Cependant, bien que les morceaux puissent être comparés les uns aux autres pour fournir le meilleur
-  ordre pour l'inclusion dans le bloc, l'ordre individuel des transactions au sein d'un morceau ou
-  sous-morceau n'est pas garanti d'être le meilleur mais seulement
-  y compris certaines de ces transactions. Cela peut conduire à une sélection non optimale lorsque un
+  Cependant, bien que les segments puissent être comparés les uns aux autres pour fournir le meilleur
+  ordre pour l'inclusion dans le bloc, l'ordre individuel des transactions au sein d'un segment ou
+  sous-segment n'ont pas la garantie d’être dans le meilleur ordre pour n’inclure
+  que certaines de ces transactions. Cela peut conduire à une sélection non optimale lorsque un
   bloc est presque plein. Par exemple, lorsqu'il ne reste que 300 vbytes, l'algorithme pourrait
   sélectionner une transaction de 200 vbytes à 5 sats/vbyte (1 000 sats au total) au lieu de deux
   transactions de 150 vbytes à 4 sats/vbyte (1 200 sats au total).
@@ -116,8 +116,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   été incluses jusqu'à présent, ils facilitent la restauration à un état antérieur dans l'algorithme
   de remplissage du modèle et le remplacement du choix précédemment effectué par une alternative pour
   voir si cela résulte en la collecte de frais totaux plus élevés. Cela permet de mettre en œuvre une
-  recherche [branch-and-bound][] qui peut essayer de nombreuses combinaisons pour remplir le dernier
-  peu d'espace dans le bloc dans l'espoir de trouver un meilleur résultat que l'algorithme simple.
+  recherche [branch-and-bound][] qui peut essayer de nombreuses combinaisons de remplissage du dernier
+  bit d'espace de bloc dans l'espoir de trouver un meilleur résultat que l'algorithme simple.
 
 - **Simulateur d'événements réseau Hyperion pour le réseau P2P Bitcoin :**
   Sergi Delgado [a posté][delgado hyperion] sur Delving Bitcoin à propos de [Hyperion][], un
