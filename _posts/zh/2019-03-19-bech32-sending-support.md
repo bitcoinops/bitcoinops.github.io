@@ -100,7 +100,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #50][].*
 
-{% include specials/bech32/13-adoption-speed.md %}
+{% include specials/bech32/zh/13-adoption-speed.md %}
 
 ## 地址安全性
 
@@ -183,7 +183,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #47]: /zh/newsletters/2019/05/21/#bech32-发送支持
 [newsletter #48]: /zh/newsletters/2019/05/29/#bech32-发送支持
 [newsletter #49]: /zh/newsletters/2019/06/05/#bech32-发送支持
-[newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support
+[newsletter #50]: /zh/newsletters/2019/06/12/#bech32-发送支持
 [newsletter #51]: /en/newsletters/2019/06/26/#bech32-sending-support
 [newsletter #52]: /en/newsletters/2019/06/26/#bech32-sending-support
 [newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
