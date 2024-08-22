@@ -125,7 +125,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   the attack is prevented using a soft fork.
 
   At the time of writing, the tradeoffs between proposed solutions were
-  being discussed.
+  being discussed. {% assign timestamp="1:05" %}
 
 - **Onion message DoS risk discussion:** Gijs van Dam [posted][vandam
   onion] to Delving Bitcoin to discuss a recent [paper][bk onion] by
@@ -141,7 +141,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   Matt Corallo suggested first trying a previously proposed idea (see
   [Newsletter #207][news207 onion]) to provide back pressure on nodes
   sending too many onion messages before working on anything more
-  complicated.
+  complicated. {% assign timestamp="14:20" %}
 
 - **Optional identification and authentication of LN payers:** Bastien
   Teinturier [posted][teinturier auth] to Delving Bitcoin to propose
@@ -167,7 +167,7 @@ describing notable changes to popular Bitcoin infrastructure software.
 
   Feedback on which cryptographic methods to use is requested, with
   Teinturier planning to release [BLIP42][blips #42] with a
-  specification for the methods selected.
+  specification for the methods selected. {% assign timestamp="28:04" %}
 
 - **Bitcoin Core switch to CMake build system:** Cory Fields
   [posted][fields cmake] to the Bitcoin-Dev mailing list to announce
@@ -188,7 +188,7 @@ describing notable changes to popular Bitcoin infrastructure software.
   (anticipated about 7 months from now).  The earlier you test, the more
   time Bitcoin Core developers will have to fix problems before the
   release of version 29---increasing the chance that they can prevent
-  problems in the released code from affecting your configuration.
+  problems in the released code from affecting your configuration. {% assign timestamp="36:15" %}
 
 ## Releases and release candidates
 
@@ -201,13 +201,13 @@ release candidates.*
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="53:55" %}
 
 - [Core Lightning 24.08rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="54:10" %}
 
 - [LND v0.18.3-beta.rc1][] is a release candidate for a minor bug fix
-  release of this popular LN node implementation.
+  release of this popular LN node implementation. {% assign timestamp="54:29" %}
 
 ## Notable code and documentation changes
 
@@ -227,12 +227,12 @@ repo], and [BINANAs][binana repo]._
   loading the snapshot and start downloading blocks from that much-older block.
   Although older blocks still need to be downloaded for assumeUTXO's
   background validation, newer blocks should receive priority so that
-  users can see whether their recent transactions have been confirmed.
+  users can see whether their recent transactions have been confirmed. {% assign timestamp="55:01" %}
 
 - [Bitcoin Core #30598][] removes block height from the [assumeUTXO][topic
   assumeutxo] snapshot file metadata as it is not a unique identifier in a
   pre-sanitized untrusted file compared to the block hash that is kept. A node
-  can still obtain block height from many other internal sources.
+  can still obtain block height from many other internal sources. {% assign timestamp="59:29" %}
 
 - [Bitcoin Core #28280][] optimizes Initial Block Download (IBD) performance for
   pruned nodes by not emptying the UTXO cache during pruning flushes. It does
@@ -241,7 +241,7 @@ repo], and [BINANAs][binana repo]._
   unnecessarily scanning the entire cache during prune flushes and instead focus
   on the dirty entries.  The optimization results in up to 32% faster IBD for
   pruned nodes with high `dbcache` settings, and about 9% improvement with
-  default settings. See Newsletter [#304][news304 cache].
+  default settings. See Newsletter [#304][news304 cache]. {% assign timestamp="1:02:18" %}
 
 - [Bitcoin Core #28052][] adds [XOR][] encoding to `blocksdir *.dat` files on
   creation as a preventative mechanism against unintentional and accidental data
@@ -249,19 +249,19 @@ repo], and [BINANAs][binana repo]._
   optionally disabled and doesn't protect against intentional data corruption
   attacks. This was implemented for the `chainstate` files in [Bitcoin Core
   #6650][] in September 2015 and the mempool in [#28207][bitcoin core
-  #28207] in November 2023 (see [Newsletter #277][news277 bcc28207]).
+  #28207] in November 2023 (see [Newsletter #277][news277 bcc28207]). {% assign timestamp="1:04:47" %}
 
 - [Core Lightning #7528][] adjusts the [fee rate estimation][topic fee
   estimation] for sweeps of non-time-sensitive unilateral channel closures to an
   absolute deadline of 2016 blocks (approximately 2 weeks). Previously, the fee
   rate was set to target confirmation within 300 blocks, which sometimes caused
   transactions to be stuck at the [minimum relay fee limit][topic default
-  minimum transaction relay feerates], resulting in indefinite delays.
+  minimum transaction relay feerates], resulting in indefinite delays. {% assign timestamp="1:08:01" %}
 
 - [Core Lightning #7533][] updates the internal coin movement notifications and
   the transaction bookkeeper to properly account for the spending of funding
   outputs for [splicing][topic splicing] transactions. Previously, there was no
-  logging or tracking of this.
+  logging or tracking of this. {% assign timestamp="1:10:11" %}
 
 - [Core Lightning #7517][] introduces `askrene`, a new experimental plugin and
   API infrastructure for minimum-cost pathfinding based on the `renepay` plugin
@@ -272,40 +272,40 @@ repo], and [BINANAs][binana repo]._
   along with their estimated probability of success. Several other RPC commands
   are added to manage routing data in layers by adding channels, manipulating
   channel data, excluding nodes from routing, inspecting layer data, and
-  managing ongoing payment attempts.
+  managing ongoing payment attempts. {% assign timestamp="1:11:19" %}
 
 - [LND #8955][] adds an optional `utxo` field on the `sendcoins` command (and
   `Outpoints` for the corresponding `SendCoinsRequest` RPC command) to simplify
   the [coin selection][topic coin selection] user experience to a single step.
   Previously, a user had to go through a multi-step command process that
   included coin selection, fee estimation, [PSBT][topic psbt] funding, PSBT
-  completion, and transaction broadcasting.
+  completion, and transaction broadcasting. {% assign timestamp="1:13:08" %}
 
 - [LND #8886][] updates the `BuildRoute` function to support [inbound forwarding
   fees][topic inbound forwarding fees] by reversing the pathfinding process, now
   working from receiver to sender, allowing for more accurate fee calculations
   over multiple hops. See Newsletter [#297][news297 inboundfees] for more on
-  inbound fees.
+  inbound fees. {% assign timestamp="1:14:39" %}
 
 - [LND #8967][] adds a new wire message type `Stfu` (SomeThing Fundamental is
   Underway) designed to lock the channel state before initiating [protocol
   upgrades][topic channel commitment upgrades]. The `Stfu` message type includes
   fields for the channel id, an initiator flag, and additional data for
   potential future extensions. This is part of the Quiescence protocol
-  implementation (see Newsletter [#309][news309 quiescence]).
+  implementation (see Newsletter [#309][news309 quiescence]). {% assign timestamp="1:19:45" %}
 
 - [LDK #3215][] checks that a transaction is at least 65 bytes long to protect
   against an [unlikely and costly attack][spv attack] against a light client SPV
   wallet where a valid SPV proof can be created for a fake 64-byte transaction
   by matching the hash of an inner merkle node. See [merkle tree
-  vulnerabilities][topic merkle tree vulnerabilities].
+  vulnerabilities][topic merkle tree vulnerabilities]. {% assign timestamp="1:22:13" %}
 
 - [BLIPs #27][] adds BLIP04 for an experimental [HTLC endorsement][topic htlc
   endorsement] signaling protocol proposal to partially mitigate [channel
   jamming attacks][topic channel jamming attacks] on the network. It outlines
   the experimental endorsement TLV values, the deployment approach, and the
   eventual deprecation of the experimental phase when HTLC endorsements are
-  merged into the BOLTs.
+  merged into the BOLTs. {% assign timestamp="1:26:27" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
