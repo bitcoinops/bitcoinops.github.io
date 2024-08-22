@@ -106,7 +106,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #51][].*
 
-{% include specials/bech32/14-security.md %}
+{% include specials/bech32/zh/14-security.md %}
 
 ## 读取和抄录 bech32 地址
 
@@ -184,7 +184,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #48]: /zh/newsletters/2019/05/29/#bech32-发送支持
 [newsletter #49]: /zh/newsletters/2019/06/05/#bech32-发送支持
 [newsletter #50]: /zh/newsletters/2019/06/12/#bech32-发送支持
-[newsletter #51]: /en/newsletters/2019/06/26/#bech32-sending-support
+[newsletter #51]: /zh/newsletters/2019/06/26/#bech32-发送支持
 [newsletter #52]: /en/newsletters/2019/06/26/#bech32-sending-support
 [newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
 [newsletter #54]: /en/newsletters/2019/07/10/#bech32-sending-support
