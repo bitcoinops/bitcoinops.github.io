@@ -157,8 +157,8 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs]
 [news314 cluster]: /zh/newsletters/2024/08/02/#bitcoin-core-30126
 [bolt12 spec]: https://github.com/lightning/bolts/pull/798
 [news257 eclair]: /zh/newsletters/2023/06/28/#eclair-2701
-[news306 testnet4]: /zh/newsletters/2024/07/12/#bitcoin-core-pr-审核俱乐部
-[news311 testnet4]: /zh/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news306 testnet4]: /zh/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news311 testnet4]: /zh/newsletters/2024/07/12/#bitcoin-core-pr-审核俱乐部
 [news277 p2a]: /zh/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
 [review club 30352]: https://bitcoincore.reviews/30352
 [gh instagibbs]: https://github.com/instagibbs

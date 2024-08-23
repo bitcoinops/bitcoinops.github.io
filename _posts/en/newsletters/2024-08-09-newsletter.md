@@ -465,8 +465,8 @@ repo], and [BINANAs][binana repo]._
 [news314 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
 [bolt12 spec]: https://github.com/lightning/bolts/pull/798
 [news257 eclair]: /en/newsletters/2023/06/28/#eclair-2701
-[news306 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
-[news311 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news306 testnet4]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news311 testnet4]: /en/newsletters/2024/07/12/#bitcoin-core-pr-review-club
 [news277 p2a]: /en/newsletters/2023/11/15/#eliminating-malleability-from-ephemeral-anchor-spends
 [review club 30352]: https://bitcoincore.reviews/30352
 [gh instagibbs]: https://github.com/instagibbs
