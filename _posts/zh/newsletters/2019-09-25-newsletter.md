@@ -63,4 +63,4 @@ Pieter Wuille 澄清说，自 0.10.0 版本以来，比特币核心使用 [heade
 [p2sh taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017307.html
 [tapscript limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
 [watchtower discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
-[headers-first]: https://bitcoin.org/en/p2p-network-guide#headers-first
+[headers-first]: https://developer.bitcoin.org/devguide/p2p_network.html#headers-first
