@@ -187,7 +187,7 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 [newsletter #48]: /en/newsletters/2019/05/29/#bech32-sending-support
 [newsletter #49]: /en/newsletters/2019/06/05/#bech32-sending-support
 [newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support
-[newsletter #51]: /en/newsletters/2019/06/26/#bech32-sending-support
+[newsletter #51]: /en/newsletters/2019/06/19/#bech32-sending-support
 [newsletter #52]: /en/newsletters/2019/06/26/#bech32-sending-support
 [newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
 [newsletter #54]: /en/newsletters/2019/07/10/#bech32-sending-support
