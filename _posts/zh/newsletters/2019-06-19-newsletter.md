@@ -116,5 +116,5 @@ wiki page for changes -->{% endcomment %}
 [watchtower tutorial]: https://github.com/wbobeirne/watchtower-example
 [prometheus]: https://prometheus.io/
 [pos ref anchor]: https://github.com/bitcoin/bips/pull/555#issuecomment-315517707
-[newsletter #30]: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
+[newsletter #30]: /zh/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
