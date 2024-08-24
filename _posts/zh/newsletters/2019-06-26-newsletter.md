@@ -14,13 +14,13 @@ slug: 2019-06-26-newsletter-zh
 
 ## 行动项
 
-- **<!--do-htlcs-work-for-micropayments-->****将 Bitcoin Core 更新至至少 0.17.1 版本：**两个影响旧版本 Bitcoin Core 的轻微漏洞预计将在 8 月 1 日左右被披露。这两个漏洞都不影响 0.17.1 版本（2018 年 12 月 25 日发布）或之后的版本。我们对 Bitcoin Core 贡献者 practicalswift 提供漏洞报告表示感谢。
+- **<!--update-bitcoin-core-to-at-least-0-17-1-->****将 Bitcoin Core 更新至至少 0.17.1 版本：**两个影响旧版本 Bitcoin Core 的轻微漏洞预计将在 8 月 1 日左右被披露。这两个漏洞都不影响 0.17.1 版本（2018 年 12 月 25 日发布）或之后的版本。我们对 Bitcoin Core 贡献者 practicalswift 提供漏洞报告表示感谢。
 
-- **<!--do-htlcs-work-for-micropayments-->****帮助测试 C-Lightning 和 LND 的候选版本：**[C-Lightning][cl rc] 和 [LND][lnd rc] 都在为其下一个版本测试候选版本（RC）。鼓励有经验的用户帮助测试这些 RC，以便在最终发布前识别并修复任何剩余的错误。
+- **<!--help-test-c-lightning-and-lnd-rcs-->****帮助测试 C-Lightning 和 LND 的候选版本：**[C-Lightning][cl rc] 和 [LND][lnd rc] 都在为其下一个版本测试候选版本（RC）。鼓励有经验的用户帮助测试这些 RC，以便在最终发布前识别并修复任何剩余的错误。
 
 ## 新闻
 
-- **<!--do-htlcs-work-for-micropayments-->****基于 ASN 而非地址前缀来区分节点：**一场 [eclipse 攻击][eclipse attack]会阻止全节点与任何一个诚实节点建立连接，从而使攻击者能够防止该节点了解拥有最多工作量证明的区块链或广播时间敏感的交易。为了帮助防止 eclipse 攻击，Bitcoin Core 全节点通常会将其八个外发连接分配给 IP 地址在前 16 位（即 /16）上不同的节点。许多 ISP 仅在少数不同的 /16 范围内拥有 IP 地址，或者将地址分配给客户的方式使得客户难以选择他们获得的前缀，这使得攻击者更难获得大量多样化的 IP 地址来执行 eclipse 攻击。
+- **<!--differentiating-peers-based-on-asn-instead-of-address-prefix-->****基于 ASN 而非地址前缀来区分节点：**一场 [eclipse 攻击][eclipse attack]会阻止全节点与任何一个诚实节点建立连接，从而使攻击者能够防止该节点了解拥有最多工作量证明的区块链或广播时间敏感的交易。为了帮助防止 eclipse 攻击，Bitcoin Core 全节点通常会将其八个外发连接分配给 IP 地址在前 16 位（即 /16）上不同的节点。许多 ISP 仅在少数不同的 /16 范围内拥有 IP 地址，或者将地址分配给客户的方式使得客户难以选择他们获得的前缀，这使得攻击者更难获得大量多样化的 IP 地址来执行 eclipse 攻击。
 
   然而，一些大型 ISP，如云计算运营商，管理着多个使用不同 IP 范围的设施，这使得客户更容易获得来自多个前缀的地址。对此问题的一个可能解决方案是跟踪哪些 IP 地址由哪些 ISP 控制，然后将节点的外发连接按 ISP 分配，而不论它们使用什么地址。例如，这可能能够将所有来自 Amazon AWS 的 IP 地址分组在一起，无论客户使用哪个区域的服务器。
 
@@ -43,13 +43,13 @@ wiki page for changes -->{% endcomment %}
 endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- **<!--do-htlcs-work-for-micropayments-->**[如何缓解关于间隔限制的担忧？]({{bse}}88128) Enrique 询问使用 HD 钱包并超过地址间隔限制时的潜在资金损失。Andrew Chow 和 Bitcoin Holder 解释说，虽然超过间隔限制不会导致资金损失，但在从备份恢复或生成钱包外的地址时，应考虑该限制。
+- **<!--how-can-i-mitigate-concerns-around-the-gap-limit-->**[如何缓解关于间隔限制的担忧？]({{bse}}88128) Enrique 询问使用 HD 钱包并超过地址间隔限制时的潜在资金损失。Andrew Chow 和 Bitcoin Holder 解释说，虽然超过间隔限制不会导致资金损失，但在从备份恢复或生成钱包外的地址时，应考虑该限制。
 
-- **<!--do-htlcs-work-for-micropayments-->**[当节点的最新区块被替换时，比特币节点如何更新 UTXO 集？]({{bse}}87991) Pieter Wuille 描述了 "[undo files][] 如何在区块重组后用于更新 UTXO 集。"
+- **<!--how-do-bitcoin-nodes-update-the-utxo-set-when-their-latest-blocks-are-replaced-->**[当节点的最新区块被替换时，比特币节点如何更新 UTXO 集？]({{bse}}87991) Pieter Wuille 描述了 "[undo files][] 如何在区块重组后用于更新 UTXO 集。"
 
-- **<!--do-htlcs-work-for-micropayments-->**[为什么 Bitcoin Core 没有实现 BIP39？]({{bse}}88237) Andrew Chow 解释了 Bitcoin Core 当前钱包结构加上对 [BIP39][] 中使用 PBKDF2 的安全性担忧，构成了其实现的障碍。
+- **<!--is-there-a-reason-why-bitcoin-core-does-not-implement-bip39-->**[为什么 Bitcoin Core 没有实现 BIP39？]({{bse}}88237) Andrew Chow 解释了 Bitcoin Core 当前钱包结构加上对 [BIP39][] 中使用 PBKDF2 的安全性担忧，构成了其实现的障碍。
 
-- **<!--do-htlcs-work-for-micropayments-->**[接受闪电网络支付是否需要签名/私钥？]({{bse}}88201) Yuya Ogawa 询问是否可以在不在线保存私钥的情况下接受闪电网络支付。Rene Pickhardt 指出，[BOLT11][] 不仅要求签署发票，而且通道的更新也需要签名，因此需要私钥。
+- **<!--is-a-signature-private-key-required-to-accept-payment-over-lightning-network-->**[接受闪电网络支付是否需要签名/私钥？]({{bse}}88201) Yuya Ogawa 询问是否可以在不在线保存私钥的情况下接受闪电网络支付。Rene Pickhardt 指出，[BOLT11][] 不仅要求签署发票，而且通道的更新也需要签名，因此需要私钥。
 
 ## 值得注意的代码和文档更改
 
