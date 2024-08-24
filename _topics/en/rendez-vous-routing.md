@@ -98,6 +98,9 @@ optech_mentions:
   - title: "LND #8735 and #8764 improve LND's support for blinded paths, including for multipath"
     url: /en/newsletters/2024/08/09/#lnd-8735
 
+  - title: "BLIPs #39 adds BLIP39 for an optional field b in BOLT11 invoices to communicate a blinded path"
+    url: /en/newsletters/2024/08/23/#blips-39
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

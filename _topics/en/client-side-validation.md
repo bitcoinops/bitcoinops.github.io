@@ -34,6 +34,9 @@ optech_mentions:
   - title: "Specifications published for taproot assets"
     url:  /en/newsletters/2023/09/13/#specifications-for-taproot-assets
 
+  - title: "Taproot Assets v0.4.0-alpha released"
+    url: /en/newsletters/2024/08/23/#taproot-assets-v0-4-0-alpha-released
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Pay to Contract (P2C)"
