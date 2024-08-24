@@ -25,7 +25,7 @@
 
 [bech32 audio]: /img/posts/2019-06-base58-vs-bech32-audio.ogg
 [maxwell phone]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2016/bitcoin-core-dev.2016-03-10-18.59.log.html#l-59
-[bech32 qr code section]: /zh/bech32-sending-support/#creating-more-efficient-qr-codes-with-bech32-addresses
+[bech32 qr code section]: /zh/bech32-sending-support/#使用-bech32-地址创建更高效的二维码
 [bech32 ecc section]: /zh/bech32-sending-support/#查找-bech32-地址中的拼写错误
 
 <script>
