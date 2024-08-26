@@ -118,7 +118,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #53][].*
 
-{% include specials/bech32/16-checklist.md %}
+{% include specials/bech32/zh/16-checklist.md %}
 
 ## 消息签名支持
 
@@ -186,7 +186,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #50]: /zh/newsletters/2019/06/12/#bech32-发送支持
 [newsletter #51]: /zh/newsletters/2019/06/19/#bech32-发送支持
 [newsletter #52]: /zh/newsletters/2019/06/26/#bech32-发送支持
-[newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
+[newsletter #53]: /zh/newsletters/2019/07/03/#bech32-发送支持
 [newsletter #54]: /en/newsletters/2019/07/10/#bech32-sending-support
 [newsletter #55]: /en/newsletters/2019/07/17/#bech32-sending-support
 [newsletter #56]: /en/newsletters/2019/07/24/#bech32-sending-support
