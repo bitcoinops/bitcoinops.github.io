@@ -68,7 +68,7 @@ infrastructure software.
   However, Wuille advocates for the deployed two-round anti-exfiltration
   protocol to prevent even grinding-based exfiltration.
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="0:53" %}
 
 ## Changes to services and client software
 
@@ -78,45 +78,45 @@ wallets and services.*
 - **Proton Wallet announced:**
   Proton [announced][proton blog] their [open-source][proton github] Proton
   Wallet with support for multiple wallets, [bech32][topic bech32],
-  [batch][topic payment batching] sending, [BIP39][] mnemonics, and integration with their email service.
+  [batch][topic payment batching] sending, [BIP39][] mnemonics, and integration with their email service. {% assign timestamp="23:33" %}
 
 - **CPUNet testnet announced:**
   A contributor from the [braidpool][braidpool github] mining [pool][topic
   pooled mining] project [announced][cpunet post] test network [CPUNet][cpunet
   github]. CPUNet uses a modified proof-of-work algorithm to exclude ASIC miners with
   the intent of achieving more consistent block rates than is typical of
-  [testnet][topic testnet].
+  [testnet][topic testnet]. {% assign timestamp="25:38" %}
 
 - **Lightning.Pub launches:**
   [Lightning.Pub][lightningpub github] provides node management
   features for LND that allow for shared access and coordinating channel
   liquidity, using nostr for encrypted communications and key-based account
-  identities.
+  identities. {% assign timestamp="38:52" %}
 
 - **Taproot Assets v0.4.0-alpha released:**
   The [v0.4.0-alpha][taproot assets v0.4.0] release supports the [Taproot Assets][topic client-side validation]
   protocol on mainnet for onchain asset issuance and atomic swaps using
-  [PSBTs][topic psbt] and routing assets through the Lightning Network.
+  [PSBTs][topic psbt] and routing assets through the Lightning Network. {% assign timestamp="39:45" %}
 
 - **Stratum v2 benchmarking tool released:**
   The initial [0.1.0 release][sbm 0.1.0] supports testing, reporting, and comparing
-  the performance of Stratum v1 and Stratum v2 [protocols][topic pooled mining] in different mining scenarios.
+  the performance of Stratum v1 and Stratum v2 [protocols][topic pooled mining] in different mining scenarios. {% assign timestamp="41:31" %}
 
 - **STARK verification PoC on signet:**
   StarkWare [announced][starkware tweet] a [STARK verifier][bcs github]
   verifying a zero-knowledge proof on the [signet][topic signet] test network
-  using the [OP_CAT][topic op_cat] opcode (see [Newsletter #304][news304 inquisition]).
+  using the [OP_CAT][topic op_cat] opcode (see [Newsletter #304][news304 inquisition]). {% assign timestamp="42:52" %}
 
 - **SeedSigner 0.8.0 released:**
   Bitcoin hardware signing device project [SeedSigner][seedsigner website] added
   signing features for P2PKH and P2SH multisig, additional [PSBT][topic psbt]
   support, and enabled [taproot][topic taproot] support by default in the
-  [0.8.0][seedsigner 0.8.0] release.
+  [0.8.0][seedsigner 0.8.0] release. {% assign timestamp="48:48" %}
 
 - **Floresta 0.6.0 released:**
   In [0.6.0][floresta 0.6.0], Floresta adds support for [compact block
   filters][topic compact block filters], fraud proofs on signet, and
-  [`florestad`][floresta blog], a daemon for integration by existing wallets or client applications.
+  [`florestad`][floresta blog], a daemon for integration by existing wallets or client applications. {% assign timestamp="50:25" %}
 
 ## Releases and release candidates
 
@@ -125,10 +125,10 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 24.08rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="51:52" %}
 
 - [LND v0.18.3-beta.rc1][] is a release candidate for a minor bug fix
-  release of this popular LN node implementation.
+  release of this popular LN node implementation. {% assign timestamp="52:33" %}
 
 ## Notable code and documentation changes
 
@@ -146,7 +146,7 @@ repo], and [BINANAs][binana repo]._
   transactions up to that block, and the SHA256 hash of the serialized UTXO set
   up to that block. This follows tests by multiple contributors that they can
   reproduce the same [snapshot file][] with the expected SHA256 checksum, and that
-  the snapshot works well when loaded.
+  the snapshot works well when loaded. {% assign timestamp="53:18" %}
 
 - [Bitcoin Core #30246][] introduces a `diff_addrs` subcommand to the
   `asmap-tool` utility to allow users to compare two maps of [Autonomous
@@ -155,7 +155,7 @@ repo], and [BINANAs][binana repo]._
   This functionality quantifies the degradation of an ASMap over time, which is
   an important step towards eventually shipping precomputed ASMaps in Bitcoin
   Core releases, and further increase Bitcoin Core’s resistance to [eclipse
-  attacks][topic eclipse attacks]. See Newsletter [#290][news290 asmap].
+  attacks][topic eclipse attacks]. See Newsletter [#290][news290 asmap]. {% assign timestamp="56:39" %}
 
 - [Bitcoin Core GUI #824][] changes the `Migrate Wallet` menu item from a single
   action to a menu list, allowing users to migrate any legacy wallet in the
@@ -163,20 +163,20 @@ repo], and [BINANAs][binana repo]._
   possible future where legacy wallets may no longer be loadable in Bitcoin
   Core, with [descriptor][topic descriptors] wallets becoming the default. When
   selecting a wallet to migrate, the GUI will prompt the user to enter the
-  wallet’s passphrase, if it has one.
+  wallet’s passphrase, if it has one. {% assign timestamp="1:02:10" %}
 
 - [Core Lightning #7540][] improves the formula that calculates the probability
   of a successful routing through a channel in the `renepay` plugin (see
   Newsletter [#263][news263 renepay]) by adding a constant multiplier that
   represents the probability that a randomly chosen channel in the network is
   able to forward at least 1 msat. The default value is set to 0.98, but this
-  may be changed in the future after further testing.
+  may be changed in the future after further testing. {% assign timestamp="1:04:20" %}
 
 - [Core Lightning #7403][] adds a channel filtering payment modifier to the
   `renepay` plugin which disables channels with a very low `max_htlc`. This can
   be extended in the future to filter out channels that are undesirable for
   other reasons: high base fee, low capacity, and high latency. In addition, a new
-  `exclude` command line option has been added to manually disable nodes or channels.
+  `exclude` command line option has been added to manually disable nodes or channels. {% assign timestamp="1:05:20" %}
 
 - [LND #8943][] introduces [Alloy][alloy model] models to the codebase, starting
   with an initial Alloy model for the [Linear Fee Function][lnd linear] fee
@@ -187,7 +187,7 @@ repo], and [BINANAs][binana repo]._
   do, Alloy instead operates on an input of a set of bounded parameters and
   iterations and tries to find counterexamples to a given assertion, accompanied
   by a nice visualizer. Models can also be used to specify protocols in P2P
-  systems, so it's particularly well suited to the Lightning Network.
+  systems, so it's particularly well suited to the Lightning Network. {% assign timestamp="1:06:13" %}
 
 - [BDK #1478][] makes several changes to the `FullScanRequest` and `SyncRequest`
   request structures of the `bdk_chain` crate: use a builder pattern that
@@ -196,14 +196,14 @@ repo], and [BINANAs][binana repo]._
   using `bdk_esplora` without a `LocalChain`), and improve the ergonomics of
   checking synchronization progress. In addition, the `bdk_esplora` crate is
   optimized by always adding previous transaction outputs  to the `TxGraph`
-  update and reducing the number of API calls by using the `/tx/:txid` endpoint.
+  update and reducing the number of API calls by using the `/tx/:txid` endpoint. {% assign timestamp="1:07:26" %}
 
 - [BDK #1533][] enables support for single [descriptor][topic descriptors]
   wallets by adding the `Wallet::create_single` method, reverting a previous
   update that had made the `Wallet` structure require an internal (change)
   descriptor. The reason for the previous change was to protect the privacy of
   users' change addresses when relying on public Electrum or Esplora servers,
-  but this is being reverted to be inclusive of all use cases.
+  but this is being reverted to be inclusive of all use cases. {% assign timestamp="1:08:12" %}
 
 - [BOLTs #1182][] improves the clarity and completeness of the [route
   blinding][topic rv routing] and [onion messages][topic onion messages]
@@ -214,13 +214,13 @@ repo], and [BINANAs][binana repo]._
   writer's responsibilities, splits the reader section into separate parts for
   the `blinded_path` and `encrypted_recipient_data`, improves the explanation of
   the `blinded_path` concept, adds a recommendation to use a dummy hop, renames
-  `onionmsg_hop` to `blinded_path_hop`, and makes other clarifying changes.
+  `onionmsg_hop` to `blinded_path_hop`, and makes other clarifying changes. {% assign timestamp="1:11:49" %}
 
 - [BLIPs #39][] adds [BLIP39][] for an optional field `b` in [BOLT11][] invoices to
   communicate a [blinded path][topic rv routing] for paying the receiver’s node.
   This is implemented in LND (see Newsletter [#315][news315 blinded]) and is
   intended to be used until the [offers][topic offers] protocol is widely
-  deployed in the network.
+  deployed in the network. {% assign timestamp="1:12:55" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
