@@ -17,22 +17,15 @@ contributors:
       "Bitcoin has a pipeline of innovations flowing from the open source community. I am excited to help with the blocking and tackling needed to help roll out these innovations with the wider community of businesses, wallets, exchanges, and users."
   -
     name: Adam Jonas
-    other_affiliation: Special Projects, <a href="https://chaincode.com">Chaincode Labs</a>
+    other_affiliation: CEO, <a href="https://chaincode.com">Chaincode Labs</a>
     github: adamjonas
     avatar: jonas.png
     quote: >-
       "I am excited about the opportunity Bitcoin has before it as it grows.  I hope to contribute my small part as a liaison to help businesses take advantage of all that Bitcoin has to offer as well as gather feedback for the open source community so that we can together bring this wonderfully evolving technology to the masses."
   -
-    name: Carl Dong
-    other_affiliation: Developer, <a href="https://chaincode.com">Chaincode Labs</a>
-    github: dongcarl
-    avatar: dong.jpg
-    quote: >-
-      "New Bitcoin technologies, and more importantly, their rationales will always take some time to propagate from the engineers working on the bleeding-edge to the services and businesses focused on serving their customers. I'm honored to be able to help Optech accelerate this process."
-  -
     name: Mark Erhardt
     other_affiliation: Developer, <a href="https://chaincode.com">Chaincode Labs</a>
-    github: Xekyo
+    github: murchandamus
     avatar: erhardt.png
     quote: >-
       "The Optech newsletter has been one of the most informative and reliable resources for any Bitcoin engineer since its inception. With its workshops, the Bitcoin Optech Group is bringing together the engineers in the space and paving the road for adoption of best practices and new protocol features."
@@ -50,15 +43,39 @@ contributors:
     avatar: azuchi.png
     quote: >-
       "Bitcoin is a very exciting innovation, and many protocols and cryptographic improvements are still being proposed. Understanding these is important for Bitcoin services and businesses, and Optech is one of the most useful resources for that. I hope to contribute to making Bitcoin technical information available to a wide range of people."
+  -
+    name: Copinmalin
+    github: Copinmalin
+    avatar: copinmalin.jpg
+    quote: >-
+      "In an ever-changing world, the Bitcoin revolution represents a pivotal movement combining financial and social shifts. Recognizing the need to understand this, I've translated bitcoinops.org newsletters into French to democratize access to key developments. My aim is to enable broader participation in shaping the future. Proud to join esteemed contributors, I echo Antoine de Saint-Exupéry's sentiment: 'As for the future, it's not about predicting it, but making it possible.'"
+  -
+    name: Jiří Jakeš
+    github: jirijakes
+    avatar: jirijakes.jpg
+    quote: >-
+      "If you believe fixing the money can fix the world, you cannot ignore Bitcoin. If you want to understand Bitcoin, you cannot ignore Optech. Since I made it my routine going through every word of every week's newsletter, my understanding of what Bitcoin was, is and where it might be going took a big leap forward. I am happy to make the knowledge accessible to more people and thus move us a bit closer to fixing the world."
+  -
+    name: Zhiwei(Jeffrey) Hu
+    other_affiliation: Tech Lead, <a href="https://hashkey.capital/">HashKey Capital</a>
+    github: hulatown
+    avatar: hulatown.jpg
+    quote: >-
+      "One of the best ways to keep up with developments in the Bitcoin ecosystem is to subscribe to the Optech newsletter. I'm excited to be a part of Optech newsletter with a bunch of friends (Xiang YAO, Ajian, Yu ZHANG) in Primitives Lane research group, helping more people learn more about Bitcoin."
 
 contributors_alum:
+ -
+    name: Carl Dong
+    other_affiliation: Developer
+    github: dongcarl
+    avatar: dong.jpg
  -
     name: John Newbery
     github: jnewbery
     avatar: newbery.jpg
  -
     name: Jon Atack
-    other_affiliation: Sponsored Developer, <a href="https://spiral.xyz">Spiral</a>
+    other_affiliation: Bitcoin Core Developer
     github: jonatack
     avatar: atack.jpg
  -
