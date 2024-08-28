@@ -40,7 +40,40 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [Can a BIP152 compact block be sent before validation by a node that doesn't know all transactions?]({{bse}}123858)
+  Antoine Poinsot points out that forwarding [compact blocks][topic compact
+  block relay] before validating all of the included transactions are committed
+  to by the block header would be a denial-of-service vector.
+
+- [Did Segwit (BIP141) eliminate all txid malleability issues listed in BIP62?]({{bse}}124074)
+  Vojtěch Strnad explains a variety of ways txids can be malleated, how segwit
+  addressed malleability, what non-intentional malleability is, and a
+  policy-related pull request.
+
+- [Why are the checkpoints still in the codebase in 2024?]({{bse}}123768)
+  Lightlike notes that with the addition of ["Headers Presync"][news216 headers
+  presync], the Bitcoin Core codebase has no _known_ requirements for
+  checkpoints, but emphasizes there may be _unknown_ attack vectors that the
+  checkpoints are protecting against.
+
+- [Bulletproof++ as generic ZKP ala SNARKs?]({{bse}}119556)
+  Liam Eagen details the type of succinct non-interactive argument of knowledge
+  (SNARKs) currently in use and how bulletproofs, [BitVM][topic acc], and
+  [OP_CAT][topic op_cat] might be used to verify such proofs in Bitcoin Script.
+
+- [How can OP_CAT be used to implement additional covenants?]({{bse}}123829)
+  Brandon - Rearden describes how the proposed OP_CAT opcode could provide
+  [covenant][topic covenants] functionality to Bitcoin scripts.
+
+- [Why do some bech32 bitcoin addresses contain a large number of 'q's?]({{bse}}123902)
+  Vojtěch Strnad reveals that the OLGA protocol encodes arbitrary data into
+  P2WSH outputs with part of the scheme requiring 0-padding (0 is encoded as 'q'
+  in [bech32][topic bech32]).
+
+- [How does a 0-conf signature bond work?]({{bse}}124022)
+  Matt Black outlines how funds locked in an OP_CAT-based covenant could provide
+  incentives for spenders to not [RBF][topic rbf] fee bump their transactions,
+  potentially increasing acceptance of zero-confirmation transactions.
 
 ## Releases and release candidates
 
@@ -96,3 +129,4 @@ repo], and [BINANAs][binana repo]._
 [schmidt oblivious]: https://groups.google.com/g/bitcoinminingdev/c/npitVsP9KNo
 [towns oblivious]: https://groups.google.com/g/bitcoindev/c/1tDke1a2e_Q
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
+[news216 headers presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
