@@ -136,7 +136,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #56][].*
 
-{% include specials/bech32/19-real-fees.md %}
+{% include specials/bech32/zh/19-real-fees.md %}
 
 ## Bech32 采用率
 
@@ -189,7 +189,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #53]: /zh/newsletters/2019/07/03/#bech32-发送支持
 [newsletter #54]: /zh/newsletters/2019/07/10/#bech32-发送支持
 [newsletter #55]: /zh/newsletters/2019/07/17/#bech32-发送支持
-[newsletter #56]: /en/newsletters/2019/07/24/#bech32-sending-support
+[newsletter #56]: /zh/newsletters/2019/07/24/#bech32-发送支持
 [newsletter #57]: /en/newsletters/2019/07/31/#bech32-sending-support
 [newsletter #58]: /en/newsletters/2019/08/07/#bech32-sending-support
 [newsletter #59]: /en/newsletters/2019/08/14/#bech32-sending-support
