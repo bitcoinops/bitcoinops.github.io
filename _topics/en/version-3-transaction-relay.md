@@ -31,6 +31,9 @@ primary_sources:
     - title: "New transaction policies (nVersion=3) for contracting protocols"
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
 
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/issues/28948
+
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
