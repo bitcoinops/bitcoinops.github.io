@@ -109,11 +109,30 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [LDK #3263][] Remove message type bound on ResponseInstruction <!-- I'm not too interested in why LDK needs to make this change (which is most of the PR description) and more interested in what this means for existing and future downstream users -->
+- [LDK #3263][] simplifies how it handles [onion messages][topic onion messages]
+  responses by removing the message type parameter from the `ResponseInstruction`
+  struct, and introducing a  new `MessageSendInstructions` enum based on the
+  updated `ResponseInstruction`, that can handle both [blinded][topic rv
+  routing] and non-blinded reply paths. The `send_onion_message` method now uses
+  `MessageSendInstructions`, allowing users to specify reply paths without
+  needing to figure out the pathfinding themselves. A new option,
+  `MessageSendInstructions::ForReply`, lets message handlers send responses
+  later without creating circular dependencies in the code. See Newsletter
+  [#303][news303 onion].
 
-- [LDK #3247][] Deprecate AvailableBalances::balance_msat
+- [LDK #3247][] deprecates the `AvailableBalances::balance_msat` method in favor
+  of the `ChannelMonitor::get_claimable_balances` method, which provides a more
+  straightforward and accurate approach to obtaining a channel's balance. The
+  deprecated method’s logic is now outdated as it was originally designed to
+  handle potential underflow issues when balances included pending HTLCs (those
+  that could later be reversed).
 
-- [BDK #1569][] Merge bitcoindevkit/bdk#1569: Introduce `bdk_core`
+- [BDK #1569][] adds the `bdk_core` crate and moves to it some types from
+  `bdk_chain`: `BlockId`, `ConfirmationBlockTime`, `CheckPoint`,
+  `CheckPointIter`, `tx_graph::Update` and `spk_client`. The `bdk_esplora`,
+  `bdk_electrum` and `bdk_bitcoind_rpc` chain sources have been changed to
+  depend only on `bdk_core`. These changes were made to allow faster refactoring
+  on `bdk_chain`.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -130,3 +149,4 @@ repo], and [BINANAs][binana repo]._
 [towns oblivious]: https://groups.google.com/g/bitcoindev/c/1tDke1a2e_Q
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
 [news216 headers presync]: /en/newsletters/2022/09/07/#bitcoin-core-25717
+[news303 onion]: /en/newsletters/2024/05/17/#ldk-2907
