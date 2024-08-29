@@ -40,7 +40,7 @@ lang: zh
 
   - **<!--interested-parties-can-run-their-own-nodes-->***感兴趣的方可以运行自己的节点：*对 Bitcoin Core 的更改只是默认禁用布隆过滤器服务。它并没有移除这个功能。依赖布隆过滤器支持的钱包的作者可以轻松地操作自己的节点，他们也可以尝试说服其他不担心 DoS 漏洞的节点操作员将配置选项设置为 true，例如 `peerbloomfilters=1`。
 
-## Bech32 支持
+## Bech32 发送支持
 
 *在[系列][bech32 series]中的第 20 周，讨论如何让你支付的人获得 segwit 的所有好处。*
 
