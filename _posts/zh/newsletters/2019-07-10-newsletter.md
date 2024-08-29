@@ -37,7 +37,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案（BIPs）][bips repo] 中的值得注意的变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的变更。*
 
 - [Bitcoin Core #15427][] 扩展了 `utxoupdatepsbt` RPC，添加了一个 `descriptors` 参数，该参数接受一个[输出脚本描述符]，并使用它来更新 [BIP174][] 部分签名的比特币交易（PSBT），以获取与交易相关的脚本（地址）信息。这是对之前 RPC 行为的补充，之前的行为是从节点的内存池和 UTXO 集中添加信息。此新功能对于硬件钱包和其他配对钱包特别有用，因为它可以将 HD 密钥路径信息添加到 PSBT 中，使得钱包在签署 PSBT 时可以轻松派生出所需的密钥或验证找零输出是否确实支付回了钱包。
 

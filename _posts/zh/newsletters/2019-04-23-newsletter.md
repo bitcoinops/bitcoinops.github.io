@@ -40,7 +40,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变化
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中的值得注意的变化。注意：除非另有说明，所有描述的 Bitcoin Core 合并都是其主开发分支中的；有些可能也会被回移到其待发布的版本中。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中的值得注意的变化。注意：除非另有说明，所有描述的 Bitcoin Core 合并都是其主开发分支中的；有些可能也会被回移到其待发布的版本中。*
 
 - [Bitcoin Core #15839][] 仅在 0.18 分支中回退了 [#14897][Bitcoin Core #14897]（未在主开发分支中）。参见 [Newsletter #33][] 的*值得注意的代码变化*部分，我们对 #14897 进行了详细描述，该内容于 2 月初合并。一些 0.18.0 候选版本的仔细测试者注意到，他们的节点在启动后不久有时会停止请求新交易。这个间歇性问题似乎与#14897 中进行的交易请求改进以减少拒绝服务风险有关。至少已有两个 PR（[1][Bitcoin Core #15776]、[2][Bitcoin Core #15834]）试图解决这个问题，但项目中普遍同意在 0.18.0 中移除新功能，以便在发布生产版本之前在开发分支中对其及其补丁进行更多测试。RC 周期的目标是识别潜在问题，以便在影响普通用户之前解决它们，因此我们认为我们代表这些用户感谢所有参与测试的人。
 

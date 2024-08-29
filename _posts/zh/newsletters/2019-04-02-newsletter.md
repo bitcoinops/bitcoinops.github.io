@@ -33,7 +33,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的更改。注意：所有描述的 Bitcoin Core 合并都是在其主开发分支上；有些可能也会回移到 0.18 分支以便发布 0.18.0 版本。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的更改。注意：所有描述的 Bitcoin Core 合并都是在其主开发分支上；有些可能也会回移到 0.18 分支以便发布 0.18.0 版本。*
 
 - [Bitcoin Core #15620][] 停止 `maxtxfee` 配置参数影响 `sendrawtransaction` 和 `testmempoolaccept` RPC。之前这些 RPC 会默认拒绝支付费用高于配置最大值的交易。现在使用硬编码的默认值 0.1 BTC 作为可接受的上限。`maxtxfee` 配置参数仍由 Bitcoin Core 的内置钱包使用；它只是与节点特定的 RPC 分开使用。此更改是[钱包配置选项清理][Bitcoin Core #13044]的一部分，也是节点和钱包分离的一部分（两者在此更改之前都使用该设置）。
 

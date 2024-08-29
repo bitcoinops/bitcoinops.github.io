@@ -40,7 +40,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中值得注意的更改。*
 
 - **<!--bitcoin-core-15348-->**[Bitcoin Core #15348][] 添加了一个[生产力提示][productivity hints]文档，描述了开发人员发现的提高效率的工具和技术。尽管有些是特定于 Bitcoin Core 和 C++ 开发的，但其他的更广泛适用于任何使用 git 或 GitHub 的开发人员。
 

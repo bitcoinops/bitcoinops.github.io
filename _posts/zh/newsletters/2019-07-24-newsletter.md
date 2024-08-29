@@ -33,7 +33,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo] 和 [Lightning BOLTs][bolts repo] 中的值得注意的变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo] 中的值得注意的变更。*
 
 - [Bitcoin Core #15891][] 更改了在 regtest 模式下使用时的节点默认设置，以执行与主网相同的标准交易规则。这些规则决定了节点将转发哪些交易并接受到内存池中。此更改应使开发人员更容易根据默认策略测试他们的自定义交易。任何需要旧行为（转发和接受任何共识有效交易）的人可以使用 `acceptnonstdtxn` 配置参数。
 
