@@ -16,21 +16,21 @@ lang: zh
 
   比特币的区块是随机产出的，而出块的 “难度” 被有意设计成每 2016 个区块就 *重新校准*，以保证出块的平均间隔在大约 10 分钟。下面的简化图展示了区块以恒定的速度产生时是什么样子，假定每 5 个区块就重新校准一次（为了让图示更加清楚而缩短了调整周期）：
 
-  [Illustration of honest mining with a constant hashrate (simplified)](/img/posts/2024-time-warp/reg-blocks.png)
+  ![Illustration of honest mining with a constant hashrate (simplified)](/img/posts/2024-time-warp/reg-blocks.png)
 
   一个不诚实的矿工（或一群不诚实的串谋矿工），如果掌握了稍微超过整个网络 50% 的出块算力，就可以审查由其它诚实矿工（总算力稍低与 50%）产生的区块。这在一开始会自然导致平均而言 20 分钟才能产生一个区块。而在这种模式持续了 2016 个区块之后，难度会调整成原来的 1/2，从而让主网的出块速度恢复，恢复成平均每 10 分钟产生 1 个区块：
 
-  [Illustration of block censorship by an attacker with slightly more than 50% of total network hashrate (simplified)](/img/posts/2024-time-warp/50p-attack.png)
+  ![Illustration of block censorship by an attacker with slightly more than 50% of total network hashrate (simplified)](/img/posts/2024-time-warp/50p-attack.png)
 
   当不诚实的矿工使用自己的算力优势来强迫绝大多数区块使用可允许的最小数值的时间戳时，就构成了一种时间扭曲攻击。在每一个难度调整周期（2106 个区块）的末尾，他们可以将区块头中的时间戳推进到[实际经过][wall time]攻击后的时间，从而让生成区块的时间看起来比其实际花费的时间要长，从而在下一个周期中降低难度。
 
-  [Illustration of a classic time warp attack (simplified)](/img/posts/2024-time-warp/classic-time-warp.png)
+  ![Illustration of a classic time warp attack (simplified)](/img/posts/2024-time-warp/classic-time-warp.png)
 
   应用在 testnet4 上的[新规则][testnet4 rule]通过防止新周期的第一个区块的时间戳比上一个区块（也即上一个难度调整周期的最后一个区块）更早来阻止这种攻击。
 
   就像原本的时间扭曲攻击，Erhardt 的 Zawy 攻击改进版会以最低限度逐步推进大部分区块的时间戳。但是，在每 3 个难度调整中期的前 2 个周期中，攻击者会大幅推进该周期最后一个区块的时间戳（并因此推进下一个周期的第一个区块的时间戳）。如此一来，每过一个周期，难度就会以可允许的最大幅度降低一次（变成当前数值的 1/4）。而在第 3 个周期中，攻击者先为所有区块（以及下一个周期的第一个区块）使用可允许的最小时间戳，从而让难度以最大幅度提高（变成当前的 4 倍）。换句话说，难度先变成了攻击开始前难度的 1/4，然后是 1/16，最后提高到开始前难度的 1/4：
 
-  [Illustration of Erhardt's version of Zawy's new time warp attack (simplified)](/img/posts/2024-time-warp/new-time-warp.png)
+  ![Illustration of Erhardt's version of Zawy's new time warp attack (simplified)](/img/posts/2024-time-warp/new-time-warp.png)
 
   这种三周期的循环可以无限重复，每循环一次就将难度减低到原来的 1/4，最终降低到允许矿工[每秒生产 6 个区块][erhardt se]的水平。
 
