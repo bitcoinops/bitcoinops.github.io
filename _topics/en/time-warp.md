@@ -93,7 +93,7 @@ Bitcoins DAA only adjusts difficulty once every 2016 blocks.  Miners who
 begin a time warp attack cannot significantly affect difficulty for the
 first 2016-block epoch because both the first and last blocks in that
 epoch will need to have approximately accurate times.  For the second
-epoch, miners can make it appear that the first block was mined two
+epoch, miners can make it appear that the first block was mined four
 weeks in the past and the last block was mined at present, giving an
 average of about 20 minutes per block and causing the DAA to halve the
 difficulty.  Miners will then by able to complete the next epoch twice
