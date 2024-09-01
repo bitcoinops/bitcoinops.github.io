@@ -392,7 +392,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [news306 testnet]: /fr/newsletters/2024/06/07/#bip-et-mise-en-oeuvre-experimentale-de-testnet4
 [news312 chilldkg]: /fr/newsletters/2024/07/19/#protocole-de-generation-de-cles-distribue-pour-frost
 [bip125 github]: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
-[news208 fullrbf]: /fr/newsletters/2022/07/13/#bitcoin-core-25353
+[news208 fullrbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [news263 fullrbf]: /fr/newsletters/2023/08/09/#full-rbf-par-defaut
 [wuille cluster]: https://delvingbitcoin.org/t/introduction-to-cluster-linearization/1032
 [news314 cluster]: /fr/newsletters/2024/08/02/#bitcoin-core-30126
