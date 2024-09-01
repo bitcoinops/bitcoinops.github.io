@@ -1,11 +1,11 @@
 ---
-title : 'Bulletin Hebdomadaire Bitcoin Optech #318'
-permalink : /fr/newsletters/2024/08/30/
-name : 2024-08-30-newsletter-fr
-slug : 2024-08-30-newsletter-fr
-type : newsletter
-layout : newsletter
-lang : fr
+title: 'Bulletin Hebdomadaire Bitcoin Optech #318'
+permalink: /fr/newsletters/2024/08/30/
+name: 2024-08-30-newsletter-fr
+slug: 2024-08-30-newsletter-fr
+type: newsletter
+layout: newsletter
+lang: fr
 ---
 Le bulletin de cette semaine annonce une nouvelle liste de diffusion pour discuter du minage de
 Bitcoin. Sont également incluses nos
