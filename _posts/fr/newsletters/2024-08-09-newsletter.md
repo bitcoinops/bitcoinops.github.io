@@ -235,7 +235,7 @@ création et la transmission de transactions qui dépensent à partir d'une sort
   a0="Puisqu'il consiste en un opcode de poussée de 1 octet (`OP_1`) et un 2 octet
   poussée de données (`0x4e73`), il s'agit d'une sortie témoin v1 valide. Comme elle ne fait pas 32
   octets, elle ne se qualifie pas comme `WITNESS_V1_TAPROOT`, se classant donc par défaut comme
-  `TxoutType::WITNESS_UNKNOWN`.
+  `TxoutType::WITNESS_UNKNOWN`."
   a0link="https://bitcoincore.reviews/30352#l-18"
 
   q1="En se basant sur la réponse à la question précédente, serait-il standard de créer ce type de
