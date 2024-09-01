@@ -1,8 +1,8 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Optech #316'
 permalink: /fr/newsletters/2024/08/16/
-name: 2024-08-16-newsletter
-slug: 2024-08-16-newsletter
+name: 2024-08-16-newsletter-fr
+slug: 2024-08-16-newsletter-fr
 type: newsletter
 layout: newsletter
 lang: fr
