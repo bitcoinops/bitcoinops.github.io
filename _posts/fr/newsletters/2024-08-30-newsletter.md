@@ -38,14 +38,12 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [Un bloc compact BIP152 peut-il être envoyé avant validation par un nœud qui ne connaît pas toutes
-  les transactions ?]({{bse}}123858)
+- [Un bloc compact BIP152 peut-il être envoyé avant validation par un nœud qui ne connaît pas toutes les transactions ?]({{bse}}123858)
   Antoine Poinsot souligne que transmettre des [blocs compacts][topic compact block relay] avant de
   valider que toutes les transactions incluses sont engagées par l'en-tête du bloc serait un vecteur
   de déni de service.
 
-- [Segwit (BIP141) a-t-il éliminé tous les problèmes de malléabilité des txid énumérés dans le BIP62
-  ?]({{bse}}124074)
+- [Segwit (BIP141) a-t-il éliminé tous les problèmes de malléabilité des txid énumérés dans le BIP62 ?]({{bse}}124074)
   Vojtěch Strnad explique diverses manières dont les txid peuvent être malleabilisés, comment segwit a
   abordé la malleabilité, ce qu'est la malleabilité non intentionnelle, et une demande de modification
   liée à la politique.
@@ -60,8 +58,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
   utilisé et comment les bulletproofs, [BitVM][topic acc], et
   [OP_CAT][topic op_cat] pourrait être utilisé pour vérifier de telles preuves dans Bitcoin Script.
 
-- [Comment OP_CAT peut-il être utilisé pour implémenter des covenants supplémentaires
-  ?]({{bse}}123829)
+- [Comment OP_CAT peut-il être utilisé pour implémenter des covenants supplémentaires ?]({{bse}}123829)
   Brandon - Rearden décrit comment l'opcode OP_CAT proposé pourrait fournir
   une fonctionnalité de [covenant][topic covenants] aux scripts Bitcoin.
 
