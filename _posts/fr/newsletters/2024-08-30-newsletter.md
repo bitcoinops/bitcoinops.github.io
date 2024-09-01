@@ -105,7 +105,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], et [BINANAs][binana repo]._
 
-- [LDK #3263][] simplifie la manière dont il gère les réponses aux [messages onion][topic onio messages]
+- [LDK #3263][] simplifie la manière dont il gère les réponses aux [messages onion][topic onion messages]
   en supprimant le paramètre de type de message de la structure `ResponseInstruction`,
   et en introduisant un nouveau enum `MessageSendInstructions` basé sur
   la mise à jour de `ResponseInstruction`, qui peut gérer à la fois les chemins de réponse
