@@ -286,7 +286,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [erhardt se]: https://bitcoin.stackexchange.com/a/123700
 [erhardt warp]: https://delvingbitcoin.org/t/zawy-s-alternating-timestamp-attack/1062
 [zawy comment]: https://github.com/bitcoin/bitcoin/pull/29775#issuecomment-2276135560
-[wall time]: https://en.wikipedia.org/wiki/Elapsed_real_time
+[temps réel]: https://en.wikipedia.org/wiki/Elapsed_real_time
 [testnet4 rule]: https://github.com/bitcoin/bips/blob/master/bip-0094.mediawiki#time-warp-fix
 [news36 warp rule]: /en/newsletters/2019/03/05/#the-time-warp-attack
 [zawy testnet risk]: https://delvingbitcoin.org/t/zawy-s-alternating-timestamp-attack/1062/5
