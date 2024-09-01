@@ -225,15 +225,15 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [sbm 0.1.0]: https://github.com/stratum-mining/benchmarking-tool/releases/tag/0.1.0
 [starkware tweet]: https://x.com/StarkWareLtd/status/1813929304209723700
 [bcs github]: https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark
-[news304 inquisition]: /en/newsletters/2024/05/24/#bitcoin-inquisition-27-0
+[news304 inquisition]: /fr/newsletters/2024/05/24/#bitcoin-inquisition-27-0
 [seedsigner website]: https://seedsigner.com/
 [seedsigner 0.8.0]: https://github.com/SeedSigner/seedsigner/releases/tag/0.8.0
 [floresta 0.6.0]: https://github.com/vinteumorg/Floresta/releases/tag/0.6.0
 [floresta blog]: https://medium.com/vinteum-org/floresta-update-simplifying-bitcoin-node-integration-for-wallets-6886ea7c975c
 [auto sys]: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
-[news290 asmap]: /en/newsletters/2024/02/21/#improved-reproducible-asmap-creation-process
-[news263 renepay]: /en/newsletters/2023/08/09/#core-lightning-6376
+[news290 asmap]: /fr/newsletters/2024/02/21/#amelioration-du-processus-de-creation-de-asmap-reproductible
+[news263 renepay]: /fr/newsletters/2023/08/09/#core-lightning-6376
 [alloy model]: https://alloytools.org/about.html
 [lnd linear]: https://github.com/lightningnetwork/lnd/blob/b7c59b36a74975c4e710a02ea42959053735402e/sweep/fee_function.go#L66-L109
-[news315 blinded]: /en/newsletters/2024/08/09/#lnd-8735
+[news315 blinded]: /fr/newsletters/2024/08/09/#lnd-8735
 [fichier de snapshot]: magnet:?xt=urn:btih:596c26cc709e213fdfec997183ff67067241440c&dn=utxo-840000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969
