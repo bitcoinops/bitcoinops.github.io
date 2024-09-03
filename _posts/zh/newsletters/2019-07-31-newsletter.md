@@ -34,7 +34,7 @@ lang: zh
 
   - **<!--spies-likely-to-run-their-own-nodes-->***间谍可能会运行自己的节点：*除了未升级的节点之外，区块链分析公司可能会继续运行自己的节点，以在未来提供布隆过滤器支持，从而收集钱包的统计数据，这些数据的过滤器[泄露信息][filter privacy]关于它们包含的地址。
 
-  -**<!--dns-seeds-can-return-only-nodes-signaling-bip111-->** *DNS seeds 只能返回信号 BIP111 的节点：*大多数 P2P 轻钱包会查询一个或多个比特币 DNS seeds 以获取要使用的节点列表。一些 seeds 允许根据节点配置的服务比特来筛选返回的节点[^dns-query]，其中支持布隆过滤器的服务位由 [BIP111][] 指定。
+  - **<!--dns-seeds-can-return-only-nodes-signaling-bip111-->** *DNS seeds 只能返回信号 BIP111 的节点：*大多数 P2P 轻钱包会查询一个或多个比特币 DNS seeds 以获取要使用的节点列表。一些 seeds 允许根据节点配置的服务比特来筛选返回的节点[^dns-query]，其中支持布隆过滤器的服务位由 [BIP111][] 指定。
 
   - **<!--bip157-would-use-more-bandwidth-than-bip37-->***BIP157 将使用比 BIP37 更多的带宽：*有人建议，一些使用 [BIP37][]布隆过滤器的用户将无法切换到 [BIP157][] 致密区块过滤器，因为后者的带宽使用更高。Optech 在 [Newsletter #43][] 中简要调查了过滤器大小，发现过滤器本身每月使用不到 100 MB。客户端还需要下载匹配的区块，这将根据其活动而有所不同（对于典型用户来说，大约每个发送或接收的交易对应一个区块；大多数区块小于 2 MB）。目前尚不清楚有多少用户会因必须下载这些数据量而受到显著影响。
 
