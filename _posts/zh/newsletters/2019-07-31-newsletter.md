@@ -101,7 +101,7 @@ lang: zh
 [drivechain discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015339.html
 [core rc]: https://bitcoincore.org/bin/bitcoin-core-0.18.1/
 [fidelity coinjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017169.html
-[bitnodes dashboard]: https://bitnodes.earn.com/dashboard/
+[bitnodes dashboard]: https://bitnodes.io/
 [sybil attack]: https://en.wikipedia.org/wiki/Sybil_attack
 [bloom announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html
 [signmessage bech32]: /zh/bech32-sending-support/#消息签名支持
