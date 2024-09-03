@@ -27,7 +27,7 @@ to popular Bitcoin infrastructure software.
   consensus cleanup]).  Mike Schmidt [referred][schmidt oblivious] list
   readers to a [thread][towns oblivious] on the Bitcoin-Dev mailing list
   about [oblivious shares][topic block withholding] (see [Newsletter
-  #315][news315 oblivious]).
+  #315][news315 oblivious]). {% assign timestamp="0:48" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -43,37 +43,37 @@ answers posted since our last update.*
 - [Can a BIP152 compact block be sent before validation by a node that doesn't know all transactions?]({{bse}}123858)
   Antoine Poinsot points out that forwarding [compact blocks][topic compact
   block relay] before validating all of the included transactions are committed
-  to by the block header would be a denial-of-service vector.
+  to by the block header would be a denial-of-service vector. {% assign timestamp="15:03" %}
 
 - [Did Segwit (BIP141) eliminate all txid malleability issues listed in BIP62?]({{bse}}124074)
   Vojtěch Strnad explains a variety of ways txids can be malleated, how segwit
   addressed malleability, what non-intentional malleability is, and a
-  policy-related pull request.
+  policy-related pull request. {% assign timestamp="18:13" %}
 
 - [Why are the checkpoints still in the codebase in 2024?]({{bse}}123768)
   Lightlike notes that with the addition of ["Headers Presync"][news216 headers
   presync], the Bitcoin Core codebase has no _known_ requirements for
   checkpoints, but emphasizes there may be _unknown_ attack vectors that the
-  checkpoints are protecting against.
+  checkpoints are protecting against. {% assign timestamp="22:35" %}
 
 - [Bulletproof++ as generic ZKP ala SNARKs?]({{bse}}119556)
   Liam Eagen details the type of succinct non-interactive argument of knowledge
   (SNARKs) currently in use and how bulletproofs, [BitVM][topic acc], and
-  [OP_CAT][topic op_cat] might be used to verify such proofs in Bitcoin Script.
+  [OP_CAT][topic op_cat] might be used to verify such proofs in Bitcoin Script. {% assign timestamp="26:28" %}
 
 - [How can OP_CAT be used to implement additional covenants?]({{bse}}123829)
   Brandon - Rearden describes how the proposed OP_CAT opcode could provide
-  [covenant][topic covenants] functionality to Bitcoin scripts.
+  [covenant][topic covenants] functionality to Bitcoin scripts. {% assign timestamp="28:13" %}
 
 - [Why do some bech32 bitcoin addresses contain a large number of 'q's?]({{bse}}123902)
   Vojtěch Strnad reveals that the OLGA protocol encodes arbitrary data into
   P2WSH outputs with part of the scheme requiring 0-padding (0 is encoded as 'q'
-  in [bech32][topic bech32]).
+  in [bech32][topic bech32]). {% assign timestamp="32:25" %}
 
 - [How does a 0-conf signature bond work?]({{bse}}124022)
   Matt Black outlines how funds locked in an OP_CAT-based covenant could provide
   incentives for spenders to not [RBF][topic rbf] fee bump their transactions,
-  potentially increasing acceptance of zero-confirmation transactions.
+  potentially increasing acceptance of zero-confirmation transactions. {% assign timestamp="37:29" %}
 
 ## Releases and release candidates
 
@@ -82,21 +82,21 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 24.08rc2][] is a release candidate for the next major
-  version of this popular LN node implementation.
+  version of this popular LN node implementation. {% assign timestamp="42:45" %}
 
 - [LND v0.18.3-beta.rc1][] is a release candidate for a minor bug fix
-  release of this popular LN node implementation.
+  release of this popular LN node implementation. {% assign timestamp="43:13" %}
 
 - [BDK 1.0.0-beta.2][] is a release candidate for this library for
   building wallets and other Bitcoin-enabled applications.  The original
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="43:43" %}
 
 - [Bitcoin Core 28.0rc1][] is a release candidate for the next major
   version of the predominant full node implementation.  A [testing
-  guide][bcc testing] is being prepared.
+  guide][bcc testing] is being prepared. {% assign timestamp="45:10" %}
 
 ## Notable code and documentation changes
 
@@ -118,21 +118,21 @@ repo], and [BINANAs][binana repo]._
   needing to figure out the pathfinding themselves. A new option,
   `MessageSendInstructions::ForReply`, lets message handlers send responses
   later without creating circular dependencies in the code. See Newsletter
-  [#303][news303 onion].
+  [#303][news303 onion]. {% assign timestamp="48:15" %}
 
 - [LDK #3247][] deprecates the `AvailableBalances::balance_msat` method in favor
   of the `ChannelMonitor::get_claimable_balances` method, which provides a more
   straightforward and accurate approach to obtaining a channel's balance. The
   deprecated method’s logic is now outdated as it was originally designed to
   handle potential underflow issues when balances included pending HTLCs (those
-  that could later be reversed).
+  that could later be reversed). {% assign timestamp="49:10" %}
 
 - [BDK #1569][] adds the `bdk_core` crate and moves to it some types from
   `bdk_chain`: `BlockId`, `ConfirmationBlockTime`, `CheckPoint`,
   `CheckPointIter`, `tx_graph::Update` and `spk_client`. The `bdk_esplora`,
   `bdk_electrum` and `bdk_bitcoind_rpc` chain sources have been changed to
   depend only on `bdk_core`. These changes were made to allow faster refactoring
-  on `bdk_chain`.
+  on `bdk_chain`. {% assign timestamp="50:13" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
