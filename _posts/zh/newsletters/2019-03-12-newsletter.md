@@ -49,7 +49,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中值得注意的更改。请注意，Bitcoin Core 目前在其主开发分支和即将发布的 0.18 版本分支上都有工作，因此我们注明了每个 Bitcoin Core 合并影响的分支。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中值得注意的更改。请注意，Bitcoin Core 目前在其主开发分支和即将发布的 0.18 版本分支上都有工作，因此我们注明了每个 Bitcoin Core 合并影响的分支。*
 
 - [Bitcoin Core #15118][] 概括了 Bitcoin Core 如何存储和检索与区块和 UTXO 变化相关的数据，以便更容易为新方法使用相同方式存储和检索其他信息。这是为了允许重用该机制在磁盘上存储 [BIP157][] 紧凑区块过滤器。这目前仅在主开发分支中。
 

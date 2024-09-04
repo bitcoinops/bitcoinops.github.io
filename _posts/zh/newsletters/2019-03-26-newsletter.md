@@ -50,7 +50,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的更改。*
 
 - [Bitcoin Core #10973][] 使 Bitcoin Core 的内置钱包组件通过一个定义明确的接口访问区块链信息，而不是直接访问节点组件上的函数和变量。此更新没有与用户相关的可见变化，但该合并值得注意，因为它是最后一组基础重构中的一部分，这些重构应使未来的更改能够让节点和钱包/GUI 在单独的进程中运行变得容易（参见 [Bitcoin Core #10102][] 了解一种方法），以及改进 Bitcoin Core 代码库的模块化并允许更有针对性的组件测试。除了为未来的重大变化奠定基础外，这个 PR 因为开放了一年半以上，收到了将近 200 条代码审查评论和回复，并且需要超过 150 次更新和重建而值得注意。Optech 感谢 PR 作者 Russell Yanofsky 在看到此 PR 合并方面所做的惊人奉献。
 
