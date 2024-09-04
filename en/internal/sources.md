@@ -11,8 +11,8 @@ The _News_ section of the newsletter is currently sourced from the
 following discussion groups:
 
 - [Bitcoin-Dev][] mailing list
-- [Lightning-Dev][] mailing list
 - [DLC-Dev][] mailing list
+- [Mining-Dev][] mailing list
 - [#bitcoin-core-dev][] IRC
 - [#lightning-dev][] IRC
 - [Bitcoin Transcripts][]
@@ -57,9 +57,9 @@ group.  It's not possible for us to read everything about Bitcoin on
 large social media sites or hundreds of individual blogs.
 
 [bitcoin transcripts]: https://btctranscripts.com/
-[bitcoin-dev]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
-[lightning-dev]: https://lists.linuxfoundation.org/pipermail/lightning-dev/
+[bitcoin-dev]: https://groups.google.com/g/bitcoindev
 [dlc-dev]: https://mailmanlists.org/pipermail/dlc-dev/
+[mining-dev]: https://groups.google.com/g/bitcoinminingdev
 [#bitcoin-core-dev]: https://bitcoin-irc.chaincode.com/bitcoin-core-dev/
 [#lightning-dev]: https://gnusha.org/lightning-dev/
 [protocol design]: https://delvingbitcoin.org/c/protocol-design/7

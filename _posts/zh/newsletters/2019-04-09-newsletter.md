@@ -34,7 +34,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中的值得注意的更改。注意：描述的所有 Bitcoin Core 和 LND 的合并都是到它们的主开发分支；有些可能也会被移植到他们的待定版本。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中的值得注意的更改。注意：描述的所有 Bitcoin Core 和 LND 的合并都是到它们的主开发分支；有些可能也会被移植到他们的待定版本。*
 
 - [Bitcoin Core #15596][] 更新了 `sendmany` RPC，移除了 `minconf` 参数，这[没有按预期功能工作][sendmany wackiness]。现在总是使用钱包默认值。默认值是不花费从其他人那里收到的未确认输出，并根据 `spendzeroconfchange` 配置设置可选择允许花费自己未确认的找零输出。这与更常用的 `sendtoaddress` RPC 一直以来的工作方式相同。
 
