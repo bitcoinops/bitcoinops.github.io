@@ -14,19 +14,19 @@ lang: zh
 
 ## 行动项
 
-- **<!--gossip-update-proposal-->****在发布二进制文件时升级到 Bitcoin Core 0.18.1：** 该维护版本已经[打上标签][bitcoin core 0.18.1 tag]，预计几天内会将二进制文件上传到 [bitcoincore.org][bitcoin core 0.18.1 binaries]。此版本提供了多个错误修复和其他改进，建议在二进制文件可用时进行升级。
+- **<!--upgrade-to-bitcoin-core-0-18-1-when-binaries-are-released-->****在发布二进制文件时升级到 Bitcoin Core 0.18.1：** 该维护版本已经[打上标签][bitcoin core 0.18.1 tag]，预计几天内会将二进制文件上传到 [bitcoincore.org][bitcoin core 0.18.1 binaries]。此版本提供了多个错误修复和其他改进，建议在二进制文件可用时进行升级。
 
 ## 新闻
 
-- **<!--gossip-update-proposal-->****BIP174 的可扩展性：** 部分签名的比特币交易 (PSBT) 规范的作者 Andrew Chow [提出了][psbt extensions]一些用于广泛采用的小改动：
+- **<!--bip174-extensibility-->****BIP174 的可扩展性：** 部分签名的比特币交易 (PSBT) 规范的作者 Andrew Chow [提出了][psbt extensions]一些用于广泛采用的小改动：
 
-  - **<!--gossip-update-proposal-->***为专有用途保留类型：* 一些应用程序已经在 PSBT 中包含了未在 [BIP174][] 中指定的数据。提议为私有 PSBT 扩展保留一个类型字节或一组类型字节，类似于为私有网络保留的 IP 地址范围。本周的讨论特别关注了这种机制的具体构建。
+  - **<!--reserved-types-for-proprietary-use-->***为专有用途保留类型：* 一些应用程序已经在 PSBT 中包含了未在 [BIP174][] 中指定的数据。提议为私有 PSBT 扩展保留一个类型字节或一组类型字节，类似于为私有网络保留的 IP 地址范围。本周的讨论特别关注了这种机制的具体构建。
 
-  - **<!--gossip-update-proposal-->***全局版本号：* 虽然设计 PSBT 增强功能的目标是向后兼容，但 Chow 提议向 PSBT 添加一个版本字节，以指示它们使用的最先进功能，以便旧的解析器可以检测它们是否收到可能无法理解的 PSBT。没有明确版本号的 PSBT 将被视为使用版本 0。
+  - **<!--global-version-number-->***全局版本号：* 虽然设计 PSBT 增强功能的目标是向后兼容，但 Chow 提议向 PSBT 添加一个版本字节，以指示它们使用的最先进功能，以便旧的解析器可以检测它们是否收到可能无法理解的 PSBT。没有明确版本号的 PSBT 将被视为使用版本 0。
 
-  - **<!--gossip-update-proposal-->***多字节类型：* 为了支持更多类型，提出了多字节类型的建议。邮件列表讨论似乎支持使用与比特币协议中相同的 CompactSize 无符号整数。
+  - **<!--multi-byte-types-->***多字节类型：* 为了支持更多类型，提出了多字节类型的建议。邮件列表讨论似乎支持使用与比特币协议中相同的 CompactSize 无符号整数。
 
-- **<!--gossip-update-proposal-->****蹦床支付：** Bastien Teinturier 在 BOLTs 仓库中开启了一个[拉取请求][trampoline pr]，并在 Lightning-Dev 邮件列表中发起了[讨论][trampoline discussion]，讨论向协议添加对蹦床支付的支持，正如在 [Newsletter #40][news40 trampoline payments] 中描述的那样，付款方将付款发送到一个中间节点，该节点计算路径到另一个中间节点（以增加隐私）或接收节点。这对不想跟踪 gossip 流量的低带宽 LN 客户端（例如移动设备）非常有利，因为它们只知道如何路由到少数节点。发送蹦床支付将需要多个节点之间的协调，因此应在闪电网络规范中进行记录。
+- **<!--trampoline-payments-->****蹦床支付：** Bastien Teinturier 在 BOLTs 仓库中开启了一个[拉取请求][trampoline pr]，并在 Lightning-Dev 邮件列表中发起了[讨论][trampoline discussion]，讨论向协议添加对蹦床支付的支持，正如在 [Newsletter #40][news40 trampoline payments] 中描述的那样，付款方将付款发送到一个中间节点，该节点计算路径到另一个中间节点（以增加隐私）或接收节点。这对不想跟踪 gossip 流量的低带宽 LN 客户端（例如移动设备）非常有利，因为它们只知道如何路由到少数节点。发送蹦床支付将需要多个节点之间的协调，因此应在闪电网络规范中进行记录。
 
 ## Bech32 发送支持
 
