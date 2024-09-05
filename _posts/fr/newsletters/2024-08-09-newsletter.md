@@ -66,7 +66,7 @@ de soft forks.
   Anthony Towns a [posté][towns withholding] sur la liste de diffusion Bitcoin-Dev pour discuter de
   l'[attaque de rétention de bloc][topic block withholding], une attaque connexe de _parts invalides_,
   et des solutions potentielles à ces deux attaques, y compris la désactivation de la sélection de
-  travail client dans [Stratum v2][topic pooled mining] et les parts obliques.
+  travail client dans [Stratum v2][topic pooled mining] et les parts à considérer.
 
   Les mineurs de pool sont payés pour soumettre des unités de travail, appelées _parts_, chacune étant
   un _bloc candidat_ qui contient une certaine quantité de preuve de travail (PoW). L'attente est
@@ -130,12 +130,12 @@ de soft forks.
   - *Nécessite la soumission de parts :* l'un des avantages de Stratum v2 (dans certains modes de
     fonctionnement) est qu'un mineur de pool honnête qui trouve un bloc pour le pool peut immédiatement
     le diffuser sur le réseau P2P Bitcoin, permettant sa propagation même avant que la part
-    correspondante n'atteigne le serveur du pool. Avec les parts aveugles, la part devrait être reçue
+    correspondante n'atteigne le serveur du pool. Avec les parts à considérer, la part devrait être reçue
     par le pool et convertie en un bloc complet avant de pouvoir être diffusée.
 
   Towns conclut en décrivant deux des motivations pour corriger l'attaque de rétention de blocs : cela
   affecte plus les petits pools que les grands pools, et cela coûte presque rien d'attaquer les pools
-  qui permettent aux mineurs anonymes, tandis que les pools qui exigent que les mineurs s'identifient
+  qui permettent l'anonymat des mineurs, tandis que les pools qui exigent que les mineurs s'identifient
   peuvent bannir les attaquants connus. Corriger la rétention de blocs pourrait aider le minage de
   Bitcoin à devenir plus anonyme et décentralisé.
 
@@ -224,13 +224,13 @@ en mettant en lumière certaines des questions et réponses importantes. Cliquez
 ci-dessous pour voir un résumé de la réponse de la réunion.*
 
 [Add PayToAnchor(P2A), OP_1 <0x4e73>, comme script de sortie standard pour dépenser][review club
-30352] est un PR de [instagibbs][gh instagibbs] qui introduit un nouveau type de script de sortie
+30352] est une PR de [instagibbs][gh instagibbs] qui introduit un nouveau type de script de sortie
 `TxoutType::ANCHOR`. Les sorties d'ancrage ont un script de sortie `OP_1 <0x4e73>` (résultant en une
 adresse [`bc1pfeessrawgf`][mempool bc1pfeessrawgf]). Rendre ces sorties standard facilite la
 création et la transmission de transactions qui dépensent à partir d'une sortie d'ancrage.
 
 {% include functions/details-list.md
-  q0="Avant que `TxoutType::ANCHOR` soit défini dans ce PR, quel `TxoutType` serait classifié comme
+  q0="Avant que `TxoutType::ANCHOR` soit défini dans cette PR, quel `TxoutType` serait classifié comme
   `scriptPubKey` `OP_1 <0x4e73>` ?"
   a0="Puisqu'il consiste en un opcode de poussée de 1 octet (`OP_1`) et un 2 octet
   poussée de données (`0x4e73`), il s'agit d'une sortie témoin v1 valide. Comme elle ne fait pas 32
@@ -239,7 +239,7 @@ création et la transmission de transactions qui dépensent à partir d'une sort
   a0link="https://bitcoincore.reviews/30352#l-18"
 
   q1="En se basant sur la réponse à la question précédente, serait-il standard de créer ce type de
-  sortie ? Qu'en est-il pour le dépenser ? (Indice : comment [`IsStandard`][gh isstandard] et
+  sortie ? Qu'en est-il pour la dépenser ? (Indice : comment [`IsStandard`][gh isstandard] et
   [`AreInputsStandard`][gh areinputsstandard] traitent-ils ce type ?)"
   a1="Puisque `IsStandard` (qui est utilisé pour vérifier les sorties) ne considère que
   `TxoutType::NONSTANDARD` comme non standard, le créer serait standard. Puisque `AreInputsStandard`
@@ -281,7 +281,7 @@ création et la transmission de transactions qui dépensent à partir d'une sort
 
 ## Mises à jour et versions candidates
 
-*Nouvelles sorties et candidats à la sortie pour des projets d'infrastructure Bitcoin populaires.
+*Nouvelles versions et mises-à-jour candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de mettre à niveau vers les nouvelles sorties ou d'aider à tester les candidats à
 la sortie.*
 
@@ -316,7 +316,7 @@ inquisition repo], et [BINANAs][binana repo]._
 - [Bitcoin Core #30285][] ajoute deux algorithmes clés de [linéarisation en cluster][wuille cluster]
   au projet de [mempool en cluster][topic cluster mempool] : `MergeLinearizations` pour combiner deux
   linéarisations existantes, et `PostLinearize` pour améliorer les linéarisations par un traitement
-  supplémentaire. Ce PR s'appuie sur le travail discuté dans le bulletin de la semaine dernière
+  supplémentaire. Cette PR s'appuie sur le travail discuté dans le bulletin de la semaine dernière
   [#314][news314 cluster].
 
 - [Bitcoin Core #30352][] introduit un nouveau type de sortie, Pay-To-Anchor (P2A), et
@@ -357,9 +357,9 @@ inquisition repo], et [BINANAs][binana repo]._
 - [LND #8735][] ajoute la capacité de générer des factures avec des [chemins aveuglés][topic rv
   routing] en utilisant le drapeau `-blind` dans la commande `addinvoice`. Il permet également le
   paiement de telles factures. Notez que cela est uniquement implémenté pour les factures [BOLT11][],
-  car [BOLT12][topic offers] n'est pas encore implémenté dans LND. [LND #8764][] étend le PR précédent
+  car [BOLT12][topic offers] n'est pas encore implémenté dans LND. [LND #8764][] étend la PR précédente
   en permettant l'utilisation de plusieurs chemins aveuglés
-  lors du paiement d'une facture, spécifiquement pour effectuer des paiements multipath ([MPP][topic
+  lors du paiement d'une facture, spécifiquement pour effectuer des paiements  multi-chemins ([MPP][topic
   multipath payments]).
 
 - [BIPs #1601][] fusionne [BIP94][] pour introduire testnet4, une nouvelle version de
