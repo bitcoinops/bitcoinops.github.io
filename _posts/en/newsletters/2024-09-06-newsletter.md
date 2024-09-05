@@ -141,17 +141,44 @@ months after the release of the upcoming version 28._
   [#30508][bitcoin core #30508], [#30729][bitcoin core #30729], and
   [#30712][bitcoin core #30712].
 
-- [Bitcoin Core #22838][] descriptors: Be able to specify change and receiving in a single descriptor string
+- [Bitcoin Core #22838][] implements multiple derivation path
+  [descriptors][topic descriptors] ([BIP389][]), which allows a single
+  descriptor string to specify two related derivation paths, the first for
+  receiving payments, and the second for internal use (such as for change). See
+  Newsletters [#211][news211 bip389] and [#258][news258 bip389].
 
-- [Eclair #2865][] Wake up wallet nodes before relaying messages or payments (#2865)
+- [Eclair #2865][] adds the ability to wake up a disconnected mobile peer by
+  attempting to connect to its last known IP address and push a mobile
+  notification. This is especially useful in the context of [async
+  payments][topic async payments] where the local node holds a payment or an [onion
+  message][topic onion messages] and when the peer comes back online, it is
+  delivered. See Newsletter [#232][news232 async].
 
-- [LND #9009][] discovery: implement banning for invalid channel anns
+- [LND #9009][] introduces a mechanism to ban peers for sending invalid channel
+  announcements, such as channels that are already spent, have no funding
+  transaction, or have an invalid funding output. Banned peers are handled
+  differently depending on the relationship:
 
-- [LDK #3268][] Split up `ConfirmationTarget` even more
+  - For banned peers without a shared channel, the node disconnects from them.
 
-- [HWI #742][] HWI#742: trezor: add Trezor Safe 5 support
+  - For banned peers with a shared channel, the node ignores all of their
+    channel announcements for 48 hours.
 
-- [BIPs #1657][] Add a PSBT per-output field for BIP 353 DNSSEC Proofs
+- [LDK #3268][] adds `ConfirmationTarget::MaximumFeeEstimate` for a more
+  conservative [fee estimation][topic fee estimation] method for [dust][topic
+  uneconomical outputs] calculations when checking counterparty feerates, to
+  avoid unnecessary force closures caused by sudden fee spikes. This PR also
+  splits `ConfirmationTarget::OnChainSweep` into `UrgentOnChainSweep` and
+  `NonUrgentOnChainSweep` to distinguish between time-sensitive (e.g., with
+  expiring [HTLCs][topic htlc]) and non-urgent force closures.
+
+- [HWI #742][] adds support for the Trezor Safe 5 hardware signing device.
+
+- [BIPs #1657][] adds a new standard field to [PSBT][topic psbt] outputs for [DNSSEC][dnssec]
+  proofs when using [BIP353][]. External devices such as hardware signers may examine
+  the PSBT outputs to retrieve [RFC 9102][rfc9102]-formatted proofs, which
+  enforce time constraints to ensure that only valid proofs are accepted. See
+  Newsletter [#307][news307 bip353].
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -175,3 +202,9 @@ months after the release of the upcoming version 28._
 [news316 cmake]: /en/newsletters/2024/08/16/#bitcoin-core-switch-to-cmake-build-system
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
 [ldk 0.0.124]: https://github.com/lightningdevkit/rust-lightning/releases
+[news211 bip389]: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
+[news258 bip389]: /en/newsletters/2023/07/05/#bips-1354
+[news232 async]: /en/newsletters/2023/01/04/#eclair-2464
+[dnssec]: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
+[rfc9102]: https://datatracker.ietf.org/doc/html/rfc9102
+[news307 bip353]: /en/newsletters/2024/06/14/#bips-1551
