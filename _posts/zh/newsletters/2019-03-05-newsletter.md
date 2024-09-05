@@ -46,7 +46,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中值得注意的更改。*
 
 - [Bitcoin Core #15471][] 删除了 GUI 和 RPC 中显示的关于“正在挖掘未知区块版本”的警告。该警告旨在告知用户矿工和用户可能正在使用 [BIP9][] 版本位协调软分叉激活，看到警告的用户可以升级他们的节点以在激活时理解和执行新的一致性规则。然而，矿工们越来越多地使用包含一些版本位作为随机数的公开 ASICBoost，如 [BIP320][] 所提议，导致该消息虚假触发。此合并只是删除了不再对用户有帮助的警告。是否项目将采用 BIP320、实施更复杂的警告系统，或尝试使用完全不同的解决方案来信号未来的软分叉（如通过生成（coinbase）交易信号）尚未决定。
 

@@ -48,7 +48,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的更改。*
 
 - [Bitcoin Core #15006][] 扩展了 `createwallet` RPC，增加了一个新的 `passphrase` 参数，允许默认加密创建新钱包。现有钱包仍然可以通过 `encryptwallet` RPC 转换为加密。
 

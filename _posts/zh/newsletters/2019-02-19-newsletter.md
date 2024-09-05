@@ -31,7 +31,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中值得注意的更改。*
 
 - [Bitcoin Core #15368][] 添加了对输出脚本描述符校验和的支持。[描述符][descriptor]用于监控接收支付和生成新地址，因此校验和通过防止复制错误提高了安全性，这些错误可能导致资金丢失或发送到不可支配的地址。一个 `#` 字符被添加到描述符语法中，用于将描述符与其 8 个字符的校验和分隔，例如 `wpkh(031234...cdef)#012345678`（参见脚注[^fn-example]了解扩展示例）。现在所有 Bitcoin Core RPC 返回的描述符都包含校验和。对于不太容易导致资金损失的 RPC，不要求输入包括校验和，但对于安全至关重要的 RPC，例如 `deriveaddress` 和 `importmulti`，要求用户提供校验和。最后，添加了一个新的 `getdescriptorinfo` RPC，接受一个描述符并返回包含校验和的规范形式以及一些其他信息。
 

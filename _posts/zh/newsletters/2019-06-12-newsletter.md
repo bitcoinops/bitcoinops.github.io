@@ -82,7 +82,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中的值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中的值得注意的变更。*
 
 - [LND #2802][] 允许 LND 计算特定路径成功的概率。然后它结合现有的路径总费用和最大 HTLC 超时时间的计算，使用该概率选择最佳路径。增加了几项新的配置选项，允许用户调整概率计算中使用的常量值，例如“当没有其他信息可用时，假定路径中某跳的成功概率”。拉取请求的作者还在上周末的 Breaking Bitcoin 会议上讨论了[路由成功概率][routing success probability]。
 
