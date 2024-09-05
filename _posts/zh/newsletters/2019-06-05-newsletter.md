@@ -56,7 +56,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*[Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案（BIPs）][bips repo] 本周的值得注意的更改。*
+*[Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]本周的值得注意的更改。*
 
 - [Bitcoin Core #15741][] 通过批处理数据库更新而不是顺序更新，加快了使用 `importmulti` RPC 导入密钥、地址和其他信息到钱包中的速度。在 PR 作者执行的测试中，这将导入 10,000 个地址的时间从 465 秒减少到 4 秒。
 

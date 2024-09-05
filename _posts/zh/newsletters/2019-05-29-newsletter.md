@@ -125,7 +125,7 @@ endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案（BIPs）][bips repo] 中的显著变化。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的显著变化。*
 
 - [LND #3098][] 增加了守护进程等待由远程对等节点启动的通道资金交易确认的最大块数，从 288 块（两天）增加到 2,016 块（两周）。这允许有耐心的用户支付更低的交易费用。
 

@@ -57,7 +57,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变更
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案（BIPs）][bips repo] 中的值得注意的变更。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的变更。*
 
 - [Bitcoin Core #15024][] 允许 `importmulti` RPC 使用[输出脚本描述符][output script descriptors]派生特定的私钥，然后导入所得的密钥。
 
