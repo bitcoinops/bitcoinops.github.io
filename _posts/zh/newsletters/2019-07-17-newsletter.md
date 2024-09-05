@@ -31,7 +31,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo] 和 [闪电 BOLTs][bolts repo] 中的值得注意的变化。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo] 中的值得注意的变化。*
 
 - [Bitcoin Core #15277][] 允许 Linux 版本的 Bitcoin Core 使用 [GNU Guix][]（发音为“geeks”）进行确定性编译。这相比目前仍然支持的基于 [Gitian][] 的机制所需设置要少得多，因此希望能促使更多用户能够独立验证发布的二进制文件仅来自于 Bitcoin Core 源代码及其依赖项。此外，Guix 需要的构建环境依赖项更少，并且正在进行的工作旨在从根本上消除它对典型构建工具链中任何预编译二进制文件的需求，这些都使得构建系统更容易审计。总的来说，这应当减少用户对 Bitcoin Core 开发者以及用于构建 Bitcoin Core 的软件的信任需求。尽管该合并的拉取请求目前只构建 Linux 二进制文件，但预计很快会支持 Windows 和 macOS。有关更多信息，请参阅 PR 作者 Carl Dong 最近在 Breaking Bitcoin 会议上的演讲（[视频][guix vid]，[文字记录][guix transcript]）。
 

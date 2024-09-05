@@ -29,7 +29,7 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中的值得注意的更改。注意：所有描述的合并到 Bitcoin Core 和 LND 的合并是到它们的主开发分支；有些也可能会被回移到它们的待定版本中。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中的值得注意的更改。注意：所有描述的合并到 Bitcoin Core 和 LND 的合并是到它们的主开发分支；有些也可能会被回移到它们的待定版本中。*
 
 - [Bitcoin Core #15711][] 在 GUI 中默认生成 bech32 地址。用户仍然可以在需要从尚未提供 bech32 发送支持的服务接收钱时，通过取消选中请求支付屏幕上的一个框来生成 P2SH 包装的 segwit 地址。bitcoind 默认生成 P2SH 包装的 segwit 地址未改变。
 

@@ -47,7 +47,7 @@ lang: zh
 
 ## 值得注意的代码和文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案 (BIPs)][bips repo] 中值得注意的变化。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案 (BIPs)][bips repo]中值得注意的变化。*
 
 - [LND #2022][] 允许创建“挂起发票”。这些是标准的闪电网络发票，但在收到付款时会以不同的方式处理。接收方不会立即返回付款前映像以领取已支付的资金，而是会延迟直到支付时间锁允许的最大时间。这使得接收方可以在知道资金可用后接受或拒绝付款。例如，Alice 可以在她的网站上自动生成挂起发票，但等到客户实际支付后再搜索其库存以找到请求的商品。如果她无法交付，这将给她一个取消付款的机会。拉取请求的主要描述中提供了其他示例用例。
 

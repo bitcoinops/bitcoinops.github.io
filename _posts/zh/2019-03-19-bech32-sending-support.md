@@ -142,7 +142,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #57][].*
 
-{% include specials/bech32/20-percentage-loss.md %}
+{% include specials/bech32/zh/20-percentage-loss.md %}
 
 ## BRD 实地报告
 
@@ -190,7 +190,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #54]: /zh/newsletters/2019/07/10/#bech32-发送支持
 [newsletter #55]: /zh/newsletters/2019/07/17/#bech32-发送支持
 [newsletter #56]: /zh/newsletters/2019/07/24/#bech32-发送支持
-[newsletter #57]: /en/newsletters/2019/07/31/#bech32-sending-support
+[newsletter #57]: /zh/newsletters/2019/07/31/#bech32-发送支持
 [newsletter #58]: /en/newsletters/2019/08/07/#bech32-sending-support
 [newsletter #59]: /en/newsletters/2019/08/14/#bech32-sending-support
 [newsletter #60]: /en/newsletters/2019/08/21/#bech32-sending-support

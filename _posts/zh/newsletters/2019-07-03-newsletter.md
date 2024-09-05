@@ -43,7 +43,7 @@ wiki page for changes -->{% endcomment %}
 
 ## 值得注意的代码和文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [Bitcoin Improvement Proposals (BIPs)][bips repo] 中的值得注意的变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]中的值得注意的变更。*
 
 - [C-Lightning #2767][] 禁用了在 [Newsletter #51][] 的*代码变更*部分中描述的 `listtransactions` RPC。该 RPC 目前有多个问题尚待解决，因此在 0.7.1 版本中被禁用。开发人员计划在发布后不久重新启用该功能。
 
