@@ -32,7 +32,7 @@ lang: zh
 
 *第 24 周中的第 21 周[系列][bech32 series]，关于允许你支付的对象访问 segwit 的所有优势。*
 
-{% include specials/bech32/21-brd.md %}
+{% include specials/bech32/zh/21-brd.md %}
 
 ## 值得注意的代码和文档更改
 
