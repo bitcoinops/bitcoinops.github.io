@@ -96,13 +96,13 @@ Bitcoins DAA only adjusts difficulty once every 2016 blocks.  Miners who
 begin a time warp attack cannot significantly affect difficulty for the
 first 2016-block epoch because both the first and last blocks in that
 epoch will need to have approximately accurate times.  For the second
-epoch, miners can make it appear that the first block was mined two
+epoch, miners can make it appear that the first block was mined four
 weeks in the past and the last block was mined at present, giving an
 average of about 20 minutes per block and causing the DAA to halve the
 difficulty.  Miners will then by able to complete the next epoch twice
 as fast and yet make it seem like it took about 25 minutes per block,
 lowering difficulty further.  They can repeat the attack indefinitely
-until they're producing one block per second, the lower bound allowed by
+until they're producing [six blocks per second][bse max block cadence], the lower bound allowed by
 the MTP rule.
 
 ## Consequences
@@ -172,3 +172,4 @@ useless.
 {% include linkers/issues.md issues="" %}
 [news16 forward blocks]: /en/newsletters/2018/10/09/#forward-blocks-on-chain-capacity-increases-without-a-hard-fork
 [news10 solutions]: /en/newsletters/2018/08/28/#requests-for-soft-fork-solutions-to-the-time-warp-attack
+[bse max block cadence]: https://bitcoin.stackexchange.com/q/123698

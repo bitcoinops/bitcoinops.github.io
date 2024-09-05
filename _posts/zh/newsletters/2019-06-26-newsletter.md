@@ -53,7 +53,7 @@ endcomment %}
 
 ## 值得注意的代码和文档更改
 
-*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和 [比特币改进提案（BIPs）][bips repo] 的值得注意的更改。*
+*本周 [Bitcoin Core][bitcoin core repo]、[LND][lnd repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[libsecp256k1][libsecp256k1 repo] 和[比特币改进提案（BIPs）][bips repo]的值得注意的更改。*
 
 - [Bitcoin Core #13756][] 添加了一个 `setwalletflag` RPC，可用于切换钱包标志，包括一个新的 `avoid_reuse` 标志（启用时）将防止钱包使用已用于支付的地址接收比特币。这可以防止区块链分析人员通过地址重复使用来关联多个支付，从而攻击隐私——这种攻击通常使用[粉尘攻击][dust attacks]来实现。这个新标志默认是禁用的，但启用后，可以与 [Newsletter #6][] 中描述的 `avoidpartialspends` 配置选项结合使用，以确保到目前为止接收到同一地址的所有比特币在同一时间被花费，确保没有余额剩余，这需要通过传递特殊选项才能花费。
 
