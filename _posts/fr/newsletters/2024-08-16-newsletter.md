@@ -11,7 +11,7 @@ Le bulletin de cette semaine décrit une nouvelle forme de manipulation temporel
 est particulièrement conséquente pour le nouveau testnet4, résume les discussions sur les mesures de
 mitigation proposées pour les préoccupations de déni de service des messages onion, sollicite des
 retours sur une proposition permettant aux payeurs LN d'optionnellement s'identifier, et annonce un
-changement majeur dans le système de build de Bitcoin Core qui pourrait affecter les développeurs et
+changement majeur dans la compilation de Bitcoin Core qui pourrait affecter les développeurs et
 intégrateurs en aval. Sont également incluses nos sections
 régulières décrivant les mises à jour des clients et services, avec les annonces de nouvelles versions et les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
@@ -78,7 +78,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   permet aux mineurs de produire jusqu'à [6 blocs par seconde][erhardt se].
 
   Pour réduire la difficulté de 1/4 dans une période de recalibrage, les mineurs attaquants
-  doivent régler le temps des blocs de recalibrage à 8 semaines plus dans le futur que le bloc au
+  doivent régler le temps des blocs de recalibrage à 8 semaines de plus que le bloc au
   début de la période actuelle. Pour faire cela
   deux fois de suite au début de l'attaque nécessite finalement de régler
   le temps de certains blocs à 16 semaines dans le futur. Les nœuds complets
@@ -124,27 +124,27 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Van Dam), gaspillant potentiellement la bande passante pour tous ces nœuds. Ils décrivent plusieurs
   méthodes pour réduire le risque d'abus de bande passante, incluant une méthode astucieuse exigeant
   une quantité exponentiellement croissante de PoW pour chaque saut supplémentaire, rendant les routes
-  courtes économiquement avantageuses mais les routes longues coûteuses.
+  courtes moins couteuses en calcul que les routes longues.
 
   Matt Corallo a suggéré d'essayer d'abord une idée précédemment proposée (voir le [Bulletin
   #207][news207 onion]) pour fournir une contre-pression sur les nœuds envoyant trop de messages onion
   avant de travailler sur quelque chose de plus compliqué.
 
 - **Identification et authentification optionnelles des payeurs LN :** Bastien Teinturier a
-  [posté][teinturier auth] sur Delving Bitcoin pour proposer des méthodes permettant aux dépensiers
+  [posté][teinturier auth] sur Delving Bitcoin pour proposer des méthodes permettant aux payeurs
   d'inclure éventuellement des données supplémentaires avec leurs paiements qui permettraient aux
   récepteurs d'identifier ces paiements comme provenant d'un contact connu. Par exemple, si Alice
   génère une [offre][topic offers] que Bob paie, elle peut vouloir une preuve cryptographique que le
   paiement vient de Bob et non d'un tiers se faisant passer pour Bob. Les offres sont conçues par
-  défaut pour cacher les identités du dépensier et du récepteur, donc des mécanismes supplémentaires
+  défaut pour cacher les identités du payeur et du récepteur, donc des mécanismes supplémentaires
   sont nécessaires pour permettre une identification et une authentification facultatives.
 
-  Teinturier commence par décrire un mécanisme de distribution de _clé de contact_ opt-in que Bob peut
+  Teinturier commence par décrire un mécanisme de distribution d'une souscription de _clé de contact_ que Bob peut
   utiliser pour divulguer une clé publique à Alice. Il décrit ensuite trois candidats potentiels pour
   un mécanisme opt-in supplémentaire que Bob peut utiliser pour signer ses paiements à Alice. Si Bob
   utilise ce mécanisme, le portefeuille LN d'Alice peut authentifier cette signature comme appartenant
   à Bob et afficher cette information pour elle. Dans les paiements non authentifiés, les champs
-  définis par le dépensier (tels que le champ `payer_note` en forme libre) peuvent être marqués comme
+  définis par le payeur (tels que le champ `payer_note` en forme libre) peuvent être marqués comme
   non fiables pour décourager les utilisateurs de se fier aux informations fournies.
 
   Des retours sur les méthodes cryptographiques à utiliser sont demandés, avec Teinturier prévoyant de
@@ -153,13 +153,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 - **Passage de Bitcoin Core au système de construction CMake :** Cory Fields a [posté][fields cmake]
   sur la liste de diffusion Bitcoin-Dev pour annoncer le passage imminent de Bitcoin Core du système
   de construction GNU autotools au
-  système de construction CMake, qui a été dirigé par Hennadii Stepanov avec des contributions de
+  système de compilation CMake, qui a été dirigé par Hennadii Stepanov avec des contributions de
   Michael Ford pour les corrections de bugs et la modernisation, avec des revues et contributions de
   plusieurs autres développeurs (y compris Fields). Cela ne devrait pas affecter ceux qui utilisent
-  les binaires pré-construits disponibles sur BitcoinCore.org---ce que nous attendons que la plupart
+  les binaires compilés disponibles sur BitcoinCore.org---ce que nous attendons que la plupart
   des gens utilisent. Cependant, les développeurs et les intégrateurs qui construisent leurs propres
   binaires pour les tests ou la personnalisation peuvent être affectés---surtout ceux travaillant sur
-  des plateformes ou des configurations de construction peu communes.
+  des plateformes ou des configurations de compilations peu communes.
 
   L'email de Fields fournit des réponses aux questions anticipées et demande à quiconque construit
   Bitcoin Core par lui-même de tester le [PR #30454][bitcoin core #30454] et de signaler tout problème.
@@ -172,7 +172,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 ## Mises à jour et versions candidates
 
 *Nouvelles sorties et candidats à la sortie pour des projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de passer aux nouvelles sorties ou d'aider à tester les candidats à la sortie.*
+Veuillez envisager de mettre à jour vers les nouvelles versions ou d'aider à tester les candidats à la sortie.*
 
 - [BDK 1.0.0-beta.1][] est un candidat à la sortie pour cette bibliothèque pour construire des
   portefeuilles et d'autres applications activées par Bitcoin. Le paquet Rust `bdk` original a été
@@ -188,7 +188,7 @@ Veuillez envisager de passer aux nouvelles sorties ou d'aider à tester les cand
 
 ## Changements notables dans le code et la documentation
 
-_Changes récents notables dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
+_Changements récents notables dans [Bitcoin Core][bitcoin core repo], [Core Lightning][core lightning
 repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][libsecp256k1 repo],
 [Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
 Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement Proposals (BIPs)][bips repo],
@@ -197,8 +197,8 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #29519][] réinitialise la valeur `pindexLastCommonBlock` après qu'un instantané
   [assumeUTXO][topic assumeutxo] est chargé, de sorte qu'un nœud priorise le téléchargement de blocs
-  après le bloc le plus récent dans l'instantané. Cela corrige un bug où un nœud définirait
-  `pindexLastCommonBlock` à partir des pairs existants avant de charger l'instantané et commencerait à
+  après le bloc le plus récent dans l'image. Cela corrige un bug où un nœud définirait
+  `pindexLastCommonBlock` à partir des pairs existants avant de charger l'image et commencerait à
   télécharger des blocs à partir de ce bloc beaucoup plus ancien. Bien que les blocs plus anciens
   doivent encore être téléchargés pour la validation en arrière-plan d'assumeUTXO, les blocs plus
   récents devraient recevoir la priorité afin que
@@ -210,7 +210,7 @@ inquisition repo], et [BINANAs][binana repo]._
   de bloc à partir de nombreuses autres sources internes.
 
 - [Bitcoin Core #28280][] optimise la performance du Téléchargement Initial de Bloc (IBD) pour les
-  nœuds élagués en ne vidant pas le cache UTXO pendant les vidanges d'élagage. Il le fait en suivant
+  nœuds élagués en ne vidant pas le cache UTXO pendant le processus de vidanges d'élagage. Il le fait en suivant
   séparément les entrées de cache "sales"---les entrées qui ont changé depuis qu'elles ont été écrites
   pour la dernière fois dans la base de données. Cela permet à un nœud d'éviter de scanner inutilement
   tout le cache pendant les vidanges d'élagage et de se concentrer à la place sur les entrées sales.
