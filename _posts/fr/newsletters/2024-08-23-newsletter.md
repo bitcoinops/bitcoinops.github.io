@@ -26,7 +26,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   contribuer à l'entropie sélectionnée par un dispositif de signature matériel d'une manière qui
   permet au portefeuille logiciel de vérifier plus tard que l'entropie a été utilisée.
   Sign-to-contract est une variation de [pay-to-contract][topic p2c] : dans pay-to-contract, la clé
-  publique du destinataire est modifiée ; dans sign-to-contract, le nonce de signature du dépenseur
+  publique du destinataire est modifiée ; dans sign-to-contract, le nonce de signature de l'envoyeur
   est modifié.
 
   L'avantage de ce protocole, par rapport au protocole implémenté pour les dispositifs de signature
@@ -84,7 +84,7 @@ portefeuilles et services Bitcoin.*
 - **Sortie de Taproot Assets v0.4.0-alpha :**
   La version [v0.4.0-alpha][taproot assets v0.4.0] prend en charge le protocole [Taproot Assets][topic
   client-side validation] sur le mainnet pour l'émission d'actifs onchain et les échanges atomiques en
-  utilisant [PSBT][topic psbt] et en routant les actifs à travers le Lightning Network.
+  utilisant les [PSBT][topic psbt] et en routant les actifs à travers le Lightning Network.
 
 - **Outil de benchmarking Stratum v2 publié :**
   La première version [0.1.0][sbm 0.1.0] permet de tester, de rapporter et de comparer les
@@ -98,8 +98,8 @@ portefeuilles et services Bitcoin.*
 
 - **Sortie de SeedSigner 0.8.0 :**
   Le projet de dispositif de signature matériel Bitcoin [SeedSigner][seedsigner website] a ajouté des
-  fonctionnalités de signature pour P2PKH et multisig P2SH, un support supplémentaire pour
-  [PSBT][topic psbt], et activé par défaut le support de [taproot][topic taproot] dans la version
+  fonctionnalités de signature pour P2PKH et multisig P2SH, un support supplémentaire pour les
+  [PSBTs][topic psbt], et activé par défaut le support de [taproot][topic taproot] dans la version
   [0.8.0][seedsigner 0.8.0].
 
 - **Sortie de Floresta 0.6.0 :**
@@ -109,13 +109,13 @@ portefeuilles et services Bitcoin.*
 
 ## Mises à jour et versions candidates
 
-*Nouvelles versions et candidats à la version pour les projets d'infrastructure Bitcoin populaires.
+*Nouvelles versions et version candidates pour les projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les candidats à la version.*
 
-- [Core Lightning 24.08rc2][] est un candidat à la version pour la prochaine version majeure de
+- [Core Lightning 24.08rc2][] est une version candidate pour la prochaine version majeure de
   cette implémentation populaire de nœud LN.
 
-- [LND v0.18.3-beta.rc1][] est un candidat à la version pour une correction mineure de bug de cette
+- [LND v0.18.3-beta.rc1][] est une version candidate pour une correction mineure de bug de cette
   implémentation populaire de nœud LN.
 
 ## Changements notables dans le code et la documentation
@@ -198,7 +198,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
   d'autres changements clarifiants.
 
 - [BLIPs #39][] ajoute [BLIP39][] pour un champ optionnel `b` dans les factures [BOLT11][] pour
-  communiquer un [chemin aveuglé][topic rv routing] pour payer le nœud du destinataire.
+  communiquer un [chemin aveugle][topic rv routing] pour payer le nœud du destinataire.
   Ceci est implémenté dans LND (voir le Bulletin [#315][news315 blinded]) et est destiné à être utilisé
   jusqu'à ce que le protocole [offers][topic offers] soit largement déployé dans le réseau.
 
