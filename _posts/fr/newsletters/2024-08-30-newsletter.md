@@ -25,7 +25,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   des blocs invalides si la même correction était déployée sur le mainnet (comme partie d'un [soft
   fork de nettoyage][topic consensus cleanup]). Mike Schmidt a [référé][schmidt oblivious] les
   lecteurs de la liste à une [discussion][towns oblivious] sur la liste de diffusion Bitcoin-Dev
-  concernant les [parts obliques][topic block withholding] (voir le [Bulletin #315][news315
+  concernant les [parts à considérer][topic block withholding] (voir le [Bulletin #315][news315
   oblivious]).
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
@@ -74,29 +74,29 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 
 ## Mises à jour et versions candidates
 
-*Nouvelles sorties et candidats à la sortie pour des projets d'infrastructure Bitcoin populaires.
+*Nouvelles mises à jour et versions candidates à la sortie pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
-les candidats à la sortie.*
+les versions candidates.*
 
-- [Core Lightning 24.08rc2][] est un candidat à la sortie pour la prochaine version majeure
+- [Core Lightning 24.08rc2][] est une mise-à-jour candidate pour la prochaine version majeure
   de cette implémentation populaire de nœud LN.
 
-- [LND v0.18.3-beta.rc1][] est un candidat à la sortie pour une version mineure de correction de bugs
+- [LND v0.18.3-beta.rc1][] est une mise-a-jour candidate pour une version mineure de correction de bugs
   de cette implémentation populaire de nœud LN.
 
-- [BDK 1.0.0-beta.2][] est un candidat à la sortie pour cette bibliothèque pour
+- [BDK 1.0.0-beta.2][] est une mise-a-jour candidate pour cette bibliothèque pour
   la construction de portefeuilles et d'autres applications activées par Bitcoin. Le paquet `bdk`
   original a été renommé en `bdk_wallet` et les modules de couche inférieure ont été extraits dans leurs
   propres paquets de codes, y compris `bdk_chain`, `bdk_electrum`, `bdk_esplora`, et `bdk_bitcoind_rpc`.
   Le paquet `bdk_wallet` "est la première version à offrir une API stable 1.0.0."
 
-- [Bitcoin Core 28.0rc1][] est un candidat à la sortie pour la prochaine version majeure
+- [Bitcoin Core 28.0rc1][] est une mise-a-jour candidate pour la prochaine version majeure
   de l'implémentation de nœud complet prédominante. Un [guide de test][bcc testing] est en
   préparation.
 
 ## Changements notables de code et de documentation
 
-_Changes récents notables dans [Bitcoin Core][bitcoin core repo], [Core
+Changements récents notables dans [Bitcoin Core][bitcoin core repo], [Core
 Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
 [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
 Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
