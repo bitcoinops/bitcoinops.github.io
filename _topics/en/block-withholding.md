@@ -41,7 +41,7 @@ see_also:
 excerpt: >
   **Block withholding** is an attack against pooled mining where a miner
   submits and receives payment for shares that are not eligible to
-  become full blocks but doesn't not submit shares that are eligible to
+  become full blocks but doesn't submit shares that are eligible to
   become full blocks.  This allows the miner to earn 99.9% of their
   expected revenue without the pool earning anything from the miner's
   work.  **Oblivious shares** is a proposed solution to block
