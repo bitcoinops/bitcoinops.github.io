@@ -17,29 +17,29 @@ principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Extension Stratum v2 pour le partage des revenus de frais :** Filippo Merli a [posté][merli
-  stratumfees] sur Delving Bitcoin à propos d'une extension à [Stratum v2][topic pooled mining] qui
+- **Extension Stratum v2 pour le partage des revenus de frais :** Filippo Merli a [publié][merli
+  stratumfees] sur Delving Bitcoin un article sur une extension à [Stratum v2][topic pooled mining] qui
   permettra de suivre le montant des frais inclus dans les _parts_ lorsque les parts contiennent des
   transactions sélectionnées par un mineur individuel. Cela peut être utilisé pour ajuster le montant
   payé au mineur par le pool, avec les mineurs sélectionnant des transactions à taux de frais plus
   élevés étant plus rémunérés.
 
-  Merli renvoie à un [document][merli paper] qu'il a co-écrit examinant certains des défis de payer à
-  différents mineurs des montants différents basés sur les transactions qu'ils sélectionnent. Le
+  Merli renvoie à un [document][merli paper] dont il est co-auteur et qui examine certains des défis liés au paiement de montants
+  différents à différents mineurs en fonction des transactions qu'ils sélectionnent. Le
   document suggère un schéma compatible avec un schéma de paiement de minage en pool _pay per last N
-  shares_ (PPLNS). Son post renvoie à deux implémentations du schéma en cours.
+  shares_ (PPLNS). Son article renvoie à deux implémentations du schéma en cours.
 
 - **Fonds de recherche OP_CAT :** Victor Kolobov a [posté][kolobov cat] sur la liste de diffusion
   Bitcoin-Dev pour annoncer un fonds de 1 million de dollars pour la recherche sur une proposition de
-  soft fork pour ajouter un opcode [`OP_CAT`][topic op_cat]. "Les sujets d'intérêt incluent, mais ne
-  sont pas limités à : les implications de sécurité de l'activation de `OP_CAT` sur Bitcoin, le calcul
+  soft fork pour ajouter un opcode [`OP_CAT`][topic op_cat]. "Les sujets d'intérêt incluent,
+  sans toutefois s'y limiter : les implications sur la sécurité liés de l'activation de `OP_CAT` sur Bitcoin, le calcul
   basé sur `OP_CAT` et la logique des scripts de verrouillage sur Bitcoin, les applications et
   protocoles utilisant `OP_CAT` sur Bitcoin, et la recherche générale liée à `OP_CAT` et son impact."
-  Les soumissions doivent être reçues avant le 1er janvier 2025.
+  Les soumissions doivent être envoyées avant le 1er janvier 2025.
 
-- **Atténuation des vulnérabilités des arbres de Merkle :** Eric Voskuil a [posté][voskuil spv] sur
-  le fil de discussion Delving Bitcoin à propos de la [proposition de soft fork de nettoyage du
-  consensus][topic consensus cleanup] (voir le [Bulletin #296][news296 cleanup]) une demande de mise à
+- **Atténuation des vulnérabilités des arbres de Merkle :** Eric Voskuil a [publié][voskuil spv] sur
+  le fil de discussion Delving Bitcoin concerant la [proposition de soft fork de nettoyage du
+  consensus][topic consensus cleanup] (voir le [Bulletin #296][news296 cleanup]), une demande de mise à
   jour étant donné la récente [discussion][voskuil spv dev] sur la liste de diffusion Bitcoin-Dev. En
   particulier, il n'a vu "aucune justification pour la propositon d'invalidation des transactions de 64
   octets" basée sur son argument qu'il n'y a pas d'amélioration de performance pour les nœuds complets
@@ -53,12 +53,12 @@ principaux logiciels d'infrastructure Bitcoin.
   incorrect."
   Cependant, Poinsot et d'autres avaient également précédemment proposé d'interdire les transactions
   de 64 octets pour protéger les logiciels vérifiant les preuves de Merkle contre le CVE-2017-12842.
-  Cette vulnérabilité affecte les portefeuilles légers qui utilisent la _simplified payment
+  Cette vulnérabilité affecte les portefeuilles légers qui utilisent _simplified payment
   verification_ (SPV) comme décrit dans le [document original sur Bitcoin][]. Elle peut également
-  affecter les [sidechains][topic sidechains] qui effectuent la SPV et pourrait affecter certaines
+  affecter les [sidechains][topic sidechains] qui effectuent un SPV et pourrait affecter certaines
   propositions de [covenants][topic covenants] nécessitant l'activation d'un soft fork.
 
-  Depuis la publication du CVE-2017-12842, il est connu que la SPV peut être sécurisée par une
+  Depuis la publication du CVE-2017-12842, il est connu que SPV peut être sécurisé par une
   vérification supplémentaire de la profondeur de la transaction coinbase dans un bloc par le
   vérificateur. Voskuil estime que cela nécessiterait en moyenne 576 octets supplémentaires pour les
   blocs modernes typiques---une petite augmentation de la bande passante. Poinsot a [résumé][poinsot
