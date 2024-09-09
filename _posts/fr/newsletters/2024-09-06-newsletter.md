@@ -85,8 +85,7 @@ les versions candidates.*
 - [LDK 0.0.124][] est la dernière version de cette bibliothèque pour construire des applications
   activées par LN.
 
-- [LND v0.18.3-beta.rc2][] est une version candidate pour une version de correction mineure de bug 
-  dans cette implémentation populaire du nœud LN.
+- [LND v0.18.3-beta.rc2][] est une version candidate pour une version de correction mineure de bug dans cette implémentation populaire du nœud LN.
 
 - [BDK 1.0.0-beta.2][] est une version candidate pour cette bibliothèque de construction de
   portefeuilles et d'autres applications activées par Bitcoin. Le paquet Rust `bdk` original a été
