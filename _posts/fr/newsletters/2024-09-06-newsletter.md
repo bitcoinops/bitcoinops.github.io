@@ -75,7 +75,7 @@ principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles versions et versions candidates
 
-*Nouvelles version et versions candidates à la sortie pour des projets d'infrastructure Bitcoin populaires.
+*Nouvelles versions et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
 les versions candidates.*
 
