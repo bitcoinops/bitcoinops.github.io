@@ -166,7 +166,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 *最初发布于 [Newsletter #61][].*
 
-{% include specials/bech32/24-conclusion.md %}
+{% include specials/bech32/zh/24-conclusion.md %}
 
 ## 脚注
 {:.no_toc}
@@ -194,4 +194,4 @@ h2:not(:first-of-type) { margin-top: 3em; }
 [newsletter #58]: /zh/newsletters/2019/08/07/#bech32-发送支持
 [newsletter #59]: /zh/newsletters/2019/08/14/#bech32-发送支持
 [newsletter #60]: /zh/newsletters/2019/08/21/#bech32-发送支持
-[newsletter #61]: /en/newsletters/2019/08/28/#bech32-sending-support
+[newsletter #61]: /zh/newsletters/2019/08/28/#bech32-发送支持
