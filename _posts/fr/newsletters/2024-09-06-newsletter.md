@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine résume une proposition permettant aux mineurs de pool Stratum v2 de
 recevoir une compensation pour les frais de transaction contenus dans les modèles de blocs qu'ils
-transforment en parts, annonce un fonds de recherche enquêtant sur la proposition d'opcode `OP_CAT`, et
+transforment en parts, annonce un fond de recherche enquêtant sur la proposition de l'opcode `OP_CAT`, et
 décrit une discussion sur la mitigation des vulnérabilités des arbres de Merkle avec ou sans un soft
 fork. Nous incluons également nos sections habituelles qui annoncent
 de nouvelles versions et des versions candidates, et décrivent les changements notables apportés aux
@@ -21,7 +21,7 @@ principaux logiciels d'infrastructure Bitcoin.
   stratumfees] sur Delving Bitcoin un article sur une extension à [Stratum v2][topic pooled mining] qui
   permettra de suivre le montant des frais inclus dans les _parts_ lorsque les parts contiennent des
   transactions sélectionnées par un mineur individuel. Cela peut être utilisé pour ajuster le montant
-  payé au mineur par le pool, avec les mineurs sélectionnant des transactions à taux de frais plus
+  payé au mineur par la pool, avec les mineurs sélectionnant des transactions à taux de frais plus
   élevés étant plus rémunérés.
 
   Merli renvoie à un [document][merli paper] dont il est co-auteur et qui examine certains des défis liés au paiement de montants
@@ -30,15 +30,15 @@ principaux logiciels d'infrastructure Bitcoin.
   shares_ (PPLNS). Son article renvoie à deux implémentations du schéma en cours.
 
 - **Fonds de recherche OP_CAT :** Victor Kolobov a [posté][kolobov cat] sur la liste de diffusion
-  Bitcoin-Dev pour annoncer un fonds de 1 million de dollars pour la recherche sur une proposition de
+  Bitcoin-Dev pour annoncer un fonds de 1 million de dollars pour de la recherche sur une proposition de
   soft fork pour ajouter un opcode [`OP_CAT`][topic op_cat]. "Les sujets d'intérêt incluent,
-  sans toutefois s'y limiter : les implications sur la sécurité liés de l'activation de `OP_CAT` sur Bitcoin, le calcul
+  sans toutefois s'y limiter : les implications sur la sécurité liés à l'activation de `OP_CAT` sur Bitcoin, le calcul
   basé sur `OP_CAT` et la logique des scripts de verrouillage sur Bitcoin, les applications et
   protocoles utilisant `OP_CAT` sur Bitcoin, et la recherche générale liée à `OP_CAT` et son impact."
   Les soumissions doivent être envoyées avant le 1er janvier 2025.
 
 - **Atténuation des vulnérabilités des arbres de Merkle :** Eric Voskuil a [publié][voskuil spv] sur
-  le fil de discussion Delving Bitcoin concerant la [proposition de soft fork de nettoyage du
+  le fil de discussion Delving Bitcoin concernant la [proposition de soft fork de nettoyage du
   consensus][topic consensus cleanup] (voir le [Bulletin #296][news296 cleanup]), une demande de mise à
   jour étant donné la récente [discussion][voskuil spv dev] sur la liste de diffusion Bitcoin-Dev. En
   particulier, il n'a vu "aucune justification pour la propositon d'invalidation des transactions de 64
@@ -62,7 +62,7 @@ principaux logiciels d'infrastructure Bitcoin.
   vérification supplémentaire de la profondeur de la transaction coinbase dans un bloc par le
   vérificateur. Voskuil estime que cela nécessiterait en moyenne 576 octets supplémentaires pour les
   blocs modernes typiques---une petite augmentation de la bande passante. Poinsot a [résumé][poinsot
-  spv] les arguments et Anthony Towns a [développé][towns depth] un argument concernant la complexité
+  spv] les arguments et Anthony Towns s'est [étendu][towns depth] sur un argument concernant la complexité
   de l'exécution de la vérification supplémentaire de la profondeur.
 
   Voskuil a également fait référence à une [suggestion][lerner commitment] précédente de Sergio Demian
@@ -73,33 +73,33 @@ principaux logiciels d'infrastructure Bitcoin.
 
   La discussion était en cours au moment de la rédaction.
 
-## Mises à jour et versions candidates
+## Nouvelles versions et versions candidates
 
-*Nouvelles versions et versions candidates pour les principaux projets
-d'infrastructure Bitcoin. Veuillez envisager de passer aux nouvelles
-versions ou d'aider à tester les versions candidates.*
+*Nouvelles version et versions candidates à la sortie pour des projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
+les versions candidates.*
 
-- [Core Lightning 24.08][] est une sortie majeure de cette implémentation populaire de nœud LN
+- [Core Lightning 24.08][] est une version majeure de cette implémentation populaire de nœud LN
   contenant de nouvelles fonctionnalités et corrections de bugs.
 
-- [LDK 0.0.124][] est la dernière sortie de cette bibliothèque pour construire des applications
+- [LDK 0.0.124][] est la dernière version de cette bibliothèque pour construire des applications
   activées par LN.
 
-- [LND v0.18.3-beta.rc2][] est un candidat à la sortie pour une version mineure de correction de
-  bugs de cette implémentation populaire de nœud LN.
+- [LND v0.18.3-beta.rc2][] est une version candidate pour une version de correction mineure de bug 
+  dans cette implémentation populaire du nœud LN.
 
-- [BDK 1.0.0-beta.2][] est un candidat à la sortie pour cette bibliothèque de construction de
+- [BDK 1.0.0-beta.2][] est une version candidate pour cette bibliothèque de construction de
   portefeuilles et d'autres applications activées par Bitcoin. Le paquet Rust `bdk` original a été
   renommé en `bdk_wallet` et les modules de couche inférieure ont été extraits dans leurs propres
   paquets, incluant `bdk_chain`, `bdk_electrum`, `bdk_esplora`, et `bdk_bitcoind_rpc`. Le paquet
   `bdk_wallet` "est la première version à offrir une API stable 1.0.0."
 
-- [Bitcoin Core 28.0rc1][] est un candidat à la sortie pour la prochaine version majeure de
+- [Bitcoin Core 28.0rc1][] est une version candidate pour la prochaine version majeure de
   l'implémentation de nœud complet prédominante. Un [guide de test][bcc testing] est disponible.
 
 ## Changements notables dans le code et la documentation
 
-_Changements notables cette semaine dans[Bitcoin Core][bitcoin core repo], [Core Lightning][core
+_Changements notables récents dans[Bitcoin Core][bitcoin core repo], [Core Lightning][core
 lightning repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo],
 [libsecp256k1][libsecp256k1 repo], [Hardware Wallet Interface (HWI)][hwi repo], [Rust Bitcoin][rust
 bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
@@ -111,8 +111,8 @@ développement principale, donc ces changements ne seront probablement pas publi
 mois après la sortie de la version à venir 28._
 
 - [Bitcoin Core #30454][] et [#30664][bitcoin core #30664] ajoutent respectivement un système de
-  construction basé sur CMake (voir le [Bulletin #316][news316 cmake]) et suppriment l'ancien système
-  de construction basé sur autotools. Voir également les suivis dans les PR [#30779][bitcoin core
+  compilation basé sur CMake (voir le [Bulletin #316][news316 cmake]) et suppriment l'ancien système
+  de compilation basé sur autotools. Voir également les suivis dans les PRs [#30779][bitcoin core
   #30779], [#30785][bitcoin core #30785], [#30763][bitcoin core #30763], [#30777][bitcoin core
   #30777], [#30752][bitcoin core #30752], [#30753][bitcoin core #30753], [#30754][bitcoin core
   #30754], [#30749][bitcoin core #30749], [#30653][bitcoin core #30653], [#30739][bitcoin core
