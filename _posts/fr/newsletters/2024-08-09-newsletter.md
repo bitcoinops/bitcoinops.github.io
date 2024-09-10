@@ -329,7 +329,7 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #29775][] ajoute une option de configuration `testnet4` qui définira le réseau sur
   [testnet4][topic testnet] comme spécifié dans [BIP94][]. Testnet4 inclut la correction de plusieurs
-  problèmes avec le précédent testnet3 (voir [le [Bulletin #306][news306 testnet]). L'option de
+  problèmes avec le précédent testnet3 (voir le [Bulletin #306][news306 testnet]). L'option de
   configuration `testnet` existante de Bitcoin Core qui utilise testnet3 reste disponible mais devrait
   être dépréciée et supprimée dans les versions ultérieures.
 
