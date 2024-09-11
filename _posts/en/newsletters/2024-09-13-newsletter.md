@@ -91,13 +91,32 @@ _Note: the commits to Bitcoin Core mentioned below apply to its master
 development branch, so those changes will likely not be released until
 about six months after the release of the upcoming version 28._
 
-- [Bitcoin Core #30509][] multiprocess: Add -ipcbind option to bitcoin-node
+- [Bitcoin Core #30509][] adds an `-ipcbind` option to `bitcoin-node` to allow
+  other processes to connect to and control the node via a unix socket. In
+  combination with the upcoming PR [Bitcoin Core #30510][], this will allow an
+  external [Stratum v2][topic pooled mining] mining service to create, manage,
+  and submit block templates. This is part of the Bitcoin Core [multiprocess
+  project][multiprocess project]. See Newsletters [#99][news99 multi] and
+  [#147][news147 multi].
 
-- [Bitcoin Core #29605][] net: Favor peers from addrman over fetching seednodes
+- [Bitcoin Core #29605][] changes peer discovery to prioritize peers from the
+  local address manager over fetching from seed nodes, to reduce the influence
+  of the latter on peer selection and reduce unnecessary information sharing.
+  By default, seed nodes are a backup in case all DNS seeds are
+  unreachable (which is very uncommon on mainnet); however users of test
+  networks or customized nodes may manually add seed nodes to find
+  similarly configured nodes.  Before this PR, adding a seed node would
+  result in it being queried for new addresses almost every time the
+  node was started, potentially allowing it to influence peer selection
+  and to only recommend peers that shared data with it.  With this PR,
+  only when the address manager is empty, or after a period of unsuccessful
+  address attempts, will seed nodes be added to the address fetch queue in
+  random order. See Newsletter [#301][news301 seednode] for more on seed nodes.
+
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
@@ -106,3 +125,7 @@ about six months after the release of the upcoming version 28._
 [maredia post]: https://delvingbitcoin.org/t/lava-loans-trust-minimized-bitcoin-secured-loans/1112
 [lava loans]: https://github.com/lava-xyz/loans-paper/blob/960b91af83513f6a17d87904457e7a9e786b21e0/loans_v2.pdf
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
+[news99 multi]: /en/newsletters/2020/05/27/#bitcoin-core-18677
+[news147 multi]: /en/newsletters/2021/05/05/#bitcoin-core-19160
+[multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
+[news301 seednode]: /en/newsletters/2024/05/08/#bitcoin-core-28016
