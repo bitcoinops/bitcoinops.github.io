@@ -31,7 +31,7 @@ Bitcoin infrastructure software.
   based on the transactions they select. The paper suggests a scheme
   that is compatible with a _pay per last N shares_ (PPLNS) pooled
   mining payout scheme.  His post links to two in-progress
-  implementations of the scheme.
+  implementations of the scheme. {% assign timestamp="1:49" %}
 
 - **OP_CAT research fund:** Victor Kolobov [posted][kolobov cat] to the
   Bitcoin-Dev mailing list to announce a $1 million fund for research
@@ -40,8 +40,7 @@ Bitcoin infrastructure software.
   implications of `OP_CAT` activation on Bitcoin, `OP_CAT`-based computing
   and locking script logic on Bitcoin, applications and protocols
   utilizing `OP_CAT` on Bitcoin, and general research related to
-  `OP_CAT` and its impact." Submissions must be received by 1 January
-  2025.
+  `OP_CAT` and its impact." Submissions must be received by 1 January 2025. {% assign timestamp="17:53" %}
 
 - **Mitigating merkle tree vulnerabilities:** Eric Voskuil [posted][voskuil
   spv] to the Delving Bitcoin discussion thread about the [consensus
@@ -84,7 +83,7 @@ Bitcoin infrastructure software.
   64-byte transactions and would allow SPV proofs to be maximally
   efficient.
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="22:43" %}
 
 ## Releases and release candidates
 
@@ -93,24 +92,24 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [Core Lightning 24.08][] is a major release of this popular LN node
-  implementation containing new features and bug fixes.
+  implementation containing new features and bug fixes. {% assign timestamp="55:21" %}
 
 - [LDK 0.0.124][] is the latest releases of this library for building
-  LN-enabled applications.
+  LN-enabled applications. {% assign timestamp="57:59" %}
 
 - [LND v0.18.3-beta.rc2][] is a release candidate for a minor bug fix
-  release of this popular LN node implementation.
+  release of this popular LN node implementation. {% assign timestamp="1:06:19" %}
 
 - [BDK 1.0.0-beta.2][] is a release candidate for this library for
   building wallets and other Bitcoin-enabled applications.  The original
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="1:06:43" %}
 
 - [Bitcoin Core 28.0rc1][] is a release candidate for the next major
   version of the predominant full node implementation.  A [testing
-  guide][bcc testing] is available.
+  guide][bcc testing] is available. {% assign timestamp="1:07:27" %}
 
 ## Notable code and documentation changes
 
@@ -139,20 +138,20 @@ months after the release of the upcoming version 28._
   [#30744][bitcoin core #30744], [#30734][bitcoin core #30734],
   [#30738][bitcoin core #30738], [#30731][bitcoin core #30731],
   [#30508][bitcoin core #30508], [#30729][bitcoin core #30729], and
-  [#30712][bitcoin core #30712].
+  [#30712][bitcoin core #30712]. {% assign timestamp="1:15:05" %}
 
 - [Bitcoin Core #22838][] implements multiple derivation path
   [descriptors][topic descriptors] ([BIP389][]), which allows a single
   descriptor string to specify two related derivation paths, the first for
   receiving payments, and the second for internal use (such as for change). See
-  Newsletters [#211][news211 bip389] and [#258][news258 bip389].
+  Newsletters [#211][news211 bip389] and [#258][news258 bip389]. {% assign timestamp="1:17:41" %}
 
 - [Eclair #2865][] adds the ability to wake up a disconnected mobile peer by
   attempting to connect to its last known IP address and push a mobile
   notification. This is especially useful in the context of [async
   payments][topic async payments] where the local node holds a payment or an [onion
   message][topic onion messages] and when the peer comes back online, it is
-  delivered. See Newsletter [#232][news232 async].
+  delivered. See Newsletter [#232][news232 async]. {% assign timestamp="1:19:56" %}
 
 - [LND #9009][] introduces a mechanism to ban peers for sending invalid channel
   announcements, such as channels that are already spent, have no funding
@@ -164,13 +163,15 @@ months after the release of the upcoming version 28._
   - For banned peers with a shared channel, the node ignores all of their
     channel announcements for 48 hours.
 
+  {% assign timestamp="1:21:49" %}
+
 - [LDK #3268][] adds `ConfirmationTarget::MaximumFeeEstimate` for a more
   conservative [fee estimation][topic fee estimation] method for [dust][topic
   uneconomical outputs] calculations when checking counterparty feerates, to
   avoid unnecessary force closures caused by sudden fee spikes. This PR also
   splits `ConfirmationTarget::OnChainSweep` into `UrgentOnChainSweep` and
   `NonUrgentOnChainSweep` to distinguish between time-sensitive (e.g., with
-  expiring [HTLCs][topic htlc]) and non-urgent force closures.
+  expiring [HTLCs][topic htlc]) and non-urgent force closures. {% assign timestamp="1:23:33" %}
 
 - [HWI #742][] adds support for the Trezor Safe 5 hardware signing device.
 
@@ -178,7 +179,7 @@ months after the release of the upcoming version 28._
   proofs when using [BIP353][]. External devices such as hardware signers may examine
   the PSBT outputs to retrieve [RFC 9102][rfc9102]-formatted proofs, which
   enforce time constraints to ensure that only valid proofs are accepted. See
-  Newsletter [#307][news307 bip353].
+  Newsletter [#307][news307 bip353]. {% assign timestamp="1:26:55" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
