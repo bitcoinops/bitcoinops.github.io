@@ -44,17 +44,41 @@ popular Bitcoin infrastructure software.
 ## Bitcoin Core PR Review Club
 
 *In this monthly section, we summarize a recent [Bitcoin Core PR Review
-Club][] meeting, highlighting some of the important questions and
-answers.  Click on a question below to see a summary of the answer from
-the meeting.*
+Club][] meeting.*
 
-FIXME:stickies-v
+[Testing Bitcoin Core 28.0 Release Candidates][review club
+v28-rc-testing] was a review club meeting that did not review a
+particular PR, but rather was a group testing effort.
 
-{% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/30352#l-18FIXME"
-%}
+Before each [major Bitcoin Core release][], extensive testing by the
+community is considered essential. For this reason, a volunteer writes a
+testing guide for a [release candidate][] so that as many people as
+possible can productively test without having to independently ascertain
+what's new or changed in the release, and reinvent the various setup
+steps to test these features or changes.
+
+Testing can be difficult because when one encounters unexpected
+behavior, it's often unclear if it's due to an actual bug or if the
+tester is making a mistake. It wastes developers' time to report bugs to
+them that aren't real bugs. To mitigate these problems and promote
+testing efforts, a Review Club meeting is held for a particular release
+candidate, in this instance, 28.0rc1.
+
+The [28.0 release candidate testing guide][28.0 testing] was written by
+rkrux, who also hosted the review club meeting.
+
+Attendees were also encouraged to get testing ideas by reading the [28.0
+release notes][].
+
+This review club covered the introduction of [testnet4][topic testnet]
+([Bitcoin Core #29775][]), [TRUC (v3) transactions][topic v3
+transaction relay] ([Bitcoin Core #28948][]), [package RBF][topic
+rbf] ([Bitcoin Core #28984][]) and conflicting mempool
+transactions ([Bitcoin Core #27307][]). Other topics in the guide, but
+not covered in the meeting include `mempoolfullrbf` by default ([Bitcoin
+Core #30493][]), [`PayToAnchor`][topic ephemeral anchors] spending
+([Bitcoin Core #30352][]), and a new `dumptxoutset` format ([Bitcoin
+Core #29347][]).
 
 ## Releases and release candidates
 
@@ -116,7 +140,7 @@ about six months after the release of the upcoming version 28._
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605,30510" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29347" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
@@ -129,3 +153,8 @@ about six months after the release of the upcoming version 28._
 [news147 multi]: /en/newsletters/2021/05/05/#bitcoin-core-19160
 [multiprocess project]: https://github.com/ryanofsky/bitcoin/blob/pr/ipc/doc/design/multiprocess.md
 [news301 seednode]: /en/newsletters/2024/05/08/#bitcoin-core-28016
+[review club v28-rc-testing]: https://bitcoincore.reviews/v28-rc-testing
+[major bitcoin core release]: https://bitcoincore.org/en/lifecycle/#major-releases
+[28.0 release notes]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Notes-Draft
+[release candidate]: https://bitcoincore.org/en/lifecycle/#versioning
+[28.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
