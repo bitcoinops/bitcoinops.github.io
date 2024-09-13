@@ -258,7 +258,7 @@ création et la transmission de transactions qui dépensent à partir d'une sort
   q3="Définissez _sortie ancrée_, sans mentionner les transactions du réseau Lightning (essayez d'être
   plus général)."
   a3="Une sortie ancrée est une sortie supplémentaire créée sur des transactions pré-signées pour
-  permettre l'ajout de frais via CPFP au moment de la diffusion. Voir aussi [topic anchor outputs]
+  permettre l'ajout de frais via CPFP au moment de la diffusion. Voir le [sujet des sorties d'ancrage][topic anchor outputs]
   pour plus d'informations."
   a3link="https://bitcoincore.reviews/30352#l-48"
 
