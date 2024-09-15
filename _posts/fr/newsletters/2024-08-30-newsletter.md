@@ -135,7 +135,7 @@ repo], et [BINANAs][binana repo]._
 [LND v0.18.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta.rc1
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
-[news315 oblivious]: /en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
+[news315 oblivious]: /fr/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
 [beddict mining-dev]: https://groups.google.com/g/bitcoinminingdev/c/97fkfVmHWYU
 [erhardt warp]: https://groups.google.com/g/bitcoinminingdev/c/jjkbeODskIk
 [schmidt oblivious]: https://groups.google.com/g/bitcoinminingdev/c/npitVsP9KNo
