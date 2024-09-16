@@ -12,3 +12,4 @@ BIP32 是一个被广泛实施的[标准][BIP32]，它描述了如何[从一个�
 Segwit、BIP32 和多重签名相互协作，帮助 BTSE 在运营一个安全、易用且低费用的交易所时减少负担。Optech 鼓励新的交易所在设计基础设施时考虑这些技术。对于现有的交易所，正如之前的实地报告所提到的，考虑采用这些技术并减少技术债务的好时机是在您进行 UTXO 合并时。
 
 {% include references.md %}
+[bech32 series]: /zh/bech32-sending-support/
