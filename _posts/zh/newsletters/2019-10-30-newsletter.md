@@ -37,13 +37,13 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- **<!--why-does-hashing-public-keys-not-actually-provide-any-quantum-resistance-->**[为什么对公钥进行哈希并不能真正提供量子抗性？][{{bse}}91049]
+- **<!--why-does-hashing-public-keys-not-actually-provide-any-quantum-resistance-->**[为什么对公钥进行哈希并不能真正提供量子抗性？]({{bse}}91049)
   Andrew Chow 列出了关于公钥和量子抗性的几个考虑因素，包括：在消费时需要暴露公钥、大量比特币处于已知公钥的输出中，以及由于目前没有将公钥视为秘密，公钥在交易之外暴露的多种方式。
 
-- **<!--will-schnorr-multi-signatures-completely-replace-ecdsa-->**[Schnorr 多重签名是否会完全取代 ECDSA？][{{bse}}90855]
+- **<!--will-schnorr-multi-signatures-completely-replace-ecdsa-->**[Schnorr 多重签名是否会完全取代 ECDSA？]({{bse}}90855)
   Ugam Kamat 解释了 Schnorr 签名在 Segwit v1 中的拟议增加并不会消除对 ECDSA 的需求。ECDSA 仍然需要用于消费非 Segwit 以及 Segwit v0 的输出。
 
-- **<!--why-doesn-t-rbf-include-restrictions-on-the-outputs-->**[为什么 RBF 没有对输出进行限制？][{{bse}}90858]
+- **<!--why-doesn-t-rbf-include-restrictions-on-the-outputs-->**[为什么 RBF 没有对输出进行限制？]({{bse}}90858)
   Andrew Chow 讨论了 [BIP125][] 可选替代费用（RBF）的设计选择，并将其与首次见到安全替代费用（FSS-RBF）方法进行了比较。Chow 指出了 FSS-RBF 的缺点，但也警告不要接受任何未确认的交易。
 
 ## 值得注意的代码和文档更改
