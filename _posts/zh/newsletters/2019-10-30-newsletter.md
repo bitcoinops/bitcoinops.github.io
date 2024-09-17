@@ -28,7 +28,7 @@ lang: zh
 
 - **<!--publication-of-videos-and-study-material-from-schnorr-taproot-workshop-->****发布 Schnorr/Taproot 研讨会的视频和学习材料：**Optech 发布了一篇[博客文章][taproot workshop]，其中包含了链接至视频、Jupyter notebooks、GitHub 代码库和上个月在旧金山和纽约举行的 Schnorr 和 Taproot 研讨会产生的更多信息。这些材料解释了这两个提案的基础知识，指导学习者实际使用它们，并描述了如何优化利用它们为比特币带来的新功能的策略。
 
-  我们鼓励对未来可能加入比特币的这些功能感兴趣的开发者学习这些材料，尤其是参与[Taproot 评审][taproot review]的开发者，参见[上周的 Newsletter][tr]。
+  我们鼓励对未来可能加入比特币的这些功能感兴趣的开发者学习这些材料，尤其是参与 [Taproot 评审][taproot review]的开发者，参见[上周的 Newsletter][tr]。
 
 ## Bitcoin Stack Exchange 精选问答
 
