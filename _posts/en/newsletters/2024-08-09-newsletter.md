@@ -307,7 +307,7 @@ spend from an anchor output.
   transactions (try to be more general)."
   a3="An anchor output is an extra output created on presigned
   transactions to allow fees to be added via CPFP at the time of
-  broadcasting. See also [topic anchor outputs] for more information."
+  broadcasting. See the [topic about anchor outputs][topic anchor outputs] for more information."
   a3link="https://bitcoincore.reviews/30352#l-48"
 
   q4="Why does the size of the output script of an anchor output
