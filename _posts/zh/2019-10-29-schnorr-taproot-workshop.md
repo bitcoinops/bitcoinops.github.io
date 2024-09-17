@@ -1,11 +1,11 @@
 ---
 title: Bitcoin Optech Schnorr Taproot Workshop
 permalink: /zh/schorr-taproot-workshop/
-name: 2019-10-29-schnorr-taproot-workshop-zh
+name: 2019-10-29-schorr-taproot-workshop-zh
 type: posts
 layout: post
 lang: zh
-slug: 2019-10-21-schnorr-taproot-workshop-zh
+slug: 2019-10-21-schorr-taproot-workshop-zh
 
 excerpt: >
   一门自学课程，用于学习 schnorr/taproot 软分叉提案。
