@@ -24,10 +24,10 @@ auto_id: false
 
 实习分为 4 个部分：
 
-1. [准备工作和基础数学](#preparation-and-basic-math) - 展示如何设置 jupyter notebook 环境，复习基础椭圆曲线数学，并介绍标签哈希（tagged hashes）。
-2. [Schnorr 签名和 MuSig](#schnorr-signatures-and-musig) - 介绍 bip-schnorr 签名方案，以及如何使用 MuSig 聚合多个公钥和部分签名为单一公钥/签名。
+1. [准备工作和基础数学](#准备工作和基础数学) - 展示如何设置 jupyter notebook 环境，复习基础椭圆曲线数学，并介绍标签哈希（tagged hashes）。
+2. [Schnorr 签名和 MuSig](#schnorr-签名和-musig) - 介绍 bip-schnorr 签名方案，以及如何使用 MuSig 聚合多个公钥和部分签名为单一公钥/签名。
 3. [Taproot](#taproot) - 演示如何创建和消费一个 segwit v1 输出，通过密钥路径（提供单个签名）或脚本路径（将一个或多个脚本承诺嵌入公钥并稍后揭示和满足）来进行操作。
-4. [案例研究](#case-studies) - 展示 schnorr 和 taproot 新技术的一些实际应用。
+4. [案例研究](#案例研究) - 展示 schnorr 和 taproot 新技术的一些实际应用。
 
 所有演示的幻灯片可以在[这里][slides]下载。另外，Bryan Bishop 提供了纽约会议的[会议记录][transcript]。
 
