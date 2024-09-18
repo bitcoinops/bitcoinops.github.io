@@ -78,7 +78,7 @@ transactions ([Bitcoin Core #27307][]). Other topics in the guide, but
 not covered in the meeting include `mempoolfullrbf` by default ([Bitcoin
 Core #30493][]), [`PayToAnchor`][topic ephemeral anchors] spending
 ([Bitcoin Core #30352][]), and a new `dumptxoutset` format ([Bitcoin
-Core #29347][]).
+Core #29612][]).
 
 ## Releases and release candidates
 
@@ -140,7 +140,7 @@ about six months after the release of the upcoming version 28._
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29347" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29612" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/

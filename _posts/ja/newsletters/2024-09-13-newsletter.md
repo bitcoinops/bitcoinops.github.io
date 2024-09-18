@@ -66,7 +66,7 @@ Review Clubのミーティングが特定のリリース候補（ここでは28.
 ガイドに記載されているもののミーティングでは取り上げられなかった他のトピックには、
 `mempoolfullrbf`のデフォルト化（[Bitcoin Core #30493][]）、
 [`PayToAnchor`][topic ephemeral anchors]支払い（[Bitcoin Core #30352][]）、
-新しい`dumptxoutset`フォーマット（[Bitcoin Core #29347][]）が含まれます。
+新しい`dumptxoutset`フォーマット（[Bitcoin Core #29612][]）が含まれます。
 
 ## リリースとリリース候補
 
@@ -117,7 +117,7 @@ _注: 以下に掲載するBitcoin Coreへのコミットは、master開発ブ�
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29347" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29612" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
