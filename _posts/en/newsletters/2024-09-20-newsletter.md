@@ -91,7 +91,34 @@ software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Strike adds BOLT12 support:**
+  Strike [announced][strike blog] support for [BOLT12 offers][topic offers],
+  including using offers with [BIP353][] DNS payment instructions.
+
+- **BitBox02 adds silent payment support:**
+  BitBox02 [announced][bitbox blog sp] support for [silent payments][topic
+  silent payments] and an implementation of [payment requests][bitbox blog pr].
+
+- **The Mempool Open Source Project v3.0.0 released:**
+  The [v3.0.0 release][mempool github 3.0.0] includes new [CPFP][topic cpfp]
+  fee calculations, additional [RBF][topic rbf] features including fullrbf
+  support, P2PK support, and new mempool and blockchain analysis features, among
+  other changes.
+
+- **ZEUS v0.9.0 released:**
+  The [v0.9.0 post][zeus blog 0.9.0] outlines additional LSP features,
+  watch-only wallets, hardware signing device support, support for transaction
+  [batching][scaling payment batching] including channel open transactions, and other features.
+
+- **Live Wallet adds consolidation support:**
+  The Live Wallet application analyzes the cost to spend a set of UTXOs at
+  different feerates including determining when outputs would be
+  [uneconomical][topic uneconomical outputs] to spend. The [0.7.0 release][live
+  wallet github 0.7.0] includes features to simulate [consolidation][consolidate
+  info] transactions and generate consolidation [PSBTs][topic psbt].
+
+- **Bisq adds Lightning support:**
+  [Bisq v2.1.0][bisq github v2.1.0] adds the ability for users to settle trades using the Lightning Network.
 
 ## Releases and release candidates
 
@@ -186,7 +213,7 @@ about six months after the release of the upcoming version 28._
 - [BDK #1561][] removes the `bdk_hwi` crate from the project, to simplify
   dependencies and CI. The `bdk_hwi` crate contained `HWISigner`, which has now
   been moved to the `rust_hwi` project.
-  
+
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
@@ -207,3 +234,11 @@ about six months after the release of the upcoming version 28._
 [delving cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303#h-2-finding-high-feerate-subsets-5
 [lopp cache]: https://github.com/bitcoin/bitcoin/pull/28358#issuecomment-2186630679
 [news315 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
+[strike blog]: https://strike.me/blog/bolt12-offers/
+[bitbox blog sp]: https://bitbox.swiss/blog/understanding-silent-payments-part-one/
+[bitbox blog pr]: https://bitbox.swiss/blog/using-payment-requests-to-securely-send-bitcoin-to-an-exchange/
+[mempool github 3.0.0]: https://github.com/mempool/mempool/releases/tag/v3.0.0
+[zeus blog 0.9.0]: https://blog.zeusln.com/new-release-zeus-v0-9-0/
+[live wallet github 0.7.0]: https://github.com/Jwyman328/LiveWallet/releases/tag/0.7.0
+[consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
+[bisq github v2.1.0]: https://github.com/bisq-network/bisq2/releases/tag/v2.1.0
