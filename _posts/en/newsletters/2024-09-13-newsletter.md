@@ -22,7 +22,7 @@ popular Bitcoin infrastructure software.
   random changes to code don't produce a failure, it indicates that test
   coverage may be incomplete.  Garcia's automatic mutation tool ignores
   code comments and other lines of code that wouldn't be expected to
-  produce changes.
+  produce changes. {% assign timestamp="1:39" %}
 
 - **DLC-based loan contract execution:** Shehzan Maredia
   [posted][maredia post] to Delving Bitcoin to announce [Lava Loans][], a
@@ -39,7 +39,7 @@ popular Bitcoin infrastructure software.
   parties fail to cooperate or one party becomes unresponsive.  As with
   any DLC, the price oracles are prevented from learning the contract
   details or even that their price information is being used in a
-  contract.
+  contract. {% assign timestamp="9:15" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -78,7 +78,7 @@ transactions ([Bitcoin Core #27307][]). Other topics in the guide, but
 not covered in the meeting include `mempoolfullrbf` by default ([Bitcoin
 Core #30493][]), [`PayToAnchor`][topic ephemeral anchors] spending
 ([Bitcoin Core #30352][]), and a new `dumptxoutset` format ([Bitcoin
-Core #29347][]).
+Core #29612][]). {% assign timestamp="21:08" %}
 
 ## Releases and release candidates
 
@@ -87,18 +87,18 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
 - [LND v0.18.3-beta][] is a minor bug fix
-  release of this popular LN node implementation.
+  release of this popular LN node implementation. {% assign timestamp="51:33" %}
 
 - [BDK 1.0.0-beta.2][] is a release candidate for this library for
   building wallets and other Bitcoin-enabled applications.  The original
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="53:05" %}
 
 - [Bitcoin Core 28.0rc1][] is a release candidate for the next major
   version of the predominant full node implementation.  A [testing
-  guide][bcc testing] is available.
+  guide][bcc testing] is available. {% assign timestamp="53:14" %}
 
 ## Notable code and documentation changes
 
@@ -121,7 +121,7 @@ about six months after the release of the upcoming version 28._
   external [Stratum v2][topic pooled mining] mining service to create, manage,
   and submit block templates. This is part of the Bitcoin Core [multiprocess
   project][multiprocess project]. See Newsletters [#99][news99 multi] and
-  [#147][news147 multi].
+  [#147][news147 multi]. {% assign timestamp="53:38" %}
 
 - [Bitcoin Core #29605][] changes peer discovery to prioritize peers from the
   local address manager over fetching from seed nodes, to reduce the influence
@@ -135,12 +135,12 @@ about six months after the release of the upcoming version 28._
   and to only recommend peers that shared data with it.  With this PR,
   only when the address manager is empty, or after a period of unsuccessful
   address attempts, will seed nodes be added to the address fetch queue in
-  random order. See Newsletter [#301][news301 seednode] for more on seed nodes.
+  random order. See Newsletter [#301][news301 seednode] for more on seed nodes. {% assign timestamp="1:00:52" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29347" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29612" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
