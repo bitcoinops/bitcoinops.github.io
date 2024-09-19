@@ -75,7 +75,7 @@ rbf] ([Bitcoin Core #28984][]) a konfliktními transakcemi v mempoolu
 ([Bitcoin Core #27307][]). Mezi další témata uvedená v průvodci, která však
 nebyla pokryta v tomto sezení, patří `mempoolfullrbf` ve výchozím nastavení
 ([Bitcoin Core #30493][]), [`PayToAnchor`][topic ephemeral anchors] platby
-([Bitcoin Core #30352][]) a nový formát `dumptxoutset` ([Bitcoin Core #29347][]).
+([Bitcoin Core #30352][]) a nový formát `dumptxoutset` ([Bitcoin Core #29612][]).
 
 ## Vydání nových verzí
 
@@ -133,7 +133,7 @@ připravované verze 28._
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29347" %}
+{% include linkers/issues.md v=2 issues="30509,29605,30510,29775,28948,28984,27307,30493,30352,29612" %}
 [LND v0.18.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.3-beta
 [BDK 1.0.0-beta.2]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.2
 [bitcoin core 28.0rc1]: https://bitcoincore.org/bin/bitcoin-core-28.0/
