@@ -133,28 +133,64 @@ _Note: the commits to Bitcoin Core mentioned below apply to its master
 development branch, so those changes will likely not be released until
 about six months after the release of the upcoming version 28._
 
-- [Bitcoin Core #28358][] Drop -dbcache limit
+- [Bitcoin Core #28358][] drops the `dbcache` limit because the previous 16 GB
+  limit was no longer sufficient to complete an Initial Block Download (IBD)
+  without flushing the UTXO set from RAM to disk, which can
+  [provide][lopp cache] about a 25% speed up. It was decided to remove the
+  limit rather than raise it because there was no optimal value
+  that would be future-proof and to give users complete flexibility.
 
-- [Bitcoin Core #30286][] cluster mempool: optimized candidate search
+- [Bitcoin Core #30286][] optimizes the candidate search algorithm used in
+  cluster linearizations, based on the framework laid out in Section 2 of
+  this [Delving Bitcoin post][delving cluster], but with some modifications.
+  These optimizations minimize iterations to improve linearization performance,
+  but may increase startup and per-iteration costs. This is part of the [cluster
+  mempool][topic cluster mempool] project. See Newsletter [#315][news315
+  cluster].
 
-- [Bitcoin Core #30807][] Fix peers abruptly disconnecting from AssumeUTXO nodes during IBD
+- [Bitcoin Core #30807][] changes the signaling of an [assumeUTXO][topic
+  assumeutxo] node that is syncing the background chain from `NODE_NETWORK` to
+  `NODE_NETWORK_LIMITED` so that peer nodes don’t request blocks older than about a week from it. This
+  fixes a bug where a peer would request a historical block and get no response,
+  causing it to disconnect from the assumeUTXO node.
 
-- [LND #8981][] Quarantine paymentDescriptor to the lnwallet package
+- [LND #8981][] refactors the `paymentDescriptor` type to only use it within
+  the `lnwallet` package. This is to later replace `paymentDescriptor` with a
+  new structure called `LogUpdate` to simplify how updates are logged and
+  handled, as part of a series of PRs implementing dynamic commitments, a type
+  of [channel commitment upgrade][topic channel commitment upgrades].
 
-- [LDK #3140][] Support paying static invoices (mention async)
+- [LDK #3140][] adds support for paying static [BOLT12][topic offers] invoices
+  to send [async payments][topic async payments] as an always online sender as
+  defined in [BOLTs #1149][], but without including the invoice request in the
+  payment [onion message][topic onion messages]. Sending as an often offline
+  sender or receiving async payments is not yet possible, so the flow cannot yet
+  be tested end-to-end.
 
-- [LDK #3163][] Introduce Reply Paths for BOLT12 Invoice in Offers Flow.
+- [LDK #3163][] updates the [offers][topic offers] message flow by introducing a
+  `reply_path` in BOLT12 invoices. This allows the payer to send the error
+  message back to the payee in case of an invoice error.
 
-- [LDK #3010][] Introduce Retry InvoiceRequest Flow
+- [LDK #3010][] adds functionality for a node to retry sending an invoice
+  request to an [offer][topic offers] reply path if it hasn't yet received the
+  corresponding invoice.  Previously, if an invoice request message on a single
+  reply path offer failed due to network disconnection, it wasn't retried.
 
-- [BDK #1581][] allow custom fallback algorithm for bnb
+- [BDK #1581][] introduces changes to the [coin selection][topic coin selection]
+  algorithm by allowing for a customizable fallback algorithm in the
+  `BranchAndBoundCoinSelection` strategy. The signature of the `coin_select`
+  method is updated to allow a random number generator to be passed directly to
+  the coin selection algorithm. This PR also includes additional refactorings,
+  internal fallback handling, and simplification of error handling.
 
-- [BDK #1561][] remove `bdk_hwi`, as `HWISigner`'s being moved to `rust-hwi`
-    
+- [BDK #1561][] removes the `bdk_hwi` crate from the project, to simplify
+  dependencies and CI. The `bdk_hwi` crate contained `HWISigner`, which has now
+  been moved to the `rust_hwi` project.
+  
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="28358,30286,30807,8981,3140,3163,3010,1581,1561" %}
+{% include linkers/issues.md v=2 issues="28358,30286,30807,8981,3140,3163,3010,1581,1561,1149" %}
 [BDK 1.0.0-beta.4]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.4
 [bitcoin core 28.0rc2]: https://bitcoincore.org/bin/bitcoin-core-28.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
@@ -168,3 +204,6 @@ about six months after the release of the upcoming version 28._
 [news271 noderc]: /en/newsletters/2023/10/04/#secure-remote-control-of-ln-nodes
 [hwi 3.1.0]: https://github.com/bitcoin-core/HWI/releases/tag/3.1.0
 [core lightning 24.08.1]: https://github.com/ElementsProject/lightning/releases/tag/v24.08.1
+[delving cluster]: https://delvingbitcoin.org/t/how-to-linearize-your-cluster/303#h-2-finding-high-feerate-subsets-5
+[lopp cache]: https://github.com/bitcoin/bitcoin/pull/28358#issuecomment-2186630679
+[news315 cluster]: /en/newsletters/2024/08/02/#bitcoin-core-30126
