@@ -77,7 +77,7 @@ rbf] ([Bitcoin Core #28984][]) et les transactions en conflit dans le mempool
 non abordés lors de la réunion incluent `mempoolfullrbf` par défaut ([Bitcoin
 Core #30493][]), dépenses [`PayToAnchor`][topic ephemeral anchors]
 ([Bitcoin Core #30352][]), et un nouveau format `dumptxoutset` ([Bitcoin
-Core #29347][]).
+Core #29612][]).
 
 ## Mises à jour et versions candidates
 
