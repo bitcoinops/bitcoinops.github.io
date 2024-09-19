@@ -8,9 +8,9 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine annonce un nouvel outil de test pour Bitcoin Core et
-décrit brièvement un contrat de prêt basé sur DLC. Sont également inclus nos
+décrit brièvement un contrat de prêt basé sur DLC (Discrete Log Contract). Sont également inclus nos
 sections habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
-il annonce les mises à jour et les versions candidates, et présente les changements
+il annonce les mises à jour avec les versions candidates, et présente les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
@@ -36,9 +36,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Alternativement, Bob peut fournir une preuve onchain qu'il a remboursé le prêt
   (sous forme de préimage de hachage révélée par Alice) pour récupérer sa
   garantie. D'autres résolutions du contrat sont disponibles si les
-  parties ne coopèrent pas ou si une partie devient non réactive. Comme avec
-  tout DLC, les oracles de prix sont empêchés d'apprendre les détails du contrat
-  ou même que leurs informations de prix sont utilisées dans un contrat.
+  parties ne coopèrent pas ou si une partie devient non réactive. Comme 
+  pour tout DLC, les oracles de prix ne peuvent pas accéder aux 
+  détails du contrat ni être informés que leurs données de prix sont utilisées dans un contrat.
 
 ## Bitcoin Core PR Review Club
 
@@ -47,7 +47,7 @@ Club][], en soulignant certaines des questions et réponses importantes. Cliquez
 ci-dessous pour voir un résumé de la réponse de
 la réunion.*
 
-[Tester les candidats à la sortie de Bitcoin Core 28.0][review club
+[Tester les versions candidates de Bitcoin Core 28.0][review club
 v28-rc-testing] était une réunion du club de révision qui n'a pas examiné une
 PR particulier, mais était plutôt un effort de test de groupe.
 
@@ -72,7 +72,7 @@ version 28.0][].
 Ce club de révision a couvert l'introduction de [testnet4][topic testnet]
 ([Bitcoin Core #29775][]), les transactions [TRUC (v3)][topic v3
 transaction relay] ([Bitcoin Core #28948][]), le [package RBF][topic
-rbf] ([Bitcoin Core #28984][]) et les transactions en conflit dans le mempool
+rbf] ([Bitcoin Core #28984][]) et les transactions en conflit dans la mempool
 ([Bitcoin Core #27307][]). D'autres sujets dans le guide, mais
 non abordés lors de la réunion incluent `mempoolfullrbf` par défaut ([Bitcoin
 Core #30493][]), dépenses [`PayToAnchor`][topic ephemeral anchors]
@@ -81,21 +81,20 @@ Core #29612][]).
 
 ## Mises à jour et versions candidates
 
-*Nouvelles versions et candidats à la version pour des projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les candidats
-à la version.*
+*Nouvelles versions et versions candidates pour des projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les versions candidates.*'
 
 - [LND v0.18.3-beta][] est une sortie mineure de correction de bugs
   pour cette implémentation populaire de nœud LN.
 
-- [BDK 1.0.0-beta.2][] est un candidat à la sortie pour cette bibliothèque afin de
+- [BDK 1.0.0-beta.2][] est un candidat pour cette bibliothèque afin de
   construire des portefeuilles et d'autres applications activées par Bitcoin. Le paquet `bdk` original
   a été renommé en `bdk_wallet` et les modules de couche inférieure ont été extraits dans leurs
   propres paquets, incluant
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, et `bdk_bitcoind_rpc`.
   Le paquet `bdk_wallet` "est la première version à offrir une API stable 1.0.0."
 
-- [Bitcoin Core 28.0rc1][] est un candidat à la sortie pour la prochaine version majeure
+- [Bitcoin Core 28.0rc1][] est un candidat pour la prochaine version majeure
   de l'implémentation de nœud complet prédominante. Un [guide de test][bcc testing] est disponible.
 
 ## Changements notables dans le code et la documentation
@@ -113,7 +112,7 @@ développement principale, donc ces changements ne seront probablement pas publi
 mois après la sortie de la version 28 à venir._
 
 - [Bitcoin Core #30509][] ajoute une option `-ipcbind` à `bitcoin-node` pour permettre
-  à d'autres processus de se connecter et de contrôler le nœud via un socket unix. En
+  à d'autres processus de se connecter et de contrôler le nœud via une socket unix. En
   combinaison avec la PR à venir [Bitcoin Core #30510][], cela permettra à un
   service de minage externe [Stratum v2][topic pooled mining] de créer, gérer,
   et soumettre des modèles de blocs. Cela fait partie du [projet multiprocessus][multiprocess project]
