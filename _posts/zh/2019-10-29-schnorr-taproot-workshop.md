@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Optech Schnorr Taproot Workshop
-permalink: /zh/schorr-taproot-workshop/
+permalink: /zh/schnorr-taproot-workshop/
 name: 2019-10-29-schnorr-taproot-workshop-zh
 type: posts
 layout: post
