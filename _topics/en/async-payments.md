@@ -57,6 +57,9 @@ optech_mentions:
   - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
     url: /en/newsletters/2024/09/06/#eclair-2865
 
+  - title: "LDK #3140 adds support for paying static BOLT12 invoices to send async payments"
+    url: /en/newsletters/2024/09/20/#ldk-3140
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments

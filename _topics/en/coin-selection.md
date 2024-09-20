@@ -87,6 +87,9 @@ optech_mentions:
   - title: "Effect of SubtractFeeFromOutputs on coin selection in Bitcoin Core"
     url: /en/newsletters/2024/06/28/#how-does-subtractfeefrom-work
 
+  - title: "BDK #1581 allows a customizable fallback algorithm in branch-and-bound coin selection"
+    url: /en/newsletters/2024/09/20/#bdk-1581
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An Evaluation of Coin Selection Strategies
