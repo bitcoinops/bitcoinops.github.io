@@ -54,6 +54,9 @@ optech_mentions:
   - title: "LDK #3125 introduces support for encoding and parsing messages needed for async payments"
     url: /en/newsletters/2024/07/05/#ldk-3125
 
+  - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
+    url: /en/newsletters/2024/09/06/#eclair-2865
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Trampoline payments

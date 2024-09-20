@@ -66,6 +66,9 @@ optech_mentions:
   - title: "`OP_CAT` script to validate proof of work"
     url: /en/newsletters/2024/06/07/#op-cat-script-to-validate-proof-of-work
 
+  - title: "`OP_CAT` research fund"
+    url: /en/newsletters/2024/09/06/#op-cat-research-fund
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK
