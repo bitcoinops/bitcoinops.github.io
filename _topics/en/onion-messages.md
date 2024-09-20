@@ -95,6 +95,9 @@ optech_mentions:
   - title: "Discussion of onion denial-of-service risk with proposed mitigations"
     url: /en/newsletters/2024/08/16/#onion-message-dos-risk-discussion
 
+  - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
+    url: /en/newsletters/2024/09/06/#eclair-2865
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

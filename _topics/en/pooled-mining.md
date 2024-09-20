@@ -59,6 +59,9 @@ optech_mentions:
   - title: "Stratum v2 benchmarking tool released"
     url: /en/newsletters/2024/08/23/#stratum-v2-benchmarking-tool-released
 
+  - title: "Stratum v2 extension for fee revenue sharing"
+    url: /en/newsletters/2024/09/06/#stratum-v2-extension-for-fee-revenue-sharing
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
