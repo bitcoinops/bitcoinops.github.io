@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Stratum v2 extension for fee revenue sharing"
     url: /en/newsletters/2024/09/06/#stratum-v2-extension-for-fee-revenue-sharing
 
+  - title: "Bitcoin Core #30509 adds an -ipcbind option for use by an external Stratum v2 mining service"
+    url: /en/newsletters/2024/09/13/#bitcoin-core-30509
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
