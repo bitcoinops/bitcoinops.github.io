@@ -147,6 +147,6 @@ endcomment %}
 [halseth carve-out]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002240.html
 [daftuar duo]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Mempool-and-mining
 [rubin justification]: http://www.erisian.com.au/bitcoin-core-dev/log-2019-10-24.html#l-660
-[taproot workshop]: /en/schorr-taproot-workshop/
+[taproot workshop]: /en/schnorr-taproot-workshop/
 [taproot review]: https://github.com/ajtowns/taproot-review
 [tr]: /en/newsletters/2019/10/23/#taproot-review

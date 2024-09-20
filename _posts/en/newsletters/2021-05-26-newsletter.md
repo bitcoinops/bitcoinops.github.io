@@ -242,7 +242,7 @@ BOLTs][bolts repo].*
 [newsletters]: /en/newsletters/
 [blog posts]: /en/blog/
 [bech32]: /en/bech32-sending-support/
-[interactive taproot workshop]: /en/schorr-taproot-workshop/
+[interactive taproot workshop]: /en/schnorr-taproot-workshop/
 [japanese]: /ja/publications/
 [spanish]: /es/publications/
 [topics index]: /en/topics/

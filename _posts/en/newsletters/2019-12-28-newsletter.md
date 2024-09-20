@@ -776,7 +776,7 @@ schedule on January 8th.*
 [roose reserves]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
 [scalability workbook]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
-[schnorr/taproot workshops]: /en/schorr-taproot-workshop/
+[schnorr/taproot workshops]: /en/schnorr-taproot-workshop/
 [snicker]: /en/newsletters/2019/09/04/#snicker-proposed
 [stanford blockchain conference]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
