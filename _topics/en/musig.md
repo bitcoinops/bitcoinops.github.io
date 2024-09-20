@@ -36,7 +36,7 @@ optech_mentions:
     date: 2019-06-14
 
   - title: Schnorr signatures and musig
-    url: /en/schorr-taproot-workshop/#12-musig
+    url: /en/schnorr-taproot-workshop/#12-musig
     date: 2019-10-29
 
   - title: BLS signatures based on the MuSig construction
