@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Wallet 10101 allows pooling funds between LN and DLCs"
     url: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
 
+  - title: "Lava Loans: DLC-based loan contract execution"
+    url: /en/newsletters/2024/09/13/#dlc-based-loan-contract-execution
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

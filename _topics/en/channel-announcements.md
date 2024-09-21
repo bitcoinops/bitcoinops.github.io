@@ -41,6 +41,9 @@ optech_mentions:
   - title: New anonymous usage tokens proposed that could be used to improve channel announcement privacy
     url: /en/newsletters/2024/05/17/#anonymous-usage-tokens
 
+  - title: "Proving UTXO set inclusion in zero knowledge for more private channel announcement messages"
+    url: /en/newsletters/2024/09/20/#proving-utxo-set-inclusion-in-zero-knowledge
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

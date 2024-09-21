@@ -40,6 +40,9 @@ optech_mentions:
   - title: Speculatively using hoped-for consensus changes to create two-way pegs for sidechains
     url: /en/newsletters/2023/06/28/#speculatively-using-hoped-for-consensus-changes
 
+  - title: "Discussion about affect on sidechains of mitigating merkle tree vulnerabilities"
+    url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #  - title:

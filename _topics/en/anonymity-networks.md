@@ -112,6 +112,9 @@ optech_mentions:
   - title: "Bitcoin Core #29200 allows the I2P to use connections encrypted with both ECIES-X25519 and ElGamal"
     url: /en/newsletters/2024/01/17/#bitcoin-core-29200
 
+  - title: "DNS seeding for nodes on anonymity networks"
+    url: /en/newsletters/2024/09/20/#dns-seeding-for-non-ip-addresses
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dandelion

@@ -56,6 +56,9 @@ optech_mentions:
   - title: "LDK #3215 rejects transactions less than 65 bytes to protect against merkle tree vulnerabilites"
     url: /en/newsletters/2024/08/16/#ldk-3215
 
+  - title: "Discussion about mitigating merkle tree vulnerabilities"
+    url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CVEs

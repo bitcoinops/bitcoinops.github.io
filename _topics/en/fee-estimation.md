@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Bitcoin Core #30275 updates `estimatesmartfee` RPC default from conservative to economical"
     url: /en/newsletters/2024/08/02/#bitcoin-core-30275
 
+  - title: "LDK #3268 adds a more conservative fee estimation method for dust calculations"
+    url: /en/newsletters/2024/09/06/#ldk-3268
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Coin selection
