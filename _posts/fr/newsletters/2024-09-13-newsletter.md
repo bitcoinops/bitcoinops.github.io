@@ -36,8 +36,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Alternativement, Bob peut fournir une preuve onchain qu'il a remboursé le prêt
   (sous forme de préimage de hachage révélée par Alice) pour récupérer sa
   garantie. D'autres résolutions du contrat sont disponibles si les
-  parties ne coopèrent pas ou si une partie devient non réactive. Comme 
-  pour tout DLC, les oracles de prix ne peuvent pas accéder aux 
+  parties ne coopèrent pas ou si une partie devient non réactive. Comme
+  pour tout DLC, les oracles de prix ne peuvent pas accéder aux
   détails du contrat ni être informés que leurs données de prix sont utilisées dans un contrat.
 
 ## Bitcoin Core PR Review Club
