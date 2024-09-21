@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine annonce un nouvel outil de test pour Bitcoin Core et
-décrit brièvement un contrat de prêt basé sur les Discrete Log Contract. Sont également inclus nos
+décrit brièvement un contrat de prêt basé sur les Discret Log Contract. Sont également inclus nos
 sections habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
 il annonce les mises à jour avec les versions candidates, et présente les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
