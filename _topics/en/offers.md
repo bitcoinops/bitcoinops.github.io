@@ -121,6 +121,9 @@ optech_mentions:
   - title: "Proposal to allow opt-in identification and authentication of LN payers when using offers"
     url: /en/newsletters/2024/08/16/#optional-identification-and-authentication-of-ln-payers
 
+  - title: "LDK #3140 adds support for paying static BOLT12 invoices to send async payments"
+    url: /en/newsletters/2024/09/20/#ldk-3140
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

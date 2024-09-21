@@ -1,11 +1,13 @@
 ---
 title: Bitcoin Optech Schnorr Taproot Workshop
-permalink: /es/schorr-taproot-workshop/
+permalink: /es/schnorr-taproot-workshop/
 name: 2019-10-29-schnorr-taproot-workshop-es
 type: posts
 layout: post
 lang: es
 slug: 2019-10-21-schnorr-taproot-workshop-es
+redirect_from:
+  - /es/schorr-taproot-workshop/
 
 excerpt: >
   Un curso de autoaprendizaje para entender más sobre la propuesta de soft-fork schnorr/taproot.

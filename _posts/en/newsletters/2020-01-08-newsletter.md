@@ -88,7 +88,7 @@ projects.
   a transaction in order to be able to spend low-value UTXOs.
 
 {% include linkers/issues.md issues="3647,3814,3351" %}
-[Schnorr/Taproot workshops]: /en/schorr-taproot-workshop/
+[Schnorr/Taproot workshops]: /en/schnorr-taproot-workshop/
 [wuille slides]: https://prezi.com/view/AlXd19INd3isgt3SvW8g/
 [wuille suggestion]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.log.html#l-8
 [zmn post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002375.html

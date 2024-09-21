@@ -66,6 +66,9 @@ optech_mentions:
   - title: "BOLTs #919 suggests LN nodes limit their maximum exposure to uneconomical HTLCs"
     url: /en/newsletters/2023/08/23/#bolts-919
 
+  - title: "LDK #3268 adds a more conservative fee estimation method for dust calculations"
+    url: /en/newsletters/2024/09/06/#ldk-3268
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Dust attacks (output linking)

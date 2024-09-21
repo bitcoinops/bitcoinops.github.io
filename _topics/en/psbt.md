@@ -225,6 +225,9 @@ optech_mentions:
   - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
     url: /en/newsletters/2024/07/05/#bips-1540
 
+  - title: "BIP353 adds a new standard field to PSBT outputs for DNSSEC proofs"
+    url: /en/newsletters/2024/09/06/#bips-1657
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

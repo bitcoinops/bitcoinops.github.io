@@ -50,6 +50,9 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about consensus cleanup
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: "Discussion about mitigating merkle tree vulnerabilities in the proposed consensus cleanup soft fork"
+    url: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
  - title: Soft fork activation

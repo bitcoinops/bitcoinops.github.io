@@ -68,6 +68,9 @@ optech_mentions:
   - title: "BIPs #1620 and #1622 make minor updates to the BIP352 specification of silent payments"
     url: /en/newsletters/2024/06/28/#bips-1620
 
+  - title: "BitBox02 hardware signing device adds silent payment support"
+    url: /en/newsletters/2024/09/20/#bitbox02-adds-silent-payment-support
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
