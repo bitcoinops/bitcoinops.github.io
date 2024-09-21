@@ -11,7 +11,7 @@ excerpt: >
   一门自学课程，用于学习 schnorr/taproot 软分叉提案。
 
 auto_id: false
-------
+---
 {% include references.md %}
 
 2019 年 9 月，Bitcoin Optech 在旧金山和纽约市组织了关于 schnorr/taproot 软分叉提案的实习。实习的目标是：
