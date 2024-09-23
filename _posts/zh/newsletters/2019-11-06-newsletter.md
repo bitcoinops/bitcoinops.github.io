@@ -14,11 +14,11 @@ lang: zh
 
 ## 行动项
 
-- **<!--help-test-bitcoin-core-release-candidate-->****帮助测试 Bitcoin Core 候选版本：** 鼓励有经验的用户帮助测试即将发布的 [Bitcoin Core][Bitcoin Core 0.19.0] 版本的最新候选版本。
+- **<!--help-test-bitcoin-core-release-candidate-->****帮助测试 Bitcoin Core 候选版本：**鼓励有经验的用户帮助测试即将发布的 [Bitcoin Core][Bitcoin Core 0.19.0] 版本的最新候选版本。
 
 ## 新闻
 
-- **<!--continued-discussion-of-ln-anchor-outputs-->****关于 LN 锚定输出的持续讨论：** 正如[上周的 Newsletter][news70 simplified commitments]中所述，LN 开发者正在努力允许通道的任一方通过 CPFP 提高结算交易的费用，利用预计将在 Bitcoin Core 0.19.0 版本中发布的 CPFP carve-out 内存池策略。本周在[邮件列表][jager anchor]和 [BOLTs 仓库][bolts #688] 中讨论的主题包括：
+- **<!--continued-discussion-of-ln-anchor-outputs-->****关于 LN 锚定输出的持续讨论：**正如[上周的 Newsletter][news70 simplified commitments]中所述，LN 开发者正在努力允许通道的任一方通过 CPFP 提高结算交易的费用，利用预计将在 Bitcoin Core 0.19.0 版本中发布的 CPFP carve-out 内存池策略。本周在[邮件列表][jager anchor]和 [BOLTs 仓库][bolts #688] 中讨论的主题包括：
 
   - 无论是单方面关闭通道的一方（“本地”一方）还是另一方（“远程”），是否都应在能够领取其资金之前经历相同的延迟，或者他们是否应该在通道创建过程中协商当他们是远程方时使用的延迟时长。目前，只有本地一方存在延迟，担心的是这可能会导致某些人试图操纵另一方关闭通道，以便操纵者能更快地收到他们的资金。
 
@@ -30,7 +30,7 @@ lang: zh
 
   关于上述问题的讨论仍在继续，正在提出解决方案并对该提议进行更多的审查。
 
-- **<!--signaling-support-for-address-relay-->****为地址中继提供支持信号：** 全节点使用 P2P 协议的 `addr`（地址）消息与其对等节点共享他们所知道的其他全节点的 IP 地址，从而实现完全去中心化的对等节点发现。SPV 客户端也可以使用此机制了解全节点，尽管大多数客户端目前使用某种形式的集中式节点发现，因此发送给这些客户端的 `addr` 消息浪费了带宽。
+- **<!--signaling-support-for-address-relay-->****为地址中继提供支持信号：**全节点使用 P2P 协议的 `addr`（地址）消息与其对等节点共享他们所知道的其他全节点的 IP 地址，从而实现完全去中心化的对等节点发现。SPV 客户端也可以使用此机制了解全节点，尽管大多数客户端目前使用某种形式的集中式节点发现，因此发送给这些客户端的 `addr` 消息浪费了带宽。
 
   Gleb Naumenko 向 Bitcoin-Dev 邮件列表发送了一封[邮件][naumenko addr relay]，建议节点和客户端应该向他们的对等节点发出信号，表示他们是否希望参与地址中继。这将避免在不需要地址的客户端上浪费带宽，并且可以更容易确定与地址中继相关的某些网络行为的影响。
 
