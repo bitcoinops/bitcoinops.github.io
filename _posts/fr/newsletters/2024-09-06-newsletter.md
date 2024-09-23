@@ -175,7 +175,7 @@ mois après la sortie de la version à venir 28._
 [merli paper]: https://github.com/demand-open-source/pplns-with-job-declaration/blob/bd7258db08e843a5d3732bec225644eda6923e48/pplns-with-job-declaration.pdf
 [kolobov cat]: https://mailing-list.bitcoindevs.xyz/bitcoindev/04b61777-7f9a-4714-b3f2-422f99e54f87n@googlegroups.com/
 [news296 cleanup]: /fr/newsletters/2024/04/03/#revisiter-le-nettoyage-du-consensus
-[news316 cmake]: /fr/newsletters/2024/08/16/#passage-de-bitcoin-core-au-systeme-de-construction-cmake
+[news316 cmake]: /fr/newsletters/2024/08/16/#passage-de-bitcoin-core-au-systeme-de-compilation-cmake
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
 [ldk 0.0.124]: https://github.com/lightningdevkit/rust-lightning/releases
 [news211 bip389]: /en/newsletters/2022/08/03/#multiple-derivation-path-descriptors
