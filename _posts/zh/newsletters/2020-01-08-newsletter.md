@@ -14,9 +14,9 @@ lang: zh
 
 ## 行动项
 
-- Bitcoin Optech 计划于 2020 年 2 月 5 日在伦敦举行第三次 Schnorr 和 Taproot 研讨会工作坊。此次工作坊将涵盖与前两次 [Schnorr/Taproot 工作坊][] 相同的内容，这些内容可以在本网站上进行自学。
+- Bitcoin Optech 计划于 2020 年 2 月 5 日在伦敦举行第三次 Schnorr 和 Taproot 研讨会工作坊。此次工作坊将涵盖与前两次 [Schnorr/Taproot 工作坊][Schnorr/Taproot workshops] 相同的内容，这些内容可以在本网站上进行自学。
 
-  **希望派遣工程师参加工作坊的会员公司请 [通过电子邮件联系 Optech][optech email]**。
+  **希望派遣工程师参加工作坊的会员公司请[通过电子邮件联系 Optech][optech email]**。
 
 ## 新闻
 
@@ -37,7 +37,7 @@ lang: zh
 - [LND #3814][] 允许 UTXO 清扫器向清扫交易中添加钱包输入，以确保其输出满足粉尘限制。这旨在帮助支持提议的锚定输出功能（参见 [Newsletter #70][news70 anchor]），该功能需要向交易中添加输入，以便能够花费低价值 UTXO。
 
 {% include linkers/issues.md issues="3647,3814,3351" %}
-[Schnorr/Taproot workshops]: /en/schnorr-taproot-workshop/
+[Schnorr/Taproot workshops]: /zh/schnorr-taproot-workshop/
 [wuille slides]: https://prezi.com/view/AlXd19INd3isgt3SvW8g/
 [wuille suggestion]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.log.html#l-8
 [zmn post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002375.html
