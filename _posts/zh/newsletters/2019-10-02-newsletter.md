@@ -18,7 +18,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--draft-bip-for-enabling-erlay-compatibilityl-->****支持 Erlay 兼容性的草案 BIP：**Gleb Naumenko（Erlay 的联合作者）在 Bitcoin-Dev 邮件列表上[发布][reconcil post]一份关于通过集合对账实现交易转发的草案 [BIP][bip-reconcil]。目前，比特币节点向每个对等节点发送所有新看到的交易 ID（txid），导致每个节点接收到大量重复的 txid 通知。这对于拥有数万个节点和每天数十万笔交易的比特币网络来说，带来了较低的带宽效率。另一种方式是，如之前[描述][erlay paper]的那样，基于 minisketch 的集合对账允许节点发送一组短 txid 的 *sketch*，接收节点可以将其与已经知道的短 txid 结合起来，恢复那些尚未看到的 txid。sketch 的大小大致等于需要恢复的短 txid 的预期大小，从而减少了 txid 通知的带宽。Erlay 是一个建议如何使用这种机制，以实现带宽效率和网络健壮性最佳平衡的提案。该草案 BIP 描述了基于 minisketch 的集合对账在节点之间的提议实现，为 Erlay 的实施奠定了基础。我们鼓励有反馈的任何人通过私人渠道或邮件列表与 BIP 作者联系。
+- **<!--draft-bip-for-enabling-erlay-compatibility-->****支持 Erlay 兼容性的草案 BIP：**Gleb Naumenko（Erlay 的联合作者）在 Bitcoin-Dev 邮件列表上[发布][reconcil post]一份关于通过集合对账实现交易转发的草案 [BIP][bip-reconcil]。目前，比特币节点向每个对等节点发送所有新看到的交易 ID（txid），导致每个节点接收到大量重复的 txid 通知。这对于拥有数万个节点和每天数十万笔交易的比特币网络来说，带来了较低的带宽效率。另一种方式是，如之前[描述][erlay paper]的那样，基于 minisketch 的集合对账允许节点发送一组短 txid 的 *sketch*，接收节点可以将其与已经知道的短 txid 结合起来，恢复那些尚未看到的 txid。sketch 的大小大致等于需要恢复的短 txid 的预期大小，从而减少了 txid 通知的带宽。Erlay 是一个建议如何使用这种机制，以实现带宽效率和网络健壮性最佳平衡的提案。该草案 BIP 描述了基于 minisketch 的集合对账在节点之间的提议实现，为 Erlay 的实施奠定了基础。我们鼓励有反馈的任何人通过私人渠道或邮件列表与 BIP 作者联系。
 
 - **<!--full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations-->****多种 LN 实现的已修复漏洞的全面披露：**几周前，C-Lightning、Eclair 和 LND 的开发者宣布了他们各自实现中之前发现的一个未公开问题，该问题已在最近的发布中得到修复。当时，他们强烈建议用户进行升级（Optech [转达][optech ln warning]这一信息），并承诺将在未来进行全面披露。现在，漏洞发现者和 C-Lightning 开发者 Rusty Russell 通过一封[电子邮件][russell disclosure]，以及 LND 开发者 Olaoluwa Osuntokun 和 Conner Fromknecht 在一篇[博客文章][lnd stay safe]中，完成了这项披露。
 
