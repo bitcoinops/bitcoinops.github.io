@@ -98,11 +98,11 @@ https://github.com/btcpayserver/btcpayserver/pull/1152 -->。HWI使硬件钱包�
 
 <div markdown="1" id="miniscript">
 
-同样在二月，Pieter Wuille 在[斯坦福区块链会议][Stanford Blockchain Conference]上做了关于[miniscript][topic miniscript]的[演讲][wuille sbc miniscript]，这是他在输出脚本描述符工作中的衍生项目。Miniscript提供了比特币脚本的结构化表示，简化了软件的自动化分析。分析可以确定钱包需要提供的数据以满足脚本（例如签名或哈希预图像）、脚本将使用的交易数据量及满足该脚本的数据，以及脚本是否通过已知的共识规则和流行的交易中继政策。
+同样在二月，Pieter Wuille 在[斯坦福区块链会议][Stanford Blockchain Conference]上做了关于[miniscript][topic miniscript]的[演讲][wuille sbc miniscript]，这是他在输出脚本描述符工作中的衍生项目。Miniscript 提供了比特币脚本的结构化表示，简化了软件的自动化分析。分析可以确定钱包需要提供的数据以满足脚本（例如签名或哈希预图像）、脚本将使用的交易数据量及满足该脚本的数据，以及脚本是否通过已知的共识规则和流行的交易中继政策。
 
-除了miniscript，Wuille、Andrew Poelstra 和 Sanket Kanjalkar 还提供了一种可组合的策略语言，能够编译成miniscript（后者本身又会转化为比特币脚本）。通过这种策略语言，用户可以轻松描述他们希望在花费其比特币时满足的条件。当多个用户希望共享对某个比特币的控制时，策略语言的可组合性使得将每个用户的签名策略组合成一个单一脚本变得容易。
+除了miniscript，Wuille、Andrew Poelstra 和 Sanket Kanjalkar 还提供了一种可组合的策略语言，能够编译成 miniscript（后者本身又会转化为比特币脚本）。通过这种策略语言，用户可以轻松描述他们希望在花费其比特币时满足的条件。当多个用户希望共享对某个比特币的控制时，策略语言的可组合性使得将每个用户的签名策略组合成一个单一脚本变得容易。
 
-如果被广泛采用，miniscript可以简化不同比特币系统之间的交易签名，显著减少为集成钱包前端、LN 节点、Coinjoin 系统、多签钱包、消费者硬件钱包、工业硬件签名模块（HSM）以及其他软件和硬件而需要编写的自定义代码量。
+如果被广泛采用，miniscript 可以简化不同比特币系统之间的交易签名，显著减少为集成钱包前端、LN 节点、Coinjoin 系统、多签钱包、消费者硬件钱包、工业硬件签名模块（HSM）以及其他软件和硬件而需要编写的自定义代码量。
 
 Wuille和他的合作者在全年继续研究miniscript，随后[请求社区反馈][news61 miniscript feedback]并[提交了一个拉取请求][Bitcoin Core #16800]，以便向 Bitcoin Core 添加支持。Miniscript还将在 12 月被 LN 开发者用来[分析和优化][anchor miniscript]他们一些链上交易的新脚本的升级版本。
 
@@ -120,9 +120,9 @@ Wuille和他的合作者在全年继续研究miniscript，随后[请求社区反
 
 <div markdown="1" id="signet">
 
-三月，Kalle Alm 也请求对[signet][topic signet]的初步反馈，该协议最终将成为[BIP325][]。signet 协议允许创建所有有效新块都必须由集中方签名的测试网。尽管这种集中化与比特币的理念背道而驰，但对于测试网来说，它是理想的，因为测试者有时希望创建一个破坏性的场景（例如链重组），而其他时候只想要一个稳定的平台来测试软件互操作性。在比特币现有的测试网上，重组和其他干扰可能频繁发生并持续较长时间，使得常规测试变得不切实际。
+三月，Kalle Alm 也请求对 [signet][topic signet] 的初步反馈，该协议最终将成为 [BIP325][]。signet 协议允许创建所有有效新块都必须由集中方签名的测试网。尽管这种集中化与比特币的理念背道而驰，但对于测试网来说，它是理想的，因为测试者有时希望创建一个破坏性的场景（例如链重组），而其他时候只想要一个稳定的平台来测试软件互操作性。在比特币现有的测试网上，重组和其他干扰可能频繁发生并持续较长时间，使得常规测试变得不切实际。
 
-signet将在全年成熟，并最终被[集成][cl signet]到C-Lightning等软件中，并用于[eltoo][]的演示。一项[拉取请求][Bitcoin Core #16411]仍在开放中，以便向 Bitcoin Core 添加支持。
+signet将在全年成熟，并最终被[集成][cl signet]到C-Lightning等软件中，并用于 [eltoo][] 的演示。一项[拉取请求][Bitcoin Core #16411]仍在开放中，以便向 Bitcoin Core 添加支持。
 
 </div>
 
