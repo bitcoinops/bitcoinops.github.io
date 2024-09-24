@@ -1,5 +1,5 @@
 ---
-title: 'RBF in the Wild'
+title: 'RBF 可用性研究'
 permalink: /zh/rbf-in-the-wild/
 name: 2019-02-11-rbf-in-the-wild-zh
 slug: 2019-02-11-rbf-in-the-wild-zh

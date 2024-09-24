@@ -9,8 +9,7 @@ lang: zh
 version: 1
 
 excerpt: >
-  A field report about how BTSE uses Bitcoin technologies to improve their
-  exchange operations.
+  一份关于 BTSE 如何使用比特币技术改进其交易所运营的实地报告。
 
 ---
 {% include articles/dong-btse-operation.md hlevel='##' %}

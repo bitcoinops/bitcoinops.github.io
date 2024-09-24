@@ -1,5 +1,5 @@
 ---
-title: Bech32 Sending Support
+title: Bech32 发送支持
 permalink: /zh/bech32-sending-support/
 name: 2019-03-19-bech32-sending-support-zh
 slug: 2019-03-19-bech32-sending-support-zh
@@ -9,7 +9,6 @@ lang: zh
 
 excerpt: >
     从 2019 年 3 月 19 日到 2019 年 8 月 28 日，我们 24 期每周系列关于 bech32 发送支持的所有发布部分。
-
 
 ---
 <style>
