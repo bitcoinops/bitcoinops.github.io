@@ -32,7 +32,7 @@ software.
   The method used differs from the aut-ct method described in
   [Newsletter #303][news303 aut-ct], and some of the discussion focused
   on clarifying the differences.  Additional research is needed, with
-  Halseth describing several open problems.
+  Halseth describing several open problems. {% assign timestamp="1:47" %}
 
 - **LN offline payments:** Andy Schroder [posted][schroder lnoff] to
   Delving Bitcoin to sketch a communication process an LN wallet could
@@ -54,7 +54,7 @@ software.
   Developer ZmnSCPxj [mentioned][zmn lnoff] an alternative approach he
   had previously described and Bastien Teinurier [referenced][t-bast
   lnoff] a method for node remote control he designed for this type of
-  situation (see [Newsletter #271][news271 noderc]).
+  situation (see [Newsletter #271][news271 noderc]). {% assign timestamp="11:32" %}
 
 - **DNS seeding for non-IP addresses:** developer Virtu [posted][virtu seed]
   to Delving Bitcoin a survey of the availability of seed nodes on
@@ -84,7 +84,7 @@ software.
   should be able to find peers.  They and other discussion participants
   also examined the possibility of modifying Bitcoin Core to allow it to
   use DNS seeding for anonymity networks via either DNS `NULL` records
-  or encoding alternative network addresses into pseudo-IPv6 addresses.
+  or encoding alternative network addresses into pseudo-IPv6 addresses. {% assign timestamp="30:00" %}
 
 ## Changes to services and client software
 
@@ -93,32 +93,32 @@ wallets and services.*
 
 - **Strike adds BOLT12 support:**
   Strike [announced][strike blog] support for [BOLT12 offers][topic offers],
-  including using offers with [BIP353][] DNS payment instructions.
+  including using offers with [BIP353][] DNS payment instructions. {% assign timestamp="42:15" %}
 
 - **BitBox02 adds silent payment support:**
   BitBox02 [announced][bitbox blog sp] support for [silent payments][topic
-  silent payments] and an implementation of [payment requests][bitbox blog pr].
+  silent payments] and an implementation of [payment requests][bitbox blog pr]. {% assign timestamp="43:29" %}
 
 - **The Mempool Open Source Project v3.0.0 released:**
   The [v3.0.0 release][mempool github 3.0.0] includes new [CPFP][topic cpfp]
   fee calculations, additional [RBF][topic rbf] features including fullrbf
   support, P2PK support, and new mempool and blockchain analysis features, among
-  other changes.
+  other changes. {% assign timestamp="45:22" %}
 
 - **ZEUS v0.9.0 released:**
   The [v0.9.0 post][zeus blog 0.9.0] outlines additional LSP features,
   watch-only wallets, hardware signing device support, support for transaction
-  [batching][scaling payment batching] including channel open transactions, and other features.
+  [batching][scaling payment batching] including channel open transactions, and other features. {% assign timestamp="46:39" %}
 
 - **Live Wallet adds consolidation support:**
   The Live Wallet application analyzes the cost to spend a set of UTXOs at
   different feerates including determining when outputs would be
   [uneconomical][topic uneconomical outputs] to spend. The [0.7.0 release][live
   wallet github 0.7.0] includes features to simulate [consolidation][consolidate
-  info] transactions and generate consolidation [PSBTs][topic psbt].
+  info] transactions and generate consolidation [PSBTs][topic psbt]. {% assign timestamp="47:04" %}
 
 - **Bisq adds Lightning support:**
-  [Bisq v2.1.0][bisq github v2.1.0] adds the ability for users to settle trades using the Lightning Network.
+  [Bisq v2.1.0][bisq github v2.1.0] adds the ability for users to settle trades using the Lightning Network. {% assign timestamp="48:30" %}
 
 ## Releases and release candidates
 
@@ -129,21 +129,21 @@ release candidates.*
 - [HWI 3.1.0][] is a release of the next version of this package
   providing a common interface to multiple different hardware signing
   devices.  This release adds support for the Trezor Safe 5 and makes
-  several other improvements and bug fixes.
+  several other improvements and bug fixes. {% assign timestamp="49:32" %}
 
 - [Core Lightning 24.08.1][] is a maintenance release that fixes crashes
-  and other bugs discovered in the recent 24.08 release.
+  and other bugs discovered in the recent 24.08 release. {% assign timestamp="49:56" %}
 
 - [BDK 1.0.0-beta.4][] is a release candidate for this library for
   building wallets and other Bitcoin-enabled applications.  The original
   `bdk` Rust crate has been renamed to `bdk_wallet` and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="50:27" %}
 
 - [Bitcoin Core 28.0rc2][] is a release candidate for the next major
   version of the predominant full node implementation.  A [testing
-  guide][bcc testing] is available.
+  guide][bcc testing] is available. {% assign timestamp="51:04" %}
 
 ## Notable code and documentation changes
 
@@ -165,7 +165,7 @@ about six months after the release of the upcoming version 28._
   without flushing the UTXO set from RAM to disk, which can
   [provide][lopp cache] about a 25% speed up. It was decided to remove the
   limit rather than raise it because there was no optimal value
-  that would be future-proof and to give users complete flexibility.
+  that would be future-proof and to give users complete flexibility. {% assign timestamp="52:23" %}
 
 - [Bitcoin Core #30286][] optimizes the candidate search algorithm used in
   cluster linearizations, based on the framework laid out in Section 2 of
@@ -173,46 +173,46 @@ about six months after the release of the upcoming version 28._
   These optimizations minimize iterations to improve linearization performance,
   but may increase startup and per-iteration costs. This is part of the [cluster
   mempool][topic cluster mempool] project. See Newsletter [#315][news315
-  cluster].
+  cluster]. {% assign timestamp="53:53" %}
 
 - [Bitcoin Core #30807][] changes the signaling of an [assumeUTXO][topic
   assumeutxo] node that is syncing the background chain from `NODE_NETWORK` to
   `NODE_NETWORK_LIMITED` so that peer nodes don’t request blocks older than about a week from it. This
   fixes a bug where a peer would request a historical block and get no response,
-  causing it to disconnect from the assumeUTXO node.
+  causing it to disconnect from the assumeUTXO node. {% assign timestamp="55:24" %}
 
 - [LND #8981][] refactors the `paymentDescriptor` type to only use it within
   the `lnwallet` package. This is to later replace `paymentDescriptor` with a
   new structure called `LogUpdate` to simplify how updates are logged and
   handled, as part of a series of PRs implementing dynamic commitments, a type
-  of [channel commitment upgrade][topic channel commitment upgrades].
+  of [channel commitment upgrade][topic channel commitment upgrades]. {% assign timestamp="56:36" %}
 
 - [LDK #3140][] adds support for paying static [BOLT12][topic offers] invoices
   to send [async payments][topic async payments] as an always online sender as
   defined in [BOLTs #1149][], but without including the invoice request in the
   payment [onion message][topic onion messages]. Sending as an often offline
   sender or receiving async payments is not yet possible, so the flow cannot yet
-  be tested end-to-end.
+  be tested end-to-end. {% assign timestamp="57:34" %}
 
 - [LDK #3163][] updates the [offers][topic offers] message flow by introducing a
   `reply_path` in BOLT12 invoices. This allows the payer to send the error
-  message back to the payee in case of an invoice error.
+  message back to the payee in case of an invoice error. {% assign timestamp="58:50" %}
 
 - [LDK #3010][] adds functionality for a node to retry sending an invoice
   request to an [offer][topic offers] reply path if it hasn't yet received the
   corresponding invoice.  Previously, if an invoice request message on a single
-  reply path offer failed due to network disconnection, it wasn't retried.
+  reply path offer failed due to network disconnection, it wasn't retried. {% assign timestamp="59:40" %}
 
 - [BDK #1581][] introduces changes to the [coin selection][topic coin selection]
   algorithm by allowing for a customizable fallback algorithm in the
   `BranchAndBoundCoinSelection` strategy. The signature of the `coin_select`
   method is updated to allow a random number generator to be passed directly to
   the coin selection algorithm. This PR also includes additional refactorings,
-  internal fallback handling, and simplification of error handling.
+  internal fallback handling, and simplification of error handling. {% assign timestamp="1:00:18" %}
 
 - [BDK #1561][] removes the `bdk_hwi` crate from the project, to simplify
   dependencies and CI. The `bdk_hwi` crate contained `HWISigner`, which has now
-  been moved to the `rust_hwi` project.
+  been moved to the `rust_hwi` project. {% assign timestamp="1:01:21" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
