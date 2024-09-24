@@ -122,5 +122,5 @@ lang: zh
 [news68 taproot update]: /zh/newsletters/2019/10/16/#taproot-update
 [news60 16248]: /zh/newsletters/2019/08/21/#bitcoin-core-16248
 [bse bech32 extension]: {{bse}}91602
-[topics announcement]: /zh/topics-announcement/
+[topics announcement]: /en/topics-announcement/
 [erlay]: https://arxiv.org/pdf/1905.10518.pdf
