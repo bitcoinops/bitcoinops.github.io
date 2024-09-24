@@ -98,13 +98,13 @@ https://github.com/btcpayserver/btcpayserver/pull/1152 -->。HWI使硬件钱包�
 
 <div markdown="1" id="miniscript">
 
-同样在二月，Pieter Wuille 在[斯坦福区块链会议][Stanford Blockchain Conference]上做了关于[miniscript][topic miniscript]的[演讲][wuille sbc miniscript]，这是他在输出脚本描述符工作中的衍生项目。Miniscript 提供了比特币脚本的结构化表示，简化了软件的自动化分析。分析可以确定钱包需要提供的数据以满足脚本（例如签名或哈希预图像）、脚本将使用的交易数据量及满足该脚本的数据，以及脚本是否通过已知的共识规则和流行的交易中继政策。
+同样在二月，Pieter Wuille 在[斯坦福区块链会议][Stanford Blockchain Conference]上做了关于 [miniscript][topic miniscript] 的[演讲][wuille sbc miniscript]，这是他在输出脚本描述符工作中的衍生项目。Miniscript 提供了比特币脚本的结构化表示，简化了软件的自动化分析。分析可以确定钱包需要提供的数据以满足脚本（例如签名或哈希预图像）、脚本将使用的交易数据量及满足该脚本的数据，以及脚本是否通过已知的共识规则和流行的交易中继政策。
 
 除了miniscript，Wuille、Andrew Poelstra 和 Sanket Kanjalkar 还提供了一种可组合的策略语言，能够编译成 miniscript（后者本身又会转化为比特币脚本）。通过这种策略语言，用户可以轻松描述他们希望在花费其比特币时满足的条件。当多个用户希望共享对某个比特币的控制时，策略语言的可组合性使得将每个用户的签名策略组合成一个单一脚本变得容易。
 
 如果被广泛采用，miniscript 可以简化不同比特币系统之间的交易签名，显著减少为集成钱包前端、LN 节点、Coinjoin 系统、多签钱包、消费者硬件钱包、工业硬件签名模块（HSM）以及其他软件和硬件而需要编写的自定义代码量。
 
-Wuille和他的合作者在全年继续研究miniscript，随后[请求社区反馈][news61 miniscript feedback]并[提交了一个拉取请求][Bitcoin Core #16800]，以便向 Bitcoin Core 添加支持。Miniscript还将在 12 月被 LN 开发者用来[分析和优化][anchor miniscript]他们一些链上交易的新脚本的升级版本。
+Wuille 和他的合作者在全年继续研究 miniscript，随后[请求社区反馈][news61 miniscript feedback]并[提交了一个拉取请求][Bitcoin Core #16800]，以便向 Bitcoin Core 添加支持。Miniscript还将在 12 月被 LN 开发者用来[分析和优化][anchor miniscript]他们一些链上交易的新脚本的升级版本。
 
 </div>
 
@@ -127,13 +127,13 @@ signet将在全年成熟，并最终被[集成][cl signet]到C-Lightning等软�
 </div>
 
 {:#loop}
-此外，在三月，Lightning Labs 宣布推出[Lightning Loop][]，为希望从LN通道中提取部分资金到链上UTXO而不关闭通道的用户提供非托管解决方案。在六月，他们将[升级][loop-in] Loop，以允许用户将UTXO花费到现有通道中。Loop 使用与常规的链下LN交易类似的哈希时间锁定合约（HTLC），确保用户的资金要么按预期转移，要么用户收到退款，退款中扣除的只有链上交易费用。这使得 Loop 几乎完全无需信任。
+此外，在三月，Lightning Labs 宣布推出 [Lightning Loop][]，为希望从 LN 通道中提取部分资金到链上 UTXO 而不关闭通道的用户提供非托管解决方案。在六月，他们将[升级][loop-in] Loop，以允许用户将 UTXO 花费到现有通道中。Loop 使用与常规的链下 LN 交易类似的哈希时间锁定合约（HTLC），确保用户的资金要么按预期转移，要么用户收到退款，退款中扣除的只有链上交易费用。这使得 Loop 几乎完全无需信任。
 
 <div markdown="1" class="callout" id="releases">
 
 ### 2019 总结<br>流行基础设施项目的主要发布
 
-- [C-Lightning 0.7][] 于三月发布，增加了插件系统，年底将得到广泛应用。这也是第一个支持[可重复构建][topic reproducible builds]的C-Lightning版本，通过改善审计能力提高安全性。
+- [C-Lightning 0.7][] 于三月发布，增加了插件系统，年底将得到广泛应用。这也是第一个支持[可重复构建][topic reproducible builds]的 C-Lightning 版本，通过改善审计能力提高安全性。
 
 - [LND 0.6-beta][] 于四月发布，支持[静态通道备份（SCBs）][lnd scb]，帮助用户恢复在LN通道中结算的任何资金，即使他们丢失了最近的通道状态。该版本还提供了改进的自动驾驶功能，以帮助用户开启新通道，并内置与 [Lightning Loop][] 的兼容性，以便在不关闭通道或使用托管的情况下在链上转移资金。
 
@@ -145,9 +145,9 @@ signet将在全年成熟，并最终被[集成][cl signet]到C-Lightning等软�
 
 - [LND 0.8-beta][] 于十月发布，增加了对更可扩展的洋葱格式的支持，提高了备份安全性，并改善了看守塔的支持。
 
-- [Bitcoin Core 0.19][] 于十一月发布，实现了新的 [CPFP 分离][topic cpfp carve out]内存池策略，增加了对[BIP158][]样式的[致密区块过滤器][topic compact block filters]（目前仅支持RPC）的初步支持，通过默认禁用[BIP37][]布隆过滤器和[BIP70][]支付请求来提高安全性。它还默认将GUI用户切换到bech32地址。
+- [Bitcoin Core 0.19][] 于十一月发布，实现了新的 [CPFP 分离][topic cpfp carve out]内存池策略，增加了对[BIP158][]样式的[致密区块过滤器][topic compact block filters]（目前仅支持RPC）的初步支持，通过默认禁用[BIP37][]布隆过滤器和[BIP70][]支付请求来提高安全性。它还默认将 GUI 用户切换到 bech32 地址。
 
-- [C-Lightning 0.8][] 于十二月发布，增加了对[多路径支付][topic multipath payments]的支持，并将默认网络从测试网切换到主网。这也是第一个支持替代数据库的主要C-Lightning版本，postgresql支持可用，除了默认的sqlite支持。
+- [C-Lightning 0.8][] 于十二月发布，增加了对[多路径支付][topic multipath payments]的支持，并将默认网络从测试网切换到主网。这也是第一个支持替代数据库的主要 C-Lightning 版本，postgresql 支持可用，除了默认的 sqlite 支持。
 
 </div>
 
@@ -172,13 +172,13 @@ signet将在全年成熟，并最终被[集成][cl signet]到C-Lightning等软�
 
 即使在多签名和合约支出无法完全利用 Taproot 的隐私和空间节省的情况下，它们仍然可能只需要将一部分代码放在链上，从而比当前情况获得更多的隐私和空间节省。除了 Taproot，[tapscript][topic tapscript] 对比特币的脚本能力进行了一些小的改进，主要是通过更容易和更清晰地添加新的操作码。
 
-这些提案在全年得到了广泛讨论和审查，包括由Anthony Towns组织的一系列[小组审查会议][taproot review]，共有超过150人报名参与审查。
+这些提案在全年得到了广泛讨论和审查，包括由 Anthony Towns 组织的一系列[小组审查会议][taproot review]，共有超过 150 人报名参与审查。
 
 </div>
 
 <div markdown="1" id="anyprevout">
 
-Towns 还在五月提出了两个新的签名哈希，将与 tapscript 结合使用，分别是 `SIGHASH_ANYPREVOUT` 和 `SIGHASH_ANYPREVOUTANYSCRIPT`。签名哈希（sighash）是指对交易字段及相关数据的哈希，签名通过它进行承诺。比特币中的不同sighashes承诺交易的不同部分，允许签名者选择让其他人对其交易进行某些修改。这两个新提议的sighashes类似于 [BIP118][] 的 [SIGHASH_NOINPUT][topic sighash_anyprevout]，故意不识别它们所花费的UTXO，从而允许签名花费任何它能够满足其脚本的UTXO（例如，使用相同的公钥）。
+Towns 还在五月提出了两个新的签名哈希，将与 tapscript 结合使用，分别是 `SIGHASH_ANYPREVOUT` 和 `SIGHASH_ANYPREVOUTANYSCRIPT`。签名哈希（sighash）是指对交易字段及相关数据的哈希，签名通过它进行承诺。比特币中的不同sighashes承诺交易的不同部分，允许签名者选择让其他人对其交易进行某些修改。这两个新提议的 sighashes 类似于 [BIP118][] 的 [SIGHASH_NOINPUT][topic sighash_anyprevout]，故意不识别它们所花费的UTXO，从而允许签名花费任何它能够满足其脚本的 UTXO（例如，使用相同的公钥）。
 
 无输入风格的 sighashes 的主要建议用途是启用之前提议的 [eltoo][topic eltoo] LN 更新层。Eltoo 可以简化通道构建和管理的多个方面；特别是在涉及多个参与者的通道中，这种简化是非常期望的，能够显著降低链上通道成本。
 
@@ -186,9 +186,9 @@ Towns 还在五月提出了两个新的签名哈希，将与 tapscript 结合使
 
 <div markdown="1" id="ctv">
 
-本月提出的第三个软分叉来自 Jeremy Rubin，他[描述][coshv]了一种现在称为`OP_CHECKTEMPLATEVERIFY`（CTV）的新操作码。这将允许一种有限形式的[契约][topic covenants]，其中一个交易的输出要求后续支出该输出的交易包含某些其他输出。一个建议用途是承诺未来的支付，其中支出者支付一个只能通过一笔交易（或一系列交易）支出的单个小输出，随后支付给数十、数百或甚至数千个不同的接收者。这可以启用新的技术，以增强类似Coinjoin的隐私，支持增强安全性的保险库，或者在交易费用飙升时管理支出者的成本。
+本月提出的第三个软分叉来自 Jeremy Rubin，他[描述][coshv]了一种现在称为 `OP_CHECKTEMPLATEVERIFY`（CTV）的新操作码。这将允许一种有限形式的[契约][topic covenants]，其中一个交易的输出要求后续支出该输出的交易包含某些其他输出。一个建议用途是承诺未来的支付，其中支出者支付一个只能通过一笔交易（或一系列交易）支出的单个小输出，随后支付给数十、数百或甚至数千个不同的接收者。这可以启用新的技术，以增强类似 Coinjoin 的隐私，支持增强安全性的保险库，或者在交易费用飙升时管理支出者的成本。
 
-Rubin将在接下来的一年中继续致力于CTV，包括为 Bitcoin Core 中的一些部分优化开设拉取请求（[1][Bitcoin Core #17268]，[2][Bitcoin Core #17292]），使得CTV的实际部署版本更有效。
+Rubin 将在接下来的一年中继续致力于 CTV，包括为 Bitcoin Core 中的一些部分优化开设拉取请求（[1][Bitcoin Core #17268]，[2][Bitcoin Core #17292]），使得 CTV 的实际部署版本更有效。
 
 </div>
 
@@ -212,9 +212,9 @@ Rubin将在接下来的一年中继续致力于CTV，包括为 Bitcoin Core 中�
 
 <div markdown="1" id="erlay-and-other-p2p-improvements">
 
-Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Beschastnikh 发表了一篇关于 [erlay][topic erlay] 的[论文][erlay]，这是一种在节点之间中继未确认交易公告的协议，利用 [libminisketch][topic minisketch] 进行集合协调，预计能减少84%的公告带宽。论文还表明，erlay将使节点显著增加默认的外向连接数量变得更为实用。这可以提高每个节点抵御 [eclipse 攻击][eclipse attacks]的能力，这种攻击可能使其接受不在最大工作量区块链上的区块。更多的外向连接也改善了节点抵御其他可能用于追踪或延迟来自该节点支付的攻击。
+Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Beschastnikh 发表了一篇关于 [erlay][topic erlay] 的[论文][erlay]，这是一种在节点之间中继未确认交易公告的协议，利用 [libminisketch][topic minisketch] 进行集合协调，预计能减少 84% 的公告带宽。论文还表明，erlay 将使节点显著增加默认的外向连接数量变得更为实用。这可以提高每个节点抵御 [eclipse 攻击][eclipse attacks]的能力，这种攻击可能使其接受不在最大工作量区块链上的区块。更多的外向连接也改善了节点抵御其他可能用于追踪或延迟来自该节点支付的攻击。
 
-今年在P2P中继方面的其他改进包括 Bitcoin Core 的[交易中继隐私改进][#14897]（消除了Sergi Delgado-Segura等人描述的 [TxProbe][] 论文中的问题）以及增加了[两个额外的外向连接][two extra outbound connections]，仅用于新块的中继，提高了抵御eclipse攻击的能力。
+今年在 P2P 中继方面的其他改进包括 Bitcoin Core 的[交易中继隐私改进][#14897]（消除了 Sergi Delgado-Segura 等人描述的 [TxProbe][] 论文中的问题）以及增加了[两个额外的外向连接][two extra outbound connections]，仅用于新块的中继，提高了抵御 eclipse 攻击的能力。
 
 </div>
 
@@ -250,7 +250,7 @@ Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Bescha
 
 <div markdown="1" class="callout" id="optech">
 
-### 2019 Bitcoin Optech<br>总结
+### 2019 总结<br>Bitcoin Optech
 
 在 Optech 的第二年，我们新增了六家会员公司，在 NYC 区块链周期间举办了[高管简报][optech executive briefing]，发布了一系列[为期 24 周的文章][bech32 sending support] ，推广 Bech32 发送支持，向我们的网站添加了钱包和服务的 [兼容性矩阵][compatibility matrix]，发布了 51 期每周[通讯][newsletters]<!-- #28 to #78, inclusive -->，我们的几期新闻通讯和博客文章被翻译成[日语][xlation ja]和[西班牙语][xlation es]，创建了[主题索引][topics index]，为我们的 [可扩展性工作手册][Scalability Workbook] 添加了一章，举办了两次 [Schnorr/Taproot 研讨会][schnorr/taproot workshops]，并发布了来自 [BTSE][] 和 [BRD][] 的实地报告。
 
@@ -279,7 +279,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 一直以来，解决此问题的方案是使承诺交易能够提高费用。不幸的是，像 Bitcoin Core 这样的节点必须限制费用提升的使用，以防止浪费带宽和 CPU 的拒绝服务（DoS）攻击。在像闪电网络这样的无需信任的多用户协议中，您的对手可能是攻击者，他们可能故意触发反 DoS 策略，以延迟确认您的闪电网络承诺交易，这种攻击有时被称为[交易固定][topic transaction pinning]。被固定的交易可能无法在其时间锁到期之前确认，从而允许攻击对手盗取您的资金。
 
-去年，Matt Corallo [建议][carve-out proposed]在 Bitcoin Core 的交易中继策略中划出与子支付父（CPFP）费用提升相关的特殊豁免。这项有限的豁免确保了双方合同协议（例如当前一代闪电网络）能够保证每个参与方都有能力创建自己的费用提升。Corallo 的想法被称为 [CPFP 分离][topic cpfp carve out]，并且他的实现作为 Bitcoin Core 0.19 的一部分发布。早在该版本发布之前，其他闪电网络开发者已经在对闪电网络脚本和协议消息进行必要的[修订][anchor outputs]，以开始使用这一变化。截至本文撰写时，这些规范更改正在等待最终实施和接受，然后才能在网络上部署。
+去年，Matt Corallo [建议][carve-out proposed]在 Bitcoin Core 的交易中继策略中划出与 CPFP 费用提升相关的特殊豁免。这项有限的豁免确保了双方合同协议（例如当前一代闪电网络）能够保证每个参与方都有能力创建自己的费用提升。Corallo 的想法被称为 [CPFP 分离][topic cpfp carve out]，并且他的实现作为 Bitcoin Core 0.19 的一部分发布。早在该版本发布之前，其他闪电网络开发者已经在对闪电网络脚本和协议消息进行必要的[修订][anchor outputs]，以开始使用这一变化。截至本文撰写时，这些规范更改正在等待最终实施和接受，然后才能在网络上部署。
 
 </div>
 
@@ -289,7 +289,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 - **<!--proof-of-reserves-tool-->**[储备证明工具][Proof of reserves tool] 于二月发布，允许交易所和其他比特币保管人使用 [BIP127][] 储备证明证明他们对特定 UTXO 集的控制。
 
-- **<!--hardware-wallet-interface-->**[硬件钱包接口][topic hwi] 于三月发布，使得与部分签名比特币交易（[PSBTs][topic psbt]）和 [输出脚本描述符][topic descriptors] 兼容的钱包可以使用多种不同型号的硬件钱包进行安全密钥存储和签名。
+- **<!--hardware-wallet-interface-->**[硬件钱包接口][topic hwi] 于三月发布，使得与部分签名比特币交易（[PSBTs][topic psbt]）和[输出脚本描述符][topic descriptors]兼容的钱包可以使用多种不同型号的硬件钱包进行安全密钥存储和签名。
 
 - <a href="/zh/newsletters/2019/03/26/#loop-announced">闪电环</a> 于三月发布（并于六月添加了环入支持），提供了一种无需托管的服务，允许用户在不关闭现有通道或开启新通道的情况下添加或移除其闪电网络通道中的资金。
 
