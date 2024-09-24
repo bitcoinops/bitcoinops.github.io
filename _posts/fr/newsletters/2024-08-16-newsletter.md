@@ -133,7 +133,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 - **Identification et authentification optionnelles des payeurs LN :** Bastien Teinturier a
   [posté][teinturier auth] sur Delving Bitcoin pour proposer des méthodes permettant aux payeurs
   d'inclure éventuellement des données supplémentaires avec leurs paiements qui permettraient aux
-  récepteurs d'identifier ces paiements comme provenant d'un contact connu. Par exemple, si Alice
+  receveurs d'identifier ces paiements comme provenant d'un contact connu. Par exemple, si Alice
   génère une [offre][topic offers] que Bob paie, elle peut vouloir une preuve cryptographique que le
   paiement vient de Bob et non d'un tiers se faisant passer pour Bob. Les offres sont conçues par
   défaut pour cacher les identités du payeur et du récepteur, donc des mécanismes supplémentaires
@@ -150,9 +150,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Des retours sur les méthodes cryptographiques à utiliser sont demandés, avec Teinturier prévoyant de
   publier [BLIP42][blips #42] avec une spécification pour les méthodes sélectionnées.
 
-- **Passage de Bitcoin Core au système de construction CMake :** Cory Fields a [posté][fields cmake]
+- **Passage de Bitcoin Core au système de compilation CMake :** Cory Fields a [posté][fields cmake]
   sur la liste de diffusion Bitcoin-Dev pour annoncer le passage imminent de Bitcoin Core du système
-  de construction GNU autotools au
+  de compilation GNU autotools au
   système de compilation CMake, qui a été dirigé par Hennadii Stepanov avec des contributions de
   Michael Ford pour les corrections de bugs et la modernisation, avec des revues et contributions de
   plusieurs autres développeurs (y compris Fields). Cela ne devrait pas affecter ceux qui utilisent
@@ -162,28 +162,28 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   des plateformes ou des configurations de compilations peu communes.
 
   L'email de Fields fournit des réponses aux questions anticipées et demande à quiconque construit
-  Bitcoin Core par lui-même de tester le [PR #30454][bitcoin core #30454] et de signaler tout problème.
-  Ce PR est prévu pour être fusionné dans les prochaines semaines avec une sortie anticipée dans la
+  Bitcoin Core par lui-même de tester la [PR #30454][bitcoin core #30454] et de signaler tout problème.
+  Cette PR est prévue pour être fusionnée dans les prochaines semaines avec une sortie anticipée dans la
   version 29 (prévue environ 7 mois à partir de maintenant). Plus tôt vous testez, plus les
   développeurs de Bitcoin Core auront de temps pour corriger les problèmes avant la sortie de la
   version 29---augmentant la chance qu'ils puissent prévenir les problèmes dans le code publié
   d'affecter votre configuration.
 
-## Mises à jour et versions candidates
+## Nouvelles versions et versions candidates
 
-*Nouvelles sorties et candidats à la sortie pour des projets d'infrastructure Bitcoin populaires.
+*Nouvelles version et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de mettre à jour vers les nouvelles versions ou d'aider à tester les candidats à la sortie.*
 
-- [BDK 1.0.0-beta.1][] est un candidat à la sortie pour cette bibliothèque pour construire des
+- [BDK 1.0.0-beta.1][] est une version candidate pour cette bibliothèque pour construire des
   portefeuilles et d'autres applications activées par Bitcoin. Le paquet Rust `bdk` original a été
   renommé en `bdk_wallet` et les modules de couche inférieure ont été extraits dans leurs propres
   paquets de codes, y compris `bdk_chain`, `bdk_electrum`, `bdk_esplora`, et `bdk_bitcoind_rpc`. Le paquet
   `bdk_wallet` "est la première version à offrir une API stable 1.0.0."
 
-- [Core Lightning 24.08rc2][] est un candidat à la sortie pour la prochaine version majeure de cette
+- [Core Lightning 24.08rc2][] est une version candidate pour la prochaine version majeure de cette
   implémentation populaire de nœud LN.
 
-- [LND v0.18.3-beta.rc1][] est un candidat à la sortie pour une sortie de correction de bug mineur
+- [LND v0.18.3-beta.rc1][] est une version candidate pour une sortie de correction de bug mineur
   de cette implémentation populaire de nœud LN.
 
 ## Changements notables dans le code et la documentation
