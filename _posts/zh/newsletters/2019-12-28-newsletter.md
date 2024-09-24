@@ -10,7 +10,7 @@ lang: zh
 excerpt: >
   本期特刊总结了 2019 年比特币的值得注意的发展。
 ---
-{{page.excerpt}} 这是我们 [2018 年总结][2018 summary] 的续集。
+{{page.excerpt}} 这是我们 [2018 年总结][2018 summary]的续集。
 
 {% comment %}
   ## 提交
@@ -31,7 +31,7 @@ excerpt: >
   done | numsum
   1529
 
-  ## 快讯字数；除以 350 得到页数
+  ## 通讯字数；除以 350 得到页数
   #
   ## 注意，不包括此总结
   $ cd _posts/en/newsletters   # end italics_
@@ -39,9 +39,9 @@ excerpt: >
   72450 total
 {% endcomment %}
 
-本总结主要基于我们过去一年发布的[每周快讯][weekly newsletters]，我们审查了近 9,000 个提交（近 2,000 个合并）、超过 1,500 个邮件列表帖子、数千行 IRC 日志，以及其他众多公开来源。最初，我们用了 50 期快讯和超过 200 页的内容来总结这些出色的工作。即便如此，我们依然遗漏了许多重要贡献，特别是那些修复错误、编写测试、进行审核和提供支持的人们的贡献——这些工作至关重要，但未必“值得报道”。在进一步总结并试图将整整一年的内容压缩成几页文章时，我们现在也省略了许多其他重要贡献。
+本总结主要基于我们过去一年发布的[每周通讯][weekly newsletters]，我们审查了近 9,000 个提交（近 2,000 个合并）、超过 1,500 个邮件列表帖子、数千行 IRC 日志，以及其他众多公开来源。最初，我们用了 50 期通讯和超过 200 页的内容来总结这些出色的工作。即便如此，我们依然遗漏了许多重要贡献，特别是那些修复错误、编写测试、进行审核和提供支持的人们的贡献——这些工作至关重要，但未必“值得报道”。在进一步总结并试图将整整一年的内容压缩成几页文章时，我们现在也省略了许多其他重要贡献。
 
-因此，在继续之前，我们想向 2019 年对比特币做出贡献的每一个人表示衷心的感谢。即使以下总结没有提到您或您的项目，请您知道我们在 Optech——可能所有比特币用户——对您为比特币所做的贡献感激不已，难以用言语表达。
+因此，在继续之前，我们想向 2019 年对比特币做出贡献的每一个人表示衷心的感谢。即使以下总结没有提到您或您的项目，请您知道我们在 Optech ——可能所有比特币用户——对您为比特币所做的贡献感激不已，难以用言语表达。
 
 ## 目录
 
@@ -65,9 +65,9 @@ excerpt: >
     * [Erlay 及其他 P2P 中继改进](#erlay-and-other-p2p-improvements)
     * <a href="#watchtowers">瞭望塔</a>
 * 七月
-    * [可重现构建](#reproducibility)
+    * [可重复构建](#reproducibility)
 * 八月
-    * [没有契约的保险库](#vaults)
+    * [无需契约的保险库](#vaults)
 * 九月
     * <a href="#snicker">SNICKER</a>
     * [LN 漏洞](#ln-cve)
@@ -82,7 +82,7 @@ excerpt: >
 * 精选总结
     * [流行基础设施项目的主要发布](#releases)
     * [值得注意的技术会议和其他活动](#conferences)
-    * [比特币技术快讯](#optech)
+    * [比特币技术通讯](#optech)
     * [新的开源基础设施解决方案](#new-infrastructure)
 
 ## 一月
@@ -196,15 +196,15 @@ Rubin将在接下来的一年中继续致力于CTV，包括为 Bitcoin Core 中�
 
 ### 2019总结<br>值得注意的技术会议和其他活动
 
-- [斯坦福区块链会议][Stanford Blockchain Conference], 一月，斯坦福大学
-- [MIT 比特币博览会][MIT Bitcoin Expo], 三月，麻省理工学院
-- [Optech 高管简报][Optech Executive Briefing], 五月，纽约市
-- [魔法加密朋友（技术轨道）][mcf]，五月，纽约市
-- [突破比特币][Breaking Bitcoin], 六月，阿姆斯特丹
-- [Bitcoin Core 开发者聚会][coredevtech amsterdam]，六月，阿姆斯特丹
-- [Edge Dev++][Edge Dev++], 九月，特拉维夫
-- [比特币扩展][Scaling Bitcoin]，九月，特拉维夫
-- [加密经济系统峰会][Cryptoeconomic Systems Summit], 十月，麻省理工学院
+- **<!--stanford-blockchain-conference-->**[斯坦福区块链会议][Stanford Blockchain Conference], 一月，斯坦福大学
+- **<!--mit-bitcoin-expo-->**[MIT 比特币博览会][MIT Bitcoin Expo], 三月，麻省理工学院
+- **<!--optech-executive-briefing-->**[Optech 高管简报][Optech Executive Briefing], 五月，纽约市
+- **<!--magical-crypto-friends-technical-track-->**[魔法加密朋友（技术轨道）][mcf]，五月，纽约市
+- **<!--breaking-bitcoin-->**[突破比特币][Breaking Bitcoin], 六月，阿姆斯特丹
+- **<!--bitcoin-core-developers-meetup-->**[Bitcoin Core 开发者聚会][coredevtech amsterdam]，六月，阿姆斯特丹
+- **<!--edge-dev-->**[Edge Dev++][Edge Dev++], 九月，特拉维夫
+- **<!--scaling-bitcoin-->**[比特币扩展][Scaling Bitcoin]，九月，特拉维夫
+- **<!--cryptoeconomic-systems-summit-->**[加密经济系统峰会][Cryptoeconomic Systems Summit], 十月，麻省理工学院
 
 </div>
 
@@ -242,9 +242,9 @@ Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Bescha
 
 <div markdown="1" id="vaults">
 
-在八月，Bryan Bishop 描述了一种[在比特币上实现无需契约使用 vaults][vaults on Bitcoin without using covenants] 的方法。*Vaults* 是一个术语，用于描述一种脚本，限制攻击者在获得用户的正常私钥后窃取资金的能力。*[契约][topic covenants]*是只能支出到特定其他脚本的脚本。目前没有已知的方法可以使用当前的比特币脚本语言创建契约，但如果用户愿意在将资金存入保管合同时运行一些额外步骤的代码，就不需要契约。
+在八月，Bryan Bishop 描述了一种[在比特币上实现无需契约使用保险库][vaults on Bitcoin without using covenants] 的方法。*保险库*是一个术语，用于描述一种脚本，限制攻击者在获得用户的正常私钥后窃取资金的能力。*[契约][topic covenants]*是只能支出到特定其他脚本的脚本。目前没有已知的方法可以使用当前的比特币脚本语言创建契约，但如果用户愿意在将资金存入保管合同时运行一些额外步骤的代码，就不需要契约。
 
-更值得注意的是，Bishop 还描述了以往 vault 提案中的新弱点，以及一种减轻该弱点的措施，以限制攻击者从 vault 中窃取的资金的最大金额。实用 vault 的开发可能对个人用户和大型托管组织（如交易所）都很有用。
+更值得注意的是，Bishop 还描述了以往保险库提案中的新弱点，以及一种减轻该弱点的措施，以限制攻击者从保险库中窃取的资金的最大金额。实用保险库的开发可能对个人用户和大型托管组织（如交易所）都很有用。
 
 </div>
 
@@ -252,7 +252,7 @@ Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Bescha
 
 ### 2019 总结<br>比特币 Optech
 
-在 Optech 的第二年，我们新增了六家会员公司，在 NYC 区块链周期间举办了[高管简报][optech executive briefing]，发布了一系列[为期 24 周的文章][bech32 sending support] ，推广 Bech32 发送支持，向我们的网站添加了钱包和服务的 [兼容性矩阵][compatibility matrix]，发布了 51 期每周 [新闻通讯][newsletters]<!-- #28 to #78, inclusive -->，我们的几期新闻通讯和博客文章被翻译成[日语][xlation ja]和[西班牙语][xlation es]，创建了[主题索引][topics index]，为我们的 [可扩展性工作手册][Scalability Workbook] 添加了一章，举办了两次 [Schnorr/Taproot 研讨会][schnorr/taproot workshops]，并发布了来自 [BTSE][] 和 [BRD][] 的实地报告。
+在 Optech 的第二年，我们新增了六家会员公司，在 NYC 区块链周期间举办了[高管简报][optech executive briefing]，发布了一系列[为期 24 周的文章][bech32 sending support] ，推广 Bech32 发送支持，向我们的网站添加了钱包和服务的 [兼容性矩阵][compatibility matrix]，发布了 51 期每周[通讯][newsletters]<!-- #28 to #78, inclusive -->，我们的几期新闻通讯和博客文章被翻译成[日语][xlation ja]和[西班牙语][xlation es]，创建了[主题索引][topics index]，为我们的 [可扩展性工作手册][Scalability Workbook] 添加了一章，举办了两次 [Schnorr/Taproot 研讨会][schnorr/taproot workshops]，并发布了来自 [BTSE][] 和 [BRD][] 的实地报告。
 
 我们对 2020 年有大计划，因此希望您能继续关注我们的[推特][Twitter], 订阅我们的[每周通讯][weekly newsletter], 或跟踪我们的 [RSS 源][RSS feed]。
 
