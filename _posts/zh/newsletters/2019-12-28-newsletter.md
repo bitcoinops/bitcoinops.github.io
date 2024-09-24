@@ -82,7 +82,7 @@ excerpt: >
 * 精选总结
     * [流行基础设施项目的主要发布](#releases)
     * [值得注意的技术会议和其他活动](#conferences)
-    * [比特币技术通讯](#optech)
+    * [Bitcoin Optech](#optech)
     * [新的开源基础设施解决方案](#new-infrastructure)
 
 ## 一月
@@ -250,7 +250,7 @@ Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova 和 Ivan Bescha
 
 <div markdown="1" class="callout" id="optech">
 
-### 2019 总结<br>比特币 Optech
+### 2019 Bitcoin Optech<br>总结
 
 在 Optech 的第二年，我们新增了六家会员公司，在 NYC 区块链周期间举办了[高管简报][optech executive briefing]，发布了一系列[为期 24 周的文章][bech32 sending support] ，推广 Bech32 发送支持，向我们的网站添加了钱包和服务的 [兼容性矩阵][compatibility matrix]，发布了 51 期每周[通讯][newsletters]<!-- #28 to #78, inclusive -->，我们的几期新闻通讯和博客文章被翻译成[日语][xlation ja]和[西班牙语][xlation es]，创建了[主题索引][topics index]，为我们的 [可扩展性工作手册][Scalability Workbook] 添加了一章，举办了两次 [Schnorr/Taproot 研讨会][schnorr/taproot workshops]，并发布了来自 [BTSE][] 和 [BRD][] 的实地报告。
 
@@ -287,9 +287,9 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 ### 2019 年总结<br>新开源基础设施解决方案
 
-- [储备证明工具][Proof of reserves tool] 于二月发布，允许交易所和其他比特币保管人使用 [BIP127][] 储备证明证明他们对特定 UTXO 集的控制。
+- **<!--proof-of-reserves-tool-->**[储备证明工具][Proof of reserves tool] 于二月发布，允许交易所和其他比特币保管人使用 [BIP127][] 储备证明证明他们对特定 UTXO 集的控制。
 
-- [硬件钱包接口][topic hwi] 于三月发布，使得与部分签名比特币交易（[PSBTs][topic psbt]）和 [输出脚本描述符][topic descriptors] 兼容的钱包可以使用多种不同型号的硬件钱包进行安全密钥存储和签名。
+- **<!--hardware-wallet-interface-->**[硬件钱包接口][topic hwi] 于三月发布，使得与部分签名比特币交易（[PSBTs][topic psbt]）和 [输出脚本描述符][topic descriptors] 兼容的钱包可以使用多种不同型号的硬件钱包进行安全密钥存储和签名。
 
 - <a href="/zh/newsletters/2019/03/26/#loop-announced">闪电环</a> 于三月发布（并于六月添加了环入支持），提供了一种无需托管的服务，允许用户在不关闭现有通道或开启新通道的情况下添加或移除其闪电网络通道中的资金。
 
