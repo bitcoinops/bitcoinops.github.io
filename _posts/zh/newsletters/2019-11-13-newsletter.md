@@ -9,6 +9,9 @@ lang: zh
 ---
 本周的 Newsletter 宣布了一项影响某些旧版本 Bitcoin Core 的安全漏洞披露，描述了与 taproot 相关的新进展，提到了与 LN 支付数据格式相关的潜在隐私泄露，并讨论了两个正在讨论的 LN 规范变更提案。此外，我们还包括了我们常规部分，描述流行比特币基础设施项目的值得注意的变化。
 
+{% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
+{% include references.md %}
+
 ## 行动项
 
 *本周无行动项。*
@@ -23,7 +26,8 @@ lang: zh
 
   这引发了专家之间的讨论，讨论内容涉及 bech32 地址编码算法中的一个问题，该问题在 5 月份被[报道][bech32 length change]，并在最近[详细描述][bse bech32 extension]。根据 [BIP173][] 的规范，bech32 地址应该保证在一个错误复制的地址中可以检测到最多四个错误，并且在五个或更多错误的情况下，只有大约每十亿个错误复制的地址会漏检。不幸的是，这些计算是在假设复制的地址长度与原始长度相同的情况下进行的。如果复制的地址长度变长或变短，bech32 有时可能无法检测到一个字符的错误。
 
-  对于现有的 P2WPKH 和 P2WSH bech32 地址，这很可能不会成为问题，因为 v0 scriptPubKeys 必须恰好为 22 或 34 字节的限制意味着一个错误复制的 P2WPKH 地址需要包含多出 12 字节，或 P2WSH 地址需要省略 12 字节，这意味着用户需要输入大约 19 个额外或更少的 bech32 字符——这是一个非常大的错误。
+  对于现有的 P2WPKH 和 P2WSH bech32 地址，这很可能不会成为问题，因为 v0 scriptPubKeys 必须恰好为 22 或 34 字节的限制意味着一个错误复制的 P2WPKH 地址需要包含多出 12 字节，或 P2WSH 地址需要省略 12 字节，这意味着用户需要输入大约 19 个额外或更少的 bech32 字符——这是一个非常大的错误。<!-- 8 bits per byte * 12 bytes / 5 bits per bech32
+  character = 19.2 bech32 characters -->
 
   但是，如果 P2TR 仅为 34 字节的 v1 scriptPubKeys 定义，而任何人仍然可以支出 33 字节和 35 字节的 v1 scriptPubKeys，那么用户可能会犯一个字符错误，从而失去所有他们打算支出的资金。BIP173 和 taproot 提案的作者 Pieter Wuille 在 Bitcoin-Dev 邮件列表上[发布][wuille bech32 workaround]了一些应对这个问题的选项，并请求对人们希望实施的选项提供反馈。一个选项是限制所有当前 bech32 实现拒绝任何不导致 22 或 34 字节 scriptPubKey 的原生 segwit 地址。然后，bech32 的升级版本可以开发出更好的检测插入或删除字符的能力。
 
@@ -31,7 +35,8 @@ lang: zh
 
   在其他 schnorr/taproot 新闻中，Jonas Nick 发布了一篇[信息丰富的博客文章][x-only pubkeys]，介绍了 [bip-schnorr][] 和 [bip-taproot][] 的最近重大变化，该变化将序列化公钥的大小从 33 字节减少到 32 字节，同时不降低安全性。有关此优化的先前讨论，请参见 Newsletters [#59][news59 proposed 32B pubkeys] 和 [#68][news68 taproot update]。
 
-- **<!--possible-privacy-leak-in-the-ln-onion-format-->****LN 洋葱格式的潜在隐私泄露：** 正如在 [BOLT4][] 中所述，LN 使用 [Sphinx][] 协议在 LN 节点之间传递支付信息。Olaoluwa Osuntokun 本周在 Lightning-Dev 邮件列表上[发布][osuntokun sphinx]了一项关于最近发布的[原始 Sphinx 描述中的缺陷][breaking onion routing] 的帖子，该缺陷可能允许目标节点“推断出路径长度的下限[回到源节点]”。修复很简单：使用随机值字节初始化洋葱数据包的一部分，而不是用零字节。Osuntokun 创建了一个 [PR][lnd-onion]，在 LND 使用的洋葱库中实现这一点，并且还为 BOLTs 存储库创建了一个[文档 PR][bolts #697]。其他实现也采纳了相同的更改（请参见下面的 [C-Lightning 提交][news72 cl onion]）。
+- **<!--possible-privacy-leak-in-the-ln-onion-format-->****LN 洋葱格式的潜在隐私泄露：** 正如在 [BOLT4][] 中所述，LN 使用 [Sphinx][] 协议在 LN 节点之间传递支付信息。Olaoluwa Osuntokun 本周在 Lightning-Dev 邮件列表上[发布][osuntokun sphinx]了一项关于最近发布的[原始 Sphinx 描述中的缺陷][breaking onion routing] 的帖子，该缺陷可能允许目标节点“推断出路径长度的下限[回到源节点]”。<!-- quote from Osuntokun email -->
+修复很简单：使用随机值字节初始化洋葱数据包的一部分，而不是用零字节。Osuntokun 创建了一个 [PR][lnd-onion]，在 LND 使用的洋葱库中实现这一点，并且还为 BOLTs 存储库创建了一个[文档 PR][bolts #697]。其他实现也采纳了相同的更改（请参见下面的 [C-Lightning 提交][news72 cl onion]）。
 
 - **<!--ln-up-front-payments-->****LN 预付款：** 当前 LN 协议在支付尝试失败或被接收方拒绝时会将所有资金退还给支付者，因此路由节点只有在支付尝试成功时才会获得收入。然而，一些新应用程序利用这种无成本失败机制通过 LN 发送数据，而无需支付他们使用的带宽。LN 设计者预料到这种情况，并且之前花时间考虑如何向网络添加预付费——这些费用将在支付尝试成功与否时都支付给路由节点。
 
