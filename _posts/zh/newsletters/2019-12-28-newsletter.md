@@ -63,7 +63,7 @@ excerpt: >
     * [OP_CHECKTEMPLATEVERIFY](#ctv)
 * 六月
     * [Erlay 及其他 P2P 中继改进](#erlay-and-other-p2p-improvements)
-    * <a href="#watchtowers">监视塔</a>
+    * <a href="#watchtowers">瞭望塔</a>
 * 七月
     * [可重现构建](#reproducibility)
 * 八月
@@ -287,11 +287,11 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 ### 2019 年总结<br>新开源基础设施解决方案
 
-- [储备证明工具][] 于二月发布，允许交易所和其他比特币保管人使用 [BIP127][] 储备证明证明他们对特定 UTXO 集的控制。
+- [储备证明工具][Proof of reserves tool] 于二月发布，允许交易所和其他比特币保管人使用 [BIP127][] 储备证明证明他们对特定 UTXO 集的控制。
 
 - [硬件钱包接口][topic hwi] 于三月发布，使得与部分签名比特币交易（[PSBTs][topic psbt]）和 [输出脚本描述符][topic descriptors] 兼容的钱包可以使用多种不同型号的硬件钱包进行安全密钥存储和签名。
 
-- <a href="/en/newsletters/2019/03/26/#loop-announced">闪电环</a> 于三月发布（并于六月添加了环入支持），提供了一种无需托管的服务，允许用户在不关闭现有通道或开启新通道的情况下添加或移除其闪电网络通道中的资金。
+- <a href="/zh/newsletters/2019/03/26/#loop-announced">闪电环</a> 于三月发布（并于六月添加了环入支持），提供了一种无需托管的服务，允许用户在不关闭现有通道或开启新通道的情况下添加或移除其闪电网络通道中的资金。
 
 </div>
 
@@ -299,26 +299,26 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 <div markdown="1" id="bech32-mutability">
 
-关于使用 bech32 地址进行 [taproot][topic taproot] 支付的讨论使人们进一步关注到在五月发现的一个 [问题][bech32 malleability issue]。根据 [BIP173][]，错误复制的 bech32 字符串的最坏情况失败率约为十亿分之一。然而，发现以 `p` 结尾的 bech32 字符串可以添加或删除任意数量的前导 `q` 字符。这在实际操作中并不会影响 segwit P2WPKH 或 P2WSH 地址的 bech32 地址，因为至少需要添加或删除 19 个连续的 `q` 字符才能将一种地址类型转换为另一种——并且对于 v0 segwit 地址的任何其他长度变化都是无效的。 <!-- "19 characters" math in _posts/en/newsletters/2019-11-13-newsletter.md -->
+关于使用 bech32 地址进行 [taproot][topic taproot] 支付的讨论使人们进一步关注到在五月发现的一个[问题][bech32 malleability issue]。根据 [BIP173][]，错误复制的 bech32 字符串的最坏情况失败率约为十亿分之一。然而，发现以 `p` 结尾的 bech32 字符串可以添加或删除任意数量的前导 `q` 字符。这在实际操作中并不会影响 segwit P2WPKH 或 P2WSH 地址的 bech32 地址，因为至少需要添加或删除 19 个连续的 `q` 字符才能将一种地址类型转换为另一种——并且对于 v0 segwit 地址的任何其他长度变化都是无效的。 <!-- "19 characters" math in _posts/zh/newsletters/2019-11-13-newsletter.md -->
 
-但对于 v1+ segwit 地址（例如那些提议用于 taproot 的地址），在一个脆弱地址中添加或删除一个 `q` 字符可能会导致资金损失。BIP173 的共同作者 Pieter Wuille 进行了 [额外分析][bech32 analysis]，发现这是 bech32 预期错误更正能力的唯一偏差，因此他建议将比特币中 BIP173 地址的使用限制为仅 20 字节或 32 字节的见证程序。这将确保 v1 和后续的 segwit 地址版本提供与 v0 segwit 地址相同的可靠错误更正。他还描述了对 bech32 算法的小调整，这将允许其他使用 bech32 的应用程序，以及下一代比特币地址格式，使用 BCH 错误检测而不出现此问题。
+但对于 v1+ segwit 地址（例如那些提议用于 taproot 的地址），在一个脆弱地址中添加或删除一个 `q` 字符可能会导致资金损失。BIP173 的共同作者 Pieter Wuille 进行了[额外分析][bech32 analysis]，发现这是 bech32 预期错误更正能力的唯一偏差，因此他建议将比特币中 BIP173 地址的使用限制为仅 20 字节或 32 字节的见证程序。这将确保 v1 和后续的 segwit 地址版本提供与 v0 segwit 地址相同的可靠错误更正。他还描述了对 bech32 算法的小调整，这将允许其他使用 bech32 的应用程序，以及下一代比特币地址格式，使用 BCH 错误检测而不出现此问题。
 
 </div>
 
 {:#openssl}
-同样在十一月，Bitcoin Core [移除了对 OpenSSL 的依赖][rm openssl]，该依赖自 2009 年比特币 0.1 版本发布以来一直存在。OpenSSL 是 [共识漏洞][non-strict der]、[远程内存泄漏][heartbleed]（潜在的私钥泄漏）、[其他错误][cve-2014-3570] 和 [性能不佳][libsecp256k1 sig speedup] 的根源。希望它的移除能减少未来漏洞的频率。
+同样在十一月，Bitcoin Core [移除了对 OpenSSL 的依赖][rm openssl]，该依赖自 2009 年 Bitcoin 0.1 版本发布以来一直存在。OpenSSL 是[共识漏洞][non-strict der]、[远程内存泄漏][heartbleed]（潜在的私钥泄漏）、[其他错误][cve-2014-3570]和[性能不佳][libsecp256k1 sig speedup]的根源。希望它的移除能减少未来漏洞的频率。
 
 {:#bip70}
-作为 OpenSSL 移除的一部分，Bitcoin Core 在版本 0.18 中弃用了对 [BIP70][] 支付协议的支持，并在版本 0.19 中默认禁用了该支持。这一决定得到了在 2019 年继续使用 BIP70 的少数几家公司之一的 CEO 的 [支持][ceo bitpay]。
+作为 OpenSSL 移除的一部分，Bitcoin Core 在版本 0.18 中弃用了对 [BIP70][] 支付协议的支持，并在版本 0.19 中默认禁用了该支持。这一决定得到了在 2019 年继续使用 BIP70 的少数几家公司之一的 CEO 的[支持][ceo bitpay]。
 
 ## 十二月
 
 {:#multipath}
-在十二月，闪电网络开发者实现了去年 [计划会议][ln1.1] 的主要目标之一：基本 [多路径支付][topic multipath payments] 的 [实现][mpp implementation]。这些支付可以分成几个部分，每部分通过不同通道单独路由。这使得用户能够在一次支付中同时使用多个通道进行支出或接收资金，从而在某些安全限制内花费他们的全部离线余额或一次性接收其全部容量。 <!-- safety restrictions: non-wumbo and channel reserve funding --> 预计这将通过消除支出者担心特定通道余额的需要，使闪电网络变得更加用户友好。
+在十二月，闪电网络开发者实现了去年[计划会议][ln1.1]的主要目标之一：基本[多路径支付][topic multipath payments]的[实现][mpp implementation]。这些支付可以分成几个部分，每部分通过不同通道单独路由。这使得用户能够在一次支付中同时使用多个通道进行支出或接收资金，从而在某些安全限制内花费他们的全部离线余额或一次性接收其全部容量。 <!-- safety restrictions: non-wumbo and channel reserve funding -->预计这将通过消除支出者担心特定通道余额的需要，使闪电网络变得更加用户友好。
 
 ## 结论
 
-在上述总结中，我们没有看到革命性的提案或改进。相反，我们看到了一系列渐进的改进——这些解决方案利用比特币和闪电网络已经成功的案例，并在此基础上进一步优化系统。我们看到开发者努力使硬件钱包更易于使用（HWI），使钱包间的多重签名和合约用例的通信更加通用（描述符、PSBT、miniscript），增强共识安全（清理软分叉），简化测试（signet），消除不必要的托管（环），使运行节点更容易（assumeutxo），改善隐私和节省区块空间（taproot），简化闪电网络执行（anyprevout），更好地管理费用率波动（CTV），减少节点带宽（erlay），确保闪电网络用户在离线时安全（监视塔），减少对信任的需求（可重复构建），防止盗窃（金库），使隐私更易获得（SNICKER），更好地管理闪电网络用户的链上费用（锚定输出），并使闪电网络支付更频繁地自动生效（多路径支付）。
+在上述总结中，我们没有看到革命性的提案或改进。相反，我们看到了一系列渐进的改进——这些解决方案利用比特币和闪电网络已经成功的案例，并在此基础上进一步优化系统。我们看到开发者努力使硬件钱包更易于使用（HWI），使钱包间的多重签名和合约用例的通信更加通用（描述符、PSBT、miniscript），增强共识安全（清理软分叉），简化测试（signet），消除不必要的托管（环），使运行节点更容易（assumeutxo），改善隐私和节省区块空间（taproot），简化闪电网络执行（anyprevout），更好地管理费用率波动（CTV），减少节点带宽（erlay），确保闪电网络用户在离线时安全（瞭望塔），减少对信任的需求（可重复构建），防止盗窃（金库），使隐私更易获得（SNICKER），更好地管理闪电网络用户的链上费用（锚定输出），并使闪电网络支付更频繁地自动生效（多路径支付）。
 
 （而这些仅仅是年度亮点而已！）
 
