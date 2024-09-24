@@ -1,8 +1,8 @@
 ---
-title: '比特币技术快讯 #78: 2019 年度回顾特刊'
+title: 'Bitcoin Optech Newsletter #78: 2019 Year-in-Review Special'
 permalink: /zh/newsletters/2019/12/28/
-name: 2019-12-28-newsletter
-slug: 2019-12-28-newsletter
+name: 2019-12-28-newsletter-zh
+slug: 2019-12-28-newsletter-zh
 type: newsletter
 layout: newsletter
 lang: zh
@@ -10,7 +10,7 @@ lang: zh
 excerpt: >
   本期特刊总结了 2019 年比特币的值得注意的发展。
 ---
-{{page.excerpt}} 这是我们 [2018 年总结][] 的续集。
+{{page.excerpt}} 这是我们 [2018 年总结][2018 summary] 的续集。
 
 {% comment %}
   ## 提交
@@ -39,7 +39,7 @@ excerpt: >
   72450 total
 {% endcomment %}
 
-本总结主要基于我们过去一年发布的 [每周快讯][]，我们审查了近 9,000 个提交（近 2,000 个合并）、超过 1,500 个邮件列表帖子、数千行 IRC 日志，以及其他众多公开来源。最初，我们用了 50 期快讯和超过 200 页的内容来总结这些出色的工作。即便如此，我们依然遗漏了许多重要贡献，特别是那些修复错误、编写测试、进行审核和提供支持的人们的贡献——这些工作至关重要，但未必“值得报道”。在进一步总结并试图将整整一年的内容压缩成几页文章时，我们现在也省略了许多其他重要贡献。
+本总结主要基于我们过去一年发布的[每周快讯][weekly newsletters]，我们审查了近 9,000 个提交（近 2,000 个合并）、超过 1,500 个邮件列表帖子、数千行 IRC 日志，以及其他众多公开来源。最初，我们用了 50 期快讯和超过 200 页的内容来总结这些出色的工作。即便如此，我们依然遗漏了许多重要贡献，特别是那些修复错误、编写测试、进行审核和提供支持的人们的贡献——这些工作至关重要，但未必“值得报道”。在进一步总结并试图将整整一年的内容压缩成几页文章时，我们现在也省略了许多其他重要贡献。
 
 因此，在继续之前，我们想向 2019 年对比特币做出贡献的每一个人表示衷心的感谢。即使以下总结没有提到您或您的项目，请您知道我们在 Optech——可能所有比特币用户——对您为比特币所做的贡献感激不已，难以用言语表达。
 
@@ -323,87 +323,87 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 
 {% include references.md %}
 {% include linkers/issues.md issues="16800,16411,17268,17292" %}
-[#14897]: /en/newsletters/2019/02/12/#bitcoin-core-14897
-[2018 summary]: /en/newsletters/2018/12/28/
-[altruist watchtowers]: /en/newsletters/2019/06/19/#lnd-3133
+[#14897]: /zh/newsletters/2019/02/12/#bitcoin-core-14897
+[2018 summary]: /zh/newsletters/2018/12/28/
+[altruist watchtowers]: /zh/newsletters/2019/06/19/#lnd-3133
 [anchor miniscript]: https://github.com/lightningnetwork/lightning-rfc/pull/688#pullrequestreview-326862133
-[anchor outputs]: /en/newsletters/2019/10/30/#ln-simplified-commitments
-[bech32 analysis]: /en/newsletters/2019/12/18/#analysis-of-bech32-error-detection
+[anchor outputs]: /zh/newsletters/2019/10/30/#ln-simplified-commitments
+[bech32 analysis]: /zh/newsletters/2019/12/18/#analysis-of-bech32-error-detection
 [bech32 malleability issue]: https://github.com/sipa/bech32/issues/51
-[bech32 sending support]: /en/bech32-sending-support/
-[bitcoin core 0.18]: /en/newsletters/2019/05/07/#bitcoin-core-0-18-0-released
-[bitcoin core 0.19]: /en/newsletters/2019/11/27/#bitcoin-core-0-19-released
-[brd]: /en/newsletters/2019/08/07/#bech32-sending-support
-[breaking bitcoin]: /en/newsletters/2019/06/19/#breaking-bitcoin
+[bech32 sending support]: /zh/bech32-sending-support/
+[bitcoin core 0.18]: /zh/newsletters/2019/05/07/#bitcoin-core-0-18-0-released
+[bitcoin core 0.19]: /zh/newsletters/2019/11/27/#bitcoin-core-0-19-released
+[brd]: /zh/newsletters/2019/08/07/#bech32-sending-support
+[breaking bitcoin]: /zh/newsletters/2019/06/19/#breaking-bitcoin
 [btcpayserver.vault]: https://github.com/btcpayserver/BTCPayServer.Vault
-[btse]: /en/btse-exchange-operation/
-[carve-out proposed]: /en/newsletters/2018/12/04/#cpfp-carve-out
-[ceo bitpay]: /en/newsletters/2018/10/30/#bitcoin-core-14451
-[c-lightning 0.7]: /en/newsletters/2019/03/05/#upgrade-to-c-lightning-0-7
+[btse]: /zh/btse-exchange-operation/
+[carve-out proposed]: /zh/newsletters/2018/12/04/#cpfp-carve-out
+[ceo bitpay]: /zh/newsletters/2018/10/30/#bitcoin-core-14451
+[c-lightning 0.7]: /zh/newsletters/2019/03/05/#upgrade-to-c-lightning-0-7
 [c-lightning 0.8]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.0
 [cl repro]: https://github.com/ElementsProject/lightning/blob/master/doc/REPRODUCIBLE.md
-[cl signet]: /en/newsletters/2019/07/24/#c-lightning-2816
-[coredevtech amsterdam]: /en/newsletters/2019/06/12/#bitcoin-core-contributor-meetings
-[coshv]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
-[cryptoeconomic systems summit]: /en/newsletters/2019/10/16/#conference-summary-cryptoeconomic-systems-summit
+[cl signet]: /zh/newsletters/2019/07/24/#c-lightning-2816
+[coredevtech amsterdam]: /zh/newsletters/2019/06/12/#bitcoin-core-contributor-meetings
+[coshv]: /zh/newsletters/2019/05/29/#proposed-transaction-output-commitments
+[cryptoeconomic systems summit]: /zh/newsletters/2019/10/16/#conference-summary-cryptoeconomic-systems-summit
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [dual-funding serialization]: https://twitter.com/rusty_twit/status/1179976386619928576
-[dumptxoutset]: /en/newsletters/2019/11/13/#bitcoin-core-16899
+[dumptxoutset]: /zh/newsletters/2019/11/13/#bitcoin-core-16899
 [eclair 0.3]: https://github.com/ACINQ/eclair/releases/tag/v0.3
 [eclipse attacks]: https://eprint.iacr.org/2015/263.pdf
-[edge dev++]: /en/newsletters/2019/09/18/#bitcoin-edge-dev
-[eltoo watchtowers]: /en/newsletters/2019/12/11/#watchtowers-for-eltoo-payment-channels
-[exp tramp]: /en/newsletters/2019/11/20/#eclair-1209
+[edge dev++]: /zh/newsletters/2019/09/18/#bitcoin-edge-dev
+[eltoo watchtowers]: /zh/newsletters/2019/12/11/#watchtowers-for-eltoo-payment-channels
+[exp tramp]: /zh/newsletters/2019/11/20/#eclair-1209
 [gitian]: https://github.com/devrandom/gitian-builder
-[guix merge]: /en/newsletters/2019/07/17/#bitcoin-core-15277
+[guix merge]: /zh/newsletters/2019/07/17/#bitcoin-core-15277
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [jupyter notebooks]: https://github.com/bitcoinops/taproot-workshop#readme
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
-[lightning loop]: /en/newsletters/2019/03/26/#loop-announced
-[ln1.1]: /en/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
-[lnd 0.6-beta]: /en/newsletters/2019/04/23/#lnd-0-6-beta-released
-[lnd 0.7-beta]: /en/newsletters/2019/07/03/#lnd-0-7-0-beta-released
-[lnd 0.8-beta]: /en/newsletters/2019/10/16/#upgrade-lnd-to-version-0-8-0-beta
+[lightning loop]: /zh/newsletters/2019/03/26/#loop-announced
+[ln1.1]: /zh/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
+[lnd 0.6-beta]: /zh/newsletters/2019/04/23/#lnd-0-6-beta-released
+[lnd 0.7-beta]: /zh/newsletters/2019/07/03/#lnd-0-7-0-beta-released
+[lnd 0.8-beta]: /zh/newsletters/2019/10/16/#upgrade-lnd-to-version-0-8-0-beta
 [lnd repro]: https://github.com/lightningnetwork/lnd/blob/master/build/release/README.md
-[lnd scb]: /en/newsletters/2019/04/09/#lnd-2313
-[ln missed validation]: /en/newsletters/2019/10/02/#full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations
-[loop-in]: /en/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
-[mcf]: /en/newsletters/2019/05/21/#talks-of-technical-interest-at-magical-crypto-friends-conference
-[mit bitcoin expo]: /en/newsletters/2019/03/19/#mit-bitcoin-club-2019-expo-videos-available
-[mpp implementation]: /en/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
-[news33 reserves]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
-[news37 cleanup discussion]: /en/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-[news37 merkle tree attacks]: /en/newsletters/2019/03/05/#merkle-tree-attacks
-[news61 miniscript feedback]: /en/newsletters/2019/08/28/#miniscript-request-for-comments
-[news67 bolts676]: /en/newsletters/2019/10/09/#bolts-676
-[newsletters]: /en/newsletters/
+[lnd scb]: /zh/newsletters/2019/04/09/#lnd-2313
+[ln missed validation]: /zh/newsletters/2019/10/02/#full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations
+[loop-in]: /zh/newsletters/2019/07/03/#lightning-loop-supports-user-loop-ins
+[mcf]: /zh/newsletters/2019/05/21/#talks-of-technical-interest-at-magical-crypto-friends-conference
+[mit bitcoin expo]: /zh/newsletters/2019/03/19/#mit-bitcoin-club-2019-expo-videos-available
+[mpp implementation]: /zh/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
+[news33 reserves]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
+[news37 cleanup discussion]: /zh/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
+[news37 merkle tree attacks]: /zh/newsletters/2019/03/05/#merkle-tree-attacks
+[news61 miniscript feedback]: /zh/newsletters/2019/08/28/#miniscript-request-for-comments
+[news67 bolts676]: /zh/newsletters/2019/10/09/#bolts-676
+[newsletters]: /zh/newsletters/
 [non-strict der]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
-[optech executive briefing]: /en/2019-exec-briefing/
-[proof of reserves tool]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
-[rm openssl]: /en/newsletters/2019/11/27/#bitcoin-core-17265
+[optech executive briefing]: /zh/2019-exec-briefing/
+[proof of reserves tool]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
+[rm openssl]: /zh/newsletters/2019/11/27/#bitcoin-core-17265
 [roose reserves]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
 [scalability workbook]: https://github.com/bitcoinops/scaling-book
-[scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
-[schnorr/taproot workshops]: /en/schnorr-taproot-workshop/
-[snicker]: /en/newsletters/2019/09/04/#snicker-proposed
-[stanford blockchain conference]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
+[scaling bitcoin]: /zh/newsletters/2019/09/18/#scaling-bitcoin
+[schnorr/taproot workshops]: /zh/schnorr-taproot-workshop/
+[snicker]: /zh/newsletters/2019/09/04/#snicker-proposed
+[stanford blockchain conference]: /zh/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
-[taproot review]: /en/newsletters/2019/10/23/#taproot-review
-[time warp attack]: /en/newsletters/2019/03/05/#the-time-warp-attack
-[topics index]: /en/topics/
-[trampoline proposed]: /en/newsletters/2019/04/02/#trampoline-payments-for-ln
-[trampolines pr]: /en/newsletters/2019/08/07/#trampoline-payments
+[taproot review]: /zh/newsletters/2019/10/23/#taproot-review
+[time warp attack]: /zh/newsletters/2019/03/05/#the-time-warp-attack
+[topics index]: /zh/topics/
+[trampoline proposed]: /zh/newsletters/2019/04/02/#trampoline-payments-for-ln
+[trampolines pr]: /zh/newsletters/2019/08/07/#trampoline-payments
 [trusting trust]: https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
 [twitter]: https://twitter.com/bitcoinoptech/
-[two extra outbound connections]: /en/newsletters/2019/09/11/#bitcoin-core-15759
-[txprobe]: /en/newsletters/2019/09/18/#txprobe-discovering-bitcoin-s-network-topology-using-orphan-transactions
-[vaults on bitcoin without using covenants]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
+[two extra outbound connections]: /zh/newsletters/2019/09/11/#bitcoin-core-15759
+[txprobe]: /zh/newsletters/2019/09/18/#txprobe-discovering-bitcoin-s-network-topology-using-orphan-transactions
+[vaults on bitcoin without using covenants]: /zh/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [wasabi hwi]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v1.1.4
-[watchtower spec]: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
-[weekly newsletter]: /en/newsletters/
-[weekly newsletters]: /en/newsletters/
-[worst case cpu usage]: /en/newsletters/2019/03/05/#legacy-transaction-verification
-[wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
+[watchtower spec]: /zh/newsletters/2019/12/04/#proposed-watchtower-bolt
+[weekly newsletter]: /zh/newsletters/
+[weekly newsletters]: /zh/newsletters/
+[worst case cpu usage]: /zh/newsletters/2019/03/05/#legacy-transaction-verification
+[wuille sbc miniscript]: /zh/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/
 [eltoo]: https://blockstream.com/eltoo.pdf
