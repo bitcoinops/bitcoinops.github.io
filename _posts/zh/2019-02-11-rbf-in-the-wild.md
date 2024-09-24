@@ -35,7 +35,7 @@ excerpt: >
 
 中本聪在 0.3.12 中[禁用交易替换](https://github.com/bitcoin/bitcoin/commit/05454818dc7ed92f577a1a1ef6798049f17a52e7#diff-118fcbaaba162ba17933c7893247df3aR522)，并留下评论 _“// 暂时禁用替换功能”_。从 0.3.12 到 0.11.x，Bitcoin Core 没有默认的交易替换功能。
 
-这种情况在彼得·托德的 [BIP125 “可选择的完全通过费用替换信号”][BIP125]被合并到 Bitcoin Core 0.12.0 时发生了变化。BIP125 通过要求替换交易的更高费用解决了上述垃圾邮件防范和激励问题。
+这种情况在 Peter Todd 的 [BIP125 “可选择的完全通过费用替换信号”][BIP125]被合并到 Bitcoin Core 0.12.0 时发生了变化。BIP125 通过要求替换交易的更高费用解决了上述垃圾邮件防范和激励问题。
 
 ![2018 年 RBF 交易](/img/posts/rbf-in-the-wild/rbf-transactions-in-2018.png)
 *2018 年大约 6% 的交易信号可选择 RBF。来源：[Bitcoin Optech 仪表盘](https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=1514835702976&to=1546285302976)*
