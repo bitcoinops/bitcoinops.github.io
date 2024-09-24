@@ -236,7 +236,7 @@ John Light [发布][news222 rollups]了一篇关于 validity rollups 的研究�
 eclipse attacks]更加困难。
 
 {:#core-meet}
-一次比特币协议开发者会议中，Bryan Bishop [主持][news223 xscribe] 了几项议题讨论，包括[传输加密][topic v2 p2p transport]、交易费和[经济安全性][topic fee sniping]、 FROST [门限签名][topic threshold signature]方案、使用GitHub进行源代码托管和开发讨论的可持续性、BIP 中的可证明规范、[包中继][topic package relay]和 [v3 交易中继][topic v3 transaction relay]、Stratum 第二版采矿协议、以及让代码合并到比特币核心和其他自由软件项目。
+一次比特币协议开发者会议中，Bryan Bishop [主持][news223 xscribe] 了几项议题讨论，包括[传输加密][topic v2 p2p transport]、交易费和[经济安全性][topic fee sniping]、 FROST [门限签名][topic threshold signature]方案、使用GitHub进行源代码托管和开发讨论的可持续性、BIP 中的可证明规范、[包中继][topic package relay]和 [v3 交易中继][topic v3 transaction relay]、Stratum 第二版采矿协议、以及让代码合并到 Bitcoin Core 和其他自由软件项目。
 
 <div markdown="1" class="callout" id="softforks">
 
@@ -260,7 +260,7 @@ Russell O'Connor [提议][news185 txhash]了 CTV 和 APO 的替代方案——�
 
 九月，Jeremy Rubin [描述了][news218 apo]如何将可信设置程序与提议的 APO 特性相结合，实现类似于[驱动链][topic sidechains]所提议的行为。防止驱动链在比特币上的实施是开发者 ZmnSCPxj 在今年早些时候建议全节点运营商反对实现了递归契约的软分叉的原因之一。
 
-同样在九月，Anthony Towns [宣布][news219 inquisition]一个专门为测试软分叉而设计的比特币实现 [signet][topic signet]。基于比特币核心，Towns 的代码将以高质量的规范和实现来执行软分叉提案的规则，使用户更简单地尝试拟议的更改——包括相互比较更改或看到它们的互动方式。Towns 还计划加入对交易中继政策（如[包中继][topic package relay]）提议的重大改变。
+同样在九月，Anthony Towns [宣布][news219 inquisition]一个专门为测试软分叉而设计的比特币实现 [signet][topic signet]。基于 Bitcoin Core，Towns 的代码将以高质量的规范和实现来执行软分叉提案的规则，使用户更简单地尝试拟议的更改——包括相互比较更改或看到它们的互动方式。Towns 还计划加入对交易中继政策（如[包中继][topic package relay]）提议的重大改变。
 
 十一月，Salvatore Ingala 在 Bitcoin-Dev 邮件列表中[发布][news226 matt]了一个提议，提出了一个新的契约类型（需要一个软分叉），允许使用默克尔树来创建智能合约，此合约可以在一笔链上交易到另一笔链上交易中携带状态。这将与其他一些密码货币系统智能合约的应用类似，但与比特币现有的基于 UTXO 的系统兼容。
 

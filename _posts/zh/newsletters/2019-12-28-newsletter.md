@@ -338,7 +338,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [bech32 sending support]: /zh/bech32-sending-support/
 [bitcoin core 0.18]: /zh/newsletters/2019/05/07/#bitcoin-core-0-18-0-released
 [bitcoin core 0.19]: /zh/newsletters/2019/11/27/#bitcoin-core-0-19-released
-[brd]: /zh/newsletters/2019/08/07/#bech32-sending-support
+[brd]: /zh/newsletters/2019/08/07/#bech32-发送支持
 [breaking bitcoin]: /zh/newsletters/2019/06/19/#breaking-bitcoin
 [btcpayserver.vault]: https://github.com/btcpayserver/BTCPayServer.Vault
 [btse]: /zh/btse-exchange-operation/
@@ -349,7 +349,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [cl repro]: https://github.com/ElementsProject/lightning/blob/master/doc/REPRODUCIBLE.md
 [cl signet]: /zh/newsletters/2019/07/24/#c-lightning-2816
 [coredevtech amsterdam]: /zh/newsletters/2019/06/12/#bitcoin-core-contributor-meetings
-[coshv]: /zh/newsletters/2019/05/29/#proposed-transaction-output-commitments
+[coshv]: /zh/newsletters/2019/05/29/#提议的交易输出承诺
 [cryptoeconomic systems summit]: /zh/newsletters/2019/10/16/#conference-summary-cryptoeconomic-systems-summit
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [dual-funding serialization]: https://twitter.com/rusty_twit/status/1179976386619928576
@@ -378,7 +378,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [mpp implementation]: /zh/newsletters/2019/12/18/#ln-implementations-add-multipath-payment-support
 [news33 reserves]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [news37 cleanup discussion]: /zh/newsletters/2019/03/12/#cleanup-soft-fork-proposal-discussion
-[news37 merkle tree attacks]: /zh/newsletters/2019/03/05/#merkle-tree-attacks
+[news37 merkle tree attacks]: /zh/newsletters/2019/03/05/#merkle-树攻击
 [news61 miniscript feedback]: /zh/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /zh/newsletters/2019/10/09/#bolts-676
 [newsletters]: /zh/newsletters/
@@ -391,11 +391,11 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [scaling bitcoin]: /zh/newsletters/2019/09/18/#scaling-bitcoin
 [schnorr/taproot workshops]: /zh/schnorr-taproot-workshop/
 [snicker]: /zh/newsletters/2019/09/04/#snicker-proposed
-[stanford blockchain conference]: /zh/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
+[stanford blockchain conference]: /zh/newsletters/2019/02/05/#斯坦福区块链会议上的值得注意的演讲
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
 [taproot review]: /zh/newsletters/2019/10/23/#taproot-review
-[time warp attack]: /zh/newsletters/2019/03/05/#the-time-warp-attack
-[topics index]: /zh/topics/
+[time warp attack]: /zh/newsletters/2019/03/05/#时间扭曲攻击
+[topics index]: /en/topics/
 [trampoline proposed]: /zh/newsletters/2019/04/02/#trampoline-payments-for-ln
 [trampolines pr]: /zh/newsletters/2019/08/07/#trampoline-payments
 [trusting trust]: https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
@@ -407,7 +407,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [watchtower spec]: /zh/newsletters/2019/12/04/#proposed-watchtower-bolt
 [weekly newsletter]: /zh/newsletters/
 [weekly newsletters]: /zh/newsletters/
-[worst case cpu usage]: /zh/newsletters/2019/03/05/#legacy-transaction-verification
+[worst case cpu usage]: /zh/newsletters/2019/03/05/#传统交易验证
 [wuille sbc miniscript]: /zh/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/

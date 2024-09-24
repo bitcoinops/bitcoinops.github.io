@@ -1,5 +1,5 @@
 ---
-title: 'Announcing Bitcoin Optech'
+title: '宣布 Bitcoin Optech'
 permalink: /zh/announcing-bitcoin-optech/
 name: 2018-07-20-announcing-bitcoin-optech-zh
 slug: 2018-07-20-announcing-bitcoin-optech-zh

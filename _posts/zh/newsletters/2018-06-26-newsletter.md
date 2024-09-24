@@ -60,7 +60,7 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 
 [bech32x]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
 
-- **<!--coin-selection-simulations-->****币选择模拟：** 即将发布的 Bitcoin Core 0.17.0 版本实现基于 Mark Erhardt 的[分支定界算法（Branch and Bound algorithm）][branch and bound paper]的更有效的币选择算法。目前，贡献者正在进行旨在识别当理想策略不起作用时的合适的备选策略的模拟。如果您的组织使用 Bitcoin Core 来优化币选择以最小化费用，那么跟踪或贡献比特币核心 PR [#13307][pr 13307]可能是值得的。
+- **<!--coin-selection-simulations-->****币选择模拟：** 即将发布的 Bitcoin Core 0.17.0 版本实现基于 Mark Erhardt 的[分支定界算法（Branch and Bound algorithm）][branch and bound paper]的更有效的币选择算法。目前，贡献者正在进行旨在识别当理想策略不起作用时的合适的备选策略的模拟。如果您的组织使用 Bitcoin Core 来优化币选择以最小化费用，那么跟踪或贡献 Bitcoin Core PR [#13307][pr 13307]可能是值得的。
 
 [branch and bound paper]: http://murch.one/wp-content/uploads/2016/11/erhardt2016coinselection.pdf
 [pr 13307]: https://github.com/bitcoin/bitcoin/pull/13307
@@ -72,4 +72,4 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 [BIP174 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html
 
 
-- **<!--dynamic-wallet-loading-in-bitcoin-core-->****Bitcoin Core 中的动态钱包加载：** 最后一个 PR 已经合并到比特币核心中，设计了一套新的 RPC，允许其在多钱包模式下动态创建新钱包、加载和卸载它们。如果您的组织在 Bitcoin Core 内部管理交易（或希望这样做），这可以显著简化您的钱包隔离（例如，将客户存款与公司资金分开，或将热钱包资金与仅观察的冷钱包资金分开）。在 Bitcoin Core git 的 master 分支上使用 RPC `createwallet`、`loadwallet` 和 `unloadwallet` 的预生产代码已可用。
+- **<!--dynamic-wallet-loading-in-bitcoin-core-->****Bitcoin Core 中的动态钱包加载：** 最后一个 PR 已经合并到 Bitcoin Core 中，设计了一套新的 RPC，允许其在多钱包模式下动态创建新钱包、加载和卸载它们。如果您的组织在 Bitcoin Core 内部管理交易（或希望这样做），这可以显著简化您的钱包隔离（例如，将客户存款与公司资金分开，或将热钱包资金与仅观察的冷钱包资金分开）。在 Bitcoin Core git 的 master 分支上使用 RPC `createwallet`、`loadwallet` 和 `unloadwallet` 的预生产代码已可用。
