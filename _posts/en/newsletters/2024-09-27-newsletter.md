@@ -193,11 +193,27 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Eclair #2909][] Allow including routing hints when creating Bolt 11 invoice
+- [Eclair #2909][] adds a `privateChannelIds` parameter to the `createinvoice`
+  RPC command to add [private channel][topic unannounced channels] pathfinding
+  hints to BOLT11 invoices. This fixes a bug that prevented nodes with only
+  private channels from receiving payments. To avoid leaking the channel
+  outpoint, `scid_alias` should be used.
 
-- [LND #9095][] and [#9072][lnd #9072] Extract PART4 from mega staging branch
+- [LND #9095][] and [LND #9072][] introduce changes to the invoice [HTLC][topic
+  htlc] modifier, auxiliary channel funding and closing, and integrate custom
+  data into the RPC/CLI as part of the custom channels initiative to enhance
+  LND's support for [taproot assets][topic client-side validation]. This
+  PR allows custom asset-specific data to be included in RPC commands and
+  supports auxiliary channel management via the command line interface.
 
-- [LND #8044][] lnwire: add new Gossip 1.75 messages
+- [LND #8044][] adds new message types `announcement_signatures_2`,
+  `channel_announcement_2` and `channel_update_2` for the new v1.75
+  gossip protocol (see [Newsletter #261][news261 v1.75]) that allows
+  nodes to [announce][topic channel announcements] and verify [taproot
+  channels][topic simple
+  taproot channels]. In addition, some modifications are made to existing
+  messages such as `channel_ready` and `gossip_timestamp_range` to improve the
+  efficiency and security of gossiping with taproot channels.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -221,3 +237,4 @@ repo], and [BINANAs][binana repo]._
 [bidirectional reputation]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-bidirectional-reputation-10
 [nel post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/b0afc5f2-4dcc-469d-b952-03eeac6e7d1b@gmail.com/
 [nel paper]: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
+[news261 v1.75]: /en/newsletters/2023/07/26/#updated-channel-announcements
