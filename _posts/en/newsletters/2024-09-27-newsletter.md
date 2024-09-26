@@ -163,7 +163,43 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [What specific verifications are done on a fresh Bitcoin TX and in what order?]({{bse}}124221)
+  Murch enumerates the validity checks done by Bitcoin Core on a new transaction
+  when it is submitted to the mempool, including checks done in the
+  `CheckTransaction`, `PreChecks`, `AcceptSingleTransaction`, and related
+  functions.
+
+- [Why is my bitcoin directory larger than my pruning data limit setting?]({{bse}}124197)
+  Pieter Wuille notes that while the `prune` option limits the size of Bitcoin
+  Core's blockchain data, the chainstate, indexes, mempool backup, wallet files,
+  and other files are not subject to the `prune` limit and can grow in size
+  independently.
+
+- [What do I need to have set up to have `getblocktemplate` work?]({{bse}}124142)
+  User CoinZwischenzug also asks a [related question]({{bse}}124160) about how
+  to calculate the merkle root and coinbase transaction for a block. Answers to
+  both questions (from Vojtěch Strnad, RedGrittyBrick, and Pieter Wuille)
+  similarly indicate that while Bitcoin Core's `getblocktemplate` can build
+  candidate blocks of transactions and block header information, when mining on
+  non-test networks, coinbase transactions are created by mining or [mining
+  pool][topic pooled mining] software.
+
+- [Can a silent payment address body be brute forced?]({{bse}}124207)
+  Josie, referencing [BIP352][], outlines the steps to derive a [silent
+  payment][topic silent payments] address, concluding that it is infeasible to
+  use brute force techniques to compromise silent payment's privacy benefits.
+
+- [Why does a tx fail `testmempoolaccept` BIP125 replacement but is accepted by `submitpackage`?]({{bse}}124269)
+  Ava Chow points out that `testmempoolaccept` only evaluates transactions
+  individually and, as a result, the [RBF][topic rbf] example from the Bitcoin
+  Core 28.0 [testing guide][bcc testing rbf] indicates a rejection. However,
+  since [`submitpackage`][news272 submitpackage] evaluates both the parent and
+  child example transactions together as a [package][topic package relay], both
+  parent and child are accepted.
+
+- [How does the ban score algorithm calculate a ban score for a peer?]({{bse}}117227)
+  Brunoerg references [Bitcoin Core #29575][new309 ban score] which adjusted peer
+  misbehavior scoring for certain behaviors, that he went on to list.
 
 ## Releases and release candidates
 
@@ -238,3 +274,6 @@ repo], and [BINANAs][binana repo]._
 [nel post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/b0afc5f2-4dcc-469d-b952-03eeac6e7d1b@gmail.com/
 [nel paper]: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 [news261 v1.75]: /en/newsletters/2023/07/26/#updated-channel-announcements
+[bcc testing rbf]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide#3-package-rbf
+[news272 submitpackage]: /en/newsletters/2023/10/11/#bitcoin-core-27609
+[new309 ban score]: /en/newsletters/2024/06/28/#bitcoin-core-29575
