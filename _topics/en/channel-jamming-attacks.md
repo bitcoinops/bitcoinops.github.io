@@ -115,6 +115,9 @@ optech_mentions:
   - title: "DoS protection design philosophy and example of forward commitment fees and reverse hold fees"
     url: /en/newsletters/2023/08/09/#denial-of-service-dos-protection-design-philosophy
 
+  - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
+    url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: HTLCs

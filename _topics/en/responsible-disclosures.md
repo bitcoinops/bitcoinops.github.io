@@ -140,6 +140,9 @@ optech_mentions:
   - title: "Lloyd Fournier, Nick Farrow, and Robin Linus disclosed Dark Skippy fast seed exfiltration attack"
     url: /en/newsletters/2024/08/09/#faster-seed-exfiltration-attack
 
+  - title: "David Jaenson and Braydon Fuller independently disclose headers DoS attack against Bitcoin Core"
+    url: /en/newsletters/2024/09/27/#disclosure-of-vulnerability-affecting-bitcoin-core-versions-before-24-0-1
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
