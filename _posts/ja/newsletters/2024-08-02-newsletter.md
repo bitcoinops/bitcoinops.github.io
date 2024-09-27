@@ -14,7 +14,7 @@ lang: ja
 
 ## ニュース
 
-- **Bitcoin Core 0.21.0以前のバージョンに影響する脆弱性の開示:**
+- **Bitcoin Core 22.0より前のバージョンに影響する脆弱性の開示:**
   Niklas Göggeは、少なくとも2022年10月以降にサポートが終了したBitcoin Coreのバージョンに影響する
   2つの脆弱性の発表のリンクをBitcoin-Devメーリングリストに[投稿しました][goegge disclosure]。
   これは先月公開された古い脆弱性の公開（[ニュースレター #310][news310 disclosure]参照）に続くものです。
