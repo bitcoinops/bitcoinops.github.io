@@ -98,6 +98,9 @@ optech_mentions:
   - title: Disclosure of two past vulnerabilities in LND gossip handling
     url: /en/newsletters/2024/01/03/#disclosure-of-past-lnd-vulnerabilities
 
+  - title: "LND #8044 adds new message types for the new v1.75 gossip protocol compatible with taproot channels"
+    url: /en/newsletters/2024/09/27/#lnd-8044
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels

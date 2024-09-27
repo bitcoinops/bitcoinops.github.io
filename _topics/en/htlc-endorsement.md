@@ -20,6 +20,9 @@ primary_sources:
     - title: "Unjamming Lightning: A Systematic Approach"
       link: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
 
+    - title: "Mitigations for loop [channel jamming] attacks"
+      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001232.html
+
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
@@ -55,6 +58,9 @@ optech_mentions:
 
   - title: "BLIPs #27 adds BLIP04 for an experimental HTLC endorsement signaling protocol"
     url: /en/newsletters/2024/08/16/#blips-27
+
+  - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
+    url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

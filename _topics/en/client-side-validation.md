@@ -10,6 +10,7 @@ title-aliases:
   - RGB
   - Taro
   - Taproot Assets
+  - Shielded CSV
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -18,9 +19,9 @@ topic-categories:
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+  - title: "Shielded CSV: Private and Efficient Client-Side Validation"
+    link: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -36,6 +37,12 @@ optech_mentions:
 
   - title: "Taproot Assets v0.4.0-alpha released"
     url: /en/newsletters/2024/08/23/#taproot-assets-v0-4-0-alpha-released
+
+  - title: "Shielded client-side validation proposed"
+    url: /en/newsletters/2024/09/27/#shielded-client-side-validation-csv
+
+  - title: "LND #9095 and LND #9072 improve custom channel features to improve taproot assets support"
+    url: /en/newsletters/2024/09/27/#lnd-9095
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

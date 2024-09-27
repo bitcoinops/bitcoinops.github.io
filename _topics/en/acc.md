@@ -52,6 +52,9 @@ optech_mentions:
   - title: "Optimistic verification of zero-knowledge proofs using CAT, MATT, and Elftrace"
     url: /en/newsletters/2024/08/09/#optimistic-verification-of-zero-knowledge-proofs-using-cat-matt-and-elftrace
 
+  - title: "BitVM may allow bidirectional bridging of tokens when used with Shielded CSV"
+    url: /en/newsletters/2024/09/27/#shielded-client-side-validation-csv
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"
