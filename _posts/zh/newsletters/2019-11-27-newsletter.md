@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-这周的 Newsletter 宣布了比特币核心（Bitcoin Core）新版本的发布，提供了关于比特币和闪电网络（LN）开发者邮件列表的一些更新，并描述了当前 schnorr/taproot 评审的最新进展。此外，还有我们常规的部分，包括 Bitcoin Stack Exchange 精选问答和对流行比特币基础设施项目的值得注意的更改。
+这周的 Newsletter 宣布 Bitcoin Core 新版本的发布，提供了关于比特币和闪电网络（LN）开发者邮件列表的一些更新，并描述了当前 schnorr/taproot 评审的最新进展。此外，还有我们常规的部分，包括 Bitcoin Stack Exchange 精选问答和对流行比特币基础设施项目的值得注意的更改。
 
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
@@ -49,16 +49,16 @@ lang: zh
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-- [schnorr 公钥的长度会与 taproot 公钥不同吗，比如 P2WPKH 和 P2WSH？]({{bse}}91531)
+- **<!--would-a-schnorr-pubkey-be-a-different-length-than-a-taproot-pubkey-like-p2wpkh-and-p2wsh-->**[schnorr 公钥的长度会与 taproot 公钥不同吗，比如 P2WPKH 和 P2WSH？]({{bse}}91531)
   Murch 解释说，与具有不同 P2WPKH 和 P2WSH 输出类型和长度的 segwit v0 不同，所有 segwit v1 Pay-to-Taproot (P2TR) 输出的长度始终相同。
 
-- [MuSig 签名交互性]({{bse}}91534)
+- **<!--musig-signature-interactivity-->**[MuSig 签名交互性]({{bse}}91534)
   Justinmoon 询问为什么 [MuSig][] 签名总是需要交互以及关于安全的离线交互签名。Nickler 解释了 MuSig 签名中每一轮的过程以及在签名时需要避免的一些陷阱。
 
-- [bech32 的长度扩展突变弱点是如何工作的？]({{bse}}91602)
+- **<!--how-does-the-bech32-length-extension-mutation-weakness-work-->**[bech32 的长度扩展突变弱点是如何工作的？]({{bse}}91602)
   Jnewbery 询问为什么在地址最后一个 p 字符之前立即添加或删除 q 字符有时会生成一个有效的新 bech32 地址。Pieter Wuille 提供了一些代数细节，说明这一问题比任何随机长度变化错误未被发现的概率（大约 1/十亿）更容易发生。MCCCS 提供了一个第二种解释，使用了一些来自 Bitcoin Core 的适用代码。
 
-- [比特币政策语言与 Miniscript 之间的区别是什么？]({{bse}}91565)
+- **<!--what-is-the-difference-between-bitcoin-policy-language-and-miniscript-->**[比特币政策语言与 Miniscript 之间的区别是什么？]({{bse}}91565)
   Pieter Wuille、James C. 和 sanket1729 解释了比特币脚本、政策语言（用于人类设计支出条件的工具）和 miniscript（用于通信和分析的比特币脚本的更结构化表示）之间的关系。
 
 ## 值得注意的代码和文档更改
@@ -69,7 +69,7 @@ lang: zh
 
 - [Bitcoin Core #16944][] 更新 GUI 以生成 [BIP174][] 部分签名比特币交易 (PSBT)，如果用户尝试在禁用私钥的观察钱包中创建交易，系统会自动将其复制到剪贴板。PSBT 可以复制到其他应用程序进行签名（例如 [HWI][topic hwi]）。GUI 目前尚未提供特定对话框以将签名后的 PSBT 复制回来以进行广播。
 
-- [Bitcoin Core #17290][] 更改用户请求某些输入或要求从支付金额中选择费用时使用的币选择算法。现在使用比特币核心的正常默认算法分支和边界（BnB）。BnB 被设计为通过优化创建无零钱交易来最小化费用并最大化隐私。
+- [Bitcoin Core #17290][] 更改用户请求某些输入或要求从支付金额中选择费用时使用的币选择算法。现在使用 Bitcoin Core 的正常默认算法分支和边界（BnB）。BnB 被设计为通过优化创建无零钱交易来最小化费用并最大化隐私。
 
 - [C-Lightning #3264][] 包含了多个针对 [LND #3728][] 的缓解措施，这是在 gossip 查询实现中的一个错误。此更改还添加了两个新的命令行参数，方便测试和调试，分别为 `--hex` 和 `--features`。
 
