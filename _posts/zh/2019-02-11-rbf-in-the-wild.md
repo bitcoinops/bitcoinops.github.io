@@ -1,5 +1,5 @@
 ---
-title: 'RBF in the Wild'
+title: 'RBF 可用性研究'
 permalink: /zh/rbf-in-the-wild/
 name: 2019-02-11-rbf-in-the-wild-zh
 slug: 2019-02-11-rbf-in-the-wild-zh
@@ -12,7 +12,7 @@ excerpt: >
   一项关于支持可选择 RBF (BIP125) 的钱包和区块浏览器在可用性问题上的研究。
 
 ---
-可选择通过费用替代（RBF）于 2015 年 12 月标准化。但谁在支持它，用户体验如何？这篇文章展示了用户在流行的比特币钱包和区块浏览器中看到的 [BIP125][] 可选择 RBF 的研究结果。研究成果最初在最近一次 [Bitcoin Optech 研讨会](/en/workshops/)中展示。
+可选择 RBF 于 2015 年 12 月通过标准化。但谁在支持它，用户体验如何？这篇文章展示了用户在流行的比特币钱包和区块浏览器中看到的 [BIP125][] 可选择 RBF 的研究结果。研究成果最初在最近一次 [Bitcoin Optech 研讨会](/en/workshops/)中展示。
 
 理解其他钱包、交易所和区块浏览器如何处理可选择 RBF 交易对比特币服务来说是一个重要的考虑因素。为了让交易所或钱包支持 RBF，他们希望知道 RBF 得到了广泛的支持，并且接收钱包或区块浏览器中的用户体验不会混淆。
 
@@ -33,9 +33,9 @@ excerpt: >
 
 [完整的交易替换](https://en.bitcoin.it/wiki/Replace_by_fee#Full_RBF)从比特币的 0.1.0 初始版本到 0.3.12 都是可用的，但存在一些潜在的缺点。即，无限制地替换交易意味着没有速率限制机制来防止 DoS/垃圾邮件替换。此外，如果原始交易具有相同或更高的费用率，矿工没有动机替换交易。
 
-中本聪在 0.3.12 中[禁用交易替换](https://github.com/bitcoin/bitcoin/commit/05454818dc7ed92f577a1a1ef6798049f17a52e7#diff-118fcbaaba162ba17933c7893247df3aR522)，并留下评论 _“// 暂时禁用替换功能”_。从 0.3.12 到 0.11.x，比特币核心没有默认的交易替换功能。
+中本聪在 0.3.12 中[禁用交易替换](https://github.com/bitcoin/bitcoin/commit/05454818dc7ed92f577a1a1ef6798049f17a52e7#diff-118fcbaaba162ba17933c7893247df3aR522)，并留下评论 _“// 暂时禁用替换功能”_。从 0.3.12 到 0.11.x，Bitcoin Core 没有默认的交易替换功能。
 
-这种情况在彼得·托德的 [BIP125 “可选择的完全通过费用替换信号”][BIP125]被合并到比特币核心 0.12.0 时发生了变化。BIP125 通过要求替换交易的更高费用解决了上述垃圾邮件防范和激励问题。
+这种情况在彼得·托德的 [BIP125 “可选择的完全通过费用替换信号”][BIP125]被合并到 Bitcoin Core 0.12.0 时发生了变化。BIP125 通过要求替换交易的更高费用解决了上述垃圾邮件防范和激励问题。
 
 ![2018 年 RBF 交易](/img/posts/rbf-in-the-wild/rbf-transactions-in-2018.png)
 *2018 年大约 6% 的交易信号可选择 RBF。来源：[Bitcoin Optech 仪表盘](https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=1514835702976&to=1546285302976)*

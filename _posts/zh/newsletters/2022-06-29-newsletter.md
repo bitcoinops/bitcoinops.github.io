@@ -21,7 +21,7 @@ lang: zh
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
 - [<!--what-is-the-purpose-of-indexing-the-mempool-by-these-five-criteria-->按这五个标准对内存池进行索引的目的是什么？]({{bse}}114216)
-  Murch 和 glozow 解释了比特币核心中不同的交易池交易索引（txid、wtxid、交易池的时间、祖先费率和后代费率）以及它们的用途。
+  Murch 和 glozow 解释了 Bitcoin Core 中不同的交易池交易索引（txid、wtxid、交易池的时间、祖先费率和后代费率）以及它们的用途。
 
 - [<!--bip-341-should-key-path-only-p2tr-be-eschewed-altogether-->BIP-341: 是否应该摒弃只用密钥路径的 P2TR？]({{bse}}113989)
   Pieter Wuille 定义了 4 个 [taproot][topic taproot] 密钥路径花费选项，概述了[BIP341 推荐][bip41 constructing] "noscript" 选项的原因，并指出其他选项可能更受欢迎的情况。
@@ -33,7 +33,7 @@ lang: zh
 - [<!--what-is-the-largest-multisig-quorum-currently-possible-->目前可能的最大多签人数是多少？]({{bse}}114048)
   Andrew Chow 列出了不同的可能的多签类型（裸脚本，P2SH，P2WSH，P2TR，P2TR + [MuSig][topic musig]）以及每种类型的多签的人数限制。
 
-- [<!--what-is-the-difference-between-blocksonly-and-block-relay-only-in-bitcoin-core-->比特币核心中的 block-only 和 block-relay-only 之间有什么区别？]({{bse}}114081)
+- **<!--what-is-the-difference-between-blocksonly-and-block-relay-only-in-bitcoin-core-->**[Bitcoin Core 中的 block-only 和 block-relay-only 之间有什么区别？]({{bse}}114081)
   Lightlike 列出了 block-relay-only 连接和运行 `-blocksonly` 模式的节点之间的区别。
 
 - [<!--where-are-bips-40-and-41-->BIP 40 和 41 在哪里？]({{bse}}114168)
