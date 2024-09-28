@@ -54,15 +54,15 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   lnoff] une méthode de contrôle à distance de nœud qu'il a conçue pour ce type de
   situation (voir le [Bulletin #271][news271 noderc]).
 
-- **Seeding DNS pour des adresses non-IP :** le développeur Virtu a [posté][virtu seed]
+- **Seeding DNS pour des adresses non-IP :** le développeur Virtu a [publié][virtu seed]
   sur Delving Bitcoin un sondage sur la disponibilité de nœuds seed sur
   les [réseaux d'anonymat][topic anonymity networks] et a discuté des méthodes
-  permettant aux nouveaux nœuds qui utilisent exclusivement ces réseaux d'apprendre
-  à connaître des pairs à travers des seeders DNS.
+  permettant aux nouveaux nœuds qui utilisent exclusivement ces réseaux d'en savoir
+  plus sur leurs pairs à travers des seeders DNS.
 
   Pour contexte, un nœud Bitcoin ou un client P2P a besoin de connaître les
   adresses réseau de pairs auprès desquels il peut télécharger des données. Les nouveaux
-  logiciels installés, ou logiciels qui ont été hors ligne pendant longtemps, peut ne pas connaître
+  logiciels installés, ou logiciels qui ont été hors ligne pendant longtemps, peuvent ne pas connaître
   l'adresse réseau de pairs actifs. Normalement, les nœuds Bitcoin Core résolvent cela en interrogeant
   un DNS seed qui retourne les adresses IPv4 ou IPv6 de plusieurs pairs susceptibles d'être
   disponibles. Si le DNS seeding échoue, ou s'il n'est pas disponible (comme pour les réseaux
@@ -73,11 +73,11 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   leurs informations sont généralement plus actuelles et l'infrastructure de mise en cache DNS globale
   peut empêcher un DNS seed d'apprendre l'adresse réseau de chaque nœud demandeur.
 
-  Virtu a examiné les nœuds de semence listés dans les quatre dernières versions majeures de Bitcoin
+  Virtu a examiné les nœuds d'amorçage listés dans les quatre dernières versions majeures de Bitcoin
   Core et a trouvé qu'un nombre satisfaisant d'entre eux étaient encore disponibles, indiquant que les
-  utilisateurs de réseaux d'anonymat devraient être capables de trouver des pairs. Lui et d'autres
+  utilisateurs de réseaux anonymes devraient être capables de trouver des pairs. Lui et d'autres
   participants à la discussion ont également examiné la possibilité de modifier Bitcoin Core pour lui
-  permettre d'utiliser le DNS seeding pour les réseaux d'anonymat via soit des enregistrements DNS
+  permettre d'utiliser le DNS seeding pour les réseaux anonymes via soit des enregistrements DNS
   `NULL` soit l'encodage d'adresses réseau alternatives dans des adresses pseudo-IPv6.
 
 ## Changements notables dans le code et la documentation
