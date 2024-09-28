@@ -365,7 +365,7 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [jupyter notebooks]: https://github.com/bitcoinops/taproot-workshop#readme
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
 [lightning loop]: /zh/newsletters/2019/03/26/#loop-announced
-[ln1.1]: /zh/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
+[ln1.1]: /zh/newsletters/2018/11/20/#特性新闻闪电网络协议-11-目标
 [lnd 0.6-beta]: /zh/newsletters/2019/04/23/#lnd-0-6-beta-released
 [lnd 0.7-beta]: /zh/newsletters/2019/07/03/#lnd-0-7-0-beta-released
 [lnd 0.8-beta]: /zh/newsletters/2019/10/16/#upgrade-lnd-to-version-0-8-0-beta
