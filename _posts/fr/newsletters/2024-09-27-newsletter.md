@@ -7,8 +7,8 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine annonce une vulnérabilité corrigée affectant les anciennes versions
-de Bitcoin Core, fournit une mise à jour sur la mitigation du brouillage de canaux hybrides, résume
+Le bulletin de cette semaine expose une vulnérabilité corrigée affectant les anciennes versions
+de Bitcoin Core, fournit une mise à jour sur l'atténuation du brouillage de canaux hybrides, résume
 un article sur la validation côté client plus efficace et privée, et annonce une proposition de mise
 à jour du processus BIP. On y trouvera également nos
 rubriques habituelles avec des questions et réponses populaires
@@ -25,18 +25,18 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
   La nouvelle divulgation discute d'une méthode connue depuis longtemps pour faire planter les nœuds
   complets Bitcoin Core : leur envoyer de longues chaînes d'en-têtes de blocs qui seront stockées en
-  mémoire. Chaque en-tête de bloc fait 80 octets et, s'il n'y avait pas de protections, pourrait être
-  créé avec la difficulté minimale du protocole, permettant à un attaquant disposant d'ASIC modernes
+  mémoire. Chaque en-tête de bloc fait 80 octets et, s'il n'y avait pas de protections, on pourrait en
+  créé avec la difficulté minimale du protocole, ce qui permettrait à un attaquant disposant d'ASIC modernes
   de produire des millions par seconde. Bitcoin Core dispose depuis de nombreuses années d'une
   protection résultant indirectement des points de contrôle ajoutés dans une version antérieure : cela
   empêchait un attaquant de pouvoir créer les blocs initiaux dans une chaîne d'en-têtes à la
-  difficulté minimale, le forçant à effectuer un travail de preuve significatif poru laquelle il pourrait
+  difficulté minimale, le forçant à effectuer un travail de preuve significatif pour laquelle il pourrait
   être payé s'il créait des blocs valides.
 
   Cependant, le dernier point de contrôle a été ajouté il y a plus de 10 ans <!-- 15 Jul 2014 --> et
   les développeurs de Bitcoin Core ont été réticents à ajouter de nouveaux points de contrôle, car
   cela donne l'impression erronée que la finalité des transactions dépend finalement des développeurs
-  créant des points de contrôle. Avec l'amélioration de l'équipement minier et l'augmentation de la
+  créant des points de contrôle. Avec l'amélioration de l'équipement des mineurs et l'augmentation de la
   puissance de hachage du réseau, le coût de création d'une fausse chaîne d'en-têtes a diminué. À
   mesure que le coût diminuait, les chercheurs David Jaenson et Braydon Fuller ont [divulgué de
   manière responsable][topic responsible disclosures] l'attaque aux développeurs de Bitcoin Core. Les
@@ -51,41 +51,41 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   correction.
 
 - **Tests et changements de mitigation du brouillage hybride :** Carla Kirk-Cohen a [publié][kc jam]
-  sur Delving Bitcoin des détails sur diverses tentatives de vaincre une mise en œuvre de la
-  mitigation pour le [brouillage de canaux][topic channel jamming attacks] ont été initialement
-  proposées par Clara Shikhelman et Sergei Tikhomirov. La mitigation du brouillage hybride implique
+  sur Delving Bitcoin des détails sur diverses tentatives visant à contrecarrer une implémentation de
+  l'atténuation du [brouillage de canaux][topic channel jamming attacks] initialement
+  proposée par Clara Shikhelman et Sergei Tikhomirov. L'atténuation du brouillage hybride implique
   une combinaison d'[approbation de HTLC][topic htlc endorsement] et d'une petite _upfront fee_ qui est
   payée inconditionnellement, que le paiement réussisse ou échoue.
 
-  Plusieurs développeurs ont été invités à tenter de [brouiller un canal pendant une heure][kc attackathon],
-  avec Kirk-Cohen et
-  Shikhelman qui approfondissaient toute attaque qui semblait prometteuse. La plupart des attaques ont
-  échoué : soit l'attaquant dépensait plus pour utiliser l'attaque qu'une autre attaque connue, soit
+  Plusieurs développeurs ont été invités à tenter de
+  [brouiller un canal pendant une heure][kc attackathon], avec Kirk-Cohen et
+  Shikhelman développant les attaques qui semblaient prometteuses. La plupart des attaques ont
+  échoué : soit l'attaquant dépensait plus pour son attaque qu'une autre attaque connue, soit
   le nœud cible gagnait plus de revenus pendant l'attaque qu'il n'aurait gagné à travers le trafic de
   transfert normal sur le réseau simulé.
 
   Une attaque a réussi : une [sink attack][] qui "vise à diminuer la réputation des pairs d'un nœud
   ciblé en créant des chemins plus courts/moins chers dans le réseau, et en sabotant les paiements
   transférés à travers ses canaux pour diminuer la réputation de tous les nœuds le précédant dans
-  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [reputation bidirectionnelle][]
+  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [réputation bidirectionnelle][]
   dans la manière dont l'approbation de HTLC est considéré. Quand Bob reçoit un paiement
   d'Alice à transférer à Carol, par exemple `A -> B -> C`, Bob considère à la fois si Alice a tendance
   à transférer des HTLCs qui sont rapidement réglés (comme avec l'approbation du HTLC précédemment) et si
-  Carol a tendance à accepter des HTLCs qui sont rapidement réglés (c'est nouveau). Maintenant, quand
+  Carol a tendance à accepter des HTLCs qui sont rapidement réglés (c'est une nouveauté). Maintenant, quand
   Bob reçoit une approbation d'HTLC d'Alice :
 
   - Si Bob pense que Alice et Carol sont fiables, il transférera et approuvera l'HTLC d'Alice à Carol.
 
-  - Si Bob pense qu'Alice seulement est fiable, il ne transférera pas une apporbation d'HTLC d'Alice. Il le
-    rejettera immédiatement, permettant à l'échec de se propager jusqu'au dépensier original, qui peut
-    rapidement renvoyer en utilisant un itinéraire différent.
+  - Si Bob pense qu'Alice seulement est fiable, il ne transférera pas un HTLC approuvé par Alice. Il le
+    rejettera immédiatement, permettant à l'échec de se propager jusqu'à l'expéditeur initial,
+    qui pourra rapidement le renvoyer en utilisant un itinéraire différent.
 
-  - Si Bob pense que Carol seulement est fiable, il acceptera une approbation d'HTLC d'Alice quand il a une
+  - Si Bob pense que Carol seulement est fiable, il acceptera un HTLC approuvé d'Alice quand il a une
     capacité supplémentaire, mais il ne l'approuvera pas lors du transfert à Carol.
 
   Étant donné le changement de la proposition, Kirk-Cohen et Shikhelman planifient des expériences
-  supplémentaires pour s'assurer que cela fonctionne comme prévu. Ils lient également à un [message d'une mailing
-  list][posen bidir] par Jim Posen de mai 2018 qui décrit un système de réputation bidirectionnelle pour
+  supplémentaires pour s'assurer que cela fonctionne comme prévu. Ils ont également créé un lien vers un [message d'une mailing
+  list][posen bidir] de Jim Posen datant de mai 2018 qui décrit un système de réputation bidirectionnelle pour
   prévenir les attaques de brouillage (alors appelées _loop attacks_), un exemple de réflexion
   parallèle antérieure sur la résolution de ce problème.
 
@@ -97,10 +97,10 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   côté client est un composant clé de protocoles tels que [RGB][topic client-side validation] et [Taproot Assets][topic
   client-side validation].
 
-  Un inconvénient des protocoles existants est que la quantité de données qui doit être validée par un
-  client lors de la réception d'un jeton est, dans le pire des cas, aussi grande que l'histoire de
-  chaque transfert de ce jeton.
-  et chaque jeton associé. En d'autres termes, pour un ensemble de jetons aussi fréquemment échangés
+  L’un des inconvénients des protocoles existants est que la quantité de données qui doit être validée par un
+  client lors de la réception d'un jeton est, dans le pire des cas, aussi importante que l'historique de
+  transfert de ce jeton et de chaque jeton associé.
+  En d'autres termes, pour un ensemble de jetons aussi fréquemment échangés
   que les bitcoins, un client aurait besoin de valider une histoire presque aussi grande que la
   blockchain Bitcoin entière. En plus du coût de bande passante pour transférer ces données et du coût
   CPU pour les valider, transférer l'historique complet affaiblit la confidentialité des récepteurs
@@ -150,12 +150,12 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   indépendamment.
 
 - [Que dois-je avoir configuré pour que `getblocktemplate` fonctionne ?]({{bse}}124142)
-  L'utilisateur CoinZwischenzug pose également une [question connexe]({{bse}}124160) sur comment
+  L'utilisateur CoinZwischenzug pose également une [question connexe]({{bse}}124160) sur la façon de
   calculer la racine de Merkle et la transaction coinbase pour un bloc. Les réponses à ces deux
   questions (de Vojtěch Strnad, RedGrittyBrick et Pieter Wuille) indiquent de manière similaire que,
   bien que le `getblocktemplate` de Bitcoin Core puisse construire des blocs candidats de transactions
-  et des informations d'en-tête de bloc, lors de l'exploitation minière sur des réseaux non-test, les
-  transactions coinbase sont créées par des logiciels d'exploitation minière ou de [pool minier][topic
+  et des informations d'en-tête de bloc, lors du minage sur des réseaux non-test, les
+  transactions coinbase sont créées par des logiciels de minage ou de [pool minier][topic
   pooled mining].
 
 - [Peut-on forcer brutalement l'adresse d'un paiement silencieux?]({{bse}}124207)
@@ -171,8 +171,8 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   acceptées.
 
 - [Comment l'algorithme de score de bannissement calcule-t-il un score de bannissement pour un pair?]({{bse}}117227)
-  Brunoerg fait référence à [Bitcoin Core #29575][new309 ban score] qui a ajusté le score de
-  comportement de mésusage pour certains comportements, qu'il a ensuite listés.
+  Brunoerg fait référence à [Bitcoin Core #29575][new309 ban score] qui a ajusté le score
+  de mauvaise conduite des pairs pour certains comportements, qu'il a ensuite énumérés.
 
 ## Mises à jour et versions candidates
 
