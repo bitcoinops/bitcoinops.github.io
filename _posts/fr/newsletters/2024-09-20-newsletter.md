@@ -178,8 +178,7 @@ après la sortie de la version 28 à venir._
 
 - [LDK #3140][] ajoute le support pour payer des factures statiques [BOLT12][topic offers] pour
   envoyer des [paiements asynchrones][topic async payments] en tant qu'expéditeur toujours en ligne
-  tel que défini dans [BOLTs #1149][], mais sans inclure la demande de facture dans le 
-  [message onion][topic onion messages] de paiement. Envoyer en tant qu'expéditeur souvent hors ligne ou recevoir
+  tel que défini dans [BOLTs #1149][], mais sans inclure la demande de facture dans le [message onion][topic onion messages] de paiement. Envoyer en tant qu'expéditeur souvent hors ligne ou recevoir
   des paiements asynchrones n'est pas encore possible, donc le flux ne peut pas encore être testé de
   bout en bout.
 
