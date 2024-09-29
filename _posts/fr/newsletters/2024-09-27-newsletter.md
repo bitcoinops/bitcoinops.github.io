@@ -84,8 +84,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     capacité supplémentaire, mais il ne l'approuvera pas lors du transfert à Carol.
 
   Étant donné le changement de la proposition, Kirk-Cohen et Shikhelman planifient des expériences
-  supplémentaires pour s'assurer que cela fonctionne comme prévu. Ils ont également créé un lien vers un [message d'une mailing
-  list][posen bidir] de Jim Posen datant de mai 2018 qui décrit un système de réputation bidirectionnelle pour
+  supplémentaires pour s'assurer que cela fonctionne comme prévu. Ils ont également créé un lien vers un [message d'une liste d'emails][posen bidir] de Jim Posen datant de mai 2018 qui décrit un système de réputation bidirectionnelle pour
   prévenir les attaques de brouillage (alors appelées _loop attacks_), un exemple de réflexion
   parallèle antérieure sur la résolution de ce problème.
 
@@ -140,7 +139,7 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
 
 - [Quelles vérifications spécifiques sont effectuées sur une nouvelle transaction Bitcoin et dans quel ordre ?]({{bse}}124221)
   Murch énumère les vérifications de validité effectuées par Bitcoin Core sur une nouvelle transaction
-  lorsqu'elle est soumise au mempool, y compris les vérifications effectuées dans les fonctions
+  lorsqu'elle est soumise à la mempool, y compris les vérifications effectuées dans les fonctions
   `CheckTransaction`, `PreChecks`, `AcceptSingleTransaction`, et fonctions associées.
 
 - [Pourquoi mon répertoire bitcoin est-il plus grand que mon paramètre de limite de données de pruning ?]({{bse}}124197)
@@ -176,11 +175,10 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
 
 ## Mises à jour et versions candidates
 
-*Nouvelles sorties et candidats à la sortie pour des projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à niveau vers les nouvelles sorties ou d'aider à tester les candidats à
-la sortie.*
+*Nouvelles mises-à-jours et candidates pour des projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de mettre à niveau vers les nouvelles mises-à-jour ou d'aider à tester les versions candidates.*
 
-- [BDK 1.0.0-beta.4][] est un candidat à la sortie de cette bibliothèque pour construire des
+- [BDK 1.0.0-beta.4][] est une version candidate de cette bibliothèque pour construire des
   portefeuilles et d'autres applications activées par Bitcoin. Le paquet Rust original `bdk` a été
   renommée en `bdk_wallet`, et des modules de couche inférieure ont été extraits dans leurs propres
   paquets, incluant `bdk_chain`, `bdk_electrum`, `bdk_esplora`, et `bdk_bitcoind_rpc`. Le paquet
