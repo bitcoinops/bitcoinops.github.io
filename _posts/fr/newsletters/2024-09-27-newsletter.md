@@ -67,7 +67,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   Une attaque a réussi : une [sink attack][] qui "vise à diminuer la réputation des pairs d'un nœud
   ciblé en créant des chemins plus courts/moins chers dans le réseau, et en sabotant les paiements
   transférés à travers ses canaux pour diminuer la réputation de tous les nœuds le précédant dans
-  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [réputation bidirectionnelle][]
+  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [réputation bidirectionnelle][bidirectional reputation]
   dans la manière dont l'approbation de HTLC est considéré. Quand Bob reçoit un paiement
   d'Alice à transférer à Carol, par exemple `A -> B -> C`, Bob considère à la fois si Alice a tendance
   à transférer des HTLCs qui sont rapidement réglés (comme avec l'approbation du HTLC précédemment) et si
