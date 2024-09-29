@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 </style>
 
 {:.center}
-[Segwit](#segwit-addresses) \| [Replace-by-Fee](#replace-by-fee-rbf)
+[Segwit](#segwit-地址) \| [Replace-by-Fee](#replace-by-fee-rbf)
 
 ## Segwit 地址
 
