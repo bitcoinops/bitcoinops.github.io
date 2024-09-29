@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine inclut un lien vers une implémentation de preuve de concept pour
-prouver en connaissance nulle qu'une sortie fait partie de l'ensemble UTXO,
+prouver en connaissance nulle qu'une sortie fait partie de l'ensemble des UTXOs,
 décrit une nouvelle proposition et deux propositions précédentes pour permettre les paiements LN
 hors ligne,
 et résume une recherche sur le seeding DNS pour des adresses de réseau non-IP. Sont également inclus nos
@@ -17,10 +17,10 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Prouver l'inclusion dans l'ensemble UTXO en connaissance zéro :** Johan Halseth
+- **Prouver l'inclusion dans l'ensemble UTXO en connaissance nulle :** Johan Halseth
   a [posté][halseth utxozk] sur Delving Bitcoin pour annoncer un
   outil de preuve de concept qui permet à quelqu'un de prouver qu'il contrôle
-  une des sorties dans l'ensemble UTXO actuel sans révéler quelle
+  une des sorties dans l'ensemble des UTXOs actuel sans révéler quelle
   sortie. L'objectif final est de permettre aux co-propriétaires d'une sortie de financement LN de
   prouver qu'ils contrôlent un canal sans révéler aucune information spécifique sur leurs transactions
   onchain. Cette preuve peut être attachée aux [messages d'annonce de canal][topic
@@ -55,23 +55,23 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   situation (voir le [Bulletin #271][news271 noderc]).
 
 - **Seeding DNS pour des adresses non-IP :** le développeur Virtu a [publié][virtu seed]
-  sur Delving Bitcoin un sondage sur la disponibilité de nœuds seed sur
+  sur Delving Bitcoin un sondage sur la disponibilité de nœuds de semence sur
   les [réseaux d'anonymat][topic anonymity networks] et a discuté des méthodes
   permettant aux nouveaux nœuds qui utilisent exclusivement ces réseaux d'en savoir
   plus sur leurs pairs à travers des seeders DNS.
 
-  Pour contexte, un nœud Bitcoin ou un client P2P a besoin de connaître les
+  Pour contextualiser, un nœud Bitcoin ou un client P2P a besoin de connaître les
   adresses réseau de pairs auprès desquels il peut télécharger des données. Les nouveaux
   logiciels installés, ou logiciels qui ont été hors ligne pendant longtemps, peuvent ne pas connaître
   l'adresse réseau de pairs actifs. Normalement, les nœuds Bitcoin Core résolvent cela en interrogeant
-  un DNS seed qui retourne les adresses IPv4 ou IPv6 de plusieurs pairs susceptibles d'être
+  une graîne DNS qui retourne les adresses IPv4 ou IPv6 de plusieurs pairs susceptibles d'être
   disponibles. Si le DNS seeding échoue, ou s'il n'est pas disponible (comme pour les réseaux
   d'anonymat qui n'utilisent pas d'adresses IPv4 ou IPv6), Bitcoin Core inclut les adresses réseau de
   pairs qui étaient disponibles lors de la sortie du logiciel ; ces pairs sont utilisés comme _seed
   nodes_ (nœuds de semence), où le nœud demande des adresses de pairs supplémentaires au nœud de
-  semence et les utilise comme pairs potentiels. Les DNS seeds sont préférés aux nœuds de semence car
+  semence et les utilise comme pairs potentiels. Les graînes DNS sont préférés aux nœuds de semence car
   leurs informations sont généralement plus actuelles et l'infrastructure de mise en cache DNS globale
-  peut empêcher un DNS seed d'apprendre l'adresse réseau de chaque nœud demandeur.
+  peut empêcher une graîne DNS d'apprendre l'adresse réseau de chaque nœud demandeur.
 
   Virtu a examiné les nœuds d'amorçage listés dans les quatre dernières versions majeures de Bitcoin
   Core et a trouvé qu'un nombre satisfaisant d'entre eux étaient encore disponibles, indiquant que les
@@ -106,8 +106,8 @@ portefeuilles et services Bitcoin.*
   et d'autres fonctionnalités.
 
 - **Live Wallet ajoute le support de la consolidation :**
-  L'application Live Wallet analyse le coût de dépense d'un ensemble de UTXOs à différents taux de
-  frais, y compris la détermination de quand les sorties seraient [non économiques][topic uneconomical
+  L'application Live Wallet analyse le coût de dépense d'un ensemble d'UTXOs à différents taux de
+  frais, y compris la détermination de sorties étant [non économiques][topic uneconomical
   outputs] à dépenser. La [version 0.7.0][live wallet github 0.7.0] inclut des fonctionnalités pour
   simuler des transactions de [consolidation][consolidate info] et générer des [PSBTs][topic psbt] de
   consolidation.
@@ -119,7 +119,7 @@ portefeuilles et services Bitcoin.*
 ## Nouvelles versions et versions candidates
 
 *Nouvelles sorties et candidats à la sortie pour les projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester
+Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les 
 candidats à la publication.*
 
 - [HWI 3.1.0][] est une version du prochain package fournissant une interface commune à plusieurs
@@ -161,7 +161,7 @@ après la sortie de la version 28 à venir._
   linéarisations de clusters, basé sur le cadre exposé dans la Section 2 de ce [post Delving
   Bitcoin][delving cluster], mais avec quelques modifications. Ces optimisations minimisent les
   itérations pour améliorer la performance de linéarisation, mais peuvent augmenter les coûts de
-  démarrage et par itération. Cela fait partie du projet [cluster mempool][topic cluster mempool].
+  démarrage et de pré-itération. Cela fait partie du projet [cluster mempool][topic cluster mempool].
   Voir le Bulletin [#315][news315 cluster].
 
 - [Bitcoin Core #30807][] change le signal d'un nœud [assumeUTXO][topic assumeutxo] qui synchronise
@@ -178,8 +178,8 @@ après la sortie de la version 28 à venir._
 
 - [LDK #3140][] ajoute le support pour payer des factures statiques [BOLT12][topic offers] pour
   envoyer des [paiements asynchrones][topic async payments] en tant qu'expéditeur toujours en ligne
-  tel que défini dans [BOLTs #1149][], mais sans inclure la demande de facture dans le paiement avec
-  [message en onion][topic onion messages]. Envoyer en tant qu'expéditeur souvent hors ligne ou recevoir
+  tel que défini dans [BOLTs #1149][], mais sans inclure la demande de facture dans le 
+  [message onion][topic onion messages] de paiement. Envoyer en tant qu'expéditeur souvent hors ligne ou recevoir
   des paiements asynchrones n'est pas encore possible, donc le flux ne peut pas encore être testé de
   bout en bout.
 
