@@ -119,7 +119,7 @@ portefeuilles et services Bitcoin.*
 ## Nouvelles versions et versions candidates
 
 *Nouvelles sorties et candidats à la sortie pour les projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les 
+Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les
 candidats à la publication.*
 
 - [HWI 3.1.0][] est une version du prochain package fournissant une interface commune à plusieurs
