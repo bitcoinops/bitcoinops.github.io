@@ -67,7 +67,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   Une attaque a réussi : une [sink attack][] qui "vise à diminuer la réputation des pairs d'un nœud
   ciblé en créant des chemins plus courts/moins chers dans le réseau, et en sabotant les paiements
   transférés à travers ses canaux pour diminuer la réputation de tous les nœuds le précédant dans
-  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [réputation bidirectionnelle][bidirectional reputation]
+  l'itinéraire." Pour contrer l'attaque, Kirk-Cohen et Shikhelman ont introduit la [réputation bidirectionnelle][]
   dans la manière dont l'approbation de HTLC est considéré. Quand Bob reçoit un paiement
   d'Alice à transférer à Carol, par exemple `A -> B -> C`, Bob considère à la fois si Alice a tendance
   à transférer des HTLCs qui sont rapidement réglés (comme avec l'approbation du HTLC précédemment) et si
@@ -238,7 +238,7 @@ repo], et [BINANAs][binana repo]._
 [kc jam]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147/
 [kc attackathon]: https://github.com/carlaKC/attackathon
 [sink attack]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-manipulation-sink-attack-9
-[reputation bidirectionnelle]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-bidirectional-reputation-10
+[réputation bidirectionnelle]: https://delvingbitcoin.org/t/hybrid-jamming-mitigation-results-and-updates/1147#p-3212-bidirectional-reputation-10
 [nel post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/b0afc5f2-4dcc-469d-b952-03eeac6e7d1b@gmail.com/
 [nel paper]: https://github.com/ShieldedCSV/ShieldedCSV/releases/latest/download/shieldedcsv.pdf
 [news261 v1.75]: /fr/newsletters/2023/07/26/#annonces-de-canaux-mises-a-jour
