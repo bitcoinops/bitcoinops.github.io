@@ -226,7 +226,7 @@ repo], et [BINANAs][binana repo]._
 [BDK 1.0.0-beta.4]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.4
 [bitcoin core 28.0rc2]: https://bitcoincore.org/bin/bitcoin-core-28.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
-[news216 checkpoints]: /en/newsletters/2022/09/07/#bitcoin-core-25717
+[news216 checkpoints]: /fr/newsletters/2022/09/07/#bitcoin-core-25717
 [poinsot headers]: https://mailing-list.bitcoindevs.xyz/bitcoindev/WhFGS_EOQtdGWTKD1oqSujp1GW-v_ZUJemlNePPGaGBgzpmu6ThpqLwJpUVei85OiMu_xxjEzt_SeOWY7547C72BVISLENOd_qrdCwPajgk=@protonmail.com/
 [fuller dos]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017354.html
 [fuller paper]: https://bcoin.io/papers/bitcoin-chain-expansion.pdf
