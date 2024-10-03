@@ -56,7 +56,7 @@ popular Bitcoin infrastructure software.
   was the result of that work.  Later, Niklas Gögge discovered a bug in
   #25717's logic and opened [PR #26355][bitcoin core #26355] to fix it.
   Both PRs were merged and Bitcoin Core 24.0.1 was released with the
-  fix.
+  fix. {% assign timestamp="2:01" %}
 
 - **Hybrid jamming mitigation testing and changes:** Carla Kirk-Cohen
   [posted][kc jam] to Delving Bitcoin details about various attempts to
@@ -105,7 +105,7 @@ popular Bitcoin infrastructure software.
   also additionally link to a [mailing list post][posen bidir] by Jim
   Posen from May 2018 that describes a bidirectional reputation system
   to prevent jamming attacks (then called _loop attacks_), an example of
-  earlier parallel thinking about solving this problem.
+  earlier parallel thinking about solving this problem. {% assign timestamp="17:51" %}
 
 - **Shielded client-side validation (CSV):** Jonas Nick, Liam Eagen, and
   Robin Linus [posted][nel post] to the Bitcoin-Dev mailing list a
@@ -142,7 +142,7 @@ popular Bitcoin infrastructure software.
   acc], the use of accounts (section 2), the discussion about the effect
   of blockchain reorganization on accounts and transfers (also section
   2), the related discussion about depending on unconfirmed transactions
-  (section 5.2), and the list of possible extensions (appendix A).
+  (section 5.2), and the list of possible extensions (appendix A). {% assign timestamp="25:28" %}
 
 - **Draft of updated BIP process:** Mark "Murch" Erhardt
   [posted][erhardt post] to the Bitcoin-Dev mailing list to announce
@@ -150,7 +150,7 @@ popular Bitcoin infrastructure software.
   describes an updated process for the BIP repository.  Anyone
   interested is encouraged to review the draft and leave comments.  If
   the community finds the final version of the draft acceptable, it will
-  become the process used by the BIP editors.
+  become the process used by the BIP editors. {% assign timestamp="48:47" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -167,13 +167,13 @@ answers posted since our last update.*
   Murch enumerates the validity checks done by Bitcoin Core on a new transaction
   when it is submitted to the mempool, including checks done in the
   `CheckTransaction`, `PreChecks`, `AcceptSingleTransaction`, and related
-  functions.
+  functions. {% assign timestamp="54:31" %}
 
 - [Why is my bitcoin directory larger than my pruning data limit setting?]({{bse}}124197)
   Pieter Wuille notes that while the `prune` option limits the size of Bitcoin
   Core's blockchain data, the chainstate, indexes, mempool backup, wallet files,
   and other files are not subject to the `prune` limit and can grow in size
-  independently.
+  independently. {% assign timestamp="55:42" %}
 
 - [What do I need to have set up to have `getblocktemplate` work?]({{bse}}124142)
   User CoinZwischenzug also asks a [related question]({{bse}}124160) about how
@@ -182,12 +182,12 @@ answers posted since our last update.*
   similarly indicate that while Bitcoin Core's `getblocktemplate` can build
   candidate blocks of transactions and block header information, when mining on
   non-test networks, coinbase transactions are created by mining or [mining
-  pool][topic pooled mining] software.
+  pool][topic pooled mining] software. {% assign timestamp="58:19" %}
 
 - [Can a silent payment address body be brute forced?]({{bse}}124207)
   Josie, referencing [BIP352][], outlines the steps to derive a [silent
   payment][topic silent payments] address, concluding that it is infeasible to
-  use brute force techniques to compromise silent payment's privacy benefits.
+  use brute force techniques to compromise silent payment's privacy benefits. {% assign timestamp="1:00:02" %}
 
 - [Why does a tx fail `testmempoolaccept` BIP125 replacement but is accepted by `submitpackage`?]({{bse}}124269)
   Ava Chow points out that `testmempoolaccept` only evaluates transactions
@@ -195,11 +195,11 @@ answers posted since our last update.*
   Core 28.0 [testing guide][bcc testing rbf] indicates a rejection. However,
   since [`submitpackage`][news272 submitpackage] evaluates both the parent and
   child example transactions together as a [package][topic package relay], both
-  parent and child are accepted.
+  parent and child are accepted. {% assign timestamp="1:01:38" %}
 
 - [How does the ban score algorithm calculate a ban score for a peer?]({{bse}}117227)
   Brunoerg references [Bitcoin Core #29575][new309 ban score] which adjusted peer
-  misbehavior scoring for certain behaviors, that he went on to list.
+  misbehavior scoring for certain behaviors, that he went on to list. {% assign timestamp="1:03:53" %}
 
 ## Releases and release candidates
 
@@ -212,11 +212,11 @@ release candidates.*
   `bdk` Rust crate has been renamed to `bdk_wallet`, and lower layer
   modules have been extracted into their own crates, including
   `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
-  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API."
+  The `bdk_wallet` crate "is the first version to offer a stable 1.0.0 API." {% assign timestamp="1:06:41" %}
 
 - [Bitcoin Core 28.0rc2][] is a release candidate for the next major
   version of the predominant full node implementation.  A [testing
-  guide][bcc testing] is available.
+  guide][bcc testing] is available. {% assign timestamp="1:06:57" %}
 
 ## Notable code and documentation changes
 
@@ -233,14 +233,14 @@ repo], and [BINANAs][binana repo]._
   RPC command to add [private channel][topic unannounced channels] pathfinding
   hints to BOLT11 invoices. This fixes a bug that prevented nodes with only
   private channels from receiving payments. To avoid leaking the channel
-  outpoint, `scid_alias` should be used.
+  outpoint, `scid_alias` should be used. {% assign timestamp="1:10:15" %}
 
 - [LND #9095][] and [LND #9072][] introduce changes to the invoice [HTLC][topic
   htlc] modifier, auxiliary channel funding and closing, and integrate custom
   data into the RPC/CLI as part of the custom channels initiative to enhance
   LND's support for [taproot assets][topic client-side validation]. This
   PR allows custom asset-specific data to be included in RPC commands and
-  supports auxiliary channel management via the command line interface.
+  supports auxiliary channel management via the command line interface. {% assign timestamp="1:11:12" %}
 
 - [LND #8044][] adds new message types `announcement_signatures_2`,
   `channel_announcement_2` and `channel_update_2` for the new v1.75
@@ -249,7 +249,7 @@ repo], and [BINANAs][binana repo]._
   channels][topic simple
   taproot channels]. In addition, some modifications are made to existing
   messages such as `channel_ready` and `gossip_timestamp_range` to improve the
-  efficiency and security of gossiping with taproot channels.
+  efficiency and security of gossiping with taproot channels. {% assign timestamp="1:11:55" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
