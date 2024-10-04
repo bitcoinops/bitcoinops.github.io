@@ -49,7 +49,7 @@ RedGrittyBrick 和 Murch 解释说，交易包含在无效区块中不会对该�
 Behrad Khodayar 回答了他自己关于为什么选择 550 MiB 作为修剪节点的最小存储大小的问题。存储量最初在（隔离见证之前）选择，以保持 288 个区块的状态转换数据，大约两天的时间。
 
 - **<!--how-do-orphan-blocks-affect-the-network-->**[孤块如何影响网络？]({{bse}}90577)
-Pieter Wuille 澄清说，自 0.10.0 版本以来，比特币核心使用 [headers-first][] IBD（初始区块下载），这消除了孤块的可能性（根据提问者的定义）。
+Pieter Wuille 澄清说，自 0.10.0 版本以来，Bitcoin Core 使用 [headers-first][] IBD（初始区块下载），这消除了孤块的可能性（根据提问者的定义）。
 
 ## 值得注意的代码和文档更改
 

@@ -1,5 +1,5 @@
 ---
-title: 'Bitcoin Optech Dashboard'
+title: 'Bitcoin Optech 仪表盘'
 permalink: /zh/dashboard-announcement/
 name: 2018-09-04-dashboard-announcement-zh
 slug: 2018-09-04-dashboard-announcement-zh
@@ -8,7 +8,7 @@ layout: post
 lang: zh
 version: 1
 excerpt: >
-  介绍 Bitcoin Optech Dashboard，其中包含有关合并、支付批处理、RBF，隔离见证采用等实时更新的统计数据。
+  介绍 Bitcoin Optech 仪表盘，其中包含有关合并、支付批处理、RBF，隔离见证采用等实时更新的统计数据。
 ---
 
 {:.post-meta}

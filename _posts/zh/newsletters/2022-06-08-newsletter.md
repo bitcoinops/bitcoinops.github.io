@@ -7,13 +7,13 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 包括我们的常规部分，有比特币核心 PR 审查俱乐部会议的总结，新软件发布和候选发布的清单，以及流行的比特币基础设施软件中值得注意的变更的介绍。
+本周的 Newsletter 包括我们的常规部分，有 Bitcoin Core PR 审查俱乐部会议的总结，新软件发布和候选发布的清单，以及流行的比特币基础设施软件中值得注意的变更的介绍。
 
 ## 新闻
 
 本周没有重大新闻。
 
-## 比特币核心 PR 审核俱乐部
+## Bitcoin Core  PR 审核俱乐部
 *在这个每月一次的栏目中，我们会总结最近的一期 [Bitcoin Core PR 审核俱乐部][Bitcoin Core PR Review Club]会议，提炼出一些重要的问题和答案。点击下方的问题描述，就可以看到来自会议的答案。*
 
 [输出描述符中的 Miniscript 支持][reviews 24148]是由 Antoine Poinsot 和 Pieter Wuille 撰写的 PR，旨在介绍[描述符][topic descriptors]中对 [Miniscript][topic miniscript] 的只读支持。与会者在两次会议上审核了该 PR。讨论的主题包括 Miniscript 的用途，对可延展性的考虑，以及描述符解析器的实现。

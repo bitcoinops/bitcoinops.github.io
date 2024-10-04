@@ -1,5 +1,5 @@
 ---
-title: Bech32 Sending Support
+title: Bech32 发送支持
 permalink: /zh/bech32-sending-support/
 name: 2019-03-19-bech32-sending-support-zh
 slug: 2019-03-19-bech32-sending-support-zh
