@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Phoenix Wallet v2.2.0 adds support for splicing using the quiescence protocol"
     url: /en/newsletters/2024/03/20/#phoenix-wallet-v2-2-0-released
 
+  - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
+    url: /en/newsletters/2024/10/04/#eclair-2861
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol
