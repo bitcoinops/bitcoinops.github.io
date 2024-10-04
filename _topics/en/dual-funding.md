@@ -132,6 +132,9 @@ optech_mentions:
   - title: "LDK #2419 adds a state machine for handling interactive transaction construction"
     url: /en/newsletters/2024/03/27/#ldk-2419
 
+  - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
+    url: /en/newsletters/2024/10/04/#eclair-2861
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

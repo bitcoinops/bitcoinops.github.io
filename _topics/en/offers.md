@@ -25,8 +25,7 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: BOLT12 (draft)
-      link: https://github.com/rustyrussell/lightning-rfc/blob/guilt/offers/12-offer-encoding.md
+    - title: BOLT12
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -123,6 +122,9 @@ optech_mentions:
 
   - title: "LDK #3140 adds support for paying static BOLT12 invoices to send async payments"
     url: /en/newsletters/2024/09/20/#ldk-3140
+
+  - title: "BOLTs #798 merges the offers protocol specification which introduces BOLT12"
+    url: /en/newsletters/2024/10/04/#bolts-798
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
