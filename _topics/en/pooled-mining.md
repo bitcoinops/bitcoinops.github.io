@@ -65,6 +65,9 @@ optech_mentions:
   - title: "Bitcoin Core #30509 adds an -ipcbind option for use by an external Stratum v2 mining service"
     url: /en/newsletters/2024/09/13/#bitcoin-core-30509
 
+  - title: "Bitcoin Core #30510 adds an inter-process communication (IPC) wrapper to the Mining interface"
+    url: /en/newsletters/2024/10/04/#bitcoin-core-30510
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

@@ -31,7 +31,7 @@ auto_id: false
 [下载幻灯片][fees slides]
 {:.center}
 
-{% include specials/2019-exec-briefing/fees.md %}
+{% include specials/2019-exec-briefing/zh/fees.md %}
 {{return-to-fees}}
 
 ## 在闪电网络上运行
@@ -44,7 +44,7 @@ Bitrefill CEO Sergej Kotliar 随后进行了演讲，分享了他在闪电网络
 [下载幻灯片][lightning slides]
 {:.center}
 
-{% include specials/2019-exec-briefing/lightning.md %}
+{% include specials/2019-exec-briefing/zh/lightning.md %}
 {{operating-on-lightning}}
 
 ## 下一个软分叉
@@ -57,7 +57,7 @@ Bitrefill CEO Sergej Kotliar 随后进行了演讲，分享了他在闪电网络
 [下载幻灯片][softfork slides]
 {:.center}
 
-{% include specials/2019-exec-briefing/softfork.md %}
+{% include specials/2019-exec-briefing/zh/softfork.md %}
 {{the-next-softfork}}
 
 ## 关于 Bitcoin Optech

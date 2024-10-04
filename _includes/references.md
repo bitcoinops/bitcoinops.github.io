@@ -5,6 +5,7 @@
 [podcast]: /en/podcast/
 [op_cat]: /en/topics/op_cat/
 [optech email]: mailto:info@bitcoinops.org
+[optech sources]: /en/internal/sources/
 [rss feed]: /feed.xml
 [scaling payment batching]: /en/payment-batching/
 [series preparing for taproot]: /en/preparing-for-taproot/
@@ -213,6 +214,7 @@ place, put links here. -->{% endcomment %}
 [BOLT7]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md
 [BOLT8]: https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md
 [BOLT11]: https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md
+[BOLT12]: https://github.com/lightning/bolts/blob/master/12-offer-encoding.md
 
 {% comment %}<!--REQUIRES PERIODIC UPDATE: update rpc_version below to latest
 version of BitcoinCore.org's RPC docs-->{% endcomment %}
