@@ -33,7 +33,7 @@ lang: zh
 
 斯坦福区块链研究中心上周举办了年度[斯坦福区块链会议][sbc]。会议为期三天，共进行了 30 多场演讲。我们总结了三场可能对 Optech Newsletter 读者特别感兴趣的演讲。
 
-我们感谢会议组织者策划了这一活动，并在线提供了演讲视频（[第一天][], [第二天][], [第三天][]），以及 Bryan Bishop 提供的[演讲记录][transcripts]。
+我们感谢会议组织者策划了这一活动，并在线提供了演讲视频（[第一天][day 1], [第二天][day 2], [第三天][day 3]），以及 Bryan Bishop 提供的[演讲记录][transcripts]。
 
 - **<!--an-axiomatic-approach-to-block-rewards-->****区块奖励的公理化方法：** Tim Roughgarden 介绍了他与 Xi Chen 和 Christos Papadimitriou 共同进行的关于从[机制设计][mechanism design]理论角度分析比特币区块奖励分配规则的研究。([演讲记录][axiomatic txt], [视频][axiomatic vid], [论文][axiomatic paper]).
 
