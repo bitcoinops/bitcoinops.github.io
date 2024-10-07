@@ -15,7 +15,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--pdates-to-bip340-schnorr-keys-and-signatures-->****BIP340 Schnorr 密钥和签名的更新：**正如之前在 Newsletter #84 的两项内容中提到的 ([1][news83 safety], [2][news83 tiebreaker])，已提议对 [BIP340][] Schnorr 签名进行多项更新（这些更新也会影响 [BIP341][] Taproot）。Pieter Wuille [建议][wuille update] 更改 [BIP340][] 中应使用的公钥变体，新选择将基于密钥的偶数性。此外，生成 nonce 的推荐流程也已更改，包括在生成 nonce 时包含公钥、在可用时加入独立生成的随机数，并在 nonce 生成算法中增加一个步骤，使用随机数来混淆私钥，以保护密钥免受[差分功率分析][differential power analysis]攻击。
+- **<!--updates-to-bip340-schnorr-keys-and-signatures-->****BIP340 Schnorr 密钥和签名的更新：**正如之前在 Newsletter #84 的两项内容中提到的 ([1][news83 safety], [2][news83 tiebreaker])，已提议对 [BIP340][] Schnorr 签名进行多项更新（这些更新也会影响 [BIP341][] Taproot）。Pieter Wuille [建议][wuille update] 更改 [BIP340][] 中应使用的公钥变体，新选择将基于密钥的偶数性。此外，生成 nonce 的推荐流程也已更改，包括在生成 nonce 时包含公钥、在可用时加入独立生成的随机数，并在 nonce 生成算法中增加一个步骤，使用随机数来混淆私钥，以保护密钥免受[差分功率分析][differential power analysis]攻击。
 
   由于这些更改的重大意义，BIP340 中标记哈希的标签已更改，确保针对早期草案编写的任何代码在拟议的修订版本下生成的签名将无法通过验证。Wuille 请求社区对这些更改提供反馈。
 
