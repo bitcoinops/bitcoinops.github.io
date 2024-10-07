@@ -11,9 +11,9 @@ lang: zh
 
 ## 行动项
 
-- **<!--help-test-lnd-0-9-0-beta-rc3-->****升级到 C-Lightning 0.8.1：** 此次[发布][cl 0.8.1]增加了多个新特性（包括在下文 *值得注意的变更* 部分中描述的特性），并提供了多项错误修复。详细的更新列表请参见 [changelog][cl changelog]。
+- **<!--upgrade-to-c-lightning-0-8-1-->****升级到 C-Lightning 0.8.1：** 此次[发布][cl 0.8.1]增加了多个新特性（包括在下文 *值得注意的变更* 部分中描述的特性），并提供了多项错误修复。详细的更新列表请参见 [changelog][cl changelog]。
 
-- **<!--help-test-lnd-0-9-0-beta-rc3-->****协助测试 Bitcoin Core 0.19.1rc2：** 即将发布的此维护版本 [release][bitcoin core 0.19.1] 包含多项错误修复。我们鼓励有经验的用户协助测试，查找任何回归或其他意外行为。
+- **<!--help-test-bitcoin-core-0-19-1rc2-->****协助测试 Bitcoin Core 0.19.1rc2：** 即将发布的此维护版本 [release][bitcoin core 0.19.1] 包含多项错误修复。我们鼓励有经验的用户协助测试，查找任何回归或其他意外行为。
 
 ## 新闻
 
@@ -57,9 +57,9 @@ lang: zh
 
 *在这一月度特色中，我们重点介绍比特币钱包和服务的有趣更新。*
 
-- **<!--using-podle-in-ln-->****BTCPay Vault 使用 HWI 进行签名：** [BTCPay Vault][btcpay vault blog] 是一个桌面应用程序，它使用 [HWI][topic hwi] 协调与各种硬件钱包的交易签名。虽然 BTCPay Server 创建了 BTCPay Vault，但该软件可以重新用于其他应用程序。
+- **<!--btcpay-vault-using-hwi-for-signing-->****BTCPay Vault 使用 HWI 进行签名：** [BTCPay Vault][btcpay vault blog] 是一个桌面应用程序，它使用 [HWI][topic hwi] 协调与各种硬件钱包的交易签名。虽然 BTCPay Server 创建了 BTCPay Vault，但该软件可以重新用于其他应用程序。
 
-- **<!--using-podle-in-ln-->****CKBunker 使用 PSBTs 作为 HSM：** [CKBunker][coinkite bunker] 允许用户为在线、通过 Tor 启用的 Coldcard 硬件钱包配置基于规则的支出条件。然后，Coldcard 的功能就类似于一个 HSM（硬件安全模块），签署通过 Tor 隐藏服务传送的 [PSBTs][topic psbt]。
+- **<!--ckbunker-using-psbts-for-an-hsm-->****CKBunker 使用 PSBTs 作为 HSM：** [CKBunker][coinkite bunker] 允许用户为在线、通过 Tor 启用的 Coldcard 硬件钱包配置基于规则的支出条件。然后，Coldcard 的功能就类似于一个 HSM（硬件安全模块），签署通过 Tor 隐藏服务传送的 [PSBTs][topic psbt]。
 
 ## 值得注意的代码和文档更改
 
