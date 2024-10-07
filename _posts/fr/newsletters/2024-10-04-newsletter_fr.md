@@ -15,7 +15,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Divulgation de sécurité btcd imminente :** Antoine Poinsot a [publié][poinsot btcd] sur Delving
-  Bitcoin pour annoncer la divulgation prévue le 10 octobre d'un bug de consensus affectant le nœud
+  Bitcoin un message annonçant la divulgation prévue le 10 octobre d'un bug de consensus affectant le nœud
   complet btcd. En utilisant les données d'une enquête approximative sur les nœuds complets actifs,
   Poinsot estime qu'il y a environ 36 nœuds btcd qui sont vulnérables (bien que 20 de ces nœuds soient
   également vulnérables à une vulnérabilité de consensus déjà divulguée, voir le [Bulletin
@@ -27,7 +27,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Mises à jour et versions candidates
 
-*Nouvelles versions et candidats à la version pour les projets d'infrastructure Bitcoin populaires.
+*Nouvelles versions et versions candidates pour les projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les candidats
 à la version.*
 
@@ -100,7 +100,7 @@ repo], and [BINANAs][binana repo]._
   pour la transaction de [canal à double financement][topic dual funding] ou de [splicing][topic
   splicing], mais est ensuite payé par l'acheteur lorsque le
   paiement est acheminé. Si le montant n'est pas suffisamment élevé pour couvrir les frais onchain
-  nécessaires pour que la transaction soit confirmée, le vendeur peut effectuer un double dépense pour
+  nécessaires pour que la transaction soit confirmée, le vendeur peut effectuer une double dépense pour
   utiliser sa liquidité ailleurs.
 
 - [Eclair #2875][] implémente les crédits de frais de financement comme spécifié dans [BLIPs #41][],
@@ -124,7 +124,7 @@ repo], and [BINANAs][binana repo]._
   spécification que `drng_reader.read` (responsable de la lecture des nombres aléatoires) est une
   fonction de première classe plutôt qu'une évaluation. Cette mise à jour clarifie également la
   gestion du boutisme, ajoute le support pour [testnet][topic testnet], inclut une nouvelle
-  implémentation de référence en Python, clarifie qu'un portefeuille de graines de [portefeuille
+  implémentation de référence en Python, clarifie qu'un portefeuille de seeds de [portefeuille
   HD][topic bip32] utilise les bits les plus significatifs pour le format d'importation de
   portefeuille (WIF), ajoute le code de langue portugaise, et corrige les vecteurs de test. Enfin, un
   nouveau champion pour la spécification BIP a été désigné.
