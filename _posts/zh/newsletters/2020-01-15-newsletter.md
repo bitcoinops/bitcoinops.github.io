@@ -58,5 +58,5 @@ lang: zh
 [towns sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017553.html
 [spork vid]: https://www.youtube.com/watch?v=J1CP7qbnpqA&feature=youtu.be
 [spork summary]: /zh/newsletters/2019/02/05/#probabilistic-bitcoin-soft-forks-sporks
-[anchor outputs]: /en/newsletters/2019/10/30/#ln-simplified-commitments
+[anchor outputs]: /zh/newsletters/2019/10/30/#ln-simplified-commitments
 [news52 avoid_reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
