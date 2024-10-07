@@ -38,7 +38,7 @@ lang: zh
 
 ## 值得注意的代码和文档变更
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo] 和 [闪电网络规范（BOLTs）][bolts repo] 中的显著变更。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范（BOLTs）][bolts repo]中的显著变更。*
 
 - [Bitcoin Core #17492][] 使得 Bitcoin Core 图形用户界面在用户尝试为仅观察钱包中的交易提升费用时，将部分签名的比特币交易（[PSBT][topic psbt]）放入剪贴板中。用户随后可以将 PSBT 粘贴到另一个程序（如 [HWI][topic hwi]）中进行签名。
 
@@ -50,7 +50,7 @@ lang: zh
 
 - [BIPs #876][] 为三项提案分配了 BIP 编号，分别对应于 schnorr-taproot-tapscript 提案的各个部分：
 
-  - [BIP340][] 分配给“用于 secp256k1 的 Schnorr 签名”，描述了一种与比特币使用的 secp256k1 [椭圆曲线][elliptic curve]兼容的签名方案。该签名方案与批量验证以及类似 [MuSig][topic musig] 的密钥和签名聚合方案兼容。Schnorr 签名可用于以下两个 BIP（341 和 342）。更多信息，请参阅 BIP 或 [schnorr signatures][topic schnorr signatures]。
+  - [BIP340][] 分配给“用于 secp256k1 的 Schnorr 签名”，描述了一种与比特币使用的 secp256k1 [椭圆曲线][elliptic curve]兼容的签名方案。该签名方案与批量验证以及类似 [MuSig][topic musig] 的密钥和签名聚合方案兼容。Schnorr 签名可用于以下两个 BIP（341 和 342）。更多信息，请参阅 BIP 或 [schnorr 签名][topic schnorr signatures]。
 
   - [BIP341][] 分配给“Taproot：SegWit 版本 1 支出规则”，描述了一项软分叉提案的一部分，允许用户支付 schnorr 风格的公钥，该公钥可以通过 schnorr 风格的签名或证明该密钥提交给一个 merkle 树中的特定脚本（以及证明脚本条件得到满足）进行支出。详细信息请参阅 BIP 或 [taproot][topic taproot]。
 
