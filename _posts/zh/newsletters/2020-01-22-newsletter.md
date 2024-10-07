@@ -15,7 +15,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--new-coinjoin-mixing-technique-proposed-->****提出新的 CoinJoin 混合技术：** Max Hillebrand 在 Bitcoin-Dev 邮件列表上发起了一个关于 *Wormhole* 的 [讨论线程][wormhole thread]，该方法是在 [Wasabi 设计讨论][wasabi design discussion] 中开发的，旨在将支付作为 Chaumian CoinJoin 的一部分进行发送。该协议甚至可以防止发送者在匿名集内得知接收者的比特币地址。开发者 ZmnSCPxj [指出][zmn note] 该技术与 [tumblebit][] 类似，后者提供了一种无需信任的 Chaumian 支付服务。Hillebrand 正在寻求对该设计的反馈，希望未来能够实现该技术。
+- **<!--new-coinjoin-mixing-technique-proposed-->****提出新的 CoinJoin 混合技术：** Max Hillebrand 在 Bitcoin-Dev 邮件列表上发起了一个关于 *Wormhole* 的[讨论线程][wormhole thread]，该方法是在 [Wasabi 设计讨论][wasabi design discussion]中开发的，旨在将支付作为 Chaumian CoinJoin 的一部分进行发送。该协议甚至可以防止发送者在匿名集内得知接收者的比特币地址。开发者 ZmnSCPxj [指出][zmn note]该技术与 [tumblebit][] 类似，后者提供了一种无需信任的 Chaumian 支付服务。Hillebrand 正在寻求对该设计的反馈，希望未来能够实现该技术。
 
 - **<!--protocol-specification-for-discreet-log-contracts-dlcs-->****离散日志合约（DLC）协议规范：** [DLCs][] 是一种合同协议，允许两方或多方根据由预言机（或多个预言机）确定的事件结果来交换资金。在事件发生后，预言机会以数字签名的形式发布对事件结果的承诺，胜出方可以使用该签名来领取资金。预言机不需要知道合同的条款（甚至不知道存在合同）。该合同可以类似于链上闪电网络（LN）交易的一部分，或者在 LN 通道内执行。这使得 DLCs 比其他已知的基于预言机的合同方法更加隐私和高效，且安全性更高，因为如果预言机发布虚假结果，将产生明确的欺诈证据。
 
@@ -55,6 +55,6 @@ lang: zh
 [whatsat]: https://github.com/joostjager/whatsat
 [news72 sphinx]: /zh/newsletters/2019/11/13/#possible-privacy-leak-in-the-ln-onion-format
 [river twitter thread]: https://twitter.com/philipglazman/status/1216849483184476165
-[wasabi rbf notification]: /zh/compatibility/wasabi/#receive-notification
+[wasabi rbf notification]: /en/compatibility/wasabi/#receive-notification
 [wasabi rbf signaling]: https://github.com/zkSNACKs/WalletWasabi/pull/2405
 [news52 #13756]: /zh/newsletters/2019/06/26/#bitcoin-core-13756
