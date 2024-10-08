@@ -168,5 +168,10 @@ people who made the disclosure.  There are many other responsible
 disclosures not listed here, including those which have not been
 publicized yet.
 
+When it's unclear whether a disclosure was made responsibly, Optech will
+do its best to judge the situation based on the information readily
+available to us.  Entries to this page may be added or removed at a
+later time based on new details.
+
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
