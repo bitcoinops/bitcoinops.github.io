@@ -25,7 +25,7 @@ software.
   confirmed the existence of the vulnerability and that it was fixed in
   btcd version 0.24.2.  Anyone running an older version of btcd is
   encouraged to upgrade to the [latest release][btcd v0.24.2], which was
-  already announced as security critical.
+  already announced as security critical. {% assign timestamp="0:54" %}
 
 ## Releases and release candidates
 
@@ -45,13 +45,13 @@ release candidates.*
   allowing the `loadtxoutset` RPC to be used with a UTXO set downloaded
   outside of the Bitcoin network (e.g. via a torrent).  The release also
   includes many other improvements and bug fixes, as described in its
-  [release notes][bcc 28.0 rn].
+  [release notes][bcc 28.0 rn]. {% assign timestamp="3:11" %}
 
 - [BDK 1.0.0-beta.5][] is a release candidate (RC) of this library for
   building wallets and other Bitcoin-enabled applications.  This latest
   RC "enables RBF by default, updates the bdk_esplora client to retry
   server requests that fail due to rate limiting. The `bdk_electrum`
-  crate now also offers a use-openssl feature."
+  crate now also offers a use-openssl feature." {% assign timestamp="15:13" %}
 
 ## Notable code and documentation changes
 
@@ -71,7 +71,7 @@ repo], and [BINANAs][binana repo]._
   while also implementing a fallback mechanism to the [NAT Port Mapping Protocol
   (NAT-PMP)][rfcnatpmp]. Although the PCP / NAT-PMP functionality is disabled by
   default, this may change in future releases. See Newsletter [#131][news131
-  natpmp].
+  natpmp]. {% assign timestamp="20:47" %}
 
 - [Bitcoin Core #30510][] adds an inter-process communication (IPC) wrapper to
   the `Mining` interface (See Newsletter [#310][news310 stratumv2]) to allow a
@@ -81,11 +81,11 @@ repo], and [BINANAs][binana repo]._
   extends the `Mining` interface with a new `waitTipChanged()` method that
   detects when a new block arrives and then pushes new block templates to
   connected clients. The `waitfornewblock`, `waitforblock` and
-  `waitforblockheight` RPC methods have been refactored to use it.
+  `waitforblockheight` RPC methods have been refactored to use it. {% assign timestamp="22:15" %}
 
 - [Core Lightning #7644][] adds a `nodeid` command to the `hsmtool` utility
   which returns the node identifier for a given `hsm_secret` backup file, to
-  match the backup to its specific node and to avoid confusion with other nodes.
+  match the backup to its specific node and to avoid confusion with other nodes. {% assign timestamp="25:06" %}
 
 - [Eclair #2848][] implements extensible [liquidity advertisements][topic
   liquidity advertisements] as specified in the proposed [BOLTs #1153][], which
@@ -93,12 +93,12 @@ repo], and [BINANAs][binana repo]._
   to buyers in their `node_announcement` message, and then buyers can connect
   and request liquidity. This can be used when creating a [dual-funded
   channel][topic dual funding], or when adding additional liquidity to an
-  existing channel via [splicing][topic splicing].
+  existing channel via [splicing][topic splicing]. {% assign timestamp="26:28" %}
 
 - [Eclair #2860][] adds an optional `recommended_feerates` message for nodes to
   inform their peers of acceptable fee rates they wish to use for funding
   channel transactions. If a node rejects a peer's funding requests, the peer
-  will understand that this was due to the fee rates.
+  will understand that this was due to the fee rates. {% assign timestamp="30:57" %}
 
 - [Eclair #2861][] implements on-the-fly funding as specified in [BLIPs
   #36][], allowing clients without sufficient inbound liquidity to request
@@ -109,14 +109,14 @@ repo], and [BINANAs][binana repo]._
   splicing] transaction, but is later paid by the buyer when the
   payment is routed. If the amount isn't sufficient enough to cover the on-chain
   fee required for the transaction to confirm, the seller can double-spend it to
-  use their liquidity elsewhere.
+  use their liquidity elsewhere. {% assign timestamp="29:17" %}
 
 - [Eclair #2875][] implements funding fee credits as specified in [BLIPs #41][],
   allowing on-the-fly funding (see PR above) clients to accept payments that are
   too small to cover the on-chain fees for a channel. Once sufficient fee
   credits have been accumulated, an on-chain transaction such as a channel
   funding or [splice][topic splicing] is created using the fee credits. Clients
-  rely on liquidity providers to honour the fee credits in future transactions.
+  rely on liquidity providers to honour the fee credits in future transactions. {% assign timestamp="31:19" %}
 
 - [LDK #3303][] adds a new `PaymentId` for inbound payments to improve
   idempotent event handling. This allows users to easily check if an event has
@@ -124,11 +124,11 @@ repo], and [BINANAs][binana repo]._
   duplicate processing that was possible when relying on the `PaymentHash` is
   eliminated. The `PaymentId` is a hash-based message authentication code (HMAC)
   of the [HTLC][topic htlc] channel identifier and HTLC identifier pairs
-  included in the payment.
+  included in the payment. {% assign timestamp="40:24" %}
 
 - [BDK #1616][] signals opt-in [RBF][topic rbf] by default in the
   `TxBuilder` class.  The caller can disable the signal by changing the
-  sequence number.
+  sequence number. {% assign timestamp="41:29" %}
 
 - [BIPs #1600][] makes several changes to the [BIP85][] specification, including
   specifying that `drng_reader.read` (responsible for reading random numbers) is
@@ -137,11 +137,11 @@ repo], and [BINANAs][binana repo]._
   reference implementation in Python, clarifies that an [HD wallet][topic bip32]
   seed wallet import format (WIF) uses the most significant bits, adds the
   Portuguese language code, and corrects test vectors. Finally, a new champion
-  for the BIP specification has been designated.
+  for the BIP specification has been designated. {% assign timestamp="46:02" %}
 
 - [BOLTs #798][] merges the [offers][topic offers] protocol specification which
   introduces [BOLT12][], and also brings several updates to [BOLT1][] and
-  [BOLT4][].
+  [BOLT4][]. {% assign timestamp="48:25" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
