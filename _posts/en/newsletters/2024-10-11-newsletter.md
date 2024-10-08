@@ -1,0 +1,215 @@
+---
+title: 'Bitcoin Optech Newsletter #324'
+permalink: /en/newsletters/2024/10/11/
+name: 2024-10-11-newsletter
+slug: 2024-10-11-newsletter
+type: newsletter
+layout: newsletter
+lang: en
+---
+This week's newsletter announces three vulnerabilities affecting old
+versions of the Bitcoin Core full node, announces a separate vulnerability affecting
+old versions of the btcd full node, and links to a contributed Optech
+guide describing how to use multiple new P2P network features added in
+Bitcoin Core 28.0.  Also included are our regular sections summarizing a
+Bitcoin Core PR Review Club meeting, announcements of new releases and
+release candidates, and descriptions of notable changes to popular
+Bitcoin infrastructure software.
+
+## News
+
+- **Disclosure of vulnerabilities affecting Bitcoin Core versions before 25.0:**
+  Niklas Gögge [posted][gogge corevuln] to the Bitcoin-Dev mailing list
+  links to the announcements of three vulnerabilities affecting versions
+  of Bitcoin Core that have been past their end of life since at least
+  April 2024.
+
+  - [CVE-2024-35202 remote crash vulnerability][]: an attacker can send
+    a [compact block][topic compact block relay] message deliberately
+    designed to fail block reconstruction.  Failed reconstructions
+    sometimes happen even in honest use of the protocol, in which case
+    the receiving node requests the full block.
+
+    However, instead of replying with a full block, the attacker could
+    send a second compact block message for the same block header.
+    Before Bitcoin Core 25.0, this would cause the node to crash, as the
+    code was designed to prevent the compact block reconstruction code
+    from running more than once on the same compact block session.
+
+    This easily exploitable vulnerability could have been used to crash
+    any Bitcoin Core node, which could be used as part of other
+    attacks to steal money from users.  For example, a crashed Bitcoin
+    Core node would be unable to alert a connected LN node that a
+    channel counterparty was attempting to steal funds.
+
+    The vulnerability was discovered, [responsibly disclosed][topic
+    responsible disclosures], and fixed by Niklas Gögge, with the
+    [fix][bitcoin core #26898] released in Bitcoin Core 25.0.
+
+  - [DoS from large inventory sets][]: for each of its peers, a Bitcoin
+    Core node keeps a list of transactions to send to that peer.  The
+    transactions in the list are sorted based on their feerates and
+    their relationships to each other in an attempt to ensure that the
+    best transactions relay fast and to make it harder to probe the
+    relay network topology.
+
+    However, during a surge of network activity in May 2023, several
+    users began noticing their nodes using an excessive amount of CPU.
+    Developer 0xB10C determined that the CPU was being
+    consumed by the sorting function.  Developer Anthony Towns
+    investigated further and [fixed][bitcoin core #27610] the problem by
+    ensuring transactions left the queue at a variable rate that increases
+    during periods of high demand.  The fix was released in Bitcoin Core
+    25.0.
+
+  - [Slow block propagation attack][]: before Bitcoin Core 25.0, an
+    invalid block from an attacker could prevent Bitcoin Core from
+    continuing to process a valid block with the same header from honest
+    peers.  This especially affected compact block reconstruction when
+    additional transactions needed to be requested: a node would stop
+    waiting for the transactions if it received an invalid block from a
+    different peer.  Even if the transactions were later received, the
+    node would ignore them.
+
+    After Bitcoin Core had rejected the invalid block (and possibly
+    disconnected the peer that sent it), it would restart attempting to
+    request the block from other peers.  Multiple attacking peers could
+    keep it in this cycle for an extended period of time.  Faulty peers
+    that may not have been designed as attackers could trigger the same
+    behavior accidentally.
+
+    <!-- I've previously confirmed that "ghost43" (all lowercase) is how
+    they'd like to be attributed -->
+
+    The problem was discovered after several developers, including
+    William Casarin and ghost43, reported problems with their nodes.
+    Several other developers investigated, with Suhas Daftuar isolating
+    this vulnerability.  Daftuar also [fixed][bitcoin core #27608] it by
+    preventing any peer from affecting the download state of other
+    peers, except in the case where a block has passed validation and
+    been stored to disk.  The fix was included in Bitcoin Core 25.0.
+
+- **CVE-2024-38365 btcd consensus failure:** as announced in [last
+  week's newsletter][news323 btcd], Antoine Poinsot and Niklas Gögge
+  [disclosed][pg btcd] a consensus failure vulnerability affecting the
+  btcd full node.  In legacy Bitcoin transactions, signatures are stored
+  in the signature script field.  However, the signatures also commit to
+  the signature script field.  It's not possible for a signature to
+  commit to itself, so signers commit to all of the data in the signature
+  script field except for the signature.  Verifiers must correspondingly
+  remove the signature before checking the accuracy of the signature
+  commitment.
+
+  Bitcoin Core's function for removing signatures, `FindAndDelete`, only
+  removes exact matches of the signature from the signature script.
+  The function implemented by btcd, `removeOpcodeByData` removed _any_
+  data in the signature script which contained the signature.  This
+  could be used to cause btcd to remove more data from the signature
+  script than Bitcoin Core would remove before it respectively
+  verified the commitment, leading one program to consider the commitment
+  valid and the other invalid.  Any transaction containing an invalid
+  commitment is invalid and any block containing an invalid transaction
+  is invalid, allowing consensus between Bitcoin Core and btcd to be
+  broken.  Nodes that fall out of consensus can be tricked into
+  accepting invalid transactions and may not see the latest transactions
+  the rest of the network considers to be confirmed, either of which can
+  result in a significant loss of money.
+
+  Poinsot's and Gögge's responsible disclosure allowed btcd maintainers
+  to quietly fix the vulnerability and release version 0.24.2 with the
+  fix about three months ago.
+
+- **Guide for wallets employing Bitcoin Core 28.0:** As mentioned in
+  [last week's newsletter][news323 bcc28], the newly released version
+  28.0 of Bitcoin Core contains several new features for the P2P
+  network, including one parent one child (1P1C) [package
+  relay][topic package relay], topologically restricted until
+  confirmation ([TRUC][topic v3 transaction relay]) transaction relay,
+  [package RBF][topic rbf] and [sibling eviction][topic kindred rbf],
+  and a standard pay-to-anchor ([P2A][topic ephemeral anchors]) output
+  script type.  These new features can significantly improve security
+  and reliability for several common use cases.
+
+  Gregory Sanders has written a [guide][sanders guide] for Optech aimed
+  at developers of wallets and other software that uses Bitcoin Core to
+  create or broadcast transactions.  The guide walks through the use of
+  several of the features and describes how the features can be useful
+  for multiple protocols, including simple payments and RBF fee bumping,
+  LN commitments and [HTLCs][topic htlc], [Ark][topic ark], and [LN
+  splicing][topic splicing].
+
+## Bitcoin Core PR Review Club
+
+*In this monthly section, we summarize a recent [Bitcoin Core PR Review
+Club][] meeting, highlighting some of the important questions and
+answers.  Click on a question below to see a summary of the answer from
+the meeting.*
+
+FIXME:stickies-v
+
+{% include functions/details-list.md
+  q0="FIXME"
+  a0="FIXME"
+  a0link="https://bitcoincore.reviews/30352#l-18FIXME"
+%}
+
+## Releases and release candidates
+
+*New releases and release candidates for popular Bitcoin infrastructure
+projects.  Please consider upgrading to new releases or helping to test
+release candidates.*
+
+- [Bitcoin Inquisition 28.0][] is the latest release of this
+  [signet][topic signet] full node designed for experimenting with
+  proposed soft forks and other major protocol changes.  The updated
+  version is based on the recently released Bitcoin Core 28.0.
+
+- [BDK 1.0.0-beta.5][] is a release candidate (RC) of this library for
+  building wallets and other Bitcoin-enabled applications.  This latest
+  RC "enables RBF by default, updates the bdk_esplora client to retry
+  server requests that fail due to rate limiting. The `bdk_electrum`
+  crate now also offers a use-openssl feature."
+
+## Notable code and documentation changes
+
+_Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
+Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
+Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
+Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
+Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
+repo], and [BINANAs][binana repo]._
+
+- [Core Lightning #7494][] pay: Remember and update channel_hints across payments #7494
+
+- [Core Lightning #7539][] Add getemergencyrecoverdata RPC Command to Fetch Data from emergency.recover File
+
+- [LDK #3179][] Add the core functionality required to resolve Human Readable Names
+
+- [LND #8960][] merge custom channel staging branch into master
+
+- [Libsecp256k1 #1479][] Add module "musig" that implements MuSig2 multi-signatures (BIP 327)
+
+- [Rust Bitcoin #2945][] Support Testnet4 Network
+
+- [BIPs #1674][] reverts the changes to the [BIP85][] specification
+  described in [Newsletter #323][news323 bip85].  The changes broke
+  compatibility with deployed versions of the protocol.  Discussion on
+  the PR supported creating a new BIP for the major changes.
+
+{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
+{% include snippets/recap-ad.md when=four_days_after_posting %}
+{% include references.md %}
+{% include linkers/issues.md v=2 issues="7494,7539,3179,8960,1479,2945,1674,26898,27610,27608" %}
+[BDK 1.0.0-beta.5]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.5
+[news323 bip85]: /en/newsletters/2024/10/04/#bips-1600
+[sanders guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[gogge corevuln]: https://mailing-list.bitcoindevs.xyz/bitcoindev/2df30c0a-3911-46ed-b8fc-d87528c68465n@googlegroups.com/
+[cve-2024-35202 remote crash vulnerability]: https://bitcoincore.org/en/2024/10/08/disclose-blocktxn-crash/
+[dos from large inventory sets]: https://bitcoincore.org/en/2024/10/08/disclose-large-inv-to-send/
+[slow block propagation attack]: https://bitcoincore.org/en/2024/10/08/disclose-mutated-blocks-hindering-propagation/
+[news323 btcd]: /en/newsletters/2024/10/04/#impending-btcd-security-disclosure
+[pg btcd]: https://delvingbitcoin.org/t/cve-2024-38365-public-disclosure-btcd-findanddelete-bug/1184
+[news323 bcc28]: /en/newsletters/2024/10/04/#bitcoin-core-28-0
+[bitcoin inquisition 28.0]: https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v28.0-inq
