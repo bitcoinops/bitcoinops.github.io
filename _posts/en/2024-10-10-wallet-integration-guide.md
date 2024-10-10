@@ -8,7 +8,7 @@ lang: en
 slug: 2024-10-10-bitcoin-core-28-wallet-integration-guide
 
 excerpt: >
-  In Bitcoin Core 28.0 cointains new P2P and mempool policy features that may be useful for a number of wallets and transaction types. Here Gregory Sanders presents a high-level guide to the feature set and how they can be used individually or together.
+  In Bitcoin Core 28.0 contains new P2P and mempool policy features that may be useful for a number of wallets and transaction types. Here Gregory Sanders presents a high-level guide to the feature set and how they can be used individually or together.
 
 ---
 
@@ -40,7 +40,7 @@ related transactions, allowing low-fee ancestors to be included in the mempool.
 In Bitcoin Core 28.0, a limited variant of package relay for packages containing
 1 parent and 1 child ("1P1C") was implemented. 1P1C allows a single parent into
 the mempool, regardless of the dynamic mempool minimum feereate, using a single
-child transaction and a simple [Child Pays For Parent(CPFP)][topic cpfp] fee
+child transaction and a simple [Child Pays For Parent (CPFP)][topic cpfp] fee
 bump. If the child transaction has additional unconfirmed parents, these
 transactions will not successfully propagate. This restriction simplified the
 implementation greatly and allowed other mempool work, such as [cluster
@@ -533,7 +533,7 @@ recoup all the funds unilaterally, resulting in user funds loss.
 Ideally the initial unilateral close of an Ark tree would be:
 
 1. The publication of an entire merkle branch to the underlying virtual
-UTXO(vUTXO)
+UTXO (vUTXO)
 2. Each of these transactions are 0-fee, to avoid fee prediction or the
 requirement to decide who pays fees a priori
 3. The ultimate leaf transaction has a 0-value anchor spend where the CPFP pays
