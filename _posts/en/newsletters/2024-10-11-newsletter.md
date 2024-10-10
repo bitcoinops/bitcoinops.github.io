@@ -132,7 +132,7 @@ repo], and [BINANAs][binana repo]._
 
 - [LND #8960][] implements custom channel functionality by adding taproot
   overlay as a new experimental channel type, which is identical to a [simple
-  taproot channel][topic simple taproot channel] but commits additional metadata
+  taproot channel][topic simple taproot channels] but commits additional metadata
   in the [tapscript][topic tapscript] leaves for channel scripts. The main
   channel state machine and database are updated to process and store custom
   tapscript leaves. A config option `TaprootOverlayChans` must be set to enable
