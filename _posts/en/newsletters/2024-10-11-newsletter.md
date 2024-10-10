@@ -235,17 +235,42 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Core Lightning #7494][] pay: Remember and update channel_hints across payments #7494
+- [Core Lightning #7494][] introduces a 2-hour lifespan for `channel_hints`,
+  allowing pathfinding information learned from a payment to be reused in future
+  attempts in order to skip unnecessary attempts. Channels that were considered
+  unavailable will be gradually restored and become fully available after 2
+  hours, to ensure that outdated information doesn't cause routes to be skipped
+  that may have since recovered.
 
-- [Core Lightning #7539][] Add getemergencyrecoverdata RPC Command to Fetch Data from emergency.recover File
+- [Core Lightning #7539][] adds a `getemergencyrecoverdata` RPC command to fetch
+  and return data from the `emergency.recover` file. This will allow developers
+  using the API to add wallet backup functionality to their applications.
 
-- [LDK #3179][] Add the core functionality required to resolve Human Readable Names
+- [LDK #3179][] introduces new `DNSSECQuery` and `DNSSECProof` [onion
+  messages][topic onion messages], and a `DNSResolverMessageHandler` to handle
+  these messages as the core functionality to implement [BLIP32][]. This PR also
+  adds an `OMNameResolver` that verifies the DNSSEC proofs and turns them into
+  [offers][topic offers]. See Newsletter [#306][news306 blip32].
 
-- [LND #8960][] merge custom channel staging branch into master
+- [LND #8960][] implements custom channel functionality by adding taproot
+  overlay as a new experimental channel type, which is identical to a [simple
+  taproot channel][topic simple taproot channels] but commits additional metadata
+  in the [tapscript][topic tapscript] leaves for channel scripts. The main
+  channel state machine and database are updated to process and store custom
+  tapscript leaves. A config option `TaprootOverlayChans` must be set to enable
+  support for taproot overlay channels. The custom channels initiative enhances
+  LND’s support for [taproot assets][topic client-side validation]. See
+  Newsletter [#322][news322 customchans].
 
-- [Libsecp256k1 #1479][] Add module "musig" that implements MuSig2 multi-signatures (BIP 327)
+- [Libsecp256k1 #1479][] adds a [MuSig2][topic musig] module for a
+  [BIP340][]-compatible multisig scheme as specified in [BIP327][]. This module
+  is almost identical to the one implemented in [secp256k1-zkp][zkpmusig2], but
+  has some minor changes, such as removing support for [adaptor
+  signatures][topic adaptor signatures] to make it non-experimental.
 
-- [Rust Bitcoin #2945][] Support Testnet4 Network
+- [Rust Bitcoin #2945][] introduces support for [testnet4][topic testnet] by
+  adding the `TestNetVersion` enum, refactoring the code, and including the
+  necessary parameters and blockchain constants for testnet4.
 
 - [BIPs #1674][] reverts the changes to the [BIP85][] specification
   described in [Newsletter #323][news323 bip85].  The changes broke
@@ -271,3 +296,6 @@ repo], and [BINANAs][binana repo]._
 [gh tdb3]: https://github.com/tdb3
 [gh getorphantxs hidden]: https://github.com/bitcoin/bitcoin/blob/a9f6a57b6918b2f92c7d6662e8f5892bf57cc127/src/rpc/mempool.cpp#L1131
 [gh commit 142e604]: https://github.com/bitcoin/bitcoin/commit/142e604184e3ab6dcbe02cebcbe08e5623182b81
+[news306 blip32]: /en/newsletters/2024/06/07/#blips-32
+[news322 customchans]: /en/newsletters/2024/09/27/#lnd-9095
+[zkpmusig2]: https://github.com/BlockstreamResearch/secp256k1-zkp
