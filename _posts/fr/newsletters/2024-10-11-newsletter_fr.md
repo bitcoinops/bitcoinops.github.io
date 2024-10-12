@@ -1,8 +1,8 @@
 ---
 title: 'Bulletin Hebdomadaire Bitcoin Bitcoin Optech #324'
 permalink: /fr/newsletters/2024/10/11/
-name: 2024-10-11-newsletter
-slug: 2024-10-11-newsletter
+name: 2024-10-11-newsletter-fr
+slug: 2024-10-11-newsletter-fr
 type: newsletter
 layout: newsletter
 lang: fr
