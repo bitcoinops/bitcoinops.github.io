@@ -207,7 +207,7 @@ repo], [Eclair][eclair repo], [LDK][ldk repo], [LND][lnd repo], [libsecp256k1][l
 [Hardware Wallet
 _Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPayServer][btcpay server repo],
 [BDK][bdk repo], [Propositions d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts
-repo], [Lightning BLIPs][blips repo], [Inquisition Bitcoin][bitcoin inquisition repo], et
+repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition repo], et
 [BINANAs][binana repo]._
 
 - [Core Lightning #7494][] introduit une durée de vie de 2 heures pour `channel_hints`, permettant
