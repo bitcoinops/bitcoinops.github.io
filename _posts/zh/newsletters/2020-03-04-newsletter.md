@@ -27,7 +27,7 @@ lang: zh
 
 - **<!--taproot-in-the-generic-group-model-->****通用群模型中的 Taproot：**Lloyd Fournier 发布了他在两周前的金融密码学会议上展示的[海报][fournier poster]，描述了使用 Taproot 时，为了保证其安全性，所需哈希函数必须具备的属性。这扩展了 Andrew Poelstra 之前的一项[证明][poelstra proof]，该证明更广泛地假设了哈希函数作为[随机预言机][random oracle]。那些评估 Taproot 加密安全性的人士被鼓励查看 Poelstra 的证明和 Fournier 的海报。
 
-## 发布和候选版本
+## 发布与候选发布
 
 *热门比特币基础设施的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
