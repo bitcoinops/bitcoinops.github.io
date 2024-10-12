@@ -136,8 +136,7 @@ dans les tests fonctionnels comme `p2p_orphan_handling.py`) ou pour fournir
 des données supplémentaires pour des statistiques/visualisations.
 
 {% include functions/details-list.md
-  q0="Qu'est-ce qu'une transaction orpheline ? À quel moment les transactions entrent-elles
-  dans l'orphelinat ?"
+  q0="Qu'est-ce qu'une transaction orpheline ? À quel moment les transactions entrent-elles dans l'orphelinat ?"
   a0="Une transaction orpheline est une transaction dont les entrées font référence à des transactions
   parentes inconnues ou manquantes. Les transactions entrent dans l'orphelinat lorsqu'elles sont reçues
   d'un pair mais échouent à la validation avec `TX_MISSING_INPUTS` dans `ProcessMessage`."
@@ -151,9 +150,8 @@ des données supplémentaires pour des statistiques/visualisations.
   a2="Les arguments RPC non-string doivent être ajoutés à la liste `vRPCConvertParams`
   dans `src/rpc/client.cpp` pour assurer une conversion de type appropriée."
   a2link="https://bitcoincore.reviews/30793#l-72"
-  q3="Quelle est la taille maximale du résultat de ce RPC ? Y a-t-il une limite au nombre d'orphelins
-  conservés ? Y a-t-il une limite à la durée pendant laquelle les orphelins peuvent rester dans
-  l'orphelinat ?"
+  q3="Quelle est la taille maximale du résultat de ce RPC ? Y a-t-il une limite au nombre d'orphelins conservés ?
+  Y a-t-il une limite à la durée pendant laquelle les orphelins peuvent rester dans l'orphelinat ?"
   a3="Le nombre maximum d'orphelins est de 100
   (`DEFAULT_MAX_ORPHAN_TRANSACTIONS`). À `verbosity=0`, chaque txid est une
   valeur binaire de 32 octets, mais lorsqu'elle est codée en hexadécimal pour le résultat JSON-RPC,
@@ -166,7 +164,7 @@ des données supplémentaires pour des statistiques/visualisations.
   elle ne consisterait qu'en des données de témoin), ou 800 kB une fois encodée en hexadécimal. Par
   conséquent, la taille maximale du résultat est d'environ 80 MB (100 transactions * 800 kB).<br><br>
   Les orphelins sont limités dans le temps et sont supprimés après 20 minutes, comme défini par
-  `ORPHAN_TX_EXPIRE_TIME`.
+  `ORPHAN_TX_EXPIRE_TIME`."
   a3link="https://bitcoincore.reviews/30793#l-94"
   q4="Depuis quand existe-t-il une taille maximale d'orphelinat?"
   a4="La variable `MAX_ORPHAN_TRANSACTIONS` a été introduite dès 2012, dans le commit [142e604][gh commit 142e604]."
