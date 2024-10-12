@@ -1,5 +1,5 @@
 ---
-title: 'Bulletin Hebdomadaire Bitcoin Bitcoin Optech #324'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #324'
 permalink: /fr/newsletters/2024/10/11/
 name: 2024-10-11-newsletter-fr
 slug: 2024-10-11-newsletter-fr
