@@ -28,6 +28,12 @@ primary_sources:
     - title: MuSig-DN paper
       link: https://eprint.iacr.org/2020/1057.pdf
 
+    - title: Original MuSig2 implementation (experimental)
+      link: https://github.com/BlockstreamResearch/secp256k1-zkp
+
+    - title: MuSig2 implementation in Libsecp256k1
+      link: https://github.com/bitcoin-core/secp256k1/issues/1479
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
