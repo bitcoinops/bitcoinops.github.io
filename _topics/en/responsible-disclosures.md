@@ -143,6 +143,12 @@ optech_mentions:
   - title: "David Jaenson and Braydon Fuller independently disclose headers DoS attack against Bitcoin Core"
     url: /en/newsletters/2024/09/27/#disclosure-of-vulnerability-affecting-bitcoin-core-versions-before-24-0-1
 
+  - title: "Niklas Gögge responsibly disclosed a crash vulnerability affecting Bitcoin Core"
+    url: /en/newsletters/2024/10/11/#cve-2024-35202-remote-crash-vulnerability
+
+  - title: "Antoine Poinsot and Niklas Gögge responsibly disclosed a consensus vulnerability affecting btcd"
+    url: /en/newsletters/2024/10/11/#cve-2024-38365-btcd-consensus-failure
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
@@ -167,6 +173,11 @@ disclosure and makes a best-effort attempt to cite the names of the
 people who made the disclosure.  There are many other responsible
 disclosures not listed here, including those which have not been
 publicized yet.
+
+When it's unclear whether a disclosure was made responsibly, Optech will
+do its best to judge the situation based on the information readily
+available to us.  Entries to this page may be added or removed at a
+later time based on new details.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}

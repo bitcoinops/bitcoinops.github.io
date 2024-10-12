@@ -33,6 +33,10 @@ optech_mentions:
   - title: "Bitcoin Core #29306 adds sibling eviction for unconfirmed v3 transaction children"
     url: /en/newsletters/2024/03/20/#bitcoin-core-29306
 
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: sibling replacement"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
