@@ -145,6 +145,9 @@ optech_mentions:
   - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
     url: /en/newsletters/2024/07/05/#bips-1540
 
+  - title: Libsecp256k1 adds MuSig2 BIP340-compatible multisig as specified in BIP327
+    url: /en/newsletters/2024/10/11/#libsecp256k1-1479
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignatures
