@@ -15,7 +15,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures-->使用简化的 ECDSA 适配器签名为闪电网络 (LN) 实现 PTLCs 的工作：**
+- **<!--work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures-->****使用简化的 ECDSA 适配器签名为闪电网络 (LN) 实现 PTLCs 的工作：**
   点时间锁定合约 (PTLCs) 是当前用于支持 LN 路由支付的哈希时间锁定合约 (HTLCs) 的替代方案。现有 HTLC 机制的问题在于，支付路径上的每个跳点都使用相同的哈希摘要来保护其条件支付。这意味着如果用户控制了同一路径上的两个节点，则可以确定这两个节点之间的跳点既不是支付的最终支付方，也不是接收方。这不仅减少了 LN 的洋葱路由提供的隐私，还允许恶意用户窃取中间跳点的路由费用（这被称为[虫洞攻击][wormhole attack]）。例如，在以下路径中，Mallory 可以窃取 Bob 和 Carol 的路由费用，并推断出他们都不是支付的最终支付方或接收方。
 
   ```
@@ -44,20 +44,20 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
   q2="为什么交易传播速度很重要？"
   a2="几秒钟的短暂延迟并不是问题（甚至对隐私有益），但几分钟的较长延迟会损害交易的传播和 [BIP152][] 致密区块的中继。"
 
-  q3="`mapRelay` 是什么时候、为什么添加的？"
+  q3="<!--q3-maprelay-->`mapRelay` 是什么时候、为什么添加的？"
   a3="`mapRelay` 在比特币的第一个版本中就已存在。它确保如果节点宣布了某笔交易，即使该交易在被请求之前已经被确认在区块中，也可以下载该交易。"
 
-  q4="描述移除 `mapRelay` 的一个问题？"
+  q4="<!--q4-maprelay-->描述移除 `mapRelay` 的一个问题？"
   a4="它可能导致在诚实情况下，请求的交易更频繁地返回 `notfound`，延迟可达 2 分钟，从而影响传播。"
 %}
 
 在会议的后期，讨论了 `TxDownloadState` 数据结构：
 
 {% include functions/details-list.md
-  q0="描述 `TxDownloadState` 结构的作用？"
+  q0="<!--q0-txdownloadstate-->描述 `TxDownloadState` 结构的作用？"
   a0="这是一个每对等方的状态机，带有定时器，用于协调从对等方请求交易。"
 
-  q1="我们如何改进 `TxDownloadState`，以减少未来引入交易中继错误的可能性？"
+  q1="<!--q1-txdownloadstate-->我们如何改进 `TxDownloadState`，以减少未来引入交易中继错误的可能性？"
   a1="向该结构添加内部一致性检查，或用具有良好定义接口的类替换它。"
 %}
 
