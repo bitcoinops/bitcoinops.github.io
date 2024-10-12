@@ -44,6 +44,9 @@ optech_mentions:
   - title: "LND #9095 and LND #9072 improve custom channel features to improve taproot assets support"
     url: /en/newsletters/2024/09/27/#lnd-9095
 
+  - title: "LND #8960 adds custom channel functionality for taproot assets"
+    url: /en/newsletters/2024/10/11/#lnd-8960
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Pay to Contract (P2C)"

@@ -127,6 +127,10 @@ optech_mentions:
   - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
     url: /en/newsletters/2024/06/28/#bitcoin-core-28984
 
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: one parent one child (1P1C) package relay"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP fee bumping
