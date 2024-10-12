@@ -100,6 +100,10 @@ optech_mentions:
   - title: "Criticism of motivations for preferring TRUC over replace-by-feerate as a pinning solution"
     url: /en/newsletters/2024/07/26/#truc-utility
 
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: TRUC transactions"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning

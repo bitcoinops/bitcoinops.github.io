@@ -106,6 +106,9 @@ optech_mentions:
   - title: "New CPUNet testnet announced with a modified PoW algorithm designed for CPU-only mining"
     url: /en/newsletters/2024/08/23/#cpunet-testnet-announced
 
+  - title: "Rust Bitcoin #2945 introduces support for testnet4"
+    url: /en/newsletters/2024/10/11/#rust-bitcoin-2945
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signet

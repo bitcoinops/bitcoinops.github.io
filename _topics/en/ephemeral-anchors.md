@@ -72,6 +72,10 @@ optech_mentions:
   - title: "Bitcoin Core PR Review Club for #30352: Add PayToAnchor (P2A) as standard output script for spending"
     url: /en/newsletters/2024/08/09/#bitcoin-core-pr-review-club
 
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: P2A output scripts"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
