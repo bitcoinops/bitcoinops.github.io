@@ -88,7 +88,7 @@ endcomment %}
 
 - **<!--could-taproot-create-larger-security-risks-or-hinder-future-protocol-adjustments-re-quantum-threats-->**[Taproot 会否带来更大的安全风险或阻碍应对量子威胁的未来协议调整？]({{bse}}93047) Pieter Wuille 回答了一些关于 Schnorr、Taproot 及其与后量子密码学（PQC）关系的问题。他进一步解释了一些零知识证明系统可能可以做到量子抗性。
 
-## 发布与候选发布版本
+## 发布与候选发布
 
 *流行比特币基础设施的新发布和候选发布版本。请考虑升级到新版本或帮助测试候选发布版本。*
 
