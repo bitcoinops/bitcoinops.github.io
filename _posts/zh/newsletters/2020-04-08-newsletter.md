@@ -44,20 +44,20 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
   q2="为什么交易传播速度很重要？"
   a2="几秒钟的短暂延迟并不是问题（甚至对隐私有益），但几分钟的较长延迟会损害交易的传播和 [BIP152][] 致密区块的中继。"
 
-  q3="<!--q3-maprelay-->`mapRelay` 是什么时候、为什么添加的？"
+  q3="**<!--q3-maprelay-->**`mapRelay` 是什么时候、为什么添加的？"
   a3="`mapRelay` 在比特币的第一个版本中就已存在。它确保如果节点宣布了某笔交易，即使该交易在被请求之前已经被确认在区块中，也可以下载该交易。"
 
-  q4="<!--q4-maprelay-->描述移除 `mapRelay` 的一个问题？"
+  q4="**<!--q4-maprelay-->**描述移除 `mapRelay` 的一个问题？"
   a4="它可能导致在诚实情况下，请求的交易更频繁地返回 `notfound`，延迟可达 2 分钟，从而影响传播。"
 %}
 
 在会议的后期，讨论了 `TxDownloadState` 数据结构：
 
 {% include functions/details-list.md
-  q0="<!--q0-txdownloadstate-->描述 `TxDownloadState` 结构的作用？"
+  q0="**<!--q0-txdownloadstate-->**描述 `TxDownloadState` 结构的作用？"
   a0="这是一个每对等方的状态机，带有定时器，用于协调从对等方请求交易。"
 
-  q1="<!--q1-txdownloadstate-->我们如何改进 `TxDownloadState`，以减少未来引入交易中继错误的可能性？"
+  q1="**<!--q1-txdownloadstate-->**我们如何改进 `TxDownloadState`，以减少未来引入交易中继错误的可能性？"
   a1="向该结构添加内部一致性检查，或用具有良好定义接口的类替换它。"
 %}
 
@@ -77,7 +77,7 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
 
 - [C-Lightning #3600][] 添加了对使用*盲化路径*的*洋葱消息*的实验性支持：
 
-  - *洋葱消息*（在 [Newsletter #86][news86 ln dm] 中称为 "LN 直接消息"）允许节点在不使用 LN 支付机制的情况下通过网络发送加密消息。这可以替代应用程序如 [Whatsat][] 使用的消息-支付机制。与消息-支付相比，洋葱消息具有几个优势：
+  - **<!--onion-messages-->***洋葱消息*（在 [Newsletter #86][news86 ln dm] 中称为 "LN 直接消息"）允许节点在不使用 LN 支付机制的情况下通过网络发送加密消息。这可以替代应用程序如 [Whatsat][] 使用的消息-支付机制。与消息-支付相比，洋葱消息具有几个优势：
 
     1. 它们有一个[草案规范][onion messages draft spec]，如果被采用，将使多个实现支持它们变得更容易。
 
@@ -85,7 +85,7 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
 
     3. 它们不需要像 HTLC 或错误消息那样进行双向信息传输，因此一旦节点转发消息，它不需要保留与该消息相关的任何信息。这种无状态性将最大限度地减少节点的内存需求。如果发送节点希望接收回复，草案规范允许它在消息中包含一个盲化的 `reply_path` 字段，接收节点可以使用该字段通过新消息发送回复。
 
-  - *盲化路径*（在 [Newsletter #85][news85 lw rv] 中称为“轻量级汇合路由”并现在有[草案提案][blinded path gist]）使得在发送方不知道接收方网络身份或完整路径的情况下路由支付或消息成为可能。这是通过以下步骤实现的：
+  - **<!--blinded-paths-->***盲化路径*（在 [Newsletter #85][news85 lw rv] 中称为“轻量级汇合路由”并现在有[草案提案][blinded path gist]）使得在发送方不知道接收方网络身份或完整路径的情况下路由支付或消息成为可能。这是通过以下步骤实现的：
 
     1. 目的节点从中间节点选择一条路径到自己，然后将该路径信息进行洋葱加密，以便路径中的每个跳点只能解密下一个应该接收消息的节点标识符。目的节点将这个加密的（“盲化的”）路径信息提供给发送节点（例如，通过 [BOLT11][] 发票中的一个字段或使用前面提到的洋葱消息 `reply_path` 字段）。
 
@@ -117,7 +117,7 @@ _在本节中，我们总结了一次最近的 Bitcoin Core PR 审查俱乐部�
 [wormhole attack]: http://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/privacy-preserving-multi-hop-locks/
 [lightning hacksprint]: https://wiki.fulmo.org/index.php?title=Main_Page
 [fournier otves]: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
-[news16 2pecdsa scriptless]: /zh/newsletters/2018/10/09/#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels
+[news16 2pecdsa scriptless]: /zh/newsletters/2018/10/09/#多方-ecdsa-用于无脚本的闪电网络支付通道
 [uSEkaCIO email]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
 [jonasnick otves]: https://github.com/jonasnick/secp256k1/pull/14/
 [nkohen otves]: https://github.com/bitcoin-s/bitcoin-s/pull/1302
