@@ -249,9 +249,9 @@ repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition 
   la compatibilité avec les versions déployées du protocole. La discussion sur
   le PR a soutenu la création d'un nouveau BIP pour les changements majeurs.
 
-{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30"
-%}
-{% include snippets/recap-ad.md when=quatre_jours_après_publication %}{% include references.md %}
+{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
+{% include snippets/recap-ad.md when=four_days_after_posting %}
+{% include references.md %}
 {% include linkers/issues.md v=2 issues="7494,7539,3179,8960,1479,2945,1674,26898,27610,27608" %}
 [BDK 1.0.0-beta.5]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.5
 [news323 bip85]: /fr/newsletters/2024/10/04/#bips-1600
