@@ -22,7 +22,7 @@ lang: zh
   Alice → Mallory → Bob → Carol → Mallory' → Dan
   ```
 
-  PTLCs 通过使用适配器签名（表示椭圆曲线上的 *点*）而非哈希，使每个跳点可以使用不同的标识符来处理支付。适配器签名最初是为 [Schnorr 签名][topic schnorr signatures]描述的。已知可以在比特币当前的 ECDSA 签名方案中使用它们（参见 [Newsletter #16][news16 2pecdsa scriptless]），但该过程依赖于双方 ECDSA 签名（2pECDSA），这种方式比较复杂，并且需要超出比特币 ECDSA 签名通常要求的安全假设。然而，最近 Lloyd Fournier 发表了一篇[论文][fournier otves]，描述了如何使用常规的 2-of-2 比特币多重签名（例如 `OP_CHECKMULTISIG`）和简单离散对数等价（DLEQ）来安全地使用适配器签名；该内容已在去年 11 月的 [Lightning-Dev 邮件列表][uSEkaCIO email] 中进行了总结。
+  PTLCs 通过使用适配器签名（表示椭圆曲线上的 *点*）而非哈希，使每个跳点可以使用不同的标识符来处理支付。适配器签名最初是为 [Schnorr 签名][topic schnorr signatures]描述的。已知可以在比特币当前的 ECDSA 签名方案中使用它们（参见 [Newsletter #16][news16 2pecdsa scriptless]），但该过程依赖于双方 ECDSA 签名（2pECDSA），这种方式比较复杂，并且需要超出比特币 ECDSA 签名通常要求的安全假设。然而，最近 Lloyd Fournier 发表了一篇[论文][fournier otves]，描述了如何使用常规的 2-of-2 比特币多重签名（例如 `OP_CHECKMULTISIG`）和简单离散对数等价（DLEQ）来安全地使用适配器签名；该内容已在去年 11 月的 [Lightning-Dev 邮件列表][uSEkaCIO email]中进行了总结。
 
   上周在 [Lightning HackSprint][] 活动中，几位开发者[参与了][ptlc challenge]这些 2-of-2 多重签名适配器签名的工作。成果包括关于该主题的出色[博文][gibson blog]以及 C 语言 [libsecp256k1][jonasnick otves] 和 Scala [bitcoin-s][nkohen otves] 库的概念验证实现。虽然这些代码尚未经过审查且可能存在安全隐患，但它为开发者在主网上开始实验适配器签名提供了帮助，既可以用于 LN 中的 PTLCs，也可以用于其他无需信任的合约协议中。
 
