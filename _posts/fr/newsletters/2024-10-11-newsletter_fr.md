@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine annonce trois vulnérabilités affectant les anciennes versions du nœud
-complet Bitcoin Core, annonce une vulnérabilité distincte affectant les anciennes versions du nœud
+complet Bitcoin Core, une autre vulnérabilité affectant les anciennes versions du nœud
 complet btcd, et inclut un lien vers la contribution d'un guide Optech décrivant comment utiliser plusieurs nouvelles
 fonctionnalités du réseau P2P ajoutées dans Bitcoin Core 28.0. Sont également inclus nos sections
 habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
@@ -94,7 +94,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   signature. Cela pourrait être utilisé pour amener btcd à supprimer plus de données du script de
   signature que Bitcoin Core ne le ferait avant de vérifier respectivement l'engagement, conduisant un
   programme à considérer l'engagement valide et l'autre invalide. Toute transaction contenant un
-  engagement invalide est invalide et tout bloc contenant une transaction invalide est invalide,
+  engagement non valide est invalide et tout bloc contenant une transaction non valide est invalide,
   permettant de briser le consensus entre Bitcoin Core et btcd. Les nœuds qui sortent du consensus
   peuvent être trompés en acceptant des transactions invalides et peuvent ne pas voir les dernières
   transactions que le reste du réseau considère comme confirmées, ce qui peut entraîner une perte
@@ -175,7 +175,7 @@ des données supplémentaires pour des statistiques/visualisations.
   transaction orpheline. Soustraire le `ORPHAN_TX_EXPIRE_TIME` (c'est-à-dire 20 minutes) donne le
   moment d'insertion."
   a5link="https://bitcoincore.reviews/30793#l-128"
-  q6="En utilisant le RPC `getorphantxs`, pourrions-nous savoir quels sont les entrées d'une
+  q6="En utilisant le RPC `getorphantxs`, pourrions-nous savoir quelles sont les entrées d'une
   transaction orpheline? Si oui, comment feriez-vous?"
   a6="Oui, avec `verbosity=2`, le RPC retourne l'hexadécimal brut de la transaction, qui peut être
   décodé en utilisant `decoderawtransaction` pour révéler ses entrées."
