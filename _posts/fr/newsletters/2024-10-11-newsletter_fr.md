@@ -9,7 +9,7 @@ lang: fr
 ---
 Le bulletin de cette semaine annonce trois vulnérabilités affectant les anciennes versions du nœud
 complet Bitcoin Core, annonce une vulnérabilité distincte affectant les anciennes versions du nœud
-complet btcd, et inclut une contribution pour un guide Optech décrivant comment utiliser plusieurs nouvelles
+complet btcd, et inclut un lien vers la contribution d'un guide Optech décrivant comment utiliser plusieurs nouvelles
 fonctionnalités du réseau P2P ajoutées dans Bitcoin Core 28.0. Sont également inclus nos sections
 habituelles avec le résumé d'une réunion du Bitcoin Core PR Review Club,
 l'annonce des mises à jour et des versions candidates, et présente les changements
@@ -60,9 +60,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     25.0.
 
   - [Attaque de propagation lente de bloc][] : avant Bitcoin Core 25.0, un
-    bloc invalide d'un attaquant pourrait empêcher Bitcoin Core de
-    continuer à traiter un bloc valide avec le même en-tête provenant d'honnêtes
-    pairs. Cela a particulièrement affecté la reconstruction de blocs compacts lorsque des transactions
+    bloc invalide venant d'un attaquant pouvait empêcher Bitcoin Core de
+    continuer à traiter un bloc valide avec la même en-tête provenant de pairs honnêtes.
+    Cela a particulièrement affecté la reconstruction de blocs compacts lorsque des transactions
     supplémentaires devaient être demandées : un nœud arrêterait d'attendre les transactions s'il
     recevait un bloc invalide d'un pair différent. Même si les transactions étaient reçues plus tard, le
     nœud les ignorerait.
@@ -74,7 +74,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
     accidentellement.
 
     Le problème a été découvert après que plusieurs développeurs, y compris William Casarin et ghost43,
-    ont signalé des problèmes avec leurs nœuds. Plusieurs autres développeurs ont enquêté, avec Suhas
+    aient signalé des problèmes avec leurs nœuds. Plusieurs autres développeurs ont enquêté, avec Suhas
     Daftuar isolant cette vulnérabilité. Daftuar a également [corrigé][bitcoin core #27608] cela en
     empêchant tout pair d'affecter l'état de téléchargement des autres pairs, sauf dans le cas où un
     bloc a passé la validation et a été stocké sur disque. La correction a été incluse dans Bitcoin Core 25.0.
@@ -127,7 +127,7 @@ Club][], en soulignant certaines des questions et réponses importantes. Cliquez
 ci-dessous pour voir un résumé de la réponse de
 la réunion.*
 
-[L'ajout de getorphantxs][review club 30793] est un PR par [tdb3][gh tdb3] qui
+[L'ajout de getorphantxs][review club 30793] est une PR par [tdb3][gh tdb3] qui
 ajoute une nouvelle méthode RPC expérimentale nommée `getorphantxs`. Puisqu'elle est
 principalement destinée aux développeurs, elle est cachée. Cette nouvelle méthode
 fournit à l'appelant une liste de toutes les transactions orphelines actuelles,
@@ -184,17 +184,16 @@ des données supplémentaires pour des statistiques/visualisations.
 
 ## Mises à jour et versions candidates
 
-*Nouvelles versions et candidats à la version pour des projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les candidats
-à la version.*
+*Nouvelles versions et versions candidates pour des projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les versions candidates.*
 
 - [Bitcoin Inquisition 28.0][] est la dernière sortie de ce [signet][topic signet] full node conçu
   pour expérimenter avec des propositions de soft forks et d'autres changements majeurs de protocole. La
   version mise à jour est basée sur la récente sortie de Bitcoin Core 28.0.
 
-- [BDK 1.0.0-beta.5][] est un candidat à la sortie (RC) de cette bibliothèque pour construire des
+- [BDK 1.0.0-beta.5][] est un candidat à la sortie (Release Candidate, RC) de cette bibliothèque pour construire des
   portefeuilles et d'autres applications activées par Bitcoin. Ce dernier RC "active RBF par défaut,
-  met à jour le client bdk_esplora pour réessayer les requêtes au serveur qui échouent en raison de la
+  met à jour le client bdk_esplora pour réessayer les requêtes serveur qui échouent en raison de la
   limitation du taux. Le paquet `bdk_electrum` offre désormais également une fonctionnalité
   use-openssl."
 
@@ -245,7 +244,7 @@ repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition 
 - [BIPs #1674][] revient sur les modifications de la spécification [BIP85][]
   décrites dans le [Bulletin #323][news323 bip85]. Les changements ont rompu
   la compatibilité avec les versions déployées du protocole. La discussion sur
-  le PR a soutenu la création d'un nouveau BIP pour les changements majeurs.
+  la PR a soutenu la création d'un nouveau BIP pour les changements majeurs.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
