@@ -120,7 +120,7 @@ endcomment %}
 [side-channel txt]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/linking-anonymous-transactions/
 [side-channel vid]: https://youtu.be/JhZUItnyQ0k?t=7706
 [side-channel paper]: https://crypto.stanford.edu/timings/paper.pdf
-[news46 sbc]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
+[news46 sbc]: /zh/newsletters/2019/02/05/#斯坦福区块链会议上的值得注意的演讲
 [axiomatic txt]: https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2020/block-rewards/
 [axiomatic vid]: https://youtu.be/BXLcKQ6fLsU?t=8545
 [axiomatic paper]: https://arxiv.org/pdf/1909.10645.pdf
