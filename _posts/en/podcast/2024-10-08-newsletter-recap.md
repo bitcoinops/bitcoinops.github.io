@@ -304,7 +304,7 @@ basically a client to the BDK infrastructure, you can get that and use any
 client.  So, we've talked with the Ark guys, who are interested in having
 potentially an Ark client that would be able to follow at least the onchain
 part, not the virtual UTXO part, but just the onchain of that.  And if you have
-sort of a BDK Ark sort of glue] library, then you'd be able to use a BDK wallet
+sort of a BDK Ark sort of glue library, then you'd be able to use a BDK wallet
 on an Ark client at low cost, say.
 
 **Mark Erhardt**: That sounds cool.  I wanted to poke a little at you.  How come
