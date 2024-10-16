@@ -11,7 +11,81 @@ This week's newsletter FIXME:harding
 
 ## News
 
-_No significant news this week was found in any of our [sources][optech sources]._
+- **LN Summit 2024 notes:** Olaoluwa Osuntokun [posted][osuntokun
+  summary] to Delving Bitcoin his a summary of his [notes][osuntokun
+  notes] (with additional commentary) from a recent LN developer
+  conference.  Some of the topics discussed included:
+
+  - **Version 3 commitment transactions:** developers discussed how to use
+    new P2P features, including [TRUC][topic v3 transaction relay]
+    transactions and [P2A][topic ephemeral anchors] outputs, to improve
+    the security of LN commitment transactions that can be used to
+    unilaterally close a channel.  Discussion focused on various design
+    tradeoffs.
+
+  - **PTLCs:** although long proposed as a privacy upgrade to LN, as well
+    as possibly useful for other purposes such as [stuckless
+    transactions][topic redundant overpayments], recent research
+    into the tradeoffs of various possible [PTLC][topic ptlc]
+    implementations was discussed (see [Newsletter #268][news268 ptlc]).
+    A particular focus was the construction of the [signature
+    adaptor][topic adaptor signatures] (e.g. using scripted multisig
+    versus scriptless [MuSig2][topic musig]) and its effect on the
+    commitment protocol (see next item).
+
+  - **State update protocol:** a proposal was discussed to convert LN's
+    current state update protocol from allowing either side to propose an
+    update at any time to only allowing a one party at a time to propose
+    updates (see Newsletters [#120][news120 simcom] and
+    [#261][news261 simcom]).  Allowing either side to propose updates can
+    result in both side proposing updates simultaneously, which is
+    difficult to reason about and can lead to accidental channel force
+    closures when.  The alternative is for only one party to be in
+    charge at a time, e.g.  Alice is initially the only one allowed to
+    propose state updates; if she has none to propose, she can tell Bob
+    that he's in charge.  When Bob's finished proposing updates, he can
+    transfer control back to Alice.  This simplifies reasoning about the
+    protocol, eliminates problems with simultaneous proposals, and
+    further makes it easy for the non-controlling party to reject any
+    unwanted proposals.  The new round-based protocol would also work
+    well with MuSig2-based signature adaptors.
+
+  - **SuperScalar:** the developer of a proposed [channel factory][topic
+    channel factories] construction for end-users gave a presentation on
+    the proposal and solicited feedback.  Optech will publish a more
+    detailed description of [SuperScalar][zmnscpxj superscalar] in a
+    future newsletter.
+
+  - **Gossip upgrade:** developers discussed upgrades to the LN gossip
+    protocol.  These are most urgently needed for supporting new types of
+    funding transactions, such as for [simple taproot channels][topic
+    simple taproot channels], but may also add support for other
+    features.  One new feature discussed was having channel announcement
+    messages include an SPV proof (or a commitment to an SPV proof) to
+    allow lightweight clients to verify that a funding transaction (or
+    sponsoring transaction) was included in a block at some point.
+
+  - **Research on fundamental delivery limits:** research was presented on
+    payment flows that cannot result in success given limitations of the
+    network (e.g., channels with insufficient capacity); see [Newsletter
+    #309][news309 feasible].  If an LN payment is infeasible, the
+    spender and receiver can always use an onchain payment.  However,
+    the rate of onchain payments is limited by the maximum block weight,
+    so it's possible to calculate the maximum throughput (payments per
+    second) of the combined Bitcoin and LN system by dividing the
+    maximum onchain rate by the rate of infeasible LN payments.  Using
+    this rough metric, to achieve a maximum of about 47,000 payments per
+    second, the infeasible rate must be below 0.29%.  Two techniques
+    were discussed for reducing the infeasible rate: (1) virtual or real
+    channels that involve more than two parties, as more parties implies
+    more funds for forwarding and more forwarding funds increases the
+    rate of feasibility; and (2) credit channels where parties who
+    trust each other can forward payments between themselves without the
+    ability to enforce those payments onchain---with all other users
+    still receiving trustless payments.
+
+  Osuntokun encouraged other participants to post corrections or
+  expansions to the thread.
 
 ## Changes to services and client software
 
@@ -115,3 +189,10 @@ repo], and [BINANAs][binana repo]._
 [phoenixd v0.4.0]: https://github.com/ACINQ/phoenixd/releases/tag/v0.4.0
 [blip36]: https://github.com/lightning/blips/pull/36
 [pod323 eclair]: /en/podcast/2024/10/08/#eclair-2848-transcript
+[osuntokun summary]: https://delvingbitcoin.org/t/ln-summit-2024-notes-summary-commentary/1198
+[osuntokun notes]: https://docs.google.com/document/d/1erQfnZjjfRBSSwo_QWiKiCZP5UQ-MR53ZWs4zIAVcqs/edit?tab=t.0#heading=h.chk08ds793ll
+[news268 ptlc]: /en/newsletters/2023/09/13/#ln-messaging-changes-for-ptlcs
+[news120 simcom]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
+[news261 simcom]: /en/newsletters/2023/07/26/#simplified-commitments
+[zmnscpxj superscalar]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143
+[news309 feasible]: /en/newsletters/2024/06/28/#estimating-the-likelihood-that-an-ln-payment-is-feasible
