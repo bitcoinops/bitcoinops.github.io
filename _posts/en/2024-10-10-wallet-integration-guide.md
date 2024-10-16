@@ -39,7 +39,7 @@ related transactions, allowing low-fee ancestors to be included in the mempool.
 
 In Bitcoin Core 28.0, a limited variant of package relay for packages containing
 1 parent and 1 child ("1P1C") was implemented. 1P1C allows a single parent into
-the mempool, regardless of the dynamic mempool minimum feereate, using a single
+the mempool, regardless of the dynamic mempool minimum feerate, using a single
 child transaction and a simple [Child Pays For Parent (CPFP)][topic cpfp] fee
 bump. If the child transaction has additional unconfirmed parents, these
 transactions will not successfully propagate. This restriction simplified the
