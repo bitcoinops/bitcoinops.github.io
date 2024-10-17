@@ -97,13 +97,9 @@ wallets and services.*
   [bech32m][topic bech32] addresses.
 
 - **Dana wallet released:**
-  [Dana wallet][dana wallet github] is a [silent payment][topic silent payments] wallet focused the
+  [Dana wallet][dana wallet github] is a [silent payment][topic silent payments] wallet focused on the
   donation use case. The developers recommend using [signet][topic signet] and
   also run a signet [faucet][dana wallet faucet].
-
-- **Bitcoin script editor and visualizer:**
-  The Saving Satoshi [script editor][saving satoshi editor] allows for visually
-  building and executing Bitcoin scripts.
 
 - **Kyoto BIP157/158 light client released:**
   [Kyoto][kyoto github] is a Rust light client using [compact block
@@ -119,7 +115,7 @@ wallets and services.*
   payment batching], [RBF][topic rbf] support, and [fee estimation][topic fee estimation].
 
 - **DATUM protocol announced:**
-  The [DATUM mining protocol][datum docs] the allows miners to build candidate blocks as part
+  The [DATUM mining protocol][datum docs] allows miners to build candidate blocks as part
   of a [pooled mining][topic pooled mining] setup, similar to the Stratum v2 protocol.
 
 - **Bark Ark implementation announced:**
