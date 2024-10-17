@@ -156,22 +156,54 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #30955][] Mining interface: getCoinbaseMerklePath() and submitSolution()
+- [Bitcoin Core #30955][] introduces two new methods to the `Mining` interface
+  (see Newsletter [#310][news310 mining]), in line with the requirements for
+  [Stratum V2][topic pooled mining]. The `submitSolution()` method allows miners
+  to submit a block solution more efficiently by only requiring the nonce,
+  timestamp, version fields, and coinbase transaction, instead of the entire
+  block. Additionally, `getCoinbaseMerklePath()` is introduced to construct the
+  merkle path field required in the `NewTemplate` message. This PR also
+  reinstates `BlockMerkleBranch`, which was previously removed in [Bitcoin Core
+  #13191][].
 
-- [Eclair #2927][] Enforce recommended feerate for on-the-fly funding (#2927)
+- [Eclair #2927][] adds enforcement of recommended feerates (see Newsletter
+  [#323][news323 fees]) for on-the-fly funding (see Newsletter [#323][news323
+  fly]), by rejecting `open_channel2` and `splice_init` messages that use a
+  feerate lower than the recommended value.
 
-- [Eclair #2922][] Remove support for splicing without quiescence (#2922)
+- [Eclair #2922][] removes support for [splicing][topic splicing] without
+  channel quiescence (see Newsletter [#309][news309 quiescence]), to conform to
+  the latest splicing protocol as proposed in [BOLTs #1160][], which requires
+  nodes to use the quiescence protocol during splicing. Previously, splicing was
+  allowed under a less formal mechanism, where splice messages were permitted if
+  the commitments were already quiescent, acting as a "poor man's" version of
+  channel quiescence.
 
-- [LDK #3235][] Add `last_local_balance_msats` field
+- [LDK #3235][] adds a `last_local_balance_msats` field to the
+  `ChannelForceClosed` event, which gives the local balance of a node in
+  millisatoshis (msats) just before the channel was force-closed, allowing users
+  to know how many msats they lost due to rounding.
 
-- [LND #8183][] chanbackup, server, rpcserver: put close unsigned tx, remote signature and commit height to SCB
+- [LND #8183][] adds the optional `CloseTxInputs` field to the
+  `chanbackup.Single` structure in the [static channel backup][topic static
+  channel backups] (SCB) file, to store the inputs required to generate force-close
+  transactions. This allows users to manually retrieve funds when a peer
+  is offline using the `chantools scbforceclose` command as a last-resort
+  recovery option. However, users should exercise extreme caution as this
+  feature could result in the loss of funds if the channel has been updated
+  since the backup was created. In addition, the PR introduces the
+  `ManualUpdate` method, which will update channel backups whenever LND shuts
+  down.
 
-- [Rust Bitcoin #3450][] Add version three variant to transaction version
+- [Rust Bitcoin #3450][] adds v3 as a new variant of the transaction version,
+  following Bitcoin Core’s acceptance of [Topologically Restricted Until
+  Confirmation (TRUC)][topic v3 transaction relay] transactions as standard (see
+  Newsletter [#307][news307 truc]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="30955,2927,2922,3235,8183,3450" %}
+{% include linkers/issues.md v=2 issues="30955,2927,2922,3235,8183,3450,13191,1160" %}
 [BDK 1.0.0-beta.5]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.5
 [osuntokun summary]: https://delvingbitcoin.org/t/ln-summit-2024-notes-summary-commentary/1198
 [osuntokun notes]: https://docs.google.com/document/d/1erQfnZjjfRBSSwo_QWiKiCZP5UQ-MR53ZWs4zIAVcqs/edit?tab=t.0#heading=h.chk08ds793ll
@@ -196,3 +228,8 @@ repo], and [BINANAs][binana repo]._
 [phoenixd v0.4.0]: https://github.com/ACINQ/phoenixd/releases/tag/v0.4.0
 [blip36]: https://github.com/lightning/blips/pull/36
 [pod323 eclair]: /en/podcast/2024/10/08/#eclair-2848-transcript
+[news310 mining]:/en/newsletters/2024/07/05/#bitcoin-core-30200
+[news323 fees]: /en/newsletters/2024/10/04/#eclair-2860
+[news323 fly]: /en/newsletters/2024/10/04/#eclair-2861
+[news309 quiescence]:/en/newsletters/2024/06/28/#bolts-869
+[news307 truc]: /en/newsletters/2024/06/14/#bitcoin-core-29496
