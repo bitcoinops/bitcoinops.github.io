@@ -88,7 +88,7 @@ endcomment %}
 
 - **<!--could-taproot-create-larger-security-risks-or-hinder-future-protocol-adjustments-re-quantum-threats-->**[Taproot 会否带来更大的安全风险或阻碍应对量子威胁的未来协议调整？]({{bse}}93047) Pieter Wuille 回答了一些关于 Schnorr、Taproot 及其与后量子密码学（PQC）关系的问题。他进一步解释了一些零知识证明系统可能可以做到量子抗性。
 
-## 发布与候选发布版本
+## 发布与候选发布
 
 *流行比特币基础设施的新发布和候选发布版本。请考虑升级到新版本或帮助测试候选发布版本。*
 
@@ -135,7 +135,7 @@ endcomment %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [sipa nonce updates]: https://github.com/sipa/bips/pull/198
 [lnd 0.9.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.1-beta.rc1
-[release rc section]: #发布与候选发布版本
+[release rc section]: #发布与候选发布
 [news72 upfront]: /zh/newsletters/2019/11/13/#ln-up-front-payments
 [jager up-front]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002547.html
 [russell dm]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002552.html
