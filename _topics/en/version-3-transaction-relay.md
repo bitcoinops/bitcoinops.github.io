@@ -104,6 +104,12 @@ optech_mentions:
     url: /en/bitcoin-core-28-wallet-integration-guide/
     date: 2024-10-10
 
+  - title: "LN developer discussion of using TRUC for version-3 LN commitments"
+    url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
+
+  - title: "Rust Bitcoin #3450 adds the ability to opt-in to TRUC transactions"
+    url: /en/newsletters/2024/10/18/#rust-bitcoin-3450
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
