@@ -30,6 +30,9 @@ optech_mentions:
   - title: Improving LN scalability with covenants in a similar way to Ark
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
 
+  - title: "Implementation of Ark demonstrated on mainnet"
+    url: /en/newsletters/2024/10/18/#bark-ark-implementation-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Joinpools
