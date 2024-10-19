@@ -68,6 +68,12 @@ optech_mentions:
   - title: "Bitcoin Core #30510 adds an inter-process communication (IPC) wrapper to the Mining interface"
     url: /en/newsletters/2024/10/04/#bitcoin-core-30510
 
+  - title: "DATUM protocol announced as an alterative to Stratum v2 local transaction selection"
+    url: /en/newsletters/2024/10/18/#datum-protocol-announced
+
+  - title: "Bitcoin Core #30955 introduces two new methods to the Mining interface for Stratum v2 support"
+    url: /en/newsletters/2024/10/18/#bitcoin-core-30955
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:

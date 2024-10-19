@@ -112,6 +112,9 @@ optech_mentions:
   - title: "Analysis of signature adaptor security"
     url: /en/newsletters/2023/05/03/#analysis-of-signature-adaptor-security
 
+  - title: "LN developer discussion of variations of signature adaptors for adding PTLC support"
+    url: /en/newsletters/2024/10/18/#ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
