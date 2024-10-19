@@ -79,6 +79,9 @@ optech_mentions:
   - title: "Summary of proposed LN messaging changes for PTLCs"
     url: /en/newsletters/2023/09/13/#ln-messaging-changes-for-ptlcs
 
+  - title: "LN developer discussion of upgrade paths to using PTLCs"
+    url: /en/newsletters/2024/10/18/#ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Hash Time Locked Contract (HTLC)
