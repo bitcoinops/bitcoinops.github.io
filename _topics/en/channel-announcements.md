@@ -101,6 +101,9 @@ optech_mentions:
   - title: "LND #8044 adds new message types for the new v1.75 gossip protocol compatible with taproot channels"
     url: /en/newsletters/2024/09/27/#lnd-8044
 
+  - title: "LN developers discuss upgrades to the gossip protocol"
+    url: /en/newsletters/2024/10/18/#gossip-upgrade
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
