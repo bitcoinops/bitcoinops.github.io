@@ -254,9 +254,9 @@ repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition 
 [news323 bip85]: /fr/newsletters/2024/10/04/#bips-1600
 [sanders guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [gogge corevuln]: https://mailing-list.bitcoindevs.xyz/bitcoindev/2df30c0a-3911-46ed-b8fc-d87528c68465n@googlegroups.com/
-[CVE-2024-35202 vulnérabilité de crash à distance]: https://bitcoincore.org/fr/2024/10/08/reveler-blocktxn-crash/
-[DoS par ensembles d'inventaire importants]: https://bitcoincore.org/fr/2024/10/08/reveler-large-inv-to-send/
-[Attaque de propagation lente de bloc]: https://bitcoincore.org/fr/2024/10/08/reveler-mutated-blocks-hindering-propagation/
+[CVE-2024-35202 vulnérabilité de crash à distance]: https://bitcoincore.org/en/2024/10/08/disclose-blocktxn-crash/
+[DoS par ensembles d'inventaire importants]: https://bitcoincore.org/en/2024/10/08/disclose-large-inv-to-send/
+[Attaque de propagation lente de bloc]: https://bitcoincore.org/en/2024/10/08/disclose-mutated-blocks-hindering-propagation/
 [news323 btcd]: /fr/newsletters/2024/10/04/#divulgation-de-securite-btcd-imminente
 [pg btcd]: https://delvingbitcoin.org/t/cve-2024-38365-public-disclosure-btcd-findanddelete-bug/1184
 [news323 bcc28]: /fr/newsletters/2024/10/04/#bitcoin-core-28-0
