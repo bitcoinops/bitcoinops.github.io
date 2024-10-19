@@ -76,6 +76,9 @@ optech_mentions:
     url: /en/bitcoin-core-28-wallet-integration-guide/
     date: 2024-10-10
 
+  - title: "LN developer discussion of using P2A for version-3 LN commitments"
+    url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
