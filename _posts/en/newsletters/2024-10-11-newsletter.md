@@ -22,7 +22,7 @@ Bitcoin infrastructure software.
   Niklas Gögge [posted][gogge corevuln] to the Bitcoin-Dev mailing list
   links to the announcements of three vulnerabilities affecting versions
   of Bitcoin Core that have been past their end of life since at least
-  April 2024.
+  April 2024. {% assign timestamp="1:09" %}
 
   - [CVE-2024-35202 remote crash vulnerability][]: an attacker can send
     a [compact block][topic compact block relay] message deliberately
@@ -117,7 +117,7 @@ Bitcoin infrastructure software.
 
   Poinsot's and Gögge's responsible disclosure allowed btcd maintainers
   to quietly fix the vulnerability and release version 0.24.2 with the
-  fix about three months ago.
+  fix about three months ago. {% assign timestamp="11:22" %}
 
 - **Guide for wallets employing Bitcoin Core 28.0:** As mentioned in
   [last week's newsletter][news323 bcc28], the newly released version
@@ -136,7 +136,7 @@ Bitcoin infrastructure software.
   several of the features and describes how the features can be useful
   for multiple protocols, including simple payments and RBF fee bumping,
   LN commitments and [HTLCs][topic htlc], [Ark][topic ark], and [LN
-  splicing][topic splicing].
+  splicing][topic splicing]. {% assign timestamp="23:27" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -207,6 +207,8 @@ additional data for statistics/visualization.
   a6link="https://bitcoincore.reviews/30793#l-140"
 %}
 
+{% assign timestamp="27:43" %}
+
 ## Releases and release candidates
 
 *New releases and release candidates for popular Bitcoin infrastructure
@@ -216,13 +218,13 @@ release candidates.*
 - [Bitcoin Inquisition 28.0][] is the latest release of this
   [signet][topic signet] full node designed for experimenting with
   proposed soft forks and other major protocol changes.  The updated
-  version is based on the recently released Bitcoin Core 28.0.
+  version is based on the recently released Bitcoin Core 28.0. {% assign timestamp="26:35" %}
 
 - [BDK 1.0.0-beta.5][] is a release candidate (RC) of this library for
   building wallets and other Bitcoin-enabled applications.  This latest
   RC "enables RBF by default, updates the bdk_esplora client to retry
   server requests that fail due to rate limiting. The `bdk_electrum`
-  crate now also offers a use-openssl feature."
+  crate now also offers a use-openssl feature." {% assign timestamp="31:39" %}
 
 ## Notable code and documentation changes
 
@@ -240,17 +242,17 @@ repo], and [BINANAs][binana repo]._
   attempts in order to skip unnecessary attempts. Channels that were considered
   unavailable will be gradually restored and become fully available after 2
   hours, to ensure that outdated information doesn't cause routes to be skipped
-  that may have since recovered.
+  that may have since recovered. {% assign timestamp="32:22" %}
 
 - [Core Lightning #7539][] adds a `getemergencyrecoverdata` RPC command to fetch
   and return data from the `emergency.recover` file. This will allow developers
-  using the API to add wallet backup functionality to their applications.
+  using the API to add wallet backup functionality to their applications. {% assign timestamp="34:46" %}
 
 - [LDK #3179][] introduces new `DNSSECQuery` and `DNSSECProof` [onion
   messages][topic onion messages], and a `DNSResolverMessageHandler` to handle
   these messages as the core functionality to implement [BLIP32][]. This PR also
   adds an `OMNameResolver` that verifies the DNSSEC proofs and turns them into
-  [offers][topic offers]. See Newsletter [#306][news306 blip32].
+  [offers][topic offers]. See Newsletter [#306][news306 blip32]. {% assign timestamp="35:46" %}
 
 - [LND #8960][] implements custom channel functionality by adding taproot
   overlay as a new experimental channel type, which is identical to a [simple
@@ -260,22 +262,22 @@ repo], and [BINANAs][binana repo]._
   tapscript leaves. A config option `TaprootOverlayChans` must be set to enable
   support for taproot overlay channels. The custom channels initiative enhances
   LND’s support for [taproot assets][topic client-side validation]. See
-  Newsletter [#322][news322 customchans].
+  Newsletter [#322][news322 customchans]. {% assign timestamp="36:56" %}
 
 - [Libsecp256k1 #1479][] adds a [MuSig2][topic musig] module for a
   [BIP340][]-compatible multisig scheme as specified in [BIP327][]. This module
   is almost identical to the one implemented in [secp256k1-zkp][zkpmusig2], but
   has some minor changes, such as removing support for [adaptor
-  signatures][topic adaptor signatures] to make it non-experimental.
+  signatures][topic adaptor signatures] to make it non-experimental. {% assign timestamp="37:38" %}
 
 - [Rust Bitcoin #2945][] introduces support for [testnet4][topic testnet] by
   adding the `TestNetVersion` enum, refactoring the code, and including the
-  necessary parameters and blockchain constants for testnet4.
+  necessary parameters and blockchain constants for testnet4. {% assign timestamp="39:29" %}
 
 - [BIPs #1674][] reverts the changes to the [BIP85][] specification
   described in [Newsletter #323][news323 bip85].  The changes broke
   compatibility with deployed versions of the protocol.  Discussion on
-  the PR supported creating a new BIP for the major changes.
+  the PR supported creating a new BIP for the major changes. {% assign timestamp="39:49" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
