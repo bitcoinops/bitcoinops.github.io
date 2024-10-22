@@ -21,7 +21,7 @@ lang: zh
 
 *在这个每月特辑中，我们重点介绍比特币钱包和服务的有趣更新。*
 
-- **<!--btcpay-adds-support-for-sending-and-receiving-payjoined-payments-->****BTCPay 增加对发送和接收 payjoined 支付的支持：** [payjoin][topic payjoin] 是一种通过在链上交易中包含支付方和接收方的输入来增强比特币支付隐私的协议。这可以防止外部观察者通过区块链数据推断该交易的所有输入都属于同一用户（例如[^payjoin-table]）。如果大量用户使用 payjoin，这将大大降低区块链分析师使用的[公共输入启发式][]的可靠性，从而改善即使不使用 payjoin 的比特币用户的隐私。
+- **<!--btcpay-adds-support-for-sending-and-receiving-payjoined-payments-->****BTCPay 增加对发送和接收 payjoined 支付的支持：** [payjoin][topic payjoin] 是一种通过在链上交易中包含支付方和接收方的输入来增强比特币支付隐私的协议。这可以防止外部观察者通过区块链数据推断该交易的所有输入都属于同一用户（例如[^payjoin-table]）。如果大量用户使用 payjoin，这将大大降低区块链分析师使用的[公共输入启发式][common input heuristic]的可靠性，从而改善即使不使用 payjoin 的比特币用户的隐私。
 
   本周，BTCPay [宣布][btcpay pj announce]发布版本 1.0.4.0，其中包括在支付处理器模式下接收支付和使用 BTCPay 内部钱包发送支付的 payjoin 支持实现。有关使用该协议的详细信息，请参见他们的[用户指南][btcpay pj ug]。有关其实现的技术细节，请参见他们的[规范][btcpay pj spec]或未来改进正在积极讨论的[问题][btcpay-doc 486]。为了使这一变化达到最大效果，其他流行的钱包也需要实现创建兼容 payjoin 支付的支持。
 
