@@ -81,6 +81,14 @@ _在这个每月的部分中，我们总结了一次最近的 [Bitcoin Core PR �
 
 - [LND #4139][] 扩展了 `gettransactions` 和 `listsweeps` RPC，允许传递起始和结束区块高度，仅检索在该区块范围内确认的交易。结束高度为 `-1` 的值可用于列出未确认的交易。
 
+## 脚注
+
+[^increase-quote]:
+    “你将钱包连接到计算机，然后连接的计算机运行一个只读的闪电网络钱包，然后与硬件钱包通信，对严格增加你通道余额的交易进行签名。” ——摘自 Stephan Snigirev 关于硬件钱包的演讲的粗略[记录][snigirev ref]；记录者：Bryan Bishop
+
+[^outpoint-txid-spk]:
+    在现有的 [BIP341][] 规范中，[taproot][topic taproot] 的每个输入都承诺了交易中包含的每个输入的 outpoint。Outpoint 是被花费输出的 txid 和输出索引（vout）。Txid 是包含该输出的大部分交易部分的哈希值。因此，对 outpoint 的承诺即是对 txid 的承诺，而 txid 又是对先前输出（包括输出的 scriptPubKey）的承诺。
+
 {% include references.md %}
 {% include linkers/issues.md issues="16224,3659,539,4139,17994,17890" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
