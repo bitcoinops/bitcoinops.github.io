@@ -75,7 +75,7 @@ lang: zh
 [sanders cve]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017884.html
 [sanders 64]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017885.html
 [news27 cve-2017-12842]: /zh/newsletters/2018/12/28/#cve-2017-12842
-[news36 tree attacks]: /zh/newsletters/2019/03/05/#merkle-tree-attacks
+[news36 tree attacks]: /zh/newsletters/2019/03/05/#merkle-树攻击
 [news96 unbroadcast]: /zh/newsletters/2020/05/06/#bitcoin-core-18038
 [news39 multiprocess]: /zh/newsletters/2019/03/26/#bitcoin-core-10973
 [libwally psbt]: https://github.com/ElementsProject/libwally-core/pull/126
