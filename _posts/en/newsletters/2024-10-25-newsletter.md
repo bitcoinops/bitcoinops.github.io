@@ -92,19 +92,42 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Eclair #2925][] Add support for RBF-ing splice transactions (#2925)
+- [Eclair #2925][] introduces support for using [RBF][topic rbf] with
+  [splicing][topic splicing] transactions via the new `rbfsplice` API command,
+  which triggers a `tx_init_rbf` and `tx_ack_rbf` message exchange for peers to
+  agree to replace the transaction. This feature is only enabled for
+  non-[zero-conf channels][topic zero-conf channels], to prevent potential theft
+  of funds on zero-conf channels. Chains of unconfirmed splice transactions are
+  allowed on zero-conf channels, but not on non-zero-conf channels. In addition,
+  RBF is blocked on liquidity purchase transactions via the [liquidity
+  advertisement][topic liquidity advertisements] protocol, to avoid edge cases
+  where sellers might add liquidity to a channel without receiving payment.
 
-- [LND #9172][] cmd: allow deterministic macaroon derivation with `lncli`
+- [LND #9172][] adds a new `mac_root_key` flag to the `lncli create` and `lncli
+  createwatchonly` commands for deterministic macaroon (authentication token)
+  generation, allowing external keys to be baked into an LND node before it's
+  even initialized. This is particularly useful in combination with the reverse
+  remote signer setup suggested in [LND #8754][] (see [Newsletter #172][news172
+  remote]).
 
-- [Rust Bitcoin #2960][] Add the ChaCha20Poly1305 AEAD algorithm
+- [Rust Bitcoin #2960][] turns the [ChaCha20-Poly1305][rfc8439] authenticated
+  encryption with associated data (AEAD) algorithm into its own crate, allowing
+  it to be used beyond just the [v2 transport protocol][topic v2 p2p transport]
+  specified in [BIP324][], such as for [payjoin V2][topic payjoin]. The code has
+  been optimized for Single Instruction, Multiple Data (SIMD) instruction
+  support to improve performance across various use cases (see [Newsletter
+  #264][news264 chacha]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="2925,9172,2960" %}
+{% include linkers/issues.md v=2 issues="2925,9172,2960,8754" %}
 [mouton chanann]: https://delvingbitcoin.org/t/updates-to-the-gossip-1-75-proposal-post-ln-summit-meeting/1202/
 [news325 chanann]: /en/newsletters/2024/10/18/#gossip-upgrade
 [toth sp-psbt]: https://mailing-list.bitcoindevs.xyz/bitcoindev/cde77c84-b576-4d66-aa80-efaf4e50468fn@googlegroups.com/
 [news304 sp]: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
 [news308 sp]: /en/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments
 [core lightning 24.08.2]: https://github.com/ElementsProject/lightning/releases/tag/v24.08.2
+[news172 remote]: /en/newsletters/2021/10/27/#lnd-5689
+[rfc8439]: https://datatracker.ietf.org/doc/html/rfc8439
+[news264 chacha]: /en/newsletters/2023/08/16/#bitcoin-core-28008
