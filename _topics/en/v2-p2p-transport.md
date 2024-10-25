@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Rust Bitcoin #2644 adds HKDF component in support of a BIP324 implementation"
     url: /en/newsletters/2024/06/07/#rust-bitcoin-2644
 
+  - title: "Benefits of BIP324 decoy packets"
+    url: /en/newsletters/2024/10/25/#what-are-the-benefits-of-decoy-packets-in-bip324
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
