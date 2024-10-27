@@ -46,7 +46,7 @@ lang: zh
 
 ## Bitcoin Core PR 审核俱乐部
 
-**在这个月度部分，我们总结了最近一次 [Bitcoin Core PR 审核俱乐部会议][Bitcoin Core PR Review Club]会议，标出了一些重要的问题和答案。点击下面的问题以查看会议的答案摘要。*
+*在这个月度部分，我们总结了最近一次 [Bitcoin Core PR 审核俱乐部会议][Bitcoin Core PR Review Club]会议，标出了一些重要的问题和答案。点击下面的问题以查看会议的答案摘要。*
 
 [添加 getorphantxs][review club 30793] 是 [tdb3][gh tdb3] 提出的一个 PR。它添加了一个新的实验性 RPC 方法 `getorphantxs`。由于它主要面向开发者，所以是隐藏的。这个新方法为调用者提供了当前所有孤儿交易的列表，这在检查孤儿交易的行为、场景（例如在功能测试如 `p2p_orphan_handling.py` 中）或为统计、可视化提供额外数据时很有帮助。
 
