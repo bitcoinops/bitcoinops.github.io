@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
     url: /en/newsletters/2024/10/04/#eclair-2861
 
+  - title: "Eclair #2925 introduces support for using RBF with splicing transactions"
+    url: /en/newsletters/2024/10/25/#eclair-2925
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

@@ -71,6 +71,9 @@ optech_mentions:
   - title: "BitBox02 hardware signing device adds silent payment support"
     url: /en/newsletters/2024/09/20/#bitbox02-adds-silent-payment-support
 
+  - title: "Draft BIP for sending silent payments with PSBTs"
+    url: /en/newsletters/2024/10/25/#draft-bip-for-sending-silent-payments-with-psbts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking
