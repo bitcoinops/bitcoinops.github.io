@@ -62,7 +62,8 @@ lang: zh
 
 - [Eclair #1461][] 增加了几个 API 端点，用于转发 Bitcoin Core RPC 以中继该程序的钱包余额和其他信息。其目标是使 Eclair 更容易与 [Ride The Lightning][] 节点管理仪表盘集成。
 
-- [Bitcoin Core #19071][] 增加了描述开发人员如何为新的和实验性的 [Bitcoin Core GUI 仓库][bitcoin core gui repo]贡献代码的文档。与 GUI 相关的拉取请求应该提交到这个新仓库，该仓库将使用与 Linux 内核项目相同的 *monotree* 开发模型与[主仓库][bitcoin/bitcoin] 双向同步。用户不会从这次拆分中直接看到任何变化——他们仍然会在官方打包的 Bitcoin Core 版本中或在主仓库源代码中使用 `--with-gui` 构建时获得 GUI。
+- [Bitcoin Core #19071][] 增加了描述开发人员如何为新的和实验性的 [Bitcoin Core GUI 仓库][Bitcoin Core GUI
+  repository]贡献代码的文档。与 GUI 相关的拉取请求应该提交到这个新仓库，该仓库将使用与 Linux 内核项目相同的 *monotree* 开发模型与[主仓库][bitcoin/bitcoin] 双向同步。用户不会从这次拆分中直接看到任何变化——他们仍然会在官方打包的 Bitcoin Core 版本中或在主仓库源代码中使用 `--with-gui` 构建时获得 GUI。
 
   ![单一仓库与多子系统仓库的对比图](/img/posts/2020-06-monorepo-vs-monotree.png)
 
