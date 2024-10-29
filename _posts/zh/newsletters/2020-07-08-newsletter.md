@@ -35,15 +35,15 @@ lang: zh
   a1link="https://bitcoincore.reviews/18991.html#l-57"
 
   q2="**<!--q2-->**间谍如何使用 `addr` 消息推断网络拓扑？"
-  a2="推断拓扑的方式可能有多种，但讨论最多的方法是通过抓取节点的地址管理器（addrman）来确定地址记录如何在网络上传播，以及是否有任何节点对该地址记录有独特的时间戳（表明它们可能直接连接到该地址）。这是 [Coinscope 论文][Coinscope paper] 中使用的方法。"
+  a2="推断拓扑的方式可能有多种，但讨论最多的方法是通过抓取节点的地址管理器（addrman）来确定地址记录如何在网络上传播，以及是否有任何节点对该地址记录有独特的时间戳（表明它们可能直接连接到该地址）。这是 [Coinscope 论文][Coinscope paper]中使用的方法。"
   a2link="https://bitcoincore.reviews/18991.html#l-129"
 
   q3="如果恶意行为者能够映射整个 P2P 网络拓扑，他们可能会做什么？"
-  a3="了解整个 P2P 网络拓扑使得进行网络分区攻击或 [eclipse 攻击][topic eclipse attacks] 变得更容易。"
+  a3="了解整个 P2P 网络拓扑使得进行网络分区攻击或 [eclipse 攻击][topic eclipse attacks]变得更容易。"
   a3link="https://bitcoincore.reviews/18991.html#l-176"
 
   q4="如果节点缓存 `getaddr` 消息的响应并提供旧记录，这会成为问题吗？"
-  a4="观点不同。有人认为[P2P 网络上没有太多的变化][naumenko churn]，因此旧记录通常仍然有效；而其他人对此[并不确定][wuille churn]。"
+  a4="观点不同。有人认为 [P2P 网络上没有太多的变化][naumenko churn]，因此旧记录通常仍然有效；而其他人对此[并不确定][wuille churn]。"
 
   q5="此 PR 是否防止了唯一时间戳的拓扑推断？"
   a5="没有。此 PR 使得抓取节点的地址管理器（addrman）变得更加困难，但并未更改中继的地址记录上的时间戳。未来的 PR 可能会做进一步的更改来解决唯一时间戳的推断问题。"
@@ -54,7 +54,7 @@ lang: zh
 
 *流行的比特币基础设施项目的新版本和候选版本。请考虑升级到新版本或帮助测试候选版本。*
 
-- [Eclair 0.4.1][]：该新版本增加了对 `option_static_remotekey` 的支持（尽管默认情况下禁用），可以简化备份（见 [Newsletter #67][news67 bolts642]）。该版本还默认启用发送 [多路径支付][topic multipath payments] (MPP)，使用了新的 MPP 拆分算法，提供了对使用 PostgreSQL 数据库的测试支持，并更好地管理您的节点与对等节点之间的费率不匹配——所有更改都在本 Newsletter 的*值得注意的更改*部分中详细描述。
+- [Eclair 0.4.1][]：该新版本增加了对 `option_static_remotekey` 的支持（尽管默认情况下禁用），可以简化备份（见 [Newsletter #67][news67 bolts642]）。该版本还默认启用发送[多路径支付][topic multipath payments] (MPP)，使用了新的 MPP 拆分算法，提供了对使用 PostgreSQL 数据库的测试支持，并更好地管理您的节点与对等节点之间的费率不匹配——所有更改都在本 Newsletter 的*值得注意的更改*部分中详细描述。
 
 - [LND 0.10.2-beta.rc4][lnd 0.10.2-beta]：此 LND 维护版本现已发布。它包含了多个错误修复，包括一个与创建备份相关的重要修复。
 
@@ -62,15 +62,15 @@ lang: zh
 
 ## 值得注意的代码和文档更改
 
-*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi]、[比特币改进提案（BIPs）][bips repo] 和 [闪电网络规范][bolts repo] 中的值得注意的更改。*
+*本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi]、[比特币改进提案（BIPs）][bips repo]和[闪电网络规范][bolts repo]中的值得注意的更改。*
 
 - [Bitcoin Core #19204][] 消除了在初始区块下载（IBD）期间浪费带宽的来源。当 Bitcoin Core 处于 IBD 状态时，它通常没有必要的信息来验证当前未确认的交易，因此会忽略中继的交易公告。然而，这些公告仍然会消耗接收 IBD 节点及其发送对等节点的带宽。此 PR 使用 [BIP133][] 的 `feefilter` P2P 消息告诉对等节点该节点不希望接收低于 21 百万 BTC 每 1,000 vbytes 费用的交易公告，从而防止接收任何合法的交易公告。当节点完成跟踪最佳区块链的顶部时，它会发送另一条 `feefilter` 消息，设置其实际的最小中继费率，以便开始接收新公告的交易。
 
-- [Bitcoin Core #19215][] 创建了包含每个先前交易的 [PSBTs][topic psbt]，即使是用于 segwit v0 的 UTXO。在此更改之前，先前的交易仅包含在传统（非 segwit）UTXO 中。此更改是对一些硬件钱包现在要求或推荐访问 segwit UTXO 的先前交易以缓解 [手续费过高攻击][fee overpayment attack] 的响应。如果 segwit v1（[taproot][topic taproot]）被采用，花费所有 taproot 输入的交易默认情况下不需要这些额外数据。
+- [Bitcoin Core #19215][] 创建了包含每个先前交易的 [PSBTs][topic psbt]，即使是用于 segwit v0 的 UTXO。在此更改之前，先前的交易仅包含在传统（非 segwit）UTXO 中。此更改是对一些硬件钱包现在要求或推荐访问 segwit UTXO 的先前交易以缓解[手续费过高攻击][fee overpayment attack]的响应。如果 segwit v1（[taproot][topic taproot]）被采用，花费所有 taproot 输入的交易默认情况下不需要这些额外数据。
 
 - [C-Lightning #3775][] 增加了四个用于 [PSBT][topic psbt] 生命周期管理的 RPC 方法，由 C-Lightning 的内部钱包支持。`reserveinputs` RPC 方法通过选择内部钱包中的 UTXO 作为输入来创建 PSBT，以满足用户指定的输出列表，并将选择的 UTXO 标记为已保留。生成的 PSBT 可以提供给 `unreserveinputs` RPC 方法以手动释放保留的 UTXO，或者提供给 `signpsbt` RPC 方法以从内部钱包添加签名。最后，`sendpsbt` RPC 方法会将完全签名的 PSBT 转换为可广播的交易并将其广播到网络。用户应注意，重新启动 C-Lightning 实际上会取消所有先前保留的 UTXO，需要使用 `reserveinputs` 重新创建新的 PSBT，才能使 `signpsbt` 接受它。
 
-- [Eclair #1427][] 和 [#1439][Eclair #1439] 增加了 Eclair 对发送 [多路径支付][topic multipath payments] 的有效支持——将支付拆分为多个部分，每部分使用不同的路径进行路由。这些 PR 默认将支付拆分为最多六部分，最初为每部分分配 0.00015 BTC，但通过半随机方式增加每部分的值，直到全部支付金额被分配完毕。选定金额后，所有支付部分都会被发送。这不仅高效，还利用机会增加数值功能，以帮助防止看到部分支付的节点猜测全部支付金额，从而提高隐私性。如果您有兴趣了解详情，本周 Eclair 和 C-Lightning 的拆分算法由其作者进行了[讨论][split algos]。
+- [Eclair #1427][] 和 [#1439][Eclair #1439] 增加了 Eclair 对发送[多路径支付][topic multipath payments]的有效支持——将支付拆分为多个部分，每部分使用不同的路径进行路由。这些 PR 默认将支付拆分为最多六部分，最初为每部分分配 0.00015 BTC，但通过半随机方式增加每部分的值，直到全部支付金额被分配完毕。选定金额后，所有支付部分都会被发送。这不仅高效，还利用机会增加数值功能，以帮助防止看到部分支付的节点猜测全部支付金额，从而提高隐私性。如果您有兴趣了解详情，本周 Eclair 和 C-Lightning 的拆分算法由其作者进行了[讨论][split algos]。
 
 - [Eclair #1249][] 增加了可选支持，允许使用 PostgreSQL 作为数据库后端替代默认的 SQLite。详情请参阅 Eclair 的新 [PostgreSQL 文档][eclair postgresql]。另见 Roman Taranchenko（也是该 PR 的作者）为 Optech 撰写的关于[在生产环境中使用 Eclair][eclair production] 的报告。
 
