@@ -425,7 +425,7 @@ Si adaptés, les portefeuilles devraient :
 
 - définir la version à 3
 - utiliser uniquement des sorties confirmées
-- restez en dessous de 10kvB (par opposition à la limite non-TRUC de 100kvB) 
+- restez en dessous de 10kvB (par opposition à la limite non-TRUC de 100kvB)
   - Cette limite restreinte prend toujours en charge les paiements par lots plus importants.
   - Si un portefeuille n'a pas d'autre choix que de dépenser une entrée non confirmée, l'entrée doit
     provenir d'une transaction TRUC, et cette nouvelle transaction doit être inférieure
