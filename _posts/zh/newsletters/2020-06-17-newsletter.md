@@ -15,7 +15,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--check-hardware-wallet-compatibility-->****CoinPool 通用隐私方案，用于可识别的链上协议：** Antoine Riard 和 Gleb Naumenko [发布][coinpool post]了一个关于支付池的提案，旨在通过允许多个用户无需信任地共享对单个 UTXO 的控制，从而改善针对第三方区块链监控的隐私。与之前的支付池设计（如 [joinpool][]）相比，CoinPool 设计的重点是允许参与者对池内成员之间的交易做出链下承诺。借助 [taproot][topic taproot]，这允许合作的参与者使用 UTXO 来操作如闪电网络或 [vaults][topic vaults] 等协议，这些 UTXO 在链上表现得与单密钥 UTXO 无异，从而改善了参与者的隐私并提升了链上可扩展性。从这个意义上来说，该协议作为一种通用的 [channel factory][topic channel factories]，不仅适用于闪电网络，还适用于许多会创建具有独特指纹的链上交易的协议。
+- **<!--coinpool-generalized-privacy-for-identifiable-onchain-protocols-->****CoinPool 通用隐私方案，用于可识别的链上协议：** Antoine Riard 和 Gleb Naumenko [发布][coinpool post]了一个关于支付池的提案，旨在通过允许多个用户无需信任地共享对单个 UTXO 的控制，从而改善针对第三方区块链监控的隐私。与之前的支付池设计（如 [joinpool][]）相比，CoinPool 设计的重点是允许参与者对池内成员之间的交易做出链下承诺。借助 [taproot][topic taproot]，这允许合作的参与者使用 UTXO 来操作如闪电网络或 [vaults][topic vaults] 等协议，这些 UTXO 在链上表现得与单密钥 UTXO 无异，从而改善了参与者的隐私并提升了链上可扩展性。从这个意义上来说，该协议作为一种通用的 [channel factory][topic channel factories]，不仅适用于闪电网络，还适用于许多会创建具有独特指纹的链上交易的协议。
 
   作者概述了 CoinPool 如何利用现有的比特币功能再加上 taproot、[SIGHASH_NOINPUT][topic sighash_anyprevout]，以及通过 Bitcoin Script 使用仅删除累加器的能力（如默克尔树，或类似于提议的 [BIP116][] `OP_MERKLEBRANCHVERIFY`）。他们似乎并未推动一个特定的设计，而是希望展开讨论，研究 CoinPool 或类似机制如何成为钱包默认使用的通用工具，以消除当前和提议的多用户协议的链上痕迹。
 
