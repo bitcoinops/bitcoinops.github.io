@@ -18,7 +18,7 @@ summaries of notable changes to popular Bitcoin infrastructure software.
 - **LN Summit 2024 notes:** Olaoluwa Osuntokun [posted][osuntokun
   summary] to Delving Bitcoin a summary of his [notes][osuntokun
   notes] (with additional commentary) from a recent LN developer
-  conference.  Some of the topics discussed included:
+  conference.  Some of the topics discussed included: {% assign timestamp="0:51" %}
 
   - **Version 3 commitment transactions:** developers discussed how to use
     [new P2P features][bcc28 guide], including [TRUC][topic v3 transaction relay]
@@ -99,39 +99,39 @@ wallets and services.*
 
 - **Coinbase adds taproot send support:**
   Coinbase exchange [now supports][coinbase post] user withdrawals (send) to taproot
-  [bech32m][topic bech32] addresses.
+  [bech32m][topic bech32] addresses. {% assign timestamp="49:03" %}
 
 - **Dana wallet released:**
   [Dana wallet][dana wallet github] is a [silent payment][topic silent payments] wallet focused on the
   donation use case. The developers recommend using [signet][topic signet] and
-  also run a signet [faucet][dana wallet faucet].
+  also run a signet [faucet][dana wallet faucet]. {% assign timestamp="51:53" %}
 
 - **Kyoto BIP157/158 light client released:**
   [Kyoto][kyoto github] is a Rust light client using [compact block
-  filters][topic compact block filters] for use by wallet developers.
+  filters][topic compact block filters] for use by wallet developers. {% assign timestamp="53:20" %}
 
 - **DLC Markets launches on mainnet:**
   The [DLC][topic dlc]-based platform [announced][dlc markets blog] mainnet
-  availability for its non-custodial trading service.
+  availability for its non-custodial trading service. {% assign timestamp="1:01:39" %}
 
 - **Ashigaru wallet announced:**
   Ashigaru is a fork of the Samourai Wallet project and the
   [announcement][ashigaru blog] listed improvements to [batching][scaling
-  payment batching], [RBF][topic rbf] support, and [fee estimation][topic fee estimation].
+  payment batching], [RBF][topic rbf] support, and [fee estimation][topic fee estimation]. {% assign timestamp="1:02:30" %}
 
 - **DATUM protocol announced:**
   The [DATUM mining protocol][datum docs] allows miners to build candidate blocks as part
-  of a [pooled mining][topic pooled mining] setup, similar to the Stratum v2 protocol.
+  of a [pooled mining][topic pooled mining] setup, similar to the Stratum v2 protocol. {% assign timestamp="1:03:10" %}
 
 - **Bark Ark implementation announced:**
   The Second team [announced][bark blog] the [Bark][bark codeberg]
   implementation of the [Ark][topic ark] protocol and [demonstrated][bark demo]
-  live Ark transactions on mainnet.
+  live Ark transactions on mainnet. {% assign timestamp="1:03:55" %}
 
 - **Phoenix v2.4.0 and phoenixd v0.4.0 released:**
   The [Phoenix v2.4.0][phoenix v2.4.0] and [phoenixd v0.4.0][] releases add
   support for the [BLIP36][blip36] on-the-fly funding proposal and other
-  liquidity features (see [Podcast #323][pod323 eclair]).
+  liquidity features (see [Podcast #323][pod323 eclair]). {% assign timestamp="1:11:31" %}
 
 ## Releases and release candidates
 
@@ -143,7 +143,7 @@ release candidates.*
   building wallets and other Bitcoin-enabled applications.  This latest
   RC "enables RBF by default and updates the bdk_esplora client to retry
   server requests that fail due to rate limiting. The `bdk_electrum`
-  crate now also offers a use-openssl feature."
+  crate now also offers a use-openssl feature." {% assign timestamp="1:12:33" %}
 
 ## Notable code and documentation changes
 
@@ -164,12 +164,12 @@ repo], and [BINANAs][binana repo]._
   block. Additionally, `getCoinbaseMerklePath()` is introduced to construct the
   merkle path field required in the `NewTemplate` message. This PR also
   reinstates `BlockMerkleBranch`, which was previously removed in [Bitcoin Core
-  #13191][].
+  #13191][]. {% assign timestamp="1:13:11" %}
 
 - [Eclair #2927][] adds enforcement of recommended feerates (see Newsletter
   [#323][news323 fees]) for on-the-fly funding (see Newsletter [#323][news323
   fly]), by rejecting `open_channel2` and `splice_init` messages that use a
-  feerate lower than the recommended value.
+  feerate lower than the recommended value. {% assign timestamp="1:14:37" %}
 
 - [Eclair #2922][] removes support for [splicing][topic splicing] without
   channel quiescence (see Newsletter [#309][news309 quiescence]), to conform to
@@ -177,12 +177,12 @@ repo], and [BINANAs][binana repo]._
   nodes to use the quiescence protocol during splicing. Previously, splicing was
   allowed under a less formal mechanism, where splice messages were permitted if
   the commitments were already quiescent, acting as a "poor man's" version of
-  channel quiescence.
+  channel quiescence. {% assign timestamp="1:15:38" %}
 
 - [LDK #3235][] adds a `last_local_balance_msats` field to the
   `ChannelForceClosed` event, which gives the local balance of a node in
   millisatoshis (msats) just before the channel was force-closed, allowing users
-  to know how many msats they lost due to rounding.
+  to know how many msats they lost due to rounding. {% assign timestamp="1:16:30" %}
 
 - [LND #8183][] adds the optional `CloseTxInputs` field to the
   `chanbackup.Single` structure in the [static channel backup][topic static
@@ -193,12 +193,12 @@ repo], and [BINANAs][binana repo]._
   feature could result in the loss of funds if the channel has been updated
   since the backup was created. In addition, the PR introduces the
   `ManualUpdate` method, which will update channel backups whenever LND shuts
-  down.
+  down. {% assign timestamp="1:17:21" %}
 
 - [Rust Bitcoin #3450][] adds v3 as a new variant of the transaction version,
   following Bitcoin Core’s acceptance of [Topologically Restricted Until
   Confirmation (TRUC)][topic v3 transaction relay] transactions as standard (see
-  Newsletter [#307][news307 truc]).
+  Newsletter [#307][news307 truc]). {% assign timestamp="1:18:09" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}

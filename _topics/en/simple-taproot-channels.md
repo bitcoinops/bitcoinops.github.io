@@ -41,6 +41,9 @@ optech_mentions:
   - title: "Discussion of channel upgrade methods, such as switching to simple taproot channels"
     url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
 
+  - title: "Updated channel announcements that include support for simple taproot channels"
+    url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot

@@ -228,6 +228,9 @@ optech_mentions:
   - title: "BIP353 adds a new standard field to PSBT outputs for DNSSEC proofs"
     url: /en/newsletters/2024/09/06/#bips-1657
 
+  - title: "Draft BIP for sending silent payments with PSBTs"
+    url: /en/newsletters/2024/10/25/#draft-bip-for-sending-silent-payments-with-psbts
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output Script Descriptors

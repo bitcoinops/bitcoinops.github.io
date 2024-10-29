@@ -70,7 +70,8 @@ forwarding fees if LN was used.
 
 Ark can be implemented on Bitcoin with no consensus changes required,
 but it will support a larger number of users---making it much more fee
-efficient---if a [covenant][topic covenants] feature is added to
+efficient---if a [covenant][topic covenants] feature like
+[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] is added to
 Bitcoin.
 
 {% include references.md %}

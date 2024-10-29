@@ -104,6 +104,9 @@ optech_mentions:
   - title: "LN developers discuss upgrades to the gossip protocol"
     url: /en/newsletters/2024/10/18/#gossip-upgrade
 
+  - title: "Updates to the version 1.75 channel announcements proposal"
+    url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Unannounced channels
