@@ -252,7 +252,7 @@ repo], [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition 
 {% include linkers/issues.md v=2 issues="7494,7539,3179,8960,1479,2945,1674,26898,27610,27608" %}
 [BDK 1.0.0-beta.5]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.5
 [news323 bip85]: /fr/newsletters/2024/10/04/#bips-1600
-[sanders guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[sanders guide]: /fr/bitcoin-core-28-wallet-integration-guide/
 [gogge corevuln]: https://mailing-list.bitcoindevs.xyz/bitcoindev/2df30c0a-3911-46ed-b8fc-d87528c68465n@googlegroups.com/
 [CVE-2024-35202 vulnérabilité de crash à distance]: https://bitcoincore.org/en/2024/10/08/disclose-blocktxn-crash/
 [DoS par ensembles d'inventaire importants]: https://bitcoincore.org/en/2024/10/08/disclose-large-inv-to-send/
