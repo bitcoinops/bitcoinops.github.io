@@ -468,7 +468,7 @@ de la transaction d'engagement dans les mempools des mineurs.
 Avec le relais 1P1C et le package RBF, la mise à niveau des nœuds Bitcoin Core augmente
 significativement
 la sécurité du Réseau Lightning. Les fermetures unilatérales de Lightning peuvent
-être réalisées avec des transactions d'engagement avec des taux de frais minimaux du mempool,
+être réalisées avec des transactions d'engagement avec des taux de frais minimaux de mempool,
 ou en conflit avec un autre package de transaction d'engagement à faible frais qui ne serait
 pas promptement inclus dans un bloc.
 
@@ -495,8 +495,8 @@ message de protocole, les transactions d'engagement pourraient être fixées à 
 statique de 1 sat/vbyte. Avec les transactions TRUC, nous pouvons nous assurer que les transactions
 d'engagement concurrentes avec des dépenses d'ancre sont autorisées à se RBF mutuellement sur le
 réseau,
-et si il y a des dépenses de sortie concurrentes de la même transaction d'engagement,
-que le RBF peut se produire quel que soit le résultat dépensé. Les transactions TRUC peuvent
+et s'il y a des dépenses de sortie concurrentes de la même transaction d'engagement,
+le RBF peut se produire quel que soit le résultat dépensé. Les transactions TRUC peuvent
 également être sans frais, permettant de réduire la complexité des spécifications. Avec l'éviction
 de fratrie de TRUC, nous pouvons également supprimer les verrouillages CSV d'un bloc, puisque nous
 ne sommes plus excessivement préoccupés par les sorties non confirmées dépensées, tant que chaque
@@ -529,8 +529,8 @@ engagées par covenant) pour dérouler un UTXO partagé.
 
 Si un fournisseur de service Ark (ASP) se déconnecte ou traite une transaction, l'utilisateur peut
 choisir de faire une sortie unilatérale, qui implique que l'utilisateur soumette une série de
-transactions pour dérouler leur place de branche dans l'arbre de transaction. Cela nécessite des
-transactions O(logn). Des difficultés peuvent survenir si d'autres clients tentent également de
+transactions pour dérouler leur place de branche dans l'arbre de transaction. Cela nécessite O(logn) 
+transactions. Des difficultés peuvent survenir si d'autres clients tentent également de
 quitter l'arbre, dépassant les limites de chaîne de mempool, ou créant des transactions
 conflictuelles avec des frais insuffisants pour une inclusion rapide dans un bloc. Si une fenêtre de
 temps particulièrement longue s'écoule sans inclusion, l'ASP est capable de récupérer tous les fonds
@@ -538,11 +538,11 @@ de manière unilatérale, résultant en une perte de fonds pour l'utilisateur.
 
 Idéalement, la fermeture unilatérale initiale d'un arbre Ark serait :
 
-1. La publication d'une branche de merkle entière à l'UTXO virtuel sous-jacent (vUTXO)
+1. La publication d'une branche de merkle entière à l'UTXO virtuel sous-jacente (vUTXO)
 2. Chacune de ces transactions sont sans frais, pour éviter la prédiction des frais ou la nécessité
 de décider à l'avance qui paie les frais
 3. La transaction finale de la feuille a une dépense d'ancre à 0 valeur où le CPFP paie pour la
-publication de l'arbre de merkle entier dans le mempool d'un mineur et son inclusion dans un bloc
+publication de l'arbre de merkle entier dans la mempool d'un mineur et son inclusion dans un bloc
 
 Pour exécuter cet idéal correctement, il nous manque quelques éléments :
 
@@ -608,7 +608,7 @@ satoshis, ou 0 satoshis à l'avenir avec des [ancres éphémères][topic ephemer
 D'abord, diffusez le splice-out non ancré.
 
 S'il n'y a pas d'événement de frais, il est confirmé et Alice peut continuer la fermeture forcée
-comme d'habitude si désiré.
+comme d'habitude si désirée.
 
 S'il y a un événement de frais causant au premier splice-out de prendre trop de temps, diffusez le
 splice 1P1C *avec* ancre ainsi que la dépense d'ancre, en utilisant le RBF de package pour remplacer
