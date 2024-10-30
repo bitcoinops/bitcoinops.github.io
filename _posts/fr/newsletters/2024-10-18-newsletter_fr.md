@@ -186,7 +186,7 @@ inquisition repo], et [BINANAs][binana repo]._
 [news261 simcom]: /fr/newsletters/2023/07/26/#engagements-simplifies
 [zmnscpxj superscalar]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143
 [news309 feasible]: /fr/newsletters/2024/06/28/#estimation-de-la-probabilite-qu-un-paiement-ln-soit-realisable
-[bcc28 guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[bcc28 guide]: /fr/bitcoin-core-28-wallet-integration-guide/
 [coinbase post]: https://x.com/CoinbaseAssets/status/1843712761391399318
 [dana wallet github]: https://github.com/cygnet3/danawallet
 [dana wallet faucet]: https://silentpayments.dev/
