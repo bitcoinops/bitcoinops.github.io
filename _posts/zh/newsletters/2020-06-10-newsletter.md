@@ -129,7 +129,7 @@ _在本月度栏目中，我们总结了一次最近的 [Bitcoin Core PR 审查�
 [news68 sortedmulti]: /zh/newsletters/2019/10/16/#bitcoin-core-17056
 [news83 asmap]: /zh/newsletters/2020/02/05/#bitcoin-core-16702
 [core20 rn]: https://bitcoincore.org/en/releases/0.20.0/
-[news67 static_remotekey]: /en/newsletters/2019/10/09/#bolts-642
+[news67 static_remotekey]: /zh/newsletters/2019/10/09/#bolts-642
 [trezor update]: https://blog.trezor.io/latest-firmware-updates-correct-possible-segwit-transaction-vulnerability-266df0d2860
 [ledger update]: https://support.ledger.com/hc/en-us/articles/360014191540
 [erebus attack]: https://erebus-attack.comp.nus.edu.sg/
