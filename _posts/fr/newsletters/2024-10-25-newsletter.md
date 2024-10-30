@@ -56,6 +56,9 @@ d'Optech cherchent des réponses à leurs questions - ou quand nous avons quelqu
 aider les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en lumière
 certaines des questions et réponses les plus votées depuis notre dernière mise à jour.*
 
+{% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
+{% assign bse = "https://bitcoin.stackexchange.com/a/" %}
+
 - [Blocs en double dans les fichiers blk*.dat ?]({{bse}}124368)
   Pieter Wuille explique qu'en plus de la chaîne actuelle des meilleurs blocs, les fichiers de données
   de blocs peuvent également inclure des blocs obsolètes ou des données de bloc en double.
