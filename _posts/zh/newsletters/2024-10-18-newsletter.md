@@ -15,7 +15,7 @@ lang: zh
 
   - **<!--version-3-commitment-transactions-->****V3 承诺交易：** 开发者讨论了如何使用[新的 P2P 功能][bcc28 guide]，包括 [TRUC][topic v3 transaction relay] 交易和 [P2A][topic ephemeral anchors] 输出，以提高闪电网络承诺交易的安全性，这些交易可以用于单方面关闭通道。讨论集中在各种设计的权衡上。
 
-  - **PTLCs：** 尽管已被提议作为闪电网络的隐私升级很久，也可能用于其他方面，如[无阻塞交易][topic redundant overpayments]等，最近对[PTLC][topic ptlc] 各种可能实现的优缺点权衡的研究才刚刚得到讨论（详见[周报 #268](news268 ptlc)）。其中特别关注的一点是[适配器签名][topic adaptor signatures]的构造（例如使用脚本化多重签名与无脚本的 [MuSig2][topic musig]）及其对承诺协议的影响（见下一项）。
+  - **PTLCs：** 尽管已被提议作为闪电网络的隐私升级很久，也可能用于其他方面，如[无阻塞交易][topic redundant overpayments]等，最近对[PTLC][topic ptlc] 各种可能实现的优缺点权衡的研究才刚刚得到讨论（详见[周报 #268][news268 ptlc]）。其中特别关注的一点是[适配器签名][topic adaptor signatures]的构造（例如使用脚本化多重签名与无脚本的 [MuSig2][topic musig]）及其对承诺协议的影响（见下一项）。
 
   - **<!--state-update-protocol-->状态更新协议：** 讨论了一项提案，将闪电网络当前的状态更新协议从允许任何一方在任何时候提出更新，改为每次只允许一方提出更新（参见周报 [#120][news120 simcom] 和[#261][news261 simcom]）。允许双方提出更新可能导致双方同时提出更新。这种情况很难推演，并可能导致意料外的通道强制关闭。替代方案是一次只由一方来负责，例如，最初只允许 Alice 提出状态更新；如果她没有要提出的更新，她可以告诉 Bob 让他来负责。当 Bob 完成提出更新时，他就可以将控制权转回给 Alice。这简化了对协议的推演，消除了因同时提议而导致的问题，并进一步使非控制方容易拒绝任何不想要的提议。新的基于回合的协议也将与基于 MuSig2 的签名适配器配合得很好。
 
