@@ -36,7 +36,7 @@ le réseau afin de mitiger ce risque de transactions bloquées sans
 options de hausse des frais. Une fois correctement développé et déployé largement sur le réseau,
 le relais de paquets permettrait aux développeurs de portefeuilles d'ajouter des frais à une
 transaction via
-des transactions liées, permettant aux ancêtres à faible frais d'être inclus dans le mempool.
+des transactions liées, permettant aux ancêtres à faible frais d'être inclus dans la mempool.
 
 Dans Bitcoin Core 28.0, une variante limitée du relais de paquets pour les paquets contenant
 1 parent et 1 enfant ("1P1C") a été implémentée. 1P1C permet à un seul parent d'entrer dans
@@ -44,7 +44,7 @@ le mempool, indépendamment du taux minimal dynamique du mempool, en utilisant u
 transaction enfant et une simple hausse de frais [Child Pays For Parent (CPFP)][topic cpfp]. Si la
 transaction enfant a des parents non confirmés supplémentaires, ces
 transactions ne se propageront pas avec succès. Cette restriction a grandement simplifié
-l'implémentation et a permis à d'autres travaux sur le mempool, tels que [le mempool en cluster][topic
+l'implémentation et a permis à d'autres travaux sur la mempool, tels que [la mempool en cluster][topic
 cluster mempool], de continuer sans entrave tout en ciblant un grand nombre de cas d'utilisation.
 
 À moins qu'une transaction ne soit une [transaction TRUC][topic v3 transaction relay]
@@ -199,10 +199,10 @@ Succès !
 
 ## Transactions TRUC
 
-Les transactions Topologically Restricted Until Confirmation (TRUC), également connues sous le nom
+Les transactions *Topologically Restricted Until Confirmation* (TRUC), également connues sous le nom
 de transactions v3, représentent une nouvelle [politique de mempool][policy series] facultative visant à
 permettre un remplacement robuste par les frais (RBF) des transactions, en atténuant à la fois
-le blocage des transactions lié aux frais ainsi que le blocage de la limite des packages. Sa
+le blocage des transactions lié aux frais ainsi que le blocage de la limite des pacquets. Sa
 philosophie centrale est : **bien que de nombreuses fonctionnalités soient irréalisables
 pour toutes les transactions, nous pouvons les implémenter pour des packages avec une topologie
 limitée**. TRUC crée un moyen d'opter pour cet ensemble de politiques plus robustes en plus des
@@ -230,7 +230,7 @@ des paiements TRUC zéro-conf n'est pas plus sûr que de recevoir des paiements 
 
 ## Topologie 1P1C Paquet RBF
 
-Il arrive que le parent du paquet 1P1C soit en conflit avec le parent du pool de mémoire. Cela
+Il arrive que le parent du paquet 1P1C soit en conflit avec le parent dans la mempool. Cela
 peut se produire lorsqu'il existe plusieurs versions de la transaction parentale présignée.
 Auparavant, le nouveau parent était pris en compte uniquement pour la RBF, puis rejeté si
 les frais étaient trop faibles.
@@ -408,7 +408,7 @@ bitcoin-cli -regtest -rpcwallet=test sendrawtransaction 02000000014b421aa4622233
 
 ## Histoires d'utilisateurs
 
-Passant des descriptions de fonctionnalités de niveau notes de version plus générales, nous allons
+Passons à des descriptions de fonctionnalités d'ordre plus générales, nous allons
 décrire quelques modèles de portefeuilles courants et comment ils peuvent bénéficier de ces
 mises à jour, avec ou sans modifications actives des portefeuilles.
 
