@@ -529,7 +529,7 @@ engagées par covenant) pour dérouler un UTXO partagé.
 
 Si un fournisseur de service Ark (ASP) se déconnecte ou traite une transaction, l'utilisateur peut
 choisir de faire une sortie unilatérale, qui implique que l'utilisateur soumette une série de
-transactions pour dérouler leur place de branche dans l'arbre de transaction. Cela nécessite O(logn) 
+transactions pour dérouler leur place de branche dans l'arbre de transaction. Cela nécessite O(logn)
 transactions. Des difficultés peuvent survenir si d'autres clients tentent également de
 quitter l'arbre, dépassant les limites de chaîne de mempool, ou créant des transactions
 conflictuelles avec des frais insuffisants pour une inclusion rapide dans un bloc. Si une fenêtre de
