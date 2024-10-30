@@ -1,6 +1,6 @@
 ---
 title: "Guide pour les portefeuilles utilisant les politiques de Bitcoin Core 28.0"
-permalink: /fr/guide-integration-portefeuille-bitcoin-core-28/
+permalink: /fr/bitcoin-core-28-wallet-integration-guide/
 name: 2024-10-10-guide-integration-portefeuille-bitcoin-core-28
 type: posts
 layout: post
