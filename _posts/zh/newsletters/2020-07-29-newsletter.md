@@ -50,7 +50,7 @@ lang: zh
 
 - [C-Lightning 0.9.0rc3][C-Lightning 0.9.0] 是即将到来的一个主要版本的候选发布。它增加了对更新的 `pay` 命令和新的 `keysend` RPC 的支持，这些内容在[上周的 Newsletter][news107 notable] *值得注意的代码更改*部分中有所描述。还包括其他多个值得注意的更改和多个错误修复。
 
-- [Bitcoin Core 0.20.1rc1][Bitcoin Core 0.20.1] 是即将到来的维护版本的候选发布。除了错误修复和由这些修复引起的一些 RPC 行为更改外，计划中的发布还提供了与 [HWI][topic HWI] 最新版本的兼容性，并支持为[多付费用攻击][fee overpayment attack]发布的硬件钱包固件。
+- [Bitcoin Core 0.20.1rc1][Bitcoin Core 0.20.1] 是即将到来的维护版本的候选发布。除了错误修复和由这些修复引起的一些 RPC 行为更改外，计划中的发布还提供了与 [HWI][topic HWI] 最新版本的兼容性，并支持为[手续费超额支付攻击][fee overpayment attack]发布的硬件钱包固件。
 
 ## 值得注意的代码和文档更改
 
