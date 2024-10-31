@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine examine les résumés de certains des sujets discutés lors d'une récente
-réunion de développeurs LN. Sont également inclus nos sections régulières avec des descriptions des
+réunion de développeurs LN. Il contient également nos sections régulières avec des descriptions des
 changements apportés aux clients et services populaires, des annonces de nouvelles versions et de
 candidats à la version, et des résumés des changements notables apportés aux logiciels
 d'infrastructure Bitcoin populaires.
@@ -37,7 +37,7 @@ d'infrastructure Bitcoin populaires.
     de mise à jour d'état actuel de LN, permettant à chaque partie de proposer une mise à jour à tout
     moment, pour permettre uniquement à une partie à la fois de proposer des mises à jour (voir les
     Bulletins [#120][news120 simcom] et [#261][news261 simcom]). Permettre à chaque partie de proposer
-    des mises à jour peut entraîner des propositions de mise à jour simultanées par les deux parties, ce
+    des mises à jour peut entraîner des propositions simultanées, ce
     qui est difficile à conceptualiser et peut conduire à des fermetures forcées accidentelles du canal.
     L'alternative est que seulement une partie soit en charge à la fois, par exemple, Alice est
     initialement la seule autorisée à proposer des mises à jour d'état ; si elle n'a rien à proposer,
@@ -48,11 +48,11 @@ d'infrastructure Bitcoin populaires.
     également bien avec les adaptateurs de signature basés sur MuSig2.
 
   - **SuperScalar :** le développeur d'une proposition de construction d'[usines à canaux][topic
-    channel factories] pour les utilisateurs finaux a donné une présentation de la proposition et
+    channel factories] pour les utilisateurs finaux a présenté sa proposition et
     sollicité des retours. Optech publiera une description plus détaillée de [SuperScalar][zmnscpxj
     superscalar] dans un bulletin futur.
 
-  - **Mise à niveau du gossip :** Les développeurs ont discuté des mises à jour du [protocole de ragots
+  - **Mise à niveau du gossip :** Les développeurs ont discuté des mises à jour du [protocole Gossip
     du LN][topic channel announcements]. Ces mises à jour sont nécessaires pour supporter de nouveaux types
     de transactions de financement, comme pour les [canaux taproot simples][topic simple taproot channels],
     mais peuvent aussi ajouter un support pour d'autres fonctionnalités. L'une des nouvelles fonctionnalités
@@ -154,7 +154,7 @@ inquisition repo], et [BINANAs][binana repo]._
   que proposé dans [BOLTs #1160][], qui exige que les nœuds utilisent le protocole de quiescence
   pendant le splicing. Auparavant, le splicing était
   autorisé sous un mécanisme moins formel, où les messages de raccordement étaient permis si les
-  engagements étaient déjà en repos, agissant comme une version "pauvre homme" de la quiescence des
+  engagements étaient déjà en repos, agissant comme une version simplifiée de la quiescence des
   canaux.
 
 - [LDK #3235][] ajoute un champ `last_local_balance_msats` à l'événement `ChannelForceClosed`, qui
