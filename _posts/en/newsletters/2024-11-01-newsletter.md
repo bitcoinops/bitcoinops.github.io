@@ -128,11 +128,24 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31130][] Drop miniupnp dependency
+- [Bitcoin Core #31130][] removes Universal Plug and Play (UPnP) Internet
+  Gateway Device (IGD) support by dropping the `miniupnp` dependency, which had
+  a history of security vulnerabilities and was already disabled by default (see
+  Newsletter [#310][news310 upnp]). It is now replaced by a Port Control
+  Protocol (PCP) implementation with a Network Address Translation-Port Mapping
+  Protocol (NAT-PMP) fallback  (see Newsletter [#323][news323 pcp]), which
+  allows nodes to be reachable without manual configuration, but removes the
+  security risks associated with the `miniupnp` dependency.
 
-- [LDK #3007][] Serialize blinded Trampoline hops
+- [LDK #3007][] adds two new variants `BlindedForward` and `BlindedReceive` to
+  the `OutboundTrampolinePayload` enum to introduce support for [blinded
+  paths][topic rv routing] in [trampoline routing][topic trampoline payments] as
+  a basis for implementing the [BOLT12][] [offers][topic offers] protocol.
 
-- [BIPs #1676][] scgbckbone/bip85_final
+- [BIPs #1676][] updates the status of [BIP85][] to final, as it's widely
+  deployed and past the point of introducing breaking changes. This was proposed
+  after a recent breaking change was merged and later reverted (see
+  Newsletter[#324][news324 bip85]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -153,3 +166,6 @@ repo], and [BINANAs][binana repo]._
 [ln-penalty]: https://en.bitcoin.it/wiki/Payment_channels#Poon-Dryja_payment_channels
 [btcpay post]: https://blog.btcpayserver.org/btcpay-server-2-0/
 [btcpay server 2.0.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.0
+[news310 upnp]: /en/newsletters/2024/07/05/#remote-code-execution-due-to-bug-in-miniupnpc
+[news323 pcp]: /en/newsletters/2024/10/04/#bitcoin-core-30043
+[news324 bip85]: /en/newsletters/2024/10/11/#bips-1674
