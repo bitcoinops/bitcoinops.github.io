@@ -64,8 +64,8 @@ We plan to add several more wallets or services as well as additional evaluation
 If you have a suggestion of additional metrics that you think are valuable or Bitcoin services that you would like to see evaluated in the future, please reach out to [info@bitcoinops.org][optech email].
 
 [compatibility]: /en/compatibility/
-[compatibility segwit]: /en/compatibility/#segwit-addresses
-[compatibility rbf]: /en/compatibility/#replace-by-fee-rbf
+[compatibility segwit]: /en/compatibility/
+[compatibility rbf]: /en/compatibility/
 [when segwit website]: http://whensegwit.com
 [bitcoin github issue #15560]: https://github.com/bitcoin/bitcoin/issues/15560
 [rbf report]: /en/rbf-in-the-wild/

@@ -55,6 +55,6 @@ lang: zh
 [whatsat]: https://github.com/joostjager/whatsat
 [news72 sphinx]: /zh/newsletters/2019/11/13/#possible-privacy-leak-in-the-ln-onion-format
 [river twitter thread]: https://twitter.com/philipglazman/status/1216849483184476165
-[wasabi rbf notification]: /en/compatibility/wasabi/#receive-notification
+[wasabi rbf notification]: /en/compatibility/wasabi/
 [wasabi rbf signaling]: https://github.com/zkSNACKs/WalletWasabi/pull/2405
 [news52 #13756]: /zh/newsletters/2019/06/26/#bitcoin-core-13756

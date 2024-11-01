@@ -62,8 +62,8 @@ auto_id: false
 如果您有任何建议，认为有其他有价值的评估指标或希望未来能评估的比特币服务，请通过 [info@bitcoinops.org][optech email] 与我们联系。
 
 [compatibility]: /en/compatibility/
-[compatibility segwit]: /en/compatibility/#segwit-addresses
-[compatibility rbf]: /en/compatibility/#replace-by-fee-rbf
+[compatibility segwit]: /en/compatibility/
+[compatibility rbf]: /en/compatibility/
 [when segwit website]: http://whensegwit.com
 [bitcoin github issue #15560]: https://github.com/bitcoin/bitcoin/issues/15560
 [rbf report]: /en/rbf-in-the-wild/
