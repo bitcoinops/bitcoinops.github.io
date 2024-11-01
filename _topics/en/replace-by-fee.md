@@ -32,7 +32,7 @@ primary_sources:
 ## true" to bold entry
 optech_mentions:
   - title: Compatibility matrix---Replace by Fee
-    url: /en/compatibility
+    url: /en/matrix/
     date: 2019-08-20
 
   - title: RBF in the wild (survey of RBF usage)

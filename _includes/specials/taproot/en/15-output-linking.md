@@ -56,5 +56,4 @@ a few additional counterpoints to consider:
 [p4tr benefits]: /en/preparing-for-taproot/#multisignature-overview
 [p4tr safety]: /en/preparing-for-taproot/#why-are-we-waiting
 [coindesk experts]: https://www.coindesk.com/tech/2020/12/01/privacy-concerns-over-bitcoin-upgrade-taproot-are-a-non-issue-experts-say/
-[compat bcc]: /en/compatibility/bitcoin-core/
 [news155 bcc22154]: /en/newsletters/2021/06/30/#bitcoin-core-22154

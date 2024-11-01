@@ -166,7 +166,7 @@ Bitcoin Core PR #22387 に関する私たちの最初の説明では、
 [news155 tr psbts]: /ja/newsletters/2021/06/30/#taproot-psbt
 [zmn liquidity providers]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
 [lightning pool]: https://lightning.engineering/posts/2020-11-02-pool-deep-dive/
-[compat matrix]: /en/compatibility/
+[compat matrix]: /en/matrix/
 [news158 taproot]: /ja/newsletters/2021/07/21/#taprootの準備-5-なぜ待つ必要があるのか
 [0xB10C blog]: https://b10c.me/blog/007-spending-p2tr-pre-activation/
 [bip341 deployment]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment

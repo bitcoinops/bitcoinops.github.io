@@ -851,7 +851,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [c-lightning 0.9.0]: /en/newsletters/2020/08/05/#c-lightning-0-9-0
 [coinswap design]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
 [common ownership heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
-[index de compatibilité]: /en/compatibility/
+[index de compatibilité]: /en/matrix/
 [copa announced]: /en/newsletters/2020/09/16/#crypto-open-patent-alliance
 [copa membership]: /en/newsletters/2020/12/09/#cryptocurrency-open-patent-alliance-copa-gains-new-members
 [crypto garage p2p deriv]: /en/newsletters/2020/08/19/#crypto-garage-announces-p2p-derivatives-beta-application-on-bitcoin
