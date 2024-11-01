@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume les mises à jour d'une proposition pour de nouvelles annonces
-de canaux LN et décrit un BIP pour envoyer des paiements silencieux avec des PSBTs. Sont également incluses nos
+de canaux LN et décrit un BIP pour envoyer des paiements silencieux avec des PSBTs. Il comprend également nos
 rubriques habituelles avec des questions et réponses populaires
 de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et de
 versions candidates, ainsi que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
@@ -17,22 +17,22 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
 - **Mises à jour de la proposition d'annonces de canal version 1.75 :** Elle Mouton a
   [publié][mouton chanann] sur Delving Bitcoin une description de plusieurs changements proposés au
-  protocole de [nouvelles annonces de canal][topic channel announcements] qui supporteront la publicité
+  protocole de [nouvelles annonces de canal][topic channel announcements] qui prendront en charge la publicité
   des [canaux taproot simples][topic simple taproot channels]. Le changement planifié le plus
   significatif est de permettre aux messages d'annoncer également les canaux P2WSH actuels ; cela
   permettra aux nœuds de "commencer à désactiver le protocole ancien [...] lorsque la majorité du
   réseau semble avoir été mise à niveau".
 
-  Une autre addition, récemment discutée (voir le [Bulletin #325][news325 chanann]), est de permettre
-  aux annonces d'inclure une preuve SPV afin que tout client ayant tous les en-têtes de la blockchain
+  Un autre ajout, récemment discuté (voir le [Bulletin #325][news325 chanann]), est de permettre
+  aux annonces d'inclure une preuve SPV afin que tout client disposant de tous les en-têtes de la blockchain
   avec le plus de preuve de travail puisse vérifier que la transaction de financement du canal a été
   incluse dans un bloc. Actuellement, les clients légers doivent télécharger un bloc entier pour
   effectuer le même niveau de vérification d'une annonce de canal.
 
-  Le post de Mouton discute également brièvement de permettre l'annonce facultative de canaux taproot
-  simples existants. En raison de l'absence actuelle de support pour les annonces de canaux non-P2WSH,
+  Le post de Mouton évoque également brièvement la possibilité d'autoriser l'annonce facultative de canaux taproot
+  simples existants. En raison de l'absence actuelle de prise en charge des annonces de canaux non-P2WSH,
   tous les canaux taproot existants sont [non annoncés][topic unannounced channels]. Une
-  fonctionnalité possible qui peut être ajoutée à la proposition permettra aux nœuds de signaler à
+  fonctionnalité possible, qui peut être ajoutée à la proposition, permettra aux nœuds de signaler à
   leurs pairs qu'ils souhaitent convertir un canal non annoncé en un canal public.
 
 - **Proposition de BIP pour envoyer des paiements silencieux avec des PSBTs :** Andrew Toth a
@@ -72,7 +72,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 - [Quels sont les avantages des paquets leurre dans le BIP324 ?]({{bse}}124301)
   Pieter Wuille détaille les décisions de conception concernant [l'inclusion de paquets leurre][bip324
   decoy packets] dans la spécification [BIP324][]. Les paquets leurre optionnels peuvent être utilisés
-  pour obscurcir les motifs de trafic afin d'éviter la reconnaissance par les observateurs pendant les
+  pour masquer les schémas de trafic afin d'éviter la reconnaissance par les observateurs pendant les
   phases d'échange de clés, d'application et de négociation de version du protocole.
 
 - [Pourquoi la limite d'opcode est-elle de 201 ?]({{bse}}124465)
@@ -83,9 +83,9 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 - [Mon nœud relayera-t-il une transaction si elle est en dessous de mon frais de relais minimum pour les transactions ?]({{bse}}124387)
   Murch note qu'un nœud ne relayera que les transactions qu'il accepte dans son propre mempool. Bien
   qu'un utilisateur puisse diminuer la valeur de `minTxRelayFee` de son nœud pour permettre
-  l'acceptation locale dans le mempool, l'inclusion d'une transaction avec un frais de relais
-  inférieur dans un bloc nécessiterait toujours qu'un mineur applique un paramètre similaire et que
-  les frais moyens diminuent vers ce frais inférieur.
+  l'acceptation locale dans le mempool, l'inclusion d'une transaction avec des frais de relais
+  inférieurs dans un bloc nécessiterait toujours qu'un mineur applique un paramètre similaire et que
+  les frais moyens diminuent vers ces frais inférieurs.
 
 - [Pourquoi le portefeuille Bitcoin Core ne prend-il pas en charge le BIP69 ?]({{bse}}124382)
   Murch convient qu'une mise en œuvre universelle de la spécification d'ordonnancement des
@@ -100,9 +100,9 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
 
 - [Quels sont les risques de diffuser une transaction qui révèle un `scriptPubKey` utilisant une clé à faible entropie ?]({{bse}}124296)
   L'utilisateur Quuxplusone fait référence à une transaction récente associée à une série de
-  ["puzzles"][puzzle bitcointalk] de mouture de clés Bitcoin de 2015 qui est
-  [théorisée][puzzle stackernews] pour avoir été [remplacée][topic rbf] par un bot
-  surveillant le mempool pour les clés à faible entropie.
+  ["puzzles"][puzzle bitcointalk] de mouture de clés Bitcoin de 2015.
+  On [suppose][puzzle stackernews] qu’elle a été [remplacée][topic rbf] par un bot surveillant
+  le mempool à la recherche de clés à faible entropie. 
 
 ## Mises à jour et versions candidates
 
@@ -111,8 +111,8 @@ Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
 les versions candidates._
 
 - [Core Lightning 24.08.2][] est une version de maintenance de cette populaire implémentation de LN
-  qui contient "quelques corrections de crashs et inclut une amélioration pour se souvenir et mettre à
-  jour les indices de canal pour les paiements". {% assign timestamp="52:12" %}
+  qui contient "quelques correctifs de plantage et inclut une amélioration pour mémoriser et mettre à jour
+  les indices de canal pour les paiements". {% assign timestamp="52:12" %}
 
 ## Changements notables de code et de documentation
 
@@ -145,8 +145,8 @@ repo], et [BINANAs][binana repo]._
 - [Rust Bitcoin #2960][] transforme l'algorithme d'encryption authentifiée
   [ChaCha20-Poly1305][rfc8439] avec des données associées (AEAD) en son propre paquet, permettant
   son utilisation au-delà du [protocole de transport v2][topic v2 p2p transport]
-  spécifié dans [BIP324][], tel que pour [payjoin V2][topic payjoin]. Le code a été optimisé pour le
-  support des instructions Single Instruction, Multiple Data (SIMD) afin d'améliorer la performance à
+  spécifié dans [BIP324][], tel que pour [payjoin V2][topic payjoin]. Le code a été optimisé pour
+  prendre en charge des instructions Single Instruction, Multiple Data (SIMD) afin d'améliorer la performance à
   travers divers cas d'utilisation (voir le [Bulletin #264][news264 chacha]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
