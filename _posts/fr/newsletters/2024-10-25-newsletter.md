@@ -102,7 +102,7 @@ certaines des questions et réponses les plus votées depuis notre dernière mis
   L'utilisateur Quuxplusone fait référence à une transaction récente associée à une série de
   ["puzzles"][puzzle bitcointalk] de mouture de clés Bitcoin de 2015.
   On [suppose][puzzle stackernews] qu’elle a été [remplacée][topic rbf] par un bot surveillant
-  le mempool à la recherche de clés à faible entropie. 
+  le mempool à la recherche de clés à faible entropie.
 
 ## Mises à jour et versions candidates
 
