@@ -111,7 +111,7 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [BTCPay Server 2.0.0][] is the latest release of this self-hosted
-  payment processor.  It's new features includes "improved localization,
+  payment processor.  Its new features include "improved localization,
   sidebar navigation, improved onboarding flow, improved branding
   options, support for pluginable rate providers" and more.  The upgrade
   includes some breaking changes and database migrations; it is
@@ -145,7 +145,7 @@ repo], and [BINANAs][binana repo]._
 - [BIPs #1676][] updates the status of [BIP85][] to final, as it's widely
   deployed and past the point of introducing breaking changes. This was proposed
   after a recent breaking change was merged and later reverted (see
-  Newsletter[#324][news324 bip85]).
+  Newsletter [#324][news324 bip85]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
