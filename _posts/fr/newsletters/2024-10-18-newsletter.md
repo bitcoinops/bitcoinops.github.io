@@ -59,6 +59,7 @@ d'infrastructure Bitcoin populaires.
     discutées consistait à inclure dans les messages d'annonce de canal une preuve SPV (ou un engagement
     envers une preuve SPV) afin de permettre aux clients légers de vérifier qu'une transaction de financement
     (ou une transaction de parrainage) a été incluse dans un bloc à un moment ou à un autre.
+
   - **Recherche sur les limites fondamentales de la distribution:**  Des recherches ont été présentées sur
     les flux de paiement qui ne peuvent pas aboutir en raison des limites du réseau (par exemple, des canaux
     à capacité insuffisante) ; voir le [Bulletin #309][news309 feasible]. Si un paiement LN est irréalisable,
