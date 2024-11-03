@@ -6,12 +6,12 @@ title: OP_CAT
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
 
@@ -53,6 +53,21 @@ optech_mentions:
 
   - title: "Simple vault prototype using `OP_CAT` and schnorr signatures"
     url: /en/newsletters/2024/02/28/#simple-vault-prototype-using-op-cat
+
+  - title: "Bitcoin PR Review Club for `OP_CAT` on signet with Bitcoin Inquisition"
+    url: /en/newsletters/2024/03/13/#bitcoin-core-pr-review-club
+
+  - title: "BIPs #1525 adds BIP347 which proposes an `OP_CAT` opcode for tapscript"
+    url: /en/newsletters/2024/05/15/#bips-1525
+
+  - title: "Bitcoin Inquisition 27.0 begins enforcing `OP_CAT` on signet"
+    url: /en/newsletters/2024/05/24/#bitcoin-inquisition-27-0
+
+  - title: "`OP_CAT` script to validate proof of work"
+    url: /en/newsletters/2024/06/07/#op-cat-script-to-validate-proof-of-work
+
+  - title: "`OP_CAT` research fund"
+    url: /en/newsletters/2024/09/06/#op-cat-research-fund
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -24,32 +24,32 @@ changements apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
   aimerait pouvoir tenir l'opérateur de la tour de contrôle pour responsable en
   prouvant publiquement qu'il n'a pas réagi de manière appropriée.
 
-    Le principe de base serait qu'une tour de contrôle dispose d'une clé publique
-    bien connue et qu'elle utilise la clé privée correspondante pour générer
-    une signature pour toutes les données de détection d'infraction qu'elle
-    accepte. Alice pourrait alors publier les données et la signature après
-    une infraction non résolue pour prouver que la tour de contrôle a failli à sa
-    responsabilité. Toutefois, Delgado a fait remarquer que la responsabilité
-    pratique n'est pas aussi simple :
+  Le principe de base serait qu'une tour de contrôle dispose d'une clé publique
+  bien connue et qu'elle utilise la clé privée correspondante pour générer
+  une signature pour toutes les données de détection d'infraction qu'elle
+  accepte. Alice pourrait alors publier les données et la signature après
+  une infraction non résolue pour prouver que la tour de contrôle a failli à sa
+  responsabilité. Toutefois, Delgado a fait remarquer que la responsabilité
+  pratique n'est pas aussi simple :
 
-    - *Exigences de stockage des données :* le mécanisme ci-dessus nécessiterait
-      qu'Alice stocke une signature supplémentaire chaque fois qu'elle envoie à
-      la tour de guet de nouvelles données de détection de violation, ce qui peut
-      être très fréquent pour un canal LN actif.
+  - *Exigences de stockage des données :* le mécanisme ci-dessus nécessiterait
+    qu'Alice stocke une signature supplémentaire chaque fois qu'elle envoie à
+    la tour de guet de nouvelles données de détection de violation, ce qui peut
+    être très fréquent pour un canal LN actif.
 
-    - *Pas de possibilité de suppression :* le mécanisme ci-dessus nécessite
-      potentiellement que la tour de contrôle stocke les données de détection
-      de violation à perpétuité. Les tours de contrôle peuvent ne vouloir stocker
-      des données que pour une période limitée, par exemple, elles peuvent accepter
-      un paiement pour une période particulière.
+  - *Pas de possibilité de suppression :* le mécanisme ci-dessus nécessite
+    potentiellement que la tour de contrôle stocke les données de détection
+    de violation à perpétuité. Les tours de contrôle peuvent ne vouloir stocker
+    des données que pour une période limitée, par exemple, elles peuvent accepter
+    un paiement pour une période particulière.
 
-    Delgado suggère que les accumulateurs cryptographiques offrent une solution pratique
-    à ces deux problèmes. Les accumulateurs permettent de prouver de manière compacte
-    qu'un élément particulier fait partie d'un grand ensemble d'éléments et permettent
-    également d'ajouter de nouveaux éléments à l'ensemble sans reconstruire toute la
-    structure de données. Certains accumulateurs permettent de supprimer des éléments
-    de l'ensemble sans reconstruire. Dans un [gist][segura watchtowers gist], Delgado
-    décrit plusieurs constructions d'accumulateurs différentes à considérer.
+  Delgado suggère que les accumulateurs cryptographiques offrent une solution pratique
+  à ces deux problèmes. Les accumulateurs permettent de prouver de manière compacte
+  qu'un élément particulier fait partie d'un grand ensemble d'éléments et permettent
+  également d'ajouter de nouveaux éléments à l'ensemble sans reconstruire toute la
+  structure de données. Certains accumulateurs permettent de supprimer des éléments
+  de l'ensemble sans reconstruire. Dans un [gist][segura watchtowers gist], Delgado
+  décrit plusieurs constructions d'accumulateurs différentes à considérer.
 
 ## Mises à jour et versions candidates
 

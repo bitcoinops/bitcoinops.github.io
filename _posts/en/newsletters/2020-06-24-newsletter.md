@@ -38,35 +38,35 @@ week, and notable changes to popular Bitcoin infrastructure projects.
   the counterparty should be satisfied even if they're using a
   different fee estimation algorithm.
 
-    BOLT2 also allows channels to route up to 483 payments
-    simultaneously, each of which requires a 43 vbyte P2WSH output, for
-    a total of about 20,000 vbytes of data that needs to be added to the
-    chain relatively quickly---meaning it may need to pay a high feerate.
-    If that feerate is five times higher than strictly necessary, this
-    can easily result in paying more than $100 USD in
-    transaction fees at current bitcoin prices.  Additionally, if the commitment transaction is
-    confirmed, the HTLCs then need to be settled (again using
-    time-sensitive transactions that may need to pay a high feerate).
-    If the victim was the party routing those payments outbound, they'll
-    need to pay an additional transaction fee to recover each payment,
-    which could make the attack two or three times more costly for them.
+  BOLT2 also allows channels to route up to 483 payments
+  simultaneously, each of which requires a 43 vbyte P2WSH output, for
+  a total of about 20,000 vbytes of data that needs to be added to the
+  chain relatively quickly---meaning it may need to pay a high feerate.
+  If that feerate is five times higher than strictly necessary, this
+  can easily result in paying more than $100 USD in
+  transaction fees at current bitcoin prices.  Additionally, if the commitment transaction is
+  confirmed, the HTLCs then need to be settled (again using
+  time-sensitive transactions that may need to pay a high feerate).
+  If the victim was the party routing those payments outbound, they'll
+  need to pay an additional transaction fee to recover each payment,
+  which could make the attack two or three times more costly for them.
 
-    Fees are paid to miners, so there's no direct motivation to perform
-    this attack, but if the attacker has the means to quickly contact
-    the victim, it's possible they can offer to settle the HTLCs
-    offchain in return for a ransom, allowing the attacker to profit.
+  Fees are paid to miners, so there's no direct motivation to perform
+  this attack, but if the attacker has the means to quickly contact
+  the victim, it's possible they can offer to settle the HTLCs
+  offchain in return for a ransom, allowing the attacker to profit.
 
-    Pickhardt concludes his email with several ideas for addressing the
-    problem, none of which he finds completely satisfactory.  The
-    mitigation originally implemented in Eclair and later implemented in
-    C-Lightning (see [Newsletter #59][news59 cl30]) is for LN nodes to limit the
-    number of pending payments, keeping transactions small and total
-    fees low.  Another mitigation in development is [anchor
-    outputs][topic anchor outputs], which allow feerates to be selected
-    when the channel is closed---eliminating the need to overestimate
-    fees in order to prevent premature channel closures.  Several other
-    ideas are mentioned, but Pickhardt asks readers to contemplate the
-    problem and suggest any other possible solutions.
+  Pickhardt concludes his email with several ideas for addressing the
+  problem, none of which he finds completely satisfactory.  The
+  mitigation originally implemented in Eclair and later implemented in
+  C-Lightning (see [Newsletter #59][news59 cl30]) is for LN nodes to limit the
+  number of pending payments, keeping transactions small and total
+  fees low.  Another mitigation in development is [anchor
+  outputs][topic anchor outputs], which allow feerates to be selected
+  when the channel is closed---eliminating the need to overestimate
+  fees in order to prevent premature channel closures.  Several other
+  ideas are mentioned, but Pickhardt asks readers to contemplate the
+  problem and suggest any other possible solutions.
 
 - **Continued discussion about LN atomicity attack:** Bastien Teinturier
   [posted][teinturier post] to the Lightning-Dev mailing list with a
@@ -180,7 +180,7 @@ BOLTs][bolts repo].*
   makes it possible to use a PSBT-based process with Bitcoin Core for
   the first time without using any RPCs.
 
-    ![Screenshot of PSBT dialog in Bitcoin Core GUI](/img/posts/2020-06-psbt-dialog.png)
+  ![Screenshot of PSBT dialog in Bitcoin Core GUI](/img/posts/2020-06-psbt-dialog.png)
 
 - [Bitcoin Core #16377][] updates the `walletcreatefundedpsbt` and
   `fundrawtransaction` RPCs.  These RPCs normally use the wallet to
@@ -210,24 +210,24 @@ BOLTs][bolts repo].*
   when building using `--with-gui` from the source code in the main
   repository.
 
-    ![Illustration of monorepo versus monotree](/img/posts/2020-06-monorepo-vs-monotree.png)
+  ![Illustration of monorepo versus monotree](/img/posts/2020-06-monorepo-vs-monotree.png)
 
-    This split is an experiment designed to determine whether using
-    different repositories for different subsystems will help people
-    interested in a particular subsystem focus on that part of the
-    project.  For example, someone using the GitHub *Watch Repository*
-    feature will receive fewer issue and PR status updates each day when
-    watching the Bitcoin Core GUI repository rather than the main
-    repository, making it easier for them to monitor the project.
-    Conversely, developers watching the main project, who may not all
-    be interested in the GUI, will no longer need to receive
-    notifications about it.  In the best case, it's hoped that this
-    improved focus can speed up development, which may lead to
-    discussion about creating monotree repositories for other subsystems.
-    In the worst case, it's feared the split could slow down
-    development---but, if that happens, the experiment can be easily
-    terminated and development can return to using a single repository
-    (*monorepo*).
+  This split is an experiment designed to determine whether using
+  different repositories for different subsystems will help people
+  interested in a particular subsystem focus on that part of the
+  project.  For example, someone using the GitHub *Watch Repository*
+  feature will receive fewer issue and PR status updates each day when
+  watching the Bitcoin Core GUI repository rather than the main
+  repository, making it easier for them to monitor the project.
+  Conversely, developers watching the main project, who may not all
+  be interested in the GUI, will no longer need to receive
+  notifications about it.  In the best case, it's hoped that this
+  improved focus can speed up development, which may lead to
+  discussion about creating monotree repositories for other subsystems.
+  In the worst case, it's feared the split could slow down
+  development---but, if that happens, the experiment can be easily
+  terminated and development can return to using a single repository
+  (*monorepo*).
 
 {% include references.md %}
 {% include linkers/issues.md issues="19260,19133,18027,16377,1461,19071,19204,8709" %}
@@ -252,3 +252,4 @@ BOLTs][bolts repo].*
 [news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [core version]: https://bitcoin.org/en/release/v0.19.0.1
 [broken docs]: https://btcinformation.org/en/developer-examples#regtest-mode
+[hwi]: https://github.com/bitcoin-core/HWI

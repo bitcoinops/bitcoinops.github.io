@@ -70,9 +70,9 @@ aux projets d'infrastructure Bitcoin.
   Cela est bien sûr très indésirable d'un point de vue de la centralisation minière." (Liens ajoutés par Optech.) Il recommande
   d'abandonner CTV et de travailler plutôt sur des [schémas de convenants][topic covenants] compatibles avec [RBF][topic rbf].
 
-    John Law a répondu que les délais dépendant des frais (voir le [Bulletin #283][news283 fdt]) pourraient rendre l'utilisation de CTV
-    sûre avec des frais endogènes dans les cas où des versions particulières d'une transaction devaient être confirmées avant une date
-    limite, bien que les délais dépendant des frais puissent retarder certains règlements de contrat pendant une durée indéterminée.
+  John Law a répondu que les délais dépendant des frais (voir le [Bulletin #283][news283 fdt]) pourraient rendre l'utilisation de CTV
+  sûre avec des frais endogènes dans les cas où des versions particulières d'une transaction devaient être confirmées avant une date
+  limite, bien que les délais dépendant des frais puissent retarder certains règlements de contrat pendant une durée indéterminée.
 
 ##  Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
@@ -146,11 +146,11 @@ repo]._
   l'identifiant du prochain nœud trampoline. Cependant, si un chemin aveugle est utilisé, le dernier nœud trampoline n'apprendra
   désormais que l'identifiant du nœud d'introduction dans le chemin aveugle; il n'apprendra pas l'identifiant du destinataire final.
 
-    Auparavant, la confidentialité du trampoline fort dépendait de l'utilisation de plusieurs expéditeurs de trampoline de sorte que
-    aucun des expéditeurs ne pouvait être sûr d'être le dernier expéditeur. L'inconvénient de cette approche est qu'elle utilisait des
-    chemins plus longs qui augmentaient la probabilité d'échec de l'acheminement et nécessitaient le paiement de frais d'acheminement
-    supplémentaires pour réussir. Maintenant, le fait de faire transiter les paiements par un seul nœud trampoline peut empêcher ce nœud
-    d'apprendre le destinataire final.
+  Auparavant, la confidentialité du trampoline fort dépendait de l'utilisation de plusieurs expéditeurs de trampoline de sorte que
+  aucun des expéditeurs ne pouvait être sûr d'être le dernier expéditeur. L'inconvénient de cette approche est qu'elle utilisait des
+  chemins plus longs qui augmentaient la probabilité d'échec de l'acheminement et nécessitaient le paiement de frais d'acheminement
+  supplémentaires pour réussir. Maintenant, le fait de faire transiter les paiements par un seul nœud trampoline peut empêcher ce nœud
+  d'apprendre le destinataire final.
 
 - [LND #8167][] permet à un nœud LND de fermer mutuellement un canal qui a encore un ou plusieurs paiements en attente
   ([HTLC][topic htlc]). La spécification [BOLT2][] indique que la procédure appropriée consiste pour une partie à envoyer un message

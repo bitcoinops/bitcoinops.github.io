@@ -26,24 +26,24 @@ notable changes to popular Bitcoin infrastructure software.
   the Bitcoin-Dev mailing list a description of a technique to
   accomplish delegation using Bitcoin today.
 
-    Let's say Alice has `UTXO_A` and Bob has `UTXO_B`.  Alice creates a
-    partially signed transaction spending both `UTXO_A` and `UTXO_B`.
-    Alice signs for her UTXO using the sighash flag [SIGHASH_NONE][],
-    which prevents the signature from committing to any of the
-    transaction's outputs.  This gives the owner of the other input in
-    the transaction---Bob---unilateral control over the choice of
-    outputs, using his signature with the normal `SIGHASH_ALL` flag to
-    commit to those outputs and prevent anyone else from modifying the
-    transaction.  By using this dual-input `SIGHASH_NONE` trick, Alice
-    delegates to Bob the ability to sign for her UTXO.
+  Let's say Alice has `UTXO_A` and Bob has `UTXO_B`.  Alice creates a
+  partially signed transaction spending both `UTXO_A` and `UTXO_B`.
+  Alice signs for her UTXO using the sighash flag [SIGHASH_NONE][],
+  which prevents the signature from committing to any of the
+  transaction's outputs.  This gives the owner of the other input in
+  the transaction---Bob---unilateral control over the choice of
+  outputs, using his signature with the normal `SIGHASH_ALL` flag to
+  commit to those outputs and prevent anyone else from modifying the
+  transaction.  By using this dual-input `SIGHASH_NONE` trick, Alice
+  delegates to Bob the ability to sign for her UTXO.
 
-    This technique appears to be mainly of theoretical interest.  There
-    are other proposed delegation techniques---including graftroot,
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], and
-    [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]---that would
-    likely be superior in several ways, but only this technique is
-    currently usable on mainnet for anyone who wants to experiment with
-    it.
+  This technique appears to be mainly of theoretical interest.  There
+  are other proposed delegation techniques---including graftroot,
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify], and
+  [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]---that would
+  likely be superior in several ways, but only this technique is
+  currently usable on mainnet for anyone who wants to experiment with
+  it.
 
 - **Discussion of quantum computer attacks on taproot:**
   the original Bitcoin software provided two ways to receive bitcoin:
@@ -89,6 +89,7 @@ notable changes to popular Bitcoin infrastructure software.
   accepts payments to public keys in the P2PK style instead of hashes in
   the P2PKH style.
 
+  {:#p2pkh-hides-keys}
   But P2PKH hash indirection does have one advantage: it can hide keys
   from public view until they're needed to authorize a spend.  This
   means an adversary who has the ability to compromise the security of a public key
@@ -110,83 +111,83 @@ notable changes to popular Bitcoin infrastructure software.
   alternatives, and evaluate what tradeoffs would be implied by those
   alternatives.  A selection of those conversations are summarized below:
 
-    - *Hashes not currently doing a good job at QC resistance:*
-      as of a [2019 survey][wuille stealable], an attacker with a
-      powerful QC and nothing else besides a copy of the Bitcoin block
-      chain could steal over 1/3 of all bitcoins.  Most of those would
-      be the result of users [reusing addresses][topic output linking],
-      a discouraged practice---but one that seems unlikely to go away
-      soon.
+  - *Hashes not currently doing a good job at QC resistance:*
+    as of a [2019 survey][wuille stealable], an attacker with a
+    powerful QC and nothing else besides a copy of the Bitcoin block
+    chain could steal over 1/3 of all bitcoins.  Most of those would
+    be the result of users [reusing addresses][topic output linking],
+    a discouraged practice---but one that seems unlikely to go away
+    soon.
 
-        Additionally, discussion participants pointed out that anyone
-        who shares their individual public keys or [BIP32][] extended
-        public keys (xpubs) with third parties would also be at risk
-        from a powerful QC if their public keys leaked.  This would
-        likely include most bitcoins stored with a hardware wallet or in
-        an LN payment channel.  In short, it's possible that even though
-        we almost universally use P2PKH-style hashed public keys today,
-        nearly all bitcoins could be stolen by a powerful QC with access
-        to public or third-party data.  That implies that the choice to
-        use P2PK-style non-hashed public keys with taproot doesn't
-        significantly change Bitcoin's current security model.
+    Additionally, discussion participants pointed out that anyone
+    who shares their individual public keys or [BIP32][] extended
+    public keys (xpubs) with third parties would also be at risk
+    from a powerful QC if their public keys leaked.  This would
+    likely include most bitcoins stored with a hardware wallet or in
+    an LN payment channel.  In short, it's possible that even though
+    we almost universally use P2PKH-style hashed public keys today,
+    nearly all bitcoins could be stolen by a powerful QC with access
+    to public or third-party data.  That implies that the choice to
+    use P2PK-style non-hashed public keys with taproot doesn't
+    significantly change Bitcoin's current security model.
 
-    - *Taproot improvement in post-QC recovery at no onchain cost:*
-      if Bitcoiners learn that a powerful QC has manifested, or
-      soon will, they can reject any taproot key-path spends---the type
-      of spend where only a single signature is used.  However, a user
-      who prepares ahead when creating their taproot address can also
-      spend bitcoins received to that address using a script-path spend.
-      In that case, the taproot address commits to a hash of the
-      [tapscripts][topic tapscript] the user wants to use.  That hash
-      commitment can be used as part of a [scheme][ruffing scheme] to
-      transition to a new cryptographic algorithm that's safe against
-      QCs, or---if such an algorithm is standardized for Bitcoin before
-      QCs become a threat---it can allow the owner of the bitcoins to
-      immediately transition to the new scheme.  This does only work if
-      individual users create backup tapscript spending paths, if they
-      don't share any public keys (including BIP32 xpubs) involved in
-      those backup paths, and if we learn about a powerful QC before it
-      does too much damage to Bitcoin.
+  - *Taproot improvement in post-QC recovery at no onchain cost:*
+    if Bitcoiners learn that a powerful QC has manifested, or
+    soon will, they can reject any taproot key-path spends---the type
+    of spend where only a single signature is used.  However, a user
+    who prepares ahead when creating their taproot address can also
+    spend bitcoins received to that address using a script-path spend.
+    In that case, the taproot address commits to a hash of the
+    [tapscripts][topic tapscript] the user wants to use.  That hash
+    commitment can be used as part of a [scheme][ruffing scheme] to
+    transition to a new cryptographic algorithm that's safe against
+    QCs, or---if such an algorithm is standardized for Bitcoin before
+    QCs become a threat---it can allow the owner of the bitcoins to
+    immediately transition to the new scheme.  This does only work if
+    individual users create backup tapscript spending paths, if they
+    don't share any public keys (including BIP32 xpubs) involved in
+    those backup paths, and if we learn about a powerful QC before it
+    does too much damage to Bitcoin.
 
-    - *Is the attack realistic?*  One respondent thought a fast QC by the
-      end of the decade [was][fournier progress] "on the wildly
-      optimistic side of projected rate of progress."  Another
-      [noted][towns parallelization] it was a "fairly straightforward
-      engineering challenge" to turn the design for a single slow QC
-      into a farm of QCs that could work in parallel, achieving results
-      in a fraction of the time---making any protection from P2PKH-style
-      hash indirection irrelevant.  A third respondent
-      [proposed][harding bounty] constructing special Bitcoin addresses
-      that could only be spent from by someone making progress on fast
-      QCs; users could voluntarily donate bitcoins to the addresses to
-      create an incentivized early warning system.
+  - *Is the attack realistic?*  One respondent thought a fast QC by the
+    end of the decade [was][fournier progress] "on the wildly
+    optimistic side of projected rate of progress."  Another
+    [noted][towns parallelization] it was a "fairly straightforward
+    engineering challenge" to turn the design for a single slow QC
+    into a farm of QCs that could work in parallel, achieving results
+    in a fraction of the time---making any protection from P2PKH-style
+    hash indirection irrelevant.  A third respondent
+    [proposed][harding bounty] constructing special Bitcoin addresses
+    that could only be spent from by someone making progress on fast
+    QCs; users could voluntarily donate bitcoins to the addresses to
+    create an incentivized early warning system.
 
-    - *We could add a hash-style address after taproot is activated:* if
-      a significant number of users really do think the sudden
-      appearance of a powerful QC is a threat, we could use a follow-up
-      soft fork to [add][dashjr quantum] an alternative P2PKH-style taproot
-      address type that uses hashes.  However, this has consequences
-      that caused several respondents to oppose it:
+  - *We could add a hash-style address after taproot is activated:* if
+    a significant number of users really do think the sudden
+    appearance of a powerful QC is a threat, we could use a follow-up
+    soft fork to [add][dashjr quantum] an alternative P2PKH-style taproot
+    address type that uses hashes.  However, this has consequences
+    that caused several respondents to oppose it:
 
-        - It'll create confusion
+    - It'll create confusion
 
-        - It'll use more block space
+    - It'll use more block space
 
-        - It [reduces][poelstra anon] the size of taproot's anonymity
-          set, both directly and when protocols such as [ring signature
-          membership proofs][nick ring] or [Provisions][] are being used
+    - It [reduces][poelstra anon] the size of taproot's anonymity
+      set, both directly and when protocols such as [ring signature
+      membership proofs][nick ring] or [Provisions][] are being used
 
-    - *Bandwidth/storage costs versus CPU costs:* it's [possible][rubin
-      recovery] to eliminate the extra 32-byte storage overhead from
-      hash indirection by deriving the public key from a signature and
-      the transaction data it signs, a technique called *key recovery*.
-      Again, this was opposed.  Key recovery requires a [significant amount of CPU][corallo
-      recovery overhead] that would slow down nodes and also prevents
-      the use of schnorr batch validation that can make historic block
-      verification up to three times faster.  It also [makes][poelstra
-      slowdowns] anonymous membership proofs and related techniques both
-      harder to develop and much more CPU intensive.  There
-      [may][poelstra patent story] also be a [patent][US7215773B1] issue.
+  - *Bandwidth/storage costs versus CPU costs:* it's [possible][rubin
+    recovery] to eliminate the extra 32-byte storage overhead from
+    hash indirection by deriving the public key from a signature and
+    the transaction data it signs, a technique called *key recovery*.
+    Again, this was opposed.  Key recovery requires a [significant amount of CPU][corallo
+    recovery overhead] that would slow down nodes and also prevents
+    the use of schnorr batch validation that can make historic block
+    verification up to three times faster.  It also [makes][poelstra
+    slowdowns] anonymous membership proofs and related techniques both
+    harder to develop and much more CPU intensive.  There
+    [may][poelstra patent story] also be a [patent][US7215773B1] issue.
 
   As of this writing, it appears the mailing list discussion has
   concluded without any obvious loss of community support for taproot.

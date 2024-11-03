@@ -6,12 +6,12 @@ title: Version 3 transaction relay
 shortname: v3 transaction relay
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+title-aliases:
+  - "Topologically Restricted Until Confirmation (TRUC)"
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Transaction Relay Policy
 
@@ -25,8 +25,14 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
+    - title: "BIP431: Topology Restrictions for Pinning"
+      link: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
+
     - title: "New transaction policies (nVersion=3) for contracting protocols"
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
+
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/issues/28948
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -81,6 +87,28 @@ optech_mentions:
 
   - title: "Bitcoin Core #28948 adds support for (but does not enable) version 3 transaction relay"
     url: /en/newsletters/2024/02/14/#bitcoin-core-28948
+
+  - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee with v3-compatible packages"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: "BIPs #1541 adds BIP431 with a specification of TRUC transactions"
+    url: /en/newsletters/2024/06/07/#bips-1541
+
+  - title: "Bitcoin Core #29496 makes TRUC transactions standard"
+    url: /en/newsletters/2024/06/14/#bitcoin-core-29496
+
+  - title: "Criticism of motivations for preferring TRUC over replace-by-feerate as a pinning solution"
+    url: /en/newsletters/2024/07/26/#truc-utility
+
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: TRUC transactions"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
+  - title: "LN developer discussion of using TRUC for version-3 LN commitments"
+    url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
+
+  - title: "Rust Bitcoin #3450 adds the ability to opt-in to TRUC transactions"
+    url: /en/newsletters/2024/10/18/#rust-bitcoin-3450
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

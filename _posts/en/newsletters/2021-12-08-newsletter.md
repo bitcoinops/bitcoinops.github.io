@@ -26,10 +26,10 @@ and notable changes to popular infrastructure projects.
   transaction pinning].  Also included in his post is the result of
   [research][revault research] into some of the ideas described earlier.
 
-    Ensuring that fee bumping works reliably is a requirement for the
-    safety of most contract protocols, and it remains a problem without any
-    comprehensive solution yet.  It is encouraging to see continuing
-    research into the problem.
+  Ensuring that fee bumping works reliably is a requirement for the
+  safety of most contract protocols, and it remains a problem without any
+  comprehensive solution yet.  It is encouraging to see continuing
+  research into the problem.
 
 ## Bitcoin Core PR Review Club
 
@@ -161,6 +161,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [revault research]: https://github.com/revault/research
 [GetBlockScriptFlags tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/validation.cpp#L1616
 [AreInputsStandard tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/validation.cpp#L726-L729
-[getblockchaininfo tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/rpc/blockchain.cpp#L1537)
+[getblockchaininfo tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/rpc/blockchain.cpp#L1537
 [isTaprootActive tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/interfaces/chain.h#L292
 [AreInputsStandard def]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/policy/policy.h#L110

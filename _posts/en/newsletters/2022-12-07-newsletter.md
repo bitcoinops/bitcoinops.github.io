@@ -26,28 +26,28 @@ infrastructure projects.
   fundamental (see [Newsletter #224][news224 anchors])---but others
   that can be addressed.
 
-    Ephemeral anchors build on the [v3 transaction relay proposal][topic
-    v3 transaction relay] to allow v3 transactions to include a
-    zero-value output paying a script that is essentially `OP_TRUE`,
-    which permits that transaction to be CPFP fee bumped by anyone on the
-    network with a spendable UTXO.  The fee-bumping child transaction
-    can itself be RBF fee bumped by anyone else with a spendable UTXO.
-    In combination with other parts of the v3 transaction relay
-    proposal, it is hoped that this will eliminate all policy-based
-    concerns about [transaction pinning attacks][topic transaction
-    pinning] against time-sensitive contract protocol transactions.
+  Ephemeral anchors build on the [v3 transaction relay proposal][topic
+  v3 transaction relay] to allow v3 transactions to include a
+  zero-value output paying a script that is essentially `OP_TRUE`,
+  which permits that transaction to be CPFP fee bumped by anyone on the
+  network with a spendable UTXO.  The fee-bumping child transaction
+  can itself be RBF fee bumped by anyone else with a spendable UTXO.
+  In combination with other parts of the v3 transaction relay
+  proposal, it is hoped that this will eliminate all policy-based
+  concerns about [transaction pinning attacks][topic transaction
+  pinning] against time-sensitive contract protocol transactions.
 
-    Additionally, because anyone can fee bump a transaction containing
-    an ephemeral output, it can be used for contract protocols involving
-    more than two participants.  The existing Bitcoin Core carve out
-    rule only reliably works for two participants and [previous
-    attempts][bitcoin core #18725] to increase it required an
-    arbitrary upper limit on participants.
+  Additionally, because anyone can fee bump a transaction containing
+  an ephemeral output, it can be used for contract protocols involving
+  more than two participants.  The existing Bitcoin Core carve out
+  rule only reliably works for two participants and [previous
+  attempts][bitcoin core #18725] to increase it required an
+  arbitrary upper limit on participants.
 
-    Sanders's [implementation][bitcoin core #26403] of ephemeral anchors
-    makes it possible to begin testing the idea along with the other v3
-    transaction relay behaviors previously implemented by that
-    proposal's author. {% assign timestamp="2:03" %}
+  Sanders's [implementation][bitcoin core #26403] of ephemeral anchors
+  makes it possible to begin testing the idea along with the other v3
+  transaction relay behaviors previously implemented by that
+  proposal's author. {% assign timestamp="2:03" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -208,10 +208,10 @@ approach as well as a handy shell alias for frequent users of
   payment to a native segwit output would also result in a native segwit
   change output.
 
-    However, the LN protocol requires certain output types.  For
-    example, a P2PKH output can't be used to open an LN channel.
-    For that reason, users of Eclair with Bitcoin Core need to ensure
-    they don't generate change outputs of an LN-incompatible type. {% assign timestamp="1:05:23" %}
+  However, the LN protocol requires certain output types.  For
+  example, a P2PKH output can't be used to open an LN channel.
+  For that reason, users of Eclair with Bitcoin Core need to ensure
+  they don't generate change outputs of an LN-incompatible type. {% assign timestamp="1:05:23" %}
 
 - [Rust Bitcoin #1415][] begins using the [Kani Rust Verifier][] to
   prove some properties of Rust Bitcoin's code.  This complements other

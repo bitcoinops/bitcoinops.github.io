@@ -6,12 +6,12 @@ title: Channel jamming attacks
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -114,6 +114,9 @@ optech_mentions:
 
   - title: "DoS protection design philosophy and example of forward commitment fees and reverse hold fees"
     url: /en/newsletters/2023/08/09/#denial-of-service-dos-protection-design-philosophy
+
+  - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
+    url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

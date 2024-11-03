@@ -34,9 +34,9 @@ Bitcoin Core, LND, and C-Lightning projects.
   sourced from Optech's beta dashboard, which we encourage people to try out and
   provide us feedback!
 
-    ![{{img1_label}}](/img/posts/rbf.png)
-    *{{img1_label}},
-    source: [Optech dashboard][rbf data]*
+  ![{{img1_label}}](/img/posts/rbf.png)
+  *{{img1_label}},
+  source: [Optech dashboard][rbf data]*
 
 ## News
 
@@ -63,49 +63,28 @@ Bitcoin Core, LND, and C-Lightning projects.
   non-interactive coinjoins such as those described in the [Mimblewimble
   paper][].
 
-    BLS signatures do come with three downsides that have lead most
-    Bitcoin protocol developers to focus on Schnorr signatures for the
-    short-term.  The first is that there's no known way to verify them
-    as fast as Schnorr signatures---and signature verification speed is
-    also important for network scalability.  Second, to prove that BLS
-    signatures are secure requires making an additional assumption about
-    part of the scheme being secure that isn't required for proving the
-    security of Bitcoin's current scheme (ECDSA) or proposed
-    Schnorr-based scheme.  Finally, BLS signatures have only been around
-    for about half as long as Schnorr signatures, are even less commonly
-    used, and are not believed to have received the same amount of
-    expert review as Schnorr signatures.
+  BLS signatures do come with three downsides that have lead most
+  Bitcoin protocol developers to focus on Schnorr signatures for the
+  short-term.  The first is that there's no known way to verify them
+  as fast as Schnorr signatures---and signature verification speed is
+  also important for network scalability.  Second, to prove that BLS
+  signatures are secure requires making an additional assumption about
+  part of the scheme being secure that isn't required for proving the
+  security of Bitcoin's current scheme (ECDSA) or proposed
+  Schnorr-based scheme.  Finally, BLS signatures have only been around
+  for about half as long as Schnorr signatures, are even less commonly
+  used, and are not believed to have received the same amount of
+  expert review as Schnorr signatures.
 
-    Still, this open source library gives developers a convenient way to
-    begin experimenting with BLS signatures and even start to use them
-    in applications that don't need to be as secure as the Bitcoin
-    network.
-
-
+  Still, this open source library gives developers a convenient way to
+  begin experimenting with BLS signatures and even start to use them
+  in applications that don't need to be as secure as the Bitcoin
+  network.
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="ef4fac0ea5b4891f4529e4b59dfd1f7aeb3009b5"
-  end="2b67354aa584c4aabae049a67767ac7b70e2d01a"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="92b0b10dc75de87be3a9f895c8dfc5a84a2aec7a"
-  end="f0f5e11b826e020c11c37343bcbaf9725627378b"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="0b597f671aa31c1c56d32a554fcdf089646fc7c1"
-  end="80a8e57ede82292818032eeb3510da067fddfd5e"
-%}
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].*
 
 - [Bitcoin Core #13697][]: This PR by Pieter Wuille mentioned in
   [Newsletter #5][] to add [output script descriptors][] support to the
@@ -160,7 +139,7 @@ commits], and [C-lightning][cl commits].*
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
 [bls announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
-[#3 schnorr]: {{news3}}#featured-news-schnorr-signature-proposed-bip
+[#3 schnorr]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [bls signatures]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [mimblewimble paper]: https://scalingbitcoin.org/papers/mimblewimble.txt
@@ -170,3 +149,5 @@ commits], and [C-lightning][cl commits].*
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now
+[newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

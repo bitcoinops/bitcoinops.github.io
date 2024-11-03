@@ -38,30 +38,30 @@ changes to popular Bitcoin infrastructure software.
   charge a non-refundable fee upfront when a routing request is received
   (see [Newsletter #72][news72 upfront payments]).
 
-    This week on the Lightning-Dev mailing list, a
-    [discussion][teinturier dynamic] about a proposed minor protocol
-    change transformed into a conversation about upfront fees:
+  This week on the Lightning-Dev mailing list, a
+  [discussion][teinturier dynamic] about a proposed minor protocol
+  change transformed into a conversation about upfront fees:
 
-    - *Incremental routing:* ZmnSCPxj [described][zmnscpxj tunneling]
-      a nested encrypted tunneling protocol where routes would be
-      built incrementally, with the spender being able to pay each
-      successive routing hop independently.  This would ensure routing
-      fees couldn't be stolen by an earlier hop that deliberately failed
-      a route.  A downside to this approach is that it would require a
-      significant number of network round trips, which could make even
-      successful payments take a long time.  A spy node that kept track
-      of routed message timing and HTLC duration could also
-      estimate how many hops away the spender or receiver are
-      from it, reducing the amount of privacy users would receive from
-      LN.
+  - *Incremental routing:* ZmnSCPxj [described][zmnscpxj tunneling]
+    a nested encrypted tunneling protocol where routes would be
+    built incrementally, with the spender being able to pay each
+    successive routing hop independently.  This would ensure routing
+    fees couldn't be stolen by an earlier hop that deliberately failed
+    a route.  A downside to this approach is that it would require a
+    significant number of network round trips, which could make even
+    successful payments take a long time.  A spy node that kept track
+    of routed message timing and HTLC duration could also
+    estimate how many hops away the spender or receiver are
+    from it, reducing the amount of privacy users would receive from
+    LN.
 
-    - *Trusted upfront payment:* Antoine Riard [promoted][riard trust]
-      the idea of simply paying the upfront fees and, if your peer
-      steals them, downgrade their score so that your routing
-      algorithm prefers not to use them again.  Assuming a single
-      upfront fee is much smaller than the aggregate amount of fees a
-      peer could earn over weeks or months of routing, there should be
-      an incentive to behave honestly.
+  - *Trusted upfront payment:* Antoine Riard [promoted][riard trust]
+    the idea of simply paying the upfront fees and, if your peer
+    steals them, downgrade their score so that your routing
+    algorithm prefers not to use them again.  Assuming a single
+    upfront fee is much smaller than the aggregate amount of fees a
+    peer could earn over weeks or months of routing, there should be
+    an incentive to behave honestly.
 
 - **Bech32 addresses for taproot:** Rusty Russell [resumed][russell
   bech32] a previous discussion (see [Newsletter #107][news107 bech32])
@@ -74,20 +74,20 @@ changes to popular Bitcoin infrastructure software.
   but also require wallets to upgrade in order to be able to pay taproot
   users.
 
-    A [previously proposed alternative][news107 bech32] would be a
-    backwards-compatible restriction on bech32 address lengths.  This
-    only directly provides safety to taproot users receiving payments
-    from spenders who upgraded their wallets to enforce the new length
-    restrictions.  In the discussion, it was proposed that broader
-    safety could be provided by also enforcing length restrictions at
-    either the [consensus layer][harding bech32] or the [transaction
-    relay policy layer][o'connor bech32].
+  A [previously proposed alternative][news107 bech32] would be a
+  backwards-compatible restriction on bech32 address lengths.  This
+  only directly provides safety to taproot users receiving payments
+  from spenders who upgraded their wallets to enforce the new length
+  restrictions.  In the discussion, it was proposed that broader
+  safety could be provided by also enforcing length restrictions at
+  either the [consensus layer][harding bech32] or the [transaction
+  relay policy layer][o'connor bech32].
 
-    Russell concluded his post by noting that "the sooner a decision is
-    reached on this, the sooner we can begin upgrading software for a
-    taproot world."  Feedback would be especially appreciated from
-    authors of wallets and bitcoin-sending services as they will be
-    asked to implement whatever change is decided upon.
+  Russell concluded his post by noting that "the sooner a decision is
+  reached on this, the sooner we can begin upgrading software for a
+  taproot world."  Feedback would be especially appreciated from
+  authors of wallets and bitcoin-sending services as they will be
+  asked to implement whatever change is decided upon.
 
 - **Updated witness asymmetric payment channel proposal:** Lloyd
   Fournier [posted][fournier update] to a thread from several weeks ago
@@ -106,16 +106,16 @@ changes to popular Bitcoin infrastructure software.
   may also be conceptually simpler, which could help attract more
   security review of LN's basic operations.
 
-    This week, Fournier linked to an [updated version][fournier v2] of
-    his proposed protocol.  The main difference from the original
-    version is that a party who broadcasts a revoked signature reveals
-    the primary private key they use in the channel's multisig spends.
-    The other party to the channel can use that key combined with their
-    own key to immediately claim all funds in the channel.  Along
-    with another change, <!-- I think it also needs something like
-    Russell's shachain; emailed Fournier 2020-10-11 to confirm --> this
-    should allow storing an entire channel's penalty data in a small
-    number of bytes.
+  This week, Fournier linked to an [updated version][fournier v2] of
+  his proposed protocol.  The main difference from the original
+  version is that a party who broadcasts a revoked signature reveals
+  the primary private key they use in the channel's multisig spends.
+  The other party to the channel can use that key combined with their
+  own key to immediately claim all funds in the channel.  Along
+  with another change, <!-- I think it also needs something like
+  Russell's shachain; emailed Fournier 2020-10-11 to confirm --> this
+  should allow storing an entire channel's penalty data in a small
+  number of bytes.
 
 ## Bitcoin Core PR Review Club
 

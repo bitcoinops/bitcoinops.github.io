@@ -6,13 +6,13 @@ title: Accountable Computing Contracts
 shortname: ACC
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BitVM
   - Zero-Knowledge Contingent Payments (ZKCP)
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -42,6 +42,18 @@ optech_mentions:
 
   - title: Sending and receiving ecash using LN and ZKCPs
     url: /en/newsletters/2024/02/28/#sending-and-receiving-ecash-using-ln-and-zkcps
+
+  - title: "Development of domain-specific languages for smart contracting, including with BitVM"
+    url: /en/newsletters/2024/04/10/#dsl-for-experimenting-with-contracts
+
+  - title: "BitVMX: an alternative to BitVM for verification of program execution"
+    url: /en/newsletters/2024/05/17/#alternative-to-bitvm
+
+  - title: "Optimistic verification of zero-knowledge proofs using CAT, MATT, and Elftrace"
+    url: /en/newsletters/2024/08/09/#optimistic-verification-of-zero-knowledge-proofs-using-cat-matt-and-elftrace
+
+  - title: "BitVM may allow bidirectional bridging of tokens when used with Shielded CSV"
+    url: /en/newsletters/2024/09/27/#shielded-client-side-validation-csv
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

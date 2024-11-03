@@ -118,4 +118,4 @@ endcomment %}
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
-
+[musig]: https://eprint.iacr.org/2018/068

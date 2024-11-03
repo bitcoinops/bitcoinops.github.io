@@ -35,23 +35,23 @@ changes in popular Bitcoin infrastructure software.
   think 25 is the actual max:
   http://gnusha.org/lightning-dev/2020-11-30.log 04:42 -->
 
-    Previously proposed solutions for this problem (and related
-    problems) mostly involved upfront fees, see Newsletters
-    [#72][news72 upfront], [#86][news86 upfront], [#119][news119
-    upfront], [#120][news120 upfront], and [#122][news122 upfront].
-    This week, Naumenko and Riard proposed that each payment include
-    proof that its spender controlled some amount of bitcoin.  Each
-    routing node could then publicly announce its policy on how much
-    value it would route given proof of a certain stake value.  For
-    example, Alice's node could announce that it would route payments up
-    to 0.01 BTC from anyone who could prove they controlled at least
-    1.00 BTC.  This would allow someone to route a payment through
-    Alice's node but limit how much of her capital they could tie up.
+  Previously proposed solutions for this problem (and related
+  problems) mostly involved upfront fees, see Newsletters
+  [#72][news72 upfront], [#86][news86 upfront], [#119][news119
+  upfront], [#120][news120 upfront], and [#122][news122 upfront].
+  This week, Naumenko and Riard proposed that each payment include
+  proof that its spender controlled some amount of bitcoin.  Each
+  routing node could then publicly announce its policy on how much
+  value it would route given proof of a certain stake value.  For
+  example, Alice's node could announce that it would route payments up
+  to 0.01 BTC from anyone who could prove they controlled at least
+  1.00 BTC.  This would allow someone to route a payment through
+  Alice's node but limit how much of her capital they could tie up.
 
-    The mailing list post does note that a significant amount of work
-    would need to be done to implement the idea, including the
-    development of a privacy-preserving cryptographic proof.  Discussion
-    of the idea is still ongoing as of this writing.
+  The mailing list post does note that a significant amount of work
+  would need to be done to implement the idea, including the
+  development of a privacy-preserving cryptographic proof.  Discussion
+  of the idea is still ongoing as of this writing.
 
 - **Proposed intermediate solution for LN `SIGHASH_SINGLE` fee theft:**
   as described in [Newsletter #115][news115 siphoning], a recent update
@@ -61,27 +61,27 @@ changes in popular Bitcoin infrastructure software.
   of spending HTLCs with signatures using the [sighash flag][]
   `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY`.
 
-    The preferred solution to that problem is to simply not include any
-    fees in HTLCs, eliminating the ability to steal fees and making the
-    party who wants to claim the HTLC responsible for paying any
-    necessary fees.  However, this requires an additional change to the
-    LN specification that would need to be adopted by all
-    implementations of [anchor outputs][topic anchor outputs].  In the
-    meantime, Johan Halseth
-    [posted][halseth post] to the Lightning-Dev mailing list this week
-    about a [PR][LND #4795] he opened to LND that will only accept a
-    payment if the maximum amount of fees a peer can steal from that
-    payment (and all previously accepted pending payments) is less than the
-    *channel reserve*---the minimum amount that must be kept in each
-    side of a channel to serve as a penalty in case an old state is
-    broadcast.  This doesn't eliminate the problem, but it does
-    significantly limit the maximum loss possible.  A downside is that
-    channels with only small amounts of value (and thus small reserves)
-    will be limited to only forwarding a small number of HTLCs
-    simultaneously.  Halseth's PR attempts to mitigate this by not
-    requesting feerate increases above 10 sat/vbyte, keeping HTLC fees
-    low so that the fees from several HTLCs are less likely to exceed
-    reserves.
+  The preferred solution to that problem is to simply not include any
+  fees in HTLCs, eliminating the ability to steal fees and making the
+  party who wants to claim the HTLC responsible for paying any
+  necessary fees.  However, this requires an additional change to the
+  LN specification that would need to be adopted by all
+  implementations of [anchor outputs][topic anchor outputs].  In the
+  meantime, Johan Halseth
+  [posted][halseth post] to the Lightning-Dev mailing list this week
+  about a [PR][LND #4795] he opened to LND that will only accept a
+  payment if the maximum amount of fees a peer can steal from that
+  payment (and all previously accepted pending payments) is less than the
+  *channel reserve*---the minimum amount that must be kept in each
+  side of a channel to serve as a penalty in case an old state is
+  broadcast.  This doesn't eliminate the problem, but it does
+  significantly limit the maximum loss possible.  A downside is that
+  channels with only small amounts of value (and thus small reserves)
+  will be limited to only forwarding a small number of HTLCs
+  simultaneously.  Halseth's PR attempts to mitigate this by not
+  requesting feerate increases above 10 sat/vbyte, keeping HTLC fees
+  low so that the fees from several HTLCs are less likely to exceed
+  reserves.
 
 - **Formal specification of miniscript:** Dmitry Petukhov
   [published][petukhov post] a [formal specification][miniscript spec]

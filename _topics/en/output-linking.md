@@ -2,14 +2,14 @@
 title: Output linking
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Address reuse
   - Dust attacks
   - Reuse avoidance
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Privacy Enhancements
   - Privacy Problems
   - Security Problems

@@ -39,68 +39,68 @@ Bitcoin.
   como el manejo de la red P2P.  Algunos cambios que pueden ser especialmente
   interesantes para los lectores incluyen:
 
-    - _Exclusión de CPFP_: esta [nueva política de mempool][topic cpfp carve
-      out] ayuda a los protocolos de contrato de dos partes (como el LN actual)
-      a garantizar que ambas partes puedan usar el aumento de tarifas de
-      Child-Pays-For-Parent (CPFP) (ver [Newsletter #63][news63 carve-out]).  Los
-      desarrolladores de LN ya tienen una propuesta bajo discusión sobre cómo usarán
-      esta función para simplificar la administración de tarifas para las
-      transacciones de compromiso (consulte los newsletters [#70][news70 simple
-      commits] y [#71][news71 ln carve-out]).
+  - _Exclusión de CPFP_: esta [nueva política de mempool][topic cpfp carve
+    out] ayuda a los protocolos de contrato de dos partes (como el LN actual)
+    a garantizar que ambas partes puedan usar el aumento de tarifas de
+    Child-Pays-For-Parent (CPFP) (ver [Newsletter #63][news63 carve-out]).  Los
+    desarrolladores de LN ya tienen una propuesta bajo discusión sobre cómo usarán
+    esta función para simplificar la administración de tarifas para las
+    transacciones de compromiso (consulte los newsletters [#70][news70 simple
+    commits] y [#71][news71 ln carve-out]).
 
-    - _Filtros de bloque BIP158 (solo RPC)_: los usuarios ahora pueden
-      establecer una nueva opción de configuración, `blockfilterindex`, si
-      quieren que Bitcoin Core genere [filtros de bloque compactos][topic compact
-      block filters] según lo especificado por [BIP158][]. El filtro para cada bloque
-      se puede recuperar utilizando el nuevo `getblockfilter` RPC. Filtros pueden ser
-      proporcionados a un lightweight client compatible para permitirle determinar si
-      un bloque puede contener transacciones que involucren sus claves (consulta la
-      [Newsletter #43][news43 core bip158] para obtener más información).
-      [PR#16442][Bitcoin Core #16442] está actualmente abierto para agregar soporte
-      para el protocolo [BIP157][] correspondiente que permitirá compartir estos
-      filtros con clientes a través de la red P2P.
+  - _Filtros de bloque BIP158 (solo RPC)_: los usuarios ahora pueden
+    establecer una nueva opción de configuración, `blockfilterindex`, si
+    quieren que Bitcoin Core genere [filtros de bloque compactos][topic compact
+    block filters] según lo especificado por [BIP158][]. El filtro para cada bloque
+    se puede recuperar utilizando el nuevo `getblockfilter` RPC. Filtros pueden ser
+    proporcionados a un lightweight client compatible para permitirle determinar si
+    un bloque puede contener transacciones que involucren sus claves (consulta la
+    [Newsletter #43][news43 core bip158] para obtener más información).
+    [PR#16442][Bitcoin Core #16442] está actualmente abierto para agregar soporte
+    para el protocolo [BIP157][] correspondiente que permitirá compartir estos
+    filtros con clientes a través de la red P2P.
 
-    - _Funciones obsoletas o eliminadas_: el soporte para el protocolo de pago
-      [BIP70][], los filtros de bloom del protocolo [BIP37][] P2P y los
-      mensajes de rechazo del protocolo [BIP61][] P2P se han deshabilitado por
-      default, eliminando la fuente de varios problemas (respectivamente, consulta
-      los newsletters [#19][news19 bip70], [#57][news57 bip37] y [#37][news37 bip61])
-      El protocolo de pago y los mensajes de rechazo están programados para
-      eliminarse por completo en la próxima versión principal de Bitcoin Core dentro
-      de seis meses a partir de ahora.
+  - _Funciones obsoletas o eliminadas_: el soporte para el protocolo de pago
+    [BIP70][], los filtros de bloom del protocolo [BIP37][] P2P y los
+    mensajes de rechazo del protocolo [BIP61][] P2P se han deshabilitado por
+    default, eliminando la fuente de varios problemas (respectivamente, consulta
+    los newsletters [#19][news19 bip70], [#57][news57 bip37] y [#37][news37 bip61])
+    El protocolo de pago y los mensajes de rechazo están programados para
+    eliminarse por completo en la próxima versión principal de Bitcoin Core dentro
+    de seis meses a partir de ahora.
 
-    - _Permisos personalizables para los whitelisted peers_: al especificar
-      qué peers o interfaces deben incluirse en la lista blanca (whitelisted),
-      los usuarios ahora pueden especificar a qué características especiales pueden
-      acceder los whitelisted peers. Anteriormente, los whitelisted peers no estaban
-      baneados y recibían transacciones retransmitidas más rápido. Estos valores
-      predeterminados no han cambiado, pero ahora es posible alternar esa
-      configuración por pares o permitir a whitelisted peers específicos que
-      soliciten filtros de bloom BIP37 aunque están deshabilitados para peers no
-      incluidos en la lista blanca de forma predeterminada. Para más detalles, ve la
-      [Newsletter #60][news60 16248].
+  - _Permisos personalizables para los whitelisted peers_: al especificar
+    qué peers o interfaces deben incluirse en la lista blanca (whitelisted),
+    los usuarios ahora pueden especificar a qué características especiales pueden
+    acceder los whitelisted peers. Anteriormente, los whitelisted peers no estaban
+    baneados y recibían transacciones retransmitidas más rápido. Estos valores
+    predeterminados no han cambiado, pero ahora es posible alternar esa
+    configuración por pares o permitir a whitelisted peers específicos que
+    soliciten filtros de bloom BIP37 aunque están deshabilitados para peers no
+    incluidos en la lista blanca de forma predeterminada. Para más detalles, ve la
+    [Newsletter #60][news60 16248].
 
-    - _Mejoras de la GUI_: los usuarios gráficos ahora pueden crear nuevas
-      billeteras para usar con el modo de múltiples billeteras desde el menú de
-      archivo de la GUI (ver la [Newsletter #63][news63 new wallet]). La GUI ahora
-      también proporciona a los usuarios direcciones Bitcoin [bech32][topic bech32]
-      de forma predeterminada, pero los usuarios pueden solicitar fácilmente una
-      dirección P2SH-P2WPKH compatible con versiones anteriores al seleccionar una
-      casilla de verificación al lado del botón para generar una dirección (ver la
-      [Newsletter #42][news42 core gui bech32]).
+  - _Mejoras de la GUI_: los usuarios gráficos ahora pueden crear nuevas
+    billeteras para usar con el modo de múltiples billeteras desde el menú de
+    archivo de la GUI (ver la [Newsletter #63][news63 new wallet]). La GUI ahora
+    también proporciona a los usuarios direcciones Bitcoin [bech32][topic bech32]
+    de forma predeterminada, pero los usuarios pueden solicitar fácilmente una
+    dirección P2SH-P2WPKH compatible con versiones anteriores al seleccionar una
+    casilla de verificación al lado del botón para generar una dirección (ver la
+    [Newsletter #42][news42 core gui bech32]).
 
-    - _Administración opcional para preservar privacidad de direcciones:_ se
-      puede habilitar un nuevo indicador de billetera `avoid_reuse`, que se
-      puede seleccionar usando un nuevo RPC `setwalletflag`, para evitar que la
-      billetera gaste bitcoins recibidos en una dirección que se usó anteriormente
-      (ver la [Newsletter #52][news52 avoid_reuse]). Esto evita ciertas fugas de
-      privacidad basadas en el análisis de la cadena de bloques, como [dust
-      flooding][].
+  - _Administración opcional para preservar privacidad de direcciones:_ se
+    puede habilitar un nuevo indicador de billetera `avoid_reuse`, que se
+    puede seleccionar usando un nuevo RPC `setwalletflag`, para evitar que la
+    billetera gaste bitcoins recibidos en una dirección que se usó anteriormente
+    (ver la [Newsletter #52][news52 avoid_reuse]). Esto evita ciertas fugas de
+    privacidad basadas en el análisis de la cadena de bloques, como [dust
+    flooding][].
 
-    Para obtener una lista completa de los cambios notables, enlaces a los PRs
-    donde se realizaron esos cambios e información adicional útil para los
-    operadores de nodos, consulta las [notas de lanzamiento][notes 0.19.0] del
-    proyecto Bitcoin Core.
+  Para obtener una lista completa de los cambios notables, enlaces a los PRs
+  donde se realizaron esos cambios e información adicional útil para los
+  operadores de nodos, consulta las [notas de lanzamiento][notes 0.19.0] del
+  proyecto Bitcoin Core.
 
 - **Nueva lista de correo de LND y nuevo host de listas de correo existentes:**
   se anunció una [nueva lista de correo][lnd engineering] alojada por Google
@@ -124,40 +124,40 @@ Bitcoin.
   estado escribiendo sus propias implementaciones de partes de los BIPs,
   incluyendo los nodos de verificación completa libbitcoin y bcoin.
 
-    Esta semana también se publicaron dos publicaciones informativas en el blog
-    relacionadas con la seguridad de las firmas schnorr multiparte. El ingeniero de
-    Blockstream Jonas Nick [describe][nick musig] el esquema de firma multiparte
-    [MuSig][] que está diseñado para permitir que los usuarios de [bip-schnorr][]
-    agreguen múltiples llaves públicas en una sola llave pública. Luego pueden
-    firmar esa llave para usar una firma única generada en colaboración entre
-    ellos. Nick describe los tres pasos del protocolo de firma MuSig: el
-    intercambio de compromisos nonce, el intercambio de nonces y el intercambio de
-    firmas parciales (con el nonces y las firmas parciales que se agregan para
-    producir la firma final). Para ahorrar tiempo cuando la velocidad es crítica
-    (como al crear transacciones de compromiso de canal LN), algunas personas
-    pueden desear intercambiar compromisos nonce seguidas de nonces antes de saber
-    a qué transacción quieren comprometerse con su firma, pero esto no es seguro
-    debido al algoritmo de Wagner, como Nick explica brevemente. La única
-    información que se puede compartir de manera segura antes de que cada
-    participante conozca la transacción a firmar es el compromiso nonce. (No
-    mencionado en la publicación del blog, pero discutido en IRC, fue que Pieter
-    Wuille entre otros ha estado investigando una construcción basada en Zero
-    Knowledge Proof (ZKP) que podría permitir una interactividad reducida). La
-    publicación del blog concluye con una sugerencia de que los lectores
-    interesados revisen la implementación de MuSig en
-    [libsecp256k1-zkp][], que está diseñada para ayudar a los desarrolladores a
-    usar el protocolo de manera segura.
+  Esta semana también se publicaron dos publicaciones informativas en el blog
+  relacionadas con la seguridad de las firmas schnorr multiparte. El ingeniero de
+  Blockstream Jonas Nick [describe][nick musig] el esquema de firma multiparte
+  [MuSig][] que está diseñado para permitir que los usuarios de [bip-schnorr][]
+  agreguen múltiples llaves públicas en una sola llave pública. Luego pueden
+  firmar esa llave para usar una firma única generada en colaboración entre
+  ellos. Nick describe los tres pasos del protocolo de firma MuSig: el
+  intercambio de compromisos nonce, el intercambio de nonces y el intercambio de
+  firmas parciales (con el nonces y las firmas parciales que se agregan para
+  producir la firma final). Para ahorrar tiempo cuando la velocidad es crítica
+  (como al crear transacciones de compromiso de canal LN), algunas personas
+  pueden desear intercambiar compromisos nonce seguidas de nonces antes de saber
+  a qué transacción quieren comprometerse con su firma, pero esto no es seguro
+  debido al algoritmo de Wagner, como Nick explica brevemente. La única
+  información que se puede compartir de manera segura antes de que cada
+  participante conozca la transacción a firmar es el compromiso nonce. (No
+  mencionado en la publicación del blog, pero discutido en IRC, fue que Pieter
+  Wuille entre otros ha estado investigando una construcción basada en Zero
+  Knowledge Proof (ZKP) que podría permitir una interactividad reducida). La
+  publicación del blog concluye con una sugerencia de que los lectores
+  interesados revisen la implementación de MuSig en
+  [libsecp256k1-zkp][], que está diseñada para ayudar a los desarrolladores a
+  usar el protocolo de manera segura.
 
-    Influenciado por la presentación de Jonas Nick sobre este tema en la Berlin
-    Lightning Conference, Adam Gibson escribió una [publicación de blog][gibson
-    wagners] separada que describe el algoritmo de Wagner con mucho más detalle,
-    con una combinación de matemáticas, análisis intuitivo e información de
-    actualidad que los Bitcoiners pueden encontrar interesante (como el divertido
-    fragmento del [artículo de Wagner][Wagner's paper] citando a Adam Back y Wei
-    Dai varios años antes de que Nakamoto hiciera [lo mismo][bitcoin.pdf], aunque
-    para un trabajo diferente).  Se recomienda a cualquier persona interesada en
-    desarrollar sus propios protocolos criptográficos que lea ambas publicaciones,
-    ya que cada una complementa a la otra sin ser repetitiva sobre el tema.
+  Influenciado por la presentación de Jonas Nick sobre este tema en la Berlin
+  Lightning Conference, Adam Gibson escribió una [publicación de blog][gibson
+  wagners] separada que describe el algoritmo de Wagner con mucho más detalle,
+  con una combinación de matemáticas, análisis intuitivo e información de
+  actualidad que los Bitcoiners pueden encontrar interesante (como el divertido
+  fragmento del [artículo de Wagner][Wagner's paper] citando a Adam Back y Wei
+  Dai varios años antes de que Nakamoto hiciera [lo mismo][bitcoin.pdf], aunque
+  para un trabajo diferente).  Se recomienda a cualquier persona interesada en
+  desarrollar sus propios protocolos criptográficos que lea ambas publicaciones,
+  ya que cada una complementa a la otra sin ser repetitiva sobre el tema.
 
 ## Preguntas y respuestas seleccionadas de Bitcoin Stack Exchange
 
@@ -300,3 +300,4 @@ repo] y [Lightning BOLTs][bolts repo].*
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
+[musig]: https://eprint.iacr.org/2018/068

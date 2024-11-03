@@ -119,8 +119,7 @@ Bitcoin Optech 的成立，部分是为了“帮助促进改善商业与开源�
 
 近五年来，我们很高兴提供这项服务。我们试图通过提供[钱包技术兼容性][compatibility matrix]指南，超过 100 个[感兴趣话题][topics]的索引，以及与嘉宾进行的每周讨论[播客][podcast]来扩展这一简单的使命，嘉宾中包括许多贡献者，我们有幸撰写了他们的工作。
 
-如果没有众多贡献者，这一切都不可能实现，过去一年包括：
-<!-- alphabetical -->
+如果没有众多贡献者，这一切都不可能实现，过去一年包括： <!-- alphabetical -->
 Adam Jonas、
 Copinmalin、
 David A. Harding、
@@ -154,7 +153,7 @@ Zhiwei "Jeffrey" Hu
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [financial supporters]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html

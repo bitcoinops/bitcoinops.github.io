@@ -6,12 +6,12 @@ title: Dual funding
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Interactive funding protocol
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Liquidity Management
 
@@ -125,6 +125,15 @@ optech_mentions:
 
   - title: "LDK #2770 begins preparing to later add support for dual-funded channels"
     url: /en/newsletters/2024/02/28/#ldk-2770
+
+  - title: "Eclair #2829 allows plugins to set a policy for contributing funds in a dual-funded channel open"
+    url: /en/newsletters/2024/03/06/#eclair-2829
+
+  - title: "LDK #2419 adds a state machine for handling interactive transaction construction"
+    url: /en/newsletters/2024/03/27/#ldk-2419
+
+  - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
+    url: /en/newsletters/2024/10/04/#eclair-2861
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -31,54 +31,54 @@ Bitcoin les plus répandus.
   plus grande qu'une ouverture normale à deux parties mais qui ouvrirait
   un total de 190 canaux<!-- n=20 ; n*(n - 1)/2 -->.
 
-    Law note que le protocole de canal LN existant (communément appelé
-    pénalité-LN) crée deux problèmes pour les canaux ouverts depuis
-    l'intérieur d'une usine :
+  Law note que le protocole de canal LN existant (communément appelé
+  pénalité-LN) crée deux problèmes pour les canaux ouverts depuis
+  l'intérieur d'une usine :
 
-    - *Les expirations HTLC requises sont longues :* L'absence de confiance
-      exige que tout participant à une usine puisse en sortir et reprendre
-      le contrôle exclusif de ses fonds sur la chaîne. Ceci est accompli
-      par le participant qui publie l'état actuel des soldes dans l'usine
-      onchain. Cependant, un mécanisme est nécessaire pour empêcher le
-      participant de publier un état antérieur, par exemple un état où il
-      contrôlait une plus grande quantité d'argent. La proposition originale
-      accomplit cela en utilisant une ou plusieurs transactions
-      verrouillées dans le temps qui garantissent que les états plus récents
-      peuvent être confirmés plus rapidement que les états périmés.
+  - *Les expirations HTLC requises sont longues :* L'absence de confiance
+    exige que tout participant à une usine puisse en sortir et reprendre
+    le contrôle exclusif de ses fonds sur la chaîne. Ceci est accompli
+    par le participant qui publie l'état actuel des soldes dans l'usine
+    onchain. Cependant, un mécanisme est nécessaire pour empêcher le
+    participant de publier un état antérieur, par exemple un état où il
+    contrôlait une plus grande quantité d'argent. La proposition originale
+    accomplit cela en utilisant une ou plusieurs transactions
+    verrouillées dans le temps qui garantissent que les états plus récents
+    peuvent être confirmés plus rapidement que les états périmés.
 
-        La conséquence de ceci, décrite par Law, est que tout paiement LN ([HTLC][topic htlc])
-        qui est acheminé par un canal dans une usine à canaux doit prévoir
-        suffisamment de temps pour que le dernier timelock d'état expire afin
-        que l'usine puisse être unilatéralement fermée. Pire encore, cela s'applique
-        chaque fois qu'un paiement est acheminé par une usine. Par exemple,
-        si un paiement est transmis par 10 usines ayant chacune une expiration
-        d'un jour, il est possible qu'un paiement soit [brouillé][topic channel jamming attacks]
-        par accident ou volontairement pendant 10 jours (ou plus, selon d'autres
-        paramètres HTLC).
+    La conséquence de ceci, décrite par Law, est que tout paiement LN ([HTLC][topic htlc])
+    qui est acheminé par un canal dans une usine à canaux doit prévoir
+    suffisamment de temps pour que le dernier timelock d'état expire afin
+    que l'usine puisse être unilatéralement fermée. Pire encore, cela s'applique
+    chaque fois qu'un paiement est acheminé par une usine. Par exemple,
+    si un paiement est transmis par 10 usines ayant chacune une expiration
+    d'un jour, il est possible qu'un paiement soit [brouillé][topic channel jamming attacks]
+    par accident ou volontairement pendant 10 jours (ou plus, selon d'autres
+    paramètres HTLC).
 
-    - *Tout ou rien :* pour que les usines atteignent vraiment leur meilleure
-      efficacité, tous leurs canaux doivent également être fermés de manière
-      coopérative dans une seule transaction onchain. Les fermetures coopératives
-      ne sont pas possibles si l'un des participants initiaux ne répond plus---et la
-      probabilité qu'un participant ne réponde plus s'approche de 100 % lorsque
-      le nombre de participants augmente, ce qui limite le bénéfice maximal que
-      les usines peuvent fournir.
+  - *Tout ou rien :* pour que les usines atteignent vraiment leur meilleure
+    efficacité, tous leurs canaux doivent également être fermés de manière
+    coopérative dans une seule transaction onchain. Les fermetures coopératives
+    ne sont pas possibles si l'un des participants initiaux ne répond plus---et la
+    probabilité qu'un participant ne réponde plus s'approche de 100 % lorsque
+    le nombre de participants augmente, ce qui limite le bénéfice maximal que
+    les usines peuvent fournir.
 
-        Law cite des travaux antérieurs visant à permettre aux usines de rester
-        opérationnelles même si l'un des participants veut partir ou, à l'inverse,
-        si l'un des participants ne répond plus, comme les propositions pour
-        `OP_TAPLEAF_UPDATE_VERIFY` et `OP_EVICT` (voir la lettre d'information [#166][news166 tluv]
-        et [#189][news189 evict]).
+    Law cite des travaux antérieurs visant à permettre aux usines de rester
+    opérationnelles même si l'un des participants veut partir ou, à l'inverse,
+    si l'un des participants ne répond plus, comme les propositions pour
+    `OP_TAPLEAF_UPDATE_VERIFY` et `OP_EVICT` (voir la lettre d'information [#166][news166 tluv]
+    et [#189][news189 evict]).
 
-    Trois propositions de protocoles sont présentées par Law pour répondre à ces
-    préoccupations. Tous découlent d'une proposition précédente de Law [posted][law tp]
-    en octobre pour des *pénalités ajustables*---la capacité de séparer la gestion
-    du mécanisme d'exécution (des pénalités) de la gestion d'autres fonds. Cette
-    précédente proposition n'a pas encore été discutée sur la liste de diffusion
-    Lightning-Dev. Au moment où nous écrivons ces lignes, la nouvelle proposition
-    de Law n'a pas non plus fait l'objet de discussions. Si ces propositions sont
-    valables, elles auraient l'avantage, par rapport à d'autres propositions, de
-    ne nécessiter aucune modification des règles de consensus de Bitcoin.
+  Trois propositions de protocoles sont présentées par Law pour répondre à ces
+  préoccupations. Tous découlent d'une proposition précédente de Law [posted][law tp]
+  en octobre pour des *pénalités ajustables*---la capacité de séparer la gestion
+  du mécanisme d'exécution (des pénalités) de la gestion d'autres fonds. Cette
+  précédente proposition n'a pas encore été discutée sur la liste de diffusion
+  Lightning-Dev. Au moment où nous écrivons ces lignes, la nouvelle proposition
+  de Law n'a pas non plus fait l'objet de discussions. Si ces propositions sont
+  valables, elles auraient l'avantage, par rapport à d'autres propositions, de
+  ne nécessiter aucune modification des règles de consensus de Bitcoin.
 
 - **Brouillage local pour éviter le brouillage à distance :** Joost Jager a
   [posté][jager jam] sur la liste de diffusion Lightning-Dev un lien et une
@@ -87,73 +87,73 @@ Bitcoin les plus répandus.
   ([HTLCs][topic htlc]) que le nœud local transmettra pour le compte de chacun
   de ses pairs. Par exemple, considérons le pire cas d'attaque par brouillage HTLC :
 
-    ![Illustration de deux attaques par brouillage différentes](/img/posts/2020-12-ln-jamming-attacks.png)
+  ![Illustration de deux attaques par brouillage différentes](/img/posts/2020-12-ln-jamming-attacks.png)
 
-    Avec l'actuel protocole LN, Alice est fondamentalement limitée à la transmission
-    simultanée d'un maximum de [483 HTLC en attente][]. Si, au lieu de cela, elle
-    utilise CircuitBreaker pour limiter son canal avec Mallory à 10 transferts
-    simultanés de HTLC en attente, son canal en aval avec Bob (non visualisé) et
-    tous les autres canaux de ce circuit seront protégés de tous les HTLC sauf
-    les 10 premiers que Mallory garde en attente. Cela peut réduire considérablement
-    l'efficacité de l'attaque de Mallory en l'obligeant à ouvrir beaucoup plus
-    de canaux pour bloquer le même nombre d'emplacements HTLC, ce qui peut augmenter
-    le coût de l'attaque en l'obligeant à payer plus de frais onchain.
+  Avec l'actuel protocole LN, Alice est fondamentalement limitée à la transmission
+  simultanée d'un maximum de [483 HTLC en attente][]. Si, au lieu de cela, elle
+  utilise CircuitBreaker pour limiter son canal avec Mallory à 10 transferts
+  simultanés de HTLC en attente, son canal en aval avec Bob (non visualisé) et
+  tous les autres canaux de ce circuit seront protégés de tous les HTLC sauf
+  les 10 premiers que Mallory garde en attente. Cela peut réduire considérablement
+  l'efficacité de l'attaque de Mallory en l'obligeant à ouvrir beaucoup plus
+  de canaux pour bloquer le même nombre d'emplacements HTLC, ce qui peut augmenter
+  le coût de l'attaque en l'obligeant à payer plus de frais onchain.
 
-    Bien que CircuitBreaker ait été implémenté à l'origine pour refuser tout HTLC dans
-    un canal qui dépassait sa limite, Jager note qu'il a récemment implémenté un mode
-    supplémentaire optionnel qui place tous les HTLC dans une file d'attente au lieu de
-    les refuser ou de les transférer immédiatement.  Lorsque le nombre de HTLC en attente
-    dans un canal tombe en dessous de la limite du canal, CircuitBreaker transmet le HTLC
-    le plus ancien et non expiré de la file d'attente.  Jager décrit deux avantages de
-    cette approche :
+  Bien que CircuitBreaker ait été implémenté à l'origine pour refuser tout HTLC dans
+  un canal qui dépassait sa limite, Jager note qu'il a récemment implémenté un mode
+  supplémentaire optionnel qui place tous les HTLC dans une file d'attente au lieu de
+  les refuser ou de les transférer immédiatement.  Lorsque le nombre de HTLC en attente
+  dans un canal tombe en dessous de la limite du canal, CircuitBreaker transmet le HTLC
+  le plus ancien et non expiré de la file d'attente.  Jager décrit deux avantages de
+  cette approche :
 
-    - *Contre-pression :* si un nœud au milieu d'un circuit refuse un HTLC,
-      tous les nœuds du circuit (pas seulement ceux qui se trouvent plus bas
-      dans le circuit) peuvent utiliser l'emplacement et les fonds de ce HTLC
-      pour transmettre d'autres paiements. Cela signifie qu'Alice a peu
-      intérêt à refuser plus de 10 HTLC de Mallory---elle peut simplement
-      espérer qu'un nœud ultérieur du circuit exécutera CircuitBreaker ou un
-      logiciel équivalent.
+  - *Contre-pression :* si un nœud au milieu d'un circuit refuse un HTLC,
+    tous les nœuds du circuit (pas seulement ceux qui se trouvent plus bas
+    dans le circuit) peuvent utiliser l'emplacement et les fonds de ce HTLC
+    pour transmettre d'autres paiements. Cela signifie qu'Alice a peu
+    intérêt à refuser plus de 10 HTLC de Mallory---elle peut simplement
+    espérer qu'un nœud ultérieur du circuit exécutera CircuitBreaker ou un
+    logiciel équivalent.
 
-        Cependant, si un nœud ultérieur (disons Bob) utilise CircuitBreaker
-        pour mettre en file d'attente les HTLC excédentaires, alors Alice
-        pourrait toujours voir ses créneaux HTLC ou ses fonds drainés par
-        Mallory, même si Bob et les nœuds ultérieurs du circuit conservent
-        les mêmes avantages que maintenant (à l'exception d'une augmentation
-        possible des coûts de fermeture du canal pour Bob dans certains cas;
-        voir le courriel de Jager ou la documentation de CircuitBreaker pour
-        plus de détails). Cela pousse doucement Alice à utiliser CircuitBreaker
-        ou quelque chose de similaire.
+    Cependant, si un nœud ultérieur (disons Bob) utilise CircuitBreaker
+    pour mettre en file d'attente les HTLC excédentaires, alors Alice
+    pourrait toujours voir ses créneaux HTLC ou ses fonds drainés par
+    Mallory, même si Bob et les nœuds ultérieurs du circuit conservent
+    les mêmes avantages que maintenant (à l'exception d'une augmentation
+    possible des coûts de fermeture du canal pour Bob dans certains cas;
+    voir le courriel de Jager ou la documentation de CircuitBreaker pour
+    plus de détails). Cela pousse doucement Alice à utiliser CircuitBreaker
+    ou quelque chose de similaire.
 
-    - *Attribution des défaillances :* le protocole LN actuel permet (dans de nombreux cas)
-      à un opérateur d'identifier le canal qui a refusé de transmettre un HTLC.
-      Certains logiciels d'envoi essaient d'éviter d'utiliser ces canaux dans les
-      futurs HTLC pendant un certain temps. Dans le cas du refus des HTLC
-      d'acteurs malveillants comme Mallory, cela n'a évidemment pas d'importance,
-      mais si un nœud exécutant CircuitBreaker refuse les HTLC de payeurs
-      honnêtes, cela peut non seulement réduire ses revenus provenant de ces
-      HTLC refusés, mais aussi les revenus qu'il aurait reçus des tentatives
-      de paiement ultérieures.
+  - *Attribution des défaillances :* le protocole LN actuel permet (dans de nombreux cas)
+    à un opérateur d'identifier le canal qui a refusé de transmettre un HTLC.
+    Certains logiciels d'envoi essaient d'éviter d'utiliser ces canaux dans les
+    futurs HTLC pendant un certain temps. Dans le cas du refus des HTLC
+    d'acteurs malveillants comme Mallory, cela n'a évidemment pas d'importance,
+    mais si un nœud exécutant CircuitBreaker refuse les HTLC de payeurs
+    honnêtes, cela peut non seulement réduire ses revenus provenant de ces
+    HTLC refusés, mais aussi les revenus qu'il aurait reçus des tentatives
+    de paiement ultérieures.
 
-        Cependant, le protocole LN ne dispose pas actuellement d'un moyen
-        largement déployé pour déterminer quel canal a retardé un HTLC, il
-        est donc moins conséquent à cet égard de retarder l'envoi d'un HTLC
-        que de refuser purement et simplement de l'envoyer. Jager note que
-        cette situation est en train de changer en raison des nombreuses
-        implémentations LN qui travaillent à la prise en charge de messages
-        d'erreur plus détaillés sur le routage en oignon (voir le [bulletin
-        d'information #224][news224 fat]), cet avantage pourrait donc
-        disparaître un jour.
+    Cependant, le protocole LN ne dispose pas actuellement d'un moyen
+    largement déployé pour déterminer quel canal a retardé un HTLC, il
+    est donc moins conséquent à cet égard de retarder l'envoi d'un HTLC
+    que de refuser purement et simplement de l'envoyer. Jager note que
+    cette situation est en train de changer en raison des nombreuses
+    implémentations LN qui travaillent à la prise en charge de messages
+    d'erreur plus détaillés sur le routage en oignon (voir le [bulletin
+    d'information #224][news224 fat]), cet avantage pourrait donc
+    disparaître un jour.
 
-    Pour Jager, CircuitBreaker est "un moyen simple mais imparfait de lutter contre
-    le brouillage des canaux et le pollupostage". Les travaux se poursuivent pour
-    trouver et déployer un changement au niveau du protocole qui atténuera de
-    manière plus complète les préoccupations relatives aux attaques par brouillage,
-    mais CircuitBreaker se distingue comme une solution apparemment raisonnable,
-    compatible avec le protocole LN actuel et que tout utilisateur de LND peut
-    déployer immédiatement sur son nœud de transmission. CircuitBreaker est sous
-    licence MIT et conceptuellement simple, il devrait donc être possible de
-    l'adapter ou de le porter pour d'autres implémentations LN.
+  Pour Jager, CircuitBreaker est "un moyen simple mais imparfait de lutter contre
+  le brouillage des canaux et le pollupostage". Les travaux se poursuivent pour
+  trouver et déployer un changement au niveau du protocole qui atténuera de
+  manière plus complète les préoccupations relatives aux attaques par brouillage,
+  mais CircuitBreaker se distingue comme une solution apparemment raisonnable,
+  compatible avec le protocole LN actuel et que tout utilisateur de LND peut
+  déployer immédiatement sur son nœud de transmission. CircuitBreaker est sous
+  licence MIT et conceptuellement simple, il devrait donc être possible de
+  l'adapter ou de le porter pour d'autres implémentations LN.
 
 - **Suivi des remplacements par full-RBF :** Le développeur 0xB10C a [posté][0xb10c rbf]
   sur la liste de diffusion Bitcoin-Dev qu'il a commencé à fournir un suivi [accessible au public][rbf mpo]
@@ -161,12 +161,12 @@ Bitcoin les plus répandus.
   pas le signal BIP125. Leur nœud permet le remplacement complet des RBF en utilisant
   l'option de configuration `mempoolfullrbf` (voir [le bulletin d'information #208][news208 rbf]).
 
-    Les utilisateurs et les services peuvent utiliser le site Web comme un indicateur
-    pour savoir quels grands pools miniers pourraient actuellement confirmer des
-    transactions de remplacement non signées (si certains le font).  Cependant, nous
-    rappelons aux lecteurs que les paiements reçus dans le cadre de transactions
-    non confirmées ne peuvent être garantis, même si les mineurs ne semblent pas
-    actuellement exploiter des remplacements non signalés.
+  Les utilisateurs et les services peuvent utiliser le site Web comme un indicateur
+  pour savoir quels grands pools miniers pourraient actuellement confirmer des
+  transactions de remplacement non signées (si certains le font).  Cependant, nous
+  rappelons aux lecteurs que les paiements reçus dans le cadre de transactions
+  non confirmées ne peuvent être garantis, même si les mineurs ne semblent pas
+  actuellement exploiter des remplacements non signalés.
 
 ## Changements principaux dans le code et la documentation
 
@@ -252,11 +252,11 @@ Veuillez envisager de passer aux nouvelles versions ou d'aider à tester les ver
   aux actions basées sur les RPC. Voir les [notes de version][bcc rn] pour la liste complète des nouvelles
   fonctionnalités et des corrections de bogues.
 
-    Note : une version 24.0 a été marquée et ses binaires ont été publiés,
-    mais les mainteneurs du projet ne l'ont jamais annoncée et ont plutôt
-    travaillé avec d'autres contributeurs pour résoudre [quelques problèmes
-    de dernière minute][bcc milestone 24.0.1], faisant de cette version 24.0.1
-    la première version annoncée de la branche 24.x.
+  Note : une version 24.0 a été marquée et ses binaires ont été publiés,
+  mais les mainteneurs du projet ne l'ont jamais annoncée et ont plutôt
+  travaillé avec d'autres contributeurs pour résoudre [quelques problèmes
+  de dernière minute][bcc milestone 24.0.1], faisant de cette version 24.0.1
+  la première version annoncée de la branche 24.x.
 
 - [libsecp256k1 0.2.0][] est la première version balisée de cette bibliothèque
   largement utilisée pour les opérations cryptographiques liées à Bitcoin. Une

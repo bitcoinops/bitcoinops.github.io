@@ -25,15 +25,15 @@ lang: ja
   それに比べて、単一のCTV opcodeはすべてのアウトプットにコミットすることができます。
   そのため、COCVの効率は低下しますが、彼が指摘するように「十分にシンプルで面白い」。
 
-    Halsethは、機能の説明だけではなく、[Tapsim][]を使った動作の[デモ][halseth demo]も提供しています。
-    このツールは、「Bitcoinスクリプトのプリミティブを操作し、スクリプトのデバッグを支援し、
-    スクリプト実行時のVMの状態を視覚化することを目的したBitcoin Tapscriptトランザクションのデバッグツール」です。
+  Halsethは、機能の説明だけではなく、[Tapsim][]を使った動作の[デモ][halseth demo]も提供しています。
+  このツールは、「Bitcoinスクリプトのプリミティブを操作し、スクリプトのデバッグを支援し、
+  スクリプト実行時のVMの状態を視覚化することを目的したBitcoin Tapscriptトランザクションのデバッグツール」です。
 
-    別のスレッドで、HalsethはMATTと[OP_CAT][]を使用して[Joinpool][topic joinpools]
-    （_Coinpool_ や a _Payment pool_ とも呼ばれる）を作成することについても[投稿しました][halseth matt-joinpool]。
-    ここでも、Tapsimを使った[インタラクティブなデモ][demo joinpool]が提供されています。
-    また、実験的な実装の結果に基づき、MATTの提案に含まれるopcodeの修正案をいくつか提示しています。
-    MATTの提案者であるSalvatore Ingalaは、好意的に[答えています][ingala matt]。
+  別のスレッドで、HalsethはMATTと[OP_CAT][]を使用して[Joinpool][topic joinpools]
+  （_Coinpool_ や a _Payment pool_ とも呼ばれる）を作成することについても[投稿しました][halseth matt-joinpool]。
+  ここでも、Tapsimを使った[インタラクティブなデモ][demo joinpool]が提供されています。
+  また、実験的な実装の結果に基づき、MATTの提案に含まれるopcodeの修正案をいくつか提示しています。
+  MATTの提案者であるSalvatore Ingalaは、好意的に[答えています][ingala matt]。
 
 ## 承認を待つ #4: 手数料率の推定
 

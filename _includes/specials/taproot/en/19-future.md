@@ -28,24 +28,24 @@ expressed the desire to build on top of taproot.
   either commit to the txids in the prevouts or don't commit to the
   prevouts at all.
 
-    That's a problem for multiuser protocols that don't want to use a
-    precise pre-arranged series of transactions.  If any user can skip a
-    particular transaction, or change any detail of any transaction
-    besides its witness data, that will change any later transaction's
-    txid.  Changing the txid invalidates any signatures previously
-    created for later transactions.  This forces offchain protocols to
-    implement mechanisms (such as LN-penalty) that penalize any user who
-    submits an older transaction.
+  That's a problem for multiuser protocols that don't want to use a
+  precise pre-arranged series of transactions.  If any user can skip a
+  particular transaction, or change any detail of any transaction
+  besides its witness data, that will change any later transaction's
+  txid.  Changing the txid invalidates any signatures previously
+  created for later transactions.  This forces offchain protocols to
+  implement mechanisms (such as LN-penalty) that penalize any user who
+  submits an older transaction.
 
-    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] can eliminate this
-    problem by allowing a signature to skip committing to the prevout
-    txid.  Depending on other flags used, it will still commit to other
-    details about the prevout and the transaction (such as amount and
-    script), but it will no longer matter what txid is used for the
-    previous transaction.  This will make it possible to implement both the
-    [eltoo][topic eltoo] layer for LN and
-    [improvements][p4tr vaults] in [vaults][topic vaults] and other
-    contract protocols.
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] can eliminate this
+  problem by allowing a signature to skip committing to the prevout
+  txid.  Depending on other flags used, it will still commit to other
+  details about the prevout and the transaction (such as amount and
+  script), but it will no longer matter what txid is used for the
+  previous transaction.  This will make it possible to implement both the
+  [eltoo][topic eltoo] layer for LN and
+  [improvements][p4tr vaults] in [vaults][topic vaults] and other
+  contract protocols.
 
 - **Delegation and generalization:** after you create a script (taproot
   or otherwise), there's [almost][rubin delegation] no way for you to
@@ -57,34 +57,34 @@ expressed the desire to build on top of taproot.
   enhancing taproot by generalizing it and providing [signer
   delegation][topic signer delegation] have been proposed:
 
-    - **Graftroot:** [proposed][maxwell graftroot] shortly after the
-      introduction of the idea for taproot, graftroot would give an
-      extra feature to anyone capable of making a taproot keypath
-      spend.  Instead of directly spending their funds, the keypath
-      signers could instead sign a script that described new conditions
-      under which the funds could be spent, delegating spending
-      authority to anyone capable of satisfying the script.  The
-      signature, the script, and whatever data was needed to satisfy the
-      script would be provided in the spending transaction.  The keypath
-      signers could delegate to an unlimited number of scripts in this
-      way without creating any onchain data until an actual spend
-      occurred.
+  - **Graftroot:** [proposed][maxwell graftroot] shortly after the
+    introduction of the idea for taproot, graftroot would give an
+    extra feature to anyone capable of making a taproot keypath
+    spend.  Instead of directly spending their funds, the keypath
+    signers could instead sign a script that described new conditions
+    under which the funds could be spent, delegating spending
+    authority to anyone capable of satisfying the script.  The
+    signature, the script, and whatever data was needed to satisfy the
+    script would be provided in the spending transaction.  The keypath
+    signers could delegate to an unlimited number of scripts in this
+    way without creating any onchain data until an actual spend
+    occurred.
 
-    - **Generalized taproot (g'root):** a few months later, Anthony
-      Towns [suggested][towns groot] a way to use public key points to
-      commit to multiple different spending conditions without
-      necessarily using a [MAST][topic mast]-like construction.  This
-      *generalized taproot* (g'root) construction is "potentially more
-      efficient for cases [where the taproot assumption doesn't
-      hold][p4tr taproot assumption]".  It also "[offers][sipa groot
-      agg] an easy way to construct a softfork-safe cross-input
-      aggregation system".
+  - **Generalized taproot (g'root):** a few months later, Anthony
+    Towns [suggested][towns groot] a way to use public key points to
+    commit to multiple different spending conditions without
+    necessarily using a [MAST][topic mast]-like construction.  This
+    *generalized taproot* (g'root) construction is "potentially more
+    efficient for cases [where the taproot assumption doesn't
+    hold][p4tr taproot assumption]".  It also "[offers][sipa groot
+    agg] an easy way to construct a softfork-safe cross-input
+    aggregation system".
 
-    - **Entroot:** a [more recent][wuille entroot] synthesis of
-      graftroot and g'root that simplifies many cases and makes them more
-      bandwidth efficient.  It can support signer delegation from anyone
-      able to satisfy any of the entroot branches, not just those able
-      to create a top-level keypath spend.
+  - **Entroot:** a [more recent][wuille entroot] synthesis of
+    graftroot and g'root that simplifies many cases and makes them more
+    bandwidth efficient.  It can support signer delegation from anyone
+    able to satisfy any of the entroot branches, not just those able
+    to create a top-level keypath spend.
 
 - **New and old opcodes:** the taproot soft fork includes support for
   [tapscript][topic tapscript] which provides an improved way to add new
@@ -93,26 +93,26 @@ expressed the desire to build on top of taproot.
   opcodes are designed to be replaced with opcodes that don't always
   return success.  Some proposed new opcodes include:
 
-    - **Restore old opcodes:** a number of opcodes for math and string
-      operations were disabled in 2010 due to concerns about security
-      vulnerabilities.  Many developers would like to see these opcodes
-      re-enabled after a security review, and (in some cases) perhaps
-      extended to handle larger numbers.
+  - **Restore old opcodes:** a number of opcodes for math and string
+    operations were disabled in 2010 due to concerns about security
+    vulnerabilities.  Many developers would like to see these opcodes
+    re-enabled after a security review, and (in some cases) perhaps
+    extended to handle larger numbers.
 
-    - **OP_CAT:** one of the previously-disabled opcodes that deserves
-      special mention is [OP_CAT][], which researchers
-      have since discovered can [enable][keytrees] all [sorts][rubin
-      pqc] of [interesting][poelstra cat] behavior on Bitcoin by itself,
-      or which can be [combined][topic op_checksigfromstack] with other
-      new opcodes in interesting ways.
+  - **OP_CAT:** one of the previously-disabled opcodes that deserves
+    special mention is [OP_CAT][], which researchers
+    have since discovered can [enable][keytrees] all [sorts][rubin
+    pqc] of [interesting][poelstra cat] behavior on Bitcoin by itself,
+    or which can be [combined][topic op_checksigfromstack] with other
+    new opcodes in interesting ways.
 
-    - **OP_TAPLEAF_UPDATE_VERIFY:** as described in [Newsletter #166][news166 tluv],
-      an `OP_TLUV` opcode can enable [covenants][topic covenants] in a way that's
-      particularly efficient and powerful when used with taproot's
-      keypath and scriptpath capabilities.  This can be used to
-      implement [joinpools][topic joinpools], [vaults][topic vaults], and other security
-      and privacy improvements.  It may also combine well with
-      [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
+  - **OP_TAPLEAF_UPDATE_VERIFY:** as described in [Newsletter #166][news166 tluv],
+    an `OP_TLUV` opcode can enable [covenants][topic covenants] in a way that's
+    particularly efficient and powerful when used with taproot's
+    keypath and scriptpath capabilities.  This can be used to
+    implement [joinpools][topic joinpools], [vaults][topic vaults], and other security
+    and privacy improvements.  It may also combine well with
+    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
 
 All of the ideas above are still only proposals.  None is guaranteed to
 be successful.  It'll be up to researchers and developers to bring each

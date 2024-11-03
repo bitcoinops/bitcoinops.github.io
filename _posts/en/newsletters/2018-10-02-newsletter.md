@@ -39,44 +39,25 @@ projects.
   the most proof of work contained the duplicate inputs and a weaker
   chain did not.
 
-    Eventually, the chain without the duplicate inputs gained more proof
-    of work and the vulnerable nodes attempted to switch to it.  This
-    caused the vulnerable nodes to attempt to re-add the duplicate input
-    to the UTXO database twice, triggering an assert and causing them to
-    shutdown.  When restarted, operators of the vulnerable nodes needed
-    to manually trigger a lengthy reindex procedure to fix their nodes'
-    database inconsistencies.  (This side-effect of recovering from a
-    duplicate inputs chainsplit was previously known to developers.)
+  Eventually, the chain without the duplicate inputs gained more proof
+  of work and the vulnerable nodes attempted to switch to it.  This
+  caused the vulnerable nodes to attempt to re-add the duplicate input
+  to the UTXO database twice, triggering an assert and causing them to
+  shutdown.  When restarted, operators of the vulnerable nodes needed
+  to manually trigger a lengthy reindex procedure to fix their nodes'
+  database inconsistencies.  (This side-effect of recovering from a
+  duplicate inputs chainsplit was previously known to developers.)
 
-    Nodes upgraded to Bitcoin Core 0.16.3, 0.17.0RC4, or running other
-    software that wasn't vulnerable had no reported problems.  However,
-    many block explorers with a testnet mode did accept the vulnerable
-    block, providing a reminder that users should be careful about using
-    third-parties to determine whether or not transactions are valid.
+  Nodes upgraded to Bitcoin Core 0.16.3, 0.17.0RC4, or running other
+  software that wasn't vulnerable had no reported problems.  However,
+  many block explorers with a testnet mode did accept the vulnerable
+  block, providing a reminder that users should be careful about using
+  third-parties to determine whether or not transactions are valid.
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], and [C-lightning][cl commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="920c090f63f4990bf0f3b3d1a6d3d8a8bcd14ba0"
-  end="c9327306b580bb161d1732c0a0260b46c0df015c"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="f4305097e1638f6f8958dfa9eec941d8bf80246e"
-  end="79ed4e8b600e4834f058cbf3cb8b93f5aa5ab3d4"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="3ce53ab9eddd397d57b6afc5faefe6703e56ac26"
-  end="d6fcfe00c722f7e6f4b691cd47743ed593aeea0e"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], and [C-lightning][core lightning repo].*
 
 - [Bitcoin Core #14305][]: after the discovery of a few cases where
   Python-based tests were passing incorrectly as a result of using

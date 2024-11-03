@@ -25,41 +25,41 @@ infrastructure software.
   developed to use more generalized [signature adaptors][topic adaptor
   signatures].
 
-    This week, Lloyd Fournier [posted][fournier dlc-dev] to the DLC-Dev
-    mailing list about the benefits of having an oracle make their
-    attestation using Boneh-Lynn-Shacham ([BLS][]) signatures.  Bitcoin
-    does not support BLS signatures and a soft fork would be required to
-    add them, but Fournier links to a [paper][fournier et al] he
-    co-authored that describes how information can be securely extracted
-    from a BLS signature and used with Bitcoin-compatible signature
-    adaptors without any changes to Bitcoin.
+  This week, Lloyd Fournier [posted][fournier dlc-dev] to the DLC-Dev
+  mailing list about the benefits of having an oracle make their
+  attestation using Boneh--Lynn--Shacham ([BLS][]) signatures.  Bitcoin
+  does not support BLS signatures and a soft fork would be required to
+  add them, but Fournier links to a [paper][fournier et al] he
+  co-authored that describes how information can be securely extracted
+  from a BLS signature and used with Bitcoin-compatible signature
+  adaptors without any changes to Bitcoin.
 
-    Fournier then goes on to describe several benefits of BLS-based
-    attestations.  The most significant of these is that it would allow
-    "stateless" oracles where the parties to a contract (but not the
-    oracle) could privately agree on what information they wanted the
-    oracle to attest to, e.g. by specifying a program written in any
-    programming language they knew the oracle would run.  They could
-    then allocate their deposit funds according to the contract without
-    even telling the oracle that they were planning to use it.  When it
-    came time to settle the contract, each of the parties could run the
-    program themselves and, if they all agreed on the outcome, settle
-    the contract cooperatively without involving the oracle at all.  If
-    they didn't agree, any one of them could send the program to the
-    oracle (perhaps with a small payment for its service) and receive
-    back a BLS attestation to the program source code and the value
-    returned by running it.  The attestation could be transformed into
-    signatures that would allow settling the DLC onchain.  As with
-    current DLC contracts, the oracle would not know which onchain
-    transactions were based on its BLS signatures.  Multiple oracles
-    could be used, including in a threshold configuration (e.g.
-    5-of-10).
+  Fournier then goes on to describe several benefits of BLS-based
+  attestations.  The most significant of these is that it would allow
+  "stateless" oracles where the parties to a contract (but not the
+  oracle) could privately agree on what information they wanted the
+  oracle to attest to, e.g. by specifying a program written in any
+  programming language they knew the oracle would run.  They could
+  then allocate their deposit funds according to the contract without
+  even telling the oracle that they were planning to use it.  When it
+  came time to settle the contract, each of the parties could run the
+  program themselves and, if they all agreed on the outcome, settle
+  the contract cooperatively without involving the oracle at all.  If
+  they didn't agree, any one of them could send the program to the
+  oracle (perhaps with a small payment for its service) and receive
+  back a BLS attestation to the program source code and the value
+  returned by running it.  The attestation could be transformed into
+  signatures that would allow settling the DLC onchain.  As with
+  current DLC contracts, the oracle would not know which onchain
+  transactions were based on its BLS signatures.  Multiple oracles
+  could be used, including in a threshold configuration (e.g.
+  5-of-10).
 
-    The post makes a compelling case for the advantages of stateless
-    oracles over existing DLC oracles which need to be aware of the
-    contract at the time the contract is being created.  As of this
-    writing, the post had not received replies by other DLC
-    contributors. {% assign timestamp="1:59" %}
+  The post makes a compelling case for the advantages of stateless
+  oracles over existing DLC oracles which need to be aware of the
+  contract at the time the contract is being created.  As of this
+  writing, the post had not received replies by other DLC
+  contributors. {% assign timestamp="1:59" %}
 
 ## Releases and release candidates
 

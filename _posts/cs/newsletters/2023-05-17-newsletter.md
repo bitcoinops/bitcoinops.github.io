@@ -87,26 +87,26 @@ změn v populárních bitcoinových páteřních projektech.
   („transaction cut-through”), staré myšlenky na zvýšení soukromí a
   škálovatelnosti a snížení nákladů:
 
-    - *Přeposílání plateb:* namísto platby přímo Bobovi může Alice
-      zaplatit Bobovýmu prodejci (Carol) a tím snížit dluh, který
-      Bob u ní má, nebo si předplatit budoucí útratu.
+  - *Přeposílání plateb:* namísto platby přímo Bobovi může Alice
+    zaplatit Bobovýmu prodejci (Carol) a tím snížit dluh, který
+    Bob u ní má, nebo si předplatit budoucí útratu.
 
-    - *Dávkové přeposílání plateb:* namísto platby přímo Bobovi může
-      Alice zaplatit několika lidem, kterým Bob dluží peníze (nebo si
-      u nich chce založit úvěr). Gouldův příklad uvažuje o směnárnách,
-      které mají stálý tok vkladů a výběrů; payjoin umožňuje, aby
-      výběry byly placeny novými vklady.
+  - *Dávkové přeposílání plateb:* namísto platby přímo Bobovi může
+    Alice zaplatit několika lidem, kterým Bob dluží peníze (nebo si
+    u nich chce založit úvěr). Gouldův příklad uvažuje o směnárnách,
+    které mají stálý tok vkladů a výběrů; payjoin umožňuje, aby
+    výběry byly placeny novými vklady.
 
-    Obě tyto techniky umožňují snížit počet transakcí z minimálně dvou
-    na jednu jedinou, což ušetří významné množství prostoru. S použitím
-    [dávkování][topic payment batching] může být ušetřeného prostoru
-    ještě více. Z pohledu původního příjemce (např. Bob) je navíc výhodné,
-    že původní odesílatel (např. Alice) může platit všechny nebo část
-    poplatků. Odstraňování transakcí z blockchainu a kombinování
-    operací jako příjímání a utrácení též výrazně ztěžuje špehování
-    finančních toků.
+  Obě tyto techniky umožňují snížit počet transakcí z minimálně dvou
+  na jednu jedinou, což ušetří významné množství prostoru. S použitím
+  [dávkování][topic payment batching] může být ušetřeného prostoru
+  ještě více. Z pohledu původního příjemce (např. Bob) je navíc výhodné,
+  že původní odesílatel (např. Alice) může platit všechny nebo část
+  poplatků. Odstraňování transakcí z blockchainu a kombinování
+  operací jako příjímání a utrácení též výrazně ztěžuje špehování
+  finančních toků.
 
-    V době psaní neobdržel příspěvek v emailové skupině žádné reakce.
+  V době psaní neobdržel příspěvek v emailové skupině žádné reakce.
 
 - **Souhrn osobních setkání vývojářů Bitcoin Core:** někteří vývojáři
   pracující na Bitcoin Core se nedávno sešli, aby prodiskutovali
@@ -118,18 +118,18 @@ změn v populárních bitcoinových páteřních projektech.
   Dále byla diskutována dvě další témata, které si podle nás zaslouží
   zvláštní pozornost:
 
-    - [Mempool clustering][] shrnuje návrh na významný redesign ukládání
-      transakcí a jejich metadat v mempoolu Bitcoin Core. Poznámky
-      popisují množství problémů se současným designem, poskytují přehled
-      nového designu a ukazují na některé potíže a kompromisy. Později
-      byl uveřejněn [popis][bitcoin core #27677] designu a kopie
-      [slajdů][mempool slides] prezentace.
+  - [Mempool clustering][] shrnuje návrh na významný redesign ukládání
+    transakcí a jejich metadat v mempoolu Bitcoin Core. Poznámky
+    popisují množství problémů se současným designem, poskytují přehled
+    nového designu a ukazují na některé potíže a kompromisy. Později
+    byl uveřejněn [popis][bitcoin core #27677] designu a kopie
+    [slajdů][mempool slides] prezentace.
 
-    - [Meta-diskuze o projektu][Project meta discussion] shrnuje pestrou
-      diskuzi o cílech projektu a jak jich docílit navzdory mnoha překážkám
-      vnitřním i vnějším. Některé z debat vedly již k pokusným změnám
-      ve správě projektu, jako je více projektově orientovaný přístup
-      pro budoucí vydání následující verzi 25.
+  - [Meta-diskuze o projektu][Project meta discussion] shrnuje pestrou
+    diskuzi o cílech projektu a jak jich docílit navzdory mnoha překážkám
+    vnitřním i vnějším. Některé z debat vedly již k pokusným změnám
+    ve správě projektu, jako je více projektově orientovaný přístup
+    pro budoucí vydání následující verzi 25.
 
 ## Čekání na potvrzení 1: k čemu je mempool?
 

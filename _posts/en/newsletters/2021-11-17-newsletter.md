@@ -24,9 +24,9 @@ notable changes to popular Bitcoin infrastructure software.
   using an older node or custom software to choose which transactions to
   include in their blocks.
 
-    The safest course of action for users and businesses is to run their
-    own taproot-enforcing node (such as Bitcoin Core 22.0) and only
-    accept transactions confirmed by it.
+  The safest course of action for users and businesses is to run their
+  own taproot-enforcing node (such as Bitcoin Core 22.0) and only
+  accept transactions confirmed by it.
 
 ## Changes to services and client software
 

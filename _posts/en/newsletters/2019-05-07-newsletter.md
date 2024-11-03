@@ -30,114 +30,114 @@ summarizes notable changes in popular Bitcoin infrastructure projects.
   PRs helped contribute to this release.  Some features we think readers
   of this newsletter might find especially interesting include,
 
-    - *More PSBT tools and refinements:* the previous major release,
-      0.17, introduced support for [BIP174][] Partially Signed Bitcoin
-      Transactions (PSBTs) designed to help multiple programs or devices
-      collaboratively create and sign transactions, such as multisig
-      wallets, hardware wallets, and cold wallets.  The 0.18 release
-      builds on that foundation with several bugfixes and improvements,
-      including three new RPCs: `joinpsbts` to merge together multiple
-      PSBTs; `analyzepsbt` to tell the user what they next need to do
-      with the PSBT; and `utxoupdatepsbt` to add necessary information
-      to a PSBT from a node's UTXO set.  Additionally, the PSBT section
-      from the 0.17 release notes has been placed in a [separate
-      document][PSBT documentation] and expanded to cover new features
-      added in 0.18.
+  - *More PSBT tools and refinements:* the previous major release,
+    0.17, introduced support for [BIP174][] Partially Signed Bitcoin
+    Transactions (PSBTs) designed to help multiple programs or devices
+    collaboratively create and sign transactions, such as multisig
+    wallets, hardware wallets, and cold wallets.  The 0.18 release
+    builds on that foundation with several bugfixes and improvements,
+    including three new RPCs: `joinpsbts` to merge together multiple
+    PSBTs; `analyzepsbt` to tell the user what they next need to do
+    with the PSBT; and `utxoupdatepsbt` to add necessary information
+    to a PSBT from a node's UTXO set.  Additionally, the PSBT section
+    from the 0.17 release notes has been placed in a [separate
+    document][PSBT documentation] and expanded to cover new features
+    added in 0.18.
 
-    - *Initial RPC support for output script descriptors:* Bitcoin
-      software needs a way to find all the transactions on the block chain
-      that pay a user's wallet.  This is easy if the wallet only supports one
-      scriptPubKey format---e.g., for P2PKH, the wallet hashes each of
-      its pubkeys and looks for any scriptPubKeys paying `0x76a9[hash160
-      of any wallet pubkey]88ac`.  But Bitcoin Core's built-in wallet
-      currently supports many different scriptPubKey formats---P2PK,
-      P2PKH, P2WPKH, bare multisig, P2SH commitments, and P2WSH
-      commitments.  This provides flexibility and backwards
-      compatibility but comes at a cost of poor scalability: the wallet
-      expends CPU time scanning for old or rare scripts that most users
-      never use.
+  - *Initial RPC support for output script descriptors:* Bitcoin
+    software needs a way to find all the transactions on the block chain
+    that pay a user's wallet.  This is easy if the wallet only supports one
+    scriptPubKey format---e.g., for P2PKH, the wallet hashes each of
+    its pubkeys and looks for any scriptPubKeys paying `0x76a9[hash160
+    of any wallet pubkey]88ac`.  But Bitcoin Core's built-in wallet
+    currently supports many different scriptPubKey formats---P2PK,
+    P2PKH, P2WPKH, bare multisig, P2SH commitments, and P2WSH
+    commitments.  This provides flexibility and backwards
+    compatibility but comes at a cost of poor scalability: the wallet
+    expends CPU time scanning for old or rare scripts that most users
+    never use.
 
-        [Output script descriptors][] are a new language developed by Pieter
-        Wuille for concisely describing scriptPubKeys so that the wallet
-        knows exactly what it should scan for.  The ultimate goal is for
-        Bitcoin Core's wallet to contain a simple list of descriptors
-        describing all of its scripts---a list that may be as short as a
-        single descriptor for most users but supporting broad
-        flexibility for future upgrades and advanced use cases (including
-        multisig and hardware signing); see PR [#15487][Bitcoin Core
-        #15487] and [#15764][Bitcoin Core #15764] for work towards that
-        end.  However, to allow both users and project developers to
-        build experience working with descriptors before fundamental
-        changes are made to the wallet, the 0.18 release updates
-        existing RPCs and adds new RPCs that work with descriptors.
-        Existing RPCs updated with descriptor support include
-        `scantxoutset`, `importmulti`, `getaddressinfo`, and
-        `listunspent`.  New RPCs include `deriveaddresses` and
-        `getdescriptorinfo`.
+    [Output script descriptors][] are a new language developed by Pieter
+    Wuille for concisely describing scriptPubKeys so that the wallet
+    knows exactly what it should scan for.  The ultimate goal is for
+    Bitcoin Core's wallet to contain a simple list of descriptors
+    describing all of its scripts---a list that may be as short as a
+    single descriptor for most users but supporting broad
+    flexibility for future upgrades and advanced use cases (including
+    multisig and hardware signing); see PR [#15487][Bitcoin Core
+    #15487] and [#15764][Bitcoin Core #15764] for work towards that
+    end.  However, to allow both users and project developers to
+    build experience working with descriptors before fundamental
+    changes are made to the wallet, the 0.18 release updates
+    existing RPCs and adds new RPCs that work with descriptors.
+    Existing RPCs updated with descriptor support include
+    `scantxoutset`, `importmulti`, `getaddressinfo`, and
+    `listunspent`.  New RPCs include `deriveaddresses` and
+    `getdescriptorinfo`.
 
-    - *Basic hardware signer support through independent tool:* released
-      separately from 0.18, but still part of the Bitcoin Core project,
-      is the [Hardware Wallet Interaction][HWI] (HWI) tool that allows
-      users comfortable working on the command line to use Bitcoin Core
-      with several popular models of hardware wallets.  Internally, the
-      tool makes heavy use of PSBTs and output script descriptors,
-      allowing it to be integrated with other wallets that support those
-      interfaces (e.g. [Wasabi wallet's experimental support][wasabi
-      hwi]).  Work has already begun on more directly integrating HWI
-      with the main Bitcoin Core tools and building graphical interfaces
-      for it.
+  - *Basic hardware signer support through independent tool:* released
+    separately from 0.18, but still part of the Bitcoin Core project,
+    is the [Hardware Wallet Interaction][HWI] (HWI) tool that allows
+    users comfortable working on the command line to use Bitcoin Core
+    with several popular models of hardware wallets.  Internally, the
+    tool makes heavy use of PSBTs and output script descriptors,
+    allowing it to be integrated with other wallets that support those
+    interfaces (e.g. [Wasabi wallet's experimental support][wasabi
+    hwi]).  Work has already begun on more directly integrating HWI
+    with the main Bitcoin Core tools and building graphical interfaces
+    for it.
 
-    - *New wallet tool:* alongside `bitcoind` and other Bitcoin programs
-      is a new `bitcoin-wallet` tool.  This command-line tool currently
-      only allows the user to create a new wallet or perform some basic
-      inspections on an existing wallet, but it's planned to add more
-      features to the tool in subsequent releases.
+  - *New wallet tool:* alongside `bitcoind` and other Bitcoin programs
+    is a new `bitcoin-wallet` tool.  This command-line tool currently
+    only allows the user to create a new wallet or perform some basic
+    inspections on an existing wallet, but it's planned to add more
+    features to the tool in subsequent releases.
 
-    - *New architecture and new Ubuntu Snap package:* this is the first
-      release to provide [pre-built binaries][bitcoincore.org download]
-      for Linux on the RISC-V CPU architecture.  For users of Ubuntu and
-      compatible systems, this release also provides a [Snap package][]
-      that replaces the PPA that was updated in previous releases.
-      Both the RISC-V and Snap packages include binaries that are
-      deterministically built and [signed][gitian sigs] by multiple
-      Bitcoin Core contributors.
+  - *New architecture and new Ubuntu Snap package:* this is the first
+    release to provide [pre-built binaries][bitcoincore.org download]
+    for Linux on the RISC-V CPU architecture.  For users of Ubuntu and
+    compatible systems, this release also provides a [Snap package][]
+    that replaces the PPA that was updated in previous releases.
+    Both the RISC-V and Snap packages include binaries that are
+    deterministically built and [signed][gitian sigs] by multiple
+    Bitcoin Core contributors.
 
-      {% comment %}<!--
-      152 Tests and QA
-      74 Docs
-      65 wallet
-      55 RPCs and other APIs
-      51 GUI
-      47 Build system
-      43 Misc
-      17 p2p and network code
-      13 Platform support
-      9 block and tx handling
-      1 mining
-      1 consensus
-      -->{% endcomment %}
+    {% comment %}<!--
+    152 Tests and QA
+    74 Docs
+    65 wallet
+    55 RPCs and other APIs
+    51 GUI
+    47 Build system
+    43 Misc
+    17 p2p and network code
+    13 Platform support
+    9 block and tx handling
+    1 mining
+    1 consensus
+    -->{% endcomment %}
 
-    - *Numerous testing and Quality Assurance (QA) changes:* the
-      [release notes][0.18 notes] list all the PRs related to 0.18 that
-      Bitcoin Core's release manager thought were significant, split
-      into twelve categories.  Although the significance and
-      categorization criteria are somewhat arbitrary, and the number of
-      PRs doesn't necessarily correlate to the amount of work done, we
-      think it's notable that the "Tests and QA" section in the release
-      notes has more than double the number of PRs listed in any other
-      category.  We don't often get to write about testing in this
-      newsletter---tests are rarely news unless something goes
-      wrong---so we wanted to take this opportunity to remind readers
-      that testing remains an active and important part of Bitcoin Core
-      development.
+  - *Numerous testing and Quality Assurance (QA) changes:* the
+    [release notes][0.18 notes] list all the PRs related to 0.18 that
+    Bitcoin Core's release manager thought were significant, split
+    into twelve categories.  Although the significance and
+    categorization criteria are somewhat arbitrary, and the number of
+    PRs doesn't necessarily correlate to the amount of work done, we
+    think it's notable that the "Tests and QA" section in the release
+    notes has more than double the number of PRs listed in any other
+    category.  We don't often get to write about testing in this
+    newsletter---tests are rarely news unless something goes
+    wrong---so we wanted to take this opportunity to remind readers
+    that testing remains an active and important part of Bitcoin Core
+    development.
 
-    - *Plan to switch to bech32 receiving addresses by default:* as
-      mentioned in the *news* section of [Newsletter #40][], the release
-      notes announce the project's intention to switch to bech32 sending
-      addresses by default in either the next major version (0.19,
-      [expected around November 2019][0.19 release schedule]) or the
-      version after that (expected about a year from now).  The earlier
-      date is the current target.
+  - *Plan to switch to bech32 receiving addresses by default:* as
+    mentioned in the *news* section of [Newsletter #40][], the release
+    notes announce the project's intention to switch to bech32 sending
+    addresses by default in either the next major version (0.19,
+    [expected around November 2019][0.19 release schedule]) or the
+    version after that (expected about a year from now).  The earlier
+    date is the current target.
 
 - **Proposal for support of Schnorr signatures and Taproot script commitments:**
   Pieter Wuille [posted][tap post] to the Bitcoin-Dev
@@ -150,11 +150,11 @@ summarizes notable changes in popular Bitcoin infrastructure projects.
   will be added to the [libsecp256k1][] library; see the previously-released
   [bip-schnorr][] for more information).
 
-    The announcement of the proposals came too late in the writing
-    process for us to provide a detailed description in this newsletter,
-    although we did alter some other text in this newsletter to reflect
-    the release of the proposals.  We plan to provide full coverage
-    next week.
+  The announcement of the proposals came too late in the writing
+  process for us to provide a detailed description in this newsletter,
+  although we did alter some other text in this newsletter to reflect
+  the release of the proposals.  We plan to provide full coverage
+  next week.
 
 ## Bech32 sending support
 
@@ -220,3 +220,6 @@ wiki page for changes -->{% endcomment %}
 [tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
 [tap ref]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #40]: /en/newsletters/2019/04/02/#bitcoin-core-schedules-switch-to-default-bech32-receiving-addresses
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[hwi]: https://github.com/bitcoin-core/HWI

@@ -38,38 +38,38 @@ projektech.
   v jednom směru, s jedním skokem a bez požadavku na důvěru. Keceli
   popisuje tři možnosti použití tohoto protokolu pro atomický transfer:
 
-    - *Míchání mincí:* několik uživatelů v rámci joinpoolu může
-      spolu vytvořit atomické výměny svých offchain prostředků za
-      novou offchain hodnotu o stejné výši. Jelikož jakákoliv chyba
-      v onchain komponentě jednoduše celou výměnu revokuje a všechny
-      prostředky vrátí, je tato operace rychlá. Zaslepovací protokol
-      podobný protokolu v některých existujících implementacích
-      [coinjoinu][topic coinjoin] může zamezit, aby mohl kdokoliv
-      spočítat uživateli držené bitcoiny.
+  - *Míchání mincí:* několik uživatelů v rámci joinpoolu může
+    spolu vytvořit atomické výměny svých offchain prostředků za
+    novou offchain hodnotu o stejné výši. Jelikož jakákoliv chyba
+    v onchain komponentě jednoduše celou výměnu revokuje a všechny
+    prostředky vrátí, je tato operace rychlá. Zaslepovací protokol
+    podobný protokolu v některých existujících implementacích
+    [coinjoinu][topic coinjoin] může zamezit, aby mohl kdokoliv
+    spočítat uživateli držené bitcoiny.
 
-    - *Vnitřní transfery:* uživatel může poslat své offchain prostředky
-      jinému uživateli v rámci stejné protistrany. Atomicita zajišťuje,
-      že buď příjemce dostane své peníze nebo se vrátí odesílateli.
-      Příjemci, kteří nedůvěřují ani odesílateli, ani protistraně, budou
-      muset čekat na stejné množství konfirmací jako v případě běžné
-      onchain transakce.
+  - *Vnitřní transfery:* uživatel může poslat své offchain prostředky
+    jinému uživateli v rámci stejné protistrany. Atomicita zajišťuje,
+    že buď příjemce dostane své peníze nebo se vrátí odesílateli.
+    Příjemci, kteří nedůvěřují ani odesílateli, ani protistraně, budou
+    muset čekat na stejné množství konfirmací jako v případě běžné
+    onchain transakce.
 
-      Keceli a jeden z diskutujících [odkázali][keceli reply0] na
-      [předchozí][harding reply0] výzkum popisující, jak neekonomické
-      může být dvojí utrácení zero-conf plateb, pokud jsou spojeny
-      s finančním závazkem, který si těžař může v případě dvojího
-      utrácení přisvojit. Díky tomu by mohli příjemci akceptovat
-      platbu za méně než sekundu i v případě nulové důvěry.
+    Keceli a jeden z diskutujících [odkázali][keceli reply0] na
+    [předchozí][harding reply0] výzkum popisující, jak neekonomické
+    může být dvojí utrácení zero-conf plateb, pokud jsou spojeny
+    s finančním závazkem, který si těžař může v případě dvojího
+    utrácení přisvojit. Díky tomu by mohli příjemci akceptovat
+    platbu za méně než sekundu i v případě nulové důvěry.
 
-    - *Platba LN faktur:* uživatel se může rychle zavázat k platbě
-      offchainových prostředků protistraně, pokud protistrana zná
-      tajný kód, což umožní uživateli pomocí protistrany platit
-      [HTLC][topic HTLC] faktury podobné LN.
+  - *Platba LN faktur:* uživatel se může rychle zavázat k platbě
+    offchainových prostředků protistraně, pokud protistrana zná
+    tajný kód, což umožní uživateli pomocí protistrany platit
+    [HTLC][topic HTLC] faktury podobné LN.
 
-      Ani zde, podobně jako v případě vnitřních transferů, nemůže uživatel
-      obdržet prostředky bez požadavku na důvěru, takže by neměl odhalit
-      tajný kód, dokud platba neobdrží dostatečné množství potvrzení
-      nebo není zabezpečena dostatečným finančním závazkem.
+    Ani zde, podobně jako v případě vnitřních transferů, nemůže uživatel
+    obdržet prostředky bez požadavku na důvěru, takže by neměl odhalit
+    tajný kód, dokud platba neobdrží dostatečné množství potvrzení
+    nebo není zabezpečena dostatečným finančním závazkem.
 
   Keceli tvrdí, že základní protokol může být nad bitcoinem implementován
   již dnes s využitím časté interakce mezi členy joinpoolu. Pokud by byl
@@ -93,42 +93,42 @@ projektech.
 
   Některé z komentářů zaslaných do emailové skupiny:
 
-    - *Požadavek na dokumentaci:* [přinejmenším][stone reply] dva
-      [diskutující][dryja reply] si vyžádali dodatečnou dokumentaci
-      o fungování systému. Kvůli úrovni popisu v emailové skupině jej
-      nedokázali dostatečně analyzovat. Keceli mezitím začal publikovat
-      [návrhy specifikací][arc specs].
+  - *Požadavek na dokumentaci:* [přinejmenším][stone reply] dva
+    [diskutující][dryja reply] si vyžádali dodatečnou dokumentaci
+    o fungování systému. Kvůli úrovni popisu v emailové skupině jej
+    nedokázali dostatečně analyzovat. Keceli mezitím začal publikovat
+    [návrhy specifikací][arc specs].
 
-    - *Obavy o pomalost v porovnání s LN:* [několik][dryja
-      reply] lidí [poznamenalo][harding reply1], že není v prvotním
-      designu možné přijímat platbu z joinpoolu bez požadavku na
-      důvěru (offchain ani onchain) bez čekání na dostatečné množství
-      konfirmací. To může trvat hodiny, kdežto mnoho LN plateb
-      je uzavřeno za méně než sekundu. I s finanční pojistkou by byla
-      LN obecně rychlejší.
+  - *Obavy o pomalost v porovnání s LN:* [několik][dryja
+    reply] lidí [poznamenalo][harding reply1], že není v prvotním
+    designu možné přijímat platbu z joinpoolu bez požadavku na
+    důvěru (offchain ani onchain) bez čekání na dostatečné množství
+    konfirmací. To může trvat hodiny, kdežto mnoho LN plateb
+    je uzavřeno za méně než sekundu. I s finanční pojistkou by byla
+    LN obecně rychlejší.
 
-    - *Obavy o dopad na blockchain:* jeden [komentující][jk_14]
-      poznamenal, že v případě jedné transakce každý pět sekund by zhruba
-      200 protistran zabralo celý prostor v každém bloku. Jiná
-      [odpověď][harding reply0] předpokládala, že každá z onchain
-      transakcí protistran by byla podobně veliká jako otevírací
-      či uzavírací transakce LN. Protistrana s miliónem uživatelů,
-      která by vytvářela 6,3 miliónů onchain transakcí za rok, by zabrala
-      stejné množství prostoru jako otevírací a zavírací transakce
-      6,3 kanálů každého z těchto uživatelů za rok. Onchain náklady
-      na LN by tedy byly nižší, avšak pouze do určitého bodu.
+  - *Obavy o dopad na blockchain:* jeden [komentující][jk_14]
+    poznamenal, že v případě jedné transakce každý pět sekund by zhruba
+    200 protistran zabralo celý prostor v každém bloku. Jiná
+    [odpověď][harding reply0] předpokládala, že každá z onchain
+    transakcí protistran by byla podobně veliká jako otevírací
+    či uzavírací transakce LN. Protistrana s miliónem uživatelů,
+    která by vytvářela 6,3 miliónů onchain transakcí za rok, by zabrala
+    stejné množství prostoru jako otevírací a zavírací transakce
+    6,3 kanálů každého z těchto uživatelů za rok. Onchain náklady
+    na LN by tedy byly nižší, avšak pouze do určitého bodu.
 
-    - *Obavy o velikost horké peněženky a kapitálu:* jedna [reakce][harding
-      reply0] se zamýšlela nad nutností protistrany držet k dispozici,
-      zřejmě v horké peněžence, množství bitcoinů rovné částce, kterou
-      mohou uživatelé utratit v dohledné budoucnosti. Dle současného designu
-      by po utracení protistrana těmito bitcoiny nemusela disponovat
-      až po dobu 28 dní. Pokud by protistrana účtovala nízkou úrokovou
-      sazbu 1,5 % za rok, rovnalo by se to 0,125% poplatku z každé transakce
-      zprostředkované protistranou (včetně coinjoinů, interních transferů
-      a LN plateb). Pro porovnání, [veřejné statistky][1ml stats] dostupné
-      v době psaní (poskytnuté 1ML) ukazují, že medián jednotkového
-      poplatku za jeden skok LN transferů je 0,0026 %, téměř 50krát nižší.
+  - *Obavy o velikost horké peněženky a kapitálu:* jedna [reakce][harding
+    reply0] se zamýšlela nad nutností protistrany držet k dispozici,
+    zřejmě v horké peněžence, množství bitcoinů rovné částce, kterou
+    mohou uživatelé utratit v dohledné budoucnosti. Dle současného designu
+    by po utracení protistrana těmito bitcoiny nemusela disponovat
+    až po dobu 28 dní. Pokud by protistrana účtovala nízkou úrokovou
+    sazbu 1,5 % za rok, rovnalo by se to 0,125% poplatku z každé transakce
+    zprostředkované protistranou (včetně coinjoinů, interních transferů
+    a LN plateb). Pro porovnání, [veřejné statistky][1ml stats] dostupné
+    v době psaní (poskytnuté 1ML) ukazují, že medián jednotkového
+    poplatku za jeden skok LN transferů je 0,0026 %, téměř 50krát nižší.
 
   Několik komentářů projevilo nad návrhem nadšení a těšilo se na budoucí
   průzkum.

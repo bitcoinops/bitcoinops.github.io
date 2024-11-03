@@ -51,7 +51,7 @@ taken the time to learn from them earlier.
 
 {% include references.md %}
 [taproot-workshop]: https://github.com/bitcoinops/taproot-workshop
-[workshops]: /en/schorr-taproot-workshop/
+[workshops]: /en/schnorr-taproot-workshop/
 [notebooks #168]: https://github.com/bitcoinops/taproot-workshop/pull/168
 [mouton tweet]: https://twitter.com/ElleMouton/status/1418108253096095745
 {% endauto_anchor %}

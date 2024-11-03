@@ -28,14 +28,14 @@ popular Bitcoin infrastructure projects.
   needs to be stored.  The post ends with a teaser for later posts in
   the series (links added by us):
 
-    > "In our next posts, we’ll talk about how to use auxiliary inputs
-    > to simulate [SIGHASH_NOINPUT][topic sighash_anyprevout] and enable
-    > constant-sized backups for Lightning channels, and how to use
-    > "value-switching" to construct [vaults][topic vaults].  In our
-    > final post we’ll talk about ad-hoc extensions of
-    > [Miniscript][topic miniscript], and how to develop software for
-    > these constructions in a
-    > maintainable way."
+  > "In our next posts, we’ll talk about how to use auxiliary inputs
+  > to simulate [SIGHASH_NOINPUT][topic sighash_anyprevout] and enable
+  > constant-sized backups for Lightning channels, and how to use
+  > "value-switching" to construct [vaults][topic vaults].  In our
+  > final post we’ll talk about ad-hoc extensions of
+  > [Miniscript][topic miniscript], and how to develop software for
+  > these constructions in a
+  > maintainable way."
 
 ## Notable code and documentation changes
 
@@ -58,8 +58,8 @@ BOLTs][bolts repo].*
   peer connection. For more information, place the cursor over the Connection
   Type field name to see the tooltip shown below.
 
-    {:.center}
-    ![Illustration of GUI peer detail connection type](/img/posts/2021-02-gui-peer-connection-type.png)
+  {:.center}
+  ![Illustration of GUI peer detail connection type](/img/posts/2021-02-gui-peer-connection-type.png)
 
 - [HWI #430][] allows the `displayaddress` command to show [BIP32][] extended
   public keys (xpubs) for multisig addresses on the Trezor One.

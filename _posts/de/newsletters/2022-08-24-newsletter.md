@@ -34,13 +34,13 @@ beliebter Bitcoin Infrastruktursoftware.
   wichtigste Änderung am PR ist das Hinzufügen eines neuen Typs von
   [Output-Script Deskriptor][topic descriptors] für stille Zahlungen.
 
-    Das Design des neuen Deskriptors wurde sehr ausführlich im PR
-    diskutiert. Es wurde angemerkt, dass es am effizientesten für die
-    Überwachung von neuen Transaktionen wäre, für Deskriptoren von stillen
-    Zahlungen, pro Wallet nur einen einzigen Deskriptor zuzulassen. Dies könne
-    jedoch in vielen Fälle zu einem schlechten Benutzererlebnis führen. Um
-    dieses Problem zu adressieren wurde eine geringfügige Änderung am Design
-    vorgeschlagen, welche allerdings auch Nachteile mit sich bringt.
+  Das Design des neuen Deskriptors wurde sehr ausführlich im PR
+  diskutiert. Es wurde angemerkt, dass es am effizientesten für die
+  Überwachung von neuen Transaktionen wäre, für Deskriptoren von stillen
+  Zahlungen, pro Wallet nur einen einzigen Deskriptor zuzulassen. Dies könne
+  jedoch in vielen Fälle zu einem schlechten Benutzererlebnis führen. Um
+  dieses Problem zu adressieren wurde eine geringfügige Änderung am Design
+  vorgeschlagen, welche allerdings auch Nachteile mit sich bringt.
 
 ## Änderungen an Services und Client Software
 *In dieser monatlichen Rubrik beleuchten wir interessante Updates zu

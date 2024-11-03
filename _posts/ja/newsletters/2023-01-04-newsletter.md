@@ -21,56 +21,57 @@ Replace-By-Feeポリシーに関する継続的な議論の要約を掲載して
   彼らは、「これが解決されるまで、Bitcoin Knotsをダウンロードし信用しないでください。
   ここ数ヶ月の間に既にダウンロードして実行している場合は、今のところそのシステムのシャットダウンを検討してください。
   」と言っています。
-  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   他のフルノード実装は影響を受けません。
+
+  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
 
 - **Bitcoin Coreのソフトウェアフォーク:** 先月、Bitcoin Coreを元にした2つのパッチセットがリリースされました：
 
-    - *Bitcoin Inquisition:* Anthony Townsは、Bitcoin-Devメーリングリストで
-      [Bitcoin Inquisition][]を[発表しました][towns bci]。
-      これは、Bitcoin Coreのソフトウェアをフォークしたもので、
-      提案されたソフトフォークやその他の重要なプロトコル変更を、
-      デフォルト[signet][topic signet]上でテストできるように設計されています。
-      このバージョンには、[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]と、
-      [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]の提案のサポートが含まれています。
-      Townsのメールには、signetのテストに参加する人向けの有益な追加情報も含まれています。
+  - *Bitcoin Inquisition:* Anthony Townsは、Bitcoin-Devメーリングリストで
+    [Bitcoin Inquisition][]を[発表しました][towns bci]。
+    これは、Bitcoin Coreのソフトウェアをフォークしたもので、
+    提案されたソフトフォークやその他の重要なプロトコル変更を、
+    デフォルト[signet][topic signet]上でテストできるように設計されています。
+    このバージョンには、[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]と、
+    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]の提案のサポートが含まれています。
+    Townsのメールには、signetのテストに参加する人向けの有益な追加情報も含まれています。
 
-    - *フルRBFのピアリングノード:* Peter Toddは、
-      ノードが`mempoolfullrbf`を有効に設定している場合にのみ、
-      ネットワークアドレスを他のノードに配信する際に[フルRBFのサービスビット][full-RBF service bit]をセットするよう
-      Bitcoin Core 24.0.1にパッチをあてたバージョンを[発表しました][todd rbf node]。
-      このパッチを実行しているノードは、最大4つ、フルRBFのサポートを配信している追加ピアにも接続します。
-      Peter Toddは、他のフルノード実装であるBitcoin Knotsも、
-      フルRBFのサポートを配信するノードとピアリングするコードは含まれていないものの、
-      サービスビットを配信していることを指摘しています。
-      このパッチは、Bitcoin CoreのPR[#25600][bitcoin core #25600]に基づくものです。
+  - *フルRBFのピアリングノード:* Peter Toddは、
+    ノードが`mempoolfullrbf`を有効に設定している場合にのみ、
+    ネットワークアドレスを他のノードに配信する際に[フルRBFのサービスビット][full-RBF service bit]をセットするよう
+    Bitcoin Core 24.0.1にパッチをあてたバージョンを[発表しました][todd rbf node]。
+    このパッチを実行しているノードは、最大4つ、フルRBFのサポートを配信している追加ピアにも接続します。
+    Peter Toddは、他のフルノード実装であるBitcoin Knotsも、
+    フルRBFのサポートを配信するノードとピアリングするコードは含まれていないものの、
+    サービスビットを配信していることを指摘しています。
+    このパッチは、Bitcoin CoreのPR[#25600][bitcoin core #25600]に基づくものです。
 
 - **<!--continued-rbf-discussion-->RBFの継続的な議論:** mainnetで[フルRBF][topic rbf]を実現するための継続的な議論において、
   先月はメーリングリスト上でいくつかの並行した議論が行われました:
 
-    - *<!--full-rbf-nodes-->フルRBFノード:* Peter Toddは、Bitcoin Core 24.xを実行しており、
-      IPv4アドレスでインバウンド接続を受け入れることを公表しているフルノードを調査しました。
-      彼は、約17%が、[BIP125][]のシグナルを含まないトランザクションを置換する
-      フルRBFの置換トランザクションをリレーしていることを[発見しました][todd probe]。
-      これは、これらのノードが、オプションのデフォルト値が`false`であるにも関わらず、
-      `mempoolfullrbf`設定オプションを`true`にセットして実行していることを示唆します。
+  - *<!--full-rbf-nodes-->フルRBFノード:* Peter Toddは、Bitcoin Core 24.xを実行しており、
+    IPv4アドレスでインバウンド接続を受け入れることを公表しているフルノードを調査しました。
+    彼は、約17%が、[BIP125][]のシグナルを含まないトランザクションを置換する
+    フルRBFの置換トランザクションをリレーしていることを[発見しました][todd probe]。
+    これは、これらのノードが、オプションのデフォルト値が`false`であるにも関わらず、
+    `mempoolfullrbf`設定オプションを`true`にセットして実行していることを示唆します。
 
-    - *RBF-FSSの再検討:* Daniel Lipshitzは、Bitcoin-Devメーリングリストに、
-      FSS(First Seen Safe)と呼ばれるタイプのトランザクション置換のアイディアを[投稿しました][lipshitz fss]。
-      この置換は、少なくとも元のトランザクションと同じ金額を元のアウトプットに支払い、
-      置換の仕組みが元のトランザクションの受信者から資金を盗むために使用できないことを保証します。
-      Yuval Kogmanは、2015年にPeter Toddが投稿した[以前の][rbf-fss]同じアイディアのリンクを[返信しました][kogman fss]。
-      [その後の][todd fss]返信で、Toddは、このアイディアがオプトインRBFやフルRBFよりも好ましくないいくつかの点を説明しています。
+  - *RBF-FSSの再検討:* Daniel Lipshitzは、Bitcoin-Devメーリングリストに、
+    FSS(First Seen Safe)と呼ばれるタイプのトランザクション置換のアイディアを[投稿しました][lipshitz fss]。
+    この置換は、少なくとも元のトランザクションと同じ金額を元のアウトプットに支払い、
+    置換の仕組みが元のトランザクションの受信者から資金を盗むために使用できないことを保証します。
+    Yuval Kogmanは、2015年にPeter Toddが投稿した[以前の][rbf-fss]同じアイディアのリンクを[返信しました][kogman fss]。
+    [その後の][todd fss]返信で、Toddは、このアイディアがオプトインRBFやフルRBFよりも好ましくないいくつかの点を説明しています。
 
-    - *<!--full-rbf-motivation-->フルRBFの動機:* Anthony Townsは、
-      さまざまなグループがフルRBFを実行する動機についてスレッドに[返信しました][towns rbfm]。
-      Townsは、マイナーのトランザクションの選択という文脈で、
-      経済合理性が何を意味し、何を意味しないかを分析しています。
-      短期的な利益を最適化するマイナーは、当然フルRBFを好むでしょう。
-      しかし、Townsは、マイニング機器に長期的な資本投資を行っているマイナーは、
-      複数のブロックにわたる手数料収入の最適化を好むかもしれず、
-      その場合、常にフルRBFを好むとは限らないと指摘しています。
-      彼は、考慮すべき3つのシナリオを提示しています。
+  - *<!--full-rbf-motivation-->フルRBFの動機:* Anthony Townsは、
+    さまざまなグループがフルRBFを実行する動機についてスレッドに[返信しました][towns rbfm]。
+    Townsは、マイナーのトランザクションの選択という文脈で、
+    経済合理性が何を意味し、何を意味しないかを分析しています。
+    短期的な利益を最適化するマイナーは、当然フルRBFを好むでしょう。
+    しかし、Townsは、マイニング機器に長期的な資本投資を行っているマイナーは、
+    複数のブロックにわたる手数料収入の最適化を好むかもしれず、
+    その場合、常にフルRBFを好むとは限らないと指摘しています。
+    彼は、考慮すべき3つのシナリオを提示しています。
 
 ## リリースとリリース候補
 

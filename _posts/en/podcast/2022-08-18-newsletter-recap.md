@@ -125,7 +125,7 @@ taproot world.
 So yeah, we can now perhaps move on to what our most recent research is, is that
 we managed to make practical, I would say this is the major outcome, although I
 think there are some really interesting things inside this, but the major
-outcome for DLCs is that we can have the oracle attest using Boneh-Lynn-Shacham
+outcome for DLCs is that we can have the oracle attest using Boneh--Lynn--Shacham
 (BLS) signatures, which are signatures on a different curve, different
 properties to the elliptic curve that Bitcoin uses for its cryptography.  And
 the interesting thing about BLS signatures is that they are deterministic, and

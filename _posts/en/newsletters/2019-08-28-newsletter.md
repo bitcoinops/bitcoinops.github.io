@@ -60,17 +60,23 @@ popular Bitcoin infrastructure projects.
   Alice has a 2-of-3 policy that involves a hot wallet, a hardware
   wallet, and a fallback cold wallet:
 
-      thresh(2, pk(A_hot), pk(A_hard), pk(A_cold))
+  ```
+  thresh(2, pk(A_hot), pk(A_hard), pk(A_cold))
+  ```
 
   Later Alice is asked to create a fidelity bond that timelocks some of
   her bitcoins for a period of 26,000 blocks.  The generic form of that
   policy is:
 
-      and(pk(KEY), older(26000))
+  ```
+  and(pk(KEY), older(26000))
+  ```
 
   Alice can simply replace `pk(KEY)` with her particular policy:
 
-      and(thresh(2, pk(A_hot), pk(A_hard), pk(A_cold)), older(26000))
+  ```
+  and(thresh(2, pk(A_hot), pk(A_hard), pk(A_cold)), older(26000))
+  ```
 
   The miniscript compiler can convert the policy into an efficient P2WSH
   script and check that it doesn't violate any of Bitcoin's consensus
@@ -187,3 +193,4 @@ author.
 [miniscript vid]: https://www.youtube.com/watch?v=XM1lzN4Zfks
 [miniscript xs]: http://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/miniscript/
 [miniscript summary]: /en/newsletters/2019/02/05#miniscript
+[miniscript]: /en/topics/miniscript/

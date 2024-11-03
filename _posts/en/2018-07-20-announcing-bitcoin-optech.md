@@ -41,7 +41,7 @@ utilizing the Bitcoin blockchain to discuss efficient use of the blockchain and
 ways to engage with the open source community.
 
 [newsletters]: /en/newsletters
-[workshop]: /workshops
+[workshop]: /en/workshops
 
 Over the coming months, we plan to:
 

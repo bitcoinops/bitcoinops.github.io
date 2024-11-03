@@ -125,3 +125,5 @@ wiki page for changes -->{% endcomment %}
 [lnd 0.7]: https://github.com/lightningnetwork/lnd/releases/tag/v0.7.0-beta
 [cl 0.7.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.7.1
 [watchtower docs]: https://github.com/lightningnetwork/lnd/blob/master/docs/watchtower.md
+[newsletter #39]: /en/newsletters/2019/03/26/#loop-announced
+[newsletter #51]: /en/newsletters/2019/06/19/#c-lightning-2696

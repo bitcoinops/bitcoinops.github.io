@@ -28,55 +28,55 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
   les fonds de plus d'une douzaine de canaux d'être utilisés pour ces mêmes mois.
   Law propose de mitiger ce problème à travers deux modifications du protocole:
 
-    - *Triggered HTLCs:* Dans une norme [HTLC][topic htlc] utilisée pour
-      le paiement, Alice offre à Bob une certaine quantité de BTC s'il est
-      capable de publier une *préimage* inconnue auparavant pour un condensé
-      de hachage connu. Alternativement, si Bob ne publie pas la préimage
-      avant un certain temps, Alice peut retourner l'argent dans son propre
-      portefeuille.
-        Law suggère que Bob soit toujours autorisé à réclamer le paiement à
-        tout moment avec la publication de la préimage, mais Alice devrait
-        remplir une restriction supplémentaire. Elle devrait clairement avertir
-        Bob de son intention de récupérer l'argent dans son portefeuille en
-        faisant confirmer une transaction *trigger* sur la chaîne. Ce n'est
-        que lorsque la transaction de déclenchement aura été confirmée par un
-        certain nombre de blocs (ou pendant une certaine durée) qu'Alice
-        pourra dépenser l'argent.
+  - *Triggered HTLCs:* Dans une norme [HTLC][topic htlc] utilisée pour
+    le paiement, Alice offre à Bob une certaine quantité de BTC s'il est
+    capable de publier une *préimage* inconnue auparavant pour un condensé
+    de hachage connu. Alternativement, si Bob ne publie pas la préimage
+    avant un certain temps, Alice peut retourner l'argent dans son propre
+    portefeuille.
+      Law suggère que Bob soit toujours autorisé à réclamer le paiement à
+    tout moment avec la publication de la préimage, mais Alice devrait
+    remplir une restriction supplémentaire. Elle devrait clairement avertir
+    Bob de son intention de récupérer l'argent dans son portefeuille en
+    faisant confirmer une transaction *trigger* sur la chaîne. Ce n'est
+    que lorsque la transaction de déclenchement aura été confirmée par un
+    certain nombre de blocs (ou pendant une certaine durée) qu'Alice
+    pourra dépenser l'argent.
 
-        Bob serait assuré de pouvoir réclamer ses fonds à tout moment jusqu'à
-        ce que la transaction de déclenchement ait reçu le nombre convenu de
-        confirmations, même si des mois se sont écoulés depuis qu'un HTLC
-        normal aurait expiré. Si Bob est correctement indemnisé pour son attente,
-        il n'y a pas de problème si Alice reste hors ligne pendant tout ce temps.
-        Pour un HTLC acheminé d'Alice vers un nœud distant en passant par Bob,
-        seul le canal entre Alice et Bob serait affecté----tous les autres canaux
-        régleraient le HTLC rapidement (comme dans le protocole LN actuel).
+    Bob serait assuré de pouvoir réclamer ses fonds à tout moment jusqu'à
+    ce que la transaction de déclenchement ait reçu le nombre convenu de
+    confirmations, même si des mois se sont écoulés depuis qu'un HTLC
+    normal aurait expiré. Si Bob est correctement indemnisé pour son attente,
+    il n'y a pas de problème si Alice reste hors ligne pendant tout ce temps.
+    Pour un HTLC acheminé d'Alice vers un nœud distant en passant par Bob,
+    seul le canal entre Alice et Bob serait affecté----tous les autres canaux
+    régleraient le HTLC rapidement (comme dans le protocole LN actuel).
 
-    - *Asymmetric delayed commitment transactions:* chacun des deux
-      partenaires d'un canal LN détient un engagement non publié qu'ils peuvent
-      publier et essayer de faire confirmer à tout moment. Les deux versions de
-      la transaction dépensent le même UTXO, de sorte qu'elles entrent en conflit
-      l'une avec l'autre. Ce qui signifie qu'une seule peut effectivement être
-      confirmée.
+  - *Asymmetric delayed commitment transactions:* chacun des deux
+    partenaires d'un canal LN détient un engagement non publié qu'ils peuvent
+    publier et essayer de faire confirmer à tout moment. Les deux versions de
+    la transaction dépensent le même UTXO, de sorte qu'elles entrent en conflit
+    l'une avec l'autre. Ce qui signifie qu'une seule peut effectivement être
+    confirmée.
 
-        Cela signifie que quand Alice veut fermer le canal, elle ne peut pas juste
-        simplement diffuser sa version de la transaction d'engagement avec
-        un délai raisonnable et supposer qu'elle sera confirmée.
-        Elle doit aussi attendre et vérifier si Bob obtient au contraire
-        sa version de la transaction d'engagement, auquel cas elle devra
-        peut-être avoir besoin de prendre des mesures supplémentaires pour
-        vérifier que sa transaction inclut le dernier état du canal.
+    Cela signifie que quand Alice veut fermer le canal, elle ne peut pas juste
+    simplement diffuser sa version de la transaction d'engagement avec
+    un délai raisonnable et supposer qu'elle sera confirmée.
+    Elle doit aussi attendre et vérifier si Bob obtient au contraire
+    sa version de la transaction d'engagement, auquel cas elle devra
+    peut-être avoir besoin de prendre des mesures supplémentaires pour
+    vérifier que sa transaction inclut le dernier état du canal.
 
-        Law propose que la version d'Alice de la transaction d'engagement reste
-        la même qu'aujourd'hui afin qu'elle puisse la publier à tout moment, mais
-        que la version de Bob comprenne un verrou temporel afin qu'il ne puisse
-        la publier que si Alice a été inactive pendant une longue période.
-        Idéalement, cela permet à Alice de publier le dernier état en sachant que
-        Bob ne peut pas publier une version contradictoire, ce qui lui permet de
-        se déconnecter en toute sécurité après sa publication.
+    Law propose que la version d'Alice de la transaction d'engagement reste
+    la même qu'aujourd'hui afin qu'elle puisse la publier à tout moment, mais
+    que la version de Bob comprenne un verrou temporel afin qu'il ne puisse
+    la publier que si Alice a été inactive pendant une longue période.
+    Idéalement, cela permet à Alice de publier le dernier état en sachant que
+    Bob ne peut pas publier une version contradictoire, ce qui lui permet de
+    se déconnecter en toute sécurité après sa publication.
 
-    Les propositions de Law recevaient encore un premier retour d'information au
-    moment où cette description était rédigée.
+  Les propositions de Law recevaient encore un premier retour d'information au
+  moment où cette description était rédigée.
 
 - **Recommandations pour les serveurs d'adresses uniques:** Ruben Somsen
   [a posté][somsen post] sur la liste de diffusion Bitcoin-Dev un
@@ -90,20 +90,20 @@ et les principaux changements apportés aux logiciels d'infrastructure Bitcoin.
   des [serveurs publics de recherche d'adresses][topic block explorers]
   (ce qui est censé être la majorité des portefeuilles légers).
 
-    Pour illustrer le fonctionnement de cette méthode, le portefeuille d'Alice
-    enregistre 100 adresses sur le serveur Example.com de style electrum.
-    Elle inclut ensuite "example.com/alice" dans sa signature de courriel.
-    Lorsque Bob veut donner de l'argent à Alice, il visite son URL, obtient
-    une adresse, vérifie qu'Alice l'a signée, puis effectue le paiement.
+  Pour illustrer le fonctionnement de cette méthode, le portefeuille d'Alice
+  enregistre 100 adresses sur le serveur Example.com de style electrum.
+  Elle inclut ensuite "example.com/alice" dans sa signature de courriel.
+  Lorsque Bob veut donner de l'argent à Alice, il visite son URL, obtient
+  une adresse, vérifie qu'Alice l'a signée, puis effectue le paiement.
 
-    Cette idée présente l'avantage d'être largement compatible avec de nombreux
-    portefeuilles grâce à un processus partiellement manuel et peut être facile
-    à mettre en œuvre avec un processus automatisé. Son inconvénient est que les
-    utilisateurs qui compromettent déjà leur vie privée en partageant des adresses
-    avec un serveur s'engageront davantage dans la perte de confidentialité.
+  Cette idée présente l'avantage d'être largement compatible avec de nombreux
+  portefeuilles grâce à un processus partiellement manuel et peut être facile
+  à mettre en œuvre avec un processus automatisé. Son inconvénient est que les
+  utilisateurs qui compromettent déjà leur vie privée en partageant des adresses
+  avec un serveur s'engageront davantage dans la perte de confidentialité.
 
-    La discussion sur les suggestions était en cours à la fois sur la liste de
-    diffusion et sur le document au moment de la rédaction de ce résumé.
+  La discussion sur les suggestions était en cours à la fois sur la liste de
+  diffusion et sur le document au moment de la rédaction de ce résumé.
 
 ## Bitcoin Core PR Review Club
 

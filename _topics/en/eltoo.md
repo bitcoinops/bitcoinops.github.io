@@ -1,18 +1,18 @@
 ---
 title: Eltoo
 
-aliases:
+title-aliases:
   - LN-Symmetry
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Contract Protocols
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 excerpt: >
-  **Eltoo** (also called **LN-Symmetry**) is a proposed enforcement layer for LN that allows any later
+  **Eltoo** (also called **LN-Symmetry**) is a proposed enforcement mechanism for LN that allows any later
   channel state to replace any earlier channel state.  Although eltoo
   can be used with a penalty mechanism similar to the one used with
   existing LN channels, eltoo doesn't need the penalty mechanism in

@@ -25,13 +25,13 @@ popular Bitcoin infrastructure software.
   activation parameters, most notably reducing the amount of hash rate
   that needs to signal for the fork to activate from 95% to 90%.
 
-    Discussion continued about the LOT parameter on the mailing list,
-    mainly about the effect of encouraging users to choose the option
-    themselves, either via a command line option or by choosing what
-    software release to use.  No clear agreement was
-    reached as of this writing and there does not seem to be a widely
-    supported path forward to activating taproot---even though taproot
-    itself appears to be almost entirely desired.
+  Discussion continued about the LOT parameter on the mailing list,
+  mainly about the effect of encouraging users to choose the option
+  themselves, either via a command line option or by choosing what
+  software release to use.  No clear agreement was
+  reached as of this writing and there does not seem to be a widely
+  supported path forward to activating taproot---even though taproot
+  itself appears to be almost entirely desired.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

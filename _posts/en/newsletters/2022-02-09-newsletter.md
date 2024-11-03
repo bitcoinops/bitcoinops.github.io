@@ -33,7 +33,7 @@ changes to popular Bitcoin infrastructure projects.
   including additional or alternative proposals for changes that
   could be made.
 
-    Discussion appeared to be ongoing as this summary was being written.
+  Discussion appeared to be ongoing as this summary was being written.
 
 ## Bitcoin Core PR Review Club
 

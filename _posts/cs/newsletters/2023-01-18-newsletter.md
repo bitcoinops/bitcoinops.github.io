@@ -19,123 +19,123 @@ páteřního software.
   op_vault] do emailové skupiny Bitcoin-Dev [návrh][obeirne paper]
   na soft fork, který by přidal dva nové opkódy: `OP_VAULT` a `OP_UNVAULT`.
 
-    - `OP_VAULT` by vyžadoval tři parametry: commitment vysoce
-      důvěryhodného způsobu platby, [dobu čekání][topic timelocks]
-      a commitment méně důveryhodného způsobu platby.
+  - `OP_VAULT` by vyžadoval tři parametry: commitment vysoce
+    důvěryhodného způsobu platby, [dobu čekání][topic timelocks]
+    a commitment méně důveryhodného způsobu platby.
 
-    - `OP_UNVAULT` by také vyžadoval tři parametry. V případě použití
-      podle O'Beirneových představ by tyto parametry byly: stejný
-      commitment vysoce důvěryhodného způsobu platby, stejná doba
-      čekání a commitment jednoho nebo více výstupů pro použití
-      v pozdější transakci.
+  - `OP_UNVAULT` by také vyžadoval tři parametry. V případě použití
+    podle O'Beirneových představ by tyto parametry byly: stejný
+    commitment vysoce důvěryhodného způsobu platby, stejná doba
+    čekání a commitment jednoho nebo více výstupů pro použití
+    v pozdější transakci.
 
-    Pro vytvoření [úschovny][topic vaults] („vault”) si Alice zvolí
-    vysoce důvěryhodný způsob platby, např. vícenásobný podpis vyžadující
-    přístup k několika odděleným podpisovým zařízením nebo studeným
-    peněženkám uloženým v různých lokalitách. Též si zvolí méně
-    důvěryhodný způsob platby, jako je jednoduchý podpis ze své horké
-    peněženky. Nakonec si zvolí dobu čekání ve stejném formátu jako [BIP68][],
-    který umožní stanovit dobu od několika minut po zhruba rok. Dále
-    Alice vytvoří běžnou bitcoinovou adresu pro přijetí prostředků
-    do své úschovny. Tato adresa bude zavázána skriptu používajícímu
-    `OP_VAULT`.
+  Pro vytvoření [úschovny][topic vaults] („vault”) si Alice zvolí
+  vysoce důvěryhodný způsob platby, např. vícenásobný podpis vyžadující
+  přístup k několika odděleným podpisovým zařízením nebo studeným
+  peněženkám uloženým v různých lokalitách. Též si zvolí méně
+  důvěryhodný způsob platby, jako je jednoduchý podpis ze své horké
+  peněženky. Nakonec si zvolí dobu čekání ve stejném formátu jako [BIP68][],
+  který umožní stanovit dobu od několika minut po zhruba rok. Dále
+  Alice vytvoří běžnou bitcoinovou adresu pro přijetí prostředků
+  do své úschovny. Tato adresa bude zavázána skriptu používajícímu
+  `OP_VAULT`.
 
-    Bude-li chtít Alice utratit prostředky dříve přijaté do své úschovny,
-    začne určením výstupů, kterým si v konečném důsledky přála platit
-    (např. platba Bobovi a návrat zbytku zpět do úschovny). V obvyklém
-    případě by Alice naplnila podmínky svého méně důvěryhodného způsobu
-    platby, např. poskytnutím podpisu ze své horké peněženky, k vytvoření
-    transakce posílající veškeré uschované prostředky na jediný výstup.
-    Tento výstup obsahuje `OP_UNVAULT` se stejnými parametry vysoce
-    důvěryhodného způsobu platby a doby čekání. Třetím parametrem je
-    commitment výstupům, kterým Alice chce nakonec platit. Alice nyní
-    může dokončit konstrukci transakce, včetně stanovení poplatků
-    pomocí [sponzorování poplatků][topic fee sponsorship] („fee
-    sponsorship”, typ [anchor výstupů][topic anchor outputs]) či jiného
-    mechanismu.
+  Bude-li chtít Alice utratit prostředky dříve přijaté do své úschovny,
+  začne určením výstupů, kterým si v konečném důsledky přála platit
+  (např. platba Bobovi a návrat zbytku zpět do úschovny). V obvyklém
+  případě by Alice naplnila podmínky svého méně důvěryhodného způsobu
+  platby, např. poskytnutím podpisu ze své horké peněženky, k vytvoření
+  transakce posílající veškeré uschované prostředky na jediný výstup.
+  Tento výstup obsahuje `OP_UNVAULT` se stejnými parametry vysoce
+  důvěryhodného způsobu platby a doby čekání. Třetím parametrem je
+  commitment výstupům, kterým Alice chce nakonec platit. Alice nyní
+  může dokončit konstrukci transakce, včetně stanovení poplatků
+  pomocí [sponzorování poplatků][topic fee sponsorship] („fee
+  sponsorship”, typ [anchor výstupů][topic anchor outputs]) či jiného
+  mechanismu.
 
-    Alice transakci odešle a později je zařazena do bloku. To umožní
-    komukoliv povšimnout si, že probíhá proces o otevření úschovny
-    („unvault”). Alicin software detekuje utrácení jejích uschovaných
-    prostředků a ověří, že třetí parametr `OP_UNVAULT` výstupu
-    potvrzené transakce přesně odpovídá commitmentu, který Alice
-    předtím vytvořila. Odpovídá-li, počká nyní Alice stanovenou dobu,
-    po které může odeslat transakci utrácející z `OP_UNVAULT` UTXO
-    na výstupy, které dříve stanovila (např. Bobovi a zbytek platby
-    sobě). Toto by bylo úspěšné utracení Aliciných prostředků použitím
-    jejího méně důvěryhodného způsobu platby, např. pomocí horké
-    peněženky.
+  Alice transakci odešle a později je zařazena do bloku. To umožní
+  komukoliv povšimnout si, že probíhá proces o otevření úschovny
+  („unvault”). Alicin software detekuje utrácení jejích uschovaných
+  prostředků a ověří, že třetí parametr `OP_UNVAULT` výstupu
+  potvrzené transakce přesně odpovídá commitmentu, který Alice
+  předtím vytvořila. Odpovídá-li, počká nyní Alice stanovenou dobu,
+  po které může odeslat transakci utrácející z `OP_UNVAULT` UTXO
+  na výstupy, které dříve stanovila (např. Bobovi a zbytek platby
+  sobě). Toto by bylo úspěšné utracení Aliciných prostředků použitím
+  jejího méně důvěryhodného způsobu platby, např. pomocí horké
+  peněženky.
 
-    Avšak představte si, že Alicin software spatří potvrzený pokus o
-    otevření úschovny a nerozpoznává jej. V takovém případě má software
-    možnost zmrazit prostředky během čekací doby. Vytvoří transakci
-    utrácející `OP_UNVAULT` výstup na vysoce důvěryhodnou adresu, která
-    byla součástí předchozích commitmentů. Pokud se tato transakce
-    potvrdí, než vyprší čekací doba, jsou Aliciny prostředky v bezpečí
-    před kompromitací jejího méně důvěryhodného způsobu platby. Poté,
-    co byly prostředky přesunuty, může je Alice kdykoliv utratit
-    splněním podmínek vysoce důvěryhodného způsobu platby (například
-    studenou peněženkou).
+  Avšak představte si, že Alicin software spatří potvrzený pokus o
+  otevření úschovny a nerozpoznává jej. V takovém případě má software
+  možnost zmrazit prostředky během čekací doby. Vytvoří transakci
+  utrácející `OP_UNVAULT` výstup na vysoce důvěryhodnou adresu, která
+  byla součástí předchozích commitmentů. Pokud se tato transakce
+  potvrdí, než vyprší čekací doba, jsou Aliciny prostředky v bezpečí
+  před kompromitací jejího méně důvěryhodného způsobu platby. Poté,
+  co byly prostředky přesunuty, může je Alice kdykoliv utratit
+  splněním podmínek vysoce důvěryhodného způsobu platby (například
+  studenou peněženkou).
 
-    Vedle nových opkódů popisuje O'Beirne také motivaci pro úschovny
-    a analyzuje i jiné způsoby včetně těch, které již nyní v bitcoinu
-    existují (používající dopředu podepsané transakce), i takových,
-    které by závisely na navrhovaném soft forku pro přidání [koventantů][topic
-    covenants]. Některé z výhod tohoto návrhu:
+  Vedle nových opkódů popisuje O'Beirne také motivaci pro úschovny
+  a analyzuje i jiné způsoby včetně těch, které již nyní v bitcoinu
+  existují (používající dopředu podepsané transakce), i takových,
+  které by závisely na navrhovaném soft forku pro přidání [koventantů][topic
+  covenants]. Některé z výhod tohoto návrhu:
 
-    - *Menší witnessy:* návrhy flexibilních kovenantů, jako ty používající
-      navhovaný [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack],
-      by vyžadovaly, aby witnessy pro transakce otevření úschovny
-      obsahovaly kopie velkého množství dat z jiných míst transakce.
-      Tím by se navyšovala velikost a poplatky za tuto transkaci.
-      `OP_VAULT` vyžaduje mnohem menší skripty a witnessy.
+  - *Menší witnessy:* návrhy flexibilních kovenantů, jako ty používající
+    navhovaný [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack],
+    by vyžadovaly, aby witnessy pro transakce otevření úschovny
+    obsahovaly kopie velkého množství dat z jiných míst transakce.
+    Tím by se navyšovala velikost a poplatky za tuto transkaci.
+    `OP_VAULT` vyžaduje mnohem menší skripty a witnessy.
 
-    - *Utrácení vyžaduje méně kroků:* dnes dostupné méně flexibilní
-      návrhy koventantů a úschoven, které jsou založené na předem
-      podepsaných transakcích, vyžadují vybrání prostředků na
-      předurčenou adresu před tím, než mohou být odeslány do konečné
-      destinace. Tyto návrhy také většinou vyžadují, aby byl každý
-      výstup utracen v separátní transakci, což znemožňuje použití
-      [skupinových plateb][topic payment batching]. To navyšuje
-      počet transakcí, jejich velikost i náklady.
+  - *Utrácení vyžaduje méně kroků:* dnes dostupné méně flexibilní
+    návrhy koventantů a úschoven, které jsou založené na předem
+    podepsaných transakcích, vyžadují vybrání prostředků na
+    předurčenou adresu před tím, než mohou být odeslány do konečné
+    destinace. Tyto návrhy také většinou vyžadují, aby byl každý
+    výstup utracen v separátní transakci, což znemožňuje použití
+    [skupinových plateb][topic payment batching]. To navyšuje
+    počet transakcí, jejich velikost i náklady.
 
-      `OP_VAULT` vyžaduje méně transakcí v typickém případě utrácení
-      jediného výstupu a také podporuje skupinové transakce v případě
-      utrácení nebo zmrazování více výstupů. Může tedy ušetřit
-      velké množství prostoru a umožnit úschovnám obdržet mnohem
-      více transakcí před tím, než je potřeba konsolidovat jejich
-      výstupy kvůli bezpečnosti.
+    `OP_VAULT` vyžaduje méně transakcí v typickém případě utrácení
+    jediného výstupu a také podporuje skupinové transakce v případě
+    utrácení nebo zmrazování více výstupů. Může tedy ušetřit
+    velké množství prostoru a umožnit úschovnám obdržet mnohem
+    více transakcí před tím, než je potřeba konsolidovat jejich
+    výstupy kvůli bezpečnosti.
 
-    V diskuzi o tomto nápadu navrhl Greg Sanders (jak [shrnul O'Beirne][obeirne
-    scripthash]) mírně odlišnou konstrukci, která „by například umožnila,
-    aby byly všechny výstupy [P2TR][topic taproot], což by skrylo
-    operace nad úschovnou – docela dobrá fíčura.”
+  V diskuzi o tomto nápadu navrhl Greg Sanders (jak [shrnul O'Beirne][obeirne
+  scripthash]) mírně odlišnou konstrukci, která „by například umožnila,
+  aby byly všechny výstupy [P2TR][topic taproot], což by skrylo
+  operace nad úschovnou – docela dobrá fíčura.”
 
-    Anthony Towns [poznamenává][towns op_vault], že návrh umožňuje
-    uživatelům úschoven kdykoliv zmrazit prostředky jejich pouhým
-    posláním na vysoce důvěryhodnou adresu, ze které je mohou později
-    rozmrazit. To přináší majitelům úschoven velkou výhodu, protože
-    k blokaci pokusu o krádež nepotřebují přístup ke svým vysoce
-    zabezpečeným klíčům (např. ke studeným peněženkám). Na druhou stranu
-    může každá třetí strana, která se adresu dozví, také zmrazit
-    uživatelovy prostředky (i když bude muset zaplatit poplatek), což
-    uživatelovi přinese nepříjemnosti. Aby mohly odlehčené peněženky
-    nalézt své transakce na blockchainu, prozrazuje mnoho z nich
-    své adresy třetím stranám. Úschovny postavené na těchto peněženkách
-    by tak mohly dát neúmyslně třetím stranám možnost přinést jejich
-    uživatelům nepříjemnosti. Towns navrhuje
-    alternativní konstrukci podmínek zmrazení tak, aby při iniciaci
-    zmrazování vyžadovaly nějakou dodatečnou informaci. To by zachovalo
-    všechny výhody tohoto systému a také by snížilo riziko
-    nezamýšleného zmrazení. Towns také navrhuje možné vylepšení
-    podpory skupinových transakcí a zamýšlí se nad podporou taprootu.
+  Anthony Towns [poznamenává][towns op_vault], že návrh umožňuje
+  uživatelům úschoven kdykoliv zmrazit prostředky jejich pouhým
+  posláním na vysoce důvěryhodnou adresu, ze které je mohou později
+  rozmrazit. To přináší majitelům úschoven velkou výhodu, protože
+  k blokaci pokusu o krádež nepotřebují přístup ke svým vysoce
+  zabezpečeným klíčům (např. ke studeným peněženkám). Na druhou stranu
+  může každá třetí strana, která se adresu dozví, také zmrazit
+  uživatelovy prostředky (i když bude muset zaplatit poplatek), což
+  uživatelovi přinese nepříjemnosti. Aby mohly odlehčené peněženky
+  nalézt své transakce na blockchainu, prozrazuje mnoho z nich
+  své adresy třetím stranám. Úschovny postavené na těchto peněženkách
+  by tak mohly dát neúmyslně třetím stranám možnost přinést jejich
+  uživatelům nepříjemnosti. Towns navrhuje
+  alternativní konstrukci podmínek zmrazení tak, aby při iniciaci
+  zmrazování vyžadovaly nějakou dodatečnou informaci. To by zachovalo
+  všechny výhody tohoto systému a také by snížilo riziko
+  nezamýšleného zmrazení. Towns také navrhuje možné vylepšení
+  podpory skupinových transakcí a zamýšlí se nad podporou taprootu.
 
-    Několik reakcí též zmínilo, že `OP_UNVAULT` může poskytnout mnoho
-    vlastností navrhovaného [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]
-    (CTV) včetně výhod pro [DLC][topic dlc] dříve popsané ve [zpravodaji č. 185][news185
-    ctv-dlc] (*angl.*), i když s většími náklady na blockchainu.
+  Několik reakcí též zmínilo, že `OP_UNVAULT` může poskytnout mnoho
+  vlastností navrhovaného [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]
+  (CTV) včetně výhod pro [DLC][topic dlc] dříve popsané ve [zpravodaji č. 185][news185
+  ctv-dlc] (*angl.*), i když s většími náklady na blockchainu.
 
-    V době psaní zpravodaje diskuze stála probíhala.
+  V době psaní zpravodaje diskuze stála probíhala.
 
 ## Změny ve službách a klientech
 

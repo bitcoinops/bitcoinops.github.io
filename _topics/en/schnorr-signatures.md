@@ -3,7 +3,7 @@ title: Schnorr signatures
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Soft Forks
   - Scripts and Addresses
 
@@ -46,7 +46,7 @@ optech_mentions:
     url: /en/newsletters/2019/10/23/#taproot-review
 
   - title: Bitcoin Optech schnorr/taproot workshop
-    url: /en/schorr-taproot-workshop/
+    url: /en/schnorr-taproot-workshop/
     date: 2019-10-29
     feature: true
 
@@ -118,6 +118,9 @@ optech_mentions:
 
   - title: "BIPs #1446 makes a small change and a number of additions to the BIP340 specification"
     url: /en/newsletters/2023/05/31/#bips-1446
+
+  - title: "Explanation for why BIP340 uses secp256k1 instead of a different curve"
+    url: /en/newsletters/2024/03/27/#why-does-bip-340-use-secp256k1
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

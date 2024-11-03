@@ -33,12 +33,12 @@ Bitcoin infrastructure software.
   through that payment channel or onchain using a splice out
   (withdrawal) from that payment channel.
 
-    Russell previously [proposed][russell old splice] a draft
-    specification for splicing in 2018 (see [Newsletter #17][news17
-    splice]) but this new draft has the advantage of being able to use
-    the interactive funding protocol that's included as part of
-    C-Lightning's experimental support for [dual funding][topic dual
-    funding].
+  Russell previously [proposed][russell old splice] a draft
+  specification for splicing in 2018 (see [Newsletter #17][news17
+  splice]) but this new draft has the advantage of being able to use
+  the interactive funding protocol that's included as part of
+  C-Lightning's experimental support for [dual funding][topic dual
+  funding].
 
 - **Call for topics in layer-crossing workshop:** Antoine Riard
   [posted][riard workshop] to both the Bitcoin-Dev and Lightning-Dev
@@ -49,16 +49,16 @@ Bitcoin infrastructure software.
   especially worth perusing so that developers and reviewers can focus
   on those proposals in the short term.
 
-    The post proposes an agenda that includes [package relay][topic
-    package relay], fee sponsorship (see [Newsletter #116][news116
-    sponsorship]), moving from [BIP125][] opt-in Replace By Fee
-    ([RBF][topic rbf]) to full RBF, improving coordination of security
-    response between primarily onchain projects such as full nodes and
-    primarily offchain projects like LN nodes, and defining what mempool
-    and relay policies can be reasonably depended upon by layer two
-    protocols.  Riard also asks for additional topic suggestions from
-    anyone planning to attend, with May 7th being the deadline for
-    submissions.  The workshop will likely be held mid June.
+  The post proposes an agenda that includes [package relay][topic
+  package relay], fee sponsorship (see [Newsletter #116][news116
+  sponsorship]), moving from [BIP125][] opt-in Replace By Fee
+  ([RBF][topic rbf]) to full RBF, improving coordination of security
+  response between primarily onchain projects such as full nodes and
+  primarily offchain projects like LN nodes, and defining what mempool
+  and relay policies can be reasonably depended upon by layer two
+  protocols.  Riard also asks for additional topic suggestions from
+  anyone planning to attend, with May 7th being the deadline for
+  submissions.  The workshop will likely be held mid June.
 
 - **Support for ECDSA signature adaptors added to libsecp256k1-zkp:**
   [signature adaptors][topic adaptor signatures] were originally
@@ -72,27 +72,27 @@ Bitcoin infrastructure software.
   scripts, suggesting adaptor signatures could be used to create "scriptless
   scripts".
 
-    Accomplishing the same on ECDSA is not as easy.  However, Lloyd
-    Fournier [suggested][fournier otves] it would be relatively simple
-    if we separated goal #1 (proof of private key) from goals #2 and #3
-    (proving and revealing encryption keys, AKA adaptors).  This
-    requires using one signature object as just a signature and another
-    signature object for the adaptors, so it uses `OP_CHECKMULTISIG` and
-    is not quite as scriptless as before.  The separated construction also requires a [security
-    warning][ecdh warning] related to reusing some of the involved keys
-    with Elliptic Curve Diffie Hellman (ECDH) key exchange and ElGamal
-    encryption.  Beyond that, this technique makes signature adaptors entirely
-    usable on Bitcoin today, and it's what various [DLC][topic dlc]
-    projects have been using.
+  Accomplishing the same on ECDSA is not as easy.  However, Lloyd
+  Fournier [suggested][fournier otves] it would be relatively simple
+  if we separated goal #1 (proof of private key) from goals #2 and #3
+  (proving and revealing encryption keys, AKA adaptors).  This
+  requires using one signature object as just a signature and another
+  signature object for the adaptors, so it uses `OP_CHECKMULTISIG` and
+  is not quite as scriptless as before.  The separated construction also requires a [security
+  warning][ecdh warning] related to reusing some of the involved keys
+  with Elliptic Curve Diffie--Hellman (ECDH) key exchange and ElGamal
+  encryption.  Beyond that, this technique makes signature adaptors entirely
+  usable on Bitcoin today, and it's what various [DLC][topic dlc]
+  projects have been using.
 
-    In April 2020, Jonas Nick implemented support for these simplified
-    ECDSA signature adaptors in a draft PR (see [Newsletter #92][news92
-    ecdsa adaptor]).  Jesse Posner [ported][libsecp256k1-zkp #117] and
-    extended the PR to libsecp256k1-zkp, a fork of [libsecp256k1][] that
-    supports more advanced cryptographic protocols.  This updated PR has
-    now been merged after a detailed review process that involved
-    several conversations that may be of interest to anyone seeking to
-    better understand the security of signature adaptors.
+  In April 2020, Jonas Nick implemented support for these simplified
+  ECDSA signature adaptors in a draft PR (see [Newsletter #92][news92
+  ecdsa adaptor]).  Jesse Posner [ported][libsecp256k1-zkp #117] and
+  extended the PR to libsecp256k1-zkp, a fork of [libsecp256k1][] that
+  supports more advanced cryptographic protocols.  This updated PR has
+  now been merged after a detailed review process that involved
+  several conversations that may be of interest to anyone seeking to
+  better understand the security of signature adaptors.
 
 - **Problems with the BIPs process:** after some drama on the BIPs
   repository (and perhaps some previous pent-up frustrations), several
@@ -116,15 +116,15 @@ answers posted since our last update.*
   David A. Harding defines Median Time Past (MTP) and outlines how MTP is used
   to:
 
-    1. determine the validity of a block using its `nTime` field, controlling
-       difficulty adjustment period times
+  1. determine the validity of a block using its `nTime` field, controlling
+     difficulty adjustment period times
 
-    2. ensure that time only moves forward, simplifying [state transitions][bip9
-       state] in BIP9
+  2. ensure that time only moves forward, simplifying [state transitions][bip9
+     state] in BIP9
 
-    3. eliminate the incentive for individual miners to confirm transactions
-       with locktimes up to two hours in the future by lying about the
-       current time, as fixed in [BIP113][bip113 spec]
+  3. eliminate the incentive for individual miners to confirm transactions
+     with locktimes up to two hours in the future by lying about the
+     current time, as fixed in [BIP113][bip113 spec]
 
 - [Can Taproot be used to commit arbitrary data to chain without any additional footprint?]({{bse}}105346)
   Pieter Wuille answers by pointing out that while committing to data via
@@ -178,19 +178,19 @@ BOLTs][bolts repo].*
   addresses of potential peers known to the node, split by network type. Sample
   output:
 
-    ```
-    $ bitcoin-cli -addrinfo
-    {
-      "addresses_known": {
-        "ipv4": 14406,
-        "ipv6": 2511,
-        "torv2": 5563,
-        "torv3": 2842,
-        "i2p": 8,
-        "total": 25330
-      }
+  ```
+  $ bitcoin-cli -addrinfo
+  {
+    "addresses_known": {
+      "ipv4": 14406,
+      "ipv6": 2511,
+      "torv2": 5563,
+      "torv3": 2842,
+      "i2p": 8,
+      "total": 25330
     }
-    ```
+  }
+  ```
 
 - [Rust-Lightning #844][] adds support for message signing, signature
   verification, and public key recovery using a scheme compatible with those of

@@ -35,8 +35,8 @@ notable changes to popular Bitcoin infrastructure projects.
   so that any problems can be found and fixed before their general
   public release:
 
-    - [Bitcoin Core 0.19.0rc1][bitcoin core 0.19.0]
-    - [C-Lightning 0.7.3-rc2][c-lightning 0.7.3]
+  - [Bitcoin Core 0.19.0rc1][bitcoin core 0.19.0]
+  - [C-Lightning 0.7.3-rc2][c-lightning 0.7.3]
 
 ## News
 
@@ -44,27 +44,27 @@ notable changes to popular Bitcoin infrastructure projects.
   the Bitcoin-Dev mailing list with a summary of recent changes to the
   proposal.  Changes include:
 
-    * 32-byte public keys instead of 33-byte keys (mentioned in
-      [Newsletter #59][32 byte pubkey]).
+  * 32-byte public keys instead of 33-byte keys (mentioned in
+    [Newsletter #59][32 byte pubkey]).
 
-    * No support for P2SH-wrapped taproot addresses (mentioned in
-      [#65][p2sh-wrapped taproot]).
+  * No support for P2SH-wrapped taproot addresses (mentioned in
+    [#65][p2sh-wrapped taproot]).
 
-    * 32-bit txin positions in the signature hash data rather than
-      16-bit indexes.
+  * 32-bit txin positions in the signature hash data rather than
+    16-bit indexes.
 
-    * Tagged hashes are now used in [bip-schnorr][].  They were
-      previously only used in [bip-taproot][] and [bip-tapscript][].
+  * Tagged hashes are now used in [bip-schnorr][].  They were
+    previously only used in [bip-taproot][] and [bip-tapscript][].
 
-    * The 10,000-byte and 201 non-push opcode limits have been dropped
-      from [bip-tapscript][] (mentioned in [#65][tapscript resource
-      limits]).
+  * The 10,000-byte and 201 non-push opcode limits have been dropped
+    from [bip-tapscript][] (mentioned in [#65][tapscript resource
+    limits]).
 
-    * The maximum depth of the merkle tree has been increased from 32
-      levels to 128 levels.
+  * The maximum depth of the merkle tree has been increased from 32
+    levels to 128 levels.
 
-    Wuille's email and the updated BIPs provide rationales for each of
-    these decisions as well as links to previous discussions about them.
+  Wuille's email and the updated BIPs provide rationales for each of
+  these decisions as well as links to previous discussions about them.
 
 - **Proposed default LN fee increase:** Rusty Russell proposed an
   increase in the default in-channel fees to be used by nodes, going
@@ -76,24 +76,24 @@ notable changes to popular Bitcoin infrastructure projects.
   new costs of transferring various amounts of money in USD terms at
   $10,000 USD/BTC:
 
-    | Amount |  Before     | After       |
-    |--------|-------------|-------------|
-    | 0.1c   |  0.0100001c |  0.05005c   |
-    | 1c     |  0.010001c  |  0.0505c    |
-    | 10c    |  0.01001c   |  0.055c     |
-    | $1     |  0.0101c    |  0.1c       |
-    | $10    |  0.011c     |  0.55c      |
-    | $100   |  0.02c      |  5.05c      |
-    | $1000  |  0.11c      |  50.05c     |
+  | Amount |  Before     | After       |
+  |--------|-------------|-------------|
+  | 0.1c   |  0.0100001c |  0.05005c   |
+  | 1c     |  0.010001c  |  0.0505c    |
+  | 10c    |  0.01001c   |  0.055c     |
+  | $1     |  0.0101c    |  0.1c       |
+  | $10    |  0.011c     |  0.55c      |
+  | $100   |  0.02c      |  5.05c      |
+  | $1000  |  0.11c      |  50.05c     |
 
-    Fellow C-Lightning maintainer ZmnSCPxj and Eclair maintainer
-    Pierre-Marie Padiou indicated support for the proposal.  LND
-    maintainer Olaoluwa Osuntokun believed the reasoning behind the
-    proposal had several flaws and advocated instead to "educate
-    prospective routing node operators on best practices, provide
-    analysis tools [...], and leave it up to the market participants to
-    converge on steady state economically rational fees."  As of this
-    writing, discussion about the topic remains ongoing.
+  Fellow C-Lightning maintainer ZmnSCPxj and Eclair maintainer
+  Pierre-Marie Padiou indicated support for the proposal.  LND
+  maintainer Olaoluwa Osuntokun believed the reasoning behind the
+  proposal had several flaws and advocated instead to "educate
+  prospective routing node operators on best practices, provide
+  analysis tools [...], and leave it up to the market participants to
+  converge on steady state economically rational fees."  As of this
+  writing, discussion about the topic remains ongoing.
 
 - **Conference summary: Cryptoeconomic Systems Summit:** this conference
   held last weekend on the MIT campus covered a variety of topics
@@ -104,69 +104,69 @@ notable changes to popular Bitcoin infrastructure projects.
   [transcribed][css ts], we thought the following three topics might be
   of particular technical interest to the readers of this newsletter:
 
-    - *Everything is broken* by Cory Fields ([transcript][fields ts], [video][fields vid]), a
-      talk that describes how Bitcoin is at risk not just from its own
-      software bugs but also from the bugs introduced into the
-      libraries, operating systems, and even hardware that it depends
-      upon.  Fields then looks back in time when a large number of
-      certain classes of bugs were affecting another major open source
-      project, Mozilla Firefox, and at that project's foresight for
-      attempting to categorically eliminate some of those problems by
-      starting the development ten years ago of a new programming
-      language (Rust) that could provide stronger automatic guarantees.
-      Finally, Fields asks the audience to contemplate initiates we
-      could start now that would, over the course of the next ten years,
-      help categorically eliminate some types of problems that Bitcoin
-      users and developers currently need to worry about.
+  - *Everything is broken* by Cory Fields ([transcript][fields ts], [video][fields vid]), a
+    talk that describes how Bitcoin is at risk not just from its own
+    software bugs but also from the bugs introduced into the
+    libraries, operating systems, and even hardware that it depends
+    upon.  Fields then looks back in time when a large number of
+    certain classes of bugs were affecting another major open source
+    project, Mozilla Firefox, and at that project's foresight for
+    attempting to categorically eliminate some of those problems by
+    starting the development ten years ago of a new programming
+    language (Rust) that could provide stronger automatic guarantees.
+    Finally, Fields asks the audience to contemplate initiates we
+    could start now that would, over the course of the next ten years,
+    help categorically eliminate some types of problems that Bitcoin
+    users and developers currently need to worry about.
 
-    - *Near misses: What could have gone wrong* by Ethan Heilman
-      ([transcript][heilman ts], [video][heilman vid]), a survey of five problems in Bitcoin's
-      past that could've lead to significant losses in user funds or
-      user confidence.  Following the survey, Heilman asks the audience
-      to consider what a worst-case software failure in Bitcoin would
-      look like today, or what would've happened if one of the
-      previously-encountered problems had been exploited by an attacker to
-      its worst extent.  We recommend attempting this exercise: it can
-      obviously emphasize the dangers that remain in Bitcoin---but it
-      may also help highlight the ways in which Bitcoin is more secure
-      than you initially expect.
+  - *Near misses: What could have gone wrong* by Ethan Heilman
+    ([transcript][heilman ts], [video][heilman vid]), a survey of five problems in Bitcoin's
+    past that could've lead to significant losses in user funds or
+    user confidence.  Following the survey, Heilman asks the audience
+    to consider what a worst-case software failure in Bitcoin would
+    look like today, or what would've happened if one of the
+    previously-encountered problems had been exploited by an attacker to
+    its worst extent.  We recommend attempting this exercise: it can
+    obviously emphasize the dangers that remain in Bitcoin---but it
+    may also help highlight the ways in which Bitcoin is more secure
+    than you initially expect.
 
-    - *The quest for practical threshold Schnorr signatures* by Tim
-      Ruffing ([transcript][ruffing ts], [video][ruffing vid]), a description of the research
-      performed by the speaker and his colleagues into trying to find a
-      secure, compact, practical, and flexible scheme for
-      threshold-based schnorr signatures.  Ruffing first describes the
-      difference between generalized threshold signatures and the
-      specific case of multi-signatures.  A threshold signature allows a
-      subset of a group to sign (e.g. k-of-n); multi-signatures are a
-      special case of threshold signatures where the whole group signs
-      (n-of-n).  Protocols like MuSig (see [Newsletter #35][musig
-      libsecp256k1-zkp]) and [MSDL][] provide multi-signature signing
-      compatible with [bip-schnorr][], but threshold signatures for a
-      subset of signers have not been solved to the
-      same degree.
+  - *The quest for practical threshold Schnorr signatures* by Tim
+    Ruffing ([transcript][ruffing ts], [video][ruffing vid]), a description of the research
+    performed by the speaker and his colleagues into trying to find a
+    secure, compact, practical, and flexible scheme for
+    threshold-based schnorr signatures.  Ruffing first describes the
+    difference between generalized threshold signatures and the
+    specific case of multi-signatures.  A threshold signature allows a
+    subset of a group to sign (e.g. k-of-n); multi-signatures are a
+    special case of threshold signatures where the whole group signs
+    (n-of-n).  Protocols like MuSig (see [Newsletter #35][musig
+    libsecp256k1-zkp]) and [MSDL][] provide multi-signature signing
+    compatible with [bip-schnorr][], but threshold signatures for a
+    subset of signers have not been solved to the
+    same degree.
 
-        As an example of outstanding problems, Ruffing notes that the
-        security proofs for existing Discrete Log Problem (DLP) based
-        threshold signature schemes assume that the majority of
-        potential signers are honest.  So a 2-of-3 arrangement is secure
-        because the worst case you planned for would be one dishonest
-        signer (which is less than a majority).  In a 6-of-9
-        arrangement, you want the scheme to be secure against up to five
-        dishonest signers---but five signers would constitute a majority
-        and undermine the expectations in the security proof.
+    As an example of outstanding problems, Ruffing notes that the
+    security proofs for existing Discrete Log Problem (DLP) based
+    threshold signature schemes assume that the majority of
+    potential signers are honest.  So a 2-of-3 arrangement is secure
+    because the worst case you planned for would be one dishonest
+    signer (which is less than a majority).  In a 6-of-9
+    arrangement, you want the scheme to be secure against up to five
+    dishonest signers---but five signers would constitute a majority
+    and undermine the expectations in the security proof.
 
-        Another potential problem is that previously-described protocols
-        expect each participant has a secure and reliable method of
-        communicating with all other participants.  Someone who can
-        eavesdrop or manipulate the communication may be able to recover
-        the ultimate private key that would allow them to sign any spend
-        they want.  This seems solvable, but the proposed solution
-        doesn't have a security proof yet.
+    Another potential problem is that previously-described protocols
+    expect each participant has a secure and reliable method of
+    communicating with all other participants.  Someone who can
+    eavesdrop or manipulate the communication may be able to recover
+    the ultimate private key that would allow them to sign any spend
+    they want.  This seems solvable, but the proposed solution
+    doesn't have a security proof yet.
 
-        Ruffing concludes with a wishlist for what he'd like to see in a
-        schnorr-based threshold signature scheme, including several
-        stretch goals.
+    Ruffing concludes with a wishlist for what he'd like to see in a
+    schnorr-based threshold signature scheme, including several
+    stretch goals.
 
 ## Notable code and documentation changes
 
@@ -227,3 +227,4 @@ notable changes to popular Bitcoin infrastructure projects.
 [css ts]: https://diyhpl.us/wiki/transcripts/cryptoeconomic-systems/2019/
 [css vids]: https://www.youtube.com/channel/UCJkYmuzqAnIKn3NPg5lc0Wg/videos
 [eclair 0.3.2]: https://github.com/ACINQ/eclair/releases/tag/v0.3.2
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

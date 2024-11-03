@@ -28,80 +28,80 @@ logiciels d'infrastructure Bitcoin les plus répandus.
   doit créer et signer une transaction de remboursement ; puis le bailleur de fonds
   doit signer et diffuser une transaction de financement.
 
-    Les auteurs notent que cela est problématique pour certains portefeuilles,
-    en particulier les portefeuilles sur les appareils mobiles qui peuvent ne
-    pas être en ligne ou en mesure d'agir tout le temps. Pour ces portefeuilles,
-    il serait raisonnable de générer une adresse onchain de secours à laquelle
-    ils peuvent recevoir des fonds si leur nœud LN ne peut être atteint.
-    Lorsque le porte-monnaie est à nouveau en ligne, il peut utiliser les fonds
-    onchain pour ouvrir un canal LN. Cependant, les nouveaux canaux LN doivent
-    être confirmés à un niveau raisonnable (par exemple 6 confirmations) avant
-    que le fournisseur de fonds ne puisse transmettre les paiements pour le
-    destinataire en toute sécurité et en toute confiance. Cela signifie qu'un
-    utilisateur de portefeuille mobile qui reçoit un paiement alors que son nœud
-    est hors ligne devra peut-être attendre six blocs après sa remise en ligne
-    avant de pouvoir utiliser cet argent pour envoyer un nouveau paiement sur LN.
+  Les auteurs notent que cela est problématique pour certains portefeuilles,
+  en particulier les portefeuilles sur les appareils mobiles qui peuvent ne
+  pas être en ligne ou en mesure d'agir tout le temps. Pour ces portefeuilles,
+  il serait raisonnable de générer une adresse onchain de secours à laquelle
+  ils peuvent recevoir des fonds si leur nœud LN ne peut être atteint.
+  Lorsque le porte-monnaie est à nouveau en ligne, il peut utiliser les fonds
+  onchain pour ouvrir un canal LN. Cependant, les nouveaux canaux LN doivent
+  être confirmés à un niveau raisonnable (par exemple 6 confirmations) avant
+  que le fournisseur de fonds ne puisse transmettre les paiements pour le
+  destinataire en toute sécurité et en toute confiance. Cela signifie qu'un
+  utilisateur de portefeuille mobile qui reçoit un paiement alors que son nœud
+  est hors ligne devra peut-être attendre six blocs après sa remise en ligne
+  avant de pouvoir utiliser cet argent pour envoyer un nouveau paiement sur LN.
 
-    Les auteurs proposent une alternative : l'utilisateur Alice choisit à l'avance
-    une contrepartie (Bob) dont elle pense que le nœud sera toujours disponible
-    (par exemple, un fournisseur de service Lightning, LSP). Alice et Bob coopèrent
-    pour créer une adresse onchain pour un script qui permet de dépenser avec une
-    signature d'Alice plus une signature de Bob ou l'expiration d'un délai de
-    plusieurs semaines (par exemple 6 000 blocs),pour [exemple][potentiam minsc] :
+  Les auteurs proposent une alternative : l'utilisateur Alice choisit à l'avance
+  une contrepartie (Bob) dont elle pense que le nœud sera toujours disponible
+  (par exemple, un fournisseur de service Lightning, LSP). Alice et Bob coopèrent
+  pour créer une adresse onchain pour un script qui permet de dépenser avec une
+  signature d'Alice plus une signature de Bob ou l'expiration d'un délai de
+  plusieurs semaines (par exemple 6 000 blocs),pour [exemple][potentiam minsc] :
 
-    ```hack
-    pk(A) && (pk(B) || older(6000))
-    ```
+  ```hack
+  pk(A) && (pk(B) || older(6000))
+  ```
 
-    Cette adresse peut recevoir un paiement qui commence à accumuler des
-    confirmations pendant qu'Alice est hors ligne. Tant que le paiement
-    n'a pas atteint le nombre de confirmations prévu, Bob doit cosigner
-    toute tentative de dépense de l'argent. Si Bob choisit de ne signer
-    qu'une seule tentative de dépense qu'Alice signe également, Bob peut
-    être sûr qu'Alice ne pourra pas dépenser deux fois cet argent avant
-    l'expiration. Le seul moyen pour qu'une dépense d'Alice devienne
-    invalide est que le paiement qui lui a été versé précédemment soit
-    également dépensé deux fois. Si ce paiement a fait l'objet de
-    nombreuses confirmations avant qu'Alice ne se connecte et ne lance
-    sa dépense, une double dépense devrait être improbable.
+  Cette adresse peut recevoir un paiement qui commence à accumuler des
+  confirmations pendant qu'Alice est hors ligne. Tant que le paiement
+  n'a pas atteint le nombre de confirmations prévu, Bob doit cosigner
+  toute tentative de dépense de l'argent. Si Bob choisit de ne signer
+  qu'une seule tentative de dépense qu'Alice signe également, Bob peut
+  être sûr qu'Alice ne pourra pas dépenser deux fois cet argent avant
+  l'expiration. Le seul moyen pour qu'une dépense d'Alice devienne
+  invalide est que le paiement qui lui a été versé précédemment soit
+  également dépensé deux fois. Si ce paiement a fait l'objet de
+  nombreuses confirmations avant qu'Alice ne se connecte et ne lance
+  sa dépense, une double dépense devrait être improbable.
 
-    Cela permet à Alice de recevoir un paiement alors que son portefeuille
-    est hors ligne, de se connecter après que le paiement a reçu au moins
-    6 confirmations (mais beaucoup moins que 6 000 confirmations), et de
-    cosigner immédiatement une transaction pour ouvrir un canal LN dont Bob
-    sait qu'il ne peut pas être dépensé deux fois. Avant même que cette
-    transaction de création de canal ne soit confirmée, Bob peut commencer
-    à transmettre des paiements pour Alice en toute sécurité et en toute
-    confiance. Ou, si Alice et Bob ont déjà tous deux des canaux LN (soit
-    l'un avec l'autre, soit avec des pairs distincts), Bob peut envoyer
-    un paiement LN à Alice, que celle-ci peut réclamer en dépensant ses fonds
-    onchain pour Bob. Par ailleurs, si le portefeuille d'Alice est en ligne
-    et qu'elle décide de faire un paiement régulier onchain, il lui
-    suffit que le portefeuille de Bob cosigne la dépense. Dans le pire des cas,
-    si Bob ne coopère pas, Alice peut simplement attendre quelques semaines
-    pour dépenser son argent sans sa participation.
+  Cela permet à Alice de recevoir un paiement alors que son portefeuille
+  est hors ligne, de se connecter après que le paiement a reçu au moins
+  6 confirmations (mais beaucoup moins que 6 000 confirmations), et de
+  cosigner immédiatement une transaction pour ouvrir un canal LN dont Bob
+  sait qu'il ne peut pas être dépensé deux fois. Avant même que cette
+  transaction de création de canal ne soit confirmée, Bob peut commencer
+  à transmettre des paiements pour Alice en toute sécurité et en toute
+  confiance. Ou, si Alice et Bob ont déjà tous deux des canaux LN (soit
+  l'un avec l'autre, soit avec des pairs distincts), Bob peut envoyer
+  un paiement LN à Alice, que celle-ci peut réclamer en dépensant ses fonds
+  onchain pour Bob. Par ailleurs, si le portefeuille d'Alice est en ligne
+  et qu'elle décide de faire un paiement régulier onchain, il lui
+  suffit que le portefeuille de Bob cosigne la dépense. Dans le pire des cas,
+  si Bob ne coopère pas, Alice peut simplement attendre quelques semaines
+  pour dépenser son argent sans sa participation.
 
-    En plus de permettre aux portefeuilles hors ligne de recevoir des fonds pour LN,
-    les auteurs expliquent pourquoi l'idée pourrait bien se combiner avec les
-    [paiements asynchrones][topic async payments] pour permettre aux LSP (fournisseur
-    de service de liquidité) de préparer les opérations de rééquilibrage
-    des canaux à l'avance pour le moment où un client hors ligne revient en ligne,
-    permettant à ces opérations de rééquilibrage de se produire sans aucun retard
-    pour l'utilisateur. Par exemple, si Carole envoie un paiement
-    asynchrone LN à Alice pour un montant supérieur à la capacité actuelle du
-    canal d'Alice, Bob peut envoyer un paiement au script `pk(B) && (pk(A) || older(6000))`.
-    Ce script alternatif inverse les rôles pour Alice et Bob. Si le paiement
-    de Bob reçoit un nombre suffisant de confirmations au moment où Alice
-    se connecte à nouveau, Alice peut immédiatement transférer ce paiement
-    sur un nouveau canal LN et demander à Bob de transmettre le paiement
-    asynchrone sur ce nouveau canal, en conservant les propriétés habituelles
-    de sécurité et de fiabilité de LN.
+  En plus de permettre aux portefeuilles hors ligne de recevoir des fonds pour LN,
+  les auteurs expliquent pourquoi l'idée pourrait bien se combiner avec les
+  [paiements asynchrones][topic async payments] pour permettre aux LSP (fournisseur
+  de service de liquidité) de préparer les opérations de rééquilibrage
+  des canaux à l'avance pour le moment où un client hors ligne revient en ligne,
+  permettant à ces opérations de rééquilibrage de se produire sans aucun retard
+  pour l'utilisateur. Par exemple, si Carole envoie un paiement
+  asynchrone LN à Alice pour un montant supérieur à la capacité actuelle du
+  canal d'Alice, Bob peut envoyer un paiement au script `pk(B) && (pk(A) || older(6000))`.
+  Ce script alternatif inverse les rôles pour Alice et Bob. Si le paiement
+  de Bob reçoit un nombre suffisant de confirmations au moment où Alice
+  se connecte à nouveau, Alice peut immédiatement transférer ce paiement
+  sur un nouveau canal LN et demander à Bob de transmettre le paiement
+  asynchrone sur ce nouveau canal, en conservant les propriétés habituelles
+  de sécurité et de fiabilité de LN.
 
-    L'idée a fait l'objet d'une discussion modérée sur la liste de diffusion
-    au moment de la rédaction de cet article, avec plusieurs commentaires
-    demandant des éclaircissements sur certains aspects de l'idée et
-    au moins un [commentaire][fournier potentiam] soutenant fortement
-    le concept général.
+  L'idée a fait l'objet d'une discussion modérée sur la liste de diffusion
+  au moment de la rédaction de cet article, avec plusieurs commentaires
+  demandant des éclaircissements sur certains aspects de l'idée et
+  au moins un [commentaire][fournier potentiam] soutenant fortement
+  le concept général.
 
 ## Mises à jour et version candidate
 

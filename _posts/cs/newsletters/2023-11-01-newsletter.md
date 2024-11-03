@@ -17,51 +17,51 @@ páteřním software.
 - **Diskuze o změnách ve skriptu pokračují:** do diskuzí v emailové skupině
   Bitcoin-Dev, kterým jsme se věnovali dříve, přibylo několik nových reakcí.
 
-    - *Výzkum kovenantů:* Anthony Towns zaslal [odpověď][towns cov]
-      na [příspěvek][russell cov] od Rustyho Russella, který jsme [zmínili][news274
-      cov] v minulém čísle. Towns porovnává Russellův přístup s jinými přístupy – zaměřenými
-      zvláště na [úschovny][topic vaults] založené na [kovenantech][topic covenants]
-      – a považuje ho za neatraktivní. V následující [odpovědi][russell cov2] Russell
-      poznamenává, že pro úschovny existují různé návrhy a že jsou úschovny
-      v porovnání s jinými druhy transakcí neoptimální. Dále vyvozuje, že
-      optimalizace není pro uživatele úschoven kritická. Tvrdí, že návrh úschoven
-      dle [BIP345][] je vhodnější jako formát adres spíše než soubor opkódů.
-      Podle našeho soudu tento výrok znamená, že BIP345 dává větší smysl jako
-      šablona (podobně jako P2WPKH) navržená pro jednu funkci než jako soubor
-      opkódů, který je navržen pro tu jednu funkci, ale který má možnost
-      spolupracovat se zbytkem skriptu potenciálně nepředpokládanými způsoby.
+  - *Výzkum kovenantů:* Anthony Towns zaslal [odpověď][towns cov]
+    na [příspěvek][russell cov] od Rustyho Russella, který jsme [zmínili][news274
+    cov] v minulém čísle. Towns porovnává Russellův přístup s jinými přístupy – zaměřenými
+    zvláště na [úschovny][topic vaults] založené na [kovenantech][topic covenants]
+    – a považuje ho za neatraktivní. V následující [odpovědi][russell cov2] Russell
+    poznamenává, že pro úschovny existují různé návrhy a že jsou úschovny
+    v porovnání s jinými druhy transakcí neoptimální. Dále vyvozuje, že
+    optimalizace není pro uživatele úschoven kritická. Tvrdí, že návrh úschoven
+    dle [BIP345][] je vhodnější jako formát adres spíše než soubor opkódů.
+    Podle našeho soudu tento výrok znamená, že BIP345 dává větší smysl jako
+    šablona (podobně jako P2WPKH) navržená pro jednu funkci než jako soubor
+    opkódů, který je navržen pro tu jednu funkci, ale který má možnost
+    spolupracovat se zbytkem skriptu potenciálně nepředpokládanými způsoby.
 
-      Towns rovněž uvažuje nad použitím Russellova přístupu jako způsobu,
-      jak obecně umožnit experimentování, a myslí si, že je „sice zajímavější
-      […], ale pořád dost kulhá.” Připomíná čtenářům svůj předešlý návrh
-      na alternativu bitcoinového Scriptu ve stylu Lispu (viz [zpravodaj č.
-      191][news191 lisp], _angl._) a ukazuje, jak by mohl přinést větší
-      flexibilitu a možnosti v provádění introspekce transakcí během
-      vyhodnocování witnessů. Poskytuje odkazy na svůj testovací kód a
-      ukazuje na příklady, které napsal. Russell odpověděl: „Stále
-      věřím, že než ho budeme muset nahradit, existuje prostor pro zlepšení.
-      Je těžké porovnávat belhající se [S]cript v dnešní podobě s
-      alternativami, protože ty nejzajímavější případy jsou nemožné.“
+    Towns rovněž uvažuje nad použitím Russellova přístupu jako způsobu,
+    jak obecně umožnit experimentování, a myslí si, že je „sice zajímavější
+    […], ale pořád dost kulhá.” Připomíná čtenářům svůj předešlý návrh
+    na alternativu bitcoinového Scriptu ve stylu Lispu (viz [zpravodaj č.
+    191][news191 lisp], _angl._) a ukazuje, jak by mohl přinést větší
+    flexibilitu a možnosti v provádění introspekce transakcí během
+    vyhodnocování witnessů. Poskytuje odkazy na svůj testovací kód a
+    ukazuje na příklady, které napsal. Russell odpověděl: „Stále
+    věřím, že než ho budeme muset nahradit, existuje prostor pro zlepšení.
+    Je těžké porovnávat belhající se [S]cript v dnešní podobě s
+    alternativami, protože ty nejzajímavější případy jsou nemožné.“
 
-      Towns a Russel též v krátkosti hovořili o [OP_CHECKSIGFROMSTACK][topic
-      op_checksigfromstack], jmenovitě o jeho schopnosti umístit autentizovaná
-      data od orákulí přímo do zásobníku.
+    Towns a Russel též v krátkosti hovořili o [OP_CHECKSIGFROMSTACK][topic
+    op_checksigfromstack], jmenovitě o jeho schopnosti umístit autentizovaná
+    data od orákulí přímo do zásobníku.
 
-    - *Návrh na OP_CAT:* několik lidí odpovědělo na [příspěvek][heilman cat]
-      od Ethana Heilmana oznamující návrh BIPu na [OP_CAT][], který jsme
-      minulý týden rovněž [zmínili][news274 cat].
+  - *Návrh na OP_CAT:* několik lidí odpovědělo na [příspěvek][heilman cat]
+    od Ethana Heilmana oznamující návrh BIPu na [OP_CAT][], který jsme
+    minulý týden rovněž [zmínili][news274 cat].
 
-      Po několika reakcích zmiňujících otázku, zda by nebyl `OP_CAT`
-      příliš omezovaný 520bytovým limitem na velikost prvků v zásobníku,
-      [popsal][todd 520] Peter Todd způsob, kterým lze budoucím soft forkem
-      navýšit limit bez použití dodatečných `OP_SUCCESSx` opkódů. Nevýhodou
-      je, že všechna použití `OP_CAT` by před navýšením vyžadovala přidání
-      několika již dostupných opkódů do skriptu navíc.
+    Po několika reakcích zmiňujících otázku, zda by nebyl `OP_CAT`
+    příliš omezovaný 520bytovým limitem na velikost prvků v zásobníku,
+    [popsal][todd 520] Peter Todd způsob, kterým lze budoucím soft forkem
+    navýšit limit bez použití dodatečných `OP_SUCCESSx` opkódů. Nevýhodou
+    je, že všechna použití `OP_CAT` by před navýšením vyžadovala přidání
+    několika již dostupných opkódů do skriptu navíc.
 
-      Ještě před odpovědí Anthonyho Townse na Russellův výzkum kovenantů
-      zaslal James O'Beirne [příspěvek][o'beirne vault], ve kterém zmiňuje
-      důležitá omezení `OP_CAT` pro použití v úschovnách. Konkrétně jmenuje
-      několik vlastností, které `OP_CAT`, na rozdíl od BIP345 úschoven, postrádá.
+    Ještě před odpovědí Anthonyho Townse na Russellův výzkum kovenantů
+    zaslal James O'Beirne [příspěvek][o'beirne vault], ve kterém zmiňuje
+    důležitá omezení `OP_CAT` pro použití v úschovnách. Konkrétně jmenuje
+    několik vlastností, které `OP_CAT`, na rozdíl od BIP345 úschoven, postrádá.
 
 ## Vydání nových verzí
 

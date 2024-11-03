@@ -42,39 +42,39 @@ software.
     that need to be compromised in order to censor which transactions
     get confirmed.
 
-      Actively used protocols such as [LN-Penalty with anchors][topic
-      anchor outputs] (LN-Anchors), [DLCs][dlc cpfp], and [client-side
-      validation][topic client-side validation] allow at least some of
-      their onchain transactions to pay fees _exogenously_, meaning the
-      fees paid by the core of the transaction can be augmented with
-      fees paid using one or more independent UTXOs.  For example, in
-      LN-Anchors the commitment transaction includes one output for each
-      party to fee bump using [CPFP][topic cpfp] (the child transaction
-      spending an extra UTXO) and the HTLC-Success and HTLC-Failure
-      transactions (HTLC-X transactions) are partly signed using
-      `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` so they can be aggregated
-      into a single transaction with at least one extra input to pay
-      fees (the extra input being a separate UTXO).
+    Actively used protocols such as [LN-Penalty with anchors][topic
+    anchor outputs] (LN-Anchors), [DLCs][dlc cpfp], and [client-side
+    validation][topic client-side validation] allow at least some of
+    their onchain transactions to pay fees _exogenously_, meaning the
+    fees paid by the core of the transaction can be augmented with
+    fees paid using one or more independent UTXOs.  For example, in
+    LN-Anchors the commitment transaction includes one output for each
+    party to fee bump using [CPFP][topic cpfp] (the child transaction
+    spending an extra UTXO) and the HTLC-Success and HTLC-Failure
+    transactions (HTLC-X transactions) are partly signed using
+    `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` so they can be aggregated
+    into a single transaction with at least one extra input to pay
+    fees (the extra input being a separate UTXO).
 
-      Focusing on a thought-experiment version of LN that uses [P2TR][topic
-      taproot] and proposed ephemeral anchors, Peter Todd argues that
-      its dependency on exogenous fees significantly incentivizes paying
-      out-of-band fees.  In particular, the unilateral close of a
-      channel with no pending payments ([HTLCs][topic htlc]) would
-      allow a large miner accepting out-of-band fees to include twice as many
-      close transactions in a block than could be included by a smaller
-      miner who only accepted in-band fees paid for through CPFP fee
-      bumping.  The large miner could profitably encourage this by
-      offering a moderate discount to users paying out of band.  Peter
-      Todd calls that a threat to decentralization.
+    Focusing on a thought-experiment version of LN that uses [P2TR][topic
+    taproot] and proposed ephemeral anchors, Peter Todd argues that
+    its dependency on exogenous fees significantly incentivizes paying
+    out-of-band fees.  In particular, the unilateral close of a
+    channel with no pending payments ([HTLCs][topic htlc]) would
+    allow a large miner accepting out-of-band fees to include twice as many
+    close transactions in a block than could be included by a smaller
+    miner who only accepted in-band fees paid for through CPFP fee
+    bumping.  The large miner could profitably encourage this by
+    offering a moderate discount to users paying out of band.  Peter
+    Todd calls that a threat to decentralization.
 
-      The post does suggest that some uses of exogenous fees in protocols is
-      acceptable, so the concern may be about the frequency of their
-      expected use and the relative size difference between using them
-      and paying out of band.  In other words, frequently occurring
-      zero-pending unilateral closes with a 100% overhead would likely
-      be considered more of a risk than potentially rarer unilateral
-      closes with 20 pending HTLCs where the overhead is less than 10%.
+    The post does suggest that some uses of exogenous fees in protocols is
+    acceptable, so the concern may be about the frequency of their
+    expected use and the relative size difference between using them
+    and paying out of band.  In other words, frequently occurring
+    zero-pending unilateral closes with a 100% overhead would likely
+    be considered more of a risk than potentially rarer unilateral
+    closes with 20 pending HTLCs where the overhead is less than 10%.
 
   - **Implications of exogenous fees on safety, scalability, and costs:**
     Peter Todd's post also noted that existing designs such as
@@ -122,56 +122,56 @@ software.
     milliseconds.  Bastien Teinturier linked to a [previous
     discussion][bolts #1036] he had started about a similar approach.
 
-      Although the idea may work in some situations, Peter Todd's post
-      noted that endogenous fees with presigned incremental fee bumps
-      were not a satisfactory replacement for exogenous fees in all cases.
-      When the delays required for presigning commitment transactions
-      containing multiple HTLCs are multiplied by the several hops on a
-      typical payment path, the [delay][harding delays] can easily
-      become more than a second and, at least in theory, extend to
-      delays of more than a minute.  Peter Todd notes that the delay
-      could be reduced to roughly constant time if the proposed
-      [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] opcode (APO) were
-      available.
+    Although the idea may work in some situations, Peter Todd's post
+    noted that endogenous fees with presigned incremental fee bumps
+    were not a satisfactory replacement for exogenous fees in all cases.
+    When the delays required for presigning commitment transactions
+    containing multiple HTLCs are multiplied by the several hops on a
+    typical payment path, the [delay][harding delays] can easily
+    become more than a second and, at least in theory, extend to
+    delays of more than a minute.  Peter Todd notes that the delay
+    could be reduced to roughly constant time if the proposed
+    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] opcode (APO) were
+    available.
 
-      Even if the delay was a constant 5 milliseconds, it's
-      [possible][harding stuckless] that could lead to forwarding nodes
-      using endogenous fees earning less forwarding fees than nodes
-      using exogenous fees due to anticipated effects of LN payers
-      eventually making [redundant overpayments][topic redundant
-      overpayments] that will economically reward faster forwarding
-      over slower forwarding, even when the difference is on the order
-      of milliseconds.
+    Even if the delay was a constant 5 milliseconds, it's
+    [possible][harding stuckless] that could lead to forwarding nodes
+    using endogenous fees earning less forwarding fees than nodes
+    using exogenous fees due to anticipated effects of LN payers
+    eventually making [redundant overpayments][topic redundant
+    overpayments] that will economically reward faster forwarding
+    over slower forwarding, even when the difference is on the order
+    of milliseconds.
 
-      An additional challenge would be using the same endogenous fees for
-      the presigned HTLC-Success and HTLC-Timeout transactions (HTLC-X
-      transactions).  Even with APO, that would naively imply creating
-      <i>n<sup>2</sup></i> signatures, although Peter Todd notes that
-      the number of signatures could be reduced by assuming the HTLC-X
-      transactions would pay a similar feerate to the commitment
-      transaction.
+    An additional challenge would be using the same endogenous fees for
+    the presigned HTLC-Success and HTLC-Timeout transactions (HTLC-X
+    transactions).  Even with APO, that would naively imply creating
+    <i>n<sup>2</sup></i> signatures, although Peter Todd notes that
+    the number of signatures could be reduced by assuming the HTLC-X
+    transactions would pay a similar feerate to the commitment
+    transaction.
 
-      <!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
-           BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
-           = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
-           everything by 1,000 s/vb to get total sats -->
+    <p><!-- Using our tx-calc, 1-in, 22-out for 20 HTLC is 1014 vbytes;
+         BOLT3 "expected weights" gives worst-case HTLC-X weight of 705
+         = 176.25 vbytes, times 20 is 3525, plus 1014 is 4539. Multiply
+         everything by 1,000 s/vb to get total sats --></p>
 
-      There was an unresolved [debate][teinturier fees] about whether
-      endogenous fees would result in an excessive amount of capital
-      being reserved for fees.  For example, if Alice signs fee
-      variants from 10 s/vb to 1,000 s/vb, she must make decisions based
-      on the possibility that her counterparty Bob will put the 1,000
-      s/vb variant onchain, even if she wouldn't pay that feerate
-      herself.  That means she can't accept payments from Bob where he
-      spends the money he would need for the 1,000 s/vb variant.  For
-      example, a commitment transaction with 20 HTLCs would make 1
-      million sats temporarily unspendable ($450 USD at the time of
-      writing).  If endogenous fees were also used for the HTLC-X
-      transactions, the temporarily unspendable amount for 20 HTLCs
-      would be closer to 4.5 million sats ($2,050 USD).  By comparison,
-      if Bob was expected to pay his fees exogenously, then Alice
-      wouldn't need to reduce the capacity of the channel for her
-      safety.
+    There was an unresolved [debate][teinturier fees] about whether
+    endogenous fees would result in an excessive amount of capital
+    being reserved for fees.  For example, if Alice signs fee
+    variants from 10 s/vb to 1,000 s/vb, she must make decisions based
+    on the possibility that her counterparty Bob will put the 1,000
+    s/vb variant onchain, even if she wouldn't pay that feerate
+    herself.  That means she can't accept payments from Bob where he
+    spends the money he would need for the 1,000 s/vb variant.  For
+    example, a commitment transaction with 20 HTLCs would make 1
+    million sats temporarily unspendable ($450 USD at the time of
+    writing).  If endogenous fees were also used for the HTLC-X
+    transactions, the temporarily unspendable amount for 20 HTLCs
+    would be closer to 4.5 million sats ($2,050 USD).  By comparison,
+    if Bob was expected to pay his fees exogenously, then Alice
+    wouldn't need to reduce the capacity of the channel for her
+    safety.
 
   - **Overall conclusions:** discussion was ongoing at the time of
     writing.  Peter Todd concluded that "existing usage of anchor
@@ -200,38 +200,38 @@ software.
 
   {% assign timestamp="35:03" %}
 
-    - *Simplicity:* LN-Symmetry is a much simpler protocol than the
-      currently used LN-Penalty/[LN-Anchors][topic anchor outputs]
-      protocol.
+  - *Simplicity:* LN-Symmetry is a much simpler protocol than the
+    currently used LN-Penalty/[LN-Anchors][topic anchor outputs]
+    protocol.
 
-    - *Pinning:* "[Pinning][topic transaction pinning] is super hard to
-      avoid." Sander's work on this concern gave him insight and
-      inspiration that has led to his contributions to [package
-      relay][topic package relay] and his widely praised proposal for
-      [ephemeral anchors][topic ephemeral anchors].
+  - *Pinning:* "[Pinning][topic transaction pinning] is super hard to
+    avoid." Sander's work on this concern gave him insight and
+    inspiration that has led to his contributions to [package
+    relay][topic package relay] and his widely praised proposal for
+    [ephemeral anchors][topic ephemeral anchors].
 
-    - *CTV:* "[CTV][topic op_checktemplateverify] (through emulation)
-      [...] allowed for 'fast forwards' that are extremely simple and
-      would likely reduce payment times if widely adopted."
+  - *CTV:* "[CTV][topic op_checktemplateverify] (through emulation)
+    [...] allowed for 'fast forwards' that are extremely simple and
+    would likely reduce payment times if widely adopted."
 
-    - *Penalties:* Penalties truly did not seem necessary.  This was the
-      hope for LN-Symmetry, but some people thought that a penalty
-      protocol would still be necessary to deter malicious
-      counterparties from attempting theft.  Support for penalties
-      significantly increases protocol complexity and requires reserving
-      some channel funds to pay the penalties, so it is preferable to
-      avoid supporting them if they are not necessary for safety.
+  - *Penalties:* Penalties truly did not seem necessary.  This was the
+    hope for LN-Symmetry, but some people thought that a penalty
+    protocol would still be necessary to deter malicious
+    counterparties from attempting theft.  Support for penalties
+    significantly increases protocol complexity and requires reserving
+    some channel funds to pay the penalties, so it is preferable to
+    avoid supporting them if they are not necessary for safety.
 
-    - *Expiry deltas:* LN-Symmetry requires longer HTLC expiry deltas
-      than expected.  When Alice forwards an HTLC to Bob, she gives him
-      a certain number of blocks to claim its funds with a preimage;
-      after that time expires, she can take back the funds.  When Bob
-      further forwards the HTLC to Carol, he gives her a lower number of
-      blocks during which she must reveal the preimage.  The delta
-      between those two expires is the _HTLC expiry delta_.  Sanders
-      found that the delta needed to be long enough to prevent the
-      counterparty from benefiting if they aborted the protocol midway
-      through a commitment round.
+  - *Expiry deltas:* LN-Symmetry requires longer CLTV expiry deltas
+    than expected.  When Alice forwards an HTLC to Bob, she gives him
+    a certain number of blocks to claim its funds with a preimage;
+    after that time expires, she can take back the funds.  When Bob
+    further forwards the HTLC to Carol, he gives her a lower number of
+    blocks during which she must reveal the preimage.  The delta
+    between those two expires is the _CLTV expiry delta_.  Sanders
+    found that the delta needed to be long enough to prevent the
+    counterparty from benefiting if they aborted the protocol midway
+    through a commitment round.
 
   Sanders is currently working on making improvements to Bitcoin Core's
   mempool and relay policy that will make it easier to deploy

@@ -38,17 +38,17 @@ None this week.
   it supported by payment processors such as BTCPay.
   The suggestions are pretty simple:
 
-    - Version the protocol so spending clients and receiving servers can
-      negotiate what protocol features they support
-    - Rename the protocol to *payjoin,* as many people aren't quite sure
-      what to call it right now
-    - Use [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) for
-      communicating transaction and signature data between clients and
-      servers
-    - Specify that transactions should use a short list of best-practice
-      transaction features and avoid odd-looking coin selection so that
-      payjoin transactions blend in with normal transactions and create
-      maximum confusion for block chain analysts
+  - Version the protocol so spending clients and receiving servers can
+    negotiate what protocol features they support
+  - Rename the protocol to *payjoin,* as many people aren't quite sure
+    what to call it right now
+  - Use [BIP174][] Partially Signed Bitcoin Transactions (PSBTs) for
+    communicating transaction and signature data between clients and
+    servers
+  - Specify that transactions should use a short list of best-practice
+    transaction features and avoid odd-looking coin selection so that
+    payjoin transactions blend in with normal transactions and create
+    maximum confusion for block chain analysts
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -220,6 +220,7 @@ and [libsecp256k1][libsecp256k1 repo].*
 {% include references.md %}
 {% include linkers/issues.md issues="14955,14353,15193,2314,2405,2350,2460,2370,2283,784" %}
 [top bse]: https://bitcoin.stackexchange.com/users?tab=Reputation&filter=all
-[payjoin summary]: {{news27}}#july
+[payjoin summary]: /en/newsletters/2018/12/28/#july
 [payjoin post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016625.html
 [contact core]: https://bitcoincore.org/en/contact/
+[newsletter #26]: /en/newsletters/2018/12/18/#c-lightning-2155

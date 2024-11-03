@@ -29,64 +29,64 @@ to popular Bitcoin infrastructure projects.
   channel's state could have changed just milliseconds before a disk drive
   fails.
 
-    LN has always provided some robustness against this type of problem:
-    if your node is offline, your channel counterparty will eventually
-    close the channel so that they can start spending their funds again.
-    This will send your funds to the onchain part of your LN
-    wallet, which you hopefully backed up using a normal [BIP32][] seed.
-    This should be reasonably safe: LN's regular penalty mechanism
-    encourages your counterparty to close the channel in its latest
-    state---if they use an old state, they could lose all their money
-    from the channel.
+  LN has always provided some robustness against this type of problem:
+  if your node is offline, your channel counterparty will eventually
+  close the channel so that they can start spending their funds again.
+  This will send your funds to the onchain part of your LN
+  wallet, which you hopefully backed up using a normal [BIP32][] seed.
+  This should be reasonably safe: LN's regular penalty mechanism
+  encourages your counterparty to close the channel in its latest
+  state---if they use an old state, they could lose all their money
+  from the channel.
 
-    The downside of the above approach is that you have to wait for your
-    counterparty to decide that you're not coming back.  This wait can be
-    eliminated if you back up some static information about your channel
-    (e.g. the ID of your peer), reconnect to the peer after you lose
-    data, and request that the peer immediately close the channel.  This does
-    seem to indicate that you've lost data and so your peer could close the
-    channel in an old state---but, if they try that and
-    you still have your old data, you can penalize them.
+  The downside of the above approach is that you have to wait for your
+  counterparty to decide that you're not coming back.  This wait can be
+  eliminated if you back up some static information about your channel
+  (e.g. the ID of your peer), reconnect to the peer after you lose
+  data, and request that the peer immediately close the channel.  This does
+  seem to indicate that you've lost data and so your peer could close the
+  channel in an old state---but, if they try that and
+  you still have your old data, you can penalize them.
 
-    This week, Lloyd Fournier started two threads on the Lightning-Dev
-    mailing list about possible improvements to the above mechanisms:
+  This week, Lloyd Fournier started two threads on the Lightning-Dev
+  mailing list about possible improvements to the above mechanisms:
 
-    - **Fast recovery without backups:** the static per-channel backups
-      that allow fast recovery of funds require you to create a new backup
-      each time you open a new channel.  If you fail to make a backup,
-      your only option is to wait until your channel counterparty
-      decides to close the channel on their own.  Fournier instead
-      [proposed][really static backups] a deterministic key derivation method that would allow a
-      node to search through the list of public LN nodes, combine
-      information about its private keys derived from its HD wallet with
-      information about each node's main public key, and determine
-      whether or not it had a channel with that node.  This backup strategy would only
-      work for channels opened with public nodes, which are expected
-      to be the most common type of channel for typical users.
+  - **Fast recovery without backups:** the static per-channel backups
+    that allow fast recovery of funds require you to create a new backup
+    each time you open a new channel.  If you fail to make a backup,
+    your only option is to wait until your channel counterparty
+    decides to close the channel on their own.  Fournier instead
+    [proposed][really static backups] a deterministic key derivation method that would allow a
+    node to search through the list of public LN nodes, combine
+    information about its private keys derived from its HD wallet with
+    information about each node's main public key, and determine
+    whether or not it had a channel with that node.  This backup strategy would only
+    work for channels opened with public nodes, which are expected
+    to be the most common type of channel for typical users.
 
-    - **Covert request for mutual close:** the existing mechanism for
-      closing a channel requires that your counterparty broadcast their
-      unilateral commitment transaction.  It would be better to use a
-      mutual close transaction---this uses less space onchain, requires
-      paying less fees, is not identifiable onchain as having belonged
-      to an LN channel, and allows both parties to spend their funds
-      immediately.  However, mutual close transactions don't contain any
-      penalty mechanism, so if you request a channel be closed and your
-      counterparty gives you an inaccurate mutual close transaction,
-      there's no way for you to penalize them.  In the normal protocol,
-      this isn't an issue---you'd just broadcast the latest state, but
-      if you've lost your state, then you have no remedy.
+  - **Covert request for mutual close:** the existing mechanism for
+    closing a channel requires that your counterparty broadcast their
+    unilateral commitment transaction.  It would be better to use a
+    mutual close transaction---this uses less space onchain, requires
+    paying less fees, is not identifiable onchain as having belonged
+    to an LN channel, and allows both parties to spend their funds
+    immediately.  However, mutual close transactions don't contain any
+    penalty mechanism, so if you request a channel be closed and your
+    counterparty gives you an inaccurate mutual close transaction,
+    there's no way for you to penalize them.  In the normal protocol,
+    this isn't an issue---you'd just broadcast the latest state, but
+    if you've lost your state, then you have no remedy.
 
-        Fournier proposed a [solution][oblivious mutual close] using a
-        cryptographic primitive called [oblivious transfer][] that
-        allows your counterparty to send you the mutual close
-        transaction encrypted in a way that allows you to either use it
-        (closing the channel) or prove that you can't decrypt it
-        (allowing them to safely continue accepting payments in the
-        channel).  If you use this procedure every time
-        you reconnect, you don't reveal to them that you lost any data
-        until after they've provided you all the information you need to
-        recover.
+    Fournier proposed a [solution][oblivious mutual close] using a
+    cryptographic primitive called [oblivious transfer][] that
+    allows your counterparty to send you the mutual close
+    transaction encrypted in a way that allows you to either use it
+    (closing the channel) or prove that you can't decrypt it
+    (allowing them to safely continue accepting payments in the
+    channel).  If you use this procedure every time
+    you reconnect, you don't reveal to them that you lost any data
+    until after they've provided you all the information you need to
+    recover.
 
 - **New PSBT version proposed:** Andrew Chow, author of the [BIP174][]
   specification of [Partially Signed Bitcoin Transactions][topic psbt]
@@ -293,8 +293,8 @@ release candidates.*
   and also with [a generic method for negotiating features][feature negotiation]
   proposed to the mailing list earlier this year.
 
-    John Newbery posted [a summary of all the changes to BIP155][jnewbery
-    bip155] since it was proposed in February 2019 to the Bitcoin-dev mailing list.
+  John Newbery posted [a summary of all the changes to BIP155][jnewbery
+  bip155] since it was proposed in February 2019 to the Bitcoin-dev mailing list.
 
 - [BOLTs #803][] updates [BOLT5][] with recommendations for preventing
   a [transaction pinning][topic transaction pinning] attack.  The recent

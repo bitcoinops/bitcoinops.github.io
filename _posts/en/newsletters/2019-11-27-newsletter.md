@@ -38,67 +38,67 @@ Bitcoin infrastructure projects.
   to internal systems such as P2P network handling.  Some changes which
   may be especially interesting to newsletter readers include:
 
-    - *CPFP carve-out:* this [new mempool policy][topic cpfp carve out]
-      helps two-party contract protocols (such as the current LN) ensure
-      that both parties will be able to use Child-Pays-For-Parent (CPFP)
-      fee bumping (see [Newsletter #63][news63 carve-out]).  LN
-      developers already have a proposal under discussion for how
-      they'll use this feature to simplify fee management for commitment
-      transactions (see newsletters [#70][news70 simple commits] and
-      [#71][news71 ln carve-out]).
+  - *CPFP carve-out:* this [new mempool policy][topic cpfp carve out]
+    helps two-party contract protocols (such as the current LN) ensure
+    that both parties will be able to use Child-Pays-For-Parent (CPFP)
+    fee bumping (see [Newsletter #63][news63 carve-out]).  LN
+    developers already have a proposal under discussion for how
+    they'll use this feature to simplify fee management for commitment
+    transactions (see newsletters [#70][news70 simple commits] and
+    [#71][news71 ln carve-out]).
 
-    - *BIP158 block filters (RPC only):* users can now set a new
-      configuration option, `blockfilterindex`, if they want Bitcoin
-      Core to generate [compact block filters][topic compact block
-      filters] as specified by [BIP158][].  The filter for each block
-      can then be retrieved using the new RPC `getblockfilter`.  Filters
-      can be provided to a compatible lightweight client to allow it to
-      determine whether a block might contain any transactions involving
-      its keys (see [Newsletter #43][news43 core bip158] for more
-      information).  [PR#16442][Bitcoin Core #16442] is currently open
-      to add support for the corresponding [BIP157][] protocol that will
-      allow sharing these filters with clients over the P2P network.
+  - *BIP158 block filters (RPC only):* users can now set a new
+    configuration option, `blockfilterindex`, if they want Bitcoin
+    Core to generate [compact block filters][topic compact block
+    filters] as specified by [BIP158][].  The filter for each block
+    can then be retrieved using the new RPC `getblockfilter`.  Filters
+    can be provided to a compatible lightweight client to allow it to
+    determine whether a block might contain any transactions involving
+    its keys (see [Newsletter #43][news43 core bip158] for more
+    information).  [PR#16442][Bitcoin Core #16442] is currently open
+    to add support for the corresponding [BIP157][] protocol that will
+    allow sharing these filters with clients over the P2P network.
 
-    - *Deprecated or removed features:* support for the [BIP70][]
-      payment protocol, [BIP37][] P2P protocol bloom filters, and
-      [BIP61][] P2P protocol reject messages has been disabled by
-      default, eliminating the source of various problems (respectively,
-      see Newsletters [#19][news19 bip70], [#57][news57 bip37], and
-      [#37][news37 bip61]).  The payment protocol and reject messages
-      are scheduled to be fully removed in the next major Bitcoin Core
-      version about six months from now.
+  - *Deprecated or removed features:* support for the [BIP70][]
+    payment protocol, [BIP37][] P2P protocol bloom filters, and
+    [BIP61][] P2P protocol reject messages has been disabled by
+    default, eliminating the source of various problems (respectively,
+    see Newsletters [#19][news19 bip70], [#57][news57 bip37], and
+    [#37][news37 bip61]).  The payment protocol and reject messages
+    are scheduled to be fully removed in the next major Bitcoin Core
+    version about six months from now.
 
-    - *Customizable permissions for whitelisted peers:* when
-      specifying which peers or interfaces should be whitelisted, users
-      can now specify which special features the whitelisted peers
-      can access.  Previously, whitelisted peers wouldn't be banned and
-      received relayed transactions faster.  These defaults haven't
-      changed, but now it's possible to toggle those settings on a
-      per-peer basis or to allow specified whitelisted peers to request
-      BIP37 bloom filters even though they're disabled for
-      non-whitelisted peers by default.  For details, see [Newsletter
-      #60][news60 16248].
+  - *Customizable permissions for whitelisted peers:* when
+    specifying which peers or interfaces should be whitelisted, users
+    can now specify which special features the whitelisted peers
+    can access.  Previously, whitelisted peers wouldn't be banned and
+    received relayed transactions faster.  These defaults haven't
+    changed, but now it's possible to toggle those settings on a
+    per-peer basis or to allow specified whitelisted peers to request
+    BIP37 bloom filters even though they're disabled for
+    non-whitelisted peers by default.  For details, see [Newsletter
+    #60][news60 16248].
 
-    - *GUI improvements:* graphical users can now create new wallets
-      for use with multiwallet mode from the GUI's *file* menu (see
-      [Newsletter #63][news63 new wallet]).  The GUI also now provides
-      users with [bech32][topic bech32] Bitcoin addresses by default,
-      but users can easily request a backwards-compatible P2SH-P2WPKH
-      address by toggling a checkbox next to the button to generate an
-      address (see [Newsletter #42][news42 core gui bech32]).
+  - *GUI improvements:* graphical users can now create new wallets
+    for use with multiwallet mode from the GUI's *file* menu (see
+    [Newsletter #63][news63 new wallet]).  The GUI also now provides
+    users with [bech32][topic bech32] Bitcoin addresses by default,
+    but users can easily request a backwards-compatible P2SH-P2WPKH
+    address by toggling a checkbox next to the button to generate an
+    address (see [Newsletter #42][news42 core gui bech32]).
 
-    - *Optional privacy-preserving address management:* a new
-      `avoid_reuse` wallet flag, which can be toggled using a new
-      `setwalletflag` RPC, can be enabled to prevent the wallet from
-      spending bitcoins received to an address that was previously
-      used (see [Newsletter #52][news52 avoid_reuse]).  This prevents
-      certain privacy leaks based on block chain analysis such as [dust
-      flooding][].
+  - *Optional privacy-preserving address management:* a new
+    `avoid_reuse` wallet flag, which can be toggled using a new
+    `setwalletflag` RPC, can be enabled to prevent the wallet from
+    spending bitcoins received to an address that was previously
+    used (see [Newsletter #52][news52 avoid_reuse]).  This prevents
+    certain privacy leaks based on block chain analysis such as [dust
+    flooding][].
 
-    For a full list of notable changes, links to the PRs where those
-    changes were made, and additional information useful to node
-    operators, please see the Bitcoin Core project's [release notes][notes
-    0.19.0].
+  For a full list of notable changes, links to the PRs where those
+  changes were made, and additional information useful to node
+  operators, please see the Bitcoin Core project's [release notes][notes
+  0.19.0].
 
 - **New LND mailing list and new host of existing mailing lists:** a [new
   mailing list][lnd engineering] hosted by Google Groups was announced
@@ -121,40 +121,40 @@ Bitcoin infrastructure projects.
   writing their own implementations of parts of the BIPs, including for
   the libbitcoin and bcoin full verification nodes.
 
-    Two informative blog posts were also posted this week related to the
-    security of multiparty schnorr signatures.  Blockstream engineer
-    Jonas Nick [describes][nick musig] the [MuSig][] multiparty
-    signature scheme that is designed to allow users of [bip-schnorr][] to
-    aggregate multiple public keys into a single pubkey.  They can
-    later sign for that key for using a single signature generated collaboratively
-    among themselves.  Nick describes the three steps of the MuSig signing
-    protocol---the exchange of nonce commitments, the exchange of
-    nonces, and the exchange of partial signatures (with the nonces and the
-    partial signatures then being aggregated to produce the final
-    signature).  To save time when speed is critical (e.g. in creating
-    LN channel commitment transactions), some people might want to
-    exchange nonce commitments and then nonces before they know what
-    transaction they want to commit to with their signature---but this
-    is unsafe due to Wagner's algorithm, as Nick briefly explains.  The
-    only information that can be safely shared before each participant
-    knows the transaction to sign is the nonce commitment.  (Not
-    mentioned in the blog post, but discussed on IRC, was that Pieter
-    Wuille and others have been investigating a construction based on a
-    Zero Knowledge Proof (ZKP) that could allow reduced interactivity.)
-    The blog post concludes with a suggestion that interested readers
-    review the MuSig implementation in [libsecp256k1-zkp][], which is
-    designed to help developers use the protocol safely.
+  Two informative blog posts were also posted this week related to the
+  security of multiparty schnorr signatures.  Blockstream engineer
+  Jonas Nick [describes][nick musig] the [MuSig][] multiparty
+  signature scheme that is designed to allow users of [bip-schnorr][] to
+  aggregate multiple public keys into a single pubkey.  They can
+  later sign for that key for using a single signature generated collaboratively
+  among themselves.  Nick describes the three steps of the MuSig signing
+  protocol---the exchange of nonce commitments, the exchange of
+  nonces, and the exchange of partial signatures (with the nonces and the
+  partial signatures then being aggregated to produce the final
+  signature).  To save time when speed is critical (e.g. in creating
+  LN channel commitment transactions), some people might want to
+  exchange nonce commitments and then nonces before they know what
+  transaction they want to commit to with their signature---but this
+  is unsafe due to Wagner's algorithm, as Nick briefly explains.  The
+  only information that can be safely shared before each participant
+  knows the transaction to sign is the nonce commitment.  (Not
+  mentioned in the blog post, but discussed on IRC, was that Pieter
+  Wuille and others have been investigating a construction based on a
+  Zero Knowledge Proof (ZKP) that could allow reduced interactivity.)
+  The blog post concludes with a suggestion that interested readers
+  review the MuSig implementation in [libsecp256k1-zkp][], which is
+  designed to help developers use the protocol safely.
 
-    Influenced by Jonas Nick's presentation on this topic at the Berlin
-    Lightning Conference, Adam Gibson wrote a separate [blog
-    post][gibson wagners] that describes Wagner's algorithm in much more
-    detail with a mix of math, intuitive analysis, and topical
-    information Bitcoiners may find interesting (such as the amusing
-    tidbit of [Wagner's paper][] citing both Adam Back and Wei Dai
-    several years before Nakamoto did [the same][bitcoin.pdf], though
-    for different work).  Anyone interested in developing their own
-    cryptographic protocols is recommended to read both posts, as each
-    complements the other without being repetitive about the subject.
+  Influenced by Jonas Nick's presentation on this topic at the Berlin
+  Lightning Conference, Adam Gibson wrote a separate [blog
+  post][gibson wagners] that describes Wagner's algorithm in much more
+  detail with a mix of math, intuitive analysis, and topical
+  information Bitcoiners may find interesting (such as the amusing
+  tidbit of [Wagner's paper][] citing both Adam Back and Wei Dai
+  several years before Nakamoto did [the same][bitcoin.pdf], though
+  for different work).  Anyone interested in developing their own
+  cryptographic protocols is recommended to read both posts, as each
+  complements the other without being repetitive about the subject.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -301,4 +301,4 @@ endcomment %}
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
-
+[musig]: https://eprint.iacr.org/2018/068

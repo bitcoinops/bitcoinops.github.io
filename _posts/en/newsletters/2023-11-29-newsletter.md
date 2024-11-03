@@ -28,16 +28,16 @@ notable changes to popular Bitcoin infrastructure software.
   provide that liquidity at a market rate, entirely using open source
   software and the decentralized LN gossip protocol.
 
-    The updates include a few structural changes plus increased
-    flexibility to the contract duration and forwarding fee ceiling.
-    The post received several replies on the mailing list and additional
-    changes to the [specification][bolts #878] are expected.  Neigut's
-    post also notes that the current construction of liquidity
-    advertisements and channel announcements makes it theoretically
-    possible to cryptographically prove one case where a party is
-    violating its contract.  It's an open problem to design an actual
-    compact fraud proof that could be used in a bond contract to
-    incentivize contract compliance. {% assign timestamp="1:00" %}
+  The updates include a few structural changes plus increased
+  flexibility to the contract duration and forwarding fee ceiling.
+  The post received several replies on the mailing list and additional
+  changes to the [specification][bolts #878] are expected.  Neigut's
+  post also notes that the current construction of liquidity
+  advertisements and channel announcements makes it theoretically
+  possible to cryptographically prove one case where a party is
+  violating its contract.  It's an open problem to design an actual
+  compact fraud proof that could be used in a bond contract to
+  incentivize contract compliance. {% assign timestamp="1:00" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -54,7 +54,7 @@ answers posted since our last update.*
   Pieter Wuille describes the differences between multisignatures, signature
   aggregation, key aggregation, and Bitcoin multisig and notes several related
   schemes including [BIP340][] [schnorr signatures][topic schnorr signatures],
-  [MuSig2][topic musig], FROST, and Bellare-Neven 2006.  {% assign timestamp="38:49" %}
+  [MuSig2][topic musig], FROST, and Bellare--Neven 2006.  {% assign timestamp="38:49" %}
 
 - [Is it advisable to operate a release candidate full node on mainnet?]({{bse}}120375)
   Vojtěch Strnad and Murch point out that running Bitcoin Core release

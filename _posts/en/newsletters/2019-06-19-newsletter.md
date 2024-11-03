@@ -42,7 +42,7 @@ Bitcoin infrastructure projects.
   Snigirev's idea eliminates the need to route the encrypted pre-image.
   He notes that the routing of a payment from Alice to Bob already
   requires them to have a common shared secret (derived using Elliptic
-  Curve Diffie-Hellman ([ECDH][]).  This secret can be hashed once to
+  Curve Diffie--Hellman ([ECDH][]).  This secret can be hashed once to
   produce a unique pre-image known to both of them, and that pre-image
   can be hashed again to be the payment hash.  To use this system,
   whenever Bob receives a payment to a hash that he didn't create an
@@ -52,18 +52,18 @@ Bitcoin infrastructure projects.
   has written a [proof of concept][decker spontaneous] patch and plugin
   for C-Lightning that implements this.
 
-    Snigirev's second idea allows an offline device, such as a vending
-    machine, to generate a unique LN invoice that can be paid by an
-    online user to another online node that knows how to produce the
-    pre-image and claim the payment on behalf of the offline device.
-    This results in the payer receiving the pre-image as a proof of
-    payment.  The payer can then show this proof to the offline
-    device to receive the promised good or service, such as food from a
-    vending machine.  Again, this uses a shared secret derived using
-    ECDH---but in this case the secret is shared between the offline
-    device that generates the invoice and the online node that
-    ultimately receives the payment.  See Snigirev's post for the
-    protocol details.
+  Snigirev's second idea allows an offline device, such as a vending
+  machine, to generate a unique LN invoice that can be paid by an
+  online user to another online node that knows how to produce the
+  pre-image and claim the payment on behalf of the offline device.
+  This results in the payer receiving the pre-image as a proof of
+  payment.  The payer can then show this proof to the offline
+  device to receive the promised good or service, such as food from a
+  vending machine.  Again, this uses a shared secret derived using
+  ECDH---but in this case the secret is shared between the offline
+  device that generates the invoice and the online node that
+  ultimately receives the payment.  See Snigirev's post for the
+  protocol details.
 
 - **Authenticating messages about LN delays:** when a payment fails in
   LN, it's often possible for the node attempting the payment to receive
@@ -81,16 +81,16 @@ Bitcoin infrastructure projects.
   where delays occurred during the routing of the payment and avoid
   those channels in the future.
 
-    To prevent some nodes along the path from lying about other nodes,
-    he propose the error messages and timestamps be protected by a
-    message authentication code.  This could also prevent intermediate
-    nodes from corrupting encrypted error messages from endpoint nodes.
+  To prevent some nodes along the path from lying about other nodes,
+  he propose the error messages and timestamps be protected by a
+  message authentication code.  This could also prevent intermediate
+  nodes from corrupting encrypted error messages from endpoint nodes.
 
-    Jager's proposal also discusses how this type of system could be
-    implemented in the current routing protocol and how it could
-    address concerns related to routing privacy.  The proposal
-    has received a moderate amount of positive discussion on the mailing
-    list so far.
+  Jager's proposal also discusses how this type of system could be
+  implemented in the current routing protocol and how it could
+  address concerns related to routing privacy.  The proposal
+  has received a moderate amount of positive discussion on the mailing
+  list so far.
 
 ## Breaking Bitcoin
 
@@ -259,7 +259,7 @@ wiki page for changes -->{% endcomment %}
 {% include linkers/issues.md issues="15024,2696,1009,15834,3133,3140,3134,2700,2699,555,2672,14897,15776" %}
 [bech32 series]: /en/bech32-sending-support/
 [bech32 pos ref]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014396.html
-[news43 merges]: {{news43}}#notable-code-and-documentation-changes
+[news43 merges]: /en/newsletters/2019/04/23/#notable-code-and-documentation-changes
 [cl rc]: https://github.com/ElementsProject/lightning/tags
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
 [snigirev post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002009.html
@@ -281,7 +281,7 @@ wiki page for changes -->{% endcomment %}
 [bb dong transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
 [bb nick video]: https://youtu.be/DKOG0BQMmmg?t=21860
 [Jonas Nick]: https://twitter.com/n1ckler
-[bg taproot]: {{news46}}/
+[bg taproot]: /en/newsletters/2019/05/14/#overview-of-the-taproot--tapscript-proposed-bips
 [bb nick transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/secure-protocols-bip-taproot/
 [bb guillemet video]: https://youtu.be/DqhxPWsJFZE?t=9534
 [Charles Guillemet]: https://twitter.com/p3b7_
@@ -291,3 +291,5 @@ wiki page for changes -->{% endcomment %}
 [watchtower tutorial]: https://github.com/wbobeirne/watchtower-example
 [prometheus]: https://prometheus.io/
 [pos ref anchor]: https://github.com/bitcoin/bips/pull/555#issuecomment-315517707
+[newsletter #30]: /en/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

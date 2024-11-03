@@ -15,8 +15,8 @@
         "title": {{ topic.title | jsonify }},
         "slug": {{ topic_slug | jsonify }},
         "optech_url": "{{ site.url }}{{ topic.url }}",
-        "categories": {{ topic.categories | jsonify }},
-        "aliases":  {{ topic.aliases | jsonify }},
+        "categories": {{ topic.topic-categories | jsonify }},
+        "aliases":  {{ topic.title-aliases | jsonify }},
         "excerpt": {{ topic.excerpt | jsonify }}
       }{% unless forloop.last %},{% endunless %}
   {% endfor %}

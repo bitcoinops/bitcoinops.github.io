@@ -30,34 +30,34 @@ Bitcoin infrastructure software.
   to learn about unconfirmed transactions (at the time, Bitcoin Core did
   not save its mempool to persistent storage on shutdown).
 
-    However, various privacy-reducing techniques were later developed
-    that made it easier to determine which node first broadcast a
-    transaction by abusing either the `mempool` message or the ability to
-    use `getdata` to request any mempool transaction.  To improve
-    [transaction origin privacy][topic transaction origin privacy],
-    Bitcoin Core later removed the ability to request unannounced
-    transactions from other nodes and restricted the `mempool` message
-    to being used with [transaction bloom filters][topic transaction
-    bloom filtering] (as specified in [BIP37][]) for lightweight clients.
-    Even later, Bitcoin Core disabled bloom filter support by default
-    (see [Newsletter #56][news56 bloom]), only allowing it to be used
-    with peers configured with the `-whitelist` option (see [Newsletter
-    #60][news60 bloom]); this effectively makes BIP35 `mempool` also
-    disabled by default.
+  However, various privacy-reducing techniques were later developed
+  that made it easier to determine which node first broadcast a
+  transaction by abusing either the `mempool` message or the ability to
+  use `getdata` to request any mempool transaction.  To improve
+  [transaction origin privacy][topic transaction origin privacy],
+  Bitcoin Core later removed the ability to request unannounced
+  transactions from other nodes and restricted the `mempool` message
+  to being used with [transaction bloom filters][topic transaction
+  bloom filtering] (as specified in [BIP37][]) for lightweight clients.
+  Even later, Bitcoin Core disabled bloom filter support by default
+  (see [Newsletter #56][news56 bloom]), only allowing it to be used
+  with peers configured with the `-whitelist` option (see [Newsletter
+  #60][news60 bloom]); this effectively makes BIP35 `mempool` also
+  disabled by default.
 
-    Clark's Bitcoin Core PR received support from within the project,
-    although some supporters think BIP37 bloom filters should be removed
-    first.  On the mailing list, the only [reply][harding mempool] as of
-    this writing noted that lightweight clients that connect to their
-    own trusted node can currently use BIP35 and BIP37 to learn about
-    unconfirmed transactions in a much more bandwidth-efficient manner
-    than any other method that's currently easily available through
-    Bitcoin Core.  The respondent suggested that Bitcoin Core provide an
-    alternative mechanism before removing the current interface.
+  Clark's Bitcoin Core PR received support from within the project,
+  although some supporters think BIP37 bloom filters should be removed
+  first.  On the mailing list, the only [reply][harding mempool] as of
+  this writing noted that lightweight clients that connect to their
+  own trusted node can currently use BIP35 and BIP37 to learn about
+  unconfirmed transactions in a much more bandwidth-efficient manner
+  than any other method that's currently easily available through
+  Bitcoin Core.  The respondent suggested that Bitcoin Core provide an
+  alternative mechanism before removing the current interface.
 
-    Additional feedback is requested from anyone using the BIP35
-    `mempool` message for any purpose.  You can reply to either the
-    mailing list post or the PR linked previously. {% assign timestamp="0:41" %}
+  Additional feedback is requested from anyone using the BIP35
+  `mempool` message for any purpose.  You can reply to either the
+  mailing list post or the PR linked previously. {% assign timestamp="0:41" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

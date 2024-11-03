@@ -31,16 +31,16 @@ infrastructure.
   known vulnerabilities affecting older releases.  In brief, the two
   disclosed vulnerabilities were:
 
-    - A DoS vulnerability that could have led to LND running out of
-      memory and crashing.  If LND is not running, it can't broadcast
-      time-sensitive transactions, which can lead to loss of funds.
+  - A DoS vulnerability that could have led to LND running out of
+    memory and crashing.  If LND is not running, it can't broadcast
+    time-sensitive transactions, which can lead to loss of funds.
 
-    - A censorship vulnerability that could allow an attacker to prevent
-      an LND node from learning about updates to targeted channels
-      across the network.  An attacker could use this to bias a node
-      towards selecting certain routes for payments it sent, giving the
-      attacker more forwarding fees and more information about the
-      payments the node sent.
+  - A censorship vulnerability that could allow an attacker to prevent
+    an LND node from learning about updates to targeted channels
+    across the network.  An attacker could use this to bias a node
+    towards selecting certain routes for payments it sent, giving the
+    attacker more forwarding fees and more information about the
+    payments the node sent.
 
   Gögge made his initial disclosure to the LND developers over two years
   ago and versions of LND containing fixes for both vulnerabilities have
@@ -70,43 +70,43 @@ infrastructure.
   contract.  This would ensure Bob has a chance to get his transaction
   confirmed at an acceptable feerate.
 
-    Law notes that this addresses one of the longstanding concerns noted
-    in the [original Lightning Network paper][] about [forced expiration
-    floods][topic expiration floods] where too many channels all closing simultaneously may
-    result in insufficient block space for all of them to be
-    confirmed before their timelocks expire, potentially resulting in
-    some users losing money.  With fee-dependent timelocks in place,
-    users of the closed channels will simply bid up the feerates until
-    they exceed the fee-dependent lock, after which expiry of the
-    timelocks will be delayed until fees have come down to an amount low
-    enough that all of the transactions paying that feerate have been
-    confirmed.  LN channels currently only involve two users each, but
-    proposals such as [channel factories][topic channel factories] and
-    [joinpools][topic joinpools] where more than two users share a UTXO
-    are even more vulnerable to forced expiration floods, so this
-    solution significantly bolsters their security.  Law also notes
-    that, in at least some of those constructions, the party that holds
-    the refund condition (e.g. Alice in our earlier example) is the one
-    most disadvantaged by fees increasing, given their capital is locked
-    up in the contract until fees decrease. Fee-dependent locks give
-    that party an extra incentive to act in a way that keeps feerates low,
-    e.g. not close many channels within a short period of time.
+  Law notes that this addresses one of the longstanding concerns noted
+  in the [original Lightning Network paper][] about [forced expiration
+  floods][topic expiration floods] where too many channels all closing simultaneously may
+  result in insufficient block space for all of them to be
+  confirmed before their timelocks expire, potentially resulting in
+  some users losing money.  With fee-dependent timelocks in place,
+  users of the closed channels will simply bid up the feerates until
+  they exceed the fee-dependent lock, after which expiry of the
+  timelocks will be delayed until fees have come down to an amount low
+  enough that all of the transactions paying that feerate have been
+  confirmed.  LN channels currently only involve two users each, but
+  proposals such as [channel factories][topic channel factories] and
+  [joinpools][topic joinpools] where more than two users share a UTXO
+  are even more vulnerable to forced expiration floods, so this
+  solution significantly bolsters their security.  Law also notes
+  that, in at least some of those constructions, the party that holds
+  the refund condition (e.g. Alice in our earlier example) is the one
+  most disadvantaged by fees increasing, given their capital is locked
+  up in the contract until fees decrease. Fee-dependent locks give
+  that party an extra incentive to act in a way that keeps feerates low,
+  e.g. not close many channels within a short period of time.
 
-    The implementation details for fee-dependent timelocks are chosen to
-    make them easy for contract participants to optionally use and to
-    minimize the amount of extra information full nodes need to store in
-    order to validate them.
+  The implementation details for fee-dependent timelocks are chosen to
+  make them easy for contract participants to optionally use and to
+  minimize the amount of extra information full nodes need to store in
+  order to validate them.
 
-    The proposal received a moderate amount of discussion with
-    respondents suggesting [storing][riard fdt] fee-dependent timelock
-    parameters in the [taproot][topic taproot] annex, having blocks
-    [commit][boris fdt] to their median feerate to support lightweight
-    clients, and [details][harding pruned] about how upgraded pruned
-    nodes could support the fork.  There was additional debate between
-    Law and [others][evo fdt] about the effect of miners accepting
-    out-of-band fees---fees to confirm a transaction that are paid
-    separately from the normal transaction fee mechanism (e.g. by paying
-    a particular miner directly). {% assign timestamp="25:09" %}
+  The proposal received a moderate amount of discussion with
+  respondents suggesting [storing][riard fdt] fee-dependent timelock
+  parameters in the [taproot][topic taproot] annex, having blocks
+  [commit][boris fdt] to their median feerate to support lightweight
+  clients, and [details][harding pruned] about how upgraded pruned
+  nodes could support the fork.  There was additional debate between
+  Law and [others][evo fdt] about the effect of miners accepting
+  out-of-band fees---fees to confirm a transaction that are paid
+  separately from the normal transaction fee mechanism (e.g. by paying
+  a particular miner directly). {% assign timestamp="25:09" %}
 
 - **Cluster fee estimation:** Abubakar Sadiq Ismail [posted][ismail
   cluster] to Delving Bitcoin about using some of the tools and insights
@@ -118,32 +118,32 @@ infrastructure.
   prediction of how long it will take transactions with similar feerates
   to become confirmed.
 
-    In that approach, some transactions are ignored by Bitcoin Core for
-    feerate purposes, while others are potentially miscounted.  This is
-    a result of [CPFP][topic cpfp], where child transactions (and other
-    descendants) incentivize miners to confirm their parents (and other
-    ancestors).  Child transactions may have a high feerate by
-    themselves, but when their fee and their ancestors' fees are
-    considered together, the feerate might be significantly lower,
-    leading them to take longer to confirm than expected.  To prevent
-    that from causing overestimation of reasonable fees, Bitcoin Core
-    does not update its fee estimations using any transaction that
-    enters the mempool when its parent is unconfirmed.  Correspondingly,
-    a parent transaction may have a low feerate by themselves, but when
-    its descendants' fees are also considered, the feerate might be
-    significantly higher, leading them to confirm faster than expected.
-    Bitcoin Core's fee estimations don't compensate for this situation.
+  In that approach, some transactions are ignored by Bitcoin Core for
+  feerate purposes, while others are potentially miscounted.  This is
+  a result of [CPFP][topic cpfp], where child transactions (and other
+  descendants) incentivize miners to confirm their parents (and other
+  ancestors).  Child transactions may have a high feerate by
+  themselves, but when their fee and their ancestors' fees are
+  considered together, the feerate might be significantly lower,
+  leading them to take longer to confirm than expected.  To prevent
+  that from causing overestimation of reasonable fees, Bitcoin Core
+  does not update its fee estimations using any transaction that
+  enters the mempool when its parent is unconfirmed.  Correspondingly,
+  a parent transaction may have a low feerate by themselves, but when
+  its descendants' fees are also considered, the feerate might be
+  significantly higher, leading them to confirm faster than expected.
+  Bitcoin Core's fee estimations don't compensate for this situation.
 
-    Cluster mempool will keep related transactions together and support
-    dividing them into chunks that will be profitable to mine together.
-    Ismail suggests tracking the feerates of chunks rather than
-    individual transactions (though a chunk can be a single transaction)
-    and then attempting to find those same chunks in blocks.  If a chunk
-    is confirmed, then fee estimations are updated using its chunk
-    feerate rather than the feerates of individual transactions.
+  Cluster mempool will keep related transactions together and support
+  dividing them into chunks that will be profitable to mine together.
+  Ismail suggests tracking the feerates of chunks rather than
+  individual transactions (though a chunk can be a single transaction)
+  and then attempting to find those same chunks in blocks.  If a chunk
+  is confirmed, then fee estimations are updated using its chunk
+  feerate rather than the feerates of individual transactions.
 
-    The proposal was well received, with developers discussing the
-    details an updated algorithm would need to consider. {% assign timestamp="8:32" %}
+  The proposal was well received, with developers discussing the
+  details an updated algorithm would need to consider. {% assign timestamp="8:32" %}
 
 - **How to specify unspendable keys in descriptors:** Salvatore Ingala
   started a [discussion][ingala undesc] on Delving Bitcoin about how to allow
@@ -154,23 +154,23 @@ infrastructure.
   scriptpath spend.  To do this, the key that allows keypath spending
   must be set to an unspendable key.
 
-    Ingala described several challenges to using unspendable keys in
-    descriptors and several proposed solutions with different tradeoffs.
-    Pieter Wuille summarized several recent in-person discussions about
-    descriptors, including a [particular][wuille undesc2] idea about
-    unspendable keys.  Josie Baker asked for details about why the
-    unspendable key can't be a constant value (such as the
-    nothing-up-my-sleeve (NUMS) point in BIP341), which would allow
-    everyone to immediately know that an unspendable key was used---a
-    possible advantage to some protocols, such as [silent
-    payments][topic silent payments].  Ingala replied to Baker that "it
-    is a form of fingerprinting. You can always reveal this information
-    yourself if you want/need it, but it’s great if the standards don’t
-    force you to do so."  Wuille further replied with an algorithm for
-    generating the proof.  In the last post in the thread at the time of
-    writing, Ingala noted that some of the work of specifying policies
-    related to unspendable keys can be split between descriptors and
-    [BIP388][] wallet policies. {% assign timestamp="17:48" %}
+  Ingala described several challenges to using unspendable keys in
+  descriptors and several proposed solutions with different tradeoffs.
+  Pieter Wuille summarized several recent in-person discussions about
+  descriptors, including a [particular][wuille undesc2] idea about
+  unspendable keys.  Josie Baker asked for details about why the
+  unspendable key can't be a constant value (such as the
+  nothing-up-my-sleeve (NUMS) point in BIP341), which would allow
+  everyone to immediately know that an unspendable key was used---a
+  possible advantage to some protocols, such as [silent
+  payments][topic silent payments].  Ingala replied to Baker that "it
+  is a form of fingerprinting. You can always reveal this information
+  yourself if you want/need it, but it’s great if the standards don’t
+  force you to do so."  Wuille further replied with an algorithm for
+  generating the proof.  In the last post in the thread at the time of
+  writing, Ingala noted that some of the work of specifying policies
+  related to unspendable keys can be split between descriptors and
+  [BIP388][] wallet policies. {% assign timestamp="17:48" %}
 
 - **V3 transaction pinning costs:** Peter Todd [posted][todd v3] to the
   Bitcoin-Dev mailing list an analysis of the proposed [v3 transaction
@@ -196,21 +196,21 @@ infrastructure.
   confirm before a critical timelock expires and allows Mallory to steal
   money from Bob.
 
-    In the v3 transaction relay proposal, the rules allow a
-    transaction opting into the v3 policy to only have a maximum of one
-    unconfirmed child transaction that will be relayed, stored in
-    mempools, and mined by nodes that agree to follow the v3 policy.  As
-    Peter Todd shows in his post, that would still allow Mallory to
-    increase Bob's costs by about 1.5 times what he wanted to pay.
-    Respondents largely agreed that there was a risk that Bob might need
-    to pay more in the case of a malicious
-    counterparty, but they noted that a small multiple is much better than the 100x
-    or more that Bob might need to pay under the current relay rules.
+  In the v3 transaction relay proposal, the rules allow a
+  transaction opting into the v3 policy to only have a maximum of one
+  unconfirmed child transaction that will be relayed, stored in
+  mempools, and mined by nodes that agree to follow the v3 policy.  As
+  Peter Todd shows in his post, that would still allow Mallory to
+  increase Bob's costs by about 1.5 times what he wanted to pay.
+  Respondents largely agreed that there was a risk that Bob might need
+  to pay more in the case of a malicious
+  counterparty, but they noted that a small multiple is much better than the 100x
+  or more that Bob might need to pay under the current relay rules.
 
-    Additional discussion in the conversation discussed specifics of the
-    v3 relay rules, [ephemeral anchors][topic ephemeral anchors], and
-    how they compare to currently-available [CPFP carve-out][topic cpfp
-    carve out] and [anchor outputs][topic anchor outputs]. {% assign timestamp="34:14" %}
+  Additional discussion in the conversation discussed specifics of the
+  v3 relay rules, [ephemeral anchors][topic ephemeral anchors], and
+  how they compare to currently-available [CPFP carve-out][topic cpfp
+  carve out] and [anchor outputs][topic anchor outputs]. {% assign timestamp="34:14" %}
 
 - **Descriptors in PSBT draft BIP:** the SeedHammer team
   [posted][seedhammer descpsbt] a draft BIP to the Bitcoin-Dev mailing
@@ -274,25 +274,25 @@ infrastructure.
   single 200 vbyte transaction at 100 sats/vbyte, then each
   user will pay only 200 sats (2% of their balance).
 
-    The payment batching is accomplished by having one of the
-    participants in the multiparty contract protocol construct a spend
-    of the shared funds to the outputs agreed upon by the other active
-    participants.  The contract allows this---but only if the
-    constructing party funds a bond that they will forfeit if anyone can
-    prove that they spent the contract protocol's funds incorrectly; the
-    bond amount should be considerably more than the constructing party
-    can gain from attempting an incorrect transfer of funds.  If no one
-    generates a fraud proof showing the constructing party acted
-    inappropriately within a period of time, the bond is refunded to the
-    constructing party.  Ingala roughly describes how this feature could
-    be added to a multiparty contract protocol using [OP_CAT][],
-    `OP_CHECKCONTRACTVERIFY`, and amount introspection from the proposed
-    [MATT][topic matt] soft fork, with him noting that it would be easier with the
-    addition also of [OP_CSFS][topic op_checksigfromstack] and 64-bit
-    arithmetic operators in [tapscript][topic tapscript].
+  The payment batching is accomplished by having one of the
+  participants in the multiparty contract protocol construct a spend
+  of the shared funds to the outputs agreed upon by the other active
+  participants.  The contract allows this---but only if the
+  constructing party funds a bond that they will forfeit if anyone can
+  prove that they spent the contract protocol's funds incorrectly; the
+  bond amount should be considerably more than the constructing party
+  can gain from attempting an incorrect transfer of funds.  If no one
+  generates a fraud proof showing the constructing party acted
+  inappropriately within a period of time, the bond is refunded to the
+  constructing party.  Ingala roughly describes how this feature could
+  be added to a multiparty contract protocol using [OP_CAT][],
+  `OP_CHECKCONTRACTVERIFY`, and amount introspection from the proposed
+  [MATT][topic matt] soft fork, with him noting that it would be easier with the
+  addition also of [OP_CSFS][topic op_checksigfromstack] and 64-bit
+  arithmetic operators in [tapscript][topic tapscript].
 
-    The idea has received a small amount of discussion as of this
-    writing. {% assign timestamp="1:04:59" %}
+  The idea has received a small amount of discussion as of this
+  writing. {% assign timestamp="1:04:59" %}
 
 - **New coin selection strategies:** Mark Erhardt [posted][erhardt coin]
   to Delving Bitcoin about edge-cases users may have experienced with

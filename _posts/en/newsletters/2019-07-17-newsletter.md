@@ -100,3 +100,5 @@ wiki page for changes -->{% endcomment %}
 [GNU Guix]: https://www.gnu.org/software/guix/
 [guix vid]: https://www.youtube.com/watch?v=DKOG0BQMmmg&feature=youtu.be&t=19828
 [guix transcript]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
+[newsletter #46]: /en/newsletters/2019/05/14/#addition-of-derivation-paths-to-bip174-psbts
+[musig]: https://eprint.iacr.org/2018/068

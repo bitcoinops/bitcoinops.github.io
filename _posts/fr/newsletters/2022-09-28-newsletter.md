@@ -59,10 +59,10 @@ d'infrastructure Bitcoin.
   Towns prévoit également d'inclure les changements majeurs proposés à la politique
   de relai des transactions (tel que [package relay][topic package relay]).
 
-    Towns cherche à obtenir des critiques constructives sur l'idée de cette nouvelle
-    mise en œuvre de tests, appelée [Bitcoin Inquisition][], ainsi qu'une
-    relecture des [pull requests][bi prs] ajoutées aux paramètres initiaux du
-    soft forks.
+  Towns cherche à obtenir des critiques constructives sur l'idée de cette nouvelle
+  mise en œuvre de tests, appelée [Bitcoin Inquisition][], ainsi qu'une
+  relecture des [pull requests][bi prs] ajoutées aux paramètres initiaux du
+  soft forks.
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 
@@ -138,12 +138,12 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   propose par défaut une réserve de canal de 1% du solde du canal,
   pénalisant de ce montant tout pair qui tente de tricher.
 
-    Cette introduction de PR permet à l'utilisateur de réduire la réserve
-    d'un canal spécifique, y compris de la réduire à zéro. Bien que cela
-    puisse être dangereux---plus la réserve est faible, moins il y a de
-    pénalités pour la tricherie---cela peut être utile dans certaines
-    situations. En particulier, la mise à zéro de la réserve peut permettre
-    à l'homologue distant de dépenser tous ses fonds, vidant ainsi son canal.
+  Cette introduction de PR permet à l'utilisateur de réduire la réserve
+  d'un canal spécifique, y compris de la réduire à zéro. Bien que cela
+  puisse être dangereux---plus la réserve est faible, moins il y a de
+  pénalités pour la tricherie---cela peut être utile dans certaines
+  situations. En particulier, la mise à zéro de la réserve peut permettre
+  à l'homologue distant de dépenser tous ses fonds, vidant ainsi son canal.
 
 - [Rust Bitcoin #1258][] ajoute une méthode pour comparer deux locktimes afin
   de déterminer si l'un satisfait l'autre. Comme décrit dans les commentaires

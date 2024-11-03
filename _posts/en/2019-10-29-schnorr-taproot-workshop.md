@@ -1,11 +1,13 @@
 ---
 title: Bitcoin Optech Schnorr Taproot Workshop
-permalink: /en/schorr-taproot-workshop/
+permalink: /en/schnorr-taproot-workshop/
 name: 2019-10-29-schnorr-taproot-workshop
 type: posts
 layout: post
 lang: en
 slug: 2019-10-21-schnorr-taproot-workshop
+redirect_from:
+  - /en/schorr-taproot-workshop/
 
 excerpt: >
   A self-study course for learning about the schnorr/taproot softfork proposal.
@@ -211,3 +213,4 @@ community feedback process for these proposals.
 [transcript]: https://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
 [readme]: https://github.com/bitcoinops/taproot-workshop/blob/master/README.md
 [workshop repository]: https://github.com/bitcoinops/taproot-workshop/
+[musig]: https://eprint.iacr.org/2018/068

@@ -35,19 +35,19 @@ les plus répandus.
   déploiements d'avoir un effet sur les interactions avec les nœuds
   non-participants.
 
-    Une fois cette spécification déployée par les expérimentateurs, il devrait être plus facile
-    de répondre à l'une des [critiques constructives][decker endorsement]
-    sur le nombre de paiements transférés qui bénéficieraient
-    réellement de ce système. Si les principaux utilisateurs du réseau LN
-    s'envoient fréquemment des paiements par les mêmes itinéraires et si le
-    système de réputation fonctionne comme prévu, ce réseau central aura plus
-    de chances de continuer à fonctionner en cas d'attaque par brouillage des
-    canaux. Mais si la plupart des utilisateurs n'envoient que rarement des
-    paiements (ou n'envoient que rarement leurs types de paiements les plus
-    critiques, tels que les paiements de grande valeur), ils n'auront pas
-    assez d'interactions pour construire une réputation, ou les données de
-    réputation seront très en retard par rapport à l'état actuel du réseau
-    (ce qui les rendra moins utiles ou permettra même d'abuser de la réputation).
+  Une fois cette spécification déployée par les expérimentateurs, il devrait être plus facile
+  de répondre à l'une des [critiques constructives][decker endorsement]
+  sur le nombre de paiements transférés qui bénéficieraient
+  réellement de ce système. Si les principaux utilisateurs du réseau LN
+  s'envoient fréquemment des paiements par les mêmes itinéraires et si le
+  système de réputation fonctionne comme prévu, ce réseau central aura plus
+  de chances de continuer à fonctionner en cas d'attaque par brouillage des
+  canaux. Mais si la plupart des utilisateurs n'envoient que rarement des
+  paiements (ou n'envoient que rarement leurs types de paiements les plus
+  critiques, tels que les paiements de grande valeur), ils n'auront pas
+  assez d'interactions pour construire une réputation, ou les données de
+  réputation seront très en retard par rapport à l'état actuel du réseau
+  (ce qui les rendra moins utiles ou permettra même d'abuser de la réputation).
 
 - **Demande de commentaires sur les spécifications proposées pour les LSP :** Severin
   Bühler [a posté][buhler lsp] sur la liste de diffusion Lightning-Dev une
@@ -61,10 +61,10 @@ les plus répandus.
   diffuse une transaction qui ancrera le canal sur la chaîne lorsqu'il sera
   confirmé (le transformant en un canal normal).
 
-    Dans une [réponse][zmnscpxj lsp], le développeur ZmnSCPxj s'est prononcé en
-    faveur de spécifications ouvertes pour les LSP. Il a fait remarquer qu'elles
-    permettent à un client de se connecter facilement à plusieurs LSP, ce qui
-    empêchera le verrouillage des fournisseurs et améliorera la protection de la vie privée.
+  Dans une [réponse][zmnscpxj lsp], le développeur ZmnSCPxj s'est prononcé en
+  faveur de spécifications ouvertes pour les LSP. Il a fait remarquer qu'elles
+  permettent à un client de se connecter facilement à plusieurs LSP, ce qui
+  empêchera le verrouillage des fournisseurs et améliorera la protection de la vie privée.
 
 - **Difficultés liées aux canaux "zero-conf" en cas de double financement :** Bastien
   Teinturier s'est [exprimé][teinturier 0conf] sur la liste de diffusion Lightning-Dev à
@@ -76,20 +76,20 @@ les plus répandus.
   protocole de double financement, ce qui peut inclure des canaux où la transaction
   ouverte contient des contributions des deux parties du canal.
 
-    Se passer de confiance n'est possible que lorsqu'une partie contrôle
-    toutes les entrées de la transaction ouverte. Par exemple, Alice crée
-    la transaction ouverte, donne à Bob des fonds dans le canal, et Bob
-    essaie de dépenser ces fonds par l'intermédiaire d'Alice auprès de
-    Carole. Alice peut transmettre le paiement à Carole en toute sécurité,
-    car elle sait qu'elle a le contrôle de la transaction ouverte qui finira
-    par être confirmée. Mais si Bob a également une entrée dans la transaction
-    ouverte, il peut faire confirmer une transaction conflictuelle qui
-    empêchera la transaction ouverte d'être confirmée---empêchant ainsi
-    Alice d'être indemnisée pour l'argent qu'elle a transmis à Carole.
+  Se passer de confiance n'est possible que lorsqu'une partie contrôle
+  toutes les entrées de la transaction ouverte. Par exemple, Alice crée
+  la transaction ouverte, donne à Bob des fonds dans le canal, et Bob
+  essaie de dépenser ces fonds par l'intermédiaire d'Alice auprès de
+  Carole. Alice peut transmettre le paiement à Carole en toute sécurité,
+  car elle sait qu'elle a le contrôle de la transaction ouverte qui finira
+  par être confirmée. Mais si Bob a également une entrée dans la transaction
+  ouverte, il peut faire confirmer une transaction conflictuelle qui
+  empêchera la transaction ouverte d'être confirmée---empêchant ainsi
+  Alice d'être indemnisée pour l'argent qu'elle a transmis à Carole.
 
-    Plusieurs idées visant à permettre l'ouverture de canaux à condition zéro
-    avec un double financement ont été discutées, bien qu'aucune n'ait semblé
-    satisfaisante aux participants au moment de la rédaction de ce document.
+  Plusieurs idées visant à permettre l'ouverture de canaux à condition zéro
+  avec un double financement ont été discutées, bien qu'aucune n'ait semblé
+  satisfaisante aux participants au moment de la rédaction de ce document.
 
 - **Applications avancées de payjoin :** Dan Gould a [posté][gould payjoin]
   sur la liste de diffusion Bitcoin-Dev plusieurs suggestions pour utiliser
@@ -98,32 +98,31 @@ les plus répandus.
   versions de [transaction cut-through][], une vieille idée pour améliorer
   la confidentialité, l'évolutivité et réduire les coûts :
 
+  - *Transmission des paiements:* au lieu de payer Bob, Alice paie le vendeur
+    de Bob (Carol), réduisant ainsi une dette qu'il lui doit (ou prépayant
+    une facture future attendue).
 
-    - *Transmission des paiements:* au lieu de payer Bob, Alice paie le vendeur
-      de Bob (Carol), réduisant ainsi une dette qu'il lui doit (ou prépayant
-      une facture future attendue).
+  - *Transmission de paiements par lots:* au lieu de payer Bob, Alice paie
+    plusieurs personnes à qui Bob doit de l'argent (ou avec qui il veut établir
+    un crédit). L'exemple de Gould considère un échange qui a un flux régulier
+    de dépôts et de retraits ; payjoin permet aux retraits d'être payés par
+    de nouveaux dépôts lorsque c'est possible.
 
-    - *Transmission de paiements par lots:* au lieu de payer Bob, Alice paie
-      plusieurs personnes à qui Bob doit de l'argent (ou avec qui il veut établir
-      un crédit). L'exemple de Gould considère un échange qui a un flux régulier
-      de dépôts et de retraits ; payjoin permet aux retraits d'être payés par
-      de nouveaux dépôts lorsque c'est possible.
+  Ces deux techniques permettent de passer de deux transactions au moins
+  à une seule, ce qui permet d'économiser une quantité
+  considérable d'espace dans les blocs. Lorsque le [traitement par
+  lots][topic payment batching] est utilisé, les économies d'espace
+  peuvent être encore plus importantes. Mieux encore, du point de vue
+  du destinataire initial (par exemple Bob), le payeur initial (par
+  exemple Alice) peut payer tout ou partie des frais. Au-delà des
+  économies d'espace et de frais, le fait de retirer les transactions
+  de la chaîne de blocs et de combiner des opérations telles que la
+  réception et la dépense rend beaucoup plus difficile pour les
+  organisations de surveillance de la chaîne de blocs de tracer de
+  manière fiable le flux de fonds.
 
-    Ces deux techniques permettent de passer de deux transactions au moins
-    à une seule, ce qui permet d'économiser une quantité
-    considérable d'espace dans les blocs. Lorsque le [traitement par
-    lots][topic payment batching] est utilisé, les économies d'espace
-    peuvent être encore plus importantes. Mieux encore, du point de vue
-    du destinataire initial (par exemple Bob), le payeur initial (par
-    exemple Alice) peut payer tout ou partie des frais. Au-delà des
-    économies d'espace et de frais, le fait de retirer les transactions
-    de la chaîne de blocs et de combiner des opérations telles que la
-    réception et la dépense rend beaucoup plus difficile pour les
-    organisations de surveillance de la chaîne de blocs de tracer de
-    manière fiable le flux de fonds.
-
-    À l'heure où nous écrivons ces lignes, le message n'a fait l'objet
-    d'aucune discussion sur la liste de diffusion.
+  À l'heure où nous écrivons ces lignes, le message n'a fait l'objet
+  d'aucune discussion sur la liste de diffusion.
 
 - **Résumé de la réunion en présentiel des développeurs de Bitcoin Core :** Plusieurs
   développeurs travaillant sur Bitcoin Core se sont récemment réunis pour
@@ -133,21 +132,20 @@ les plus répandus.
   [refactoring (or not)][], et [package relay][]. Deux autres sujets méritant
   une attention particulière ont également été abordés :
 
+  - [Mempool clustering][] résume une suggestion de refonte significative
+    de la manière dont les transactions et leurs métadonnées sont stockées
+    dans le mempool de Bitcoin Core. Les notes décrivent un certain nombre
+    de problèmes avec la conception actuelle, fournissent une vue d'ensemble
+    de la nouvelle conception, et suggèrent certains des défis et des compromis
+    impliqués. Une [description][bitcoin core #27677] de la conception et une
+    copie des [diapositives][mempool slides] de la présentation ont été
+    publiées ultérieurement.
 
-    - [Mempool clustering][] résume une suggestion de refonte significative
-      de la manière dont les transactions et leurs métadonnées sont stockées
-      dans le mempool de Bitcoin Core. Les notes décrivent un certain nombre
-      de problèmes avec la conception actuelle, fournissent une vue d'ensemble
-      de la nouvelle conception, et suggèrent certains des défis et des compromis
-      impliqués. Une [description][bitcoin core #27677] de la conception et une
-      copie des [diapositives][mempool slides] de la présentation ont été
-      publiées ultérieurement.
-
-    - La [méta discussion sur le projet][] résume une discussion variée sur les
-      objectifs du projet et la façon de les atteindre malgré de nombreux défis,
-      internes et externes. Certaines de ces discussions ont déjà conduit à des
-      changements expérimentaux dans la gestion du projet, tels qu'une approche
-      plus centrée sur le projet pour la prochaine version majeure après la version 25.
+  - La [méta discussion sur le projet][] résume une discussion variée sur les
+    objectifs du projet et la façon de les atteindre malgré de nombreux défis,
+    internes et externes. Certaines de ces discussions ont déjà conduit à des
+    changements expérimentaux dans la gestion du projet, tels qu'une approche
+    plus centrée sur le projet pour la prochaine version majeure après la version 25.
 
 ## En attente de confirmation #1 : pourquoi avons-nous un mempool ?
 

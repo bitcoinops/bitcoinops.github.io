@@ -22,34 +22,34 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   permanence un serveur HTTP pour associer des adresses de style e-mail à des factures LN. Teinturier note que cela crée plusieurs
   problèmes :
 
-    - _Manque de confidentialité :_ l'opérateur du serveur peut probablement connaître l'adresse IP de l'émetteur et du destinataire.
+  - _Manque de confidentialité :_ l'opérateur du serveur peut probablement connaître l'adresse IP de l'émetteur et du destinataire.
 
-    - _Risque de vol :_ l'opérateur du serveur peut effectuer une attaque de type "man-in-the-middle" sur les factures pour voler
-      des fonds.
+  - _Risque de vol :_ l'opérateur du serveur peut effectuer une attaque de type "man-in-the-middle" sur les factures pour voler
+    des fonds.
 
-    - _Infrastructure et dépendances :_ l'opérateur du serveur doit configurer le DNS et l'hébergement HTTPS, et le logiciel de
-      l'émetteur doit pouvoir utiliser le DNS et le HTTPS.
+  - _Infrastructure et dépendances :_ l'opérateur du serveur doit configurer le DNS et l'hébergement HTTPS, et le logiciel de
+    l'émetteur doit pouvoir utiliser le DNS et le HTTPS.
 
   Teinturier propose trois conceptions basées sur les offres :
 
-    - _Lier les domaines aux nœuds :_ un enregistrement DNS associe un domaine (par exemple, example.com) à un identifiant de nœud LN.
-      L'émetteur envoie un message [onion][topic onion messages] à ce nœud pour demander une offre pour le destinataire final (par
-      exemple, alice@example.com). Le nœud du domaine répond avec une offre signée par sa clé de nœud, permettant à l'émetteur de
-      prouver ultérieurement une fraude s'il a fourni une offre qui ne provenait pas d'Alice. L'émetteur peut maintenant utiliser le
-      protocole des offres pour demander une facture à Alice. L'émetteur peut également associer alice@example.com à l'offre, de sorte
-      qu'il n'ait pas besoin de contacter le nœud du domaine pour les paiements futurs à Alice. Teinturier note que cette conception
-      est extrêmement simple.
+  - _Lier les domaines aux nœuds :_ un enregistrement DNS associe un domaine (par exemple, example.com) à un identifiant de nœud LN.
+    L'émetteur envoie un message [onion][topic onion messages] à ce nœud pour demander une offre pour le destinataire final (par
+    exemple, alice@example.com). Le nœud du domaine répond avec une offre signée par sa clé de nœud, permettant à l'émetteur de
+    prouver ultérieurement une fraude s'il a fourni une offre qui ne provenait pas d'Alice. L'émetteur peut maintenant utiliser le
+    protocole des offres pour demander une facture à Alice. L'émetteur peut également associer alice@example.com à l'offre, de sorte
+    qu'il n'ait pas besoin de contacter le nœud du domaine pour les paiements futurs à Alice. Teinturier note que cette conception
+    est extrêmement simple.
 
-    - _Certificats dans les annonces de nœuds :_ le mécanisme existant qu'un nœud LN utilise pour se faire connaître du réseau est
-      modifié pour permettre à une annonce de contenir une chaîne de certificats SSL prouvant que (selon une autorité de certification)
-      le propriétaire de example.com affirme que ce nœud particulier est contrôlé par alice@example.com. Teinturier note que cela
-      nécessiterait que les implémentations LN utilisent une cryptographie compatible avec SSL.
+  - _Certificats dans les annonces de nœuds :_ le mécanisme existant qu'un nœud LN utilise pour se faire connaître du réseau est
+    modifié pour permettre à une annonce de contenir une chaîne de certificats SSL prouvant que (selon une autorité de certification)
+    le propriétaire de example.com affirme que ce nœud particulier est contrôlé par alice@example.com. Teinturier note que cela
+    nécessiterait que les implémentations LN utilisent une cryptographie compatible avec SSL.
 
-    - _Stocker les offres directement dans le DNS :_ un domaine peut avoir plusieurs enregistrements DNS qui stockent directement des
-      offres pour des adresses particulières. Par exemple, un enregistrement DNS `TXT`, `alice._lnaddress.domain.com`, inclut une offre
-      pour Alice. Un autre enregistrement, `bob._lnaddress.domain.com`, inclut une offre pour Bob. Teinturier note que cela nécessite
-      que le propriétaire du domaine crée un enregistrement DNS par utilisateur (et mette à jour cet enregistrement si l'utilisateur
-      doit modifier son offre par défaut).
+  - _Stocker les offres directement dans le DNS :_ un domaine peut avoir plusieurs enregistrements DNS qui stockent directement des
+    offres pour des adresses particulières. Par exemple, un enregistrement DNS `TXT`, `alice._lnaddress.domain.com`, inclut une offre
+    pour Alice. Un autre enregistrement, `bob._lnaddress.domain.com`, inclut une offre pour Bob. Teinturier note que cela nécessite
+    que le propriétaire du domaine crée un enregistrement DNS par utilisateur (et mette à jour cet enregistrement si l'utilisateur
+    doit modifier son offre par défaut).
 
   Le message a suscité une discussion active. Une suggestion notable était de permettre éventuellement l'utilisation à la fois de la
   première et de la troisième suggestion (les suggestions pour lier les domaines aux nœuds et stocker les offres directement dans le

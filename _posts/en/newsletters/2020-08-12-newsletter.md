@@ -31,35 +31,35 @@ and notable changes to popular Bitcoin infrastructure projects.
   discussion][corallo relay] about attacks against LN payment atomicity
   within the context of eltoo.
 
-    The advantage of eltoo over the currently used LN-penalty mechanism
-    is that the publication of old eltoo channel states onchain doesn't
-    prevent the publication of the ultimate channel state.  This is
-    achieved in eltoo by creating signatures using `SIGHASH_ANYPREVOUT`
-    so that the signature from the ultimate state can spend bitcoins
-    from either the initial state, the penultimate state, or any state
-    in between.  However, transactions still need to identify which
-    state (previous output) they are attempting to spend.
+  The advantage of eltoo over the currently used LN-penalty mechanism
+  is that the publication of old eltoo channel states onchain doesn't
+  prevent the publication of the ultimate channel state.  This is
+  achieved in eltoo by creating signatures using `SIGHASH_ANYPREVOUT`
+  so that the signature from the ultimate state can spend bitcoins
+  from either the initial state, the penultimate state, or any state
+  in between.  However, transactions still need to identify which
+  state (previous output) they are attempting to spend.
 
-    One problem with the eltoo mechanism is that both an attacker and an
-    honest user could both try spending from the same previous state.
-    Miners and relay nodes would only keep one of those transactions in
-    their mempool, and there may be ways the attacker could ensure the
-    version of the transaction everyone kept was an old state.  Another
-    problem is that the attacker could
-    possibly trick the honest user into spending from a state that relay
-    nodes hadn't seen and so relay nodes would possibly reject the
-    unconfirmed transaction because its parent transaction was not
-    available.  Although neither of these problems would
-    prevent the ultimate state from eventually being confirmed onchain,
-    they could be used for [transaction pinning][topic transaction
-    pinning] to prevent one of the honest user's time-sensitive
-    transactions from confirming in time.  These problems are similar to
-    the attack against LN payment atomicity described in [Newsletter
-    #95][news95 ln atomicity].  One proposed mitigation would be to have
-    special nodes (perhaps part of LN routing software) that looked for
-    cases where eltoo was being used and could use their knowledge of
-    that protocol to tell miners which transaction would truly be most
-    profitable to mine.
+  One problem with the eltoo mechanism is that both an attacker and an
+  honest user could both try spending from the same previous state.
+  Miners and relay nodes would only keep one of those transactions in
+  their mempool, and there may be ways the attacker could ensure the
+  version of the transaction everyone kept was an old state.  Another
+  problem is that the attacker could
+  possibly trick the honest user into spending from a state that relay
+  nodes hadn't seen and so relay nodes would possibly reject the
+  unconfirmed transaction because its parent transaction was not
+  available.  Although neither of these problems would
+  prevent the ultimate state from eventually being confirmed onchain,
+  they could be used for [transaction pinning][topic transaction
+  pinning] to prevent one of the honest user's time-sensitive
+  transactions from confirming in time.  These problems are similar to
+  the attack against LN payment atomicity described in [Newsletter
+  #95][news95 ln atomicity].  One proposed mitigation would be to have
+  special nodes (perhaps part of LN routing software) that looked for
+  cases where eltoo was being used and could use their knowledge of
+  that protocol to tell miners which transaction would truly be most
+  profitable to mine.
 
 ## Field report: How segwit and batching could have saved half a billion dollars in fees
 
@@ -215,3 +215,4 @@ release candidates.*
 [19031 handshake]: https://bitcoincore.reviews/19031#l-121
 [19031 v2 deprecate]: https://lists.torproject.org/pipermail/tor-dev/2020-June/014365.html
 [19031 v2 schedule]: https://blog.torproject.org/v2-deprecation-timeline
+[hwi]: https://github.com/bitcoin-core/HWI

@@ -23,23 +23,23 @@ changes to popular Bitcoin infrastructure software.
   or continued this week about choosing a method for activating
   [taproot][topic taproot].
 
-    - **New IRC room:** Steve Lee [posted][lee irc] to the Bitcoin-Dev
-      mailing list an announcement of a new `##taproot-activation` IRC
-      room on the [Freenode][] network.  The channel is [logged][irc
-      log] and saw an impressive amount of conversation from dozens of
-      participants during its first week.
+  - **New IRC room:** Steve Lee [posted][lee irc] to the Bitcoin-Dev
+    mailing list an announcement of a new `##taproot-activation` IRC
+    room on the [Freenode][] network.  The channel is [logged][irc
+    log] and saw an impressive amount of conversation from dozens of
+    participants during its first week.
 
-    - **Mailing list thread:** Anthony Towns [posted][towns post] a summary of
-      the recently updated [BIP8][] activation method (see [Newsletter
-      #104][news104 bip8]) and of his own new [bip-decthresh][]
-      activation proposal (based on Matt Corallo's "modern soft fork
-      activation" [post][msfa] in January, see [Newsletter #80][news80
-      activation]).  An interesting feature of the decreasing threshold
-      idea is that the amount of network hashrate needed to signal
-      readiness to enforce the new soft fork rules would decrease during
-      the final activation period, allowing miner activation with
-      perhaps as little as 60% miner support rather than the 95% miner
-      support needed during the first activation period.
+  - **Mailing list thread:** Anthony Towns [posted][towns post] a summary of
+    the recently updated [BIP8][] activation method (see [Newsletter
+    #104][news104 bip8]) and of his own new [bip-decthresh][]
+    activation proposal (based on Matt Corallo's "modern soft fork
+    activation" [post][msfa] in January, see [Newsletter #80][news80
+    activation]).  An interesting feature of the decreasing threshold
+    idea is that the amount of network hashrate needed to signal
+    readiness to enforce the new soft fork rules would decrease during
+    the final activation period, allowing miner activation with
+    perhaps as little as 60% miner support rather than the 95% miner
+    support needed during the first activation period.
 
 - **Bech32 address updates:** Russell O'Connor [posted][oconnor post] to
   the Bitcoin-Dev mailing list a reply to Pieter Wuille's November post
@@ -187,3 +187,4 @@ release candidates.*
 [news30 probing]: /en/newsletters/2019/01/22/#eclair-762
 [zap 0.7.0]: https://github.com/LN-Zap/zap-desktop/releases/tag/v0.7.0-beta
 [btcpay 1.0.5.0]: https://blog.btcpayserver.org/btcpay-server-1-0-5-0/
+[hwi]: https://github.com/bitcoin-core/HWI

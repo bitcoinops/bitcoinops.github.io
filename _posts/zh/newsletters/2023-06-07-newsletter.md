@@ -15,9 +15,9 @@ lang: zh
   Halseth 在 Bitcoin-Dev 邮件列表中[发布了][halseth matt-ctv]如何使用 Merklize All The Things (MATT) 提案（参见周报[#226][news226 matt] 和[#249][news249 matt]）中的 `OP_CHECKOUTPUTCONTRACTVERIFY` 操作码（COCV）来复刻 [OP_CHECKTEMPLATEVERIFY][topic
   op_checktemplateverify] 提案中的功能。为了提交具有多个输出的交易，每个输出都需要使用不同的 COCV 操作码。相比之下，单个 CTV 操作码可以提交给所有输出。这使得 COCV 效率较低，但正如他指出的那样，“简单到有趣”。
 
-    除了描述功能，Halseth 还提供了使用 [Tapsim][]（一种用于“调试比特币 Tapscript 交易 [...] 针对希望与比特币脚本原语进行交互、帮助脚本调试并可视化脚本执行时的虚拟机状态的工具”）的操作[演示][halseth demo]。
+  除了描述功能，Halseth 还提供了使用 [Tapsim][]（一种用于“调试比特币 Tapscript 交易 [...] 针对希望与比特币脚本原语进行交互、帮助脚本调试并可视化脚本执行时的虚拟机状态的工具”）的操作[演示][halseth demo]。
 
-    在另一个帖子中，Halseth [发布][halseth matt-joinpool]了关于使用 MATT 加上 [OP_CAT][] 创建 [joinpool][topic joinpools]（也称为_coinpool_ 或 _payment pool_）的内容。同样，他提供了一个使用 Tapsim 的[交互式演示][demo joinpool]。基于实验性实现的结果，他也提供了几个对 MATT 提案中操作码的修改建议。MATT 提案的发起人 Salvatore Ingala 对此进行了积极地[回复][ingala matt]。{% assign timestamp="1:23" %}
+  在另一个帖子中，Halseth [发布][halseth matt-joinpool]了关于使用 MATT 加上 [OP_CAT][] 创建 [joinpool][topic joinpools]（也称为_coinpool_ 或 _payment pool_）的内容。同样，他提供了一个使用 Tapsim 的[交互式演示][demo joinpool]。基于实验性实现的结果，他也提供了几个对 MATT 提案中操作码的修改建议。MATT 提案的发起人 Salvatore Ingala 对此进行了积极地[回复][ingala matt]。{% assign timestamp="1:23" %}
 
 ## 等待确认 #4：费率估算
 

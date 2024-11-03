@@ -31,19 +31,19 @@ describing notable changes to popular Bitcoin infrastructure software.
   using an experimental flag, preventing deployments of it from having any effect on
   interactions with non-participating nodes.
 
-    Once deployed by experimenters, it should become easier to answer
-    one of the [constructive criticisms][decker endorsement] of this idea, which is how
-    many forwarded payments would actually receive a boost from the
-    scheme.  If the core users of LN are
-    frequently sending payments to each other over many of the same
-    routes, and if the reputation system works as planned, then that
-    core network will be more likely to keep functioning during a
-    channel jamming attack.  But if most spenders only send payments
-    rarely (or only send their most critical types of payments rarely,
-    such as high-value payments), then they won't have enough
-    interactions to build a reputation, or the reputation data will lag
-    far behind the current state of the network (making it less useful
-    or even allowing reputation to be abused). {% assign timestamp="1:33" %}
+  Once deployed by experimenters, it should become easier to answer
+  one of the [constructive criticisms][decker endorsement] of this idea, which is how
+  many forwarded payments would actually receive a boost from the
+  scheme.  If the core users of LN are
+  frequently sending payments to each other over many of the same
+  routes, and if the reputation system works as planned, then that
+  core network will be more likely to keep functioning during a
+  channel jamming attack.  But if most spenders only send payments
+  rarely (or only send their most critical types of payments rarely,
+  such as high-value payments), then they won't have enough
+  interactions to build a reputation, or the reputation data will lag
+  far behind the current state of the network (making it less useful
+  or even allowing reputation to be abused). {% assign timestamp="1:33" %}
 
 - **Request for feedback on proposed specifications for LSPs:** Severin
   Bühler [posted][buhler lsp] to the Lightning-Dev mailing list a request for
@@ -57,10 +57,10 @@ describing notable changes to popular Bitcoin infrastructure software.
   transaction that will anchor the channel onchain when it is confirmed
   (making it into a regular channel).
 
-    In a [reply][zmnscpxj lsp], developer ZmnSCPxj wrote in favor of open specifications
-    for LSPs.  He noted that they make it easy for a client to connect
-    to multiple LSPs, which will prevent vendor lock-in and improve
-    privacy. {% assign timestamp="14:52" %}
+  In a [reply][zmnscpxj lsp], developer ZmnSCPxj wrote in favor of open specifications
+  for LSPs.  He noted that they make it easy for a client to connect
+  to multiple LSPs, which will prevent vendor lock-in and improve
+  privacy. {% assign timestamp="14:52" %}
 
 - **Challenges with zero-conf channels when dual funding:** Bastien
   Teinturier [posted][teinturier 0conf] to the Lightning-Dev mailing list about the
@@ -71,20 +71,20 @@ describing notable changes to popular Bitcoin infrastructure software.
   dual-funding protocol, which may include channels where the open
   transaction contains inputs from both parties in the channel.
 
-    Zero-conf is only trustless when one party controls all of the
-    inputs to the open transaction.  For example, Alice creates the
-    open transaction, gives Bob some funds in the channel, and Bob tries
-    spending those funds through Alice to Carol.  Alice can safely forward
-    the payment to Carol because Alice knows she's in control of the
-    open transaction eventually becoming confirmed.  But if Bob also has
-    an input in the open transaction, he can get a conflicting
-    transaction confirmed that will prevent the open transaction from
-    confirming---preventing Alice from being compensated for any money
-    she forwarded to Carol.
+  Zero-conf is only trustless when one party controls all of the
+  inputs to the open transaction.  For example, Alice creates the
+  open transaction, gives Bob some funds in the channel, and Bob tries
+  spending those funds through Alice to Carol.  Alice can safely forward
+  the payment to Carol because Alice knows she's in control of the
+  open transaction eventually becoming confirmed.  But if Bob also has
+  an input in the open transaction, he can get a conflicting
+  transaction confirmed that will prevent the open transaction from
+  confirming---preventing Alice from being compensated for any money
+  she forwarded to Carol.
 
-    Several ideas for allowing zero-conf channel opens with dual funding
-    were discussed, although none seemed satisfying to participants as
-    of this writing. {% assign timestamp="20:59" %}
+  Several ideas for allowing zero-conf channel opens with dual funding
+  were discussed, although none seemed satisfying to participants as
+  of this writing. {% assign timestamp="20:59" %}
 
 - **Advanced payjoin applications:** Dan Gould [posted][gould payjoin] to the
   Bitcoin-Dev mailing list several suggestions for using the
@@ -93,29 +93,29 @@ describing notable changes to popular Bitcoin infrastructure software.
   were versions of [transaction cut-through][], an old idea for
   improving privacy, improving scalability, and reducing fee costs:
 
-    - *Payment forwarding:* rather than Alice paying Bob, Alice instead
-      pays Bob's vendor (Carol), reducing a debt he owes her (or
-      pre-paying for an expected future bill).
+  - *Payment forwarding:* rather than Alice paying Bob, Alice instead
+    pays Bob's vendor (Carol), reducing a debt he owes her (or
+    pre-paying for an expected future bill).
 
-    - *Batched payment forwarding:* rather than Alice paying Bob, Alice
-      instead pays several people Bob owes money (or wants to establish
-      a credit with).  Gould's example considers an exchange that has a
-      steady stream of deposits and withdrawals; payjoin allows withdrawals
-      to be paid for by new deposits when possible.
+  - *Batched payment forwarding:* rather than Alice paying Bob, Alice
+    instead pays several people Bob owes money (or wants to establish
+    a credit with).  Gould's example considers an exchange that has a
+    steady stream of deposits and withdrawals; payjoin allows withdrawals
+    to be paid for by new deposits when possible.
 
-    Both of these techniques allow reducing what would be at least two
-    transactions into a single transaction, saving a considerable amount
-    of block space.  When [batching][topic payment batching] is used,
-    the space savings may be even larger.  Even better from the
-    perspective of the original receiver (e.g. Bob),
-    the original spender (e.g. Alice) may pay all or some of the
-    fees.  Beyond the space and fee savings, removing transactions from
-    the block chain and combining operations like receiving and spending
-    makes it significantly more difficult for block chain surveillance
-    organizations to reliably trace the flow of funds.
+  Both of these techniques allow reducing what would be at least two
+  transactions into a single transaction, saving a considerable amount
+  of block space.  When [batching][topic payment batching] is used,
+  the space savings may be even larger.  Even better from the
+  perspective of the original receiver (e.g. Bob),
+  the original spender (e.g. Alice) may pay all or some of the
+  fees.  Beyond the space and fee savings, removing transactions from
+  the block chain and combining operations like receiving and spending
+  makes it significantly more difficult for block chain surveillance
+  organizations to reliably trace the flow of funds.
 
-    As of this writing, the post had not received any discussion on the
-    mailing list. {% assign timestamp="24:51" %}
+  As of this writing, the post had not received any discussion on the
+  mailing list. {% assign timestamp="24:51" %}
 
 - **Summaries of Bitcoin Core developers in-person meeting:** several
   developers working on Bitcoin Core recently met to discuss aspects of
@@ -125,20 +125,20 @@ describing notable changes to popular Bitcoin infrastructure software.
   [refactoring (or not)][], and [package relay][].  Also discussed were
   two other topics we think deserve special attention: {% assign timestamp="37:35" %}
 
-    - [Mempool clustering][] summarizes a suggestion for a significant
-      redesign of how transactions and their metadata are stored in
-      Bitcoin Core's mempool.  The notes describe a number of problems
-      with the current design, provide an overview of the new design,
-      and suggest some of the challenges and tradeoffs involved.  A
-      [description][bitcoin core #27677] of the design and a copy of the
-      [slides][mempool slides] from the presentation were later published.
+  - [Mempool clustering][] summarizes a suggestion for a significant
+    redesign of how transactions and their metadata are stored in
+    Bitcoin Core's mempool.  The notes describe a number of problems
+    with the current design, provide an overview of the new design,
+    and suggest some of the challenges and tradeoffs involved.  A
+    [description][bitcoin core #27677] of the design and a copy of the
+    [slides][mempool slides] from the presentation were later published.
 
-    - [Project meta discussion][] summarizes a varied discussion about
-      the project's goals and how to achieve them despite many
-      challenges, both internal and external.  Some of the discussion
-      has already led to experimental changes in the project's
-      management, such as a more project-focused approach for the next
-      major release after version 25.
+  - [Project meta discussion][] summarizes a varied discussion about
+    the project's goals and how to achieve them despite many
+    challenges, both internal and external.  Some of the discussion
+    has already led to experimental changes in the project's
+    management, such as a more project-focused approach for the next
+    major release after version 25.
 
 ## Waiting for confirmation #1: why do we have a mempool?
 

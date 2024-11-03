@@ -76,7 +76,7 @@ BOLTs][bolts repo].*
   Banned Peers Table. This helps GUI users share individual addresses from their ban list more
   easily.
 
-    ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
+  ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
 
 - [C-Lightning #4674][] adds `datastore`, `deldatastore`, and `listdatastore`
   commands for plugins to store and manage data in the C-Lightning database.

@@ -37,33 +37,35 @@ with "Point" in PTLC. -->
   routing fees as well as conclude that neither of them is the spender
   or receiver of the ultimate payment.
 
-      Alice → Mallory → Bob → Carol → Mallory' → Dan
+  ```
+  Alice → Mallory → Bob → Carol → Mallory' → Dan
+  ```
 
-    PTLCs make it possible for each hop to use a different identifier
-    for the payment by using adaptor signatures (which represent
-    *points* on an elliptic curve) rather than hashes.  Adaptor
-    signatures were originally described for use with the [schnorr
-    signature scheme][topic schnorr signatures].  It's known to be
-    possible to use them with Bitcoin's current ECDSA signature scheme
-    (see [Newsletter #16][news16 2pecdsa scriptless]) but the process
-    relies on two-party ECDSA signing (2pECDSA) which is complex and
-    requires security assumptions beyond those normally required for
-    Bitcoin-style ECDSA signatures.  However, more recently, Lloyd
-    Fournier published a [paper][fournier otves] describing how to
-    securely use adaptor signatures with just regular 2-of-2 Bitcoin
-    multisig (e.g.  `OP_CHECKMULTISIG`) and simple discrete log
-    equivalence (DLEQ); this was summarized in a [post][uSEkaCIO email]
-    to the Lightning-Dev mailing list last November.
+  PTLCs make it possible for each hop to use a different identifier
+  for the payment by using adaptor signatures (which represent
+  *points* on an elliptic curve) rather than hashes.  Adaptor
+  signatures were originally described for use with the [schnorr
+  signature scheme][topic schnorr signatures].  It's known to be
+  possible to use them with Bitcoin's current ECDSA signature scheme
+  (see [Newsletter #16][news16 2pecdsa scriptless]) but the process
+  relies on two-party ECDSA signing (2pECDSA) which is complex and
+  requires security assumptions beyond those normally required for
+  Bitcoin-style ECDSA signatures.  However, more recently, Lloyd
+  Fournier published a [paper][fournier otves] describing how to
+  securely use adaptor signatures with just regular 2-of-2 Bitcoin
+  multisig (e.g.  `OP_CHECKMULTISIG`) and simple discrete log
+  equivalence (DLEQ); this was summarized in a [post][uSEkaCIO email]
+  to the Lightning-Dev mailing list last November.
 
-    Last week during the [Lightning HackSprint][], several developers
-    [worked][ptlc challenge] on these 2-of-2 multisig adaptor
-    signatures.  The results were an excellent [blog post][gibson blog]
-    about the subject and proof-of-concept implementations
-    for the C-language [libsecp256k1][jonasnick otves] and Scala [bitcoin-s][nkohen otves] libraries.
-    That code is currently unreviewed and possibly unsafe, but it can help
-    developers begin experimenting with the use of adaptor signatures on
-    mainnet, both for PTLCs in LN and for use in other trustless
-    contract protocols.
+  Last week during the [Lightning HackSprint][], several developers
+  [worked][ptlc challenge] on these 2-of-2 multisig adaptor
+  signatures.  The results were an excellent [blog post][gibson blog]
+  about the subject and proof-of-concept implementations
+  for the C-language [libsecp256k1][jonasnick otves] and Scala [bitcoin-s][nkohen otves] libraries.
+  That code is currently unreviewed and possibly unsafe, but it can help
+  developers begin experimenting with the use of adaptor signatures on
+  mainnet, both for PTLCs in LN and for use in other trustless
+  contract protocols.
 
 ## Bitcoin Core PR Review Club
 
@@ -152,69 +154,69 @@ release candidates.*
 - [C-Lightning #3600][] adds experimental support for *onion messages*
   using *blinded paths*:
 
-    - *Onion messages* (called "LN direct messages" in
-      [Newsletter #86][news86 ln dm]) allow a node to send an encrypted
-      message across the network without using the LN payments
-      mechanism.  This can replace the mechanism of
-      messages-over-payments used by apps such as [Whatsat][].  Compared
-      to messages-over-payments, onion messages have several advantages:
+  - *Onion messages* (called "LN direct messages" in
+    [Newsletter #86][news86 ln dm]) allow a node to send an encrypted
+    message across the network without using the LN payments
+    mechanism.  This can replace the mechanism of
+    messages-over-payments used by apps such as [Whatsat][].  Compared
+    to messages-over-payments, onion messages have several advantages:
 
-        1. They have a [draft specification][onion messages draft spec]
-           which, if adopted, will make it easier for multiple
-           implementations to support them.
+    1. They have a [draft specification][onion messages draft spec]
+       which, if adopted, will make it easier for multiple
+       implementations to support them.
 
-        2. They don't need the security of an onchain-enforceable payment
-           channel so onion messages can be routed even between peers
-           that don't share an established payment channel.  <!-- BOLT7
-           draft PR: "SHOULD accept onion messages from peers without an
-           established channel." -->
+    2. They don't need the security of an onchain-enforceable payment
+       channel so onion messages can be routed even between peers
+       that don't share an established payment channel.  <!-- BOLT7
+       draft PR: "SHOULD accept onion messages from peers without an
+       established channel." -->
 
-        3. They don't require the bidirectional transmission of
-           information like HTLCs or error messages, so once a node has
-           forwarded a message, it doesn't need to keep any information
-           related to that message.  This statelessness minimizes the memory
-           requirements for nodes.  If the sending node wants to receive
-           a reply, the draft specification allows it to include a
-           blinded `reply_path` field that the receiving node can use to
-           send a reply in a new message.
+    3. They don't require the bidirectional transmission of
+       information like HTLCs or error messages, so once a node has
+       forwarded a message, it doesn't need to keep any information
+       related to that message.  This statelessness minimizes the memory
+       requirements for nodes.  If the sending node wants to receive
+       a reply, the draft specification allows it to include a
+       blinded `reply_path` field that the receiving node can use to
+       send a reply in a new message.
 
-    - *Blinded paths* (called "lightweight rendez-vous routing" in
-      [Newsletter #85][news85 lw rv] and now a [draft proposal][blinded path
-      gist]) make it possible to route a payment or a message without the originator
-      learning the destination's network identity or the full path used.
-      This is accomplished through several steps:
+  - *Blinded paths* (called "lightweight rendez-vous routing" in
+    [Newsletter #85][news85 lw rv] and now a [draft proposal][blinded path
+    gist]) make it possible to route a payment or a message without the originator
+    learning the destination's network identity or the full path used.
+    This is accomplished through several steps:
 
-        1. The destination node chooses a path from an intermediate node
-           to itself and then onion-encrypts that path information so
-           that each hop in the path will only be able to decrypt the
-           identifier for the next node that should receive the message.
-           The destination node gives this encrypted ("blinded") path
-           information to the sending node (e.g. via a field in a
-           [BOLT11][] invoice or using the previously-mentioned onion
-           message `reply_path` field).
+    1. The destination node chooses a path from an intermediate node
+       to itself and then onion-encrypts that path information so
+       that each hop in the path will only be able to decrypt the
+       identifier for the next node that should receive the message.
+       The destination node gives this encrypted ("blinded") path
+       information to the sending node (e.g. via a field in a
+       [BOLT11][] invoice or using the previously-mentioned onion
+       message `reply_path` field).
 
-        2. The sending node relays its message using normal onion
-           routing to the intermediate node.
+    2. The sending node relays its message using normal onion
+       routing to the intermediate node.
 
-        3. The intermediate node decrypts the next hop to use from the
-           blinded path and sends the message to it.  The next node
-           decrypts its own next hop field and further relays the
-           message; this process continues until the message reaches the
-           destination node.
+    3. The intermediate node decrypts the next hop to use from the
+       blinded path and sends the message to it.  The next node
+       decrypts its own next hop field and further relays the
+       message; this process continues until the message reaches the
+       destination node.
 
-      Just as with normal onion routing, no routing node should learn
-      more about the blinded path than which node sent them the message
-      and which node should receive the message after them.  Unlike with
-      normal routing, neither the origination nor destination node needs
-      to learn the identity of the other node or what exact path it
-      used.  This improves not just the privacy of those endpoints but
-      also the privacy of any unannounced nodes along the blinded paths.
+    Just as with normal onion routing, no routing node should learn
+    more about the blinded path than which node sent them the message
+    and which node should receive the message after them.  Unlike with
+    normal routing, neither the origination nor destination node needs
+    to learn the identity of the other node or what exact path it
+    used.  This improves not just the privacy of those endpoints but
+    also the privacy of any unannounced nodes along the blinded paths.
 
-    As the PR notes, "there are no contents defined yet [for the
-    messages], except for those required for routing and replies, but
-    the intent is to use this mechanism for offers."  Offers would allow
-    nodes to request and send invoices through the LN; see [Newsletter
-    #72][news72 offers] for details.
+  As the PR notes, "there are no contents defined yet [for the
+  messages], except for those required for routing and replies, but
+  the intent is to use this mechanism for offers."  Offers would allow
+  nodes to request and send invoices through the LN; see [Newsletter
+  #72][news72 offers] for details.
 
 - [LND #4087][] adds support for automatically creating a watchtower tor
 hidden service if enabled at [the command line][watchtower tor].

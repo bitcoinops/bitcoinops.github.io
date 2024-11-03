@@ -60,31 +60,31 @@ to popular Bitcoin infrastructure projects.
   In addition to direct counterpoints, several advantages of the current
   system were noted:
 
-    - **Miner anonymity:** with 50,000 or more nodes currently all
-      relaying transactions, it's easy for miners to receive all the
-      information they need by quietly operating one of those nodes.
-      Pseudonymous developer ZmnSCPxj [suggested][zmnscpxj relay] that
-      forcing miners to maintain a persistent identity, even one on an
-      anonymity network like Tor, would make it easier to
-      identify miners and coerce them into censoring some transactions.
+  - **Miner anonymity:** with 50,000 or more nodes currently all
+    relaying transactions, it's easy for miners to receive all the
+    information they need by quietly operating one of those nodes.
+    Pseudonymous developer ZmnSCPxj [suggested][zmnscpxj relay] that
+    forcing miners to maintain a persistent identity, even one on an
+    anonymity network like Tor, would make it easier to
+    identify miners and coerce them into censoring some transactions.
 
-    - **Censorship resistance:** anyone today can start a node using
-      basically any computer to receive relayed transactions, connect
-      mining equipment, and begin mining.  Pieter Wuille [notes][wuille
-      relay] that wouldn't be the case with direct miner submission.
-      New miners would need to advertise their nodes in order to receive
-      transactions, but there's no highly accessible way to do that
-      which is resistant to both censorship and [sybil attacks][].  In
-      particular, Wuille notes "ideas for a mechanism for miners to
-      publish their [submission URL] on chain don't help; that [would
-      be] dependent on other miners to not censor the publishing."
+  - **Censorship resistance:** anyone today can start a node using
+    basically any computer to receive relayed transactions, connect
+    mining equipment, and begin mining.  Pieter Wuille [notes][wuille
+    relay] that wouldn't be the case with direct miner submission.
+    New miners would need to advertise their nodes in order to receive
+    transactions, but there's no highly accessible way to do that
+    which is resistant to both censorship and [sybil attacks][].  In
+    particular, Wuille notes "ideas for a mechanism for miners to
+    publish their [submission URL] on chain don't help; that [would
+    be] dependent on other miners to not censor the publishing."
 
-    - **Centralization resistance:** Wuille also notes that "the cost and
-      complexity of an additional submission is independent of [each
-      miner's] hashrate, but the benefit is directly proportional [to
-      hashrate".  That would make it "far easier for most wallets to
-      just submit [transactions] to the largest few pools", encouraging
-      centralization.
+  - **Centralization resistance:** Wuille also notes that "the cost and
+    complexity of an additional submission is independent of [each
+    miner's] hashrate, but the benefit is directly proportional [to
+    hashrate".  That would make it "far easier for most wallets to
+    just submit [transactions] to the largest few pools", encouraging
+    centralization.
 
 - **Taproot test vectors:** Pieter Wuille [posted][wuille test] to the
   Bitcoin-Dev mailing list a set of [test vectors][bips #1225] he's
@@ -94,9 +94,9 @@ to popular Bitcoin infrastructure projects.
   sigmsg/sighash/signature computation for key path spending, and
   control block computation for script path spending."
 
-    The test vectors should be especially useful to developers working
-    on implementations which want to be ready to use taproot [shortly
-    after activation][p4tr waiting].
+  The test vectors should be especially useful to developers working
+  on implementations which want to be ready to use taproot [shortly
+  after activation][p4tr waiting].
 
 ## Preparing for taproot #20: what happens at activation?
 

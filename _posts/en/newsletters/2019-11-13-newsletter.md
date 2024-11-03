@@ -41,65 +41,65 @@ popular Bitcoin infrastructure projects.
   participating in question and answer sessions with Bitcoin experts who
   previously contributed to the taproot design.
 
-    One [question][why v1 flex] asked was about why taproot allows v1
-    segwit scriptPubKeys to use fewer or more than 34 bytes---the amount
-    needed for a Pay-to-Taproot (P2TR) scriptPubKey.  This seems odd
-    since [BIP141][] v0 native segwit scriptPubKeys are only allowed to use
-    exactly 22 bytes for P2WPKH or 34 bytes for P2WSH.  The
-    response was that fewer restrictions will allow a later soft fork to
-    define other uses for v1 scriptPubKeys with shorter or longer
-    lengths.  In the meantime, if taproot is adopted, those shorter and
-    longer v1 scriptPubKeys will be spendable by anyone (as they are
-    today).
+  One [question][why v1 flex] asked was about why taproot allows v1
+  segwit scriptPubKeys to use fewer or more than 34 bytes---the amount
+  needed for a Pay-to-Taproot (P2TR) scriptPubKey.  This seems odd
+  since [BIP141][] v0 native segwit scriptPubKeys are only allowed to use
+  exactly 22 bytes for P2WPKH or 34 bytes for P2WSH.  The
+  response was that fewer restrictions will allow a later soft fork to
+  define other uses for v1 scriptPubKeys with shorter or longer
+  lengths.  In the meantime, if taproot is adopted, those shorter and
+  longer v1 scriptPubKeys will be spendable by anyone (as they are
+  today).
 
-    This started a discussion among experts about how this flexibility
-    interacts with an issue in the bech32 address encoding algorithm
-    that was [reported in May][bech32 length change] and recently
-    [described in detail][bse bech32 extension].  Bech32 addresses as
-    specified in [BIP173][] are supposed to
-    guarantee that up to four errors will be detected in an incorrectly
-    copied address and that only about one miscopied address in a
-    billion that had five or more errors would go undetected.
-    Unfortunately, those calculations were made under the assumption
-    that the length of the copied address would be the same as the
-    original.  If the copied address is instead longer or shorter,
-    bech32 can fail to detect even a single-character error on rare
-    occasions.
+  This started a discussion among experts about how this flexibility
+  interacts with an issue in the bech32 address encoding algorithm
+  that was [reported in May][bech32 length change] and recently
+  [described in detail][bse bech32 extension].  Bech32 addresses as
+  specified in [BIP173][] are supposed to
+  guarantee that up to four errors will be detected in an incorrectly
+  copied address and that only about one miscopied address in a
+  billion that had five or more errors would go undetected.
+  Unfortunately, those calculations were made under the assumption
+  that the length of the copied address would be the same as the
+  original.  If the copied address is instead longer or shorter,
+  bech32 can fail to detect even a single-character error on rare
+  occasions.
 
-    For existing P2WPKH and P2WSH bech32 addresses, this is very
-    unlikely to be an issue since the restriction that v0
-    scriptPubKeys be exactly 22 or 34 bytes means that a miscopied
-    P2WPKH address would need to either contain an extra 12 bytes or a
-    P2WSH address would need to omit 12 bytes, meaning a user would need
-    to type about 19 extra or fewer bech32 characters---an awfully big
-    mistake.  <!-- 8 bits per byte * 12 bytes / 5 bits per bech32
-    character = 19.2 bech32 characters -->
+  For existing P2WPKH and P2WSH bech32 addresses, this is very
+  unlikely to be an issue since the restriction that v0
+  scriptPubKeys be exactly 22 or 34 bytes means that a miscopied
+  P2WPKH address would need to either contain an extra 12 bytes or a
+  P2WSH address would need to omit 12 bytes, meaning a user would need
+  to type about 19 extra or fewer bech32 characters---an awfully big
+  mistake.  <!-- 8 bits per byte * 12 bytes / 5 bits per bech32
+  character = 19.2 bech32 characters -->
 
-    But if P2TR is only defined for 34-byte v1 scriptPubKeys and it
-    remains the case that anyone can spend 33-byte and 35-byte v1
-    scriptPubKeys, then it would be possible for a user to make a
-    single-character mistake and lose all of the money they intended to
-    spend.  Author of both BIP173 and the taproot proposal Pieter Wuille
-    [posted][wuille bech32 workaround] to the Bitcoin-Dev mailing list some
-    options for addressing the problem and requested feedback on what
-    options people would prefer to see implemented.  One option would be
-    restricting all current bech32 implementations to rejecting any
-    native segwit addresses that don't result in a 22 or 34 byte
-    scriptPubKey.  Then an upgraded version of bech32 could later be
-    developed with better detection of inserted or deleted characters.
+  But if P2TR is only defined for 34-byte v1 scriptPubKeys and it
+  remains the case that anyone can spend 33-byte and 35-byte v1
+  scriptPubKeys, then it would be possible for a user to make a
+  single-character mistake and lose all of the money they intended to
+  spend.  Author of both BIP173 and the taproot proposal Pieter Wuille
+  [posted][wuille bech32 workaround] to the Bitcoin-Dev mailing list some
+  options for addressing the problem and requested feedback on what
+  options people would prefer to see implemented.  One option would be
+  restricting all current bech32 implementations to rejecting any
+  native segwit addresses that don't result in a 22 or 34 byte
+  scriptPubKey.  Then an upgraded version of bech32 could later be
+  developed with better detection of inserted or deleted characters.
 
-    Many other less critical discussions also resulted from the week's
-    review of taproot, and discussion logs are available ([1][tr meet1],
-    [2][tr meet2]) for anyone interested in the discussion details.
+  Many other less critical discussions also resulted from the week's
+  review of taproot, and discussion logs are available ([1][tr meet1],
+  [2][tr meet2]) for anyone interested in the discussion details.
 
-    {:#x-only-pubkeys}
-    In other schnorr/taproot news, Jonas Nick published an [informative
-    blog post][x-only pubkeys] about a recent major change to
-    [bip-schnorr][] and [bip-taproot][] that reduced the size of
-    serialized public keys from 33 bytes to 32 bytes without reducing
-    security. See Newsletters [#59][news59 proposed 32B pubkeys] and
-    [#68][news68 taproot update] for previous discussion of this
-    optimization.
+  {:#x-only-pubkeys}
+  In other schnorr/taproot news, Jonas Nick published an [informative
+  blog post][x-only pubkeys] about a recent major change to
+  [bip-schnorr][] and [bip-taproot][] that reduced the size of
+  serialized public keys from 33 bytes to 32 bytes without reducing
+  security. See Newsletters [#59][news59 proposed 32B pubkeys] and
+  [#68][news68 taproot update] for previous discussion of this
+  optimization.
 
 - **Possible privacy leak in the LN onion format:** as described in
   [BOLT4][], LN uses the [Sphinx][] protocol to communicate payment
@@ -107,8 +107,8 @@ popular Bitcoin infrastructure projects.
   sphinx] to the Lightning-Dev mailing list this week about a
   [recently-published][breaking onion routing] flaw in the original
   description of Sphinx that may allow a destination node to "deduce a
-  lower bound for the length of the path [back to the source node]."
-  <!-- quote from Osuntokun email -->  The fix is easy: instead of
+  lower bound for the length of the path [back to the source node]." <!-- quote from Osuntokun email -->
+  The fix is easy: instead of
   initializing part of an onion packet with zero bytes, random-value
   bytes are used instead.  Osuntokun created a [PR][lnd-onion]
   implementing this in the onion library used by LND as well as a
@@ -126,26 +126,26 @@ popular Bitcoin infrastructure projects.
   network---fees that would be paid to routing nodes whether or not a
   payment attempt succeeded.
 
-    This week, Rusty Russell started a [thread][russell up-front] on the
-    Lightning-Dev mailing list to discuss proposals for up-front fees.
-    Russell proposed a mechanism that combines fees and hashcash-style
-    proof-of-work to try to prevent nodes from using the extra
-    up-front payment information to guess the length of the route.
-    Anthony Towns proposed a partial [alternative][towns up-front]
-    focusing on managing payment amounts using a refund mechanism.
+  This week, Rusty Russell started a [thread][russell up-front] on the
+  Lightning-Dev mailing list to discuss proposals for up-front fees.
+  Russell proposed a mechanism that combines fees and hashcash-style
+  proof-of-work to try to prevent nodes from using the extra
+  up-front payment information to guess the length of the route.
+  Anthony Towns proposed a partial [alternative][towns up-front]
+  focusing on managing payment amounts using a refund mechanism.
 
-    Joost Jager suggested that up-front payments should only be required
-    as a last resort because even small additional fees could make
-    micropayments uneconomic.  He suggested that it should be possible
-    to address bandwidth-wasting network activity using rate limits
-    based on node reputation and, further, that research into up-front
-    payments should focus on first solving liquidity abuse---where an
-    attacker ties up someone's in-channel funds for period of time---as
-    the solution to that problem may also prevent the abuse of routing
-    node bandwidth.
+  Joost Jager suggested that up-front payments should only be required
+  as a last resort because even small additional fees could make
+  micropayments uneconomic.  He suggested that it should be possible
+  to address bandwidth-wasting network activity using rate limits
+  based on node reputation and, further, that research into up-front
+  payments should focus on first solving liquidity abuse---where an
+  attacker ties up someone's in-channel funds for period of time---as
+  the solution to that problem may also prevent the abuse of routing
+  node bandwidth.
 
-    Ultimately, no conclusions were reached and discussion about the
-    topic remains ongoing as of this writing.
+  Ultimately, no conclusions were reached and discussion about the
+  topic remains ongoing as of this writing.
 
 - **Proposed BOLT for LN offers:** Rusty Russell [posted][bolt offers]
   draft text for a new BOLT that would allow users to submit offers and
@@ -154,12 +154,12 @@ popular Bitcoin infrastructure projects.
   would submit an offer to pay Bob, Bob would reply with an invoice,
   Alice would pay the invoice, and Bob would provide the service.
 
-    Early feedback on the proposal suggested that it might want to
-    use an established language for
-    machine-readable invoices, such as the [Universal Business
-    Language][] (UBL).  However, there was a concern that implementing
-    the full UBL specification would be an excessive burden on developers
-    of LN software.
+  Early feedback on the proposal suggested that it might want to
+  use an established language for
+  machine-readable invoices, such as the [Universal Business
+  Language][] (UBL).  However, there was a concern that implementing
+  the full UBL specification would be an excessive burden on developers
+  of LN software.
 
 - **New topic index on Optech website:** we [announced][topics
   announcement] the addition of a topics index to the Optech website
@@ -293,3 +293,4 @@ popular Bitcoin infrastructure projects.
 [news60 16248]: /en/newsletters/2019/08/21/#bitcoin-core-16248
 [bse bech32 extension]: {{bse}}91602
 [topics announcement]: /en/topics-announcement/
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

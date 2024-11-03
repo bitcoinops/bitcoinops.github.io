@@ -32,51 +32,51 @@ candidates, and changes to popular Bitcoin infrastructure software.
   two-party LN channels) but aren't easy to generalize and so are
   somewhat unsatisfactory.
 
-    At the consensus layer, Rubin proposes allowing transactions to
-    optionally contain a special final output that commits to the txids
-    of one or more other unconfirmed transactions.  The transaction with
-    the special output, called a *sponsor transaction*, may only be included in
-    a valid block if every one of the transactions it *sponsored* is
-    also included in that same block.  This means a miner who wants the
-    high feerate from a sponsor transaction will be incentivized to
-    confirm low-feerate sponsored transactions.  Beyond their special
-    sponsorship output, sponsor
-    transactions are normal Bitcoin transactions.
+  At the consensus layer, Rubin proposes allowing transactions to
+  optionally contain a special final output that commits to the txids
+  of one or more other unconfirmed transactions.  The transaction with
+  the special output, called a *sponsor transaction*, may only be included in
+  a valid block if every one of the transactions it *sponsored* is
+  also included in that same block.  This means a miner who wants the
+  high feerate from a sponsor transaction will be incentivized to
+  confirm low-feerate sponsored transactions.  Beyond their special
+  sponsorship output, sponsor
+  transactions are normal Bitcoin transactions.
 
-    For the rules that control mempool acceptance and transaction relay
-    (the *policy layer*), Rubin suggests a set of simple changes that allow anyone to
-    sponsor any transaction currently in a mempool or to replace an
-    existing sponsor transaction with a higher feerate alternative that
-    makes the same commitment.  The goal is to ensure that, as long as a
-    sponsor transaction follows the rules and pays a high enough
-    feerate, it will propagate across the network without running afoul
-    of pinning or other attacks.
+  For the rules that control mempool acceptance and transaction relay
+  (the *policy layer*), Rubin suggests a set of simple changes that allow anyone to
+  sponsor any transaction currently in a mempool or to replace an
+  existing sponsor transaction with a higher feerate alternative that
+  makes the same commitment.  The goal is to ensure that, as long as a
+  sponsor transaction follows the rules and pays a high enough
+  feerate, it will propagate across the network without running afoul
+  of pinning or other attacks.
 
-    Rubin's proposal comes with a [reference implementation][rubin
-    refimpl] and discussion of design tradeoffs and forward
-    compatibility.  As of this writing, comments on the list have shown
-    appreciation for Rubin's work but also describe two significant
-    complications:
+  Rubin's proposal comes with a [reference implementation][rubin
+  refimpl] and discussion of design tradeoffs and forward
+  compatibility.  As of this writing, comments on the list have shown
+  appreciation for Rubin's work but also describe two significant
+  complications:
 
-    - *Floating payments still pinnable:* Antoine Riard [notes][riard
-      heavyweight tx] that, even with a [change][harding sponsor
-      outpoints] to the proposal to allow sponsoring particular inputs,
-      a malicious counterparty can pin a particular input signed with
-      `SIGHASH_SINGLE` (e.g. HTLCs in the latest LN protocol or state
-      transactions in [eltoo][topic eltoo]) by including that input in a
-      maximum size transaction.
+  - *Floating payments still pinnable:* Antoine Riard [notes][riard
+    heavyweight tx] that, even with a [change][harding sponsor
+    outpoints] to the proposal to allow sponsoring particular inputs,
+    a malicious counterparty can pin a particular input signed with
+    `SIGHASH_SINGLE` (e.g. HTLCs in the latest LN protocol or state
+    transactions in [eltoo][topic eltoo]) by including that input in a
+    maximum size transaction.
 
-    - *Breaks reorg safety guarantee:* Suhas Daftuar [reminds][daftuar
-      principle] readers of a founding principle of Bitcoin's design.  As
-      Satoshi Nakamoto [wrote][nakamoto later block], "In the event of a
-      block chain reorg [...], transactions need to be able to get into
-      the chain in a later block."  This principle is broken by sponsor
-      transactions which are only valid in the same block as the
-      transactions they sponsor.
+  - *Breaks reorg safety guarantee:* Suhas Daftuar [reminds][daftuar
+    principle] readers of a founding principle of Bitcoin's design.  As
+    Satoshi Nakamoto [wrote][nakamoto later block], "In the event of a
+    block chain reorg [...], transactions need to be able to get into
+    the chain in a later block."  This principle is broken by sponsor
+    transactions which are only valid in the same block as the
+    transactions they sponsor.
 
-    The proposal was still being actively discussed just hours before
-    publication of this newsletter.  We'll summarize any new notable
-    discussion in future editions.
+  The proposal was still being actively discussed just hours before
+  publication of this newsletter.  We'll summarize any new notable
+  discussion in future editions.
 
 - **Research into conflicts between timelocks and heightlocks:** A
   [post][blockstream post] to the Blockstream engineering blog describes
@@ -90,59 +90,63 @@ candidates, and changes to popular Bitcoin infrastructure software.
   every one of its transactions follows these two
   rules:[^final-sequence]
 
-    - If a transaction's nLockTime is below 500 million, it must also be
-      below the block's height.
+  - If a transaction's nLockTime is below 500 million, it must also be
+    below the block's height.
 
-    - If a transaction's nLockTime is equal to or above 500 million, it
-      must be below the block header's time (in [epoch time][]).
+  - If a transaction's nLockTime is equal to or above 500 million, it
+    must be below the block header's time (in [epoch time][]).
 
-    This overloading of the single nLockTime field for two different
-    purposes is efficient but has the obvious implication that a
-    transaction can only use either a heightlock or timelock---not both.
+  This overloading of the single nLockTime field for two different
+  purposes is efficient but has the obvious implication that a
+  transaction can only use either a heightlock or timelock---not both.
 
-    Years later, the [BIP65][] soft fork activated in December 2015
-    added the `OP_CHECKLOCKTIMEVERIFY` (CLTV) opcode that compares its
-    argument against its spending transaction's nLockTime field in the
-    same way the nLockTime field is compared to the containing
-    block's height or time field.  This allows scripts to prevent money
-    received to them from being spent until after a certain future
-    height or time.  However, the Blockstream post explains that this
-    also has the non-obvious implication that it's possible to create a
-    script that's unspendable because it requires the simultaneous use
-    of both heightlocks and timelocks.  For example, a payment to the
-    following script can never be spent:
+  Years later, the [BIP65][] soft fork activated in December 2015
+  added the `OP_CHECKLOCKTIMEVERIFY` (CLTV) opcode that compares its
+  argument against its spending transaction's nLockTime field in the
+  same way the nLockTime field is compared to the containing
+  block's height or time field.  This allows scripts to prevent money
+  received to them from being spent until after a certain future
+  height or time.  However, the Blockstream post explains that this
+  also has the non-obvious implication that it's possible to create a
+  script that's unspendable because it requires the simultaneous use
+  of both heightlocks and timelocks.  For example, a payment to the
+  following script can never be spent:
 
-       1 OP_CLTV OP_DROP 500000001 OP_CLTV
+  ```
+  1 OP_CLTV OP_DROP 500000001 OP_CLTV
+  ```
 
-    The first condition allows the spending transaction to be included
-    in block 1 or later, so any block after early January 2009, and the
-    second condition allows it to be included in any block after early
-    November 1985.  Both conditions are true today---but they can't both
-    be satisfied using a transaction's single nLockTime field.  The post
-    notes that the same problem can apply when a transaction has
-    multiple inputs each with their own script.  For example:
+  The first condition allows the spending transaction to be included
+  in block 1 or later, so any block after early January 2009, and the
+  second condition allows it to be included in any block after early
+  November 1985.  Both conditions are true today---but they can't both
+  be satisfied using a transaction's single nLockTime field.  The post
+  notes that the same problem can apply when a transaction has
+  multiple inputs each with their own script.  For example:
 
-        Input 0:
-          1 OP_CLTV
+  ```
+  Input 0:
+    1 OP_CLTV
 
-        Input 1:
-          500000001 OP_CLTV
+  Input 1:
+    500000001 OP_CLTV
+  ```
 
-    The problem also applies to relative timelocks and relative
-    heightlocks created using [BIP68][] sequence numbers and the
-    [BIP112][] `OP_CHECKSEQUENCEVERIFY` opcode.
+  The problem also applies to relative timelocks and relative
+  heightlocks created using [BIP68][] sequence numbers and the
+  [BIP112][] `OP_CHECKSEQUENCEVERIFY` opcode.
 
-    The post notes that the [Miniscript][topic miniscript] compiler has been updated to
-    deal with the possible conflicts as best as possible.  It will
-    identify when one or more of the ways to satisfy a script contains
-    conflicting locks and will return a warning.  Because of the
-    conflict, it'll also not be able to provide a full analysis of the
-    script.  Additionally, the compiler for the policy language will now
-    deliberately fail on policies that mix timelocks and heightlocks,
-    e.g.  `thresh(3,after(1),after(500000001),pk(A))`.  Note: as of this
-    writing, this change is only a [pending PR][rust-miniscript #121] to
-    the Rust version of the miniscript library and has not yet
-    propagated to the online live demos for [miniscript][miniscript demo] or [minsc][].
+  The post notes that the [Miniscript][topic miniscript] compiler has been updated to
+  deal with the possible conflicts as best as possible.  It will
+  identify when one or more of the ways to satisfy a script contains
+  conflicting locks and will return a warning.  Because of the
+  conflict, it'll also not be able to provide a full analysis of the
+  script.  Additionally, the compiler for the policy language will now
+  deliberately fail on policies that mix timelocks and heightlocks,
+  e.g.  `thresh(3,after(1),after(500000001),pk(A))`.  Note: as of this
+  writing, this change is only a [pending PR][rust-miniscript #121] to
+  the Rust version of the miniscript library and has not yet
+  propagated to the online live demos for [miniscript][miniscript demo] or [minsc][].
 
 ## Changes to services and client software
 
@@ -202,30 +206,30 @@ release candidates.*
   argument from `0` to `4` may be passed to display various levels of
   detail.
 
-    ```text
-    $ watch -n 0.1 ./src/bitcoin-cli -netinfo 3
-    Bitcoin Core v0.20.99.0-bf1f913c44 - 70016/Satoshi:0.20.99/
+  ```text
+  $ watch -n 0.1 ./src/bitcoin-cli -netinfo 3
+  Bitcoin Core v0.20.99.0-bf1f913c44 - 70016/Satoshi:0.20.99/
 
-    Peer connections sorted by direction and min ping
-    <-> relay   net mping   ping send recv  txn  blk uptime  asmap    id version
-     in  full onion                 1    1                0        10206 70015/Satoshi:0.20.1/
-     in  full  ipv6   246    246    1    9    0           1  16509 10202 70015/Satoshi:0.19.1/
-     in block onion 37686 425955   42   42               25        10143 70015/Satoshi:0.20.1/
-    [...]
-    out  full  ipv4    94    198    3    1    0  229    956  12998  7809 70015/Satoshi:0.19.0.1/
-    out block  ipv6   107    269   64   64              949   5577  7835 70015/Satoshi:0.16.0/
-    out  full onion   440   1180    4    4    0         257         9574 70015/Satoshi:0.18.1/
-                       ms     ms  sec  sec  min  min    min{% comment %}skip-duplicate-words-test{% endcomment %}
+  Peer connections sorted by direction and min ping
+  <-> relay   net mping   ping send recv  txn  blk uptime  asmap    id version
+   in  full onion                 1    1                0        10206 70015/Satoshi:0.20.1/
+   in  full  ipv6   246    246    1    9    0           1  16509 10202 70015/Satoshi:0.19.1/
+   in block onion 37686 425955   42   42               25        10143 70015/Satoshi:0.20.1/
+  [...]
+  out  full  ipv4    94    198    3    1    0  229    956  12998  7809 70015/Satoshi:0.19.0.1/
+  out block  ipv6   107    269   64   64              949   5577  7835 70015/Satoshi:0.16.0/
+  out  full onion   440   1180    4    4    0         257         9574 70015/Satoshi:0.18.1/
+                     ms     ms  sec  sec  min  min    min{% comment %}skip-duplicate-words-test{% endcomment %}
 
-            ipv4    ipv6   onion   total  block-relay
-    in         0      17       8      25       2
-    out        8       2       8      18       2
-    total      8      19      16      43       4
+          ipv4    ipv6   onion   total  block-relay
+  in         0      17       8      25       2
+  out        8       2       8      18       2
+  total      8      19      16      43       4
 
-    Local addresses
-    [redacted]                                port  8333     score   6401
-    [redacted].onion                          port  8333     score   1085
-    ```
+  Local addresses
+  [redacted]                                port  8333     score   6401
+  [redacted].onion                          port  8333     score   1085
+  ```
 
 - [Bitcoin Core #15454][] no longer creates a new wallet when the
   program is started for the first time.  Instead, the user is prompted
@@ -311,3 +315,4 @@ release candidates.*
 [ledger coin control article]: https://www.ledger.com/coin-control-now-available-in-ledger-live
 [sparrow twitter thread]: https://twitter.com/craigraw/status/1301045693814132736
 [joinmarket 0.7.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.7.0.md
+[hwi]: https://github.com/bitcoin-core/HWI

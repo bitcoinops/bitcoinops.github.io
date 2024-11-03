@@ -23,21 +23,21 @@ changes to popular Bitcoin infrastructure projects.
   payment reaches the receiver, they decrypt the preimage and disclose
   it to the routing nodes in order to claim the payment.
 
-    Spontaneous payments
-    help in cases where users just want to do ad hoc payment
-    tracking, for example you initiate a 10 mBTC withdrawal from an
-    exchange and either 10 mBTC shows up in your balance within a few
-    moments or you contact support.  Or you just publish your node's
-    information and users can send you donations without having to get
-    an invoice first.  For tracking specific payments, users
-    should still continue to generate invoices which can be uniquely
-    associated with particular orders or other expected payments.
+  Spontaneous payments
+  help in cases where users just want to do ad hoc payment
+  tracking, for example you initiate a 10 mBTC withdrawal from an
+  exchange and either 10 mBTC shows up in your balance within a few
+  moments or you contact support.  Or you just publish your node's
+  information and users can send you donations without having to get
+  an invoice first.  For tracking specific payments, users
+  should still continue to generate invoices which can be uniquely
+  associated with particular orders or other expected payments.
 
-    Osuntokun's pull request for LND is still marked as a work in
-    progress as of this writing, so we don't know yet when the feature
-    will become generally available to LND users or whether other LN
-    implementations will also provide the same feature in a compatible
-    way.
+  Osuntokun's pull request for LND is still marked as a work in
+  progress as of this writing, so we don't know yet when the feature
+  will become generally available to LND users or whether other LN
+  implementations will also provide the same feature in a compatible
+  way.
 
 ## Optech recommends
 

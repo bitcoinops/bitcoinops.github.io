@@ -48,15 +48,15 @@ infrastructure projects.
   oracle who commits to a false result generates clear evidence of their
   fraud.
 
-    This week Chris Stewart [announced][stewart dlc] that several
-    developers are working on a specification for using DLCs, with the
-    goal of creating an interoperable design for use between different
-    software, including LN implementations.  See their
-    [repository][dlcspecs] for the current specification.  Anyone
-    interested in DLCs may also wish to review the [scriptless
-    scripts][scriptless scripts examples] repository that documents
-    other clever applications of digital signature schemes to contract
-    protocols.
+  This week Chris Stewart [announced][stewart dlc] that several
+  developers are working on a specification for using DLCs, with the
+  goal of creating an interoperable design for use between different
+  software, including LN implementations.  See their
+  [repository][dlcspecs] for the current specification.  Anyone
+  interested in DLCs may also wish to review the [scriptless
+  scripts][scriptless scripts examples] repository that documents
+  other clever applications of digital signature schemes to contract
+  protocols.
 
 ## Changes to services and client software
 

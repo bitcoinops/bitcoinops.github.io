@@ -6,13 +6,13 @@ title: Fee sourcing
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Exogenous fees
   - Endogenous fees
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Fee Management
 
@@ -37,6 +37,9 @@ optech_mentions:
 
   - title: Opposition to CTV based on commonly requiring exogenous fee
     url: /en/newsletters/2024/01/31/#opposition-to-ctv-based-on-commonly-requiring-exogenous-fees
+
+  - title: "More efficient fee sponsorship for exogenous fees compared favorably to endogenous fees"
+    url: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

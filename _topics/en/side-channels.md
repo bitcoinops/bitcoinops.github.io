@@ -6,12 +6,12 @@ title: Side channels
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
   - Security Enhancements
 
@@ -48,8 +48,8 @@ optech_mentions:
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
-  - title: Exfiltration resistant signing
-    link: topic exfiltration resistant signing
+  - title: Exfiltration-resistant signing
+    link: topic exfiltration-resistant signing
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters

@@ -34,25 +34,25 @@ projects.
   existing channel state over to the new format and then use the new
   format going forward.
 
-    All discussion participants seemed to support the basic idea.
-    Bastien Teinturier [suggested][teinturier simple] that
-    it would be simplest to only allow switching commitment formats when
-    channels had no pending payments (HTLCs)---implying nodes would
-    need to pause sending or relaying payments in a particular channel
-    in order to upgrade it.
+  All discussion participants seemed to support the basic idea.
+  Bastien Teinturier [suggested][teinturier simple] that
+  it would be simplest to only allow switching commitment formats when
+  channels had no pending payments (HTLCs)---implying nodes would
+  need to pause sending or relaying payments in a particular channel
+  in order to upgrade it.
 
-    ZmnSCPxj [noted][zmnscpxj re-funding] that the same basic idea could
-    be used to essentially update the funding transaction offchain, such
-    as the case where [taproot][topic taproot]
-    and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] are implemented,
-    allowing [Eltoo][topic eltoo]-based channel commitments to be used.  In
-    ZmnSCPxj's proposal, the output of the existing funding transaction
-    would be paid to a new funding transaction that is kept offchain.  If
-    the channel terminates with a mutual close, the original funding
-    transaction output is paid to the final channel balances; otherwise,
-    the offchain secondary funding transaction can be published onchain
-    and the channel can be resolved using the appropriate unilateral
-    close protocol.
+  ZmnSCPxj [noted][zmnscpxj re-funding] that the same basic idea could
+  be used to essentially update the funding transaction offchain, such
+  as the case where [taproot][topic taproot]
+  and [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] are implemented,
+  allowing [Eltoo][topic eltoo]-based channel commitments to be used.  In
+  ZmnSCPxj's proposal, the output of the existing funding transaction
+  would be paid to a new funding transaction that is kept offchain.  If
+  the channel terminates with a mutual close, the original funding
+  transaction output is paid to the final channel balances; otherwise,
+  the offchain secondary funding transaction can be published onchain
+  and the channel can be resolved using the appropriate unilateral
+  close protocol.
 
 ## Field report: Using Descriptors and PSBT at River
 
@@ -132,59 +132,59 @@ release candidates.*
   same bad transaction over and over from each peer announcing that
   transaction.
 
-    So far this hasn't been an issue---honest peers usually don't
-    announce transactions they wouldn't accept themselves, so only a
-    disruptive peer that wanted to waste its own upload bandwidth would
-    advertise invalid or unwanted transactions.  However, one type of
-    unwanted transaction today are spends of v1 segwit UTXOs---the types
-    of spends the [BIP341][] specification of [taproot][topic taproot]
-    plans to use.  If taproot activates, this means newer taproot-aware
-    nodes will advertise taproot spends to older taproot-unaware nodes.
-    Each time one those taproot-unaware nodes receives a
-    taproot-spending transaction, it will download it, realize it uses
-    v1 segwit, and throw it away.  This could be very wasteful of
-    network bandwidth, both for older taproot-unaware nodes and newer
-    taproot-aware nodes.  This same problem applies to other proposed
-    changes to network relay policy.
+  So far this hasn't been an issue---honest peers usually don't
+  announce transactions they wouldn't accept themselves, so only a
+  disruptive peer that wanted to waste its own upload bandwidth would
+  advertise invalid or unwanted transactions.  However, one type of
+  unwanted transaction today are spends of v1 segwit UTXOs---the types
+  of spends the [BIP341][] specification of [taproot][topic taproot]
+  plans to use.  If taproot activates, this means newer taproot-aware
+  nodes will advertise taproot spends to older taproot-unaware nodes.
+  Each time one those taproot-unaware nodes receives a
+  taproot-spending transaction, it will download it, realize it uses
+  v1 segwit, and throw it away.  This could be very wasteful of
+  network bandwidth, both for older taproot-unaware nodes and newer
+  taproot-aware nodes.  This same problem applies to other proposed
+  changes to network relay policy.
 
-    The solution implemented in this merged PR is to announce
-    transactions by their wtxid---which includes a commitment to the
-    witness data for segwit transactions.  A taproot implementation in
-    Bitcoin Core (see [PR #17977][Bitcoin Core #17977]) could then only
-    relay transactions by their wtxid to prevent newer nodes from
-    accidentally spamming older nodes.
+  The solution implemented in this merged PR is to announce
+  transactions by their wtxid---which includes a commitment to the
+  witness data for segwit transactions.  A taproot implementation in
+  Bitcoin Core (see [PR #17977][Bitcoin Core #17977]) could then only
+  relay transactions by their wtxid to prevent newer nodes from
+  accidentally spamming older nodes.
 
-    However, after this PR was merged into Bitcoin Core's master
-    development branch, it was [discussed][meeting xscript] during the
-    weekly Bitcoin Core Development Meeting whether taproot's soft
-    dependency on wtxid relay will make it more complicated to backport
-    taproot to the current 0.20.x branch of Bitcoin Core.  Four options
-    were mentioned during the meeting and in subsequent discussions:
+  However, after this PR was merged into Bitcoin Core's master
+  development branch, it was [discussed][meeting xscript] during the
+  weekly Bitcoin Core Development Meeting whether taproot's soft
+  dependency on wtxid relay will make it more complicated to backport
+  taproot to the current 0.20.x branch of Bitcoin Core.  Four options
+  were mentioned during the meeting and in subsequent discussions:
 
-    1. **Backport wtxid:** both wtxid relay and taproot will be
-       backported if there's a 0.20.x taproot release.  John Newbery has
-       already created a [wtxid relay backport][].
+  1. **Backport wtxid:** both wtxid relay and taproot will be
+     backported if there's a 0.20.x taproot release.  John Newbery has
+     already created a [wtxid relay backport][].
 
-    2. **Don't backport wtxid:** only backport taproot and just accept that
-       transaction announcements will use more bandwidth than usual
-       until everyone has upgraded to wtxid-using nodes.
+  2. **Don't backport wtxid:** only backport taproot and just accept that
+     transaction announcements will use more bandwidth than usual
+     until everyone has upgraded to wtxid-using nodes.
 
-    3. {:#dont-relay-taproot} **Don't relay taproot:** only backport taproot but don't enable
-       relaying of taproot transactions on backported nodes.  This
-       prevents the immediate bandwidth waste but it may make it harder to
-       get taproot-spending transactions to miners and will reduce the
-       speed and efficiency of [BIP152][] compact blocks.  Worse compact
-       block performance may temporarily increase the number of stale
-       blocks that miners create (especially since the [public FIBRE
-       network][] has recently shut down).
+  3. {:#dont-relay-taproot} **Don't relay taproot:** only backport taproot but don't enable
+     relaying of taproot transactions on backported nodes.  This
+     prevents the immediate bandwidth waste but it may make it harder to
+     get taproot-spending transactions to miners and will reduce the
+     speed and efficiency of [BIP152][] compact blocks.  Worse compact
+     block performance may temporarily increase the number of stale
+     blocks that miners create (especially since the [public FIBRE
+     network][] has recently shut down).
 
-    4. **Don't backport anything:** don't backport wtxid relay or
-       taproot---let taproot wait until some time after the release of Bitcoin
-       Core 0.21, roughly [expected][Bitcoin Core #18947] in December
-       2020.
+  4. **Don't backport anything:** don't backport wtxid relay or
+     taproot---let taproot wait until some time after the release of Bitcoin
+     Core 0.21, roughly [expected][Bitcoin Core #18947] in December
+     2020.
 
-    No clear conclusion on which of these options to follow has been
-    reached.
+  No clear conclusion on which of these options to follow has been
+  reached.
 
 - [Bitcoin Core #19473][] adds support for `networkactive` as both a command line
   start-up and configuration file option. Setting this option enables or
@@ -214,7 +214,6 @@ release candidates.*
   which can be used to delay transaction broadcast until the very last channel
   in the batch.
 
-
 {% include references.md %}
 {% include linkers/issues.md issues="19473,18044,17977,18947,1485,1484,4455" %}
 [C-Lightning 0.9.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.0rc3
@@ -234,3 +233,4 @@ release candidates.*
 [wtxid relay backport]: https://github.com/bitcoin/bitcoin/pull/19606
 [stack exchange miner signaling]: https://bitcoin.stackexchange.com/questions/97041/how-does-a-miner-put-his-vote-for-certain-bip/97047#97047
 [news96 simplicity]: /en/newsletters/2020/05/06/#simplicity-next-generation-smart-contracting
+[hwi]: https://github.com/bitcoin-core/HWI

@@ -39,31 +39,31 @@ infrastructure projects.
   could improve safety and possibly eliminate the need to include
   `OP_CODESEPARATOR` in tapscript.
 
-    Following some [IRC discussion][irc checksig pos] by several
-    participants, Anthony Towns [replied][towns checksig pos] with a
-    suggested alternative: scripts that are susceptible to this problem
-    should have their branches separated into multiple taproot leaves
-    each with just one code branch.  Tapscript signatures already commit
-    to the script being executed, so a signature that's valid for one
-    script can't be used in another script.  Towns also described why
-    committing only to the position might not guarantee protection against
-    repositioned signatures.  Although he did describe a method that he
-    thinks could provide superior protection, he believes it's not
-    particularly useful compared to just keeping `OP_CODESEPARATOR` in
-    tapscript.
+  Following some [IRC discussion][irc checksig pos] by several
+  participants, Anthony Towns [replied][towns checksig pos] with a
+  suggested alternative: scripts that are susceptible to this problem
+  should have their branches separated into multiple taproot leaves
+  each with just one code branch.  Tapscript signatures already commit
+  to the script being executed, so a signature that's valid for one
+  script can't be used in another script.  Towns also described why
+  committing only to the position might not guarantee protection against
+  repositioned signatures.  Although he did describe a method that he
+  thinks could provide superior protection, he believes it's not
+  particularly useful compared to just keeping `OP_CODESEPARATOR` in
+  tapscript.
 
-    {:#composable-musig}
-    In a separate schnorr-related topic, ZmnSCPxj wrote a [post][zmn
-    composable musig] about the challenges of safely using the [MuSig][]
-    signature aggregation protocol with sub-groups.  For example,
-    ZmnSCPxj's [nodelets proposal][] suggests Alice and Bob
-    could jointly control funds through a single LN node using the
-    aggregation of their keys, (A, B).  Their joint node could then open
-    a channel to Charlie's node, using MuSig aggregation there too, ((A,
-    B), C).  However, ZmnSCPxj describes why this might be unsafe given
-    Wagner's algorithm as described in [last week's newsletter][news74
-    taproot updates].  Also described are several alternative schemes
-    that attempt to work around the problem.
+  {:#composable-musig}
+  In a separate schnorr-related topic, ZmnSCPxj wrote a [post][zmn
+  composable musig] about the challenges of safely using the [MuSig][]
+  signature aggregation protocol with sub-groups.  For example,
+  ZmnSCPxj's [nodelets proposal][] suggests Alice and Bob
+  could jointly control funds through a single LN node using the
+  aggregation of their keys, (A, B).  Their joint node could then open
+  a channel to Charlie's node, using MuSig aggregation there too, ((A,
+  B), C).  However, ZmnSCPxj describes why this might be unsafe given
+  Wagner's algorithm as described in [last week's newsletter][news74
+  taproot updates].  Also described are several alternative schemes
+  that attempt to work around the problem.
 
 - **`OP_CHECKTEMPLATEVERIFY` (CTV):** the successor to
   `OP_CHECKOUTPUTSHASHVERIFY` (COSHV) described in [Newsletter
@@ -76,31 +76,31 @@ infrastructure projects.
   (fill out [this form][ctv workshop] if you're interested in
   attending).
 
-    On-list, Russell O'Connor [restated][oconnor state variable] a
-    [previous concern][oconnor suggested amendments] of his about CTV
-    pulling data off the stack in an abnormal order for Bitcoin Script.
-    This was added by Rubin in order to prevent the creation of
-    recursive [covenants][topic covenants]---script conditions that
-    apply not just to a finite set of descendant transactions but which
-    will apply to all spends descended from a particular script in
-    perpetuity.  For example, a spender could restrict the future
-    receivers of a set of coins to just three addresses---any payment to
-    any other address would be forbidden.  O'Connor's concerns seemed to
-    focus on this odd behavior of CTV making it harder to model the
-    semantics of Bitcoin
-    Script, something which O'Connor has previously worked on and which
-    is related to his continuing work on the [Simplicity][] scripting
-    language.
+  On-list, Russell O'Connor [restated][oconnor state variable] a
+  [previous concern][oconnor suggested amendments] of his about CTV
+  pulling data off the stack in an abnormal order for Bitcoin Script.
+  This was added by Rubin in order to prevent the creation of
+  recursive [covenants][topic covenants]---script conditions that
+  apply not just to a finite set of descendant transactions but which
+  will apply to all spends descended from a particular script in
+  perpetuity.  For example, a spender could restrict the future
+  receivers of a set of coins to just three addresses---any payment to
+  any other address would be forbidden.  O'Connor's concerns seemed to
+  focus on this odd behavior of CTV making it harder to model the
+  semantics of Bitcoin
+  Script, something which O'Connor has previously worked on and which
+  is related to his continuing work on the [Simplicity][] scripting
+  language.
 
-    On IRC, Gregory Maxwell and Jeremy Rubin [discussed][irc ctv]
-    several aspects of CTV, especially focusing on making the proposed
-    opcode easier to use with advanced designs without making it harder
-    to use with the simple [congestion controlled transactions][] and
-    [payment pools][] already proposed.  They also discussed whether it
-    was really necessary to prevent people from creating recursive
-    covenants, with a possible [allusion][covenant allusion] in the conversation to a [2013
-    thread][coincovenants] started by Maxwell about awful ways misguided
-    people might use recursive covenants.
+  On IRC, Gregory Maxwell and Jeremy Rubin [discussed][irc ctv]
+  several aspects of CTV, especially focusing on making the proposed
+  opcode easier to use with advanced designs without making it harder
+  to use with the simple [congestion controlled transactions][] and
+  [payment pools][] already proposed.  They also discussed whether it
+  was really necessary to prevent people from creating recursive
+  covenants, with a possible [allusion][covenant allusion] in the conversation to a [2013
+  thread][coincovenants] started by Maxwell about awful ways misguided
+  people might use recursive covenants.
 
 - **Proposed watchtower BOLT:** Sergi Delgado Segura [posted][watchtower
   protocol] to the Lightning-Dev mailing list a draft BOLT he and
@@ -157,3 +157,4 @@ infrastructure projects.
 [coincovenants]: https://bitcointalk.org/index.php?topic=278122.0
 [simplicity]: https://blockstream.com/simplicity.pdf
 [covenant allusion]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-11-28#25861296
+[musig]: https://eprint.iacr.org/2018/068

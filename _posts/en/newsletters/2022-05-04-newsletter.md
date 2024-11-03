@@ -23,37 +23,37 @@ infrastructure projects.
   mentioned in [Newsletter #195][news195 musig2] with notes from the
   implementations he and others have worked on for btcd and LND:
 
-    - *Interaction with BIP86:* keys created by a [BIP32 HD
-      wallet][topic bip32] implementing [BIP86][] follow the [BIP341][]
-      recommendation for creating keypath-only keys by tweaking the key
-      by a hash of itself.  This helps prevent the key from being used
-      in a [multisignature][topic multisignature] which could allow one
-      participant to secretly include a scriptpath spending option they
-      control, giving them the ability to steal all the funds.  However,
-      if the multisignature participants deliberately want to include a
-      scriptpath spending option, they need to share the un-tweaked
-      versions of their keys with each other.
+  - *Interaction with BIP86:* keys created by a [BIP32 HD
+    wallet][topic bip32] implementing [BIP86][] follow the [BIP341][]
+    recommendation for creating keypath-only keys by tweaking the key
+    by a hash of itself.  This helps prevent the key from being used
+    in a [multisignature][topic multisignature] which could allow one
+    participant to secretly include a scriptpath spending option they
+    control, giving them the ability to steal all the funds.  However,
+    if the multisignature participants deliberately want to include a
+    scriptpath spending option, they need to share the un-tweaked
+    versions of their keys with each other.
 
-        Osuntokun recommends that BIP86 implementations return both the
-        original key (internal key) and the tweaked key (output key) so that the
-        calling function can use whichever one is appropriate for its
-        context.
+    Osuntokun recommends that BIP86 implementations return both the
+    original key (internal key) and the tweaked key (output key) so that the
+    calling function can use whichever one is appropriate for its
+    context.
 
-    - *Interaction with scriptpath spends:* keys meant to be used with
-      scriptpath spends have a related problem: in order to use the
-      scriptpath, the spender must know the internal key.  Again,
-      this suggests that implementations return the internal key so
-      that it's available to be used in other code that needs it.
+  - *Interaction with scriptpath spends:* keys meant to be used with
+    scriptpath spends have a related problem: in order to use the
+    scriptpath, the spender must know the internal key.  Again,
+    this suggests that implementations return the internal key so
+    that it's available to be used in other code that needs it.
 
-    - *Shortcut for final signer:* Osuntokun also sought clarification
-      on a section in the BIP which describes how the final signer (and
-      only the final signer) can use deterministic randomness or a
-      lower-quality source of randomness for generating their signature
-      nonce.  Brandon Black [replied][black musig2] to describe the
-      situation that had motivated the section---they had a signer that
-      would have a difficult time securely managing a regular MuSig2
-      signing session but which they were instead able to always use as
-      the final signer.
+  - *Shortcut for final signer:* Osuntokun also sought clarification
+    on a section in the BIP which describes how the final signer (and
+    only the final signer) can use deterministic randomness or a
+    lower-quality source of randomness for generating their signature
+    nonce.  Brandon Black [replied][black musig2] to describe the
+    situation that had motivated the section---they had a signer that
+    would have a difficult time securely managing a regular MuSig2
+    signing session but which they were instead able to always use as
+    the final signer.
 
 - **Measuring user support for consensus changes:** Keagan McClelland
   [posted][mcclelland measure] to the Bitcoin-Dev mailing list a
@@ -68,11 +68,11 @@ infrastructure projects.
   [penalizing][ivgi signal hodl voting] early voters over those who
   waited to participate in consensus formation.
 
-    As on previous occasions where this topic has been discussed, it
-    did not appear that any of the suggested methods would produce a
-    result that would be sufficiently respected by most of the
-    discussion participants when it came to informing their decisions about
-    changing Bitcoin's consensus rules.
+  As on previous occasions where this topic has been discussed, it
+  did not appear that any of the suggested methods would produce a
+  result that would be sufficiently respected by most of the
+  discussion participants when it came to informing their decisions about
+  changing Bitcoin's consensus rules.
 
 - **LN anchor outputs security issue:** Bastien Teinturier
   [posted][teinturier security] to the Lightning-Dev mailing list the
@@ -82,23 +82,23 @@ infrastructure projects.
   LND.  Anyone still using the versions mentioned in Teinturier's post
   are strongly encouraged to upgrade.
 
-    Prior to the implementation of [anchor outputs][topic anchor
-    outputs], revoked [HTLC][topic HTLC] transactions only contained a
-    single output, so many implementations only tried to claim that
-    single output.  The new design of anchor outputs for LN allows combining
-    multiple revoked HTLC outputs into a single transaction, but this
-    is only safe if implementations claim all of the relevant outputs in
-    the transaction.  Any funds which have not been claimed by the time
-    the HTLC timelock expires may be stolen by the party who broadcast the
-    revoked HTLC.  Teinturier's implementation of anchor outputs for
-    Eclair allowed him to test the other LN implementations and discover
-    the vulnerability.
+  Prior to the implementation of [anchor outputs][topic anchor
+  outputs], revoked [HTLC][topic HTLC] transactions only contained a
+  single output, so many implementations only tried to claim that
+  single output.  The new design of anchor outputs for LN allows combining
+  multiple revoked HTLC outputs into a single transaction, but this
+  is only safe if implementations claim all of the relevant outputs in
+  the transaction.  Any funds which have not been claimed by the time
+  the HTLC timelock expires may be stolen by the party who broadcast the
+  revoked HTLC.  Teinturier's implementation of anchor outputs for
+  Eclair allowed him to test the other LN implementations and discover
+  the vulnerability.
 
-    As with a previous attack related to anchor outputs (see [Newsletter
-    #115][news115 fee stealing]), the problem appears to be related to
-    adding support for signing with
-    `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` while still retaining legacy
-    support for signing with `SIGHASH_ALL`.
+  As with a previous attack related to anchor outputs (see [Newsletter
+  #115][news115 fee stealing]), the problem appears to be related to
+  adding support for signing with
+  `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` while still retaining legacy
+  support for signing with `SIGHASH_ALL`.
 
 - **LN gossip rate limiting:** Alex Myers [posted][myers recon] to the
   Lightning-Dev mailing list about his research into using
@@ -114,24 +114,24 @@ infrastructure projects.
   where only updates (new unconfirmed transactions) from the last few
   seconds are sent.
 
-    One challenge of reconciling over all public channels is that it
-    requires all LN nodes keep the same information.  Any filtering that
-    produces a persistent difference in the view of the channel graph
-    between nodes will result in either a bandwidth overhead or a
-    failure of the protocol.  Matt Corallo [suggested][corallo recon]
-    that this could be addressed by applying the erlay model to LN---if
-    only new information was synced, there wouldn't be a concern about
-    persistent differences, although large variations in filtering rules
-    could still result in wasted bandwidth or reconciliation failure.
-    Myers was concerned about the amount of state tracking required by
-    only sending updates---a Bitcoin Core node maintains a separate state
-    for each of its peers in order to avoid resending updates
-    previously sent to the node.  The alternative of reconciling
-    over all channels eliminates the need for per-peer state, greatly
-    simplifying the implementation of gossip management.
+  One challenge of reconciling over all public channels is that it
+  requires all LN nodes keep the same information.  Any filtering that
+  produces a persistent difference in the view of the channel graph
+  between nodes will result in either a bandwidth overhead or a
+  failure of the protocol.  Matt Corallo [suggested][corallo recon]
+  that this could be addressed by applying the erlay model to LN---if
+  only new information was synced, there wouldn't be a concern about
+  persistent differences, although large variations in filtering rules
+  could still result in wasted bandwidth or reconciliation failure.
+  Myers was concerned about the amount of state tracking required by
+  only sending updates---a Bitcoin Core node maintains a separate state
+  for each of its peers in order to avoid resending updates
+  previously sent to the node.  The alternative of reconciling
+  over all channels eliminates the need for per-peer state, greatly
+  simplifying the implementation of gossip management.
 
-    The discussion about the tradeoffs implicit in each of these
-    approaches was ongoing as this summary was being written.
+  The discussion about the tradeoffs implicit in each of these
+  approaches was ongoing as this summary was being written.
 
 ## Releases and release candidates
 

@@ -29,6 +29,7 @@ same dimensions).
 {:.center}
 
 <div markdown="1" id="bip21-complications">
+
 Unfortunately, the `?` and `&` needed for passing additional parameters
 in a BIP21 URI are not part of the QR code uppercase character set, so
 only binary mode can be used for those characters.  Additionally, BIP21 specifies that query
@@ -49,6 +50,7 @@ code possible:
 
 ![BIP21/bech32 mixed character mode](/img/posts/2019-05-bip21-bech32-qr-mixed.png)
 {:.center}
+
 </div>
 
 In summary, when using bech32 addresses in QR codes, consider
@@ -78,7 +80,9 @@ accordingly.
     characters are allowed in bech32 HRPs but are not part of the QR
     code uppercase alphanumeric set:
 
-        !"#&'()';<=>?@[\]^_`{|}~
+    ```
+    !"#&'()';<=>?@[\]^_`{|}~
+    ```
 
     None of the bech32 HRPs used in Bitcoin (bc, tb, bcrt) use any of
     these characters, and neither does any other application as far as

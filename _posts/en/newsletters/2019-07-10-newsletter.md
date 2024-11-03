@@ -39,31 +39,31 @@ notable code changes in popular Bitcoin infrastructure projects.
   free or they could end up costing the node money in a way that
   attackers could exploit.
 
-    In a new [post][zmn jit] to the Lightning-Dev mailing list,
-    pseudonymous LN developer ZmnSCPxj describes two situations in which
-    other profit-maximizing nodes might allow free rebalances.  The
-    first case is the observation that the next hop in the route
-    will receive its own routing fee paid
-    by the spender if the payment succeeds.  ZmnSCPxj describes a method
-    by which the next hop's node can make their part of the rebalance contingent on
-    receipt of the routing income, ensuring that they either get
-    paid or the rebalance doesn't happen.  This would require additional
-    communication between nodes and so it's a change that probably needs
-    further discussion in order to be considered for addition to the LN
-    specification.
+  In a new [post][zmn jit] to the Lightning-Dev mailing list,
+  pseudonymous LN developer ZmnSCPxj describes two situations in which
+  other profit-maximizing nodes might allow free rebalances.  The
+  first case is the observation that the next hop in the route
+  will receive its own routing fee paid
+  by the spender if the payment succeeds.  ZmnSCPxj describes a method
+  by which the next hop's node can make their part of the rebalance contingent on
+  receipt of the routing income, ensuring that they either get
+  paid or the rebalance doesn't happen.  This would require additional
+  communication between nodes and so it's a change that probably needs
+  further discussion in order to be considered for addition to the LN
+  specification.
 
-    The second case ZmnSCPxj describes is other nodes along the
-    rebalance path who themselves want to rebalance one or more of their
-    channels in the same direction as the routing node.  These nodes can
-    allow free routing in that direction to encourage someone to perform
-    that rebalancing.  This second case doesn't require any changes to
-    the LN specification: nodes can already set their routing fees to
-    zero, allowing any other nodes to attempt JIT routing with free
-    rebalances.  The worst case would be that a payment that would've
-    failed anyway will take a bit longer to return a failure message to
-    the spender, a delay equal to the amount of time any routing nodes
-    spent attempting to rebalance their channels in order to support the
-    payment.
+  The second case ZmnSCPxj describes is other nodes along the
+  rebalance path who themselves want to rebalance one or more of their
+  channels in the same direction as the routing node.  These nodes can
+  allow free routing in that direction to encourage someone to perform
+  that rebalancing.  This second case doesn't require any changes to
+  the LN specification: nodes can already set their routing fees to
+  zero, allowing any other nodes to attempt JIT routing with free
+  rebalances.  The worst case would be that a payment that would've
+  failed anyway will take a bit longer to return a failure message to
+  the spender, a delay equal to the amount of time any routing nodes
+  spent attempting to rebalance their channels in order to support the
+  payment.
 
 ## Bech32 sending support
 
@@ -114,3 +114,4 @@ wiki page for changes -->{% endcomment %}
 [tlv pr]: https://github.com/lightningnetwork/lightning-rfc/pull/607
 [pickhardt jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
 [zmn jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002055.html
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

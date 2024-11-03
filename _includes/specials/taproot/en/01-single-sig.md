@@ -32,11 +32,11 @@ for single-sigs, both for wallet users and for the network as a whole.
   multisignature], various clever wallet backup recovery schemes, or a
   hundred other pioneering developments.
 
-    Using P2TR for single-sig now also allows your wallet to upgrade to
-    multisignatures, tapscripts, LN support, or other features later on
-    without affecting the privacy of your existing users.  It won't
-    matter whether a UTXO was received to an old version or a new
-    version of your software---both UTXOs will look the same onchain.
+  Using P2TR for single-sig now also allows your wallet to upgrade to
+  multisignatures, tapscripts, LN support, or other features later on
+  without affecting the privacy of your existing users.  It won't
+  matter whether a UTXO was received to an old version or a new
+  version of your software---both UTXOs will look the same onchain.
 
 - **More convenient for hardware signing devices:** since the
   rediscovery of the [fee overpayment attack][news101 fee overpayment

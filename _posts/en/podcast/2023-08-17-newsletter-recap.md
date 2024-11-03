@@ -170,7 +170,7 @@ significant is, scanning for multiple silent payment addresses essentially
 doubles the cost.  Sure, the information that you need about every transaction
 in order to check whether it is a silent payment to you, that remains the same
 for checking on multiple, but the calculations and ECDSA operations, the
-Diffie-Hellman and so forth, you would have to repeat for every separate silent
+Diffie--Hellman and so forth, you would have to repeat for every separate silent
 payment address that you make.  So having a number of silent payment addresses
 that you have posted, which would be the case if you have an expiration date on
 any of them, would mean that you significantly increase the cost for scanning

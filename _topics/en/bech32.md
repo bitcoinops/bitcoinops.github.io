@@ -1,7 +1,7 @@
 ---
 title: Bech32(m)
 shortname: bech32
-aliases:
+title-aliases:
   - Bech32
   - Bech32m
   - BIP173
@@ -9,7 +9,7 @@ aliases:
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.

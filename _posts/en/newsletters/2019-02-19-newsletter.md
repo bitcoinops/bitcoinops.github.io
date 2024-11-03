@@ -38,25 +38,25 @@ None this week.
   by replaying Alice's earlier
   signature.
 
-    One way to help avoid such accidents is simply by appending "UNSAFE" to
-    the name of the feature, encouraging developers to learn about the
-    protocol's nuances before they implement it in their tools.
-    However, some developers have been looking for additional ways to
-    prevent problems.  In December, Johnson Lau [proposed][lau output
-    tagging] only allowing noinput to be used if the output being spent
-    had been specially tagged at its creation to allow the use of
-    noinput.  This would only allow the feature to be used when both the
-    spender and receiver agreed (as in the case of a payment channel),
-    preventing any miscommunications or misunderstandings from ending in
-    loss of funds.
+  One way to help avoid such accidents is simply by appending "UNSAFE" to
+  the name of the feature, encouraging developers to learn about the
+  protocol's nuances before they implement it in their tools.
+  However, some developers have been looking for additional ways to
+  prevent problems.  In December, Johnson Lau [proposed][lau output
+  tagging] only allowing noinput to be used if the output being spent
+  had been specially tagged at its creation to allow the use of
+  noinput.  This would only allow the feature to be used when both the
+  spender and receiver agreed (as in the case of a payment channel),
+  preventing any miscommunications or misunderstandings from ending in
+  loss of funds.
 
-    Renewed discussion [last week][nick output tagging] and this week
-    saw analysis of the impact this would have on proposed layer two
-    protocols such as Eltoo and [Channel Factories][].  Although tagging
-    increases complexity, the general opinion seems
-    to be that it doesn't fundamentally increase the cost or reduce the
-    effectiveness of the described proposals, although it could make
-    them a bit less private.
+  Renewed discussion [last week][nick output tagging] and this week
+  saw analysis of the impact this would have on proposed layer two
+  protocols such as Eltoo and [Channel Factories][].  Although tagging
+  increases complexity, the general opinion seems
+  to be that it doesn't fundamentally increase the cost or reduce the
+  effectiveness of the described proposals, although it could make
+  them a bit less private.
 
 - **Bitcoin Core preliminary hardware wallet support:** after months of
   incremental improvements, this week saw the merge of the final set of
@@ -72,15 +72,15 @@ None this week.
   connect a hardware wallet to an Electrum wallet connected to your full
   node using [Electrum Personal Server][].
 
-    Organizations using advanced security techniques such as Hardware
-    Security Modules (HSMs), cold wallets, and multisig may want to
-    investigate the design of HWI and how it interacts with Bitcoin Core
-    using [output script descriptors][descriptor] and [BIP174][] PSBTs.
-    These next-generation encodings of key and transaction data (and
-    metadata), along with other advances such as the [miniscript][]
-    policy language, make it easier than ever to build and operate
-    secure bitcoin storage solutions that interact with a full node for
-    verification.
+  Organizations using advanced security techniques such as Hardware
+  Security Modules (HSMs), cold wallets, and multisig may want to
+  investigate the design of HWI and how it interacts with Bitcoin Core
+  using [output script descriptors][descriptor] and [BIP174][] PSBTs.
+  These next-generation encodings of key and transaction data (and
+  metadata), along with other advances such as the [miniscript][]
+  policy language, make it easier than ever to build and operate
+  secure bitcoin storage solutions that interact with a full node for
+  verification.
 
 - **Bitcoin Core freeze week:** as [scheduled][Bitcoin Core #14438],
   the project has stopped accepting features for the upcoming release of
@@ -92,22 +92,22 @@ None this week.
   user testing.  The RC cycle for a major release usually lasts two to
   four weeks before a final release.
 
-    Related, the project prefers to merge major new features early in a
-    new development cycle so that they get as much additional developer testing
-    as possible.  After the 0.18 branch is created around March
-    1st, anyone who wants to see a feature in 0.19 (estimated release
-    October 2019) would be advised to either try to open a PR for it
-    within the next two months or to assist in reviewing an existing PR
-    for that feature.  Some notable existing PRs that need more review
-    or development include support for BIP156 Dandelion
-    [privacy-enhanced transaction relay][Bitcoin Core #13947], BIP151
-    [encrypted P2P connections][Bitcoin Core #14032], BIP157/158
-    [compact block filters][Bitcoin Core #14121], simplified
-    [reproducible builds][Bitcoin Core #15277] using GNU Guix, improved
-    support for [external signers][Bitcoin Core #14912] (e.g. hardware
-    wallets), [separating the wallet from the node][Bitcoin Core
-    #10973], and allowing [RBF on any transaction][Bitcoin Core #10823]
-    after it's been in the mempool for more than a few hours.
+  Related, the project prefers to merge major new features early in a
+  new development cycle so that they get as much additional developer testing
+  as possible.  After the 0.18 branch is created around March
+  1st, anyone who wants to see a feature in 0.19 (estimated release
+  October 2019) would be advised to either try to open a PR for it
+  within the next two months or to assist in reviewing an existing PR
+  for that feature.  Some notable existing PRs that need more review
+  or development include support for BIP156 Dandelion
+  [privacy-enhanced transaction relay][Bitcoin Core #13947], BIP151
+  [encrypted P2P connections][Bitcoin Core #14032], BIP157/158
+  [compact block filters][Bitcoin Core #14121], simplified
+  [reproducible builds][Bitcoin Core #15277] using GNU Guix, improved
+  support for [external signers][Bitcoin Core #14912] (e.g. hardware
+  wallets), [separating the wallet from the node][Bitcoin Core
+  #10973], and allowing [RBF on any transaction][Bitcoin Core #10823]
+  after it's been in the mempool for more than a few hours.
 
 ## Notable code and documentation changes
 
@@ -211,8 +211,10 @@ None this week.
     An current example of the descriptor format with key origin
     information and an error-detecting checksum:
 
-        $ bitcoin-cli getaddressinfo bc1qsksdpqqmsyk9654puz259y0r84afzkyqdfspvc | jq .desc
-        "wpkh([f6bb4c63/0'/0'/21']034ed70f273611a3f21b205c9151836d6fa9051f74f6e6bbff67238c9ebc7d04f6)#mtdep7g7"
+    ```
+    $ bitcoin-cli getaddressinfo bc1qsksdpqqmsyk9654puz259y0r84afzkyqdfspvc | jq .desc
+    "wpkh([f6bb4c63/0'/0'/21']034ed70f273611a3f21b205c9151836d6fa9051f74f6e6bbff67238c9ebc7d04f6)#mtdep7g7"
+    ```
 
     Parsing this, we see the following:
 
@@ -255,3 +257,8 @@ None this week.
 [channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [electrum personal server]: https://github.com/chris-belcher/electrum-personal-server
 [key origin information]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification
+[newsletter #5]: /en/newsletters/2018/07/24/#bitcoin-core-9662
+[hwi]: https://github.com/bitcoin-core/HWI
+[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
+[miniscript]: /en/topics/miniscript/

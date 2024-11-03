@@ -99,6 +99,7 @@ https://github.com/btcpayserver/btcpayserver/pull/1152 -->.  HWIはハードウ�
 部分的署名ビットコイン・トランザクション  ([PSBTs][topic psbt])の組み合わせでやり取りすることを容易にします。2019年は標準化されたフォーマットやAPIのサポートが進んだことにより、ユーザが特定のソリューションのみを選択するのではなく、ニーズに応じてハードウェアとソフトウェア・ソリューションの適切な組み合わせを選択することが容易にできるようになりました。
 
 <div markdown="1" id="miniscript">
+
 さらに2月には、Pieter Wuilleが[Stanford Blockchain Conference][] にて彼が取り組んでいたoutput script descriptorsのスピンアウトである[miniscript][topic miniscript]に関する [プレゼンテーション][wuille sbc miniscript]を実施しました。Miniscriptはビットコイン・スクリプトの階層化表現であり、ソフトウェアによる自動分析を簡素化します。これにより、スクリプトを満たすためにウォレットが提供する必要があるデータ（例えば、署名、ハッシュプリイメージ）、スクリプトにより利用されるトランザクションデータ量とそれを満たすデータ、ならびに、スクリプトがコンセンサス・ルールと一般的なトランザクション・リレー・ポリシーをパスするかどうかが分析可能となります。
 
 Miniscriptに加えて、WuilleとAndrew PoelstraとSanket Kanjalkarは、miniscriptへコンパイルされるコンポーザブルなポリシー言語を提供しました（miniscript自体はBitcoin Scriptへ変換されます）。ポリシー言語により、コインを利用するために満たすべき条件を容易に記述することができます。複数のユーザでコインを共有してコントロールしたい場合、ポリシー言語のコンポーザビリティによりそれぞれのユーザーのサイン・ポリシーを一つのスクリプトで組み合わせることが容易になりました。
@@ -106,25 +107,32 @@ Miniscriptに加えて、WuilleとAndrew PoelstraとSanket Kanjalkarは、minisc
 これが広範囲に普及した場合、異なるビットコインを扱うシステムが共に１つのトランザクションに署名することが容易になり、ウォレットのフロントエンド、LNノード、コインジョイン・システム、マルチシグ・ウォレット、コンシューマ・ハードウェア・ウォレット、ハードウェア・署名・モジュール（HSM）やその他のハードウェア、ソフトウェアを統合するために必要なカスタムコードの量が、大幅に削減されます。
 
 Wuilleと彼の協力者らは、1年を通じてminiscriptに取り組み続け、続いて[コミュニティ・フィードバックを求め][news61 miniscript feedback]、ビットコイン・コアにサポートを追加する[PRを開きました][Bitcoin Core #16800]。Miniscriptは12月にLNディベロッパーにより、アップグレードされたバージョンによるオンチェーン・トランザクションの複数の新しいスクリプトを[分析し最適化する][anchor miniscript]ために利用されました。
+
 </div>
 
 ## March
 
 <div markdown="1" id="cleanup">
+
 3月には、Matt Corallo がビットコインのコンセンサス・コードの潜在的な問題を取り除く[consensus cleanup soft fork][topic consensus cleanup]を提案しました。これらが適用されることにより、[time warp attack][]の解消、レガシー・スクリプトの[ワーストケースのCPU使用量][worst case CPU usage]の低減、キャッシュしているトランザクション検証結果の信頼性向上、既知の（コストはかかる）[軽量クライアントへの攻撃][news37 merkle tree attacks]の解消が見込まれます。
 
 Time-warp のフィックスなど一部の提案は多くの人々の関心を引きつけましたが、ワーストケースのCPU使用量、検証結果のキャッシュのフィックスに関しての提案は、[批判][news37 cleanup discussion]も受けました。おそらく、それ故にこの年の後半にかけて実装に向けて当提案が進捗することはありませんでした。
+
 </div>
 
 <div markdown="1" id="signet">
+
 また3月には、Kalle Almが、[signet][topic signet]に関するイニシャル・フィードバックをリクエスト、後に[BIP325][]となりました。Singet プロトコルは、全ての有効なブロックが中央集権型パーティによって署名される必要があるテストネットを作ることが可能です。この中央集権化はビットコインとは正反対のものですが、テスターが破壊的なシナリオ（chain  reorganizationなど）を作成したり、単にソフトウェア相互運用性テストを実施したい場合などに、テストネットとして理想的なものとなります。既存のビットコインのテストネットでは、reorgやその他のディスラプションが頻繁に発生、またそれが長期間にわたることもあり、テスト実施を非現実的なものとしています。
 
 Signetは一年を通じて成熟していき、ゆくゆくはC-Lightningといったソフトウェアに[統合][cl signet]、[eltoo][]のデモなどに利用されていくでしょう。ビットコイン・コアにサポートを追加する[プルリクエスト][Bitcoin Core #16411]はオープンになっています。
+
 </div>
 
 {:#loop}
 さらに、3月にはLightning Labsが[Lightning Loop][]を発表し、チャネルをクローズすることなく、オンチェーンのUTXOにLNチャネルからファンドの一部を引き出すノン・カストディアル・ソリューションを提供しました。6月には、既存のチャネルにUTXOを送信（追加）できるようLoopを[アップグレード][loop-in]しました。Loopは通常のオフチェーン・LN・トランザクションで使用されているHash Time Locked Contracts (HTLCs)を使用し、想定通りユーザのファンドがLNチャネルに転送されているか、もしくは、オンチェーントランザクションフィー以外の全てのコストのリファンドをユーザが受け取ることを保証します。これによりLoopはほぼ完全にトラストレスになります。
+
 <div markdown="1" class="callout" id="releases">
+
 ### 2019 summary<br>Major releases of popular infrastructure projects
 
 - [C-Lightning 0.7][] は、3月にリリースされ、年末までにかなり利用されるプラグイン・システムを追加しました。また、監査性を強化した安全性の高い[再現可能なビルド][topic reproducible builds]をサポートする最初のC-Lightningリリースとなりました。
@@ -143,6 +151,7 @@ Signetは一年を通じて成熟していき、ゆくゆくはC-Lightningとい
   filters] （現時点ではRPCのみ）の初期サポートを追加し、[BIP37][] ブルーム・フィルターならびに[BIP70][] payment requestsをデフォルトにするプロトコルを無効化することでセキュリティを改善しました。また、GUIユーザーをbech32アドレスをデフォルトにしました。
 
 - [C-Lightning 0.8][]は12月にリリースされ、[multipath payments][topic multipath payments] のサポートを追加、デフォルトネットワークをテストネットからメインネットに変更しました。また、デフォルトでsqliteサポートに加えてpostgresqlサポートを提供するなど代替データベースをサポートする最初のメジャーリリースとなりました。
+
 </div>
 
 ## April
@@ -153,31 +162,38 @@ Signetは一年を通じて成熟していき、ゆくゆくはC-Lightningとい
 AssumeUTXOでは、ノードは最終的に初期のUTXOの状態を検証できるまで、バックグラウンドでブロックチェーンのヒストリーをダウンロード、検証することを提案しています。これにより、最終的にAssumeUTXOを利用しない通常のノードと同等のトラストレスなセキュリティを確保することができます。O'Beirneは年間を通じてプロジェクトに取り組み、 徐々に[新しい機能][dumptxoutset]を追加し、将来的にAssumeUTXOをビットコイン・コアに取り込むため既存コードのリファクタリングを実施しました。
 
 <div markdown="1" id="trampoline">
+
 また、4月には、Pierre-Marie Padiouが[トランポリン・ペイメント][topic trampoline payments]のアイデアを[提案][trampoline proposed]しました。これは、軽量LNノードがパス・ファインディングを重量ルーチング・ノードにアウトソースします。モバイルアップなどの軽量ノードは、すべてのLNルーティング・グラフをトラックすることが出来ないかもしれないため、ルート探索が困難になります。Padiouの提案は、軽量ノードにペイメントを近接ノードへルートし、そのノードに残りのパスを計算させるものです。ペイメントはトランポリンノードを経由して（跳ねて）行き先までたどり着きます。
 プライバシー向上のため、支払者は順番に複数のトランポリンノードからの支払いの跳ね返りを要求する場合があります。これにより支払いが最終的な受取人宛なのか、または別のトランポリンノードにルーティングしているかどうか各ノードは分からなくなります。
 
 LN仕様にトランポリン・ペイメントの機能を追加するための[PR][trampolines pr] は現在オープンになっており、Eclairの実装はトランポリン・ペイメントをリレーする [実験的なサポート][exp tramp] を追加しています。
+
 </div>
 
 ## May
 
 <div markdown="1" id="taproot">
+
 5月にはPieter Wuilleは、[bip-taproot][]と [bip-tapscript][]からなる[taproot soft fork][topic taproot]を提案しました。これらは共に昨年の [bip-schnorr][] の提案の内容を継承しています。これらが実装されると、シングルシグ、マルチシグや多くのコントラクトにおいて同じスタイルのscriptPubKeysを使用することが可能になります。マルチシグや複雑なコントラクトの多くの支払いが、同様に見え、シングルシグの支払いにように見えます。これにより、大きくユーザ・プライバシーとコイン・ファンジビリティを改善すると同時に、マルチシグ、コントラクト・ユースケースにて消費されるブロックチェーンスペースの量を削減できます。
 
 マルチシグとコントラクトの支払いがtaprootのプライバシーとスペース節約をフル活用出来ない場合でも、オンチェーンにコードのサブセットのみを入れれば良いだけかもしれません。それにより、現在よりもよいプライバシーとブロックチェーンスペース効率向上が見込まれます。Taprootに加えて、[tapscript][topic tapscript]によりビットコインのスクリプトの能力を改良します。主に、将来、新しいopcodeを追加することをより簡単にきれいにできるようにします。
 
 この提案は残りの1年に渡り、多くの議論とレビューが実施されました。その中にはAnthony Townsによって開催されました、150人以上がレビューの手助けをするためにサインアップした[group review sessions][taproot review] などが含まれます。
+
 </div>
 
 <div markdown="1" id="anyprevout">
+
 Townsは5月にtapscriptと組み合わせて利用できる2つの新しい署名ハッシュである、`SIGHASH_ANYPREVOUT`と`SIGHASH_ANYPREVOUTANYSCRIPT`を提案しました。
 
 署名ハッシュ(sighash)は、署名がコミットするトランザクションのフィールドと関連するデータのハッシュです。ビットコインにおいて異なるsighashはトランザクションの異なる部分にコミットします。それにより、署名者にオプションとして、他のユーザがトランザクションに対して特定の修正を実施できるようにします。2つの新しく提案されたsighashは、UTXO[BIP118][]の[SIGHASH_NOINPUT][topic sighash_anyprevout]と同様に機能します。意図的に利用するUTXOを特定しないことにより、（例えば、同一のpubkeyを利用するなど）スクリプトが満たしさえすれば、署名によりいかなるUTXOでも送信することができます。
 
 インプットがないスタイルのsighashの主要な提案された利用方法は、LN向けに以前提案された[eltoo][topic eltoo] update layerを可能にすることです。Eltooはチャネル構築と管理を複数の観点から簡素化します。特にオンチェーンのチャネルコストを大きく削減できるため[2つ以上の参加者が含まれるチャネル][topic channel factories]を簡素化することが望ましいとされています。
+
 </div>
 
 <div markdown="1" id="ctv">
+
 当月に提案された3つ目のソフトフォークは、Jeremy Rubinからのもので、`OP_CHECKTEMPLATEVERIFY`(CTV)と呼ばれる新しい[opcode][coshv]です。これにより、例えば、本スクリプトを使用したトランザクションの後続トランザクションのoutputには他の特定のoutputが含まれている必要があるなど、限られた形式の契約(covenants)が可能になります。
 
  これの推奨される使用法は、後で数十、数百、または数千の異なる受信者に支払うトランザクション（またはトランザクションのツリー）を使用してのみ使用できる少量のoutputを将来支払うことにコミットすることです。
@@ -185,9 +201,11 @@ Townsは5月にtapscriptと組み合わせて利用できる2つの新しい署�
 これにより、コインジョインスタイルのプライバシーを強化し、セキュリティ強化された保管庫をサポートし、取引手数料が急増した場合の支出コストを管理するための新しい手法が可能になります。
 
 Rubinは、CTVの展開バージョンをより効果的に可能にするべくBitcoin Coreの一部の改善のためにPRを開くなど、CTVへの貢献を、本年の終わりまで実施しています。
+
 </div>
 
 <div markdown="1" class="callout" id="conferences">
+
 ### 2019 summary<br>Notable technical conferences and other events
 
 - [Stanford Blockchain Conference][], January, Stanford University
@@ -199,18 +217,22 @@ Rubinは、CTVの展開バージョンをより効果的に可能にするべく
 - [Edge Dev++][], September, Tel Aviv
 - [Scaling Bitcoin][], September, Tel Aviv
 - [Cryptoeconomic Systems Summit][], October, MIT
+
 </div>
 
 ## June
 
 <div markdown="1" id="erlay-and-other-p2p-improvements">
+
 Gleb Naumenko、Pieter Wuille、Gregory Maxwell、Sasha Fedorova、Ivan
 Beschastnikhは[erlay][topic erlay]の[論文][erlay]を発表しました。アナウンスのバンドワイズを試算上84%削減する [libminisketch-based][topic minisketch] set reconciliationを利用した、ノード間でコンファームしていないトランザクションアナウンスをリレーするプロトコルです。論文ではerlayによりノードがデフォルトで接続するアウトバウンド接続の数を大幅に増加することが実現可能になることも記載されています。これは、ほとんどのPoWのブロックチェーンにないブロックをエクセプトすることでノードを騙す[エクリプス攻撃][eclipse attacks]に対する各ノードの耐性を改善します。より多くのアウトバウンド接続が可能になることで、トラックしたり、ノードが起点とするペイメントを遅延させるなど他の攻撃に対するノードの耐性を改善します。Erlayに関するワークは、追加の研究やreconciliation protocolの[BIP330][] の提案など一年間に渡り続きました。
 
 今年のP2Pリレーにおける他の改善は、ビットコイン・コアの[トランザクション・リレーのプライバシー改善][#14897]（Sergi Delgado-Seguraらによる[TxProbe][] 論文に記載されている問題を取り除く）と エクリプス攻撃に対する抵抗を改善する、新しいブロックのリレーにのみ使われる [2つの追加アウトバウンド接続][two extra outbound connections]の追加です。
+
 </div>
 
 <div markdown="1" id="watchtowers">
+
 数多くの先行ワークを経て、6月にLNDにaltruist(利他的) [LN watchtowers][topic watchtowers] が[マージ][altruist watchtowers]されました。Altruist watchtowersでは、クライアントのチャネルを保護することの対価として、プロトコル経由でいかなる報酬も受け取りません。それゆえ、ユーザは自分自身のwatchtowerを建てるか、watchtower operatorの慈善に依存しますが、他のユーザの代わりにペナルティ・トランザクションをwatchtowerが確実に送信することのデモとしては十分だと思われます。これにより長期間オフラインになるユーザーが資金を失わないことを確実にします。
 
 Altruist watchtowersは、最終的には [LND 0.7.0-beta][lnd 0.7-beta] でリリースされ、年内に追加の開発が実施されました。それらには、[watchtowerの仕様提案][watchtower spec] や [eltoo][topic eltoo]のような次世代のペイメント・チャネルとの組み合わせに関する[議論][eltoo watchtowers]が含まれます。
@@ -220,37 +242,45 @@ Altruist watchtowersは、最終的には [LND 0.7.0-beta][lnd 0.7-beta] でリ�
 ## July
 
 <div markdown="1" id="reproducibility">
+
 7月には、Carl DongのPRがビットコイン・コア・プロジェクトに[マージ][guix merge] されました。これは、GNU Guix （"geeks"と発音する）を利用してビットコイン・コアのLinuxバイナリーのビルド再現性のサポートを追加するものです。ビットコイン・コアは、これまで[Gitian][] システムを使った再現性のあるビルドをサポートしてきましたが、セットアップが難しく、数百ものUbuntu パッケージのセキュリティに依存しています。比べて、Guixはインストール、実行が容易で、Guixを用いてビットコイン・コアをビルドした場合、パッケージの依存関係がより少なくなります。長期的には、Guixのコントリビューターは、`bitcoind`のようなバイナリーが単独で監査可能なソースコードから得られたことをユーザーが検証できるようにするために[trusting trust][]問題を取り除けるように作業しています。
 
 2020年にリリースされるビットコイン・コアの最初のメジャー・バージョンでGuixが使われることに期待を寄せており（おそらく古いGitianベースのメカニズムと並行して使用される）、1年を通じてGuixビルド・サポートの作業が続けられました。
 
 また、[C-Lightning][cl repro]と[LND][lnd repro]のレポジトリーに信頼できるコンパイラーを使ってそれらのSWの再現性のあるビルドの作成方法に関するドキュメンテーションが追加されました。
+
 </div>
 
 ## August
 
 <div markdown="1" id="vaults">
+
 8月には、Bryan Bishopが[covenantsを使わないビットコインにおけるVaults][vaults on
 Bitcoin without using covenants]の実装手法を提案しました。*Vaults*は、仮に攻撃者がユーザの通常の秘密鍵を入手したとしても、攻撃者がファンドを盗む能力を制限するスクリプトを表すために使われる用語です。*[Covenant][topic covenants]*は他の特定のスクリプトに対してのみ送信できるスクリプトのことです。現在のビットコイン・スクリプト言語を利用してCovenantsを作成する既知の方法はありませんが、お金をvault contractにデポジットする際にユーザがいくつかのステップを実行するコードを走らすことができれば、Covenantsが必ずしも必要ではないことが分かりました。
 
 特に、Bishopはvaultの弱点とその軽減方法についても記載しました。攻撃者によってvaultから盗むことの出来る最大資金を制限することができるというものです。実用的なvaultの開発は、個人のユーザ、取引所などの大規模なカストディアン事業者にとっても有用です。
+
 </div>
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2019 summary<br>Bitcoin Optech
 
 2年目のOptechは、6社の新規メンバーのサインアップ、NYCブロックチェーン・ウィークに[executive briefing][optech executive briefing]の開催、 [24週連続][bech32 sending support] のbech32送信のサポートのプロモーション、websiteにウォレット、サービスの[compatibility matrix][]の追加、51週分の[newsletters][]の発行<!-- #28 to
 #78, inclusive -->、一部のニュースレター、ブログの[日本語][xlation ja]や[スペイン語][xlation es]などへの翻訳の開始、 [topics index][]の作成、[Scalability Workbook][]へのチャプターの作成、パブリックにリリースされた[jupyter notebooks][]を用いた2回の [schnorr/taproot workshops][] の開催、[BTSE][]と[BRD][]によるフィールドレポートの発行などを実施しました。
 
 2020年も大きなプランがあり、皆様には継続して[Twitter][]をフォロー、 [weekly newsletter][]を購読し、または、[RSS feed][]を追っていただけることを期待いたします。
+
 </div>
 
 ## September
 
 <div markdown="1" id="snicker">
+
 Adam Gibsonは既存ビットコイン・システム向けの非対話型・[コインジョイン][topic coinjoin]を[提案][snicker]しました。SNICKERと呼ばれるプロトコルは、ユーザが自身のUTXOの一つを選択し、グローバルなUTXOセットからランダムにUTXOを1つ選択し、同一のトランザクションで利用します。提案者がこのトランザクションの一部に署名し、パブリックサーバーに部分的署名ビットコイン・トランザクション([PSBT][topic psbt])のフォーマットでアップロードします。他のユーザーがサーバをチェックし、PSBTを確認したら、ダウンロードして署名し、ブロードキャストすることができます。これにより、両者が同時にオンラインである必要がなく、コインジョインを完成できます。提案者は、他のユーザがコインジョインをアクセプトするまで、同じUTXOを利用してPSBTsを作りたいだけ作成し、アップロードすることができます。
 
 他のコインジョインのアプローチに対するSNICKERの主要な優位性は、両者が同時にオンラインである必要がないこと、ならびに、[BIP174][] PSBTサポート対応済みのウォレット（多くのウォレットが対応してきています）であれば簡単にサポート可能である点です。
+
 </div>
 
 {:#ln-cve}
@@ -259,15 +289,18 @@ Adam Gibsonは既存ビットコイン・システム向けの非対話型・[�
 ## October
 
 <div markdown="1" id="anchor-outputs">
+
 LNディベロッパーにより、過度の遅延なくユーザがいつでもチャネルをクローズ可能にするという長年の課題への対応に関して、10月から11月に非常に重要な進捗がありました。
 ユーザが複数のチャネルのうちの１つをクローズしたいが、リモート・ピアに連絡がつかない場合、ユーザはチャネルの最新の*コミットメント・トランザクション*をブロードキャストします。これは、オフチェーンのコントラクトの最新のバージョンでチャネルのファンドをそれぞれのオンチェーンで支払うpre-signed transactionです。この際にコミットメント・トランザクションが、数日から数週間前の安いトランザクション・フィーの頃に作成され、セキュリティー上重要なタイムロック期限の前までに取り込まれるのに十分な高いフィーが設定されていな可能性があります。
 
 この問題の解決策としては、fee bump commitment trasctionを可能にすることが知られています。しかしながら、ビットコイン・コアのノードでは帯域やCPUを消費するDenial of Service (DoS) 攻撃を防ぐためにfee bumpingを制限しています。LNのようなトラストレスでマルチユーザーのプロトコルでは、カウンター・パーティが、あなたのLNコミットメント・トランザクションのコンファメーションを遅延させるために故意にアンチ・DoS・ポリシーを発動する攻撃者であるかもしれません（[transaction pinning][topic transaction pinning]と呼ばれる攻撃です）。このトランザクションは、タイムロックが解除されるまでにコンファームされないかもしれないため、攻撃者はカウンターパーティからファンドを盗むことが可能になります。
 
 昨年、Matt Coralloは、Child-Pays-For-Parent (CPFP) fee bumpingに関連するビットコイン・コアのトランザクション・リレー・ポリシーの一部から、特例を除くことを[提案][carve-out proposed]しました。この特例は、2者のコントラクト・プロトコル（例えば、現在のLN）が、それぞれのパーティーに、彼ら自身のfee bumpを作成することを保証することが可能です。Coralloのアイデアは、[CPFP carve-out][topic cpfp carve out] という名称でBitcoin Core 0.19の一部としてリリースされました。その前のリリースでも、その他のLNディベロッパーがこの変更を利用開始するために必要なLNスクリプトやプロトコル・メッセージの[改定][anchor outputs]は実施されていました。当ニュースレター執筆段階では、これらの仕様変更はネットワークへのデプロイの前の最終実装・受け入れ待ちです。
+
 </div>
 
 <div markdown="1" class="callout" id="new-infrastructure">
+
 ### 2019 summary<br>新しいオープン・ソース・インフラストラクチャー・ソリューション
 
 - [Proof of reserves tool][] は、2月にリリースされました。これにより取引所やその他のビットコイン・カストディアン業者が [BIP127][] reserve proofs を利用して特定のUTXOのセットに対してコントロールしていることを証明することができます。
@@ -281,6 +314,7 @@ LNディベロッパーにより、過度の遅延なくユーザがいつでも
 ## November
 
 <div markdown="1" id="bech32-mutability">
+
 [Taproot][topic taproot] paymentsに bech32アドレスを利用するという11月の議論は、5月に発見された[bech32アドレスの問題][bech32 malleability issue] で注目を集めました。[BIP173][]によると、ミス・コピーされたbech32 文字列が検出されない失敗率は最悪でも10億回に1回程度とされてきました。しかしながら、`p`で終わるbech32 文字列は、その前に`q`を削除、挿入しても有効な文字列となります。これは実用的には、segwit P2WPKH、P2WSH addressesに影響を与えません。一つのアドレスタイプを別のものに変えるには少なくとも19連続で`q`が追加される、または削除される必要がありますが、v0 segwit addressの文字列の長さは固定長であり、変更されると無効となるためです。<!-- "19 characters" math in
 _posts/en/newsletters/2019-11-13-newsletter.md -->
 
@@ -393,3 +427,6 @@ implementation]を達成しました。ペイメントを複数パートに分�
 [wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/
+[eltoo]: https://blockstream.com/eltoo.pdf
+[hwi]: https://github.com/bitcoin-core/HWI
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

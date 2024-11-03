@@ -24,9 +24,9 @@ and descriptions of notable changes to popular infrastructure projects.
   days of release, [over 50 BTC][waxwing toot] (currently valued at over
   $2 million USD) had been placed in timelocked fidelity bonds.
 
-    Although the specific implementation is unique to JoinMarket, the
-    overall design may be useful in other decentralized protocols built
-    on top of Bitcoin.
+  Although the specific implementation is unique to JoinMarket, the
+  overall design may be useful in other decentralized protocols built
+  on top of Bitcoin.
 
 ## Bitcoin Core PR Review Club
 

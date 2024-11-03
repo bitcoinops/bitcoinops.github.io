@@ -111,14 +111,14 @@ infrastructure software.
     Peter Todd's proposal would make full RBF the default but allow node
     operators to change their settings to choose opt-in RBF instead.
 
-      Peter Todd argues that the change is warranted because (according
-      to his measurements, which have been [called into doubt][towns
-      rbf]), a significant percentage of mining hash rate is apparently
-      following full RBF rules and there are enough relay nodes that
-      have enabled full RBF to allow non-signaled replacements to reach
-      those miners.  He also says he is unaware of any active
-      businesses that currently accept unconfirmed onchain transactions
-      as final payment.
+    Peter Todd argues that the change is warranted because (according
+    to his measurements, which have been [called into doubt][towns
+    rbf]), a significant percentage of mining hash rate is apparently
+    following full RBF rules and there are enough relay nodes that
+    have enabled full RBF to allow non-signaled replacements to reach
+    those miners.  He also says he is unaware of any active
+    businesses that currently accept unconfirmed onchain transactions
+    as final payment.
 
   - *Removing specific limits on `OP_RETURN` outputs:* the [second
     thread][todd opr] and [pull request][bitcoin core #28130] proposes
@@ -130,24 +130,24 @@ infrastructure software.
     script more than 83 bytes in size (which translates to 80 bytes of
     arbitrary data).
 
-      Allowing relay and default mining of a small amount of data in
-      `OP_RETURN` outputs was motivated by people previously storing
-      data in other types of outputs that had to be stored in the UTXO
-      set, often in perpetuity.  `OP_RETURN` outputs don't need to be
-      stored in the UTXO set and so aren't as problematic.  Since then,
-      some people have begun storing large amounts of data in
-      transaction witnesses.
+    Allowing relay and default mining of a small amount of data in
+    `OP_RETURN` outputs was motivated by people previously storing
+    data in other types of outputs that had to be stored in the UTXO
+    set, often in perpetuity.  `OP_RETURN` outputs don't need to be
+    stored in the UTXO set and so aren't as problematic.  Since then,
+    some people have begun storing large amounts of data in
+    transaction witnesses.
 
-      The pull request would default to allowing any number of
-      `OP_RETURN` outputs and any amount of data in an `OP_RETURN`
-      output as long as the transactions otherwise obey Bitcoin Core's
-      other relay policies (e.g., had a total transaction size of less than 100,000
-      vbytes).  As of this writing, opinions on the pull request were
-      mixed, with some developers arguing that the relaxed policy would
-      increase the amount of non-financial data stored on the block
-      chain and others arguing that there's no reason to prevent people
-      from using `OP_RETURN` outputs when other methods of adding data
-      to the block chain are being used.
+    The pull request would default to allowing any number of
+    `OP_RETURN` outputs and any amount of data in an `OP_RETURN`
+    output as long as the transactions otherwise obey Bitcoin Core's
+    other relay policies (e.g., had a total transaction size of less than 100,000
+    vbytes).  As of this writing, opinions on the pull request were
+    mixed, with some developers arguing that the relaxed policy would
+    increase the amount of non-financial data stored on the block
+    chain and others arguing that there's no reason to prevent people
+    from using `OP_RETURN` outputs when other methods of adding data
+    to the block chain are being used.
 
 - **Libbitcoin Bitcoin Explorer security disclosure:** several security
   researchers investigating a recent loss of bitcoins among users of
@@ -161,28 +161,28 @@ infrastructure software.
   theft occurred on 12 July 2023 with apparent losses of almost 30 BTC
   (approximately $850,000 USD at the time).
 
-    Several processes similar to the one that likely led to the loss of
-    funds have been found [described][mb milksad] in the book _Mastering
-    Bitcoin_, the [documentation homepage][bx home] for Bitcoin
-    Explorer, and many other places in Bitcoin Explorer's documentation
-    (e.g. [1][bx1], [2][bx2], [3][bx3]).  None of that documentation
-    clearly warned that it was unsafe, except for the [online
-    documentation][seed doc] of the `seed` command.
+  Several processes similar to the one that likely led to the loss of
+  funds have been found [described][mb milksad] in the book _Mastering
+  Bitcoin_, the [documentation homepage][bx home] for Bitcoin
+  Explorer, and many other places in Bitcoin Explorer's documentation
+  (e.g. [1][bx1], [2][bx2], [3][bx3]).  None of that documentation
+  clearly warned that it was unsafe, except for the [online
+  documentation][seed doc] of the `seed` command.
 
-    Optech's recommendation is for anyone who thinks they may have used
-    `bx seed` to generate wallets or addresses is to review the
-    [disclosure page][milksad] and potentially use the service they
-    provide for testing hashes of vulnerable seeds.  If you used the same process
-    discovered by the attacker, your bitcoins have likely already been
-    stolen---but if you used a variation on the process, you might still
-    have a chance to move your bitcoins to safety.  If you use a wallet
-    or other software that you think might use Libbitcoin, please
-    advise the developers about the vulnernability and ask them to
-    investigate.
+  Optech's recommendation is for anyone who thinks they may have used
+  `bx seed` to generate wallets or addresses is to review the
+  [disclosure page][milksad] and potentially use the service they
+  provide for testing hashes of vulnerable seeds.  If you used the same process
+  discovered by the attacker, your bitcoins have likely already been
+  stolen---but if you used a variation on the process, you might still
+  have a chance to move your bitcoins to safety.  If you use a wallet
+  or other software that you think might use Libbitcoin, please
+  advise the developers about the vulnernability and ask them to
+  investigate.
 
-    We thank the researchers for their significant efforts in making a
-    [responsible disclosure][topic responsible disclosures] of
-    [CVE-2023-39910][]. {% assign timestamp="1:25" %}
+  We thank the researchers for their significant efforts in making a
+  [responsible disclosure][topic responsible disclosures] of
+  [CVE-2023-39910][]. {% assign timestamp="1:25" %}
 
 ## Bitcoin Core PR Review Club
 

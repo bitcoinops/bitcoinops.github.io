@@ -40,8 +40,8 @@ signet上での主要なプロトコルの変更のテストにフォーカス�
   [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]の比較）ことを含め、ユーザーが変更案を実験するのがより簡単になるはずです。
   Townsはまた、トランザクションのリレーポリシーに対する主要な変更案（[パッケージリレー][topic package relay]のような）も含める予定です。
 
-    Townsは、[Bitcoin Inquisition][]と呼ばれるこの新しいテスト実装のアイディアについて、
-    建設的な批判と、それにソフトフォークの初期セットとして追加する[プルリクエスト][bi prs]のレビューを求めています。
+  Townsは、[Bitcoin Inquisition][]と呼ばれるこの新しいテスト実装のアイディアについて、
+  建設的な批判と、それにソフトフォークの初期セットとして追加する[プルリクエスト][bi prs]のレビューを求めています。
 
 ## Bitcoin Stack Exchangeから選ばれたQ&A
 

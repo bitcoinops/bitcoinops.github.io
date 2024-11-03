@@ -6,13 +6,13 @@ title: HD key generation
 shortname: bip32
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
  - BIP32
  - HD wallets
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Wallet Collaboration Tools
 
@@ -86,6 +86,9 @@ optech_mentions:
 
   - title: "Rust Bitcoin #2451 removes the requirement that an HD derivation path start with an `m`"
     url: /en/newsletters/2024/02/14/#rust-bitcoin-2451
+
+  - title: "BIP328 added with a specifications BIP32-compatible MuSig2 key derivation"
+    url: /en/newsletters/2024/07/05/#bips-1540
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

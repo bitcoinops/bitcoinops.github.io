@@ -39,27 +39,27 @@ changes to popular Bitcoin infrastructure software.
   addresses are adopted, the following implications exist for wallets
   and services:
 
-    - *Support for current addresses remains unchanged:* wallets that
-      can send to current native segwit addresses (version 0) or receive
-      to current segwit addresses will continue to work
-      without modification.  Current native segwit addresses all start
-      with `bc1q`.  P2SH-wrapped segwit addresses are also unaffected.
+  - *Support for current addresses remains unchanged:* wallets that
+    can send to current native segwit addresses (version 0) or receive
+    to current segwit addresses will continue to work
+    without modification.  Current native segwit addresses all start
+    with `bc1q`.  P2SH-wrapped segwit addresses are also unaffected.
 
-    - *Wallets that support segwit v1+ addresses now won't be forward compatible:*
-      wallets that implemented BIP173 forward compatibility will find it
-      doesn't work with taproot and subsequent addresses generated using
-      Wuille's new proposal.  Those addresses will fail with a checksum
-      mismatch.  According to the survey results posted to the mailing
-      list, the only known wallets affected are Bitcoin Core and BRD
-      wallet.
+  - *Wallets that support segwit v1+ addresses now won't be forward compatible:*
+    wallets that implemented BIP173 forward compatibility will find it
+    doesn't work with taproot and subsequent addresses generated using
+    Wuille's new proposal.  Those addresses will fail with a checksum
+    mismatch.  According to the survey results posted to the mailing
+    list, the only known wallets affected are Bitcoin Core and BRD
+    wallet.
 
-    - *All other wallets will need to update eventually anyway:* the
-      other wallets and services surveyed don't currently support
-      planned taproot addresses, so they'll need to upgrade anyway when
-      users start requesting money be sent to those v1 addresses.  For
-      any wallets that already support sending to current segwit
-      addresses, the update should be easy as the planned algorithm
-      change is minimal.
+  - *All other wallets will need to update eventually anyway:* the
+    other wallets and services surveyed don't currently support
+    planned taproot addresses, so they'll need to upgrade anyway when
+    users start requesting money be sent to those v1 addresses.  For
+    any wallets that already support sending to current segwit
+    addresses, the update should be easy as the planned algorithm
+    change is minimal.
 
 - **Thwarted upgrade to uppercase bech32 QR codes:** BTCPay Server
   recently implemented an optimization described in [BIP173][] (covered
@@ -108,16 +108,16 @@ just be more laid back.-->{% endcomment %}
   extended public key with derivation path, and several conversion
   functions, returning the set of data specified on the final line:
 
-    ```hack
-    $alice = xpub68Gmy5EdvgibQVfPdqkBBCHxA5htiqg55crXYuXoQRKfDBFA1WEjWgP6LHhwBZeNK1VTsfTFUHCdrfp1bgwQ9xv5ski8PX9rL2dZXvgGDnw/9/0;
+  ```hack
+  $alice = xpub68Gmy5EdvgibQVfPdqkBBCHxA5htiqg55crXYuXoQRKfDBFA1WEjWgP6LHhwBZeNK1VTsfTFUHCdrfp1bgwQ9xv5ski8PX9rL2dZXvgGDnw/9/0;
 
-    $policy = pk($alice/1/3) && older(1 month);
-    $miniscript = miniscript($policy); // compile policy to miniscript
-    $descriptor = wsh($miniscript); // wrap with a p2wsh descriptor
-    $address = address($descriptor); // generate the address
+  $policy = pk($alice/1/3) && older(1 month);
+  $miniscript = miniscript($policy); // compile policy to miniscript
+  $descriptor = wsh($miniscript); // wrap with a p2wsh descriptor
+  $address = address($descriptor); // generate the address
 
-    [ $policy, $miniscript, $descriptor, $address ]
-    ```
+  [ $policy, $miniscript, $descriptor, $address ]
+  ```
 
 ## Bitcoin Core PR Review Club
 

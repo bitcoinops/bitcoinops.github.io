@@ -6,12 +6,12 @@ title: Ark
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -29,6 +29,9 @@ optech_mentions:
 
   - title: Improving LN scalability with covenants in a similar way to Ark
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
+
+  - title: "Implementation of Ark demonstrated on mainnet"
+    url: /en/newsletters/2024/10/18/#bark-ark-implementation-announced
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
@@ -67,7 +70,8 @@ forwarding fees if LN was used.
 
 Ark can be implemented on Bitcoin with no consensus changes required,
 but it will support a larger number of users---making it much more fee
-efficient---if a [covenant][topic covenants] feature is added to
+efficient---if a [covenant][topic covenants] feature like
+[OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] is added to
 Bitcoin.
 
 {% include references.md %}

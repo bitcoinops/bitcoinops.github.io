@@ -36,23 +36,23 @@ None this week.
   cover the full range of topics, from introductory to advanced.  Three
   talks may be especially interesting to Optech members:
 
-    1. *Exchange security* by Warren Togami.  Describes the causes
-       behind several notable major thefts from Bitcoin and altcoin
-       exchanges and lists a number of techniques businesses can use to
-       reduce their risk of loss.  ([Video][warren vid],
-       [transcript][warren transcript])
+  1. *Exchange security* by Warren Togami.  Describes the causes
+     behind several notable major thefts from Bitcoin and altcoin
+     exchanges and lists a number of techniques businesses can use to
+     reduce their risk of loss.  ([Video][warren vid],
+     [transcript][warren transcript])
 
-    2. *Wallet Security, Key Management & Hardware Security Modules
-       (HSMs)]* by Bryan Bishop.  Suggests methods for decreasing the
-       risk that private keys will be stolen or misused.
-       ([Video][kanzure wallet vid], [transcript][kanzure wallet
-       transcript])
+  2. *Wallet Security, Key Management & Hardware Security Modules
+     (HSMs)]* by Bryan Bishop.  Suggests methods for decreasing the
+     risk that private keys will be stolen or misused.
+     ([Video][kanzure wallet vid], [transcript][kanzure wallet
+     transcript])
 
-    3. *Handling reorgs and forks* by Bryan Bishop.  Describes how to
-       secure your transactions against changes in the Bitcoin block
-       chain or consensus rules, including suggestions for how to test
-       your systems.  ([Video][kanzure reorg vid], [transcript][kanzure
-       reorg transcript])
+  3. *Handling reorgs and forks* by Bryan Bishop.  Describes how to
+     secure your transactions against changes in the Bitcoin block
+     chain or consensus rules, including suggestions for how to test
+     your systems.  ([Video][kanzure reorg vid], [transcript][kanzure
+     reorg transcript])
 
 ## CoreDev.tech
 
@@ -86,42 +86,22 @@ on some of the transcripts for the event in Tokyo last week:
   many normal cases (including imports of HD extended private and public
   keys).
 
-    Somewhat related is DESCRIPT, a language that uses a subset of the
-    full Bitcoin Script language to make it easy to construct some
-    simple policies.  "We have a DESCRIPT compiler that takes something
-    we're calling a policy language (AND, OR, threshold, public key,
-    hashlock, timelock) together with probabilities for each OR to tell
-    whether it's 50/50 or whether one side of the OR is more likely than
-    the right, and it will find [...] the optimal script in this subset
-    of script that we have defined."  For example, it could allow you
-    "to do something like a multisig that after some time degrades into
-    a weaker multisig---like a 2-of-3 but after a year I can spend it
-    with just one of those keys."
+  Somewhat related is DESCRIPT, a language that uses a subset of the
+  full Bitcoin Script language to make it easy to construct some
+  simple policies.  "We have a DESCRIPT compiler that takes something
+  we're calling a policy language (AND, OR, threshold, public key,
+  hashlock, timelock) together with probabilities for each OR to tell
+  whether it's 50/50 or whether one side of the OR is more likely than
+  the right, and it will find [...] the optimal script in this subset
+  of script that we have defined."  For example, it could allow you
+  "to do something like a multisig that after some time degrades into
+  a weaker multisig---like a 2-of-3 but after a year I can spend it
+  with just one of those keys."
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], and [C-lightning][cl commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="c9327306b580bb161d1732c0a0260b46c0df015c"
-  end="be992701b018f256db6d64786624be4cb60d8975"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="79ed4e8b600e4834f058cbf3cb8b93f5aa5ab3d4"
-  end="e5b84cfadab56037ae3957e704b3e570c9368297"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="d6fcfe00c722f7e6f4b691cd47743ed593aeea0e"
-  end="a44491fff0ccd7bde20661eecf88bf136db5f6e6"
-%}
-{% comment %}<!-- last secp256k1 commit checked: 1e6f1f5ad5e7f1e3ef79313ec02023902bf8175c -->{% endcomment %}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], and [C-lightning][core lightning repo].*
 
 - [LND #1970][]: The AbandonChannel RPC method (only available in the
   developer debug mode) now provides additional information when users
@@ -152,3 +132,4 @@ on some of the transcripts for the event in Tokyo last week:
 [kanzure reorg transcript]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/reorgs/
 [kanzure reorg vid]: https://youtu.be/EUUQbveGF5E?t=4
 [UHO]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -26,9 +26,9 @@ notable changes to popular Bitcoin infrastructure software.
   mitigations that make the attack less practical, although they do not
   eliminate the underlying concern.
 
-    The disclosure was made after Optech's usual news deadline, so we
-    are only able to provide the above link in this week's newsletter.
-    We will provide a regular summary in next week's newsletter. {% assign timestamp="1:09" %}
+  The disclosure was made after Optech's usual news deadline, so we
+  are only able to provide the above link in this week's newsletter.
+  We will provide a regular summary in next week's newsletter. {% assign timestamp="1:09" %}
 
 - **Payments contingent on arbitrary computation:** Robin Linus
   [posted][linus post] to the Bitcoin-Dev mailing list a [paper][linus paper] he's
@@ -37,57 +37,57 @@ notable changes to popular Bitcoin infrastructure software.
   program executed successfully.  Notably, this is possible on Bitcoin
   today---no consensus change is required.
 
-    To provide context, a well-known feature of Bitcoin is to require
-    someone to satisfy a programming expression (called a _script_) in
-    order to spend bitcoins associated with that script.  For example, a
-    script containing a public key that can only be satisfied if the
-    corresponding private key creates a signature committing to a
-    spending transaction.  Scripts must be written in Bitcoin's language
-    (called _Script_) in order to be enforced by consensus, but Script
-    is deliberately limited in its flexibility.
+  To provide context, a well-known feature of Bitcoin is to require
+  someone to satisfy a programming expression (called a _script_) in
+  order to spend bitcoins associated with that script.  For example, a
+  script containing a public key that can only be satisfied if the
+  corresponding private key creates a signature committing to a
+  spending transaction.  Scripts must be written in Bitcoin's language
+  (called _Script_) in order to be enforced by consensus, but Script
+  is deliberately limited in its flexibility.
 
-    Linus's paper gets around some of those limits.  If Alice trusts Bob
-    to take action if a program was run incorrectly, but does not want
-    to trust him with anything else, she can pay funds to a [taproot][topic taproot] tree
-    that will allow Bob to claim the funds if he demonstrates that Alice
-    failed to run an arbitrary program correctly.  If Alice does run the
-    program correctly, then she can spend the funds even if Bob attempts
-    to stop her.
+  Linus's paper gets around some of those limits.  If Alice trusts Bob
+  to take action if a program was run incorrectly, but does not want
+  to trust him with anything else, she can pay funds to a [taproot][topic taproot] tree
+  that will allow Bob to claim the funds if he demonstrates that Alice
+  failed to run an arbitrary program correctly.  If Alice does run the
+  program correctly, then she can spend the funds even if Bob attempts
+  to stop her.
 
-    To use an arbitrary program, it must be broken down into a very
-    basic primitive (a [NAND gate][]) and a commitment must be made for each
-    gate.  This requires the offchain exchange of a very large amount of
-    data, potentially multiple gigabytes for even a fairly basic
-    arbitrary program---but Alice and Bob only need a single onchain
-    transaction in the case that Bob agrees that Alice ran the program
-    correctly.  In the case that Bob disagrees, he should be able to
-    demonstrate Alice's failure within a relatively small number of
-    onchain transactions.  If the setup was performed in a payment
-    channel between Alice and Bob, multiple programs could be run both in
-    parallel and in sequence with no onchain footprint except
-    channel setup and either a mutual close or a force close where Bob
-    attempts to demonstrate that Alice failed to follow the arbitrary
-    program logic correctly.
+  To use an arbitrary program, it must be broken down into a very
+  basic primitive (a [NAND gate][]) and a commitment must be made for each
+  gate.  This requires the offchain exchange of a very large amount of
+  data, potentially multiple gigabytes for even a fairly basic
+  arbitrary program---but Alice and Bob only need a single onchain
+  transaction in the case that Bob agrees that Alice ran the program
+  correctly.  In the case that Bob disagrees, he should be able to
+  demonstrate Alice's failure within a relatively small number of
+  onchain transactions.  If the setup was performed in a payment
+  channel between Alice and Bob, multiple programs could be run both in
+  parallel and in sequence with no onchain footprint except
+  channel setup and either a mutual close or a force close where Bob
+  attempts to demonstrate that Alice failed to follow the arbitrary
+  program logic correctly.
 
-    BitVM can be applied trustlessly in cases where Alice and Bob are
-    natural adversaries, such as where they pay funds to an output that
-    will be paid to whichever one of them wins in a game of chess.  They
-    can then use two (almost identical) arbitrary programs, each of
-    which takes the same arbitrary set of chess moves.  One program will
-    return true if Alice won and one will return true if Bob won.  One
-    party will then publish onchain the transaction that claims their
-    program evaluates to true (that they won); the other party will
-    either accept that claim (conceding the loss of funds) or will
-    demonstrate the fraud (receiving the funds if successful).  In cases
-    where Alice and Bob would not naturally be adversaries, Alice may be
-    able to incentivize him to verify correct computation, such by
-    offering her funds to Bob if he can prove she failed to compute
-    correctly.
+  BitVM can be applied trustlessly in cases where Alice and Bob are
+  natural adversaries, such as where they pay funds to an output that
+  will be paid to whichever one of them wins in a game of chess.  They
+  can then use two (almost identical) arbitrary programs, each of
+  which takes the same arbitrary set of chess moves.  One program will
+  return true if Alice won and one will return true if Bob won.  One
+  party will then publish onchain the transaction that claims their
+  program evaluates to true (that they won); the other party will
+  either accept that claim (conceding the loss of funds) or will
+  demonstrate the fraud (receiving the funds if successful).  In cases
+  where Alice and Bob would not naturally be adversaries, Alice may be
+  able to incentivize him to verify correct computation, such by
+  offering her funds to Bob if he can prove she failed to compute
+  correctly.
 
-    The idea received a significant amount of discussion on the mailing
-    list as well as on Twitter and various Bitcoin-focused podcasts.  We
-    expect continued discussion in the coming weeks and
-    months. {% assign timestamp="8:15" %}
+  The idea received a significant amount of discussion on the mailing
+  list as well as on Twitter and various Bitcoin-focused podcasts.  We
+  expect continued discussion in the coming weeks and
+  months. {% assign timestamp="8:15" %}
 
 - **Proposed BIP for MuSig2 fields in PSBTs:** Andrew Chow [posted][chow
   mpsbt] to the Bitcoin-Dev mailing list with a [draft BIP][mpsbt-bip],
@@ -96,10 +96,10 @@ notable changes to popular Bitcoin infrastructure software.
   "keys, public nonces, and partial signatures produced with
   [MuSig2][topic musig]."
 
-    Anthony Towns [asked][towns mpsbt] whether the proposed BIP would
-    also include fields for [adaptor signatures][topic adaptor
-    signatures], but continued discussion indicated that would likely
-    need to be defined in a separate BIP. {% assign timestamp="26:44" %}
+  Anthony Towns [asked][towns mpsbt] whether the proposed BIP would
+  also include fields for [adaptor signatures][topic adaptor
+  signatures], but continued discussion indicated that would likely
+  need to be defined in a separate BIP. {% assign timestamp="26:44" %}
 
 ## Changes to services and client software
 

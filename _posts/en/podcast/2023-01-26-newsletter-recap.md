@@ -681,7 +681,7 @@ the answer from sipa that's on the Stack Exchange for the details there; unless,
 Murch, do you want to take a crack at the BLS cryptographic assumptions, or
 shall we point them to the Stack Exchange?
 
-**Mark Erhardt**: I can talk a little bit about that.  So, Boneh-Lynn-Shacham
+**Mark Erhardt**: I can talk a little bit about that.  So, Boneh--Lynn--Shacham
 signatures or BLS signatures, are a fairly new construction, I think, and
 they're very attractive in that they're small and they can be non-interactively
 aggregated.  So, I think in the context of Schnorr signatures, some people might

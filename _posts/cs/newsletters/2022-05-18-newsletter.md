@@ -425,28 +425,28 @@ projektech. Navíc oslavujeme 200. číslo zpravodaje.
   zobrazované informace byly co nejvíce kompaktní. Proto Ingala navrhuje několik
   vylepšení deskriptorů:
 
-    - *Registrace pravidel:* během úvodního nastavení podpisového zařízení
-	  by měl uživatel na zařízení ověřit preferované pravidlo utrácení.
-	  Zařízení s úložištěm by si měla registrovaná pravidla zapamatovat.
-	  Pokud zařízení žádné úložiště nemá, mělo by vrátit kryptograficky
-	  bezpečný doklad registrace, který může být spolu se samotným pravidlem
-	  načten během zapínání zařízení. Návrh nepopisuje detaily,
-	  jak by měla být pravidla na zařízeních registrována, ale poukazuje na
-	  bezpečný způsob nastavení peněženek s vícenásobným podpisem ([BIP129][],
-	  viz též [zpravodaj č. 136][news136 sms], *angl.*).
+  - *Registrace pravidel:* během úvodního nastavení podpisového zařízení
+        by měl uživatel na zařízení ověřit preferované pravidlo utrácení.
+        Zařízení s úložištěm by si měla registrovaná pravidla zapamatovat.
+        Pokud zařízení žádné úložiště nemá, mělo by vrátit kryptograficky
+        bezpečný doklad registrace, který může být spolu se samotným pravidlem
+        načten během zapínání zařízení. Návrh nepopisuje detaily,
+        jak by měla být pravidla na zařízeních registrována, ale poukazuje na
+        bezpečný způsob nastavení peněženek s vícenásobným podpisem ([BIP129][],
+        viz též [zpravodaj č. 136][news136 sms], *angl.*).
 
-    - *Zástupné symboly klíčů:* namísto opakovaného vkládání rozšířených [BIP32][]
-	  klíčů navrhuje Ingala umožnit pravidlům nadefinovat krátké symboly, které
-	  by byly během interpretace pravidla nahrazeny BIP32 informacemi.
-	  To by výrazně zmenšilo velikost pravidel a také je učinilo lépe
-	  čitelnými. Ingala také navrhuje nahradit v deskriptorech
-	  některé běžné řetězce zkratkami.
+  - *Zástupné symboly klíčů:* namísto opakovaného vkládání rozšířených [BIP32][]
+        klíčů navrhuje Ingala umožnit pravidlům nadefinovat krátké symboly, které
+        by byly během interpretace pravidla nahrazeny BIP32 informacemi.
+        To by výrazně zmenšilo velikost pravidel a také je učinilo lépe
+        čitelnými. Ingala také navrhuje nahradit v deskriptorech
+        některé běžné řetězce zkratkami.
 
-    - *Snížená vyjádřitelnost:* kvůli zjednodušení implementace je podporována
-	  pouze podmnožina deskriptorů, avšak nové vlastnosti mohou být přidány
-	  později, pokud bude vyžadováno.
+  - *Snížená vyjádřitelnost:* kvůli zjednodušení implementace je podporována
+        pouze podmnožina deskriptorů, avšak nové vlastnosti mohou být přidány
+        později, pokud bude vyžadováno.
 
-    Během přípravy zpravodaje obdržel tento návrh v emailové skupině několik komentářů.
+  Během přípravy zpravodaje obdržel tento návrh v emailové skupině několik komentářů.
 
 ## Změny ve službách a klientech
 
@@ -535,7 +535,9 @@ Wences Casares, John Pfeffer a Alex Morcos.
 {% assign sorted_praise = page.praise | sort_natural: "author" %}
 {% for comment in sorted_praise %}
   <blockquote markdown="1">
+
   {{comment.text | default: 'TODO'}}
+
   </blockquote>
 
   {:.right}
@@ -553,8 +555,6 @@ Wences Casares, John Pfeffer a Alex Morcos.
 [^miniscript]: [miniscript][topic miniscript] je jazyk pro psaní bitcoin skriptů umožňující snadnou analýzu, kompozici atd.
 [^descriptors]: [deskriptory][topic descriptors] jsou řetězce, které popisují skripty výstupů; jsou používány peněženkami a jiným software
 [^signingdevices]: podpisová zařízení („signing devices”) byla dříve nepřesně označována za hardwarové peněženky; od tohoto názvu se již upouští
-
-
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="22235,6450,6345,1309" %}
@@ -582,7 +582,7 @@ Wences Casares, John Pfeffer a Alex Morcos.
 [sanders op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020458.html
 [ingala desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020423.html
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [news191 pinning]: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
 [MyCitadel Wallet]: https://github.com/mycitadel/mycitadel-desktop
 [RGB]: https://www.rgbfaq.com/what-is-rgb

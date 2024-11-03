@@ -58,15 +58,15 @@ projects.
   C-Lightning developer Rusty Russell and a [blog post][lnd stay safe]
   by LND developers Olaoluwa Osuntokun and Conner Fromknecht.
 
-    Briefly, the issue appears to have been that the implementations did not
-    confirm that channel open transactions paid the correct script,
-    amount, or both.  Because of this, the implementations would accept
-    payments within the channel which they would later be unable to get
-    confirmed onchain, allowing them to be defrauded.  As of this writing,
-    Optech is not aware of any reports that this issue was exploited
-    prior to the warning last month.  Now that the issue has
-    been disclosed, a [PR][BOLTS #676] has been opened to update the
-    specification to note that this check is needed.
+  Briefly, the issue appears to have been that the implementations did not
+  confirm that channel open transactions paid the correct script,
+  amount, or both.  Because of this, the implementations would accept
+  payments within the channel which they would later be unable to get
+  confirmed onchain, allowing them to be defrauded.  As of this writing,
+  Optech is not aware of any reports that this issue was exploited
+  prior to the warning last month.  Now that the issue has
+  been disclosed, a [PR][BOLTS #676] has been opened to update the
+  specification to note that this check is needed.
 
 - **Optech taproot and schnorr workshop:** last week, Optech held workshops in
   both San Francisco and New York City teaching developers about the
@@ -98,13 +98,13 @@ projects.
   though, they may also query on subsequent startups if none of the
   saved peers they select responds quickly enough.
 
-    This merge causes Bitcoin Core to only query three DNS seeds at a
-    time rather than all of them.  Three seeds should be enough
-    diversity in sources to ensure the node connects to at least one
-    honest peer (a requirement for Bitcoin security), but it's few enough
-    that not every seed will learn about the querying node if it uses
-    direct DNS resolution.  Which seeds to query are selected randomly
-    from the list hardcoded into Bitcoin Core.
+  This merge causes Bitcoin Core to only query three DNS seeds at a
+  time rather than all of them.  Three seeds should be enough
+  diversity in sources to ensure the node connects to at least one
+  honest peer (a requirement for Bitcoin security), but it's few enough
+  that not every seed will learn about the querying node if it uses
+  direct DNS resolution.  Which seeds to query are selected randomly
+  from the list hardcoded into Bitcoin Core.
 
 - [LND #3523][] allows users to update the maximum millisat value of
   HTLCs they'll accept in a particular open channel or across all of
@@ -148,3 +148,4 @@ projects.
 [optech ln warning]: /en/newsletters/2019/09/04/#upgrade-ln-implementations
 [workshop transcript]: http://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
 [russell disclosure]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002174.html
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

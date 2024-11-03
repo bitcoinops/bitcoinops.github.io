@@ -27,16 +27,16 @@ notable changes to popular Bitcoin infrastructure software.
   be able to be retrieved quickly, so allowing *uneconomical outputs*
   may create problems for no good reason.
 
-    However, there may be a use for zero-value outputs in [CPFP][topic
-    cpfp] fee bumping where none of the funds from the transaction
-    being fee bumped can be spent---all the funds used for fee bumping
-    need to come from separate UTXOs, such as in [eltoo][topic eltoo].
-    Ruben Somsen also [provided][somsen unec] an example of how zero-fee
-    outputs would be useful for spacechains (a type of one-way pegged
-    sidechain).
+  However, there may be a use for zero-value outputs in [CPFP][topic
+  cpfp] fee bumping where none of the funds from the transaction
+  being fee bumped can be spent---all the funds used for fee bumping
+  need to come from separate UTXOs, such as in [eltoo][topic eltoo].
+  Ruben Somsen also [provided][somsen unec] an example of how zero-fee
+  outputs would be useful for spacechains (a type of one-way pegged
+  sidechain).
 
-    No clear conclusion was reached in the discussion as of this
-    writing.
+  No clear conclusion was reached in the discussion as of this
+  writing.
 
 - **Preparing LN for PTLCs:** Bastien Teinturier started a
   [thread][teinturier post] on the Lightning-Dev mailing list about
@@ -45,14 +45,14 @@ notable changes to popular Bitcoin infrastructure software.
   using [PTLCs][topic ptlc].  PTLCs are more private than the
   currently-used [HTLCs][topic htlc] and use less block space.
 
-    Teinturier is trying to produce a set of changes that can be made at
-    the same time as the proposed `option_simplified_update`
-    [protocol change][bolts #867] (see [Newsletter #120][news120
-    opt_simp_update]).  A secondary goal is trying to make the
-    communication protocol compatible with the fast-forwards based PTLC
-    protocol described in [Newsletter #152][news152 ff].  This will allow
-    nodes to upgrade in stages, first to `option_simplified_update` with
-    HTLCs, then to PTLCs, then to fast forwards.
+  Teinturier is trying to produce a set of changes that can be made at
+  the same time as the proposed `option_simplified_update`
+  [protocol change][bolts #867] (see [Newsletter #120][news120
+  opt_simp_update]).  A secondary goal is trying to make the
+  communication protocol compatible with the fast-forwards based PTLC
+  protocol described in [Newsletter #152][news152 ff].  This will allow
+  nodes to upgrade in stages, first to `option_simplified_update` with
+  HTLCs, then to PTLCs, then to fast forwards.
 
 ## Changes to services and client software
 

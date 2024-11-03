@@ -39,23 +39,23 @@ popular Bitcoin infrastructure projects.
   transaction can be included in a block regardless of how many sigops
   it contains---keeping miner transaction code simple and fast.
 
-    In a mailing list [post][tapscript limits], bip-tapscript author
-    Pieter Wuille notes that he and Andrew Poelstra examined other
-    resource limits on scripts that were put in place to prevent nodes
-    from using an excessive amount of CPU or memory during verification.
-    He describes some of their findings and advocates the following rule
-    changes:
+  In a mailing list [post][tapscript limits], bip-tapscript author
+  Pieter Wuille notes that he and Andrew Poelstra examined other
+  resource limits on scripts that were put in place to prevent nodes
+  from using an excessive amount of CPU or memory during verification.
+  He describes some of their findings and advocates the following rule
+  changes:
 
-    > * Replace the separate sigops counter with a "executed sigops must
-    >   not exceed (witness size / [12.5 vbytes]) + 1" rule (already in the BIP).
-    > * Drop the 10,000 byte limit for script size (and 3,600 byte
-    >   standardness limit)
-    > * Drop the 201 non-push ops limit per script.
-    > * Drop the 100 input stack elements standardness limit and
-    >   replace with a (consensus) 1,000 limit.
+  > * Replace the separate sigops counter with a "executed sigops must
+  >   not exceed (witness size / [12.5 vbytes]) + 1" rule (already in the BIP).
+  > * Drop the 10,000 byte limit for script size (and 3,600 byte
+  >   standardness limit)
+  > * Drop the 201 non-push ops limit per script.
+  > * Drop the 100 input stack elements standardness limit and
+  >   replace with a (consensus) 1,000 limit.
 
-    The removal of unneeded rules would simplify the construction of
-    advanced Bitcoin scripts and the tools necessary to work with them.
+  The removal of unneeded rules would simplify the construction of
+  advanced Bitcoin scripts and the tools necessary to work with them.
 
 - **Watchtower storage costs:** a [discussion][watchtower discussion] on
   the Lightning-Dev mailing list examined the storage requirements for
@@ -131,3 +131,4 @@ clarifies that since 0.10.0, Bitcoin Core uses [headers-first][] IBD
 [tapscript limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
 [watchtower discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
 [headers-first]: https://bitcoin.org/en/p2p-network-guide#headers-first
+[eltoo]: https://blockstream.com/eltoo.pdf

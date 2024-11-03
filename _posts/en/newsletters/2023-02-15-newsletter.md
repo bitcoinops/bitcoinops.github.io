@@ -24,52 +24,52 @@ technical documentation and discussion.
   threads on the Bitcoin-Dev mailing list this week saw continued
   discussion about storing data in the block chain.
 
-    - *Offchain coin coloring:* Anthony Towns [posted][towns color] a
-      summary of a protocol currently being used for assigning special
-      meaning to certain transaction outputs, a class of techniques
-      generally called *coin coloring*.  He also summarized a related
-      protocol used for storing encoded binary data in Bitcoin
-      transactions and associating it with particular colored coins.
-      After summarizing the current state of affairs, he described a
-      method for storing data using the [nostr][] message transfer
-      protocol and associating it with colored coins that could be
-      transferred in Bitcoin transactions.  This would have several
-      advantages:
+  - *Offchain coin coloring:* Anthony Towns [posted][towns color] a
+    summary of a protocol currently being used for assigning special
+    meaning to certain transaction outputs, a class of techniques
+    generally called *coin coloring*.  He also summarized a related
+    protocol used for storing encoded binary data in Bitcoin
+    transactions and associating it with particular colored coins.
+    After summarizing the current state of affairs, he described a
+    method for storing data using the [nostr][] message transfer
+    protocol and associating it with colored coins that could be
+    transferred in Bitcoin transactions.  This would have several
+    advantages:
 
-      - *Reduced costs:* no transaction fees need to be paid for data
-        stored offchain.
+    - *Reduced costs:* no transaction fees need to be paid for data
+      stored offchain.
 
-      - *Private:* two people can exchange a colored coin without
-        anyone else knowing anything about the data it references.
+    - *Private:* two people can exchange a colored coin without
+      anyone else knowing anything about the data it references.
 
-      - *No transaction required for creation:* data can be associated
-        with an existing UTXO; there's no need to create a new UTXO.
+    - *No transaction required for creation:* data can be associated
+      with an existing UTXO; there's no need to create a new UTXO.
 
-      - *Resistant against censorship:* if the association between the data
-        and the colored coin is not widely known, then transfers of
-        the colored coin are just as censorship resistant as any other
-        onchain Bitcoin payment.
+    - *Resistant against censorship:* if the association between the data
+      and the colored coin is not widely known, then transfers of
+      the colored coin are just as censorship resistant as any other
+      onchain Bitcoin payment.
 
-      Considering the censorship resistant aspect, Towns argues that
-      "coloured bitcoins is largely unavoidable and simply something that
-      must be dealt with, rather than something we should spend time
-      trying to prevent/avoid."  He compares the idea that colored coins
-      might have more value than fungible bitcoins to the operation of
-      Bitcoin charging transaction fees based on transaction weight
-      rather than value transferred, concluding that he doesn't believe
-      this necessarily leads to significantly misaligned incentives.
+    Considering the censorship resistant aspect, Towns argues that
+    "coloured bitcoins is largely unavoidable and simply something that
+    must be dealt with, rather than something we should spend time
+    trying to prevent/avoid."  He compares the idea that colored coins
+    might have more value than fungible bitcoins to the operation of
+    Bitcoin charging transaction fees based on transaction weight
+    rather than value transferred, concluding that he doesn't believe
+    this necessarily leads to significantly misaligned incentives.
 
-    - *Increasing allowed `OP_RETURN` space in standard transactions:*
-      Christopher Allen [asked][allen op_return] whether it was better
-      to put arbitrary data in a transaction output using `OP_RETURN` or
-      the witness data of a transaction.  After some discussion, several
-      participants ([1][todd or], [2][o'connor or], [3][poelstra or])
-      noted that they were in favor of relaxing default transaction
-      relay and mining policies to allow `OP_RETURN` outputs to store
-      more than 83 bytes of arbitrary data.  They reasoned that other
-      methods for storing large amounts of data are currently in use and
-      there would be no additional harm from `OP_RETURN` being used
-      instead. {% assign timestamp="1:02" %}
+  - *Increasing allowed `OP_RETURN` space in standard transactions:*
+    Christopher Allen [asked][allen op_return] whether it was better
+    to put arbitrary data in a transaction output using `OP_RETURN` or
+    the witness data of a transaction.  After some discussion, several
+    participants ([1][todd or], [2][o'connor or], [3][poelstra or])
+    noted that they were in favor of relaxing default transaction
+    relay and mining policies to allow `OP_RETURN` outputs to store
+    more than 83 bytes of arbitrary data.  They reasoned that other
+    methods for storing large amounts of data are currently in use and
+    there would be no additional harm from `OP_RETURN` being used
+    instead. {% assign timestamp="1:02" %}
 
 - **Fee dilution in multiparty protocols:** Yuval Kogman
   [posted][kogman dilution] to the Bitcoin-Dev mailing list the
@@ -83,23 +83,23 @@ technical documentation and discussion.
   for the transaction.  Several implications of this were discussed on
   the mailing list:
 
-    - *Mallory gets Bob to pay her fees:* if Mallory has some ulterior
-      motive for including a large witness in the block chain---for
-      example, she wants to add arbitrary data---she can use part of Bob's fee to pay
-      the fees for that.  For example, Bob wants to create a 1,000 vbyte
-      transaction with a 10,000 satoshi fee, paying 10 sat/vbyte so it
-      confirms quickly.  Mallory stuffs the transaction with 9,000
-      vbytes of data Bob didn't expect, reducing its feerate to 1
-      sat/vbyte.  Although Bob pays the same absolute fee in both cases,
-      he doesn't get what he wanted (fast confirmation) and Mallory gets
-      9,000 sats worth of data added to the block chain at no cost to
-      her.
+  - *Mallory gets Bob to pay her fees:* if Mallory has some ulterior
+    motive for including a large witness in the block chain---for
+    example, she wants to add arbitrary data---she can use part of Bob's fee to pay
+    the fees for that.  For example, Bob wants to create a 1,000 vbyte
+    transaction with a 10,000 satoshi fee, paying 10 sat/vbyte so it
+    confirms quickly.  Mallory stuffs the transaction with 9,000
+    vbytes of data Bob didn't expect, reducing its feerate to 1
+    sat/vbyte.  Although Bob pays the same absolute fee in both cases,
+    he doesn't get what he wanted (fast confirmation) and Mallory gets
+    9,000 sats worth of data added to the block chain at no cost to
+    her.
 
-    - *Mallory can slow confirmation:* a transaction with a lower
-      feerate may confirm more slowly.  In a time-sensitive protocol, this
-      could cause a serious problem for Bob.  In other cases, Bob might
-      need to fee bump the transaction, which will cost him additional
-      money.
+  - *Mallory can slow confirmation:* a transaction with a lower
+    feerate may confirm more slowly.  In a time-sensitive protocol, this
+    could cause a serious problem for Bob.  In other cases, Bob might
+    need to fee bump the transaction, which will cost him additional
+    money.
 
   Kogman describes several mitigations in his post, although all of them
   involve tradeoffs.  In a [second post][kogman dilution2], he notes
@@ -115,25 +115,25 @@ technical documentation and discussion.
   will require placing an additional 32 byte hash in the witness data of
   the spending transaction.
 
-    ```text
-      *
+  ```text
+    *
+   / \
+  A   *
      / \
-    A   *
-       / \
-      A   B
-    ```
+    A   B
+  ```
 
-   That means that even if Mallory provides Bob with a valid witness for
-   her tapscript spend before Bob provides his own signature, it's
-   still possible for Mallory to broadcast an alternative version of the
-   transaction with a larger witness.  Bob can only prevent this issue
-   by receiving from Mallory a complete copy of her tree of tapscripts.
+  That means that even if Mallory provides Bob with a valid witness for
+  her tapscript spend before Bob provides his own signature, it's
+  still possible for Mallory to broadcast an alternative version of the
+  transaction with a larger witness.  Bob can only prevent this issue
+  by receiving from Mallory a complete copy of her tree of tapscripts.
 
-   In the context of future soft fork upgrades to Bitcoin, Anthony Towns
-   opened an [issue][bitcoin inquisition #19] to the Bitcoin
-   Inquisition repository being used to test [SIGHASH_ANYPREVOUT][topic
-   sighash_anyprevout] (APO) to consider having APO commit to additional
-   data to prevent this issue for users of that extension. {% assign timestamp="33:47" %}
+  In the context of future soft fork upgrades to Bitcoin, Anthony Towns
+  opened an [issue][bitcoin inquisition #19] to the Bitcoin
+  Inquisition repository being used to test [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout] (APO) to consider having APO commit to additional
+  data to prevent this issue for users of that extension. {% assign timestamp="33:47" %}
 
 ## Changes to services and client software
 

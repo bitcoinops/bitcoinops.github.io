@@ -58,27 +58,27 @@ flag, and several notable recent Bitcoin Core merges.
   spend is valid is whether the signature script (witness) fulfills all
   the conditions of the pubkey script (encumbrance).
 
-    For example, in the [Eltoo][] smart contract protocol aimed augmenting
-    Lightning Network (LN), Alice and Bob sign each change of balance in
-    a payment channel with this new sighash flag so that, when they want
-    to close the channel, either one of them can use the transaction
-    with the final balance to spend from the transaction with the
-    initial balance.
+  For example, in the [Eltoo][] smart contract protocol aimed augmenting
+  Lightning Network (LN), Alice and Bob sign each change of balance in
+  a payment channel with this new sighash flag so that, when they want
+  to close the channel, either one of them can use the transaction
+  with the final balance to spend from the transaction with the
+  initial balance.
 
-    However, naive use of this new sighash flag can cause unexpected
-    loss of funds.  For example, Alice receives some bitcoins to a
-    particular address; she then spends those bitcoins to Bob using the
-    new sighash flag.  Later, Alice receives more bitcoins to the same
-    address---Bob can now steal those bitcoins by reusing the same
-    signature Alice used before.  Note that this only affects people
-    using the new sighash flag; it doesn't affect unrelated
-    transactions.
+  However, naive use of this new sighash flag can cause unexpected
+  loss of funds.  For example, Alice receives some bitcoins to a
+  particular address; she then spends those bitcoins to Bob using the
+  new sighash flag.  Later, Alice receives more bitcoins to the same
+  address---Bob can now steal those bitcoins by reusing the same
+  signature Alice used before.  Note that this only affects people
+  using the new sighash flag; it doesn't affect unrelated
+  transactions.
 
-    The [discussion][unsafe sighash] this week on the bitcoin-dev and
-    lightning-dev mailing lists was about naming the sighash flag so
-    that developers don't use it accidentally without realizing its
-    dangers.  A rough consensus seems to have formed around
-    the name `SIGHASH_NOINPUT_UNSAFE`.
+  The [discussion][unsafe sighash] this week on the bitcoin-dev and
+  lightning-dev mailing lists was about naming the sighash flag so
+  that developers don't use it accidentally without realizing its
+  dangers.  A rough consensus seems to have formed around
+  the name `SIGHASH_NOINPUT_UNSAFE`.
 
 ## Notable Bitcoin Core merges
 
@@ -130,3 +130,4 @@ flag, and several notable recent Bitcoin Core merges.
 [#13570]: https://github.com/bitcoin/bitcoin/pull/13570
 [#13096]: https://github.com/bitcoin/bitcoin/pull/13096
 [tx-as-internal-node]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
+[musig]: https://eprint.iacr.org/2018/068

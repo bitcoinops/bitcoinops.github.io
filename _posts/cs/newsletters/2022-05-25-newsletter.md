@@ -33,8 +33,8 @@ a významných změn v populárních bitcoinových infrastrukturních projektech
 
   - `pckginfo1` poskytuje detaily o balíčku transakcí: jejich počet,
     identifikátory (wtxid), celkovou velikost (váhu) a celkový poplatek.
-	Jednotkový poplatek („feerate”) pro celý balíček se spočítá vydělením
-	celkového poplatku vahou.
+    Jednotkový poplatek („feerate”) pro celý balíček se spočítá vydělením
+    celkového poplatku vahou.
 
   Dále jsou existující zprávy `inv` a `getdata` rozšířeny o nový typ
   objektu `MSG_PCKG1`, který uzlu umožňuje informovat svá spojení o schopnosti
@@ -70,14 +70,14 @@ a významných změn v populárních bitcoinových infrastrukturních projektech
   následující dvě nepotvrzené transakce, které jsou dostupné k začlenění
   v následujícím bloku:
 
-    * Alice prodává Bobovi za 1 ETH aktivum *x*
-    * Bob prodává *x* Carol za 2 ETH (Bob vydělává 1 ETH)
+  * Alice prodává Bobovi za 1 ETH aktivum *x*
+  * Bob prodává *x* Carol za 2 ETH (Bob vydělává 1 ETH)
 
   <br>Jsou-li tyto dvě výměny provedeny veřejným obchodovacím protokolem,
   může těžař Boba z transakce zcela odříznout:
 
-    * Alice prodává těžařovi Mallorymu za 1 ETH aktivum *x*
-    * Těžař Mallory prodává *x* Carol za 2 ETH (Mallory vydělává 1 ETH; Bob nevydělává nic)
+  * Alice prodává těžařovi Mallorymu za 1 ETH aktivum *x*
+  * Těžař Mallory prodává *x* Carol za 2 ETH (Mallory vydělává 1 ETH; Bob nevydělává nic)
 
   <br>Toto představuje samozřejmě problém pro Boba, vytváří to však také několik
   problémů pro celou síť. Prvním problémem je, že těžaři musí příležitosti

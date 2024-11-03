@@ -38,7 +38,7 @@ notre 250e bulletin.
   Imaginons que l'heure actuelle soit _t_ et que la hauteur de bloc actuelle
   soit _x_. Si les blocs sont produits en moyenne à 10 minutes d'intervalle,
   alors si nous fixons `<time>` à _t + 1000 minutes_ et `<height>` à _x + 50_,
-    <!-- skip-duplicate-words-test -->nous nous attendons à ce que Bob puisse passer la sortie contrôlée par le
+    nous nous attendons à ce que Bob puisse passer la sortie contrôlée par le <!-- skip-duplicate-words-test -->
     script ci-dessus en moyenne 500 minutes avant qu'Alice puisse le dépenser.
     Cependant, si le taux de production de blocs devait soudainement plus que
     doubler, Alice pourrait être en mesure de dépenser la production avant Bob.
@@ -238,7 +238,7 @@ relations entre les entreprises et la communauté open source". Cette lettre
 d'information hebdomadaire a été lancée pour donner aux cadres et aux
 développeurs des entreprises utilisant Bitcoin un meilleur aperçu de ce que
 la communauté open source est en train de construire. En tant que tel,
-<!-- skip-duplicate-words-test -->nous nous sommes d'abord concentrés sur la
+nous nous sommes d'abord concentrés sur la <!-- skip-duplicate-words-test -->
 documentation des travaux susceptibles d'affecter les entreprises.
 
 Nous avons rapidement découvert que les lecteurs professionnels n'étaient
@@ -257,8 +257,7 @@ discussion hebdomadaire avec des invités qui incluent de nombreux contributeurs
 dont nous avons eu le privilège d'écrire sur leurs travaux.
 
 Rien de tout cela ne serait possible sans nos nombreux contributeurs qui, au cours
-de l'année écoulée, ont été les suivants :
-<!-- alphabetical -->
+de l'année écoulée, ont été les suivants : <!-- alphabetical -->
 Adam Jonas,
 Copinmalin,
 David A. Harding,
@@ -295,7 +294,7 @@ lorsque nous publierons les 250 prochains bulletins d'information.
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
-[sponsors fondateurs]: /about/#founding-sponsors
+[sponsors fondateurs]: /en/about/#founding-sponsors
 [soutiens financiers]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html

@@ -100,11 +100,11 @@ describing notable changes to popular Bitcoin infrastructure projects.
   [convenant schemes][topic covenants] that are compatible with
   [RBF][topic rbf].
 
-    John Law replied that fee-dependent timelocks (see [Newsletter
-    #283][news283 fdt]) could make CTV safe to use with endogenous fees
-    in cases where particular versions of a transaction needed to be
-    confirmed by a deadline, although fee-dependent timelocks might
-    delay some contract settlements by an indefinite amount of time. {% assign timestamp="19:11" %}
+  John Law replied that fee-dependent timelocks (see [Newsletter
+  #283][news283 fdt]) could make CTV safe to use with endogenous fees
+  in cases where particular versions of a transaction needed to be
+  confirmed by a deadline, although fee-dependent timelocks might
+  delay some contract settlements by an indefinite amount of time. {% assign timestamp="19:11" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -188,13 +188,13 @@ repo]._
   node in the blinded path; it will not learn the ID for
   the ultimate receiver.
 
-    Previously, strong trampoline privacy depended on using multiple
-    trampoline forwarders so that none of the forwarders could be sure
-    they were the final forwarder.  A downside of this approach is that
-    it used longer paths that increased the probability of forwarding
-    failure and required paying more forwarding fees for success.  Now
-    forwarding payments through even a single trampoline node can
-    prevent that node from learning the ultimate receiver. {% assign timestamp="49:23" %}
+  Previously, strong trampoline privacy depended on using multiple
+  trampoline forwarders so that none of the forwarders could be sure
+  they were the final forwarder.  A downside of this approach is that
+  it used longer paths that increased the probability of forwarding
+  failure and required paying more forwarding fees for success.  Now
+  forwarding payments through even a single trampoline node can
+  prevent that node from learning the ultimate receiver. {% assign timestamp="49:23" %}
 
 - [LND #8167][] allows an LND node to mutually close a channel that
   still has one or more pending payments ([HTLCs][topic htlc]).  The

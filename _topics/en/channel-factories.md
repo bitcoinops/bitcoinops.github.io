@@ -3,12 +3,12 @@ title: Channel factories
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Contract Protocols
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -57,6 +57,9 @@ optech_mentions:
 
   - title: "Proposal for a mass-exit protocol that allows highly efficient payment batching"
     url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
+
+  - title: "SuperScalar timeout tree channel factory proposal"
+    url: /en/newsletters/2024/11/01/#timeout-tree-channel-factories
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

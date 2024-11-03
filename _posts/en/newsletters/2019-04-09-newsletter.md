@@ -51,34 +51,34 @@ projects.
   "Because the validity of a chain history is a simple objective fact,
   it is [easy] to review this setting."
 
-    This week James O'Beirne started a [thread][assumeutxo thread] on
-    the Bitcoin-Dev mailing list about taking a hash of the UTXO set at
-    a particular block, having multiple well-known contributors verify
-    they get the same hash, and then having freshly installed Bitcoin
-    Core nodes default to using that hash to download the exact same
-    UTXO set.  This would allow a newly-started node to skip not only
-    scripts but all block chain data before the assumed valid block,
-    perhaps reducing the time requirements to start a node
-    today by 95% or more (and certainly more as the block chain
-    continues to grow).  The verification of older blocks and
-    transactions could then be done in the background after the user is
-    already using their node, eventually giving them the same security
-    as a user who disabled this feature.  This is an old idea and is part of
-    the motivation for research into other techniques such as [fast
-    updatable UTXO commitments][] and [automatic levelDB backups][].
+  This week James O'Beirne started a [thread][assumeutxo thread] on
+  the Bitcoin-Dev mailing list about taking a hash of the UTXO set at
+  a particular block, having multiple well-known contributors verify
+  they get the same hash, and then having freshly installed Bitcoin
+  Core nodes default to using that hash to download the exact same
+  UTXO set.  This would allow a newly-started node to skip not only
+  scripts but all block chain data before the assumed valid block,
+  perhaps reducing the time requirements to start a node
+  today by 95% or more (and certainly more as the block chain
+  continues to grow).  The verification of older blocks and
+  transactions could then be done in the background after the user is
+  already using their node, eventually giving them the same security
+  as a user who disabled this feature.  This is an old idea and is part of
+  the motivation for research into other techniques such as [fast
+  updatable UTXO commitments][] and [automatic levelDB backups][].
 
-    Discussion mainly revolved around whether or not this is a good
-    idea.  Arguments in favor of it include it making starting a new
-    node much easier and that it doesn't seem to change the trust model
-    for anyone who already trusts the peer review of their development
-    team.
-    Arguments against
-    it include a fear that fast initial syncs with an assumed valid UTXO
-    set would disguise the fact that block size increases make complete
-    initial syncing from scratch much more expensive; if block sizes
-    increased too much, it could become impossible for anyone of modest
-    means to ever trustlessly verify Bitcoin's UTXO state, forcing new
-    users to trust existing users.
+  Discussion mainly revolved around whether or not this is a good
+  idea.  Arguments in favor of it include it making starting a new
+  node much easier and that it doesn't seem to change the trust model
+  for anyone who already trusts the peer review of their development
+  team.
+  Arguments against
+  it include a fear that fast initial syncs with an assumed valid UTXO
+  set would disguise the fact that block size increases make complete
+  initial syncing from scratch much more expensive; if block sizes
+  increased too much, it could become impossible for anyone of modest
+  means to ever trustlessly verify Bitcoin's UTXO state, forcing new
+  users to trust existing users.
 
 ## Bech32 sending support
 
@@ -187,3 +187,5 @@ their pending releases.*
 [bitcoin core 0.5.0]: https://bitcoin.org/en/release/v0.5.0
 [sendmany wackiness]: https://github.com/bitcoin/bitcoin/pull/15595#issue-260932169
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #31]: /en/newsletters/2019/01/29/#lnd-2370
+[newsletter #33]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs

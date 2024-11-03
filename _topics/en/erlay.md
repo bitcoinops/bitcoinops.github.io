@@ -3,7 +3,7 @@ title: Erlay
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - P2P Network Protocol
   - Bandwidth Reduction
 
@@ -49,6 +49,9 @@ optech_mentions:
 
   - title: Discussion about inconsistent mempools and how that could affect Erlay
     url: /en/newsletters/2022/11/02/#better-peering-involves-tradeoffs
+
+  - title: "Announcement of new Hyperion network simulator intended for eventual testing of Erlay"
+    url: /en/newsletters/2024/08/02/#hyperion-network-event-simulator-for-the-bitcoin-p2p-network
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

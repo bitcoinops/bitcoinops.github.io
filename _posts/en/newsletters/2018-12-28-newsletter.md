@@ -125,6 +125,7 @@ generic format capable of creating a signature proof for any spendable
 Bitcoin script.
 
 <div markdown="1" class="callout">
+
 ### 2018 summary<br>Major releases of popular infrastructure projects
 
 - [Bitcoin Core 0.16][] released in February included default support in the
@@ -150,6 +151,7 @@ Bitcoin script.
   communication between Bitcoin programs.
 
 </div>
+
 ## April
 
 LN protocol developers Christian Decker, Rusty Russell, and Olaoluwa
@@ -188,6 +190,7 @@ soft fork proposal.
 ## May
 
 <div id="dandelion" markdown="1">
+
 A [draft BIP][BIP156] for the Dandelion protocol was published to
 the Bitcoin-Dev mailing list in May.  Dandelion can privately relay
 transactions so that the IP address of the spender can't be reliably
@@ -203,9 +206,11 @@ they've never seen a transaction they previously helped relay.  This
 makes the nodes vulnerable to denial of service attacks that can waste
 the node's bandwidth and memory---problems which developers are still
 [working on addressing][daftuar dandelion] before adopting this protocol.
+
 </div>
 
 <div markdown="1" class="callout">
+
 ### 2018 summary<br>Notable technical conferences and other events
 
 - [BPASE][bpase], January, Stanford University
@@ -296,6 +301,7 @@ private atomic swaps on the same chain (providing for improved
 coinjoin), and other advances that improve efficiency, privacy, or both.
 
 <div id="p2ep" markdown="1">
+
 Meanwhile, participants in a privacy roundtable described a method
 called Pay-to-EndPoint ([P2EP][]) that can significantly improve wallet
 resistance to block chain analysis by applying a limited form of
@@ -348,6 +354,7 @@ originally documented proposal, it's been updated as research into
 developing the protocol has proceeded.
 
 <div markdown="1" class="callout">
+
 ### 2018 summary<br>Bitcoin Optech
 
 After starting [Optech][] in May, we've signed up 15 companies as
@@ -398,6 +405,7 @@ channel or onchain using a splice out (withdrawal) from that payment
 channel.
 
 <div markdown="1" class="callout">
+
 ### 2018 summary<br>New open source infrastructure solutions
 
 - [Electrs][] released in July provides an efficient reimplementation of
@@ -469,6 +477,7 @@ Protocol developer Anthony Towns concisely [summarized][schnorr and
 more] what might be contained in a proposal if it were released today.
 
 <div markdown="1" class="callout">
+
 ### 2018 summary<br>Use of fee-reduction techniques
 
 ![Plot of compressed pubkey, segwit, payment batching, and opt-in RBF use in 2018](/img/posts/2018-12-overall.png)
@@ -651,7 +660,7 @@ newsletters] or follow our [RSS feed][].*
 [optech annual report]: /en/2018-optech-annual-report/
 [optech dashboard]: https://dashboard.bitcoinops.org/
 [optech newsletters]: /en/newsletters/
-[optech workshops]: /workshops/
+[optech workshops]: /en/workshops/
 [p2ep]: https://blockstream.com/2018/08/08/improving-privacy-using-pay-to-endpoint/
 [satoshis.place]: https://satoshis.place/
 [scaling bitcoin conference]: https://tokyo2018.scalingbitcoin.org/
@@ -675,3 +684,5 @@ newsletters] or follow our [RSS feed][].*
 [techniques for reducing transaction fees]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees
 [payment batching]: https://bitcointechtalk.com/saving-up-to-80-on-bitcoin-transaction-fees-by-batching-payments-4147ab7009fb
 [towns consolidation]: /en/xapo-utxo-consolidation/
+[cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
+[cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144

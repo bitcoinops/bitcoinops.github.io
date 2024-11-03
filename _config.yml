@@ -64,9 +64,18 @@ defaults:
       layout: topic
       permalink: /en/topics/:title/
       localizable: false
+  - scope:
+      path: "_compat"
+    values:
+      layout: page
+      title: ""
+      permalink: /en/compatibility/:title/
+      localizable: false
 
 collections:
   topics:
+    output: true
+  compat:
     output: true
 
 languages:

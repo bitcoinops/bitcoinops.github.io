@@ -31,13 +31,13 @@ notables apportés aux principaux projets d'infrastructures Bitcoin.
   comment d'autres propositions plus souples ont étés soumises au language de programmation
   de contrat de Bitcoin pouvant aussi autoriser une implémentation des drivechains.
 
-    Dans ces commentaires durant la semaine, Rubin a décrit une autre manière dont les drivechains
-    pourraient être implémentées en utilisant une proposition supplémentaire au language de
-    programmation de contrat de Bitcoin, dans ce cas en utilisant `SIGHASH_ANYPREVOUT` (APO)
-    comme dans le [BIP118][].  La description des drivechains basée sur APO ont plusieurs
-    inconvénients par rapport au BIP300 mais offre peut-être des avantages similaires
-    et un comportement suffisant pour que APO puisse être considéré pour activer les drivechains,
-    pendant que certains le considèrent comme un bénéfice, d'autres au contraire y voient un problème.
+  Dans ces commentaires durant la semaine, Rubin a décrit une autre manière dont les drivechains
+  pourraient être implémentées en utilisant une proposition supplémentaire au language de
+  programmation de contrat de Bitcoin, dans ce cas en utilisant `SIGHASH_ANYPREVOUT` (APO)
+  comme dans le [BIP118][].  La description des drivechains basée sur APO ont plusieurs
+  inconvénients par rapport au BIP300 mais offre peut-être des avantages similaires
+  et un comportement suffisant pour que APO puisse être considéré pour activer les drivechains,
+  pendant que certains le considèrent comme un bénéfice, d'autres au contraire y voient un problème.
 
 ## Changements dans les logiciels et services
 

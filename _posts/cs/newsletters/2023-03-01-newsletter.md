@@ -94,11 +94,11 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
   pro zabránění útoků odmítnutí služby způsobeného vyčerpáním zdrojů. Nové
   limity jsou:
 
-    - Maximálně 250 spojení bez kanálu s prostředky.
+  - Maximálně 250 spojení bez kanálu s prostředky.
 
-    - Maximálně 50 spojení pokoušející se otevřít kanál.
+  - Maximálně 50 spojení pokoušející se otevřít kanál.
 
-    - Maximálně 4 kanály bez prostředků na spojení.
+  - Maximálně 4 kanály bez prostředků na spojení.
 
 - [LDK #1977][] zpřístupňuje struktury pro serializaci a parsování
   [nabídek][topic offers] podle definice v [návrhu BOLT12][bolts #798].

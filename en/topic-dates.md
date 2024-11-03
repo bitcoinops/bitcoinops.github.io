@@ -4,6 +4,7 @@ permalink: /en/topic-dates/
 layout: page
 ---
 {% include linkers/topic-pages.md %}
+
 <!-- Build a list of months in reverse chronological order -->
 {% assign this_year = site.time | date: "%Y" | plus: 0 %}<!-- "plus: 0" casts string to int -->
 {% capture months %}
@@ -74,10 +75,12 @@ before the main content -->
 {% endcapture %}
 
 <div class="center" markdown="1">
+
 {{number_of_events}} indexed events in {{number_of_months}} months <!-- {{mentions | size}} events including duplicates -->
 
 [2018](#d2018-12) | [2019](#d2019-12) | [2020](#d2020-12) |
 [2021](#d2021-12)
+
 </div>
 
 <div>{% comment %}<!-- enclosing in a div forces this to be interpreted

@@ -24,32 +24,32 @@ and notable changes to popular Bitcoin infrastructure projects.
   and analyzed potential attacks against a proposed routed coinswap
   protocol.  The proposed attacks were:
 
-    - *Costless old state theft:* after a coinswap, when the initiating
-      party has the ability to spend a different UTXO than they started
-      with, they could try to spend their old UTXO (which is now owned
-      by their counterparty).  If the counterparty, or a
-      [watchtower][topic watchtowers] agent of theirs, is monitoring the
-      block chain, this will fail---but the attempt will cost
-      the attacker nothing.
+  - *Costless old state theft:* after a coinswap, when the initiating
+    party has the ability to spend a different UTXO than they started
+    with, they could try to spend their old UTXO (which is now owned
+    by their counterparty).  If the counterparty, or a
+    [watchtower][topic watchtowers] agent of theirs, is monitoring the
+    block chain, this will fail---but the attempt will cost
+    the attacker nothing.
 
-    - *Costless scorched earth:* if fee bumping is made possible by the
-      participants pre-signing a set of conflicting replacement
-      transactions that signal support for opt-in [Replace By Fee
-      (RBF)][topic rbf], then a counterparty may be able to broadcast
-      the highest-fee replacement after they've finished receiving their
-      new UTXO.  This won't earn them any money, but the high fees will
-      be deducted from the value of the honest party's UTXO and so there's no cost to
-      the attacker.
+  - *Costless scorched earth:* if fee bumping is made possible by the
+    participants pre-signing a set of conflicting replacement
+    transactions that signal support for opt-in [Replace By Fee
+    (RBF)][topic rbf], then a counterparty may be able to broadcast
+    the highest-fee replacement after they've finished receiving their
+    new UTXO.  This won't earn them any money, but the high fees will
+    be deducted from the value of the honest party's UTXO and so there's no cost to
+    the attacker.
 
-    - *Costless pinning theft:* like above, if there are multiple
-      versions of the transaction with different feerates, an attacking
-      counterparty can broadcast a low-feerate version and then use a
-      [transaction pinning][topic transaction pinning] method to make it
-      impractical to fee bump.  If the attack is successful, it would
-      allow the attacker to spend the victim's money; if it was
-      unsuccessful, it might cost the attacker nothing extra if they
-      were already planning to send the transactions they used for
-      pinning (e.g. they were planning to consolidate UTXOs anyway).
+  - *Costless pinning theft:* like above, if there are multiple
+    versions of the transaction with different feerates, an attacking
+    counterparty can broadcast a low-feerate version and then use a
+    [transaction pinning][topic transaction pinning] method to make it
+    impractical to fee bump.  If the attack is successful, it would
+    allow the attacker to spend the victim's money; if it was
+    unsuccessful, it might cost the attacker nothing extra if they
+    were already planning to send the transactions they used for
+    pinning (e.g. they were planning to consolidate UTXOs anyway).
 
   Several potential solutions to these attacks were discussed.  The
   [most promising solution][belcher collateral] was to require anyone
@@ -194,3 +194,4 @@ link to for BitBox seems unfair. -harding -->{% endcomment %}
 [belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news82 lnd acl]: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
 [review club client]: https://bitcoincore.reviews/19339#l-104
+[hwi]: https://github.com/bitcoin-core/HWI

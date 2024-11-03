@@ -6,12 +6,12 @@ title: Simple taproot channels
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -34,6 +34,15 @@ optech_mentions:
 
   - title: "LND #7733 updates its watchtower support for simple taproot channels"
     url: /en/newsletters/2024/01/31/#lnd-7733
+
+  - title: "LND #8499 makes significant changes to the TLV types used for simple taproot channels"
+    url: /en/newsletters/2024/03/13/#lnd-8499
+
+  - title: "Discussion of channel upgrade methods, such as switching to simple taproot channels"
+    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+
+  - title: "Updated channel announcements that include support for simple taproot channels"
+    url: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -24,81 +24,81 @@ notable changes to popular Bitcoin infrastructure software.
   Newsletters [#221][news221 law], [#230][news230 law], and
   [#244][news244 law]).
 
-    He begins by describing a scalability problem with signature-based
-    protocols that require participation from a large number of users,
-    such as [coinjoins][topic coinjoin] or previous factory designs: if
-    1,000 users agree to participate in the protocol but one of them
-    becomes unavailable during signing, the other 999 signatures are
-    useless.  If, during the next attempt, another individual user
-    becomes unavailable, the other 998 signatures collected in the
-    second attempt are useless.  He proposes covenants like
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] and
-    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] as a solution to this
-    problem: they are known to allow a single small transaction to
-    restrict its funds to only being spent in one or more subsequent
-    pre-defined child transactions.  The subsequent transactions can also
-    be limited by a covenant.
+  He begins by describing a scalability problem with signature-based
+  protocols that require participation from a large number of users,
+  such as [coinjoins][topic coinjoin] or previous factory designs: if
+  1,000 users agree to participate in the protocol but one of them
+  becomes unavailable during signing, the other 999 signatures are
+  useless.  If, during the next attempt, another individual user
+  becomes unavailable, the other 998 signatures collected in the
+  second attempt are useless.  He proposes covenants like
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] and
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] as a solution to this
+  problem: they are known to allow a single small transaction to
+  restrict its funds to only being spent in one or more subsequent
+  pre-defined child transactions.  The subsequent transactions can also
+  be limited by a covenant.
 
-    Law uses this mechanism to create a _timeout tree_ where a _funding
-    transaction_ pays to a tree of pre-defined child transactions that are
-    ultimately spent offchain into a large number of separate payment
-    channels.  A mechanism similar to the one used by Ark (see [Newsletter
-    #253][news253 ark]) allows each of the payment channels to
-    optionally be put onchain, but it also allows the factory funder to
-    reclaim any channel funds that have not been put onchain after an
-    expiry.  This can be extremely efficient: an offchain timeout tree
-    funding millions of channels can be created using a single small
-    onchain transaction.  After the expiry, the funds can be reclaimed
-    by the factory funder in another small onchain transaction, with
-    individual users withdrawing their funds over LN to their other
-    channels prior to the factory expiration date.
+  Law uses this mechanism to create a _timeout tree_ where a _funding
+  transaction_ pays to a tree of pre-defined child transactions that are
+  ultimately spent offchain into a large number of separate payment
+  channels.  A mechanism similar to the one used by Ark (see [Newsletter
+  #253][news253 ark]) allows each of the payment channels to
+  optionally be put onchain, but it also allows the factory funder to
+  reclaim any channel funds that have not been put onchain after an
+  expiry.  This can be extremely efficient: an offchain timeout tree
+  funding millions of channels can be created using a single small
+  onchain transaction.  After the expiry, the funds can be reclaimed
+  by the factory funder in another small onchain transaction, with
+  individual users withdrawing their funds over LN to their other
+  channels prior to the factory expiration date.
 
-    The model above is compatible with the currently used LN-Penalty
-    channel construction as well as the proposed [LN-Symmetry][topic
-    eltoo] mechanism. However, the remainder of Law's paper looks at a
-    modification of his proposed Fully Factory Optimized Watchtower Free
-    (FFO-WF) protocol that provides several advantages for the
-    covenant-based factory design.  In addition to the advantages described
-    in previous newsletters, such as only requiring _casual users_ to
-    go online for a few minutes every few months and allowing
-    _dedicated users_ to use their capital across channels more
-    efficiently, a new advantage of the updated construction allows
-    the factory funder to move funds for casual users from one factory
-    (based on a particular onchain transaction) to another factory
-    (anchored in a different onchain transaction) without requiring
-    interaction from the user.  That means casual user Alice who knows
-    she needs to come online before the 6-month expiry of a factory may
-    come online at month 5 to discover that her funds have already been
-    rolled over to a new factory with another several months until
-    expiry.  Alice doesn't need to do anything; she retains complete
-    trustless control of her funds.  This reduces the chance that Alice
-    might come online very close to expiry, discover that the factory
-    funder is temporarily unavailable, and be forced to put her part of
-    the timeout tree onchain---incurring transaction fees and reducing
-    overall network scalability.
+  The model above is compatible with the currently used LN-Penalty
+  channel construction as well as the proposed [LN-Symmetry][topic
+  eltoo] mechanism. However, the remainder of Law's paper looks at a
+  modification of his proposed Fully Factory Optimized Watchtower Free
+  (FFO-WF) protocol that provides several advantages for the
+  covenant-based factory design.  In addition to the advantages described
+  in previous newsletters, such as only requiring _casual users_ to
+  go online for a few minutes every few months and allowing
+  _dedicated users_ to use their capital across channels more
+  efficiently, a new advantage of the updated construction allows
+  the factory funder to move funds for casual users from one factory
+  (based on a particular onchain transaction) to another factory
+  (anchored in a different onchain transaction) without requiring
+  interaction from the user.  That means casual user Alice who knows
+  she needs to come online before the 6-month expiry of a factory may
+  come online at month 5 to discover that her funds have already been
+  rolled over to a new factory with another several months until
+  expiry.  Alice doesn't need to do anything; she retains complete
+  trustless control of her funds.  This reduces the chance that Alice
+  might come online very close to expiry, discover that the factory
+  funder is temporarily unavailable, and be forced to put her part of
+  the timeout tree onchain---incurring transaction fees and reducing
+  overall network scalability.
 
-    Anthony Towns [replied][towns cov] with a concern about what he
-    called the "thundering herd" problem (called "forced expiration
-    spam" in the [original LN paper][ln paper]) where the deliberate or
-    accidental failure of a large dedicated user requires many other
-    users to put many time-sensitive transactions onchain all at the
-    same time.  For example, a factory with a million users may require
-    time-sensitive confirmation of up to a million transactions plus
-    non-sensitive confirmation of up to two million more transactions
-    for those users to put those funds back into new channels.  It
-    currently takes the network about a week to confirm three million
-    transactions, so users of a million-user factory might want a
-    factory to roll over their funds a few weeks before expiration---or
-    perhaps several months early if they're worried about several
-    million-user factories having problems simultaneously.
+  Anthony Towns [replied][towns cov] with a concern about what he
+  called the "thundering herd" problem (called "forced expiration
+  spam" in the [original LN paper][ln paper]) where the deliberate or
+  accidental failure of a large dedicated user requires many other
+  users to put many time-sensitive transactions onchain all at the
+  same time.  For example, a factory with a million users may require
+  time-sensitive confirmation of up to a million transactions plus
+  non-sensitive confirmation of up to two million more transactions
+  for those users to put those funds back into new channels.  It
+  currently takes the network about a week to confirm three million
+  transactions, so users of a million-user factory might want a
+  factory to roll over their funds a few weeks before expiration---or
+  perhaps several months early if they're worried about several
+  million-user factories having problems simultaneously.
 
-    A version of the original LN paper suggested that this problem could be
-    addressed using an [idea][maxwell clock stop] by Gregory Maxwell
-    that would delay expiry when "blocks are full" (e.g., feerates are
-    above the normal amount).  In Law's [reply][law fee stop] to Towns,
-    he noted that he's working on a specific design for a solution of
-    that type which he will publish when he's finished thinking through
-    it. {% assign timestamp="2:07" %}
+  A version of the original LN paper suggested that this problem could be
+  addressed using an [idea][maxwell clock stop] by Gregory Maxwell
+  that would delay expiry when "blocks are full" (e.g., feerates are
+  above the normal amount).  In Law's [reply][law fee stop] to Towns,
+  he noted that he's working on a specific design for a solution of
+  that type which he will publish when he's finished thinking through
+  it. {% assign timestamp="2:07" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -246,14 +246,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   the path couldn't forward the payment, a new path can be probed before
   the actual payment is sent.
 
-   Pre-payment ("preflight") probing can be useful with small amounts of
-   money to find hops that are having issues that might cause delays.
-   If a few hundred sats (or less) get stuck for a few hours, it's not
-   a big deal for most spenders---but if the full amount of a payment
-   representing a significant portion of a node's capital gets stuck, it
-   can be very annoying.  It can also be possible to probe several paths
-   simultaneously and use the results to choose the best path a few
-   moments later when sending a payment. {% assign timestamp="53:01" %}
+  Pre-payment ("preflight") probing can be useful with small amounts of
+  money to find hops that are having issues that might cause delays.
+  If a few hundred sats (or less) get stuck for a few hours, it's not
+  a big deal for most spenders---but if the full amount of a payment
+  representing a significant portion of a node's capital gets stuck, it
+  can be very annoying.  It can also be possible to probe several paths
+  simultaneously and use the results to choose the best path a few
+  moments later when sending a payment. {% assign timestamp="53:01" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28492,119,738,28246,6311,6617,6686,2613,7994,2547,2534" %}

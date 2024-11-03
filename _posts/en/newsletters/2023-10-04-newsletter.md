@@ -48,28 +48,28 @@ infrastructure software.
   waits to receive all parts and then continues forwarding the payment
   like normal to the next hop.
 
-    The main advantage of this approach is that makes it harder to
-    execute _balance discovery attacks_ (BDAs) where a third party
-    repeatedly [probes][topic payment probes] a channel to track its
-    balance.  If done frequently, a BDA can track the amount of a
-    payment passing through a channel.  If done on many channels, it may
-    be able to track that payment as it crosses the network.  When PSS
-    is used, the attacker would need to track not just the balance of
-    the Alice-and-Bob channel, but also the Alice-and-Carol and
-    Carol-and-Bob channels in order to track the payment.  Even if the
-    attacker did track the balance of all of those channels, the
-    computational difficulty of tracking the payment increases, as does
-    the chance that parts of other users' payments that simultaneously
-    pass through those channels could be conflated with parts of the
-    original payment being tracked.  A [paper][pss research] by van Dam
-    showed a 62% reduction in the amount of information an attacker was
-    able to gain when PSS is deployed.
+  The main advantage of this approach is that makes it harder to
+  execute _balance discovery attacks_ (BDAs) where a third party
+  repeatedly [probes][topic payment probes] a channel to track its
+  balance.  If done frequently, a BDA can track the amount of a
+  payment passing through a channel.  If done on many channels, it may
+  be able to track that payment as it crosses the network.  When PSS
+  is used, the attacker would need to track not just the balance of
+  the Alice-and-Bob channel, but also the Alice-and-Carol and
+  Carol-and-Bob channels in order to track the payment.  Even if the
+  attacker did track the balance of all of those channels, the
+  computational difficulty of tracking the payment increases, as does
+  the chance that parts of other users' payments that simultaneously
+  pass through those channels could be conflated with parts of the
+  original payment being tracked.  A [paper][pss research] by van Dam
+  showed a 62% reduction in the amount of information an attacker was
+  able to gain when PSS is deployed.
 
-    Two additional benefits are mentioned in van Dam's paper about PSS:
-    increased LN throughput and as part of a mitigation against
-    [channel jamming attacks][topic channel jamming attacks]. The idea
-    of PSS had received a small amount of discussion on the mailing list
-    as of this writing. {% assign timestamp="12:23" %}
+  Two additional benefits are mentioned in van Dam's paper about PSS:
+  increased LN throughput and as part of a mitigation against
+  [channel jamming attacks][topic channel jamming attacks]. The idea
+  of PSS had received a small amount of discussion on the mailing list
+  as of this writing. {% assign timestamp="12:23" %}
 
 - **Pooled liquidity for LN:** ZmnSCPxj [posted][zmnscpxj sidepools1] to
   the Lightning-Dev mailing list a suggestion for what he calls
@@ -81,52 +81,52 @@ infrastructure software.
   Alice, Bob, and Carol each 1 BTC could be updated to a new state that
   gives Alice 2 BTC, Bob 0 BTC, and Carol 1 BTC.
 
-    The forwarding nodes would also continue to use and advertise
-    ordinary LN channels between pairs of nodes; for example, the three
-    users described previously could have three separate channels: Alice
-    and Bob, Bob and Carol, and Alice and Carol.  They would forward
-    payments across these channels exactly the same as they can today.
+  The forwarding nodes would also continue to use and advertise
+  ordinary LN channels between pairs of nodes; for example, the three
+  users described previously could have three separate channels: Alice
+  and Bob, Bob and Carol, and Alice and Carol.  They would forward
+  payments across these channels exactly the same as they can today.
 
-    If one or more of the ordinary channels became imbalanced---for
-    example too much of the funds in the channel between Alice and Bob
-    now belongs to Alice---the imbalance could be resolved by performing
-    an offchain [peerswap][] in the state contract.  E.g., Carol could
-    provide some funds to Alice in the state contract contingent on
-    Alice forwarding the same amount of funds through Bob to Carol in
-    the ordinary LN channel---restoring balance to the LN channel
-    between Alice and Bob.
+  If one or more of the ordinary channels became imbalanced---for
+  example too much of the funds in the channel between Alice and Bob
+  now belongs to Alice---the imbalance could be resolved by performing
+  an offchain [peerswap][] in the state contract.  E.g., Carol could
+  provide some funds to Alice in the state contract contingent on
+  Alice forwarding the same amount of funds through Bob to Carol in
+  the ordinary LN channel---restoring balance to the LN channel
+  between Alice and Bob.
 
-    One advantage of this approach is that nobody needs to know about the
-    state contract except the participants in each particular contract.
-    To all ordinary LN users, and all forwarding nodes not involved in a
-    particular contract, LN continues to operate using the current
-    protocol.  Another advantage, compared to existing channel
-    rebalancing operations, is that the state contract approach allows a
-    large number of forwarding nodes to maintain a direct peer
-    relationship for a small amount of onchain space, likely eliminating
-    any offchain rebalancing fees between those peers.  Keeping
-    rebalancing fees minimal makes it much easier for forwarding nodes
-    to keep their channels balanced, which improves their revenue
-    potential and makes sending payments across LN more reliable.
+  One advantage of this approach is that nobody needs to know about the
+  state contract except the participants in each particular contract.
+  To all ordinary LN users, and all forwarding nodes not involved in a
+  particular contract, LN continues to operate using the current
+  protocol.  Another advantage, compared to existing channel
+  rebalancing operations, is that the state contract approach allows a
+  large number of forwarding nodes to maintain a direct peer
+  relationship for a small amount of onchain space, likely eliminating
+  any offchain rebalancing fees between those peers.  Keeping
+  rebalancing fees minimal makes it much easier for forwarding nodes
+  to keep their channels balanced, which improves their revenue
+  potential and makes sending payments across LN more reliable.
 
-    A downside to the approach is that it requires a multiparty state
-    contract, which is something that has never been implemented in
-    production before (to the best of our knowledge).  ZmnSCPxj mentions
-    two contract protocols that might be useful to use as a basis,
-    [LN-Symmetry][topic eltoo] and [duplex payment channels][].
-    LN-Symmetry would require a consensus change, which seems unlikely
-    to happen in the near future, so a [follow-up post][zmnscpxj
-    sidepools2] by ZmnSCPxj appears to be focusing on duplex payment
-    channels (which ZmnSCPxj calls "Decker-Wattenhofer" after the
-    researchers who first proposed them).  A downside of duplex payment
-    channels is that they can't be kept open indefinitely, although
-    ZmnSCPxj's analysis indicates they can probably be kept open for
-    long enough, and through enough state changes, to amortize their
-    cost effectively.
+  A downside to the approach is that it requires a multiparty state
+  contract, which is something that has never been implemented in
+  production before (to the best of our knowledge).  ZmnSCPxj mentions
+  two contract protocols that might be useful to use as a basis,
+  [LN-Symmetry][topic eltoo] and [duplex payment channels][].
+  LN-Symmetry would require a consensus change, which seems unlikely
+  to happen in the near future, so a [follow-up post][zmnscpxj
+  sidepools2] by ZmnSCPxj appears to be focusing on duplex payment
+  channels (which ZmnSCPxj calls "Decker--Wattenhofer" after the
+  researchers who first proposed them).  A downside of duplex payment
+  channels is that they can't be kept open indefinitely, although
+  ZmnSCPxj's analysis indicates they can probably be kept open for
+  long enough, and through enough state changes, to amortize their
+  cost effectively.
 
-    There were no public replies to the posts at the time of writing,
-    although we learned from private correspondence with ZmnSCPxj that
-    he is working on further developing the idea. {% assign timestamp="34:31" %}
+  There were no public replies to the posts at the time of writing,
+  although we learned from private correspondence with ZmnSCPxj that
+  he is working on further developing the idea. {% assign timestamp="34:31" %}
 
 ## Releases and release candidates
 

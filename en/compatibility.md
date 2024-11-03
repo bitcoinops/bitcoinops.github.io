@@ -20,21 +20,22 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
   <tr>
     <th></th>
     <th colspan="3">Receiving support</th>
-    <th colspan="3">Sending support</th>
+    <th colspan="6">Sending support</th>
   </tr>
   <tr>
     <th></th>
     <th>P2SH-wrapped</th>
     <th>Bech32</th>
+    <th>Bech32m</th>
     <th>Default address</th>
     <th>P2WPKH</th>
     <th>P2WSH</th>
+    <th>Bech32m</th>
     <th>Bech32 change</th>
   </tr>
 
-{% assign tools = site.data.compatibility | sort %}
-{% for wrapped_tool in tools %}
-  {% assign tool = wrapped_tool[1] %}
+{% assign tools = site.compat | sort %}
+{% for tool in tools %}
     {% if tool.segwit %}
       <tr>
         <td><a href="{{tool.internal_url}}#segwit">{{tool.name}}</a></td>
@@ -67,9 +68,11 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
 
       {% include functions/compat-cell.md state=tool.segwit.features.receive.p2sh_wrapped anchor="#segwit-receive-p2sh_wrapped" %}
       {% include functions/compat-cell.md state=tool.segwit.features.receive.bech32 anchor="#segwit-receive-bech32" %}
+      {% include functions/compat-cell.md state=tool.segwit.features.receive.bech32m anchor="#segwit-receive-bech32m" %}
       <td class="compat {{segwit_receive_default_class}}"><a href="{{tool.internal_url}}#segwit-receive-default">{{segwit_receive_default}}</a></td>
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32 anchor="#segwit-send-bech32" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.bech32_p2wsh anchor="#segwit-send-bech32_p2wsh" %}
+      {% include functions/compat-cell.md state=tool.segwit.features.send.bech32m anchor="#segwit-send-bech32m" %}
       {% include functions/compat-cell.md state=tool.segwit.features.send.change_bech32 anchor="#segwit-send-change_bech32" %}
       </tr>
     {% endif %}
@@ -99,9 +102,8 @@ h1, h2, h3, h4, h5, h6 { text-align: center; }
     <th>Shows original</th>
   </tr>
 
-{% assign tools = site.data.compatibility | sort %}
-{% for wrapped_tool in tools %}
-  {% assign tool = wrapped_tool[1] %}
+{% assign tools = site.compat | sort %}
+{% for tool in tools %}
     {% if tool.rbf %}
       <tr>
         <td><a href="{{tool.internal_url}}#rbf">{{tool.name}}</a></td>

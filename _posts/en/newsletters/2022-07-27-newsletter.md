@@ -28,21 +28,21 @@ to popular Bitcoin infrastructure software.
   has not yet [been merged][bitcoin core #24058] into Bitcoin Core or
   added to any other popular wallet of which we're aware.
 
-    This week, Ali Sherief [proposed][sherief gsm] that the same message
-    signing algorithm used for P2WPKH also be used for other output
-    types.  For verification, programs should infer how to derive the
-    key (if necessary) and verify the signature using the address type.
-    E.g., when provided a [bech32][topic bech32] address with a 20 byte
-    data element, assume it's for a P2WPKH output.
+  This week, Ali Sherief [proposed][sherief gsm] that the same message
+  signing algorithm used for P2WPKH also be used for other output
+  types.  For verification, programs should infer how to derive the
+  key (if necessary) and verify the signature using the address type.
+  E.g., when provided a [bech32][topic bech32] address with a 20 byte
+  data element, assume it's for a P2WPKH output.
 
-    Developer Peter Gray [noted][gray cc] that ColdCard
-    wallets already create signatures in this way and developer Craig
-    Raw [said][raw sparrow] Sparrow Wallet that wallet is able to
-    validate them in addition to also following the [BIP137][]
-    validation rules and a slightly different set of rules implemented
-    in Electrum.
+  Developer Peter Gray [noted][gray cc] that ColdCard
+  wallets already create signatures in this way and developer Craig
+  Raw [said][raw sparrow] Sparrow Wallet that wallet is able to
+  validate them in addition to also following the [BIP137][]
+  validation rules and a slightly different set of rules implemented
+  in Electrum.
 
-    Sherief is planning to write a BIP specifying the behavior. {% assign timestamp="2:05" %}
+  Sherief is planning to write a BIP specifying the behavior. {% assign timestamp="2:05" %}
 
 - **Proof of micro-burn:** several developers [discussed][pomb]
   use cases and designs of onchain transactions that destroy bitcoins
@@ -53,10 +53,10 @@ to popular Bitcoin infrastructure software.
   bitcoins had been burned, providing the type of anti-spam protection
   originally envisioned as a benefit of [hashcash][].
 
-    Several solutions were discussed using merkle trees, although one
-    respondent suggested that the small amounts involved suggest that
-    having participants trust (or partially trust) a centralized third
-    party may be a reasonable way to avoid unnecessary complexity. {% assign timestamp="9:43" %}
+  Several solutions were discussed using merkle trees, although one
+  respondent suggested that the small amounts involved suggest that
+  having participants trust (or partially trust) a centralized third
+  party may be a reasonable way to avoid unnecessary complexity. {% assign timestamp="9:43" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

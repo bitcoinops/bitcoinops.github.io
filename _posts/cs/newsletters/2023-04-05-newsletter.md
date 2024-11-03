@@ -29,14 +29,14 @@ popisem významných změn v populárních bitcoinových páteřních projektech
   by mohla Alice tato data a podpis zveřejnit. Avšak, jak Delgado poznamenává,
   má toto řešení svá úskalí:
 
-    - *Požadavky na úložiště*: tento mechanismus by po Alici vyžadoval
-      ukládání dodatečného podpisu za každý požadavek strážní věži, což
-      by u aktivních LN kanálů bylo celkem často.
+  - *Požadavky na úložiště*: tento mechanismus by po Alici vyžadoval
+    ukládání dodatečného podpisu za každý požadavek strážní věži, což
+    by u aktivních LN kanálů bylo celkem často.
 
-    - *Nemožnost mazání*: tento způsob by zřejmě vyžadoval, aby strážní
-      věže nikdy nemazaly podklady pro detekci narušení. Avšak to může
-      být v rozporu s jejich potřebami, např. pokud jsou jejich služby
-      účtovány za určité období.
+  - *Nemožnost mazání*: tento způsob by zřejmě vyžadoval, aby strážní
+    věže nikdy nemazaly podklady pro detekci narušení. Avšak to může
+    být v rozporu s jejich potřebami, např. pokud jsou jejich služby
+    účtovány za určité období.
 
   Delgado navrhuje použití kryptografických akumulátorů, které by poskytly
   praktické řešení obou problémů. Akumulátory umožňují v kompaktní formě

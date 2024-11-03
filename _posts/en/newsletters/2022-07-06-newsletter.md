@@ -29,9 +29,9 @@ infrastructure software.
   is better off without a perpetual subsidy, while others looked for
   alternatives or apparent equivalencies such as [demurrage][].
 
-    As of this writing, the thread appears to consist of casual
-    conversation rather than advocacy for any particular proposal to
-    change Bitcoin in the near future.
+  As of this writing, the thread appears to consist of casual
+  conversation rather than advocacy for any particular proposal to
+  change Bitcoin in the near future.
 
 - **Updated alternative to BIP47 reusable payment codes:** developer
   Alfred Hodler [posted][hodler new codes] to the Bitcoin-Dev mailing
@@ -43,25 +43,25 @@ infrastructure software.
   to her, avoiding the worst problems of [address reuse][topic output
   linking].
 
-    However, one of the problems with BIP47 is that the first
-    transaction from spender Bob to receiver Alice is a *notification
-    transaction* that uses a special address associated with the payment
-    code.  This definitely leaks to third parties who know Alice's
-    payment code that someone is planning to start paying her.  If Bob's
-    wallet isn't carefully designed to segregate funds used for
-    notification transactions, the transaction may also leak that Bob is
-    planning to pay Alice---reducing or possibly even eliminating the
-    benefits of BIP47.
+  However, one of the problems with BIP47 is that the first
+  transaction from spender Bob to receiver Alice is a *notification
+  transaction* that uses a special address associated with the payment
+  code.  This definitely leaks to third parties who know Alice's
+  payment code that someone is planning to start paying her.  If Bob's
+  wallet isn't carefully designed to segregate funds used for
+  notification transactions, the transaction may also leak that Bob is
+  planning to pay Alice---reducing or possibly even eliminating the
+  benefits of BIP47.
 
-    Hodler's scheme would be less likely to leak this information but it
-    would increase the amount of data a client implementing the protocol
-    would need to learn from the block chain, making it less suitable
-    for light clients.  Ruben Somsen indicated several alternatives
-    that could also be investigated, including Somsen's silent
-    payments idea (see [Newsletter #194][news194 silent payments]),
-    Robin Linus's [2022 stealth addresses][] idea, and [previous
-    discussion][prauge bip47] posted to the mailing list about improving
-    upon BIP47.
+  Hodler's scheme would be less likely to leak this information but it
+  would increase the amount of data a client implementing the protocol
+  would need to learn from the block chain, making it less suitable
+  for light clients.  Ruben Somsen indicated several alternatives
+  that could also be investigated, including Somsen's silent
+  payments idea (see [Newsletter #194][news194 silent payments]),
+  Robin Linus's [2022 stealth addresses][] idea, and [previous
+  discussion][prauge bip47] posted to the mailing list about improving
+  upon BIP47.
 
 - **Announcing splices:** in a [PR][bolts #1004] and a
   [discussion][osuntokun splice] on the Lightning-Dev mailing list,
@@ -70,21 +70,21 @@ infrastructure software.
   splicing] where funds were being added to the channel or removed from
   it.
 
-    One proposal was for nodes to simply not consider a channel closed
-    until some amount of time after its onchain closing transaction was
-    seen.  This would give time for the announcement of the new
-    (post-splice) channel to propagate.  In the interim, nodes would
-    still attempt to route payments through the seemingly-closed
-    channel, as a spliced channel would still be able to forward
-    payments with full LN security even before its new channel open
-    transaction received a suitable number of confirmations.
+  One proposal was for nodes to simply not consider a channel closed
+  until some amount of time after its onchain closing transaction was
+  seen.  This would give time for the announcement of the new
+  (post-splice) channel to propagate.  In the interim, nodes would
+  still attempt to route payments through the seemingly-closed
+  channel, as a spliced channel would still be able to forward
+  payments with full LN security even before its new channel open
+  transaction received a suitable number of confirmations.
 
-    Another proposal was to include a signal onchain as part of the
-    closing transaction that a splice was in progress, telling nodes
-    that they could continue trying to forward payments through it.
+  Another proposal was to include a signal onchain as part of the
+  closing transaction that a splice was in progress, telling nodes
+  that they could continue trying to forward payments through it.
 
-    The discussion had not come to a clear conclusion at the time this
-    summary was being written.
+  The discussion had not come to a clear conclusion at the time this
+  summary was being written.
 
 - **Fundamental fee-collection strategies for LN forwarding nodes:**
   developer ZmnSCPxj [summarized][zmnscpxj forwarding] three strategies
@@ -110,12 +110,12 @@ infrastructure software.
   messages (again probabilistically), giving them a chance to resend the
   message by a different route.
 
-    Olaoluwa Osuntokun [suggested][osuntokun onion pay] reconsideration
-    of his previous proposal for preventing abuse of onion messages by
-    charging for data relay, see [Newsletter #190][news190 onion pay].
-    Replies from other developers as of this writing seemed to indicate
-    they first try the lightweight rate limiting to see if it works
-    before adding the complexity of payments for onion messages.
+  Olaoluwa Osuntokun [suggested][osuntokun onion pay] reconsideration
+  of his previous proposal for preventing abuse of onion messages by
+  charging for data relay, see [Newsletter #190][news190 onion pay].
+  Replies from other developers as of this writing seemed to indicate
+  they first try the lightweight rate limiting to see if it works
+  before adding the complexity of payments for onion messages.
 
 ## Releases and release candidates
 

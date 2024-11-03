@@ -27,19 +27,19 @@ de l'infrastructure Bitcoin.
   peut utiliser sa contribution à la transaction pour créer une transaction conflictuelle
   qui empêche la transaction coinjoin de se confirmer.
 
-    Sanders propose que les transactions de type coinjoin puissent éviter
-    ce problème en demandant à chaque participant de dépenser initialement
-    ses bitcoins dans un script qui ne peut être dépensé que par une signature
-    de tous les participants au coinjoin ou par le seul participant après
-    l'expiration d'un timelock. Par ailleurs, dans le cas d'un coinjoin coordonné,
-    le coordinateur et le participant doivent signer ensemble (ou le participant
-    seul après l'expiration du timelock).
+  Sanders propose que les transactions de type coinjoin puissent éviter
+  ce problème en demandant à chaque participant de dépenser initialement
+  ses bitcoins dans un script qui ne peut être dépensé que par une signature
+  de tous les participants au coinjoin ou par le seul participant après
+  l'expiration d'un timelock. Par ailleurs, dans le cas d'un coinjoin coordonné,
+  le coordinateur et le participant doivent signer ensemble (ou le participant
+  seul après l'expiration du timelock).
 
-    Jusqu'à l'expiration du délai, le participant doit maintenant obtenir
-    des autres parties ou du coordinateur qu'ils cosignent toute transaction
-    conflictuelle, ce qu'ils ne feront probablement pas, à moins que la
-    signature ne soit dans l'intérêt de tous les participants (par exemple,
-    un [fee bump][topic rbf]).
+  Jusqu'à l'expiration du délai, le participant doit maintenant obtenir
+  des autres parties ou du coordinateur qu'ils cosignent toute transaction
+  conflictuelle, ce qu'ils ne feront probablement pas, à moins que la
+  signature ne soit dans l'intérêt de tous les participants (par exemple,
+  un [fee bump][topic rbf]).
 
 - **Spéculer en utilisant les changements de consensus espérés :** Robin Linus
   a [exposé][linus spec] sur la liste de diffusion Bitcoin-Dev une idée pour
@@ -53,24 +53,24 @@ de l'infrastructure Bitcoin.
   fournissant une preuve de zéro connaissance (ZKP) pour un programme avec un
   hachage particulier de réclamer les fonds.
 
-    Cela pourrait permettre aux gens de dépenser aujourd'hui des BTC dans
-    l'un de ces scripts et d'utiliser la preuve de cette dépense pour recevoir
-    un montant équivalent de BTC sur une [sidechain][topic sidechains] ou une
-    chaîne alternative, appelée _one-way peg_. Les BTC sur l'autre chaîne peuvent
-    être dépensés de manière répétée pendant 20 ans, jusqu'à ce que le timelock
-    du script expire. Ensuite, le propriétaire actuel des BTC sur l'autre chaîne
-    pourrait générer une preuve ZKP qu'il les possède et utiliser cette preuve
-    pour retirer le dépôt bloqué sur le réseau principal de Bitcoin, créant ainsi
-    un _two-way peg_. Avec une bonne conception du programme de vérification, le
-    retrait serait simple et flexible, ce qui permettrait des retraits fongibles.
+  Cela pourrait permettre aux gens de dépenser aujourd'hui des BTC dans
+  l'un de ces scripts et d'utiliser la preuve de cette dépense pour recevoir
+  un montant équivalent de BTC sur une [sidechain][topic sidechains] ou une
+  chaîne alternative, appelée _one-way peg_. Les BTC sur l'autre chaîne peuvent
+  être dépensés de manière répétée pendant 20 ans, jusqu'à ce que le timelock
+  du script expire. Ensuite, le propriétaire actuel des BTC sur l'autre chaîne
+  pourrait générer une preuve ZKP qu'il les possède et utiliser cette preuve
+  pour retirer le dépôt bloqué sur le réseau principal de Bitcoin, créant ainsi
+  un _two-way peg_. Avec une bonne conception du programme de vérification, le
+  retrait serait simple et flexible, ce qui permettrait des retraits fongibles.
 
-    Les auteurs notent que toute personne qui bénéficierait de cette construction
-    (par exemple, qui reçoit des BTC sur une autre chaîne) fait en fait le pari que
-    les règles de consensus de Bitcoin seront modifiées (par exemple, `OP_ZKP_VERIFY`
-    sera ajouté). Cela les incite à plaider en faveur du changement, mais en incitant
-    fortement certains utilisateurs à changer le système, d'autres utilisateurs pourraient
-    avoir l'impression d'être contraints. L'idée n'a fait l'objet d'aucune discussion
-    sur la liste de diffusion au moment de la rédaction de ce document.
+  Les auteurs notent que toute personne qui bénéficierait de cette construction
+  (par exemple, qui reçoit des BTC sur une autre chaîne) fait en fait le pari que
+  les règles de consensus de Bitcoin seront modifiées (par exemple, `OP_ZKP_VERIFY`
+  sera ajouté). Cela les incite à plaider en faveur du changement, mais en incitant
+  fortement certains utilisateurs à changer le système, d'autres utilisateurs pourraient
+  avoir l'impression d'être contraints. L'idée n'a fait l'objet d'aucune discussion
+  sur la liste de diffusion au moment de la rédaction de ce document.
 
 ## En attente de confirmation #7 : Ressources du réseau
 

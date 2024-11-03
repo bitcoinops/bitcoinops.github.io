@@ -24,26 +24,26 @@ projects.
   branched off into a discussion about whether an [OP_CAT][] opcode
   should be introduced at the same time.
 
-    `OP_CAT` and `OP_CSFS` would enable arbitrary transaction
-    introspection---the ability to receive bitcoins to a script that
-    could check almost any part of the transaction that later spends
-    those bitcoins.  This can enable many advanced features (including
-    versions[^expensive] of other proposed upgrades like
-    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]), but
-    `OP_CAT` also makes it possible to create recursive
-    [covenants][topic covenants] which could permanently restrict the
-    spendability of any bitcoins committed to the covenant.  Some people
-    have [objected][rubin cost/benefit] to allowing covenants in Bitcoin, but several
-    [arguments][harding altcoins] were [made][towns multisig] to the
-    effect that the worst case problems of recursive covenants already
-    exist in Bitcoin today so we shouldn't be concerned about enabling
-    `OP_CAT` or a similar opcode.
+  `OP_CAT` and `OP_CSFS` would enable arbitrary transaction
+  introspection---the ability to receive bitcoins to a script that
+  could check almost any part of the transaction that later spends
+  those bitcoins.  This can enable many advanced features (including
+  versions[^expensive] of other proposed upgrades like
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify]), but
+  `OP_CAT` also makes it possible to create recursive
+  [covenants][topic covenants] which could permanently restrict the
+  spendability of any bitcoins committed to the covenant.  Some people
+  have [objected][rubin cost/benefit] to allowing covenants in Bitcoin, but several
+  [arguments][harding altcoins] were [made][towns multisig] to the
+  effect that the worst case problems of recursive covenants already
+  exist in Bitcoin today so we shouldn't be concerned about enabling
+  `OP_CAT` or a similar opcode.
 
-    Despite the discussion, Rubin decided he wanted to keep his
-    `OP_CSFS` proposal independent of any proposal to add `OP_CAT`,
-    [arguing][rubin just csfs] that `OP_CSFS` is useful enough on its
-    own.
+  Despite the discussion, Rubin decided he wanted to keep his
+  `OP_CSFS` proposal independent of any proposal to add `OP_CAT`,
+  [arguing][rubin just csfs] that `OP_CSFS` is useful enough on its
+  own.
 
 - **Tracking bech32m support:** the Bitcoin Wiki page for [bech32
   adoption][wiki bech32 adoption] has been [updated][erhardt bech32m

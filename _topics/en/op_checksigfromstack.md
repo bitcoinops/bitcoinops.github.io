@@ -2,12 +2,12 @@
 title: OP_CHECKSIGFROMSTACK
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
 
@@ -56,6 +56,9 @@ optech_mentions:
   - title: "Mashup of OP_CTV and OP_CSFS proposed, along with new OP_INTERNALKEY"
     url: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
 
+  - title: "Lamport signatures providing OP_CSFS alternative without consensus changes"
+    url: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants in Elements Alpha
@@ -80,9 +83,9 @@ features for Bitcoin users:
   offer to pay Alice for the signature he needs.  <!-- No source for
   this claim, but it seems obvious to me. -->
 
-    More recently, protocols involving paying for signatures typically
-    [assume the use of adaptor signatures][kohen selling sigs] that
-    are more private and which use less block space.
+  More recently, protocols involving paying for signatures typically
+  [assume the use of adaptor signatures][kohen selling sigs] that
+  are more private and which use less block space.
 
 - **Delegation:** Alice might want to delegate the authority to spend
   her coins to Bob without explicitly creating an onchain transaction
@@ -96,9 +99,9 @@ features for Bitcoin users:
   https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-noinput-etc/
   -->
 
-    An alternative approach that's more private, more flexible, and
-    more block-space efficient is [graftroot][], although this
-    requires a soft fork that has so far only been lightly discussed.
+  An alternative approach that's more private, more flexible, and
+  more block-space efficient is [graftroot][], although this
+  requires a soft fork that has so far only been lightly discussed.
 
 - **Oracles:** an oracle may agree to sign a message indicating the
   outcome of an event, e.g. the name of the national team that wins a
@@ -110,9 +113,9 @@ features for Bitcoin users:
   https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-06-noinput-etc/
   -->
 
-    More recent focus on oracle-moderated contracts involves using
-    [Discreet Log Contracts][dlcs] (DLCs), which can be more private
-    and more block-space efficient.
+  More recent focus on oracle-moderated contracts involves using
+  [Discreet Log Contracts][dlcs] (DLCs), which can be more private
+  and more block-space efficient.
 
 - **Double-spent protection bonds:** a service may promise to never
   try to double spend its UTXOs in order to encourage its payees to
@@ -125,10 +128,10 @@ features for Bitcoin users:
   https://web.archive.org/web/20160828061959/http://elementsproject.org/elements/opcodes
   -->
 
-    This use of `OP_CSFS` can be compared to [single-show
-    signatures][] that allow anyone who sees two signatures from the
-    same key to derive the private key used to create them, allowing
-    them to spend any other funds secured by that key.
+  This use of `OP_CSFS` can be compared to [single-show
+  signatures][] that allow anyone who sees two signatures from the
+  same key to derive the private key used to create them, allowing
+  them to spend any other funds secured by that key.
 
 - **Transaction introspection:** If the same pubkey and signature pair
   are valid both with `OP_CSFS` and `OP_CHECKSIG`, then the contents
@@ -139,33 +142,33 @@ features for Bitcoin users:
   other opcodes can run tests on it in order to enforce restrictions
   on the spending transaction.
 
-    For example, if `OP_CSFS` had been available in 2015 and 2016, it
-    would've been possible to implement the features of [BIP65][]
-    `OP_CHECKLOCKTIMEVERIFY` (CLTV) and [BIP112][]
-    `OP_CHECKSEQUENCEVERIFY` (CSV) using without any consensus changes
-    just by writing a verification script.
+  For example, if `OP_CSFS` had been available in 2015 and 2016, it
+  would've been possible to implement the features of [BIP65][]
+  `OP_CHECKLOCKTIMEVERIFY` (CLTV) and [BIP112][]
+  `OP_CHECKSEQUENCEVERIFY` (CSV) using without any consensus changes
+  just by writing a verification script.
 
-    Looking forward, `OP_CSFS` could also allow scripts to [implement
-    the features][oconnor generic] of the proposed [SIGHASH_ANYPREVOUT][topic
-    sighash_anyprevout] signature hash, as
-    well as other opcode proposals such as
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
-    Additionally, `OP_CSFS` would allow the creation of
-    [covenants][topic covenants] that restrict the way in which a set
-    of bitcoins may be spent---for example, a [vault][topic vaults] may
-    restrict its spending transaction to a small set of acceptable
-    scriptPubKeys to limit the risk of theft.
+  Looking forward, `OP_CSFS` could also allow scripts to [implement
+  the features][oconnor generic] of the proposed [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout] signature hash, as
+  well as other opcode proposals such as
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify].
+  Additionally, `OP_CSFS` would allow the creation of
+  [covenants][topic covenants] that restrict the way in which a set
+  of bitcoins may be spent---for example, a [vault][topic vaults] may
+  restrict its spending transaction to a small set of acceptable
+  scriptPubKeys to limit the risk of theft.
 
-    The strength of `OP_CSFS` is that it provides full introspection
-    of the signing transaction in a completely generic way.  Its
-    weakness is that it requires essentially adding a complete copy of
-    the signing transaction to the stack, which may significantly
-    increase the size of transactions that want to use `OP_CSFS` for
-    introspection.  By comparison, single-purpose introspection
-    opcodes such as CLTV and CSV use minimal overhead, but adding each
-    new special introspection opcode requires a consensus change and
-    it may not be possible to disable their use (even if they become
-    unpopular) without risking someone losing money.
+  The strength of `OP_CSFS` is that it provides full introspection
+  of the signing transaction in a completely generic way.  Its
+  weakness is that it requires essentially adding a complete copy of
+  the signing transaction to the stack, which may significantly
+  increase the size of transactions that want to use `OP_CSFS` for
+  introspection.  By comparison, single-purpose introspection
+  opcodes such as CLTV and CSV use minimal overhead, but adding each
+  new special introspection opcode requires a consensus change and
+  it may not be possible to disable their use (even if they become
+  unpopular) without risking someone losing money.
 
 ### Relationship to OP_CAT
 

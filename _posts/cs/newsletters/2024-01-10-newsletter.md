@@ -168,33 +168,33 @@ bitcoinovém páteřním software.
   změnou protokolu jako [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]. Sanders
   nabízí několik postřehů:
 
-    - *Jednoduchost:* LN-Symmetry je mnohem jednodušším protokolem než současný
-      protokol LN-Penalty/[LN-Anchors][topic anchor outputs].
+  - *Jednoduchost:* LN-Symmetry je mnohem jednodušším protokolem než současný
+    protokol LN-Penalty/[LN-Anchors][topic anchor outputs].
 
-    - *Pinning:* „[Pinningu][topic transaction pinning] je hrozně těžké se
-      vyhnout.“ Sandersova práce v této oblasti mu dala vhled a inspiraci,
-      která vedla v jeho příspěvky do [přeposílání balíčků][topic package relay]
-      a jeho široce uznávaný návrh na [dočasné anchory][topic ephemeral anchors].
+  - *Pinning:* „[Pinningu][topic transaction pinning] je hrozně těžké se
+    vyhnout.“ Sandersova práce v této oblasti mu dala vhled a inspiraci,
+    která vedla v jeho příspěvky do [přeposílání balíčků][topic package relay]
+    a jeho široce uznávaný návrh na [dočasné anchory][topic ephemeral anchors].
 
-    - *CTV:* „[CTV][topic op_checktemplateverify] (emulované)
-      […] umožňuje ‚rychlá přeposílání’, která jsou jednoduchá a pravděpodobně by
-      v případě širokého používání redukovala časy plateb.”
+  - *CTV:* „[CTV][topic op_checktemplateverify] (emulované)
+    […] umožňuje ‚rychlá přeposílání’, která jsou jednoduchá a pravděpodobně by
+    v případě širokého používání redukovala časy plateb.”
 
-    - *Tresty:* Tresty se skutečně zdají nepotřebné, jak vývojáři doufali. Avšak
-      někteří lidé mysleli, že by tresty i nadále byly nutné pro odrazování
-      zlomyslných protistran od pokusů o krádež. Podpora pro tresty by výrazně
-      zvýšila složitost protokolu a vyžadovala by rezervování části prostředků
-      na placení pokut. Bylo by tedy lepší se podpory trestů vyvarovat, pokud by
-      nebyly nezbytně nutné pro bezpečnost.
+  - *Tresty:* Tresty se skutečně zdají nepotřebné, jak vývojáři doufali. Avšak
+    někteří lidé mysleli, že by tresty i nadále byly nutné pro odrazování
+    zlomyslných protistran od pokusů o krádež. Podpora pro tresty by výrazně
+    zvýšila složitost protokolu a vyžadovala by rezervování části prostředků
+    na placení pokut. Bylo by tedy lepší se podpory trestů vyvarovat, pokud by
+    nebyly nezbytně nutné pro bezpečnost.
 
-    - *Expiry delta:* LN-Symmetry vyžaduje delší HTLC expiry delta, než bylo
-      očekáváno. Když Alice přepošle HTLC Bobovi, dá mu určitý počet bloků
-      na nárokování svých prostředků pomocí předobrazu. Po vypršení doby
-      si může prostředky vzít zpět. Pokud Bob HTLC dále přepošle Carol,
-      dá on jí nižší počet bloků na odhalení předobrazu. Rozdíl mezi těmito
-      dvěma hodnotami je _HTLC expiry delta_. Sanders zjistil, že tyto rozdíly
-      musí být dostatečně dlouhé, aby zabránily protistraně v obohacení,
-      pokud by protokol v půlce přerušila.
+  - *Expiry delta:* LN-Symmetry vyžaduje delší CLTV expiry delta, než bylo
+    očekáváno. Když Alice přepošle HTLC Bobovi, dá mu určitý počet bloků
+    na nárokování svých prostředků pomocí předobrazu. Po vypršení doby
+    si může prostředky vzít zpět. Pokud Bob HTLC dále přepošle Carol,
+    dá on jí nižší počet bloků na odhalení předobrazu. Rozdíl mezi těmito
+    dvěma hodnotami je _CLTV expiry delta_. Sanders zjistil, že tyto rozdíly
+    musí být dostatečně dlouhé, aby zabránily protistraně v obohacení,
+    pokud by protokol v půlce přerušila.
 
   Sanders v současnosti pracuje na vylepšení mempoolu Bitcoin Core a pravidel
   přeposílání, která v budoucnosti usnadní nasazení LN-Symmetry i jiných protokolů.

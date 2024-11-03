@@ -32,25 +32,25 @@ of notable changes to popular Bitcoin infrastructure software.
   flexible enough for multi-input transactions because they only commit
   to a single input or output.
 
-    Ephemeral anchors, similar to [fee sponsorship][topic fee
-    sponsorship], lets anyone [CPFP][topic cpfp] fee bump a transaction.
-    The transaction being fee-bumped is allowed to contain zero fees.
-    Because anyone can fee bump a transaction using ephemeral anchors,
-    this mechanism can also be used to pay fees for the multi-input
-    presigned transactions which are a target for `SIGHASH_GROUP`.
+  Ephemeral anchors, similar to [fee sponsorship][topic fee
+  sponsorship], lets anyone [CPFP][topic cpfp] fee bump a transaction.
+  The transaction being fee-bumped is allowed to contain zero fees.
+  Because anyone can fee bump a transaction using ephemeral anchors,
+  this mechanism can also be used to pay fees for the multi-input
+  presigned transactions which are a target for `SIGHASH_GROUP`.
 
-    `SIGHASH_GROUP` would still have two advantages: first, it
-    could allow [batching][topic payment batching] multiple unrelated
-    presigned transactions, which could reduce transaction size
-    overhead, reducing user costs and increasing network
-    capacity.  Second, it doesn't require a child transaction,
-    which would further reduce costs and increase capacity.
+  `SIGHASH_GROUP` would still have two advantages: first, it
+  could allow [batching][topic payment batching] multiple unrelated
+  presigned transactions, which could reduce transaction size
+  overhead, reducing user costs and increasing network
+  capacity.  Second, it doesn't require a child transaction,
+  which would further reduce costs and increase capacity.
 
-    Towns concludes by noting that ephemeral anchors, with its
-    dependency on [v3 transaction relay][topic v3 transaction relay],
-    captures most of the benefits of `SIGHASH_GROUP` and provides the
-    significant advantage of being much easier to get into
-    production than the `SIGHASH_GROUP` soft fork consensus change. {% assign timestamp="0:58" %}
+  Towns concludes by noting that ephemeral anchors, with its
+  dependency on [v3 transaction relay][topic v3 transaction relay],
+  captures most of the benefits of `SIGHASH_GROUP` and provides the
+  significant advantage of being much easier to get into
+  production than the `SIGHASH_GROUP` soft fork consensus change. {% assign timestamp="0:58" %}
 
 - **Request for proof that an async payment was accepted:** Valentine
   Wallace [posted][wallace pop] to the Lightning-Dev mailing list a
@@ -62,12 +62,12 @@ of notable changes to popular Bitcoin infrastructure software.
   anyone who discloses the original secret.  That disclosed secret
   proves the spender paid the digest contained in the signed invoice.
 
-    By contrast, async payments are accepted when the receiver is
-    offline, so they can't reveal a secret, preventing the creation of a
-    proof of payment in the current LN model.  Wallace asks researchers
-    to consider investigating how proof of payment for async payments
-    could be obtained, either in LN's current HTLC-based system or a
-    future upgrade to [PTLCs][topic ptlc]. {% assign timestamp="12:04" %}
+  By contrast, async payments are accepted when the receiver is
+  offline, so they can't reveal a secret, preventing the creation of a
+  proof of payment in the current LN model.  Wallace asks researchers
+  to consider investigating how proof of payment for async payments
+  could be obtained, either in LN's current HTLC-based system or a
+  future upgrade to [PTLCs][topic ptlc]. {% assign timestamp="12:04" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

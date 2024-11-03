@@ -1,4 +1,5 @@
 {% capture /dev/null %}
+
 <!--
 recap-ad.md: creates an advertisement for the next recap
 -->
@@ -23,14 +24,17 @@ recap-ad.md: creates an advertisement for the next recap
 {% assign recap_formatted_time_utc = include.when | date: "%H:%M" %}
 {% endcapture %}{% capture recap_ad_text %}
 <div markdown="1" class="callout">
+
 {% case page.lang %}
 {% when "cs" %}
+
+{% assign recap_formatted_date_utc = include.when | date: "%-d. %-m." %}
 
 ## Chcete víc?
 
 Další diskuze o tématech zmíněných v tomto zpravodaji proběhnou v týdenním
-Bitcoin Optech Recap na [Twitter Spaces][@bitcoinoptech] ve čtvrtek (den po
-vydání zpravodaje) v {{recap_formatted_time_utc}} UTC. Diskuze jsou nahrávány a zpřístupněny
+Bitcoin Optech Recap na [Twitter Spaces][@bitcoinoptech] dne {{recap_formatted_date_utc}}
+v {{recap_formatted_time_utc}} UTC. Diskuze jsou nahrávány a zpřístupněny
 na stránce našeho [podcastu][podcast].
 {% when "fr" %}
 

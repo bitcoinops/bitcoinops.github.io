@@ -29,46 +29,46 @@ popisem významných změn populárních páteřních bitcoinových projektů.
   Law poznamenává, že existující protokol LN kanálů (obecně zvaný
   LN–penalty) přináší kanálům otevřeným v rámci továrny dva problémy:
 
-    - *Požadavek na dlouhé expirace HTLC:* možnost provést akci bez nutnosti
-      důvěry vyžaduje, aby byl kterýkoliv účastník továrny schopen odstoupit
-      a obdržet zpět své prostředky. Aby toho dosáhli, musí účastníci
-      publikovat aktuální bilanci na blockchainu. Je však potřeba zajistit,
-      aby nikdo nepublikoval dřívější stav, např. takový, za kterého
-      měli na své straně více peněz. Původní návrh na továrny k tomu
-	  využívá transakce s časovým zámkem, které zajistí, že novější stav
-	  je potvrzen rychleji než starší.
+  - *Požadavek na dlouhé expirace HTLC:* možnost provést akci bez nutnosti
+    důvěry vyžaduje, aby byl kterýkoliv účastník továrny schopen odstoupit
+    a obdržet zpět své prostředky. Aby toho dosáhli, musí účastníci
+    publikovat aktuální bilanci na blockchainu. Je však potřeba zajistit,
+    aby nikdo nepublikoval dřívější stav, např. takový, za kterého
+    měli na své straně více peněz. Původní návrh na továrny k tomu
+        využívá transakce s časovým zámkem, které zajistí, že novější stav
+        je potvrzen rychleji než starší.
 
-      Důsledkem tohoto mechanismu, jak popisuje Law, je, že jakákoliv
-	  LN platba (tj. [HTLC][topic htlc]), která je směrována kanálem
-	  z továrny, musí poskytnout dostatečně dlouhý čas na expiraci časového
-	  zámku posledního stavu, aby mohla být továrna jednostranně zavřena.
-	  Ještě horší je, že toto platí pro každou továrnu, přes kterou
-	  je platba směrována. Například je-li platba směrována přes deset
-	  továren, kde má každá z nich jednodenní expiraci, může se stát, že bude
-	  tato platba [pozdržena][topic channel jamming attacks], úmyslně
-	  či ne, na deset dní (nebo déle v závislosti na nastavení HTLC).
+    Důsledkem tohoto mechanismu, jak popisuje Law, je, že jakákoliv
+        LN platba (tj. [HTLC][topic htlc]), která je směrována kanálem
+        z továrny, musí poskytnout dostatečně dlouhý čas na expiraci časového
+        zámku posledního stavu, aby mohla být továrna jednostranně zavřena.
+        Ještě horší je, že toto platí pro každou továrnu, přes kterou
+        je platba směrována. Například je-li platba směrována přes deset
+        továren, kde má každá z nich jednodenní expiraci, může se stát, že bude
+        tato platba [pozdržena][topic channel jamming attacks], úmyslně
+        či ne, na deset dní (nebo déle v závislosti na nastavení HTLC).
 
-    - *Všichni, nebo nic:* aby mohly továrny dosáhnout maximální
-	  efektivnosti, musí všechny její kanály být též uzavřeny v jediné
-	  transakci. Spolupráce na uzavření není možná, je-li některý
-	  z původních účastníků nedostupný; se zvyšujícím se počtem
-	  účastníků se šance na jednoho nedostupného blíží 100 % a možnost
-	  efektivních továren tak klesá.
+  - *Všichni, nebo nic:* aby mohly továrny dosáhnout maximální
+    efektivnosti, musí všechny její kanály být též uzavřeny v jediné
+    transakci. Spolupráce na uzavření není možná, je-li některý
+    z původních účastníků nedostupný; se zvyšujícím se počtem
+    účastníků se šance na jednoho nedostupného blíží 100 % a možnost
+    efektivních továren tak klesá.
 
-	  Law se odkazuje na předchozí práci – např. návhy
-	  `OP_TAPLEAF_UPDATE_VERIFY` a `OP_EVICT` (viz zpravodaj
-	  [č. 166][news166 tluv] a [č. 189][news189 evict], *angl.*), ve které
-	  mohla továrna zůstat funkční, i když ji jeden z účastníků chtěl opustit
-	  nebo zůstal nedostupný.
+    Law se odkazuje na předchozí práci – např. návhy
+    `OP_TAPLEAF_UPDATE_VERIFY` a `OP_EVICT` (viz zpravodaj
+    [č. 166][news166 tluv] a [č. 189][news189 evict], *angl.*), ve které
+    mohla továrna zůstat funkční, i když ji jeden z účastníků chtěl opustit
+    nebo zůstal nedostupný.
 
-    Law představuje tři návrhy protokolu, které tyto problémy řeší. Všechny
-	jsou založené na jeho předchozím návrhu na *nastavitelné pokuty*,
-	o kterém [informoval][law tp] v říjnu. Ten nabízí možnost oddělit
-	mechanismus vynucování (pokuty) od správy ostatních prostředků. Tento
-	předchozí návrh ještě neobdržel  komentáře. V době psaní tohoto článku
-	nebyla otevřena diskuze ani pod jeho novým návrhem. Budou-li návrhy
-	přesvědčivé, měly by na rozdíl od jiných výhodu v možnosti použít
-	stávající pravidla bitcoinového konsenzu.
+  Law představuje tři návrhy protokolu, které tyto problémy řeší. Všechny
+      jsou založené na jeho předchozím návrhu na *nastavitelné pokuty*,
+      o kterém [informoval][law tp] v říjnu. Ten nabízí možnost oddělit
+      mechanismus vynucování (pokuty) od správy ostatních prostředků. Tento
+      předchozí návrh ještě neobdržel  komentáře. V době psaní tohoto článku
+      nebyla otevřena diskuze ani pod jeho novým návrhem. Budou-li návrhy
+      přesvědčivé, měly by na rozdíl od jiných výhodu v možnosti použít
+      stávající pravidla bitcoinového konsenzu.
 
 - **Lokální zahlcení k zamezení vzdáleného zahlcení:** Joost Jager
   [zaslal][jager jam] do emailové skupiny Lightning-Dev odkaz a vysvětlení
@@ -96,45 +96,45 @@ popisem významných změn populárních páteřních bitcoinových projektů.
   neexpirovaný HTLC ve frontě. Jager popisuje dvě výhody tohoto
   přístupu:
 
-    - *Backpressure:* odmítne-li uzel uprostřed okruhu HTLC, všechny uzly
-	  v okruhu (ne jen ty následující) mohou použít tento HTLC slot a
-	  prostředky na přeposlání další platby. To znamená, že motivace
-	  Alice odmítnout více než 10 HTLC od Malloryho je omezená: může
-	  jednoduše doufat, že jiný uzel dále v okruhu používá CircuitBreaker
-	  či podobný software.
+  - *Backpressure:* odmítne-li uzel uprostřed okruhu HTLC, všechny uzly
+        v okruhu (ne jen ty následující) mohou použít tento HTLC slot a
+        prostředky na přeposlání další platby. To znamená, že motivace
+        Alice odmítnout více než 10 HTLC od Malloryho je omezená: může
+        jednoduše doufat, že jiný uzel dále v okruhu používá CircuitBreaker
+        či podobný software.
 
-      Pokud však následující uzel (řekněme Bob) používá CircuiBreaker
-	  k uložení přebytečných HTLC do fronty, mohl by Mallory i tak
-	  vyčerpat sloty a prostředky Alice, i když by si Bob a následující
-	  uzly zachovaly stejné výhody jako nyní (s výjimkou možného
-	  navýšení nákladů na uzavření kanálu v určitých případech; pro více
-	  podrobností viz Jagerův email nebo dokumentace CircuitBreakeru).
-	  To vyvíjí drobný tlak na Alici, aby CircuitBreaker nebo podobný
-	  program používala.
+    Pokud však následující uzel (řekněme Bob) používá CircuiBreaker
+        k uložení přebytečných HTLC do fronty, mohl by Mallory i tak
+        vyčerpat sloty a prostředky Alice, i když by si Bob a následující
+        uzly zachovaly stejné výhody jako nyní (s výjimkou možného
+        navýšení nákladů na uzavření kanálu v určitých případech; pro více
+        podrobností viz Jagerův email nebo dokumentace CircuitBreakeru).
+        To vyvíjí drobný tlak na Alici, aby CircuitBreaker nebo podobný
+        program používala.
 
-    - *Původce selhání:* současný LN protokol dává v mnoha případech
-	  odesílateli možnost identifikovat kanál, který odmítl přeposlat
-	  platbu. Některé implementace se snaží takovému kanálu v budoucnu
-	  vyhnout. V případě odmítnutí HTLC od zlomyslníků jako Mallory to
-	  ze zřejmých důvodů nevadí, odmítne-li však uzel s CircuitBreakerem
-	  HTLC od čestných plátců, mohlo by to snížit jejich výdělek nejen z
-	  odmítnuté platby, ale i z plateb následujících.
+  - *Původce selhání:* současný LN protokol dává v mnoha případech
+        odesílateli možnost identifikovat kanál, který odmítl přeposlat
+        platbu. Některé implementace se snaží takovému kanálu v budoucnu
+        vyhnout. V případě odmítnutí HTLC od zlomyslníků jako Mallory to
+        ze zřejmých důvodů nevadí, odmítne-li však uzel s CircuitBreakerem
+        HTLC od čestných plátců, mohlo by to snížit jejich výdělek nejen z
+        odmítnuté platby, ale i z plateb následujících.
 
-      LN protokol však v současnosti nemá široce používaný způsob
-	  určení, který kanál zpozdil HTLC. Zpoždění HTLC tak nese
-	  méně vážné důsledky než prosté odmítnutí. Jager poznamenává, že
-	  tato výhoda může brzy zmizet, neboť mnoho LN implementací pracuje
-	  na podpoře podrobnějších chybových zpráv (viz [zpravodaj č. 224][news224
-	  fat], *angl.*).
+    LN protokol však v současnosti nemá široce používaný způsob
+        určení, který kanál zpozdil HTLC. Zpoždění HTLC tak nese
+        méně vážné důsledky než prosté odmítnutí. Jager poznamenává, že
+        tato výhoda může brzy zmizet, neboť mnoho LN implementací pracuje
+        na podpoře podrobnějších chybových zpráv (viz [zpravodaj č. 224][news224
+        fat], *angl.*).
 
-    Jager nazývá CircuitBreaker „jednoduchý, ale nedokonalý nástroj na
-	ochranu před zahlcením kanálu a spamem.” Práce pokračují na nalezení
-	a nasazení změn na úrovni protokolu, které by lépe zamezovaly těmto
-	útokům, ale CircuitBreaker se vyjímá jako slušné řešení, které je
-	kompatibilní se současným LN protokolem a které může kterýkoliv
-	uživatel LND hned nasadit. CircuitBreaker je licencovaný pod MIT
-	a je konceptuálně jednoduchý, mělo by tedy být možné jej přizpůsobit
-	či portovat i na jiné LN implementace.
+  Jager nazývá CircuitBreaker „jednoduchý, ale nedokonalý nástroj na
+      ochranu před zahlcením kanálu a spamem.” Práce pokračují na nalezení
+      a nasazení změn na úrovni protokolu, které by lépe zamezovaly těmto
+      útokům, ale CircuitBreaker se vyjímá jako slušné řešení, které je
+      kompatibilní se současným LN protokolem a které může kterýkoliv
+      uživatel LND hned nasadit. CircuitBreaker je licencovaný pod MIT
+      a je konceptuálně jednoduchý, mělo by tedy být možné jej přizpůsobit
+      či portovat i na jiné LN implementace.
 
 - **Monitorování full-RBF nahrazování:** vývojář 0xB10C [oznámil][0xb10c rbf]
   v emailové skupině Bitcoin-Dev, že začal poskytovat [veřejně přístupný][rbf mpo]

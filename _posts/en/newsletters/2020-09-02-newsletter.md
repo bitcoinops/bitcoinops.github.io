@@ -92,15 +92,15 @@ Bitcoin infrastructure projects.
   users will be able to enable with a single configuration option.
   Folkson's first question was whether anyone has any objection to this.
 
-    If there is to be a default signet, Folkson posted several
-    additional questions about how it should be administered.  For
-    example, who should control its signing keys?  How many keys should
-    there be?  Under what circumstances should the default signet be
-    reset?  When should proposed consensus changes to mainnet Bitcoin be
-    implemented by the trusted signet block signers?
+  If there is to be a default signet, Folkson posted several
+  additional questions about how it should be administered.  For
+  example, who should control its signing keys?  How many keys should
+  there be?  Under what circumstances should the default signet be
+  reset?  When should proposed consensus changes to mainnet Bitcoin be
+  implemented by the trusted signet block signers?
 
-    Anyone interested in helping answer these questions is encouraged to
-    respond.
+  Anyone interested in helping answer these questions is encouraged to
+  respond.
 
 - **Standardizing temporarily trusted LN channels:** Roei Erez
   [posted][temporarily trusted channels] to the Lightning-Dev mailing list a proposal to standardize
@@ -112,16 +112,16 @@ Bitcoin infrastructure projects.
   in-channel payments from Alice because he gets all his money back
   anyway if the deposit transaction doesn't confirm.
 
-    Erez noted that several LN implementations already allow users to
-    opt in to trusting certain unconfirmed channels but that the
-    different implementations vary in some aspects, such as what
-    `short_channel_id` to use until the deposit transaction confirms
-    (this value usually identifies the location of the deposit
-    transaction in the block chain, which doesn't apply to unconfirmed
-    transactions).
+  Erez noted that several LN implementations already allow users to
+  opt in to trusting certain unconfirmed channels but that the
+  different implementations vary in some aspects, such as what
+  `short_channel_id` to use until the deposit transaction confirms
+  (this value usually identifies the location of the deposit
+  transaction in the block chain, which doesn't apply to unconfirmed
+  transactions).
 
-    Participants in the mailing list discussion seemed supportive of the
-    proposal.
+  Participants in the mailing list discussion seemed supportive of the
+  proposal.
 
 ## Releases and release candidates
 
@@ -267,3 +267,4 @@ highlight a selection of the transcripts from the previous month.*
 [r point evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
 [news111 proposed tiebreaker]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
 [btcd 0.21.0-beta]: https://github.com/btcsuite/btcd/releases/tag/v0.21.0-beta
+[hwi]: https://github.com/bitcoin-core/HWI

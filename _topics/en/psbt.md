@@ -2,13 +2,13 @@
 title: Partially signed bitcoin transactions
 shortname: psbt
 
-aliases:
+title-aliases:
   - BIP174
   - PSBT
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Wallet Collaboration Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -209,6 +209,27 @@ optech_mentions:
 
   - title: Proposed BIP specifying how to include descriptors in PSBTs
     url: /en/newsletters/2024/01/03/#descriptors-in-psbt-draft-bip
+
+  - title: "Rust Bitcoin #2458 adds support for signing PSBTs that include taproot inputs"
+    url: /en/newsletters/2024/03/20/#rust-bitcoin-2458
+
+  - title: "BTCPay Server #5852 adds support for scanning BBQr animated QR codes"
+    url: /en/newsletters/2024/03/27/#btcpay-server-5852
+
+  - title: "Discussion about using PSBTs with silent payments"
+    url: /en/newsletters/2024/05/24/#discussion-about-psbts-for-silent-payments
+
+  - title: "Continued discussion about using PSBTs with silent payments"
+    url: /en/newsletters/2024/06/21/#continued-discussion-of-psbts-for-silent-payments
+
+  - title: "BIPs 328, 390, and 373 added with specifications for MuSig2 key derivation, descriptors, and PSBTs"
+    url: /en/newsletters/2024/07/05/#bips-1540
+
+  - title: "BIP353 adds a new standard field to PSBT outputs for DNSSEC proofs"
+    url: /en/newsletters/2024/09/06/#bips-1657
+
+  - title: "Draft BIP for sending silent payments with PSBTs"
+    url: /en/newsletters/2024/10/25/#draft-bip-for-sending-silent-payments-with-psbts
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

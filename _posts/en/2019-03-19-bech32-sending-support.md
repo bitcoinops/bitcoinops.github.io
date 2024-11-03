@@ -173,3 +173,28 @@ on bech32 sending support, from March 19th to August 28th, 2019.
 
 ## Footnotes
 {:.no_toc}
+
+[newsletter #38]: /en/newsletters/2019/03/19/#bech32-sending-support
+[newsletter #39]: /en/newsletters/2019/03/26/#bech32-sending-support
+[newsletter #40]: /en/newsletters/2019/04/02/#bech32-sending-support
+[newsletter #41]: /en/newsletters/2019/04/09/#bech32-sending-support
+[newsletter #42]: /en/newsletters/2019/04/16/#bech32-sending-support
+[newsletter #43]: /en/newsletters/2019/04/23/#bech32-sending-support
+[newsletter #44]: /en/newsletters/2019/04/30/#bech32-sending-support
+[newsletter #45]: /en/newsletters/2019/05/07/#bech32-sending-support
+[newsletter #46]: /en/newsletters/2019/05/14/#bech32-sending-support
+[newsletter #47]: /en/newsletters/2019/05/21/#bech32-sending-support
+[newsletter #48]: /en/newsletters/2019/05/29/#bech32-sending-support
+[newsletter #49]: /en/newsletters/2019/06/05/#bech32-sending-support
+[newsletter #50]: /en/newsletters/2019/06/12/#bech32-sending-support
+[newsletter #51]: /en/newsletters/2019/06/19/#bech32-sending-support
+[newsletter #52]: /en/newsletters/2019/06/26/#bech32-sending-support
+[newsletter #53]: /en/newsletters/2019/07/03/#bech32-sending-support
+[newsletter #54]: /en/newsletters/2019/07/10/#bech32-sending-support
+[newsletter #55]: /en/newsletters/2019/07/17/#bech32-sending-support
+[newsletter #56]: /en/newsletters/2019/07/24/#bech32-sending-support
+[newsletter #57]: /en/newsletters/2019/07/31/#bech32-sending-support
+[newsletter #58]: /en/newsletters/2019/08/07/#bech32-sending-support
+[newsletter #59]: /en/newsletters/2019/08/14/#bech32-sending-support
+[newsletter #60]: /en/newsletters/2019/08/21/#bech32-sending-support
+[newsletter #61]: /en/newsletters/2019/08/28/#bech32-sending-support

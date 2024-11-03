@@ -27,34 +27,34 @@ to popular Bitcoin infrastructure software.
   change) but it has no other defined purpose at present---it's reserved
   for future protocol upgrades, especially soft forks.
 
-    Although there have been [previous proposals][riard annex] to define
-    a format for the annex, these have not seen widespread acceptance
-    and implementation.  Jager proposed two formats ([1][jager annex],
-    [2][jager annex2]) that could be used to allow anyone to add
-    arbitrary data to the annex in a way that would not significantly
-    complicate later standardization efforts that might be bundled with
-    a soft fork.
+  Although there have been [previous proposals][riard annex] to define
+  a format for the annex, these have not seen widespread acceptance
+  and implementation.  Jager proposed two formats ([1][jager annex],
+  [2][jager annex2]) that could be used to allow anyone to add
+  arbitrary data to the annex in a way that would not significantly
+  complicate later standardization efforts that might be bundled with
+  a soft fork.
 
-    Greg Sanders [replied][sanders annex] to ask what data Jager
-    specifically wanted to store in the annex and described his own use
-    for the annex in testing the [LN-Symmetry][topic eltoo] protocol
-    with the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
-    proposal using Bitcoin Inquisition (see [Newsletter #244][news244
-    annex]).  Sanders also described a problem with the annex: in a
-    multi-party protocol (such as a [coinjoin][topic coinjoin]), each
-    signature only commits to the annex for the input containing that
-    signature---not the annexes for other inputs in the same
-    transaction.  That means if Alice, Bob, and Mallory sign a coinjoin
-    together, there's no way Alice and Bob can prevent Mallory from
-    broadcasting a version of the transaction with a large annex that
-    delays its confirmation.  Because Bitcoin Core and other full nodes
-    don't currently relay transactions that contain annexes, this is not
-    a problem at present.  Jager [replied][jager annex4] that he wants
-    to store signatures from ephemeral keys for a type of [vault][topic
-    vaults] that doesn't require a soft fork, and he  [suggested][jager
-    annex3] that some
-    [previous work][bitcoin core #24007] in Bitcoin Core could possibly
-    address the problem with annex relay in some multiparty protocols. {% assign timestamp="1:32" %}
+  Greg Sanders [replied][sanders annex] to ask what data Jager
+  specifically wanted to store in the annex and described his own use
+  for the annex in testing the [LN-Symmetry][topic eltoo] protocol
+  with the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
+  proposal using Bitcoin Inquisition (see [Newsletter #244][news244
+  annex]).  Sanders also described a problem with the annex: in a
+  multi-party protocol (such as a [coinjoin][topic coinjoin]), each
+  signature only commits to the annex for the input containing that
+  signature---not the annexes for other inputs in the same
+  transaction.  That means if Alice, Bob, and Mallory sign a coinjoin
+  together, there's no way Alice and Bob can prevent Mallory from
+  broadcasting a version of the transaction with a large annex that
+  delays its confirmation.  Because Bitcoin Core and other full nodes
+  don't currently relay transactions that contain annexes, this is not
+  a problem at present.  Jager [replied][jager annex4] that he wants
+  to store signatures from ephemeral keys for a type of [vault][topic
+  vaults] that doesn't require a soft fork, and he  [suggested][jager
+  annex3] that some
+  [previous work][bitcoin core #24007] in Bitcoin Core could possibly
+  address the problem with annex relay in some multiparty protocols. {% assign timestamp="1:32" %}
 
 - **Draft BIP for silent payments:** Josie Baker and Ruben Somsen
   [posted][bs sp] to the Bitcoin-Dev mailing list a draft BIP for

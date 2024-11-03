@@ -93,20 +93,20 @@ release candidates.*
   was conceived---its addition gives users a choice between three
   configurations:
 
-    1. `-maxapsfee=-1`: partial spend avoidance is completely
-       disabled to optimize for faster fee calculations, which may be
-       useful for very large wallets with many UTXOs.
+  1. `-maxapsfee=-1`: partial spend avoidance is completely
+     disabled to optimize for faster fee calculations, which may be
+     useful for very large wallets with many UTXOs.
 
-    2. `-maxapsfee=0` (the default value): fee calculations are
-       made using both coin selection algorithms.  Whichever result is
-       cheaper is used; if they both result in the same cost, partial
-       spend avoidance is used.
+  2. `-maxapsfee=0` (the default value): fee calculations are
+     made using both coin selection algorithms.  Whichever result is
+     cheaper is used; if they both result in the same cost, partial
+     spend avoidance is used.
 
-    3. `maxapsfee` set to greater than `0`: partial spend avoidance is
-       used whenever the maximum additional cost it adds to the
-       transaction is the passed amount.  For example,
-       `-maxapsfee=0.00001000` means the wallet will avoid partial
-       spends if the absolute fee difference is up to 1,000 sats.
+  3. `maxapsfee` set to greater than `0`: partial spend avoidance is
+     used whenever the maximum additional cost it adds to the
+     transaction is the passed amount.  For example,
+     `-maxapsfee=0.00001000` means the wallet will avoid partial
+     spends if the absolute fee difference is up to 1,000 sats.
 
 - [Bitcoin Core #19550][] adds a new `getindexinfo` RPC that lists each
   optional index that has been enabled, how many blocks have been
@@ -162,3 +162,4 @@ release candidates.*
 [stack exchange signet setup]: https://bitcoin.stackexchange.com/questions/98553/how-do-i-get-set-up-on-signet/98554#98554
 [bitcoin wiki change avoidance]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Change_avoidance
 [psbt ext]: /en/newsletters/2019/03/12/#extension-fields-to-partially-signed-bitcoin-transactions-psbts
+[hwi]: https://github.com/bitcoin-core/HWI

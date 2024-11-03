@@ -22,9 +22,9 @@ notes a few changes in popular Bitcoin infrastructure projects.
   versions, upgrading to a more recent version is [strongly
   recommended][cve ln]:
 
-    - C-Lightning < 0.7.1
-    - LND < 0.7
-    - Eclair <= 0.3
+  - C-Lightning < 0.7.1
+  - LND < 0.7
+  - Eclair <= 0.3
 
 ## News
 
@@ -53,7 +53,7 @@ notes a few changes in popular Bitcoin infrastructure projects.
   addresses for her two outputs.  However, Bob has no way in this
   non-interactive protocol to tell Alice what addresses to use for his
   output.  Instead, Alice can use Bob's public key and [Elliptic Curve
-  Diffie-Hellman][ECDH] (ECDH) to derive a shared secret that Bob will
+  Diffie--Hellman][ECDH] (ECDH) to derive a shared secret that Bob will
   also be able to derive from Alice's public key.  With the shared
   secret and Bob's public key, Alice is able to create a new public key
   that only Bob can sign for.  That new public key is used to create the
@@ -124,6 +124,6 @@ notes a few changes in popular Bitcoin infrastructure projects.
 [bolts608]: /en/newsletters/2019/08/28/#bolts-608
 [bolts]: https://github.com/lightningnetwork/lightning-rfc/
 [snicker]: https://gist.github.com/AdamISZ/2c13fb5819bd469ca318156e2cf25d79
-[ecdh]: https://en.wikipedia.org/wiki/Elliptic_curve_Diffie-Hellman
+[ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie–Hellman
 [snicker email]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017283.html
 [snicker blog]: https://joinmarket.me/blog/blog/snicker/

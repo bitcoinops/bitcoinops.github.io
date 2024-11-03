@@ -21,53 +21,53 @@ d'infrastructure Bitcoin.
   récentes de Core Lightning, Eclair, LDK et LND contiennent toutes des mesures d'atténuation qui rendent l'attaque moins pratique,
   bien qu'elles n'éliminent pas le problème sous-jacent.
 
-    La divulgation a été faite après la date limite habituelle des actualités d'Optech, nous ne pouvons donc fournir que le lien
-    ci-dessus dans la newsletter de cette semaine. Nous fournirons un résumé régulier dans la newsletter de la semaine prochaine.
+  La divulgation a été faite après la date limite habituelle des actualités d'Optech, nous ne pouvons donc fournir que le lien
+  ci-dessus dans la newsletter de cette semaine. Nous fournirons un résumé régulier dans la newsletter de la semaine prochaine.
 
 - **Paiements conditionnels à une computation arbitraire :** Robin Linus a [publié][linus post] sur la liste de diffusion Bitcoin-Dev
   un [article][linus paper] qu'il a écrit sur _BitVM_, une combinaison de méthodes qui permet de payer des bitcoins à quelqu'un qui
   prouve avec succès qu'un programme arbitraire s'est exécuté correctement. Cette méthode est applicable sur Bitcoin dès aujourd'hui car
   aucun changement de consensus n'est requis.
 
-    Pour fournir un contexte, une caractéristique bien connue de Bitcoin est d'exiger que quelqu'un satisfasse une expression de
-    programmation (appelée _script_) afin de dépenser des bitcoins associés à ce script. Par exemple, un script qui ne peut être exécuté
-    que si la clé privée correspondant à la clé publique qu'il contient crée une signature s'engageant à une transaction de
-    dépense. Les scripts doivent être écrits dans le langage de Bitcoin (appelé _Script_) pour être appliqués par consensus, mais
-    Script est délibérément limité dans sa flexibilité.
+  Pour fournir un contexte, une caractéristique bien connue de Bitcoin est d'exiger que quelqu'un satisfasse une expression de
+  programmation (appelée _script_) afin de dépenser des bitcoins associés à ce script. Par exemple, un script qui ne peut être exécuté
+  que si la clé privée correspondant à la clé publique qu'il contient crée une signature s'engageant à une transaction de
+  dépense. Les scripts doivent être écrits dans le langage de Bitcoin (appelé _Script_) pour être appliqués par consensus, mais
+  Script est délibérément limité dans sa flexibilité.
 
-    L'article de Linus contourne certaines de ces limites. Si Alice compte sur Bob pour agir si un programme est exécuté de
-    manière incorrecte, mais ne veut pas lui faire confiance pour autre chose, elle peut payer des fonds à un [taproot][topic
-    taproot] qui permettra à Bob de réclamer les fonds s'il démontre qu'Alice n'a pas exécuté correctement un programme arbitraire.
-    Si Alice exécute correctement le programme, elle peut dépenser les fonds même si Bob tente de l'en empêcher.
+  L'article de Linus contourne certaines de ces limites. Si Alice compte sur Bob pour agir si un programme est exécuté de
+  manière incorrecte, mais ne veut pas lui faire confiance pour autre chose, elle peut payer des fonds à un [taproot][topic
+  taproot] qui permettra à Bob de réclamer les fonds s'il démontre qu'Alice n'a pas exécuté correctement un programme arbitraire.
+  Si Alice exécute correctement le programme, elle peut dépenser les fonds même si Bob tente de l'en empêcher.
 
-    Pour utiliser un programme arbitraire, il doit être décomposé en une primitive très basique (une [porte NAND][]) et un engagement
-    doit être fait pour chaque porte. Cela nécessite l'échange hors chaîne d'une très grande quantité de données, potentiellement
-    plusieurs gigaoctets même pour un programme arbitraire assez basique, mais Alice et Bob n'ont besoin que d'une seule transaction
-    sur chaîne dans le cas où Bob reconnaît qu'Alice a exécuté correctement le programme. Dans le cas où Bob n'est pas d'accord,
-    il devrait être en mesure de démontrer l'échec d'Alice dans un nombre relativement restreint de transactions onchain. Si la
-    configuration a été effectuée dans un canal de paiement entre Alice et Bob, plusieurs programmes peuvent être exécutés à la fois
-    en parallèle et en séquence sans aucune trace onchain, à l'exception de la configuration du canal et d'une fermeture mutuelle ou
-    forcée où Bob tente de démontrer qu'Alice n'a pas suivi correctement la logique du programme arbitraire.
+  Pour utiliser un programme arbitraire, il doit être décomposé en une primitive très basique (une [porte NAND][]) et un engagement
+  doit être fait pour chaque porte. Cela nécessite l'échange hors chaîne d'une très grande quantité de données, potentiellement
+  plusieurs gigaoctets même pour un programme arbitraire assez basique, mais Alice et Bob n'ont besoin que d'une seule transaction
+  sur chaîne dans le cas où Bob reconnaît qu'Alice a exécuté correctement le programme. Dans le cas où Bob n'est pas d'accord,
+  il devrait être en mesure de démontrer l'échec d'Alice dans un nombre relativement restreint de transactions onchain. Si la
+  configuration a été effectuée dans un canal de paiement entre Alice et Bob, plusieurs programmes peuvent être exécutés à la fois
+  en parallèle et en séquence sans aucune trace onchain, à l'exception de la configuration du canal et d'une fermeture mutuelle ou
+  forcée où Bob tente de démontrer qu'Alice n'a pas suivi correctement la logique du programme arbitraire.
 
-    BitVM peut être appliqué de manière fiable dans des cas où Alice et Bob sont des adversaires naturels, par exemple lorsqu'ils paient
-    des fonds à une sortie qui sera payée à celui d'entre eux qui gagne à un jeu d'échecs. Ils peuvent ensuite utiliser deux programmes
-    arbitraires (presque identiques), chacun prenant le même ensemble arbitraire de coups d'échecs. Un programme renverra "vrai" si Alice
-    a gagné et l'autre renverra "vrai" si Bob a gagné. Une partie publiera ensuite onchain la transaction qui affirme que son programme
-    s'évalue à vrai (qu'elle a gagné) ; l'autre partie acceptera cette affirmation (reconnaissant la perte des fonds) ou démontrera la
-    fraude (recevant les fonds en cas de succès). Dans les cas où Alice et Bob ne seraient pas naturellement des adversaires, Alice peut
-    être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle n'est pas
-    parvenue à calculer correctement.
+  BitVM peut être appliqué de manière fiable dans des cas où Alice et Bob sont des adversaires naturels, par exemple lorsqu'ils paient
+  des fonds à une sortie qui sera payée à celui d'entre eux qui gagne à un jeu d'échecs. Ils peuvent ensuite utiliser deux programmes
+  arbitraires (presque identiques), chacun prenant le même ensemble arbitraire de coups d'échecs. Un programme renverra "vrai" si Alice
+  a gagné et l'autre renverra "vrai" si Bob a gagné. Une partie publiera ensuite onchain la transaction qui affirme que son programme
+  s'évalue à vrai (qu'elle a gagné) ; l'autre partie acceptera cette affirmation (reconnaissant la perte des fonds) ou démontrera la
+  fraude (recevant les fonds en cas de succès). Dans les cas où Alice et Bob ne seraient pas naturellement des adversaires, Alice peut
+  être en mesure de l'inciter à vérifier le calcul correct, par exemple en lui offrant ses fonds si Bob peut prouver qu'elle n'est pas
+  parvenue à calculer correctement.
 
-    L'idée a fait l'objet d'un nombre important de discussions sur la liste de diffusion ainsi que sur Twitter et divers podcasts axés
-    sur Bitcoin. Nous prévoyons des discussions continues dans les semaines et les mois à venir.
+  L'idée a fait l'objet d'un nombre important de discussions sur la liste de diffusion ainsi que sur Twitter et divers podcasts axés
+  sur Bitcoin. Nous prévoyons des discussions continues dans les semaines et les mois à venir.
 
 - **Proposition de BIP pour les champs MuSig2 dans les PSBT :** Andrew Chow [a posté][chow mpsbt] sur la liste de diffusion Bitcoin-Dev
   avec un [projet de BIP][mpsbt-bip], en partie basé sur [un travail antérieur][kanjalkar mpsbt] de Sanket Kanjalkar, pour ajouter
   plusieurs champs à toutes les versions des [PSBT][topic psbt] pour les "clés, les nonces publics et les signatures partielles
   produites avec [MuSig2][topic musig]".
 
-    Anthony Towns [a demandé][towns mpsbt] si le BIP proposé inclurait également des champs pour les [signatures adaptatives][topic
-    adaptor signatures], mais les discussions ultérieures ont indiqué que cela devrait probablement être défini dans un BIP séparé.
+  Anthony Towns [a demandé][towns mpsbt] si le BIP proposé inclurait également des champs pour les [signatures adaptatives][topic
+  adaptor signatures], mais les discussions ultérieures ont indiqué que cela devrait probablement être défini dans un BIP séparé.
 
 ## Modifications apportées aux services et aux logiciels clients
 

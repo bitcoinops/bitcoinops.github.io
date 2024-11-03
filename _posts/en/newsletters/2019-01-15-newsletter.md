@@ -38,22 +38,22 @@ popular Bitcoin infrastructure projects.
   wallets are probably safe provided they do not continue to use
   addresses whose bitcoins they spent using earlier vulnerable programs.
 
-    If you ever used an affected version of Bitcore (0.1.28 to 0.1.35),
-    Copay (0.4.1 to 0.4.3), or other vulnerable software, you should
-    create a new wallet file, send all of your funds from the old wallet
-    file to an address in the new wallet, and discontinue use of the
-    previous wallet file.  When designing software that signs Bitcoin
-    transactions, you should prefer to use peer-reviewed implementations
-    that generate signature nonces deterministically, such as
-    [libsecp256k1][] which implements [RFC6979][].
+  If you ever used an affected version of Bitcore (0.1.28 to 0.1.35),
+  Copay (0.4.1 to 0.4.3), or other vulnerable software, you should
+  create a new wallet file, send all of your funds from the old wallet
+  file to an address in the new wallet, and discontinue use of the
+  previous wallet file.  When designing software that signs Bitcoin
+  transactions, you should prefer to use peer-reviewed implementations
+  that generate signature nonces deterministically, such as
+  [libsecp256k1][] which implements [RFC6979][].
 
-    The fast analysis method employed by the authors of the paper took
-    advantage of users who engaged in address reuse, but even keys for
-    addresses that have not been reused are vulnerable to attack if the
-    nonce generation is biased or too small.  This can be either through
-    using the same method for keys that were used multiple times (e.g.
-    for Replace-By-Fee) or through simply brute-forcing using the
-    [baby-step giant-step][] or [Pollard's Rho][] methods.
+  The fast analysis method employed by the authors of the paper took
+  advantage of users who engaged in address reuse, but even keys for
+  addresses that have not been reused are vulnerable to attack if the
+  nonce generation is biased or too small.  This can be either through
+  using the same method for keys that were used multiple times (e.g.
+  for Replace-By-Fee) or through simply brute-forcing using the
+  [baby-step giant-step][] or [Pollard's Rho][] methods.
 
 ## Notable code changes
 
@@ -76,15 +76,15 @@ popular Bitcoin infrastructure projects.
   to loss of funds. **All users are advised to upgrade to 0.6.3 to
   get a fix for this issue.**
 
-    The vulnerability allowed a peer to crash your C-Lightning node by
-    trying to get you to accept a payment with a smaller timelock than
-    your node allows.  If a crashed node remains shutdown for too long,
-    it's possible for an attacker to steal from it if they previously
-    opened a channel with that node.  Note, though, that the attacker
-    must risk their own money to attempt the attack, and so nodes can
-    pretend to be offline in order to take money from any
-    attackers---which is hoped to be enough of a risk to discourage most
-    attacks.
+  The vulnerability allowed a peer to crash your C-Lightning node by
+  trying to get you to accept a payment with a smaller timelock than
+  your node allows.  If a crashed node remains shutdown for too long,
+  it's possible for an attacker to steal from it if they previously
+  opened a channel with that node.  Note, though, that the attacker
+  must risk their own money to attempt the attack, and so nodes can
+  pretend to be offline in order to take money from any
+  attackers---which is hoped to be enough of a risk to discourage most
+  attacks.
 
 - [C-Lightning #2230][] updates the `listpeers` RPC's "channel" output to
   include a `private` flag indicating whether the channel is being

@@ -29,14 +29,14 @@ páteřních projektech.
   známým zranitelnostem okamžitou aktualizaci. Následuje stručný popis
   těchto zranitelností:
 
-    - DoS zranitelnost, která mohla vést k zahlcení paměti a pádu a následné
-      nemožnosti zveřejnit časově citlivé transakce, což mohlo vést ke
-      ztrátě prostředků.
+  - DoS zranitelnost, která mohla vést k zahlcení paměti a pádu a následné
+    nemožnosti zveřejnit časově citlivé transakce, což mohlo vést ke
+    ztrátě prostředků.
 
-    - Zranitelnost, která umožňovala útočníkovi zabránit LND uzlu,
-      aby se dozvěděl o aktualizacích kanálů napříč sítí. Útočník tím mohl
-      ovlivnit výběr tras a obdržet tak více peněz na poplatcích i více
-      informací o odesílaných platbách.
+  - Zranitelnost, která umožňovala útočníkovi zabránit LND uzlu,
+    aby se dozvěděl o aktualizacích kanálů napříč sítí. Útočník tím mohl
+    ovlivnit výběr tras a obdržet tak více peněz na poplatcích i více
+    informací o odesílaných platbách.
 
   Gögge zranitelnosti nahlásil vývojářům před více než dvěma lety a opravné
   verze jsou dostupné již více než 18 měsíců. Nejsme si vědomi žádných

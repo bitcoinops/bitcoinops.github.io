@@ -20,18 +20,18 @@ lang: ja
   Speedy Trialへの言及がありました。Jorge Timónが議論を呼ぶと思われるソフトフォークに対するSeedy Trialの使用に関して懸念を[示した][timon st]後、
   Bitcoin-Devメーリングリストの別のスレッドにスピンオフして追加の議論が行われました。
 
-    Russell O'Connorは、その懸念がこれまでどう対処されてきたかを[説明しました][oconnor st]。
-    Anthony Townsはさらに、望まないソフトフォークのアクティベーションにSpeedy Trialを使用した場合、
-    反対するユーザーによってどのように抵抗されるかを[説明しました][towns st]。
+  Russell O'Connorは、その懸念がこれまでどう対処されてきたかを[説明しました][oconnor st]。
+  Anthony Townsはさらに、望まないソフトフォークのアクティベーションにSpeedy Trialを使用した場合、
+  反対するユーザーによってどのように抵抗されるかを[説明しました][towns st]。
 
 - **<!--payment-delivery-algorithm-update-->支払い配送アルゴリズムのアップデート:** René Pickhardtは、
   Lightning-Devメーリングリストに、昨年発表した彼とStefan Richterの経路探索アルゴリズムについて、
   より計算効率の良い近似を見つけたと[投稿しました][pickhardt payment delivery]。
   このアルゴリズムに関する以前の議論については、[ニュースレター #163][news163 pp]をご覧ください。
 
-    Pickhardtのメールでは、[スタックレス・ペイメント][news53 stuckless]の実装や、
-    [いくつかの][boomerang]学術[論文][spear]で提案されている[払い戻し可能な過払い][news86 boomerang]を許容するなど、
-    迅速な支払いの成功を向上させる方法も提案しています。
+  Pickhardtのメールでは、[スタックレス・ペイメント][news53 stuckless]の実装や、
+  [いくつかの][boomerang]学術[論文][spear]で提案されている[払い戻し可能な過払い][news86 boomerang]を許容するなど、
+  迅速な支払いの成功を向上させる方法も提案しています。
 
 ## サービスとクライアントソフトウェアの変更
 

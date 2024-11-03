@@ -6,12 +6,12 @@ title: Fee estimation
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -43,6 +43,21 @@ optech_mentions:
 
   - title: "Cluster fee estimation to improve accuracy in a world with CPFP fee bumping"
     url: /en/newsletters/2024/01/03/#cluster-fee-estimation
+
+  - title: "Discussion of incorporating live mempool data into Bitcoin Core's feerate estimation"
+    url: /en/newsletters/2024/03/27/#mempool-based-feerate-estimation
+
+  - title: Discussion about weak blocks helping with feerate estimation
+    url: /en/newsletters/2024/04/24/#weak-blocks-proof-of-concept-implementation
+
+  - title: "LND #8730 introduces an RPC command `lncli wallet estimatefee`"
+    url: /en/newsletters/2024/06/21/#lnd-8730
+
+  - title: "Bitcoin Core #30275 updates `estimatesmartfee` RPC default from conservative to economical"
+    url: /en/newsletters/2024/08/02/#bitcoin-core-30275
+
+  - title: "LDK #3268 adds a more conservative fee estimation method for dust calculations"
+    url: /en/newsletters/2024/09/06/#ldk-3268
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -40,57 +40,57 @@ d'infrastructure Bitcoin.
   que nous ne sommes nous-même pas suffisamment confiants pour l'activer par défaut
   ne correspond pas à l'approche adoptée par le passé.»
 
-    Towns se demande alors s'il s'agit d'une nouvelle direction de développement :
-    "full [RBF][topic RBF] est controversé depuis des lustres,
-    mais largement apprécié par les développeurs [...] alors peut-être que c'est
-    juste un cas particulier et non un précédent. Des gens qui proposeraient
-    de mauvaises options par défaut, se heurteraient à beaucoup plus de résistance
-    quand il s'agirait de fusionner leur code, malgré toutes les discussions sur les
-    options laissées aux utilisateurs que nous avons en ce moment." Mais, en supposant
-    qu'il s'agisse d'une nouvelle direction, il évalue ainsi certaines conséquences
-    potentielles de cette décision:
+  Towns se demande alors s'il s'agit d'une nouvelle direction de développement :
+  "full [RBF][topic RBF] est controversé depuis des lustres,
+  mais largement apprécié par les développeurs [...] alors peut-être que c'est
+  juste un cas particulier et non un précédent. Des gens qui proposeraient
+  de mauvaises options par défaut, se heurteraient à beaucoup plus de résistance
+  quand il s'agirait de fusionner leur code, malgré toutes les discussions sur les
+  options laissées aux utilisateurs que nous avons en ce moment." Mais, en supposant
+  qu'il s'agisse d'une nouvelle direction, il évalue ainsi certaines conséquences
+  potentielles de cette décision:
 
-    - *Il devrait être plus facile de fusionner les options de relais alternatives désactivées par défaut :*
-      si le fait de donner plus d'options aux utilisateurs est considéré comme
-      préférable, de nombreux aspects de la stratégie de relais peuvent être
-      configurés. Par exemple, Bitcoin Knots fournit une option de script de
-      réutilisation de la pubkey (`spkreuse`) pour configurer un nœud afin qu'il
-      refuse de relayer toute transaction qui [réutilise une adresse]
-      [topic output linking].
+  - *Il devrait être plus facile de fusionner les options de relais alternatives désactivées par défaut :*
+    si le fait de donner plus d'options aux utilisateurs est considéré comme
+    préférable, de nombreux aspects de la stratégie de relais peuvent être
+    configurés. Par exemple, Bitcoin Knots fournit une option de script de
+    réutilisation de la pubkey (`spkreuse`) pour configurer un nœud afin qu'il
+    refuse de relayer toute transaction qui [réutilise une adresse]
+    [topic output linking].
 
-    - *Des politiques plus permissives nécessitent une acceptation généralisée ou un meilleur appairage :*
-      un nœud Bitcoin Core par défaut relaie les transactions avec huit pairs
-      via des connexions sortantes, de sorte qu'au moins 30% du réseau doive
-      prendre en charge une politique plus permissive avant qu'un nœud ait 95%
-      de chances de trouver au moins un pair sélectionné au hasard qui prend en
-      charge la même politique. Moins il y a de nœuds prenant en charge une
-      politique, moins il est probable qu'un nœud trouve un homologue prenant en
-      charge cette politique.
+  - *Des politiques plus permissives nécessitent une acceptation généralisée ou un meilleur appairage :*
+    un nœud Bitcoin Core par défaut relaie les transactions avec huit pairs
+    via des connexions sortantes, de sorte qu'au moins 30% du réseau doive
+    prendre en charge une politique plus permissive avant qu'un nœud ait 95%
+    de chances de trouver au moins un pair sélectionné au hasard qui prend en
+    charge la même politique. Moins il y a de nœuds prenant en charge une
+    politique, moins il est probable qu'un nœud trouve un homologue prenant en
+    charge cette politique.
 
-    - *Un meilleur apparairage implique des compromis :* les nœuds Bitcoin peuvent
-      annoncer leurs capacités en utilisant le champ de services des messages P2P
-      `addr`, [`addrv2`][topic addr v2], et messages de `version`, permettant aux
-      nœuds ayant des intérêts communs de se trouver et de former des sous-réseaux
-      (appelés *preferential peering*). Alternativement, les opérateurs de nœuds
-      complets ayant des intérêts communs peuvent utiliser d'autres logiciels pour
-      former des réseaux de relais indépendants (tels qu'un réseau entre nœuds LN).
-      Cela peut rendre le relais efficace même lorsque seuls quelques nœuds mettent
-      en œuvre une politique, mais les nœuds mettant en œuvre une politique rare
-      sont plus faciles à identifier et à censurer. Cela oblige également les
-      mineurs à rejoindre ces sous-réseaux et réseaux alternatifs, ce qui augmente
-      la complexité et le coût de l'exploitation minière. Cela augmente la pression
-      pour centraliser la sélection des transactions, ce qui facilite également
-      la censure.
+  - *Un meilleur apparairage implique des compromis :* les nœuds Bitcoin peuvent
+    annoncer leurs capacités en utilisant le champ de services des messages P2P
+    `addr`, [`addrv2`][topic addr v2], et messages de `version`, permettant aux
+    nœuds ayant des intérêts communs de se trouver et de former des sous-réseaux
+    (appelés *preferential peering*). Alternativement, les opérateurs de nœuds
+    complets ayant des intérêts communs peuvent utiliser d'autres logiciels pour
+    former des réseaux de relais indépendants (tels qu'un réseau entre nœuds LN).
+    Cela peut rendre le relais efficace même lorsque seuls quelques nœuds mettent
+    en œuvre une politique, mais les nœuds mettant en œuvre une politique rare
+    sont plus faciles à identifier et à censurer. Cela oblige également les
+    mineurs à rejoindre ces sous-réseaux et réseaux alternatifs, ce qui augmente
+    la complexité et le coût de l'exploitation minière. Cela augmente la pression
+    pour centraliser la sélection des transactions, ce qui facilite également
+    la censure.
 
-        De plus, les nœuds mettant en œuvre des politiques différentes de certains
-        de leurs pairs ne pourront pas tirer pleinement parti des technologies
-        telles que [le relais de bloc compact][topic compact block relay] et
-        [erlay][topic erlay] pour minimiser la latence et la bande passante
-        lorsque deux pairs disposent déjà de certaines des mêmes informations.
+    De plus, les nœuds mettant en œuvre des politiques différentes de certains
+    de leurs pairs ne pourront pas tirer pleinement parti des technologies
+    telles que [le relais de bloc compact][topic compact block relay] et
+    [erlay][topic erlay] pour minimiser la latence et la bande passante
+    lorsque deux pairs disposent déjà de certaines des mêmes informations.
 
-    Le message de Towns a reçu de multiples réponses perspicaces, et la
-    discussion est toujours en cours au moment de la rédaction de cet article. Nous fournirons
-    une mise à jour dans la newsletter de la semaine prochaine.
+  Le message de Towns a reçu de multiples réponses perspicaces, et la
+  discussion est toujours en cours au moment de la rédaction de cet article. Nous fournirons
+  une mise à jour dans la newsletter de la semaine prochaine.
 
 - **Identifiants de message BIP324 :** Pieter Wuille [a posté][wuille bip324]
   sur la liste de diffusion Bitcoin-Dev une réponse à la mise à jour du projet
@@ -113,23 +113,23 @@ d'infrastructure Bitcoin.
   authentifiée pour permettre aux nœuds de routage de communiquer ces informations
   à un participant.
 
-    Il y a plusieurs années, Joost Jager a proposé une solution (voir la
-    [Newsletter #51][news51 attrib]), qu'il a récemment [mis à jour][jager attrib]
-    avec des améliorations et des détails supplémentaires. Le mécanisme proposé
-    assurerait l'identification de la paire de nœuds entre lesquels un paiement
-    a échoué (ou entre lesquels un message d'échec antérieur a été censuré ou s'est
-    altéré). Le principal inconvénient de la proposition de Jager est
-    qu'elle augmenterait considérablement la taille des messages en oignon LN en cas
-    d'échecs si les autres propriétés LN restaient les mêmes, bien que la taille
-    des messages en oignon en cas d'échec n'ait pas besoin d'être aussi grande
-    si le nombre maximal de sauts LN a été diminué.
+  Il y a plusieurs années, Joost Jager a proposé une solution (voir la
+  [Newsletter #51][news51 attrib]), qu'il a récemment [mis à jour][jager attrib]
+  avec des améliorations et des détails supplémentaires. Le mécanisme proposé
+  assurerait l'identification de la paire de nœuds entre lesquels un paiement
+  a échoué (ou entre lesquels un message d'échec antérieur a été censuré ou s'est
+  altéré). Le principal inconvénient de la proposition de Jager est
+  qu'elle augmenterait considérablement la taille des messages en oignon LN en cas
+  d'échecs si les autres propriétés LN restaient les mêmes, bien que la taille
+  des messages en oignon en cas d'échec n'ait pas besoin d'être aussi grande
+  si le nombre maximal de sauts LN a été diminué.
 
-    Alternativement, Rusty Russell [a suggéré][russell attrib] qu'un participant
-    pourrait utiliser un mécanisme similaire aux [paiements spontanés]
-    [topic spontaneous payments] où chaque nœud de routage reçoit un sat même
-    si le paiement final échoue. Le participant pourrait alors identifier à quel
-    saut le paiement a échoué en comparant le nombre de satoshis qu'il a envoyé
-    au nombre de satoshis qu'il a reçus en retour.
+  Alternativement, Rusty Russell [a suggéré][russell attrib] qu'un participant
+  pourrait utiliser un mécanisme similaire aux [paiements spontanés]
+  [topic spontaneous payments] où chaque nœud de routage reçoit un sat même
+  si le paiement final échoue. Le participant pourrait alors identifier à quel
+  saut le paiement a échoué en comparant le nombre de satoshis qu'il a envoyé
+  au nombre de satoshis qu'il a reçus en retour.
 
 - **Solution de contournement des sorties d'ancrage :** Bastien Teinturier
   [a publié][teinturier fees] sur la liste de diffusion Lightning-Dev une
@@ -146,9 +146,9 @@ d'infrastructure Bitcoin.
   --aucune gestion UTXO supplémentaire n'est requise, sauf dans les cas où aucun
   des frais présignés n'était suffisamment élevé.
 
-    Il recherche le soutien d'autres développeurs LN sur l'idée de fournir
-    plusieurs HTLC payants. Toutes les discussions à ce jour ont eu lieu sur sa
-    propre [PR][bolts #1036].
+  Il recherche le soutien d'autres développeurs LN sur l'idée de fournir
+  plusieurs HTLC payants. Toutes les discussions à ce jour ont eu lieu sur sa
+  propre [PR][bolts #1036].
 
 ## Mises à jour et release candidate
 

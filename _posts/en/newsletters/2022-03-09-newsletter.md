@@ -30,70 +30,70 @@ of notable changes to popular Bitcoin infrastructure projects.
   had concerns about allowing recursive covenants in Bitcoin, with some
   of the most notable concerns being summarized below:
 
-    - *Gradual loss of censorship resistance:* contributor Shinobi
-      [posted][shinobi recurse] a repeat of his concerns previously
-      mentioned in [Newsletter #157][news157 csfs] about recursive
-      covenants that gave a powerful third party control over subsequent
-      spending of any coins that the entity currently controlled.  For
-      example, a government could require (by law) that its populace
-      only accept coins that the government could later seize (as
-      enforced by Bitcoin consensus rules).
+  - *Gradual loss of censorship resistance:* contributor Shinobi
+    [posted][shinobi recurse] a repeat of his concerns previously
+    mentioned in [Newsletter #157][news157 csfs] about recursive
+    covenants that gave a powerful third party control over subsequent
+    spending of any coins that the entity currently controlled.  For
+    example, a government could require (by law) that its populace
+    only accept coins that the government could later seize (as
+    enforced by Bitcoin consensus rules).
 
-        [Replies][aj reply] to Shinobi's post [echoed][darosior reply]
-        arguments from [a year ago][harding altcoin] about the same
-        gradual loss of censorship resistance also being possible by
-        users switching to an alternative cryptocurrency (altcoin) or
-        sidechain-like construct with the same requirement for
-        third-party control.
+    [Replies][aj reply] to Shinobi's post [echoed][darosior reply]
+    arguments from [a year ago][harding altcoin] about the same
+    gradual loss of censorship resistance also being possible by
+    users switching to an alternative cryptocurrency (altcoin) or
+    sidechain-like construct with the same requirement for
+    third-party control.
 
-    - *Encouraging unnecessary computation:* developer James O'Beirne
-      [expressed][obeirne reply] concern that the addition of too much
-      expressiveness to Bitcoin's Script or [Tapscript][topic tapscript]
-      languages would encourage the creation of scripts that used more
-      than the minimum number of operations necessary to prove someone
-      authorized to spend a coin had chosen to spend that money.
-      Ideally, any UTXO (coin) can be spent today using a single compact
-      proof that the spend was authorized, such as a 64-byte [schnorr
-      signature][topic schnorr signatures].  Bitcoin already allows more
-      complex scripts to enable the creation of contracts, such as
-      multisignature compacts and protocols like LN, but this capability
-      can be abused to include operations in scripts that aren't
-      necessary to enforce the terms of a contract.  For example,
-      Bitcoin has in the past been at [risk][cve-2013-2292] of
-      denial-of-service attacks from specially-designed transactions
-      that repeatedly performed operations requiring much CPU or memory.
-      O'Beirne worries increased expressiveness could both create new
-      DoS vectors as well as result in programmers creating unoptimized
-      scripts that use more node resources than necessary.
+  - *Encouraging unnecessary computation:* developer James O'Beirne
+    [expressed][obeirne reply] concern that the addition of too much
+    expressiveness to Bitcoin's Script or [Tapscript][topic tapscript]
+    languages would encourage the creation of scripts that used more
+    than the minimum number of operations necessary to prove someone
+    authorized to spend a coin had chosen to spend that money.
+    Ideally, any UTXO (coin) can be spent today using a single compact
+    proof that the spend was authorized, such as a 64-byte [schnorr
+    signature][topic schnorr signatures].  Bitcoin already allows more
+    complex scripts to enable the creation of contracts, such as
+    multisignature compacts and protocols like LN, but this capability
+    can be abused to include operations in scripts that aren't
+    necessary to enforce the terms of a contract.  For example,
+    Bitcoin has in the past been at [risk][cve-2013-2292] of
+    denial-of-service attacks from specially-designed transactions
+    that repeatedly performed operations requiring much CPU or memory.
+    O'Beirne worries increased expressiveness could both create new
+    DoS vectors as well as result in programmers creating unoptimized
+    scripts that use more node resources than necessary.
 
-    - *Introduction of turing completeness:* developer ZmnSCPxj
-      [criticized][zmn turing] the addition of opcodes that allow the
-      creation of *deliberate* recursive covenants as also allowing the
-      *accidental* creation of recursive covenants.  Money paid into
-      recursive covenants, whether deliberately or accidentally, would
-      never again be fully fungible with ordinary bitcoins.  ZmnSCPxj
-      phrased this concern in context of [turing completeness][] and the
-      [halting problem][].
+  - *Introduction of turing completeness:* developer ZmnSCPxj
+    [criticized][zmn turing] the addition of opcodes that allow the
+    creation of *deliberate* recursive covenants as also allowing the
+    *accidental* creation of recursive covenants.  Money paid into
+    recursive covenants, whether deliberately or accidentally, would
+    never again be fully fungible with ordinary bitcoins.  ZmnSCPxj
+    phrased this concern in context of [turing completeness][] and the
+    [halting problem][].
 
-    - *Enablement of drivechains:* extending his previous argument about
-      turing completeness, ZmnSCPxj further [argues][zmn drivechains]
-      that increased Script language expressiveness would also enable
-      the implementation of [drivechains][topic sidechains] similar in
-      principle to that specified in [BIP300][], which several Bitcoin
-      developers have [argued][towns drivechains] could lead to either a
-      loss of user funds or a reduction in censorship resistance.  Users
-      of a drivechain could lose funds if not enough of the Bitcoin
-      economy chose to run full nodes enforcing the drivechain's
-      rules---but if a large part of the economy did choose to enforce a
-      drivechain's rules, all other users wanting to remain in consensus
-      would need to validate all of that drivechain's data, effectively
-      making the drivechain part of Bitcoin without there ever being an
-      explicit soft fork decision to modify Bitcoin's rules.
+  - *Enablement of drivechains:* extending his previous argument about
+    turing completeness, ZmnSCPxj further [argues][zmn drivechains]
+    that increased Script language expressiveness would also enable
+    the implementation of [drivechains][topic sidechains] similar in
+    principle to that specified in [BIP300][], which several Bitcoin
+    developers have [argued][towns drivechains] could lead to either a
+    loss of user funds or a reduction in censorship resistance.  Users
+    of a drivechain could lose funds if not enough of the Bitcoin
+    economy chose to run full nodes enforcing the drivechain's
+    rules---but if a large part of the economy did choose to enforce a
+    drivechain's rules, all other users wanting to remain in consensus
+    would need to validate all of that drivechain's data, effectively
+    making the drivechain part of Bitcoin without there ever being an
+    explicit soft fork decision to modify Bitcoin's rules.
 
-        This particular sub-thread received extended discussion and
-        produced a [spin-off thread][drivechains vs ln] comparing
-        drivechain security to LN security in the presence of a majority
-        of mining hashrate attempting to steal bitcoins.
+    This particular sub-thread received extended discussion and
+    produced a [spin-off thread][drivechains vs ln] comparing
+    drivechain security to LN security in the presence of a majority
+    of mining hashrate attempting to steal bitcoins.
 
 - **Paying for onion messages:** Olaoluwa Osuntokun [posted][osuntokun
   bandwidth] to the Lightning-Dev mailing list this week about adding
@@ -113,37 +113,37 @@ of notable changes to popular Bitcoin infrastructure projects.
   if onion messages are used for important communication between nodes,
   such as proposed for [offers][topic offers].
 
-    Osuntokun suggested that nodes could pre-pay for the onion message
-    bandwidth they wanted to use.  For example, if Alice wants to route
-    10 kB of data to Zed through Bob and Carol, she will first use
-    [AMP][topic amp] to pay Bob and Carol for at least 10 kB of
-    bandwidth at the message relay rates advertised by their respective
-    nodes.  When paying Bob and Carol, Alice registers a unique session
-    ID with each of them and includes that ID in the encrypted messages
-    she asks them to relay for her.  If the amount Alice has paid is
-    sufficient for the bandwidth her messages use, Bob and Carol
-    participate in relaying the messages to Zed.
+  Osuntokun suggested that nodes could pre-pay for the onion message
+  bandwidth they wanted to use.  For example, if Alice wants to route
+  10 kB of data to Zed through Bob and Carol, she will first use
+  [AMP][topic amp] to pay Bob and Carol for at least 10 kB of
+  bandwidth at the message relay rates advertised by their respective
+  nodes.  When paying Bob and Carol, Alice registers a unique session
+  ID with each of them and includes that ID in the encrypted messages
+  she asks them to relay for her.  If the amount Alice has paid is
+  sufficient for the bandwidth her messages use, Bob and Carol
+  participate in relaying the messages to Zed.
 
-    Rusty Russell [replied][russell reply] with several criticisms, most
-    notably:
+  Rusty Russell [replied][russell reply] with several criticisms, most
+  notably:
 
-    - *HTLCs are already currently free:* the main counterargument
-      against the concern about free onion message relay has always been
-      that it's already possible to use HTLCs to relay traffic over LN
-      essentially for free.[^htlcs-essentially-free]  It's unclear,
-      though, whether this will remain the case permanently---many
-      proposals to fix [channel jamming attacks][topic channel jamming
-      attacks] suggest charging for the failed HTLCs which can be used
-      to freely route data today.
+  - *HTLCs are already currently free:* the main counterargument
+    against the concern about free onion message relay has always been
+    that it's already possible to use HTLCs to relay traffic over LN
+    essentially for free.[^htlcs-essentially-free]  It's unclear,
+    though, whether this will remain the case permanently---many
+    proposals to fix [channel jamming attacks][topic channel jamming
+    attacks] suggest charging for the failed HTLCs which can be used
+    to freely route data today.
 
-    - *Session identifiers reduce privacy:* in the previous example, the
-      session identifiers Alice registers with Bob and Carol allow them
-      to know which messages came from the same user.  If instead there
-      had been no session ID, they wouldn't know whether the different
-      messages had all come from the same user or different users all
-      using parts of the same route.  Russell noted that he'd considered blinded
-      tokens when working on onion messages, but he was concerned that
-      it "gets complex fast".
+  - *Session identifiers reduce privacy:* in the previous example, the
+    session identifiers Alice registers with Bob and Carol allow them
+    to know which messages came from the same user.  If instead there
+    had been no session ID, they wouldn't know whether the different
+    messages had all come from the same user or different users all
+    using parts of the same route.  Russell noted that he'd considered blinded
+    tokens when working on onion messages, but he was concerned that
+    it "gets complex fast".
 
   Russell instead suggested simply rate limiting the number of onion
   messages a node forwards (with different limits from different

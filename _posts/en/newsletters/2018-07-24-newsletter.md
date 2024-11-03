@@ -57,16 +57,16 @@ Bitcoin transactions, and news on several other notable Bitcoin Core merges.
   inputs, and receive back a list of which inputs would be selected by
   the Bitcoin Core wallet's coin selection algorithm.
 
-    Meeting participants were mostly opposed to providing this feature,
-    suggesting that it would be better if it was a library and that
-    Bitcoin Core's recent and continuing work towards encapsulating its
-    coin selection code would simplify development of a third-party
-    library later.  A particular opposition to the idea was that it
-    might reduce the pace of development for direct users of the Bitcoin
-    Core wallet; as Gregory Maxwell said, "Pressure to maintain a stable
-    interface to [coin selection] would be harmful to the project. [...]
-    I don’t want to hear 'we can't implement privacy feature X because
-    it'll break [the coin selection] interface'."
+  Meeting participants were mostly opposed to providing this feature,
+  suggesting that it would be better if it was a library and that
+  Bitcoin Core's recent and continuing work towards encapsulating its
+  coin selection code would simplify development of a third-party
+  library later.  A particular opposition to the idea was that it
+  might reduce the pace of development for direct users of the Bitcoin
+  Core wallet; as Gregory Maxwell said, "Pressure to maintain a stable
+  interface to [coin selection] would be harmful to the project. [...]
+  I don’t want to hear 'we can't implement privacy feature X because
+  it'll break [the coin selection] interface'."
 
 - **First use of output script descriptors:** Pieter Wuille has opened
   PR [#13697][Bitcoin Core #13697] to Bitcoin Core that implements his [output script
@@ -131,23 +131,23 @@ git log --merges b25a4c2284babdf1e8cf0ec3b1402200dd25f33f..07ce278455757fb46dab9
   preventing spy nodes from being able to assume that the first peer
   they received a transaction from was likely the peer that created it.
 
-    However, later investigators realized that someone operating
-    multiple spy nodes could make multiple connections to each node to
-    increase their chances of being the first to receive a given
-    transaction, allowing the spy to again guess which node create the
-    transaction.  This merge improves the situation by preventing a spy
-    making multiple connections from receiving any more information than
-    a spy with one connection.  Outgoing connections (which are selected
-    by the node itself using certain rules) continue to use the old
-    behavior so that transactions continue to propagate unpredictably.
+  However, later investigators realized that someone operating
+  multiple spy nodes could make multiple connections to each node to
+  increase their chances of being the first to receive a given
+  transaction, allowing the spy to again guess which node create the
+  transaction.  This merge improves the situation by preventing a spy
+  making multiple connections from receiving any more information than
+  a spy with one connection.  Outgoing connections (which are selected
+  by the node itself using certain rules) continue to use the old
+  behavior so that transactions continue to propagate unpredictably.
 
-    This change might increase transaction propagation delay slightly,
-    although developers commenting on the PR think the effect will be
-    minimal.  It may also cause bandwidth usage to be less evenly
-    distributed over time.   However, it could (in theory) end up
-    reducing the number of incoming connections to upgraded nodes, if spy
-    nodes no longer find making multiple connections to be useful,
-    reducing overall wasted bandwidth.
+  This change might increase transaction propagation delay slightly,
+  although developers commenting on the PR think the effect will be
+  minimal.  It may also cause bandwidth usage to be less evenly
+  distributed over time.   However, it could (in theory) end up
+  reducing the number of incoming connections to upgraded nodes, if spy
+  nodes no longer find making multiple connections to be useful,
+  reducing overall wasted bandwidth.
 
 - [Bitcoin Core #13652][]: The [`abandontransaction`][rpc abandontransaction] RPC has
   been fixed to abandon all descendant transactions, not just children.
@@ -170,6 +170,7 @@ to share your experiences in implementing better Bitcoin technology, please cont
 [announce cdesk]: https://www.coindesk.com/bitcoins-biggest-startups-are-backing-a-new-effort-to-keep-fees-low/
 [inv]: https://bitcoin.org/en/developer-reference#inv
 [workshop announce]: /en/newsletters/2018/06/26/#first-optech-workshop
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 
 {% include references.md %}
 {% include linkers/issues.md issues="13697,13557,12196,9662,12196,13604,13298,13652" %}

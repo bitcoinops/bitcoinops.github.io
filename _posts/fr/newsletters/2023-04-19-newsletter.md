@@ -36,18 +36,18 @@ Bitcoin les plus répandus.
     transaction a six confirmations, le transfert de jetons sera sécurisé
     contre un fork jusqu'à six blocs.
 
-      Les sorties qui contrôlent les montants ne doivent pas nécessairement
-      être des sorties de la transaction contenant l'engagement (bien que
-      cela soit autorisé). Cela élimine la possibilité d'utiliser l'analyse
-      des transactions sur la chaîne pour suivre les transferts basés sur
-      RGB. Les jetons auraient pu être transférés à n'importe quelle UTXO
-      existante---ou à n'importe quelle UTXO dont le destinataire sait
-      qu'elle existera à l'avenir (par exemple, une dépense présignée de
-      son portefeuille froid qui pourrait ne pas apparaître sur la chaîne
-      pendant des années). La valeur en bitcoins des différentes sorties
-      et leurs autres caractéristiques n'ont aucune importance pour le
-      protocole RGB, même si Alice et Bob voudront s'assurer qu'elles
-      sont faciles à dépenser.
+    Les sorties qui contrôlent les montants ne doivent pas nécessairement
+    être des sorties de la transaction contenant l'engagement (bien que
+    cela soit autorisé). Cela élimine la possibilité d'utiliser l'analyse
+    des transactions sur la chaîne pour suivre les transferts basés sur
+    RGB. Les jetons auraient pu être transférés à n'importe quelle UTXO
+    existante---ou à n'importe quelle UTXO dont le destinataire sait
+    qu'elle existera à l'avenir (par exemple, une dépense présignée de
+    son portefeuille froid qui pourrait ne pas apparaître sur la chaîne
+    pendant des années). La valeur en bitcoins des différentes sorties
+    et leurs autres caractéristiques n'ont aucune importance pour le
+    protocole RGB, même si Alice et Bob voudront s'assurer qu'elles
+    sont faciles à dépenser.
 
   - Plus tard, Carole souhaite acheter 100 tokens à Bob dans le cadre
     d'un échange atomique en utilisant une seule transaction onchain.
@@ -57,18 +57,18 @@ Bitcoin les plus répandus.
     engage également les montants et les identifiants UTXO où elle
     recevra ses jetons et où Bob recevra sa monnaie.
 
-      Bob fournit à Carole le contrat original et l'engagement qu'Alice
-      a créé précédemment et qui prouve que Bob contrôle désormais 400
-      jetons. Bob n'a pas besoin de savoir ce qu'Alice a fait des 600
-      jetons restants et Alice n'intervient pas dans l'échange entre Bob
-      et Carole. Ce système garantit à la fois la confidentialité et
-      l'évolutivité. Bob met à jour la PSBT avec une entrée signée pour
-      l'UTXO contrôlant les jetons.
+    Bob fournit à Carole le contrat original et l'engagement qu'Alice
+    a créé précédemment et qui prouve que Bob contrôle désormais 400
+    jetons. Bob n'a pas besoin de savoir ce qu'Alice a fait des 600
+    jetons restants et Alice n'intervient pas dans l'échange entre Bob
+    et Carole. Ce système garantit à la fois la confidentialité et
+    l'évolutivité. Bob met à jour la PSBT avec une entrée signée pour
+    l'UTXO contrôlant les jetons.
 
-      Carole vérifie le contrat original et l'historique des précédentes
-      mises à jour de l'État. Elle s'assure également que tous les autres
-      éléments de la PSBT sont corrects. Elle appose sa signature et
-      diffuse la transaction.
+    Carole vérifie le contrat original et l'historique des précédentes
+    mises à jour de l'État. Elle s'assure également que tous les autres
+    éléments de la PSBT sont corrects. Elle appose sa signature et
+    diffuse la transaction.
 
   Bien que chacun des exemples de transfert ci-dessus ait été effectué sur
   la chaîne, il est facile de modifier le protocole pour qu'il fonctionne

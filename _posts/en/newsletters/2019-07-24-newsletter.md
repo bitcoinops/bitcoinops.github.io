@@ -96,26 +96,26 @@ wiki page for changes -->{% endcomment %}
   historic block chain over and over at no cost to the client---creating
   the vector for a DoS attack.
 
-    For that reason and others (including [privacy concerns][filter
-    privacy]) a number of Bitcoin Core contributors have wanted to disable
-    the feature for several years now.  Early efforts to that end
-    included adding a [BIP111][] services flag to indicate whether or
-    not a node supports bloom filters so that clients can find
-    supporting nodes, and a `peerbloomfilters` configuration option that
-    allows node users to disable bloom filters in case they're worried
-    about the DoS attack.  Additionally, bloom filter support was never
-    updated for checking the contents of the new witness field after
-    segwit was activated, making it less useful than it could be for
-    segwit wallets.
+  For that reason and others (including [privacy concerns][filter
+  privacy]) a number of Bitcoin Core contributors have wanted to disable
+  the feature for several years now.  Early efforts to that end
+  included adding a [BIP111][] services flag to indicate whether or
+  not a node supports bloom filters so that clients can find
+  supporting nodes, and a `peerbloomfilters` configuration option that
+  allows node users to disable bloom filters in case they're worried
+  about the DoS attack.  Additionally, bloom filter support was never
+  updated for checking the contents of the new witness field after
+  segwit was activated, making it less useful than it could be for
+  segwit wallets.
 
-    With this PR #16152, the bloom filter configuration option is now
-    set by default to off.  Users who still want to serve bloom filters
-    can re-enable it.  More notably, many nodes continue to run old versions
-    for years after newer versions have become available, so it's
-    expected that developers of wallets using bloom filters will have
-    some time after the release of Bitcoin Core 0.19
-    ([estimated][Bitcoin Core #15940] late 2019) to find a replacement
-    source of data.
+  With this PR #16152, the bloom filter configuration option is now
+  set by default to off.  Users who still want to serve bloom filters
+  can re-enable it.  More notably, many nodes continue to run old versions
+  for years after newer versions have become available, so it's
+  expected that developers of wallets using bloom filters will have
+  some time after the release of Bitcoin Core 0.19
+  ([estimated][Bitcoin Core #15940] late 2019) to find a replacement
+  source of data.
 
 - [Bitcoin Core #15681][] adds an exception to Bitcoin Core's
   package limitation rules used to prevent CPU- and memory-wasting DoS
@@ -146,3 +146,5 @@ wiki page for changes -->{% endcomment %}
 [signet wiki]: https://en.bitcoin.it/wiki/Signet
 [signet bip post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017123.html
 [jit with fee]: https://lists.ozlabs.org/pipermail/c-lightning/2019-July/000160.html
+[newsletter #54]: /en/newsletters/2019/07/10/#brainstorming-just-in-time-routing-and-free-channel-rebalancing
+[newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out

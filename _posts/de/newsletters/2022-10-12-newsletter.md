@@ -28,56 +28,56 @@ Infrastrukturprojekten.
   Kapital in mehr als einem Dutzend Channels für dieselben Monate zu verhindern.
   Der Vorschlag von Law entschärft dieses Problem durch zwei Protokolländerungen:
 
-    - *Getriggerte HTLCs:* Bei einem standardmäßigen [HTLC][topic htlc],
-      der für Zahlungen verwendet wird, bietet Alice Bob einen bestimmten Betrag
-      in BTC an, wenn er ein zuvor unbekanntes *Preimage* für einen bekannten
-      Hash Digest veröffentlichen kann. Wenn Bob das Preimage nicht bis zu einem
-      bestimmten Zeitpunkt veröffentlicht, kann Alice den Betrag wieder in ihr
-      eigenes Wallet zurückzahlen.
+  - *Getriggerte HTLCs:* Bei einem standardmäßigen [HTLC][topic htlc],
+    der für Zahlungen verwendet wird, bietet Alice Bob einen bestimmten Betrag
+    in BTC an, wenn er ein zuvor unbekanntes *Preimage* für einen bekannten
+    Hash Digest veröffentlichen kann. Wenn Bob das Preimage nicht bis zu einem
+    bestimmten Zeitpunkt veröffentlicht, kann Alice den Betrag wieder in ihr
+    eigenes Wallet zurückzahlen.
 
-        Law schlägt vor, dass Bob mit der Veröffentlichung des Preimage die
-        Zahlung jederzeit einfordern kann, Alice aber eine zusätzliche Bedingung
-        erfüllen muss. Sie müsste Bob deutlich vor ihrer Absicht warnen, den
-        Betrag an ihr Wallet zurückzuzahlen, indem sie eine Trigger-Transaktion
-        on-chain bestätigen lässt. Erst wenn die Trigger-Transaktion mit einer
-        bestimmten Anzahl von Blöcken (oder nach einer bestimmte Dauer) bestätigt
-        worden ist, kann Alice das Geld ausgeben.
+    Law schlägt vor, dass Bob mit der Veröffentlichung des Preimage die
+    Zahlung jederzeit einfordern kann, Alice aber eine zusätzliche Bedingung
+    erfüllen muss. Sie müsste Bob deutlich vor ihrer Absicht warnen, den
+    Betrag an ihr Wallet zurückzuzahlen, indem sie eine Trigger-Transaktion
+    on-chain bestätigen lässt. Erst wenn die Trigger-Transaktion mit einer
+    bestimmten Anzahl von Blöcken (oder nach einer bestimmte Dauer) bestätigt
+    worden ist, kann Alice das Geld ausgeben.
 
-        Damit wäre sichergestellt, dass Bob sein Geld jederzeit abrufen kann,
-        bis zum Zeitpunkt zu dem die auslösende Transaktion die vereinbarte
-        Anzahl von Bestätigungen erhalten hat; auch wenn seit dem Ablauf eines
-        normalen HTLC Monate vergangen sind. Wenn Bob für seine Wartezeit
-        angemessen entschädigt wird, dann ist es in Ordnung, wenn Alice die
-        ganze Zeit über offline bleibt. Bei einem HTLC, der von Alice über Bob
-        zu einem weit entfernten Knoten geleitet wird, wäre nur der Channel
-        zwischen Alice und Bob betroffen - alle anderen Kanäle würden den HTLC
-        umgehend abwickeln (wie im aktuellen LN-Protokoll).
+    Damit wäre sichergestellt, dass Bob sein Geld jederzeit abrufen kann,
+    bis zum Zeitpunkt zu dem die auslösende Transaktion die vereinbarte
+    Anzahl von Bestätigungen erhalten hat; auch wenn seit dem Ablauf eines
+    normalen HTLC Monate vergangen sind. Wenn Bob für seine Wartezeit
+    angemessen entschädigt wird, dann ist es in Ordnung, wenn Alice die
+    ganze Zeit über offline bleibt. Bei einem HTLC, der von Alice über Bob
+    zu einem weit entfernten Knoten geleitet wird, wäre nur der Channel
+    zwischen Alice und Bob betroffen - alle anderen Kanäle würden den HTLC
+    umgehend abwickeln (wie im aktuellen LN-Protokoll).
 
-    - *Asymmetrisch-verzögerte Commitment-Transaktionen:* Jeder der beiden
-      Partner in einem LN-Channel besitzt eine unveröffentlichte
-      Commitment-Transaktion, die er jederzeit veröffentlichen und bestätigen
-      lassen kann. Beide Versionen der Transaktion verwenden dieselbe UTXO, so
-      dass sie miteinander kollidieren, d.h. nur eine kann tatsächlich bestätigt
-      werden.
+  - *Asymmetrisch-verzögerte Commitment-Transaktionen:* Jeder der beiden
+    Partner in einem LN-Channel besitzt eine unveröffentlichte
+    Commitment-Transaktion, die er jederzeit veröffentlichen und bestätigen
+    lassen kann. Beide Versionen der Transaktion verwenden dieselbe UTXO, so
+    dass sie miteinander kollidieren, d.h. nur eine kann tatsächlich bestätigt
+    werden.
 
-        Das bedeutet, dass Alice, wenn sie den Channel schließen will, nicht
-        einfach ihre Version der Commitment-Transaktion mit einer angemessenen
-        Gebührenrate senden und davon ausgehen kann, dass sie bestätigt wird.
-        Sie muss auch abwarten und prüfen, ob Bob stattdessen seine Version der
-        Commitment-Transaktion bestätigt bekommt. In diesem Fall muss sie
-        möglicherweise zusätzliche Maßnahmen ergreifen, um zu überprüfen, ob
-        seine Transaktion den neuesten Channel-Status enthält.
+    Das bedeutet, dass Alice, wenn sie den Channel schließen will, nicht
+    einfach ihre Version der Commitment-Transaktion mit einer angemessenen
+    Gebührenrate senden und davon ausgehen kann, dass sie bestätigt wird.
+    Sie muss auch abwarten und prüfen, ob Bob stattdessen seine Version der
+    Commitment-Transaktion bestätigt bekommt. In diesem Fall muss sie
+    möglicherweise zusätzliche Maßnahmen ergreifen, um zu überprüfen, ob
+    seine Transaktion den neuesten Channel-Status enthält.
 
-        Law schlägt vor, dass Alices Version der Commitment-Transaktion gleich
-        bleibt wie heute, so dass sie diese jederzeit veröffentlichen kann, dass
-        aber Bobs Version eine Zeitsperre enthält, so dass er sie nur
-        veröffentlichen kann, wenn Alice lange Zeit inaktiv war. Im Idealfall
-        ermöglicht dies Alice, den neuesten Channel-Status in der Gewissheit zu
-        veröffentlichen, dass Bob keine gegenteilige Version veröffentlichen
-        kann, was ihr erlaubt nach der Veröffentlichung sicher offline zugehen.
+    Law schlägt vor, dass Alices Version der Commitment-Transaktion gleich
+    bleibt wie heute, so dass sie diese jederzeit veröffentlichen kann, dass
+    aber Bobs Version eine Zeitsperre enthält, so dass er sie nur
+    veröffentlichen kann, wenn Alice lange Zeit inaktiv war. Im Idealfall
+    ermöglicht dies Alice, den neuesten Channel-Status in der Gewissheit zu
+    veröffentlichen, dass Bob keine gegenteilige Version veröffentlichen
+    kann, was ihr erlaubt nach der Veröffentlichung sicher offline zugehen.
 
-    Als diese Beschreibung verfasst wurde, waren die ersten Rückmeldungen auf
-    die Vorschläge von Law noch nicht abgeschlossen.
+  Als diese Beschreibung verfasst wurde, waren die ersten Rückmeldungen auf
+  die Vorschläge von Law noch nicht abgeschlossen.
 
 - **Empfehlungen für eindeutige Adress-Server:** Ruben Somsen hat auf der
   Bitcoin-Dev-Mailingliste ein [Dokument][somsen gist] mit einem weiteren
@@ -90,21 +90,21 @@ Infrastrukturprojekten.
   [Address-Verzeichnisserver][topic block explorers] verwenden (was vermutlich
   die Mehrheit der Lightweight Wallets betrifft).
 
-    Ein Beispiel dafür, wie die Methode funktionieren könnte:
-    Alices Wallet registriert 100 Adressen auf dem Electrum-Server example.com.
-    Sie fügt dann "example.com/alice" in ihre E-Mail-Signatur ein. Wenn Bob
-    Alice Geld spenden möchte, besucht er ihre URL, ruft eine Adresse ab,
-    überprüft, ob Alice sie signiert hat, und überweist dann an die Adresse.
+  Ein Beispiel dafür, wie die Methode funktionieren könnte:
+  Alices Wallet registriert 100 Adressen auf dem Electrum-Server example.com.
+  Sie fügt dann "example.com/alice" in ihre E-Mail-Signatur ein. Wenn Bob
+  Alice Geld spenden möchte, besucht er ihre URL, ruft eine Adresse ab,
+  überprüft, ob Alice sie signiert hat, und überweist dann an die Adresse.
 
-    Die Idee hat den Vorteil, dass sie durch einen teilweise manuellen Prozess
-    bereits mit vielen Wallets kompatibel ist und sich möglicherweise leicht
-    durch einen automatisierten Prozess umsetzen lässt. Der Nachteil ist, dass
-    Nutzer, die bereits ihre Privatsphäre durch das Teilen von Adressen mit
-    einem Server gefährden, darin bestärkt werden ihren Verlust von Privatsphäre
-    fortzusetzen.
+  Die Idee hat den Vorteil, dass sie durch einen teilweise manuellen Prozess
+  bereits mit vielen Wallets kompatibel ist und sich möglicherweise leicht
+  durch einen automatisierten Prozess umsetzen lässt. Der Nachteil ist, dass
+  Nutzer, die bereits ihre Privatsphäre durch das Teilen von Adressen mit
+  einem Server gefährden, darin bestärkt werden ihren Verlust von Privatsphäre
+  fortzusetzen.
 
-    Zum Zeitpunkt der Erstellung dieser Zusammenfassung wurden sowohl auf der
-    Mailingliste als auch im Dokument die Vorschläge noch diskutiert.
+  Zum Zeitpunkt der Erstellung dieser Zusammenfassung wurden sowohl auf der
+  Mailingliste als auch im Dokument die Vorschläge noch diskutiert.
 
 ## Bitcoin Core PR Review Club
 

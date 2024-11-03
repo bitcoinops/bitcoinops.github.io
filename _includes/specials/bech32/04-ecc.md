@@ -1,4 +1,4 @@
-In [last week's newsletter][Newsletter #40], we used the Python
+In [last week's newsletter][Newsletter #40 bech32], we used the Python
 reference library for bech32 to decode an address into a scriptPubKey
 that you could pay.  However, sometimes the user provides an address
 containing a typo.  The code we suggested would detect the typo and
@@ -27,7 +27,7 @@ Followed by including it in our HTML:
 ```
 
 For convenience, we've included that file on the [web
-version][Newsletter #41] of this newsletter, so you can follow along
+version][Newsletter #41 bech32] of this newsletter, so you can follow along
 with the rest of this example by simply opening the developer console in
 your web browser.  Let's start by checking a valid address.  Recall from
 last week that we provide the network identifier when checking an
@@ -131,3 +131,5 @@ feature.
 [javascript sample code]: https://github.com/sipa/bech32/tree/master/ecc/javascript
 [interactive demo]: http://bitcoin.sipa.be/bech32/demo/demo.html
 [bech32 errors]: https://github.com/sipa/bech32/blob/master/ecc/javascript/segwit_addr_ecc.js#L54
+[newsletter #40 bech32]: /en/newsletters/2019/04/02/#bech32-sending-support
+[newsletter #41 bech32]: /en/newsletters/2019/04/09/#bech32-sending-support

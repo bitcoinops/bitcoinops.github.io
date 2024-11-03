@@ -24,19 +24,19 @@ Taprootの準備に関する情報や、新しいリリースおよびリリー�
   特定のアウトプットを生成するトランザクションのtxidを知ることができない場合でも、
   そのアウトプットを支払いに使用するための署名を作成することができます。
 
-    これは、提案中の[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]ソフトフォークによって可能になり、
-    [eltoo][topic eltoo]プロトコルの一部として定義されている*フローティング・トランザクション*のアプローチと比較されます。
-    フローティング・トランザクションでは、参加者は特定のアウトプットのScriptの条件を満たしていれば、
-    そのアウトプットのtxidを知らなくても署名を作成することができます。
+  これは、提案中の[SIGHASH_ANYPREVOUT][topic sighash_anyprevout]ソフトフォークによって可能になり、
+  [eltoo][topic eltoo]プロトコルの一部として定義されている*フローティング・トランザクション*のアプローチと比較されます。
+  フローティング・トランザクションでは、参加者は特定のアウトプットのScriptの条件を満たしていれば、
+  そのアウトプットのtxidを知らなくても署名を作成することができます。
 
-    Lawは、eltooおよび[Channel Factories][topic channel factories]の代替案を含む拡張[論文][law iids]で、
-    IIDsによって可能になる4つの異なるプロトコルに加えて、[Watchtower][topic watchtowers]の設計を簡単にするアイディアについて説明しています。
-    Anthony Townsは、新しい開発であるもののIIDsの機能はanyprevoutを使ってシミュレートできるのではないかと[提案しました][towns iids]が、
-    Lawは、シミュレーションの可能性については[同意しませんでした][law nosim]。
+  Lawは、eltooおよび[Channel Factories][topic channel factories]の代替案を含む拡張[論文][law iids]で、
+  IIDsによって可能になる4つの異なるプロトコルに加えて、[Watchtower][topic watchtowers]の設計を簡単にするアイディアについて説明しています。
+  Anthony Townsは、新しい開発であるもののIIDsの機能はanyprevoutを使ってシミュレートできるのではないかと[提案しました][towns iids]が、
+  Lawは、シミュレーションの可能性については[同意しませんでした][law nosim]。
 
-    すべての参加者がメーリングリストの利用を希望している訳ではなかったため、
-    アイディアの議論は複雑になりました。メーリングリストでの議論が再開された場合は、
-    今後のニュースレターで注目すべき更新をまとめていきます。
+  すべての参加者がメーリングリストの利用を希望している訳ではなかったため、
+  アイディアの議論は複雑になりました。メーリングリストでの議論が再開された場合は、
+  今後のニュースレターで注目すべき更新をまとめていきます。
 
 ## Taprootの準備 #16: アウトプットのリンク
 
@@ -66,8 +66,8 @@ Taprootの準備に関する情報や、新しいリリースおよびリリー�
 - [Bitcoin Core GUI #416][]では、"Enable RPC server"チェックボックスが追加され、
   Bitcoin CoreのRPCサーバーをオン/オフできるようになりました（再起動が必要）。
 
-    {:.center}
-    ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
+  {:.center}
+  ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
 
 - [Bitcoin Core #20591][]では、ウォレットに関連するトランザクションの履歴ブロックを再スキャンする際に、
   ブロックのタイムスタンプのみを使用するよう、ウォレットの時間計算ロジックが変更されています。

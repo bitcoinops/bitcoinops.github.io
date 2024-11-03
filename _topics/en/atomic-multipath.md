@@ -6,13 +6,13 @@ title: Atomic multipath payments (AMPs)
 shortname: amp
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - AMP
   # Although common, I prefer not to put "OG AMP" in the alias list -harding
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Privacy Enhancements
 

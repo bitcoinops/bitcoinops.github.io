@@ -31,11 +31,11 @@ popular Bitcoin infrastructure projects.
   Bitcoin and Lightning. The previous Chaincode Residency (focused on Lightning
   Network applications) was covered in [Newsletter #21][].
 
-    Chaincode is inviting developers who want to contribute to open source
-    Bitcoin and Lightning protocol projects to [apply to the
-    residency][residency apply]. Applicants from all backgrounds are welcomed,
-    and Chaincode will cover travel and accommodation costs and provide a stipend
-    to support living expenses.
+  Chaincode is inviting developers who want to contribute to open source
+  Bitcoin and Lightning protocol projects to [apply to the
+  residency][residency apply]. Applicants from all backgrounds are welcomed,
+  and Chaincode will cover travel and accommodation costs and provide a stipend
+  to support living expenses.
 
 [residency]: https://residency.chaincode.com
 [residency speakers]: https://residency.chaincode.com/#mentors
@@ -61,57 +61,57 @@ the organizers ([day 1][], [day 2][], [day 3][]).
   and verify that information against the signature and other witness
   data provided in the transaction.
 
-    But what if we also asked the spender to provide a copy of the
-    ownership information in their transaction along with a
-    cryptographic proof that the information is actually in the UTXO
-    set?  In that case, we wouldn't need to store the whole set, we'd
-    only need to store a commitment to a set we knew was accurate and
-    that could be referenced by accurate proofs.  RSA accumulators are
-    one idea (among several others) for how to create that commitment
-    and its related proofs.  Using an accumulator, the size of the UTXO
-    commitment that nodes would store on disk would be tiny compared to
-    the full state.  Transactions would increase in size due to needing
-    to provide ownership data and a proof that they were part of the
-    current UTXO set, but the size increase would be modest (assuming
-    current typical transactions, about 70 bytes of ownership
-    information per input plus a proof that could be aggregated down to
-    about 325 bytes per block).
+  But what if we also asked the spender to provide a copy of the
+  ownership information in their transaction along with a
+  cryptographic proof that the information is actually in the UTXO
+  set?  In that case, we wouldn't need to store the whole set, we'd
+  only need to store a commitment to a set we knew was accurate and
+  that could be referenced by accurate proofs.  RSA accumulators are
+  one idea (among several others) for how to create that commitment
+  and its related proofs.  Using an accumulator, the size of the UTXO
+  commitment that nodes would store on disk would be tiny compared to
+  the full state.  Transactions would increase in size due to needing
+  to provide ownership data and a proof that they were part of the
+  current UTXO set, but the size increase would be modest (assuming
+  current typical transactions, about 70 bytes of ownership
+  information per input plus a proof that could be aggregated down to
+  about 325 bytes per block).
 
-    Other considerations affect the suitability of accumulators to
-    the task, including being relatively new to cryptography,
-    requiring either a well-studied trusted setup or a
-    more novel untrusted setup, and potentially making blocks take
-    longer to verify than the current system given that accumulator
-    verification is about 100x slower than alternative systems using
-    merkle trees.  In a new development compared to a previous
-    version of this talk given at Scaling Bitcoin 2018, the speaker
-    describes a potential major speedup to practical verification.
+  Other considerations affect the suitability of accumulators to
+  the task, including being relatively new to cryptography,
+  requiring either a well-studied trusted setup or a
+  more novel untrusted setup, and potentially making blocks take
+  longer to verify than the current system given that accumulator
+  verification is about 100x slower than alternative systems using
+  merkle trees.  In a new development compared to a previous
+  version of this talk given at Scaling Bitcoin 2018, the speaker
+  describes a potential major speedup to practical verification.
 
-    In summary, RSA accumulators remain an interesting area of investigation
-    into how to reduce full node requirements for storing and quickly
-    accessing the UTXO set.  This may not be particularly important now,
-    when the UTXO set is relatively small and fast, but it could make it
-    easier to support initiatives that would change how people use the
-    UTXO set in the future.  For example:
+  In summary, RSA accumulators remain an interesting area of investigation
+  into how to reduce full node requirements for storing and quickly
+  accessing the UTXO set.  This may not be particularly important now,
+  when the UTXO set is relatively small and fast, but it could make it
+  easier to support initiatives that would change how people use the
+  UTXO set in the future.  For example:
 
-    - If accumulator-based proofs can indeed be verified quickly, they
-      could allow the UTXO set size to grow considerably (perhaps
-      because of a block size increase) while still ensuring that miners
-      can verify transaction inputs quickly enough to minimize the use of
-      spy mining or the production of stale blocks.
+  - If accumulator-based proofs can indeed be verified quickly, they
+    could allow the UTXO set size to grow considerably (perhaps
+    because of a block size increase) while still ensuring that miners
+    can verify transaction inputs quickly enough to minimize the use of
+    spy mining or the production of stale blocks.
 
-    - Software that uses trusted UTXO sets with newly-started nodes to
-      avoid the cost and delay of downloading and verifying the full
-      block chain (an option [some software][btcpay utxo] already
-      provides) could reduce those costs and delays even further by
-      replacing the multi-gigabyte UTXO set with an accumulator a
-      million times smaller.
+  - Software that uses trusted UTXO sets with newly-started nodes to
+    avoid the cost and delay of downloading and verifying the full
+    block chain (an option [some software][btcpay utxo] already
+    provides) could reduce those costs and delays even further by
+    replacing the multi-gigabyte UTXO set with an accumulator a
+    million times smaller.
 
-    It should
-    be possible for eager experimenters to explore the use of
-    accumulators in Bitcoin without changing any consensus rules, such
-    as Tadge Dryja has been doing with his similar [Utreexo][] system
-    based on merkle trees.
+  It should
+  be possible for eager experimenters to explore the use of
+  accumulators in Bitcoin without changing any consensus rules, such
+  as Tadge Dryja has been doing with his similar [Utreexo][] system
+  based on merkle trees.
 
 - **Miniscript** presented by Pieter Wuille ([transcript][miniscript
   txt], [video][miniscript vid], [slides][miniscript slides]).
@@ -125,62 +125,72 @@ the organizers ([day 1][], [day 2][], [day 3][]).
   asked by this speaker, and his answer is the composable policy
   language *miniscript*.
 
-    Miniscript is a subset of the full Bitcoin Script language that
-    focuses on just a few features such *signatures*, *times*, and
-    *hashes* plus operators for combining them, such as *and*, *or*, or
-    *threshold*.  It's compact, easy to read, and will compile down to
-    the most efficient script implementing a given policy.  From an
-    existing script compatible with its operations, it will also reverse
-    it back into a policy for easy review.  By design, it uses a
-    similar vocabulary to the [output script descriptors][] Wuille has
-    been implementing in Bitcoin Core and it can help the updater or
-    finalizer in a [BIP174][] PSBT workflow figure out who needs to sign
-    next or whether all data for finalizing the script has been
-    received.
+  Miniscript is a subset of the full Bitcoin Script language that
+  focuses on just a few features such *signatures*, *times*, and
+  *hashes* plus operators for combining them, such as *and*, *or*, or
+  *threshold*.  It's compact, easy to read, and will compile down to
+  the most efficient script implementing a given policy.  From an
+  existing script compatible with its operations, it will also reverse
+  it back into a policy for easy review.  By design, it uses a
+  similar vocabulary to the [output script descriptors][] Wuille has
+  been implementing in Bitcoin Core and it can help the updater or
+  finalizer in a [BIP174][] PSBT workflow figure out who needs to sign
+  next or whether all data for finalizing the script has been
+  received.
 
-    Looking at the problem posed in the introduction paragraph, we can
-    define the example personal spending policy as either you providing a
-    signature for your compressed pubkey, `pk(C)`, or your lawyer
-    waiting for a year, `time(<seconds>)`, and then providing a
-    signature for his own compressed pubkey.  We combine these branches
-    with an asymmetric "or," `aor`, to reduce the witness data required
-    when following the first branch.
+  Looking at the problem posed in the introduction paragraph, we can
+  define the example personal spending policy as either you providing a
+  signature for your compressed pubkey, `pk(C)`, or your lawyer
+  waiting for a year, `time(<seconds>)`, and then providing a
+  signature for his own compressed pubkey.  We combine these branches
+  with an asymmetric "or," `aor`, to reduce the witness data required
+  when following the first branch.
 
-        aor(pk(C),and(time(31536000),pk(C)))
+  ```
+  aor(pk(C),and(time(31536000),pk(C)))
+  ```
 
-    We can define the generic 3-of-4 multisig policy similarly using
-    compressed pubkeys (`C`):
+  We can define the generic 3-of-4 multisig policy similarly using
+  compressed pubkeys (`C`):
 
-        multi(3,C,C,C,C)
+  ```
+  multi(3,C,C,C,C)
+  ```
 
-    A functionally equivalent policy that allows more flexibility would
-    use the threshold operation:
+  A functionally equivalent policy that allows more flexibility would
+  use the threshold operation:
 
-        thres(3,pk(C),pk(C),pk(C),pk(C))
+  ```
+  thres(3,pk(C),pk(C),pk(C),pk(C))
+  ```
 
-    This allows you to just replace one of the public keys with your personal
-    policy:
+  This allows you to just replace one of the public keys with your personal
+  policy:
 
-        thres(3,pk(C),pk(C),pk(C),aor(pk(C),and(time(31536000),pk(C))))
+  ```
+  thres(3,pk(C),pk(C),pk(C),aor(pk(C),and(time(31536000),pk(C))))
+  ```
 
-    When compiled, the result is the following script:
+  When compiled, the result is the following script:
 
-        [pk] CHECKSIG SWAP [pk] CHECKSIG ADD SWAP [pk] CHECKSIG ADD
-        TOALTSTACK IF [pk] CHECKSIGVERIFY 0x8033e101 CHECKSEQUENCEVERIFY
-        0NOTEQUAL ELSE [pk] CHECKSIG ENDIF FROMALTSTACK ADD 3 EQUAL
+  ```
+  [pk] CHECKSIG SWAP [pk] CHECKSIG ADD SWAP [pk] CHECKSIG ADD
+  TOALTSTACK IF [pk] CHECKSIGVERIFY 0x8033e101 CHECKSEQUENCEVERIFY
+  0NOTEQUAL ELSE [pk] CHECKSIG ENDIF FROMALTSTACK ADD 3 EQUAL
+  ```
 
-    A final benefit of miniscript is that it should allow a policy
-    written today to be automatically translated into a structure that
-    makes optimal use of MAST, taproot, or other possible Bitcoin
-    protocol upgrades.  That means, as the Bitcoin protocol advances,
-    the user or developer who invested time into crafting a policy won't
-    have to redo their work in order to continue using it with newer
-    technology.
+  A final benefit of miniscript is that it should allow a policy
+  written today to be automatically translated into a structure that
+  makes optimal use of MAST, taproot, or other possible Bitcoin
+  protocol upgrades.  That means, as the Bitcoin protocol advances,
+  the user or developer who invested time into crafting a policy won't
+  have to redo their work in order to continue using it with newer
+  technology.
 
-    The speaker has provided an interactive Javascript [demo of the
-    miniscript compiler][miniscript demo], and he and his collaborators
-    also have a Rust language version of the compiler they plan to
-    release as open source soon.
+  The speaker has provided an interactive Javascript [demo of the
+  miniscript compiler][miniscript demo], and he and his collaborators
+  also have a Rust language version of the compiler they plan to
+  release as open source soon.
 
 - **Probabilistic Bitcoin soft forks (sporks)** presented by Jeremy
   Rubin ([transcript][spork txt], [video][spork vid]).  By March 2017,
@@ -191,34 +201,34 @@ the organizers ([day 1][], [day 2][], [day 3][]).
   Ultimately the situation was resolved, but it was a mess that many
   would prefer not to repeat.
 
-    The speaker identifies the root cause of the problem as miners being
-    able to delay activation at no cost to themselves.  He proposes a
-    solution: use the randomness remaining in a block header hash to
-    determine whether or not a block signals for activation.  For
-    example, we'd choose a target that only 1 header hash out of 26,000
-    would match.  A block matching that target would be produced once every
-    six months on average, although nobody would know exactly when
-    (about 10% of the time, it'd be within 3 weeks; but another 10% of
-    the time, it'd take more than a year).
+  The speaker identifies the root cause of the problem as miners being
+  able to delay activation at no cost to themselves.  He proposes a
+  solution: use the randomness remaining in a block header hash to
+  determine whether or not a block signals for activation.  For
+  example, we'd choose a target that only 1 header hash out of 26,000
+  would match.  A block matching that target would be produced once every
+  six months on average, although nobody would know exactly when
+  (about 10% of the time, it'd be within 3 weeks; but another 10% of
+  the time, it'd take more than a year).
 
-    Miners would have no control over whether or not their block
-    signaled for activation, but they would have control over whether
-    they published that block.  A miner who refused to publish his own
-    block if it signaled for activation would lose the income from that
-    block but would successfully prevent the fork from activating at
-    least until the next signaling block was produced (which could be
-    tomorrow or could be two years later).  This gives miners a real
-    chance to hold back a change but only by sacrificing real income.
-    The end of the talk suggests some variations on the method with
-    different tradeoffs.
+  Miners would have no control over whether or not their block
+  signaled for activation, but they would have control over whether
+  they published that block.  A miner who refused to publish his own
+  block if it signaled for activation would lose the income from that
+  block but would successfully prevent the fork from activating at
+  least until the next signaling block was produced (which could be
+  tomorrow or could be two years later).  This gives miners a real
+  chance to hold back a change but only by sacrificing real income.
+  The end of the talk suggests some variations on the method with
+  different tradeoffs.
 
-    The idea needs to be analyzed for possible problems, but it does
-    provide an interesting alternative to [BIP9][]-style miner-activated
-    soft forks (MASFs) and [BIP8][]-style user-activated soft forks (UASFs).
+  The idea needs to be analyzed for possible problems, but it does
+  provide an interesting alternative to [BIP9][]-style miner-activated
+  soft forks (MASFs) and [BIP8][]-style user-activated soft forks (UASFs).
 
-    At the conclusion of his talk, this speaker also announced that the
-    next Scaling Bitcoin conference and EdgeDev++ training sessions will
-    be later in 2019 in Tel Aviv, Israel.
+  At the conclusion of his talk, this speaker also announced that the
+  next Scaling Bitcoin conference and EdgeDev++ training sessions will
+  be later in 2019 in Tel Aviv, Israel.
 
 ## Notable code changes
 
@@ -301,3 +311,6 @@ and [libsecp256k1][libsecp256k1 repo].*
 [day 3]: https://www.youtube.com/watch?v=U5fEvfAFs_o
 [utreexo]: https://dci.mit.edu/research/2018/11/28/utreexo-a-dynamic-accumulator-for-bitcoin-state-a-description-of-research-by-thaddeus-dryja
 [btcpay utxo]: https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync
+[newsletter #21]: /en/newsletters/2018/11/13/#lightning-application-residency-videos
+[newsletter #31]: /en/newsletters/2019/01/29/#c-lightning-2283
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

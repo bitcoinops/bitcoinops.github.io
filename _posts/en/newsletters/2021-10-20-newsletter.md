@@ -37,45 +37,45 @@ infrastructure software.
   attempt failed.  Upfront fees are one of the suggested mitigations for
   [channel jamming attacks][topic channel jamming attacks].
 
-    Currently, LN nodes can send guaranteed-to-fail payments in order to
-    probe a payment path.  For example, Alice generates an [HTLC][topic
-    htlc] that pays a preimage nobody knows.  She routes the payment
-    through Bob and Charlie to Zed.  Since Zed doesn't know the payment
-    preimage, he's forced to reject the payment even though it indicates
-    he's supposed to be the ultimate receiver.  If Alice receives the
-    reject message from Zed's node, she knows that Bob and Charlie had
-    enough funds in their channels to allow paying Zed, and so she can
-    immediately react to Zed's rejection by sending an actual payment
-    that has a high probability of succeeding (the only liquidity-related reason for failing would be if Bob's
-    or Charlie's balances had changed in the meantime).  The advantage
-    to Alice of starting with a guaranteed-to-fail probe is that she can
-    probe multiple paths in parallel and use whichever one succeeds
-    first, reducing the overall payment time.  The primary disadvantage
-    is that each payment probe temporarily locks up funds belonging to
-    Alice and to intermediate nodes like Bob and Charlie; if Alice is
-    probing several long paths in parallel, she could easily be locking
-    up 100x or more of her payment amount.  A secondary disadvantage is
-    that this type of payment path probing can sometimes result in
-    unnecessary unilateral channel closures and their resulting onchain
-    fees.
+  Currently, LN nodes can send guaranteed-to-fail payments in order to
+  probe a payment path.  For example, Alice generates an [HTLC][topic
+  htlc] that pays a preimage nobody knows.  She routes the payment
+  through Bob and Charlie to Zed.  Since Zed doesn't know the payment
+  preimage, he's forced to reject the payment even though it indicates
+  he's supposed to be the ultimate receiver.  If Alice receives the
+  reject message from Zed's node, she knows that Bob and Charlie had
+  enough funds in their channels to allow paying Zed, and so she can
+  immediately react to Zed's rejection by sending an actual payment
+  that has a high probability of succeeding (the only liquidity-related reason for failing would be if Bob's
+  or Charlie's balances had changed in the meantime).  The advantage
+  to Alice of starting with a guaranteed-to-fail probe is that she can
+  probe multiple paths in parallel and use whichever one succeeds
+  first, reducing the overall payment time.  The primary disadvantage
+  is that each payment probe temporarily locks up funds belonging to
+  Alice and to intermediate nodes like Bob and Charlie; if Alice is
+  probing several long paths in parallel, she could easily be locking
+  up 100x or more of her payment amount.  A secondary disadvantage is
+  that this type of payment path probing can sometimes result in
+  unnecessary unilateral channel closures and their resulting onchain
+  fees.
 
-    ZmnSCPxj and Jager propose to allow sending a special probe message
-    that doesn't require using an HTLC, temporarily locking up bitcoins,
-    or risking channel failure.  The message would be essentially free
-    to send, although ZmnSCPxj's proposal does suggest some mitigations
-    to avoid denial of service flood attacks.
+  ZmnSCPxj and Jager propose to allow sending a special probe message
+  that doesn't require using an HTLC, temporarily locking up bitcoins,
+  or risking channel failure.  The message would be essentially free
+  to send, although ZmnSCPxj's proposal does suggest some mitigations
+  to avoid denial of service flood attacks.
 
-    If free probing does actually allow spending nodes to find paths
-    that are reliable a high percentage of the time, ZmnSCPxj and Jager
-    argue that developers and users should be less resistant to paying
-    upfront fees that will cost users on the rare occasions when
-    payments fail.  That small occasional cost to honest users
-    would become a large guaranteed cost to dishonest nodes executing
-    extensive jamming attacks, reducing the risk that such attacks
-    will occur (and compensating routing node operators for deploying
-    extra capital to improve the network if a sustained attack did occur).
+  If free probing does actually allow spending nodes to find paths
+  that are reliable a high percentage of the time, ZmnSCPxj and Jager
+  argue that developers and users should be less resistant to paying
+  upfront fees that will cost users on the rare occasions when
+  payments fail.  That small occasional cost to honest users
+  would become a large guaranteed cost to dishonest nodes executing
+  extensive jamming attacks, reducing the risk that such attacks
+  will occur (and compensating routing node operators for deploying
+  extra capital to improve the network if a sustained attack did occur).
 
-    The idea received a modest level of discussion as of this writing.
+  The idea received a modest level of discussion as of this writing.
 
 - **Testing taproot:** in response to a [request][schildbach taproot
   wallet] on the Bitcoin-Dev mailing list, Anthony Towns

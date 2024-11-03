@@ -25,83 +25,83 @@ infrastructure projects.
   parameters, `fee_base_msat` (base fee) and
   `fee_proportional_millionths` (proportional fee).
 
-    A [recent paper][pickhardt richter paper] by René Pickhardt and
-    Stefan Richter proposes a new pathfinding technique that payers
-    will be able to use to minimize their fees and the number of
-    payment attempts they'll need to successfully send a payment (among
-    other benefits).  But deploying the technique on the network today
-    encounters two problems related to the LN base fee and [multipath
-    payments][topic multipath payments]:
+  A [recent paper][pickhardt richter paper] by René Pickhardt and
+  Stefan Richter proposes a new pathfinding technique that payers
+  will be able to use to minimize their fees and the number of
+  payment attempts they'll need to successfully send a payment (among
+  other benefits).  But deploying the technique on the network today
+  encounters two problems related to the LN base fee and [multipath
+  payments][topic multipath payments]:
 
-    - **More splits, more fees:** compare a payment with a single path
-      and a payment for the same amount with two equivalent paths: they
-      would both pay the same amount of total proportional fee (since the
-      overall payment amount is the same) but the two-path payment would
-      pay twice as much total base fee (since it uses twice as many
-      hops).  For `x` equivalent paths, the base fee would be `x` times
-      as high.  This makes using multipath payments more expensive and
-      so penalizes techniques that use them, such as the technique
-      proposed.
+  - **More splits, more fees:** compare a payment with a single path
+    and a payment for the same amount with two equivalent paths: they
+    would both pay the same amount of total proportional fee (since the
+    overall payment amount is the same) but the two-path payment would
+    pay twice as much total base fee (since it uses twice as many
+    hops).  For `x` equivalent paths, the base fee would be `x` times
+    as high.  This makes using multipath payments more expensive and
+    so penalizes techniques that use them, such as the technique
+    proposed.
 
-     {% comment %}<!-- The explanation in the paper is unintelligible to
-     me, so the following description is deliberately bland in order to
-     avoid being wrong.  -->{% endcomment %}
+   {% comment %}<!-- The explanation in the paper is unintelligible to
+   me, so the following description is deliberately bland in order to
+   avoid being wrong.  -->{% endcomment %}
 
-     - **Computational difficulties:** as described in section 2.3 of
-       the paper, the proposed pathfinding algorithm can't easily
-       compute paths and payment splits when there's a base fee.  It may
-       be possible to solve this problem algorithmically in the long
-       term, but the easiest solution for implementers of the algorithm
-       would be to eliminate the base fee.
+   - **Computational difficulties:** as described in section 2.3 of
+     the paper, the proposed pathfinding algorithm can't easily
+     compute paths and payment splits when there's a base fee.  It may
+     be possible to solve this problem algorithmically in the long
+     term, but the easiest solution for implementers of the algorithm
+     would be to eliminate the base fee.
 
-    In [podcasts][honigdachs podcast] and on [Twitter][zbf tweet], the authors suggested the problem could
-    be addressed without any immediate change to the LN protocol if node
-    operators set their base fee to zero.  They further suggested
-    operators could begin doing this immediately, even though their work
-    is not yet deployable in production.  This led to several
-    discussions between LN developers on Twitter, which Anthony Towns
-    helped migrate to the Lightning-Dev mailing list with a [post][towns
-    post].
+  In [podcasts][honigdachs podcast] and on [Twitter][zbf tweet], the authors suggested the problem could
+  be addressed without any immediate change to the LN protocol if node
+  operators set their base fee to zero.  They further suggested
+  operators could begin doing this immediately, even though their work
+  is not yet deployable in production.  This led to several
+  discussions between LN developers on Twitter, which Anthony Towns
+  helped migrate to the Lightning-Dev mailing list with a [post][towns
+  post].
 
-    Towns was in favor of users setting the base fee to zero, noting
-    both its benefits for multipath splitting and that it should be
-    easier for node operators to optimize the single remaining
-    fee parameter, the proportional fee.
+  Towns was in favor of users setting the base fee to zero, noting
+  both its benefits for multipath splitting and that it should be
+  easier for node operators to optimize the single remaining
+  fee parameter, the proportional fee.
 
-    Matt Corallo [replied][corallo post] with the concern that the
-    creation of [HTLCs][topic htlc] for routing payments places several
-    burdens on nodes that are constant regardless of the amount of the
-    payment.  The base fee allows a node to require that it be
-    compensated for those costs.  But those costs, Towns countered, are
-    essentially the same both for successfully routed payments and
-    unsuccessfully routed payments---yet LN nodes are only paid in the
-    successful case.  If nodes are willing to accept those costs without
-    compensation in some cases, why not accept them in all cases?  The
-    same, though, could be said of proportional fees, and this led to
-    some brief discussion of [upfront fees][topic channel jamming
-    attacks] which could allow nodes to be compensated even for
-    unsuccessful payments.
+  Matt Corallo [replied][corallo post] with the concern that the
+  creation of [HTLCs][topic htlc] for routing payments places several
+  burdens on nodes that are constant regardless of the amount of the
+  payment.  The base fee allows a node to require that it be
+  compensated for those costs.  But those costs, Towns countered, are
+  essentially the same both for successfully routed payments and
+  unsuccessfully routed payments---yet LN nodes are only paid in the
+  successful case.  If nodes are willing to accept those costs without
+  compensation in some cases, why not accept them in all cases?  The
+  same, though, could be said of proportional fees, and this led to
+  some brief discussion of [upfront fees][topic channel jamming
+  attacks] which could allow nodes to be compensated even for
+  unsuccessful payments.
 
-    Towns also suggested that it is possible for a node to ensure it
-    receives a minimal fee even without a base fee by simply refusing
-    to route payments below a certain size.  For example, a node with
-    a current base fee of 1 sat can ensure it receives at least that
-    much with a 0.1% proportional fee and a minimum amount of 1,000
-    sat.  This would stifle micropayments, but LN nodes already handle
-    small payments without using HTLCs, which eliminates some of the
-    fixed costs and may make purely proportional costs more
-    appropriate, though this remained debated.
+  Towns also suggested that it is possible for a node to ensure it
+  receives a minimal fee even without a base fee by simply refusing
+  to route payments below a certain size.  For example, a node with
+  a current base fee of 1 sat can ensure it receives at least that
+  much with a 0.1% proportional fee and a minimum amount of 1,000
+  sat.  This would stifle micropayments, but LN nodes already handle
+  small payments without using HTLCs, which eliminates some of the
+  fixed costs and may make purely proportional costs more
+  appropriate, though this remained debated.
 
-    Later in the discussion, Olaoluwa Osuntokun [emphasized][osuntokun
-    post] a point made earlier that there's no clear current need for
-    node operators to change a parameter today for a new pathfinding
-    algorithm that nobody is currently ready to use in production.   He and
-    Corallo want to see if further research and development can allow
-    the algorithm (or a similar one based on different principles) to
-    work nearly equally as well even when base fees are non-zero.
+  Later in the discussion, Olaoluwa Osuntokun [emphasized][osuntokun
+  post] a point made earlier that there's no clear current need for
+  node operators to change a parameter today for a new pathfinding
+  algorithm that nobody is currently ready to use in production.   He and
+  Corallo want to see if further research and development can allow
+  the algorithm (or a similar one based on different principles) to
+  work nearly equally as well even when base fees are non-zero.
 
-    No clear conclusion to the discussion was reached as of this
-    writing.
+  No clear conclusion to the discussion was reached as of this
+  writing.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

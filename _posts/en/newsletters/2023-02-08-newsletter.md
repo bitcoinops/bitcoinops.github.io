@@ -23,18 +23,18 @@ Bitcoin infrastructure software.
   to inquire about whether a size limit should be imposed to discourage
   such data storage.
 
-    Andrew Poelstra [replied][poelstra ordinal] that there is no
-    effective way to prevent data storage.  Adding new restrictions to
-    prevent unwanted data storage in witnesses would undermine
-    advantages discussed during taproot's design (see [Newsletter
-    #65][news65 tapscript]) and would likely only result in the data
-    being stored in other ways.  Those other ways might raise costs for
-    those generating the data---but probably not by enough to
-    significantly discourage the behavior---and the alternative storage
-    methods might create new problems for traditional Bitcoin users.
+  Andrew Poelstra [replied][poelstra ordinal] that there is no
+  effective way to prevent data storage.  Adding new restrictions to
+  prevent unwanted data storage in witnesses would undermine
+  advantages discussed during taproot's design (see [Newsletter
+  #65][news65 tapscript]) and would likely only result in the data
+  being stored in other ways.  Those other ways might raise costs for
+  those generating the data---but probably not by enough to
+  significantly discourage the behavior---and the alternative storage
+  methods might create new problems for traditional Bitcoin users.
 
-    As of this writing, there was vigorous ongoing discussion about the
-    topic.  We'll provide an update in next week's newsletter. {% assign timestamp="1:19" %}
+  As of this writing, there was vigorous ongoing discussion about the
+  topic.  We'll provide an update in next week's newsletter. {% assign timestamp="1:19" %}
 
 - **Summary of call about mitigating LN jamming:** Carla Kirk-Cohen and
   Clara Shikhelman [posted][ckccs jamming] to the Lightning-Dev mailing
@@ -48,8 +48,8 @@ Bitcoin infrastructure software.
   Service Provider (LSP) specification working group.  See the mailing
   list post for extended summaries and a [transcript][jam xs].
 
-    Future video meetings are planned for every two weeks; watch the
-    Lightning-Dev mailing list for announcements of upcoming meetings. {% assign timestamp="11:05" %}
+  Future video meetings are planned for every two weeks; watch the
+  Lightning-Dev mailing list for announcements of upcoming meetings. {% assign timestamp="11:05" %}
 
 ## Bitcoin Core PR Review Club
 

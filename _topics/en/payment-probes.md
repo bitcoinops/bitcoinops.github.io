@@ -6,12 +6,12 @@ title: Payment probes
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Probing
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Privacy Problems
 
@@ -63,6 +63,12 @@ optech_mentions:
 
   - title: "Dynamic Payment Switching and Splitting (PSS) proposed to thwart Balance Discovery Attacks"
     url: /en/newsletters/2023/10/04/#payment-splitting-and-switching
+
+  - title: "LND #8136 updates the `EstimateRouteFee` RPC to use payment probing"
+    url: /en/newsletters/2024/03/13/#lnd-8136
+
+  - title: "LDK #3103 begins using data collected from frequent probing in its testing benchmarks"
+    url: /en/newsletters/2024/06/21/#ldk-3103
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

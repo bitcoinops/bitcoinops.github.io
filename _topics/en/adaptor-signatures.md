@@ -6,13 +6,13 @@ title: Adaptor signatures
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Signature adaptors
   - Scriptless scripts
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Privacy Enhancements
   - Scripts and Addresses
@@ -112,6 +112,9 @@ optech_mentions:
   - title: "Analysis of signature adaptor security"
     url: /en/newsletters/2023/05/03/#analysis-of-signature-adaptor-security
 
+  - title: "LN developer discussion of variations of signature adaptors for adding PTLC support"
+    url: /en/newsletters/2024/10/18/#ptlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
@@ -172,7 +175,10 @@ Besides coinswaps, there are several other [proposed uses][scriptless
 scripts repo] for adaptor signatures.
 
 <div class="qa_details">
-<details markdown="1"><summary>Click to display the same coinswap example in mathematical terms</summary>
+<details markdown="1">
+
+<summary>Click to display the same coinswap example in mathematical terms</summary>
+
 *In the following example, we assume the use of BIP340
 schnorr signatures.  We use lowercase variables for scalars and
 uppercase variables for elliptic curve points.  We represent
@@ -250,6 +256,7 @@ earlier:
 
 Bob uses that signature to broadcast the transaction Alice
 originally gave him.
+
 </details><br>
 </div>
 

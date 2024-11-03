@@ -4,7 +4,7 @@ shortname: hwi
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Wallet Collaboration Tools
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -78,8 +78,8 @@ see_also:
   - title: Miniscript
     link: topic miniscript
 
-  - title: Exfiltration resistant signing
-    link: topic exfiltration resistant signing
+  - title: Exfiltration-resistant signing
+    link: topic exfiltration-resistant signing
 ---
 Designed primarily by Bitcoin Core developers to allow that software to
 use hardware wallets as external signers, HWI is now being used by

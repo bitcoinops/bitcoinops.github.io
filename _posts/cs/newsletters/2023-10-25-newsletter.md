@@ -85,7 +85,9 @@ Bitcoin Stack Exchange.
   Aby byl útok výnosný, musí MalloryB sdílet s Bobem kanál, ale MalloryA může
   být kdekoliv na cestě k Bobovi, například:
 
-      MalloryA -> X -> Y -> Z -> Bob -> MalloryB
+  ```
+  MalloryA -> X -> Y -> Z -> Bob -> MalloryB
+  ```
 
   Replacement cycling má pro LN uzly podobné důsledky jako [transaction pinning útoky][topic
   transaction pinning]. Avšak techniky jako [přeposílání transakcí verze 3][topic v3 transaction
@@ -96,211 +98,211 @@ Bitcoin Stack Exchange.
   [popsal][riard cycle1] Antoine Riard, v LN implementacích bylo nasazeno několik
   opatření.
 
-    - **Častá opakovaná zveřejňování:** poté, co mempool uzlu nahradí Bobovu transakci
-      Mallořinou a Mallořin vstup odstraní pomocí její druhé nahrazovací transakce,
-      je tento uzel okamžitě ochoten znovu přijmout Bobovu transakci. Bob ji jen musí
-      znovu zveřejnit, což ho bude stát stejný poplatek, jaký byl ochoten
-      zaplatit již předtím.
+  - **Častá opakovaná zveřejňování:** poté, co mempool uzlu nahradí Bobovu transakci
+    Mallořinou a Mallořin vstup odstraní pomocí její druhé nahrazovací transakce,
+    je tento uzel okamžitě ochoten znovu přijmout Bobovu transakci. Bob ji jen musí
+    znovu zveřejnit, což ho bude stát stejný poplatek, jaký byl ochoten
+    zaplatit již předtím.
 
-      Před soukromým odhalením replacement cycling útoku LN implementace
-      opakovaně zveřejňovaly své transakce méně často, jednou za blok či méně.
-      Zveřejňování či opakované zveřejňování transakcí obvykle přináší náklady
-      v určité [ztrátě soukromí][topic transaction origin privacy]: třetí
-      strany mohou snáze asociovat Bobovu onchain LN aktivitu s jeho IP adresou.
-      Jen málo veřejných LN uzlů to však v současnosti bere v potaz. Nově budou
-      Core Lightning, Eclair, LDK i LND opakovaně zveřejňovat častěji.
+    Před soukromým odhalením replacement cycling útoku LN implementace
+    opakovaně zveřejňovaly své transakce méně často, jednou za blok či méně.
+    Zveřejňování či opakované zveřejňování transakcí obvykle přináší náklady
+    v určité [ztrátě soukromí][topic transaction origin privacy]: třetí
+    strany mohou snáze asociovat Bobovu onchain LN aktivitu s jeho IP adresou.
+    Jen málo veřejných LN uzlů to však v současnosti bere v potaz. Nově budou
+    Core Lightning, Eclair, LDK i LND opakovaně zveřejňovat častěji.
 
-      Po každém Bobově opakovaném zveřejnění může Mallory opět použít stejnou
-      techniku k nahrazení jeho transakce. Avšak pravidla nahrazení dle BIP125
-      budou po Mallory vyžadovat dodatečný poplatek za každé další nahrazení,
-      čili každé další Bobovo zveřejnění snižuje Mallory ziskovost útoku.
+    Po každém Bobově opakovaném zveřejnění může Mallory opět použít stejnou
+    techniku k nahrazení jeho transakce. Avšak pravidla nahrazení dle BIP125
+    budou po Mallory vyžadovat dodatečný poplatek za každé další nahrazení,
+    čili každé další Bobovo zveřejnění snižuje Mallory ziskovost útoku.
 
-      Z toho vyplývá hrubý vzorec pro nejvyšší částku HTLC, kterou by měl
-      uzel přijmout. Jsou-li útočníkovy náklady za každé kolo nahrazení
-      _x_, počet bloků, který má obránce k dispozici, je _y_
-      a počet efektivních zveřejnění, která obránce průměrně za blok učiní,
-      je _z_, je HTLC pravděpodobně rozumně zabezpečené do výše kousek pod `x*y*z`.
+    Z toho vyplývá hrubý vzorec pro nejvyšší částku HTLC, kterou by měl
+    uzel přijmout. Jsou-li útočníkovy náklady za každé kolo nahrazení
+    _x_, počet bloků, který má obránce k dispozici, je _y_
+    a počet efektivních zveřejnění, která obránce průměrně za blok učiní,
+    je _z_, je HTLC pravděpodobně rozumně zabezpečené do výše kousek pod `x*y*z`.
 
-    - **Delší CLTV expiry delta:** když Bob akceptuje od MalloryA HTLC,
-      souhlasí, že jí umožní nárokovat onchain refundaci po určitém počtu
-      bloků (řekněme 200 bloků). Když Bob nabídne ekvivalentní HTLC
-      MalloryB, dovoluje mu nárokovat refundaci po nižším počtu bloků
-      (řekněme 100 bloků). Tyto expirační podmínky jsou zapsány pomocí
-      opkódu `OP_CHECKLOCKTIMEVERIFY` (CLTV), proto se rozdíl mezi nimi
-      nazývá _CLTV expiry delta_.
+  - **Delší CLTV expiry delta:** když Bob akceptuje od MalloryA HTLC,
+    souhlasí, že jí umožní nárokovat onchain refundaci po určitém počtu
+    bloků (řekněme 200 bloků). Když Bob nabídne ekvivalentní HTLC
+    MalloryB, dovoluje mu nárokovat refundaci po nižším počtu bloků
+    (řekněme 100 bloků). Tyto expirační podmínky jsou zapsány pomocí
+    opkódu `OP_CHECKLOCKTIMEVERIFY` (CLTV), proto se rozdíl mezi nimi
+    nazývá _CLTV expiry delta_.
 
-      Čím delší je CLTV expiry delta, tím déle musí původní odesílatel
-      platby čekat na návrat svých prostředků v případě selhání platby,
-      proto odesílatelé preferují posílat platby cestami s kratšími delta.
-      Avšak také platí, že čím delší je delta, tím více času má přeposílající
-      uzel (jako Bob) na reakci na problémy jako [transaction pinning][topic
-      transaction pinning] a masové zavírání kanálů. Tyto protichůdné
-      požadavky vedly k častým změnám v LN software v nastavení výchozích delta,
-      viz zpravodaje čísla [40][news40 delta], [95][news95 delta], [109][news109 delta],
-      [112][news112 delta], [142][news142 delta] (vše _angl._), [248][news248 delta] a
-      [255][news255 delta].
+    Čím delší je CLTV expiry delta, tím déle musí původní odesílatel
+    platby čekat na návrat svých prostředků v případě selhání platby,
+    proto odesílatelé preferují posílat platby cestami s kratšími delta.
+    Avšak také platí, že čím delší je delta, tím více času má přeposílající
+    uzel (jako Bob) na reakci na problémy jako [transaction pinning][topic
+    transaction pinning] a masové zavírání kanálů. Tyto protichůdné
+    požadavky vedly k častým změnám v LN software v nastavení výchozích delta,
+    viz zpravodaje čísla [40][news40 delta], [95][news95 delta], [109][news109 delta],
+    [112][news112 delta], [142][news142 delta] (vše _angl._), [248][news248 delta] a
+    [255][news255 delta].
 
-      V případě replacement cycling útoku dává Bobovi delší CLTV delta více možností
-      opakovaného zveřejnění, což zvyšuje náklady útoku podle výše zmíněného
-      vzorce.
+    V případě replacement cycling útoku dává Bobovi delší CLTV delta více možností
+    opakovaného zveřejnění, což zvyšuje náklady útoku podle výše zmíněného
+    vzorce.
 
-      Navíc pokaždé, když je Bobova opakovaně zveřejněná transakce v mempoolu
-      těžaře, existuje šance, že ji těžař vybere do šablony bloku, kterou poté
-      vytěží. Tím by byl útok zmařen. Mallořino úvodní nahrazení s předobrazem
-      by též mohlo být vytěženo před tím, než by měla možnost jej nahradit.
-      I toto by útok překazilo. Stráví-li v každém cyklu tyto dvě
-      transakce určitou dobu v těžařově mempoolu, každé Bobovo opakované
-      zveřejnění tuto dobu násobí, stejně jako ji dále násobí CLTV expiry delta.
+    Navíc pokaždé, když je Bobova opakovaně zveřejněná transakce v mempoolu
+    těžaře, existuje šance, že ji těžař vybere do šablony bloku, kterou poté
+    vytěží. Tím by byl útok zmařen. Mallořino úvodní nahrazení s předobrazem
+    by též mohlo být vytěženo před tím, než by měla možnost jej nahradit.
+    I toto by útok překazilo. Stráví-li v každém cyklu tyto dvě
+    transakce určitou dobu v těžařově mempoolu, každé Bobovo opakované
+    zveřejnění tuto dobu násobí, stejně jako ji dále násobí CLTV expiry delta.
 
-      Například i když tyto transakce stráví v mempoolu průměrného těžaře pouze 1 %
-      času na blok, existuje zhruba 50% šance, že útok selže, je-li CLTV expiry delta
-      jen 70 bloků. Následující graf ukazuje pravděpodobnost selhání Mallořina
-      útoku za použití současných výchozích hodnot CLTV expiry delta v různých
-      LN implementacích vypsaných v Riardově emailu. Předpokladem je, že
-      očekávané HTLC transakce jsou v mempoolech těžařů 0,1 % času, 1 % času
-      nebo 5 % času. Pro referenci: je-li průměrný čas mezi bloky 600 sekund,
-      odpovídají tato procenta pouhým 0,6 sekundám, 6 sekundám a 30 sekundám
-      z každých 10 minut.
+    Například i když tyto transakce stráví v mempoolu průměrného těžaře pouze 1 %
+    času na blok, existuje zhruba 50% šance, že útok selže, je-li CLTV expiry delta
+    jen 70 bloků. Následující graf ukazuje pravděpodobnost selhání Mallořina
+    útoku za použití současných výchozích hodnot CLTV expiry delta v různých
+    LN implementacích vypsaných v Riardově emailu. Předpokladem je, že
+    očekávané HTLC transakce jsou v mempoolech těžařů 0,1 % času, 1 % času
+    nebo 5 % času. Pro referenci: je-li průměrný čas mezi bloky 600 sekund,
+    odpovídají tato procenta pouhým 0,6 sekundám, 6 sekundám a 30 sekundám
+    z každých 10 minut.
 
-      ![Plot of probability attack will fail within x blocks](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
+    ![Plot of probability attack will fail within x blocks](/img/posts/2023-10-cltv-expiry-delta-cycling.png)
 
-    - **Skenování mempoolu:** design HTLC dává Mallory podnět, aby
-      nechala potvrdit transakci s předobrazem před tím, než může Bob
-      nárokovat refundaci. Pro Boba je to praktické: blockchain je široce
-      dostupný a jeho velikost omezena, Bob tedy může snadno najít
-      jakýkoliv předobraz, který se ho týká. Kdyby tento systém fungoval
-      podle záměru, Bob by mohl z blockchainu získat všechny informace potřebné
-      pro provoz LN.
+  - **Skenování mempoolu:** design HTLC dává Mallory podnět, aby
+    nechala potvrdit transakci s předobrazem před tím, než může Bob
+    nárokovat refundaci. Pro Boba je to praktické: blockchain je široce
+    dostupný a jeho velikost omezena, Bob tedy může snadno najít
+    jakýkoliv předobraz, který se ho týká. Kdyby tento systém fungoval
+    podle záměru, Bob by mohl z blockchainu získat všechny informace potřebné
+    pro provoz LN.
 
-      Bohužel, replacement cycling znamená, že Mallory již nemusí být
-      motivována k potvrzení své transakce před Bobovým nárokováním
-      refundace. Ale aby mohla Mallory zahájit replacement cycle, musí
-      krátce odhalit předobraz v rámci mempoolů těžařů, chce-li nahradit
-      Bobovu transakci. Pokud Bob provozuje přeposílající plný uzel,
-      Mallořina transakce s předobrazem může procházet i Bobovým uzlem.
-      Pokud by Bob včas detekoval předobraz, útok by odrazil a Mallory
-      by ztratila všechny peníze, které během pokusu o útok utratila.
+    Bohužel, replacement cycling znamená, že Mallory již nemusí být
+    motivována k potvrzení své transakce před Bobovým nárokováním
+    refundace. Ale aby mohla Mallory zahájit replacement cycle, musí
+    krátce odhalit předobraz v rámci mempoolů těžařů, chce-li nahradit
+    Bobovu transakci. Pokud Bob provozuje přeposílající plný uzel,
+    Mallořina transakce s předobrazem může procházet i Bobovým uzlem.
+    Pokud by Bob včas detekoval předobraz, útok by odrazil a Mallory
+    by ztratila všechny peníze, které během pokusu o útok utratila.
 
-      Skenování mempoolu není všemocné: neexistuje záruka, že Mallořina
-      nahrazující transakce proteče Bobovým uzlem. Avšak čím častěji
-      Bob opakovaně zveřejňuje svou transakci (viz _častá opakovaná zveřejňování_)
-      a čím déle musí Mallory před Bobem skrývat svůj předobraz (viz
-      _delší CLTV expiry delta_), tím pravděpodobnější je, že se jedna z
-      transakcí s předobrazem včas dostane do Bobova mempoolu.
+    Skenování mempoolu není všemocné: neexistuje záruka, že Mallořina
+    nahrazující transakce proteče Bobovým uzlem. Avšak čím častěji
+    Bob opakovaně zveřejňuje svou transakci (viz _častá opakovaná zveřejňování_)
+    a čím déle musí Mallory před Bobem skrývat svůj předobraz (viz
+    _delší CLTV expiry delta_), tím pravděpodobnější je, že se jedna z
+    transakcí s předobrazem včas dostane do Bobova mempoolu.
 
-      Eclair a LND v současnosti implementují skenování mempoolu u
-      přeposílajících uzlů.
+    Eclair a LND v současnosti implementují skenování mempoolu u
+    přeposílajících uzlů.
 
-    - **Diskuze o účinnosti opatření:** Riard v úvodním oznámení napsal:
-      „Věřím, že replacement cycling útoky jsou pro schopné útočníky nadále
-      praktické.” Matto Corallo [napsal][corallo cycle1], že „nasazená
-      opatření problém neodstraňují; lze argumentovat, že neposkytují víc
-      než pouhé PR vyjádření.” Olaoluwa Osuntokun [polemizoval][osuntokun
-      cycle1]: „[podle mého názoru] se jedná spíše o vratký druh útoku,
-      který vyžaduje určité aranžmá jednotlivých uzlů, extrémně přesné načasování
-      a provedení, nepotvrzující postavení všech transakcí a okamžitou
-      propagaci celou sítí.”
+  - **Diskuze o účinnosti opatření:** Riard v úvodním oznámení napsal:
+    „Věřím, že replacement cycling útoky jsou pro schopné útočníky nadále
+    praktické.” Matto Corallo [napsal][corallo cycle1], že „nasazená
+    opatření problém neodstraňují; lze argumentovat, že neposkytují víc
+    než pouhé PR vyjádření.” Olaoluwa Osuntokun [polemizoval][osuntokun
+    cycle1]: „[podle mého názoru] se jedná spíše o vratký druh útoku,
+    který vyžaduje určité aranžmá jednotlivých uzlů, extrémně přesné načasování
+    a provedení, nepotvrzující postavení všech transakcí a okamžitou
+    propagaci celou sítí.”
 
-      My v Optechu si myslíme, že je důležité znovu zdůraznit, že tento útok
-      postihuje pouze přeposílající uzly. Přeposílající uzel je bitcoinová
-      horká peněženka neustále připojená k internetu. Jedná se o druh
-      nasazení, který je neustále jednu zranitelnost od ztráty všech prostředků.
-      Každý, kdo vyhodnocuje dopad replacement cyclingu na rizikovost provozu
-      přeposílajícího LN uzlu, by tak měl činit v rámci již existujícího rizika.
-      Pochopitelně je dobré hledat další způsoby snižování rizika.
-      Tím se zabývá náš další bod.
+    My v Optechu si myslíme, že je důležité znovu zdůraznit, že tento útok
+    postihuje pouze přeposílající uzly. Přeposílající uzel je bitcoinová
+    horká peněženka neustále připojená k internetu. Jedná se o druh
+    nasazení, který je neustále jednu zranitelnost od ztráty všech prostředků.
+    Každý, kdo vyhodnocuje dopad replacement cyclingu na rizikovost provozu
+    přeposílajícího LN uzlu, by tak měl činit v rámci již existujícího rizika.
+    Pochopitelně je dobré hledat další způsoby snižování rizika.
+    Tím se zabývá náš další bod.
 
 - **Další navrhovaná opatření před replacement cycling útokem:** v době psaní
   zpravodaje se v emailových skupinách Bitcoin-Dev a Lightning-Dev objevilo
   přes 40 reakcí na odhalení útoku. Uvádíme některá navrhovaná opatření:
 
-    - **Navyšování poplatků až do úplného konce:** Riardův [článek][riard
-      cycle paper] o útoku a příspěvky v emailové skupině od [Ziggieho][ziggie
-      cycle] a [Matta Morehouse][morehouse cycle] navrhují, aby obránce
-      (např. Bob) namísto pouhého opakovaného zveřejňování své
-      refundace začal zveřejňovat konfliktní alternativní transakce,
-      které platí neustále se zvyšující jednotkové poplatky v souladu
-      s tím, jak se blíží lhůta vyrovnání s útočníkem ve směru proti
-      toku platby (např. MalloryA).
+  - **Navyšování poplatků až do úplného konce:** Riardův [článek][riard
+    cycle paper] o útoku a příspěvky v emailové skupině od [Ziggieho][ziggie
+    cycle] a [Matta Morehouse][morehouse cycle] navrhují, aby obránce
+    (např. Bob) namísto pouhého opakovaného zveřejňování své
+    refundace začal zveřejňovat konfliktní alternativní transakce,
+    které platí neustále se zvyšující jednotkové poplatky v souladu
+    s tím, jak se blíží lhůta vyrovnání s útočníkem ve směru proti
+    toku platby (např. MalloryA).
 
-      Pravidla BIP125 vyžadují, aby útočník ve směru toku platby
-      (např. MalloryB) platil za každé své nahrazení Bobovy transakce
-      neustále se zvyšující poplatky, což by Bobovi umožnilo snížit
-      ziskovost Mallořina útoku, pokud by se zdařil. Uvažme náš hrubý vzorec
-      `x*y*z` z části o _opatření opakovanými zveřejněními_. Pokud by
-      pro některá opakovaná zveřejnění narostly náklady na _x_, vzrostly
-      by celkové náklady útoku a zvýšila by se maximální bezpečná hodnota HTLC.
+    Pravidla BIP125 vyžadují, aby útočník ve směru toku platby
+    (např. MalloryB) platil za každé své nahrazení Bobovy transakce
+    neustále se zvyšující poplatky, což by Bobovi umožnilo snížit
+    ziskovost Mallořina útoku, pokud by se zdařil. Uvažme náš hrubý vzorec
+    `x*y*z` z části o _opatření opakovanými zveřejněními_. Pokud by
+    pro některá opakovaná zveřejnění narostly náklady na _x_, vzrostly
+    by celkové náklady útoku a zvýšila by se maximální bezpečná hodnota HTLC.
 
-      Riard ve svém článku vysvětluje, že náklady nemusí být symetrické,
-      obzvláště v době, kdy se průměrný jednotkový poplatek zvyšuje a
-      útočník je schopen vyhodit některé své transakce z mempoolů těžařů.
-      V emailové skupině dále [píše][riard cycle2], že útočník může útok
-      rozložit mezi více obětí pomocí určitého druhu [dávkových plateb][topic
-      payment batching], čímž by mírně navýšil účinnost.
+    Riard ve svém článku vysvětluje, že náklady nemusí být symetrické,
+    obzvláště v době, kdy se průměrný jednotkový poplatek zvyšuje a
+    útočník je schopen vyhodit některé své transakce z mempoolů těžařů.
+    V emailové skupině dále [píše][riard cycle2], že útočník může útok
+    rozložit mezi více obětí pomocí určitého druhu [dávkových plateb][topic
+    payment batching], čímž by mírně navýšil účinnost.
 
-      Matt Corallo [poznamenává][corallo cycle2] hlavní nevýhodu tohoto
-      přístupu v porovnání s prostým opakovaným zveřejněním: i kdyby Bob
-      útočníka porazil, ztratil by část (nebo i všechnu) hodnoty HTLC.
-      Teoreticky by útočník nebyl ochoten v útoku pokračovat, pokud
-      by věřil, že obránce bude následovat cestu vzájemné destrukce.
-      Bob by tedy ve skutečnosti nemusel vyšší a vyšší jednotkový
-      poplatek platit. Zda by tomu tak ve skutečnosti v bitcoinové síti
-      bylo, zůstává nezodpovězeno.
+    Matt Corallo [poznamenává][corallo cycle2] hlavní nevýhodu tohoto
+    přístupu v porovnání s prostým opakovaným zveřejněním: i kdyby Bob
+    útočníka porazil, ztratil by část (nebo i všechnu) hodnoty HTLC.
+    Teoreticky by útočník nebyl ochoten v útoku pokračovat, pokud
+    by věřil, že obránce bude následovat cestu vzájemné destrukce.
+    Bob by tedy ve skutečnosti nemusel vyšší a vyšší jednotkový
+    poplatek platit. Zda by tomu tak ve skutečnosti v bitcoinové síti
+    bylo, zůstává nezodpovězeno.
 
-    - **Automatické opakované zkoušení minulých transakcí:** Corallo
-      [naznačil][corallo cycle1], že „jediná oprava tohoto problému bude,
-      když budou těžaři ukládat historii transakcí, které viděli, a budou
-      je zkoušet znova po […] podobném útoku.” Bastien Teinturier
-      [odpověděl][teinturier cycle]: „Souhlasím ale s Mattem, že bude
-      nejspíš potřeba nějaké principiálnější změny na bitcoinové vrstvě,
-      aby mohly L2 protokoly této třídě útoku lépe čelit.” Riard se též
-      [vyjádřil][riard cycle3] v podobném duchu: „Trvalá oprava se může
-      uskutečnit [jen] na základní vrstvě, například přidáním paměťově
-      náročné historie všech viděných transakcí.”
+  - **Automatické opakované zkoušení minulých transakcí:** Corallo
+    [naznačil][corallo cycle1], že „jediná oprava tohoto problému bude,
+    když budou těžaři ukládat historii transakcí, které viděli, a budou
+    je zkoušet znova po […] podobném útoku.” Bastien Teinturier
+    [odpověděl][teinturier cycle]: „Souhlasím ale s Mattem, že bude
+    nejspíš potřeba nějaké principiálnější změny na bitcoinové vrstvě,
+    aby mohly L2 protokoly této třídě útoku lépe čelit.” Riard se též
+    [vyjádřil][riard cycle3] v podobném duchu: „Trvalá oprava se může
+    uskutečnit [jen] na základní vrstvě, například přidáním paměťově
+    náročné historie všech viděných transakcí.”
 
-    - **Předem podepsaná navýšení poplatku:** Peter Todd [řekl][todd cycle1],
-      že „správným způsobem, jak předem podepisovat transakce, je předem
-      podepsat dostatek *různých* transakcí, které by pokryly všechny
-      rozumné potřeby navyšování poplatků. […] Neexistuje žádný důvod,
-      proč by se měly transakce B->C zaseknout.” (Zdůraznění v originále.)
+  - **Předem podepsaná navýšení poplatku:** Peter Todd [řekl][todd cycle1],
+    že „správným způsobem, jak předem podepisovat transakce, je předem
+    podepsat dostatek *různých* transakcí, které by pokryly všechny
+    rozumné potřeby navyšování poplatků. […] Neexistuje žádný důvod,
+    proč by se měly transakce B->C zaseknout.” (Zdůraznění v originále.)
 
-      To by mohlo fungovat následujícím způsobem: pro HTLC mezi Bobem
-      a MalloryB poskytne Bob MalloryB deset různých podpisů stejné
-      transakce s předobrazem s různými jednotkovými poplatky. Všimněte
-      si, že v čase podepisování nemusí MalloryB Bobovi předobraz poskytnout.
-      Zároveň poskytne MalloryB Bobovi deset různých podpisů stejné
-      refundovací transakce s různými jednotkovými poplatky. Může tak být
-      učiněno před zveřejněním refundace. Jednotkové poplatky by
-      mohly být (sat/vbyte): 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
-      což by v dohledné době mělo pokrýt všechny případy.
+    To by mohlo fungovat následujícím způsobem: pro HTLC mezi Bobem
+    a MalloryB poskytne Bob MalloryB deset různých podpisů stejné
+    transakce s předobrazem s různými jednotkovými poplatky. Všimněte
+    si, že v čase podepisování nemusí MalloryB Bobovi předobraz poskytnout.
+    Zároveň poskytne MalloryB Bobovi deset různých podpisů stejné
+    refundovací transakce s různými jednotkovými poplatky. Může tak být
+    učiněno před zveřejněním refundace. Jednotkové poplatky by
+    mohly být (sat/vbyte): 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
+    což by v dohledné době mělo pokrýt všechny případy.
 
-      Je-li Mallořina transakce s předobrazem předem podepsána, jediné nahrazení,
-      kterého by mohla dosáhnout, by bylo navýšení jednotkového poplatku.
-      Nebyla by schopna přidat nový vstup do transakce s předobrazem, a
-      tedy by nemohla útok zahájit.
+    Je-li Mallořina transakce s předobrazem předem podepsána, jediné nahrazení,
+    kterého by mohla dosáhnout, by bylo navýšení jednotkového poplatku.
+    Nebyla by schopna přidat nový vstup do transakce s předobrazem, a
+    tedy by nemohla útok zahájit.
 
-    - **OP_EXPIRE:** v samostatném vlákně [navrhl][todd expire1] Peter Todd,
-      cituje vlákno o útoku, několik změn konsenzu k umožnění opkódu
-      `OP_EXPIRE`. Ten by učinil transakci nevalidní pro začlenění po určené
-      výšce, pokud by script spustil `OP_EXPIRE`. Díky tomu by mohla být
-      Mallořina podmínka s předobrazem v HTLC použitelná pouze před tím, než
-      by byla Bobova refundovací podmínka utratitelná. To by zabránilo
-      Mallory v nahrazení Bobovy refundovací transakce, a tím by nemohl
-      být útok zahájen. `OP_EXPIRE` by též mohlo pomoci v boji proti
-      některým [transaction pinning útokům][topic transaction pinning] proti
-      HTLC.
+  - **OP_EXPIRE:** v samostatném vlákně [navrhl][todd expire1] Peter Todd,
+    cituje vlákno o útoku, několik změn konsenzu k umožnění opkódu
+    `OP_EXPIRE`. Ten by učinil transakci nevalidní pro začlenění po určené
+    výšce, pokud by script spustil `OP_EXPIRE`. Díky tomu by mohla být
+    Mallořina podmínka s předobrazem v HTLC použitelná pouze před tím, než
+    by byla Bobova refundovací podmínka utratitelná. To by zabránilo
+    Mallory v nahrazení Bobovy refundovací transakce, a tím by nemohl
+    být útok zahájen. `OP_EXPIRE` by též mohlo pomoci v boji proti
+    některým [transaction pinning útokům][topic transaction pinning] proti
+    HTLC.
 
-      Hlavní nevýhodou `OP_EXPIRE` je, že vyžaduje změny konsenzu a změny
-      pravidel přeposílání a mempoolu, aby se vyhnulo určitým problémům,
-      jako je možnost použít jej k plýtvání zdroji uzlu.
+    Hlavní nevýhodou `OP_EXPIRE` je, že vyžaduje změny konsenzu a změny
+    pravidel přeposílání a mempoolu, aby se vyhnulo určitým problémům,
+    jako je možnost použít jej k plýtvání zdroji uzlu.
 
-      [Jedna odpověď][harding expire] pod tímto příspěvkem navrhla slabší verzi,
-      která by dosáhla stejného cíle jako `OP_EXPIRE`, ale bez nutnosti
-      měnit konsenzus či pravidla přeposílání. Avšak Peter Todd
-      [odpověděl][todd expire2], že by replacement cycling útoku nezabránila.
+    [Jedna odpověď][harding expire] pod tímto příspěvkem navrhla slabší verzi,
+    která by dosáhla stejného cíle jako `OP_EXPIRE`, ale bez nutnosti
+    měnit konsenzus či pravidla přeposílání. Avšak Peter Todd
+    [odpověděl][todd expire2], že by replacement cycling útoku nezabránila.
 
-    Očekáváme pokračování diskuzí o tomto tématu a v budoucích vydáních
-    zpravodaje přineseme popis vývoje.
+  Očekáváme pokračování diskuzí o tomto tématu a v budoucích vydáních
+  zpravodaje přineseme popis vývoje.
 
 - **Nahrazení výpočtu hashe množiny bitcoinových UTXO:** Fabian Jahr
   zaslal do emailové skupiny Bitcoin-Dev [příspěvek][jahr hash_serialized_2]
@@ -331,28 +333,28 @@ Bitcoin Stack Exchange.
   [kovenantů][topic covenants]. Uvádíme některá z jeho zjištění,
   která pokládáme za významná:
 
-    - *Jednoduchost:* v jediném výstupním skriptu a jeho
-      [taprootovém][topic taproot] commitmentu by bylo možné plně provádět
-      introspekci pomocí tří nových opkódů a jednoho z dříve navrhovaných
-      kovenantových opkódů (např. [OP_TX][news187 op_tx]). Každý z nových
-      opkódů je snadno pochopitelný a jeví se jednoduše implementovatelný.
+  - *Jednoduchost:* v jediném výstupním skriptu a jeho
+    [taprootovém][topic taproot] commitmentu by bylo možné plně provádět
+    introspekci pomocí tří nových opkódů a jednoho z dříve navrhovaných
+    kovenantových opkódů (např. [OP_TX][news187 op_tx]). Každý z nových
+    opkódů je snadno pochopitelný a jeví se jednoduše implementovatelný.
 
-    - *Stručnost:* Russellovy příklady používají pro účely introspekce
-      kolem 30 vbytů (vynucovaný skript by byl nad rámec těchto vbytů).
+  - *Stručnost:* Russellovy příklady používají pro účely introspekce
+    kolem 30 vbytů (vynucovaný skript by byl nad rámec těchto vbytů).
 
-    - *Změny v OP_SUCCESS by prospěly:* [BIP342][] specifikace [tapscriptu][topic
-      tapscript] definuje několik `OP_SUCCESSx` opkódů, které úspěšně ukončí
-      skript, jež je obsahuje. To umožňuje budoucím soft forkům přidělit těmto
-      opkódům nové podmínky (a učinit tak z nich běžné opkódy). Avšak kvůli tomuto
-      chování by bylo používání introspekce s kovenanty, jež mohou obsahovat části
-      libovolných skriptů, nebezpečné. Například by mohla Alice vytvořit
-      kovenant, který by jí umožnil utratit prostředky na libovolnou
-      adresu, pokud by tyto prostředky nejdříve utratila v oznamovací
-      transakci [úschovny][topic vaults] a čekala určitý počet bloků,
-      aby dala možnost zmrazovací transakci toto utracení blokovat.
-      Pokud by však ona libovolná adresa obsahovala opkód `OP_SUCCESSx`,
-      mohl by kdokoliv její peníze ukrást. Russell ve svém článku navrhuje dvě
-      možná řešení tohoto problému.
+  - *Změny v OP_SUCCESS by prospěly:* [BIP342][] specifikace [tapscriptu][topic
+    tapscript] definuje několik `OP_SUCCESSx` opkódů, které úspěšně ukončí
+    skript, jež je obsahuje. To umožňuje budoucím soft forkům přidělit těmto
+    opkódům nové podmínky (a učinit tak z nich běžné opkódy). Avšak kvůli tomuto
+    chování by bylo používání introspekce s kovenanty, jež mohou obsahovat části
+    libovolných skriptů, nebezpečné. Například by mohla Alice vytvořit
+    kovenant, který by jí umožnil utratit prostředky na libovolnou
+    adresu, pokud by tyto prostředky nejdříve utratila v oznamovací
+    transakci [úschovny][topic vaults] a čekala určitý počet bloků,
+    aby dala možnost zmrazovací transakci toto utracení blokovat.
+    Pokud by však ona libovolná adresa obsahovala opkód `OP_SUCCESSx`,
+    mohl by kdokoliv její peníze ukrást. Russell ve svém článku navrhuje dvě
+    možná řešení tohoto problému.
 
   Výzkum obdržel několik reakcí a Russell naznačil, že pracuje na dalším
   příspěvku popisující introspekci výstupních částek.

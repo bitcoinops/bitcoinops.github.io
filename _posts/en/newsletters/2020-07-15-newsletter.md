@@ -32,12 +32,12 @@ infrastructure projects.
   contract to be settled in its latest state even if earlier states are
   confirmed onchain.
 
-    The main difference between the noinput and anyprevout proposals is
-    that noinput would require its own new version of segwit but
-    anyprevout uses one of the upgrade features from the proposed [BIP342][]
-    specification of [tapscript][topic tapscript].  Additional
-    differences between the proposals are described in the [revised
-    text][anyprevout revisions] itself.
+  The main difference between the noinput and anyprevout proposals is
+  that noinput would require its own new version of segwit but
+  anyprevout uses one of the upgrade features from the proposed [BIP342][]
+  specification of [tapscript][topic tapscript].  Additional
+  differences between the proposals are described in the [revised
+  text][anyprevout revisions] itself.
 
 ## Notable code and documentation changes
 
@@ -118,3 +118,4 @@ infrastructure projects.
 [eviction-logic]: https://github.com/bitcoin/bitcoin/issues/19500#issuecomment-657257874
 [news32 bcc14929]: /en/newsletters/2019/02/05/#bitcoin-core-14929
 [ban vs discourage]: https://github.com/bitcoin/bitcoin/blob/f4de89edfa8be4501534fec0c662c650a4ce7ef2/src/banman.h#L29-L55
+[hwi]: https://github.com/bitcoin-core/HWI

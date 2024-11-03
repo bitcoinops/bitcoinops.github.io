@@ -2,12 +2,12 @@
 title: Package relay
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BIP331
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Transaction Relay Policy
 
@@ -24,7 +24,6 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: BIP331
-      link: https://github.com/bitcoin/bips/pull/1382
 
     - title: Bitcoin Core Draft Implementation
       link: https://github.com/bitcoin/bitcoin/pull/27742
@@ -112,6 +111,25 @@ optech_mentions:
 
   - title: "Bitcoin Core #27609 makes the submitpackage RPC available on non-regtest networks"
     url: /en/newsletters/2023/10/11/#bitcoin-core-27609
+
+  - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: BIP331 assigned to ancestor package relay proposal
+    url: /en/newsletters/2024/05/01/#bips-1382
+
+  - title: "Bitcoin Core #28970 adds support for one-parent-one-child (1p1c) package relay with no P2P changes"
+    url: /en/newsletters/2024/05/08/#bitcoin-core-28970
+
+  - title: "Bitcoin Core #30000 indexes orphan txes by wtxid, removing a problem with orphan-based package relay"
+    url: /en/newsletters/2024/05/24/#bitcoin-core-30000
+
+  - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
+    url: /en/newsletters/2024/06/28/#bitcoin-core-28984
+
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: one parent one child (1P1C) package relay"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

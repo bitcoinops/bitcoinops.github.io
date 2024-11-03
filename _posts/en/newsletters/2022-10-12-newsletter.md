@@ -27,56 +27,56 @@ notable changes to popular Bitcoin infrastructure software.
   channels from being used for those same months.  Law's proposal mitigates
   that problem through two protocol modifications:
 
-    - *Triggered HTLCs:* a standard [HTLC][topic htlc] used for payment
-      has Alice offering Bob some amount of BTC if he's able to publish
-      a previously-unknown *preimage* for a known hash digest.
-      Alternatively, if Bob doesn't publish the preimage by a certain
-      time, Alice is able to spend the money back to her own wallet.
+  - *Triggered HTLCs:* a standard [HTLC][topic htlc] used for payment
+    has Alice offering Bob some amount of BTC if he's able to publish
+    a previously-unknown *preimage* for a known hash digest.
+    Alternatively, if Bob doesn't publish the preimage by a certain
+    time, Alice is able to spend the money back to her own wallet.
 
-        Law suggests that Bob still be allowed to claim the payment at
-        any moment with the publication of the preimage, but Alice would
-        need to fulfill an additional restriction.  She would need to
-        clearly warn Bob of her intent to spend the money back to her
-        wallet by getting a *trigger* transaction confirmed onchain.
-        Only when the trigger transaction had been confirmed by a
-        certain number of blocks (or for a certain duration of time)
-        would Alice be able to spend the money.
+    Law suggests that Bob still be allowed to claim the payment at
+    any moment with the publication of the preimage, but Alice would
+    need to fulfill an additional restriction.  She would need to
+    clearly warn Bob of her intent to spend the money back to her
+    wallet by getting a *trigger* transaction confirmed onchain.
+    Only when the trigger transaction had been confirmed by a
+    certain number of blocks (or for a certain duration of time)
+    would Alice be able to spend the money.
 
-        This would ensure Bob was able to claim his funds at any time up
-        until the trigger transaction had received the agreed-upon
-        number of confirmations, even if months had passed
-        since a normal HTLC would've timed out.  If Bob is adequately
-        compensated for his waiting, then it's ok if Alice remains
-        offline all that time.  For an HTLC routed from Alice through Bob
-        onto some distant node, only the channel between Alice and Bob
-        would be affected---every other channel would settle the HTLC
-        promptly (as in the current LN protocol).
+    This would ensure Bob was able to claim his funds at any time up
+    until the trigger transaction had received the agreed-upon
+    number of confirmations, even if months had passed
+    since a normal HTLC would've timed out.  If Bob is adequately
+    compensated for his waiting, then it's ok if Alice remains
+    offline all that time.  For an HTLC routed from Alice through Bob
+    onto some distant node, only the channel between Alice and Bob
+    would be affected---every other channel would settle the HTLC
+    promptly (as in the current LN protocol).
 
-    - *Asymmetric delayed commitment transactions:* each of the two
-      partners in an LN channel holds an unpublished commitment
-      transaction that they can publish and try to get confirmed at any
-      time.  Both versions of the transaction spend the same UTXO, so
-      they conflict with each other---meaning only one can actually get
-      confirmed.
+  - *Asymmetric delayed commitment transactions:* each of the two
+    partners in an LN channel holds an unpublished commitment
+    transaction that they can publish and try to get confirmed at any
+    time.  Both versions of the transaction spend the same UTXO, so
+    they conflict with each other---meaning only one can actually get
+    confirmed.
 
-        This means when Alice wants to close the channel, she can't just
-        simply broadcast her version of the commitment transaction with
-        a reasonable feerate and assume it will get confirmed.  She also
-        has to wait and check whether Bob instead gets his version of
-        the commitment transaction confirmed, in which case she may need
-        to take additional actions to verify his transaction included the
-        latest channel state.
+    This means when Alice wants to close the channel, she can't just
+    simply broadcast her version of the commitment transaction with
+    a reasonable feerate and assume it will get confirmed.  She also
+    has to wait and check whether Bob instead gets his version of
+    the commitment transaction confirmed, in which case she may need
+    to take additional actions to verify his transaction included the
+    latest channel state.
 
-        Law proposes that Alice's version of the commitment transaction
-        remain the same as today so that she can publish it at any time,
-        but that Bob's version include a time lock so that he can only
-        publish it if Alice has been inactive for a long time.  Ideally,
-        this allows Alice to publish the latest state secure in the
-        knowledge that Bob can't publish a contradictory version,
-        allowing her to safely go offline after her publication.
+    Law proposes that Alice's version of the commitment transaction
+    remain the same as today so that she can publish it at any time,
+    but that Bob's version include a time lock so that he can only
+    publish it if Alice has been inactive for a long time.  Ideally,
+    this allows Alice to publish the latest state secure in the
+    knowledge that Bob can't publish a contradictory version,
+    allowing her to safely go offline after her publication.
 
-    Law's proposals were still receiving initial feedback as this
-    description was being written. {% assign timestamp="18:45" %}
+  Law's proposals were still receiving initial feedback as this
+  description was being written. {% assign timestamp="18:45" %}
 
 - **Recommendations for unique address servers:** Ruben Somsen
   [posted][somsen post] to the Bitcoin-Dev mailing list a
@@ -89,20 +89,20 @@ notable changes to popular Bitcoin infrastructure software.
   use public [address lookup servers][topic block explorers] (which is
   believed to be the majority of lightweight wallets).
 
-    For an example of how the method might work, Alice's wallet
-    registers 100 addresses on the Example.com electrum-style server.
-    She then includes "example.com/alice" in her email signature.  When
-    Bob wants to donate money to Alice, he visits her URL, gets an
-    address, verifies that Alice signed it, and then pays to it.
+  For an example of how the method might work, Alice's wallet
+  registers 100 addresses on the Example.com electrum-style server.
+  She then includes "example.com/alice" in her email signature.  When
+  Bob wants to donate money to Alice, he visits her URL, gets an
+  address, verifies that Alice signed it, and then pays to it.
 
-    The idea has the advantage of being widely compatible with many
-    wallets through a partly-manual process and possibly easy to
-    implement with an automated process.  Its downside is that users who
-    are already compromising their privacy by sharing addresses with a
-    server will be further committing to the privacy loss.
+  The idea has the advantage of being widely compatible with many
+  wallets through a partly-manual process and possibly easy to
+  implement with an automated process.  Its downside is that users who
+  are already compromising their privacy by sharing addresses with a
+  server will be further committing to the privacy loss.
 
-    Discussion of the suggestions was ongoing on both the mailing list
-    and the document at the time this summary was being written. {% assign timestamp="1:32" %}
+  Discussion of the suggestions was ongoing on both the mailing list
+  and the document at the time this summary was being written. {% assign timestamp="1:32" %}
 
 ## Bitcoin Core PR Review Club
 

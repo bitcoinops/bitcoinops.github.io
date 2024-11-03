@@ -19,25 +19,25 @@ významných změn v populárním bitcoinovém páteřním software.
   na službu, která by mohla být penalizována v případě poskytnutí jiné než
   poslední verze zálohy. Základní mechanismus je jednoduchý:
 
-    - Alice má data, která chce zálohovat. Přidá do nich číslo verze, podepíše
-      je a data i podpis poskytne Bobovi.
+  - Alice má data, která chce zálohovat. Přidá do nich číslo verze, podepíše
+    je a data i podpis poskytne Bobovi.
 
-    - Okamžitě po obdržení Aliciných dat jí Bob pošle podpis, který zavazuje
-      k číslu verze jejích dat a k aktuálnímu času.
+  - Okamžitě po obdržení Aliciných dat jí Bob pošle podpis, který zavazuje
+    k číslu verze jejích dat a k aktuálnímu času.
 
-    - Po čase Alice data aktualizuje, navýší číslo verze a poskytne aktualizaci
-      Bobovi spolu s novým podpisem. Bob vrátí podpis zavazující k nové, vyšší
-      verzi a novému, vyššímu aktuální času. Tento krok mnohokrát opakují.
+  - Po čase Alice data aktualizuje, navýší číslo verze a poskytne aktualizaci
+    Bobovi spolu s novým podpisem. Bob vrátí podpis zavazující k nové, vyšší
+    verzi a novému, vyššímu aktuální času. Tento krok mnohokrát opakují.
 
-    - V jeden okamžik Alice od Boba vyžádá svá data, aby ho otestovala. Bob
-      jí pošle verzi dat a její podpis, které může Alice ověřit. Bob jí též
-      pošle další podpis, který zavazuje k číslu verze dat a aktuálnímu
-      času.
+  - V jeden okamžik Alice od Boba vyžádá svá data, aby ho otestovala. Bob
+    jí pošle verzi dat a její podpis, které může Alice ověřit. Bob jí též
+    pošle další podpis, který zavazuje k číslu verze dat a aktuálnímu
+    času.
 
-    - Pokud by Bob jednal nečestně a poslal Alici stará data se starým číslem
-      verze, Alice by mohla vygenerovat _doklad o podvodu_: mohla by prokázat,
-      že Bob předtím podepsal vyšší číslo verze s dřívějším časem, než ke kterým
-      zavazuje podpis, který jí poslal právě teď.
+  - Pokud by Bob jednal nečestně a poslal Alici stará data se starým číslem
+    verze, Alice by mohla vygenerovat _doklad o podvodu_: mohla by prokázat,
+    že Bob předtím podepsal vyšší číslo verze s dřívějším časem, než ke kterým
+    zavazuje podpis, který jí poslal právě teď.
 
   Mechanismus generování dokladů o podvodu, jak byl zatím popsán, nemá nic
   společného s bitcoinem. Voegtlin však poznamenal, že pokud by opkódy

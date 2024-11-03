@@ -6,13 +6,13 @@ title: Anonymity networks
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Tor
   - I2P
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Privacy Enhancements
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -111,6 +111,9 @@ optech_mentions:
 
   - title: "Bitcoin Core #29200 allows the I2P to use connections encrypted with both ECIES-X25519 and ElGamal"
     url: /en/newsletters/2024/01/17/#bitcoin-core-29200
+
+  - title: "DNS seeding for nodes on anonymity networks"
+    url: /en/newsletters/2024/09/20/#dns-seeding-for-non-ip-addresses
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

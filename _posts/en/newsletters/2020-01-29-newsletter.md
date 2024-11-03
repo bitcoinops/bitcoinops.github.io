@@ -64,13 +64,13 @@ projects.
   payment.  This differs from current-style LN payments where the
   timeout and the delay may be chosen independently.
 
-    To allow eltoo to achieve a similar independence of timeout and
-    delay parameters, Towns proposes removing the [BIP341][] commitment
-    to the value of the inputs (`sha_amounts`) from signatures created
-    using the `SIGHASH_ANYPREVOUTANYSCRIPT` signature hash (sighash)
-    flag.  This also requires changes to the script used in eltoo,
-    including making use of [tapscript's][topic tapscript] variation of
-    the `OP_CODESEPARATOR` opcode.
+  To allow eltoo to achieve a similar independence of timeout and
+  delay parameters, Towns proposes removing the [BIP341][] commitment
+  to the value of the inputs (`sha_amounts`) from signatures created
+  using the `SIGHASH_ANYPREVOUTANYSCRIPT` signature hash (sighash)
+  flag.  This also requires changes to the script used in eltoo,
+  including making use of [tapscript's][topic tapscript] variation of
+  the `OP_CODESEPARATOR` opcode.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -138,52 +138,52 @@ this situation [closes a privacy leak][bolt4 privacy leak].
 - [BIPs #876][] assigns three BIPs, one to each part of the schnorr-taproot-tapscript
   proposal:
 
-    - [BIP340][] is assigned to "Schnorr Signatures for secp256k1,"
-      which describes a signature scheme compatible with the secp256k1
-      [elliptic curve][] used by Bitcoin.  The signatures are
-      compatible with batch verification and with key and signature
-      aggregation schemes such as [MuSig][topic musig].  Schnorr
-      signatures are made available for use in the following two BIPs (341 and 342).
-      For more information, see the BIP or [schnorr signatures][topic
-      schnorr signatures].
+  - [BIP340][] is assigned to "Schnorr Signatures for secp256k1,"
+    which describes a signature scheme compatible with the secp256k1
+    [elliptic curve][] used by Bitcoin.  The signatures are
+    compatible with batch verification and with key and signature
+    aggregation schemes such as [MuSig][topic musig].  Schnorr
+    signatures are made available for use in the following two BIPs (341 and 342).
+    For more information, see the BIP or [schnorr signatures][topic
+    schnorr signatures].
 
-    - [BIP341][] is assigned to "Taproot: SegWit version 1 spending
-      rules," which describes part of a soft fork proposal for allowing
-      users to pay schnorr-style public keys that can be spent either
-      using a schnorr-style signature or proof that the key committed to
-      a particular script via a merkle tree (along with proof that the
-      script's conditions were fulfilled).  For details, see the BIP or
-      [taproot][topic taproot].
+  - [BIP341][] is assigned to "Taproot: SegWit version 1 spending
+    rules," which describes part of a soft fork proposal for allowing
+    users to pay schnorr-style public keys that can be spent either
+    using a schnorr-style signature or proof that the key committed to
+    a particular script via a merkle tree (along with proof that the
+    script's conditions were fulfilled).  For details, see the BIP or
+    [taproot][topic taproot].
 
-    - [BIP342][] is assigned to "Validation of Taproot Scripts", which
-      describes the rules for evaluating a script used in combination
-      with taproot (a *tapscript*).  Almost all operations in tapscript
-      are the same as legacy Bitcoin Script, but a few are different.
-      For existing users upgrading to tapscript, the most significant
-      change is that all signature-checking opcodes (e.g. `OP_CHECKSIG`)
-      use schnorr public keys and signatures; also noteworthy is that
-      `OP_CHECKMULTISIG` has been removed; script authors can instead
-      use a new `OP_CHECKSIGADD` opcode or otherwise redesign their
-      scripts.  A few other new rules affect users or rarely-used
-      features.  Additionally, tapscript includes several new features
-      designed to make future soft fork upgrades of its scripting
-      language easier.  For details, see the BIP or [tapscript][topic
-      tapscript].
+  - [BIP342][] is assigned to "Validation of Taproot Scripts", which
+    describes the rules for evaluating a script used in combination
+    with taproot (a *tapscript*).  Almost all operations in tapscript
+    are the same as legacy Bitcoin Script, but a few are different.
+    For existing users upgrading to tapscript, the most significant
+    change is that all signature-checking opcodes (e.g. `OP_CHECKSIG`)
+    use schnorr public keys and signatures; also noteworthy is that
+    `OP_CHECKMULTISIG` has been removed; script authors can instead
+    use a new `OP_CHECKSIGADD` opcode or otherwise redesign their
+    scripts.  A few other new rules affect users or rarely-used
+    features.  Additionally, tapscript includes several new features
+    designed to make future soft fork upgrades of its scripting
+    language easier.  For details, see the BIP or [tapscript][topic
+    tapscript].
 
-    {% comment %}<!--
-    $ git log --oneline --no-merges  802520e...9cf4038 | wc -l
-    163
+  {% comment %}<!--
+  $ git log --oneline --no-merges  802520e...9cf4038 | wc -l
+  163
 
-    $ git shortlog -s  802520e...9cf4038 | wc -l
-    30  ## devrandom and Orfeas Litos each appear twice, so 28
-    -->{% endcomment %}
+  $ git shortlog -s  802520e...9cf4038 | wc -l
+  30  ## devrandom and Orfeas Litos each appear twice, so 28
+  -->{% endcomment %}
 
-    Many merges to the BIPs repository include contributions
-    from several different people, but this merge had more contributors than
-    any we've seen before: it included content and edits from 28
-    different people in 163 commits and its credits thank several other
-    named contributors, the authors of previous work it builds upon, and
-    the many "participants of the [structured reviews]."
+  Many merges to the BIPs repository include contributions
+  from several different people, but this merge had more contributors than
+  any we've seen before: it included content and edits from 28
+  different people in 163 commits and its credits thank several other
+  named contributors, the authors of previous work it builds upon, and
+  the many "participants of the [structured reviews]."
 
 - [BOLTs #697][] modifies the sphinx packet construction described in
   [BOLT4][] to fix a privacy leak that may allow a destination node to

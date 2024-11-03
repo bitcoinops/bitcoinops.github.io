@@ -233,7 +233,7 @@ verification on it.  And you can just pull one of these protocols off the shelf.
 In the serverless payjoin case, that's NNpsk0, meaning neither the sender nor
 the receiver have a long-term key and they pre-share a key in the first message.
 But I think we could even get rid of the noise NNpsk0 if you just did a
-Diffie-Hellman key exchange between the sender and the receiver.  So, you'd have
+Diffie--Hellman key exchange between the sender and the receiver.  So, you'd have
 to wait until the key exchange was established and then the receiver could sign
 the payload they send back to the sender, which is the payjoin PSBT, with the
 key related to their initial address, to do authentication.  I'm a little off of

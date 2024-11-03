@@ -35,60 +35,60 @@ and notable changes to popular Bitcoin infrastructure projects.
   protocols, shared coin ownership, and other types of desirable
   collaborations.
 
-    Ivgi has also created an outstanding [website][min.sc] for the language.
-    It includes both a plethora of examples and a live compiler that allows
-    linking to its input so that developers can easily play with the
-    language and share their Minsc policies with other developers.  We
-    recommend anyone interested in developing spending policies visit the
-    website, but as an illustration of what Minsc can do, we offer the
-    following example adapted from Ivgi's own examples.  Several years
-    ago, before miniscript or Minsc, LN developers hand crafted the
-    following [HTLC script][] specified in BOLT3:
+  Ivgi has also created an outstanding [website][min.sc] for the language.
+  It includes both a plethora of examples and a live compiler that allows
+  linking to its input so that developers can easily play with the
+  language and share their Minsc policies with other developers.  We
+  recommend anyone interested in developing spending policies visit the
+  website, but as an illustration of what Minsc can do, we offer the
+  following example adapted from Ivgi's own examples.  Several years
+  ago, before miniscript or Minsc, LN developers hand crafted the
+  following [HTLC script][] specified in BOLT3:
 
-    ```python
-    # To remote node with revocation key
-    OP_DUP OP_HASH160 <RIPEMD160(SHA256(revocationpubkey))> OP_EQUAL
-    OP_IF
-        OP_CHECKSIG
-    OP_ELSE
-        <remote_htlcpubkey> OP_SWAP OP_SIZE 32 OP_EQUAL
-        OP_IF
-            # To local node via HTLC-success transaction.
-            OP_HASH160 <RIPEMD160(payment_hash)> OP_EQUALVERIFY
-            2 OP_SWAP <local_htlcpubkey> 2 OP_CHECKMULTISIG
-        OP_ELSE
-            # To remote node after timeout.
-            OP_DROP <cltv_expiry> OP_CHECKLOCKTIMEVERIFY OP_DROP
-            OP_CHECKSIG
-        OP_ENDIF
-    OP_ENDIF
-    ```
+  ```python
+  # To remote node with revocation key
+  OP_DUP OP_HASH160 <RIPEMD160(SHA256(revocationpubkey))> OP_EQUAL
+  OP_IF
+      OP_CHECKSIG
+  OP_ELSE
+      <remote_htlcpubkey> OP_SWAP OP_SIZE 32 OP_EQUAL
+      OP_IF
+          # To local node via HTLC-success transaction.
+          OP_HASH160 <RIPEMD160(payment_hash)> OP_EQUALVERIFY
+          2 OP_SWAP <local_htlcpubkey> 2 OP_CHECKMULTISIG
+      OP_ELSE
+          # To remote node after timeout.
+          OP_DROP <cltv_expiry> OP_CHECKLOCKTIMEVERIFY OP_DROP
+          OP_CHECKSIG
+      OP_ENDIF
+  OP_ENDIF
+  ```
 
-    The same encumbrance can be [specified][htlc minsc] using the following Minsc
-    policy (setting the `cltv_expiry` to 3 hours):
+  The same encumbrance can be [specified][htlc minsc] using the following Minsc
+  policy (setting the `cltv_expiry` to 3 hours):
 
-    ```hack
-    fn htlc_received($revocationpubkey, $local_htlcpubkey,
-                     $remote_htlcpubkey, $payment_hash,
-                     $cltv_expiry)
-    {
-      // To local node via HTLC-success transaction
-      $success = pk($local_htlcpubkey) && hash160($payment_hash);
+  ```hack
+  fn htlc_received($revocationpubkey, $local_htlcpubkey,
+                   $remote_htlcpubkey, $payment_hash,
+                   $cltv_expiry)
+  {
+    // To local node via HTLC-success transaction
+    $success = pk($local_htlcpubkey) && hash160($payment_hash);
 
-      // To remote node after timeout
-      $timeout = older($cltv_expiry);
+    // To remote node after timeout
+    $timeout = older($cltv_expiry);
 
-      // To remote node with revocation key, or use success/timeout
-      pk($revocationpubkey) || (pk($remote_htlcpubkey) && ($success || $timeout))
-    }
+    // To remote node with revocation key, or use success/timeout
+    pk($revocationpubkey) || (pk($remote_htlcpubkey) && ($success || $timeout))
+  }
 
-    htlc_received(A, B, C, H, 3 hours)
-    ```
+  htlc_received(A, B, C, H, 3 hours)
+  ```
 
-    The Minsc policy is significantly easier for most developers to
-    analyze and it's able to take advantage of miniscript to transform the
-    policy into a moderately smaller script than the original
-    hand-crafted script.
+  The Minsc policy is significantly easier for most developers to
+  analyze and it's able to take advantage of miniscript to transform the
+  policy into a moderately smaller script than the original
+  hand-crafted script.
 
 ## Recently transcribed talks and conversations
 
@@ -190,24 +190,24 @@ release candidates.*
   one transaction input whose associated output is not in the UTXO set or our
   mempool's outpoint map.
 
-    When we receive an orphan transaction, we place it in a temporary data
-    structure called the orphan set. We then ask the peer that sent us the
-    orphan to also send us the parent transactions that we don't yet have. We can
-    do that because the orphan transaction contains the txids of its parent
-    transactions. We simply send a `getdata` message containing those txids to
-    the peer to request the parent transactions.
+  When we receive an orphan transaction, we place it in a temporary data
+  structure called the orphan set. We then ask the peer that sent us the
+  orphan to also send us the parent transactions that we don't yet have. We can
+  do that because the orphan transaction contains the txids of its parent
+  transactions. We simply send a `getdata` message containing those txids to
+  the peer to request the parent transactions.
 
-    For [wtxid relay peers][news108 wtxid relay], transactions are announced
-    and requested using the _wtxid_ of the transaction, not the _txid_. However,
-    orphan transactions contain their parents' txids, not wtxids, so it's
-    not possible to request the parent transaction using wtxid. [PR
-    #18044][Bitcoin Core #18044], which introduced wtxid relay peers and was
-    merged last week, did not permit fetching parent transactions from wtxid
-    peers. This follow-up PR allows us to fetch those parents using the txid.
+  For [wtxid relay peers][news108 wtxid relay], transactions are announced
+  and requested using the _wtxid_ of the transaction, not the _txid_. However,
+  orphan transactions contain their parents' txids, not wtxids, so it's
+  not possible to request the parent transaction using wtxid. [PR
+  #18044][Bitcoin Core #18044], which introduced wtxid relay peers and was
+  merged last week, did not permit fetching parent transactions from wtxid
+  peers. This follow-up PR allows us to fetch those parents using the txid.
 
-    Fetching parent transactions using txid may eventually be replaced
-    by a [package relay][topic package relay] mechanism, where we can
-    ask a peer for all the unconfirmed ancestors of a transaction directly.
+  Fetching parent transactions using txid may eventually be replaced
+  by a [package relay][topic package relay] mechanism, where we can
+  ask a peer for all the unconfirmed ancestors of a transaction directly.
 
 - [Eclair #1491][] adds partial support for creating, using, and closing
   channels that use [anchor outputs][topic anchor outputs] to both reduce
@@ -245,29 +245,29 @@ release candidates.*
   a change which eliminates some issues
   and makes certain types of testing easier.
 
-    Previously, signet assumed the use of signatures compatible with
-    legacy Bitcoin Script (e.g. DER-encoded ECDSA signatures).  After
-    this change, signet instead uses a pair of virtual
-    transactions---transactions that aren't valid on the block chain and
-    aren't included inside the block but which can easily be constructed
-    by Bitcoin software (directly or using a [PSBT][topic PSBT]).  The
-    first transaction commits to paying the network's trusted signer
-    script.  A second virtual transaction then spends the output of the
-    first virtual transaction.  The signature or signatures from the
-    second virtual transaction are included in the coinbase transaction
-    of the block to prove the block is validly signed.
+  Previously, signet assumed the use of signatures compatible with
+  legacy Bitcoin Script (e.g. DER-encoded ECDSA signatures).  After
+  this change, signet instead uses a pair of virtual
+  transactions---transactions that aren't valid on the block chain and
+  aren't included inside the block but which can easily be constructed
+  by Bitcoin software (directly or using a [PSBT][topic PSBT]).  The
+  first transaction commits to paying the network's trusted signer
+  script.  A second virtual transaction then spends the output of the
+  first virtual transaction.  The signature or signatures from the
+  second virtual transaction are included in the coinbase transaction
+  of the block to prove the block is validly signed.
 
-    The main advantage of this new approach is that it allows using
-    segwit transactions.   The opcodes available in current segwit v0
-    are almost all identical to legacy script, <!-- I think
-    OP_CODESEPARATOR is the only change --> so this may seem
-    irrelevant---but if segwit v1 ([taproot][topic taproot]) is made
-    available on a signet, this will allow signing blocks with [schnorr
-    signatures][topic schnorr signatures].  As future protocol changes
-    will probably also use segwit, this will allow those features to be
-    used as well.  A secondary advantage is that any software or
-    hardware that can sign PSBTs for arbitrary inputs will now be able
-    to operate as a trusted signer for a signet.
+  The main advantage of this new approach is that it allows using
+  segwit transactions.   The opcodes available in current segwit v0
+  are almost all identical to legacy script, <!-- I think
+  OP_CODESEPARATOR is the only change --> so this may seem
+  irrelevant---but if segwit v1 ([taproot][topic taproot]) is made
+  available on a signet, this will allow signing blocks with [schnorr
+  signatures][topic schnorr signatures].  As future protocol changes
+  will probably also use segwit, this will allow those features to be
+  used as well.  A secondary advantage is that any software or
+  hardware that can sign PSBTs for arbitrary inputs will now be able
+  to operate as a trusted signer for a signet.
 
 {% include references.md %}
 {% include linkers/issues.md issues="19569,1491,4488,948,947,785,18044,558,17977" %}
@@ -301,3 +301,4 @@ release candidates.*
 [flood and loot]: https://arxiv.org/abs/2006.08513
 [thunderhub]: https://www.thunderhub.io/
 [balance of satoshis]: https://github.com/alexbosworth/balanceofsatoshis
+[hwi]: https://github.com/bitcoin-core/HWI

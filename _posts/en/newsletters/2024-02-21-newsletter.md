@@ -196,19 +196,19 @@ popular Bitcoin infrastructure software.
   independent verification that its contents were accurate at the time
   it was created.
 
-    In this week's post, Jahr describes the tooling and techniques that
-    he says has "found that there is a good chance that within a group
-    of 5 or more the majority of participants will have the same result.
-    [...] This process can be initiated by anyone, very similar to a
-    Core PR. Participants that have a matching result could be
-    interpreted as ACKs. If anyone sees something weird in the result or
-    they simply didn’t get a match, they can ask for the raw data to be
-    shared to investigate further."
+  In this week's post, Jahr describes the tooling and techniques that
+  he says has "found that there is a good chance that within a group
+  of 5 or more the majority of participants will have the same result.
+  [...] This process can be initiated by anyone, very similar to a
+  Core PR. Participants that have a matching result could be
+  interpreted as ACKs. If anyone sees something weird in the result or
+  they simply didn’t get a match, they can ask for the raw data to be
+  shared to investigate further."
 
-    If the process is eventually found acceptable (perhaps with
-    additional refinements), it's possible future versions of Bitcoin
-    Core could be shipped with ASMaps and the feature enabled by
-    default, improving resistance to eclipse attacks. {% assign timestamp="49:17" %}
+  If the process is eventually found acceptable (perhaps with
+  additional refinements), it's possible future versions of Bitcoin
+  Core could be shipped with ASMaps and the feature enabled by
+  default, improving resistance to eclipse attacks. {% assign timestamp="49:17" %}
 
 ## Changes to services and client software
 

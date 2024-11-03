@@ -6,14 +6,14 @@ title: Rendez-vous routing
 shortname: rv routing
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Hidden destinations
   - Blinded paths
   - Route blinding
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Privacy Enhancements
 
@@ -82,6 +82,24 @@ optech_mentions:
 
   - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
     url: /en/newsletters/2024/01/31/#eclair-2811
+
+  - title: "LND #8159 and #8160 add experimental support for sending payments to blinded routes"
+    url: /en/newsletters/2024/04/10/#lnd-8159
+
+  - title: "LDK #3080 allows creating either compact or regular binded paths"
+    url: /en/newsletters/2024/06/14/#ldk-3080
+
+  - title: "Eclair #2867 defines an encoded node ID to use to identify mobile wallets in blinded paths"
+    url: /en/newsletters/2024/06/21/#eclair-2867
+
+  - title: "Proposed BLIP for adding a blinded path field to BOLT11 invoices"
+    url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
+
+  - title: "LND #8735 and #8764 improve LND's support for blinded paths, including for multipath"
+    url: /en/newsletters/2024/08/09/#lnd-8735
+
+  - title: "BLIPs #39 adds BLIP39 for an optional field b in BOLT11 invoices to communicate a blinded path"
+    url: /en/newsletters/2024/08/23/#blips-39
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

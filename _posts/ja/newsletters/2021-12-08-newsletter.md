@@ -24,8 +24,8 @@ Bitcoinソフトウェアの最新のリリースおよびリリース候補、
   [トランザクションの置換][topic rbf]の仕組みを使用する必要があります。
   また、彼の投稿には、先行研究されたアイディアのいくつかを[調査した][revault research]結果も含まれています。
 
-    手数料の引き上げが確実に機能することは、ほとんどのコントラクトプロトコルの安全性を確保するための要件であり、
-    まだ包括的な解決策がない問題です。この問題の研究が続けられているのは心強いことです。
+  手数料の引き上げが確実に機能することは、ほとんどのコントラクトプロトコルの安全性を確保するための要件であり、
+  まだ包括的な解決策がない問題です。この問題の研究が続けられているのは心強いことです。
 
 ## Bitcoin Core PR Review Club
 
@@ -141,6 +141,6 @@ Bitcoinソフトウェアの最新のリリースおよびリリース候補、
 [revault research]: https://github.com/revault/research
 [GetBlockScriptFlags tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/validation.cpp#L1616
 [AreInputsStandard tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/validation.cpp#L726-L729
-[getblockchaininfo tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/rpc/blockchain.cpp#L1537)
+[getblockchaininfo tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/rpc/blockchain.cpp#L1537
 [isTaprootActive tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/interfaces/chain.h#L292
 [AreInputsStandard def]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/policy/policy.h#L110

@@ -36,18 +36,18 @@ software.
   BIP37-based low-bandwidth blocks-relay-only connection could suddenly
   become a full transaction relay connection.
 
-    This week, Suhas Daftuar [posted][daftuar disabletx] to the
-    Bitcoin-Dev mailing list a new proposed BIP for a `disabletx`
-    message that could be sent during connection negotiation.  A peer
-    that understands the message and which implements all of the BIP's
-    recommendations won't send the node requesting
-    `disabletx` any transaction announcements and won't request any
-    transactions from the node.  It also won't send some other gossip
-    messages such as `addr` messages used for IP address announcements.
-    The `disabletx` negotiation persists for the lifetime of the
-    connection, allowing peers to use different limits for disabled
-    relay connections, such as accepting additional connections beyond
-    the current 125 connection maximum.
+  This week, Suhas Daftuar [posted][daftuar disabletx] to the
+  Bitcoin-Dev mailing list a new proposed BIP for a `disabletx`
+  message that could be sent during connection negotiation.  A peer
+  that understands the message and which implements all of the BIP's
+  recommendations won't send the node requesting
+  `disabletx` any transaction announcements and won't request any
+  transactions from the node.  It also won't send some other gossip
+  messages such as `addr` messages used for IP address announcements.
+  The `disabletx` negotiation persists for the lifetime of the
+  connection, allowing peers to use different limits for disabled
+  relay connections, such as accepting additional connections beyond
+  the current 125 connection maximum.
 
 - **Bech32m** Pieter Wuille [posted][wuille bech32m post] to the
   Bitcoin-Dev mailing list a [draft BIP][bech32m bip] for a modified
@@ -73,21 +73,21 @@ software.
   UTXOs, and then refuse to sign the funding transaction---harming those
   users' privacy at no cost to the abuser.
 
-    This week, Lloyd Fournier [posted][fournier podle] to the Lightning-Dev
-    mailing list an evaluation of two previous proposals to deal
-    with this problem, [one][zmn podle] using Proofs of Discrete Log
-    Equivalency (PoDLEs, see [Newsletter #83][news83 podle]) and the
-    [other][darosior sighash] using dual funding transactions
-    half-signed with `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY`.  Fournier
-    extended the previous half-signed proposal and then provided his own
-    proposal that was equivalently effective but simpler.  The new
-    proposal has the initiator create and sign (but not broadcast) a
-    transaction that spends their UTXO back to themselves.  They give
-    this to the other party as a proof of good faith---if the initiator
-    later fails to sign the actual funding transaction, the respondent
-    can broadcast the good-faith transaction, forcing the initiator to
-    pay an onchain fee.  Fournier concludes his post with a summary of
-    the tradeoffs between the different approaches.
+  This week, Lloyd Fournier [posted][fournier podle] to the Lightning-Dev
+  mailing list an evaluation of two previous proposals to deal
+  with this problem, [one][zmn podle] using Proofs of Discrete Log
+  Equivalency (PoDLEs, see [Newsletter #83][news83 podle]) and the
+  [other][darosior sighash] using dual funding transactions
+  half-signed with `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY`.  Fournier
+  extended the previous half-signed proposal and then provided his own
+  proposal that was equivalently effective but simpler.  The new
+  proposal has the initiator create and sign (but not broadcast) a
+  transaction that spends their UTXO back to themselves.  They give
+  this to the other party as a proof of good faith---if the initiator
+  later fails to sign the actual funding transaction, the respondent
+  can broadcast the good-faith transaction, forcing the initiator to
+  pay an onchain fee.  Fournier concludes his post with a summary of
+  the tradeoffs between the different approaches.
 
 ## Bitcoin Core PR Review Club
 
@@ -152,15 +152,6 @@ release candidates.*
   implementation, reducing costs and increasing safety.  The release
   also adds generic support for creating and signing [PSBTs][topic psbt]
   and includes several bug fixes.
-
-{% comment %}<!--
-- Bitcoin Core 0.20.2rc1 and 0.19.2rc1 are expected to be
-  [available][bitcoincore.org/bin] sometime after the publication of
-  this newsletter.  They contain several bug fixes, such as an
-  improvement described in [Newsletter #110][news110 bcc19620] that will
-  prevent them from redownloading future taproot transactions that they
-  don't understand.
--->{% endcomment %}
 
 ## Notable code and documentation changes
 

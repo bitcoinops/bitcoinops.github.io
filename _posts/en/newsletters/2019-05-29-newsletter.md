@@ -38,41 +38,41 @@ notable changes in popular Bitcoin infrastructure projects.
   two comments this week from the Bitcoin-Dev mailing list discussion
   seemed particularly noteworthy:
 
-    - *Final stack empty:* in legacy, segwit, and proposed
-      [bip-tapscript][] scripts, a script evaluates successfully if it
-      contains exactly[^legacy-cleanstack] one element that is *true*.
-      Russell O'Connor [raised][emptystack1] a point he's [raised
-      before][emptystack0] and requested that this opportunity be taken
-      to require tapscript only evaluate successfully if it ends with an
-      empty stack.  Pieter Wuille [replied][emptystack reply] that his
-      work on [miniscript][] (see [Newsletter #32][]) showed that, for
-      the subset of scripts miniscript will create, this change in
-      semantics will at most save 0.25 vbytes per tapscript.  Also,
-      although the change may simplify development for anyone
-      writing scripts by hand, it's a bit risky as every development
-      guide to Script written to date teaches that scripts must
-      terminate with a *true* value on the stack.  Wuille summarized,
-      "so overall this feels like something with marginal costs, but
-      also at most marginal benefits."
+  - *Final stack empty:* in legacy, segwit, and proposed
+    [bip-tapscript][] scripts, a script evaluates successfully if it
+    contains exactly[^legacy-cleanstack] one element that is *true*.
+    Russell O'Connor [raised][emptystack1] a point he's [raised
+    before][emptystack0] and requested that this opportunity be taken
+    to require tapscript only evaluate successfully if it ends with an
+    empty stack.  Pieter Wuille [replied][emptystack reply] that his
+    work on [miniscript][] (see [Newsletter #32][]) showed that, for
+    the subset of scripts miniscript will create, this change in
+    semantics will at most save 0.25 vbytes per tapscript.  Also,
+    although the change may simplify development for anyone
+    writing scripts by hand, it's a bit risky as every development
+    guide to Script written to date teaches that scripts must
+    terminate with a *true* value on the stack.  Wuille summarized,
+    "so overall this feels like something with marginal costs, but
+    also at most marginal benefits."
 
-    - *Move the oddness byte:* Bitcoin public keys are most naturally
-      specified using an X,Y coordinate pair, as was done in the early
-      days of Bitcoin with [uncompressed public keys][].  However,
-      because a valid pubkey must be on the elliptic curve, it’s
-      possible to find both valid Y coordinates (one odd, one even) for
-      any given X coordinate given the curve formula. In compressed key
-      format, the first byte contains a single bit to specify whether
-      the Y coordinate is odd or even, followed by 32 bytes to encode
-      the X coordinate. The proposed bip-taproot followed this
-      convention and used 33 bytes to encode the taproot output key.
+  - *Move the oddness byte:* Bitcoin public keys are most naturally
+    specified using an X,Y coordinate pair, as was done in the early
+    days of Bitcoin with [uncompressed public keys][].  However,
+    because a valid pubkey must be on the elliptic curve, it’s
+    possible to find both valid Y coordinates (one odd, one even) for
+    any given X coordinate given the curve formula. In compressed key
+    format, the first byte contains a single bit to specify whether
+    the Y coordinate is odd or even, followed by 32 bytes to encode
+    the X coordinate. The proposed bip-taproot followed this
+    convention and used 33 bytes to encode the taproot output key.
 
-        This week, John Newbery [suggested][smaller v1 spk] that we use some method to
-        avoid placing this byte in the scriptPubKey.  Wuille agreed that
-        this could be useful and will attempt implementing a variation
-        where the bit will be included as part of the taproot witness
-        data.  This will reduce the cost create a taproot output by one
-        vbyte (making it the same as P2WSH currently). {% comment %}<!-- with either zero
-        or 0.25 vbytes additional cost to spend a taproot output.  (harding note: I'm confused by where the bit is being placed, so moving this clause into a comment) -->{% endcomment %}
+    This week, John Newbery [suggested][smaller v1 spk] that we use some method to
+    avoid placing this byte in the scriptPubKey.  Wuille agreed that
+    this could be useful and will attempt implementing a variation
+    where the bit will be included as part of the taproot witness
+    data.  This will reduce the cost create a taproot output by one
+    vbyte (making it the same as P2WSH currently). {% comment %}<!-- with either zero
+    or 0.25 vbytes additional cost to spend a taproot output.  (harding note: I'm confused by where the bit is being placed, so moving this clause into a comment) -->{% endcomment %}
 
 - **Presentation: A Return to Fees:** During Blockchain Week NYC earlier this
   month, Bitcoin Optech contributor Mike Schmidt gave a presentation about
@@ -221,20 +221,20 @@ of this writing.  The concerns raised included:
   time in order to form a complete message that can be verified using
   `OP_CHECKSIGFROMSTACK`.
 
-    Because the message that gets verified can be a Bitcoin
-    transaction---including a partial copy of the transaction the
-    spender is attempting to send---these operations allow a script to
-    evaluate transaction data without having to directly read the
-    transaction being evaluated.  Compare this to COSHV which looks at
-    the hash of the outputs and anyprevout which looks at all the other
-    signatures in the transaction.
+  Because the message that gets verified can be a Bitcoin
+  transaction---including a partial copy of the transaction the
+  spender is attempting to send---these operations allow a script to
+  evaluate transaction data without having to directly read the
+  transaction being evaluated.  Compare this to COSHV which looks at
+  the hash of the outputs and anyprevout which looks at all the other
+  signatures in the transaction.
 
-    A potentially major downside of the cat/checksigfromstack approach
-    is that it requires larger witnesses to hold the larger script and
-    all of its witness elements.  O'Connor noted that he doesn't mind
-    switching to more concise implementations (like COSHV and
-    anyprevout) once it's clear a significant number of users are making
-    use of those functions via generic templates.
+  A potentially major downside of the cat/checksigfromstack approach
+  is that it requires larger witnesses to hold the larger script and
+  all of its witness elements.  O'Connor noted that he doesn't mind
+  switching to more concise implementations (like COSHV and
+  anyprevout) once it's clear a significant number of users are making
+  use of those functions via generic templates.
 
 - **Not safe enough:** Johnson Lau pointed out that COSHV allows
   signature replay similar to [BIP118][] noinput, a perceived risk that
@@ -414,6 +414,11 @@ the author.
 [ivgi tweet]: https://twitter.com/shesek/status/1131733590235131905
 [updated qr paragraph]: /en/bech32-sending-support/#qrcode-edit
 [optech twitter]: https://twitter.com/bitcoinoptech
-[optech contributors]: /about/#contributors
+[optech contributors]: /en/about/#contributors
 [special section about the proposal]: #proposed-transaction-output-commitments
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #32]: /en/newsletters/2019/02/05/#miniscript
+[newsletter #18]: /en/newsletters/2018/10/23/#two-papers-published-on-fast-multiparty-ecdsa
+[newsletter #47]: /en/newsletters/2019/05/21/#proposed-anyprevout-sighash-modes
+[miniscript]: /en/topics/miniscript/
+[musig]: https://eprint.iacr.org/2018/068

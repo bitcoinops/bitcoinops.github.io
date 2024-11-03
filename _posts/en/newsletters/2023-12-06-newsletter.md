@@ -30,99 +30,99 @@ infrastructure software.
   weight, as long as all previous (higher feerate) unconfirmed chunks
   are included earlier in the same block.
 
-    Once all transactions have been associated into clusters, and the
-    clusters split into chunks, it's easy to choose which transactions
-    to include in a block: select the highest-feerate chunk, followed by
-    the next highest, over and over, until the block is full.  When this
-    algorithm is used, it's obvious that the lowest-feerate chunk in the
-    mempool is the chunk that's furthest from being included in a block,
-    so we can apply the opposite algorithm when the mempool becomes full
-    and some transactions need to be evicted: evict the lowest-feerate
-    chunk, followed the next-lowest, over and over, until the local
-    mempool is again below its intended maximum size.
+  Once all transactions have been associated into clusters, and the
+  clusters split into chunks, it's easy to choose which transactions
+  to include in a block: select the highest-feerate chunk, followed by
+  the next highest, over and over, until the block is full.  When this
+  algorithm is used, it's obvious that the lowest-feerate chunk in the
+  mempool is the chunk that's furthest from being included in a block,
+  so we can apply the opposite algorithm when the mempool becomes full
+  and some transactions need to be evicted: evict the lowest-feerate
+  chunk, followed the next-lowest, over and over, until the local
+  mempool is again below its intended maximum size.
 
-    The WG archives can now be read by anyone, but only invited members
-    can post.  Some noteworthy topics they've discussed include:
+  The WG archives can now be read by anyone, but only invited members
+  can post.  Some noteworthy topics they've discussed include:
 
   {% assign timestamp="0:57" %}
 
-    - [Cluster mempool definitions and theory][clusterdef] defines the terms being
-      used in the design of cluster mempool.  It also describes a small
-      number of theorems that showcase some of the useful properties of
-      this design.  The single post in this thread (as of this writing) is
-      very useful in understanding other discussions by the WG, although
-      its author (Pieter Wuille) [warns][wuille incomplete] that it's
-      still "very incomplete".
+  - [Cluster mempool definitions and theory][clusterdef] defines the terms being
+    used in the design of cluster mempool.  It also describes a small
+    number of theorems that showcase some of the useful properties of
+    this design.  The single post in this thread (as of this writing) is
+    very useful in understanding other discussions by the WG, although
+    its author (Pieter Wuille) [warns][wuille incomplete] that it's
+    still "very incomplete".
 
-    - [Merging incomparable linearizations][cluster merge] looks at how
-      to merge two different sets of chunks ("chunkings") for the same
-      set of transactions, specifically _incomparable_ chunkings.  By
-      comparing different lists of chunks ("chunkings"), we can
-      determine which would be better for miners.  Chunkings can be
-      compared if one of them always accumulates the same or greater
-      amount of fees within any number of vbytes (discrete to the size
-      of the chunks).  For example:
+  - [Merging incomparable linearizations][cluster merge] looks at how
+    to merge two different sets of chunks ("chunkings") for the same
+    set of transactions, specifically _incomparable_ chunkings.  By
+    comparing different lists of chunks ("chunkings"), we can
+    determine which would be better for miners.  Chunkings can be
+    compared if one of them always accumulates the same or greater
+    amount of fees within any number of vbytes (discrete to the size
+    of the chunks).  For example:
 
-      ![Comparable chunkings](/img/posts/2023-12-comparable-chunkings.png)
+    ![Comparable chunkings](/img/posts/2023-12-comparable-chunkings.png)
 
-      Chunkings are incomparable if one of them accumulates a greater
-      amount of fees within some number of vbytes but the other chunking
-      accumulates a greater amount of fees within a larger number of
-      vbytes.  For example:
+    Chunkings are incomparable if one of them accumulates a greater
+    amount of fees within some number of vbytes but the other chunking
+    accumulates a greater amount of fees within a larger number of
+    vbytes.  For example:
 
-      ![Incomparable chunkings](/img/posts/2023-12-incomparable-chunkings.png)
+    ![Incomparable chunkings](/img/posts/2023-12-incomparable-chunkings.png)
 
-      As one of the theorems in the previously linked thread notes, "if
-      one has two incomparable chunkings for a graph, then another
-      chunking must exist which is strictly better than both".  That
-      means an effective method for merging two different incomparable
-      chunkings can be a powerful tool for improving miner
-      profitability.  For example, a new transaction has been received that
-      is related to other transactions already in the mempool, so its
-      cluster needs to be updated, which implies its chunking also
-      needs to be updated.  Two different methods of making that update
-      can both be performed:
+    As one of the theorems in the previously linked thread notes, "if
+    one has two incomparable chunkings for a graph, then another
+    chunking must exist which is strictly better than both".  That
+    means an effective method for merging two different incomparable
+    chunkings can be a powerful tool for improving miner
+    profitability.  For example, a new transaction has been received that
+    is related to other transactions already in the mempool, so its
+    cluster needs to be updated, which implies its chunking also
+    needs to be updated.  Two different methods of making that update
+    can both be performed:
 
-      1. A new chunking for the updated cluster is computed from
-         scratch.  For large clusters, it may be computationally
-         impractical to find an optimal chunking, so the new chunking
-         might be less optimal than the old chunking.
+    1. A new chunking for the updated cluster is computed from
+       scratch.  For large clusters, it may be computationally
+       impractical to find an optimal chunking, so the new chunking
+       might be less optimal than the old chunking.
 
-      2. The previous chunking for the previous cluster is updated by
-         inserting the new transaction in a location that is valid
-         (parents before children).  This has the advantage that it
-         preserves any existing optimizations in the unmodified chunks
-         but the downside that it could place the transaction in a
-         suboptimal location.
+    2. The previous chunking for the previous cluster is updated by
+       inserting the new transaction in a location that is valid
+       (parents before children).  This has the advantage that it
+       preserves any existing optimizations in the unmodified chunks
+       but the downside that it could place the transaction in a
+       suboptimal location.
 
-      After the two different types of updates have been made, a
-      comparison may reveal one of them is strictly better, in which
-      case it can be used.  But, if the updates are incomparable, a
-      merging method that's guaranteed to produce an equivalent or
-      better result can be used instead to produce a third chunking that
-      will capture the best aspects of both approaches---using new
-      chunkings when they're better but keeping old chunkings when they
-      were closer to optimal.
+    After the two different types of updates have been made, a
+    comparison may reveal one of them is strictly better, in which
+    case it can be used.  But, if the updates are incomparable, a
+    merging method that's guaranteed to produce an equivalent or
+    better result can be used instead to produce a third chunking that
+    will capture the best aspects of both approaches---using new
+    chunkings when they're better but keeping old chunkings when they
+    were closer to optimal.
 
-    - [Post-cluster package RBF][cluster rbf] discusses an alternative
-      to the rules currently used for [replace by fee][topic rbf].
-      When a valid replacement of
-      one or more transactions is received, a temporary version of all
-      the clusters it affects can be made and their updated chunking
-      derived.  This can be compared to the chunking of the original
-      clusters that are currently in the mempool (that don't include the
-      replacement).  If the chunking with the replacement always earns equal or
-      more fees than the original for any number of vbytes, and if it
-      increases the total amount of fees in the mempool by enough to pay
-      for its relay fees, then it should be included in the mempool.
+  - [Post-cluster package RBF][cluster rbf] discusses an alternative
+    to the rules currently used for [replace by fee][topic rbf].
+    When a valid replacement of
+    one or more transactions is received, a temporary version of all
+    the clusters it affects can be made and their updated chunking
+    derived.  This can be compared to the chunking of the original
+    clusters that are currently in the mempool (that don't include the
+    replacement).  If the chunking with the replacement always earns equal or
+    more fees than the original for any number of vbytes, and if it
+    increases the total amount of fees in the mempool by enough to pay
+    for its relay fees, then it should be included in the mempool.
 
-        This evidence-based evaluation can replace several
-        [heuristics][mempool replacements] currently used in Bitcoin
-        Core to determine whether a transaction should be replaced,
-        potentially improving the RBF rules in several areas, including
-        proposed [package relay][topic package relay] for replacements.
-        Several [other][cluster rbf-old1] threads [also][cluster
-        rbf-old2] discussed [this][cluster rbf-old3] topic.
+    This evidence-based evaluation can replace several
+    [heuristics][mempool replacements] currently used in Bitcoin
+    Core to determine whether a transaction should be replaced,
+    potentially improving the RBF rules in several areas, including
+    proposed [package relay][topic package relay] for replacements.
+    Several [other][cluster rbf-old1] threads [also][cluster
+    rbf-old2] discussed [this][cluster rbf-old3] topic.
 
 - **Testing with warnet:** Matthew Zipkin [posted][zipkin warnet] to
   Delving Bitcoin with the results of some simulations he's run using

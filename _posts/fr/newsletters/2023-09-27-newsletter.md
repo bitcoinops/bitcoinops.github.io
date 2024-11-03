@@ -20,53 +20,53 @@ d'infrastructure Bitcoin.
   des adaptations de plusieurs protocoles précédents qu'il a décrits (voir les bulletins [#221][news221 law], [#230][news230 law] et
   [#244][news244 law]).
 
-    Il commence par décrire un problème de scalabilité avec les protocoles basés sur les signatures qui nécessitent la participation
-    d'un grand nombre d'utilisateurs, tels que les [coinjoins][topic coinjoin] ou les conceptions précédentes d'usines : si 1 000
-    utilisateurs acceptent de participer au protocole mais que l'un d'entre eux devient indisponible pendant la signature, les 999
-    autres signatures sont inutiles. Si, lors de la prochaine tentative, un autre utilisateur individuel devient indisponible, les 998
-    autres signatures collectées lors de la deuxième tentative sont inutiles. Il propose les covenants tels que
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] et [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] comme solution à ce
-    problème : ils permettent à une seule petite transaction de restreindre ses fonds à être dépensés uniquement dans une ou plusieurs
-    transactions enfants prédéfinies ultérieures. Les transactions ultérieures peuvent également être limitées par un covenant.
+  Il commence par décrire un problème de scalabilité avec les protocoles basés sur les signatures qui nécessitent la participation
+  d'un grand nombre d'utilisateurs, tels que les [coinjoins][topic coinjoin] ou les conceptions précédentes d'usines : si 1 000
+  utilisateurs acceptent de participer au protocole mais que l'un d'entre eux devient indisponible pendant la signature, les 999
+  autres signatures sont inutiles. Si, lors de la prochaine tentative, un autre utilisateur individuel devient indisponible, les 998
+  autres signatures collectées lors de la deuxième tentative sont inutiles. Il propose les covenants tels que
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] et [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] comme solution à ce
+  problème : ils permettent à une seule petite transaction de restreindre ses fonds à être dépensés uniquement dans une ou plusieurs
+  transactions enfants prédéfinies ultérieures. Les transactions ultérieures peuvent également être limitées par un covenant.
 
-    Law utilise ce mécanisme pour créer un _arbre de temporisation_ où une _transaction de financement_ paie un arbre de transactions
-    enfants prédéfinies qui sont finalement dépensées hors chaîne dans un grand nombre de canaux de paiement séparés. Un mécanisme
-    similaire à celui utilisé par Ark (voir le [Bulletin #253][news253 ark]) permet à chacun des canaux de paiement d'être éventuellement
-    mis sur la chaîne, mais il permet également au financeur de l'usine de récupérer les fonds de tout canal qui n'a pas été mis onchain
-    après expiration. Cela peut être extrêmement efficace : un arbre de temporisation hors chaîne finançant des millions de canaux peut
-    être créé à l'aide d'une seule petite transaction onchain. Après expiration, les fonds peuvent être récupérés par le financeur de
-    l'usine dans une autre petite transaction onchain, les utilisateurs individuels retirant leurs fonds via LN vers leurs autres canaux
-    avant la date d'expiration de l'usine.
+  Law utilise ce mécanisme pour créer un _arbre de temporisation_ où une _transaction de financement_ paie un arbre de transactions
+  enfants prédéfinies qui sont finalement dépensées hors chaîne dans un grand nombre de canaux de paiement séparés. Un mécanisme
+  similaire à celui utilisé par Ark (voir le [Bulletin #253][news253 ark]) permet à chacun des canaux de paiement d'être éventuellement
+  mis sur la chaîne, mais il permet également au financeur de l'usine de récupérer les fonds de tout canal qui n'a pas été mis onchain
+  après expiration. Cela peut être extrêmement efficace : un arbre de temporisation hors chaîne finançant des millions de canaux peut
+  être créé à l'aide d'une seule petite transaction onchain. Après expiration, les fonds peuvent être récupérés par le financeur de
+  l'usine dans une autre petite transaction onchain, les utilisateurs individuels retirant leurs fonds via LN vers leurs autres canaux
+  avant la date d'expiration de l'usine.
 
-    Le modèle ci-dessus est compatible avec la construction de canaux LN-Penalty actuellement utilisée ainsi qu'avec le mécanisme
-    proposé [LN-Symmetry][topic eltoo]. Cependant, le reste de l'article de Law examine une proposition demodification de son protocole
-    Fully Factory Optimized Watchtower Free (FFO-WF) qui offre plusieurs avantages pour la conception d'une usine basée sur les
-    covenants. En plus des avantages décrits dans les bulletins précédents, tels que la nécessité uniquement d'utilisateurs
-    _occasionnels_ pour aller en ligne pendant quelques minutes tous les quelques mois et permettre aux utilisateurs dédiés d'utiliser
-    leur capital à travers différents canaux de manière plus efficace, un nouvel avantage de la construction mise à jour permet au
-    financeur de l'usine de déplacer des fonds pour les utilisateurs occasionnels d'une usine (basée sur une transaction onchain
-    particulière) vers une autre usine (ancrée dans une transaction onchain différente) sans nécessiter d'interaction de l'utilisateur.
-    Cela signifie que l'utilisateur occasionnel Alice, qui sait qu'elle doit se connecter avant l'expiration de 6 mois d'une usine,
-    peut se connecter au mois 5 pour découvrir que ses fonds ont déjà été transférés vers une nouvelle usine avec plusieurs mois
-    supplémentaires avant l'expiration. Alice n'a rien à faire ; elle conserve un contrôle complet et sans confiance de ses fonds.
-    Cela réduit la possibilité qu'Alice se connecte très près de l'expiration, découvre que le financeur de l'usine est temporairement
-    indisponible et soit obligée de mettre sa part de l'arbre de temporisation onchain, ce qui entraîne des frais de transaction et
-    réduit la scalabilité globale du réseau.
+  Le modèle ci-dessus est compatible avec la construction de canaux LN-Penalty actuellement utilisée ainsi qu'avec le mécanisme
+  proposé [LN-Symmetry][topic eltoo]. Cependant, le reste de l'article de Law examine une proposition demodification de son protocole
+  Fully Factory Optimized Watchtower Free (FFO-WF) qui offre plusieurs avantages pour la conception d'une usine basée sur les
+  covenants. En plus des avantages décrits dans les bulletins précédents, tels que la nécessité uniquement d'utilisateurs
+  _occasionnels_ pour aller en ligne pendant quelques minutes tous les quelques mois et permettre aux utilisateurs dédiés d'utiliser
+  leur capital à travers différents canaux de manière plus efficace, un nouvel avantage de la construction mise à jour permet au
+  financeur de l'usine de déplacer des fonds pour les utilisateurs occasionnels d'une usine (basée sur une transaction onchain
+  particulière) vers une autre usine (ancrée dans une transaction onchain différente) sans nécessiter d'interaction de l'utilisateur.
+  Cela signifie que l'utilisateur occasionnel Alice, qui sait qu'elle doit se connecter avant l'expiration de 6 mois d'une usine,
+  peut se connecter au mois 5 pour découvrir que ses fonds ont déjà été transférés vers une nouvelle usine avec plusieurs mois
+  supplémentaires avant l'expiration. Alice n'a rien à faire ; elle conserve un contrôle complet et sans confiance de ses fonds.
+  Cela réduit la possibilité qu'Alice se connecte très près de l'expiration, découvre que le financeur de l'usine est temporairement
+  indisponible et soit obligée de mettre sa part de l'arbre de temporisation onchain, ce qui entraîne des frais de transaction et
+  réduit la scalabilité globale du réseau.
 
-    Anthony Towns a [répondu][towns cov] avec une préoccupation qu'il a appelée le problème du "troupeau tonitruant" (appelé "spam d'expiration
-    forcée" dans le document [LN original][ln paper]) où l'échec délibéré ou accidentel d'un grand utilisateur dédié nécessite à de nombreux
-    autres utilisateurs de mettre de nombreuses transactions sensibles au temps onchain en même temps. Par exemple, une usine avec un
-    million d'utilisateurs peut nécessiter une confirmation sensible au temps jusqu'à un million de transactions plus une confirmation
-    non sensible au temps jusqu'à deux millions de transactions supplémentaires pour que ces utilisateurs replacent ces fonds dans de
-    nouveaux canaux. Il faut actuellement environ une semaine au réseau pour confirmer trois millions de transactions, donc les
-    utilisateurs d'une usine d'un million d'utilisateurs peuvent souhaiter qu'une usine renouvelle leurs fonds quelques semaines avant
-    l'expiration, ou peut-être plusieurs mois à l'avance s'ils sont préoccupés par le fait que plusieurs usines de plusieurs millions
-    d'utilisateurs rencontrent des problèmes simultanément.
+  Anthony Towns a [répondu][towns cov] avec une préoccupation qu'il a appelée le problème du "troupeau tonitruant" (appelé "spam d'expiration
+  forcée" dans le document [LN original][ln paper]) où l'échec délibéré ou accidentel d'un grand utilisateur dédié nécessite à de nombreux
+  autres utilisateurs de mettre de nombreuses transactions sensibles au temps onchain en même temps. Par exemple, une usine avec un
+  million d'utilisateurs peut nécessiter une confirmation sensible au temps jusqu'à un million de transactions plus une confirmation
+  non sensible au temps jusqu'à deux millions de transactions supplémentaires pour que ces utilisateurs replacent ces fonds dans de
+  nouveaux canaux. Il faut actuellement environ une semaine au réseau pour confirmer trois millions de transactions, donc les
+  utilisateurs d'une usine d'un million d'utilisateurs peuvent souhaiter qu'une usine renouvelle leurs fonds quelques semaines avant
+  l'expiration, ou peut-être plusieurs mois à l'avance s'ils sont préoccupés par le fait que plusieurs usines de plusieurs millions
+  d'utilisateurs rencontrent des problèmes simultanément.
 
-    Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une [idée][maxwell clock stop] de Gregory Maxwell qui
-    retarderait l'expiration lorsque "les blocs sont pleins" (par exemple, les frais sont supérieurs au montant normal). Dans sa
-    [réponse][law fee stop] à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
-    qu'il aura fini d'y réfléchir.
+  Une version du document LN original suggérait que ce problème pourrait être résolu en utilisant une [idée][maxwell clock stop] de Gregory Maxwell qui
+  retarderait l'expiration lorsque "les blocs sont pleins" (par exemple, les frais sont supérieurs au montant normal). Dans sa
+  [réponse][law fee stop] à Towns, Law a noté qu'il travaille sur une conception spécifique pour une solution de ce type qu'il publiera une fois
+  qu'il aura fini d'y réfléchir.
 
 ##  Questions et réponses sélectionnées de Bitcoin Stack Exchange
 
@@ -181,11 +181,11 @@ les versions candidates.*
   reçue, telle qu'une erreur indiquant que l'un des sauts le long du chemin ne pouvait pas transmettre le paiement, un nouveau chemin
   peut être sondé avant d'envoyer le paiement réel.
 
-   La sonde préalable au paiement ("prévol") peut être utile avec de petites sommes d'argent pour trouver des sauts qui rencontrent des
-   problèmes pouvant causer des retards. Si quelques centaines de sats (ou moins) restent bloqués pendant quelques heures, ce n'est pas
-   grave pour la plupart des dépensiers---mais si le montant total d'un paiement représentant une partie importante du capital d'un nœud
-   reste bloqué, cela peut être très ennuyeux. Il est également possible de sonder plusieurs chemins simultanément et d'utiliser les
-   résultats pour choisir le meilleur chemin quelques instants plus tard lors de l'envoi d'un paiement.
+  La sonde préalable au paiement ("prévol") peut être utile avec de petites sommes d'argent pour trouver des sauts qui rencontrent des
+  problèmes pouvant causer des retards. Si quelques centaines de sats (ou moins) restent bloqués pendant quelques heures, ce n'est pas
+  grave pour la plupart des dépensiers---mais si le montant total d'un paiement représentant une partie importante du capital d'un nœud
+  reste bloqué, cela peut être très ennuyeux. Il est également possible de sonder plusieurs chemins simultanément et d'utiliser les
+  résultats pour choisir le meilleur chemin quelques instants plus tard lors de l'envoi d'un paiement.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28492,119,738,28246,6311,6617,6686,2613,7994,2547,2534" %}

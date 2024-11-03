@@ -34,18 +34,18 @@ projects.
   fairly easily identified and so wallets not using BIP69 may also be
   easier to identify by negation.
 
-    In this [thread][bip69 thread] to the Bitcoin-Dev mailing list, Ryan
-    Havar suggests that one reason wallet authors like BIP69 is that its
-    deterministic ordering makes it easy and fast for their tests to
-    ensure that they haven't leaked any information about the source of
-    their inputs or the destination of their outputs (e.g.  in some old
-    wallets, the fist output always went to the recipient and the second
-    output was always change---making coin tracking trivial).  Havar
-    then suggests an alternative deterministic ordering based on private
-    information that would be available to the test suite but not
-    exposed by production wallets, allowing developers who want to
-    thwart block chain analysis---but also have simple and fast
-    tests---to migrate away from BIP69.
+  In this [thread][bip69 thread] to the Bitcoin-Dev mailing list, Ryan
+  Havar suggests that one reason wallet authors like BIP69 is that its
+  deterministic ordering makes it easy and fast for their tests to
+  ensure that they haven't leaked any information about the source of
+  their inputs or the destination of their outputs (e.g.  in some old
+  wallets, the fist output always went to the recipient and the second
+  output was always change---making coin tracking trivial).  Havar
+  then suggests an alternative deterministic ordering based on private
+  information that would be available to the test suite but not
+  exposed by production wallets, allowing developers who want to
+  thwart block chain analysis---but also have simple and fast
+  tests---to migrate away from BIP69.
 
 - **Overt ASICBoost support for S9 miners:** support for this
   efficiency-improving feature was announced by both [Bitmain][bitmain oab]
@@ -59,12 +59,12 @@ projects.
   indicate an improvement of 10% (or perhaps more) on existing Antminer S9
   hardware.
 
-    The overt form of ASICBoost alters the versionbits field in the
-    block header, which can cause programs such as Bitcoin Core to display
-    a warning such as "13 of last 100 blocks have unexpected version".
-    Some ASICBoost miners have voluntarily restricted their altered
-    versionbits range to that defined by [BIP320][], giving future
-    programs the option to ignore those bits for upgrade signaling.
+  The overt form of ASICBoost alters the versionbits field in the
+  block header, which can cause programs such as Bitcoin Core to display
+  a warning such as "13 of last 100 blocks have unexpected version".
+  Some ASICBoost miners have voluntarily restricted their altered
+  versionbits range to that defined by [BIP320][], giving future
+  programs the option to ignore those bits for upgrade signaling.
 
 - **Open sourced HSM-based multisig cold storage solution:** [Square][] has
   released code and documentation for the cold storage solution they've
@@ -82,11 +82,11 @@ projects.
   days) also in New York City with a few speeches, many demos, and lots
   of hacking.
 
-    Pierre Rochard has written summaries of all the presentations
-    given at the residency program ([day 1][lr1], [day 2][lr2],
-    [day 3][lr3], [day 4][lr4]) and videos of the
-    presentations are expected to be posted soon.  Videos of the
-    hackday are available now: [day 1][hd1], [day 2][hd2].
+  Pierre Rochard has written summaries of all the presentations
+  given at the residency program ([day 1][lr1], [day 2][lr2],
+  [day 3][lr3], [day 4][lr4]) and videos of the
+  presentations are expected to be posted soon.  Videos of the
+  hackday are available now: [day 1][hd1], [day 2][hd2].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -123,38 +123,13 @@ answers made since our last update.*
 
 ## Notable merges
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 {% comment %}<!-- no commits to libsecp256k1; one interesting commit
 #448 to C-Lightning, but I'm not confident enough of my understanding of
 it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="5c25409d6851182c5e351720cee36812c229b77a"
-  end="f1e2f2a85962c1664e4e55471061af0eaa798d40"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="e5b84cfadab56037ae3957e704b3e570c9368297"
-  end="6b19df162a161079ab794162b45e8f4c7bb8beec"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="7eec2253e962e524f8fd92b74f411f0b99706ba9"
-  end="22b8a88b488faa94a009b2c58415ae825152f709"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
 
 - [Bitcoin Core #14451][] allows optionally building Bitcoin-Qt without
   support for the [BIP70][] payment protocol and adds a deprecation
@@ -249,3 +224,9 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [key origin]: https://gist.github.com/sipa/e3d23d498c430bb601c5bca83523fa82#key-origin-identification
 [towns mining estimate]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/playing-with-fire-adjusting-bitcoin-block-subsidy/
 [square]: https://cash.app/bitcoin
+[newsletter #5]: /en/newsletters/2018/07/24/#first-use-of-output-script-descriptors
+[newsletter #7]: /en/newsletters/2018/08/07/#bitcoin-core-13697
+[newsletter #9]: /en/newsletters/2018/08/21/#output-script-descriptors-enhancements
+[newsletter #12]: /en/newsletters/2018/09/11/#bitcoin-core-14096
+[newsletter #17]: /en/newsletters/2018/10/16/#script-descriptors-and-descript
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

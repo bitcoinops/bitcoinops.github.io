@@ -6,12 +6,12 @@ title: Liquidity advertisements
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Liquidity Management
 
@@ -41,6 +41,12 @@ optech_mentions:
 
   - title: "Discussion about griefing liquidity advertisements"
     url: /en/newsletters/2023/12/13/#discussion-about-griefing-liquidity-ads
+
+  - title: "Eclair #2848 implements extensible liquidity advertisements"
+    url: /en/newsletters/2024/10/04/#eclair-2848
+
+  - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
+    url: /en/newsletters/2024/10/04/#eclair-2861
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

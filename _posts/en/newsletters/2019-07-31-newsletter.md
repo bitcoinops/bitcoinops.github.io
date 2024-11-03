@@ -41,19 +41,19 @@ projects.
   ability to eliminate or significantly reduce the privacy benefits of
   coinjoining.
 
-    Belcher proposes that makers create a persistent cryptographic
-    identity by either destroying ("burning") bitcoins or by timelocking
-    bitcoins for an extended period of time.  These sacrifices would be
-    accompanied by a public key that the maker could use to sign
-    their ephemeral identity in JoinMarket.  Takers would then randomly
-    select qualifying makers for coinjoins weighted by the size of their
-    sacrifice (as determined by a formula).
+  Belcher proposes that makers create a persistent cryptographic
+  identity by either destroying ("burning") bitcoins or by timelocking
+  bitcoins for an extended period of time.  These sacrifices would be
+  accompanied by a public key that the maker could use to sign
+  their ephemeral identity in JoinMarket.  Takers would then randomly
+  select qualifying makers for coinjoins weighted by the size of their
+  sacrifice (as determined by a formula).
 
-    On the upside, this would require attackers to sacrifice significant
-    amounts of bitcoins or the ability to sell bitcoins, making sybil
-    attacks more expensive.  On the downside, honest makers would likely
-    charge more for coinjoins in order to receive compensation for their
-    sacrifices, raising the cost of JoinMarket coinjoins.
+  On the upside, this would require attackers to sacrifice significant
+  amounts of bitcoins or the ability to sell bitcoins, making sybil
+  attacks more expensive.  On the downside, honest makers would likely
+  charge more for coinjoins in order to receive compensation for their
+  sacrifices, raising the cost of JoinMarket coinjoins.
 
 - **PR opened for BIP322 generic signed message format:** Kalle Alm
   [opened a PR][Bitcoin Core #16440] to Bitcoin Core with an
@@ -72,11 +72,11 @@ projects.
   support.  See Optech's previous [bech32 section][signmessage bech32]
   where we lamented the lack of a BIP322 implementation.
 
-    Based on early feedback on the PR, BIP322 has also been updated so
-    that signing and verifying messages with legacy P2PKH keys uses the
-    old signmessage format.  This allows BIP322 tools to be fully backwards
-    compatible with the existing and widely-implemented signmessage standard
-    (which only supports P2PKH).
+  Based on early feedback on the PR, BIP322 has also been updated so
+  that signing and verifying messages with legacy P2PKH keys uses the
+  old signmessage format.  This allows BIP322 tools to be fully backwards
+  compatible with the existing and widely-implemented signmessage standard
+  (which only supports P2PKH).
 
 - **Bloom filter discussion:** in the *notable changes* section of [last
   week's newsletter][Newsletter #56], we mentioned a [merged PR][Bitcoin
@@ -86,49 +86,49 @@ projects.
   replied with questions or concerns.  Some takeaways from the
   discussion include:
 
-    - *No urgent action required:* as of this writing, over 20% of nodes
-      accepting incoming connections (listening nodes) are running a
-      version of Bitcoin Core that's over a year old [according to
-      BitNodes][bitnodes dashboard].  At least 5% are running a version
-      that's over two years old.  Extrapolating to the future, that
-      means there will still be over 500 listening nodes providing
-      bloom filters at the beginning of 2022.  So, even with no further
-      action, wallet developers may have a significant amount of time in
-      which to adapt their programs.
+  - *No urgent action required:* as of this writing, over 20% of nodes
+    accepting incoming connections (listening nodes) are running a
+    version of Bitcoin Core that's over a year old [according to
+    BitNodes][bitnodes dashboard].  At least 5% are running a version
+    that's over two years old.  Extrapolating to the future, that
+    means there will still be over 500 listening nodes providing
+    bloom filters at the beginning of 2022.  So, even with no further
+    action, wallet developers may have a significant amount of time in
+    which to adapt their programs.
 
-    - *Spies likely to run their own nodes:* additional to non-upgraded
-      nodes, it's possible that block chain analysis companies will
-      continue to run their own nodes providing bloom filter support in
-      the future so that they can collect statistics from wallets whose
-      filters [leak information][filter privacy] about what addresses
-      they contain.
+  - *Spies likely to run their own nodes:* additional to non-upgraded
+    nodes, it's possible that block chain analysis companies will
+    continue to run their own nodes providing bloom filter support in
+    the future so that they can collect statistics from wallets whose
+    filters [leak information][filter privacy] about what addresses
+    they contain.
 
-    - *DNS seeds can return only nodes signaling BIP111:* most P2P light
-      wallets query one or more Bitcoin DNS seeds for a list of nodes to
-      use.  Some seeds allow filtering which nodes they return by what
-      service bits that node has configured[^dns-query], with the
-      service bit for bloom filter support being specified by
-      [BIP111][].
+  - *DNS seeds can return only nodes signaling BIP111:* most P2P light
+    wallets query one or more Bitcoin DNS seeds for a list of nodes to
+    use.  Some seeds allow filtering which nodes they return by what
+    service bits that node has configured[^dns-query], with the
+    service bit for bloom filter support being specified by
+    [BIP111][].
 
-    - *BIP157 would use more bandwidth than BIP37:* it was suggested
-      that some users of [BIP37][] bloom filters will be unable to
-      switch to [BIP157][] compact block filters because of the later's
-      higher bandwidth usage.  Optech briefly investigated filter size
-      in [Newsletter #43][] and found the filters themselves to use less
-      than 100 MB a month.  Clients would also need to download matching
-      blocks, which would vary depending on their activity (roughly one
-      block for every sent or received transaction for typical users; most
-      blocks are less than 2 MB in size).  It's unclear how many users
-      would be significantly affected by having to download that amount
-      of data.
+  - *BIP157 would use more bandwidth than BIP37:* it was suggested
+    that some users of [BIP37][] bloom filters will be unable to
+    switch to [BIP157][] compact block filters because of the later's
+    higher bandwidth usage.  Optech briefly investigated filter size
+    in [Newsletter #43][] and found the filters themselves to use less
+    than 100 MB a month.  Clients would also need to download matching
+    blocks, which would vary depending on their activity (roughly one
+    block for every sent or received transaction for typical users; most
+    blocks are less than 2 MB in size).  It's unclear how many users
+    would be significantly affected by having to download that amount
+    of data.
 
-    - *Interested parties can run their own nodes:* the change to
-      Bitcoin Core only disables serving bloom filters by default.  It
-      doesn't remove the feature.  Authors of wallets depending on bloom
-      filter support can easily operate their own nodes, and they can
-      also try to persuade other node operators who aren't worried about
-      the DoS vulnerability to set the configuration option to true,
-      e.g.  `peerbloomfilters=1`.
+  - *Interested parties can run their own nodes:* the change to
+    Bitcoin Core only disables serving bloom filters by default.  It
+    doesn't remove the feature.  Authors of wallets depending on bloom
+    filter support can easily operate their own nodes, and they can
+    also try to persuade other node operators who aren't worried about
+    the DoS vulnerability to set the configuration option to true,
+    e.g.  `peerbloomfilters=1`.
 
 ## Bech32 sending support
 
@@ -243,4 +243,7 @@ answers made since our last update.*
 [bloom announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html
 [signmessage bech32]: /en/bech32-sending-support/#message-signing-support
 [filter privacy]: https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
-
+[newsletter #43]: /en/newsletters/2019/04/23/#basic-bip158-support-merged-in-bitcoin-core
+[newsletter #56]: /en/newsletters/2019/07/24/#bitcoin-core-16152
+[newsletter #37]: /en/newsletters/2019/03/12/#version-2-addr-message-proposed
+[descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

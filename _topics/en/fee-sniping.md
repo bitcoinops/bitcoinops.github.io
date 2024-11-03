@@ -6,12 +6,12 @@ title: Fee sniping
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Anti fee sniping
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Mining
   - Security Problems
   - Security Enhancements
@@ -117,26 +117,26 @@ censor certain transactions.
   miners only creating them to bury their re-mined block under as much
   proof of work as possible.
 
-    {:.center}
-    ![Illustration of fee sniping without block limits](/img/posts/2021-06-sniping-size-limit.png)
+  {:.center}
+  ![Illustration of fee sniping without block limits](/img/posts/2021-06-sniping-size-limit.png)
 
-    Limiting the number of transactions that can be contained within a
-    Bitcoin block produces two desirable effects:
+  Limiting the number of transactions that can be contained within a
+  Bitcoin block produces two desirable effects:
 
-    1. It tends to prevent any new block at the tip of the chain from
-       containing all pending transactions, leaving some transactions
-       for the next block.  If the amount of transaction fee expected
-       from honestly mining the next block is close to the amount of
-       transaction fee available from dishonestly re-mining the previous
-       block, all rational miners will behave honestly.
+  1. It tends to prevent any new block at the tip of the chain from
+     containing all pending transactions, leaving some transactions
+     for the next block.  If the amount of transaction fee expected
+     from honestly mining the next block is close to the amount of
+     transaction fee available from dishonestly re-mining the previous
+     block, all rational miners will behave honestly.
 
-    2. It ensures that, even if dishonest miners do re-mine blocks, they
-       won't be able to achieve maximum revenue by leaving the blocks
-       near the tip empty---those blocks will need to contain fee-paying
-       transactions.  Other dishonest miners may attempt themselves to
-       fee snipe those transactions, reducing the revenue of the initial
-       fee sniping miner and possibly discouraging them from fee sniping
-       in the first place.
+  2. It ensures that, even if dishonest miners do re-mine blocks, they
+     won't be able to achieve maximum revenue by leaving the blocks
+     near the tip empty---those blocks will need to contain fee-paying
+     transactions.  Other dishonest miners may attempt themselves to
+     fee snipe those transactions, reducing the revenue of the initial
+     fee sniping miner and possibly discouraging them from fee sniping
+     in the first place.
 
 - **Rearrangement protection (anti fee sniping):** even with a block size
   limit, a dishonest miner doesn't need to use the exact same set of
@@ -147,32 +147,32 @@ censor certain transactions.
   other dishonest miners will have to work harder to re-mine them a
   second time.
 
-    {:.center}
-    ![Illustration of honest mining compared to fee sniping](/img/posts/2021-06-afs.png)
+  {:.center}
+  ![Illustration of honest mining compared to fee sniping](/img/posts/2021-06-afs.png)
 
-     It's possible to limit this abuse by preventing miners from being
-     able to include pending high-feerate transactions in the re-mined
-     version of any previous block.  Miners would only be allowed to
-     include pending transactions in blocks after the current chain tip.
-     In other words, in an ideal situation, there wouldn't be any
-     difference between the regular transactions in blocks created by
-     economically rational dishonest miners and blocks created by honest
-     miners.  This can reduce the revenue available to the dishonest
-     miner and make them more vulnerable to fee sniping by other
-     dishonest miners---again reducing the initial dishonest miner's
-     expected rewards possibly enough to keep them mining honestly in
-     the first place.
+  It's possible to limit this abuse by preventing miners from being
+  able to include pending high-feerate transactions in the re-mined
+  version of any previous block.  Miners would only be allowed to
+  include pending transactions in blocks after the current chain tip.
+  In other words, in an ideal situation, there wouldn't be any
+  difference between the regular transactions in blocks created by
+  economically rational dishonest miners and blocks created by honest
+  miners.  This can reduce the revenue available to the dishonest
+  miner and make them more vulnerable to fee sniping by other
+  dishonest miners---again reducing the initial dishonest miner's
+  expected rewards possibly enough to keep them mining honestly in
+  the first place.
 
-     This rearrangement protection is commonly called **anti fee
-     sniping.** Originally [implemented][bitcoin core #2340] in Bitcoin
-     Core, anti fee sniping is now also used by several other wallets.
+  This rearrangement protection is commonly called **anti fee
+  sniping.** Originally [implemented][bitcoin core #2340] in Bitcoin
+  Core, anti fee sniping is now also used by several other wallets.
 
-    All wallets that implement anti fee sniping today use nLockTime
-    height locks to prevent a transaction from being included in the
-    re-mined version of a previous block.  It's also [possible][belcher
-    post] to implement the same protection using [BIP68][] nSequence
-    height locks, which could help make regular wallet transactions look
-    like contract protocol transactions and vice versa.
+  All wallets that implement anti fee sniping today use nLockTime
+  height locks to prevent a transaction from being included in the
+  re-mined version of a previous block.  It's also [possible][belcher
+  post] to implement the same protection using [BIP68][] nSequence
+  height locks, which could help make regular wallet transactions look
+  like contract protocol transactions and vice versa.
 
 We're unaware of any developers who think the above mechanisms are a
 complete solution to the fee sniping problem, but every other mitigation

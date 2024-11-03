@@ -21,68 +21,69 @@ notable changes to popular Bitcoin infrastructure software.
   they use to sign releases of Knots.  They say, "do not download
   Bitcoin Knots and trust it until this is resolved.  If you already did
   in the last few months, consider shutting that system down for now."
-  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
   Other full node implementations are unaffected. {% assign timestamp="1:06" %}
+
+  <!-- https://web.archive.org/web/20230103220745/https://twitter.com/LukeDashjr/status/1609763079423655938 -->
 
 - **Software forks of Bitcoin Core:** last month saw the release of two
   patchsets on top of Bitcoin Core:
 
-    - *Bitcoin Inquisition:* Anthony Towns [announced][towns bci] to the
-      Bitcoin-Dev mailing list a version of [Bitcoin Inquisition][], a
-      software fork of Bitcoin Core designed to be used on the default
-      [signet][topic signet] for testing proposed soft forks and other
-      significant protocol changes.  This version contains support for
-      the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
-      [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposals.
-      Towns's email also includes additional information that will be
-      useful to anyone participating in the signet tests.
+  - *Bitcoin Inquisition:* Anthony Towns [announced][towns bci] to the
+    Bitcoin-Dev mailing list a version of [Bitcoin Inquisition][], a
+    software fork of Bitcoin Core designed to be used on the default
+    [signet][topic signet] for testing proposed soft forks and other
+    significant protocol changes.  This version contains support for
+    the [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] and
+    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] proposals.
+    Towns's email also includes additional information that will be
+    useful to anyone participating in the signet tests.
 
-    - *Full-RBF peering node:* Peter Todd [announced][todd rbf node] a
-      patch on top of Bitcoin Core 24.0.1 that sets a [full-RBF service
-      bit][] when it advertises its network address to other nodes,
-      although only if the node is configured with `mempoolfullrbf`
-      enabled.  Nodes running the patch also connect to up to four
-      additional peers which had advertised that they support full-RBF.
-      Peter Todd notes that Bitcoin Knots, another full node implementation, also
-      advertises the service bit, although it doesn't contain code to
-      specifically peer with nodes advertising full-RBF support.  The
-      patch is based on Bitcoin Core PR [#25600][bitcoin core #25600]. {% assign timestamp="7:53" %}
+  - *Full-RBF peering node:* Peter Todd [announced][todd rbf node] a
+    patch on top of Bitcoin Core 24.0.1 that sets a [full-RBF service
+    bit][] when it advertises its network address to other nodes,
+    although only if the node is configured with `mempoolfullrbf`
+    enabled.  Nodes running the patch also connect to up to four
+    additional peers which had advertised that they support full-RBF.
+    Peter Todd notes that Bitcoin Knots, another full node implementation, also
+    advertises the service bit, although it doesn't contain code to
+    specifically peer with nodes advertising full-RBF support.  The
+    patch is based on Bitcoin Core PR [#25600][bitcoin core #25600]. {% assign timestamp="7:53" %}
 
 - **Continued RBF discussion:** in ongoing discussion about enabling
   [full-RBF][topic rbf] on mainnet, several parallel discussions were
   held last month on the mailing list:
 
-    - *Full-RBF nodes:* Peter Todd probed full nodes which advertised
-      that they were running Bitcoin Core 24.x and were accepting
-      incoming connections on an IPv4 address.  He [found][todd probe]
-      that about 17% relayed a full-RBF replacement: a transaction which
-      replaced a transaction that did not contain the [BIP125][]
-      signal.  This suggests those nodes were running with
-      the `mempoolfullrbf` configuration option set to `true`, even
-      though the option defaults to `false`.
+  - *Full-RBF nodes:* Peter Todd probed full nodes which advertised
+    that they were running Bitcoin Core 24.x and were accepting
+    incoming connections on an IPv4 address.  He [found][todd probe]
+    that about 17% relayed a full-RBF replacement: a transaction which
+    replaced a transaction that did not contain the [BIP125][]
+    signal.  This suggests those nodes were running with
+    the `mempoolfullrbf` configuration option set to `true`, even
+    though the option defaults to `false`.
 
-    - *Reconsideration of RBF-FSS:*  Daniel Lipshitz [posted][lipshitz
-      fss] to the Bitcoin-Dev mailing list an idea for a type of
-      transaction replacement called First Seen Safe (FSS) where the
-      replacement would pay the original outputs at least the same
-      amounts as the original transaction, ensuring the replacement
-      mechanism couldn't be used to steal from the receiver of the
-      original transaction.  Yuval Kogman [replied][kogman fss] with a
-      link to an [earlier version][rbf-fss] of the same idea posted in
-      2015 Peter Todd.  In a [subsequent][todd fss] reply, Todd
-      described several ways in which the idea is much less preferable
-      than opt-in or full RBF.
+  - *Reconsideration of RBF-FSS:*  Daniel Lipshitz [posted][lipshitz
+    fss] to the Bitcoin-Dev mailing list an idea for a type of
+    transaction replacement called First Seen Safe (FSS) where the
+    replacement would pay the original outputs at least the same
+    amounts as the original transaction, ensuring the replacement
+    mechanism couldn't be used to steal from the receiver of the
+    original transaction.  Yuval Kogman [replied][kogman fss] with a
+    link to an [earlier version][rbf-fss] of the same idea posted in
+    2015 Peter Todd.  In a [subsequent][todd fss] reply, Todd
+    described several ways in which the idea is much less preferable
+    than opt-in or full RBF.
 
-    - *Full-RBF motivation:* Anthony Towns [replied][towns rbfm] to a
-      thread about the motivation for various groups to perform
-      full-RBF.  Towns analyzes what economic rationality means---and
-      does not mean---in the context of miner transaction selection.
-      Miners optimizing for very short term profits would naturally
-      prefer full-RBF.  However, Towns notes that miners who have made a
-      long-term capital investment in mining equipment might instead
-      prefer to optimize fee income over multiple blocks, and that might
-      not always favor full-RBF.  He suggests three possible scenarios
-      for consideration. {% assign timestamp="23:39" %}
+  - *Full-RBF motivation:* Anthony Towns [replied][towns rbfm] to a
+    thread about the motivation for various groups to perform
+    full-RBF.  Towns analyzes what economic rationality means---and
+    does not mean---in the context of miner transaction selection.
+    Miners optimizing for very short term profits would naturally
+    prefer full-RBF.  However, Towns notes that miners who have made a
+    long-term capital investment in mining equipment might instead
+    prefer to optimize fee income over multiple blocks, and that might
+    not always favor full-RBF.  He suggests three possible scenarios
+    for consideration. {% assign timestamp="23:39" %}
 
 ## Releases and release candidates
 

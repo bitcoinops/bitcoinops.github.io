@@ -43,24 +43,24 @@ changes to popular Bitcoin infrastructure projects.
   (Respondents seemed moderately opposed.)  Do people want mandatory output
   tagging?  (Respondents seemed opposed, some strongly.)
 
-    In response to the question about output tagging, C-Lightning
-    contributor ZmnSCPxj [proposed][zmn internal tagging] an alternative
-    tagging mechanism that would put the tag inside the taproot
-    commitment, making it invisible unless a script-path spend was used.
-    This could allow a spender who was worried about noinput to ensure
-    they didn't pay noinput-compatible scripts---the [original goal][orig
-    output tagging] behind output tagging---but without the decrease in
-    privacy and fungibility created by output tagging.  Several people
-    seemed to express interest in this idea, although it wasn't clear
-    whether they wanted to see it as part of a proposal or they just
-    preferred it to external output tagging (which, as noted above, was
-    generally opposed by respondents).
+  In response to the question about output tagging, C-Lightning
+  contributor ZmnSCPxj [proposed][zmn internal tagging] an alternative
+  tagging mechanism that would put the tag inside the taproot
+  commitment, making it invisible unless a script-path spend was used.
+  This could allow a spender who was worried about noinput to ensure
+  they didn't pay noinput-compatible scripts---the [original goal][orig
+  output tagging] behind output tagging---but without the decrease in
+  privacy and fungibility created by output tagging.  Several people
+  seemed to express interest in this idea, although it wasn't clear
+  whether they wanted to see it as part of a proposal or they just
+  preferred it to external output tagging (which, as noted above, was
+  generally opposed by respondents).
 
-    The entire thread is more than 20 messages at present and started a
-    [spin-off discussion about `OP_CAT`][cat spinoff].  Hopefully the
-    discussion will be able to settle the major unresolved issues
-    related to noinput and help get this proposal on track for
-    inclusion in a subsequent soft fork.
+  The entire thread is more than 20 messages at present and started a
+  [spin-off discussion about `OP_CAT`][cat spinoff].  Hopefully the
+  discussion will be able to settle the major unresolved issues
+  related to noinput and help get this proposal on track for
+  inclusion in a subsequent soft fork.
 
 ## Notable code and documentation changes
 
@@ -145,16 +145,16 @@ changes to popular Bitcoin infrastructure projects.
   created by combining the remote peer's pubkey with a commitment
   identifier.
 
-    Always paying the same address allows that address to be a normal
-    derivable address in the client's HD wallet, making it possible for
-    the user to recover their funds even if they've lost all of their
-    state besides their HD seed.  This is believed to be superior to the
-    [data loss protection][] protocol which depends on storing enough
-    state to be able to at least contact the remote peer and identify
-    the channel.  With `option_static_remotekey`, it can be assumed that
-    the remote peer will eventually get tired of waiting for a missing
-    peer to show up and will unilaterally close the channel, putting the
-    funds onchain in an address where your HD wallet will find them.
+  Always paying the same address allows that address to be a normal
+  derivable address in the client's HD wallet, making it possible for
+  the user to recover their funds even if they've lost all of their
+  state besides their HD seed.  This is believed to be superior to the
+  [data loss protection][] protocol which depends on storing enough
+  state to be able to at least contact the remote peer and identify
+  the channel.  With `option_static_remotekey`, it can be assumed that
+  the remote peer will eventually get tired of waiting for a missing
+  peer to show up and will unilaterally close the channel, putting the
+  funds onchain in an address where your HD wallet will find them.
 
 {% include linkers/issues.md issues="13716,16884,16507,16499,3545,3365,3078,2803,3062,676,642" %}
 [lnd repo doc]: https://github.com/lightningnetwork/lnd/blob/master/build/release/README.md
@@ -170,3 +170,4 @@ changes to popular Bitcoin infrastructure projects.
 [zmn internal tagging]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html
 [gui bech32]: /en/newsletters/2019/04/16/#bitcoin-core-15711
 [orig output tagging]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[eltoo]: https://blockstream.com/eltoo.pdf

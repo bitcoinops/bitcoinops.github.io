@@ -50,7 +50,9 @@ a few additional counterpoints to consider:
   also get all of taproot's other amazing privacy benefits.
 
 {% include linkers/issues.md issues="12119" %}
+
 {% endauto_anchor %}
+
 [p4tr benefits]: /en/preparing-for-taproot/#multisignature-overview
 [p4tr safety]: /en/preparing-for-taproot/#why-are-we-waiting
 [coindesk experts]: https://www.coindesk.com/tech/2020/12/01/privacy-concerns-over-bitcoin-upgrade-taproot-are-a-non-issue-experts-say/

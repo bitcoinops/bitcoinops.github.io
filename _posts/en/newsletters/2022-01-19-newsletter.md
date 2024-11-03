@@ -28,33 +28,33 @@ Bitcoin infrastructure software.
   to Bitcoin was discussed this week both on the Bitcoin-Dev mailing
   list and in an IRC meeting.
 
-    - *Mailing list discussion:* Peter Todd [posted][todd ctv] several
-      concerns with the proposal, including that it doesn't benefit
-      nearly all Bitcoin users (as he claims previous feature-adding
-      soft forks have done), that it may create new denial-of-service
-      vectors, and that many of the proposed usecases for CTV are
-      underspecified and (perhaps) too complicated to actually see
-      widespread deployment.
+  - *Mailing list discussion:* Peter Todd [posted][todd ctv] several
+    concerns with the proposal, including that it doesn't benefit
+    nearly all Bitcoin users (as he claims previous feature-adding
+    soft forks have done), that it may create new denial-of-service
+    vectors, and that many of the proposed usecases for CTV are
+    underspecified and (perhaps) too complicated to actually see
+    widespread deployment.
 
-        CTV author Jeremy Rubin [referenced][rubin ctv reply] updated
-        code and improved documentation that may address the concerns
-        about DoS attacks.  He also pointed to at least two wallets, one
-        of them widely used, which plan to use at least one of the
-        features CTV will provide.  As of this writing, it's unclear
-        whether Rubin's reply has substantially satisfied Peter Todd's
-        concerns.
+    CTV author Jeremy Rubin [referenced][rubin ctv reply] updated
+    code and improved documentation that may address the concerns
+    about DoS attacks.  He also pointed to at least two wallets, one
+    of them widely used, which plan to use at least one of the
+    features CTV will provide.  As of this writing, it's unclear
+    whether Rubin's reply has substantially satisfied Peter Todd's
+    concerns.
 
-    - *IRC meeting:* as announced in [Newsletter #181][news181 ctv
-      meets], Rubin also hosted the first of a series of meetings to
-      discuss CTV.  The [meeting log][log ##ctv-bip-review] is available
-      as is a [summary][rubin meeting summary] provided by Rubin.
-      Several participants in the meeting were clearly in favor of the
-      proposal, but some others expressed technical skepticism at least
-      partly along the same lines as Peter Todd's earlier email.  The
-      next meeting is proposed to look closer at some applications for
-      CTV, which may help investigate whether it does indeed provide a
-      compelling usecase that will benefit a large number of Bitcoin
-      users.
+  - *IRC meeting:* as announced in [Newsletter #181][news181 ctv
+    meets], Rubin also hosted the first of a series of meetings to
+    discuss CTV.  The [meeting log][log ##ctv-bip-review] is available
+    as is a [summary][rubin meeting summary] provided by Rubin.
+    Several participants in the meeting were clearly in favor of the
+    proposal, but some others expressed technical skepticism at least
+    partly along the same lines as Peter Todd's earlier email.  The
+    next meeting is proposed to look closer at some applications for
+    CTV, which may help investigate whether it does indeed provide a
+    compelling usecase that will benefit a large number of Bitcoin
+    users.
 
 ## Changes to services and client software
 

@@ -311,8 +311,10 @@ To take the LN case of HTLCs as an example, we can produce two
 independent scripts, each of which handles one of the first two items
 above:
 
-    (1) OP_HASH256 <hash> OP_EQUALVERIFY <Alice pubkey> OP_CHECKSIG
-    (2) <time> OP_CHECKLOCKTIMEVERIFY OP_DROP <Bob pubkey> OP_CHECKSIG
+```
+(1) OP_HASH256 <hash> OP_EQUALVERIFY <Alice pubkey> OP_CHECKSIG
+(2) <time> OP_CHECKLOCKTIMEVERIFY OP_DROP <Bob pubkey> OP_CHECKSIG
+```
 
 These separate scripts are then hashed so that they can be used as the
 leaves of a merkle tree.  As described earlier, the data to be hashed is
@@ -387,8 +389,7 @@ data they provide in either case is correct, the spend will be accepted.
            1+41   1+64      1+33         1+32       = 174/4 => 43.5
 
       3. AB sig
-
-          1+64 = 65/4 => 16.25
+           1+64 = 65/4 => 16.25
 -->{% endcomment %}
 
 | | scriptPubKey vbytes | witness vbytes | Total vbytes |
@@ -443,18 +444,22 @@ changed, most notably:
   existing single-sig `OP_CHECKSIG` and `OP_CHECKSIGVERIFY` may be used
   in series.  For example (2-of-2 multisig):
 
-      <A pubkey> OP_CHECKSIGVERIFY <B pubkey> OP_CHECKSIG
+  ```
+  <A pubkey> OP_CHECKSIGVERIFY <B pubkey> OP_CHECKSIG
+  ```
 
-    Second, a new `OP_CHECKSIGADD` (`OP_CSADD`) opcode may be used to
-    increment a counter if a signature matches a specified public key.
-    For example (2-of-3):
+  Second, a new `OP_CHECKSIGADD` (`OP_CSADD`) opcode may be used to
+  increment a counter if a signature matches a specified public key.
+  For example (2-of-3):
 
-      <A pubkey> OP_CHECKSIG <B pubkey> OP_CSADD <C pubkey> OP_CSADD OP_2 OP_EQUAL
+  ```
+  <A pubkey> OP_CHECKSIG <B pubkey> OP_CSADD <C pubkey> OP_CSADD OP_2 OP_EQUAL
+  ```
 
-    This change is made to allow for batch verification of multiple
-    signatures, which can [significantly speed up
-    verification][bip-schnorr] compared to checking each signature
-    independently.
+  This change is made to allow for batch verification of multiple
+  signatures, which can [significantly speed up
+  verification][bip-schnorr] compared to checking each signature
+  independently.
 
 - **Redefined sigops limit:** because verifying signatures is the most
   CPU expensive operation in Bitcoin Script, an early version of Bitcoin
@@ -466,14 +471,14 @@ changed, most notably:
   fee density (fee/vbyte) and sigop density (sigops/vbyte).  This is
   much more difficult than optimizing block composition based on just fee density.
 
-    Taproot resolves this down to one parameter by requiring valid
-    transactions using Taproot spends include a certain amount of data
-    for each sigop that succeeds.  The rule is one free sigop and then
-    the witness must contain 50 bytes of data for each additional sigop.  Since Schnorr
-    signatures are at least 64 bytes, this should provide more than
-    enough space to cover all expected uses, and it means that miners
-    can simply include the most profitable valid Taproot transactions in
-    their blocks without worrying about sigops.
+  Taproot resolves this down to one parameter by requiring valid
+  transactions using Taproot spends include a certain amount of data
+  for each sigop that succeeds.  The rule is one free sigop and then
+  the witness must contain 50 bytes of data for each additional sigop.  Since Schnorr
+  signatures are at least 64 bytes, this should provide more than
+  enough space to cover all expected uses, and it means that miners
+  can simply include the most profitable valid Taproot transactions in
+  their blocks without worrying about sigops.
 
 ### Taproot and Tapscript summary and next steps
 
@@ -591,3 +596,5 @@ the fault of the newsletter author.
 [discreet log contracts]: https://adiabat.github.io/dlc.pdf
 [example implementation]: https://github.com/sipa/bitcoin/commits/taproot
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #3]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
+[cve-2012-2459]: https://bitcointalk.org/?topic=102395

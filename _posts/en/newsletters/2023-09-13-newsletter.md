@@ -29,13 +29,13 @@ software.
   based on the experimental "simple taproot channels" feature planned to
   be released in LND 0.17.0-beta.
 
-    Note that, despite its name, Taproot Assets is not part of the
-    Bitcoin Protocol and does not change the consensus protocol in any
-    way.  It uses existing capabilities to provide new features for
-    users that opt-in to its client protocol.
+  Note that, despite its name, Taproot Assets is not part of the
+  Bitcoin Protocol and does not change the consensus protocol in any
+  way.  It uses existing capabilities to provide new features for
+  users that opt-in to its client protocol.
 
-    None of the specifications had received any discussion on the
-    mailing list as of this writing. {% assign timestamp="1:10" %}
+  None of the specifications had received any discussion on the
+  mailing list as of this writing. {% assign timestamp="1:10" %}
 
 - **LN messaging changes for PTLCs:** as the first LN implementation
   with experimental support for channels using [P2TR][topic taproot]
@@ -54,7 +54,7 @@ software.
   might even be required to support three or more different protocols
   simultaneously, to the disadvantage of all.
 
-    Sander's summary has not received any comments as of this writing. {% assign timestamp="53:22" %}
+  Sander's summary has not received any comments as of this writing. {% assign timestamp="53:22" %}
 
 ## Bitcoin Core PR Review Club
 

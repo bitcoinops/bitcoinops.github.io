@@ -166,14 +166,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   makes UTXO snapshots loadable via RPC (`loadtxoutset`) and adds
   `assumeutxo` parameters to chainparams.
 
-    Although the feature set will not be available on mainnet until
-    [activated][bitcoin core #28553], this merge marks the culmination of
-    a multi-year effort. The project, [proposed in 2018][assumeutxo core dev] and
-    [formalized in 2019][assumeutxo 2019 mailing list],
-    will significantly improve the user experience of new full
-    nodes first coming onto the network. Follow-ups of the merge include
-    [Bitcoin Core #28590][bitcoin core #28590],
-    [#28562][bitcoin core #28562], and [#28589][bitcoin core #28589]. {% assign timestamp="29:32" %}
+  Although the feature set will not be available on mainnet until
+  [activated][bitcoin core #28553], this merge marks the culmination of
+  a multi-year effort. The project, [proposed in 2018][assumeutxo core dev] and
+  [formalized in 2019][assumeutxo 2019 mailing list],
+  will significantly improve the user experience of new full
+  nodes first coming onto the network. Follow-ups of the merge include
+  [Bitcoin Core #28590][bitcoin core #28590],
+  [#28562][bitcoin core #28562], and [#28589][bitcoin core #28589]. {% assign timestamp="29:32" %}
 
 - [Bitcoin Core #28331][], [#28588][bitcoin core #28588],
   [#28577][bitcoin core #28577], and [GUI #754][bitcoin core gui #754]
@@ -182,14 +182,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   disabled by default but can be enabled using the `-v2transport`
   option.
 
-    Encrypted transport helps improve the privacy of Bitcoin users by
-    preventing passive observers (such as ISPs) from directly
-    determining which transactions nodes relay to their peers.  It's also
-    possible to use encrypted transport to thwart active
-    man-in-the-middle observers by comparing session identifiers.  In
-    the future, the addition of other [features][topic countersign] may
-    make it convenient for a lightweight client to securely connect to a
-    trusted node over a P2P encrypted connection. {% assign timestamp="30:38" %}
+  Encrypted transport helps improve the privacy of Bitcoin users by
+  preventing passive observers (such as ISPs) from directly
+  determining which transactions nodes relay to their peers.  It's also
+  possible to use encrypted transport to thwart active
+  man-in-the-middle observers by comparing session identifiers.  In
+  the future, the addition of other [features][topic countersign] may
+  make it convenient for a lightweight client to securely connect to a
+  trusted node over a P2P encrypted connection. {% assign timestamp="30:38" %}
 
 - [Bitcoin Core #27609][] makes the `submitpackage` RPC available on
   non-regtest networks.  Users can use this RPC to submit packages of

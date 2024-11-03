@@ -24,19 +24,19 @@ notable changes to popular Bitcoin infrastructure software.
   funds but all of the information the user manually entered about their
   transactions.
 
-    Given previous challenges to making BIP32 wallets compatible with
-    each other, a perhaps more achievable use would be making it easier
-    to export transaction history from a wallet and use it in other
-    programs, such as for accounting.
+  Given previous challenges to making BIP32 wallets compatible with
+  each other, a perhaps more achievable use would be making it easier
+  to export transaction history from a wallet and use it in other
+  programs, such as for accounting.
 
-    Developers Clark Moody and Pavol Rusnak [each][moody slip15] replied
-    with a [reference][rusnak slip15] to [SLIP15][], which describes the
-    open export format developed for Trezor brand wallets.  Craig Raw
-    [noted][raw slip15] several significant differences between what his
-    proposed format is attempting to achieve and what SLIP15 seems to
-    provide.  Several other design aspects were also discussed, with
-    discussion appearing to be ongoing as this summary was being
-    written. {% assign timestamp="1:00" %}
+  Developers Clark Moody and Pavol Rusnak [each][moody slip15] replied
+  with a [reference][rusnak slip15] to [SLIP15][], which describes the
+  open export format developed for Trezor brand wallets.  Craig Raw
+  [noted][raw slip15] several significant differences between what his
+  proposed format is attempting to achieve and what SLIP15 seems to
+  provide.  Several other design aspects were also discussed, with
+  discussion appearing to be ongoing as this summary was being
+  written. {% assign timestamp="1:00" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

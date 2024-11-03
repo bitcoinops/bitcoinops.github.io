@@ -25,13 +25,13 @@ merges in popular Bitcoin infrastructure projects.
   allowed income from having created a block (at least 12.5 XBT or
   $80,000 USD).
 
-    Patches for [master][dup txin master] and [0.16][dup txin 0.16]
-    branches were submitted for public review yesterday, the 0.16.3
-    release has been tagged containing the patch, and binaries will
-    be available for [download][core download] as soon as a sufficient
-    number of well-known contributors have reproduced the deterministic
-    build---probably later today (Tuesday).  Immediate upgrade is
-    highly recommended.
+  Patches for [master][dup txin master] and [0.16][dup txin 0.16]
+  branches were submitted for public review yesterday, the 0.16.3
+  release has been tagged containing the patch, and binaries will
+  be available for [download][core download] as soon as a sufficient
+  number of well-known contributors have reproduced the deterministic
+  build---probably later today (Tuesday).  Immediate upgrade is
+  highly recommended.
 
 - **Allocate time to test Bitcoin Core 0.17RC4:** Bitcoin Core will soon
   be uploading [binaries][bcc 0.17] for 0.17 Release Candidate (RC) 4
@@ -80,20 +80,20 @@ merges in popular Bitcoin infrastructure projects.
   for any address (although it's not yet described how it would work for
   P2SH or P2WSH addresses involving an OP_CLTV or OP_CSV timelock).
 
-    The basic mechanism is that the authorized spender or spenders for
-    an address generate scriptSigs and witness data (including
-    their signatures) in much the same way they would if they were
-    spending the funds---except instead of signing the spending
-    transaction, they sign their arbitrary message instead (plus some
-    predetermined extra data to ensure they can't be tricked into
-    signing an actual transaction).  The verifier's software then
-    validates this information the same way it would to determine
-    whether a spending transaction was valid.  This allows the message
-    signing facility to be exactly as flexible as Bitcoin scripts
-    themselves.
+  The basic mechanism is that the authorized spender or spenders for
+  an address generate scriptSigs and witness data (including
+  their signatures) in much the same way they would if they were
+  spending the funds---except instead of signing the spending
+  transaction, they sign their arbitrary message instead (plus some
+  predetermined extra data to ensure they can't be tricked into
+  signing an actual transaction).  The verifier's software then
+  validates this information the same way it would to determine
+  whether a spending transaction was valid.  This allows the message
+  signing facility to be exactly as flexible as Bitcoin scripts
+  themselves.
 
-    Currently, discussion appears to be most active on the BIP
-    proposal's [pull request][BIP322 PR].
+  Currently, discussion appears to be most active on the BIP
+  proposal's [pull request][BIP322 PR].
 
 - **Bustapay discussion:** a simplified alternative to the proposed
   Pay-to-Endpoint (P2EP) protocol [described in newsletter #8][news8
@@ -104,42 +104,23 @@ merges in popular Bitcoin infrastructure projects.
   Bitcoin-Dev mailing list a few weeks ago, several aspects of the
   proposal were [discussed][bustapay sjors] this week.
 
-    Although P2EP and Bustapay could end up being implemented by only a
-    few wallets and services similar to the [BIP70][] payment protocol,
-    there's also chance they could end up being becoming as widely
-    adopted as wallet support for [BIP21][] URI handlers.  Even if they
-    don't see general adoption, their privacy advantage means they could
-    end up well deployed among niche users.  In either case, it may be
-    worth dedicating some engineering time towards tracking the
-    proposals and proof of concept implementations to ensure your
-    organization can easily adopt them if desirable.
+  Although P2EP and Bustapay could end up being implemented by only a
+  few wallets and services similar to the [BIP70][] payment protocol,
+  there's also chance they could end up being becoming as widely
+  adopted as wallet support for [BIP21][] URI handlers.  Even if they
+  don't see general adoption, their privacy advantage means they could
+  end up well deployed among niche users.  In either case, it may be
+  worth dedicating some engineering time towards tracking the
+  proposals and proof of concept implementations to ensure your
+  organization can easily adopt them if desirable.
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
-  end="c53e083a49291b611d278a8db24ff235c1202e43"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="1941353fb28755a170793e43595601d75c8f3dda"
-  end="3b2c807288b1b7f40d609533c1e96a510ac5fa6d"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="634f19a7b230edc686be56ab950b80784e56252c"
-  end="36eab5de26e203311ceeb65c94ec5beb9c94ff5d"
-%}
 
 - [Bitcoin Core #14054][]: this PR prevents the node from sending
   [BIP61][] peer-to-peer protocol [reject messages][p2p reject] by
@@ -149,12 +130,12 @@ wait until version 0.18 in about six months from now.*
   to require) that nodes send a reject message or an accurate reject
   message, so the messages arguably only end up wasting bandwidth.
 
-    It's recommended that developers connect their test clients to their
-    own nodes and inspect their nodes' logs for error messages in case
-    of problems (perhaps after enabling debug logging).  Users who still
-    need to send `reject` messages can use the `-enablebip61`
-    configuration option, although it's possible that `reject`
-    messages will be removed altogether in a release after 0.18.
+  It's recommended that developers connect their test clients to their
+  own nodes and inspect their nodes' logs for error messages in case
+  of problems (perhaps after enabling debug logging).  Users who still
+  need to send `reject` messages can use the `-enablebip61`
+  configuration option, although it's possible that `reject`
+  messages will be removed altogether in a release after 0.18.
 
 - [Bitcoin Core #7965][]: this long-standing issue tracked the removal
   of code in the libbitcoin_server component to handle whether the wallet is
@@ -188,8 +169,8 @@ wait until version 0.18 in about six months from now.*
 {% include linkers/issues.md issues="14054,1843,1516,7965,14168,10973,14180,1860" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
-[workshop]: /workshops
-[news8 news]: {{news8}}#news
+[workshop]: /en/workshops
+[news8 news]: /en/newsletters/2018/08/14/#pay-to-end-point-p2ep-idea-proposed
 [c-lightning 0.6.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.6.1
 [BIP322 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016393.html
 [BIP322 PR]: https://github.com/bitcoin/bips/pull/725

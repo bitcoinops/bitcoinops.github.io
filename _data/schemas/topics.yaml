@@ -4,7 +4,7 @@ description: The topic object
 type: object
 required:
   - title
-  - categories
+  - topic-categories
   - excerpt
   - optech_mentions
 additionalProperties: false
@@ -17,7 +17,7 @@ properties:
     description: Short alternative name to use for creating Markdown reference links
     type: string
 
-  categories:
+  topic-categories:
     description: Which categories should list this topic?
     type: array
     additionalItems: false
@@ -45,7 +45,7 @@ properties:
         - Transaction Relay Policy
         - Wallet Collaboration Tools
 
-  aliases:
+  title-aliases:
     description: Other names for the topic?
     type: array
     items:

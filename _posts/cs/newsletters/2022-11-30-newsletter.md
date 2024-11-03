@@ -37,18 +37,18 @@ změnách oblíbeného bitcoinového páteřního software.
   svá pravidla vydávání osvědčení, Riard však navrhuje několik způsobů
   jejich distribuce:
 
-    - *Předplatné:* chce-li Alice poslat platbu přes Bobův uzel, může nejdřív
-	  od Boba zakoupit osvědčení (přes LN).
+  - *Předplatné:* chce-li Alice poslat platbu přes Bobův uzel, může nejdřív
+        od Boba zakoupit osvědčení (přes LN).
 
-    - *Předchozí úspěšná platba:* Bobův uzel může Alici poslat osvědčení
-	  (jedno nebo více) za úspěšně provedenou platbu. Díky těmto osvědčením
-	  může Alice opět v budoucnu poslat platby přes Bobův uzel.
+  - *Předchozí úspěšná platba:* Bobův uzel může Alici poslat osvědčení
+        (jedno nebo více) za úspěšně provedenou platbu. Díky těmto osvědčením
+        může Alice opět v budoucnu poslat platby přes Bobův uzel.
 
-    - *Důkazy vlastnictví UTXO:* někteří prostředníci mohou experimentovat
-	  s vydáváním osvědčení každému, kdo předloží důkaz o vlastnictví bitcoinového
-	  UTXO. Lze například udělit více osvědčení za starší nebo hodnotnější
-	  UTXO. Jelikož si každý prostředník sám zvolí pravidla
-	  udělování osvědčení, mohou být použita i jakákoliv jiná kritéria.
+  - *Důkazy vlastnictví UTXO:* někteří prostředníci mohou experimentovat
+        s vydáváním osvědčení každému, kdo předloží důkaz o vlastnictví bitcoinového
+        UTXO. Lze například udělit více osvědčení za starší nebo hodnotnější
+        UTXO. Jelikož si každý prostředník sám zvolí pravidla
+        udělování osvědčení, mohou být použita i jakákoliv jiná kritéria.
 
   Clara Shikhelman, která je spoluautorkou podobného návrhu částečně založeného
   na lokální reputaci popsaného ve [zpravodaji č. 226][news226 jam] (*angl.*),

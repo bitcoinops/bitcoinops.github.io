@@ -20,13 +20,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   Nous supposons que la fin de la transmission des courriels affecte également la liste de diffusion Lightning-Dev, qui est hébergée
   par la même organisation.
 
-    Les administrateurs ont sollicité les commentaires de la communauté sur les options, notamment la migration de la liste de diffusion
-    vers Google Groups. Si une telle migration se produit, Optech commencera à l'utiliser comme l'une de nos [sources
-    d'informations][sources].
+  Les administrateurs ont sollicité les commentaires de la communauté sur les options, notamment la migration de la liste de diffusion
+  vers Google Groups. Si une telle migration se produit, Optech commencera à l'utiliser comme l'une de nos [sources
+  d'informations][sources].
 
-    Nous sommes également conscients que, dans les mois précédant l'annonce, certains développeurs bien établis avaient commencé à
-    expérimenter des discussions sur le forum web [DelvingBitcoin][]. Optech commencera à surveiller ce forum pour les discussions
-    intéressantes ou importantes à partir de maintenant.
+  Nous sommes également conscients que, dans les mois précédant l'annonce, certains développeurs bien établis avaient commencé à
+  expérimenter des discussions sur le forum web [DelvingBitcoin][]. Optech commencera à surveiller ce forum pour les discussions
+  intéressantes ou importantes à partir de maintenant.
 
 - **Agrégation HTLC avec des covenants :** Johan Torås Halseth [a posté][halseth agg] sur la liste de diffusion Lightning-Dev une
   suggestion pour utiliser un [covenant][topic covenants] afin d'agréger plusieurs [HTLC][topic htlc] en une seule sortie qui pourrait
@@ -179,7 +179,7 @@ versions ou d'aider à tester les versions candidates.*
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
 [halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html

@@ -33,37 +33,37 @@ maintenance release.
   parent has a low feerate.  This is called Child Pays For Parent
   (CPFP).
 
-    CPFP even works for multiple descendant transactions, but the more
-    relationships that need to be considered, the longer it takes the node
-    to create the most profitable possible block template for
-    miners to work on.  For this reason, Bitcoin Core
-    limits[^fn-cpfp-limits] the maximum number and size of related
-    transactions.  For users fee bumping their own transactions, the
-    limits are high enough to rarely cause problems.  But for users of
-    multiparty protocols, a malicious counterparty can exploit the
-    limits to prevent an honest user from being able to fee bump a
-    transaction.  This can be a major problem for protocols like LN that
-    rely on timelocks---if a transaction isn't confirmed before the
-    timelock expires, the counterparty can take back some or all of the
-    funds they previously paid.
+  CPFP even works for multiple descendant transactions, but the more
+  relationships that need to be considered, the longer it takes the node
+  to create the most profitable possible block template for
+  miners to work on.  For this reason, Bitcoin Core
+  limits[^fn-cpfp-limits] the maximum number and size of related
+  transactions.  For users fee bumping their own transactions, the
+  limits are high enough to rarely cause problems.  But for users of
+  multiparty protocols, a malicious counterparty can exploit the
+  limits to prevent an honest user from being able to fee bump a
+  transaction.  This can be a major problem for protocols like LN that
+  rely on timelocks---if a transaction isn't confirmed before the
+  timelock expires, the counterparty can take back some or all of the
+  funds they previously paid.
 
-    To help solve this problem, Matt Corallo has [suggested][carve out
-    thread] a change to the CPFP policy to carve-out (reserve) some
-    space for a small transaction that only has one ancestor in the
-    mempool (all of its other ancestors must already be in the block
-    chain).  This accompanies a proposal for LN described in the *News*
-    section of [last week's newsletter][] where LN would mostly ignore
-    onchain fees (except for cooperative closes of channels) and use
-    CPFP fee bumping to choose the fee when the channel was
-    closed---reducing complexity and improving safety.  However, to make
-    this safe for LN no matter how high fees get, nodes need to also
-    support relaying packages of transactions that include both
-    low-feerate ancestors plus high-feerate descendants in a way that
-    doesn't cause nodes to automatically reject the earlier transactions
-    as being too cheap and so not see the subsequent fee bumps.  Whereas
-    the carve-out policy is probably easy to implement, package relay is
-    something that's been discussed for a long time without yet being
-    formally specificed or implemented.
+  To help solve this problem, Matt Corallo has [suggested][carve out
+  thread] a change to the CPFP policy to carve-out (reserve) some
+  space for a small transaction that only has one ancestor in the
+  mempool (all of its other ancestors must already be in the block
+  chain).  This accompanies a proposal for LN described in the *News*
+  section of [last week's newsletter][] where LN would mostly ignore
+  onchain fees (except for cooperative closes of channels) and use
+  CPFP fee bumping to choose the fee when the channel was
+  closed---reducing complexity and improving safety.  However, to make
+  this safe for LN no matter how high fees get, nodes need to also
+  support relaying packages of transactions that include both
+  low-feerate ancestors plus high-feerate descendants in a way that
+  doesn't cause nodes to automatically reject the earlier transactions
+  as being too cheap and so not see the subsequent fee bumps.  Whereas
+  the carve-out policy is probably easy to implement, package relay is
+  something that's been discussed for a long time without yet being
+  formally specificed or implemented.
 
 - **Organization of LN 1.1 specification effort:** although LN protocol
   developers decided [which efforts][ln1.1 accepted proposals] they want
@@ -87,18 +87,18 @@ maintenance release.
   and your correct balance will be displayed.  No funds were at risk,
   they just weren't tracked correctly.
 
-    The Bitcoin Core project is planning to start tagging release
-    candidates for [maintenance version][maintenance release] 0.17.1 soon.
-    This is expected to resolve some bugs with build system incompatibilities on
-    recent Linux distributions as well as fix other [minor issues][0.17.1 milestone].
+  The Bitcoin Core project is planning to start tagging release
+  candidates for [maintenance version][maintenance release] 0.17.1 soon.
+  This is expected to resolve some bugs with build system incompatibilities on
+  recent Linux distributions as well as fix other [minor issues][0.17.1 milestone].
 
 [LND 0.5.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5.1-beta
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [LND #1937][] stores the most recent channel reestablishment message
   in the node's database so that it can be resent even after a channel
@@ -116,13 +116,13 @@ commits].*
   `getaddressinfo` RPC to independently indicate that the wallet knows
   how to solve for that address.
 
-    The new `desc` fields are not expected to be particularly useful at
-    the moment as they can currently only be used with the
-    `scantxoutset` RPC, but they will provide a compact way of providing
-    all the information necessary for making addresses solvable to
-    future and upgraded RPCs for Bitcoin Core such as those used for interactions between
-    offline/online (cold/hot) wallets, multisig wallets, coinjoin
-    implementations, and other cases.
+  The new `desc` fields are not expected to be particularly useful at
+  the moment as they can currently only be used with the
+  `scantxoutset` RPC, but they will provide a compact way of providing
+  all the information necessary for making addresses solvable to
+  future and upgraded RPCs for Bitcoin Core such as those used for interactions between
+  offline/online (cold/hot) wallets, multisig wallets, coinjoin
+  implementations, and other cases.
 
 - [LND #2081][] adds RPCs that allow signing a transaction template
   where some inputs are controlled by LND.  Although this particular
@@ -159,35 +159,11 @@ commits].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="1937,14477,2081" %}
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="a7dc03223e915d7afb30498fe5faa12b5402f7d8"
-  end="ed12fd83ca7999a896350197533de5e9202bc2fe"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="8924d8fb20eb2abfd9cc93c6cc7eb6951184cb88"
-  end="f4b6e0b7755982fc571e2763e0a2ec93c8e89900"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="95e47cdac298b8e534feb073c70da004c08b3e93"
-  end="3ba751797bcc54e7e071518f680b08a3ae7f42fc"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="314a61d72474aa29ff4afba8472553ad91d88e9d"
-  end="e34ceb333b1c0e6f4115ecbb80c632ac1042fa49"
-%}
-
 
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
-[last week's newsletter]: {{news23}}#news
+[last week's newsletter]: /en/newsletters/2018/11/27/#simplified-fee-bumping-for-ln
 [carve out thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [ln1.1 accepted proposals]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [ln spec meetings]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001673.html
 [0.17.1 milestone]: https://github.com/bitcoin/bitcoin/milestone/39?closed=1
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

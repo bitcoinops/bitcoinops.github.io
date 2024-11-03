@@ -31,14 +31,14 @@ de l'infrastructure Bitcoin.
   expérimentale "simple taproot channels" prévue pour être publiée dans
   LND 0.17.0-beta.
 
-    Notez que, malgré son nom, Taproot Assets ne fait pas partie du
-    protocole Bitcoin et ne modifie en aucun cas le protocole de
-    consensus. Il utilise des capacités existantes pour fournir de
-    nouvelles fonctionnalités aux utilisateurs qui optent pour son
-    protocole client.
+  Notez que, malgré son nom, Taproot Assets ne fait pas partie du
+  protocole Bitcoin et ne modifie en aucun cas le protocole de
+  consensus. Il utilise des capacités existantes pour fournir de
+  nouvelles fonctionnalités aux utilisateurs qui optent pour son
+  protocole client.
 
-    Aucune des spécifications n'a fait l'objet de discussion sur la
-    liste de diffusion à ce jour.
+  Aucune des spécifications n'a fait l'objet de discussion sur la
+  liste de diffusion à ce jour.
 
 - **Changements de messagerie LN pour les PTLC :** alors que la
   première implémentation LN avec une prise en charge expérimentale des
@@ -60,7 +60,7 @@ de l'infrastructure Bitcoin.
   alors les implémentations pourraient même être tenues de prendre en
   charge trois protocoles ou plus simultanément, au détriment de tous.
 
-    Le résumé de Sanders n'a reçu aucun commentaire à ce jour.
+  Le résumé de Sanders n'a reçu aucun commentaire à ce jour.
 
 ## Bitcoin Core PR Review Club
 

@@ -6,12 +6,12 @@ title: Async payments
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -47,6 +47,18 @@ optech_mentions:
 
   - title: Using adaptor signatures to prove an async payment was accepted
     url: /en/newsletters/2023/02/01/#ln-async-proof-of-payment
+
+  - title: "LDK #2973 adds support for intercepting onion messages to facilitate async payments"
+    url: /en/newsletters/2024/05/17/#ldk-2973
+
+  - title: "LDK #3125 introduces support for encoding and parsing messages needed for async payments"
+    url: /en/newsletters/2024/07/05/#ldk-3125
+
+  - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
+    url: /en/newsletters/2024/09/06/#eclair-2865
+
+  - title: "LDK #3140 adds support for paying static BOLT12 invoices to send async payments"
+    url: /en/newsletters/2024/09/20/#ldk-3140
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

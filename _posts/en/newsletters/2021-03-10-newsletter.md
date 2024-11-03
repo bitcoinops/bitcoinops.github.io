@@ -23,99 +23,99 @@ projects.
   of the discussion on the mailing list this week focused on alternative
   activation mechanisms.  Some proposals included:
 
-    - *User Activated Soft Fork (UASF):* a plan being [discussed][uasf
-      discussion] to implement BIP8 `LOT=true` in a software fork of
-      Bitcoin Core that mandates miners signal for activation of taproot
-      by July 2022 (as widely proposed), but which also allows miners to
-      activate it earlier.
+  - *User Activated Soft Fork (UASF):* a plan being [discussed][uasf
+    discussion] to implement BIP8 `LOT=true` in a software fork of
+    Bitcoin Core that mandates miners signal for activation of taproot
+    by July 2022 (as widely proposed), but which also allows miners to
+    activate it earlier.
 
-    - *Flag day:* several proposals ([1][flag day corallo], [2][flag day
-      belcher]) to program into nodes a specific block height or time
-      roughly 18 months from now (as proposed) where taproot activates.
-      Miner signaling is not required to cause activation and cannot
-      cause earlier activation.  Anthony Towns wrote a [draft
-      implementation][bitcoin core #21378].
+  - *Flag day:* several proposals ([1][flag day corallo], [2][flag day
+    belcher]) to program into nodes a specific block height or time
+    roughly 18 months from now (as proposed) where taproot activates.
+    Miner signaling is not required to cause activation and cannot
+    cause earlier activation.  Anthony Towns wrote a [draft
+    implementation][bitcoin core #21378].
 
-    - *Decreasing threshold:* several proposals ([1][decthresh guidi],
-      [2][decthresh luaces]) to gradually decrease over time the number
-      of blocks that must signal readiness for miners to enforce
-      taproot before the new consensus rules lock in.  See also Anthony
-      Towns's proposal from last year described in [Newsletter
-      #107][news107 decthresh].
+  - *Decreasing threshold:* several proposals ([1][decthresh guidi],
+    [2][decthresh luaces]) to gradually decrease over time the number
+    of blocks that must signal readiness for miners to enforce
+    taproot before the new consensus rules lock in.  See also Anthony
+    Towns's proposal from last year described in [Newsletter
+    #107][news107 decthresh].
 
-    - *A configurable `LOT`:* in addition to previously discussed
-      proposals to make BIP8's `LOT` value a configuration option (see
-      [Newsletter #137][news137 bip8conf]), rough code was
-      [posted][rubin invalidateblock] showing how `LOT=true` could be
-      enforced via an external script calling RPC commands.  Additional
-      code was [created][towns anti-lot] showing how `LOT=true` could
-      also be opposed by node operators who were worried about it
-      creating block chain instability.
+  - *A configurable `LOT`:* in addition to previously discussed
+    proposals to make BIP8's `LOT` value a configuration option (see
+    [Newsletter #137][news137 bip8conf]), rough code was
+    [posted][rubin invalidateblock] showing how `LOT=true` could be
+    enforced via an external script calling RPC commands.  Additional
+    code was [created][towns anti-lot] showing how `LOT=true` could
+    also be opposed by node operators who were worried about it
+    creating block chain instability.
 
-    - *A short-duration attempt at miner activation:* an [updated
-      proposal][harding speedy] to give miners approximately three
-      months to lock in taproot, starting from soon after the release of
-      a full node implementing the activation logic.  If the attempt
-      failed, the community would be encouraged to move on to a
-      different activation method.  If the attempt succeeded, there
-      would still be a several month delay before taproot activated to
-      allow most of the economy to upgrade their nodes.  Draft implementations
-      for this proposal [based on Bitcoin Core's existing BIP9 code][bitcoin
-      core #21377] and [based on the previously proposed BIP8 implementation]
-      [bitcoin core #21392] were written by Anthony Towns and Andrew Chow,
-      respectively.
+  - *A short-duration attempt at miner activation:* an [updated
+    proposal][harding speedy] to give miners approximately three
+    months to lock in taproot, starting from soon after the release of
+    a full node implementing the activation logic.  If the attempt
+    failed, the community would be encouraged to move on to a
+    different activation method.  If the attempt succeeded, there
+    would still be a several month delay before taproot activated to
+    allow most of the economy to upgrade their nodes.  Draft implementations
+    for this proposal [based on Bitcoin Core's existing BIP9 code][bitcoin
+    core #21377] and [based on the previously proposed BIP8 implementation]
+    [bitcoin core #21392] were written by Anthony Towns and Andrew Chow,
+    respectively.
 
-    It seemed unlikely any of the proposals would ever become almost
-    everyone's first choice, but it appeared that a large number of
-    people were [willing to accept][folkson gist] the short-duration
-    attempt under the name *Speedy Trial*.  There were still a few
-    concerns with it, including:
+  It seemed unlikely any of the proposals would ever become almost
+  everyone's first choice, but it appeared that a large number of
+  people were [willing to accept][folkson gist] the short-duration
+  attempt under the name *Speedy Trial*.  There were still a few
+  concerns with it, including:
 
-    - *Could be co-opted for mandatory activation:* even though the
-      proposal explicitly encourages making other activation attempts if
-      miners don't quickly signal sufficient support for taproot, a
-      concern was [expressed][corallo not speedy enough] that it could
-      be co-opted by a group of users seeking fast mandatory activation,
-      although it was [noted][##taproot-activation log 3/5] that no
-      group has previously expressed the desire to attempt mandatory
-      activation on such a dangerously short timeline.
+  - *Could be co-opted for mandatory activation:* even though the
+    proposal explicitly encourages making other activation attempts if
+    miners don't quickly signal sufficient support for taproot, a
+    concern was [expressed][corallo not speedy enough] that it could
+    be co-opted by a group of users seeking fast mandatory activation,
+    although it was [noted][##taproot-activation log 3/5] that no
+    group has previously expressed the desire to attempt mandatory
+    activation on such a dangerously short timeline.
 
-    - *Using time-based or height-based parameters:* the proposal
-      describes the tradeoffs between setting its `start`, `timeout`,
-      and `minimum_activation` parameters using either timestamps (based on
-      the median of the previous 11 blocks) or block heights.  Using
-      timestamps would result in the smallest and easiest-to-review patch to
-      Bitcoin Core.  Using heights would provide a bit more
-      predictability, especially for miners, and would be compatible
-      with other attempts using BIP8.
+  - *Using time-based or height-based parameters:* the proposal
+    describes the tradeoffs between setting its `start`, `timeout`,
+    and `minimum_activation` parameters using either timestamps (based on
+    the median of the previous 11 blocks) or block heights.  Using
+    timestamps would result in the smallest and easiest-to-review patch to
+    Bitcoin Core.  Using heights would provide a bit more
+    predictability, especially for miners, and would be compatible
+    with other attempts using BIP8.
 
-    - *Myopic:* there was [concern][russell concern] that the proposal
-      is too focused on the short term.  As [summarized on IRC][irc speedy]:
-      "Speedy Trial fully prepares for
-      the (likely) case where miners activate taproot, but it does
-      nothing to codify lessons learned from Segwit's failure to
-      activate in a timely manner.  We have an opportunity with the
-      activation of taproot to create a template for future activations
-      that will clearly define the roles and responsibilities for
-      developers, miners, merchants, investors, and end users in all the
-      ways an activation can progress, not just the best-case outcomes;
-      in particular enabling and enshrining the final arbiter role held
-      by Bitcoin's economic users.  Defining this will only get more
-      difficult in the future, both because we'll only do so when we're
-      already in crisis, and because Bitcoin's growth means future
-      agreement will need to be done at greater scale and so with
-      greater difficulty."  <!-- statement written by me trying to
-      summarize Rusty Russell's concerns, then revised by him -->
+  - *Myopic:* there was [concern][russell concern] that the proposal
+    is too focused on the short term.  As [summarized on IRC][irc speedy]:
+    "Speedy Trial fully prepares for
+    the (likely) case where miners activate taproot, but it does
+    nothing to codify lessons learned from Segwit's failure to
+    activate in a timely manner.  We have an opportunity with the
+    activation of taproot to create a template for future activations
+    that will clearly define the roles and responsibilities for
+    developers, miners, merchants, investors, and end users in all the
+    ways an activation can progress, not just the best-case outcomes;
+    in particular enabling and enshrining the final arbiter role held
+    by Bitcoin's economic users.  Defining this will only get more
+    difficult in the future, both because we'll only do so when we're
+    already in crisis, and because Bitcoin's growth means future
+    agreement will need to be done at greater scale and so with
+    greater difficulty."  <!-- statement written by me trying to
+    summarize Rusty Russell's concerns, then revised by him -->
 
-    - *Speed:* the proposal, based on initial discussion from the
-      ##taproot-activation IRC channel, proposes giving miners about
-      three months to lock in taproot and waiting a fixed six months
-      from the start of signal measuring before activation (if lock-in
-      is achieved).  Some people have sought either slightly shorter or
-      slightly longer timelines.
+  - *Speed:* the proposal, based on initial discussion from the
+    ##taproot-activation IRC channel, proposes giving miners about
+    three months to lock in taproot and waiting a fixed six months
+    from the start of signal measuring before activation (if lock-in
+    is achieved).  Some people have sought either slightly shorter or
+    slightly longer timelines.
 
-    We'll continue tracking the discussion around the various proposals
-    and will summarize any significant progress in future newsletters.
+  We'll continue tracking the discussion around the various proposals
+  and will summarize any significant progress in future newsletters.
 
 - **Documenting the intention to use and build upon taproot:** In
   discussion about activation methods, Chris Belcher [noted][flag day
@@ -126,12 +126,12 @@ projects.
   That way it could be clear that taproot was desired by a large segment
   of the economy no matter how it ends up being activated.
 
-    Jeremy Rubin [posted][rubin building] to the Bitcoin-Dev mailing
-    list a link to a somewhat related [wiki page][taproot uses] where
-    developers can post links to projects they're building on top of
-    taproot's new proposed features.  This can provide assurance that
-    taproot provides solutions people actually want and is designed in
-    such a way that its features will be used.
+  Jeremy Rubin [posted][rubin building] to the Bitcoin-Dev mailing
+  list a link to a somewhat related [wiki page][taproot uses] where
+  developers can post links to projects they're building on top of
+  taproot's new proposed features.  This can provide assurance that
+  taproot provides solutions people actually want and is designed in
+  such a way that its features will be used.
 
 ## Bitcoin Core PR Review Club
 

@@ -10,8 +10,8 @@ export GIT_PAGER='_contrib/kill0'
 JEKYLL_FLAGS = --future --drafts --unpublished --incremental
 
 ## Expected filenames in output directory
-compatibility_validation = $(wildcard _data/compatibility/*.yaml)
-compatibility_validation := $(patsubst _data/compatibility/%.yaml,_site/en/compatibility/%/index.html,$(compatibility_validation))
+compatibility_validation = $(wildcard _compat/en/*.md)
+compatibility_validation := $(patsubst _compat/en/%.md,_site/en/compatibility/%/index.html,$(compatibility_validation))
 topic_validation = $(wildcard _topics/en/*.md)
 topic_validation := $(patsubst _topics/en/%.md,_site/en/topics/%/index.html,$(topic_validation))
 
@@ -43,8 +43,14 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	@ ## - MD009: trailing spaces (can lead to extraneous <br> tags
 	bundle exec mdl -g -r MD009 .
 
-	## Check that posts declare a slug, see issue #155 and PR #156
+	## Hugo will end a paragraph if a line within it starts an HTML comment; we don't want that
+	! git grep -l '^ *<!--' '*.md' | xargs perl -0777 -ne 'print "$$ARGV\n" if /.+\n^ *<!--/m' | grep .
+
+	## Check that posts declare certain fields, see issue #155 and PR #156
 	! git --no-pager grep -L "^slug: " _posts
+	! git --no-pager grep -L "^title: " _posts
+	! git --no-pager grep -L "^permalink: " _posts
+	! git --no-pager grep -L "^name: " _posts
 	## Check that all slugs are unique
 	! git --no-pager grep -h "^slug: " _posts | sort | uniq -d | grep .
 	## Check that all post titles are unique (per language)
@@ -83,6 +89,10 @@ test-before-build: $(compatibility_validation) $(topic_validation)
 	## Check for mistakes typical spell checkers can't catch
 	! git --no-pager grep -i '[d]iscrete log contract'
 	! git --no-pager grep -i '[r]eplaca' # e.g., replaceability
+	! git --no-pager grep -i '[h]tlc expiry delta' # instead use: CLTV expiry delta
+
+	## Check for indentation that's forward incompatible with Hugo
+	! git ls-files '*.md' | xargs -i _contrib/find-bad-indentation '{}' | grep .
 
 test-after-build: build
 	## Check for broken Markdown reference-style links that are displayed in text unchanged, e.g. [broken][broken link]
@@ -119,7 +129,7 @@ email: clean
 	$(MAKE) preview JEKYLL_ENV=email
 
 ## Path-based rules
-_site/en/compatibility/%/index.html : _data/compatibility/%.yaml
+_site/en/compatibility/%/index.html : _compat/en/%.md
 	bundle exec _contrib/schema-validator.rb _data/schemas/compatibility.yaml $<
 
 _site/en/topics/%/index.html : _topics/en/%.md

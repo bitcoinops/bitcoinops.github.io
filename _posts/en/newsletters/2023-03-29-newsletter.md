@@ -35,158 +35,158 @@ software.
   multiparty channels and channel factories, and then explain Law's new
   results in context.
 
-    Alice and Bob create (but do not immediately sign) a transaction
-    which spends 50M sats from each of them (100M total) to a _funding
-    output_ which will require cooperation from both of them to spend.
-    In the diagrams below, we show confirmed transactions as shaded.
+  Alice and Bob create (but do not immediately sign) a transaction
+  which spends 50M sats from each of them (100M total) to a _funding
+  output_ which will require cooperation from both of them to spend.
+  In the diagrams below, we show confirmed transactions as shaded.
 
-    {:.center}
-    ![Alice and Bob create the funding transaction](/img/posts/2023-03-tunable-funding.dot.png)
+  {:.center}
+  ![Alice and Bob create the funding transaction](/img/posts/2023-03-tunable-funding.dot.png)
 
-    They each also use a different output they individually control to
-    create (but not broadcast) two _state transactions_, one for each of
-    them.  The first output of each state transaction pays a trivial amount
-    (say 1,000 sat) as an input to a timelocked offchain _commitment transaction_.  The relative timelock
-    prevents each commitment transaction from being eligible for
-    confirmation onchain until a certain amount of time after its parent
-    state transaction is confirmed onchain.  Each of the two commitment
-    transactions is also funded by conflicting spends of the funding output
-    (meaning that only one of the commitment transactions can eventually be
-    confirmed).  With all the child transactions created, the transaction
-    which creates the funding output can be signed and broadcast.
+  They each also use a different output they individually control to
+  create (but not broadcast) two _state transactions_, one for each of
+  them.  The first output of each state transaction pays a trivial amount
+  (say 1,000 sat) as an input to a timelocked offchain _commitment transaction_.  The relative timelock
+  prevents each commitment transaction from being eligible for
+  confirmation onchain until a certain amount of time after its parent
+  state transaction is confirmed onchain.  Each of the two commitment
+  transactions is also funded by conflicting spends of the funding output
+  (meaning that only one of the commitment transactions can eventually be
+  confirmed).  With all the child transactions created, the transaction
+  which creates the funding output can be signed and broadcast.
 
-    {:.center}
-    ![Alice and Bob create their commitment transactions](/img/posts/2023-03-tunable-commitment.dot.png)
+  {:.center}
+  ![Alice and Bob create their commitment transactions](/img/posts/2023-03-tunable-commitment.dot.png)
 
-    Each of the commitment transactions pays to the current state of the
-    channel.  For the initial state ({{S0}}), 50M sats is refunded
-    to each Alice and Bob (for simplicity we ignore transaction fees).
-    Alice or Bob can start the process of unilaterally closing the
-    channel by publishing their version of the state transaction; after
-    the enforced delay, they can then publish the corresponding
-    commitment transaction.  For example, Alice publishes her state
-    transaction and her commitment transaction (which pays both her and
-    Bob); at that point, Bob can simply never spend his state
-    transaction and instead spend the money used to create it at any
-    later time however he would like.
+  Each of the commitment transactions pays to the current state of the
+  channel.  For the initial state ({{S0}}), 50M sats is refunded
+  to each Alice and Bob (for simplicity we ignore transaction fees).
+  Alice or Bob can start the process of unilaterally closing the
+  channel by publishing their version of the state transaction; after
+  the enforced delay, they can then publish the corresponding
+  commitment transaction.  For example, Alice publishes her state
+  transaction and her commitment transaction (which pays both her and
+  Bob); at that point, Bob can simply never spend his state
+  transaction and instead spend the money used to create it at any
+  later time however he would like.
 
-    {:.center}
-    ![Alice spends honestly from the channel](/img/posts/2023-03-tunable-honest-spend.dot.png)
+  {:.center}
+  ![Alice spends honestly from the channel](/img/posts/2023-03-tunable-honest-spend.dot.png)
 
-    There are two other alternatives to unilaterally closing the channel in
-    its initial state.  First, Alice and Bob can cooperatively close the
-    channel at any time by spending the funding transaction output (the same
-    as is done in the current LN protocol).  Second, they could update the
-    state---for example, increasing Alice's balance by 10M sat and decreasing
-    Bob's balance by the same amount.  State {{S1}} looks similar
-    to the initial state ({{S0}}), but to enact it, the previous
-    state is revoked by each party giving the other a witness[^keychain] for
-    spending the first output from their respective state transactions for
-    the previous state ({{S0}}).  Neither party can use the other's witness
-    because the {{S0}} state transactions don't themselves contain witnesses yet
-    so they can't be broadcast.
+  There are two other alternatives to unilaterally closing the channel in
+  its initial state.  First, Alice and Bob can cooperatively close the
+  channel at any time by spending the funding transaction output (the same
+  as is done in the current LN protocol).  Second, they could update the
+  state---for example, increasing Alice's balance by 10M sat and decreasing
+  Bob's balance by the same amount.  State {{S1}} looks similar
+  to the initial state ({{S0}}), but to enact it, the previous
+  state is revoked by each party giving the other a witness[^keychain] for
+  spending the first output from their respective state transactions for
+  the previous state ({{S0}}).  Neither party can use the other's witness
+  because the {{S0}} state transactions don't themselves contain witnesses yet
+  so they can't be broadcast.
 
-    With multiple states available, it's possible to accidentally or
-    deliberately close the channel in an outdated state.  For example, Bob may
-    try to close the channel in state {{S0}} where he had an additional 10M
-    satoshis.  To do this, Bob signs and broadcasts his state transaction
-    for {{S0}}.  Bob can't take any further action immediately because of
-    the timelock on the commitment transaction.  During the wait, Alice
-    detects this attempt to broadcast an outdated state and uses the witness
-    he previously gave her to spend the first output of his state
-    transaction, paying some or all of the penalty amount to transaction
-    fees.  Since that output is the same output Bob needs to later
-    broadcast the commitment transaction that pays him the extra 10M
-    sat, he will be blocked from claiming those funds if the transaction
-    Alice creates is confirmed.  With Bob blocked, Alice is the only one
-    who can unilaterally publish the latest state onchain;
-    alternatively, Alice and Bob can still perform a cooperative channel
-    close at any time.
+  With multiple states available, it's possible to accidentally or
+  deliberately close the channel in an outdated state.  For example, Bob may
+  try to close the channel in state {{S0}} where he had an additional 10M
+  satoshis.  To do this, Bob signs and broadcasts his state transaction
+  for {{S0}}.  Bob can't take any further action immediately because of
+  the timelock on the commitment transaction.  During the wait, Alice
+  detects this attempt to broadcast an outdated state and uses the witness
+  he previously gave her to spend the first output of his state
+  transaction, paying some or all of the penalty amount to transaction
+  fees.  Since that output is the same output Bob needs to later
+  broadcast the commitment transaction that pays him the extra 10M
+  sat, he will be blocked from claiming those funds if the transaction
+  Alice creates is confirmed.  With Bob blocked, Alice is the only one
+  who can unilaterally publish the latest state onchain;
+  alternatively, Alice and Bob can still perform a cooperative channel
+  close at any time.
 
-    {:.center}
-    ![Bob attempts to spend dishonestly from the channel but is blocked by Alice](/img/posts/2023-03-tunable-dishonest-spend.dot.png)
+  {:.center}
+  ![Bob attempts to spend dishonestly from the channel but is blocked by Alice](/img/posts/2023-03-tunable-dishonest-spend.dot.png)
 
-    If Bob notices Alice attempting to spend from his outdated state
-    transaction, he could attempt to enter in a Replace By Fee (RBF) bidding
-    war with Alice, but that's a case where the penalty amount being
-    _tunable_ is especially powerful: the penalty amount could be trivial
-    (e.g. 1K sats, as in our example) or it could equal the amount at stake
-    (10M sats) or it could even be larger than the entire value of the
-    channel.  The decision is entirely up to Alice and Bob to negotiate
-    with each other when updating the channel's state.
+  If Bob notices Alice attempting to spend from his outdated state
+  transaction, he could attempt to enter in a Replace By Fee (RBF) bidding
+  war with Alice, but that's a case where the penalty amount being
+  _tunable_ is especially powerful: the penalty amount could be trivial
+  (e.g. 1K sats, as in our example) or it could equal the amount at stake
+  (10M sats) or it could even be larger than the entire value of the
+  channel.  The decision is entirely up to Alice and Bob to negotiate
+  with each other when updating the channel's state.
 
-    One of the other advantages of the Tunable-Penalty Protocol (TPP) is
-    that the penalty amount is paid entirely by the user who puts their outdated
-    state transaction onchain.  It doesn't use any of the bitcoins from the
-    shared funding transaction.  This allows more than two users to safely
-    share a TPP channel; for example, we can imagine Alice, Bob, Carol, and
-    Dan all sharing a channel.  Each of them has their own commitment
-    transaction funded from their own state transaction:
+  One of the other advantages of the Tunable-Penalty Protocol (TPP) is
+  that the penalty amount is paid entirely by the user who puts their outdated
+  state transaction onchain.  It doesn't use any of the bitcoins from the
+  shared funding transaction.  This allows more than two users to safely
+  share a TPP channel; for example, we can imagine Alice, Bob, Carol, and
+  Dan all sharing a channel.  Each of them has their own commitment
+  transaction funded from their own state transaction:
 
-    {:.center}
-    ![A channel between Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-multiparty.dot.png)
+  {:.center}
+  ![A channel between Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-multiparty.dot.png)
 
-    They can operate this as a multiparty channel, requiring each state be
-    revoked by every party.  Alternatively, they can use the joint funding
-    transaction as a channel factory, creating multiple channels between
-    pairs or multiples of users.  Prior to Law's description of this
-    implication of the TPP last year (see [Newsletter #230][news230 tp]), it
-    was believed practical implementation of channel factories on Bitcoin
-    would require a mechanism like [eltoo][topic eltoo], which requires a
-    consensus change like [SIGHASH_ANYPREVOUT][topic
-    sighash_anyprevout].  TPP doesn't require consensus changes.  To
-    keep the diagram below simple, we've only illustrated a single
-    channel created in a factory of four participants; the number of
-    states the channel participants need to manage equals the number of
-    participants in the factory, although Law also [previously
-    described][law factories] an alternative construction with a single
-    state but a higher cost to close unilaterally.
+  They can operate this as a multiparty channel, requiring each state be
+  revoked by every party.  Alternatively, they can use the joint funding
+  transaction as a channel factory, creating multiple channels between
+  pairs or multiples of users.  Prior to Law's description of this
+  implication of the TPP last year (see [Newsletter #230][news230 tp]), it
+  was believed practical implementation of channel factories on Bitcoin
+  would require a mechanism like [eltoo][topic eltoo], which requires a
+  consensus change like [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout].  TPP doesn't require consensus changes.  To
+  keep the diagram below simple, we've only illustrated a single
+  channel created in a factory of four participants; the number of
+  states the channel participants need to manage equals the number of
+  participants in the factory, although Law also [previously
+  described][law factories] an alternative construction with a single
+  state but a higher cost to close unilaterally.
 
-    {:.center}
-    ![A channel between Alice and Bob created from a factory by Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-factory.dot.png)
+  {:.center}
+  ![A channel between Alice and Bob created from a factory by Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-factory.dot.png)
 
-    An advantage of channel factories described in its [original
-    paper][channel factories paper] is that the parties within the factory
-    can cooperatively rebalance their channels without creating any onchain
-    transactions.  For example, if the factory consists of Alice, Bob,
-    Carol, and Dan, the total value of the channel between Alice and Bob can
-    be decreased and the value of the channel between Carol and Dan can be
-    increased by the same amount by updating the offchain factory state.
-    Law's TPP-based factories provide the same benefit.
+  An advantage of channel factories described in its [original
+  paper][channel factories paper] is that the parties within the factory
+  can cooperatively rebalance their channels without creating any onchain
+  transactions.  For example, if the factory consists of Alice, Bob,
+  Carol, and Dan, the total value of the channel between Alice and Bob can
+  be decreased and the value of the channel between Carol and Dan can be
+  increased by the same amount by updating the offchain factory state.
+  Law's TPP-based factories provide the same benefit.
 
-    This week Law noted that factories with the ability to provide
-    multiparty channels (which is possible with TPP) have an additional
-    advantage: allowing capital to be used even when one channel participant
-    is offline.  For example, imagine if Alice and Bob have dedicated LN
-    nodes that are almost always available to forward payments but Carol
-    and Dan are casual users whose nodes are often unavailable.  In an
-    original-style channel factory, Alice has a channel with Carol ({A,C}) and a
-    channel with Dan ({A,D}).  She can't use any of her funds in those
-    channels when Carol and Dan are unavailable.  Bob has the same problem
-    ({B,C} and {B,D}).
+  This week Law noted that factories with the ability to provide
+  multiparty channels (which is possible with TPP) have an additional
+  advantage: allowing capital to be used even when one channel participant
+  is offline.  For example, imagine if Alice and Bob have dedicated LN
+  nodes that are almost always available to forward payments but Carol
+  and Dan are casual users whose nodes are often unavailable.  In an
+  original-style channel factory, Alice has a channel with Carol ({A,C}) and a
+  channel with Dan ({A,D}).  She can't use any of her funds in those
+  channels when Carol and Dan are unavailable.  Bob has the same problem
+  ({B,C} and {B,D}).
 
-    In a TPP-based factory, Alice, Bob, and Carol can open a multiparty
-    channel together, requiring all three of them to cooperate to update its
-    state.  One of the outputs of a commitment transaction in that channel
-    pays Carol but the other output can only be spent if Alice and Bob
-    cooperate.  When Carol is unavailable, Alice and Bob can cooperatively
-    change the balance distribution of their joint output offchain, allowing
-    them to make or forward LN payments if they have other LN channels.  If
-    Carol remains unavailable too long, either one of them can unilaterally
-    put the channel onchain.  The same benefits apply if Alice and Bob share
-    a channel with Dan.
+  In a TPP-based factory, Alice, Bob, and Carol can open a multiparty
+  channel together, requiring all three of them to cooperate to update its
+  state.  One of the outputs of a commitment transaction in that channel
+  pays Carol but the other output can only be spent if Alice and Bob
+  cooperate.  When Carol is unavailable, Alice and Bob can cooperatively
+  change the balance distribution of their joint output offchain, allowing
+  them to make or forward LN payments if they have other LN channels.  If
+  Carol remains unavailable too long, either one of them can unilaterally
+  put the channel onchain.  The same benefits apply if Alice and Bob share
+  a channel with Dan.
 
-    This allows Alice and Bob to continue earning forwarding fees even when
-    Carol and Dan are unavailable, preventing those channels from seeming
-    unproductive.  The ability to rebalance channels offchain (with no
-    onchain fees) may also decrease the downsides for Alice and Bob of
-    keeping their funds in a channel factory for a longer time.  Together
-    these benefits may reduce the number of onchain transactions,
-    increase the total payment capacity of the Bitcoin network, and
-    lower the cost to forward payments over LN.
+  This allows Alice and Bob to continue earning forwarding fees even when
+  Carol and Dan are unavailable, preventing those channels from seeming
+  unproductive.  The ability to rebalance channels offchain (with no
+  onchain fees) may also decrease the downsides for Alice and Bob of
+  keeping their funds in a channel factory for a longer time.  Together
+  these benefits may reduce the number of onchain transactions,
+  increase the total payment capacity of the Bitcoin network, and
+  lower the cost to forward payments over LN.
 
-    As of this writing, tunable penalties and Law's various proposals for
-    using them have not received much public discussion. {% assign timestamp="1:00" %}
+  As of this writing, tunable penalties and Law's various proposals for
+  using them have not received much public discussion. {% assign timestamp="1:00" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -339,12 +339,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
     key which Bob can use to derive any later key (for an earlier
     state).  E.g.,
 
-      | Channel state | Key state |
-      | 0     | MAX |
-      | 1     | MAX - 1 |
-      | 2     | MAX - 2 |
-      | x     | MAX - x |
-      | MAX   | 0 |
+    | Channel state | Key state |
+    | 0     | MAX |
+    | 1     | MAX - 1 |
+    | 2     | MAX - 2 |
+    | x     | MAX - x |
+    | MAX   | 0 |
 
     This allows Bob to store all the information he needs to spend from
     an outdated state transaction in a very small constant amount of

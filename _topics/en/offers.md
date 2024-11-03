@@ -6,12 +6,12 @@ title: Offers
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BOLT12
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Invoicing
   - Wallet Collaboration Tools
@@ -25,8 +25,7 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: BOLT12 (draft)
-      link: https://github.com/rustyrussell/lightning-rfc/blob/guilt/offers/12-offer-encoding.md
+    - title: BOLT12
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -99,6 +98,33 @@ optech_mentions:
 
   - title: "Human readable payment instructions proposed that are compatible with offers"
     url: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+
+  - title: "LDK #3078 adds support for inspection of BOLT12-returned invoices before payment"
+    url: /en/newsletters/2024/06/21/#ldk-3078
+
+  - title: "LDK #3082 adds an interface for building static reusable offers"
+    url: /en/newsletters/2024/06/21/#ldk-3082
+
+  - title: "Discussion of fully implementing offers versus incremently adding features from it"
+    url: /en/newsletters/2024/07/05/#adding-a-bolt11-invoice-field-for-blinded-paths
+
+  - title: "Core Lightning #7461 adds support for nodes to self-fetch and self-pay BOLT12 offers and invoices"
+    url: /en/newsletters/2024/07/26/#core-lightning-7461
+
+  - title: "CLN #7474 updates the offers plugin to understand the newly defined experimental TLV ranges"
+    url: /en/newsletters/2024/08/02/#core-lightning-7474
+
+  - title: "LDK #3139 improves the security of BOLT12 offers by authenticating the use of blinded paths"
+    url: /en/newsletters/2024/08/02/#ldk-3139
+
+  - title: "Proposal to allow opt-in identification and authentication of LN payers when using offers"
+    url: /en/newsletters/2024/08/16/#optional-identification-and-authentication-of-ln-payers
+
+  - title: "LDK #3140 adds support for paying static BOLT12 invoices to send async payments"
+    url: /en/newsletters/2024/09/20/#ldk-3140
+
+  - title: "BOLTs #798 merges the offers protocol specification which introduces BOLT12"
+    url: /en/newsletters/2024/10/04/#bolts-798
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

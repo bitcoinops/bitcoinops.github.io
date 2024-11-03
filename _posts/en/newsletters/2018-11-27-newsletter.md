@@ -37,16 +37,16 @@ projects.
   transactions in specific ways you might find acceptable (e.g. for
   layer-two protocols).
 
-    Wuille suggests two additions to what metadata is hashed.  Both will
-    be optional, but both can become the default for normal onchain
-    wallets.  First, the transaction fee is included in the hash in
-    order to allow hardware wallets or offline wallets to ensure they
-    aren't being tricked into sending excess fees to miners.
-    Second, the scriptPubKey of the coins being spent is also included
-    in the hash---this also helps secure hardware wallets and offline
-    wallets by eliminating a current ambiguity about whether the script
-    being spent is a scriptPubKey, P2SH redeemScript, or segwit
-    witnessScript.
+  Wuille suggests two additions to what metadata is hashed.  Both will
+  be optional, but both can become the default for normal onchain
+  wallets.  First, the transaction fee is included in the hash in
+  order to allow hardware wallets or offline wallets to ensure they
+  aren't being tricked into sending excess fees to miners.
+  Second, the scriptPubKey of the coins being spent is also included
+  in the hash---this also helps secure hardware wallets and offline
+  wallets by eliminating a current ambiguity about whether the script
+  being spent is a scriptPubKey, P2SH redeemScript, or segwit
+  witnessScript.
 
 - **Simplified fee bumping for LN:** funds in a payment channel are
   protected in part by a multisig contract that requires both parties
@@ -56,15 +56,15 @@ projects.
   months before the channel is actually closed, which means they have to
   guess what the transaction fees will be far in advance.
 
-    Rusty Russell has opened a [PR][simple commit PR] to the BOLT
-    repository and started a mailing list [thread][simple commit thread]
-    for feedback on a proposal to modify the construction and signing
-    of some of the LN transactions in order to allow both [BIP125][]
-    Replace-by-Fee (RBF) fee bumping and Child-Pays-For-Parent (CPFP)
-    fee bumping.  In a [follow-up email][corallo simple commit], Matt
-    Corallo indicated that the proposal is probably dependent on some
-    changes being made to the methods and policies nodes use for
-    relaying unconfirmed transactions.
+  Rusty Russell has opened a [PR][simple commit PR] to the BOLT
+  repository and started a mailing list [thread][simple commit thread]
+  for feedback on a proposal to modify the construction and signing
+  of some of the LN transactions in order to allow both [BIP125][]
+  Replace-by-Fee (RBF) fee bumping and Child-Pays-For-Parent (CPFP)
+  fee bumping.  In a [follow-up email][corallo simple commit], Matt
+  Corallo indicated that the proposal is probably dependent on some
+  changes being made to the methods and policies nodes use for
+  relaying unconfirmed transactions.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -109,34 +109,9 @@ answers made since our last update.*
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="35739976c1d9ad250ece573980c57e7e7976ae23"
-  end="a7dc03223e915d7afb30498fe5faa12b5402f7d8"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="4da1c867c3209dab4e4a824b73d89fc38b616b37"
-  end="8924d8fb20eb2abfd9cc93c6cc7eb6951184cb88"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="d5aaa11373cc6759f9f894a1daf7fb88d0834bc9"
-  end="95e47cdac298b8e534feb073c70da004c08b3e93"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="314a61d72474aa29ff4afba8472553ad91d88e9d"
-  end="314a61d72474aa29ff4afba8472553ad91d88e9d"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14708][] prints a warning when unrecognized section
   names are used in the `bitcoin.conf` configuration file.  For example,
@@ -145,10 +120,10 @@ commits].*
   previously silently ignore the testnet options.  This merged PR causes
   it to print a notice: "Warning: Section [testnet] is not recognized."
 
-    ```toml
-    [testnet]
-    txindex = 1
-    ```
+  ```toml
+  [testnet]
+  txindex = 1
+  ```
 - [C-Lightning #2087][] adds new fields to the results of the `getinfo` RPC for
   the number of the node's peers, number of pending channels, number of
   active channels, and number of inactive channels.  This now matches
@@ -208,3 +183,4 @@ commits].*
 [simple commit PR]: https://github.com/lightningnetwork/lightning-rfc/pull/513
 [simple commit thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001643.html
 [corallo simple commit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001666.html
+[newsletter #18]: /en/newsletters/2018/10/23/#over-1-100-listening-nodes-have-open-rpc-ports

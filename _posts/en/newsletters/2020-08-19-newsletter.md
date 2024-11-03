@@ -32,36 +32,36 @@ infrastructure software.
   *tiebreaker* to automatically choose one Y coordinate or the other for
   each X coordinate.
 
-    The [BIP340][] specification of schnorr signatures for Bitcoin
-    currently uses a tiebreaker method to minimize the amount of data
-    needed to identify EC points in public keys
-    and signatures.  Earlier, BIP340
-    used a tiebreaker algorithm based on the squaredness of the Y
-    coordinates for both the point in public keys and the point in
-    signatures.  This was recently changed so that public keys used a
-    different algorithm based on the evenness of the coordinates, which
-    was believed to be easier to implement for existing software that
-    created public keys (see Newsletters [#83][news83 tiebreaker] and
-    [#96][news96 bip340 update]).
+  The [BIP340][] specification of schnorr signatures for Bitcoin
+  currently uses a tiebreaker method to minimize the amount of data
+  needed to identify EC points in public keys
+  and signatures.  Earlier, BIP340
+  used a tiebreaker algorithm based on the squaredness of the Y
+  coordinates for both the point in public keys and the point in
+  signatures.  This was recently changed so that public keys used a
+  different algorithm based on the evenness of the coordinates, which
+  was believed to be easier to implement for existing software that
+  created public keys (see Newsletters [#83][news83 tiebreaker] and
+  [#96][news96 bip340 update]).
 
-    This week, Pieter Wuille [posted][wuille tiebreaker] to the
-    Bitcoin-Dev mailing list a tentative proposal to update BIP340 again
-    so that both public keys and signatures would use the evenness
-    algorithm.  It was previously thought that the squared version would
-    be faster to compute during signature verification and so would help
-    speed up full nodes, but a [recent PR][libsecp256k1 #767] to
-    libsecp256k1 by Peter Dettman with a significant performance
-    improvement caused developers to question this belief and revealed
-    that an earlier benchmark that favored the squared version wasn't
-    actually providing a fair comparison between the two tiebreaking
-    methods.  It now seems that both methods should be about equal in
-    performance.
+  This week, Pieter Wuille [posted][wuille tiebreaker] to the
+  Bitcoin-Dev mailing list a tentative proposal to update BIP340 again
+  so that both public keys and signatures would use the evenness
+  algorithm.  It was previously thought that the squared version would
+  be faster to compute during signature verification and so would help
+  speed up full nodes, but a [recent PR][libsecp256k1 #767] to
+  libsecp256k1 by Peter Dettman with a significant performance
+  improvement caused developers to question this belief and revealed
+  that an earlier benchmark that favored the squared version wasn't
+  actually providing a fair comparison between the two tiebreaking
+  methods.  It now seems that both methods should be about equal in
+  performance.
 
-    Several respondents replied that, even though they already
-    implemented code using both tiebreaker methods, they'd prefer to see
-    the specification changed to use just the evenness method.  Anyone
-    else with an opinion is encouraged to respond to the mailing list
-    thread.
+  Several respondents replied that, even though they already
+  implemented code using both tiebreaker methods, they'd prefer to see
+  the specification changed to use just the evenness method.  Anyone
+  else with an opinion is encouraged to respond to the mailing list
+  thread.
 
 - **Proposed BIP for P2P protocol feature negotiation:** Suhas Daftuar
   [posted][daftuar negotiation] a suggestion to create a [separate
@@ -74,10 +74,10 @@ infrastructure software.
   `wtxidrelay` message, may signal what features the remote peer
   supports.
 
-    This behavior is already implemented in an unreleased development
-    version of Bitcoin Core.  If the maintainers of other
-    implementations, or anyone else, opposes this change, please respond
-    to the mailing list thread.
+  This behavior is already implemented in an unreleased development
+  version of Bitcoin Core.  If the maintainers of other
+  implementations, or anyone else, opposes this change, please respond
+  to the mailing list thread.
 
 ## Changes to services and client software
 
@@ -147,14 +147,14 @@ release candidates.*
   automatic amount or by an amount specified via a parameter).  Other
   RPCs or external tools can then sign and finalize the PSBT.
 
-    The existing `bumpfee` RPC previously created PSBT fee bumps for
-    watch-only wallets (see [Newsletter #80][news80 bumpfee]).  This
-    behavior is now deprecated and a message will be printed to tell
-    those users to use `psbtbumpfee`.  Use of `bumpfee` with regular
-    key-containing wallets still creates, signs, and broadcasts the fee bump.
-    This change helps make `bumpfee` more consistent since its previous
-    behavior for watch-only wallets of creating PSBTs couldn't include
-    the signing or broadcast steps.
+  The existing `bumpfee` RPC previously created PSBT fee bumps for
+  watch-only wallets (see [Newsletter #80][news80 bumpfee]).  This
+  behavior is now deprecated and a message will be printed to tell
+  those users to use `psbtbumpfee`.  Use of `bumpfee` with regular
+  key-containing wallets still creates, signs, and broadcasts the fee bump.
+  This change helps make `bumpfee` more consistent since its previous
+  behavior for watch-only wallets of creating PSBTs couldn't include
+  the signing or broadcast steps.
 
 - [Bitcoin Core #19070][] allows Bitcoin Core to advertise its support
   for [compact block filters][topic compact block filters] when the
@@ -206,3 +206,4 @@ release candidates.*
 [bitcoinissafe.com]: https://bitcoinissafe.com/
 [lightning terminal blog]: https://lightning.engineering/posts/2020-08-04-lightning-terminal/
 [news39 lightning loop announced]: /en/newsletters/2019/03/26/#loop-announced
+[hwi]: https://github.com/bitcoin-core/HWI

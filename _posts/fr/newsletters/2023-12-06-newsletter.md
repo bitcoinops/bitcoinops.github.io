@@ -24,65 +24,65 @@ Bitcoin.
   un bloc, jusqu'au poids maximum du bloc, tant que tous les morceaux non confirmés précédents (à taux de frais plus élevé) sont inclus
   plus tôt dans le même bloc.
 
-    Une fois que toutes les transactions ont été regroupées en clusters et que les clusters ont été divisés en morceaux, il est facile
-    de choisir quelles transactions inclure dans un bloc : sélectionnez le morceau avec le taux de frais le plus élevé, suivi du suivant
-    le plus élevé, et ainsi de suite, jusqu'à ce que le bloc soit plein. Lorsque cet algorithme est utilisé, il est évident que le
-    morceau avec le taux de frais le plus bas dans le mempool est le morceau le plus éloigné d'être inclus dans un bloc, nous pouvons
-    donc appliquer l'algorithme inverse lorsque le mempool devient plein et que certaines transactions doivent être supprimées :
-    supprimez le morceau avec le taux de frais le plus bas, suivi du suivant le plus bas, et ainsi de suite, jusqu'à ce que le mempool
-    local soit à nouveau inférieur à sa taille maximale prévue.
+  Une fois que toutes les transactions ont été regroupées en clusters et que les clusters ont été divisés en morceaux, il est facile
+  de choisir quelles transactions inclure dans un bloc : sélectionnez le morceau avec le taux de frais le plus élevé, suivi du suivant
+  le plus élevé, et ainsi de suite, jusqu'à ce que le bloc soit plein. Lorsque cet algorithme est utilisé, il est évident que le
+  morceau avec le taux de frais le plus bas dans le mempool est le morceau le plus éloigné d'être inclus dans un bloc, nous pouvons
+  donc appliquer l'algorithme inverse lorsque le mempool devient plein et que certaines transactions doivent être supprimées :
+  supprimez le morceau avec le taux de frais le plus bas, suivi du suivant le plus bas, et ainsi de suite, jusqu'à ce que le mempool
+  local soit à nouveau inférieur à sa taille maximale prévue.
 
-    Les archives du WG peuvent maintenant être consultées par tous, mais seuls les membres invités peuvent publier. Certains sujets
-    remarquables qu'ils ont discutés incluent :
+  Les archives du WG peuvent maintenant être consultées par tous, mais seuls les membres invités peuvent publier. Certains sujets
+  remarquables qu'ils ont discutés incluent :
 
-    - [Définitions et théorie du cluster mempool][clusterdef] définit les termes utilisés dans la conception du cluster mempool. Il
-      décrit également un petit nombre de théorèmes qui mettent en évidence certaines des propriétés utiles de cette conception. Le seul message dans ce fil de discussion (au moment de la rédaction de cet article) est très utile pour comprendre les autres discussions du WG, bien que son auteur (Pieter Wuille) [avertisse][wuille incomplete] qu'il est encore "très incomplet".
+  - [Définitions et théorie du cluster mempool][clusterdef] définit les termes utilisés dans la conception du cluster mempool. Il
+    décrit également un petit nombre de théorèmes qui mettent en évidence certaines des propriétés utiles de cette conception. Le seul message dans ce fil de discussion (au moment de la rédaction de cet article) est très utile pour comprendre les autres discussions du WG, bien que son auteur (Pieter Wuille) [avertisse][wuille incomplete] qu'il est encore "très incomplet".
 
-    - [Fusion de linéarisations incomparables][cluster merge] examine comment fusionner deux ensembles différents de morceaux
-      pour le même ensemble de transactions, spécifiquement des morcelages incomparables. En comparant différentes listes
-      de morceaux, nous pouvons déterminer laquelle serait meilleure pour les mineurs. Les fragments peuvent être comparés
-      si l'un d'entre eux accumule toujours la même quantité de frais ou plus dans n'importe quel nombre de vbytes (discret par rapport
-      à la taille des morceaux). Par exemple :
+  - [Fusion de linéarisations incomparables][cluster merge] examine comment fusionner deux ensembles différents de morceaux
+    pour le même ensemble de transactions, spécifiquement des morcelages incomparables. En comparant différentes listes
+    de morceaux, nous pouvons déterminer laquelle serait meilleure pour les mineurs. Les fragments peuvent être comparés
+    si l'un d'entre eux accumule toujours la même quantité de frais ou plus dans n'importe quel nombre de vbytes (discret par rapport
+    à la taille des morceaux). Par exemple :
 
-      ![fragments comparables](/img/posts/2023-12-comparable-chunkings.png)
+    ![fragments comparables](/img/posts/2023-12-comparable-chunkings.png)
 
-      Les fragments ne sont pas comparables si l'un d'entre eux accumule un montant plus élevé de frais dans un certain nombre de vbytes,
-      mais que l'autre accumule un montant plus élevé de frais dans un plus grand nombre de vbytes. Par exemple :
+    Les fragments ne sont pas comparables si l'un d'entre eux accumule un montant plus élevé de frais dans un certain nombre de vbytes,
+    mais que l'autre accumule un montant plus élevé de frais dans un plus grand nombre de vbytes. Par exemple :
 
-      ![fragments incomparables](/img/posts/2023-12-incomparable-chunkings.png)
+    ![fragments incomparables](/img/posts/2023-12-incomparable-chunkings.png)
 
-      Comme l'un des théorèmes dans le fil précédemment lié le note, "si on a deux fragments incomparables pour un graphe, alors un
-      autre fragment doit exister qui est strictement meilleur que les deux". Cela signifie qu'une méthode efficace pour fusionner
-      deux fragments incomparables différents serait un outil puissant pour améliorer la rentabilité des mineurs. Par exemple, une
-      nouvelle transaction a été reçue qui est liée à d'autres transactions déjà dans le mempool, donc son cluster doit être mis à jour,
-      ce qui implique également la mise à jour de son fragment. Deux méthodes différentes pour effectuer cette mise à jour peuvent être
-      utilisées :
+    Comme l'un des théorèmes dans le fil précédemment lié le note, "si on a deux fragments incomparables pour un graphe, alors un
+    autre fragment doit exister qui est strictement meilleur que les deux". Cela signifie qu'une méthode efficace pour fusionner
+    deux fragments incomparables différents serait un outil puissant pour améliorer la rentabilité des mineurs. Par exemple, une
+    nouvelle transaction a été reçue qui est liée à d'autres transactions déjà dans le mempool, donc son cluster doit être mis à jour,
+    ce qui implique également la mise à jour de son fragment. Deux méthodes différentes pour effectuer cette mise à jour peuvent être
+    utilisées :
 
-      1. Un nouveau fragment pour le cluster mis à jour est calculé à partir de zéro. Pour les grands clusters, il peut être
-      computationnellement impraticable de trouver un fragment optimal, donc le nouveau fragment pourrait être moins optimal que
-      l'ancien.
+    1. Un nouveau fragment pour le cluster mis à jour est calculé à partir de zéro. Pour les grands clusters, il peut être
+    computationnellement impraticable de trouver un fragment optimal, donc le nouveau fragment pourrait être moins optimal que
+    l'ancien.
 
-      2. Le fragment précédent pour le cluster précédent est mis à jour en insérant la nouvelle transaction dans un emplacement valide
-      (parents avant enfants). Cela a l'avantage de préserver toutes les optimisations existantes dans les morceaux non modifiés,
-      mais l'inconvénient est que cela pourrait placer la transaction dans un emplacement sous-optimal.
+    2. Le fragment précédent pour le cluster précédent est mis à jour en insérant la nouvelle transaction dans un emplacement valide
+    (parents avant enfants). Cela a l'avantage de préserver toutes les optimisations existantes dans les morceaux non modifiés,
+    mais l'inconvénient est que cela pourrait placer la transaction dans un emplacement sous-optimal.
 
-      Après que les deux types de mises à jour différentes ont été effectuées, une comparaison peut révéler que l'une d'entre elles
-      est strictement meilleure, auquel cas elle peut être utilisée. Mais si les mises à jour sont incomparables, une méthode de fusion
-      garantie pour produire un résultat équivalent ou meilleur peut être utilisée à la place pour produire un troisième fragment qui
-      capturera les meilleurs aspects des deux approches---en utilisant de nouveaux fragments lorsqu'ils sont meilleurs mais en
-      conservant les anciens quand ils sont plus proches de l'optimal.
+    Après que les deux types de mises à jour différentes ont été effectuées, une comparaison peut révéler que l'une d'entre elles
+    est strictement meilleure, auquel cas elle peut être utilisée. Mais si les mises à jour sont incomparables, une méthode de fusion
+    garantie pour produire un résultat équivalent ou meilleur peut être utilisée à la place pour produire un troisième fragment qui
+    capturera les meilleurs aspects des deux approches---en utilisant de nouveaux fragments lorsqu'ils sont meilleurs mais en
+    conservant les anciens quand ils sont plus proches de l'optimal.
 
-    - [Paquet post-cluster RBF][cluster rbf] discute d'une alternative aux règles actuellement utilisées pour [replace by fee][topic rbf].
-      Lorsqu'un remplacement valide d'une ou plusieurs transactions est reçu, une version temporaire de tous les clusters qu'il affecte
-      peut être créée et leur fragment mis à jour peut être dérivé. Cela peut être comparé aux fragments des clusters d'origine qui sont
-      actuellement dans le mempool (qui n'incluent pas le remplacement). Si le fragment avec le remplacement gagne toujours des frais
-      égaux ou supérieurs à l'original pour n'importe quel nombre de vbytes, et s'il augmente le montant total des frais dans le mempool
-      suffisamment pour payer ses frais de relais, alors il devrait être inclus dans le mempool.
+  - [Paquet post-cluster RBF][cluster rbf] discute d'une alternative aux règles actuellement utilisées pour [replace by fee][topic rbf].
+    Lorsqu'un remplacement valide d'une ou plusieurs transactions est reçu, une version temporaire de tous les clusters qu'il affecte
+    peut être créée et leur fragment mis à jour peut être dérivé. Cela peut être comparé aux fragments des clusters d'origine qui sont
+    actuellement dans le mempool (qui n'incluent pas le remplacement). Si le fragment avec le remplacement gagne toujours des frais
+    égaux ou supérieurs à l'original pour n'importe quel nombre de vbytes, et s'il augmente le montant total des frais dans le mempool
+    suffisamment pour payer ses frais de relais, alors il devrait être inclus dans le mempool.
 
-        Cette évaluation basée sur des preuves peut remplacer plusieurs [heuristiques][mempool replacements] actuellement utilisées dans
-        Bitcoin Core pour déterminer si une transaction doit être remplacée, améliorant potentiellement les règles RBF dans plusieurs
-        domaines, y compris le [relais de paquets][topic package relay] proposé pour les remplacements. Plusieurs [autres][cluster
-        rbf-old1] fils de discussions [ont également][cluster rbf-old2] discutés [ce  sujet][cluster rbf-old3].
+    Cette évaluation basée sur des preuves peut remplacer plusieurs [heuristiques][mempool replacements] actuellement utilisées dans
+    Bitcoin Core pour déterminer si une transaction doit être remplacée, améliorant potentiellement les règles RBF dans plusieurs
+    domaines, y compris le [relais de paquets][topic package relay] proposé pour les remplacements. Plusieurs [autres][cluster
+    rbf-old1] fils de discussions [ont également][cluster rbf-old2] discutés [ce  sujet][cluster rbf-old3].
 
 - **Test avec warnet:** Matthew Zipkin [a publié][zipkin warnet] sur Delving Bitcoin les résultats de certaines simulations qu'il a
   réalisées en utilisant [warnet][], un programme qui lance un grand nombre de nœuds Bitcoin avec un ensemble défini de connexions entre

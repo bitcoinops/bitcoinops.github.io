@@ -144,6 +144,7 @@ problème pour le système de signature ECDSA actuel de Bitcoin et le système
 proposé de [signature schnorr][topic schnorr signatures].
 
 <div markdown="1" class="callout" id="taproot">
+
 ### Sommaire 2020<br>Taproot, tapscript, et signatures schnorr
 
 Presque tous les mois de l'année 2020 ont été marqués par un développement
@@ -429,6 +430,7 @@ possibilité pour un opérateur de nœud d'opter pour la création et le service
 de filtres de blocs compacts en activant seulement deux options de configuration.
 
 <div markdown="1" class="callout" id="releases">
+
 ### Sommaire 2020<br>Mise à jour majeure des principaux projets d'infrastructure
 
 - [LND 0.9.0-beta][] a publié en janvier une amélioration du mécanisme
@@ -495,7 +497,7 @@ ou entièrement divulgués plus tard. Les principales vulnérabilités sont les 
   mises à jour de la spécification [BIP174][] de PSBT et de logiciels
   tels qu'Electrum, Bitcoin Core et HWI.
 
-    ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
+  ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
 - [Attaque contre l'atomicité des paiements LN :][attack ln atomicity]
   Alors que les développeurs de LN s'efforçaient de mettre en œuvre le
@@ -637,6 +639,7 @@ le nœud peut choisir un taux de frais approprié au moment de la diffusion. Cel
 simplifie le protocole LN et améliore plusieurs aspects de sa sécurité.
 
 <div markdown="1" class="callout" id="optech">
+
 ### Sommaire 2020<br>Bitcoin Optech
 
 Au cours de la troisième année d'existence d'Optech, 10 nouvelles sociétés
@@ -949,7 +952,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [somsen sas post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
-[atelier taproot]: /workshops/#taproot-workshop
+[atelier taproot]: /en/workshops/#taproot-workshop
 [todd segwit review]: https://petertodd.org/2016/segwit-consensus-critical-code-review#peer-to-peer-networking
 [index des sujets]: /en/topics/
 [tx origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis

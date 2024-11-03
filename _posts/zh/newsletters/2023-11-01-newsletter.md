@@ -13,18 +13,17 @@ lang: zh
 
 - **<!--continued-discussion-about-scripting-changes-->脚本语言变更的持续讨论：**Bitcoin-Dev 邮件组里有一些针对我们此前报道过的讨论的回复。
 
-    - *<!--covenants-research-->限制条款研究：* Anthony Towns [回复][towns cov]了一个由 Rusty Russell 撰写的、我们在[上周][news274 cov]提到过的[帖子][Russell Cov]。Towns 将 Russell 的方法与其他方法进行了比较，特别是基于[限制条款][topic covenants]的保管库，发现新方法并不吸引人。在之后的[回复][russell cov2]中，Russell 指出保险库有不同的设计，并且保险库在根本上不比其他交易类型更理想，意思是对于保险库用户来说，优化并不是关键。他认为 [BIP345][] 的保险库方法更适合于一个地址格式，而不是一组操作码；按照我们的理解，这意思是 BIP345 作为一个只为单一功能所设计的模板（就像 P2WPKH）更合理，如果设计了一组操作码但只实现了单一功能，则以后其它脚本可能会以意想不到方式跟它交互 。
+  - *<!--covenants-research-->限制条款研究：* Anthony Towns [回复][towns cov]了一个由 Rusty Russell 撰写的、我们在[上周][news274 cov]提到过的[帖子][Russell Cov]。Towns 将 Russell 的方法与其他方法进行了比较，特别是基于[限制条款][topic covenants]的保管库，发现新方法并不吸引人。在之后的[回复][russell cov2]中，Russell 指出保险库有不同的设计，并且保险库在根本上不比其他交易类型更理想，意思是对于保险库用户来说，优化并不是关键。他认为 [BIP345][] 的保险库方法更适合于一个地址格式，而不是一组操作码；按照我们的理解，这意思是 BIP345 作为一个只为单一功能所设计的模板（就像 P2WPKH）更合理，如果设计了一组操作码但只实现了单一功能，则以后其它脚本可能会以意想不到方式跟它交互 。
 
-      Towns 也考虑将 Russell 的方法用于普遍意义下的实验，并发现它在这种情况下“更有趣 [...] 但仍然相当受限”。他提醒读者他此前提议过的一种 Lisp 风格的替代比特币脚本的方法（参见[周报 ＃191][news191 lisp]），并且展示了它如何在见证数据求值期间的交易内省方面带来更大的灵活性与能力。他提供了他的测试代码链接，并指出了一些他编写的玩具级样例。Russell 回答说：“我仍然认为还需要大量的优化才能真正替代 Bitcoin Script。因为大部分有意思的例子都是当前不可能实现的，所以很难将我们当前受限的脚本与替代方案进行比较。”
+    Towns 也考虑将 Russell 的方法用于普遍意义下的实验，并发现它在这种情况下“更有趣 [...] 但仍然相当受限”。他提醒读者他此前提议过的一种 Lisp 风格的替代比特币脚本的方法（参见[周报 ＃191][news191 lisp]），并且展示了它如何在见证数据求值期间的交易内省方面带来更大的灵活性与能力。他提供了他的测试代码链接，并指出了一些他编写的玩具级样例。Russell 回答说：“我仍然认为还需要大量的优化才能真正替代 Bitcoin Script。因为大部分有意思的例子都是当前不可能实现的，所以很难将我们当前受限的脚本与替代方案进行比较。”
 
-      Towns 和 Russell 还简要讨论了以下内容：[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]，具体来说，它能允许来自预言机的经过认证的数据直接放置在求值堆栈上。
+    Towns 和 Russell 还简要讨论了以下内容：[OP_CHECKSIGFROMSTACK][topic op_checksigfromstack]，具体来说，它能允许来自预言机的经过认证的数据直接放置在求值堆栈上。
 
-    - *OP_CAT 提案：* 一些人回复了 Ethan Heilman 的有关公告 [OP_CAT][] 提议 BIP 的[帖子][heilman cat]。我们在上周的周报里也[提到过][news274 cat]该提议。
+  - *OP_CAT 提案：* 一些人回复了 Ethan Heilman 的有关公告 [OP_CAT][] 提议 BIP 的[帖子][heilman cat]。我们在上周的周报里也[提到过][news274 cat]该提议。
 
-      几则回复提到了对 `OP_CAT` 是否将会受到堆栈元素大小的 520 字节的过度限制的担忧。此后，Peter Todd [描述了][todd 520]一种在未来的软分叉中提升限额而无需任何额外 `OP_SUCESSx` 操作码的方法。不足之处是在提升前，脚本中所有使用 `OP_CAT` 的地方需要在其中包含一小部分额外的现存操作码。
+    几则回复提到了对 `OP_CAT` 是否将会受到堆栈元素大小的 520 字节的过度限制的担忧。此后，Peter Todd [描述了][todd 520]一种在未来的软分叉中提升限额而无需任何额外 `OP_SUCESSx` 操作码的方法。不足之处是在提升前，脚本中所有使用 `OP_CAT` 的地方需要在其中包含一小部分额外的现存操作码。
 
-      在 Anthony Towns 对 Russell 的限制条款研究的回复之前，James O'Beirne 在一篇类似的[帖子][o'beirne vault]中指出过使用 `OP_CAT` 来实现保险库的明显局限。他特别指出了 `OP_CAT` 与 BIP345 风格的保险库相比缺少了一些功能。
-
+    在 Anthony Towns 对 Russell 的限制条款研究的回复之前，James O'Beirne 在一篇类似的[帖子][o'beirne vault]中指出过使用 `OP_CAT` 来实现保险库的明显局限。他特别指出了 `OP_CAT` 与 BIP345 风格的保险库相比缺少了一些功能。
 
 {% assign timestamp="0:40" %}
 

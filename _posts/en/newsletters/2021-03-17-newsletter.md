@@ -26,18 +26,18 @@ popular Bitcoin infrastructure software.
   may not automatically see the funding transaction and so may not be
   able to help the funder get their money back.
 
-    This week, Rusty Russell [posted][russell funding rescue] to the
-    Lightning-Dev mailing list about a quick and experimental feature he
-    implemented in C-Lightning to help a user with this problem recover
-    their funds.  He also described alternative solutions for related
-    problems as well as the impact of the [proposed][bolts #851] channel
-    dual-funding protocol on this problem.  Christian Decker also
-    [posted][decker funding rescue] a [proposed change][bolts #854] to
-    the LN specification to help facilitate funding recovery efforts.
-    As LN software adds support for funding channels from external
-    wallets (e.g. C-Lightning as described in [Newsletter #51][news51
-    cl2672] and LND in [Newsletter #92][news92 lnd4079]), developers may
-    want to give this type of failure scenarios more attention.
+  This week, Rusty Russell [posted][russell funding rescue] to the
+  Lightning-Dev mailing list about a quick and experimental feature he
+  implemented in C-Lightning to help a user with this problem recover
+  their funds.  He also described alternative solutions for related
+  problems as well as the impact of the [proposed][bolts #851] channel
+  dual-funding protocol on this problem.  Christian Decker also
+  [posted][decker funding rescue] a [proposed change][bolts #854] to
+  the LN specification to help facilitate funding recovery efforts.
+  As LN software adds support for funding channels from external
+  wallets (e.g. C-Lightning as described in [Newsletter #51][news51
+  cl2672] and LND in [Newsletter #92][news92 lnd4079]), developers may
+  want to give this type of failure scenarios more attention.
 
 ## Releases and release candidates
 

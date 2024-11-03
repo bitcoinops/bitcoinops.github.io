@@ -28,20 +28,20 @@ describing notable changes to popular Bitcoin infrastructure software.
   outputs.  That makes COCV less efficient but, as he notes, "simple
   enough to be interesting".
 
-    Beyond just describing the functionality, Halseth also provides a
-    [demo][halseth demo] of the operation using [Tapsim][], a tool for
-    "debugging Bitcoin Tapscript transactions [...] aimed at developers
-    wanting to play with Bitcoin script primitives, aid in script
-    debugging, and visualize the VM state as scripts are executed."
+  Beyond just describing the functionality, Halseth also provides a
+  [demo][halseth demo] of the operation using [Tapsim][], a tool for
+  "debugging Bitcoin Tapscript transactions [...] aimed at developers
+  wanting to play with Bitcoin script primitives, aid in script
+  debugging, and visualize the VM state as scripts are executed."
 
-    In a separate thread, Halseth [posted][halseth matt-joinpool] about
-    using MATT plus [OP_CAT][] to create a [joinpool][topic joinpools]
-    (also called a _coinpool_ or a _payment pool_).  Again, he provides
-    an [interactive demo][demo joinpool] using Tapsim.  He also provided
-    several suggested modifications to the opcodes in the MATT proposal
-    based on the results of his experimental implementation.   Salvatore
-    Ingala, the originator of the MATT proposal, [replied][ingala matt]
-    favorably. {% assign timestamp="1:23" %}
+  In a separate thread, Halseth [posted][halseth matt-joinpool] about
+  using MATT plus [OP_CAT][] to create a [joinpool][topic joinpools]
+  (also called a _coinpool_ or a _payment pool_).  Again, he provides
+  an [interactive demo][demo joinpool] using Tapsim.  He also provided
+  several suggested modifications to the opcodes in the MATT proposal
+  based on the results of his experimental implementation.   Salvatore
+  Ingala, the originator of the MATT proposal, [replied][ingala matt]
+  favorably. {% assign timestamp="1:23" %}
 
 ## Waiting for confirmation #4: Feerate estimation
 

@@ -22,30 +22,30 @@ d'infrastructure Bitcoin les plus répandus.
   fréquent que d'autres. Cependant, les transactions Bitcoin typiques sont principalement composées d'éléments
   uniformes---des données qui semblent aléatoires---comme des clés publiques et des hachages.
 
-     La proposition de Briar aborde cette question en utilisant plusieurs approches :
+  La proposition de Briar aborde cette question en utilisant plusieurs approches :
 
-     - Pour les parties d'une transaction où un entier est actuellement représenté par 4 octets (par exemple, la version de la
-       transaction et l'index du point de sortie), ceux-ci sont remplacés par un entier de longueur variable pouvant être aussi
-       petit que 2 bits.
+  - Pour les parties d'une transaction où un entier est actuellement représenté par 4 octets (par exemple, la version de la
+    transaction et l'index du point de sortie), ceux-ci sont remplacés par un entier de longueur variable pouvant être aussi
+    petit que 2 bits.
 
-     - Les 32 octets uniformément distribués du point de sortie txid dans chaque entrée sont remplacés par une référence à
-       l'emplacement de cette transaction dans la chaîne de blocs en utilisant sa hauteur de bloc et son emplacement dans le bloc,
-       par exemple `123456` et `789` indiqueraient la 789e transaction dans le bloc 123 456. Étant donné que le bloc à une hauteur
-       particulière peut changer en raison d'une réorganisation de la chaîne de blocs (rompant la référence et rendant impossible
-       la décompression de la transaction), cette méthode est utilisée uniquement lorsque la transaction référencée a au moins
-       100 confirmations.
+  - Les 32 octets uniformément distribués du point de sortie txid dans chaque entrée sont remplacés par une référence à
+    l'emplacement de cette transaction dans la chaîne de blocs en utilisant sa hauteur de bloc et son emplacement dans le bloc,
+    par exemple `123456` et `789` indiqueraient la 789e transaction dans le bloc 123 456. Étant donné que le bloc à une hauteur
+    particulière peut changer en raison d'une réorganisation de la chaîne de blocs (rompant la référence et rendant impossible
+    la décompression de la transaction), cette méthode est utilisée uniquement lorsque la transaction référencée a au moins
+    100 confirmations.
 
-     - Pour les transactions P2WPKH où la structure du témoin doit inclure une signature ainsi qu'une clé publique de 33 octets,
-       la clé publique est omise et une technique de reconstruction à partir de la signature est utilisée.
+  - Pour les transactions P2WPKH où la structure du témoin doit inclure une signature ainsi qu'une clé publique de 33 octets,
+    la clé publique est omise et une technique de reconstruction à partir de la signature est utilisée.
 
-     D'autres techniques sont utilisées pour économiser quelques octets supplémentaires dans les transactions typiques.
-     L'inconvénient général de la proposition est que la conversion d'une transaction compressée en quelque chose que les nœuds
-     complets et autres logiciels peuvent utiliser nécessite plus de CPU, de mémoire et d'E/S que le traitement d'une transaction
-     sérialisée régulière. Cela signifie que les connexions à haut débit continueront probablement d'utiliser le format de
-     transaction régulier et seules les transmissions à faible bande passante utiliseront des transactions compressées.
+   D'autres techniques sont utilisées pour économiser quelques octets supplémentaires dans les transactions typiques.
+   L'inconvénient général de la proposition est que la conversion d'une transaction compressée en quelque chose que les nœuds
+   complets et autres logiciels peuvent utiliser nécessite plus de CPU, de mémoire et d'E/S que le traitement d'une transaction
+   sérialisée régulière. Cela signifie que les connexions à haut débit continueront probablement d'utiliser le format de
+   transaction régulier et seules les transmissions à faible bande passante utiliseront des transactions compressées.
 
-     L'idée a suscité une quantité modérée de discussion, principalement autour de propositions visant à économiser une petite quantité
-     d'espace supplémentaire par entrée.
+   L'idée a suscité une quantité modérée de discussion, principalement autour de propositions visant à économiser une petite quantité
+   d'espace supplémentaire par entrée.
 
 - **Co-signature améliorée pour la confidentialité :** Nick Farrow a [publié][farrow cosign] sur la liste de diffusion Bitcoin-Dev
   des informations sur la façon dont un [schéma de signature seuil sans script][topic threshold signature] tel que [FROST][]
@@ -56,18 +56,18 @@ d'infrastructure Bitcoin les plus répandus.
   authentifié l'utilisateur d'une certaine manière. L'utilisateur peut contourner le fournisseur de services si nécessaire, mais
   le fournisseur de services facilite les opérations dans la plupart des cas.
 
-     Avec des schémas de signature seuil scriptés tels que 2-sur-3 `OP_CHECKMULTISIG`, la clé publique du service doit être
-     associée à la sortie dépensée, de sorte que n'importe quel service puisse trouver les transactions qu'il a signée en
-     examinant les données onchain, lui permettant d'accumuler des données sur ses utilisateurs. Pire encore, tous les protocoles
-     actuellement utilisés que nous connaissons révèlent directement les transactions des utilisateurs au fournisseur de services
-     avant la signature, permettant au service de refuser de signer certaines transactions.
+  Avec des schémas de signature seuil scriptés tels que 2-sur-3 `OP_CHECKMULTISIG`, la clé publique du service doit être
+  associée à la sortie dépensée, de sorte que n'importe quel service puisse trouver les transactions qu'il a signée en
+  examinant les données onchain, lui permettant d'accumuler des données sur ses utilisateurs. Pire encore, tous les protocoles
+  actuellement utilisés que nous connaissons révèlent directement les transactions des utilisateurs au fournisseur de services
+  avant la signature, permettant au service de refuser de signer certaines transactions.
 
-      Comme le décrit Farrow, FROST permet de masquer la transaction signée au service à chaque étape du processus, de la
-      génération d'un script de sortie, à la signature, à la publication de la transaction entièrement signée. Tout ce que le
-      service saura, c'est quand il a signé et toutes les données que l'utilisateur a fournies pour s'authentifier auprès du
-      service.
+  Comme le décrit Farrow, FROST permet de masquer la transaction signée au service à chaque étape du processus, de la
+  génération d'un script de sortie, à la signature, à la publication de la transaction entièrement signée. Tout ce que le
+  service saura, c'est quand il a signé et toutes les données que l'utilisateur a fournies pour s'authentifier auprès du
+  service.
 
-      L'idée a fait l'objet de discussions sur la liste de diffusion.
+  L'idée a fait l'objet de discussions sur la liste de diffusion.
 
 ## Mises à jour et versions candidates
 

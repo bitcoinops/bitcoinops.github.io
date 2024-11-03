@@ -21,12 +21,12 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   de liquidité entrante (par exemple, un commerçant) de trouver des pairs bien connectés pouvant fournir cette liquidité à un taux du
   marché, en utilisant uniquement des logiciels open source et le protocole de diffusion décentralisé LN.
 
-    Les mises à jour comprennent quelques changements structurels ainsi qu'une plus grande flexibilité de la durée du contrat et
-    du plafond des frais de transfert. Le message a reçu plusieurs réponses sur la liste de diffusion et d'autres modifications de la
-    [spécification][bolts #878] sont attendues. Le message de Neigut note également que la construction actuelle des annonces de liquidité
-    et des annonces de canal rend théoriquement possible de prouver cryptographiquement, le cas échéant, une violation du contrat par une des deux parties.
-    Il reste à résoudre le problème de la conception d'une preuve de fraude compacte pouvant être utilisée dans un contrat de caution pour inciter
-    au respect du contrat.
+  Les mises à jour comprennent quelques changements structurels ainsi qu'une plus grande flexibilité de la durée du contrat et
+  du plafond des frais de transfert. Le message a reçu plusieurs réponses sur la liste de diffusion et d'autres modifications de la
+  [spécification][bolts #878] sont attendues. Le message de Neigut note également que la construction actuelle des annonces de liquidité
+  et des annonces de canal rend théoriquement possible de prouver cryptographiquement, le cas échéant, une violation du contrat par une des deux parties.
+  Il reste à résoudre le problème de la conception d'une preuve de fraude compacte pouvant être utilisée dans un contrat de caution pour inciter
+  au respect du contrat.
 
 ## Questions et réponses sélectionnées de Bitcoin Stack Exchange
 

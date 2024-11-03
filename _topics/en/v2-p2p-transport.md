@@ -4,11 +4,11 @@ shortname: v2 p2p transport
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - P2P Network Protocol
   - Privacy Enhancements
 
-aliases:
+title-aliases:
   - BIP151
   - BIP324
 
@@ -20,8 +20,8 @@ excerpt: >
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
 primary_sources:
-    - title: v2 Encrypted Transport Protocol proposed BIP
-      link: https://github.com/bitcoin/bips/issues/1378
+    - title: "BIP324: Version 2 P2P Encrypted Transport Protocol"
+      link: BIP324
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -73,6 +73,15 @@ optech_mentions:
 
   - title: "Bitcoin Core #29347 enables v2 P2P transport by default"
     url: /en/newsletters/2024/02/07/#bitcoin-core-29347
+
+  - title: "New project to create a BIP324 proxy for light clients"
+    url: /en/newsletters/2024/03/20/#bip324-proxy-for-light-clients
+
+  - title: "Rust Bitcoin #2644 adds HKDF component in support of a BIP324 implementation"
+    url: /en/newsletters/2024/06/07/#rust-bitcoin-2644
+
+  - title: "Benefits of BIP324 decoy packets"
+    url: /en/newsletters/2024/10/25/#what-are-the-benefits-of-decoy-packets-in-bip324
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

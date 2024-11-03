@@ -6,12 +6,12 @@ title: Cross-input signature aggregation (CISA)
 shortname: cisa
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - Half aggregation
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
 
@@ -33,6 +33,9 @@ optech_mentions:
   - title: Draft BIP about half aggregation of BIP340 schnorr signatures
     url: /en/newsletters/2022/07/13/#half-aggregation-of-bip340-signatures
 
+  - title: Notes from Bitcoin developer discussion about CISA
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Schnorr signatures
@@ -49,9 +52,9 @@ see_also:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Cross-input signature aggregation** is a proposal to reduce the
+  **Cross-input signature aggregation (CISA)** is a proposal to reduce the
   number of signatures a transaction requires.  In theory, every
-  signature required to a make a transaction valid could be combined into a
+  signature required to make a transaction valid could be combined into a
   single signature that covers the whole transaction.
 
 ---
@@ -59,7 +62,7 @@ For example, Alice controls two [P2TR][topic taproot] UTXOs.  Normally,
 if she creates a transaction spending both UTXOs with a keypath spend,
 she'll need to include one 16-vbyte signature in each output.  However,
 any node could aggregate both public keys from the UTXOs and Alice could
-produce a single 16-vbyte [MuSig]topic musig]-style [scriptless
+produce a single 16-vbyte [MuSig][topic musig]-style [scriptless
 multisigature][topic multisignature] that corresponded to the aggregate
 public key, proving that she controlled the private key for both of the
 original public keys.

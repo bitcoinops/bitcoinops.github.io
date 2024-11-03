@@ -20,17 +20,17 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   responsable][topic responsible disclosures] et qui affectait les versions 23.02 à 23.05.2 de Core Lightning. Les versions plus récentes
   de 23.08 ou supérieures ne sont pas affectées.
 
-    La nouvelle vulnérabilité a été découverte par Morehouse lorsqu'il a poursuivi ses travaux précédents sur le financement fictif,
-    qu'il a également divulgué de manière responsable (voir le [Bulletin #266][news266 lnbugs]). Lorsqu'il a retesté des nœuds qui
-    avaient mis en place des correctifs pour le financement fictif, il a déclenché une [condition de concurrence][] qui a fait planter
-    CLN avec environ 30 secondes d'effort. Si un nœud LN est hors ligne, il ne peut pas protéger un utilisateur contre des contreparties
-    malveillantes ou défectueuses, ce qui met les fonds de l'utilisateur en danger. L'analyse a indiqué que CLN avait corrigé la
-    vulnérabilité initiale du financement fictif, mais n'avait pas pu inclure en toute sécurité un test pour celle-ci avant que la
-    vulnérabilité ne soit divulguée, ce qui a entraîné la fusion ultérieure d'un plugin introduisant la condition de concurrence
-    exploitable. Après la divulgation de Morehouse, un correctif rapide a été fusionné dans CLN pour empêcher la condition de
-    concurrence de faire planter le nœud.
+  La nouvelle vulnérabilité a été découverte par Morehouse lorsqu'il a poursuivi ses travaux précédents sur le financement fictif,
+  qu'il a également divulgué de manière responsable (voir le [Bulletin #266][news266 lnbugs]). Lorsqu'il a retesté des nœuds qui
+  avaient mis en place des correctifs pour le financement fictif, il a déclenché une [condition de concurrence][] qui a fait planter
+  CLN avec environ 30 secondes d'effort. Si un nœud LN est hors ligne, il ne peut pas protéger un utilisateur contre des contreparties
+  malveillantes ou défectueuses, ce qui met les fonds de l'utilisateur en danger. L'analyse a indiqué que CLN avait corrigé la
+  vulnérabilité initiale du financement fictif, mais n'avait pas pu inclure en toute sécurité un test pour celle-ci avant que la
+  vulnérabilité ne soit divulguée, ce qui a entraîné la fusion ultérieure d'un plugin introduisant la condition de concurrence
+  exploitable. Après la divulgation de Morehouse, un correctif rapide a été fusionné dans CLN pour empêcher la condition de
+  concurrence de faire planter le nœud.
 
-    Pour plus d'informations, nous vous recommandons de lire l'excellent [article de divulgation complète][morehouse full] de Morehouse.
+  Pour plus d'informations, nous vous recommandons de lire l'excellent [article de divulgation complète][morehouse full] de Morehouse.
 
 - **Nouvelle proposition de soft fork combinant LNHANCE :** Brandon Black a [publié][black lnhance] sur Delving Bitcoin des détails sur
   un soft fork qui combine les propositions précédentes pour [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) et
@@ -40,14 +40,14 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   [ancienne suggestion][rubin templating] de l'auteur original de CTV, Jeremy Rubin, pour économiser plusieurs vbytes et rendre
   potentiellement les scripts plus réutilisables en permettant de récupérer la valeur de la clé à partir de l'interpréteur de script.
 
-    Dans le fil de discussion, Black et d'autres décrivent certains des protocoles qui seraient activés par cette combinaison de
-    changements de consensus : [LN-Symmetry][topic eltoo] (eltoo), [Ark][topic ark]-style [joinpools][topic joinpools], les
-    [DLC][topic dlc] avec signature réduite, et les [coffres-forts][topic vaults] sans transactions pré-signées, parmi les autres
-    avantages décrits des propositions sous-jacentes, tels que le contrôle de congestion de style CTV et la délégation de signature
-    de style CSFS.
+  Dans le fil de discussion, Black et d'autres décrivent certains des protocoles qui seraient activés par cette combinaison de
+  changements de consensus : [LN-Symmetry][topic eltoo] (eltoo), [Ark][topic ark]-style [joinpools][topic joinpools], les
+  [DLC][topic dlc] avec signature réduite, et les [coffres-forts][topic vaults] sans transactions pré-signées, parmi les autres
+  avantages décrits des propositions sous-jacentes, tels que le contrôle de congestion de style CTV et la délégation de signature
+  de style CSFS.
 
-   Au moment de la rédaction de cet article, la discussion technique était limitée à la demande concernant les protocoles que la
-   proposition combinée permettrait.
+  Au moment de la rédaction de cet article, la discussion technique était limitée à la demande concernant les protocoles que la
+  proposition combinée permettrait.
 
 - **Proposition de soft fork pour l'arithmétique sur 64 bits :** Chris Stewart a [publié][stewart 64] un [projet de BIP][bip 64] pour
   Delving Bitcoin afin de permettre des opérations arithmétiques à 64 bits sur Bitcoin lors d'un futur soft fork. Bitcoin
@@ -57,34 +57,34 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   sur 64 bits. Par exemple, les protocoles de sortie de [joinpool][topic joinpools] bénéficieraient de l'introspection des montants
   (voir les bulletins [#166][news166 tluv] et [#283][news283 exits]).
 
-   Au moment de la rédaction de cet article, la discussion portait sur les détails de la proposition, tels que la manière d'encoder la
-   valeur entière, quelle fonctionnalité de mise à niveau [taproot][topic taproot] utiliser et s'il est préférable de créer un nouvel
-   ensemble d'opcodes arithmétiques ou de mettre à niveau ceux existants.
+  Au moment de la rédaction de cet article, la discussion portait sur les détails de la proposition, tels que la manière d'encoder la
+  valeur entière, quelle fonctionnalité de mise à niveau [taproot][topic taproot] utiliser et s'il est préférable de créer un nouvel
+  ensemble d'opcodes arithmétiques ou de mettre à niveau ceux existants.
 
 - **Aperçu de la proposition de mempool en cluster :** Suhas Daftuar a [publié][daftuar cluster] un résumé de la proposition de
   [mempool en cluster][topic cluster mempool] sur Delving Bitcoin. Optech a tenté de résumer l'état actuel de la discussion sur le
   mempool en cluster dans le [Bulletin #280][news280 cluster], mais nous recommandons vivement de lire l'aperçu de Daftuar, l'un des
   architectes de la proposition. Un détail que nous n'avons pas encore abordé a attiré notre attention :
 
-    - *La suppression du découpage CPFP est nécessaire :* la politique de mempool de [décuopage CPFP][topic cpfp carve out] ajoutée à
-      Bitcoin Core en [2019][news56 carveout] tente de résoudre la version CPFP d'[épinglage de transaction][topic transaction pinning],
-      où un attaquant contrepartie utilise les limites de Bitcoin Core sur le nombre et la taille des transactions connexes pour retarder
-      l'examen d'une transaction enfant appartenant à un pair honnête. Le découpage permet à une transaction de dépasser légèrement les
-      limites. Dans le mempool en cluster, les transactions connexes sont placées dans un cluster et les limites sont appliquées par
-      cluster, et non par transaction. Selon cette politique, il n'y a aucun moyen connu de garantir qu'un cluster ne contient qu'un
-      maximum de découpage, à moins de restreindre les relations autorisées entre les transactions relayées sur le réseau bien au-delà
-      des restrictions actuelles. Un cluster avec plusieurs découpage pourrait dépasser considérablement ses limites, auquel cas le
-      protocole devrait être conçu pour ces limites beaucoup plus élevées. Cela permettrait de répondre aux besoins des utilisateurs
-      de découpage, mais restreindrait ce que les diffuseurs de transactions régulières peuvent faire, ce qui est---une proposition
-      indésirable.
+  - *La suppression du découpage CPFP est nécessaire :* la politique de mempool de [décuopage CPFP][topic cpfp carve out] ajoutée à
+    Bitcoin Core en [2019][news56 carveout] tente de résoudre la version CPFP d'[épinglage de transaction][topic transaction pinning],
+    où un attaquant contrepartie utilise les limites de Bitcoin Core sur le nombre et la taille des transactions connexes pour retarder
+    l'examen d'une transaction enfant appartenant à un pair honnête. Le découpage permet à une transaction de dépasser légèrement les
+    limites. Dans le mempool en cluster, les transactions connexes sont placées dans un cluster et les limites sont appliquées par
+    cluster, et non par transaction. Selon cette politique, il n'y a aucun moyen connu de garantir qu'un cluster ne contient qu'un
+    maximum de découpage, à moins de restreindre les relations autorisées entre les transactions relayées sur le réseau bien au-delà
+    des restrictions actuelles. Un cluster avec plusieurs découpage pourrait dépasser considérablement ses limites, auquel cas le
+    protocole devrait être conçu pour ces limites beaucoup plus élevées. Cela permettrait de répondre aux besoins des utilisateurs
+    de découpage, mais restreindrait ce que les diffuseurs de transactions régulières peuvent faire, ce qui est---une proposition
+    indésirable.
 
-      Une solution proposée à l'incompatibilité entre découpage et mempool en cluster est le
-      [relais de transaction v3][topic v3 transaction relay], qui permettrait aux utilisateurs réguliers de transactions v1 et v2
-      de pouvoir continuer à les utiliser de toutes les manières historiquement typiques, mais aussi permettre aux utilisateurs de
-      protocoles de contrat comme LN d'opter pour des transactions v3 qui imposent un ensemble restreint de relations entre les
-      transactions (_topology_). La topologie restreinte permettrait d'atténuer les attaques de blocage de transaction et pourrait être
-      combinée avec des remplacements presque intégraux pour les transactions de découpage telles que les [ancres
-      éphémères][topic ephemeral anchors].
+    Une solution proposée à l'incompatibilité entre découpage et mempool en cluster est le
+    [relais de transaction v3][topic v3 transaction relay], qui permettrait aux utilisateurs réguliers de transactions v1 et v2
+    de pouvoir continuer à les utiliser de toutes les manières historiquement typiques, mais aussi permettre aux utilisateurs de
+    protocoles de contrat comme LN d'opter pour des transactions v3 qui imposent un ensemble restreint de relations entre les
+    transactions (_topology_). La topologie restreinte permettrait d'atténuer les attaques de blocage de transaction et pourrait être
+    combinée avec des remplacements presque intégraux pour les transactions de découpage telles que les [ancres
+    éphémères][topic ephemeral anchors].
 
  Il est important qu'un changement majeur des algorithmes de gestion du mempool de Bitcoin Core prenne en compte toutes les façons dont
  les gens utilisent Bitcoin aujourd'hui, ou pourraient l'utiliser dans un avenir proche, nous encourageons donc les développeurs

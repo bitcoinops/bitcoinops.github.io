@@ -58,23 +58,23 @@ C-lightning projects.
   cooperative case look identical is an enormous win for how script
   execution works.
 
-    "Schnorr is necessary for this because without it we cannot encode
-    multiple parties into a single key. Having multiple branches in
-    there is a relatively simple change.
+  "Schnorr is necessary for this because without it we cannot encode
+  multiple parties into a single key. Having multiple branches in
+  there is a relatively simple change.
 
-    "If you look at the consensus changes necessary for these things,
-    it's really remarkably small, dozens of lines of code. It looks like
-    a lot of the complexity is in explaining why these things are useful
-    and how to use them and not so much in the impact on the consensus
-    rules.
+  "If you look at the consensus changes necessary for these things,
+  it's really remarkably small, dozens of lines of code. It looks like
+  a lot of the complexity is in explaining why these things are useful
+  and how to use them and not so much in the impact on the consensus
+  rules.
 
-    "Things like aggregation, I think, are something that can be
-    done after we have explored various options for structural
-    improvements to the scripting language, once it's clear around what
-    the structuring should be, because we will probably learn from the
-    deployments how these things get used in practice. That's what I'm
-    working on with a number of collaborators and we'll hopefully be
-    proposing something soon, and that's the end of my talk."
+  "Things like aggregation, I think, are something that can be
+  done after we have explored various options for structural
+  improvements to the scripting language, once it's clear around what
+  the structuring should be, because we will probably learn from the
+  deployments how these things get used in practice. That's what I'm
+  working on with a number of collaborators and we'll hopefully be
+  proposing something soon, and that's the end of my talk."
 
 [sfdev video]: https://www.youtube.com/watch?v=YSUVRj8iznU
 [sipa slides]: https://prezi.com/view/YkJwE7LYJzAzJw9g1bWV/
@@ -173,3 +173,5 @@ c-lightning: git log --topo-order -p d84d358562a3bcdf48856fdea24511907ff53fd9..0
 [bse 76541]: {{bse}}76541
 
 [lnd ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c]: https://github.com/lightningnetwork/lnd/commit/ee2f2573c1b1b33288d05ba59a1e8ef9e8fb621c
+[newsletter #3]: /en/newsletters/2018/07/10/#transaction-fees-remain-very-low
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

@@ -127,7 +127,7 @@ BOLTs][bolts repo].*
   <!-- [1]: See "Service-Level Based Lifetime Enforcement" in
   https://lightning.engineering/posts/2020-11-02-pool-deep-dive/ -->
 
-   <table>
+  <table>
     <tr>
      <th></th>
      <th>Lightning Pool</th>
@@ -155,12 +155,20 @@ BOLTs][bolts repo].*
     </tr>
 
     <tr>
-     <th markdown="span">Third-party purchased liquidity ("[sidecar channels][]")</th>
+     <th markdown="span">
+
+     Third-party purchased liquidity ("[sidecar channels][]")
+
+     </th>
      <td>Yes, Alice can pay Bob to fund a channel to Carol</td>
-     <td markdown="span">[Maybe.]({{bse}}107786)</td>
+     <td markdown="span">
+
+     [Maybe.]({{bse}}107786)
+
+     </td>
     </tr>
 
-   </table>
+  </table>
 
 - [BIPs #1072][] merges the informational [BIP48][] titled "Multi-Script Hierarchy
   for Multi-Sig Wallets". The document describes a widely deployed derivation

@@ -38,10 +38,10 @@ about notable code and documentation changes.
   of activation dates would be appropriate if it uses a miner-activated
   soft fork mechanism such as BIP9.
 
-    Subsequent to
-    the workshop, CTV proposer Jeremy Rubin announced a [mailing
-    list][ctv mailing list] to help coordinate future review and
-    discussion of the BIP119 proposal.
+  Subsequent to
+  the workshop, CTV proposer Jeremy Rubin announced a [mailing
+  list][ctv mailing list] to help coordinate future review and
+  discussion of the BIP119 proposal.
 
 ## Notable code and documentation changes
 
@@ -78,8 +78,10 @@ about notable code and documentation changes.
   to as *sub-daemons* of `lightningd`).  For example (from the PR
   description):
 
-      # Use remote_hsmd instead of lightning_hsmd for signing:
-      lightningd --alt-subdaemon=lightning_hsmd:remote_hsmd ...
+  ```
+  # Use remote_hsmd instead of lightning_hsmd for signing:
+  lightningd --alt-subdaemon=lightning_hsmd:remote_hsmd ...
+  ```
 
   This option can be dangerous if the alternative sub-daemon isn't fully
   compatible with the other daemons being used, but it also allows

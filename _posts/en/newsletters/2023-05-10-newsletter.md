@@ -248,8 +248,7 @@ discussion [podcast][podcast] with guests that have included many of the
 contributors whose work we've been privileged to write about.
 
 None of that would be possible without our many contributors, who in the
-past year have included:
-<!-- alphabetical -->
+past year have included: <!-- alphabetical -->
 Adam Jonas,
 Copinmalin,
 David A. Harding,
@@ -286,7 +285,7 @@ publish the next 250 newsletters. {% assign timestamp="54:17" %}
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [financial supporters]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html

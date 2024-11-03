@@ -34,20 +34,20 @@ d'infrastructure Bitcoin les plus répandus.
   peut être transféré à Bob comme d'habitude, mais les autres peuvent suivre des chemins alternatifs (par exemple, d'Alice à Carol à Bob).
   Bob attend de recevoir toutes les parties, puis continue de transférer le paiement comme d'habitude vers le prochain saut.
 
-     Le principal avantage de cette approche est qu'elle rend plus difficile l'exécution d'attaques de _découverte de solde_ (BDA) où
-     une tierce partie [sonde][topic payment probes] de manière répétée un canal pour suivre son solde. Si cela est fait fréquemment,
-     une BDA peut suivre le montant d'un paiement passant par un canal. Si cela est fait sur de nombreux canaux, il peut être possible
-     de suivre ce paiement lorsqu'il traverse le réseau. Lorsque le PSS est utilisé, l'attaquant devrait suivre non seulement le solde
-     du canal Alice-et-Bob, mais aussi celui du canal Alice-et-Carol et les canaux Carol-et-Bob. Même si l'attaquant suivait le solde de
-     tous ces canaux, la difficulté de calcul pour suivre le paiement augmente, tout comme la possibilité que des parties des paiements
-     d'autres utilisateurs qui passent simultanément par ces canaux puissent être confondues avec des parties du paiement original qui
-     est suivi. Un [article][pss research] de van Dam a montré qu'un attaquant pouvait obtenir
-     une réduction de 62% de la quantité d'informations lorsque PSS est déployé.
+  Le principal avantage de cette approche est qu'elle rend plus difficile l'exécution d'attaques de _découverte de solde_ (BDA) où
+  une tierce partie [sonde][topic payment probes] de manière répétée un canal pour suivre son solde. Si cela est fait fréquemment,
+  une BDA peut suivre le montant d'un paiement passant par un canal. Si cela est fait sur de nombreux canaux, il peut être possible
+  de suivre ce paiement lorsqu'il traverse le réseau. Lorsque le PSS est utilisé, l'attaquant devrait suivre non seulement le solde
+  du canal Alice-et-Bob, mais aussi celui du canal Alice-et-Carol et les canaux Carol-et-Bob. Même si l'attaquant suivait le solde de
+  tous ces canaux, la difficulté de calcul pour suivre le paiement augmente, tout comme la possibilité que des parties des paiements
+  d'autres utilisateurs qui passent simultanément par ces canaux puissent être confondues avec des parties du paiement original qui
+  est suivi. Un [article][pss research] de van Dam a montré qu'un attaquant pouvait obtenir
+  une réduction de 62% de la quantité d'informations lorsque PSS est déployé.
 
-     Deux avantages supplémentaires sont mentionnés dans l'article de van Dam sur PSS :
-     une augmentation du débit de LN et une partie d'atténuation contre les [attaques de brouillage de canal][topic channel
-     jamming attacks]. L'idée de PSS a fait l'objet d'une petite discussion sur la liste de diffusion à la date de rédaction de cet
-     article.
+  Deux avantages supplémentaires sont mentionnés dans l'article de van Dam sur PSS :
+  une augmentation du débit de LN et une partie d'atténuation contre les [attaques de brouillage de canal][topic channel
+  jamming attacks]. L'idée de PSS a fait l'objet d'une petite discussion sur la liste de diffusion à la date de rédaction de cet
+  article.
 
 - **Liquidité mutualisée pour LN :** ZmnSCPxj [a proposé][zmnscpxj sidepools1] à la liste de diffusion Lightning-Dev une suggestion
   qu'il appelle des _sidepools_. Cela impliquerait des groupes de nœuds de transfert travaillant ensemble pour déposer des fonds dans
@@ -55,36 +55,36 @@ d'infrastructure Bitcoin les plus répandus.
   de déplacer des fonds entre les participants en mettant à jour l'état du contrat hors chaîne. Par exemple, un état initial qui donne
   à Alice, Bob et Carol chacun 1 BTC pourrait être mis à jour vers un nouvel état qui donne à Alice 2 BTC, Bob 0 BTC et Carol 1 BTC.
 
-     Les nœuds de transfert continueraient également à utiliser et à annoncer des canaux LN ordinaires entre des paires de nœuds ;
-     par exemple, les trois utilisateurs décrits précédemment pourraient avoir trois canaux distincts : Alice et Bob, Bob et Carol, et
-     Alice et Carol. Ils transféreraient les paiements à travers ces canaux exactement de la même manière qu'ils le peuvent aujourd'hui.
+  Les nœuds de transfert continueraient également à utiliser et à annoncer des canaux LN ordinaires entre des paires de nœuds ;
+  par exemple, les trois utilisateurs décrits précédemment pourraient avoir trois canaux distincts : Alice et Bob, Bob et Carol, et
+  Alice et Carol. Ils transféreraient les paiements à travers ces canaux exactement de la même manière qu'ils le peuvent aujourd'hui.
 
-     Si un ou plusieurs des canaux ordinaires devenaient déséquilibrés---par exemple, une trop grande partie des fonds dans le canal
-     entre Alice et Bob appartient maintenant à Alice---le déséquilibre pourrait être résolu en effectuant un [peerswap][] hors chaîne
-     dans le contrat d'état. Par exemple, Carol pourrait fournir des fonds à Alice dans le contrat d'état à condition qu'Alice transfère
-     la même quantité de fonds à travers Bob vers Carol dans le canal LN ordinaire---rétablissant l'équilibre dans le canal LN entre
-     Alice et Bob.
+  Si un ou plusieurs des canaux ordinaires devenaient déséquilibrés---par exemple, une trop grande partie des fonds dans le canal
+  entre Alice et Bob appartient maintenant à Alice---le déséquilibre pourrait être résolu en effectuant un [peerswap][] hors chaîne
+  dans le contrat d'état. Par exemple, Carol pourrait fournir des fonds à Alice dans le contrat d'état à condition qu'Alice transfère
+  la même quantité de fonds à travers Bob vers Carol dans le canal LN ordinaire---rétablissant l'équilibre dans le canal LN entre
+  Alice et Bob.
 
-     L'avantage de cette approche c'est que personne n'a besoin de connaître le contrat d'état à part les participants de chaque contrat
-     particulier. Pour tous les utilisateurs LN ordinaires et tous les nœuds de transfert qui ne sont pas impliqués dans un contrat
-     particulier, LN continue de fonctionner en utilisant le protocole actuel. Un autre avantage, par rapport aux opérations de
-     rééquilibrage de canal existantes, c'est que l'approche du contrat d'état permet à un grand nombre de nœuds de transfert de
-     maintenir une relation directe entre pairs pour une petite quantité d'espace sur la chaîne, éliminant ainsi probablement les
-     frais de rééquilibrage hors chaîne entre ces pairs. Le maintien de frais de rééquilibrage minimaux aide grandement les nœuds
-     de transfert à maintenir l'équilibre de leurs canaux, ce qui améliore leur potentiel de revenus et rend l'envoi de paiements
-     à travers LN plus fiable.
+  L'avantage de cette approche c'est que personne n'a besoin de connaître le contrat d'état à part les participants de chaque contrat
+  particulier. Pour tous les utilisateurs LN ordinaires et tous les nœuds de transfert qui ne sont pas impliqués dans un contrat
+  particulier, LN continue de fonctionner en utilisant le protocole actuel. Un autre avantage, par rapport aux opérations de
+  rééquilibrage de canal existantes, c'est que l'approche du contrat d'état permet à un grand nombre de nœuds de transfert de
+  maintenir une relation directe entre pairs pour une petite quantité d'espace sur la chaîne, éliminant ainsi probablement les
+  frais de rééquilibrage hors chaîne entre ces pairs. Le maintien de frais de rééquilibrage minimaux aide grandement les nœuds
+  de transfert à maintenir l'équilibre de leurs canaux, ce qui améliore leur potentiel de revenus et rend l'envoi de paiements
+  à travers LN plus fiable.
 
-     L'inconvénient de cette approche c'est qu'elle nécessite un contrat d'état multiparties, ce qui n'a jamais été mis en œuvre en
-     production jusqu'à notre connaissance. ZmnSCPxj mentionne deux protocoles de contrat qui pourraient être utiles à utiliser comme
-     base, [LN-Symmetry][topic eltoo] et [duplex payment channels][]. LN-Symmetry nécessiterait un changement de consensus, ce qui semble
-     peu probable dans un avenir proche, c'est pourquoi un [article de suivi][zmnscpxj sidepools2] de ZmnSCPxj semble se concentrer sur
-     les canaux de paiement duplex (que ZmnSCPxj appelle "Decker-Wattenhofer" d'après les chercheurs qui les ont proposés en premier).
-     Le problème avec les canaux de paiement duplex c'est qu'ils ne peuvent pas rester ouverts indéfiniment, bien que l'analyse de ZmnSCPxj
-     indique qu'ils peuvent probablement rester ouverts suffisamment longtemps, et à travers suffisamment de changements d'état, pour
-     amortir leur coût de manière efficace.
+  L'inconvénient de cette approche c'est qu'elle nécessite un contrat d'état multiparties, ce qui n'a jamais été mis en œuvre en
+  production jusqu'à notre connaissance. ZmnSCPxj mentionne deux protocoles de contrat qui pourraient être utiles à utiliser comme
+  base, [LN-Symmetry][topic eltoo] et [duplex payment channels][]. LN-Symmetry nécessiterait un changement de consensus, ce qui semble
+  peu probable dans un avenir proche, c'est pourquoi un [article de suivi][zmnscpxj sidepools2] de ZmnSCPxj semble se concentrer sur
+  les canaux de paiement duplex (que ZmnSCPxj appelle "Decker-Wattenhofer" d'après les chercheurs qui les ont proposés en premier).
+  Le problème avec les canaux de paiement duplex c'est qu'ils ne peuvent pas rester ouverts indéfiniment, bien que l'analyse de ZmnSCPxj
+  indique qu'ils peuvent probablement rester ouverts suffisamment longtemps, et à travers suffisamment de changements d'état, pour
+  amortir leur coût de manière efficace.
 
-     Il n'y a eu aucune réponse publique aux articles au moment de la rédaction, bien que nous ayons appris dans une correspondance
-     privée avec ZmnSCPxj qu'il travaille à développer davantage l'idée.
+  Il n'y a eu aucune réponse publique aux articles au moment de la rédaction, bien que nous ayons appris dans une correspondance
+  privée avec ZmnSCPxj qu'il travaille à développer davantage l'idée.
 
 ## Mises à jour et versions candidates
 

@@ -24,17 +24,17 @@ popular Bitcoin infrastructure software.
   future.  We assume that the end of email relay also affects the
   Lightning-Dev mailing list, which is hosted by the same organization.
 
-    The administrators sought feedback from the community about options,
-    including migrating the mailing list to Google Groups.  If such a
-    migration happens, Optech will begin using that as one of our [news
-    sources][sources].
+  The administrators sought feedback from the community about options,
+  including migrating the mailing list to Google Groups.  If such a
+  migration happens, Optech will begin using that as one of our [news
+  sources][sources].
 
-    We're also aware that,
-    in the months prior to the announcement, some well-established
-    developers had begun experimenting with discussions on the
-    [DelvingBitcoin][] web forum.  Optech will begin monitoring that
-    forum for interesting or important discussions effective
-    immediately. {% assign timestamp="1:05" %}
+  We're also aware that,
+  in the months prior to the announcement, some well-established
+  developers had begun experimenting with discussions on the
+  [DelvingBitcoin][] web forum.  Optech will begin monitoring that
+  forum for interesting or important discussions effective
+  immediately. {% assign timestamp="1:05" %}
 
 - **HTLC aggregation with covenants:** Johan Torås Halseth
   [posted][halseth agg] to the Lightning-Dev mailing list a suggestion
@@ -218,7 +218,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
 [halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html

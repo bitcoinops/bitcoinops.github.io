@@ -27,79 +27,79 @@ logiciels d'infrastructure Bitcoin.
   à la fois sur la liste de diffusion et dans la salle IRC #bitcoin-core-dev.
   Voici quelques points saillants de la discussion :
 
-    - *Problème d'option gratuite :* Sergej Kotliar [averti][kotliar free
-      option] qu'il pense que le plus grand problème de tout type de
-      remplacement de transaction est qu'il crée un option de style Option
-      Américaine gratuite. Par exemple, le client Alice demande à acheter
-      des gadgets au marchand Bob. Bob donne à Alice une facture pour
-      1 BTC au prix actuel de 20 000 USD/BTC. Alice envoie à Bob les 1 BTC
-      dans une transaction avec un faible taux de frais. La transaction
-      n'est pas confirmée lorsque le taux de change passe à 25 000 USD/BTC,
-      ce qui signifie qu'Alice paie maintenant 5 000 dollars de plus.
-      À ce stade, elle choisit très rationnellement de remplacer sa transaction
-      par une transaction dans laquelle elle se rembourse les BTC, annulant
-      ainsi la transaction. Cependant, si le taux de change avait évolué en
-      faveur d'Alice (par exemple 15 000 USD/BTC), Bob ne pourrait pas annuler
-      le paiement d'Alice et n'aurait donc aucun moyen, dans le flux normal
-      des transactions Bitcoin onchain, de profiter de la même option, créant ainsi
-      un risque de change asymétrique. En comparaison, lorsque le remplacement
-      de la transaction n'est pas possible, Alice et Bob partagent le même
-      risque de taux de change.
+  - *Problème d'option gratuite :* Sergej Kotliar [averti][kotliar free
+    option] qu'il pense que le plus grand problème de tout type de
+    remplacement de transaction est qu'il crée un option de style Option
+    Américaine gratuite. Par exemple, le client Alice demande à acheter
+    des gadgets au marchand Bob. Bob donne à Alice une facture pour
+    1 BTC au prix actuel de 20 000 USD/BTC. Alice envoie à Bob les 1 BTC
+    dans une transaction avec un faible taux de frais. La transaction
+    n'est pas confirmée lorsque le taux de change passe à 25 000 USD/BTC,
+    ce qui signifie qu'Alice paie maintenant 5 000 dollars de plus.
+    À ce stade, elle choisit très rationnellement de remplacer sa transaction
+    par une transaction dans laquelle elle se rembourse les BTC, annulant
+    ainsi la transaction. Cependant, si le taux de change avait évolué en
+    faveur d'Alice (par exemple 15 000 USD/BTC), Bob ne pourrait pas annuler
+    le paiement d'Alice et n'aurait donc aucun moyen, dans le flux normal
+    des transactions Bitcoin onchain, de profiter de la même option, créant ainsi
+    un risque de change asymétrique. En comparaison, lorsque le remplacement
+    de la transaction n'est pas possible, Alice et Bob partagent le même
+    risque de taux de change.
 
-        Kotliar note que le problème existe aujourd'hui avec la
-        disponibilité de [RBF][topic rbf] du [BIP125][], mais il
-        estime que le full-RBF pourrait accentuer le problème.
+    Kotliar note que le problème existe aujourd'hui avec la
+    disponibilité de [RBF][topic rbf] du [BIP125][], mais il
+    estime que le full-RBF pourrait accentuer le problème.
 
-        Greg Sanders et Jeremy Rubin [notent][sanders cpfp]
-        [séparement][rubin cpfp] que le commerçant Bob
-        pourrait inciter les mineurs à confirmer la transaction
-        originale du client Alice en utilisant [CPFP][topic cpfp],
-        particuliérement si [package relay][topic package relay]
-        était activé.
+    Greg Sanders et Jeremy Rubin [notent][sanders cpfp]
+    [séparement][rubin cpfp] que le commerçant Bob
+    pourrait inciter les mineurs à confirmer la transaction
+    originale du client Alice en utilisant [CPFP][topic cpfp],
+    particuliérement si [package relay][topic package relay]
+    était activé.
 
-        Antoine Riard [note][riard free option] que le même risque
-        existe avec LN, car Alice pourrait attendre de payer la facture
-        du commerçant Bob jusqu'à peu avant son expiration, ce qui lui
-        laisserait le temps d'attendre que le taux de change change.
-        Cependant, dans ce cas, si Bob remarque que le taux de change
-        a changé de manière significative, il peut demander à son nœud
-        de ne pas accepter le paiement et rendre l'argent à Alice.
+    Antoine Riard [note][riard free option] que le même risque
+    existe avec LN, car Alice pourrait attendre de payer la facture
+    du commerçant Bob jusqu'à peu avant son expiration, ce qui lui
+    laisserait le temps d'attendre que le taux de change change.
+    Cependant, dans ce cas, si Bob remarque que le taux de change
+    a changé de manière significative, il peut demander à son nœud
+    de ne pas accepter le paiement et rendre l'argent à Alice.
 
-    - *Bitcoin Core n'est pas en charge du réseau :* Gloria Zhao [a écrit][zhao
-      no control] dans la discusion IRC, "Je pense que, quelle que soit l'option
-      choisie, il doit être clair pour les utilisateurs que le Core ne contrôle
-      pas si le full RBF se produit ou non. Nous pourrions revenir en arrière
-      [25353][bitcoin core #25353] et cela pourrait encore arriver. [...]"
+  - *Bitcoin Core n'est pas en charge du réseau :* Gloria Zhao [a écrit][zhao
+    no control] dans la discusion IRC, "Je pense que, quelle que soit l'option
+    choisie, il doit être clair pour les utilisateurs que le Core ne contrôle
+    pas si le full RBF se produit ou non. Nous pourrions revenir en arrière
+    [25353][bitcoin core #25353] et cela pourrait encore arriver. [...]"
 
-        Après la réunion, Zhao a aussi posté une [vue détaillée][zhao
-        overview] de la situation.
+    Après la réunion, Zhao a aussi posté une [vue détaillée][zhao
+    overview] de la situation.
 
-    - *L'absence de retrait signifie que le problème peut se produire :*
-      dans la discussion sur IRC, Anthony Towns [a rappelé][towns uncoordinated]
-      ses points de la semaine dernière, "si nous ne supprimons pas l'option
-      `mempoolfullrbf` de la 24.0, nous allons vers un déploiement non coordonné."
+  - *L'absence de retrait signifie que le problème peut se produire :*
+    dans la discussion sur IRC, Anthony Towns [a rappelé][towns uncoordinated]
+    ses points de la semaine dernière, "si nous ne supprimons pas l'option
+    `mempoolfullrbf` de la 24.0, nous allons vers un déploiement non coordonné."
 
-        Greg Sanders était [circonspect][sanders doubt], "la question est:
-        Est-ce que 5 %+s constitueront une variable ? Je ne pense pas."
-        Ce à quoi Towns [a répondu][towns uasf]: "[UASF][topic soft fork activation]
-        `uacomment` a démontré qu'il était facile d'obtenir ~11% d'une
-        variable en seulement  quelques semaines".
+    Greg Sanders était [circonspect][sanders doubt], "la question est:
+    Est-ce que 5 %+s constitueront une variable ? Je ne pense pas."
+    Ce à quoi Towns [a répondu][towns uasf]: "[UASF][topic soft fork activation]
+    `uacomment` a démontré qu'il était facile d'obtenir ~11% d'une
+    variable en seulement  quelques semaines".
 
-    - *Devrait être une option :* Martin Zumsande [a dit][zumsande option]
-      dans la discussion IRC, "Je pense que si un nombre significatif
-      d'opérateurs de nœuds et de mineurs veulent une politique spécifique,
-      cela ne devrait pas être aux devs de leur dire 'vous ne pouvez pas
-      avoir cela maintenant'. Les devs peuvent et doivent donner une
-      recommandation (en choisissant  l'option par défaut), mais fournir des options
-      aux utilisateurs informés ne devraient jamais être un problème."
+  - *Devrait être une option :* Martin Zumsande [a dit][zumsande option]
+    dans la discussion IRC, "Je pense que si un nombre significatif
+    d'opérateurs de nœuds et de mineurs veulent une politique spécifique,
+    cela ne devrait pas être aux devs de leur dire 'vous ne pouvez pas
+    avoir cela maintenant'. Les devs peuvent et doivent donner une
+    recommandation (en choisissant  l'option par défaut), mais fournir des options
+    aux utilisateurs informés ne devraient jamais être un problème."
 
-    Au moment où nous écrivons ces lignes, aucune résolution claire n'a
-    été trouvée. L'option `mempoolfullrbf` est toujours incluse dans les
-    release candidate de la prochaine version de Bitcoin Core 24.0 et
-    Optech recommande que tout service dépendant des transactions zero conf
-    évalue soigneusement les risques, en commençant peut-être par lire
-    les courriels dont le lien figure à l'adresse suivante
-    [de la newsletter de la semaine dernière][news222 rbf].
+  Au moment où nous écrivons ces lignes, aucune résolution claire n'a
+  été trouvée. L'option `mempoolfullrbf` est toujours incluse dans les
+  release candidate de la prochaine version de Bitcoin Core 24.0 et
+  Optech recommande que tout service dépendant des transactions zero conf
+  évalue soigneusement les risques, en commençant peut-être par lire
+  les courriels dont le lien figure à l'adresse suivante
+  [de la newsletter de la semaine dernière][news222 rbf].
 
 - **CoreDev.tech transcription :** Avant la conférence Atlanta Bitcoin
   (TabConf), 40 développeurs environ ont participé à un événement
@@ -107,88 +107,88 @@ logiciels d'infrastructure Bitcoin.
   des réunions de l'événement ont été fournies par Bryan Bishop.
   Les principales discussions portaient sur :
 
-    - [le chiffrement du transport][p2p encryption]: une conversation sur
-      la récente mise à jour de la proposition de [protocole de transport
-      chiffré version 2] [topic v2 p2p transport] (voir la [Newsletter #222]
-      [news222 bip324]). Ce protocole rendrait plus difficile pour les
-      espions du réseau de savoir quelle adresse IP est à l'origine d'une
-      transaction et améliorerait la capacité à détecter et à résister aux
-      attaques de type "man-in-the-middle" entre des nœuds honnêtes.
+  - [le chiffrement du transport][p2p encryption]: une conversation sur
+    la récente mise à jour de la proposition de [protocole de transport
+    chiffré version 2] [topic v2 p2p transport] (voir la [Newsletter #222]
+    [news222 bip324]). Ce protocole rendrait plus difficile pour les
+    espions du réseau de savoir quelle adresse IP est à l'origine d'une
+    transaction et améliorerait la capacité à détecter et à résister aux
+    attaques de type "man-in-the-middle" entre des nœuds honnêtes.
 
-        La discussion couvre plusieurs des considérations relatives à la
-        conception du protocole et est une lecture recommandée pour tous ceux
-        qui se demandent pourquoi les auteurs du protocole ont pris certaines
-        décisions. Elle examine également la relation avec le protocole
-        d'authentification antérieur [countersign][topic countersign].
+    La discussion couvre plusieurs des considérations relatives à la
+    conception du protocole et est une lecture recommandée pour tous ceux
+    qui se demandent pourquoi les auteurs du protocole ont pris certaines
+    décisions. Elle examine également la relation avec le protocole
+    d'authentification antérieur [countersign][topic countersign].
 
-    - [les frais][fee chat]: une large discussion sur les frais de transaction
-    dans le passé, le présent et l'avenir. Parmi les sujets abordés, citons
-    les questions sur la raison pour laquelle les blocs sont apparemment toujours
-    presque pleins alors que le mempool ne l'est pas, le débat sur le temps dont
-    nous disposons pour qu'un marché de frais significatif se développe avant que
-    nous devions [nous inquiéter][topic fee sniping] de la stabilité à long terme
-    de Bitcoin, et les solutions que nous pourrions déployer si nous pensions
-    qu'un problème existait.
+  - [les frais][fee chat]: une large discussion sur les frais de transaction
+  dans le passé, le présent et l'avenir. Parmi les sujets abordés, citons
+  les questions sur la raison pour laquelle les blocs sont apparemment toujours
+  presque pleins alors que le mempool ne l'est pas, le débat sur le temps dont
+  nous disposons pour qu'un marché de frais significatif se développe avant que
+  nous devions [nous inquiéter][topic fee sniping] de la stabilité à long terme
+  de Bitcoin, et les solutions que nous pourrions déployer si nous pensions
+  qu'un problème existait.
 
-    - [FROST][]: une présentation sur le schéma de signature à seuil FROST.
-    La transcription documente plusieurs excellentes questions techniques sur
-    les choix cryptographiques dans la conception et peut être une lecture
-    utile pour toute personne intéressée à en savoir plus sur FROST en
-    particulier ou sur la conception de protocoles cryptographiques en général.
-    Voir aussi la transcription de TabConf sur [ROAST][], un autre schéma
-    de signature à seuil pour Bitcoin.
+  - [FROST][]: une présentation sur le schéma de signature à seuil FROST.
+  La transcription documente plusieurs excellentes questions techniques sur
+  les choix cryptographiques dans la conception et peut être une lecture
+  utile pour toute personne intéressée à en savoir plus sur FROST en
+  particulier ou sur la conception de protocoles cryptographiques en général.
+  Voir aussi la transcription de TabConf sur [ROAST][], un autre schéma
+  de signature à seuil pour Bitcoin.
 
-    - [GitHub][github chat]: une discussion sur le transfert de l'hébergement git
-    du projet Bitcoin Core de GitHub vers une autre solution de gestion des
-    problèmes et des relations publiques, ainsi que sur les avantages de continuer
-    à utiliser GitHub.
+  - [GitHub][github chat]: une discussion sur le transfert de l'hébergement git
+  du projet Bitcoin Core de GitHub vers une autre solution de gestion des
+  problèmes et des relations publiques, ainsi que sur les avantages de continuer
+  à utiliser GitHub.
 
-    - [les spécifications prévisibles dans les BIP][hacspec chat]: dans le cadre
-    d'une discussion sur l'utilisation du langage de spécification [hacspec][]
-    dans les BIPs pour fournir des spécifications qui sont prouvées correctes.
-    Voir aussi la [transcript][hacspec preso] pour un exposé connexe pendant
-    la TabConf.
+  - [les spécifications prévisibles dans les BIP][hacspec chat]: dans le cadre
+  d'une discussion sur l'utilisation du langage de spécification [hacspec][]
+  dans les BIPs pour fournir des spécifications qui sont prouvées correctes.
+  Voir aussi la [transcript][hacspec preso] pour un exposé connexe pendant
+  la TabConf.
 
-    - [les relais de transactions en paquet v3][package relay chat]: la
-    transcription d'une présentation sur les propositions visant à activer
-    le [relais de transactions en paquet][topic package relay] et à utiliser de
-    nouvelles règles de relais de transaction pour éliminer les
-    [attaques de pinning][topic transaction pinning] dans certains cas.
+  - [les relais de transactions en paquet v3][package relay chat]: la
+  transcription d'une présentation sur les propositions visant à activer
+  le [relais de transactions en paquet][topic package relay] et à utiliser de
+  nouvelles règles de relais de transaction pour éliminer les
+  [attaques de pinning][topic transaction pinning] dans certains cas.
 
-    - [Stratum v2][stratum v2 chat]: une discussion qui a commencée avec l'annonce
-    d'un nouveau projet open-source mettant en œuvre le protocole de minage groupé
-    Stratum version 2. Les améliorations apportées par Stratum v2 comprennent des
-    connexions authentifiées et la possibilité pour les mineurs individuels (ceux
-    qui disposent d'un équipement minier local) de choisir les transactions à
-    exploiter (plutôt que le pool qui choisit les transactions). En plus de nombreux
-    autres avantages, il a été mentionné dans la discussion que le fait de permettre
-    aux mineurs individuels de choisir leur propre modèle de bloc pourrait devenir
-    très souhaitable pour les pools qui s'inquiètent de voir les gouvernements imposer
-    les transactions à extraire, comme dans la controverse de [Tornado Cash][]. La
-    plupart des discussions se sont concentrées sur les changements qui devraient être
-    apportés à Bitcoin Core pour permettre le support natif de Stratum v2. Voir
-    également la transcription de la TabConf sur [Braidpool][braidpool chat], un
-    protocole de minage en pool décentralisé.
+  - [Stratum v2][stratum v2 chat]: une discussion qui a commencée avec l'annonce
+  d'un nouveau projet open-source mettant en œuvre le protocole de minage groupé
+  Stratum version 2. Les améliorations apportées par Stratum v2 comprennent des
+  connexions authentifiées et la possibilité pour les mineurs individuels (ceux
+  qui disposent d'un équipement minier local) de choisir les transactions à
+  exploiter (plutôt que le pool qui choisit les transactions). En plus de nombreux
+  autres avantages, il a été mentionné dans la discussion que le fait de permettre
+  aux mineurs individuels de choisir leur propre modèle de bloc pourrait devenir
+  très souhaitable pour les pools qui s'inquiètent de voir les gouvernements imposer
+  les transactions à extraire, comme dans la controverse de [Tornado Cash][]. La
+  plupart des discussions se sont concentrées sur les changements qui devraient être
+  apportés à Bitcoin Core pour permettre le support natif de Stratum v2. Voir
+  également la transcription de la TabConf sur [Braidpool][braidpool chat], un
+  protocole de minage en pool décentralisé.
 
-    - [Merging][merging chat] est une discussion sur les stratégies permettant d'obtenir
+  - [Merging][merging chat] est une discussion sur les stratégies permettant d'obtenir
     une révision du code dans le cadre du projet Bitcoin Core, bien que de nombreuses
     suggestions s'appliquent également à d'autres projets. Idées incluses :
 
-        - Diviser les grands changements en plusieurs petites PR
+    - Diviser les grands changements en plusieurs petites PR
 
-        - Faire en sorte que les évaluateurs comprennent facilement l'objectif final.
-        Pour chaque PR, cela signifie rédiger une description motivante de la PR.
-        Pour les changements qui sont effectués de manière incrémentielle, utilisez les
-        suivis de problèmes, les tableaux de projet et motivez les remaniements en ouvrant
-        également les PR qui utiliseront le code remanié pour atteindre un objectif
-        souhaitable.
+    - Faire en sorte que les évaluateurs comprennent facilement l'objectif final.
+    Pour chaque PR, cela signifie rédiger une description motivante de la PR.
+    Pour les changements qui sont effectués de manière incrémentielle, utilisez les
+    suivis de problèmes, les tableaux de projet et motivez les remaniements en ouvrant
+    également les PR qui utiliseront le code remanié pour atteindre un objectif
+    souhaitable.
 
-        - Produire des explications de haut niveau pour des projets de longue haleine
-        décrivant l'état antérieur du projet, l'état d'avancement actuel, ce qu'il faudra
-        faire pour atteindre le résultat et les avantages qu'en tireront les utilisateurs.
+    - Produire des explications de haut niveau pour des projets de longue haleine
+    décrivant l'état antérieur du projet, l'état d'avancement actuel, ce qu'il faudra
+    faire pour atteindre le résultat et les avantages qu'en tireront les utilisateurs.
 
-        - Former des groupes de travail avec ceux qui sont intéressés par les mêmes
-        projets ou sous-systèmes de codes
+    - Former des groupes de travail avec ceux qui sont intéressés par les mêmes
+    projets ou sous-systèmes de codes
 
 - **Ephemeral anchors:** Greg Sanders a poursuivi la discussion précédente
 sur le relais des transactions v3 (voir [Newsletter #220][news220 ephemeral])
@@ -200,19 +200,19 @@ consensus dans une transaction enfant. La transaction parentale non confirmée
 à frais nuls ne serait relayée et exploitée par Bitcoin Core que si elle faisait
 partie d'un paquet de transactions contenant également la transaction enfant
 dépensant la sortie OP_TRUE.  Cela n'affecterait que la politique de Bitcoin Core;
-aucune règle de consensus ne serait modifiée.
+  aucune règle de consensus ne serait modifiée.
 
-    Les avantages décrits dans cette proposition sont qu'elle élimine le besoin
-    d'utiliser des timelocks relatifs d'un seul bloc (appelés `1 OP_CSV` d'après
-    le code utilisé pour les activer) pour empêcher l'[épinglage de la transaction]
-    [topic transaction pinning] et permet à quiconque de faire payer la transaction
-    parente (similaire à une proposition antérieure de [parrainage de la transaction]
-    [topic fee sponsorship]).
+  Les avantages décrits dans cette proposition sont qu'elle élimine le besoin
+  d'utiliser des timelocks relatifs d'un seul bloc (appelés `1 OP_CSV` d'après
+  le code utilisé pour les activer) pour empêcher l'[épinglage de la transaction]
+  [topic transaction pinning] et permet à quiconque de faire payer la transaction
+  parente (similaire à une proposition antérieure de [parrainage de la transaction]
+  [topic fee sponsorship]).
 
-    Jeremy Rubin [a soutenu][rubin ephemeral] a soutenu la proposition mais a noté
-    qu'elle ne fonctionne pas pour les contrats qui ne peuvent pas utiliser les
-    transactions v3. Plusieurs autres développeurs ont également discuté du concept,
-    tous semblent le trouver attrayant au moment de la rédaction de cet article.
+  Jeremy Rubin [a soutenu][rubin ephemeral] a soutenu la proposition mais a noté
+  qu'elle ne fonctionne pas pour les contrats qui ne peuvent pas utiliser les
+  transactions v3. Plusieurs autres développeurs ont également discuté du concept,
+  tous semblent le trouver attrayant au moment de la rédaction de cet article.
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 

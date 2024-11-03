@@ -33,46 +33,46 @@ projects.
   0.19.0.  Topics discussed this week on both the [mailing list][jager
   anchor] and the [BOLTs repository][bolts #688] included:
 
-    - Whether both the party unilaterally closing the channel (the
-      "local" party) and the other party ("remote") should experience
-      the same delay before being able to claim their funds, or whether
-      they should each be able to negotiate during the channel creation
-      process for the delay duration to use when they're the remote
-      party.  Currently, only the local party is delayed and there's
-      concern that this may result in some people trying to manipulate
-      the other party to close the channel so that the manipulator will
-      receive their funds faster.
+  - Whether both the party unilaterally closing the channel (the
+    "local" party) and the other party ("remote") should experience
+    the same delay before being able to claim their funds, or whether
+    they should each be able to negotiate during the channel creation
+    process for the delay duration to use when they're the remote
+    party.  Currently, only the local party is delayed and there's
+    concern that this may result in some people trying to manipulate
+    the other party to close the channel so that the manipulator will
+    receive their funds faster.
 
-    - What script to use for the anchor outputs.  It was previously
-      proposed that the script should contain a clause that allows
-      anyone to spend it after a suitable delay in order to prevent
-      polluting the UTXO set with many small-value outputs.  However,
-      this is complicated by the script possibly needing to contain a
-      unique pubkey which won't be known by third parties, preventing
-      them from being able to independently generate the witness script
-      necessary to spend the P2WSH output.
+  - What script to use for the anchor outputs.  It was previously
+    proposed that the script should contain a clause that allows
+    anyone to spend it after a suitable delay in order to prevent
+    polluting the UTXO set with many small-value outputs.  However,
+    this is complicated by the script possibly needing to contain a
+    unique pubkey which won't be known by third parties, preventing
+    them from being able to independently generate the witness script
+    necessary to spend the P2WSH output.
 
-    - What amount of bitcoin value to use for the anchor outputs.  The
-      person who initiates channel opening is responsible for paying
-      this amount (as they are responsible for paying all fees in the
-      current protocol), so they would probably like to keep it
-      low---but the amount must be greater than most node's minimum
-      output amount ("dust limit").  There was discussion about whether
-      or not this should be a configurable amount.
+  - What amount of bitcoin value to use for the anchor outputs.  The
+    person who initiates channel opening is responsible for paying
+    this amount (as they are responsible for paying all fees in the
+    current protocol), so they would probably like to keep it
+    low---but the amount must be greater than most node's minimum
+    output amount ("dust limit").  There was discussion about whether
+    or not this should be a configurable amount.
 
-    - Whether each LN payment should pay different public keys (using
-      pubkey tweaking).  Removing key tweaking was proposed to reduce
-      the amount of state tracking necessary, but a concern was raised that
-      this would make the channel state too deterministic.  This could
-      allow a watchtower that received a series of encrypted breach
-      remedy transactions from one side of a channel to be able to
-      decrypt not just the needed breach remedy transaction but all
-      other breach remedy transactions from that channel---allowing the
-      watchtower to reconstruct the amounts and hash locks used for each
-      payment in that channel, significantly reducing privacy.
+  - Whether each LN payment should pay different public keys (using
+    pubkey tweaking).  Removing key tweaking was proposed to reduce
+    the amount of state tracking necessary, but a concern was raised that
+    this would make the channel state too deterministic.  This could
+    allow a watchtower that received a series of encrypted breach
+    remedy transactions from one side of a channel to be able to
+    decrypt not just the needed breach remedy transaction but all
+    other breach remedy transactions from that channel---allowing the
+    watchtower to reconstruct the amounts and hash locks used for each
+    payment in that channel, significantly reducing privacy.
 
-    Discussion remains ongoing as solutions to the above concerns are
-    suggested and the proposal receives additional review.
+  Discussion remains ongoing as solutions to the above concerns are
+  suggested and the proposal receives additional review.
 
 - **Signaling support for address relay:** full nodes share the IP
   addresses of other full nodes they've heard about with their peers
@@ -82,24 +82,24 @@ projects.
   form of centralized peer discovery and so `addr` messages sent to those
   clients are wasted bandwidth.
 
-    Gleb Naumenko sent an [email][naumenko addr relay] to the
-    Bitcoin-Dev mailing list suggesting that nodes and clients should
-    signal to their peers whether or not they want to participate in
-    address relay.  This will avoid wasting bandwidth on clients that
-    don't want the addresses and can make it easier to determine the
-    consequences of certain network behavior related to address relay.
+  Gleb Naumenko sent an [email][naumenko addr relay] to the
+  Bitcoin-Dev mailing list suggesting that nodes and clients should
+  signal to their peers whether or not they want to participate in
+  address relay.  This will avoid wasting bandwidth on clients that
+  don't want the addresses and can make it easier to determine the
+  consequences of certain network behavior related to address relay.
 
-    Two methods are proposed for allowing nodes to indicate whether or
-    not they want to participate in address relay---a per-node method
-    and a per-connection method.  The per-node method could easily build
-    on top of work already being done for addrv2 messages (see [Newsletter
-    #37][news37 addrv2]), but it would be less flexible than the
-    per-connection method.  In particular, the per-connection method
-    could allow a node to dedicate some connections to transaction relay
-    and other connections to address relay, producing possible privacy
-    advantages.  Naumenko's email requests feedback on which method would
-    be preferred by implementers of both full nodes and lightweight
-    clients.
+  Two methods are proposed for allowing nodes to indicate whether or
+  not they want to participate in address relay---a per-node method
+  and a per-connection method.  The per-node method could easily build
+  on top of work already being done for addrv2 messages (see [Newsletter
+  #37][news37 addrv2]), but it would be less flexible than the
+  per-connection method.  In particular, the per-connection method
+  could allow a node to dedicate some connections to transaction relay
+  and other connections to address relay, producing possible privacy
+  advantages.  Naumenko's email requests feedback on which method would
+  be preferred by implementers of both full nodes and lightweight
+  clients.
 
 ## Notable code and documentation changes
 
@@ -150,3 +150,4 @@ projects.
 [naumenko addr relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017428.html
 [news70 simplified commitments]: /en/newsletters/2019/10/30/#ln-simplified-commitments
 [jager anchor]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002264.html
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

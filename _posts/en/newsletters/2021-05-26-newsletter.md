@@ -112,14 +112,14 @@ answers posted since our last update.*
 - [Why are there more than two transaction outputs in a coinbase transaction?]({{bse}}105831)
   Andrew Chow explains some common outputs in a coinbase transaction:
 
-    * a single miner block reward payment
+  * a single miner block reward payment
 
-    * multiple payments, as with a mining pool paying miners
+  * multiple payments, as with a mining pool paying miners
 
-    * [BIP141][bip141 commitment]'s `OP_RETURN` witness commitment
+  * [BIP141][bip141 commitment]'s `OP_RETURN` witness commitment
 
-    * additional `OP_RETURN` commitments, as in [merge mining][se 273 merge
-      mining] and other protocols
+  * additional `OP_RETURN` commitments, as in [merge mining][se 273 merge
+    mining] and other protocols
 
 - [fundrawtransaction - what is it?]({{bse}}105811)
   Pieter Wuille illustrates what the `fundrawtransaction` RPC does by providing
@@ -242,7 +242,7 @@ BOLTs][bolts repo].*
 [newsletters]: /en/newsletters/
 [blog posts]: /en/blog/
 [bech32]: /en/bech32-sending-support/
-[interactive taproot workshop]: /en/schorr-taproot-workshop/
+[interactive taproot workshop]: /en/schnorr-taproot-workshop/
 [japanese]: /ja/publications/
 [spanish]: /es/publications/
 [topics index]: /en/topics/
@@ -255,7 +255,7 @@ BOLTs][bolts repo].*
 [shigeyuki azuchi]: https://github.com/azuchi
 [akio nakamura]: https://github.com/AkioNak
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [info]: mailto:info@bitcoinops.org
 [bip141 commitment]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure
 [se 273 merge mining]: https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work

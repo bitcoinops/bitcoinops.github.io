@@ -32,33 +32,33 @@ Bitcoin les plus répandus.
   transactions non confirmées (à l'époque, Bitcoin Core ne sauvegardait pas
   son mempool dans un stockage persistant lors de l'arrêt).
 
-    Cependant, diverses techniques de réduction de la confidentialité ont été
-    développées par la suite pour faciliter la détermination du nœud qui a diffusé
-    la première transaction en abusant du message `mempool` ou de la possibilité
-    d'utiliser `getdata` pour demander n'importe quelle transaction du mempool.
-    Pour améliorer la [confidentialité de l'origine de la transaction][topic
-    transaction origin privacy], Bitcoin Core a ensuite supprimé la possibilité
-    de demander des transactions non annoncées à d'autres nœuds et a limité le
-    message `mempool` à une utilisation avec des [filtres de bloom de transaction][topic
-    transaction bloom filtering] (comme spécifié dans [BIP37][]) pour les clients légers.
-    Plus tard encore, Bitcoin Core a désactivé par défaut le support du filtre bloom
-    (voir [Bulletin #56][news56 bloom]), ne l'autorisant qu'à être utilisé avec des
-    pairs configurés avec l'option `-whitelist` (voir [Bulletin #60][news60 bloom]);
-    cela désactive également par défaut le `mempool` de BIP35.
+  Cependant, diverses techniques de réduction de la confidentialité ont été
+  développées par la suite pour faciliter la détermination du nœud qui a diffusé
+  la première transaction en abusant du message `mempool` ou de la possibilité
+  d'utiliser `getdata` pour demander n'importe quelle transaction du mempool.
+  Pour améliorer la [confidentialité de l'origine de la transaction][topic
+  transaction origin privacy], Bitcoin Core a ensuite supprimé la possibilité
+  de demander des transactions non annoncées à d'autres nœuds et a limité le
+  message `mempool` à une utilisation avec des [filtres de bloom de transaction][topic
+  transaction bloom filtering] (comme spécifié dans [BIP37][]) pour les clients légers.
+  Plus tard encore, Bitcoin Core a désactivé par défaut le support du filtre bloom
+  (voir [Bulletin #56][news56 bloom]), ne l'autorisant qu'à être utilisé avec des
+  pairs configurés avec l'option `-whitelist` (voir [Bulletin #60][news60 bloom]);
+  cela désactive également par défaut le `mempool` de BIP35.
 
-    Le PR de Clark sur Bitcoin Core a reçu le soutien du projet, bien que certains
-    partisans pensent que les filtres Bloom de BIP37 devraient être supprimés en
-    premier. Sur la liste de diffusion, la seule [réponse][harding mempool] à ce
-    jour note que les clients légers qui se connectent à leur propre nœud de confiance
-    peuvent actuellement utiliser BIP35 et BIP37 pour se renseigner sur les transactions
-    non confirmées d'une manière beaucoup plus efficace en termes de bande passante que
-    toute autre méthode actuellement facilement disponible dans Bitcoin Core. Le
-    répondant a suggéré que Bitcoin Core fournisse un mécanisme alternatif avant de
-    supprimer l'interface actuelle.
+  Le PR de Clark sur Bitcoin Core a reçu le soutien du projet, bien que certains
+  partisans pensent que les filtres Bloom de BIP37 devraient être supprimés en
+  premier. Sur la liste de diffusion, la seule [réponse][harding mempool] à ce
+  jour note que les clients légers qui se connectent à leur propre nœud de confiance
+  peuvent actuellement utiliser BIP35 et BIP37 pour se renseigner sur les transactions
+  non confirmées d'une manière beaucoup plus efficace en termes de bande passante que
+  toute autre méthode actuellement facilement disponible dans Bitcoin Core. Le
+  répondant a suggéré que Bitcoin Core fournisse un mécanisme alternatif avant de
+  supprimer l'interface actuelle.
 
-    Toute personne utilisant le message BIP35 `mempool` à quelque fin que ce soit est
-    priée de nous faire part de ses commentaires. Vous pouvez répondre soit au message
-    de la liste de diffusion, soit au PR dont le lien figure ci-dessus.
+  Toute personne utilisant le message BIP35 `mempool` à quelque fin que ce soit est
+  priée de nous faire part de ses commentaires. Vous pouvez répondre soit au message
+  de la liste de diffusion, soit au PR dont le lien figure ci-dessus.
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 

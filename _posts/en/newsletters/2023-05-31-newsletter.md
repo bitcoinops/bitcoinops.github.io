@@ -26,124 +26,124 @@ notable changes to popular Bitcoin infrastructure software.
   timelock or instantly and trustlessly transfer them offchain to the
   counterparty before the timelock expires.
 
-    Like any Bitcoin user, the counterparty can broadcast an onchain
-    transaction at any time that spends only their own funds.  If an
-    output from that transaction is used as an input to the offchain
-    transaction that transfers funds from the owner to the counterparty,
-    it makes the offchain transfer invalid unless the onchain
-    transaction confirms within a reasonable amount of time.  In this
-    case, the counterparty won't sign their onchain transaction until
-    they receive the signed offchain transaction.  This provides a
-    trustless single-hop, single-direction atomic transfer protocol from
-    the owner to the counterparty.  Keceli describes three uses for this
-    atomic transfer protocol:
+  Like any Bitcoin user, the counterparty can broadcast an onchain
+  transaction at any time that spends only their own funds.  If an
+  output from that transaction is used as an input to the offchain
+  transaction that transfers funds from the owner to the counterparty,
+  it makes the offchain transfer invalid unless the onchain
+  transaction confirms within a reasonable amount of time.  In this
+  case, the counterparty won't sign their onchain transaction until
+  they receive the signed offchain transaction.  This provides a
+  trustless single-hop, single-direction atomic transfer protocol from
+  the owner to the counterparty.  Keceli describes three uses for this
+  atomic transfer protocol:
 
-    - *Mixing coins:* several users within the joinpool can all, with
-      the cooperation of the counterparty, make atomic swaps of their
-      current offchain values for an equivalent amount of new offchain
-      values.  This can be performed quickly because a failure of the
-      onchain component will simply unwind the swap, returning all funds
-      to where they started.  A blinding protocol similar to those used
-      by some existing [coinjoin][topic coinjoin] implementations can
-      prevent any user or the counterparty from determining which user
-      ended up with which bitcoins.
+  - *Mixing coins:* several users within the joinpool can all, with
+    the cooperation of the counterparty, make atomic swaps of their
+    current offchain values for an equivalent amount of new offchain
+    values.  This can be performed quickly because a failure of the
+    onchain component will simply unwind the swap, returning all funds
+    to where they started.  A blinding protocol similar to those used
+    by some existing [coinjoin][topic coinjoin] implementations can
+    prevent any user or the counterparty from determining which user
+    ended up with which bitcoins.
 
-    - *Making internal transfers:* one user can transfer their offchain
-      funds to another user with the same counterparty.  The atomicity
-      assures that either the receiver will get their money or the
-      spender receives a refund.  For a receiver that doesn't trust both
-      the spender and the counterparty, they will need to wait for as
-      many confirmations as they would for a regular onchain
-      transaction.
+  - *Making internal transfers:* one user can transfer their offchain
+    funds to another user with the same counterparty.  The atomicity
+    assures that either the receiver will get their money or the
+    spender receives a refund.  For a receiver that doesn't trust both
+    the spender and the counterparty, they will need to wait for as
+    many confirmations as they would for a regular onchain
+    transaction.
 
-        Keceli and a commentator [link][keceli reply0] to
-        [previous][harding reply0] research describing how a zero-conf
-        payment can be made uneconomical to double spend by pairing it
-        with a fidelity bond that can be claimed by any miner who
-        observed both versions of the double-spent transaction.  That
-        might allow receivers to accept a payment within seconds even if
-        they didn't trust any other individual parties.
+    Keceli and a commentator [link][keceli reply0] to
+    [previous][harding reply0] research describing how a zero-conf
+    payment can be made uneconomical to double spend by pairing it
+    with a fidelity bond that can be claimed by any miner who
+    observed both versions of the double-spent transaction.  That
+    might allow receivers to accept a payment within seconds even if
+    they didn't trust any other individual parties.
 
-    - *Paying LN invoices:* a user can quickly commit to paying
-      their offchain funds to the counterparty if that counterparty
-      knows a secret, allowing the user to pay LN-style [HTLC][topic
-      HTLC] invoices through the counterparty.
+  - *Paying LN invoices:* a user can quickly commit to paying
+    their offchain funds to the counterparty if that counterparty
+    knows a secret, allowing the user to pay LN-style [HTLC][topic
+    HTLC] invoices through the counterparty.
 
-        Similar to the problem with internal transfers, a user can't
-        receive funds trustlessly, so they shouldn't reveal a secret
-        before a payment has received a sufficient number of
-        confirmations or it is secured by a fidelity bond that they find
-        persuasive.
+    Similar to the problem with internal transfers, a user can't
+    receive funds trustlessly, so they shouldn't reveal a secret
+    before a payment has received a sufficient number of
+    confirmations or it is secured by a fidelity bond that they find
+    persuasive.
 
-    Keceli says the base protocol can be implemented on Bitcoin today
-    using frequent interaction between members of the joinpool.  If a
-    [covenant][topic covenants] proposal like
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify],
-    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout], or [OP_CAT +
-    OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] is implemented,
-    members of the joinpool will only need to interact with the
-    counterparty when participating in a coinjoin, making a payment, or
-    refreshing the timelock on their offchain funds.
+  Keceli says the base protocol can be implemented on Bitcoin today
+  using frequent interaction between members of the joinpool.  If a
+  [covenant][topic covenants] proposal like
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify],
+  [SIGHASH_ANYPREVOUT][topic sighash_anyprevout], or [OP_CAT +
+  OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] is implemented,
+  members of the joinpool will only need to interact with the
+  counterparty when participating in a coinjoin, making a payment, or
+  refreshing the timelock on their offchain funds.
 
-    Every coinjoin, payment, or refresh requires the publication of a
-    commitment in an onchain transaction, although an essentially
-    unlimited number of operations can all be bundled in the same
-    small transaction.  To allow operations to complete quickly, Keceli
-    suggests an onchain transaction be made approximately every five
-    seconds so users don't need to wait longer than that amount of time.
-    Each transaction is separate---it's not possible to combine the
-    commitments from multiple transactions using [replace-by-fee][topic
-    rbf] without breaking the commitments or requiring participation
-    from all the users involved in previous rounds---so over 6.3 million
-    transactions might need to be confirmed each year for one
-    counterparty, although the individual transactions are fairly small.
+  Every coinjoin, payment, or refresh requires the publication of a
+  commitment in an onchain transaction, although an essentially
+  unlimited number of operations can all be bundled in the same
+  small transaction.  To allow operations to complete quickly, Keceli
+  suggests an onchain transaction be made approximately every five
+  seconds so users don't need to wait longer than that amount of time.
+  Each transaction is separate---it's not possible to combine the
+  commitments from multiple transactions using [replace-by-fee][topic
+  rbf] without breaking the commitments or requiring participation
+  from all the users involved in previous rounds---so over 6.3 million
+  transactions might need to be confirmed each year for one
+  counterparty, although the individual transactions are fairly small.
 
-    Comments about the protocol posted to the mailing list included:
+  Comments about the protocol posted to the mailing list included:
 
-    - *A request for more documentation:* at [least][stone reply] two
-      [respondents][dryja reply] requested additional documentation
-      about how the system worked, finding it hard to analyze given the
-      high-level description provided to the mailing list.  Keceli has
-      since begun publishing [draft specifications][arc specs].
+  - *A request for more documentation:* at [least][stone reply] two
+    [respondents][dryja reply] requested additional documentation
+    about how the system worked, finding it hard to analyze given the
+    high-level description provided to the mailing list.  Keceli has
+    since begun publishing [draft specifications][arc specs].
 
-    - *Concern that receiving is slow compared to LN:* [several][dryja
-      reply] people [noted][harding reply1] that, in the initial design,
-      it's not possible to trustlessly receive a payment from the
-      joinpool (either offchain or onchain) without waiting for a
-      sufficient number of confirmations.  That can take hours, whereas
-      many LN payments currently complete in less than a second. Even
-      with fidelity bonds, LN would be faster on average.
+  - *Concern that receiving is slow compared to LN:* [several][dryja
+    reply] people [noted][harding reply1] that, in the initial design,
+    it's not possible to trustlessly receive a payment from the
+    joinpool (either offchain or onchain) without waiting for a
+    sufficient number of confirmations.  That can take hours, whereas
+    many LN payments currently complete in less than a second. Even
+    with fidelity bonds, LN would be faster on average.
 
-    - *Concern that the onchain footprint is high:* one [reply][jk_14]
-      noted that, at one transaction every five seconds, about 200 such
-      counterparties would consume the entire space of every block.
-      Another [reply][harding reply0] assumed that each of the
-      counterparty's onchain transactions will be roughly the size of an LN
-      channel open or cooperative close transaction, so a counterparty
-      with a million users that creates 6.3 million onchain
-      transactions per year would use an equivalent amount of space to
-      each of those users opening or closing an average of 6.3 channels
-      each per year; thus, LN's onchain costs could be lower than using
-      the counterparty until it had reached massive scale.
+  - *Concern that the onchain footprint is high:* one [reply][jk_14]
+    noted that, at one transaction every five seconds, about 200 such
+    counterparties would consume the entire space of every block.
+    Another [reply][harding reply0] assumed that each of the
+    counterparty's onchain transactions will be roughly the size of an LN
+    channel open or cooperative close transaction, so a counterparty
+    with a million users that creates 6.3 million onchain
+    transactions per year would use an equivalent amount of space to
+    each of those users opening or closing an average of 6.3 channels
+    each per year; thus, LN's onchain costs could be lower than using
+    the counterparty until it had reached massive scale.
 
-    - *Concern about a large hot wallet and the capital costs:* a
-      [reply][harding reply0] considered that the counterparty would
-      need to keep an amount of bitcoin on hand (probably in a hot
-      wallet) equal to the amount the users might spend in the near
-      future.  After a spend, the counterparty would not receive their
-      bitcoins back for a period of up to 28 days under the current
-      design proposal.  If the counterparty charged a low interest rate
-      of 1.5% per year on their capital, that would be an equivalent
-      charge of 0.125% on the amount of every transaction performed with
-      the involvement of the counterparty (including coinjoins, internal
-      transfers, and LN payments).  By comparison, [public
-      statistics][1ml stats] available at the time of writing (collected
-      by 1ML) indicate a median feerate per hop for LN transfers of 0.0026%,
-      almost 50 times lower.
+  - *Concern about a large hot wallet and the capital costs:* a
+    [reply][harding reply0] considered that the counterparty would
+    need to keep an amount of bitcoin on hand (probably in a hot
+    wallet) equal to the amount the users might spend in the near
+    future.  After a spend, the counterparty would not receive their
+    bitcoins back for a period of up to 28 days under the current
+    design proposal.  If the counterparty charged a low interest rate
+    of 1.5% per year on their capital, that would be an equivalent
+    charge of 0.125% on the amount of every transaction performed with
+    the involvement of the counterparty (including coinjoins, internal
+    transfers, and LN payments).  By comparison, [public
+    statistics][1ml stats] available at the time of writing (collected
+    by 1ML) indicate a median feerate per hop for LN transfers of 0.0026%,
+    almost 50 times lower.
 
-    Several comments on the list were also excited for the proposal and
-    were looking forward to seeing Keceli and others explore the design
-    space of managed joinpools. {% assign timestamp="1:46" %}
+  Several comments on the list were also excited for the proposal and
+  were looking forward to seeing Keceli and others explore the design
+  space of managed joinpools. {% assign timestamp="1:46" %}
 
 - **Transaction relay over Nostr:** Joost Jager [posted][jager nostr] to
   the Bitcoin-Dev mailing list to request feedback on the idea by Ben
@@ -151,29 +151,29 @@ notable changes to popular Bitcoin infrastructure software.
   might not propagate well on the P2P network of Bitcoin full nodes that
   provide relay services.
 
-    In particular, Jager examines the possibility of using Nostr for the
-    relay of transaction packages, such as relaying an ancestor
-    transaction with a feerate below the minimum accepted value by
-    bundling it with a descendant that pays a high enough fee to
-    compensate for its ancestor's deficiency.  This makes [CPFP][topic
-    cpfp] fee bumping more reliable and efficient, and it's a feature
-    called [package relay][topic package relay] that Bitcoin Core
-    developers have been working on implementing for the Bitcoin P2P
-    network.  A challenge in reviewing the design and implementation of
-    package relay is ensuring that the new relay methods don't create
-    any new denial-of-service (DoS) vulnerabilities against individual
-    nodes and miners (or the network in general).
+  In particular, Jager examines the possibility of using Nostr for the
+  relay of transaction packages, such as relaying an ancestor
+  transaction with a feerate below the minimum accepted value by
+  bundling it with a descendant that pays a high enough fee to
+  compensate for its ancestor's deficiency.  This makes [CPFP][topic
+  cpfp] fee bumping more reliable and efficient, and it's a feature
+  called [package relay][topic package relay] that Bitcoin Core
+  developers have been working on implementing for the Bitcoin P2P
+  network.  A challenge in reviewing the design and implementation of
+  package relay is ensuring that the new relay methods don't create
+  any new denial-of-service (DoS) vulnerabilities against individual
+  nodes and miners (or the network in general).
 
-    Jager notes that Nostr relays have the ability to easily use
-    alternative types of DoS protection from the P2P relay network, such
-    as requiring a small payment to relay a transaction.  He suggests that can make
-    it practical to allow package relay, or relay of other alternative
-    transactions, even if a malicious transaction or package could lead
-    to wasting a small amount of node resources.
+  Jager notes that Nostr relays have the ability to easily use
+  alternative types of DoS protection from the P2P relay network, such
+  as requiring a small payment to relay a transaction.  He suggests that can make
+  it practical to allow package relay, or relay of other alternative
+  transactions, even if a malicious transaction or package could lead
+  to wasting a small amount of node resources.
 
-    Included in Jager's post was a link to a [video][jager video] of him
-    demonstrating the feature.  His post had only received a few replies
-    as of this writing, although they were all positive. {% assign timestamp="40:38" %}
+  Included in Jager's post was a link to a [video][jager video] of him
+  demonstrating the feature.  His post had only received a few replies
+  as of this writing, although they were all positive. {% assign timestamp="40:38" %}
 
 ## Waiting for confirmation #3: Bidding for block space
 
@@ -288,12 +288,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   it's not successful, their balance will return to the previous amount,
   which will have been above the reserve.
 
-    This is a mitigation for a *stuck funds problem*, which occurs when
-    a payment would cause the party responsible for paying the fees to
-    need to pay more value than their current available balance, even
-    when they might be the party receiving the payment.  For previous
-    discussion of this problem, see [Newsletter #85][news85 stuck
-    funds]. {% assign timestamp="1:39:20" %}
+  This is a mitigation for a *stuck funds problem*, which occurs when
+  a payment would cause the party responsible for paying the fees to
+  need to pay more value than their current available balance, even
+  when they might be the party receiving the payment.  For previous
+  discussion of this problem, see [Newsletter #85][news85 stuck
+  funds]. {% assign timestamp="1:39:20" %}
 
 - [BTCPay Server 97e7e][] begins setting the [BIP78][] `minfeerate`
   (minimum feerate) parameter for [payjoin][topic payjoin] payments.
@@ -311,11 +311,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   taproot] and [tapscript][topic tapscript] (respectively, BIPs
   [341][bip341] and [342][bip342]) use 32-byte messages.
 
-    The additions describe how to effectively use arbitrary length
-    messages, recommends how to use a hashed tag prefix, and provides
-    recommendations for increasing safety when using the same key in
-    different domains (such as signing transactions or signing
-    plain-text messages). {% assign timestamp="1:43:15" %}
+  The additions describe how to effectively use arbitrary length
+  messages, recommends how to use a hashed tag prefix, and provides
+  recommendations for increasing safety when using the same key in
+  different domains (such as signing transactions or signing
+  plain-text messages). {% assign timestamp="1:43:15" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27469,27626,25796,2668,2666,4689,1446" %}

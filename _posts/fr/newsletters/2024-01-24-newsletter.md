@@ -27,17 +27,17 @@ changements apportés aux principaux logiciels d'infrastructure Bitcoin.
   [converti][] d'un entier signé en un entier non signé, garantissant que les règles s'appliquent à toute transaction qui n'est pas de
   version 0 ou 1.
 
-    Gögge a découvert que btcd n'implémentait pas cette conversion d'entiers signés en entiers non signés, il était donc possible de
-    construire une transaction avec un numéro de version négatif que Bitcoin Core exigerait de suivre les règles de BIP68 mais pas btcd.
-    Dans ce cas, un nœud pourrait rejeter la transaction (et tout bloc qui la contient) et l'autre nœud pourrait l'accepter (et son
-    bloc), ce qui entraînerait une division de la chaîne. Un attaquant pourrait utiliser cela pour tromper l'opérateur d'un nœud btcd
-    (ou un logiciel connecté à un nœud btcd) en acceptant des bitcoins invalides.
+  Gögge a découvert que btcd n'implémentait pas cette conversion d'entiers signés en entiers non signés, il était donc possible de
+  construire une transaction avec un numéro de version négatif que Bitcoin Core exigerait de suivre les règles de BIP68 mais pas btcd.
+  Dans ce cas, un nœud pourrait rejeter la transaction (et tout bloc qui la contient) et l'autre nœud pourrait l'accepter (et son
+  bloc), ce qui entraînerait une division de la chaîne. Un attaquant pourrait utiliser cela pour tromper l'opérateur d'un nœud btcd
+  (ou un logiciel connecté à un nœud btcd) en acceptant des bitcoins invalides.
 
-    Le bogue a été divulgué en privé aux mainteneurs de btcd qui l'ont corrigé dans la récente version 0.24.0. Il est fortement
-    recommandé à tous ceux qui utilisent btcd pour l'application du consensus de procéder à la mise à niveau. De plus, Chris Stewart a
-    [répondu][stewart bitcoin-s] au fil de discussion de Delving Bitcoin avec un correctif pour la même défaillance dans la bibliothèque
-    bitcoin-s. Les auteurs de tout code pouvant être utilisé pour valider les verrous temporels relatifs de BIP68 sont invités à vérifier
-    le code pour la même faille.
+  Le bogue a été divulgué en privé aux mainteneurs de btcd qui l'ont corrigé dans la récente version 0.24.0. Il est fortement
+  recommandé à tous ceux qui utilisent btcd pour l'application du consensus de procéder à la mise à niveau. De plus, Chris Stewart a
+  [répondu][stewart bitcoin-s] au fil de discussion de Delving Bitcoin avec un correctif pour la même défaillance dans la bibliothèque
+  bitcoin-s. Les auteurs de tout code pouvant être utilisé pour valider les verrous temporels relatifs de BIP68 sont invités à vérifier
+  le code pour la même faille.
 
 - **Changements proposés à LN pour le relais v3 et les ancres éphémères :** Bastien Teinturier a [publié][teinturier v3] sur Delving
   Bitcoin pour décrire les changements qu'il estime devoir être apportés à la spécification LN afin de tirer parti efficacement du
@@ -84,24 +84,24 @@ changements apportés aux principaux logiciels d'infrastructure Bitcoin.
   un nouveau référentiel de spécifications de protocole, _Bitcoin Inquisition Numbers And Names Authority_ ([BINANA][binana repo]).
   Quatre spécifications sont disponibles dans le référentiel au moment de la rédaction :
 
-    - [BIN24-1][] `OP_CAT` par Ethan Heilman et Armin Sabouri. Voir la description de leur proposition de soft fork dans le
-      [Bulletin #274][news274 cat].
+  - [BIN24-1][] `OP_CAT` par Ethan Heilman et Armin Sabouri. Voir la description de leur proposition de soft fork dans le
+    [Bulletin #274][news274 cat].
 
-    - [BIN24-2][] Déploiements hérétiques par Anthony Towns, décrivant l'utilisation de [Bitcoin Inquisition][bitcoin inquisition repo]
-      pour les propositions de soft forks et autres modifications sur le [signet][topic signet] par défaut. Voir la description détaillée
-      dans le [Bulletin #232][news232 inqui].
+  - [BIN24-2][] Déploiements hérétiques par Anthony Towns, décrivant l'utilisation de [Bitcoin Inquisition][bitcoin inquisition repo]
+    pour les propositions de soft forks et autres modifications sur le [signet][topic signet] par défaut. Voir la description détaillée
+    dans le [Bulletin #232][news232 inqui].
 
-    - [BIN24-3][] `OP_CHECKSIGFROMSTACK` par Brandon Black, spécifiant cette [idée longtemps proposée][topic OP_CHECKSIGFROMSTACK].
-      Voir la proposition de Black dans [le bulletin de la semaine dernière][news285 lnhance] pour inclure cet opcode dans le bundle
-      de soft fork LNHANCE.
+  - [BIN24-3][] `OP_CHECKSIGFROMSTACK` par Brandon Black, spécifiant cette [idée longtemps proposée][topic OP_CHECKSIGFROMSTACK].
+    Voir la proposition de Black dans [le bulletin de la semaine dernière][news285 lnhance] pour inclure cet opcode dans le bundle
+    de soft fork LNHANCE.
 
-    - [BIN24-4][] `OP_INTERNALKEY` par Brandon Black, spécifiant un opcode pour récupérer la clé interne du taproot à partir de
-      l'interpréteur de script. Cela a également été décrit dans le bulletin de la semaine dernière comme faisant partie du bundle de
-      soft fork LNHANCE.
+  - [BIN24-4][] `OP_INTERNALKEY` par Brandon Black, spécifiant un opcode pour récupérer la clé interne du taproot à partir de
+    l'interpréteur de script. Cela a également été décrit dans le bulletin de la semaine dernière comme faisant partie du bundle de
+    soft fork LNHANCE.
 
- Bitcoin Optech a ajouté le référentiel BINANA à la liste des sources de documentation que nous surveillons pour les mises à jour, ce
- qui inclut également les BIP, BOLT et BLIP. Les futures mises à jour peuvent être trouvées dans la section des "principaux changements
- de code et de documentation".
+Bitcoin Optech a ajouté le référentiel BINANA à la liste des sources de documentation que nous surveillons pour les mises à jour, ce
+qui inclut également les BIP, BOLT et BLIP. Les futures mises à jour peuvent être trouvées dans la section des "principaux changements
+de code et de documentation".
 
 ## Modifications apportées aux services et aux logiciels clients
 

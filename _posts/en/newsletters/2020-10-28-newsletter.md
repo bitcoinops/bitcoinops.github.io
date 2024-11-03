@@ -29,106 +29,110 @@ Bitcoin infrastructure software.
   posts to the Lightning-Dev mailing list by both LND co-maintainer
   Conner Fromknecht and vulnerability discoverer Antoine Riard.
 
-    - **[CVE-2020-26895][] acceptance of non-standard signatures:** in
-      some cases, LND would accept a transaction signature that Bitcoin
-      Core would not relay or mine by default.  When the transaction
-      containing the unrelayable signature fails to confirm, a timelock
-      eventually expires and the attacker is able to steal funds they
-      previously paid to the vulnerable user.
+  - **[CVE-2020-26895][] acceptance of non-standard signatures:** in
+    some cases, LND would accept a transaction signature that Bitcoin
+    Core would not relay or mine by default.  When the transaction
+    containing the unrelayable signature fails to confirm, a timelock
+    eventually expires and the attacker is able to steal funds they
+    previously paid to the vulnerable user.
 
-        This is a consequence of the *S* value in Bitcoin ECDSA
-        signatures being equally valid on either the high side or low
-        side of Bitcoin's elliptical curve (which, like all such curves,
-        is symmetric).  Before segwit, inverting an *S*
-        value---something anyone can do to any valid
-        signature[^invert]---would change a transaction's txid, a
-        problem known as *transaction malleability*.  After a major
-        Bitcoin exchange lost funds by not properly handling mutated
-        txids, [Bitcoin Core 0.11.1][] was released with a policy not to
-        relay or mine transactions with *S* values on the high side of
-        the curve---requiring anyone who wanted to exploit this form of
-        malleability find someone to mine blocks with alternative software.  Even though segwit
-        eliminates this type of txid malleability for transactions that
-        spend only segwit UTXOs, the policy is still enforced for all
-        transactions in order to prevent wasted bandwidth and other
-        annoyances.
+    This is a consequence of the *S* value in Bitcoin ECDSA
+    signatures being equally valid on either the high side or low
+    side of Bitcoin's elliptical curve (which, like all such curves,
+    is symmetric).  Before segwit, inverting an *S*
+    value---something anyone can do to any valid
+    signature[^invert]---would change a transaction's txid, a
+    problem known as *transaction malleability*.  After a major
+    Bitcoin exchange lost funds by not properly handling mutated
+    txids, [Bitcoin Core 0.11.1][] was released with a policy not to
+    relay or mine transactions with *S* values on the high side of
+    the curve---requiring anyone who wanted to exploit this form of
+    malleability find someone to mine blocks with alternative software.  Even though segwit
+    eliminates this type of txid malleability for transactions that
+    spend only segwit UTXOs, the policy is still enforced for all
+    transactions in order to prevent wasted bandwidth and other
+    annoyances.
 
-        During LND's development, two different methods of signature
-        handling were implemented.  In most cases, LND properly ensured
-        it only sent low-*S* signatures that could be relayed.  However,
-        Riard discovered that LND would accept a high-*S* value for a
-        successful payment, ultimately allowing an attacker to steal
-        back a previously settled payment.
+    During LND's development, two different methods of signature
+    handling were implemented.  In most cases, LND properly ensured
+    it only sent low-*S* signatures that could be relayed.  However,
+    Riard discovered that LND would accept a high-*S* value for a
+    successful payment, ultimately allowing an attacker to steal
+    back a previously settled payment.
 
-        Because anyone can invert any valid signature, LND was patched
-        to allow it to transform any non-relayable high-*S* signature
-        into a relayable low-*S* signature.  This means any LND node that
-        was attacked but which upgrades before the successful payment
-        expires should be able to keep its funds.  [BOLTs #807][]
-        proposes to update the LN specification to automatically close
-        channels where either party attempts to use a high-*S* signature
-        (which no modern Bitcoin software should create), which
-        Fromknecht notes LND plans to implement.
+    Because anyone can invert any valid signature, LND was patched
+    to allow it to transform any non-relayable high-*S* signature
+    into a relayable low-*S* signature.  This means any LND node that
+    was attacked but which upgrades before the successful payment
+    expires should be able to keep its funds.  [BOLTs #807][]
+    proposes to update the LN specification to automatically close
+    channels where either party attempts to use a high-*S* signature
+    (which no modern Bitcoin software should create), which
+    Fromknecht notes LND plans to implement.
 
-        For details, see the emails from [Riard][riard5] and
-        [Fromknecht][fromknecht5].
+    For details, see the emails from [Riard][riard5] and
+    [Fromknecht][fromknecht5].
 
-    - **[CVE-2020-26896][] improper preimage revelation**: LND could be
-      tricked into revealing an [HTLC][topic htlc] preimage before
-      receiving an expected payment, allowing the payment to be stolen
-      by one of the nodes that was supposed to route it.
+  - **[CVE-2020-26896][] improper preimage revelation**: LND could be
+    tricked into revealing an [HTLC][topic htlc] preimage before
+    receiving an expected payment, allowing the payment to be stolen
+    by one of the nodes that was supposed to route it.
 
-        Imagine Alice wants to pay Bob by routing a payment through
-        Mallory:
+    Imagine Alice wants to pay Bob by routing a payment through
+    Mallory:
 
-            Alice → Mallory → Bob
-              (planned route)
+    ```
+    Alice → Mallory → Bob
+      (planned route)
+    ```
 
-        Alice starts by giving Mallory an HTLC.  Mallory can't claim
-        this money yet because she doesn't know the preimage for its
-        hashlock.  However, Mallory does guess that Bob is the intended
-        receiver---so he knows the preimage.  Instead of routing
-        Alice's payment to Bob, Mallory creates a new minimal payment
-        secured by the same hashlock and routes it back to herself
-        through Bob and a third-party (Carol).
+    Alice starts by giving Mallory an HTLC.  Mallory can't claim
+    this money yet because she doesn't know the preimage for its
+    hashlock.  However, Mallory does guess that Bob is the intended
+    receiver---so he knows the preimage.  Instead of routing
+    Alice's payment to Bob, Mallory creates a new minimal payment
+    secured by the same hashlock and routes it back to herself
+    through Bob and a third-party (Carol).
 
-            Mallory → Bob → Carol → Mallory
-                (second payment route)
+    ```
+    Mallory → Bob → Carol → Mallory
+        (second payment route)
+    ```
 
-        Even though Mallory created this second payment, she can't
-        complete it because she doesn't know the preimage for the
-        hashlock.  Instead, she closes her channel with Bob with the
-        second payment still pending.  Because of a bug in LND, Bob will
-        use the preimage meant for the payment from Alice to settle the
-        payment routed through his node by Mallory.  This earns Bob the
-        routing fees Mallory paid, but it also reveals the preimage to
-        the pending HTLC Alice tried routing through Mallory.  With the
-        preimage, Mallory is able to claim the full amount of that
-        payment without routing any part of it to Bob.  Additionally,
-        Alice receives cryptographic proof of payment even though
-        the payment was actually stolen.
+    Even though Mallory created this second payment, she can't
+    complete it because she doesn't know the preimage for the
+    hashlock.  Instead, she closes her channel with Bob with the
+    second payment still pending.  Because of a bug in LND, Bob will
+    use the preimage meant for the payment from Alice to settle the
+    payment routed through his node by Mallory.  This earns Bob the
+    routing fees Mallory paid, but it also reveals the preimage to
+    the pending HTLC Alice tried routing through Mallory.  With the
+    preimage, Mallory is able to claim the full amount of that
+    payment without routing any part of it to Bob.  Additionally,
+    Alice receives cryptographic proof of payment even though
+    the payment was actually stolen.
 
-        LND's design tried to prevent this problem by storing payment
-        preimages separately from routing preimages, but some code was
-        added that queried both databases, creating the bug that Riard
-        discovered.
+    LND's design tried to prevent this problem by storing payment
+    preimages separately from routing preimages, but some code was
+    added that queried both databases, creating the bug that Riard
+    discovered.
 
-        Both Fromknecht and Riard note that the attack could've been
-        prevented if the [payment secrets feature][] added to all LN
-        implementations almost a year ago had become mandatory
-        for all invoices.  This feature was designed to prevent
-        privacy-reducing probing, particularly of [multipath
-        payments][topic multipath payments],  by preventing a receiver
-        from disclosing a payment preimage unless a payment contained a
-        nonce included in the invoice.  If it had been enforced in this
-        case, Mallory wouldn't know the payment secret and so couldn't
-        have induced Bob to disclose it even with the buggy code.
-        Fromknecht notes that, "the upcoming v0.12.0-beta release of lnd
-        is likely to make payment secrets required by default.  We would
-        welcome other implementations to do the same."
+    Both Fromknecht and Riard note that the attack could've been
+    prevented if the [payment secrets feature][] added to all LN
+    implementations almost a year ago had become mandatory
+    for all invoices.  This feature was designed to prevent
+    privacy-reducing probing, particularly of [multipath
+    payments][topic multipath payments],  by preventing a receiver
+    from disclosing a payment preimage unless a payment contained a
+    nonce included in the invoice.  If it had been enforced in this
+    case, Mallory wouldn't know the payment secret and so couldn't
+    have induced Bob to disclose it even with the buggy code.
+    Fromknecht notes that, "the upcoming v0.12.0-beta release of lnd
+    is likely to make payment secrets required by default.  We would
+    welcome other implementations to do the same."
 
-        A second set of emails from [Riard][riard6] and
-        [Fromknecht][fromknecht6] describe this issue in detail.
+    A second set of emails from [Riard][riard6] and
+    [Fromknecht][fromknecht6] describe this issue in detail.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

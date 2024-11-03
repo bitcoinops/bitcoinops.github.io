@@ -1,8 +1,8 @@
 {% comment %}<!--
   Using dump-multisigs from img/posts/2021-07-multisig-fungibility.gnuplot
 
-    for i in `seq 691039 692039` ; do dump-multisigs $i ; done > RESULTS
-    echo $( grep of RESULTS | wc -l ) / $( cat RESULTS | wc -l ) | bc -l
+  for i in `seq 691039 692039` ; do dump-multisigs $i ; done > RESULTS
+  echo $( grep of RESULTS | wc -l ) / $( cat RESULTS | wc -l ) | bc -l
 -->{% endcomment %}
 この記事を書く前に受信した1,000ブロックでは、全トランザクションインプットの11%がマルチシグopcodeを含んでいました。
 このようなトランザクションを作成するユーザーやサービスの多くが、
@@ -58,6 +58,7 @@ Bitcoin用に設計された3つのSchnorrベースのマルチシグスキー�
 すべての署名者は使用するプロトコルに同意しなければならないため、
 多くの実装が同じプロトコルを選択するというネットワーク効果が発生する可能性があります。
 MuSigの提案の著者は、比較的シンプルで実用性の高いMuSig2の選択を[提案しています][nick ruffing blog]。
+
 <!-- "[...] there is no reason to prefer MuSig1 over MuSig2
 [...] we expect that most applications will choose MuSig2 over MuSig-DN
 [...]" -->

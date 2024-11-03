@@ -80,11 +80,11 @@ réputation."
     de full RBF le paramètre par défaut, mais permettrait aux opérateurs de nœuds de modifier leurs paramètres pour choisir
     opt-in RBF à la place.
 
-      Peter Todd soutient que le changement est justifié car (selon ses mesures, qui ont été remises en question par Towns), un
-      pourcentage significatif de la puissance de hachage minière suit apparemment les règles de full RBF et il y a suffisamment
-      de nœuds de relais qui ont activé full RBF pour permettre aux remplacements non signalés d'atteindre ces mineurs. Il dit
-      également qu'il n'est pas au courant d'entreprises actives qui acceptent actuellement des transactions non confirmées onchain
-      comme paiement final.
+    Peter Todd soutient que le changement est justifié car (selon ses mesures, qui ont été remises en question par Towns), un
+    pourcentage significatif de la puissance de hachage minière suit apparemment les règles de full RBF et il y a suffisamment
+    de nœuds de relais qui ont activé full RBF pour permettre aux remplacements non signalés d'atteindre ces mineurs. Il dit
+    également qu'il n'est pas au courant d'entreprises actives qui acceptent actuellement des transactions non confirmées onchain
+    comme paiement final.
 
 - *Suppression des limites spécifiques sur les sorties `OP_RETURN` :* le [deuxième fil][todd opr] et la [PR][bitcoin core #28130]
   proposent de supprimer les limites spécifiques de Bitcoin Core sur les transactions qui ont un script de sortie qui commence

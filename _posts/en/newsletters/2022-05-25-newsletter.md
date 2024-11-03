@@ -74,66 +74,66 @@ software.
   simple transaction selection algorithm such as that provided by
   Bitcoin Core.
 
-    MEV has become a particular concern in Ethereum and related
-    protocols where the use of public onchain trading protocols allows
-    miners to frontrun trades.  For example, imagine the following two
-    unconfirmed transactions both being available to mine in the next
-    block:
+  MEV has become a particular concern in Ethereum and related
+  protocols where the use of public onchain trading protocols allows
+  miners to frontrun trades.  For example, imagine the following two
+  unconfirmed transactions both being available to mine in the next
+  block:
 
-    * Alice sells asset *x* to Bob for 1 ETH
-    * Bob sells *x* to Carol for 2 ETH (Bob earns 1 ETH in profit)
+  * Alice sells asset *x* to Bob for 1 ETH
+  * Bob sells *x* to Carol for 2 ETH (Bob earns 1 ETH in profit)
 
-    <br>If those two exchanges are conducted using a public onchain trading
-    protocol, a miner can cut Bob out of the transaction.  For example:
+  <br>If those two exchanges are conducted using a public onchain trading
+  protocol, a miner can cut Bob out of the transaction.  For example:
 
-    * Alice sells asset *x* to Miner Mallory for 1 ETH
-    * Miner Mallory sells *x* to Carol for 2 ETH (Mallory earns 1 ETH in
-      profit; Bob earns nothing)
+  * Alice sells asset *x* to Miner Mallory for 1 ETH
+  * Miner Mallory sells *x* to Carol for 2 ETH (Mallory earns 1 ETH in
+    profit; Bob earns nothing)
 
-    <br>Obviously this is a problem for Bob, but it also creates several
-    problems for the network.  The first problem is that miners need to
-    find opportunities for MEV.  That's trivial in the simple example
-    above, but more complex opportunities can only be found through
-    computationally intensive algorithms.
-    The amount of value that can be found by a certain amount of computation is
-    independent of each miner's hashrate, so two miners can join
-    together to halve the amount of money they need to spend on computation
-    for capturing MEV---producing an economy of scale that
-    encourages centralization of mining and which can leave the network
-    more vulnerable to transaction censorship.  A [report][bitmex
-    flashbots] by BitMex Research claims that a centralized service that
-    brokers these types of MEV transactions was being used by 90% of
-    Ethereum hashrate at the time the report was written.  To obtain the
-    maximum returns, that service could be changed to discourage mining
-    competing transactions, effectively giving it the power to
-    censor transactions if it was used by 100% of miners (or if it was
-    used by more than 50% of miners and allowed to engage in block chain
-    reorganization).
+  <br>Obviously this is a problem for Bob, but it also creates several
+  problems for the network.  The first problem is that miners need to
+  find opportunities for MEV.  That's trivial in the simple example
+  above, but more complex opportunities can only be found through
+  computationally intensive algorithms.
+  The amount of value that can be found by a certain amount of computation is
+  independent of each miner's hashrate, so two miners can join
+  together to halve the amount of money they need to spend on computation
+  for capturing MEV---producing an economy of scale that
+  encourages centralization of mining and which can leave the network
+  more vulnerable to transaction censorship.  A [report][bitmex
+  flashbots] by BitMex Research claims that a centralized service that
+  brokers these types of MEV transactions was being used by 90% of
+  Ethereum hashrate at the time the report was written.  To obtain the
+  maximum returns, that service could be changed to discourage mining
+  competing transactions, effectively giving it the power to
+  censor transactions if it was used by 100% of miners (or if it was
+  used by more than 50% of miners and allowed to engage in block chain
+  reorganization).
 
-    A second problem is that, even if Mallory does produce a block
-    capturing the 1 ETH of MEV, any other miner can produce an
-    alternative block capturing the MEV for themselves.  This pressure to re-mine blocks
-    exacerbates [fee sniping][topic fee sniping] pressure, which at its
-    worst can make confirmation scores useless for determining
-    transaction finality, eliminating the ability to use proof of work
-    to secure the network.
+  A second problem is that, even if Mallory does produce a block
+  capturing the 1 ETH of MEV, any other miner can produce an
+  alternative block capturing the MEV for themselves.  This pressure to re-mine blocks
+  exacerbates [fee sniping][topic fee sniping] pressure, which at its
+  worst can make confirmation scores useless for determining
+  transaction finality, eliminating the ability to use proof of work
+  to secure the network.
 
-    Bitcoin's use of UTXOs rather than Ethereum-style accounts makes it
-    harder to implement the types of protocols that are particularly
-    vulnerable to MEV.  However, in the CTV meeting, Jeremy Rubin noted
-    that recursive covenants make it easier to implement account-based
-    systems on top of Bitcoin UTXOs and so increase the chance that MEV
-    will become a significant future concern for Bitcoin protocol
-    design.
+  Bitcoin's use of UTXOs rather than Ethereum-style accounts makes it
+  harder to implement the types of protocols that are particularly
+  vulnerable to MEV.  However, in the CTV meeting, Jeremy Rubin noted
+  that recursive covenants make it easier to implement account-based
+  systems on top of Bitcoin UTXOs and so increase the chance that MEV
+  will become a significant future concern for Bitcoin protocol
+  design.
 
-    Replying to /dev/fd0's summary for the mailing list, developer
-    ZmnSCPxj suggested that we only adopt mechanisms that encourage
-    protocols designed for maximum onchain privacy.  That privacy would
-    deny miners the information necessary to perform MEV.  As of the
-    writing of this newsletter, no further comments had been received on
-    the mailing list but, from mentions on Twitter and elsewhere, we see
-    evidence that developers are increasingly considering the
-    impact of MEV on Bitcoin protocol design.
+  Replying to /dev/fd0's summary for the mailing list, developer
+  ZmnSCPxj suggested that we only adopt mechanisms that encourage
+  protocols designed for maximum onchain privacy.  That privacy would
+  deny miners the information necessary to perform MEV.  As of the
+  writing of this newsletter, no further comments had been received on
+  the mailing list but, from mentions on Twitter and elsewhere, we see
+  evidence that developers are increasingly considering the
+  impact of MEV on Bitcoin protocol design.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

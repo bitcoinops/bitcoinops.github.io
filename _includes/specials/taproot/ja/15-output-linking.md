@@ -45,7 +45,9 @@ Taprootの[プライバシー上の利点][p4tr benefits]を無視すべきだ�
   Taprootの他の驚くべきプライバシー上の利点もすべて得られます。
 
 {% include linkers/issues.md issues="12119" %}
+
 {% endauto_anchor %}
+
 [p4tr benefits]: /ja/preparing-for-taproot/#マルチシグの概要
 [p4tr safety]: /ja/preparing-for-taproot/#なぜ待つ必要があるのか？
 [coindesk experts]: https://www.coindesk.com/tech/2020/12/01/privacy-concerns-over-bitcoin-upgrade-taproot-are-a-non-issue-experts-say/

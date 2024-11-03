@@ -31,27 +31,27 @@ Bitcoin.
     proportionnellement inférieure aux grands mineurs, le minage se centralisera naturellement, ce qui réduira le nombre d'entités à
     compromettre pour censurer les transactions à confirmer.
 
-      Les protocoles utilisés activement tels que [LN-Penalty avec ancres][topic anchor outputs] (LN-Ancres), [DLC][dlc cpfp] et
-      [validation côté client][topic client-side validation] permettent à au moins certaines de leurs transactions onchain de payer des
-      frais _exogènes_, c'est-à-dire que les frais payés par le cœur de la transaction peuvent être augmentés avec des frais payés à
-      l'aide d'un ou plusieurs UTXO indépendants. Par exemple, dans LN-Ancres, la transaction d'engagement comprend une sortie pour
-      chaque partie permettant d'augmenter les frais à l'aide de [CPFP][topic cpfp] (la transaction enfant dépensant un UTXO
-      supplémentaire) et les transactions HTLC-Success et HTLC-Failure (transactions HTLC-X) sont partiellement signées à l'aide de
-      `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` afin de pouvoir être agrégées dans une seule transaction avec au moins une entrée
-      supplémentaire pour payer les frais (l'entrée supplémentaire étant un UTXO séparé).
+    Les protocoles utilisés activement tels que [LN-Penalty avec ancres][topic anchor outputs] (LN-Ancres), [DLC][dlc cpfp] et
+    [validation côté client][topic client-side validation] permettent à au moins certaines de leurs transactions onchain de payer des
+    frais _exogènes_, c'est-à-dire que les frais payés par le cœur de la transaction peuvent être augmentés avec des frais payés à
+    l'aide d'un ou plusieurs UTXO indépendants. Par exemple, dans LN-Ancres, la transaction d'engagement comprend une sortie pour
+    chaque partie permettant d'augmenter les frais à l'aide de [CPFP][topic cpfp] (la transaction enfant dépensant un UTXO
+    supplémentaire) et les transactions HTLC-Success et HTLC-Failure (transactions HTLC-X) sont partiellement signées à l'aide de
+    `SIGHASH_SINGLE|SIGHASH_ANYONECANPAY` afin de pouvoir être agrégées dans une seule transaction avec au moins une entrée
+    supplémentaire pour payer les frais (l'entrée supplémentaire étant un UTXO séparé).
 
-      En se concentrant sur une version de réflexion de LN utilisant [P2TR][topic taproot] et la proposition des ancres éphémères,
-      Peter Todd soutient que sa dépendance aux frais exogènes incite fortement à payer des frais hors bande. En particulier, la
-      fermeture unilatérale d'un canal sans paiements en attente ([HTLC][topic htlc]) permettrait à un grand mineur acceptant des frais
-      hors bande d'inclure deux fois plus de transactions de fermeture dans un bloc qu'un mineur plus petit qui n'accepte que des frais
-      en bande payés via le CPFP. Le grand mineur pourrait encourager cela de manière rentable en offrant une remise modérée aux
-      utilisateurs payant hors bande. Peter Todd considère cela comme une menace pour la décentralisation.
+    En se concentrant sur une version de réflexion de LN utilisant [P2TR][topic taproot] et la proposition des ancres éphémères,
+    Peter Todd soutient que sa dépendance aux frais exogènes incite fortement à payer des frais hors bande. En particulier, la
+    fermeture unilatérale d'un canal sans paiements en attente ([HTLC][topic htlc]) permettrait à un grand mineur acceptant des frais
+    hors bande d'inclure deux fois plus de transactions de fermeture dans un bloc qu'un mineur plus petit qui n'accepte que des frais
+    en bande payés via le CPFP. Le grand mineur pourrait encourager cela de manière rentable en offrant une remise modérée aux
+    utilisateurs payant hors bande. Peter Todd considère cela comme une menace pour la décentralisation.
 
-      Le message suggère également que certaines utilisations de frais exogènes dans les protocoles sont acceptables, donc la
-      préoccupation pourrait être liée à la fréquence de leur utilisation attendue et à la différence de taille relative entre leur
-      utilisation et le paiement hors bande. En d'autres termes, des fermetures unilatérales fréquentes sans paiements en attente avec
-      un surcoût de 100% seraient probablement considérées comme plus risquées que des fermetures unilatérales potentiellement plus
-      rares avec 20 HTLC en attente où le surcoût est inférieur à 10%.
+    Le message suggère également que certaines utilisations de frais exogènes dans les protocoles sont acceptables, donc la
+    préoccupation pourrait être liée à la fréquence de leur utilisation attendue et à la différence de taille relative entre leur
+    utilisation et le paiement hors bande. En d'autres termes, des fermetures unilatérales fréquentes sans paiements en attente avec
+    un surcoût de 100% seraient probablement considérées comme plus risquées que des fermetures unilatérales potentiellement plus
+    rares avec 20 HTLC en attente où le surcoût est inférieur à 10%.
 
 - **Implications des frais exogènes sur la sécurité, la scalabilité et les coûts :** Le message de Peter Todd note également que les
   conceptions existantes telles que [LN-Anchors][topic anchor outputs] et les conceptions futures qui utilisent [des ancres
@@ -83,37 +83,37 @@ Bitcoin.
   temps de signature augmenterait de 5 millisecondes. Bastien Teinturier a fait référence à une [discussion précédente][bolts #1036]
   qu'il avait lancée sur une approche similaire.
 
-   Bien que l'idée puisse fonctionner dans certaines situations, le message de Peter Todd souligne que les frais endogènes avec des
-   augmentations de frais incrémentielles pré-signées ne sont pas un remplacement satisfaisant pour les frais exogènes dans tous les cas.
-   Lorsque les délais requis pour la pré-signature des transactions d'engagement contenant plusieurs HTLC sont multipliés par les
-   plusieurs sauts sur un chemin de paiement typique, les [délais][harding delays] peuvent facilement dépasser une seconde et, du moins
-   en théorie, s'étendre à des délais de plus d'une minute. Peter Todd note que le délai pourrait être réduit à un temps
-   approximativement constant si l'opcode [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] proposé (APO) était disponible.
+  Bien que l'idée puisse fonctionner dans certaines situations, le message de Peter Todd souligne que les frais endogènes avec des
+  augmentations de frais incrémentielles pré-signées ne sont pas un remplacement satisfaisant pour les frais exogènes dans tous les cas.
+  Lorsque les délais requis pour la pré-signature des transactions d'engagement contenant plusieurs HTLC sont multipliés par les
+  plusieurs sauts sur un chemin de paiement typique, les [délais][harding delays] peuvent facilement dépasser une seconde et, du moins
+  en théorie, s'étendre à des délais de plus d'une minute. Peter Todd note que le délai pourrait être réduit à un temps
+  approximativement constant si l'opcode [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] proposé (APO) était disponible.
 
-   Même si le délai était constant à 5 millisecondes, il est [possible][harding stuckless] que cela puisse conduire à ce que les nœuds
-   de transfert utilisant des frais endogènes gagnent moins de frais de transfert que les nœuds utilisant des frais exogènes en raison
-   des effets anticipés des payeurs LN effectuant éventuellement des [surpaiements redondants][topic redundant overpayments] qui
-   récompenseront économiquement un transfert plus rapide par rapport à un transfert plus lent, même lorsque la différence est de
-   l'ordre des millisecondes.
+  Même si le délai était constant à 5 millisecondes, il est [possible][harding stuckless] que cela puisse conduire à ce que les nœuds
+  de transfert utilisant des frais endogènes gagnent moins de frais de transfert que les nœuds utilisant des frais exogènes en raison
+  des effets anticipés des payeurs LN effectuant éventuellement des [surpaiements redondants][topic redundant overpayments] qui
+  récompenseront économiquement un transfert plus rapide par rapport à un transfert plus lent, même lorsque la différence est de
+  l'ordre des millisecondes.
 
-   Un défi supplémentaire consisterait à utiliser les mêmes frais endogènes pour les transactions HTLC-Success et HTLC-Timeout
-   pré-signées (transactions HTLC-X). Même avec APO, cela impliquerait naïvement de créer <i>n<sup>2</sup></i> signatures, bien que
-   Peter Todd note que le nombre de signatures pourrait être réduit en supposant que les transactions HTLC-X paieraient un taux de frais
-   similaire à la transaction d'engagement.
+  Un défi supplémentaire consisterait à utiliser les mêmes frais endogènes pour les transactions HTLC-Success et HTLC-Timeout
+  pré-signées (transactions HTLC-X). Même avec APO, cela impliquerait naïvement de créer <i>n<sup>2</sup></i> signatures, bien que
+  Peter Todd note que le nombre de signatures pourrait être réduit en supposant que les transactions HTLC-X paieraient un taux de frais
+  similaire à la transaction d'engagement.
 
-   <!-- En utilisant notre calculateur de transactions, 1 entrée, 22 sorties pour 20 HTLC représente 1014 vbytes ;
+  <p><!-- En utilisant notre calculateur de transactions, 1 entrée, 22 sorties pour 20 HTLC représente 1014 vbytes ;
         BOLT3 "poids attendu" donne un poids HTLC-X dans le pire des cas de 705
         = 176,25 vbytes, multiplié par 20 donne 3525, plus 1014 donne 4539. Multipliez
-        tout par 1 000 s/vb pour obtenir le total en sats -->
+        tout par 1 000 s/vb pour obtenir le total en sats --></p>
 
-   Il y a eu un [débat non résolu][teinturier fees] sur le fait de savoir si les frais endogènes entraîneraient une quantité excessive
-   de capital réservée aux frais. Par exemple, si Alice signe des variantes de frais de 10 s/vb à 1 000 s/vb, elle doit prendre des
-   décisions en fonction de la possibilité que son homologue Bob mette la variante de 1 000 s/vb on-chain, même si elle ne paierait pas
-   ce taux de frais elle-même. Cela signifie qu'elle ne peut pas accepter les paiements de Bob où il dépense l'argent dont il aurait
-   besoin pour la variante de 1 000 s/vb. Par exemple, une transaction d'engagement avec 20 HTLCs ferait 1 million de sats temporairement
-   non dépensables (450 USD au moment de l'écriture). Si des frais endogènes étaient également utilisés pour les transactions HTLC-X,
-   le montant temporairement non dépensable pour 20 HTLCs serait plus proche de 4,5 millions de sats (2 050 USD). En comparaison, si Bob
-   devait payer ses frais de manière exogène, alors Alice n'aurait pas besoin de réduire la capacité du canal pour sa sécurité.
+  Il y a eu un [débat non résolu][teinturier fees] sur le fait de savoir si les frais endogènes entraîneraient une quantité excessive
+  de capital réservée aux frais. Par exemple, si Alice signe des variantes de frais de 10 s/vb à 1 000 s/vb, elle doit prendre des
+  décisions en fonction de la possibilité que son homologue Bob mette la variante de 1 000 s/vb on-chain, même si elle ne paierait pas
+  ce taux de frais elle-même. Cela signifie qu'elle ne peut pas accepter les paiements de Bob où il dépense l'argent dont il aurait
+  besoin pour la variante de 1 000 s/vb. Par exemple, une transaction d'engagement avec 20 HTLCs ferait 1 million de sats temporairement
+  non dépensables (450 USD au moment de l'écriture). Si des frais endogènes étaient également utilisés pour les transactions HTLC-X,
+  le montant temporairement non dépensable pour 20 HTLCs serait plus proche de 4,5 millions de sats (2 050 USD). En comparaison, si Bob
+  devait payer ses frais de manière exogène, alors Alice n'aurait pas besoin de réduire la capacité du canal pour sa sécurité.
 
 - **Conclusions générales :** la discussion était en cours au moment de l'écriture. Peter Todd a conclu que "l'utilisation existante
   des sorties d'ancrage devrait être progressivement abandonnée en raison des risques de décentralisation des mineurs mentionnés
@@ -132,27 +132,27 @@ Bitcoin.
   un changement de protocole de soft fork tel que [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]. Sanders présente plusieurs points forts
   de son travail :
 
-    - *Simplicité :* LN-Symmetry est un protocole beaucoup plus simple que le protocole LN-Penalty/[LN-Anchors][topic anchor outputs]
-      actuellement utilisé.
+  - *Simplicité :* LN-Symmetry est un protocole beaucoup plus simple que le protocole LN-Penalty/[LN-Anchors][topic anchor outputs]
+    actuellement utilisé.
 
-    - *Pinning :* "Il est très difficile d'éviter [l'épinglage][topic transaction pinning]." Le travail de Sanders sur cette
-      préoccupation lui a donné des idées et de l'inspiration qui ont conduit à ses contributions à [package relay][topic package relay]
-      et à sa proposition largement saluée pour les [ancres éphémères][topic ephemeral anchors].
+  - *Pinning :* "Il est très difficile d'éviter [l'épinglage][topic transaction pinning]." Le travail de Sanders sur cette
+    préoccupation lui a donné des idées et de l'inspiration qui ont conduit à ses contributions à [package relay][topic package relay]
+    et à sa proposition largement saluée pour les [ancres éphémères][topic ephemeral anchors].
 
-    - *CTV :* "[CTV][topic op_checktemplateverify] (par émulation) [...] a permis des 'avancées rapides' qui sont extrêmement simples et
-      pourraient réduire les délais de paiement s'ils étaient largement adoptés."
+  - *CTV :* "[CTV][topic op_checktemplateverify] (par émulation) [...] a permis des 'avancées rapides' qui sont extrêmement simples et
+    pourraient réduire les délais de paiement s'ils étaient largement adoptés."
 
-    - *Pénalités :* Les pénalités ne semblaient vraiment pas nécessaires. C'était l'espoir pour LN-Symmetry, mais certaines personnes
-      pensaient qu'un protocole de pénalité serait toujours nécessaire pour dissuader les contreparties malveillantes de tenter un vol.
-      Le support des pénalités augmente considérablement la complexité du protocole et nécessite de réserver une partie des fonds du
-      canal pour payer les pénalités, il est donc préférable de les éviter s'ils ne sont pas nécessaires pour la sécurité.
+  - *Pénalités :* Les pénalités ne semblaient vraiment pas nécessaires. C'était l'espoir pour LN-Symmetry, mais certaines personnes
+    pensaient qu'un protocole de pénalité serait toujours nécessaire pour dissuader les contreparties malveillantes de tenter un vol.
+    Le support des pénalités augmente considérablement la complexité du protocole et nécessite de réserver une partie des fonds du
+    canal pour payer les pénalités, il est donc préférable de les éviter s'ils ne sont pas nécessaires pour la sécurité.
 
-    - *Deltas d'expiration :* LN-Symmetry nécessite des deltas d'expiration HTLC plus longs que prévu. Lorsqu'Alice transfère un HTLC à
-      Bob, elle lui donne un certain nombre de blocs pour réclamer ses fonds avec un préimage ; après l'expiration de ce délai, elle peut
-      récupérer les fonds. Lorsque Bob transfère ensuite le HTLC à Carol, il lui donne un nombre inférieur de blocs pendant lesquels elle
-      doit révéler le préimage. Le delta entre ces deux expirations est le "delta d'expiration HTLC". Sanders a constaté que le delta
-      devait être suffisamment long pour empêcher la contrepartie de bénéficier si elle abandonnait le protocole en cours de route lors
-      d'un engagement.
+  - *Deltas d'expiration :* LN-Symmetry nécessite des deltas d'expiration HTLC plus longs que prévu. Lorsqu'Alice transfère un HTLC à
+    Bob, elle lui donne un certain nombre de blocs pour réclamer ses fonds avec un préimage ; après l'expiration de ce délai, elle peut
+    récupérer les fonds. Lorsque Bob transfère ensuite le HTLC à Carol, il lui donne un nombre inférieur de blocs pendant lesquels elle
+    doit révéler le préimage. Le delta entre ces deux expirations est le "delta d'expiration HTLC". Sanders a constaté que le delta
+    devait être suffisamment long pour empêcher la contrepartie de bénéficier si elle abandonnait le protocole en cours de route lors
+    d'un engagement.
 
  Sanders travaille actuellement à l'amélioration de la mempool et de la politique de relais de Bitcoin Core, ce qui facilitera le
  déploiement de LN-Symmetry et d'autres protocoles à l'avenir.
@@ -254,7 +254,6 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   Cette valeur affecte les factures externes qui ne fournissent pas le paramètre `min_final_cltv_expiry`. Cette modification résout
   le problème d'interopérabilité découvert après que CLN a cessé d'inclure le paramètre lorsque la valeur par défaut de 18 était
   utilisée, comme [mentionné][cln hotfix] dans la bulletin de la semaine dernière.
-
 
 {% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
 {% include snippets/recap-ad.md when=day_after_posting %}

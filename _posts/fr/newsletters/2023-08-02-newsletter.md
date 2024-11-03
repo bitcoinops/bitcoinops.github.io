@@ -27,13 +27,13 @@ d'infrastructure Bitcoin.
   sans obtenir aucune connaissance sur ce qu'elle signait ou comment sa signature partielle était utilisée. Le signataire aveugle
   se contenterait de signaler combien de signatures il avait créé avec une clé particulière.
 
-    La discussion sur la liste a examiné les écueils de diverses constructions liées au problème spécifique et encore plus
-    généralisé de [la signature aveugle schnorr][generalized blind schnorr]. Il a également été mentionné un [gist][somsen gist]
-    d'il y a un an de Ruben Somsen sur un protocole de 1996 pour l'échange de clés [Diffie-Hellman (DH)][dhke] aveugle, qui peut
-    être utilisé pour des ecash aveugles. [Lucre][] et [Minicash][] sont des implémentations antérieures de ce schéma sans rapport
-    avec Bitcoin, et [Cashu][] est une implémentation liée à Minicash qui intègre également le support de Bitcoin et du LN.
-    Toute personne intéressée par la cryptographie peut trouver le fil intéressant pour sa discussion sur les techniques
-    cryptographiques.
+  La discussion sur la liste a examiné les écueils de diverses constructions liées au problème spécifique et encore plus
+  généralisé de [la signature aveugle schnorr][generalized blind schnorr]. Il a également été mentionné un [gist][somsen gist]
+  d'il y a un an de Ruben Somsen sur un protocole de 1996 pour l'échange de clés [Diffie-Hellman (DH)][dhke] aveugle, qui peut
+  être utilisé pour des ecash aveugles. [Lucre][] et [Minicash][] sont des implémentations antérieures de ce schéma sans rapport
+  avec Bitcoin, et [Cashu][] est une implémentation liée à Minicash qui intègre également le support de Bitcoin et du LN.
+  Toute personne intéressée par la cryptographie peut trouver le fil intéressant pour sa discussion sur les techniques
+  cryptographiques.
 
 ## Mises à jour et versions candidates
 
@@ -64,23 +64,23 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
   de paiement au nœud de Carol avec une expiration de 10 blocs. Par la suite, le canal entre Bob et Carol est fermé de force
   onchain.
 
-    Après l'expiration de 10 blocs, une situation qui ne devrait pas être courante se produit : le nœud de Bob dépense soit en
-    utilisant la condition de remboursement mais la transaction ne se confirme pas, soit il détermine que le coût des frais pour
-    réclamer le remboursement est supérieur à la valeur et ne crée pas une dépense. Avant cette PR, le nœud de Bob ne créerait
-    pas une annulation offchain du HTLC qu'il a reçu d'Alice car cela permettrait à Alice de garder l'argent qu'elle a transféré
-    à Bob et à Carol de réclamer l'argent que Bob lui a transféré, coûtant à Bob le montant du HTLC.
+  Après l'expiration de 10 blocs, une situation qui ne devrait pas être courante se produit : le nœud de Bob dépense soit en
+  utilisant la condition de remboursement mais la transaction ne se confirme pas, soit il détermine que le coût des frais pour
+  réclamer le remboursement est supérieur à la valeur et ne crée pas une dépense. Avant cette PR, le nœud de Bob ne créerait
+  pas une annulation offchain du HTLC qu'il a reçu d'Alice car cela permettrait à Alice de garder l'argent qu'elle a transféré
+  à Bob et à Carol de réclamer l'argent que Bob lui a transféré, coûtant à Bob le montant du HTLC.
 
-    Cependant, après l'expiration de 20 blocs du HTLC qu'Alice lui a proposé, elle peut forcer la fermeture du canal pour tenter
-    de recevoir un remboursement du montant qu'elle a transféré à Bob, et son logiciel peut le faire automatiquement pour empêcher
-    Alice de perdre potentiellement l'argent. Mais, si elle force la fermeture du canal, elle pourrait
-    se retrouver dans la même position que Bob : elle est soit incapable de réclamer le remboursement, soit n'essaie pas car ce
-    n'est pas rentable. Cela signifie qu'un canal utile entre Alice et Bob a été fermé sans aucun gain pour l'un ou l'autre. Ce
-    problème pourrait se répéter plusieurs fois pour tous les sauts en amont d'Alice, entraînant une cascade de fermetures de
-    canaux indésirables.
+  Cependant, après l'expiration de 20 blocs du HTLC qu'Alice lui a proposé, elle peut forcer la fermeture du canal pour tenter
+  de recevoir un remboursement du montant qu'elle a transféré à Bob, et son logiciel peut le faire automatiquement pour empêcher
+  Alice de perdre potentiellement l'argent. Mais, si elle force la fermeture du canal, elle pourrait
+  se retrouver dans la même position que Bob : elle est soit incapable de réclamer le remboursement, soit n'essaie pas car ce
+  n'est pas rentable. Cela signifie qu'un canal utile entre Alice et Bob a été fermé sans aucun gain pour l'un ou l'autre. Ce
+  problème pourrait se répéter plusieurs fois pour tous les sauts en amont d'Alice, entraînant une cascade de fermetures de
+  canaux indésirables.
 
-    La solution mise en œuvre dans cette PR est que Bob attende aussi longtemps que raisonnable pour réclamer un remboursement
-    et, s'il ne se produit pas, crée une annulation offchain du HTLC qu'il a reçu d'Alice, permettant à leur canal de continuer
-    à fonctionner même si cela signifie qu'il pourrait perdre le montant du HTLC.
+  La solution mise en œuvre dans cette PR est que Bob attende aussi longtemps que raisonnable pour réclamer un remboursement
+  et, s'il ne se produit pas, crée une annulation offchain du HTLC qu'il a reçu d'Alice, permettant à leur canal de continuer
+  à fonctionner même si cela signifie qu'il pourrait perdre le montant du HTLC.
 
 - [Core Lightning #6399][] ajoute la prise en charge de la commande `pay` pour payer les factures créées par le nœud local.
   Cela peut simplifier le code de gestion des comptes pour les logiciels qui appellent CLN en arrière-plan, comme discuté

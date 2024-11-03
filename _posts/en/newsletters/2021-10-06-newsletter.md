@@ -28,25 +28,25 @@ software.
   output even in cases when they can't know in advance the txid of the
   transaction that will create that output.
 
-    This compares to the *floating transactions* approach enabled by the
-    proposed [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
-    and described as part of the [eltoo][topic eltoo] protocol.
-    Floating transactions allow participants to create signatures for a
-    particular output without knowing its txid as long as they otherwise
-    satisfy the conditions in that output's script.
+  This compares to the *floating transactions* approach enabled by the
+  proposed [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] soft fork
+  and described as part of the [eltoo][topic eltoo] protocol.
+  Floating transactions allow participants to create signatures for a
+  particular output without knowing its txid as long as they otherwise
+  satisfy the conditions in that output's script.
 
-    Law describes four different protocols enabled by IIDs in an
-    extended [paper][law iids], <!-- it's 66 pages, yikes --> including
-    alternatives to eltoo and [channel factories][topic channel
-    factories], plus ideas that could simplify [watchtower][topic
-    watchtowers] design.  Anthony Towns [suggested][towns iids] that the
-    features of IIDs could be simulated using anyprevout, which would
-    still represent a novel development, although Law [disagreed][law
-    nosim] about the possibility of simulation.
+  Law describes four different protocols enabled by IIDs in an
+  extended [paper][law iids], <!-- it's 66 pages, yikes --> including
+  alternatives to eltoo and [channel factories][topic channel
+  factories], plus ideas that could simplify [watchtower][topic
+  watchtowers] design.  Anthony Towns [suggested][towns iids] that the
+  features of IIDs could be simulated using anyprevout, which would
+  still represent a novel development, although Law [disagreed][law
+  nosim] about the possibility of simulation.
 
-    Discussion of the ideas was complicated due to not all participants
-    being willing to use the mailing lists.  If discussion on the lists
-    resumes, we'll summarize any notable updates in a future newsletter.
+  Discussion of the ideas was complicated due to not all participants
+  being willing to use the mailing lists.  If discussion on the lists
+  resumes, we'll summarize any notable updates in a future newsletter.
 
 ## Preparing for taproot #16: output linking
 
@@ -80,8 +80,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 - [Bitcoin Core GUI #416][] adds an "Enable RPC server" checkbox which allows
   the user to turn on and off Bitcoin Core's RPC server (requires restart).
 
-    {:.center}
-    ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
+  {:.center}
+  ![Screenshot of the Enable RPC server configuration option](/img/posts/2021-10-gui-rpc-server.png)
 
 - [Bitcoin Core #20591][] changes the wallet time calculation logic to
   only use the block timestamp when rescanning historical blocks for

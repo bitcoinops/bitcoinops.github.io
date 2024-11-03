@@ -41,26 +41,26 @@ Bitcoin infrastructure projects.
   the current proposals that might be missed by people who only read the
   documentation.
 
-    The ultimate goal of the review is to allow participants to
-    gain enough technical familiarity with the proposals to be able to
-    either vocally support the proposals, advocate for changes to the
-    proposals, or clearly explain why the proposals shouldn't be adopted
-    into the Bitcoin consensus rules.  Adding new consensus rules to
-    Bitcoin is something that should be done carefully---because it can't
-    be undone safely for as long as anyone's bitcoins depend on those rules---so
-    it's in every user's interest
-    that a large number of technical reviewers examine the proposals for
-    possible flaws before they are implemented and before users are
-    asked to consider upgrading their full nodes to enforce the new
-    rules.  Whether through this organized review or
-    in some other way, Optech strongly encourages all technically
-    skilled Bitcoin users to dedicate time to reviewing the taproot set
-    of proposals.
+  The ultimate goal of the review is to allow participants to
+  gain enough technical familiarity with the proposals to be able to
+  either vocally support the proposals, advocate for changes to the
+  proposals, or clearly explain why the proposals shouldn't be adopted
+  into the Bitcoin consensus rules.  Adding new consensus rules to
+  Bitcoin is something that should be done carefully---because it can't
+  be undone safely for as long as anyone's bitcoins depend on those rules---so
+  it's in every user's interest
+  that a large number of technical reviewers examine the proposals for
+  possible flaws before they are implemented and before users are
+  asked to consider upgrading their full nodes to enforce the new
+  rules.  Whether through this organized review or
+  in some other way, Optech strongly encourages all technically
+  skilled Bitcoin users to dedicate time to reviewing the taproot set
+  of proposals.
 
-    Anyone wanting to participate should [RSVP][tr rsvp] soon so that the
-    organizers can estimate the total number of participants and start
-    forming study groups.  To register or learn more, please see
-    the [Taproot Review][tr] repository.
+  Anyone wanting to participate should [RSVP][tr rsvp] soon so that the
+  organizers can estimate the total number of participants and start
+  forming study groups.  To register or learn more, please see
+  the [Taproot Review][tr] repository.
 
 ## Changes to services and client software
 

@@ -16,41 +16,39 @@ logiciels d'infrastructure Bitcoin les plus populaires.
 - **Poursuite des discussions sur les modifications de script :** plusieurs réponses ont été publiées sur la liste de diffusion
   Bitcoin-Dev concernant les discussions que nous avons précédemment couvertes.
 
-    - *Recherche sur les covenants :* Anthony Towns a [répondu][towns cov] à un [message][russell cov] de Rusty Russell que nous avons
-      mentionné [la semaine dernière][news274 cov]. Towns compare l'approche de Russell à d'autres approches spécifiquement pour les
-      [coffre-forts][topic vaults] basés sur [des covenants][topic covenants] et la trouve peu attrayante. Dans une [réponse
-      ultérieure][russell cov2], Russell note qu'il existe différents designs pour les coffre-forts et que ceux-ci sont fondamentalement
-      moins optimaux que d'autres types de transactions, ce qui implique que l'optimisation n'est pas essentielle pour les utilisateurs
-      de coffre-forts. Il soutient que l'approche des coffre-forts du [BIP345][] est plus adaptée à un format d'adresse qu'à un ensemble
-      d'opcodes, ce qui signifie que le BIP345 a plus de sens en tant que modèle (comme P2WPKH) conçu pour une fonction spécifique plutôt
-      qu'en tant qu'ensemble d'opcodes conçus pour cette fonction spécifique mais qui pourraient interagir de manière imprévue avec le
-      reste du script.
+  - *Recherche sur les covenants :* Anthony Towns a [répondu][towns cov] à un [message][russell cov] de Rusty Russell que nous avons
+    mentionné [la semaine dernière][news274 cov]. Towns compare l'approche de Russell à d'autres approches spécifiquement pour les
+    [coffre-forts][topic vaults] basés sur [des covenants][topic covenants] et la trouve peu attrayante. Dans une [réponse
+    ultérieure][russell cov2], Russell note qu'il existe différents designs pour les coffre-forts et que ceux-ci sont fondamentalement
+    moins optimaux que d'autres types de transactions, ce qui implique que l'optimisation n'est pas essentielle pour les utilisateurs
+    de coffre-forts. Il soutient que l'approche des coffre-forts du [BIP345][] est plus adaptée à un format d'adresse qu'à un ensemble
+    d'opcodes, ce qui signifie que le BIP345 a plus de sens en tant que modèle (comme P2WPKH) conçu pour une fonction spécifique plutôt
+    qu'en tant qu'ensemble d'opcodes conçus pour cette fonction spécifique mais qui pourraient interagir de manière imprévue avec le
+    reste du script.
 
-      Towns examine également l'utilisation de l'approche de Russell dans le but de permettre en général l'expérimentation et la trouve
-      "plus intéressante [...] mais encore assez limitée". Il rappelle aux lecteurs sa proposition précédente de fournir une alternative
-      de style Lisp à Bitcoin Script (voir [Newsletter #191][news191 lisp]) et montre comment cela pourrait apporter une flexibilité
-      accrue et la possibilité d'effectuer une introspection des transactions lors de l'évaluation des témoins. Il fournit des liens
-      vers son code de test et mentionne quelques exemples de jouets qu'il a écrits. Russell répond : "Je pense toujours qu'il y a
-      beaucoup de place pour l'amélioration avant un remplacement. Il est difficile de comparer le [S]cript actuel avec une alternative,
-      car la plupart des cas intéressants sont impossibles."
+    Towns examine également l'utilisation de l'approche de Russell dans le but de permettre en général l'expérimentation et la trouve
+    "plus intéressante [...] mais encore assez limitée". Il rappelle aux lecteurs sa proposition précédente de fournir une alternative
+    de style Lisp à Bitcoin Script (voir [Newsletter #191][news191 lisp]) et montre comment cela pourrait apporter une flexibilité
+    accrue et la possibilité d'effectuer une introspection des transactions lors de l'évaluation des témoins. Il fournit des liens
+    vers son code de test et mentionne quelques exemples de jouets qu'il a écrits. Russell répond : "Je pense toujours qu'il y a
+    beaucoup de place pour l'amélioration avant un remplacement. Il est difficile de comparer le [S]cript actuel avec une alternative,
+    car la plupart des cas intéressants sont impossibles."
 
-      Towns et Russell discutent également brièvement de [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack], en particulier de sa
-      capacité à permettre à des données authentifiées provenant d'un oracle d'être placées directement sur une pile d'évaluation.
+    Towns et Russell discutent également brièvement de [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack], en particulier de sa
+    capacité à permettre à des données authentifiées provenant d'un oracle d'être placées directement sur une pile d'évaluation.
 
-    - *Proposition OP_CAT :* plusieurs personnes ont répondu au [message][heilman cat] d'Ethan Heilman annonçant une proposition de BIP
-      pour [OP_CAT][], que nous avons également mentionnée [la semaine dernière][news274 cat].
+  - *Proposition OP_CAT :* plusieurs personnes ont répondu au [message][heilman cat] d'Ethan Heilman annonçant une proposition de BIP
+    pour [OP_CAT][], que nous avons également mentionnée [la semaine dernière][news274 cat].
 
-      Après que plusieurs réponses aient exprimé des inquiétudes quant à savoir si `OP_CAT` serait excessivement limité par la limite
-      de 520 octets sur la taille des éléments de la pile, Peter Todd a [décrit][todd 520] une façon d'augmenter cette limite dans une
-      future mise à jour logicielle sans utiliser d'opcodes supplémentaires `OP_SUCCESSx`. L'inconvénient est que toutes les utilisations
-      de `OP_CAT` avant cette augmentation nécessiteraient l'inclusion d'un petit nombre d'opcodes déjà disponibles supplémentaires dans
-      leurs scripts.
+    Après que plusieurs réponses aient exprimé des inquiétudes quant à savoir si `OP_CAT` serait excessivement limité par la limite
+    de 520 octets sur la taille des éléments de la pile, Peter Todd a [décrit][todd 520] une façon d'augmenter cette limite dans une
+    future mise à jour logicielle sans utiliser d'opcodes supplémentaires `OP_SUCCESSx`. L'inconvénient est que toutes les utilisations
+    de `OP_CAT` avant cette augmentation nécessiteraient l'inclusion d'un petit nombre d'opcodes déjà disponibles supplémentaires dans
+    leurs scripts.
 
-      Dans un [article][o'beirne vault] publié avant la réponse similaire d'Anthony Towns à la recherche de Russell sur les covenants,
-      James O'Beirne souligne les limitations significatives de l'utilisation de `OP_CAT` pour implémenter des coffres-forts. Il note
-      spécifiquement plusieurs fonctionnalités que les versions `OP_CAT` n'ont pas par rapport aux coffres-forts de style BIP345.
-
-
+    Dans un [article][o'beirne vault] publié avant la réponse similaire d'Anthony Towns à la recherche de Russell sur les covenants,
+    James O'Beirne souligne les limitations significatives de l'utilisation de `OP_CAT` pour implémenter des coffres-forts. Il note
+    spécifiquement plusieurs fonctionnalités que les versions `OP_CAT` n'ont pas par rapport aux coffres-forts de style BIP345.
 
 ## Mises à jour et versions candidates
 

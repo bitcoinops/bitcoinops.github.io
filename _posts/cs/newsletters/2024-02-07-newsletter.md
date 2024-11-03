@@ -38,7 +38,9 @@ skupiny Bitcoin-Dev.
   kanály, které ovládá na obou stranách oběti, k přeposílání jím vytvořených plateb.
   Například:
 
-	  Útočník-plátce –> Oběť-přeposílající –> Útočník-příjemce
+  ```
+  Útočník-plátce –> Oběť-přeposílající –> Útočník-příjemce
+  ```
 
   Útočník ve spolupráci s těžařem vytvoří blok, který jednostranně uzavírá kanál
   na příjemcově straně, aniž by prvně přeposlal transakci v nepotvrzeném stavu
@@ -63,15 +65,15 @@ skupiny Bitcoin-Dev.
 
   Dle Siegela byly pro zabránění útoku provedeny dvě změny v Bitcoin Core:
 
-	- [Bitcoin Core #22144][] přidává náhodnost do pořadí, ve kterém jsou
-	  spojení ve vlákně zpracovávajícím zprávy obsloužena. Viz [zpravodaj č.
-	  154][news154 stall] (_angl._).
+  * [Bitcoin Core #22144][] přidává náhodnost do pořadí, ve kterém jsou
+    spojení ve vlákně zpracovávajícím zprávy obsloužena. Viz [zpravodaj č.
+    154][news154 stall] (_angl._).
 
-	- [Bitcoin Core #22147][] udržuje alespoň jedno odchozí spojení se širokým
-	  pásmem pro kompaktní bloky, i když mají příchozí spojení lepší
-	  výkonnost. Místní uzel si svá odchozí spojení sám vybírá, mají tedy
-	  nižší pravděpodobnost dostat se pod kontrolu útočníka. Z bezpečnostních
-	  důvodů je výhodné udržovat alespoň jedno odchozí spojení.
+  * [Bitcoin Core #22147][] udržuje alespoň jedno odchozí spojení se širokým
+    pásmem pro kompaktní bloky, i když mají příchozí spojení lepší
+    výkonnost. Místní uzel si svá odchozí spojení sám vybírá, mají tedy
+    nižší pravděpodobnost dostat se pod kontrolu útočníka. Z bezpečnostních
+    důvodů je výhodné udržovat alespoň jedno odchozí spojení.
 
 - **Bezpečné otevírání 0-conf kanálů s transakcemi verze 3:**
   Matt Corallo zaslal do fóra Delving Bitcoin [příspěvek][corallo 0conf], aby

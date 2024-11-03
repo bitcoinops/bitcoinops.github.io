@@ -8,19 +8,24 @@ shortname: cves
 ## Optional.  An entry will be added to the topics index for each alias
 #
 ## PUT IN NUMERICAL ORDER
-aliases:
+## MAKE SURE EACH NUMBER IS ALSO IN extra.cves ARRAY BELOW
+title-aliases:
   - CVE-2012-2459
   - CVE-2013-2292
+  - CVE-2015-3641
+  - CVE-2015-6031
   - CVE-2017-12842
   - CVE-2017-18350
   - CVE-2018-17145
+  - CVE-2020-14198
   - CVE-2020-26895
   - CVE-2020-26896
   - CVE-2021-31876
+  - CVE-2023-39910
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Security Problems
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -80,6 +85,18 @@ optech_mentions:
   - title: "CVE-2017-12842: Bitcoin Core PR Review Club discussion about lowering min relayable tx size"
     url: /en/newsletters/2022/11/09/#bitcoin-core-pr-review-club
 
+  - title: "Milk Sad team disclosed CVE-2023-39910 insecure entropy in Libbitcoin `bx` command"
+    url: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
+
+  - title: "Remote code execution due to bug in miniupnpc, similar to CVE-2015-6031"
+    url: /en/newsletters/2024/07/05/#remote-code-execution-due-to-bug-in-miniupnpc
+
+  - title: "CVE-2020-14198: Unbound Bitcoin Core ban list CPU/memory DoS"
+    url: /en/newsletters/2024/07/05/#unbound-ban-list-cpu-memory-dos
+
+  - title: "CVE-2015-3641: out-of-memory crash when Bitcoin Core would accept over 4 GB in messages from peers"
+    url: /en/newsletters/2024/07/05/#node-crash-dos-from-multiple-peers-with-large-messages
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Responsible disclosures
@@ -95,6 +112,13 @@ excerpt: >
 
 extra:
   cves:
+    CVE-2023-39910:
+      link: /en/newsletters/2023/08/09/#libbitcoin-bitcoin-explorer-security-disclosure
+      summary: >
+        Vulnerability in Libbitcoin `bx` command produces insecure
+        entropy when used with the `seed` parameter, having led to the
+        theft of the full balance of multiple wallets.
+
     CVE-2020-26896:
       link: /en/newsletters/2020/10/28/#cve-2020-26896-improper-preimage-revelation
       summary: >
@@ -166,6 +190,27 @@ extra:
         Bitcoin Core does not implement this behavior; Btcd does
         implement it.
 
+    CVE-2015-6031:
+      link: /en/newsletters/2024/07/05/#remote-code-execution-due-to-bug-in-miniupnpc
+      summary: >
+        The miniupnpc library used by Bitcoin Core was vulnerable to a
+        remotely triggered crash and (in some cases) remote code
+        execution.
+
+    CVE-2020-14198:
+      link: /en/newsletters/2024/07/05/#unbound-ban-list-cpu-memory-dos
+      summary: >
+        Bitcoin Core's banlist was unbound and could grow to great size
+        if an attacker controlled many addresses (e.g. easy-to-obtain
+        IPv6 addresses).
+
+    CVE-2015-3641:
+      link: /en/newsletters/2024/07/05/#node-crash-dos-from-multiple-peers-with-large-messages
+      summary: >
+        Bitcoin Core would accept P2P messages up to about 32 megabytes
+        in size from up to about 130 peers, requiring allocating over 4
+        gigabytes of memory---enough to result in many nodes being
+        terminated for excessive memory use.
 ---
 ### CVEs with their own topic pages
 
@@ -177,7 +222,7 @@ extra:
 {% endfor %}
 
 ### Other CVEs
-{% for alias in page.aliases %}
+{% for alias in page.title-aliases %}
   * {:#{{alias}}} **[{{alias}}]({{page.extra.cves[alias].link | default: "#CVE-LINK-NOT-PROVIDED"}}):** {{page.extra.cves[alias].summary}}
 
   {%- for mention in page.optech_mentions -%}

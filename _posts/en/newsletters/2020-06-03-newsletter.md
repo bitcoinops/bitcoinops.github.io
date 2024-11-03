@@ -30,24 +30,24 @@ publication of Newsletter #100.
   of not just the coinswap users but all Bitcoin users, as anything that
   looks like a payment could have instead been a coinswap.
 
-    Belcher's post summarizes the history of the coinswap idea, suggests
-    ways the multisig conditions needed for coinswap could be disguised
-    as more common transaction types, proposes using a market for
-    liquidity (like JoinMarket already does), describes splitting and
-    routing techniques to reduce privacy losses from amount correlation
-    or spying participants, mentions alternative coinswap protocols such
-    as succinct atomic swaps (see [Newsletter #98][news98 sas]), suggests
-    combining coinswap with [payjoin][topic payjoin], and discusses some
-    of the backend requirements for the system.  Additionally,
-    he compares coinswap to other privacy techniques such as using LN,
-    [coinjoin][topic coinjoin], payjoin, and [payswap][zmn payswap].
+  Belcher's post summarizes the history of the coinswap idea, suggests
+  ways the multisig conditions needed for coinswap could be disguised
+  as more common transaction types, proposes using a market for
+  liquidity (like JoinMarket already does), describes splitting and
+  routing techniques to reduce privacy losses from amount correlation
+  or spying participants, mentions alternative coinswap protocols such
+  as succinct atomic swaps (see [Newsletter #98][news98 sas]), suggests
+  combining coinswap with [payjoin][topic payjoin], and discusses some
+  of the backend requirements for the system.  Additionally,
+  he compares coinswap to other privacy techniques such as using LN,
+  [coinjoin][topic coinjoin], payjoin, and [payswap][zmn payswap].
 
-    Belcher has a history of creating and maintaining privacy-enhancing
-    open source software for Bitcoin, such as [JoinMarket][] and
-    [Electrum Personal Server][eps], which gives particular weight to
-    the conclusion of his email: "I intend to create this CoinSwap
-    software.  It will be almost completely decentralized and available
-    for all to use for free."
+  Belcher has a history of creating and maintaining privacy-enhancing
+  open source software for Bitcoin, such as [JoinMarket][] and
+  [Electrum Personal Server][eps], which gives particular weight to
+  the conclusion of his email: "I intend to create this CoinSwap
+  software.  It will be almost completely decentralized and available
+  for all to use for free."
 
 - **New node-to-wallet middleware:** Nadav Ivgi [announced][ivgi bwt]
   the alpha release of Bitcoin Wallet Tracker (BWT), a program that
@@ -63,18 +63,18 @@ publication of Newsletter #100.
   pruned nodes in [many cases][bwt pruning], allowing a combined `bitcoind` and `bwt`
   setup to use only a few gigabytes of disk space.
 
-    Ivgi also provides a [plugin][bwt plugin] that simplifies setting up
-    BWT with an Electrum client, and it may also be possible to use BWT
-    with other wallets that support the Electrum Server protocol, such
-    as [Edge][], [Blue Wallet][], [Eclair mobile][], and [Phoenix][].
+  Ivgi also provides a [plugin][bwt plugin] that simplifies setting up
+  BWT with an Electrum client, and it may also be possible to use BWT
+  with other wallets that support the Electrum Server protocol, such
+  as [Edge][], [Blue Wallet][], [Eclair mobile][], and [Phoenix][].
 
-    BWT's HTTP protocol supports additional features beyond those
-    available in the Electrum Server protocol, such as key origin
-    information useful for interaction with HD wallets and wallet
-    collaboration tools such as [PSBT][topic psbt].  His email also
-    notes that future versions of BWT may support [output script
-    descriptors][topic descriptors], allowing wallets to produce and
-    consume standardized descriptions of their script templates.
+  BWT's HTTP protocol supports additional features beyond those
+  available in the Electrum Server protocol, such as key origin
+  information useful for interaction with HD wallets and wallet
+  collaboration tools such as [PSBT][topic psbt].  His email also
+  notes that future versions of BWT may support [output script
+  descriptors][topic descriptors], allowing wallets to produce and
+  consume standardized descriptions of their script templates.
 
 - **Transaction size calculators:** Jameson Lopp [posted][lopp size] to
   the Bitcoin-Dev mailing list with links to a [transaction size
@@ -184,15 +184,15 @@ version 0.20.*
   filters] on the P2P network, as specified in [BIP157][]. The first step was
   covered in [Newsletter #98][news98 bitcoin core 18877].
 
-    With these changes, nodes that enable the compact block filter index with the
-    `-blockfilterindex` configuration parameter can now respond to `getcfcheckpt`,
-    `getcfheaders`, and `getcfilters` requests with the corresponding `cfcheckpt`,
-    `cfheaders`, and `cfilters` responses. The node does not yet advertise support
-    for BIP157 with `NODE_COMPACT_FILTERS` in its version message. The final step,
-    [Bitcoin Core #19070][], is under review at the time of this writing and
-    would enable nodes to signal the ability to serve compact block filters.
-    The feature is disabled by default and can be enabled with the
-    `-peerblockfilters` configuration parameter.
+  With these changes, nodes that enable the compact block filter index with the
+  `-blockfilterindex` configuration parameter can now respond to `getcfcheckpt`,
+  `getcfheaders`, and `getcfilters` requests with the corresponding `cfcheckpt`,
+  `cfheaders`, and `cfilters` responses. The node does not yet advertise support
+  for BIP157 with `NODE_COMPACT_FILTERS` in its version message. The final step,
+  [Bitcoin Core #19070][], is under review at the time of this writing and
+  would enable nodes to signal the ability to serve compact block filters.
+  The feature is disabled by default and can be enabled with the
+  `-peerblockfilters` configuration parameter.
 
 - [Bitcoin Core #16939][] changes how long Bitcoin Core waits until
   it queries DNS seeds for the IP addresses of potential peers.
@@ -267,7 +267,7 @@ their work hours to contribute to Optech.
 [lopp size]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017905.html
 [lopp calc]: https://jlopp.github.io/bitcoin-transaction-size-calculator/
 [optech calc]: /en/tools/calc-size/
-[about page]: /about/
+[about page]: /en/about/
 [ivgi bwt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017906.html
 [bwt api]: https://github.com/shesek/bwt#http-api
 [bwt plugin]: https://github.com/shesek/bwt#electrum-plugin

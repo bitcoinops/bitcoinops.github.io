@@ -66,30 +66,30 @@ projects.
   of connections to your node to potentially delay your receipt of a
   transaction by a large number of two-minute intervals.
 
-    If such an attack was performed across the whole network, it might
-    be able to prevent certain transactions from reaching miners,
-    possibly breaking the security of protocols that rely on timely
-    confirmation (e.g. LN payment channels).  A network-wide attack
-    could also make it [easier][coinscope] to [map][txprobe] the network
-    and redirect transaction traffic in order to learn which IP address
-    originated a transaction.
+  If such an attack was performed across the whole network, it might
+  be able to prevent certain transactions from reaching miners,
+  possibly breaking the security of protocols that rely on timely
+  confirmation (e.g. LN payment channels).  A network-wide attack
+  could also make it [easier][coinscope] to [map][txprobe] the network
+  and redirect transaction traffic in order to learn which IP address
+  originated a transaction.
 
-    With this PR, your node will only immediately request the
-    transaction from the first peer that announced it if your node
-    initially chose to open a connection to that peer (i.e. an outbound
-    peer).  If you first heard about the transaction from a peer that
-    connected to you (an inbound peer), you'll wait two seconds before
-    requesting the transaction to give an outbound peer a chance to tell
-    you about it first.  If the first peer you request the transaction
-    from has not sent it to you within a minute, you'll request it from
-    another randomly-selected peer.  If that also doesn't work, you'll
-    continue to randomly select peers to request the transaction from.
-    This doesn't eliminate the problem, but it does mean that
-    an attacker who wants to delay a transaction probably needs to
-    operate a much larger number of nodes to achieve the same delay.
-    It's possible that a set reconciliation technique based on something
-    like [libminisketch][] could provide a complete solution for any
-    node with at least one honest peer.
+  With this PR, your node will only immediately request the
+  transaction from the first peer that announced it if your node
+  initially chose to open a connection to that peer (i.e. an outbound
+  peer).  If you first heard about the transaction from a peer that
+  connected to you (an inbound peer), you'll wait two seconds before
+  requesting the transaction to give an outbound peer a chance to tell
+  you about it first.  If the first peer you request the transaction
+  from has not sent it to you within a minute, you'll request it from
+  another randomly-selected peer.  If that also doesn't work, you'll
+  continue to randomly select peers to request the transaction from.
+  This doesn't eliminate the problem, but it does mean that
+  an attacker who wants to delay a transaction probably needs to
+  operate a much larger number of nodes to achieve the same delay.
+  It's possible that a set reconciliation technique based on something
+  like [libminisketch][] could provide a complete solution for any
+  node with at least one honest peer.
 
 - [Bitcoin Core #14491][] allows the `importmulti` RPC to import keys
   specified using an [output script descriptor][output script
@@ -132,3 +132,4 @@ projects.
 [reserve audit tool]: https://blockstream.com/2019/02/04/standardizing-bitcoin-proof-of-reserves/
 [eclair tor]: https://github.com/ACINQ/eclair/blob/master/TOR.md
 [rbf report]: /en/rbf-in-the-wild/
+[output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

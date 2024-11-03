@@ -6,12 +6,12 @@ title: Just-In-Time (JIT) channels
 shortname: jit channels
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
   - Liquidity Management
 
@@ -38,6 +38,9 @@ optech_mentions:
 
   - title: "LDK #2715 allows accepting underfunded HTLCs in support of JIT channel creation"
     url: /en/newsletters/2023/11/15/#ldk-2715
+
+  - title: "BLIPs #25 allows accepting underfunded HTLCs in support of JIT channel creation"
+    url: /en/newsletters/2024/07/19/#blips-25
 
 ## Optional.  Same format as "primary_sources" above
 # see_also:

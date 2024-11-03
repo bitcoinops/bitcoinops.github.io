@@ -37,165 +37,165 @@ les plus répandus.
   multipartites et les usines à canaux, puis nous expliquerons les nouveaux
   résultats de Law dans leur contexte.
 
-    Alice et Bob créent (mais ne signent pas immédiatement) une transaction
-    qui dépense 50 millions de sats pour chacun d'entre eux (100 millions au
-    total) vers une _sortie de financement_ qui nécessitera la coopération de
-    chacun d'entre eux pour être dépensée. Dans les schémas ci-dessous, les
-    transactions confirmées sont grisées.
+  Alice et Bob créent (mais ne signent pas immédiatement) une transaction
+  qui dépense 50 millions de sats pour chacun d'entre eux (100 millions au
+  total) vers une _sortie de financement_ qui nécessitera la coopération de
+  chacun d'entre eux pour être dépensée. Dans les schémas ci-dessous, les
+  transactions confirmées sont grisées.
 
-    {:.center}
-    ![Alice and Bob create the funding transaction](/img/posts/2023-03-tunable-funding.dot.png)
+  {:.center}
+  ![Alice and Bob create the funding transaction](/img/posts/2023-03-tunable-funding.dot.png)
 
-    Ils utilisent également chacun une sortie différente qu'ils contrôlent
-    individuellement pour créer (mais pas diffuser) deux _transactions d'état_,
-    une pour chacun d'entre eux. La première sortie de chaque transaction
-    d'état paie un montant négligeable (disons 1 000 sat) en tant qu'entrée
-    d'une _transaction d'engagement_ hors chaîne verrouillée dans le temps.
-    Le blocage temporel relatif empêche chaque transaction d'engagement d'être
-    éligible pour une confirmation sur la chaîne jusqu'à un certain temps
-    après que sa transaction d'état parente ait été confirmée sur la chaîne.
-    Chacune des deux transactions d'engagement est également financée par
-    des dépenses conflictuelles de la sortie de financement (ce qui signifie
-    qu'une seule des transactions d'engagement peut finalement être confirmée).
-    Une fois toutes les transactions enfants créées, la transaction qui crée
-    la sortie de financement peut être signée et diffusée.
+  Ils utilisent également chacun une sortie différente qu'ils contrôlent
+  individuellement pour créer (mais pas diffuser) deux _transactions d'état_,
+  une pour chacun d'entre eux. La première sortie de chaque transaction
+  d'état paie un montant négligeable (disons 1 000 sat) en tant qu'entrée
+  d'une _transaction d'engagement_ hors chaîne verrouillée dans le temps.
+  Le blocage temporel relatif empêche chaque transaction d'engagement d'être
+  éligible pour une confirmation sur la chaîne jusqu'à un certain temps
+  après que sa transaction d'état parente ait été confirmée sur la chaîne.
+  Chacune des deux transactions d'engagement est également financée par
+  des dépenses conflictuelles de la sortie de financement (ce qui signifie
+  qu'une seule des transactions d'engagement peut finalement être confirmée).
+  Une fois toutes les transactions enfants créées, la transaction qui crée
+  la sortie de financement peut être signée et diffusée.
 
-    {:.center}
-    ![Alice and Bob create their commitment transactions](/img/posts/2023-03-tunable-commitment.dot.png)
+  {:.center}
+  ![Alice and Bob create their commitment transactions](/img/posts/2023-03-tunable-commitment.dot.png)
 
-    Chacune des transactions d'engagement paie l'état actuel du canal.
-    Pour l'état initial ({{S0}}), 50 millions de sats sont remboursés à
-    Alice et à Bob (par souci de simplicité, nous ignorons les frais de
-    transaction). Alice ou Bob peuvent entamer le processus de fermeture
-    unilatérale du canal en publiant leur version de la transaction d'état;
-    après le délai imposé, ils peuvent alors publier la transaction
-    d'engagement correspondante. Par exemple, Alice publie sa transaction
-    d'état et sa transaction d'engagement (qui la paie ainsi que Bob);
-    à ce moment-là, Bob peut simplement ne jamais dépenser sa transaction
-    d'état et dépenser l'argent utilisé pour la créer à n'importe quel
-    moment ultérieur, comme il le souhaite.
+  Chacune des transactions d'engagement paie l'état actuel du canal.
+  Pour l'état initial ({{S0}}), 50 millions de sats sont remboursés à
+  Alice et à Bob (par souci de simplicité, nous ignorons les frais de
+  transaction). Alice ou Bob peuvent entamer le processus de fermeture
+  unilatérale du canal en publiant leur version de la transaction d'état;
+  après le délai imposé, ils peuvent alors publier la transaction
+  d'engagement correspondante. Par exemple, Alice publie sa transaction
+  d'état et sa transaction d'engagement (qui la paie ainsi que Bob);
+  à ce moment-là, Bob peut simplement ne jamais dépenser sa transaction
+  d'état et dépenser l'argent utilisé pour la créer à n'importe quel
+  moment ultérieur, comme il le souhaite.
 
-    {:.center}
-    ![Alice spends honestly from the channel](/img/posts/2023-03-tunable-honest-spend.dot.png)
+  {:.center}
+  ![Alice spends honestly from the channel](/img/posts/2023-03-tunable-honest-spend.dot.png)
 
-    Il existe deux autres solutions que la fermeture unilatérale du canal
-    dans son état initial. Tout d'abord, Alice et Bob peuvent coopérer pour
-    fermer le canal à tout moment en dépensant la sortie de la transaction
-    de financement (comme cela se fait dans le protocole LN actuel).
-    Deuxièmement, ils peuvent mettre à jour l'état---par exemple, en
-    augmentant le solde d'Alice de 10 millions de dollars et en diminuant
-    le solde de Bob du même montant. L'état {{S1}} ressemble à l'état initial
-    ({{S0}}), mais pour le mettre en œuvre, l'état précédent est révoqué par
-    chaque partie qui donne à l'autre un témoin[^keychain] pour dépenser
-    la première sortie de leurs transactions d'état respectives pour l'état
-    précédent ({{S0}}). Aucune des parties ne peut utiliser le témoin de
-    l'autre car les transactions d'état {{S0}} ne contiennent pas encore
-    de témoins et ne peuvent donc pas être diffusées.
+  Il existe deux autres solutions que la fermeture unilatérale du canal
+  dans son état initial. Tout d'abord, Alice et Bob peuvent coopérer pour
+  fermer le canal à tout moment en dépensant la sortie de la transaction
+  de financement (comme cela se fait dans le protocole LN actuel).
+  Deuxièmement, ils peuvent mettre à jour l'état---par exemple, en
+  augmentant le solde d'Alice de 10 millions de dollars et en diminuant
+  le solde de Bob du même montant. L'état {{S1}} ressemble à l'état initial
+  ({{S0}}), mais pour le mettre en œuvre, l'état précédent est révoqué par
+  chaque partie qui donne à l'autre un témoin[^keychain] pour dépenser
+  la première sortie de leurs transactions d'état respectives pour l'état
+  précédent ({{S0}}). Aucune des parties ne peut utiliser le témoin de
+  l'autre car les transactions d'état {{S0}} ne contiennent pas encore
+  de témoins et ne peuvent donc pas être diffusées.
 
-    Avec plusieurs états disponibles, il est possible de fermer accidentellement
-    ou délibérément le canal dans un état obsolète. Par exemple, Bob peut essayer
-    de fermer la chaîne dans l'état {{S0}} où il dispose de 10 millions de satoshis
-    supplémentaires. Pour ce faire, Bob signe et diffuse sa transaction d'état
-    pour {{S0}}. Bob ne peut pas prendre d'autres mesures immédiatement en raison
-    du blocage temporel de la transaction d'engagement. Pendant l'attente,
-    Alice détecte cette tentative de diffusion d'un état périmé et utilise le
-    témoin qu'il lui a précédemment donné pour dépenser la première sortie de
-    sa transaction d'état, en payant une partie ou la totalité du montant de
-    la pénalité en frais de transaction. Comme cette sortie est la même que
-    celle dont Bob a besoin pour diffuser plus tard la transaction d'engagement
-    qui lui rapporte les 10 millions de sat supplémentaires, il ne pourra pas
-    réclamer ces fonds si la transaction créée par Alice est confirmée.
-    Lorsque Bob est bloqué, Alice est la seule à pouvoir publier unilatéralement
-    le dernier état de la chaîne ; Alice et Bob peuvent également procéder à tout
-    moment à une fermeture de canal coopérative.
+  Avec plusieurs états disponibles, il est possible de fermer accidentellement
+  ou délibérément le canal dans un état obsolète. Par exemple, Bob peut essayer
+  de fermer la chaîne dans l'état {{S0}} où il dispose de 10 millions de satoshis
+  supplémentaires. Pour ce faire, Bob signe et diffuse sa transaction d'état
+  pour {{S0}}. Bob ne peut pas prendre d'autres mesures immédiatement en raison
+  du blocage temporel de la transaction d'engagement. Pendant l'attente,
+  Alice détecte cette tentative de diffusion d'un état périmé et utilise le
+  témoin qu'il lui a précédemment donné pour dépenser la première sortie de
+  sa transaction d'état, en payant une partie ou la totalité du montant de
+  la pénalité en frais de transaction. Comme cette sortie est la même que
+  celle dont Bob a besoin pour diffuser plus tard la transaction d'engagement
+  qui lui rapporte les 10 millions de sat supplémentaires, il ne pourra pas
+  réclamer ces fonds si la transaction créée par Alice est confirmée.
+  Lorsque Bob est bloqué, Alice est la seule à pouvoir publier unilatéralement
+  le dernier état de la chaîne ; Alice et Bob peuvent également procéder à tout
+  moment à une fermeture de canal coopérative.
 
-    {:.center}
-    ![Bob attempts to spend dishonestly from the channel but is blocked by Alice](/img/posts/2023-03-tunable-dishonest-spend.dot.png)
+  {:.center}
+  ![Bob attempts to spend dishonestly from the channel but is blocked by Alice](/img/posts/2023-03-tunable-dishonest-spend.dot.png)
 
-    Si Bob remarque qu'Alice tente de dépenser à partir de sa transaction
-    d'état obsolète, il peut tenter d'entrer dans une guerre d'enchères Replace
-    By Fee (RBF) avec Alice, mais c'est un cas où le montant de la pénalité
-    _ajustable_ est particulièrement puissant : le montant de la pénalité peut
-    être insignifiant (par exemple 1K sats, comme dans notre exemple) ou il
-    peut être égal au montant en jeu (10M sats) ou il peut même être plus
-    grand que la valeur totale de la chaîne. La décision est entièrement
-    du ressort d'Alice et de Bob, qui doivent négocier entre eux lors de
-    la mise à jour de l'état du canal.
+  Si Bob remarque qu'Alice tente de dépenser à partir de sa transaction
+  d'état obsolète, il peut tenter d'entrer dans une guerre d'enchères Replace
+  By Fee (RBF) avec Alice, mais c'est un cas où le montant de la pénalité
+  _ajustable_ est particulièrement puissant : le montant de la pénalité peut
+  être insignifiant (par exemple 1K sats, comme dans notre exemple) ou il
+  peut être égal au montant en jeu (10M sats) ou il peut même être plus
+  grand que la valeur totale de la chaîne. La décision est entièrement
+  du ressort d'Alice et de Bob, qui doivent négocier entre eux lors de
+  la mise à jour de l'état du canal.
 
-    L'un des autres avantages du Tunable-Penalty Protocol (TPP) est que le
-    montant de la pénalité est entièrement payé par l'utilisateur qui place
-    sa transaction d'état obsolète sur la chaîne. Il n'utilise aucun des
-    bitcoins de la transaction de financement partagée. Cela permet à plus
-    de deux utilisateurs de partager en toute sécurité un canal TPP ; par
-    exemple, nous pouvons imaginer qu'Alice, Bob, Carol et Dan partagent
-    tous un canal. Chacun d'entre eux a sa propre transaction d'engagement
-    financée par sa propre transaction d'état :
+  L'un des autres avantages du Tunable-Penalty Protocol (TPP) est que le
+  montant de la pénalité est entièrement payé par l'utilisateur qui place
+  sa transaction d'état obsolète sur la chaîne. Il n'utilise aucun des
+  bitcoins de la transaction de financement partagée. Cela permet à plus
+  de deux utilisateurs de partager en toute sécurité un canal TPP ; par
+  exemple, nous pouvons imaginer qu'Alice, Bob, Carol et Dan partagent
+  tous un canal. Chacun d'entre eux a sa propre transaction d'engagement
+  financée par sa propre transaction d'état :
 
-    {:.center}
-    ![A channel between Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-multiparty.dot.png)
+  {:.center}
+  ![A channel between Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-multiparty.dot.png)
 
-    Ils peuvent opérer comme un canal multipartite, en exigeant que chaque
-    état soit révoqué par chaque partie. Ils peuvent également utiliser la
-    transaction de financement conjoint comme une usine à canaux, créant
-    ainsi de multiples canaux entre des paires ou des multiples d'utilisateurs.
-    Avant que Law ne décrive cette implication du PPT l'année dernière (voir
-    [Bulletin #230][news230 tp]), on pensait que la mise en œuvre pratique
-    des usines à canaux sur Bitcoin nécessiterait un mécanisme comme [eltoo][topic eltoo],
-    qui requiert un changement de consensus comme [SIGHASH_ANYPREVOUT][topic
-    sighash_anyprevout]. Le PPT ne nécessite pas de changement de consensus.
-    Pour que le diagramme ci-dessous reste simple, nous n'avons illustré qu'un
-    seul canal créé dans une usine à quatre participants ; le nombre d'états
-    que les participants au canal doivent gérer est égal au nombre de participants
-    à l'usine, bien que Law ait également [précédemment décrit][law factories]
-    une construction alternative avec un seul état mais un coût plus élevé pour
-    fermer unilatéralement.
+  Ils peuvent opérer comme un canal multipartite, en exigeant que chaque
+  état soit révoqué par chaque partie. Ils peuvent également utiliser la
+  transaction de financement conjoint comme une usine à canaux, créant
+  ainsi de multiples canaux entre des paires ou des multiples d'utilisateurs.
+  Avant que Law ne décrive cette implication du PPT l'année dernière (voir
+  [Bulletin #230][news230 tp]), on pensait que la mise en œuvre pratique
+  des usines à canaux sur Bitcoin nécessiterait un mécanisme comme [eltoo][topic eltoo],
+  qui requiert un changement de consensus comme [SIGHASH_ANYPREVOUT][topic
+  sighash_anyprevout]. Le PPT ne nécessite pas de changement de consensus.
+  Pour que le diagramme ci-dessous reste simple, nous n'avons illustré qu'un
+  seul canal créé dans une usine à quatre participants ; le nombre d'états
+  que les participants au canal doivent gérer est égal au nombre de participants
+  à l'usine, bien que Law ait également [précédemment décrit][law factories]
+  une construction alternative avec un seul état mais un coût plus élevé pour
+  fermer unilatéralement.
 
-    {:.center}
-    ![A channel between Alice and Bob created from a factory by Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-factory.dot.png)
+  {:.center}
+  ![A channel between Alice and Bob created from a factory by Alice, Bob, Carol, and Dan](/img/posts/2023-03-tunable-factory.dot.png)
 
-    Un avantage des usines à canaux décrit dans son [article original][channel
-    factories paper] est que les parties au sein de l'usine peuvent rééquilibrer
-    leurs canaux de manière coopérative sans créer de transactions sur la chaîne.
-    Par exemple, si l'usine est composée d'Alice, Bob, Carol et Dan, la valeur
-    totale du canal entre Alice et Bob peut être diminuée et la valeur du canal
-    entre Carol et Dan peut être augmentée du même montant en mettant à jour
-    l'état de l'usine hors chaîne. Les usines de Law basées sur le TPP offrent
-    le même avantage.
+  Un avantage des usines à canaux décrit dans son [article original][channel
+  factories paper] est que les parties au sein de l'usine peuvent rééquilibrer
+  leurs canaux de manière coopérative sans créer de transactions sur la chaîne.
+  Par exemple, si l'usine est composée d'Alice, Bob, Carol et Dan, la valeur
+  totale du canal entre Alice et Bob peut être diminuée et la valeur du canal
+  entre Carol et Dan peut être augmentée du même montant en mettant à jour
+  l'état de l'usine hors chaîne. Les usines de Law basées sur le TPP offrent
+  le même avantage.
 
-    Cette semaine, Law a noté que les usines à canaux ayant la capacité de fournir
-    des canaux multipartites (ce qui est possible avec TPP) ont un avantage
-    supplémentaire : permettre l'utilisation du capital même lorsque l'un des
-    participants au canal est hors ligne. Imaginons par exemple qu'Alice et Bob
-    disposent de nœuds LN dédiés qui sont presque toujours disponibles pour
-    transférer des paiements, mais que Carol et Dan sont des utilisateurs
-    occasionnels dont les nœuds sont souvent indisponibles. Dans une usine à
-    canaux de type original, Alice dispose d'un canal avec Carol ({A,C}) et
-    d'un canal avec Dan ({A,D}). Elle ne peut utiliser aucun de ses fonds dans
-    ces canaux lorsque Carol et Dan sont indisponibles. Bob a le même problème
-    ({B,C} et {B,D}).
+  Cette semaine, Law a noté que les usines à canaux ayant la capacité de fournir
+  des canaux multipartites (ce qui est possible avec TPP) ont un avantage
+  supplémentaire : permettre l'utilisation du capital même lorsque l'un des
+  participants au canal est hors ligne. Imaginons par exemple qu'Alice et Bob
+  disposent de nœuds LN dédiés qui sont presque toujours disponibles pour
+  transférer des paiements, mais que Carol et Dan sont des utilisateurs
+  occasionnels dont les nœuds sont souvent indisponibles. Dans une usine à
+  canaux de type original, Alice dispose d'un canal avec Carol ({A,C}) et
+  d'un canal avec Dan ({A,D}). Elle ne peut utiliser aucun de ses fonds dans
+  ces canaux lorsque Carol et Dan sont indisponibles. Bob a le même problème
+  ({B,C} et {B,D}).
 
-    Dans une usine à canaux basée sur le TPP, Alice, Bob et Carol peuvent ouvrir
-    ensemble un canal multipartite, nécessitant leur coopération à tous les trois
-    pour mettre à jour son état. L'un des résultats d'une transaction d'engagement
-    dans ce canal permet de payer Carole, mais l'autre résultat ne peut être dépensé
-    que si Alice et Bob coopèrent. Lorsque Carole n'est pas disponible, Alice et Bob
-    peuvent coopérer pour modifier la répartition de l'équilibre de leur production
-    commune hors chaîne, ce qui leur permet d'effectuer ou de transmettre des paiements
-    LN s'ils disposent d'autres canaux LN. Si Alice reste indisponible trop longtemps,
-    l'un ou l'autre peut unilatéralement mettre le canal sur la chaîne. Les mêmes
-    avantages s'appliquent si Alice et Bob partagent un canal avec Dan.
+  Dans une usine à canaux basée sur le TPP, Alice, Bob et Carol peuvent ouvrir
+  ensemble un canal multipartite, nécessitant leur coopération à tous les trois
+  pour mettre à jour son état. L'un des résultats d'une transaction d'engagement
+  dans ce canal permet de payer Carole, mais l'autre résultat ne peut être dépensé
+  que si Alice et Bob coopèrent. Lorsque Carole n'est pas disponible, Alice et Bob
+  peuvent coopérer pour modifier la répartition de l'équilibre de leur production
+  commune hors chaîne, ce qui leur permet d'effectuer ou de transmettre des paiements
+  LN s'ils disposent d'autres canaux LN. Si Alice reste indisponible trop longtemps,
+  l'un ou l'autre peut unilatéralement mettre le canal sur la chaîne. Les mêmes
+  avantages s'appliquent si Alice et Bob partagent un canal avec Dan.
 
-    Alice et Bob peuvent ainsi continuer à percevoir des frais de transfert même
-    lorsque Carol et Dan ne sont pas disponibles, ce qui évite à ces canaux de
-    paraître improductifs. La possibilité de rééquilibrer les canaux hors chaîne
-    (sans frais sur la chaîne) peut également diminuer les inconvénients pour Alice
-    et Bob de conserver leurs fonds dans une usine à canaux pendant une période
-    plus longue. L'ensemble de ces avantages peut réduire le nombre de transactions
-    onchain, augmenter la capacité de paiement totale du réseau Bitcoin et réduire
-    le coût de transmission des paiements sur le réseau LN.
+  Alice et Bob peuvent ainsi continuer à percevoir des frais de transfert même
+  lorsque Carol et Dan ne sont pas disponibles, ce qui évite à ces canaux de
+  paraître improductifs. La possibilité de rééquilibrer les canaux hors chaîne
+  (sans frais sur la chaîne) peut également diminuer les inconvénients pour Alice
+  et Bob de conserver leurs fonds dans une usine à canaux pendant une période
+  plus longue. L'ensemble de ces avantages peut réduire le nombre de transactions
+  onchain, augmenter la capacité de paiement totale du réseau Bitcoin et réduire
+  le coût de transmission des paiements sur le réseau LN.
 
-    À l'heure où nous écrivons ces lignes, les pénalités ajustables et les diverses
-    propositions de Law pour les utiliser n'ont pas fait l'objet d'un grand débat public.
+  À l'heure où nous écrivons ces lignes, les pénalités ajustables et les diverses
+  propositions de Law pour les utiliser n'ont pas fait l'objet d'un grand débat public.
 
 ## Selection de Q&R du Bitcoin Stack Exchange
 
@@ -360,12 +360,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
     utiliser pour dériver n'importe quelle clé ultérieure (pour un état
     antérieur). Par exemple,
 
-      | Channel state | Key state |
-      | 0     | MAX |
-      | 1     | MAX - 1 |
-      | 2     | MAX - 2 |
-      | x     | MAX - x |
-      | MAX   | 0 |
+    | Channel state | Key state |
+    | 0     | MAX |
+    | 1     | MAX - 1 |
+    | 2     | MAX - 2 |
+    | x     | MAX - x |
+    | MAX   | 0 |
 
     Cela permet à Bob de stocker toutes les informations dont il a besoin
     pour dépenser à partir d'une transaction d'état périmée dans un espace

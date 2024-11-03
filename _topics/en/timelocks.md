@@ -6,12 +6,12 @@ title: Timelocks
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Contract Protocols
   - Transaction Relay Policy
@@ -63,6 +63,9 @@ optech_mentions:
 
   - title: "Soft fork proposal for fee-dependent timelocks"
     url: /en/newsletters/2024/01/03/#fee-dependent-timelocks
+
+  - title: "BIP46 added for timelocked fidelity bonds"
+    url: /en/newsletters/2024/07/19/#bips-1599
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -30,63 +30,65 @@ Bitcoin-Dev mailing list.
   or higher is strongly recommended.  To the best of our knowledge, no
   one has lost funds due to the attack described below.
 
-    An attacker finds an LN forwarding node that is associated with a
-    relaying Bitcoin node running a version of Bitcoin Core earlier
-    than 22.  The attacker opens many separate connections to a victim's
-    Bitcoin node.  The attacker then attempts to deliver newly found
-    blocks to the victim faster than any honest peers, resulting in
-    the victim's node automatically assigning peers controlled by the
-    attacker to all of the victim's high-bandwidth [compact block
-    relay][topic compact block relay] slots.
+  An attacker finds an LN forwarding node that is associated with a
+  relaying Bitcoin node running a version of Bitcoin Core earlier
+  than 22.  The attacker opens many separate connections to a victim's
+  Bitcoin node.  The attacker then attempts to deliver newly found
+  blocks to the victim faster than any honest peers, resulting in
+  the victim's node automatically assigning peers controlled by the
+  attacker to all of the victim's high-bandwidth [compact block
+  relay][topic compact block relay] slots.
 
-    After the attacker obtains control over many of the victim's Bitcoin
-    peer slots, it uses channels it controls on either side of the
-    victim to forward payments it creates.  For example:
+  After the attacker obtains control over many of the victim's Bitcoin
+  peer slots, it uses channels it controls on either side of the
+  victim to forward payments it creates.  For example:
 
-      Attacker Spender -> Victim Forwarder -> Attacker Receiver
+  ```
+  Attacker Spender -> Victim Forwarder -> Attacker Receiver
+  ```
 
-    The attacker works with a miner to create a block that unilaterally
-    closes the receiver side of the channel without relaying the
-    transaction in an unconfirmed state (this miner assistance is only
-    necessary when attacking an LN implementation that monitors the
-    mempool for transactions).  That block, or another block created by
-    the miner, also claims the payment by releasing the [HTLC][topic
-    htlc] preimage.  Normally, the victim's Bitcoin node would see the
-    block, give that block to its LN node, and the LN node would extract
-    the preimage, allowing it to claim the payment amount from the
-    spender side, keeping its forwarding balanced.
+  The attacker works with a miner to create a block that unilaterally
+  closes the receiver side of the channel without relaying the
+  transaction in an unconfirmed state (this miner assistance is only
+  necessary when attacking an LN implementation that monitors the
+  mempool for transactions).  That block, or another block created by
+  the miner, also claims the payment by releasing the [HTLC][topic
+  htlc] preimage.  Normally, the victim's Bitcoin node would see the
+  block, give that block to its LN node, and the LN node would extract
+  the preimage, allowing it to claim the payment amount from the
+  spender side, keeping its forwarding balanced.
 
-    However, in this case, the attacker uses this disclosed block
-    stalling attack to prevent the Bitcoin Core node from learning about
-    the blocks containing the preimage.  The stalling attack takes
-    advantage of older versions of Bitcoin Core being willing to wait up
-    to 10 minutes for a peer to deliver a block it announced before
-    requesting that block from another peer.  Given an average of 10
-    minutes between blocks, that means an attacker who controls _x_
-    connections can delay a Bitcoin node from receiving a block for
-    roughly the time it takes to produce _x_ blocks.  If the forwarding
-    payment has to be claimed within 40 blocks, an attacker controlling
-    50 connections can have a reasonable chance of preventing the
-    Bitcoin node from seeing the block containing the preimage until the
-    spending node is able to receive a refund of the payment.  If that
-    happens, the attacker's spending node paid nothing and the
-    attacker's receiving node received an amount extracted from the
-    victim's node.
+  However, in this case, the attacker uses this disclosed block
+  stalling attack to prevent the Bitcoin Core node from learning about
+  the blocks containing the preimage.  The stalling attack takes
+  advantage of older versions of Bitcoin Core being willing to wait up
+  to 10 minutes for a peer to deliver a block it announced before
+  requesting that block from another peer.  Given an average of 10
+  minutes between blocks, that means an attacker who controls _x_
+  connections can delay a Bitcoin node from receiving a block for
+  roughly the time it takes to produce _x_ blocks.  If the forwarding
+  payment has to be claimed within 40 blocks, an attacker controlling
+  50 connections can have a reasonable chance of preventing the
+  Bitcoin node from seeing the block containing the preimage until the
+  spending node is able to receive a refund of the payment.  If that
+  happens, the attacker's spending node paid nothing and the
+  attacker's receiving node received an amount extracted from the
+  victim's node.
 
-    {% assign timestamp="1:26" %}
+  {% assign timestamp="1:26" %}
 
-    As Siegel reports, two changes were made to Bitcoin Core to prevent
-    stalling:
+  As Siegel reports, two changes were made to Bitcoin Core to prevent
+  stalling:
 
-    - [Bitcoin Core #22144][] randomizes the order in which peers are
-      serviced in the message-handling thread.  See [Newsletter
-      #154][news154 stall].
+  - [Bitcoin Core #22144][] randomizes the order in which peers are
+    serviced in the message-handling thread.  See [Newsletter
+    #154][news154 stall].
 
-    - [Bitcoin Core #22147][] keeps at least one outbound high bandwidth
-      compact block peer even if inbound peers seem to be performing
-      better.  The local node selects its outbound peers, meaning
-      they're less likely to be under the control of an attacker, so
-      it's useful to keep at least one outbound peer for safety.
+  - [Bitcoin Core #22147][] keeps at least one outbound high bandwidth
+    compact block peer even if inbound peers seem to be performing
+    better.  The local node selects its outbound peers, meaning
+    they're less likely to be under the control of an attacker, so
+    it's useful to keep at least one outbound peer for safety.
 
 - **Securely opening zero-conf channels with v3 transactions:**
   Matt Corallo [posted][corallo 0conf] to Delving Bitcoin to discuss how
@@ -103,21 +105,21 @@ Bitcoin-Dev mailing list.
   mempool; the expectation is that the single child will [CPFP fee
   bump][topic cpfp] its parent if necessary.
 
-    Those v3 rules are incompatible with both parties being able to fee
-    bump a zero-conf channel open: the funding transaction that creates
-    the channel is the parent of a v3 transaction which closes the
-    channel and the grandparent of a v3 transaction for fee bumping.
-    Since the v3 rules only allow one parent and one child, there's no
-    way for the funding transaction to be fee-bumped without modifying
-    how it is created.  Bastien Teinturier [notes][teinturier splice]
-    that [splicing][topic splicing] encounters a similar problem.
+  Those v3 rules are incompatible with both parties being able to fee
+  bump a zero-conf channel open: the funding transaction that creates
+  the channel is the parent of a v3 transaction which closes the
+  channel and the grandparent of a v3 transaction for fee bumping.
+  Since the v3 rules only allow one parent and one child, there's no
+  way for the funding transaction to be fee-bumped without modifying
+  how it is created.  Bastien Teinturier [notes][teinturier splice]
+  that [splicing][topic splicing] encounters a similar problem.
 
-    As of this writing, the main solution proposed appears to be
-    modifying funding and splicing transactions to include an extra
-    output for CPFP fee bumping now, waiting for [cluster mempool][topic
-    cluster mempool] to hopefully allow v3 to permit more permissive
-    topologies (i.e., more than just one parent, one child), and then to
-    drop the extra output in favor of using a more permissive topology. {% assign timestamp="17:08" %}
+  As of this writing, the main solution proposed appears to be
+  modifying funding and splicing transactions to include an extra
+  output for CPFP fee bumping now, waiting for [cluster mempool][topic
+  cluster mempool] to hopefully allow v3 to permit more permissive
+  topologies (i.e., more than just one parent, one child), and then to
+  drop the extra output in favor of using a more permissive topology. {% assign timestamp="17:08" %}
 
 - **Requirement to verify inputs use segwit in protocols vulnerable to txid malleability:**
   Bastien Teinturier [posted][teinturier segwit] to Delving Bitcoin to
@@ -134,45 +136,45 @@ Bitcoin-Dev mailing list.
   the parent funding transaction having the expected txid, this process
   is only safe if there's no risk of txid malleability.
 
-    Segwit prevents txid malleability---but only if all inputs to the
-    transaction spend segwit outputs from previous transactions.
-    For segwit v0, the only way for Alice to be sure that Bob is
-    spending a segwit v0 output is for her to obtain a copy of the
-    entire previous transaction that contained Bob's output.  If Alice
-    doesn't perform this check, Bob can lie about spending a segwit
-    output and instead spend a legacy output that allows him to mutate
-    the txid, allowing him to invalidate the refund transaction and refuse
-    to return any funds to Alice unless she agrees to pay him a ransom.
+  Segwit prevents txid malleability---but only if all inputs to the
+  transaction spend segwit outputs from previous transactions.
+  For segwit v0, the only way for Alice to be sure that Bob is
+  spending a segwit v0 output is for her to obtain a copy of the
+  entire previous transaction that contained Bob's output.  If Alice
+  doesn't perform this check, Bob can lie about spending a segwit
+  output and instead spend a legacy output that allows him to mutate
+  the txid, allowing him to invalidate the refund transaction and refuse
+  to return any funds to Alice unless she agrees to pay him a ransom.
 
-    For segwit v1 ([taproot][topic taproot]), each `SIGHASH_ALL` signature directly commits to
-    every previous output being spent in the transaction (see
-    [Newsletter #97][news97 spk]), so Alice can require Bob to disclose his
-    scriptPubKey (which she could learn anyway from other information
-    Bob needs to disclose to create a shared transaction).  Alice
-    verifies that scriptPubKey uses segwit, either v0 or v1, and has her
-    signature commit to it.  Now, if Bob lied and actually had a
-    non-segwit output, the commitment made by Alice's signature wouldn't
-    be valid, so the signature wouldn't be valid, the funding
-    transaction wouldn't confirm, and there would be no need for a
-    refund.
+  For segwit v1 ([taproot][topic taproot]), each `SIGHASH_ALL` signature directly commits to
+  every previous output being spent in the transaction (see
+  [Newsletter #97][news97 spk]), so Alice can require Bob to disclose his
+  scriptPubKey (which she could learn anyway from other information
+  Bob needs to disclose to create a shared transaction).  Alice
+  verifies that scriptPubKey uses segwit, either v0 or v1, and has her
+  signature commit to it.  Now, if Bob lied and actually had a
+  non-segwit output, the commitment made by Alice's signature wouldn't
+  be valid, so the signature wouldn't be valid, the funding
+  transaction wouldn't confirm, and there would be no need for a
+  refund.
 
-    This leads to two rules that protocols depending on presigned
-    refunds must follow for security:
+  This leads to two rules that protocols depending on presigned
+  refunds must follow for security:
 
-    1. If you are contributing an input, prefer to contribute an input
-       that is the spend of a segwit v1
-       output, obtain the previous outputs of all other spends in the
-       transaction, verify they all use segwit scriptPubKeys, and commit
-       to them using your signature.
+  1. If you are contributing an input, prefer to contribute an input
+     that is the spend of a segwit v1
+     output, obtain the previous outputs of all other spends in the
+     transaction, verify they all use segwit scriptPubKeys, and commit
+     to them using your signature.
 
-    2. If you are not contributing an input or are not spending a segwit
-       v1 output, obtain the complete previous transactions for all
-       inputs, verify their outputs being spent in this transaction
-       are all segwit outputs, and commit to those transactions using
-       your signature.  You can also use this second procedure in all
-       cases, but in the worst case it will consume almost 20,000 times
-       as much bandwidth as the first procedure.<!-- ~4,000,000 byte
-       transaction divided by ~22 byte P2WPKH scriptPubKey -->
+  2. If you are not contributing an input or are not spending a segwit
+     v1 output, obtain the complete previous transactions for all
+     inputs, verify their outputs being spent in this transaction
+     are all segwit outputs, and commit to those transactions using
+     your signature.  You can also use this second procedure in all
+     cases, but in the worst case it will consume almost 20,000 times
+     as much bandwidth as the first procedure.<!-- ~4,000,000 byte
+     transaction divided by ~22 byte P2WPKH scriptPubKey -->
 
   {% assign timestamp="27:00" %}
 
@@ -183,18 +185,18 @@ Bitcoin-Dev mailing list.
   transaction to be replaced.  His proposal comes in two different
   variations:
 
-    - *Pure replace by feerate (pure RBFr):* a transaction currently in
-      a mempool can be replaced by a conflicting transaction that pays a
-      significantly higher feerate (e.g., the replacement pays a feerate
-      2x the replacee's feerate).
+  - *Pure replace by feerate (pure RBFr):* a transaction currently in
+    a mempool can be replaced by a conflicting transaction that pays a
+    significantly higher feerate (e.g., the replacement pays a feerate
+    2x the replacee's feerate).
 
-    - *One-shot replace by feerate (one-shot RBFr):* a transaction
-      currently in a mempool can be replaced by a conflicting
-      transaction that pays a slightly higher feerate (e.g. 1.25x),
-      provided the replacement's feerate is also high enough to put it
-      in the top ~1,000,000 vbytes of the mempool (meaning the
-      replacement would be mined if a block were produced immediately
-      after it was accepted).
+  - *One-shot replace by feerate (one-shot RBFr):* a transaction
+    currently in a mempool can be replaced by a conflicting
+    transaction that pays a slightly higher feerate (e.g. 1.25x),
+    provided the replacement's feerate is also high enough to put it
+    in the top ~1,000,000 vbytes of the mempool (meaning the
+    replacement would be mined if a block were produced immediately
+    after it was accepted).
 
   Mark Erhardt described ([1][erhardt rbfr1], [2][erhardt rbfr2]) how
   the proposed policies could be abused to allow wasting an infinite
@@ -203,32 +205,32 @@ Bitcoin-Dev mailing list.
   concerns were raised by Gregory Sanders and Gloria Zhao on a [Delving
   Bitcoin][sz rbfr] thread:
 
-    - "Pre-cluster mempool, reasoning about any of this is very hard to
-      do. Peter’s first iteration of the idea was broken, allowing
-      unlimited free relay. He claims he’s fixed it by hot-patching the
-      idea with additional RBF restrictions, but like usual, reasoning
-      about current RBF rules is very difficult, and maybe impossible. I
-      think energy would be better focused on getting RBF incentives
-      right, before giving up the idea of free relay protection
-      entirely."  ---Sanders
+  - "Pre-cluster mempool, reasoning about any of this is very hard to
+    do. Peter’s first iteration of the idea was broken, allowing
+    unlimited free relay. He claims he’s fixed it by hot-patching the
+    idea with additional RBF restrictions, but like usual, reasoning
+    about current RBF rules is very difficult, and maybe impossible. I
+    think energy would be better focused on getting RBF incentives
+    right, before giving up the idea of free relay protection
+    entirely."  ---Sanders
 
-    - "The mempool as it exists to today doesn’t support an efficient
-      way to calculate “miner score” or incentive compatibility, due to
-      unbounded cluster sizes. [...] One advantage of cluster mempool is
-      being able to calculate things like miner score and incentive
-      compatibility across the mempool. Similarly, one advantage of v3
-      is being able to do this before cluster mempool because of
-      restricted topology. Before people took on the challenge of
-      designing and implementing cluster mempool, I had been framing v3
-      as “cluster limits” without having to implement cluster limits, as
-      it’s one of the only ways to codify a cluster limit (count=2)
-      using existing package limits (ancestors=2, descendants=2. Once
-      you go up to 3, you can have infinite clusters again). Another
-      advantage of v3 is that it helps unblock cluster mempool, which is
-      in my opinion a no-brainer.  In summary, I don’t think the
-      One-Shot Replace by Feerate proposal works (i.e. doesn’t have a
-      free relay problem and is feasible to implement accurately)."
-      ---Zhao
+  - "The mempool as it exists to today doesn’t support an efficient
+    way to calculate “miner score” or incentive compatibility, due to
+    unbounded cluster sizes. [...] One advantage of cluster mempool is
+    being able to calculate things like miner score and incentive
+    compatibility across the mempool. Similarly, one advantage of v3
+    is being able to do this before cluster mempool because of
+    restricted topology. Before people took on the challenge of
+    designing and implementing cluster mempool, I had been framing v3
+    as “cluster limits” without having to implement cluster limits, as
+    it’s one of the only ways to codify a cluster limit (count=2)
+    using existing package limits (ancestors=2, descendants=2. Once
+    you go up to 3, you can have infinite clusters again). Another
+    advantage of v3 is that it helps unblock cluster mempool, which is
+    in my opinion a no-brainer.  In summary, I don’t think the
+    One-Shot Replace by Feerate proposal works (i.e. doesn’t have a
+    free relay problem and is feasible to implement accurately)."
+    ---Zhao
 
   The separate discussions were not reconciled as of this writing.
   Peter Todd has released an experimental [implementation][libre relay]

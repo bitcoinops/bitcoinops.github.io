@@ -40,15 +40,15 @@ notable changes to popular Bitcoin infrastructure projects.
   in LN backup safety and a baseline that can be improved upon via
   proposed protocol changes and watchtower support.
 
-    Other changes include several major reductions in the use of memory
-    and bandwidth, plus an improved autopilot feature that helps users
-    automatically open new channels for payment routing.  Release
-    binaries were also built with everything necessary to use with
-    [Lightning Loop][] for trustlessly moving LN funds to an onchain
-    address without closing a channel.
+  Other changes include several major reductions in the use of memory
+  and bandwidth, plus an improved autopilot feature that helps users
+  automatically open new channels for payment routing.  Release
+  binaries were also built with everything necessary to use with
+  [Lightning Loop][] for trustlessly moving LN funds to an onchain
+  address without closing a channel.
 
-    For more information, we encourage you to read the comprehensive
-    [release notes][lnd 0.6-beta].
+  For more information, we encourage you to read the comprehensive
+  [release notes][lnd 0.6-beta].
 
 - **Basic BIP158 support merged in Bitcoin Core:** with the
   [merge][Bitcoin Core #14121] of a PR by Jim Posen into Bitcoin Core's
@@ -63,20 +63,20 @@ notable changes to popular Bitcoin infrastructure projects.
   entire block chain currently use about 4 gigabytes.  Growth over time
   can be seen in the following chart:
 
-    ![Plot of filter size over block height](/img/posts/2019-04-bip158-filter-size-cumulative.png)
+  ![Plot of filter size over block height](/img/posts/2019-04-bip158-filter-size-cumulative.png)
 
-    These filters are not currently used anywhere else in the program or
-    exposed publicly via Bitcoin Core's implementation of the P2P
-    protocol.  A proposed next step for the filters that seems to enjoy
-    wide support among Bitcoin Core developers is to allow the local
-    program to use the filters to quickly scan the block chain for
-    historic transactions.  For example, if you unload a wallet in
-    Bitcoin Core's multiwallet mode and then reload it later, it needs
-    to look through every block that's arrived since it was unloaded to
-    see if any of them contained a transaction affecting the wallet.
-    With filters, the wallet can just check the smaller and faster
-    filters first and only take a full look at any blocks that the
-    filter indicates are a match for containing wallet transactions.
+  These filters are not currently used anywhere else in the program or
+  exposed publicly via Bitcoin Core's implementation of the P2P
+  protocol.  A proposed next step for the filters that seems to enjoy
+  wide support among Bitcoin Core developers is to allow the local
+  program to use the filters to quickly scan the block chain for
+  historic transactions.  For example, if you unload a wallet in
+  Bitcoin Core's multiwallet mode and then reload it later, it needs
+  to look through every block that's arrived since it was unloaded to
+  see if any of them contained a transaction affecting the wallet.
+  With filters, the wallet can just check the smaller and faster
+  filters first and only take a full look at any blocks that the
+  filter indicates are a match for containing wallet transactions.
 
 ## Bech32 sending support
 
@@ -142,7 +142,7 @@ backported to its pending release.*
   values seem high, recall this is for a simulation network more than 25
   times the size of the current mainnet network and 1,000 times the size
   of the network a bit over a year ago.)  A notable part of this change
-  is C-Lightning switching from its rather unique [Bellman-Ford-Gibson
+  is C-Lightning switching from its rather unique [Bellman--Ford--Gibson
   (BFG)][bfg post] routing algorithm to a [slightly-customized][e197956]
   version of [Dijkstra][].
 
@@ -155,7 +155,7 @@ backported to its pending release.*
   not be useful to a high-level API consumer.  Although there are
   differences in implementation and motivation, this seems conceptually
   related to [C-Lightning #2382][] as described in the *notable code
-  changes* section of [Newsletter #36][] in two separate bullet points.
+  changes* section of [Newsletter #36][].
 
 - [Eclair #951][] implements a channel backup mechanism and provides
   [documentation][eclair backup] for using it.  Unlike the LND static
@@ -180,7 +180,7 @@ backported to its pending release.*
     (what developers call previous outputs (prevouts)).   Each of the
     scriptPubKeys is hashed to give each item the same size and then
     these items are sorted into a list that has duplicated elements
-    removed.  This list is then encoded using the [Golomb-Rice Coded
+    removed.  This list is then encoded using the [Golomb--Rice Coded
     Sets][gcs] (GCS) algorithm also described in BIP158, losslessly
     reducing the size of the list.  This specific basic filter provides
     enough information for anyone who knows a Bitcoin address to find
@@ -242,3 +242,5 @@ backported to its pending release.*
 [lightning loop]: https://github.com/lightninglabs/loop
 [rbf usability study]: /en/rbf-in-the-wild/
 [gcs]:  https://en.wikipedia.org/wiki/Golomb_coding#Rice_coding
+[newsletter #33]: /en/newsletters/2019/02/12/#bitcoin-core-14897
+[newsletter #36]: /en/newsletters/2019/03/05/#c-lightning-2382

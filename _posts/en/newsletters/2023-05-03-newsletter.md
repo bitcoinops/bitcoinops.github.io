@@ -25,22 +25,22 @@ notable changes to popular Bitcoin infrastructure software.
   contracts on Bitcoin through the soft fork addition of a few very
   simple [covenant][topic covenants] opcodes.
 
-    In this week's post, Ingala sought to demonstrate that MATT would not
-    only be very flexible, but that it would also be efficient and easy
-    to use in transaction templates that might one day see frequent use.
-    As is done in recent versions of the `OP_VAULT` proposal, Ingala builds
-    upon the [BIP119][] proposal for [OP_CHECKTEMPLATEVERIFY][topic
-    op_checktemplateverify] (CTV).  Using two additional proposed
-    opcodes (and acknowledging that they don't entirely cover everything
-    necessary), he provides a set of features that is almost equivalent
-    to `OP_VAULT`.  It's only notable omission is "an option to add an
-    additional output that is sent back to the same exact vault."
+  In this week's post, Ingala sought to demonstrate that MATT would not
+  only be very flexible, but that it would also be efficient and easy
+  to use in transaction templates that might one day see frequent use.
+  As is done in recent versions of the `OP_VAULT` proposal, Ingala builds
+  upon the [BIP119][] proposal for [OP_CHECKTEMPLATEVERIFY][topic
+  op_checktemplateverify] (CTV).  Using two additional proposed
+  opcodes (and acknowledging that they don't entirely cover everything
+  necessary), he provides a set of features that is almost equivalent
+  to `OP_VAULT`.  It's only notable omission is "an option to add an
+  additional output that is sent back to the same exact vault."
 
-    As of this writing, Ingala's post had not received any direct
-    replies, but there was [continued discussion][halseth matt] about
-    his original proposal for MATT and it's ability to allow
-    verification that an (essentially) arbitrarily complex program was
-    run. {% assign timestamp="12:29" %}
+  As of this writing, Ingala's post had not received any direct
+  replies, but there was [continued discussion][halseth matt] about
+  his original proposal for MATT and it's ability to allow
+  verification that an (essentially) arbitrarily complex program was
+  run. {% assign timestamp="12:29" %}
 
 - **Analysis of signature adaptor security:** Adam Gibson
   [posted][gibson adaptors] to the Bitcoin-Dev mailing list an analysis

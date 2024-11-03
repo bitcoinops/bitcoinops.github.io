@@ -6,12 +6,12 @@ title: Onion messages
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -73,6 +73,30 @@ optech_mentions:
 
   - title: "LDK #2723 adds support for sending onion messages using direct connections"
     url: /en/newsletters/2024/01/03/#ldk-2723
+
+  - title: "LDK #2973 adds support for intercepting onion messages to facilitate async payments"
+    url: /en/newsletters/2024/05/17/#ldk-2973
+
+  - title: "CLN #7304 adds support for direct peer connections for message relay"
+    url: /en/newsletters/2024/05/24/#core-lightning-7304
+
+  - title: "BLIPs #32 adds BLIP32 describing DNS-based payment instructions with onion messages"
+    url: /en/newsletters/2024/06/07/#blips-32
+
+  - title: "Eclair #2854 and LDK #3083 implement BOLTs #1163 to make message delivery failures more private"
+    url: /en/newsletters/2024/06/14/#eclair-2854
+
+  - title: "Core Lightning #7455 makes multiple changes to its onion message defaults"
+    url: /en/newsletters/2024/07/19/#core-lightning-7455
+
+  - title: "BOLTs #1173 makes the channel_update field optional in failure onion messages"
+    url: /en/newsletters/2024/07/19/#bolts-1173
+
+  - title: "Discussion of onion denial-of-service risk with proposed mitigations"
+    url: /en/newsletters/2024/08/16/#onion-message-dos-risk-discussion
+
+  - title: "Eclair #2865 enables waking up a disconnected mobile peer for async payments or onion messages"
+    url: /en/newsletters/2024/09/06/#eclair-2865
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

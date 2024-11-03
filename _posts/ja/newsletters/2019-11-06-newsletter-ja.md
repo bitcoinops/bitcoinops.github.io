@@ -65,6 +65,4 @@ lang: ja
 [naumenko addr relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017428.html
 [news70 simplified commitments]: /ja/newsletters/2019/10/30
 [jager anchor]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002264.html
-
-
-
+[output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

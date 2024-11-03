@@ -3,7 +3,7 @@ title: Simplicity
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Soft Forks
 
@@ -44,6 +44,9 @@ optech_mentions:
 
   - title: "BTC-Script (based on Chia Lisp) as an alternative to Simplicity"
     url: /en/newsletters/2022/03/16/#using-chia-lisp
+
+  - title: "Comparisons betwen Simplicity and BTC Lisp"
+    url: /en/newsletters/2024/03/20/#overview-of-btc-lisp
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

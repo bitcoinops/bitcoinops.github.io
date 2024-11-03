@@ -28,9 +28,9 @@ lang: ja
 chaperon signaturesが必須となることはどう考えているか？（反対意見もいくつかあるように見受けられました）
 Transaction outputに強制的にタグがつけられることに対してどう考えているか？（反対意見が挙がり、特にその一部は強くそれを感じました。）
 
-    Transaction outputのタグ付けに関する質問に応えて、C-Lightningの貢献者ZmnSCPxj は、タグをtaprootコミットメント内に配置する代替タグ付けメカニズムを[提案しました][zmn internal tagging]。これにより、outputのタグ付けの[元の目標である][orig output tagging]、noinput互換スクリプトへの支払いの防止を、プライバシーとファンジビリティの毀損させることなく実現できます。このアイデアに興味を示した人が何人かいましたが、ZmnSCPxjの提案を知りたいのか、もしくはTransaction outputのタグ付けにそもそも賛成なのかはよくわかりませんでした（上記のように、反対意見が多く見受けられました）。
+  Transaction outputのタグ付けに関する質問に応えて、C-Lightningの貢献者ZmnSCPxj は、タグをtaprootコミットメント内に配置する代替タグ付けメカニズムを[提案しました][zmn internal tagging]。これにより、outputのタグ付けの[元の目標である][orig output tagging]、noinput互換スクリプトへの支払いの防止を、プライバシーとファンジビリティの毀損させることなく実現できます。このアイデアに興味を示した人が何人かいましたが、ZmnSCPxjの提案を知りたいのか、もしくはTransaction outputのタグ付けにそもそも賛成なのかはよくわかりませんでした（上記のように、反対意見が多く見受けられました）。
 
-    スレッド全体は現在20メッセージを超えており、これについての[OP_CATについてのスピンオフディスカッション][cat spinoff]が開始されました 。noinputに関連する課題が解決してソフトフォークの提案に含まれるためにも、このディスカッションが軌道に乗ることを願っています。
+  スレッド全体は現在20メッセージを超えており、これについての[OP_CATについてのスピンオフディスカッション][cat spinoff]が開始されました 。noinputに関連する課題が解決してソフトフォークの提案に含まれるためにも、このディスカッションが軌道に乗ることを願っています。
 
 ## 注目すべきコードとドキュメントの変更点
 
@@ -61,9 +61,7 @@ Transaction outputに強制的にタグがつけられることに対してど�
 - [BOLTs #642][] を使用すると、2つのピアがチャネルを開いて`option_static_remotekey`フラグについてネゴシエートできます 。両方のピアがこのフラグを設定した場合、一方的に（チャネルを強制的に閉じるために）使用できるコミットメントトランザクションは、最初のチャネルのオープン時にネゴシエートされた静的アドレスにピアの資金を支払う必要があります。たとえば、Aliceがaddress`bc1ally`、Bobがaddress`bc1bob`を保持しており、両方が`option_static_remotekey`である場合、Aliceがonchainで発行できるコミットメントトランザクションは`bc1bob`に、Bobがonchainで発行できるコミットメントトランザクションは`bc1ally`に支払われる必要があります。ノードのうち少なくとも1つがこのフラグを設定しない場合、リモートピアのpubkeyとcommitment
   identifierを組み合わせて作成されたアドレスを使用して、コミットメントトランザクションごとに異なる支払いアドレスを使用する古いプロトコルにフォールバックします。
 
-    常に同じアドレスに支払うことで、そのアドレスはクライアントのHDウォレット内の通常の派生可能なアドレスになり、ユーザーはHDシード以外のすべての状態を失った場合でも資金を回収できます。これは、少なくともリモートピアと通信してチャネルを識別できる十分な状態を保存することに依存する [data loss protection][] プロトコルよりも優れていると考えられて います。`option_static_remotekey`を使用することにより、リモートピアは最終的に欠落しているピアが現れるのを待つことにうんざりし、一方的にチャネルを閉じて、HDウォレットが見つけるオンチェーン上のアドレスに返却することが想定できます。
-
-
+  常に同じアドレスに支払うことで、そのアドレスはクライアントのHDウォレット内の通常の派生可能なアドレスになり、ユーザーはHDシード以外のすべての状態を失った場合でも資金を回収できます。これは、少なくともリモートピアと通信してチャネルを識別できる十分な状態を保存することに依存する [data loss protection][] プロトコルよりも優れていると考えられて います。`option_static_remotekey`を使用することにより、リモートピアは最終的に欠落しているピアが現れるのを待つことにうんざりし、一方的にチャネルを閉じて、HDウォレットが見つけるオンチェーン上のアドレスに返却することが想定できます。
 
 {% include linkers/issues.md issues="13716,16884,16507,16499,3545,3365,3078,2803,3062,676,642" %}
 [lnd repo doc]: https://github.com/lightningnetwork/lnd/blob/master/build/release/README.md
@@ -79,6 +77,4 @@ Transaction outputに強制的にタグがつけられることに対してど�
 [zmn internal tagging]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html
 [gui bech32]: /en/newsletters/2019/04/16/#bitcoin-core-15711
 [orig output tagging]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
-
-
-
+[eltoo]: https://blockstream.com/eltoo.pdf

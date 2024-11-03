@@ -6,12 +6,12 @@ title: Codex32
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-aliases:
+title-aliases:
   - BIP93
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Backup and Recovery
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -37,6 +37,9 @@ optech_mentions:
 
   - title: "Core Lightning #6466 and #6473 add support for backing up and restoring codex32-encoded seeds"
     url: /en/newsletters/2023/08/09/#core-lightning-6466
+
+  - title: "Penlock proposed as an alternative to codex32 that provides BIP39 seed phrase splitting"
+    url: /en/newsletters/2024/05/17/#bip39-seed-phrase-splitting
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

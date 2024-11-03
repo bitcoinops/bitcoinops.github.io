@@ -30,19 +30,19 @@ lang: ja
   ボブのLNノードは他のこと（資金の損失を防ぐために必要な時間的制約のある処理の実行を含む）が実行できなくなるほど、
   ボブのリソースを浪費する可能性があります。
 
-    Morehouseが自身のノードに対してテストをしたところ、
-    Core Lightning、Eclair、LDKおよびLNDで重大な問題を引き起こすことができました。
-    そのうち2つのケースでは、（私たちの意見では）多くのノード間で資金の損失につながる可能性があると思われるものでした。
-    Morehouseの[完全な説明][morehouse post]は、
-    問題が解決されたPRへのリンク（ニュースレター [#237][news237 dos]と[#240][news240 dos]で取り上げたPRを含む）と
-    脆弱性に対処したLNリリースのリストを示しています:
+  Morehouseが自身のノードに対してテストをしたところ、
+  Core Lightning、Eclair、LDKおよびLNDで重大な問題を引き起こすことができました。
+  そのうち2つのケースでは、（私たちの意見では）多くのノード間で資金の損失につながる可能性があると思われるものでした。
+  Morehouseの[完全な説明][morehouse post]は、
+  問題が解決されたPRへのリンク（ニュースレター [#237][news237 dos]と[#240][news240 dos]で取り上げたPRを含む）と
+  脆弱性に対処したLNリリースのリストを示しています:
 
-    - Core Lightning 23.02
-    - Eclair 0.9.0
-    - LDK 0.0.114
-    - LND 0.16.0
+  - Core Lightning 23.02
+  - Eclair 0.9.0
+  - LDK 0.0.114
+  - LND 0.16.0
 
-    メーリングリストと[IRC][stateless funding]でフォローアップの議論が行われました。
+  メーリングリストと[IRC][stateless funding]でフォローアップの議論が行われました。
 
 - **`TXHASH`と`CSFS`を使用したCovenantのマッシュアップ:** Brandon Blackは、
   [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV)と
@@ -55,8 +55,8 @@ lang: ja
   「CTVとAPOの個別および組み合わせについて私たちの考えを明確にし、
   将来的にビットコインの驚くべき使用法を可能にする方向での合意に向けて進む可能性がある」ことでした。
 
-    この提案は、メーリングリスト上でいくつかの議論を受け、
-    Delving Bitcoinのフォーラムに[追加の修正][delv mashup]が投稿され、議論されました。
+  この提案は、メーリングリスト上でいくつかの議論を受け、
+  Delving Bitcoinのフォーラムに[追加の修正][delv mashup]が投稿され、議論されました。
 
 ## Bitcoin Stack Exchangeから選ばれたQ&A
 
@@ -164,12 +164,12 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
   LNDは引き続き[HTLC][topic htlc]のみを使用し、Taprootチャネルで開始された支払いを、
   Taprootチャネルをサポートしない他のLNノードを介して転送し続けることができます。
 
-    <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
-    listed them in that order rather than by PR number -->
-    このPRをには、以下のPRからステージングブランチにマージされた134のコミットが含まれています:
-    [#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、
-    [#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347]、
-    [#7472][lnd #7472]。
+  <!-- The following linked PRs have titles "1/x", "2/x", etc.  I've
+  listed them in that order rather than by PR number -->
+  このPRをには、以下のPRからステージングブランチにマージされた134のコミットが含まれています:
+  [#7332][lnd #7332]、[#7333][lnd #7333]、[#7331][lnd #7331]、[#7340][lnd #7340]、
+  [#7344][lnd #7344]、[#7345][lnd #7345]、[#7346][lnd #7346]、[#7347][lnd #7347]、
+  [#7472][lnd #7472]。
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27460,2466,2248,2337,2411,2412,2413,2507,2478,7904,7332,7333,7331,7340,7344,7345,7346,7347,7472,27634" %}

@@ -31,22 +31,22 @@ erwähnenswerter Änderungen an beliebter Bitcoin Infrastruktursoftware.
   in Bitcoin Core integriert ([bitcoin core #24058]) oder zu anderen uns bekannten,
   populären Wallets hinzugefügt.
 
-    Diese Woche [schlug Ali Sherief vor][sherief gsm], dass derselbe
-    Signieralgorithmus der für P2WPKH verwendet wird, auch für andere
-    Outputtypen verwendet werden könnte. Für die Verifizierung sollten Programme
-    herleiten, wie der Schlüssel abzuleiten sei (falls erforderlich)
-    und die Signatur anhand des Adresstyps verifizieren. Z.B. wenn eine
-    [bech32][topic bech32]-Adresse mit einem 20-Byte Datenelement vorliegt,
-    ist anzunehmen, dass es sich um eine P2WPKH-Ausgabe handelt.
+  Diese Woche [schlug Ali Sherief vor][sherief gsm], dass derselbe
+  Signieralgorithmus der für P2WPKH verwendet wird, auch für andere
+  Outputtypen verwendet werden könnte. Für die Verifizierung sollten Programme
+  herleiten, wie der Schlüssel abzuleiten sei (falls erforderlich)
+  und die Signatur anhand des Adresstyps verifizieren. Z.B. wenn eine
+  [bech32][topic bech32]-Adresse mit einem 20-Byte Datenelement vorliegt,
+  ist anzunehmen, dass es sich um eine P2WPKH-Ausgabe handelt.
 
-    Der Entwickler Peter Gray [merkte an][gray cc], dass ColdCard
-    Wallets bereits auf diese Weise Signaturen erstellen und der Entwickler
-    Craig Raw [entgegnete][raw sparrow], dass das Sparrow Wallet in der Lage
-    ist diese Signaturen zu validieren. Der Ansatz sei, zuerst den
-    [BIP137][] Validierungsregeln zu folgen und erst dann dem Vorgehen von
-    Electrum.
+  Der Entwickler Peter Gray [merkte an][gray cc], dass ColdCard
+  Wallets bereits auf diese Weise Signaturen erstellen und der Entwickler
+  Craig Raw [entgegnete][raw sparrow], dass das Sparrow Wallet in der Lage
+  ist diese Signaturen zu validieren. Der Ansatz sei, zuerst den
+  [BIP137][] Validierungsregeln zu folgen und erst dann dem Vorgehen von
+  Electrum.
 
-    Sherief plant ein BIP zu schreiben, welches das Verhalten spezifiziert.
+  Sherief plant ein BIP zu schreiben, welches das Verhalten spezifiziert.
 
 - **Proof of micro-burn:** mehrere Entwickler [diskutierten][pomb]
   Anwendungsfälle und Entwürfe von Onchain-Transaktionen, die bitcoins
@@ -57,11 +57,11 @@ erwähnenswerter Änderungen an beliebter Bitcoin Infrastruktursoftware.
   bitcoins verbrannt wurden anzuhängen, was die Art von Anti-Spam-Schutz bieten würde
   der ursprünglich als Vorteil von [hashcash][] vorgesehen war.
 
-    Es wurden mehrere Lösungen mit Merkle-Bäumen diskutiert. Ein Teilnehmer
-    meinte, dass die geringen Beträge um die es sich handelt nahelegen,
-    dass Vertrauen (oder teilweises Vertrauen) der Beteiligten in eine zentrale
-    Drittpartei eine vernünftige Lösung darstellen könnte, um unnötige
-    Komplexität zu vermeiden.
+  Es wurden mehrere Lösungen mit Merkle-Bäumen diskutiert. Ein Teilnehmer
+  meinte, dass die geringen Beträge um die es sich handelt nahelegen,
+  dass Vertrauen (oder teilweises Vertrauen) der Beteiligten in eine zentrale
+  Drittpartei eine vernünftige Lösung darstellen könnte, um unnötige
+  Komplexität zu vermeiden.
 
 ## Ausgewählte Q&A aus dem Bitcoin Stack Exchange
 

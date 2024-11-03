@@ -6,12 +6,12 @@ title: Pay-to-Contract (P2C) protocols
 shortname: p2c
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Privacy Enhancements
   - Scripts and Addresses
 
@@ -38,6 +38,9 @@ optech_mentions:
 
   - title: "PSBT extension for pay-to-contract fields"
     url: /en/newsletters/2022/01/26/#psbt-extension-for-p2c-fields
+
+  - title: "BIPs #1293 adds BIP372 Pay-to-contract tweak fields for PSBT"
+    url: /en/newsletters/2022/10/05/#bips-1293
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

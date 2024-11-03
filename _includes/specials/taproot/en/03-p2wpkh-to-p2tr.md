@@ -76,38 +76,46 @@ pages of the Bitcoin Wiki so other developers can learn from your code.
     by both wallets and still in common use among most other wallets.
 
     <table>
-      <tr>
-        <th>Script management</th>
-        <th>Initial backup</th>
-        <th>Introducing new scripts</th>
-        <th>Scanning (bandwidth/CPU cost)</th>
-        <th>Deprecating scripts</th>
-      </tr>
+    <tr>
+    <th>Script management</th>
+    <th>Initial backup</th>
+    <th>Introducing new scripts</th>
+    <th>Scanning (bandwidth/CPU cost)</th>
+    <th>Deprecating scripts</th>
+    </tr>
 
-      <tr>
-        <th markdown="1">Implicit scripts (e.g. [BIP44][])</th>
-        <td>Seed words</td>
-        <td>Automatic (no user action required)</td>
-        <td>Must scan for all supported scripts, O(n)</td>
-        <td>No way to warn users that they're using unsupported scripts</td>
-      </tr>
+    <tr>
+    <th markdown="1">
 
-      <tr>
-        <th>Explicit scripts (versioned seeds)</th>
-        <td>Seed words (includes version bits)</td>
-        <td>User must backup new seed; funds are either partitioned into two
-        separate wallets or user must send funds from the old wallet to the new</td>
-        <td>Only scans for a single script template, O(1)</td>
-        <td>Users warned about unsupported scripts</td>
-      </tr>
+    Implicit scripts (e.g. [BIP44][])
 
-      <tr>
-        <th markdown="1">Explicit scripts ([descriptors][topic descriptors])</th>
-        <td>Seed words and descriptor</td>
-        <td>User must back up the new descriptor</td>
-        <td>Only scans for the script templates that were actually used, O(n); n=1 for a new wallet</td>
-        <td>Users warned about unsupported scripts</td>
-      </tr>
+    </th>
+    <td>Seed words</td>
+    <td>Automatic (no user action required)</td>
+    <td>Must scan for all supported scripts, O(n)</td>
+    <td>No way to warn users that they're using unsupported scripts</td>
+    </tr>
+
+    <tr>
+    <th>Explicit scripts (versioned seeds)</th>
+    <td>Seed words (includes version bits)</td>
+    <td>User must backup new seed; funds are either partitioned into two
+    separate wallets or user must send funds from the old wallet to the new</td>
+    <td>Only scans for a single script template, O(1)</td>
+    <td>Users warned about unsupported scripts</td>
+    </tr>
+
+    <tr>
+    <th markdown="1">
+
+    Explicit scripts ([descriptors][topic descriptors])
+
+    </th>
+    <td>Seed words and descriptor</td>
+    <td>User must back up the new descriptor</td>
+    <td>Only scans for the script templates that were actually used, O(n); n=1 for a new wallet</td>
+    <td>Users warned about unsupported scripts</td>
+    </tr>
     </table>
 
 {% include linkers/issues.md issues="" %}

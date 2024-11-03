@@ -24,20 +24,20 @@ d'infrastructure Bitcoin.
   utilisateur pour une raison quelconque, souhaite ajouter des frais plus élevés, elle peut [remplacer][topic rbf] l'augmentation des
   frais CPFP par sa propre augmentation des frais CPFP à un taux plus élevé.
 
-    Le script anyone-can-spend proposé est un script de sortie composé de l'équivalent
-    de `OP_TRUE`, qui peut être dépensé par une entrée avec un script d'entrée vide. Comme l'a publié Sanders cette semaine, l'utilisation
-    d'un script de sortie hérité signifie que la transaction enfant qui le dépense a un txid malléable, c'est-à-dire que n'importe quel
-    mineur peut ajouter des données au script d'entrée pour modifier le txid de la transaction enfant. Il est donc déconseillé
-    d'utiliser la transaction enfant pour autre chose que l'augmentation des frais, car même si elle est confirmée, elle peut être
-    confirmée avec un txid différent qui invalide toutes les transactions petites-filles.
+  Le script anyone-can-spend proposé est un script de sortie composé de l'équivalent
+  de `OP_TRUE`, qui peut être dépensé par une entrée avec un script d'entrée vide. Comme l'a publié Sanders cette semaine, l'utilisation
+  d'un script de sortie hérité signifie que la transaction enfant qui le dépense a un txid malléable, c'est-à-dire que n'importe quel
+  mineur peut ajouter des données au script d'entrée pour modifier le txid de la transaction enfant. Il est donc déconseillé
+  d'utiliser la transaction enfant pour autre chose que l'augmentation des frais, car même si elle est confirmée, elle peut être
+  confirmée avec un txid différent qui invalide toutes les transactions petites-filles.
 
-    Sanders suggère plutôt d'utiliser l'un des scripts de sortie qui avaient été réservés pour les futures mises à niveau de SegWit.
-    Cela consomme légèrement plus d'espace dans le bloc---quatre octets pour SegWit contre un octet pour `OP_TRUE` nu---mais élimine tout
-    problème concernant la malléabilité de la transaction. Après quelques discussions sur le fil, Sanders a proposé plus tard
-    d'offrir les deux options : une version `OP_TRUE` pour ceux qui ne se soucient pas de la malléabilité et qui veulent minimiser la
-    taille de la transaction, ainsi qu'une version SegWit légèrement plus grande mais qui n'autorise pas la mutation de la transaction
-    enfant. Les discussions supplémentaires sur le fil se sont concentrées sur le choix des octets supplémentaires pour l'approche SegWit
-    afin de créer une adresse [bech32m mémorable][topic bech32].
+  Sanders suggère plutôt d'utiliser l'un des scripts de sortie qui avaient été réservés pour les futures mises à niveau de SegWit.
+  Cela consomme légèrement plus d'espace dans le bloc---quatre octets pour SegWit contre un octet pour `OP_TRUE` nu---mais élimine tout
+  problème concernant la malléabilité de la transaction. Après quelques discussions sur le fil, Sanders a proposé plus tard
+  d'offrir les deux options : une version `OP_TRUE` pour ceux qui ne se soucient pas de la malléabilité et qui veulent minimiser la
+  taille de la transaction, ainsi qu'une version SegWit légèrement plus grande mais qui n'autorise pas la mutation de la transaction
+  enfant. Les discussions supplémentaires sur le fil se sont concentrées sur le choix des octets supplémentaires pour l'approche SegWit
+  afin de créer une adresse [bech32m mémorable][topic bech32].
 
 ## Rapport de terrain : Un voyage avec Miniscript
 

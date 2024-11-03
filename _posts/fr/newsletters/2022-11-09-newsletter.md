@@ -33,75 +33,75 @@ d'infrastructure Bitcoin.
   avec ce drapeau, à moins (ou jusqu'à ce) que les circonstances changent sur
   le réseau". Il note :
 
-    - *Le RBF Opt-in est déjà disponible :* toute personne souhaitant
-      bénéficier des avantages de RBF Opt-in devrait pouvoir y adhérer en
-      utilisant le mécanisme décrit dans le [BIP125][]. Les utilisateurs ne
-      seraient servis par full-RBF que s'il y avait une raison pour laquelle
-      ils ne pouvaient pas utiliser le RBF.
+  - *Le RBF Opt-in est déjà disponible :* toute personne souhaitant
+    bénéficier des avantages de RBF Opt-in devrait pouvoir y adhérer en
+    utilisant le mécanisme décrit dans le [BIP125][]. Les utilisateurs ne
+    seraient servis par full-RBF que s'il y avait une raison pour laquelle
+    ils ne pouvaient pas utiliser le RBF.
 
-    - *Full-RBF ne répare pas ce qui n'est pas déjà cassé par d'autres moyens :*
-      Le cas possible où certains utilisateurs d'un protocole multipartie
-      pourraient refuser à d'autres utilisateurs la possibilité d'utiliser
-      le RBF opt-in a été précédemment [identifié][riard funny games], mais
-      Daftuar note que ce protocole est vulnérable à d'autres attaques bon
-      marché ou gratuites que le Full-RBF ne résoudrait pas.
+  - *Full-RBF ne répare pas ce qui n'est pas déjà cassé par d'autres moyens :*
+    Le cas possible où certains utilisateurs d'un protocole multipartie
+    pourraient refuser à d'autres utilisateurs la possibilité d'utiliser
+    le RBF opt-in a été précédemment [identifié][riard funny games], mais
+    Daftuar note que ce protocole est vulnérable à d'autres attaques bon
+    marché ou gratuites que le Full-RBF ne résoudrait pas.
 
-    - *Full-RBF supprime des options :* "En l'absence d'autres exemples
-      [de problèmes résolus par full-rbf], il ne me semble pas que full-rbf
-      résolve les problèmes des utilisateurs de RBF, qui sont déjà libres
-      de choisir de soumettre leurs transactions à la politique RBF du BIP 125.
-      De ce point de vue, "activer full-rbf" revient en fait à retirer à
-      l'utilisateur le choix de soumettre une transaction à un régime de
-      politique de non-remplacement."
+  - *Full-RBF supprime des options :* "En l'absence d'autres exemples
+    [de problèmes résolus par full-rbf], il ne me semble pas que full-rbf
+    résolve les problèmes des utilisateurs de RBF, qui sont déjà libres
+    de choisir de soumettre leurs transactions à la politique RBF du BIP 125.
+    De ce point de vue, "activer full-rbf" revient en fait à retirer à
+    l'utilisateur le choix de soumettre une transaction à un régime de
+    politique de non-remplacement."
 
-    - *Offrir le non-remplacement n'introduit aucun problème pour les nœuds complets :*
-      En effet, il simplifie le traitement de longues chaînes de transactions.
+  - *Offrir le non-remplacement n'introduit aucun problème pour les nœuds complets :*
+    En effet, il simplifie le traitement de longues chaînes de transactions.
 
-    - *Il n'est pas toujours facile de déterminer la compatibilité des incitations :*
-       Daftuar utilise la proposition pour le relais de transaction v3 (voir la
-       [Newsletter #220][news220 v3tx]) comme exemple :
+  - *Il n'est pas toujours facile de déterminer la compatibilité des incitations :*
+     Daftuar utilise la proposition pour le relais de transaction v3 (voir la
+     [Newsletter #220][news220 v3tx]) comme exemple :
 
-       > Supposons que dans quelques années quelqu'un propose d'ajouter un
-       > flag "-disable_v3_transaction_enforcement" à notre logiciel, pour
-       > laisser les utilisateurs décider d'éteindre cette politique de restriction
-       > et traiter les transactions V3 comme des V2, pour toutes les mêmes raisons
-       > que l'on pourrait soutenir aujourd'hui avec full-rbf [...]
-       >
-       > [Ceci] pourrait être subversif pour rendre les cas d'usage de Lightning
-       > sur le travail des transactions v3 [...] nous ne devons pas permettre aux utilisateurs de
-       > désactiver cette politique, car tant que cette politique est juste
-       > facultative et fonctionnant pour ceux qui le souhaitent, elle ne devrait pas nuire
-       > à toute personne à qui nous offrons un ensemble de règles plus strictes pour des
-       > cas d'usage particuliers. Ajouter un moyen de contourner ces règles, c'est juste essayer de
-       > briser le cas d'utilisation de quelqu'un d'autre, sans essayer d'en ajouter un nouveau. Nous
-       > ne devrions pas brandir la "compatibilité des incitations" comme une matraque pour
-       > briser des choses qui semblent fonctionner et ne pas causer
-       > de préjudice à autrui.
-       >
-       > Je pense que c'est exactement ce qui se passe avec full-rbf.
+     > Supposons que dans quelques années quelqu'un propose d'ajouter un
+     > flag "-disable_v3_transaction_enforcement" à notre logiciel, pour
+     > laisser les utilisateurs décider d'éteindre cette politique de restriction
+     > et traiter les transactions V3 comme des V2, pour toutes les mêmes raisons
+     > que l'on pourrait soutenir aujourd'hui avec full-rbf [...]
+     >
+     > [Ceci] pourrait être subversif pour rendre les cas d'usage de Lightning
+     > sur le travail des transactions v3 [...] nous ne devons pas permettre aux utilisateurs de
+     > désactiver cette politique, car tant que cette politique est juste
+     > facultative et fonctionnant pour ceux qui le souhaitent, elle ne devrait pas nuire
+     > à toute personne à qui nous offrons un ensemble de règles plus strictes pour des
+     > cas d'usage particuliers. Ajouter un moyen de contourner ces règles, c'est juste essayer de
+     > briser le cas d'utilisation de quelqu'un d'autre, sans essayer d'en ajouter un nouveau. Nous
+     > ne devrions pas brandir la "compatibilité des incitations" comme une matraque pour
+     > briser des choses qui semblent fonctionner et ne pas causer
+     > de préjudice à autrui.
+     >
+     > Je pense que c'est exactement ce qui se passe avec full-rbf.
 
-    Daftuar termine son courriel par trois questions pour ceux qui souhaitent toujours que l'option
-    `mempoolfullrbf` soit incluse dans Bitcoin Core :
+  Daftuar termine son courriel par trois questions pour ceux qui souhaitent toujours que l'option
+  `mempoolfullrbf` soit incluse dans Bitcoin Core :
 
-    1. "Est-ce que full-rbf offre des avantages autres que la rupture
-       des pratiques commerciales de zeroconf ?  Si oui, quels sont-ils ?"
+  1. "Est-ce que full-rbf offre des avantages autres que la rupture
+     des pratiques commerciales de zeroconf ?  Si oui, quels sont-ils ?"
 
-    2. "Est-il raisonnable d'appliquer les règles de rbf du BIP 125 à toutes
-       les transactions, si ces règles elles-mêmes ne sont pas toujours
-       compatibles avec les incitations ?"
+  2. "Est-il raisonnable d'appliquer les règles de rbf du BIP 125 à toutes
+     les transactions, si ces règles elles-mêmes ne sont pas toujours
+     compatibles avec les incitations ?"
 
-    3. "Si quelqu'un devait proposer une option de ligne de commande qui casse
-       le relai de transaction v3 dans le futur, y a-t-il une base logique pour
-       s'y opposer qui soit cohérente avec l'évolution vers full-rbf maintenant ?"
+  3. "Si quelqu'un devait proposer une option de ligne de commande qui casse
+     le relai de transaction v3 dans le futur, y a-t-il une base logique pour
+     s'y opposer qui soit cohérente avec l'évolution vers full-rbf maintenant ?"
 
-    À l'heure où nous écrivons ces lignes, personne n'a répondu aux questions de
-    Daftuar sur la liste de diffusion, bien que deux réponses à cet ensemble de
-    questions aient été publiées sur une [PR][bitcoin core #26438] du site Bitcoin Core
-    que Daftuar a ouvert pour proposer de retirer l'option de configuration `mempoolfullrbf`.
-    Daftuar plus tard a [clôturé][26438 close] cette PR.
+  À l'heure où nous écrivons ces lignes, personne n'a répondu aux questions de
+  Daftuar sur la liste de diffusion, bien que deux réponses à cet ensemble de
+  questions aient été publiées sur une [PR][bitcoin core #26438] du site Bitcoin Core
+  que Daftuar a ouvert pour proposer de retirer l'option de configuration `mempoolfullrbf`.
+  Daftuar plus tard a [clôturé][26438 close] cette PR.
 
-    Au moment de la rédaction de cet article, nous ingnorons si quelqu'un ferait
-    d'autres commentaires sur le sujet.
+  Au moment de la rédaction de cet article, nous ingnorons si quelqu'un ferait
+  d'autres commentaires sur le sujet.
 
 - **Bogue d'analyse des blocs affectant plusieurs logiciels :** comme indiqué dans
   la [Newsletter #222][news222 bug], il est apparu qu'un bogue majeur,
@@ -118,22 +118,22 @@ d'infrastructure Bitcoin.
   Osuntokun ont gardé la vulnérabilité secrète jusqu'à ce que le correctif puisse
   être déployé.
 
-    Malheureusement, le deuxième bogue connexe a été redécouvert indépendamment par
-    quelqu'un qui a trouvé un mineur pour le déclencher. Ce nouveau bug a de nouveau
-    affecté BTCD et LND, mais il a également affecté au moins [deux autres][liquid and rust bitcoin vulns] projets
-    ou services importants. Tous les utilisateurs des systèmes affectés doivent
-    procéder à une mise à jour immédiate. Nous réitérons notre conseil d'il y a trois
-    semaines à toute personne utilisant un logiciel Bitcoin de s'inscrire pour
-    recevoir les annonces de sécurité de l'équipe de développement de ce logiciel.
+  Malheureusement, le deuxième bogue connexe a été redécouvert indépendamment par
+  quelqu'un qui a trouvé un mineur pour le déclencher. Ce nouveau bug a de nouveau
+  affecté BTCD et LND, mais il a également affecté au moins [deux autres][liquid and rust bitcoin vulns] projets
+  ou services importants. Tous les utilisateurs des systèmes affectés doivent
+  procéder à une mise à jour immédiate. Nous réitérons notre conseil d'il y a trois
+  semaines à toute personne utilisant un logiciel Bitcoin de s'inscrire pour
+  recevoir les annonces de sécurité de l'équipe de développement de ce logiciel.
 
-    Avec la publication de ce bulletin d'information, Optech a également ajouté une page
-    spéciale où nous énumérons les noms des [personnes extraordinaires qui ont divulgués
-    de manière responsable une vulnérabilité] [topic responsible disclosures] que nous avons résumé
-    dans un bulletin d'information d'Optech. Il y a probablement plusieurs autres
-    divulgations qui ne sont pas listées parce qu'elles n'ont pas encore été rendues
-    publiques. Bien entendu, nous remercions également tous les examinateurs des
-    propositions et des demandes de PR dont les efforts assidus ont permis d'éviter
-    que d'innombrables bogues de sécurité ne se retrouvent dans les logiciels publiés.
+  Avec la publication de ce bulletin d'information, Optech a également ajouté une page
+  spéciale où nous énumérons les noms des [personnes extraordinaires qui ont divulgués
+  de manière responsable une vulnérabilité] [topic responsible disclosures] que nous avons résumé
+  dans un bulletin d'information d'Optech. Il y a probablement plusieurs autres
+  divulgations qui ne sont pas listées parce qu'elles n'ont pas encore été rendues
+  publiques. Bien entendu, nous remercions également tous les examinateurs des
+  propositions et des demandes de PR dont les efforts assidus ont permis d'éviter
+  que d'innombrables bogues de sécurité ne se retrouvent dans les logiciels publiés.
 
 ## Bitcoin Core PR Review Club
 

@@ -21,17 +21,17 @@ de l'infrastructure Bitcoin.
   canal pendant 28 jours. Le timelock de 28 jours empêche Alice de simplement fermer le canal après avoir reçu le paiement et d'utiliser
   ses fonds à d'autres fins.
 
-    Poursuivant l'exemple, Bob ouvre le canal avec une contribution supplémentaire de 100 000 000 sats (1 BTC) de ses fonds. Il envoie
-    ensuite presque tous ses fonds à travers le canal. Maintenant, le solde d'Alice dans le canal n'est pas de 10 000 sats pour lesquels
-    elle a reçu des frais, mais presque 10 000 fois plus élevé que cette somme. Si Bob est malveillant, il n'autorisera pas ces fonds à
-    se déplacer à nouveau avant l'expiration du timelock de 28 jours auquel Alice s'est engagée.
+  Poursuivant l'exemple, Bob ouvre le canal avec une contribution supplémentaire de 100 000 000 sats (1 BTC) de ses fonds. Il envoie
+  ensuite presque tous ses fonds à travers le canal. Maintenant, le solde d'Alice dans le canal n'est pas de 10 000 sats pour lesquels
+  elle a reçu des frais, mais presque 10 000 fois plus élevé que cette somme. Si Bob est malveillant, il n'autorisera pas ces fonds à
+  se déplacer à nouveau avant l'expiration du timelock de 28 jours auquel Alice s'est engagée.
 
-    Une atténuation suggérée par Teinturier et discutée par lui-même et d'autres consistait à n'appliquer le timelock qu'à la
-    contribution de liquidité (par exemple, seulement les 10 000 sats d'Alice). Cela introduit des complexités et des inefficacités,
-    bien que cela puisse résoudre le problème. Une alternative proposée par Teinturier était simplement de supprimer le timelock (ou de
-    le rendre facultatif) et de laisser les acheteurs de liquidité prendre le risque que les fournisseurs puissent fermer les canaux
-    peu de temps après avoir reçu leurs frais de liquidité. Si les canaux ouverts via des annonces de liquidité génèrent généralement
-    des revenus de frais de transfert importants, il y aurait une incitation à les maintenir ouverts.
+  Une atténuation suggérée par Teinturier et discutée par lui-même et d'autres consistait à n'appliquer le timelock qu'à la
+  contribution de liquidité (par exemple, seulement les 10 000 sats d'Alice). Cela introduit des complexités et des inefficacités,
+  bien que cela puisse résoudre le problème. Une alternative proposée par Teinturier était simplement de supprimer le timelock (ou de
+  le rendre facultatif) et de laisser les acheteurs de liquidité prendre le risque que les fournisseurs puissent fermer les canaux
+  peu de temps après avoir reçu leurs frais de liquidité. Si les canaux ouverts via des annonces de liquidité génèrent généralement
+  des revenus de frais de transfert importants, il y aurait une incitation à les maintenir ouverts.
 
 ## Modifications apportées aux services et aux logiciels clients
 
@@ -152,7 +152,8 @@ Ceci est le dernier bulletin hebdomadaire de Bitcoin Optech de l'année. Le
 mercredi 20 décembre, nous publierons notre sixième bulletin annuel rétrospectif.
 La publication régulière reprendra le mercredi 3 janvier.
 
-{% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}{% include snippets/recap-ad.md when=day_after_posting %}
+{% assign day_after_posting = page.date | date: "%s" | plus: 86400 | date: "%Y-%m-%d 15:00" %}
+{% include snippets/recap-ad.md when=day_after_posting %}
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2685,5389,5490,1446,27995" %}
 [LND 0.17.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.3-beta

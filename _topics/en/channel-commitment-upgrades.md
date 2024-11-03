@@ -6,12 +6,12 @@ title: Channel commitment upgrades
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -34,6 +34,18 @@ optech_mentions:
 
   - title: Updating LN commitments
     url: /en/newsletters/2022/04/06/#updating-ln-commitments
+
+  - title: Analysis of multiple proposals for upgrading LN channels
+    url: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+
+  - title: "BOLTs #869 introduces a new channel quiescence protocol, in part for channel upgrades"
+    url: /en/newsletters/2024/06/28/#bolts-869
+
+  - title: "LND #8952 refactors code to make it easier to implement dynamic commitments"
+    url: /en/newsletters/2024/08/09/#lnd-8952
+
+  - title: "LND #8967 adds Stfu wire message to lock channel state before initiating protocol upgrades"
+    url: /en/newsletters/2024/08/16/#lnd-8967
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

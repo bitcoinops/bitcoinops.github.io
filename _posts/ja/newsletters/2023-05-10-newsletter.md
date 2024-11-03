@@ -207,8 +207,7 @@ Bitcoinプロジェクトの多くのコントリビューターは、プロト�
 そして私たちに記事を書く機会を与えてくれた多くのコントリビューターをゲストに迎えた
 週刊のディスカッション[ポッドキャスト][podcast]を提供することにしています。
 
-これらはすべて、過去1年間で以下のような多くの貢献者の存在なくしては実現できませんでした:
-<!-- アルファベット順 -->
+これらはすべて、過去1年間で以下のような多くの貢献者の存在なくしては実現できませんでした: <!-- アルファベット順 -->
 Adam Jonas、
 Copinmalin、
 David A. Harding、
@@ -243,7 +242,7 @@ Zhiwei "Jeffrey" Hu、
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /ja/newsletters/2022/02/23/#ldk-1199
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [financial supporters]: /#members
 [review club 27501]: https://bitcoincore.reviews/27501
 [prioritisetransaction rpc]: https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html

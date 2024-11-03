@@ -41,21 +41,21 @@ changes to popular Bitcoin infrastructure software.
   spend the coins won't be contained in the user's [BIP32][] HD wallet,
   so additional backups may be required.
 
-    Advantages of the protocol are that it requires less block space
-    than existing protocols, it saves on transaction fees (both by using
-    less block space and potentially by requiring less urgency for its
-    settlement transactions), it only requires consensus-enforced
-    timelocks on one of the chains in a cross-chain swap, and it
-    doesn't depend on any new security assumptions or Bitcoin consensus
-    changes.  If taproot is adopted, swaps can be made even more privately
-    and efficiently.
+  Advantages of the protocol are that it requires less block space
+  than existing protocols, it saves on transaction fees (both by using
+  less block space and potentially by requiring less urgency for its
+  settlement transactions), it only requires consensus-enforced
+  timelocks on one of the chains in a cross-chain swap, and it
+  doesn't depend on any new security assumptions or Bitcoin consensus
+  changes.  If taproot is adopted, swaps can be made even more privately
+  and efficiently.
 
-    Commenting on the protocol, Lloyd Fournier [noted][fournier
-    elegance] the "elegance" of a simplified version of the protocol
-    that uses three transactions.  Dmitry Petukhov [posted][petukhov
-    tla+] about a [specification][sas tla+ spec] he'd written for the
-    protocol in the [TLA<sup>+</sup> formal specification language][tla+
-    lang], helping to test the correctness of the protocol.
+  Commenting on the protocol, Lloyd Fournier [noted][fournier
+  elegance] the "elegance" of a simplified version of the protocol
+  that uses three transactions.  Dmitry Petukhov [posted][petukhov
+  tla+] about a [specification][sas tla+ spec] he'd written for the
+  protocol in the [TLA<sup>+</sup> formal specification language][tla+
+  lang], helping to test the correctness of the protocol.
 
 ## Changes to services and client software
 
@@ -124,8 +124,8 @@ version 0.20.*
   node won't advertise support for BIP157 with `NODE_COMPACT_FILTERS` in its
   version message.
 
-    The feature is disabled by
-    default and can be enabled with the `-peerblockfilters` configuration parameter.
+  The feature is disabled by
+  default and can be enabled with the `-peerblockfilters` configuration parameter.
 
 - [Bitcoin Core #18894][] fixes a UI bug that affected people who
   simultaneously used multi-wallet mode in the GUI and manual coin

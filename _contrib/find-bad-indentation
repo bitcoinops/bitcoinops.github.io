@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import sys
+import re
+
+def check_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+
+        # Possible values for X
+        X_values = [2, 4, 6, 8]
+
+        # Maximum indentation that could reasonably be checked for (arbitrary large value or calculated based on file analysis)
+        max_indent = 12
+
+        # Check every set of three lines
+        for i in range(len(lines) - 2):
+            first_line = lines[i]
+            second_line = lines[i + 1]
+            third_line = lines[i + 2]
+
+            # Ensure the second line is empty
+            if second_line == '\n':
+                for X in X_values:
+                    if re.match(rf'^\s{{{X}}}(?![-\*]|[0-9]*\.)\S', first_line):
+                        # Check Y from X+1 to max_indent to ensure it's greater
+                        for Y in range(X + 1, max_indent + 1):
+                            if re.match(rf'^\s{{{Y}}}\S', third_line):
+                                print(f"Found inconsitent indentation {X} and and {Y} spaces in", filename)
+                                print(first_line, second_line, third_line)
+                                return 1  # Return error code 1 if a match is found
+
+        return 0  # Return error code 0 if no match is found
+
+    except FileNotFoundError:
+        print("File not found.")
+        return 2  # Return error code 2 if the file does not exist
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <filename>")
+        sys.exit(1)  # Exit with error code 1 if no filename is provided
+
+    filename = sys.argv[1]
+    result = check_file(filename)
+    sys.exit(result)
+
+import sys
+import re

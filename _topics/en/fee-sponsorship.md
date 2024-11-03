@@ -6,12 +6,12 @@ title: Fee sponsorship
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
@@ -40,6 +40,9 @@ optech_mentions:
 
   - title: "2022 year-in-review: fee sponsorship"
     url: /en/newsletters/2022/12/21/#fee-sponsorship
+
+  - title: Proposals for more block space efficient transaction fee sponsorship
+    url: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -23,10 +23,10 @@ infrastructure projects.
   [Newsletter #128][news128 psbt2]).  Both keypath and scriptpath spends
   are supported.
 
-    The proposed BIP also recommends that P2TR inputs in a
-    PSBT can omit copies of previous transactions because taproot fixes
-    the fee overpayment attack against v0 segwit inputs (see
-    [Newsletter #101][news101 fee overpayment attack]).
+  The proposed BIP also recommends that P2TR inputs in a
+  PSBT can omit copies of previous transactions because taproot fixes
+  the fee overpayment attack against v0 segwit inputs (see
+  [Newsletter #101][news101 fee overpayment attack]).
 
 - **Key derivation path for single-sig P2TR:** Andrew Chow also
   [posted][chow taproot path] a second [proposed BIP][bip-taproot-bip44]
@@ -50,15 +50,15 @@ answers posted since our last update.*
   G. Maxwell outlines many considerations for enabling any opcodes that affect
   consensus including:
 
-    * upfront as well as ongoing maintenance costs
+  * upfront as well as ongoing maintenance costs
 
-    * potential risks to the user of the opcode but also the entire network
+  * potential risks to the user of the opcode but also the entire network
 
-    * additional complexity acting as a disincentive for customizing or reimplementing node software
+  * additional complexity acting as a disincentive for customizing or reimplementing node software
 
-    * partial or inefficient features crowding out better future alternative ones
+  * partial or inefficient features crowding out better future alternative ones
 
-    * accidentally creating perverse incentives
+  * accidentally creating perverse incentives
 
 - [Why does blockwide signature aggregation prevent adaptor signatures?]({{bse}}107196)
   Pieter Wuille explains why cross-input signature aggregation interferes

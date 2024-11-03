@@ -25,13 +25,13 @@ lang: zh
 
 - **<!--proposal-for-64-bit-arithmetic-soft-fork-->关于 64 位算术软分叉的提议：** Chris Stewart 在 Delving Bitcoin 上[发布][stewart 64]了一份 [BIP 草案][bip 64]，以在未来的软分叉中实现比特币的 64 位算术运算。比特币[目前][script wiki]只允许 32 位运算（使用有符号整数，因此不能使用超过 31 位的数）。在任何需要对输出中支付的聪的数量进行运算的结构中，支持 64 位值将特别有用，因为这是用 64 位整数指定的。例如，[joinpool][topic joinpools] 退出协议将受益于金额自省（参见第 [166][news166 tluv] 期和第 [283][news283 exits] 期周报）。
 
-    截至本文撰写时，讨论主要集中在提案的细节上，例如如何对整数值进行编码、使用哪种 [taproot][topic taproot] 升级功能，以及创建一套新的算术 opcode 是否比升级现有的更可取。
+  截至本文撰写时，讨论主要集中在提案的细节上，例如如何对整数值进行编码、使用哪种 [taproot][topic taproot] 升级功能，以及创建一套新的算术 opcode 是否比升级现有的更可取。
 
 - **<!--overview-of-cluster-mempool-proposal-->族群交易池提案概览：** Suhas Daftuar 在 Delving Bitcoin 上[发布][daftuar cluster]了一份关于[集群交易池][topic cluster mempool]提案的概览。Optech 在[第 280 期周报][news280 cluster]中尝试过总结族群交易池的讨论现状，但我们强烈建议阅读 Daftuar 的这份概述。他是该提案的设计者之一。有一个我们之前没有报道过的细节引起了我们的注意：
 
-    - *CPFP carve out 需要移除：* [2019][news56 carveout] 年添加到 Bitcoin Core 的 CPFP [carve out][topic cpfp carve out] 交易池策略试图解决 CPFP 版本的[交易钉死攻击][topic transaction pinning]，即交易对手攻击者利用 Bitcoin Core 对相关交易数量和大小的限制，推迟对属于诚实对等节点的子交易进行处理。Carve out 允许一个交易略微超出这种限制。在族群交易池中，相关交易被放置在一个族群中，限制适用于每个族群，而不是每笔交易。在这种策略下，除非我们限制网络上中继的交易之间允许的关系远远超出当前的限制，否则没有已知的方法来确保一个族群最多只能包含一个 carve out。拥有多个 carve out 的族群可能会大大超出其限制，这时就需要针对这些更高的限制来设计协议。这将满足 carve out 用户的需求，但却限制了普通交易广播者的行为——这是不可取的。
+  - *CPFP carve out 需要移除：* [2019][news56 carveout] 年添加到 Bitcoin Core 的 CPFP [carve out][topic cpfp carve out] 交易池策略试图解决 CPFP 版本的[交易钉死攻击][topic transaction pinning]，即交易对手攻击者利用 Bitcoin Core 对相关交易数量和大小的限制，推迟对属于诚实对等节点的子交易进行处理。Carve out 允许一个交易略微超出这种限制。在族群交易池中，相关交易被放置在一个族群中，限制适用于每个族群，而不是每笔交易。在这种策略下，除非我们限制网络上中继的交易之间允许的关系远远超出当前的限制，否则没有已知的方法来确保一个族群最多只能包含一个 carve out。拥有多个 carve out 的族群可能会大大超出其限制，这时就需要针对这些更高的限制来设计协议。这将满足 carve out 用户的需求，但却限制了普通交易广播者的行为——这是不可取的。
 
-      针对 carve out 交易和族群交易池之间的不兼容性提出的解决方案是 [v3 交易中继][topic v3 transaction relay]，这将允许 v1 和 v2 交易的普通用户继续以所有历史上的典型方式使用它们，但也允许闪电网络等合约协议的用户选择加入 v3 交易，强制执行一组受限的交易间关系（_拓扑_）。受限制的拓扑结构可减轻交易钉死攻击，并可与[临时锚点][topic ephemeral anchors]等近乎随时可用的 carve out 交易替代品相结合。
+    针对 carve out 交易和族群交易池之间的不兼容性提出的解决方案是 [v3 交易中继][topic v3 transaction relay]，这将允许 v1 和 v2 交易的普通用户继续以所有历史上的典型方式使用它们，但也允许闪电网络等合约协议的用户选择加入 v3 交易，强制执行一组受限的交易间关系（_拓扑_）。受限制的拓扑结构可减轻交易钉死攻击，并可与[临时锚点][topic ephemeral anchors]等近乎随时可用的 carve out 交易替代品相结合。
 
   重要的是，对 Bitcoin Core 的交易池管理算法进行重大修改时，要考虑到人们现在使用比特币的所有方式，或者在不久的将来可能的使用方式，我们鼓励开发挖矿软件、钱包或合约协议的开发者阅读 Daftuar 的描述，并就任何不清楚或可能对比特币软件如何与族群交易池互动产生不利影响的地方提出问题。
 

@@ -17,7 +17,7 @@ Opt-in Replace by Fee (RBF) was standardized in December 2015. But who is
 supporting it and what is the user experience like? This post presents a study of
 [BIP125][] opt-in RBF as seen by users of popular Bitcoin wallets and block explorers. The
 findings were initially presented during the most recent [Bitcoin Optech
-Workshop in Paris](/workshops/).
+Workshop in Paris](/en/workshops/).
 
 Understanding how other wallets, exchanges, and block explorers handle opt-in
 RBF transactions is an important consideration for Bitcoin services. In order
@@ -401,9 +401,9 @@ reach out to [mike@bitcoinops.org](mailto:mike@bitcoinops.org).
     by users of second layer protocols.
 
 {% include references.md %}
-[optech team]: /about/
+[optech team]: /en/about/
 [announcement]: /en/announcing-bitcoin-optech/
-[workshops]: /workshops/
+[workshops]: /en/workshops/
 [newsletters]: /en/newsletters/
 [dashboard]: https://dashboard.bitcoinops.org/
 [dashboard blog post]: /en/dashboard-announcement/

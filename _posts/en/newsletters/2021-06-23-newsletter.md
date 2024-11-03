@@ -27,43 +27,43 @@ infrastructure projects.
   who objected because allowing replacement simplifies building tools
   that defraud merchants who accept unconfirmed transactions as final.
 
-    Over five years later, it appears very few merchants today are
-    accepting unconfirmed transactions as final, and it's not clear how
-    many of those that do are actually checking for the BIP125 opt-in
-    signal and treating those transactions differently.  If no one is
-    relying on BIP125 signals, then allowing every transaction to be
-    replaceable could provide some advantages, such as:
+  Over five years later, it appears very few merchants today are
+  accepting unconfirmed transactions as final, and it's not clear how
+  many of those that do are actually checking for the BIP125 opt-in
+  signal and treating those transactions differently.  If no one is
+  relying on BIP125 signals, then allowing every transaction to be
+  replaceable could provide some advantages, such as:
 
-    - **Simplifying analysis** for presigned transaction protocols (such
-      as LN and [vaults][topic vaults]) where ideas for using RBF fee
-      bumping need to account for a malicious counterparty's ability to
-      prevent setting the BIP125 signal.  If every transaction could be
-      replaced, this wouldn't be a concern.
+  - **Simplifying analysis** for presigned transaction protocols (such
+    as LN and [vaults][topic vaults]) where ideas for using RBF fee
+    bumping need to account for a malicious counterparty's ability to
+    prevent setting the BIP125 signal.  If every transaction could be
+    replaced, this wouldn't be a concern.
 
-    - **Reducing transaction analysis opportunity** because transactions
-      that opt in to RBF look different onchain than transactions which
-      don't.  Since most wallets consistently opt in, or not, this
-      provides evidence that surveillance companies can use in their
-      attempts to identify who owns which bitcoins.  If every
-      transaction was replaceable, there'd be no need to set the BIP125
-      signal.
+  - **Reducing transaction analysis opportunity** because transactions
+    that opt in to RBF look different onchain than transactions which
+    don't.  Since most wallets consistently opt in, or not, this
+    provides evidence that surveillance companies can use in their
+    attempts to identify who owns which bitcoins.  If every
+    transaction was replaceable, there'd be no need to set the BIP125
+    signal.
 
-    This week, Antoine Riard [posted][riard rbf] a proposal to the Bitcoin-Dev
-    mailing list for eventually changing Bitcoin Core's code to allow
-    RBF for all transactions regardless of whether or not they set the
-    BIP125 opt-in signal.  The idea was also discussed in the first
-    transaction relay workshop [meeting][trw meeting].  Several meeting
-    participants mentioned Bitcoin Core [PR #10823][bitcoin core #10823]
-    as an alternative approach---it allows any transaction to be
-    replaced, but only after the transaction had spent a certain amount
-    of time in a node mempool (originally proposed as 6 hours; later
-    suggested to be 72 hours).
+  This week, Antoine Riard [posted][riard rbf] a proposal to the Bitcoin-Dev
+  mailing list for eventually changing Bitcoin Core's code to allow
+  RBF for all transactions regardless of whether or not they set the
+  BIP125 opt-in signal.  The idea was also discussed in the first
+  transaction relay workshop [meeting][trw meeting].  Several meeting
+  participants mentioned Bitcoin Core [PR #10823][bitcoin core #10823]
+  as an alternative approach---it allows any transaction to be
+  replaced, but only after the transaction had spent a certain amount
+  of time in a node mempool (originally proposed as 6 hours; later
+  suggested to be 72 hours).
 
-    Both Riard's email and the meeting participants note that any proposal
-    for replacing transactions that don't contain a BIP125 opt-in signal
-    requires feedback from merchants currently depending on
-    BIP125 behavior.  Optech encourages any such merchants to
-    respond to the mailing list thread.
+  Both Riard's email and the meeting participants note that any proposal
+  for replacing transactions that don't contain a BIP125 opt-in signal
+  requires feedback from merchants currently depending on
+  BIP125 behavior.  Optech encourages any such merchants to
+  respond to the mailing list thread.
 
 ## Changes to services and client software
 

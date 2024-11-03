@@ -94,9 +94,11 @@ lang: zh
 - [Eclair #2761][] 允许转发有限数量的 [HTLCs][topic htlc] 给对方，即使对方的余额已低于通道保证金的要求。这可以帮助解决 “通道拼接（[splicing][topic splicing]）” 或者[双向注资][topic dual funding]之后可能发生的 *资金滞留问题（suck funds problem）*。见[周报 #253][news253 stuck] 了解 Eclair 为资金滞留问题提出的另一项缓解措施。{% assign timestamp="41:02" %}
 
 <div markdown="1" class="callout">
+
 ## 想要了解更多？
 
 想要了解更多本周新闻部分提到的话题的讨论，请加入我们于每周四（周报发布的后一天）的 UTC 时间 15:00 在 [Twitter Spaces][@bitcoinoptech] 举办的 Bitcoin Optech 回顾。聊天室里的讨论也会记录在我们的[播客][podcast]页面并长期留存。
+
 </div>
 
 
@@ -105,7 +107,7 @@ lang: zh
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
 [halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html

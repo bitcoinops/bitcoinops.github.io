@@ -158,20 +158,20 @@ BOLTs][bolts repo].*
   to compare the cost effectiveness of the results. Previously, the changeless
   BnB result was always preferred if one was found.
 
-    The waste score heuristic assumes that every input must eventually be spent
-    at a feerate of 10 sat/vB, and that change outputs are avoidable. Inputs are
-    scored as the difference between their cost at the current feerate and the
-    baseline feerate, resulting in a waste score deduction for spending inputs at
-    lower feerates and a waste score increase at higher feerates. Change outputs
-    always increase the waste score by the cost of the change output creation as
-    well as the future cost of spending the change output.
+  The waste score heuristic assumes that every input must eventually be spent
+  at a feerate of 10 sat/vB, and that change outputs are avoidable. Inputs are
+  scored as the difference between their cost at the current feerate and the
+  baseline feerate, resulting in a waste score deduction for spending inputs at
+  lower feerates and a waste score increase at higher feerates. Change outputs
+  always increase the waste score by the cost of the change output creation as
+  well as the future cost of spending the change output.
 
-    In a wallet spending at various feerates, this approach will shift some
-    input consumption to lower feerates, reducing the overall wallet operation
-    cost. The baseline feerate separating consolidatory and thrifty coin selection
-    behavior can be configured with the new option `-consolidatefeerate`. The
-    subsequent PR [Bitcoin Core #17526][] proposes to add a third coin selection
-    algorithm based on a Single Random Draw.
+  In a wallet spending at various feerates, this approach will shift some
+  input consumption to lower feerates, reducing the overall wallet operation
+  cost. The baseline feerate separating consolidatory and thrifty coin selection
+  behavior can be configured with the new option `-consolidatefeerate`. The
+  subsequent PR [Bitcoin Core #17526][] proposes to add a third coin selection
+  algorithm based on a Single Random Draw.
 
 - [Eclair #1907][] updates how it uses block chain watchdogs to prevent
   [eclipse attacks][topic eclipse attacks] (see [Newsletter

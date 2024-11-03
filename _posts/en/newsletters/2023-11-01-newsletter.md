@@ -18,57 +18,57 @@ to popular Bitcoin infrastructure software.
   replies on the Bitcoin-Dev mailing list to discussions we've
   previously covered.
 
-    - *Covenants research:* Anthony Towns [replied][towns cov] to a
-      [post][russell cov] by Rusty Russell that we mentioned [last
-      week][news274 cov].  Towns compares Russell's approach to other
-      approaches specifically for [covenant][topic covenants]-based
-      [vaults][topic vaults] and finds it unappealing.  In a further
-      [reply][russell cov2], Russell notes that there are different designs
-      for vaults and that vaults are fundamentally less optimal than
-      other transaction types, implying that optimization isn't
-      critical for vault users.  He argued that the [BIP345][] vault
-      approach is more suitable for an address format than a set of
-      opcodes, which we think means that BIP345 makes more sense as a
-      template (like P2WPKH) that is designed for one function than it
-      does as a set of opcodes that are designed for that one function
-      but which will interact in possibly unanticipated ways with the
-      rest of script.
+  - *Covenants research:* Anthony Towns [replied][towns cov] to a
+    [post][russell cov] by Rusty Russell that we mentioned [last
+    week][news274 cov].  Towns compares Russell's approach to other
+    approaches specifically for [covenant][topic covenants]-based
+    [vaults][topic vaults] and finds it unappealing.  In a further
+    [reply][russell cov2], Russell notes that there are different designs
+    for vaults and that vaults are fundamentally less optimal than
+    other transaction types, implying that optimization isn't
+    critical for vault users.  He argued that the [BIP345][] vault
+    approach is more suitable for an address format than a set of
+    opcodes, which we think means that BIP345 makes more sense as a
+    template (like P2WPKH) that is designed for one function than it
+    does as a set of opcodes that are designed for that one function
+    but which will interact in possibly unanticipated ways with the
+    rest of script.
 
-      Towns also considers the use of Russell's approach for the purpose
-      of generally enabling experimentation and finds it "more
-      interesting [...] but still fairly crippled."  He reminds
-      readers of his previous proposal to provide a Lisp-style
-      alternative to Bitcoin Script (see [Newsletter #191][news191
-      lisp]) and shows how it could bring increased flexibility and
-      power to perform transaction introspection during witness
-      evaluation.  He provides links to his test code and notes some toy
-      examples he's written.  Russell replies, "I still think there's
-      much room for improvement before a replacement.  It's hard to
-      compare the hobbled [S]cript we have today with an alternative,
-      since most interesting cases are impossible."
+    Towns also considers the use of Russell's approach for the purpose
+    of generally enabling experimentation and finds it "more
+    interesting [...] but still fairly crippled."  He reminds
+    readers of his previous proposal to provide a Lisp-style
+    alternative to Bitcoin Script (see [Newsletter #191][news191
+    lisp]) and shows how it could bring increased flexibility and
+    power to perform transaction introspection during witness
+    evaluation.  He provides links to his test code and notes some toy
+    examples he's written.  Russell replies, "I still think there's
+    much room for improvement before a replacement.  It's hard to
+    compare the hobbled [S]cript we have today with an alternative,
+    since most interesting cases are impossible."
 
-      Towns and Russell also briefly discuss
-      [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack], specifically
-      its ability to allow authenticated data from an oracle to be
-      placed directly on an evaluation stack.
+    Towns and Russell also briefly discuss
+    [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack], specifically
+    its ability to allow authenticated data from an oracle to be
+    placed directly on an evaluation stack.
 
-    - *OP_CAT proposal:* several people replied to Ethan Heilman's
-      [post][heilman cat] announcing a proposed BIP for [OP_CAT][],
-      which we also [mentioned][news274 cat] last week.
+  - *OP_CAT proposal:* several people replied to Ethan Heilman's
+    [post][heilman cat] announcing a proposed BIP for [OP_CAT][],
+    which we also [mentioned][news274 cat] last week.
 
-      After several replies mentioned concern about whether `OP_CAT`
-      would be excessively restricted by the 520-byte limit on the size
-      of stack elements, Peter Todd [described][todd 520] a way to raise the
-      limit in a future soft fork without using any additional
-      `OP_SUCCESSx` opcodes.  The downside is that all uses of `OP_CAT`
-      before an increase would require including a small number of extra
-      already-available opcodes in their scripts.
+    After several replies mentioned concern about whether `OP_CAT`
+    would be excessively restricted by the 520-byte limit on the size
+    of stack elements, Peter Todd [described][todd 520] a way to raise the
+    limit in a future soft fork without using any additional
+    `OP_SUCCESSx` opcodes.  The downside is that all uses of `OP_CAT`
+    before an increase would require including a small number of extra
+    already-available opcodes in their scripts.
 
-      In a [post][o'beirne vault] made before Anthony Towns's similar
-      reply to Russell's covenant research, James O'Beirne notes the
-      significant limitations of using `OP_CAT` to implement vaults.  He
-      specifically notes several features that the `OP_CAT` versions
-      lack compared to BIP345-style vaults.
+    In a [post][o'beirne vault] made before Anthony Towns's similar
+    reply to Russell's covenant research, James O'Beirne notes the
+    significant limitations of using `OP_CAT` to implement vaults.  He
+    specifically notes several features that the `OP_CAT` versions
+    lack compared to BIP345-style vaults.
 
 {% assign timestamp="0:40" %}
 

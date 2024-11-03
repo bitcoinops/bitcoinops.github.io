@@ -26,23 +26,23 @@ notables apportés aux logiciels d'infrastructure Bitcoin les plus répandus.
   contrats très flexibles sur Bitcoin grâce à l'embranchement convergent de
   quelques opcodes [covenant][topic covenants] très simples.
 
-    Dans le billet de cette semaine, Ingala a cherché à démontrer que MATT
-    ne serait pas seulement très flexible, mais qu'il serait également efficace
-    et facile à utiliser dans les modèles de transaction qui pourraient un
-    jour être utilisés fréquemment. Comme dans les versions récentes de la
-    proposition `OP_VAULT`, Ingala s'appuie sur la proposition [BIP119][]
-    pour [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV). En
-    utilisant deux opcodes supplémentaires proposés (et en reconnaissant
-    qu'ils ne couvrent pas entièrement tout ce qui est nécessaire), il
-    fournit un ensemble de fonctionnalités qui est presque équivalent à
-    `OP_VAULT`. La seule omission notable est "une option pour ajouter une
-    sortie supplémentaire qui est renvoyée vers le même coffre-fort".
+  Dans le billet de cette semaine, Ingala a cherché à démontrer que MATT
+  ne serait pas seulement très flexible, mais qu'il serait également efficace
+  et facile à utiliser dans les modèles de transaction qui pourraient un
+  jour être utilisés fréquemment. Comme dans les versions récentes de la
+  proposition `OP_VAULT`, Ingala s'appuie sur la proposition [BIP119][]
+  pour [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV). En
+  utilisant deux opcodes supplémentaires proposés (et en reconnaissant
+  qu'ils ne couvrent pas entièrement tout ce qui est nécessaire), il
+  fournit un ensemble de fonctionnalités qui est presque équivalent à
+  `OP_VAULT`. La seule omission notable est "une option pour ajouter une
+  sortie supplémentaire qui est renvoyée vers le même coffre-fort".
 
-    À l'heure où nous écrivons ces lignes, le message d'Ingala n'a pas
-    reçu de réponse directe, mais il y a eu une [discussion continue][halseth matt]
-    sur sa proposition originale pour MATT et sa capacité à permettre
-    la vérification de l'exécution d'un programme (essentiellement)
-    arbitrairement complexe.
+  À l'heure où nous écrivons ces lignes, le message d'Ingala n'a pas
+  reçu de réponse directe, mais il y a eu une [discussion continue][halseth matt]
+  sur sa proposition originale pour MATT et sa capacité à permettre
+  la vérification de l'exécution d'un programme (essentiellement)
+  arbitrairement complexe.
 
 - **Analyse de la sécurité de l'adaptateur de signature :** Adam Gibson
   a [posté][gibson adaptors] sur la liste de diffusion Bitcoin-Dev une
@@ -160,7 +160,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], et
   dans le PSBT si nécessaire. Si une transaction complète n'est pas trouvée,
   l'ensemble UTXO sera utilisé pour les dépenses des sorties segwit. Notez
   que Taproot (segwit v1) élimine le problème de surpaiement pour la plupart
-  <!-- skip-duplicate-words-test --> des transactions qui dépensent au moins une sortie taproot, nous nous
+  des transactions qui dépensent au moins une sortie taproot, nous nous <!-- skip-duplicate-words-test -->
   attendons donc à ce que les futures mises à jour des dispositifs de signature
   matérielle cessent d'exiger des transactions complètes dans ce cas.
 

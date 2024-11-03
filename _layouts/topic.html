@@ -21,11 +21,11 @@ layout: post
   {% endfor %}
 
   <!-- Build natural sentence-style list of aliases for this page's topic -->
-  {% if page.aliases != nil %}
-    {% assign num_aliases = page.aliases | size %}
+  {% if page.title-aliases != nil %}
+    {% assign num_aliases = page.title-aliases | size %}
     {% capture aliases %}{:.center}{{newline}}*Also covering&nbsp;{% endcapture %}
     {% if num_aliases > 2 %}
-      {% for alias in page.aliases %}
+      {% for alias in page.title-aliases %}
         {% if forloop.last %}
           {% capture aliases %}{{aliases}}, and {{alias}}{% endcapture %}
         {% elsif forloop.first %}
@@ -35,7 +35,7 @@ layout: post
         {% endif %}
       {% endfor %}
     {% else %}
-      {% capture aliases %}{{aliases}}{{page.aliases | join: ' and '}}{% endcapture %}
+      {% capture aliases %}{{aliases}}{{page.title-aliases | join: ' and '}}{% endcapture %}
     {% endif %}
     {% assign aliases = aliases | append: '*' %}
   {% endif %}
@@ -124,8 +124,16 @@ layout: post
   {% endif %}
 
   <br>{{newline}}{{newline}}
-<span class="float-left" markdown="1">**Previous Topic:**<br>{{prev_link}}</span>
-<span class="float-right" markdown="1">**Next Topic:**<br>{{next_link | default: first_link }}</span>
+<p class="float-left" markdown="1">
+
+**Previous Topic:**<br>{{prev_link}}
+
+</p>
+<p class="float-right" markdown="1">
+
+**Next Topic:**<br>{{next_link | default: first_link }}
+
+</p>
 
   {:.center}
   [Edit page]({{gh_base}}/edit/master/{{page.path}})<br>

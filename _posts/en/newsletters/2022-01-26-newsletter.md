@@ -27,12 +27,12 @@ infrastructure projects.
   without the cooperation of the receiver.  In short, the spender can
   prove to a court or the public what they paid for.
 
-    However, in order for the receiver to subsequently construct a
-    signature spending their received funds, they need the hash of the
-    contract in addition to the key they used (that key usually being
-    part of an [HD keychain][topic bip32]).  Orlovsky's proposal allows
-    that hash to be added to a PSBT so that a signing wallet or hardware
-    device can produce a valid signature.
+  However, in order for the receiver to subsequently construct a
+  signature spending their received funds, they need the hash of the
+  contract in addition to the key they used (that key usually being
+  part of an [HD keychain][topic bip32]).  Orlovsky's proposal allows
+  that hash to be added to a PSBT so that a signing wallet or hardware
+  device can produce a valid signature.
 
 ## Selected Q&A from Bitcoin Stack Exchange
 

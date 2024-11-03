@@ -42,17 +42,17 @@ infrastructure projects.
   many of these inventories were queued, the victim's node would run out
   of memory and crash.
 
-    Several of the affected programs had code that limited the number of
-    inventories that should've been queued, but the researchers were
-    able to circumvent those protections.  As a bug that could only crash
-    nodes, it could not be used to directly steal from affected nodes.
-    However, it could be used to execute [eclipse attacks][topic eclipse
-    attacks] that could ultimately steal money---although there's no
-    indication the attack was ever used in public.
+  Several of the affected programs had code that limited the number of
+  inventories that should've been queued, but the researchers were
+  able to circumvent those protections.  As a bug that could only crash
+  nodes, it could not be used to directly steal from affected nodes.
+  However, it could be used to execute [eclipse attacks][topic eclipse
+  attacks] that could ultimately steal money---although there's no
+  indication the attack was ever used in public.
 
-    All users are encouraged to upgrade to the latest released version
-    of their preferred full node software or to review the list of
-    vulnerable and patched versions on the [website][invdos site].
+  All users are encouraged to upgrade to the latest released version
+  of their preferred full node software or to review the list of
+  vulnerable and patched versions on the [website][invdos site].
 
 - **Stealing onchain fees from LN HTLCs:** Antoine Riard [posted][riard
   post] to the Lightning-Dev mailing list a potential vulnerability in a
@@ -69,26 +69,26 @@ infrastructure projects.
   it possible to wait until those HTLCs need to be confirmed before
   choosing what feerate to pay.
 
-    {:.center}
-    ![Spending HTLCs with a fee-bumping input and a change output](/img/posts/2020-09-htlc-fee-bumping.dot.png)
+  {:.center}
+  ![Spending HTLCs with a fee-bumping input and a change output](/img/posts/2020-09-htlc-fee-bumping.dot.png)
 
-    However, Riard notes that the specification's earlier mechanism of
-    committing to variable feerates for HTLCs is still available.  This
-    can allow an attacker to commit to a high fee for multiple HTLCs
-    and then construct a transaction that combines those HTLCs with just
-    an additional output that claims some of the funds expected to be used as fees.  Riard's email
-    describes how to use this basic technique in a more complex attack
-    to maximize the amount stolen.
+  However, Riard notes that the specification's earlier mechanism of
+  committing to variable feerates for HTLCs is still available.  This
+  can allow an attacker to commit to a high fee for multiple HTLCs
+  and then construct a transaction that combines those HTLCs with just
+  an additional output that claims some of the funds expected to be used as fees.  Riard's email
+  describes how to use this basic technique in a more complex attack
+  to maximize the amount stolen.
 
-    {:.center}
-    ![Using a change output to steal fees from HTLCs that overpay fees](/img/posts/2020-09-htlc-fee-stealing.dot.png)
+  {:.center}
+  ![Using a change output to steal fees from HTLCs that overpay fees](/img/posts/2020-09-htlc-fee-stealing.dot.png)
 
-    Several solutions were proposed, the simplest of which might be to
-    have HTLCs only pay a minimal relay fee---requiring the party
-    broadcasting the HTLCs add any additional necessary fees.  No LN
-    implementation defaults to using this recent specification update
-    yet, so only users who have played with experimental options related
-    to [anchor outputs][topic anchor outputs] should be affected.
+  Several solutions were proposed, the simplest of which might be to
+  have HTLCs only pay a minimal relay fee---requiring the party
+  broadcasting the HTLCs add any additional necessary fees.  No LN
+  implementation defaults to using this recent specification update
+  yet, so only users who have played with experimental options related
+  to [anchor outputs][topic anchor outputs] should be affected.
 
 - **Crypto Open Patent Alliance:** Square [announced][square tweet] the
   formation of an [organization][copa] to coordinate the pooling of patents
@@ -154,14 +154,14 @@ release candidates.*
   [inspired][C-Lightning #3832] by a Lightning-Dev mailing list
   discussion in July, see [Newsletter #104][news104 scorched earth].
 
-    The implementation of the scorched earth policy C-Lightning uses is
-    to periodically fee bump the penalty transaction, eventually
-    replacing it with a transaction that spends all of its value to
-    fees.  Anyone else implementing a similar policy may want to review
-    this code for the way it addresses subtle potential issues such as
-    minimum transaction sizes (see [Newsletter #99][news99 min]) and a
-    year-old change to a maximum fee API in Bitcoin Core  (see [Newsletter
-    #39][news39 maxfeerate]).
+  The implementation of the scorched earth policy C-Lightning uses is
+  to periodically fee bump the penalty transaction, eventually
+  replacing it with a transaction that spends all of its value to
+  fees.  Anyone else implementing a similar policy may want to review
+  this code for the way it addresses subtle potential issues such as
+  minimum transaction sizes (see [Newsletter #99][news99 min]) and a
+  year-old change to a maximum fee API in Bitcoin Core  (see [Newsletter
+  #39][news39 maxfeerate]).
 
 - [LND #4310][] adds the ability to create and use profiles with
   `lncli`.  A profile automatically applies its saved parameters to all
@@ -221,3 +221,4 @@ release candidates.*
 [news104 scorched earth]: /en/newsletters/2020/07/01/#discussion-of-htlc-mining-incentives
 [sighash]: https://btcinformation.org/en/developer-guide#signature-hash-types
 [bindings readme]: https://github.com/rust-bitcoin/rust-lightning/tree/main/lightning-c-bindings
+[hwi]: https://github.com/bitcoin-core/HWI

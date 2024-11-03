@@ -38,30 +38,30 @@ of notable changes to popular Bitcoin infrastructure software.
   preferentially choose payment paths consisting of self-identified
   highly available nodes.
 
-    Christian Decker [replied][decker qos] with an excellent summary of
-    problems in reputation systems, including cases of self-proclaimed
-    reputation.  One of his concerns was that typical spenders won't
-    send anywhere near enough payments to frequently encounter the same
-    nodes in a large network of payment channels.  If repeat business is
-    rare anyway, then the threat of temporarily not providing repeat
-    business may not be effective.
+  Christian Decker [replied][decker qos] with an excellent summary of
+  problems in reputation systems, including cases of self-proclaimed
+  reputation.  One of his concerns was that typical spenders won't
+  send anywhere near enough payments to frequently encounter the same
+  nodes in a large network of payment channels.  If repeat business is
+  rare anyway, then the threat of temporarily not providing repeat
+  business may not be effective.
 
-    Antoine Riard [reminded][riard boomerang] participants about an
-    alternative approach to speeding up payments---overpayment with
-    recovery.  Previously described as boomerang payments (see
-    [Newsletter #86][news86 boomerang]) and refundable overpayments (see
-    [Newsletter #192][news192 pp]), a spender would take their
-    payment amount plus some extra money, split it into several
-    [parts][topic multipath payments], and send the parts by a variety
-    of routes.  When a sufficient number of parts has arrived to pay the
-    invoice, the receiver claims just those parts and rejects any
-    additional parts (with additional funds) that arrive later.  This
-    requires spenders wanting fast payments to have some additional funds
-    in their channel but it works even if some of the paths selected by the
-    spender fail.  This reduces the need for spenders to be able to
-    easily find highly available channels.  The challenge of this
-    approach is building a mechanism that prevents receivers from
-    keeping any overpayment that arrives. {% assign timestamp="4:15" %}
+  Antoine Riard [reminded][riard boomerang] participants about an
+  alternative approach to speeding up payments---overpayment with
+  recovery.  Previously described as boomerang payments (see
+  [Newsletter #86][news86 boomerang]) and refundable overpayments (see
+  [Newsletter #192][news192 pp]), a spender would take their
+  payment amount plus some extra money, split it into several
+  [parts][topic multipath payments], and send the parts by a variety
+  of routes.  When a sufficient number of parts has arrived to pay the
+  invoice, the receiver claims just those parts and rejects any
+  additional parts (with additional funds) that arrive later.  This
+  requires spenders wanting fast payments to have some additional funds
+  in their channel but it works even if some of the paths selected by the
+  spender fail.  This reduces the need for spenders to be able to
+  easily find highly available channels.  The challenge of this
+  approach is building a mechanism that prevents receivers from
+  keeping any overpayment that arrives. {% assign timestamp="4:15" %}
 
 - **Feedback requested on LN good neighbor scoring:** Carla Kirk-Cohen
   and Clara Shikhelman [posted][ckc-cs reputation] to the Lightning-Dev
@@ -71,14 +71,14 @@ of notable changes to popular Bitcoin infrastructure software.
   recommended default parameters for each criterion, but are seeking
   feedback about the choices made.
 
-    If a node determines that one of its peers is a good neighbor and
-    that neighbor tags a forwarded payment as being endorsed by it, the
-    node can give that payment access to more of its resources than it
-    gives unqualified payments.  The node may also endorse the payment when
-    forwarding it to the next channel.  As described in a prior paper
-    co-authored by Shikhelman (see
-    [Newsletter #226][news226 jam]), this is part of a proposal to
-    mitigate [channel jamming attacks][topic channel jamming attacks]. {% assign timestamp="13:58" %}
+  If a node determines that one of its peers is a good neighbor and
+  that neighbor tags a forwarded payment as being endorsed by it, the
+  node can give that payment access to more of its resources than it
+  gives unqualified payments.  The node may also endorse the payment when
+  forwarding it to the next channel.  As described in a prior paper
+  co-authored by Shikhelman (see
+  [Newsletter #226][news226 jam]), this is part of a proposal to
+  mitigate [channel jamming attacks][topic channel jamming attacks]. {% assign timestamp="13:58" %}
 
 - **Proposed BIP for Codex32 seed encoding scheme:** Russell O'Connor
   and Andrew Poelstra (using anagrams of their names) [proposed][op codex32] a BIP for
@@ -92,38 +92,38 @@ of notable changes to popular Bitcoin infrastructure software.
   same alphabet as [bech32][topic bech32] addresses.  An example share
   from the draft BIP:
 
-    ```text
-    ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
-    ```
+  ```text
+  ms12namea320zyxwvutsrqpnmlkjhgfedcaxrpp870hkkqrm
+  ```
 
-    The main advantage of Codex32 over all existing schemes is that all
-    operations can be performed using just pen, paper, instructions, and
-    paper cutouts.  That includes generating an encoded seed (dice can
-    be used here), protecting the seed with a checksum, generating
-    checksummed shares, verifying checksums, and recovering the seed.
-    We found the idea of being able to manually verify checksums on
-    backups of seeds or shares to be an especially powerful concept.
-    The only current method users have to verify an individual seed
-    backup is to enter it into a trusted computing device and see if it
-    derives the expected public keys---but determining whether a device
-    should be trusted is often not a trivial procedure.  Worse, in order
-    to verify the integrity of existing SSSS shares (e.g. in SLIP39),
-    the user must bring together each share they want to verify with enough
-    other shares to reach the threshold and then enter them into a trusted
-    computing device.  That means verifying share integrity negates a
-    large benefit of having shares in the first place---the ability to
-    keep information safe and secure by distributing it across multiple
-    places or people.  With Codex32, users can verify the integrity of
-    each share individually on a regular basis using just paper, pen,
-    some printed materials, and a few minutes of time.
+  The main advantage of Codex32 over all existing schemes is that all
+  operations can be performed using just pen, paper, instructions, and
+  paper cutouts.  That includes generating an encoded seed (dice can
+  be used here), protecting the seed with a checksum, generating
+  checksummed shares, verifying checksums, and recovering the seed.
+  We found the idea of being able to manually verify checksums on
+  backups of seeds or shares to be an especially powerful concept.
+  The only current method users have to verify an individual seed
+  backup is to enter it into a trusted computing device and see if it
+  derives the expected public keys---but determining whether a device
+  should be trusted is often not a trivial procedure.  Worse, in order
+  to verify the integrity of existing SSSS shares (e.g. in SLIP39),
+  the user must bring together each share they want to verify with enough
+  other shares to reach the threshold and then enter them into a trusted
+  computing device.  That means verifying share integrity negates a
+  large benefit of having shares in the first place---the ability to
+  keep information safe and secure by distributing it across multiple
+  places or people.  With Codex32, users can verify the integrity of
+  each share individually on a regular basis using just paper, pen,
+  some printed materials, and a few minutes of time.
 
-    Discussion on the mailing list mainly focused on the differences
-    between Codex32 and SLIP39, which has been used in production for a
-    couple of years now.  We recommend anyone interested in Codex32
-    investigate its [website][codex32 website] or watch a
-    [video][codex32 video] by one of its authors.  With the draft BIP,
-    the authors hope to see wallets begin to add support for using
-    Codex32-encoded seeds. {% assign timestamp="20:27" %}
+  Discussion on the mailing list mainly focused on the differences
+  between Codex32 and SLIP39, which has been used in production for a
+  couple of years now.  We recommend anyone interested in Codex32
+  investigate its [website][codex32 website] or watch a
+  [video][codex32 video] by one of its authors.  With the draft BIP,
+  the authors hope to see wallets begin to add support for using
+  Codex32-encoded seeds. {% assign timestamp="20:27" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -167,13 +167,13 @@ answers posted since our last update.*
   but instead embed data into an unexecuted script branch using the
   `OP_PUSHDATAx` opcodes similar to:
 
-    ```
-    OP_0
-    OP_IF
-    <data pushes>
-    OP_ENDIF
-    ```
-    {% assign timestamp="50:07" %}
+  ```
+  OP_0
+  OP_IF
+  <data pushes>
+  OP_ENDIF
+  ```
+  {% assign timestamp="50:07" %}
 
 - [Why doesn't the protocol allow unconfirmed transactions to expire at a given height?]({{bse}}116926)
   Larry Ruane references Satoshi on why it wouldn't be prudent for

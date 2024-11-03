@@ -34,17 +34,17 @@ Bitcoin infrastructure software.
   how its partial signature was used.  The blind signer would simply
   report how many signatures it had created with a particular key.
 
-    Discussion on the list examined pitfalls of various constructions
-    related to the specific problem and of [even more generalized blind
-    schnorr signing][generalized blind schnorr].  Also mentioned was a
-    year-old [gist][somsen gist] by Ruben Somsen about a 1996 protocol
-    for blind [Diffie-Hellman (DH) key exchange][dhke], which can be used for
-    blinded ecash.  [Lucre][] and [Minicash][] are previous
-    implementations of this scheme unrelated to Bitcoin, and [Cashu][]
-    is an implementation related to Minicash that also integrates
-    support for Bitcoin and LN.  Anyone interested in cryptography may
-    find the thread interesting for its discussion of cryptographic
-    techniques. {% assign timestamp="5:07" %}
+  Discussion on the list examined pitfalls of various constructions
+  related to the specific problem and of [even more generalized blind
+  schnorr signing][generalized blind schnorr].  Also mentioned was a
+  year-old [gist][somsen gist] by Ruben Somsen about a 1996 protocol
+  for blind [Diffie--Hellman (DH) key exchange][dhke], which can be used for
+  blinded ecash.  [Lucre][] and [Minicash][] are previous
+  implementations of this scheme unrelated to Bitcoin, and [Cashu][]
+  is an implementation related to Minicash that also integrates
+  support for Bitcoin and LN.  Anyone interested in cryptography may
+  find the thread interesting for its discussion of cryptographic
+  techniques. {% assign timestamp="5:07" %}
 
 ## Releases and release candidates
 
@@ -82,33 +82,33 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   Subsequently, the channel between Bob and Carol is forced closed
   onchain.
 
-    After the 10-block expiry, there arises a situation that should not
-    be common: Bob's node either spends using the refund condition but
-    the transaction doesn't confirm, or he determines that the cost of fees to
-    claim the refund are higher than the value and doesn't create a
-    spend.  Prior to this PR, Bob's node wouldn't create an offchain
-    cancellation of the HTLC he received from Alice because that could
-    allow Alice to keep the money she forwarded to Bob and for Carol to
-    claim the money Bob forwarded to her, costing Bob the amount of the
-    HTLC.
+  After the 10-block expiry, there arises a situation that should not
+  be common: Bob's node either spends using the refund condition but
+  the transaction doesn't confirm, or he determines that the cost of fees to
+  claim the refund are higher than the value and doesn't create a
+  spend.  Prior to this PR, Bob's node wouldn't create an offchain
+  cancellation of the HTLC he received from Alice because that could
+  allow Alice to keep the money she forwarded to Bob and for Carol to
+  claim the money Bob forwarded to her, costing Bob the amount of the
+  HTLC.
 
-    However, after the 20-block expiry of the HTLC Alice offered him, she
-    can force-close the channel to attempt to receive a refund of the
-    amount she forwarded to Bob, and her software may automatically do
-    this to prevent Alice from potentially losing the money to a node
-    upstream of her.  But, if she force-closes the channel, she
-    might end up in the same position as Bob: she's either unable to
-    claim the refund or doesn't attempt it because it's not economical.
-    That means a useful channel between Alice and Bob was closed for no
-    gain to either one of them.  This problem could be repeated multiple
-    times for any hops upstream of Alice, resulting in a cascade of
-    unwanted channel closures.
+  However, after the 20-block expiry of the HTLC Alice offered him, she
+  can force-close the channel to attempt to receive a refund of the
+  amount she forwarded to Bob, and her software may automatically do
+  this to prevent Alice from potentially losing the money to a node
+  upstream of her.  But, if she force-closes the channel, she
+  might end up in the same position as Bob: she's either unable to
+  claim the refund or doesn't attempt it because it's not economical.
+  That means a useful channel between Alice and Bob was closed for no
+  gain to either one of them.  This problem could be repeated multiple
+  times for any hops upstream of Alice, resulting in a cascade of
+  unwanted channel closures.
 
-    The solution implemented in this PR is for Bob to wait as long as
-    is reasonable to claim a refund and, if it's not going to happen,
-    create an offchain cancellation of the HTLC he received from Alice,
-    allowing their channel to continue operating even if it means he
-    might lose the amount of the HTLC. {% assign timestamp="27:19" %}
+  The solution implemented in this PR is for Bob to wait as long as
+  is reasonable to claim a refund and, if it's not going to happen,
+  create an offchain cancellation of the HTLC he received from Alice,
+  allowing their channel to continue operating even if it means he
+  might lose the amount of the HTLC. {% assign timestamp="27:19" %}
 
 - [Core Lightning #6399][] adds support to the `pay` command for paying
   invoices created by the local node.  This can simplify account

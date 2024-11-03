@@ -21,13 +21,13 @@ lang: ja
   過去のメールのアーカイブは、当面の間は現在のURLでホストされると予想されます。
   メールのリレーの終了は、同じ組織がホストしているLightning-Devメーリングリストにも影響すると考えられます。
 
-    管理者は、メーリングリストをGoogleグループに移行するなどの選択肢について、
-    コミュニティにフィードバックを求めました。そのような移行が行われた場合、
-    Optechはそれを[ニュースソース][sources]の1つとして使用し始めるでしょう。
+  管理者は、メーリングリストをGoogleグループに移行するなどの選択肢について、
+  コミュニティにフィードバックを求めました。そのような移行が行われた場合、
+  Optechはそれを[ニュースソース][sources]の1つとして使用し始めるでしょう。
 
-    また、この発表の数ヶ月前に、一部の著名な開発者が[DelvingBitcoin][]
-    Webフォーラムで議論の実験を始めていたことも承知しています。
-    Optechは、そのフォーラムで興味深い議論や重要な議論がないか、モニタリングを始めます。
+  また、この発表の数ヶ月前に、一部の著名な開発者が[DelvingBitcoin][]
+  Webフォーラムで議論の実験を始めていたことも承知しています。
+  Optechは、そのフォーラムで興味深い議論や重要な議論がないか、モニタリングを始めます。
 
 - **コベナンツを使用したHTLCの集約:** Johan Torås Halsethは、
   [コベナンツ][topic covenants]を使用して複数の[HTLC][topic htlc]を1つのアウトプットに集約し、
@@ -175,7 +175,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [bitcoin core 26.0rc2]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
-[sources]: /internal/sources/
+[sources]: /en/internal/sources/
 [bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
 [halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html

@@ -35,55 +35,55 @@ changes to popular Bitcoin infrastructure projects.
   commits to more data than necessary for Eltoo in a way that may make
   it useful for atypical commitments in Eltoo or for use in other protocols.
 
-    A significant advantage of this proposal over BIP118 noinput is that
-    it can make use of Taproot cooperative spends, allowing the two or
-    more parties to an LN channel or other contract protocol to optionally spend
-    their funds without revealing any of the contract terms (including
-    that anyprevout was in use).
+  A significant advantage of this proposal over BIP118 noinput is that
+  it can make use of Taproot cooperative spends, allowing the two or
+  more parties to an LN channel or other contract protocol to optionally spend
+  their funds without revealing any of the contract terms (including
+  that anyprevout was in use).
 
-    For a quick look at anyprevout, we consider it in the context of a
-    two-party Eltoo-based LN channel.  As a reminder, the key feature of
-    Eltoo is that each balance change in a channel (state update) can be
-    spent by *any* later state update, so there's no risk of publishing an
-    old state to the block chain like there is with the current
-    penalty-based LN channels.  Eltoo calls this capability *rebinding*
-    and BIP118 proposed to make rebinding available by allowing
-    signatures to skip committing to the input part of the spending
-    transaction---allowing anyone to modify that part of the
-    transaction to bind any later state they knew about.
+  For a quick look at anyprevout, we consider it in the context of a
+  two-party Eltoo-based LN channel.  As a reminder, the key feature of
+  Eltoo is that each balance change in a channel (state update) can be
+  spent by *any* later state update, so there's no risk of publishing an
+  old state to the block chain like there is with the current
+  penalty-based LN channels.  Eltoo calls this capability *rebinding*
+  and BIP118 proposed to make rebinding available by allowing
+  signatures to skip committing to the input part of the spending
+  transaction---allowing anyone to modify that part of the
+  transaction to bind any later state they knew about.
 
-    The `SIGHASH_ANYPREVOUTANYSCRIPT` mode (any previous output, any
-    script) defined by bip-anyprevout works similarly to BIP118 noinput,
-    with the following changes.  To use anyprevoutanyscript, the public
-    key to which a signature is compared will need to use a special
-    prefix (0x00 or 0x01; not to be confused with the pubkeys used for
-    [bip-taproot's][bip-taproot] output key that uses the same prefix in
-    a different context).  Additionally, the script being evaluated will
-    need to contain at least one signature that doesn't use
-    anyprevoutanyscript or the other new sighash mode described later.
-    This non-anyprevout signature is called the *chaperone signature*
-    because, under reasonable assumptions, it prevents an anyprevout
-    signature from being misused.  (See [Newsletter #34][] for details
-    about the replay problem.)  With the correct prefix and a chaperone
-    signature, anyprevoutanyscript allows the signature to skip
-    committing to the identifier for output being spent (the outpoint),
-    that previous output's scriptPubKey, and the hash of the executed
-    taproot leaf (tapleaf).  The transaction digest to which the signature commits still includes
-    some details about the prevout, such as its bitcoin value.
+  The `SIGHASH_ANYPREVOUTANYSCRIPT` mode (any previous output, any
+  script) defined by bip-anyprevout works similarly to BIP118 noinput,
+  with the following changes.  To use anyprevoutanyscript, the public
+  key to which a signature is compared will need to use a special
+  prefix (0x00 or 0x01; not to be confused with the pubkeys used for
+  [bip-taproot's][bip-taproot] output key that uses the same prefix in
+  a different context).  Additionally, the script being evaluated will
+  need to contain at least one signature that doesn't use
+  anyprevoutanyscript or the other new sighash mode described later.
+  This non-anyprevout signature is called the *chaperone signature*
+  because, under reasonable assumptions, it prevents an anyprevout
+  signature from being misused.  (See [Newsletter #34][] for details
+  about the replay problem.)  With the correct prefix and a chaperone
+  signature, anyprevoutanyscript allows the signature to skip
+  committing to the identifier for output being spent (the outpoint),
+  that previous output's scriptPubKey, and the hash of the executed
+  taproot leaf (tapleaf).  The transaction digest to which the signature commits still includes
+  some details about the prevout, such as its bitcoin value.
 
-    Additionally, bip-anyprevout also defines another sighash mode:
-    `SIGHASH_ANYPREVOUT` that also requires the same special pubkey
-    prefix and chaperone signature, but it includes the prevout's
-    scriptPubKey and tapleaf hash in the signature.  Whereas
-    anyprevoutanyscript can allow Eltoo-like rebinding where any later
-    state can bind to any earlier state (but earlier states can't bind
-    to later states), there may be alternative protocols (and times
-    within the Eltoo protocol) where the participants want to ensure
-    that state *n* can only bind to state *n-1* and not any other state.
+  Additionally, bip-anyprevout also defines another sighash mode:
+  `SIGHASH_ANYPREVOUT` that also requires the same special pubkey
+  prefix and chaperone signature, but it includes the prevout's
+  scriptPubKey and tapleaf hash in the signature.  Whereas
+  anyprevoutanyscript can allow Eltoo-like rebinding where any later
+  state can bind to any earlier state (but earlier states can't bind
+  to later states), there may be alternative protocols (and times
+  within the Eltoo protocol) where the participants want to ensure
+  that state *n* can only bind to state *n-1* and not any other state.
 
-    The proposal has begun receiving [feedback][anyprevout list] on the
-    mailing lists, so we'll provide updates in subsequent newsletters
-    summarizing any significant discussions.
+  The proposal has begun receiving [feedback][anyprevout list] on the
+  mailing lists, so we'll provide updates in subsequent newsletters
+  summarizing any significant discussions.
 
 - **Talks of technical interest at Magical Crypto Friends conference:**
   Bryan Bishop provided [transcripts][mcf transcripts] of about a dozen
@@ -94,30 +94,30 @@ changes to popular Bitcoin infrastructure projects.
   confidential transactions, taproot, schnorr, and other ideas related
   to Bitcoin.  We found the following talks particularly interesting:
 
-    - A [talk][mcf andytoshi] by Andrew Poelstra about the cryptography used in
-      cryptocurrencies.  In particular, he focuses on the difficulty of
-      building systems where *everything* needs to be done correctly in
-      order to resist attack.
+  - A [talk][mcf andytoshi] by Andrew Poelstra about the cryptography used in
+    cryptocurrencies.  In particular, he focuses on the difficulty of
+    building systems where *everything* needs to be done correctly in
+    order to resist attack.
 
-    - A [panel][mcf nonet] by Rodolfo Novak, Elaine Ou, Adam
-      Back, and Richard Myers about using Bitcoin without direct access
-      to the Internet.  Discussion topics included satellite-based block
-      propagation, mesh networking, amateur radio, and physically
-      carrying data (sneakernets) and how they can make Bitcoin more
-      robust for current users and more accessible for users in areas
-      with limited network access.  We found particularly interesting a
-      side discussion about the security of relaying Bitcoin data---in
-      short, the Bitcoin protocol is already designed to trustlessly
-      accept data from random peers, so non-net relay doesn't
-      necessarily change the trust model.
+  - A [panel][mcf nonet] by Rodolfo Novak, Elaine Ou, Adam
+    Back, and Richard Myers about using Bitcoin without direct access
+    to the Internet.  Discussion topics included satellite-based block
+    propagation, mesh networking, amateur radio, and physically
+    carrying data (sneakernets) and how they can make Bitcoin more
+    robust for current users and more accessible for users in areas
+    with limited network access.  We found particularly interesting a
+    side discussion about the security of relaying Bitcoin data---in
+    short, the Bitcoin protocol is already designed to trustlessly
+    accept data from random peers, so non-net relay doesn't
+    necessarily change the trust model.
 
-   - A [conversation][mcf future ln] between Will O'Beirne, Lisa Neigut, Alex Bosworth with
-     moderation by Leigh Cuen discussing the future of LN, mostly the
-     short-term and medium-term conclusion of current development
-     efforts surrounding the LN 1.1 specification.  There are no hyped
-     claims in this discussion, but a simple description of how LN can be
-     expected to improve in ways that make it easier for users and
-     businesses to adopt.
+  - A [conversation][mcf future ln] between Will O'Beirne, Lisa Neigut, Alex Bosworth with
+    moderation by Leigh Cuen discussing the future of LN, mostly the
+    short-term and medium-term conclusion of current development
+    efforts surrounding the LN 1.1 specification.  There are no hyped
+    claims in this discussion, but a simple description of how LN can be
+    expected to improve in ways that make it easier for users and
+    businesses to adopt.
 
 ## Bech32 sending support
 
@@ -188,3 +188,6 @@ wiki page for changes -->{% endcomment %}
 [mcf future ln]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/ln-present-and-future-panel/
 [email bip-anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
 [bech32 series]: /en/bech32-sending-support/
+[newsletter #34]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
+[newsletter #39]: /en/newsletters/2019/03/26/#version-2-p2p-transport-proposal
+[eltoo]: https://blockstream.com/eltoo.pdf

@@ -16,8 +16,9 @@ notable code changes from popular Bitcoin infrastructure software.
 
 ## Action items
 
-{:.center style="font-size: 1.5em"}
 <!-- $$\frac{50}{2^{\lfloor height/210000 \rfloor}}$$ -->
+
+{:.center style="font-size: 1.5em"}
 ![Happy halving!](/img/posts/2020-05-halving.png)
 
 ## News
@@ -138,16 +139,16 @@ version 0.20.*
   wallets or [HWI][topic hwi]-compatible hardware wallets via
   [partially-signed bitcoin transactions][topic psbt]).
 
-    By default, descriptor wallets use the popular [BIP32][] HD wallet
-    paths specified by BIPs [44][BIP44], [49][BIP49], and [84][BIP84]
-    rather than the non-standardized fully-hardened path used in legacy
-    Bitcoin Core HD wallets.  A number of wallet RPCs are unavailable
-    with descriptor wallets, either because they don't make sense with
-    descriptors or because developers are still adapting them to new
-    edge cases.  The merge of this PR early in the 0.21 development
-    cycle and the decision to make descriptor wallets a non-default
-    option will give the new features six months to mature before
-    their expected release.
+  By default, descriptor wallets use the popular [BIP32][] HD wallet
+  paths specified by BIPs [44][BIP44], [49][BIP49], and [84][BIP84]
+  rather than the non-standardized fully-hardened path used in legacy
+  Bitcoin Core HD wallets.  A number of wallet RPCs are unavailable
+  with descriptor wallets, either because they don't make sense with
+  descriptors or because developers are still adapting them to new
+  edge cases.  The merge of this PR early in the 0.21 development
+  cycle and the decision to make descriptor wallets a non-default
+  option will give the new features six months to mature before
+  their expected release.
 
 - [Bitcoin Core #18038][] improves privacy when initially broadcasting a
   transaction by reducing the frequency that a wallet will attempt to resend
@@ -171,24 +172,24 @@ version 0.20.*
   related changes also being made to the [BIP341][] specification of
   [taproot][topic taproot].  The major changes include:
 
-    - *Alternative x-only pubkey tiebreaker:* this changes which variant
-      of a public key to use when only its x-coordinate is known,
-      as previously discussed (see [Newsletter #83][news83 alt
-      tiebreaker]).
+  - *Alternative x-only pubkey tiebreaker:* this changes which variant
+    of a public key to use when only its x-coordinate is known,
+    as previously discussed (see [Newsletter #83][news83 alt
+    tiebreaker]).
 
-    - *Updated nonce generation recommendations:* the suggested method
-      to use for generating a signature nonce has been updated to
-      prevent implementation-specific vulnerabilities (see previous
-      discussion in Newsletters [#83][news83 precomputed] and
-      [#91][news91 power analysis]).
+  - *Updated nonce generation recommendations:* the suggested method
+    to use for generating a signature nonce has been updated to
+    prevent implementation-specific vulnerabilities (see previous
+    discussion in Newsletters [#83][news83 precomputed] and
+    [#91][news91 power analysis]).
 
-    - *Updated tagged hashes:* the tag prefixed to hash function input
-      for schnorr signatures has been updated to deliberately break
-      compatibility with the old draft specification.  Otherwise,
-      libraries written for the old code might sometimes generate
-      signatures valid under the new code, and sometimes might not,
-      leading to confusion.  This was also previously mentioned in
-      [Newsletter #83][news83 alt tiebreaker].
+  - *Updated tagged hashes:* the tag prefixed to hash function input
+    for schnorr signatures has been updated to deliberately break
+    compatibility with the old draft specification.  Otherwise,
+    libraries written for the old code might sometimes generate
+    signatures valid under the new code, and sometimes might not,
+    leading to confusion.  This was also previously mentioned in
+    [Newsletter #83][news83 alt tiebreaker].
 
 - [BIPs #903][] simplifies the [BIP322][] specification of [generic
   signed messages][topic generic signmessage] as previously proposed

@@ -46,8 +46,8 @@ lang: ja
   各メンバーは、他のすべてのメンバーの公開鍵と署名を手に入れると、
   以下の2つの異なる方法のいずれかで資金を使用することができるアドレスをトラストレスに構築することができます:
 
-    1. 上記のようにTaprootのkeypathによる支払いを使用
-    2. `OP_EVICT` opcodeを使用した[Tapscript][topic tapscript]のscriptpathによる支払いを使用
+  1. 上記のようにTaprootのkeypathによる支払いを使用
+  2. `OP_EVICT` opcodeを使用した[Tapscript][topic tapscript]のscriptpathによる支払いを使用
 
   <br>Danを排除する場合、このopcodeは以下のパラメーターを受け取ります:
 

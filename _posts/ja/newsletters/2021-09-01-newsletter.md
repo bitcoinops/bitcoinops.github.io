@@ -66,7 +66,7 @@ eltooベースのLNのペイメントチャネルの概念実証の実装およ�
   禁止されたピアテーブルのピアのIP/ネットマスクをコピーするコンテキストメニューオプションが追加されました。
   これにより、GUIユーザーは禁止リストから個々のアドレスをより簡単に共有できるようになります。
 
-    ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
+  ![Screenshot of GUI Copy IP/Netmask Context Menu Option](/img/posts/2021-09-gui-copy-banned-peer.png)
 
 - [C-Lightning #4674][]では、PluginがC-Lightningデータベースにデータを保存・管理するための
   `datastore`、`deldatastore`、`listdatastore`コマンドが追加されました。

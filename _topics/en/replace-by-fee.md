@@ -2,14 +2,14 @@
 title: Replace-by-fee (RBF)
 shortname: rbf
 
-aliases:
+title-aliases:
   - BIP125
   - Opt-in Replace-by-Fee
   - Full-RBF
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Fee Management
   - Transaction Relay Policy
   - Mining
@@ -173,6 +173,30 @@ optech_mentions:
 
   - title: "Pure replace by feerate is not guaranteed to be incentive compatible"
     url: /en/newsletters/2024/02/21/#pure-replace-by-feerate-doesn-t-guarantee-incentive-compatibility
+
+  - title: "BitGo adds RBF support"
+    url: /en/newsletters/2024/03/20/#bitgo-adds-rbf-support
+
+  - title: "Bitcoin Core #29242 lays the groundwork for package replace by fee"
+    url: /en/newsletters/2024/04/03/#bitcoin-core-29242
+
+  - title: "Analysis of how cluster mempool would've affected RBF in 2023"
+    url: /en/newsletters/2024/04/17/#rbf-differences-were-negligible
+
+  - title: "Question about the size of transactions that opt-in to RBF, opt-out of RBF, and replacements"
+    url: /en/newsletters/2024/04/24/#are-replacement-transactions-larger-in-size-than-their-predecessors-and-than-non-rbf-transactions
+
+  - title: "Bitcoin Core #28984 adds support for a limited version of package replace-by-fee"
+    url: /en/newsletters/2024/06/28/#bitcoin-core-28984
+
+  - title: "Question: why does RBF rule #3 exist?"
+    url: /en/newsletters/2024/07/26/#why-does-rbf-rule-3-exist
+
+  - title: "Nodes with full-RBF successfully reconstructing more compact blocks than nodes with only opt-in RBF"
+    url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
+
+  - title: "Bitcoin Core #30493 enables full RBF by default"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-30493
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

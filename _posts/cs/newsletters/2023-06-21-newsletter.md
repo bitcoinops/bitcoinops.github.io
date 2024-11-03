@@ -22,42 +22,42 @@ bitcoinových páteřních projektech.
   tajným kódem a částkou. Voegtlin vysvětluje užitečnost návrhu pro
   [submarine swaps][topic submarine swaps] a [JIT kanály][topic jit channels]:
 
-    - *Submarine swaps* v případě, kdy platba offchain LN faktury vyústí
-      v přijetí onchain prostředků (opačný směr zde neuvažujeme).
-      Onchain příjemce zvolí tajný kód a offchain plátce zaplatí [HTLC][topic
-      htlc] s hashem tohoto kódu, které je směrováno po LN k poskytovateli
-      submarine swap. Tento poskytovatel obdrží offchain HTLC a vytvoří
-      onchain transakci platící za toto HTLC. Až bude uživatel považovat
-      onchain transakci za zabezpečenou, odhalí tajný kód k vyrovnání
-      onchain HTLC, což umožní poskytovateli vyrovnat offchain HTLC
-      (a kteroukoliv další platbu v LN závislou na stejném tajném kódu).
+  - *Submarine swaps* v případě, kdy platba offchain LN faktury vyústí
+    v přijetí onchain prostředků (opačný směr zde neuvažujeme).
+    Onchain příjemce zvolí tajný kód a offchain plátce zaplatí [HTLC][topic
+    htlc] s hashem tohoto kódu, které je směrováno po LN k poskytovateli
+    submarine swap. Tento poskytovatel obdrží offchain HTLC a vytvoří
+    onchain transakci platící za toto HTLC. Až bude uživatel považovat
+    onchain transakci za zabezpečenou, odhalí tajný kód k vyrovnání
+    onchain HTLC, což umožní poskytovateli vyrovnat offchain HTLC
+    (a kteroukoliv další platbu v LN závislou na stejném tajném kódu).
 
-      Pokud však příjemce tajný kód neodhalí, neobdrží poskytovatel žádnou
-      kompenzaci a bude muset utratit právě vytvořený onchain výstup, což
-      mu přinese nadbytečné náklady. Aby předešly tomuto zneužití, požadují
-      existující poskytovatelé po plátci LN poplatek (zaslaný před vytvořením
-      onchain transakce), který může být zcela či zčásti vrácen po vyrovnání
-      onchain HTLC. Tento poplatek a submarine swap obsahují odlišné částky a
-      musí být vyrovnány v odlišných časech, musí tedy použít i odlišný tajný
-      kód. Současná BOLT11 faktura může obsahovat pouze jeden commitment k
-      tajnému kódu a jednu částku. Každá peněženka poskytující submarine
-      swaps tedy musí buď interakci se serverem obstarat sama nebo nechat
-      dokončení tohoto postupu na plátci a příjemci.
+    Pokud však příjemce tajný kód neodhalí, neobdrží poskytovatel žádnou
+    kompenzaci a bude muset utratit právě vytvořený onchain výstup, což
+    mu přinese nadbytečné náklady. Aby předešly tomuto zneužití, požadují
+    existující poskytovatelé po plátci LN poplatek (zaslaný před vytvořením
+    onchain transakce), který může být zcela či zčásti vrácen po vyrovnání
+    onchain HTLC. Tento poplatek a submarine swap obsahují odlišné částky a
+    musí být vyrovnány v odlišných časech, musí tedy použít i odlišný tajný
+    kód. Současná BOLT11 faktura může obsahovat pouze jeden commitment k
+    tajnému kódu a jednu částku. Každá peněženka poskytující submarine
+    swaps tedy musí buď interakci se serverem obstarat sama nebo nechat
+    dokončení tohoto postupu na plátci a příjemci.
 
-    - *Just-in-Time (JIT) kanály*, kde uživatel bez kanálů (nebo bez likvidity)
-      vytvoří s poskytovatelem služeb virtuální kanál. V okamžiku přijetí
-      první platby do tohoto virtuálního kanálu vytvoří poskytovatel onchain
-      transakci, která kanál otevře a zároveň provede tuto platbu. Tato offchain
-      platba je jako kterékoliv jiné HTLC učiněna oproti tajnému kódu, který
-      zná jen příjemce (uživatel). Je-li uživatel ujištěn, že otevření JIT
-      kanálu je zajištěno, odhalí tajný kód a platbu nárokuje.
+  - *Just-in-Time (JIT) kanály*, kde uživatel bez kanálů (nebo bez likvidity)
+    vytvoří s poskytovatelem služeb virtuální kanál. V okamžiku přijetí
+    první platby do tohoto virtuálního kanálu vytvoří poskytovatel onchain
+    transakci, která kanál otevře a zároveň provede tuto platbu. Tato offchain
+    platba je jako kterékoliv jiné HTLC učiněna oproti tajnému kódu, který
+    zná jen příjemce (uživatel). Je-li uživatel ujištěn, že otevření JIT
+    kanálu je zajištěno, odhalí tajný kód a platbu nárokuje.
 
-      Pokud však opět uživatel tajný kód neodhalí, neobdrží poskytovatel
-      kompenzaci a vyvstanou mu dodatečné onchain náklady. Voegtlin věří,
-      že existující poskytovatelé JIT kanálů se tomuto problému vyhýbají
-      tím, že vyžadují odhalení tajného kódu před tím, než je otevírací
-      transakce zajištěna, což podle něj může vytvářet problémy se zákonem
-      a zabraňuje nekustodiálním peněženkám podobnou službu nabízet.
+    Pokud však opět uživatel tajný kód neodhalí, neobdrží poskytovatel
+    kompenzaci a vyvstanou mu dodatečné onchain náklady. Voegtlin věří,
+    že existující poskytovatelé JIT kanálů se tomuto problému vyhýbají
+    tím, že vyžadují odhalení tajného kódu před tím, než je otevírací
+    transakce zajištěna, což podle něj může vytvářet problémy se zákonem
+    a zabraňuje nekustodiálním peněženkám podobnou službu nabízet.
 
   Voegtlin věří, že kdyby BOLT11 faktura obsahovala dva separátní commitmenty,
   každý na jinou částku a k jinému tajnému kódu, umožnilo by to použít jeden
@@ -65,34 +65,34 @@ bitcoinových páteřních projektech.
   a částku na vlastní submarine swap nebo otevření JIT kanálu. Návrh obdržel
   několik komentářů, o některých se zde krátce zmíníme:
 
-    - *Logika speciálně pro submarine swaps:* Olaoluwa Osuntokun
-      [poznamenal][o 2p], že příjemce submarine swap musí vytvořit tajný kód,
-      distribuovat ho a vyrovnat oproti němu platbu onchain. Nejlevnějším
-      způsobem tohoto vyrovnání je interakce s poskytovatelem swapu.
-      Pokud plátce i příjemce musí s poskytovatelem tak jako tak komunikovat,
-      což se s existujícími implementacemi často děje, nemusí si předávat
-      dodatečné informace v rámci faktury. Voegtlin [odpověděl][v 2p2], že
-      tuto interakci může obstarat vyhrazený software a nebude tedy potřeba
-      přidávat logiku do offchain peněženky, která platí prostředky, a onchain
-      peněženky, která je přijímá. To by však bylo možné jen, pokud by
-      LN peněženka mohla učinit dvě oddělené platby v rámci jedné smlouvy.
+  - *Logika speciálně pro submarine swaps:* Olaoluwa Osuntokun
+    [poznamenal][o 2p], že příjemce submarine swap musí vytvořit tajný kód,
+    distribuovat ho a vyrovnat oproti němu platbu onchain. Nejlevnějším
+    způsobem tohoto vyrovnání je interakce s poskytovatelem swapu.
+    Pokud plátce i příjemce musí s poskytovatelem tak jako tak komunikovat,
+    což se s existujícími implementacemi často děje, nemusí si předávat
+    dodatečné informace v rámci faktury. Voegtlin [odpověděl][v 2p2], že
+    tuto interakci může obstarat vyhrazený software a nebude tedy potřeba
+    přidávat logiku do offchain peněženky, která platí prostředky, a onchain
+    peněženky, která je přijímá. To by však bylo možné jen, pokud by
+    LN peněženka mohla učinit dvě oddělené platby v rámci jedné smlouvy.
 
-    - *Stabilita BOLT11:* Matt Corallo [odpověděl][c 2p], že všechny LN
-      implementace stále ještě nemají podporu pro faktury bez částky (k umožnění
-      [spontánních plateb][topic spontaneous payments]), nemyslí si tedy, že
-      by přidání dalšího pole bylo nyní dobrým přístupem. Bastien Teinturier
-      [odpověděl podobně][t 2p] a navrhl raději přidat podporu do
-      [nabídek][topic offers]. Voegtlin [nesouhlasí][v 2p3] a myslí si, že
-      přidání podpory je praktické.
+  - *Stabilita BOLT11:* Matt Corallo [odpověděl][c 2p], že všechny LN
+    implementace stále ještě nemají podporu pro faktury bez částky (k umožnění
+    [spontánních plateb][topic spontaneous payments]), nemyslí si tedy, že
+    by přidání dalšího pole bylo nyní dobrým přístupem. Bastien Teinturier
+    [odpověděl podobně][t 2p] a navrhl raději přidat podporu do
+    [nabídek][topic offers]. Voegtlin [nesouhlasí][v 2p3] a myslí si, že
+    přidání podpory je praktické.
 
-    - *Splice-out jako alternativa:* Corallo se dále táže, proč by měl být
-      protokol pozměněn, aby podporoval submarine swaps, pokud by byly
-      dostupné [splice outs][topic splicing]. V konverzaci to nebylo zmíněno,
-      avšak submarine swaps i splice outs umožňují přesunout offchain prostředky
-      na onchain výstup, ale splice outs mohou být efektivnější onchain a
-      netrpí problémem nekompenzovaného poplatku. Voegtlin odpověděl, že
-      submarine swaps umožňují uživatelům LN navýšit svou kapacitu pro
-      přijímání LN plateb, což splicing neumožňuje.
+  - *Splice-out jako alternativa:* Corallo se dále táže, proč by měl být
+    protokol pozměněn, aby podporoval submarine swaps, pokud by byly
+    dostupné [splice outs][topic splicing]. V konverzaci to nebylo zmíněno,
+    avšak submarine swaps i splice outs umožňují přesunout offchain prostředky
+    na onchain výstup, ale splice outs mohou být efektivnější onchain a
+    netrpí problémem nekompenzovaného poplatku. Voegtlin odpověděl, že
+    submarine swaps umožňují uživatelům LN navýšit svou kapacitu pro
+    přijímání LN plateb, což splicing neumožňuje.
 
   V době psaní byla diskuze stále aktivní.
 

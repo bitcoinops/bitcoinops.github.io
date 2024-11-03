@@ -54,30 +54,11 @@ Bitcoin infrastructure projects.
 
 ## Notable commits
 
-*Notable commits this week in [Bitcoin Core][core commits], [LND][lnd
-commits], and [C-lightning][cl commits].  Reminder: new merges to
+*Notable commits this week in [Bitcoin Core][bitcoin core repo], [LND][lnd
+repo], and [C-lightning][core lightning repo].  Reminder: new merges to
 Bitcoin Core are made to its master development branch and are unlikely
 to become part of the upcoming 0.17 release---you'll probably have to
 wait until version 0.18 in about six months from now.*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="68f3c7eb080e461cfeac37f8db7034fe507241d0"
-  end="cb25cd6aa18c69918176d68e36e26f7e373aa48c"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="2b448be048daf85cef4cbb37ceed4413fdb051e6"
-  end="1941353fb28755a170793e43595601d75c8f3dda"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="77d3ca3ea3ba607e0b08c7921c41bfc0a9658ed2"
-  end="634f19a7b230edc686be56ab950b80784e56252c"
-%}
 
 - [Bitcoin Core #12775][] adds support for RapidCheck (a [QuickCheck][]
   reimplementation) to Bitcoin Core, providing a property-based testing suite
@@ -111,9 +92,9 @@ wait until version 0.18 in about six months from now.*
 {% include linkers/issues.md issues="12775,12490,14096,1899" %}
 
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
-[workshop]: /workshops
+[workshop]: /en/workshops
 [documentation for output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
-[news10 news]: {{news10}}#news
+[news10 news]: /en/newsletters/2018/08/28/#pr-opened-for-initial-bip151-support
 [decker w3c]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html
 [schnelli bip151]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016355.html
 [ruffing bip151]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016372.html

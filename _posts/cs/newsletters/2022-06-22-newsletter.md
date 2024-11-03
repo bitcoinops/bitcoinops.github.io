@@ -76,20 +76,20 @@ bitcoinových infrastrukturních projektech.
   Zdrojem debaty byla existence dvou rozdílných designů systémů pro
   vytváření časových značek („timestamping”):
 
-    - *Důkaz existence časovou značkou (Time Stamped Proofs of Existence, TSPoE)*:
-	  bitcoinová transakce se zavazuje k hashi, který se zavazuje k nějakému
-	  dokumentu. Když je tato transakce potvrzena v bloku, může tvůrce
-	  závazku („commitment”) dokázat třetí straně, že zmíněný dokument
-	  existoval v čase vytvoření bloku. Všimněte si, že každá transakce
-	  s časovou značkou je zcela nezávislá na jiné takové transakci.
-	  Znamená to, že je možné vytvořit časovou značku stejného dokumentu
-	  opakovaně bez jakéhokoliv spojení mezi nimi.
+  - *Důkaz existence časovou značkou (Time Stamped Proofs of Existence, TSPoE)*:
+        bitcoinová transakce se zavazuje k hashi, který se zavazuje k nějakému
+        dokumentu. Když je tato transakce potvrzena v bloku, může tvůrce
+        závazku („commitment”) dokázat třetí straně, že zmíněný dokument
+        existoval v čase vytvoření bloku. Všimněte si, že každá transakce
+        s časovou značkou je zcela nezávislá na jiné takové transakci.
+        Znamená to, že je možné vytvořit časovou značku stejného dokumentu
+        opakovaně bez jakéhokoliv spojení mezi nimi.
 
-    - *Řazení událostí (Event Ordering, EO):* v série transakcí navzájem
-	  spojených předepsaným způsobem se každá zavazuje k dokumentům tak,
-	  že komukoliv umožňuje shlédnout všechny tyto závazky.
-	  Je možné určit, kdy získal kterýkoliv z těchto dokumentů časovou
-	  značku poprvé.
+  - *Řazení událostí (Event Ordering, EO):* v série transakcí navzájem
+        spojených předepsaným způsobem se každá zavazuje k dokumentům tak,
+        že komukoliv umožňuje shlédnout všechny tyto závazky.
+        Je možné určit, kdy získal kterýkoliv z těchto dokumentů časovou
+        značku poprvé.
 
   Systém TSPoE, jak byl implementován v OTS, je v podstatě dokonale efektivní.
   Využívá stejné množství globálního prostoru k uložení časových značek

@@ -32,36 +32,36 @@ infrastructure software.
   a different address to pay Alice, an address which neither Bob nor any
   other third party could directly determine belonged to Alice.
 
-    Previous schemes for delinked reusable addresses, such as [BIP47][]
-    reusable payment codes and the unpublished BIP63 stealth addresses,
-    depend on either communication between spender and receiver outside
-    of the block chain or for onchain transactions that contain extra
-    data at increased expense over a regular payment.  By contrast,
-    Somsen's *silent payments* proposal has no additional overhead
-    compared to a regular transaction.
+  Previous schemes for delinked reusable addresses, such as [BIP47][]
+  reusable payment codes and the unpublished BIP63 stealth addresses,
+  depend on either communication between spender and receiver outside
+  of the block chain or for onchain transactions that contain extra
+  data at increased expense over a regular payment.  By contrast,
+  Somsen's *silent payments* proposal has no additional overhead
+  compared to a regular transaction.
 
-    The most significant downside of silent payments is that checking
-    for newly-received transactions requires scanning every transaction
-    in every new block.  This is something that full nodes already do,
-    but the scheme also requires maintaining information about many
-    transaction's parent transactions---something many full nodes today
-    don't do, and which may require considerable extra I/O operations in
-    addition to extra CPU.  Restoring a wallet from backup may also be
-    onerous.  Although Somsen does describe some possible tradeoffs that
-    could reduce the burdens, it seems unlikely that the scheme would be
-    useful for most light wallets that want to receive payments.
-    However, nearly all wallets would likely be able to add support for
-    sending silent payments with just a few lines of code and no
-    discernible increase in resource requirements.  This may allow the
-    costs of the scheme to be borne chiefly by the users who most
-    desire the enhanced privacy it offers to those unable or unwilling
-    to use other mechanisms for preventing [address reuse][topic output
-    linking].
+  The most significant downside of silent payments is that checking
+  for newly-received transactions requires scanning every transaction
+  in every new block.  This is something that full nodes already do,
+  but the scheme also requires maintaining information about many
+  transaction's parent transactions---something many full nodes today
+  don't do, and which may require considerable extra I/O operations in
+  addition to extra CPU.  Restoring a wallet from backup may also be
+  onerous.  Although Somsen does describe some possible tradeoffs that
+  could reduce the burdens, it seems unlikely that the scheme would be
+  useful for most light wallets that want to receive payments.
+  However, nearly all wallets would likely be able to add support for
+  sending silent payments with just a few lines of code and no
+  discernible increase in resource requirements.  This may allow the
+  costs of the scheme to be borne chiefly by the users who most
+  desire the enhanced privacy it offers to those unable or unwilling
+  to use other mechanisms for preventing [address reuse][topic output
+  linking].
 
-    Somsen is seeking feedback on the proposal, including security
-    analysis of its use of cryptography and any suggestions for making
-    it less resource intensive for receivers (without significantly
-    degrading its privacy advantages).
+  Somsen is seeking feedback on the proposal, including security
+  analysis of its use of cryptography and any suggestions for making
+  it less resource intensive for receivers (without significantly
+  degrading its privacy advantages).
 
 - **WabiSabi alternative to payjoin:** several weeks ago, developers of
   the Wasabi wallet and [coinjoin][topic coinjoin] implementation
@@ -74,21 +74,21 @@ infrastructure software.
   limiting the maximum transaction size and obeying the [dust
   limit][topic uneconomical outputs]).
 
-    This week, Max Hillebrand [posted][hillebrand wormhole] a
-    description of how the WabiSabi protocol could be used as an
-    alternative to the [payjoin][topic payjoin] protocol.  In standard
-    payjoin, both the sender and the receiver contribute inputs to a
-    transaction and receive outputs.  Although each party learns about
-    the other's inputs and outputs, ownership information on the public
-    block is discombobulated both for the users participating in the
-    payjoin and for other multi-input transactions.  Hillebrand's
-    proposed wormhole 2.0 protocol would use WabiSabi to ensure that
-    neither the spender or receiver of a payment would learn each
-    other's inputs or outputs (provided the WabiSabi coinjoin contained
-    multiple other parties who respected confidentiality).  This would
-    offer even more privacy, although it would require using software
-    that implemented WabiSabi and waiting for a coordinated WabiSabi
-    coinjoin transaction to occur.
+  This week, Max Hillebrand [posted][hillebrand wormhole] a
+  description of how the WabiSabi protocol could be used as an
+  alternative to the [payjoin][topic payjoin] protocol.  In standard
+  payjoin, both the sender and the receiver contribute inputs to a
+  transaction and receive outputs.  Although each party learns about
+  the other's inputs and outputs, ownership information on the public
+  block is discombobulated both for the users participating in the
+  payjoin and for other multi-input transactions.  Hillebrand's
+  proposed wormhole 2.0 protocol would use WabiSabi to ensure that
+  neither the spender or receiver of a payment would learn each
+  other's inputs or outputs (provided the WabiSabi coinjoin contained
+  multiple other parties who respected confidentiality).  This would
+  offer even more privacy, although it would require using software
+  that implemented WabiSabi and waiting for a coordinated WabiSabi
+  coinjoin transaction to occur.
 
 - **DLC messaging and networking:** Thibaut Le Guilly [posted][leguilly
   dlcmsg] to the DLC-Dev mailing list about improving communication
@@ -100,14 +100,14 @@ infrastructure software.
   DLC standard is to allow interoperation, so he suggests adding relevant
   details to the standard.
 
-    Several details were discussed.  In particular, Le Guilly would
-    prefer to re-use elements of the LN specification (BOLTs) when
-    possible.  This led to a mention that a recent proposal for
-    upgrading LN channel announcements (see [Newsletter #193][news193
-    major update]) that would allow the use of any UTXO for
-    anti-flooding DoS protection (not just UTXOs that look like LN setup
-    transactions) would allow DLCs and other second-layer protocols to
-    use that same anti-DoS protection.
+  Several details were discussed.  In particular, Le Guilly would
+  prefer to re-use elements of the LN specification (BOLTs) when
+  possible.  This led to a mention that a recent proposal for
+  upgrading LN channel announcements (see [Newsletter #193][news193
+  major update]) that would allow the use of any UTXO for
+  anti-flooding DoS protection (not just UTXOs that look like LN setup
+  transactions) would allow DLCs and other second-layer protocols to
+  use that same anti-DoS protection.
 
 - **Updating LN commitments:** Olaoluwa Osuntokun [posted][osuntokun
   dyncom] to the Lightning-Dev mailing list this week with a follow-up
@@ -119,13 +119,13 @@ infrastructure software.
   features are added to a channel, such as the ability to [use taproot
   features][zmn post].
 
-    Osuntokun's proposal contrasts with an alternative proposal
-    described in [BOLTs #868][], implemented experimentally in
-    C-Lightning, and mentioned in [Newsletter #152][news152 cl4532].  A
-    noteworthy difference between the two proposals is that Osuntokun's
-    proposal upgrades channels even while new payments ([HTLCs][topic
-    htlc]) may be proposed, while the BOLTS #868 proposal defines a
-    quiet period during which the upgrade can occur.
+  Osuntokun's proposal contrasts with an alternative proposal
+  described in [BOLTs #868][], implemented experimentally in
+  C-Lightning, and mentioned in [Newsletter #152][news152 cl4532].  A
+  noteworthy difference between the two proposals is that Osuntokun's
+  proposal upgrades channels even while new payments ([HTLCs][topic
+  htlc]) may be proposed, while the BOLTS #868 proposal defines a
+  quiet period during which the upgrade can occur.
 
 ## Releases and release candidates
 

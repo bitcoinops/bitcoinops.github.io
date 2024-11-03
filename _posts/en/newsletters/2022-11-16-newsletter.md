@@ -30,9 +30,9 @@ to popular Bitcoin infrastructure software.
   onchain (or possibly even then staying offchain if the game was played
   within another offchain construct, such as a payment channel).
 
-    Ingala explains how the work could help design [joinpools][topic
-    joinpools], optimistic rollups (see [Newsletter #222][news222
-    rollup]), and other stateful constructions. {% assign timestamp="1:21" %}
+  Ingala explains how the work could help design [joinpools][topic
+  joinpools], optimistic rollups (see [Newsletter #222][news222
+  rollup]), and other stateful constructions. {% assign timestamp="1:21" %}
 
 - **Paper about channel jamming attacks:** Clara Shikhelman and Sergei
   Tikhomirov [posted][st unjam post] to the Lightning-Dev mailing list
@@ -42,44 +42,44 @@ to popular Bitcoin infrastructure software.
   channels unusable for long periods of time at negligible cost to an
   attacker.
 
-    The authors split jamming attacks into two types. The first is *slow
-    jamming* where a channel's limited slots or funds for payment
-    forwarding are made unavailable for long periods of time---which
-    rarely happens with legitimate payments.  The second type is *fast
-    jamming* where the slots and funds are blocked only briefly---which
-    happens often with normal payments, potentially making fast jamming
-    harder to mitigate.
+  The authors split jamming attacks into two types. The first is *slow
+  jamming* where a channel's limited slots or funds for payment
+  forwarding are made unavailable for long periods of time---which
+  rarely happens with legitimate payments.  The second type is *fast
+  jamming* where the slots and funds are blocked only briefly---which
+  happens often with normal payments, potentially making fast jamming
+  harder to mitigate.
 
-    They suggest two solutions:
+  They suggest two solutions:
 
-    - *Unconditional fees* (the same as *upfront fees* described in
-      previous newsletters), where some amount of fee is paid to
-      forwarding nodes even if a payment fails to reach the receiver.
-      The authors suggest both a *base* upfront fee that's independent
-      of the amount of the payment and a *proportional* fee that
-      increases with the payment amount.  The two separate fees
-      respectively address HTLC slot jamming and liquidity jamming.  The
-      fees can be very small because they're only meant to prevent fast
-      jamming, which requires frequent resends of fake payments that
-      would each need to pay additional upfront fees, raising the cost
-      for the attacker.
+  - *Unconditional fees* (the same as *upfront fees* described in
+    previous newsletters), where some amount of fee is paid to
+    forwarding nodes even if a payment fails to reach the receiver.
+    The authors suggest both a *base* upfront fee that's independent
+    of the amount of the payment and a *proportional* fee that
+    increases with the payment amount.  The two separate fees
+    respectively address HTLC slot jamming and liquidity jamming.  The
+    fees can be very small because they're only meant to prevent fast
+    jamming, which requires frequent resends of fake payments that
+    would each need to pay additional upfront fees, raising the cost
+    for the attacker.
 
-    - *Local reputation with forwarding,* where each node would keep
-      statistics about each of its peers related to how long its
-      forwarded payments remain pending and the forwarding fees
-      collected.  If a peer's time per fee is high, it considers that
-      peer high-risk and only allows that peer to use a limited number
-      of the local node's slots and funds.  Otherwise, it considers the
-      peer low-risk.
+  - *Local reputation with forwarding,* where each node would keep
+    statistics about each of its peers related to how long its
+    forwarded payments remain pending and the forwarding fees
+    collected.  If a peer's time per fee is high, it considers that
+    peer high-risk and only allows that peer to use a limited number
+    of the local node's slots and funds.  Otherwise, it considers the
+    peer low-risk.
 
-        When a node receives a forwarded payment from a peer it considers
-        low-risk, it checks to see whether that peer tagged the
-        payment as also being low-risk.  If both the upstream forwarding
-        node and the payment are low-risk, it allows the payment to use
-        any available slot and funds.
+    When a node receives a forwarded payment from a peer it considers
+    low-risk, it checks to see whether that peer tagged the
+    payment as also being low-risk.  If both the upstream forwarding
+    node and the payment are low-risk, it allows the payment to use
+    any available slot and funds.
 
-    The paper received some discussion on the mailing list, with the
-    proposed local reputation method specifically being praised. {% assign timestamp="29:46" %}
+  The paper received some discussion on the mailing list, with the
+  proposed local reputation method specifically being praised. {% assign timestamp="29:46" %}
 
 ## Changes to services and client software
 

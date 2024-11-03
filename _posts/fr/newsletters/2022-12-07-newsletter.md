@@ -27,27 +27,27 @@ les plus répandus.
   plusieurs inconvénients, dont certains sont fondamentaux (voir la
   [Newsletter #224][news224 anchors]), mais d'autres peuvent être résolus.
 
-    Les ancrages éphémères s'appuient sur la [proposition de relais de
-    transaction v3][topic v3 transaction relay] pour permettre aux transactions v3
-    d'inclure une sortie à valeur nulle payant un script qui est essentiellement
-    `OP_TRUE`, ce qui permet à cette transaction d'avoir des frais majorés en CPFP
-    par n'importe qui sur le réseau avec un UTXO dépensable. La transaction enfant
-    peut elle-même être payée par n'importe qui d'autre avec un UTXO dépensable.
-    En combinaison avec d'autres parties de la proposition de relais de transaction v3,
-    on espère que cela éliminera toutes les préoccupations basées sur la politique
-    concernant les [attaques par épinglage de transaction][topic transaction pinning]
-    contre les transactions de protocole de contrat sensibles au temps.
+  Les ancrages éphémères s'appuient sur la [proposition de relais de
+  transaction v3][topic v3 transaction relay] pour permettre aux transactions v3
+  d'inclure une sortie à valeur nulle payant un script qui est essentiellement
+  `OP_TRUE`, ce qui permet à cette transaction d'avoir des frais majorés en CPFP
+  par n'importe qui sur le réseau avec un UTXO dépensable. La transaction enfant
+  peut elle-même être payée par n'importe qui d'autre avec un UTXO dépensable.
+  En combinaison avec d'autres parties de la proposition de relais de transaction v3,
+  on espère que cela éliminera toutes les préoccupations basées sur la politique
+  concernant les [attaques par épinglage de transaction][topic transaction pinning]
+  contre les transactions de protocole de contrat sensibles au temps.
 
-    Qui plus est, puisque n'importe qui peut faire payer une transaction contenant
-    un résultat éphémère, elle peut être utilisée pour les protocoles contractuels
-    impliquant plus de deux participants. La règle d'exclusion existante de Bitcoin
-    Core ne fonctionne de manière fiable que pour deux participants et les [tentatives
-    précédentes][bitcoin core #18725] pour l'augmenter nécessitaient une limite
-    supérieure arbitraire de participants.
+  Qui plus est, puisque n'importe qui peut faire payer une transaction contenant
+  un résultat éphémère, elle peut être utilisée pour les protocoles contractuels
+  impliquant plus de deux participants. La règle d'exclusion existante de Bitcoin
+  Core ne fonctionne de manière fiable que pour deux participants et les [tentatives
+  précédentes][bitcoin core #18725] pour l'augmenter nécessitaient une limite
+  supérieure arbitraire de participants.
 
-    La [mise en œuvre][bitcoin core #26403] des ancres éphémères par Sanders permet de
-    commencer à tester l'idée conjointement avec les autres comportements de relais de
-    transaction v3 précédemment mis en œuvre par l'auteur de cette proposition.
+  La [mise en œuvre][bitcoin core #26403] des ancres éphémères par Sanders permet de
+  commencer à tester l'idée conjointement avec les autres comportements de relais de
+  transaction v3 précédemment mis en œuvre par l'auteur de cette proposition.
 
 ## Bitcoin Core PR Review Club
 
@@ -206,10 +206,10 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
   vers une sortie segwit native entraînera également une sortie de changement
   segwit native.
 
-    Cependant, le protocole LN requiert certains types de sortie. Par exemple
-    une sortie P2PKH ne peut pas être utilisée pour ouvrir un canal LN. Pour
-    cette raison, les utilisateurs d'Eclair avec Bitcoin Core doivent s'assurer
-    qu'ils ne génèrent pas de sorties de monnaie d'un type incompatible avec LN.
+  Cependant, le protocole LN requiert certains types de sortie. Par exemple
+  une sortie P2PKH ne peut pas être utilisée pour ouvrir un canal LN. Pour
+  cette raison, les utilisateurs d'Eclair avec Bitcoin Core doivent s'assurer
+  qu'ils ne génèrent pas de sorties de monnaie d'un type incompatible avec LN.
 
 - [Rust Bitcoin #1415][] commence à utiliser le [Kani Rust Verifier][] pour prouver
   certaines propriétés du code de Rust Bitcoin. Cela complète les autres tests

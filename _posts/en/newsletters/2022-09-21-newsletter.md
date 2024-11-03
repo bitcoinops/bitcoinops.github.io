@@ -31,14 +31,14 @@ software, and popular Bitcoin infrastructure software.
   how some other flexible proposed additions to Bitcoin's contracting
   language could also allow the implementation of drivechains.
 
-    In this week's post, Rubin described yet another way drivechains
-    could be implemented using a proposed addition to Bitcoin's
-    contracting language, in this case using `SIGHASH_ANYPREVOUT` (APO)
-    as proposed in [BIP118][].  The described APO-based drivechains have
-    several drawbacks compared to BIP300 but perhaps provides similar
-    enough behavior that APO can be considered as enabling drivechains,
-    which some individuals may consider a benefit and others may consider
-    a problem. {% assign timestamp="1:07" %}
+  In this week's post, Rubin described yet another way drivechains
+  could be implemented using a proposed addition to Bitcoin's
+  contracting language, in this case using `SIGHASH_ANYPREVOUT` (APO)
+  as proposed in [BIP118][].  The described APO-based drivechains have
+  several drawbacks compared to BIP300 but perhaps provides similar
+  enough behavior that APO can be considered as enabling drivechains,
+  which some individuals may consider a benefit and others may consider
+  a problem. {% assign timestamp="1:07" %}
 
 ## Changes to services and client software
 

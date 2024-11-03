@@ -312,69 +312,69 @@ regular newsletter.
   consensus rules to enforce that all bitcoins received to the contract
   can only be spent to the same contract.
 
-    Recursive covenants depend on a technique referred to as
-    *transaction introspection* by which an opcode can analyze part of
-    the transaction which executes that opcode.  Existing opcodes
-    `OP_CHECKSIG`, [BIP65][] `OP_CHECKLOCKTIMEVERIFY`, and [BIP112][]
-    `OP_CHECKSEQUENCEVERIFY` provide limited introspection.  Proposed
-    opcodes TX and CSFS could allow flexible introspection of all parts
-    of a transaction, including its next output (the amount of bitcoins
-    and the address that's being paid) and its *prevout* (previous
-    output, the amount of bitcoins previously received and the script
-    currently being used to authorize their spending).
+  Recursive covenants depend on a technique referred to as
+  *transaction introspection* by which an opcode can analyze part of
+  the transaction which executes that opcode.  Existing opcodes
+  `OP_CHECKSIG`, [BIP65][] `OP_CHECKLOCKTIMEVERIFY`, and [BIP112][]
+  `OP_CHECKSEQUENCEVERIFY` provide limited introspection.  Proposed
+  opcodes TX and CSFS could allow flexible introspection of all parts
+  of a transaction, including its next output (the amount of bitcoins
+  and the address that's being paid) and its *prevout* (previous
+  output, the amount of bitcoins previously received and the script
+  currently being used to authorize their spending).
 
-    If an opcode or other script feature is used to ensure the prevout
-    and next output are identical, the simplest type of recursive covenant is created.
-    However, prevouts aren't directly part of transactions---they must
-    be obtained from the block chain---so a copy of a prevout must be
-    included in a transaction in order to compare a prevout to the next
-    output.  Adding even more complication, the use of hash functions in
-    multiple parts of Bitcoin transactions seems to prevent a prevout
-    script from being able to directly compare itself to the next output
-    script; instead, either the prevout, next output, or both must be
-    dynamically constructed from their constituent elements---this is
-    what makes the proposed concatenation opcode (CAT) or a similar
-    construct necessary for recursive covenants.
+  If an opcode or other script feature is used to ensure the prevout
+  and next output are identical, the simplest type of recursive covenant is created.
+  However, prevouts aren't directly part of transactions---they must
+  be obtained from the block chain---so a copy of a prevout must be
+  included in a transaction in order to compare a prevout to the next
+  output.  Adding even more complication, the use of hash functions in
+  multiple parts of Bitcoin transactions seems to prevent a prevout
+  script from being able to directly compare itself to the next output
+  script; instead, either the prevout, next output, or both must be
+  dynamically constructed from their constituent elements---this is
+  what makes the proposed concatenation opcode (CAT) or a similar
+  construct necessary for recursive covenants.
 
-    In many cases, the most efficient way prior to [taproot][topic
-    taproot] to include a copy of a prevout in a transaction was for it
-    to be provided as authorization data similar to a digital signature.
-    If the copy of the prevout is provided alongside a signature, it can
-    be checked by introspection of the transaction witness, which would
-    require a flexible introspection facility such as TX or CSFS.  The
-    proposed CTV and APO script changes would also allow introspection
-    of a next output, but they're much less able to introspect a
-    witness, making it appear that they were unable to create recursive
-    covenants even when combined with CAT.
+  In many cases, the most efficient way prior to [taproot][topic
+  taproot] to include a copy of a prevout in a transaction was for it
+  to be provided as authorization data similar to a digital signature.
+  If the copy of the prevout is provided alongside a signature, it can
+  be checked by introspection of the transaction witness, which would
+  require a flexible introspection facility such as TX or CSFS.  The
+  proposed CTV and APO script changes would also allow introspection
+  of a next output, but they're much less able to introspect a
+  witness, making it appear that they were unable to create recursive
+  covenants even when combined with CAT.
 
-    Nadav Ivgi [replied][ivgi cat] that it's also possible to include a
-    copy of the information used to construct the prevout in the prevout
-    itself (by adding that information when it's the next output).  When
-    creating recursive covenants, this still requires CAT to get around
-    problems with hashing, but it means features such as CTV and APO
-    that focus on output introspection are also able to create recursive
-    covenants in combination with CAT.  When used with the features of
-    taproot, Ivgi also thinks verifying prevouts through next outputs
-    makes covenant scripts simpler to write and he provides links to two
-    interesting example recursive covenants.
+  Nadav Ivgi [replied][ivgi cat] that it's also possible to include a
+  copy of the information used to construct the prevout in the prevout
+  itself (by adding that information when it's the next output).  When
+  creating recursive covenants, this still requires CAT to get around
+  problems with hashing, but it means features such as CTV and APO
+  that focus on output introspection are also able to create recursive
+  covenants in combination with CAT.  When used with the features of
+  taproot, Ivgi also thinks verifying prevouts through next outputs
+  makes covenant scripts simpler to write and he provides links to two
+  interesting example recursive covenants.
 
-    ZmnSCPxj [agreed][zmnscpxj cat2] with Ivgi's analysis and echoed his
-    previous concern about the risk of enabling recursive covenants on
-    Bitcoin (see [Newsletter #190][news190 recurse]), although he also
-    noted in a [subsequent post][zmnscpxj cat3] that "[for what it's
-    worth], recursive covenants are probably safe, as they are not in
-    fact [Turing-complete][]".
+  ZmnSCPxj [agreed][zmnscpxj cat2] with Ivgi's analysis and echoed his
+  previous concern about the risk of enabling recursive covenants on
+  Bitcoin (see [Newsletter #190][news190 recurse]), although he also
+  noted in a [subsequent post][zmnscpxj cat3] that "[for what it's
+  worth], recursive covenants are probably safe, as they are not in
+  fact [Turing-complete][]".
 
-    Russell O'Connor also [cited][oconnor cat] a [post][poelstra cat] by
-    Andrew Poelstra (covered in [Newsletter #134][news134 cat])
-    describing how CAT by itself is powerful enough in combination with
-    already-available Bitcoin features to create non-recursive
-    covenants---and, more theoretically, might also be able to create
-    recursive covenants by itself if it was added back into Bitcoin.
+  Russell O'Connor also [cited][oconnor cat] a [post][poelstra cat] by
+  Andrew Poelstra (covered in [Newsletter #134][news134 cat])
+  describing how CAT by itself is powerful enough in combination with
+  already-available Bitcoin features to create non-recursive
+  covenants---and, more theoretically, might also be able to create
+  recursive covenants by itself if it was added back into Bitcoin.
 
-    All of the discussion was about proposed additions to Bitcoin, so
-    there are no changes to our understanding of the currently-deployed
-    state of the Bitcoin system.
+  All of the discussion was about proposed additions to Bitcoin, so
+  there are no changes to our understanding of the currently-deployed
+  state of the Bitcoin system.
 
 - **Updated OP_TX proposal:** as described in [Newsletter #187][news187
   op_tx], Rusty Russell proposed an `OP_TX` opcode (based on previous
@@ -387,55 +387,55 @@ regular newsletter.
   introspection capability of `OP_CHECKLOCKTIMEVERIFY` (CLTV), e.g.
   `OP_TX(SELECT_LOCKTIME) <height> OP_GREATERTHAN OP_VERIFY`.
 
-    Using CLTV in the above example case would use fewer vbytes than TX,
-    but TX's flexibility could allow examining many other parts of a
-    transaction that currently can't be introspected in Bitcoin.  TX
-    could also possibly introspect data that's outside of a transaction
-    but which is needed by full nodes in order to validate that
-    transaction.  As originally proposed, TX was [flagged][rubin op_tx
-    recursive] for enabling recursive covenants, which currently appear
-    to be controversial (see [Newsletter #190][news190 recov]).
+  Using CLTV in the above example case would use fewer vbytes than TX,
+  but TX's flexibility could allow examining many other parts of a
+  transaction that currently can't be introspected in Bitcoin.  TX
+  could also possibly introspect data that's outside of a transaction
+  but which is needed by full nodes in order to validate that
+  transaction.  As originally proposed, TX was [flagged][rubin op_tx
+  recursive] for enabling recursive covenants, which currently appear
+  to be controversial (see [Newsletter #190][news190 recov]).
 
-    This week, Russell [proposed][russell op_tx] a restricted version of
-    TX that only provides access to the same fields as used by
-    [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) and
-    only in the same hash digest format that CTV consumes.
-    [BIP119][] CTV was specifically designed not to create recursive
-    covenants in combination with any existing Script features, so the
-    restricted TX opcode should provide all the same features while also
-    not enabling recursive covenants.
+  This week, Russell [proposed][russell op_tx] a restricted version of
+  TX that only provides access to the same fields as used by
+  [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) and
+  only in the same hash digest format that CTV consumes.
+  [BIP119][] CTV was specifically designed not to create recursive
+  covenants in combination with any existing Script features, so the
+  restricted TX opcode should provide all the same features while also
+  not enabling recursive covenants.
 
-    Additionally the restricted TX is designed so that future soft forks
-    could easily extend it with additional introspection features,
-    including optionally features that enable recursive covenants if
-    there was support for adding that capability.  As of this writing,
-    two developers suggested uses for TX by extending it with slightly
-    more features:
+  Additionally the restricted TX is designed so that future soft forks
+  could easily extend it with additional introspection features,
+  including optionally features that enable recursive covenants if
+  there was support for adding that capability.  As of this writing,
+  two developers suggested uses for TX by extending it with slightly
+  more features:
 
-    - *Improved vault primitive:* Russell's proposal suggests an extension that would provide the
-      ability to push onto the stack the number of satoshis being spent
-      to each output in the transaction.  Brandon Black [suggests][black
-      op_tx] that also including the amount of each prevout (input)
-      being spent would make it easier to create [vaults][topic vaults].
-      Black in particular suggests replicating the capability of the
-      `OP_IN_OUT_AMOUNT` opcode from the `OP_TAPLEAF_UPDATE_VERIFY`
-      (TLUV) proposal several months ago (see [Newsletter #166][news166
-      tluv]).
+  - *Improved vault primitive:* Russell's proposal suggests an extension that would provide the
+    ability to push onto the stack the number of satoshis being spent
+    to each output in the transaction.  Brandon Black [suggests][black
+    op_tx] that also including the amount of each prevout (input)
+    being spent would make it easier to create [vaults][topic vaults].
+    Black in particular suggests replicating the capability of the
+    `OP_IN_OUT_AMOUNT` opcode from the `OP_TAPLEAF_UPDATE_VERIFY`
+    (TLUV) proposal several months ago (see [Newsletter #166][news166
+    tluv]).
 
-    - *Using transaction introspection to prevent RBF pinning:* Gregory
-      Sanders [noted][sanders op_tx] that the proposed [Eltoo][topic
-      eltoo] layer for LN which makes use of the
-      [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] opcode may be
-      vulnerable to [transaction pinning attacks][topic transaction
-      pinning] as an interaction with [BIP125][] rule #3 (see
-      [Newsletter #27][news27 eltoo]).  Sanders suggests that giving TX
-      the ability to push the transaction weight (size) to the stack
-      would allow the participants in an eltoo-based payment channel to
-      put a limit on the maximum size of a transaction, eliminating as a
-      risk one type of pinning that depends on inflating the size of a
-      transaction.  This seems conceptually similar to an idea mentioned
-      in [Newsletter #191][news191 pinning] for preventing
-      [CPFP][topic cpfp] pinning.
+  - *Using transaction introspection to prevent RBF pinning:* Gregory
+    Sanders [noted][sanders op_tx] that the proposed [Eltoo][topic
+    eltoo] layer for LN which makes use of the
+    [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] opcode may be
+    vulnerable to [transaction pinning attacks][topic transaction
+    pinning] as an interaction with [BIP125][] rule #3 (see
+    [Newsletter #27][news27 eltoo]).  Sanders suggests that giving TX
+    the ability to push the transaction weight (size) to the stack
+    would allow the participants in an eltoo-based payment channel to
+    put a limit on the maximum size of a transaction, eliminating as a
+    risk one type of pinning that depends on inflating the size of a
+    transaction.  This seems conceptually similar to an idea mentioned
+    in [Newsletter #191][news191 pinning] for preventing
+    [CPFP][topic cpfp] pinning.
 
 - **Adapting miniscript and output script descriptors for hardware signing devices:**
   Salvatore Ingala [posted][ingala desc] to the Bitcoin-Dev mailing list
@@ -450,31 +450,31 @@ regular newsletter.
   information as compactly as possible.  Ingala suggests several
   enhancements to descriptors to address these problems:
 
-    - *Policy registration:* during the setup of a signing device, the
-      user should use the device to validate their preferred policy.  For
-      devices with persistent storage, the registered policy should be
-      saved to the device.  For devices without storage, the device
-      should return a cryptographically secure proof of registration
-      that may be quickly reloaded along with the policy each time the
-      device is started.  The proposal doesn't describe the details of
-      how policies should be registered on devices, but it does
-      reference [BIP129][] secure multisig setup (see [Newsletter
-      #136][news136 sms]).
+  - *Policy registration:* during the setup of a signing device, the
+    user should use the device to validate their preferred policy.  For
+    devices with persistent storage, the registered policy should be
+    saved to the device.  For devices without storage, the device
+    should return a cryptographically secure proof of registration
+    that may be quickly reloaded along with the policy each time the
+    device is started.  The proposal doesn't describe the details of
+    how policies should be registered on devices, but it does
+    reference [BIP129][] secure multisig setup (see [Newsletter
+    #136][news136 sms]).
 
-    - *Key placeholders:* instead of including repeated [BIP32][]
-      extended keys in descriptors, Ingala suggests allowing policy to
-      define a short placeholder that will be replaced with BIP32
-      information when the policy is interpreted.  This can both
-      significantly reduce the byte size of policies and also make them
-      much more human readable.  Ingala also suggests a few shortcuts
-      for commonly used strings in descriptors.
+  - *Key placeholders:* instead of including repeated [BIP32][]
+    extended keys in descriptors, Ingala suggests allowing policy to
+    define a short placeholder that will be replaced with BIP32
+    information when the policy is interpreted.  This can both
+    significantly reduce the byte size of policies and also make them
+    much more human readable.  Ingala also suggests a few shortcuts
+    for commonly used strings in descriptors.
 
-    - *Reduced expressiveness:* only a subset of descriptors is
-      supported, although additional features may be added later if
-      there is desire for them.  This simplifies implementation.
+  - *Reduced expressiveness:* only a subset of descriptors is
+    supported, although additional features may be added later if
+    there is desire for them.  This simplifies implementation.
 
-    The proposal received some discussion on the mailing list as of this
-    writing.
+  The proposal received some discussion on the mailing list as of this
+  writing.
 
 ## Changes to services and client software
 
@@ -572,7 +572,9 @@ Alex Morcos.
 {% assign sorted_praise = page.praise | sort_natural: "author" %}
 {% for comment in sorted_praise %}
   <blockquote markdown="1">
+
   {{comment.text | default: 'TODO'}}
+
   </blockquote>
 
   {:.right}
@@ -606,7 +608,7 @@ Alex Morcos.
 [sanders op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020458.html
 [ingala desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020423.html
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [news191 pinning]: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
 [MyCitadel Wallet]: https://github.com/mycitadel/mycitadel-desktop
 [RGB]: https://www.rgbfaq.com/what-is-rgb

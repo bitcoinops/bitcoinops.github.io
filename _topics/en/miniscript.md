@@ -3,7 +3,7 @@ title: Miniscript
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Scripts and Addresses
   - Wallet Collaboration Tools
   - Developer Tools
@@ -21,6 +21,8 @@ excerpt: >
 primary_sources:
     - title: Interactive miniscript demo
       link: http://bitcoin.sipa.be/miniscript/
+
+    - title: BIP379
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -85,6 +87,15 @@ optech_mentions:
   - title: "Field Report: A Miniscript Journey"
     url: /en/wizardsardine-miniscript/
     date: 2023-11-15
+
+  - title: "Ledger Bitcoin App 2.2.0 adds miniscript support for taproot"
+    url: /en/newsletters/2024/03/20/#ledger-bitcoin-app-2-2-0-released
+
+  - title: Draft BIP proposed for miniscript
+    url:  /en/newsletters/2024/05/24/#proposed-miniscript-bip
+
+  - title: "BIP379 added with a specification for Miniscript"
+    url: /en/newsletters/2024/07/05/#bips-1610
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

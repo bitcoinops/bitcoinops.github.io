@@ -103,7 +103,7 @@ appeared in the forward blocks.
 
 This talk describes an alternative to the Schnorr
 signature scheme described in the [MuSig paper][] that makes use of [pairing-based cryptography][],
-specifically an adaptation of the [Boneh-Lynn-Shacham (BLS) signature
+specifically an adaptation of the [Boneh--Lynn--Shacham (BLS) signature
 scheme][bls sigs].  Although pairing-based schemes require an additional
 fundamental security assumption beyond those made by both Bitcoin's
 current ECDSA scheme and proposed Schnorr scheme, the authors present
@@ -285,3 +285,4 @@ newsletter's author.
 [eltoo protocol]: https://blockstream.com/2018/04/30/eltoo-next-lightning.html
 [bitcoin-dev timewarp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html
 [ln scriptless scripts]: https://lists.launchpad.net/mimblewimble/msg00086.html
+[cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144

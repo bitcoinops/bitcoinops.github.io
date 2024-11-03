@@ -13,10 +13,6 @@ normal number of LN gossip updates to one per day, and provides our
 longest-to-date list of notable changes to popular Bitcoin
 infrastructure projects.
 
-{% comment %}<!-- evidence for being "longest-ever":
-    find _posts/en/newsletters/ -type f | while read file ; do echo -n "$file "; sed -n '/^## Notable code/,${/^## [^\(Notable\)]/Q; /linkers\/issues.md/Q; p}' $file | wc -l ; done | sort -n -k2 | tail
--->{% endcomment %}
-
 {% comment %}<!-- include references.md below the fold but above any Jekyll/Liquid variables-->{% endcomment %}
 {% include references.md %}
 
@@ -27,31 +23,31 @@ infrastructure projects.
 ## News
 
 - **Eltoo sample implementation and discussion:** on the
- Lightning-Dev mailing list, Richard Myers [posted][eltoo sample] a link
- to a sample implementation of an eltoo payment flow between nodes on a
- custom [signet][].  [Eltoo][] is a proposal to replace LN's current
- LN-penalty enforcement layer with a new layer named LN-eltoo.
- LN-penalty prevents counterparty theft by giving nodes the ability to
- financially penalize a counterparty that attempts to publish an old
- channel state onchain.  LN-eltoo accomplishes the same goal by giving the
- later states the ability to spend funds from earlier states within a
- certain period of time---eliminating the need for a penalty, simplifying
- many aspects of the protocol, and reducing
- the complexity of many proposed protocol enhancements.  Myers's sample
- implementation works by using the Bitcoin Core functional test
- framework to simulate payments in an eltoo payment channel.
+  Lightning-Dev mailing list, Richard Myers [posted][eltoo sample] a link
+  to a sample implementation of an eltoo payment flow between nodes on a
+  custom [signet][].  [Eltoo][] is a proposal to replace LN's current
+  LN-penalty enforcement layer with a new layer named LN-eltoo.
+  LN-penalty prevents counterparty theft by giving nodes the ability to
+  financially penalize a counterparty that attempts to publish an old
+  channel state onchain.  LN-eltoo accomplishes the same goal by giving the
+  later states the ability to spend funds from earlier states within a
+  certain period of time---eliminating the need for a penalty, simplifying
+  many aspects of the protocol, and reducing
+  the complexity of many proposed protocol enhancements.  Myers's sample
+  implementation works by using the Bitcoin Core functional test
+  framework to simulate payments in an eltoo payment channel.
 
-    This led to a discussion ([1][eltoo ms 1], [2][eltoo ms 2]) of
-    whether using [miniscript][] would help make LN "more future-proof
-    and extensible than directly using Bitcoin Script."
+  This led to a discussion ([1][eltoo ms 1], [2][eltoo ms 2]) of
+  whether using [miniscript][] would help make LN "more future-proof
+  and extensible than directly using Bitcoin Script."
 
-    It also led to eltoo co-author Christian Decker writing a
-    [summary][eltoo summary] of why he thinks eltoo is especially
-    valuable in providing a clean separation of protocol layers.  For
-    example, by making state changes in eltoo similar to state changes
-    in Bitcoin, this would allow tools and contract protocols built for
-    regular Bitcoin transactions (state changes) to be easily reused
-    within payment channels.
+  It also led to eltoo co-author Christian Decker writing a
+  [summary][eltoo summary] of why he thinks eltoo is especially
+  valuable in providing a clean separation of protocol layers.  For
+  example, by making state changes in eltoo similar to state changes
+  in Bitcoin, this would allow tools and contract protocols built for
+  regular Bitcoin transactions (state changes) to be easily reused
+  within payment channels.
 
 - **Request for comments on limiting LN gossip updates to once per day:**
   Rusty Russell [posted][less gossip] to the Lightning-Dev
@@ -139,14 +135,14 @@ infrastructure projects.
 - [C-Lightning #3004][] removes all the features deprecated in
   C-Lightning 0.7.0, including:
 
-    - The deprecated `listpayments` RPC as well as the deprecated
-      `description` parameter or output field in `pay`, `sendpay`, and
-      `waitsendpay`.  (See [Newsletter #36][listpayments deprecated])
+  - The deprecated `listpayments` RPC as well as the deprecated
+    `description` parameter or output field in `pay`, `sendpay`, and
+    `waitsendpay`.  (See [Newsletter #36][listpayments deprecated])
 
-    - The deprecated older style of colon-delimited short channel
-      identifier (`Block:Transaction_index:Output_index`).  Instead, use
-      the standardized [BOLT7 format][] delimited using an x
-      (`BxTxO`).
+  - The deprecated older style of colon-delimited short channel
+    identifier (`Block:Transaction_index:Output_index`).  Instead, use
+    the standardized [BOLT7 format][] delimited using an x
+    (`BxTxO`).
 
 - [C-Lightning #2924][] abstracts C-Lightning's database handling code
   and SQL queries so that it can be adapted to handle other backends
@@ -169,9 +165,9 @@ infrastructure projects.
 {% include linkers/issues.md issues="16185,627,1106,3449,3401,3390,15759,15450,16421,656,337,3004,3025,2938,2924,2964,15681" %}
 
 [bolt7 format]: https://github.com/lightningnetwork/lightning-rfc/blob/master/07-routing-gossip.md#definition-of-short_channel_id
-[lnd hold invoices]: {{news38}}#lnd-2022
-[listpayments deprecated]: {{news36}}#c-lightning-2382
-[carve-out]: {{news56}}#bitcoin-core-15681
+[lnd hold invoices]: /en/newsletters/2019/03/19/#lnd-2022
+[listpayments deprecated]: /en/newsletters/2019/03/05/#c-lightning-2382
+[carve-out]: /en/newsletters/2019/07/24/#bitcoin-core-15681
 [eltoo sample]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002131.html
 [eltoo ms 1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002132.html
 [eltoo ms 2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002135.html
@@ -179,3 +175,5 @@ infrastructure projects.
 [signet]: https://en.bitcoin.it/wiki/Signet
 [less gossip]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002134.html
 [txprobe paper]: https://arxiv.org/pdf/1812.00942.pdf
+[eltoo]: https://blockstream.com/eltoo.pdf
+[miniscript]: /en/topics/miniscript/

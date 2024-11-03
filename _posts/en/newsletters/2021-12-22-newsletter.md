@@ -135,6 +135,7 @@ counterarguments were presented and community support for taproot seemed
 to be unchanged.
 
 <div markdown="1" class="callout" id="taproot">
+
 ### 2021 summary<br>Taproot activation
 
 By the end of 2020, an implementation of the [taproot][topic taproot]
@@ -166,19 +167,19 @@ addresses.
   enforcement.  Speedy trial would go on to become the actual
   [mechanism][topic soft fork activation] used to activate taproot.
 
-    While activation discussions were underway, there was a final
-    [discussion][quant] about one of its design decisions, using bare
-    public keys, which was argued might put user funds at increased
-    risk of being stolen by future quantum computers.  Many developers
-    argued that the concerns were unwarranted or, at least, overblown.
+  While activation discussions were underway, there was a final
+  [discussion][quant] about one of its design decisions, using bare
+  public keys, which was argued might put user funds at increased
+  risk of being stolen by future quantum computers.  Many developers
+  argued that the concerns were unwarranted or, at least, overblown.
 
-    Also in March, Bitcoin Core merged support for [BIP350][], allowing
-    it to pay to [bech32m][topic bech32] addresses.  This slight variation
-    on the bech32 addresses that are used for payments to original
-    segwit version addresses fixes a bug which could've caused taproot
-    users to lose money in some very rare cases.  (Original segwit
-    outputs created from bech32 addresses are safe and unaffected by the
-    bug.)
+  Also in March, Bitcoin Core merged support for [BIP350][], allowing
+  it to pay to [bech32m][topic bech32] addresses.  This slight variation
+  on the bech32 addresses that are used for payments to original
+  segwit version addresses fixes a bug which could've caused taproot
+  users to lose money in some very rare cases.  (Original segwit
+  outputs created from bech32 addresses are safe and unaffected by the
+  bug.)
 
   {% comment %}
   /en/newsletters/2021/03/03/#rust-lightning-794
@@ -293,6 +294,7 @@ state.  That initial ability to receive funds makes dual-funding particularly us
 use of LN is receiving payments instead of sending them.
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2021 summary<br>Major releases of popular infrastructure projects
 
 - [Eclair 0.5.0][] added support for a scalable cluster mode (see
@@ -498,6 +500,7 @@ differently.  By the end of the year, a [variation][cl#4771] on the
 technique would be implemented in C-Lightning.
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2021 summary<br>Bitcoin Optech
 
 In Optech's fourth year, we published 51 weekly [newsletters][], added 30

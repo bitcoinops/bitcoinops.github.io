@@ -24,26 +24,26 @@ None this week.
   the [Lightning-Dev mailing list][] saw a surge of new proposals and
   discussion about earlier proposals.  Below are some highlights:
 
-    - **Advertising node liquidity:** Lisa Neigut [proposes][neigut
-      liquidity] allowing LN nodes advertise that they're willing to
-      provide incoming capacity in exchange for a certain level of fees.
-      Merchants need their payment channels to have incoming capacity in
-      order to be able receive secure offchain payments from
-      customers---the current alternatives are either requiring some of
-      their customers to wait for several onchain confirmations to open
-      a new channel or making manual channel liquidity arrangements with
-      other merchants.  Although solving this problem would be highly
-      advantageous for merchant adoption of LN, it does pose some
-      technical challenges that discussion participants attempt to solve
-      both in this thread and in a [related thread][zmn liquidity].
+  - **Advertising node liquidity:** Lisa Neigut [proposes][neigut
+    liquidity] allowing LN nodes advertise that they're willing to
+    provide incoming capacity in exchange for a certain level of fees.
+    Merchants need their payment channels to have incoming capacity in
+    order to be able receive secure offchain payments from
+    customers---the current alternatives are either requiring some of
+    their customers to wait for several onchain confirmations to open
+    a new channel or making manual channel liquidity arrangements with
+    other merchants.  Although solving this problem would be highly
+    advantageous for merchant adoption of LN, it does pose some
+    technical challenges that discussion participants attempt to solve
+    both in this thread and in a [related thread][zmn liquidity].
 
-    - **Making path probing more convenient:** Anthony Towns
-      [proposes][probe cancel] a method for allowing all the nodes along
-      a path to forget about a small-value payment if one of the nodes
-      on the path is offline.  This reduces the resources required in
-      the case of a routing failure by a node that proactively probes
-      its available payment paths to determine which are the fastest and
-      most reliable for sending payments.
+  - **Making path probing more convenient:** Anthony Towns
+    [proposes][probe cancel] a method for allowing all the nodes along
+    a path to forget about a small-value payment if one of the nodes
+    on the path is offline.  This reduces the resources required in
+    the case of a routing failure by a node that proactively probes
+    its available payment paths to determine which are the fastest and
+    most reliable for sending payments.
 
 - **Opportunity available for providing utility functions outside of Bitcoin Core:**
   Bitcoin Core's RPC interface currently provides over
@@ -56,14 +56,14 @@ None this week.
   workflows.  This will help keep the project focused on its main
   objectives.
 
-    This does provide a nice opportunity for an independent developer or
-    other third-party to create a separate project for a library, local
-    program, or RPC interface that provides a stable interface to
-    utility functions that work well in conjunction with Bitcoin Core,
-    and which perhaps even provides some of the utility functions that
-    Bitcoin Core already supports for users not running a node.  Some
-    ideas for how to implement such a tool were discussed both during
-    and [after][core dev log] the meeting.
+  This does provide a nice opportunity for an independent developer or
+  other third-party to create a separate project for a library, local
+  program, or RPC interface that provides a stable interface to
+  utility functions that work well in conjunction with Bitcoin Core,
+  and which perhaps even provides some of the utility functions that
+  Bitcoin Core already supports for users not running a node.  Some
+  ideas for how to implement such a tool were discussed both during
+  and [after][core dev log] the meeting.
 
 ## Lightning Application Residency Videos
 
@@ -74,8 +74,8 @@ Network, including presentations from experts in the space. Videos of the
 with the slide decks for the expert presentations. The following
 talks may be of particular interest to members:
 
-- [**The Lightning Protocol - an Application Developers Perspective**][bosworth
-  video] - [Alex Bosworth][bosworth], infrastructure lead at Lightning Labs,
+- [**The Lightning Protocol - an Application Developers Perspective**][bosworth video] -
+  [Alex Bosworth][bosworth], infrastructure lead at Lightning Labs,
   gives a comprehensive overview of the Lightning protocol, explaining all of the
   [BOLTs][], and how they are relevant for developers building on top of the
   protocol. This talk should be useful for any developers wanting to integrate
@@ -108,34 +108,9 @@ talks may be of particular interest to members:
 
 ## Notable code changes
 
-*Notable code changes this week in [Bitcoin Core][core commits],
-[LND][lnd commits], [C-lightning][cl commits], and [libsecp256k1][secp
-commits].*
-
-{% include linkers/github-log.md
-  refname="core commits"
-  repo="bitcoin/bitcoin"
-  start="742ee213499194f97e59dae4971f1474ae7d57ad"
-  end="e70a19e7132dac91b7948fcbfac086f86fec3d88"
-%}
-{% include linkers/github-log.md
-  refname="lnd commits"
-  repo="lightningnetwork/lnd"
-  start="6b19df162a161079ab794162b45e8f4c7bb8beec"
-  end="d4b042dc1946ece8b60d538ade8e912f035612fe"
-%}
-{% include linkers/github-log.md
-  refname="cl commits"
-  repo="ElementsProject/lightning"
-  start="d5bb536ef0c08a813f767b3fb016eb20292de4dd"
-  end="62e6a9ff542e40364b67a7aa419e33ed72b96a42"
-%}
-{% include linkers/github-log.md
-  refname="secp commits"
-  repo="bitcoin-core/secp256k1"
-  start="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-  end="1086fda4c1975d0cad8d3cad96794a64ec12dca4"
-%}
+*Notable code changes this week in [Bitcoin Core][bitcoin core repo],
+[LND][lnd repo], [C-lightning][core lightning repo], and [libsecp256k1][libsecp256k1
+repo].*
 
 - [Bitcoin Core #14410][] adds an `ischange` field to the
   [getaddressinfo][rpc getaddressinfo] RPC indicating whether the wallet
@@ -185,3 +160,6 @@ commits].*
 [kotliar BoB]: https://www.youtube.com/watch?v=Cpid31c6HZc&feature=youtu.be&t=8m49s
 [mallers video]: https://www.youtube.com/watch?v=R0C83h-ZM-4&list=PLpLH33TRghT1SbxinAsNDS6L7RkAjC8ME&index=17&t=0s
 [mallers]: https://twitter.com/JackMallers
+[newsletter #19]: /en/newsletters/2018/10/30/#lightning-residency-and-hackday
+[newsletter #3]: /en/newsletters/2018/07/10/#merchant-adoption
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

@@ -3,7 +3,7 @@ title: AssumeUTXO
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Consensus Enforcement
   - P2P Network Protocol
 
@@ -57,6 +57,21 @@ optech_mentions:
 
   - title: Bitcoin Core bug found in computation of UTXO set hash
     url: /en/newsletters/2023/10/25/#bitcoin-utxo-set-summary-hash-replacement
+
+  - title: Notes from Bitcoin developer discussion about assumeUTXO for mainnet
+    url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
+
+  - title: "Bitcoin Core #30320 only loads a AssumeUTXO snapshot if it's the ancestor of the most-PoW chain"
+    url: /en/newsletters/2024/07/26/#bitcoin-core-30320
+
+  - title: "Bitcoin Core #30598 removes block height from the assumeUTXO snapshot file metadata"
+    url: /en/newsletters/2024/08/16/#bitcoin-core-30598
+
+  - title: "Bitcoin Core #28553 adds assumeUTXO snapshot parameters for mainnet block 840,000"
+    url: /en/newsletters/2024/08/23/#bitcoin-core-28553
+
+  - title: "Bitcoin Core #30807 has assumeUTXO nodes during background sync signal NODE_NETWORK_LIMITED"
+    url: /en/newsletters/2024/09/20/#bitcoin-core-30807
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

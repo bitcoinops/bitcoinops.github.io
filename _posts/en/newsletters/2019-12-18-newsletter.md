@@ -44,7 +44,7 @@ Stack Exchange questions and answers.
   be a tiny change; e.g. for the [Python reference
   implementation][bech32 python] it might look something like:
 
-    ```diff
+  ```diff
     --- a/ref/python/segwit_addr.py
     +++ b/ref/python/segwit_addr.py
     @@ -110,7 +110,7 @@ def decode(hrp, addr):
@@ -55,11 +55,11 @@ Stack Exchange questions and answers.
     +    if len(decoded) != 20 and len(decoded) != 32:
              return (None, None)
          return (data[0], decoded)
-    ```
+  ```
 
-    If you have any questions or concerns about this suggested change,
-    please reply to the mailing list post linked in the *news* section
-    below.
+  If you have any questions or concerns about this suggested change,
+  please reply to the mailing list post linked in the *news* section
+  below.
 
 ## News
 
@@ -87,12 +87,12 @@ Stack Exchange questions and answers.
   is the only exception to bech32's expected error detection properties
   and that "changing one constant in bech32 would resolve this issue."
 
-    Wuille plans to amend [BIP173][] to describe the weakness, propose a
-    change to limit existing bech32 address uses to either 20 byte or 32
-    byte witness program payloads, and define a modified version of
-    bech32 with the alternative constant for non-Bitcoin uses and for a
-    potential future where we want witness programs that are not 20
-    bytes or 32 bytes.
+  Wuille plans to amend [BIP173][] to describe the weakness, propose a
+  change to limit existing bech32 address uses to either 20 byte or 32
+  byte witness program payloads, and define a modified version of
+  bech32 with the alternative constant for non-Bitcoin uses and for a
+  potential future where we want witness programs that are not 20
+  bytes or 32 bytes.
 
 - **Proposed changes to bip-ctv:** Jeremy Rubin [suggested][rubin ctv
   update] several changes to the proposed soft fork addition of an
@@ -124,13 +124,13 @@ Stack Exchange questions and answers.
   expire---this allows the attacker to steal the funds in the HTLC after
   it does expire.
 
-    Both Riard's post and replies from [Matt Corallo][corallo eclipse]
-    and [ZmnSCPxj][zmn eclipse] discuss past and present work to make
-    full nodes and lightweight clients more resistant to eclipse
-    attacks.  Readers interested in learning more about eclipse attacks
-    and their mitigations are also strongly encouraged to read the Bitcoin
-    Core review club's [meeting notes and log][review club notes] for
-    the past week, as they covered this topic in depth.
+  Both Riard's post and replies from [Matt Corallo][corallo eclipse]
+  and [ZmnSCPxj][zmn eclipse] discuss past and present work to make
+  full nodes and lightweight clients more resistant to eclipse
+  attacks.  Readers interested in learning more about eclipse attacks
+  and their mitigations are also strongly encouraged to read the Bitcoin
+  Core review club's [meeting notes and log][review club notes] for
+  the past week, as they covered this topic in depth.
 
 ## Changes to services and client software
 

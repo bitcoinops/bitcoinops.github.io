@@ -27,19 +27,19 @@ infrastructure software.
   use their input to the transaction to create a conflicting transaction
   that prevents the coinjoin transaction from confirming.
 
-    Sanders proposes that coinjoin-style transactions can avoid this
-    problem by having each participant initially spend their bitcoins to
-    a script that can only be spent by either a signature from all
-    participants in the coinjoin or by just the participant after a
-    timelock expires.  Alternatively, for a coordinated coinjoin, the
-    coordinator and the participant must sign together (or the
-    participant alone after the timelock expiration).
+  Sanders proposes that coinjoin-style transactions can avoid this
+  problem by having each participant initially spend their bitcoins to
+  a script that can only be spent by either a signature from all
+  participants in the coinjoin or by just the participant after a
+  timelock expires.  Alternatively, for a coordinated coinjoin, the
+  coordinator and the participant must sign together (or the
+  participant alone after the timelock expiration).
 
-    Up until the timelock expires, the participant must now get either
-    the other parties or the coordinator to co-sign any conflicting
-    transactions, which they are unlikely to do unless signing would be
-    in the best interests of all the participants (e.g. a [fee
-    bump][topic rbf]). {% assign timestamp="16:08" %}
+  Up until the timelock expires, the participant must now get either
+  the other parties or the coordinator to co-sign any conflicting
+  transactions, which they are unlikely to do unless signing would be
+  in the best interests of all the participants (e.g. a [fee
+  bump][topic rbf]). {% assign timestamp="16:08" %}
 
 - **Speculatively using hoped-for consensus changes:** Robin Linus
   [posted][linus spec] to the Bitcoin-Dev mailing list an idea for
@@ -52,25 +52,25 @@ infrastructure software.
   if added to Bitcoin, will allow anyone providing a Zero-Knowledge
   Proof (ZKP) for a program with a particular hash to claim the funds.
 
-    This could allow people to spend BTC today to one of these scripts
-    and use the proof of that spend to receive an equivalent amount of
-    BTC on a [sidechain][topic sidechains] or alternative chain, called a
-    _one-way peg_.  The BTC on the other chain could be spent repeatedly
-    for 20 years, until the script timelock expired.  Then the current
-    owner of the BTC on the other chain could generate a ZKP proof that
-    they owned it and use that proof to withdraw the locked deposit on
-    the Bitcoin mainnet, creating a _two-way peg_.  With a good design
-    for the verification program, the withdrawal would be simple and
-    flexible, which would allow for fungible withdrawals.
+  This could allow people to spend BTC today to one of these scripts
+  and use the proof of that spend to receive an equivalent amount of
+  BTC on a [sidechain][topic sidechains] or alternative chain, called a
+  _one-way peg_.  The BTC on the other chain could be spent repeatedly
+  for 20 years, until the script timelock expired.  Then the current
+  owner of the BTC on the other chain could generate a ZKP proof that
+  they owned it and use that proof to withdraw the locked deposit on
+  the Bitcoin mainnet, creating a _two-way peg_.  With a good design
+  for the verification program, the withdrawal would be simple and
+  flexible, which would allow for fungible withdrawals.
 
-    The authors note that anyone who would benefit from this
-    construction (e.g. who receives BTC on another chain) is basically
-    making a bet that Bitcoin's consensus rules will be changed (e.g.
-    `OP_ZKP_VERIFY` will be added).  This gives them an incentive to
-    advocate for the change, but heavily incentivizing some users to
-    change the system may result in other users feeling like they're
-    being coerced.  The idea had not received any discussion on the
-    mailing list as of this writing. {% assign timestamp="1:33" %}
+  The authors note that anyone who would benefit from this
+  construction (e.g. who receives BTC on another chain) is basically
+  making a bet that Bitcoin's consensus rules will be changed (e.g.
+  `OP_ZKP_VERIFY` will be added).  This gives them an incentive to
+  advocate for the change, but heavily incentivizing some users to
+  change the system may result in other users feeling like they're
+  being coerced.  The idea had not received any discussion on the
+  mailing list as of this writing. {% assign timestamp="1:33" %}
 
 ## Waiting for confirmation #7: Network Resources
 
@@ -209,7 +209,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
   indistinguishable from random data. The `ellswift` module provides functions
   for encoding and decoding public keys in the new format as well as
   convenience functions to generate new uniformly-random keys and perform
-  an Elliptic Curve Diffie-Hellman key exchange (ECDH) on ellswift-encoded
+  an Elliptic Curve Diffie--Hellman key exchange (ECDH) on ellswift-encoded
   keys. The ellswift-based ECDH is to be used in establishing connections
   for the [version 2 P2P encrypted transport][topic v2 p2p transport] protocol ([BIP324][]). {% assign timestamp="1:40:37" %}
 

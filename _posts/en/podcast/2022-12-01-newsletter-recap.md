@@ -696,7 +696,7 @@ experimental modules are now included by default when you build the libsecp, and
 those modules are extra keys for working with x-only pubkeys, ECDH, and schnorr
 signatures.
 
-**Mark Erhardt**: Elliptic Curve Diffie-Hellman.  It's a way to generate a
+**Mark Erhardt**: Elliptic Curve Diffie--Hellman.  It's a way to generate a
 shared secret between two parties.
 
 **Mike Schmidt**: And so, these additional modules, which were behind and

@@ -65,8 +65,8 @@ attempt at set reconciliation fails.
 using both a simulated network of 60,000 nodes (similar in number and use to
 the current Bitcoin network) and a live set of 100 nodes spread internationally
 across several datacenters.  The most notable result is that Erlay reduces the
-amount of bandwidth used to announce the existence of new transactions by 84%.
-<!-- figure 11, 1 - 0.7 / 4.33 -->  However, it does take about 80% (2.6
+amount of bandwidth used to announce the existence of new transactions by 84%.  <!-- figure 11, 1 - 0.7 / 4.33 -->
+However, it does take about 80% (2.6
 seconds) longer for transactions to propagate to all of the nodes in the
 network. <!-- page 9 --> It's still the case that Bitcoin transactions can only
 be confirmed once every ten minutes on average, so a three second slowdown
@@ -93,8 +93,8 @@ resistance to spy nodes.
     Considering future possible changes to Bitcoin relay policy, the paper
 notes that an increase in the number of outbound peers from 8 to 32 would only
 increase the bandwidth used by a node to announce the existence of new
-transactions by 32% with Erlay compared to 300% using the current protocol.
-<!-- figure 10 --> As described in the paragraph above about Erlay's two
+transactions by 32% with Erlay compared to 300% using the current protocol.  <!-- figure 10 -->
+As described in the paragraph above about Erlay's two
 phases, new transactions would still only be fanned out via direct announcements
 to 8 peers, but nodes would perform set reconciliation with all 32 peers.
 A four-fold improvement in relay connectivity improves the chance that
@@ -189,8 +189,10 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15741,2985,2761" %}
 [bech32 series]: /en/bech32-sending-support/
-[news48 coshv]: {{news48}}#proposed-transaction-output-commitments
+[news48 coshv]: /en/newsletters/2019/05/29/#proposed-transaction-output-commitments
 [alt-coshv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016997.html
 [kotliar ln]: https://www.youtube.com/watch?v=1UDD9PMFTds
 [Bitcoin Core PR Review Club]:https://bitcoin-core-review-club.github.io/
 [core prs]: https://github.com/bitcoin/bitcoin/pulls
+[newsletter #26]: /en/newsletters/2018/12/18/#minisketch-library-released
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf

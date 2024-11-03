@@ -40,59 +40,59 @@ beliebten Bitcoin Infrastrukturprojekten.
   aktivieren, entspricht nicht dem Ansatz, den ich in der Vergangenheit bei Core
   gesehen habe."
 
-    Towns denkt dann darüber nach, ob dies eine neue Richtung für die
-    Entwicklung sei: "Full-[RBF][topic RBF] ist seit Ewigkeiten umstritten, aber
-    bei den Entwicklern sehr beliebt [...] also ist dies vielleicht nur ein
-    Sonderfall und kein Präzedenzfall. Und wenn Leute andere Default-False-Optionen
-    vorschlagen, wird es trotz des ganzen Geredes darüber, dass die Benutzer
-    Optionen haben, das im Moment stattfindet, wesentlich mehr Widerstand gegen
-    das Merging geben". Aber davon ausgehend, dass es sich um eine neue
-    Richtung handelt, bewertet er einige mögliche Folgen dieser
-    Entscheidung:
+  Towns denkt dann darüber nach, ob dies eine neue Richtung für die
+  Entwicklung sei: "Full-[RBF][topic RBF] ist seit Ewigkeiten umstritten, aber
+  bei den Entwicklern sehr beliebt [...] also ist dies vielleicht nur ein
+  Sonderfall und kein Präzedenzfall. Und wenn Leute andere Default-False-Optionen
+  vorschlagen, wird es trotz des ganzen Geredes darüber, dass die Benutzer
+  Optionen haben, das im Moment stattfindet, wesentlich mehr Widerstand gegen
+  das Merging geben". Aber davon ausgehend, dass es sich um eine neue
+  Richtung handelt, bewertet er einige mögliche Folgen dieser
+  Entscheidung:
 
-    - *Es sollte einfacher sein, standardmäßig deaktivierte alternative Weiterleitungsoptionen zu mergen:*
-      Wenn es als besser angesehen wird, den Benutzern mehr Optionen zu geben,
-      gibt es viele Aspekte der Weiterleitungsrichtlinien, die konfigurierbar
-      gemacht werden können. Zum Beispiel bietet Bitcoin Knots eine Option für
-      Skript-Pubkey-Wiederverwendung(`spkreuse`), um einen Knoten so zu
-      konfigurieren, dass er die Weiterleitung von Transaktionen, die eine
-      [Adresse wiederverwenden][topic output linking], ablehnt.
+  - *Es sollte einfacher sein, standardmäßig deaktivierte alternative Weiterleitungsoptionen zu mergen:*
+    Wenn es als besser angesehen wird, den Benutzern mehr Optionen zu geben,
+    gibt es viele Aspekte der Weiterleitungsrichtlinien, die konfigurierbar
+    gemacht werden können. Zum Beispiel bietet Bitcoin Knots eine Option für
+    Skript-Pubkey-Wiederverwendung(`spkreuse`), um einen Knoten so zu
+    konfigurieren, dass er die Weiterleitung von Transaktionen, die eine
+    [Adresse wiederverwenden][topic output linking], ablehnt.
 
-    - *Tolerantere Richtlinien erfordern eine breite Akzeptanz oder ein besseres Peering:*
-      Ein Bitcoin Core Knoten leitet standardmäßig Transaktionen zu acht Peers
-      über ausgehende Verbindungen weiter. Also müssen mindestens 30% des
-      Netzwerks eine tolerantere Richtlinie unterstützen, bevor ein Knoten eine
-      95%ige Chance hat, mindestens einen zufällig ausgewählten Peer zu finden,
-      der die gleiche Richtlinie unterstützt. Je weniger Knoten eine Richtlinie
-      unterstützen, desto geringer ist die Wahrscheinlichkeit, dass ein Knoten
-      einen Peer findet, der diese Richtlinie unterstützt.
+  - *Tolerantere Richtlinien erfordern eine breite Akzeptanz oder ein besseres Peering:*
+    Ein Bitcoin Core Knoten leitet standardmäßig Transaktionen zu acht Peers
+    über ausgehende Verbindungen weiter. Also müssen mindestens 30% des
+    Netzwerks eine tolerantere Richtlinie unterstützen, bevor ein Knoten eine
+    95%ige Chance hat, mindestens einen zufällig ausgewählten Peer zu finden,
+    der die gleiche Richtlinie unterstützt. Je weniger Knoten eine Richtlinie
+    unterstützen, desto geringer ist die Wahrscheinlichkeit, dass ein Knoten
+    einen Peer findet, der diese Richtlinie unterstützt.
 
-    - *Besseres Peering bringt Kompromisse mit sich:* Bitcoin-Knoten können ihre
-      Fähigkeiten über das Service-Feld der P2P-Nachrichten `addr`,
-      [`addrv2`][topic addr v2] und `version` bekannt geben, so dass Knoten mit
-      gemeinsamen Interessen einander finden und Teilnetze bilden können (so
-      genanntes *preferential peering*). Alternativ können Betreiber von
-      Fullnodes mit gemeinsamen Interessen andere Software verwenden, um
-      unabhängige Weiterleitungsnetze zu bilden (z. B. ein Netz zwischen
-      LN-Knoten). Auf diese Weise können Weiterleitungsnetzwerke auch dann
-      effektiv sein, wenn nur wenige Knoten eine Richtlinie umsetzen. Aber
-      Knoten, die eine seltene Richtlinie umsetzen, sind leichter zu
-      identifizieren und zu zensieren. Außerdem müssen sich die Miner diesen
-      Sub-Netzwerken und alternativen Netzwerken anschließen, was die
-      Komplexität und die  Miningkosten erhöht, was wiederum den Druck die
-      Transaktionsauswahl zu zentralisieren erhöht, und somit auch die Zensur
-      erleichtert.
+  - *Besseres Peering bringt Kompromisse mit sich:* Bitcoin-Knoten können ihre
+    Fähigkeiten über das Service-Feld der P2P-Nachrichten `addr`,
+    [`addrv2`][topic addr v2] und `version` bekannt geben, so dass Knoten mit
+    gemeinsamen Interessen einander finden und Teilnetze bilden können (so
+    genanntes *preferential peering*). Alternativ können Betreiber von
+    Fullnodes mit gemeinsamen Interessen andere Software verwenden, um
+    unabhängige Weiterleitungsnetze zu bilden (z. B. ein Netz zwischen
+    LN-Knoten). Auf diese Weise können Weiterleitungsnetzwerke auch dann
+    effektiv sein, wenn nur wenige Knoten eine Richtlinie umsetzen. Aber
+    Knoten, die eine seltene Richtlinie umsetzen, sind leichter zu
+    identifizieren und zu zensieren. Außerdem müssen sich die Miner diesen
+    Sub-Netzwerken und alternativen Netzwerken anschließen, was die
+    Komplexität und die  Miningkosten erhöht, was wiederum den Druck die
+    Transaktionsauswahl zu zentralisieren erhöht, und somit auch die Zensur
+    erleichtert.
 
-        Außerdem können Knoten, die andere Richtlinien als einige ihrer Peers
-        implementieren, die Vorteile von Technologien wie
-        [kompakte Blockweiterleitung][topic compact block relay] und
-        [Erlay][topic erlay] zur Minimierung von Latenzzeiten und Bandbreite
-        nicht voll ausschöpfen, wenn zwei Peers bereits über einige der gleichen
-        Informationen verfügen.
+    Außerdem können Knoten, die andere Richtlinien als einige ihrer Peers
+    implementieren, die Vorteile von Technologien wie
+    [kompakte Blockweiterleitung][topic compact block relay] und
+    [Erlay][topic erlay] zur Minimierung von Latenzzeiten und Bandbreite
+    nicht voll ausschöpfen, wenn zwei Peers bereits über einige der gleichen
+    Informationen verfügen.
 
-    Auf den Beitrag von Towns gingen zahlreiche aufschlussreiche Antworten ein,
-    und die Diskussion ist noch nicht abgeschlossen. Wir werden im Newsletter
-    der nächsten Woche ein Update geben.
+  Auf den Beitrag von Towns gingen zahlreiche aufschlussreiche Antworten ein,
+  und die Diskussion ist noch nicht abgeschlossen. Wir werden im Newsletter
+  der nächsten Woche ein Update geben.
 
 -  **BIP324 Nachrichtenbezeichner**: Pieter Wuille hat auf der
   Bitcoin-Dev-Mailingliste eine [Antwort][wuille bip324] auf die Aktualisierung
@@ -116,23 +116,23 @@ beliebten Bitcoin Infrastrukturprojekten.
   jedoch zurzeit keine authentifizierte Methode für Routing-Knoten, um diese
   Informationen an einen Zahler zu übermitteln.
 
-    Vor einigen Jahren schlug Joost Jager eine Lösung vor (siehe
-    [Newsletter #51][news51 attrib]), die er nun mit Verbesserungen und
-    zusätzlichen Details [aktualisiert][jager attrib] hat. Der Mechanismus würde
-    die Identifikation des Knotenpaars sicherstellen, zwischen dem
-    eine Zahlung fehlgeschlagen ist (oder zwischen dem eine frühere
-    Fehlermeldung zensiert oder unverständlich wurde). Der größte Nachteil von
-    Jagers Vorschlag besteht darin, dass er die LN-Onion-Nachrichtengrösse für
-    Fehlschläge deutlich erhöhen würde, sofern andere LN-Eigenschaften erhalten
-    blieben. Wenn die maximale Anzahl der LN-Hops verringert würde, könnte die
-    Onion-Nachrichtengröße bei Fehlschlägen aber kleiner sein.
+  Vor einigen Jahren schlug Joost Jager eine Lösung vor (siehe
+  [Newsletter #51][news51 attrib]), die er nun mit Verbesserungen und
+  zusätzlichen Details [aktualisiert][jager attrib] hat. Der Mechanismus würde
+  die Identifikation des Knotenpaars sicherstellen, zwischen dem
+  eine Zahlung fehlgeschlagen ist (oder zwischen dem eine frühere
+  Fehlermeldung zensiert oder unverständlich wurde). Der größte Nachteil von
+  Jagers Vorschlag besteht darin, dass er die LN-Onion-Nachrichtengrösse für
+  Fehlschläge deutlich erhöhen würde, sofern andere LN-Eigenschaften erhalten
+  blieben. Wenn die maximale Anzahl der LN-Hops verringert würde, könnte die
+  Onion-Nachrichtengröße bei Fehlschlägen aber kleiner sein.
 
-    Alternativ [schlug][russell attrib] Rusty Russell vor, dass ein Zahler einen
-    Mechanismus verwenden könnte, der [spontanen Zahlungen][topic spontaneous payments]
-    ähnelt; bei dem jeder Routing-Knoten einen Satoshi bezahlt bekommt, auch
-    wenn die endgültige Zahlung fehlschlägt. Der Zahler könnte dann feststellen,
-    bei welchem Hop die Zahlung fehlgeschlagen ist, indem er vergleicht, wie
-    viele Satoshi er gesendet und wie viele Satoshi er zurückerhalten hat.
+  Alternativ [schlug][russell attrib] Rusty Russell vor, dass ein Zahler einen
+  Mechanismus verwenden könnte, der [spontanen Zahlungen][topic spontaneous payments]
+  ähnelt; bei dem jeder Routing-Knoten einen Satoshi bezahlt bekommt, auch
+  wenn die endgültige Zahlung fehlschlägt. Der Zahler könnte dann feststellen,
+  bei welchem Hop die Zahlung fehlgeschlagen ist, indem er vergleicht, wie
+  viele Satoshi er gesendet und wie viele Satoshi er zurückerhalten hat.
 
 - **Ankerausgaben-Workaround**: Bastien Teinturier hat auf der
   Lightning-Dev-Mailingliste einen [Vorschlag][bolts #1036] für die Verwendung
@@ -151,10 +151,10 @@ beliebten Bitcoin Infrastrukturprojekten.
   abgesehen von Fällen, in denen keine der vorgegebenen Gebühren hoch genug war,
   ist keine zusätzliche UTXO-Verwaltung erforderlich.
 
-    Er bittet andere LN-Entwickler um Unterstützung für die Idee, HTLCs mit
-    mehreren Gebührenraten anzubieten. Zum Zeitpunkt der Erstellung dieses
-    Artikels wurde die gesamte Diskussion auf [Teinturiers PR][bolts #1036]
-    geführt.
+  Er bittet andere LN-Entwickler um Unterstützung für die Idee, HTLCs mit
+  mehreren Gebührenraten anzubieten. Zum Zeitpunkt der Erstellung dieses
+  Artikels wurde die gesamte Diskussion auf [Teinturiers PR][bolts #1036]
+  geführt.
 
 ## Releases und Release-Kandidaten
 

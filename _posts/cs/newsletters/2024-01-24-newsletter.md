@@ -103,22 +103,22 @@ vydání a souhrnem významných změn v populárním bitcoinovém páteřním s
   protokolů _Bitcoin Inquisition Numbers And Names Authority_ ([BINANA][binana repo]).
   V době psaní obsahuje repozitář čtyři specifikace:
 
-    - [BIN24-1][] `OP_CAT` od Ethana Heilmana a Armina Sabouriho. Viz popis jejich
-      soft forku ve [zpravodaji č. 274][news274 cat].
+  - [BIN24-1][] `OP_CAT` od Ethana Heilmana a Armina Sabouriho. Viz popis jejich
+    soft forku ve [zpravodaji č. 274][news274 cat].
 
-    - [BIN24-2][] dědičné nasazování („heretical deployments”) od Anthonyho Townse
-      popisující používání [Bitcoin Inquisition][bitcoin inquisition repo] pro
-      návrhy soft forků a další změny na [signetu][topic signet]. Viz rozšířený popis ve
-      [zpravodaji č. 232][news232 inqui].
+  - [BIN24-2][] dědičné nasazování („heretical deployments”) od Anthonyho Townse
+    popisující používání [Bitcoin Inquisition][bitcoin inquisition repo] pro
+    návrhy soft forků a další změny na [signetu][topic signet]. Viz rozšířený popis ve
+    [zpravodaji č. 232][news232 inqui].
 
-    - [BIN24-3][] `OP_CHECKSIGFROMSTACK` od Brandona Blacka specifikující
-      tuto [dlouho navrhnovanou myšlenku][topic OP_CHECKSIGFROMSTACK].
-      [Minulé číslo zpravodaje][news285 lnhance] popisuje Blackův návrh na
-      začlenění tohoto opkódu do soft forku LNHANCE.
+  - [BIN24-3][] `OP_CHECKSIGFROMSTACK` od Brandona Blacka specifikující
+    tuto [dlouho navrhnovanou myšlenku][topic OP_CHECKSIGFROMSTACK].
+    [Minulé číslo zpravodaje][news285 lnhance] popisuje Blackův návrh na
+    začlenění tohoto opkódu do soft forku LNHANCE.
 
-    - [BIN24-4][] `OP_INTERNALKEY` do Brandona Blacka specifikující opkód,
-      který umožní načíst taprootový interní klíč z interpretru skriptu.
-      Také tento opkód byl popsán v minulém čísle v rámci LNHANCE.
+  - [BIN24-4][] `OP_INTERNALKEY` do Brandona Blacka specifikující opkód,
+    který umožní načíst taprootový interní klíč z interpretru skriptu.
+    Také tento opkód byl popsán v minulém čísle v rámci LNHANCE.
 
   Bitcoin Optech přidal repozitář BINANA na seznam zdrojů, které monitorujeme.
   Mezi další zdroje patří BIPy, BOLTy a BLIPy. Budoucí aktualizace budou popsány

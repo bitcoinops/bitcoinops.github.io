@@ -124,6 +124,7 @@ in March of support for the related Short Channel IDentifier (SCID)
 ![Illustration of zero-conf channels](/img/posts/2021-07-zeroconf-channels.png)
 
 <div markdown="1" class="callout" id="rbf">
+
 ### 2022 summary<br>Replace-By-Fee
 
 This year saw much discussion, and some significant actions, related to
@@ -269,6 +270,7 @@ Several additional libbitcoinkernel PRs would be merged through the
 year.
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2022 summary<br>Major releases of popular infrastructure projects
 
 - [Eclair 0.7.0][news185 eclair] added support for [anchor
@@ -424,7 +426,7 @@ any changes to the LN protocol.
 
 {:#dlc-bls}
 Lloyd Fournier [wrote][news213 bls] about the benefits of having
-[DLC][topic dlc] oracles make their attestations using Boneh-Lynn-Shacham
+[DLC][topic dlc] oracles make their attestations using Boneh--Lynn--Shacham
 ([BLS][]) signatures.  Bitcoin does not support BLS signatures and a
 soft fork would be required to add them, but Fournier links to a paper
 he co-authored that describes how information can be securely extracted
@@ -448,6 +450,7 @@ would not know which onchain transactions were based on its BLS
 signatures.
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2022 summary<br>Bitcoin Optech
 
 In Optech's fifth year, we published 51 weekly [newsletters][] and added 11
@@ -547,6 +550,7 @@ Stratum version 2 mining protocol, and getting code merged into Bitcoin
 Core and other free software projects.
 
 <div markdown="1" class="callout" id="softforks">
+
 ### 2022 summary<br>Soft fork proposals
 
 January began with Jeremy Rubin [holding][news183a ctv] the first of
@@ -657,6 +661,7 @@ cryptocurrency systems but would be compatible with Bitcoin's existing
 UTXO-based system.
 
 </div>
+
 ## November
 
 {:#fat-errors}

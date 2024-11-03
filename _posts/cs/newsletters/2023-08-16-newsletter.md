@@ -101,16 +101,16 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
   podle specifikace v [BIP324][]. Byly přidány následující šifry a třídy
   (citováno z PR):
 
-    - „ChaCha20Poly1305 AEAD z RFC8439, sekce 2.8”
+  - „ChaCha20Poly1305 AEAD z RFC8439, sekce 2.8”
 
-    - „Proudová šifra FSChaCha20 (forward secrecy) podle specifikace v
-      BIP324 (rekeying wrapper okolo ChaCha20)”
+  - „Proudová šifra FSChaCha20 (forward secrecy) podle specifikace v
+    BIP324 (rekeying wrapper okolo ChaCha20)”
 
-    - „FSChaCha20Poly1305 AEAD podle specifikace BIP324 (rekeying
-      wrapper okolo ChaCha20Poly1305)”
+  - „FSChaCha20Poly1305 AEAD podle specifikace BIP324 (rekeying
+    wrapper okolo ChaCha20Poly1305)”
 
-    - „Třída BIP324Cipher, která zapouzdřuje vyjednávání o klíči, odvozování
-      klíčů a proudové šifry a AEAD pro kódování paketů dle BIP324”
+  - „Třída BIP324Cipher, která zapouzdřuje vyjednávání o klíči, odvozování
+    klíčů a proudové šifry a AEAD pro kódování paketů dle BIP324”
 
 - [LDK #2308][] umožňuje plátci ve svých platbách začlenit vlastní TLV
   (Tag-Length-Value) položky, které budou moci příjemci používající LDK či kompatibilní

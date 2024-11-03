@@ -104,10 +104,10 @@ sections are [vbytes][].  Sizes in the *common elements* section are bytes.
   someone controlling the appropriate private keys.  For the templates
   used by this calculator, the scriptSigs sizes are:
 
-    - **P2PKH** ({{page.size.p2pkh_ss}})
-      `OP_PUSH72 <ecdsa_signature> OP_PUSH33 <public_key>`
+  - **P2PKH** ({{page.size.p2pkh_ss}})
+    `OP_PUSH72 <ecdsa_signature> OP_PUSH33 <public_key>`
 
-    - **P2SH 2-of-3** ({{page.size.p2sh23_ss}}) `OP_0 OP_PUSH72 <ecdsa_signature> OP_PUSH72 <ecdsa_signature> OP_PUSHDATA1 105 <OP_2 OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_3 OP_CHECKMULTISIG>`
+  - **P2SH 2-of-3** ({{page.size.p2sh23_ss}}) `OP_0 OP_PUSH72 <ecdsa_signature> OP_PUSH72 <ecdsa_signature> OP_PUSHDATA1 105 <OP_2 OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_3 OP_CHECKMULTISIG>`
 
 
 - **nSequence** ({{page.size.nsequence}}) The sequence number for the
@@ -124,18 +124,18 @@ sections are [vbytes][].  Sizes in the *common elements* section are bytes.
   Each item is prefixed by a [compactsize][] `size()` identifier.  For
   the templates used by this calculator, the witness data sizes are:
 
-    - **P2WPKH** ({{page.size.p2wpkh_witness}})
-        - (73) `size(72) signature`
-        - (34) `size(33) public_key`
+  - **P2WPKH** ({{page.size.p2wpkh_witness}})
+    - (73) `size(72) signature`
+    - (34) `size(33) public_key`
 
-    - **P2WSH 2-of-3** ({{page.size.p2wsh23_witness}})
-        - (1) `size(0) (empty)`
-        - (73) `size(72) ecdsa_signature`
-        - (73) `size(72) ecdsa_signature`
-        - (106) `size(105) OP_2 OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_3 OP_CHECKMULTISIG`
+  - **P2WSH 2-of-3** ({{page.size.p2wsh23_witness}})
+    - (1) `size(0) (empty)`
+    - (73) `size(72) ecdsa_signature`
+    - (73) `size(72) ecdsa_signature`
+    - (106) `size(105) OP_2 OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_PUSH33 <pubkey> OP_3 OP_CHECKMULTISIG`
 
-    - **P2TR** ({{page.size.p2tr_witness}})
-        - (65) `size(64) schnorr_signature`
+  - **P2TR** ({{page.size.p2tr_witness}})
+    - (65) `size(64) schnorr_signature`
 
 ## Output
 
@@ -150,17 +150,17 @@ sections are [vbytes][].  Sizes in the *common elements* section are bytes.
   be fulfilled in order for this output to be spent.  For the templates
   used by this calculator, the scriptPubKeys are:
 
-    - **P2PKH** ({{page.size.p2pkh_spk}}) `OP_DUP OP_HASH160
-      OP_PUSH20 <public_key_hash> OP_EQUALVERIFY OP_CHECKSIG`
+  - **P2PKH** ({{page.size.p2pkh_spk}}) `OP_DUP OP_HASH160
+    OP_PUSH20 <public_key_hash> OP_EQUALVERIFY OP_CHECKSIG`
 
-    - **P2WPKH** ({{page.size.p2wpkh_spk}}) `OP_0 OP_PUSH20 <public_key_hash>`
+  - **P2WPKH** ({{page.size.p2wpkh_spk}}) `OP_0 OP_PUSH20 <public_key_hash>`
 
-    - **P2SH 2-of-3** ({{page.size.p2sh23_spk}}) `OP_HASH160
-      OP_PUSH20 <script_hash> OP_EQUAL`
+  - **P2SH 2-of-3** ({{page.size.p2sh23_spk}}) `OP_HASH160
+    OP_PUSH20 <script_hash> OP_EQUAL`
 
-    - **P2WSH 2-of-3** ({{page.size.p2wsh23_spk}}) `OP_0 OP_PUSH32 <script_hash>`
+  - **P2WSH 2-of-3** ({{page.size.p2wsh23_spk}}) `OP_0 OP_PUSH32 <script_hash>`
 
-    - **P2TR** ({{page.size.p2tr_spk}}) `OP_1 OP_PUSH32 <schnorr_public_key>`
+  - **P2TR** ({{page.size.p2tr_spk}}) `OP_1 OP_PUSH32 <schnorr_public_key>`
 
 ## Common elements
 

@@ -144,6 +144,7 @@ possible solutions to this problem for both Bitcoin's current ECDSA
 signature system and the proposed [schnorr signature][topic schnorr signatures] system.
 
 <div markdown="1" class="callout" id="taproot">
+
 ### 2020 summary<br>Taproot, tapscript, and schnorr signatures
 
 Nearly every month of 2020 saw some notable development related to the
@@ -423,6 +424,7 @@ operator to opt in to creating and serving compact block filters by
 enabling just two configuration options.
 
 <div markdown="1" class="callout" id="releases">
+
 ### 2020 summary<br>Major releases of popular infrastructure projects
 
 - [LND 0.9.0-beta][] released in January improved the access control list
@@ -485,7 +487,7 @@ disclosed later.  The notable vulnerabilities included:
   specification of PSBT and software such as Electrum, Bitcoin Core, and
   HWI.
 
-    ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
+  ![Fee overpayment attack illustration](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
 - [LN payment atomicity attack:][attack ln atomicity] as LN developers
   worked to implement the [anchor outputs][topic anchor outputs]
@@ -619,6 +621,7 @@ broadcast time.  This simplifies the LN protocol and improves several
 aspects of its security.
 
 <div markdown="1" class="callout" id="optech">
+
 ### 2020 summary<br>Bitcoin Optech
 
 In Optech's third year, 10 new member companies joined<!-- Veriphi,
@@ -629,6 +632,7 @@ published 51 weekly newsletters<!-- 78 to 129 -->, added 20 new pages to
 our [topics index][], added several new wallets and services to our
 [compatibility index][], and published several contributed [blog
 posts][optech blog posts] about Bitcoin scaling technology.
+
 </div>
 
 ## September
@@ -924,7 +928,7 @@ schedule on January 6th.*
 [somsen sas post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
-[taproot workshop]: /workshops/#taproot-workshop
+[taproot workshop]: /en/workshops/#taproot-workshop
 [todd segwit review]: https://petertodd.org/2016/segwit-consensus-critical-code-review#peer-to-peer-networking
 [topics index]: /en/topics/
 [tx origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis

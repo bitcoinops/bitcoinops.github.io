@@ -6,12 +6,12 @@ title: Threshold signature
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Privacy Enhancements
   - Fee Management
 
@@ -51,6 +51,12 @@ optech_mentions:
 
   - title: Idea for privacy enhanced transaction cosigning using FROST
     url: /en/newsletters/2023/09/06/#privacy-enhanced-co-signing
+
+  - title: "ChillDKG distributed key generation protocol for FROST"
+    url: /en/newsletters/2024/07/19/#distributed-key-generation-protocol-for-frost
+
+  - title: "BIP proposed for creating FROST scriptless threshold signatures for Bitcoin"
+    url: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -2,12 +2,12 @@
 title: Trampoline payments
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Lightning Network
 
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
@@ -54,6 +54,9 @@ optech_mentions:
 
   - title: "Eclair #2811 allows trampoline payments to use a blinded path for the ultimate receiver"
     url: /en/newsletters/2024/01/31/#eclair-2811
+
+  - title: "LDK #2756 adds support for including a trampoline routing packet in its messages"
+    url: /en/newsletters/2024/03/27/#ldk-2756
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

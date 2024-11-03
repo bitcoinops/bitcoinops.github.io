@@ -45,6 +45,7 @@ Optechは、Bitcoin関連の企業がBitcoinのスケーリングを可能にす
 * 150の[ニュースレター][newsletters]、多数の[ブログの投稿][blog posts]およびフィールドレポート、
   [bech32の特別シリーズ][bech32]や、[インタラクティブなTaprootのワークショップ][interactive taproot workshop]を公開しました。
   合計で約250,000語を掲載しており、印刷すると約700ページに相当します。
+
   <!-- wc _posts/en/newsletters/*md _posts/en/*md
   _includes/articles/*md _includes/specials/2019-exec-briefing/*md
   _includes/specials/bech32/*md-->
@@ -95,14 +96,14 @@ John Pfeffer、Alex Morcosを中心とした寛大な[支援者][supporters]に�
 - [<!--why-are-there-more-than-two-transaction-outputs-in-a-coinbase-transaction-->コインベーストランザクション内に２つ以上のトランザクションアウトプットがあるのはなぜですか？]({{bse}}105831)
   Andrew Chowは、コインベーストランザクションでよくあるアウトプットについて説明しています:
 
-    * 単一のマイナーのブロック報酬の支払い
+  * 単一のマイナーのブロック報酬の支払い
 
-    * マイニングプールがマイナーに支払うような複数の支払い
+  * マイニングプールがマイナーに支払うような複数の支払い
 
-    * [BIP141][bip141 commitment]の`OP_RETURN` witness commitment
+  * [BIP141][bip141 commitment]の`OP_RETURN` witness commitment
 
-    * [マージマイニング][se 273 merge mining]や他のプロトコル用の、
-      追加の`OP_RETURN`コミットメント
+  * [マージマイニング][se 273 merge mining]や他のプロトコル用の、
+    追加の`OP_RETURN`コミットメント
 
 - [<!--fundrawtransaction-what-is-it-->fundrawtransaction - これは何ですか？]({{bse}}105811)
   Pieter Wuilleは、RPCを使ってコインを送金する４つの方法の例を挙げて、
@@ -214,7 +215,7 @@ John Pfeffer、Alex Morcosを中心とした寛大な[支援者][supporters]に�
 [shigeyuki azuchi]: https://github.com/azuchi
 [akio nakamura]: https://github.com/AkioNak
 [supporters]: /#supporters
-[founding sponsors]: /about/#founding-sponsors
+[founding sponsors]: /en/about/#founding-sponsors
 [info]: mailto:info@bitcoinops.org
 [bip141 commitment]: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure
 [se 273 merge mining]: https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work

@@ -2,12 +2,12 @@
 title: BIP70 payment protocol
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
+#title-aliases:
 #  - Foo
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Wallet Collaboration Tools
   - Invoicing
 

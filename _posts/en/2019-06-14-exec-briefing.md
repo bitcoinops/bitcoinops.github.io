@@ -87,4 +87,6 @@ technical topics at a high-level for decision makers at Bitcoin businesses.
 [lightning slides]: /img/posts/2019-exec-briefing/lightning.pdf
 [softfork slides]: /img/posts/2019-exec-briefing/softfork.pdf
 [newsletters]: /en/newsletters/
-[workshops]: /workshops/
+[workshops]: /en/workshops/
+[eltoo]: https://blockstream.com/eltoo.pdf
+[musig]: https://eprint.iacr.org/2018/068

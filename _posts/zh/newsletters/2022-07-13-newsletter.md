@@ -24,7 +24,7 @@ lang: zh
 
 - **<!--allowing-deliberately-slow-ln-payment-forwarding-->允许刻意放慢闪电网络支付转发：**在对有关递归/嵌套 [MuSig2][topic musig] 的讨论主题帖的回复中（参见 [Newsletter #204][news204 rmusig]）以及使用它的节点在路由付款时会增加的延迟，开发人员 Peter Todd 在 Lightning-Dev 邮件列表上[询问][todd delay]是否“值得让人们选择更慢地进行支付以保护隐私？”例如，如果 Alice 和 Bob 大约在同一时间通过 Carol 的转发节点向 Dan 的转发节点发送慢速转发的付款，那么 Carol 将能够同时转发两笔付款，从而减少第三方可以通过[余额探测][topic payment probes]、网络活动监控或其他技术来发现参与者的隐私泄露信息。开发者 Matt Corallo [同意][corallo delay]这是一个有趣的想法。
 
-## 比特币核心 PR 审核俱乐部
+## Bitcoin Core PR 审核俱乐部
 
 *在这个每月一次的栏目中，我们会总结最近的一期 [Bitcoin Core PR 审核俱乐部][Bitcoin Core PR Review Club]会议，提炼出一些重要的问题和答案。点击下方的问题描述，就可以看到来自会议的答案。*
 

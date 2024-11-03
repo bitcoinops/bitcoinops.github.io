@@ -23,32 +23,32 @@ erwähnenswerter Änderungen an beliebten Bitcoin Infrastrukturprojekten.
   für interne Zahlungen innerhalb des Wallets gedacht; nämlich zur Rückgabe von
   Wechselgeld an das Wallet, nachdem eine UTXO ausgegeben wurde.
 
-    Für besseren Datenschutz verwenden die meisten Wallets separate Pfade
-    zur Erzeugung externer und interner Adressen wie per BIP32
-    [spezifiziert][bip32 wallet layout]. Ein externer Pfad, der für den
-    Empfang von Zahlungen verwendet wird, kann mit weniger vertrauenswürdigen
-    Geräten geteilt werden. Z.B. durch Hochladen auf einen Webserver, damit
-    Zahlungen empfangen werden können. Der interne Pfad, der nur für Wechselgeld
-    verwendet wird, wird möglicherweise nur dann benötigt, wenn der private
-    Schlüssel ebenfalls benötigt wird, so dass diese beiden die gleiche Sicherheit
-    erhalten könnte. Würde der Beispiel-Webserver kompromittiert und die
-    externen Adressen sickerten durch, würden Angreifer jedes Mal erfahren,
-    ob der Nutzer Geld erhalten hat, wie viel er erhalten hat und wann das
-    Geld ursprünglich ausgegeben wurde - aber sie würden nicht unbedingt
-    erkennen können, wie viel Geld in dieser Transaktion an den Empfänger gesandt wurde,
-    und sie würden auch nichts über Ausgaben erfahren, die ausschließlich
-    Wechselgeld ausgeben.
+  Für besseren Datenschutz verwenden die meisten Wallets separate Pfade
+  zur Erzeugung externer und interner Adressen wie per BIP32
+  [spezifiziert][bip32 wallet layout]. Ein externer Pfad, der für den
+  Empfang von Zahlungen verwendet wird, kann mit weniger vertrauenswürdigen
+  Geräten geteilt werden. Z.B. durch Hochladen auf einen Webserver, damit
+  Zahlungen empfangen werden können. Der interne Pfad, der nur für Wechselgeld
+  verwendet wird, wird möglicherweise nur dann benötigt, wenn der private
+  Schlüssel ebenfalls benötigt wird, so dass diese beiden die gleiche Sicherheit
+  erhalten könnte. Würde der Beispiel-Webserver kompromittiert und die
+  externen Adressen sickerten durch, würden Angreifer jedes Mal erfahren,
+  ob der Nutzer Geld erhalten hat, wie viel er erhalten hat und wann das
+  Geld ursprünglich ausgegeben wurde - aber sie würden nicht unbedingt
+  erkennen können, wie viel Geld in dieser Transaktion an den Empfänger gesandt wurde,
+  und sie würden auch nichts über Ausgaben erfahren, die ausschließlich
+  Wechselgeld ausgeben.
 
-    Antworten von [Pavol Rusnak][rusnak desc] und [Craig Raw][raw desc]
-    wiesen darauf hin, dass das Trezor- und das Sparrow Wallet bereits das von
-    Chow vorgeschlagene System unterstützen. Rusnak fragte auch, ob ein
-    einzelner Deskriptor in der Lage sein sollte, mehr als zwei zusammenhängende
-    Pfade zu beschreiben. Dmitry Petukhov [merkte an][petukhov desc], dass
-    bis dato nur interne und externe Pfade weite Verbreitung fänden und dass
-    zusätzlichen Pfaden in bestehende Wallets keine klare Bedeutung zukomme.
-    Dies könne Interoperabilitätsprobleme verursachen. Er schlug vor,
-    das BIP auf zwei Pfade zu beschränken und dass für zusätzliche Pfade
-    Folge-BIPs geschrieben werden sollten.
+  Antworten von [Pavol Rusnak][rusnak desc] und [Craig Raw][raw desc]
+  wiesen darauf hin, dass das Trezor- und das Sparrow Wallet bereits das von
+  Chow vorgeschlagene System unterstützen. Rusnak fragte auch, ob ein
+  einzelner Deskriptor in der Lage sein sollte, mehr als zwei zusammenhängende
+  Pfade zu beschreiben. Dmitry Petukhov [merkte an][petukhov desc], dass
+  bis dato nur interne und externe Pfade weite Verbreitung fänden und dass
+  zusätzlichen Pfaden in bestehende Wallets keine klare Bedeutung zukomme.
+  Dies könne Interoperabilitätsprobleme verursachen. Er schlug vor,
+  das BIP auf zwei Pfade zu beschränken und dass für zusätzliche Pfade
+  Folge-BIPs geschrieben werden sollten.
 
 ## Nennenswerte Code- und Dokumentationsänderungen
 

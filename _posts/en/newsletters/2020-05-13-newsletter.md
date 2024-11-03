@@ -26,44 +26,44 @@ changes to popular Bitcoin infrastructure software.
   the hardware wallet to automatically participate in [coinjoin][topic
   coinjoin] transactions or LN payment routing.
 
-    However, several years ago, Greg Sanders [described][sanders safe
-    automation] an attack that could be used to trick a hardware wallet
-    into thinking that its balance was increasing when it was actually
-    decreasing.  An attacker would create an unsigned transaction
-    spending two of the hardware wallet's inputs to two outputs---one
-    output paying the wallet slightly more than the larger of the
-    two inputs and the other output paying the attacker.  The attacker
-    would ask for a signature on the first input (without disclosing that the
-    second input belonged to the wallet); the wallet would sign that
-    input after verifying that the output paying back into the wallet
-    was larger than the input.  Then the attacker would ask for a
-    signature for the second input---pretending that this was for a
-    completely different transaction---causing the wallet to also sign
-    the second input after again verifying that there was an output
-    larger than the input.  Finally, the attacker would put both signatures
-    into a final transaction and broadcast it, stealing money from the
-    wallet.  Sanders's description of the problem also described a
-    potential solution, but it requires that wallets know the
-    scriptPubKeys for each previous output being spent in the
-    transaction.
+  However, several years ago, Greg Sanders [described][sanders safe
+  automation] an attack that could be used to trick a hardware wallet
+  into thinking that its balance was increasing when it was actually
+  decreasing.  An attacker would create an unsigned transaction
+  spending two of the hardware wallet's inputs to two outputs---one
+  output paying the wallet slightly more than the larger of the
+  two inputs and the other output paying the attacker.  The attacker
+  would ask for a signature on the first input (without disclosing that the
+  second input belonged to the wallet); the wallet would sign that
+  input after verifying that the output paying back into the wallet
+  was larger than the input.  Then the attacker would ask for a
+  signature for the second input---pretending that this was for a
+  completely different transaction---causing the wallet to also sign
+  the second input after again verifying that there was an output
+  larger than the input.  Finally, the attacker would put both signatures
+  into a final transaction and broadcast it, stealing money from the
+  wallet.  Sanders's description of the problem also described a
+  potential solution, but it requires that wallets know the
+  scriptPubKeys for each previous output being spent in the
+  transaction.
 
-    ![Illustration of using a fake coinjoin to trick a hardware wallet into losing funds](/img/posts/2020-05-fake-coinjoin-trick-hardware-wallet.dot.png)
+  ![Illustration of using a fake coinjoin to trick a hardware wallet into losing funds](/img/posts/2020-05-fake-coinjoin-trick-hardware-wallet.dot.png)
 
-    Last week, Andrew Kozlik [posted][kozlik spk commit] to the
-    Bitcoin-Dev mailing list to request that [taproot][topic taproot]
-    signatures directly commit to the scriptPubKey of every input's
-    previous output.  This commitment is already made indirectly by
-    committing to the outpoints of all the transaction's
-    inputs,[^outpoint-txid-spk] but making it directly in the
-    transaction digest would allow a [Partially Signed Bitcoin
-    Transaction][topic psbt] (PSBT) to trustlessly provide signers with
-    a copy of all scriptPubKeys being spent in a transaction.  The scriptPubKeys in the PSBT
-    wouldn't require any trust because, if any of the scriptPubKeys were missing
-    or modified, the signer's commitment to the scriptPubKeys would be
-    invalid, making the transaction invalid.  This would allow hardware
-    wallets to use the solution described by Sanders in 2017 without
-    needing to trust an external program to provide correct copies of
-    the scriptPubKeys being spent.
+  Last week, Andrew Kozlik [posted][kozlik spk commit] to the
+  Bitcoin-Dev mailing list to request that [taproot][topic taproot]
+  signatures directly commit to the scriptPubKey of every input's
+  previous output.  This commitment is already made indirectly by
+  committing to the outpoints of all the transaction's
+  inputs,[^outpoint-txid-spk] but making it directly in the
+  transaction digest would allow a [Partially Signed Bitcoin
+  Transaction][topic psbt] (PSBT) to trustlessly provide signers with
+  a copy of all scriptPubKeys being spent in a transaction.  The scriptPubKeys in the PSBT
+  wouldn't require any trust because, if any of the scriptPubKeys were missing
+  or modified, the signer's commitment to the scriptPubKeys would be
+  invalid, making the transaction invalid.  This would allow hardware
+  wallets to use the solution described by Sanders in 2017 without
+  needing to trust an external program to provide correct copies of
+  the scriptPubKeys being spent.
 
 ## Bitcoin Core PR Review Club
 

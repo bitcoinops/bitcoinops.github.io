@@ -21,14 +21,14 @@ changes to popular Bitcoin infrastructure software.
   reliable for contract protocols such as LN, coinswaps, and DLCs.  The
   schedule is:
 
-    - Jun 15th, 19:00--20:30 UTC: guidelines about L2 protocols onchain
-      security design; coordination of cross-layer security disclosures;
-      full-RBF proposal
+  - Jun 15th, 19:00--20:30 UTC: guidelines about L2 protocols onchain
+    security design; coordination of cross-layer security disclosures;
+    full-RBF proposal
 
-    - June 22nd (same time): generic layer two fee bumping primitive
-      (such as package relay)
+  - June 22nd (same time): generic layer two fee bumping primitive
+    (such as package relay)
 
-    - June 29th (same time): reserved for additional discussion
+  - June 29th (same time): reserved for additional discussion
 
 - **CVE-2021-31876 BIP125 implementation discrepancy follow up:**
   after the publication of [last week's newsletter][news148 cve], there was
@@ -88,7 +88,6 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [Rust Bitcoin][rust bitcoin repo], [BTCPay Server][btcpay server repo],
 [Bitcoin Improvement Proposals (BIPs)][bips repo], and [Lightning
 BOLTs][bolts repo].*
-
 
 - [Bitcoin Core #21462][] adds tooling for attesting to outputs of Guix builds
   and verifying these attestations against those of others. After this change,

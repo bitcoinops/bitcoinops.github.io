@@ -48,16 +48,16 @@ both novel and interesting:
   want to identify and waiting for their wallet to rebroadcast the
   transaction.
 
-    Uttarwar's proposed solution is having the node treat all
-    transactions the same, rebroadcasting any of them when a heuristic
-    indicates they should've been mined recently but weren't.  This
-    prevents spy nodes from being able to assume that the node which
-    rebroadcast a transaction is operated by the creator of that
-    transaction.  The presentation concluded with an overview of some
-    edge cases, an insight from Uttarwar's experience developing for
-    Bitcoin Core, and a short list of open questions for future
-    research.  See [Bitcoin Core #16698][] for the first of Uttarwar's
-    PRs implementing these mitigations.
+  Uttarwar's proposed solution is having the node treat all
+  transactions the same, rebroadcasting any of them when a heuristic
+  indicates they should've been mined recently but weren't.  This
+  prevents spy nodes from being able to assume that the node which
+  rebroadcast a transaction is operated by the creator of that
+  transaction.  The presentation concluded with an overview of some
+  edge cases, an insight from Uttarwar's experience developing for
+  Bitcoin Core, and a short list of open questions for future
+  research.  See [Bitcoin Core #16698][] for the first of Uttarwar's
+  PRs implementing these mitigations.
 
 - [Blockchain design patterns: Layers and scaling approaches][pv patterns]
   by Andrew Poelstra and David Vorick briefly describes a long
@@ -76,34 +76,34 @@ both novel and interesting:
   those unbroadcast transactions to allow state transitions, and hash
   locks to create dependencies between different transactions.
 
-    Looking at proposed technology, the presenters explain how the
-    bandwidth overhead for relaying transactions grows linearly in the
-    current protocol as you increase the number of your peers; this can
-    be made almost constant with the proposed [erlay][] protocol,
-    allowing you to have many more peers, which reduces the risk of network
-    partitioning attacks.  Moving on to describing various parts of the
-    taproot proposal, they show how schnorr signatures make it possible
-    to validate multiple signatures at once (batch validation) and
-    combine several public keys and signatures into a single pubkey and
-    signature (signature aggregation), reducing the costs of general
-    block validation and the specific costs for multisig users.  Schnorr
-    also makes it possible to create adaptor signatures that can provide
-    the benefits of both a signature and a hash lock at the same time
-    and for only the cost of one.  Finally, taproot can commit to a set
-    of conditions without requiring any party to reveal those conditions
-    unless they need them, which they might not if their protocol allows
-    them to use schnorr multiparty signatures instead.  Each of these
-    techniques, individually or in combination, can help users keep more
-    data offchain.
+  Looking at proposed technology, the presenters explain how the
+  bandwidth overhead for relaying transactions grows linearly in the
+  current protocol as you increase the number of your peers; this can
+  be made almost constant with the proposed [erlay][] protocol,
+  allowing you to have many more peers, which reduces the risk of network
+  partitioning attacks.  Moving on to describing various parts of the
+  taproot proposal, they show how schnorr signatures make it possible
+  to validate multiple signatures at once (batch validation) and
+  combine several public keys and signatures into a single pubkey and
+  signature (signature aggregation), reducing the costs of general
+  block validation and the specific costs for multisig users.  Schnorr
+  also makes it possible to create adaptor signatures that can provide
+  the benefits of both a signature and a hash lock at the same time
+  and for only the cost of one.  Finally, taproot can commit to a set
+  of conditions without requiring any party to reveal those conditions
+  unless they need them, which they might not if their protocol allows
+  them to use schnorr multiparty signatures instead.  Each of these
+  techniques, individually or in combination, can help users keep more
+  data offchain.
 
-    The final part of their talk examines more speculative technology,
-    such as improvements to LN using [eltoo][], the minimization of
-    storage requirements using [utreexo][], [client side
-    validation][todd client side] which keeps almost all data offchain,
-    Directed Acyclic Graph (DAG) based block chains that allow more
-    frequent block production, confidential transactions that hide
-    payment amounts, and sharding in both the form of federated block
-    chains (available now) and other models that are more speculative.
+  The final part of their talk examines more speculative technology,
+  such as improvements to LN using [eltoo][], the minimization of
+  storage requirements using [utreexo][], [client side
+  validation][todd client side] which keeps almost all data offchain,
+  Directed Acyclic Graph (DAG) based block chains that allow more
+  frequent block production, confidential transactions that hide
+  payment amounts, and sharding in both the form of federated block
+  chains (available now) and other models that are more speculative.
 
 - [Lightning network topology][kc topology] by Carla Kirk-Cohen
   describes the public topology of channels between LN nodes at present,
@@ -116,24 +116,24 @@ both novel and interesting:
   nodes, such as the LNbig node which has about "20-24% of the liquidity
   of the LN in their channels."
 
-    Looking at how we arrived at this hub-and-spoke type of topology,
-    Kirk-Cohen notes the attractiveness of well-known nodes in the early
-    network when all connections were made manually, then the
-    attractiveness of well-connected nodes to the early LND autopilot,
-    and finally the ongoing attractiveness of popular liquidity
-    providers for people who want to receive or route payments.
+  Looking at how we arrived at this hub-and-spoke type of topology,
+  Kirk-Cohen notes the attractiveness of well-known nodes in the early
+  network when all connections were made manually, then the
+  attractiveness of well-connected nodes to the early LND autopilot,
+  and finally the ongoing attractiveness of popular liquidity
+  providers for people who want to receive or route payments.
 
-    Possible improvements discussed involve leveraging various graph
-    metrics to help autopilots choose channels that are well-connected
-    but not necessarily hubs (such as nodes that are one hop away from a
-    hub).  Additionally, she has been working on a scoring system for
-    when to *close* a channel and so make your funds available for
-    opening a channel to a more effective peer.  Finally, she notes that
-    changing channel connections costs onchain fees, so it's not
-    practical to make sudden changes to the topology; any changes are
-    likely to be applied slowly over time as channels are opened and
-    closed organically, so we may have to wait a long time to see
-    what effect changes have.
+  Possible improvements discussed involve leveraging various graph
+  metrics to help autopilots choose channels that are well-connected
+  but not necessarily hubs (such as nodes that are one hop away from a
+  hub).  Additionally, she has been working on a scoring system for
+  when to *close* a channel and so make your funds available for
+  opening a channel to a more effective peer.  Finally, she notes that
+  changing channel connections costs onchain fees, so it's not
+  practical to make sudden changes to the topology; any changes are
+  likely to be applied slowly over time as channels are opened and
+  closed organically, so we may have to wait a long time to see
+  what effect changes have.
 
 ## Scaling Bitcoin
 
@@ -158,30 +158,30 @@ Bishop, we found the following topic particularly interesting:
   challenges of keeping Bitcoin secure and private at the P2P network
   level.
 
-    Although not described in detail during the talk, but perhaps worth
-    mentioning here, are the mitigations Bitcoin Core developers have
-    deployed as a result of the paper.  The first of these was Bitcoin
-    Core [PR#14626][Bitcoin Core #14626], released as part of 0.18.0,
-    which made orphan transactions less effective for probing (i.e., it
-    fixes the problem described in section 4.3 of the TxProbe paper).
-    [PR#14897][Bitcoin Core #14897], described in [Newsletter
-    #33][pr14897] with follow-up in Newsletters [#43][pr15839] and
-    [#51][pr15834], provided a second and much more significant
-    mitigation by eliminating the ability of a third-party to delay
-    transaction propagation across the entire network (the *invblock*
-    technique described in section 4.2 of the paper as well as a
-    [previously published paper][coinscope] by some of the same
-    co-authors).  A third mitigation was [PR#15759][Bitcoin Core #15759],
-    described in [last week's newsletter][pr15759], which adds two outbound
-    connections to each node that only relay blocks---making those two
-    connections fundamentally resistant against transaction probing.
-    These second and third mitigations are expected to be included in
-    the upcoming Bitcoin Core 0.19 release.
+  Although not described in detail during the talk, but perhaps worth
+  mentioning here, are the mitigations Bitcoin Core developers have
+  deployed as a result of the paper.  The first of these was Bitcoin
+  Core [PR#14626][Bitcoin Core #14626], released as part of 0.18.0,
+  which made orphan transactions less effective for probing (i.e., it
+  fixes the problem described in section 4.3 of the TxProbe paper).
+  [PR#14897][Bitcoin Core #14897], described in [Newsletter
+  #33][pr14897] with follow-up in Newsletters [#43][pr15839] and
+  [#51][pr15834], provided a second and much more significant
+  mitigation by eliminating the ability of a third-party to delay
+  transaction propagation across the entire network (the *invblock*
+  technique described in section 4.2 of the paper as well as a
+  [previously published paper][coinscope] by some of the same
+  co-authors).  A third mitigation was [PR#15759][Bitcoin Core #15759],
+  described in [last week's newsletter][pr15759], which adds two outbound
+  connections to each node that only relay blocks---making those two
+  connections fundamentally resistant against transaction probing.
+  These second and third mitigations are expected to be included in
+  the upcoming Bitcoin Core 0.19 release.
 
-    Although several of the specific probing methods described in the
-    presentation are being addressed, anyone interested in learning more
-    about how nodes form a network and relay information should consider
-    perusing the presentation or its paper.
+  Although several of the specific probing methods described in the
+  presentation are being addressed, anyone interested in learning more
+  about how nodes form a network and relay information should consider
+  perusing the presentation or its paper.
 
 ## Notable code and documentation changes
 
@@ -270,3 +270,6 @@ Bishop, we found the following topic particularly interesting:
 [paper txprobe]: https://arxiv.org/pdf/1812.00942.pdf
 [coinscope]: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf
 [sb ts]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/
+[eltoo]: https://blockstream.com/eltoo.pdf
+[erlay]: https://arxiv.org/pdf/1905.10518.pdf
+[miniscript]: /en/topics/miniscript/

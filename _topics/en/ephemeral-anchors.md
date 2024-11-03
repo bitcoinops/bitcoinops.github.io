@@ -6,12 +6,13 @@ title: Ephemeral anchors
 # shortname: foo
 
 ## Optional.  An entry will be added to the topics index for each alias
-#aliases:
-#  - Foo
+title-aliases:
+  - "Pay-to-Anchor (P2A)"
+  - Ephemeral dust
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
-categories:
+topic-categories:
   - Contract Protocols
   - Fee Management
   - P2P Network Protocol
@@ -21,6 +22,9 @@ categories:
 primary_sources:
     - title: Ephemeral Anchors
       link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
+
+    - title: Original implementation
+      link: https://github.com/bitcoin/bitcoin/issues/30239
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
@@ -58,6 +62,22 @@ optech_mentions:
 
   - title: Proposed changes to LN for v3 relay and ephemeral anchors
     url: /en/newsletters/2024/01/24/#proposed-changes-to-ln-for-v3-relay-and-ephemeral-anchors
+
+  - title: Description of a replacement cycling attack against transactions using P2A
+    url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
+
+  - title: "Bitcoin Core #30352 introduces a new standard output type, Pay-To-Anchor (P2A)"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-30352
+
+  - title: "Bitcoin Core PR Review Club for #30352: Add PayToAnchor (P2A) as standard output script for spending"
+    url: /en/newsletters/2024/08/09/#bitcoin-core-pr-review-club
+
+  - title: "Guide for Wallets Employing Bitcoin Core 28.0 Policies: P2A output scripts"
+    url: /en/bitcoin-core-28-wallet-integration-guide/
+    date: 2024-10-10
+
+  - title: "LN developer discussion of using P2A for version-3 LN commitments"
+    url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
 
 ## Optional.  Same format as "primary_sources" above
 see_also:
