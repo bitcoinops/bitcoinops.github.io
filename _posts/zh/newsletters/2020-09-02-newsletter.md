@@ -57,7 +57,7 @@ lang: zh
 
 - **<!--taproot-activation-->****Taproot 激活：** Eric Lombrozo、Luke Dashjr 和 Aaron van Wirdum 讨论了各种 [taproot][topic taproot] 激活提案（见 [Newsletter #107][news107 taproot activation]），并就从 Segwit 软分叉激活中能否得到任何教训分享了各自的看法。Lombrozo 和 Dashjr 都认为 taproot 激活过程不应被拖延，所有反对、批评或对提议代码更改的审查应在开始激活过程前完成。因此，他们支持采用单阶段 [BIP8][] 激活方法，具体参数尚待确定。社区对激活提案的反馈仍在收集中。([转录][activation transcript], [视频][activation video])
 
-- **<!--signet-->****Signet：** Kalle Alm 和 AJ Towns 参与了一场关于 [signet][topic signet] 的讨论。讨论中探索了 signet 的设计决策以及测试网和回归测试网的工作机制。有关详细信息，请参阅[默认 signet 讨论](#默认-signet-讨论)新闻项目。([转录][signet transcript], [视频][signet video])
+- **<!--signet-->****Signet：** Kalle Alm 和 AJ Towns 参与了一场关于 [signet][topic signet] 的讨论。讨论中探索了 signet 的设计决策以及测试网和回归测试网的工作机制。有关详细信息，请参阅[默认 signet 讨论](#default-signet-discussion)新闻项目。([转录][signet transcript], [视频][signet video])
 
 - **<!--bitcoin-core-gui-meeting-->****Bitcoin Core GUI 会议：** 包括设计师和开发者在内的匿名参与者会面讨论了 Bitcoin Core 图形用户界面的当前状态、改进可能性以及该界面改造所面临的约束。例如，过去讨论过的一个变更是从 Qt Widgets 转向更灵活且易于定制的 Qt QML 框架。([转录][bitcoin core gui transcript]).
 
