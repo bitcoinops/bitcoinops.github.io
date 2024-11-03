@@ -49,6 +49,9 @@ see_also:
   - title: Swap-in potentiam for Phoenix
     link: https://gist.github.com/t-bast/5fd89979a8088b99d0b95c124902aa56
 
+  - title: Payjoin-in-Potentiam
+    link: https://delvingbitcoin.org/t/payjoin-in-potentiam-externally-fund-an-lsp-channel-open-with-one-transaction/749
+
 ---
 SIP is a [submarine swap][topic submarine swaps]
 mechanism that differs from typical purely HTLC-based submarine swaps by
