@@ -20,11 +20,20 @@ contact us at [info@bitcoinops.org](mailto:info@bitcoinops.org).
 
 ## Building The Site Locally
 
-To build the site, you need to go through a one-time installation
+To build the site without docker, you need to go through a one-time installation
 procedure that takes 15 to 30 minutes.  After that you can build the
 site an unlimited number of times with no extra work.
 
-**[You also can choose to build the site locally by docker, click here to get a guide.](./docker.md)**
+**Docker**
+
+Ensure docker and docker-compose are installed. Run the command in the project
+directory.
+
+    docker-compose up --build
+
+To restart (in the event of code change).
+
+    docker-compose down -v && docker-compose up --build
 
 ##### Install The Dependencies
 
