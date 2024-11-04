@@ -81,7 +81,7 @@ lang: zh
 ## 脚注
 
 [^invert]:
-    如果一个高 *S* 值的坐标为 (x,y)，那么低 *S* 值为 (x,-y)。对于比特币的 secp256k1 曲线，它是一个定义在素数域上的曲线，其中所有点都是无符号的，因此不能简单地取负值，需要从曲线的阶数中减去高 *S* 值的 *y* 坐标。正如 [BIP146][] 所述：“`S' = 0xFFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141 - S`”。
+    如果一个高 *S* 值的坐标为 (x,y)，那么低 *S* 值为 (x,-y)。对于比特币的 secp256k1 曲线，它是一个定义在素数域上的曲线，其中所有点都是无符号的，因此不能简单地取负值，需要从曲线的阶数中减去高 *S* 值的 *y* 坐标。正如 [BIP146][] 所述：“`S' = 0xFFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141 - S`”。 <!-- skip-duplicate-words-test -->
 
 {% include references.md %}
 {% include linkers/issues.md issues="20198,4046,4139,1575,1003,807" %}
