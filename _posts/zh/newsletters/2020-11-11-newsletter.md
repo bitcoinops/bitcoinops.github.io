@@ -15,7 +15,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--bi-directional-upfront-fees-for-ln-->****入口通道市场：** Olaoluwa Osuntokun [宣布][pool announce]了一个新的 *Lightning Pool* 市场，用户可以在其中购买入口 LN 通道。用户和商家需要具备有入口容量的通道，以便能够在 LN 上快速接收资金。当前一些节点运营者已提供入口通道服务，部分是免费提供，部分则为付费服务，而 Lightning Pool 希望通过该平台使这项服务更加标准化和具有竞争力。最初的重点是让高度排名的[节点][node rankings]提供一个为期 2,016 个区块（约两周）的入口通道。未来计划增加其他的合约期限及其他功能。
+- **<!--incoming-channel-marketplace-->****入口通道市场：** Olaoluwa Osuntokun [宣布][pool announce]了一个新的 *Lightning Pool* 市场，用户可以在其中购买入口 LN 通道。用户和商家需要具备有入口容量的通道，以便能够在 LN 上快速接收资金。当前一些节点运营者已提供入口通道服务，部分是免费提供，部分则为付费服务，而 Lightning Pool 希望通过该平台使这项服务更加标准化和具有竞争力。最初的重点是让高度排名的[节点][node rankings]提供一个为期 2,016 个区块（约两周）的入口通道。未来计划增加其他的合约期限及其他功能。
 
 ## Bitcoin Core PR 审查俱乐部
 
