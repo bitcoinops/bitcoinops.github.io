@@ -288,7 +288,7 @@ repo]._
 [daftuar retrospective]: https://delvingbitcoin.org/t/analysis-of-attempting-to-imbue-ln-commitment-transaction-spends-with-v3-semantics/527/
 [news286 imbued]: /en/newsletters/2024/01/24/#imbued-v3-logic
 [news287 kindred]: /en/newsletters/2024/01/31/#kindred-replace-by-fee
-[migration email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
+[migration email]: https://gnusha.org/pi/bitcoindev/CABaSBaxDjj6ySBx4v+rmpfrw4pE9b=JZJPzPQj_ZUiBg1HGFyA@mail.gmail.com/
 [news276 ml]: /en/newsletters/2023/11/08/#mailing-list-hosting
 [news288 ml]: /en/newsletters/2024/02/07/#bitcoin-dev-mailing-list-migration-update
 [review club 28950]: https://bitcoincore.reviews/28950

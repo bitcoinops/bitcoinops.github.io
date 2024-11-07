@@ -268,6 +268,6 @@ repo]._
 [review club 24538]: https://bitcoincore.reviews/24538
 [review club 27501]: https://bitcoincore.reviews/27501
 [news287 kindred]: /cs/newsletters/2024/01/31/#pribuzenske-nahrazovani-poplatkem
-[migration email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
+[migration email]: https://gnusha.org/pi/bitcoindev/CABaSBaxDjj6ySBx4v+rmpfrw4pE9b=JZJPzPQj_ZUiBg1HGFyA@mail.gmail.com/
 [news276 ml]: /cs/newsletters/2023/11/08/#hosting-emailove-skupiny
 [news288 ml]: /cs/newsletters/2024/02/07/#aktualizace-migrace-emailove-skupiny-bitcoin-dev

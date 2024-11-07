@@ -211,7 +211,7 @@ d'Amélioration Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [daftuar retrospective]: https://delvingbitcoin.org/t/analysis-of-attempting-to-imbue-ln-commitment-transaction-spends-with-v3-semantics/527/
 [news286 imbued]: /fr/newsletters/2024/01/24/#logique-imbriquee-v3
 [news287 kindred]: /fr/newsletters/2024/01/31/#remplacement-par-frais-de-parente
-[courriel de migration]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
+[courriel de migration]: https://gnusha.org/pi/bitcoindev/CABaSBaxDjj6ySBx4v+rmpfrw4pE9b=JZJPzPQj_ZUiBg1HGFyA@mail.gmail.com/
 [news276 ml]: /fr/newsletters/2023/11/08/#hebergement-de-la-liste-de-diffusion
 [news288 ml]: /fr/newsletters/2024/02/07/#mise-a-jour-de-la-migration-de-la-liste-de-diffusion-bitcoin-dev
 [review club 28950]: https://bitcoincore.reviews/28950
