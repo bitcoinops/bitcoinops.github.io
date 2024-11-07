@@ -69,9 +69,17 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [LDK #3360][] Re-broadcast `channel_announcement`s every six blocks for a week
+- [LDK #3360][] adds rebroadcasting of `channel_announcement` messages every six
+  blocks for one week after the public channel is confirmed. This removes the
+  dependency on peers for rebroadcast and ensures that channels are always
+  visible to the network.
 
-- [LDK #3207][] Include invoice requests in async payment onions
+- [LDK #3207][] introduces support for including invoice requests in the [async
+  payments’][topic async payments] [onion message][topic onion messages] when
+  paying static [BOLT12][topic offers] invoices as an always online sender. This
+  was previously missing from the PR covered in Newsletter [#321][news321
+  invreq]. The inclusion of invoice requests in payment onions also extends to
+  retries, see Newsletter [#321][news321 retry].
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -83,3 +91,5 @@ repo], and [BINANAs][binana repo]._
 [bitcoin core 27.2]: https://bitcoincore.org/en/2024/11/04/release-27.2/
 [28.0]: https://bitcoincore.org/en/2024/10/02/release-28.0/
 [libsecp256k1 0.6.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.6.0
+[news321 invreq]: /en/newsletters/2024/09/20/#ldk-3140
+[news321 retry]: /en/newsletters/2024/09/20/#ldk-3010
