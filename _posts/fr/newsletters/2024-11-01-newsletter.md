@@ -141,14 +141,14 @@ repo], et [BINANAs][binana repo]._
 [deepdive]: /fr/podcast/2024/10/31/
 [news270 timeout trees]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [zmnscpxj post2]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143/16
-[canal spillman]: https://en.bitcoin.it/wiki/Payment_channels#Spillman-style_payment_channels
+[spillman channel]: https://en.bitcoin.it/wiki/Payment_channels#Spillman-style_payment_channels
 [toth dleq]: https://mailing-list.bitcoindevs.xyz/bitcoindev/b0f40eab-42f3-4153-8083-b455fbd17e19n@googlegroups.com/
 [dleq imp]: https://github.com/BlockstreamResearch/secp256k1-zkp/blob/master/src/modules/ecdsa_adaptor/dleq_impl.h
 [gibson dleq]: https://mailing-list.bitcoindevs.xyz/bitcoindev/77ad84ed-2ff8-4929-b8da-d940c95d18a7n@googlegroups.com/
-[coordination news270]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
+[news270 coordination]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [ln-penalty]: https://en.bitcoin.it/wiki/Payment_channels#Poon-Dryja_payment_channels
-[post btcpay]: https://blog.btcpayserver.org/btcpay-server-2-0/
-[serveur btcpay 2.0.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.0
+[btcpay post]: https://blog.btcpayserver.org/btcpay-server-2-0/
+[btcay server 2.0.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.0
 [news310 upnp]: /fr/newsletters/2024/07/05/#execution-de-code-a-distance-due-a-un-bug-dans-miniupnpc
 [news323 pcp]: /fr/newsletters/2024/10/04/#bitcoin-core-30043
 [news324 bip85]: /fr/newsletters/2024/10/11/#bips-1674
