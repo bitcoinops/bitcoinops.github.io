@@ -51,7 +51,7 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 
 - **Bitcoin-dev mailing list changing hosts:** if you subscribe to the [public Bitcoin Development mailing list][mailing list], note that an announcement will soon be posted about a change of domain name.  It's not known yet if any user action will be required besides addressing emails to a different domain name, although a change of hosts three years ago required all members re-subscribe.
 
-[mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
+[mailing list]: https://groups.google.com/g/bitcoindev/
 
 ### Dashboard items
 

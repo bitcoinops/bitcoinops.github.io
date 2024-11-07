@@ -48,7 +48,7 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 
 - **<!--bitcoin-dev-mailing-list-changing-hosts-->****比特币开发邮件列表更换主机：** 如果您订阅了[公共比特币开发邮件列表][mailing list]，请注意即将发布关于域名更改的公告。除了将电子邮件地址改为不同的域名，目前还不清楚是否需要用户采取任何行动，尽管三年前的主机更换要求所有成员重新订阅。
 
-[mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
+[mailing list]: https://groups.google.com/g/bitcoindev/
 
 ### 仪表盘项
 
