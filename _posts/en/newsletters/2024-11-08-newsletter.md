@@ -34,12 +34,60 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Ephemeral Dust][review club 30239] is a PR by [instagibbs][gh
+instagibbs] that makes transactions with ephemeral dust standard,
+improving the usability of both keyed as well as unkeyed ([P2A][topic
+ephemeral anchors]) anchors. This is relevant for several off-chain
+contracting schemes including those used by Lightning Network, [Ark][topic ark],
+Timeout Trees, and other constructs with large pre-signed trees or other
+large-N party smart contracts.
+
+With the ephemeral dust policy changes, zero-fee transactions with a
+[dust][topic uneconomical outputs] output are allowed in the mempool if
+a valid [fee-paying child][topic cpfp] transaction that immediately spends the dust
+output is known to the node.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/30793#l-16FIXME"
+  q0="Is dust restricted by consensus? Policy? Both?"
+  a0="Dust outputs are only restricted by policy rules, they are not
+  affected by consensus."
+  a0link="https://bitcoincore.reviews/30239#l-27"
+
+  q1="How can dust be problematic?"
+  a1="Dust (or uneconomical) outputs are worth less than the fees
+  required to spend them. Since they can be spent, they cannot be pruned
+  from the UTXO set. Because spending them is uneconomical, they often
+  remain unspent, increasing the UTXO set size. A larger UTXO set raises
+  the resource requirements for nodes. However, UTXOs may still be spent
+  due to external incentives beyond their satoshi value, such as in the
+  case of [anchor outputs][topic anchor outputs]."
+  a1link="https://bitcoincore.reviews/30239#l-40"
+
+  q2="Why is the term ephemeral significant? What are the proposed rules
+  specific to ephemeral dust?"
+  a2="The term 'ephemeral' indicates that the dust output is intended to
+  be spent quickly. Ephemeral dust rules require the parent transaction
+  to be 0-fee and to have exactly one child transaction that spends the
+  dust output."
+  a2link="https://bitcoincore.reviews/30239#l-50"
+
+  q3="Why is it important to impose a fee restriction?"
+  a3="A key goal is to prevent dust outputs from remaining unspent when
+  confirmed. By requiring the parent transaction to be 0-fee, miners
+  lack the incentive to mine the parent without the child. Since
+  ephemeral dust is a policy rule, not a consensus rule, economic
+  incentives play a crucial role."
+  a3link="https://bitcoincore.reviews/30239#l-56"
+
+  q4="How are 1P1C relay and TRUC transactions relevant to ephemeral dust?"
+  a4="As an ephemeral dust transaction must be 0-fee, it cannot be
+  relayed alone, making mechanisms like [1-parent-1-child (1P1C)][28.0 integration guide]
+  essential. TRUC (v3) transactions are limited to a single unconfirmed
+  parent, aligning with the ephemeral dust requirement. TRUC is
+  currently the only way to allow transactions with a feerate below the
+  [`minrelaytxfee`][topic default minimum transaction relay feerates]."
+  a4link="https://bitcoincore.reviews/30239#l-59"
+
 %}
 
 ## Releases and release candidates
@@ -93,3 +141,6 @@ repo], and [BINANAs][binana repo]._
 [libsecp256k1 0.6.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.6.0
 [news321 invreq]: /en/newsletters/2024/09/20/#ldk-3140
 [news321 retry]: /en/newsletters/2024/09/20/#ldk-3010
+[review club 30239]: https://bitcoincore.reviews/30239
+[gh instagibbs]: https://github.com/instagibbs
+[28.0 integration guide]: /en/bitcoin-core-28-wallet-integration-guide/
