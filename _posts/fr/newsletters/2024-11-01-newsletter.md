@@ -138,7 +138,7 @@ repo], et [BINANAs][binana repo]._
 [news131 podle]: /en/newsletters/2021/01/13/#ln-dual-funding-anti-utxo-probing
 [news308 sp]: /fr/newsletters/2024/06/21/#discussion-continue-sur-les-psbt-pour-les-paiements-silencieux
 [zmnscpxj post1]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143
-[deepdive]: /fr/podcast/2024/10/31/
+[deepdive]: /en/podcast/2024/10/31/
 [news270 timeout trees]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [zmnscpxj post2]: https://delvingbitcoin.org/t/superscalar-laddered-timeout-tree-structured-decker-wattenhofer-factories/1143/16
 [spillman channel]: https://en.bitcoin.it/wiki/Payment_channels#Spillman-style_payment_channels
