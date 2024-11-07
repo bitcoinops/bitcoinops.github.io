@@ -51,7 +51,7 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 
 - **Bitcoin-dev mailing list changing hosts:** if you subscribe to the [public Bitcoin Development mailing list][mailing list], note that an announcement will soon be posted about a change of domain name.  It's not known yet if any user action will be required besides addressing emails to a different domain name, although a change of hosts three years ago required all members re-subscribe.
 
-[mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
+[mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
 
 ### Dashboard items
 
@@ -61,7 +61,7 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 
 - **New backup and recovery format for private key material:** several developers are working on a new encoding for Bitcoin private keys, HD wallet extended public and private keys, and HD wallet seeds.  The format is loosely based on the bech32 format used for native segwit addresses.  The encoding is being [actively developed][bech32x] on the bitcoin-dev mailing list and participation is encouraged for any company that handles private key material in your own backups (e.g. paper wallet backups) or provides such services to customers (e.g. funds sweeping).
 
-[bech32x]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
+[bech32x]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
 
 - **Coin selection simulations:** the upcoming 0.17.0 release of Bitcoin Core implements a much more effective coin selection algorithm based on Mark Erhardt's [Branch and Bound algorithm][branch and bound paper]. Contributors are currently running simulations aimed at identifying a suitable fallback strategy for when that ideal strategy doesn't work.  If your organization uses Bitcoin Core to optimize coin selection for minimizing fees, it may be worthwhile to monitor or contribute to Bitcoin Core PR [#13307][pr 13307].
 
@@ -71,6 +71,6 @@ A consistent theme we have heard from our initial outreach to Bitcoin companies 
 - **[BIP174][] discussion:** mailing list [discussion][bip174 discussion] continues surrounding this proposed BIP for an industry standard to make it easier for wallets to communicate with each other in the case of online/offline (hot/cold) wallets, software/hardware wallets, and multisig wallets.  However, significant changes to the proposal are now being resisted, so finalization may be near.  If your organization produces or makes critical use of one of the aforementioned interoperating wallets, you may wish to evaluate the current proposal ASAP before it is finalized.
 
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
-[BIP174 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html
+[BIP174 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html
 
 - **Dynamic wallet loading in Bitcoin Core:** the last PR has been merged for a new set of RPCs in Bitcoin Core designed to allow it to dynamically create new wallets in multiwallet mode, load them, and unload them.  If your organization manages transactions from within Bitcoin Core (or wants to do that), this can make it significantly easier to segment your wallets (e.g. separating customer deposits from company funds, or hot wallet funds from watching-only cold wallet funds).  Pre-production code is available on the Bitcoin Core master git branch using the RPCs `createwallet`, `loadwallet`, and `unloadwallet`.

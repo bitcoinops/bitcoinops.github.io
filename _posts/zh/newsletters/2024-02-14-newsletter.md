@@ -105,7 +105,7 @@ lang: zh
 [daftuar retrospective]: https://delvingbitcoin.org/t/analysis-of-attempting-to-imbue-ln-commitment-transaction-spends-with-v3-semantics/527/
 [news286 imbued]: /zh/newsletters/2024/01/24/#imbued-v3-logic-v3
 [news287 kindred]: /zh/newsletters/2024/01/31/#kindred-replace-by-fee
-[migration email]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
+[migration email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-February/022327.html
 [news276 ml]: /zh/newsletters/2023/11/08/#mailing-list-hosting
 [news288 ml]: /zh/newsletters/2024/02/07/#bitcoin-dev
 [review club 28950]: https://bitcoincore.reviews/28950

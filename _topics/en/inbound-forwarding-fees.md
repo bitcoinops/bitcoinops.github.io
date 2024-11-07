@@ -138,5 +138,5 @@ our users."
 [teinturier bolts835]: https://github.com/lightning/bolts/issues/835#issuecomment-764779287
 [corallo free money]: https://github.com/lightning/blips/pull/18#issuecomment-1304319234
 [corallo overly specific]: https://github.com/lightningnetwork/lnd/pull/6703#issuecomment-1374694283
-[jager inbound]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003643.html
+[jager inbound]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003643.html
 

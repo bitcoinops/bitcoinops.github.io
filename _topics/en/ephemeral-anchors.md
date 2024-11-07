@@ -21,7 +21,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Ephemeral Anchors
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
 
     - title: Original implementation
       link: https://github.com/bitcoin/bitcoin/issues/30239

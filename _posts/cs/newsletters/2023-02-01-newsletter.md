@@ -171,15 +171,15 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="26471,23395,2573,2574,2584,2540,1878,1860,7231" %}
 [common input ownership heuristic]: https://en.bitcoin.it/wiki/Privacy#Common-input-ownership_heuristic
 [news132 payjoin]: /en/newsletters/2021/01/20/#payjoin-adoption
-[gould payjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021364.html
+[gould payjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021364.html
 [payjoin impl]: https://github.com/chaincase-app/payjoin/pull/21
 [noise protocol]: http://www.noiseprotocol.org/
 [turn protocol]: https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT
 [nat]: https://cs.wikipedia.org/wiki/Network_address_translation
 [nostr protocol]: https://github.com/nostr-protocol/nostr
 [news235 async]: /cs/newsletters/2023/01/25/#pozadavek-dukazu-ze-asynchronni-platba-byla-prijata
-[towns async]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003831.html
-[towns sa1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001034.html
-[towns sa2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001490.html
+[towns async]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003831.html
+[towns sa1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001034.html
+[towns sa2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001490.html
 [osuntokun sigs]: https://github.com/lightningnetwork/lnd/pull/7231#issuecomment-1407138812
 [p4tr new hd]: /en/preparing-for-taproot/#use-a-new-bip32-key-derivation-path

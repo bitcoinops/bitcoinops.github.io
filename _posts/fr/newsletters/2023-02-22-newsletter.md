@@ -291,22 +291,22 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [codex32 website]: https://secretcodex32.com/
 [codex32 video]: https://www.youtube.com/watch?v=kf48oPoiHX0
 [news192 pp]: /en/newsletters/2022/03/23/#payment-delivery-algorithm-update
-[obeirne op_vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021465.html
+[obeirne op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021465.html
 [bip op_vault]: https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-vaults.mediawiki
 [news234 vault]: /fr/newsletters/2023/01/18/#proposition-de-nouveaux-opcodes-specifiques-aux-coffre-forts
-[jager qos]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003842.html
-[decker qos]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003844.html
-[riard boomerang]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003852.html
-[ckc-cs reputation]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003857.html
+[jager qos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003842.html
+[decker qos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003844.html
+[riard boomerang]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003852.html
+[ckc-cs reputation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-February/003857.html
 [slip39]: https://github.com/satoshilabs/slips/blob/master/slip-0039.md
 [shamir's secret sharing scheme]: https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing
-[op codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021469.html
+[op codex32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021469.html
 [RUSTSEC-2022-0090]: https://rustsec.org/advisories/RUSTSEC-2022-0090
 [bdk 0.27.1]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.27.1
 [prune mode]: https://bitcoin.org/en/full-node#reduce-storage
 [pr review 27050]: https://bitcoincore.reviews/27050
-[compression spécialisée pour la synchronisation des en-têtes]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015851.html
-[compression générale basée sur LZO]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011837.html
+[compression spécialisée pour la synchronisation des en-têtes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015851.html
+[compression générale basée sur LZO]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011837.html
 [news66 dns seed]: /en/newsletters/2019/10/02/#bitcoin-core-15558
 [Chaincode Labs Research]: https://research.chaincode.com/research-intro/
 [Bitcoin Problems]: https://bitcoinproblems.org/

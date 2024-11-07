@@ -108,12 +108,12 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 [news173 trim]: /en/newsletters/2021/11/03/#c-lightning-4837
 [news170 trim]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
 [elements project]: https://elementsproject.org/
-[voegtlin backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004043.html
-[todd backups1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004046.html
-[todd backups2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004044.html
-[teinturier backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004045.html
-[ghost43 backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004052.html
-[voegtlin backups2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004055.html
+[voegtlin backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004043.html
+[todd backups1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004046.html
+[todd backups2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004044.html
+[teinturier backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004045.html
+[ghost43 backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004052.html
+[voegtlin backups2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004055.html
 [hwi 2.3.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.3.1
 [Scaling Lightning]: https://github.com/scaling-lightning/scaling-lightning
 [sl twitter update]: https://twitter.com/max_blue__/status/1681781001373065216

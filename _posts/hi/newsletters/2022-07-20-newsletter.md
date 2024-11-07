@@ -143,21 +143,21 @@ lang: hi
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="24148,471,6722,6724,1592,1084" %}
 [bdk 0.20.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.20.0
-[todd tail]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020665.html
+[todd tail]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020665.html
 [talk tail]: https://bitcointalk.org/index.php?topic=5405755.0
-[vjudeu sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020684.html
+[vjudeu sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020684.html
 [confidential transactions]: https://en.bitcoin.it/wiki/Confidential_transactions
-[towns pi]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020693.html
+[towns pi]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020693.html
 [maxwell pi]: https://bitcointalk.org/index.php?topic=5405755.0
-[zmnscpxj cr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020678.html
-[voskuil cr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020676.html
-[todd cr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020688.html
-[cohen fs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020702.html
-[oconnor forward fees]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020704.html
-[oconnor ff2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020719.html
-[towns ff]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020735.html
-[todd centralizing]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020705.html
-[towns market design]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020716.html
+[zmnscpxj cr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020678.html
+[voskuil cr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020676.html
+[todd cr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020688.html
+[cohen fs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020702.html
+[oconnor forward fees]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020704.html
+[oconnor ff2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020719.html
+[towns ff]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020735.html
+[todd centralizing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020705.html
+[towns market design]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020716.html
 [lnpbp tweet]: https://twitter.com/lnp_bp/status/1545366480593846275
 [storm github]: https://github.com/Storm-WG
 [robinhood withdrawals]: https://robinhood.com/us/en/support/articles/cryptocurrency-wallets/#Supportedaddressformatsforcryptowithdrawals

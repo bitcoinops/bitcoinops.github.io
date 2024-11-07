@@ -21,7 +21,7 @@ primary_sources:
       link: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
 
     - title: "Mitigations for loop [channel jamming] attacks"
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001232.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001232.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

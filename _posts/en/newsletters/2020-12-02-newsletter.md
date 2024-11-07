@@ -130,12 +130,12 @@ release candidates.*
 [hwi 1.2.1]: https://github.com/bitcoin-core/HWI/releases/tag/1.2.1
 [rust-lightning 0.0.12]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.12
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
-[gnar post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002884.html
-[russell loop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
+[gnar post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002884.html
+[russell loop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
 [news115 siphoning]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
 [sighash flag]: https://btcinformation.org/en/developer-guide#signature-hash-types
-[halseth post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002882.html
-[petukhov post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018281.html
+[halseth post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002882.html
+[petukhov post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018281.html
 [miniscript spec]: https://github.com/dgpv/miniscript-alloy-spec
 [news115 rl bindings]: /en/newsletters/2020/09/16/#rust-lightning-618
 [news72 upfront]: /en/newsletters/2019/11/13/#ln-up-front-payments

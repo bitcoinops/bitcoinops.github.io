@@ -124,6 +124,6 @@ lang: zh
 [bls sigs]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [scriptless scripts transcript]: https://scalingbitcoin.org/transcript/stanford2017/using-the-chain-for-what-chains-are-good-for
 [eltoo protocol]: https://blockstream.com/2018/04/30/eltoo-next-lightning.html
-[bitcoin-dev timewarp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html
+[bitcoin-dev timewarp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html
 [ln scriptless scripts]: https://lists.launchpad.net/mimblewimble/msg00086.html
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144

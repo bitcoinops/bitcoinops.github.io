@@ -91,9 +91,9 @@ lang: zh
 
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
 [news243 bdk]: /zh/newsletters/2023/03/22/#bdk-793
-[neigut splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003894.html
-[teinturier splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
-[erhardt terms]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
+[neigut splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003894.html
+[teinturier splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
+[erhardt terms]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
 [terms bip]: https://github.com/Xekyo/bips/pull/1
 [news26 pyln-client]: /en/newsletters/2018/12/18/#c-lightning-2161
 [news17 splice]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing

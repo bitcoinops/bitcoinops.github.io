@@ -50,8 +50,8 @@ CoreDev.tech 是一个仅限邀请的活动，面向比特币基础设施项目�
 {% include references.md %}
 {% include linkers/issues.md issues="1970,2000" %}
 
-[complex splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
-[simpler splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
+[complex splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+[simpler splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
 [script descriptors and descript]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-script-descriptors/
 [utreexo]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/
 [optech transcript]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-09-bitcoin-optech/
@@ -63,5 +63,5 @@ CoreDev.tech 是一个仅限邀请的活动，面向比特币基础设施项目�
 [kanzure wallet vid]: https://youtu.be/WcOIXsOLJ3w?t=3552
 [kanzure reorg transcript]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/reorgs/
 [kanzure reorg vid]: https://youtu.be/EUUQbveGF5E?t=4
-[UHO]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html
+[UHO]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html
 [output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

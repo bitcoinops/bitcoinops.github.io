@@ -176,9 +176,9 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 {% include linkers/issues.md v=2 issues="6012,6124,2607,7437,7069,1372,863" %}
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
 [news243 bdk]: /ja/newsletters/2023/03/22/#bdk-793
-[neigut splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003894.html
-[teinturier splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
-[erhardt terms]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
+[neigut splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003894.html
+[teinturier splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003895.html
+[erhardt terms]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021550.html
 [terms bip]: https://github.com/Xekyo/bips/pull/1
 [review club 27050]: https://bitcoincore.reviews/27050
 [docs pruning]: https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.11.0.md#block-file-pruning

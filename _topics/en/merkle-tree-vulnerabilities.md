@@ -18,7 +18,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
   - title: "Weaknesses in Bitcoin's Merkle Root Construction"
-    link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/attachments/20190225/a27d8837/attachment-0001.pdf
+    link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/attachments/20190225/a27d8837/attachment-0001.pdf
 
   - title: "CVE-2012-2459: block merkle calculation exploit"
     link: https://bitcointalk.org/?topic=102395

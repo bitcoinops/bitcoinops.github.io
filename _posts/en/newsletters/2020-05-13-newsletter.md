@@ -206,8 +206,8 @@ version 0.20.*
 [eclair 0.4]: https://github.com/ACINQ/eclair/releases/tag/v0.4
 [phoenix]: https://phoenix.acinq.co/
 [eclair mobile]: https://github.com/ACINQ/eclair-mobile
-[sanders safe automation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014843.html
-[kozlik spk commit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017801.html
+[sanders safe automation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014843.html
+[kozlik spk commit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017801.html
 [snigirev ref]: https://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2019-06-29-hardware-wallets/
 [talaia]: https://twitter.com/sr_gi/status/1258830271148961795
 [CL future]: https://github.com/ElementsProject/lightning/issues/3724

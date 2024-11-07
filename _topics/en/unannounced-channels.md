@@ -79,4 +79,4 @@ channels."
 
 {% include references.md %}
 [privacy in pcns]: https://arxiv.org/pdf/1909.02717.pdf "Section 4.1: endpoint uncertainty"
-[unpublished channels delenda est]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002408.html
+[unpublished channels delenda est]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002408.html

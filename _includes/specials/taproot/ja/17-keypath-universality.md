@@ -52,6 +52,6 @@ Taprootベースのコントラクトでkeypathを使用する機会があるか
 {% endauto_anchor %}
 
 [p4tr vaults]: /ja/preparing-for-taproot/#vaultとtaproot
-[maxwell taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[maxwell taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [irc log1]: https://gnusha.org/taproot-bip-review/2020-02-09.log
 [irc log2]: https://gnusha.org/taproot-bip-review/2020-02-10.log

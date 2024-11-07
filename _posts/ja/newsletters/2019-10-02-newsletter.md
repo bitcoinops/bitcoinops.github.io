@@ -56,9 +56,9 @@ sketchのサイズは、取得する必要があるtxidのサイズとほぼ等�
 [dlp footnote]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [ln daily updates]: /en/newsletters/2019/09/11/#request-for-comments-on-limiting-ln-gossip-updates-to-once-per-day
 [bip-reconcil]: https://github.com/naumenkogs/bips/blob/bip-reconcil/bip-reconcil.mediawiki
-[reconcil post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017323.html
+[reconcil post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017323.html
 [erlay paper]: /en/newsletters/2019/06/05/#erlay-proposed
 [optech ln warning]: /en/newsletters/2019/09/04/#upgrade-ln-implementations
 [workshop transcript]: http://diyhpl.us/wiki/transcripts/bitcoinops/schnorr-taproot-workshop-2019/notes/
-[russell disclosure]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002174.html
+[russell disclosure]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002174.html
 [erlay]: https://arxiv.org/pdf/1905.10518.pdf

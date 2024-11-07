@@ -156,8 +156,8 @@ pour mettre fin aux [attaques par épinglage de transaction][topic transaction p
 [Core Lightning 23.05rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05rc1
 [news56 bloom]: /en/newsletters/2019/07/24/#bitcoin-core-16152
 [news60 bloom]: /en/newsletters/2019/08/21/#bitcoin-core-16248
-[clark mempool]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021562.html
-[harding mempool]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021563.html
+[clark mempool]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021562.html
+[harding mempool]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021563.html
 [unix epoch time]: https://en.wikipedia.org/wiki/Unix_time
 [ldk 0.0.115]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.115
 [lnd v0.16.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.1-beta

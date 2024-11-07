@@ -48,7 +48,7 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 
 - **<!--bitcoin-dev-mailing-list-changing-hosts-->****比特币开发邮件列表更换主机：** 如果您订阅了[公共比特币开发邮件列表][mailing list]，请注意即将发布关于域名更改的公告。除了将电子邮件地址改为不同的域名，目前还不清楚是否需要用户采取任何行动，尽管三年前的主机更换要求所有成员重新订阅。
 
-[mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
+[mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/
 
 ### 仪表盘项
 
@@ -58,7 +58,7 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 
 - **<!--new-backup-and-recovery-format-for-private-key-material-->****私钥信息的新备份和恢复格式：** 几位开发者正在为比特币私钥、HD 钱包扩展公钥和私钥以及 HD 钱包种子开发一种新的编码。该格式基于用于原生隔离见证地址的 bech32 格式。该编码正在[比特币开发邮件列表][bech32x]上积极开发中，鼓励任何处理私钥信息备份（例如纸质钱包备份）或为客户提供此类服务（例如资金清理）的公司参与进来。
 
-[bech32x]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
+[bech32x]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
 
 - **<!--coin-selection-simulations-->****币选择模拟：** 即将发布的 Bitcoin Core 0.17.0 版本实现基于 Mark Erhardt 的[分支定界算法（Branch and Bound algorithm）][branch and bound paper]的更有效的币选择算法。目前，贡献者正在进行旨在识别当理想策略不起作用时的合适的备选策略的模拟。如果您的组织使用 Bitcoin Core 来优化币选择以最小化费用，那么跟踪或贡献 Bitcoin Core PR [#13307][pr 13307]可能是值得的。
 
@@ -69,7 +69,7 @@ Bitcoin Optech 小组正在组织一系列工作坊的第一次活动，将于 *
 - **<!--bip174-discussion-->****[BIP174][] 讨论：** 关于这个提议的 BIP 的邮件列表[讨论][BIP174 discussion]仍在继续，该提议旨在制定行业标准，使钱包之间的通信变得更加容易，以应对在线/离线（热/冷）钱包、软件/硬件钱包和多签钱包的情况。然而，现在对该提案的重大更改正在遭到抵制，因此可能已临近最终确定。如果您的组织生产或必要使用上述互操作钱包之一，您可能希望在最终确定之前尽快评估当前提案。
 
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
-[BIP174 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html
+[BIP174 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016121.html
 
 
 - **<!--dynamic-wallet-loading-in-bitcoin-core-->****Bitcoin Core 中的动态钱包加载：** 最后一个 PR 已经合并到 Bitcoin Core 中，设计了一套新的 RPC，允许其在多钱包模式下动态创建新钱包、加载和卸载它们。如果您的组织在 Bitcoin Core 内部管理交易（或希望这样做），这可以显著简化您的钱包隔离（例如，将客户存款与公司资金分开，或将热钱包资金与仅观察的冷钱包资金分开）。在 Bitcoin Core git 的 master 分支上使用 RPC `createwallet`、`loadwallet` 和 `unloadwallet` 的预生产代码已可用。

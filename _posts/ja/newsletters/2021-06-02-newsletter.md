@@ -110,7 +110,7 @@ Bitcoin Coreのマイナー向けブロックテンプレートのトランザ�
 {% include linkers/issues.md issues="20833,22017,18418,4501,5025,5155,672,872" %}
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc3
 [HWI 2.0.2]: https://github.com/bitcoin-core/HWI/releases/tag/2.0.2
-[erhardt post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019020.html
+[erhardt post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/019020.html
 [es analysis]: https://gist.github.com/Xekyo/5cb413fe9f26dbce57abfd344ebbfaf2#file-candidate-set-based-block-building-md
 [news117 cl4068]: /en/newsletters/2020/09/30/#c-lightning-4068
 [news19 bip69]: /en/newsletters/2018/10/30/#bip69-discussion
