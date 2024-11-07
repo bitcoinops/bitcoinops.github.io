@@ -148,7 +148,7 @@ repo], et [BINANAs][binana repo]._
 [news270 coordination]: /fr/newsletters/2023/09/27/#utilisation-de-covenants-pour-ameliorer-la-scalabilite-de-ln
 [ln-penalty]: https://en.bitcoin.it/wiki/Payment_channels#Poon-Dryja_payment_channels
 [btcpay post]: https://blog.btcpayserver.org/btcpay-server-2-0/
-[btcay server 2.0.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.0
+[btcpay server 2.0.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.0
 [news310 upnp]: /fr/newsletters/2024/07/05/#execution-de-code-a-distance-due-a-un-bug-dans-miniupnpc
 [news323 pcp]: /fr/newsletters/2024/10/04/#bitcoin-core-30043
 [news324 bip85]: /fr/newsletters/2024/10/11/#bips-1674
