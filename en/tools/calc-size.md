@@ -374,4 +374,4 @@ updateTotal();
 [compactSize]: https://btcinformation.org/en/developer-reference#compactsize-unsigned-integers
 [epoch time]: https://en.wikipedia.org/wiki/Unix_time
 [vbytes]: https://en.bitcoin.it/wiki/Vsize
-[low-r grinding]: https://bitcoinops.org/en/topics/low-r-grinding/
+[low-r grinding]: /en/topics/low-r-grinding/
