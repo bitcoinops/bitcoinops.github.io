@@ -566,7 +566,7 @@ actually written out yet is that the LSP, so this is not a symmetric protocol,
 this is not a P2P protocol.  The LSP is different from the clients.  We are
 assuming that the clients here are small end users and we're assuming that the
 LSP is a big whale at the minimum, and is probably a corporation that can hold a
-lot of funds together.  So, one of the things here is that the LSP can actually
+lot of funds together.  So, one of the things here is that the LSP can
 actually provide these services.  One of those things that I've been mentioning
 also is that it can negotiate onchain feerate futures with miners.  And the
 effect of this is that because it is negotiating onchain feerate futures from
