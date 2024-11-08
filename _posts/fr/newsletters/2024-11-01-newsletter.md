@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine décrit une proposition pour les fabriques de canaux avec arbre de
-timeout et résume un projet de BIP pour les preuves d'équivalence de logarithme discret à utiliser
+timeout et résume un brouillon de BIP pour les preuves d'équivalence de logarithme discret à utiliser
 lors de la génération de paiements silencieux. Sont également incluses nos sections régulières avec
 les annonces de nouvelles versions de logiciels et les descriptions des changements notables
 apportés aux logiciels d'infrastructure Bitcoin populaires.
@@ -53,8 +53,8 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   deux parties de partager en toute sécurité des fonds ; cependant, ils permettent également un nombre
   relativement petit de mises à jour d'état par rapport au nombre effectivement illimité de mises à
   jour de LN-Penalty. Les canaux duplex intermédiaires sont utilisés pour permettre des rééquilibrages
-  impliquant le LSP et deux utilisateurs finaux ; ces rééquilibrages pourraient
-  compléter de manière sécurisée à des vitesses hors chaîne, permettant à un utilisateur de recevoir
+  impliquant le LSP et deux utilisateurs finaux ; ces rééquilibrages pourraient être
+  réalisé de manière sécurisée à une vitesse hors chaîne, permettant à un utilisateur de recevoir
   un paiement entrant presque instantanément même s'il n'avait pas auparavant suffisamment de capacité
   dans son canal pour l'accepter.
 
@@ -75,10 +75,10 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   générer et vérifier les preuves d'[égalité de logarithme discret][topic dleq] (DLEQ) pour la courbe
   elliptique utilisée par Bitcoin (secp256k1). Un DLEQ permet à une partie de prouver qu'elle connaît
   une clé privée sans révéler quoi que ce soit à son sujet, comme sa clé publique correspondante. Cela
-  a été utilisé dans le passé pour permettre à quelqu'un de prouver qu'il possède un UTXO sans révéler
-  quel UTXO (voir les Bulletins [#83][news83 podle] et [#131][news131 podle]).
+  a été utilisé dans le passé pour permettre à quelqu'un de prouver qu'il possède une UTXO sans révéler
+  laquelle (voir les Bulletins [#83][news83 podle] et [#131][news131 podle]).
 
-  Le BIP actuel est motivé par le soutien pour les [paiements silencieux][topic silent payments] créés
+  La BIP actuel est motivé par le soutien pour les [paiements silencieux][topic silent payments] créés
   en utilisant plusieurs signataires indépendants. Si un signataire ment ou est défectueux, il est
   possible que des fonds soient perdus. Un DLEQ permet à chaque signataire de prouver qu'ils ont signé
   correctement sans révéler leurs clés privées aux autres signataires. Voir le [Bulletin #308][news308
@@ -86,12 +86,12 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
 
   La proposition a reçu une [réponse][gibson dleq] d'Adam Gibson, qui a précédemment implémenté un
   système de preuve DLEQ pour l'implémentation [coinjoin][topic coinjoin] de JoinMarket. Il a suggéré
-  plusieurs changements qui rendraient la version du BIP de DLEQ plus flexible pour d'autres
+  plusieurs changements qui rendraient la version de la BIP de DLEQ plus flexible pour d'autres
   utilisations au-delà des paiements silencieux.
 
 ## Mises à jour et versions candidates
 
-_Nouvelles mises à jour et versions candidates à la sortie pour des projets d'infrastructure Bitcoin populaires.
+_Nouvelles mises à jour et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de passer aux nouvelles versions ou d'aider à tester
 les versions candidates._
 
@@ -125,8 +125,8 @@ repo], et [BINANAs][binana repo]._
   routing] dans [le routage trampoline][topic trampoline payments] comme
   base pour l'implémentation du protocole [offres][topic offers] [BOLT12][].
 
-- [BIPs #1676][] met à jour le statut de [BIP85][] en final, car il est largement
-  déployé et a dépassé le point d'introduction de changements majeurs. Cela a été proposé
+- [BIPs #1676][] met à jour le statut de [BIP85][] en final, car elle est largement
+  déployée et a dépassée le point d'introduction de changements majeurs. Cela a été proposé
   après qu'un récent changement majeur ait été fusionné puis révoqué (voir
   le Bulletin [#324][news324 bip85]).
 
