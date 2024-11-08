@@ -79,6 +79,9 @@ optech_mentions:
   - title: "LN developer discussion of using P2A for version-3 LN commitments"
     url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
 
+  - title: "Bitcoin PR Review Club about ephemeral dust to improve P2A usability"
+    url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
