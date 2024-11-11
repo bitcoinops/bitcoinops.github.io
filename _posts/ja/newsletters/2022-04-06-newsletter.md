@@ -171,11 +171,11 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [news108 upcom]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
 [news152 cl4532]: /ja/newsletters/2021/06/09/#c-lightning-4532
 [zmn post]: /ja/newsletters/2021/09/01/#taprootの準備-11-lnとtaproot
-[osuntokun dyncom]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
-[somsen silpay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020180.html
-[wasabi2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020032.html
+[osuntokun dyncom]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
+[somsen silpay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020180.html
+[wasabi2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020032.html
 [news102 wabisabi]: /en/newsletters/2020/06/17/#wabisabi-coordinated-coinjoins-with-arbitrary-output-values
-[hillebrand wormhole]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020186.html
+[hillebrand wormhole]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020186.html
 [leguilly dlcmsg]: https://mailmanlists.org/pipermail/dlc-dev/2022-March/000135.html
 [news193 major update]: /ja/newsletters/2022/03/30/#major-update
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc

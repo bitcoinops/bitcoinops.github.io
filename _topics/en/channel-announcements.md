@@ -24,7 +24,7 @@ primary_sources:
       link: https://github.com/lightning/bolts/pull/1059
 
     - title: "V2 gossip protocol"
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

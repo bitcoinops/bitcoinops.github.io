@@ -80,6 +80,6 @@ Alternative Script Trees*.
 
 {% include references.md %}
 [mast original proposal]: https://bitcointalk.org/index.php?topic=255145.msg2757327#msg2757327
-[backronym mast]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
+[backronym mast]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
 [merkle trees]: https://en.wikipedia.org/wiki/Merkle_tree
 [abstract syntax trees]: https://en.wikipedia.org/wiki/Abstract_syntax_tree

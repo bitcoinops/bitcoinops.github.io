@@ -115,5 +115,5 @@ relays.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
-[offline ln]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003307.html
+[offline ln]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003307.html
 [trampoline method]: /en/newsletters/2022/06/15/#trampoline-routing-and-mobile-payments

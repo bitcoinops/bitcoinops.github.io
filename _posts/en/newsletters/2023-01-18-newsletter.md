@@ -200,11 +200,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5751,1378" %}
 [hwi 2.2.0]: https://github.com/bitcoin-core/HWI/releases/tag/2.2.0
-[obeirne op_vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021318.html
+[obeirne op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021318.html
 [obeirne paper]: https://jameso.be/vaults.pdf
-[obeirne scripthash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021329.html
+[obeirne scripthash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021329.html
 [news185 ctv-dlc]: /en/newsletters/2022/02/02/#improving-dlc-efficiency-by-changing-script
-[towns op_vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021328.html
+[towns op_vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021328.html
 [kraken bech32m]: https://blog.kraken.com/post/16740/bitcoin-taproot-address-now-supported-on-kraken/
 [whirlpool rust client]: https://github.com/straylight-orbit/whirlpool-client-rs
 [ledger miniscript]: https://blog.ledger.com/miniscript-is-coming/

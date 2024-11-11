@@ -173,12 +173,12 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2294,2156" %}
 [policy series]: /cs/blog/waiting-for-confirmation/
-[v 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003977.html
-[o 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003978.html
-[v 2p2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003979.html
-[c 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003980.html
-[t 2p]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003982.html
-[v 2p3]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003981.html
+[v 2p]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003977.html
+[o 2p]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003978.html
+[v 2p2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003979.html
+[c 2p]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003980.html
+[t 2p]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003982.html
+[v 2p3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/003981.html
 [eclair v0.9.0]: https://github.com/ACINQ/eclair/releases/tag/v0.9.0
 [news162 greenlight]: /en/newsletters/2021/08/18/#blockstream-announces-non-custodial-ln-cloud-service-greenlight
 [decker twitter]: https://twitter.com/Snyke/status/1666096470884515840

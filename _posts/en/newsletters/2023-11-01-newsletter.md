@@ -153,15 +153,15 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28685,28651,28565,7828,2660,1086,27511" %}
 [news164 pong]: /en/newsletters/2021/09/01/#lnd-5621
-[towns cov]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022099.html
-[russell cov]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
+[towns cov]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022099.html
+[russell cov]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
 [news274 cov]: /en/newsletters/2023/10/25/#research-into-generic-covenants-with-minimal-script-language-changes
-[russell cov2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022103.html
+[russell cov2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022103.html
 [news191 lisp]: /en/newsletters/2022/03/16/#using-chia-lisp
-[heilman cat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
+[heilman cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
 [news274 cat]: /en/newsletters/2023/10/25/#proposed-bip-for-op-cat
-[todd 520]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022094.html
-[o'beirne vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022092.html
+[todd 520]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022094.html
+[o'beirne vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022092.html
 [Bitcoin Core 26.0rc1]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [bitcoin core developer wiki]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki
 [bitcoin core pr review club]: https://bitcoincore.reviews/#upcoming-meetings

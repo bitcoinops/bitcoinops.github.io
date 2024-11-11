@@ -120,10 +120,10 @@ notes a few changes in popular Bitcoin infrastructure projects.
 
 {% include linkers/issues.md issues="3002,899,557,954" %}
 
-[cve ln]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002130.html
+[cve ln]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002130.html
 [bolts608]: /en/newsletters/2019/08/28/#bolts-608
 [bolts]: https://github.com/lightningnetwork/lightning-rfc/
 [snicker]: https://gist.github.com/AdamISZ/2c13fb5819bd469ca318156e2cf25d79
 [ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie–Hellman
-[snicker email]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017283.html
+[snicker email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017283.html
 [snicker blog]: https://joinmarket.me/blog/blog/snicker/

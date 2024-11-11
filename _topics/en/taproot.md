@@ -18,7 +18,7 @@ excerpt: >
 primary_sources:
     - title: BIP341
     - title: Original description
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
     - title: Original implementation
       link: https://github.com/bitcoin/bitcoin/pull/19953
 

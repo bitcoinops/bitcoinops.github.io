@@ -260,11 +260,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [LND v0.17.0-beta.rc5]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc5
 [news253 ark]: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
 [maxwell clock stop]: https://www.reddit.com/r/Bitcoin/comments/37fxqd/it_looks_like_blockstream_is_working_on_the/crmr5p2/
-[law cov post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004092.html
+[law cov post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004092.html
 [law cov paper]: https://github.com/JohnLaw2/ln-scaling-covenants
-[towns cov]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
+[towns cov]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004095.html
 [ln paper]: https://lightning.network/lightning-network-paper.pdf
-[law fee stop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
+[law fee stop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004102.html
 [news221 law]: /en/newsletters/2022/10/12/#ln-with-long-timeouts-proposal
 [news230 law]: /en/newsletters/2022/12/14/#factory-optimized-ln-protocol-proposal
 [news244 law]: /en/newsletters/2023/03/29/#preventing-stranded-capital-with-multiparty-channels-and-channel-factories
