@@ -207,7 +207,7 @@ et [Bitcoin Inquisition][bitcoin inquisition repo].*
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [news280 cluster]: /fr/newsletters/2023/12/06/#discussion-sur-le-cluster-mempool
 [news267 compress]: /fr/newsletters/2023/09/06/#compression-des-transactions-bitcoin
-[briar compress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
+[briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
 [compress spec]: https://github.com/bitcoin/bitcoin/blob/7e8511c1a8229736d58bd904595815636f410aa8/doc/compressed_transactions.md
 [news201 mev]: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
 [news266 lnbugs]: /fr/newsletters/2023/08/30/#divulgation-d-une-vulnerabilite-passee-de-ln-liee-au-financement-fictif

@@ -125,11 +125,11 @@ return to our regular Tuesday publication schedule starting on January
 [maintenance release]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
 [maxwell-todd por]: https://web.archive.org/web/20170928054354/https://iwilcox.me.uk/2014/proving-bitcoin-reserves
 [boneh-et-al por]: http://www.jbonneau.com/doc/DBBCB15-CCS-provisions.pdf
-[towns schnorr taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
-[ln irc meeting]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001737.html
+[towns schnorr taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
+[ln irc meeting]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001737.html
 [function decorators]: https://www.thecodeship.com/patterns/guide-to-python-function-decorators/
 [flask]: http://flask.pocoo.org/
-[ln minisketch]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html
+[ln minisketch]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html
 [optimized transaction relay]: http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/
 [naumenko relay simulator]: https://github.com/naumenkogs/Bitcoin-Simulator
 [newsletter #9]: /en/newsletters/2018/08/21/#bandwidth-efficient-set-reconciliation-protocol-for-transactions

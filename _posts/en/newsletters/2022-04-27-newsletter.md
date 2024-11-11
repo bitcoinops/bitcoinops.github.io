@@ -223,18 +223,18 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [core lightning 0.11.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0.1
 [rust-bitcoin 0.28]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.28.0
 [rb28 rn]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/CHANGELOG.md#028---2022-04-20-the-taproot-release
-[rubin ctv-st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020233.html
-[towns ctv signet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html
+[rubin ctv-st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020233.html
+[towns ctv signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020234.html
 [sapio]: https://learn.sapio-lang.org/
-[corallo ctv cost]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020263.html
-[corallo not clear]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020289.html
+[corallo ctv cost]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020263.html
+[corallo not clear]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020289.html
 [oconnor wizards]: https://gnusha.org/bitcoin-wizards/2022-04-19.log
-[towns bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020245.html
-[oconnor bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020256.html
-[rubin bare]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020260.html
-[harding transitory]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020242.html
-[darosior apo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020276.html
-[obeirne benchmark]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020280.html
+[towns bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020245.html
+[oconnor bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020256.html
+[rubin bare]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020260.html
+[harding transitory]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020242.html
+[darosior apo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020276.html
+[obeirne benchmark]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020280.html
 [simple vault]: https://github.com/jamesob/simple-ctv-vault
 [news185 txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
 [fiatjaf vault]: https://twitter.com/fiatjaf/status/1517836181240782850

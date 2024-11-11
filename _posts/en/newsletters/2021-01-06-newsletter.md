@@ -156,8 +156,8 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc3
 [eclair 0.5.0]: https://github.com/ACINQ/eclair/releases/tag/v0.5.0
 [cl doc/backup.md]: https://github.com/ElementsProject/lightning/blob/master/doc/BACKUP.md
-[poelstra post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018313.html
-[teinturier post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002928.html
+[poelstra post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018313.html
+[teinturier post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002928.html
 [tramp spec]: https://github.com/lightningnetwork/lightning-rfc/pull/829
 [acinq post]: https://medium.com/@ACINQ/phoenix-wallet-part-4-trampoline-payments-fb1befd027c8
 [news128 akka]: /en/newsletters/2020/12/16/#eclair-1566

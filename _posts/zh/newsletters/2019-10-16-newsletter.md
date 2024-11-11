@@ -96,7 +96,7 @@ lang: zh
 [bip61 discussion]: /zh/newsletters/2019/03/12/#removal-of-bip61-p2p-reject-messages
 [bip61 decision]: /zh/newsletters/2019/03/19/#bip61-reject-messages
 [lnd vulns]: /zh/newsletters/2019/10/02/#full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations
-[taproot update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017378.html
+[taproot update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017378.html
 [fields ts]: https://diyhpl.us/wiki/transcripts/cryptoeconomic-systems/2019/everything-is-broken/
 [fields vid]: https://www.youtube.com/watch?v=UDbl-2gk7n0
 [heilman ts]: https://diyhpl.us/wiki/transcripts/cryptoeconomic-systems/2019/near-misses/

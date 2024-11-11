@@ -152,8 +152,8 @@ BOLTs][bolts repo].*
 [news147 lndamp]: /en/newsletters/2021/05/05/#lnd-5159
 [news148 cve]: /en/newsletters/2021/05/12/#cve-2021-31876-discrepancy-between-bip125-and-bitcoin-core-implementation
 [btcd #1719]: https://github.com/btcsuite/btcd/pull/1719
-[somsen note]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018921.html
-[poinsot mention]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018906.html
+[somsen note]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018921.html
+[poinsot mention]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018906.html
 [blockchain v4.49.1]: https://github.com/blockchain/blockchain-wallet-v4-frontend/releases/tag/v4.49.1
 [sparrow 1.4.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.4.0
 [bluewallet v6.1.0]: https://github.com/BlueWallet/BlueWallet/releases/tag/v6.1.0

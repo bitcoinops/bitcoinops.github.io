@@ -140,11 +140,11 @@ endcomment %}
 [core 0.18.0]: https://bitcoincore.org/en/releases/0.18.0/#build-system-changes
 [pr14451]: /en/newsletters/2018/10/30/#bitcoin-core-14451
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
-[ber]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
+[ber]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [pr15681]: /en/newsletters/2019/07/24/#bitcoin-core-15681
 [opt_simplified]: /en/newsletters/2018/11/27/#simplified-fee-bumping-for-ln
-[anchor thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002249.html
-[halseth carve-out]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002240.html
+[anchor thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002249.html
+[halseth carve-out]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002240.html
 [daftuar duo]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Mempool-and-mining
 [rubin justification]: http://www.erisian.com.au/bitcoin-core-dev/log-2019-10-24.html#l-660
 [taproot workshop]: /en/schnorr-taproot-workshop/

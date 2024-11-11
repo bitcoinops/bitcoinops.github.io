@@ -97,7 +97,7 @@ public key may leak the secret key through an (invalid) signature."
 [news18 lnd afs]: /zh/newsletters/2018/10/23/#lnd-1978
 [eclair deterministic doc]: https://github.com/ACINQ/eclair/blob/master/BUILD.md#build
 [eclair1295]: #eclair-1295
-[alm btcdeb]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017600.html
+[alm btcdeb]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017600.html
 [btcdeb]: https://github.com/kallewoof/btcdeb/tree/taproot
 [tap tutorial]: https://github.com/kallewoof/btcdeb/blob/taproot/doc/tapscript-example-with-tap.md
 [gmaxwell pubkey]: https://github.com/bitcoin-core/secp256k1/pull/558#discussion_r371027220
@@ -106,7 +106,7 @@ public key may leak the secret key through an (invalid) signature."
 [pubkey pr]: https://github.com/sipa/bips/pull/192
 [curves post]: https://moderncrypto.org/mail-archive/curves/2020/001012.html
 [ed25519]: https://en.wikipedia.org/wiki/EdDSA
-[neigut thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002466.html
+[neigut thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002466.html
 [podle]: https://joinmarket.me/blog/blog/poodle/
 [asmap]: https://github.com/sipa/asmap
 [asn peer selection]: /zh/newsletters/2019/06/26/#differentiating-peers-based-on-asn-instead-of-address-prefix

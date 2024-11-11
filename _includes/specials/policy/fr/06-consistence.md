@@ -67,6 +67,6 @@ répondre aux intérêts du réseau dans son ensemble.
 
 [policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
 [policy04]: /fr/newsletters/2023/06/07/#en-attente-de-confirmation-4--estimation-du-taux-de-frais
-[aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
+[aj mempool consistency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th
 

@@ -176,7 +176,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [LDK v0.0.114]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.114
 [BTCPay 1.8.2]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.8.2
 [podcast post]: /ja/podcast-announcement/
-[sanders vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021510.html
+[sanders vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021510.html
 [news234 vault]: /ja/newsletters/2023/01/18/#vault-opcode
 [news166 tluv]: /ja/newsletters/2021/09/15/#covenant-opcode-proposal-covenant-opcode
 [news238 peer storage]: /ja/newsletters/2023/02/15/#core-lightning-5361

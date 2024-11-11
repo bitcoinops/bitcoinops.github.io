@@ -60,7 +60,7 @@ Pieter Wuille 澄清说，自 0.10.0 版本以来，Bitcoin Core 使用 [headers
 - [BOLTs #557][] 更新了 [BOLT7][] 以允许“扩展查询”，这允许节点请求他们只接收指定日期之后或与指定哈希不同的 gossip 更新。
 
 {% include linkers/issues.md issues="16400,557" %}
-[p2sh taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017307.html
-[tapscript limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
-[watchtower discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
+[p2sh taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017307.html
+[tapscript limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-September/017306.html
+[watchtower discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002156.html
 [headers-first]: https://developer.bitcoin.org/devguide/p2p_network.html#headers-first

@@ -89,8 +89,8 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的限定周�
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
 [policy series]: /zh/blog/waiting-for-confirmation/
-[sanders v3cj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021780.html
-[linus spec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
+[sanders v3cj]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021780.html
+[linus spec]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
 [BTCPay Server 1.10.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.10.3
 [btcpay 1.10]: https://blog.btcpayserver.org/btcpay-server-1-10-0/
 [miningpool observer]: https://miningpool.observer/template-and-block

@@ -246,16 +246,16 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [bcc rn]: https://bitcoincore.org/ja/releases/24.0.1/
 [bcc milestone 24.0.1]: https://github.com/bitcoin/bitcoin/milestone/59?closed=1
 [libsecp256k1 0.2.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.2.0
-[libsecp256k1 announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021271.html
+[libsecp256k1 announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021271.html
 [core lightning 22.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v22.11.1
 [news224 fat]: /ja/newsletters/2022/11/02/#ln
-[law factory]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003782.html
+[law factory]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003782.html
 [news166 tluv]: /ja/newsletters/2021/09/15/#covenant-opcode-proposal-covenant-opcode
 [news189 evict]: /ja/newsletters/2022/03/02/#utxo-opcode
-[law tp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
-[jager jam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003781.html
+[law tp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
+[jager jam]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003781.html
 [circuitbreaker]: https://github.com/lightningequipment/circuitbreaker
-[0xb10c rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021258.html
+[0xb10c rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021258.html
 [rbf mpo]: https://fullrbf.mempool.observer/
 [news208 rbf]: /ja/newsletters/2022/07/13/#bitcoin-core-25353
 [tlv]: https://github.com/lightning/bolts/blob/master/01-messaging.md#type-length-value-format

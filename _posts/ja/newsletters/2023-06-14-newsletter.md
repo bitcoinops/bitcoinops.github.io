@@ -151,15 +151,15 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27501,6243,2677,1890,1458,24007" %}
 [policy series]: /ja/blog/waiting-for-confirmation/
-[jager annex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021731.html
-[riard annex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020991.html
-[jager annex2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021756.html
-[sanders annex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021736.html
+[jager annex]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021731.html
+[riard annex]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020991.html
+[jager annex2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021756.html
+[sanders annex]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021736.html
 [news244 annex]: /ja/newsletters/2023/03/29/#bitcoin-inquisition-22
-[jager annex3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021743.html
-[bs sp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021750.html
+[jager annex3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021743.html
+[bs sp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021750.html
 [review club 27600]: https://bitcoincore.reviews/27600
-[jager annex4]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021737.html
+[jager annex4]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021737.html
 [lnd max_cltv]: /ja/newsletters/2019/10/23/#lnd-3595
 [news250 getprioritisedtransactions]: /ja/newsletters/2023/05/10/#bitcoin-core-pr-review-club
 [Core Lightning 23.05.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.05.1
