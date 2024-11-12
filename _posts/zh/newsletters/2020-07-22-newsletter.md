@@ -72,17 +72,17 @@ lang: zh
 [transaction origin wiki]: https://en.bitcoin.it/wiki/Privacy#Traffic_analysis
 [news105 cl3775]: /zh/newsletters/2020/07/08/#c-lightning-3775
 [35e79ee733fad376e76d16d1f10088273c2f4c2eaba1374a837378a88e530005]: https://blockstream.info/tx/35e79ee733fad376e76d16d1f10088273c2f4c2eaba1374a837378a88e530005
-[lee irc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018042.html
+[lee irc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018042.html
 [irc log]: http://gnusha.org/taproot-activation/
 [news104 bip8]: /zh/newsletters/2020/07/01/#bips-550
 [bip-decthresh]: https://github.com/ajtowns/bips/blob/202007-activation-dec-thresh/bip-decthresh.mediawiki
-[msfa]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html
+[msfa]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html
 [news80 activation]: /zh/newsletters/2020/01/15/#discussion-of-soft-fork-activation-mechanisms
-[oconnor post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018048.html
+[oconnor post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018048.html
 [news77 bech32]: /zh/newsletters/2019/12/18/#review-bech32-action-plan
 [news94 keysend]: /zh/newsletters/2020/04/22/#c-lightning-3611
 [freenode]: https://freenode.net/
-[towns post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018043.html
+[towns post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018043.html
 [electrum release notes]: https://github.com/spesmilo/electrum/blob/4.0.1/RELEASE-NOTES
 [lily wallet site]: http://lily.kevinmulcrone.com/
 [news30 probing]: /zh/newsletters/2019/01/22/#eclair-762
