@@ -62,11 +62,11 @@ lang: zh
 
 {% include references.md %}
 {% include linkers/issues.md issues="910" %}
-[coinpool post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017964.html
+[coinpool post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017964.html
 [joinpool]: https://gist.github.com/harding/a30864d0315a0cebd7de3732f5bd88f0
 [joinmarket]: https://github.com/JoinMarket-Org/joinmarket-clientserver
 [wasabi]: https://wasabiwallet.io/
-[wabisabi post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017969.html
+[wabisabi post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017969.html
 [news79 unequal coinjoin]: /zh/newsletters/2020/01/08/#coinjoins-without-equal-value-inputs-or-outputs
 [chaumian blinded signature]: https://en.wikipedia.org/wiki/Blind_signature
 [confidential transactions]: https://en.bitcoin.it/wiki/Confidential_transactions
