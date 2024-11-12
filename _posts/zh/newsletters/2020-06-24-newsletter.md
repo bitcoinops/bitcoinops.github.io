@@ -74,15 +74,15 @@ lang: zh
 {% include linkers/issues.md issues="19260,19133,18027,16377,1461,19071,19204,8709" %}
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta.rc2
 [ride the lightning]: https://github.com/Ride-The-Lightning/RTL
-[pickhardt post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002735.html
+[pickhardt post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002735.html
 [bolt5 calc]: https://github.com/lightningnetwork/lightning-rfc/blob/master/05-onchain.md#penalty-transactions-weight-calculation
 [news59 cl30]: /zh/newsletters/2019/08/14/#c-lightning-2858
-[teinturier post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002739.html
+[teinturier post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002739.html
 [teinturier gist]: https://gist.github.com/t-bast/22320336e0816ca5578fdca4ad824d12
 [news95 ln attack]: /zh/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
-[pay-for-signature]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
-[zmn procedure]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002744.html
-[nick collision]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017986.html
+[pay-for-signature]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
+[zmn procedure]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-June/002744.html
+[nick collision]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017986.html
 [news100 coinswap]: /zh/newsletters/2020/06/03/#design-for-a-coinswap-implementation
 [address security]: /zh/bech32-sending-support/#地址安全性
 [news74 psbtgui]: /zh/newsletters/2019/11/27/#bitcoin-core-16944
