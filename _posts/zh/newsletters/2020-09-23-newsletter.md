@@ -133,19 +133,19 @@ lang: zh
 [lnd 0.11.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.1-beta.rc3
 [news107 lnd wumbo]: /zh/newsletters/2020/07/22/#lnd-4429
 [blockstream post]: https://medium.com/blockstream/dont-mix-your-timelocks-d9939b665094
-[hearn high frequency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002417.html
+[hearn high frequency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-April/002417.html
 [time-height-lock fork]: https://bitcoin.stackexchange.com/a/99104/21052
 [epoch time]: https://en.wikipedia.org/wiki/Unix_time
 [rust-miniscript #121]: https://github.com/rust-bitcoin/rust-miniscript/pull/121
 [minsc]: https://min.sc/
-[rubin sponsor bumping]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018168.html
+[rubin sponsor bumping]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018168.html
 [rubin refimpl]: https://github.com/bitcoin/bitcoin/compare/master...JeremyRubin:subsidy-tx
 [news111 load_on_startup]: /zh/newsletters/2020/08/19/#bitcoin-core-15937
 [mtp]: https://bitcoin.stackexchange.com/a/67622/21052
 [miniscript demo]: http://bitcoin.sipa.be/miniscript/
-[riard heavyweight tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018191.html
-[harding sponsor outpoints]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018186.html
-[daftuar principle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018195.html
+[riard heavyweight tx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018191.html
+[harding sponsor outpoints]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018186.html
+[daftuar principle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018195.html
 [nakamoto later block]: https://bitcointalk.org/index.php?topic=1786.msg22119#msg22119
 [send rpc help]: https://github.com/bitcoin/bitcoin/blob/831b0ecea9156447a2b6a67d28858bc26d302c1c/src/wallet/rpcwallet.cpp#L3876-L3933
 [swan bech32 send]: https://twitter.com/SwanBitcoin/status/1301182772015497216
