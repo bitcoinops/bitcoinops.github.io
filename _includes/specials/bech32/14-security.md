@@ -113,5 +113,5 @@ bech32 sending support so that they can send payments to those
 security-conscious users.
 
 [bech32 fee savings]: /en/bech32-sending-support/#fee-savings-with-native-segwit
-[sipa collision resistance]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012205.html
+[sipa collision resistance]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012205.html
 [collision attack]: https://en.wikipedia.org/wiki/Collision_attack

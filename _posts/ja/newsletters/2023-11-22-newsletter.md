@@ -136,7 +136,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [26.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/26.0-Release-Candidate-Testing-Guide
 [core lightning 23.11rc3]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc3
 [c-lightning-rest]: https://github.com/Ride-The-Lightning/c-lightning-REST
-[teinturier addy]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-November/004204.html
+[teinturier addy]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-November/004204.html
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
 [lightning address]: https://lightningaddress.com/
 [lnd v0.17.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.2-beta

@@ -194,7 +194,7 @@ is about 4x.  We thank Amiti Uttarwar for reporting this error.
 [sidecar channels]: https://lightning.engineering/posts/2021-05-26-sidecar-channels/
 [news123 lightning pool]: /en/newsletters/2020/11/11/#incoming-channel-marketplace
 [news155 tr psbts]: /en/newsletters/2021/06/30/#psbt-extensions-for-taproot
-[zmn liquidity providers]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
+[zmn liquidity providers]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
 [lightning pool]: https://lightning.engineering/posts/2020-11-02-pool-deep-dive/
 [compat matrix]: /en/compatibility/
 [news158 taproot]: /en/newsletters/2021/07/21/#preparing-for-taproot-5-why-are-we-waiting

@@ -140,16 +140,16 @@ Taprootの準備について、新しいリリースとリリース候補、
 {% include references.md %}
 {% include linkers/issues.md issues="23306,4837,1982,5803,2897,1225" %}
 [c-lightning 0.10.2rc2]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.2rc2
-[neigut relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019572.html
-[wuille relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019578.html
-[zhao relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html
-[zmnscpxj relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019573.html
+[neigut relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019572.html
+[wuille relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019578.html
+[zhao relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html
+[zmnscpxj relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019573.html
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
 [decker tweet]: https://twitter.com/Snyke/status/1452260691939938312
 [news170 unec bug]: /ja/newsletters/2021/10/13/#ln-spend-to-fees-cve-ln-cve
 [bitcoin core 0.20.2]: https://bitcoincore.org/bin/bitcoin-core-0.20.2/
 [bcc0.20.2 rn]: https://bitcoincore.org/en/releases/0.20.2/
-[wuille test]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019587.html
+[wuille test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019587.html
 [p4tr waiting]: /ja/preparing-for-taproot/#なぜ待つ必要があるのか
 [LNURL-Pay]: https://github.com/fiatjaf/lnurl-rfc/blob/luds/06.md
 [news167 lightning addresses]: /ja/newsletters/2021/09/22/#lightning

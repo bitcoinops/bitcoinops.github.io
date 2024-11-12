@@ -226,9 +226,9 @@ BOLTs][bolts repo].*
 {% include linkers/issues.md issues="21377,21686,21602,4444,4588,5193,5154,5187,858,856,498,2425" %}
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [news139 speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
-[russell invoice cancel]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002992.html
+[russell invoice cancel]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002992.html
 [osuntokun anchor]: https://groups.google.com/a/lightning.engineering/g/lnd/c/OuC56qq6IaY
-[rubin sapio]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018759.html
+[rubin sapio]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018759.html
 [lnprototest]: https://github.com/rustyrussell/lnprototest
 [ln protocol specification]: https://github.com/lightningnetwork/lightning-rfc/
 [news141 cl funding]: /en/newsletters/2021/03/24/#c-lightning-4428

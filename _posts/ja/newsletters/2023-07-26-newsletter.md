@@ -181,8 +181,8 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}
-[russell closing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
-[kc notes]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
+[russell closing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
+[kc notes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
 [news204 gossip]: /ja/newsletters/2022/06/15/#gossip-network-updates
 [news86 boomerang]: /ja/newsletters/2020/02/26/#boomerang
 [news226 jamming]: /ja/newsletters/2022/11/16/#paper-about-channel-jamming-attacks

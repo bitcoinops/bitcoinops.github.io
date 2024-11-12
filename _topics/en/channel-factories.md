@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Proposal for a mass-exit protocol that allows highly efficient payment batching"
     url: /en/newsletters/2024/01/03/#pool-exit-payment-batching-with-delegation-using-fraud-proofs
 
+  - title: "SuperScalar timeout tree channel factory proposal"
+    url: /en/newsletters/2024/11/01/#timeout-tree-channel-factories
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"

@@ -52,14 +52,14 @@ lang: zh
 {% include linkers/issues.md issues="13697,13799,1579,1543" %}
 
 [Newsletter #5]: /zh/newsletters/2018/07/24/
-[bls announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
+[bls announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016273.html
 [#3 schnorr]: /zh/newsletters/2018/07/10/#特别新闻schnorr-签名提议-bip
 [musig]: https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html
 [bls signatures]: https://en.wikipedia.org/wiki/Boneh%E2%80%93Lynn%E2%80%93Shacham
 [mimblewimble paper]: https://scalingbitcoin.org/papers/mimblewimble.txt
 [c-lightning 55d450ff]: https://github.com/ElementsProject/lightning/commit/55d450ff00ce80b01c5c64c072a47fea42657673
 [satoshis.place]: https://satoshis.place/
-[contract thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
+[contract thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001383.html
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [rbf data]: https://dashboard.bitcoinops.org/d/ZsCio4Dmz/rbf-signalling?orgId=1&from=now-1y&to=now

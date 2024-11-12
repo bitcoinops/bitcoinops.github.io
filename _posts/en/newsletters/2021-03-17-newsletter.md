@@ -142,8 +142,8 @@ BOLTs][bolts repo].*
 [btcpay server 1.0.7.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.7.0
 [news51 cl2672]: /en/newsletters/2019/06/19/#c-lightning-2672
 [news92 lnd4079]: /en/newsletters/2020/04/08/#lnd-4079
-[russell funding rescue]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002981.html
-[decker funding rescue]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002982.html
+[russell funding rescue]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002981.html
+[decker funding rescue]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002982.html
 [news107 keysend]: /en/newsletters/2020/07/22/#c-lightning-3792
 [fromknecht keysend]: https://github.com/ElementsProject/lightning/issues/4299#issuecomment-781606865
 [news83 podle]: /en/newsletters/2020/02/05/#interactive-construction-of-ln-funding-transactions

@@ -21,7 +21,7 @@ primary_sources:
       link: https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39
 
     - title: Statechains with ECDSA and without eltoo
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

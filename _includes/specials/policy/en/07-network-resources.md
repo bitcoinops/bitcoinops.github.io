@@ -85,7 +85,7 @@ will explore mempool policy as an interface for second-layer protocols and
 smart contract systems.
 
 [policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
-[unbounded]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
+[unbounded]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
 [lopp storms]: https://blog.lopp.net/history-bitcoin-transaction-dust-spam-storms/
 [ultraprune]: https://github.com/bitcoin/bitcoin/pull/1677
 [pooled resource]: /en/newsletters/2023/05/03/#bitcoin-core-25325

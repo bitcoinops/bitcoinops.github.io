@@ -23,7 +23,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: CPFP carve-out proposal
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 
     - title: "Bitcoin Core PR#15681: [mempool] Allow one extra single-ancestor transaction per package"
       link: https://github.com/bitcoin/bitcoin/pull/15681
