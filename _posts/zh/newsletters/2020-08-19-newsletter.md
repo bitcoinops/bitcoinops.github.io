@@ -74,8 +74,8 @@ lang: zh
 [elliptic curve cryptography]: https://en.wikipedia.org/wiki/Elliptic_curve_cryptography
 [news83 tiebreaker]: /zh/newsletters/2020/02/05/#alternative-x-only-pubkey-tiebreaker
 [news96 bip340 update]: /zh/newsletters/2020/05/06/#bips-893
-[wuille tiebreaker]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
-[daftuar negotiation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018084.html
+[wuille tiebreaker]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
+[daftuar negotiation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018084.html
 [bip-negotiation]: https://github.com/sdaftuar/bips/blob/2020-08-generalized-feature-negotiation/bip-p2p-feature-negotiation.mediawiki
 [news87 negotiation]: /zh/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [news80 bumpfee]: /zh/newsletters/2020/01/15/#bitcoin-core-16373

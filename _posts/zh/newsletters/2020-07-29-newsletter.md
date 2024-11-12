@@ -87,9 +87,9 @@ lang: zh
 [C-Lightning 0.9.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.0rc3
 [Bitcoin Core 0.20.1]: https://bitcoincore.org/bin/bitcoin-core-0.20.1/
 [fee overpayment attack]: /zh/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
-[osuntokun upgrade]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002763.html
-[teinturier simple]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002764.html
-[zmnscpxj re-funding]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002765.html
+[osuntokun upgrade]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002763.html
+[teinturier simple]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002764.html
+[zmnscpxj re-funding]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002765.html
 [news104 bip339]: /zh/newsletters/2020/07/01/#bips-933
 [news30 spont]: /zh/newsletters/2019/01/22/#pr-opened-for-spontaneous-ln-payments
 [news94 keysend plugin]: /zh/newsletters/2020/04/22/#c-lightning-3611
