@@ -1,0 +1,53 @@
+---
+title: LN-Penalty
+
+## Optional.  Shorter name to use for reference style links e.g., "foo"
+## will allow using the link [topic foo][].  Not case sensitive
+# shortname: foo
+
+## Optional.  An entry will be added to the topics index for each alias
+#title-aliases:
+#  - Foo
+
+## Required.  At least one category to which this topic belongs.  See
+## schema for options
+topic-categories:
+  - Lightning Network
+  - Contract Protocols
+
+## Optional.  Produces a Markdown link with either "[title][]" or
+## "[title](link)"
+primary_sources:
+    - title: Example
+      link: https://example.com
+
+## Optional.  Each entry requires "title" and "url".  May also use "feature:
+## true" to bold entry and "date"
+optech_mentions:
+  - title: An example page
+    url: /en/newsletters/2019/05/29/#news
+    date: 1970-01-01
+
+## Optional.  Same format as "primary_sources" above
+# see_also:
+#   - title:
+#     link:
+
+## Optional.  Force the display (true) or non-display (false) of stub
+## topic notice.  Default is to display if the page.content is below a
+## threshold word count
+#stub: false
+
+## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
+## Should be less than 500 characters
+excerpt: >
+  **LN-Penalty** is ...
+---
+This is the summary that never ends.  It goes on and on, my friend.
+Some people started writing it not knowing what it was but...
+
+...they'll be writing it forever, because this is the summary that
+never ends.  It goes on and on, my friend...
+
+{% include references.md %}
+{% include linkers/issues.md issues="" %}
