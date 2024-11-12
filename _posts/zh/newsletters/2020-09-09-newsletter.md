@@ -81,9 +81,9 @@ lang: zh
 {% include linkers/issues.md issues="19405,19670,14687,19671,18244,4463,983,363,18267,19339,15810" %}
 [tcp keepalive]: https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html
 [news112 coinswap]: /zh/newsletters/2020/08/26/#discussion-about-routed-coinswaps
-[belcher collateral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018151.html
-[zmnscpxj ln]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018160.html
-[belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
+[belcher collateral]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018151.html
+[zmnscpxj ln]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018160.html
+[belcher coinswap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news82 lnd acl]: /zh/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
 [review club client]: https://bitcoincore.reviews/19339#l-104
 [hwi]: https://github.com/bitcoin-core/HWI
