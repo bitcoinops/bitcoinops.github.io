@@ -58,8 +58,8 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="807,1545,4735,4701,19055,19055-2" %}
 [node rankings]: https://nodes.lightning.computer/availability/v1/btc.json
-[pool announce]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002874.html
-[muhash mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
+[pool announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-November/002874.html
+[muhash mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [muhash performance]: https://github.com/bitcoin/bitcoin/pull/19055#discussion_r508093977
 [news101 time-dilation]: /zh/newsletters/2020/06/10/#time-dilation-attacks-against-ln
 [eclipse attacks]: /en/topics/eclipse-attacks/
