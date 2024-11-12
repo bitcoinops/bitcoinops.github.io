@@ -75,6 +75,6 @@ lang: zh
 [news109 signet bip]: /zh/newsletters/2020/08/05/#bips-947
 [news36 pr15471]: /zh/newsletters/2019/03/05/#bitcoin-core-15471
 [news111 pre-verack]: /zh/newsletters/2020/08/19/#proposed-bip-for-p2p-protocol-feature-negotiation
-[alm signmessage]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018218.html
+[alm signmessage]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018218.html
 [news92 lnd psbt]: /zh/newsletters/2020/04/08/#lnd-4079
 [zmq.md]: https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md
