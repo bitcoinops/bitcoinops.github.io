@@ -57,6 +57,6 @@ lang: zh
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [##taproot-activation logs]: http://gnusha.org/taproot-activation/
 [news120 upfront]: /zh/newsletters/2020/10/21/#more-ln-upfront-fees-discussion
-[teinturier bidir]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002862.html
+[teinturier bidir]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002862.html
 [towns survey]: http://www.erisian.com.au/wordpress/2020/10/26/activating-soft-forks-in-bitcoin
 [payment secret]: https://github.com/lightningnetwork/lightning-rfc/commit/5776d2a7
