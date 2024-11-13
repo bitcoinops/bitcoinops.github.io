@@ -48,7 +48,7 @@ les frais][topic cpfp] qui dépense immédiatement la sortie dust est connue du 
   a0link="https://bitcoincore.reviews/30239#l-27"
 
   q1="Comment la poussière peut-elle être problématique ?"
-  a1="Les sorties dust (ou non économiques) valent moins que les frais nécessaires pour les dépenser."
+  a1="Les sorties dust (ou non économiques) valent moins que les frais nécessaires pour les dépenser.
   Puisqu'elles peuvent être dépensées, elles ne peuvent pas être élaguées de l'ensemble UTXO. Comme
   leur dépense est non économique, elles restent souvent non dépensées, augmentant la taille de
   l'ensemble UTXO. Un ensemble UTXO plus grand augmente les exigences en ressources pour les nœuds.
@@ -56,7 +56,7 @@ les frais][topic cpfp] qui dépense immédiatement la sortie dust est connue du 
   valeur en satoshis, comme dans le cas des [sorties d'ancre][topic anchor outputs]."
   a1link="https://bitcoincore.reviews/30239#l-40"
 
-  q2="Pourquoi le terme éphémère est-il significatif ? Quelles sont les règles proposées ?" spécifique à la poussière éphémère ?"
+  q2="Pourquoi le terme éphémère est-il significatif ? Quelles sont les règles proposées spécifique à la poussière éphémère ?"
   a2="Le terme 'éphémère' indique que la production de poussière
   est destinée à être dépensée rapidement. Les règles concernant la poussière éphémère exigent que la
   transaction parente soit sans frais et qu'elle ait exactement une transaction enfant qui dépense la
@@ -70,8 +70,7 @@ les frais][topic cpfp] qui dépense immédiatement la sortie dust est connue du 
   politique, et non une règle de consensus, les incitations économiques jouent un rôle crucial."
   a3link="https://bitcoincore.reviews/30239#l-56"
 
-  q4="En quoi les relais 1P1C et les transactions TRUC sont-ils pertinents pour la poussière éphémère
-  ?"
+  q4="En quoi les relais 1P1C et les transactions TRUC sont-ils pertinents pour la poussière éphémère ?"
   a4="Comme une transaction de poussière éphémère doit être sans frais, elle ne peut pas être relayée
   seule, rendant des mécanismes comme [1-parent-1-enfant (1P1C)][28.0 integration guide] essentiels.
   Les transactions TRUC (v3) sont limitées à un seul parent non confirmé, ce qui est conforme à
