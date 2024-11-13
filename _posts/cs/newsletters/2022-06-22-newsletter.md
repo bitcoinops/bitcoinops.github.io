@@ -216,16 +216,16 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 [lnd 0.15.0-beta.rc6]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc6
 [ldk 0.0.108]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.108
 [bdk 0.19.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.19.0
-[rbf discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020557.html
+[rbf discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020557.html
 [hertzbleed]: https://www.hertzbleed.com/
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
-[poelstra timestamping]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020569.html
-[gibson riddle post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020555.html
+[poelstra timestamping]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020569.html
+[gibson riddle post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020555.html
 [gibson riddle gist]: https://gist.github.com/AdamISZ/51349418be08be22aa2b4b469e3be92f
 [bitcoin stack exchange]: https://bitcoin.stackexchange.com/
 [open timestamps]: https://opentimestamps.org/
 [sybil]: https://en.wikipedia.org/wiki/Sybil_attack
-[zmnscpxj riddle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003607.html
+[zmnscpxj riddle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003607.html
 [Zeus v0.6.5-rc1]: https://github.com/ZeusLN/zeus/releases/tag/v0.6.5-rc1
 [wasabi 2.0]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v2.0.0.0
 [news194 wabisabi]: /en/newsletters/2022/04/06/#wabisabi-alternative-to-payjoin

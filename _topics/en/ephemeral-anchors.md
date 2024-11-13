@@ -21,7 +21,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Ephemeral Anchors
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021036.html
 
     - title: Original implementation
       link: https://github.com/bitcoin/bitcoin/issues/30239
@@ -78,6 +78,9 @@ optech_mentions:
 
   - title: "LN developer discussion of using P2A for version-3 LN commitments"
     url: /en/newsletters/2024/10/18/#version-3-commitment-transactions
+
+  - title: "Bitcoin PR Review Club about ephemeral dust to improve P2A usability"
+    url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -157,13 +157,13 @@ endcomment %}
 [channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [p2c]: https://arxiv.org/abs/1212.3257
 [atomic swap]: https://en.bitcoin.it/wiki/Atomic_swap
-[emptystack1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016935.html
-[emptystack0]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016558.html
-[emptystack reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016947.html
+[emptystack1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016935.html
+[emptystack0]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016558.html
+[emptystack reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016947.html
 [elliptic curve]: https://en.wikipedia.org/wiki/Elliptic_curve
-[smaller v1 spk]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016943.html
+[smaller v1 spk]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016943.html
 [vid return to fees]: https://www.youtube.com/watch?v=ihUQ4C42KUk
-[coshv flex]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016936.html
+[coshv flex]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016936.html
 [elementsproject.org]: https://elementsproject.org/
 [blockstream liquid]: https://blockstream.com/liquid/
 [catenates]: https://en.wiktionary.org/wiki/catenate

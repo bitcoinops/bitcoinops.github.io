@@ -31,7 +31,7 @@ excerpt: >
 ## "[title](link)"
 primary_sources:
     - title: Simplified Multipath Payments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001577.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001577.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

@@ -41,12 +41,12 @@ lang: ja
 [Schnorr/Taproot workshops]: /ja/schorr-taproot-workshop/
 [wuille slides]: https://prezi.com/view/AlXd19INd3isgt3SvW8g/
 [wuille suggestion]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.log.html#l-8
-[zmn post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002375.html
-[ficsor non-equal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017538.html
+[zmn post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002375.html
+[ficsor non-equal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017538.html
 [cashfusion]: https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md
 [knapsack]: https://www.comsys.rwth-aachen.de/fileadmin/papers/2017/2017-maurer-trustcom-coinjoin.pdf
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
-[belcher descriptors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017529.html
+[belcher descriptors]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017529.html
 [news70 anchor]: /en/newsletters/2019/10/30/#ln-simplified-commitments
 [taproot meeting]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-12-17-19.01.html
-[ontivero summary]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017544.html
+[ontivero summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017544.html

@@ -382,11 +382,11 @@ SNICKER 相比其他 coinjoin 方法的主要优势在于，它不要求用户�
 [news61 miniscript feedback]: /zh/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /zh/newsletters/2019/10/09/#bolts-676
 [newsletters]: /zh/newsletters/
-[non-strict der]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
+[non-strict der]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [optech executive briefing]: /zh/2019-exec-briefing/
 [proof of reserves tool]: /zh/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [rm openssl]: /zh/newsletters/2019/11/27/#bitcoin-core-17265
-[roose reserves]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
+[roose reserves]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
 [scalability workbook]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /zh/newsletters/2019/09/18/#scaling-bitcoin
 [schnorr/taproot workshops]: /zh/schnorr-taproot-workshop/

@@ -114,11 +114,11 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [news249 matt]: /en/newsletters/2023/05/03/#matt-based-vaults
 [news253 sweep]: /en/newsletters/2023/05/31/#eclair-2668
 [news245 listclosedchannels]: /en/newsletters/2023/04/05/#core-lightning-5967
-[halseth matt-ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021730.html
+[halseth matt-ctv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021730.html
 [halseth demo]: https://github.com/halseth/tapsim/blob/b07f29804cf32dce0168ab5bb40558cbb18f2e76/examples/matt/ctv2/README.md
 [tapsim]: https://github.com/halseth/tapsim
-[halseth matt-joinpool]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021719.html
+[halseth matt-joinpool]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021719.html
 [demo joinpool]: https://github.com/halseth/tapsim/tree/matt-demo/examples/matt/coinpool
-[ingala matt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021724.html
+[ingala matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021724.html
 [news248 lnd mempool]: /en/newsletters/2023/04/26/#lnd-7564
 [lnd 0.16.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.3-beta

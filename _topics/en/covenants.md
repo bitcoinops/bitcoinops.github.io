@@ -140,4 +140,4 @@ balance or spending to a staging address that only allows spending to
 any arbitrary address after a period of time.
 
 {% include references.md %}
-[towns covenant definition]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019795.html
+[towns covenant definition]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019795.html

@@ -203,7 +203,7 @@ caractères pour les étiquettes.
 [bitcoin core 23.2]: https://bitcoincore.org/bin/bitcoin-core-23.2/
 [bitcoin core 24.1]: https://bitcoincore.org/bin/bitcoin-core-24.1/
 [bitcoin core 25.0rc2]: https://bitcoincore.org/bin/bitcoin-core-25.0/
-[linus post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
+[linus post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
 [lg paper]: https://zerosync.org/zerosync.pdf
 [news128 bolts803]: /en/newsletters/2020/12/16/#bolts-803
 [news247 rgb]: /fr/newsletters/2023/04/19/#mise-a-jour-rgb

@@ -189,7 +189,7 @@ _ scriptPubKey
 [cl upgrade]: https://github.com/ElementsProject/lightning/releases/tag/v0.7.0
 [lopp timestamp]: https://medium.com/@lopp/bitcoin-timestamp-security-8dcfc3914da6
 [friedenbach proposal]: http://freico.in/forward-blocks-scalingbitcoin-paper.pdf
-[bitcoin-dev merkle tree]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016091.html
+[bitcoin-dev merkle tree]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016091.html
 [CVE-2013-2292 description]: https://bitcointalk.org/?topic=140078
 [4 july fork]: https://en.bitcoin.it/wiki/July_2015_chain_forks
 [CVE-2017-12842 description]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/

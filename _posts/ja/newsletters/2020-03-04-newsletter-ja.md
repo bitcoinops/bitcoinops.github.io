@@ -62,9 +62,9 @@ lang: ja
 [bip-wtxid-relay]: https://github.com/sdaftuar/bips/blob/2020-02-wtxid-relay/bip-wtxid-relay.mediawiki
 [news83 safety]: /ja/newsletters/2020/02/05/#schnorr
 [news83 tiebreaker]: /ja/newsletters/2020/02/05/#x-pubkey
-[wuille update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
-[daftuar wtxid]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017648.html
-[snigirev nonce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017655.html
+[wuille update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
+[daftuar wtxid]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017648.html
+[snigirev nonce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017655.html
 [sign to contract]: https://www.wpsoftware.net/andrew/secrets/slides.pdf
 [secp s2c]: https://github.com/bitcoin-core/secp256k1/pull/589
 [secp nonce]: https://github.com/bitcoin-core/secp256k1/pull/590

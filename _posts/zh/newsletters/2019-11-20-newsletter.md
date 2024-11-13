@@ -45,6 +45,6 @@ lang: zh
 {% include linkers/issues.md issues="16442,3649,17437,3223,3186,1209,1153,17449" %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 [lnd 0.8.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.8.1-beta
-[bishop migration]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002335.html
+[bishop migration]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002335.html
 [bitfinex bech32 blog]: https://www.bitfinex.com/posts/427
 [wasabi bitcoin core bundle]: https://github.com/zkSNACKs/WalletWasabi/pull/2495

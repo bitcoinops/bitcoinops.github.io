@@ -23,7 +23,7 @@ primary_sources:
       link: https://github.com/bitcoin/bitcoin/pull/2340
 
     - title: Anti-fee-sniping protection with nSequence in taproot transactions
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -195,6 +195,6 @@ development.
 {% include references.md %}
 {% include linkers/issues.md issues="2340" %}
 [csb]: /en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction
-[belcher post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
+[belcher post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
 [news18 lnd afs]: /en/newsletters/2018/10/23/#lnd-1978
 [news84 cl afs]: /en/newsletters/2020/02/12/#c-lightning-3465

@@ -83,8 +83,8 @@ lang: zh
 [news74 lnd3739]: /zh/newsletters/2019/11/27/#lnd-3739
 [news76 lnd3655]: /zh/newsletters/2019/12/11/#lnd-3655
 [news79 lnd3814]: /zh/newsletters/2020/01/08/#lnd-3814
-[teinturier post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002435.html
-[towns layered commitments]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002448.html
+[teinturier post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002435.html
+[towns layered commitments]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002448.html
 [elliptic curve]: https://en.bitcoin.it/wiki/Secp256k1
 [news48 output commitments]: /zh/newsletters/2019/05/29/#提议的交易输出承诺
 [bolt4 privacy leak]: /zh/newsletters/2019/08/28/#bolts-608

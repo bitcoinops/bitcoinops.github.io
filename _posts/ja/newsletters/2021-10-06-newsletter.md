@@ -135,10 +135,10 @@ Taprootの準備に関する情報や、新しいリリースおよびリリー�
 {% include linkers/issues.md issues="416,20591,22722,17526,23061,23065,4806,1900,1065,894,5699,5366,563,644,376" %}
 [news165 waste]: /ja/newsletters/2021/09/08/#bitcoin-core-22009
 [srd review club]: https://bitcoincore.reviews/17526
-[rubin-law iids]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019470.html
+[rubin-law iids]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019470.html
 [law iids]: https://github.com/JohnLaw2/btc-iids/raw/main/iids14.pdf
-[towns iids]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019471.html
+[towns iids]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019471.html
 [law nosim]: https://github.com/JohnLaw2/btc-iids/blob/main/response_to_towns_20210918_113740.txt
-[CVE-2021-41593]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
+[CVE-2021-41593]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
 [lnd 0.13.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.3-beta
 [series preparing for taproot]: /ja/preparing-for-taproot/

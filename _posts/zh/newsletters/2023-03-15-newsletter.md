@@ -35,5 +35,5 @@ lang: zh
 [lnd v0.16.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc3
 [libsecp256k1 0.3.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.3.0
 [core lightning v23.02.2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02.2
-[kim utreexo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021515.html
+[kim utreexo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021515.html
 [assumeutxo project]: https://github.com/bitcoin/bitcoin/projects/11

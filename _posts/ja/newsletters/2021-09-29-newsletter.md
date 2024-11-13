@@ -129,9 +129,9 @@ Taprootアクティベーションの準備のためのアイディア、
 {% include linkers/issues.md issues="12677,1942,5101,2842" %}
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [kohen post]: https://mailmanlists.org/pipermail/dlc-dev/2021-September/000075.html
-[ghost43 post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003229.html
-[jager post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html
-[osuntokun reply]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003252.html
+[ghost43 post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003229.html
+[jager post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html
+[osuntokun reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003252.html
 [se 109747]: https://bitcoin.stackexchange.com/questions/109747/how-does-op-return-burn-coins/109748#109748
 [transactionfee.info]: https://transactionfee.info/
 [news166 experiments]: /ja/newsletters/2021/09/15/#eclair-1930

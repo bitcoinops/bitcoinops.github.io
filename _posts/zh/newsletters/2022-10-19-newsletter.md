@@ -110,26 +110,26 @@ the "full RBF" term.  -->
 {% include linkers/issues.md v=2 issues="23549,25412,25667,2448,6956,6972,7004,1625,26323,1372,1378,26265" %}
 [bitcoin core 24.0 rc2]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
-[superset rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-March/002240.html
+[superset rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-March/002240.html
 [brqgoo]: https://twitter.com/brqgoo/status/1579216353780957185
 [big msig]: https://blockstream.info/tx/7393096d97bfee8660f4100ffd61874d62f9a65de9fb6acf740c4c386990ef73?expand
 [news65 tapscript limits]: /en/newsletters/2019/09/25/#tapscript-resource-limits
 [lnd 0.15.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.2-beta
 [news221 lnd]: /zh/newsletters/2022/10/12/#lnd-v0-15-2-beta
 [btcd 0.23.2]: https://github.com/btcsuite/btcd/releases/tag/v0.23.2
-[verloren limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020993.html
-[sanders limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020996.html
+[verloren limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020993.html
+[sanders limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020996.html
 [news205 rbf]: /zh/newsletters/2022/06/22/#full-replace-by-fee
 [news208 rbf]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
-[sne rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020980.html
-[towns rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021017.html
-[light ml ru]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020998.html
+[sne rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020980.html
+[towns rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021017.html
+[light ml ru]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020998.html
 [light ru]: https://bitcoinrollups.org/
-[nick musig2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021000.html
-[sanders min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020995.html
+[nick musig2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021000.html
+[sanders min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020995.html
 [cve-2017-12842]: /en/topics/cve/#CVE-2017-12842
 [news99 min]: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
-[dhruv 324]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020985.html
+[dhruv 324]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/020985.html
 [bip324.com]: https://bip324.com
 [bip324 changes]: https://bip324.com/sections/code-review/
 [news163 pr]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion

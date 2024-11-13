@@ -140,10 +140,10 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [net]: https://github.com/bitcoin/bitcoin/blob/master/src/net.h
 [net_processing]: https://github.com/bitcoin/bitcoin/blob/master/src/net_processing.h
 [news195 taro]: /ja/newsletters/2022/04/13/#transferable-token-scheme
-[osuntokun bips]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021938.html
-[osuntokun blip post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004089.html
+[osuntokun bips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021938.html
+[osuntokun blip post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004089.html
 [osuntokun blip]: https://github.com/lightning/blips/pull/29
 [review club 28165]: https://bitcoincore.reviews/28165
-[sanders post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004088.html
+[sanders post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004088.html
 [sanders ptlc]: https://gist.github.com/instagibbs/1d02d0251640c250ceea1c66665ec163
 [v2 p2p tracking pr]: https://github.com/bitcoin/bitcoin/issues/27634

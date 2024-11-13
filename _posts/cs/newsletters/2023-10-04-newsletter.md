@@ -153,14 +153,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2756,2486,2609,28" %}
 [LND v0.17.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta
-[teinturier remote post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004084.html
+[teinturier remote post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004084.html
 [news210 commando]: /en/newsletters/2022/07/27/#core-lightning-5370
-[van dam pss post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004114.html
+[van dam pss post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004114.html
 [pss plugin]: https://github.com/gijswijs/plugins/tree/master/pss
 [pss research]: https://eprint.iacr.org/2023/1360
-[zmnscpxj sidepools1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004099.html
+[zmnscpxj sidepools1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004099.html
 [peerswap]: https://github.com/ElementsProject/peerswap
 [duplex payment channels]: https://www.tik.ee.ethz.ch/file/716b955c130e6c703fac336ea17b1670/duplex-micropayment-channels.pdf
-[zmnscpxj sidepools2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004108.html
+[zmnscpxj sidepools2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-September/004108.html
 [lnd rn]: https://github.com/lightningnetwork/lnd/blob/master/docs/release-notes/release-notes-0.17.0.md
 [lnd 17 blog]: https://lightning.engineering/posts/2023-10-03-lnd-0.17-launch/

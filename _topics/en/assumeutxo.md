@@ -79,7 +79,7 @@ see_also:
     link: https://github.com/bitcoin/bitcoin/issues/15605
 
   - title: "[bitcoin-dev] assumeutxo and UTXO snapshots"
-    link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
+    link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
 ---
 Embedded in the code of the node would be a hash of the set of all
 spendable bitcoins and the conditions necessary to spend them (the
