@@ -48,7 +48,7 @@ les frais][topic cpfp] qui dépense immédiatement la sortie dust est connue du 
   a0link="https://bitcoincore.reviews/30239#l-27"
 
   q1="Comment la poussière peut-elle être problématique ?"
-  a1="Les sorties dust (ou non économiques) valent moins que les frais nécessaires pour les dépenser.
+  a1="Les sorties dust (ou non économiques) valent moins que les frais nécessaires pour les dépenser."
   Puisqu'elles peuvent être dépensées, elles ne peuvent pas être élaguées de l'ensemble UTXO. Comme
   leur dépense est non économique, elles restent souvent non dépensées, augmentant la taille de
   l'ensemble UTXO. Un ensemble UTXO plus grand augmente les exigences en ressources pour les nœuds.
