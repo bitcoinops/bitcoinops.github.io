@@ -113,7 +113,7 @@ inquisition repo], et [BINANAs][binana repo]._
 - [LDK #3207][] introduit le support pour inclure des demandes de facture dans les [messages
   oignon][topic onion messages] des [paiements asynchrones][topic async payments] lors du paiement de
   factures statiques [BOLT12][topic offers] en tant qu'expéditeur toujours en ligne. Ce point ne figurait
-  pas dans la PR couverte par le bulletin [#321][news321invreq]. L'inclusion des demandes de facture
+  pas dans la PR couverte par le bulletin [#321][news321 invreq]. L'inclusion des demandes de facture
   dans les oignons de paiement s'étend également aux nouvelles tentatives.
   Voir le Bulletin [#321][news321 retry].
 
