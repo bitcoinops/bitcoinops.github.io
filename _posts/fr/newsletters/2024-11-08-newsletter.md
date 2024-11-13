@@ -80,6 +80,8 @@ les frais][topic cpfp] qui dépense immédiatement la sortie dust est connue du 
   relay feerates]."
   a4link="https://bitcoincore.reviews/30239#l-59"
 
+%}
+
 ## Mises à jour et versions candidates
 
 _Nouvelles versions et candidats à la version pour les projets d'infrastructure Bitcoin populaires.
