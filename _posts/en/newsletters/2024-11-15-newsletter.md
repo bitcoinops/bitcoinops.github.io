@@ -109,13 +109,36 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #30592][] Remove mempoolfullrbf
+- [Bitcoin Core #30592][] removes the `mempoolfullrbf` setting option that
+  allows users to disable [full RBF][topic rbf] and revert to opt-in RBF. Now
+  that full RBF is widely adopted, there's no benefit to disabling it, so the
+  option has been removed. Full RBF was recently enabled by default (see
+  Newsletter [#315][news315 fullrbf]).
 
-- [Bitcoin Core #30930][] netinfo: add peer services column and outbound-only option
+- [Bitcoin Core #30930][] adds a peer services column to the `netinfo` command
+  and an `outonly` filter option to display only outgoing connections. The new
+  peer services column lists the services supported by each peer, including full
+  blockchain data (n), [bloom filters][topic transaction bloom filtering] (b),
+  [segwit][topic segwit] (w), [compact filters][topic compact block filters]
+  (c), limited blockchain data up to the last 288 blocks (l), [version 2 p2p
+  transport protocol][topic v2 p2p transport] (2). Some help text updates are
+  also made.
 
-- [LDK #3283][] Support paying directly to Human Readable Names using bLIP 32
+- [LDK #3283][] implements [BIP353][] by adding support for payments to DNS-based
+  human-readable Bitcoin payment instructions that resolve to [BOLT12][]
+  [offers][topic offers] as specified in [BLIP32][]. A new
+  `pay_for_offer_from_human_readable_name` method is added to `ChannelManager` to
+  allow users to initiate payments directly to HRNs. The PR also introduces an
+  `AwaitingOffer` payment state to handle pending resolutions, and a new
+  `lightning-dns-resolver` crate to handle [BLIP32][] queries. See Newsletter
+  [#324][news324 blip32] for previous work on this.
 
-- [LND #7762][] lnrpc: return meaningful response instead of empty one
+- [LND #7762][] updates several `lncli` RPC commands to respond with status
+  messages instead of returning empty responses, to more clearly indicate that
+  the command was successfully executed. The affected commands include `wallet
+  releaseoutput`, `wallet accounts import-pubkey`, `wallet labeltx`,
+  `sendcustom`, `connect`, `disconnect`, `stop`, `deletepayments`,
+  `abandonchannel`, `restorechanbackup`, and `verifychanbackup`.
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -128,3 +151,5 @@ repo], and [BINANAs][binana repo]._
 [nt censor]: https://drops.dagstuhl.de/storage/00lipics/lipics-vol316-aft2024/LIPIcs.AFT.2024.12/LIPIcs.AFT.2024.12.pdf
 [btcpay server 2.0.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.3
 [btcpay server 1.13.7]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.13.7
+[news315 fullrbf]: /en/newsletters/2024/08/09/#bitcoin-core-30493
+[news324 blip32]: /en/newsletters/2024/10/11/#ldk-3179
