@@ -21,7 +21,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   de Bitcoin Core 25.0 et antérieures étaient susceptibles à une réponse inappropriée du protocole P2P
   qui retarderait une demande de bloc jusqu'à 10 minutes. La solution a été de permettre que les blocs "puissent être demandés simultanément jusqu'à 3 pairs de blocs compacts à large bande 
 passante , dont l'un doit être une connexion sortante." Les versions 25.1 et ultérieures incluent le
-  correctif.
+correctif.
 
 ## Bitcoin Core PR Review Club
 
