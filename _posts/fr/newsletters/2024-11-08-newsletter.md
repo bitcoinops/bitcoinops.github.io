@@ -20,7 +20,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   #306][news306 disclosure]). Le [rapport de vulnérabilité détaillé][stall vuln] note que les versions
   de Bitcoin Core 25.0 et antérieures étaient susceptibles à une réponse inappropriée du protocole P2P
   qui retarderait une demande de bloc jusqu'à 10 minutes. La solution a été de permettre que les blocs
-  "puissent être demandés simultanément jusqu'à 3 pairs de blocs compacts à large bande 
+"puissent être demandés simultanément jusqu'à 3 pairs de blocs compacts à large bande 
 passante , dont l'un doit être une connexion sortante." Les versions 25.1 et ultérieures incluent le
   correctif.
 
