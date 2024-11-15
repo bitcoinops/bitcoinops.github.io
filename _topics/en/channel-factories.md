@@ -61,6 +61,9 @@ optech_mentions:
   - title: "SuperScalar timeout tree channel factory proposal"
     url: /en/newsletters/2024/11/01/#timeout-tree-channel-factories
 
+  - title: "OPR protocol proposal to improve efficiency of channel factories"
+    url: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"

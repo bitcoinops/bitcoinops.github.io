@@ -198,6 +198,9 @@ optech_mentions:
   - title: "Bitcoin Core #30493 enables full RBF by default"
     url: /en/newsletters/2024/08/09/#bitcoin-core-30493
 
+  - title: "Bitcoin Core #30592 removes the `mempoolfullrbf` setting"
+    url: /en/newsletters/2024/11/15/#bitcoin-core-30592
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction pinning
