@@ -10,7 +10,7 @@ lang: fr
 Le bulletin de cette semaine résume un nouveau protocole de résolution de paiement offchain et
 inclut des liens vers des articles sur le potentiel de suivi et de censure des paiements LN au
 niveau de la couche IP. Sont également inclus les annonces de nouvelles mises à jour et versions candidates
-(incluant des mises à jour critiques de sécurité pour BTCPay Server) et des descriptions des changements
+(incluant des mises à jour critiques de sécurité pour BTCPay Server) et des descriptions de changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
@@ -76,9 +76,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Mises à jour et versions candidates
 
-_Nouvelles versions et candidats à la version pour les projets d'infrastructure Bitcoin populaires.
-Veuillez envisager de mettre à jour vers les nouvelles versions ou d'aider à tester les candidats à
-la version._
+_Nouvelles versions et version  candidates pour les projets d'infrastructure Bitcoin populaires.
+Veuillez envisager de mettre à jour vers les nouvelles versions ou d'aider à tester les versions candidates._
 
 - [BTCPay Server 2.0.3][] et [1.13.7][btcpay server 1.13.7] sont des versions de maintenance qui
   incluent des corrections critiques de sécurité pour les utilisateurs de certains plugins et
@@ -100,7 +99,7 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #30930][] ajoute une colonne de services pairs à la commande `netinfo` et une option
   de filtre `outonly` pour afficher uniquement les connexions sortantes. La nouvelle colonne de
-  services pairs liste les services pris en charge par chaque pair, y compris le full
+  services de pairs liste les services pris en charge par chaque pair, y compris le full
   données blockchain (n), [filtres bloom][topic transaction bloom filtering] (b), [segwit][topic
   segwit] (w), [filtres compacts][topic compact block filters]
   (c), données blockchain limitées aux derniers 288 blocs (l), [protocole de transport p2p version
