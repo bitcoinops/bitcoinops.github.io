@@ -48,19 +48,22 @@ see_also:
 
   - title: Swap-in potentiam for Phoenix
     link: https://gist.github.com/t-bast/5fd89979a8088b99d0b95c124902aa56
+  
+  - title: Swaproot
+    link: https://acinq.co/blog/phoenix-swaproot
 
   - title: Payjoin-in-Potentiam
     link: https://delvingbitcoin.org/t/payjoin-in-potentiam-externally-fund-an-lsp-channel-open-with-one-transaction/749
 
 ---
-SIP is a [submarine swap][topic submarine swaps]
-mechanism that differs from typical purely HTLC-based submarine swaps by
-allowing for a pre-commital stage. This allows for reusable swap addresses and
-more flexibility with onchain funds.
+Swap-in potentiam (SIP) differs from typical HTLC-based swaps by
+allowing for a pre-commital stage. This allows for; reusable swap addresses,
+immediate transfers to lightning, and reduced trust requirements compared to
+0-conf channels.
 
 In this scheme, the reusable swap address is a contract between Alice and Bob
-that allows for two spend paths; Alice and Bob cosign, or timeout before Alice
-can spend unilaterally.
+that allows for two spend paths; Alice and Bob cosign, or Alice
+can spend unilaterally after a timeout.
 
 Once the swap address is funded and confirmed, Alice can choose one of the
 following options; swap the funds into a new or existing lightning network
@@ -69,8 +72,6 @@ the help of Bob. Alice also has the third option of waiting for the recovery
 timeout if Bob is offline or uncooperative.
 
 SIP is primarily geared towards mobile users who may go offline for extended
-periods. The main trick of SIP is splitting the confirmation
-requirements between a pre-commital address and a committed address, allowing
-for the immediate usage of funds when the mobile user comes online.
+periods, and a variation called swaproot has been implemented in Pheonix wallet.
 
 {% include references.md %}
