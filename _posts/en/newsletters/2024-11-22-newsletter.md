@@ -96,7 +96,21 @@ and popular Bitcoin infrastructure software.
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Spark layer two protocol announced:**
+  [Spark][spark website] is an offchain, [statechain][topic statechains]-like
+  protocol that supports the Lightning Network.
+
+- **Unify wallet announced:**
+  [Unify][unify github] is a [BIP78][]-compatible [payjoin][topic payjoin]
+  wallet that uses Bitcoin Core and coordinates [PSBTs][topic psbt] over nostr.
+
+- **bitcoinutils.dev launches:**
+  The [bitcoinutils.dev][] website provides a variety of Bitcoin utilities
+  including script debugging as well as various encoding and hash functions.
+
+- **Great Restored Script Interpreter available:**
+  The [Great Restored Script Interpreter][greatrsi github] is an experimental
+  interpreter for the [Great Script Restoration][gsr youtube] proposal.
 
 ## Notable code and documentation changes
 
@@ -192,3 +206,8 @@ repo], and [BINANAs][binana repo]._
 [news323 offers]: /en/newsletters/2024/10/04/#bolts-798
 [news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
 [news328 ephemeral]: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
+[spark website]: https://www.spark.info/
+[unify github]: https://github.com/Fonta1n3/Unify-Wallet
+[bitcoinutils.dev]: https://bitcoinutils.dev/
+[greatrsi github]: https://github.com/jonasnick/GreatRSI
+[gsr youtube]: https://www.youtube.com/watch?v=rSp8918HLnA
