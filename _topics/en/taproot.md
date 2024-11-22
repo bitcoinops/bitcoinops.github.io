@@ -245,6 +245,9 @@ optech_mentions:
   - title: "Rust Bitcoin #2652 begins returning the internal taproot key when signing for a taproot input"
     url: /en/newsletters/2024/04/10/#rust-bitcoin-2652
 
+  - title: "Core Lightning #7800 sets P2TR as the default script for anchor output spends and unilateral closes"
+    url: /en/newsletters/2024/11/22/#core-lightning-7800
+
 ## Optional
 see_also:
   - title: MAST

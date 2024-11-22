@@ -82,6 +82,9 @@ optech_mentions:
   - title: "Bitcoin PR Review Club about ephemeral dust to improve P2A usability"
     url: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
 
+  - title: "Bitcoin Core #30239 makes ephemeral dust outputs standard, allowing zero-fee transaction relay"
+    url: /en/newsletters/2024/11/22/#bitcoin-core-30239
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: V3 Transaction Relay
