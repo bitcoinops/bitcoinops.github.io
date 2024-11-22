@@ -119,7 +119,7 @@ inquisition repo], et [BINANAs][binana repo]._
 {% include linkers/issues.md v=2 issues="3360,3207" %}
 [news306 disclosure]: /fr/newsletters/2024/06/07/#divulgation-a-venir-de-vulnerabilites-affectant-les-anciennes-versions-de-bitcoin-core
 [stall vuln]: https://bitcoincore.org/en/2024/11/05/cb-stall-hindering-propagation/
-[poinsot stall]: mailto:uJpfg8UeMOfVUATG4YRiGmyz5MALtZq68FCBXA6PT-BNstodivpqQfDxD1JAv5Qny_vuNr-A1m8jIDNHQLhAQt8hj8Ee9OT6ZFE5Z16O97A=@protonmail.com
+[poinsot stall]: https://mailing-list.bitcoindevs.xyz/bitcoindev/uJpfg8UeMOfVUATG4YRiGmyz5MALtZq68FCBXA6PT-BNstodivpqQfDxD1JAv5Qny_vuNr-A1m8jIDNHQLhAQt8hj8Ee9OT6ZFE5Z16O97A=@protonmail.com/
 [bitcoin core 27.2]: https://bitcoincore.org/en/2024/11/04/release-27.2/
 [28.0]: https://bitcoincore.org/en/2024/10/02/release-28.0/
 [libsecp256k1 0.6.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.6.0
