@@ -25,7 +25,7 @@ infrastructure software.
   re-requesting a block for up to 10 minutes.  The solution was to allow
   blocks to "be requested concurrently from up to 3 high-bandwidth
   compact block peers, one of which is required to be an outbound
-  connection." Versions 25.1 and later include the fix.
+  connection." Versions 25.1 and later include the fix. {% assign timestamp="0:53" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -42,10 +42,9 @@ contracting schemes including those used by Lightning Network, [Ark][topic ark],
 Timeout Trees, and other constructs with large pre-signed trees or other
 large-N party smart contracts.
 
-With the ephemeral dust policy changes, zero-fee transactions with a
-[dust][topic uneconomical outputs] output are allowed in the mempool if
+With the ephemeral dust policy changes, zero-fee transactions with a [dust][topic uneconomical outputs] output are allowed in the mempool if
 a valid [fee-paying child][topic cpfp] transaction that immediately spends the dust
-output is known to the node.
+output is known to the node. {% assign timestamp="6:54" %}
 
 {% include functions/details-list.md
   q0="Is dust restricted by consensus? Policy? Both?"
@@ -99,12 +98,12 @@ release candidates._
 - [Bitcoin Core 27.2][] is a maintenance update for the previous release
   series containing bug fixes.  Any users who will not soon upgrade to
   the latest version, [28.0][], should consider updating at least to
-  this new maintenance release.
+  this new maintenance release. {% assign timestamp="14:55" %}
 
 - [Libsecp256k1 0.6.0][] is a release of this library of Bitcoin-related
   cryptographic operations.  "This release adds a [MuSig2][topic musig]
   module, adds a significantly more robust method to clear secrets from
-  the stack, and removes the unused `secp256k1_scratch_space` functions."
+  the stack, and removes the unused `secp256k1_scratch_space` functions." {% assign timestamp="15:40" %}
 
 ## Notable code and documentation changes
 
@@ -120,14 +119,14 @@ repo], and [BINANAs][binana repo]._
 - [LDK #3360][] adds rebroadcasting of `channel_announcement` messages every six
   blocks for one week after the public channel is confirmed. This removes the
   dependency on peers for rebroadcast and ensures that channels are always
-  visible to the network.
+  visible to the network. {% assign timestamp="17:40" %}
 
 - [LDK #3207][] introduces support for including invoice requests in the [async
   payments’][topic async payments] [onion message][topic onion messages] when
   paying static [BOLT12][topic offers] invoices as an always online sender. This
   was previously missing from the PR covered in Newsletter [#321][news321
   invreq]. The inclusion of invoice requests in payment onions also extends to
-  retries, see Newsletter [#321][news321 retry].
+  retries, see Newsletter [#321][news321 retry]. {% assign timestamp="18:45" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
