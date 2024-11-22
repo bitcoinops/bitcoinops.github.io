@@ -64,6 +64,9 @@ optech_mentions:
   - title: "OPR protocol proposal to improve efficiency of channel factories"
     url: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
 
+  - title: "LN specification changes proposed to allow pluggable channel factories"
+    url: /en/newsletters/2024/11/22/#pluggable-channel-factories
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"
