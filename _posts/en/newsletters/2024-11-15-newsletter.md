@@ -67,7 +67,7 @@ infrastructure software.
   [BOLT2][] _channel reserve_ that prevents them from spending more than
   99% of channel balance.
 
-  Discussion was ongoing at the time of writing.
+  Discussion was ongoing at the time of writing. {% assign timestamp="0:21" %}
 
 - **Papers about IP-layer censorship of LN payments:** Charmaine Ndolo
   [posted][ndolo censor] to Delving Bitcoin summaries of [two][atv
@@ -85,7 +85,7 @@ infrastructure software.
   succeeding, or even from failing quickly---preventing immediate
   retrying and potentially forcing channels to be closed onchain.
 
-  No replies have been posted as of this writing.
+  No replies have been posted as of this writing. {% assign timestamp="3:10" %}
 
 ## Releases and release candidates
 
@@ -96,7 +96,7 @@ release candidates._
 - [BTCPay Server 2.0.3][] and [1.13.7][btcpay server 1.13.7] are
   maintenance releases that include security critical fixes for users of
   certain plugins and features.  Please see the linked release notes for
-  details.
+  details. {% assign timestamp="6:21" %}
 
 ## Notable code and documentation changes
 
@@ -113,7 +113,7 @@ repo], and [BINANAs][binana repo]._
   allows users to disable [full RBF][topic rbf] and revert to opt-in RBF. Now
   that full RBF is widely adopted, there's no benefit to disabling it, so the
   option has been removed. Full RBF was recently enabled by default (see
-  Newsletter [#315][news315 fullrbf]).
+  Newsletter [#315][news315 fullrbf]). {% assign timestamp="8:29" %}
 
 - [Bitcoin Core #30930][] adds a peer services column to the `netinfo` command
   and an `outonly` filter option to display only outgoing connections. The new
@@ -122,7 +122,7 @@ repo], and [BINANAs][binana repo]._
   [segwit][topic segwit] (w), [compact filters][topic compact block filters]
   (c), limited blockchain data up to the last 288 blocks (l), [version 2 p2p
   transport protocol][topic v2 p2p transport] (2). Some help text updates are
-  also made.
+  also made. {% assign timestamp="9:46" %}
 
 - [LDK #3283][] implements [BIP353][] by adding support for payments to DNS-based
   human-readable Bitcoin payment instructions that resolve to [BOLT12][]
@@ -131,14 +131,14 @@ repo], and [BINANAs][binana repo]._
   allow users to initiate payments directly to HRNs. The PR also introduces an
   `AwaitingOffer` payment state to handle pending resolutions, and a new
   `lightning-dns-resolver` crate to handle [BLIP32][] queries. See Newsletter
-  [#324][news324 blip32] for previous work on this.
+  [#324][news324 blip32] for previous work on this. {% assign timestamp="11:35" %}
 
 - [LND #7762][] updates several `lncli` RPC commands to respond with status
   messages instead of returning empty responses, to more clearly indicate that
   the command was successfully executed. The affected commands include `wallet
   releaseoutput`, `wallet accounts import-pubkey`, `wallet labeltx`,
   `sendcustom`, `connect`, `disconnect`, `stop`, `deletepayments`,
-  `abandonchannel`, `restorechanbackup`, and `verifychanbackup`.
+  `abandonchannel`, `restorechanbackup`, and `verifychanbackup`. {% assign timestamp="12:31" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
