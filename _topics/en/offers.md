@@ -126,6 +126,9 @@ optech_mentions:
   - title: "BOLTs #798 merges the offers protocol specification which introduces BOLT12"
     url: /en/newsletters/2024/10/04/#bolts-798
 
+  - title: "Core Lightning #7833 enables the offers protocol by default"
+    url: /en/newsletters/2024/11/22/#core-lightning-7833
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths
