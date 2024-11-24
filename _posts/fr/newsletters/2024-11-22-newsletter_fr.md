@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume une proposition de modification de la spécification de LN pour
-permettre des usines de canaux modulables, renvoie à un rapport et à un nouveau site web pour
+permettre des channel factories modulables, renvoie à un rapport et à un nouveau site web pour
 examiner les transactions sur le signet par défaut utilisant des propositions de soft forks, décrit une
 mise à jour de la proposition de soft fork multi-parties LNHANCE, et discute d'un document sur les
 covenants basés sur la rectification plutôt que sur des changements de consensus. Sont également inclus nos
@@ -17,22 +17,22 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Usines de canaux modulables :** ZmnSCPxj a [posté][zmnscpxj plug] sur Delving Bitcoin une
+- **Channel factories modulables :** ZmnSCPxj a [posté][zmnscpxj plug] sur Delving Bitcoin une
   proposition pour apporter un petit ensemble de modifications à la spécification [BOLT][bolts repo]
   afin de permettre aux logiciels LN existants de gérer des canaux de paiement [LN-Penalty][topic
-  ln-penalty] au sein d'une [usine de canaux][topic channel factories] en utilisant un plugin
-  logiciel. Les modifications de spécification permettraient au gestionnaire de l'usine (par exemple,
+  ln-penalty] au sein d'une [channel factory][topic channel factories] en utilisant un plugin
+  logiciel. Les modifications de spécification permettraient au gestionnaire de la factory (par exemple,
   un fournisseur de services Lightning, LSP) d'envoyer des messages à un nœud LN qui seraient transmis
-  à un plugin d'usine local. De nombreuses opérations d'usine seraient similaires aux opérations de
+  à un plugin de factory local. De nombreuses opérations seraient similaires aux opérations de
   [splicing][topic splicing], permettant au plugin de réutiliser une quantité significative de code.
-  Les opérations de canal LN-Penalty au sein d'une usine seraient similaires aux [canaux
+  Les opérations de canal LN-Penalty au sein d'une factory seraient similaires aux [canaux
   zero-conf][topic zero-conf channels], ils pourraient donc également réutiliser le code existant.
 
-  La conception de ZmnSCPxj est axée sur les usines de style SuperScalar (voir le [Bulletin
-  #327][news327 superscalar]) mais serait probablement compatible avec d'autres styles d'usine (et
+  La conception de ZmnSCPxj se concentre sur les factories de style SuperScalar (voir le [Bulletin
+  #327][news327 superscalar]) mais serait probablement compatible avec d'autres styles de factory (et
   possiblement d'autres protocoles de contrat multiparte). Rene Pickhardt a [répondu][pickhardt plug]
   pour demander des modifications de spécification supplémentaires qui pourraient permettre
-  d'[annoncer][topic channel announcements] les canaux au sein des usines, mais ZmnSCPxj a
+  d'[annoncer][topic channel announcements] les canaux au sein des factories, mais ZmnSCPxj a
   [dit][zmnscpxj plug2] qu'il n'avait délibérément pas considéré ces aspects dans sa conception afin
   de permettre à la modification de spécification d'être adoptée le plus rapidement possible.
 
@@ -69,7 +69,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   comment les [covenants][topic covenants] peuvent être créés facilement sans changements de
   consensus, bien que les dépenses de ces covenants nécessiteraient des transactions non standard et
   des millions (ou milliards) de dollars en matériel spécialisé et en électricité. Heilman note qu'une
-  application du travail est de permettre aux utilisateurs aujourd'hui d'inclure facilement un chemin
+  application du travail permet aujourd'hui aux utilisateurs d'inclure facilement un chemin
   de dépense taproot de secours qui peut être utilisé en toute sécurité si une [résistance
   quantique][topic quantum resistance] est soudainement nécessaire et que les opérations de signature
   à courbe elliptique sur Bitcoin sont désactivées.
@@ -130,7 +130,7 @@ repo], [Bitcoin Inquisition][bitcoin inquisition repo] et [BINANAs][binana repo]
 - [Core Lightning #7799][] introduit le plugin `xpay` pour envoyer des paiements en construisant des
   [paiements multipath][topic multipath payments] optimaux, en utilisant le plugin `askrene` (voir
   le [Bulletin #316][news316 askrene]) et la commande RPC `injectpaymentonion`. Il prend en charge le
-  paiement des factures [BOLT11][] et [BOLT12][topic offers], la définition des durées de réessai et
+  paiement des factures [BOLT11][] et [BOLT12][topic offers], la définition des durées de nouvelle tentative et
   des délais de paiement, l'ajout de données de routage à travers les couches, et la réalisation de
   paiements partiels pour des contributions multi-parties sur une seule facture. Ce plugin est plus
   simple et plus sophistiqué que l'ancien plugin ‘pay’, mais n'a pas toutes ses fonctionnalités.
