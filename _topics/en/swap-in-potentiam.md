@@ -20,8 +20,8 @@ categories:
 excerpt: >
   **Swap-in-Potentiam (SIP)** is a protocol that facilitates the immediate transfer of confirmed
   on-chain Bitcoin to the Lightning Network. It reduces trust requirements compared to other
-  instant channel opening methods like 0-conf channels by pre-committing to a Lightning Service
-  Provider (LSP) and incorporating a timeout mechanism for unilateral access.
+  instant channel opening methods like 0-conf channels by temporarily committing to co-ownership with a Lightning Service
+  Provider (LSP) and delaying unilateral access per a timeout.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
