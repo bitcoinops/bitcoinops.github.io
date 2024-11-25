@@ -72,6 +72,6 @@ the help of Bob. Alice also has the third option of waiting for the recovery
 timeout if Bob is offline or uncooperative.
 
 SIP is primarily geared towards mobile users who may go offline for extended
-periods, and a variation called swaproot has been implemented in Pheonix wallet.
+periods, and a variation called swaproot has been implemented in Phoenix wallet.
 
 {% include references.md %}
