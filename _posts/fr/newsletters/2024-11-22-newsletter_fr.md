@@ -180,7 +180,7 @@ repo], [Bitcoin Inquisition][bitcoin inquisition repo] et [BINANAs][binana repo]
 [inquisition.observer]: https://inquisition.observer/
 [news323 offers]: /fr/newsletters/2024/10/04/#bolts-798
 [news316 askrene]: /fr/newsletters/2024/08/16/#core-lightning-7517
-[news328 ephemeral]: /en/newsletters/2024/11/08/#bitcoin-core-pr-review-club
+[news328 ephemeral]: /fr/newsletters/2024/11/08/#bitcoin-core-pr-review-club
 [spark website]: https://www.spark.info/
 [unify github]: https://github.com/Fonta1n3/Unify-Wallet
 [bitcoinutils.dev]: https://bitcoinutils.dev/
