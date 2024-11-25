@@ -80,12 +80,12 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="18991,19620,3909,1499,19031,19606,192" %}
 [lnd 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta.rc2
-[news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150
-[news95 ln atomicity]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
+[news69 signcheck rpc]: /zh/newsletters/2019/10/23/#c-lightning-3150
+[news95 ln atomicity]: /zh/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [myers anyprevout]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018069.html
 [zmnscpxj reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018071.html
 [corallo relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018072.html
-[news108 wtxid]: /en/newsletters/2020/07/29/#bitcoin-core-18044
+[news108 wtxid]: /zh/newsletters/2020/07/29/#bitcoin-core-18044
 [signature hash]: https://btcinformation.org/en/developer-guide#signature-hash-types
 [19031 single]: https://bitcoincore.reviews/19031#l-49
 [19031 fake]: https://bitcoincore.reviews/19031#l-88
