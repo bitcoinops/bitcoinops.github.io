@@ -44,6 +44,9 @@ optech_mentions:
   - title: Mercury Layer announced as an implementation of statechains using blind signing
     url: /en/newsletters/2024/01/24/#mercury-layer-announced
 
+  - title: "Spark statechain-like protocol announced"
+    url: /en/newsletters/2024/11/22/#spark-layer-two-protocol-announced
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

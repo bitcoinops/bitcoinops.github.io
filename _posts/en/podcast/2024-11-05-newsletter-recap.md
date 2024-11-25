@@ -2,8 +2,8 @@
 title: 'Bitcoin Optech Newsletter #327 Recap Podcast'
 permalink: /en/podcast/2024/11/05/
 reference: /en/newsletters/2024/11/01/
-name: 2024-11-29-recap
-slug: 2024-11-29-recap
+name: 2024-11-05-recap
+slug: 2024-11-05-recap
 type: podcast
 layout: podcast-episode
 lang: en

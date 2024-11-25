@@ -81,6 +81,9 @@ optech_mentions:
   - title: "LN-Symmetry research implementation with summary of initial results"
     url: /en/newsletters/2024/01/10/#ln-symmetry-research-implementation
 
+  - title: "Post and website examining LN-Symmetry testing on the default signet"
+    url: /en/newsletters/2024/11/22/#signet-activity-report
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
