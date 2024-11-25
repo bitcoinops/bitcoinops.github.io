@@ -16,13 +16,19 @@ topic-categories:
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
-#primary_sources:
-#    - title: Example
-#      link: https://example.com
+primary_sources:
+  - title: "Scaling Bitcoin with Inherited IDs, section 5.3: timeout-trees"
+    link: https://github.com/JohnLaw2/btc-iids/blob/main/iids14.pdf
+
+  - title: "Scaling Lightning With Simple Covenants, section 4.2: timeout-trees"
+    link: https://github.com/JohnLaw2/ln-scaling-covenants/blob/main/scalingcovenants_v1.3.pdf
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
 optech_mentions:
+  - title: "New timeout trees idea for minimizing onchain data when channel factory users become unresponsive"
+    url: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+
   - title: "Proposal for a managed joinpool protocol (Ark)"
     url: /en/newsletters/2023/05/31/#proposal-for-a-managed-joinpool-protocol
 
@@ -36,9 +42,9 @@ optech_mentions:
     url: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
 
 ## Optional.  Same format as "primary_sources" above
-# see_also:
-#   - title:
-#     link:
+see_also:
+  - title: "Ark, a protocol based on timeout trees"
+    link: topic ark
 
 ## Optional.  Force the display (true) or non-display (false) of stub
 ## topic notice.  Default is to display if the page.content is below a
@@ -87,14 +93,14 @@ that user.  Although no user can depend on this charity, it may be the
 common state of affairs for timeout trees run by established business
 that profit from repeat customers.
 
-Timeout trees can be created on Bitcoin today with no consensus changes
-required, although there are advantages in block space efficiency and
-reduced cooperative steps if a [covenant][topic covenants] mechanism is
-added to consensus.
-
-Optech first became aware of the concept now called _timeout trees_ with
-the publication of the original [Ark][topic ark] protocol.  The idea has
-seen notable development since then in the context of other protocols.
+Timeout trees were first described by developer John Law in a paper
+introducing the [inherited identifiers][news169 iids] soft fork
+proposal.  Law later [expanded][news279 ttcov] on the idea for other
+[covenant][topic covenants] proposals.  Other developers have described
+variations on timeout trees, including designs that require greater
+interaction between participants but no consensus changes.
 
 {% include references.md %}
 {% include linkers/issues.md issues="" %}
+[news169 iids]: /en/newsletters/2021/10/06/#proposal-for-transaction-heritage-identifiers
+[news279 ttcov]: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
