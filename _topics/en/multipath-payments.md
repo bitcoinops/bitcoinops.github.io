@@ -129,6 +129,9 @@ optech_mentions:
   - title: "Dynamic Payment Switching and Splitting (PSS) proposed for improved payment privacy"
     url: /en/newsletters/2023/10/04/#payment-splitting-and-switching
 
+  - title: "Core Lightning #7799 introduces the `xpay` plugin to send optimal multipath payments"
+    url: /en/newsletters/2024/11/22/#core-lightning-7799
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Atomic Multipath Payments (AMPs)
