@@ -102,20 +102,20 @@ versions ou d'aider à tester les versions candidates.*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28354,2468" %}
-[LND v0.17.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc2[briar compress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021924.html
+[LND v0.17.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc2[briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021924.html
 [compress spec]: https://github.com/TomBriar/bitcoin/blob/2023-05--tx-compression/doc/compressed_transactions.md
 [compress impl]: https://github.com/TomBriar/bitcoin/pull/3
-[farrow cosign]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021917.html
+[farrow cosign]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021917.html
 [frost]: https://eprint.iacr.org/2020/852
 [libsecp cl]: https://github.com/bitcoin-core/secp256k1/blob/master/CHANGELOG.md
 [libsecp256k1 0.4.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.4.0
 [ldk bolt12]: https://github.com/lightningdevkit/rust-lightning/issues/1970
 
 [LND v0.17.0-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc2
-[briar compress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021924.html
+[briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021924.html
 [compress spec]: https://github.com/TomBriar/bitcoin/blob/2023-05--tx-compression/doc/compressed_transactions.md
 [compress impl]: https://github.com/TomBriar/bitcoin/pull/3
-[farrow cosign]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021917.html
+[farrow cosign]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021917.html
 [frost]: https://eprint.iacr.org/2020/852
 [libsecp cl]: https://github.com/bitcoin-core/secp256k1/blob/master/CHANGELOG.md
 [libsecp256k1 0.4.0]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.4.0

@@ -184,7 +184,7 @@ BOLTs][bolts repo].*
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc5
 [trw meeting]: https://gist.githubusercontent.com/ariard/5f28dffe82ddad763b346a2344092ba4/raw/2a8e0d4ff431a225a970d0128aa78616df6b6382/meeting-logs
 [additive payment batching]: /en/cardcoins-rbf-batching/
-[riard rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019074.html
+[riard rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019074.html
 [i2p]: https://en.wikipedia.org/wiki/I2P
 [phoenix wallet]: https://phoenix.acinq.co/
 [phoenix 1.4.12]: https://github.com/ACINQ/phoenix/releases/tag/v1.4.12

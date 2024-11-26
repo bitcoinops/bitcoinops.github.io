@@ -18,7 +18,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Merkleize All The Things
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

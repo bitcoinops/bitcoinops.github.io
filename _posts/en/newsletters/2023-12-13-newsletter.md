@@ -187,7 +187,7 @@ newsletter.  Regular publication will resume on Wednesday, January 3rd.
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="2685,5389,5490,1446,27995" %}
 [LND 0.17.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.3-beta
-[teinturier liqad]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004227.html
+[teinturier liqad]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004227.html
 [ms fee api]: https://mempool.space/docs/api/rest#get-recommended-fees
 [mempool.space]: https://mempool.space/
 [news136 bip129]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets

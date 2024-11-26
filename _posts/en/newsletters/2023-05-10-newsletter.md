@@ -281,7 +281,7 @@ publish the next 250 newsletters. {% assign timestamp="54:17" %}
 [eclair bitcoin.conf]: https://github.com/ACINQ/eclair/pull/1783/files#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5
 [carman hints]: https://github.com/lightningdevkit/rust-lightning/pull/2044#issuecomment-1448840896
 [corallo hints]: https://github.com/lightningdevkit/rust-lightning/pull/2044#issuecomment-1461049958
-[hartman powswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021605.html
+[hartman powswap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021605.html
 [hnr powswap]: https://raw.githubusercontent.com/blockrate-binaries/paper/master/blockrate-binaries-paper.pdf
 [powswap]: https://powswap.com/
 [news188 phantom]: /en/newsletters/2022/02/23/#ldk-1199

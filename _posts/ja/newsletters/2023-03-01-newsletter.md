@@ -99,6 +99,6 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [lnd v0.16.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta.rc1
 [hwi 2.2.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.2.1
 [news239 codex32]: /ja/newsletters/2023/02/22/#codex32-bip
-[todd codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021498.html
-[o'connor codex32]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021504.html
+[todd codex32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021498.html
+[o'connor codex32]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021504.html
 [news217 migratewallet]: /ja/newsletters/2022/09/14/#bitcoin-core-19602

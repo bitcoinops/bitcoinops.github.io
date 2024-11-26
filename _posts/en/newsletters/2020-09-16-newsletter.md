@@ -210,10 +210,10 @@ release candidates.*
 [news99 min]: /en/newsletters/2020/05/27/#minimum-transaction-size-discussion
 [news39 maxfeerate]: /en/newsletters/2019/03/26/#bitcoin-core-13541
 [invdos paper]: https://invdos.net/paper/CVE-2018-17145.pdf
-[invdos post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018164.html
+[invdos post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018164.html
 [invdos site]: https://invdos.net/
 [cve-2018-17145]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17145
-[riard post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-September/002796.html
+[riard post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-September/002796.html
 [square tweet]: https://twitter.com/sqcrypto/status/1304087270736236544
 [copa]: https://open-patent.org/
 [blockstream tweet]: https://twitter.com/Blockstream/status/1304529416131940352

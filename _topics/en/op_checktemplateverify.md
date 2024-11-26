@@ -130,6 +130,9 @@ optech_mentions:
   - title: "BIP119 extensions for smaller hashes and arbitrary data commitments"
     url: /en/newsletters/2024/05/15/#bip119-extensions-for-smaller-hashes-and-arbitrary-data-commitments
 
+  - title: "Post and website examining `OP_CHECKTEMPLATEVERIFY` testing on the default signet"
+    url: /en/newsletters/2024/11/22/#signet-activity-report
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants

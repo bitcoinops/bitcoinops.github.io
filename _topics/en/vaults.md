@@ -30,7 +30,7 @@ primary_sources:
       link: https://blockstream.com/2016/11/02/en-covenants-in-elements-alpha/
 
     - title: Vaults without changing Bitcoin consensus rules
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html
 
     - title: Custody Protocols Using Bitcoin Vaults
       link: https://arxiv.org/abs/2005.11776

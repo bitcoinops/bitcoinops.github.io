@@ -180,8 +180,8 @@ their pending releases.*
 [p2p protocol encryption]: https://gist.github.com/jonasschnelli/c530ea8421b8d0e80c51486325587c52
 [lnd releases]: https://github.com/lightningnetwork/lnd/releases
 [lnd issue]: https://github.com/lightningnetwork/lnd/issues/new
-[assumeutxo thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
-[fast updatable UTXO commitments]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
+[assumeutxo thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html
+[fast updatable UTXO commitments]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [automatic leveldb backups]: https://github.com/bitcoin/bitcoin/issues/8037
 [round-robin]: https://en.wikipedia.org/wiki/Round-robin_scheduling
 [bitcoin core 0.5.0]: https://bitcoin.org/en/release/v0.5.0

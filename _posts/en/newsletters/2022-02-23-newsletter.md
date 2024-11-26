@@ -126,12 +126,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="24307,5010,1199," %}
 [news186 rbf]: /en/newsletters/2022/02/09/#discussion-about-rbf-policy
-[obeirne bump]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019879.html
+[obeirne bump]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019879.html
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
-[russell gossip]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
+[russell gossip]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
 [news72 xonly]: /en/newsletters/2019/11/13/#x-only-pubkeys
 [news55 gossip]: /en/newsletters/2019/07/17/#gossip-update-proposal
-[rubin ctv signet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019925.html
+[rubin ctv signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019925.html
 [news181 rl1177]: /en/newsletters/2022/01/05/#rust-lightning-1177
 [bitcoin se 13122]: https://bitcoin.stackexchange.com/a/13123/87121
 [bitcoin github genesis]: https://github.com/bitcoin/bitcoin/blob/9546a977d354b2ec6cd8455538e68fe4ba343a44/src/main.cpp#L1668

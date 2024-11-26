@@ -58,7 +58,7 @@ excerpt: >
 
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
-[BIP158 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016057.html
+[BIP158 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016057.html
 [PR 13243]: https://github.com/bitcoin/bitcoin/pull/13243
 
 - **<!--proposed-bip-bech32-keys-for-private-key-hd-wallet-serialization-->****[私钥和 HD 钱包序列化的提议 BIP][bech32 keys]：** 当前私钥通常使用与传统比特币地址相同的编码进行传输，HD 钱包扩展密钥和种子使用相同的格式、十六进制或助记词传输。这项新提议将允许使用用于原生隔离见证（SegWit）地址的 bech32 格式。
@@ -66,7 +66,7 @@ excerpt: >
     [讨论][bech32 keys discussion]集中在是否使用完全的 bech32 标准或其修改版，后者在抗录入和数据丢失错误方面更为强大。计划接受或分发密钥材料的服务可能希望贡献审查规范。
 
 [bech32 keys]: https://gist.github.com/jonasschnelli/68a2a5a5a5b796dc9992f432e794d719
-[bech32 keys discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
+[bech32 keys discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
 
 - **<!--betterhash-mining-protocol-betterhash-spec-->****[BetterHash 挖矿协议][BetterHash spec]：** 一种拟替代当前几乎普遍用于挖矿池分配工作给个别矿工的 Stratum 挖矿协议的方案。该提议声称为矿池运营商提供更好的安全性，并允许个别矿工选择他们在区块中包含的交易，增加比特币的审查抵抗力，同时也可能使使用该协议的矿工更有效率。该协议由 [FIBRE 网络][FIBRE] 的开发者和运营者提倡，几乎所有的矿工都使用该网络。
 
@@ -74,7 +74,7 @@ excerpt: >
 
 [BetterHash spec]: https://github.com/TheBlueMatt/bips/blob/betterhash/bip-XXXX.mediawiki
 [FIBRE]: http://bitcoinfibre.org/
-[BetterHash discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
+[BetterHash discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
 
 ## 比特币提交历史上的今天...
 
