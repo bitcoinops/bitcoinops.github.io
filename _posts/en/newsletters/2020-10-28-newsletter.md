@@ -219,10 +219,10 @@ answers posted since our last update.*
 [CVE-2020-26895]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26895
 [CVE-2020-26896]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26896
 [bitcoin core 0.11.1]: https://bitcoin.org/en/release/v0.11.1#test-for-lows-signatures-before-relaying
-[riard5]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002859.html
-[fromknecht5]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002858.html
-[riard6]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002855.html
-[fromknecht6]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002857.html
+[riard5]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002859.html
+[fromknecht5]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002858.html
+[riard6]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002855.html
+[fromknecht6]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002857.html
 [payment secrets feature]: https://github.com/lightningnetwork/lightning-rfc/commit/5776d2a7
 [news118 signmessage]: /en/newsletters/2020/10/07/#alternative-to-bip322-generic-signmessage
 [achow wallet blog post]: https://achow101.com/2020/10/0.21-wallets

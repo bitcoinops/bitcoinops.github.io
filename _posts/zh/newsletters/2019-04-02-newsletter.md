@@ -56,7 +56,7 @@ lang: zh
 [eclair api docs]: https://acinq.github.io/eclair/#introduction
 [johoe's mempool statistics]: https://jochen-hoenicke.de/queue/#0,1w
 [p2sh.info's fee estimate tracker]: https://p2sh.info/dashboard/db/fee-estimation?orgId=1
-[trampoline thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001939.html
+[trampoline thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001939.html
 [core meeting segwit]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2019/bitcoin-core-dev.2019-03-28-19.01.log.html#l-83
 [bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [bolt2 delta]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#cltv_expiry_delta-selection

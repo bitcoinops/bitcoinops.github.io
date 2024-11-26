@@ -19,7 +19,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Stuckless payments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html
 
     - title: Boomerang
       link: https://arxiv.org/pdf/1910.01834.pdf

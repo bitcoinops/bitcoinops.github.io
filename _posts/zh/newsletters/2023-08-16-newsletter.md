@@ -58,10 +58,10 @@ lang: zh
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27213,28008,2308" %}
-[todd expire]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021849.html
-[gould spj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021868.html
+[todd expire]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021849.html
+[gould spj]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021868.html
 [spj bip]: https://github.com/bitcoin/bips/pull/1483
-[gibson spj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021872.html
-[gould spj2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021880.html
+[gibson spj]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021872.html
+[gould spj2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021880.html
 [news236 spj]: /zh/newsletters/2023/02/01/#serverless-payjoin-proposal-payjoin
 [core lightning 23.08rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.08rc2

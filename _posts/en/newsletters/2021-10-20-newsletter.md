@@ -193,12 +193,12 @@ seems worth publicizing the decision to use this value -->
 
 {% include references.md %}
 {% include linkers/issues.md issues="22863,23093,22539,4567,1985,1124,894,22779,9519" %}
-[corallo mobile]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003307.html
+[corallo mobile]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003307.html
 [zmn taproot]: /en/preparing-for-taproot/#ln-with-taproot
-[zmn prop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003256.html
-[jager prop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003314.html
-[schildbach taproot wallet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019532.html
-[towns taproot wallet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019543.html
+[zmn prop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003256.html
+[jager prop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003314.html
+[schildbach taproot wallet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019532.html
+[towns taproot wallet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019543.html
 [p4tr signet]: /en/preparing-for-taproot/#testing-on-signet
 [news170 ln cve]: /en/newsletters/2021/10/13/#ln-spend-to-fees-cve
 [BDK 0.12.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.12.0

@@ -128,17 +128,17 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=1 issues="2203,1311,910,1286,584,581,515,549,590" %}
 [hwi 2.1.0-rc.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.1.0-rc.1
 [bolt7 route rec]: https://github.com/lightning/bolts/blob/master/07-routing-gossip.md#recommendations-for-routing
-[oconnor st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020106.html
-[timon st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020102.html
-[towns st]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020127.html
-[pickhardt payment delivery]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003510.html
+[oconnor st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020106.html
+[timon st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020102.html
+[towns st]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020127.html
+[pickhardt payment delivery]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003510.html
 [news163 pp]: /en/newsletters/2021/08/25/#zero-base-fee-ln-discussion
 [news53 stuckless]: /en/newsletters/2019/07/03/#stuckless-payments
 [spear]: https://dl.acm.org/doi/10.1145/3479722.3480997
 [news156 zcc]: /en/newsletters/2021/07/07/#zero-conf-channel-opens
 [boomerang]: https://arxiv.org/pdf/1910.01834.pdf
 [news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks
-[belcher teleport]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/020026.html
+[belcher teleport]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/020026.html
 [teleport transactions 0.1]: https://github.com/bitcoin-teleport/teleport-transactions/releases/tag/0.1
 [joinmarket v0.9.5]: https://github.com/JoinMarket-Org/joinmarket-clientserver/releases/tag/v0.9.5
 [mercury v0.6.5]: https://github.com/layer2tech/mercury-wallet/releases/tag/v0.6.5

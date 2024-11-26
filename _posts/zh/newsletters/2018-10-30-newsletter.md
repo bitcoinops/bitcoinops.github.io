@@ -75,7 +75,7 @@ it to write a good description, and I doubt non-LN devs care -->{% endcomment %}
 [lr3]: https://medium.com/@pierre_rochard/day-3-of-the-chaincode-labs-lightning-residency-5a7fad88bc62
 [lr4]: https://medium.com/@pierre_rochard/day-4-of-the-chaincode-labs-lightning-residency-f28b046fc1a6
 [c-lightning 0.6.2]: https://github.com/ElementsProject/lightning/releases
-[bip69 thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016457.html
+[bip69 thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016457.html
 [bitmain oab]: https://blog.bitmain.com/en/new-firmware-activate-overt-asicboost-bm1387-antminer-models/
 [braiins oab]: https://twitter.com/braiins_systems/status/1055153228772503553
 [subzero blog]: https://medium.com/square-corner-blog/open-sourcing-subzero-ee9e3e071827

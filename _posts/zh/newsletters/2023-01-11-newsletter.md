@@ -47,7 +47,7 @@ lang: zh
 
 [bdk 0.26.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.26.0
 [hwi 2.2.0-rc1]: https://github.com/bitcoin-core/HWI/releases/tag/2.2.0-rc.1
-[zp potentiam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003810.html
+[zp potentiam]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003810.html
 [potentiam minsc]: https://min.sc/#c=pk%28A%29%20%26%26%20%28pk%28B%29%20%7C%7C%20older%286000%29%29
-[fournier potentiam]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003813.html
+[fournier potentiam]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003813.html
 [news224 fat]: /zh/newsletters/2022/11/02/#ln-routing-failure-attribution
