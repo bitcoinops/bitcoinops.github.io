@@ -62,9 +62,9 @@ lang: zh
 {% include linkers/issues.md v=2 issues="26325,1383,1192" %}
 
 [news215 labels]: /zh/newsletters/2022/08/31/#wallet-label-export-format
-[towns e-vs-shg]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021334.html
-[`sighash_group` proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019243.html
-[wallace pop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003820.html
+[towns e-vs-shg]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021334.html
+[`sighash_group` proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019243.html
+[wallace pop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003820.html
 [forced soft fork]: https://petertodd.org/2016/forced-soft-forks
 [remove builder keys]: https://github.com/bitcoin/bitcoin/commit/296e88225096125b08665b97715c5b8ebb1d28ec
 [guix.sigs repo]: https://github.com/bitcoin-core/guix.sigs/tree/main/builder-keys

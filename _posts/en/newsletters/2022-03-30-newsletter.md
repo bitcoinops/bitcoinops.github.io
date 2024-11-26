@@ -168,11 +168,11 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [bdk 0.17.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.17.0
 [lnd 0.14.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.3-beta.rc1
 [bcc23 rn]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Notes-draft
-[ruane witrep]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020167.html
-[osuntokun gossip2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003526.html
-[osuntokun gossip1.1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003527.html
+[ruane witrep]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020167.html
+[osuntokun gossip2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003526.html
+[osuntokun gossip1.1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003527.html
 [news188 gossip]: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
-[russell gossip2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
+[russell gossip2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
 [wiki difficulty]: https://en.bitcoin.it/wiki/Difficulty
 [news146 mtp]: /en/newsletters/2021/04/28/#what-are-the-different-contexts-where-mtp-is-used-in-bitcoin

@@ -112,7 +112,7 @@ les versions candidates.*
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="26152,28414,28448,28196,2743,2176,2413,2514,2371" %}
 [LND v0.17.0-beta.rc4]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc4
-[ds brd]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021959.html
+[ds brd]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-September/021959.html
 [news252 bumpfee]: /fr/newsletters/2023/05/24/#bitcoin-core-27021
 [news229 bumpfee]: /fr/newsletters/2022/12/07/#bitcoin-core-pr-review-club
 [Core Lightning 23.08.1]: https://github.com/ElementsProject/lightning/releases/tag/v23.08.1

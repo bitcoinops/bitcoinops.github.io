@@ -193,7 +193,7 @@ BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="20867,125,4489,4496,589,588,21061,16698,18038,851" %}
-[riard cve-2021-31876]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html
+[riard cve-2021-31876]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html
 [news95 atomicity attack]: /en/newsletters/2020/04/29/#new-attack-against-ln-payment-atomicity
 [rust-lightning 0.0.14]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.14
 [rebroadcast 1]: /en/newsletters/2019/09/18/#bitcoin-core-rebroadcasting-logic

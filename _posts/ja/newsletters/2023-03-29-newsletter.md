@@ -303,7 +303,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [news206 msat]: /ja/newsletters/2022/06/29/#core-lightning-5306
 [rb sec]: https://github.com/rust-bitcoin/rust-bitcoin/blob/master/SECURITY.md
 [news239 codex32]: /ja/newsletters/2023/02/22/#codex32-bip
-[law stranded post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003886.html
+[law stranded post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003886.html
 [law stranded paper]: https://github.com/JohnLaw2/ln-hierarchical-channels
 [obeirne selfish]: https://twitter.com/jamesob/status/1637198454899220485
 [sanders requests]: https://twitter.com/theinstagibbs/status/1637235436849442817

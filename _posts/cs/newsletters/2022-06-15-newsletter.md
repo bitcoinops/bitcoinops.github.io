@@ -255,13 +255,13 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="24171,1505,628,593" %}
 [lnd 0.15.0-beta.rc6]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc6
 [news201 relay]: /cs/newsletters/2022/05/25/#navrh-na-preposilani-balicku
-[towns relay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020496.html
-[zhao negotiation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020512.html
-[voskuil graph]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020518.html
-[towns graph]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020520.html
-[zhao sids]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020539.html
-[daftuar repeat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020542.html
-[osuntokun summary]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003600.html
+[towns relay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020496.html
+[zhao negotiation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020512.html
+[voskuil graph]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020518.html
+[towns graph]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020520.html
+[zhao sids]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020539.html
+[daftuar repeat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020542.html
+[osuntokun summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003600.html
 [news164 taproot ln]: /en/newsletters/2021/09/01/#preparing-for-taproot-11-ln-with-taproot
 [news188 gossip]: /en/newsletters/2022/02/23/#updated-ln-gossip-proposal
 [news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
@@ -270,4 +270,4 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 [news85 blinded]: /en/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
 [news171 ln offline]: /en/newsletters/2021/10/20/#paying-offline-ln-nodes
-[zmnscpxj hilolohi]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003598.html
+[zmnscpxj hilolohi]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003598.html

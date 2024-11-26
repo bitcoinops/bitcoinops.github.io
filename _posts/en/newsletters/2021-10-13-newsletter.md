@@ -255,10 +255,10 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 
 {% include references.md %}
 {% include linkers/issues.md issues="20487,17211,22340,23123,1980,5363,5642,5770,22675" %}
-[riard cve]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
-[zmnscpxj name drop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003265.html
+[riard cve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003257.html
+[zmnscpxj name drop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003265.html
 [news152 ff]: /en/newsletters/2021/06/09/#receiving-ln-payments-with-a-mostly-offline-private-key
-[towns proposal]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003278.html
+[towns proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-October/003278.html
 [zmnscpxj taproot ln]: /en/preparing-for-taproot/#ln-with-taproot
 [eclair 0.6.2]: https://github.com/ACINQ/eclair/releases/tag/v0.6.2
 [eclair rn]: https://github.com/ACINQ/eclair/blob/master/docs/release-notes/eclair-v0.6.2.md

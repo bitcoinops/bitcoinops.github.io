@@ -19,7 +19,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Overview of anti-covert-channel signing techniques
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

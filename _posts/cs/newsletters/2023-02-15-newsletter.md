@@ -240,16 +240,16 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 [musig draft bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki
 [paper analyzing payjoins]: https://eprint.iacr.org/2022/589.pdf
 [bitcoinsearch repos]: https://github.com/bitcoinsearch
-[towns color]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021396.html
+[towns color]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021396.html
 [nostr]: https://github.com/nostr-protocol/nostr
-[allen op_return]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021387.html
-[todd or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021435.html
-[o'connor or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021439.html
-[poelstra or]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021438.html
-[kogman dilution]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021444.html
+[allen op_return]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021387.html
+[todd or]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021435.html
+[o'connor or]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021439.html
+[poelstra or]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021438.html
+[kogman dilution]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021444.html
 [riard dilution]: https://gist.github.com/ariard/7e509bf2c81ea8049fd0c67978c521af#witness-malleability
-[kogman dilution2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021459.html
-[o'connor tsm]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021452.html
+[kogman dilution2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021459.html
+[o'connor tsm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-February/021452.html
 [bitcoin inquisition #19]: https://github.com/bitcoin-inquisition/bitcoin/issues/19
 [bitcoinsearch.xyz]: https://bitcoinsearch.xyz/
 [core lightning 23.02rc2]: https://github.com/ElementsProject/lightning/releases/tag/v23.02rc2

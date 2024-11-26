@@ -108,10 +108,10 @@ infrastructure projects.
 {% include references.md %}
 {% include linkers/issues.md issues="19219,14929,19464,19469,19328,19191,971,4281,18000" %}
 [dynamic dns]: https://en.wikipedia.org/wiki/Dynamic_DNS
-[towns post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018038.html
+[towns post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018038.html
 [anyprevout spec]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 [anyprevout revisions]: https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki#revisions
-[wuille rolling]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
+[wuille rolling]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [muhash]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf
 [bitcoin core 0.15]: https://bitcoincore.org/en/releases/0.15.0/#low-level-rpc-changes
 [cuckoo filter]: https://github.com/bitcoin/bitcoin/pull/19219#issuecomment-652685715

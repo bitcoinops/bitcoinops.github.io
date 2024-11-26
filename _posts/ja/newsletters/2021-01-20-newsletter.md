@@ -105,10 +105,10 @@ Bitcoin-Devメーリングリストへの投稿をまとめています。また
 [btcpay server 1.0.6.7]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.7
 [btcpay server 1.0.6.5]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.5
 [c-lightning 0.9.3]: https://github.com/ElementsProject/lightning/releases/tag/v0.9.3rc2
-[belcher payjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018356.html
-[raw payjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018358.html
+[belcher payjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018356.html
+[raw payjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018358.html
 [payjoin wiki]: https://en.bitcoin.it/wiki/PayJoin_adoption
-[loaec hww]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018352.html
+[loaec hww]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018352.html
 [blockstream jade blog]: https://blockstream.com/2021/01/03/en-secure-your-bitcoin-and-liquid-assets-with-blockstream-jade/
 [coldcard 3.2.1]: https://blog.coinkite.com/version-3.2.1-released/
 [mempool.space website]: https://mempool.space/

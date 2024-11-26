@@ -147,9 +147,9 @@ Happy holiday! 今号が年内最後の定期的なニュースレターにな�
 {% include references.md %}
 {% include linkers/issues.md issues="867,23716,20295,14707,23486,940,906,1204,918" %}
 [news162 unec]: /ja/newsletters/2021/08/18/#dust-limit
-[rubin unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019635.html
-[somsen unec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019637.html
-[teinturier post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003377.html
+[rubin unec]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019635.html
+[somsen unec]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019637.html
+[teinturier post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-December/003377.html
 [ln docs 16]: https://github.com/t-bast/lightning-docs/pull/16
 [news120 opt_simp_update]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
 [news152 ff]: /ja/newsletters/2021/06/09/#receiving-ln-payments-with-a-mostly-offline-private-key-ln

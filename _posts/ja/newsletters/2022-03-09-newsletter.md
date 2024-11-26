@@ -212,24 +212,24 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [ldk 0.0.105]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.105#security
 [news185 optxhash]: /ja/newsletters/2022/02/02/#ctv-apo
 [news187 optx]: /ja/newsletters/2022/02/16/#op-txhash
-[rubin recurse]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
+[rubin recurse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
 [op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
-[shinobi recurse]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019891.html
+[shinobi recurse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019891.html
 [news157 csfs]: /ja/newsletters/2021/07/14/#op-checksigfromstack
-[darosior reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019892.html
-[aj reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019923.html
-[harding altcoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019203.html
-[obeirne reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019890.html
+[darosior reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019892.html
+[aj reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019923.html
+[harding altcoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019203.html
+[obeirne reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019890.html
 [cve-2013-2292]: /en/topics/cve/#CVE-2013-2292
-[zmn turing]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019928.html
-[zmn drivechains]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019976.html
+[zmn turing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019928.html
+[zmn drivechains]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019976.html
 [turing completeness]: https://en.wikipedia.org/wiki/Turing_completeness
 [halting problem]: https://en.wikipedia.org/wiki/Halting_problem
-[towns drivechains]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019984.html
-[drivechains vs ln]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019991.html
-[osuntokun bandwidth]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003498.html
-[russell reply]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003499.html
-[harding recurse]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019885.html
+[towns drivechains]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019984.html
+[drivechains vs ln]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019991.html
+[osuntokun bandwidth]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003498.html
+[russell reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003499.html
+[harding recurse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019885.html
 [rl dos]: https://github.com/lightningdevkit/rust-lightning/blob/main/CHANGELOG.md#security
 [news188 phantom]: /ja/newsletters/2022/02/23/#ldk-1199
 [news186 pp]: /ja/newsletters/2022/02/09/#ldk-1227

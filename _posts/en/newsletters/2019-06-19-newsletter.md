@@ -258,14 +258,14 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15024,2696,1009,15834,3133,3140,3134,2700,2699,555,2672,14897,15776" %}
 [bech32 series]: /en/bech32-sending-support/
-[bech32 pos ref]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014396.html
+[bech32 pos ref]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014396.html
 [news43 merges]: /en/newsletters/2019/04/23/#notable-code-and-documentation-changes
 [cl rc]: https://github.com/ElementsProject/lightning/tags
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
-[snigirev post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002009.html
+[snigirev post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002009.html
 [ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
 [decker spontaneous]: https://github.com/cdecker/lightning/tree/stepan-pay
-[jager delays]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002015.html
+[jager delays]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002015.html
 [bb website]: https://breaking-bitcoin.com/
 [bb sat video]: https://www.youtube.com/watch?v=DKOG0BQMmmg
 [bb sun video]: https://www.youtube.com/watch?v=DqhxPWsJFZE

@@ -218,7 +218,7 @@ release candidates.*
 [fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [split algos]: https://github.com/ElementsProject/lightning/pull/3773#discussion_r448796405
 [news94 keysend]: /en/newsletters/2020/04/22/#c-lightning-3611
-[petukhov path templates]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018024.html
+[petukhov path templates]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018024.html
 [news52 gap]: /en/newsletters/2019/06/26/#how-can-i-mitigate-concerns-around-the-gap-limit
 [ledger bug]: https://github.com/LedgerHQ/app-bitcoin/issues/154
 [electrum update]: https://github.com/spesmilo/electrum/pull/6293#issuecomment-652471789

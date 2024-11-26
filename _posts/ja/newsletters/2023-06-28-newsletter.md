@@ -175,8 +175,8 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="6303,2701,2696,7710,2368,2367,2319,2120,2089,2077,1129" %}
 [policy series]: /ja/blog/waiting-for-confirmation/
-[sanders v3cj]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021780.html
-[linus spec]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
+[sanders v3cj]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021780.html
+[linus spec]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-June/021781.html
 [miningpool observer]: https://miningpool.observer/template-and-block
 [mempool space]: https://mempool.space/graphs/mining/block-health
 [waiting for confirmation 1]: /ja/blog/waiting-for-confirmation/#なぜmempoolがあるのか

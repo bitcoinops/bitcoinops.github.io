@@ -265,7 +265,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [news280 cluster]: /cs/newsletters/2023/12/06/#diskuze-o-cluster-mempoolu
 [news267 compress]: /cs/newsletters/2023/09/06/#komprimovane-bitcoinove-transakce
-[briar compress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
+[briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
 [compress spec]: https://github.com/bitcoin/bitcoin/blob/7e8511c1a8229736d58bd904595815636f410aa8/doc/compressed_transactions.md
 [news201 mev]: /cs/newsletters/2022/05/25/#debata-o-tezari-extrahovatelne-hodnote
 [news266 lnbugs]: /cs/newsletters/2023/08/30/#zverejneni-probehle-zranitelnosti-ln-spojene-s-falesnym-financovanim

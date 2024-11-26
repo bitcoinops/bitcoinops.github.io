@@ -176,9 +176,9 @@ Bitcoin Stack Exchangeの人気のある質問と回答、Taprootへの準備方
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [rust-lightning 0.0.100]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.100
 [pickhardt richter paper]: https://arxiv.org/abs/2107.05322
-[towns post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003174.html
-[corallo post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003179.html
-[osuntokun post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003187.html
+[towns post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003174.html
+[corallo post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003179.html
+[osuntokun post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-August/003187.html
 [honigdachs podcast]: https://coinspondent.de/2021/07/11/honigdachs-62-pickhardt-payments/
 [zbf tweet]: https://twitter.com/renepickhardt/status/1414895869078523910
 [mempool message]: https://developer.bitcoin.org/reference/p2p_networking.html#mempool

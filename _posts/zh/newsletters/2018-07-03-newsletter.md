@@ -75,19 +75,19 @@ excerpt: >
 
   在一场进展缓慢的[讨论][graftroot discussion]中，比特币开发邮件列表的成员一直在尝试构建一个非正式措辞的安全性证明，以证明默认启用 graftroot 委托不会降低不需要它的用户的安全性（例如，只想使用 taproot 而不委托或甚至只是普通的 MAST）。尽管还需要更多的同行评审，但这一努力似乎正在积极进行中，目前的专家们一致认为，默认启用 graftroot 是安全的。
 
-[graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
-[taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [MAST]: https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
-[graftroot discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016049.html
+[graftroot discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016049.html
 
 
 - **<!--bip174-discussion-->****[BIP174][] 讨论：** 如[上周的 Newsletter][newsletter #1] 中提到，邮件列表[讨论][BIP174 discussion]继续围绕这个提议的 BIP 进行，该 BIP 旨在制定行业标准，使钱包之间的通信变得更加容易，以应对在线/离线（热/冷）钱包、软件/硬件钱包、多签名钱包和多用户交易（例如 CoinJoin）。然而，BIP 提议者现在已经开启 [PR][BIP174 update]，请求将 BIP 状态从“草案”改为“提议”。这意味着除非发现了实现方面的重大问题，否则它不太可能被更改。如果您的组织生产或必要使用上述互操作钱包之一，您可能希望在最终确定之前尽快评估当前提案。
 
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 [BIP174 update]: https://github.com/bitcoin/bips/pull/694
-[BIP174 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016150.html
+[BIP174 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016150.html
 
 - **<!--dandelion-transaction-relay-->****[蒲公英][Dandelion]交易中继：** 本周在比特币开发邮件列表上简要讨论了这个提议的隐私增强改进，它涉及到新交易最初被传播的方式。主要关注点是它如何选择通过哪些节点路由交易，这可能在最初部署期间被滥用来暂时降低隐私，那时只有少数节点支持蒲公英。两种缓解这个问题的方法被讨论。
 
 [Dandelion]: https://github.com/mablem8/bips/blob/master/bip-dandelion.mediawiki
-[dandelion discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016162.html
+[dandelion discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016162.html

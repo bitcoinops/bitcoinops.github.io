@@ -20,7 +20,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Atomic Multipath Payments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

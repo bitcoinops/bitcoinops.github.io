@@ -130,12 +130,12 @@ software.
 {% include references.md %}
 {% include linkers/issues.md issues="17578,16373,17621,3829,17792" %}
 [lnd 0.9.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.0-beta-rc1
-[corallo sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html
-[timon sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017548.html
-[dashjr sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017551.html
-[corallo reply timon]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017549.html
-[rubin sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017552.html
-[towns sf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017553.html
+[corallo sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html
+[timon sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017548.html
+[dashjr sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017551.html
+[corallo reply timon]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017549.html
+[rubin sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017552.html
+[towns sf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017553.html
 [spork vid]: https://www.youtube.com/watch?v=J1CP7qbnpqA&feature=youtu.be
 [spork summary]: /en/newsletters/2019/02/05/#probabilistic-bitcoin-soft-forks-sporks
 [anchor outputs]: /en/newsletters/2019/10/30/#ln-simplified-commitments

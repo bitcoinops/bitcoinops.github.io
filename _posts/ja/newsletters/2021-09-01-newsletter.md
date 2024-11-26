@@ -91,9 +91,9 @@ eltooベースのLNのペイメントチャネルの概念実証の実装およ�
 [news96 qr codes]: /en/newsletters/2020/05/06/#qr-codes-for-large-transactions
 [bip174.org]: https://bip174.org/
 [news63 eltoo]: /en/newsletters/2019/09/11/#eltoo-sample-implementation-and-discussion
-[filini bip174.org]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019355.html
-[allen qr174]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019356.html
-[myers list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019342.html
+[filini bip174.org]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019355.html
+[allen qr174]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019356.html
+[myers list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019342.html
 [myers blog]: https://yakshaver.org/2021/07/26/first.html
 [lightning ping]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md#the-ping-and-pong-messages
 [series preparing for taproot]: /ja/preparing-for-taproot/

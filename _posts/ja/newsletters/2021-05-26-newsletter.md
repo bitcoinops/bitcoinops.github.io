@@ -197,7 +197,7 @@ John Pfeffer、Alex Morcosを中心とした寛大な[支援者][supporters]に�
 [bccdev meeting libera]: http://www.erisian.com.au/bitcoin-core-dev/log-2021-05-20.html#l-582
 [libera.chat]: https://libera.chat/
 [list of IRC channels]: https://en.bitcoin.it/wiki/IRC_channels
-[spigler independent]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018630.html
+[spigler independent]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018630.html
 [john newbery]: https://twitter.com/jfnewbery
 [newsletters]: /ja/newsletters/
 [blog posts]: /en/blog/

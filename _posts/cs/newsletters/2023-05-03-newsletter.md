@@ -167,11 +167,11 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 [news129 adaptors]: /en/newsletters/2020/12/23/#ptlcs
 [news243 rebroadcast]: /cs/newsletters/2023/03/22/#lnd-7448
 [news247 rebroadcast]: /cs/newsletters/2023/04/19/#core-lightning-6120
-[ingala vaults]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021588.html
+[ingala vaults]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021588.html
 [news226 matt]: /en/newsletters/2022/11/16/#general-smart-contracts-in-bitcoin-via-covenants
 [news234 op_vault]: /cs/newsletters/2023/01/18/#navrh-na-nove-opkody-pro-uschovny
-[halseth matt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021593.html
-[gibson adaptors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021594.html
-[lee hiring]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021589.html
+[halseth matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021593.html
+[gibson adaptors]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021594.html
+[lee hiring]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021589.html
 [news34 psbt]: /en/newsletters/2019/02/19/#bitcoin-core-13932
 [abandontransaction rpc]: https://developer.bitcoin.org/reference/rpc/abandontransaction.html
