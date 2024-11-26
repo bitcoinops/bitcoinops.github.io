@@ -180,9 +180,9 @@ versions ou d'aider à tester les versions candidates.*
 [core lightning 23.11rc1]: https://github.com/ElementsProject/lightning/releases/tag/v23.11rc1
 [lnd 0.17.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.1-beta.rc1
 [sources]: /en/internal/sources/
-[bishop lists]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
+[bishop lists]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022134.html
 [delvingbitcoin]: https://delvingbitcoin.org/
-[halseth agg]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html
+[halseth agg]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-October/004181.html
 [36c04c8ac]: https://github.com/lightning/bolts/pull/851/commits/36c04c8aca48e04d1fba64d968054eba221e63a1
 [news253 stuck]: /fr/newsletters/2023/05/31/#eclair-2666
 [bitcoin core pr review club]: https://bitcoincore.reviews/#upcoming-meetings

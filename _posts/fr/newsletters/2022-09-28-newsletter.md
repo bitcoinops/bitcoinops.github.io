@@ -163,9 +163,9 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [Core Lightning 0.12.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.12.1
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin/
 [bi prs]: https://github.com/bitcoin-inquisition/bitcoin/pulls
-[neigut ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003685.html
-[zmnscpxj ratecards]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003688.html
-[towns bi]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020921.html
+[neigut ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003685.html
+[zmnscpxj ratecards]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-September/003688.html
+[towns bi]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020921.html
 [github jrubin annotated]: https://github.com/JeremyRubin/satoshis-version/blob/master/src/main.cpp#L2255
 [news208 mempoolfullrbf]: /en/newsletters/2022/07/13/#bitcoin-core-25353
 [bitcoin 23.x banman]: https://github.com/bitcoin/bitcoin/blob/23.x/src/banman.h#L28

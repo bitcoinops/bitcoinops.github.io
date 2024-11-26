@@ -94,5 +94,5 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="550" %}
 [btcpay server 1.4.6]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.4.6
-[zmnscpxj op_evict]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019926.html
+[zmnscpxj op_evict]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019926.html
 [news166 tluv]: /ja/newsletters/2021/09/15/#covenant-opcode-proposal-covenant-opcode

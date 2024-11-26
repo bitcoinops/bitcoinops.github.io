@@ -151,12 +151,12 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [lnd 0.15.5-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.5-beta.rc2
 [core lightning 22.11rc3]: https://github.com/ElementsProject/lightning/releases/tag/v22.11rc3
 [cln json ids]: https://github.com/rustyrussell/lightning/blob/a25c5d14fe986b67178988e6ebb79610672cc829/doc/lightningd-rpc.7.md#json-ids
-[riard credentials]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003754.html
+[riard credentials]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003754.html
 [riard proposal]: https://github.com/lightning/bolts/blob/80214c83190836c4f7699af9e8920769607f1a00/www-reputation-credentials-protocol.md
 [blind signature]: https://en.wikipedia.org/wiki/Blind_signature
 [news226 jam]: /en/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
-[shikelman credentials]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003755.html
-[riard double spend]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003765.html
-[harding paths]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003767.html
+[shikelman credentials]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003755.html
+[riard double spend]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003765.html
+[harding paths]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003767.html
 [ecdh]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
 [semantic versioning]: https://semver.org/spec/v2.0.0.html

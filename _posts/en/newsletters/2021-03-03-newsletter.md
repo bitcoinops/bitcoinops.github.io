@@ -138,10 +138,10 @@ BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md issues="16546,573,791,794,413,469,463,464,471,468,466,1069,672" %}
-[voegtlin bip70 alt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018443.html
+[voegtlin bip70 alt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018443.html
 [lnurl]: https://github.com/fiatjaf/lnurl-rfc
-[hill scheme]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018446.html
-[kozlik scheme]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018448.html
+[hill scheme]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018446.html
+[kozlik scheme]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018448.html
 [le guilly post]: https://mailmanlists.org/pipermail/dlc-dev/2021-February/000020.html
 [dlcv0 fraud proofs]: https://github.com/discreetlogcontracts/dlcspecs/blob/master/v0Milestone.md#simple-fraud-proofs-in-progress
 [hwi old process]: https://github.com/bitcoin-core/HWI/blob/7b34fc72c5b2c5af216d8b8d5cd2d2c92b6d2457/docs/examples/bitcoin-core-usage.rst

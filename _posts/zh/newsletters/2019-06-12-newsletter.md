@@ -113,7 +113,7 @@ wiki page for changes -->{% endcomment %}
 [xs blind state]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-statechains/
 [coredev.tech]: https://coredev.tech/
 [transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning
-[rbf rule 6]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016998.html
+[rbf rule 6]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/016998.html
 [next sf vid]: https://youtu.be/fDJRy6K_3yo
 [proof-of-concept newsletter]: /zh/newsletters/2018/06/08/
 [newsletter rss]: /feed.xml
@@ -121,8 +121,8 @@ wiki page for changes -->{% endcomment %}
 [founding sponsors]: /zh/about/#资金
 [member companies]: /#members
 [countersign blurb]: /zh/newsletters/2018/12/28/#八月
-[cpfp carve out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
-[russell-corallo rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016530.html
+[cpfp carve out]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
+[russell-corallo rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016530.html
 [hillebrand optech]: https://www.youtube.com/playlist?list=PLPj3KCksGbSY9pV6EI5zkHcut5UTCs1cp
 [routing success probability]: http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/lightning-network-routing-security/
 [utreexo]: https://eprint.iacr.org/2019/611

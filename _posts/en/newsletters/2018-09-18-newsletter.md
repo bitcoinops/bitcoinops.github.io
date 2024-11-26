@@ -172,11 +172,11 @@ wait until version 0.18 in about six months from now.*
 [workshop]: /en/workshops
 [news8 news]: /en/newsletters/2018/08/14/#pay-to-end-point-p2ep-idea-proposed
 [c-lightning 0.6.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.6.1
-[BIP322 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016393.html
+[BIP322 proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016393.html
 [BIP322 PR]: https://github.com/bitcoin/bips/pull/725
 [trezor p2wpkh message signing]: https://github.com/trezor/trezor-mcu/issues/169
-[bustapay proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
-[bustapay sjors]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016383.html
+[bustapay proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
+[bustapay sjors]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016383.html
 [p2p reject]: https://btcinformation.org/en/developer-reference#reject
 [dup txin master]: https://github.com/bitcoin/bitcoin/pull/14247
 [dup txin 0.16]: https://github.com/bitcoin/bitcoin/pull/14249

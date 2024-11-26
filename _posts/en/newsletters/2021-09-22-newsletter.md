@@ -149,10 +149,10 @@ BOLTs][bolts repo].*
 {% include references.md %}
 {% include linkers/issues.md issues="1932,5405,5304,628,580,626,1034,824,22290" %}
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
-[alm bips]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019457.html
-[towns bips]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019462.html
-[zhao post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
-[schroder post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003224.html
+[alm bips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019457.html
+[towns bips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019462.html
+[zhao post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
+[schroder post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003224.html
 [news165 bolts 842]: /en/newsletters/2021/09/08/#bolts-824
 [lightning terminal]: /en/newsletters/2020/08/19/#lightning-labs-releases-lightning-terminal
 [tla tweet]: https://twitter.com/andreneves/status/1425651740502892550

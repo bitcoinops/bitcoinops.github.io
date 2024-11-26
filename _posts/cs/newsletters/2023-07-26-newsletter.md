@@ -222,8 +222,8 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo] a
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="740,1096" %}
-[russell closing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
-[kc notes]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
+[russell closing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004013.html
+[kc notes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004014.html
 [news193 gossip]: /en/newsletters/2022/03/30/#continued-discussion-about-updated-ln-gossip-protocol
 [news204 gossip]: /cs/newsletters/2022/06/15/#aktualizace-gossip-protokolu
 [news86 boomerang]: /en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks

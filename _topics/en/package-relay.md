@@ -32,7 +32,7 @@ primary_sources:
       link: https://github.com/bitcoin/bitcoin/issues/27463
 
     - title: Package Relay Proposal
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
 
     - title: Package relay strawman proposal
       link: https://gist.github.com/sdaftuar/8756699bfcad4d3806ba9f3396d4e66a

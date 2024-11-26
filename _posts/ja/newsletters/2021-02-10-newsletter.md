@@ -172,10 +172,10 @@ Review Clubの議論では、コードの変更に飛び込む前に、Compact B
 {% include references.md %}
 {% include linkers/issues.md issues="433,19509,1021,1020,20764,1048,1056,988,1040,1054,1047,774,950,20685,1055,20799" %}
 [LND 0.12.1-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.1-beta.rc1
-[folkson1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018379.html
-[folkson2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
+[folkson1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018379.html
+[folkson2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
 [news133 taproot meeting]: /ja/newsletters/2021/01/27/#taproot
-[kohen post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018372.html
+[kohen post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018372.html
 [dlc list]: https://mailmanlists.org/mailman/listinfo/dlc-dev
 [i2p]: https://en.wikipedia.org/wiki/I2P
 [news131 bech32m]: /ja/newsletters/2021/01/13/#bech32m

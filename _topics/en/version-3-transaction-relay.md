@@ -29,7 +29,7 @@ primary_sources:
       link: https://github.com/bitcoin/bips/blob/master/bip-0431.mediawiki
 
     - title: "New transaction policies (nVersion=3) for contracting protocols"
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020937.html
 
     - title: Original implementation
       link: https://github.com/bitcoin/bitcoin/issues/28948

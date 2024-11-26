@@ -258,17 +258,17 @@ their work hours to contribute to Optech.
 {% include linkers/issues.md issues="19010,16939,4228,19044,18876,19070,4213" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
 [lnd 0.10.1-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc3
-[bishop summaries]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010488.html
+[bishop summaries]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010488.html
 [news98 sas]: /en/newsletters/2020/05/20/#two-transaction-cross-chain-atomic-swap-or-same-chain-coinswap
-[belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
-[zmn payswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017595.html
+[belcher coinswap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
+[zmn payswap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017595.html
 [joinmarket]: https://github.com/JoinMarket-Org/joinmarket-clientserver
 [eps]: https://github.com/chris-belcher/electrum-personal-server
-[lopp size]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017905.html
+[lopp size]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017905.html
 [lopp calc]: https://jlopp.github.io/bitcoin-transaction-size-calculator/
 [optech calc]: /en/tools/calc-size/
 [about page]: /en/about/
-[ivgi bwt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017906.html
+[ivgi bwt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017906.html
 [bwt api]: https://github.com/shesek/bwt#http-api
 [bwt plugin]: https://github.com/shesek/bwt#electrum-plugin
 [edge]: https://edge.app/

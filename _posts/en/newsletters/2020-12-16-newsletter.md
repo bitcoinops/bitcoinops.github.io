@@ -333,9 +333,9 @@ We'll return to regular publication on Wednesday, January 6th.
 [news87 negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [bolt12 draft]: https://github.com/rustyrussell/lightning-rfc/blob/guilt/offers/12-offer-encoding.md
 [news115 fee stealing]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
-[really static backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002911.html
-[oblivious mutual close]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002912.html
-[psbt2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018300.html
+[really static backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002911.html
+[oblivious mutual close]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-December/002912.html
+[psbt2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018300.html
 [oblivious transfer]: https://en.wikipedia.org/wiki/Oblivious_transfer
 [macos signed]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/test.rc3/bitcoin-0.21.0rc3-osx.dmg
 [macos unsigned]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/test.rc3/bitcoin-0.21.0rc3-osx64.tar.gz
@@ -344,7 +344,7 @@ We'll return to regular publication on Wednesday, January 6th.
 [news110 bcc19620]: /en/newsletters/2020/08/12/#bitcoin-core-19620
 [wtxid relay]: /en/newsletters/2020/07/29/#bitcoin-core-18044
 [feature negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
-[jnewbery bip155]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018301.html
+[jnewbery bip155]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018301.html
 [bwt 0.2.0]: https://github.com/shesek/bwt/releases/tag/v0.2.0
 [libbwt github]: https://github.com/shesek/bwt/blob/master/doc/libbwt.md
 [joinmarket 0.8.0]: https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/release-notes/release-notes-0.8.0.md
@@ -355,7 +355,7 @@ We'll return to regular publication on Wednesday, January 6th.
 [sparrow 0.9.8]: https://github.com/sparrowwallet/sparrow/releases/tag/0.9.8
 [satstack github]: https://github.com/LedgerHQ/satstack
 [news78 bech32 mutability]: /en/newsletters/2019/12/28/#bech32-mutability
-[aj signature aggregation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
+[aj signature aggregation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
 [bip152]: https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki
 [hb peers]: https://github.com/bitcoin/bitcoin/blob/b316dcb758e3dbd302fbb5941a1b5b0ef5f1f207/src/net_processing.cpp#L552
 [suredbits]: /en/suredbits-enterprise-ln/

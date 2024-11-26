@@ -75,9 +75,9 @@ lang: ja
 {% include linkers/issues.md issues="16807,22364,6026,5669,880,906,1176,475,6026" %}
 [lnd 0.14.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.1-beta
 [news165 bolts880]: /ja/newsletters/2021/09/08/#bolts-880
-[xraid interop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003354.html
-[decker interop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003358.html
-[zmn interop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003365.html
+[xraid interop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003354.html
+[decker interop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003358.html
+[zmn interop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003365.html
 [ln integration]: https://cdecker.github.io/lightning-integration/
 [news174 lnd]: /ja/newsletters/2021/11/10/#lnd-0-14-0-beta-rc3
 [news175 lnd]: /ja/newsletters/2021/11/17/#lnd-0-14-0-beta-rc4

@@ -266,7 +266,7 @@ Segwit 支出有两类：
 {% include linkers/issues.md issues="13451,13452,14032" %}
 {% include references.md %}
 
-[alert key release]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
+[alert key release]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
 [alert retirement alert]: https://bitcoin.org/en/alert/2016-11-01-alert-retirement
 [betterhash]: https://github.com/TheBlueMatt/bips/blob/master/bip-XXXX.mediawiki
 [betterhash implementation]: https://github.com/TheBlueMatt/mining-proxy
@@ -275,7 +275,7 @@ Segwit 支出有两类：
 [bob ts]: https://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/
 [bpase]: https://cyber.stanford.edu/bpase18
 [building on bitcoin]: https://building-on-bitcoin.com/
-[bustapay]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
+[bustapay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016340.html
 [chaincode lightning residency]: https://lightningresidency.com/
 [channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [c-lightning 0.6]: https://github.com/ElementsProject/lightning/releases/tag/v0.6
@@ -283,27 +283,27 @@ Segwit 支出有两类：
 [coredevtech tokyo]: https://coredev.tech/2018_tokyo.html
 [coredevtech ts]: https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/
 [core dup post]: https://bitcoincore.org/en/2018/09/20/notice/
-[cpfp carve out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
+[cpfp carve out]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [edge dev++]: https://keio-devplusplus-2018.bitcoinedge.org/
 [edge dev ts]: http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/
 [edge dev vids]: https://www.youtube.com/channel/UCywSzGiWWcUG1gTp45YdPUQ/videos
 [electrs]: https://github.com/romanz/electrs
 [eltoo]: https://blockstream.com/eltoo.pdf
-[eltoo pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001316.html
+[eltoo pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001316.html
 [esplora]: https://blockstream.com/2018/12/06/esplora-source-announcement/
-[graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
 [l2 summit]: https://medium.com/mit-media-lab-digital-currency-initiative/the-importance-of-layer-2-105189f72102
-[lightning protocol development summit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001569.html
+[lightning protocol development summit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001569.html
 [ln1.1 changes]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [lnd 0.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.4-beta
 [lnd 0.5-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.5-beta
-[ln list november]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/thread.html
-[ln multipath]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
+[ln list november]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/thread.html
+[ln multipath]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
 [ln-penalty]: https://lightning.network/lightning-network-paper.pdf
 [ln residency vids]: https://lightningresidency.com/#videos
 [mast]: https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
 [musig]: https://www.blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures/
-[offchain pizza]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001044.html
+[offchain pizza]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001044.html
 [onchain pizza]: https://en.bitcoin.it/wiki/Laszlo_Hanyecz
 [optech]: /
 [optech annual report]: /en/2018-optech-annual-report/
@@ -315,20 +315,20 @@ Segwit 支出有两类：
 [scaling bitcoin conference]: https://tokyo2018.scalingbitcoin.org/
 [scaling bitcoin ts]: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/
 [scaling bitcoin vids]: https://tokyo2018.scalingbitcoin.org/#remote-participation
-[schnorr and more]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
+[schnorr and more]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
 [schnorr bip]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
 [sdl fake spv proof]: https://bitslog.wordpress.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/
-[splicing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+[splicing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 [subzero]: https://medium.com/square-corner-blog/open-sourcing-subzero-ee9e3e071827
-[taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [transaction pinning]: https://bitcoin.stackexchange.com/questions/80803/what-is-meant-by-transaction-pinning/80804#80804
 [untrackable auth]: https://gist.github.com/sipa/d7dcaae0419f10e5be0270fada84c20b
-[mast backronym]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
+[mast backronym]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016500.html
 [todd mast]: https://bitcointalk.org/index.php?topic=255145.msg2757327#msg2757327
 [daftuar dandelion]: https://bitcoin.stackexchange.com/a/81504/26940
 [bitcoin.com forced bch mining]: https://www.reddit.com/r/Bitcoin/comments/9x2jub/warning_if_you_have_any_bitcoin_hashing_power/
 [wuille minisketch savings]: https://twitter.com/pwuille/status/1075460072786935808
-[decker unsafe]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016193.html
+[decker unsafe]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016193.html
 [bitcoin core 0.6]: https://bitcoin.org/en/release/v0.6.0
 [techniques for reducing transaction fees]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees
 [payment batching]: https://bitcointechtalk.com/saving-up-to-80-on-bitcoin-transaction-fees-by-batching-payments-4147ab7009fb

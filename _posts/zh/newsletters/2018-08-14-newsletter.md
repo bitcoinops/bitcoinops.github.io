@@ -80,8 +80,8 @@ lang: zh
 [blockstream p2ep]: https://blockstream.com/2018/08/08/improving-privacy-using-pay-to-endpoint.html
 [p2p getblocks]: https://bitcoin.org/en/developer-reference#getblocks
 [p2p getheaders]: https://bitcoin.org/en/developer-reference#getheaders
-[bd locators]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016285.html
-[schnorr discuss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016278.html
+[bd locators]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016285.html
+[schnorr discuss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016278.html
 [fee metrics]: https://statoshi.info/dashboard/db/fee-estimates
 [consolidate info]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [btc hash rate]: https://fork.lol/pow/hashrate

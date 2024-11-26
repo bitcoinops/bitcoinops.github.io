@@ -138,8 +138,8 @@ release candidates.*
 {% include linkers/issues.md issues="1323,17428" %}
 [bitcoin core 0.19.1]: https://bitcoincore.org/bin/bitcoin-core-0.19.1/
 [bitcoin core 0.19.1 notes]: https://bitcoincore.org/en/releases/0.19.1/
-[wuille overview]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
-[alm feedback]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017668.html
+[wuille overview]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html
+[alm feedback]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017668.html
 [segwit signmessage]: /en/bech32-sending-support/#message-signing-support
 [merged large_channel]: /en/newsletters/2020/02/26/#bolts-596
 [news22 wumbo]: /en/newsletters/2018/11/20/#wumbo

@@ -42,4 +42,4 @@ lang: zh
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [bcco /bin]: https://bitcoincore.org/bin/
-[routeboost]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-September/001417.html
+[routeboost]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-September/001417.html

@@ -123,6 +123,9 @@ optech_mentions:
   - title: Notes from Bitcoin developer discussion about signet and testnet4
     url: /en/newsletters/2024/05/01/#coredev-tech-berlin-event
 
+  - title: "Post and website examining soft fork testing on the default signet"
+    url: /en/newsletters/2024/11/22/#signet-activity-report
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Bitcoin Core #16411: signet support"

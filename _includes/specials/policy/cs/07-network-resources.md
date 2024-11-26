@@ -79,7 +79,7 @@ Příští týden prozkoumáme pravidla mempoolu jako vstupní brány protokolů
 druhé vrstvy a systémů chytrých kontraktů.
 
 [policy01]: /cs/newsletters/2023/05/17/#%C4%8Dek%C3%A1n%C3%AD-na-potvrzen%C3%AD-1-k-%C4%8Demu-je-mempool
-[unbounded]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
+[unbounded]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
 [lopp storms]: https://blog.lopp.net/history-bitcoin-transaction-dust-spam-storms/
 [ultraprune]: https://github.com/bitcoin/bitcoin/pull/1677
 [pooled resource]: /cs/newsletters/2023/05/03/#bitcoin-core-25325

@@ -201,10 +201,10 @@ BOLTs][bolts repo].*
 [news64 static remotekey]: /en/newsletters/2019/09/18/#c-lightning-3010
 [news108 channel upgrades]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
 [news109 simplified htlc]: /en/newsletters/2020/10/21/#simplified-htlc-negotiation
-[zmn ff]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
-[zmn revive]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003038.html
+[zmn ff]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
+[zmn revive]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003038.html
 [zmn preso]: https://zmnscpxj.github.io/offchain/2021-06-fast-forwards.odp
-[fournier asym]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003045.html
+[fournier asym]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003045.html
 [btcd issue]: https://github.com/btcsuite/btcutil/issues/172
 [news132 v3onion]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
 [cchain vectors]: https://bitcoincore.reviews/21767#l-196
