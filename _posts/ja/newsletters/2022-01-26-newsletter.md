@@ -101,7 +101,7 @@ lang: ja
 
 {% include references.md %}
 {% include linkers/issues.md issues="2134,2113,23201,2133,3083,1270,917" %}
-[orlovsky p2c]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019761.html
+[orlovsky p2c]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019761.html
 [news181 onion]: /ja/newsletters/2022/01/05/#eclair-2099
 [lnurl authentication]: https://github.com/fiatjaf/lnurl-rfc/blob/legacy/lnurl-auth.md
 [nat]: https://en.wikipedia.org/wiki/Network_address_translation

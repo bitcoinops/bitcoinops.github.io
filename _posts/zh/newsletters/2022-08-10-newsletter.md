@@ -77,11 +77,11 @@ lang: zh
 [news208 core RBF]: /zh/newsletters/2022/07/13/#bitcoin-core-25353
 [news167 ln dns]: /en/newsletters/2021/09/22/#dns-records-for-ln-nodes
 [news181 change matching]: /en/newsletters/2022/01/05/#bitcoin-core-23789
-[chauhan min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020784.html
-[todd min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020800.html
-[vjudeu min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020821.html
-[harding min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020808.html
-[todd min2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020815.html
+[chauhan min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020784.html
+[todd min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020800.html
+[vjudeu min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020821.html
+[harding min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020808.html
+[todd min2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020815.html
 [news3 min]: /en/newsletters/2018/07/10/#discussion-min-fee-discussion-about-minimum-relay-fee
 [#23789]: https://github.com/bitcoin/bitcoin/issues/23789
 [review club 25527]: https://bitcoincore.reviews/25527

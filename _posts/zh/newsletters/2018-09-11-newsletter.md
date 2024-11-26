@@ -50,8 +50,8 @@ lang: zh
 [workshop]: /en/workshops
 [documentation for output script descriptors]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md
 [news10 news]: /zh/newsletters/2018/08/28/#新闻
-[decker w3c]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html
-[schnelli bip151]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016355.html
-[ruffing bip151]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016372.html
+[decker w3c]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-August/001404.html
+[schnelli bip151]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016355.html
+[ruffing bip151]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016372.html
 [quickcheck]: https://en.wikipedia.org/wiki/QuickCheck
 [c-lightning docs]: https://github.com/ElementsProject/lightning/tree/master/doc

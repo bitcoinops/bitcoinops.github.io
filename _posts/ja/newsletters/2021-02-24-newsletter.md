@@ -112,7 +112,7 @@ Bitcoin Stack Exchangeから選ばれた質問と回答、リリースとリリ�
 {% include references.md %}
 {% include linkers/issues.md issues="1052,454,19136,15946,1693,797,842,798" %}
 [LND 0.12.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.1-beta
-[folkson lot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018425.html
+[folkson lot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018425.html
 [2021-01-12 p2p summary]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-IRC-meetings#topic-disabletx-p2p-message-sdaftuar
 [osuntokun request]: https://github.com/bitcoin/bitcoin/pull/15946#issuecomment-571854091
 [news131 disabletx]: /ja/newsletters/2021/01/13/#disabletx

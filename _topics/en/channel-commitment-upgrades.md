@@ -21,7 +21,7 @@ primary_sources:
       link: https://github.com/lightning/bolts/pull/868
 
     - title: Dynamic commitments
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-March/003531.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

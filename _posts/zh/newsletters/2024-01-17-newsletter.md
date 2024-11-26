@@ -91,7 +91,7 @@ lang: zh
 [daftuar cluster]: https://delvingbitcoin.org/t/an-overview-of-the-cluster-mempool-proposal/393/
 [news280 cluster]: /zh/newsletters/2023/12/06/#cluster-mempool-discussion
 [news267 compress]: /zh/newsletters/2023/09/06/#bitcoin-transaction-compression
-[briar compress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
+[briar compress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022274.html
 [compress spec]: https://github.com/bitcoin/bitcoin/blob/7e8511c1a8229736d58bd904595815636f410aa8/doc/compressed_transactions.md
 [news201 mev]: /en/newsletters/2022/05/25/#miner-extractable-value-discussion
 [news266 lnbugs]: /zh/newsletters/2023/08/30/#disclosure-of-past-ln-vulnerability-related-to-fake-funding

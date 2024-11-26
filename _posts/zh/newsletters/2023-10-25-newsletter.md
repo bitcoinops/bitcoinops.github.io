@@ -179,27 +179,27 @@ _由于本周新闻量较大，以及我们主要撰稿人时间上的限制，�
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27677" %}
 [news274 cycle]: /zh/newsletters/2023/10/18/#security-disclosure-of-issue-affecting-ln
-[riard cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
-[corallo cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022015.html
-[osuntokun cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022044.html
+[riard cycle1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
+[corallo cycle1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022015.html
+[osuntokun cycle1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022044.html
 [riard cycle paper]: https://github.com/ariard/mempool-research/blob/2023-10-replacement-paper/replacement-cycling.pdf
-[ziggie cycle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022005.html
-[morehouse cycle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022024.html
-[riard cycle2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022029.html
-[corallo cycle2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022025.html
-[teinturier cycle]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022022.html
-[riard cycle3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022032.html
-[todd cycle1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022033.html
-[todd expire1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022042.html
-[harding expire]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022050.html
-[todd expire2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022051.html
-[hash_serialized_2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
-[russell scripts]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
+[ziggie cycle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022005.html
+[morehouse cycle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022024.html
+[riard cycle2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022029.html
+[corallo cycle2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022025.html
+[teinturier cycle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022022.html
+[riard cycle3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022032.html
+[todd cycle1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022033.html
+[todd expire1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022042.html
+[harding expire]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022050.html
+[todd expire2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022051.html
+[hash_serialized_2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
+[russell scripts]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022031.html
 [russell scripts blog]: https://rusty.ozlabs.org/2023/10/20/examining-scriptpubkey-in-script.html
 [news187 op_tx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
-[heilman cat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
+[heilman cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022049.html
 [op_cat bip]: https://github.com/EthanHeilman/op_cat_draft/blob/main/cat.mediawiki
-[jahr hash_serialized_2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
+[jahr hash_serialized_2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/022038.html
 [Bitcoin Core 25.1]: https://bitcoincore.org/bin/bitcoin-core-25.1/
 [Bitcoin Core 24.2]: https://bitcoincore.org/bin/bitcoin-core-24.2/
 [Bitcoin Core 26.0rc1]: https://bitcoincore.org/bin/bitcoin-core-26.0/

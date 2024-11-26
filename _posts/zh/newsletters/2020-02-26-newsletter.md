@@ -137,8 +137,8 @@ endcomment %}
 [lnd 0.9.1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.9.1-beta.rc1
 [release rc section]: #发布与候选发布
 [news72 upfront]: /zh/newsletters/2019/11/13/#ln-up-front-payments
-[jager up-front]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002547.html
-[russell dm]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002552.html
+[jager up-front]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002547.html
+[russell dm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002552.html
 [whatsat]: https://github.com/joostjager/whatsat
 [news72 offers]: /zh/newsletters/2019/11/13/#proposed-bolt-for-ln-offers
 [news83 nonce safety]: /zh/newsletters/2020/02/05/#safety-concerns-related-to-precomputed-public-keys-used-with-schnorr-signatures
@@ -153,4 +153,4 @@ endcomment %}
 [bulletproofs]: https://eprint.iacr.org/2017/1066.pdf
 [zk-SNARKs]: https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof
 [timing attack]: https://en.wikipedia.org/wiki/Timing_attack
-[zmn circular]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002555.html
+[zmn circular]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002555.html

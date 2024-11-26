@@ -122,10 +122,10 @@ repo].*
 [0.17.1 bin]: https://bitcoincore.org/bin/bitcoin-core-0.17.1/
 [0.17.1 notes]: https://bitcoincore.org/en/releases/0.17.1/
 [maintenance]: https://bitcoincore.org/en/lifecycle/#maintenance-releases
-[lau bip68]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016574.html
-[rm codesep]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016581.html
-[short-term options contracts]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001752.html
-[cjp risk]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001292.html
+[lau bip68]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016574.html
+[rm codesep]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016581.html
+[short-term options contracts]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001752.html
+[cjp risk]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001292.html
 [cl plugin event]: https://github.com/ElementsProject/lightning/blob/master/doc/PLUGINS.md#event-notifications
 [cl helloworld.py]: https://github.com/ElementsProject/lightning/blob/master/contrib/plugins/helloworld.py
 [btcpay]: https://github.com/btcpayserver/btcpayserver

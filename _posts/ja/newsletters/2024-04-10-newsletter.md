@@ -258,7 +258,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [teinturier bolts835]: https://github.com/lightning/bolts/issues/835#issuecomment-764779287
 [corallo free money]: https://github.com/lightning/blips/pull/18#issuecomment-1304319234
 [corallo overly specific]: https://github.com/lightningnetwork/lnd/pull/6703#issuecomment-1374694283
-[jager inbound]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003643.html
+[jager inbound]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-July/003643.html
 [singh dsl]: https://delvingbitcoin.org/t/dsl-for-experimenting-with-contracts/748
 [linus dsl]: https://delvingbitcoin.org/t/dsl-for-experimenting-with-contracts/748/4
 [ruffing bip2]: https://gnusha.org/pi/bitcoindev/59fa94cea6f70e02b1ce0da07ae230670730171c.camel@timruffing.de/
@@ -272,4 +272,4 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [64bit arith cscriptnum]: https://github.com/Christewart/bitcoin/tree/64bit-arith-cscriptnum
 [docs 5byte carveout]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.cpp#L531-L544
 [doc SCRIPT_VERIFY_MINIMALDATA]: https://github.com/bitcoin/bitcoin/blob/3206e45412ded0e70c1f15ba66c2ba3b4426f27f/src/script/interpreter.h#L69-L73
-[ml OP_TLUV]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
+[ml OP_TLUV]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html

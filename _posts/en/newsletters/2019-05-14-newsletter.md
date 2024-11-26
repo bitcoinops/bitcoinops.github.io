@@ -583,11 +583,11 @@ the fault of the newsletter author.
     for additional precision.
 
 {% include linkers/issues.md issues="15730,15930,2524,15939" %}
-[anyprevout post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
-[psbt path]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016894.html
-[taproot post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016914.html
+[anyprevout post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
+[psbt path]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016894.html
+[taproot post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016914.html
 [mast]: https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
-[sigagg complications]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
+[sigagg complications]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-March/015838.html
 [discuss activation]: https://twitter.com/pwuille/status/1125478777084006400
 [csprng]: https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator
 [hsms]: https://en.wikipedia.org/wiki/Hardware_security_module

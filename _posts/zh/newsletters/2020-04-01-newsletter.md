@@ -39,18 +39,18 @@ lang: zh
 
 {% include references.md %}
 {% include linkers/issues.md issues="903,4078,3865" %}
-[trevethan statechains]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
+[trevethan statechains]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
 [statechain overview]: https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39
 [duplex micropayment channels]: https://tik-old.ee.ethz.ch/file//716b955c130e6c703fac336ea17b1670/duplex-micropayment-channels.pdf
 [mpc]: https://en.wikipedia.org/wiki/Secure_multi-party_computation
 [scriptless scripts]: https://github.com/ElementsProject/scriptless-scripts
-[fournier dpa]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017709.html
-[wuille dpa]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017711.html
+[fournier dpa]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017709.html
+[wuille dpa]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017711.html
 [news87 bip340 update]: /zh/newsletters/2020/03/04/#updates-to-bip340-schnorr-keys-and-signatures
 [dpa]: https://en.wikipedia.org/wiki/Power_analysis#Differential_power_analysis
 [nonce function discussion]: https://github.com/sipa/bips/issues/195
-[alm bip322 update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017712.html
+[alm bip322 update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017712.html
 [news88 bip320]: /zh/newsletters/2020/03/11/#bip322-generic-signmessage-progress-or-perish
-[patent note]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017741.html
-[patent discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017742.html
+[patent note]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017741.html
+[patent discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017742.html
 [trevethan application]: https://patents.google.com/patent/US20200074464A1

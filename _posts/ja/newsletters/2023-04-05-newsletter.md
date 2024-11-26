@@ -115,7 +115,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 {% include linkers/issues.md v=2 issues="5967,2566,2062,1031,1032,1040,2125,4826,4782,4799,765" %}
 [lnd v0.16.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.0-beta
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
-[segura watchtowers post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003892.html
+[segura watchtowers post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-March/003892.html
 [segura watchtowers gist]: https://gist.github.com/sr-gi/f91f007fc8d871ea96ead9b27feec3d5
 [news85 blinding]: /ja/newsletters/2020/02/19/#decoy-nodes-and-lightweight-rendez-vous-routing
 [news226 bolts1031]: /ja/newsletters/2022/11/16/#bolts-1031

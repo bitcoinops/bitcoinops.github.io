@@ -125,7 +125,7 @@ BOLTs][bolts repo].*
 [news92 cl3600]: /en/newsletters/2020/04/08/#c-lightning-3600
 [news128 cl4255]: /en/newsletters/2020/12/16/#c-lightning-4255
 [cl cl]: https://github.com/ElementsProject/lightning/blob/v0.9.3/CHANGELOG.md#093---2021-01-20
-[folkson announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018370.html
+[folkson announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018370.html
 [chow survey]: https://survey.alchemer.com/s3/6081474/8acd79087feb
 [chow blog]: https://achow101.com/2021/01/bitcoin-core-survey
 [bitcoin whitepaper gettxout]: https://bitcoinhackers.org/@jb55/105595146491662406
