@@ -116,11 +116,11 @@ wiki page for changes -->{% endcomment %}
 [bech32 series]: /en/bech32-sending-support/
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
 [johoe stats]: https://jochen-hoenicke.de/queue/#0,24h
-[stuckless]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html
+[stuckless]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html
 [zkcp]: https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/
 [lightning loop]: https://github.com/lightninglabs/loop
 [loop-in]: https://blog.lightning.engineering/announcement/2019/06/25/loop-in.html
-[atomic data payments]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002035.html
+[atomic data payments]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002035.html
 [Y'alls]: https://www.yalls.org
 [lnd 0.7]: https://github.com/lightningnetwork/lnd/releases/tag/v0.7.0-beta
 [cl 0.7.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.7.1

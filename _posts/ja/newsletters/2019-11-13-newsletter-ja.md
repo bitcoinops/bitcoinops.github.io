@@ -103,23 +103,23 @@ lang: ja
 [news58 psbts]: /en/newsletters/2019/08/07/#bip174-extensibility
 [news37 signet]: /en/newsletters/2019/03/12/#feedback-requested-on-signet
 [news66 erlay]: /ja/newsletters/2019/10/02
-[cve-2017-18350]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017453.html
+[cve-2017-18350]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017453.html
 [breaking onion routing]: https://arxiv.org/abs/1910.13772
 [bech32 length change]: https://github.com/sipa/bech32/issues/51
 [lnd-onion]: https://github.com/lightningnetwork/lightning-onion/pull/40
 [news72 cl onion]: /ja/newsletters/2019/11/13/#c-lightning-3246
 [tr week 1]: https://github.com/ajtowns/taproot-review/blob/master/week-1.md
 [why v1 flex]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-11-05-19.00.log.html#l-88
-[wuille bech32 workaround]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
+[wuille bech32 workaround]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
 [tr meet1]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-11-05-19.00.log.html
 [tr meet2]: http://www.erisian.com.au/meetbot/taproot-bip-review/2019/taproot-bip-review.2019-11-07-02.00.log.html
-[russell up-front]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002275.html
-[towns up-front]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002307.html
-[bolt offers]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002276.html
-[osuntokun sphinx]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002288.html
+[russell up-front]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002275.html
+[towns up-front]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002307.html
+[bolt offers]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002276.html
+[osuntokun sphinx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002288.html
 [universal business language]: https://en.wikipedia.org/wiki/Universal_Business_Language
 [android bitcoin core]: https://github.com/greenaddress/abcore
-[bip179 genesis]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017369.html
+[bip179 genesis]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017369.html
 [news52 avoid_reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
 [dust flooding]: {{bse}}81509
 [news59 proposed 32B pubkeys]: /en/newsletters/2019/08/14/#proposed-change-to-schnorr-pubkeys

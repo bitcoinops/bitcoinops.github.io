@@ -122,12 +122,12 @@ at the beginning of a sentence. -harding -->{% endcomment %}
 {% include references.md %}
 {% include linkers/issues.md issues="19651,4610,1854,1137,1134,834" %}
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta.rc1
-[chow descriptors post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019151.html
+[chow descriptors post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019151.html
 [news34 descriptor checksums]: /en/newsletters/2019/02/19/#bitcoin-core-15368
-[gentry blips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003086.html
-[pickhardt lips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003088.html
-[teinturier blips]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003093.html
-[russell zeroconf]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003074.html
+[gentry blips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003086.html
+[pickhardt lips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003088.html
+[teinturier blips]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-July/003093.html
+[russell zeroconf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-June/003074.html
 [news136 c-lightning 4364]: /ja/newsletters/2021/02/17/#c-lightning-4364
 [bip86]: https://github.com/bitcoin/bips/blob/master/bip-0086.mediawiki
 [bip-taproot-bip44 desc]: /ja/newsletters/2021/06/30/#p2tr

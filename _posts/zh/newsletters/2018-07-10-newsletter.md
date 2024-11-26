@@ -18,7 +18,7 @@ version: 1
 
 - **<!--as-previous-newsletters-->**如之前的 Newsletter 所宣布的那样，比特币警报密钥已经[发布][alert released]，同时披露了影响 Bitcoin Core 0.12.0 及更早版本的漏洞。Altcoins 可能也会受到影响。如果您还没有检查您的基础设施以了解受影响的服务，建议您现在就这样做。有关更多详细信息，请查看 [Newsletter #1][newsletter #1]。
 
-[alert released]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
+[alert released]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
 [newsletter #1]: /zh/newsletters/2018/06/26/
 
 ## 仪表盘项
@@ -33,7 +33,7 @@ version: 1
 
 Pieter Wuille 在比特币开发者邮件列表中[发帖][schnorr post]，提交了一个基于 Schnorr 的[签名格式草案规范][schnorr draft]。该规范的目标是在实际软分叉开始之前，就比特币上的 Schnorr 签名的外观达成共识，因此 BIP 并未提出特定的新操作码、隔离见证标志、软分叉激活方法或其他任何将此变更纳入比特币共识规则所必需的内容。然而，如果这种签名格式成为比特币采用的 Schnorr 签名形式，我们可以说这种签名格式将提供：
 
-[schnorr post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html
+[schnorr post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html
 [schnorr draft]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
 
 1. 与现有的比特币私钥和公钥完全兼容，意味着现有的 HD 钱包升级不需要生成新的恢复种子。

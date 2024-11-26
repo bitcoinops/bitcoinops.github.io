@@ -68,6 +68,6 @@ contract even when it doesn't seem like an option.
 {% endauto_anchor %}
 
 [p4tr vaults]: /en/preparing-for-taproot/#vaults-with-taproot
-[maxwell taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[maxwell taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [irc log1]: https://gnusha.org/taproot-bip-review/2020-02-09.log
 [irc log2]: https://gnusha.org/taproot-bip-review/2020-02-10.log

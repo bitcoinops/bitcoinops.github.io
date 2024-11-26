@@ -65,13 +65,13 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="15006,15870,14802,14047,2631,2627,15512,14032" %}
 [mcf transcripts]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/
-[v2 transport protocol]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
-[anyprevout list]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001992.html
+[v2 transport protocol]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
+[anyprevout list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-May/001992.html
 [mcf vids]: https://www.youtube.com/playlist?list=PLWqtMh0tDnEGBHDS8CalOpkVZhlIgRlAC
 [mcf andytoshi]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/crypto-in-cryptocurrency/
 [mcf nonet]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/bitcoin-without-internet/
 [mcf future ln]: https://diyhpl.us/wiki/transcripts/magicalcryptoconference/2019/ln-present-and-future-panel/
-[email bip-anyprevout]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
+[email bip-anyprevout]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016929.html
 [bech32 series]: /zh/bech32-sending-support/
 [newsletter #34]: /zh/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
 [newsletter #39]: /zh/newsletters/2019/03/26/#version-2-p2p-transport-proposal

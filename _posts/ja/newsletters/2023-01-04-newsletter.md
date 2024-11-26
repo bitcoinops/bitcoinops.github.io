@@ -160,15 +160,15 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include linkers/issues.md v=2 issues="26265,21576,24865,23319,26628,2464,2482,2208,1738,1908,1467,1330,4411,25600" %}
 [news172 prevout]: /ja/newsletters/2021/10/27/#bitcoin-core-22918
 [weight units]: https://en.bitcoin.it/wiki/Weight_units
-[towns bci]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021275.html
+[towns bci]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021275.html
 [bitcoin inquisition]: https://github.com/bitcoin-inquisition/bitcoin
-[todd probe]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021296.html
-[lipshitz fss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021272.html
-[kogman fss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021274.html
-[todd fss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021286.html
-[rbf-fss]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008248.html
-[towns rbfm]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021276.html
-[todd rbf node]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021270.html
+[todd probe]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021296.html
+[lipshitz fss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021272.html
+[kogman fss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021274.html
+[todd fss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021286.html
+[rbf-fss]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008248.html
+[towns rbfm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021276.html
+[todd rbf node]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-December/021270.html
 [news229 cln]: /ja/newsletters/2022/12/07/#core-lightning-22-11
 [min relay size ml]: /ja/newsletters/2022/10/19/#minimum-relayable-transaction-size
 [full-rbf service bit]: https://github.com/petertodd/bitcoin/commit/c15b8d70778238abfa751e4216a97140be6369af

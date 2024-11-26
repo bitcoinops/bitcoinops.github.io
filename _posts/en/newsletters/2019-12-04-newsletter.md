@@ -138,22 +138,22 @@ infrastructure projects.
 {% include linkers/issues.md issues="3259,643,3268" %}
 [news48 coshv]: /en/newsletters/2019/05/29/#proposed-new-opcode-for-transaction-output-commitments
 [news49 stb]: /en/newsletters/2019/06/05/#coshv-proposal-replaced
-[oconnor checksig pos]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017495.html
-[wuille safer sighashes]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016508.html
+[oconnor checksig pos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017495.html
+[wuille safer sighashes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016508.html
 [irc checksig pos]: http://www.erisian.com.au/taproot-bip-review/log-2019-11-28.html#l-65
-[towns checksig pos]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017497.html
-[zmn composable musig]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017493.html
-[nodelets proposal]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002236.html
+[towns checksig pos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017497.html
+[zmn composable musig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017493.html
+[nodelets proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002236.html
 [news74 taproot updates]: /en/newsletters/2019/11/27/#schnorr-taproot-updates
-[ctv post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html
+[ctv post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html
 [bip-ctv]: https://github.com/JeremyRubin/bips/blob/ctv/bip-ctv.mediawiki
 [ctv workshop]: https://forms.gle/pkevHNj2pXH9MGee9
-[oconnor state variable]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017496.html
-[oconnor suggested amendments]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016973.html
+[oconnor state variable]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017496.html
+[oconnor suggested amendments]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016973.html
 [irc ctv]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-11-28#25861123;
 [congestion controlled transactions]: https://github.com/JeremyRubin/bips/blob/ctv/bip-ctv.mediawiki#Congestion_Controlled_Transactions
 [payment pools]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-05-21#1558427254-1558427441;
-[watchtower protocol]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002350.html
+[watchtower protocol]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002350.html
 [coincovenants]: https://bitcointalk.org/index.php?topic=278122.0
 [simplicity]: https://blockstream.com/simplicity.pdf
 [covenant allusion]: https://freenode.irclog.whitequark.org/bitcoin-wizards/2019-11-28#25861296

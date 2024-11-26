@@ -66,12 +66,12 @@ lang: zh
 [lnd hold invoices]: /zh/newsletters/2019/03/19/#lnd-2022
 [listpayments deprecated]: /zh/newsletters/2019/03/05/#c-lightning-2382
 [carve-out]: /zh/newsletters/2019/07/24/#bitcoin-core-15681
-[eltoo sample]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002131.html
-[eltoo ms 1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002132.html
-[eltoo ms 2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002135.html
-[eltoo summary]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002136.html
+[eltoo sample]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002131.html
+[eltoo ms 1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002132.html
+[eltoo ms 2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002135.html
+[eltoo summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002136.html
 [signet]: https://en.bitcoin.it/wiki/Signet
-[less gossip]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002134.html
+[less gossip]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002134.html
 [txprobe paper]: https://arxiv.org/pdf/1812.00942.pdf
 [eltoo]: https://blockstream.com/eltoo.pdf
 [miniscript]: /en/topics/miniscript/

@@ -149,8 +149,8 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [lnd 0.14.3-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.3-beta.rc1
 [core lightning 0.11.0rc1]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0rc1
 [gentry taro]: https://lightning.engineering/posts/2022-4-5-taro-launch/
-[osuntokun taro]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003539.html
-[nick musig2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020198.html
+[osuntokun taro]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003539.html
+[nick musig2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020198.html
 [musig2 bip]: https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki
 [ldk 0.0.106]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.106
 [btcpay server 1.4.9]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.4.9

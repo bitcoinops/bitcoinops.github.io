@@ -185,18 +185,18 @@ witnessデータと適切なscriptCodeを使用してsegwitルールを適用し
 [LND 0.13.1-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.1-beta.rc2
 [bip341 cite22]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_ref-22-0
 [News128 eclair akka]: /en/newsletters/2020/12/16/#eclair-1566
-[oconnor var csfs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019193.html
+[oconnor var csfs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019193.html
 [erhardt bech32m tweet]: https://twitter.com/murchandamus/status/1413687483246776322
 [wiki bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
-[rubin csfs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019192.html
-[harding altcoins]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019203.html
-[towns multisig]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019209.html
-[rubin just csfs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019229.html
+[rubin csfs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019192.html
+[harding altcoins]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019203.html
+[towns multisig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019209.html
+[rubin just csfs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019229.html
 [lnd leader]: https://github.com/bhandras/lnd/blob/f41771ce54bb7721101658477ad538991fc99fe6/docs/leader_election.md
 [nick varsig]: https://github.com/bitcoin-core/secp256k1/pull/844/commits/a0c3fc177f7f435e593962504182c3861c47d1be
 [news48 generic csfs]: /en/newsletters/2019/05/29/#not-generic-enough
 [op_cat]: /en/topics/op_checksigfromstack/#relationship-to-op_cat
-[rubin cost/benefit]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
+[rubin cost/benefit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
 [offers spec changes]: https://github.com/lightningnetwork/lightning-rfc/pull/798#issuecomment-871124755
 [suredbits enterprise ln]: /en/suredbits-enterprise-ln/
 [series preparing for taproot]: /ja/preparing-for-taproot/

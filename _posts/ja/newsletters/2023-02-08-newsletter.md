@@ -177,10 +177,10 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="25880,5679,5867,5821,5849,5892,2565,7252,6527" %}
 [news158 upfront]: /ja/newsletters/2021/07/21/#eclair-1846
-[dickinson ordinal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021370.html
-[poelstra ordinal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021372.html
+[dickinson ordinal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021370.html
+[poelstra ordinal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-January/021372.html
 [news65 tapscript]: /en/newsletters/2019/09/25/#tapscript-resource-limits
-[ckccs jamming]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003834.html
+[ckccs jamming]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003834.html
 [news226 jam]: /ja/newsletters/2022/11/16/#paper-about-channel-jamming-attacks
 [news230 jam]: /ja/newsletters/2022/12/14/#local-jamming-to-prevent-remote-jamming
 [news228 jam]: /ja/newsletters/2022/11/30/#ln

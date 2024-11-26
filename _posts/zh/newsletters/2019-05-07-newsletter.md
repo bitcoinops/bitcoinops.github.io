@@ -86,7 +86,7 @@ wiki page for changes -->{% endcomment %}
 [bitcoincore.org download]: https://bitcoincore.org/en/download/
 [gitian sigs]: https://github.com/bitcoin-core/gitian.sigs
 [wasabi hwi]: https://github.com/zkSNACKs/WalletWasabi/pull/1341
-[tap post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016914.html
+[tap post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016914.html
 [taproot]: https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki
 [tapscript]: https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki
 [tap ref]: https://github.com/sipa/bitcoin/commits/taproot

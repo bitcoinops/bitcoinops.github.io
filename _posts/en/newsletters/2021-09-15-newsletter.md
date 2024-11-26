@@ -200,11 +200,11 @@ BOLTs][bolts repo].*
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [btcpay server 1.2.3]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.2.3
-[towns overview]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
-[towns detailed]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019420.html
+[towns overview]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019419.html
+[towns detailed]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019420.html
 [joinpool]: https://gist.github.com/harding/a30864d0315a0cebd7de3732f5bd88f0
 [news59 vaults]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
-[b10c post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019413.html
+[b10c post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019413.html
 [news165 bolts847]: /en/newsletters/2021/09/08/#bolts-847
 [russell tweet]: https://twitter.com/rusty_twit/status/1435758634995105792
 [news162 core verification]: /en/newsletters/2021/08/18/#bitcoin-core-22642

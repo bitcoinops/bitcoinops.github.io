@@ -305,25 +305,25 @@ newsletter's author.
 {% include references.md %}
 {% include linkers/issues.md issues="2075,14411,2124,1535,1512,14441" %}
 
-[ln threads]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/thread.html
-[roasbeef amp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
-[zmn base amp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001577.html
-[pickhardt local amp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001626.html
-[neigut liquidity]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
-[zmn liquidity]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
-[zmn dual rbf]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001631.html
-[zmn splicing cut-through]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001153.html
-[pickhardt bolt splicing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001322.html
-[russell splicing]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+[ln threads]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/thread.html
+[roasbeef amp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
+[zmn base amp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001577.html
+[pickhardt local amp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001626.html
+[neigut liquidity]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
+[zmn liquidity]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
+[zmn dual rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001631.html
+[zmn splicing cut-through]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001153.html
+[pickhardt bolt splicing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-June/001322.html
+[russell splicing]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 [russell why limit]: https://medium.com/@rusty_lightning/bitcoin-lightning-faq-why-the-0-042-bitcoin-limit-2eb48b703f3
 [youtube wumbo]: https://www.youtube.com/watch?v=--hsVknT1c0
-[zmn describing wumbo]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001596.html
-[zmn global wumbo]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001576.html
-[cjp rz]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html
-[zmn rz]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001547.html
-[zmn rz packetswitch]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001553.html
+[zmn describing wumbo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001596.html
+[zmn global wumbo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001576.html
+[cjp rz]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html
+[zmn rz]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001547.html
+[zmn rz packetswitch]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001553.html
 [cl plugin]: https://github.com/ElementsProject/lightning/blob/master/doc/PLUGINS.md
-[rusty wrapup]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001569.html
+[rusty wrapup]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001569.html
 [ln1.1 outline]: https://github.com/lightningnetwork/lightning-rfc/wiki/Lightning-Specification-1.1-Proposal-States
 [input consolidations]: https://en.bitcoin.it/wiki/Techniques_to_reduce_transaction_fees#Consolidation
 [lnrfc rz]: https://github.com/lightningnetwork/lightning-rfc/wiki/Rendez-vous-mechanism-on-top-of-Sphinx

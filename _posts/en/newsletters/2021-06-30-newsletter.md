@@ -150,9 +150,9 @@ BOLTs][bolts repo].*
 {% include linkers/issues.md issues="22154,22166,20966,21056,4606,877" %}
 [news128 psbt2]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
-[chow taproot psbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019095.html
+[chow taproot psbt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019095.html
 [bip-taproot-psbt]: https://github.com/achow101/bips/blob/taproot-psbt/bip-taproot-psbt.mediawiki
-[chow taproot path]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019096.html
+[chow taproot path]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019096.html
 [bip-taproot-bip44]: https://github.com/achow101/bips/blob/taproot-bip44/bip-taproot-bip44.mediawiki
 [news93 lnd4075]: /en/newsletters/2020/04/15/#lnd-4075
 [news152 p2tr descriptors]: /en/newsletters/2021/06/09/#bitcoin-core-22051

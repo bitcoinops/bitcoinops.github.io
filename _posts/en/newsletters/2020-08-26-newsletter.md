@@ -154,7 +154,7 @@ release candidates.*
 {% include references.md %}
 {% include linkers/issues.md issues="14582,19743,19550,3954,524,955,688,785" %}
 [lnd 0.11.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.11.0-beta
-[belcher coinswap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
+[belcher coinswap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018080.html
 [news100 coinswap]: /en/newsletters/2020/06/03/#design-for-a-coinswap-implementation
 [news52 avoid_reuse]: /en/newsletters/2019/06/26/#bitcoin-core-13756
 [news6 avoidpartial]: /en/newsletters/2018/07/31/#bitcoin-core-12257
