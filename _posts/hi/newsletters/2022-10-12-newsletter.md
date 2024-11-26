@@ -162,9 +162,9 @@ Servers को अप्रयुक्त वॉलेट पते की म�
 [review club 26114]: https://bitcoincore.reviews/26114
 [bitcoin core 24.0 rc1]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
-[law post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003707.html
+[law post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003707.html
 [law pdf]: https://raw.githubusercontent.com/JohnLaw2/ln-watchtower-free/main/watchtowerfree10.pdf
-[somsen post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020952.html
+[somsen post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020952.html
 [somsen gist]: https://gist.github.com/RubenSomsen/960ae7eb52b79cc826d5b6eaa61291f6
 [news113 witasym]: /en/newsletters/2020/09/02/#witness-asymmetric-payment-channels
 [lnd v0.15.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.2-beta

@@ -179,14 +179,14 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include linkers/issues.md v=2 issues="25353,25454,5239,5275,5955,1567,1589,3922,634,614" %}
 [btcpay server 1.6.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.6.1
 [ldk security policy]: https://github.com/TheBlueMatt/rust-lightning/blob/92919c8f375311e4f9a596d64a026a172839dd0f/SECURITY.md
-[nick agg]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020662.html
+[nick agg]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020662.html
 [bip-agg]: https://github.com/ElementsProject/cross-input-aggregation/blob/master/half-aggregation.mediawiki
 [blog agg]: https://blog.blockstream.com/half-aggregation-of-bip-340-signatures/
 [news166 tluv]: /ja/newsletters/2021/09/15/#covenant-opcode-proposal-covenant-opcode
-[ruffing xonly]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020663.html
+[ruffing xonly]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020663.html
 [news204 rmusig]: /ja/newsletters/2022/06/15/#musig2
-[todd delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003621.html
-[corallo delay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003641.html
+[todd delay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003621.html
+[corallo delay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003641.html
 [news203 scid]: /ja/newsletters/2022/06/08/#bolts-910
 [cia doc]: https://github.com/ElementsProject/cross-input-aggregation
 [news205 fullrbf]: /ja/newsletters/2022/06/22/#rbf

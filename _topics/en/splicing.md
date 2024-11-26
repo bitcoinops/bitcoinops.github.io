@@ -24,10 +24,10 @@ primary_sources:
       link: https://github.com/lightning/bolts/pull/863
 
     - title: Splice proposal (Rusty Russell)
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 
     - title: Splice proposal (Rene Pickhardt)
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001437.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

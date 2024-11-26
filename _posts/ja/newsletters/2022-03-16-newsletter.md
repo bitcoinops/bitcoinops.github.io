@@ -91,17 +91,17 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="24198,24043,24304,24303,5068,1269" %}
 [news46 csa]: /en/newsletters/2019/05/14/#new-script-based-multisig-semantics
-[zmnscpxj fold]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/020021.html
-[towns btc-lisp]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020036.html
+[zmnscpxj fold]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/020021.html
+[towns btc-lisp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020036.html
 [lisp]: https://ja.wikipedia.org/wiki/LISP
 [chia lisp]: https://chialisp.com/
-[zhao rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020095.html
+[zhao rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020095.html
 [daftuar limits]: https://gist.github.com/glozow/25d9662c52453bd08b4b4b1d3783b9ff?permalink_comment_id=4058140#gistcomment-4058140
 [news183 ctv meeting]: /ja/newsletters/2022/01/19/#irc
-[ctv2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019855.html
-[ctv3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019874.html
-[ctv4]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019974.html
-[ctv5]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020086.html
-[obeirne vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020067.html
+[ctv2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019855.html
+[ctv3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019874.html
+[ctv4]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019974.html
+[ctv5]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020086.html
+[obeirne vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020067.html
 [coredev.tech]: https://coredev.tech/
 [news153 nseq]: /ja/newsletters/2021/06/16/#taproot-nsequence-bip

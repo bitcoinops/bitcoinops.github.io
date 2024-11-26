@@ -110,6 +110,9 @@ optech_mentions:
   - title: "Using covenants like OP_CTV and APO to improve LN scalability"
     url: /en/newsletters/2023/09/27/#using-covenants-to-improve-ln-scalability
 
+  - title: "Post and website examining `SIGHASH_ANYPREVOUT` testing on the default signet"
+    url: /en/newsletters/2024/11/22/#signet-activity-report
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Eltoo

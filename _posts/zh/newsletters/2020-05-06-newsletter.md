@@ -81,8 +81,8 @@ lang: zh
 [dorier signet]: https://github.com/bitcoin/bitcoin/pull/16411#issuecomment-577999888
 [cl faq]: https://github.com/ElementsProject/lightning/blob/master/doc/FAQ.md
 [news91 bip322 update]: /zh/newsletters/2020/04/01/#proposed-update-to-bip322-generic-signmessage
-[casatta qr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017794.html
-[allen qr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017795.html
+[casatta qr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017794.html
+[allen qr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017795.html
 [qr old]: https://github.com/cryptoadvance/specter-diy/issues/57
 [qr new]: https://github.com/BlockchainCommons/AirgappedSigning/issues/4
 [lnd op safety]: https://github.com/lightningnetwork/lnd/blob/master/docs/safety.md

@@ -65,16 +65,16 @@ Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo] 和
 {% include linkers/issues.md v=2 issues="863,26467,6378,6449,6399,6389,6403,6437,6398,5492,2680,7820,7516,5155" %}
 [clnrest doc]: https://github.com/rustyrussell/lightning/blob/02c2d8a9e3b450ce172e8bc50c855ac2a16f5cac/plugins/clnrest/README.md
 [news133 usdt]: /en/newsletters/2021/01/27/#bitcoin-core-19866
-[kc scripts]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004025.html
+[kc scripts]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004025.html
 [btcscripts spec]: https://btctranscripts.com/lightning-specification/
 [libera.chat]: https://libera.chat/
-[trevethan blind]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021792.html
+[trevethan blind]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021792.html
 [generalized blind schnorr]: https://gist.github.com/moonsettler/05f5948291ba8dba63a3985b786233bb
 [somsen gist]: https://gist.github.com/RubenSomsen/be7a4760dd4596d06963d67baf140406
 [lucre]: https://github.com/benlaurie/lucre
 [minicash]: https://github.com/phyro/minicash
 [cashu]: https://github.com/cashubtc/cashu
-[fiatjaf custodial]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004008.html
+[fiatjaf custodial]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004008.html
 [news210 commando]: /zh/newsletters/2022/07/27/#core-lightning-5370
 [dhke]: https://zh.wikipedia.org/wiki/%E8%BF%AA%E8%8F%B2-%E8%B5%AB%E7%88%BE%E6%9B%BC%E5%AF%86%E9%91%B0%E4%BA%A4%E6%8F%9B
 [btcpay server 1.11.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.11.1

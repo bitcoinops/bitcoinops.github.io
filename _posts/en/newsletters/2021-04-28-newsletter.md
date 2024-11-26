@@ -215,19 +215,19 @@ BOLTs][bolts repo].*
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [webauthn/fido2]: https://en.wikipedia.org/wiki/FIDO2_Project
 [u2f]: https://en.wikipedia.org/wiki/Universal_2nd_Factor
-[russell splicing post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002999.html
-[russell old splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
+[russell splicing post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002999.html
+[russell old splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
 [news17 splice]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
-[riard workshop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003002.html
+[riard workshop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003002.html
 [riard zoology]: https://github.com/ariard/L2-zoology
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 [fournier otves]: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
 [ecdh warning]: https://github.com/ElementsProject/secp256k1-zkp/pull/117/commits/6955af5ca8930aa674e5fdbc4343e722b25e0ca8#diff-0bc5e1a03ce026e8fea9bfb91a5334cc545fbd7ba78ad83ae5489b52e4e48856R14-R27
 [news92 ecdsa adaptor]: /en/newsletters/2020/04/08/#work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures
 [libsecp256k1-zkp #117]: https://github.com/ElementsProject/secp256k1-zkp/pull/117
-[dashjr alm]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018835.html
-[corallo bot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018849.html
-[corallo ignore repo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018859.html
+[dashjr alm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018835.html
+[corallo bot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018849.html
+[corallo ignore repo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018859.html
 [news136 safegcd]: /en/newsletters/2021/02/17/#faster-signature-operations
 [coq]: https://coq.inria.fr/
 [news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150

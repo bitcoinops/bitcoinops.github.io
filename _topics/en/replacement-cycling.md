@@ -21,7 +21,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Full Disclosure of replacement cycling vulnerabilities
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-October/021999.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

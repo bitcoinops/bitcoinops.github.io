@@ -137,18 +137,18 @@ lang: ja
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [lnd 0.12.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.12.0-beta.rc5
 [news63 bcc15759]: /en/newsletters/2019/09/11/#bitcoin-core-15759
-[daftuar disabletx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018340.html
+[daftuar disabletx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018340.html
 [rfc 6886]: https://tools.ietf.org/html/rfc6886
 [rfc 6887]: https://tools.ietf.org/html/rfc6887
 [laanwj natpmp]: https://github.com/bitcoin/bitcoin/issues/11902#issue-282227529
-[wuille bech32m post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018338.html
+[wuille bech32m post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-January/018338.html
 [bech32m bip]: https://github.com/sipa/bips/blob/bip-bech32m/bip-bech32m.mediawiki
 [news83 podle]: /ja/newsletters/2020/02/05/#podle
-[zmn podle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002476.html
-[darosior sighash]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002475.html
-[fournier podle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002929.html
+[zmn podle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002476.html
+[darosior sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002475.html
+[fournier podle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002929.html
 [news45 bech32 upgrade]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
 [rc testing guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/0.21-Release-Candidate-Testing-Guide
 [muhash review club]: /en/newsletters/2020/11/11/#bitcoin-core-pr-review-club
-[muhash mailing list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
+[muhash mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html
 [muhash algorithm]: https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf

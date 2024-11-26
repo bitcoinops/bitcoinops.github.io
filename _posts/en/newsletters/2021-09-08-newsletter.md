@@ -224,13 +224,13 @@ BOLTs][bolts repo].*
 [news115 anchor fees]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
 [news123 eclair watchdogs]: /en/newsletters/2020/11/11/#eclair-1545
 [p2pool]: https://bitcointalk.org/index.php?topic=18313.0
-[gray mime]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019385.html
+[gray mime]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019385.html
 [iana]: https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority
-[chow mime]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019386.html
+[chow mime]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019386.html
 [ietf]: https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force
-[gray bip]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019390.html
+[gray bip]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019390.html
 [braidpool paper]: https://github.com/pool2win/braidpool/raw/main/proposal/proposal.pdf
-[pool2win post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
+[pool2win post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019371.html
 [aj calculations]: https://github.com/bitcoin/bitcoin/pull/22340#issuecomment-872723147
 [headers first pr]: https://github.com/bitcoin/bitcoin/pull/4468
 [news166 fee negotiation]: /en/newsletters/2021/09/15/#c-lightning-4599

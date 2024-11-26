@@ -130,7 +130,7 @@ contextのランダム化は、サイドチャネル攻撃からの保護を目�
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="23508,21851,16795,6226,6234,6177,1227,549,544" %}
 [lnd 0.14.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.2-beta
-[zhao rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[zhao rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [news163 pickhardt richter paper]: /ja/newsletters/2021/08/25/#zero-base-fee-ln-discussion-ln
 [news142 pps]: /ja/newsletters/2021/03/31/#paper-on-probabilistic-path-selection
 [news172 cl4771]: /ja/newsletters/2021/10/27/#c-lightning-4771

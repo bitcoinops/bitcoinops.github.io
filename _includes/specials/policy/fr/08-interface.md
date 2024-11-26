@@ -78,8 +78,8 @@ Ces points de friction mettent en évidence non seulement l'importance de la pol
 et les protocoles dans l'écosystème Bitcoin, mais aussi les domaines dans lesquels elle doit s'améliorer. Le prochain article de la
 semaine prochaine abordera les propositions de politique et les questions ouvertes.
 
-[full rbf pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[rbf ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[full rbf pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[rbf ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [n25038 notes]: https://bitcoincore.reviews/25038
 [policy01]: /fr/newsletters/2023/05/17/#en-attente-de-confirmation-1--pourquoi-avons-nous-un-mempool-
 [policy02]: /fr/newsletters/2023/05/24/#en-attente-de-confirmation-2--mesures-dincitation

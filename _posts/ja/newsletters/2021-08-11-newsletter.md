@@ -149,7 +149,7 @@ Review Clubでは、txindexを使用する場合としない場合のトラン�
 [fidelity bonds doc]: https://gist.github.com/chris-belcher/18ea0e6acdb885a2bfbdee43dcd6b5af/
 [waxwing toot]: https://x0f.org/@waxwing/106696673020308743
 [news57 fidelity bonds]: /en/newsletters/2019/07/31/#fidelity-bonds-for-improved-sybil-resistance
-[addrRelay improvements]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018784.html
+[addrRelay improvements]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018784.html
 [addr client research]: https://github.com/bitcoin/bitcoin/pull/21528#issuecomment-809906430
 [news157 lnd ha]: /ja/newsletters/2021/07/14/#lnd-5447
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/

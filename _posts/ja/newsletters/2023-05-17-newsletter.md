@@ -197,15 +197,15 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [package relay]: https://btctranscripts.com/bitcoin-core-dev-tech/2023-04-25-package-relay-primer/
 [mempool clustering]: https://btctranscripts.com/bitcoin-core-dev-tech/2023-04-25-mempool-clustering/
 [project meta discussion]: https://btctranscripts.com/bitcoin-core-dev-tech/2023-04-26-meta-discussion/
-[kcs endorsement]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-April/003918.html
-[decker endorsement]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003944.html
-[buhler lsp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003926.html
-[zmnscpxj lsp]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003930.html
-[teinturier 0conf]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003920.html
-[gould payjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021653.html
+[kcs endorsement]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-April/003918.html
+[decker endorsement]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003944.html
+[buhler lsp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003926.html
+[zmnscpxj lsp]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003930.html
+[teinturier 0conf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-May/003920.html
+[gould payjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021653.html
 [transaction cut-through]: https://bitcointalk.org/index.php?topic=281848.0
 [news46 qr]: /en/newsletters/2019/05/14/#bech32-sending-support
 [mempool slides]: https://github.com/bitcoin/bitcoin/files/11490409/Reinventing.the.Mempool.pdf
-[secp ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021683.html
+[secp ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021683.html
 [libsecp256k1 0.3.2]: https://github.com/bitcoin-core/secp256k1/releases/tag/v0.3.2
 [ecdh]: https://ja.wikipedia.org/wiki/%E6%A5%95%E5%86%86%E6%9B%B2%E7%B7%9A%E3%83%87%E3%82%A3%E3%83%95%E3%82%A3%E3%83%BC%E3%83%BB%E3%83%98%E3%83%AB%E3%83%9E%E3%83%B3%E9%8D%B5%E5%85%B1%E6%9C%89

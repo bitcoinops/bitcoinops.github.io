@@ -74,18 +74,18 @@ No new action items, but follow-up related to the following previously-published
 
   In a slowly-progressing [discussion][graftroot discussion], members of the bitcoin-dev mailing list have been attempting to construct an informally-worded security proof that enabling graftroot delegation by default doesn't reduce the security of users who don't need it (e.g.  who just want to use taproot without delegation or even just plain MAST).  Although more peer review is needed, the effort seems to be proceeding positively with experts currently agreeing that it's safe to enable graftroot by default.
 
-[graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
-[taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [MAST]: https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
-[graftroot discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016049.html
+[graftroot discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016049.html
 
 - **[BIP174][] discussion:** as mentioned in [last week's newsletter][newsletter #1], mailing list [discussion][bip174 discussion] continues surrounding this proposed BIP for an industry standard to make it easier for wallets to communicate with each other in the case of online/offline (hot/cold) wallets, software/hardware wallets, multisig wallets, and multi-user transactions (e.g.  CoinJoin).  However, the BIP proposer has now opened a [pull request][bip174 update] requesting the BIP's status be changed from "draft" to "proposed".  That means it is unlikely to be changed unless a significant problem with implementation is found.  If your organization produces or makes critical use of one of the aforementioned interoperating wallets, you may wish to evaluate the current proposal ASAP before it is finalized.
 
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 [BIP174 update]: https://github.com/bitcoin/bips/pull/694
-[BIP174 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016150.html
+[BIP174 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016150.html
 
 - **[Dandelion][] transaction relay:** this proposed privacy-enhancing improvement to the way new transactions are initially relayed was [briefly discussed][dandelion discussion] on the bitcoin-dev mailing list this week. The main concern was how it selects which peers to route transactions through, which could be abused to reduce privacy temporarily during the initial deployment when only a few nodes support Dandelion.  Two mitigations for this problem were discussed.
 
 [Dandelion]: https://github.com/mablem8/bips/blob/master/bip-dandelion.mediawiki
-[dandelion discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016162.html
+[dandelion discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016162.html

@@ -589,24 +589,24 @@ Alex Morcos.
 [news27 eltoo]: /en/newsletters/2018/12/28/#april
 [news166 tluv]: /en/newsletters/2021/09/15/#amount-introspection
 [news190 recov]: /en/newsletters/2022/03/09/#limiting-script-language-expressiveness
-[rubin op_tx recursive]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
+[rubin op_tx recursive]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019872.html
 [minsc 1/3]: https://min.sc/#c=%24alice%20%3D%20A%3B%0A%24bob%20%3D%20B%3B%0A%24carol%20%3D%20C%3B%0A%0Apk%28%24alice%29%20%7C%7C%20pk%28%24bob%29%20%7C%7C%20pk%28%24carol%29
 [news136 sms]: /en/newsletters/2021/02/17/#securely-setting-up-multisig-wallets
 [news183 dos]: /en/newsletters/2022/01/19/#mailing-list-discussion
-[zmnscpxj cat1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020434.html
+[zmnscpxj cat1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020434.html
 [news187 op_tx]: /en/newsletters/2022/02/16/#simplified-alternative-to-op-txhash
-[ivgi cat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020442.html
-[zmnscpxj cat2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020441.html
-[oconnor cat]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020467.html
+[ivgi cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020442.html
+[zmnscpxj cat2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020441.html
+[oconnor cat]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020467.html
 [poelstra cat]: https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-i.html
 [news190 recurse]: /en/newsletters/2022/03/09/#introduction-of-turing-completeness
-[zmnscpxj cat3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020462.html
+[zmnscpxj cat3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020462.html
 [news134 cat]: /en/newsletters/2021/02/03/#replicating-op-checksigfromstack-with-bip340-and-op-cat
 [turing-complete]: https://en.wikipedia.org/wiki/Turing_completeness
-[russell op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020450.html
-[black op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020454.html
-[sanders op_tx]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020458.html
-[ingala desc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020423.html
+[russell op_tx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020450.html
+[black op_tx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020454.html
+[sanders op_tx]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020458.html
+[ingala desc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020423.html
 [supporters]: /#supporters
 [founding sponsors]: /en/about/#founding-sponsors
 [news191 pinning]: /en/newsletters/2022/03/16/#ideas-for-improving-rbf-policy
