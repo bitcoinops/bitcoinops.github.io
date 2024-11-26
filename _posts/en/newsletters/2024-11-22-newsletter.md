@@ -40,7 +40,7 @@ and popular Bitcoin infrastructure software.
   within factories to be [announced][topic channel announcements] but
   ZmnSCPxj [said][zmnscpxj plug2] he deliberately didn't consider those
   in his design in order to allow the specification change to be
-  adopted as fast as possible.
+  adopted as fast as possible. {% assign timestamp="1:53" %}
 
 - **Signet activity report:** Anthony Towns [posted][towns signet] to
   Delving Bitcoin a summary of activity on the default [signet][topic
@@ -60,7 +60,7 @@ and popular Bitcoin infrastructure software.
   Vojtěch Strnad [replied][strnad i.o] that he was inspired by Towns's
   post to create a website that lists
   "[every transaction][inquisition.observer] made on the Bitcoin signet
-  that uses one of the deployed soft forks."
+  that uses one of the deployed soft forks." {% assign timestamp="8:30" %}
 
 - **Update to LNHANCE proposal:** Moonsettler [posted][moonsettler
   paircommit delving] to Delving Bitcoin and [also][moonsettler
@@ -76,7 +76,7 @@ and popular Bitcoin infrastructure software.
   [covenants][topic covenants].
 
   Moonsettler also [discussed][moonsettler other lnhance] on the mailing
-  list other small potential tweaks to the LNHANCE proposal.
+  list other small potential tweaks to the LNHANCE proposal. {% assign timestamp="17:21" %}
 
 - **Covenants based on grinding rather than consensus changes:** Ethan
   Heilman [posted][heilman collider] to the Bitcoin-Dev mailing list the
@@ -89,7 +89,7 @@ and popular Bitcoin infrastructure software.
   application of the work is allowing users today to easily include a
   backup taproot spending path that can be securely used if [quantum
   resistance][topic quantum resistance] is suddenly needed and elliptic
-  curve signature operations on Bitcoin are disabled.
+  curve signature operations on Bitcoin are disabled. {% assign timestamp="34:35" %}
 
 ## Changes to services and client software
 
@@ -98,19 +98,19 @@ wallets and services.*
 
 - **Spark layer two protocol announced:**
   [Spark][spark website] is an offchain, [statechain][topic statechains]-like
-  protocol that supports the Lightning Network.
+  protocol that supports the Lightning Network. {% assign timestamp="55:10" %}
 
 - **Unify wallet announced:**
   [Unify][unify github] is a [BIP78][]-compatible [payjoin][topic payjoin]
-  wallet that uses Bitcoin Core and coordinates [PSBTs][topic psbt] over nostr.
+  wallet that uses Bitcoin Core and coordinates [PSBTs][topic psbt] over nostr. {% assign timestamp="59:15" %}
 
 - **bitcoinutils.dev launches:**
   The [bitcoinutils.dev][] website provides a variety of Bitcoin utilities
-  including script debugging as well as various encoding and hash functions.
+  including script debugging as well as various encoding and hash functions. {% assign timestamp="1:00:40" %}
 
 - **Great Restored Script Interpreter available:**
   The [Great Restored Script Interpreter][greatrsi github] is an experimental
-  interpreter for the [Great Script Restoration][gsr youtube] proposal.
+  interpreter for the [Great Script Restoration][gsr youtube] proposal. {% assign timestamp="1:03:59" %}
 
 ## Notable code and documentation changes
 
@@ -130,7 +130,7 @@ repo], and [BINANAs][binana repo]._
   be invalid during full validation. This fixes an issue where the value was
   incorrectly set after these events. This PR also marks headers that extend
   from an invalid block as `BLOCK_FAILED_CHILD`, preventing them from being
-  considered for `m_best_header`.
+  considered for `m_best_header`. {% assign timestamp="1:06:33" %}
 
 - [Bitcoin Core #30239][] makes [ephemeral dust][topic ephemeral anchors]
   outputs standard, allowing zero-fee transactions with a [dust][topic
@@ -142,11 +142,11 @@ repo], and [BINANAs][binana repo]._
   trees][topic timeout trees], [BitVM2][topic acc], and others. This update
   builds on existing features such as 1P1C relays, [TRUC][topic v3 transaction
   relay] transactions, and [sibling eviction][topic kindred rbf] (see
-  [Newsletter #328][news328 ephemeral]).
+  [Newsletter #328][news328 ephemeral]). {% assign timestamp="1:07:56" %}
 
 - [Core Lightning #7833][] enables the [offers][topic offers] protocol by
   default, removing its previous experimental status. This follows the merging
-  of its PR into the BOLTs repository (see [Newsletter #323][news323 offers]).
+  of its PR into the BOLTs repository (see [Newsletter #323][news323 offers]). {% assign timestamp="1:14:01" %}
 
 - [Core Lightning #7799][] introduces the `xpay` plugin to send payments by
   constructing optimal [multipath payments][topic multipath payments], using the
@@ -156,23 +156,23 @@ repo], and [BINANAs][binana repo]._
   deadlines, adding routing data through layers, and making partial payments for
   multi-party contributions on a single invoice. This plugin is simpler and more
   sophisticated than the older ‘pay’ plugin, but doesn't have all of its
-  features.
+  features. {% assign timestamp="1:15:11" %}
 
 - [Core Lightning #7800][] adds a new `listaddresses` RPC command that returns a
   list of all bitcoin addresses that have been generated by the CLN node. This
   PR also sets [P2TR][topic taproot] as the default script type for [anchor output][topic anchor
-  outputs] spends and for unilateral-close change addresses.
+  outputs] spends and for unilateral-close change addresses. {% assign timestamp="1:17:45" %}
 
 - [Core Lightning #7102][] extends the `generatehsm` command to run
   non-interactively with command line options. Previously, you could only
   generate a Hardware Security Module (HSM) secret through an interactive
   process at the terminal, so this change is particularly useful for automated
-  installations.
+  installations. {% assign timestamp="1:18:35" %}
 
 - [Core Lightning #7604][] adds the `bkpr-editdescriptionbypaymentid` and
   `bkpr-editdescriptionbyoutpoint` RPC commands to the bookkeeping plugin, which
   update or set the description on events matching the payment id or the
-  outpoint respectively.
+  outpoint respectively. {% assign timestamp="1:19:26" %}
 
 - [Core Lightning #6980][] introduces a new `splice` command that takes either a
   JSON payload or a splice script that defines complex [splicing][topic
@@ -182,7 +182,7 @@ repo], and [BINANAs][binana repo]._
   adds the `stfu_channels` and `abort_channels` RPC commands that allow users to
   pause channel activity or abort multiple channels to enable [channel
   commitment upgrades][topic channel commitment upgrades], which is critical
-  when performing complex splice actions.
+  when performing complex splice actions. {% assign timestamp="1:21:12" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
