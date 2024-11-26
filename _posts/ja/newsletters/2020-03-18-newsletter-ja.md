@@ -42,7 +42,7 @@ lang: ja
 {% include references.md %}
 {% include linkers/issues.md issues="16902,3821,3963,1319" %}
 [lnd op safety]: https://github.com/lightningnetwork/lnd/blob/master/docs/safety.md
-[segura email]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002586.html
+[segura email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-March/002586.html
 [watchtower bolt]: https://github.com/sr-gi/bolt13/blob/master/13-watchtowers.md
 [club #16902]: https://bitcoincore.reviews/16902/
 [news75 watchtower]: /ja/newsletters/2019/12/04/#proposed-watchtower-bolt

@@ -21,7 +21,7 @@ primary_sources:
       link: https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39
 
     - title: Statechains with ECDSA and without eltoo
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017714.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
@@ -43,6 +43,9 @@ optech_mentions:
 
   - title: Mercury Layer announced as an implementation of statechains using blind signing
     url: /en/newsletters/2024/01/24/#mercury-layer-announced
+
+  - title: "Spark statechain-like protocol announced"
+    url: /en/newsletters/2024/11/22/#spark-layer-two-protocol-announced
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

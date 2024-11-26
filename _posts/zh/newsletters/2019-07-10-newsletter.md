@@ -50,6 +50,6 @@ wiki page for changes -->{% endcomment %}
 [lnd rc]: https://github.com/LightningNetwork/lnd/releases
 [eclair 0.3.1]: https://github.com/ACINQ/eclair/releases/tag/v0.3.1
 [tlv pr]: https://github.com/lightningnetwork/lightning-rfc/pull/607
-[pickhardt jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
-[zmn jit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002055.html
+[pickhardt jit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001891.html
+[zmn jit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002055.html
 [output script descriptor]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

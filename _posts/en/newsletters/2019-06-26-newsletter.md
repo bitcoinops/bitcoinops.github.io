@@ -177,7 +177,7 @@ endcomment %}
 [sdaftuar rbf]: https://github.com/bitcoin/bitcoin/pull/16171#issuecomment-500393271
 [uncompressed pubkeys]: https://btcinformation.org/en/developer-guide#public-key-formats
 [undo files]: https://en.bitcoin.it/wiki/Data_directory#locks_subdirectory
-[vulnerabilities announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017040.html
+[vulnerabilities announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017040.html
 [eclipse attack]: https://eprint.iacr.org/2015/263.pdf
 [core dev meeting]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2019/bitcoin-core-dev.2019-06-20-19.01.log.html#l-36
 [newsletter #6]: /en/newsletters/2018/07/31/#bitcoin-core-12257

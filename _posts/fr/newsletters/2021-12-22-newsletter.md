@@ -788,6 +788,6 @@ mercredi le 5 janvier.*
 [fee bump research]: /en/newsletters/2021/12/08/#fee-bumping-research
 [nov cs]: /en/newsletters/2021/11/17/#changes-to-services-and-client-software
 [dec cs]: /en/newsletters/2021/12/15/#changes-to-services-and-client-software
-[mpa ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
-[ff orig]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
+[mpa ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
+[ff orig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
 [2020 conclusion]: /fr/newsletters/2020/12/23/#conclusion

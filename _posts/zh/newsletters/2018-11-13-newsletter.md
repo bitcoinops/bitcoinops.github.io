@@ -52,12 +52,12 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="14410,14060,1782,1944" %}
 
-[lightning-dev mailing list]: https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev
-[neigut liquidity]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
-[zmn liquidity]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
-[walletless opens]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001539.html
+[lightning-dev mailing list]: https://gnusha.org/url/https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev
+[neigut liquidity]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
+[zmn liquidity]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001555.html
+[walletless opens]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001539.html
 [eltoo protocol]: https://blockstream.com/eltoo.pdf
-[probe cancel]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001554.html
+[probe cancel]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001554.html
 [core dev meeting]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2018/bitcoin-core-dev.2018-11-08-19.00.log.html#l-49
 [core dev log]: http://www.erisian.com.au/bitcoin-core-dev/log-2018-11-08.html#l-668
 [zeromq]: http://zeromq.org/

@@ -189,7 +189,7 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [kani rust verifier]: https://github.com/model-checking/kani
 [news223 anchors]: /ja/newsletters/2022/10/26/#ephemeral-anchors
 [news224 anchors]: /ja/newsletters/2022/11/02/#anchor-outputs-workaround
-[sanders ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021222.html
+[sanders ephemeral]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021222.html
 [review club 26152]: https://bitcoincore.reviews/26152
 [review club 26152-2]: https://bitcoincore.reviews/26152-2
 [rusty semver]: https://github.com/ElementsProject/lightning/issues/5716#issuecomment-1322745630

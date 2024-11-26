@@ -54,5 +54,5 @@ Bech32 原生 segwit 地址几乎在两年前首次公开[提议][bech32 propose
 
 以上是你需要在软件后端进行的全部更改，以启用发送到 bech32 地址。对于大多数平台，这应该是一个非常简单的更改。参见 [BIP173][] 和[参考实现][bech32 ref libs]以获取一组测试向量，用于确保你的实现正常工作。
 
-[bech32 proposed]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html
+[bech32 proposed]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html
 [bech32 ref libs]: https://github.com/sipa/bech32/tree/master/ref

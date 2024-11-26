@@ -323,18 +323,18 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 [bitcoin core 25.0]: https://bitcoincore.org/bin/bitcoin-core-25.0/
 [1ml stats]: https://1ml.com/statistics
 [arc specs]: https://github.com/ark-network/specs
-[keceli ark]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021694.html
-[keceli reply0]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021720.html
-[harding reply0]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021721.html
-[harding reply1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021714.html
-[stone reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021708.html
-[dryja reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021713.html
-[jk_14]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021717.html
-[jager nostr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021700.html
+[keceli ark]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021694.html
+[keceli reply0]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021720.html
+[harding reply0]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021721.html
+[harding reply1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021714.html
+[stone reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021708.html
+[dryja reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021713.html
+[jk_14]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021717.html
+[jager nostr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021700.html
 [jager video]: https://twitter.com/joostjgr/status/1658487013237211155
 [news85 stuck funds]: /en/newsletters/2020/02/19/#c-lightning-3500
 [btcpay server 97e7e]: https://github.com/btcpayserver/btcpayserver/commit/97e7e60ceae2b73d63054ee38ea54ed265cc5b8e
 [news157 libsecp]: /en/newsletters/2021/07/14/#libsecp256k1-844
 [bcc rn]: https://bitcoincore.org/en/releases/25.0/
 [news252 incentives]: /en/newsletters/2023/05/24/#waiting-for-confirmation-2-incentives
-[morcos limits]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html
+[morcos limits]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011401.html

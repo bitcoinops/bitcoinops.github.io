@@ -178,7 +178,7 @@ wait until version 0.18 in about six months from now.*
 [0.14.3]: https://github.com/bitcoin/bitcoin/releases/tag/v0.14.3
 [reorg risk recommendation]: https://btcinformation.org/en/you-need-to-know#instant
 [bitcoin core full disclosure]: https://bitcoincore.org/en/2018/09/20/notice/
-[original confidential report]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016424.html
+[original confidential report]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-September/016424.html
 [cve-2018-17144]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17144
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
 [coredev.tech]: https://coredev.tech/

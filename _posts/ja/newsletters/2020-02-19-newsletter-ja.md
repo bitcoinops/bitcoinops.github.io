@@ -89,19 +89,19 @@ lang: ja
 [news82 unannounced]: /ja/newsletters/2020/01/29/#utxo
 [news22 rv]: /en/newsletters/2018/11/20/#hidden-destinations
 [news46 win32]: /en/newsletters/2019/05/14/#bitcoin-core-15939
-[anon reflowed]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017618.html
-[towns tap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017622.html
-[harding tap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017621.html
+[anon reflowed]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017618.html
+[towns tap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017622.html
+[harding tap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017621.html
 [taplearn1]: https://github.com/bitcoin-core/secp256k1/pull/558
 [taplearn2]: https://github.com/apoelstra/taproot
 [taplearn3]: https://github.com/ajtowns/taproot-review
-[nick tap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017625.html
-[rubin tap]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017629.html
-[neigut podle1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002516.html
-[neigut podle2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002517.html
-[gibson podle]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002522.html
-[teinturier delink]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002435.html
-[teinturier rv]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002519.html
+[nick tap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017625.html
+[rubin tap]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017629.html
+[neigut podle1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002516.html
+[neigut podle2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002517.html
+[gibson podle]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002522.html
+[teinturier delink]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-January/002435.html
+[teinturier rv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-February/002519.html
 [rv gist]: https://gist.github.com/t-bast/9972bfe9523bb18395bdedb8dc691faf
 [acinq libsecp]: https://github.com/ACINQ/secp256k1/tree/jni-embed/src/java
 [bolt1 init]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md#the-init-message

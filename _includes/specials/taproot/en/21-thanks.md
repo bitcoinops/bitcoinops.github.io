@@ -501,6 +501,6 @@ accept taproot-compliant blocks, making it safe for everyone to use
 taproot's features.
 
 {% include linkers/issues.md issues="17977,19953" %}
-[maxwell taproot post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[maxwell taproot post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [good morning]: /en/preparing-for-taproot/#a-good-morning
 [news69 review]: /en/newsletters/2019/10/23/#taproot-review

@@ -176,11 +176,11 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [LND v0.17.0-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.17.0-beta.rc1
 [core lightning 23.08]: https://github.com/ElementsProject/lightning/releases/tag/v23.08
 [delv mashup]: https://delvingbitcoin.org/t/combined-ctv-apo-into-minimal-txhash-csfs/60/6
-[morehouse dos]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004064.html
+[morehouse dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004064.html
 [morehouse post]: https://morehouse.github.io/lightning/fake-channel-dos/
 [news237 dos]: /ja/newsletters/2023/02/08/#core-lightning-5849
 [news240 dos]: /ja/newsletters/2023/03/01/#ldk-1988
-[black mashup]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021907.html
+[black mashup]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021907.html
 [news185 txhash]: /ja/newsletters/2022/02/02/#ctv-apo
 [stateless funding]: https://gnusha.org/lightning-dev/2023-08-27.log
 [bip158 filters]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki#block-filters

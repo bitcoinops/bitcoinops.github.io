@@ -104,7 +104,7 @@ on the Optech website.  {% include specials/bech32/23-compat.md %}
 
 {% include linkers/issues.md issues="16248,16383,15986,3391,516,608,3355,16060" %}
 [bech32 series]: /en/bech32-sending-support/
-[buried post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017266.html
+[buried post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017266.html
 [compat announce]: /en/2019-compatibility-matrix/
 [news34 pr15368]: /en/newsletters/2019/02/19/#bitcoin-core-15368
 [hc heights]: #hardcoded-previous-soft-fork-activation-blocks

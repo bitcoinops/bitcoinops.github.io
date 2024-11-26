@@ -247,8 +247,8 @@ wallets and services.*
 [news117 glv]: /en/newsletters/2020/09/30/#us-patent-7-110-538-has-expired
 [news117 memcmp]: /en/newsletters/2020/09/30/#discussion-about-compiler-bugs
 [news119 upfront]: /en/newsletters/2020/10/14/#ln-upfront-payments
-[jager hold fees]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002826.html
-[russell simplified]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002831.html
+[jager hold fees]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002826.html
+[russell simplified]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002831.html
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [##taproot-activation logs]: http://gnusha.org/taproot-activation/
 [musig 2 paper]: https://eprint.iacr.org/2020/1261

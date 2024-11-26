@@ -363,15 +363,15 @@ newsletter author.
 [news77 eclipse]: /en/newsletters/2019/12/18/#discussion-of-eclipse-attacks-on-ln-nodes
 [hw security]: https://en.bitcoin.it/wiki/Hardware_wallet#Security_risks
 [towns benefits]: https://bitcoincore.org/en/2016/01/26/segwit-benefits/#signing-of-input-values
-[palatinus inpatient]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-October/013248.html
+[palatinus inpatient]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-October/013248.html
 [news11 sighash]: /en/newsletters/2018/09/04/#proposed-sighash-updates
-[naumenko td]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017920.html
+[naumenko td]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017920.html
 [td blog]: https://discrete-blog.github.io/time-dilation/
 [td paper]: https://arxiv.org/abs/2006.01418
-[lau sighash2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016345.html
+[lau sighash2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016345.html
 [maxwell spend twice]: http://www.erisian.com.au/bitcoin-core-dev/log-2020-06-05.html#l-352
 [bip143 motivation]: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki#motivation
-[sanders attack]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014843.html
+[sanders attack]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-August/014843.html
 [news97 spk commit]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
 [trezor post]: https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-1-and-trezor-model-t-version-2-3-1-1eba8f60f2dd
 [bip341 all amounts]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-17
