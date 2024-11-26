@@ -80,8 +80,8 @@ Pinningが問題になるのは、複数の参加者が共同でトランザク�
 これらの摩擦点は、Bitcoinエコシステムにおけるアプリケーションとプロトコルのインターフェースとしてポリシーの重要性だけでなく、
 改善が必要な部分を浮き彫りにしています。来週の記事では、ポリシーの提案と未解決の問題について説明します。
 
-[full rbf pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[rbf ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[full rbf pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[rbf ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [n25038 notes]: https://bitcoincore.reviews/25038
 [policy01]: /ja/newsletters/2023/05/17/#承認を待つ-1-なぜmempoolがあるのか
 [policy02]: /ja/newsletters/2023/05/24/#承認を待つ-2-インセンティブ

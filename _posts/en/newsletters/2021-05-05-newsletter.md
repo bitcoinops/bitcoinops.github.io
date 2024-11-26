@@ -173,9 +173,9 @@ BOLTs][bolts repo].*
 [bitcoin core 0.21.1]: https://bitcoincore.org/bin/bitcoin-core-0.21.1/
 [btcpay 1.1.0]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.1.0
 [wincodesign]: https://github.com/bitcoin-core/gui/issues/252#issuecomment-802591628
-[russell ecdh channels]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002996.html
-[russell ecdh spec]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002998.html
-[russell backups]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003026.html
+[russell ecdh channels]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002996.html
+[russell ecdh spec]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002998.html
+[russell backups]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003026.html
 [news128 covert]: /en/newsletters/2020/12/16/#covert-request-for-mutual-close
 [taproot.watch]: https://taproot.watch/
 [news128 ln ecdh]: /en/newsletters/2020/12/16/#fast-recovery-without-backups

@@ -114,11 +114,11 @@ flag, and several notable recent Bitcoin Core merges.
 
 [newsletter #3]: /en/newsletters/2018/07/10/
 [recommended fees]: https://p2sh.info/dashboard/db/fee-estimation?orgId=1&from=now-7d&to=now&var-source=bitcoind
-[multiparty signatures]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016215.html
-[rearrange schnorr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016211.html
+[multiparty signatures]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016215.html
+[rearrange schnorr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016211.html
 [BIP118]: https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki
 [eltoo]: https://blockstream.com/eltoo.pdf
-[unsafe sighash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016187.html
+[unsafe sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016187.html
 [popular twitter thread]: https://twitter.com/orionwl/status/1014829318986436608
 [schnorr feature]: /en/newsletters/2018/07/10/#featured-news-schnorr-signature-proposed-bip
 [#12257]: https://github.com/bitcoin/bitcoin/pull/12257

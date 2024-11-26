@@ -188,7 +188,7 @@ BOLTs][bolts repo].*
 [c-lightning 0.10.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.0rc2
 [hwi 2.0.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.0.1
 [news40 cltv_expiry_delta]: /en/newsletters/2019/04/02/#lnd-2759
-[pickhardt post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002984.html
+[pickhardt post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-March/002984.html
 [pickhardt et al]: https://arxiv.org/abs/2103.08576
 [news139 speedy trial]: /en/newsletters/2021/03/10/#a-short-duration-attempt-at-miner-activation
 [btcpay server 1.0.7.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.7.1

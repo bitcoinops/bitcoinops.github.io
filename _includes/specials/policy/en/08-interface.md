@@ -108,8 +108,8 @@ as an interface for applications and protocols in the Bitcoin
 ecosystem, but where it needs to improve. Next week’s post will
 discuss policy proposals and open questions.
 
-[full rbf pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[rbf ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[full rbf pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[rbf ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [n25038 notes]: https://bitcoincore.reviews/25038
 [policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
 [policy02]: /en/newsletters/2023/05/24/#waiting-for-confirmation-2-incentives

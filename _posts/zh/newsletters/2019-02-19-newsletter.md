@@ -80,8 +80,8 @@ lang: zh
 {% include linkers/issues.md issues="14438,13947,14032,14121,15277,14912,10973,10823,15368,13932,14075,9662,14021,14481,15063,15153,15195,13059,862,760" %}
 [bip32 keyid]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#key-identifiers
 [eltoo]: https://blockstream.com/eltoo.pdf
-[lau output tagging]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016549.html
-[nick output tagging]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016667.html
+[lau output tagging]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016549.html
+[nick output tagging]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016667.html
 [channel factories]: https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks.pdf
 [electrum personal server]: https://github.com/chris-belcher/electrum-personal-server
 [key origin information]: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification

@@ -33,5 +33,5 @@
 总结来说，希望获得最高安全性的多方多重签名用户应该迁移到 bech32 P2WSH 地址，以利用其额外的碰撞抵抗性。随着用户进行这种迁移，各服务确保他们实现 bech32 发送支持以便能够向这些注重安全的用户发送支付将变得更加重要。
 
 [bech32 fee savings]: /zh/bech32-sending-support/#使用原生-segwit-节省费用
-[sipa collision resistance]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012205.html
+[sipa collision resistance]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-January/012205.html
 [collision attack]: https://en.wikipedia.org/wiki/Collision_attack

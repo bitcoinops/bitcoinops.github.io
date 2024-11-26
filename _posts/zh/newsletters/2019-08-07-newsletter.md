@@ -64,7 +64,7 @@ lang: zh
 [bitcoin core 0.18.1 binaries]: https://bitcoincore.org/bin/bitcoin-core-0.18.1/
 [news40 trampoline payments]: /zh/newsletters/2019/04/02/#trampoline-payments-for-ln
 [news57 sync error]: /zh/newsletters/2019/07/31/#c-lightning-2842
-[psbt extensions]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017188.html
+[psbt extensions]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017188.html
 [trampoline pr]: https://github.com/lightningnetwork/lightning-rfc/pull/654
-[trampoline discussion]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002100.html
+[trampoline discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-August/002100.html
 [tlv merge]: /zh/newsletters/2019/07/17/#bolts-607

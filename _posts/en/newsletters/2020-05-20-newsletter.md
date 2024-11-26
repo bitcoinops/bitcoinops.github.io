@@ -164,14 +164,14 @@ version 0.20.*
 [headers]: https://btcinformation.org/en/developer-reference#headers
 [headers first sync]: https://btcinformation.org/en/developer-guide#headers-first
 [news97 spk commit]: /en/newsletters/2020/05/13/#request-for-an-additional-taproot-signature-commitment
-[towns suggestion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017813.html
-[wuille rfc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017849.html
-[somsen post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
+[towns suggestion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017813.html
+[wuille rfc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017849.html
+[somsen post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen video]: https://www.youtube.com/watch?v=TlCxpdNScCA
-[petukhov tla+]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017866.html
+[petukhov tla+]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017866.html
 [tla+ lang]: https://en.wikipedia.org/wiki/TLA%2B
 [sas tla+ spec]: https://github.com/dgpv/SASwap_TLAplus_spec
-[fournier elegance]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017851.html
+[fournier elegance]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017851.html
 [nolan swap]: https://bitcointalk.org/index.php?topic=193281.msg2224949#msg2224949
 [juggernaut blog]: https://medium.com/@johncantrell97/announcing-juggernaut-5bda48d34a18
 [lightning loop mpp blog]: https://lightning.engineering/posts/2020-05-13-loop-mpp/

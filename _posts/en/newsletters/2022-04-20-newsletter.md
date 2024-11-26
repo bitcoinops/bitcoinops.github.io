@@ -130,8 +130,8 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 [test guide]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/23.0-Release-Candidate-Testing-Guide
 [lnd 0.14.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.3-beta
 [core lightning 0.11.0rc3]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.0rc3
-[aronesty qc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020209.html
-[fournier qc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020214.html
+[aronesty qc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020209.html
+[fournier qc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020214.html
 [qc issue]: https://github.com/bitcoin-problems/bitcoin-problems.github.io/issues/4
 [bitcoinproblems.org]: https://bitcoinproblems.org/
 [news55 tlv]: /en/newsletters/2019/07/17/#bolts-607

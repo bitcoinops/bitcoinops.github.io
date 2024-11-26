@@ -254,7 +254,7 @@ hidden service if enabled at [the command line][watchtower tor].
 [lightning hacksprint]: https://wiki.fulmo.org/index.php?title=Main_Page
 [fournier otves]: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
 [news16 2pecdsa scriptless]: /en/newsletters/2018/10/09/#multiparty-ecdsa-for-scriptless-lightning-network-payment-channels
-[uSEkaCIO email]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
+[uSEkaCIO email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html
 [jonasnick otves]: https://github.com/jonasnick/secp256k1/pull/14/
 [nkohen otves]: https://github.com/bitcoin-s/bitcoin-s/pull/1302
 [lnd psbt]: //github.com/lightningnetwork/lnd/blob/master/docs/psbt.md

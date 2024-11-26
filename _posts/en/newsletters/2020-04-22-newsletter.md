@@ -169,7 +169,7 @@ BOLTs][bolts repo].*
 [btcpay-doc 486]: https://github.com/btcpayserver/btcpayserver-doc/issues/486
 [lnd rc intro]: https://groups.google.com/a/lightning.engineering/forum/#!topic/lnd/UoyCGu-RvnM
 [lnd engineering mailing list]: https://groups.google.com/a/lightning.engineering/forum/#!forum/lnd
-[bishop vaults]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017755.html
+[bishop vaults]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017755.html
 [vaults prototype]: https://github.com/kanzure/python-vaults
 [news59 vaults]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [btcpay pj announce]: https://blog.btcpayserver.org/btcpay-server-1-0-4-0/

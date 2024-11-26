@@ -109,9 +109,9 @@ CTVと`SIGHASH_ANYPREVOUT`を有効にするためのTapscriptへの代替変更
 [eclair 0.7.0]: https://github.com/ACINQ/eclair/releases/tag/v0.7.0
 [lnd 0.14.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.2-beta.rc1
 [btcpay ui blog]: https://blog.btcpayserver.org/btcpay-server-1-4-0/
-[fournier ctv dlc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019808.html
-[nick apo dlc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019812.html
-[oconnor txhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019813.html
-[towns pop_sigdata]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019819.html
+[fournier ctv dlc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019808.html
+[nick apo dlc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019812.html
+[oconnor txhash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019813.html
+[towns pop_sigdata]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019819.html
 [news184 eclair auto bump]: /ja/newsletters/2022/01/26/#eclair-2113
 [news170 external inputs]: /ja/newsletters/2021/10/13/#bitcoin-core-17211

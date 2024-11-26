@@ -53,6 +53,6 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [lnd 0.15.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc3
 [hwi 2.1.1]: https://github.com/bitcoin-core/HWI/releases/tag/2.1.1
 [news194 silent]: /ja/newsletters/2022/04/06/#delinked-reusable-addresses
-[w0xlt post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020513.html
+[w0xlt post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020513.html
 [sp tutorial]: https://gist.github.com/w0xlt/72390ded95dd797594f80baba5d2e6ee
 [sp address]: https://gist.github.com/RubenSomsen/c43b79517e7cb701ebf77eec6dbb46b8?permalink_comment_id=4177027#gistcomment-4177027

@@ -242,7 +242,7 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [news223 anchors]: /fr/newsletters/2022/10/26/#ephemeral-anchors
 [news224 anchors]: /fr/newsletters/2022/11/02/#solution-de-contournement-des-sorties-d-ancrage
 [news220 v3tx]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
-[sanders ephemeral]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021222.html
+[sanders ephemeral]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021222.html
 [review club 26152]: https://bitcoincore.reviews/26152
 [review club 26152-2]: https://bitcoincore.reviews/26152-2
 [rusty semver]: https://github.com/ElementsProject/lightning/issues/5716#issuecomment-1322745630
