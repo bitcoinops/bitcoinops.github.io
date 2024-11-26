@@ -112,16 +112,16 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27746,6376,6475,6466,6473,6253,5675,863,1945,759,28132,28130" %}
 [news245 blinded]: /zh/newsletters/2023/04/05/#bolts-765
-[towns dos]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004020.html
+[towns dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004020.html
 [news86 hold fees]: /en/newsletters/2020/02/26/#reverse-up-front-payments
-[shikhelman dos]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004033.html
-[towns dos2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004035.html
-[kcs endorsement]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004034.html
-[todd rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021823.html
+[shikhelman dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-July/004033.html
+[towns dos2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004035.html
+[kcs endorsement]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-August/004034.html
+[todd rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-July/021823.html
 [towns rbf]: https://github.com/bitcoin/bitcoin/pull/28132#issuecomment-1657669845
 [news207 onion]: /zh/newsletters/2022/07/06/#onion-message-rate-limiting
 [news261 jamming]: /zh/newsletters/2023/07/26/#channel-jamming-mitigation-proposals
-[todd opr]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021840.html
+[todd opr]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-August/021840.html
 [CVE-2023-39910]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-39910
 [milksad]: https://milksad.info/
 [mb milksad]: https://github.com/bitcoinbook/bitcoinbook/commit/76c5ba8000d6de20b4adaf802329b501a5d5d1db#diff-7a291d80bf434822f6a737f3e564be6a67432e2f3f12669cf0469aedf56849bbR126-R134

@@ -82,6 +82,6 @@ jaká pravidla byla přijata pro co nejlepší fungování celé sítě.
 
 [policy01]: /cs/newsletters/2023/05/17/#%C4%8Dek%C3%A1n%C3%AD-na-potvrzen%C3%AD-1-k-%C4%8Demu-je-mempool
 [policy04]: /cs/newsletters/2023/06/07/#%C4%8Dek%C3%A1n%C3%AD-na-potvrzen%C3%AD-4-odhad-poplatk%C5%AF
-[aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
+[aj mempool consistency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th
 

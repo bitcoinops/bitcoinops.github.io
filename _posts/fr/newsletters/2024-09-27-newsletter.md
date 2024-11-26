@@ -228,9 +228,9 @@ repo], et [BINANAs][binana repo]._
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Candidate-Testing-Guide
 [news216 checkpoints]: /fr/newsletters/2022/09/07/#bitcoin-core-25717
 [poinsot headers]: https://mailing-list.bitcoindevs.xyz/bitcoindev/WhFGS_EOQtdGWTKD1oqSujp1GW-v_ZUJemlNePPGaGBgzpmu6ThpqLwJpUVei85OiMu_xxjEzt_SeOWY7547C72BVISLENOd_qrdCwPajgk=@protonmail.com/
-[fuller dos]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017354.html
+[fuller dos]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017354.html
 [fuller paper]: https://bcoin.io/papers/bitcoin-chain-expansion.pdf
-[posen bidir]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001232.html
+[posen bidir]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-May/001232.html
 [erhardt post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/82a37738-a17b-4a8c-9651-9e241118a363@murch.one/
 [erhardt pr]: https://github.com/murchandamus/bips/pull/2
 [news310 bcc]: /fr/newsletters/2024/07/05/#divulgation-de-vulnerabilites-affectant-les-versions-de-bitcoin-core-anterieures-a-0-21-0

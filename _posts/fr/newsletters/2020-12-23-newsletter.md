@@ -837,7 +837,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [belcher coinswap2]: /en/newsletters/2020/08/26/#discussion-about-routed-coinswaps
 [belcher coinswap3]: /en/newsletters/2020/09/09/#continued-coinswap-discussion
 [belcher dec8 tweet]: https://twitter.com/chris_belcher_/status/1336322923800322049
-[bfd post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012636.html
+[bfd post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012636.html
 [bip157 spec discussion]: /en/newsletters/2018/06/08/#bip157-bip157-bip158-bip158-lightweight-client-filters
 [bips900]: /en/newsletters/2020/05/06/#bips-900
 [bips933]: /en/newsletters/2020/07/01/#bips-933
@@ -849,7 +849,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [cl3870]: /en/newsletters/2020/09/16/#c-lightning-3870
 [cl4068]: /en/newsletters/2020/09/30/#c-lightning-4068
 [c-lightning 0.9.0]: /en/newsletters/2020/08/05/#c-lightning-0-9-0
-[coinswap design]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
+[coinswap design]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
 [common ownership heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
 [index de compatibilité]: /en/compatibility/
 [copa announced]: /en/newsletters/2020/09/16/#crypto-open-patent-alliance
@@ -870,7 +870,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [lnd 0.10.0-beta]: /en/newsletters/2020/05/06/#lnd-0-10-0-beta
 [lnd 0.11.0-beta]: /en/newsletters/2020/08/26/#lnd-0-11-0-beta
 [lnd 0.9.0-beta]: /en/newsletters/2020/01/29/#upgrade-to-lnd-0-9-0-beta
-[maxwell gcs]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012637.html
+[maxwell gcs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012637.html
 [musig2 paper]: /en/newsletters/2020/10/21/#musig2-paper-published
 [neutrino]: https://github.com/lightninglabs/neutrino
 [news100 bcc19010]: /en/newsletters/2020/06/03/#bitcoin-core-19010
@@ -947,9 +947,9 @@ impatients de voir ce qu'ils nous réservent en 2021.
 [nick filter privacy]: https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
 [optech blog posts]: /en/blog/
 [rubin fee sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
-[russell loop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
+[russell loop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
 [rv routing]: /en/newsletters/2018/11/20/#hidden-destinations
-[somsen sas post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
+[somsen sas post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017846.html
 [somsen sas video]: https://www.youtube.com/watch?v=TlCxpdNScCA
 [##taproot-activation]: /en/newsletters/2020/07/22/#taproot-activation-discussions
 [atelier taproot]: /en/workshops/#taproot-workshop

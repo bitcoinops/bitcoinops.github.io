@@ -206,10 +206,10 @@ release candidates.*
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [mutability problem]: /en/newsletters/2019/12/28/#bech32-mutability
 [forward address compatibility]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
-[russell test]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018256.html
-[casatta test]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018257.html
-[schmidt test1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018258.html
-[schmidt test2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018268.html
+[russell test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018256.html
+[casatta test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018257.html
+[schmidt test1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018258.html
+[schmidt test2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018268.html
 [btcd #1661]: https://github.com/btcsuite/btcd/issues/1661
 [bech32 upper]: /en/bech32-sending-support/#creating-more-efficient-qr-codes-with-bech32-addresses
 [btcpay #2099]: https://github.com/btcpayserver/btcpayserver/issues/2099
@@ -217,7 +217,7 @@ release candidates.*
 [square tweet]: https://twitter.com/sqcrypto/status/1334626548515663872
 [minsc 0.2]: https://github.com/shesek/minsc/releases/tag/v0.2.0
 [minsc example]: https://min.sc/#c=%24alice%20%3D%20xpub68Gmy5EdvgibQVfPdqkBBCHxA5htiqg55crXYuXoQRKfDBFA1WEjWgP6LHhwBZeNK1VTsfTFUHCdrfp1bgwQ9xv5ski8PX9rL2dZXvgGDnw%2F9%2F0%3B%0A%0A%24policy%20%3D%20pk%28%24alice%2F1%2F3%29%20%26%26%20older%281%20month%29%3B%0A%24miniscript%20%3D%20miniscript%28%24policy%29%3B%20%2F%2F%20compile%20policy%20to%20miniscript%0A%24descriptor%20%3D%20wsh%28%24miniscript%29%3B%20%2F%2F%20wrap%20with%20a%20p2wsh%20descriptor%0A%24address%20%3D%20address%28%24descriptor%29%3B%20%2F%2F%20generate%20the%20address%0A%0A%5B%20%24policy%2C%20%24miniscript%2C%20%24descriptor%2C%20%24address%20%5D
-[wuille post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018292.html
+[wuille post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-December/018292.html
 [bip21 lowercase]: /en/bech32-sending-support/#bip21-complications
 [btcpay #2110]: https://github.com/btcpayserver/btcpayserver/issues/2110
 [few sockets]: https://bitcoincore.reviews/19858#l-180

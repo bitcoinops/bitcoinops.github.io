@@ -279,7 +279,7 @@ for contributing a particular amount of hashrate.
 {% include linkers/issues.md issues="" %}
 [betcoindice]: https://bitcointalk.org/index.php?topic=327767.0
 [jul2015 chainsplits]: https://en.bitcoin.it/wiki/July_2015_chain_forks
-[betterhash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
+[betterhash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
 [stratum v2]: https://stratumprotocol.org/
 [braidpool]: https://github.com/braidpool/braidpool
 [p2pool]: https://bitcointalk.org/index.php?topic=18313.0

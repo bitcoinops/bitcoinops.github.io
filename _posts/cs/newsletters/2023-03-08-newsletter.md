@@ -185,7 +185,7 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 [LDK v0.0.114]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.114
 [BTCPay 1.8.2]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.8.2
 [podcast post]: /cs/podcast-announcement/
-[sanders vault]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021510.html
+[sanders vault]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-March/021510.html
 [news234 vault]: /cs/newsletters/2023/01/18/#navrh-na-nove-opkody-pro-uschovny
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [news238 peer storage]: /cs/newsletters/2023/02/15/#core-lightning-5361

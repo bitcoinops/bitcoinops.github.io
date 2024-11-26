@@ -134,6 +134,6 @@ Proposed mitigations that require consensus changes include:
 {% include linkers/issues.md issues="" %}
 [lightning network paper]: https://lightning.network/lightning-network-paper.pdf
 [flood and loot]: https://arxiv.org/abs/2006.08513
-[friedenbach dynamic]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008017.html
-[maxwell dynamic]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008038.html
+[friedenbach dynamic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008017.html
+[maxwell dynamic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-May/008038.html
 [fdt]: /en/newsletters/2024/01/03/#fee-dependent-timelocks

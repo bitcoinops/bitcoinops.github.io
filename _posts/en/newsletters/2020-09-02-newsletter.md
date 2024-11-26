@@ -242,10 +242,10 @@ highlight a selection of the transcripts from the previous month.*
 {% include references.md %}
 {% include linkers/issues.md issues="19797,19731,4527,982" %}
 
-[witness asymmetric payment channels]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002785.html
-[zmn reply]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002786.html
-[default signet post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018145.html
-[temporarily trusted channels]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002780.html
+[witness asymmetric payment channels]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002785.html
+[zmn reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002786.html
+[default signet post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018145.html
+[temporarily trusted channels]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-August/002780.html
 [bitcoin core default signet]: https://github.com/bitcoin/bitcoin/issues/19787#issuecomment-679836225
 [news103 fee ransom]: /en/newsletters/2020/06/24/#ln-fee-ransom-attack
 [news92 ptlcs]: /en/newsletters/2020/04/08/#work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures
@@ -263,8 +263,8 @@ highlight a selection of the transcripts from the previous month.*
 [news87 bip 340 updates]: /en/newsletters/2020/03/04/#updates-to-bip340-schnorr-keys-and-signatures
 [sydney transcript]: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-08-25-socratic-seminar/
 [lnprototest]: https://github.com/rustyrussell/lnprototest
-[pk evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
-[r point evenness update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
+[pk evenness update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017639.html
+[r point evenness update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html
 [news111 proposed tiebreaker]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
 [btcd 0.21.0-beta]: https://github.com/btcsuite/btcd/releases/tag/v0.21.0-beta
 [hwi]: https://github.com/bitcoin-core/HWI
