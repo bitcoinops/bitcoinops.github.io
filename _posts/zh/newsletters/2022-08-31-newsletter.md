@@ -65,10 +65,10 @@ lang: zh
 [news175 verify]: /en/newsletters/2021/11/17/#bitcoin-core-22934
 [news87 verify]: /en/newsletters/2020/03/04/#bips-886
 [news83 verify]: /en/newsletters/2020/02/05/#safety-concerns-related-to-precomputed-public-keys-used-with-schnorr-signatures
-[raw interchange]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020887.html
-[moody slip15]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020888.html
-[rusnak slip15]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020892.html
-[raw slip15]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020893.html
+[raw interchange]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020887.html
+[moody slip15]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020888.html
+[rusnak slip15]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020892.html
+[raw slip15]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-August/020893.html
 [aliases]: /zh/newsletters/2022/07/13/#lnd-5955
 [slip15]: https://github.com/satoshilabs/slips/blob/master/slip-0015.md
 [news143 cln df]: /en/newsletters/2021/04/07/#c-lightning-0-10-0

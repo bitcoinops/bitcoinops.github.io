@@ -486,6 +486,6 @@ Taprootのアクティベーションは始まりに過ぎません。
 誰もがTaprootの機能を安全に利用できるようになります。
 
 {% include linkers/issues.md issues="17977,19953" %}
-[maxwell taproot post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[maxwell taproot post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 [good morning]: /ja/preparing-for-taproot/#a-good-morning
 [news69 review]: /ja/newsletters/2019/10/23/#taproot

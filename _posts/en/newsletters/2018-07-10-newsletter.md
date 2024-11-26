@@ -32,7 +32,7 @@ Lisbon.
   affected services, it is advised to do so now.  See [newsletter #1][]
   for more details
 
-[alert released]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
+[alert released]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016189.html
 [newsletter #1]: /en/newsletters/2018/06/26/
 
 ## Dashboard items
@@ -62,7 +62,7 @@ Bitcoin consensus rules.  However, it is possible to say what this signature
 format will provide if it becomes the form of Schnorr signature adopted by
 Bitcoin.
 
-[schnorr post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html
+[schnorr post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html
 [schnorr draft]: https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki
 
 1. Full compatibility with existing Bitcoin private keys and public

@@ -247,7 +247,7 @@ Happy holidays!
 
 {% include linkers/issues.md issues="17678,12763,3309,3697,3785,3702,3415,643" %}
 [lnd 0.8.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.8.2-beta
-[wuille bech32 post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017521.html
+[wuille bech32 post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017521.html
 [wuille bech32 analysis]: https://gist.github.com/sipa/a9845b37c1b298a7301c33a04090b2eb
 [news75 cl mainnet]: /en/newsletters/2019/12/04/#c-lightning-3268
 [news72 bech32]: /en/newsletters/2019/11/13/#taproot-review-discussion-and-related-information
@@ -259,13 +259,13 @@ Happy holidays!
 [power]: https://en.wikipedia.org/wiki/IBM_POWER_instruction_set_architecture
 [s390x]: https://en.wikipedia.org/wiki/Linux_on_IBM_Z
 [cl 0.8.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.8.0rc2
-[riard eclipse]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002369.html
-[corallo eclipse]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002370.html
-[zmn eclipse]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002372.html
+[riard eclipse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002369.html
+[corallo eclipse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002370.html
+[zmn eclipse]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-December/002372.html
 [mpp deployed]: #ln-implementations-add-multipath-payment-support
 [news74 c-lightning-3264]: /en/newsletters/2019/11/27/#c-lightning-3264
 [news76 upfront shutdown]: /en/newsletters/2019/12/11/#lnd-3655
-[rubin ctv update]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017525.html
+[rubin ctv update]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-December/017525.html
 [bitfinex ln blog]: https://www.bitfinex.com/posts/440
 [bitmex bech32 blog]: https://blog.bitmex.com/bitmex-enables-bech32-sending-support/
 [bitmex ln penalty blog]: https://blog.bitmex.com/lightning-network-part-5-bitmex-research-launches-penalty-transaction-alert-system/

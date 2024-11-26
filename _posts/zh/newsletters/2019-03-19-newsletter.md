@@ -60,15 +60,15 @@ lang: zh
 [havar github]: https://github.com/Blockstream/esplora/issues/51
 [mit vids]: https://www.youtube.com/user/MITBitcoinClub/videos
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
-[noinput thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016766.html
+[noinput thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016766.html
 [ivgi twitter]: https://twitter.com/shesek/status/1103320174936109057
 [uih2]: https://gist.github.com/AdamISZ/4551b947789d3216bacfcb7af25e029e#gistcomment-2796539
 [havar reddit]: https://old.reddit.com/r/Bitcoin/comments/ay1b0e/new_update_for_blockstreaminfo_is_out_fee_privacy/ehy77cn/
 [banlist cli]: https://people.xiph.org/~greg/banlist.cli.txt
 [banlist gui]: https://people.xiph.org/~greg/banlist.gui.txt
 [core dev irc]: http://www.erisian.com.au/meetbot/bitcoin-core-dev/2019/bitcoin-core-dev.2019-03-14-19.00.log.html#l-53
-[ldev mv]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001915.html
-[bdev mv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016785.html
+[ldev mv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-March/001915.html
+[bdev mv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016785.html
 [groups.io]: https://groups.io/
 [newsletter #37]: /zh/newsletters/2019/03/12/#removal-of-bip61-p2p-reject-messages
 [newsletter #34]: /zh/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending

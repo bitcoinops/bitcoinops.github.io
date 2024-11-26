@@ -191,7 +191,7 @@ about who owns which UTXO.  Several [approaches][podle1] to
 
 {% include references.md %}
 [dryja single-funded]: https://docs.google.com/presentation/d/1G4xchDGcO37DJ2lPC_XYyZIUkJc2khnLrCaZXgvDN0U/edit?pref=2&pli=1#slide=id.g85f425098_0_2
-[advertising channel liquidity]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
+[advertising channel liquidity]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001532.html
 [podle1]: /en/newsletters/2020/02/05/#podle
 [podle2]: /en/newsletters/2020/02/19/#using-podle-in-ln
 [podle-alt]: /en/newsletters/2021/01/13/#ln-dual-funding-anti-utxo-probing

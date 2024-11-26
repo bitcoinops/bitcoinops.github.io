@@ -160,11 +160,11 @@ lang: ja
 
 {% include references.md %}
 {% include linkers/issues.md issues="23789,23711,17631,22674,23718,17034,23113,459,2090,2104,2099,964,681,1177,545,546,547,1126,912" %}
-[opow ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018951.html
+[opow ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018951.html
 [##ctv-bip-review]: https://web.libera.chat/?channels=##ctv-bip-review
 [rust-lightning 0.0.104]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.104
-[rubin rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019696.html
-[rubin ctv-review]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019719.html
+[rubin rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019696.html
+[rubin ctv-review]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-December/019719.html
 [news154 rbf]: /ja/newsletters/2021/06/23/#allowing-transaction-replacement-by-default
 [news128 psbt]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [news72 psbt]: /ja/newsletters/2019/11/13/#bips-849

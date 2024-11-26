@@ -129,11 +129,11 @@ lang: ja
 [bitcoin core 22.0]: https://bitcoincore.org/bin/bitcoin-core-22.0/
 [bitcoin core 0.21.2]: https://bitcoincore.org/bin/bitcoin-core-0.21.2/
 [gpg batch]: https://gist.github.com/harding/78631dbcd65ff4a499e164c4e9dc85d4
-[rubin dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019307.html
-[corallo dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019308.html
-[harding dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019310.html
-[riard dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019327.html
-[towns dust]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019333.html
+[rubin dust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019307.html
+[corallo dust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019308.html
+[harding dust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019310.html
+[riard dust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019327.html
+[towns dust]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-August/019333.html
 [bitcoin core mempool limits]: /en/newsletters/2018/12/04/#fn:fn-cpfp-limits
 [mempool package test accept]: /ja/newsletters/2021/06/02/#bitcoin-core-20833
 [spark v0.3.0rc]: https://github.com/shesek/spark-wallet/releases/tag/v0.3.0rc

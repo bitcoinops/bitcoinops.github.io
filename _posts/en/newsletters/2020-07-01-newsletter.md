@@ -331,21 +331,21 @@ release candidates.*
 [lnd 0.10.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.2-beta.rc4
 [lnd 0.10.3-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.3-beta.rc1
 [hwi 1.1.2]: https://github.com/bitcoin-core/HWI/releases/tag/1.1.2
-[tye post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017997.html
+[tye post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017997.html
 [tye paper]: https://arxiv.org/abs/2006.12031
-[harding mad miner]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018010.html
-[zmnscpxj scorched earth]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017998.html
-[scorched earth]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002632.html
-[harding myopic]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018009.html
+[harding mad miner]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018010.html
+[zmnscpxj scorched earth]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017998.html
+[scorched earth]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-May/002632.html
+[harding myopic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018009.html
 [news101 fee overpayment]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [bcc11413rn]: https://github.com/kallewoof/bitcoin/blob/25dac9fa65243ca8db02df22f484039c08114401/doc/release-notes-11413.md
 [todd relay malleability]: https://petertodd.org/2016/segwit-consensus-critical-code-review#peer-to-peer-networking
 [news94 btcpayjoin]: /en/newsletters/2020/04/22/#btcpay-adds-support-for-sending-and-receiving-payjoined-payments
 [news13 bustapay]: /en/newsletters/2018/09/18/#bustapay-discussion
-[swambo rfc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017996.html
+[swambo rfc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017996.html
 [news87 negotiation]: /en/newsletters/2020/03/04/#improving-feature-negotiation-between-full-nodes-at-startup
 [knw paper]: https://eprint.iacr.org/2020/774
-[nadahalli post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018015.html
+[nadahalli post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/018015.html
 [osuntokun rcs]: https://groups.google.com/a/lightning.engineering/forum/#!topic/lnd/jgd1ZC9T5n4
 [mb ts]: https://diyhpl.us/wiki/transcripts/la-bitdevs/2020-05-21-alekos-filini-magical-bitcoin/
 [mb vid]: https://www.youtube.com/watch?v=QVhC2DOIl7I

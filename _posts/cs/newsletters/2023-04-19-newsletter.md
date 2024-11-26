@@ -177,8 +177,8 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="27358,6120,2584,863" %}
 [bdk 1.0.0-alpha.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-alpha.0
-[orlovsky rgb]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021554.html
-[tenga rgb]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021558.html
+[orlovsky rgb]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021554.html
+[tenga rgb]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-April/021558.html
 [rgb-lightning-sample]: https://github.com/RGB-Tools/rgb-lightning-sample
 [ldk-sample]: https://github.com/lightningdevkit/ldk-sample
 [rgb.tech]: https://rgb.tech/

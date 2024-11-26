@@ -569,7 +569,7 @@ Optechのニュースレターは、1月4日に通常の水曜日の発行スケ
 {% include linkers/issues.md v=2 issues="" %}
 [bls]: https://ja.wikipedia.org/wiki/ボネ・リン・シャチャム署名
 [cjdns]: https://github.com/cjdelisle/cjdns
-[law tunable]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
+[law tunable]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
 [news181 ldk1177]: /ja/newsletters/2022/01/05/#rust-lightning-1177
 [news181 rbf]: /ja/newsletters/2022/01/05/#full-rbf-rbf
 [news182 accounts]: /ja/newsletters/2022/01/12/#fee-accounts

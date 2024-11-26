@@ -196,19 +196,19 @@ Proposals (BIPs)][bips repo] a [Lightning BOLTs][bolts repo].*
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="18554,24322,24304,21726,6064,557,981,6361,1425,3476" %}
-[tetrud signal favor]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020350.html
-[ivgi signal hodl voting]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020364.html
-[aronesty signal parse scripts]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020354.html
-[grant signal chainalysis]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020355.html
-[bishop signal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020346.html
+[tetrud signal favor]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020350.html
+[ivgi signal hodl voting]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020364.html
+[aronesty signal parse scripts]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020354.html
+[grant signal chainalysis]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020355.html
+[bishop signal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020346.html
 [news115 fee stealing]: /en/newsletters/2020/09/16/#stealing-onchain-fees-from-ln-htlcs
-[osuntokun musig2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020361.html
+[osuntokun musig2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020361.html
 [news195 musig2]: /en/newsletters/2022/04/13/#musig2-proposed-bip
-[black musig2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020371.html
-[mcclelland measure]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020344.html
-[teinturier security]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003561.html
-[myers recon]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003551.html
-[corallo recon]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003556.html
+[black musig2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020371.html
+[mcclelland measure]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-April/020344.html
+[teinturier security]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003561.html
+[myers recon]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003551.html
+[corallo recon]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-April/003556.html
 [genesis block]: https://en.bitcoin.it/wiki/Genesis_block
 [btcpay server 1.5.1]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.5.1
 [minimalif bug]: https://bitcoindevkit.org/blog/miniscript-vulnerability/

@@ -18,7 +18,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Stateless invoices with proof-of-payment
-      link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-September/003236.html
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"

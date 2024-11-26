@@ -84,5 +84,5 @@ lang: ja
 [news170 path]: /ja/newsletters/2021/10/13/#lnd-5642
 [news172 pool]: /ja/newsletters/2021/10/27/#lnd-5709
 [news173 amp]: /ja/newsletters/2021/11/03/#lnd-5803
-[jager params]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003342.html
+[jager params]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003342.html
 [c-lightning backups]: https://github.com/ElementsProject/lightning/blob/163d3a9203922a0493cf6038493bd4b5e078d987/doc/BACKUP.md#sqlite3---walletmainbackup-and-remote-nfs-mount

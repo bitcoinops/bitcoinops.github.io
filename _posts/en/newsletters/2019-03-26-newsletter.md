@@ -213,7 +213,7 @@ answers made since our last update.*
 [loop announced]: https://blog.lightning.engineering/posts/2019/03/20/loop.html
 [loop documentation]: https://github.com/lightninglabs/loop/blob/master/docs/architecture.md
 [sqcrypto announced]: https://twitter.com/jack/status/1108487911802966017
-[taproot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
-[v2 transport]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
+[taproot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
+[v2 transport]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016806.html
 [bech32 series]: /en/bech32-sending-support/
 [newsletter #10]: /en/newsletters/2018/08/28/#pr-opened-for-initial-bip151-support

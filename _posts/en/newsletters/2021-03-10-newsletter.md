@@ -251,18 +251,18 @@ BOLTs][bolts repo].*
 {% include references.md %}
 {% include linkers/issues.md issues="20685,4407,646,839,2181,21378,21377,21392,2091,18261" %}
 [uasf discussion]: http://gnusha.org/uasf/2021-03-02.log
-[flag day corallo]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018495.html
-[flag day belcher]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018538.html
-[decthresh guidi]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018476.html
-[decthresh luaces]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018587.html
-[rubin invalidateblock]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018514.html
-[towns anti-lot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018512.html
-[harding speedy]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+[flag day corallo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018495.html
+[flag day belcher]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018538.html
+[decthresh guidi]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018476.html
+[decthresh luaces]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018587.html
+[rubin invalidateblock]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018514.html
+[towns anti-lot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018512.html
+[harding speedy]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 [irc speedy]: http://gnusha.org/taproot-activation/2021-03-08.log
 [folkson gist]: https://gist.github.com/michaelfolkson/92899f27f1ab30aa2ebee82314f8fe7f
-[corallo not speedy enough]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018596.html
+[corallo not speedy enough]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018596.html
 [##taproot-activation log 3/5]: http://gnusha.org/taproot-activation/2021-03-06.log
-[rubin building]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018604.html
+[rubin building]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018604.html
 [taproot uses]: https://en.bitcoin.it/wiki/Taproot_Uses
 [news107 decthresh]: /en/newsletters/2020/07/22/#mailing-list-thread
 [news137 bip8conf]: /en/newsletters/2021/02/24/#taproot-activation-discussion

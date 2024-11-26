@@ -184,11 +184,11 @@ Review Clubでは、mempoolにトランザクションを追加するための�
 [rust-lightning 0.0.103]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.103
 [lnd 0.14.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.14.0-beta.rc3
 [leguilly thread]: https://mailmanlists.org/pipermail/dlc-dev/2021-November/000091.html
-[osuntokun summary]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003336.html
+[osuntokun summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-November/003336.html
 [news53 stuckless]: /en/newsletters/2019/07/03/#stuckless-payments
 [neutrino]: https://github.com/lightninglabs/neutrino
 [neutrino #234]: https://github.com/lightninglabs/neutrino/pull/234
-[bd cbf thread]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019589.html
+[bd cbf thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019589.html
 [ld cbf thread]: https://groups.google.com/a/lightning.engineering/g/lnd/c/CE2EslTiqW4/m/CSV3mL5JBQAJ
 [harding undo verification]: https://groups.google.com/a/lightning.engineering/g/lnd/c/CE2EslTiqW4/m/O0_kQF7mBQAJ
 [news164 ping]: /ja/newsletters/2021/09/01/#lnd-5621

@@ -112,6 +112,9 @@ optech_mentions:
   - title: "Idea to add covenants to Bitcoin without consensus changes using functional encryption"
     url: /en/newsletters/2024/06/07/#functional-encryption-covenants
 
+  - title: "Idea to add covenants to Bitcoin without consensus changes using hash grinding"
+    url: /en/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin
@@ -140,4 +143,4 @@ balance or spending to a staging address that only allows spending to
 any arbitrary address after a period of time.
 
 {% include references.md %}
-[towns covenant definition]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019795.html
+[towns covenant definition]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019795.html

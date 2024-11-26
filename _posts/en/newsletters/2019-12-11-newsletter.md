@@ -124,7 +124,7 @@ projects.
 {% include linkers/issues.md issues="3260,3295,3155,3788,3767,3698,3655" %}
 [lnd 0.8.2-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.8.2-beta-rc2
 [lnd-3698]: #lnd-3698
-[fromknecht eltoo tower]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002349.html
+[fromknecht eltoo tower]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002349.html
 [whatsat]: https://github.com/joostjager/whatsat
 [rendez-vous routing]: /en/newsletters/2018/11/20/#hidden-destinations
 [payment secrets]: /en/newsletters/2019/12/04/#c-lightning-3259
