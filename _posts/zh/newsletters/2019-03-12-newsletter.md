@@ -66,21 +66,21 @@ lang: zh
 {% include linkers/issues.md issues="7225,9765,15118,15492,15497,2690,2391" %}
 [core eol]: https://bitcoincore.org/en/lifecycle/#schedule
 [0.18.0]: https://bitcoincore.org/bin/bitcoin-core-0.18.0/
-[bishop list]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016700.html
-[merkle disclosure]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016697.html
-[list feb]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/date.html
-[list mar]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/date.html
-[daftuar pdf]: http://lists.linuxfoundation.org/pipermail/bitcoin-dev/attachments/20190225/a27d8837/attachment-0001.pdf
-[roconnor codesep]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016724.html
-[roconnor sighash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016725.html
+[bishop list]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016700.html
+[merkle disclosure]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016697.html
+[list feb]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/date.html
+[list mar]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/date.html
+[daftuar pdf]: https://gnusha.org/pi/bitcoindev/CAFp6fsGtEm9p-ZQF_XqfqyQGzZK7BS2SNp2z680QBsJiFDraEA@mail.gmail.com/2-BitcoinMerkle.pdf
+[roconnor codesep]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016724.html
+[roconnor sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016725.html
 [core contact]: https://bitcoincore.org/en/contact/
-[signet]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016734.html
-[falke bip61]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016701.html
+[signet]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016734.html
+[falke bip61]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016701.html
 [bip-cleanup]: https://github.com/TheBlueMatt/bips/blob/cleanup-softfork/bip-XXXX.mediawiki
-[psbt extension]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016713.html
+[psbt extension]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016713.html
 [privacy summary]: https://en.bitcoin.it/wiki/Privacy
 [privacy category]: https://en.bitcoin.it/wiki/Category:Privacy
-[addrv2 proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016687.html
+[addrv2 proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-February/016687.html
 [onioncat]: https://web.archive.org/web/20121122003543/http://www.cypherpunk.at/onioncat/wiki/OnionCat
 [batching chapter]: /en/payment-batching/
 [gui 0.18]: https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Apr+label%3AGUI+milestone%3A0.18.0

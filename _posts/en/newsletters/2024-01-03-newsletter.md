@@ -388,20 +388,20 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="28349,6957,6869,2796,2787,2781,2723,1504,2688" %}
 [gogge lndvuln]: https://delvingbitcoin.org/t/denial-of-service-bugs-in-lnds-channel-update-gossip-handling/314/1
-[law fdt]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004254.html
+[law fdt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004254.html
 [original lightning network paper]: https://lightning.network/lightning-network-paper.pdf
-[riard fdt]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
-[boris fdt]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
-[harding pruned]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
-[evo fdt]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004260.html
+[riard fdt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
+[boris fdt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
+[harding pruned]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004256.html
+[evo fdt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-December/004260.html
 [ismail cluster]: https://delvingbitcoin.org/t/package-aware-fee-estimator-post-cluster-mempool/312/1
 [ingala undesc]: https://delvingbitcoin.org/t/unspendable-keys-in-descriptors/304/1
 [wuille undesc]: https://delvingbitcoin.org/t/unspendable-keys-in-descriptors/304/2
 [wuille undesc2]: https://gist.github.com/sipa/06c5c844df155d4e5044c2c8cac9c05e#unspendable-keys
-[todd v3]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-December/022211.html
-[seedhammer descpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-December/022200.html
-[seedhammer descpsbt2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022184.html
-[black descpsbt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022186.html
+[todd v3]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-December/022211.html
+[seedhammer descpsbt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-December/022200.html
+[seedhammer descpsbt2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022184.html
+[black descpsbt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-November/022186.html
 [halseth ccv]: https://delvingbitcoin.org/t/verification-of-risc-v-execution-using-op-ccv/313
 [elftrace]: https://github.com/halseth/elftrace
 [news273 bitvm]: /en/newsletters/2023/10/18/#payments-contingent-on-arbitrary-computation

@@ -199,22 +199,22 @@ LN上でのエスクローに関する議論から得られた洞察の共有、
 [btcmag demo]: https://bitcoinmagazine.com/articles/good-griefing-a-lingering-vulnerability-on-lightning-network-that-still-needs-fixing
 [anti-exfil]: https://medium.com/blockstream/anti-exfil-stopping-key-exfiltration-589f02facc2e
 [news111 secp767]: /en/newsletters/2020/08/19/#proposed-uniform-tiebreaker-in-schnorr-signatures
-[riard post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018391.html
-[nguyen post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018385.html
-[zmn escrow1]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002028.html
-[aragoneses escrow]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002948.html
-[zmn escrow2]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002955.html
-[kohen escrow]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002970.html
-[jager hold fees]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002958.html
+[riard post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018391.html
+[nguyen post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018385.html
+[zmn escrow1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002028.html
+[aragoneses escrow]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002948.html
+[zmn escrow2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002955.html
+[kohen escrow]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002970.html
+[jager hold fees]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002958.html
 [news122 bidir]: /en/newsletters/2020/11/04/#bi-directional-upfront-fees-for-ln
-[zmn hold fee privacy]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002967.html
-[russell loop]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
+[zmn hold fee privacy]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002967.html
+[russell loop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-August/000135.html
 [bitbox02]: https://shiftcrypto.ch/bitbox02/
 [jade]: https://blockstream.com/jade/
 [news87 exfil]: /ja/newsletters/2020/03/04/#proposal-to-standardize-an-exfiltration-resistant-nonce-protocol
 [news88 exfil]: /ja/newsletters/2020/03/11/#exfiltration-resistant-nonce-protocols
 [muhash3072]: /ja/newsletters/2021/01/13/#bitcoin-core-19055
-[kirk-cohen post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
+[kirk-cohen post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
 [blockstream blog lnsync]: https://blockstream.com/2021/01/22/en-lnsync-getting-your-lightning-node-up-to-speed-quickly/
 [github historian]: https://github.com/lightningd/plugins/tree/master/historian
 [nakamoto blog]: https://cloudhead.io/nakamoto/

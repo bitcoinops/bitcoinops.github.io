@@ -251,34 +251,34 @@ Taprootのアクティベートを支援するための一連のウィークリ�
 {% include linkers/issues.md issues="20861,21141,4428,4416,4421,1059,5064,5068,831" %}
 [c-lightning 0.10.0]: https://github.com/ElementsProject/lightning/releases/tag/v0.10.0rc1
 [news136 safegcd]: /ja/newsletters/2021/02/17/#faster-signature-operations
-[graftroot proposal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[graftroot proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
 [original bitcoin paper]: https://bitcoin.org/bitcoin.pdf
 [bech32 address security]: /en/bech32-sending-support/#address-security
 [news48 oddness]: /en/newsletters/2019/05/29/#move-the-oddness-byte
 [news27 taproot]: /en/newsletters/2018/12/28/#taproot
 [news87 fournier proof]: /ja/newsletters/2020/03/04/#taproot
-[dashjr quantum]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018641.html
+[dashjr quantum]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018641.html
 [friedenbach post]: https://freicoin.substack.com/p/why-im-against-taproot
 [wuille stealable]: https://twitter.com/pwuille/status/1108097835365339136
 [ruffing scheme]: https://gist.github.com/harding/bfd094ab488fd3932df59452e5ec753f
-[fournier progress]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018658.html
-[harding bounty]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018648.html
+[fournier progress]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018658.html
+[harding bounty]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018648.html
 [provisions]: https://eprint.iacr.org/2015/1008
 [nick ring]: https://twitter.com/n1ckler/status/1334240709814136833
-[poelstra anon]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018667.html
-[rubin recovery]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018643.html
-[corallo recovery overhead]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018644.html
-[towns parallelization]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018649.html
-[poelstra slowdowns]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018667.html
-[poelstra patent story]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018646.html
+[poelstra anon]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018667.html
+[rubin recovery]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018643.html
+[corallo recovery overhead]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018644.html
+[towns parallelization]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018649.html
+[poelstra slowdowns]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018667.html
+[poelstra patent story]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018646.html
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [activation meeting log]: http://gnusha.org/taproot-activation/2021-03-23.log
 [news128 psbtv2]: /en/newsletters/2020/12/16/#new-psbt-version-proposed
 [news70 qc]: /ja/newsletters/2019/10/30/#hashing-quantum-resistance
 [news86 qc]: /ja/newsletters/2020/02/26/#taproot-quantum
-[tap qc1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015620.html
-[tap qc2]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
-[rubin delegation]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018615.html
+[tap qc1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015620.html
+[tap qc2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
+[rubin delegation]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018615.html
 [sighash_none]: https://btcinformation.org/en/developer-guide#term-sighash-none
 [US7215773B1]: https://patents.google.com/patent/US7215773B1/en
 [news140 recovery]: /ja/newsletters/2021/03/17/#rescuing-lost-ln-funding-transactions-ln

@@ -186,8 +186,8 @@ those parts.
 [dead cat]: https://github.com/bitcoin/bitcoin/commit/4bd188c4383d6e614e18f79dc337fbabe8464c82#diff-8458adcedc17d046942185cb709ff5c3R94
 [value overflow incident]: https://en.bitcoin.it/wiki/Value_overflow_incident
 [catenates]: https://english.stackexchange.com/questions/125416/concatenate-vs-catenate
-[kohen selling sigs]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
+[kohen selling sigs]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002077.html
 [dlcs]: https://dci.mit.edu/smart-contracts
-[single-show signatures]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007038.html
-[graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
-[oconnor generic]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html
+[single-show signatures]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2014-December/007038.html
+[graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[oconnor generic]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016946.html

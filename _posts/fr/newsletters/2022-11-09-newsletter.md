@@ -337,8 +337,8 @@ Proposals (BIPs)][bips repo], et [Lightning BOLTs][bolts repo].*
 [news222 rbf]: /fr/newsletters/2022/10/19/#option-de-remplacement-de-transaction
 [news223 rbf]: /fr/newsletters/2022/10/26/#poursuite-de-la-discussion-sur-le-full-rbf
 [news224 rbf]: /fr/newsletters/2022/11/02/#coherence-mempool
-[daftuar rbf]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021135.html
-[riard funny games]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[daftuar rbf]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021135.html
+[riard funny games]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
 [news220 v3tx]: /fr/newsletters/2022/10/05/#proposition-de-nouvelle-politique-de-relai-de-transaction-concue-pour-les-penalites-sur-ln
 [news222 bug]: /fr/newsletters/2022/10/19/#bug-d-analyse-de-bloc-affectant-btcd-et-lnd
 [liquid and rust bitcoin vulns]: https://twitter.com/Liquid_BTC/status/1587499305664913413

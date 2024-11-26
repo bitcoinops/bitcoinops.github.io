@@ -60,7 +60,7 @@ A new maintenance release of Bitcoin Core is coming soon with a change to relay 
 
 [BIP157]: https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki
 [BIP158]: https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki
-[BIP158 discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016057.html
+[BIP158 discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016057.html
 [PR 13243]: https://github.com/bitcoin/bitcoin/pull/13243
 
 - **[Proposed BIP][bech32 keys] for private key & HD wallet serialization:** currently private keys are usually transmitted using the same encoding as legacy Bitcoin addresses, and HD wallet extended keys and seeds are transmitted using either the same format, hex, or a mnemonic phrase. This new proposal would allow using the bech32 format used for native segwit addresses.
@@ -68,7 +68,7 @@ A new maintenance release of Bitcoin Core is coming soon with a change to relay 
   [Discussion][bech32 keys discussion] focused on whether or not to use the exact bech32 standard or a modification of it that would be more resistant to transcription and data loss errors. Services that plan to accept or distribute secret key material may wish to contribute to reviewing the specification.
 
 [bech32 keys]: https://gist.github.com/jonasschnelli/68a2a5a5a5b796dc9992f432e794d719
-[bech32 keys discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
+[bech32 keys discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016065.html
 
 - **[BetterHash mining protocol][BetterHash spec]:** A proposed replacement for the Stratum mining protocol currently almost universally used for mining pools to distribute work to individual miners. The proposal claims to provide better security for the pool operator and allows individual miners to select what transactions they include in their blocks, increasing Bitcoin censorship resistance and also possibly making miners using the protocol more effective. The protocol is championed by the developer and operator of the [FIBRE network][FIBRE] used by almost all miners.
 
@@ -76,7 +76,7 @@ A new maintenance release of Bitcoin Core is coming soon with a change to relay 
 
 [BetterHash spec]: https://github.com/TheBlueMatt/bips/blob/betterhash/bip-XXXX.mediawiki
 [FIBRE]: http://bitcoinfibre.org/
-[BetterHash discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
+[BetterHash discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-June/016077.html
 
 ## On this day in Bitcoin commit history…
 

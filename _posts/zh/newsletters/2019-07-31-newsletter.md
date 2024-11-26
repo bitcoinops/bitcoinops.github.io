@@ -98,12 +98,12 @@ lang: zh
 {% include linkers/issues.md issues="800,766,2842,643,16440,16152" %}
 [bech32 series]: /zh/bech32-sending-support/
 [bolt1 error]: https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md#requirements-2
-[drivechain discussion]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015339.html
+[drivechain discussion]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-December/015339.html
 [core rc]: https://bitcoincore.org/bin/bitcoin-core-0.18.1/
-[fidelity coinjoin]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017169.html
+[fidelity coinjoin]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017169.html
 [bitnodes dashboard]: https://bitnodes.io/
 [sybil attack]: https://en.wikipedia.org/wiki/Sybil_attack
-[bloom announce]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html
+[bloom announce]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html
 [signmessage bech32]: /zh/bech32-sending-support/#消息签名支持
 [filter privacy]: https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
 [newsletter #43]: /zh/newsletters/2019/04/23/#basic-bip158-support-merged-in-bitcoin-core

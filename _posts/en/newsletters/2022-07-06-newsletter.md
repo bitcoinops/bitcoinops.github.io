@@ -196,16 +196,16 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 {% include linkers/issues.md v=2 issues="24836,22558,5281,1555,1550,1024,3709,611,1004,6592" %}
 [ldk 0.0.109]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.109
 [lnurl withdraw]: https://github.com/fiatjaf/lnurl-rfc/blob/luds/03.md
-[todd subsidy]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020551.html
-[hodler new codes]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020605.html
+[todd subsidy]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020551.html
+[hodler new codes]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020605.html
 [news194 silent payments]: /en/newsletters/2022/04/06/#delinked-reusable-addresses
-[prauge bip47]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020549.html
-[osuntokun splice]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003616.html
-[zmnscpxj forwarding]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003617.html
+[prauge bip47]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-June/020549.html
+[osuntokun splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003616.html
+[zmnscpxj forwarding]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003617.html
 [news204 fee signal]: /en/newsletters/2022/06/15/#using-routing-fees-to-signal-liquidity
-[towns fee signal]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003624.html
-[teinturier rate limit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003623.html
-[osuntokun onion pay]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003631.html
+[towns fee signal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003624.html
+[teinturier rate limit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003623.html
+[osuntokun onion pay]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-June/003631.html
 [news190 onion pay]: /en/newsletters/2022/03/09/#paying-for-onion-messages
 [2022 stealth addresses]: https://gist.github.com/RobinLinus/4e7467abaf0a0f8a521d5b512dca4833
 [demurrage]: https://en.wikipedia.org/wiki/Demurrage_%28currency%29

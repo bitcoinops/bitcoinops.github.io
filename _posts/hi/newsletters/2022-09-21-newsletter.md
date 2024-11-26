@@ -79,7 +79,7 @@ lang: hi
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="5581,2418,2408,2416,6335,1706" %}
-[rubin apodc]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020919.html
+[rubin apodc]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-September/020919.html
 [news190 dc]: /en/newsletters/2022/03/09/#enablement-of-drivechains
 [proposed bolt12]: https://github.com/rustyrussell/lightning-rfc/blob/guilt/offers/12-offer-encoding.md
 [mempool lightning]: https://mempool.space/lightning

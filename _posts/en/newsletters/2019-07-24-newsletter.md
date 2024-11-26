@@ -141,10 +141,10 @@ wiki page for changes -->{% endcomment %}
 [bech32 series]: /en/bech32-sending-support/
 [bloom filter]: https://en.wikipedia.org/wiki/Bloom_filter
 [filter privacy]: https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
-[carve-out]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
+[carve-out]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
 [core rc]: https://bitcoincore.org/bin/bitcoin-core-0.18.1/
 [signet wiki]: https://en.bitcoin.it/wiki/Signet
-[signet bip post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017123.html
+[signet bip post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017123.html
 [jit with fee]: https://lists.ozlabs.org/pipermail/c-lightning/2019-July/000160.html
 [newsletter #54]: /en/newsletters/2019/07/10/#brainstorming-just-in-time-routing-and-free-channel-rebalancing
 [newsletter #24]: /en/newsletters/2018/12/04/#cpfp-carve-out
