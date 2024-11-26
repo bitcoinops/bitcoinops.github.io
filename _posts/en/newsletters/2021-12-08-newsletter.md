@@ -157,7 +157,7 @@ repo], [Hardware Wallet Interface (HWI)][hwi repo],
 {% include linkers/issues.md issues="23155,22513,4921,4829,2061,2073,906,1163,765,759,911,23512" %}
 [bdk 0.14.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.14.0
 [news177 lnd6026]: /en/newsletters/2021/12/01/#lnd-6026
-[darosior bump]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019614.html
+[darosior bump]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-November/019614.html
 [revault research]: https://github.com/revault/research
 [GetBlockScriptFlags tap]: https://github.com/bitcoin/bitcoin/blob/dca9ab48b80ff3a7dbe0ae26964a58e70d570618/src/validation.cpp#L1616
 [AreInputsStandard tap]: https://github.com/bitcoin-core-review-club/bitcoin/blob/15d109802ab93b0af9647858c9d8adcd8a2db84a/src/validation.cpp#L726-L729

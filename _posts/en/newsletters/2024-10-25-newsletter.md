@@ -40,7 +40,7 @@ to popular Bitcoin infrastructure software.
   are [unannounced][topic unannounced channels].  A possible feature
   that can be added to the proposal will allow nodes to signal to their
   peers that they want to convert an unannounced channel to a public
-  channel.
+  channel. {% assign timestamp="1:36" %}
 
 - **Draft BIP for sending silent payments with PSBTs:** Andrew Toth
   [posted][toth sp-psbt] to the Bitcoin-Dev mailing list a draft BIP for
@@ -56,7 +56,7 @@ to popular Bitcoin infrastructure software.
   The draft only addresses the expected most common situation where a
   signer has access to the private keys for all inputs in a transaction.
   For the less common situation of multiple signers, Toth writes that
-  "this will be specified in a following BIP".
+  "this will be specified in a following BIP". {% assign timestamp="16:28" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -71,49 +71,49 @@ answers posted since our last update.*
 
 - [Duplicate blocks in blk*.dat files?]({{bse}}124368)
   Pieter Wuille explains that, in addition to the current best chain of blocks,
-  the block data files can also include stale blocks or duplicate block data.
+  the block data files can also include stale blocks or duplicate block data. {% assign timestamp="30:07" %}
 
 - [How was the structure of pay-to-anchor decided?]({{bse}}124383)
   Antoine Poinsot describes the structure of the [pay-to-anchor (P2A)][topic
   ephemeral anchors] outputs included as part of Bitcoin Core 28.0's [policy
   changes][bcc28 guide]. The [bech32m][topic bech32] encoded, 2-byte length, v1
-  witness program was chosen as a `bc1pfeessrawgf` vanity address.
+  witness program was chosen as a `bc1pfeessrawgf` vanity address. {% assign timestamp="32:45" %}
 
 - [What are the benefits of decoy packets in BIP324?]({{bse}}124301)
   Pieter Wuille outlines design decisions around the [inclusion of decoy
   packets][bip324 decoy packets] in the [BIP324][] specification. The optional
   decoy packets can be used to obfuscate traffic patterns to prevent recognition by
   observers during the key exchange, application, and version negotiation phases
-  of the protocol.
+  of the protocol. {% assign timestamp="36:38" %}
 
 - [Why is the opcode limit 201?]({{bse}}124465)
   Vojtěch Strnad points out code changes by Satoshi during 2010 that intended to
   introduce an opcode limit of 200, but due to an implementation error, actually
-  introduced a limit of 201.
+  introduced a limit of 201. {% assign timestamp="39:20" %}
 
 - [Will my node relay a transaction if it is below my minimum tx relay fee?]({{bse}}124387)
   Murch notes that a node will only relay transactions that it accepts into its
   own mempool. While a user could decrease their node's `minTxRelayFee` value to
   allow local mempool acceptance, the inclusion of a lower relay feerate transaction
   in a block would still ultimately require a miner running a similar setting
-  and for average feerates to decrease toward that lower feerate.
+  and for average feerates to decrease toward that lower feerate. {% assign timestamp="40:31" %}
 
 - [Why doesn't the Bitcoin Core wallet support BIP69?]({{bse}}124382)
   Murch agrees that universal implementation of [BIP69][]'s transaction
   input/output ordering specification would help mitigate [wallet
   fingerprinting][ishaana fingerprinting], but points out that given the
   unlikelihood of universal adoption, implementing BIP69 is itself a
-  fingerprinting vulnerability.
+  fingerprinting vulnerability. {% assign timestamp="42:09" %}
 
 - [How can I enable testnet4 when using Bitcoin Core 28.0?]({{bse}}124443)
   Pieter Wuille mentions two configuration options that enable [BIP94][]'s
-  [testnet4][topic testnet]: `chain=testnet4` and `testnet4=1`.
+  [testnet4][topic testnet]: `chain=testnet4` and `testnet4=1`. {% assign timestamp="44:50" %}
 
 - [What are the risks of broadcasting a transaction that reveals a `scriptPubKey` using a low-entropy key?]({{bse}}124296)
   User Quuxplusone links to a recent transaction associated with a series of
   Bitcoin key-grinding ["puzzles"][puzzle bitcointalk] from 2015 that is
   [theorized][puzzle stackernews] to have been [replaced][topic rbf] by a bot
-  monitoring the mempool for low-entropy keys.
+  monitoring the mempool for low-entropy keys. {% assign timestamp="47:33" %}
 
 ## Releases and release candidates
 
@@ -123,7 +123,7 @@ release candidates._
 
 - [Core Lightning 24.08.2][] is a maintenance release of this popular LN
   implementation that contains a "few crash fixes and includes an
-  enhancement to remember and update channel hints for payments".
+  enhancement to remember and update channel hints for payments". {% assign timestamp="52:12" %}
 
 ## Notable code and documentation changes
 
@@ -145,14 +145,14 @@ repo], and [BINANAs][binana repo]._
   allowed on zero-conf channels, but not on non-zero-conf channels. In addition,
   RBF is blocked on liquidity purchase transactions via the [liquidity
   advertisement][topic liquidity advertisements] protocol, to avoid edge cases
-  where sellers might add liquidity to a channel without receiving payment.
+  where sellers might add liquidity to a channel without receiving payment. {% assign timestamp="52:56" %}
 
 - [LND #9172][] adds a new `mac_root_key` flag to the `lncli create` and `lncli
   createwatchonly` commands for deterministic macaroon (authentication token)
   generation, allowing external keys to be baked into an LND node before it's
   even initialized. This is particularly useful in combination with the reverse
   remote signer setup suggested in [LND #8754][] (see [Newsletter #172][news172
-  remote]).
+  remote]). {% assign timestamp="53:37" %}
 
 - [Rust Bitcoin #2960][] turns the [ChaCha20-Poly1305][rfc8439] authenticated
   encryption with associated data (AEAD) algorithm into its own crate, allowing
@@ -160,7 +160,7 @@ repo], and [BINANAs][binana repo]._
   specified in [BIP324][], such as for [payjoin V2][topic payjoin]. The code has
   been optimized for Single Instruction, Multiple Data (SIMD) instruction
   support to improve performance across various use cases (see [Newsletter
-  #264][news264 chacha]).
+  #264][news264 chacha]). {% assign timestamp="55:47" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}

@@ -227,11 +227,11 @@ We remain solely responsible for any errors or omissions.
 {% include linkers/issues.md v=2 issues="20799,6529,6524" %}
 [lnd 0.15.0-beta.rc3]: https://github.com/lightningnetwork/lnd/releases/tag/v0.15.0-beta.rc3
 [Core Lightning 0.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v0.11.1
-[zhao package]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+[zhao package]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
 [bip-package-relay]: https://github.com/bitcoin/bips/pull/1324
 [zhao preso]: https://docs.google.com/presentation/d/1B__KlZO1VzxJGx-0DYChlWawaEmGJ9EGApEzrHqZpQc/edit#slide=id.p
-[fd0 ctv9]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
-[ctv9]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
+[fd0 ctv9]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
+[ctv9]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020501.html
 [bitmex flashbots]: https://blog.bitmex.com/flashbots/
 [news165 waste]: /en/newsletters/2021/09/08/#bitcoin-core-22009
 [wiki op_checkmultisig]: https://en.bitcoin.it/wiki/OP_CHECKMULTISIG

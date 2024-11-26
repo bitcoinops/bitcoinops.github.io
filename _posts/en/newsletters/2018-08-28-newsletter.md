@@ -158,8 +158,8 @@ wait until version 0.18 in about six months from now.*
 
 [dandelion protocol]: https://arxiv.org/abs/1701.04439
 [bcc 0.17]: https://bitcoincore.org/bin/bitcoin-core-0.17.0/
-[timewarp maxwell]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html
-[timewarp lau]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016320.html
+[timewarp maxwell]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016316.html
+[timewarp lau]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-August/016320.html
 [BOLT2]: https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 [bse 78355]: {{bse}}78355

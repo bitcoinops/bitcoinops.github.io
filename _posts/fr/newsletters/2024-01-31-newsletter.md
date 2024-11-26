@@ -197,6 +197,6 @@ repo]._
 [news259 lncleanup]: /fr/newsletters/2023/07/12/#proposition-de-nettoyage-de-la-specification-ln
 [news284 ptexogenous]: /fr/newsletters/2024/01/10/#l-utilisation-frequente-de-frais-exogenes-peut-compromettre-la-decentralisation-du-minage
 [zhao kindredimpl]: https://github.com/bitcoin/bitcoin/pull/29306
-[pt ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022309.html
+[pt ctv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022309.html
 [news286 imbued]: /fr/newsletters/2024/01/24/#logique-imbriquee-v3
 [news216 headers presync]: /fr/newsletters/2022/09/07/#bitcoin-core-25717

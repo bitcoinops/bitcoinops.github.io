@@ -289,14 +289,14 @@ repo] y [Lightning BOLTs][bolts repo].*
 [news55 tlv]: /en/newsletters/2019/07/17/#bolts-607
 [lnd engineering]: https://groups.google.com/a/lightning.engineering/forum/#!forum/lnd
 [osuntokun lnd plans]: https://groups.google.com/a/lightning.engineering/forum/#!topic/lnd/GtcrXNhTLqQ
-[bitcoin-dev]: https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev
-[lightning-dev]: https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev
+[bitcoin-dev]: https://gnusha.org/url/https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev
+[lightning-dev]: https://gnusha.org/url/https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev
 [osl]: https://osuosl.org/
 [taproot review group]: https://github.com/ajtowns/taproot-review
 [tbr log]: http://www.erisian.com.au/taproot-bip-review/
 [libsecp256k1-zkp]: https://github.com/ElementsProject/secp256k1-zkp
 [wagner's paper]: https://people.eecs.berkeley.edu/~daw/papers/genbday-long.ps
-[non-strict der]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
+[non-strict der]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
 [cve-2014-3570]: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation

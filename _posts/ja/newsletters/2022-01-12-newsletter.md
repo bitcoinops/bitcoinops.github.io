@@ -141,10 +141,10 @@ Erlayを使用するノードは、既存のプロトコルと互換性がない
 
 {% include references.md %}
 {% include linkers/issues.md issues="23882,2117,5964,912,950,834,23443" %}
-[rubin feea]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019724.html
+[rubin feea]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019724.html
 [news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
 [news168 stateless]: /ja/newsletters/2021/09/29/#stateless-ln-invoice-generation-ln
 [reviews 23443]: https://bitcoincore.reviews/23443
-[Error Codes for LN]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
+[Error Codes for LN]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-February/002964.html
 [news136 warning post]: /ja/newsletters/2021/02/17/#c-lightning-4364
 [bip30-impl]: https://github.com/bitcoin/bitcoin/pull/915/files

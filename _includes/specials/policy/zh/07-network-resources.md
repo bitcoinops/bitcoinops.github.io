@@ -16,7 +16,7 @@
 我们可以看到，使用交易池规则来保护共享网络资源有助于保护网络的特性，并使未来协议的开发路径保持开放。与此同时，我们正在看到，如何在严格限制区块重量的情况下来扩展网络的矛盾正在推动着最佳实践、良好的技术设计和创新的采用：下周的文章将探讨交易池规则作为二层协议和智能合约系统的接口。
 
 [policy01]: /zh/newsletters/2023/05/17/#等待确认-1-我们为什么需要一个交易池
-[unbounded]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
+[unbounded]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html
 [lopp storms]: https://blog.lopp.net/history-bitcoin-transaction-dust-spam-storms/
 [ultraprune]: https://github.com/bitcoin/bitcoin/pull/1677
 [pooled resource]: /zh/newsletters/2023/05/03/#bitcoin-core-25325

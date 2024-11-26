@@ -41,12 +41,12 @@ lang: zh
 {% include references.md %}
 {% include linkers/issues.md issues="3967,4075" %}
 [bitcoin core 0.20.0]: https://bitcoincore.org/bin/bitcoin-core-0.20.0
-[kosakovsky post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017683.html
+[kosakovsky post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017683.html
 [kosakovsky proposal]: https://gist.github.com/ethankosakovsky/268c52f018b94bea29a6e809381c05d6
 [slip39]: https://github.com/satoshilabs/slips/blob/master/slip-0039.md
-[novak post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017751.html
+[novak post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017751.html
 [bitcoin core issue]: https://github.com/bitcoin/bitcoin/issues/new/choose
-[react gray]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017687.html
-[react back]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017713.html
-[react allen]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017688.html
-[react rusnak]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017684.html
+[react gray]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017687.html
+[react back]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017713.html
+[react allen]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017688.html
+[react rusnak]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017684.html

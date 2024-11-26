@@ -103,10 +103,10 @@ lang: ja
 {% include references.md %}
 {% include linkers/issues.md v=1 issues="2063,912,1013,6006,590,591,669,950" %}
 [poelstra nulldummy]: https://github.com/rust-bitcoin/rust-bitcoin/pull/669#issuecomment-1008021007
-[dmw legal]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019741.html
-[todd ctv]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019738.html
-[rubin ctv reply]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019739.html
-[rubin meeting summary]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019744.html
+[dmw legal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019741.html
+[todd ctv]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019738.html
+[rubin ctv reply]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019739.html
+[rubin meeting summary]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019744.html
 [news181 ctv meets]: /ja/newsletters/2022/01/05/#bip119-ctv
 [news182 bolts912]: /ja/newsletters/2022/01/12/#bolts-912
 [news157 p4tr bip32]: /ja/newsletters/2021/07/14/#use-a-new-bip32-key-derivation-path-bip32

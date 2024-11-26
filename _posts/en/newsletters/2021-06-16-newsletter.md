@@ -126,7 +126,7 @@ BOLTs][bolts repo].*
 [Rust Bitcoin 0.26.2]: https://github.com/rust-bitcoin/rust-bitcoin/releases/tag/0.26.2
 [Rust-Lightning 0.0.98]: https://github.com/rust-bitcoin/rust-lightning/releases/tag/v0.0.98
 [LND 0.13.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.13.0-beta.rc5
-[belcher post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
+[belcher post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-June/019048.html
 [news136 safegcd]: /en/newsletters/2021/02/17/#faster-signature-operations
 [news146 safegcd]: /en/newsletters/2021/04/28/#libsecp256k1-906
 [taproot uses]: https://en.bitcoin.it/wiki/Taproot_Uses

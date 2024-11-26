@@ -90,8 +90,8 @@ Tyto třecí plochy zdůrazňují nejen důležitost pravidel jako rozhraní pro
 v rámci ekosystému bitcoinu, ale také ukazují místa, která potřebují vylepšit.
 Příští týden se podíváme na návrhy pravidel a otevřené otázky.
 
-[full rbf pinning]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
-[rbf ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
+[full rbf pinning]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-May/003033.html
+[rbf ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-January/019817.html
 [n25038 notes]: https://bitcoincore.reviews/25038
 [policy01]: /cs/newsletters/2023/05/17/#čekání-na-potvrzení-1-k-čemu-je-mempool
 [policy02]: /cs/newsletters/2023/05/24/#čekání-na-potvrzení-2-incentivy

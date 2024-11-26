@@ -71,16 +71,16 @@ lang: zh
 [lnd 0.10.1-beta.rc2]: https://github.com/lightningnetwork/lnd/releases/tag/v0.10.1-beta.rc2
 [0.17 compat]: https://bitcoincore.org/en/releases/0.17.0/#compatibility
 [min nonwit]: https://github.com/bitcoin/bitcoin/blob/99813a9745fe10a58bedd7a4cb721faf14f907a4/src/policy/policy.h#L25
-[voegtlin min]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017883.html
-[sanders cve]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017884.html
-[sanders 64]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017885.html
+[voegtlin min]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017883.html
+[sanders cve]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017884.html
+[sanders 64]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017885.html
 [news27 cve-2017-12842]: /zh/newsletters/2018/12/28/#cve-2017-12842
 [news36 tree attacks]: /zh/newsletters/2019/03/05/#merkle-树攻击
 [news96 unbroadcast]: /zh/newsletters/2020/05/06/#bitcoin-core-18038
 [news39 multiprocess]: /zh/newsletters/2019/03/26/#bitcoin-core-10973
 [libwally psbt]: https://github.com/ElementsProject/libwally-core/pull/126
 [news83 interactive]: /zh/newsletters/2020/02/05/#psbt-interaction
-[zmn padding]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017886.html
+[zmn padding]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017886.html
 [RFC6979]:https://tools.ietf.org/html/rfc6979
 [Ed25519]:https://ed25519.cr.yp.to/
 [cve-2017-12842]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12842
