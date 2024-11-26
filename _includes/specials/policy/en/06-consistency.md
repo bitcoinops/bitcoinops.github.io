@@ -96,6 +96,6 @@ network’s interests as a whole.
 
 [policy01]: /en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool
 [policy04]: /en/newsletters/2023/06/07/#waiting-for-confirmation-4-feerate-estimation
-[aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
+[aj mempool consistency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th
 

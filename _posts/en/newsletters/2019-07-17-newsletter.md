@@ -95,7 +95,7 @@ wiki page for changes -->{% endcomment %}
 
 {% include linkers/issues.md issues="607,16237,784,15277" %}
 [bech32 series]: /en/bech32-sending-support/
-[v2 gossip proposal]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002065.html
+[v2 gossip proposal]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-July/002065.html
 [Gitian]: https://github.com/devrandom/gitian-builder
 [GNU Guix]: https://www.gnu.org/software/guix/
 [guix vid]: https://www.youtube.com/watch?v=DKOG0BQMmmg&feature=youtu.be&t=19828

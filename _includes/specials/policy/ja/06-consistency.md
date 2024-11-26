@@ -74,5 +74,5 @@ RBFルールへの準拠を要求します。パージされたトランザク�
 
 [policy01]: /ja/newsletters/2023/05/17/#承認を待つ-1-なぜmempoolがあるのか
 [policy04]: /ja/newsletters/2023/06/07/#承認を待つ-4-手数料率の推定
-[aj mempool consistency]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
+[aj mempool consistency]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-October/021116.html
 [se maxmempool]: https://bitcoin.stackexchange.com/questions/118137/how-does-it-contribute-to-the-bitcoin-network-when-i-run-a-node-with-a-bigger-th

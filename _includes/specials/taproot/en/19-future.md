@@ -124,8 +124,8 @@ rules.
 
 [news166 tluv]: /en/newsletters/2021/09/15/#covenant-opcode-proposal
 [wuille entroot]: https://gist.github.com/sipa/ca1502f8465d0d5032d9dd2465f32603
-[towns groot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016249.html
-[maxwell graftroot]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+[towns groot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016249.html
+[maxwell graftroot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
 [p4tr multisignatures]: /en/preparing-for-taproot/#multisignature-overview
 [p4tr vaults]: /en/preparing-for-taproot/#vaults-with-taproot
 [rubin delegation]: /en/newsletters/2021/03/24/#signing-delegation-under-existing-consensus-rules
@@ -134,4 +134,4 @@ rules.
 [rubin pqc]: https://rubin.io/blog/2021/07/06/quantum-bitcoin/
 [poelstra cat]: https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-i.html
 [bip32 reverse derivation]: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#implications
-[sipa groot agg]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016461.html
+[sipa groot agg]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016461.html

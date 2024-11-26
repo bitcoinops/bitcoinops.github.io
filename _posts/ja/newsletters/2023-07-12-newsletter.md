@@ -146,7 +146,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]および
 [news31 data loss]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [news67 bolts642]: /ja/newsletters/2019/10/09/#bolts-642
 [lnd v0.16.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.16.4-beta
-[russell clean up]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html
+[russell clean up]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-June/004001.html
 [review club 27625]: https://bitcoincore.reviews/27625
 [wiki getdata]: https://en.bitcoin.it/wiki/Protocol_documentation#getdata
 [news125 descriptor wallets]: /en/newsletters/2020/11/25/#how-will-the-migration-tool-from-a-bitcoin-core-legacy-wallet-to-a-descriptor-wallet-work

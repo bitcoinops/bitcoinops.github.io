@@ -68,13 +68,13 @@ Transaction outputに強制的にタグがつけられることに対してど�
 [core 0.19.0]: https://bitcoincore.org/bin/bitcoin-core-0.19.0/
 [lnd 0.8.0-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.8.0-beta-rc2
 [lnd repo build]: #lnd-3545
-[noinput thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002176.html
-[cat spinoff]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002201.html
+[noinput thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002176.html
+[cat spinoff]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002201.html
 [ln vuln disclosure]: /en/newsletters/2019/10/02/#full-disclosure-of-fixed-vulnerabilities-affecting-multiple-ln-implementations
 [data loss protection]: /en/newsletters/2019/01/29/#fn:fn-data-loss-protect
 [pyln-proto readme]: https://github.com/ElementsProject/lightning/blob/master/contrib/pyln-proto/README.md
 [opt static remotekey]: #bolts-642
-[zmn internal tagging]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html
+[zmn internal tagging]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-October/002180.html
 [gui bech32]: /en/newsletters/2019/04/16/#bitcoin-core-15711
 [orig output tagging]: /en/newsletters/2019/02/19/#discussion-about-tagging-outputs-to-enable-restricted-features-on-spending
 [eltoo]: https://blockstream.com/eltoo.pdf

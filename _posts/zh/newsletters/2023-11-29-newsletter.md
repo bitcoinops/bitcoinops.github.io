@@ -68,7 +68,7 @@ lang: zh
 [bitcoin core 26.0rc3]: https://bitcoincore.org/bin/bitcoin-core-26.0/
 [26.0 testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/26.0-Release-Candidate-Testing-Guide
 [core lightning 23.11]: https://github.com/ElementsProject/lightning/releases/tag/v23.11
-[neigut liqad]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-November/004217.html
+[neigut liqad]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-November/004217.html
 [policy series]: /zh/blog/waiting-for-confirmation/
 [p2c paper]: https://arxiv.org/abs/1212.3257
 [bcc 0.11.1]: https://bitcoin.org/en/release/v0.11.1#test-for-lows-signatures-before-relaying

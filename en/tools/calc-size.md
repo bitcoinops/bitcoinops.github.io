@@ -35,6 +35,7 @@ size:
   ## Common elements
   ecdsa_pubkey: 33
   ecdsa_signature: 72
+  ecdsa_signature_low_r: 71
   schnorr_public_key: 32
   schnorr_signature: 64
   public_key_hash: 20
@@ -174,9 +175,12 @@ four.
 
 - `ecdsa_public_key` ({{page.size.ecdsa_pubkey}})---old wallets may use 65-byte public keys
 
-- `ecdsa_signature` ({{page.size.ecdsa_signature}}) (about half of all
-  signatures generated with a random nonce are this size, about half are
-  one byte smaller, and a small percentage are smaller than that)
+- `ecdsa_signature` ({{page.size.ecdsa_signature}})---ECDSA signatures have variable size. About
+  half of all signatures generated with a random nonce are {{page.size.ecdsa_signature}}, about half
+  are one byte smaller ({{page.size.ecdsa_signature_low_r}}), and a small percentage are smaller
+  than that. This calculator conservatively estimates all transaction sizes based on the upper bound
+  of signature sizes. If your signing device or software uses [low-r grinding][], your transactions
+  will consistently have signature sizes of {{page.size.ecdsa_signature_low_r}}.
 
 - `schnorr_public_key` ({{page.size.schnorr_public_key}})
 
@@ -370,3 +374,4 @@ updateTotal();
 [compactSize]: https://btcinformation.org/en/developer-reference#compactsize-unsigned-integers
 [epoch time]: https://en.wikipedia.org/wiki/Unix_time
 [vbytes]: https://en.bitcoin.it/wiki/Vsize
+[low-r grinding]: /en/topics/low-r-grinding/

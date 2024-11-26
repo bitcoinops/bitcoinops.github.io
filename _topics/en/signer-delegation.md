@@ -19,7 +19,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: Graftroot
-      link: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
+      link: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html
 
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry

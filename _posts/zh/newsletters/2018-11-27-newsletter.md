@@ -69,8 +69,8 @@ lang: zh
 [bse 80804]: {{bse}}80804
 [bse 80702]: {{bse}}80702
 
-[wuille sighash]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016488.html
+[wuille sighash]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016488.html
 [simple commit PR]: https://github.com/lightningnetwork/lightning-rfc/pull/513
-[simple commit thread]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001643.html
-[corallo simple commit]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001666.html
+[simple commit thread]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001643.html
+[corallo simple commit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001666.html
 [newsletter #18]: /zh/newsletters/2018/10/23/#over-1-100-listening-nodes-have-open-rpc-ports

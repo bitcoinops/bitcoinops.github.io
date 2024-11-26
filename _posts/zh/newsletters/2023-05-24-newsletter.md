@@ -90,7 +90,7 @@ _这是一个关于交易转发、交易池纳入以及挖矿选择的限定周�
 [bitcoin core 23.2]: https://bitcoincore.org/bin/bitcoin-core-23.2/
 [bitcoin core 24.1]: https://bitcoincore.org/bin/bitcoin-core-24.1/
 [bitcoin core 25.0rc2]: https://bitcoincore.org/bin/bitcoin-core-25.0/
-[linus post]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
+[linus post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2023-May/021679.html
 [lg paper]: https://zerosync.org/zerosync.pdf
 [news128 bolts803]: /en/newsletters/2020/12/16/#bolts-803
 [news247 rgb]: /zh/newsletters/2023/04/19/#rgb

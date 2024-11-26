@@ -87,7 +87,7 @@ lang: zh
 [bech32 series]: /zh/bech32-sending-support/
 [lnd3391]: /zh/newsletters/2019/08/21#lnd-3391
 [miniscript code]: https://github.com/sipa/miniscript
-[miniscript email]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017270.html
+[miniscript email]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017270.html
 [core miniscript]: https://github.com/sipa/miniscript/tree/master/bitcoin/script
 [miniscript rust]: https://github.com/apoelstra/rust-miniscript
 [miniscript vid]: https://www.youtube.com/watch?v=XM1lzN4Zfks

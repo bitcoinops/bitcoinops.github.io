@@ -698,7 +698,7 @@ Wednesday publication schedule on January 4th.*
 {% include linkers/issues.md v=2 issues="" %}
 [bls]: https://en.wikipedia.org/wiki/BLS_digital_signature
 [cjdns]: https://github.com/cjdelisle/cjdns
-[law tunable]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
+[law tunable]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-October/003732.html
 [news181 ldk1177]: /en/newsletters/2022/01/05/#rust-lightning-1177
 [news181 rbf]: /en/newsletters/2022/01/05/#brief-full-rbf-then-opt-in-rbf
 [news182 accounts]: /en/newsletters/2022/01/12/#fee-accounts

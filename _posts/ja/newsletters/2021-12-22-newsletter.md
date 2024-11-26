@@ -627,6 +627,6 @@ LN開発者は[2018年以来][2018 ln summit]最初の一般的なLNサミット
 [fee bump research]: /ja/newsletters/2021/12/08/#fee-bumping-research
 [nov cs]: /ja/newsletters/2021/11/17/#サービスとクライアントソフトウェアの変更
 [dec cs]: /ja/newsletters/2021/12/15/#サービスとクライアントソフトウェアの変更
-[mpa ml]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
-[ff orig]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
+[mpa ml]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
+[ff orig]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-April/001986.html
 [2020 conclusion]: /en/newsletters/2020/12/23/#conclusion

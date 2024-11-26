@@ -214,7 +214,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo], and
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="29239,2810,2791,2801,2812,2230" %}
 [teinturier v3]: https://delvingbitcoin.org/t/lightning-transactions-with-v3-and-ephemeral-anchors/418/
-[towns binana]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022289.html
+[towns binana]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2024-January/022289.html
 [sanders transition]: https://delvingbitcoin.org/t/lightning-transactions-with-v3-and-ephemeral-anchors/418/2
 [news283 v3pin]: /en/newsletters/2024/01/03/#v3-transaction-pinning-costs
 [news274 cat]: /en/newsletters/2023/10/25/#proposed-bip-for-op-cat

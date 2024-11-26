@@ -156,10 +156,10 @@ Proposals（BIP）][bips repo]、および[Lightning BOLTs][bolts repo]の注目
 [news223 rbf]: /ja/newsletters/2022/10/26/#rbf
 [news224 rbf]: /ja/newsletters/2022/11/02/#mempool
 [cln filter doc]: https://github.com/rustyrussell/lightning/blob/a6f38a2c1a47c5497178c199691047320f2c55bc/doc/lightningd-rpc.7.md#field-filtering
-[ingala matt]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
+[ingala matt]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-November/021182.html
 [merkle trees]: https://en.wikipedia.org/wiki/Merkle_tree
 [news222 rollup]: /ja/newsletters/2022/10/19/#validity-rollups
-[st unjam post]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003740.html
+[st unjam post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-November/003740.html
 [st unjam paper]: https://raw.githubusercontent.com/s-tikhomirov/ln-jamming-simulator/master/unjamming-lightning.pdf
 [sparrow 1.7.0]: https://github.com/sparrowwallet/sparrow/releases/tag/1.7.0
 [blixt v0.6.0]: https://github.com/hsjoberg/blixt-wallet/releases/tag/v0.6.0
