@@ -97,25 +97,25 @@ lang: zh
 [sipa consensus]: https://github.com/bitcoin/bitcoin/compare/450d2b2371...865d2c37e2
 [sipa tests]: https://github.com/bitcoin/bitcoin/compare/206fb180ec...0e2a5e448f426219a6464b9aaadcc715534114e6
 [o'beirne bitcoinperf]: https://github.com/bitcoin/bitcoin/pull/20147#issuecomment-711051877
-[news108 upgrade commitment]: /en/newsletters/2020/07/29/#upgrading-channel-commitment-formats
-[news117 glv]: /en/newsletters/2020/09/30/#us-patent-7-110-538-has-expired
-[news117 memcmp]: /en/newsletters/2020/09/30/#discussion-about-compiler-bugs
-[news119 upfront]: /en/newsletters/2020/10/14/#ln-upfront-payments
+[news108 upgrade commitment]: /zh/newsletters/2020/07/29/#upgrading-channel-commitment-formats
+[news117 glv]: /zh/newsletters/2020/09/30/#us-patent-7-110-538-has-expired
+[news117 memcmp]: /zh/newsletters/2020/09/30/#discussion-about-compiler-bugs
+[news119 upfront]: /zh/newsletters/2020/10/14/#ln-upfront-payments
 [jager hold fees]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002826.html
 [russell simplified]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002831.html
 [##taproot-activation]: https://webchat.freenode.net/##taproot-activation
 [##taproot-activation logs]: http://gnusha.org/taproot-activation/
 [musig 2 paper]: https://eprint.iacr.org/2020/1261
 [musig blog post unsafe deterministic nonce]: https://blockstream.com/2019/02/18/en-musig-a-new-multisignature-standard/#uniform-randomness
-[unsafe nonce sharing]: /en/newsletters/2019/11/27/#schnorr-taproot-updates
+[unsafe nonce sharing]: /zh/newsletters/2019/11/27/#schnorr-taproot-updates
 [musig-dn]: https://medium.com/blockstream/musig-dn-schnorr-multisignatures-with-verifiably-deterministic-nonces-27424b5df9d6
-[composable musig in ln]: /en/newsletters/2019/12/04/#composable-musig
-[news60 permissions]: /en/newsletters/2019/08/21/#bitcoin-core-16248
+[composable musig in ln]: /zh/newsletters/2019/12/04/#composable-musig
+[news60 permissions]: /zh/newsletters/2019/08/21/#bitcoin-core-16248
 [bluewallet payjoin]: https://github.com/BlueWallet/BlueWallet/releases/tag/v5.6.1
-[news77 bitfinex lightning]: /en/newsletters/2019/12/18/#bitfinex-supports-ln-deposits-and-withdrawals
+[news77 bitfinex lightning]: /zh/newsletters/2019/12/18/#bitfinex-supports-ln-deposits-and-withdrawals
 [bitfinex wumbo blog]: https://blog.bitfinex.com/trading/bitfinex-supports-the-lightning-networks-wumbo-channels/
 [github esplora clnd plugin]: https://github.com/lvaccaro/esplora_clnd_plugin/releases/tag/v0.1
 [coinfloor bech32 blog]: https://coinfloor.co.uk/hodl/2020/10/09/upgrades-to-btc-deposits/
 [bisq bech32]: https://github.com/bisq-network/bisq/releases/tag/v1.4.1
 [unchained capital psbt blog]: https://unchained-capital.com/blog/now-coldcard/
-[news96 descriptor wallets]: /en/newsletters/2020/05/06/#bitcoin-core-16528
+[news96 descriptor wallets]: /zh/newsletters/2020/05/06/#bitcoin-core-16528
