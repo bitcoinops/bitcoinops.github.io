@@ -32,7 +32,9 @@ lang: zh
 - **<!--research-into-conflicts-between-timelocks-and-heightlocks-->****对时间锁和高度锁冲突的研究：** Blockstream 工程博客的一篇[文章][blockstream post]描述了比特币时间锁（timelocks）和区块高度锁（heightlocks）之间的相互作用。自比特币初始发布以来，所有交易都有一个 `nLockTime` 字段。一个在区块 31,000（2009 年 12 月）激活的软分叉开始[将][time-height-lock fork]此字段与区块头的显式时间字段及其隐含高度（自创世区块以来的区块数）进行比较。区块仅在其所有交易符合以下两条规则时有效：[^final-sequence]
 
   - 如果交易的 nLockTime 低于 5 亿，则它必须低于区块高度。
-  - 如果交易的 nLockTime 等于或高于 5 亿，则它必须低于区块头的时间（以 [epoch time][] 表示）。
+
+  - 如果交易的 nLockTime 等于或高于 5 亿，
+    则它必须低于区块头的时间（以 [epoch time][] 表示）。
 
   通过一个字段同时用于高度锁和时间锁的这种复用很有效，但也意味着一个交易只能使用高度锁或时间锁，而不能同时使用。
 
