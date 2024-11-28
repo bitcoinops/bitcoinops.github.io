@@ -89,7 +89,55 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How does ColliderScript improve Bitcoin and what features does it enable?]({{bse}}124690)
+  Victor Kolobov lists potential uses for ColliderScript (see [Newsletter
+  #330][news330 cs] and [Podcast #330][pod330 cs]) including [covenants][topic
+  covenants], [vaults][topic vaults], emulation of [CSFS][topic
+  op_checksigfromstack], and validity rollups (see [Newsletter #222][news222
+  validity rollups]) while noting the high computational costs of such transactions.
+
+- [Why do standardness rules limit transaction weight?]({{bse}}124636)
+  Murch provides arguments for and against Bitcoin Core's standardness weight
+  limits and outlines how economic demand for larger transactions could erode
+  the effectiveness of the [policy][policy series].
+
+- [Is the scriptSig spending an PayToAnchor output expected to always be empty?]({{bse}}124615)
+  Pieter Wuille points out that because of how [pay-to-anchor (P2A)][topic ephemeral
+  anchors] outputs are [constructed][news326 p2a], they must adhere to segwit spending
+  conditions, including an empty scriptSig.
+
+- [What happens to the unused P2A outputs?]({{bse}}124617)
+  Instagibbs notes that unused P2A outputs will eventually be swept when the block
+  inclusion feerate drops low enough to make a sweep worth it, removing them from
+  the UTXO set. He goes on to reference
+  the recently-merged [ephemeral dust][news330 ed] PR that allows a single
+  below-dust-threshold output in a zero-fee transaction provided a [child
+  transaction][topic cpfp] immediately spends it.
+
+- [Why doesn't Bitcoin's PoW algorithm use a chain of lower-difficulty hashes?]({{bse}}124777)
+  Pieter Wuille and Vojtěch Strnad describe the mining centralization pressure
+  that would happen if the progress-free property of Bitcoin's mining was
+  violated with such an approach.
+
+- [Clarification on false value in Script]({{bse}}124673)
+  Pieter Wuille specifies the three values that evaluate to false in Bitcoin
+  Script: an empty array, an array of 0x00 bytes, and an array of 0x00 bytes with a
+  0x80 at the end. He notes that all other values are evaluated as true.
+
+- [What is this strange microtransaction in my wallet?]({{bse}}124744)
+  Vojtěch Strnad explains the mechanics of an address poisoning attack and ways
+  to mitigate such attacks.
+
+- [Are there any UTXOs that can not be spent?]({{bse}}124865)
+  Pieter Wuille provides two examples of outputs that are unspendable regardless
+  of the breaking of cryptographic assumptions: `OP_RETURN` outputs and outputs
+  with a scriptPubKey longer than 10,000 bytes.
+
+- [Why was BIP34 not implemented via the coinbase tx's locktime or nSequence?]({{bse}}75987)
+  Antoine Poinsot follows up to this older question to point out that the
+  coinbase transaction's `nLockTime` value cannot be set to the current block
+  height because the [locktime][topic timelocks] represents the last block at
+  which a transaction is *invalid*.
 
 ## Releases and release candidates
 
@@ -188,3 +236,9 @@ repo], and [BINANAs][binana repo]._
 [ldk 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
 [news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
 [news263 renepay]: /en/newsletters/2023/08/09/#core-lightning-6376
+[news330 cs]: /en/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes
+[pod330 cs]: /en/podcast/2024/11/26/#covenants-based-on-grinding-rather-than-consensus-changes
+[news222 validity rollups]: /en/newsletters/2022/10/19/#validity-rollups-research
+[policy series]: /en/blog/waiting-for-confirmation/
+[news326 p2a]: /en/newsletters/2024/10/25/#how-was-the-structure-of-pay-to-anchor-decided
+[news330 ed]: /en/newsletters/2024/11/22/#bitcoin-core-30239
