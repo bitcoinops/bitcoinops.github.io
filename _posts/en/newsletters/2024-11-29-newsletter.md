@@ -119,19 +119,58 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31122][] cluster mempool: Implement changeset interface for mempool
+- [Bitcoin Core #31122][] implements a `changeset` interface for the mempool,
+  allowing a node to compute the impact of a proposed set of changes on the state
+  of the mempool.  For example, checking whether ancestor/descendant/[TRUC][topic v3
+  transaction relay] (and future cluster) limits are violated when a transaction
+  or a package is accepted, or determining whether an [RBF][topic RBF] fee bump
+  improves the state of the mempool. This PR is part of the [cluster
+  mempool][topic cluster mempool] project.
 
-- [Core Lightning #7852][] pyln-client: restore backwards compatibility with CLN prior to 24.08
+- [Core Lightning #7852][] restores backwards compatibility with versions prior
+  to 24.08 for the `pyln-client` plugin (a Python client library) by
+  reintroducing a description field.
 
-- [Core Lightning #7740][] askrene: add algorithm to compute feasible flow
+- [Core Lightning #7740][] improves the minimum cost flow (MCF) solver of the
+  `askrene` (see [Newsletter #316][news316 askrene]) plugin by providing an API
+  that abstracts the complexity of MCF solving to allow easier integration of
+  newly added graph-based flow computation algorithms. The solver adopts the
+  same channel cost function linearization as `renepay`(see [Newsletter
+  #263][news263 renepay]), which improves pathfinding reliability, and
+  introduces support for customizable units beyond msats, allowing greater
+  scalability for large payments. This PR adds the `simple_feasibleflow`,
+  `get_augmenting_flow`, `augment_flow`, and `node_balance` methods to improve
+  the efficiency of flow calculations.
 
-- [Core Lightning #7719][] splice: Update funding pubkey on splice lock
+- [Core Lightning #7719][] achieves interoperability with Eclair for
+  [splicing][topic splicing], allowing splices to be executed between the two
+  implementations. This PR introduces several changes to align with Eclair’s
+  implementation including support for rotating remote funding keys, adding
+  `batch_size` for commitment-signed messages, preventing transmission of
+  previous funding transactions due to packet size limits, removing blockhashes
+  from messages, and adjusting pre-set funding output balances.
 
-- [Eclair #2935][] Add force-close notification
+- [Eclair #2935][] adds a notification to the node operator in the event of a
+  channel force close initiated by a channel peer.
 
-- [LDK #3137][] Implement accepting dual-funded channels without contributing
+- [LDK #3137][] adds support for accepting peer-initiated [dual-funded
+  channels][topic dual funding], although funding or creating such channels is
+  not yet supported. If `manually_accept_inbound_channels` is set to false,
+  channels are automatically accepted, while the
+  `ChannelManager::accept_inbound_channel()` function allows manual acceptance.
+  A new `channel_negotiation_type` field is introduced to distinguish between
+  inbound requests for dual-funded and non-dual-funded channels.
+  [Zero-conf][topic zero-conf channels] dual-funded channels and
+  [RBF][topic rbf] fee
+  bumping of funding transactions are not supported.
 
-- [LND #8337][] [1/4] - protofsm: add new package for driving generic protocol FSMs
+- [LND #8337][] introduces the `protofsm` package, a reusable framework for
+  creating event-driven protocol finite state machines (FSMs) in LND. Instead of
+  writing boilerplate code to handle states, transitions, and events, developers
+  can define the states, what triggers events, and the rules for moving between
+  them, and the `State` interface will encapsulate behavior, handle events, and
+  determine terminal states, while daemon adapters handle side effects like
+  broadcasting transactions and sending peer messages.
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31122,7852,7740,7719,2935,3137,8337" %}
@@ -147,3 +186,5 @@ repo], and [BINANAs][binana repo]._
 [core lightning 24.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11rc2
 [bdk 0.30.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.30.0
 [ldk 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
+[news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
+[news263 renepay]: /en/newsletters/2023/08/09/#core-lightning-6376
