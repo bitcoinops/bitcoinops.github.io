@@ -135,6 +135,9 @@ optech_mentions:
   - title: "Eclair #2861 implements on-the-fly funding using liquidity ads with either dual-funding or splicing"
     url: /en/newsletters/2024/10/04/#eclair-2861
 
+  - title: "LDK #3137 adds support for accepting peer-initiated dual-funded channels"
+    url: /en/newsletters/2024/11/29/#core-lightning-7719
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Liquidity advertisements

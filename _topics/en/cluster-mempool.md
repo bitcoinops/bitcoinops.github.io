@@ -85,6 +85,9 @@ optech_mentions:
   - title: "Bitcoin Core #30286 optimizes the candidate search algorithm used in cluster linearizations"
     url: /en/newsletters/2024/09/20/#bitcoin-core-30286
 
+  - title: "Bitcoin Core #31122 allows computing the effect of a set of changes on the state of the mempool"
+    url: /en/newsletters/2024/11/29/#bitcoin-core-31122
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Package relay
