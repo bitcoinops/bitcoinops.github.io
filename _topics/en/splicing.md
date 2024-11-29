@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Eclair #2925 introduces support for using RBF with splicing transactions"
     url: /en/newsletters/2024/10/25/#eclair-2925
 
+  - title: "Core Lightning #7719 achieves interoperability with Eclair for splicing"
+    url: /en/newsletters/2024/11/29/#core-lightning-7719
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

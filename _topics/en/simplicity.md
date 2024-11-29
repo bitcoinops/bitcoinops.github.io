@@ -48,6 +48,9 @@ optech_mentions:
   - title: "Comparisons betwen Simplicity and BTC Lisp"
     url: /en/newsletters/2024/03/20/#overview-of-btc-lisp
 
+  - title: "Flexible coin earmarks probably compatible with Simplicity"
+    url: /en/newsletters/2024/11/29/#flexible-coin-earmarks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Simplicity: A New Language for Blockchains"
@@ -55,6 +58,9 @@ see_also:
 
   - title: Covenants
     link: topic covenants
+
+  - title: Basic Bitcoin Lisp language
+    link: topic bll
 ---
 At its core, Simplicity consists of nine primitive operators called
 combinators whose semantics are formally specified. However,
