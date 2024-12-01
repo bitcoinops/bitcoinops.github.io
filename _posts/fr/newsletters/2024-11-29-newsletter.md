@@ -8,16 +8,16 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine résume plusieurs discussions récentes sur un
-dialecte Lisp pour le scripting Bitcoin et inclut nos
+langage Lisp pour le scripting Bitcoin et comporte nos
 rubriques habituelles avec des questions et réponses populaires
 de la communauté Bitcoin Stack Exchange, des annonces de nouvelles versions et
 versions candidates, ainsi que les changements apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
 
-- **Dialecte Lisp pour le scripting Bitcoin :** Anthony Towns a fait plusieurs
+- **Langage Lisp pour le scripting Bitcoin :** Anthony Towns a fait plusieurs
   publications sur la continuation de son [travail][topic bll] concernant la création d'un
-  dialecte Lisp pour Bitcoin qui pourrait être ajouté à Bitcoin dans un
+  langage Lisp pour Bitcoin qui pourrait être ajouté à Bitcoin dans un
   soft fork.
 
   - *bll, symbll, bllsh :* Towns [note][towns bllsh1] qu'il a passé beaucoup
@@ -26,12 +26,12 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
     les programmeurs écrivent typiquement) et le code de bas niveau (ce qui est réellement exécuté,
     généralement créé à partir du code de haut niveau par les compilateurs). Il
     a décidé d'adopter une approche similaire à [miniscript][topic miniscript] où
-    "vous traitez le langage de haut niveau comme une variation amicale du
+    "vous traitez le langage de haut niveau comme une variation conviviale du
     langage de bas niveau (comme le fait miniscript avec script)". Le résultat est
     deux langages et un outil :
 
     - *Basic Bitcoin Lisp language (bll)* est le langage de bas niveau
-      qui pourrait être ajouté à Bitcoin dans un soft fork. Towns dit que bll est
+      qui pourrait être ajouté à Bitcoin dans un soft fork. Selon Towns, bll est
       similaire à BTC Lisp selon sa dernière mise à jour (voir le [Bulletin
       #294][news294 btclisp]).
 
@@ -79,8 +79,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
 *[Bitcoin Stack Exchange][bitcoin.se] est l'un des premiers endroits où les contributeurs d'Optech
 cherchent des réponses à leurs questions - ou quand nous avons quelques moments libres pour aider
-les utilisateurs curieux ou confus. Dans cette rubrique mensuelle, nous mettons en lumière certaines
-des questions et réponses les plus votées publiées depuis notre dernière mise à jour.*
+les utilisateurs curieux ou perdus. Dans cette rubrique mensuelle, nous mettons en lumière
+les questions et les réponses qui ont obtenu le plus d'attraction depuis notre dernière mise à jour.*
 
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
@@ -120,7 +120,7 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   que toutes les autres valeurs sont évaluées comme vraies.
 
 - [Qu'est-ce que cette étrange microtransaction dans mon portefeuille ?]({{bse}}124744)
-  Vojtěch Strnad explique les mécanismes d'une attaque par empoisonnement d'adresse et les moyens de mitiger de telles attaques. Cette attaque consiste à créer une adresse qui commence et finit par les mêmes caractères que l'adresse victime. L'idée de l'attaquant estt que la victime copie colle son adresse depuis l'historique de transaction. Les protections proposées sont de ne pas réutiliser des adresses, ne pas copier-coller les adresses depuis son historique de transaction et de toujours vérifier une adresse caractère par caractère pas simplement le début et la fin. 
+  Vojtěch Strnad explique les mécanismes d'une attaque par empoisonnement d'adresse et les moyens de mitiger de telles attaques. Cette attaque consiste à créer une adresse qui commence et finit par les mêmes caractères que l'adresse victime. L'idée de l'attaquant est que la victime copie colle son adresse depuis l'historique de transaction. Les protections proposées sont de ne pas réutiliser des adresses, ne pas copier-coller les adresses depuis son historique de transaction et de toujours vérifier une adresse caractère par caractère et pas simplement le début et la fin.
 
 - [Existe-t-il des UTXOs qui ne peuvent pas être dépensés ?]({{bse}}124865)
   Pieter Wuille fournit deux exemples de sorties qui sont inexploitables indépendamment de la
