@@ -120,7 +120,11 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   que toutes les autres valeurs sont évaluées comme vraies.
 
 - [Qu'est-ce que cette étrange microtransaction dans mon portefeuille ?]({{bse}}124744)
-  Vojtěch Strnad explique les mécanismes d'une attaque par empoisonnement d'adresse et les moyens de mitiger de telles attaques. Cette attaque consiste à créer une adresse qui commence et finit par les mêmes caractères que l'adresse victime. L'idée de l'attaquant est que la victime copie colle son adresse depuis l'historique de transaction. Les protections proposées sont de ne pas réutiliser des adresses, ne pas copier-coller les adresses depuis son historique de transaction et de toujours vérifier une adresse caractère par caractère pas simplement le début et la fin. 
+  Vojtěch Strnad explique les mécanismes d'une attaque par empoisonnement d'adresse et les moyens de mitiger de telles attaques. 
+  Cette attaque consiste à créer une adresse qui commence et finit par les mêmes caractères que l'adresse victime. L'idée de l'attaquant est 
+  que la victime copie colle son adresse depuis l'historique de transaction. Les protections proposées sont de ne pas réutiliser des 
+  adresses, ne pas copier-coller les adresses depuis son historique de transaction et de toujours vérifier une adresse caractère par 
+  caractère pas simplement le début et la fin. 
 
 - [Existe-t-il des UTXOs qui ne peuvent pas être dépensés ?]({{bse}}124865)
   Pieter Wuille fournit deux exemples de sorties qui sont inexploitables indépendamment de la
