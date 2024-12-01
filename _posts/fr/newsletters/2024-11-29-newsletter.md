@@ -16,7 +16,7 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 ## Nouvelles
 
 - **Dialecte Lisp pour le scripting Bitcoin :** Anthony Towns a fait plusieurs
-  publications sur la continuation de son [travail][topic bll] sur la création d'un
+  publications sur la continuation de son [travail][topic bll] concernant la création d'un
   dialecte Lisp pour Bitcoin qui pourrait être ajouté à Bitcoin dans un
   soft fork.
 
@@ -46,8 +46,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
   - *Implémenter des signatures résistantes aux quantiques dans symbll versus GSR :* Towns
     [lie][towns wots] à un [post Twitter][nick wots] de Jonas Nick
     sur l'implémentation des signatures Winternitz One Time (WOTS+) en utilisant
-    les opcodes existants et les opcodes spécifiés dans la proposition de _great script restoration_
-    (GSR) [proposé par][russell gsr] de Rusty Russell. Towns
+    les opcodes existants et les opcodes spécifiés dans la [proposition][russell gsr] _great script restoration_
+    (GSR) de Rusty Russell. Towns
     compare ensuite l'implémentation de WOTS en utilisant symbll dans bllsh. Cela réduit
     la quantité de données qui devraient être placées onchain d'au moins
     83 % et potentiellement de plus de 95 %. Cela pourrait permettre l'utilisation de
@@ -56,11 +56,11 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
   - *Marquages flexibles de pièces :* Towns [décrit][towns earmarks] une
     construction générique compatible avec symbll (et probablement
-    [Simplicity][topic simplicity]) qui permet de partitionner un UTXO en
+    [Simplicity][topic simplicity]) qui permet de partitionner une UTXO en
     montants spécifiques et conditions de dépense. Si une condition de dépense
     est remplie, le montant associé peut être dépensé et le reste
-    de la valeur du UTXO est retournée à un nouveau UTXO avec les conditions restantes. Une condition
-    alternative peut également être satisfaite pour permettre de dépenser l'intégralité du UTXO ; par
+    de la valeur de l'UTXO est retournée à une nouvelle UTXO avec les conditions restantes. Une condition
+    alternative peut également être satisfaite pour permettre de dépenser l'intégralité de l'UTXO ; par
     exemple, cela pourrait permettre à toutes les parties de convenir de mettre à jour certaines des
     conditions. C'est un type flexible de mécanisme de [covenant][topic covenants], similaire à la
     proposition précédente de Towns pour `OP_TAP_LEAF_UPDATE_VERIFY` (TLUV, voir le [Bulletin
@@ -69,8 +69,8 @@ versions candidates, ainsi que les changements apportés aux principaux logiciel
 
     Plusieurs exemples d'utilisation de ces _pièces de monnaie flexibles affectées à un usage particulier_
     sont fournis, incluant des
-    améliorations dans la sécurité et l'usabilité des canaux LN (incluant les canaux basés sur
-    [LN-Symmetry][topic eltoo]), une alternative à la version [BIP345][] de [coffre-forts][topic vaults], et
+    améliorations dans la sécurité et l'utilisation des canaux LN (incluant les canaux basés sur
+    [LN-Symmetry][topic eltoo]), une alternative à la version [BIP345][] de [coffre-forts (vaults)][topic vaults], et
     un design de [pool de paiements][topic joinpools] similaire à celui envisagé pour une utilisation avec
     TLUV mais qui évite les problèmes que cette proposition avait avec les [clés publiques x-only][topic
     x-only public keys].
@@ -92,8 +92,8 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   validité (voir le [Bulletin #222][news222 validity rollups]) tout en notant les coûts computationnels
   élevés de telles transactions.
 
-- [Pourquoi les règles de standardité limitent-elles le poids des transactions ?]({{bse}}124636)
-  Murch fournit des arguments pour et contre les limites de poids de standardité de Bitcoin Core et
+- [Pourquoi les règles de standardisation limitent-elles le poids des transactions ?]({{bse}}124636)
+  Murch fournit des arguments pour et contre les limites de poids de standardisation de Bitcoin Core et
   décrit comment la demande économique pour des transactions plus grandes pourrait éroder l'efficacité
   de la [politique][policy series].
 
@@ -106,7 +106,7 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   Instagibbs note que les sorties P2A inutilisées seront finalement balayées lorsque le taux de frais
   d'inclusion dans un bloc sera suffisamment bas pour rendre le balayage rentable, les retirant ainsi
   de l'ensemble UTXO. Il continue en référençant
-  la récente fusion du PR [de poussière éphémère][news330 ed] qui permet une sortie unique en dessous du
+  la récente fusion de la PR sur [la poussière éphémère][news330 ed] qui permet une sortie unique en dessous du
   seuil de poussière dans une transaction sans frais, à condition qu'une [transaction enfant][topic
   cpfp] la dépense immédiatement.
 
@@ -121,7 +121,7 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
 
 - [Qu'est-ce que cette étrange microtransaction dans mon portefeuille ?]({{bse}}124744)
   Vojtěch Strnad explique les mécanismes d'une attaque par empoisonnement d'adresse et les moyens de
-  mitiger de telles attaques.
+  mitiger de telles attaques. Cette attaque consiste à créer une adresse qui commence et finit par les mêmes caractères que l'adresse victime. L'idée de l'attaquant est que la victime copie colle son adresse depuis l'historique de transaction. Les protections proposées sont de ne pas réutiliser des adresses, ne pas copier-coller les adresses depuis son historique de transaction et de toujours vérifier une adresse caractère par caractère pas simplement le début et la fin. 
 
 - [Existe-t-il des UTXOs qui ne peuvent pas être dépensés ?]({{bse}}124865)
   Pieter Wuille fournit deux exemples de sorties qui sont inexploitables indépendamment de la
@@ -135,17 +135,17 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
 
 ## Mises à jour et versions candidates
 
-_Nouvelles mises-à-jours et candidates pour des projets d'infrastructure Bitcoin populaires.
+_Nouvelles mises-à-jours et versions candidates pour des projets d'infrastructure Bitcoin populaires.
 Veuillez envisager de mettre à niveau vers les nouvelles mises-à-jour ou d'aider à tester les versions candidates._
 
-- [Core Lightning 24.11rc2][] est un candidat à la sortie pour la prochaine version majeure de cette
+- [Core Lightning 24.11rc2][] est une version candidate pour la prochaine version majeure de cette
   implémentation populaire de LN.
 
-- [BDK 0.30.0][] est une sortie de cette bibliothèque pour construire des portefeuilles et d'autres
-  applications activées par Bitcoin. Elle inclut plusieurs corrections de bugs mineurs et prépare pour
+- [BDK 0.30.0][] est une mise-à-jour de cette bibliothèque pour construire des portefeuilles et d'autres
+  applications activées par Bitcoin. Elle inclut plusieurs corrections de bugs mineurs et prépare
   la mise à niveau anticipée à la version 1.0 de la bibliothèque.
 
-- [LDK 0.18.4-beta.rc1][] est un candidat à la sortie pour une version mineure de cette
+- [LDK 0.18.4-beta.rc1][] est un candidat pour une version mineure de cette
   implémentation populaire de LN.
 
 ## Changements notables dans le code et la documentation
@@ -157,11 +157,11 @@ Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk rep
 d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips
 repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
-- [Bitcoin Core #31122][] implémente une interface `changeset` pour le mempool,
-  permettant à un nœud de calculer l'impact d'un ensemble proposé de changements sur l'état du
+- [Bitcoin Core #31122][] implémente une interface `changeset` pour la mempool,
+  permettant à un nœud de calculer l'impact d'un ensemble proposé de changements sur l'état de la
   mempool. Par exemple, vérifier si les limites d'ancêtre/descendant/[TRUC][topic v3 transaction
   relay] (et les limites de cluster futur) sont violées lorsqu'une transaction ou un paquet est
-  accepté, ou déterminer si une majoration des frais [RBF][topic RBF] améliore l'état du mempool.
+  accepté, ou déterminer si une majoration des frais [RBF][topic RBF] améliore l'état de la mempool.
   Cette PR fait partie du projet de [mempool en cluster][topic cluster mempool].
 
 - [Core Lightning #7852][] restaure la compatibilité avec les versions antérieures à 24.08 pour le
@@ -199,7 +199,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 
 - [LND #8337][] introduit le package `protofsm`, un cadre réutilisable pour créer des machines à
   états finis (FSM) protocolaires pilotées par événements dans LND. Au lieu d'écrire du code standard
-  pour gérer les états, les transitions et les événements, les développeurs peuvent définir les états,
+  pour gérer les états, les transitions et les événements, les développeurs peuvent définir des états,
   ce qui déclenche les événements, et les règles pour passer entre eux, et l'interface `State`
   encapsulera le comportement, gérera les événements, et déterminera les états terminaux, tandis que
   les adaptateurs de daemon gèrent les effets secondaires comme la diffusion de transactions et
