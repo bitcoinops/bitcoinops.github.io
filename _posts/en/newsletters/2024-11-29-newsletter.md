@@ -145,7 +145,7 @@ _New releases and release candidates for popular Bitcoin infrastructure
 projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
-- [Core Lightning 24.11rc2][] is a releases candidate for the next major
+- [Core Lightning 24.11rc2][] is a release candidate for the next major
   version of this popular LN implementation.
 
 - [BDK 0.30.0][] is a release of this library for building wallets and
@@ -153,7 +153,7 @@ release candidates._
   fixes and prepares for the anticipated upgrade to the version 1.0 of
   the library.
 
-- [LDK 0.18.4-beta.rc1][] is a release candidate for a minor version of
+- [LND 0.18.4-beta.rc1][] is a release candidate for a minor version of
   this popular LN implementation.
 
 ## Notable code and documentation changes
@@ -233,7 +233,7 @@ repo], and [BINANAs][binana repo]._
 [towns badcov]: https://gnusha.org/pi/bitcoindev/20220719044458.GA26986@erisian.com.au/
 [core lightning 24.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11rc2
 [bdk 0.30.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.30.0
-[ldk 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
+[lnd 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
 [news316 askrene]: /en/newsletters/2024/08/16/#core-lightning-7517
 [news263 renepay]: /en/newsletters/2023/08/09/#core-lightning-6376
 [news330 cs]: /en/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes

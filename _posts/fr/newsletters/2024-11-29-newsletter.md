@@ -148,7 +148,7 @@ Veuillez envisager de mettre à niveau vers les nouvelles mises-à-jour ou d'aid
   applications activées par Bitcoin. Elle inclut plusieurs corrections de bugs mineurs et prépare
   la mise à niveau anticipée à la version 1.0 de la bibliothèque.
 
-- [LDK 0.18.4-beta.rc1][] est un candidat pour une version mineure de cette
+- [LND 0.18.4-beta.rc1][] est un candidat pour une version mineure de cette
   implémentation populaire de LN.
 
 ## Changements notables dans le code et la documentation
@@ -221,7 +221,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [towns badcov]: https://gnusha.org/pi/bitcoindev/20220719044458.GA26986@erisian.com.au/
 [core lightning 24.11rc2]: https://github.com/ElementsProject/lightning/releases/tag/v24.11rc2
 [bdk 0.30.0]: https://github.com/bitcoindevkit/bdk/releases/tag/v0.30.0
-[ldk 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
+[lnd 0.18.4-beta.rc1]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta.rc1
 [news316 askrene]: /fr/newsletters/2024/08/16/#core-lightning-7517
 [news263 renepay]: /fr/newsletters/2023/08/09/#core-lightning-6376
 [news330 cs]: /fr/newsletters/2024/11/22/#covenants-bases-sur-la-rectification-plutot-que-sur-des-changements-de-consensus
