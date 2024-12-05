@@ -147,15 +147,44 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #30708][] rpc: add getdescriptoractivity
+- [Bitcoin Core #30708][] adds the `getdescriptoractivity` RPC command that
+  retrieves all transactions associated with a [descriptor][topic descriptors]
+  within a specified set of blockhashes, allowing wallets to interact with
+  Bitcoin Core in a stateless manner. This command is particularly useful when
+  used in conjunction with `scanblocks` (see [Newsletter #222][news222
+  scanblocks]), which identifies the set of blockhashes containing transactions
+  associated with a descriptor.
 
-- [Core Lightning #7832][] anchors: create low priority anchor to spend commit tx within a week.
+- [Core Lightning #7832][] spends from [anchor outputs][topic anchor outputs] even for
+  non-urgent unilateral close transactions, starting with a block target of 2016
+  blocks (approximately 2 weeks) and gradually reducing to 12 blocks. The
+  broadcast timestamp will be tracked to ensure consistent behaviour across
+  restarts. Previously, these transactions did not spend from the anchor outputs by
+  default, making it difficult to create a spend manually and impossible use
+  [CPFP][topic cpfp] fee bumping of the anchor spend.
 
-- [LND #8270][] DynComms [1/n]: Implement Quiescence Protocol
+- [LND #8270][] implements the channel quiescence protocol as specified
+  in [BOLT2][] (see [Newsletter #309][news309
+  quiescence]), which is a prerequisite for [dynamic commitments][topic channel
+  commitment upgrades] and [splicing][topic splicing]. The protocol allows a
+  node to both respond to a peer's quiescence request and initiate the process
+  using new `ChannelUpdateHandler` operations. This PR also adds a configurable
+  timeout mechanism to handle unresponsive peers by disconnecting them if the
+  quiescent state persists for too long without resolution.
 
-- [LND #8390][] Add Experimental Endorsement Signalling
+- [LND #8390][] introduces support for setting and relaying an experimental
+  [HTLC endorsement][topic htlc endorsement] signaling field in
+  `update_add_htlc` messages, aimed at researching [channel jamming
+  attack][topic channel jamming attacks] prevention. If a node receives an HTLC
+  with the signaling field, it will relay the field as-is; otherwise, it sets a
+  default value of zero. This feature is enabled by default but can be disabled.
 
-- [BIPs #1534][] Add BIP 349: OP_INTERNALKEY
+- [BIPs #1534][] merges [BIP349][] for the specification of `OP_INTERNALKEY`, a
+  new [tapscript][topic tapscript] only opcode that puts the taproot internal key on the
+  stack. Authors of scripts need to know the internal key before they can pay to
+  an output, so this is an alternative to including the internal key
+  directly in a script; it saves 8 vbytes per use and makes
+  scripts more reusable (see [Newsletter #285][news285 bip349]).
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
@@ -174,3 +203,6 @@ repo], and [BINANAs][binana repo]._
 [ldk v0.0.125]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.0.125
 [bitcoin core 28.1RC1]: https://bitcoincore.org/bin/bitcoin-core-28.1/
 [riard censor]: https://groups.google.com/g/bitcoindev/c/GuS36ldye7s
+[news222 scanblocks]: /en/newsletters/2022/10/19/#bitcoin-core-23549
+[news309 quiescence]: /en/newsletters/2024/06/28/#bolts-869
+[news285 bip349]: /en/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
