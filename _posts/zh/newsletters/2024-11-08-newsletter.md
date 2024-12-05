@@ -70,7 +70,7 @@ lang: zh
 {% include references.md %}
 
 {% include linkers/issues.md v=2 issues="3360,3207" %}
-[news306 disclosure]: /en/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
+[news306 disclosure]: /zh/newsletters/2024/06/07/#upcoming-disclosure-of-vulnerabilities-affecting-old-versions-of-bitcoin-core
 [stall vuln]: https://bitcoincore.org/en/2024/11/05/cb-stall-hindering-propagation/
 [poinsot stall]: https://mailing-list.bitcoindevs.xyz/bitcoindev/uJpfg8UeMOfVUATG4YRiGmyz5MALtZq68FCBXA6PT-BNstodivpqQfDxD1JAv5Qny_vuNr-A1m8jIDNHQLhAQt8hj8Ee9OT6ZFE5Z16O97A=@protonmail.com/
 [bitcoin core 27.2]: https://bitcoincore.org/en/2024/11/04/release-27.2/
