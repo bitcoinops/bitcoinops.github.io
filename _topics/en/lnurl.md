@@ -19,7 +19,7 @@ topic-categories:
 ## "[title](link)"
 primary_sources:
     - title: "LNURL Documents (LUDs)"
-      link: https://github.com/lnurl/lud
+      link: https://github.com/lnurl/luds
 
 ## Optional.  Each entry requires "title" and "url".  May also use "feature:
 ## true" to bold entry and "date"
