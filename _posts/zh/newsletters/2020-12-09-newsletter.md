@@ -90,13 +90,13 @@ lang: zh
 {% include linkers/issues.md issues="20564,4782,19858,15759" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [mutability problem]: /zh/newsletters/2019/12/28/#bech32-mutability
-[forward address compatibility]: /zh/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
+[forward address compatibility]: /zh/bech32-sending-support/#自动-bech32-支持未来的软分叉
 [russell test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018256.html
 [casatta test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018257.html
 [schmidt test1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018258.html
 [schmidt test2]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018268.html
 [btcd #1661]: https://github.com/btcsuite/btcd/issues/1661
-[bech32 upper]: /zh/bech32-sending-support/#creating-more-efficient-qr-codes-with-bech32-addresses
+[bech32 upper]: /zh/bech32-sending-support/#使用-bech32-地址创建更高效的二维码
 [btcpay #2099]: https://github.com/btcpayserver/btcpayserver/issues/2099
 [rfc3986]: https://tools.ietf.org/html/rfc3986#section-3.1
 [square tweet]: https://twitter.com/sqcrypto/status/1334626548515663872
