@@ -33,6 +33,9 @@ optech_mentions:
   - title: Updated consensus cleanup proposal to address Block 1,983,702 problem
     url: /en/newsletters/2024/04/03/#revisiting-consensus-cleanup
 
+  - title: "Discussion about fixing remaining duplicate transaction vulnerabilities in consensus cleanup fork"
+    url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork

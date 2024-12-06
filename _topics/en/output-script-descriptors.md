@@ -182,6 +182,9 @@ optech_mentions:
   - title: "Bitcoin Core #22838 implements multiple derivation path descriptors (BIP389)"
     url: /en/newsletters/2024/09/06/#bitcoin-core-22838
 
+  - title: "Bitcoin Core #30708 adds `getdescriptoractivity` RPC command"
+    url: /en/newsletters/2024/12/06/#bitcoin-core-30708
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Miniscript

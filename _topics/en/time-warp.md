@@ -48,6 +48,9 @@ optech_mentions:
   - title: "New time warp vulnernability affecting testnet4 despite previous time warp fixes"
     url: /en/newsletters/2024/08/16/#new-time-warp-vulnerability-in-testnet4
 
+  - title: "Discussion about fixing Murch-Zawy time warp in consensus cleanup"
+    url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

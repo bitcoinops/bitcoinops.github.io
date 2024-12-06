@@ -62,6 +62,9 @@ optech_mentions:
   - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
     url: /en/newsletters/2024/09/27/#hybrid-jamming-mitigation-testing-and-changes
 
+  - title: "LND #8390 introduces support for setting and relaying an experimental HTLC endorsement"
+    url: /en/newsletters/2024/12/06/#lnd-8390
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Channel jamming attacks

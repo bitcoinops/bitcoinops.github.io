@@ -86,6 +86,9 @@ optech_mentions:
   - title: "Core Lightning #7719 achieves interoperability with Eclair for splicing"
     url: /en/newsletters/2024/11/29/#core-lightning-7719
 
+  - title: "LND #8270 implements the channel quiescence protocol designed in part for splicing"
+    url: /en/newsletters/2024/12/06/#lnd-8270
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol

@@ -173,6 +173,12 @@ optech_mentions:
   - title: "Core Lightning #7388 removes the ability to create old non-zero-fee anchor-style channels"
     url: /en/newsletters/2024/06/28/#core-lightning-7388
 
+  - title: "Eclair v0.11.0 stops accepting new non-anchor channels"
+    url: /en/newsletters/2024/12/06/#eclair-v0-11-0
+
+  - title: "Core Lightning #7832 spends from anchor outputs even when not urgent"
+    url: /en/newsletters/2024/12/06/#core-lightning-7832
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: CPFP carve-out
