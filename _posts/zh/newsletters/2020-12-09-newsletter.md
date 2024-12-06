@@ -7,7 +7,6 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-```markdown
 本周的 Newsletter 描述了一个针对 taproot 的 Bech32 地址格式的提案，提到处理某些 QR 编码地址时的一个错误，感谢加密货币开放专利联盟（COPA）的新成员，并提到了 Minsc 策略语言和编译器的新功能。此外，还包括我们常规的 Bitcoin Core PR 审查俱乐部会议总结、新软件发布与候选发布，以及流行比特币基础设施软件的显著变更。
 
 ## 行动项
