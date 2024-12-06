@@ -27,6 +27,8 @@ lang: zh
 
 - **<!--cryptocurrency-open-patent-alliance-copa-gains-new-members-->****加密货币开放专利联盟（COPA）新增成员：** Square Crypto 在 Twitter 上[宣布][square tweet]，一些新组织加入了该联盟，致力于防止专利被滥用以阻碍加密货币技术的创新和采用。我们与许多人一道感谢 COPA 的所有现有成员：ARK.io、Bithyve、Blockchain Commons、Blockstack、Blockstream、Carnes Validadas、Cloudeya Ltd.、Coinbase、Foundation Devices、Horizontal Systems、Kraken、Mercury Cash、Protocol Labs、Request Network、SatoshiLabs、Square、Transparent Systems 和 VerifyChain。
 
+{% comment %}<!-- 这是我对自己政策的调整，即 (1) 发布信息现在应列入发布部分；(2) 我仅涵盖值得注意的代码更改部分列出的项目的发布；(3) Minsc 不属于这些项目。以下技术上并不是一个发布公告，而是新功能的声明，*恰好*与发布对应。是的，也许我应该制定更好的政策，或者更随性一些。-->{% endcomment %}
+
 - **<!--minsc-adds-new-features-->****Minsc 增添新功能：** 这一策略语言和编译器的最新[版本][minsc 0.2]支持多种新数据类型：公钥、哈希、策略、[miniscript][topic miniscript]、[描述符][topic descriptors]、地址和网络。它还添加了新的转换函数：`miniscript()`、`wsh()`、`wpkh()`、`sh()` 和 `address()`。以下是一个[示例][minsc example]，取自项目官网，使用指定的公钥（作为带派生路径的 [BIP32][] 扩展公钥）以及多个转换函数，返回最终行中指定的数据集：
 
   ```hack
