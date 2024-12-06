@@ -67,7 +67,7 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   implémentations LN et laisse pour une discussion ultérieure les changements possibles au protocole
   de relais P2P de Bitcoin Core qui pourraient aborder le problème.
 
-  _Note aux lecteurs :_ nous nous excusons s'il y a des erreurs dans la description ci-dessus ; nous
+  _Note aux lecteurs :_ nous souhaitons nous excuser s'il y a des erreurs dans la description ci-dessus ; nous
   avons seulement appris la divulgation peu de temps avant de publier le bulletin de cette semaine.
 
 - **Discussion continue sur la proposition de soft fork de nettoyage du consensus :**
