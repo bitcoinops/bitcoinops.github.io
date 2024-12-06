@@ -205,7 +205,7 @@ release candidates.*
 {% include linkers/issues.md issues="20564,4782,19858,15759" %}
 [bitcoin core 0.21.0]: https://bitcoincore.org/bin/bitcoin-core-0.21.0/
 [mutability problem]: /en/newsletters/2019/12/28/#bech32-mutability
-[forward address compatibility]: /en/bech32-sending-support/#automatic-bech32-support-for-future-soft-forks
+[forward address compatibility]: /en/bech32-sending-support/#自动-bech32-支持未来的软分叉
 [russell test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018256.html
 [casatta test]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018257.html
 [schmidt test1]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018258.html
