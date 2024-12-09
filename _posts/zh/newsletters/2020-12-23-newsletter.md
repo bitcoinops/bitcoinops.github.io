@@ -281,7 +281,7 @@ Jonas Nick、Tim Ruffing 和 Yannick Seurin 在 10 月[发布了][news120 musig2
 [c-lightning 0.9.0]: /zh/newsletters/2020/08/05/#c-lightning-0-9-0
 [coinswap design]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
 [common ownership heuristic]: https://en.bitcoin.it/wiki/Common-input-ownership_heuristic
-[compatibility index]: /zh/compatibility/
+[compatibility index]: /en/compatibility/
 [copa announced]: /zh/newsletters/2020/09/16/#crypto-open-patent-alliance
 [copa membership]: /zh/newsletters/2020/12/09/#cryptocurrency-open-patent-alliance-copa-gains-new-members
 [crypto garage p2p deriv]: /zh/newsletters/2020/08/19/#crypto-garage-announces-p2p-derivatives-beta-application-on-bitcoin

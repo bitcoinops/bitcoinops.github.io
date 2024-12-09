@@ -19,7 +19,7 @@ lang: zh
 
   作者概述了 CoinPool 如何利用现有的比特币功能再加上 taproot、[SIGHASH_NOINPUT][topic sighash_anyprevout]，以及通过 Bitcoin Script 使用仅删除累加器的能力（如默克尔树，或类似于提议的 [BIP116][] `OP_MERKLEBRANCHVERIFY`）。他们似乎并未推动一个特定的设计，而是希望展开讨论，研究 CoinPool 或类似机制如何成为钱包默认使用的通用工具，以消除当前和提议的多用户协议的链上痕迹。
 
-- **<!--check-hardware-wallet-compatibility-->****WabiSabi 协调的具有任意输出值的 Coinjoin：** 在 [coinjoin][topic coinjoin] 协议中，一组用户协作创建一个交易模板，以便使用他们现有的 UTXO（输入）生成一组新的 UTXO（输出）。创建此交易模板的方式对 Coinjoin 提供的隐私有重要影响，不同的实现方式使用了不同的方法：
+- **<!--wabisabi-coordinated-coinjoins-with-arbitrary-output-values-->****WabiSabi 协调的具有任意输出值的 Coinjoin：** 在 [coinjoin][topic coinjoin] 协议中，一组用户协作创建一个交易模板，以便使用他们现有的 UTXO（输入）生成一组新的 UTXO（输出）。创建此交易模板的方式对 Coinjoin 提供的隐私有重要影响，不同的实现方式使用了不同的方法：
 
   <p><!-- Taker creates tx template, see discussion between harding and waxwing: http://gnusha.org/joinmarket/2020-06-14.log --></p>
 
