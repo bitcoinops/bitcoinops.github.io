@@ -68,7 +68,7 @@ lang: zh
 
 - [LND 0.12.0-beta.rc1][LND 0.12.0-beta] 是此 LN 节点下一个主要版本的第一个候选版本。默认为承诺交易[锚定输出][topic anchor outputs]，并在其[瞭望塔][topic watchtowers]实现中支持这些功能，降低成本并提高安全性，并增加了对创建和签署 [PSBT][topic psbt] 的通用支持。此外，还包含一些错误修复。
 
-- Bitcoin Core 0.20.2rc1 和 0.19.2rc1 预计将在本 Newsletter 发布后[上线][bitcoincore.org/bin]。它们包含若干错误修复，例如 [Newsletter #110][news110 bcc19620] 中描述的一项改进，将防止它们重新下载未来无法理解的 taproot 交易。
+- **<!--n-->**Bitcoin Core 0.20.2rc1 和 0.19.2rc1 预计将在本 Newsletter 发布后[上线][bitcoincore.org/bin]。它们包含若干错误修复，例如 [Newsletter #110][news110 bcc19620] 中描述的一项改进，将防止它们重新下载未来无法理解的 taproot 交易。
 
 ## 值得注意的代码和文档更改
 
