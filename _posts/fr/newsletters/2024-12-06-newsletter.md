@@ -8,7 +8,7 @@ layout: newsletter
 lang: fr
 ---
 Le bulletin de cette semaine annonce la divulgation d'une vulnérabilité de censure de transaction
-et résume les discussions concernant la proposition de soft fork de nettoyage du consensus. Sont
+et résume les discussions concernant la proposition de soft fork consensus cleanup. Sont
 également incluses nos sections régulières avec
 les annonces de nouvelles versions de logiciels et les descriptions des changements notables
 apportés aux logiciels d'infrastructure Bitcoin populaires.
@@ -22,12 +22,12 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   qui lui sont dus avant l'expiration d'un délai, permettant ainsi à sa contrepartie de voler les
   fonds.
 
-  Il existe deux versions de l'attaque, toutes deux tirant parti des limites au sein de Bitcoin Core
-  liées au nombre maximum de transactions non confirmées qu'il diffusera ou acceptera dans un certain
+  Il existe deux versions de l'attaque, toutes deux tirant parti des limites de Bitcoin Core
+  liées au nombre maximum de transactions non confirmées que le logiciel diffusera ou acceptera dans un certain
   laps de temps. Ces limites l'empêchent de placer un fardeau excessif sur ses pairs ou d'être attaqué
   par déni de service.
 
-  La première version de l'attaque, appelée _débordement élevé_ par Riard, tire parti du fait que
+  La première version de l'attaque, appelée _high overflow_ par Riard, tire parti du fait que
   Bitcoin Core ne diffuse qu'un maximum de 1 000 annonces de transactions non confirmées à la fois à
   ses pairs. Si plus de 1 000 transactions sont en file d'attente pour être transmises, les
   transactions avec le taux de frais le plus élevé sont annoncées en premier. Après avoir envoyé un
@@ -37,13 +37,13 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   Si les 1 000 annonces initiales paient un taux de frais plus élevé que la transaction que la victime
   souhaite diffuser, et si un attaquant continue d'envoyer au nœud victime au moins sept transactions
   par seconde au-dessus de ce taux de frais, l'attaquant peut empêcher la diffusion indéfiniment. La
-  plupart des attaques sur LN nécessiteront de retarder la diffusion entre 32 blocs (défauts de Core
-  Lightning) et 140 blocs (défauts d'Eclair), ce qui à 10 sats/vbyte coûterait entre 1,3 BTC (130 000
+  plupart des attaques sur LN nécessiteront de retarder la diffusion entre 32 blocs (par défaut avec Core
+  Lightning) et 140 blocs (par défaut avec Eclair), ce qui à 10 sats/vbyte coûterait entre 1,3 BTC (130 000
   USD) et 5,9 BTC (590 000 USD), bien que Riard note qu'un attaquant prudent, bien connecté à d'autres
   nœuds de relais (ou directement à de grands mineurs), pourrait être en mesure de réduire
   considérablement ces coûts.
 
-  La seconde version de l'attaque, appelée _débordement faible_ par Riard, tire parti du refus de
+  La seconde version de l'attaque, appelée _low overflow_ par Riard, tire parti du refus de
   Bitcoin Core de laisser sa file d'attente de transactions non demandées dépasser 5 000 par pair.
   L'attaquant envoie à la victime un grand nombre de transactions au taux de frais minimum ; la
   victime annonce celles-ci à ses pairs honnêtes et les pairs mettent les annonces en file d'attente ;
@@ -52,7 +52,7 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   annonces jusqu'à ce que la file d'attente se soit partiellement vidée. Si la transaction honnête de
   la victime est annoncée pendant ce temps, les pairs l'ignoreront. Cette attaque peut être
   significativement moins coûteuse que la variante de débordement élevé car les transactions inutiles
-  de l'attaquant peuvent payer le frais minimum de relais de transaction. Cependant, l'attaque peut
+  de l'attaquant peuvent payer les frais minimum de relais de transaction. Cependant, l'attaque peut
   être plus complexe à exécuter et moins fiable, dans ce cas l'attaquant perd l'argent dépensé en frais
   sans rien gagner du vol.
 
@@ -64,15 +64,15 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   Des attaques plus sophistiquées qui réduisent les coûts, ou des attaques qui utilisent le même
   ensemble de transactions inutiles pour attaquer plusieurs canaux LN simultanément, pourraient
   affecter même les canaux de moindre valeur. Riard suggère plusieurs atténuations pour les
-  implémentations LN et laisse pour une discussion ultérieure les changements possibles au protocole
+  implémentations LN et laisse à une discussion ultérieure les changements possibles au protocole
   de relais P2P de Bitcoin Core qui pourraient aborder le problème.
 
   _Note aux lecteurs :_ nous souhaitons nous excuser s'il y a des erreurs dans la description ci-dessus ; nous
   avons seulement appris la divulgation peu de temps avant de publier le bulletin de cette semaine.
 
 - **Discussion continue sur la proposition de soft fork de nettoyage du consensus :**
-  Antoine Poinsot [a posté][poinsot time warp] sur le fil existant Delving Bitcoin à propos de la
-  proposition de soft fork de [nettoyage du consensus][topic consensus cleanup]. En plus de la
+  Antoine Poinsot [s'est exprimé][poinsot time warp] sur le fil existant de Delving Bitcoin à propos de la
+  proposition de soft fork [consensus cleanup][topic consensus cleanup]. En plus de la
   correction déjà proposée pour la classique [vulnérabilité time warp][topic time warp], il a
   également proposé d'inclure une correction pour le Zawy-Murch time warp récemment découvert (voir
   le [Bulletin #316][news316 time warp]). Il favorisait une correction initialement proposée par Mark
@@ -87,7 +87,7 @@ apportés aux logiciels d'infrastructure Bitcoin populaires.
   timelocks].
 
   Séparément, à la fois sur [Delving Bitcoin][poinsot duptx delv] et la [liste de diffusion
-  Bitcoin-Dev][poinsot duptx ml], Poinsot a cherché des retours sur quelle solution proposée utiliser
+  Bitcoin-Dev][poinsot duptx ml], Poinsot a sollicité des retours sur la solution proposée
   pour empêcher le bloc 1,983,702 et certains blocs ultérieurs de [dupliquer][topic duplicate
   transactions] une transaction coinbase précédente (ce qui pourrait conduire à une perte d'argent et
   à la création d'un vecteur d'attaque). Quatre solutions proposées sont présentées, toutes
@@ -130,7 +130,7 @@ inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #30708][] ajoute la commande RPC `getdescriptoractivity` qui récupère toutes les
   transactions associées à un [descriptor][topic descriptors] dans un ensemble spécifié de
-  blockhashes, permettant aux portefeuilles d'interagir avec Bitcoin Core de manière sans état. Cette
+  blockhashes, permettant aux portefeuilles d'interagir avec Bitcoin Core sans état. Cette
   commande est particulièrement utile lorsqu'elle est utilisée en conjonction avec `scanblocks` (voir
   le [Bulletin #222][news222 scanblocks]), qui identifie l'ensemble des blockhashes contenant des
   transactions associées à un descriptor.
