@@ -78,6 +78,8 @@ summaries of notable changes to popular Bitcoin infrastructure projects.
     that proposal had with [x-only public keys][topic x-only public
     keys].
 
+{% assign timestamp="0:48" %}
+
 ## Selected Q&A from Bitcoin Stack Exchange
 
 *[Bitcoin Stack Exchange][bitcoin.se] is one of the first places Optech
@@ -94,17 +96,18 @@ answers posted since our last update.*
   #330][news330 cs] and [Podcast #330][pod330 cs]) including [covenants][topic
   covenants], [vaults][topic vaults], emulation of [CSFS][topic
   op_checksigfromstack], and validity rollups (see [Newsletter #222][news222
-  validity rollups]) while noting the high computational costs of such transactions.
+  validity rollups]) while noting the high computational costs of such
+  transactions. {% assign timestamp="43:24" %}
 
 - [Why do standardness rules limit transaction weight?]({{bse}}124636)
   Murch provides arguments for and against Bitcoin Core's standardness weight
   limits and outlines how economic demand for larger transactions could erode
-  the effectiveness of the [policy][policy series].
+  the effectiveness of the [policy][policy series]. {% assign timestamp="48:10" %}
 
 - [Is the scriptSig spending an PayToAnchor output expected to always be empty?]({{bse}}124615)
   Pieter Wuille points out that because of how [pay-to-anchor (P2A)][topic ephemeral
   anchors] outputs are [constructed][news326 p2a], they must adhere to segwit spending
-  conditions, including an empty scriptSig.
+  conditions, including an empty scriptSig. {% assign timestamp="56:16" %}
 
 - [What happens to the unused P2A outputs?]({{bse}}124617)
   Instagibbs notes that unused P2A outputs will eventually be swept when the block
@@ -112,32 +115,32 @@ answers posted since our last update.*
   the UTXO set. He goes on to reference
   the recently-merged [ephemeral dust][news330 ed] PR that allows a single
   below-dust-threshold output in a zero-fee transaction provided a [child
-  transaction][topic cpfp] immediately spends it.
+  transaction][topic cpfp] immediately spends it. {% assign timestamp="57:13" %}
 
 - [Why doesn't Bitcoin's PoW algorithm use a chain of lower-difficulty hashes?]({{bse}}124777)
   Pieter Wuille and Vojtěch Strnad describe the mining centralization pressure
   that would happen if the progress-free property of Bitcoin's mining was
-  violated with such an approach.
+  violated with such an approach. {% assign timestamp="1:01:47" %}
 
 - [Clarification on false value in Script]({{bse}}124673)
   Pieter Wuille specifies the three values that evaluate to false in Bitcoin
   Script: an empty array, an array of 0x00 bytes, and an array of 0x00 bytes with a
-  0x80 at the end. He notes that all other values are evaluated as true.
+  0x80 at the end. He notes that all other values are evaluated as true. {% assign timestamp="1:04:38" %}
 
 - [What is this strange microtransaction in my wallet?]({{bse}}124744)
   Vojtěch Strnad explains the mechanics of an address poisoning attack and ways
-  to mitigate such attacks.
+  to mitigate such attacks. {% assign timestamp="1:06:02" %}
 
 - [Are there any UTXOs that can not be spent?]({{bse}}124865)
   Pieter Wuille provides two examples of outputs that are unspendable regardless
   of the breaking of cryptographic assumptions: `OP_RETURN` outputs and outputs
-  with a scriptPubKey longer than 10,000 bytes.
+  with a scriptPubKey longer than 10,000 bytes. {% assign timestamp="1:09:04" %}
 
 - [Why was BIP34 not implemented via the coinbase tx's locktime or nSequence?]({{bse}}75987)
   Antoine Poinsot follows up to this older question to point out that the
   coinbase transaction's `nLockTime` value cannot be set to the current block
   height because the [locktime][topic timelocks] represents the last block at
-  which a transaction is *invalid*.
+  which a transaction is *invalid*. {% assign timestamp="1:13:15" %}
 
 ## Releases and release candidates
 
@@ -146,15 +149,15 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Core Lightning 24.11rc2][] is a release candidate for the next major
-  version of this popular LN implementation.
+  version of this popular LN implementation. {% assign timestamp="1:15:19" %}
 
 - [BDK 0.30.0][] is a release of this library for building wallets and
   other Bitcoin-enabled applications.  It includes several minor bug
   fixes and prepares for the anticipated upgrade to the version 1.0 of
-  the library.
+  the library. {% assign timestamp="1:15:49" %}
 
 - [LND 0.18.4-beta.rc1][] is a release candidate for a minor version of
-  this popular LN implementation.
+  this popular LN implementation. {% assign timestamp="1:16:16" %}
 
 ## Notable code and documentation changes
 
@@ -173,11 +176,11 @@ repo], and [BINANAs][binana repo]._
   transaction relay] (and future cluster) limits are violated when a transaction
   or a package is accepted, or determining whether an [RBF][topic RBF] fee bump
   improves the state of the mempool. This PR is part of the [cluster
-  mempool][topic cluster mempool] project.
+  mempool][topic cluster mempool] project. {% assign timestamp="1:17:17" %}
 
 - [Core Lightning #7852][] restores backwards compatibility with versions prior
   to 24.08 for the `pyln-client` plugin (a Python client library) by
-  reintroducing a description field.
+  reintroducing a description field. {% assign timestamp="1:20:25" %}
 
 - [Core Lightning #7740][] improves the minimum cost flow (MCF) solver of the
   `askrene` (see [Newsletter #316][news316 askrene]) plugin by providing an API
@@ -188,7 +191,7 @@ repo], and [BINANAs][binana repo]._
   introduces support for customizable units beyond msats, allowing greater
   scalability for large payments. This PR adds the `simple_feasibleflow`,
   `get_augmenting_flow`, `augment_flow`, and `node_balance` methods to improve
-  the efficiency of flow calculations.
+  the efficiency of flow calculations. {% assign timestamp="1:21:27" %}
 
 - [Core Lightning #7719][] achieves interoperability with Eclair for
   [splicing][topic splicing], allowing splices to be executed between the two
@@ -196,10 +199,10 @@ repo], and [BINANAs][binana repo]._
   implementation including support for rotating remote funding keys, adding
   `batch_size` for commitment-signed messages, preventing transmission of
   previous funding transactions due to packet size limits, removing blockhashes
-  from messages, and adjusting pre-set funding output balances.
+  from messages, and adjusting pre-set funding output balances. {% assign timestamp="1:22:48" %}
 
 - [Eclair #2935][] adds a notification to the node operator in the event of a
-  channel force close initiated by a channel peer.
+  channel force close initiated by a channel peer. {% assign timestamp="1:23:47" %}
 
 - [LDK #3137][] adds support for accepting peer-initiated [dual-funded
   channels][topic dual funding], although funding or creating such channels is
@@ -210,7 +213,7 @@ repo], and [BINANAs][binana repo]._
   inbound requests for dual-funded and non-dual-funded channels.
   [Zero-conf][topic zero-conf channels] dual-funded channels and
   [RBF][topic rbf] fee
-  bumping of funding transactions are not supported.
+  bumping of funding transactions are not supported. {% assign timestamp="1:24:34" %}
 
 - [LND #8337][] introduces the `protofsm` package, a reusable framework for
   creating event-driven protocol finite state machines (FSMs) in LND. Instead of
@@ -218,7 +221,7 @@ repo], and [BINANAs][binana repo]._
   can define the states, what triggers events, and the rules for moving between
   them, and the `State` interface will encapsulate behavior, handle events, and
   determine terminal states, while daemon adapters handle side effects like
-  broadcasting transactions and sending peer messages.
+  broadcasting transactions and sending peer messages. {% assign timestamp="1:26:22" %}
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31122,7852,7740,7719,2935,3137,8337" %}
