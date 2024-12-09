@@ -110,13 +110,13 @@ les versions candidates._
 - [LDK v0.0.125][] est la dernière version de cette bibliothèque pour le développement
   d'applications compatibles LN. Elle contient plusieurs corrections de bugs.
 
-- [Core Lightning 24.11rc3][] est un candidat à la version pour la prochaine version majeure de
+- [Core Lightning 24.11rc3][] est une version candidate pour la prochaine version majeure de
   cette populaire implémentation de LN.
 
-- [LND 0.18.4-beta.rc1][] est un candidat à la version pour une version mineure de cette populaire
+- [LND 0.18.4-beta.rc1][] est une version candidate pour une version mineure de cette populaire
   implémentation de LN.
 
-- [Bitcoin Core 28.1RC1][] est un candidat à la version pour une version de maintenance de
+- [Bitcoin Core 28.1RC1][] est une version candidate pour une version de maintenance de
   l'implémentation de nœud complet prédominante.
 
 ## Changements notables de code et de documentation
