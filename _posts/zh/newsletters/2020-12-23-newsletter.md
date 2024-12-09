@@ -165,19 +165,19 @@ LN 的一个广泛期望的改进是将支付安全机制从哈希时间锁定�
 
 六月是漏洞发现和讨论的特别活跃月份，尽管许多问题更早被发现或在之后才完全披露。其中包括以下显著漏洞：
 
-- [多输入 segwit 交易的超额支付攻击：][attack overpay segwit] 6 月，Trezor 宣布 Saleem Rashid 发现了 segwit 在防止手续费超额支付攻击方面的弱点。手续费超额支付攻击是比特币原始交易格式中的一个已知问题，其中签名未对输入的金额作出承诺，从而使攻击者可以欺骗专用签名设备（如硬件钱包）花费比预期更多的钱。Segwit 尝试通过让每个签名承诺其所使用的输入金额来消除这一问题。然而，Rashid 重新发现了一个由 Gregory Sanders 在 2017 年首次报告的问题，即至少两个输入的特殊构造交易可以绕过该限制，只要用户可以被诱骗签署两个或更多看似相同的交易版本。尽管一些开发者认为这是个小问题，但一些硬件钱包制造商仍发布了新固件，通过对 segwit 交易使用与防止传统交易超额支付相同的保护措施来修复这一问题。
+- **<!--overpayment-attack-on-multi-input-segwit-transactions-->**[多输入 segwit 交易的超额支付攻击：][attack overpay segwit] 6 月，Trezor 宣布 Saleem Rashid 发现了 segwit 在防止手续费超额支付攻击方面的弱点。手续费超额支付攻击是比特币原始交易格式中的一个已知问题，其中签名未对输入的金额作出承诺，从而使攻击者可以欺骗专用签名设备（如硬件钱包）花费比预期更多的钱。Segwit 尝试通过让每个签名承诺其所使用的输入金额来消除这一问题。然而，Rashid 重新发现了一个由 Gregory Sanders 在 2017 年首次报告的问题，即至少两个输入的特殊构造交易可以绕过该限制，只要用户可以被诱骗签署两个或更多看似相同的交易版本。尽管一些开发者认为这是个小问题，但一些硬件钱包制造商仍发布了新固件，通过对 segwit 交易使用与防止传统交易超额支付相同的保护措施来修复这一问题。
 
   ![手续费超额支付攻击示意图](/img/posts/2020-06-fee-overpayment-attack.dot.png)
 
-- [LN 支付原子性攻击：][attack ln atomicity] LN 开发者在实施[锚定输出][topic anchor outputs]协议时发现了一个新漏洞：恶意对手方可以通过低费用率和[交易固定][topic transaction pinning]技术延迟交易或其费用提升交易的确认，导致 HTLC 的超时到期，使攻击者能够追回支付给诚实对手方的资金。尽管提出了多个解决方案（包括对 LN 协议的更改、第三方市场以及[软分叉共识更改][rubin fee sponsorship]），但尚未有解决方案获得显著进展。
+- **<!--ln-payment-atomicity-attack-->**[LN 支付原子性攻击：][attack ln atomicity] LN 开发者在实施[锚定输出][topic anchor outputs]协议时发现了一个新漏洞：恶意对手方可以通过低费用率和[交易固定][topic transaction pinning]技术延迟交易或其费用提升交易的确认，导致 HTLC 的超时到期，使攻击者能够追回支付给诚实对手方的资金。尽管提出了多个解决方案（包括对 LN 协议的更改、第三方市场以及[软分叉共识更改][rubin fee sponsorship]），但尚未有解决方案获得显著进展。
 
-- [快速 LN 蚕食攻击：][attack time dilation] Gleb Naumenko 和 Antoine Riard 在 6 月发表了一篇论文，显示蚕食攻击可以在短至两小时内从 LN 节点窃取资金。作者建议实现更多方法以避免蚕食攻击，今年 Bitcoin Core 项目在这方面取得了积极进展。
+- **<!--fast-ln-eclipse-attacks-->**[快速 LN 蚕食攻击：][attack time dilation] Gleb Naumenko 和 Antoine Riard 在 6 月发表了一篇论文，显示蚕食攻击可以在短至两小时内从 LN 节点窃取资金。作者建议实现更多方法以避免蚕食攻击，今年 Bitcoin Core 项目在这方面取得了积极进展。
 
-- [LN 手续费赎金攻击：][attack ln fee ransom] René Pickhardt 向 Lightning-Dev 邮件列表公开披露了一个漏洞：恶意通道对手方可以发起最多 483 笔 HTLC 支付，然后关闭通道，产生一个占整个区块约 2% 的链上交易，手续费需要由诚实节点支付。多个 LN 节点已实施简单的缓解措施，[锚定输出][topic anchor outputs]的使用也被认为有助于缓解问题，但尚未提出全面解决方案。
+- **<!--ln-fee-ransom-->**[LN 手续费赎金攻击：][attack ln fee ransom] René Pickhardt 向 Lightning-Dev 邮件列表公开披露了一个漏洞：恶意通道对手方可以发起最多 483 笔 HTLC 支付，然后关闭通道，产生一个占整个区块约 2% 的链上交易，手续费需要由诚实节点支付。多个 LN 节点已实施简单的缓解措施，[锚定输出][topic anchor outputs]的使用也被认为有助于缓解问题，但尚未提出全面解决方案。
 
-- [关于 HTLC 挖矿激励的担忧：][attack htlc incentives] 两篇关于 HTLC 线下贿赂的论文在 6 月底和 7 月初被讨论。HTLC 是 LN 支付、跨链原子互换及其他无需信任的交换协议中使用的合约。这些论文探讨了支付用户可能通过贿赂矿工来获取秘密数据而不确认交易的问题，尽管理论上有已知的缓解方法，但实际使用需要支付额外费用，因此仍需继续研究更好的解决方案。
+- **<!--concern-about-htlc-mining-incentives-->**[关于 HTLC 挖矿激励的担忧：][attack htlc incentives] 两篇关于 HTLC 线下贿赂的论文在 6 月底和 7 月初被讨论。HTLC 是 LN 支付、跨链原子互换及其他无需信任的交换协议中使用的合约。这些论文探讨了支付用户可能通过贿赂矿工来获取秘密数据而不确认交易的问题，尽管理论上有已知的缓解方法，但实际使用需要支付额外费用，因此仍需继续研究更好的解决方案。
 
-- [库存内存耗尽拒绝服务攻击（InvDoS）：][attack invdos] 这一攻击最初于 2018 年被发现，影响了 Bcoin 和 Bitcoin Core 节点，当时已被负责任披露并修复。然而，2020 年 6 月发现该攻击同样适用于 Btcd 节点。攻击者通过发送包含几乎最大允许交易哈希数的新交易公告（`inv` 消息）泛洪受害者节点，导致节点内存耗尽并崩溃。Btcd 修复了该问题并为用户提供了升级时间，之后漏洞被公开披露。
+- **<!--inventory-out-of-memory-denial-of-service-attack-invdos-->**[库存内存耗尽拒绝服务攻击（InvDoS）：][attack invdos] 这一攻击最初于 2018 年被发现，影响了 Bcoin 和 Bitcoin Core 节点，当时已被负责任披露并修复。然而，2020 年 6 月发现该攻击同样适用于 Btcd 节点。攻击者通过发送包含几乎最大允许交易哈希数的新交易公告（`inv` 消息）泛洪受害者节点，导致节点内存耗尽并崩溃。Btcd 修复了该问题并为用户提供了升级时间，之后漏洞被公开披露。
 
 {:#wabisabi}
 6 月也有一些好消息，Wasabi coinjoin 实现的研究团队[宣布][news102 wasabi]了一种名为 WabiSabi 的协议，该协议应能实现无需信任的服务器协调 coinjoin，且支持任意输出金额。这使得使用协调的 coinjoin 发送支付变得更容易，无论是参与者之间还是向非参与者支付。Wasabi 开发者在接下来的一年中持续致力于该协议的实现。
