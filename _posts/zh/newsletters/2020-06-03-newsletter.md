@@ -41,7 +41,7 @@ lang: zh
 
 - **<!--sydney-meetup-discussion-->****悉尼聚会讨论：** 许多比特币和闪电网络开发者参加了这次悉尼聚会，讨论了包括：接纳数百万闪电网络客户端的扩展性问题、Rust 代码集成到 Bitcoin Core 中、C-Lightning 中的双重资助以及未来软分叉激活机制等主题。为获取对将 Rust 语言引入 Bitcoin Core 的确切机制和未来激活提议软分叉（如 [taproot][topic taproot]）的启示，还探讨了 Linux 内核开发的历史和 segwit 激活的历史。转录内容已匿名化，以鼓励开放讨论。([转录][sydney xs])
 
-- **<!--the-revault-multiparty-vault-architecture-->****Revault 多方金库架构：** Kevin Loaec 和 Antoine Poinsot 在伦敦 Bitcoin Devs 上展示了他们的金库设计 *Revault*。他们概述了具体细节，如其对共同签名服务器的依赖以及与其他需要密钥删除、预期支出金额或两者兼有的金库设计的比较。他们的演示之前一周进行了更广泛的讨论，讨论了金库、[covenants][topic covenants] 和 `OP_CHECKTEMPLATEVERIFY` (`OP_CTV`)。内容包括 `OP_CTV` 在不同用例中的优劣以及其可能的软分叉路径。额外讨论的内容集中于 Bitcoin Core 当前的内存池策略状态及其如何带来诸如[交易固定][topic transaction pinning]等挑战，这些挑战会影响金库设计和闪电网络协议的安全性。([聚会转录][london xs]，[演示转录][revault xs]，[聚会视频][london vid]，[演示视频][revault vid])
+- **<!--the-revault-multiparty-vault-architecture-->****Revault 多方保险库架构：** Kevin Loaec 和 Antoine Poinsot 在伦敦 Bitcoin Devs 上展示了他们的保险库设计 *Revault*。他们概述了具体细节，如其对共同签名服务器的依赖以及与其他需要密钥删除、预期支出金额或两者兼有的保险库设计的比较。他们的演示之前一周进行了更广泛的讨论，讨论了保险库、[covenants][topic covenants] 和 `OP_CHECKTEMPLATEVERIFY` (`OP_CTV`)。内容包括 `OP_CTV` 在不同用例中的优劣以及其可能的软分叉路径。额外讨论的内容集中于 Bitcoin Core 当前的内存池策略状态及其如何带来诸如[交易固定][topic transaction pinning]等挑战，这些挑战会影响保险库设计和闪电网络协议的安全性。([聚会转录][london xs]，[演示转录][revault xs]，[聚会视频][london vid]，[演示视频][revault vid])
 
 ## 发布与候选发布
 
