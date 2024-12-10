@@ -80,7 +80,7 @@ changes to popular Bitcoin infrastructure software.
 
   _Note to readers:_ we apologize if there are any errors in the above
   description; we only learned of the disclosure shortly before we
-  went to publish this week's newsletter.
+  went to publish this week's newsletter. {% assign timestamp="0:55" %}
 
 - **Continued discussion about consensus cleanup soft fork proposal:**
   Antoine Poinsot [posted][poinsot time warp] to the existing Delving
@@ -108,7 +108,7 @@ changes to popular Bitcoin infrastructure software.
   previous coinbase transaction (which could lead to loss of money and
   the creation of an attack vector).  Four proposed solutions are
   presented, all of which would only directly affect miners---so
-  [feedback from miners][mining-dev] would be especially appreciated.
+  [feedback from miners][mining-dev] would be especially appreciated. {% assign timestamp="19:20" %}
 
 ## Releases and release candidates
 
@@ -122,19 +122,19 @@ release candidates._
   ([splicing][topic splicing], [liquidity ads][topic liquidity
   advertisements], and [on-the-fly funding][topic jit channels])."  The
   release also stops accepting new non-[anchor channels][topic anchor
-  outputs].  Also included are optimizations and bug fixes.
+  outputs].  Also included are optimizations and bug fixes. {% assign timestamp="46:45" %}
 
 - [LDK v0.0.125][] is the latest release of this library for building
-  LN-enabled applications.  It contains several bug fixes.
+  LN-enabled applications.  It contains several bug fixes. {% assign timestamp="47:26" %}
 
 - [Core Lightning 24.11rc3][] is a release candidate for the next major
-  version of this popular LN implementation.
+  version of this popular LN implementation. {% assign timestamp="47:59" %}
 
 - [LND 0.18.4-beta.rc1][] is a release candidate for a minor version of
-  this popular LN implementation.
+  this popular LN implementation. {% assign timestamp="48:21" %}
 
 - [Bitcoin Core 28.1RC1][] is a release candidate for a maintenance
-  version of the predominant full node implementation.
+  version of the predominant full node implementation. {% assign timestamp="48:34" %}
 
 ## Notable code and documentation changes
 
@@ -153,7 +153,7 @@ repo], and [BINANAs][binana repo]._
   Bitcoin Core in a stateless manner. This command is particularly useful when
   used in conjunction with `scanblocks` (see [Newsletter #222][news222
   scanblocks]), which identifies the set of blockhashes containing transactions
-  associated with a descriptor.
+  associated with a descriptor. {% assign timestamp="49:15" %}
 
 - [Core Lightning #7832][] spends from [anchor outputs][topic anchor outputs] even for
   non-urgent unilateral close transactions, starting with a block target of 2016
@@ -161,7 +161,7 @@ repo], and [BINANAs][binana repo]._
   broadcast timestamp will be tracked to ensure consistent behaviour across
   restarts. Previously, these transactions did not spend from the anchor outputs by
   default, making it difficult to create a spend manually and impossible use
-  [CPFP][topic cpfp] fee bumping of the anchor spend.
+  [CPFP][topic cpfp] fee bumping of the anchor spend. {% assign timestamp="50:32" %}
 
 - [LND #8270][] implements the channel quiescence protocol as specified
   in [BOLT2][] (see [Newsletter #309][news309
@@ -170,21 +170,21 @@ repo], and [BINANAs][binana repo]._
   node to both respond to a peer's quiescence request and initiate the process
   using new `ChannelUpdateHandler` operations. This PR also adds a configurable
   timeout mechanism to handle unresponsive peers by disconnecting them if the
-  quiescent state persists for too long without resolution.
+  quiescent state persists for too long without resolution. {% assign timestamp="51:36" %}
 
 - [LND #8390][] introduces support for setting and relaying an experimental
   [HTLC endorsement][topic htlc endorsement] signaling field in
   `update_add_htlc` messages, aimed at researching [channel jamming
   attack][topic channel jamming attacks] prevention. If a node receives an HTLC
   with the signaling field, it will relay the field as-is; otherwise, it sets a
-  default value of zero. This feature is enabled by default but can be disabled.
+  default value of zero. This feature is enabled by default but can be disabled. {% assign timestamp="52:49" %}
 
 - [BIPs #1534][] merges [BIP349][] for the specification of `OP_INTERNALKEY`, a
   new [tapscript][topic tapscript] only opcode that puts the taproot internal key on the
   stack. Authors of scripts need to know the internal key before they can pay to
   an output, so this is an alternative to including the internal key
   directly in a script; it saves 8 vbytes per use and makes
-  scripts more reusable (see [Newsletter #285][news285 bip349]).
+  scripts more reusable (see [Newsletter #285][news285 bip349]). {% assign timestamp="55:49" %}
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
 {% include snippets/recap-ad.md when=four_days_after_posting %}
