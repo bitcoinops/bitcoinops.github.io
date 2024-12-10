@@ -32,24 +32,27 @@ lang: zh
 ## 值得注意的代码和文档更改
 
 *本周在 [Bitcoin Core][bitcoin core repo]、[C-Lightning][c-lightning repo]、[Eclair][eclair repo]、[LND][lnd repo]、[Rust-Lightning][rust-lightning repo]、[libsecp256k1][libsecp256k1 repo]、[硬件钱包接口 (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[比特币改进提案 (BIPs)][bips repo]和[闪电网络规范 (BOLTs)][bolts repo] 中的值得注意的更改：*
+- **<!--bitcoin-core-19137-adds-dump-and-createfromdump-commands-to-wallet-tool-->**[Bitcoin Core #19137][] 为 [`wallet-tool`][news45 wallet-tool] 添加了 `dump` 和 `createfromdump` 命令，使用户可以将钱包记录写入转储文件，并随后从该转储文件中恢复钱包。这些命令不仅对测试有用，还可作为 [从传统钱包迁移][achow101 legacy timeline] 的一部分。
 
-- [Bitcoin Core #19137][] 为 [`wallet-tool`][news45 wallet-tool] 添加了 `dump` 和 `createfromdump` 命令，允许用户将钱包记录写入转储文件，并随后从该转储文件恢复钱包。这些命令不仅对测试有用，还可作为[迁移离开传统钱包][achow101 legacy timeline]的一部分。
+- **<!--bitcoin-core-20365-updates-the-bitcoin-wallet-tool-->**[Bitcoin Core #20365][] 更新了 `bitcoin-wallet` 工具的 `create` 命令，增加了一个 `-descriptors` 标志，用于创建 [基于 sqlite 的描述符钱包][news120 sqlite]，类似于守护进程的 [createwallet RPC][news96 createwallet]。
 
-- [Bitcoin Core #20365][] 为 `bitcoin-wallet` 工具的 `create` 命令添加了 `-descriptors` 标志，用于创建基于 [sqlite 的描述符钱包][news120 sqlite]，类似于守护程序的 [createwallet RPC][news96 createwallet]。
+- **<!--bitcoin-core-20599-updates-message-handling-code-->**[Bitcoin Core #20599][] 更新了消息处理代码，使其可以在对等方发送 `verack` 消息之前处理接收到的 `sendheaders` 和 `sendcmpct` 消息。`sendheaders`（[BIP130][]）和 `sendcmpct`（[BIP152][]）的规范并未要求这些消息必须在 `verack` 消息之后发送，而原始实现（[Bitcoin Core #7129][] 和 [Bitcoin Core #8068][]）允许在 `verack` 消息之前接收和处理这些消息。后来的一次 PR（[Bitcoin Core #9720][]）阻止了 Bitcoin Core 在 `verack` 消息之前处理这些消息。本次 PR 恢复了原始行为。
 
-- [Bitcoin Core #20599][] 更新了消息处理代码，允许处理在对等节点发送其 `verack` 消息之前接收的 `sendheaders` 和 `sendcmpct` 消息。`sendheaders` ([BIP130][]) 和 `sendcmpct` ([BIP152][]) 的 BIPs 并未指定这些消息必须在 `verack` 消息之后发送。
+- [Bitcoin Core #18772][] 更新了 `getblock` RPC，当使用 `verbosity=2` 参数时，返回一个新的 `fee` 字段，其中包含区块中每笔交易的总手续费。这依赖于节点存储的额外区块撤销数据，用于处理区块链重组。撤销数据与其他区块交易数据分开存储，启用修剪的节点可能会在删除其他数据之前删除撤销数据，因此修剪节点有时可能返回不包含 `fee` 字段的结果。
 
-- [Bitcoin Core #18772][] 更新了 `getblock` RPC，当使用 `verbosity=2` 参数时，返回一个新的 `fee` 字段，包含区块中每笔交易的总费用。
+- [Bitcoin Core GUI #162][] 为 GUI 的 Peers 窗口添加了一个新的可排序网络列，并在对等详情区域添加了一个新的网络行。在这两处，GUI 会向用户显示对等方通过的网络类型：IPv4、IPv6 或 Onion，并具有显示两个潜在未来扩展项（I2P 和 CJDNS）的能力。该 PR 还将 NodeId 和 Node/Service 列标题重命名为 Peer Id 和 Address。
 
-- [Bitcoin Core GUI #162][] 在 GUI 对等窗口中新增了一个可排序的“网络”列，并在对等详细信息区域新增了一个“网络”行。
+- [C-Lightning #4207][] 添加了关于备份节点数据的广泛 [新文档][cl doc/backup.md]。
 
-- [C-Lightning #4207][] 增加了有关备份节点数据的[新文档][cl doc/backup.md]。
+- [Eclair #1639][] 默认启用了 [BOLT3][] 的 `option_static_remotekey`，允许 Eclair 遵循通道对等方的请求，将支付始终发送到同一个公钥。这使得远程对等方即使丢失了一些通道状态，也能轻松定位并在链上使用这些支付。PR 描述指出，Eclair 开发者现在启用此选项是因为 LND 的 0.12.0-beta 版本将使其成为强制项。
 
-- [Eclair #1639][] 默认启用 [BOLT3][] 的 `option_static_remotekey`，允许 Eclair 遵守通道对等节点的请求，将支付始终发送到同一公钥。
+- [Rust Bitcoin #499][] 增加了对 [BIP174][] 最初发布后指定的两个全局 [PSBT][topic psbt] 字段的支持：
 
-- [Rust Bitcoin #499][] 添加了两个在 [BIP174][] 原始发布后指定的全局 [PSBT][topic psbt] 字段的支持：
-  1. 扩展公钥字段，用于支持签名钱包的找零检测（参见 [Newsletter #55][news55 psbt xpub]）。
-  2. 版本号字段，用于帮助识别 PSBT 规范的向后不兼容更改（参见 [Newsletter #72][news72 psbt version]）。
+  1. 扩展公钥字段，用于启用签名钱包的找零检测（见 [Newsletter #55][news55 psbt xpub]）
+
+  2. 版本号字段，用于帮助识别 PSBT 规范的向后不兼容更改（见 [Newsletter #72][news72 psbt version]）
+
+  这是在 [#473][Rust Bitcoin #473] 中详细描述的大型工作之一，旨在使 Rust Bitcoin 的 PSBT 实现与当前规范保持一致。
 
 {% include references.md %}
 {% include linkers/issues.md issues="19137,20365,20651,20660,20616,20599,20624,18772,162,4207,4256,4257,1639,1630,499,7129,8068,9720,473" %}
