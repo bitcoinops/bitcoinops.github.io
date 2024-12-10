@@ -12,17 +12,20 @@ lang: zh
 
 ## 新闻
 
-- **<!--lisp-dialect-for-bitcoin-scripting-->用于比特币脚本编程的 Lisp 方言**：Anthony Towns 发布了多篇帖子，讲述他为比特币创造一种 Lisp 方言的连续[工作][topic bll]；这种编程语言可以通过软分叉添加到比特币中。
+- **<!--lisp-dialect-for-bitcoin-scripting-->****用于比特币脚本编程的 Lisp 方言**：Anthony Towns 发布了多篇帖子，讲述他为比特币创造一种 Lisp 方言的连续[工作][topic bll]；这种编程语言可以通过软分叉添加到比特币中。
 
   - *bll, symbll, bllsh*：Towns [表示][towns bllsh1]，他花了很长时间来思考来自 Chia Lisp 开发者 Art Yerkes 关于保证高层代码（程序员的惯常编程形式）与低层代码（实际被计算机运行的形式，通常由编译器从高层代码中创建出来）良好映射的建议。他决定选择了一种类似于 [miniscript][topic miniscript] 的方法，即 “将高层语言处理为低层语言的友好变种（就像 miniscript 是 script 的友好变种）”。这产生了两种语言和一种工具：
 
-    - *<!--basic-bitcoin-lisp-language-bll-->* *基本的比特币 Lisp 语言（bll）* 是可以通过一次软分叉添加到比特币中的低层语言。Towns 说，bll 类似于他最后一次更新之后的 BTC Lisp 语言（详见[周报 #294][news294 btclisp]）。
-    - *<!--symbolic-bll-symbll-->* *Symbolic bll（symbll）* 是可以转化成 bll 的高级语言。这种语言对已经熟悉函数式编程的人来说相对简单。
-    - *<!--bll-shell-bllsh-->* *Bll shell（bllsh）* 是一个 [REPL][]，让用户可以测试 bll 和 symbll 语言的脚本、将 symbll 代码编译为 bll，并且可以在执行代码时调试。
+    - *<!--basic-bitcoin-lisp-language-bll-->**基本的比特币 Lisp 语言（bll）* 是可以通过一次软分叉添加到比特币中的低层语言。Towns 说，bll 类似于他最后一次更新之后的 BTC Lisp 语言（详见[周报 #294][news294 btclisp]）。
 
-  - *<!--implementing-quantumsafe-signatures-in-symbll-versus-gsr-->* *对比 symbll 和 GSR，实现量子安全的签名*：Towns [引用][towns wots]了一条来自 Jonas Nick 的 [ Twitter 帖子][nick wots]，讲的是使用现有的操作码以及由 Rusty Russell 提出的 *伟大脚本复兴*（GSR）[提议][russell gsr]所定义的操作码来实现 “Winterniz 一次性签名（WOTS+）”。然后，Towns 对比了使用 symbll 在 bllsh 中实现 WOTS 的情形。这样做减少了需要发布到链上的数据，至少 83%，甚至可能超过 95%。这也让使用[量子安全的签名][topic quantum resistance]的代价仅仅比 P2WPKH 输出大 30 倍。
+    - *<!--symbolic-bll-symbll-->**Symbolic bll（symbll）* 是可以转化成 bll 的高级语言。这种语言对已经熟悉函数式编程的人来说相对简单。
+
+    - *<!--bll-shell-bllsh-->**Bll shell（bllsh）* 是一个 [REPL][]，让用户可以测试 bll 和 symbll 语言的脚本、将 symbll 代码编译为 bll，并且可以在执行代码时调试。
+
+  - *<!--implementing-quantumsafe-signatures-in-symbll-versus-gsr-->**对比 symbll 和 GSR，实现量子安全的签名*：Towns [引用][towns wots]了一条来自 Jonas Nick 的 [ Twitter 帖子][nick wots]，讲的是使用现有的操作码以及由 Rusty Russell 提出的 *伟大脚本复兴*（GSR）[提议][russell gsr]所定义的操作码来实现 “Winterniz 一次性签名（WOTS+）”。然后，Towns 对比了使用 symbll 在 bllsh 中实现 WOTS 的情形。这样做减少了需要发布到链上的数据，至少 83%，甚至可能超过 95%。这也让使用[量子安全的签名][topic quantum resistance]的代价仅仅比 P2WPKH 输出大 30 倍。
+  
   - *<!--flexible-coin-earmarks-->灵活的专项资金标记*：Towns 还[介绍][towns earmarks]了一种与 symbll 兼容（可能还兼容 [Simplicity][topic simplicity]）的通用构造，允许一个 UTXO 为各个花费条件指定具体的花费数额。如果一个花费条件得到了满足，那么相关的数额就可以花出去，而这个 UTXO 中剩余的价值会回到带有剩余花费条件的一个新的 UTXO 中。也可以设置一个可以花费整个 UTXO 的条件；举个例子，这可以用来让达成一致的所有参与者共同更新花费条卷毛。这是一种灵活的[限制条款][topic covenants]机制，类似于 Towns 曾经的 `OP_TAP_LEAF_UPDATE_VERIFY`（TLUV）提议（详见[周报 #166][news166 tluv]），但 Towns 也[曾经表示][towns badcov]，他认为 “限制条款” 这个术语 “并不准确，也没有用”。
-    
+
     Towns 提供了可以运用这些 *灵活专项资金标记* 的多个例子，包括提高闪电通道（也包括基于 [LN-Symmetry][topic eltoo] 的通道）的安全性和有用性、可以替代 [BIP345][] 的[保险柜][topic vaults]合约，以及曾被设想可以使用 TLUV 的 “[支付池][topic joinpools]” 的近似版本、但避免了原提议的 [x-only 公钥][topic x-only public keys]问题。
 
 ## 精选的 Bitcoin Stack Exchange 问答
@@ -55,7 +58,9 @@ lang: zh
 *热门比特币基础设施软件的新版本和候选版本。请考虑升级到新版本，或帮助测试旧版本。*
 
 - [Core Lightning 24.11rc2][] 是这个热门的闪电节点实现的下一个主要版本的候选发行。
+
 - [BDK 0.30.0][] 是这个用于开发钱包和其他比特币嵌入应用的库的新版本。该版本包含了多个微小的 bug 修复，并为预期升级到该库的 1.0 版本作好了准备。
+
 - [LND 0.18.4-beta.rc1][] 是这个热门闪电节点实现的一个小版本的候选发行。
 
 ## 重大的代码和文档变更
@@ -63,21 +68,25 @@ lang: zh
 *本周出现重大变更的有：[BDK 0.30.0][]、[LND 0.18.4-beta.rc1][]、[Bitcoin Core][bitcoin core repo]、[Core Lightning][core lightning repo]、[Eclair][eclair repo]、[LDK][ldk repo]、[LND][lnd repo]、[libsecp256k1][libsecp256k1 repo]、[Hardware Wallet Interface (HWI)][hwi repo]、[Rust Bitcoin][rust bitcoin repo]、[BTCPay Server][btcpay server repo]、[BDK][bdk repo]、[Bitcoin Improvement Proposals (BIPs)][bips repo]、[Lightning BOLTs][bolts repo]、[Lightning BLIPs][blips repo]、[Bitcoin Inquisition][bitcoin inquisition repo] 和 [BINANAs][binana repo]。*
 
 - [Bitcoin Core #31122][] 为交易池实现了一种 `changeset` 结构，允许节点在交易池当前状态下计算一组提议变更会产生的影响。举个例子，检查接受一笔交易或一个交易包会不会违反 祖先交易/后代交易/[TRUC][topic v3 transaction relay] 限制，或确定一笔 [RBF][topic RBF] 手续费追加交易是否会改善交易池的状态。这个 PR 是 “[cluster mempool][topic cluster mempool]” 项目的一部分。
+
 - [Core Lightning #7852][] 通过重新引入一个描述字段，为 `pyln-client`（一种 Python 客户端库）恢复了与 24.08 以前版本的后向兼容性。
+
 - [Core Lightning #7740][] 通过提供一项抽象了 “最低费用路径（MCF）” 复杂性的 API，优化了 `askrene` 插件的 MCF 解决器（详见[Newsletter #316][news316 askrene]）；该 API 可以更容易低集成新增加的基于图的路径计算算法。解决器会从用跟 `renepay` 一样的通道费用函数线性化（详见[Newsletter #263][news263 renepay]），这会提高寻路的可靠性，并为定制化的单位（微聪以外的单位）提供了支持，还可以为大额支付实现更大的可扩展性。这一 PR 添加了`simple_feasibleflow`、`get_augmenting_flow`、`augment_flow` 和 `node_balance` 方法来提高路径计算的效率。
+
 - [Core Lightning #7719][] 为 “[通道拼接][topic splicing]” 操作实现了跟 Eclair 客户端的兼容性，允许拼接在这两种实现间执行。这一 PR 引入了多项并更，以跟 Eclair 保持一致，包括支持远端注资密钥轮换、为 commitment-signed 消息添加 `batch_size` 字段、防止超过交易包体积限制的前序注资交易传输、从消息中移除区块哈希值，以及动态调整预设的注资输出余额。
+
 - [Eclair #2935][] 为节点运营者添加了一项通知，在通道对手发起强制关闭时会触发。
+
 - [LDK #3137][] 开始支持接受对等节点发起的[双向注资通道][topic dual funding]，虽然还不支持注资和创建这样的通道。如果 `manually_accept_inbound_channels` 设为否，则会自动接受通道；不过，`ChannelManager::accept_inbound_channel()` 函数允许手动接受。引入一个新的字段 `channel_negotiation_type`，以区分双向注资通道和非双向注资通道的创建请求。尚不支持[零确认][topic zero-conf channels]的双向注资通道和注资交易的 [RBF][topic rbf] 手续费追加。
+
 - [LND #8337][] 引入了 `protofsm` 包，一种可复用的框架，用于在 LND 中创建事件驱动协议的有限状态机（FSMs）。开发人员不必再编写样板文件代码来处理状态、转换和事件，可以直接定义状态、触发事件以及状态转换规则，而 `State` 接口会封装动作、处理事件并确定终局状态，同时后台连接器会处理副作用，比如广播交易和发送对等节点消息。
-
-
 
 {% include references.md %}
 {% include linkers/issues.md v=2 issues="31122,7852,7740,7719,2935,3137,8337" %}
 [news294 btclisp]: /zh/newsletters/2024/03/20/#btc-lisp
 [russell gsr]: https://github.com/rustyrussell/bips/pull/1
 [towns bllsh1]: https://delvingbitcoin.org/t/debuggable-lisp-scripts/1224
-[repl]: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
+[repl]: https://zh.wikipedia.org/wiki/%E8%AF%BB%E5%8F%96-%E6%B1%82%E5%80%BC-%E8%BE%93%E5%87%BA%E5%BE%AA%E7%8E%AF
 [towns wots]: https://delvingbitcoin.org/t/winternitz-one-time-signatures-contrasting-between-lisp-and-script/1255
 [nick wots]: https://x.com/n1ckler/status/1854552545084977320
 [towns earmarks]: https://delvingbitcoin.org/t/flexible-coin-earmarks/1275
