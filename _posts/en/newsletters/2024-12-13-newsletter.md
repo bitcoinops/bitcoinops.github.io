@@ -228,7 +228,22 @@ FIXME:stickies-v
 *In this monthly feature, we highlight interesting updates to Bitcoin
 wallets and services.*
 
-FIXME:bitschmidty
+- **Java-based HWI released:**
+  [Lark App][larkapp github] is a command line application for interacting with
+  hardware signing devices. It uses the [Lark Java library][lark github], a port
+  of [HWI][topic hwi] for the Java programming language.
+
+- **Saving Satoshi Bitcoin development education game announced:**
+  The [Saving Satoshi][saving satoshi website] website provides interactive
+  educational exercises for those new to Bitcoin development.
+
+- **Neovim Bitcoin Script plugin:**
+  The [Bitcoin script hints][bsh github] Neovim plugin for Rust shows Bitcoin
+  script stack states for each operation within the editor.
+
+- **Proton Wallet adds RBF:**
+  Proton Wallet users can now [RBF][topic rbf] fee-bump [their
+  transactions][proton blog].
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -345,3 +360,8 @@ newsletter.  Regular publication will resume on Friday, January 3rd.
 [dd deplete]: /en/podcast/2024/12/12/
 [bdk 1.0.0-beta.6]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.6
 [btcpay server 2.0.4]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.4
+[larkapp github]: https://github.com/sparrowwallet/larkapp
+[lark github]: https://github.com/sparrowwallet/lark
+[saving satoshi website]: https://savingsatoshi.com/
+[bsh github]: https://github.com/taproot-wizards/bitcoin-script-hints.nvim
+[proton blog]: https://proton.me/support/speed-up-bitcoin-transactions
