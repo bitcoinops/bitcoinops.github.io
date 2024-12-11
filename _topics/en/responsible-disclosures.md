@@ -149,6 +149,9 @@ optech_mentions:
   - title: "Antoine Poinsot and Niklas Gögge responsibly disclosed a consensus vulnerability affecting btcd"
     url: /en/newsletters/2024/10/11/#cve-2024-38365-btcd-consensus-failure
 
+  - title: "Antoine Riard responsibly disclosed a transaction censorship vulnerability"
+    url: /en/newsletters/2024/12/06/#transaction-censorship-vulnerability
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"
