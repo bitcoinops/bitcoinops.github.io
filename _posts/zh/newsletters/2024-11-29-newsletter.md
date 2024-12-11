@@ -22,7 +22,7 @@ lang: zh
 
     - *<!--bll-shell-bllsh-->**Bll shell（bllsh）* 是一个 [REPL][]，让用户可以测试 bll 和 symbll 语言的脚本、将 symbll 代码编译为 bll，并且可以在执行代码时调试。
 
-  - *<!--implementing-quantumsafe-signatures-in-symbll-versus-gsr-->**对比 symbll 和 GSR，实现量子安全的签名*：Towns [引用][towns wots]了一条来自 Jonas Nick 的 [ Twitter 帖子][nick wots]，讲的是使用现有的操作码以及由 Rusty Russell 提出的 *伟大脚本复兴*（GSR）[提议][russell gsr]所定义的操作码来实现 “Winterniz 一次性签名（WOTS+）”。然后，Towns 对比了使用 symbll 在 bllsh 中实现 WOTS 的情形。这样做减少了需要发布到链上的数据，至少 83%，甚至可能超过 95%。这也让使用[量子安全的签名][topic quantum resistance]的代价仅仅比 P2WPKH 输出大 30 倍。
+  - *<!--implementing-quantumsafe-signatures-in-symbll-versus-gsr-->**对比 symbll 和 GSR，实现量子安全的签名*：Towns [引用][towns wots]了一条来自 Jonas Nick 的 [Twitter 帖子][nick wots]，讲的是使用现有的操作码以及由 Rusty Russell 提出的 *伟大脚本复兴*（GSR）[提议][russell gsr]所定义的操作码来实现 “Winterniz 一次性签名（WOTS+）”。然后，Towns 对比了使用 symbll 在 bllsh 中实现 WOTS 的情形。这样做减少了需要发布到链上的数据，至少 83%，甚至可能超过 95%。这也让使用[量子安全的签名][topic quantum resistance]的代价仅仅比 P2WPKH 输出大 30 倍。
   
   - *<!--flexible-coin-earmarks-->灵活的专项资金标记*：Towns 还[介绍][towns earmarks]了一种与 symbll 兼容（可能还兼容 [Simplicity][topic simplicity]）的通用构造，允许一个 UTXO 为各个花费条件指定具体的花费数额。如果一个花费条件得到了满足，那么相关的数额就可以花出去，而这个 UTXO 中剩余的价值会回到带有剩余花费条件的一个新的 UTXO 中。也可以设置一个可以花费整个 UTXO 的条件；举个例子，这可以用来让达成一致的所有参与者共同更新花费条卷毛。这是一种灵活的[限制条款][topic covenants]机制，类似于 Towns 曾经的 `OP_TAP_LEAF_UPDATE_VERIFY`（TLUV）提议（详见[周报 #166][news166 tluv]），但 Towns 也[曾经表示][towns badcov]，他认为 “限制条款” 这个术语 “并不准确，也没有用”。
 
