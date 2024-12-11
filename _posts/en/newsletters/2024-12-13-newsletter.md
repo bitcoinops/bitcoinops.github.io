@@ -256,7 +256,19 @@ answers posted since our last update.*
 {% comment %}<!-- https://bitcoin.stackexchange.com/search?tab=votes&q=created%3a1m..%20is%3aanswer -->{% endcomment %}
 {% assign bse = "https://bitcoin.stackexchange.com/a/" %}
 
-FIXME:bitschmidty
+- [How long does Bitcoin Core store forked chains?]({{bse}}124973)
+  Pieter Wuille explains that with the exception of Bitcoin Core nodes running
+  in pruned mode, blocks that a node downloads, regardless of whether they are in the
+  main chain or not, are stored indefinitely.
+
+- [What is the point of solo mining pools?]({{bse}}124926)
+  Murch outlines why a Bitcoin miner might use a mining pool that doesn't divide
+  mining rewards to its participants, a _solo mining pool_.
+
+- [Is there a point to using P2TR over P2WSH if I only want to use the script path?]({{bse}}124888)
+  Vojtěch Strnad notes the potential cost savings when using P2WSH but points
+  out other [P2TR][topic taproot] benefits, including privacy, using a tree of
+  scripts, and the availability of [PTLCs][topic ptlc].
 
 ## Releases and release candidates
 
