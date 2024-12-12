@@ -230,7 +230,7 @@ answers posted since our last update.*
 
 - [What is the point of solo mining pools?]({{bse}}124926)
   Murch outlines why a Bitcoin miner might use a mining pool that doesn't divide
-  mining rewards to its particpants, a "solo mining pool".
+  mining rewards to its participants, a _solo mining pool_.
 
 - [Is there a point to using P2TR over P2WSH if I only want to use the script path?]({{bse}}124888)
   Vojtěch Strnad notes the potential cost savings when using P2WSH but points
