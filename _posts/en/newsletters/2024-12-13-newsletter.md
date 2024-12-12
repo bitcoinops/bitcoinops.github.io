@@ -215,12 +215,89 @@ Club][] meeting, highlighting some of the important questions and
 answers.  Click on a question below to see a summary of the answer from
 the meeting.*
 
-FIXME:stickies-v
+[Track and use all potential peers for orphan resolution][review club 31397]
+is a PR by [glozow][gh glozow] that improves the reliability of
+orphan resolution by letting the node request missing ancestors from all
+peers instead of just the one that announced the orphan. It does so by
+introducing `m_orphan_resolution_tracker` which is responsible for
+remembering which peers are candidates for orphan resolution and for
+scheduling when to make orphan resolution requests. The approach is
+designed to be bandwidth-efficient, to not be vulnerable to censorship,
+and to load-balance between peers.
 
 {% include functions/details-list.md
-  q0="FIXME"
-  a0="FIXME"
-  a0link="https://bitcoincore.reviews/30239#l-27FIXME"
+  q0="What is orphan resolution?"
+  a0="A transaction is referred to as an orphan when the node doesn't
+  have at least one of the transactions the orphan is spending from.
+  Orphan resolution is the process of trying to find these missing
+  transactions."
+  a0link="https://bitcoincore.reviews/31397#l-23"
+
+  q1="Prior to this PR, what are the steps for orphan resolution,
+  starting from when we notice that the transaction has missing inputs?"
+  a1="When a node receives an orphan transaction, it will request the
+  parent transaction from the same peer that sent the orphan. Other
+  peers aren't actively queried, but may still send us the parent, for
+  example when they announce it via an INV message, or when they send
+  another orphan with the same missing parent."
+  a1link="https://bitcoincore.reviews/31397#l-29"
+
+  q2="What are the ways we may fail to resolve an orphan with the peer
+  we request its parents from? What are some reasons this may
+  happen, honest or otherwise?"
+  a2="An honest peer may simply have been disconnected, or it may have
+  evicted the parent from its mempool. A malicious peer may just not
+  respond to the request, or it may send a parent with malleated,
+  invalid witness data which results in the parent having the expected
+  txid while failing validation."
+  a2link="https://bitcoincore.reviews/31397#l-49"
+
+  q3="How could an attacker prevent a node from downloading a 1p1c
+  package by exploiting today’s orphan resolution behavior?"
+  a3="An attacker can announce a malleated orphan unsolicited (see previous question).
+  Once the malleated orphan transaction is accepted in the orphanage,
+  the honest orphan transaction will no longer be accepted because it
+  has the same txid. This prevents the package from being relayed.
+  Alternatively, an attacker could flood a node with orphan
+  transactions. Because the orphanage is limited in size, and
+  transactions are evicted randomly, this will affect how well a node
+  can download 1p1c packages."
+  a3link="https://bitcoincore.reviews/31397#l-64"
+
+  q4="What is the PR’s solution to the problem in the previous question?"
+  a4="Instead of adding the orphan's missing parent to the
+  transaction request tracker, the orphan transaction is added to the
+  newly introduced `m_orphan_resolution_tracker`. This orphan resolution
+  tracker schedules when the parent transaction should be requested from
+  different peers, and then adds those requests to the regular
+  transaction request tracker. Attendees suggested and discussed an
+  alternative approach that doesn't require an additional
+  `m_orphan_resolution_tracker`, and this approach will be investigated
+  further by the author."
+  a4link="https://bitcoincore.reviews/31397#l-81"
+
+  q5="In this PR, which peers do we identify as potential candidates for
+  orphan resolution, and why?"
+  a5="All the peers who announced a transaction that turned out to be an
+  orphan transaction are marked as potential candidates for orphan
+  resolution."
+  a5link="https://bitcoincore.reviews/31397#l-127"
+
+  q6="What does the node do if a peer announces a transaction that is
+  currently a to-be-resolved orphan?"
+  a6="Instead of adding the transaction to m_txrequest tracker, the peer
+  is added as an orphan resolution candidate. This helps with preventing
+  attacks such as described in the previous question about 1p1c
+  package censorship."
+  a6link="https://bitcoincore.reviews/31397#l-148"
+
+  q7="Why might we prefer to resolve orphans with outbound peers over
+  inbound peers?"
+  a7="Outbound peers are selected by the node and are therefore
+  considered more trustworthy. While outbound peers may be malicious, at
+  least they are much less likely to be specifically targeting your
+  node."
+  a7link="https://bitcoincore.reviews/31397#l-251"
 %}
 
 ## Changes to services and client software
@@ -440,3 +517,5 @@ newsletter.  Regular publication will resume on Friday, January 3rd.
 [libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
 [news290 omdns]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 [news306 blip32]: /en/newsletters/2024/06/07/#blips-32
+[review club 31397]: https://bitcoincore.reviews/31397
+[gh glozow]: https://github.com/glozow
