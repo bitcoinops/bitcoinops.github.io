@@ -302,9 +302,28 @@ repo], and [BINANAs][binana repo]._
   Support for trampoline payments is a prerequisite for [async payments][topic
   async payments].
 
-- [Rust Bitcoin #3682][] Add API scripts and output files
+- [[Rust Bitcoin #3682][] adds several tools to stabilize the public API
+  interface for the `hashes`, `io`, `primates` and `units` crates such as
+  pre-generated API text files, a script that generates those text files using
+  `cargo check-api`, a script that easily queries those API text files, and a CI
+  job that compares API code and its corresponding text file to easily detect
+  unintentional API changes. This PR also updates the documentation to outline
+  the expectations for contributing developers: when they make an update to an
+  API endpoint of these crates, they must run the text file generation script.
 
-- [BTCPay Server #5743][] Multisig/watchonly wallet transaction creation flow proof of concept
+- [BTCPay Server #5743][] introduces the concept of a "pending transaction" for
+  multisig and watch-only wallets, which is a [PSBT][topic psbt] that does not
+  require an immediate signature. The transaction collects signatures as signers
+  come online and provide them, and when there are enough signatures, it is
+  broadcasted. This PR also automatically marks transactions as complete when
+  signed out-of-band, invalidates pending transactions when the associated UTXOs
+  are spent elsewhere, and allows for optional expiry times to avoid outdated
+  feerates. This system allows a payout processor to create pending transactions
+  for payouts awaiting signatures, cancel or replace pending transactions with
+  updated versions if payouts change and signatures haven't been collected. The
+  enabled functionality was deemed only possible with hot wallets. This system
+  can be extended to send emails when a pending transaction is created to alert
+  signers to come online.
 
 - [BDK #1756][] adds an exception to `fetch_prev_txout` to prevent it from
   trying to query the prevouts (outputs from previous transactions) of coinbase
