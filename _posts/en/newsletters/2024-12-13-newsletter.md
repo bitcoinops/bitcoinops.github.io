@@ -308,23 +308,81 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31096][] Package validation: accept packages of size 1
+- [Bitcoin Core #31096][] removes restrictions on the `submitpackage` RPC
+  command (see [Newsletter #272][news272 submitpackage]) that disallowed
+  packages containing only a single transaction by changing the logic of the
+  `AcceptPackage` function and relaxing the checks on `submitpackage`. While a
+  single transaction does not technically qualify as a package under the
+  [package relay][topic package relay] specification, there is no reason to
+  prevent users from submitting transactions that comply with network policies
+  using this command.
 
-- [Bitcoin Core #31175][] rpc: Remove submitblock pre-checks
+- [Bitcoin Core #31175][] removes redundant pre-checks from the `submitblock`
+  RPC command and `bitcoin-chainstate.cpp` that validate whether a block
+  contains a coinbase transaction or is a duplicate, as these checks are already
+  done in `ProcessNewBlock`. This change standardizes behavior across
+  interfaces, such as the mining IPC (see [Newsletter #323][news323 ipc]) and
+  `net_processing`, to prepare Bitcoin Core for the
+  [libbitcoinkernel][libbitcoinkernel project] API project. In addition,
+  duplicate blocks submitted with `submitblock` will now persist their data even
+  if it was previously pruned and the data will eventually be pruned again when
+  the block file is selected for pruning, to be consistent with the behavior of
+  `getblockfrompeer`.
 
-- [Bitcoin Core #31112][] Improve parallel script validation error debug logging
+- [Bitcoin Core #31112][] extends the `CCheckQueue` functionality to improve
+  script error logging during multi-threaded script validation conditions.
+  Previously, detailed error reporting was only available when running with
+  `par=1` (single-threaded script validation) due to limited information
+  transfer between threads. In addition, the logging now includes details about
+  which transaction input had the script error and which UTXO was spent.
 
-- [LDK #3446][] Support Trampoline flag in BOLT12 invoices
+- [LDK #3446][] adds support for including a [trampoline payment][topic
+  trampoline payments] flag on [BOLT12][topic offers] invoices. This doesn't
+  provide full support for using trampoline routing or providing a trampoline
+  routing service, but serves to lay the groundwork for future functionality.
+  Support for trampoline payments is a prerequisite for a type of [async payments][topic
+  async payments] that LDK plans to deploy.
 
-- [Rust Bitcoin #3682][] Add API scripts and output files
+- [Rust Bitcoin #3682][] adds several tools to stabilize the public API
+  interface for the `hashes`, `io`, `primitives` and `units` crates such as
+  pre-generated API text files, a script that generates those text files using
+  `cargo check-api`, a script that easily queries those API text files, and a CI
+  job that compares API code and its corresponding text file to easily detect
+  unintentional API changes. This PR also updates the documentation to outline
+  the expectations for contributing developers: when they update an
+  API endpoint of these crates, they must run the text file generation script.
 
-- [BTCPay Server #5743][] Multisig/watchonly wallet transaction creation flow proof of concept
+- [BTCPay Server #5743][] introduces the concept of a "pending transaction" for
+  multisig and watch-only wallets, which is a [PSBT][topic psbt] that does not
+  require an immediate signature. The transaction collects signatures as signers
+  come online and provide them, and when there are enough signatures, it is
+  broadcasted. This PR also automatically marks transactions as complete when
+  signed out-of-band, invalidates pending transactions when the associated UTXOs
+  are spent elsewhere, and allows for optional expiry times to avoid outdated
+  feerates. This system allows a payout processor to create pending transactions
+  for payouts awaiting signatures and to cancel or replace pending transactions with
+  updated versions if payouts change and signatures haven't been collected. The
+  enabled functionality was deemed only possible with hot wallets. This system
+  can be extended to send emails when a pending transaction is created to alert
+  signers to come online.
 
-- [BDK #1756][] fix(electrum): prevent `fetch_prev_txout` from querying coinbase transactions
+- [BDK #1756][] adds an exception to `fetch_prev_txout` to prevent it from
+  trying to query the prevouts (outputs from previous transactions) of coinbase
+  transactions, since they have none. Previously, this behavior caused
+  `bdk_electrum` to crash and the sync or full scan process to fail.
 
-- [BIPs #1535][] BIP 348: OP_CHECKSIGFROMSTACK
+- [BIPs #1535][] merges [BIP348][] for the specification of the
+  [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] opcode, which allows to
+  check if a signature signs an arbitrary message. It puts a signature, a
+  message, and a public key on the stack, and the signature must match both the
+  public key and the message. This is one of the many [covenant][topic
+  covenants] proposals.
 
-- [BOLTs #1180][] and [BLIPs #48][] Include BIP 353 name info in `invoice_request`s
+- [BOLTs #1180][] updates [BOLT12][topic offers] to specify the optional
+  inclusion of [BIP353][] human-readable Bitcoin payment instructions in
+  the invoice request (see [Newsletter #290][news290 omdns]).   [BLIPs #48][]
+  updates [BLIP32][] (see [Newsletter #306][news306 blip32]) to reference the
+  update to [BOLT12][].
 
 ## Happy holidays!
 
@@ -377,3 +435,8 @@ newsletter.  Regular publication will resume on Friday, January 3rd.
 [saving satoshi website]: https://savingsatoshi.com/
 [bsh github]: https://github.com/taproot-wizards/bitcoin-script-hints.nvim
 [proton blog]: https://proton.me/support/speed-up-bitcoin-transactions
+[news272 submitpackage]: /en/newsletters/2023/10/11/#bitcoin-core-27609
+[news323 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
+[news290 omdns]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+[news306 blip32]: /en/newsletters/2024/06/07/#blips-32
