@@ -311,7 +311,7 @@ repo], and [BINANAs][binana repo]._
   transactions, since they have none. Previously, this behavior caused
   `bdk_electrum` to crash and the sync or full scan process to fail.
 
-- [BIPs #1535][] merges [BIP 348][] for the specification of the
+- [BIPs #1535][] merges [BIP348][] for the specification of the
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] opcode, which allows to
   check if a signature signs an arbitrary message. It puts a signature, a
   message, and a public key on the stack, and the signature must match both the
