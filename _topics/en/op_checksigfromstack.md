@@ -26,6 +26,8 @@ primary_sources:
     - title: OP_CHECKSIGFROMSTACK code from ElementsProject.org
       link: https://github.com/ElementsProject/elements/blob/f08447909101bfbbcaf89e382f55c87b2086198a/src/script/interpreter.cpp#L1399
 
+    - title: BIP348
+
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
@@ -58,6 +60,9 @@ optech_mentions:
 
   - title: "Lamport signatures providing OP_CSFS alternative without consensus changes"
     url: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
+
+  - title: "BIP348 merged with specification of OP_CSFS"
+    url: /en/newsletters/2024/12/13/#bips-1535
 
 ## Optional.  Same format as "primary_sources" above
 see_also:

@@ -152,6 +152,9 @@ optech_mentions:
   - title: "Antoine Riard responsibly disclosed a transaction censorship vulnerability"
     url: /en/newsletters/2024/12/06/#transaction-censorship-vulnerability
 
+  - title: "David Harding responsibly disclosed an LN vulnerability allowing theft with miner assistance"
+    url: /en/newsletters/2024/12/13/#vulnerability-allowing-theft-from-ln-channels-with-miner-assistance
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Common Vulnerabilities and Exposures (CVEs)"

@@ -58,6 +58,9 @@ optech_mentions:
   - title: "LDK #2756 adds support for including a trampoline routing packet in its messages"
     url: /en/newsletters/2024/03/27/#ldk-2756
 
+  - title: "LDK #3446 adds support for including a trampoline payment flag in a BOLT12 invoice"
+    url: /en/newsletters/2024/12/13/#ldk-3446
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "BOLTs PR #654: Trampoline Routing"
