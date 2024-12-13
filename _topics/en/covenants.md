@@ -115,6 +115,12 @@ optech_mentions:
   - title: "Idea to add covenants to Bitcoin without consensus changes using hash grinding"
     url: /en/newsletters/2024/11/22/#covenants-based-on-grinding-rather-than-consensus-changes
 
+  - title: "Poll on developer opinions about selected covenant proposals"
+    url: /en/newsletters/2024/12/13/#poll-of-opinions-about-covenant-proposals
+
+  - title: "Oracle-assisted and slashing-based pseudo-covenants"
+    url: /en/newsletters/2024/12/13/#incentive-based-pseudo-covenants
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: An early description of covenants in Bitcoin

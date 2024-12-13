@@ -129,6 +129,12 @@ optech_mentions:
   - title: "Core Lightning #7833 enables the offers protocol by default"
     url: /en/newsletters/2024/11/22/#core-lightning-7833
 
+  - title: "LDK #3446 adds support for including a trampoline payment flag in a BOLT12 invoice"
+    url: /en/newsletters/2024/12/13/#ldk-3446
+
+  - title: "BOLT12 update to allow optional inclusion of BIP353 human-readable Bitcoin payment instructions"
+    url: /en/newsletters/2024/12/13/#bolts-1180
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Blinded paths

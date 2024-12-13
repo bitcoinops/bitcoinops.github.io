@@ -67,6 +67,9 @@ optech_mentions:
   - title: "LN specification changes proposed to allow pluggable channel factories"
     url: /en/newsletters/2024/11/22/#pluggable-channel-factories
 
+  - title: "Channel factories may make more payments feasible and reduce the rate of channel depletion"
+    url: /en/newsletters/2024/12/13/#insights-into-channel-depletion
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "LN-Symmetry (Eltoo)"

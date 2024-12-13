@@ -41,6 +41,9 @@ optech_mentions:
   - title: "More efficient fee sponsorship for exogenous fees compared favorably to endogenous fees"
     url: /en/newsletters/2024/03/27/#transaction-fee-sponsorship-improvements
 
+  - title: "Vulnerability allowing theft from LN channels using variable endogenous fees"
+    url: /en/newsletters/2024/12/13/#vulnerability-allowing-theft-from-ln-channels-with-miner-assistance
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
