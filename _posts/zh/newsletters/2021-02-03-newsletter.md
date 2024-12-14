@@ -35,4 +35,4 @@ lang: zh
 [btcpay server 1.0.6.8]: https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.6.8
 [poelstra 340cat]: https://medium.com/blockstream/cat-and-schnorr-tricks-i-faf1b59bd298
 [news96 descriptor wallets]: /en/newsletters/2020/05/06/#bitcoin-core-16528
-[news132 bitcoin core v0.21]: /en/newsletters/2021/01/20/#bitcoin-core-0-21-0
+[news132 bitcoin core v0.21]: /zh/newsletters/2021/01/20/#bitcoin-core-0-21-0
