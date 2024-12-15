@@ -455,7 +455,7 @@ La publication régulière reprendra le vendredi 3 janvier.
 [coredev notes]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10
 [dd deplete]: /en/podcast/2024/12/12/
 [bdk 1.0.0-beta.6]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.6
-[btcpay 2.0.4 server]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.4
+[btcpay server 2.0.4]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.4
 [larkapp github]: https://github.com/sparrowwallet/larkapp
 [lark github]: https://github.com/sparrowwallet/lark
 [saving satoshi website]: https://savingsatoshi.com/
