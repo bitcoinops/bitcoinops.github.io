@@ -73,7 +73,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   vulnérabilité a été initialement découverte en 2021 par Yuval Kogman et [signalée][wasabi #5439] à
   l'équipe de développement de Wasabi avec plusieurs autres problèmes. Optech est conscient depuis
   mi-2022 que Kogman avait de sérieuses préoccupations non résolues avec les versions déployées de
-  Wasabi, mais nous avons négligé d'enquêter davantage ; nous nous excusons auprès de lui et des
+  Wasabi, mais nous avons négligé d'enquêter davantage ; nous présentons nos excusons auprès de lui et des
   utilisateurs de Wasabi pour notre échec.
 
 - **Aperçus sur l'épuisement des canaux :** René Pickhardt a [posté][pickhardt deplete] sur Delving
