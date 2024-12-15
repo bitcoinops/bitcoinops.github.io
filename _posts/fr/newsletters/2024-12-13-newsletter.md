@@ -175,11 +175,11 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 - **Résumés des réunions des développeurs de Bitcoin Core :** de nombreux développeurs de Bitcoin
   Core se sont rencontrés en personne en octobre, et plusieurs notes de la réunion ont maintenant été
-  [publiées][coredev notes]. Les sujets de discussion incluaient [l'ajout du support payjoin][], la
+  [publiées][coredev notes]. Les sujets de discussion incluaient l'[ajout du support payjoin][], la
   création de [plusieurs binaires][] qui communiquent entre eux, une [interface de minage][] et le
   support de [Stratum v2][], l'amélioration du [benchmarking][] et des [flamegraphs][], une [API pour
   libbitcoinkernel][], la prévention du [blocage des blocs][], des améliorations au [code RPC][]
-  inspirées par Core Lightning, la reprise du [développement d'erlay][], et [la contemplation des
+  inspirées par Core Lightning, la reprise du [développement d'erlay][], et la [contemplation des
   covenants][].
 
 ## Bitcoin Core PR Review Club
@@ -442,15 +442,15 @@ La publication régulière reprendra le vendredi 3 janvier.
 [shinobi deanon]: https://bitcoinmagazine.com/technical/wabisabi-deanonymization-vulnerability-disclosed
 [wasabi #5439]: https://github.com/WalletWasabi/WalletWasabi/issues/5439
 [ajout du support payjoin]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/payjoin
-[binaires multiples]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/multiprocess-binaries
+[plusieurs binaires]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/multiprocess-binaries
 [interface de minage]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/mining-interface
-[support de stratum v2]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/stratumv2
+[stratum v2]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/stratumv2
 [benchmarking]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/leveldb
 [flamegraphs]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/flamegraphs
 [API pour libbitcoinkernel]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/kernel
-[blocage de bloc]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/block-stalling
+[blocage des blocs]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/block-stalling
 [code RPC]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/rpc-discussion
-[développement d'erlay]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/erlay
+[developpement d'erlay]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/erlay
 [contemplation des covenants]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/covenants
 [notes coredev]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10
 [dd deplete]: /en/podcast/2024/12/12/
@@ -463,8 +463,8 @@ La publication régulière reprendra le vendredi 3 janvier.
 [blog proton]: https://proton.me/support/speed-up-bitcoin-transactions
 [news272 submitpackage]: /en/newsletters/2023/10/11/#bitcoin-core-27609
 [news323 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
-[projet libbitcoinkernel]: https://github.com/bitcoin/bitcoin/issues/24303
+[libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
 [news290 omdns]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
 [news306 blip32]: /en/newsletters/2024/06/07/#blips-32
-[club de révision 31397]: https://bitcoincore.reviews/31397
+[review club 31397]: https://bitcoincore.reviews/31397
 [gh glozow]: https://github.com/glozow
