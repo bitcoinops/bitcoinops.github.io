@@ -300,8 +300,7 @@ des questions et réponses les plus votées publiées depuis notre dernière mis
   Murch explique pourquoi un mineur Bitcoin pourrait utiliser un pool de minage qui ne divise pas les
   récompenses de minage entre ses participants, un _pool de minage solo_.
 
-- [Y a-t-il un intérêt à utiliser P2TR plutôt que P2WSH si je veux seulement utiliser le chemin de
-  script ?]({{bse}}124888)
+- [Y a-t-il un intérêt à utiliser P2TR plutôt que P2WSH si je veux seulement utiliser le chemin de script ?]({{bse}}124888)
   Vojtěch Strnad note les économies potentielles lors de l'utilisation de P2WSH mais souligne d'autres
   avantages de [P2TR][topic taproot], y compris la confidentialité, l'utilisation d'un arbre de
   scripts, et la disponibilité des [PTLCs][topic ptlc].
