@@ -56,7 +56,7 @@ optech_mentions:
   - title: "Eclair #2884 implements BLIP4 for HTLC endorsement"
     url: /en/newsletters/2024/08/09/#eclair-2884
 
-  - title: "BLIPs #27 adds BLIP04 for an experimental HTLC endorsement signaling protocol"
+  - title: "BLIPs #27 adds BLIP4 for an experimental HTLC endorsement signaling protocol"
     url: /en/newsletters/2024/08/16/#blips-27
 
   - title: "Testing of hybrid jamming mitigation and addition of bidirectional reputation"
