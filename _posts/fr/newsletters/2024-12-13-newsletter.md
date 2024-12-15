@@ -450,17 +450,17 @@ La publication régulière reprendra le vendredi 3 janvier.
 [API pour libbitcoinkernel]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/kernel
 [blocage des blocs]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/block-stalling
 [code RPC]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/rpc-discussion
-[developpement d'erlay]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/erlay
+[développement d'erlay]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/erlay
 [contemplation des covenants]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10/covenants
-[notes coredev]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10
+[coredev notes]: https://btctranscripts.com/bitcoin-core-dev-tech/2024-10
 [dd deplete]: /en/podcast/2024/12/12/
 [bdk 1.0.0-beta.6]: https://github.com/bitcoindevkit/bdk/releases/tag/v1.0.0-beta.6
-[serveur btcpay 2.0.4]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.4
+[btcpay 2.0.4 server]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.4
 [larkapp github]: https://github.com/sparrowwallet/larkapp
 [lark github]: https://github.com/sparrowwallet/lark
-[site web saving satoshi]: https://savingsatoshi.com/
+[saving satoshi website]: https://savingsatoshi.com/
 [bsh github]: https://github.com/taproot-wizards/bitcoin-script-hints.nvim
-[blog proton]: https://proton.me/support/speed-up-bitcoin-transactions
+[proton blog]: https://proton.me/support/speed-up-bitcoin-transactions
 [news272 submitpackage]: /en/newsletters/2023/10/11/#bitcoin-core-27609
 [news323 ipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
 [libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
