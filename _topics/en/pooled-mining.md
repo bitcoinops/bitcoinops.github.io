@@ -74,6 +74,9 @@ optech_mentions:
   - title: "Bitcoin Core #30955 introduces two new methods to the Mining interface for Stratum v2 support"
     url: /en/newsletters/2024/10/18/#bitcoin-core-30955
 
+  - title: "Discussion of potential Stratum v2 high validation cost and invalid shares attack"
+    url: /en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
