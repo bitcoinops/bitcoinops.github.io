@@ -15,7 +15,7 @@ deux types de pseudo-covenants basés sur des incitations, et fait référence �
 réunion périodique en personne des développeurs de Bitcoin Core. Sont également incluses nos
 sections régulières résumant une réunion du Bitcoin Core PR Review Club, listant les changements
 dans les services et les logiciels clients, liant aux questions et réponses populaires de Bitcoin
-Stack Exchange, annoncant des mises à jour et des versions candidates, et présentant les changements
+Stack Exchange, annoncant des mises à jour et des versions candidates et présentant les changements
 apportés aux principaux logiciels d'infrastructure Bitcoin.
 
 ## Nouvelles
@@ -58,8 +58,8 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
   La vulnérabilité la plus grave a été corrigée, et les variantes moins graves
   partiellement atténuées, en limitant le montant maximum de la valeur du canal qui
-  peut être dédié aux frais. Comme les frais dans un état antérieur sont toujours autorisés à être
-  plus élevés que le montant que la partie payante contrôle dans un état ultérieur, un certain vol est
+  peut être dédié aux frais. Comme les frais dans un état antérieur ont toujours la possibilité d'être
+  plus élevés que le montant que la partie payante contrôle dans un état ultérieur, le vol est
   encore possible---mais le montant est limité. Une solution complète attend des améliorations dans la
   source de frais totalement [exogène][topic fee sourcing] (comme tous les états payant le même frais
   de transaction d'engagement), ce qui dépend d'un relais de paquet robuste pour le bumping de frais
@@ -91,13 +91,13 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
 
   ![Exemple de cycles, d'épuisement et d'une arborescence résiduelle](/img/posts/2024-12-depletion.png)
 
-  Peut-être l'aperçu le plus notable fourni par ce résultat est que l'épuisement généralisé des canaux
+  L'aperçu le plus notable fourni par ce résultat est peut-être que l'épuisement généralisé des canaux
   se produit même dans une économie circulaire où il n'y a pas de nœuds sources (c'est-à-dire, les
   dépensiers nets) et de nœuds d'arrivée (c'est-à-dire, les receveurs nets). Si LN était utilisé pour
   chaque paiement---du client à l'entreprise, de l'entreprise à l'entreprise, et de l'entreprise au
   travailleur---il convergerait toujours vers une arborescence.
 
-  Il n'est pas clair si les nœuds voudraient que leurs canaux fassent partie de l'arborescence
+  On ignore si les nœuds voudraient que leurs canaux fassent partie de l'arborescence
   résiduelle ou non. D'une part, cet arbre représente la dernière partie du réseau qui serait encore
   capable de transmettre des paiements---c'est équivalent à une topologie en étoile---donc il peut
   être possible de facturer des frais de transfert élevés à travers les canaux résiduels. D'autre
@@ -105,9 +105,9 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   des frais jusqu'à l'épuisement.
 
   Bien qu'un canal avec des frais de transfert plus élevés soit moins susceptible d'être
-  épuisés (toutes choses étant égales par ailleurs), les propriétés des autres canaux dans les
+  épuisé (toutes choses étant égales par ailleurs), les propriétés des autres canaux dans les
   mêmes cycles influencent fortement la probabilité d'épuisement, rendant difficile pour un opérateur
-  de nœud de tenter d'utiliser le contrôle de ses frais de transfert seuls pour prévenir l'épuisement.
+  de nœud de tenter d'utiliser le contrôle de ses frais de transfert seuls pour prévenir cet épuisement.
 
   Les canaux de plus grande capacité sont également moins susceptibles de s'épuiser que les canaux de
   capacité inférieure. Cela semble évident, mais une considération attentive de la raison pour
@@ -116,7 +116,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   ses participants, donc les paiements à travers celui-ci restent faisables quand des paiements
   équivalents à travers des canaux de capacité inférieure épuiseraient le solde d'une partie. Pour
   deux participants, comme dans les canaux LN de génération actuelle, chaque satoshi supplémentaire
-  donné à la capacité augmentera la plage de la distribution de richesse de un. Cependant, dans les
+  donné à la capacité augmentera d'un la plage de la distribution de richesse. Cependant, dans les
   [usines à canaux][topic channel factories] et autres constructions multipartites qui permettent aux
   fonds de se déplacer offchain entre _k_ parties, chaque satoshi supplémentaire donné à la
   capacité augmente la plage des distributions de richesse de un _pour chacune des k
