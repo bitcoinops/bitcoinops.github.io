@@ -7,11 +7,11 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
-本周的 Newsletter 描述了希望替代 [BIP70][] 支付协议部分功能的相关讨论，并总结了为 Discreet Log Contracts（DLCs）交换欺诈证明进行标准化的方法提议。还包括我们定期的部分，介绍新的软件发布、可用的候选发布以及对流行比特币基础设施软件中值得注意的更改。
+本周的 Newsletter 描述了希望替代 BIP70 支付协议部分功能的相关讨论，并总结了为 Discreet Log Contracts（DLCs）交换欺诈证明进行标准化的方法提议。还包括我们定期的部分，介绍新的软件发布、可用的候选发布以及对流行比特币基础设施软件中值得注意的更改。
 
 ## 新闻
 
-- **<!--discussion-about-a-bip70-replacement-->****关于 BIP70 替代方案的讨论：** Thomas Voegtlin 在 Bitcoin-Dev 邮件列表上[发起了一个话题][voegtlin bip70 alt]，讨论对 [BIP70][] 支付协议部分功能（特别是接收已签名支付请求的能力）进行替代的方案。Voegtlin 希望能够证明他支付的地址确实是由收款方（例如交易所）提供的地址。Charles Hill 和 Andrew Kozlik 分别回复了他们正在研究的协议。Hill 的[方案][hill scheme]旨在与 [LNURL][] 一起使用，但可以重新用于 Voegtlin 的预期用例。Kozlik 的[方案][kozlik scheme]在精神上更接近 BIP70，但不再使用 [X.509 证书][X.509 certificates]，并为基于交易所的币种互换（例如 BTC 与其他币种的互换）添加了新特性。
+- **<!--discussion-about-a-bip70-replacement-->****关于 BIP70 替代方案的讨论：** Thomas Voegtlin 在 Bitcoin-Dev 邮件列表上发起了一个[话题][voegtlin bip70 alt]，讨论对 [BIP70][] 支付协议部分功能（特别是接收已签名支付请求的能力）进行替代的方案。Voegtlin 希望能够证明他支付的地址确实是由收款方（例如交易所）提供的地址。Charles Hill 和 Andrew Kozlik 分别回复了他们正在研究的协议。Hill 的[方案][hill scheme]旨在与 [LNURL][] 一起使用，但可以重新用于 Voegtlin 的预期用例。Kozlik 的[方案][kozlik scheme]在精神上更接近 BIP70，但不再使用 [X.509 证书][X.509 certificates]，并为基于交易所的币种互换（例如 BTC 与其他币种的互换）添加了新特性。
 
 - **<!--fraud-proofs-in-the-v0-discreet-log-contract-dlc-specification-->****v0 版 Discreet Log Contract (DLC) 规范中的欺诈证明：** Thibaut Le Guilly 在 DLC-dev 邮件列表上[发起讨论][le guilly post]，讨论在 [DLCv0 欺诈证明][dlcv0 fraud proofs]目标中包含欺诈证明。讨论了两种类型的欺诈：
 
@@ -35,7 +35,7 @@ lang: zh
 
 - [Rust-Lightning #791][] 在启动时增加了对轮询 `BlockSource` 接口以同步区块和区块头的支持，并在同步中检测分叉。正如在 [Newsletter #135][news135 blocksource] 中所述，BlockSource 允许软件从非标准 Bitcoin Core 节点的数据源获取数据，从而在冗余层面帮助防止[日蚀攻击（eclipse attacks）][topic eclipse attacks]或其他安全问题。
 
-- [Rust-Lightning #794][] 为 [BOLT2][] 的 `option_shutdown_anysegwit` 特性提供支持，该特性在关闭时允许使用未来的 segwit 版本。如果协商了 `option_shutdown_anysegwit`，则通道一方在发送关闭消息以启动关闭时，可发送一个支付用的 scriptpubkey，只要该脚本符合标准的 [BIP141][] 见证程序格式：一个版本字节（`OP_1` 到 `OP_16` 的 1 字节 push 指令）后跟一个见证程序字节向量（长度为 2 到 40 字节的推送）。这些关闭脚本限制为标准格式，以避免由于非标准而无法传播的高费用复杂脚本或超大脚本的交易。由于在 Bitcoin Core 0.19.0.1（2019 年 11 月发布）[可以为任何 segwit 脚本转发支付][0.19.0 segwit]，现在在 LN 的标准格式中[安全包含它们][bolts #672]。
+- [Rust-Lightning #794][] 为 [BOLT2][] 的 `option_shutdown_anysegwit` 特性提供支持，该特性在关闭时允许使用未来的 segwit 版本。如果协商了 `option_shutdown_anysegwit`，则通道一方在发送关闭消息以启动关闭时，可发送一个支付用的 scriptpubkey，只要该脚本符合标准的 [BIP141][] 见证程序格式：一个版本字节（`OP_1` 到 `OP_16` 的 1 字节 push 指令）后跟一个见证程序字节向量（长度为 2 到 40 字节的推送）。这些关闭脚本限制为标准格式，以避免由于非标准而无法传播的高费用复杂脚本或超大脚本的交易。由于在 Bitcoin Core 0.19.0.1（2019 年 11 月发布）[可以][0.19.0 segwit]为任何 segwit 脚本转发支付，现在在 LN 的标准格式中安全[包含它们][bolts #672]。
 
 - [HWI #413][]、[#469][hwi #469]、[#463][hwi #463]、[#464][hwi #464]、[#471][hwi #471]、[#468][hwi #468] 和 [#466][hwi #466] 显著更新并扩展了 HWI 的文档。特别值得注意的变化包括在 [ReadTheDocs.io][hwi rtd] 上提供的文档链接、新的和更新的[示例][hwi examples]，以及描述 HWI 考虑支持新设备标准的[政策][hwi policy]。
 
