@@ -48,8 +48,8 @@ lang: zh
 审查俱乐部讨论集中在采用 [Erlay][topic erlay] 所涉及的权衡、实现和潜在的新攻击向量上。在后续的会议中，审查俱乐部讨论了 [Minisketch][topic minisketch]，这是一个实现 PinSketch “集合同步（set reconciliation）”算法的[库][minisketch]，是 Erlay 中高效中继协议的基础。
 
 {% include functions/details-list.md
-  q0=**<!--q0-->**什么是 Erlay？"
-  a0="一种基于 *泛洪* 与 *集合对账* 相结合的新型交易中继方法（当前的交易中继仅依赖泛洪），可提高带宽效率、可扩展性和网络安全性。该理念在 2019 年的论文 *[Bandwidth-Efficient Transaction Relay for Bitcoin][erlay paper]* 中提出，并在 [比特币改进提案（BIPs）330][BIP330] 中进行了规范。"
+  q0="**<!--q0-->**什么是 Erlay？"
+  a0="一种基于*泛洪*与*集合对账*相结合的新型交易中继方法（当前的交易中继仅依赖泛洪），可提高带宽效率、可扩展性和网络安全性。该理念在 2019 年的论文 *[Bandwidth-Efficient Transaction Relay for Bitcoin][erlay paper]* 中提出，并在 [比特币改进提案（BIPs）330][BIP330] 中进行了规范。"
 
   q1="**<!--q1-->**Erlay 带来哪些优势？"
   a1="[*交易中继的带宽使用量降低*][erlay 1]，约占节点运行所需带宽的一半；以及 [*节点连接数量的可扩展性*][erlay 2]，从而使网络对分区攻击更具韧性，并使 [*单个节点更能抵御 Eclipse 攻击*][erlay 3]。"
