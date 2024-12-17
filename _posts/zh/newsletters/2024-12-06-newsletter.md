@@ -11,7 +11,7 @@ lang: zh
 
 ## 新闻
 
-- **交易审查漏洞：** Antoine Riard 在 Bitcoin-Dev 邮件列表中[发布][riard censor] 了一种方法，该方法可以阻止节点广播属于连接钱包的交易。如果该钱包属于用户的闪电网络（LN）节点，则攻击者可以通过这种方式阻止用户在超时到期前确保他们应得的资金，从而让对手方窃取这些资金。
+- **<!--transaction-censorship-vulnerability-->交易审查漏洞：** Antoine Riard 在 Bitcoin-Dev 邮件列表中[发布][riard censor] 了一种方法，该方法可以阻止节点广播属于连接钱包的交易。如果该钱包属于用户的闪电网络（LN）节点，则攻击者可以通过这种方式阻止用户在超时到期前确保他们应得的资金，从而让对手方窃取这些资金。
 
   这种攻击有两个版本，均利用了 Bitcoin Core 内部与其在特定时间段内广播或接受未确认交易数量的最大限制有关的机制。这些限制是为了防止对节点的过度负担或拒绝服务攻击。
 
@@ -25,8 +25,8 @@ lang: zh
 
   _注：_ 由于我们在本周周报发布前不久才得知此漏洞披露，若以上描述存在任何错误，我们深表歉意。
 
-- **持续讨论共识清理软分叉提案：**
-  Antoine Poinsot 在现有的 Delving Bitcoin 主题中继续[讨论了][poinsot time warp][共识清理 ][topic consensus cleanup] 软分叉提案。除了已经提议修复的经典[时间扭曲漏洞(time warp)][topic time warp]外，他还建议包括修复最近发现的 Zawy-Murch 时间扭曲漏洞(见[周报 #316][news316 time warp])。他支持 Mark “Murch” Erhardt 最初提出的修复方法：“要求同一难度调整周期 _N_ 的最后一个区块的时间戳必须高于该周期 _N_ 的第一个区块的时间戳”。
+- **<!--continued-discussion-about-consensus-cleanup-soft-fork-proposal-->持续讨论共识清理软分叉提案：**
+  Antoine Poinsot 在现有的 Delving Bitcoin 主题中继续[讨论了][poinsot time warp][共识清理][topic consensus cleanup] 软分叉提案。除了已经提议修复的经典[时间扭曲漏洞(time warp)][topic time warp]外，他还建议包括修复最近发现的 Zawy-Murch 时间扭曲漏洞(见[周报 #316][news316 time warp])。他支持 Mark “Murch” Erhardt 最初提出的修复方法：“要求同一难度调整周期 _N_ 的最后一个区块的时间戳必须高于该周期 _N_ 的第一个区块的时间戳”。
 
   Anthony Towns 则更[支持][towns time warp] Zawy 提出的另一种解决方案，该方案禁止任何区块声称其产生时间早于之前任何区块的时间超过两小时。Zawy [指出][zawy time warp]，他的“每个区块”解决方案会增加运行过时软件的矿工损失金钱的风险，但也会使时间戳在其他用途上的准确性更高，如[时间锁][topic timelocks]。
 
@@ -79,4 +79,4 @@ _本周的重大变更有：[Bitcoin Core][bitcoin core repo]、[Core Lightning]
 [riard censor]: https://groups.google.com/g/bitcoindev/c/GuS36ldye7s
 [news222 scanblocks]: /zh/newsletters/2022/10/19/#bitcoin-core-23549
 [news309 quiescence]: /zh/newsletters/2024/06/28/#bolts-869
-[news285 bip349]: /zh/newsletters/2024/01/17/#new-lnhance-combination-soft-fork-proposed
+[news285 bip349]: /zh/newsletters/2024/01/17/#lnhance
