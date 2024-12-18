@@ -26,7 +26,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   disclosures] plus tôt dans l'année. Les anciennes versions d'Eclair, LDK, et
   LND avec les paramètres par défaut permettaient à la partie qui ouvrait un canal
   de voler jusqu'à 98% de la valeur du canal. Core Lightning reste affecté si
-  l'option de configuration non par défaut `--ignore-fee-limits` est utilisée ;
+  l'option de configuration qui n'est pas par défaut `--ignore-fee-limits` est utilisée ;
   la documentation de cette option indique déjà qu'elle est dangereuse.
 
   L'annonce a également décrit deux variantes moins graves de la vulnérabilité.
@@ -73,7 +73,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   vulnérabilité a été initialement découverte en 2021 par Yuval Kogman et [signalée][wasabi #5439] à
   l'équipe de développement de Wasabi avec plusieurs autres problèmes. Optech est conscient depuis
   mi-2022 que Kogman avait de sérieuses préoccupations non résolues avec les versions déployées de
-  Wasabi, mais nous avons négligé d'enquêter davantage ; nous présentons nos excusons auprès de lui et des
+  Wasabi, mais nous avons négligé d'enquêter davantage ; nous présentons nos excuses auprès de lui et des
   utilisateurs de Wasabi pour notre échec.
 
 - **Aperçus sur l'épuisement des canaux :** René Pickhardt a [posté][pickhardt deplete] sur Delving
@@ -148,7 +148,7 @@ apportés aux principaux logiciels d'infrastructure Bitcoin.
   [chaque] proposition" et leur "opinion basée sur le sentiment concernant le soutien de la communauté"
   pour celle-ci, mais sans que les développeurs puissent exprimer toutes les combinaisons possibles
   des deux à travers les options limitées du sondage. Jonas Nick a [demandé][nick poll] "de séparer
-  évaluations techniques issues du soutien communautaire," et Anthony Towns [a suggéré][towns poll] de
+  les évaluations techniques issues du soutien communautaire," et Anthony Towns [a suggéré][towns poll] de
   simplement demander aux développeurs s'ils avaient des préoccupations non résolues concernant chaque
   proposition. Nick et Towns ont recommandé séparément aux développeurs de lier des preuves et des
   arguments soutenant leurs opinions.
@@ -190,9 +190,9 @@ ci-dessous pour voir un résumé de la réponse de
 la réunion.*
 
 [Suivre et utiliser tous les pairs potentiels pour la résolution d'orphelins][review club 31397] est
-un PR par [glozow][gh glozow] qui améliore la fiabilité de la résolution d'orphelins en permettant
+une PR par [glozow][gh glozow] qui améliore la fiabilité de la résolution d'orphelins en permettant
 au nœud de demander les ancêtres manquants à tous les pairs au lieu de juste celui qui a annoncé
-l'orphelin. Il le fait en introduisant `m_orphan_resolution_tracker` qui est responsable de se
+l'orphelin. Elle le fait en introduisant `m_orphan_resolution_tracker` qui est responsable de se
 souvenir quels pairs sont candidats pour la résolution d'orphelins et de planifier quand faire des
 demandes de résolution d'orphelins. L'approche est conçue pour être efficace en termes de bande
 passante, pour ne pas être vulnérable à la censure, et pour équilibrer la charge entre les pairs.
@@ -215,7 +215,7 @@ passante, pour ne pas être vulnérable à la censure, et pour équilibrer la ch
   q2="Quelles sont les manières dont nous pouvons échouer à résoudre un orphelin avec le pair auprès
   duquel nous demandons ses parents ? Quelles sont certaines raisons pour lesquelles cela peut se
   produire, honnêtes ou non ?"
-  a2="Un pair honnête peut simplement avoir été déconnecté, ou il peut avoir évincé le parent de son
+  a2="Un pair honnête peut simplement avoir été déconnecté, ou il peut avoir évincé le parent de sa
   mempool. Un pair malveillant peut simplement ne pas répondre à la demande, ou il peut envoyer un
   parent avec des données de témoin altérées, invalides, ce qui entraîne l'échec de la validation du
   parent tout en ayant l'ID de transaction attendu."
@@ -319,10 +319,10 @@ Veuillez envisager de mettre à niveau vers les nouvelles mises-à-jour ou d'aid
 - [BTCPay Server 2.0.4][] est une version de ce logiciel de traitement de paiements qui inclut de
   multiples nouvelles fonctionnalités, améliorations et corrections de bugs.
 
-- [LND 0.18.4-beta.rc2][] est un candidat à la version pour une version mineure de cette populaire
+- [LND 0.18.4-beta.rc2][] est une version candidate pour une mise à jour mineure de cette populaire
   implémentation de LN.
 
-- [Bitcoin Core 28.1RC1][] est un candidat à la version pour une version de maintenance de
+- [Bitcoin Core 28.1RC1][] est une version candidate pour une mise à jour de maintenance de
   l'implémentation de nœud complet prédominante.
 
 - [BDK 1.0.0-beta.6][] est la dernière version bêta planifiée de cette bibliothèque pour la
