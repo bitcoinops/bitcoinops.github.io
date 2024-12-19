@@ -78,7 +78,7 @@ Peter Todd proposed [Replace by Feerate][news288 rbfr] (RBFr) to address
 [RBF][topic rbf] policies fail, with two variations: pure RBFr, allowing
 unlimited replacements with much higher feerates (e.g., 2x), and
 one-shot RBFr, enabling a single replacement with moderately higher fees
-(e.g., 1.25x) if the replacement ranks enters the top of the mempool.
+(e.g., 1.25x) if the replacement enters the top of the mempool.
 Mark Erhardt identified an initial problem and other developers
 discussed the complexities of fully analyzing the idea with available
 tools.  Todd released an experimental implementation and other
@@ -145,10 +145,10 @@ thank those who report their discoveries with discretion.
 _Note: Optech only publishes the names of vulnerability discoverers if
 we think they made a reasonable effort to minimize the risk of harm to
 users.  We thank all persons named in this section for their insight and
-their clear concern user safety._
+their clear concern for user safety._
 
 Late in 2023, Niklas Gögge [publicly disclosed][news283 lndvuln] two
-vulnerabilities he had original reported two years prior, which led to
+vulnerabilities he had reported two years prior, which led to
 fixed versions of LND being released.  The first, a DoS vulnerability,
 could have led to LND running out of memory and crashing.  The second, a
 censorship vulnerability, could allow an attacker to prevent an LND node
@@ -162,12 +162,12 @@ that affected Core Lightning versions 23.02 through 23.05.2.  When
 re-testing nodes that had implemented fixes for fake funding, which he
 previously discovered and disclosed, he was able to trigger a race
 condition that crashed CLN with about 30 seconds of effort.  If an LN
-node is shutdown, it can’t defend a user against malicious or broken
+node is shut down, it can’t defend a user against malicious or broken
 counterparties, which puts the user’s funds at risk.
 
 Also in January, Gögge returned to [announce][news286 btcdvuln] a
 consensus failure vulnerability he found in the btcd full node.  The
-code could misinterpret a transaction version number and apply to wrong
+code could misinterpret a transaction version number and apply the wrong
 consensus rules to a transaction using a relative timelock.  This could
 prevent btcd full nodes from showing the same confirmed transactions as
 Bitcoin Core, putting users at risk of losing money.
@@ -189,7 +189,7 @@ vulnerabilities affecting past versions of Bitcoin Core.  Wladimir J.
 Van Der Laan was investigating a vulnerability discovered by Aleksandar
 Nikolic in a library used by Bitcoin Core when he [discovered][news310
 wlad] a separate vulnerability allowing remote code execution; this was
-fixed upstream and the fix incorporated into Bitcoin Core.  Developer
+fixed upstream, and the fix was incorporated into Bitcoin Core.  Developer
 Evil-Knievel [discovered][news310 ek] a vulnerability that could exhaust
 the memory of many Bitcoin Core nodes, causing them to crash, which
 could be used as part of other attacks to steal money (e.g., from LN
@@ -269,8 +269,8 @@ attacker to create transactions that would be accepted by one node but
 rejected by the other, which could be used in various ways to cause
 users to lose money.
 
-December saw David Harding [disclosed][news333 if] a vulnerability
-affecting the Eclair, LDK, and LND by default (and Core Lightning with
+December saw David Harding [disclose][news333 if] a vulnerability
+affecting Eclair, LDK, and LND by default (and Core Lightning with
 non-default settings).  The party who requested to open a channel
 (opener) and who was responsible for paying any [endogenous fees][topic
 fee sourcing] necessary to close the channel could commit to paying 98%
@@ -278,8 +278,8 @@ of channel value to fees in one state, reduce the commitment to a
 minimal amount in a subsequent state, move 99% of channel value to the
 other party, and then close the channel in the 98%-fee state.  This
 would result in the opener forfeiting 1% of channel value for using an
-old state but the other party losing 98% of value.  If the opener mined
-the transaction themselves, they could keep the 98% of value paid to
+old state but the other party losing 98% of channel value.  If the opener mined
+the transaction themselves, they could keep the 98% of channel value paid to
 fees.  This method would allow robbing about 3,000 channels per block.
 
 A deanonymization [vulnerability][news333 deanon] affecting Wasabi and
@@ -313,8 +313,8 @@ estimation][news295 fees] by using real-time mempool data. Currently,
 estimates rely on confirmed transaction data, which updates slowly but
 resists manipulation. Ismail developed preliminary code comparing the
 current approach with a new mempool-based algorithm. Discussions
-highlighted whether mempool data should adjust estimates up and down or
-only lower them. Dual adjustment improves utility, but limiting
+highlighted whether mempool data should adjust estimates up and down, or
+only lower them. Dual-adjustment improves utility, but limiting
 adjustments to lowering estimates may better prevent manipulation.
 
 Martin Habovštiak proposed a method to [boost unrelated transaction
@@ -358,7 +358,7 @@ vulnerability][topic time warp] to was discovered after the
 implementation on [testnet4][topic testnet] of rules designed for the
 original consensus cleanup proposal.
 
-A spin off of the discussion about adding new BIPs editor saw a desire
+A spin-off of the discussion about adding a new BIPs editor saw a desire
 to [reform BIP2][news297 bips], which specifies the current process for
 adding new BIPs and updating existing BIPs.   Discussion
 [continued][news303 bip2] the following month, and September saw the
@@ -396,7 +396,7 @@ testnet] a draft BIP and proposed implementation for tesnet4.  The
 [BIP][news315 testnet4bip] and Bitcoin Core [implementation][news315
 testnet4imp] were merged in August.
 
-April came to an unfortunately close with news of the [arrest of two
+April came to an unfortunate close with news of the [arrest of two
 Bitcoin developers][news300 arrest] focused on privacy software, along with at least
 two other companies announcing their intention to stop serving U.S.
 customers due to the legal risks.
@@ -420,21 +420,21 @@ Additionally, as seen in a January post by Abubakar Sadiq Ismail, the
 tools and insights from the design of cluster mempool may allow
 [improving fee estimation in Bitcoin Core][news283 fees].  Today,
 Bitcoin Core implements ancestor feerate mining as an incentive
-compatible way to support [CPFP fee bumping][topic cpfp], but fee
+compatible way to support [CPFP fee-bumping][topic cpfp], but fee
 estimation operates on individual transactions, so CPFP fee bumps aren't
 considered.  Cluster mempool divides groups of transactions into chunks
 that can be tracked together in the mempool and then potentially located
 within mined blocks, allowing improved fee estimation (especially if
-there is increased use of CPFP-related technology like [package
+there is an increased use of CPFP-related technology like [package
 relay][topic package relay], [P2A][topic ephemeral anchors], and
 [exogenous fee sourcing][topic fee sourcing].
 
 As the cluster mempool project matured, multiple explanations and
-overviews were made by its architects.  Suhas Daftuar an
+overviews were made by its architects.  Suhas Daftuar gave an
 [overview][news285 cluster] in January, which revealed one of the
 challenges of the proposal: its incompatibility with the existing [CPFP
 carve-out][topic cpfp carve out] policy.  A solution to the dilemma
-would be for existing users of carve out to opt in to [TRUC
+would be for existing users of carve-out to opt in to [TRUC
 transactions][topic v3 transaction relay], which provides an improved
 feature set.  Another [detailed description][news312 cluster] of cluster
 mempool was posted in July by Pieter Wuille.  It described fundamental
@@ -462,7 +462,7 @@ selection][news314 mine] for miners building blocks.
 Work continued this year on making [silent payments][topic silent
 payments] more [broadly accessible][news304 sp].  Josie Baker started a
 discussion about PSBT extensions for silent payments (SPs), based on a
-draft specification by Andrew Toth.  That discussion was continued into
+draft specification by Andrew Toth.  That discussion continued into
 June with the discussion of [using ECDH shares for trustless
 coordination][news308 sp].  Separately, Setor Blagogee posted a draft
 specification for a protocol to [help lightweight clients receive silent
@@ -560,7 +560,7 @@ demand.  Bitcoin Core contributors have been working on this problem for
 years, and 2024 saw the public release of several new features that
 significantly improve the situation.
 
-January began with discussion of a [discussion][news283 trucpin] of the
+January began with a [discussion][news283 trucpin] of the
 worst-case [pinning][topic transaction pinning] costs for the
 [TRUC][topic v3 transaction relay] proposal that provides a more robust
 alternative to the previously deployed [CPFP carve-out][topic cpfp
@@ -573,7 +573,7 @@ fee sourcing][topic fee sourcing] would make it more efficient onchain
 fees] to miners, which puts mining decentralization at risk.  Peter Todd
 suggested addressing this concern with an alternative fee management
 method: keep fees entirely endogenous by presigning multiple variations
-of each settlement transactions at varying feerates.  However, multiple
+of each settlement transaction at varying feerates.  However, multiple
 problems were identified with this approach.
 
 Additional discussion in January by Gregory Sanders [looked][news285
@@ -589,7 +589,7 @@ no-longer-necessary one-block delays, and a reduction in onchain
 transaction size.  The discussion also led to an [imbued TRUC][news286
 imtruc] proposal that would automatically apply TRUC rules to
 transactions that looked like LN's existing use of CPFP carve-out,
-providing the benefits of TRUC without LN software needing to upgrade.
+providing the benefits of TRUC without LN software needing to be upgraded.
 
 January came to an end with a [proposal][news287 sibrbf] by Gloria Zhao
 for [sibling replace by fee][topic kindred rbf].  The normal [RBF][topic
@@ -607,7 +607,7 @@ February began with additional discussions of the consequences of moving
 the LN protocol from CPFP carve-out to TRUC.  Matt Corallo found
 [challenges][news288 truc0c] in adapting existing [zero-conf channel
 opens][topic zero-conf channels] to using TRUC due to both the funding
-transaction and an immediate close transaction potentially both being
+transaction and an immediate close transaction potentially being
 unconfirmed, preventing a third transaction containing a CPFP fee bump
 from being used due to TRUC's limit of two unconfirmed transactions.
 Teinturier identified a similar problem if a chain of [splices][topic
@@ -616,7 +616,7 @@ but a workaround solution of ensuring each transaction contained its own
 anchor for CPFP fee bumping (as is required before TRUC) seemed
 satisfactory, with everyone hoping that [cluster mempool][topic cluster
 mempool] could allow relaxing some TRUC rules in the future to allow
-more flexible CPFP fee bumping.
+more flexible CPFP fee-bumping.
 
 On the topic of TRUC policy changes powered by cluster mempool
 advancements, Gregory Sanders described several ideas for [future policy
@@ -751,10 +751,10 @@ combination soft fork proposal that includes previous proposals for
 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] (CTV) and
 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] (CSFS) along with a
 new proposal for an `OP_INTERNALKEY` that places the taproot internal
-key on the stack.  Later in the year the proposal would be
+key on the stack.  Later in the year, the proposal would be
 [updated][news330 paircommit] to also include an `OP_PAIRCOMMIT` opcode
 that provides a capability that's similar to `OP_CAT` but deliberately
-limited in its composability.  The proposal aims to allow deployment of
+limited in its composability.  The proposal aims to allow the deployment of
 [LN-Symmetry][topic eltoo], [Ark][topic ark]-style joinpools,
 reduced-signature [DLCs][topic dlc], and [vaults][topic vaults], among
 other described benefits of the underlying proposals, such as CTV-style
@@ -977,7 +977,7 @@ jamming mitigation][news322 jam] originally proposed by Clara Shikhelman
 and Sergei Tikhomirov.  Attempts to jam a channel for an hour mostly
 failed, as attackers either spent more than using known attacks or
 unintentionally increased the target’s income.  However, a _sink attack_
-was effective by undermining a node's reputation by sabotaging payments
+was effective in undermining a node's reputation by sabotaging payments
 through shorter routes. To counter this, bidirectional reputation was
 added to [HTLC endorsement][topic htlc endorsement], bringing the
 proposal closer to an idea originally proposed in 2018 by Jim Posen.
@@ -1026,12 +1026,12 @@ to prevent the spender from learning the identity of the receiver's
 node.
 
 A [new mining interface][news325 mining] for Bitcoin Core saw
-development with the goal to support miners using the [Stratum v2][topic
+development with the goal of supporting miners using the [Stratum v2][topic
 pooled mining] protocol that can be set to allow each miner to select
 their own transactions.  However, Anthony Towns noted earlier in the
 year that independent transaction selection could [raise share validation
 costs][news315 shares] for mining pools.  If those pools responded by
-limiting validation, it could allow a invalid shares attack that's
+limiting validation, it could allow an invalid shares attack that's
 similar to the well-known [block withholding attack][topic block
 withholding].  A 2011 proposed solution to withholding attacks was
 discussed, although it would require a challenging consensus change.
@@ -1102,7 +1102,7 @@ earlier in this newsletter.
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
 Bitcoin development.  The Optech newsletter will return to its regular
-Wednesday publication schedule on January 3rd.*
+Friday publication schedule on January 3rd.*
 
 <style>
 #optech ul {
