@@ -11,12 +11,8 @@ excerpt: >
   The seventh annual Bitcoin Optech Year-in-Review special summarizes
   notable developments in Bitcoin during all of 2024.
 
-FIXME:
-  - Look at all illustrations for this year and see if they can be
-    included
-  - Replace smart quotes and emdashes and endashes with dumb dashes
 ---
-{{page.excerpt}}  It’s the sequel to our summaries from [2018][yirs
+{{page.excerpt}}  It's the sequel to our summaries from [2018][yirs
 2018], [2019][yirs 2019], [2020][yirs 2020], [2021][yirs 2021],
 [2022][yirs 2022], and [2023][yirs 2023].
 
@@ -223,8 +219,8 @@ that affected Core Lightning versions 23.02 through 23.05.2.  When
 re-testing nodes that had implemented fixes for fake funding, which he
 previously discovered and disclosed, he was able to trigger a race
 condition that crashed CLN with about 30 seconds of effort.  If an LN
-node is shut down, it can’t defend a user against malicious or broken
-counterparties, which puts the user’s funds at risk.
+node is shut down, it can't defend a user against malicious or broken
+counterparties, which puts the user's funds at risk.
 
 Also in January, Gögge returned to [announce][news286 btcdvuln] a
 consensus failure vulnerability he found in the btcd full node.  The
@@ -243,7 +239,7 @@ resolve [HTLCs][topic htlc], potentially leading to loss of money.
 Morehouse returned in June to [disclose][news308 lndvuln] a
 vulnerability that allowed crashing versions of LND before 0.17.0.  As
 mentioned earlier, a shutdown LN node can't defend a user against
-malicious or broken counterparties, which puts the user’s funds at risk.
+malicious or broken counterparties, which puts the user's funds at risk.
 
 July saw the first of [multiple disclosures][news310 disclosures] of
 vulnerabilities affecting past versions of Bitcoin Core.  Wladimir J.
@@ -303,8 +299,8 @@ approximately 15 different hardware signing device vendors. _Key
 exfiltration_ occurs when transaction signing code deliberately creates
 its signatures in such a way that they leak information about the
 underlying key material, such as a private key or a BIP32 HD wallet
-seed. Once an attacker obtains a user’s seed, they can steal any of the
-user’s funds at any time (including funds spent in the transaction that
+seed. Once an attacker obtains a user's seed, they can steal any of the
+user's funds at any time (including funds spent in the transaction that
 results in exfiltration, if the attacker acts quickly).  This led to
 [renewed discussion][news317 exfil] of [anti-exfiltration signing
 protocols][topic exfiltration-resistant signing].
@@ -313,7 +309,7 @@ The introduction of a new testnet also saw the introduction of a [new
 timewarp vulnerability][news316 timewarp].  Testnet4 included a fix for
 the original [time warp][topic time warp] vulnerability, but developer
 Zawy discovered in August a new exploit that could reduce difficulty by
-about 94%.  Mark “Murch” Erhardt further developed the attack to allow
+about 94%.  Mark "Murch" Erhardt further developed the attack to allow
 reducing difficulty to its minimum value.  Several solutions were
 proposed and tradeoffs between them were still being [discussed][news332
 ccsf] in December.
@@ -478,7 +474,7 @@ An idea for a [mempool redesign][news251 cluster] from 2023 became a
 particular focus for several Bitcoin Core developers throughout 2024.
 Cluster mempool makes it much easier to reason about the effect of
 transactions on all the blocks a miner would create if it has an
-identical mempool to the local node’s mempool.  This can make
+identical mempool to the local node's mempool.  This can make
 transaction eviction more rational and help in determining whether a
 [replacement transaction][topic rbf] (or set of transactions) is better
 than the transactions it replaces.  This can help various address
@@ -589,7 +585,7 @@ block, at which point the pool would exchange the tokens for satoshis.
 However, a concern was raised by Matt Corallo that there are no
 standardized payment methods implemented by large pools that allow pool
 miners to calculate how much they're supposed to be paid over short
-intervals.  This means miners won’t quickly switch to a different pool
+intervals.  This means miners won't quickly switch to a different pool
 if their main pool begins cheating them of payments, whether those
 payments are made with ecash or any other mechanism.
 
@@ -620,8 +616,10 @@ protocols, such as [channel factories][topic channel factories], being
 able to greatly increase the number of feasible payments and reduce the
 rate of channel depletion.
 
+![Example of channel depletion](/img/posts/2024-12-depletion.png)
+
 {:#quantumsign}
-Developer Hunter Beast [posted][news307 quant] a “rough draft” BIP for
+Developer Hunter Beast [posted][news307 quant] a "rough draft" BIP for
 assigning version 3 segwit addresses to a [quantum-resistant signature
 algorithm][topic quantum resistance]. The draft BIP describes the
 problem and links to several potential algorithms along with their
@@ -761,7 +759,7 @@ natively support blinded paths, are widely adopted.  The proposal became
 {:#chilldkg}
 Tim Ruffing and Jonas Nick proposed ChillDKG, a BIP draft and reference
 implementation for [securely generating keys for FROST-style scriptless
-threshold signatures][news312 chilldkg] compatible with Bitcoin’s schnorr signatures.
+threshold signatures][news312 chilldkg] compatible with Bitcoin's schnorr signatures.
 ChillDKG combines a well-known key generation algorithm for FROST with
 modern cryptographic primitives to securely share random key components
 among participants while ensuring integrity and non-censorship. It uses
@@ -778,7 +776,7 @@ July saw the [merge][news310 musig] of several BIPs that will help
 different software interact to create [MuSig2][topic musig] signatures.
 Later in the month, Sivaram Dhakshinamoorthy [announced][news315
 threshsig] a proposed BIP for creating scriptless [threshold
-signatures][topic threshold signature] for Bitcoin’s implementation of
+signatures][topic threshold signature] for Bitcoin's implementation of
 [schnorr signatures][topic schnorr signatures].  This allows a set of
 signers that have already performed a setup procedure (e.g. using
 ChillDKG) to securely create signatures that only require interaction
@@ -792,7 +790,7 @@ fungibility.
 {:#hyperion}
 Sergi Delgado [released][news314 hyperion] Hyperion, a network simulator
 that tracks how data propagates through a simulated Bitcoin network. The
-work is initially motivated by a desire to compare Bitcoin’s current
+work is initially motivated by a desire to compare Bitcoin's current
 method for relaying transaction announcements with the proposed
 [Erlay][topic erlay] method.
 
@@ -823,7 +821,7 @@ contract protocol to claim money if an arbitrary program executed
 successfully. It is similar in concept to [BitVM][topic acc] but simpler
 in its Bitcoin implementation due to using an opcode specifically
 designed for program execution verification.  Elftrace works with
-programs compiled for the RISC-V architecture using Linux’s ELF format;
+programs compiled for the RISC-V architecture using Linux's ELF format;
 almost any programmer can easily create programs for that target, making
 using elftrace highly accessible.  Halseth provided an update on
 Elftrace in August when it gained the [ability][news315 elftracezk] to
@@ -847,7 +845,7 @@ congestion control and CSFS-style signature delegation.
 Chris Stewart [posted][news285 64bit] a draft BIP for enabling 64-bit
 arithmetic operations on Bitcoin in a future soft fork. Bitcoin
 currently only allows 32-bit operations (using signed integers, so
-numbers over 31 bits can’t be used). Support for 64-bit values would be
+numbers over 31 bits can't be used). Support for 64-bit values would be
 especially useful in any construction that needs to operate on the
 number of satoshis paid in an output, as that is specified using a
 64-bit integer.  The proposal received additional discussion in both
@@ -966,7 +964,7 @@ possible today with presigned transactions and vaults possible if
 In March, developer ZmnSCPxj [described][news293 forkbet] a protocol for
 giving control over a UTXO to a party that correctly predicts whether or
 not a particular soft fork will activate.  The basic idea has been
-proposed before but ZmnSCPxj’s version deals with the specifics expected
+proposed before but ZmnSCPxj's version deals with the specifics expected
 for at least one potential future soft fork, [OP_CHECKTEMPLATEVERIFY][topic
 op_checktemplateverify].
 
@@ -1027,8 +1025,8 @@ Submissions must be received by 1 January 2025.
 In November, Towns [summarized][news330 sigactivity] activity on the
 default signet related to proposed soft forks available through Bitcoin
 Inquisition.  Vojtěch Strnad was inspired by Towns's post and created a
-website that lists “every transaction made on the Bitcoin signet that
-uses one of the deployed soft forks.”
+website that lists "every transaction made on the Bitcoin signet that
+uses one of the deployed soft forks."
 
 Ethan Heilman [posted][news330 covgrind] a paper he coauthored with
 Victor Kolobov, Avihu Levy, and Andrew Poelstra about how covenants can
@@ -1061,12 +1059,12 @@ Carla Kirk-Cohen described testing and adjustments to a [hybrid channel
 jamming mitigation][news322 jam] originally proposed by Clara Shikhelman
 and Sergei Tikhomirov.  Attempts to jam a channel for an hour mostly
 failed, as attackers either spent more than using known attacks or
-unintentionally increased the target’s income.  However, a _sink attack_
+unintentionally increased the target's income.  However, a _sink attack_
 was effective in undermining a node's reputation by sabotaging payments
 through shorter routes. To counter this, bidirectional reputation was
 added to [HTLC endorsement][topic htlc endorsement], bringing the
 proposal closer to an idea originally proposed in 2018 by Jim Posen.
-Nodes now assess both the sender’s and receiver’s reliability when
+Nodes now assess both the sender's and receiver's reliability when
 deciding to forward payments.  Reliable nodes receive endorsed HTLCs,
 while less reliable senders or receivers face rejection or non-endorsed
 forwarding.  This testing followed a [specification of HTLC
@@ -1077,7 +1075,7 @@ by the end of the year.
 {:#shieldedcsv}
 Jonas Nick, Liam Eagen, and Robin Linus introduced a new [client-side
 validation][topic client-side validation] (CSV) protocol, [Shielded
-CSV][news322 csv], which enables token transfers secured by Bitcoin’s
+CSV][news322 csv], which enables token transfers secured by Bitcoin's
 proof-of-work without revealing token details or transfer histories.
 Unlike existing protocols, where clients must validate extensive token
 histories, Shielded CSV uses zero-knowledge proofs to ensure
