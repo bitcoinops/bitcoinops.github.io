@@ -19,8 +19,8 @@ topic-categories:
 ## Required.  Use Markdown formatting.  Only one paragraph.  No links allowed.
 ## Should be less than 500 characters
 excerpt: >
-  **Offers** is a proposed protocol enhancement for Lightning that would
-  allow nodes to request and receive invoices over LN.
+  **Offers** is a protocol for Lightning that
+  allows nodes to request and receive invoices over LN.
 
 ## Optional.  Produces a Markdown link with either "[title][]" or
 ## "[title](link)"
@@ -147,7 +147,7 @@ number) to the merchant’s node over LN, the merchant’s node returns an
 invoice (also over LN), the invoice is displayed to the user (who
 agrees to pay), and the payment is sent.
 
-Although the above use case is already addressed today using
+Although the above use case was previously addressed using
 [BOLT11][] invoices, the ability for the spending and receiving nodes
 to communicate directly before attempting payment provides much more
 flexibility. For example, the requested amount could be specified in
