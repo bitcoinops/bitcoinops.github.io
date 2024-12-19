@@ -23,14 +23,68 @@ FIXME:
 ## Contents
 
 * January
-  * FIXME
+  * [Fee-dependent timelocks](#feetimelocks)
+  * [Optimized contract protocol exits](#optimizedexits)
+  * [LN-Symmetry proof-of-concept implementation](#poclnsym)
+* February
+  * [Replace by feerate](#rbfr)
+  * [Human-readable payment instructions](#hrpay)
+  * [Improved ASMap generation](#asmap)
+  * [LN dual funding](#dualfunding)
+  * [Trustless betting on future feerates](#betfeerates)
+* March
+  * [BINANAs and BIPs](#binanabips)
+  * [Enhanced feerate estimation](#enhancedfeeestimates)
+  * [More efficient transaction sponsorship](#efficientsponsors)
+* April
+  * [Consensus cleanup](#consensuscleanup)
+  * [Reforming the BIPs process](#bip2reform)
+  * [Inbound routing fees](#inboundrouting)
+  * [Weak blocks](#weakblocks)
+  * [Restarting testnet](#testnet)
+  * [Developers arrested](#devarrests)
+* May
+  * [Silent payments](#silentpayments)
+  * [BitVMX](#bitvmx)
+  * [Anonymous usage tokens](#aut)
+  * [LN channel upgrades](#lnup)
+  * [Ecash for pool miners](#minecash)
+  * [Miniscript specification](#miniscript)
+  * [Utreexo beta](#utreexod)
+* June
+  * [LN payment feasibility and channel depletion](#lnfeasibility)
+  * [Quantum-resistant transaction signing](#quantumsign)
+* July
+  * [Blinded paths for BOLT11 invoices](#bolt11blind)
+  * [ChillDKG key generation for threshold signatures](#chilldkg)
+  * [BIPs for MuSig and threshold signatures](#musigthresh)
+* August
+  * [Hyperion network simulator](#hyperion)
+  * [Full RBF](#fullrbf)
+* September
+  * [Hybrid jamming mitigation tests and tweaks](#hybridjamming)
+  * [Shielded CSV](#shieldedcsv)
+  * [LN offline payments](#lnoff)
+* October
+  * [BOLT12 offers](#offers)
+  * [Mining interfaces, block withholding, and share validation cost](#pooledmining)
+* November
+  * [SuperScalar timeout tree channel factories](#superscalar)
+  * [Fast and cheap low-value offchain payment resolution](#opr)
+* December
 * Featured summaries
-  * FIXME
+  * [Vulnerability disclosures](#vulnreports)
+  * [Cluster mempool](#cluster)
+  * [P2P trasaction relay](#p2prelay)
+  * [Covenants and script upgrades](#covs)
+  * [Major releases of popular infrastructure projects](#releases)
+  * [Bitcoin Optech](#optech)
 
 ---
 
 ## January
 
+{:#feetimelocks}
 John Law proposed [fee-dependent timelocks][news283 feelocks], a soft
 fork allowing [timelocks][topic timelocks] to expire only when median
 block feerates drop below a user-specified level. This prevents high
@@ -45,6 +99,7 @@ included storing parameters in the taproot [annex][topic annex], feerate
 commitments for lightweight clients, pruned node support, and the impact
 of [out-of-band fees][topic out-of-band fees].
 
+{:#optimizedexits}
 Salvatore Ingala proposed a method to [optimize exits][news283 exits]
 from multiparty contracts, like joinpools or channel factories, by
 enabling users to coordinate a single transaction instead of
@@ -56,6 +111,7 @@ Ingala suggests implementing this with [OP_CAT][topic op_cat] and
 [MATT][topic acc] soft fork features, with further efficiency possible
 using [OP_CSFS][topic op_checksigfromstack] and 64-bit arithmetic.
 
+{:#poclnsym}
 Gregory Sanders shared a proof-of-concept [implementation][news284
 lnsym] of [LN-Symmetry][topic eltoo] using a fork of Core Lightning.
 LN-Symmetry enables bi-directional payment channels without penalty
@@ -73,6 +129,7 @@ cltv expiry delta] to prevent misuse.
 
 ## February
 
+{:#rbfr}
 Peter Todd proposed [Replace by Feerate][news288 rbfr] (RBFr) to address
 [transaction pinning][topic transaction pinning] when standard
 [RBF][topic rbf] policies fail, with two variations: pure RBFr, allowing
@@ -86,6 +143,7 @@ developers continued working on alternative solutions to address
 transaction pinning, including developing the tools necessary to
 increase confidence in any solution that is adopted.
 
+{:#hrpay}
 Matt Corallo proposed a BIP for DNS-based [human-readable Bitcoin payment
 instructions][news290 dns], allowing an email-like string (e.g., example@example.com)
 to resolve to a DNSSEC-signed TXT record containing a [BIP21][] URI.
@@ -100,6 +158,7 @@ and silent payments led Josie Baker to start a [discussion][news292
 bip21] about revising [BIP21][] payment URIs, which [continued][news306
 bip21] later in the year.
 
+{:#asmap}
 Fabian Jahr wrote software that allows multiple developers to
 [independently create equivalent ASMaps][news290 asmap], which helps
 Bitcoin Core diversify peer connections and resist [eclipse attacks][topic
@@ -107,6 +166,7 @@ eclipse attacks].  If Jahr's tooling becomes widely accepted, Bitcoin
 Core may include ASMaps by default, enhancing protection against attacks
 from parties controlling nodes on multiple subnets.
 
+{:#dualfunding}
 [Support][news290 dualfund] for [dual funding][topic dual funding] was
 to the LN specification along with support for the interactive
 transaction construction protocol.  Interactive construction allows two
@@ -121,6 +181,7 @@ each contribute funds to the initial channel state. This can be combined
 with the experimental liquidity advertisements protocol, which has not
 yet been added to the specification.
 
+{:#betfeerates}
 ZmnSCPxj proposed trustless scripts enabling two parties to [bet on
 future block feerates][news291 bets].  A user expecting to want a
 transaction confirmed by some future block can use this to offset the
@@ -301,6 +362,7 @@ Yuval Kogman and remains unfixed as of this writing.
 
 ## March
 
+{:#binanabips}
 Ongoing problems getting BIPs merged led to the creation in January of a
 [new BINANA repository][news286 binana] for specifications and other
 documentation.  February and March saw the existing BIPs editor request
@@ -308,6 +370,7 @@ help and the beginning of a [process to add new editors][news292 bips].
 After extensive public discussion culminating in April, several Bitcoin
 contributors were [made BIP editors][news299 bips].
 
+{:#enhancedfeeestimates}
 Abubakar Sadiq Ismail proposed [enhancing Bitcoin Core's feerate
 estimation][news295 fees] by using real-time mempool data. Currently,
 estimates rely on confirmed transaction data, which updates slowly but
@@ -317,6 +380,7 @@ highlighted whether mempool data should adjust estimates up and down, or
 only lower them. Dual-adjustment improves utility, but limiting
 adjustments to lowering estimates may better prevent manipulation.
 
+{:#efficientsponsors}
 Martin Habovštiak proposed a method to [boost unrelated transaction
 priorities][news295 sponsor] using the taproot annex, significantly
 reducing space requirements compared to earlier [fee sponsorship][topic
@@ -337,6 +401,7 @@ suggesting it be opt-in if adopted to avoid unintended impacts.
 
 ## April
 
+{:#consensuscleanup}
 Antoine Poinsot [revisited][news296 ccsf] Matt Corallo's 2019 consensus
 cleanup proposal, addressing issues like slow block verification, time
 warp attacks allowing theft, and fake transaction vulnerabilities
@@ -358,12 +423,14 @@ vulnerability][topic time warp] to was discovered after the
 implementation on [testnet4][topic testnet] of rules designed for the
 original consensus cleanup proposal.
 
+{:#bip2reform}
 A spin-off of the discussion about adding a new BIPs editor saw a desire
 to [reform BIP2][news297 bips], which specifies the current process for
 adding new BIPs and updating existing BIPs.   Discussion
 [continued][news303 bip2] the following month, and September saw the
 publication of a [draft BIP][news322 newbip2] for an updated process.
 
+{:#inboundrouting}
 LND introduced [support for inbound routing fees][news297 inbound],
 championed by Joost Jager, which allows nodes to charge channel-specific
 fees for payments received from peers.  This helps nodes manage
@@ -375,6 +442,7 @@ have resisted the feature, citing design concerns and compatibility
 issues.  The feature saw continued development in LND throughout the
 year.
 
+{:#weakblocks}
 Greg Sanders proposed [using weak blocks][news299 weakblocks]---blocks
 with insufficient proof-of-work (PoW) but valid transactions---to
 improve [compact block relay][topic compact block relay] amid divergent
@@ -388,6 +456,7 @@ Weak blocks could also address [pinning attacks][topic transaction
 pinning] and enhance [feerate estimation][topic fee estimation].
 Sanders's proof-of-concept implementation demonstrates the idea.
 
+{:#testnet}
 Jameson Lopp started a discussion in April about problems with the
 current public Bitcoin [testnet][topic testnet] (testnet3) and suggested
 [restarting it][news297 testnet], potentially with a different set of
@@ -396,6 +465,7 @@ testnet] a draft BIP and proposed implementation for tesnet4.  The
 [BIP][news315 testnet4bip] and Bitcoin Core [implementation][news315
 testnet4imp] were merged in August.
 
+{:#devarrests}
 April came to an unfortunate close with news of the [arrest of two
 Bitcoin developers][news300 arrest] focused on privacy software, along with at least
 two other companies announcing their intention to stop serving U.S.
@@ -459,6 +529,7 @@ selection][news314 mine] for miners building blocks.
 
 ## May
 
+{:#silentpayments}
 Work continued this year on making [silent payments][topic silent
 payments] more [broadly accessible][news304 sp].  Josie Baker started a
 discussion about PSBT extensions for silent payments (SPs), based on a
@@ -470,6 +541,7 @@ payments][news305 splite].  A few [tweaks][news309 sptweak] were made to
 the base SP specification in June and [two][news326 sppsbt] draft
 [BIPs][news327 sppsbt] for the proposed PSBT features
 
+{:#bitvmx}
 Sergio Demian Lerner and several co-authors [published][news303 bitvmx]
 a paper about a new virtual CPU architecture based in part on the ideas
 behind [BitVM][topic acc].  The goal of their project, BitVMX, is to be
@@ -482,7 +554,7 @@ protocol can prevent any one (or more) of the parties from withdrawing
 money from the contract unless that party successfully executes an
 arbitrary program specified by the contract.
 
-
+{:#aut}
 Adam Gibson described an [anonymous usage token][news303 aut] scheme he
 has developed to allow anyone who can keypath-spend a UTXO to prove they
 could spend it without revealing which UTXO it is.  One use he highlights
@@ -497,6 +569,7 @@ Later in the year, Johan Halseth [announced][news321 utxozk] a proof-of-concept
 implementation that accomplishes most of the same goals using a
 different mechanism.
 
+{:#lnup}
 For years, LN developers have discussed modifying the LN protocol to
 allow existing channels to be [upgraded][topic channel commitment
 upgrades] in various ways.  In May, Carla Kirk-Cohen [examined][news304
@@ -507,6 +580,7 @@ operations.  October saw [updates][news326 ann1.75] to a proposed
 updated channel announcements protocol that would support new
 [taproot-based funding transactions][topic simple taproot channels].
 
+{:#minecash}
 Ethan Tuttle posted to Delving Bitcoin to suggest that mining pools
 could [reward miners with ecash tokens][news304 minecash] proportionate
 to the number of shares they mined. The miners could then immediately
@@ -519,14 +593,18 @@ intervals.  This means miners won’t quickly switch to a different pool
 if their main pool begins cheating them of payments, whether those
 payments are made with ecash or any other mechanism.
 
+{:#miniscript}
 Ava Chow [proposed][news304 msbip] a BIP for [miniscript][topic
 miniscript] in May, which became [BIP379][] in [July][news310 msbip].
+
+{:#utreexod}
 Also in May, a beta release of utreexod was [published][news302
 utreexod], allowing users to experiment with this full node design that
 minimizes disk space requirements.
 
 ## June
 
+{:#lnfeasibility}
 René Pickhardt researched estimating the [likelihood of LN payment
 feasibility][news309 feas] by analyzing possible wealth distributions
 within channel capacities. For example, if Alice wants to send 1 BTC to
@@ -542,6 +620,7 @@ protocols, such as [channel factories][topic channel factories], being
 able to greatly increase the number of feasible payments and reduce the
 rate of channel depletion.
 
+{:#quantumsign}
 Developer Hunter Beast [posted][news307 quant] a “rough draft” BIP for
 assigning version 3 segwit addresses to a [quantum-resistant signature
 algorithm][topic quantum resistance]. The draft BIP describes the
@@ -669,6 +748,7 @@ improvements for 1p1c package relay.
 
 ## July
 
+{:#bolt11blind}
 Elle Mouton proposed a BLIP to [add a blinded path field to
 BOLT11][news310 path] invoices, allowing payment recipients to hide
 their node identity and channel peers. For example, Bob could add a
@@ -678,6 +758,7 @@ this as a temporary solution until [offers][topic offers], which
 natively support blinded paths, are widely adopted.  The proposal became
 [BLIP39][] in [August][news317 blip39].
 
+{:#chilldkg}
 Tim Ruffing and Jonas Nick proposed ChillDKG, a BIP draft and reference
 implementation for [securely generating keys for FROST-style scriptless
 threshold signatures][news312 chilldkg] compatible with Bitcoin’s schnorr signatures.
@@ -692,6 +773,7 @@ seed and some non-sensitive recovery data. Plans to encrypt recovery
 data using the seed aim to enhance privacy and further simplify user
 backups.
 
+{:#musigthresh}
 July saw the [merge][news310 musig] of several BIPs that will help
 different software interact to create [MuSig2][topic musig] signatures.
 Later in the month, Sivaram Dhakshinamoorthy [announced][news315
@@ -707,12 +789,14 @@ fungibility.
 
 ## August
 
+{:#hyperion}
 Sergi Delgado [released][news314 hyperion] Hyperion, a network simulator
 that tracks how data propagates through a simulated Bitcoin network. The
 work is initially motivated by a desire to compare Bitcoin’s current
 method for relaying transaction announcements with the proposed
 [Erlay][topic erlay] method.
 
+{:#fullrbf}
 Developer 0xB10C [investigated][news315 cb] the recent reliability of
 [compact block][topic compact block relay] reconstruction.  Sometimes
 new blocks include transactions that a node has not seen before. In that
@@ -972,6 +1056,7 @@ we write about it._
 
 ## September
 
+{:#hybridjamming}
 Carla Kirk-Cohen described testing and adjustments to a [hybrid channel
 jamming mitigation][news322 jam] originally proposed by Clara Shikhelman
 and Sergei Tikhomirov.  Attempts to jam a channel for an hour mostly
@@ -989,6 +1074,7 @@ endorsement][news316 htlce] and an [implementation in Eclair][news315
 htlce]; an [implementation for LND][news332 htlce] would also be added
 by the end of the year.
 
+{:#shieldedcsv}
 Jonas Nick, Liam Eagen, and Robin Linus introduced a new [client-side
 validation][topic client-side validation] (CSV) protocol, [Shielded
 CSV][news322 csv], which enables token transfers secured by Bitcoin’s
@@ -1005,6 +1091,7 @@ transactions, and potential extensions. This protocol promises
 significant efficiency and privacy improvements over other token
 systems.
 
+{:#lnoff}
 Andy Schroder outlined a process for [enabling LN offline
 payments][news321 lnoff] by generating authentication tokens while
 online, allowing the spender's wallet to authorize payments through her
@@ -1017,6 +1104,7 @@ like smart cards.
 
 ## October
 
+{:#offers}
 The [BOLT12][] specification of [offers][topic offers] was
 [merged][news323 offers].  [Originally proposed][news72 offers] in 2019,
 offers allows two nodes to negotiate invoices and payments over LN using
@@ -1025,6 +1113,7 @@ offer-compatible payments can use [blinded paths][topic rv routing]
 to prevent the spender from learning the identity of the receiver's
 node.
 
+{:#pooledmining}
 A [new mining interface][news325 mining] for Bitcoin Core saw
 development with the goal of supporting miners using the [Stratum v2][topic
 pooled mining] protocol that can be set to allow each miner to select
@@ -1137,6 +1226,7 @@ discussed, although it would require a challenging consensus change.
 
 ## November
 
+{:#superscalar}
 ZmnSCPxj proposed the [SuperScalar design][news327 superscalar] for a
 [channel factory][topic channel factories] design using [timeout
 trees][topic timeout trees] to enable LN users to open channels and
@@ -1154,6 +1244,7 @@ without requiring major protocol changes.  To support the design,
 ZmnSCPxj later proposed a [pluggable channel factory tweak][news330
 plug] to the LN specification.
 
+{:#opr}
 John Law [proposed][news329 opr] an offchain payment resolution (OPR)
 micropayment protocol that requires both participants to contribute
 funds to a bond that can be effectively destroyed at any time by either
