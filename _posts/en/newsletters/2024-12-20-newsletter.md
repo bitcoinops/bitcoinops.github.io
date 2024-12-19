@@ -164,9 +164,9 @@ from parties controlling nodes on multiple subnets.
 
 {:#dualfunding}
 [Support][news290 dualfund] for [dual funding][topic dual funding] was
-to the LN specification along with support for the interactive
+added to the LN specification along with support for the interactive
 transaction construction protocol.  Interactive construction allows two
-nodes to exchange preferences and UTXO details that allow them to
+nodes to exchange preferences and UTXO details they can use to
 construct a funding transaction together. Dual funding allows a
 transaction to include inputs from either or both parties. For example,
 Alice may want to open a channel with Bob. Before this specification
@@ -174,7 +174,8 @@ change, Alice had to provide all of the funding for the channel. Now,
 when using an implementation that supports dual funding, Alice can open
 a channel with Bob where he provides all of the funding or where they
 each contribute funds to the initial channel state. This can be combined
-with the experimental liquidity advertisements protocol, which has not
+with the experimental [liquidity advertisements][topic liquidity
+advertisements] protocol, which has not
 yet been added to the specification.
 
 {:#betfeerates}
@@ -229,10 +230,10 @@ consensus rules to a transaction using a relative timelock.  This could
 prevent btcd full nodes from showing the same confirmed transactions as
 Bitcoin Core, putting users at risk of losing money.
 
-February saw Eugene Siegel [publish][news288 bccvuln] a vulnerability
-report he had initially disclosed almost three years previously
-affecting Bitcoin Core.  The vulnerability could be used to prevent
-Bitcoin Core from downloading recent blocks.  This could be used to
+February saw Eugene Siegel [publish][news288 bccvuln] a Bitcoin Core vulnerability
+report he had initially disclosed almost three years previously.
+The vulnerability could be used to prevent
+Bitcoin Core from downloading recent blocks.  This could be leveraged to
 prevent a connected LN node from learning about preimages necessary to
 resolve [HTLCs][topic htlc], potentially leading to loss of money.
 
@@ -402,7 +403,7 @@ Antoine Poinsot [revisited][news296 ccsf] Matt Corallo's 2019 consensus
 cleanup proposal, addressing issues like slow block verification, time
 warp attacks allowing theft, and fake transaction vulnerabilities
 affecting light clients and full nodes. Poinsot also highlighted the
-duplicate transactions problem set to impact full nodes at block
+[duplicate transactions][topic duplicate transactions] problem set to impact full nodes at block
 1,983,702. All issues have soft-fork solutions, though one proposed fix
 for slow-verification blocks faced concerns over potentially
 invalidating rare presigned transactions.  One of the proposed updates
@@ -413,9 +414,9 @@ full nodes.  Although Bitcoin Core mitigated vulnerabilities as far as
 possible, a previous refactor dropped essential protections, so Niklas
 Gögge wrote code for Bitcoin Core that detects all currently detectable
 vulnerabilities as early as possible and rejects invalid blocks.  In
-December, discussion [turned][news332 zmwarp] to using consensus cleanup
+December, discussion [turned][news332 zmwarp] to using the consensus cleanup
 soft fork to fix the Zawy-Murch variant of the [time warp
-vulnerability][topic time warp] to was discovered after the
+vulnerability][topic time warp] that was discovered after the
 implementation on [testnet4][topic testnet] of rules designed for the
 original consensus cleanup proposal.
 
@@ -432,7 +433,7 @@ championed by Joost Jager, which allows nodes to charge channel-specific
 fees for payments received from peers.  This helps nodes manage
 liquidity, such as charging higher fees for inbound payments from poorly
 managed nodes and lower fees for reliable nodes.  Inbound fees are
-backward-compatible, initially set negative (e.g., discounts) to work
+backward-compatible, initially set to negative (e.g., discounts) to work
 with older nodes.  Although proposed years ago, other LN implementations
 have resisted the feature, citing design concerns and compatibility
 issues.  The feature saw continued development in LND throughout the
@@ -457,7 +458,7 @@ Jameson Lopp started a discussion in April about problems with the
 current public Bitcoin [testnet][topic testnet] (testnet3) and suggested
 [restarting it][news297 testnet], potentially with a different set of
 special-case consensus rules.  In May, Fabian Jahr [announced][news306
-testnet] a draft BIP and proposed implementation for tesnet4.  The
+testnet] a draft BIP and proposed implementation for testnet4.  The
 [BIP][news315 testnet4bip] and Bitcoin Core [implementation][news315
 testnet4imp] were merged in August.
 
@@ -477,7 +478,7 @@ transactions on all the blocks a miner would create if it has an
 identical mempool to the local node's mempool.  This can make
 transaction eviction more rational and help in determining whether a
 [replacement transaction][topic rbf] (or set of transactions) is better
-than the transactions it replaces.  This can help various address
+than the transactions it replaces.  This can help address various
 mempool limitations that are implicated in multiple problems affecting
 contract protocols such as LN (including sometimes putting funds at
 risk).
@@ -535,7 +536,7 @@ coordination][news308 sp].  Separately, Setor Blagogee posted a draft
 specification for a protocol to [help lightweight clients receive silent
 payments][news305 splite].  A few [tweaks][news309 sptweak] were made to
 the base SP specification in June and [two][news326 sppsbt] draft
-[BIPs][news327 sppsbt] for the proposed PSBT features
+[BIPs][news327 sppsbt] for the proposed PSBT features were posted.
 
 {:#bitvmx}
 Sergio Demian Lerner and several co-authors [published][news303 bitvmx]
@@ -552,7 +553,7 @@ arbitrary program specified by the contract.
 
 {:#aut}
 Adam Gibson described an [anonymous usage token][news303 aut] scheme he
-has developed to allow anyone who can keypath-spend a UTXO to prove they
+developed to allow anyone who can keypath-spend a UTXO to prove they
 could spend it without revealing which UTXO it is.  One use he highlights
 is allowing LN channels to be announced without requiring owners
 identify the specific UTXOs backing those channels, which is required
@@ -604,14 +605,14 @@ minimizes disk space requirements.
 René Pickhardt researched estimating the [likelihood of LN payment
 feasibility][news309 feas] by analyzing possible wealth distributions
 within channel capacities. For example, if Alice wants to send 1 BTC to
-Carol via Bob, the likelihood depends on whether the Alice-Bob and
+Carol via Bob, the likelihood of success depends on whether the Alice-Bob and
 Bob-Carol channels can support the transfer. This metric highlights
 practical payment constraints and could help wallets and business
 software make smarter routing decisions, improving success rates for LN
 payments.  Later in the year, Pickhardt's research provided
 [insights][news333 deplete] into the cause and likelihood of channel
 depletion---a channel becoming unable to forward funds in a particular
-direction.  It also pointed to k>2 multipary channel management
+direction.  It also pointed to k>2 multiparty channel management
 protocols, such as [channel factories][topic channel factories], being
 able to greatly increase the number of feasible payments and reduce the
 rate of channel depletion.
@@ -1150,7 +1151,7 @@ discussed, although it would require a challenging consensus change.
   strategy to be used during high feerates.
 
 - [BTCPay Server 1.13.1][] (and previous releases) made webhooks more
-  extensible], added support for [BIP129][] multisig wallet import,
+  extensible, added support for [BIP129][] multisig wallet import,
   improved plugin flexibility and begun migrating all altcoin support to
   plugins, and added support for BBQr-encoded [PSBTs][topic psbt].
 
@@ -1179,7 +1180,7 @@ discussed, although it would require a challenging consensus change.
 
 - [Core Lightning 24.05][] improved compatibility with pruned full
   nodes, allows the `check` RPC to work with plugins, allows more robust
-  delivery of [offer][topic offers] invoices, and fixed for a fee
+  delivery of [offer][topic offers] invoices, and fixed a fee
   overpayment issue when the `ignore_fee_limits` configuration option is
   used.
 
@@ -1216,7 +1217,7 @@ discussed, although it would require a challenging consensus change.
   outputs].
 
 - [Core Lightning 24.11][] contained an experimental new plugin for
-  making payments that using advanced route selection; paying and
+  making payments that use advanced route selection; paying and
   receiving payments to [offers][topic offers] was enabled by default;
   and multiple improvements to [splicing][topic splicing] were
   added.
@@ -1395,8 +1396,8 @@ Friday publication schedule on January 3rd.*
 }
 </style>
 
-{% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 15:30" %}
-{% include snippets/recap-ad.md when=four_days_after_posting %} {% include references.md %}
+{% include snippets/recap-ad.md when="2024-12-23 15:30" %}
+{% include references.md %}
 {% include linkers/issues.md v=2 issues="" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
