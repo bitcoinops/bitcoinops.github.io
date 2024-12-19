@@ -1264,12 +1264,85 @@ published over 120,000 English words about Bitcoin software research and
 development this year, the rough equivalent of a 350-page book.
 
 In addition, every newsletter this year was accompanied by a [podcast][]
-episode, totaling over FIXME:n hours in audio form and 488,000 words in
+episode, totaling over 59 hours in audio form and 488,000 words in
 transcript form.  Many of Bitcoin's top contributors were guests on the
-show---some of them on more than one episode---with a total of FIXME:n
+show---some of them on more than one episode---with a total of 74
 different unique guests in 2024:
 
-- FIXME:names
+- Abubakar Sadiq Ismail (x2)
+- Adam Gibson
+- Alex Bosworth
+- Andrew Toth (x3)
+- Andy Schroder
+- Anthony Towns (x5)
+- Antoine Poinsot (x5)
+- Antoine Riard (x2)
+- Armin Sabouri
+- Bastien Teinturier (x4)
+- Bob McElrath
+- Brandon Black (x3)
+- Bruno Garcia
+- callebtc
+- Calvin Kim
+- Chris Stewart (x3)
+- Christian Decker
+- Dave Harding (x2)
+- David Gumberg
+- Dusty Daemon
+- Elle Mouton (x2)
+- Eric Voskuil
+- Ethan Heilman (x2)
+- Eugene Siegel
+- Fabian Jahr (x5)
+- Filippo Merli
+- Gloria Zhao (x9)
+- Gregory Sanders (x7)
+- Hennadii Stepanov
+- Hunter Beast
+- Jameson Lopp (x2)
+- Jason Hughes
+- Jay Beddict
+- Jeffrey Czyz
+- Johan Torås Halseth
+- Jonas Nick (x2)
+- Joost Jager
+- Josie Baker
+- Kulpreet Singh
+- Lorenzo Bonazzi
+- Luke Dashjr
+- Matt Corallo (x3)
+- Moonsettler (x2)
+- Nicholas Gregory
+- Niklas Gögge (x2)
+- Oghenovo Usiwoma
+- Olaoluwa Osuntokun
+- Oliver Gugger
+- Peter Todd
+- Pierre Corbin
+- Pierre Rochard
+- Pieter Wuille
+- René Pickhardt (x2)
+- Richard Myers
+- Rijndael
+- rkrux
+- Russell O’Connor
+- Salvatore Ingala (x2)
+- Sebastian Falbesoner
+- SeedHammer Team
+- Sergi Delgado
+- Setor Blagogee
+- Shehzan Maredia
+- Sivaram Dhakshinamoorthy
+- Stéphan Vuylsteke
+- Steven Roose
+- Tadge Dryja
+- TheCharlatan
+- Tom Trevethan
+- Tony Klausing
+- Valentine Wallace
+- Virtu
+- Vojtěch Strnad (x2)
+- ZmnSCPxj (x3)
 
 Optech was the fortunate and grateful recipient of a $20,000 USD contribution to
 our work from the [Human Rights Foundation][]. The funds will be used to pay for
@@ -1302,8 +1375,8 @@ Friday publication schedule on January 3rd.*
 }
 
 #optech li {
-  flex: 1 0 180px;
-  max-width: 180px;
+  flex: 1 0 220px;
+  max-width: 220px;
   box-sizing: border-box;
   padding: 5px;
   margin: 5px;
