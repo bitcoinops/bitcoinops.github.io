@@ -1271,6 +1271,12 @@ different unique guests in 2024:
 
 - FIXME:names
 
+Optech was the fortunate and grateful recipient of a $20,000 USD contribution to
+our work from the [Human Rights Foundation][]. The funds will be used to pay for
+web hosting, email services, podcast transcriptions, and other expenses that
+allow us to continue and improve our delivery of technical content to the
+Bitcoin community.
+
 </div>
 
 ## December
@@ -1504,3 +1510,4 @@ Friday publication schedule on January 3rd.*
 [BDK 0.30.0]: /en/newsletters/2024/11/29/#bdk-0-30-0
 [Eclair v0.11.0]: /en/newsletters/2024/12/06/#eclair-v0-11-0
 [Core Lightning 24.11]: /en/newsletters/2024/12/13/#core-lightning-24-11
+[Human Rights Foundation]: https://hrf.org
