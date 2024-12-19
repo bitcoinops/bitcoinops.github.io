@@ -1037,11 +1037,102 @@ withholding].  A 2011 proposed solution to withholding attacks was
 discussed, although it would require a challenging consensus change.
 
 <div markdown="1" class="callout" id="releases">
-
 ### Summary 2024: Major releases of popular infrastructure projects
 
-FIXME:harding
+- [LDK 0.0.119][] added support receiving payments to multi-hop [blinded
+  paths][topic rv routing].
 
+- [HWI 2.4.0][] added support for Trezor Safe 3.
+
+- [Core Lightning 24.02][] included improvements to the `recover` plugin
+  that "make emergency recoveries less stressful", improvements to
+  [anchor channels][topic anchor outputs], 50% faster block chain
+  syncing, and a bug fix for the parsing of a large transaction found on
+  testnet.
+
+- [Eclair v0.10.0][] "added official support for the [dual-funding
+  feature][topic dual funding], an up-to-date implementation of BOLT12
+  [offers][topic offers], and a fully working [splicing][topic splicing]
+  prototype".
+
+- [Bitcoin Core 27.0][] deprecated libbitcoinconsensus, enabled [v2
+  encrypted P2P transport][topic v2 p2p transport] by default, allowed
+  the use of opt-in topologically restricted until confirmation
+  ([TRUC][topic v3 transaction relay]) transaction policy on test
+  networks, and added a new [coin selection][topic coin selection]
+  strategy to be used during high feerates.
+
+- [BTCPay Server 1.13.1][] (and previous releases) made webhooks more
+  extensible], added support for [BIP129][] multisig wallet import,
+  improved plugin flexibility and begun migrating all altcoin support to
+  plugins, and added support for BBQr-encoded [PSBTs][topic psbt].
+
+- [Bitcoin Inquisition 25.2][] added support for [OP_CAT][topic op_cat]
+  on signet.
+
+- [Libsecp256k1 v0.5.0][] sped up key generation and signing and reduces
+  the compiled size "which [its developers] expected to benefit embedded
+  users in particular."
+
+- [LDK v0.0.123][] included an update to its settings for [trimmed
+  HTLCs][topic trimmed htlc] and improvements to [offers][topic offers]
+  support.
+
+- [Bitcoin Inquisition 27.0][] added signet enforcement of [OP_CAT][] as
+  specified in [BIN24-1][] and [BIP347][].  It also included "a new
+  `evalscript` subcommand for `bitcoin-util` that can be used to test
+  script opcode behavior".  Support was dropped for `annexdatacarrier`
+  and pseudo [ephemeral anchors][topic ephemeral anchors].
+
+- [LND v0.18.0-beta][] added experimental support for _inbound routing
+  fees_, pathfinding for [blinded paths][topic rv routing],
+  [watchtowers][topic watchtowers] for [simple taproot channels][topic
+  simple taproot channels], and streamlined sending of encrypted
+  debugging information.
+
+- [Core Lightning 24.05][] improved compatibility with pruned full
+  nodes, allows the `check` RPC to work with plugins, allows more robust
+  delivery of [offer][topic offers] invoices, and fixed for a fee
+  overpayment issue when the `ignore_fee_limits` configuration option is
+  used.
+
+- [HWI 3.1.0][] added support for the Trezor Safe 5.
+
+- [Bitcoin Core 28.0][] added support for [testnet4][topic testnet],
+  opportunistic one-parent-one-child (1p1c) [package relay][topic
+  package relay], default relay of opt-in topologically restricted until
+  confirmation ([TRUC][topic v3 transaction relay]) transactions,
+  default relay of [pay-to-anchor][topic ephemeral anchors]
+  transactions, limited package [RBF][topic rbf] relay, and default
+  [full-RBF][topic rbf].  Default parameters for [assumeUTXO][topic
+  assumeutxo] were added, allowing the `loadtxoutset` RPC to be used
+  with a UTXO set downloaded outside of the Bitcoin network (e.g. via a
+  torrent).
+
+- [BTCPay Server 2.0.0][] added "improved localization, sidebar
+  navigation, improved onboarding flow, improved branding options, [and]
+  support for pluginable rate providers."  The upgrade includes some
+  breaking changes and database migrations.
+
+- [Libsecp256k1 0.6.0][] "added a [MuSig2][topic musig] module, a
+  significantly more robust method to clear secrets from the stack, and
+  removed the unused `secp256k1_scratch_space` functions."
+
+- [BDK 0.30.0][] prepared for the anticipated upgrade to the version 1.0
+  of the library.
+
+- [Eclair v0.11.0][] "added official support for BOLT12 [offers][topic
+  offers] and made progress on liquidity management features
+  ([splicing][topic splicing], [liquidity ads][topic liquidity
+  advertisements], and [on-the-fly funding][topic jit channels])."  The
+  release also stopped accepting new non-[anchor channels][topic anchor
+  outputs].
+
+- [Core Lightning 24.11][] contained an experimental new plugin for
+  making payments that using advanced route selection; paying and
+  receiving payments to [offers][topic offers] was enabled by default;
+  and multiple improvements to [splicing][topic splicing] were
+  added.
 </div>
 
 ## November
@@ -1305,3 +1396,22 @@ Friday publication schedule on January 3rd.*
 [news329 opr]: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
 [news315 threshsig]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 [news310 musig]: /en/newsletters/2024/07/05/#bips-1540
+[LDK 0.0.119]: /en/newsletters/2024/01/17/#ldk-0-0-119
+[HWI 2.4.0]: /en/newsletters/2024/01/31/#hwi-2-4-0
+[Core Lightning 24.02]: /en/newsletters/2024/02/28/#core-lightning-24-02
+[Eclair v0.10.0]: /en/newsletters/2024/03/06/#eclair-v0-10-0
+[Bitcoin Core 27.0]: /en/newsletters/2024/04/17/#bitcoin-core-27-0
+[BTCPay Server 1.13.1]: /en/newsletters/2024/04/17/#btcpay-server-1-13-1
+[Bitcoin Inquisition 25.2]: /en/newsletters/2024/05/01/#bitcoin-inquisition-25-2
+[Libsecp256k1 v0.5.0]: /en/newsletters/2024/05/08/#libsecp256k1-v0-5-0
+[LDK v0.0.123]: /en/newsletters/2024/05/15/#ldk-v0-0-123
+[Bitcoin Inquisition 27.0]: /en/newsletters/2024/05/24/#bitcoin-inquisition-27-0
+[LND v0.18.0-beta]: /en/newsletters/2024/05/31/#lnd-v0-18-0-beta
+[Core Lightning 24.05]: /en/newsletters/2024/06/14/#core-lightning-24-05
+[HWI 3.1.0]: /en/newsletters/2024/09/20/#hwi-3-1-0
+[Bitcoin Core 28.0]: /en/newsletters/2024/10/04/#bitcoin-core-28-0
+[BTCPay Server 2.0.0]: /en/newsletters/2024/11/01/#btcpay-server-2-0-0
+[Libsecp256k1 0.6.0]: /en/newsletters/2024/11/08/#libsecp256k1-0-6-0
+[BDK 0.30.0]: /en/newsletters/2024/11/29/#bdk-0-30-0
+[Eclair v0.11.0]: /en/newsletters/2024/12/06/#eclair-v0-11-0
+[Core Lightning 24.11]: /en/newsletters/2024/12/13/#core-lightning-24-11
