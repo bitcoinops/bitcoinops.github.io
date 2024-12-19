@@ -91,18 +91,14 @@ instructions][news290 dns], allowing an email-like string (e.g., example@example
 to resolve to a DNSSEC-signed TXT record containing a [BIP21][] URI.
 This supports onchain addresses, [silent payments][topic silent
 payments], and LN [offers][topic offers]---and can be easily extended to
-other payment protocols.  Corallo also drafted a BOLT and BLIP for LN
-nodes, enabling wildcard DNS records and secure payment resolution using
-offers.
-
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/06/07/#blips-32
-- https://bitcoinops.org/en/newsletters/2024/06/14/#bips-1551
-- BIP21: https://bitcoinops.org/en/newsletters/2024/03/06/#updating-bip21-bitcoin-uris
-- https://bitcoinops.org/en/newsletters/2024/06/07/#proposed-update-to-bip21
-- https://bitcoinops.org/en/newsletters/2024/11/15/#ldk-3283
-- https://bitcoinops.org/en/newsletters/2024/12/13/#bolts-1180
--->
+other payment protocols.  A [specification][news307 bip353] of this was
+added as [BIP353][].  Corallo also drafted a [BOLT][news333 dnsbolt] and
+[BLIP][news306 dnsblip] for LN nodes, enabling wildcard DNS records and
+secure payment resolution using offers.  An [implementation][news329
+dnsimp] was merged into LDK in November.  Development of this protocol
+and silent payments led Josie Baker to start a [discussion][news292
+bip21] about revising [BIP21][] payment URIs, which [continued][news306
+bip21] later in the year.
 
 Fabian Jahr wrote software that allows multiple developers to
 [independently create equivalent ASMaps][news290 asmap], which helps
@@ -139,7 +135,7 @@ cooperative spend path that minimizes costs for both parties.
 <div markdown="1" class="callout" id="vulnreports">
 ## Summary 2024: Vulnerability disclosures
 
-In 2024, Optech summarized FIXME:n vulnerability disclosures.  The
+In 2024, Optech summarized more than two dozen vulnerability disclosures.  The
 majority were old disclosures from Bitcoin Core which were being
 published for the first time this year.  Vulnerability reports give both
 developers and users the opportunity to learn from past problems, and
@@ -183,11 +179,6 @@ Bitcoin Core from downloading recent blocks.  This could be used to
 prevent a connected LN node from learning about preimages necessary to
 resolve [HTLCs][topic htlc], potentially leading to loss of money.
 
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/03/27/#disclosure-of-free-relay-attack
-- https://bitcoinops.org/en/newsletters/2024/07/26/#varied-discussion-of-free-relay-and-fee-bumping-upgrades
--->
-
 Morehouse returned in June to [disclose][news308 lndvuln] a
 vulnerability that allowed crashing versions of LND before 0.17.0.  As
 mentioned earlier, a shutdown LN node can't defend a user against
@@ -211,7 +202,7 @@ excessive CPU and memory, potentially leading to a node crash.
 Developer practicalswift [discovered][news310 ps] a vulnerability that
 could cause a node to ignore legitimate blocks for a period of time,
 delaying reaction to time-sensitive events that could affect contract
-protocols like LN.  Developer sec.eine [disclosude][news310 sec.eine] a
+protocols like LN.  Developer sec.eine [disclosed][news310 sec.eine] a
 vulnerability that could consume excessive CPU, which could be used to
 prevent a node from processing new blocks and transactions, potentially
 leading to multiple problems that could lead to loss of money.  John
@@ -301,6 +292,11 @@ distinct has been eliminated, a more generalized problem allowing a
 coordinator to produce distinct credentials was identified in 2021 by
 Yuval Kogman and remains unfixed as of this writing.
 
+<!-- Not summarized here but discussed in the P2P improvements section
+- https://bitcoinops.org/en/newsletters/2024/03/27/#disclosure-of-free-relay-attack
+- https://bitcoinops.org/en/newsletters/2024/07/26/#varied-discussion-of-free-relay-and-fee-bumping-upgrades
+-->
+
 </div>
 
 ## March
@@ -311,11 +307,6 @@ documentation.  February and March saw the existing BIPs editor request
 help and the beginning of a [process to add new editors][news292 bips].
 After extensive public discussion culminating in April, several Bitcoin
 contributors were [made BIP editors][news299 bips].
-
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/03/06/#bitcoin-core-29412
-- BIPs https://bitcoinops.org/en/newsletters/2024/09/27/#draft-of-updated-bip-process
--->
 
 Abubakar Sadiq Ismail proposed [enhancing Bitcoin Core's feerate
 estimation][news295 fees] by using real-time mempool data. Currently,
@@ -353,20 +344,25 @@ affecting light clients and full nodes. Poinsot also highlighted the
 duplicate transactions problem set to impact full nodes at block
 1,983,702. All issues have soft-fork solutions, though one proposed fix
 for slow-verification blocks faced concerns over potentially
-invalidating rare presigned transactions.  FIXME:later discussion
-
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
-- https://bitcoinops.org/en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
--->
+invalidating rare presigned transactions.  One of the proposed updates
+received significant [discussion][news319 merkle] in August and
+September that looked at alternative methods for mitigating merkle tree
+vulnerabilities that affect lightweight clients and even (sometimes)
+full nodes.  Although Bitcoin Core mitigated vulnerabilities as far as
+possible, a previous refactor dropped essential protections, so Niklas
+Gögge wrote code for Bitcoin Core that detects all currently detectable
+vulnerabilities as early as possible and rejects invalid blocks.  In
+December, discussion [turned][news332 zmwarp] to using consensus cleanup
+soft fork to fix the Zawy-Murch variant of the [time warp
+vulnerability][topic time warp] to was discovered after the
+implementation on [testnet4][topic testnet] of rules designed for the
+original consensus cleanup proposal.
 
 A spin off of the discussion about adding new BIPs editor saw a desire
-to [reform BIP2][news297 bips], which specifies the current process for adding new
-BIPs and updating existing BIPs.  FIXME:later developments
-
-<!-- FIXME
-- BIPs https://bitcoinops.org/en/newsletters/2024/05/17/#continued-discussion-about-updating-bip2
--->
+to [reform BIP2][news297 bips], which specifies the current process for
+adding new BIPs and updating existing BIPs.   Discussion
+[continued][news303 bip2] the following month, and September saw the
+publication of a [draft BIP][news322 newbip2] for an updated process.
 
 LND introduced [support for inbound routing fees][news297 inbound],
 championed by Joost Jager, which allows nodes to charge channel-specific
@@ -393,18 +389,12 @@ pinning] and enhance [feerate estimation][topic fee estimation].
 Sanders's proof-of-concept implementation demonstrates the idea.
 
 Jameson Lopp started a discussion in April about problems with the
-current public Bitcoin testnet (testnet3) and suggested [restarting
-it][news297 testnet], potentially with a different set of special-case
-consensus rules. FIXME:later
-
-<!-- FIXME
-- TESTNET https://bitcoinops.org/en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
-- TESTNET https://bitcoinops.org/en/newsletters/2024/08/09/#bitcoin-core-29775
-- TESTNET https://bitcoinops.org/en/newsletters/2024/08/09/#bips-1601
-
-- https://bitcoinops.org/en/newsletters/2024/04/10/#dsl-for-experimenting-with-contracts
-- https://bitcoinops.org/en/newsletters/2024/05/01/#analyzing-a-contract-protocol-with-alloy
--->
+current public Bitcoin [testnet][topic testnet] (testnet3) and suggested
+[restarting it][news297 testnet], potentially with a different set of
+special-case consensus rules.  In May, Fabian Jahr [announced][news306
+testnet] a draft BIP and proposed implementation for tesnet4.  The
+[BIP][news315 testnet4bip] and Bitcoin Core [implementation][news315
+testnet4imp] were merged in August.
 
 April came to an unfortunately close with news of the [arrest of two
 Bitcoin developers][news300 arrest] focused on privacy software, along with at least
@@ -476,27 +466,64 @@ draft specification by Andrew Toth.  That discussion was continued into
 June with the discussion of [using ECDH shares for trustless
 coordination][news308 sp].  Separately, Setor Blagogee posted a draft
 specification for a protocol to [help lightweight clients receive silent
-payments][news305 splite].
+payments][news305 splite].  A few [tweaks][news309 sptweak] were made to
+the base SP specification in June and [two][news326 sppsbt] draft
+[BIPs][news327 sppsbt] for the proposed PSBT features
 
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/06/28/#bips-1620
-- SP https://bitcoinops.org/en/newsletters/2024/10/25/#draft-bip-for-sending-silent-payments-with-psbts
-- SP https://bitcoinops.org/en/newsletters/2024/11/01/#draft-bip-for-dleq-proofs
+Sergio Demian Lerner and several co-authors [published][news303 bitvmx]
+a paper about a new virtual CPU architecture based in part on the ideas
+behind [BitVM][topic acc].  The goal of their project, BitVMX, is to be
+able to efficiently prove the proper execution of any program that can
+be compiled to run on an established CPU architecture, such as RISC-V.
+Like BitVM, BitVMX does not require any consensus changes, but it does
+require one or more designated parties to act as a trusted verifier.
+That means multiple users interactively participating in a contract
+protocol can prevent any one (or more) of the parties from withdrawing
+money from the contract unless that party successfully executes an
+arbitrary program specified by the contract.
 
-- PSUEDO-COVENANT https://bitcoinops.org/en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
-- https://bitcoinops.org/en/newsletters/2024/05/15/#release-of-utreexod-beta
-- ACC https://bitcoinops.org/en/newsletters/2024/05/17/#alternative-to-bitvm
 
-- https://bitcoinops.org/en/newsletters/2024/05/17/#anonymous-usage-tokens
-- https://bitcoinops.org/en/newsletters/2024/09/20/#proving-utxo-set-inclusion-in-zero-knowledge
+Adam Gibson described an [anonymous usage token][news303 aut] scheme he
+has developed to allow anyone who can keypath-spend a UTXO to prove they
+could spend it without revealing which UTXO it is.  One use he highlights
+is allowing LN channels to be announced without requiring owners
+identify the specific UTXOs backing those channels, which is required
+now to prevent bandwidth-wasting denial-of-service attacks.  Gibson also
+created a proof-of-concept forum that requires providing an anonymous
+proof to sign up---providing an environment where everyone is known to
+be a holder of bitcoins but no one needs to provide any identifying
+information about themselves or their bitcoins.
+Later in the year, Johan Halseth [announced][news321 utxozk] a proof-of-concept
+implementation that accomplishes most of the same goals using a
+different mechanism.
 
-- LN UP: https://bitcoinops.org/en/newsletters/2024/05/24/#upgrading-existing-ln-channels
-- LN UP: https://bitcoinops.org/en/newsletters/2024/06/28/#bolts-869
-- LN UP: https://bitcoinops.org/en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
+For years, LN developers have discussed modifying the LN protocol to
+allow existing channels to be [upgraded][topic channel commitment
+upgrades] in various ways.  In May, Carla Kirk-Cohen [examined][news304
+lnup] some of these cases and compared three different proposals for
+upgrades.  A quiescence protocol was [added][news309 stfu] to the LN
+specification in June to help support upgrades and other sensitive
+operations.  October saw [updates][news326 ann1.75] to a proposed
+updated channel announcements protocol that would support new
+[taproot-based funding transactions][topic simple taproot channels].
 
-- https://bitcoinops.org/en/newsletters/2024/05/24/#challenges-in-rewarding-pool-miners
-- https://bitcoinops.org/en/newsletters/2024/05/24/#proposed-miniscript-bip
--->
+Ethan Tuttle posted to Delving Bitcoin to suggest that mining pools
+could [reward miners with ecash tokens][news304 minecash] proportionate
+to the number of shares they mined. The miners could then immediately
+sell or transfer the tokens, or they could wait for the pool to mine a
+block, at which point the pool would exchange the tokens for satoshis.
+However, a concern was raised by Matt Corallo that there are no
+standardized payment methods implemented by large pools that allow pool
+miners to calculate how much they're supposed to be paid over short
+intervals.  This means miners won’t quickly switch to a different pool
+if their main pool begins cheating them of payments, whether those
+payments are made with ecash or any other mechanism.
+
+Ava Chow [proposed][news304 msbip] a BIP for [miniscript][topic
+miniscript] in May, which became [BIP379][] in [July][news310 msbip].
+Also in May, a beta release of utreexod was [published][news302
+utreexod], allowing users to experiment with this full node design that
+minimizes disk space requirements.
 
 ## June
 
@@ -507,13 +534,20 @@ Carol via Bob, the likelihood depends on whether the Alice-Bob and
 Bob-Carol channels can support the transfer. This metric highlights
 practical payment constraints and could help wallets and business
 software make smarter routing decisions, improving success rates for LN
-payments. FIXME:later developments
+payments.  Later in the year, Pickhardt's research provided
+[insights][news333 deplete] into the cause and likelihood of channel
+depletion---a channel becoming unable to forward funds in a particular
+direction.  It also pointed to k>2 multipary channel management
+protocols, such as [channel factories][topic channel factories], being
+able to greatly increase the number of feasible payments and reduce the
+rate of channel depletion.
 
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/12/13/#insights-into-channel-depletion
-
-- https://bitcoinops.org/en/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
--->
+Developer Hunter Beast [posted][news307 quant] a “rough draft” BIP for
+assigning version 3 segwit addresses to a [quantum-resistant signature
+algorithm][topic quantum resistance]. The draft BIP describes the
+problem and links to several potential algorithms along with their
+expected onchain size. The choice of algorithms and the specific
+implementation details was left for future discussion.
 
 <div markdown="1" class="callout" id="p2prelay">
 ## Summary 2024: P2P transaction relay
@@ -614,15 +648,15 @@ published in August.
 
 Bitcoin Core developers continued working on relay improvements, merging
 [support][news315 p2a] for [pay-to-anchors][topic ephemeral anchors]
-(P2A) in August and releasing Bitcoin Core 28.0 in FIXME:month with
-support for 1p1c package relay, TRUC transaction relay, package RBF and
-sibling replacement, and a standard P2A output script type.  Gregory
-Sanders, who contributed to the development of all those features,
+(P2A) in August and releasing Bitcoin Core 28.0 in October with support
+for 1p1c package relay, TRUC transaction relay, package RBF and sibling
+replacement, and a standard P2A output script type.  Gregory Sanders,
+who contributed to the development of all those features,
 [described][news324 guide] how developers of wallets and other software
 that uses Bitcoin Core to create or broadcast transactions can take
 advantage of the new capabilities.
 
-Later in the year, support for [emphemeral dust][topic ephemeral
+Later in the year, support for [ephemeral dust][topic ephemeral
 anchors] outputs using P2A were made standard in a [merge][news330
 dust].  This allows a transaction paying zero fee to be bumped by a
 child transaction paying all the relevant fee---a type of purely
@@ -641,11 +675,8 @@ their node identity and channel peers. For example, Bob could add a
 blinded path to his invoice, enabling Alice to pay privately if her
 software supports it; otherwise, she would receive an error. Mouton sees
 this as a temporary solution until [offers][topic offers], which
-natively support blinded paths, are widely adopted.
-
-<!-- FIXME
-- blinded path invoice: https://bitcoinops.org/en/newsletters/2024/08/23/#blips-39
--->
+natively support blinded paths, are widely adopted.  The proposal became
+[BLIP39][] in [August][news317 blip39].
 
 Tim Ruffing and Jonas Nick proposed ChillDKG, a BIP draft and reference
 implementation for [securely generating keys for FROST-style scriptless
@@ -661,28 +692,36 @@ seed and some non-sensitive recovery data. Plans to encrypt recovery
 data using the seed aim to enhance privacy and further simplify user
 backups.
 
-<!-- FIXME
-- threshold BIP: https://bitcoinops.org/en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
-- MUSIG https://bitcoinops.org/en/newsletters/2024/07/05/#bips-1540
-
-- meh, LSP https://bitcoinops.org/en/newsletters/2024/07/19/#blips-25
-- meh https://bitcoinops.org/en/newsletters/2024/07/19/#bips-1599
--->
+July saw the [merge][news310 musig] of several BIPs that will help
+different software interact to create [MuSig2][topic musig] signatures.
+Later in the month, Sivaram Dhakshinamoorthy [announced][news315
+threshsig] a proposed BIP for creating scriptless [threshold
+signatures][topic threshold signature] for Bitcoin’s implementation of
+[schnorr signatures][topic schnorr signatures].  This allows a set of
+signers that have already performed a setup procedure (e.g. using
+ChillDKG) to securely create signatures that only require interaction
+from a dynamic subset of those signers. The signatures are
+indistinguishable onchain from schnorr signatures created by single-sig
+users and scriptless multisignature users, improving privacy and
+fungibility.
 
 ## August
 
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/08/02/#hyperion-network-event-simulator-for-the-bitcoin-p2p-network
-- https://bitcoinops.org/en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
-- https://bitcoinops.org/en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
-- https://bitcoinops.org/en/newsletters/2024/08/09/#bitcoin-core-30493
-- https://bitcoinops.org/en/newsletters/2024/08/16/#onion-message-dos-risk-discussion
-- https://bitcoinops.org/en/newsletters/2024/08/16/#optional-identification-and-authentication-of-ln-payers
-- CMAKE https://bitcoinops.org/en/newsletters/2024/08/16/#bitcoin-core-switch-to-cmake-build-system
-- CMAKE https://bitcoinops.org/en/newsletters/2024/09/06/#bitcoin-core-30454
-- ASK RENE: https://bitcoinops.org/en/newsletters/2024/08/16/#core-lightning-7517
-- https://bitcoinops.org/en/newsletters/2024/08/23/#simple-but-imperfect-anti-exfiltration-protocol
--->
+Sergi Delgado [released][news314 hyperion] Hyperion, a network simulator
+that tracks how data propagates through a simulated Bitcoin network. The
+work is initially motivated by a desire to compare Bitcoin’s current
+method for relaying transaction announcements with the proposed
+[Erlay][topic erlay] method.
+
+Developer 0xB10C [investigated][news315 cb] the recent reliability of
+[compact block][topic compact block relay] reconstruction.  Sometimes
+new blocks include transactions that a node has not seen before. In that
+case, the node receiving a compact block usually needs to request those
+transactions from the sending peer and then wait for the peer to
+respond. This slows down block propagation.  The research helped
+motivate consideration of a pull request to enable
+[mempoolfullrbf][topic rbf] in Bitcoin Core, which was later
+[merged][news315 rbfdefault].
 
 <div markdown="1" class="callout" id="covs">
 ## 2024 summary: Covenants and script upgrades
@@ -694,7 +733,7 @@ protocols such as [joinpools][topic joinpools] and [channel
 factories][topic channel factories].
 
 In late December 2023, Johan Torås Halseth [announced][news283 elftrace]
-a a proof of concept program that can use the `OP_CHECKCONTRACTVERIFY`
+a proof of concept program that can use the `OP_CHECKCONTRACTVERIFY`
 opcode from the [MATT][topic acc] soft fork proposal to allow a party in a
 contract protocol to claim money if an arbitrary program executed
 successfully. It is similar in concept to [BitVM][topic acc] but simpler
@@ -915,14 +954,16 @@ billions) of dollars worth of specialized hardware and electricity.
 Heilman notes that one application of the work is allowing users today
 to easily include a backup taproot spending path that can be securely
 used if quantum resistance is suddenly needed and elliptic curve
-signature operations on Bitcoin are disabled.
+signature operations on Bitcoin are disabled.  The work appeared to be
+inspired in part by several of the authors' [previous research][news301
+lamport] into lamport signatures for Bitcoin.
 
 December concluded with a [poll of developer opinions][news333 covpoll]
 about selected covenant proposals.
 
 _Starting in January 2025, Optech will begin summarizing notable
 research and developments related to covenants, script upgrades, and
-related chages in a special section published in the first newsletter of
+related changes in a special section published in the first newsletter of
 each month.  We encourage everyone working on these proposals to publish
 anything of interest to our usual [sources][optech sources] so that
 we write about it._
@@ -995,14 +1036,6 @@ similar to the well-known [block withholding attack][topic block
 withholding].  A 2011 proposed solution to withholding attacks was
 discussed, although it would require a challenging consensus change.
 
-<!-- FIXME
-- meh, on-the-fly funding:
-  https://bitcoinops.org/en/newsletters/2024/10/04/#eclair-2861
-- meh, on-the-fly funding:
-  https://bitcoinops.org/en/newsletters/2024/10/04/#eclair-2875
-
--->
-
 <div markdown="1" class="callout" id="releases">
 
 ### Summary 2024: Major releases of popular infrastructure projects
@@ -1030,13 +1063,17 @@ without requiring major protocol changes.  To support the design,
 ZmnSCPxj later proposed a [pluggable channel factory tweak][news330
 plug] to the LN specification.
 
-<!-- FIXME
-- https://bitcoinops.org/en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
-
-- https://bitcoinops.org/en/newsletters/2024/11/29/#lisp-dialect-for-bitcoin-scripting
-- splice:
-  https://bitcoinops.org/en/newsletters/2024/11/29/#core-lightning-7719
-  -->
+John Law [proposed][news329 opr] an offchain payment resolution (OPR)
+micropayment protocol that requires both participants to contribute
+funds to a bond that can be effectively destroyed at any time by either
+participant.  This creates an incentive for both parties to appease the
+other or risk mutually assured destruction (MAD) of the bonded funds.
+The protocol isn't trustless, but it is more scalable than alternatives,
+provides fast resolution, and does force parties to publish data onchain
+before timelocks expire.  This can make OPR much more efficient inside a
+[channel factory][topic channel factories], [timeout tree][topic timeout
+trees], or other nested structure that would ideally keep the nested
+portions offchain.
 
 <div markdown="1" class="callout" id="optech">
 ## Summary 2024: Bitcoin Optech
@@ -1058,7 +1095,9 @@ different unique guests in 2024:
 
 ## December
 
-FIXME:harding
+December saw the continuation of several discussions and the
+announcements of multiple vulnerabilities, all which were summarized
+earlier in this newsletter.
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
@@ -1229,3 +1268,40 @@ Wednesday publication schedule on January 3rd.*
 [news307 bcc29496]: /en/newsletters/2024/06/14/#bitcoin-core-29496
 [news325 mining]: /en/newsletters/2024/10/18/#bitcoin-core-30955
 [news315 shares]: /en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
+[news333 dnsbolt]: /en/newsletters/2024/12/13/#bolts-1180
+[news306 dnsblip]: /en/newsletters/2024/06/07/#blips-32
+[news292 bip21]: /en/newsletters/2024/03/06/#updating-bip21-bitcoin-uris
+[news307 bip353]: /en/newsletters/2024/06/14/#bips-1551
+[news306 bip21]: /en/newsletters/2024/06/07/#proposed-update-to-bip21
+[news329 dnsimp]: /en/newsletters/2024/11/15/#ldk-3283
+[news303 bip2]: /en/newsletters/2024/05/17/#continued-discussion-about-updating-bip2
+[news322 newbip2]: /en/newsletters/2024/09/27/#draft-of-updated-bip-process
+[news306 testnet]: /en/newsletters/2024/06/07/#bip-and-experimental-implementation-of-testnet4
+[news315 testnet4imp]: /en/newsletters/2024/08/09/#bitcoin-core-29775
+[news315 testnet4bip]: /en/newsletters/2024/08/09/#bips-1601
+[news309 sptweak]: /en/newsletters/2024/06/28/#bips-1620
+[news326 sppsbt]: /en/newsletters/2024/10/25/#draft-bip-for-sending-silent-payments-with-psbts
+[news327 sppsbt]: /en/newsletters/2024/11/01/#draft-bip-for-dleq-proofs
+[news303 bitvmx]: /en/newsletters/2024/05/17/#alternative-to-bitvm
+[news303 aut]: /en/newsletters/2024/05/17/#anonymous-usage-tokens
+[news321 utxozk]: /en/newsletters/2024/09/20/#proving-utxo-set-inclusion-in-zero-knowledge
+[news304 lnup]: /en/newsletters/2024/05/24/#upgrading-existing-ln-channels
+[news309 stfu]:  /en/newsletters/2024/06/28/#bolts-869
+[news326 ann1.75]: /en/newsletters/2024/10/25/#updates-to-the-version-1-75-channel-announcements-proposal
+[news304 minecash]: /en/newsletters/2024/05/24/#challenges-in-rewarding-pool-miners
+[news310 msbip]: /en/newsletters/2024/07/05/#bips-1610
+[news304 msbip]: /en/newsletters/2024/05/24/#proposed-miniscript-bip
+[news333 deplete]: /en/newsletters/2024/12/13/#insights-into-channel-depletion
+[news307 quant]: /en/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
+[news317 blip39]: /en/newsletters/2024/08/23/#blips-39
+[news319 merkle]: /en/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
+[news292 merkle]: /en/newsletters/2024/03/06/#bitcoin-core-29412
+[news332 zmwarp]: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
+[news302 utreexod]: /en/newsletters/2024/05/15/#release-of-utreexod-beta
+[news301 lamport]: /en/newsletters/2024/05/08/#consensus-enforced-lamport-signatures-on-top-of-ecdsa-signatures
+[news314 hyperion]: /en/newsletters/2024/08/02/#hyperion-network-event-simulator-for-the-bitcoin-p2p-network
+[news315 cb]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
+[news315 rbfdefault]: /en/newsletters/2024/08/09/#bitcoin-core-30493
+[news329 opr]: /en/newsletters/2024/11/15/#mad-based-offchain-payment-resolution-opr-protocol
+[news315 threshsig]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
+[news310 musig]: /en/newsletters/2024/07/05/#bips-1540
