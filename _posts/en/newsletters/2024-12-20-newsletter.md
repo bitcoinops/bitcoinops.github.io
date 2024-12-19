@@ -84,9 +84,9 @@ excerpt: >
 John Law proposed [fee-dependent timelocks][news283 feelocks], a soft
 fork allowing [timelocks][topic timelocks] to expire only when median
 block feerates drop below a user-specified level. This prevents high
-fees near expiration from preventing confirmation, such as Bob claiming
-funds in a payment channel.  Instead, the timelock extends until fees
-fall, addressing longstanding concerns of [forced expiration
+fees near expiration from preventing confirmation, which can lead to
+funds loss.  Instead, the timelock extends until fees
+fall to a predetermined value, addressing longstanding concerns of [forced expiration
 floods][topic expiration floods] during mass channel closures. The
 proposal improves security for multi-user setups like [channel
 factories][topic channel factories] and [joinpools][topic joinpools]
@@ -115,7 +115,7 @@ transactions but relies on a soft fork like [SIGHASH_ANYPREVOUT][topic
 sighash_anyprevout] to
 allow child transactions to spend any parent version. Sanders
 highlighted its simplicity compared to [LN-Penalty][topic ln-penalty],
-the difficulty of avoiding pinning (inspiring his work on [package
+the difficulty of avoiding [pinning][topic transaction pinning] (inspiring his work on [package
 relay][topic package relay] and [ephemeral anchors][topic ephemeral
 anchors]), and the potential for faster payments via emulation of
 [OP_CTV][topic op_checktemplateverify]. He confirmed penalties are
@@ -306,7 +306,7 @@ results in exfiltration, if the attacker acts quickly).  This led to
 [renewed discussion][news317 exfil] of [anti-exfiltration signing
 protocols][topic exfiltration-resistant signing].
 
-The introduction of a new testnet also saw the introduction of a [new
+The introduction of a new testnet also saw the discovery of a [new
 timewarp vulnerability][news316 timewarp].  Testnet4 included a fix for
 the original [time warp][topic time warp] vulnerability, but developer
 Zawy discovered in August a new exploit that could reduce difficulty by
@@ -401,9 +401,9 @@ suggesting it be opt-in if adopted to avoid unintended impacts.
 {:#consensuscleanup}
 Antoine Poinsot [revisited][news296 ccsf] Matt Corallo's 2019 consensus
 cleanup proposal, addressing issues like slow block verification, time
-warp attacks allowing theft, and fake transaction vulnerabilities
+warp attacks allowing theft, and [fake transaction vulnerabilities][topic merkle tree vulnerabilities]
 affecting light clients and full nodes. Poinsot also highlighted the
-[duplicate transactions][topic duplicate transactions] problem set to impact full nodes at block
+[duplicate transactions][topic duplicate transactions] problem that will affect full nodes at block
 1,983,702. All issues have soft-fork solutions, though one proposed fix
 for slow-verification blocks faced concerns over potentially
 invalidating rare presigned transactions.  One of the proposed updates
@@ -432,7 +432,7 @@ LND introduced [support for inbound routing fees][news297 inbound],
 championed by Joost Jager, which allows nodes to charge channel-specific
 fees for payments received from peers.  This helps nodes manage
 liquidity, such as charging higher fees for inbound payments from poorly
-managed nodes and lower fees for reliable nodes.  Inbound fees are
+managed nodes.  Inbound fees are
 backward-compatible, initially set to negative (e.g., discounts) to work
 with older nodes.  Although proposed years ago, other LN implementations
 have resisted the feature, citing design concerns and compatibility
@@ -506,7 +506,7 @@ transactions][topic v3 transaction relay], which provides an improved
 feature set.  Another [detailed description][news312 cluster] of cluster
 mempool was posted in July by Pieter Wuille.  It described fundamental
 principles, proposed algorithms, and linked to several pull requests.
-[Several][news314 cluster] of [those PRs][news315 cluster] and
+[Several][news314 cluster] of [those pull requests][news315 cluster] and
 [others][news331 cluster] were subsequently merged.
 
 Daftuar engaged in further thinking and research behind cluster mempool
@@ -531,7 +531,7 @@ Work continued this year on making [silent payments][topic silent
 payments] more [broadly accessible][news304 sp].  Josie Baker started a
 discussion about PSBT extensions for silent payments (SPs), based on a
 draft specification by Andrew Toth.  That discussion continued into
-June with the discussion of [using ECDH shares for trustless
+June with an examination of [using ECDH shares for trustless
 coordination][news308 sp].  Separately, Setor Blagogee posted a draft
 specification for a protocol to [help lightweight clients receive silent
 payments][news305 splite].  A few [tweaks][news309 sptweak] were made to
@@ -559,7 +559,7 @@ is allowing LN channels to be announced without requiring owners
 identify the specific UTXOs backing those channels, which is required
 now to prevent bandwidth-wasting denial-of-service attacks.  Gibson also
 created a proof-of-concept forum that requires providing an anonymous
-proof to sign up---providing an environment where everyone is known to
+proof to sign up---creating an environment where everyone is known to
 be a holder of bitcoins but no one needs to provide any identifying
 information about themselves or their bitcoins.
 Later in the year, Johan Halseth [announced][news321 utxozk] a proof-of-concept
@@ -573,7 +573,7 @@ upgrades] in various ways.  In May, Carla Kirk-Cohen [examined][news304
 lnup] some of these cases and compared three different proposals for
 upgrades.  A quiescence protocol was [added][news309 stfu] to the LN
 specification in June to help support upgrades and other sensitive
-operations.  October saw [updates][news326 ann1.75] to a proposed
+operations.  October saw [renewed development][news326 ann1.75] of a proposed
 updated channel announcements protocol that would support new
 [taproot-based funding transactions][topic simple taproot channels].
 
@@ -671,13 +671,13 @@ providing the benefits of TRUC without LN software needing to be upgraded.
 
 January came to an end with a [proposal][news287 sibrbf] by Gloria Zhao
 for [sibling replace by fee][topic kindred rbf].  The normal [RBF][topic
-rbf] rules only apply to conflicting transactions where a node only
-accepts one version of the transaction into its mempool because only one
+rbf] rules only apply to conflicting transactions where a node
+accepts just one version of the transaction into its mempool because only one
 version is permitted to exist in a valid blockchain.  However, in TRUC a
 node only accepts one descendant of an unconfirmed version 3 parent
 transaction, a very similar situation to a conflicting transaction.
 Allowing one descendant to replace another descendant of the same
-transaction, _sibling eviction_, would improve fee bumping of TRUC
+transaction---i.e., _sibling eviction_---would improve fee bumping of TRUC
 transaction and be especially beneficial if imbued TRUC were to be
 adopted.
 
@@ -741,7 +741,7 @@ child transaction paying all the relevant fee---a type of purely
 [exogenous fee sourcing][topic fee sourcing].
 
 Optech's final regular newsletter for the year summarized a Bitcoin Core
-PR Review Club [meeting][news333 prclub] that discussed further
+Pull Request Review Club [meeting][news333 prclub] that discussed further
 improvements for 1p1c package relay.
 </div>
 
@@ -760,7 +760,8 @@ natively support blinded paths, are widely adopted.  The proposal became
 {:#chilldkg}
 Tim Ruffing and Jonas Nick proposed ChillDKG, a BIP draft and reference
 implementation for [securely generating keys for FROST-style scriptless
-threshold signatures][news312 chilldkg] compatible with Bitcoin's schnorr signatures.
+threshold signatures][news312 chilldkg] compatible with Bitcoin's
+[schnorr signatures][topic schnorr signatures].
 ChillDKG combines a well-known key generation algorithm for FROST with
 modern cryptographic primitives to securely share random key components
 among participants while ensuring integrity and non-censorship. It uses
@@ -803,7 +804,7 @@ case, the node receiving a compact block usually needs to request those
 transactions from the sending peer and then wait for the peer to
 respond. This slows down block propagation.  The research helped
 motivate consideration of a pull request to enable
-[mempoolfullrbf][topic rbf] in Bitcoin Core, which was later
+[mempoolfullrbf][topic rbf] by default in Bitcoin Core, which was later
 [merged][news315 rbfdefault].
 
 <div markdown="1" class="callout" id="covs">
@@ -1049,7 +1050,7 @@ research and developments related to covenants, script upgrades, and
 related changes in a special section published in the first newsletter of
 each month.  We encourage everyone working on these proposals to publish
 anything of interest to our usual [sources][optech sources] so that
-we write about it._
+we can write about it._
 
 </div>
 
@@ -1070,8 +1071,8 @@ deciding to forward payments.  Reliable nodes receive endorsed HTLCs,
 while less reliable senders or receivers face rejection or non-endorsed
 forwarding.  This testing followed a [specification of HTLC
 endorsement][news316 htlce] and an [implementation in Eclair][news315
-htlce]; an [implementation for LND][news332 htlce] would also be added
-by the end of the year.
+htlce].  An [implementation for LND][news332 htlce] was also be added
+shortly before the end of the year.
 
 {:#shieldedcsv}
 Jonas Nick, Liam Eagen, and Robin Linus introduced a new [client-side
@@ -1093,7 +1094,7 @@ systems.
 {:#lnoff}
 Andy Schroder outlined a process for [enabling LN offline
 payments][news321 lnoff] by generating authentication tokens while
-online, allowing the spender's wallet to authorize payments through her
+online, allowing the spender's wallet to authorize payments through their
 always-online node or LSP when offline. Tokens can be transferred to the
 receiver via NFC or other simple protocols, enabling payments without
 internet access. Developer ZmnSCPxj proposed an alternative, and Bastien
@@ -1227,7 +1228,7 @@ discussed, although it would require a challenging consensus change.
 
 {:#superscalar}
 ZmnSCPxj proposed the [SuperScalar design][news327 superscalar] for a
-[channel factory][topic channel factories] design using [timeout
+[channel factory][topic channel factories] using [timeout
 trees][topic timeout trees] to enable LN users to open channels and
 access liquidity more affordably while maintaining trustlessness. The
 design uses a layered timeout tree that requires the service provider
@@ -1250,7 +1251,7 @@ funds to a bond that can be effectively destroyed at any time by either
 participant.  This creates an incentive for both parties to appease the
 other or risk mutually assured destruction (MAD) of the bonded funds.
 The protocol isn't trustless, but it is more scalable than alternatives,
-provides fast resolution, and does force parties to publish data onchain
+provides fast resolution, and doesn't force parties to publish data onchain
 before timelocks expire.  This can make OPR much more efficient inside a
 [channel factory][topic channel factories], [timeout tree][topic timeout
 trees], or other nested structure that would ideally keep the nested
