@@ -300,7 +300,7 @@ repo], and [BINANAs][binana repo]._
   by matching the hash of an inner merkle node. See [merkle tree
   vulnerabilities][topic merkle tree vulnerabilities]. {% assign timestamp="1:22:13" %}
 
-- [BLIPs #27][] adds BLIP04 for an experimental [HTLC endorsement][topic htlc
+- [BLIPs #27][] adds BLIP4 for an experimental [HTLC endorsement][topic htlc
   endorsement] signaling protocol proposal to partially mitigate [channel
   jamming attacks][topic channel jamming attacks] on the network. It outlines
   the experimental endorsement TLV values, the deployment approach, and the

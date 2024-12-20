@@ -69,7 +69,7 @@ Bitcoin infrastructure software.
   [exogenous][topic fee sourcing] fee sourcing (such as all states paying
   the same commitment transaction fee), which depends on robust package
   relay for [CPFP][topic cpfp] fee bumping in the Bitcoin P2P protocol
-  and channel commitment transaction upgrades for LN.
+  and channel commitment transaction upgrades for LN. {% assign timestamp="1:11" %}
 
 - **Deanonymization vulnerability affecting Wasabi and related software:**
   a developer of GingerWallet [disclosed][drkgry deanon] a method a
@@ -81,7 +81,7 @@ Bitcoin infrastructure software.
   problems.  Optech has been aware since mid-2022 that Kogman had
   serious outstanding concerns with deployed versions of Wasabi but we
   neglected to investigate further; we apologize to him and Wasabi
-  users for our failure.
+  users for our failure. {% assign timestamp="12:00" %}
 
 - **Insights into channel depletion:** René Pickhardt [posted][pickhardt
   deplete] to Delving Bitcoin and [participated][dd deplete], along with
@@ -159,7 +159,7 @@ Bitcoin infrastructure software.
 
   In both his post and the Optech Deep Dive discussion, Pickhardt
   sought data (e.g., from large LSPs) that could be used to help
-  validate the simulated results.
+  validate the simulated results. {% assign timestamp="18:12" %}
 
 - **Poll of opinions about covenant proposals:** /dev/fd0 [posted][fd0
   poll] to the Bitcoin-Dev mailing list a link to a [public poll][wiki
@@ -178,7 +178,7 @@ Bitcoin infrastructure software.
   Although the discussion highlighted faults in the poll, a showing of more
   support for some proposals over others may help covenant
   researchers converge on a short list of ideas for the broader
-  community to review.
+  community to review. {% assign timestamp="31:14" %}
 
 - **Incentive-based pseudo-covenants:** Jeremy Rubin [posted][rubin
   unfed] to the Bitcoin-Dev mailing list a link to a [paper][rubin unfed
@@ -196,7 +196,7 @@ Bitcoin infrastructure software.
   mailing list a different construction that allows anyone to use a
   fraud proof to punish incorrect signing.  However, in this case, the
   funds are not seized but destroyed.  This ensures a fraudulent signer
-  is punished but prevents victims from recovering their lost value.
+  is punished but prevents victims from recovering their lost value. {% assign timestamp="41:49" %}
 
 - **Bitcoin Core developer meeting summaries:** many Bitcoin Core
   developers met in person in October, and several notes from the
@@ -206,7 +206,7 @@ Bitcoin infrastructure software.
   v2 support][], improved [benchmarking][] and [flamegraphs][], an [API
   for libbitcoinkernel][], preventing [block stalling][], improvements
   to [RPC code][] inspired by Core Lightning, resumed [development of
-  erlay][], and [contemplating covenants][].
+  erlay][], and [contemplating covenants][]. {% assign timestamp="46:45" %}
 
 ## Bitcoin Core PR Review Club
 
@@ -223,7 +223,7 @@ introducing `m_orphan_resolution_tracker` which is responsible for
 remembering which peers are candidates for orphan resolution and for
 scheduling when to make orphan resolution requests. The approach is
 designed to be bandwidth-efficient, to not be vulnerable to censorship,
-and to load-balance between peers.
+and to load-balance between peers. {% assign timestamp="48:18" %}
 
 {% include functions/details-list.md
   q0="What is orphan resolution?"
@@ -308,19 +308,19 @@ wallets and services.*
 - **Java-based HWI released:**
   [Lark App][larkapp github] is a command line application for interacting with
   hardware signing devices. It uses the [Lark Java library][lark github], a port
-  of [HWI][topic hwi] for the Java programming language.
+  of [HWI][topic hwi] for the Java programming language. {% assign timestamp="1:00:32" %}
 
 - **Saving Satoshi Bitcoin development education game announced:**
   The [Saving Satoshi][saving satoshi website] website provides interactive
-  educational exercises for those new to Bitcoin development.
+  educational exercises for those new to Bitcoin development. {% assign timestamp="1:01:24" %}
 
 - **Neovim Bitcoin Script plugin:**
   The [Bitcoin script hints][bsh github] Neovim plugin for Rust shows Bitcoin
-  script stack states for each operation within the editor.
+  script stack states for each operation within the editor. {% assign timestamp="1:02:19" %}
 
 - **Proton Wallet adds RBF:**
   Proton Wallet users can now [RBF][topic rbf] fee-bump [their
-  transactions][proton blog].
+  transactions][proton blog]. {% assign timestamp="1:03:36" %}
 
 ## Selected Q&A from Bitcoin Stack Exchange
 
@@ -336,16 +336,16 @@ answers posted since our last update.*
 - [How long does Bitcoin Core store forked chains?]({{bse}}124973)
   Pieter Wuille explains that with the exception of Bitcoin Core nodes running
   in pruned mode, blocks that a node downloads, regardless of whether they are in the
-  main chain or not, are stored indefinitely.
+  main chain or not, are stored indefinitely. {% assign timestamp="1:03:51" %}
 
 - [What is the point of solo mining pools?]({{bse}}124926)
   Murch outlines why a Bitcoin miner might use a mining pool that doesn't divide
-  mining rewards to its participants, a _solo mining pool_.
+  mining rewards to its participants, a _solo mining pool_. {% assign timestamp="1:05:02" %}
 
 - [Is there a point to using P2TR over P2WSH if I only want to use the script path?]({{bse}}124888)
   Vojtěch Strnad notes the potential cost savings when using P2WSH but points
   out other [P2TR][topic taproot] benefits, including privacy, using a tree of
-  scripts, and the availability of [PTLCs][topic ptlc].
+  scripts, and the availability of [PTLCs][topic ptlc]. {% assign timestamp="1:11:17" %}
 
 ## Releases and release candidates
 
@@ -358,21 +358,21 @@ release candidates._
   plugin for making payments that using advanced route selection; paying
   and receiving payments to [offers][topic offers] is enabled by
   default; and multiple improvements to [splicing][topic splicing] have been
-  added, in addition to several other features and bug fixes.
+  added, in addition to several other features and bug fixes. {% assign timestamp="1:13:23" %}
 
 - [BTCPay Server 2.0.4][] is a release of this payment processing
   software that includes multiple new features, refinements, and bug
-  fixes.
+  fixes. {% assign timestamp="1:16:59" %}
 
 - [LND 0.18.4-beta.rc2][] is a release candidate for a minor version of
-  this popular LN implementation.
+  this popular LN implementation. {% assign timestamp="1:17:23" %}
 
 - [Bitcoin Core 28.1RC1][] is a release candidate for a maintenance
-  version of the predominant full-node implementation.
+  version of the predominant full-node implementation. {% assign timestamp="1:17:44" %}
 
 - [BDK 1.0.0-beta.6][] is the last planned beta test release of this
   library for building Bitcoin wallets and other Bitcoin-enabled
-  applications before the 1.0.0 release of `bdk_wallet`.
+  applications before the 1.0.0 release of `bdk_wallet`. {% assign timestamp="1:18:36" %}
 
 ## Notable code and documentation changes
 
@@ -392,7 +392,7 @@ repo], and [BINANAs][binana repo]._
   single transaction does not technically qualify as a package under the
   [package relay][topic package relay] specification, there is no reason to
   prevent users from submitting transactions that comply with network policies
-  using this command.
+  using this command. {% assign timestamp="1:18:58" %}
 
 - [Bitcoin Core #31175][] removes redundant pre-checks from the `submitblock`
   RPC command and `bitcoin-chainstate.cpp` that validate whether a block
@@ -404,21 +404,21 @@ repo], and [BINANAs][binana repo]._
   duplicate blocks submitted with `submitblock` will now persist their data even
   if it was previously pruned and the data will eventually be pruned again when
   the block file is selected for pruning, to be consistent with the behavior of
-  `getblockfrompeer`.
+  `getblockfrompeer`. {% assign timestamp="1:19:51" %}
 
 - [Bitcoin Core #31112][] extends the `CCheckQueue` functionality to improve
   script error logging during multi-threaded script validation conditions.
   Previously, detailed error reporting was only available when running with
   `par=1` (single-threaded script validation) due to limited information
   transfer between threads. In addition, the logging now includes details about
-  which transaction input had the script error and which UTXO was spent.
+  which transaction input had the script error and which UTXO was spent. {% assign timestamp="1:21:37" %}
 
 - [LDK #3446][] adds support for including a [trampoline payment][topic
   trampoline payments] flag on [BOLT12][topic offers] invoices. This doesn't
   provide full support for using trampoline routing or providing a trampoline
   routing service, but serves to lay the groundwork for future functionality.
   Support for trampoline payments is a prerequisite for a type of [async payments][topic
-  async payments] that LDK plans to deploy.
+  async payments] that LDK plans to deploy. {% assign timestamp="1:22:56" %}
 
 - [Rust Bitcoin #3682][] adds several tools to stabilize the public API
   interface for the `hashes`, `io`, `primitives` and `units` crates such as
@@ -427,7 +427,7 @@ repo], and [BINANAs][binana repo]._
   job that compares API code and its corresponding text file to easily detect
   unintentional API changes. This PR also updates the documentation to outline
   the expectations for contributing developers: when they update an
-  API endpoint of these crates, they must run the text file generation script.
+  API endpoint of these crates, they must run the text file generation script. {% assign timestamp="1:26:13" %}
 
 - [BTCPay Server #5743][] introduces the concept of a "pending transaction" for
   multisig and watch-only wallets, which is a [PSBT][topic psbt] that does not
@@ -441,25 +441,25 @@ repo], and [BINANAs][binana repo]._
   updated versions if payouts change and signatures haven't been collected. The
   enabled functionality was deemed only possible with hot wallets. This system
   can be extended to send emails when a pending transaction is created to alert
-  signers to come online.
+  signers to come online. {% assign timestamp="1:27:17" %}
 
 - [BDK #1756][] adds an exception to `fetch_prev_txout` to prevent it from
   trying to query the prevouts (outputs from previous transactions) of coinbase
   transactions, since they have none. Previously, this behavior caused
-  `bdk_electrum` to crash and the sync or full scan process to fail.
+  `bdk_electrum` to crash and the sync or full scan process to fail. {% assign timestamp="1:30:23" %}
 
 - [BIPs #1535][] merges [BIP348][] for the specification of the
   [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] opcode, which allows to
   check if a signature signs an arbitrary message. It puts a signature, a
   message, and a public key on the stack, and the signature must match both the
   public key and the message. This is one of the many [covenant][topic
-  covenants] proposals.
+  covenants] proposals. {% assign timestamp="1:31:12" %}
 
 - [BOLTs #1180][] updates [BOLT12][topic offers] to specify the optional
   inclusion of [BIP353][] human-readable Bitcoin payment instructions in
   the invoice request (see [Newsletter #290][news290 omdns]).   [BLIPs #48][]
   updates [BLIP32][] (see [Newsletter #306][news306 blip32]) to reference the
-  update to [BOLT12][].
+  update to [BOLT12][]. {% assign timestamp="1:32:33" %}
 
 ## Happy holidays!
 
