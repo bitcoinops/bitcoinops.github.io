@@ -464,7 +464,7 @@ La publication régulière reprendra le vendredi 3 janvier.
 [news272 submitpackage]: /fr/newsletters/2023/10/11/#bitcoin-core-27609
 [news323 ipc]: /fr/newsletters/2024/10/04/#bitcoin-core-30510
 [libbitcoinkernel project]: https://github.com/bitcoin/bitcoin/issues/24303
-[news290 omdns]: /en/newsletters/2024/02/21/#dns-based-human-readable-bitcoin-payment-instructions
+[news290 omdns]: /fr/newsletters/2024/02/21/#instructions-de-paiement-bitcoin-lisibles-par-l-homme-basees-sur-dns
 [news306 blip32]: /fr/newsletters/2024/06/07/#blips-32
 [review club 31397]: https://bitcoincore.reviews/31397
 [gh glozow]: https://github.com/glozow
