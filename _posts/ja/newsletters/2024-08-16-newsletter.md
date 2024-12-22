@@ -234,7 +234,7 @@ Proposals（BIP）][bips repo]、[Lightning BOLTs][bolts repo]、
   [マークルツリーの脆弱性][topic merkle tree vulnerabilities]を参照。
 
 - [BLIPs #27][]は、ネットワークに対する[チャネルジャミング攻撃][topic channel jamming attacks]を部分的に緩和するための
-  実験的な[HTLCエンドースメント][topic htlc endorsement]のシグナリングプロトコルの提案に関するBLIP04を追加しました。
+  実験的な[HTLCエンドースメント][topic htlc endorsement]のシグナリングプロトコルの提案に関するBLIP4を追加しました。
   これは実験的なエンドースメントのTLV値、展開アプローチおよびHTLCエンドースメントがBOLTにマージされた際の実験段階の最終的な廃止について概説しています。
 
 {% assign four_days_after_posting = page.date | date: "%s" | plus: 345600 | date: "%Y-%m-%d 14:30" %}
