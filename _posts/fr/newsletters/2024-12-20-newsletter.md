@@ -588,20 +588,20 @@ répondre à cette préoccupation avec une méthode de gestion des frais alterna
 entièrement endogènes en présignant plusieurs variations de chaque transaction de règlement à des
 taux de frais variables.Cependant, plusieurs problèmes ont été identifiés avec cette approche.
 
-Une discussion supplémentaire en janvier par Gregory Sanders a [examinée][news285mev] pour savoir s'il y
+Une discussion supplémentaire en janvier par Gregory Sanders a [examinée][news285 mev] pour savoir s'il y
 avait un risque que le protocole LN insère des valeurs [HTLC écourtées][topic trimmed htlc] dans des
 sorties [P2A][topic ephemeral anchors], ce qui pourrait potentiellement permettre une _valeur
 extractible par les mineurs_ (MEV) pour les mineurs qui exécutent un logiciel spécial au-delà de ce
 qui est nécessaire pour miner les transactions du mempool. Bastien Teinturier a lancé une
-[discussion][news286lntruc] sur les changements nécessaires au protocole LN pour gérer les
+[discussion][news286 lntruc] sur les changements nécessaires au protocole LN pour gérer les
 transactions d'engagement utilisant TRUC et les sorties P2A ; cela incluait la proposition de HTLC
 écourté considérée par Sanders, éliminant les délais d'un bloc désormais inutiles, et une réduction
 de la taille des transactions onchain. La discussion a également mené à une proposition [TRUC
-enrichi][news286imtruc] qui appliquerait automatiquement les règles TRUC aux transactions
+enrichi][news286 imtruc] qui appliquerait automatiquement les règles TRUC aux transactions
 ressemblant à l'utilisation existante de CPFP carve-out par LN, offrant les avantages de TRUC sans
 que le logiciel LN ait besoin d'être mis à jour.
 
-Janvier s'est terminé avec une [proposition][news287sibrbf] de Gloria Zhao pour le [remplacement par
+Janvier s'est terminé avec une [proposition][news287 sibrbf] de Gloria Zhao pour le [remplacement par
 frais entre frères][topic kindred rbf]. Les règles [RBF][topic rbf] normales s'appliquent uniquement
 aux transactions conflictuelles où un nœud accepte juste une version de la transaction dans son
 mempool parce qu'une seule version est autorisée à exister dans une blockchain valide. Cependant,
@@ -612,7 +612,7 @@ bumping de frais des transactions TRUC et serait particulièrement bénéfique s
 adopté.
 
 Février a commencé avec des discussions supplémentaires sur les conséquences du passage du protocole
-LN de CPFP carve-out à TRUC. Matt Corallo a trouvé des [défis][news288truc0c] à adapter les
+LN de CPFP carve-out à TRUC. Matt Corallo a trouvé des [défis][news288 truc0c] à adapter les
 [ouvertures de canaux zero-conf][topic zero-conf channels] existantes à l'utilisation de TRUC en
 raison du fait que la transaction de financement et une transaction de fermeture immédiate
 pourraient être non confirmées, empêchant l'utilisation d'une troisième transaction contenant un
@@ -625,8 +625,8 @@ mempool] pourrait permettre d'assouplir certaines règles TRUC à l'avenir pour 
 de frais CPFP plus flexible.
 
 Sur le sujet des changements de politique TRUC alimentés par les avancées du mempool en cluster,
-Gregory Sanders a décrit plusieurs idées pour des [changements de politique futurs][news289pcmtruc]. En
-contraste, Suhas Daftuar [a analysé][news289oldtruc] toutes les transactions reçues par son nœud de
+Gregory Sanders a décrit plusieurs idées pour des [changements de politique futurs][news289 pcmtruc]. En
+contraste, Suhas Daftuar [a analysé][news289 oldtruc] toutes les transactions reçues par son nœud de
 l'année précédente pour voir comment une politique TRUC enrichie aurait affecté l'acceptation de ces
 transactions. La plupart des transactions précédemment acceptées sous la politique de CPFP carve-out
 auraient également été acceptées sous une politique TRUC enrichie, mais il y avait quelques
@@ -1445,4 +1445,4 @@ bulletin hebdomadaire Optech reprendra son calendrier de publication régulier l
 [BDK 0.30.0]: /fr/newsletters/2024/11/29/#bdk-0-30-0
 [Eclair v0.11.0]: /fr/newsletters/2024/12/06/#eclair-v0-11-0
 [Core Lightning 24.11]: /fr/newsletters/2024/12/13/#core-lightning-24-11
-[Fondation pour les Droits Humains]: https://hrf.org
+[Fondation pour les Droits de l'Homme]: https://hrf.org
