@@ -1319,7 +1319,7 @@ bulletin hebdomadaire Optech reprendra son calendrier de publication régulier l
 [news310 cf]: /fr/newsletters/2024/07/05/#dos-memoire-utilisant-des-en-tetes-de-faible-difficulte
 [news310 jn2]: /fr/newsletters/2024/07/05/#dos-gaspillant-du-cpu-en-raison-de-demandes-malformees
 [news310 mf]: /fr/newsletters/2024/07/05/#crash-lie-a-la-memoire-lors-des-tentatives-de-parse-des-uri-bip72
-[news310 disclosures]: /fr/newsletters/2024/07/05/divulgation-de-vulnerabilites-affectant-les-versions-de-bitcoin-core-anterieures-a-0-21-0
+[news310 disclosures]: /fr/newsletters/2024/07/05/#divulgation-de-vulnerabilites-affectant-les-versions-de-bitcoin-core-anterieures-a-0-21-0
 [news314 es]: /fr/newsletters/2024/08/02/#crash-a-distance-en-envoyant-des-messages-addr-excessifs
 [news314 mf]: /fr/newsletters/2024/08/02/#crash-a-distance-sur-le-reseau-local-lorsque-upnp-est-active
 [news322 checkpoint]: /fr/newsletters/2024/09/27/#divulgation-d-une-vulnerabilite-affectant-les-versions-de-bitcoin-core-anterieures-a-24-0-1
