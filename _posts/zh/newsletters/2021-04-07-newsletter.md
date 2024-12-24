@@ -25,7 +25,7 @@ lang: zh
 
 - [Bitcoin Core #20286][] 从 `gettxout`、`getrawtransaction`、`decoderawtransaction`、`decodescript`、`gettransaction` 这些 RPC 方法的响应中，以及从 `/rest/tx`、`/rest/getutxos`、`/rest/block` 这些 REST 端点中移除了 `addresses` 和 `reqSigs` 字段。当存在明确定义的地址时，响应中现在包括可选字段 `address`。这些已弃用的字段之前用于裸多重签名场景，而这在当今网络中已无实质用途。在 Bitcoin Core 23.0 移除该选项之前，这些已弃用的字段仍可通过配置选项 `-deprecatedrpc=addresses` 输出。
 
-- [Bitcoin Core #20197][] 通过更新入站节点剔除逻辑改善了节点连接的多样性，以保护运行时间最长的 onion 节点。它还为当前的剔除保护逻辑增加了单元测试覆盖率。由于 onion 节点的延迟通常高于 IPv4 和 IPv6 节点，它们在剔除条件下一直处于不利地位，导致用户提交了[多个][Bitcoin Core #11537][问题][Bitcoin Core #19500]。最初的应对措施[news114 core19670] 为本地主机节点预留了插槽，以此作为 onion 节点的代理。后来又添加了[对入站 onion 连接的显式检测][news118 core19991]。
+- [Bitcoin Core #20197][] 通过更新入站节点剔除逻辑改善了节点连接的多样性，以保护运行时间最长的 onion 节点。它还为当前的剔除保护逻辑增加了单元测试覆盖率。由于 onion 节点的延迟通常高于 IPv4 和 IPv6 节点，它们在剔除条件下一直处于不利地位，导致用户提交了[多个][Bitcoin Core #11537][问题][Bitcoin Core #19500]。[最初的应对措施][news114 core19670]为本地主机节点预留了插槽，以此作为 onion 节点的代理。后来又添加了[对入站 onion 连接的显式检测][news118 core19991]。
 
 通过更新后的逻辑，一半的保护插槽分配给任何 onion 和本地主机节点，其中 onion 节点优先于本地主机节点。现在 Bitcoin Core 已支持 I2P 隐私网络（参见 [Newsletter #139][news139 i2p]），下一步将是将剔除保护扩展至 I2P 节点，因为它们的延迟通常比 onion 节点更高。
 
