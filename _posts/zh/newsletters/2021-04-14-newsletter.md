@@ -77,3 +77,4 @@ lang: zh
 [mtp]: https://bitcoin.stackexchange.com/a/67622/21052
 [easier burying]: https://github.com/bitcoin/bitcoin/pull/11398#issuecomment-335599326
 [burying taproot]: https://bitcoincore.reviews/19438#l-230
+[Bitcoin Core PR Review Club]: https://bitcoincore.reviews/
