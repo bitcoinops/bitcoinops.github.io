@@ -11,7 +11,7 @@ lang: zh
 
 ## 行动项
 
-- **<!--draft-ln-splicing-->****鼓励矿工开始为 taproot 发出信号：** 预计愿意强制执行 [taproot][topic taproot] 新共识规则的矿工被鼓励开始发出信号，并确保他们能够在 [BIP341 中指定的最小激活区块](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment) 之前运行 Bitcoin Core 0.21.1（下文描述）或其他兼容的 taproot 强制执行软件。
+- **<!--miners-encouraged-to-start-signaling-for-taproot-->****鼓励矿工开始为 taproot 发出信号：** 预计愿意强制执行 [taproot][topic taproot] 新共识规则的矿工被鼓励开始发出信号，并确保他们能够在 [BIP341 中指定的最小激活区块](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#deployment) 之前运行 Bitcoin Core 0.21.1（下文描述）或其他兼容的 taproot 强制执行软件。
 
   任何想要无需信任地监控信号进展的人可以升级到 Bitcoin Core 0.21.1 并使用 `getblockchaininfo` RPC。例如，以下命令行将打印当前重定向期内的区块数、已发出信号的区块数，以及 taproot 在此期间激活的可能性（假设没有重组）：
 
@@ -27,7 +27,7 @@ lang: zh
 
 ## 新闻
 
-- **<!--draft-ln-splicing-->****仅使用 BIP32 种子关闭丢失的通道：** 正如 [Newsletter #128][news128 ln ecdh] 中所述，Lloyd Fournier 提出了创建新通道的方法，该方法允许仅通过其 BIP32 钱包种子丢失所有信息的用户，仅使用关于 LN 网络的公共信息重新发现其对等方。一旦用户找到其对等方，他们可以请求对等方使用 [BOLT2][] 数据丢失保护协议关闭他们的共同通道（参见 [Newsletter #31][news31 data_loss]）。所提议的方法并不完美——用户仍应创建备份[^missing-peer] 并在独立系统之间复制它们——但 Fournier 的提议提供了额外的冗余，这对于日常用户尤其有用。
+- **<!--closing-lost-channels-with-only-a-bip32-seed-->****仅使用 BIP32 种子关闭丢失的通道：** 正如 [Newsletter #128][news128 ln ecdh] 中所述，Lloyd Fournier 提出了创建新通道的方法，该方法允许仅通过其 BIP32 钱包种子丢失所有信息的用户，仅使用关于 LN 网络的公共信息重新发现其对等方。一旦用户找到其对等方，他们可以请求对等方使用 [BOLT2][] 数据丢失保护协议关闭他们的共同通道（参见 [Newsletter #31][news31 data_loss]）。所提议的方法并不完美——用户仍应创建备份[^missing-peer] 并在独立系统之间复制它们——但 Fournier 的提议提供了额外的冗余，这对于日常用户尤其有用。
 
   两周前，Rusty Russell 在尝试[规范][russell ecdh spec]和实现该想法后，重新启动了[讨论线程][russell ecdh channels]。在与 Fournier 以及每周 LN 协议开发会议中的小组[对话][lndev deterministic]进行了一些额外的邮件列表讨论后，Russell 表示他倾向于反对该想法，[称][russell backups]：“我认为加密备份是一个更可能被实施的解决方案。因为它们有用，可以发送到除了对等方之外的地方，并且如果需要，它们还可以包含 HTLC 信息。” 能够包含 [HTLC][topic htlc] 信息将允许结算当时挂起的支付，这是基于仅使用 BIP32 种子的任何恢复机制无法提供的能力。
 
