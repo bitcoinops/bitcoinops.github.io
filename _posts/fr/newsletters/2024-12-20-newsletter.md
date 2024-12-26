@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 
-extrait : >
+excerpt : >
   Le septième numéro spécial annuel de rétrospective de Bitcoin Optech résume
   les développements notables dans Bitcoin durant toute l'année 2024.
 
