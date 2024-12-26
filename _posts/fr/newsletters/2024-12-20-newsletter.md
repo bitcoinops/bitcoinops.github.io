@@ -91,7 +91,7 @@ floods] lors de fermetures massives de canaux. La proposition améliore la sécu
 configurations multi-utilisateurs comme les [channel factories][topic channel factories] et les
 [joinpools][topic joinpools] tout en incitant les participants à éviter les pics de frais. Les
 discussions ont également porté sur le stockage des paramètres dans l'[annexe][topic annex] taproot, les
-engagements de taux de frais pour les clients légers, le support des nœuds élagués, et l'impact des
+engagements de taux de frais pour les clients légers, la prise en charge des nœuds élagués, et l'impact des
 [frais hors bande][topic out-of-band fees].
 
 {:#optimizedexits}
@@ -128,7 +128,7 @@ frais beaucoup plus élevés (par exemple, 2x), et
 one-shot RBF, permettant un remplacement unique avec des frais modérément plus élevés (par exemple,
 1,25x) si le remplacement atteint le haut du mempool. Mark Erhardt a identifié un problème initial
 et d'autres développeurs ont discuté des complexités d'analyser complètement l'idée avec les outils
-disponibles. Todd a publié une mise en œuvre expérimentale et d'autres développeurs ont continué à
+disponibles. Todd a publié une implémentation expérimentale et d'autres développeurs ont continué à
 travailler sur des solutions alternatives pour aborder le problème d'épinglage de transactions, y
 compris le développement des outils nécessaires pour augmenter la confiance dans toute solution
 adoptée.
@@ -142,7 +142,7 @@ offers] LN---et peut être facilement étendu à d'autres protocoles de paiement
 [spécification][news307 bip353] de cela a été ajoutée comme [BIP353][]. Corallo a également rédigé
 un [BOLT][news333 dnsbolt] et un [BLIP][news306 dnsblip] pour les nœuds LN, permettant les
 enregistrements DNS génériques et la résolution de paiement sécurisée en utilisant des offres. Une
-[mise en œuvre][news329 dnsimp] a été fusionnée dans LDK en novembre. Le développement de ce
+[implémentation][news329 dnsimp] a été fusionnée dans LDK en novembre. Le développement de ce
 protocole et des paiements silencieux a conduit Josie Baker à lancer une [discussion][news292 bip21]
 sur la révision des URI de paiement [BIP21][], qui a [continué][news306 bip21] plus tard dans
 l'année.
@@ -155,15 +155,15 @@ de Jahr devient largement accepté, Bitcoin Core pourrait inclure les ASMaps par
 la protection contre les attaques de parties contrôlant des nœuds sur plusieurs sous-réseaux.
 
 {:#dualfunding}
-Le [support][news290 dualfund] pour le [financement double][topic dual funding] a été ajouté à la
-spécification LN ainsi que le support pour le protocole de construction de transaction interactive.
+La [prise en charge][news290 dualfund] du [double financement][topic dual funding] a été ajoutée à la
+spécification LN ainsi que celle du protocole de construction de transaction interactive.
 La construction interactive permet à deux nœuds d'échanger des préférences et des détails d'UTXO
 qu'ils peuvent utiliser pour construire ensemble une transaction de financement. Le financement double
 permet à une transaction d'inclure des entrées de l'une ou des deux parties. Par exemple, Alice peut
 vouloir ouvrir un canal avec Bob. Avant ce changement de spécification, Alice devait fournir tout le
-financement pour le canal. Maintenant, en utilisant une mise en œuvre qui supporte le financement
-double, Alice peut ouvrir un canal avec Bob où il fournit tout le financement ou où chacun contribue
-des fonds à l'état initial du canal. Cela peut être combiné avec le protocole expérimental des
+financement pour le canal. Maintenant, en utilisant une implémentation qui prend en charge le financement
+double, Alice peut ouvrir un canal avec Bob où il fournit tout le financement ou bien où chacun contribue
+à l'état initial du canal. Cela peut être combiné avec le protocole expérimental des
 [annonces de liquidité][topic liquidity advertisements], qui n'a pas encore été ajouté à la
 spécification.
 
@@ -173,10 +173,10 @@ taux de frais de bloc][news291 bets]. Un utilisateur souhaitant qu'une transacti
 par un futur bloc peut utiliser cela pour compenser le risque que les [taux de frais][topic fee
 estimation] soient inhabituellement élevés à ce moment-là.
 Un mineur s'attendant à miner un bloc
-autour du moment où l'utilisateur a besoin que sa transaction soit confirmée peut utiliser ce
+au moment où l'utilisateur a besoin que sa transaction soit confirmée peut utiliser ce
 contrat pour compenser le risque que les taux de frais soient inhabituellement bas. La conception
 empêche la manipulation observée dans les marchés centralisés, car les décisions du mineur reposent
-uniquement sur les conditions réelles d'exploitation minière. Le contrat est sans confiance avec un
+uniquement sur les conditions réelles du minage. Le contrat est sans confiance avec un
 chemin de dépense coopératif qui minimise les coûts pour les deux parties.
 
 <div markdown="1" class="callout" id="vulnreports">
@@ -195,10 +195,10 @@ préoccupation claire pour la sécurité des utilisateurs._
 
 Fin 2023, Niklas Gögge a [divulgué publiquement][news283 lndvuln] deux vulnérabilités qu'il avait
 signalées deux ans plus tôt, conduisant à la sortie de versions corrigées de LND. La première, une
-vulnérabilité de DoS, aurait pu conduire à LND manquant de mémoire et s'écrasant. La seconde, une
-vulnérabilité de censure, pourrait permettre à un attaquant d'empêcher un nœud LND d'apprendre les
+vulnérabilité de DoS, aurait pu entraîner un manque de mémoire et un crash de LND. La seconde, une
+vulnérabilité de censure, pourrait permettre à un attaquant d'empêcher un nœud LND d'être informé des
 mises à jour des canaux ciblés à travers le réseau ; un attaquant pourrait utiliser cela pour
-biaiser un nœud vers la sélection de routes spécifiques pour les paiements qu'il envoie, donnant à
+inciter malicieusement un nœud à sélectionner des itinéraires spécifiques pour les paiements qu'il envoie, donnant à
 l'attaquant plus de frais de transfert et plus d'informations sur les paiements envoyés par le nœud.
 
 En janvier, Matt Morehouse a [annoncé une vulnérabilité][news285 clnvuln] qui affectait les versions
@@ -230,7 +230,7 @@ Juillet a vu la première des [multiples divulgations][news310 disclosures] de v
 affectant des versions passées de Bitcoin Core. Wladimir J. Van Der Laan enquêtait sur une
 vulnérabilité découverte par Aleksandar Nikolic dans une bibliothèque utilisée par Bitcoin Core
 lorsqu'il a [découvert][news310 wlad] une vulnérabilité séparée permettant l'exécution de code à
-distance ; cela était
+distance ; cela a été
 corrigé en amont, et la correction a été intégrée dans Bitcoin Core. Le développeur Evil-Knievel [a
 découvert][news310 ek] une vulnérabilité qui pourrait épuiser la mémoire de nombreux nœuds Bitcoin
 Core, les faisant planter, ce qui pourrait être utilisé dans le cadre d'autres attaques pour voler
@@ -391,13 +391,13 @@ jour les BIPs existants. La discussion [a continué][news303 bip2] le mois suiva
 la publication d'un [brouillon de BIP][news322 newbip2] pour une mise à jour du processus.
 
 {:#inboundrouting}
-LND a introduit [le support des frais de routage entrants][news297 inbound], promu par Joost Jager,
+LND a introduit [la prise en charge des frais de routage entrants][news297 inbound], promu par Joost Jager,
 qui permet aux nœuds de facturer des frais spécifiques au canal pour les paiements reçus de pairs.
 Cela aide les nœuds à gérer la liquidité, comme facturer des frais plus élevés pour les paiements
 entrants de nœuds mal gérés. Les frais entrants sont compatibles avec les versions antérieures,
 initialement fixés à négatif (par exemple, des réductions) pour fonctionner avec les anciens nœuds.
-Bien que proposée il y a des années, d'autres implémentations de LN ont résisté à la fonctionnalité,
-citant des préoccupations de conception et des problèmes de compatibilité. La fonctionnalité a vu un
+Bien que proposée il y a des années, d'autres implémentations de LN n'ont pas intégré la fonctionnalité,
+invoquant des problèmes de conception et de compatibilité. La fonctionnalité a vu un
 développement continu dans LND tout au long de l'année.
 
 {:#weakblocks}
@@ -430,7 +430,7 @@ risques juridiques.
 <div markdown="1" class="callout" id="cluster">
 ## Résumé 2024 : Cluster mempool
 
-Une idée pour une [refonte du mempool][news251 cluster] de 2023 est devenue un point d'attention
+L'idée (de 2023 ) de [refondre le mempool][news251 cluster] est devenue un point d'attention
 particulier pour plusieurs développeurs de Bitcoin Core tout au long de 2024. Le cluster mempool
 rend beaucoup plus facile de raisonner sur l'effet des transactions sur tous les blocs qu'un mineur
 créerait s'il possède un
@@ -451,7 +451,7 @@ minés, permettant une meilleure estimation des frais (surtout s'il y a une util
 technologies liées au CPFP comme le [relais de paquets][topic package relay], [P2A][topic ephemeral
 anchors], et [la source de frais exogène][topic fee sourcing].
 
-À mesure que le projet de cluster mempool mûrissait, plusieurs explications et aperçus ont été faits
+À mesure que le projet de mempool en cluster mûrissait, plusieurs explications et aperçus ont été faits
 par ses architectes. Suhas Daftuar a donné un [aperçu][news285 cluster] en janvier, qui a révélé
 l'un des défis de la proposition : son incompatibilité avec la politique existante de [carve-out
 CPFP][topic cpfp carve out]. Une solution au dilemme serait que les utilisateurs existants de
@@ -509,7 +509,7 @@ gaspillent la bande passante. Gibson a également créé un forum de preuve de c
 fournir une preuve anonyme pour s'inscrire, créant un environnement où tout le monde est connu pour
 être détenteur de bitcoins mais personne n'a besoin de fournir aucune information d'identification
 sur eux-mêmes ou leurs bitcoins.
-Plus tard dans l'année, Johan Halseth a [annoncé][news321 utxozk] une mise en œuvre de preuve de
+Plus tard dans l'année, Johan Halseth a [annoncé][news321 utxozk] une implémentation de preuve de
 concept qui atteint la plupart des mêmes objectifs en utilisant un mécanisme différent.
 
 {:#lnup}
@@ -519,7 +519,7 @@ manières. En mai, Carla Kirk-Cohen a [examiné][news304 lnup] certains de ces c
 propositions différentes pour les mises à niveau. Un protocole de quiescence a été [ajouté][news309
 stfu] à la spécification LN en juin pour aider à soutenir les mises à niveau et d'autres opérations
 sensibles. Octobre a vu le [renouvellement du développement][news326 ann1.75] d'une proposition de protocole
-de mises à jour des annonces de canal qui supporterait de nouvelles [transactions de financement
+de mises à jour des annonces de canal qui prendrait en charge de nouvelles [transactions de financement
 basées sur taproot][topic simple taproot channels].
 
 {:#minecash}
@@ -548,7 +548,7 @@ avec cette conception de nœud complet qui minimise les exigences d'espace disqu
 René Pickhardt a recherché comment estimer la [probabilité de faisabilité d'un paiement LN][news309 feas] en
 analysant les distributions de richesse possibles dans les capacités des canaux. Par exemple, si
 Alice veut envoyer 1 BTC à Carol via Bob, la probabilité de succès dépend si les canaux Alice-Bob et
-Bob-Carol peuvent supporter le transfert. Cette métrique met en lumière les contraintes pratiques de
+Bob-Carol peuvent prendre en charge le transfert. Cette métrique met en lumière les contraintes pratiques de
 paiement et pourrait aider les portefeuilles et les logiciels d'entreprise à prendre des décisions
 de routage plus intelligentes, améliorant ainsi les taux de succès pour les paiements LN. Plus tard
 dans l'année, la recherche de Pickhardt a [fourni][news333 deplete] des aperçus sur la cause et la probabilité de
@@ -563,7 +563,7 @@ paiements réalisables et réduire le taux d'épuisement des canaux.
 Le développeur Hunter Beast a [posté][news307 quant] un "brouillon" de BIP pour attribuer des adresses segwit version
 3 à un algorithme de signature [résistant aux quantiques][topic quantum resistance]. Le brouillon de BIP décrit le problème et
 renvoie à plusieurs algorithmes potentiels ainsi qu'à leur taille attendue onchain. Le choix
-des algorithmes et les détails spécifiques de mise en œuvre ont été laissés pour une discussion
+des algorithmes et les détails spécifiques de l'implémentation ont été laissés pour une discussion
 future.
 
 <div markdown="1" class="callout" id="p2prelay">
@@ -585,7 +585,7 @@ cas de coûts soient beaucoup plus bas pour TRUC, les développeurs ont considé
 paramètres pourrait être en mesure de réduire encore les coûts. Une autre [discussion][news284 exo] en janvier a
 examiné le risque théorique que l'utilisation accrue de la [source de frais exogène][topic fee sourcing] rendrait plus
 efficace onchain (et donc moins cher) d'utiliser des paiements de [frais hors bande][topic out-of-band fees] aux
-mineurs, ce qui met en danger la décentralisation de l'exploitation minière. Peter Todd a suggéré de
+mineurs, ce qui met en danger la décentralisation du minage. Peter Todd a suggéré de
 répondre à cette préoccupation avec une méthode de gestion des frais alternative : garder les frais
 entièrement endogènes en présignant plusieurs variations de chaque transaction de règlement à des
 taux de frais variables.Cependant, plusieurs problèmes ont été identifiés avec cette approche.
@@ -636,27 +636,27 @@ exceptions qui pourraient nécessiter des changements de logiciel avant qu'une p
 puisse être adoptée.
 
 Après la vague de discussions en début d'année, mai et juin ont vu une
-Une série de fusions ajoutant le support de nouvelles fonctionnalités de relais à Bitcoin Core. Une
+Une série de fusions ajoutant la prise en charge de nouvelles fonctionnalités de relais à Bitcoin Core. Une
 [forme limitée][news301 1p1c] de [relais de paquets][topic package relay] un-parent-un-enfant (1p1c)
 ne nécessitant aucun changement au protocole P2P a été ajoutée. Un [merge subséquent][news304 bcc30000] a augmenté la
 fiabilité du relais de paquets 1p1c en améliorant la gestion des transactions orphelines par Bitcoin
 Core. La [spécification pour TRUC a été fusionnée dans le répertoire BIPs][news306 bip431] comme [BIP431][]. Les
-transactions TRUC sont devenues relayables par défaut avec un [autre merge][news307 bcc29496]. Le support a également
-été [ajouté][news309 1p1crbf] pour le clusters 1p1c de [RBF][topic rbf]  (incluant les paquets TRUC).
+transactions TRUC sont devenues relayables par défaut avec un [autre merge][news307 bcc29496]. La prise en charge de [RBF][topic rbf] a également
+été [ajouté][news309 1p1crbf] pour le clusters 1p1c (incluant les paquets TRUC).
 
 Deux développeurs de longue date ont écrit des [critiques approfondies][news313 crittruc] de TRUC en juillet, bien que
 d'autres développeurs aient répondu à leurs préoccupations. Une [critique supplémentaire][news315 crittruc] par les
 mêmes deux développeurs a été publiée en août.
 
 Les développeurs de Bitcoin Core ont continué à travailler sur des améliorations de relais, en
-fusionnant le [support][news315 p2a] pour les paiements vers des [ancres éphémères][topic ephemeral anchors] (P2A) en août et en lançant
-Bitcoin Core 28.0 en octobre avec le support pour le relais de paquets 1p1c, le relais de
+fusionnant la [prise en charge][news315 p2a] des paiements vers des [ancres éphémères][topic ephemeral anchors] (P2A) en août et en lançant
+Bitcoin Core 28.0 en octobre avec la prise en charge du relais de paquets 1p1c, le relais de
 transactions TRUC, le RBF de paquets et le remplacement de frères et sœurs, et un type de script de
 sortie P2A standard. Gregory Sanders, qui a contribué au développement de toutes ces
 fonctionnalités, a [décrit][news324 guide] comment les développeurs de portefeuilles et d'autres logiciels utilisant
 Bitcoin Core pour créer ou diffuser des transactions peuvent tirer parti des nouvelles capacités.
 
-Plus tard dans l'année, le support pour les [sorties de poussière éphémère][topic ephemeral anchors] utilisant P2A a été
+Plus tard dans l'année, la prise en charge des [sorties de poussière éphémère][topic ephemeral anchors] utilisant P2A a été
 standardisé dans un [merge][news330 dust]. Cela permet à une transaction ne payant aucune frais d'être augmentée
 par une transaction enfant payant tous les frais pertinents---un type purement exogène de [source de
 frais][topic fee sourcing].
@@ -672,7 +672,7 @@ Elle Mouton a proposé un BLIP pour ajouter un [champ de chemin aveuglé aux fac
 permettant aux destinataires de paiement de cacher leur identité de nœud et les pairs de canal. Par
 exemple, Bob pourrait ajouter un chemin aveuglé à sa facture, permettant à Alice de payer de manière
 privée si son logiciel le supporte ; sinon, elle recevrait une erreur. Mouton voit cela comme une
-solution temporaire jusqu'à ce que les [offres][topic offers], qui supportent nativement les chemins aveuglés,
+solution temporaire jusqu'à ce que les [offres][topic offers], qui prendront en charge nativement les chemins aveuglés,
 soient largement adoptées. La proposition est devenue [BLIP39][] en [août][news317 blip39].
 
 {:#chilldkg}
@@ -750,7 +750,7 @@ le contrôle de congestion de style CTV et la délégation de signature de style
 Chris Stewart a [publié][news285 64bit] un projet de BIP pour activer les opérations arithmétiques
 64 bits dans Bitcoin Script lors d'un futur soft fork. Bitcoin permet actuellement uniquement des
 opérations 32 bits (en utilisant des entiers signés, donc les nombres supérieurs à environ 2
-milliards ne peuvent pas être utilisés). Le support pour les valeurs 64 bits serait particulièrement
+milliards ne peuvent pas être utilisés). La prise en charge des valeurs 64 bits serait particulièrement
 utile dans toute construction qui doit opérer sur le nombre de satoshis payés dans une sortie, car
 cela est spécifié en utilisant un entier 64 bits. La proposition a reçu des discussions
 supplémentaires à la fois en [février][news290 64bit] et en [juin][news306 64bit].
@@ -886,7 +886,7 @@ alternative à la version [BIP345][] des coffres-forts, et un design de [pool de
 joinpools].
 
 Jeremy Rubin a proposé [deux mises à jour][news302 ctvext] au design de `OP_CHECKTEMPLATEVERIFY` en
-mai : un support optionnel pour un digest de hash plus court et un support pour des engagements
+mai : la prise en charge optionnelle d'un digest de hash plus court et des engagements
 supplémentaires. Cela a aidé à optimiser CTV pour une utilisation dans des schémas de publication de
 données qui pourraient être utiles pour récupérer des données critiques dans [LN-Symmetry][topic
 eltoo] et des protocoles similaires.
@@ -1010,18 +1010,18 @@ de consensus difficile.
 <div markdown="1" class="callout" id="releases">
 ## Résumé 2024 : Principales sorties de projets d'infrastructure populaires
 
-- [LDK 0.0.119][] a ajouté le support pour recevoir des paiements via des [chemins aveuglés][topic
+- [LDK 0.0.119][] a ajouté la prise en charge des paiements reçus via des [chemins aveuglés][topic
   rv routing] multi-sauts.
 
-- [HWI 2.4.0][] a ajouté le support pour Trezor Safe 3.
+- [HWI 2.4.0][] a ajouté la prise en charge de Trezor Safe 3.
 
 - [Core Lightning 24.02][] a inclus des améliorations au plugin `recover` qui "rendent les
   récupérations d'urgence moins stressantes", des améliorations aux [canaux d'ancrage][topic anchor
   outputs], une synchronisation de la chaîne de blocs 50% plus rapide, et un correctif de bug pour
   l'analyse d'une grande transaction trouvée sur le testnet.
 
-- [Eclair v0.10.0][] "a ajouté un support officiel pour la [fonction de financement double][topic dual
-  funding], une mise en œuvre à jour des [offres][topic offers] BOLT12, et un prototype de
+- [Eclair v0.10.0][] "a ajouté la prise en charge officiel de la [fonction de financement double][topic dual
+  funding], une implémentation à jour des [offres][topic offers] BOLT12, et un prototype de
   [splicing][topic splicing] pleinement fonctionnel".
 
 - [Bitcoin Core 27.0][] a déprécié libbitcoinconsensus, activé par défaut le [transport P2P crypté
@@ -1030,27 +1030,27 @@ de consensus difficile.
   et ajouté une nouvelle stratégie de [sélection de pièces][topic coin selection] à utiliser pendant
   les périodes de frais élevés.
 
-- [BTCPay Server 1.13.1][] (et les versions précédentes) ont rendus les webhooks plus extensibles,
-  ajouté le support pour l'importation de portefeuilles multisig [BIP129][], amélioré la flexibilité
-  des plugins et commencé la migration de tout le support d'altcoin vers des plugins, et ajouté le
-  support pour les [PSBTs][topic psbt] encodés BBQr.
+- [BTCPay Server 1.13.1][] (et les versions précédentes) rendent les webhooks plus extensibles,
+  prennent en charge l'importation de portefeuilles multisig [BIP129][] et les [PSBTs][topic psbt] encodés BBQr,
+  améliorent la flexibilité des plugins et ont commencé la migration de la prise en charge des altcoins
+  vers des plugins.
 
-- [Bitcoin Inquisition 25.2][] a ajouté le support pour [OP_CAT][topic op_cat] sur signet.
+- [Bitcoin Inquisition 25.2][] prend en charge [OP_CAT][topic op_cat] sur signet.
 
 - [Libsecp256k1 v0.5.0][] a accéléré la génération de clés et la signature et réduit la taille
   compilée "ce que [ses développeurs] s'attendent à bénéficier particulièrement aux utilisateurs
   embarqués."
 
 - [LDK v0.0.123][] a inclus une mise à jour de ses paramètres pour les [HTLCs coupés][topic trimmed
-  htlc] et des améliorations au support des [offres][topic offers].
+  htlc] et des améliorations à la prise en charge des [offres][topic offers].
 
 - [Bitcoin Inquisition 27.0][] a ajouté l'application de [OP_CAT][] sur signet comme spécifié dans
   [BIN24-1][] et [BIP347][]. Il a également inclus "une nouvelle sous-commande `evalscript` pour
   `bitcoin-util` qui peut
-1. être utilisée pour tester le comportement des opcodes de script". Le support
-  a été supprimé pour `annexdatacarrier` et les pseudo [ancres éphémères][topic ephemeral anchors].
+1. être utilisée pour tester le comportement des opcodes de script". La prise en charge
+  de `annexdatacarrier` et des pseudo [ancres éphémères][topic ephemeral anchors] a été supprimée.
 
-- [LND v0.18.0-beta][] a ajouté un support expérimental pour les _frais de routage entrants_, la
+- [LND v0.18.0-beta][] prend en charge de façon expérimentale les _frais de routage entrants_, la
   recherche de chemin pour les [chemins aveuglés][topic rv routing], les [watchtowers][topic
   watchtowers] pour les [canaux taproot simples][topic simple taproot channels], et a simplifié
   l'envoi d'informations de débogage cryptées.
@@ -1060,9 +1060,9 @@ de consensus difficile.
   d'[offre][topic offers], et a corrigé un problème de surpaiement de frais lorsque l'option de
   configuration `ignore_fee_limits` est utilisée.
 
-- [HWI 3.1.0][] a ajouté le support pour Trezor Safe 5.
+- [HWI 3.1.0][] prend en charge Trezor Safe 5.
 
-- [Bitcoin Core 28.0][] a ajouté le support pour [testnet4][topic testnet],
+- [Bitcoin Core 28.0][] prend en charge le [testnet4][topic testnet],
   l'opportunisme un-parent-un-enfant (1p1c) des [relais de paquets][topic package relay], relais par
   défaut des transactions opt-in topologiquement restreintes jusqu'à confirmation ([TRUC][topic v3
   transaction relay]), relais par défaut des transactions [pay-to-anchor][topic ephemeral anchors],
@@ -1072,7 +1072,7 @@ de consensus difficile.
   torrent).
 
 - [BTCPay Server 2.0.0][] a ajouté "une meilleure localisation, une navigation latérale, un flux
-  d'intégration amélioré, des options de personnalisation améliorées, [et] un support pour des
+  d'intégration amélioré, des options de personnalisation améliorées, [et] prend en charge les
   fournisseurs de taux plugables." La mise à niveau comprend quelques changements majeurs et des
   migrations de base de données.
 
@@ -1082,7 +1082,7 @@ de consensus difficile.
 
 - [BDK 0.30.0][] est préparé pour la mise à niveau anticipée à la version 1.0 de la bibliothèque.
 
-- [Eclair v0.11.0][] "a ajouté un support officiel pour les [offres][topic offers] BOLT12 et a
+- [Eclair v0.11.0][] "prend en charge les [offres][topic offers] BOLT12 et a
   progressé sur les fonctionnalités de gestion de liquidité ([splicing][topic splicing], [publicités
   de liquidité][topic liquidity advertisements], et [financement à la volée][topic jit channels])." La
   version a également cessé d'accepter de nouveaux [canaux non-ancré][topic anchor outputs].
