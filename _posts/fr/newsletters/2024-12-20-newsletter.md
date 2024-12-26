@@ -172,7 +172,7 @@ ZmnSCPxj a proposé des scripts sans confiance permettant à deux parties de [pa
 taux de frais de bloc][news291 bets]. Un utilisateur souhaitant qu'une transaction soit confirmée
 par un futur bloc peut utiliser cela pour compenser le risque que les [taux de frais][topic fee
 estimation] soient inhabituellement élevés à ce moment-là.
- Un mineur s'attendant à miner un bloc
+Un mineur s'attendant à miner un bloc
 autour du moment où l'utilisateur a besoin que sa transaction soit confirmée peut utiliser ce
 contrat pour compenser le risque que les taux de frais soient inhabituellement bas. La conception
 empêche la manipulation observée dans les marchés centralisés, car les décisions du mineur reposent
@@ -294,8 +294,7 @@ et les compromis entre elles étaient encore en [discussion][news332 ccsf] en d�
 
 En octobre, Antoine Poinsot et Niklas Gögge ont révélé une autre [vulnérabilité de défaillance de
 consensus][news324 btcd] affectant le nœud complet btcd. Depuis la version originale de Bitcoin,
-elle a contenu une fonction obscure (mais critique) utilisée pour extraire les signatures
- des
+elle a contenu une fonction obscure (mais critique) utilisée pour extraire les signatures des
 scripts avant de les hacher. L'implémentation dans btcd différait légèrement de la version originale
 héritée par Bitcoin Core, permettant à un attaquant de créer des transactions qui seraient acceptées
 par un nœud mais rejetées par l'autre, ce qui pourrait être utilisé de diverses manières pour faire
@@ -432,8 +431,7 @@ risques juridiques.
 ## Résumé 2024 : Cluster mempool
 
 Une idée pour une [refonte du mempool][news251 cluster] de 2023 est devenue un point d'attention
-particulier pour plusieurs développeurs de Bitcoin
- Core tout au long de 2024. Le cluster mempool
+particulier pour plusieurs développeurs de Bitcoin Core tout au long de 2024. Le cluster mempool
 rend beaucoup plus facile de raisonner sur l'effet des transactions sur tous les blocs qu'un mineur
 créerait s'il possède un
 mempool identique à celui du nœud local. Cela peut rendre l'éviction des transactions plus
@@ -568,8 +566,8 @@ renvoie à plusieurs algorithmes potentiels ainsi qu'à leur taille attendue onc
 des algorithmes et les détails spécifiques de mise en œuvre ont été laissés pour une discussion
 future.
 
-<div markdown="1" class="callout"
- id="p2prelay">
+<div markdown="1" class="callout" id="p2prelay">
+
 ## Résumé 2024 : Relais de transaction P2P
 
 La gestion des frais a toujours été un défi dans le protocole Bitcoin décentralisé, mais
@@ -695,8 +693,7 @@ des utilisateurs.
 
 {:#musigthresh}
 Juillet a vu la [fusion][news310 musig] de plusieurs BIPs qui aideront différents logiciels à interagir pour créer
-des
- signatures [MuSig2][topic musig]. Plus tard dans le mois, Sivaram Dhakshinamoorthy a [annoncé][news315
+des signatures [MuSig2][topic musig]. Plus tard dans le mois, Sivaram Dhakshinamoorthy a [annoncé][news315
 threshsig] une proposition de BIP pour créer des [signatures seuil][topic threshold signature] sans script pour
 l'implémentation de Bitcoin des [signatures schnorr][topic schnorr signatures]. Cela permet à un
 ensemble de signataires ayant déjà effectué une procédure de configuration (par exemple, en
@@ -903,8 +900,7 @@ Jeremy Rubin [a publié][news306 fecov] un document théorisant l'utilisation du
 fonctionnel pour ajouter une gamme complète de comportements de covenant à
 Bitcoin sans recourir à des changements de consensus. En essence, le chiffrement fonctionnel permettrait la
 création d'une clé publique qui correspondrait à un programme particulier. Une partie qui pourrait
-satisfaire le programme serait capable de créer une signature qui correspondrait
- à la clé publique
+satisfaire le programme serait capable de créer une signature qui correspondrait à la clé publique
 (sans jamais apprendre une clé privée correspondante). Cela est toujours plus privé et économisera
 souvent de l'espace par rapport aux covenants précédemment proposés. Malheureusement, un
 inconvénient majeur du chiffrement fonctionnel, selon Rubin, est qu'il s'agit d'une "cryptographie
@@ -1283,8 +1279,7 @@ bulletin hebdomadaire Optech reprendra son calendrier de publication régulier l
 [news290 dualfund]: /fr/newsletters/2024/02/21/#bolts-851
 [news291 bets]: /fr/newsletters/2024/02/28/#contrat-sans-confiance-pour-les-futures-sur-les-frais-de-transaction-des-mineurs
 [news295 fees]: /fr/newsletters/2024/03/27/#estimation-du-taux-de-frais-basee-sur-le-mempool
-[news295
- sponsor]: /fr/newsletters/2024/03/27/#ameliorations-du-parrainage-des-frais-de-transaction
+[news295 sponsor]: /fr/newsletters/2024/03/27/#ameliorations-du-parrainage-des-frais-de-transaction
 [news286 binana]: /fr/newsletters/2024/01/24/#nouveau-referentiel-de-documentation
 [news292 bips]: /fr/newsletters/2024/03/06/#discussion-sur-l-ajout-de-plus-d-editeurs-bip
 [news296 ccsf]: /fr/newsletters/2024/04/03/#revisiter-le-nettoyage-du-consensus
@@ -1389,8 +1384,7 @@ bulletin hebdomadaire Optech reprendra son calendrier de publication régulier l
 [news306 catfaucet]: /fr/newsletters/2024/06/07/#script-op-cat-pour-valider-la-preuve-de-travail
 [topics index]: /en/topics/
 [news315 elftracezk]: /fr/newsletters/2024/08/09/#verification-optimiste-des-preuves-a-connaissance-nulle-en-utilisant-cat-matt-et-elftrace
-[news319 catmillion]:
- /fr/newsletters/2024/09/06/#fonds-de-recherche-op-cat
+[news319 catmillion]: /fr/newsletters/2024/09/06/#fonds-de-recherche-op-cat
 [news330 sigactivity]: /fr/newsletters/2024/11/22/#rapport-d-activite-signet
 [news330 paircommit]: /fr/newsletters/2024/11/22/#mise-a-jour-de-la-proposition-lnhance
 [news330 covgrind]: /fr/newsletters/2024/11/22/#covenants-bases-sur-la-rectification-plutot-que-sur-des-changements-de-consensus
