@@ -102,7 +102,7 @@ lang: zh
 [dashjr alm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018835.html
 [corallo bot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018849.html
 [corallo ignore repo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018859.html
-[news136 safegcd]: zh/newsletters/2021/02/17/#faster-signature-operations
+[news136 safegcd]: /zh/newsletters/2021/02/17/#faster-signature-operations
 [coq]: https://coq.inria.fr/
 [news69 signcheck rpc]: /zh/newsletters/2019/10/23/#c-lightning-3150
 [news110 signmessage rpc]: /zh/newsletters/2020/08/12/#eclair-1499
