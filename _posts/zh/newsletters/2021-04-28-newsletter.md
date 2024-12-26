@@ -91,24 +91,24 @@ lang: zh
 [u2f]: https://en.wikipedia.org/wiki/Universal_2nd_Factor
 [russell splicing post]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/002999.html
 [russell old splice]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-October/001434.html
-[news17 splice]: /en/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
+[news17 splice]: /zh/newsletters/2018/10/16/#proposal-for-lightning-network-payment-channel-splicing
 [riard workshop]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-April/003002.html
 [riard zoology]: https://github.com/ariard/L2-zoology
-[news116 sponsorship]: /en/newsletters/2020/09/23/#transaction-fee-sponsorship
+[news116 sponsorship]: /zh/newsletters/2020/09/23/#transaction-fee-sponsorship
 [fournier otves]: https://github.com/LLFourn/one-time-VES/blob/master/main.pdf
 [ecdh warning]: https://github.com/ElementsProject/secp256k1-zkp/pull/117/commits/6955af5ca8930aa674e5fdbc4343e722b25e0ca8#diff-0bc5e1a03ce026e8fea9bfb91a5334cc545fbd7ba78ad83ae5489b52e4e48856R14-R27
-[news92 ecdsa adaptor]: /en/newsletters/2020/04/08/#work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures
+[news92 ecdsa adaptor]: /zh/newsletters/2020/04/08/#work-on-ptlcs-for-ln-using-simplified-ecdsa-adaptor-signatures
 [libsecp256k1-zkp #117]: https://github.com/ElementsProject/secp256k1-zkp/pull/117
 [dashjr alm]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018835.html
 [corallo bot]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018849.html
 [corallo ignore repo]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018859.html
-[news136 safegcd]: /en/newsletters/2021/02/17/#faster-signature-operations
+[news136 safegcd]: zh/newsletters/2021/02/17/#faster-signature-operations
 [coq]: https://coq.inria.fr/
-[news69 signcheck rpc]: /en/newsletters/2019/10/23/#c-lightning-3150
-[news110 signmessage rpc]: /en/newsletters/2020/08/12/#eclair-1499
+[news69 signcheck rpc]: /zh/newsletters/2019/10/23/#c-lightning-3150
+[news110 signmessage rpc]: /zh/newsletters/2020/08/12/#eclair-1499
 [bip9 state]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#state-transitions
 [bip113 spec]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki#specification
-[news46 complex spending]: /en/newsletters/2019/05/14/#complex-spending-with-taproot
+[news46 complex spending]: /zh/newsletters/2019/05/14/#complex-spending-with-taproot
 [opentimestamps]: https://opentimestamps.org/
 [sign-to-contract blog]: https://blog.eternitywall.com/2018/04/13/sign-to-contract/
 [pay-to-contract se]: https://bitcoin.stackexchange.com/a/37208/87121
