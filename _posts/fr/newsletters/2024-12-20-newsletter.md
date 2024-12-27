@@ -68,7 +68,7 @@ excerpt : >
   * [channel factories d'arborescence à délai d'expiration SuperScalar](#superscalar)
   * [Résolution de paiement offchain rapide et économique pour de faibles valeurs](#opr)
 * Décembre
-* Résumés en vedette *
+* Résumés en vedette
   * [Divulgations de vulnérabilités](#vulnreports)
   * [Mempool en cluster](#cluster)
   * [Relais de transactions P2P](#p2prelay)
