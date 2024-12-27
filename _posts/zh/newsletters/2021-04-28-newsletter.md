@@ -108,7 +108,7 @@ lang: zh
 [news110 signmessage rpc]: /zh/newsletters/2020/08/12/#eclair-1499
 [bip9 state]: https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#state-transitions
 [bip113 spec]: https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki#specification
-[news46 complex spending]: /zh/newsletters/2019/05/14/#complex-spending-with-taproot
+[news46 complex spending]: /zh/newsletters/2019/05/14/#使用-taproot-的复杂支出
 [opentimestamps]: https://opentimestamps.org/
 [sign-to-contract blog]: https://blog.eternitywall.com/2018/04/13/sign-to-contract/
 [pay-to-contract se]: https://bitcoin.stackexchange.com/a/37208/87121
