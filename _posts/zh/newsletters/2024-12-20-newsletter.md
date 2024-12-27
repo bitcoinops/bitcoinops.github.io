@@ -1283,7 +1283,7 @@ Optech 很幸运且感激地收到了来自[人权基金会][Human Rights Founda
 [news310 msbip]: /zh/newsletters/2024/07/05/#bips-1610
 [news304 msbip]: /zh/newsletters/2024/05/24/#proposed-miniscript-bip-miniscript-bip
 [news333 deplete]: /zh/newsletters/2024/12/13/#insights-into-channel-depletion
-[news307 quant]: /zh/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
+[news307 quant]: /zh/newsletters/2024/06/14/#draft-bip-for-quantumsafe-address-format-bip
 [news317 blip39]: /zh/newsletters/2024/08/23/#blips-39
 [news319 merkle]: /zh/newsletters/2024/09/06/#mitigating-merkle-tree-vulnerabilities
 [news292 merkle]: /zh/newsletters/2024/03/06/#bitcoin-core-29412
