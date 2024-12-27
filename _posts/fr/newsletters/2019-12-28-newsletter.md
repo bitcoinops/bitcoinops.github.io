@@ -556,7 +556,7 @@ d'acceptation finale avant de voir le déploiement sur le réseau.
   Partiellement Signées ([PSBTs][topic psbt]) et les [descripteurs de scripts de sortie][topic
   descriptors].
 
-- <a href="/fr/newsletters/2019/03/26/#loop-annoncé">Lightning Loop</a> publié en mars (avec le
+- <a href="/en/newsletters/2019/03/26/#loop-announced">Lightning Loop</a> publié en mars (avec le
   support de loop-in ajouté en juin) fournit un service non-custodial qui permet aux utilisateurs
   d'ajouter ou de retirer des fonds de leurs canaux LN sans fermer les canaux existants
   ou en ouvrir de nouveaux.
