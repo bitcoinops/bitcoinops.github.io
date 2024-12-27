@@ -466,8 +466,7 @@ bulletins d'information et articles de blog traduits dans des langues telles que
 des [notebooks jupyter][], et publié des rapports de terrain de [BTSE][] et [BRD][].
 
 Nous avons de grands projets pour 2020, donc nous espérons que vous continuerez à nous suivre sur
-[Twitter][], à vous abonner à notre [bulletin d'information hebdomadaire][], ou à suivre notre [flux
-RSS][].
+[Twitter][], à vous abonner à notre [bulletin d'information hebdomadaire][], ou à suivre notre [RSS feed][].
 
 </div>
 
