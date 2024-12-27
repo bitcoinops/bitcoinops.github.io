@@ -87,7 +87,7 @@ Optech 建立之初的目标非常简单：帮助比特币企业采纳能够使�
   为 `getnodeaddresses` RPC 添加了一个名为 `network` 的参数。当将该参数设置为所支持的网络类型（如 `ipv4`、`ipv6`、`onion` 或 `i2p`）时，`getnodeaddresses` 将只返回该网络上已知的地址；如果不指定 `network` 参数，则会返回所有网络上已知的地址。
 
 - [Eclair #1810][]
-  强制节点必须声明并遵守 `payment_secret` 功能位。这个功能位可以阻止[对收款方进行去匿名化的攻击][payment secrets recipient deanon]，并进一步防御 [CVE-2020-26896][improper image revelation] 所涉及的不当散列值泄漏。该功能已被主流实现所支持，并在 [LND][LND paysec] 和 [Rust-Lightning][RL paysec] 中要求对支付启用此功能。
+  强制节点必须声明并遵守 `payment_secret` 功能位。这个功能位可以阻止[对收款方进行去匿名化的攻击][payment secrets recipient deanon]，并进一步防御[不正确的图像揭示][CVE-2020-26896]所涉及的不当散列值泄漏。该功能已被主流实现所支持，并在 [LND][LND paysec] 和 [Rust-Lightning][RL paysec] 中要求对支付启用此功能。
 
 - [Eclair #1774][]
   在 Java 内置的 `SecureRandom()` [CSPRNG][] 函数之外增加了一个较弱随机数来源。将此较弱随机数进行哈希，然后将其摘要与主随机数源生成的结果进行异或，这样即便将来 `SecureRandom()` 被发现存在某些可预测性漏洞，Eclair 依然有机会保留足够的熵，以确保其密码操作不会被利用。
