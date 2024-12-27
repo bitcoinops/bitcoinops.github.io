@@ -20,7 +20,7 @@ lang: zh
 
 Optech 建立之初的目标非常简单：帮助比特币企业采纳能够使比特币扩容的技术，并关注比特币开源社区中发生的卓越技术工作。虽然三年前我们无法完全预见这些工作的形态，但我们始终相信这一使命，并以此指导我们所做的工作。自 2018 年 6 月以来，我们：
 
-* 发布了 150 篇 [Newsletters][]、多篇 [博客 posts][] 和实地报告，以及一篇 [Bech32 系列][bech32]专题报道，并推出了一个 [Taproot 互动式研讨会][interactive taproot workshop]。整体而言，我们已发布了约 25 万字内容——足以印制大约 700 页纸。<!-- wc _posts/en/newsletters/*md _posts/en/*md
+* 发布了 150 篇 [Newsletters][]、多篇[博客 posts][blog posts] 和实地报告，以及一篇 [Bech32 系列][bech32]专题报道，并推出了一个 [Taproot 互动式研讨会][interactive taproot workshop]。整体而言，我们已发布了约 25 万字内容——足以印制大约 700 页纸。<!-- wc _posts/en/newsletters/*md _posts/en/*md
   _includes/articles/*md _includes/specials/2019-exec-briefing/*md
   _includes/specials/bech32/*md-->
 
