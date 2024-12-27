@@ -131,7 +131,7 @@ solution ou une autre.
 <div markdown="1" id="miniscript">
 
 Également en février, Pieter Wuille a donné une [présentation][wuille sbc
-miniscript] lors de la [Stanford Blockchain Conference][] sur [miniscript][sujet miniscript], une
+miniscript] lors de la [Stanford Blockchain Conference][] sur [miniscript][topic miniscript], une
 déclinaison de son travail sur les descripteurs de script de sortie. Miniscript fournit une
 représentation structurée des scripts Bitcoin qui simplifie l'analyse automatisée par des logiciels.
 L'analyse peut déterminer quelles données un portefeuille doit fournir pour satisfaire le script
@@ -401,7 +401,7 @@ déconnectent pendant de longues périodes ne perdent pas d'argent.
 Les watchtowers altruistes seraient finalement publiés dans [LND 0.7.0-beta][lnd 0.7-beta] et
 verraient un développement supplémentaire tout au long de l'année, y compris une [proposition de
 spécification][watchtower spec] et une [discussion][eltoo watchtowers] sur la manière dont ils pourraient
-être combinés avec des canaux de paiement de nouvelle génération tels que [eltoo][sujet eltoo].
+être combinés avec des canaux de paiement de nouvelle génération tels que [eltoo][topic eltoo].
 
 </div>
 
