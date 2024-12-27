@@ -7,6 +7,8 @@ type: newsletter
 layout: newsletter
 lang: zh
 ---
+本周的 Newsletter 宣布了多个 IRC 频道的网络迁移，并庆祝 Optech 的第 150 期 Newsletter。同时也包含我们常规的 Bitcoin Stack Exchange 热门问答栏目、新软件版本及候选发布版本，以及对常用比特币基础设施项目的值得注意的变更内容。
+
 ## 新闻
 
 - **<!--irc-channels-moving-to-libera-chat-->****IRC 频道迁移至 Libera.Chat：**在每周的 Bitcoin Core 开发者会议中，[bccdev meeting libera] 决定 5 月 27 日（周四）的会议将是最后一次在 Freenode 网络上举行的会议。机器人、日志记录和其他基础设施、今后会议以及一般讨论都将迁移至 [Libera.Chat][] 网络上的 `#bitcoin-core-dev` 频道。就在发布本 Newsletter 前不久，Freenode 管理员的操作似乎导致此次迁移被迫提前至周三早晨（UTC 时间）。与 Bitcoin 和闪电网络（LN）相关的其他几个频道也在迁移。要查找各频道当前所在的网络，请参阅 Bitcoin Wiki 上的 [IRC 频道列表][list of IRC channels]。如果你运营的频道正在迁移但没有 Wiki 帐号来更新该列表，请在 Libera 上的 `#bitcoin-wiki` 频道告知编辑人员。
