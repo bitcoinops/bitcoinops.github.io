@@ -40,7 +40,7 @@ excerpt: >
   72450 total
 {% endcomment %}
 
-Ce résumé est largement basé sur nos [bulletins hebdomadaires][] de l'année dernière pour lesquels
+Ce résumé est largement basé sur nos [bulletins d'information hebdomadaire][] de l'année dernière pour lesquels
 nous avons examiné près de 9 000 commits (près de 2 000 fusions), plus de 1 500 messages sur la
 liste de diffusion, de nombreuses milliers de lignes de logs IRC, et de nombreuses autres sources
 publiques. Il nous a fallu 50 numéros de bulletin et plus de 200 pages imprimées de contenu pour
@@ -459,7 +459,7 @@ Au cours de la deuxième année d'Optech, nous avons accueilli six nouvelles ent
 organisé un [briefing exécutif][optech executive briefing] lors de la semaine de la blockchain à New
 York, publié une [série de 24 semaines][bech32 sending support] promouvant le support de l'envoi en
 bech32, ajouté une matrice de compatibilité des portefeuilles et des services à notre site web,
-publié 51 [bulletins d'information hebdomadaires][]<!-- #28 à #78, inclus -->, vu plusieurs de nos
+publié 51 [bulletins d'information hebdomadaire][]<!-- #28 à #78, inclus -->, vu plusieurs de nos
 bulletins d'information et articles de blog traduits dans des langues telles que le
 [japonais][xlation ja] et l'[espagnol][xlation es], créé un [index des sujets][], ajouté un chapitre
 à notre [Cahier de travail sur la scalabilité][], organisé deux [ateliers schnorr/taproot][] avec
@@ -650,7 +650,7 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 {% include references.md %}
 {% include linkers/issues.md issues="16800,16411,17268,17292" %}
 [#14897]: /en/newsletters/2019/02/12/#bitcoin-core-14897
-[2018 summary]: /en/newsletters/2018/12/28/
+[résumé de 2018]: /en/newsletters/2018/12/28/
 [altruist watchtowers]: /en/newsletters/2019/06/19/#lnd-3133
 [anchor miniscript]: https://github.com/lightningnetwork/lightning-rfc/pull/688#pullrequestreview-326862133
 [anchor outputs]: /en/newsletters/2019/10/30/#ln-simplified-commitments
@@ -676,14 +676,14 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [dual-funding serialization]: https://twitter.com/rusty_twit/status/1179976386619928576
 [dumptxoutset]: /en/newsletters/2019/11/13/#bitcoin-core-16899
 [eclair 0.3]: https://github.com/ACINQ/eclair/releases/tag/v0.3
-[eclipse attacks]: https://eprint.iacr.org/2015/263.pdf
+[attaques d'éclipse]: https://eprint.iacr.org/2015/263.pdf
 [edge dev++]: /en/newsletters/2019/09/18/#bitcoin-edge-dev
 [eltoo watchtowers]: /en/newsletters/2019/12/11/#watchtowers-for-eltoo-payment-channels
 [exp tramp]: /en/newsletters/2019/11/20/#eclair-1209
 [gitian]: https://github.com/devrandom/gitian-builder
 [guix merge]: /en/newsletters/2019/07/17/#bitcoin-core-15277
 [heartbleed]: https://bitcoin.org/en/alert/2014-04-11-heartbleed
-[jupyter notebooks]: https://github.com/bitcoinops/taproot-workshop#readme
+[notebooks jupyter]: https://github.com/bitcoinops/taproot-workshop#readme
 [libsecp256k1 sig speedup]: https://bitcoincore.org/en/2016/02/23/release-0.12.0/#x-faster-signature-validation
 [lightning loop]: /en/newsletters/2019/03/26/#loop-announced
 [ln1.1]: /en/newsletters/2018/11/20/#feature-news-lightning-network-protocol-11-goals
@@ -702,33 +702,34 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [news37 merkle tree attacks]: /en/newsletters/2019/03/05/#merkle-tree-attacks
 [news61 miniscript feedback]: /en/newsletters/2019/08/28/#miniscript-request-for-comments
 [news67 bolts676]: /en/newsletters/2019/10/09/#bolts-676
-[newsletters]: /en/newsletters/
+[bulletin d'information hebdomadaire]: /en/newsletters/
+[bulletins d'information hebdomadaire]: /en/newsletters/
 [non-strict der]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html
 [optech executive briefing]: /en/2019-exec-briefing/
-[proof of reserves tool]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
+[outil de preuve de réserves]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [rm openssl]: /en/newsletters/2019/11/27/#bitcoin-core-17265
 [roose reserves]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
-[scalability workbook]: https://github.com/bitcoinops/scaling-book
+[cahier de travail sur la scalabilité]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
-[schnorr/taproot workshops]: /en/schnorr-taproot-workshop/
+[ateliers schnorr/taproot]: /en/schnorr-taproot-workshop/
 [snicker]: /en/newsletters/2019/09/04/#snicker-proposed
 [stanford blockchain conference]: /en/newsletters/2019/02/05/#notable-talks-from-the-stanford-blockchain-conference
 [sybil attacks]: https://en.wikipedia.org/wiki/Sybil_attack
 [taproot review]: /en/newsletters/2019/10/23/#taproot-review
-[time warp attack]: /en/newsletters/2019/03/05/#the-time-warp-attack
-[topics index]: /en/topics/
+[attaque de décalage temporel]: /en/newsletters/2019/03/05/#the-time-warp-attack
+[index des sujets]: /en/topics/
 [trampoline proposed]: /en/newsletters/2019/04/02/#trampoline-payments-for-ln
 [trampolines pr]: /en/newsletters/2019/08/07/#trampoline-payments
-[trusting trust]: https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
+[confiance aveugle]: https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
 [twitter]: https://twitter.com/bitcoinoptech/
-[two extra outbound connections]: /en/newsletters/2019/09/11/#bitcoin-core-15759
+[deux connexions sortantes supplémentaires]: /en/newsletters/2019/09/11/#bitcoin-core-15759
 [txprobe]: /en/newsletters/2019/09/18/#txprobe-discovering-bitcoin-s-network-topology-using-orphan-transactions
-[vaults on bitcoin without using covenants]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
+[coffres-forts sur Bitcoin sans utiliser de covenants]: /en/newsletters/2019/08/14/#bitcoin-vaults-without-covenants
 [wasabi hwi]: https://github.com/zkSNACKs/WalletWasabi/releases/tag/v1.1.4
 [watchtower spec]: /en/newsletters/2019/12/04/#proposed-watchtower-bolt
 [weekly newsletter]: /en/newsletters/
 [weekly newsletters]: /en/newsletters/
-[worst case cpu usage]: /en/newsletters/2019/03/05/#legacy-transaction-verification
+[utilisation CPU maximale]: /en/newsletters/2019/03/05/#legacy-transaction-verification
 [wuille sbc miniscript]: /en/newsletters/2019/02/05/#miniscript
 [xlation es]: /es/publications/
 [xlation ja]: /ja/publications/
