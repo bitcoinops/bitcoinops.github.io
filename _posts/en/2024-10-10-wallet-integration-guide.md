@@ -209,8 +209,8 @@ addition to the topological restrictions.
 
 In short, a TRUC transaction is a transaction with an nVersion of 3, which
 restricts the transaction to either a singleton of up to 10kvB, or the child of
-exactly one TRUC transaction capped at 1kvB. A TRUC transaction cannot spend a
-non-TRUC transaction, and vice versa. All TRUC transactions are considered
+exactly one TRUC transaction capped at 1kvB. A TRUC transaction cannot spend an
+unconfirmed non-TRUC transaction, and vice versa. All TRUC transactions are considered
 opt-in RBF regardless of [BIP125][] signaling. If another non-conflicting TRUC
 child is added to the parent TRUC transaction, it will be treated as a
 [conflict][topic kindred rbf] with the original child, and normal RBF resolution
