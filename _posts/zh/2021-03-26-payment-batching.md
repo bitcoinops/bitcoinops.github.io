@@ -9,9 +9,7 @@ lang: zh
 version: 1
 
 excerpt: >
-  Bitcoin Optech's perspective on how high-frequency spenders can use the
-  scaling technique of payment batching to reduce transaction sizes and fees by
-  about 75% in practical situations.
+  Bitcoin Optech 关于高频支付用户如何利用批量支付（payment batching）这一扩容技术，在实际使用场景下将交易大小和手续费降低约 75% 的观点。
 
 ---
 {% include articles/zh/payment-batching.md %}
