@@ -30,27 +30,27 @@ excerpt: >
   * [Enhanced feerate estimation](#enhancedfeeestimates)
   * [More efficient transaction sponsorship](#efficientsponsors)
 * April
-  * [Consensus cleanup](#consensuscleanup)
-  * [Reforming the BIPs process](#bip2reform)
-  * [Inbound routing fees](#inboundrouting)
-  * [Weak blocks](#weakblocks)
-  * [Restarting testnet](#testnet)
-  * [Developers arrested](#devarrests)
+  * [共识漏洞清理](#consensuscleanup)
+  * [重塑 BIP 流程](#bip2reform)
+  * [入账路由费](#inboundrouting)
+  * [准区块](#weakblocks)
+  * [重启测试网](#testnet)
+  * [开发者被逮捕](#devarrests)
 * May
-  * [Silent payments](#silentpayments)
+  * [静默支付](#silentpayments)
   * [BitVMX](#bitvmx)
-  * [Anonymous usage tokens](#aut)
-  * [LN channel upgrades](#lnup)
-  * [Ecash for pool miners](#minecash)
-  * [Miniscript specification](#miniscript)
-  * [Utreexo beta](#utreexod)
+  * [匿名使用的 token](#aut)
+  * [闪电通道升级](#lnup)
+  * [为参加矿池的矿工设计的 Ecash](#minecash)
+  * [Miniscript 规范](#miniscript)
+  * [Utreexo 的 beta 版](#utreexod)
 * June
-  * [LN payment feasibility and channel depletion](#lnfeasibility)
-  * [Quantum-resistant transaction signing](#quantumsign)
+  * [闪电支付的可行性与通道耗竭](#lnfeasibility)
+  * [抗量子计算的交易签名](#quantumsign)
 * July
-  * [Blinded paths for BOLT11 invoices](#bolt11blind)
-  * [ChillDKG key generation for threshold signatures](#chilldkg)
-  * [BIPs for MuSig and threshold signatures](#musigthresh)
+  * [在 BOLT11 发票中包含盲化路径](#bolt11blind)
+  * [门限签名的密钥生成算法 ChillDKG](#chilldkg)
+  * [MuSig 和门限签名的 BIP](#musigthresh)
 * 八月
   * [Hyperion网络模拟器](#hyperion)
   * [完全 RBF](#fullrbf)
@@ -393,396 +393,108 @@ though trustless outsourcing remains an issue. Suhas Daftuar cautioned
 that sponsorship could create problems for non-participating users,
 suggesting it be opt-in if adopted to avoid unintended impacts.
 
-## April
+## 四月
 
 {:#consensuscleanup}
-Antoine Poinsot [revisited][news296 ccsf] Matt Corallo's 2019 consensus
-cleanup proposal, addressing issues like slow block verification, time
-warp attacks allowing theft, and [fake transaction vulnerabilities][topic merkle tree vulnerabilities]
-affecting light clients and full nodes. Poinsot also highlighted the
-[duplicate transactions][topic duplicate transactions] problem that will affect full nodes at block
-1,983,702. All issues have soft-fork solutions, though one proposed fix
-for slow-verification blocks faced concerns over potentially
-invalidating rare presigned transactions.  One of the proposed updates
-received significant [discussion][news319 merkle] in August and
-September that looked at alternative methods for mitigating merkle tree
-vulnerabilities that affect lightweight clients and even (sometimes)
-full nodes.  Although Bitcoin Core mitigated vulnerabilities as far as
-possible, a previous refactor dropped essential protections, so Niklas
-Gögge wrote code for Bitcoin Core that detects all currently detectable
-vulnerabilities as early as possible and rejects invalid blocks.  In
-December, discussion [turned][news332 zmwarp] to using the consensus cleanup
-soft fork to fix the Zawy-Murch variant of the [time warp
-vulnerability][topic time warp] that was discovered after the
-implementation on [testnet4][topic testnet] of rules designed for the
-original consensus cleanup proposal.
+Antoine Poinsot [回顾][news296 ccsf]了 Matt Corallo 在 2019 年提出的 “共识漏洞清理” 提议；该提议尝试解决最慢区块验证、允许盗窃的时间扭曲攻击，以及影响轻客户端和全节点的[虚假交易漏洞][topic merkle tree vulnerabilities]。Poinsot 也着重指出将在区块高度 198 3702 处影响全节点的[交易 ID 重合][topic duplicate transactions]问题。所有问题都有软分叉解决方案，虽然对最慢区块验证的一项提议修复面临可能会让一些罕见的预签名交易作废的担忧。被提议的其中一项更新在八月和九月获得了重要的[讨论][news319 merkle]，目的是寻找影响轻客户端甚至（有些时候的）全节点的默克尔树漏洞的替代性解决方案。虽然 Bitcoin Core 曾经尽可能缓解了漏洞，一次之前的代码重构放弃了必要的保护，所以 Niklas Gögge 为 Bitcoin Core 编写了尽早检测所有可发现的漏洞并拒绝无效区块的代码。在十二月，讨论[转向][news332 zmwarp]使用共识漏洞清理软分叉来修复[时间扭曲漏洞][topic time warp]的 Zawy-Murch 变体，该变体是在最初为共识清理提议设计的规则在 [testnet4][topic testnet] 上实现之后发现的。
 
 {:#bip2reform}
-A spin-off of the discussion about adding a new BIPs editor saw a desire
-to [reform BIP2][news297 bips], which specifies the current process for
-adding new BIPs and updating existing BIPs.   Discussion
-[continued][news303 bip2] the following month, and September saw the
-publication of a [draft BIP][news322 newbip2] for an updated process.
+在关于添加新的 BIP 编辑的讨论过程中反映出了人们[革新 BIP2][news297 bips] 的愿望，该 BIP 指明了现在添加新的 BIP 以及更新现有 BIP 的的流程。讨论[持续][news303 bip2]了几个月；在九月，一份关于更新后的流程的[BIP 草案][news322 newbip2]出现了。
+
 
 {:#inboundrouting}
-LND introduced [support for inbound routing fees][news297 inbound],
-championed by Joost Jager, which allows nodes to charge channel-specific
-fees for payments received from peers.  This helps nodes manage
-liquidity, such as charging higher fees for inbound payments from poorly
-managed nodes.  Inbound fees are
-backward-compatible, initially set to negative (e.g., discounts) to work
-with older nodes.  Although proposed years ago, other LN implementations
-have resisted the feature, citing design concerns and compatibility
-issues.  The feature saw continued development in LND throughout the
-year.
+LND 引入了[对入账路由费的支持][news297 inbound]，该特性是由 Joost Jager 领头支持的，它让节点可以向从对等节点的某一条通道中收到的支付收取手续费。这可以帮助节点管理流动性，比如向管理不善的节点的入账支付收取更高的手续费。入账路由费是后向兼容的，最初会设置成负值（例如，折扣），从而与更老的节点一起工作。虽然这项提议已经提出很多年了，其它闪电实现出于设计上的顾虑和兼容性问题而抵制这一特性。可以看出，该特性在 LND 中的开发贯穿了一整年。
 
 {:#weakblocks}
-Greg Sanders proposed [using weak blocks][news299 weakblocks]---blocks
-with insufficient proof-of-work (PoW) but valid transactions---to
-improve [compact block relay][topic compact block relay] amid divergent
-transaction relay and mining policies. Miners naturally produce weak
-blocks proportional to their PoW percentage, reflecting transactions
-they attempt to mine. Weak blocks resist abuse due to high creation
-costs, allowing mempools and caches to be updated without allowing
-excessive bandwidth waste. This could ensure compact block relay remains
-effective even when miners include non-standard transactions in blocks.
-Weak blocks could also address [pinning attacks][topic transaction
-pinning] and enhance [feerate estimation][topic fee estimation].
-Sanders's proof-of-concept implementation demonstrates the idea.
+Greg Sanders 提出[使用 “准区块（weak block）”][news299 weakblocks] —— 包含的都是有效交易但不具备足够工作量证明的区块 —— 来提高多种交易转发策略和挖矿策略中的[致密区块中继][topic compact block relay]的效率。矿工天然会生成与他们的 PoW 占比成比例的准区块，这些准区块会反映处他们尝试确认的交易。准区块可以抵御滥用，因为它的生产成本也是很高的，从而交易池和缓存都可以更新，无需浪费大量额外的带宽。这可以保证致密区块中继保持高效，甚至在矿工在区块中包含了非标准交易也是如此。准区块也可以解决 “[交易钉死攻击][topic transaction pinning]” 并改善[手续费估计][topic fee estimation]。Sander 的概念验证实现演示了这个想法。
 
 {:#testnet}
-Jameson Lopp started a discussion in April about problems with the
-current public Bitcoin [testnet][topic testnet] (testnet3) and suggested
-[restarting it][news297 testnet], potentially with a different set of
-special-case consensus rules.  In May, Fabian Jahr [announced][news306
-testnet] a draft BIP and proposed implementation for testnet4.  The
-[BIP][news315 testnet4bip] and Bitcoin Core [implementation][news315
-testnet4imp] were merged in August.
+Jameson Lopp 在四月开启了一项关于当时的比特币公开[测试网][topic testnet]（testnet3）上的问题，并建议[重启它][news297 testnet]，而且可以使用另一组专用的共识规则。五月，Fabian Jahr [宣布][news306 testnet]了一个 BIP 草案，并提议了 testnet4 的实现。这个 [BIP][news315 testnet4bip] 和 Bitcoin Core 的[实现][news315 testnet4imp]在八月合并。
 
 {:#devarrests}
-April came to an unfortunate close with news of the [arrest of two
-Bitcoin developers][news300 arrest] focused on privacy software, along with at least
-two other companies announcing their intention to stop serving U.S.
-customers due to the legal risks.
+四月在一个不幸的消息中结束：致力于隐私软件的[两位开发者被逮捕][news300 arrest]。同时，还有至少两家其他公司宣布，因为法律风险，他们希望停止服务美国客户。
 
 <div markdown="1" class="callout" id="cluster">
-## Summary 2024: Cluster mempool
+## 2024 总结：族群交易池
 
-An idea for a [mempool redesign][news251 cluster] from 2023 became a
-particular focus for several Bitcoin Core developers throughout 2024.
-Cluster mempool makes it much easier to reason about the effect of
-transactions on all the blocks a miner would create if it has an
-identical mempool to the local node's mempool.  This can make
-transaction eviction more rational and help in determining whether a
-[replacement transaction][topic rbf] (or set of transactions) is better
-than the transactions it replaces.  This can help address various
-mempool limitations that are implicated in multiple problems affecting
-contract protocols such as LN (including sometimes putting funds at
-risk).
+在 2024 年一整年，一项来自 2023 年的[重新设计交易池][news251 cluster]的想法变成了多位 Bitcoin Core 开发者的重点关注。“族群交易池（cluster mempool）” 让交易对一个矿工将要创建的所有区块的影响变得更加容易分析，只要这个矿工的交易池跟本地节点的交易池一摸一样。这可以让交易驱逐变得更加理性，并且可以帮助确定一笔（或者一组）[替代交易][topic rbf]是否比它要替代的交易更优。当前交易池的多种局限性，对许多影响合约式协议（比如闪电通道）的问题（有时会置资金于风险中）有负面影响，族群交易池可以解决这些局限性。
 
-Additionally, as seen in a January post by Abubakar Sadiq Ismail, the
-tools and insights from the design of cluster mempool may allow
-[improving fee estimation in Bitcoin Core][news283 fees].  Today,
-Bitcoin Core implements ancestor feerate mining as an incentive
-compatible way to support [CPFP fee-bumping][topic cpfp], but fee
-estimation operates on individual transactions, so CPFP fee bumps aren't
-considered.  Cluster mempool divides groups of transactions into chunks
-that can be tracked together in the mempool and then potentially located
-within mined blocks, allowing improved fee estimation (especially if
-there is an increased use of CPFP-related technology like [package
-relay][topic package relay], [P2A][topic ephemeral anchors], and
-[exogenous fee sourcing][topic fee sourcing].
+此外，如我们在一月 Abubakar Sadiq Ismail 的帖子中看到的，从族群交易池的设计中产生的工具和洞见，也许可以[改善 Bitcoin Core 的交易手续费估计][news283 fees]。今天，Bitcoin Core 将祖先费率挖矿实现为一种支持 [CPFP 手续费追加][topic cpfp] 的激励兼容方式，但手续费估计是在单体交易的基础上操作的，所以 CPFP 手续费追加不会被考虑在内。族群交易池将交易群组切分为 “分家（chunk）”，并且可以在交易池中同时跟踪这些分家，还可以在被挖掘的区块中定位他们，从而允许优化手续费估计（尤其是，如果 CPFP 相关的技术比如 “[交易包转发][topic package relay]”、“（[P2A][topic ephemeral anchors]）” 以及[外生的手续费支付][topic fee sourcing]获得更多采用的话）。
 
-As the cluster mempool project matured, multiple explanations and
-overviews were made by its architects.  Suhas Daftuar gave an
-[overview][news285 cluster] in January, which revealed one of the
-challenges of the proposal: its incompatibility with the existing [CPFP
-carve-out][topic cpfp carve out] policy.  A solution to the dilemma
-would be for existing users of carve-out to opt in to [TRUC
-transactions][topic v3 transaction relay], which provides an improved
-feature set.  Another [detailed description][news312 cluster] of cluster
-mempool was posted in July by Pieter Wuille.  It described fundamental
-principles, proposed algorithms, and linked to several pull requests.
-[Several][news314 cluster] of [those pull requests][news315 cluster] and
-[others][news331 cluster] were subsequently merged.
+随着族群交易池项目的成熟，架构师们撰写了多份解释和概述。Suhas Daftuar 在一月给出了一份[概述][news285 cluster]，揭示了该提议所面临的挑战之一：它与现有的 “[CPFP carve-out][topic cpfp carve out]” 规则不兼容。这个三难问题的一种解决方案是，让现有的的 carve-out 的用户选择性使用 “确认前拓扑受限的交易（[TRUC transactions][topic v3 transaction relay]）”，它提供了一组更优的特性。Pieter Wuille 在七月提供了另一份[详细描述][news312 cluster]。该文介绍了基本的原理、提议的算法，并链接了多项 PR。[这些 PR][news315 cluster]中的[几项][news314 cluster]以及[其它][news331 cluster]相关 PR 已经先后合并。
 
-Daftuar engaged in further thinking and research behind cluster mempool
-and related proposals like TRUC transactions.  In February, he
-[considered][news290 incentive] incentive compatibility of ideas such as
-replace-by-feerate, the differing incentives of miners with
-disproportionate amounts of hashrate, and looked for incentive compatible
-behavior that wasn't DoS resistant.  In April, he [researched][news298
-cluster] what would have happened if cluster mempool had been deployed a
-year earlier, finding that it allowed slightly more transactions into
-the mempool, didn't significantly affect transaction replacement in the
-data, and may help miners to capture more fees in the short term.
-Pieter Wuille built on the final point in August by describing
-principles and an efficient algorithm for [nearly optimal transaction
-selection][news314 mine] for miners building blocks.
+Daftuar 参与到了族群交易池和相关提议（比如 TRUC 交易）的研究和后续思考中。在二月，他[评估][news290 incentive]了多种想法（比如 “手续费率替换”）的激励兼容性，并区分了不同算力占比的矿工的不同激励，并寻找了不能抵制 DoS 但激励兼容的行为。在四月，他[研究][news298 cluster]了如果族群交易池能够早一年部署，会有什么样的影响；他发现，这会允许稍微多一些交易进入交易池，但不会显著影响观察盗的数据中的交易替换，也可能帮助矿工在短期内捕获更多手续费。基于最后一点，Pieter Wuille 在八月为构建区块的矿工介绍了原理以及一种高效的[接近最优的交易选择][news314 mine]算法。
 </div>
 
-## May
+## 五月
 
 {:#silentpayments}
-Work continued this year on making [silent payments][topic silent
-payments] more [broadly accessible][news304 sp].  Josie Baker started a
-discussion about PSBT extensions for silent payments (SPs), based on a
-draft specification by Andrew Toth.  That discussion continued into
-June with an examination of [using ECDH shares for trustless
-coordination][news308 sp].  Separately, Setor Blagogee posted a draft
-specification for a protocol to [help lightweight clients receive silent
-payments][news305 splite].  A few [tweaks][news309 sptweak] were made to
-the base SP specification in June and [two][news326 sppsbt] draft
-[BIPs][news327 sppsbt] for the proposed PSBT features were posted.
+让 “静默支付（[silent payments][topic silent payments]，SP）”能够被[广泛采用][news304 sp]的工作在今年持续。Josie Baker 开始讨论为 SP 设计一些用在 “待签名的比特币交易（PSBT）” 数据格式中的插件，根据的是 Andrew Toth 的一份规范草案。讨论持续到六月，还评估了[使用 ECDH 碎片运行免信任协作][news308 sp]的想法。此外，Setor Blagogee 为一个旨在[帮助轻客户端接收静默支付][news305 splite]的协议提出了规范草案。基本的 SP 规范在六月经历了少量[调整][news309 sptweak]，并且出现了[两种][news326 sppsbt]提议 PSBT 特性的[ BIP][news327 sppsbt]草案。
 
 {:#bitvmx}
-Sergio Demian Lerner and several co-authors [published][news303 bitvmx]
-a paper about a new virtual CPU architecture based in part on the ideas
-behind [BitVM][topic acc].  The goal of their project, BitVMX, is to be
-able to efficiently prove the proper execution of any program that can
-be compiled to run on an established CPU architecture, such as RISC-V.
-Like BitVM, BitVMX does not require any consensus changes, but it does
-require one or more designated parties to act as a trusted verifier.
-That means multiple users interactively participating in a contract
-protocol can prevent any one (or more) of the parties from withdrawing
-money from the contract unless that party successfully executes an
-arbitrary program specified by the contract.
+Sergio Demian Lerner 和多位联合作者[发表][news303 bitvmx]了一篇论文，部分基于 [BitVM][topic acc] 背后的观念设计了一种新的虚拟 CPU 架构。这个项目名叫 “BitVMX”，其目标是，让任何能够编程到在已有的 CPU 架构（比如 RISC-V）上的程序的合理执行，都能够得到高效证明。就像 BitVM，BitVMX 并不要求任何共识变更，但它需要一个或多个被指定的参与者作为受信任的验证者。这意味着，多位交互式参与一个合约式协议的用户，可以防止任何一个（和多个）参与者从合约中取出资金，除非该参与者能够成功执行一个由该合约指定的任意程序。
 
 {:#aut}
-Adam Gibson described an [anonymous usage token][news303 aut] scheme he
-developed to allow anyone who can keypath-spend a UTXO to prove they
-could spend it without revealing which UTXO it is.  One use he highlights
-is allowing LN channels to be announced without requiring owners
-identify the specific UTXOs backing those channels, which is required
-now to prevent bandwidth-wasting denial-of-service attacks.  Gibson also
-created a proof-of-concept forum that requires providing an anonymous
-proof to sign up---creating an environment where everyone is known to
-be a holder of bitcoins but no one needs to provide any identifying
-information about themselves or their bitcoins.
-Later in the year, Johan Halseth [announced][news321 utxozk] a proof-of-concept
-implementation that accomplishes most of the same goals using a
-different mechanism.
+Adam Gibson  介绍了他开发出来的一种[匿名使用的 token][news303 aut]，允许可以通过密钥路径花费一个 UTXO 的人证明自己可以花费它，且无需揭晓这个 UTXO 是哪一个。他着重指出的一个用法是让闪电通道可以公开，但无需所有者们指明通道背后的具体 UTXO（在当前，这是必需的，为了防止浪费带宽的 DoS 攻击）。Gibson 也创建了一个用作概念验证的论坛，要求提供一个匿名证据来登录 —— 这就创造了一种环境，可以认定每个人都是比特币的持有者，但又无需他们提供关于自己和他们的比特币的任何信息。晚些时候，Hohan Halseth [发布][news321 utxozk]了一个概念验证实现，使用另一种机制实现了绝大部分相同的目标。
 
 {:#lnup}
-For years, LN developers have discussed modifying the LN protocol to
-allow existing channels to be [upgraded][topic channel commitment
-upgrades] in various ways.  In May, Carla Kirk-Cohen [examined][news304
-lnup] some of these cases and compared three different proposals for
-upgrades.  A quiescence protocol was [added][news309 stfu] to the LN
-specification in June to help support upgrades and other sensitive
-operations.  October saw [renewed development][news326 ann1.75] of a proposed
-updated channel announcements protocol that would support new
-[taproot-based funding transactions][topic simple taproot channels].
+几年来，闪电网络的开发者一直在讨论修改闪电网络协议，以允许现有的通道在多个方面[升级][topic channel commitment upgrades]。在五月，Carla Kirk-Cohen [测试][news304 lnup]了部分场景，并比较了三种支持升级的提议。最终，一种休眠（quiescence）协议在六月被[添加][news309 stfu]到闪电网络规范中，以帮助升级以及其它敏感的操作。在十月，我们看到一项提议中的、更新通道公告消息的协议的[重新开发][news326 ann1.75]，它将支持新的[基于 taproot 的注资交易][topic simple taproot channels]。
 
 {:#minecash}
-Ethan Tuttle posted to Delving Bitcoin to suggest that mining pools
-could [reward miners with ecash tokens][news304 minecash] proportionate
-to the number of shares they mined. The miners could then immediately
-sell or transfer the tokens, or they could wait for the pool to mine a
-block, at which point the pool would exchange the tokens for satoshis.
-However, a concern was raised by Matt Corallo that there are no
-standardized payment methods implemented by large pools that allow pool
-miners to calculate how much they're supposed to be paid over short
-intervals.  This means miners won't quickly switch to a different pool
-if their main pool begins cheating them of payments, whether those
-payments are made with ecash or any other mechanism.
+Ethan Tueele 在 Delving Bitcoin 论坛中发帖建议矿池可以使用跟矿工的贡献数量成比例的[ecash token 来奖励矿工][news304 minecash]。这样，矿工就可以立即卖出或者转移这些 token，或者，他们可以等矿池挖出一个区块，这时候矿池就会用聪来交换撰写 token。不过，Matt Corallo 提出了一种顾虑：大型矿池还没有实现标准化的支付手段，能让矿工在一个较短的时间间隔内计算出自己可以收到多少钱。这就意味着，如果矿工的主要矿池开始欺诈，他们无法迅速切换到另一个矿池，无论矿池是用 ecash 还是其它手段来支付。
 
 {:#miniscript}
-Ava Chow [proposed][news304 msbip] a BIP for [miniscript][topic
-miniscript] in May, which became [BIP379][] in [July][news310 msbip].
+Ava Chow 在五月为 [miniscript][topic miniscript] [提出][news304 msbip]了一份 BIP。该 BIP 在[七月][news310 msbip]被命名为[BIP379][]。
 
 {:#utreexod}
-Also in May, a beta release of utreexod was [published][news302
-utreexod], allowing users to experiment with this full node design that
-minimizes disk space requirements.
+同样在五月，[出现][news302 utreexod] utreexod 的一个 beta 版本；该版本允许用户试用这种最小化硬盘空间要求的全节点设计。
 
-## June
+## 六月
 
 {:#lnfeasibility}
-René Pickhardt researched estimating the [likelihood of LN payment
-feasibility][news309 feas] by analyzing possible wealth distributions
-within channel capacities. For example, if Alice wants to send 1 BTC to
-Carol via Bob, the likelihood of success depends on whether the Alice-Bob and
-Bob-Carol channels can support the transfer. This metric highlights
-practical payment constraints and could help wallets and business
-software make smarter routing decisions, improving success rates for LN
-payments.  Later in the year, Pickhardt's research provided
-[insights][news333 deplete] into the cause and likelihood of channel
-depletion---a channel becoming unable to forward funds in a particular
-direction.  It also pointed to k>2 multiparty channel management
-protocols, such as [channel factories][topic channel factories], being
-able to greatly increase the number of feasible payments and reduce the
-rate of channel depletion.
+René Pickhardt 研究了[闪电网络可行性概率][news309 feas]的估计，办法是分析通道容量内可能的财富分布。比如说，如果 Alice 想要通过 Bob 发 1 BTC 给 Carol，成功率取决于 Alice-Bob 和 Bob-Carol 的通道能否支持这样的资金转移。这一指标突出了实际中的支付能力约束，并且可以帮助钱包软件和商用软件作出更聪明的路由选择、提高闪电支付的成功率。在今年的晚些时候，Pickhardt 的研究为通道耗竭 —— 一条通道变得无法转发特定方向的支付 —— 的原因和概率提供了[洞见][news333 deplete]。该研究也指出 k>2 的多方通道管理协议（比如[通道工厂][topic channel factories]）可以大大提高可行支付的数量、减少通道耗竭的概率。
 
 ![Example of channel depletion](/img/posts/2024-12-depletion.png)
 
 {:#quantumsign}
-Developer Hunter Beast [posted][news307 quant] a "rough draft" BIP for
-assigning version 3 segwit addresses to a [quantum-resistant signature
-algorithm][topic quantum resistance]. The draft BIP describes the
-problem and links to several potential algorithms along with their
-expected onchain size. The choice of algorithms and the specific
-implementation details was left for future discussion.
+开发者 Hunter Beast [发布][news307 quant]了一份 “粗糙的草稿” BIP， 将版本 3 的隔离见证地址分配给了一种[抗量子计算的签名算法][topic quantum resistance]。这份 BIP 草案链接了多种备选的算法，以及它们的问题和它们的预计链上体积。算法的选择和具体实现细节留待后续讨论。
 
 <div markdown="1" class="callout" id="p2prelay">
-## Summary 2024: P2P transaction relay
+## 2024 总结：P2P 交易转发
 
-Fee management has always been a challenge in the decentralized Bitcoin
-protocol, but widespread use of contract protocols such as LN-Penalty
-and ongoing research into newer and more complex protocols has made it
-more important than ever to ensure users can pay and increase fees on
-demand.  Bitcoin Core contributors have been working on this problem for
-years, and 2024 saw the public release of several new features that
-significantly improve the situation.
+手续费管理一直是去中心化的比特币协议中的一个挑战，但 LN-Penalty 这样的合约式协议的广泛使用、以及对更新更复杂的协议的持续研究，让交易的手续费管理变得前所未有地重要，因为要保证用户支付手续费并按需要追加手续费。Bitcoin Core 的贡献者们几年来一直在克服这个问题，而在 2024 年，我们看到了多项能够显著改善问题的新特性的公开发行。
 
-January began with a [discussion][news283 trucpin] of the
-worst-case [pinning][topic transaction pinning] costs for the
-[TRUC][topic v3 transaction relay] proposal that provides a more robust
-alternative to the previously deployed [CPFP carve-out][topic cpfp
-carve out] policy.  Although the worst-case costs are much lower for
-TRUC, developers considered whether tweaking a few parameters might be
-able to lower costs further.  Another [discussion][news284 exo] in
-January examined the theoretical risk that increased use of [exogenous
-fee sourcing][topic fee sourcing] would make it more efficient onchain
-(and thus cheaper) to use [out-of-band fee payments][topic out-of-band
-fees] to miners, which puts mining decentralization at risk.  Peter Todd
-suggested addressing this concern with an alternative fee management
-method: keep fees entirely endogenous by presigning multiple variations
-of each settlement transaction at varying feerates.  However, multiple
-problems were identified with this approach.
+一月从一项关于 [TRUC][topic v3 transaction relay] 提议在最差条件下克服[交易钉死攻击][topic transaction pinning]的成本的[讨论][news283 trucpin]开始；相比之前部署的 [CPFP carve-out][topic cpfp carve out] 规则，TRUC 提供了一种更健壮的替代方案。虽然 TRUC 在最差条件下的抗攻击成本低得多，开发者们还是考虑了调整少量参数是否能进一步降低成本。在一月发生的另一项[讨论][news284 exo]则分析了一种理论上的风险：“[外生的手续费支付][topic fee sourcing]” 日益获得更多采用，将让用户直接给矿工[暗箱支付][topic out-of-band fees]在链上操作上更高效（因此也更便宜），从而陷挖矿去中心化于风险之中。Peter Todd 建议使用一种替代性的手续费管理手段来解决这个问题：通过预签名每一笔结算交易在不同费率下的多个版本，保证手续费是完全内生于交易的。然而，人们指出这种办法有多个问题。
 
-Additional discussion in January by Gregory Sanders [looked][news285
-mev] at whether there was any risk of the LN protocol putting [trimmed
-HTLC][topic trimmed htlc] value into [P2A][topic ephemeral anchors]
-outputs, which would potentially allow _miner extractable value_ (MEV)
-for miners who ran special software beyond what was necessary to mine
-mempool transactions.  Bastien Teinturier started a [discussion][news286
-lntruc] about what changes would be necessary to the LN protocol to
-handle commitment transactions that used TRUC and P2A outputs; this
-included the trimmed HTLC proposal considered by Sanders, eliminating
-no-longer-necessary one-block delays, and a reduction in onchain
-transaction size.  The discussion also led to an [imbued TRUC][news286
-imtruc] proposal that would automatically apply TRUC rules to
-transactions that looked like LN's existing use of CPFP carve-out,
-providing the benefits of TRUC without LN software needing to be upgraded.
+一月份还发生了另一项讨论：Gregory Sanders [研究][news285 mev]了在闪电网络协议中将[被修剪得 HTLC][topic trimmed htlc]中的价值放到 [P2A][topic ephemeral anchors] 输出有无风险；这可能会给在挖掘交易池交易的必要软件之外还运行了专用软件的矿工带来 “*矿工可抽取价值*（MEV）”。Bastien Teinturier 开始[讨论][news286 lntruc]闪电网络协议处理使用 TRUC 和 P2A 输出的承诺交易所需的必要变更；这包括 Sanders 所考虑的修建 HTLC 提议、消除不再必要的 1 区块时延，以及减少链上交易体积。这一讨论也引出了一种 “[渗透式 TRUC][news286 imtruc]” 提议：自动对看起来像是闪电网络现有 CPFP carve-out 用法的交易应用 TRUC 规则，从而提供 TRUC 的好处、无需闪电网络软件升级。
 
-January came to an end with a [proposal][news287 sibrbf] by Gloria Zhao
-for [sibling replace by fee][topic kindred rbf].  The normal [RBF][topic
-rbf] rules only apply to conflicting transactions where a node
-accepts just one version of the transaction into its mempool because only one
-version is permitted to exist in a valid blockchain.  However, with TRUC, a
-node accepts only one descendant of an unconfirmed version 3 parent
-transaction, a very similar situation to a conflicting transaction.
-Allowing one descendant to replace another descendant of the same
-transaction---i.e., _sibling eviction_---would improve fee-bumping of TRUC
-transaction and be especially beneficial if imbued TRUC is
-adopted.
+在一月结束的时候，Golria Zhao 为 “[亲属间手续费替代][topic kindred rbf]” 提出了一份[提议][news287 sibrbf]。常规的[RBF][topic rbf]规则只应用在相互冲突的交易上、在一个节点决定要接受一笔交易某个版本的时候，因为最终只有一个版本能进入有效的区块链。然而，在 TRUC 中，一个节点只会接受一笔未确认的版本 3 父交易的一个子交易，非常类似于处理冲突交易的情形。允许一笔子交易替代同一父交易的另一笔子交易 —— 即，*亲属驱逐* —— 将改善 TRUC 交易的手续费支付，尤其在渗透式 TRUC 被采用的情况下，非常有好处。
 
-February began with additional discussions of the consequences of moving
-the LN protocol from CPFP carve-out to TRUC.  Matt Corallo found
-[challenges][news288 truc0c] in adapting existing [zero-conf channel
-opens][topic zero-conf channels] to using TRUC due to both the funding
-transaction and an immediate close transaction potentially being
-unconfirmed, preventing a third transaction containing a CPFP fee bump
-from being used due to TRUC's limit of two unconfirmed transactions.
-Teinturier identified a similar problem if a chain of [splices][topic
-splicing] was used.  The discussion never reached a clear conclusion,
-but a workaround solution of ensuring each transaction contained its own
-anchor for CPFP fee-bumping (as is required before TRUC) seemed
-satisfactory, with everyone hoping that [cluster mempool][topic cluster
-mempool] could allow relaxing some TRUC rules in the future to allow
-more flexible CPFP fee-bumping.
+二月份的起始是关于将闪电网络协议从 CPFP carve-out 迁移到 TRUC 的后果的额外讨论。Matt Corallo 发现了现有的[零确认的通道开启操作][topic zero-conf channels]在使用 TRUC 时会面临的[挑战][news288 truc0c]：注资交易和一笔紧随其后的关闭交易可能都是未确认的， 这就阻止了包含 CPFP 手续费追加的第三笔交易被使用，因为 TURC 限制智能使用两笔未确认的交易。Teinturier 指出，在形成一条 “[通道拼接][topic splicing]” 的链条时，也有类似的问题。这项讨论一直没有得到一个清晰的结论，但一个迂回的解决方案 —— 保证每一笔交易都包含一个自身的锚点输出、用于 CPFP 手续费追加（就像在使用 TRUC 之前要求的那样）—— 似乎已经能够解决问题，同时，每个人都希望[族群交易池][topic cluster mempool]可以在未来放宽 TRUC 的一些要求，并允许更加灵活的 CPFP 手续费支付。 
 
-On the topic of TRUC policy changes powered by cluster mempool
-advancements, Gregory Sanders described several ideas for [future policy
-changes][news289 pcmtruc].  By contrast, Suhas Daftuar
-[analyzed][news289 oldtruc] all transactions received by his node from
-the prior year to see how an imbued TRUC policy would have affected the
-acceptance of those transactions.  Most transactions
-previously accepted under the CPFP carve-out policy would also have been
-accepted under an imbued TRUC policy, but there were a few exceptions
-that might require changes to software before an imbued policy could be
-adopted.
+关于由族群交易池进步可以带来的 TRUC 规则变更的话题，Gregory Sanders 介绍了关于[未来的规则变更][news289 pcmtruc]的多种想法。相对应的是，Suhas Daftuar [分析][news289 oldtruc]了他的节点在过去一年中收到的所有交易，以检验渗透式 TURC 规则会如何影响这些交易的接纳。大部分在 CPFP carve-out 规则下被交易池接纳的交易，在一种渗透式 TRUC 规则下也会被接纳，但也有少数例外，可能要求软件在采用渗透式规则之前改变。 
 
-After the flurry of discussion early in the year, May and June saw a
-series of merges adding support for new relay features to Bitcoin Core.
-A [limited form][news301 1p1c] of one-parent-one-child (1p1c) [package
-relay][topic package relay] not requiring any changes to the P2P
-protocol was added.  A [subsequent merge][news304 bcc30000] increased
-the reliability of 1p1c package relay by enhancing Bitcoin Core's orphan
-transaction handling.  The specification for TRUC was [merged into the
-BIPs repository][news306 bip431] as [BIP431][].  TRUC transactions
-became relayable by default with [another merge][news307 bcc29496].
-Support was also [added][news309 1p1crbf] for [RBF][topic rbf] of 1p1c
-clusters (including TRUC packages).
+经历了年初的讨论丰收之后，五月和六月出现了一系列的 PR 合并，为 Bitcoin Core 带来了对新的交易转发特性的支持。一种[受限形式][news301 1p1c]的 “一父一子（1p1c）”[交易包转发][topic package relay]规则 —— 不要求对 P2P 协议的任何变更 —— 被添加到了 Bitcoin Core 中。[一项后续的合并][news304 bcc30000]通过加强 Bitcoin Core 对故而交易的处理，提高了 1p1c 交易包转发的可靠性。TRUC 规范作为 [BIP431][] 被[合并到了 BIP 仓库][news306 bip431]。TRUC 交易也因为[另一次合并][news307 bcc29496]而变成默认可转发的。对 1p1c 族群（包括 TRUC 交易包）的 [RBF][topic rbf] 的支持也[加入了][news309 1p1crbf]。
 
-Two long-term developers wrote [extended criticisms][news313 crittruc]
-of TRUC in July, although other developers responded to their concerns.
-[Further criticism][news315 crittruc] by the same two developers was
-published in August.
+两位长期的开发者在七月提出了对 TRUC 的[延伸批评][news313 crittruc]，虽然其他开发者回应了他们的顾虑。这两位开发者在八月又提出了[进一步批评][news315 crittruc]。
 
-Bitcoin Core developers continued working on relay improvements, merging
-[support][news315 p2a] for [pay-to-anchors][topic ephemeral anchors]
-(P2A) in August and releasing Bitcoin Core 28.0 in October with support
-for 1p1c package relay, TRUC transaction relay, package RBF and sibling
-replacement, and a standard P2A output script type.  Gregory Sanders,
-who contributed to the development of all those features,
-[described][news324 guide] how developers of wallets and other software
-that uses Bitcoin Core to create or broadcast transactions can take
-advantage of the new capabilities.
+Bitcoin Core 的开发者们继续开发交易转发的优化、在八月合并对 “[支付到锚点][topic ephemeral anchors]（P2A）” 标准化输出的[支持][news315 p2a]，并在十月发布 Bitcoin Core 28.0；该版本支持 1p1c 交易包转发、TRUC 交易转发、交易包 PBF 以及亲属替代，还有一种标准化的 P2A 输出脚本类型。作为所有这些特性的开发贡献者，Gregory Sanders [建议][news324 guide] 了钱包软件和其他软件的开发者如何使用 Bitcoin Core 来创建和广播可以利用这些新功能的交易。 
 
-Later in the year, support for [ephemeral dust][topic ephemeral
-anchors] outputs using P2A were made standard in a [merge][news330
-dust].  This allows a transaction paying zero fee to be bumped by a
-child transaction paying all the relevant fee---a purely
-exogenous type of [fee sourcing][topic fee sourcing].
+晚些时候，对使用 P2A 的%#192%#输出的支持也在一次[合并][news330 dust]中变得标准化。这让一笔支付零手续费的交易也可以靠一笔子交易来支付所有相关的手续费 —— 这是一种完全外生的[手续费来源][topic fee sourcing]。
 
-Optech's final regular newsletter for the year summarized a Bitcoin Core
-Pull Request Review Club [meeting][news333 prclub] that discussed further
-improvements for 1p1c package relay.
+Optech 在今年的最后一期常规周报总结了一次 Bitcoin Core PR 审核俱乐部的[会议][news333 prclub]，人们在会上讨论了对 1p1c 交易包转发的进一步优化。
 </div>
 
 ## July
 
 {:#bolt11blind}
-Elle Mouton proposed a BLIP to [add a blinded path field to
-BOLT11][news310 path] invoices, allowing payment recipients to hide
-their node identity and channel peers. For example, Bob could add a
-blinded path to his invoice, enabling Alice to pay privately if her
-software supports it; otherwise, she would receive an error. Mouton sees
-this as a temporary solution until [offers][topic offers], which
-natively support blinded paths, are widely adopted.  The proposal became
-[BLIP39][] in [August][news317 blip39].
+Elle Mouton 提出了一项 BLIP，[向 BOLT11 发票添加一个盲化路径字段][news310 path]，从而允许支付的接收者隐藏自己的身份和通道对手。比如说，Bob 可以添加一条盲化路径到他的发票中，然后 Alice 能够私密地给他支付，如果她的软件支持的话，不然，她会收到一条报错。Mouton 认为这是一种在 [offer][topic offers]（原生支持盲化路径）得到广泛采用之前的过渡解决方案。这份提议在[八月][news317 blip39]变成了 [BLIP39][]。
 
 {:#chilldkg}
-Tim Ruffing and Jonas Nick proposed ChillDKG, a BIP draft and reference
-implementation for [securely generating keys for FROST-style scriptless
-threshold signatures][news312 chilldkg] compatible with Bitcoin's
-[schnorr signatures][topic schnorr signatures].
-ChillDKG combines a well-known key generation algorithm for FROST with
-modern cryptographic primitives to securely share random key components
-among participants while ensuring integrity and non-censorship. It uses
-elliptic curve Diffie-Hellman (ECDH) for encryption and authenticated
-broadcast for verifying signed session transcripts. Participants confirm
-session integrity before accepting the final public key. This protocol
-simplifies key management, requiring users to back up only their private
-seed and some non-sensitive recovery data. Plans to encrypt recovery
-data using the seed aim to enhance privacy and further simplify user
-backups.
+Tim Ruffing 和 Jonas Nick 提出了 ChillDKH，这是一个 BIP 草案和参考实现，用于为兼容比特币 [Schnorr 签名][topic schnorr signatures] 的 [FROST 类型的无脚本门限签名方案安全地生成密钥][news312 chilldkg]。ChillDKG 结合了为 FROST 设计的一种著名的密钥生成算法以及前沿的密码学原语，以在参与者之间安全地分享随机密钥元素，同时保证完整性和抗审查性。它使用基于椭圆曲线的 Diffie Hellman 密钥交换（ECDH）来加密和运行带有身份验证的广播，以验证签过名的会话记录。参与者们在接受最终的公钥前要确认会话的完整性。这一协议简化了密钥管理，仅要求用户备份自己的秘密种子以及一些不敏感的复原数据。使用种子来加密复原数据的方案旨在加强隐私性并进一步简化用户的备份手续。
 
 {:#musigthresh}
-July saw the [merge][news310 musig] of several BIPs that will help
-different software interact to create [MuSig2][topic musig] signatures.
-Later in the month, Sivaram Dhakshinamoorthy [announced][news315
-threshsig] a proposed BIP for creating scriptless [threshold
-signatures][topic threshold signature] for Bitcoin's implementation of
-[schnorr signatures][topic schnorr signatures].  This allows a set of
-signers that have already performed a setup procedure (e.g. using
-ChillDKG) to securely create signatures that only require interaction
-from a dynamic subset of those signers. The signatures are
-indistinguishable onchain from schnorr signatures created by single-sig
-users and scriptless multisignature users, improving privacy and
-fungibility.
+在七月，多项帮助不同软件交互以创建 [MuSig2][topic musig] 签名的 BIP [合并][news310 musig]。同一个月的晚些时候，Sivaram Dhakshinamoorthy [宣布][news315 threshsig] 了用于为比特币的 [Schnorr 签名][topic schnorr signatures] 创建无脚本[门限签名][topic threshold signature]的 BIP 提议。这让一组已经执行过一次初始化流程（例如使用 ChillDKG）的签名者可以安全地创建签名，只要求这些签名者的一个动态的子集的交互。这个签名在链上跟 单签名用户/无脚本多签名用户 所创建的 Schnorr 签名是无法区分的，可以提高隐私性和货币同质性。
 
 ## 八月
 
