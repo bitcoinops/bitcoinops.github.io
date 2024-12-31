@@ -1,7 +1,8 @@
 {:.post-meta}
+
 本文介绍了高频支付用户如何利用*批量添加*这一扩容技术，在实际使用情形下，将交易手续费与区块空间占用减少约 75%。截至 2021 年 1 月，已有多家主流比特币服务（主要是交易所）在使用批量添加，许多钱包（包括 Bitcoin Core）也将其作为内置功能提供，定制钱包或支付发送解决方案中实现这一功能也应当十分容易。不过需要注意的是，这项技术可能会在一段时间内导致收款人看到的行为与预期不符，并且会影响手续费提升（fee bump），同时也可能降低隐私性。
 
-## 每位收款人的交易大小
+## 每位收款人的交易体积
 
 如果使用 P2WPKH 输入和输出的一笔典型比特币交易包含来自付款方的 1 个输入（约 67 vbytes），以及 2 个输出（各约 31 vbytes，分别支付给收款人和找零支付给付款方），还需要 额外的 11 vbytes 用于交易头部字段（version、locktime 以及其他字段）。
 
@@ -41,8 +42,8 @@
 
 为缓解这一问题，可以让用户在“即时广播”与“延期广播”两种选项中进行选择，并为每个选项提供不同的费用，例如：
 
-[X] 免费提现（在 6 小时内发送交易）
-[ ] 立即提现（提现费 0.123 mBTC）
+   [X] 免费提现（在 6 小时内发送交易）
+   [ ] 立即提现（提现费 0.123 mBTC）
 
 ### 隐私性降低
 
@@ -80,35 +81,39 @@ bitcoin-cli sendmany "" '{
 
 如果在你自己的实现中使用，通常你已经在大部分场景下创建带有 2 个输出（收款人和找零）的交易，因此将更多收款人输出附加进去应该并不复杂。唯一需要注意的是，Bitcoin Core 节点（以及大多数其他节点）会拒绝接受或转发大小超过 100,000 vbytes 的交易，所以不应当尝试发送大于此限制的批量支付交易。
 
-建议总结
-	1.	尽量让系统中的用户或客户不要期望马上广播交易，而是愿意等待一段时间（时间窗口越长越好）。
-	2.	使用低手续费率进行输入整合，并始终保持几个大额输入以便随时派发。
-	3.	在每个延迟窗口内，将所有待支付请求一次性发送到同一个交易中。例如，可以设置一个按小时执行的 [cronjob][]，将所有未决支付合并发送。理想情况下，之前的输入整合能保证此笔交易只需要一个输入。
-	4.	不要依赖能够对批量交易做手续费提升。这意味着应当在最初交易中就设置足以保证在预期时间内成功确认的手续费率。例如，可以使用 Bitcoin Core 的 estimatesmartfee RPC 的 CONSERVATIVE 模式。
+## 建议总结
 
-注释
+1. 尽量让系统中的用户或客户不要期望马上广播交易，而是愿意等待一段时间（时间窗口越长越好）。
+
+2.	使用低手续费率进行输入整合，并始终保持几个大额输入以便随时派发。
+
+3.	在每个延迟窗口内，将所有待支付请求一次性发送到同一个交易中。例如，可以设置一个按小时执行的 [cronjob][]，将所有未决支付合并发送。理想情况下，之前的输入整合能保证此笔交易只需要一个输入。
+
+4.	不要依赖能够对批量交易做手续费提升。这意味着应当在最初交易中就设置足以保证在预期时间内成功确认的手续费率。例如，可以使用 Bitcoin Core 的 estimatesmartfee RPC 的 CONSERVATIVE 模式。
+
+## 注释
 
 [^package-limits]:
-Optech 认为，几乎所有节点都采用 Bitcoin Core 对交易组限制的默认配置。不过，这些默认配置可能会随时间变化，所以下面的命令可用于检查当前限制以及对应的参数值。
+   Optech 认为，几乎所有节点都采用 Bitcoin Core 对交易组限制的默认配置。不过，这些默认配置可能会随时间变化，所以下面的命令可用于检查当前限制以及对应的参数值。
 
-```text
-$ bitcoind -help-debug | grep -A3 -- -limit
-  -limitancestorcount=<n>
-       Do not accept transactions if number of in-mempool ancestors is <n> or
-       more (default: 25)
+   ```text
+   $ bitcoind -help-debug | grep -A3 -- -limit
+   -limitancestorcount=<n>
+         Do not accept transactions if number of in-mempool ancestors is <n> or
+         more (default: 25)
 
-  -limitancestorsize=<n>
-       Do not accept transactions whose size with all in-mempool ancestors
-       exceeds <n> kilobytes (default: 101)
+   -limitancestorsize=<n>
+         Do not accept transactions whose size with all in-mempool ancestors
+         exceeds <n> kilobytes (default: 101)
 
-  -limitdescendantcount=<n>
-       Do not accept transactions if any ancestor would have <n> or more
-       in-mempool descendants (default: 25)
+   -limitdescendantcount=<n>
+         Do not accept transactions if any ancestor would have <n> or more
+         in-mempool descendants (default: 25)
 
-  -limitdescendantsize=<n>
-       Do not accept transactions if any ancestor would have more than <n>
-       kilobytes of in-mempool descendants (default: 101).
-```
+   -limitdescendantsize=<n>
+         Do not accept transactions if any ancestor would have more than <n>
+         kilobytes of in-mempool descendants (default: 101).
+   ```
 
 {% include references.md %}
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
