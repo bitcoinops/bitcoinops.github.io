@@ -16,7 +16,7 @@ _“批量添加”是一种在内存池中将额外输出添加到未确认交�
 {% include references.md %}
 [CardCoins]: https://www.cardcoins.co/
 [payment batching]: /zh/payment-batching/
-[rbf blog]: /zh/rbf-in-the-wild/#some-usability-examples
+[rbf blog]: /zh/rbf-in-the-wild/#一些可用性示例
 [pinning]: /en/topics/transaction-pinning/
 [Matthew Zipkin]: https://twitter.com/MatthewZipkin
 [cardcoins rbf blog]: https://blog.cardcoins.co/rbf-batching-at-cardcoins-diving-into-the-mempool-s-dark-reorg-forest
