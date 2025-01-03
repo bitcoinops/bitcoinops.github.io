@@ -188,29 +188,90 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31223][] net, init: derive default onion port if a user specified a -port
+- [Bitcoin Core #31223][] changes how a node derives its “[Tor][topic anonymity
+  networks] service target” P2P port (see Newsletter [#118][news118 tor]), using
+  the user-specified `-port` value plus one instead of the default of 8334, if a
+  `-port` value is given. This fixes a problem where multiple local nodes would
+  all bind to 8334 and crash due to port collision. However, in the rare case
+  where two local nodes are assigned consecutive `-port` values, they may still
+  collide on the derived onion port, but this should be avoided altogether.
 
-- [Eclair #2888][] Peer storage
+- [Eclair #2888][] implements support for the [peer storage][topic peer storage]
+  protocol as specified in [BOLTs #1110][], which allows nodes to store
+  encrypted backups for peers that request them, up to 65kB by default. This
+  feature is intended for Lightning Service Providers (LSPs) serving mobile
+  wallets, and has configurable settings that allow a node operator to specify
+  how long it will store the data. This makes Eclair the second implementation
+  to support peer storage, after CLN (see Newsletter [#238][news238 storage]).
 
-- [LDK #3495][] from TheBlueMatt/2024-12-optimal-score-params
+- [LDK #3495][] refines the historical success probability scoring model in LN
+  pathfinding by improving the [probability density function (PDF)][probability
+  density] and related parameters based on real-world data collected from
+  randomized probes. This PR aligns historical and a priori models with
+  real-world behavior, enhances default penalties, and improves pathfinding
+  reliability.
 
-- [LDK #3436][] Add `lightning-liquidity` crate to the workspace
+- [LDK #3436][] moves the `lightning-liquidity` crate
+  to the `rust-lightning` repository.  This crate provides types and
+  primitives to integrate an LSP (as specified [here][lsp spec]) with an
+  LDK-based node.
 
-- [LDK #3435][] Authenticate blinded payment paths
+- [LDK #3435][] adds an authentication field to the [blinded path][topic rv
+  routing] payment context message for a payer to include a Hash-based Message
+  Authentication Code (HMAC) and a nonce and allow a recipient to authenticate
+  the payer. This fixes an issue where an attacker could take a `payment_secret`
+  from a [BOLT11][] invoice issued by the victim node and forge a payment, even
+  if it didn't match the amount expected for that [offer][topic offers]. This
+  also helps prevent deanonymization attacks using the same technique.
 
-- [LDK #3365][] Set `holder_commitment_point` to `Available` on upgrade
+- [LDK #3365][] ensures that the `holder_commitment_point` (next commitment
+  point) is immediately marked as available on upgrades by retrieving it in
+  `get_channel_reestablish`, instead of leaving it in the previously used
+  `PendingNext` state. This change prevents forced closures when a channel is in
+  a steady state during an upgrade and then receives a `commitment_signed`
+  message that requires the next commitment point to be available.
 
-- [LDK #3340][] claim_batching
+- [LDK #3340][] introduces [batching][topic payment batching] of on-chain claim
+  transactions with [pinnable][topic transaction pinning] outputs, reducing
+  block space usage and fees in force-closure scenarios. Previously, outputs
+  were only batched if they were exclusively claimable by the node, and
+  therefore non-pinnable. Now, any output within 12 blocks of the height at
+  which a counterparty can spend it is treated as pinnable and batched
+  accordingly, provided their [HTLC][topic htlc]-timeout [locktimes][topic
+  timelocks] can be combined.
 
-- [BDK #1670][] Introduce `O(n)` canonicalization algorithm
+- [BDK #1670][] introduces a new O(n) canonicalization algorithm that identifies
+  canonical transactions and removes unconfirmed conflicts that are unlikely to
+  get confirmed (non-canonical) from the wallet's best local chain view. This
+  significantly more efficient approach replaces and removes the old
+  `get_chain_position` method, which provided an O(n²) solution that [may
+  have been a DoS risk][canalgo] for certain use cases.
 
-- [BIPs #1689][] DLEQ
+- [BIPs #1689][] merges [BIP374][] to specify a standard way to generate and
+  verify [Discrete Log Equality Proofs (DLEQs)][topic dleq] for the elliptic
+  curve used by Bitcoin (secp256k1). This BIP is motivated by support for
+  [silent payments][topic silent payments] created using multiple independent
+  signers; a DLEQ would allow all signers to prove to co-signers that their
+  signature is valid and doesn't risk losing funds, without revealing their
+  private key.
 
-- [BIPs #1697][] 388: Add support for `musig` in descriptor templates
+- [BIPs #1697][] updates [BIP388][] to add support for [MuSig][topic musig] in
+  the templated set of [output script descriptors][topic descriptors] by making
+  fine-grained grammar changes.
 
-- [BLIPs #54][] Add bLIP 52: JIT Channel Negotiation (#54)
+- [BLIPs #52][] adds [BLIP50][] to specify a protocol that is used for
+  communication between LSP nodes and their clients, with a JSON-RPC format over
+  [BOLT8][] peer-to-peer messages. This is part of a set of BLIPs that are
+  upstreamed from the [LSP specification repository][lsp spec], and which are
+  considered stable because they are live in production on multiple LSP and
+  client implementations.
 
-- [BLIPs #52][] Add bLIP 50: LSP Spec Transport Layer (#52)
+- [BLIPs #54][] adds [BLIP52][] to specify a protocol for [JIT channels][topic
+  jit channels] that allows clients without any LN channels to start receiving
+  payments. When an incoming payment is received by the LSP, a channel is opened
+  to the client in response, and the cost of opening the channel is deducted
+  from the first payment received. This is also part of a set of BLIPs that are
+  upstreamed from the [LSP specification repository][lsp spec].
 
 {% include snippets/recap-ad.md when="2025-01-07 15:30" %}
 {% include references.md %}
@@ -241,3 +302,8 @@ repo], and [BINANAs][binana repo]._
 [bdk wallet-1.0.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.0.0
 [core lightning v24.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v24.11.1
 [ldk v0.1.0-beta1]: https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.1.0-beta1
+[news118 tor]: /en/newsletters/2020/10/07/#bitcoin-core-19991
+[news238 storage]: /en/newsletters/2023/02/15/#core-lightning-5361
+[lsp spec]: https://github.com/BitcoinAndLightningLayerSpecs/lsp
+[probability density]: https://en.wikipedia.org/wiki/Probability_density_function
+[canalgo]: https://github.com/evanlinjin/bdk/blob/e9854455ca77875a6ff79047726064ba42f94f29/docs/adr/0003_canonicalization_algorithm.md
