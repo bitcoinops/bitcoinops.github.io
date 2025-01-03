@@ -103,7 +103,7 @@ resistance to communication problems.
 
 ### Comparison to multisig scripts
 
-Bitcoin's Script language (including the proposed [tapscript][topic
+Bitcoin's Script language (including the [tapscript][topic
 tapscript] modified alternative) allows providing a threshold *k* of
 signatures for a group of *n* keys, commonly called k-of-n multisig.
 This requires providing *k* signatures and *n* public keys in any
