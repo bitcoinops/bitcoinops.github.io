@@ -23,6 +23,6 @@
 
 [transaction size calculator]: /en/tools/calc-size/
 [news3 sig size]: /zh/newsletters/2018/07/10/#unrelayable-transactions
-[news101 fee overpayment attack]: /en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
+[news101 fee overpayment attack]: /zh/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 [batch graph]: https://github.com/jonasnick/secp256k1/blob/schnorrsig-batch-verify/doc/speedup-batch.md
 {% endauto_anchor %}
