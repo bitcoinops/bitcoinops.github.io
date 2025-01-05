@@ -34,7 +34,7 @@ excerpt: >
 
   ## Mots du bulletin ; diviser par 350 pour obtenir les pages
   #
-  ## Remarque, pas inclus à ce résumé
+  ## Remarque, n'inclus pas ce résumé
   $ cd _posts/fr/newsletters   # fin italique_
   $ find 2019-* | xargs wc -w | tail -n1   # fin italique*
   72450 total
@@ -65,9 +65,10 @@ Bitcoin.
     * [Bitcoin Core compatible avec HWI](#core-hwi)
     * <a href="#miniscript">Miniscript</a>
 * Mars
-    * [Proposition de fork doux de nettoyage du consensus](#cleanup)
+    * [Proposition de soft-fork de nettoyage du consensus](#cleanup)
     * <a href="#signet">Signet</a>
-* [Boucle Lightning](#loop)* Avril
+    * [Lightning Loop](#loop)
+* Avril
     * <a href="#assumeutxo">AssumeUTXO</a>
     * [Paiements Trampoline](#trampoline)
 * Mai
@@ -78,7 +79,7 @@ Bitcoin.
     * [Erlay et autres améliorations du relais P2P](#erlay-and-other-p2p-improvements)
     * <a href="#watchtowers">Watchtowers</a>
 * Juillet
-    * [Constructions reproductibles](#reproducibility)
+    * [Compilations reproductibles](#reproducibility)
 * Août
     * [Coffres-forts sans covenants](#vaults)
 * Septembre
@@ -93,7 +94,7 @@ Bitcoin.
 * Décembre
     * [Paiements multipath](#multipath)
 * Résumés en vedette
-    * [Principales versions de projets d'infrastructure populaires](#releases)
+    * [Principales versions de projets d'infrastructure populaire](#releases)
     * [Conférences techniques remarquables et autres événements](#conferences)
     * [Bitcoin Optech](#optech)
     * [Nouvelles solutions d'infrastructure open source](#new-infrastructure)
@@ -135,9 +136,9 @@ miniscript] lors de la [Stanford Blockchain Conference][] sur [miniscript][topic
 déclinaison de son travail sur les descripteurs de script de sortie. Miniscript fournit une
 représentation structurée des scripts Bitcoin qui simplifie l'analyse automatisée par des logiciels.
 L'analyse peut déterminer quelles données un portefeuille doit fournir pour satisfaire le script
-(par exemple, une signature ou un préimage de hachage), combien de données de transaction seront
+(par exemple, une signature ou une préimage de hachage), combien de données de transaction seront
 utilisées par le script et les données qui le satisfont, et si le script respecte ou non les règles
-de consensus connues et les politiques populaires de relais de transaction.
+de consensus connues et les principales politiques de relais de transaction.
 
 En plus de miniscript, Wuille, Andrew Poelstra et Sanket Kanjalkar ont également fourni un langage
 de politique composite qui se compile en miniscript (qui se convertit lui-même en Bitcoin Script).
@@ -167,7 +168,7 @@ onchain.
 En mars, Matt Corallo a proposé le [soft fork de nettoyage du consensus][topic consensus cleanup]
 pour éliminer les problèmes potentiels dans le code de consensus de Bitcoin. Si adoptées,
 les corrections élimineraient l'[attaque de décalage temporel][], réduiraient l'[utilisation CPU maximale][]
-du Script hérité, rendraient le cache de validation des transactions plus fiable et élimineraient
+du script hérité, rendraient le cache de validation des transactions plus fiable et élimineraient
 une attaque connue (mais coûteuse) contre les [clients légers][news37 merkle tree
 attacks].
 
@@ -191,7 +192,7 @@ Bitcoin, les réorganisations et autres perturbations peuvent se produire fréqu
 longues périodes, rendant les tests réguliers impraticable.
 
 Signet évoluerait tout au long de l'année et serait finalement [intégré][cl signet] dans des logiciels tels que
-C-Lightning, ainsi que utilisé pour une démonstration de [eltoo][]. Une [pull request][Bitcoin Core
+C-Lightning, ainsi qu'utilisé pour une démonstration de [eltoo][]. Une [pull request][Bitcoin Core
 #16411] ajoutant le support à Bitcoin Core reste ouverte.
 
 </div>
@@ -211,19 +212,19 @@ entièrement sans confiance.
 ### Résumé 2019 :<br>Principales versions de projets d'infrastructure populaires
 
 - [C-Lightning 0.7][] publié en mars a ajouté un système de plugins qui serait largement utilisé à la
-  fin de l'année. C'était également la première version de C-Lightning prenant en charge des [builds
+  fin de l'année. C'était également la première version de C-Lightning prenant en charge des [compilations
   reproductibles][topic reproducible builds] pour une sécurité accrue grâce à une meilleure auditabilité.
 
-- [LND 0.6-beta][] publié en avril incluait le support des [sauvegardes de canal statiques (SCBs)][lnd scb] qui
+- [LND 0.6-beta][] publié en avril incluait le support des [sauvegardes de canal statiques (SCB)][lnd scb] qui
   aident les utilisateurs à récupérer des fonds réglés dans leurs canaux LN même s'ils ont perdu leur
   état de canal récent. La version comprenait également un autopilote amélioré pour aider les
   utilisateurs à ouvrir de nouveaux canaux, ainsi qu'une compatibilité intégrée avec [Lightning Loop][]
   pour déplacer des fonds onchain sans fermer un canal ou utiliser un gardien.
 
 - [Bitcoin Core 0.18][] publié en mai a amélioré le support des transactions Bitcoin partiellement
-signées ([PSBT][topic psbt]) et ajouté le support des [descripteurs de script de sortie][topic descriptors].
-La combinaison de ces deux fonctionnalités lui a permis d'être utilisé avec la première version publiée de
-l'interface de portefeuille matériel ([HWI][]).
+  signées ([PSBT][topic psbt]) et ajouté le support des [descripteurs de script de sortie][topic descriptors].
+  La combinaison de ces deux fonctionnalités lui a permis d'être utilisé avec la première version publiée de
+  l'interface de portefeuille matériel ([HWI][]).
 
 - [Eclair 0.3][] publié en mai a amélioré la sécurité des sauvegardes, ajouté le support des plugins et
   rendu possible l'exécution en tant que service caché Tor.
@@ -231,18 +232,18 @@ l'interface de portefeuille matériel ([HWI][]).
 - [LND 0.7-beta][] publié en juillet a ajouté le support de l'utilisation d'une [tour de guet][topic watchtowers] pour
   protéger vos canaux lorsque vous êtes hors ligne.
 
-- [LND 0.8-beta][] publié en octobre a ajouté le support d'un format d'oignon plus extensible, amélioré
+- [LND 0.8-beta][] publié en octobre a ajouté le support d'un format en oignon plus extensible, amélioré
   la sécurité des sauvegardes et amélioré le support de la tour de guet.
 
 - [Bitcoin Core 0.19][] publié en novembre a mis en œuvre la nouvelle politique de pool de mémoire [CPFP
-carve-out][topic cpfp carve out], ajouté un support initial pour les [filtres de blocs compacts][topic compact block
+  carve-out][topic cpfp carve out], ajouté un support initial pour les [filtres de blocs compacts][topic compact block
   filters] de style [BIP158][]
   (actuellement RPC uniquement), amélioré la sécurité en désactivant des protocoles tels que les
   filtres de bloom [BIP37][] et les demandes de paiement [BIP70][] par défaut. Il passe également les
-  utilisateurs de l'interface graphique à des adresses bech32 par défaut.
+  utilisateurs de GUI à des adresses bech32 par défaut.
 
 - [C-Lightning 0.8][] publié en décembre a ajouté le support des [paiements multiparites][topic multipath payments]
-  et a basculé son réseau par défaut vers le réseau principal à partir du réseau de test.
+  et a basculé son réseau par défaut de testnet vers le réseau principal.
   C'était également la première version majeure de
   C-Lightning à prendre en charge des bases de données alternatives, avec le support de postgresql
   disponible en plus du support par défaut de sqlite.
@@ -291,8 +292,8 @@ En mai, Pieter Wuille a proposé une [soft fork taproot][topic taproot] composé
 et [bip-tapscript][] (qui dépendent tous deux de la proposition [bip-schnorr][] de l'année
 dernière). Si elle est implémentée, ce changement permettra aux transactions single-sig, multisig et
 de nombreux contrats d'utiliser tous le même style de scriptPubKeys. De nombreuses dépenses à partir
-de multisigs et de contrats complexes auront également un aspect identique les unes aux autres et
-aux dépenses single-sig. Cela peut améliorer considérablement la confidentialité des utilisateurs et
+de multisigs et de contrats complexes auront également un aspect identique les unes aux autres
+qu'aux dépenses single-sig. Cela peut améliorer considérablement la confidentialité des utilisateurs et
 la fongibilité des pièces tout en réduisant la quantité d'espace de la chaîne de blocs utilisée par
 les cas d'utilisation de multisig et de contrats.
 
@@ -343,7 +344,7 @@ renforçant la sécurité, ou gérer les coûts du dépensier lorsque les frais 
 
 Rubin continuerait à travailler sur CTV pour le reste de l'année, y compris en ouvrant des PR
 ([1][Bitcoin Core #17268], [2][Bitcoin Core #17292]) pour des améliorations à des parties de Bitcoin
-Core où des optimisations pourraient rendre une version déployée de CTV plus efficace.
+Core où des optimisations pourraient rendre un deploiement d'une version de CTV plus efficace.
 
 </div>
 
@@ -410,22 +411,22 @@ spécification][watchtower spec] et une [discussion][eltoo watchtowers] sur la m
 <div markdown="1" id="reproducibility">
 
 En juillet, le projet Bitcoin Core a [fusionné][guix merge] le PR de Carl Dong ajoutant le support
-des builds reproductibles des binaires Linux de Bitcoin Core en utilisant GNU Guix (prononcé
-"geeks"). Bien que Bitcoin Core ait depuis longtemps fourni un support pour des builds
+des compilations reproductibles des binaires Linux de Bitcoin Core en utilisant GNU Guix (prononcé
+"geeks"). Bien que Bitcoin Core ait depuis longtemps fourni un support pour des compilations
 reproductibles en utilisant le système [Gitian][], il peut être difficile à mettre en place et
 dépend de la sécurité de plusieurs centaines de packages Ubuntu. En comparaison, Guix peut être
-beaucoup plus facile à installer et à exécuter, et les builds de Bitcoin Core l'utilisant dépendent
+beaucoup plus facile à installer et à exécuter, et les compilationss de Bitcoin Core l'utilisant dépendent
 actuellement d'un nombre beaucoup plus restreint de packages. À long terme, les contributeurs à Guix
 travaillent également à éliminer le problème de [confiance aveugle][] pour permettre aux
 utilisateurs de vérifier facilement que les binaires tels que `bitcoind` sont dérivés uniquement du
 code source vérifiable.
 
-Le travail sur le support des builds Guix a continué tout au long de l'année, certains contributeurs
+Le travail sur le support des compilations Guix a continué tout au long de l'année, certains contributeurs
 espérant que Guix sera utilisé pour la première version majeure.
 de Bitcoin Core publiée en 2020 (peut-être en parallèle avec l'ancien mécanisme basé sur Gitian).
 
 Indépendamment, une documentation a été ajoutée cette année aux référentiels [C-Lightning][cl repro]
-et [LND][lnd repro] décrivant comment créer des constructions reproductibles de leur logiciel en
+et [LND][lnd repro] décrivant comment créer des compilations reproductibles de leur logiciel en
 utilisant des compilateurs de confiance.
 
 </div>
@@ -444,7 +445,7 @@ exécuter du code qui effectue quelques étapes supplémentaires lors du dépôt
 contrat de coffre-fort.
 
 Plus notablement, Bishop a décrit une nouvelle faiblesse dans les propositions de coffres-forts
-précédentes ainsi qu'une atténuation de la faiblesse qui limiterait le montant maximum de fonds
+précédentes ainsi qu'une atténuation possible qui limiterait le montant maximum de fonds
 pouvant être volés dans un coffre-fort par un attaquant. Le développement de coffres-forts pratiques
 pourrait être utile tant pour les utilisateurs individuels que pour les grandes organisations de
 garde telles que les échanges.
@@ -462,7 +463,7 @@ bech32, ajouté une matrice de compatibilité des portefeuilles et des services 
 publié 51 [bulletins d'information hebdomadaire][]<!-- #28 à #78, inclus -->, vu plusieurs de nos
 bulletins d'information et articles de blog traduits dans des langues telles que le
 [japonais][xlation ja] et l'[espagnol][xlation es], créé un [index des sujets][], ajouté un chapitre
-à notre [Cahier de travail sur la scalabilité][], organisé deux [ateliers schnorr/taproot][] avec
+à notre [Workbook sur la scalabilité][], organisé deux [ateliers schnorr/taproot][] avec
 des [notebooks jupyter][], et publié des rapports de terrain de [BTSE][] et [BRD][].
 
 Nous avons de grands projets pour 2020, donc nous espérons que vous continuerez à nous suivre sur
@@ -495,7 +496,7 @@ est de plus en plus le cas pour de nombreux portefeuilles.
 Également en septembre, les mainteneurs de C-Lightning, Eclair et LND ont [révélé][ln missed
 validation] une vulnérabilité qui affectait les versions précédentes de leur logiciel. Il semblait
 que, dans certains cas, chacune des implémentations ne confirmait pas que les transactions de
-financement de canal payaient le script correct ou le montant correct (ou les deux). Si elle était
+financement de canal qui payaient le script correct ou le montant correct (ou les deux). Si elle était
 exploitée, cela pourrait entraîner l'impossibilité de confirmer les paiements de canal onchain,
 rendant possible pour les nœuds de perdre de l'argent en relayant des paiements d'un canal invalide
 à un canal valide. Optech n'a connaissance d'aucun utilisateur ayant perdu de l'argent avant les
@@ -575,16 +576,16 @@ bech32 se terminant par un `p` pouvaient avoir n'importe quel nombre de caractè
 ajoutés ou supprimés. Cela n'affecte pas pratiquement les adresses bech32 pour
 les adresses segwit P2WPKH ou P2WSH, car au moins 19 caractères `q` consécutifs
 devraient être ajoutés ou supprimés pour transformer un type d'adresse en un autre---et tout autre
-changement de longueur pour les adresses segwit v0 serait invalide. <!-- "19 caractères"
-mathématiques dans le _posts/fr/newsletters/2019-11-13-newsletter.md -->
+changement de longueur pour les adresses segwit v0 serait invalide. <!-- mathématiques des
+"19 caractères" dans le _posts/fr/newsletters/2019-11-13-newsletter.md -->
 
 Mais ce n'est pas le cas pour les adresses segwit v1+, telles que celles proposées pour taproot, où
 un seul caractère `q` ajouté ou supprimé dans une adresse vulnérable pourrait entraîner
 une perte de fonds. Pieter Wuille, co-auteur de BIP173, a effectué
 [une analyse supplémentaire][bech32 analysis] et a constaté que c'était la seule
 déviation par rapport à la capacité de correction d'erreur attendue de bech32, il a donc
-proposé de limiter l'utilisation des adresses BIP173 dans Bitcoin à seulement 20
-programmes témoins de 32 octets ou 32 octets. Cela garantira que les versions d'adresse segwit v1 et
+proposé de limiter l'utilisation des adresses BIP173 dans Bitcoin à seulement 20 octets
+ou 32 octets y compris l'inclusion de témoins. Cela garantira que les versions d'adresse segwit v1 et
 ultérieures fournissent la même correction d'erreur fiable que les adresses segwit v0. Il a également décrit une
 petite modification de l'algorithme bech32 qui permettra à d'autres applications utilisant bech32,
 ainsi qu'aux formats d'adresse Bitcoin de nouvelle génération, d'utiliser la détection d'erreur BCH sans ce
@@ -612,7 +613,7 @@ continué à utiliser BIP70 en 2019.
 {:#multipath}
 En décembre, les développeurs de LN ont atteint l'un de leurs principaux objectifs de la réunion de
 planification de l'année dernière [ln1.1] : la [mise en œuvre][mpp implementation] de paiements
-[multipath de base][topic multipath payments]. Il s'agit de paiements qui peuvent être divisés en
+[multiparties de base][topic multipath payments]. Il s'agit de paiements qui peuvent être divisés en
 plusieurs parties, chaque partie étant acheminée séparément à travers différents canaux. Cela permet
 aux utilisateurs de dépenser ou de recevoir de l'argent en utilisant plus d'un de leurs canaux à la
 fois, ce qui rend possible de dépenser leur solde offchain complet ou de recevoir jusqu'à leur
@@ -636,7 +637,7 @@ réduire la bande passante des nœuds (erlay), protéger les utilisateurs de LN 
 ligne (watchtowers), réduire le besoin de confiance (reproducible builds), prévenir les vols
 (vaults), rendre la confidentialité plus accessible (SNICKER), mieux gérer les frais onchain pour
 les utilisateurs de LN (anchor outputs), et faire en sorte que les paiements LN fonctionnent
-automatiquement plus souvent (paiements multipath).
+automatiquement plus souvent (paiements multiparties).
 
 (Et ce ne sont que les points forts de l'année !)
 
@@ -708,7 +709,7 @@ rendent chacun le système meilleur sans le casser pour ceux qui sont déjà sat
 [outil de preuve de réserves]: /en/newsletters/2019/02/12/#tool-released-for-generating-and-verifying-bitcoin-ownership-proofs
 [rm openssl]: /en/newsletters/2019/11/27/#bitcoin-core-17265
 [roose reserves]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-January/016633.html
-[cahier de travail sur la scalabilité]: https://github.com/bitcoinops/scaling-book
+[Workbook sur la scalabilité]: https://github.com/bitcoinops/scaling-book
 [scaling bitcoin]: /en/newsletters/2019/09/18/#scaling-bitcoin
 [ateliers schnorr/taproot]: /en/schnorr-taproot-workshop/
 [snicker]: /en/newsletters/2019/09/04/#snicker-proposed
