@@ -15,12 +15,6 @@ lang: zh
 
   描述符最初是在 Bitcoin Core 中实现的，过去一年里被更多项目采用。随着钱包开始探索 [taproot][topic taproot] 所带来的灵活性，以及类似 [miniscript][topic miniscript] 这样的工具简化使用灵活脚本的能力，它们有望在未来被大幅使用。
 
-   {% comment %}<!-- Gentry uses a lowercase leading character (bLIPs).  I
-  asked in IRC why, but unless there's a *really* compelling reason, I'd
-  prefer to capitalize.  I won't die on this hill, but I'm willing to lose
-  a little blood to prevent terms like iPhone that are super annoying to use
-  at the beginning of a sentence. -harding -->{% endcomment %}
-
 - **<!--blips-->****BLIPs：** Ryan Gentry [发起][gentry blips]了一个针对闪电网络开发者邮件列表的提案，提出建立一系列 Bitcoin Lightning Improvement Proposals（BLIPs）的想法，用于描述闪电网络扩展及应用的文档，这些文档可通过互操作性标准带来收益。René Pickhardt 链接到了他在 2018 年提出的一个几乎[相同的提案][pickhardt lips]。
 
   在讨论中，该想法似乎得到了广泛支持，但也有[担忧][teinturier blips]提出：这并不能真正解决将这些标准合并进基础 BOLTs 文档的障碍——这个障碍是资深开发者由于时间不足无法审核众多社区提案。如果未经充分审查就合并 BLIPs，则可能包含漏洞，或者难以获得多个利益相关方的广泛支持，导致各项目采用相互竞争的标准而出现分裂。然而，非主流协议已经在被创建，大多数讨论参与者都认为，如果能提供一个众所周知的存档来发布有关这些协议的文档，主要是有益的。
