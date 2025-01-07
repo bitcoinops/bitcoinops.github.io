@@ -179,6 +179,7 @@ for details --> {% endcomment %}
 [BIP371]: https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki
 [BIP372]: https://github.com/bitcoin/bips/blob/master/bip-0372.mediawiki
 [BIP373]: https://github.com/bitcoin/bips/blob/master/bip-0373.mediawiki
+[BIP374]: https://github.com/bitcoin/bips/blob/master/bip-0374.mediawiki
 [BIP379]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
 [BIP380]: https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki
 [BIP381]: https://github.com/bitcoin/bips/blob/master/bip-0381.mediawiki
@@ -198,7 +199,7 @@ for details --> {% endcomment %}
 [BIN24-{{i}}]: https://github.com/bitcoin-inquisition/binana/blob/master/2024/BIN-2024-{{i_padded}}.md
 {% endfor %}
 
-{% for i in (1..50) %}
+{% for i in (1..100) %}
 {% assign i_padded = "0000" | append: i | slice: -4, 4 %}
 [BLIP{{i}}]: https://github.com/lightning/blips/blob/master/blip-{{i_padded}}.md
 {% endfor %}

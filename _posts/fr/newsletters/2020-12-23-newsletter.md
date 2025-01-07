@@ -820,7 +820,7 @@ impatients de voir ce qu'ils nous réservent en 2021.
 {% include references.md %}
 {% include linkers/issues.md issues="8312,524,18038,18861,19109,14582,19743,16152" %}
 [2018 summary]: /en/newsletters/2018/12/28/
-[2019 summary]: /en/newsletters/2019/12/28/
+[2019 summary]: /fr/newsletters/2019/12/28/
 [`addr` message]: https://btcinformation.org/en/developer-reference#addr
 [atomicity attack discussion]: /en/newsletters/2020/06/24/#continued-discussion-about-ln-atomicity-attack
 [attack htlc incentives]: /en/newsletters/2020/07/01/#discussion-of-htlc-mining-incentives
