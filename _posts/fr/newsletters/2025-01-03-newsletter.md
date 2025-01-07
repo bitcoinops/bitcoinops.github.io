@@ -1,5 +1,5 @@
 ---
-titte: 'Bulletin Hebdomadaire Bitcoin Optech #335'
+title: 'Bulletin Hebdomadaire Bitcoin Optech #335'
 permalink: /fr/newsletters/2025/01/03/
 name: 2025-01-03-newsletter-fr
 slug: 2025-01-03-newsletter-fr
