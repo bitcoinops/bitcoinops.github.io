@@ -1265,7 +1265,7 @@ bulletin hebdomadaire Optech reprendra son calendrier de publication régulier l
 {% include linkers/issues.md v=2 issues="" %}
 [index des sujets]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
-[yirs 2019]: /en/newsletters/2019/12/28/
+[yirs 2019]: /fr/newsletters/2019/12/28/
 [yirs 2020]: /fr/newsletters/2020/12/23/
 [yirs 2021]: /fr/newsletters/2021/12/22/
 [yirs 2022]: /fr/newsletters/2022/12/21/
