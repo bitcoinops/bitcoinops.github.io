@@ -7,7 +7,8 @@ redirect_from: /internal/sources
 ---
 # Sources for the Optech Newsletter
 
-The _News_ section of the newsletter is currently sourced from the
+The _News_ and _Changing Consensus_ sections of the newsletter are
+currently sourced from the
 following discussion groups:
 
 - [Bitcoin-Dev][] mailing list
