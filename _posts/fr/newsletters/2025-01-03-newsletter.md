@@ -265,7 +265,7 @@ issues="31223,2888,3495,3436,3435,3365,3340,1670,1689,1697,54,52,1110" %}
 [news102 wabisabi]: /en/newsletters/2020/06/17/#wabisabi-coordinated-coinjoins-with-arbitrary-output-values
 [rn chilldkg]: https://groups.google.com/g/bitcoindev/c/HE3HSnGTpoQ/m/Y2VhaMCrCAAJ
 [bip-chilldkg]: https://github.com/BlockstreamResearch/bip-frost-dkg
-[lnd 0.18.4-beta] : https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta
+[lnd 0.18.4-beta]: https://github.com/lightningnetwork/lnd/releases/tag/v0.18.4-beta
 [bitcoin core 28.1rc2]: https://bitcoincore.org/bin/bitcoin-core-28.1/
 [bdk wallet-1.0.0]: https://github.com/bitcoindevkit/bdk/releases/tag/wallet-1.0.0
 [core lightning v24.11.1]: https://github.com/ElementsProject/lightning/releases/tag/v24.11.1
