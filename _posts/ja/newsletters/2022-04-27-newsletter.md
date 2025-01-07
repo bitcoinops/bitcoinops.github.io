@@ -63,8 +63,8 @@ Bitcoin Stack Exchangeのトップの質問とその回答、
     しかし、それ以上に、より一般的な`OP_TXHASH`の設計（[ニュースレター #185][news185 txhash]参照）を好んでいます。
     Rubinは、いくつかの反論を[返信しました][rubin bare]。
 
-  - David Hardingは、CTVの用途が明白でないか、他のCovenantの構成がより一般的な用途に適しているため、
-    CTVが長期的にはあまり使用されないかもしれないという懸念を[伝えました][harding transitory]。
+  - [David Harding][harding transitory]は、CTVの用途が明白でないか、他のCovenantの構成がより一般的な用途に適しているため、
+    CTVが長期的にはあまり使用されないかもしれないという懸念を伝えました。
     この場合、将来のコンセンサスコードの開発者は、CTVのコードを維持し、
     後で提案されるコンセンサスの変更との潜在的な相互作用性を分析するという永続的な負担を負わなければならなくなります。
     Hardingは、5年間BitcoinにCTVを一時的に追加し、

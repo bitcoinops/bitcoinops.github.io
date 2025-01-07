@@ -6,7 +6,8 @@ recap-ad.md: creates an advertisement for the next recap
 
   Input:
     - when: UTC time of next recap in any format supported by the `date`
-      filter, e.g. YYYY-MM-DD HH:MM
+      filter, e.g. YYYY-MM-DD HH:MM.  Cannot be earlier than the
+      page.date
 
   Output:
     A div with a paragraph announcing the next recap and how to
@@ -20,6 +21,8 @@ recap-ad.md: creates an advertisement for the next recap
 -->
 {% assign current_epoch_time = site.time | date: "%s" %}
 {% assign when_epoch_time = include.when | date: "%s" %}
+{% assign page_epoch_time = page.date | date: "%s" %}
+{% if page_epoch_time > when_epoch_time %}{% include ERROR_RECAP_EARLIER_THAN_PUBLICATION_DATE %}{% endif %}
 {% assign recap_formatted_date_utc = include.when | date: "%B %-d" %}
 {% assign recap_formatted_time_utc = include.when | date: "%H:%M" %}
 {% endcapture %}{% capture recap_ad_text %}

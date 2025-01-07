@@ -69,6 +69,9 @@ have been several concrete proposals to add it to Bitcoin:
 - [BIP116][] `OP_MERKLEBRANCHVERIFY` and [BIP117][] tail call execution semantics
 - [bip-taproot][]'s merkle tree
 
+In November 2021, MAST was added to Bitcoin as part of the
+[taproot][topic taproot] soft fork.
+
 {:#naming}
 Note: the abbreviation MAST originally stood for *Merklized Abstract
 Syntax Trees* as [proposed][mast original proposal] by Russell
