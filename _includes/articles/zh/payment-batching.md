@@ -93,26 +93,26 @@ bitcoin-cli sendmany "" '{
 ## 注释
 
 [^package-limits]:
-   Optech 认为，几乎所有节点都采用 Bitcoin Core 对交易组限制的默认配置。不过，这些默认配置可能会随时间变化，所以下面的命令可用于检查当前限制以及对应的参数值。
+    Optech 认为，几乎所有节点都采用 Bitcoin Core 对交易组限制的默认配置。不过，这些默认配置可能会随时间变化，所以下面的命令可用于检查当前限制以及对应的参数值。
 
-   ```text
-   $ bitcoind -help-debug | grep -A3 -- -limit
-   -limitancestorcount=<n>
-         Do not accept transactions if number of in-mempool ancestors is <n> or
-         more (default: 25)
+    ```text
+    $ bitcoind -help-debug | grep -A3 -- -limit
+      -limitancestorcount=<n>
+           Do not accept transactions if number of in-mempool ancestors is <n> or
+           more (default: 25)
 
-   -limitancestorsize=<n>
-         Do not accept transactions whose size with all in-mempool ancestors
-         exceeds <n> kilobytes (default: 101)
+      -limitancestorsize=<n>
+           Do not accept transactions whose size with all in-mempool ancestors
+           exceeds <n> kilobytes (default: 101)
 
-   -limitdescendantcount=<n>
-         Do not accept transactions if any ancestor would have <n> or more
-         in-mempool descendants (default: 25)
+      -limitdescendantcount=<n>
+           Do not accept transactions if any ancestor would have <n> or more
+           in-mempool descendants (default: 25)
 
-   -limitdescendantsize=<n>
-         Do not accept transactions if any ancestor would have more than <n>
-         kilobytes of in-mempool descendants (default: 101).
-   ```
+      -limitdescendantsize=<n>
+           Do not accept transactions if any ancestor would have more than <n>
+           kilobytes of in-mempool descendants (default: 101).
+    ```
 
 {% include references.md %}
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
