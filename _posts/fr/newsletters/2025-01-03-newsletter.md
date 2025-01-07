@@ -162,7 +162,7 @@ Bitcoin][rust bitcoin repo], [Serveur BTCPay][btcpay server repo], [BDK][bdk rep
 d'Amélioration de Bitcoin (BIPs)][bips repo], [Lightning BOLTs][bolts repo], [Lightning BLIPs][blips
 repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
-- [Bitcoin Core #31223][] modifie la manière dont un nœud dérive son "objectif de service de port P2P 
+- [Bitcoin Core #31223][] modifie la manière dont un nœud dérive son "objectif de service de port P2P
   [Tor][topic anonymity networks]" (voir le Bulletin [#118][news118 tor]), en utilisant la
   valeur `-port` spécifiée par l'utilisateur plus une au lieu de la valeur par défaut de 8334, si une
   valeur `-port` est donnée. Cela corrige un problème où plusieurs nœuds locaux se liaient tous à 8334
