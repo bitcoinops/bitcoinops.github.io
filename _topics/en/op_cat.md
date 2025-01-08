@@ -75,6 +75,9 @@ optech_mentions:
   - title: "`OP_PAIRCOMMIT` opcode proposed to function like `OP_CAT` but without allowing recursive covenants`"
     url: /en/newsletters/2024/11/22/#update-to-lnhance-proposal
 
+  - title: "Creating contract-level relative timelocks and Chia-style singletons with `OP_CAT`"
+    url: /en/newsletters/2025/01/10/#contract-level-relative-timelocks
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: OP_CHECKSIGFROMSTACK

@@ -84,6 +84,12 @@ optech_mentions:
   - title: "Post and website examining LN-Symmetry testing on the default signet"
     url: /en/newsletters/2024/11/22/#signet-activity-report
 
+  - title: "Discussion about contract-level relative timelocks to solve LN-Symmetry's 2x delay problem"
+    url: /en/newsletters/2025/01/10/#contract-level-relative-timelocks
+
+  - title: "Multiparty LN-Symmetry variant with penalties for limiting published updates"
+    url: /en/newsletters/2025/01/10/#multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-updates
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: SIGHASH_ANYPREVOUT
