@@ -44,6 +44,9 @@ optech_mentions:
   - title: Draft BIP for DLEQ proofs
     url: /en/newsletters/2024/11/01/#draft-bip-for-dleq-proofs
 
+  - title: "BIPs #1689 merges BIP374 to specify a standard way to generate and verify DLEQs"
+    url: /en/newsletters/2025/01/03/#bips-1689
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
