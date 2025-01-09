@@ -155,13 +155,19 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #28121][] include verbose "reject-details" field in testmempoolaccept response
+- [Bitcoin Core #28121][] adds a new `reject-details` field to the response of
+  the `testmempoolaccept` RPC command, which is only included if the transaction
+  would be rejected from the mempool due to consensus or policy violations. The
+  error message is identical to the one returned by `sendrawtransaction` if the
+  transaction is rejected there as well.
 
-- [BDK #1592][] Architectural Decision Records (note from harding:
-  mainly looking to mention their new practice of documenting their
-  decisions, which I think maintainers of other projects might find
-  interesting.  We only need to briefly mention the specific records in
-  this PR.)
+- [BDK #1592][] introduces Architectural Decision Records (ADRs) to document
+  significant changes, outlining the problem addressed, decision drivers,
+  alternatives considered, pros and cons, and the final decision. This allows
+  newcomers to familiarize themselves with the repository’s history. This PR
+  adds an ADR template and the first two ADRs: one to remove the `persist`
+  module from `bdk_chain` and another to introduce a new `PersistedWallet` type
+  that wraps a `BDKWallet`.
 
 {% include snippets/recap-ad.md when="2025-01-14 15:30" %}
 {% include references.md %}
