@@ -51,6 +51,9 @@ optech_mentions:
   - title: "Discussion about fixing Murch-Zawy time warp in consensus cleanup"
     url: /en/newsletters/2024/12/06/#continued-discussion-about-consensus-cleanup-soft-fork-proposal
 
+  - title: "Discussion about the proposed solution to classic time warp being too stringent"
+    url: /en/newsletters/2025/01/03/#consensus-cleanup-timewarp-grace-period
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Consensus cleanup soft fork proposal

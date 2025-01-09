@@ -58,6 +58,9 @@ optech_mentions:
   - title: "BIP proposed for creating FROST scriptless threshold signatures for Bitcoin"
     url: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 
+  - title: "Updated ChillDKG draft for distributed key generation for FROST"
+    url: /en/newsletters/2025/01/03/#updated-chilldkg-draft
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Scriptless multisignature

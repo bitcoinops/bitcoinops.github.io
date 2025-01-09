@@ -58,6 +58,9 @@ optech_mentions:
   - title: "Draft BIP for quantum-safe address format"
     url: /en/newsletters/2024/06/14/#draft-bip-for-quantum-safe-address-format
 
+  - title: "Discussion about an upgrade path using taproot in case fast quantum computers are created"
+    url: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Taproot
