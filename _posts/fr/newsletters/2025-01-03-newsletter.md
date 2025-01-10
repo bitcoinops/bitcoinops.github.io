@@ -102,7 +102,7 @@ règles de consensus de Bitcoin._
   en raison du risque de contrefaçon par des ordinateurs quantiques rapides.
   Luke Dashjr a [noté][dashjr qc] qu'un soft fork est inutile pour le moment
   tant qu'il y a un accord général actuellement sur le fonctionnement futur d'un opcode de vérification
-  de signature résistant aux attaques quantiques, car les utilisateurs n'ont besoin de s'y engager que 
+  de signature résistant aux attaques quantiques, car les utilisateurs n'ont besoin de s'y engager que
   comme une option qui pourrait devenir disponible plus tard. Tadge Dryja a [suggéré][dryja qc] un soft fork
   transitoire qui restreindrait temporairement l'utilisation des signatures ECDSA et schnorr non
   sécurisées contre les attaques quantiques si il semblait que les ordinateurs quantiques étaient sur le
