@@ -32,7 +32,7 @@ infrastructure software.
   protocol over a simple webserver.  Kogman provides evidence that
   the vulnerabilities were known to several wallet developers for years.
   A similar vulnerability affecting some of the same software was
-  previously mentioned in [Newsletter #333][news333 vuln].
+  previously mentioned in [Newsletter #333][news333 vuln]. {% assign timestamp="1:39" %}
 
 - **Updated ChillDKG draft:** Tim Ruffing and Jonas Nick [posted][rn
   chilldkg] to the Bitcoin-Dev mailing list a link to the [current draft
@@ -44,7 +44,7 @@ infrastructure software.
   makes it possible to identify faulty participants, and made backup and
   recovery easier.  They've also worked with Sivaram Dhakshinamoorthy to
   keep their proposal in sync with his proposal for Bitcoin-compatible
-  FROST signing (see [Newsletter #315][news315 frost]).
+  FROST signing (see [Newsletter #315][news315 frost]). {% assign timestamp="14:09" %}
 
 ## Changing consensus
 
@@ -72,7 +72,7 @@ changing Bitcoin's consensus rules._
   opcodes may also be convenient for implementing more onchain-efficient
   types of [accountable computing][topic acc], in addition to other
   contract protocols.  Discussion on the Delving Bitcoin thread was
-  ongoing at the time of writing.
+  ongoing at the time of writing. {% assign timestamp="18:41" %}
 
 - **Adjusting difficulty beyond 256 bits:** Anders [posted][anders diff]
   to the Bitcoin-Dev mailing list with a concern about adjusting
@@ -91,7 +91,7 @@ changing Bitcoin's consensus rules._
   potentially all lightweight (SPV) clients to be tricked into thinking
   that a transaction has hundreds or thousands of confirmations when it
   actually has zero confirmations or conflicts with an actually
-  confirmed transaction.
+  confirmed transaction. {% assign timestamp="31:52" %}
 
 - **Transitory soft forks for cleanup soft forks:** Jeremy Rubin
   [posted][rubin transitory] to Delving Bitcoin about only temporarily
@@ -109,7 +109,7 @@ changing Bitcoin's consensus rules._
   ambivalent community members wanting to have to re-argue for or
   against a consensus change every few years, and that this concern
   applies the same whether a change adds a feature or addresses a
-  vulnerability.
+  vulnerability. {% assign timestamp="33:44" %}
 
 - **Quantum computer upgrade path:** Matt Corallo [posted][corallo qc]
   to the Bitcoin-Dev mailing list about adding a quantum-resistant
@@ -129,7 +129,7 @@ changing Bitcoin's consensus rules._
   cryptographic vulnerability), the transitory soft fork would
   automatically become permanent; otherwise the transitory soft fork
   could be renewed or allowed to lapse (making bitcoins protected by
-  ECDSA and schnorr spendable again).
+  ECDSA and schnorr spendable again). {% assign timestamp="48:09" %}
 
 - **Consensus cleanup timewarp grace period:** Sjors Provoost
   [posted][provoost timewarp] to Delving Bitcoin about the proposal for
@@ -148,7 +148,7 @@ changing Bitcoin's consensus rules._
   forbidding time from running backwards more than 7,200 seconds (two
   hours).  Antoine Poinsot [defends][poinsot timewarp] the choice of 600
   seconds as avoiding any known problem and providing the strongest
-  defense against future time warping.
+  defense against future time warping. {% assign timestamp="56:10" %}
 
 ## Releases and release candidates
 
@@ -161,21 +161,21 @@ release candidates._
   applications.  The original `bdk` Rust crate has been renamed to
   `bdk_wallet` (with an API intended to remain stable) and lower layer
   modules have been extracted into their own crates, including
-  `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`.
+  `bdk_chain`, `bdk_electrum`, `bdk_esplora`, and `bdk_bitcoind_rpc`. {% assign timestamp="1:06:44" %}
 
 - [LND 0.18.4-beta][] is a minor release of this popular LN
   implementation that "ships the features required for building custom
-  channels, alongside the usual bug fixes and stability improvements."
+  channels, alongside the usual bug fixes and stability improvements." {% assign timestamp="1:17:28" %}
 
 - [Core Lightning v24.11.1][] is a minor release that improves
   compatibility between the experimental `xpay` plugin and the older
-  `pay` RPC and makes several other improvements for xpay users.
+  `pay` RPC and makes several other improvements for xpay users. {% assign timestamp="1:18:13" %}
 
 - [Bitcoin Core 28.1rc2][] is a release candidate for a maintenance
-  version of the predominant full-node implementation.
+  version of the predominant full-node implementation. {% assign timestamp="1:18:47" %}
 
 - [LDK v0.1.0-beta1][] is a release candidate of this library for
-  building LN-enabled wallets and applications.
+  building LN-enabled wallets and applications. {% assign timestamp="1:19:37" %}
 
 ## Notable code and documentation changes
 
@@ -194,7 +194,7 @@ repo], and [BINANAs][binana repo]._
   `-port` value is given. This fixes a problem where multiple local nodes would
   all bind to 8334 and crash due to port collision. However, in the rare case
   where two local nodes are assigned consecutive `-port` values, they may still
-  collide on the derived onion port, but this should be avoided altogether.
+  collide on the derived onion port, but this should be avoided altogether. {% assign timestamp="1:20:19" %}
 
 - [Eclair #2888][] implements support for the [peer storage][topic peer storage]
   protocol as specified in [BOLTs #1110][], which allows nodes to store
@@ -202,19 +202,19 @@ repo], and [BINANAs][binana repo]._
   feature is intended for Lightning Service Providers (LSPs) serving mobile
   wallets, and has configurable settings that allow a node operator to specify
   how long it will store the data. This makes Eclair the second implementation
-  to support peer storage, after CLN (see Newsletter [#238][news238 storage]).
+  to support peer storage, after CLN (see Newsletter [#238][news238 storage]). {% assign timestamp="1:21:09" %}
 
 - [LDK #3495][] refines the historical success probability scoring model in LN
   pathfinding by improving the [probability density function (PDF)][probability
   density] and related parameters based on real-world data collected from
   randomized probes. This PR aligns historical and a priori models with
   real-world behavior, enhances default penalties, and improves pathfinding
-  reliability.
+  reliability. {% assign timestamp="1:22:35" %}
 
 - [LDK #3436][] moves the `lightning-liquidity` crate
   to the `rust-lightning` repository.  This crate provides types and
   primitives to integrate an LSP (as specified [here][lsp spec]) with an
-  LDK-based node.
+  LDK-based node. {% assign timestamp="1:24:31" %}
 
 - [LDK #3435][] adds an authentication field to the [blinded path][topic rv
   routing] payment context message for a payer to include a Hash-based Message
@@ -222,14 +222,14 @@ repo], and [BINANAs][binana repo]._
   the payer. This fixes an issue where an attacker could take a `payment_secret`
   from a [BOLT11][] invoice issued by the victim node and forge a payment, even
   if it didn't match the amount expected for that [offer][topic offers]. This
-  also helps prevent deanonymization attacks using the same technique.
+  also helps prevent deanonymization attacks using the same technique. {% assign timestamp="1:25:02" %}
 
 - [LDK #3365][] ensures that the `holder_commitment_point` (next commitment
   point) is immediately marked as available on upgrades by retrieving it in
   `get_channel_reestablish`, instead of leaving it in the previously used
   `PendingNext` state. This change prevents forced closures when a channel is in
   a steady state during an upgrade and then receives a `commitment_signed`
-  message that requires the next commitment point to be available.
+  message that requires the next commitment point to be available. {% assign timestamp="1:26:04" %}
 
 - [LDK #3340][] introduces [batching][topic payment batching] of on-chain claim
   transactions with [pinnable][topic transaction pinning] outputs, reducing
@@ -238,14 +238,14 @@ repo], and [BINANAs][binana repo]._
   therefore non-pinnable. Now, any output within 12 blocks of the height at
   which a counterparty can spend it is treated as pinnable and batched
   accordingly, provided their [HTLC][topic htlc]-timeout [locktimes][topic
-  timelocks] can be combined.
+  timelocks] can be combined. {% assign timestamp="1:26:41" %}
 
 - [BDK #1670][] introduces a new O(n) canonicalization algorithm that identifies
   canonical transactions and removes unconfirmed conflicts that are unlikely to
   get confirmed (non-canonical) from the wallet's best local chain view. This
   significantly more efficient approach replaces and removes the old
   `get_chain_position` method, which provided an O(n²) solution that [may
-  have been a DoS risk][canalgo] for certain use cases.
+  have been a DoS risk][canalgo] for certain use cases. {% assign timestamp="1:28:47" %}
 
 - [BIPs #1689][] merges [BIP374][] to specify a standard way to generate and
   verify [Discrete Log Equality Proofs (DLEQs)][topic dleq] for the elliptic
@@ -253,25 +253,25 @@ repo], and [BINANAs][binana repo]._
   [silent payments][topic silent payments] created using multiple independent
   signers; a DLEQ would allow all signers to prove to co-signers that their
   signature is valid and doesn't risk losing funds, without revealing their
-  private key.
+  private key. {% assign timestamp="1:31:45" %}
 
 - [BIPs #1697][] updates [BIP388][] to add support for [MuSig][topic musig] in
   the templated set of [output script descriptors][topic descriptors] by making
-  fine-grained grammar changes.
+  fine-grained grammar changes. {% assign timestamp="1:33:49" %}
 
 - [BLIPs #52][] adds [BLIP50][] to specify a protocol that is used for
   communication between LSP nodes and their clients, with a JSON-RPC format over
   [BOLT8][] peer-to-peer messages. This is part of a set of BLIPs that are
   upstreamed from the [LSP specification repository][lsp spec], and which are
   considered stable because they are live in production on multiple LSP and
-  client implementations.
+  client implementations. {% assign timestamp="1:34:21" %}
 
 - [BLIPs #54][] adds [BLIP52][] to specify a protocol for [JIT channels][topic
   jit channels] that allows clients without any LN channels to start receiving
   payments. When an incoming payment is received by the LSP, a channel is opened
   to the client in response, and the cost of opening the channel is deducted
   from the first payment received. This is also part of a set of BLIPs that are
-  upstreamed from the [LSP specification repository][lsp spec].
+  upstreamed from the [LSP specification repository][lsp spec]. {% assign timestamp="1:35:40" %}
 
 {% include snippets/recap-ad.md when="2025-01-07 15:30" %}
 {% include references.md %}

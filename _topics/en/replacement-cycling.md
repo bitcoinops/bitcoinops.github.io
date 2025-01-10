@@ -32,6 +32,9 @@ optech_mentions:
   - title: Replacement cycle attack against pay-to-anchor
     url: /en/newsletters/2024/08/09/#replacement-cycle-attack-against-pay-to-anchor
 
+  - title: "Comparison of replacement cycling HTLCs to repeatedly broadcasting old states in LN-Symmetry"
+    url: /en/newsletters/2025/01/10/#multiparty-ln-symmetry-variant-with-penalties-for-limiting-published-updates
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Transaction replacement
