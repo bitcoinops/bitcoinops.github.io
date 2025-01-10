@@ -9,7 +9,7 @@ lang: fr
 ---
 
 Le bulletin de cette semaine contient des liens vers des informations concernant des
-vulnérabilités de deanonymisation de longue date dans les logiciels utilisant des protocoles de
+vulnérabilités de désanonymisation de longue date dans les logiciels utilisant des protocoles de
 coinjoin centralisés et résume une mise à jour d'un brouillon de BIP concernant le protocole de génération
 de clés distribuées ChillDKG compatible avec la signature seuil sans script. Sont également incluses
 nos sections régulières résumant les discussions sur la modification des règles de consensus de
@@ -18,7 +18,7 @@ notables apportés aux logiciels d'infrastructure Bitcoin populaires.
 
 ## Nouvelles
 
-- **Attaques de deanonymisation contre le coinjoin centralisé :** Yuval Kogman a [posté][kogman cc]
+- **Attaques de désanonymisation contre le coinjoin centralisé :** Yuval Kogman a [posté][kogman cc]
 sur la liste de diffusion Bitcoin-Dev des détails sur plusieurs vulnérabilités réduisant la
 confidentialité dans les protocoles de [coinjoin][topic coinjoin] centralisés utilisés par les
 versions actuelles des portefeuilles Wasabi et Ginger, ainsi que par les versions passées des
@@ -26,7 +26,7 @@ logiciels portefeuilles Samourai, Sparrow, et Trezor Suite. Kogman a aidé à co
 WabiSabi utilisé dans Wasabi et Ginger (voir le [Bulletin #102][news102 wabisabi]) mais "a quitté en
 protestant avant sa sortie." Si elles sont exploitées, les vulnérabilités permettent au
 coordinateur centralisé de déterminer quel utilisateur a reçu quels outputs, éliminant tout avantage
-de l'utilisation d'un protocole sophistiqué par rapport à un simple serveur web. Kogman fournit des
+à utiliser un protocole sophistiqué par rapport à un simple serveur web. Kogman fournit des
 preuves que les vulnérabilités étaient connues de plusieurs développeurs de portefeuilles depuis des
 années. Une vulnérabilité similaire affectant certains des mêmes logiciels a été mentionnée
 précédemment dans le [Bulletin #333][news333 vuln].
@@ -63,56 +63,56 @@ règles de consensus de Bitcoin._
   celles possibles avec `OP_VAULT` de [BIP345][]. Les opcodes peuvent également être pratiques pour
   mettre en œuvre des types de [calcul responsable][topic acc] plus efficaces onchain, en plus
   d'autres protocoles de contrat. La discussion sur le fil Delving Bitcoin était en cours au moment de
-  la rédaction.
+  la rédaction de cet article.
 
-- **Ajuster la difficulté au-delà de 256 bits :** Anders a [posté][anders diff] sur la liste de
-  diffusion Bitcoin-Dev avec une préoccupation concernant l'ajustement de la difficulté de la
+- **Ajuster la difficulté au-delà de 256 bits :** Anders a [exprimé][anders diff] sur la liste de
+  diffusion Bitcoin-Dev une inquiétude concernant l'ajustement de la difficulté de la
   preuve-de-travail (PoW) au-delà des 256 bits disponibles dans un en-tête de bloc. Cela nécessiterait
-  une augmentation inimaginable du taux de hachage (une augmentation d'environ 2<sup>176</sup> fois le
+  une augmentation astronomique du taux de hachage (une augmentation d'environ 2<sup>176</sup> fois le
   taux actuel), mais si cela devait se produire, Michael Cassano [note][cassano diff] qu'un fork
   pourrait ajouter une cible de hachage secondaire et que les deux cibles, primaire et secondaire,
   devraient être atteintes pour qu'un bloc soit valide. Cela est similaire à une proposition pour
   atténuer les attaques de rétention de blocs (voir le [Bulletin #315][news315 withholding]). Ces types
   de forks, qui incluent des propositions comme les _forward blocks_ (voir le [Bulletin #16][news16
   forward]), peuvent techniquement être des soft forks car ils ne font que renforcer les règles
-  existantes, mais certains développeurs préfèrent ne pas utiliser cette étiquette car ils facilitent
-  la tromperie des nœuds complets non mis à jour et potentiellement de tous les clients légers (SPV)
+  existantes, mais certains développeurs préfèrent ne pas utiliser cette étiquette car cela permettrait
+  de tromper des nœuds complets non mis à jour et potentiellement de tous les clients légers (SPV)
   en leur faisant croire qu'une transaction a des centaines ou des milliers de confirmations alors
-  qu'elle a en réalité zéro confirmation ou est en conflit avec une transaction réellement confirmée.
+  qu'elle n'a en réalité reçu aucune confirmation ou qu'elle est en conflit avec une transaction réellement confirmée.
 
 - **Soft forks transitoires pour les soft forks de nettoyage :** Jeremy Rubin a [posté][rubin
   transitory] sur Delving Bitcoin à propos de l'application temporaire des règles de consensus conçues
-  pour atténuer ou corriger les vulnérabilités. L'idée avait précédemment été proposée pour les soft
+  pour atténuer ou corriger les vulnérabilités. L'idée avait été précédemment proposée pour les soft
   forks qui ajoutent de nouvelles fonctionnalités (voir le [Bulletin #197][news197 transitory]) mais
   n'avait reçu aucun soutien ni des défenseurs de nouvelles fonctionnalités ni des membres de la
-  communauté ambivalents quant aux changements proposés. Rubin suggère que l'idée pourrait mieux
-  s'appliquer aux soft forks qui tentent de corriger les vulnérabilités mais comportent un risque
+  communauté, plutôt ambivalents quant aux changements proposés. Rubin suggère que l'idée pourrait mieux
+  s'appliquer aux soft forks qui tentent de corriger les vulnérabilités mais font courir le risque
   d'empêcher accidentellement les utilisateurs de dépenser leurs bitcoins (appelé _risque de
   confiscation_) ou de limiter la capacité à corriger facilement les vulnérabilités futures. David
   Harding a [argumenté][harding transitory] que le manque de soutien précédent pour l'idée de soft
-  forks transitoires provenait du fait que ni les défenseurs ni les membres de la communauté
-  ambivalents ne voulaient avoir à rediscuter pour ou contre un changement de consensus tous les
-  quelques années, et que cette préoccupation s'applique de la même manière qu'un changement ajoute
+  forks transitoires provenait du fait que ni les défenseurs ni les membres partagés de la communauté
+  ne voulaient avoir à rediscuter tous les deux ou trois ans d'un changement de consensus,
+  et que cette préoccupation s'applique de la même manière qu'un changement ajoute
   une fonctionnalité ou adresse une vulnérabilité.
 
-- **Chemin de mise à niveau pour ordinateur quantique :** Matt Corallo a [posté][corallo qc] sur la
-  liste de diffusion Bitcoin-Dev à propos de l'ajout d'un opcode de vérification de signature
-  résistant aux quantiques dans [tapscript][topic tapscript] pour permettre aux fonds d'être dépensés
+- **Chemin de mise à niveau pour ordinateur quantique :** Matt Corallo a [suggéré][corallo qc], sur la
+  liste de diffusion Bitcoin-Dev, l'ajout d'un opcode de vérification de signature
+  résistant aux attaques quantiques dans [tapscript][topic tapscript] pour permettre aux fonds d'être dépensés
   même si les opérations de signature ECDSA et [schnorr][topic schnorr signatures] étaient désactivées
   en raison du risque de contrefaçon par des ordinateurs quantiques rapides.
   Luke Dashjr a [noté][dashjr qc] qu'un soft fork est inutile pour le moment
   tant qu'il y a un accord général actuellement sur le fonctionnement futur d'un opcode de vérification
-  de signature résistant aux quantiques, car les utilisateurs n'ont besoin que de s'engager sur cette
-  option qui pourrait devenir disponible plus tard. Tadge Dryja a [suggéré][dryja qc] un soft fork
+  de signature résistant aux attaques quantiques, car les utilisateurs n'ont besoin de s'y engager que 
+  comme une option qui pourrait devenir disponible plus tard. Tadge Dryja a [suggéré][dryja qc] un soft fork
   transitoire qui restreindrait temporairement l'utilisation des signatures ECDSA et schnorr non
-  sécurisées contre les quantiques si cela semblait que les ordinateurs quantiques étaient sur le
+  sécurisées contre les attaques quantiques si il semblait que les ordinateurs quantiques étaient sur le
   point de pouvoir voler des bitcoins. Ensuite, si quelqu'un résolvait un contrat de puzzle onchain
-  qui n'est solvable qu'avec un ordinateur quantique (ou la découverte d'une vulnérabilité
+  qu'on ne peut résoudre qu'avec un ordinateur quantique (ou la découverte d'une vulnérabilité
   cryptographique fondamentale), le soft fork transitoire deviendrait automatiquement permanent ;
-  sinon, le soft fork transitoire pourrait être renouvelé ou autorisé à expirer (rendant les bitcoins
+  sinon, le soft fork transitoire pourrait être renouvelé ou être autorisé à expirer (rendant les bitcoins
   protégés par ECDSA et schnorr à nouveau dépensables).
 
-- **Période de grâce de nettoyage de consensus timewarp :** Sjors Provoost a [posté][provoost
+- **Période de grâce de nettoyage de consensus timewarp :** Sjors Provoost s'est [exprimé][provoost
   timewarp] sur Delving Bitcoin à propos de la proposition pour le soft fork de [nettoyage de
   consensus][topic consensus cleanup] afin de mitiger l'[attaque timewarp][topic time warp] en
   interdisant au premier bloc d'une nouvelle période de difficulté d'avoir un temps inférieur de plus
@@ -122,8 +122,8 @@ règles de consensus de Bitcoin._
   horloges lentes pourraient ne pas accepter immédiatement, ralentissant la propagation du bloc par
   rapport à des blocs concurrents avec des timestamps moins variables qui peuvent être produits en
   même temps. Si un bloc concurrent reste sur la meilleure blockchain, le mineur du bloc time-rolling
-  perdra des revenus. Provoost suggère plutôt une limite moins restrictive, comme interdire au temps
-  de reculer de plus de 7,200 secondes (deux heures). Antoine Poinsot [défend][poinsot timewarp] le
+  perdra des revenus. Provoost suggère plutôt une limite moins restrictive, comme interdire de reculer
+  le temps de plus de 7,200 secondes (deux heures). Antoine Poinsot [défend][poinsot timewarp] le
   choix de 600 secondes comme évitant tout problème connu et offrant la meilleure défense contre les
   futurs timewarpings.
 
@@ -192,7 +192,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
   aveuglé][topic rv routing] pour qu'un payeur puisse inclure un Code d'Authentification de Message
   basé sur un Hash (HMAC) et un nonce et permettre à un destinataire d'authentifier le payeur. Cela
   corrige un problème où un attaquant pourrait prendre un `payment_secret` d'une facture [BOLT11][]
-  émise par le nœud victime et forger un paiement, même s'il ne correspondait pas au montant attendu
+  émise par le nœud victime et forger un paiement, même s'il ne correspond pas au montant attendu
   pour cette [offre][topic offers]. Cela aide également à prévenir les attaques de désanonymisation
   utilisant la même technique.
 
@@ -204,7 +204,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
   soit disponible.
 
 - [LDK #3340][] introduit le [batching][topic payment batching] des transactions de réclamation
-  on-chain avec des sorties [époinglable][topic transaction pinning], réduisant l'utilisation de l'espace
+  on-chain avec des sorties [épinglables][topic transaction pinning], réduisant l'utilisation de l'espace
   de bloc et les frais dans les scénarios de fermeture forcée. Auparavant, les sorties étaient
   uniquement regroupées si elles étaient exclusivement réclamables par le nœud, et donc non-épinglables.
   Désormais, toute sortie à moins de 12 blocs de la hauteur à laquelle une contrepartie peut la
