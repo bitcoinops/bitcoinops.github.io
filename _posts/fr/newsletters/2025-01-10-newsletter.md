@@ -38,7 +38,7 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   Jay Beddict a [relayé][beddict double] le message à la liste de diffusion Mining-Dev.
 
 - **Verrous temporels relatifs au niveau des contrats :** Gregory Sanders
-  a [posté][sanders clrt] sur Delving Bitcoin à propos de la recherche d'une solution pour
+  a [évoqué][sanders clrt] sur Delving Bitcoin la recherche d'une solution à
   une complication qu'il a découverte il y a environ un an (voir le [Bulletin #284][news284 deltas])
   lors de la création d'une implémentation de preuve de concept
   de [LN-Symmetry][topic eltoo]. Dans ce protocole, chaque état de canal
@@ -53,8 +53,8 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   prendra environ deux fois plus de temps que la date limite pour que le canal
   se résolve, ce qu'on appelle le _problème de délai 2x_. Cela signifie
   que les [verrous temporels][topic timelocks] pour les [HTLCs][topic htlc] dans LN-Symmetry
-  doivent être jusqu'à deux fois plus longs, ce qui facilite pour les attaquants
-  d'empêcher les nœuds de transfert de gagner des revenus sur leur capital (à travers
+  doivent être jusqu'à deux fois plus longs, ce qui permet aux attaquants
+  d'empêcher plus facilement les nœuds de transfert de générer des revenus sur leur capital (à travers
   [les attaques de blocage de canal][topic channel jamming attacks] et autres.
 
   Sanders suggère de résoudre le problème avec un verrouillage temporel relatif qui s'appliquerait à
@@ -72,24 +72,24 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   répondu][rubin muon] avec un lien vers sa proposition de l'année dernière pour les sorties _muon_
   qui doivent être dépensées dans le même bloc que la transaction qui les a créées, montrant comment
   elles pourraient contribuer à une solution. Sanders mentionne, et Anthony Towns [développe][towns
-  coinid] sur, la fonctionnalité `coinid` de la blockchain Chia, montrant comment elle pourrait
-  réduire les données requises à une quantité constante. Salvatore Ingala [a posté][ingala cat] sur un
+  coinid], la fonctionnalité `coinid` de la blockchain Chia, montrant comment elle pourrait
+  réduire les données requises à une quantité constante. Salvatore Ingala [a évoqué][ingala cat] un
   mécanisme similaire utilisant [OP_CAT][topic op_cat] qu'il a appris du développeur Rijndael, qui
-  plus tard [a fourni des détails][rijndael cat]. Brandon Black [a décrit][black penalty] un type
-  alternatif de solution---une variante de LN-Symmetry basée sur des pénalités---et a cité le travail
+  plus tard [a fourni des détails][rijndael cat]. Brandon Black [a décrit][black penalty] une
+  solution alternative---une variante de LN-Symmetry basée sur des pénalités---et a cité le travail
   de Daniel Roberts à ce sujet (voir le prochain article du bulletin).
 
 - **Variante de LN-Symmetry multipartite avec des pénalités pour limiter les publications de mises à jour :**
-  Daniel Roberts [a posté][roberts sympen] sur Delving Bitcoin à propos de la prévention d'une
-  contrepartie malveillante de canal (Mallory) d'être capable de retarder le règlement du canal en
+  Daniel Roberts [a publié][roberts sympen] sur Delving Bitcoin un article sur la façon d'empêcher qu'une
+  contrepartie malveillante de canal (Mallory) soit capable de retarder le règlement du canal en
   diffusant délibérément de vieux états à un taux de frais plus élevé que celui qu'une contrepartie
   honnête (Bob) paie pour la confirmation de l'état final. En théorie, Bob peut relier son état final
   à l'ancien état de Mallory et les deux transactions pourraient se confirmer dans le même bloc,
-  lui causant de perdre de l'argent sur les frais et à Bob de confirmer l'état final pour le même
+  causant à Mallory une perte d'argent sur les frais alors que Bob confirme l'état final pour le même
   coût de frais qu'il était déjà prêt à payer. Cependant, si Mallory peut répétitivement empêcher Bob
-  d'apprendre sur ses diffusions d'anciens états avant qu'ils ne soient confirmés, elle peut
-  l'empêcher de répondre jusqu'à ce que les [HTLCs][topic htlc] dans le canal expirent et Mallory soit
-  capable de voler des fonds.
+  d'être informé sur ses diffusions d'anciens états avant qu'ils ne soient confirmés, elle peut
+  l'empêcher de répondre jusqu'à ce que les [HTLCs][topic htlc] dans le canal expirent et qu'elle soit
+  en mesure de voler des fonds.
 
   Roberts a proposé un schéma qui permet à un participant de canal de confirmer seulement un seul
   état. Si un état ultérieur est confirmé, le participant qui a soumis l'état final et tout
@@ -98,7 +98,7 @@ dans les principaux logiciels d'infrastructure Bitcoin.
 
   Malheureusement, après avoir publié le schéma, Roberts a découvert et auto-divulgué un défaut
   critique dans celui-ci : similaire au _problème de retard 2x_ décrit dans le paragraphe
-  précédent, le dernier parti à signer peut compléter un état qu'aucun autre parti ne peut compléter,
+  précédent, le dernier parti à signer peut compléter un état qu'aucune autre partie ne peut compléter,
   donnant au signataire final un accès exclusif à l'état final actuel. Si une autre partie tente de clôturer
   dans l'état précédent, elle perdra de l'argent si le signataire final utilise l'état final.
 
@@ -137,14 +137,14 @@ bitcoin repo], [BTCPay Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Im
 Inquisition][bitcoin inquisition repo], et [BINANAs][binana repo]._
 
 - [Bitcoin Core #28121][] ajoute un nouveau champ `reject-details` à la réponse de la commande RPC
-  `testmempoolaccept`, qui est inclus uniquement si la transaction serait rejetée du mempool en raison
+  `testmempoolaccept`, qui est inclus uniquement si la transaction était rejetée du mempool en raison
   de violations de consensus ou de politique. Le message d'erreur est identique à celui renvoyé par
-  `sendrawtransaction` si la transaction y est également rejetée.
+  `sendrawtransaction` si la transaction y était également rejetée.
 
 - [BDK #1592][] introduit des Architectural Decision Records (ADRs) pour documenter les changements
   significatifs, en décrivant le problème abordé, les moteurs de décision, les alternatives
   considérées, les avantages et les inconvénients, et la décision finale. Cela permet aux nouveaux
-  venus de se familiariser avec l'histoire du dépôt. Cette PR ajoute un modèle d'ADR et les deux
+  venus de se familiariser avec  l'historique du référentiel. Cette PR ajoute un modèle d'ADR et les deux
   premiers ADRs : l'un pour supprimer le module `persist` de `bdk_chain` et l'autre pour introduire un
   nouveau type `PersistedWallet` qui enveloppe un `BDKWallet`.
 
