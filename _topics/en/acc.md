@@ -55,6 +55,9 @@ optech_mentions:
   - title: "BitVM may allow bidirectional bridging of tokens when used with Shielded CSV"
     url: /en/newsletters/2024/09/27/#shielded-client-side-validation-csv
 
+  - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
+    url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: "Merklize All The Things (MATT)"

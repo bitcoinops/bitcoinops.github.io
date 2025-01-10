@@ -133,6 +133,9 @@ optech_mentions:
   - title: "Post and website examining `OP_CHECKTEMPLATEVERIFY` testing on the default signet"
     url: /en/newsletters/2024/11/22/#signet-activity-report
 
+  - title: "Proposed CTV enhancement opcodes: `OP_TEMPLATEHASH` and `OP_INPUTAMOUNTS`"
+    url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Covenants
