@@ -89,6 +89,7 @@ for details --> {% endcomment %}
 [BIP47]: https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki
 [BIP48]: https://github.com/bitcoin/bips/blob/master/bip-0048.mediawiki
 [BIP49]: https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki
+[BIP50]: https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki
 [BIP52]: https://github.com/bitcoin/bips/blob/master/bip-0052.mediawiki
 [BIP61]: https://github.com/bitcoin/bips/blob/master/bip-0061.mediawiki
 [BIP62]: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki

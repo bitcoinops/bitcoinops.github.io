@@ -104,6 +104,9 @@ optech_mentions:
   - title: "BIPs #1421 adds BIP345 for the OP_VAULT opcode and related consensus changes"
     url: /en/newsletters/2024/03/06/#bips-1421
 
+  - title: "Proposed CTV enhancement opcodes for more flexible vaults and accountable computing"
+    url: /en/newsletters/2025/01/03/#ctv-enhancement-opcodes
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Python-vaults

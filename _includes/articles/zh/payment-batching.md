@@ -113,6 +113,7 @@ bitcoin-cli sendmany "" '{
            Do not accept transactions if any ancestor would have more than <n>
            kilobytes of in-mempool descendants (default: 101).
     ```
+
 {% include references.md %}
 [coinjoin sudoku]: http://www.coinjoinsudoku.com/
 [fee bumping]: ../1.fee_bumping/fee_bumping.md

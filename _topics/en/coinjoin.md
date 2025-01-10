@@ -85,6 +85,9 @@ optech_mentions:
   - title: Preventing coinjoin pinning with v3 transaction relay
     url: /en/newsletters/2023/06/28/#preventing-coinjoin-pinning-with-v3-transaction-relay
 
+  - title: "Deanonymization attacks against centralized coinjoin"
+    url: /en/newsletters/2025/01/03/#deanonymization-attacks-against-centralized-coinjoin
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Payjoin
