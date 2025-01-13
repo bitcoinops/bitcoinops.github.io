@@ -2,8 +2,8 @@
 
 title: 'Bitcoin Optech Newsletter #336'
 permalink: /de/newsletters/2025/01/10/
-name: 2025-01-10-newsletter
-slug: 2025-01-10-newsletter
+name: 2025-01-10-newsletter-de
+slug: 2025-01-10-newsletter-de
 type: newsletter
 layout: newsletter
 lang: de
