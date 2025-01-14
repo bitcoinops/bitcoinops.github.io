@@ -81,7 +81,7 @@ changes to popular Bitcoin infrastructure software.
   blockchain, showing how it could reduce the data required
   to a constant amount.  Salvatore Ingala [posted][ingala cat]
   about a similar mechanism using [OP_CAT][topic op_cat] that he learned
-  about from developer Rijndael, who later [provided details][rijndael
+  about from developer [Rijndael][rijndael cat], who later [provided details][rijndael
   cat].  Brandon Black [described][black penalty] an
   alternative type of solution---a penalty-based variant of
   LN-Symmetry---and cited work by Daniel Roberts about it (see next news
