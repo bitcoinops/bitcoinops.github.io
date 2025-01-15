@@ -9,9 +9,12 @@
     {% assign cell_emoji = cell_emoji | replace: "Mobile", mobile_icon %}
     {% assign cell_emoji = cell_emoji | replace: ",", "" %}
 
-    {% if cell_emoji == "" %}
+    {% if cell_emoji == "Not Applicable" %}
       {% assign cell_emoji = "&#x2796;" %} <!--- Not Applicable --->
       {% assign cell_emoji_original = "Not Applicable" %} <!--- Not Applicable --->
+    {% elsif include.state == "Unknown" %}
+        {% assign cell_emoji = "&#129335;" %} <!--- Unknown --->
+        {% assign cell_tooltip = "Unknown" %} <!--- Unknown --->
     {% endif %}
 
     {% assign cell_tooltip = cell_emoji_original %} <!--- No --->

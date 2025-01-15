@@ -9,6 +9,9 @@
 {% elsif include.state == "No Support" %}
   {% assign cell_emoji = "&#x274C;" %}  <!--- No Support --->
   {% assign cell_tooltip = "No Support" %} <!--- No Support --->
+{% elsif include.state == "Unknown" %}
+    {% assign cell_emoji = "&#129335;" %} <!--- Unknown --->
+    {% assign cell_tooltip = "Unknown" %} <!--- Unknown --->
 {% elsif include.state == "Not Applicable" %}
   {% assign cell_emoji = "&#x2796;" %} <!--- Not Applicable --->
   {% assign cell_tooltip = "Not Applicable" %} <!--- Not Applicable --->
@@ -18,14 +21,13 @@
 {% elsif include.state == "No" %}
   {% assign cell_emoji = "&#x274C;" %} <!--- No --->
   {% assign cell_tooltip = "No" %} <!--- No --->
-{% elsif include.state == "V0" %}
-    {% assign cell_emoji = "V0" %} <!--- No --->
-    {% assign cell_tooltip = "V0" %} <!--- No --->
-{% elsif include.state == "V2" %}
-    {% assign cell_emoji = "V2" %} <!--- No --->
-    {% assign cell_tooltip = "V2" %} <!--- No --->
-
-  {% endif %}
+{% elsif include.state | slice: 0, 1 == "V" %}
+    {% assign cell_emoji = include.state %} <!--- P2TR --->
+    {% assign cell_tooltip = include.state %} <!--- P2TR --->
+{% elsif include.state | slice: 0, 1 == "P" %}
+    {% assign cell_emoji = include.state %} <!--- P2TR --->
+    {% assign cell_tooltip = include.state %} <!--- P2TR --->
+{% endif %}
 
 {% endcapture %}
 

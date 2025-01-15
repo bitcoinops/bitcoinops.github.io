@@ -7,6 +7,8 @@
     {% assign cell_emoji = "&#x2705;" %}  <!--- Full Support --->
   {% when 'Send Support' %}
     {% assign cell_emoji = "&#x1F4B8;" %} <!--- Send Support --->
+  {% when 'Unknown' %}
+    {% assign cell_emoji = "&#129335;" %} <!--- Not Applicable --->
   {% when 'Not Applicable' %}
     {% assign cell_emoji = "&#x2796;" %} <!--- Not Applicable --->
 {% endcase %}
@@ -23,7 +25,6 @@
 {% assign cell_tooltip4 = include.input4 %}
 
 {% endcapture %}
-
 
 <div class="tooltip-container">
 

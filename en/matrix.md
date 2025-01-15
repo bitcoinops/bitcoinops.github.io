@@ -102,11 +102,25 @@ th, td {
     </td>
     <td style="border-style:hidden;text-align:left;vertical-align: top;font-size:14px;">
           <font size="3"><b>Legend:</b></font><br>
-              &#x2705; - Full Support (send & receive)<br/>
-              &#x1F4B8; - Send Support<br/>
-              &#x274C; - No Support <br/>
-              &#x2796; - Not Applicable (for a category type)<br/>
-              <span class="checkmark">&#10004;</span> - Alternate Implementation / <font size="3"><b>&#178;</b></font> - Multiple Implementations
+
+          <div class="tooltip-container">&#x2705; - Full Support <span class="tooltip">This response can represent "Send & Receive Support" (i.e. Bech32) or "Yes" (i.e. Native Segwit Change).</span>
+          </div><br/>
+
+          <div class="tooltip-container">&#x1F4B8; - Send Support<span class="tooltip">This response represents "Send Only Support" (i.e. Bech32) or "Yes" (i.e. Native Segwit Change).</span>
+          </div><br/>
+
+          <div class="tooltip-container">&#x274C; - No Support<span class="tooltip">This response represents "No Support" for a given feature.</span>
+          </div><br/>
+
+          <div class="tooltip-container">&#129335; - Unknown<span class="tooltip">This response represents uncertain status for a given feature.</span>
+          </div><br/>
+
+          <div class="tooltip-container">&#x2796; - Not Applicable <span class="tooltip">This response represents that a given feature is NOT applicable for a Product/Service category.  For example, Lighting Features would be "Not Applicable" for a Signing Device.</span>
+          </div><br/>
+
+          <div class="tooltip-container">&#10004; - Alternate Implementation <b>/</b> &#178; - Multiple Implementations <span class="tooltip">These responses represents cases where a feature is implemented via a solution other than the one be specifically tested for.  For example, for Payjoin, BIP78 is solution being tested for, however other solutions will be recognised (i.e. BIP79).</span>
+          </div><br/>
+
     </td>
     <td style="border-style:hidden;"></td>
   </tr>
@@ -117,17 +131,22 @@ th, td {
   <thead>   <!--  the <thead> tag is used to define the header section of a table -->
   <tr>
     <th rowspan="2">Product <br/>/ <br/>Service </th>
-    <th rowspan="2">Category</th>
-    <th rowspan="2">Key <br/> Features / <br/>Use Cases<br/><font size="1"><i class="italic">(hover)</i></font></th>
+
+    <th rowspan="2"><div class="tooltip-container">Category<span class="tooltip">Category of the Product/Service being tested.</span></div></th>
+
+    <th rowspan="2"><div class="tooltip-container">Key <br/> Features / <br/>Use Cases<br/><font size="1"><i class="italic">(hover)</i></font><span class="tooltip">Short description of Product/Service focus or differentiating features.</span></div></th>
+
     <th class="col-platform" style="display: none;color:blue;" colspan="3">Platform</th>
-    <th class="col-hwinterface" style="display: none;" rowspan="2"><a href="https://bitcoinops.org/en/topics/hwi/">HWI</a></th>
 
-    <th rowspan="2">Default <br/>Receive<br/> Address</th>
+    <th class="col-hwinterface" style="display: none;" rowspan="2"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/hwi/">HWI</a><span class="tooltip">Is hardware signer support implemented via the HWI Python Library?</span></div></th>
 
-    <th colspan="3" style="color:blue;">Native Segwit</th>
+    <th rowspan="2"><div class="tooltip-container">Default <br/>Receive<br/> Address<span class="tooltip">What is the default receive address for the product / service?</span></div></th>
+
+    <th colspan="3" style="color:blue;"><div class="tooltip-container">Native Segwit<span class="tooltip">P2WPKH, P2WSH, and P2TR all belong to the category of Native Segwit outputs.</span></div></th>
+
     <th class="col-feebumping" style="display: none;color:blue;" colspan="4">Fee Bumping </th>
 
-    <th class="col-descriptors" style="display: none;" rowspan="2"><a href="https://bitcoinops.org/en/topics/output-script-descriptors/">Descriptors</a></th>
+    <th class="col-descriptors" style="display: none;" rowspan="2"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/output-script-descriptors/">Descriptors</a><span class="tooltip">Does the Product/Service support Descriptors?</span></div></th>
 
     <th class="col-multipartytxn" style="display: none;color:blue;" colspan="6">Multi-Party Transactions </th>
 
@@ -145,70 +164,93 @@ th, td {
     </tr>
     <tr>
 
-    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">Device<span class="tooltip">Desktop/Mobile</span>
-    </div></th>
-    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">OS<span class="tooltip">Linux, Windows, OS, Android, iOS</span>
-    </div></th>
-    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">Web /<br> Browser<span class="tooltip">Y/N</span>
+    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">Device<span class="tooltip">Devices on which the Product/Service is available.</span>
     </div></th>
 
-    <th style="vertical-align:top;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32 <br/><font color="grey">P2WPKH<br/>P2WSH</font></a><span class="tooltip">BIP173</span>
+    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">OS<span class="tooltip">Operating Systems for which the Product/Service is available.</span>
+    </div></th>
+
+    <th class="col-platform" style="vertical-align:top;display: none;"><div class="tooltip-container">Web /<br> Browser<span class="tooltip">Does the Product/Service have a web or browser interface for users?</span>
     </div></th>
 
     <th style="vertical-align:top;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32m <br/><font color="grey">P2TR</font></a><span class="tooltip">BIP350</span>
+    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32 <br/><font color="grey">P2WPKH<br/>P2WSH</font></a><span class="tooltip">Does the Product/Service support Bech32 (BIP173)? <br/>
+    - To qualify as having Bech32 sending support, a product should be able to send to BOTH P2WPKH and P2WSH. <br/>
+    - To qualify as having Bech32 receiving support, it is sufficient to receive to EITHER P2WPKH or P2WSH.
+    </span>
     </div></th>
 
-    <th style="vertical-align:top;">Native <br/>Segwit<br/> Change</th>
+    <th style="vertical-align:top;"><div class="tooltip-container">
+    <a href="https://bitcoinops.org/en/topics/bech32/">Bech32m <br/><font color="grey">P2TR</font></a><span class="tooltip">Does the Product/Service support Bech32 (BIP350)?</span>
+    </div></th>
+
+    <th style="vertical-align:top;"><div class="tooltip-container">Native <br/>Segwit<br/> Change<span class="tooltip">Does the Product/Service provide Native Segwit Change (P2WPKH, P2WSH, or P2TR)?</span>
+    </div></th>
 
     <th class="col-feebumping" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Bump<br>Fee</font></a><span class="tooltip">full-RBF</span>
+    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Bump<br>Fee</font></a><span class="tooltip">Can the Product/Service increase the fee rate of a previously submitted transaction?</span>
     </div></th>
 
     <th class="col-feebumping" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Cancel<br>TXN</font></a><span class="tooltip">full-RBF</span>
+    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Cancel<br>TXN</font></a><span class="tooltip">Does the Product/Service support changing the outcome of previously submitted transactions, e.g. to cancel a payment?</span>
     </div></th>
 
     <th class="col-feebumping" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Notification</font></a><span class="tooltip">full-RBF</span>
+    <a href="https://bitcoinops.org/en/topics/replace-by-fee/">Full RBF<br><font color="grey">Notification</font></a><span class="tooltip">Does the Product/Service:  <br/>
+    - track when incoming transactions get replaced <br/>
+    - and notify the user <br/>
+    ?</span>
     </div></th>
 
-    <th class="col-feebumping" style="display: none;"><a href="https://bitcoinops.org/en/topics/cpfp/">CPFP</a></th>
-
-    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Version</font></a><span class="tooltip">BIP174 & BIP370</span>
-    </div></th>
-
-    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Export</font></a><span class="tooltip">BIP174 & BIP370</span>
-    </div></th>
-
-    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Update / <br>Finalize</font></a><span class="tooltip">BIP174 & BIP370</span>
+    <th class="col-feebumping" style="display: none;"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/cpfp/">CPFP</a><span class="tooltip">Can the Product/Service create Child-Pays-For-Parent transactions to bump an:  <br/>
+    - incoming transaction <br/>
+    - outgoing transaction <br/>
+    - any transaction that pays a wallet <br/>
+    - at least one of the above <br/>
+    ?</span>
     </div></th>
 
     <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/musig/">MuSig2</a><span class="tooltip">BIP327</span>
+    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Version</font></a><span class="tooltip">Does the Product/Service support PSBT V0 / V2 (BIP174 & BIP370)?</span>
     </div></th>
-
-    <th class="col-multipartytxn" style="display: none;"><a href="https://bitcoinops.org/en/topics/coinjoin/">Coinjoin</a></th>
 
     <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
-    <a href="https://bitcoinops.org/en/topics/payjoin/">Payjoin<font color="orange">*</font></a><span class="tooltip">BIP78 and Alternate Implementations are considered</span>
+    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Export</font></a><span class="tooltip">Can the Product/Service export PSBT (BIP174 & BIP370)?</span>
     </div></th>
 
-    <th class="col-pc_silentpayments" style="display: none;">Send /<br>Receive</th>
+    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
+    <a href="https://bitcoinops.org/en/topics/psbt/">PSBT<br><font color="grey">Update / <br>Finalize</font></a><span class="tooltip">Can the Product/Service update/finalize PSBT (BIP174 & BIP370)?</span>
+    </div></th>
 
-    <th class="col-pc_silentpayments" style="display: none;">Send /<br>Receive</th>
+    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
+    <a href="https://bitcoinops.org/en/topics/musig/">MuSig2</a><span class="tooltip">Does the Product/Service support MuSig2 (BIP327)?</span>
+    </div></th>
 
-    <th class="col-pc_silentpayments" style="display: none;">Send / Receive<br> <font color="grey"> + DNS<br>Address</font></th>
+    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/coinjoin/">Coinjoin</a><span class="tooltip">Does the Product/Service support Coinjoin?</span>
+    </div></th>
 
-    <th class="col-lightning" style="display: none;"><a href="https://github.com/lightning/bolts/blob/master/11-payment-encoding.md">BOLT 11</a></th>
-    <th class="col-lightning" style="display: none;"><a href="https://bitcoinops.org/en/topics/offers/">BOLT 12</a></th>
-    <th class="col-lightning" style="display: none;"><a href="https://github.com/bitcoin/bips/blob/2d9c172cddd6eaf2b1dedea66595fb33fa987fef/bip-XXXX.mediawiki">BOLT 12 <br><font color="grey">+ DNS<br>Addresses</font></a></th>
-    <th class="col-lightning" style="display: none;"><a href="https://bitcoinops.org/en/topics/lnurl/">LNURL</a></th>
-    <th class="col-lightning" style="display: none;"><a href="https://bitcoinops.org/en/topics/lnurl/">LNURL <font color="grey">+<br>Lightning<br> Addresses</font></a></th>
+    <th class="col-multipartytxn" style="display: none;"><div class="tooltip-container">
+    <a href="https://bitcoinops.org/en/topics/payjoin/">Payjoin<font color="orange">*</font></a><span class="tooltip">Does the Product/Service support Payjoin?  <br/>
+    BIP78 and Alternate Implementations are considered</span>
+    </div></th>
+
+    <th class="col-pc_silentpayments" style="display: none;"><div class="tooltip-container">Send /<br>Receive<span class="tooltip">Does the Product/Service support Reusable Payment Codes (BIP47)? </span>
+    </div></th>
+
+    <th class="col-pc_silentpayments" style="display: none;"><div class="tooltip-container">Send /<br>Receive<span class="tooltip">Does the Product/Service support Silent Payments (BIP352)?  </span>
+    </div></th>
+
+    <th class="col-pc_silentpayments" style="display: none;"><div class="tooltip-container">Send / Receive<br> <font color="grey"> + DNS<br>Address</font><span class="tooltip">Does the Product/Service support Silent Payments (BIP352) + DNS Human Readable Addresses?  </span></div></th>
+
+    <th class="col-lightning" style="display: none;"><div class="tooltip-container"><a href="https://github.com/lightning/bolts/blob/master/11-payment-encoding.md">BOLT 11</a><span class="tooltip">Does the Product/Service support sending and receiving payments (BOLT11)?  </span></div></th>
+
+    <th class="col-lightning" style="display: none;"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/offers/">BOLT 12</a><span class="tooltip">Does the Product/Service support sending and receiving payments via Offers (BOLT12)?  </span></div></th>
+
+    <th class="col-lightning" style="display: none;"><div class="tooltip-container"><a href="https://github.com/bitcoin/bips/blob/2d9c172cddd6eaf2b1dedea66595fb33fa987fef/bip-XXXX.mediawiki">BOLT 12 <br><font color="grey">+ DNS<br>Addresses</font></a><span class="tooltip">Does the Product/Service support sending and receiving payments via Offers (BOLT12) + DNS Human Readable Addresses? </span></div></th>
+
+    <th class="col-lightning" style="display: none;"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/lnurl/">LNURL</a><span class="tooltip">Does the Product/Service support sending and receiving payments via LNURL? </span></div></th>
+
+    <th class="col-lightning" style="display: none;"><div class="tooltip-container"><a href="https://bitcoinops.org/en/topics/lnurl/">LNURL <font color="grey">+<br>Lightning<br> Addresses</font></a><span class="tooltip">Does the Product/Service support sending and receiving payments via LNURL + Human Readable Lightning Addresses?  </span></div></th>
 
   </tr>
   </thead>
@@ -238,9 +280,10 @@ th, td {
           {% include functions/matrix-cell-1-input.md state=tool.feature.web %}
 
           <td class="col-hwinterface" style="display: none;">
-          {% include functions/matrix-cell-1-input.md state=tool.feature.hw_interface %}
+          {% include functions/matrix-cell-1-input.md state=tool.feature.hwi %}
 
-          <td>{{tool.feature.default_receive}}</td>
+          <td>
+          {% include functions/matrix-cell-1-input.md state=tool.feature.default_receive %}
 
           <td>
           {% include functions/matrix-cell-1-input.md state=tool.feature.bech32 %}
@@ -295,12 +338,16 @@ th, td {
 
           <td class="col-lightning" style="display: none;">
           {% include functions/matrix-cell-1-input.md state=tool.feature.lightning_11 %}
+
           <td class="col-lightning" style="display: none;">
           {% include functions/matrix-cell-1-input.md state=tool.feature.lightning_12 %}
+
           <td class="col-lightning" style="display: none;">
           {% include functions/matrix-cell-1-input.md state=tool.feature.lightning_12_dns %}
+
           <td class="col-lightning" style="display: none;">
           {% include functions/matrix-cell-1-input.md state=tool.feature.lightning_lnurl %}
+
           <td class="col-lightning" style="display: none;">
           {% include functions/matrix-cell-1-input.md state=tool.feature.lightning_lnurl_hrla %}
 
@@ -317,9 +364,8 @@ th, td {
   <tr style="background-color: transparent;">
   <td colspan="15" style="text-align:left;font-size:14px;border-style:hidden;" >
   <span class="bold">Notes:</span><br/>
+  &#x1F538; Details about what is being tested per feature can be seen by hovering over the respective header.<br/>
   &#x1F538; Features with alternate implementations are denoted with <font color="orange" size="3">*</font>, hover for details.<br/>
-  &#x1F538; To qualify as having Bech32 sending support, a product should be able to send to both P2WPKH and P2WSH<br/>
-  &#x1F538; To qualify as having Bech32 receiving support, it is sufficient to receive to either P2WPKH or P2WSH<br/>
   </td>
 
   </tr>
@@ -328,7 +374,7 @@ th, td {
   <span class="bold">Approach:</span><br/>
   &#x1F538; The initial features within the matrix have been selected by bitcoinops with a focus on interoperability.  <br/>
   &#x1F538; The matrix will be split by category, once enough results are collected.<br/>
-  &#x1F538; New feature as well as product/service requests are welcome!  Open a PR in the Optech Github.<br/>
+  &#x1F538; New feature as well as Product/Service requests are welcome!  Open a PR in the Optech Github.<br/>
   </td>
   </tr>
 
