@@ -1,5 +1,5 @@
 ---
-title: 'Scaling Bitcoin using Payment Batching'
+title: '用批量支付扩展比特币'
 permalink: /zh/payment-batching/
 name: 2021-03-26-payment-batching-zh
 slug: 2021-03-26-payment-batching-zh
