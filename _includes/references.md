@@ -10,6 +10,8 @@
 [scaling payment batching]: /en/payment-batching/
 [series preparing for taproot]: /en/preparing-for-taproot/
 
+[topic fpps]: /en/topics/pooled-mining/#full-pay-per-share-fpps
+[topic pplns]: /en/topics/pooled-mining/#pay-per-last-n-shares-pplns
 {% comment %}<!-- links for topics -->{% endcomment %}
 {% for topic in site.topics %}
   [topic {{topic.shortname | default: topic.title}}]: {{topic.url}}
