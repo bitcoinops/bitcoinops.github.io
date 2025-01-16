@@ -44,7 +44,7 @@ lang: zh
 - **<!--joinmarket-v0-8-3-released-->****JoinMarket v0.8.3 发布：**
   [JoinMarket v0.8.3][joinmarket v0.8.3] 新增了为找零地址自定义设置的功能，以及与 Electrum 兼容的隔离见证 `signmessage` 实现。
 
-## 准备 taproot #1：支持 Bech32m 的转账功能
+## 准备 taproot #1：Bech32m 发送支持
 
 *这是一个每周更新的[系列][series preparing for taproot]的第一篇，讲述开发者和服务提供商如何为预定在区块高度
 {{site.trb}} 激活的 taproot 做准备。*
