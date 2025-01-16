@@ -25,7 +25,7 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## Bech32m 发送支持
 
-*最初发表于 [Newsletter #154](/en/newsletters/2021/06/23/#preparing-for-taproot-1-bech32m-sending-support)*
+*最初发表于 [Newsletter #154](/zh/newsletters/2021/06/23/#准备-taproot-#1-支持-bech32m-的转账功能)*
 
 {% include specials/taproot/zh/00-bech32m.md %}
 
