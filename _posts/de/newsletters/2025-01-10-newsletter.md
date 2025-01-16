@@ -12,8 +12,8 @@ In der vorliegenden Newsletter-Ausgabe wird eine potenzielle Modifikation im Ber
 ## Nachrichten
 
 - **Untersuchung des Verhaltens von Mining-Pools vor der Behebung eines Bitcoin-Core-Fehlers:**
-  Im Rahmen einer Analyse wurde das Verhalten von Mining-Pools vor der Behebung eines Bitcoin-Core-Bugs untersucht. Die Untersuchung wurde von Abubakar Sadiq Ismail [posted][ismail double] auf Delving Bitcoin durchgeführt und bezog sich auf einen [Bug][bitcoin core #21950], der 2021 von Antoine Riard entdeckt wurde. Dieser Bug führte dazu, dass Nodes 2.000 Vbytes in Blockvorlagen für Coinbase-Transaktionen reservieren, anstatt der vorgesehenen 1.000 Vbytes. Jede Vorlage könnte etwa fünf zusätzliche kleine Transaktionen enthalten, wenn die Doppelreservierung beseitigt würde. Dies könnte jedoch dazu führen, dass Miner, die von der doppelten Reservierung abhängig sind, ungültige Blöcke produzieren, was zu einem großen Einkommensverlust führen würde. Ismail analysierte vergangene Blöcke, um festzustellen, welche Mining-Pools gefährdet sein könnten. Er stellte fest, dass Ocean.xyz, F2Pool und ein unbekannter Miner offenbar nicht standardmäßige Einstellungen verwenden, obwohl keiner von ihnen gefährdet zu sein scheint, Geld zu verlieren, wenn der Fehler behoben ist. 
-   
+  Im Rahmen einer Analyse wurde das Verhalten von Mining-Pools vor der Behebung eines Bitcoin-Core-Bugs untersucht. Die Untersuchung wurde von Abubakar Sadiq Ismail [posted][ismail double] auf Delving Bitcoin durchgeführt und bezog sich auf einen [Bug][bitcoin core #21950], der 2021 von Antoine Riard entdeckt wurde. Dieser Bug führte dazu, dass Nodes 2.000 Vbytes in Blockvorlagen für Coinbase-Transaktionen reservieren, anstatt der vorgesehenen 1.000 Vbytes. Jede Vorlage könnte etwa fünf zusätzliche kleine Transaktionen enthalten, wenn die Doppelreservierung beseitigt würde. Dies könnte jedoch dazu führen, dass Miner, die von der doppelten Reservierung abhängig sind, ungültige Blöcke produzieren, was zu einem großen Einkommensverlust führen würde. Ismail analysierte vergangene Blöcke, um festzustellen, welche Mining-Pools gefährdet sein könnten. Er stellte fest, dass Ocean.xyz, F2Pool und ein unbekannter Miner offenbar nicht standardmäßige Einstellungen verwenden, obwohl keiner von ihnen gefährdet zu sein scheint, Geld zu verlieren, wenn der Fehler behoben ist.
+
   Um das Risiko jedoch zu minimieren, wird derzeit vorgeschlagen, eine neue Startoption einzuführen, die standardmäßig 2.000 Vbytes für die Coinbase vorsieht.  Miner, die keine Abwärtskompatibilität benötigen, können die Reservierung auf 1.000 vbytes reduzieren (oder weniger, wenn sie weniger brauchen).
 
   Jay Beddict [relayed][beddict double] hat diese Nachricht an die Mining-Dev-Mailingliste weitergeleitet.
@@ -30,8 +30,8 @@ In der vorliegenden Newsletter-Ausgabe wird eine potenzielle Modifikation im Ber
   Sanders erwähnt, und Anthony Towns [erweitert][Towns coinid] die Funktion `coinid` der Chia Blockchain und zeigt, wie sie die erforderlichen Daten auf eine konstante Menge reduzieren könnte.  Salvatore Ingala [postete][ingala cat] über einen ähnlichen Mechanismus mit [OP_CAT][topic op_cat], den er vom Entwickler [Rijndael][rijndael cat] erfuhr, der später Details beschrieb. Brandon Black [beschrieb][black penalty] eine alternative Art der Lösung – eine strafbasierte Variante von LN-Symmetrie – und zitierte Arbeiten von Daniel Roberts darüber (siehe nächster News-Artikel).
 
 - **Die Veröffentlichung von Aktualisierungen wird in der Mehrparteien-LN-Symmetrie-Variante durch Strafen begrenzt:**
-  Daniel Roberts [veröffentlichte][roberts sympen]auf der Plattform "Delving Bitcoin" einen Beitrag, in dem er darlegte, wie man eine böswillige Kanal-Gegenpartei (Mallory) daran hindern kann, die Kanalabrechnung zu verzögern. Zu diesem Zweck zahlt Mallory einer ehrlichen Gegenpartei (Bob) absichtlich eine höhere Gebühr für die Bestätigung des endgültigen Zustands, als es bei einer böswilligen Gegenpartei der Fall wäre.  In der Theorie besteht für Bob die Möglichkeit, seinen Endzustand an Mallorys alten Zustand zu binden. Beide Transaktionen könnten in demselben Block bestätigt werden, was dazu führen würde, dass Mallory Geld für Gebühren verliert und Bob den Endzustand für die gleichen Gebühren bestätigt, die er bereits bereit war zu zahlen.  Es besteht jedoch die Möglichkeit, dass Mallory verhindern kann, dass Bob alten Zuständen erfährt, bevor diese bestätigt sind. In diesem Fall kann sie verhindern, dass er antwortet, bis die [HTLCs][topic htlc] im Kanal ablaufen und sie in der Lage ist, Geld zu stehlen. 
-  
+  Daniel Roberts [veröffentlichte][roberts sympen]auf der Plattform "Delving Bitcoin" einen Beitrag, in dem er darlegte, wie man eine böswillige Kanal-Gegenpartei (Mallory) daran hindern kann, die Kanalabrechnung zu verzögern. Zu diesem Zweck zahlt Mallory einer ehrlichen Gegenpartei (Bob) absichtlich eine höhere Gebühr für die Bestätigung des endgültigen Zustands, als es bei einer böswilligen Gegenpartei der Fall wäre.  In der Theorie besteht für Bob die Möglichkeit, seinen Endzustand an Mallorys alten Zustand zu binden. Beide Transaktionen könnten in demselben Block bestätigt werden, was dazu führen würde, dass Mallory Geld für Gebühren verliert und Bob den Endzustand für die gleichen Gebühren bestätigt, die er bereits bereit war zu zahlen.  Es besteht jedoch die Möglichkeit, dass Mallory verhindern kann, dass Bob alten Zuständen erfährt, bevor diese bestätigt sind. In diesem Fall kann sie verhindern, dass er antwortet, bis die [HTLCs][topic htlc] im Kanal ablaufen und sie in der Lage ist, Geld zu stehlen.
+
   Roberts Vorschlag sieht ein Verfahren vor, das es einem Kanalteilnehmer erlaubt, nur einen einzigen Status zu bestätigen.  Gemäß der von Roberts vorgeschlagenen Methode ist es einem Kanalteilnehmer möglich, lediglich einen einzigen Status zu bestätigen. Im Falle einer späteren Bestätigung eines weiteren Status durch einen anderen Teilnehmer oder Teilnehmer, der keinen Status übermittelt hat, ist es den zuvor genannten Teilnehmern möglich, das Geld der Teilnehmer zu erhalten, die veraltete Zustände eingereicht haben.
 
 
@@ -67,14 +67,14 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], und [BINANAs][binana repo]._
 
-- [Bitcoin Core #28121][] wird ein neues Feld namens `reject-details` eingeführt, das in der Antwort des RPC-Befehls `testmempoolaccept` enthalten ist. 
-  Dieses Feld wird nur angezeigt, wenn die Transaktion aufgrund  von Konsens- oder Richtlinienverstößen vom Mempool abgelehnt wurde. 
+- [Bitcoin Core #28121][] wird ein neues Feld namens `reject-details` eingeführt, das in der Antwort des RPC-Befehls `testmempoolaccept` enthalten ist.
+  Dieses Feld wird nur angezeigt, wenn die Transaktion aufgrund  von Konsens- oder Richtlinienverstößen vom Mempool abgelehnt wurde.
   Die Fehlermeldung ist identisch mit der, die von `sendrawtransaction` zurückgegeben wird, wenn die Transaktion auch dort abgelehnt wird.
 
-- [BDK #1592][] erfolgt die Einführung von Architectural Decision Records (ADRs), um signifikante Änderungen zu dokumentieren. 
-Dies umfasst das behandelte Problem, die Entscheidungsfaktoren, in Betracht gezogene Alternativen, Vor- und Nachteile sowie die endgültige Entscheidung. 
-Hierdurch wird es Neueinsteigern ermöglicht, sich mit der Geschichte des Repositorys vertraut zu machen. 
-Die vorliegende PR-Anwendung ergänzt die vorhandene ADR-Vorlage um zwei weitere ADRs: 
+- [BDK #1592][] erfolgt die Einführung von Architectural Decision Records (ADRs), um signifikante Änderungen zu dokumentieren.
+Dies umfasst das behandelte Problem, die Entscheidungsfaktoren, in Betracht gezogene Alternativen, Vor- und Nachteile sowie die endgültige Entscheidung.
+Hierdurch wird es Neueinsteigern ermöglicht, sich mit der Geschichte des Repositorys vertraut zu machen.
+Die vorliegende PR-Anwendung ergänzt die vorhandene ADR-Vorlage um zwei weitere ADRs:
 Die erste dient der Entfernung des `persist`-Moduls aus `bdk_chain`, die zweite der Einführung eines neuen `PersistedWallet`-Typs, der eine `BDKWallet` umhüllt.
 
 {% include snippets/recap-ad.md when="2025-01-14 15:30" %}
