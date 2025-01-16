@@ -96,3 +96,4 @@ lang: zh
 [terminal web]: https://terminal.lightning.engineering/
 [lightning labs terminal web blog]: https://lightning.engineering/posts/2021-05-11-terminal-web/
 [trezor rbf]: https://wiki.trezor.io/Replace-by-fee_(RBF)
+[series preparing for taproot]: /zh/preparing-for-taproot/
