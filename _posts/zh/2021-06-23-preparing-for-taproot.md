@@ -1,5 +1,5 @@
 ---
-title: Preparing for taproot
+title: 准备 Taproot
 permalink: /zh/preparing-for-taproot/
 name: 2021-06-23-preparing-for-taproot-zh
 slug: 2021-06-23-preparing-for-taproot-zh
