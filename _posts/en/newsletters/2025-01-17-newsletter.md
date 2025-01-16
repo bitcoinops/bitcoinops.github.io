@@ -103,15 +103,39 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Eclair #2936][] Delay considering a channel closed when seeing an on-chain spend
+- [Eclair #2936][] introduces a 12-block delay before marking a channel as
+  closed after its funding output has been spent to allow for the propagation of
+  a [splice][topic splicing] update (see Newsletter [#214][news214
+  splicing] and an Eclair developer's description of the [motivation][tbast splice]).
+  Spent channels are temporarily tracked in a new `spentChannels` map, where
+  they are either removed after 12 blocks or updated as spliced channels. When a
+  splice occurs, the parent channel's short channel identifier (SCID), capacity,
+  and balance bounds are updated instead of creating a new channel.
 
-- [Rust Bitcoin #3792][] Add BIP324 V2 p2p network message support
+- [Rust Bitcoin #3792][] adds ability to encode and decode [BIP324][]’s [v2 P2P
+  transport][topic v2 P2P transport] messages (see Newsletter [#306][news306 v2]).
+  This is achieved by adding a `V2NetworkMessage` struct, which wraps the original
+  `NetworkMessage` enum and provides v2 encoding and decoding.
 
-- [BDK #1789][] Change default tx to version 2
+- [BDK #1789][] updates the default transaction version from 1 to 2 to improve
+  wallet privacy.  Prior to this, BDK wallets were more identifiable due to
+  only 15% of the network using version 1. In addition, version 2 is required
+  for a future implementation of [BIP326][]’s nSequence-based [anti fee
+  sniping][topic fee sniping] mechanism for [taproot][topic taproot]
+  transactions.
 
-- [BIPs #1687][] silent payments in PSBTs
+- [BIPs #1687][] merges [BIP375][] to specify sending [silent payments][topic
+  silent payments] using [PSBTs][topic psbt]. If there are multiple independent
+  signers, a [DLEQ][topic dleq] proof is required to allow all signers to prove to co-signers
+  that their signature doesn’t misspend funds, without revealing
+  their private key (see [Newsletter #335][news335 dleq] and [Recap
+  #327][recap327 dleq]).
 
-- [BIPs #1396][] BIP 78 & BIP 174 Conflict: Keep input utxo data through input finalization
+- [BIPs #1396][] updates [BIP78][]’s [payjoin][topic payjoin] specification to
+  align with [BIP174][]’s [PSBT][topic psbt] specification, resolving a previous
+  conflict. In BIP78, a receiver previously deleted UTXO data after completing
+  its inputs, even if the sender needed the data. With this update, UTXO data is
+  now retained.
 
 {% include snippets/recap-ad.md when="2025-01-21 15:30" %}
 {% include references.md %}
@@ -130,3 +154,7 @@ repo], and [BINANAs][binana repo]._
 [news304 fpps proxy]: /en/newsletters/2024/05/24/#pay-per-share-pps
 [tbast splice]: https://github.com/ACINQ/eclair/pull/2936#issuecomment-2595930679
 [conduition offchain2]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000189.html
+[news214 splicing]: /en/newsletters/2022/08/24/#bolts-1004
+[news306 v2]: /en/newsletters/2024/06/07/#rust-bitcoin-2644
+[news335 dleq]: /en/newsletters/2025/01/03/#bips-1689
+[recap327 dleq]: /en/podcast/2024/11/05/#draft-bip-for-dleq-proofs
