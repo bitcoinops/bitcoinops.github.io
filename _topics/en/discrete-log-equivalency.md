@@ -47,6 +47,9 @@ optech_mentions:
   - title: "BIPs #1689 merges BIP374 to specify a standard way to generate and verify DLEQs"
     url: /en/newsletters/2025/01/03/#bips-1689
 
+  - title: "BIPs #1687 adds BIP375 to specify sending DLEQs for multi-signer silent payments using PSBT"
+    url: /en/newsletters/2025/01/17/#bips-1687
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:
