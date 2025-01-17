@@ -13,30 +13,30 @@ excerpt: >
 ---
 {{page.excerpt}} 这是继 [2018][yirs 2018]、[2019][yirs 2019]、[2020][yirs 2020]、[2021][yirs 2021]、[2022][yirs 2022] 和 [2023][yirs 2023] 年度总结之后的又一篇年度回顾。
 
-## Contents
+## 目录
 
-* January
-  * [Fee-dependent timelocks](#feetimelocks)
-  * [Optimized contract protocol exits](#optimizedexits)
-  * [LN-Symmetry proof-of-concept implementation](#poclnsym)
-* February
-  * [Replace by feerate](#rbfr)
-  * [Human-readable payment instructions](#hrpay)
-  * [Improved ASMap generation](#asmap)
-  * [LN dual funding](#dualfunding)
-  * [Trustless betting on future feerates](#betfeerates)
-* March
+* 一月
+  * [依赖手续费的时间锁](#feetimelocks)
+  * [优化的合约协议退出](#optimizedexits)
+  * [LN-Symmetry 概念验证实现](#poclnsym)
+* 二月
+  * [按费率替换](#rbfr)
+  * [人类可读的支付指令](#hrpay)
+  * [改进的 ASMap 生成](#asmap)
+  * [LN 双向注资](#dualfunding)
+  * [对未来费率的免信任押注](#betfeerates)
+* 三月
   * [BINANAs and BIPs](#binanabips)
-  * [Enhanced feerate estimation](#enhancedfeeestimates)
-  * [More efficient transaction sponsorship](#efficientsponsors)
-* April
+  * [改进费率估算](#enhancedfeeestimates)
+  * [更高效的交易资助](#efficientsponsors)
+* 四月
   * [共识漏洞清理](#consensuscleanup)
   * [重塑 BIP 流程](#bip2reform)
   * [入账路由费](#inboundrouting)
   * [准区块](#weakblocks)
   * [重启测试网](#testnet)
   * [开发者被逮捕](#devarrests)
-* May
+* 五月
   * [静默支付](#silentpayments)
   * [BitVMX](#bitvmx)
   * [匿名使用的 token](#aut)
@@ -44,10 +44,10 @@ excerpt: >
   * [为参加矿池的矿工设计的 Ecash](#minecash)
   * [Miniscript 规范](#miniscript)
   * [Utreexo 的 beta 版](#utreexod)
-* June
+* 六月
   * [闪电支付的可行性与通道耗竭](#lnfeasibility)
   * [抗量子计算的交易签名](#quantumsign)
-* July
+* 七月
   * [在 BOLT11 发票中包含盲化路径](#bolt11blind)
   * [门限签名的密钥生成算法 ChillDKG](#chilldkg)
   * [MuSig 和门限签名的 BIP](#musigthresh)
@@ -75,277 +75,66 @@ excerpt: >
 
 ---
 
-## January
+## 一月
 
 {:#feetimelocks}
-John Law proposed [fee-dependent timelocks][news283 feelocks], a soft
-fork allowing [timelocks][topic timelocks] to expire only when median
-block feerates drop below a user-specified level. This prevents high
-fees near expiration from preventing confirmation, which can lead to
-funds loss.  Instead, the timelock extends until fees
-fall to a predetermined value, addressing longstanding concerns of [forced expiration
-floods][topic expiration floods] during mass channel closures. The
-proposal improves security for multi-user setups like [channel
-factories][topic channel factories] and [joinpools][topic joinpools]
-while incentivizing participants to avoid fee spikes.  Discussions
-included storing parameters in the taproot [annex][topic annex], feerate
-commitments for lightweight clients, pruned node support, and the impact
-of [out-of-band fees][topic out-of-band fees].
+- **<!--fee-dependent-timelocks-->依赖手续费的时间锁：** John Law 提出了 [“依赖手续费的时间锁”][news283 feelocks]，这是一个软分叉提议，允许[时间锁][topic timelocks]仅在区块费率中值低于用户指定的水平时才会过期（解锁）。相反，时间锁会延长，直到费用降低到预定值为止，从而解决了大规模通道关闭时引发的[强制过期洪流][topic expiration floods]的长期问题。这一提案改善了多用户环境如[通道工厂][topic channel factories] 和 [joinpools][topic joinpools]的安全性，同时激励参与者避免造成费用峰值。讨论的重点包括将参数存储在 Taproot [annex 字段][topic annex]中、为轻量客户端提供费率承诺、支持剪枝节点以及[协议外手续费][topic out-of-band fees]的影响。
 
 {:#optimizedexits}
-Salvatore Ingala proposed a method to [optimize exits][news283 exits]
-from multiparty contracts, like joinpools or channel factories, by
-enabling users to coordinate a single transaction instead of
-broadcasting separate ones.  This reduces onchain size by at least 50%
-and up to 99% under ideal circumstances, which is critical when fees are
-high. A bond mechanism ensures honest execution: one participant
-constructs the transaction but forfeits the bond if proven fraudulent.
-Ingala suggests implementing this with [OP_CAT][topic op_cat] and
-[MATT][topic acc] soft fork features, with further efficiency possible
-using [OP_CSFS][topic op_checksigfromstack] and 64-bit arithmetic.
+- **<!--optimized-contract-protocol-exits-->优化的合约协议退出：** Salvatore Ingala 提出了一种对多方合约[优化退出流程][news283 exits]的方法，例如 joinpools 和通道工厂的使用场景。通过这一方法，用户可以协调生成一笔单一交易，而不是广播各自独立的交易。这种方式在链上交易规模上至少减少 50%，在理想情况下甚至可减少多达 99%，这在高费用环境下至关重要。该方法通过引入保证金机制（bond mechanism）来确保执行的诚实性：由一名参与者构建交易，但如果被证明存在欺诈行为，该参与者将没收其保证金。Ingala 建议使用 [OP_CAT][topic op_cat] 和 [MATT][topic acc]软分叉功能来实现此优化，进一步的效率提升可通过 [OP_CSFS][topic op_checksigfromstack] 和 64 位算术运算实现。
 
 {:#poclnsym}
-Gregory Sanders shared a proof-of-concept [implementation][news284
-lnsym] of [LN-Symmetry][topic eltoo] using a fork of Core Lightning.
-LN-Symmetry enables bi-directional payment channels without penalty
-transactions but relies on a soft fork like [SIGHASH_ANYPREVOUT][topic
-sighash_anyprevout] to
-allow child transactions to spend any parent version. Sanders
-highlighted its simplicity compared to [LN-Penalty][topic ln-penalty],
-the difficulty of avoiding [pinning][topic transaction pinning] (inspiring his work on [package
-relay][topic package relay] and [ephemeral anchors][topic ephemeral
-anchors]), and the potential for faster payments via emulation of
-[OP_CTV][topic op_checktemplateverify]. He confirmed penalties are
-unnecessary, simplifying channel implementation and avoiding reserved
-funds.  However, LN-Symmetry requires longer [CLTV expiry deltas][topic
-cltv expiry delta] to prevent misuse.
+- **<!--ln-symmetry-proof-of-concept-implementation-->****LN-Symmetry 概念验证实现：** Gregory Sanders 分享了基于 Core Lightning 的 [LN-Symmetry][topic eltoo] 的[概念验证实现][news284 lnsym]。LN-Symmetry 实现了无需罚款交易的双向支付通道，但依赖于一个软分叉，例如 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout]，以允许子交易可以花费任何版本的父交易。Sanders 强调了其相较于 [LN-Penalty][topic ln-penalty]的简单性、避免[交易钉死][topic transaction pinning]的难度(这启发 Sanders 开展了有关[包中继][topic package relay]和[临时锚点][topic ephemeral anchors]的研究)、以及通过模拟 [OP_CTV][topic op_checktemplateverify] 实现更快支付的潜力。他确信惩罚是不必要的，这简化了通道实现并避免了预留资金。然而，LN-Symmetry 需要更长的 [CLTV 到期差][topic cltv expiry delta]以防止被滥用。
 
-## February
+## 二月
 
 {:#rbfr}
-Peter Todd proposed [Replace by Feerate][news288 rbfr] (RBFr) to address
-[transaction pinning][topic transaction pinning] when standard
-[RBF][topic rbf] policies fail, with two variations: pure RBFr, allowing
-unlimited replacements with much higher feerates (e.g., 2x), and
-one-shot RBFr, enabling a single replacement with moderately higher fees
-(e.g., 1.25x) if the replacement enters the top of the mempool.
-Mark Erhardt identified an initial problem and other developers
-discussed the complexities of fully analyzing the idea with available
-tools.  Todd released an experimental implementation and other
-developers continued working on alternative solutions to address
-transaction pinning, including developing the tools necessary to
-increase confidence in any solution that is adopted.
+- **<!--replace-by-feerate-->按费率替换：** Peter Todd 提出了[按费率替换][news288 rbfr] (RBFr)以解决当标准[RBF(手续费替换)][topic rbf]策略失效时的[交易钉死][topic transaction pinning]问题，该提案包含两种变体：纯 RBFr，允许使用费率显著更高（例如 2 倍）的替代交易进行无限次替换；单次 RBFr，允许单次替代交易，但只需支付中等幅度更高的费用（例如 1.25 倍），前提是替代交易可以进入交易池的顶部。Mark Erhardt 指出了该提案的一个初始问题，其他开发者讨论了在现有工具下全面分析这一提案的复杂性。Todd 发布了一个实验性实现，同时其他开发者也继续研究替代方案以解决交易钉死问题，并开发了必要的工具来增强对最终采用解决方案的信心。
 
 {:#hrpay}
-Matt Corallo proposed a BIP for DNS-based [human-readable Bitcoin payment
-instructions][news290 dns], allowing an email-like string (e.g., example@example.com)
-to resolve to a DNSSEC-signed TXT record containing a [BIP21][] URI.
-This supports onchain addresses, [silent payments][topic silent
-payments], and LN [offers][topic offers]---and can be easily extended to
-other payment protocols.  A [specification][news307 bip353] of this was
-added as [BIP353][].  Corallo also drafted a [BOLT][news333 dnsbolt] and
-[BLIP][news306 dnsblip] for LN nodes, enabling wildcard DNS records and
-secure payment resolution using offers.  An [implementation][news329
-dnsimp] was merged into LDK in November.  Development of this protocol
-and silent payments led Josie Baker to start a [discussion][news292
-bip21] about revising [BIP21][] payment URIs, which [continued][news306
-bip21] later in the year.
+- **<!--human-readable-payment-instructions-->人类可读的支付指令：** Matt Corallo 提出了一个基于 DNS 的[人类可读比特币支付指令][news290 dns]的改进提案（BIP），允许通过类似电子邮件的字符串（例如 example@example.com）解析为一个包含 [BIP21][] URI 的 DNSSEC 签名 TXT 记录。这种方法支持链上地址、[静默支付（Silent Payments）][topic silent payments]和闪电网络[要约（offers）][topic offers]，还可以轻松扩展到其他支付协议。该[提案标准][news307 bip353]被分配到[BIP353][]。Corallo 还起草了针对 LN 节点的 [BOLT][news333 dnsbolt] 和 [BLIP][news306 dnsblip] 提案，支持泛域名 DNS（wildcard DNS）记录，并通过 LN 要约实现安全的支付解析。该[实现][news329 dnsimp]于 11 月被合并到 LDK 中。该协议及静默支付的开发，促使 Josie Baker 开启了关于修订 [BIP21][] 支付 URI 的[讨论][news292 bip21]，这一讨论在年内[继续][news306 bip21]进行。
 
 {:#asmap}
-Fabian Jahr wrote software that allows multiple developers to
-[independently create equivalent ASMaps][news290 asmap], which helps
-Bitcoin Core diversify peer connections and resist [eclipse attacks][topic
-eclipse attacks].  If Jahr's tooling becomes widely accepted, Bitcoin
-Core may include ASMaps by default, enhancing protection against attacks
-from parties controlling nodes on multiple subnets.
+- **<!--improved-asmap-generation-->****改进的 ASMap 生成：** Fabian Jahr 开发了一款软件，允许多个开发者[独立创建等效的自治系统映射（ASMaps）][news290 asmap]。这种工具有助于 Bitcoin Core 实现多样化的对等节点连接，并抵御[日蚀攻击（Eclipse Attacks）][topic eclipse attacks]。如果 Jahr 的工具得到广泛接受，Bitcoin Core 可能会默认包含 ASMaps，从而进一步增强对由多个子网节点控制方发起攻击的防御能力。
 
 {:#dualfunding}
-[Support][news290 dualfund] for [dual funding][topic dual funding] was
-added to the LN specification along with support for the interactive
-transaction construction protocol.  Interactive construction allows two
-nodes to exchange preferences and UTXO details they can use to
-construct a funding transaction together. Dual funding allows a
-transaction to include inputs from either or both parties. For example,
-Alice may want to open a channel with Bob. Before this specification
-change, Alice had to provide all the funding for the channel. Now,
-when using an implementation that supports dual funding, Alice can open
-a channel with Bob where he provides all of the funding or where
-each contributes funds to the initial channel state. This can be combined
-with the experimental [liquidity advertisements][topic liquidity
-advertisements] protocol, which has not
-yet been added to the specification.
+- **<!--ln-dual-funding-->****LN 双向注资：** 闪电网络（LN）规范增加了对[双向注资][topic dual funding]的[支持][news290 dualfund]，同时新增了对交互式交易构建协议的支持。交互式构建允许两个节点交换偏好和 UTXO 详细信息，从而协作构建注资交易。双向注资允许交易包含任一方或双方的输入。例如，Alice 希望与 Bob 开启一个支付通道。在此规范更改之前，Alice 必须提供通道的全部资金。而现在，在支持双向资金的实现中，Alice 可以开启一个由 Bob 提供全部资金的通道，或者一个由双方共同为初始通道状态出资的通道。该功能可以与实验性的[流动性广告][topic liquidity advertisements] 协议结合使用，但该协议尚未被加入正式规范。
 
 {:#betfeerates}
-ZmnSCPxj proposed trustless scripts enabling two parties to [bet on
-future block feerates][news291 bets].  A user wanting a
-transaction confirmed by some future block can use this to offset the
-risk that [feerates][topic fee estimation] will be unusually high at the
-time.  A miner expecting to mine a block around the time the user needs
-their transaction confirmed can use this contract to offset the risk
-that feerates will be unusually low.  The design prevents
-manipulation seen in centralized markets, as the miner's decisions rely
-solely on actual mining conditions.  The contract is trustless with a
-cooperative spend path that minimizes costs for both parties.
+- **<!--trustless-betting-on-future-feerates-->对未来费率的免信任押注：** ZmnSCPxj 提出了无信任脚本，允许两方[押注未来区块的费率][news291 bets]。一名用户希望某笔交易在未来某区块中得到确认时，可以通过这种方式抵消因当时[费率][topic fee estimation]异常高所带来的风险；一名预计将在用户需要交易确认时挖矿的矿工，则可以通过该合约抵消费率异常低的风险。该设计避免了中心化市场中常见的操控行为，因为矿工的决策完全基于实际的挖矿条件。此合约是免信任的，包含一个合作支付路径，从而将双方的成本降至最低。
 
 <div markdown="1" class="callout" id="vulnreports">
-## Summary 2024: Vulnerability disclosures
+## 2024 年总结：漏洞披露
 
-In 2024, Optech summarized more than two dozen vulnerability disclosures.  The
-majority were old disclosures from Bitcoin Core which were being
-published for the first time this year.  Vulnerability reports give both
-developers and users the opportunity to learn from past problems, and
-[responsible disclosures][topic responsible disclosures] allow us all to
-thank those who report their discoveries with discretion.
+在2024年，Optech 总结了超过两打的漏洞披露。其中大多数是 Bitcoin Core 的旧漏洞，首次在今年被公开。漏洞报告为开发者和用户提供了从过去问题中学习的机会，而[负责任的披露][topic responsible disclosures]出来则让我们有机会感谢那些谨慎报告发现的人。
 
-_Note: Optech only publishes the names of vulnerability discoverers if
-we think they made a reasonable effort to minimize the risk of harm to
-users.  We thank all persons named in this section for their insight and
-clear concern for user safety._
+_注意：Optech 仅在认为漏洞发现者做出了合理努力以尽量减少对用户的伤害时，才会公布他们的名字。我们感谢本节中所有被提及的人士，他们的洞察力以及对用户安全的明确关切令人敬佩。_
 
-Late in 2023, Niklas Gögge [publicly disclosed][news283 lndvuln] two
-vulnerabilities he had reported two years earlier, leading to
-the release of fixed versions of LND.  The first, a DoS vulnerability,
-could have led to LND running out of memory and crashing.  The second, a
-censorship vulnerability, could allow an attacker to prevent an LND node
-from learning about updates to targeted channels across the network; an
-attacker could use this to bias a node towards selecting specific routes
-for payments it sent, giving the attacker more forwarding fees and more
-information about the payments the node sent.
+2023年年底，Niklas Gögge [公开披露了][news283 lndvuln]他两年前报告的两个漏洞，这些漏洞导致了修复版本的 LND 发布。第一个漏洞是一个 DoS 漏洞，可能导致 LND 内存耗尽并崩溃。第二个漏洞 是一个审查漏洞，攻击者可以阻止 LND 节点了解网络中目标通道的更新，攻击者可以利用这一点使节点偏向于为其发送的付款选择特定路由，从而为攻击者提供更多的转发费用和有关节点发送的付款的更多信息。
 
-In January, Matt Morehouse [announced a vulnerability][news285 clnvuln]
-that affected Core Lightning versions 23.02 through 23.05.2.  When
-re-testing nodes that had implemented fixes for fake funding, which he
-previously discovered and disclosed, he was able to trigger a race
-condition that crashed CLN after about 30 seconds.  If an LN
-node is shut down, it can't defend a user against malicious or broken
-counterparties, which puts the user's funds at risk.
+一月，Matt Morehouse [公布了一个漏洞][news285 clnvuln]，该漏洞影响 Core Lightning 版本 23.02 至 23.05.2。在重新测试已修复虚假注资漏洞（由他此前发现和披露的漏洞）的节点时，他触发了一个竞争条件，使得 CLN 在约30秒后崩溃。如果 LN 节点关闭，它无法保护用户免受恶意或损坏对等方的攻击，从而使用户资金面临风险。
 
-Also in January, Gögge returned to [announce][news286 btcdvuln] a
-consensus failure vulnerability he found in the btcd full node.  The
-code could misinterpret a transaction version number and apply the wrong
-consensus rules to a transaction using a relative timelock.  This could
-prevent btcd full nodes from showing the same confirmed transactions as
-Bitcoin Core, putting users at risk of losing money.
+同样在一月，Gögge[宣布了][news286 btcdvuln]一个他发现的影响 btcd 全节点的共识失败漏洞。该代码可能错误解释交易版本号，并对使用相对时间锁的交易应用错误的共识规则。这可能导致 btcd 全节点未能显示与 Bitcoin Core 一致的已确认交易，从而使用户面临资金损失的风险。
 
-February saw Eugene Siegel [publish][news288 bccvuln] a Bitcoin Core vulnerability
-report he had initially disclosed almost three years previously.
-The vulnerability could be used to prevent
-Bitcoin Core from downloading recent blocks.  This could be leveraged to
-prevent a connected LN node from learning about preimages necessary to
-resolve [HTLCs][topic htlc], potentially leading to loss of money.
+二月，Eugene Siegel [发布了][news288 bccvuln]一份他最初在近三年前披露的 Bitcoin Core 漏洞报告。该漏洞可被用于阻止 Bitcoin Core 下载最新区块，这可能导致连接的 LN 节点无法获取解析[HTLC][topic htlc]所需的哈希原象，从而可能导致资金损失。
 
-Morehouse returned in June to [disclose][news308 lndvuln] a
-vulnerability that allowed crashing versions of LND before 0.17.0.  As
-mentioned earlier, a shutdown LN node can't defend a user against
-malicious or broken counterparties, which puts the user's funds at risk.
+六月，Morehouse 再次[披露了][news308 lndvuln]一个漏洞，该漏洞崩溃了 0.17.0 之前版本的 LND。如前所述，关闭的 LN 节点无法保护用户免受恶意或损坏对等方的攻击，从而使用户资金面临风险。
 
-July saw the first of [multiple disclosures][news310 disclosures] of
-vulnerabilities affecting past versions of Bitcoin Core.  Wladimir J.
-Van Der Laan was investigating a vulnerability discovered by Aleksandar
-Nikolic in a library used by Bitcoin Core when he [discovered][news310
-wlad] a separate vulnerability allowing remote code execution; this was
-fixed upstream, and the fix was incorporated into Bitcoin Core.  Developer
-Evil-Knievel [discovered][news310 ek] a vulnerability that could exhaust
-the memory of many Bitcoin Core nodes, causing them to crash, which
-could be used as part of other attacks to steal money (e.g., from LN
-users).  John Newbery, citing co-discovery by Amiti Uttarwar,
-[disclosed][news310 jnau] a vulnerability that could be used to censor
-unconfirmed transactions, which could also be used as part of attacks to
-steal money (again, an example case being from LN users).  A
-vulnerability was [reported][news310 unamed] that allowed consuming
-excessive CPU and memory, potentially leading to a node crash.
-Developer practicalswift [discovered][news310 ps] a vulnerability that
-could cause a node to ignore legitimate blocks for a period of time,
-delaying reaction to time-sensitive events that could affect contract
-protocols like LN.  Developer sec.eine [disclosed][news310 sec.eine] a
-vulnerability that could consume excessive CPU, which could be used to
-prevent a node from processing new blocks and transactions, potentially
-leading to multiple problems that could lead to loss of money.  John
-Newbery responsibly [disclosed][news310 jn1] another vulnerability that
-could exhaust the memory of many nodes, potentially leading to crashes.
-Cory Fields [discovered][news310 cf] a separate memory exhaustion
-vulnerability that could crash Bitcoin Core.  John Newbery
-[disclosed][news310 jn2] a third vulnerability that could waste
-bandwidth and limit a user's number of peer connection slots.  Michael
-Ford [reported][news310 mf] a memory exhaustion vulnerability affecting
-anyone who clicked on a [BIP72][] URL, which could crash a node.
+七月，[多次披露][news310 disclosures]的 Bitcoin Core 旧版本漏洞开始首次公开：Wladimir J. Van Der Laan 在调查 Aleksandar Nikolic 发现的 Bitcoin Core 使用的库中的漏洞时，[发现了][news310 wlad]一个允许远程代码执行的单独漏洞，该漏洞已在上游修复，并被纳入 Bitcoin Core；开发者 Evil-Knievel[发现了][news310 ek]一个漏洞，可耗尽许多 Bitcoin Core 节点的内存并导致崩溃，这可能被用于其他攻击（例如从 LN 用户窃取资金）；John Newbery 与 Amiti Uttarwar 共同[发现了][news310 jnau]一个漏洞，可用于审查未确认交易，并可能作为窃取资金（如 LN 用户资金）的攻击的一部分；一个漏洞被[报告][news310 unamed] ，该漏洞允许消耗过多的 CPU 和内存，可能导致节点崩溃；开发者 practicalswift [发现了][news310 ps]一个漏洞，该漏洞可能导致节点在一段时间内忽略合法区块，延迟对 LN 等合同协议中的时间敏感事件的响应；开发者 sec.eine [披露了][news310 sec.eine]一个漏洞，该漏洞可消耗过多的 CPU，可能导致节点无法处理新的区块和交易，从而引发多种问题，导致资金损失；John Newbery 负责地[披露了][news310 jn1]另一个漏洞，该漏洞可能耗尽许多节点的内存，导致崩溃；Cory Fields [发现了][news310 cf]一个单独的内存耗尽漏洞，可能导致 Bitcoin Core 崩溃。John Newbery [披露了][news310 jn2]第三个漏洞，该漏洞可能浪费带宽并限制用户的对等连接插槽数量。Michael Ford [报告了][news310 mf]个内存耗尽漏洞，该漏洞会影响任何单击 [BIP72][] URL 的人，该漏洞可能会使节点崩溃。
 
-More disclosures from Bitcoin Core followed in the subsequent months.
-Eugene Siegel [discovered][news314 es] a method for crashing Bitcoin
-Core using `addr` messages.   Michael Ford, investigating a report by
-Ronald Huveneers about the miniupnpc library, discovered a different
-method for crashing Bitcoin Core using local network connections.  David
-Jaenson, Braydon Fuller, and multiple Bitcoin Core developers
-[discovered][news322 checkpoint] a vulnerability that could be used to
-prevent a newly started full node from syncing to the best block chain;
-the vulnerability was eliminated with a post-merge bug fix by Niklas
-Gögge.  Another remote crash vulnerability was [discovered][news324 ng]
-by Niklas Gögge, exploiting a problem with compact block message
-handling.  Several users [reported][news324 b10caj] excessive CPU
-consumption, leading developers 0xB10C and Anthony Towns to investigate
-the cause and implement a solution.  Several developers, including
-William Casarin and ghost43, reported problems with their nodes, leading
-to Suhas Daftuar [isolating][news324 sd] a vulnerability that could
-prevent Bitcoin Core from accepting a block for a long time.  The final
-Bitcoin Core vulnerability [report][news328 multi] of the year described
-a method for delaying blocks by 10 or more minutes.
+随后的几个月中，又披露了更多 Bitcoin Core 漏洞：Eugene Siegel [发现了][news314 es]一种使用 `addr` 消息崩溃 Bitcoin Core 的方法；Michael Ford 在调查 Ronald Huveneers 关于 miniupnpc 库的报告时，发现了一种使用本地网络连接崩溃 Bitcoin Core 的不同方法；David Jaenson、Braydon Fuller 和多位 Bitcoin Core 开发者[发现了][news322 checkpoint]一个漏洞，该漏洞可能被用来阻止新启动的全节点同步到最佳区块链，Niklas Gögge 通过 post-merge 修复消除了该漏洞。Niklas Gögge[还发现了][news324 ng]另一个远程崩溃漏洞，该漏洞利用了致密区块消息处理的问题；多位用户[报告了][news324 b10caj] CPU 消耗过高的问题，开发者 0xB10C 和 Anthony Towns 调查了原因并实施了解决方案；包括 William Casarin 和 ghost43 在内的多位开发者报告了他们的节点问题，最终由 Suhas Daftuar [确定了][news324 sd]一个漏洞，该漏洞可能导致 Bitcoin Core 在很长一段时间内拒绝接受一个区块；年度最后的 Bitcoin Core 漏洞[报告][news328 multi]描述了一种延迟区块时间 10 分钟或更长时间的方法。
 
-Lloyd Fournier, Nick Farrow, and Robin Linus [announced Dark
-Skippy][news315 exfil], an improved method for key exfiltration from a
-Bitcoin signing device which they previously responsibly disclosed to
-approximately 15 different hardware signing device vendors. _Key
-exfiltration_ occurs when transaction signing code deliberately creates
-its signatures in such a way that they leak information about the
-underlying key material, such as a private key or a BIP32 HD wallet
-seed. Once an attacker obtains a user's seed, they can steal any of the
-user's funds at any time (including funds spent in the transaction that
-results in exfiltration, if the attacker acts quickly).  This led to
-[renewed discussion][news317 exfil] of [anti-exfiltration signing
-protocols][topic exfiltration-resistant signing].
+Lloyd Fournier、Nick Farrow 和 Robin Linus [公布了“Dark Skippy”][news315 exfil]，这是一种改进的从比特币签名设备中窃取密钥的方法，他们此前已将此方法负责任地披露给大约 15 家硬件签名设备厂商。 _密钥外泄_ 是指交易签名代码故意制作出可以泄露关于底层密钥材料（例如私钥或BIP32 HD 钱包种子）信息的签名。一旦攻击者获得用户的种子，他们可以随时窃取用户的所有资金（包括在签名泄露导致的交易中花费的资金，只要攻击者行动足够迅速）。这一发现引发了对[反泄露签名协议][topic exfiltration-resistant signing]的[重新讨论][news317 exfil]。
 
-The introduction of a new testnet also saw the discovery of a [new
-timewarp vulnerability][news316 timewarp].  Testnet4 included a fix for
-the original [time warp][topic time warp] vulnerability, but developer
-Zawy discovered in August a new exploit that could reduce difficulty by
-about 94%.  Mark "Murch" Erhardt further developed the attack to allow
-reducing difficulty to its minimum value.  Several solutions were
-proposed and tradeoffs between them were still being [discussed][news332
-ccsf] in December.
+新 testnet 的引入还揭示了一个[新的时间扭曲漏洞][news316 timewarp]。Testnet4 修复了原始[时间扭曲漏洞][topic time warp]，但开发者 Zawy 于 8 月发现了一种新漏洞，可以将难度降低约 94%。Mark "Murch" Erhardt 进一步改进了该攻击，使难度可以降至最低值。针对几种解决方案的讨论及其权衡一直[持续到][news332 ccsf]十二月。
 
 ![Illustration of new timewarp vulnerability](/img/posts/2024-time-warp/new-time-warp.png)
 
-In October, Antoine Poinsot and Niklas Gögge disclosed another [consensus
-failure vulnerability][news324 btcd] affecting the btcd full node.
-Since the original version of Bitcoin, it has contained an obscure (but
-critical) function used to extract signatures from scripts before
-hashing them.  The implementation in btcd differed slightly from
-original version inherited by Bitcoin Core, making it possible for an
-attacker to create transactions that would be accepted by one node but
-rejected by the other, which could be used in various ways to cause
-users to lose money.
+十月，Antoine Poinsot 和 Niklas Gögge 披露了另一个影响 btcd 全节点的[共识失败漏洞][news324 btcd]。自比特币最初版本以来，其中包含一个用于在进行哈希之前从脚本中提取签名的隐秘（但关键）功能。btcd 的实现与 Bitcoin Core 继承的原始版本略有不同，这可能允许攻击者创建交易，使一种节点接受而另一种节点拒绝，从而以多种方式导致用户资金损失。
 
-December saw David Harding [disclose][news333 if] a vulnerability
-affecting Eclair, LDK, and LND by default (and Core Lightning with
-non-default settings).  The party who requested to open a channel
-(opener) and who was responsible for paying any [endogenous fees][topic
-fee sourcing] necessary to close the channel could commit to paying 98%
-of channel value to fees in one state, reduce the commitment to a
-minimal amount in a subsequent state, move 99% of channel value to the
-other party, and then close the channel in the 98%-fee state.  This
-would result in the opener forfeiting 1% of channel value for using an
-old state but the other party losing 98% of channel value.  If the opener mined
-the transaction themselves, they could keep the 98% of channel value paid to
-fees.  This method would allow robbing about 3,000 channels per block.
+十二月，David Harding [披露了][news333 if] 一个影响 Eclair、LDK 和 LND 默认设置(以及非默认设置的 Core Lightning)的漏洞。请求打开通道(opener)并负责支付关闭通道所需[内生费用][topic fee sourcing]的参与方可以承诺在一个状态下支付通道价值的 98%，在后续状态中将承诺减少到最低金额，将 99% 的通道价值转移给另一方，然后在 98% 费用状态下关闭通道。这将导致 opener 因使用旧状态损失 1% 的通道价值，而另一方损失 98% 的通道价值。如果 opener 自行挖出该交易，他们可以使得98% 通道价值作为费用支付。该方法可以每个区块内窃取大约 3,000 个通道。
 
-A deanonymization [vulnerability][news333 deanon] affecting Wasabi and
-related software was the final disclosure summarized by Optech this
-year.  The vulnerability allows a [coinjoin][topic coinjoin] coordinator
-of the type used by Wasabi and GingerWallet to provide users with
-credentials that are supposed to be anonymous but which can be made
-distinct to allow tracking.  Although one method of making credentials
-distinct has been eliminated, a more generalized problem allowing a
-coordinator to produce distinct credentials was identified in 2021 by
-Yuval Kogman and remains unfixed as of this writing.
+年度最后披露涉及 Wasabi 和相关软件的[去匿名化漏洞][news333 deanon]，该漏洞允许类似 Wasabi 和 GingerWallet 的[coinjoin][topic coinjoin]协调器为用户提供原本应该匿名的凭证，但这些凭证可以被设计为具有区别性，从而实现追踪。尽管一种生成区别性凭证的方法已被消除，但 Yuval Kogman 在 2021 年发现的一个更普遍的问题，即允许协调器生成不同的证书，截至撰写本文时仍未解决。
 
 <!-- Not summarized here but discussed in the P2P improvements section
 - https://bitcoinops.org/en/newsletters/2024/03/27/#disclosure-of-free-relay-attack
@@ -354,44 +143,16 @@ Yuval Kogman and remains unfixed as of this writing.
 
 </div>
 
-## March
+## 三月
 
 {:#binanabips}
-Ongoing problems getting BIPs merged led to the creation in January of a
-[new BINANA repository][news286 binana] for specifications and other
-documentation.  February and March saw the existing BIPs editor request
-help and the beginning of a [process to add new editors][news292 bips].
-After extensive public discussion culminating in April, several Bitcoin
-contributors were [made BIP editors][news299 bips].
+- **<!--binanas-and-bips-->****BINANAs and BIPs：** 由于 BIPs（比特币改进提案）合并过程中的持续问题，2024 年 1 月创建了一个[新的 BINANA 库][news286 binana]，用于规范和其他文档的管理。二月和三月，现有的 BIPs 编辑请求帮助，并开始了[新增编辑的流程][news292 bips]。经过广泛的公开讨论，最终在四月，几位比特币贡献者被[推举为 BIP 编辑][news299 bips]。
 
 {:#enhancedfeeestimates}
-Abubakar Sadiq Ismail proposed [enhancing Bitcoin Core's feerate
-estimation][news295 fees] by using real-time mempool data. Currently,
-estimates rely on confirmed transaction data, which updates slowly but
-resists manipulation. Ismail developed preliminary code comparing the
-current approach with a new mempool-based algorithm. Discussions
-highlighted whether mempool data should adjust estimates up and down, or
-only lower them. Dual-adjustment improves utility, but limiting
-adjustments to lowering estimates may better prevent manipulation.
+- **<!--enhanced-feerate-estimation-->改进费率估算：** Abubakar Sadiq Ismail 提议通过使用实时交易池数据来[改进 Bitcoin Core 的费率估算][news295 fees]。目前，估算主要依赖于已确认交易数据，这种方法更新缓慢但具有抗操纵性。Ismail 开发了初步代码，将当前方法与新的基于交易池的算法进行比较。讨论中重点关注了交易池数据是应该同时上调和下调估算，还是仅用于降低估算值。双向调整可以提升实用性，但限制为仅下调估算可能更有效地防止操纵。
 
 {:#efficientsponsors}
-Martin Habovštiak proposed a method to [boost unrelated transaction
-priorities][news295 sponsor] using the taproot annex, significantly
-reducing space requirements compared to earlier [fee sponsorship][topic
-fee sponsorship] methods.  David Harding suggested an even more
-efficient approach using signature commitment messages, requiring no
-on-chain space but relying on block ordering. For overlapping sponsor
-transactions, Harding and Anthony Towns proposed alternatives that use
-as little as 0.5 vbytes per boost.  Towns noted that these sponsorship
-methods are compatible with the proposed [cluster mempool][topic cluster
-mempool] design, although the most efficient versions present mild
-challenges for transaction validity caching by making it harder for
-nodes to precompute and store validity information.  This sponsorship
-approach enables dynamic fee bumping at minimal cost, making it
-attractive for protocols needing [exogenous fees][topic fee sourcing],
-though trustless outsourcing remains an issue. Suhas Daftuar cautioned
-that sponsorship could create problems for non-participating users,
-suggesting it be opt-in if adopted to avoid unintended impacts.
+- **<!--more-efficient-transaction-sponsorship-->更高效的交易资助：** Martin Habovštiak 提议使用 taproot annexa 字段来[提高无关交易的优先级][news295 sponsor]，与早期的[费用资助][topic fee sponsorship]方法相比，显著减少了空间需求。David Harding 提出了一个更高效的方法，利用签名承诺消息，这种方法无需占用链上空间，但依赖于区块排序。对于重叠的资助交易，Harding 和 Anthony Towns 提出了可将空间需求降至 0.5 vbytes 的替代方案。Towns 指出，这些资助方法与提议的[族群交易池（cluster mempool）][topic cluster mempool]设计兼容，尽管最有效的版本对交易有效性缓存提出了轻微挑战，因为这使得节点更难预先计算并存储有效性信息。这种资助方法以极低成本实现动态费用提升，对需要[外生费用][topic fee sourcing]的协议具有吸引力，但无信任外包问题仍然存在。Suhas Daftuar 警告说，资助可能会给非参与用户带来问题，建议若采用该方法，应将其设计为可选功能以避免意外影响。
 
 ## 四月
 
@@ -400,7 +161,6 @@ Antoine Poinsot [回顾][news296 ccsf]了 Matt Corallo 在 2019 年提出的 “
 
 {:#bip2reform}
 在关于添加新的 BIP 编辑的讨论过程中反映出了人们[革新 BIP2][news297 bips] 的愿望，该 BIP 指明了现在添加新的 BIP 以及更新现有 BIP 的的流程。讨论[持续][news303 bip2]了几个月；在九月，一份关于更新后的流程的[BIP 草案][news322 newbip2]出现了。
-
 
 {:#inboundrouting}
 LND 引入了[对入账路由费的支持][news297 inbound]，该特性是由 Joost Jager 领头支持的，它让节点可以向从对等节点的某一条通道中收到的支付收取手续费。这可以帮助节点管理流动性，比如向管理不善的节点的入账支付收取更高的手续费。入账路由费是后向兼容的，最初会设置成负值（例如，折扣），从而与更老的节点一起工作。虽然这项提议已经提出很多年了，其它闪电实现出于设计上的顾虑和兼容性问题而抵制这一特性。可以看出，该特性在 LND 中的开发贯穿了一整年。
@@ -470,22 +230,22 @@ René Pickhardt 研究了[闪电网络可行性概率][news309 feas]的估计，
 
 在一月结束的时候，Golria Zhao 为 “[亲属间手续费替代][topic kindred rbf]” 提出了一份[提议][news287 sibrbf]。常规的[RBF][topic rbf]规则只应用在相互冲突的交易上、在一个节点决定要接受一笔交易某个版本的时候，因为最终只有一个版本能进入有效的区块链。然而，在 TRUC 中，一个节点只会接受一笔未确认的版本 3 父交易的一个子交易，非常类似于处理冲突交易的情形。允许一笔子交易替代同一父交易的另一笔子交易 —— 即，*亲属驱逐* —— 将改善 TRUC 交易的手续费支付，尤其在渗透式 TRUC 被采用的情况下，非常有好处。
 
-二月份的起始是关于将闪电网络协议从 CPFP carve-out 迁移到 TRUC 的后果的额外讨论。Matt Corallo 发现了现有的[零确认的通道开启操作][topic zero-conf channels]在使用 TRUC 时会面临的[挑战][news288 truc0c]：注资交易和一笔紧随其后的关闭交易可能都是未确认的， 这就阻止了包含 CPFP 手续费追加的第三笔交易被使用，因为 TURC 限制智能使用两笔未确认的交易。Teinturier 指出，在形成一条 “[通道拼接][topic splicing]” 的链条时，也有类似的问题。这项讨论一直没有得到一个清晰的结论，但一个迂回的解决方案 —— 保证每一笔交易都包含一个自身的锚点输出、用于 CPFP 手续费追加（就像在使用 TRUC 之前要求的那样）—— 似乎已经能够解决问题，同时，每个人都希望[族群交易池][topic cluster mempool]可以在未来放宽 TRUC 的一些要求，并允许更加灵活的 CPFP 手续费支付。 
+二月份的起始是关于将闪电网络协议从 CPFP carve-out 迁移到 TRUC 的后果的额外讨论。Matt Corallo 发现了现有的[零确认的通道开启操作][topic zero-conf channels]在使用 TRUC 时会面临的[挑战][news288 truc0c]：注资交易和一笔紧随其后的关闭交易可能都是未确认的， 这就阻止了包含 CPFP 手续费追加的第三笔交易被使用，因为 TURC 限制智能使用两笔未确认的交易。Teinturier 指出，在形成一条 “[通道拼接][topic splicing]” 的链条时，也有类似的问题。这项讨论一直没有得到一个清晰的结论，但一个迂回的解决方案 —— 保证每一笔交易都包含一个自身的锚点输出、用于 CPFP 手续费追加（就像在使用 TRUC 之前要求的那样）—— 似乎已经能够解决问题，同时，每个人都希望[族群交易池][topic cluster mempool]可以在未来放宽 TRUC 的一些要求，并允许更加灵活的 CPFP 手续费支付。
 
-关于由族群交易池进步可以带来的 TRUC 规则变更的话题，Gregory Sanders 介绍了关于[未来的规则变更][news289 pcmtruc]的多种想法。相对应的是，Suhas Daftuar [分析][news289 oldtruc]了他的节点在过去一年中收到的所有交易，以检验渗透式 TURC 规则会如何影响这些交易的接纳。大部分在 CPFP carve-out 规则下被交易池接纳的交易，在一种渗透式 TRUC 规则下也会被接纳，但也有少数例外，可能要求软件在采用渗透式规则之前改变。 
+关于由族群交易池进步可以带来的 TRUC 规则变更的话题，Gregory Sanders 介绍了关于[未来的规则变更][news289 pcmtruc]的多种想法。相对应的是，Suhas Daftuar [分析][news289 oldtruc]了他的节点在过去一年中收到的所有交易，以检验渗透式 TURC 规则会如何影响这些交易的接纳。大部分在 CPFP carve-out 规则下被交易池接纳的交易，在一种渗透式 TRUC 规则下也会被接纳，但也有少数例外，可能要求软件在采用渗透式规则之前改变。
 
 经历了年初的讨论丰收之后，五月和六月出现了一系列的 PR 合并，为 Bitcoin Core 带来了对新的交易转发特性的支持。一种[受限形式][news301 1p1c]的 “一父一子（1p1c）”[交易包转发][topic package relay]规则 —— 不要求对 P2P 协议的任何变更 —— 被添加到了 Bitcoin Core 中。[一项后续的合并][news304 bcc30000]通过加强 Bitcoin Core 对故而交易的处理，提高了 1p1c 交易包转发的可靠性。TRUC 规范作为 [BIP431][] 被[合并到了 BIP 仓库][news306 bip431]。TRUC 交易也因为[另一次合并][news307 bcc29496]而变成默认可转发的。对 1p1c 族群（包括 TRUC 交易包）的 [RBF][topic rbf] 的支持也[加入了][news309 1p1crbf]。
 
 两位长期的开发者在七月提出了对 TRUC 的[延伸批评][news313 crittruc]，虽然其他开发者回应了他们的顾虑。这两位开发者在八月又提出了[进一步批评][news315 crittruc]。
 
-Bitcoin Core 的开发者们继续开发交易转发的优化、在八月合并对 “[支付到锚点][topic ephemeral anchors]（P2A）” 标准化输出的[支持][news315 p2a]，并在十月发布 Bitcoin Core 28.0；该版本支持 1p1c 交易包转发、TRUC 交易转发、交易包 PBF 以及亲属替代，还有一种标准化的 P2A 输出脚本类型。作为所有这些特性的开发贡献者，Gregory Sanders [建议][news324 guide] 了钱包软件和其他软件的开发者如何使用 Bitcoin Core 来创建和广播可以利用这些新功能的交易。 
+Bitcoin Core 的开发者们继续开发交易转发的优化、在八月合并对 “[支付到锚点][topic ephemeral anchors]（P2A）” 标准化输出的[支持][news315 p2a]，并在十月发布 Bitcoin Core 28.0；该版本支持 1p1c 交易包转发、TRUC 交易转发、交易包 PBF 以及亲属替代，还有一种标准化的 P2A 输出脚本类型。作为所有这些特性的开发贡献者，Gregory Sanders [建议][news324 guide] 了钱包软件和其他软件的开发者如何使用 Bitcoin Core 来创建和广播可以利用这些新功能的交易。
 
 晚些时候，对使用 P2A 的%#192%#输出的支持也在一次[合并][news330 dust]中变得标准化。这让一笔支付零手续费的交易也可以靠一笔子交易来支付所有相关的手续费 —— 这是一种完全外生的[手续费来源][topic fee sourcing]。
 
 Optech 在今年的最后一期常规周报总结了一次 Bitcoin Core PR 审核俱乐部的[会议][news333 prclub]，人们在会上讨论了对 1p1c 交易包转发的进一步优化。
 </div>
 
-## July
+## 七月
 
 {:#bolt11blind}
 Elle Mouton 提出了一项 BLIP，[向 BOLT11 发票添加一个盲化路径字段][news310 path]，从而允许支付的接收者隐藏自己的身份和通道对手。比如说，Bob 可以添加一条盲化路径到他的发票中，然后 Alice 能够私密地给他支付，如果她的软件支持的话，不然，她会收到一条报错。Mouton 认为这是一种在 [offer][topic offers]（原生支持盲化路径）得到广泛采用之前的过渡解决方案。这份提议在[八月][news317 blip39]变成了 [BLIP39][]。
