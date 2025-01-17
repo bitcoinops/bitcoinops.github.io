@@ -41,6 +41,9 @@ optech_mentions:
   - title: Proposal to pay miners with ecash
     url: /en/newsletters/2024/05/24/#challenges-in-rewarding-pool-miners
 
+  - title: "Continued discussion about rewarding pool miners with tradeable ecash shares"
+    url: /en/newsletters/2025/01/17/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares
+
 ## Optional.  Same format as "primary_sources" above
 # see_also:
 #   - title:

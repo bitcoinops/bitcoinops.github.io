@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Discussion of potential Stratum v2 high validation cost and invalid shares attack"
     url: /en/newsletters/2024/08/09/#block-withholding-attacks-and-potential-solutions
 
+  - title: "Continued discussion about rewarding pool miners with tradeable ecash shares"
+    url: /en/newsletters/2025/01/17/#continued-discussion-about-rewarding-pool-miners-with-tradeable-ecash-shares
+
 ## Optional.  Same format as "primary_sources" above
 #see_also:
 #  - title:
