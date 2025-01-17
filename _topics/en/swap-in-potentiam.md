@@ -48,7 +48,6 @@ see_also:
 
   - title: Swap-in potentiam for Phoenix
     link: https://gist.github.com/t-bast/5fd89979a8088b99d0b95c124902aa56
-  
   - title: Swaproot
     link: https://acinq.co/blog/phoenix-swaproot
 
