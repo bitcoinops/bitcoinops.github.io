@@ -10,6 +10,8 @@
 [scaling payment batching]: /en/payment-batching/
 [series preparing for taproot]: /en/preparing-for-taproot/
 
+[topic fpps]: /en/topics/pooled-mining/#full-pay-per-share-fpps
+[topic pplns]: /en/topics/pooled-mining/#pay-per-last-n-shares-pplns
 {% comment %}<!-- links for topics -->{% endcomment %}
 {% for topic in site.topics %}
   [topic {{topic.shortname | default: topic.title}}]: {{topic.url}}
@@ -181,6 +183,7 @@ for details --> {% endcomment %}
 [BIP372]: https://github.com/bitcoin/bips/blob/master/bip-0372.mediawiki
 [BIP373]: https://github.com/bitcoin/bips/blob/master/bip-0373.mediawiki
 [BIP374]: https://github.com/bitcoin/bips/blob/master/bip-0374.mediawiki
+[BIP375]: https://github.com/bitcoin/bips/blob/master/bip-0375.mediawiki
 [BIP379]: https://github.com/bitcoin/bips/blob/master/bip-0379.md
 [BIP380]: https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki
 [BIP381]: https://github.com/bitcoin/bips/blob/master/bip-0381.mediawiki

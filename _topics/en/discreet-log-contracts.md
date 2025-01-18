@@ -80,6 +80,9 @@ optech_mentions:
   - title: "Lava Loans: DLC-based loan contract execution"
     url: /en/newsletters/2024/09/13/#dlc-based-loan-contract-execution
 
+  - title: Offchain DLCs
+    url: /en/newsletters/2025/01/17/#offchain-dlcs
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Signature adaptors

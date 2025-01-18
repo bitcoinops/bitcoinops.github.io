@@ -77,6 +77,9 @@ optech_mentions:
   - title: "Draft BIP for DLEQ proofs to support multiple signing with silent payments"
     url: /en/newsletters/2024/11/01/#draft-bip-for-dleq-proofs
 
+  - title: "BIPs #1687 merges BIP375 to specify sending silent payments using PSBTs"
+    url: /en/newsletters/2025/01/17/#bips-1687
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Output linking

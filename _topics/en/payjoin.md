@@ -101,6 +101,9 @@ optech_mentions:
   - title: "Mutiny Wallet v0.5.7 adds support for payjoin"
     url: /en/newsletters/2024/02/21/#mutiny-wallet-v0-5-7-released
 
+  - title: "BIPs #1396 updates BIP78's payjoin specification to align with BIP174's PSBT specification"
+    url: /en/newsletters/2025/01/17/#bips-1396
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP79
