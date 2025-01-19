@@ -83,6 +83,9 @@ optech_mentions:
   - title: "Benefits of BIP324 decoy packets"
     url: /en/newsletters/2024/10/25/#what-are-the-benefits-of-decoy-packets-in-bip324
 
+  - title: "Rust Bitcoin #3792 adds support for encoding and decoding BIP324 messages"
+    url: /en/newsletters/2025/01/17/#rust-bitcoin-3792
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: BIP151
