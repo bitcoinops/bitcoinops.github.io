@@ -7,135 +7,143 @@ type: newsletter
 layout: newsletter
 lang: de
 ---
-This week's newsletter summarizes continued discussion about rewarding
-pool miners with tradeable ecash shares and describes a new proposal for
-enabling offchain resolution of DLCs.  Also included are our regular
-sections announcing new releases and release candidates and describing
-notable changes to popular Bitcoin infrastructure software.
+Der Newsletter dieser Woche fasst die anhaltende Diskussion über
+die Belohnung von Pool-Minern mit handelbaren E-Cash-Anteilen zusammen
+und beschreibt einen neuen Vorschlag zur Ermöglichung der
+Offchain-Auflösung von DLCs. Des Weiteren beinhalten die Abschnitte
+die regulären Ankündigungen neuer Versionen und Release-Kandidaten sowie
+die Beschreibung wichtiger Änderungen an der Bitcoin-Infrastruktursoftware,
+die sich großer Beliebtheit erfreut.
 
 ## News
 
-- **Continued discussion about rewarding pool miners with tradeable ecash shares:**
-  [discussion][ecash tides] continued since our [previous
-  summary][news304 ecashtides] of a Delving Bitcoin thread about paying
-  [pool miners][topic pooled mining] with ecash for each share they
-  submitted.  Previously, Matt Corallo [asked][corallo whyecash] why a
-  pool would implement the extra code and accounting to handle tradable ecash
-  shares when they could simply pay miners using a normal ecash mint (or
-  via LN).  David Caseria [replied][caseria pplns] that in some _pay per
-  last N shares_ ([PPLNS][topic pplns]) schemes, such as
-  [TIDES][recap291 tides], a miner might need to wait for the pool to
-  find several blocks, which might take days or weeks for a small pool.
-  Instead of waiting, a miner with ecash shares could immediately sell
-  them on an open market (without disclosing to the pool or any third
-  party anything about their identity, not even any ephemeral identity
-  they used when mining).
+- **Die vorliegende Diskussion wird fortgesetzt mit der Thematik der Vergütung
+  von Pool-Minern mittels handelbarer Ecash-Anteilen:**
+  Die vorliegende [Diskussion][ecash tides] wurde auf Basis der [vorangegangenen Zusammenfassung]
+  [news304 ecashtides] eines Delving Bitcoin-Threads fortgesetzt, in welcher die Bezahlung von
+  [Pool-Minern][topic pooled mining] mit E-Cash für jeden von ihnen eingereichten
+  Anteil erörtert wurde. Zuvor [erörterte][corallo whyecash] Matt Corallo die Notwendigkeit
+  der Implementierung eines zusätzlichen Codes und der Buchhaltung für die Handhabung handelbarer
+  Ecash-Anteile durch einen Pool, wenn die Miner doch einfach mit einer regulären Ecash-Mine
+  (oder über LN) entlohnt werden könnten.
+  David Caseria [führte][caseria pplns] aus, dass bei einigen Pay-per-Last-N-Shares-Systemen
+  ([PPLNS][topic pplns]), wie beispielsweise [TIDES][recap291 tides], ein Miner
+  möglicherweise warten muss, bis der Pool mehrere Blöcke gefunden hat, was bei
+  einem kleinen Pool Tage oder Wochen dauern kann.
+  Anstatt abzuwarten, könnte ein Miner mit E-Cash-Anteilen diese unmittelbar auf
+  einem offenen Markt veräußern (ohne dem Pool oder Dritten seine Identität preiszugeben,
+  nicht einmal eine flüchtige Identität, die er beim Mining verwendet hat).
 
-  Caseria also noted that existing mining pools find it financially
-  challenging to support the _full paid per share_ ([FPPS][topic fpps])
-  scheme where a miner is paid proportional to the entire block reward
-  (subsidy plus transaction fees) when they create a share.  He didn't
-  elaborate, but we understand the problem to be variance in fees
-  forcing pools to keep large reserves.  For example, if a pool miner
-  controls 1% of hashrate and creates shares on a template with about
-  1,000 BTC in fees and 3 BTC in subsidy, they would be owed by their
-  pool about 10 BTC.  However, if the pool doesn't mine that block and,
-  when they do mine a block, fees are back down to a fraction of the
-  block reward, the pool might only have 3 BTC total to split between
-  all of its miners, forcing it to pay from its reserves.  If that
-  happens too many times, the pool's reserves will be exhausted and it
-  will go out of business.  Pools address this in various ways,
-  including using [proxies for actual fees][news304 fpps proxy].
+  Caseria wies zudem darauf hin, dass es für existierende Mining-Pools finanziell herausfordernd
+  ist, das System der _vollständigen Bezahlung pro Anteil_ ([FPPS][topic fpps]) zu unterstützen.
+  Bei diesem System wird ein Miner proportional zur gesamten Blockbelohnung
+  (Subvention plus Transaktionsgebühren) entlohnt, sofern er einen Anteil erstellt.
+  Er äußerte sich nicht explizit zu den Gründen, jedoch wird in Fachkreisen davon ausgegangen,
+  dass die Problematik in den divergierenden Gebühren liegt, welche die Pools dazu veranlassen,
+  signifikante Rücklagen zu bilden. Wenn ein Pool-Miner die Kontrolle über 1 % der Hashrate erhält
+  und Anteile an einer Vorlage mit etwa 1.000 BTC an Gebühren und 3 BTC an Subventionen durch den
+  Pool-Miner erstellt, dann ergibt sich eine Schuld des Pools in Höhe von 10 BTC.
+  Im Falle der Nicht-Abbauung des Blocks durch den Pool und der damit verbundenen Reduzierung
+  der Gebühren auf einen Bruchteil der Blockbelohnung besteht die Möglichkeit, dass der Pool
+  lediglich über 3 BTC verfügt, die er unter allen seinen Minern aufteilen muss. Dies führt dazu,
+  dass der Pool gezwungen ist, aus seinen Reserven zu zahlen. Wenn dieser Zustand zu häufig
+  vorkommt, sind die Reserven des Pools erschöpft und das Geschäft muss geschlossen werden.
+  Pools verfahren hierbei auf unterschiedliche Weise, beispielsweise durch die
+  Verwendung von Proxys für die [tatsächlichen Gebühren][news304 fpps proxy].
 
-  Developer vnprc [described][vnprc ehash] the solution he's been
-  [building][hashpool] that focuses on ecash shares received in the
-  PPLNS payout scheme.  He thinks this could be especially useful for
-  launching new pools: right now, the first miner to join a pool suffers
-  the same high variance as solo mining, so typically the only people
-  who can start a pool are existing large miners or those willing to
-  rent significant hashrate.  However, with PPLNS ecash shares, vnprc
-  thinks a pool could launch as a client of a larger pool, so even the
-  first miner to join the new pool would receive lower variance than
-  solo mining.  The intermediate pool could then sell the ecash shares
-  it earns to finance whatever payout scheme it chooses to pay
-  its miners.  Once the intermediate pool acquired a
-  significant amount of hashrate, it would also have leverage for
-  negotiating with larger pools about creating alternative block
-  templates that suit its miners.
+  Der Entwickler vnprc [beschreibt][vnprc ehash] die Funktionsweise seiner [Lösung]
+  [hashpool], die sich auf die im PPLNS-Auszahlungsplan aufgeführten E-Cash-Aktien fokussiert.
+  Er ist der Auffassung, dass dies insbesondere für die Einführung neuer Pools von Nutzen sein
+  könnte: Derzeit ist der erste Miner, der einem Pool beitritt, der gleichen hohen Varianz
+  ausgesetzt wie beim Solo-Mining. In der Regel sind demnach die einzigen Personen, die einen Pool
+  starten können, bestehende große Miner oder diejenigen, die bereit sind, eine erhebliche Hashrate
+  zu mieten. In Bezug auf die PPLNS-Ecash-Anteile geht vnprc jedoch davon aus, dass ein Pool als
+  Kunde eines größeren Pools starten könnte, so dass selbst der erste Miner, der dem neuen Pool
+  beitritt, eine geringere Varianz als beim Solo-Mining hat. Der Zwischenpool könnte dann die
+  erworbenen E-Cash-Anteile verkaufen, um das von ihm gewählte Auszahlungsschema für seine Miner
+  zu finanzieren. Sobald der Zwischenpool eine signifikante Menge an Hashrate erworben hat,
+  könnte er auch mit größeren Pools über die Erstellung alternativer Blockmodelle verhandeln,
+  die für seine Miner geeignet sind.
 
-- **Offchain DLCs:** developer conduition [posted][conduition offchain]
-  to the DLC-dev mailing list about a contract protocol that allows an
-  offchain spend of the funding transaction signed by both parties to
-  create multiple [DLCs][topic dlc].  After the offchain DLC has settled
-  (e.g., all required oracle signatures have been obtained), a new
-  offchain spend can be signed by both parties to reallocate funds
-  according to the contract resolution.  A third alternative spend can
-  then allocate the funds to new DLCs.
+- **Offchain DLCs:** In der vorliegenden Arbeit werden Offchain DLCs (DLCs, die außerhalb der
+  Blockchain erstellt werden) thematisiert.
+  Der Entwickler Conduition hat hierzu einen Beitrag über ein Vertragsprotokoll auf der DLC-Dev
+  Mailingliste [gepostet][conduition offchain] verfasst, das eine Offchain-Ausgabe der von beiden
+  Parteien unterzeichneten Finanzierungstransaktion ermöglicht, um mehrere [DLCs][topic dlc] zu
+  erstellen. Nachdem der Offchain-DLC verarbeitet wurde (z.B. wurden alle erforderlichen
+  Oracle-Signaturen eingeholt), kann ein neuer Offchain-DLC von beiden Parteien unterzeichnet
+  werden. Dadurch werden die Ressourcen entsprechend der Vertragslösung neu zugeordnet.
+  Eine dritte alternative Option besteht darin, die Mittel neuen DLCs zuzuweisen.
 
-  Replies by Kulpreet Singh and Philipp Hoenisch linked to previous
-  research and development of this basic idea, including approaches that
-  allow the same pool of funds to be used for both offchain DLCs and
-  LN (see Newsletters [#174][news174 dlc-ln] and [#260][news260 dlc]).
-  A [reply][conduition offchain2] from conduition described his
-  proposal's major difference from previous proposals.
+  Die von Kulpreet Singh und Philipp Hoenisch präsentierten Antworten bezogen sich auf frühere
+  Forschungen und Entwicklungen dieser Grundidee, einschließlich Ansätzen, die es ermöglichen,
+  denselben Fondspool sowohl für Offchain-DLCs als auch LN zu verwenden (siehe Newsletter
+  [#174][news174 dlc-ln] und [#260][news260 dlc]).
+  Eine [Antwort][conduition offchain2] von Conduition legte den signifikantesten Unterschied
+  zwischen seinem Vorschlag und früheren Vorschlägen dar.
 
-## Releases and release candidates
 
-_New releases and release candidates for popular Bitcoin infrastructure
-projects.  Please consider upgrading to new releases or helping to test
-release candidates._
+## Releases und Release-Kandidaten
 
-- [LDK v0.1][] is a milestone release of this library for building
-  LN-enabled wallets and applications.  New features include "support
-  for both sides of the LSPS channel open negotiation protocols, [...]
-  includes support for [BIP353][] Human Readable Names resolution, [and
-  a reduction in] on-chain fee costs when resolving multiple HTLCs for a
-  single channel force-closure."
+  _Es werden neue Releases und Release-Kandidaten für populäre Bitcoin-Infrastrukturprojekte
+  offeriert. Zudem wird empfohlen, ein Upgrade auf neue Releases zu erwägen oder Unterstützung
+  beim Testen von Release-Kandidaten zu leisten._
 
-## Notable code and documentation changes
+- [LDK v0.1][] stellt eine Meilensteinversion dieser Bibliothek dar,
+  die für die Erstellung von LN-fähigen Wallets und Anwendungen konzipiert wurde. Zu den neu
+  implementierten Funktionen gehören die Unterstützung für beide Seiten der
+  LSPS-Kanal-Open-Negotiation-Protokolle, die Unterstützung der Auflösung von BIP353 Human
+  Readable Names sowie die Reduktion der On-Chain-Gebührenkosten bei der
+  Auflösung mehrerer HTLCs für eine erzwungene Schließung eines einzelnen Kanals.
 
-_Notable recent changes in [Bitcoin Core][bitcoin core repo], [Core
-Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
-[LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
-Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
-Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
-Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
-[Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
-repo], and [BINANAs][binana repo]._
+## Wichtige Code- und Dokumentationsänderungen
 
-- [Eclair #2936][] introduces a 12-block delay before marking a channel as
-  closed after its funding output has been spent to allow for the propagation of
-  a [splice][topic splicing] update (see Newsletter [#214][news214
-  splicing] and an Eclair developer's description of the [motivation][tbast splice]).
-  Spent channels are temporarily tracked in a new `spentChannels` map, where
-  they are either removed after 12 blocks or updated as spliced channels. When a
-  splice occurs, the parent channel's short channel identifier (SCID), capacity,
-  and balance bounds are updated instead of creating a new channel.
+  _Wichtige Änderungen in [Bitcoin Core][bitcoin core repo], [Core
+  Lightning][core lightning repo], [Eclair][eclair repo], [LDK][ldk repo],
+  [LND][lnd repo], [libsecp256k1][libsecp256k1 repo], [Hardware Wallet
+  Interface (HWI)][hwi repo], [Rust Bitcoin][rust bitcoin repo], [BTCPay
+  Server][btcpay server repo], [BDK][bdk repo], [Bitcoin Improvement
+  Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
+  [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
+  repo], und [BINANAs][binana repo]._
 
-- [Rust Bitcoin #3792][] adds ability to encode and decode [BIP324][]’s [v2 P2P
-  transport][topic v2 P2P transport] messages (see Newsletter [#306][news306 v2]).
-  This is achieved by adding a `V2NetworkMessage` struct, which wraps the original
-  `NetworkMessage` enum and provides v2 encoding and decoding.
+- [Eclair #2936][] führt eine Verzögerung von 12 Blöcken ein,
+  bevor ein Kanal als geschlossen markiert wird, nachdem seine Finanzierungsausgabe ausgegeben
+  wurde. So soll die Verbreitung eines [Splice ][topic splicing]-Updates zu ermöglichen (siehe
+  Newsletter [#214][news214 splicing] und eine Beschreibung der [Motivation][tbast splice]
+  durch einen Eclair-Entwickler). Verbrauchte Kanäle werden vorübergehend in einer neuen
+  `spentChannels`-Karte verfolgt, wo sie entweder nach 12 Blöcken entfernt oder als gespleißte
+  Kanäle aktualisiert werden. Bei einem Splice werden die Short Channel Identifier (SCID),
+  die Kapazität und die Saldogrenzen des übergeordneten Kanals aktualisiert,
+  anstatt einen neuen Kanal zu erstellen.
 
-- [BDK #1789][] updates the default transaction version from 1 to 2 to improve
-  wallet privacy.  Prior to this, BDK wallets were more identifiable due to
-  only 15% of the network using version 1. In addition, version 2 is required
-  for a future implementation of [BIP326][]’s nSequence-based [anti fee
-  sniping][topic fee sniping] mechanism for [taproot][topic taproot]
-  transactions.
+- [Rust Bitcoin #3792][] fügt die Möglichkeit hinzu, [BIP324][]s [v2 P2P
+  transport][topic v2 P2P transport]-Nachrichten zu kodieren und zu dekodieren
+  (siehe Newsletter [#306][news306 v2]).
+  Dies wird durch das Hinzufügen einer `V2NetworkMessage`-Struktur erreicht, die die
+  ursprüngliche `NetworkMessage`-Aufzählung umschließt und v2-Kodierung und -Dekodierung
+  bereitstellt.
 
-- [BIPs #1687][] merges [BIP375][] to specify sending [silent payments][topic
-  silent payments] using [PSBTs][topic psbt]. If there are multiple independent
-  signers, a [DLEQ][topic dleq] proof is required to allow all signers to prove to co-signers
-  that their signature doesn’t misspend funds, without revealing
-  their private key (see [Newsletter #335][news335 dleq] and [Recap
+- [BDK #1789][] aktualisiert die Standardtransaktionsversion von 1 auf 2,
+  um die Privatsphäre der Wallets zu verbessern. Zuvor waren BDK-Wallets besser
+  identifizierbar, da nur 15 % des Netzwerks Version 1 verwendeten. Darüber hinaus ist
+  Version 2 für eine zukünftige Implementierung des auf nSequence basierenden
+  [Anti-Fee-Sniping][thema fee sniping]-Mechanismus von
+  [BIP326][] für [Taproot][thema taproot]-Transaktionen erforderlich.
+
+- [BIPs #1687][] führt [BIP375][] zusammen, um das Senden von [stillen Zahlungen][topic
+  silent payments] mit [PSBTs][topic psbt] anzugeben. Wenn es mehrere unabhängige
+  Unterzeichner gibt, ist ein [DLEQ][topic dleq]-Nachweis erforderlich, damit alle Unterzeichner
+  den Mitunterzeichnern nachweisen können,
+  dass ihre Unterschrift keine Gelder zweckentfremdet, ohne ihren
+  privaten Schlüssel preiszugeben (siehe [Newsletter #335][news335 dleq] und [Recap
   #327][recap327 dleq]).
 
-- [BIPs #1396][] updates [BIP78][]’s [payjoin][topic payjoin] specification to
-  align with [BIP174][]’s [PSBT][topic psbt] specification, resolving a previous
-  conflict. In BIP78, a receiver previously deleted UTXO data after completing
-  its inputs, even if the sender needed the data. With this update, UTXO data is
-  now retained.
+- [BIPs #1396][] aktualisiert die [payjoin][topic payjoin]-Spezifikation von [BIP78][], um sie
+  mit der [PSBT][topic psbt]-Spezifikation von [BIP174][] in Einklang zu bringen und so einen
+  vorherigen Konflikt zu lösen. In BIP78 löschte ein Empfänger zuvor UTXO-Daten, nachdem er
+  seine Eingaben abgeschlossen hatte, selbst wenn der Absender die Daten benötigte. Mit diesem
+  Update bleiben UTXO-Daten jetzt erhalten.
 
 {% include snippets/recap-ad.md when="2025-01-21 15:30" %}
 {% include references.md %}
