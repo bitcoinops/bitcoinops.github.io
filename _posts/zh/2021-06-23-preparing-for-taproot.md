@@ -31,9 +31,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## Taproot 对单签名是否有意义？
 
-*最初发表于 [Newsletter #155](/en/newsletters/2021/06/30/#preparing-for-taproot-2-is-taproot-even-worth-it-for-single-sig)*
+*最初发表于 [Newsletter #155](/zh/newsletters/2021/06/30/#准备-taproot-2对于单签名来说-taproot-真的值得吗)*
 
-{% include specials/taproot/en/01-single-sig.md %}
+{% include specials/taproot/zh/01-single-sig.md %}
 
 ## Taproot 描述符
 

@@ -53,7 +53,7 @@ lang: zh
 - **<!--support-for-p2wsh-wrapped-p2tr-addresses-->**[对 P2WSH-wrapped P2TR 地址的支持？]({{bse}}106706)
   除了 [BIP341][bip341 p2sh footnote] 提及的碰撞安全问题外，jnewbery 还指出多出一种输出类型会带来的隐私问题，以及当前广泛采用 bech32 后，wrapped taproot 输出是否确有需要仍然值得商榷。
 
-## 为 taproot 做准备 #2：对于单签名来说 taproot 真的值得吗？
+## 准备 taproot #2：对于单签名来说 taproot 真的值得吗？
 
 *每周一篇的[系列][series preparing for taproot]文章，讲述开发者和服务提供商如何为即将到来的、在区块高度 {{site.trb}} 处激活的 taproot 做好准备。*
 
@@ -87,3 +87,4 @@ lang: zh
 [news152 p2tr descriptors]: /zh/newsletters/2021/06/09/#bitcoin-core-22051
 [nickler musig]: https://github.com/jonasnick/musig-benchmark
 [bip341 p2sh footnote]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-3
+[series preparing for taproot]: /zh/preparing-for-taproot/
