@@ -36,7 +36,7 @@ changes to popular Bitcoin infrastructure software.
   reduce the reservation to 1,000 vbytes (or less, if they need less).
 
   Jay Beddict [relayed][beddict double] the message to the Mining-Dev
-  mailing list.
+  mailing list. {% assign timestamp="1:07" %}
 
 - **Contract-level relative timelocks:** Gregory Sanders
   [posted][sanders clrt] to Delving Bitcoin about finding a solution for
@@ -85,7 +85,7 @@ changes to popular Bitcoin infrastructure software.
   cat].  Brandon Black [described][black penalty] an
   alternative type of solution---a penalty-based variant of
   LN-Symmetry---and cited work by Daniel Roberts about it (see next news
-  item).
+  item). {% assign timestamp="15:04" %}
 
 - **Multiparty LN-Symmetry variant with penalties for limiting published updates:**
   Daniel Roberts [posted][roberts sympen] to Delving Bitcoin about
@@ -125,7 +125,7 @@ changes to popular Bitcoin infrastructure software.
   He finds "this attack pretty weak, since the attack[er] can be driven
   to negative EV [expected value] pretty easily" even if the defender
   has modest resources and no insight into what transactions miners are
-  attempting to confirm.
+  attempting to confirm. {% assign timestamp="29:06" %}
 
 ## Releases and release candidates
 
@@ -134,15 +134,15 @@ projects.  Please consider upgrading to new releases or helping to test
 release candidates._
 
 - [Bitcoin Core 28.1][] is a release of a maintenance
-  version of the predominant full-node implementation.
+  version of the predominant full-node implementation. {% assign timestamp="39:54" %}
 
 - [BDK 0.30.1][] is a maintenance release for the previous release
   series containing bug fixes.  Projects are encouraged to upgrade to
   BDK wallet 1.0.0, as announced in last week's newsletter, for which
-  the a [migration guide][bdk migration] has been provided.
+  the a [migration guide][bdk migration] has been provided. {% assign timestamp="40:45" %}
 
 - [LDK v0.1.0-beta1][] is a release candidate of this library for
-  building LN-enabled wallets and applications.
+  building LN-enabled wallets and applications. {% assign timestamp="42:01" %}
 
 ## Notable code and documentation changes
 
@@ -159,7 +159,7 @@ repo], and [BINANAs][binana repo]._
   the `testmempoolaccept` RPC command, which is only included if the transaction
   would be rejected from the mempool due to consensus or policy violations. The
   error message is identical to the one returned by `sendrawtransaction` if the
-  transaction is rejected there as well.
+  transaction is rejected there as well. {% assign timestamp="42:22" %}
 
 - [BDK #1592][] introduces Architectural Decision Records (ADRs) to document
   significant changes, outlining the problem addressed, decision drivers,
@@ -167,7 +167,7 @@ repo], and [BINANAs][binana repo]._
   newcomers to familiarize themselves with the repository’s history. This PR
   adds an ADR template and the first two ADRs: one to remove the `persist`
   module from `bdk_chain` and another to introduce a new `PersistedWallet` type
-  that wraps a `BDKWallet`.
+  that wraps a `BDKWallet`. {% assign timestamp="43:14" %}
 
 {% include snippets/recap-ad.md when="2025-01-14 15:30" %}
 {% include references.md %}

@@ -89,6 +89,9 @@ optech_mentions:
   - title: "LND #8270 implements the channel quiescence protocol designed in part for splicing"
     url: /en/newsletters/2024/12/06/#lnd-8270
 
+  - title: "Eclair #2936 begins tracking splices created by third-parties"
+    url: /en/newsletters/2025/01/17/#eclair-2936
+
 ## Optional.  Same format as "primary_sources" above
 see_also:
   - title: Interactive transaction construction protocol
