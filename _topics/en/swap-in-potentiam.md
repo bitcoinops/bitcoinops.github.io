@@ -29,9 +29,6 @@ primary_sources:
   - title: Moving Onchain Funds "Instantly" To Lightning (Jesse Posner, ZmnSCPxj)
     link: https://lists.linuxfoundation.org/pipermail/lightning-dev/2023-January/003810.html
 
-  - title: LSPS C= Extension, Swap-in-Potentiam
-    link: https://github.com/ZmnSCPxj-jr/swap-in-potentiam/blob/master/doc/swap-in-potentiam.md
-
 ## Optional.  Each entry requires "title", "url", and "date".  May also use "feature:
 ## true" to bold entry
 optech_mentions:
