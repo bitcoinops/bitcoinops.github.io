@@ -124,7 +124,7 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], und [BINANAs][binana repo].
 
-- [Bitcoin Core #28121][] wird ein neues Feld namens `reject-details` eingeführt, das in der Antwort des RPC-Befehls `testmempoolaccept`enthalten ist.
+- [Bitcoin Core #28121][] wird ein neues Feld namens `reject-details` eingeführt, das in der Antwort des RPC-Befehls `testmempoolaccept` enthalten ist.
   Dieses Feld wird nur angezeigt, wenn die Transaktion aufgrund  von Konsens- oder Richtlinienverstößen vom Mempool abgelehnt wurde.
   Die Fehlermeldung ist identisch mit der, die von `sendrawtransaction` zurückgegeben wird, wenn die Transaktion auch dort abgelehnt wird.
 
