@@ -140,4 +140,4 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 [news214 splicing]: /en/newsletters/2022/08/24/#bolts-1004
 [news306 v2]: /fr/newsletters/2024/06/07/#rust-bitcoin-2644
 [news335 dleq]: /fr/newsletters/2025/01/03/#bips-1689
-[recap327 dleq]: /fr/podcast/2024/11/05/#draft-bip-for-dleq-proofs
+[recap327 dleq]: /en/podcast/2024/11/05/#draft-bip-for-dleq-proofs
