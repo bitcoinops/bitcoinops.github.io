@@ -37,9 +37,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## Taproot 描述符
 
-*最初发表于 [Newsletter #156](/en/newsletters/2021/07/07/#preparing-for-taproot-3-taproot-descriptors)*
+*最初发表于 [Newsletter #156](/zh/newsletters/2021/07/07/#准备-taproot-3taproot-描述符)*
 
-{% include specials/taproot/en/02-descriptors.md %}
+{% include specials/taproot/zh/02-descriptors.md %}
 
 ## 从 P2WPKH 到单签名 P2TR
 
