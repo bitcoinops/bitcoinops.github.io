@@ -17,8 +17,7 @@ die sich großer Beliebtheit erfreut.
 
 ## News
 
-- **Die vorliegende Diskussion wird fortgesetzt mit der Thematik der Vergütung
-  von Pool-Minern mittels handelbarer Ecash-Anteilen:**
+- ***Fortsetzung der Diskussion über Miner-Auszahlungen mit Ecash:**
   Die vorliegende [Diskussion][ecash tides] wurde auf Basis der [vorangegangenen Zusammenfassung]
   [news304 ecashtides] eines Delving Bitcoin-Threads fortgesetzt, in welcher die Bezahlung von
   [Pool-Minern][topic pooled mining] mit E-Cash für jeden von ihnen eingereichten
@@ -120,7 +119,7 @@ die sich großer Beliebtheit erfreut.
 - [Rust Bitcoin #3792][] fügt die Möglichkeit hinzu, [BIP324][]s [v2 P2P
   transport][topic v2 P2P transport]-Nachrichten zu kodieren und zu dekodieren
   (siehe Newsletter [#306][news306 v2]).
-  Dies wird durch das Hinzufügen einer `V2NetworkMessage`-Struktur erreicht, die die
+  Dies wird durch das Hinzufügen einer `V2NetworkMessage`-Struktur erreicht, welche die
   ursprüngliche `NetworkMessage`-Aufzählung umschließt und v2-Kodierung und -Dekodierung
   bereitstellt.
 
