@@ -12,7 +12,7 @@ lang: zh
 ## 新闻
 
 - **<!--request-for-op-checksigfromstack-design-suggestions-->****请求对 `OP_CHECKSIGFROMSTACK` 设计建议：** Jeremy
-  Rubin [posted][rubin csfs] 到 Bitcoin-Dev 邮件列表上，提交了一个关于 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] opcode 的草案规范，并邀请那些倾向于替代设计的开发者提出反馈。部分替代方案得到了讨论，但讨论也分支出是否应该同时引入 [OP_CAT][] opcode。
+  Rubin [公告][rubin csfs]到 Bitcoin-Dev 邮件列表上，提交了一个关于 [OP_CHECKSIGFROMSTACK][topic op_checksigfromstack] opcode 的草案规范，并邀请那些倾向于替代设计的开发者提出反馈。部分替代方案得到了讨论，但讨论也分支出是否应该同时引入 [OP_CAT][] opcode。
 
   `OP_CAT` 和 `OP_CSFS` 可以实现任意交易内省——即允许将比特币接收至一个脚本，该脚本可以检查随后花费这些比特币的交易几乎任何部分。此功能可启用许多高级特性（包括其他一些提案升级如 [SIGHASH_ANYPREVOUT][topic sighash_anyprevout] 和 [OP_CHECKTEMPLATEVERIFY][topic op_checktemplateverify] 的某些版本[^expensive]），但 `OP_CAT` 也使得创建递归的[契约][topic covenants]成为可能，这些契约可能会永久地限制投入该契约之比特币的可花费性。一些人[反对][rubin cost/benefit]在比特币中允许契约，但也有[论点][harding altcoins]认为[最糟糕的情况][towns multisig]（递归契约）已经在现有比特币中成为可能，因此不必过于担心启用 `OP_CAT` 或类似 opcode。
 
