@@ -127,8 +127,8 @@ die sich großer Beliebtheit erfreut.
   um die Privatsphäre der Wallets zu verbessern. Zuvor waren BDK-Wallets besser
   identifizierbar, da nur 15 % des Netzwerks Version 1 verwendeten. Darüber hinaus ist
   Version 2 für eine zukünftige Implementierung des auf nSequence basierenden
-  [Anti-Fee-Sniping][thema fee sniping]-Mechanismus von
-  [BIP326][] für [Taproot][thema taproot]-Transaktionen erforderlich.
+  [Anti-Fee-Sniping][topic fee sniping]-Mechanismus von
+  [BIP326][] für [Taproot][topic taproot]-Transaktionen erforderlich.
 
 - [BIPs #1687][] führt [BIP375][] zusammen, um das Senden von [stillen Zahlungen][topic
   silent payments] mit [PSBTs][topic psbt] anzugeben. Wenn es mehrere unabhängige
