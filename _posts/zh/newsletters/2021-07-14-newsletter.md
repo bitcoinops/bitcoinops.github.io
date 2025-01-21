@@ -108,3 +108,4 @@ lang: zh
 [rubin cost/benefit]: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019200.html
 [offers spec changes]: https://github.com/lightningnetwork/lightning-rfc/pull/798#issuecomment-871124755
 [suredbits enterprise ln]: /zh/suredbits-enterprise-ln/
+[series preparing for taproot]: /zh/preparing-for-taproot/
