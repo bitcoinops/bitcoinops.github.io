@@ -1,11 +1,11 @@
 ---
 title: 'Bitcoin Optech Newsletter #157'
-permalink: /en/newsletters/2021/07/14/
-name: 2021-07-14-newsletter
-slug: 2021-07-14-newsletter
+permalink: /zh/newsletters/2021/07/14/
+name: 2021-07-14-newsletter-zh
+slug: 2021-07-14-newsletter-zh
 type: newsletter
 layout: newsletter
-lang: en
+lang: zh
 ---
 本周的 Newsletter 概述了关于一个新提案 opcode 的讨论，并链接到一个更新后的用于追踪 bech32m 支持的维基页面。文中还包括我们的常规部分，其中包含来自一次 Bitcoin Core PR 审查俱乐部会议的重点内容、关于如何为 taproot 做准备的建议，以及对一些流行比特币基础设施项目值得注意的更改的描述。
 
