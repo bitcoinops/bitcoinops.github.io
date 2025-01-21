@@ -41,11 +41,11 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 {% include specials/taproot/zh/02-descriptors.md %}
 
-## 从 P2WPKH 到单签名 P2TR
+## 从 P2WPKH 到单签 P2TR
 
-*最初发表于 [Newsletter #157](/en/newsletters/2021/07/14/#preparing-for-taproot-4-from-p2wpkh-to-single-sig-p2tr)*
+*最初发表于 [Newsletter #157](/zh/newsletters/2021/07/14/#准备-taproot-4从-p2wpkh-到单签-p2tr)*
 
-{% include specials/taproot/en/03-p2wpkh-to-p2tr.md %}
+{% include specials/taproot/zh/03-p2wpkh-to-p2tr.md %}
 
 ## 我们为什么要等待？
 
