@@ -61,7 +61,7 @@ notable changes to popular Bitcoin infrastructure software.
   its miners.  Once the intermediate pool acquired a
   significant amount of hashrate, it would also have leverage for
   negotiating with larger pools about creating alternative block
-  templates that suit its miners.
+  templates that suit its miners. {% assign timestamp="0:35" %}
 
 - **Offchain DLCs:** developer conduition [posted][conduition offchain]
   to the DLC-dev mailing list about a contract protocol that allows an
@@ -77,7 +77,7 @@ notable changes to popular Bitcoin infrastructure software.
   allow the same pool of funds to be used for both offchain DLCs and
   LN (see Newsletters [#174][news174 dlc-ln] and [#260][news260 dlc]).
   A [reply][conduition offchain2] from conduition described his
-  proposal's major difference from previous proposals.
+  proposal's major difference from previous proposals. {% assign timestamp="38:32" %}
 
 ## Releases and release candidates
 
@@ -90,7 +90,7 @@ release candidates._
   for both sides of the LSPS channel open negotiation protocols, [...]
   includes support for [BIP353][] Human Readable Names resolution, [and
   a reduction in] on-chain fee costs when resolving multiple HTLCs for a
-  single channel force-closure."
+  single channel force-closure." {% assign timestamp="39:34" %}
 
 ## Notable code and documentation changes
 
@@ -110,32 +110,32 @@ repo], and [BINANAs][binana repo]._
   Spent channels are temporarily tracked in a new `spentChannels` map, where
   they are either removed after 12 blocks or updated as spliced channels. When a
   splice occurs, the parent channel's short channel identifier (SCID), capacity,
-  and balance bounds are updated instead of creating a new channel.
+  and balance bounds are updated instead of creating a new channel. {% assign timestamp="41:32" %}
 
 - [Rust Bitcoin #3792][] adds ability to encode and decode [BIP324][]’s [v2 P2P
   transport][topic v2 P2P transport] messages (see Newsletter [#306][news306 v2]).
   This is achieved by adding a `V2NetworkMessage` struct, which wraps the original
-  `NetworkMessage` enum and provides v2 encoding and decoding.
+  `NetworkMessage` enum and provides v2 encoding and decoding. {% assign timestamp="42:46" %}
 
 - [BDK #1789][] updates the default transaction version from 1 to 2 to improve
   wallet privacy.  Prior to this, BDK wallets were more identifiable due to
   only 15% of the network using version 1. In addition, version 2 is required
   for a future implementation of [BIP326][]’s nSequence-based [anti fee
   sniping][topic fee sniping] mechanism for [taproot][topic taproot]
-  transactions.
+  transactions. {% assign timestamp="43:42" %}
 
 - [BIPs #1687][] merges [BIP375][] to specify sending [silent payments][topic
   silent payments] using [PSBTs][topic psbt]. If there are multiple independent
   signers, a [DLEQ][topic dleq] proof is required to allow all signers to prove to co-signers
   that their signature doesn’t misspend funds, without revealing
   their private key (see [Newsletter #335][news335 dleq] and [Recap
-  #327][recap327 dleq]).
+  #327][recap327 dleq]). {% assign timestamp="46:39" %}
 
 - [BIPs #1396][] updates [BIP78][]’s [payjoin][topic payjoin] specification to
   align with [BIP174][]’s [PSBT][topic psbt] specification, resolving a previous
   conflict. In BIP78, a receiver previously deleted UTXO data after completing
   its inputs, even if the sender needed the data. With this update, UTXO data is
-  now retained.
+  now retained. {% assign timestamp="50:15" %}
 
 {% include snippets/recap-ad.md when="2025-01-21 15:30" %}
 {% include references.md %}
