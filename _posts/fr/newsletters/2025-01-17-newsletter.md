@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: fr
 ---
-Le bulletin de cette semaine résume la discussion continue sur la récompense des mineurs de pool
+Le bulletin de cette semaine résume les discussions en cours sur la récompense des mineurs en pool
 avec des parts d'ecash échangeables et décrit une nouvelle proposition pour permettre la résolution
 offchain des DLC. Sont également incluses nos sections régulières
 annoncant des mises à jour et des versions candidates, et résumant les changements notables
@@ -16,8 +16,8 @@ dans les principaux logiciels d'infrastructure Bitcoin.
 ## Nouvelles
 
 - **Discussion continue sur la récompense des mineurs de pool avec des parts d'ecash échangeables :**
-  La [discussion][ecash tides] s'est poursuivie depuis notre [résumé précédent][news304 ecashtides]
-  d'un fil de discussion sur Delving Bitcoin concernant le paiement des [mineurs de pool][topic pooled
+  Depuis notre [résumé précédent][news304 ecashtides], la [discussion][ecash tides] a été suivie
+  d'un fil de discussion sur Delving Bitcoin concernant le paiement des [mineurs en pool][topic pooled
   mining] avec de l'ecash pour chaque part qu'ils soumettent. Auparavant, Matt Corallo [avait
   demandé][corallo whyecash] pourquoi un pool mettrait en œuvre le code supplémentaire et la
   comptabilité nécessaires pour gérer des parts d'ecash échangeables lorsqu'ils pourraient simplement
@@ -27,16 +27,16 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   blocs, ce qui pourrait prendre des jours ou des semaines pour un petit pool. Au lieu d'attendre, un
   mineur avec des parts d'ecash pourrait immédiatement les vendre sur un marché ouvert (sans divulguer
   au pool ou à un tiers quoi que ce soit sur leur identité, pas même une identité éphémère utilisée
-  lors de l'exploitation minière).
+  lors du minage).
 
-  Caseria a également noté que les pools miniers existants trouvent financièrement difficile de
-  soutenir le schéma _full paid per share_ ([FPPS][topic fpps]) où un mineur est payé
+  Caseria a également noté que les pools de minage existants trouvent difficile de
+  soutenir financièrement le schéma _full paid per share_ ([FPPS][topic fpps]) où un mineur est payé
   proportionnellement à la récompense totale du bloc (subvention plus frais de transaction) lorsqu'ils
-  créent une part. Il n'a pas élaboré, mais nous comprenons le problème comme étant la variance des
+  créent une part. Il n'a pas donné de détails, mais nous comprenons que le problème est la variation des
   frais obligeant les pools à conserver de grandes réserves. Par exemple, si un mineur de pool
   contrôle 1% de la puissance de hachage et crée des parts sur un modèle avec environ 1 000 BTC en
-  frais et 3 BTC en subvention, il serait dû par son pool environ 10 BTC. Cependant, si le pool ne
-  mine pas ce bloc et, lorsqu'ils minent un bloc, les frais sont de retour à une fraction de la
+  frais et 3 BTC en subvention, son pool lui devra environ 10 BTC. Cependant, si le pool ne
+  mine pas ce bloc et si au prochain bloc qu'il mine, les frais sont de retour à une fraction de la
   récompense du bloc, le pool pourrait n'avoir que 3 BTC au total à répartir entre tous ses mineurs,
   l'obligeant à payer à partir de ses réserves. Si cela arrive trop souvent, les réserves du pool
   seront épuisées et il fera faillite. Les pools abordent ce problème de diverses manières, y compris
@@ -55,8 +55,8 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   une quantité significative de hashrate, il aurait également un levier pour négocier avec les pools
   plus grands sur la création de modèles de blocs alternatifs qui conviennent à ses mineurs.
 
-- **DLC offchain :** un développeur a [publié][conduition offchain] sur la liste de diffusion
-  DLC-dev à propos d'un protocole de contrat qui permet une dépense offchain de la transaction de
+- **DLC offchain :** un développeur a [exposé][conduition offchain] sur la liste de diffusion
+  DLC-dev un protocole de contrat qui permet une dépense offchain de la transaction de
   financement signée par les deux parties pour créer plusieurs [DLCs][topic dlc]. Après que le DLC
   offchain a été réglé (par exemple, toutes les signatures d'oracle requises ont été obtenues), une
   nouvelle dépense offchain peut être signée par les deux parties pour réallouer les fonds selon la
@@ -66,8 +66,8 @@ dans les principaux logiciels d'infrastructure Bitcoin.
   Les réponses de Kulpreet Singh et Philipp Hoenisch ont fait référence à des recherches et
   développements antérieurs de cette idée de base, y compris des approches qui permettent d'utiliser
   le même pool de fonds à la fois pour les DLCs offchain et pour LN (voir les Bulletins
-  [#174][news174 dlc-ln] et [#260][news260 dlc]). Une [réponse][conduition offchain2] de conduition a
-  décrit la principale différence de sa proposition par rapport aux propositions précédentes.
+  [#174][news174 dlc-ln] et [#260][news260 dlc]). Une [réponse][conduition offchain2] de Conduition
+  décrit la principale différence entre sa proposition et les propositions précédentes.
 
 ## Mises à jour et versions candidates
 
@@ -75,8 +75,8 @@ _Nouvelles versions et versions candidates pour des projets d'infrastructure Bit
 Veuillez envisager de mettre à niveau vers les nouvelles versions ou d'aider à tester les versions candidates._
 
 - [LDK v0.1][] est une sortie importante de cette bibliothèque pour la construction de portefeuilles
-  et d'applications compatibles LN. Les nouvelles fonctionnalités incluent "le support pour les deux
-  côtés des protocoles de négociation d'ouverture de canal LSPS, [...] inclut le support pour la
+  et d'applications compatibles LN. Les nouvelles fonctionnalités comportent "le support pour les deux
+  côtés des protocoles de négociation d'ouverture de canal LSPS, [...] le support pour la
   résolution de noms lisibles par l'homme [BIP353][], [et une réduction des] coûts de frais onchain
   lors de la résolution de plusieurs HTLCs pour une fermeture forcée de canal."
 
@@ -99,7 +99,7 @@ repo], [Inquisition Bitcoin][bitcoin inquisition repo], et [BINANAs][binana repo
 
 - [Rust Bitcoin #3792][] ajoute la capacité d'encoder et de décoder les messages de transport P2P v2
   de [BIP324][] (voir le Bulletin [#306][news306 v2]). Cela est réalisé en ajoutant une structure
-  `V2NetworkMessage`, qui enveloppe l'énumération originale `NetworkMessage` et fournit l'encodage et
+  `V2NetworkMessage`, qui encapsule l'énumération originale `NetworkMessage` et fournit l'encodage et
   le décodage v2.
 
 - [BDK #1789][] met à jour la version de transaction par défaut de 1 à 2 pour améliorer la
