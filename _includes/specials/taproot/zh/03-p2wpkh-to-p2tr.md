@@ -66,7 +66,7 @@
 [electrum seeds]: https://electrum.readthedocs.io/en/latest/seedphrase.html#motivation
 [bip340 alt signing]: https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki#alternative-signing
 [bip341 cite22]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-22
-[`tr()` descriptors]: /zh/preparing-for-taproot/#taproot-descriptors
+[`tr()` descriptors]: /zh/preparing-for-taproot/#taproot-描述符
 [bip341 sigmsg]: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#common-signature-message
 [wiki bech32 adoption]: https://en.bitcoin.it/wiki/Bech32_adoption
 [wiki taproot uses]: https://en.bitcoin.it/wiki/Taproot_Uses
