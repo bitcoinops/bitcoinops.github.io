@@ -144,17 +144,41 @@ Proposals (BIPs)][bips repo], [Lightning BOLTs][bolts repo],
 [Lightning BLIPs][blips repo], [Bitcoin Inquisition][bitcoin inquisition
 repo], and [BINANAs][binana repo]._
 
-- [Bitcoin Core #31397][] p2p: track and use all potential peers for orphan resolution
+- [Bitcoin Core #31397][] improves the [orphan resolution process][news333 prclub] by tracking and
+  using all potential peers that can provide missing parent transactions.
+  Previously, the resolution process relied solely on the peer that originally
+  provided the orphaned transaction. If the peer did not respond or returned a
+  `notfound` message, there was no retry mechanism, resulting in likely
+  transaction download failures. The new approach attempts to download the
+  parent transaction from all candidate peers while maintaining bandwidth
+  efficiency, censorship resistance, and effective load balancing. It is
+  particularly beneficial for one-parent one-child (1p1c) [package relay][topic
+  package relay], and it sets the stage for [BIP331][]'s receiver-initiated
+  ancestor package relay.
 
-- [Eclair #2896][] Get ready for storing partial commit signatures
+- [Eclair #2896][] enables the storage of a [MuSig2][topic musig] peer’s partial
+  signature instead of a traditional 2-of-2 multisig signature, as a
+  prerequisite for a future implementation of [simple taproot channels][topic
+  simple taproot channels]. Storing this allows a node to unilaterally broadcast
+  a commitment transaction when needed.
 
-- [LDK #3408][] valentinewallace/2024-11-async-receive-offer-utils
+- [LDK #3408][] introduces utilities for creating static invoices and their
+  corresponding [offers][topic offers] in the `ChannelManager`, to support
+  [async payments][topic async payments] in [BOLT12][] as specified in [BOLTs
+  #1149][]. Unlike the regular offer creation utility, which requires the
+  recipient to be online to serve invoice requests, the new utility accommodates
+  recipients who are frequently offline. This PR also adds missing tests for
+  paying static invoices (see Newsletter [#321][news321 async]), and ensures
+  that invoice requests are retrievable when the recipient comes back online.
 
-- [LND #9405][] yyforyongyu/fix-unused-params
+- [LND #9405][] makes the `ProofMatureDelta` parameter configurable, which
+  determines the number of confirmations required before a [channel
+  announcement][topic channel announcements] is processed in the gossip network.
+  The default value is 6.
 
 {% include snippets/recap-ad.md when="2025-01-28 15:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1746,21283,31397,2896,3408,9405" %}
+{% include linkers/issues.md v=2 issues="1746,21283,31397,2896,3408,9405,1149" %}
 [news337 dlc]: /en/newsletters/2025/01/17/#offchain-dlcs
 [conduition factories]: https://conduition.io/scriptless/dlc-factory/
 [conduition reply]: https://mailmanlists.org/pipermail/dlc-dev/2025-January/000193.html
@@ -170,3 +194,5 @@ repo], and [BINANAs][binana repo]._
 [ingala psbtv2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/CAMhCMoGONKFok_SuZkic+T=yoWZs5eeVxtwJL6Ei=yysvA8rrg@mail.gmail.com/
 [toth psbtv2]: https://mailing-list.bitcoindevs.xyz/bitcoindev/30737859-573e-40ea-9619-1d18c2a6b0f4n@googlegroups.com/
 [btcpay server 2.0.6]: https://github.com/btcpayserver/btcpayserver/releases/tag/v2.0.6
+[news321 async]: /en/newsletters/2024/09/20/#ldk-3140
+[news333 prclub]: /en/newsletters/2024/12/13/#bitcoin-core-pr-review-club
