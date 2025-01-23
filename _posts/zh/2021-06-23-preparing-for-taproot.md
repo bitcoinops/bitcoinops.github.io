@@ -49,9 +49,9 @@ h2:not(:first-of-type) { margin-top: 3em; }
 
 ## 我们为什么要等待？
 
-*最初发表于 [Newsletter #158](/en/newsletters/2021/07/21/#preparing-for-taproot-5-why-are-we-waiting)*
+*最初发表于 [Newsletter #158](/zh/newsletters/2021/07/21/#准备-taproot-5我们为什么要等待)*
 
-{% include specials/taproot/en/04-why-wait.md %}
+{% include specials/taproot/zh/04-why-wait.md %}
 
 ## 通过使用学习 Taproot
 
